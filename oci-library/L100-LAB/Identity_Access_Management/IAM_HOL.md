@@ -21,7 +21,7 @@ Oracle Cloud Infrastructure Identity and Access Management (IAM) Service lets yo
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) 
 - To sign in to the Console, you need the following:
   -  Tenant, User name and Password
-  -  URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
+  -  URL for the Console: [https://cloud.oracle.com/](https://cloud.oracle.com/)
   -  Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11 
 
 
@@ -32,26 +32,24 @@ Oracle Cloud Infrastructure Identity and Access Management (IAM) Service lets yo
 
 In this practice, you sign in to the Oracle Cloud Infrastructure console using your credentials.
 
-1. Open a supported browser and go to the Console URL:  [https://console.us-ashburn-1.oraclecloud.com](https://console.us-ashburn-1.oraclecloud.com).
+1. Open a supported browser and go to the Console URL:  [https://cloud.oracle.com](https://cloud.oracle.com).
 
-2. Enter your tenant name and click **Continue**
+2. Click on the portrait icon in the top-right section of the browser window, then click on the **Sign in to Cloud** link.
 
-   ![]( img/image001.png)
+   ![]( img/img001.png)
 
-3. Oracle Cloud Infrastructure is integrated with Identity Cloud Services, you will see a screen validating your Identity Provider. Click **Continue**.
+3. Enter the name of your tenancy, then click on the **Next** button.
 
-   ![]( img/image002.png)
+   ![]( img/img002.png)
 
-4. Enter your user name and password
+4. Oracle Cloud Infrastructure is integrated with Identity Cloud Services, you will see a screen validating your Identity Provider. Enter your username and password. Click **Sign In**.
 
-    - **Username:** *instructor will provide username*
-    - **Password:** *instructor will provide password*
+   ![]( img/img003.png)
 
-   ![]( img/image003.png)
 
 5. When you sign in to the Console, the dashboard is displayed.
 
-   ![]( img/image004.png)
+   ![]( img/img004.png)
 
 
 ## Practice-2: Managing Users, Groups and Policies to Control Access
