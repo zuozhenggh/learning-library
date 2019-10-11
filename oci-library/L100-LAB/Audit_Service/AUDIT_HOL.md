@@ -64,7 +64,7 @@ Ensure you have below information available:
 3. Create a sample file, Enter command:
 ```touch samplefile```
 
-This should create a file by the name"samplefile" in the Downloads folder
+This should create a file by the name "samplefile" in the Downloads folder
 
 4. Switch to OCI window and click the Bucket Name.
 
