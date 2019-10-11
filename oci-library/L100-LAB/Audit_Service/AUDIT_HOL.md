@@ -24,7 +24,7 @@ The purpose of this lab is to give you an overview of the Audit Service and an e
 
 **Before You Begin**
 
-- We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%
+- We recommend using Chrome or Edge as the broswer. **Also set your browser zoom to 80%**
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
@@ -53,36 +53,30 @@ Ensure you have below information available:
 
 ## Practice-2: Upload Object and Check Audit logs
 
-1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
-![]( img/AUDIT004.PNG)
+1. Open a terminal window.
 
-2. Change directory to the Downloads folder Enter command: 
-```
-cd /c/Users/PhotonUser/Downloads/**
-```
-![]( img/AUDIT005.PNG)
+2. Change directory to your Downloads folder Enter command: 
+**Mac or Lunix**
+   ```cd ~/Downloads```
+**Windows**
+   ```cd /c/Users/PhotonUser/Downloads/**```
 
 3. Create a sample file, Enter command:
-```
-touch samplefile
-```
+```touch samplefile```
+
 This should create a file by the name"samplefile" in the Downloads folder
 
 4. Switch to OCI window and click the Bucket Name.
-
-**HINT:** You can swap between OCI window and any other application(git-bash etc) by clicking switch window
-
-![]( img/AUDIT006.PNG)
 
 5. Bucket detail window should be visible. Click **Upload Object**
 
 ![]( img/AUDIT007.PNG)
 
-6. Click on Upload Object > Browse > This PC > Downloads. You should see the sample file created earlier
+6. Click on the **select files** link. Navigate to the **samplefile** that you created a moment ago.
 
 7. Select the file, then click **Upload Object** in the Dialog box.
 
-8. In OCI services menu, Click **Audit** under Governance. Scroll down or type the bucket name in 
+8. Using the main OCI menu, select **Governance -> Audit**. Scroll down or type the bucket name in 
 Keyword section. You can choose other options
 such as dates and Request Action Type. For this 
 lab we will leave them as default. Audit logs for the Storage bucket should be visible

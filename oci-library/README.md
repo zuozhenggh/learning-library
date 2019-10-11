@@ -26,8 +26,8 @@ Self-paced labs provide hands-on experience with Oracle Cloud Infrastructure in 
 
 |                  **Name**              |    **Type**  | **Time** |
 |----------------------------------------|:------------:|:-------:|
-|[Identity](./L100-LAB/Identity_Access_Management/IAM_HOL.md) | Foundational |   5 minutes   |
-|[Audit](./L100-LAB/Audit_Service/AUDIT_HOL.md) | Foundational |   5 minutes   | 
+|[Identity](./L100-LAB/Identity_Access_Management/IAM_HOL.md) | Foundational |   15 minutes   |
+|[Audit](./L100-LAB/Audit_Service/AUDIT_HOL.md) | Foundational |   10 minutes   | 
 
 
 ### Core Infrastructure 
