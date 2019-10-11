@@ -52,7 +52,23 @@ In this practice, you sign in to the Oracle Cloud Infrastructure console using y
    ![]( img/img004.png)
 
 
-## Practice-2: Managing Users, Groups and Policies to Control Access
+## Practice-2: Creating Compartments
+
+### Overview
+
+A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create subcompartments to help manage your resources more efficiently.
+
+1. From the menu, select Identity and Compartments. Click on the blue **Create Compartment** button to create a subcompartment.
+
+  ![]( img/img005.png)
+
+2. Name the compartment **Demo** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment** button when ready.
+
+![]( img/img006.png)
+
+3. You have just created a compartment for all of your work in this Test Drive.
+
+## Practice-3: Managing Users, Groups and Policies to Control Access
 
 #### Overview
 
@@ -72,15 +88,18 @@ We'll create users, groups, and policies to understand the concept.
 
    ![]( img/image005.png)
 
+4. Your new group is displayed.
+
    ![]( img/image006.png)
 
-4. Now, let’s **create a policy** that gives your group permissions in your assigned compartment. For example, creates a policy that gives permission to compartment **Demo** to members or group oci-group:
+4. Now, let’s **create a policy** that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to compartment **Demo** to members or group oci-group:
 
    a) On the **Menu** click **Identity**, and then click **Policies**.
 
    b) On the left side, select **Demo** compartment.
+   ![]( img/img007.png)
 
-   c) Click **Create Policy**.
+   c) After you have selected the **Demo** compartment, click **Create Policy**.
 
    d) Enter a unique **Name** for your policy (For example, "Policy-for-oci-group") Note that the name can NOT contain spaces.
 
@@ -104,11 +123,11 @@ We'll create users, groups, and policies to understand the concept.
 
    c) In the **New User** dialog box, enter the following:
 
-   - **Name:** Enter a unique name or email address for the new user. For Example: yourname@domain.com
+   - **Name:** Enter a unique name or email address for the new user. I recommend using a personal email address to which you have access (Gmail, Yahoo, etc) For Example: yourname@domain.com
     _This value is the user's login name for the Console and it must be unique across all other users in your tenancy._
    - **Description:** Enter a description. For example, New oci user.
 
-      ![]( img/image008.png)
+      ![]( img/img008.png)
     
    d) Click **Create**.
 
@@ -136,7 +155,7 @@ We'll create users, groups, and policies to understand the concept.
 
 7. Sign in as the new user using a different web browser window.
 
-   a) Go to [https://console.us-ashburn-1.oraclecloud.com](https://console.us-ashburn-1.oraclecloud.com).
+   a) Go to [https://cloud.oracle.com](https://cloud.oracle.com).
 
    b) Enter the Tenant name, if prompted.
 
@@ -197,7 +216,7 @@ We'll create users, groups, and policies to understand the concept.
 
       e) Go to the **Menu** click **Identity** and select **Groups.**
 
-      f) The message **“You don’t have access to these resources”** appears. This is expected, since your user has no permission to modify groups.
+      f) The message **“You don’t have access to these resources”** appears. This is expected, since your user has no permission to modify groups. (Note: You may instead get the "An unexpected error occurred" message instead. That is also fine.)
 
       g) Sign out.
 
