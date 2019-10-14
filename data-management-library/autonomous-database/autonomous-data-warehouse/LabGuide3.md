@@ -176,7 +176,7 @@ https://objectstorage.<**region_name**>.oraclecloud.com/n/<**namespace_name**>/b
 
 #### **STEP 8: Creating an Object Store Auth Token**
 
-To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and the OCI user Auth Token.
+To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the native URI, and the OCI user Auth Token.
 
 -   Go back to the **Autonomous Data Warehouse Console** in your browser. From the pull-out menu on the top left, under **Identity**, click **Users**.
 
@@ -275,18 +275,20 @@ When done with your investigation, click **NEXT**.
 
 -   The final screen reflects all your choices made in the Wizard. Click **FINISH** when you are ready to load the data into the table *CHANNELS_CLOUD*.
 
-# Load data from the Object Store using DBMS_CLOUD
+-   After the data finishes loading, you can see the *CHANNELS_CLOUD* table populated with the data imported from OCI Object Storage.
 
+![](./images/300/snap0014665result.png)
+
+# Load data from the Object Store using DBMS_CLOUD
 
 
 #### **STEP 11: Loading Data Using the PL/SQL Package, DBMS_CLOUD**
 
 As an alternative to the wizard-guided data load, you can use the PL/SQL package **DBMS_CLOUD** directly. This is the preferred choice for any load automation.
 
--   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/load_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. This scripts uses the **copy\_data** procedure of the **DBMS\_CLOUD** package to copy the data in the source files to the target tables you created before.
+-   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/load_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. This script uses the **copy\_data** procedure of the **DBMS\_CLOUD** package to copy the data in the source files to the target tables you created before.
 
     -   At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable. You have copied and saved this URL in the step "Copy the URLs of the Files on Your OCI Object Storage" above.
-
 
     -   For the **credential_name** parameter in the **copy\_data** procedure, it is the name of the credential you defined in the step "Create a Database Credential for Your User" above.  You can use that credential.
 
@@ -294,7 +296,7 @@ As an alternative to the wizard-guided data load, you can use the PL/SQL package
 
     - Run the script.
 
-    ![](./images/300/snap0014550.png)
+    ![](./images/300/snap0014550.jpg)
 
     - You have successfully loaded the sample tables. You can now run any sample query in the <a href="https://docs.oracle.com/database/122/DWHSG/part-relational-analytics.htm#DWHSG8493" target="_blank">relational analytics</a> section of the Oracle documentation. For example, to analyze the cumulative amount sold for specific customer IDs in quarter 2000, you could run the query in <a href="./scripts/300/query_tables.txt" target="_blank">this code snippet</a>. <a href="https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dwhsg/introduction-data-warehouse-concepts.html#GUID-452FBA23-6976-4590-AA41-1369647AD14D" target="_blank">Click Here</a> to read more about Data Warehousing.
 
