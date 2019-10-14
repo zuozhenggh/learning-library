@@ -1,6 +1,6 @@
 <table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
 
-September 21, 2018
+<!--September 21, 2018-->
 </td>
 <td class="td-banner">
 # Lab 4: Querying Data in External Files
@@ -21,7 +21,6 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 -   Learn how to query external data by the external tables
 
--   Learn how to create data warehouse user
 
 ## Required Artifacts
 

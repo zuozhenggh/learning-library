@@ -4,7 +4,7 @@
 /* change us-phoenix-1 to your real region name. The name is case-sensitive. */
 /* you can find these values on the OCI Console .. Storage .. Object Storage screen */
 set define on
-define base_URL='https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/'
+define base_URL='https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o'
 
 
 begin
