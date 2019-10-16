@@ -1,6 +1,6 @@
 <table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
 
-September 21, 2018
+<!--September 21, 2018-->
 </td>
 <td class="td-banner">
 # Bonus Lab 6: Managing and Monitoring Your Data Warehouse Instance using the Cloud Console

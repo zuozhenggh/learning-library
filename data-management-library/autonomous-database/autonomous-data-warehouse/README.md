@@ -1,6 +1,6 @@
 <table class="tbl-heading"><tr><td class="td-logo">[![](images/obe_tag.png)](README.md)
 
-Last Updated:<br>October 19, 2018
+<!--Last Updated:<br>October 19, 2018-->
 </td>
 <td class="td-banner">
 # Getting Started with Autonomous Data Warehouse                                  
@@ -130,7 +130,6 @@ In this lab, you will be querying files directly on Oracle Object Storage withou
 
 - Learn how to define external tables against Oracle Object Store data sets
 - Learn how to query external tables
-- Learn how to create data warehouse user
 
 **[Click here to run Lab 4](LabGuide4.md)**
 
@@ -179,7 +178,7 @@ For this lab you will watch a couple of demos to show the capabilities available
 
 
 ## Bonus Lab - Lab 7: Scaling and Performance in Autonomous Data Warehouse
-In this lab you will scale up your Oracle Autonomous Data Warehouse instance by adding more CPUs with on interruption to your service. You will watch a recorded demo that shows the performance and concurrency impacts of scaling your service online.
+In this lab you will scale up your Oracle Autonomous Data Warehouse instance by adding more CPUs with no interruption to your service. You will watch a recorded demo that shows the performance and concurrency impacts of scaling your service online.
 
 **Key Objectives**:
 

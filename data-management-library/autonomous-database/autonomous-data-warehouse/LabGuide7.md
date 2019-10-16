@@ -1,6 +1,6 @@
 <table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
 
-September 21, 2018
+<!--September 21, 2018-->
 </td>
 <td class="td-banner">
 # Bonus Lab 7: Scaling and Performance in Your Autonomous Data Warehouse
@@ -29,7 +29,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 #### **STEP 1: Scaling your ADWC instance**
 
--   Go back to the Cloud Console you used during the provisioning exercise and open the Instances screen. Click the **action menu** and select **Scale Service**.
+-   Go back to the Cloud Console you used during the provisioning exercise and open the Instances screen. From the **action menu**, click **Scale Up/Down**.
 
 ![](./images/600/Picture300-2.jpg)
 
@@ -39,7 +39,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
     -   **Storage capacity:** 2 TB
 
-Click **Update** after filling in the form, this will take you the Instances screen.
+Click **Update** after filling in the form. This will take you to the Instances screen.
 
 ![](./images/600/Picture300-3.jpg)
 
