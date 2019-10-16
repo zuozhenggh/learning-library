@@ -109,9 +109,9 @@ Without requiring any additional authentication.
 11. Click **Copy** to copy the link
 
 **NOTE:** The link must be copied and saved once the window is closed the link can not be retrieved again. 
+![]( img/PreAuth2.png)
 
 12. Click **Close**
-![]( img/PreAuth2.png)
 
 13. Open a new browser window and paste Pre-Authenticated link. 
 ![]( img/OBJECT-STORAGE011.PNG)
