@@ -68,6 +68,9 @@ Your public key has been saved in /c/Users/username/.ssh/id\_rsa.pub.
 ```
 **Note**: In Gitbash, C:\\Users\\username\\ is shown as /c/Users/username/
 
+**NOTE**
+These instructions will create a minimally secure ssh key for you (***and one well suited for this tutorial***). For production environments we recommend an SSH-2 RSA key with 4096 bits and a passphrase. For example:
+```ssh-keygen -t rsa -b 4096 -N "<myPassphrase>" -f ~/keys/id_rsa -C "This is my comment"```
 
 ## Practice 2: Creating a Web Server on a Compute Instance 
 
@@ -80,30 +83,23 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 1. Navigate to the **Compute** tab and click **Create Instance**. We will launch a VM instance for this lab.
 
-2. The launch browser will automatically fill in the details for launching a single Oracle Linux. Please check each field for better understanding. 
+2. The Create Compute Instance wizard will launch. Set the name of the server to *Web-Server*. Click on the *Show Shape, Networking, Storage Options* link to expand that area of the page.
+![](media/Create1.png)
 
- - **Name:** Name your instance
- - **Availability Domain:** Choose AD1, AD2 or AD3
- - **Image Operating System:** Oracle Linux 7.6
- - **Shape type** : Virtual Machine
- - **Shape:** Virtual Machine - VM.Standard2.1
- - **Boot Volume size:** Leave the default
- - **SSH keys:** Attach the SSH .pub key created on Practice-1
- - **Networking:** 
-   - **VCN Name:** VCN you created on VCN HOL
-   - **Subnet:** Any subnet among the three ADs
+3. Most of the defaults are perfect for our purposes. However, you will need to scroll down to the Configure Networking area of the page and select the *Assign a public IP address* option.
+![](media/Create2.png)
 
-![](media/image8.png)
+***NOTE:*** *You need a public IP address so that you can SSH into the running instance later in this lab.*
 
-![](media/image9.png)
+4. Scroll down to the SSH area of the page. Choose the *id_rsa.pub* SSH key that you created earlier in this lab. Press the *Create* button to create your instance.
 
-Launching an instance is simple and intuitive with few options to select. Provisioning of the compute instance will complete in less than a minute and the instance state will change from provisioning to running.
+Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute and the instance state will change from provisioning to running.
 
-3. Once the instance state changes to Running, you can SSH to the Public IP address of the instance.
+5. Once the instance state changes to Running, you can SSH to the Public IP address of the instance.
     
-![](media/image10.png)
+![](media/Create3.png)
 
-4. To connect to the instance, you can use `Terminal` if you are using MAC or `Gitbash` if you are using Windows. On your terminal or gitbash enter the following command:
+6. To connect to the instance, you can use `Terminal` if you are using MAC or `Gitbash` if you are using Windows. On your terminal or gitbash enter the following command:
 
 **Note:** For Oracle Linux VMs, the default username is **opc**
 ```
@@ -147,20 +143,24 @@ If you have a different path for your SSH key enter the following:
 
 **NOTE:** Your browser will not return anything because port 80 was not opened into the Security Lists
 
-7. Click on **Virtual Cloud Network** and then the VCN you created for this practice. Now click on **Security Lists** on the left navigation bar for the VCN. 
+7. Using the menu, click on **Virtual Cloud Network** and then the VCN you created for this practice. 
+![](media/vcn1.png)
 
-8. Click on the **Default Security List**. Here you need to open port 80. Click on **Edit All Rules**.
+8. Now click on **Security Lists** on the left navigation bar for the VCN.
+![](media/vcn2.png)
 
-9. Click on **+ Another Ingress Rule** and add the following values as shown below:
+8. Click on the **Default Security List**. 
+
+9. Here you need to open port 80. Click on **+ Another Ingress Rule** and add the following values as shown below:
 
 - **Source Type:** CIDR
 - **Source CIDR**: 0.0.0.0/0
 - **IP Protocol:** TCP
 - **Source Port Range:** All
 - **Destination Port Range:** 80
-- Click on **Save Security List Rules** at the bottom.
+- Click on **Add Ingress Rules** at the bottom.
 
-![](media/image12.png)
+![](media/addIngress1.png)
 
 10. Navigate to `http://<public_ip_address>` (the IP address of the Linux VM) in your browser. And now you should see the index page of the webserver we created above.
 
