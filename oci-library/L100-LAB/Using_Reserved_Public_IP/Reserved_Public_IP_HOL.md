@@ -140,7 +140,7 @@ ssh opc@<your-reserved-IP>
  
 2. Verify *opc@instancerip1* appears on the prompt
 
-***We successfully ssh into the compute instance using the reserved public IP. Next we will use the same Public IP and assign it to a different Compute instance***
+***We successfully connected to the compute instance using ssh and the reserved public IP. Next we will use the same Public IP and assign it to a different Compute instance***
 
 ## Practice 4: Un assign Reserved Public IP
 
