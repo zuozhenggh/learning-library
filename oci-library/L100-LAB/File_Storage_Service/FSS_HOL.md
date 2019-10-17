@@ -102,7 +102,7 @@ You can create a shared file system in the cloud using the File Storage service.
 5. Under **Mount Target Information** click on **Edit Details**
     ![]( img/create_fs3.png)
 
-6. Rnter the following:
+6. Enter the following:
 
    - **Name:** FSS-Mount
    - **Virtual Cloud Network:** Select your VCN
@@ -110,7 +110,7 @@ You can create a shared file system in the cloud using the File Storage service.
   
     ![]( img/create_fs4.png)
 
-7. Click the **Create** button:
+7. Click the **Create** button. You will see the Details screen for your new file storage.
 
     ![]( img/image006.png)
 
@@ -128,7 +128,7 @@ Users of Ubuntu and Linux operating systems can use the command line to connect 
 2. You can see the correct mount commands for your file system by clicking on the file system you just created:
 ![]( img/fs1.png)
 
-3. Then click on the sotrage link
+3. Then click on the storage link:
 ![]( img/fs2.png)
 
 4. Now you can click on the **Mount Commands** button to get the literal commands you need to run in a terminal window on your compute instance:
@@ -136,27 +136,5 @@ Users of Ubuntu and Linux operating systems can use the command line to connect 
 
 5. Open a terminal window to your compute instrance and copy and paste each of the commands in order.
 ![]( img/mount1.png)
-
-2. Install NFS client by typing the following:
-
-    ```
-    # sudo yum install nfs-utils
-    ```
-3. Create a mount point by typing the following:
-
-    ```
-    # sudo mkdir -p /mnt/FSS-Storage
-    ```
-
-4. Mount the file system by typing the following:
-
-    **Note** Replace 10.x.x.x: with the local subnet IP address assigned to your mount target. The export path is the path to the file system (relative to the mount target’s IP address or hostname). If you did not specify a path when you created the mount target, then 10.x.x.x:/ represents the full extent of the mount target.
- 
-    ``` 
-    # sudo mount 10.x.x.x.x:/ /mnt/FSS-Storage  
-    # sudo mount 10.0.0.3:/ /mnt/FSS-Storage
-    ```
-
-    ![]( img/image007.png)
 
     **Note:** You can mount FSS File System in multiples nodes in different Availability Domains at the same time.
