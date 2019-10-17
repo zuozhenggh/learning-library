@@ -100,7 +100,7 @@ __Note:__ You can also directly access your Autonomous Data Warehouse service in
   - __Serverless__ - For this lab, choose __Serverless__ as the deployment type.
   - __Dedicated Infrastructure__ - Alternately, you could have chosen Dedicated Infrastructure as the workload type.
 
-  ![](./images/100/Picture100-26_deployment_type.png)
+ ![](./images/100/Picture100-26_deployment_type.png)
 
 - Configure the database:
 
