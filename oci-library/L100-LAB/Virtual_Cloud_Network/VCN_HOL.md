@@ -20,7 +20,7 @@ When you work with Oracle Cloud Infrastructure, one of the first steps is to set
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) 
   - To sign in to the Console, you need the following:
   -  Tenant, User name and Password
-  -  URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
+  -  URL for the Console: [https://cloud.oracle.com/](https://cloud.oracle.com/)
   -  Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11 
 
 ## Practice 1: Create a Virtual Cloud Network
