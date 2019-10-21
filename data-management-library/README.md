@@ -35,7 +35,7 @@ An Oracle Autonomous Database 2019 Specialist has demonstrated the knowledge req
 - Use Oracle Data Visualization Desktop (DVD) with ADW
 - Use Oracle Data Integration Platform Cloud (DIPC) with ADW
 
- **[Click here to launch the lab](autonomous-data-warehouse/journey4-adwc)**
+ **[Click here to launch the lab](autonomous-database/autonomous-data-warehouse)**
 
  ---
 
@@ -60,7 +60,7 @@ An Oracle Autonomous Database 2019 Specialist has demonstrated the knowledge req
 - Setup live migration of business critical databases using Oracle Goldengate replication
 
  **[Click here to launch the lab](autonomous-transaction-processing/dedicated)**
- 
+
  ---
 
  ### Security
@@ -68,9 +68,3 @@ An Oracle Autonomous Database 2019 Specialist has demonstrated the knowledge req
 Workshop Goals:
 
 - Coming soon
-
-
-
-
-
-
