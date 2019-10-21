@@ -49,6 +49,7 @@ Click **Update** after filling in the form. This will take you to the Instances 
 
 ![](./images/600/Picture300-6.jpg)
 
+
 #### **STEP 2: Performance and concurrency benefits of dynamic scaling**
 
 -   <a href="https://raw.githubusercontent.com/millerhoo/journey4-adwc/master/workshops/journey4-adwc/images/ADWC%20HOL%20-%20Scaling.mp4" target="_blank">Click here</a> to watch a demo of the performance impact of scaling up your instance. In the demo you will see that scaling up provides more concurrency for your users.
