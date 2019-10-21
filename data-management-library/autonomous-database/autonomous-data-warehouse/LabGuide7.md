@@ -47,7 +47,7 @@ Click **Update** after filling in the form. This will take you to the Instances 
 
 -   **Refresh** the page to see the result of the scaled operation.
 
-![](./images/600/Picture300-6.jpg)
+![](./images/600/Picture300-6.png)
 
 
 #### **STEP 2: Performance and concurrency benefits of dynamic scaling**
