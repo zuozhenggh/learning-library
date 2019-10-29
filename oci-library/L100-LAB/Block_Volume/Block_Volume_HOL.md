@@ -30,7 +30,7 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
 1. Navigate to the Menu and click on **Block Storage**.
 
-2. In Bock Volume service, click on **Create Block Volume** and provide the following details:
+2. In Block Volume service, click on **Create Block Volume** and provide the following details:
 
    - **Name:** BV-DEMO
    - **Compartment:** Demo

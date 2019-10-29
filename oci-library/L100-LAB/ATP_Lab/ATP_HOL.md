@@ -38,7 +38,7 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
 ## Practice-1: Sign in to OCI Console and create VCN
 
-**Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
+> **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
 1. Sign in using your tenant name, user name and password.
 2. Once signed select the compartment you have permissions on the left part of the screen
@@ -51,7 +51,7 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
    - Scroll down and click the **Create Virtual Cloud Network** button.
    - Click **Close**
   
-  **NOTE:** This will create a complete VCN with 3 subnets and the required security lists to allow access to your instance using ssh.
+  > **NOTE:** This will create a complete VCN with 3 subnets and the required security lists to allow access to your instance using ssh.
 
 ## Practice 2: Create Compute instance and install Swing Bench
 
@@ -73,15 +73,15 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
    - **Add SSH Keys:** Browse or enter the content of your public SSH. Feel free to reuse one (*id_rsa.pu*)that you have created earlier in this set of labs.
    - Click **Create**
 
-**NOTE:** If 'Service limit' error is displayed choose a different shape such as VM.Standard.E2.2 OR VM.Standard2.2
+> **NOTE:** If 'Service limit' error is displayed choose a different shape such as VM.Standard.E2.2 OR VM.Standard2.2
 
 3. Wait for Instance to be in **Running** state. Then access your instance using ssh:
 
     `ssh –i <private_ssh_key> opc@<Public_IP_Address>`
 
-    **NOTE:** User name is opc
+    > **NOTE:** User name is opc
 
-    **HINT:** If ‘Permission denied error’ is seen, ensure you are using ‘-i’ in the ssh command
+    > **HINT:** If ‘Permission denied error’ is seen, ensure you are using ‘-i’ in the ssh command
 
     For example:
     `ssh -i ~/.ssh/id_rsa  opc@192.168.0.0`
@@ -125,7 +125,7 @@ instance created earlier.
    - **Storage(TB):** 1
    - **Password:** Provide a password (e.g Oracle098Ax12w) 
 
-   **NOTE:** *Be sure to write this down smewhere! Better yet, for the puroses of this lab simply ue te provided password of Oracle098Ax12w so you can copy and paste most commands directly.*
+   > **NOTE:** *Be sure to write this down smewhere! Better yet, for the puroses of this lab simply ue te provided password of Oracle098Ax12w so you can copy and paste most commands directly.*
    - **Confirm Password:** Provide the same password
    - **License Type:** Choose **License Included**
 
@@ -133,11 +133,11 @@ instance created earlier.
 
    -  Click Create **Autonomous Database**
 
-**Note:** : It may take several minutes to provision your instance. This would be a good time for a quick break if you are so inclined.
+> **Note:** : It may take several minutes to provision your instance. This would be a good time for a quick break if you are so inclined.
 
 3. Once Database is in running state, click its Name. In Database details window click **Service Console** 
 
-    **NOTE:** If pop up blocker appears then click 'Allow' **
+    > **NOTE:** If pop up blocker appears then click 'Allow' **
 
     ![](img/atp1.png)
 
@@ -145,7 +145,7 @@ instance created earlier.
 
 5. Click the **DB Connection** button and then **Download Client Credentials (Wallet)**. In pop up window provide a password. This can be the same password as one used to create the ATP instance and click **Download**. This will download the credentials file that will be used to connect to this Database instance from the compute instance created eaelier. Save the zip file.
 
-    **NOTE:** The file is generally downloaded in Downloads directory
+    > **NOTE:** The file is generally downloaded in Downloads directory
 
     ![](img/atp04.png)
 ß
@@ -165,7 +165,7 @@ instance created earlier.
 
     `put Wallet_MyATP.zip`
 
-    **NOTE:** Usually the file name starts with 'Wallet'. Verify the file transfer completed
+    > **NOTE:** Usually the file name starts with 'Wallet'. Verify the file transfer completed
 
 10. Step 9. Switch to ssh session to the public compute instance. Enter command,
  
@@ -185,7 +185,7 @@ instance created earlier.
 
     `./oewizard -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium  -ts DATA -dbap <DB_PASSWORD> -dba ADMIN -u soe -p <DB_PASSWORD> -async_off -scale 0.1 -hashpart -create -cl -v`
 
-    **NOTE:** In below example,<CREDENTIAL_ZIP_FILE> is 'Wallet_MyATP.zip', <DB_NAME> is MyATP, <DB_PASSWORD> is *Oracle098Ax12w*
+    > **NOTE:** In below example,<CREDENTIAL_ZIP_FILE> is 'Wallet_MyATP.zip', <DB_NAME> is MyATP, <DB_PASSWORD> is *Oracle098Ax12w*
 
     For example, if you have followed this lab closely, your command would be:
 
