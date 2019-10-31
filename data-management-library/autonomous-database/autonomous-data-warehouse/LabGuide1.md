@@ -107,7 +107,8 @@ __Note:__ You can also directly access your Autonomous Data Warehouse service in
  - __Always Free__ - For this lab, do not select this option.
  - __CPU core count__ - Number of CPUs for your service. For this lab, specify __2 CPUs__.
  - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.
- - __Auto Scaling__ - For this lab, __do not__ specify auto scaling.
+ - __Auto Scaling__ - For this lab, __deselect__ auto scaling.
+ - __New Database Preview__ - If a checkbox is available to preview a new database version, do __not__ select it.
 
   ![](./images/100/Picture100-26c.png)
 
@@ -151,7 +152,10 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 ![](./images/100/Picture100-34.png)
 
--   Under Download a Connection Wallet, click **Download**.
+-  Use the Database Connection dialog to download  client credentials.
+ - Select a wallet type. For this lab, select **Instance Wallet**. This wallet type is for a single database only; this provides a database-specific wallet.
+  - **Note:** Oracle recommends you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.
+ - Click **Download Wallet**.
 
 ![](./images/100/Picture100-15.png)
 
