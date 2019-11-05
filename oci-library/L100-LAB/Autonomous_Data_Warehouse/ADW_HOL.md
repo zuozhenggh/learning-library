@@ -84,7 +84,7 @@ The home page gives you quick links to the documentation and to Oracle Support.
 
 ![]( img/create2.png)
 
-**.4** Once the ADW database is provisioned, click on the database name to get on details page:
+**4.** Once the ADW database is provisioned, click on the database name to get on details page:
 
 ![]( img/ADWTEST1.png)
 
@@ -105,7 +105,6 @@ Oracle connection wallet are downloaded from the Autonomous Data Warehouse Cloud
 **4.** You must protect this file to prevent unauthorized database access. Therefore, you need to create a password to protect this file. For this exercise enter the same password you used on Practice-3 *OracleAxt8Qr* and click **Download** and save it to your *Downloads* folder
 
 ![]( img/image013.png)
-
 
 ## Practice 5: Create a bucket in Object Storage and upload the text file
 
