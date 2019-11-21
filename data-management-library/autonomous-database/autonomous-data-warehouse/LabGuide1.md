@@ -123,6 +123,10 @@ __Note:__ You can also directly access your Autonomous Data Warehouse service in
  - Re-enter the password to confirm it. Make a note of this password.
 
    ![](./images/100/Picture100-26d.png)
+- Choose network access:
+ - For this lab, do not select this option. By default, secure connections are allowed from all IP addresses. You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
+
+   ![](./images/100/Picture100-26e.png)
 
 - Choose a license type. For this lab, choose __License Included__. The two license types are:
 
