@@ -1,4 +1,4 @@
-#  Autonomous Transaction Processing
+# Autonomous Transaction Processing
   
 ## Table of Contents
 
