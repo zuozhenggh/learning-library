@@ -6,7 +6,7 @@
 
 [Pre-Requisites](#pre-requisites)
 
-[Practice 1: Signing in to the Console ](#practice-1-signing-in-to-the-console)
+[Practice 1: Signing in to the Console](#practice-1-signing-in-to-the-console)
 
 [Practice 2: Managing Users, Groups and Policies to Control Access](#practice-2-managing-users-groups-and-policies-to-control-access)
 
@@ -18,17 +18,15 @@ Oracle Cloud Infrastructure Identity and Access Management (IAM) Service lets yo
 
 ## Pre-Requisites
 
-- Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) 
+- Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:
-  -  Tenant, User name and Password
-  -  URL for the Console: [https://cloud.oracle.com/](https://cloud.oracle.com/)
-  -  Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11 
+  - Tenant, User name and Password
+  - URL for the Console: [https://cloud.oracle.com/](https://cloud.oracle.com/)
+  - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
 
+## Practice-1: Signing in to the Console
 
-
-## Practice-1: Signing in to the Console 
-
-**Overview**
+### Console Overview
 
 In this practice, you sign in to the Oracle Cloud Infrastructure console using your credentials.
 
@@ -36,41 +34,39 @@ In this practice, you sign in to the Oracle Cloud Infrastructure console using y
 
 2. Click on the portrait icon in the top-right section of the browser window, then click on the **Sign in to Cloud** link.
 
-   ![]( img/img001.png)
+   ![Main Sign-in age]( img/img001.png)
 
 3. Enter the name of your tenancy, then click on the **Next** button.
 
-   ![]( img/img002.png)
+   ![Enter tenancy name]( img/img002.png)
 
 4. Oracle Cloud Infrastructure is integrated with Identity Cloud Services, you will see a screen validating your Identity Provider. Enter your username and password. Click **Sign In**.
 
-   ![]( img/img003.png)
-
+   ![Usernameand passwor dfields]( img/img003.png)
 
 5. When you sign in to the Console, the dashboard is displayed.
 
-   ![]( img/img004.png)
-
+   ![Dashboard view]( img/img004.png)
 
 ## Practice-2: Creating Compartments
 
-### Overview
+### Compartments Overview
 
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create subcompartments to help manage your resources more efficiently.
 
 1. From the menu, select Identity and Compartments. Click on the blue **Create Compartment** button to create a subcompartment.
 
-  ![]( img/img005.png)
+   ![Create a cmpartment]( img/img005.png)
 
 2. Name the compartment **Demo** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment** button when ready.
 
-![]( img/img006.png)
+   ![Create compartment]( img/img006.png)
 
 3. You have just created a compartment for all of your work in this Test Drive.
 
 ## Practice-3: Managing Users, Groups and Policies to Control Access
 
-#### Overview
+### Security Overview
 
 A user's permissions to access services comes from the _groups_ to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
 
@@ -86,36 +82,36 @@ We'll create users, groups, and policies to understand the concept.
    - **Description:** Enter a description (for example, “New group for oci users”).
    - Click **Submit**.
 
-   ![]( img/image005.png)
+   ![Create Group]( img/image005.png)
 
 4. Your new group is displayed.
 
-   ![]( img/image006.png)
+   ![New group is shown]( img/image006.png)
 
-4. Now, let’s **create a policy** that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to compartment **Demo** to members or group oci-group:
+5. Now, let’s **create a policy** that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to compartment **Demo** to members or group oci-group:
 
    a) On the **Menu** click **Identity**, and then click **Policies**.
 
    b) On the left side, select **Demo** compartment.
-   ![]( img/img007.png)
+   ![Select ***Demo** compartment]( img/img007.png)
 
    c) After you have selected the **Demo** compartment, click **Create Policy**.
 
-   d) Enter a unique **Name** for your policy (For example, "Policy-for-oci-group") Note that the name can NOT contain spaces.
+   d) Enter a unique **Name** for your policy (For example, "Policy-for-oci-group") **Note that the name can NOT contain spaces.**
 
    e) Enter a **Description** (for example, "Policy for OCI Group").
 
    f) Enter the following **Statement**:
 
-   ```
+   ```shell
    Allow group oci-group to manage all-resources in compartment Demo
    ```
 
    g) Click **Create**.
 
-   ![]( img/image007.png)
+   ![Create]( img/image007.png)
 
-5. Create a New User
+6. Create a New User
 
    a) On the **Menu** click **Identity**, and then click **Users**.
 
@@ -123,37 +119,37 @@ We'll create users, groups, and policies to understand the concept.
 
    c) In the **New User** dialog box, enter the following:
 
-   - **Name:** Enter a unique name or email address for the new user. I recommend using a personal email address to which you have access (Gmail, Yahoo, etc) For Example: yourname@domain.com
-    _This value is the user's login name for the Console and it must be unique across all other users in your tenancy._
-   - **Description:** Enter a description. For example, New oci user.
+      - **Name:** Enter a unique name or email address for the new user. I recommend using a personal email address to which you have access (Gmail, Yahoo, etc) For Example: yourname@domain.com
+      _This value is the user's login name for the Console and it must be unique across all other users in your tenancy._
+      - **Description:** Enter a description. For example, New oci user.
 
-      ![]( img/img008.png)
-    
+      ![New user form]( img/img008.png)
+
    d) Click **Create**.
 
-6. Set a Temporary Password for the newly created User
+7. Set a Temporary Password for the newly created User
 
    a) From the list of users, click on **the user that you created** to display its details.
 
    b) Click **Create/Reset Password**.  
-   
-   ![]( img/image009.png)
+
+      ![Reset password]( img/image009.png)
 
    c) In the dialog, click **Create/Reset Password**.
 
-   ![]( img/image011.png)
+      ![Reset password]( img/image011.png)
 
    d) The new one-time password is displayed.
 
-   ![]( img/image012.png)
+      ![Enter a password]( img/image012.png)
 
    e) Click the **Copy** link and then click **Close**. Make sure to copy this password to your notepad.
 
    f) Click **Sign Out** from the user menu and log out of the admin user account.
 
-   ![]( img/image013.png)
+      ![Sign out]( img/image013.png)
 
-7. Sign in as the new user using a different web browser window.
+8. Sign in as the new user using a different web browser window.
 
    a) Go to [https://cloud.oracle.com](https://cloud.oracle.com).
 
@@ -163,46 +159,42 @@ We'll create users, groups, and policies to understand the concept.
 
    d) Enter the password that you copied.
 
-   ![]( img/image014.png)
+      ![Enter your password]( img/image014.png)
 
    **Note:** _Since this is the first-time sign-in, the user will be prompted to change the temporary password, as shown in the screen capture._
 
    e) Set the new password to _Welc0me2*bmcs_. Click **Save New Password**.
+      ![Set the new password]( img/image015.png)
 
-   ![]( img/image015.png)
-
-
-8. Verify user permissions
+9. Verify user permissions
 
    a) Go to the **Menu** click **Compute** and **Instances**.
 
    b) Try to select any compartment from the left menu.
 
    c) The message “**You don’t have access to this compartment**” appears. This is normal as you did not add the user to the group where you associated the policy.
-
-   ![]( img/image016.png)
+      ![Error message can be ignored]( img/image016.png)
 
    d) Sign out of the Console.
 
-9. Add User to a Group
+10. Add User to a Group
 
-   a) Sign in back with the admin account using the Single Sign-on (SSO) option. Click on **Menu** --> **Identity** --> **Users**.
+      a) Sign in back with the admin account using the Single Sign-on (SSO) option. Click on **Menu** --> **Identity** --> **Users**.
 
-   b) From the **Users** list, click your user (for example, user01)  to go to the user details page.
+      b) From the **Users** list, click your user (for example, user01)  to go to the user details page.
 
-   c) Under the **Resources** menu on the left, click **Groups.**
+      c) Under the **Resources** menu on the left, click **Groups.**
 
-   d) Click **Add User to Group**.
+      d) Click **Add User to Group**.
 
-   e) From the **GROUPS** drop-down list, select the **oci-group** that you created.
+      e) From the **GROUPS** drop-down list, select the **oci-group** that you created.
 
-   f) Click **Add**.
+      f) Click **Add**.
+         ![Press the Add button](img/image017.png)
 
-   ![]( img/image017.png)
+      g) Sign out.
 
-   g) Sign out.
-
-10. Verify user permissions when a user belongs to a specific group
+11. Verify user permissions when a user belongs to a specific group
 
       a) Sign in with the local user created
 
@@ -210,7 +202,7 @@ We'll create users, groups, and policies to understand the concept.
 
       c) Select compartment **Demo** from the list of compartments on the left.
 
-      ![]( img/image018.png)
+      ![Select ***Demo***]( img/image018.png)
 
       d) There is no message related to permissions and you are allowed to create new instances
 
