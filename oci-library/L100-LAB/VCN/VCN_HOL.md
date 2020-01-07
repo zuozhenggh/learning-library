@@ -3,28 +3,25 @@
 ## Table of Contents
 
 [Overview](#overview)
-
 [Pre-Requisites](#pre-requisites)
-
 [Create Your VCN](#create-your-vcn)
-
 [Summary](#summary)
 
 **Note:** *Some of the UIs might look a little different than the screen shots included in the instructions, but you can still use the instructions to complete the hands-on labs.*
 
 ## Overview
 
-Oracle Cloud Infrastructure Compute lets you create multiple Virtual Cloud Networs (VCNs). These VCNs will contain the security lists, cmpute nstances, load balancers and many other types of network assets.
+Oracle Cloud Infrastructure Compute lets you create multiple Virtual Cloud Networks (VCNs). These VCNs will contain the security lists, compute instances, load balancers and many other types of network assets.
 
-Be sure to review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm) to gina full understanding of the netwrk components and their relationships.
+Be sure to review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm) to gain a full understanding of the network components and their relationships.
 
 ## Pre-Requisites
 
-- Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
-- To sign in to the Console, you need the following:
-  - Tenant, User name and Password
-  - URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
-  - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
+To sign in to the Console, you need the following:
+
+- Tenant, User name and Password
+- URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
+- Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11. ***It does not support the Edge browser***.
 
 ## Create Your VCN
 
@@ -42,8 +39,8 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     |                  **Field**              |    **Vaue**  |
     |----------------------------------------|:------------:|
-    |VCN NAME |   OCIHOLVCN (screenshot is different)   |
-    |COMPARTMENT |  Choose the ***Demo*** cmpartment you created in the [Identity Lab](../Identity_Access_Management/IAM_HOL.md)
+    |VCN NAME |OCI_HOL_VCN|
+    |COMPARTMENT |  Choose the ***Demo*** compartment you created in the [Identity Lab](../Identity_Access_Management/IAM_HOL.md)
     |VCN CIDR BLOCK|10.0.0.0/16|
     |PUBLIC SUNBET CIDR BLOCK|10.0.2.0/24|
     |PRIVATE SUBNET CIDR BLOCK|10.0.1.0/24
@@ -53,13 +50,16 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     ![Create a VCN Configuration](images/setupVCN3.png)
 
-4. On the “Review and Create” page, click on the ![Create button](images/createButton.png) button.
+4. Press the **Next** button at the bottom of the screen.
 
-5. On the “Created Virtual Cloud Network” page wait until you see the following graphic.
+5. Review your settings to be sure they are correct.
+    ![Review CV Configuration](images/setupVCN4.png)
 
-    ![Created Notification](images/createNotice.png)
+6. Press the **Create** button to create the VCN. I will take a moment to create the VCN and a progress screen will keep you apprised of the workflow.
 
-    Then click on ![View Virtual Cloud Netowrk button](images/viewVCNButton.png)
+    ![Workflow](images/workflow.png)
+
+7. Once you see that the creation is complete (see previous screenshot), click on the **View Virtual Cloud Network** button.
 
 ## Summary
 
