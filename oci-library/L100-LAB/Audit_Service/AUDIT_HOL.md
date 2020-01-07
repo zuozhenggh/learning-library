@@ -22,11 +22,11 @@ The purpose of this lab is to give you an overview of the Audit Service and an e
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
-**Before You Begin**
+   **Before You Begin**
 
 - We recommend using Chrome or Edge as the broswer. **Also set your browser zoom to 80%**
 
-**Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
+**Note:** The OCI UI is frequently updated thus some screenshots in the instructions might be different than actual UI
 
 Ensure you have below information available:
 
@@ -40,49 +40,47 @@ Ensure you have below information available:
 
 3. From the OCI Services menu,click **Object Storage** then **Create Bucket**
 
-**NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
-![]( img/AUDIT001.PNG)
-![]( img/AUDIT002.PNG)
+   **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+   ![Audit 1]( img/AUDIT001.PNG)
+   ![Audit 2]( img/AUDIT002.PNG)
 
 4. Fill out the dialog box:
-- **Bucket Name:** Provide a name (Test-Bucket in this lab)
-- **Storage Tier:**  STANDARD 
+
+   - **Bucket Name:** Provide a name (Test-Bucket in this lab)
+   - **Storage Tier:**  STANDARD
 
 5. Click **Create Bucket**
-![]( img/AUDIT003.PNG)
+   ![Audit 3]( img/AUDIT003.PNG)
 
 ## Practice-2: Upload Object and Check Audit logs
 
 1. Open a terminal window.
 
-2. Change directory to your Downloads folder Enter command: 
+2. Change directory to your Downloads folder Enter command:
 **Mac or Lunix**
    ```cd ~/Downloads```
 **Windows**
    ```cd /c/Users/PhotonUser/Downloads/**```
 
 3. Create a sample file, Enter command:
-```touch samplefile```
+    ```touch samplefile```
 
-This should create a file by the name "samplefile" in the Downloads folder
+    This should create a file by the name "samplefile" in the Downloads folder
 
 4. Switch to OCI window and click the Bucket Name.
 
 5. Bucket detail window should be visible. Click **Upload Object**
 
-![]( img/AUDIT007.PNG)
+    ![Test Bucket]( img/AUDIT007.PNG)
 
 6. Click on the **select files** link. Navigate to the **samplefile** that you created a moment ago.
 
 7. Select the file, then click **Upload Object** in the Dialog box.
 
 8. Using the main OCI menu, select **Governance -> Audit**. Scroll down or type the bucket name in 
-Keyword section. You can choose other options
-such as dates and Request Action Type. For this 
-lab we will leave them as default. Audit logs for the Storage bucket should be visible
+Keyword section. You can choose other options such as dates and Request Action Type. For this lab we will leave them as default. Audit logs for the Storage bucket should be visible
 
-![]( img/AUDIT008.PNG)
-![]( img/AUDIT009.PNG)
+![Menu Governance -> Audit]( img/AUDIT008.PNG)
+![Audit Events]( img/AUDIT009.PNG)
 
-***You have utilized OCI’s Audit service to extract events specific to Storage bucket created. Audit service can be used to monitor operations performed on OCI resources and can assist in trouble 
-shooting your OCI environment***
+***You have utilized OCI’s Audit service to extract events specific to Storage bucket created. Audit service can be used to monitor operations performed on OCI resources and can assist in trouble shooting your OCI environment***
