@@ -35,15 +35,15 @@ Generate SSH keys to be used later while launching an instance.
 1. Generate ssh-keys for your machine if you don’t have one. As long as an id_rsa and id_rsa.pub key pair is present they can be reused. By default these are stored in ~/.ssh folder. Enter the following command if you are using MAC or Linux Desktop:
 
     ```shell
-      # ssh-keygen
+      ssh-keygen
     ```
 
 2. Make sure permissions are restricted, sometimes ssh will fail if private keys have permissive permissions.
 
     ```shell
-        # chmod 0700 ~/.ssh  
-        # chmod 0600 ~/.ssh/id_rsa  
-        # chmod 0644 ~/.ssh/id_rsa.pub
+        chmod 0700 ~/.ssh  
+        chmod 0600 ~/.ssh/id_rsa  
+        chmod 0644 ~/.ssh/id_rsa.pub
     ```
 
 ### FOR WINDOWS
@@ -57,7 +57,7 @@ Generate SSH keys to be used later while launching an instance.
 3. Generate ssh-keys by running this command in Gitbash and hit enter for all steps:
 
 ```shell
-# ssh-keygen  
+ssh-keygen  
 Generating public/private rsa key pair.  
 Enter file in which to save the key
 (/c/Users/username/.ssh/id\_rsa):  
@@ -106,13 +106,13 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     **Note:** For Oracle Linux VMs, the default username is **opc**
 
     ```shell
-    # ssh opc@<public_ip_address>
+    ssh opc@<public_ip_address>
     ```
 
     If you have a different path for your SSH key enter the following:
 
     ```shell
-    # ssh -i <path_to_private_ssh_key> opc@<public_ip_address>
+    ssh -i <path_to_private_ssh_key> opc@<public_ip_address>
     ```
 
 7. For this lab, we are going to install an Apache HTTP Webserver and try to connect to it over the public Internet. SSH into the Linux instance and run following commands:
@@ -122,33 +122,33 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     - Install Apache http
 
       ```shell
-      # sudo yum install httpd -y
+      sudo yum install httpd -y
       ```
 
     - Start the apache server and configure it to start after system reboots
 
       ```shell
-      # sudo apachectl start
-      # sudo systemctl enable httpd
+      sudo apachectl start
+      sudo systemctl enable httpd
       ```
 
     - Run a quick check on apache configurations
 
       ```shell
-      # sudo apachectl configtest
+      sudo apachectl configtest
       ```
 
     - Create firewall rules to allow access to the ports on which the HTTP server listens.
 
       ```shell
-      # sudo firewall-cmd --permanent --zone=public --add-service=http
-      # sudo firewall-cmd --reload
+      sudo firewall-cmd --permanent --zone=public --add-service=http
+      sudo firewall-cmd --reload
       ```
 
     - Create an index file for your webserver
 
       ```shell
-      # sudo bash -c 'echo This is my Web-Server running on Oracle Cloud Infrastructure >> /var/www/html/index.html'
+      sudo bash -c 'echo This is my Web-Server running on Oracle Cloud Infrastructure >> /var/www/html/index.html'
       ```
 
 8. Open your browser and navigate to `http://Public-IPAddress` (the IP address of the Linux VM)
