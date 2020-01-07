@@ -48,7 +48,9 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     Your screen should look similar to the following:
 
-    ![Create a VCN Configuration](images/setupVCN3.png)
+    ![Create a VCN Configuration|Foobar](images/setupVCN3.png)
+    Test2
+    <img src="images/setupVCN3.png width=100>
 
 4. Press the **Next** button at the bottom of the screen.
 
