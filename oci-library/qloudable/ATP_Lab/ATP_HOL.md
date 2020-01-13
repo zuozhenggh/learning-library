@@ -78,35 +78,31 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
-
-3. Select the compartment assigned to you from drop down menu on left part of the screen
-
-
-**NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+2. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Networking QuickStart**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
+**NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
 4. Fill out the dialog box:
 
+- **VCN NAME**: Provide a name
+- **COMPARTMENT**: Ensure your compartment is selected
+- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
+- **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
+- **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
+- Click **Next**
 
-- **Create in Compartment:** Has the correct compartment
+5. Verify all the information and  Click **Create**
 
-- **Name:** Enter easy to remember name
+6. This will create a VCN with followig components.
 
-- **Create Virtual Cloud Network Plus Related Resources:** Select this option.
+**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
 
-- Click **Create Virtual Cloud Network**
-
-- Click **Close**
-
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
-              
+7. Click **View Virtual Cloud Network** to display your VCN details.
+             
 ## Create ssh keys Compute instance and ssh to compute instance
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
@@ -157,22 +153,28 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
 
-7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
+7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute** 
 
-8. Click Create Instance. Fill out the dialog box:
+8. Click **Create Instance**. Fill out the dialog box:
 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
-- **Choose Instance Type:** Select Virtual Machine
-- **Choose Instance Shape:** Select VM shape (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the VCN you created in the previous section. 
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the first Subnet
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
+
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 9. Click **Create**
 
@@ -190,7 +192,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 ```
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE> -L 3000:localhost:3000
 ```
-**NOTE:** User name is opc. This will enable port forwarding on local host which is needed to access Grafana dash board later on
+**NOTE:** User name is opc.
 
 **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command
 
@@ -242,7 +244,7 @@ instance with only 1 OCPU and scale it after generating load test from the compu
 instance created earlier**
 
 
-1. Switch to OCI console, from services menu Click **Autonomous Transaction Processing** under Databse.Click **Create Autonmous Trasnaction Processing Database**. Fill out the dialog box:
+1. Switch to OCI console, from services menu Click **Autonomous Transaction Processing** under Databse.Click **Create Autonomous Database**. Fill out the dialog box:
 
 
 - Workload Type: AUTONOMOUS TRANSACTION PROCESSING
@@ -251,12 +253,13 @@ instance created earlier**
 - DATABASE NAME: Provide a name
 - CPU CORE COUNT: 1
 - STORAGE(TB): 1
+- Auto Scaling: Do NOT check this flag. (This flag can be checked to enable auto scaling though in this lab we will Dynamically scale the CPU using OCI console. This option can be used if user wants to test Auto scaling of CPU)
 - PASSWORD: Provide password per guideline 
 - CONFIRM PASSWORD: Provide same password 
 
 **NOTE:** Do not use &, ), ( in the password due to script limitation that we will execute later.
 
-- LICENSE TYPE: SUBSCRIBE TO NEW DATABASE SOFTWARE LICENSES AND THE DATABASE CLOUD SERVICE
+- LICENSE TYPE: License Included
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_018.PNG" alt="image-alt-text">
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_019.PNG" alt="image-alt-text">
@@ -368,7 +371,7 @@ Then Enter command:
 
 2. Click the name of Autonomous Transaction Processing instance created earlier
 
-3. Click **Scale Up/Down**, in the pop up windowchange CPU CORE COUNT to **4** and Click **Update**. Also observe the Automatic backup that are being performed. Instance will be in 'Scaling in Progress' state for some time
+3. Click **Scale Up/Down**, in the pop up windowchange CPU CORE COUNT to **2** and Click **Update**. Also observe the Automatic backup that are being performed. Instance will be in 'Scaling in Progress' state for some time
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_014.PNG" alt="image-alt-text">
 
