@@ -27,7 +27,7 @@ variable "AD" {
 }
 
 variable "InstanceShape" {
-    default = "VM.Standard.E2.1"
+    default = "VM.Standard2.1"
 }
 
 variable "InstanceImageOCID" {
@@ -85,7 +85,7 @@ data "oci_identity_availability_domains" "ADs" {
 data "oci_core_images" "OL76ImageOCID" {
         compartment_id = "${var.compartment_ocid}"
         operating_system = "Oracle Linux"
-        operating_system_version = "7.6"
+        operating_system_version = "7.7"
         #compatible shape
         shape = "VM.Standard.E2.1"
 }
@@ -181,7 +181,6 @@ resource "oci_core_volume" "TFBlock" {
 resource "oci_core_volume_attachment" "TFBlockAttach" {
     count = "${var.NumInstances * var.NumVolumesPerInstance}"
     attachment_type = "iscsi"
-    compartment_id = "${var.compartment_ocid}"
     instance_id = "${oci_core_instance.TFInstance.*.id[count.index / var.NumVolumesPerInstance]}"
     volume_id = "${oci_core_volume.TFBlock.*.id[count.index]}"
 }
