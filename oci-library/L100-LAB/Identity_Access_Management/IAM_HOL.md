@@ -95,6 +95,8 @@ We'll create users, groups, and policies to understand the concept.
    b) On the left side, select **Demo** compartment.
    ![Select ***Demo** compartment]( img/img007.png)
 
+   > NOTE: You may need to click on the + sigh next to your amin compartment name to  be able to see te subcompartment ***Demo***. If you do, and you still don't see the subcompartment, ***Refresh you browser**. Sometimes your browser caches the comparment infornation and des not update its internal cache.
+
    c) After you have selected the **Demo** compartment, click **Create Policy**.
 
    d) Enter a unique **Name** for your policy (For example, "Policy-for-oci-group") **Note that the name can NOT contain spaces.**
