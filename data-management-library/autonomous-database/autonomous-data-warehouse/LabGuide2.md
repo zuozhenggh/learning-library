@@ -64,7 +64,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 
 <table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
+<tr><td class="td-logo">[![](images/hands_on_labs_tag.png)](#)</td>
 <td class="td-banner">
 ## Great Work - All Done!
 **You are ready to move on to the next lab. You may now close this tab.**
