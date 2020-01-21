@@ -1,10 +1,7 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-
 <!--September 21, 2018-->
-</td>
-<td class="td-banner">
-# Lab 4: Querying Data in External Files
-</td></tr><table>
+
+
+# Querying Data in External Files
 
 
 ## Introduction
@@ -28,7 +25,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 -   Oracle SQL Developer (see [Lab 1](LabGuide1.md) for more specifics on the version of SQL Developer and how to install and configure it).
 
-# Querying External Data
+## Part 1: Querying External Data
 
 #### **STEP 1: Create External Tables with DBMS_CLOUD**
 
@@ -38,7 +35,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
     -   At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable.
 
-    ![](./images/400/snap0014527.jpg)
+    ![](./images/400/snap0014527.jpg " ")
 
     - **Run the script**.
 
@@ -47,13 +44,13 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 #### **STEP 2: Querying External Data**
 
 -   Copy and paste <a href="./scripts/400/query_external_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. We only replaced the original table names &lt;TABLE_NAME&gt; with &lt;TABLE_NAME_EXT&gt; in the sample query.  
-    ![](images/400/Picture400-4.png)
+    ![](images/400/Picture400-4.png " ")
 
 -   **Run the script**. You will now see the same query result as before, from data pulled directly from the Object Store.
 
 
 <table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
+<tr><td class="td-logo">[![](images/hands_on_labs_tag.png)](#)</td>
 <td class="td-banner">
 ## Great Work - All Done!
 **You are ready to move on to the next lab. You may now close this tab.**
