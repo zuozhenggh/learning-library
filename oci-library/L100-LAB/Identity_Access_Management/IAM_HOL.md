@@ -95,7 +95,7 @@ We'll create users, groups, and policies to understand the concept.
    b) On the left side, select **Demo** compartment.
    ![Select ***Demo** compartment]( img/img007.png)
 
-   > NOTE: You may need to click on the + sigh next to your amin compartment name to  be able to see te subcompartment ***Demo***. If you do, and you still don't see the subcompartment, ***Refresh you browser**. Sometimes your browser caches the comparment infornation and des not update its internal cache.
+   > NOTE: You may need to click on the + sign next to your main compartment name to be able to see the subcompartment ***Demo***. If you do, and you still don't see the subcompartment, ***Refresh your browser**. Sometimes your browser caches the comparment information and does not update its internal cache.
 
    c) After you have selected the **Demo** compartment, click **Create Policy**.
 
