@@ -43,7 +43,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 #### **STEP 2: Querying External Data**
 
--   Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet. We only replaced the original table names &lt;TABLE_NAME&gt; with &lt;TABLE_NAME_EXT&gt; in the sample query.  
+-   Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet. We only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
     ![](images/400/Picture400-4.png " ")
 
 -   **Run the script**. You will now see the same query result as before, from data pulled directly from the Object Store.
