@@ -54,7 +54,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 
 #### **STEP 1: Download the Sample Data Files to Your Local Computer**
 
--   For this lab, you will need a handful of data files.  Click <a href="./files/files.zip" target="_blank">here</a> to download a zipfile of the sample source files for you to upload to the object store. Unzip it to a directory on your local computer.
+-   For this lab, you will need a handful of data files.  Click <a href="./files/files.zip" target="_blank">here</a> to download a zip file of the sample source files for you to upload to the object store. Unzip it to a directory on your local computer.
 
 
 #### **STEP 2: Loading Data Using the Data Import Wizard in SQL Developer**
@@ -254,7 +254,7 @@ When you are satisfied with the data preview, click **NEXT**.
 
 *Note:* If you see an object not found error here, your user may not be set up properly to have data access to the object store. Please contact your Cloud Administrator.
 
-  - On the Import Method page, you can click on Load Options to see some of the available options.  For this exercise, leave the options at their defaults. Enter *CHANNELS_CLOUD* as the table name and click **NEXT** to advance to the next page of the wizard.
+  - On the Import Method page, you can click on Load Options to see some of the available options.  For this exercise, leave the options at their defaults. Enter **CHANNELS_CLOUD** as the table name and click **NEXT** to advance to the next page of the wizard.
 
 ![](./images/300/snap0014663.jpg " ")
 
@@ -310,7 +310,7 @@ As an alternative to the wizard-guided data load, you can use the PL/SQL package
     ```
     Notice how this table lists the past and current load operations in your schema.  Any data copy and data validation operation will have backed up records in your Cloud.
 
--   For an example of how to troubleshoot a data load, we will attempt to load a data file with the wrong format (chan_v3_error.dat).  Specifically, the default separator is the | character, but the channels_error.csv file uses a semicolon instead.  To attempt to load bad data, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the **chan\_v3\_error.dat** file. You have copied and saved the URL in the step "Copy the URLs of the Files on Your OCI Object Storage" above. Expect to see see "reject limit" errors when loading your data this time.
+-   For an example of how to troubleshoot a data load, we will attempt to load a data file with the wrong format (chan_v3_error.dat).  Specifically, the default separator is the | character, but the channels_error.csv file uses a semicolon instead.  To attempt to load bad data, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="_blank">this code snippet</a> to a SQL Developer worksheet and run the script as your user in SQL Developer. Specify the URL that points to the **chan\_v3\_error.dat** file. You have copied and saved the URL in the step "Copy the URLs of the Files on Your OCI Object Storage" above. Expect to see "reject limit" errors when loading your data this time.
 
     ![](images/300/LabGuide3-3f756664.jpg " ")
 
@@ -321,9 +321,9 @@ As an alternative to the wizard-guided data load, you can use the PL/SQL package
 
     ![](./images/300/Picture300-22.jpg " ")
 
-A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The logfile_table column shows the name of the table you can query to look at the log of a load operation. The column badfile_table shows the name of the table you can query to look at the rows that got errors during loading.
+A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The logfile\_table column shows the name of the table you can query to look at the log of a load operation. The column badfile_table shows the name of the table you can query to look at the rows that got errors during loading.
 
--   Query the log and bad tables to see detailed information about an individual load. In this example, the names are copy$25_log and copy$25_bad respectively.
+-   Query the log and bad tables to see detailed information about an individual load. In this example, the names are copy$25\_log and copy$25\_bad respectively.
 
     ![](./images/300/Picture300-23.jpg " ")    
 

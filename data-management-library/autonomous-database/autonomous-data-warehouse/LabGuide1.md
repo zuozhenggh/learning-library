@@ -196,7 +196,7 @@ Start SQL Developer and create a connection for your database using the default 
 
     -   **Configuration File:** Enter the full path for the wallet file you downloaded before, or click the **Browse button** to point to the location of the file.
 
-    -   **Service:** There are 3 pre-configured database services for each database. Pick **<*databasename*> high** for this lab. For
+    -   **Service:** There are 3 pre-configured database services for each database. Pick **<*databasename*>\_high** for this lab. For
         example, if the database you created was named adwfinance, select **adwfinance_high** as the service.
 
 *Note* : SQL Developer versions prior to 18.3 ask for a **Keystore Password.** Here, you would enter the password you specified when downloading the wallet from ADW.
