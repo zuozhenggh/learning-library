@@ -1,10 +1,7 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
 
 <!--September 21, 2018-->
-</td>
-<td class="td-banner">
-# Lab 2: Working with Data Warehouse Services and the free Sample Data Sets
-</td></tr><table>
+
+# Working with Data Warehouse Services and the free Sample Data Sets
 
 
 ## Introduction
@@ -26,15 +23,15 @@ This lab will use the HIGH database service to focus on performance. The lab wil
 
 You will run a basic query on the SSB data set which is a 1TB data set with one fact table with around 6 billion rows, and several dimension tables.
 
-To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/issues/new" target="_blank"> here </a> to go to the github oracle repository issue submission form.
+To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/issues/new" target="_blank"> here </a> to go to the GitHub Oracle Repository issue submission form.
 
-## Objectives
+### Objectives
 
 - Learn about the different levels of ADW instance service (HIGH, MEDIUM, LOW)
 - Learn about the Star Schema Benchmark (SSB) and Sales History (SH) sample data sets
 - Run a query on an ADW sample dataset
 
-## Required Artifacts
+### Required Artifacts
 
 -   The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
@@ -45,17 +42,17 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 -   Expand the list of connections and double-click on the admin_high connection.
 
-    ![](images/200/snap0014314.jpg)
+    ![](images/200/snap0014314.jpg " ")
 
 -   Copy and paste <a href="./scripts/200/high_ssb_query.txt" target="_blank">this code snippet</a> to your SQL Developer worksheet. This query will run on the Star Schema Benchmark, one of the two ADW sample data sets that may be accessed from any ADW instance. Take a moment to examine the script. Then click the **Run Script** button to run it. Make sure you click the Run Script button in SQL Developer so that all the rows are displayed on the screen.
 
-![](./images/200/snap0014315.jpg)
+    ![](./images/200/snap0014315.jpg " ")
 
 -   Take a look at the output response from your Autonomous Data Warehouse as well as the response time.
 
 -   When possible, ADW also **caches** the results of a query for you. If you run identical queries more than once, you will notice a much lower response time when your results have been cached.
 
-# Explore additional queries with the Sample Schemas
+### Explore additional queries with the Sample Schemas
 
 
 #### **STEP 2: Experiment with running other sample queries**
@@ -64,7 +61,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 
 <table>
-<tr><td class="td-logo">[![](images/hands_on_labs_tag.png)](#)</td>
+<tr><td class="td-logo">[![](images/hands_on_labs_tag.png " ")](#)</td>
 <td class="td-banner">
 ## Great Work - All Done!
 **You are ready to move on to the next lab. You may now close this tab.**

@@ -164,7 +164,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
 *Note:* The URL can also be constructed as below:
 
-https://objectstorage.<**region_name**>.oraclecloud.com/n/<**namespace_name**>/b/<**bucket_name**>/o
+https://objectstorage.<**region\_name**>.oraclecloud.com/n/<**namespace\_name**>/b/<**bucket\_name**>/o
 
 
 
