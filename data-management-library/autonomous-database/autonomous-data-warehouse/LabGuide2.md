@@ -52,7 +52,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 -   When possible, ADW also **caches** the results of a query for you. If you run identical queries more than once, you will notice a much lower response time when your results have been cached.
 
-### Explore additional queries with the Sample Schemas
+### Explore Additional Queries with the Sample Schemas
 
 
 #### **STEP 2: Experiment with running other sample queries**
