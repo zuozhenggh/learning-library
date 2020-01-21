@@ -10,7 +10,7 @@ In this lab, you will be querying files on the Oracle Cloud Infrastructure Objec
 
 **Note:** Make sure you have completed Lab 3: Loading Data into Your New Autonomous Data Warehouse before you proceed with this lab. You will use the data files on the OCI Object Storage and the credential object from Lab 3 in this lab.
 
-To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/issues/new" target="_blank"> here </a> to go to the github oracle repository issue submission form.
+To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/issues/new" target="\_blank"> here </a> to go to the github oracle repository issue submission form.
 
 ## Objectives
 
@@ -29,7 +29,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 #### **STEP 1: Create External Tables with DBMS_CLOUD**
 
--   While connected as your user in SQL Developer, copy and paste <a href="./scripts/400/create_external_tables.txt" target="_blank">this code snippet</a> to SQL Developer worksheet.  
+-   While connected as your user in SQL Developer, copy and paste <a href="./scripts/400/create_external_tables.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet.  
 
     Use the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create external tables on the files staged in your object store. Note that you are still using the same credential and the URLs of files on OCI Object Storage you used when loading data in the previous lab.
 
@@ -43,7 +43,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 #### **STEP 2: Querying External Data**
 
--   Copy and paste <a href="./scripts/400/query_external_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. We only replaced the original table names &lt;TABLE_NAME&gt; with &lt;TABLE_NAME_EXT&gt; in the sample query.  
+-   Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet. We only replaced the original table names &lt;TABLE_NAME&gt; with &lt;TABLE_NAME_EXT&gt; in the sample query.  
     ![](images/400/Picture400-4.png " ")
 
 -   **Run the script**. You will now see the same query result as before, from data pulled directly from the Object Store.

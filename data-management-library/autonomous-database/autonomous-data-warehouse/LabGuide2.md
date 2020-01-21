@@ -23,7 +23,7 @@ This lab will use the HIGH database service to focus on performance. The lab wil
 
 You will run a basic query on the SSB data set which is a 1TB data set with one fact table with around 6 billion rows, and several dimension tables.
 
-To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/issues/new" target="_blank"> here </a> to go to the GitHub Oracle Repository issue submission form.
+To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/issues/new" target="\_blank"> here </a> to go to the GitHub Oracle Repository issue submission form.
 
 ### Objectives
 
@@ -44,7 +44,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
     ![](images/200/snap0014314.jpg " ")
 
--   Copy and paste <a href="./scripts/200/high_ssb_query.txt" target="_blank">this code snippet</a> to your SQL Developer worksheet. This query will run on the Star Schema Benchmark, one of the two ADW sample data sets that may be accessed from any ADW instance. Take a moment to examine the script. Then click the **Run Script** button to run it. Make sure you click the Run Script button in SQL Developer so that all the rows are displayed on the screen.
+-   Copy and paste <a href="./scripts/200/high_ssb_query.txt" target="\_blank">this code snippet</a> to your SQL Developer worksheet. This query will run on the Star Schema Benchmark, one of the two ADW sample data sets that may be accessed from any ADW instance. Take a moment to examine the script. Then click the **Run Script** button to run it. Make sure you click the Run Script button in SQL Developer so that all the rows are displayed on the screen.
 
     ![](./images/200/snap0014315.jpg " ")
 
@@ -57,7 +57,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 #### **STEP 2: Experiment with running other sample queries**
 
--   You can find more sample queries to run in the ADW documentation.  Try some of the queries from the ADW Documentation <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sample-queries.html" target="_blank">here</a>.
+-   You can find more sample queries to run in the ADW documentation.  Try some of the queries from the ADW Documentation <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sample-queries.html" target="\_blank">here</a>.
 
 
 <table>
