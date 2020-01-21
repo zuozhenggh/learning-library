@@ -42,7 +42,6 @@ Please do these labs in the order they are listed. Starting with the **Identity*
 |[Block Storage](./L100-LAB/Block_Volume/Block_Volume_HOL.md)                        | Foundational |   10 minutes   |
 |[Object Storage](./L100-LAB/Object_Storage/ObjectStorage_HOL.md)                   | Foundational |   5 minutes   |
 |[File Storage](./L100-LAB/File_Storage_Service/FSS_HOL.md)                   | Foundational |   10 minutes   |
-|[Networking](./L100-LAB/Virtual_Cloud_Network/VCN_HOL.md)                        | Foundational |   5 minutes   |
 |[Load Balancer](./L100-LAB/Load_Balancer/load_balancer.md)                 | Foundational |   15 minutes   |  
 |[Reserved Public IP](./L100-LAB/Using_Reserved_Public_IP/Reserved_Public_IP_HOL.md) | Foundational |   5 minutes   |
 
