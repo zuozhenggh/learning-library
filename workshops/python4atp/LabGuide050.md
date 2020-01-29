@@ -54,7 +54,7 @@ You have already applied for and received your Oracle Cloud Free Tier Account.
 
 ### **STEP 3:** Download and Install Terraform zip folder
 
-- Grab the zip file [here](https://github.com/edercervantes/terraform-OCI-for-resource-manager).
+- Grab the zip file [here](https://github.com/edercervantes/terraform-OCI-for-resource-manager) and save it somewhere you can find it later.
 
     ![](images/050/018.png)
 
@@ -75,7 +75,6 @@ You have already applied for and received your Oracle Cloud Free Tier Account.
 
 To run our Terraform folder in the cloud, we will take advantage of OCI resource manager. It is a powerful tool for planning, and executing multiple Terraform jobs, all without having to installing anything locally. In order for resource manager to create resources for you, it needs to know a few key credentials on the OCI console.
 
-
 <!--   ![](images/050/011.png)
 ![](images/050/012.png)
  -->
@@ -94,85 +93,7 @@ To run our Terraform folder in the cloud, we will take advantage of OCI resource
   ![](images/050/031.png)
  -->
 
-### **STEP 5:** Download and Install the OCI CLI (Oracle Cloud Infrastructure Command Line Interface)
-
-Before downloading, make sure you meet the [requirements](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm#Requirements) to install the OCI CLI.
-
-See these instructions for [Download and Install of CLI](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm).
-
-**Make sure to review the whole page before starting.**
-
-- Once you have the CLI installed,
-
-    Run `$ source .bash_profile`
-
-    Run `$ oci setup config`
-
-    Press enter to choose the default location for the config file
-
-    ![](images/050/020.png)
-    
-    Then enter the **User OCID** you saved earlier and press enter.
-
-    ![](images/050/030.png)
-
-    Repeat the process, but with your **tenancy OCID**
-
-    ![](images/050/022.png)
-
-    Enter the [home region](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) you noted earlier.
-
-    ![](images/050/023.png)
-
-    Enter Y to generate a new RSA key pair, then press enter to choose default values for the rest of the options
-
-    ![](images/050/024.png)
-    ![](images/050/025.png)
-
-    Finally, run
-
-    `$ ls ~/.oci`
-    
-    Verify that your files are there
-
-    ![](images/050/026.png)
-
-- Lastly, go into your /User/path/.oci folder and open the oci_api_key_public pem file. We will use this file to create resources as the given user.
-
-    **Note:** This is a hidden folder. If you don't know how to find hidden folders, go [here](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/) for Mac and Linux, or [here](https://support.microsoft.com/en-us/help/14201/windows-show-hidden-files) for Windows.
-
-    ![](images/050/065.png)
-
-    Copy the contents of the file.
-
-    ![](images/050/066.png)
-
-    Go back to the OCI console and click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Governance and Administration** section, select **Identity** and select **Users**.
-
-    ![](images/050/011.png)
-
-    Click on your username. It will usually be in the format **oracleidentitycloudservice/username**.
-
-    ![](images/050/012.png)
-
-    Scroll down and click on `Add Public Key`.
-
-    ![](images/050/061.png)
-
-    Paste in your public pem key and then click `add`.
-
-    ![](images/050/062.png)
-
-    Finally, open the config file in your /User/path/.oci folder.
-
-    ![](images/050/067.png)
-
-    Verify that your `Fingerprint` matches the one in your config file.
-
-    ![](images/050/063.png)
-
-
-### **STEP 6:** Generate your SSH key pair
+ ### **STEP 5:** Generate your SSH key pair
 
 - On Linux or Mac enter this in a command shell.
     
@@ -185,81 +106,79 @@ See these instructions for [Download and Install of CLI](https://docs.cloud.orac
 - On Windows, follow these [instructions](https://www.ssh.com/ssh/putty/windows/puttygen).
     You can call the key whatever you want (the default is easiest).  It will create a private key and a public key. The public key is used when you are prompted for a SSH key when you create services, and the matching private key is used to access those services after creation. (eg: Cloud Developer Image). 
 
+### **STEP 6:** Creating a Resource Manager Stack
+
+Now, we will see the true power of Terraform as opposed to manual creation. By using Terraform, you have a reusable process for creating infrastructure. In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects.
+
+- On the OCI console, click on the hamburger menu and scroll down to **Solutions and Platform**. Hover over **Resource Manager** and click on **Stacks**.
+
+    ![](images/050/020.png)
+
+- Make sure the **Compartment** on the left side says root. If not, then change it to root. Then, click **Create Stack**.
+
+    ![](images/050/030.png)
+
+- Drag and drop the zip file you downloaded earlier into the dashed line box, or click on **Browse** and find it. Then, you can give your Stack a name, like `python4dev_terraform`. You can also give a description if you'd like, but it is not necessary. Make sure you are still in the root compartment, and using Terraform version 0.11.x. Then click next.
+
+    ![](images/050/022.png)
+
+- You will see a lot of variables that will be used. Find SSH_PUBLIC_KEY and paste in the give field your public ssh key. **It must be in text format.**
+
+    ![](images/050/023.png)
+
+- Then, make an AUTONOMOUS_DATABASE_ADMIN_PASSWORD. **The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.**
+
+    ![](images/050/026.png)
+
+- Next, populate the OBJ_STORE_NAMESPACE field with the Object Storage Namespace credential you saved earlier. Then click **next**.
+
+    ![](images/050/024.png)
+
+- Finally, review your variables and make sure everything looks good. Then click **create**.
+
+    ![](images/050/025.png)
+
+<!--     ![](images/050/065.png)
+ -->
+
+<!--     ![](images/050/066.png)
+ -->
+
+<!--     ![](images/050/011.png)
+ -->
+
+<!--     ![](images/050/012.png)
+ -->
+
+<!--     ![](images/050/061.png)
+ -->
+
+<!--     ![](images/050/062.png)
+ -->
+
+<!--     ![](images/050/067.png)
+ -->
+
+<!--     ![](images/050/063.png)
+ -->
+
 	
-### **STEP 7:** Prepare Terraform Script
+### **STEP 7:** Creating OCI resources in Resource Manager
 
-Now, we will get the Terraform code. Here is where we will see the true power of Terraform as opposed to manual creation. By using Terraform, you have a reusable process for creating infrastructure. In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects.
+<!--     ![](images/050/015.png)
+ -->
 
-- First, create a folder on your computer to hold the files. This is to have a workspace for the project.
-    
-    `$ mkdir OCI-terraform && cd OCI-terraform`
+<!--     ![](images/050/016.png)
+ -->
 
-    ![](images/050/015.png)
+<!--     ![](images/050/017.png)
+ -->
 
-- Then, [download](https://github.com/edercervantes/terraform-OCI) zip file for the Terraform script.
+<!--     ![](images/050/027.png)
+ -->
 
-    ![](images/050/016.png)
-
-    Add the zip file to your new folder. Then unpack it.
-
-- Go into the new folder
-    `$ cd terraform-OCI-master`
-
-**Note: For the next steps, you can also use your IDE of choice or any text editor.**
-
-**Open the config file you created earlier when you set up the OCI CLI. This contains most of the info you will need in the following steps.**
-
-- In the folder terraform-OCI-master, open env.vars. Here is where we will use the variables needed to create a connection to OCI.
-
-    `$ nano env.vars`
-
-    ![](images/050/017.png)
-
-- Paste in the information matching the values in your notes and config file, then save and exit.
-
-- Next, open variables.tf
-
-    `$ nano variables.tf`
-
-    Go to the OBJECT_STORAGE section and change the default value for obj_store_namespace to yours. We need this to create the ATP database. Press ctrl + o to save, then press enter. Next, ctrl + x to exit.
-
-    ![](images/050/027.png)
-
-- Finally, open compute.tf
-
-    `$ nano compute.tf`
-
-    Go to the ssh_authorized_keys variable and change the default path to yours. The ssh key will be added to the your Oracle Cloud Developer instance and will allow you to use it's pair to ssh into the instance. Press ctrl + o to save, then press enter. Next, ctrl + x to exit.
-
-    ![](images/050/060.png)
-
-
-### **STEP 8:** Create Resources
-
-- In the terminal, make sure you are inside the terraform-OCI-master folder
-
-- Run the following commands
-
-    `$ terraform init`
-
-    _You have now initialized a working directory containing Terraform configuration files._
-
-    `$ source env.vars`
-    
-    _Now the code has access to the variables needed to set up a connection and create the resources._
-
-    `$ terraform plan`
-    
-    _Terraform has now generated an execution plan._
-
-    `$ terraform apply`
-
-    When prompted, input yes and hit enter.
-
-    _Terraform is applying the changes required to reach the desired state of the configuration._
-
-**Wait a few minutes for all of the resources to be created.**
-
+<!--     ![](images/050/060.png)
+ -->
 
 ### **STEP 9:** Connect to your marketplace developer image
 
@@ -315,7 +234,6 @@ Now, we will get the Terraform code. Here is where we will see the true power of
     Now you have a user interface for your instance.
 
 	![](images/050/041.png)
-
 
 ### **STEP 10:** Download Files Used in this Workshop
 
