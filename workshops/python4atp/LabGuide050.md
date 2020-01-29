@@ -58,26 +58,10 @@ You have already applied for and received your Oracle Cloud Free Tier Account.
 
     ![](images/050/018.png)
 
-<!--     
-
-
-    ![](images/050/018.1.png)
-
-
-    ![](images/050/019.png)
-
-    ![](images/050/057.png)
-
-    ![](images/050/058.png) -->
-
-
 ### **STEP 4:** Get Your Oracle Cloud Credentials
 
 To run our Terraform folder in the cloud, we will take advantage of OCI resource manager. It is a powerful tool for planning, and executing multiple Terraform jobs, all without having to installing anything locally. In order for resource manager to create resources for you, it needs to know a few key credentials on the OCI console.
 
-<!--   ![](images/050/011.png)
-![](images/050/012.png)
- -->
 - Click on the profile icon in the top right. Then click into the tenancy link.
 
   ![](images/050/013.png)
@@ -85,13 +69,6 @@ To run our Terraform folder in the cloud, we will take advantage of OCI resource
 - Copy the **Object Storage Namespace** in your notes.
 
   ![](images/050/014.png)
-
-<!--   ![](images/050/032.png)
-
-  ![](images/050/033.png)
-
-  ![](images/050/031.png)
- -->
 
  ### **STEP 5:** Generate your SSH key pair
 
@@ -137,56 +114,42 @@ Now, we will see the true power of Terraform as opposed to manual creation. By u
 - Finally, review your variables and make sure everything looks good. Then click **create**.
 
     ![](images/050/025.png)
-
-<!--     ![](images/050/065.png)
- -->
-
-<!--     ![](images/050/066.png)
- -->
-
-<!--     ![](images/050/011.png)
- -->
-
-<!--     ![](images/050/012.png)
- -->
-
-<!--     ![](images/050/061.png)
- -->
-
-<!--     ![](images/050/062.png)
- -->
-
-<!--     ![](images/050/067.png)
- -->
-
-<!--     ![](images/050/063.png)
- -->
-
 	
 ### **STEP 7:** Creating OCI resources in Resource Manager
 
-<!--     ![](images/050/015.png)
- -->
+- Now inside of the resource manager, hover over **Terraform Actions** and click on **Plan**.
 
-<!--     ![](images/050/016.png)
- -->
+    ![](images/050/065.png)
 
-<!--     ![](images/050/017.png)
- -->
+-  You can give the plan a name, or keep the default. Then click on **Plan** to begin.
 
-<!--     ![](images/050/027.png)
- -->
+    ![](images/050/066.png)
 
-<!--     ![](images/050/060.png)
- -->
+- Wait for the plan to succeed, then click on **Stack Details**.
+
+    ![](images/050/019.png)
+
+- Again, hover over **Terraform Actions** and click on **Apply**.
+
+    ![](images/050/011.png)
+
+- You can give the apply a name, or keep the default. You can leave the other settings the same. Then click on **Apply**.
+
+    ![](images/050/012.png)
+
+- **The apply may take several minutes. Please be patient.**
+
+    ![](images/050/057.png)
 
 ### **STEP 9:** Connect to your marketplace developer image
 
 [See this link for more info](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984).  This info is copied below.
 
-- Navigate to `Compute` > `Instances` and select your image to identify the IP address
+- Navigate to `Compute` > `Instances` and select your image to identify the IP address.
 
 	![](images/050/034.png)
+
+**If you cannot see your instance, make sure you are in the Demo compartment.**
 
 - Identify the IP address.  You will use this to ssh to the image.
 
@@ -264,3 +227,26 @@ Now, we will see the true power of Terraform as opposed to manual creation. By u
 **This completes the Lab!**
 
 **You are ready to proceed to [Lab 100](LabGuide100.md)**
+
+
+<!--
+
+EXTRA IMAGES IN THE IMAGES->050 FOLDER THAT ARE NO LONGER NEEDED
+
+![](images/050/018.1.png)
+![](images/050/058.png)
+![](images/050/011.png)
+![](images/050/012.png)
+![](images/050/032.png)
+![](images/050/033.png)
+![](images/050/031.png)
+![](images/050/061.png)
+![](images/050/062.png)
+![](images/050/067.png)
+![](images/050/063.png)
+![](images/050/015.png)
+![](images/050/016.png)
+![](images/050/017.png)
+![](images/050/027.png)
+![](images/050/060.png)
+-->
