@@ -75,34 +75,24 @@ You have already applied for and received your Oracle Cloud Free Tier Account.
 
 To run our Terraform folder in the cloud, we will take advantage of OCI resource manager. It is a powerful tool for planning, and executing multiple Terraform jobs, all without having to installing anything locally. In order for resource manager to create resources for you, it needs to know a few key credentials on the OCI console.
 
-- Click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Governance and Administration** section, select **Identity** and select **Users**.
 
-  ![](images/050/011.png)
-
-- Click on your username. It will usually be in the format **oracleidentitycloudservice/username**.
-
-  ![](images/050/012.png)
-
-- Click **Copy** next to OCID, and save this as your **User OCID** in your notes. Next, click on the profile icon in the top right. Then click into the tenancy link.
+<!--   ![](images/050/011.png)
+![](images/050/012.png)
+ -->
+- Click on the profile icon in the top right. Then click into the tenancy link.
 
   ![](images/050/013.png)
 
-- Click **Copy** next to OCID, and save this as your **Tenancy OCID** in your notes. Then, copy the **Object Storage Namespace** in your notes.
+- Copy the **Object Storage Namespace** in your notes.
 
   ![](images/050/014.png)
 
-- Click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Governance and Administration** section, select **Identity** and select **Compartments**.
-
-  ![](images/050/032.png)
-
-- Click on the OCID next to your root tenancy, then click **Copy**, and save this as your **Compartment OCID** in your notes.
+<!--   ![](images/050/032.png)
 
   ![](images/050/033.png)
 
-- Finally, go back to the home console and make a note of your default region. For example, if your region is US West (Phoenix), note down Phoenix in your notes.
-
   ![](images/050/031.png)
-
+ -->
 
 ### **STEP 5:** Download and Install the OCI CLI (Oracle Cloud Infrastructure Command Line Interface)
 
