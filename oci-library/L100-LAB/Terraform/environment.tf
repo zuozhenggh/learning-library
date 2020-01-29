@@ -8,6 +8,9 @@
 variable "tenancy_ocid" {
   type = string
 }
+variable "compartment_ocid" {
+  type = string
+}
 variable "user_ocid" {
   type = string
 }
@@ -36,17 +39,18 @@ variable "compartment_ocid" {
 }
 
 provider "oci" {
-  version              = ">= 3.0.0"
-  tenancy_ocid         = var.tenancy_ocid
-  user_ocid            = var.user_ocid
-  fingerprint          = var.fingerprint
-  private_key_path     = var.private_key_path
-  region               = var.region
-  region_name          = var.region_name
+  version          = ">= 3.0.0"
+  tenancy_ocid     = var.tenancy_ocid
+  compartment_ocid = var.compartment_ocid
+  user_ocid        = var.user_ocid
+  fingerprint      = var.fingerprint
+  private_key_path = var.private_key_path
+  region           = var.region
+  region_name      = var.region_name
 }
 
 data "oci_identity_availability_domains" "region_name" {
-  compartment_id       = "${var.tenancy_ocid}"
+  compartment_id = var.tenancy_ocid
 }
 
 ### Network Variables ##### 
@@ -75,8 +79,8 @@ variable "instance_shape" {
 #### VCN  #######
 
 resource "oci_core_virtual_network" "vcn_w" {
-  cidr_block     = "${var.vcn_cidr_block}"
-  compartment_id = "${var.compartment_ocid}"
+  cidr_block     = var.vcn_cidr_block
+  compartment_id = var.compartment_ocid
   display_name   = "vcn_webserver"
   dns_label      = "vcn"
 
@@ -88,22 +92,22 @@ resource "oci_core_virtual_network" "vcn_w" {
 #### Internet Gateay ###
 
 resource "oci_core_internet_gateway" "igw" {
-  compartment_id = "${var.compartment_ocid}"
+  compartment_id = var.compartment_ocid
   display_name   = "igw"
-  vcn_id         = "${oci_core_virtual_network.vcn_w.id}"
+  vcn_id         = oci_core_virtual_network.vcn_w.id
 }
 
 
 #### Route Table #####
 
 resource "oci_core_route_table" "rt1" {
-  compartment_id = "${var.compartment_ocid}"
-  vcn_id         = "${oci_core_virtual_network.vcn_w.id}"
+  compartment_id = var.compartment_ocid
+  vcn_id         = oci_core_virtual_network.vcn_w.id
   display_name   = "rt1"
 
   route_rules {
     destination       = "0.0.0.0/0"
-    network_entity_id = "${oci_core_internet_gateway.igw.id}"
+    network_entity_id = oci_core_internet_gateway.igw.id
   }
 }
 
@@ -112,8 +116,8 @@ resource "oci_core_route_table" "rt1" {
 
 resource "oci_core_security_list" "sl_w" {
   display_name   = "sl-loadbalancer"
-  compartment_id = "${var.compartment_ocid}"
-  vcn_id         = "${oci_core_virtual_network.vcn_w.id}"
+  compartment_id = var.compartment_ocid
+  vcn_id         = oci_core_virtual_network.vcn_w.id
 
   egress_security_rules = [{
     protocol    = "all"
@@ -121,16 +125,16 @@ resource "oci_core_security_list" "sl_w" {
   }]
 
   ingress_security_rules = [{
-    tcp_options {
+    tcp_options = {
       "max" = 22
       "min" = 22
     }
 
     protocol = "6"
     source   = "0.0.0.0/0"
-  },
+    },
     {
-      tcp_options {
+      tcp_options = {
         "max" = 80
         "min" = 80
       }
@@ -139,7 +143,7 @@ resource "oci_core_security_list" "sl_w" {
       source   = "0.0.0.0/0"
     },
     {
-      tcp_options {
+      tcp_options = {
         "max" = 443
         "min" = 443
       }
@@ -148,7 +152,7 @@ resource "oci_core_security_list" "sl_w" {
       source   = "0.0.0.0/0"
     },
     {
-      icmp_options {
+      icmp_options = {
         "type" = 0
       }
 
@@ -156,7 +160,7 @@ resource "oci_core_security_list" "sl_w" {
       source   = "0.0.0.0/0"
     },
     {
-      icmp_options {
+      icmp_options = {
         "type" = 3
         "code" = 4
       }
@@ -165,7 +169,7 @@ resource "oci_core_security_list" "sl_w" {
       source   = "0.0.0.0/0"
     },
     {
-      icmp_options {
+      icmp_options = {
         "type" = 8
       }
 
@@ -179,14 +183,14 @@ resource "oci_core_security_list" "sl_w" {
 #### Subnet  #######
 
 resource "oci_core_subnet" "subnet1" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[0],"name")}"
-  cidr_block          = "${var.subnet_cidr_w1}"
+  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[0], "name")}"
+  cidr_block          = var.subnet_cidr_w1
   display_name        = "subnet1-AD1"
-  security_list_ids   = ["${oci_core_security_list.sl_w.id}"]
-  compartment_id      = "${var.compartment_ocid}"
-  vcn_id              = "${oci_core_virtual_network.vcn_w.id}"
-  route_table_id      = "${oci_core_route_table.rt1.id}"
-  dhcp_options_id     = "${oci_core_virtual_network.vcn_w.default_dhcp_options_id}"
+  security_list_ids   = [oci_core_security_list.sl_w.id]
+  compartment_id      = var.compartment_ocid
+  vcn_id              = oci_core_virtual_network.vcn_w.id
+  route_table_id      = oci_core_route_table.rt1.id
+  dhcp_options_id     = oci_core_virtual_network.vcn_w.default_dhcp_options_id
 
   provisioner "local-exec" {
     command = "sleep 5"
@@ -194,14 +198,14 @@ resource "oci_core_subnet" "subnet1" {
 }
 
 resource "oci_core_subnet" "subnet2" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[1],"name")}"
-  cidr_block          = "${var.subnet_cidr_w2}"
+  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[1], "name")}"
+  cidr_block          = var.subnet_cidr_w2
   display_name        = "subnet2-AD2"
-  security_list_ids   = ["${oci_core_security_list.sl_w.id}"]
-  compartment_id      = "${var.compartment_ocid}"
-  vcn_id              = "${oci_core_virtual_network.vcn_w.id}"
-  route_table_id      = "${oci_core_route_table.rt1.id}"
-  dhcp_options_id     = "${oci_core_virtual_network.vcn_w.default_dhcp_options_id}"
+  security_list_ids   = [oci_core_security_list.sl_w.id]
+  compartment_id      = var.compartment_ocid
+  vcn_id              = oci_core_virtual_network.vcn_w.id
+  route_table_id      = oci_core_route_table.rt1.id
+  dhcp_options_id     = oci_core_virtual_network.vcn_w.default_dhcp_options_id
 
   provisioner "local-exec" {
     command = "sleep 5"
@@ -210,13 +214,13 @@ resource "oci_core_subnet" "subnet2" {
 
 /* Instances */
 resource "oci_core_instance" "Webserver-AD1" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[0],"name")}"
-  compartment_id      = "${var.compartment_ocid}"
+  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[0], "name")}"
+  compartment_id      = var.compartment_ocid
   display_name        = "Webserver-AD1"
-  shape               = "${var.instance_shape}"
+  shape               = var.instance_shape
 
   create_vnic_details {
-    subnet_id        = "${oci_core_subnet.subnet1.id}"
+    subnet_id        = oci_core_subnet.subnet1.id
     display_name     = "primaryvnic"
     assign_public_ip = true
   }
@@ -227,8 +231,8 @@ resource "oci_core_instance" "Webserver-AD1" {
   }
 
   metadata {
-    ssh_authorized_keys = "${var.ssh_public_key}"
-    user_data = "${base64encode(var.user-data)}"
+    ssh_authorized_keys = var.ssh_public_key
+    user_data           = "${base64encode(var.user-data)}"
   }
 
   timeouts {
@@ -238,13 +242,13 @@ resource "oci_core_instance" "Webserver-AD1" {
 
 
 resource "oci_core_instance" "Webserver-AD2" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[1],"name")}"
-  compartment_id      = "${var.compartment_ocid}"
+  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[1], "name")}"
+  compartment_id      = var.compartment_ocid
   display_name        = "Webserver-AD2"
-  shape               = "${var.instance_shape}"
+  shape               = var.instance_shape
 
   create_vnic_details {
-    subnet_id        = "${oci_core_subnet.subnet2.id}"
+    subnet_id        = oci_core_subnet.subnet2.id
     display_name     = "primaryvnic"
     assign_public_ip = true
   }
@@ -255,8 +259,8 @@ resource "oci_core_instance" "Webserver-AD2" {
   }
 
   metadata {
-    ssh_authorized_keys = "${var.ssh_public_key}"
-    user_data = "${base64encode(var.user-data)}"
+    ssh_authorized_keys = var.ssh_public_key
+    user_data           = "${base64encode(var.user-data)}"
   }
 
   timeouts {
