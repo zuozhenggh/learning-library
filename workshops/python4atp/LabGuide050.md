@@ -141,7 +141,7 @@ Now, we will see the true power of Terraform as opposed to manual creation. By u
 
     ![](images/050/057.png)
 
-### **STEP 9:** Connect to your Marketplace Developer Image
+### **STEP 8:** Connect to your Marketplace Developer Image
 
 For more information about the Marketplace Developer Image [click here](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984).
 
@@ -198,7 +198,7 @@ For more information about the Marketplace Developer Image [click here](https://
 
 	![](images/050/041.png)
 
-### **STEP 10:** Download Files Used in this Workshop
+### **STEP 9:** Download Files Used in this Workshop
 
 [Click to Download](https://oracle.github.io/learning-library/workshops/python4atp/lab-resources.zip). **Keep track of which directory this zip file gets saved to.**
 
