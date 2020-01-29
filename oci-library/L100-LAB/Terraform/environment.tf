@@ -1,18 +1,39 @@
-## *** This terraform script creates a virtual cloud network with required resources of internet connectivity. 
-## *** It creates two linux webservers and installs a webserver. It opens necessary ports on the host and in security lists of virtual cloud network for the webserver
+## *** This terraform script creates a virtual cloud network with required 
+## *** resources of internet connectivity. 
+## *** It creates two linux webservers and installs a webserver. 
+## *** It opens necessary ports on the host and in security lists
+## *** of virtual cloud network for the webserver.
 
 
-variable "tenancy_ocid" {}
-variable "user_ocid" {}
-variable "fingerprint" {}
-variable "private_key_path" {}
-variable "region" {}
+variable "tenancy_ocid" {
+  type = string
+}
+variable "user_ocid" {
+  type = string
+}
+variable "fingerprint" {
+  type = string
+}
+variable "private_key_path" {
+  type = string
+}
+variable "region" {
+  type = string
+}
+variable "region_name" {
+  type = string
+}
 
+variable "ssh_private_key" {
+  type = string
+}
+variable "ssh_public_key" {
+  type = string
+}
 
-variable "ssh_private_key" {}
-variable "ssh_public_key" {}
-
-variable "compartment_ocid" {}
+variable "compartment_ocid" {
+  type = string
+}
 
 provider "oci" {
   version              = ">= 3.0.0"
@@ -20,10 +41,11 @@ provider "oci" {
   user_ocid            = "${var.user_ocid}"
   fingerprint          = "${var.fingerprint}"
   private_key_path     = "${var.private_key_path}"
-  region               = "us-ashburn-1"
+  region               = "${var.region}"
+  region_name          = "${var.region_name}"
 }
 
-data "oci_identity_availability_domains" "ashburn" {
+data "oci_identity_availability_domains" "region_name" {
   compartment_id       = "${var.tenancy_ocid}"
 }
 
@@ -157,7 +179,7 @@ resource "oci_core_security_list" "sl_w" {
 #### Subnet  #######
 
 resource "oci_core_subnet" "subnet1" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.ashburn.availability_domains[0],"name")}"
+  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[0],"name")}"
   cidr_block          = "${var.subnet_cidr_w1}"
   display_name        = "subnet1-AD1"
   security_list_ids   = ["${oci_core_security_list.sl_w.id}"]
@@ -172,7 +194,7 @@ resource "oci_core_subnet" "subnet1" {
 }
 
 resource "oci_core_subnet" "subnet2" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.ashburn.availability_domains[1],"name")}"
+  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[1],"name")}"
   cidr_block          = "${var.subnet_cidr_w2}"
   display_name        = "subnet2-AD2"
   security_list_ids   = ["${oci_core_security_list.sl_w.id}"]
@@ -188,9 +210,9 @@ resource "oci_core_subnet" "subnet2" {
 
 /* Instances */
 resource "oci_core_instance" "Webserver-AD1" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.ashburn.availability_domains[0],"name")}"
+  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[0],"name")}"
   compartment_id      = "${var.compartment_ocid}"
-  display_name        = "Webserver-ASHBURN_AD1"
+  display_name        = "Webserver-AD1"
   shape               = "${var.instance_shape}"
 
   create_vnic_details {
@@ -216,7 +238,7 @@ resource "oci_core_instance" "Webserver-AD1" {
 
 
 resource "oci_core_instance" "Webserver-AD2" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.ashburn.availability_domains[1],"name")}"
+  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[1],"name")}"
   compartment_id      = "${var.compartment_ocid}"
   display_name        = "Webserver-AD2"
   shape               = "${var.instance_shape}"
