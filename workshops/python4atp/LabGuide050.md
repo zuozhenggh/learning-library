@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In Lab 50 (as Derek) you will initiate the Oracle cloud environment that you will use to create and deploy your microservices applications. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment. You will deploy two Oracle Cloud Services for this environment. An Oracle Cloud Developer Image will be used to develop and deploy your microservices code. The microservices will access data within an Autonomous Transaction Processing (ATP) Cloud Service. 
+In Lab 50 (as Derek) you will initiate the Oracle cloud environment that you will use to create and deploy your microservices applications. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment. You will deploy two Oracle Cloud Services for this environment. An Oracle Cloud Developer Image will be used to develop and deploy your microservices code. The microservices will access data within an Autonomous Transaction Processing (ATP) Cloud Service.
 
 To deploy these services, you will be using Terraform, a tool for building, changing, and versioning infrastructure safely and efficiently. It is an important tool for anyone looking to standardize IaaS (Infrastructure as a Service) within their organization.
 
@@ -14,8 +14,7 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
 ## Lab 050 Objectives
 
-- Set up Terraform
-- Set up Oracle Cloud Infrastructure Command Line Interface
+- Log into OCI tenancy.
 - Setup your IAAS environment and create common components.
 - Create a new Cloud Developer Image from Marketplace.
 - Create an Autonomous Transaction Processing (ATP) Database.
@@ -53,54 +52,25 @@ You have already applied for and received your Oracle Cloud Free Tier Account.
     ![](images/hamburger.png)  
 
 
-### **STEP 3:** Download and Install Terraform
+### **STEP 3:** Download and Install Terraform zip folder
 
-In this section we will download Terraform. This allows us to provision infrastructure as code. It is a useful tool for standardizing the creation of resources and has many applications. In our case, we will use it to create the OCI resources needed to use Oracle Cloud compute and storage.
-
-See these instructions for [Download of Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html).
-
-**Make sure to fully review the page before starting.**
-
-- First, click on the link to get to the downloads page.
 
     ![](images/050/018.png)
 
-- Then, choose the appropriate package from your operating system.
 
     ![](images/050/018.1.png)
 
-- Once the download finishes, in your home directory look for a folder called `bin`. Move the zip file you downloaded into this directory. Open the zip file and verify that you see the binary file in the `bin` directory.
 
     ![](images/050/019.png)
 
-The following steps are for Linux and Mac users. Windows users see [here](https://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows) for instructions on setting the correct path.
-
-- Make sure you are in the home directory, then in the terminal run the following,
-
-    `$ nano .bash_profile`
-
-    If it doesn't exist, create it and then open the text editor.
-
-- Add the following path to your bash_profile. This is done so that Terraform's tools can be added to your environment. Press ctrl + o to save, then press enter. Next, ctrl + x to exit.
-
-    `export PATH=$PATH:/path-to/your/bin/`
-
     ![](images/050/057.png)
-
-- Now, we need to source the profile so we can use that path in our environment.
-
-    `$ source .bash_profile`
-
-- Finally, make sure that Terraform was installed successfully.
-
-    `$ terraform`
 
     ![](images/050/058.png)
 
 
 ### **STEP 4:** Get Your Oracle Cloud Credentials
 
-In order for Terraform to create resources for you, it needs to know how to access your cloud account and create resources in your name. Thus, you will need a few different credentials which can be found on the OCI console.
+To run our Terraform folder in the cloud, we will take advantage of OCI resource manager. It is a powerful tool for planning, and executing multiple Terraform jobs, all without having to installing anything locally. In order for resource manager to create resources for you, it needs to know a few key credentials on the OCI console.
 
 - Click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Governance and Administration** section, select **Identity** and select **Users**.
 
