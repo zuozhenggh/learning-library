@@ -76,7 +76,8 @@ export TF_VAR_fingerprint=$(cat ~/.oci/oci_api_key_fingerprint)
 export TF_VAR_private_key_path=~/.oci/oci_api_key.pem
 export TF_VAR_ssh_public_key=$(cat ~/.ssh/id_rsa.pub)
 export TF_VAR_ssh_private_key=$(cat ~/.ssh/id_rsa)
-export TF_VAR_region=<region name>
+export TF_VAR_region=<region id>
+export TF_VAR_region_name=<region name>
 ```
 
 2. Open the env-vars file for editing with this command:
@@ -135,7 +136,14 @@ export TF_VAR_region_name=ashburn
 Next you need to download the terrform script into the *lab/* folder. Use the following cmmand to do this:
 
 ```shell
-curl -L -o env-vars https://raw.githubusercontent.com/jdavies/learning-library/master/oci-library/L100-LAB/Terraform/environment.tf
+curl -L -o environment.tf https://raw.githubusercontent.com/jdavies/learning-library/master/oci-library/L100-LAB/Terraform/environment.tf
+```
+
+Execute the cmmands:
+```shell
+terraform init
+terraform plan
+terraform apply
 ```
 
 ## Conclusion

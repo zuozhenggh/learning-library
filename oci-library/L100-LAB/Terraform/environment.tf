@@ -1,6 +1,6 @@
-## *** This terraform script creates a virtual cloud network with required 
-## *** resources of internet connectivity. 
-## *** It creates two linux webservers and installs a webserver. 
+## *** This terraform script creates a virtual cloud network with required
+## *** resources of internet connectivity.
+## *** It creates two linux webservers and installs a webserver.
 ## *** It opens necessary ports on the host and in security lists
 ## *** of virtual cloud network for the webserver.
 
@@ -41,7 +41,7 @@ variable "compartment_ocid" {
 }
 
 provider "oci" {
-  version          = ">= 3.0.0"
+  version          = ">= 3.27.0"
   tenancy_ocid     = var.tenancy_ocid
   user_ocid        = var.user_ocid
   fingerprint      = var.fingerprint
@@ -53,7 +53,7 @@ data "oci_identity_availability_domains" "region_name" {
   compartment_id = var.tenancy_ocid
 }
 
-### Network Variables ##### 
+### Network Variables #####
 
 variable "vcn_cidr_block" {
   default = "10.0.0.0/16"
@@ -119,71 +119,74 @@ resource "oci_core_security_list" "sl_w" {
   compartment_id = var.compartment_ocid
   vcn_id         = oci_core_virtual_network.vcn_w.id
 
-  egress_security_rules = [{
+  egress_security_rules {
     protocol    = "all"
     destination = "0.0.0.0/0"
-  }]
+  }
 
-  ingress_security_rules = [{
-    tcp_options = {
-      "max" = 22
-      "min" = 22
+  ingress_security_rules {
+    tcp_options {
+      max = 22
+      min = 22
     }
 
     protocol = "6"
     source   = "0.0.0.0/0"
-    },
-    {
-      tcp_options = {
-        "max" = 80
-        "min" = 80
-      }
+  }
 
-      protocol = "6"
-      source   = "0.0.0.0/0"
-    },
-    {
-      tcp_options = {
-        "max" = 443
-        "min" = 443
-      }
+  ingress_security_rules {
+    tcp_options {
+      max = 80
+      min = 80
+    }
 
-      protocol = "6"
-      source   = "0.0.0.0/0"
-    },
-    {
-      icmp_options = {
-        "type" = 0
-      }
+    protocol = "6"
+    source   = "0.0.0.0/0"
+  }
 
-      protocol = 1
-      source   = "0.0.0.0/0"
-    },
-    {
-      icmp_options = {
-        "type" = 3
-        "code" = 4
-      }
+  ingress_security_rules {
+    tcp_options {
+      max = 443
+      min = 443
+    }
 
-      protocol = 1
-      source   = "0.0.0.0/0"
-    },
-    {
-      icmp_options = {
-        "type" = 8
-      }
+    protocol = "6"
+    source   = "0.0.0.0/0"
+  }
 
-      protocol = 1
-      source   = "0.0.0.0/0"
-    },
-  ]
+  ingress_security_rules {
+    icmp_options {
+      type = 0
+    }
+
+    protocol = 1
+    source   = "0.0.0.0/0"
+  }
+
+  ingress_security_rules {
+    icmp_options {
+      type = 3
+      code = 4
+    }
+
+    protocol = 1
+    source   = "0.0.0.0/0"
+  }
+  ingress_security_rules {
+    icmp_options {
+      type = 8
+    }
+
+    protocol = 1
+    source   = "0.0.0.0/0"
+  }
 }
 
 
 #### Subnet  #######
 
 resource "oci_core_subnet" "subnet1" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[0], "name")}"
+  availability_domain = lookup(data.oci_identity_availability_domains.region_name.availability_domains[0], "name")
   cidr_block          = var.subnet_cidr_w1
   display_name        = "subnet1-AD1"
   security_list_ids   = [oci_core_security_list.sl_w.id]
@@ -198,7 +201,7 @@ resource "oci_core_subnet" "subnet1" {
 }
 
 resource "oci_core_subnet" "subnet2" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[1], "name")}"
+  availability_domain = lookup(data.oci_identity_availability_domains.region_name.availability_domains[1], "name")
   cidr_block          = var.subnet_cidr_w2
   display_name        = "subnet2-AD2"
   security_list_ids   = [oci_core_security_list.sl_w.id]
@@ -214,7 +217,7 @@ resource "oci_core_subnet" "subnet2" {
 
 /* Instances */
 resource "oci_core_instance" "Webserver-AD1" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[0], "name")}"
+  availability_domain = lookup(data.oci_identity_availability_domains.region_name.availability_domains[0], "name")
   compartment_id      = var.compartment_ocid
   display_name        = "Webserver-AD1"
   shape               = var.instance_shape
@@ -230,7 +233,7 @@ resource "oci_core_instance" "Webserver-AD1" {
     source_id   = "ocid1.image.oc1.iad.aaaaaaaaiu73xa6afjzskjwvt3j5shpmboxtlo7yw4xpeqpdz5czpde7px2a"
   }
 
-  metadata {
+  metadata = {
     ssh_authorized_keys = var.ssh_public_key
     user_data           = "${base64encode(var.user-data)}"
   }
@@ -242,7 +245,7 @@ resource "oci_core_instance" "Webserver-AD1" {
 
 
 resource "oci_core_instance" "Webserver-AD2" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.region_name.availability_domains[1], "name")}"
+  availability_domain = lookup(data.oci_identity_availability_domains.region_name.availability_domains[1], "name")
   compartment_id      = var.compartment_ocid
   display_name        = "Webserver-AD2"
   shape               = var.instance_shape
@@ -258,9 +261,9 @@ resource "oci_core_instance" "Webserver-AD2" {
     source_id   = "ocid1.image.oc1.iad.aaaaaaaaiu73xa6afjzskjwvt3j5shpmboxtlo7yw4xpeqpdz5czpde7px2a"
   }
 
-  metadata {
+  metadata = {
     ssh_authorized_keys = var.ssh_public_key
-    user_data           = "${base64encode(var.user-data)}"
+    user_data           = base64encode(var.user-data)
   }
 
   timeouts {
