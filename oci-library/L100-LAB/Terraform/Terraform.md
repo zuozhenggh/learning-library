@@ -112,7 +112,23 @@ Copy the OCIDs You Will Need
 
 10. Set the TF_VAR_region field to be `us-ashburn-1` if your home region is `US East (Ashburn)` or `us-phoenix-1` if your home region is `US West (Phoenix)`. If your home region is set to a different region, please consult [Regions anbd Avalability Domains](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm) to find the correct code for your region.
 
-11. Save the *env-vars* file and quit the *vi* editor so you are back at the command line in your *ssh* session.
+11. Set the region name to the short name for the region (ie `ashburn` or `phoenix"` in most cases).
+
+Your file should now look likethe following (with different OCIDs, of course)
+
+```shell
+export TF_VAR_tenancy_ocid=ocid1.tenancy.oc1..aaaaaaaa5txfxrudc53ir3ujznw6b3l6sqvkzddepsfu4es2i4x2xyeia
+export TF_VAR_user_ocid=ocid1.user.oc1..aaaaaaaarpxca7prls2r34erbzjcnjaig6ni66xcozuvwju243uhz3a
+export TF_VAR_compartment_ocid=ocid1.compartment.oc1..aaaaaaaayxq54izzfiurg29r38489zluttisbuigx65lqxkncb7dzo3q
+export TF_VAR_fingerprint=$(cat ~/.oci/oci_api_key_fingerprint)
+export TF_VAR_private_key_path=~/.oci/oci_api_key.pem
+export TF_VAR_ssh_public_key=$(cat ~/.ssh/id_rsa.pub)
+export TF_VAR_ssh_private_key=$(cat ~/.ssh/id_rsa)
+export TF_VAR_region=us-ashburn-1
+export TF_VAR_region_name=ashburn
+```
+
+12. Save the *env-vars* file and quit the *vi* editor so you are back at the command line in your *ssh* session.
 
 ## Run the Terraform Script
 
