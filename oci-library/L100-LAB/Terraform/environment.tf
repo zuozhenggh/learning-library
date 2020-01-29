@@ -48,7 +48,6 @@ provider "oci" {
   fingerprint      = var.fingerprint
   private_key_path = var.private_key_path
   region           = var.region
-  region_name      = var.region_name
 }
 
 data "oci_identity_availability_domains" "region_name" {
