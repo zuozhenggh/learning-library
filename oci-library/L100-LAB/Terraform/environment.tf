@@ -233,6 +233,7 @@ resource "oci_core_instance" "Webserver-AD1" {
     source_id   = "ocid1.image.oc1.iad.aaaaaaaaiu73xa6afjzskjwvt3j5shpmboxtlo7yw4xpeqpdz5czpde7px2a"
   }
 
+  # Configure the server via an SSH session.
   metadata = {
     ssh_authorized_keys = var.ssh_public_key
     user_data           = "${base64encode(var.user-data)}"
@@ -261,6 +262,7 @@ resource "oci_core_instance" "Webserver-AD2" {
     source_id   = "ocid1.image.oc1.iad.aaaaaaaaiu73xa6afjzskjwvt3j5shpmboxtlo7yw4xpeqpdz5czpde7px2a"
   }
 
+  # Configure the server via and SSH session
   metadata = {
     ssh_authorized_keys = var.ssh_public_key
     user_data           = base64encode(var.user-data)
@@ -271,6 +273,11 @@ resource "oci_core_instance" "Webserver-AD2" {
   }
 }
 
+/*
+ * This user-data is sent to each compute instance via an ssh
+ * session, is if a person were entering these commands
+ * through a secure shell session
+ */
 variable "user-data" {
   default = <<EOF
 #!/bin/bash -x
@@ -304,4 +311,8 @@ output "Webserver-AD1" {
 
 output "Webserver-AD2" {
   value = ["${oci_core_instance.Webserver-AD2.public_ip}"]
+}
+
+output foobar {
+  value = ["Hello world"]
 }

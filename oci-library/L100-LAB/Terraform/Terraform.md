@@ -30,17 +30,68 @@ In this lab, you will create a script that essentially does all of the work defi
 
 Terraform needs to be installed on an OCI compute instance. We wil refer to this instance as the *Bastion-Server*
 
-### Create the Demo Cmpartment
+### Create the Terraform Compartment
 
-TODO
-
-### Create the Bastion-Server
+We will create a compartment to house our Terraform work.
 
 1. Log into OCI. If you are unsure how to do this, refer to the [Identity](https://github.com/jdavies/learning-library/blob/master/oci-library/L100-LAB/Identity_Access_Management/IAM_HOL.md) lab.
 
-2. Using the "hamburger" menu in the upr left corner of your browser window, click on the `Compute -> Instances` menu item.
 
-3. Click on the `Create Instance` button. Name the instance `Bastion-Server` and ensure it has a public IP address. You may need to specifiy a public RSA key ***ToDo***
+2. Use the main menu to navigate to the Identity -> Compartments page
+
+![Identity Compartment Menu](images/Identity_Compartments_Menu.png)
+
+3. Be sure that you are in your root compartment and then press the blue *Create Compartments* button.
+
+![Create Compartment Button](images/Create_Compartment_1.png)
+
+4. Name the compartment `Terraform`. Press the blue *Create Compartment* button.
+
+![Create Compartment Button](images/Create_Compartment_2.png)
+
+### Create the Terraform-VCN
+
+You will create a Virtual Cloud Network to contains your Terraform assets in your new Terraform compartment.
+
+1. Click on the main menu icon and select *Networking -> Virtual Cloud Networks* from the menu.
+![VCN Menu](images/VCN_Menu.png)
+2. Select  your Terraform compartment from the dropdown menu. **NOTE:** You may need to click on the "plus sign" next to your root compartment name to expand it. If you don't see the `Terraform` compartment name, refrech your browser using the F5 key on Windows and COMMAND+R on a mac.
+![Select Terraform Compartment](images/Select_Terraform_Compartment.png)
+3. Press the *Networking Quickstart* button.
+4. Select the `VCN with Internet Connectivity` option. Press the *Start Workflow* button.
+![](images/VCN_QS_1.png)
+5. Fill out the next screen as shown.
+| Field                      | Value         |
+| -------------------------- |---------------|
+| VCN Name                   | Terraform-VCN |
+| Compartment                | Terraform     |
+| VCN CIDR Block             | 10.0.0/16     |
+| Public Subnet CIDR Block   | 10.0.2.0/24   |
+| Private  Subnet CIDR Block | 10.0.1.0/24   |
+![Enter the VCN Data](images/VCN_QS_2.png)
+6. Press te *Next* button
+7. Review the confirmation form and press the *Create* button when you are ready.
+8. When the VCN is fully created, press the *View Virtual Network Details* button.
+![Enter the VCN Data](images/VCN_QS_3.png)
+
+### Create the Bastion-Server
+
+1. Using the main "hamburger" menu in the upper left corner of your browser window, click on the `Compute -> Instances` menu item.
+
+2. Ensure you have selected the *Terraform* compartment from the dropdown menu. **NOTE:** You may need to click on the "plus sign" next to your root compartment name to expand it. If you don't see the `Terraform` compartment name, refrech your browser using the F5 key on Windows and COMMAND+R on a mac.
+![Select Terraform Compartment](images/Select_Terraform_Compartment.png)
+
+3. Click on the `Create Instance` button. Name the instance `Bastion-Server`.
+![Create Compute 1](images/Create_Compute_1.png)
+
+4. Scroll down a bit. Ensure the fields are set exactly as shown! You ***MUST*** select the *Assign a public IP address* in order to conect to this instance via SSH.
+![Create Compute 1](images/Create_Compute_2.png)
+
+5. Drag and drop your public SSH key onto the You may need to specifiy a public RSA key. Select the RSA key that you created earlier or if you already have an `~/.ssh/id_rsa.pub` key created, you can simply use that one.
+![Create Compute 1](images/Create_Compute_3.png)
+
+6. Press the *Create* button to start the process of creating the server.
+![Create Compute 1](images/Create_Compute_4.png)
 
 ### SSH into the Compute Instance
 
@@ -56,7 +107,29 @@ for example:
 ssh -i ~/.ssh/id_rsa opc@129.0.12.34
 ```
 
+If you used the ~/.ssh/id_rsa.piub key then you can simplify the command to
+
+```shell
+ssh opc@129.12.56.39
+```
+
+or whatever your public IP address is.
+
 2. When your ssh session starts, you will be in the *home* folder of the `opc` user. Use `mkdr lab` command to create a `lab/` folder. The change into that directory with the `cd lab` command.
+
+### Install the Terraform Software
+
+1. The following 2 commands will install terraform, OCI CLI, some required packages. It will also create a folder terraformtest and save a test terraform .tf file with an environment variable file.
+```shell
+curl -L -o tfsetup.sh https://raw.githubusercontent.com/jamalarif/oci/master/scripts/tflabsetup/tfsetup.sh
+bash ./tfsetup.sh
+press enter to continue
+```
+
+2. When the script completes, it will show a new public key that it generated. Copy that public key (including the *BEGIN PUBLIC KEY* and *END PUBLIC KEY* lines)
+![Add Key 1](images/Add_Key_1.png)
+3. GO back to your *User Settings* page and ress the Add Key button. Paste in te key text that you copied in the previous step.
+![Add Key 2](images/Add_Key_2.png)
 
 ### Create the env-vars file
 
