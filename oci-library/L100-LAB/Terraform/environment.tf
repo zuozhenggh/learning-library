@@ -1,6 +1,6 @@
 ## *** This terraform script creates a virtual cloud network with required
 ## *** resources of internet connectivity.
-## *** It creates two linux webservers and installs a webserver.
+## *** It creates two linux webservers and installs webserver software.
 ## *** It opens necessary ports on the host and in security lists
 ## *** of virtual cloud network for the webserver.
 
@@ -36,12 +36,22 @@ variable "ssh_public_key" {
   type = string
 }
 
-variable "compartment_ocid" {
+variable compartment_ocid {
   type = string
 }
 
-provider "oci" {
-  version          = ">= 3.27.0"
+variable backend_port {
+  type    = number
+  default = 80
+}
+
+variable backend_set_lb_cookie_session_persistence_configuration_cookie_name {
+  type    = string
+  default = "oci_webserver_cookie"
+}
+
+provider oci {
+  version          = ">= 3.60.0"
   tenancy_ocid     = var.tenancy_ocid
   user_ocid        = var.user_ocid
   fingerprint      = var.fingerprint
@@ -75,6 +85,9 @@ variable "instance_shape" {
   default = "VM.Standard2.1"
 }
 
+variable "load_balancer_shape" {
+  default = "VM.Standard2.1"
+}
 
 #### VCN  #######
 
@@ -124,60 +137,70 @@ resource "oci_core_security_list" "sl_w" {
     destination = "0.0.0.0/0"
   }
 
+  # Security Rules Protocol Codes
+  # 1 = ICMP
+  # 6 = TCP
+  # 17 = UDP
+  # 58 = ICMPv6
+
+  /* Open port 22 (for SSH) to all incomming traffic */
   ingress_security_rules {
     tcp_options {
       max = 22
       min = 22
     }
 
-    protocol = "6"
+    protocol = "6" # TCP
     source   = "0.0.0.0/0"
   }
 
+  /* Open post 80 to all incomming TCP traffic */
   ingress_security_rules {
     tcp_options {
       max = 80
       min = 80
     }
 
-    protocol = "6"
+    protocol = "6" # TCP
     source   = "0.0.0.0/0"
   }
 
+  /* Open port 443 to all incmming traffic */
   ingress_security_rules {
     tcp_options {
       max = 443
       min = 443
     }
 
-    protocol = "6"
+    protocol = "6" # TCP
     source   = "0.0.0.0/0"
   }
 
   ingress_security_rules {
     icmp_options {
-      type = 0
+      type = 0 # ECHO Reply
     }
 
-    protocol = 1
+    protocol = 1 # ICMP
     source   = "0.0.0.0/0"
   }
 
   ingress_security_rules {
     icmp_options {
-      type = 3
-      code = 4
+      type = 3 # Destination Unreachable
+      code = 4 # Fragmentation Needed and Don't Fragment was set
     }
 
-    protocol = 1
+    protocol = 1 # ICMP
     source   = "0.0.0.0/0"
   }
   ingress_security_rules {
     icmp_options {
+      # ECHO
       type = 8
     }
 
-    protocol = 1
+    protocol = 1 # ICMP
     source   = "0.0.0.0/0"
   }
 }
@@ -213,6 +236,84 @@ resource "oci_core_subnet" "subnet2" {
   provisioner "local-exec" {
     command = "sleep 5"
   }
+}
+
+/* Load Balancer */
+resource "oci_load_balancer_load_balancer" "webserver_load_balancer" {
+  #Required
+  compartment_id = var.compartment_ocid
+  display_name   = "webserver_lb"
+  shape          = var.load_balancer_shape
+  subnet_ids     = [oci_core_subnet.subnet1.id, oci_core_subnet.subnet2.id] # var.load_balancer_subnet_ids
+
+  #Optional
+  #defined_tags = {"Operations.CostCenter"= "42"}
+  #freeform_tags = {"Department"= "Finance"}
+  #ip_mode = "${var.load_balancer_ip_mode}"
+  is_private = "false"
+  # network_security_group_ids = "${var.load_balancer_network_security_group_ids}"
+}
+
+resource "oci_load_balancer_backend" "webserver_backend" {
+  #Required
+  backendset_name  = "webserver_backend_set"
+  ip_address       = "10.0.0.3" # var.backend_ip_address
+  load_balancer_id = oci_load_balancer_load_balancer.webserver_load_balancer.id
+  port             = var.backend_port
+
+  #Optional
+  #backup = "${var.backend_backup}"
+  #drain = "${var.backend_drain}"
+  #offline = "${var.backend_offline}"
+  #weight = "${var.backend_weight}"
+}
+
+resource "oci_load_balancer_backend_set" "webserver_backend_set" {
+  #Required
+  health_checker {
+    #Required
+    protocol = "HTTP"
+
+    #Optional
+    interval_ms         = 10000
+    port                = 80
+    response_body_regex = "^((?!false).|\\s)*$"
+    retries             = 3
+    return_code         = 200
+    timeout_in_millis   = 10000
+    url_path            = "/healthcheck"
+  }
+  load_balancer_id = oci_load_balancer_load_balancer.webserver_load_balancer.id
+  name             = "webserver_backend_set"
+  policy           = "LEAST_CONECTIONS"
+
+  #Optional
+  lb_cookie_session_persistence_configuration {
+
+    #Optional
+    cookie_name      = var.backend_set_lb_cookie_session_persistence_configuration_cookie_name
+    disable_fallback = true
+    # domain             = "${var.backend_set_lb_cookie_session_persistence_configuration_domain}"
+    is_http_only       = false
+    is_secure          = false
+    max_age_in_seconds = 3600
+    path               = "/lb"
+  }
+  session_persistence_configuration {
+    #Required
+    cookie_name = var.backend_set_lb_cookie_session_persistence_configuration_cookie_name
+
+    #Optional
+    # disable_fallback = "${var.backend_set_session_persistence_configuration_disable_fallback}"
+  }
+  # ssl_configuration {
+  #   #Required
+  #   certificate_name = "${oci_load_balancer_certificate.test_certificate.certificate_name}"
+
+  #   #Optional
+  #   verify_depth            = "${var.backend_set_ssl_configuration_verify_depth}"
+  #   verify_peer_certificate = "${var.backend_set_ssl_configuration_verify_peer_certificate}"
+  # }
 }
 
 /* Instances */
