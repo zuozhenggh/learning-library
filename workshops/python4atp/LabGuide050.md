@@ -159,7 +159,7 @@ For more information about the Marketplace Developer Image [click here](https://
     **Note if you are on Windows you will need to use putty.**
     Open a terminal window on a Mac or command shell on Linux and enter the following command:
 
-    `$ ssh -i <your private key> opc@<your IP address>`
+    `$ ssh -i <path/to/your/private-key> opc@<instance IP address>`
 
 	![](images/050/036.png)
 
@@ -180,7 +180,7 @@ For more information about the Marketplace Developer Image [click here](https://
 
      This example works on Linux and Mac. **Note:** on Linux you will need to be su.
 
-     `$ ssh -i <your private key> -L 5901:localhost:5901 opc@<your IP address>`
+     `$ ssh -i <path/to/your/private-key> -L 5901:localhost:5901 opc@<your IP address>`
 
     ![](images/050/039.png)
 
@@ -202,17 +202,17 @@ For more information about the Marketplace Developer Image [click here](https://
 
 [Click to Download](https://oracle.github.io/learning-library/workshops/python4atp/lab-resources.zip). **Keep track of which directory this zip file gets saved to.**
 
-- Next, go back into your instance
+- Next, open a new terminal window. **It is important that this is a new window, since the session you opened previously must not be closed.**
 
-    **If you are already logged in, you do not need to run the command below.**
+- Run the command below.
 
-    `$ ssh -i <your private key> opc@<your IP address>`
+    `$ ssh -i <path/to/your/private-key> opc@<instance IP address>`
 
     If you are prompted, enter `yes`.
 
 - Run `$ pwd` to view your home path. Then run `$ exit` to go back to your local environment. If your home path is different than the one below, then change it to yours.
 
-    `$ scp </path/to/lab-resources.zip> opc@<your IP address>:/home/opc`
+    `$ scp </path/to/lab-resources.zip> opc@<instance IP address>:/home/opc`
 
     If you are prompted, enter `yes`.
 
