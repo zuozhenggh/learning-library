@@ -97,11 +97,11 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
     ![](images/200/LabGuide200-e67b7705.png)
 
-  - Click the **Add Policy Statement** button
+  - Click the **Edit Policy Statement** button
 
     ![](images/200/LabGuide200-3d4a7471.png)
 
-  - In the Statement box, enter: `allow service OKE to manage all-resources in tenancy` and click **Add Statement**
+  - Click **Another Statement** and in the Statement box, enter: `allow service OKE to manage all-resources in tenancy`  
 
     ![](images/200/LabGuide200-bd5bcbd1.png)
 
@@ -122,8 +122,8 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
   - We don't need to make any changes to the default values on this form, but let's look at what will be created when we submit it.
 
     ![](images/LabGuide200-6ff14524.png)
-    ![](images/LabGuide200-11191333.png)
-
+    ![](images/200/LabGuide200-k8s-2.png)
+    
     - Starting at the top you'll notice that the cluster will be created in our **Demo** compartment.
     - We can customize the name of this cluster if we want
     - Multiple versions of Kubernetes are available, with the newest version selected by default
@@ -239,6 +239,10 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
     ![](images/LabGuide200-e67f88fa.png)
 
+  - Make sure to select **Assign a public IP address**
+
+    ![](images/200/LabGuide-instance-1.png)
+  
   - Click **Create**
 
     ![](images/LabGuide200-68185e86.png)
