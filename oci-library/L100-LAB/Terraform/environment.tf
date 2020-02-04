@@ -242,14 +242,15 @@ resource "oci_core_subnet" "subnet2" {
 resource "oci_load_balancer_load_balancer" "webserver_load_balancer" {
   #Required
   compartment_id = var.compartment_ocid
-  display_name   = "webserver_lb"
-  shape          = var.load_balancer_shape
-  subnet_ids     = [oci_core_subnet.subnet1.id, oci_core_subnet.subnet2.id] # var.load_balancer_subnet_ids
 
-  #Optional
+  # Optional
+  display_name = "webserver_lb"
+  shape        = "100Mbps"                                                # Small
+  subnet_ids   = [oci_core_subnet.subnet1.id, oci_core_subnet.subnet2.id] # var.load_balancer_subnet_ids
+
   #defined_tags = {"Operations.CostCenter"= "42"}
   #freeform_tags = {"Department"= "Finance"}
-  #ip_mode = "${var.load_balancer_ip_mode}"
+  ip_mode    = "IPV4"
   is_private = "false"
   # network_security_group_ids = "${var.load_balancer_network_security_group_ids}"
 }
@@ -259,7 +260,7 @@ resource "oci_load_balancer_backend" "webserver_backend" {
   backendset_name  = "webserver_backend_set"
   ip_address       = "10.0.0.3" # var.backend_ip_address
   load_balancer_id = oci_load_balancer_load_balancer.webserver_load_balancer.id
-  port             = var.backend_port
+  port             = 80
 
   #Optional
   #backup = "${var.backend_backup}"
@@ -280,7 +281,7 @@ resource "oci_load_balancer_backend_set" "webserver_backend_set" {
     response_body_regex = "^((?!false).|\\s)*$"
     retries             = 3
     return_code         = 200
-    timeout_in_millis   = 10000
+    timeout_in_millis   = 3000
     url_path            = "/healthcheck"
   }
   load_balancer_id = oci_load_balancer_load_balancer.webserver_load_balancer.id
@@ -301,7 +302,7 @@ resource "oci_load_balancer_backend_set" "webserver_backend_set" {
   }
   session_persistence_configuration {
     #Required
-    cookie_name = var.backend_set_lb_cookie_session_persistence_configuration_cookie_name
+    cookie_name = "sessionCookie"
 
     #Optional
     # disable_fallback = "${var.backend_set_session_persistence_configuration_disable_fallback}"
