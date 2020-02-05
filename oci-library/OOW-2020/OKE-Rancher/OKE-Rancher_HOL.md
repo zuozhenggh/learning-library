@@ -275,7 +275,14 @@ Click **Create**. Wait for the cluster state to be _Active_ and the node number 
    <img src="media/14-rancher-kubeconfig.png" alt="image-alt-text">
 
 2. Click **Copy to Clipboard**  
-3. Connect to the Rancher instance via SSH. Create the kubeconfig file and install Helm.  
+3. Connect to the Rancher instance via SSH from the terminal console.
+    ```SHELL  
+    #User: opc
+    #Public_IP_Address: Rancher instance's public IP
+    $ ssh -i ~/.ssh/id_rsa opc@<Public_IP_Address> 
+    ```  
+    
+4. Create the kubeconfig file and install Helm.  
    ```SHELL
     $ mkdir .kube
     $ nano .kube/config
@@ -288,7 +295,7 @@ Click **Create**. Wait for the cluster state to be _Active_ and the node number 
     ./get_helm.sh
    ```  
 
-4. Run  
+5. Run  
    
    ```SHELL 
    $ kubectl label namespace default istio-injection=enabled
@@ -296,14 +303,14 @@ Click **Create**. Wait for the cluster state to be _Active_ and the node number 
 
    This will inject Istio sidecar proxy for all the containers in the _default_ namespace. 
 
-5. Install Mushop running the below into the SSH terminal  
+6. Install Mushop running the below into the SSH terminal  
    ```SHELL
    $ git clone  https://github.com/oracle-quickstart/oci-cloudnative
    $ cd oci-cloudnative/deploy/complete/helm-chart/
    $ helm install --set global.mock.service=all mymushop mushop
    ```
 
-6. Now you have to create a gateway for Mushop and expose _edge.default.svc.cluster.local_.  
+7. Now you have to create a gateway for Mushop and expose _edge.default.svc.cluster.local_.  
    Copy the below yaml file.
     ```YAML
     apiVersion: networking.istio.io/v1alpha3
