@@ -17,7 +17,7 @@
 
 ## Overview
 
-In this lab you will experiment how to use Rancher to control a Kubernetes cluster based on OCI Container for Kubernetes (OKE) service and to install and run Mushop. 
+In this lab you will experiment how to install and run Mushop application using Rancher to control a Kubernetes cluster based on OCI Container for Kubernetes (OKE) service. 
 Rancher will run on an OCI Compute Instance and will transparently control OKE cluster.
 
 [MuShop](https://github.com/oracle-quickstart/oci-cloudnative) is an opensource application the implements an e-commerce platform built as a set of micro-services and is built to showcase of several Oracle Cloud Infrastructure services in a unified reference application.
@@ -281,7 +281,7 @@ Click **Create**. Wait for the cluster state to be _Active_ and the node number 
     #Public_IP_Address: Rancher instance's public IP
     $ ssh -i ~/.ssh/id_rsa opc@<Public_IP_Address> 
     ```  
-    
+
 4. Create the kubeconfig file and install Helm.  
    ```SHELL
     $ mkdir .kube
