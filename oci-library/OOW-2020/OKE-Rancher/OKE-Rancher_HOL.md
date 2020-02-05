@@ -228,9 +228,9 @@ Click **Create**. Wait for the OKE cluster driver to be active.
 - **User Private Key**: Your API private key  
   <img src="media/07-rancher-add-cluster.png" alt="image-alt-text">
 
-1.  Click **Next: Authenticate & Configure Cluster**.
-2.  Click **Next: Configure Virtual Cloud Network**. Check **Quick Create**.
-3.  Click **Next: Configure Node Instances**. Fill the dialog box.
+15.  Click **Next: Authenticate & Configure Cluster**.
+16.  Click **Next: Configure Virtual Cloud Network**. Check **Quick Create**.
+17.  Click **Next: Configure Node Instances**. Fill the dialog box.
 - **Instance Shape**: choose the instance shape to be used for your nodes. Make sure the selected shape has at least 2 OCPUs (i.e. VM.Standard.E2.2).
 - **Operating System**: Oracle-Linux-7.6
 - **SSH public key for nodes**: your SSH public key (optional)  
@@ -271,23 +271,29 @@ Click **Create**. Wait for the cluster state to be _Active_ and the node number 
 ## Install Mushop
 
 1. Click **Kubeconfig File** to view the kubeconfig content.
-  <img src="media/14-rancher-kubeconfig.png" alt="image-alt-text">
-2. Click **Copy to Clipboard**
-3. Connect to the Rancher instance via SSH. Create the kubeconfig file and install Helm.
+   
+   <img src="media/14-rancher-kubeconfig.png" alt="image-alt-text">
+
+2. Click **Copy to Clipboard**  
+3. Connect to the Rancher instance via SSH. Create the kubeconfig file and install Helm.  
    ```SHELL
     $ mkdir .kube
     $ nano .kube/config
     # paste the clipboard content
 
     #install helm
-    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com
+    helm/helm/master/scripts/get-helm-3
     chmod 700 get_helm.sh
     ./get_helm.sh
-   ```
-4. Run 
+   ```  
+
+4. Run  
+   
    ```SHELL 
    $ kubectl label namespace default istio-injection=enabled
-   ```
+   ```  
+
    This will inject Istio sidecar proxy for all the containers in the _default_ namespace. 
 
 5. Install Mushop running the below into the SSH terminal  
@@ -297,9 +303,8 @@ Click **Create**. Wait for the cluster state to be _Active_ and the node number 
    $ helm install --set global.mock.service=all mymushop mushop
    ```
 
-6. Now you have to create a gateway for Mushop and expose _edge.default.svc.cluster.local_.
-   
-   Copy the below
+6. Now you have to create a gateway for Mushop and expose _edge.default.svc.cluster.local_.  
+   Copy the below yaml file.
     ```YAML
     apiVersion: networking.istio.io/v1alpha3
     kind: Gateway
