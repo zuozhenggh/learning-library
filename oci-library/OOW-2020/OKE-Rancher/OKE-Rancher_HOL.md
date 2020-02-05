@@ -117,7 +117,7 @@ _**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NA
 
 3. Press Enter When asked for _'Enter File in which to save the key'_, _'Created Directory, 'Enter passphrase'_, and _'Enter Passphrase again_.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL008.PNG" alt="image-alt-text">
+<img src="media/01-rancher-keypair.png" alt="image-alt-text">
 
 6. You should now have the Public and Private keys:
 
@@ -125,10 +125,9 @@ _**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NA
 
 * ~/.ssh/id_rsa.pub (Public Key)
 
->**NOTE:** id_rsa.pub will be used to create 
-Compute instance and id_rsa to connect via SSH into compute instance.
+>**NOTE:** id_rsa.pub will be used during the provisioning of the Compute instance and id_rsa to connect via SSH into compute instance.
 
-1. In the terminal enter command  `cat ~/.ssh/id_rsa.pub`, highlight the key and copy it.
+7. In the terminal enter command  `cat ~/.ssh/id_rsa.pub`, highlight the key and copy it.
 
 ## Configure Rancher instance
 
