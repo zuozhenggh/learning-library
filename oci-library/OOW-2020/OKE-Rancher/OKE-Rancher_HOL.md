@@ -1,8 +1,8 @@
-# Setup and Run Mushop with Rancher on OCI Container Engine
+# Run Mushop with Rancher on Oracle Cloud Infrastructure Container Engine for Kubernetes
 
 ## Table of Contents
 
-- [Setup and Run Mushop with Rancher on OCI Container Engine](#setup-and-run-mushop-with-rancher-on-oci-container-engine)
+- [Run Mushop with Rancher on Oracle Cloud Infrastructure Container Engine for Kubernetes](#run-mushop-with-rancher-on-oracle-cloud-infrastructure-container-engine-for-kubernetes)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Pre-requisites](#pre-requisites)
@@ -18,6 +18,7 @@
 ## Overview
 
 In this lab you will experiment how to use Rancher to control a Kubernetes cluster based on OCI Container for Kubernetes (OKE) service and to install and run Mushop. 
+Rancher will run on an OCI Compute Instance and will transparently control OKE cluster.
 
 [MuShop](https://github.com/oracle-quickstart/oci-cloudnative) is an opensource application the implements an e-commerce platform built as a set of micro-services and is built to showcase of several Oracle Cloud Infrastructure services in a unified reference application.
 
@@ -216,20 +217,20 @@ Click **Create**. Wait for the OKE cluster driver to be active.
 12.  Select **Clusters** from menu. Click **Add Cluster**.
 13.  Under _With a hosted Kubernetes provider_ select **OKE**.
    <img src="media/06-rancher-provider.png" alt="image-alt-text">
-14. Fill the dialog box.
-- **Cluster Name**: Provide a name
-- **Tenancy OCID**: Your tenancy OCID.
-- **Compartment OCID**: Your compartment OCID.
-- **Region**: Select your region.
-- **User OCID**: Your user OCID.
-- **User fingerprint**: Your user API Public Key fingerprint.
-- **User Private Key**: Your API private key
+14. Fill the dialog box  
+    
+- **Cluster Name**: Provide a name  
+- **Tenancy OCID**: Your tenancy OCID  
+- **Compartment OCID**: Your compartment OCID  
+- **Region**: Select your region  
+- **User OCID**: Your user OCID  
+- **User fingerprint**: Your user API Public Key fingerprint  
+- **User Private Key**: Your API private key  
+  <img src="media/07-rancher-add-cluster.png" alt="image-alt-text">
 
-   <img src="media/07-rancher-add-cluster.png" alt="image-alt-text">
-
-15. Click **Next: Authenticate & Configure Cluster**.
-16. Click **Next: Configure Virtual Cloud Network**. Check **Quick Create**.
-17. Click **Next: Configure Node Instances**. Fill the dialog box.
+1.  Click **Next: Authenticate & Configure Cluster**.
+2.  Click **Next: Configure Virtual Cloud Network**. Check **Quick Create**.
+3.  Click **Next: Configure Node Instances**. Fill the dialog box.
 - **Instance Shape**: choose the instance shape to be used for your nodes. Make sure the selected shape has at least 2 OCPUs (i.e. VM.Standard.E2.2).
 - **Operating System**: Oracle-Linux-7.6
 - **SSH public key for nodes**: your SSH public key (optional)  
@@ -330,8 +331,9 @@ Click **Create**. Wait for the cluster state to be _Active_ and the node number 
             host: edge.default.svc.cluster.local
             port:
               number: 80
-      
     ```
+   > _NOTE_: to avoid issue with YAML indenting you can download the gateway.yaml file [here](gateway.yaml)
+
    In the SSH terminal
 
    ```SHELL
