@@ -1,5 +1,5 @@
 
-<img src="images/HOL_banner03.png" width="600">   
+# Hands-on Labs #
 
 Welcome to the Data Management Hands-on Labs.  With Oracle's Cloud you can have a full development environment spun up in a matter of minutes. Check out these hands-on labs and provision, load data, and build an application on the world's best database.
 
