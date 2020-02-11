@@ -7,7 +7,7 @@ Many PDBs can be plugged into a single Multitenant Container Database or CDB. Fr
 
 Enormous gains in technical efficiency are enabled by a shared technical infrastructure. There’s a single set of background processes and a single, global memory area – the SGA – shared by all the PDBs. The result is that with this architecture we can consolidate more applications per server.
 
-![](./img/multitenant.png " ")
+![](./../img/multitenant.png " ")
 
 ## Setup ##
 
@@ -66,7 +66,7 @@ The tasks you will accomplish in this lab are:
       /
     ````
 
-    ![](./img/mt/whoisconnected.png " ")
+    ![](./../img/whoisconnected.png " ")
 
 3. Create a pluggable database **PDB2**.  
 
@@ -76,18 +76,18 @@ The tasks you will accomplish in this lab are:
     alter pluggable database PDB2 open;
     show pdbs;
     ````
-    ![](./img/mt/showpdbsbefore.png " ")
+    ![](./../img/showpdbsbefore.png " ")
 
-    ![](./img/mt/createpdb.png " ")
+    ![](./../img/createpdb.png " ")
 
-    ![](./img/mt/showpdbsafter.png " ")
+    ![](./../img/showpdbsafter.png " ")
 
 4. Change the session to point to **PDB2**.  
 
     ````
     alter session set container = PDB2;
     ````
-   ![](./img/mt/altersession.png " ")
+   ![](./../img/altersession.png " ")
 
 5. Grant **PDB_ADMIN** the necessary privileges and create the **USERS** tablespace for **PDB2**.  
 
@@ -98,7 +98,7 @@ The tasks you will accomplish in this lab are:
     grant create table, unlimited tablespace to pdb_admin;
     ````
 
-   ![](./img/mt/grantsysdba.png " ")
+   ![](./../img/grantsysdba.png " ")
 
 6. Connect as **PDB_ADMIN** to **PDB2**.  
 
@@ -116,7 +116,7 @@ The tasks you will accomplish in this lab are:
     commit;
     ````
 
-   ![](./img/mt/createtable.png " ")
+   ![](./../img/createtable.png " ")
 
 8. Change back to **SYS** in the container database **CDB1** and show the tablespaces and datafiles created.  
 
@@ -149,7 +149,7 @@ The tasks you will accomplish in this lab are:
     order by 1, 3
     /
     ````
-   ![](./img/mt/containers.png " ")
+   ![](./../img/containers.png " ")
 
 
 ## Step 2: Clone a PDB
@@ -173,9 +173,9 @@ The tasks you will accomplish in this lab are:
     show pdbs
     ````
 
-   ![](./img/mt/alterplug.png " ")
+   ![](./../img/alterplug.png " ")
 
-   ![](./img/mt/showpdbs.png " ")
+   ![](./../img/showpdbs.png " ")
    
 3. Create a pluggable database **PDB3** from the read only database **PDB2**.  
 
@@ -184,7 +184,7 @@ The tasks you will accomplish in this lab are:
     alter pluggable database PDB3 open force;
     show pdbs
     ````
-   ![](./img/mt/createpdb3.png " ")
+   ![](./../img/createpdb3.png " ")
 
 4. Change **PDB2** back to read write.  
 
@@ -192,7 +192,7 @@ The tasks you will accomplish in this lab are:
     alter pluggable database PDB2 open read write force;
     show pdbs
     ````
-   ![](./img/mt/pdb2write.png " ")
+   ![](./../img/pdb2write.png " ")
 
 5. Connect to **PDB2** and show the table **MY_TAB**.  
 
@@ -201,7 +201,7 @@ The tasks you will accomplish in this lab are:
     select * from my_tab;
     ````
  
-   ![](./img/mt/pdb2mytab.png " ")
+   ![](./../img/pdb2mytab.png " ")
 
 6. Connect to **PDB3** and show the table **MY_TAB**.  
 
@@ -209,7 +209,7 @@ The tasks you will accomplish in this lab are:
     connect pdb_admin/oracle@localhost:1523/pdb3
     select * from my_tab;
     ````
-   ![](./img/mt/pdb3mytab.png " ")
+   ![](./../img/pdb3mytab.png " ")
 
 ## Steo 3: Unplug a PDB
 This section looks at how to unplug a PDB
@@ -237,7 +237,7 @@ The tasks you will accomplish in this lab are:
     show pdbs
     ````
 
-   ![](./img/mt/unplugpdb3.png " ")
+   ![](./../img/unplugpdb3.png " ")
 
 3. Remove **PDB3** from **CDB1**.  
 
@@ -247,7 +247,7 @@ The tasks you will accomplish in this lab are:
     show pdbs
     ````
 
-   ![](./img/mt/droppdb3.png " ")
+   ![](./../img/droppdb3.png " ")
 
 4. Show the datafiles in **CDB1**.  
 
@@ -279,14 +279,14 @@ The tasks you will accomplish in this lab are:
     /
     ````
 
-    ![](./img/mt/cdb1data.png " ")
+    ![](./../img/cdb1data.png " ")
 
 5. Look at the XML file for the pluggable database **PDB3**.  
 
     ````
     host cat /u01/app/oracle/oradata/CDB1/pdb3.xml
     ````
-    ![](./img/mt/xmlfile.png " ")
+    ![](./../img/xmlfile.png " ")
 
 
 ## Step 4: Plug in a PDB
@@ -317,7 +317,7 @@ The tasks you will accomplish in this lab are:
 
     show pdbs
     ````
-    ![](./img/mt/whoamicdb2.png " ")
+    ![](./../img/whoamicdb2.png " ")
 
 2. Check the compatibility of **PDB3** with **CDB2**  
 
@@ -346,7 +346,7 @@ The tasks you will accomplish in this lab are:
     show pdbs
     ````
 
-    ![](./img/mt/createwithxml.png " ")
+    ![](./../img/createwithxml.png " ")
 
 4. Review the datafiles in **CDB2**  
 
@@ -379,7 +379,7 @@ The tasks you will accomplish in this lab are:
     /
     ````
 
-    ![](./img/mt/mtdbfcdb2.png " ")
+    ![](./../img/mtdbfcdb2.png " ")
 
 5. Connect as **PDB_ADMIN** to **PDB3** and look at **MY_TAB**;  
 
@@ -389,7 +389,7 @@ The tasks you will accomplish in this lab are:
     select * from my_tab;
     ````
 
-    ![](./img/mt/pdb3mytab2.png " ")
+    ![](./../img/pdb3mytab2.png " ")
 
 ## Step 5: Drop a PDB
 This section looks at how to drop a pluggable database.
@@ -416,7 +416,7 @@ The tasks you will accomplish in this lab are:
     show pdbs
     ````
 
-    ![](./img/mt/droppdb.png " ")
+    ![](./../img/droppdb.png " ")
 
 
 ## Step 6: Clone an Unplugged PDB
@@ -448,7 +448,7 @@ The tasks you will accomplish in this lab are:
     show pdbs
     ````
 
-    ![](./img/mt/goldpdb.png " ")
+    ![](./../img/goldpdb.png " ")
 
 4. Change **PDB2** back to read write  
 
@@ -457,7 +457,7 @@ The tasks you will accomplish in this lab are:
     show pdbs
     ````
 
-    ![](./img/mt/mountgoldpdb.png " ")
+    ![](./../img/mountgoldpdb.png " ")
 
 5. Unplug **GOLDPDB** from **CDB1**  
 
@@ -471,7 +471,7 @@ The tasks you will accomplish in this lab are:
     show pdbs
     ````
 
-    ![](./img/mt/unpluggold.png " ")
+    ![](./../img/unpluggold.png " ")
 
 6. Remove **GOLDPDB** from **CDB1**  
 
@@ -511,7 +511,7 @@ The tasks you will accomplish in this lab are:
     show pdbs
     ````
 
-    ![](./img/mt/clonegold1.png " ")
+    ![](./../img/clonegold1.png " ")
 
 10. Create another clone of **GOLDPDB** as **COPYPDB2**  
 
@@ -523,7 +523,7 @@ The tasks you will accomplish in this lab are:
     show pdbs
     ````
 
-    ![](./img/mt/clonegold.png " ")
+    ![](./../img/clonegold.png " ")
 
 11. Open all of the pluggable databases  
 
@@ -532,7 +532,7 @@ The tasks you will accomplish in this lab are:
 
     show pdbs
     ````
-    ![](./img/mt/allopen.png " ")
+    ![](./../img/allopen.png " ")
 
 12. Look at the GUID for the two cloned databases  
 
@@ -543,7 +543,7 @@ The tasks you will accomplish in this lab are:
     order by Creation_Scn
     /
     ````
-    ![](./img/mt/guid.png " ")
+    ![](./../img/guid.png " ")
 
 ## Step 7: PDB Hot Clones
 This section looks at how to hot clone a pluggable database.
@@ -570,7 +570,7 @@ The tasks you will accomplish in this lab are:
     alter user soe quota unlimited on system;
     ````
 
-    ![](./img/mt/oe.png " ")
+    ![](./../img/oe.png " ")
 
 3. Connect as **SOE** and create the **sale_orders** table  
 
