@@ -153,7 +153,7 @@ For more information about the Marketplace Developer Image [click here](https://
 
 	![](images/050/035.png)
 
-    **If you cannot see your instance, make sure you are in the Demo compartment.**
+    **If you cannot see your instance, make sure you are in the python4dev compartment.**
 
 - SSH into the image. 
     **Note if you are on Windows you will need to use putty.**
