@@ -14,7 +14,7 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
 
 ##
 
-**[L100 Workshop - html version](https://oracle.github.io/learning-library/ospa-library/oci/L100-Workshop/)
+[L100 Workshop - html version](https://oracle.github.io/learning-library/ospa-library/oci/L100-Workshop/)
 
 <!-- comment out the links to my personal github repo
 
