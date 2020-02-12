@@ -53,7 +53,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 ![](./images/200/Picture100-16.png " ")
 
--   SQL Developer Web opens on a worksheet tab. The first time you open SQL Developer Web, a series of pop-up informational boxes provide a tour of the main features.
+-   SQL Developer Web opens on the worksheet tab. The first time you open SQL Developer Web, a series of pop-up informational boxes provide a tour of the main features.
 
 ![](./images/200/Picture100-16b.png " ")
 
