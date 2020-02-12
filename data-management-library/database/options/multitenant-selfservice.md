@@ -228,12 +228,15 @@ You will be using Terraform to create your Multitenant environment.
     sudo su - oracle
     unzip labs.zip
     cd /home/oracle/labs
-    nohup /home/oracle/labs/envprep.sh &> nohupenvprep.out&
+    sudo su - 
+    nohup /home/oracle/envprep.sh &> nohupenvprep.out&
     ````
 
 11. Now it's time to create your multitenant environment.  This script takes about 35 minutes to create.  Make sure your session timeout on putty is set to 3600s.  You can also use the tail or jobs command to check the status.
 
     ````
+    sudo su - oracle
+    cd /home/oracle/labs
     nohup /home/oracle/labs/multitenant/createCDBs.sh &> nohupmultitenant.out&
     ````
 
