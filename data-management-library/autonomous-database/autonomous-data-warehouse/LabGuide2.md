@@ -19,7 +19,9 @@ The <strong>LOW</strong> database service provides the least amount of resources
 </blockquote>
 As a user you need to pick the database service based on your performance and concurrency requirements.
 
-This lab will use the HIGH database service to focus on performance. The lab will demo queries on sample data sets provided out of the box with ADW. ADW provides the Oracle Sales History sample schema and the Star Schema Benchmark (SSB) data set; these data sets are in the SH and SSB schemas, respectively.
+This lab uses SQL Developer Web, which currently connects only with the LOW database service level. For performance or higher degree of parallelism, you can use Oracle SQL Developer, as described in another lab in this series.
+
+This lab will demo queries on sample data sets provided out of the box with ADW. ADW provides the Oracle Sales History sample schema and the Star Schema Benchmark (SSB) data set; these data sets are in the SH and SSB schemas, respectively.
 
 You will run a basic query on the SSB data set which is a 1TB data set with one fact table with around 6 billion rows, and several dimension tables.
 
@@ -35,20 +37,32 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 -   The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
--   Oracle SQL Developer (see [Lab 1](LabGuide1.md) for more specifics on the version of SQL Developer and how to install and configure it).
+### Run a Query on a Sample ADW Dataset
+
+#### **STEP 1: Open up SQL Developer Web to connect to the autonomous database you created in the previous lab**
+
+-   In your database's details page, click the **Tools** tab.
+
+![](./images/200/Picture100-34.png " ")
+
+-  The Tools page provides you access to SQL Developer Web, Oracle Application Express, and Oracle ML User Administration. In the SQL Developer Web box, click **Open SQL Developer Web**.
+
+![](./images/200/Picture100-15.png " ")
+
+-   If you are not still signed in to SQL Developer Web from the previous lab, a sign in page opens. For this lab, simply use your database instance's default administrator account, ADMIN, with the admin password you specified when creating the database. Click **Sign in**.
+
+![](./images/200/Picture100-16.png " ")
+
+-   SQL Developer Web opens on a worksheet tab. The first time you open SQL Developer Web, a series of pop-up informational boxes provide a tour of the main features.
+
+![](./images/200/Picture100-16b.png " ")
 
 
-#### **STEP 1: Open up SQL Developer and connect to the admin_high database connection you previously created**
+-   Copy and paste <a href="./scripts/200/low_ssb_query.txt" target="\_blank">this code snippet</a> to your SQL Developer Web worksheet. This query will run on the Star Schema Benchmark, one of the two ADW sample data sets that may be accessed from any ADW instance. Take a moment to examine the script. Then click the **Run Script** button to run it. Make sure you click the Run Script button in SQL Developer Webso that all the rows are displayed on the screen.
 
--   Expand the list of connections and double-click on the admin_high connection.
+![](./images/200/SSB_query_low_results_SQL_Developer_Web.png " ")
 
-    ![](images/200/snap0014314.jpg " ")
-
--   Copy and paste <a href="./scripts/200/high_ssb_query.txt" target="\_blank">this code snippet</a> to your SQL Developer worksheet. This query will run on the Star Schema Benchmark, one of the two ADW sample data sets that may be accessed from any ADW instance. Take a moment to examine the script. Then click the **Run Script** button to run it. Make sure you click the Run Script button in SQL Developer so that all the rows are displayed on the screen.
-
-    ![](./images/200/snap0014315.jpg " ")
-
--   Take a look at the output response from your Autonomous Data Warehouse as well as the response time.
+-   Take a look at the output response from your Autonomous Data Warehouse.
 
 -   When possible, ADW also **caches** the results of a query for you. If you run identical queries more than once, you will notice a much lower response time when your results have been cached.
 
