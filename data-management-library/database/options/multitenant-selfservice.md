@@ -7,8 +7,8 @@
 - [Section 2-Generate an SSH key pair](#section-2-generate-an-ssh-key-pair)
 - [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
 - [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
-- [Section 5-Connecting to your instance](#section-5-connecting-to-your-instance)
-- [Section 5b-Running the Setup Scripts](#section-5b-running-the-setup-scripts)
+- [Section 5-Connect to your instance](#section-5-connect-to-your-instance)
+- [Section 5b-Run the Setup Scripts](#section-5b-run-the-setup-scripts)
 
 
 
@@ -52,7 +52,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 
 ## Section 2-Generate an SSH Key Pair
 
-If you already have an ssh key pair, you may use that to connect to your environment.
+If you already have an ssh key pair, you may use that to connect to your environment.  Based on your laptop config, choose the appropriate step to connect to your instance.
 
 ### For MAC Users ### 
 
@@ -179,6 +179,8 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 ## Section 5-Connect to your instance
 
+Based on your laptop config, choose the appropriate step to connect to your instance.
+
 ### Connecting via MAC or Windows CYGWIN Emulator
 1.  Go to Compute -> Instance and select the instance you created (make sure you choose the correct compartment)
 2.  On the instance homepage, find the Public IP addresss for your instance.
@@ -218,6 +220,8 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 7. Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session section.
 
 8. Click Open to begin your session with the instance.
+
+[Back to Top](#table-of-contents)
 
 ## Section 5b-Run the Setup Scripts
 
