@@ -64,12 +64,13 @@ If you already have an ssh key pair, you may use that to connect to your environ
     ````
 
     ![](img/sshkeygen.png) 
-3.  Inspect your .ssh directory.  You should see two files.  optionskey and optionskey.pub.  Copy the contents of the pub file `optionskey.pub` into notepad.  Your key file should be one line. You will need this to access your instance in Section 5.  
+3.  Inspect your .ssh directory.  You should see two files.  optionskey and optionskey.pub.  Copy the contents of the pub file `optionskey.pub` into notepad.  Your key file should be one line. You will need this to access your instance later.  
 
     ````
     ls -l .ssh
     more optionskey.pub
     ````
+
 
 ### For Windows: Using GitBash or Windows Subsystem for Linux (WSL) ### 
 
