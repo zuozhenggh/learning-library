@@ -4,7 +4,10 @@
 - [Introduction](#introduction)
 - [Lab Assumptions](#lab-assumptions)
 - [Section 1-Login to the Oracle Cloud](#section-1-login-to-the-oracle-cloud)
-- [Section 2-Create an SSH key pair](#section-2-create-an-ssh-key-pair)
+- [Section 2-Generate an SSH key pair](#section-2-generate-an-ssh-key-pair)
+- [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
+- [Section 4-Terraform Plan and Apply](section-4-terraform-plan-and-apply)
+- [Section 5-Connecting to your instance]()
 
 
 ## Introduction
@@ -22,7 +25,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 - **Region**: \<Provided by Oracle\>
 
 
-## Section 1-Login to the Oracle Cloud and Create an SSH Key Pair
+## Section 1-Login to the Oracle Cloud
 1.  You should have received two emails.  **Email 1:**  From noreply with the subject **Verify Email Request** (check your spam and junk folders).  This has the link that verifies your email.  Without clicking on this link you cannot login to the tenancy.  Open up this email.  Click on the **Sign In to Oracle Cloud** link.  
 
     ![](img/signin.png)
@@ -104,21 +107,17 @@ You will be using Terraform to create your database environment.
 
 2.  Save both files in your downloads folder, you will need the labs.zip file later.
 
-3.  Go back to your cloud and click on the hamburger menu in the left hand corner.  Click on **Resource Manager** under the *Solutions and Platform* section.
+3.  Open up the hamburger menu in the left hand corner.  Choose **Resource Manager > Stacks**.   Choose the compartment from your email, click the  **Create Stack** button
 
     ![](img/cloud-homepage.png) 
 
     ![](img/resource.png)
 
-4.  In the Stacks page, choose the dboptionsUSERS compartment.
-
     ![](img/choosecompartment.png)
-
-5.  Click the **Create Stack** button
 
     ![](img/createstackpage.png)
 
-6.  Click the Browse button and select the zip file that you downloaded. Click Select.
+6.  Click the **Browse** button and select the zip file (multitenant-terraform.zip) that you downloaded. Click **Select**.
 
     ![](img/createstack2.png)
 
@@ -132,7 +131,7 @@ You will be using Terraform to create your database environment.
 
     ![](img/createstack3.png)
 
-    Enter the following inforamtion. Some information may already be pre-populated.  
+    Enter the following inforamtion. Some information may already be pre-populated.  Do not change the pre-populated info.  
 
     **Display Name:** <firstname.lastname> 
     
@@ -140,7 +139,7 @@ You will be using Terraform to create your database environment.
     
     **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
     
-    **SSH Public Key**:  Enter the public key one line you copied in the earlier step,
+    **SSH Public Key**:  Paste the public key you created in the earlier step (it should be one line)
 
 8. Click **Next**.
 
@@ -152,8 +151,9 @@ You will be using Terraform to create your database environment.
 
 
 ## Section 4-Terraform Plan and Apply
+When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
 
-1.  Click Terraform Actions -> Plan to validate your configuration.  This takes about a minute, please be patient.
+1.  [OPTIONAL]Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
 
     ![](img/terraformactions.png)
 
@@ -161,14 +161,14 @@ You will be using Terraform to create your database environment.
 
     ![](img/planjob1.png)
 
-2.  Once the Terraform Stack Plan finishes, click Terraform Actions -> Apply.  This will create your instance and install Oracle 19c.
+2.  Click **Terraform Actions** -> **Apply**.  This will create your instance and install Oracle 19c.
     ![](img/applyjob1.png)
 
     ![](img/applyjob2.png)
 
-3.  Once this job succeeds, your environment is created!  You can now proceed to the lab.
+3.  Once this job succeeds, your environment is created!  Time to login to your instance to finish the configuration.
 
-## Section 5: Connecting to your instance
+## Section 5-Connecting to your instance
 
 ### Connecting via MAC or Windows CYGWIN Emulator
 1.  Go to Compute -> Instance and select the instance you created (make sure you choose the correct compartment)
@@ -213,12 +213,13 @@ You will be using Terraform to create your database environment.
 9. In a separate window, secure FTP using either a client (or command line, see below) the labs.zip file to your /home/opc directory.
 
     ````
-    sftp -i .ssh/optionskey opc@<YOUR PUBLIC IP ADDRESS>
+    sftp -i ~/.ssh/optionskey opc@<YOUR PUBLIC IP ADDRESS>
     mput labs.zip
     ````
+    ![](img/sftp.png) 
 
 10.  Go back to your ssh'd terminal window.  Copy the following commands into your terminal.  The script takes approximately 1.5hrs to run.  It is a series of scripts that create several databases in multiple ORACLE HOMES so that you can run both the Multitenant and Advanced Multitenant labs.
-  `tail -f nohupenvprep.out` to check on the progress.    
+  
 
         ````
         cd /home/opc/
@@ -227,10 +228,17 @@ You will be using Terraform to create your database environment.
         sudo su - oracle
         unzip labs.zip
         cd /home/oracle/labs
+        exit
         sudo su - 
-        nohup /home/oracle/envprep.sh &> nohupenvprep.out&
+        nohup /home/oracle/labs/envprep.sh &> /home/oracle/labs/nohupenvprep.out&
+        ````
+11.   To check on the progress of this set of scripts, enter the command below.  This script takes about 90 minutes to complete.
+
+        ````
+        tail -f /home/oracle/labs/nohupenvprep.out
         ````
 
+12.  Once the script is finished,        
 Congratulations!  Now you have the environment to run the Multitenant labs.   You may proceed to the [Multitenant Lab](https://oracle.github.io/learning-library/data-management-library/database/options/multitenant.html). 
 
 
