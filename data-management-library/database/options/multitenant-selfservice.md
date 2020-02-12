@@ -6,8 +6,10 @@
 - [Section 1-Login to the Oracle Cloud](#section-1-login-to-the-oracle-cloud)
 - [Section 2-Generate an SSH key pair](#section-2-generate-an-ssh-key-pair)
 - [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
-- [Section 4-Terraform Plan and Apply](section-4-terraform-plan-and-apply)
-- [Section 5-Connecting to your instance]()
+- [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
+- [Section 5-Connecting to your instance](#section-5-connecting-to-your-instance)
+- [Section 5b-Running the Setup Scripts](#section-5b-running-the-setup-scripts)
+
 
 
 ## Introduction
@@ -19,7 +21,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 
 ## Lab Settings
 - **Tenancy**:  c4u03
-- **Username/Password**:  Follow instructions below to access
+- **Username/Password**:  Sent via email
 - **Compartment**: \<Provided by Oracle\>
 - **VCN**: \<Provided by Oracle\>
 - **Region**: \<Provided by Oracle\>
@@ -46,6 +48,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 
     ![](img/changeregion.png) 
 
+[Back to Top](#table-of-contents)
 
 ## Section 2-Generate an SSH Key Pair
 
@@ -98,14 +101,15 @@ If you already have an ssh key pair, you may use that to connect to your environ
 
 6. Note: Sometimes PuttyGen does not save the public key in the correct format. The text string displayed in the window is correct so copy/paste to be sure.
 
+[Back to Top](#table-of-contents)
+
 ## Section 3-Login and Create Stack using Resource Manager
 You will be using Terraform to create your database environment.
 
-1.  Click on these two links to download the zip files you need to build your enviornment.  
-- [labs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/AaVKLCf700YrJ8E7BK2xvZXAZxiX31Cp6n7i1JK1I6c/n/c4u03/b/bucket-20200212-1244/o/labs.zip) - Zip file for multitenant labs and database setup
-- [multitenant-terraform.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/cB6aDxMXQchwdD4Y2hVNoD8d0IDkx-L67mKlgq8ve6E/n/c4u03/b/bucket-20200212-1244/o/multitenant-terraform.zip) - Packaged terraform instance creation script
+1.  Click on the link below to download the zip file you need to build your enviornment.  
+- [multitenant-terraform.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1LYMqYL4xK0fq4iw1lr0ByzxyOACFQ_viboPmaEFGqM/n/c4u03/b/labfiles/o/multitenant-compute.tf.zip) - Packaged terraform instance creation script
 
-2.  Save both files in your downloads folder, you will need the labs.zip file later.
+2.  Save in your downloads folder.
 
 3.  Open up the hamburger menu in the left hand corner.  Choose **Resource Manager > Stacks**.   Choose the compartment from your email, click the  **Create Stack** button
 
@@ -149,6 +153,8 @@ You will be using Terraform to create your database environment.
 
     ![](img/stackcreated.png)
 
+[Back to Top](#table-of-contents)
+
 
 ## Section 4-Terraform Plan and Apply
 When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
@@ -167,6 +173,9 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
     ![](img/applyjob2.png)
 
 3.  Once this job succeeds, your environment is created!  Time to login to your instance to finish the configuration.
+
+[Back to Top](#table-of-contents)
+
 
 ## Section 5-Connecting to your instance
 
@@ -210,19 +219,13 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 8. Click Open to begin your session with the instance.
 
-9. In a separate window, secure FTP using either a client (or command line, see below) the labs.zip file to your /home/opc directory.
+## Section 5b-Running the Setup Scripts
 
-    ````
-    sftp -i ~/.ssh/optionskey opc@<YOUR PUBLIC IP ADDRESS>
-    mput labs.zip
-    ````
-    ![](img/sftp.png) 
-
-10.  Go back to your ssh'd terminal window.  Copy the following commands into your terminal.  The script takes approximately 1.5hrs to run.  It is a series of scripts that create several databases in multiple ORACLE HOMES so that you can run both the Multitenant and Advanced Multitenant labs.
-  
+1.  Copy the following commands into your terminal.  This script takes approximately 1.5hrs to run.  It is a series of scripts that create several databases in multiple ORACLE HOMES so that you can run both the Multitenant and Advanced Multitenant labs.  The scripts are run in the background.  Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
 
         ````
         cd /home/opc/
+        wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZfonUvgh0Lh6dbsyT0qEhAvHyowYvBdiRcuDkn-E_PY/n/c4u03/b/labfiles/o/labs.zip
         sudo mv labs.zip /home/oracle
         sudo chown oracle:oinstall /home/oracle/labs.zip 
         sudo su - oracle
@@ -232,13 +235,14 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
         sudo su - 
         nohup /home/oracle/labs/envprep.sh &> /home/oracle/labs/nohupenvprep.out&
         ````
-11.   To check on the progress of this set of scripts, enter the command below.  This script takes about 90 minutes to complete.
+2.   To check on the progress of this set of scripts, enter the command below.  This script takes about 90 minutes to complete.
 
         ````
         tail -f /home/oracle/labs/nohupenvprep.out
         ````
 
-12.  Once the script is finished,        
+3.  Once the script is finished,        
 Congratulations!  Now you have the environment to run the Multitenant labs.   You may proceed to the [Multitenant Lab](https://oracle.github.io/learning-library/data-management-library/database/options/multitenant.html). 
 
+[Back to Top](#table-of-contents)
 
