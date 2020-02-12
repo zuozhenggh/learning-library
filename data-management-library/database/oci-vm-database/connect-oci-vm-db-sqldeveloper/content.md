@@ -4,7 +4,7 @@
 This 15-minute tutorial walks you through the steps to connect Oracle SQL Developer to an Oracle Database running in an Oracle Cloud Infrastructure Virtual Machine.
 
 ### Background
-Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Database 19c instance running in a Virtual Machine. is a free, integrated development environment that simplifies the development and management of Oracle Database in both traditional and Cloud deployments.
+Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Database 19c instance running in a Virtual Machine. Oracle SQL Developer is a free, integrated development environment that simplifies the development and management of Oracle Database in both traditional and Cloud deployments.
 
 ### What Do You Need?
 
