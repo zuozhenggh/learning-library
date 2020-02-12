@@ -1,6 +1,14 @@
 {
     "tutorials": [
-        
+        {
+            "number": "0",
+            "filename": "Intro.md",
+            "title": "Read Me First",
+            "description": "Step-by-step workshop instructions",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "12/02/2020",
+            "contentid": "12nnnn"
+        },
         {         
             "title": "Lab 100: Containerize Your Java Microservice",
             "description": "Use Wercker to automatically build your application and package it as a Docker image",
