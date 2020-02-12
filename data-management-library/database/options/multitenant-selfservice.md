@@ -227,18 +227,19 @@ Based on your laptop config, choose the appropriate step to connect to your inst
 
 1.  Copy the following commands into your terminal.  This script takes approximately 1.5hrs to run.  It is a series of scripts that create several databases in multiple ORACLE HOMES so that you can run both the Multitenant and Advanced Multitenant labs.  The scripts are run in the background.  Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
 
-        ````
-        cd /home/opc/
-        wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZfonUvgh0Lh6dbsyT0qEhAvHyowYvBdiRcuDkn-E_PY/n/c4u03/b/labfiles/o/labs.zip
-        sudo mv labs.zip /home/oracle
-        sudo chown oracle:oinstall /home/oracle/labs.zip 
-        sudo su - oracle
-        unzip labs.zip
-        cd /home/oracle/labs
-        exit
-        sudo su - 
-        nohup /home/oracle/labs/envprep.sh &> /home/oracle/labs/nohupenvprep.out&
-        ````
+    ````
+    cd /home/opc/
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZfonUvgh0Lh6dbsyT0qEhAvHyowYvBdiRcuDkn-E_PY/n/c4u03/b/labfiles/o/labs.zip
+    sudo mv labs.zip /home/oracle
+    sudo chown oracle:oinstall /home/oracle/labs.zip 
+    sudo su - oracle
+    unzip labs.zip
+    cd /home/oracle/labs
+    exit
+    sudo su - 
+    nohup /home/oracle/labs/envprep.sh &> /home/oracle/labs/nohupenvprep.out&
+    ````
+
 2.   To check on the progress of this set of scripts, enter the command below.  This script takes about 90 minutes to complete.
 
         ````
