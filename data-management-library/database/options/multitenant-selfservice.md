@@ -102,7 +102,7 @@ If you already have an ssh key pair, you may use that to connect to your environ
 ## Section 3-Login and Create Stack using Resource Manager
 You will be using Terraform to create your Multitenant environment.
 
-1.  Click  \<[**here**](https://community.oracle.com/servlet/JiveServlet/download/1031489-6-462822/oci-db-app-script-examples.zip)\> to download the Resource Manager zip file and click [here] to download the labs.zip file.  
+1.  Click  \<[**here**](https://github.com/oracle/learning-library/raw/master/data-management-library/database/options/terraform/multitenant-terraform.zip)\> to download the Resource Manager zip file and click <[here](https://github.com/oracle/learning-library/raw/master/data-management-library/database/options/terraform/labs.zip)> to download the labs.zip file.  
 
 2.  Save both in your downloads folder, you will need the labs.zip file later.
 
