@@ -137,7 +137,7 @@ You will be using Terraform to create your database environment.
 
     Enter the following inforamtion. Some information may already be pre-populated.  Do not change the pre-populated info.  
 
-    **Display Name:** <firstname.lastname> 
+    **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
     
     **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
     
@@ -149,7 +149,7 @@ You will be using Terraform to create your database environment.
 
     ![](img/createstack4.png)
 
-9.  Your stack has now been created!  Now to create your environemnt.
+9.  Your stack has now been created!  Now to create your environment.
 
     ![](img/stackcreated.png)
 
@@ -177,7 +177,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 [Back to Top](#table-of-contents)
 
 
-## Section 5-Connecting to your instance
+## Section 5-Connect to your instance
 
 ### Connecting via MAC or Windows CYGWIN Emulator
 1.  Go to Compute -> Instance and select the instance you created (make sure you choose the correct compartment)
@@ -219,7 +219,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 8. Click Open to begin your session with the instance.
 
-## Section 5b-Running the Setup Scripts
+## Section 5b-Run the Setup Scripts
 
 1.  Copy the following commands into your terminal.  This script takes approximately 1.5hrs to run.  It is a series of scripts that create several databases in multiple ORACLE HOMES so that you can run both the Multitenant and Advanced Multitenant labs.  The scripts are run in the background.  Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
 
