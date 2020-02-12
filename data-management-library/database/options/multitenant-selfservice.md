@@ -136,11 +136,11 @@ You will be using Terraform to create your database environment.
 
     ![](img/createstack3.png)
 
-    Enter the following inforamtion. Some information may already be pre-populated.  Do not change the pre-populated info.  
+    Enter the following inforamtion. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
+
+    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
 
     **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
-    
-    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
     
     **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
     
