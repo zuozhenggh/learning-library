@@ -232,7 +232,7 @@ Based on your laptop config, choose the appropriate step to connect to your inst
 
     ````
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZfonUvgh0Lh6dbsyT0qEhAvHyowYvBdiRcuDkn-E_PY/n/c4u03/b/labfiles/o/labs.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/8O0AbribZ9s0lxMh75PBzqRtGjjcHeEjqM-OAUFjOkM/n/c4u03/b/labfiles/o/labs.zip
     sudo mv labs.zip /home/oracle
     sudo chown oracle:oinstall /home/oracle/labs.zip 
     sudo su - oracle
