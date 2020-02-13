@@ -154,7 +154,7 @@ You will be using Terraform to create your database environment.
 
     ![](img/createstack4.png)
 
-9.  Your stack has now been created!  Now to create your environment.
+9.  Your stack has now been created!  Now to create your environment.  If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.
 
     ![](img/stackcreated.png)
 
