@@ -246,7 +246,7 @@ Based on your laptop config, choose the appropriate step to connect to your inst
     nohup /home/oracle/labs/multitenant/createCDBs.sh &> nohupmultitenant.out&
     ````
 
-2.   To check on the progress of this set of scripts, enter the command below.  This script takes about 90 minutes to complete.
+2.   To check on the progress of this set of scripts, enter the command below.  This script takes about 90 minutes to complete.  Note:  Ignore the [WARNING] [DBT-06208] that occur in the 2nd script.
 
         ````
         tail -f /home/oracle/labs/nohupenvprep.out
