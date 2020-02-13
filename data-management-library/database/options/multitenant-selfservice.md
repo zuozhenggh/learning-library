@@ -226,7 +226,9 @@ Based on your laptop config, choose the appropriate step to connect to your inst
 
 ## Section 5b-Run the Setup Scripts
 
-1.  Copy the following commands into your terminal.  This script takes approximately 1.5hrs to run.  It is a series of scripts that create several databases in multiple ORACLE HOMES so that you can run both the Multitenant and Advanced Multitenant labs.  The scripts are run in the background.  Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+1.  Copy the following commands into your terminal.  This script takes approximately 1.5hrs to run.  It is a series of scripts that create several databases in multiple ORACLE HOMES so that you can run both the Multitenant and Advanced Multitenant labs.  The scripts are run in the background so you should be able to exit out while it's running.  The envprep.sh takes approximately 30 minutes and createCDBs.sh takes 60 minutes.  
+
+    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
 
     ````
     cd /home/opc/
@@ -239,12 +241,17 @@ Based on your laptop config, choose the appropriate step to connect to your inst
     exit
     sudo su - 
     nohup /home/oracle/labs/envprep.sh &> /home/oracle/labs/nohupenvprep.out&
+    sudo su - oracle
+    cd /home/oracle/labs
+    nohup /home/oracle/labs/multitenant/createCDBs.sh &> nohupmultitenant.out&
     ````
 
 2.   To check on the progress of this set of scripts, enter the command below.  This script takes about 90 minutes to complete.
 
         ````
         tail -f /home/oracle/labs/nohupenvprep.out
+        tail -f /home/oracle/labs/nohupmultitenant.out
+
         ````
 
 3.  Once the script is finished,        
