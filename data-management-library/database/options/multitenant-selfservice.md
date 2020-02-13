@@ -132,7 +132,7 @@ You will be using Terraform to create your database environment.
 
 
     Enter the following information and accept all the defaults
-    **Name**:  Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, underscores, exclamation etc, it may mess up the configuration and you will get an error during the apply)
+    **Name**:  Enter your firstname and lastname and the day you were born (DO NOT ENTER ANY SPECIAL CHARACTERS HERE, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
     **Description**:  Same as above
     **Compartment**:  Select Compartment from Email 2
 
