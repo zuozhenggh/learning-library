@@ -32,19 +32,21 @@ This lab will show you how to login to the cloud and setup your environment usin
 
     ![](img/signin.png)
 
-    ![](img/loginpage.png)
 
-2.  You should have received a 2nd email with your temporary password.  Enter your username and your password (Email 2).  You will then be taken to a screen to change your password.  Choose a new password that you can remember and click **Sign In**
+2.  You should have received a 2nd email with your temporary password.  Enter your username and your password (Email 2) in the box on the right hand side that says **Oracle Infrastructure** (Do not use SSO, SSO is not enabled for this tenancy).  
+
+    ![](img/loginpage.png)
+   
+3. You will then be taken to a screen to change your password.  Choose a new password that you can remember and click **Sign In**
 
     ![](img/changepwd.png)
 
 
-3. Once you successfully login, you will be presented with the Oracle Cloud homepage. If you get an *Email Activation Unsuccessful* message, check to see if you can still access the cloud by looking for the hamburger menu to the left. 
+4. Once you successfully login, you will be presented with the Oracle Cloud homepage. (NOTE: If you get an *Email Activation Unsuccessful* message, check to see if you can still access the cloud by looking for the hamburger menu to the left). 
   ![](img/cloud-homepage.png) 
 
 
-
-4.  In Email 2, you were also assigned a region.  Click in the upper right hand corner and set your Region appropriately.  
+5.  In Email 2, you were also assigned a region.  Click in the upper right hand corner and set your Region appropriately.   (NOTE:  Setting the region is important, your network is region specific.  If you choose a different region that does not match your subnet, you will get an error on environment creation) 
 
     ![](img/changeregion.png) 
 
@@ -54,7 +56,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 
 If you already have an ssh key pair, you may use that to connect to your environment.  Based on your laptop config, choose the appropriate step to connect to your instance.
 
-PLEASE NOTE:  If the ssh key is not created correct, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.  
+`IMPORTANT:  If the ssh key is not created correct, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly. ` 
 
 ### For MAC Users ### 
 
@@ -110,7 +112,7 @@ PLEASE NOTE:  If the ssh key is not created correct, you will not be able to con
 You will be using Terraform to create your database environment.
 
 1.  Click on the link below to download the zip file you need to build your enviornment.  
-- [multitenant-terraform.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1LYMqYL4xK0fq4iw1lr0ByzxyOACFQ_viboPmaEFGqM/n/c4u03/b/labfiles/o/multitenant-compute.tf.zip) - Packaged terraform instance creation script
+- [multitenant-compute.tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1LYMqYL4xK0fq4iw1lr0ByzxyOACFQ_viboPmaEFGqM/n/c4u03/b/labfiles/o/multitenant-compute.tf.zip) - Packaged terraform instance creation script
 
 2.  Save in your downloads folder.
 
@@ -129,10 +131,10 @@ You will be using Terraform to create your database environment.
     ![](img/createstack2.png)
 
 
-    Enter the following information.
-    Name:  <firstname.lastname>
-    Description:  New instance for workshop
-    Compartment:  <enter from your email>
+    Enter the following information and accept all the defaults
+    **Name**:  Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
+    **Description**:  Same as above
+    Compartment:  Compartment from your email should be selected
 
 7.  Click **Next**.
 
