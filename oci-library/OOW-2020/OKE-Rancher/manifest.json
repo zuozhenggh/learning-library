@@ -1,8 +1,6 @@
 {
     "tutorials": [
         {            
-            "title": "Run Mushop with Rancher on Oracle Cloud Infrastructure Container Engine for Kubernetes",
-            "description": "In this lab you will experiment how to install and run Mushop application using Rancher to control a Kubernetes cluster based on OCI Container for Kubernetes (OKE) service. Rancher will run on an OCI Compute Instance and will transparently control OKE cluster.",
             "partnumber": "E12345_01",
             "publisheddate": "12/02/2020",
             "contentid": "123456",

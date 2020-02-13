@@ -1,20 +1,5 @@
 # Run Mushop with Rancher on Oracle Cloud Infrastructure Container Engine for Kubernetes
 
-## Table of Contents
-
-- [Run Mushop with Rancher on Oracle Cloud Infrastructure Container Engine for Kubernetes](#run-mushop-with-rancher-on-oracle-cloud-infrastructure-container-engine-for-kubernetes)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Pre-requisites](#pre-requisites)
-  - [Sign in to OCI Console and create VCN](#sign-in-to-oci-console-and-create-vcn)
-  - [Prepar SSH Keypair](#prepar-ssh-keypair)
-  - [Configure Rancher instance](#configure-rancher-instance)
-    - [Setup Monitoring](#setup-monitoring)
-    - [Setup Istio](#setup-istio)
-  - [Install Mushop](#install-mushop)
-  - [Test the setup](#test-the-setup)
-
-
 ## Overview
 
 In this lab you will experiment how to install and run Mushop application using Rancher to control a Kubernetes cluster based on OCI Container for Kubernetes (OKE) service. 
@@ -275,14 +260,12 @@ Click **Create**. Wait for the cluster state to be _Active_ and the node number 
 
 2. Click **Copy to Clipboard**  
 3. Connect to the Rancher instance via SSH from the terminal console.
-    ```SHELL  
-    #User: opc
-    #Public_IP_Address: Rancher instance's public IP
+    ``` 
     $ ssh -i ~/.ssh/id_rsa opc@<Public_IP_Address> 
     ```  
 
 4. Create the kubeconfig file and install Helm.  
-   ```SHELL
+   ```
     $ mkdir .kube
     $ nano .kube/config
     # paste the clipboard content
@@ -296,22 +279,24 @@ Click **Create**. Wait for the cluster state to be _Active_ and the node number 
 
 5. Run  
    
-   ```SHELL 
+   ```
    $ kubectl label namespace default istio-injection=enabled
    ```  
 
    This will inject Istio sidecar proxy for all the containers in the _default_ namespace. 
 
 6. Install Mushop running the below into the SSH terminal  
-   ```SHELL
-   $ git clone  https://github.com/oracle-quickstart/oci-cloudnative
+   
+   ```
+   $ git clone https://github.com/oracle-quickstart/oci-cloudnative
    $ cd oci-cloudnative/deploy/complete/helm-chart/
    $ helm install --set global.mock.service=all mymushop mushop
    ```
 
 7. Now you have to create a gateway for Mushop and expose _edge.default.svc.cluster.local_.  
    Copy the below yaml file.
-    ```YAML
+
+    ```
     apiVersion: networking.istio.io/v1alpha3
     kind: Gateway
     metadata:
@@ -347,7 +332,7 @@ Click **Create**. Wait for the cluster state to be _Active_ and the node number 
 
    In the SSH terminal
 
-   ```SHELL
+   ```
    $ cd
    $ nano gateway.yaml
    # paste the clipboard content
