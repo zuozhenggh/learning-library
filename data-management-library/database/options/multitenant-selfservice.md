@@ -54,6 +54,8 @@ This lab will show you how to login to the cloud and setup your environment usin
 
 If you already have an ssh key pair, you may use that to connect to your environment.  Based on your laptop config, choose the appropriate step to connect to your instance.
 
+PLEASE NOTE:  If the ssh key is not created correct, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.  
+
 ### For MAC Users ### 
 
 1.  Open up a terminal and type the following commands.  When prompted for a passphrase click **enter**. *Do not enter a passphrase*.
@@ -168,7 +170,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
     ![](img/planjob1.png)
 
-2.  Click **Terraform Actions** -> **Apply**.  This will create your instance and install Oracle 19c.
+2.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your instance and install Oracle 19c.
     ![](img/applyjob1.png)
 
     ![](img/applyjob2.png)
@@ -180,7 +182,9 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 ## Section 5-Connect to your instance
 
-Based on your laptop config, choose the appropriate step to connect to your instance.
+Based on your laptop config, choose the appropriate step to connect to your instance.  
+
+NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 
 ### Connecting via MAC or Windows CYGWIN Emulator
 1.  Go to Compute -> Instance and select the instance you created (make sure you choose the correct compartment)
