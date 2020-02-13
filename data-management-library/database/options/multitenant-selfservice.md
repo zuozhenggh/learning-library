@@ -218,7 +218,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
 4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
 
-5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.
+5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 
     ![](img/putty-auth.png) 
 
