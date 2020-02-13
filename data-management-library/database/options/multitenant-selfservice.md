@@ -37,7 +37,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 
     ![](img/loginpage.png)
    
-3. You will then be taken to a screen to change your password.  Choose a new password that you can remember and click **Sign In**
+3. You will then be taken to a screen to change your password.  Choose a new password that you can remember and click **Sign In** (make sure you are using an approved browser.  IE is not supported)
 
     ![](img/changepwd.png)
 
@@ -186,7 +186,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 Based on your laptop config, choose the appropriate step to connect to your instance.  
 
-NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
+NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).  Also, the ssh-daemon is disable for the first 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.
 
 ### Connecting via MAC or Windows CYGWIN Emulator
 1.  Go to Compute -> Instance and select the instance you created (make sure you choose the correct compartment)
