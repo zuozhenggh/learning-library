@@ -134,7 +134,7 @@ You will be using Terraform to create your database environment.
     Enter the following information and accept all the defaults
     **Name**:  Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
     **Description**:  Same as above
-    Compartment:  Compartment from your email should be selected
+    **Compartment**:  Select Compartment from Email 2
 
 7.  Click **Next**.
 
