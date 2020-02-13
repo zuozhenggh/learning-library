@@ -1,0 +1,10 @@
+{
+    "tutorials": [
+        {            
+            "partnumber": "E12345_01",
+            "publisheddate": "12/02/2020",
+            "contentid": "123456",
+            "filename": "OKE-Rancher_HOL.md"
+        }
+    ]
+}
