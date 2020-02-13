@@ -19,7 +19,7 @@ The <strong>LOW</strong> database service provides the least amount of resources
 </blockquote>
 As a user you need to pick the database service based on your performance and concurrency requirements.
 
-This lab uses SQL Developer Web, which currently connects only with the LOW database service level. For performance or a higher degree of parallelism, you can use Oracle SQL Developer, as described in another lab in this series.
+This lab uses SQL Developer Web, which currently connects only with the LOW database service level. For performance or for a higher degree of parallelism, you can use Oracle SQL Developer, as described in another lab in this series.
 
 This lab will demo queries on sample data sets provided out of the box with ADW. ADW provides the Oracle Sales History sample schema and the Star Schema Benchmark (SSB) data set; these data sets are in the SH and SSB schemas, respectively.
 
