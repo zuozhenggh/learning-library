@@ -199,7 +199,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     ````
     ![](img/ssh-first-time.png) 
 
-2.  Proceed to the Install CLI section.
+3.  Continue to [Section 5b-Run the Setup Scripts](#section-5b-run-the-setup-scripts)
 
 ### Connecting via Windows
 
