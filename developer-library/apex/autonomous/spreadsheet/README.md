@@ -1,10 +1,12 @@
 # Oracle APEX Hands-On Lab
 
-## Creating an App based on Existing Tables for Oracle Autonomous Cloud Service
+## Building an App from a Spreadsheet  for Oracle Autonomous Cloud Service
 
 ## Overview
 
-This lab walks you through creating an application based on existing tables in your Oracle Database. Go from zero to hero in a ridiculously short period of time!
+This lab walks you through uploading a spreadsheet into an Oracle database table, and then creating an application based on this new table. You will then learn to work with the resulting Faceted Search page, Interactive Report and form pages. Finally, you will improve the Calendar page and then link it to the existing form page.
+
+In the future, rather than emailing spreadsheets around to gather information, you'll know how to easily create an app in minutes and email the URL instead. The result will be a secure, scalable, multi-user app that provides a single source-of-truth for your data!
 
 ## Lab Objectives
 
