@@ -30,7 +30,7 @@ components to improve the initial app.
 | 6 | [Improving To Dos](6-improving-todos.md) | 10 min |
 | 7 | [Improving Links](7-improving-links.md) | 5 min |
 
-### Learn More - *Useful Links*
+## Learn More - *Useful Links*
 
 - APEX on Autonomous   https://apex.oracle.com/autonomous
 - APEX Collateral   https://apex.oracle.com

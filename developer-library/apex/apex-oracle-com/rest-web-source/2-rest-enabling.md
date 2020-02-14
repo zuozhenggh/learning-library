@@ -2,7 +2,7 @@
 
 In this module, you will learn how to REST enable a schema and database objects. 
 
-#### Background Information
+## Background Information
 In this lab you will be creating the EMP and DEPT tables, REST enabling them, and then building an application all in the same schema. Normally, you would REST enable database objects in a remote database schema, and then utilize those REST endpoints to define Web Source modules in an application, where APEX is installed, within the local database, as outlined below. 
 
 ![](images/2/rest-arch.png)
@@ -83,7 +83,7 @@ Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled 
         p_method      => 'POST',
         p_source_type => ords.source_type_plsql,
         p_source      => 'begin insert into emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)
-            values :empno,:ename,:job,:mgr,:hiredate,:sal,:comm,:deptno);:forward_location:=:empno;:status_code:=201;end;' );
+            values (:empno,:ename,:job,:mgr,:hiredate,:sal,:comm,:deptno);:forward_location:=:empno;:status_code:=201;end;' );
     ords.define_handler(
         p_module_name => 'emp.rest',
         p_pattern     => 'hol/:empno',

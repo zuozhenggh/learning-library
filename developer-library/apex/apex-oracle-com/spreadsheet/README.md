@@ -25,7 +25,7 @@ In the future, rather than emailing spreadsheets around to gather information, y
 | 4 | [Improving the Report and Form](4-improving-the-report-and-form.md) | 20 min |
 | 5 | [Linking the Calendar](5-linking-the-calendar.md) | 5 min |
 
-## **Learn More** - *Useful Links*
+## Learn More - *Useful Links*
 
 - APEX on Autonomous  https://apex.oracle.com/autonomous
 - APEX Collateral  http://apex.oracle.com

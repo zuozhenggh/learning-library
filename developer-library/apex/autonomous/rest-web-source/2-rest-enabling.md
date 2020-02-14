@@ -83,7 +83,7 @@ Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled 
         p_method      => 'POST',
         p_source_type => ords.source_type_plsql,
         p_source      => 'begin insert into emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)
-            values :empno,:ename,:job,:mgr,:hiredate,:sal,:comm,:deptno);:forward_location:=:empno;:status_code:=201;end;' );
+            values (:empno,:ename,:job,:mgr,:hiredate,:sal,:comm,:deptno);:forward_location:=:empno;:status_code:=201;end;' );
     ords.define_handler(
         p_module_name => 'emp.rest',
         p_pattern     => 'hol/:empno',
