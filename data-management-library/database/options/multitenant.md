@@ -45,6 +45,8 @@ The tasks you will accomplish in this lab are:
 1. Connect to **CDB1**  
 
     ````
+    . oraenv
+    CDB1
     sqlplus /nolog
     connect sys/oracle@localhost:1523/cdb1 as sysdba
     ````

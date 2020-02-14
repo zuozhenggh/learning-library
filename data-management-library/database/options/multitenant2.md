@@ -23,13 +23,6 @@ All the scripts for this lab are located in the /home/oracle/labs/multitenant/sc
 2.  Change to the ssh directory and ssh into your instance.  The public IP address can be found by going to Compute -> Instance.
    
     ````
-    cd .ssh
-    ssh -i optionskey opc@<your public ip address>
-    oci os object bulk-download -bn Multitenant --download-dir /home/opc 
-	sudo mv champion.zip /home/oracle
-	sudo chown oracle:oinstall /home/oracle/champion.zip 
-    sudo su - oracle
-    unzip champion.zip
     cd /home/oracle/labs/multitenant
     ````
 
@@ -50,6 +43,8 @@ The tasks you will accomplish in this lab are:
 
 1. Connect to **CDB1**.
     ````
+    . oraenv
+    CDB1
     sqlplus /nolog
     connect sys/oracle@localhost:1523/cdb1 as sysdba
     ````

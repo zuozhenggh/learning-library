@@ -2,7 +2,7 @@
 
 ## Building an App from a Spreadsheet  for apex.oracle.com
 
-### Overview 
+## Overview 
 
 This lab walks you through uploading a spreadsheet into an Oracle database table, and then creating an application based on this new table. You will then learn to work with the resulting Faceted Search page, Interactive Report and form pages. Finally, you will improve the Calendar page and then link it to the existing form page.
 
@@ -19,7 +19,7 @@ In the future, rather than emailing spreadsheets around to gather information, y
 
 | # | Module | Est. Time |
 | --- | --- | --- |
-| 1 | [Signing up for apex.oracle.com](1-sign-up-apex) | 5 min |
+| 1 | [Signing up for apex.oracle.com](1-sign-up-apex.md) | 5 min |
 | 2 | [Creating an App from a Spreadsheet](2-creating-an-app-from-a-spreadsheet.md) | 5 min |
 | 3 | [Improving the Faceted Search](3-improving-the-faceted-search.md) | 10 min |
 | 4 | [Improving the Report and Form](4-improving-the-report-and-form.md) | 20 min |
