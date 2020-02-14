@@ -28,7 +28,7 @@ This lab walks you through creating an application based on existing tables in y
 | 7 | [Improving Milestones](7-improving-milestones.md) | 5 min |
 | 8 | [Improving Tasks](8-improving-tasks.md) | 15 min |
 
-### Learn More - *Useful Links*
+## Learn More - *Useful Links*
 
 - APEX on Autonomous   https://apex.oracle.com/autonomous
 - APEX Collateral   https://apex.oracle.com
