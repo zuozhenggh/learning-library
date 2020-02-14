@@ -1,5 +1,6 @@
 {
     "tutorials": [
+<<<<<<< HEAD
             {
                 "title": "Lab 100: Getting Started with Oracle Analytics Cloud Data Visualization",
                 "description": "Learning how to provision an OAC instance. Getting acclimatized to the DV interface.",
@@ -43,4 +44,48 @@
 
         ]
 
+=======
+        
+        {         
+            "title": "Lab 100: Getting Started with Oracle Analytics Cloud Data Visualization",
+            "description": "Introduction to the workshop",
+            "partnumber": "100",
+            "publisheddate": "01/15/2020",
+            "contentid": "12nnnn",
+            "filename": "LabGuide100.md"
+        },
+        {         
+            "title": "Lab 200:  Analyzing Sales - Basic Introduction to Core Features",
+            "description": "Creating projects with data sets and visualizations. Understanding the visualization capabilities of DV. Telling a story with annotated visualizations.",
+            "partnumber": "200",
+            "publisheddate": "01/15/2020",
+            "contentid": "12nnnn",
+            "filename": "LabGuide200.md"
+        },
+        {         
+            "title": "Lab 300:  Analyzing Social Media with Sales – Data Blending and Wrangling",
+            "description": "Learning to Wrangle Data Sets. Joining Multiple Data Sets for analysis.",
+            "partnumber": "300",
+            "publisheddate": "01/15/2020",
+            "contentid": "12nnnn",
+            "filename": "LabGuide300.md"
+        },
+        {         
+            "title": "Lab 400: Analyzing Social Media with Sales – Visualize and Narrate",
+            "description": "Learning how to use Calculations. Using different visualizations to obtain insights from data set. Narrating a meaningful story using Narrate",
+            "partnumber": "400",
+            "publisheddate": "10/31/2019",
+            "contentid": "12nnnn",
+            "filename": "LabGuide400.md"
+        },
+        {
+            "title": "Lab 500: Predicting Subscriptions - Machine Learning",
+            "description": "Learning how to create data flows. Using the Machine Learning abilities of OAC.",
+            "partnumber": "500",
+            "publisheddate": "01/15/2020",
+            "contentid": "12nnnn",
+            "filename": "LabGuide500.md"
+        }
+    ]
+>>>>>>> parent of 92716db4... Revert "fixed dvcs-5"
 }
