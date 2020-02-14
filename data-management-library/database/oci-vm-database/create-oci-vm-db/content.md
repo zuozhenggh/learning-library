@@ -1,10 +1,10 @@
 # Create an Oracle Cloud Infrastructure VM Database
 ## Before You Begin
 
-This tutorial walks you through the steps to create an instance of an Oracle 19c Database running in Oracle Cloud Infrastructure. Oracle Cloud Infrastructure provides several options for rapidly creating a Database system for development and testing, including fast provisioning of 1-node virtual machine database systems.
+This tutorial walks you through the steps to create an instance of an Oracle 18c, 19c or the new 20c Preview Database running in Oracle Cloud Infrastructure. Oracle Cloud Infrastructure provides several options for rapidly creating a Database system for development and testing, including fast provisioning of 1-node virtual machine database systems.
 
 ### Background
-You can use a 1-node virtual database system to complete labs and tutorials that require a 19c database, for example, [Get Started with Oracle Data Miner User Interface](https://apexapps.oracle.com/pls/apex/f?p=44785:50:0:::50:P50_COURSE_ID,P50_EVENT_ID:457,6310).
+You can use a 1-node virtual database system to complete labs and tutorials that require an Oracle database.
 
 ### What Do You Need?
 
@@ -99,6 +99,7 @@ Next, you'll create a Database running in a VM.
 4. On the Database Information form, enter the following information and click **Create DB System**.
 
     * In the **Database name** field, change the default database name to "cdb1".
+    * On the **Database version** drop down menu, select the version of the Oracle Database you want: 18c, 19c or 20c (Preview).
     * In the **PDB name** field, enter "pdb1".
     * Enter a password for your sys user in the **Password** field and then repeat the password in the **Confirm password** field.
 
