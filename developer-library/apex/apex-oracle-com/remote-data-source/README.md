@@ -26,7 +26,7 @@ The data used is the Big Mac Index from the Economist, which uses the price of M
 | 5 | [Adding a Chart](5-adding-chart.md) | 5 min |
 | 6 | [Adding Chart Criteria](6-adding-chart-criteria.md) | 5 min |
 
-### Learn More - *Useful Links*
+## Learn More - *Useful Links*
 
 - APEX on Autonomous   https://apex.oracle.com/autonomous
 - APEX Collateral   https://apex.oracle.com
