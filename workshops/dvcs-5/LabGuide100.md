@@ -48,84 +48,84 @@ Now let’s get started!  Before beginning, ensure you have signed up for a free
 
     [https://www.oracle.com/](https://www.oracle.com/)
 
-    ![](images/login-screen.png " ")
+    ![](images/login-screen.png)
 
 2.  Click the icon in the upper right corner.  Click on **Sign in to Cloud** at the bottom of the drop down.  *NOTE:  Do NOT click the Sign-In button, this will take you to Single Sign-On, not the Oracle Cloud*
 
-    ![](images/signup.png " ")   
+    ![](images/signup.png)   
 
 3. Enter your username and password and click on **Sign In**.
 
 4. Once you log in you will see a page similar to the one below.  Click on the hamburger icon in the upper left corner to reveal the menu.
 
-    ![](images/hamburger.png " ")  
+    ![](images/hamburger.png)  
 
 5. Click on **Platform Services** -> **Analytics**
 
-    ![](images/menu.png " ")
+    ![](images/menu.png)
 
 6. On the next screen, click on **Create Instance**.
 
-    ![](images/create-analytics-instance.png " ")
+    ![](images/create-analytics-instance.png)
 
 7. Next, we will configure our instance. Click on the **Feature Set** dropdown.
 
-    ![](images/100/img_1a_7_1.png " ")
+    ![](images/100/img_1a_7_1.png)
 
     Choose **Data Visualization**.
 
-    ![](images/100/img_1a_7_2.png " ")
+    ![](images/100/img_1a_7_2.png)
 
     Now, give your instance a **Name** and choose the correct **License Type**. If you already own a license, then choose the first option. Otherwise, go with the second option.
 
-    ![](images/100/img_1a_7_3.png " ")
+    ![](images/100/img_1a_7_3.png)
 
      After this, click on the **Edition** dropdown menu and choose **Oracle Analytics Cloud - Standard**.
 
-    ![](images/100/img_1a_7_4.png " ")
+    ![](images/100/img_1a_7_4.png)
 
-    ![](images/100/img_1a_7_5.png " ")
+    ![](images/100/img_1a_7_5.png)
 
     Once configured, click on **Next**.
 
-    ![](images/100/img_1a_7_6.png " ")
+    ![](images/100/img_1a_7_6.png)
 
 8. Review your selections. Make sure your fields match the fields mentioned in the previous step. In case of issues, return to the previous screen and make the required changes. Then click **Create**.
 
-    ![](images/100/img_1a_8_1.png " ")
+    ![](images/100/img_1a_8_1.png)
 
 9. Now, wait for the instance to be created.
 
-    ![](images/100/img_1a_9_1.png " ")
+    ![](images/100/img_1a_9_1.png)
 
     You will receive an email once the instance is ready.
 
-    ![](images/100/img_1a_9_2.png " ")
+    ![](images/100/img_1a_9_2.png)
 
 10. Click on the **Ellipses** menu and select **Oracle Analytics Cloud URL**.
 
-    ![](images/100/img_1a_10_1.png " ")
+    ![](images/100/img_1a_10_1.png)
 
     Doing so will take you to the OAC home page which we will be reviewing in the next section.
 
-    ![](images/100/img_1a_10_2v2.png " ")
+    ![](images/100/img_1a_10_2v2.png)
 
 
 ### b) Reviewing the Home page and the primary menus
 
 On logging into OAC, you will see the home page.
 
-![](images/100/img_1b_1.png " ")  
+![](images/100/img_1b_1.png)  
 
 1. Start by clicking on the hamburger menu in the top-left of the UI. This will open the drawer menu.
 
-    ![](images/100/img_1b_1_1v2.png " ")
+    ![](images/100/img_1b_1_1v2.png)
 
 2. You can use this menu to navigate through the application.
 
-    ![](images/100/img_1b_2_1.1v2.png " ")
+    ![](images/100/img_1b_2_1.1v2.png)
 
-    ![](images/100/img_1b_2_1.2v2.png " ")
+    ![](images/100/img_1b_2_1.2v2.png)
 
     The application follows standard web and application interface protocols, thus supporting both left and right click interactions. In terms of general navigation, there are 4 key menus accessible at the top of the screen or via a hamburger menu in the top left (not all screens will show the top menu bar but the hamburger navigation is always available).
 
@@ -147,19 +147,19 @@ On logging into OAC, you will see the home page.
 
 3. At the top-right of the UI, click on the **Create** button.
 
-    ![](images/100/img_1b_3_1v2.png " ")
+    ![](images/100/img_1b_3_1v2.png)
 
     This window allows you to create a Visualization project, a data set, a connection to an external source, a data flow, or a sequence.
 
 4. Click on hamburger icon at the top right of the UI, next to Create.
 
-    ![](images/100/img_1b_4_1v2.png " ")
+    ![](images/100/img_1b_4_1v2.png)
 
 5. Select the **Customize** option.
 
-    ![](images/100/img_1b_5_1v2.png " ")
+    ![](images/100/img_1b_5_1v2.png)
 
-    ![](images/100/img_1b_5_2v2.png " ")
+    ![](images/100/img_1b_5_2v2.png)
 
     This menu allows you to customize the components of your home page.
 
