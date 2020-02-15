@@ -133,20 +133,19 @@ Next, you'll create a Database running in a VM.
 
    ```
    [opc@tmdb1 ~]$ sudo su - oracle
-   [oracle@tmdb1 ~]$. oraenv
    [oracle@tmdb1 ~]$ . oraenv
    ORACLE_SID = [cdb1] ?
    The Oracle base has been set to /u01/app/oracle
    [oracle@tmdb1 ~]$ sqlplus / as sysdba
 
-   SQL*Plus: Release 19.0.0.0.0 - Production on Tue Feb 4 21:11:14 2020
-   Version 19.5.0.0.0
+   SQL*Plus: Release 20.0.0.0.0 - Production on Sat Feb 15 14:01:48 2020
+   Version 20.2.0.0.0
 
    Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
    Connected to:
-   Oracle Database 19c EE High Perf Release 19.0.0.0.0 - Production
-   Version 19.5.0.0.0
+   Oracle Database 20c EE High Perf Release 20.0.0.0.0 - Production
+   Version 20.2.0.0.0
 
    SQL>
    ```
