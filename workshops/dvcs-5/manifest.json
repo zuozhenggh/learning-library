@@ -3,43 +3,44 @@
     
             {
                 "title": "Lab 100: Getting Started with Oracle Analytics Cloud Data Visualization",
+                "filename": "LabGuide100.md",
                 "description": "Learning how to provision an OAC instance. Getting acclimatized to the DV interface.",
                 "partnumber": "100",
                 "publisheddate": "01/15/2020",
-                "contentid": "12nnnn",
-                "filename": "./LabGuide100.md"
+                "contentid": "12nnnn"
+                
             },
             {
                 "title": "Lab 200:  Analyzing Sales - Basic Introduction to Core Features",
+                "filename": "LabGuide200.md",
                 "description": "Creating projects with data sets and visualizations. Understanding the visualization capabilities of DV. Telling a story with annotated visualizations.",
                 "partnumber": "200",
                 "publisheddate": "01/15/2020",
-                "contentid": "12nnnn",
-                "filename": "./LabGuide200.md"
+                "contentid": "12nnnn"
             },
             {
                 "title": "Lab 300:  Analyzing Social Media with Sales – Data Blending and Wrangling",
+                "filename": "LabGuide300.md",
                 "description": "Learning to Wrangle Data Sets. Joining Multiple Data Sets for analysis.",
                 "partnumber": "300",
                 "publisheddate": "01/15/2020",
-                "contentid": "12nnnn",
-                "filename": "./LabGuide300.md"
+                "contentid": "12nnnn"
             },
             {
                 "title": "Lab 400: Analyzing Social Media with Sales – Visualize and Narrate",
+                "filename": "LabGuide400.md",
                 "description": "Learning how to use Calculations. Using different visualizations to obtain insights from data set. Narrating a meaningful story using Narrate",
                 "partnumber": "400",
                 "publisheddate": "01/15/2020",
-                "contentid": "12nnnn",
-                "filename": "./LabGuide400.md"
+                "contentid": "12nnnn"
             },
             {
                 "title": "Lab 500: Predicting Subscriptions - Machine Learning",
+                "filename": "LabGuide500.md",
                 "description": "Learning how to create data flows. Using the Machine Learning abilities of OAC.",
                 "partnumber": "500",
                 "publisheddate": "01/15/2020",
-                "contentid": "12nnnn",
-                "filename": "./LabGuide500.md"
+                "contentid": "12nnnn"
             }
         ]
     }
