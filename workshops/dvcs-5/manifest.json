@@ -7,7 +7,7 @@
                 "partnumber": "100",
                 "publisheddate": "01/15/2020",
                 "contentid": "12nnnn",
-                "filename": "LabGuide100.md"
+                "filename": "./LabGuide100.md"
             },
             {
                 "title": "Lab 200:  Analyzing Sales - Basic Introduction to Core Features",
@@ -15,7 +15,7 @@
                 "partnumber": "200",
                 "publisheddate": "01/15/2020",
                 "contentid": "12nnnn",
-                "filename": "LabGuide200.md"
+                "filename": "./LabGuide200.md"
             },
             {
                 "title": "Lab 300:  Analyzing Social Media with Sales – Data Blending and Wrangling",
@@ -23,7 +23,7 @@
                 "partnumber": "300",
                 "publisheddate": "01/15/2020",
                 "contentid": "12nnnn",
-                "filename": "LabGuide300.md"
+                "filename": "./LabGuide300.md"
             },
             {
                 "title": "Lab 400: Analyzing Social Media with Sales – Visualize and Narrate",
@@ -31,7 +31,7 @@
                 "partnumber": "400",
                 "publisheddate": "01/15/2020",
                 "contentid": "12nnnn",
-                "filename": "LabGuide400.md"
+                "filename": "./LabGuide400.md"
             },
             {
                 "title": "Lab 500: Predicting Subscriptions - Machine Learning",
@@ -39,7 +39,7 @@
                 "partnumber": "500",
                 "publisheddate": "01/15/2020",
                 "contentid": "12nnnn",
-                "filename": "LabGuide500.md"
+                "filename": "./LabGuide500.md"
             }
         ]
     }
