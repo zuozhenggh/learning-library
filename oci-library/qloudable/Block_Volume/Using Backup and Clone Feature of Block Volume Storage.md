@@ -150,28 +150,32 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text" >
 
-7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
+7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute** 
 
-8. Click Create Instance. Fill out the dialog box:
+8. Click **Create Instance**. Fill out the dialog box:
 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- Name: Enter a name 
-- Availability Domain: Select availability domain
-- Image Operating System: For the image, we recommend using the Latest Oracle Linux available.
-- Choose Instance Type: Select Virtual Machine
-- Choose Instance Shape: Select VM shape
-- Configure Boot Volume: Leave the default
-- Add SSH Keys: Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- Virtual Cloud Network Compartment: Choose your compartment
-- Virtual Cloud Network: Select the VCN you created in the previous section. 
-- Subnet Compartment: Choose your compartment. 
-- Subnet: Choose the first Subnet
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
+- **Subnet Compartment:** Choose your compartment. 
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
+
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 9. Click **Create**
 
 **NOTE:** If 'Service limit' error is displayed choose a different shape such as VM.Standard.E2.2 OR VM.Standard2.2 OR choose a different AD
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text" >
 
 10. Wait for Instance to be in **Running** state. In git-bash Enter Command:
 ```
@@ -201,12 +205,10 @@ ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 - Create in Compartment: Has the correct compartment selected.
 - Availability Domain: Select availability domain **(must be different from compute instance's AD)**
 - SIZE: Set to 50
-- BACKUP POLICY: Leave as is
-- ENCRYPTION: ENCRYPT USING ORACLE-MANAGED KEYS
+
+**Leave all other fields as Default**
 
 17. Click **Create Block Volume**. Wait for Block Volume state to change from 'Provisioning' to 'Available'
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_003.PNG" alt="image-alt-text" >
 
 18.  From OCI services menu Click **Instance** under Compute 
 
