@@ -30,10 +30,3 @@ If you plan to register on apex.oracle.com please select from the labs below.
 | 4 | [Building an App using REST Web Sources](./apex-oracle-com/rest-web-source) | 50 min |
 | 5 | [Building an App using a Remote Data Source](./apex-oracle-com/remote-data-source) | 45 min |
 
-## Learn More - *Useful Links*
-
-- APEX on Autonomous   https://apex.oracle.com/autonomous
-- APEX Collateral   https://apex.oracle.com
-- Tutorials   https://apex.oracle.com/en/learn/tutorials
-- Community   https://apex.oracle.com/community
-- External Site + Slack   http://apex.world

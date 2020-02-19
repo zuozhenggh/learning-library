@@ -1,6 +1,6 @@
 {
   "lab": {
-    "title": "Building an App from a Spreadsheet with Oracle APEX",
+    "title": "Building an App using a Remote Data Source",
     "modules": [
       {
         "filename": "README.md",
@@ -28,7 +28,7 @@
       },
       {
         "filename": "6-adding-chart-criteria.md",
-        "title": "Module 6: Adding CHart Criteria"
+        "title": "Module 6: Adding Chart Criteria"
       }
     ]
   }

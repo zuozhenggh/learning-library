@@ -97,7 +97,7 @@ When you click on a calendar entry then it shows event details. It would be far 
 
 ### Summary
 
-This completes Module 4. You now know how to create an application by uploading a file, enhancing the page using runtime environment and page designer, and also linking pages to enhance the application.
+This completes Module 5. You now know how to create an application by uploading a file, enhancing the page using runtime environment and page designer, and also linking pages to enhance the application.
 
 ### **Learn More** - *Useful Links*
 
