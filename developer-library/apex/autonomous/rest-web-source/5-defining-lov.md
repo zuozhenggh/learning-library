@@ -1,4 +1,4 @@
-## Module 5 - Defining List of Values 
+# Module 5 - Defining List of Values 
 
 In this module, you will learn how to utilize Web Source modules as the basis for list of values for use within an application.
 
@@ -189,5 +189,13 @@ Similarly, the Employees report shows numerical values rather than names.
 
     ![](images/5/runtime-form.png)
 
-## Summary
+### Summary
 This completes Module 5 and the lab. You now know how to define List of Values against REST endpoints and then utilize those within an application.
+
+### **Learn More** - *Useful Links*
+
+- APEX on Autonomous  https://apex.oracle.com/autonomous
+- APEX Collateral  http://apex.oracle.com
+- Tutorials  https://apex.oracle.com/en/learn/tutorials
+- Community  http://apex.oracle.com/community
+- External Site + Slack  http://apex.world

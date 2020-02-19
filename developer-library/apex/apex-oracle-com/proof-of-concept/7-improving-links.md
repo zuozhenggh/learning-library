@@ -1,4 +1,4 @@
-## Module 7: Improving Links
+# Module 7: Improving Links
 
 In this module, you will learn how to modify the URL so that it can be used to display the content listed in a new window.
 
@@ -137,6 +137,14 @@ If you review the Links form page, by clicking an edit icon on the report, you w
     On the Links report page, click the URL for the record you just updated.    
     It should bring up the main APEX site in a new browser tab or window.
    
-## Summary
+### Summary
 
 This completes Module 7 and the lab. You now know how to change a URL value to be a link to a separate browser tab or window. 
+
+### **Learn More** - *Useful Links*
+
+- APEX on Autonomous  https://apex.oracle.com/autonomous
+- APEX Collateral  http://apex.oracle.com
+- Tutorials  https://apex.oracle.com/en/learn/tutorials
+- Community  http://apex.oracle.com/community
+- External Site + Slack  http://apex.world

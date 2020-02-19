@@ -1,4 +1,4 @@
-## Module 4 - Regenerating the Application
+# Module 4 - Regenerating the Application
 
 In this module you will regenerate the application to create a better starting point for development. 
 
@@ -91,6 +91,6 @@ Now that you have the original pages reloaded, it is simply a matter of removing
 
     *{Note: Records can be inserted, updated, and deleted directly within the Interactive Grid. The wizard generated a list of values for Projects, the Due Date utilizes a pop-up calendar, and the other two fields use text areas to maintain the data directly on the page.}*
 
-## Summary
+### Summary
 This completes Module 4. You now know how to utilize the blueprint to load a previous application definition into the Create Application wizard. [Click here to navigate to Module 5](5-improving-tasks.md)
      

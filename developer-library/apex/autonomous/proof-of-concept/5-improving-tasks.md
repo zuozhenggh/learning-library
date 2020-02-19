@@ -1,4 +1,4 @@
-## Module 5: Improving Tasks
+# Module 5: Improving Tasks
 
 In this module, you will learn how to improve the Task form page by utilizing improved list of values.
 
@@ -167,6 +167,6 @@ If you review the Milestones select list you will notice that all milestones are
 
     *{Note: There should be no milestones listed, as there is no project selected.}*
     
-## Summary
+### Summary
 
 This completes Module 5. You now know how to utilize different types of list of values, to display additional columns, and also how to define a Cascading-LOV. [Click here to navigate to Module 6](6-improving-todos.md) 

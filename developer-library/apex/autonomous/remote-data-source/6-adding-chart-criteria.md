@@ -1,8 +1,8 @@
-## Module 6 - Adding Chart Criteria
+# Module 6 - Adding Chart Criteria
 
 In this module, you will learn how to add an item to a page, utilize the page item in chart series, and define client-side interactivity.
 
-### Background Information
+## Background Information
 The chart currently has the ISO code for Australia (AUS) hardcoded. By adding a select list with a list of the countries, and then modifying the chart series to utilize this page item you can easily make it easy to review the exchange rate history for any country.
 
 To refresh the chart whenever the country in the select list is changed, you need to utilize a Dynamic Action. A Dynamic Action defines client-side interactivity, and based on a specific action
@@ -107,5 +107,13 @@ To ensure the value from the item can be used it must be set in session state. R
 
     ![](images/6/final-runtime.png)
 
-## Summary
+### Summary
 This completes Module 6 and the lab. In this module you learnt how to create items, define Dynamic Actions, and refresh regions based on user input fields.
+
+### **Learn More** - *Useful Links*
+
+- APEX on Autonomous  https://apex.oracle.com/autonomous
+- APEX Collateral  http://apex.oracle.com
+- Tutorials  https://apex.oracle.com/en/learn/tutorials
+- Community  http://apex.oracle.com/community
+- External Site + Slack  http://apex.world

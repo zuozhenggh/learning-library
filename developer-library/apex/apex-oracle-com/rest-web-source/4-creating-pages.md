@@ -1,4 +1,4 @@
-## Module 4 - Defining Pages 
+# Module 4 - Defining Pages 
 
 In this module, you will learn how to utilize Web Source modules as the basis for creating reports and forms within the application. 
 
@@ -196,5 +196,5 @@ The form page for editing records also needs some improvement.
 
     ![](images/4/show-delete.png)
 
-## Summary
+### Summary
 This completes Module 4. You now know how to utilize a REST endpoint to develop a report and form to allow full CRUD operations. [Click here to navigate to Module 5](5-defining-lov.md)

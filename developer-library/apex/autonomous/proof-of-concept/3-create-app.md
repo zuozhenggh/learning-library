@@ -1,4 +1,4 @@
-## Module 3 - Using the Create Application Wizard
+# Module 3 - Using the Create Application Wizard
 
 In this module you will build an application on the data structures you built in the previous module.
 
@@ -58,6 +58,6 @@ In this module you will build an application on the data structures you built in
         
     ![](images/3/show-team-members.png) 
 
-## Summary
+### Summary
 This completes Module 3. You now know how to utilize the Create Application wizard directly from SQL Scripts to create the first cut of your application. [Click here to navigate to Module 4](4-regen-app.md)
     

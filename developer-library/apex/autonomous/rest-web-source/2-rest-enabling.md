@@ -1,8 +1,8 @@
-## Module 2 - REST Enabling Database Objects 
+# Module 2 - REST Enabling Database Objects 
 
 In this module, you will learn how to REST enable a schema and database objects. 
 
-#### Background Information
+## Background Information
 In this lab you will be creating the EMP and DEPT tables, REST enabling them, and then building an application all in the same schema. Normally, you would REST enable database objects in a remote database schema, and then utilize those REST endpoints to define Web Source modules in an application, where APEX is installed, within the local database, as outlined below. 
 
 ![](images/2/rest-arch.png)
@@ -212,6 +212,6 @@ Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled 
     
     *{Note: Depending on your browser you may just see the raw JSON document rather than the formatted output displayed above.}*
 
-## Summary
+### Summary
 This completes Module 2. You now know how to REST enable database objects include all of the necessary handlers. [Click here to navigate to Module 3](3-defining-web-source.md)
 

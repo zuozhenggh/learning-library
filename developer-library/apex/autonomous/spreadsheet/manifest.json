@@ -11,32 +11,20 @@
         "title": "Module 1: Signing up for Oracle Autonomous Database"
       },
       {
-        "filename": "2-installing-sample-tables.md",
-        "title": "Module 2: Installing Sample Tables"
+        "filename": "2-creating-an-app-from-a-spreadsheet.md",
+        "title": "Module 2: Creating an App from a Spreadsheet"
       },
       {
-          "filename": "3-create-app.md",
-          "title": "Module 3: Creating the Application"
+          "filename": "3-improving-the-faceted-search.md",
+          "title": "Module 3: Improving the Faceted Search"
       },
       {
-        "filename": "4-regenerate-app.md",
-        "title": "Module 4: Regenerating the App"
+        "filename": "4-improving-the-report-and-form.md",
+        "title": "Module 4: Improving the Report and Form"
       },
       {
-        "filename": "5-improving-dashboard.md",
-        "title": "Module 5: Improving the Dashboard"
-      },
-      {
-        "filename": "6-improving-projects.md",
-        "title": "Module 6: Improving Projects"
-      },
-      {
-        "filename": "7-improving-milestones.md",
-        "title": "Module 7: Improving Milestones"
-      },
-      {
-        "filename": "8-improving-tasks.md",
-        "title": "Module 8: Improving Tasks"
+        "filename": "5-linking-the-calendar.md",
+        "title": "Module 5: Linking the Calendar"
       }
     ]
   }

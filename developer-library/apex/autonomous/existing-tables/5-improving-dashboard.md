@@ -1,4 +1,4 @@
-## Module 5: Improving the Dashboard
+# Module 5: Improving the Dashboard
 
 In this module, you will learn how to manipulate regions.
 
@@ -47,6 +47,6 @@ Looking at the revised Dashboard page, it would look better to have the Budget v
     
     ![](images/5/final-dash.png)
     
-## Summary
+### Summary
 
 This completes Module 5. You now know how to remove and reposition regions. [Click here to navigate to Module 6](6-improving-projects.md)

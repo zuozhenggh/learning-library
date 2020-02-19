@@ -101,6 +101,6 @@ The Create Application Wizard also has the ability to add various features to yo
 
     ![](images/4/view-admin.png)
 
-## Summary
+### Summary
 
 This completes Module 4. You now know how to regenerate an application, and add additional features. [Click here to navigate to Module 5](5-improving-dashboard.md)

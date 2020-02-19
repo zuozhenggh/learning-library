@@ -1,4 +1,4 @@
-## Module 3 - Populating the Table
+# Module 3 - Populating the Table
 
 In this module, you will learn how to insert data into a table from a REST API. 
 
@@ -83,5 +83,5 @@ There are several ways to review the data.
     
     *{Note: Review the decimal places on the _DOLLAR\_EXCHANGE\_RATE_ column. In the next module you will ensure the data displays properly.}*
     
-## Summary
+### Summary
 This completes Module 3. You now know how to utilize **apex\_data\_parser** and **apex\_web\_service.make\_rest\_request\_b** to populate a table in the Oracle database based on a REST endpoint. [Click here to navigate to Module 4](4-improving-report.md)
