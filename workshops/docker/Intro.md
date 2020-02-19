@@ -1,6 +1,13 @@
 # Containerized Development and Deployment with Docker
 
-Welcome to the **Oracle Public Cloud** Docker Development and Deployment workshop. This workshop will walk you through the process of creating an infrastructure to support deployment of a multi-container Docker application (AlphaOffice). 
+## Before You Begin
+### Objectives
+- Sign in to Oracle Cloud Infrastructure
+
+### Requirements
+To complete this lab, you need to have the following:
+- Login credentials and a tenancy name for the Oracle Cloud Infrastructure Console
+
 
 ![](images/000JumpStart/JS5-2.PNG)
 
@@ -8,7 +15,7 @@ To learn more about this workshop please watch the video below.
 
 <a href="https://www.youtube.com/watch?v=ivNEREBsH9k&t=0s&index=3&list=PLPIzp-E1msrYGLKIgW3njO3uUkvXD0bAH" target="_video">Workshop Overview</a>
 
-### **Step 1**: Acquire an Oracle Cloud Trial Account
+## **Step 1**: Acquire an Oracle Cloud Trial Account
 
 - Bookmark this page for future reference.
 
