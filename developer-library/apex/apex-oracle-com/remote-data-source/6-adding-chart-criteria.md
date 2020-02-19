@@ -1,4 +1,4 @@
-## Module 6 - Adding Chart Criteria
+### Module 6 - Adding Chart Criteria
 
 In this module, you will learn how to add an item to a page, utilize the page item in chart series, and define client-side interactivity.
 
@@ -107,5 +107,13 @@ To ensure the value from the item can be used it must be set in session state. R
 
     ![](images/6/final-runtime.png)
 
-## Summary
+### Summary
 This completes Module 6 and the lab. In this module you learnt how to create items, define Dynamic Actions, and refresh regions based on user input fields.
+
+### **Learn More** - *Useful Links*
+
+- APEX on Autonomous  https://apex.oracle.com/autonomous
+- APEX Collateral  http://apex.oracle.com
+- Tutorials  https://apex.oracle.com/en/learn/tutorials
+- Community  http://apex.oracle.com/community
+- External Site + Slack  http://apex.world

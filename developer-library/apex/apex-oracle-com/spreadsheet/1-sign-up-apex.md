@@ -41,6 +41,6 @@ your email correctly}*
     ![](images/1/apex-builder.png)
 
 
-## Summary
+### Summary
 
 This completes the lab setup. At this point, you know how to create a new development-only account on https://apex.oracle.com, and an APEX workspace within it. [Click here to navigate to Module 2](2-creating-an-app-from-a-spreadsheet.md)

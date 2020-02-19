@@ -1,4 +1,4 @@
-## Module 5 - Adding a Chart
+# Module 5 - Adding a Chart
 
 In this module, you will learn how to add a chart page to the application. 
 

@@ -1,4 +1,4 @@
-## Module 4: Regenerating the App 
+# Module 4: Regenerating the App 
 
 In the runtime environment, if you navigate to Milestones, and then from the report page, click the edit icon, the form page for maintaining milestones will be displayed. You will notice that there are only a few fields. Therefore, it may be better to utilize an Interactive Grid, which is similar to a spreadsheet, where several records can be maintained directly within the grid.
 
@@ -101,6 +101,6 @@ The Create Application Wizard also has the ability to add various features to yo
 
     ![](images/4/view-admin.png)
 
-## Summary
+### Summary
 
 This completes Module 4. You now know how to regenerate an application, and add additional features. [Click here to navigate to Module 5](5-improving-dashboard.md)

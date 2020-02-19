@@ -1,8 +1,8 @@
-## Module 4 - Improving the Report
+# Module 4 - Improving the Report
 
 In this module, you will learn how to manipulate an Interactive Report to improve the data displayed and make it easier for users to analyze the data. 
 
-### Background Information
+## Background Information
 Now you have data loaded into the BIG\_MAC\_INDEX table you can start reviewing the local price of a McDonalds Big Mac and the exchange rate with the US Dollar.
 
 For any given country, if you divide the Local Price of a Big Mac by the Local Price of a Big Mac in the US, for the same time period, you can calculate the relative exchange rates between the countries based on the Big Mac prices.
@@ -165,5 +165,5 @@ Currently the changes you have made in the runtime environment can only be seen 
 
     ![](images/4/set-default.png)
 
-## Summary
+### Summary
 This completes Module 4. In this module you learnt how to utilize a SQL query as the basis for a report, how to improve how columns are displayed, remove unwanted page elements, manipulate the report layout, and then save it for everyone to utilize. [Click here to navigate to Module 5](5-adding-chart.md)

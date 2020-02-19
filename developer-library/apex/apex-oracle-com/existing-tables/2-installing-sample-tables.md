@@ -1,4 +1,4 @@
-## Module 2: Building your tables and views - Installing Sample Tables
+# Module 2: Building your tables and views - Installing Sample Tables
 
 In this module, you will learn how to install sample tables and views from Sample Datasets which come complete with sample data. 
 
@@ -28,6 +28,6 @@ In this module, you will learn how to install sample tables and views from Sampl
 
     ![](images/2/review-tables.png)
 
-## Summary
+### Summary
 
 This completes Module 2. You now know how to install a sample dataset. [Click here to navigate to Module 3](3-create-the-app.md)

@@ -47,7 +47,7 @@ In this practice, you sign in to the Oracle Cloud Infrastructure console using y
     - **Username:** *instructor will provide username*
     - **Password:** *instructor will provide password*
 
-   ![]( img/image003.png)
+   ![]( img/image003new.png " ")
 
 5. When you sign in to the Console, the dashboard is displayed.
 

@@ -1,4 +1,4 @@
-## Module 5 - Adding a Chart
+# Module 5 - Adding a Chart
 
 In this module, you will learn how to add a chart page to the application. 
 
@@ -160,5 +160,5 @@ Time to update the existing chart line (series), and add a few more data series.
 
     ![](images/5/final-runtime.png)
 
-## Summary
+### Summary
 This completes Module 5. In this module you learnt how to create and modify a chart adding multiple series. [Click here to navigate to Module 6](6-adding-chart-criteria.md)

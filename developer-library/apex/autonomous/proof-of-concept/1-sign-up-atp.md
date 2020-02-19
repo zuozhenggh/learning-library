@@ -92,6 +92,6 @@ When you first access APEX you will need to log in as an APEX Instance Administr
 
     ![](images/1/log-in-to-workspace.png)
     
-## Summary
+### Summary
 
-This completes the lab setup. At this point, you know how to create a new Autonomous Transaction Processing instance and create an APEX workspace within it. [Click here to navigate to Module 2](2-creating-an-app-from-a-spreadsheet.md)
+This completes the lab setup. At this point, you know how to create a new Autonomous Transaction Processing instance and create an APEX workspace within it. [Click here to navigate to Module 2](2-using-quick-sql.md)

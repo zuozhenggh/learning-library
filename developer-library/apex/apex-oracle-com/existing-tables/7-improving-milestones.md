@@ -1,4 +1,4 @@
-## Module 7: Improving Milestones
+# Module 7: Improving Milestones
 
 In this module, you will learn how to update the layout of an Interactive Grid.
 
@@ -72,6 +72,6 @@ The changes you have made to the grid layout are only your view of the grid. If 
 
     ![](images/7/save.png)
 
-## Summary
+### Summary
 
 This completes Module 7. You now know how to manipulate an Interactive Grid and save a default report. [Click here to navigate to Module 8](8-improving-tasks.md)
