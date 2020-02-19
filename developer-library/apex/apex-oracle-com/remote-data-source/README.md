@@ -26,6 +26,15 @@ The data used is the Big Mac Index from the Economist, which uses the price of M
 | 5 | [Adding a Chart](5-adding-chart.md) | 5 min |
 | 6 | [Adding Chart Criteria](6-adding-chart-criteria.md) | 5 min |
 
+## Navigating in the Lab
+To return to this page from anywhere within the lab click either Oracle Hands on Labs, or Home in the header.
+
+![](images/0/lab-header.png)
+
+Click the navigation menu icon, in the upper-left corner of the header, to see a list of modules in this lab. Click any of the list entries to navigate directly to that module.
+
+![](images/0/lab-menu.png)
+
 ## Learn More - *Useful Links*
 
 - APEX on Autonomous   https://apex.oracle.com/autonomous

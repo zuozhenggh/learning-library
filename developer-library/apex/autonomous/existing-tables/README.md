@@ -28,6 +28,15 @@ This lab walks you through creating an application based on existing tables in y
 | 7 | [Improving Milestones](7-improving-milestones.md) | 5 min |
 | 8 | [Improving Tasks](8-improving-tasks.md) | 15 min |
 
+## Navigating in the Lab
+To return to this page from anywhere within the lab click either Oracle Hands on Labs, or Home in the header.
+
+![](images/0/lab-header.png)
+
+Click the navigation menu icon, in the upper-left corner of the header, to see a list of modules in this lab. Click any of the list entries to navigate directly to that module.
+
+![](images/0/lab-menu.png)
+
 ## Learn More - *Useful Links*
 
 - APEX on Autonomous   https://apex.oracle.com/autonomous

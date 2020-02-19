@@ -30,6 +30,15 @@ components to improve the initial app.
 | 6 | [Improving To Dos](6-improving-todos.md) | 10 min |
 | 7 | [Improving Links](7-improving-links.md) | 5 min |
 
+## Navigating in the Lab
+To return to this page from anywhere within the lab click either Oracle Hands on Labs, or Home in the header.
+
+![](images/0/lab-header.png)
+
+Click the navigation menu icon, in the upper-left corner of the header, to see a list of modules in this lab. Click any of the list entries to navigate directly to that module.
+
+![](images/0/lab-menu.png)
+
 ## Learn More - *Useful Links*
 
 - APEX on Autonomous   https://apex.oracle.com/autonomous
