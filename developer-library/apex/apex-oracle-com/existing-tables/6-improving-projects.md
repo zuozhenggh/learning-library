@@ -1,4 +1,4 @@
-## Module 6: Improving Projects
+# Module 6: Improving Projects
 
 In this module, you will learn how to use the Create Page Wizard to add additional pages to your app. Then you will then link the new page to the existing card page. You will then learn how to easily manipulate how items are displayed, and finally to create a Dynamic Action.
 
@@ -216,7 +216,7 @@ Currently a Completed Date can be entered on any project. However, it would grea
 
     ![](images/6/finished-form.png)
 
-## Summary
+### Summary
 
 This completes Module 6. You now know how to add additional pages to your application, link pages together, modify how items are displayed, and define client-side interactivity declaratively. [Click here to navigate to Module 7](7-improving-milestones.md)
 

@@ -99,5 +99,5 @@ App from Script” button perform the following steps:*
 
     *{Note: When you click on Mac Index there will be no data displayed. You don't want to manually enter in data as the table will be populated in the next module.}*
 
-## Summary
+### Summary
 This completes Module 2. You now know how to utilize Quick SQL to build a simple table and create an application on top of it. [Click here to navigate to Module 3](3-populating-table.md)

@@ -1,4 +1,4 @@
-## Module 4 - Improving the Report
+# Module 4 - Improving the Report
 
 In this module, you will learn how to manipulate an Interactive Report to improve the data displayed and make it easier for users to analyze the data. 
 
@@ -165,5 +165,5 @@ Currently the changes you have made in the runtime environment can only be seen 
 
     ![](images/4/set-default.png)
 
-## Summary
+### Summary
 This completes Module 4. In this module you learnt how to utilize a SQL query as the basis for a report, how to improve how columns are displayed, remove unwanted page elements, manipulate the report layout, and then save it for everyone to utilize. [Click here to navigate to Module 5](5-adding-chart.md)

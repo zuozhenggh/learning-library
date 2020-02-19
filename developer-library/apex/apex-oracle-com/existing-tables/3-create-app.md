@@ -1,4 +1,4 @@
-## Module 3: Building your app - Using the Create Application Wizard
+# Module 3: Building your app - Using the Create Application Wizard
 
 In this module, you will learn how to create the initial app based on existing tables in your Oracle database. In practice, you will generally only start with one or two pages, and then use the Create Page Wizard to add additional pages to your app. 
 
@@ -195,6 +195,6 @@ Now that you have added all the pages, it is time to generate the app and review
 
     ![](images/3/runtime-app.png)
 
-## Summary
+### Summary
 
 This completes Module 3. You now know how to create an application, with numerous different page types, based on existing database objects. [Click here to navigate to Module 4](4-regenerate-app.md)

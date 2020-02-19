@@ -1,4 +1,4 @@
-## Module 8: Improving Tasks
+# Module 8: Improving Tasks
 
 In this module, you will learn how to define a shared list of values and use it to improve the Faceted Searches, and Interactive Report pages for Tasks. You will also learn how easy it is to link the calendar to the Tasks Form page.
 
@@ -172,6 +172,14 @@ The Tasks Calendar page shows numerous tasks, however, there is no way to direct
     
     If you update the Name, Start Date or End Date and click **Apply Changes** on the Project Task form page, the changes will be reflected immediately in the calendar.
 
-## Summary
+### Summary
 
 This completes Module 8 and the lab. You now know how to create a Shared Component, improve a Faceted Search page, and link a Calendar page that refreshes after a record is updated.
+
+### **Learn More** - *Useful Links*
+
+- APEX on Autonomous  https://apex.oracle.com/autonomous
+- APEX Collateral  http://apex.oracle.com
+- Tutorials  https://apex.oracle.com/en/learn/tutorials
+- Community  http://apex.oracle.com/community
+- External Site + Slack  http://apex.world
