@@ -23,13 +23,11 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 -   The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
--   Oracle SQL Developer (see [Lab 1](LabGuide1.md) for more specifics on the version of SQL Developer and how to install and configure it).
-
 ## Part 1: Querying External Data
 
 #### **STEP 1: Create External Tables with DBMS_CLOUD**
 
--   While connected as your user in SQL Developer, copy and paste <a href="./scripts/400/create_external_tables.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet.  
+-   While connected as your user in SQL Developer Web, copy and paste <a href="./scripts/400/create_external_tables.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet.  
 
     Use the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create external tables on the files staged in your object store. Note that you are still using the same credential and the URLs of files on OCI Object Storage you used when loading data in the previous lab.
 
@@ -43,7 +41,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 #### **STEP 2: Querying External Data**
 
--   Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet. We only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
+-   Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet. We only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
     ![](images/400/Picture400-4.png " ")
 
 -   **Run the script**. You will now see the same query result as before, from data pulled directly from the Object Store.

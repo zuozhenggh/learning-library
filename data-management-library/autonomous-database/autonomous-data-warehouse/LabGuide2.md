@@ -58,7 +58,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 ![](./images/200/Picture100-16b.png " ")
 
 
--   Copy and paste <a href="./scripts/200/low_ssb_query.txt" target="\_blank">this code snippet</a> to your SQL Developer Web worksheet. This query will run on the Star Schema Benchmark, one of the two ADW sample data sets that may be accessed from any ADW instance. Take a moment to examine the script. Then click the **Run Script** button to run it. Make sure you click the Run Script button in SQL Developer Webso that all the rows are displayed on the screen.
+-   Copy and paste <a href="./scripts/200/low_ssb_query.txt" target="\_blank">this code snippet</a> to your SQL Developer Web worksheet. This query will run on the Star Schema Benchmark, one of the two ADW sample data sets that may be accessed from any ADW instance. Take a moment to examine the script. Then click the **Run Script** button to run it. Make sure you click the Run Script button in SQL Developer Web so that all the rows are displayed on the screen.
 
 ![](./images/200/SSB_query_low_results_SQL_Developer_Web.png " ")
 
