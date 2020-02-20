@@ -65,11 +65,7 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
   ![](images/100/LabGuide100-c5a01c33.png)
 
-- Next you will need to create a fingerprint for the user. Copy the following private key contents in entirety.
-
-- Before we can launch a compute instance, we need two things: a Virtual Cloud Network to connect it to, and an SSH key pair to use for authentication. We could create a new VCN, but since the cluster wizard is already going to create one, we will just make use of that. So let's work on creating an SSH key pair for our instance. The method of generating an SSH key pair will depend on your operating system.
-
-    **NOTE**: There are several files that will be downloaded or created on your local machine during this workshop. We recommend creating a directory to store them in for ease of locating and cleaning up. In this step, you will create a directory inside your home/user directory called `container-workshop`. You are free to change the location and name of this directory, but the lab guide will assume it is located at `~/container-workshop/`. **You will need to modify the given terminal commands throughout this lab** if you change the location or name of the directory.
+- Next you will need to create a fingerprint for the user. But first let's create pem key files.
 
     **Mac/Linux**:
 
@@ -96,8 +92,29 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
         cat key.pem
         ```
 
+    **Windows**:
 
-        <!-- ![](images/200/LabGuide200-a5328c9e.png) -->
+      -  Download git bash using this link https://gitforwindows.org/
+
+       ```bash
+        cd /container-workshop/ssh-keys
+        ```
+
+      - To generate private pem key use the following command
+        ```
+        openssl genrsa -out key.pem 2048
+        ```
+
+      - To generate public pem key use the following command
+        ```
+        openssl rsa -in key.pem -outform PEM -pubout -out public.pem
+        ```
+
+      - Copy the private key using following command
+        ```
+        cat key.pem
+        ```
+
 
 - Paste into the **Private Key** field on the OCI connection form.
 

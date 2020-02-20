@@ -171,7 +171,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCTmnQPppvuP15M5jzTrRoMzWpERDIV9r0Eq1mj+5rE
 
 ### **STEP 7**: Create Java Web Service
 
-  - Before we can launch a compute instance, we need two things: a Virtual Cloud Network to connect it to, and an SSH key pair to use for authentication. We could create a new VCN, but since the cluster wizard is already going to create one, we will just make use of that. So let's work on creating an SSH key pair for our instance. The method of generating an SSH key pair will depend on your operating system.
+  - Before we can launch a compute instance, we need an SSH key pair to use for authentication.let's work on creating an SSH key pair for our instance. The method of generating an SSH key pair will depend on your operating system.
 
     **NOTE**: There are several files that will be downloaded or created on your local machine during this workshop. We recommend creating a directory to store them in for ease of locating and cleaning up. In this step, you will create a directory inside your home/user directory called `container-workshop`. You are free to change the location and name of this directory, but the lab guide will assume it is located at `~/container-workshop/`. **You will need to modify the given terminal commands throughout this lab** if you change the location or name of the directory.
 
