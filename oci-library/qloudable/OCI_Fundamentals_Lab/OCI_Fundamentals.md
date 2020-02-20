@@ -428,7 +428,7 @@ Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure 
 
 11. Click **Add Egress Rule**.
 
-12. Click **Security Lists**, and locate the Default Security List of the VCN Click **Add Egress Rule**.  Click **+Additional Egress Rule** and Add below 2 Rules for Ingress; Ensure to leave STATELESS flag un-checked.:
+12. Click **Security Lists**, and locate the Default Security List of the VCN Click **Add Ingress Rule**.  Click **+Additional Ingress Rule** and Add below 2 Rules for Ingress; Ensure to leave STATELESS flag un-checked.:
 
 **First Rule**
 
@@ -439,17 +439,16 @@ Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure 
 - Source Port Range: All
 - Destination Port Range: 80
 
-13. Click **+Additional Ingress Rule** and enter the following Egress rule; Ensure to leave STATELESS flag un-checked
+13. Click **+Additional Ingress Rule** and enter the following Ingress rule; Ensure to leave STATELESS flag un-checked
 
 **Second Rule**
-
 
 - Source Type: CIDR
 - Source CIDR: 10.0.5.0/24
 - IP Protocol: Select TCP
 - Destination Port Range: 80
 
-14. Click **Add Egress Rule**.
+14. Click **Add Ingress Rule**.
 
 We now have the set-up configured with 2 Compute instances running http server with a index.html file, Load Balancer with all relevant policies and components.
 
