@@ -1,8 +1,8 @@
-# Module 3 - Populating the Table
+## Module 3 - Populating the Table
 
 In this module, you will learn how to insert data into a table from a REST API. 
 
-### Background Information
+## Background Information
 
 The **apex\_data_parser** is a PL/SQL package which provides an easy interface to parse files from various file formats, including comma-delimited (.csv). The parser is implemented as a table function - so the developer accesses parser results like a table. Therefore, the parser can utilize INSERT ... SELECT statements to insert rows directly into a table from the specified file.
 

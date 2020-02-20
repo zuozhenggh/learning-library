@@ -34,11 +34,22 @@ In this module, you will learn how to create an APEX App on top of data imported
 
 The Data Load wizard has created a new table and populated that table with the records from the sample data. Now you can create an app based on this new table.
 
-1.  Verify that 73 rows have been loaded into the **PROJECT_TASKS** table, then click **Create Application**.
+1.  In the Load Data dialog, verify that 73 rows have been loaded into the **PROJECT_TASKS** table, then click **View Table**. 
 
-    ![](images/2/continue-to-create-application-wizard.png)
+    ![](images/2/continue-to-view-object.png)
 
-2.  Review the pages listed. Click the **Edit** button for a page to review more details.
+[//]: # (click **Create Application**. )
+[//]: # (images/2/continue-to-create-application-wizard.png)
+
+[//]: # (Remove Steps 2 and 3)
+2. In the Object Browser, review the table structure.   
+    In the Table toolbar, click **Create App**.
+
+    ![](images/2/object-browser.png)
+    
+3. On the Create Application page, click **Create App**.
+    
+2. In the Create Applicatin page, review the pages listed. Click the **Edit** button for a page to review more details.
 
     Click **Check All** for Features, and then click **Create Application**.
 
@@ -63,6 +74,6 @@ The Data Load wizard has created a new table and populated that table with the r
 
     ![](images/2/new-app.png)
 
-### Summary
+### **Summary**
 
 This completes Module 2. You now know how to create an application from a spreadsheet by either dragging and dropping a file or loading sample data for training purposes. [Click here to navigate to Module 3](3-improving-the-faceted-search.md)
