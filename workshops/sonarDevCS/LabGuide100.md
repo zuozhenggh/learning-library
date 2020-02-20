@@ -67,35 +67,38 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
 - Next you will need to create a fingerprint for the user. Copy the following private key contents in entirety.
 
-  ```
-  -----BEGIN RSA PRIVATE KEY-----
-  MIIEowIBAAKCAQEA4p45aXJuslQTMPhx09ITEp5YZdgOUGKYCTz9npnlrxBem1xK
-  gUxogkcBQp3NvI7IBv8l4CWxn2y3BxcR9Br00scjeiPZjwxIg2GgapA8xBfdf68C
-  mMFMqCN/RhcDuFgTkK2Zo1unVyaox1piQJkrlJ7ocZWkDojZ5vgisYDAHFPYGjx3
-  Nkl5dZrhtZuH4smaPp8r9kNE0U7cFJGoIUFymPLGnOVFzGYFz+myquf/basrbFpR
-  fRqz+GAQePp+ybthglpmZUJlAc+Jo6JEcGMJCavmOCiJ/vHudCWXfEUYt6lVI33H
-  Tnp4WlygeuoPB3dLdv+f/+5Hmjsl9o8tcmtRlwIDAQABAoIBAEVisK1qjh4nw+CA
-  kUmLzq8qsGIubuOJ7IcXl4fSExMw7eafsWg5Xt5UozwkWPPcu734rT4eDG6FuNyA
-  4cxd3IwU0PX6uAgmeKVRZO57zz8zF2yaxy7CMJhilft93HO68/KeVKZBz9DNU2wG
-  boLc4w0UQpNUf/C7Ugx3+RdkFm4VYlbXwhGVmPdPmVShph+EXmgBuTKBy9K1kuYA
-  KEBu3ffYBecgzHAObwv3rafvzkXoIRFj4hEtNYPyVK3c3rNH+yLCyKjVExA/Xdfs
-  s/D37yCzj7YZvRiqvxW+buItP8nK7yS0VOGJ1FjhG2Vf7jioDRzKBkcwsrJFlNea
-  fzJanaECgYEA9RV/bhW+ukGOc7UjHiDU1whKBCM0JbhHBsUn4Cxe+82KduV1NBWG
-  GUV9tXoJbMn/SZfX3TxrIZKspsedr4mqgFirDStsS22Gzmfi7GyVVVzfP2STt97o
-  1UFOfVOC/Y1jVoFzgtZ5dch2PL1D6Rf1ZxYsb+try4cFxnMh/GMYP1kCgYEA7LYs
-  jbcxBrzvAHWm5K2JhUfVttzyT1d5txrc2qbx8m9fQasNvKI/L5dS1dMuqgp+tO2u
-  ec0151miQh2Hni5zizdWQThvtNN0qx3PeLRs61EcxBjwtqOy9dPTV+ZQOsQSzEt/
-  SccYBtj36lskH/UXhQpc6JHBGhT9tXyLssV1am8CgYEAuQxJUgpTHvjeoRjUciwh
-  6FZW5HbcKdrQrhjwub9m3ELeWFV6QCA8RxqEByEkuqJuAdgHYgD7drbza13u/po4
-  RX4tcN0ngHArR++ClDaMLo7X9VpwenVxYYtUwyXqEp3NsoQ9fj2IKdl5BPV2sCmp
-  3fMNDFg55MuHHcbSk2kS5skCgYBCzE3aV/3PxvUzDgBgu8/4+oKGreb7GNZSI5R7
-  Z20TWvZok5q2xppKFcvcZ1HdzkRfTktUN+KkPJkbSzYAH1+fw6flk8WCI8Hin/Dy
-  QQgTh7o0ZE1ZXOydjn8vaODvFHGxkQSEj1hqZkPfsISLOCDA/GGnh6oUcCQAWPsb
-  Ibm2pQKBgBZ+Tq5G5V/dQwuHj6RCkK31vRYby6wRX5+OgfX4a+Mcq6KKLLgv3bbY
-  hutsdkpXLeP3KWsyIjCDQUtyH/abUYeOYcrVwv0c62CNUxl0XGw3maTJXaArZof+
-  IaVaz9BPpzvv/QVv/tob5T8JZFuJB6hzFK9+Fx3dc9AXng+TlsgP
-  -----END RSA PRIVATE KEY-----
-  ```
+- Before we can launch a compute instance, we need two things: a Virtual Cloud Network to connect it to, and an SSH key pair to use for authentication. We could create a new VCN, but since the cluster wizard is already going to create one, we will just make use of that. So let's work on creating an SSH key pair for our instance. The method of generating an SSH key pair will depend on your operating system.
+
+    **NOTE**: There are several files that will be downloaded or created on your local machine during this workshop. We recommend creating a directory to store them in for ease of locating and cleaning up. In this step, you will create a directory inside your home/user directory called `container-workshop`. You are free to change the location and name of this directory, but the lab guide will assume it is located at `~/container-workshop/`. **You will need to modify the given terminal commands throughout this lab** if you change the location or name of the directory.
+
+    **Mac/Linux**:
+
+      - Open a terminal or shell window and run the following commands:
+
+      - Make sure to be in the same directory which you created in lab 050. Use to following command to change directory if not already in it.
+
+        ```bash
+        cd /container-workshop/ssh-keys
+        ```
+
+      - To generate private pem key use the following command
+        ```
+        openssl genrsa -out key.pem 2048
+        ```
+
+      - To generate public pem key use the following command
+        ```
+        openssl rsa -in key.pem -outform PEM -pubout -out public.pem
+        ```
+
+      - Copy the private key using following command
+        ```
+        cat key.pem
+        ```
+
+
+        <!-- ![](images/200/LabGuide200-a5328c9e.png) -->
+
 - Paste into the **Private Key** field on the OCI connection form.
 
   ![](images/100/LabGuide100-2d41b2e5.png)
@@ -104,19 +107,11 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
   ![](images/100/LabGuide100-cd397db8.png)  
 
-- To obtain the fingerprint you must paste the public key into the provided field. Copy the key below and paste into the field. then select **Add**.
+- To obtain the fingerprint you must paste the public key into the provided field. Copy the key using following command and paste into the field. then select **Add**.
 
     ```
------BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4p45aXJuslQTMPhx09IT
-Ep5YZdgOUGKYCTz9npnlrxBem1xKgUxogkcBQp3NvI7IBv8l4CWxn2y3BxcR9Br0
-0scjeiPZjwxIg2GgapA8xBfdf68CmMFMqCN/RhcDuFgTkK2Zo1unVyaox1piQJkr
-lJ7ocZWkDojZ5vgisYDAHFPYGjx3Nkl5dZrhtZuH4smaPp8r9kNE0U7cFJGoIUFy
-mPLGnOVFzGYFz+myquf/basrbFpRfRqz+GAQePp+ybthglpmZUJlAc+Jo6JEcGMJ
-CavmOCiJ/vHudCWXfEUYt6lVI33HTnp4WlygeuoPB3dLdv+f/+5Hmjsl9o8tcmtR
-lwIDAQAB
------END PUBLIC KEY-----
-    ```
+    cat public.pem
+    ``` 
 
   ![](images/100/13.png)
 
