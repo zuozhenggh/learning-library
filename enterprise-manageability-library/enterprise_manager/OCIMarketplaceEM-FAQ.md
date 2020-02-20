@@ -3,13 +3,13 @@
 
 
 
-## Frequently Asked Questions / Troubleshooting of Oracle Cloud Marketplace instances for Enterprise Manager (EM) ##
+## Frequently Asked Questions / Troubleshooting of Oracle Cloud Marketplace instances for Enterprise Manager (EM) Workshop ##
 
 ##### February 01, 2020 | Version 2.0 Copyright © 2020, Oracle and/or its affiliates Confidential: Restricted #####
 
 ## **Contents** ##
 
-1. How do I create a SSH key-pair for launching and connecting to an OCI Instance
+1. How to Create a SSH key-pair for launching and connecting to an OCI Instance
 2. How to connect to an OCI Instance via SSH
 3. How to Check Status of Oracle Management Service, Other Services and Agent
 4. How to Locate EMCLI on Your Instance
@@ -20,9 +20,10 @@
 9. Steps To Setup VCN for FastConnect
 10. Licensing Terms for the Enterprise Manager Marketplace Instance
 11. How to Reset user oracle  password or if Named Credentials for user oracle are not working
+12. Additional information on Oracle Cloud Infrastructure Setup
 
 
-### **1. How do I create a SSH key-pair for launching and connecting to an OCI Instance** ###
+### **1. How to Create a SSH key-pair for launching and connecting to an OCI Instance** ###
 
 An SSH key-pair is needed to create an OCI instance, connect and access the
 system or to debug,
@@ -59,8 +60,8 @@ Generator on Windows.
 
 Alternatively, you can type a complete ssh-keygen command, for example:
 
->   \#ssh-keygen -t rsa -N "" -b 2048 -C "*\<key_name\>*" -f
->   *\<path/root_name\>*
+   #ssh-keygen -t rsa -N "" -b 2048 -C "*\<key_name\>*" -f
+   *\<path/root_name\>*
 
 The command arguments are shown in the following table:
 
@@ -72,11 +73,11 @@ The command arguments are shown in the following table:
 | **-C "\<_key_name_\>"**      | A name to identify the key.                                                                                                                                                             |
 **-f \<_path/root_name_\>**  | Location where key pair will be saved and the root name for the files.
 
-#### Steps to Creating an SSH Key Pair on WINDOWS using PuTTY KEY generator ####
+#### Creation of an SSH Key Pair on WINDOWS using PuTTY KEY generator ####
 
 1.  Locate puttygen.exe in the PuTTY folder on your computer, for example,
     
-    >   C:\\Program Files (x86)\\PuTTY.  Then double-click puttygen.exe to open.
+       C:\\Program Files (x86)\\PuTTY.  Then double-click puttygen.exe to open.
 
 2.  Specify a key type of SSH-2 RSA and a key size of 2048 bits:
 
@@ -97,13 +98,13 @@ The command arguments are shown in the following table:
 When the key is generated, it appears under **Public key for pasting into
 OpenSSH authorized_keys file**.
 
-1.  A **Key comment** is generated for you, including the date and time stamp.
+5.  A **Key comment** is generated for you, including the date and time stamp.
     You can keep the default comment or replace it with your own more
     descriptive comment.
 
-2.  Leave the **Key passphrase** field blank.
+6.  Leave the **Key passphrase** field blank.
 
-3.  Click **Save private key**, and then click **Yes** in the prompt about
+7.  Click **Save private key**, and then click **Yes** in the prompt about
     saving the key without a passphrase.
 
 The key pair is saved in the PuTTY Private Key (PPK) format, which is a
@@ -112,22 +113,22 @@ proprietary format that works only with the PuTTY tool set.
 You can name the key anything you want, but use the ppk file extension. For
 example, mykey.ppk.
 
-1.  Select *all* of the generated key that appears under **Public key for
+8.  Select *all* of the generated key that appears under **Public key for
     pasting into OpenSSH authorized_keys file**, copy it using **Ctrl + C**,
     paste it into a text file, and then save the file in the same location as
     the private key.
 
->   (NOTE: Do NOT use the **Save public key** because it does not save the key
->   in the OpenSSH format.)
+   (NOTE: Do NOT use the **Save public key** because it does not save the key
+   in the OpenSSH format.)
 
 You can name the key anything you want, but for consistency, use the same
 name as the private key and a file extension of pub. For example, mykey.pub.
 
-1.  Write down the names and location of your public and private key files. You
+9.  Write down the names and location of your public and private key files. You
     will need the public key when launching an instance. You will need the
     private key to access the instance via SSH.
 
-### **2. How to connect to an OCI Instance via SSH** ###
+### **2. How to Connect to an OCI Instance via SSH** ###
 
 In case that services do not come up several minutes after creation/start of the
 instance, or to make changes in the system, you can connect to the instance via
@@ -141,7 +142,7 @@ SSH. You can then run scripts from /home/oracle
 
 -   Your service instance’s public IP address
 
-#### **Steps to Connecting to a VM from a Windows System** ###
+#### **Connecting to a VM from a Windows System** ###
 
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to
 connect to remote systems over the internet using SSH and Telnet. SSH is
@@ -171,7 +172,7 @@ https://github.com/oracle/learning-library/raw/master/enterprise-manageability-l
 
 1.  In the category section, **Click** Connection and then **Select** Data.
 
-2.  Enter your auto-login username. For example **opc**.
+2.  Enter your auto-login username. Enter **opc**.
 
 ![](media/36164be0029033be6d65f883bbf31713.jpg)
 
@@ -200,12 +201,12 @@ To save all your settings:
 Use the following command to set the file permissions so that only you can
 read the file:
 
-    $ chmod 400 *\<private_key\>* * 
+    #chmod 400 *\<private_key\>* * 
     where *\<private_key\>* is the full path and name of the file that contains the private key associated with the instance you want to access.
 
 Use the following SSH command to access the instance
 
-    ssh –i *\<private_key\> opc\@\<public-ip-address\>*  
+    #ssh –i *\<private_key\> opc\@\<public-ip-address\>*  
     where *\<public-ip-address\>* is your instance IP address that you retrieved
     from the console.
 
@@ -213,9 +214,9 @@ Use the following SSH command to access the instance
 
 As user *oracle*
 
-    \# /u01/app/em13c/middleware/bin/emctl status oms
+    #/u01/app/em13c/middleware/bin/emctl status oms
 
-    \# /u01/app/em13c/emagent/agent_13.3.0.0.0/bin/emctl status agent
+    #/u01/app/em13c/emagent/agent_13.3.0.0.0/bin/emctl status agent
 
 ### **4. How to Locate Emcli on Your Instance** ###
 
@@ -238,20 +239,20 @@ shown in line item 5 as needed.
 
 Restart the agent as user *oracle*
 
-    sudo su - oracle   
-    /home/oracle/start_agent.sh
+    #sudo su - oracle   
+    #/home/oracle/start_agent.sh
 
 ### **8. How to Stop all Enterprise Manager (EM) Services Before Stopping an OCI instance** ###
 
 Before stopping an OCI instance, stop all EM services as user *oracle* for a
 clean shutdown 
 
-    sudo su - oracle  
-    /home/oracle/stop_all.sh
+    #sudo su - oracle  
+    #/home/oracle/stop_all.sh
 
 ### **9. Steps To Setup VCN for FastConnect** ###
 
->If (and only if) you are using a private subnet/FastConnect with your VCN**,
+If (and only if) you are using a private subnet/FastConnect with your VCN**,
 there are a few additional steps required to create the Service gateway, define
 the routing rule and egress rules.
 
@@ -261,16 +262,12 @@ the routing rule and egress rules.
 
 ![](media/7a85046304e54181a1977a436d95ecf8.png)
 
->   (FastConnect Customers only) Image FC-1.Creating a Service Gateway for your
->   private subnet.
 
-1.  Add a new Route Rule for the Service Gateway you just created.
+2.  Add a new Route Rule for the Service Gateway you just created.
 
 ![](media/fd1722398ea3ca1d3fdf2e8d11410593.png)
 
->Note: For FastConnect Customers only (Image FC-2).Creating a Route Rule for your new Service Gateway for your private subnet
-
-1.  If (and only if) your private subnet has restrictions on outgoing
+3.  If (and only if) your private subnet has restrictions on outgoing
     traffic/egress you have to add egress rules for service network CIDRs for
     your OCI region.  For a list of CIDRs that apply to your region, refer to
     the OCI documentation “Public IP Address Ranges for the Oracle Services
@@ -278,32 +275,50 @@ the routing rule and egress rules.
 
 ![](media/71d59dba104594e75e69b7e78615a796.png)
 
->   Note: For FastConnect Customers only (Image FC-3).Sample Egress Rules for the CIDRs associated with the US-Ashburn region.Consult OCI documentation for your own region.
-
 ### **10. Licensing Terms for the Enterprise Manager Marketplace Instance**
 
-The terms of using the Oracle Enterprise Manager instance from the Oracle Cloud
-marketplace is available from the **Oracle Technology Network License
-Agreement** <https://www.oracle.com/downloads/licenses/standard-license.html>
+The Oracle Enterprise Manager Workshop instance can be used for free for 30 days
+under the terms of the **Oracle Technology Network License Agreement** 
+<https://www.oracle.com/downloads/licenses/standard-license.html>
+
+In order to use the functionality, the following Licensed Packs have been enabled in the
+Enterprise Manager workshop image:
+
+For the Database Lifecycle Management
+-	Database Lifecycle Management Pack for Oracle  Database
+
+For Database Performance Management On-premises
+-	Oracle Diagnostics Pack
+-	Oracle Tuning pack 
+-	Real Application Testing
+
 
 ### **11. How to Reset user *oracle* password or if Named Credentials for user oracle is not working**
 
 Reset the password for user *oracle* as user *root*  
 password oracle (and then enter new password twice to confirm).  
   
-If *oracle* password is updated, the Named Credential for *oracle* also needs to
+If *oracle* password is updated, the Named Credential for *ORACLE* and also *ORACLE_HOST* needs to
 be updated. This can be done on the command line as user *oracle* 
  
-    /u01/app/em13c/middleware/bin/emcli login -username=sysman -password=\<sysman_password\> /u01/app/em13c/middleware/bin/emcli
-    modify_named_credential -cred_name=oracle -attributes="HostPassword:\<oracle_password\>" -test
-    /u01/app/em13c/middleware/bin/emcli logout \|tee -a /tmp/named1.log
+    #/u01/app/em13c/middleware/bin/emcli login -username=sysman -password=\<sysman_password\> 
+    #/u01/app/em13c/middleware/bin/emcli modify_named_credential -cred_name=oracle -attributes="HostPassword:\<oracle_password\>"
+    #/u01/app/em13c/middleware/bin/emcli modify_named_credential -cred_name=oracle_host -attributes="HostPassword:\<oracle_password\>" 
+    #/u01/app/em13c/middleware/bin/emcli logout 
 
 The Named Credential can also be updated via Enterprise Manager UI. On the EM
 Console navigate to Setup, then Security, and then Named Credentials.
 
 ![](media/700f13b043e394456607f070b599bc24.png)
 
-**Click** on user ORACLE and **Click** on Edit and then **Enter** the new
+**Click** on Credential Name ORACLE and **Click** on Edit. **Enter** the new
 password in the Credentials Sections twice and **Click** on Save.
+Repeat for Credential ORACLE_HOST
 
 ![](media/2e38a554bdbc3a68ce7cbfd84a6a3588.png)
+
+### **13. Additional information on Oracle Cloud Infrastructure Setup**
+<https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm>
+
+
+
