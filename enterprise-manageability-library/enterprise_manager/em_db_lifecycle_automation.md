@@ -130,7 +130,7 @@ Targets \> Databases, Click on CDB186** and you will see the newly created PDB
 
 ![](media/657ef309d7087942b8d871256a359050.jpg)
 
-<br>**Workshop Activity 2: Un-plug/Plug an Exisiting Pluggable Database (PDB)**
+<br>**Workshop Activity 2: Un-plug/Plug an Existing Pluggable Database (PDB)**
 ======================================================================
 
 
@@ -254,7 +254,7 @@ Targets \> Databases,** Click on CDB186 and you will see the newly created PDB
 Note: You do not have to wait until the steps complete and move on to the next section.
 
 
-<br>**Workshop Activity 3: Clone an Exsiting Pluggable Database (PDB)**
+<br>**Workshop Activity 3: Clone an Existing Pluggable Database (PDB)**
 ======================================================================
 
 
