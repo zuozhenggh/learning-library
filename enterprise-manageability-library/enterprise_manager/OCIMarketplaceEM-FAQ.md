@@ -1,7 +1,5 @@
 
-![](media/rdwd-emfaqheader.png)
-
-
+![](media/rdwd-ocimktem.png)
 
 ## Frequently Asked Questions / Troubleshooting of Oracle Cloud Marketplace instances for Enterprise Manager (EM) Workshop ##
 
