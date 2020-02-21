@@ -1,4 +1,4 @@
-![](images/ziplabs-title.png.png)
+![](images/ziplabs-title.png)
 ---
 # Welcome to the Oracle University Zip Labs
 
