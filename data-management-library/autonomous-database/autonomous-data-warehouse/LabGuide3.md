@@ -220,13 +220,13 @@ In order to access data in the Object Store you have to enable your database use
 
     Specify the credentials for your Oracle Cloud Infrastructure Object Storage service: The username will be your **OCI username** (usually your email address, not your database username) and the password is the OCI Object Store **Auth Token** you generated in the previous step.  In this example, the credential object named **OBJ\_STORE\_CRED** is created. You reference this credential name in the following steps.
 
-    ![](./images/300/snap0015312.jpg " ")
+    ![](./images/300/create_credential_sql_dev_web.jpg " ")
 
 <!-- -->
 
 -   Run the script.
 
-    ![](./images/300/Picture300-12.png " ")
+    ![](./images/300/create_credential_sql_dev_web_run_script.jpg " ")
 
 -   Now you are ready to load data from the Object Store.
 
@@ -247,11 +247,11 @@ As an alternative to the wizard-guided data load, you can use the PL/SQL package
 
     - Run the script.
 
-    ![](./images/300/snap0014550.jpg " ")
+    ![](./images/300/run_data_loading_script_in_sql_dev_web.jpg " ")
 
     - You have successfully loaded the sample tables. You can now run any sample query in the <a href="https://docs.oracle.com/database/122/DWHSG/part-relational-analytics.htm#DWHSG8493" target="\_blank">relational analytics</a> section of the Oracle documentation. For example, to analyze the cumulative amount sold for specific customer IDs in quarter 2000, you could run the query in <a href="./scripts/300/query_tables.txt" target="\_blank">this code snippet</a>. <a href="https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dwhsg/introduction-data-warehouse-concepts.html#GUID-452FBA23-6976-4590-AA41-1369647AD14D" target="\_blank">Click Here</a> to read more about Data Warehousing.
 
-    ![](./images/300/Picture300-20.png " ")
+    ![](./images/300/query_results_after_loading_in_sql_dev_web.jpg " ")
 
 #### **STEP 13: Troubleshooting DBMS_CLOUD data loads**
 
@@ -267,20 +267,20 @@ As an alternative to the wizard-guided data load, you can use the PL/SQL package
 
 -   For an example of how to troubleshoot a data load, we will attempt to load a data file with the wrong format (chan_v3_error.dat).  Specifically, the default separator is the | character, but the channels_error.csv file uses a semicolon instead.  To attempt to load bad data, copy and paste <a href="./scripts/300/load_data_with_errors.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet and run the script as your user in SQL Developer Web. Specify the URL that points to the **chan\_v3\_error.dat** file. You have copied and saved the URL in the step "Copy the URLs of the Files on Your OCI Object Storage" above. Expect to see "reject limit" errors when loading your data this time.
 
-    ![](images/300/LabGuide3-3f756664.jpg " ")
+    ![](images/300/query_results_after_loading_in_sql_dev_web.jpg " ")
 
 -   Run the following query to see the load that errored out.
     ```
     select * from user_load_operations where status='FAILED';
     ```
 
-    ![](./images/300/Picture300-22.jpg " ")
+    ![](./images/300/bad_file_table_in_sql_dev_web.jpg " ")
 
 A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The logfile\_table column shows the name of the table you can query to look at the log of a load operation. The column badfile_table shows the name of the table you can query to look at the rows that got errors during loading.
 
 -   Query the log and bad tables to see detailed information about an individual load. In this example, the names are copy$25\_log and copy$25\_bad respectively.
 
-    ![](./images/300/Picture300-23.jpg " ")    
+    ![](./images/300/query_log_and_bad_files.jpg " ")    
 
 -   To learn more about how to specify file formats, delimiters, reject limits, and more, review the <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/dbmscloud-reference.html" target="\_blank"> DBMS_CLOUD Package Format Options </a>
 
