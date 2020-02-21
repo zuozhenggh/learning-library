@@ -62,4 +62,4 @@ Close the menu by clicking the X.
 
   ![](images/Menu.png " ")
 
-You're now ready to continue with [**Lab 050**](LabGuide050.md).
+You're now ready to continue with [**Lab 050**](?lab=lab-050-setup-cloud-environment).
