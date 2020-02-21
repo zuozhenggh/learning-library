@@ -18,15 +18,15 @@ In Lab 200 you also continue to play the role of Derek, but now you get to the f
 
     ![](images/200/0-1.png " ")
 
-- In the search bar type visual and you should see **Visual Studio Code** in results.
+- In the search bar type **visual or VsCode** and you should see **Visual Studio Code / VsCode - OSS** in results. **Note: VsCode - OSS same as Visual Studio Code**
 
     ![](images/200/0-2.png " ")
 
-- **Right Click** on Visual Studio Code and then click on **Favorites**. 
+- **Right Click** on Visual Studio Code / VsCode - OSS icon and then click on **Favorites**. 
 
     ![](images/200/0-3.png " ")
 
-- Now that Visual Studio Code is added to favorites. Open the terminal,click on **Applications**, select **Favorites** and then click on **Visual Studio**.
+- Now that Visual Studio Code is added to favorites. Open the terminal,click on **Applications**, select **Favorites** and then click on **Visual Studio / VsCode - OSS**.
 
     ![](images/200/1-1.png " ")
 
@@ -51,7 +51,7 @@ In Lab 200 you also continue to play the role of Derek, but now you get to the f
 
     ![](images/200/5-1.png " ")
 
-- Next type the following command `$ sudo python get-pip.py`.
+- Next type the following command `$ sudo python get-pip.py`
 
     ![](images/200/5-2.png " ")
 
@@ -146,4 +146,4 @@ In Lab 200 you also continue to play the role of Derek, but now you get to the f
 
 **This completes the Lab!**
 
-**You are ready to proceed to [Lab 300](LabGuide300.md)**
+**You are ready to proceed to [Lab 300](?lab=lab-300-plot-data-show-nearest-service)**

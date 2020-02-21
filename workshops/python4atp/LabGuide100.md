@@ -54,7 +54,7 @@ Derek is a Python developer, and so he avoids spending time in secondary tasks s
 
   ![](images/100/016.png " ")
 
-- Click `select files`, then select the `expdp_alpha.dmp` and the `credit_scoring_100k_pq`. Note we will be importing data from the expdp_alpha.dmp file, and later querying data from the credit_scoring_100k_pq (big data parquet file). The latter file will be used in a future lab. This is just showing you how easy it is to query parquet (and avro) files. Click `Open`, then `Upload Objects`.
+- Click **select files**, then select the `expdp_alpha.dmp` and the `credit_scoring_100k_pq`. Note we will be importing data from the `expdp_alpha.dmp` file, and later querying data from the `credit_scoring_100k_pq` (big data parquet file). The latter file will be used in a future lab. This is just showing you how easy it is to query parquet (and avro) files. Click `Open`, then `Upload Objects`.
 
   ![](images/100/017.png " ")
 
@@ -152,6 +152,7 @@ Derek is a Python developer, and so he avoids spending time in secondary tasks s
 ## **STEP 6:** Create SQL Developer Connection to the Autonomous Transaction Processing Database
 
 - Open **SQL Developer** through the menu.
+**Note: If you having difficulty to open SQL Developer, you may check `echo $JAVA_HOME` in the terminal. If it is empty, you can set path using `export JAVA_HOME=/usr/java/jdk1.8.0_231-amd64/` or with your JDK installation directory and type `sqldeveloper` in the terminal to open SQL Developer.**
 
   ![](images/100/039.png " ")
 
@@ -240,7 +241,7 @@ Derek is a Python developer, and so he avoids spending time in secondary tasks s
 
 - On **Step 1** of the **Import Wizard**, select and/or enter the following and click **Next**.  You will use the values you collected in the text editor at the end of **Step 4**.
 
-  **Note:** Your values for **REGION** and **OBJECT_STORAGE_NAMESPACE** may/will be different.
+  **Note:** Your values for **REGION** and **OBJECT STORAGE NAMESPACE** may/will be different.
 
   - **Type of Import:** `Full`
   - **Credentials or Directories:** `py4dev_cred` (Created in STEP 10)
@@ -289,7 +290,7 @@ begin
 end;
 /
 ```
-- Obtain the URI of the credit_scoring_100k_pq file from object storage in your console.
+- Obtain the URI of the `credit_scoring_100k_pq` file from object storage in your console.
 
   ![](images/100/061.png " ")
 
@@ -325,4 +326,4 @@ end;
 
 **This completes the Lab!**
 
-**You are ready to proceed to [Lab 200](LabGuide200.md)**
+**You are ready to proceed to [Lab 200](?lab=lab-200-build-test-python-rest-service)**

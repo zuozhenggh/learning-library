@@ -83,7 +83,7 @@ Support is interested in a new app that provides insights into customer and serv
 
 - Points on the map are the location of customer and service provider, when you hover over the points, it shows the customer address and the distance to the nearest service provider.
 
--  As seen above the distance between the customer and service provider is calculated using the SQL query and using package SDO_NN_DISTANCE. To understand more we have two tables( i.e Customers and Service providers) with each having GeoCordinate, SDO_NN_DISTANCE calculates the distance between these two points and we calculate that distance in miles and sort by distance. All this is done by the query following below.
+-  As seen above the distance between the customer and service provider is calculated using the SQL query and using package `SDO_NN_DISTANCE`. To understand more we have two tables( i.e Customers and Service providers) with each having GeoCordinate, `SDO_NN_DISTANCE` calculates the distance between these two points and we calculate that distance in miles and sort by distance. All this is done by the query following below.
 
     ``` 
             SELECT /* ORDERED */
@@ -113,4 +113,4 @@ Support is interested in a new app that provides insights into customer and serv
 
 **This completes the Lab!**
 
-**You are ready to proceed to [Lab 400](LabGuide400.md)**
+**You are ready to proceed to [Lab 400](?lab=lab-400-show-customers-based-on-regions)**
