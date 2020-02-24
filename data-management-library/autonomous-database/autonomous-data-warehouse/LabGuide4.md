@@ -33,18 +33,19 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
     -   At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable.
 
-    ![](./images/400/snap0014527.jpg " ")
-
     - **Run the script**.
+
+    ![](./images/400/run_script_create_ext_tables.jpg " ")
 
     Now you have **external tables** for the sample data pointing to files in the object store. Any query against the external tables will return the same result as against the original tables.
 
 #### **STEP 2: Querying External Data**
 
--   Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet. We only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
-    ![](images/400/Picture400-4.png " ")
+-   Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet. Compared to the query in the previous lab, we only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
 
--   **Run the script**. You will now see the same query result as before, from data pulled directly from the Object Store.
+-   **Run the script**. You will now see the same query result as in the previous lab, but from data pulled directly from the Object Store.
+
+    ![](images/400/external_table_query_results.jpg " ")
 
 
 <table>
