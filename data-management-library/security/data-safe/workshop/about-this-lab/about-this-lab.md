@@ -3,7 +3,7 @@
 
 This workshop lets you practice the main features in Oracle Data Safe, including Activity Auditing, Data Discovery, Data Masking, User Assessment, and Security Assessment.
 
-## Access the labs
+### Access the labs
 
 Use the Contents Menu to access the next lab. For example, to proceed to Lab 1, click **Lab 1: View a Registered Target Database** from the menu on the right.
 
