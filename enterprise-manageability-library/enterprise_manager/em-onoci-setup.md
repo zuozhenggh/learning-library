@@ -89,8 +89,8 @@ How To Create a Compute Instance
 
     ![](media/702bbd73597e664e613283214f4425bb.png)
 
-5.  After login, verify the compartment you want the image in by clicking the
-    **Compartment** drop down menu and selecting the *compartment_name* .
+5.  After login, Select the compartment you want the image in by clicking the
+    **Compartment** drop down menu and selecting the *compartment_name*.
 
 	> NOTE: do NOT use the root compartment. Choose the compartment your company Cloud Administrator setup for you or use one you created for the image. (example TEST)
 
