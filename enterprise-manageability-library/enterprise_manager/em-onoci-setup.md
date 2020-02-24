@@ -123,8 +123,8 @@ How To Create a Compute Instance
 
 	![](media/29d37c3d72579612ebaf96bbf58e5dd9.png)
 
-1.  When presented with the Browse All Shapes choices, verify that the
-    VMStandard2.4 (4 OCPU and 60 GB memory) shape is checked.
+1.  When presented with the Browse All Shapes choices, Select the
+    VMStandard2.4 (4 OCPU and 60 GB memory) shape. Click on Select Shape to Apply the change
 
 	![](media/bae52a344e8a9ec62c69e14a7b8f9faf.png)
 
@@ -134,9 +134,9 @@ How To Create a Compute Instance
 1.  After the **AD**, **Instance Type** and **Instance Shape** have been set,
     the next step is to configure the networking section.
 
-1.  For the Virtual Cloud Network Compartment and Subnet compartment, verify the
+1.  For the **Virtual Cloud Network Compartment** and **Subnet compartment**, verify the
     **compartment_name** chosen is the same as in step 5. For the Virtual Cloud
-    Network, verify you have the VCN identified that you created with ingress
+    Network, verify you have the VCN identified that was created with ingress
     rules for the EM image.
 
 	![](media/dc10fbf5cc961dad2eb7b30905783f6b.jpg)
@@ -161,7 +161,7 @@ How To Create a Compute Instance
 
 1.  Next **Click** the **Create** button for your instance to be created.
     Dependent on how many are using a tenancy, you will see the yellow
-    provisioning state take about \~4 minutes and \~ 20 mins for startup of the
+    provisioning state take about \~4 minutes to be running and \~ 20 mins for startup of the
     databases and Enterprise Manager within your VM.
 
 2.  You can view the Work Requests section towards the bottom, for status
@@ -177,13 +177,14 @@ How To Create a Compute Instance
 	> NOTE: that as part of this pre-configured image, all Enterprise Manager services automatically start up so you do not have to separately start up the OMS, etc… via EMCTL or scripts
 
 1. After the services are running, access Enterprise Manager to verify access
-    to it by using this URL format in your browser (Chrome is suggested)
+   to it by using this URL format in your browser (Chrome is suggested)
+   https://<Public_IP_Address>:7803/em
 
 	> NOTE: Don’t be **alarmed if you see a** certification warning like this.
 
 	![](media/d3f4e747ac10504d20950d505a45e7c6.png)
 
-1.  It is safe to ignore it that and move ahead. Click on the **Advanced**
+1.  It is safe to ignore it and move ahead. Click on the **Advanced**
     button and then click on the **Accept the Risk and Continue** button.
 
 	> NOTE: if you receive a Cannot Connect screen, wait a few more minutes for the image to complete its startup and then try again. You should then see the Enterprise Manager Cloud Control 13c login screen.  
@@ -195,7 +196,7 @@ How To Create a Compute Instance
 Get To Know The Preconfigured Environment<br>
 ===============================================
 
-In this HOL example, the image used was a pre-configured environment of Oracle
+In this Workshop example, the image used was a pre-configured environment of Oracle
 Enterprise Manager 13.3 with databases and targets all running within a single
 Virtual Machine. Oracle Cloud Marketplace is routinely updated with new product
 images and versions.
