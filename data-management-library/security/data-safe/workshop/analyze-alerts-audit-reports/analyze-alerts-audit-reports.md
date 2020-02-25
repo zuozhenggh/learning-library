@@ -16,11 +16,11 @@ To complete this lab, you need to have the following:
 - Audit collection started on your target database in Oracle Data Safe. If not, see **Provision Audit and Alert Policies**.
 
 ### Assumptions
-This lab assumes that you are already signed in to the Oracle Data Safe Console. If not, see [View a Registered Target Database](?lab=lab-1-view-registered-target-database), steps 1 and 2.
+This lab assumes that you are already signed in to the Oracle Data Safe Console. If not, see [View a Registered Target Database](?lab=lab-1-view-registered-target-database), Parts 1 and 2.
 
 Your data values may be different than those shown in the screenshots in this lab.
 
-## **STEP 1**: View and close alerts
+## **PART 1**: View and close alerts
 
 - In Oracle Data Safe Console, click the **Home** tab, and then click the **Alerts** tab.
 
@@ -120,7 +120,7 @@ Your data values may be different than those shown in the screenshots in this la
 
 
 
-## **STEP 2**: Analyze open alerts from the dashboard
+## **PART 2**: Analyze open alerts from the dashboard
 
 
 - Click the **Home** tab.
@@ -163,7 +163,7 @@ Your data values may be different than those shown in the screenshots in this la
   ![](./images/all-alerts-report-filtered.png " ")
 
 
-## **STEP 3**: View all audit records for the past week
+## **PART 3**: View all audit records for the past week
 
 - Click the **Reports** tab.
 
@@ -196,7 +196,7 @@ Your data values may be different than those shown in the screenshots in this la
 
 
 
-## **STEP 4**: View a summary of audit events collected and alerts raised
+## **PART 4**: View a summary of audit events collected and alerts raised
 
 - On the left, click **Summary Reports**, and then click **Audit Summary**.
 
@@ -249,7 +249,7 @@ Your data values may be different than those shown in the screenshots in this la
 
 
 
-## **STEP 5**: Create a failed logins report
+## **PART 5**: Create a failed logins report
 
 - Click the **Reports** tab.
 
