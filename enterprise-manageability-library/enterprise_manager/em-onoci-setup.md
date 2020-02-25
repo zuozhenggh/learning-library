@@ -12,7 +12,7 @@
     - Named Credentials Secured by Best Practice
     - Database Target Inventory
     - Summary of Enterprise Manager and Host Details
-
+4. Workshops
 
 
 Purpose 
@@ -256,3 +256,18 @@ Summary of Enterprise Manager and Host Details
 | **Oracle Database Credentials** | Name Credential as specified in use case or use sys/welcome1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **Host Credentials**            | Login as opc user using your private key (as described in *connecting to an instance* section of FAQ) Login to root if needed: sudo –s (from opc user) Login to oracle if needed: sudo su – oracle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **Startup Scripts**             | All scripts are in /home/oracle. **Note:** All required EM services are brought up at creation and every reboot of the instance, so allot time for them to start automatically. **In case** you run into an issue, these scripts can help stop/start services within the instance. start_all.sh - Starts ALL services for EM (OMS, Agent etc.) start_oms.sh - Starts OMS start_agent.sh – Starts Agent start_db_hr.sh – Starts HR Database stop_db.sh – Stops emprep Database/Listener start_db_sales.sh – Starts Sales Database stop_oms.sh – Stops OMS start_db_cdb186.sh – Starts cdb186 Database start_db.sh – Starts all Databases stop_agent.sh – Stops Agent startdb_emrep.sh start_db.sh_orig stop_all.sh |
+
+
+Workshops
+=========
+The Workshop documents are available at:
+https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/em_db_lifecycle_automation.md
+https://github.com/smbharga/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/em_find_fix_validate.md
+
+The following use cases are covered:
+
+• Enterprise Manager Multi-tenant(PDB) Lifecycle Management
+• Enterprise Manager PDBaaS (Private Cloud)
+• Database Performance Management On-Premises
+• OCI User Managed DB Systems
+• Real Application Testing
