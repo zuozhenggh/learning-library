@@ -1,6 +1,6 @@
-# Welcome to the OCI Level 100 Workshop
+# Welcome to the OCI Basics Workshop
 
-This workshop is a simple overview of basic OCI services.   This lab is a quick way to get started with VCN, a developers instance, and block storage.  
+This workshop is a simple overview of basic OCI services.   As you work through this workshop you'll get hand on practice setting up a VCN, a developers instance, and block storage.  
 
 ### Trial Account
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -10,15 +10,12 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
   
 [Click here to request your trial account:](https://cloud.oracle.com/tryit)
 
-## Access the Labs Using the updated Web Interface
-
 ##
+
+## Access the Labs Using the updated Web Interface
 
 [OCI Basics Workshop - html version](https://oracle.github.io/learning-library/ospa-library/oci/OCI-Basics-Workshop/)
 
-[OCI SSH Key lab workshop](https://www.oracle.com)
-
-## Access the Labs Using Our Web Interface
-**[Click here](https://oracle.github.io/learning-library/oci-library/L100-LAB)** to use our easy to navigate HTML format
+[OCI SSH Key lab workshop](https://oracle.github.io/learning-library/ospa-library/oci/OCI-Basics-Workshop/?lab=ssh-key-creation-lab)
 
 -->
