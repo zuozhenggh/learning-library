@@ -6,7 +6,8 @@
 [OCI Basics Workshop](https://github.com/oracle/learning-library/tree/master/ospa-library/oci/OCI-Basics-Workshop)
 - Workshop that will introduce a new learner to the basics of OCI.  Similar to the above workshop but in this lab we'll walk the learner through launching a developer instance, creating block storage, then un-mounting the storage and mounting on a different instance.   This workshop also includes a section on how to create and use SSH keys for the major desktop platforms.
 
-[OCI Basics Workshop - html](https://github.com/oracle/learning-library/tree/master/ospa-library/oci/OCI-Basics-Workshop)
+[OCI Basics Workshop - html](https://oracle.github.io/learning-library/ospa-library/oci/OCI-Basics-Workshop/)
+ Workshop that will introduce a new learner to the basics of OCI.  Similar to the above workshop but in this lab we'll walk the learner through launching a developer instance, creating block storage, then un-mounting the storage and mounting on a different instance.   This workshop also includes a section on how to create and use SSH keys for the major desktop platforms.
 
 [Class Of SE - HOL 1 for Technical Training](https://github.com/oracle/learning-library/tree/master/ospa-library/oci/Class-Of-HOL-01)
 - Lab for specific Class of SE Event.  4 section introductory hands on lab to accompany lecture.
