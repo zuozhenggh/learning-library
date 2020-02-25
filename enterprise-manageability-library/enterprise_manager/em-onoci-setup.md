@@ -260,14 +260,17 @@ Summary of Enterprise Manager and Host Details
 
 Workshops
 =========
+
 The Workshop documents are available at:
+
 https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/em_db_lifecycle_automation.md
+
 https://github.com/smbharga/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/em_find_fix_validate.md
 
 The following use cases are covered:
 
-• Enterprise Manager Multi-tenant(PDB) Lifecycle Management
-• Enterprise Manager PDBaaS (Private Cloud)
-• Database Performance Management On-Premises
-• OCI User Managed DB Systems
-• Real Application Testing
+1. Enterprise Manager Multi-tenant(PDB) Lifecycle Management
+2. Enterprise Manager PDBaaS (Private Cloud)
+3. Database Performance Management On-Premises
+4. OCI User Managed DB Systems
+5. Real Application Testing
