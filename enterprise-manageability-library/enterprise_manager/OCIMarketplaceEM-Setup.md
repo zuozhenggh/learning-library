@@ -7,10 +7,10 @@
 
 ## **Contents** ##
 1. Oracle Cloud Prerequisites Setup
-2. How to Create a Virtual Cloud Network
-3. How to Set Ingress Rules
-4. How To Create a Compute Instance
-5. Get to Know the Preconfigured EM Environment Image
+    - How to Create a Virtual Cloud Network
+    - How to Set Ingress Rules
+2. How To Create a Compute Instance
+3. Get to Know the Preconfigured EM Environment Image
     - Named Credentials Secured by Best Practice
     - Database Target Inventory
     - Summary of Enterprise Manager and Host Details
@@ -20,15 +20,16 @@
 Purpose 
 ========
 
-In this Hands on Lab (HOL) you will learn how to perform the initial Oracle
+In this Workshop you will learn how to perform the initial Oracle
 Cloud pre-requisites to setup and configure Virtual Cloud Network in your
 tenancy and compartment and create a Compute Instance utilizing the Oracle
 Enterprise Manager (EM) image from the Oracle Cloud marketplace. The Enterprise
 Manager instance you instantiate includes a pre-configured Enterprise Manager,
 repository and Oracle Database targets.
 
-After you have completed this HOL, you can then move on and complete other Hands
-on Labs using the EM environment instance.
+After you have completed this Setup Workshop, you can then move on and complete 
+other Workshops for Database Lifecycle Management, Real Application Testing etc
+using the EM environment instance.
 
 GOAL
 ====
@@ -77,7 +78,7 @@ logging into Oracle Cloud the first time, you can consult the [documentation
 here](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/get-started-oracle-cloud-services.html)
 
 Before launching an instance, you need to have a Virtual Cloud Network (VCN) and
-subnet setup. And it’s recommended to have in within its own compartment (TEST
+subnet setup. And it’s recommended to have it within its own compartment (TEST
 for example). A subnet is a subdivision of your VCN and directs traffic
 according to a **route table. **You will access the instance over the internet
 using its public IP address. Your traffic will be directed via an internet
@@ -88,12 +89,8 @@ instance.
     Oracle Cloud Administrator (if applicable) login using the link in the email
     to access.
 
- 	![](media/c8af462ac808490209ff83d6688d99c2.png)
-
 	 >NOTE: If logging in for the very first time, you will be prompted to enter
  the user id and temporary password from the email to login and then asked to change your password. Be prepared to enter a strong password that meets the security criteria. Typically your username will be your email address you received the notification.
-
-   ![](media/01777eaf6b34b5203e847263b94d07e0.png)
 
  	>NOTE: If you haven’t received an introduction email you can login directly and request a password reset. Open a browser and navigate to: <https://cloud.oracle.com/en_US/sign-in> Use the ‘Can’t Sign In’ link to reset your password, a password reset link will be sent to your email. The initial invitation will expire within 24 hours. If your login offer has expired, contact an admin.
 
@@ -204,11 +201,12 @@ of VCN you just created.
 
 	![](media/14789a9f24c224b27443e08931027c2b.png)
 
-2.  A dialog box appears, you **enter** your Ingress Rules and then click the
-    **Add Ingress Rules** button to save them to your VCN.
+2.  A dialog box appears, you **enter** your Ingress Rules ( Use **0.0.0.0/0** for **Source CIDR**)
+    and then click the **Add Ingress Rules** button to save them to your VCN.
+    
 
 	>**NOTE**: **For those using FastConnect**  
-Refer to the **Frequently Asked Questions (FAQ)** and Troubleshooting Guide for
+Refer to the [Frequently Asked Questions (FAQ) and Troubleshooting Guide](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md) for
 additional configuration details if you are using FastConnect with your VCN
 
 	You have completed the Oracle Cloud VCN prerequisite and are ready to Create a
@@ -216,6 +214,8 @@ Compute Instance for your Oracle Enterprise Manager Marketplace image
 
 How To Create a Compute Instance
 ================================
+
+The Instance can be created directly from the listing link OR by going to the Oracle Cloud hamburger menu, **Click** on Compute, **Click** on Instances and **Click** on Create Instance button. On the **Create Compute Instance** Screen (Also shown in Step 7) Under **Choosing an image source**, Select the image from Marketplace.
 
 1.  Access the published image from the Oracle Marketplace. For example
     <https://cloudmarketplace.oracle.com/marketplace/listing/69658839>
@@ -237,17 +237,17 @@ How To Create a Compute Instance
 
     ![](media/702bbd73597e664e613283214f4425bb.png)
 
-5.  After login, verify the compartment you want the image in by clicking the
+5.  After login, Select the compartment you want the image in by clicking the
     **Compartment** drop down menu and selecting the *compartment_name* .
 
 	> NOTE: do NOT use the root compartment. Choose the compartment your company Cloud Administrator setup for you or use one you created for the image. (example TEST)
 
-1.  **Click** the check box for reviewing and accepting the Oracle Standard
+6.  **Click** the check box for reviewing and accepting the Oracle Standard
     Terms and Restrictions and then **Click** on the **Launch Instance** button
 
 	![](media/72aa027215ecd6d8688518bc5a6c8028.jpg)
 
-1.  When the Create Compute Instance dialog appears, **enter** a unique name you
+7.  When the Create Compute Instance dialog appears, **enter** a unique name you
     desire to identify this instance. For example: *your first name*\_em_handson
     and not what is shown in the screenshot.  
       
@@ -255,51 +255,51 @@ How To Create a Compute Instance
 
     ![](media/b4cec3edc37e987684bdb12418bca9ee.jpg)
 
-2.  Verify the image source you want is selected (in this example Enterprise
-    Manager 13c Workshop), then **Click Show Shape, Network,** and **Storage
-    Options** if hidden.
+8.  Select/Verify the image source you want(in this example Enterprise Manager 13c Workshop). Then **Click Show Shape, Network, and Storage Options** if hidden.
+    
+    > NOTE: If you didn't start with the Listing Link, You can Select the Image Source by clicking on **Change Image Source** and searching for Enterprise Manager 13c Workshop and Selecting it. 
 
-1.  After which, it’s recommended to balance instances across Availability
+9.  After which, it’s recommended to balance instances across Availability
     Domains AD which also helps with any tenancy limits; especially if there are
     multiple users using the tenancy at the same time to get hands on experience
     with the image.
 
 	> NOTE: when there are many users, if your last name is A-J, **select AD1**,J-M, **select AD2**, and if it’s N-Z, **select AD3**.
 
-1.  For the **Instance Type**, select Virtual Machine and select the **Change
+10.  For the **Instance Type**, select Virtual Machine and select the **Change
     Shape** button.
 
 	![](media/29d37c3d72579612ebaf96bbf58e5dd9.png)
 
-1.  When presented with the Browse All Shapes choices, verify that the
-    VMStandard2.4 (4 OCPU and 60 GB memory) shape is checked.
+11.  When presented with the Browse All Shapes choices, Select the 
+    **VMStandard2.4** (4 OCPU and 60 GB memory) shape. Click on **Select Shape** to Apply the change
 
 	![](media/bae52a344e8a9ec62c69e14a7b8f9faf.png)
 
 	> NOTE: VMStandard2.2 may be used if VM.Standard2.4 is not available
 	![](media/6c656ee35c9ba15e0ce28ad1e997674b.tiff)
 
-1.  After the **AD**, **Instance Type** and **Instance Shape** have been set,
+12.  After the **AD**, **Instance Type** and **Instance Shape** have been set,
     the next step is to configure the networking section.
 
-1.  For the Virtual Cloud Network Compartment and Subnet compartment, verify the
+13.  For the Virtual Cloud Network Compartment and Subnet compartment, verify the
     **compartment_name** chosen is the same as in step 5. For the Virtual Cloud
     Network, verify you have the VCN identified that you created with ingress
     rules for the EM image.
 
 	![](media/dc10fbf5cc961dad2eb7b30905783f6b.jpg)
 
-1.  Verify the **Assign a public IP address** radio button is selected. DO NOT
+14.  Verify the **Assign a public IP address** radio button is selected. DO NOT
     OVERLOOK THIS STEP!!!!!!!
 
-1.  Leave the **Default boot volume size** as is and do NOT check any additional
+15.  Leave the **Default boot volume size** as is and do NOT check any additional
     settings.
 
 	![](media/90e20e7c685753daba9d02fec5e667ae.png)
 
 
 
-1.  Dependent on how you generated and saved your Public SSH Key (refer to
+16.  Dependent on how you generated and saved your Public SSH Key (refer to
     Frequently Asked Questions covering how to obtain an SSH key), select the
     Choose SSH key file or Paste SSH keys radio button and complete the
     associated action.
@@ -307,31 +307,32 @@ How To Create a Compute Instance
 	![](media/9af0df3609eff883efbf6fd9eaed6770.png)
 
 
-1.  Next **Click** the **Create** button for your instance to be created.
+17.  Next **Click** the **Create** button for your instance to be created.
     Dependent on how many are using a tenancy, you will see the yellow
-    provisioning state take about \~4 minutes and \~ 20 mins for startup of the
+    provisioning state take about \~4 minutes to be running and \~ 20 mins for startup of the
     databases and Enterprise Manager within your VM.
 
-2.  You can view the Work Requests section towards the bottom, for status
+18.  You can view the Work Requests section towards the bottom, for status
     information of your instance.
 
 	![](media/c40bc02fea2a3ea8ef76164a3d20dfad.png)
 
-1.  Once the instance is in the green running state, locate your **public IP
+19.  Once the instance is in the green running state, locate your **public IP
     address** and write it down as it will be essential to have it later.
 
 	![](media/f53935f66cb9b633460df11bdaa2c634.png)
 
-	> NOTE: that as part of this pre-configured image, all Enterprise Manager services automatically start up so you do not have to separately start up the OMS, etc… via EMCTL or scripts
+	> NOTE: that as part of this pre-configured image, all Enterprise Manager services automatically start up so you do not have to separately start up the OMS, etc. via EMCTL or scripts
 
-1. After the services are running, access Enterprise Manager to verify access
+20. After the services are running, access Enterprise Manager to verify access
     to it by using this URL format in your browser (Chrome is suggested)
+     https://<Public_IP_Address>:7803/em
 
 	> NOTE: Don’t be **alarmed if you see a** certification warning like this.
 
 	![](media/d3f4e747ac10504d20950d505a45e7c6.png)
 
-1.  It is safe to ignore it that and move ahead. Click on the **Advanced**
+21.  It is safe to ignore it that and move ahead. Click on the **Advanced**
     button and then click on the **Accept the Risk and Continue** button.
 
 	> NOTE: if you receive a Cannot Connect screen, wait a few more minutes for the image to complete its startup and then try again. You should then see the Enterprise Manager Cloud Control 13c login screen.  
@@ -343,7 +344,7 @@ How To Create a Compute Instance
 Get To Know The Preconfigured Environment<br>
 ===============================================
 
-In this HOL example, the image used was a pre-configured environment of Oracle
+In this Workshop example, the image used was a pre-configured environment of Oracle
 Enterprise Manager 13.3 with databases and targets all running within a single
 Virtual Machine. Oracle Cloud Marketplace is routinely updated with new product
 images and versions.
