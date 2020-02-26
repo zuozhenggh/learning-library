@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. To start, you will need to create an ATP instance and then access APEX from within the instance's Service Console. 
+Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. To start, you will need to create an ATP instance and then access APEX from within the new database. 
 
-***To log issues***, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
+An APEX Workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
 
 ## Module 1 Objectives
 
@@ -51,7 +51,9 @@ In this part, you will create an instance of the Autonomous Transaction Processi
     ![](images/1/atp-settings-2.png)
     ![](images/1/atp-settings-3.png)
 
-    After clicking **Create Autonomous Database**, you will be redirected to the Autonomous Database Details page for the new instance. Continue to the next part when the status changes from:
+4. After clicking **Create Autonomous Database**, you will be redirected to the Autonomous Database Details page for the new instance. 
+
+    Continue when the status changes from:
 
     ![](images/1/status-provisioning.png) 
 
@@ -61,17 +63,15 @@ In this part, you will create an instance of the Autonomous Transaction Processi
 
 ### **Part 3:** Create a new workspace in APEX
 
-When you first access APEX you will need to log in as an APEX instance administrator to create a workspace. A workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
+Within your new database, APEX is not yet configured. Therefore, when you first access APEX you will need to log in as an APEX Instance Administrator to create a workspace.
 
-1.  Click the **Service Console** button.
+1. Click the **Tools** tab.
+    Click **Open APEX**.
 
-    ![](images/1/click-atp-service-console.png)
+    ![](images/1/click-apex.png)
 
-2.  Click **Development** option in the menu on the left, then click the **Oracle APEX** option.
-
-    ![](images/1/click-oracle-apex.png)
-
-3.  Enter the password for the Administration Services and click **Sign In to Administration**. The password is the same as the one entered for the ADMIN user when creating the ATP instance: **`SecretPassw0rd`**
+3.  Enter the password for the Administration Services and click **Sign In to Administration**.     
+    The password is the same as the one entered for the ADMIN user when creating the ATP instance: **`SecretPassw0rd`**
 
     ![](images/1/log-in-as-admin.png)
 
@@ -79,24 +79,26 @@ When you first access APEX you will need to log in as an APEX instance administr
   
    ![](images/1/welcome-create-workspace.png)
 
-5.  Enter the following details and click **Create Workspace**.
+5.  In the Create Workspace dialog, enter the following: 
 
     | Property | Value |
     | --- | --- |
     | Database User | **DEMO** |
     | Password | **`SecretPassw0rd`** |
     | Workspace Name | **DEMO** |
-  
+    
+    Click **Create Workspace**.  
     ![](images/1/create-workspace.png)
 
-6.  Click the **DEMO** link in the success message. This will log you out of APEX administration so that you can log into your new workspace. 
+6.  In the PEX Instance Administration page, click the **DEMO** link in the success message.         
+    *{Note: This will log you out of APEX Administration so that you can log into your new workspace.}* 
 	
     ![](images/1/log-out-from-admin.png)
 
-7.  Enter **`SecretPassw0rd`** for the password, check the **Remember workspace and username** checkbox, and then click **Sign In**.
+7. On the APEX Workspace log in page, enter **`SecretPassw0rd`** for the password, check the **Remember workspace and username** checkbox, and then click **Sign In**.
 
     ![](images/1/log-in-to-workspace.png)
 
-## Summary
+### **Summary**
 
-This completes Module 1. At this point, you know how to create a new Autonomous Transaction Processing instance and create an APEX workspace within it. [Click here](2-create-an-app-from-a-spreadsheet.md) to navigate to Module 2.
+This completes Module 1. At this point, you know how to create a new Autonomous Transaction Processing instance and create an APEX workspace within it. [Click here to navigate to Module 2](2-create-an-app-from-a-spreadsheet.md) .

@@ -8,8 +8,12 @@ Welcome to the Low Code Development with Oracle Autonomous Database hands-on lab
 -  Create an application from a file
 -  Use Quick SQL to create database objects
 -  Use SQL Developer Web to access database objects
--  Use SQL Developer Web to create data model
+-  Use SQL Developer Web to create a data model
 -  Create and modify an APEX application
+
+*{Note: This lab assumes you are using Oracle APEX 19.2.}*
+
+***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
 
 ## Parts
 
@@ -32,3 +36,16 @@ Welcome to the Low Code Development with Oracle Autonomous Database hands-on lab
 2. Click **Module 1: Create an APEX Workspace**.
   
    ![](images/0/lab-contents.png)
+   
+### **Downloads**
+
+[Click here](lowcodedev-app.sql) to download the completed application. 
+
+## Learn More - *Useful Links*
+
+- APEX on Autonomous   https://apex.oracle.com/autonomous
+- APEX Collateral   https://apex.oracle.com
+- Tutorials   https://apex.oracle.com/en/learn/tutorials
+- Community   https://apex.oracle.com/community
+- External Site + Slack   http://apex.world
+
