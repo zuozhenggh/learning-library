@@ -19,5 +19,6 @@ Each lab is completely independent and does not rely on any other lab, therefore
 | 4 | [Building an App using REST Web Sources](./rest-web-source) | 50 min |
 | 5 | [Building an App using a Remote Data Source](./remote-data-source) | 45 min |
 | 6 | [Low Code Development](./low-code-development) | 60 min |
+| 7 | [Introduction to JavaScript for APEX Developers](./intro-to-javascript) | 60 min |
 
 ***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
