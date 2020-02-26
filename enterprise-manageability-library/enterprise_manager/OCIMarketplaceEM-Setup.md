@@ -117,7 +117,7 @@ instance.
 
 	![](media/791030dc315f0b6715343e6dcec6712c.png)
 
-6. For these entry fields, enter the following:
+7. For these entry fields, enter the following:
 
     -   **VCN Name:** Enter a name for your cloud network, for example,
         \<your_initials\>_Network. The name is incorporated into the names of
@@ -143,17 +143,17 @@ instance.
 
     -   Accept the defaults for any other fields.
 
-2.  Click **Next** and review the list of resources that the workflow will
+8.  Click **Next** and review the list of resources that the workflow will
     create for you. Notice that the workflow will set up security list rules and
     route table rules to enable basic access for the VCN.  
       
     
 
-    ![](media/ac14bbf206fe1749494334629b925fb5.png)
+ 	   ![](media/ac14bbf206fe1749494334629b925fb5.png)
 
-3.  After review, click **Create** to start the short workflow.
+9.  After review, click **Create** to start the short workflow.
 
-4.  After the workflow completes, click **View Virtual Cloud Network**. The
+10.  After the workflow completes, click **View Virtual Cloud Network**. The
     cloud network now has the following resources and characteristics:
 
 -   [Internet
@@ -199,7 +199,7 @@ of VCN you just created.
     List** and then **Add Ingress Rules.**
 
 
-	![](media/14789a9f24c224b27443e08931027c2b.png)
+		![](media/14789a9f24c224b27443e08931027c2b.png)
 
 2.  A dialog box appears, you **enter** your Ingress Rules ( Use **0.0.0.0/0** for **Source CIDR**)
     and then click the **Add Ingress Rules** button to save them to your VCN.
@@ -220,7 +220,8 @@ The Instance can be created directly from the listing link OR by going to the Or
 1.  Access the published image from the Oracle Marketplace. For example
     <https://cloudmarketplace.oracle.com/marketplace/listing/69658839>
 
-	![](media/d473f092c096c48e417fc9f72560fa1b.jpg)
+	
+		![](media/d473f092c096c48e417fc9f72560fa1b.jpg)
 
 2.  **Click** on the Get App button
 
@@ -228,14 +229,13 @@ The Instance can be created directly from the listing link OR by going to the Or
     the Sign In button  
       
     
-
-    ![](media/29ba466907f3a2f7590498a5140b6be7.jpg)
+    	![](media/29ba466907f3a2f7590498a5140b6be7.jpg)
 
 4.  Login to your tenancy using your account USER NAME and PASSWORD  
       
     
 
-    ![](media/702bbd73597e664e613283214f4425bb.png)
+    	![](media/702bbd73597e664e613283214f4425bb.png)
 
 5.  After login, Select the compartment you want the image in by clicking the
     **Compartment** drop down menu and selecting the *compartment_name* .
@@ -245,7 +245,8 @@ The Instance can be created directly from the listing link OR by going to the Or
 6.  **Click** the check box for reviewing and accepting the Oracle Standard
     Terms and Restrictions and then **Click** on the **Launch Instance** button
 
-	![](media/72aa027215ecd6d8688518bc5a6c8028.jpg)
+
+		![](media/72aa027215ecd6d8688518bc5a6c8028.jpg)
 
 7.  When the Create Compute Instance dialog appears, **enter** a unique name you
     desire to identify this instance. For example: *your first name*\_em_handson
@@ -253,7 +254,7 @@ The Instance can be created directly from the listing link OR by going to the Or
       
     
 
-    ![](media/b4cec3edc37e987684bdb12418bca9ee.jpg)
+  	  ![](media/b4cec3edc37e987684bdb12418bca9ee.jpg)
 
 8.  Select/Verify the image source you want(in this example Enterprise Manager 13c Workshop). Then **Click Show Shape, Network, and Storage Options** if hidden.
     
@@ -269,10 +270,12 @@ The Instance can be created directly from the listing link OR by going to the Or
 10.  For the **Instance Type**, select Virtual Machine and select the **Change
     Shape** button.
 
+
 	![](media/29d37c3d72579612ebaf96bbf58e5dd9.png)
 
 11.  When presented with the Browse All Shapes choices, Select the 
     **VMStandard2.4** (4 OCPU and 60 GB memory) shape. Click on **Select Shape** to Apply the change
+
 
 	![](media/bae52a344e8a9ec62c69e14a7b8f9faf.png)
 
@@ -287,6 +290,7 @@ The Instance can be created directly from the listing link OR by going to the Or
     Network, verify you have the VCN identified that you created with ingress
     rules for the EM image.
 
+
 	![](media/dc10fbf5cc961dad2eb7b30905783f6b.jpg)
 
 14.  Verify the **Assign a public IP address** radio button is selected. DO NOT
@@ -294,6 +298,7 @@ The Instance can be created directly from the listing link OR by going to the Or
 
 15.  Leave the **Default boot volume size** as is and do NOT check any additional
     settings.
+
 
 	![](media/90e20e7c685753daba9d02fec5e667ae.png)
 
@@ -303,6 +308,7 @@ The Instance can be created directly from the listing link OR by going to the Or
     Frequently Asked Questions covering how to obtain an SSH key), select the
     Choose SSH key file or Paste SSH keys radio button and complete the
     associated action.
+
 
 	![](media/9af0df3609eff883efbf6fd9eaed6770.png)
 
@@ -319,6 +325,7 @@ The Instance can be created directly from the listing link OR by going to the Or
 
 19.  Once the instance is in the green running state, locate your **public IP
     address** and write it down as it will be essential to have it later.
+
 
 	![](media/f53935f66cb9b633460df11bdaa2c634.png)
 
