@@ -86,9 +86,9 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
 
-4. Click **VCN with Internet Connectivity** and click **Start Workflow**
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
-5. Fill out the dialog box:
+4. Fill out the dialog box:
 
 
 - **VCN NAME**: Provide a name
@@ -98,19 +98,19 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 - **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
 - Click **Next**
 
-6. Verify all the information and  Click **Create**
+5. Verify all the information and  Click **Create**
 
-7. This will create a VCN with followig components.
+6. This will create a VCN with followig components.
 
 **VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
 
-8. Click **View Virtual Cloud Network** to display your VCN details.
+7. Click **View Virtual Cloud Network** to display your VCN details.
              
-9. We will open port 80 on this VCN to provide http access to app on the compute instance(to be installed later on. Click **Security List** and then **Default Security list for<YOUR_VCN_NAME>**
+8. We will open port 80 on this VCN to provide http access to app on the compute instance(to be installed later on. Click **Security List** and then **Default Security list for<YOUR_VCN_NAME>**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_001.PNG" alt="image-alt-text">
 
-10. Click **Add Ingress Rule** under **Ingress Rules** and add below rule:
+9. Click **Add Ingress Rule** under **Ingress Rules** and add below rule:
 
 - **Make sure STATELESS Flag in un-checked**
 - **SOURCE TYPE:** CIDR
@@ -121,7 +121,7 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_002.PNG" alt="image-alt-text">
 
-11. Click **Add Ingress Rule** at the bottom
+10. Click **Add Ingress Rule** at the bottom
               
 ## Create ssh keys, compute instance and Block Volume. Attach block volume to compute instance
 
@@ -130,6 +130,7 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL006.PNG" alt="image-alt-text">
 
 2. Enter command 
+
 ```
 ssh-keygen
 ```
@@ -165,7 +166,7 @@ to verify the two files exist.
 ```
 cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 ```
- , highlight the key and copy 
+, highlight the key and copy 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL009.PNG" alt="image-alt-text">
 
