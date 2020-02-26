@@ -6,7 +6,7 @@ variable "AD" {
   default = 1
   }
 variable "image_id" {
-  default="ocid1.image.oc1.iad.aaaaaaaageeenzyuxgia726xur4ztaoxbxyjlxogdhreu3ngfj2gji3bayda"
+  default="ocid1.image.oc1.iad.aaaaaaaauwpipy7yex62fvqix7a7ipdzdhc6pdz57vkowvc4jhkfrazm6bwa"
   }
 variable "instance_shape" {
   default = "VM.Standard2.1"
