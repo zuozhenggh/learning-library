@@ -13,9 +13,9 @@ To complete this lab, you need to have the following:
 - A registered target database in Oracle Data Safe with sample audit data
 
 ### Assumptions
-This lab assumes that you are already signed in to the Oracle Data Safe Console. If not, see [View a Registered Target Database](?lab=lab-1-view-registered-target-database), steps 1 and 2.
+This lab assumes that you are already signed in to the Oracle Data Safe Console. If not, see [View a Registered Target Database](?lab=lab-1-view-registered-target-database), parts 1 and 2.
 
-## **STEP 1**: Provision audit and alert policies on a target database by using the Activity Auditing wizard
+## **PART 1**: Provision audit and alert policies on a target database by using the Activity Auditing wizard
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click the **Activity Auditing** tab.
 
@@ -67,7 +67,7 @@ This lab assumes that you are already signed in to the Oracle Data Safe Console.
 
 
   ![](./images/additional-audit-policies.png " ")
- 
+
 
 
 - Expand **Oracle Pre-defined Policies** to view the list of Oracle predefined audit policies available on your ATP database. By default, the following policies are provisioned:
@@ -81,7 +81,7 @@ This lab assumes that you are already signed in to the Oracle Data Safe Console.
   - `ORA_RAS_SESSION_MGMT`
   - `ORA_LOGON_FAILURES`
 
- 
+
   ![](./images/oracle-predefined-policies.png " ")
 
 - Notice that the **Center for Internet Security (CIS) Configuration** policy is provisioned and enabled by default.
@@ -101,7 +101,7 @@ This lab assumes that you are already signed in to the Oracle Data Safe Console.
   - **Database Parameter Changes**
   - **Audit Policy Changes**
   - **User Creation/Deletion**
-  - **User Entitlement Changes** 
+  - **User Entitlement Changes**
 
    ![](./images/selected-alert-policies.png " ")
 
@@ -149,13 +149,13 @@ This lab assumes that you are already signed in to the Oracle Data Safe Console.
 
 
 
-## **STEP 2**: View details for an audit trail
+## **PART 2**: View details for an audit trail
 
 On the **Audit Trails** page, you can manage all of the audit trails for your target databases.
 
 - In the **Collection State** column, click **COLLECTING** or **IDLE** if the audit data is collected.
 
-  Collection takes approximately 2 minutes. You can continue to the next step.
+  Collection takes approximately 2 minutes. You can continue to the next part.
 
 
   ![](./images/click-collecting-or-idle.png " ")
@@ -167,7 +167,7 @@ On the **Audit Trails** page, you can manage all of the audit trails for your ta
 
 
 
-## **STEP 3**: Enable a custom audit policy on a target database
+## **PART 3**: Enable a custom audit policy on a target database
 
 
 - Click the **Audit Policies** tab.
