@@ -326,7 +326,7 @@ If you are seeing an Authorization Error while trying to Select Shape to Create 
 2. Select the Compartment available to you in the Left Compartment Menu (not root)
 3. Now that the compartment is set-up for new user, re-do the steps to create the Enterprise Manager Workshop from the Listing Link
 
-### **14. While trying to launch the EM instance: "Unable to accept Terms of Use." **
+### **14. While trying to launch the EM instance: Unable to accept Terms of Use.**
 
 Make sure your email has been verified. Log out and Log back in and restart from the listing link.
 
