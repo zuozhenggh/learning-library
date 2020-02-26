@@ -21,7 +21,8 @@
 12. Unable to connect to Enterprise Manager Console
 13. Unable to Select Shape for Creating an instance
 14. While trying to launch the EM instance: "Unable to accept Terms of Use." 
-15. Additional information on Oracle Cloud Infrastructure Setup
+15. Information about Oracle Cloud Infrastructure Pricing
+16. Additional information on Oracle Cloud Infrastructure Setup
 
 
 ### **1. How to Create a SSH key-pair for launching and connecting to an OCI Instance** ###
@@ -330,6 +331,9 @@ If you are seeing an Authorization Error while trying to Select Shape to Create 
 Make sure your email has been verified. Log out and Log back in and restart from the listing link.
 
 ### **15. Additional information on Oracle Cloud Infrastructure Setup**
+<https://www.oracle.com/cloud/pricing.html>
+
+### **16. Additional information on Oracle Cloud Infrastructure Setup**
 <https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm>
 
 
