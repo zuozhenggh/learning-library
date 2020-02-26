@@ -293,8 +293,6 @@ The Instance can be created directly from the listing link OR by going to the Or
 	> NOTE: VMStandard2.2 may be used if VM.Standard2.4 is not available
 	
 	
-![](media/6c656ee35c9ba15e0ce28ad1e997674b.tiff)
-
 12.  After the **AD**, **Instance Type** and **Instance Shape** have been set,
     the next step is to configure the networking section.
 
