@@ -337,7 +337,7 @@ The Instance can be created directly from the listing link OR by going to the Or
 
 
 
-![](media/c40bc02fea2a3ea8ef76164a3d20dfad.png)
+   ![](media/c40bc02fea2a3ea8ef76164a3d20dfad.png)
 
 19.  Once the instance is in the green running state, locate your **public IP
     address** and write it down as it will be essential to have it later.
@@ -345,7 +345,7 @@ The Instance can be created directly from the listing link OR by going to the Or
 
 
 	
-	![](media/f53935f66cb9b633460df11bdaa2c634.png)
+   ![](media/f53935f66cb9b633460df11bdaa2c634.png)
 
 > NOTE: that as part of this pre-configured image, all Enterprise Manager services automatically start up so you do not have to separately start up the OMS, etc. via EMCTL or scripts
 
