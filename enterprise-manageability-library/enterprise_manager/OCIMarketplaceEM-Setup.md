@@ -346,7 +346,7 @@ The Instance can be created directly from the listing link OR by going to the Or
 
 ![](media/f53935f66cb9b633460df11bdaa2c634.png)
 
-	> NOTE: that as part of this pre-configured image, all Enterprise Manager services automatically start up so you do not have to separately start up the OMS, etc. via EMCTL or scripts
+> NOTE: that as part of this pre-configured image, all Enterprise Manager services automatically start up so you do not have to separately start up the OMS, etc. via EMCTL or scripts
 
 20. After the services are running, access Enterprise Manager to verify access
     to it by using this URL format in your browser (Chrome is suggested)
