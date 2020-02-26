@@ -18,7 +18,7 @@
 9. Steps To Setup VCN for FastConnect
 10. Licensing Terms for the Enterprise Manager Marketplace Instance
 11. How to Reset user oracle  password or if Named Credentials for user oracle are not working
-12. How to connect to a public network from inside Oracle
+12. Unable to connect to Enterprise Manager Console
 13. Unable to Select Shape for Creating an instance
 14. Additional information on Oracle Cloud Infrastructure Setup
 
@@ -316,10 +316,10 @@ password in the Credentials Sections twice and **Click** on Save.
 Repeat for Credential ORACLE_HOST
 
 ![](media/2e38a554bdbc3a68ce7cbfd84a6a3588.png)
-### **12. How to connect to a public network from inside Oracle
+### **12. Unable to connect to Enterprise Manager Console
 
-Access the WIFI portal at https://gmp.oracle.com/captcha/ and obtain the wifi password for the day for your region
-Disconnect from oracle intranet or corporate wifi and connect to the clear-guest wifi obtained from the above site.
+Make sure you are on a public network and not connected to a restricted corporate intranet or corporate wifi.
+Also ensure all web services are up and running by logging into your instance via SSH as indicated in this guide.
 
 ### **13. Unable to Select Shape for Creating an instance
 
