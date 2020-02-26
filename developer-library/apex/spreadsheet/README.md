@@ -15,6 +15,8 @@ In the future, rather than emailing spreadsheets around to gather information, y
 * Improve the Search and Report pages
 * Link pages
 
+*{Note: This lab assumes you are using Oracle APEX 19.2.}*
+
 ## Lab Modules
 
 | # | Module | Est. Time |
@@ -25,6 +27,8 @@ In the future, rather than emailing spreadsheets around to gather information, y
 | 4 | [Improving the Report and Form](4-improving-the-report-and-form.md) | 20 min |
 | 5 | [Linking the Calendar](5-linking-the-calendar.md) | 5 min |
 
+***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
+
 ## Navigating in the Lab
 To return to this page from anywhere within the lab click either Oracle Hands on Labs, or Home in the header.
 
@@ -33,6 +37,10 @@ To return to this page from anywhere within the lab click either Oracle Hands on
 Click the navigation menu icon, in the upper-left corner of the header, to see a list of modules in this lab. Click any of the list entries to navigate directly to that module.
 
 ![](images/0/lab-menu.png)
+
+## Downloads
+
+[Click here](spreadsheet-app.sql) to download the completed application. 
 
 ## Learn More - *Useful Links*
 
