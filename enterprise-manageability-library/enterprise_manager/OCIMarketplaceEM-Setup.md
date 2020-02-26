@@ -290,7 +290,7 @@ The Instance can be created directly from the listing link OR by going to the Or
 
 ![](media/bae52a344e8a9ec62c69e14a7b8f9faf.png)
 
-	> NOTE: VMStandard2.2 may be used if VM.Standard2.4 is not available
+> NOTE: VMStandard2.2 may be used if VM.Standard2.4 is not available
 	
 	
 12.  After the **AD**, **Instance Type** and **Instance Shape** have been set,
@@ -359,11 +359,11 @@ The Instance can be created directly from the listing link OR by going to the Or
 21.  It is safe to ignore it that and move ahead. Click on the **Advanced**
     button and then click on the **Accept the Risk and Continue** button.
 
-	> NOTE: if you receive a Cannot Connect screen, wait a few more minutes for the image to complete its startup and then try again. You should then see the Enterprise Manager Cloud Control 13c login screen.  
+> NOTE: if you receive a Cannot Connect screen, wait a few more minutes for the image to complete its startup and then try again. You should then see the Enterprise Manager Cloud Control 13c login screen.  
 
-	You now have an Oracle Cloud container with a running Oracle Enterprise Manager environment.
-
-	>NOTE: when your environment is not in use, it is recommended that it be shutdown to minimize billing use or trial credit charges.
+You now have an Oracle Cloud container with a running Oracle Enterprise Manager environment.
+	
+>NOTE: when your environment is not in use, it is recommended that it be shutdown to minimize billing use or trial credit charges.
 
 Get To Know The Preconfigured Environment<br>
 ===============================================
