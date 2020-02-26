@@ -314,12 +314,12 @@ password in the Credentials Sections twice and **Click** on Save.
 Repeat for Credential ORACLE_HOST
 
 ![](media/2e38a554bdbc3a68ce7cbfd84a6a3588.png)
-### **12. Unable to connect to Enterprise Manager Console
+### **12. Unable to connect to Enterprise Manager Console**
 
 Make sure you are on a public network and not connected to a restricted corporate intranet or corporate wifi.
 Also ensure all web services are up and running by logging into your instance via SSH as indicated in this guide.
 
-### **13. Unable to Select Shape for Creating an instance
+### **13. Unable to Select Shape for Creating an instance**
 
 If you are seeing an Authorization Error while trying to Select Shape to Create an Instance:
 1. From the Hamburger Menu on the Top Left of the Oracle Cloud Home Page, Go to Compute->Instances
