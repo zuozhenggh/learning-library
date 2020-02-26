@@ -231,10 +231,12 @@ The Instance can be created directly from the listing link OR by going to the Or
     the Sign In button  
       
     
+    
     	![](media/29ba466907f3a2f7590498a5140b6be7.jpg)
 
 4.  Login to your tenancy using your account USER NAME and PASSWORD  
-      
+    
+    
     
 
     	![](media/702bbd73597e664e613283214f4425bb.png)
@@ -248,7 +250,8 @@ The Instance can be created directly from the listing link OR by going to the Or
     Terms and Restrictions and then **Click** on the **Launch Instance** button
 
 
-		![](media/72aa027215ecd6d8688518bc5a6c8028.jpg)
+
+	![](media/72aa027215ecd6d8688518bc5a6c8028.jpg)
 
 7.  When the Create Compute Instance dialog appears, **enter** a unique name you
     desire to identify this instance. For example: *your first name*\_em_handson
