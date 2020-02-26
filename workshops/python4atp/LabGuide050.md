@@ -223,7 +223,7 @@ For more information about the Marketplace Developer Image [click here](https://
 
 **This completes the Lab!**
 
-**You are ready to proceed to [Lab 100](LabGuide100.md)**
+**You are ready to proceed to [Lab 100](?lab=lab-100-load-access-data)**
 
 
 <!--

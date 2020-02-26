@@ -7,8 +7,8 @@
         "title": "Lab Introduction"
       },
       {
-        "filename": "1-sign-up-atp.md",
-        "title": "Module 1: Signing up for Oracle Autonomous Database"
+        "filename": "1-sign-up-apex.md",
+        "title": "Module 1: Signing up for an APEX Workspace"
       },
       {
         "filename": "2-creating-an-app-from-a-spreadsheet.md",

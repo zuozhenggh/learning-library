@@ -15,6 +15,8 @@ The data used is the Big Mac Index from the Economist, which uses the price of M
 * Create an application on the new data
 * Refine the application
 
+*{Note: This lab assumes you are using Oracle APEX 19.2.}*
+
 ## Lab Modules
 
 | # | Module | Est. Time |
@@ -26,6 +28,8 @@ The data used is the Big Mac Index from the Economist, which uses the price of M
 | 5 | [Adding a Chart](5-adding-chart.md) | 5 min |
 | 6 | [Adding Chart Criteria](6-adding-chart-criteria.md) | 5 min |
 
+***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
+
 ## Navigating in the Lab
 To return to this page from anywhere within the lab click either Oracle Hands on Labs, or Home in the header.
 
@@ -34,6 +38,10 @@ To return to this page from anywhere within the lab click either Oracle Hands on
 Click the navigation menu icon, in the upper-left corner of the header, to see a list of modules in this lab. Click any of the list entries to navigate directly to that module.
 
 ![](images/0/lab-menu.png)
+
+## Downloads
+
+[Click here](remotedatasource-app.sql) to download the completed application. 
 
 ## Learn More - *Useful Links*
 
