@@ -20,7 +20,8 @@
 11. How to Reset user oracle  password or if Named Credentials for user oracle are not working
 12. Unable to connect to Enterprise Manager Console
 13. Unable to Select Shape for Creating an instance
-14. Additional information on Oracle Cloud Infrastructure Setup
+14. While trying to launch the EM instance: "Unable to accept Terms of Use." 
+15. Additional information on Oracle Cloud Infrastructure Setup
 
 
 ### **1. How to Create a SSH key-pair for launching and connecting to an OCI Instance** ###
@@ -324,7 +325,11 @@ If you are seeing an Authorization Error while trying to Select Shape to Create 
 2. Select the Compartment available to you in the Left Compartment Menu (not root)
 3. Now that the compartment is set-up for new user, re-do the steps to create the Enterprise Manager Workshop from the Listing Link
 
-### **14. Additional information on Oracle Cloud Infrastructure Setup**
+### **14. While trying to launch the EM instance: "Unable to accept Terms of Use." **
+
+Make sure your email has been verified. Log out and Log back in and restart from the listing link.
+
+### **15. Additional information on Oracle Cloud Infrastructure Setup**
 <https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm>
 
 
