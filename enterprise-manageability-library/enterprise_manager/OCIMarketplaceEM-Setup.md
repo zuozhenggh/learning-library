@@ -199,7 +199,8 @@ of VCN you just created.
     List** and then **Add Ingress Rules.**
 
 
-		![](media/14789a9f24c224b27443e08931027c2b.png)
+
+	![](media/14789a9f24c224b27443e08931027c2b.png)
 
 2.  A dialog box appears, you **enter** your Ingress Rules ( Use **0.0.0.0/0** for **Source CIDR**)
     and then click the **Add Ingress Rules** button to save them to your VCN.
