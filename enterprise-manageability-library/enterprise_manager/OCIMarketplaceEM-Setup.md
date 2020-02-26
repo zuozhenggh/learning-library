@@ -232,14 +232,16 @@ The Instance can be created directly from the listing link OR by going to the Or
       
     
     
-    	![](media/29ba466907f3a2f7590498a5140b6be7.jpg)
+    	
+	![](media/29ba466907f3a2f7590498a5140b6be7.jpg)
 
 4.  Login to your tenancy using your account USER NAME and PASSWORD  
     
     
     
 
-    	![](media/702bbd73597e664e613283214f4425bb.png)
+    	
+	![](media/702bbd73597e664e613283214f4425bb.png)
 
 5.  After login, Select the compartment you want the image in by clicking the
     **Compartment** drop down menu and selecting the *compartment_name* .
@@ -259,7 +261,9 @@ The Instance can be created directly from the listing link OR by going to the Or
       
     
 
-  	  ![](media/b4cec3edc37e987684bdb12418bca9ee.jpg)
+
+
+	![](media/b4cec3edc37e987684bdb12418bca9ee.jpg)
 
 8.  Select/Verify the image source you want(in this example Enterprise Manager 13c Workshop). Then **Click Show Shape, Network, and Storage Options** if hidden.
     
@@ -276,13 +280,15 @@ The Instance can be created directly from the listing link OR by going to the Or
     Shape** button.
 
 
-	![](media/29d37c3d72579612ebaf96bbf58e5dd9.png)
+		
+![](media/29d37c3d72579612ebaf96bbf58e5dd9.png)
 
 11.  When presented with the Browse All Shapes choices, Select the 
     **VMStandard2.4** (4 OCPU and 60 GB memory) shape. Click on **Select Shape** to Apply the change
 
 
-	![](media/bae52a344e8a9ec62c69e14a7b8f9faf.png)
+
+![](media/bae52a344e8a9ec62c69e14a7b8f9faf.png)
 
 	> NOTE: VMStandard2.2 may be used if VM.Standard2.4 is not available
 	![](media/6c656ee35c9ba15e0ce28ad1e997674b.tiff)
@@ -296,7 +302,8 @@ The Instance can be created directly from the listing link OR by going to the Or
     rules for the EM image.
 
 
-	![](media/dc10fbf5cc961dad2eb7b30905783f6b.jpg)
+
+![](media/dc10fbf5cc961dad2eb7b30905783f6b.jpg)
 
 14.  Verify the **Assign a public IP address** radio button is selected. DO NOT
     OVERLOOK THIS STEP!!!!!!!
@@ -305,7 +312,8 @@ The Instance can be created directly from the listing link OR by going to the Or
     settings.
 
 
-	![](media/90e20e7c685753daba9d02fec5e667ae.png)
+
+![](media/90e20e7c685753daba9d02fec5e667ae.png)
 
 
 
@@ -315,7 +323,8 @@ The Instance can be created directly from the listing link OR by going to the Or
     associated action.
 
 
-	![](media/9af0df3609eff883efbf6fd9eaed6770.png)
+
+![](media/9af0df3609eff883efbf6fd9eaed6770.png)
 
 
 17.  Next **Click** the **Create** button for your instance to be created.
@@ -326,13 +335,16 @@ The Instance can be created directly from the listing link OR by going to the Or
 18.  You can view the Work Requests section towards the bottom, for status
     information of your instance.
 
-	![](media/c40bc02fea2a3ea8ef76164a3d20dfad.png)
+
+
+![](media/c40bc02fea2a3ea8ef76164a3d20dfad.png)
 
 19.  Once the instance is in the green running state, locate your **public IP
     address** and write it down as it will be essential to have it later.
 
 
-	![](media/f53935f66cb9b633460df11bdaa2c634.png)
+
+![](media/f53935f66cb9b633460df11bdaa2c634.png)
 
 	> NOTE: that as part of this pre-configured image, all Enterprise Manager services automatically start up so you do not have to separately start up the OMS, etc. via EMCTL or scripts
 
