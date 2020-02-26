@@ -277,11 +277,7 @@ the routing rule and egress rules.
 
 ### **10. Licensing Terms for the Enterprise Manager Marketplace Instance**
 
-The Oracle Enterprise Manager Workshop instance can be used for free for 30 days
-under the terms of the **Oracle Technology Network License Agreement** 
-<https://www.oracle.com/downloads/licenses/standard-license.html>
-
-In order to use the functionality, the following Licensed Packs have been enabled in the
+In order to use the functionality in the workshop, the following Licensed Packs have been enabled in the
 Enterprise Manager workshop image:
 
 For the Database Lifecycle Management
