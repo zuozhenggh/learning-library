@@ -222,7 +222,8 @@ The Instance can be created directly from the listing link OR by going to the Or
     <https://cloudmarketplace.oracle.com/marketplace/listing/69658839>
 
 	
-		![](media/d473f092c096c48e417fc9f72560fa1b.jpg)
+	
+	![](media/d473f092c096c48e417fc9f72560fa1b.jpg)
 
 2.  **Click** on the Get App button
 
