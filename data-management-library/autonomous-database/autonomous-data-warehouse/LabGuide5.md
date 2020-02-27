@@ -1,15 +1,9 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
 
-September 21, 2018
-</td>
-<td class="td-banner">
 # Lab 5: Creating Rich Data Visualizations
-</td></tr><table>
-
 
 ## Introduction
 
-This lab will walk you through the steps to connect Oracle Data Visualization Desktop to an instance of ADW and create data visualizations.  Unlimited Data Visualization Desktop licenses are included when connecting to an ADW data source.  Instructions will be provided to connect your previously created ADW instance (using sample data loaded into data warehouse) to Oracle Data Visualization Desktop.  We will demonstrate how you can immediately gain insights and create beautiful data visualizations.
+This lab will walk you through the steps to connect Oracle Analytics Desktop (formerly Oracle Data Visualization Desktop) to an instance of ADW and create data visualizations.  Unlimited Oracle Analytics Desktop licenses are included when connecting to an ADW data source.  Instructions will be provided to connect your previously created ADW instance (using sample data loaded into data warehouse) to Oracle Oracle Analytics Desktop.  We will demonstrate how you can immediately gain insights and create beautiful data visualizations.
 
 At this point, you should have performed the following:
 
@@ -17,18 +11,18 @@ At this point, you should have performed the following:
 2. Created a new Autonomous Data Warehouse instance
 3. Downloaded the Connection Wallet for your Autonomous Data Warehouse.
 
-## Objectives
+### Objectives
 - Learn how to connect a desktop analytics tool to the powerful Autonomous Data Warehouse
 - Learn how to secure a desktop client connection to Autonomous Data Warehouse
-- Learn how to create a simple data visualization project with Oracle Data Visualization Desktop
+- Learn how to create a simple data visualization project with Oracle Analytics Desktop
 - Learn how to access and gain insights from data in the Autonomous Data Warehouse
 
 
-## Required Artifacts
-- Installation of Oracle Data Visualization Desktop (free with Autonomous Data Warehouse). If you already have Data Visualization Desktop installed, please check the version. The recommended version is 12.2.5.0.0 to connect to your Oracle Autonomous Data Warehouse.
+#### Required Artifacts
+- Installation of Oracle Oracle Analytics Desktop (free with Autonomous Data Warehouse). If you already have Data Visualization Desktop installed, please check the version. The recommended version is 12.2.5.0.0 to connect to your Oracle Autonomous Data Warehouse.
 - Access to an existing Autonomous Data Warehouse instance
 
-# Set Up Local Data Visualization Desktop Environment in Windows
+## Set Up Local Data Visualization Desktop Environment in Windows
 
 #### **STEP 1: Installing Oracle Data Visualization Desktop on a Windows Desktop**
 
@@ -53,7 +47,7 @@ You want to secure your data from the desktop all the way from the client applic
    - cwallet.sso
    - tnsnames.ora
 
-# Create a View using Tables in the SH Schema
+## Create a View using Tables in the SH Schema
 
 #### **STEP 3: Execute the Provided Script in SQL Developer**
 
@@ -97,7 +91,7 @@ For simplicity's sake, in this exercise we will use the SH schema provided and w
    ![](./images/900/image012.jpg)
 
 
-# Create a Connection to Your Autonomous Data Warehouse from Data Visualization Desktop
+## Create a Connection to Your Autonomous Data Warehouse from Data Visualization Desktop
 
 #### **STEP 4: Create Connection**
 
@@ -162,7 +156,7 @@ For simplicity's sake, in this exercise we will use the SH schema provided and w
 
 
 
-# Working with your New Project in Oracle Data Visualization Desktop
+## Working with your New Project in Oracle Data Visualization Desktop
 
 #### **Project Introduction**
 
@@ -191,7 +185,7 @@ SCENARIO: You work at an electronics reseller company. The founder started his b
 
  You may **Save** this project if you need.   At this point with very few steps, you now have something that can further bring your data to life and you can begin to make some data-driven decisions.  As you share this with others, more people will want to gain access to and benefit from the data. To enable this, the Autonomous Data Warehouse is easy to use, fast, elastic, and will be able to quickly scale to meet your growing data and user base.
 
-# Create a Another Project with Multiple Canvases in Oracle Data Visualization Desktop
+## Create a Another Project with Multiple Canvases in Oracle Data Visualization Desktop
 
 #### **STEP 7: Create a New Data Visualization project**
 
@@ -432,7 +426,7 @@ This step enables you to share your project file with colleges.
    ![](./images/900/imageE088.png)  
 
 <table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
+<tr><td class="td-logo">[![](images/hands_on_labs_tag.png " ")](#)</td>
 <td class="td-banner">
 ## Great Work - All Done!
 **You are ready to move on to the next lab. You may now close this tab.**

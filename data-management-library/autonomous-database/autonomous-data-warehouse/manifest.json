@@ -31,6 +31,22 @@
           "publisheddate": "10/14/2019",
           "contentid": "123456",
           "filename": "LabGuide4.md"
+      },
+      {
+           "title": "Lab 5a: Connecting to ADW Securely with a Connection Wallet",
+           "description": "This 15-minute tutorial walks you through the steps to...",
+           "partnumber": "E12345_01",
+           "publisheddate": "10/14/2019",
+           "contentid": "123456",
+           "filename": "LabGuide5a_connection_wallet.md"
+       },
+     {
+          "title": "Lab 5: Creating Rich Data Visualizations",
+          "description": "This 15-minute tutorial walks you through the steps to...",
+          "partnumber": "E12345_01",
+          "publisheddate": "10/14/2019",
+          "contentid": "123456",
+          "filename": "LabGuide5.md"
       }
     ]
 }

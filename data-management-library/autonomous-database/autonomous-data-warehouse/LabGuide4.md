@@ -27,15 +27,19 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 #### **STEP 1: Create External Tables with DBMS_CLOUD**
 
--   While connected as your user in SQL Developer Web, copy and paste <a href="./scripts/400/create_external_tables.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet.  
+-   While connected as your user in SQL Developer Web, copy and paste <a href="./scripts/400/create_external_tables_without_base_url.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet.  
 
     Use the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create external tables on the files staged in your object store. Note that you are still using the same credential and the URLs of files on OCI Object Storage you used when loading data in the previous lab.
 
-    -   At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable.
+<!--    -   At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable. -->
 
-    - **Run the script**.
+-   For each **file\_uri\_list** statement, specify the Object Store base URL that you copied and saved in the step "Copy the URLs of the Files on Your OCI Object Storage" above.
 
-    ![](./images/400/run_script_create_ext_tables.jpg " ")
+    **Note:** In SQL Developer Web, you will soon be able to define the Object Store base URL once, to use as a variable in file\_uri\_list statements. This capability is already supported in the full Oracle SQL Developer client tool.
+
+- Run the script.
+
+    ![](./images/400/run_script_create_ext_tables_without_base_url.jpg " ")
 
     Now you have **external tables** for the sample data pointing to files in the object store. Any query against the external tables will return the same result as against the original tables.
 
