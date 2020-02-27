@@ -279,11 +279,13 @@ the routing rule and egress rules.
 
 ### **10. Licensing Terms for the Enterprise Manager Marketplace Instance**
 
-In order to use the functionality in the workshop, the following Licensed Packs have been enabled in the
-Enterprise Manager workshop image:
+This workshop environment is solely intended for non-production use to specifically explore the use cases outlined in the workshop instructions as posted in the Oracle Licensing Library.  All licensed Oracle Enterprise Manager, Oracle Linux and Oracle Database products included in the workshop environment may only be used expressly for workshop purposes and for the duration of the workshop, and furthermore, licensed Enterprise Manager Packs may only be used against the target environments that are included in the base workshop image, for the duration of the workshop.
+
+In order to use the functionality, the following Licensed Packs have been enabled in the Enterprise Manager workshop image:
 
 For the Database Lifecycle Management
 -	Database Lifecycle Management Pack for Oracle  Database
+-   Cloud Management Pack for Oracle Database
 
 For Database Performance Management On-premises
 -	Oracle Diagnostics Pack
