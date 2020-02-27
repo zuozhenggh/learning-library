@@ -331,6 +331,7 @@ If you are seeing an Authorization Error while trying to Select Shape to Create 
 ### **14. While trying to launch the EM instance: Unable to accept Terms of Use.**
 
 Make sure your email has been verified. Log out and Log back in and restart from the listing link.
+Also, verify you are using the same region and compartment that was assigned to you.
 
 ### **15. Additional information on Oracle Cloud Infrastructure Setup**
 <https://www.oracle.com/cloud/pricing.html>
