@@ -12,7 +12,7 @@
     - Named Credentials Secured by Best Practice
     - Database Target Inventory
     - Summary of Enterprise Manager and Host Details
-4. Workshops
+4. Workshops and FAQ/Troubleshooting Guide
 
 
 Purpose 
@@ -258,14 +258,16 @@ Summary of Enterprise Manager and Host Details
 | **Startup Scripts**             | All scripts are in /home/oracle. **Note:** All required EM services are brought up at creation and every reboot of the instance, so allot time for them to start automatically. **In case** you run into an issue, these scripts can help stop/start services within the instance. start_all.sh - Starts ALL services for EM (OMS, Agent etc.) start_oms.sh - Starts OMS start_agent.sh – Starts Agent start_db_hr.sh – Starts HR Database stop_db.sh – Stops emprep Database/Listener start_db_sales.sh – Starts Sales Database stop_oms.sh – Stops OMS start_db_cdb186.sh – Starts cdb186 Database start_db.sh – Starts all Databases stop_agent.sh – Stops Agent startdb_emrep.sh start_db.sh_orig stop_all.sh |
 
 
-Workshops
-=========
+Workshops and FAQ/Troubleshooting Guide
+=======================================
+
+ [Frequently Asked Questions (FAQ) and Troubleshooting Guide](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md)
 
 The Workshop documents are available at:
 
-https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/em_db_lifecycle_automation.md
+[DB Lifecycle Automation using Enterprise Manager Workshop](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/em_db_lifecycle_automation.md)
 
-https://github.com/smbharga/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/em_find_fix_validate.md
+[Database Performance Management On-Premises and Real Application Testing Workshop](https://github.com/smbharga/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/em_find_fix_validate.md)
 
 The following use cases are covered:
 

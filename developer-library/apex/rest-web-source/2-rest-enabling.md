@@ -180,7 +180,7 @@ Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled 
     end;
     /
     ```
-    *{Note: You can also cut and paste the script from the following URL - https://www.oracle.com/technetwork/developer-tools/apex/application-express/apex-hol-rest-enable-5478504.txt}*
+    *{Note: You can also cut and paste the script from the following URL -* <a href="https://www.oracle.com/technetwork/developer-tools/apex/application-express/apex-hol-rest-enable-5478504.txt" target="_blank">https://www.oracle.com/technetwork/developer-tools/apex/application-express/apex-hol-rest-enable-5478504.txt</a> *}*
 
     Click **Run**.
 

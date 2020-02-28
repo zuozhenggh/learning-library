@@ -1,6 +1,6 @@
 # Module 2 - Defining New Data Structures Using Quick SQL
 
-In this module, you will learn how to create tables and views by defining data structures in Quick SQL. 
+Memorizing the SQL to create and maintain database objects can be difficult. However, there are tools that can generate the code for you based on a shorthand syntax or a graphical user interface. In this module, you will learn how to create tables and views by defining data structures in Quick SQL. 
 
 ## Problem Definition
 Within most organizations, the use of spreadsheets is prolific. Spreadsheets are excellent for doing simple data review and tracking personal data, however, they are very ill suited to gathering data amongst team members for example.
