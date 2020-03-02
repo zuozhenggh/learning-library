@@ -1,4 +1,4 @@
-# SSH Key Creation Lab
+# SSH Key Creation
 
 ## Overview
 
@@ -143,7 +143,7 @@ ssh -i id_rsa opc@129.213.100.78
 
 Great job!  You've successfully created an SSH key for Windows 10 and securely logged into an OCI compute instance.
 
-## Git For Windows - SSH Keys for Prior Windows Versions
+## SSH Keys for prior Windows Versions - Git For Windows
 
 In earlier versions of Windows, ssh-keygen was not a native utility so third party utilities had to be utilized.   In this section, we'll illustrate using **Git for Windows**.  **Git for Windows** includes a Unix like shell called ```gitbash``` which is what you'll use to create keys, and establish SSH communications with your cloud host systems.  If you prefer **Putty** go to the next section.
 
@@ -200,7 +200,7 @@ ssh -i id_rsa opc@129.213.100.78
 Great job!  You've successfully created an SSH key for Windows 10 and securely logged into an OCI compute instance using the gitbash utility.
 
 
-## PuTTY - SSH Keys for prior Windows Versions
+## SSH Keys for prior Windows Versions - PuTTY
 
 In earlier versions of Windows, ssh-keygen was not a native utility so third party utilities had to be utilized.   In this section, we'll illustrate using **PuTTy**.  If you prefer **Git for Windows** visit the section prior to this one.
 
@@ -286,9 +286,47 @@ You are now able to connect securely using the Putty terminal utility.   You can
 
 ## SSH Keys for MacOS
 
-If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
-- $300 of free credits good for up to 3500 hours of Oracle Cloud usage
-- Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
-- Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
-  
-[Click here to request your trial account:](https://cloud.oracle.com/tryit)
+Generating SSH keys on MacOS is super simple since the guts of MacOS are Unix.   
+
+1.  If you don't already have a shortcut to the terminal application for MacOS you can find it in the Applications > Utilities menu or (Shift+Command+U) on your keyboard.   Start up Terminal and type in the command ```ssh-keygen```.  ssh-keygen will ask you where to save the key, accept the default of your home directory in the .ssh folder.  File name will be ```id_rsa``` or whatever you choose to name your key.   Press enter twice and don't enter a passphrase.   Remember the directory where you saved your key, you'll need to reference it later when you create your instance.
+
+![](img/keylab-028.png " ")
+
+2.  Type the following commands in the terminal window to verify that the public and private keys were created.  And to copy the contents of the public key for use in creating your instance in the OCI dialog.
+
+```
+<copy>
+cd .ssh
+cat id_rsa.pub
+</copy>
+```
+
+![](img/keylab-032.png " ")
+
+3.  If you're ready to create your instance, left click and drag to copy the key contents, not including the file name on the command line.   You can paste the key information into the key creation dialog box in OCI later, assuming you don't copy something else in the meantime.   Otherwise, you can navigate to the file if you would prefer that method of loading the key.
+
+![](img/keylab-033.png " ")
+
+4.  In the OCI **Create Compute Instance** dialog you can choose the SSH key from your system or paste the key contents.   The example below illustrates choosing the key file from a laptop running MacOS.   
+
+![](img/keylab-034.png " ")
+
+5.  A trick for MacOS is that it (unlike Windows) understands that a dotted directory (.ssh) is hidden, so by default, the directory will be invisible in the Finder window.  In Finder, navigate to your home directory, and press (Cmd + Shift + .) (*yes, that's a dot*).   Hidden directories should now be visible.   Navigate to the .ssh directory and choose id_rsa.pub.
+
+![](img/keylab-038.png " ")
+
+6.  Finish filling out the dialog and choose **Create** to create your instance.   Once it's up and running, copy the IP address and prepare to login via SSH.
+
+![](img/keylab-037.png " ")
+
+7.  Open the Terminal and navigate to the .ssh directory, or you can reference it in the ssh login command if you wish.   Type the following command to login to your instance from the MacOS terminal.
+
+```
+ssh -i id_rsa opc@xxx.xxx.xxx.xxx
+```
+![](img/keylab-036.png " ")
+
+You have successfully logged into an OCI compute instance with a MacOS generated key.    This concludes this tutorial on creating SSH keys for all platforms. 
+
+[Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
+
