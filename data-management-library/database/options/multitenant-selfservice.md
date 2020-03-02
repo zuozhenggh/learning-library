@@ -238,26 +238,26 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
     ````
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/8O0AbribZ9s0lxMh75PBzqRtGjjcHeEjqM-OAUFjOkM/n/c4u03/b/labfiles/o/labs.zip
-    sudo mv labs.zip /home/oracle
-    sudo chown oracle:oinstall /home/oracle/labs.zip 
-    sudo su - oracle
-    unzip labs.zip
-    cd /home/oracle/labs
-    exit
-    sudo su - 
-    nohup /home/oracle/labs/envprep.sh &> /home/oracle/labs/nohupenvprep.out&
-    sudo su - oracle
-    cd /home/oracle/labs
-    nohup /home/oracle/labs/multitenant/createCDBs.sh &> nohupmultitenant.out&
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/9JRVjvhMWMWuWqJ_JRVoWo-i_NApWPKcWgKrKp-tbaw/n/c4u03/b/labfiles/o/multiscripts.zip
+    unzip multiscripts.zip; chmod +x *.sh
+    /home/opc/setupenv.sh
+    nohup /home/opc/setupdb.sh &> setupdb.out&
+    ````
+2.  To check the status of the script above run the command below.  This script takes about 30 minutes to complete.  You can also use the unix **jobs** command to see if the script is still running.
+
+    ````
+    tail -f /home/opc/setupdb.out
+    ````
+2.  Once the database software has been installed, run the script to create the container databases and pluggable databases needed for the next lab.
+
+     ````
+    nohup /home/opc/setupcontainers.sh &> setupcontainers.out&
     ````
 
-2.   To check on the progress of this set of scripts, enter the command below.  This script takes about 90 minutes to complete.  Note:  Ignore the [WARNING] [DBT-06208] that occur in the 2nd script.
+2.   To check on the progress of this script, enter the command below.  This script takes about 60 minutes to complete.  Note:  Ignore the [WARNING] [DBT-06208] that occur in the 2nd script.
 
         ````
-        tail -f /home/oracle/labs/nohupenvprep.out
-        tail -f /home/oracle/labs/nohupmultitenant.out
-
+        tail -f /home/opc/setupcontainers.out
         ````
 
 3.  Once the script is finished,        
