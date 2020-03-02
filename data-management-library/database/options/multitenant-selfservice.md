@@ -232,13 +232,13 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
 ## Section 5b-Run the Setup Scripts
 
-1.  Copy the following commands into your terminal.  This script takes approximately 1.5hrs to run.  It is a series of scripts that create several databases in multiple ORACLE HOMES so that you can run both the Multitenant and Advanced Multitenant labs.  The scripts are run in the background so you should be able to exit out while it's running.  The envprep.sh takes approximately 30 minutes and createCDBs.sh takes 60 minutes.  
+1.  Copy the following commands into your terminal.  This script takes approximately 1.5hrs to run.  It is a series of scripts that create several databases in multiple ORACLE HOMES so that you can run both the Multitenant and Advanced Multitenant labs.  The last two scripts are run in the background so you should be able to exit out while it's running.  The setupdb.sh script takes approximately 25 minutes to run.  The setupcdb.sh takes 60 minutes to run, both run in the background.  
 
     Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
 
     ````
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/9JRVjvhMWMWuWqJ_JRVoWo-i_NApWPKcWgKrKp-tbaw/n/c4u03/b/labfiles/o/multiscripts.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
     unzip multiscripts.zip; chmod +x *.sh
     /home/opc/setupenv.sh
     nohup /home/opc/setupdb.sh &> setupdb.out&
