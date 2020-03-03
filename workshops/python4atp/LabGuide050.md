@@ -80,8 +80,29 @@ To run our Terraform folder in the cloud, we will take advantage of OCI resource
 
     ![](images/050/028.png)
 
-- On Windows, follow these [instructions](https://www.ssh.com/ssh/putty/windows/puttygen).
-    You can call the key whatever you want (the default is easiest).  It will create a private key and a public key. The public key is used when you are prompted for a SSH key when you create services, and the matching private key is used to access those services after creation. (eg: Cloud Developer Image). 
+**If you have Linux or Mac, you can skip ahead to Step 6.**
+
+- On Windows, you must have **PUTTY**. If you don't, you can download it [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+
+- Search for **PUTTYgen**, then open the application.
+
+    ![](images/050/018.1.png)
+
+- Make sure the type of key is RSA and the number of bits is 2048. Then click on **Generate**.
+
+    ![](images/050/058.png)
+
+- Copy the public ssh key IN ITS ENTIRETY into your notes. Then press **Save private key**.
+
+    ![](images/050/011.png)
+
+- You can create a password, but there is no need for our purposes. Press No.
+
+    ![](images/050/012.png)
+
+- Call the private key 'alphakey', then press save.
+
+    ![](images/050/032.png)
 
 ### **STEP 6:** Creating a Resource Manager Stack
 
@@ -155,13 +176,43 @@ For more information about the Marketplace Developer Image [click here](https://
 
     **If you cannot see your instance, make sure you are in the python4dev compartment.**
 
-- SSH into the image. 
-    **Note if you are on Windows you will need to use putty.**
+- **If you are on Linux or Mac, use these instructions.** SSH into the image.
+    **Note, if you are on Windows, the instructions are below.**
     Open a terminal window on a Mac or command shell on Linux and enter the following command:
 
     `$ ssh -i <path/to/your/private-key> opc@<instance IP address>`
 
 	![](images/050/036.png)
+
+    **If you have Linux or Mac, you can skip the Windows instructions**
+
+**If you are on Windows, use these instructions**
+
+- Search for and open PUTTY. Then in hostname put 'opc@instance-ip-address'. Make sure the port is 22.
+
+    ![](images/050/031.png)
+
+- On the left hand menu, under **Connection**, expand **SSH** by clicking the plus sign next to it. Then click on **Auth**. Once in the menu, click **Browse** next to the private key file field.
+
+    ![](images/050/061.png)
+
+- Choose the private key 'alphakey' file you created earlier and open it.
+
+    ![](images/050/062.png)
+
+- Next, go back to **Session** on the left hand side and click on it. Save the profile with the name 'py4atp_profile'. Finally, click **Open**.
+
+    ![](images/050/067.png)
+
+- Click **Yes** when prompted.
+
+    ![](images/050/063.png)
+
+- You now have an ssh tunnel into your instance!
+
+    ![](images/050/015.png)
+
+**End of Windows instructions**
 
 - Enter `$ vncpasswd` to set your VNC access (make it a secure one!).
 
@@ -176,7 +227,7 @@ For more information about the Marketplace Developer Image [click here](https://
 - Open a SSH tunnel.
     ***NOTE:*** do not close this terminal window.  It maintains the tunnel to the developer image, which we access through VNC.  If for whatever reason the window is closed or you are otherwise logged out (sometimes tunnels drop), then just run this again to log in.
     
-    For Windows, follow these [instructions](https://www.skyverge.com/blog/how-to-set-up-an-ssh-tunnel-with-putty/) for information on how to create a tunnel on Windows.
+    For Windows, see the Windows ssh instructions above, except, change the ports for connection to 5901.
 
      This example works on Linux and Mac. **Note:** on Linux you will need to be su.
 
@@ -202,6 +253,8 @@ For more information about the Marketplace Developer Image [click here](https://
 
 [Click to Download](https://oracle.github.io/learning-library/workshops/python4atp/lab-resources.zip). **Keep track of which directory this zip file gets saved to.**
 
+**These instructions are for Linux and Mac users.**
+
 - Next, open a new terminal window. **It is important that this is a new window, since the session you opened previously must not be closed.**
 
 - Run the command below.
@@ -218,35 +271,26 @@ For more information about the Marketplace Developer Image [click here](https://
 
     _Now the zip file has been copied into your instance!_
 
-- Finally, go back into your instance.
-    
-    Once inside, run `$ ls` to verify that you see your zip file.
+**End of instructions for Linux and Mac users. You can skip the instructions for Windows users.**
 
-![](images/050/064.png)
+**These instructions are for Windows users.**
+
+- Find and open **PSFTP**.
+
+    ![](images/050/069.png)
+
+- In the terminal window that opens up, enter `open py4atp_profile`.
+
+    ![](images/050/070.png)
+
+- Next, enter `put </path/to/lab-resources.zip>`
+
+    ![](images/050/071.png)
+
+    _Now the zip file has been copied into your instance!_
+
+**End of instructions for Windows users**
 
 **This completes the Lab!**
 
 **You are ready to proceed to [Lab 100](LabGuide100.md)**
-
-
-<!--
-
-EXTRA IMAGES IN THE IMAGES->050 FOLDER THAT ARE NO LONGER NEEDED
-
-![](images/050/018.1.png)
-![](images/050/058.png)
-![](images/050/011.png)
-![](images/050/012.png)
-![](images/050/032.png)
-![](images/050/033.png)
-![](images/050/031.png)
-![](images/050/061.png)
-![](images/050/062.png)
-![](images/050/067.png)
-![](images/050/063.png)
-![](images/050/015.png)
-![](images/050/016.png)
-![](images/050/017.png)
-![](images/050/027.png)
-![](images/050/060.png)
--->
