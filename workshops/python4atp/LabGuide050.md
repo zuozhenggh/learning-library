@@ -100,7 +100,7 @@ To run our Terraform folder in the cloud, we will take advantage of OCI resource
 
     ![](images/050/012.png)
 
-- Call the private key 'alphakey', then press save.
+- Call the private key `alphakey`, then press save.
 
     ![](images/050/032.png)
 
