@@ -29,7 +29,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
     **Note:** If you are a Windows user on 64-bit platform, download the 'Windows 64-bit with JDK 8 included' distribution as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and connect to your Autonomous Data Warehouse.
     If you are a non-Windows user, download and install the appropriate [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) for your Operating System. Download and extract the [Java Cryptography Encryption Archive](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) to the directory as indicated in the README.txt.
 
-## Part 1. Connecting to ADW Securely with a Connection Wallet
+### Part 1. Connecting to ADW Securely with a Connection Wallet
 
 ### Downloading the Connection Wallet
 
@@ -37,7 +37,7 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 As ADW only accepts secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page, or from the ADW service console.
 
 
-#### **STEP 1: Download the Connection Wallet**
+## Step 1: Download the Connection Wallet
 
 -   In your database's instance details page, click **DB Connection**.
 
@@ -61,7 +61,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 Start SQL Developer and create a connection for your database using the default administrator account 'ADMIN' by following these steps.
 
 
-#### **STEP 2: Connect to the database using SQL Developer**
+## Step 2: Connect to the database using SQL Developer
 
 -   Click the **New Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
 
@@ -90,8 +90,9 @@ Start SQL Developer and create a connection for your database using the default 
 
 -   If you are behind a VPN or Firewall and this Test fails, make sure you have <a href="https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">SQL Developer 18.3</a> or higher. This version and above will allow you to select the "Use HTTP Proxy Host" option for a Cloud Wallet type connection. While creating your new ADW connection here, provide your proxy's Host and Port. If you are unsure where to find this, you may look at your computer's connection settings or contact your Network Administrator.
 
+
 <table>
-<tr><td class="td-logo">[![](images/hands_on_labs_tag.png " ")](#)</td>
+<tr><td class="td-logo">[![](images/hands_on_labs_tag.png)](#)</td>
 <td class="td-banner">
 ## Great Work - All Done!
 **You are ready to move on to the next lab. You may now close this tab.**

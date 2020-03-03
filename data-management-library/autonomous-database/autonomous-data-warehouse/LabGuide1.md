@@ -123,7 +123,9 @@ __Note:__ You can also directly access your Autonomous Data Warehouse service in
 
    ![](./images/100/Picture100-26d.png " ")
 - Choose network access:
-    - For this lab, do not select this option. By default, secure connections are allowed from all IP addresses. You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
+    - For this lab, accept the default, "Allow secure access from everywhere".
+    - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
+    - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
 
    ![](./images/100/Picture100-26e.png " ")
 
