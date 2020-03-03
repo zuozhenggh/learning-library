@@ -1,6 +1,6 @@
 ![](img/db-options-title.png)  
 
-# SSWorkshop: Multitenant Fundamentals
+# SSWorkshop: Docker Lab
 ## Table of Contents 
 - [Introduction](#introduction)
 - [Lab Assumptions](#lab-assumptions)
@@ -14,11 +14,14 @@
 
 
 ## Introduction
-This lab will show you how to login to the cloud and setup your environment using Oracle Resource Manager.  Once the environment setup is complete, you will proceed to the Multitenant lab.
+This lab will show you how to login to the cloud and setup your environment using Oracle Resource Manager.  Once the environment setup is complete, you will proceed to the Docker lab.
+
+**PLEASE READ:**  If you already have a compute instance running DB19c configured, skip directly to [Section 5](#section-5-connect-to-your-instance).
 
 
 ## Lab Assumptions
 - Each participant has been sent two emails, one from Oracle Cloud  with their username and another from the Database PM gmail account with their temporary password.
+
 
 ## Lab Settings
 - **Tenancy**:  c4u03
@@ -26,6 +29,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 - **Compartment**: \<Provided by Oracle\>
 - **VCN**: \<Provided by Oracle\>
 - **Region**: \<Provided by Oracle\>
+- **Subnet**: \<Provided by Oracle\>
 
 
 ## Section 1-Login to the Oracle Cloud
@@ -113,7 +117,7 @@ If you already have an ssh key pair, you may use that to connect to your environ
 You will be using Terraform to create your database environment.
 
 1.  Click on the link below to download the zip file you need to build your enviornment.  
-- [multitenant-compute.tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1LYMqYL4xK0fq4iw1lr0ByzxyOACFQ_viboPmaEFGqM/n/c4u03/b/labfiles/o/multitenant-compute.tf.zip) - Packaged terraform instance creation script
+- [multitenant-compute.tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1LYMqYL4xK0fq4iw1lr0ByzxyOACFQ_viboPmaEFGqM/n/c4u03/b/labfiles/o/multitenant-compute.tf.zip) - Packaged terraform instance creation script for 19C Databases.
 
 2.  Save in your downloads folder.
 
@@ -233,7 +237,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
 ## Section 5b-Run the Setup Scripts
 
-1.  Copy the following commands into your terminal.  This script takes approximately 1.5hrs to run.  It is a series of scripts that create several databases in multiple ORACLE HOMES so that you can run both the Multitenant and Advanced Multitenant labs.  The last two scripts are run in the background so you should be able to exit out while it's running.  The setupdb.sh script takes approximately 25 minutes to run.  The setupcdb.sh takes 60 minutes to run, both run in the background.  
+1.  Copy the following commands into your terminal.  This script takes approximately 30 minutes to run.  It runs in the background so you should be able to exit out while it's running.  T
 
     Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
 
@@ -249,20 +253,8 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     ````
     tail -f /home/opc/setupdb.out
     ````
-2.  Once the database software has been installed, run the script to create the container databases and pluggable databases needed for the next lab.
-
-     ````
-    nohup /home/opc/setupcontainers.sh &> setupcontainers.out&
-    ````
-
-2.   To check on the progress of this script, enter the command below.  This script takes about 60 minutes to complete.  Note:  Ignore the [WARNING] [DBT-06208] that occur in the 2nd script.
-
-        ````
-        tail -f /home/opc/setupcontainers.out
-        ````
-
 3.  Once the script is finished,        
-Congratulations!  Now you have the environment to run the Multitenant labs.   You may proceed to the [Multitenant Lab](https://oracle.github.io/learning-library/data-management-library/database/options/multitenant.html). 
+Congratulations!  Now you have the environment to run the In-Memory lab.   You may proceed to the [Docker Lab](https://oracle.github.io/learning-library/data-management-library/database/options/docker.html). 
 
 [Back to Top](#table-of-contents)
 
