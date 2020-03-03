@@ -196,7 +196,7 @@ For more information about the Marketplace Developer Image [click here](https://
 
     ![](images/050/061.png)
 
-- Choose the private key 'alphakey' file you created earlier and open it.
+- Choose the private key `alphakey` file you created earlier and open it.
 
     ![](images/050/062.png)
 
