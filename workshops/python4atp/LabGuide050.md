@@ -152,11 +152,11 @@ Now, we will see the true power of Terraform as opposed to manual creation. By u
 
 - Again, hover over **Terraform Actions** and click on **Apply**.
 
-    ![](images/050/011.png)
+    ![](images/050/072.png)
 
 - You can give the apply a name, or keep the default. You can leave the other settings the same. Then click on **Apply**.
 
-    ![](images/050/012.png)
+    ![](images/050/073.png)
 
 - **The apply may take several minutes. Please be patient.**
 
