@@ -18,7 +18,7 @@ Docker is a set of platform-as-a-service products that use OS-level virtualizati
 Lab courtesy of NATD Solution Engineering Team.  Check out the original lab [here!](http://go.oracle.com/docker).
 
 ## Lab Assumptions
-- Each participant has completed the Environment Setup lab and succesfully created a compute instance
+- Each participant has completed the Environment Setup lab and succesfully created a compute instance or has a Oracle Database marketplace instance running
 - The Virtual Compute Network (VCN) has been created with the appropriate Ingress rules
 - Each participant has created a docker hub [account](http://docker.hub.com)
 - Participants are not logged onto Oracle's VPN
