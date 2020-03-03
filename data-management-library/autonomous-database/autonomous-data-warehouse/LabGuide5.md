@@ -40,15 +40,10 @@ At this point, you should have performed the following:
 
 You want to secure your data from the desktop all the way from the client application to the server where your data is stored.  Password credentials for connecting to databases can now be stored in a client-side Oracle wallet, a secure software container used to store authentication and signing credentials.  This wallet usage can simplify large-scale deployments that rely on password credentials for connecting to databases. When this feature is configured, application code, batch jobs, and scripts no longer need embedded user names and passwords. Risk is reduced because such passwords are no longer exposed in the clear, and password management policies are more easily enforced without changing application code whenever user names or passwords change.
 
-- Go to the directory that you saved your Connection Wallet file from the previous lab.  Unzip this zipped file.
+- Go to the directory in which you saved your Connection Wallet file from the previous lab.  Note this zipped file. You will access this zipped file in Step 4.
 
-   ![](./images/900/image008.jpg " ")
-   ![](./images/900/image009.png " ")
-
-- You will need the following two files to create the secure connection.
-
-    - cwallet.sso
-    - tnsnames.ora
+   ![](./images/500/image008.jpg " ")
+   ![](./images/500/image009.png " ")
 
 
 ## Part 2: Create a View using Tables in the SH Schema
@@ -103,18 +98,16 @@ For simplicity's sake, in this exercise we will use the SH schema provided and w
 
    ![](./images/500/click_connect_to_oracle_autonomous_data_warehouse.jpg " ")
 
--   Go back to the directory where you saved your wallet file and extracted the file, __‘tnsnames.ora’__.  Open the file and search for the wallet connection information (in our example "**adwfinance_high**") that you will use to connect with.
+-   In the **Create Connection** dialog, enter the following information:
 
 
    | Connection Info       | Entry                                             |  
    | --------------------- | :--------------------------------------------- |
    | Connection Name:      | Type in 'SALES_HISTORY'                             |
-   | Host:                 | (Copy from tnsnames.ora) e.g. adb.us-phoenix-1.oraclecloud.com |
-   | Port:                 | (Copy from tnsnames.ora) e.g. 1522                                              |
-   | Client Credentials:   | Click 'Select' and select the file "cwallet.sso" from your unzipped **Wallet** in Step 2   |
-   | Username:             | Insert username created in previous labs.  Same as SQL Developer credentials. |                                            
-   | Password              | Insert password created in previous labs.  Same as SQL Developer credentials. |
-   | Service Name:         | (Copy from tnsnames.ora) e.g. tuak89quycc88vqkzengdw1high.adwc.oraclecloud.com |
+   | Client Credentials:   | Click 'Select' and select the zip file that you noted in Step 2. A file with .sso extension will appear in the field.   |
+   | Username:             | Insert username created in previous labs; likely **admin**.  Same as SQL Developer Web and SQL Developer credentials. |                                            
+   | Password              | Insert password created in previous labs.  Same as SQL Developer Web and SQL Developer credentials. |
+   | Service Name:         | Scroll the drop-down field and select **adwfinance_high**, or the **high** service level of the database name you specified in the first lab. |
 
   - After completing the fields, click __‘Save’__.
 
