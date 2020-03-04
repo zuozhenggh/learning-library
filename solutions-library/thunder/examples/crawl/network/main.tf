@@ -18,4 +18,6 @@ module "network" {
   nsg_params       = var.nsg_params
   nsg_rules_params = var.nsg_rules_params
   subnet_params    = var.subnet_params
+  lpg_params       = var.lpg_params
+  drg_params       = var.drg_params
 }

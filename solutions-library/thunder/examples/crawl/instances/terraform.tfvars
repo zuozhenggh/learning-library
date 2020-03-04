@@ -4,7 +4,7 @@ compartment_ids = {
   sandbox = "ocid1.compartment.oc1..aaaaaaaaiu3vfcpbjwwgpil3xakqts4jhtjq42kktmisriiszdvvouwsirgq"
 }
 subnet_ids      = {
-  hur1pub  = "ocid1.subnet.oc1.eu-zurich-1.aaaaaaaaiyaa4lvedfrbx4u5vdeltyeiduzgznfvtnuof3n3b7cenbhqh6fq"
+  hur1pub  = "ocid1.subnet.oc1.eu-zurich-1.aaaaaaaaaa5y7m6sijl24z5we37itchg4cga7wlzfck6exjaxf3qcr6tqx2a"
   hur1priv = "ocid1.subnet.oc1.eu-zurich-1.aaaaaaaaqmrzegawxhx3lem554otznorygybovk7a5ek5i75opbwv7kvo6yq"
 }
 
@@ -50,7 +50,7 @@ instance_params = {
     assign_public_ip     = false
     preserve_boot_volume = true
     compartment_name     = "sandbox"
-    subnet_name          = "hur1priv"
+    subnet_name          = "hur1pub"
     ssh_public_key       = "/root/.ssh/id_rsa.pub"
     device_disk_mappings = "/u01:/dev/oracleoci/oraclevdb"
     freeform_tags        = {
