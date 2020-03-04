@@ -40,7 +40,7 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 ## Architecture
 
-![](./about-this/images/subnet_architecture.png)
+![](./about-this/images/VM.png)
 
 ## Steps
 
