@@ -30,7 +30,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 - **VCN**: \<Provided by Oracle\>
 - **Region**: \<Provided by Oracle\>
 - **Subnet**: \<Provided by Oracle\>
-- **Image ID**: \<Provided by Oracle\>
+- **Linux Image ID**: \<Provided by Oracle\>
 
 
 ## Section 1-Login to the Oracle Cloud
@@ -118,7 +118,7 @@ If you already have an ssh key pair, you may use that to connect to your environ
 You will be using Terraform to create your database environment.
 
 1.  Click on the link below to download the zip file you need to build your enviornment.  
-- [Linux Compute](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1SFA2T-3XMQybMzMbcVr5v0xvyszp0flP8BqEOzCa8A/n/c4u03/b/labfiles/o/linux-compute.zip) - Packaged terraform instance creation script for Linux compute instance in London region.
+- [Linux Compute](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fS44gtlzyF-xooB7BUCJc1YpkCQ-4tXmqAlU3_QQZPU/n/c4u03/b/labfiles/o/linux-compute.zip) - Packaged terraform instance creation script for Linux compute instance in London region.
 
 
 2.  Save in your downloads folder.

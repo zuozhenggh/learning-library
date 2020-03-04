@@ -259,7 +259,8 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 1.  Run this command to setup the schemas for In-Memory.   This script takes about 15 minutes to complete.
     ````
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/3UHs8zJo7p-gLc3HEfci6SkYAH81ZQNxTgrQvASP0Js/n/c4u03/b/labfiles/o/inmemoryscript.sh
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/axp5T8m0cF0_p1N832Qo6ImwczP_V6bSQi9ABLti6Ug/n/c4u03/b/labfiles/o/inmemoryscript.sh
+    chmod +x /home/opc/inmemoryscript.sh
     nohup /home/opc/inmemoryscript.sh &> setupinmem.out&
     ````
 
