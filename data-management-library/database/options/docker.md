@@ -53,7 +53,7 @@ Lab courtesy of NATD Solution Engineering Team.  Check out the original lab [her
     ssh -i optionskey opc@<your ip address>
     ````
 
-1.  Before beginning the lab, you will need switch to the oracle user and stop the default listener running on port 1521.
+1.  OPTIONAL:  If you are running this on a compute instance that has Oracle already installed, you may need to shut down the listener.  If you do not have a listener running, proceed to the next step.
 
     ````
     sudo su - oracle

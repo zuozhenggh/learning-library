@@ -20,7 +20,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 
 
 ## Lab Assumptions
-- Each participant has been sent two emails, one from Oracle Cloud  with their username and another from the Database PM gmail account with their temporary password.
+- Each participant has been sent two emails, one from Oracle Cloud  with their username and another with the subject SSWorkshop, this contains their temporary password.
 
 
 ## Lab Settings
@@ -30,6 +30,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 - **VCN**: \<Provided by Oracle\>
 - **Region**: \<Provided by Oracle\>
 - **Subnet**: \<Provided by Oracle\>
+- **Linux Image ID**: \<Provided by Oracle\>
 
 
 ## Section 1-Login to the Oracle Cloud
@@ -117,7 +118,8 @@ If you already have an ssh key pair, you may use that to connect to your environ
 You will be using Terraform to create your database environment.
 
 1.  Click on the link below to download the zip file you need to build your enviornment.  
-- [linux-compute-london.tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-RNUYctv6aLnWqSEgbDo_CzVpNu5Zy8RW_8T6vW2gx8/n/c4u03/b/labfiles/o/linux-compute-london.tf.zip) - Packaged terraform instance creation script for Linux compute instance in London region.
+- [Linux Compute](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fS44gtlzyF-xooB7BUCJc1YpkCQ-4tXmqAlU3_QQZPU/n/c4u03/b/labfiles/o/linux-compute.zip) - Packaged terraform instance creation script for Linux compute instance in London region.
+
 
 2.  Save in your downloads folder.
 
@@ -143,19 +145,25 @@ You will be using Terraform to create your database environment.
 
 7.  Click **Next**.
 
-    ![](img/createstack3.png)
+    ![](img/linux-compute-stack-1.png)
 
-    Enter the following inforamtion. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
+    **Make sure you have switched to the correct Region.**  Enter the following information. 
 
-    **Make sure you have switched to the correct Region.**
 
-    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
-
-    **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
+    **Choose a Name For Your Instance**
     
-    **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
+    - **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
+
+    **Enter Info from your SSWorkshop Email**
+    - **Instance Image OCID**: Enter the Image ID you received in your SSWorkshop email
+
+    - **Public Subnet ID**:  Enter the Subnet ID you received in your SSWorkshop email
+
+    - **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
     
-    **SSH Public Key**:  Paste the public key you created in the earlier step (it should be one line)
+    **Enter Your Public Key**
+
+    - **SSH Public Key**:  Paste the public key you created in the earlier step (it should be one line)
 
 8. Click **Next**.
 

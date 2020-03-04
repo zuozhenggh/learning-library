@@ -21,7 +21,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 
 
 ## Lab Assumptions
-- Each participant has been sent two emails, one from Oracle Cloud  with their username and another from the Database PM gmail account with their temporary password.
+- Each participant has been sent two emails, one from Oracle Cloud  with their username and another with the subject SSWorkshop, this contains their temporary password.
 
 
 ## Lab Settings
@@ -146,7 +146,7 @@ You will be using Terraform to create your database environment.
 
     ![](img/createstack3.png)
 
-    Enter the following inforamtion. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
+    Enter the following information. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
 
     **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
 
@@ -259,7 +259,8 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 1.  Run this command to setup the schemas for In-Memory.   This script takes about 15 minutes to complete.
     ````
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/3UHs8zJo7p-gLc3HEfci6SkYAH81ZQNxTgrQvASP0Js/n/c4u03/b/labfiles/o/inmemoryscript.sh
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/axp5T8m0cF0_p1N832Qo6ImwczP_V6bSQi9ABLti6Ug/n/c4u03/b/labfiles/o/inmemoryscript.sh
+    chmod +x /home/opc/inmemoryscript.sh
     nohup /home/opc/inmemoryscript.sh &> setupinmem.out&
     ````
 
