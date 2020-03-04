@@ -36,13 +36,13 @@ In this practice, you sign in to the Oracle Cloud Infrastructure console using y
 
    ![Main Sign-in age]( img/img001.png)
 
-3. Enter the name of your tenancy, then click on the **Next** button.
+3. Enter the name of your tenancy (aka your account name, not your user name), then click on the **Next** button.
 
    ![Enter tenancy name]( img/img002.png)
 
 4. Oracle Cloud Infrastructure is integrated with Identity Cloud Services, you will see a screen validating your Identity Provider. Enter your username and password. Click **Sign In**.
 
-   ![Usernameand passwor dfields]( img/img003.png)
+   ![Username and password fields]( img/img003.png)
 
 5. When you sign in to the Console, the dashboard is displayed.
 
