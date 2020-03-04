@@ -20,7 +20,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 
 
 ## Lab Assumptions
-- Each participant has been sent two emails, one from Oracle Cloud  with their username and another from the Database PM gmail account with their temporary password.
+- Each participant has been sent two emails, one from Oracle Cloud  with their username and another with the subject SSWorkshop, this contains their temporary password.
 
 
 ## Lab Settings
@@ -147,24 +147,23 @@ You will be using Terraform to create your database environment.
 
     ![](img/linux-compute-stack-1.png)
 
-    Enter the following inforamtion. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
+    **Make sure you have switched to the correct Region.**  Enter the following information. 
 
-    **Make sure you have switched to the correct Region.**
 
     **Choose a Name For Your Instance**
     
-    **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
+    - **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
 
     **Enter Info from your SSWorkshop Email**
-    **Instance Image OCID**: Enter the Image ID you received in your SSWorkshop email
+    - **Instance Image OCID**: Enter the Image ID you received in your SSWorkshop email
 
-    **Public Subnet ID**:  Enter the Subnet ID you received in your SSWorkshop email
+    - **Public Subnet ID**:  Enter the Subnet ID you received in your SSWorkshop email
 
-    **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
+    - **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
     
     **Enter Your Public Key**
 
-    **SSH Public Key**:  Paste the public key you created in the earlier step (it should be one line)
+    - **SSH Public Key**:  Paste the public key you created in the earlier step (it should be one line)
 
 8. Click **Next**.
 
