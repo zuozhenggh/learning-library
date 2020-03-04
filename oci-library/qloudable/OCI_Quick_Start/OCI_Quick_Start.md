@@ -416,7 +416,8 @@ sudo umount /dev/<VOLUME_NAME>
 7. In the Boot Volume Details window Click **Create Instance:**
 
 - **Name your instance**: Enter a name 
-- **Choose an operating system or image source**: use Latest Oracle Linux available.
+- **Choose an operating system or image source**: Leave as is (It should show the boot volume of the terminated instance)
+
 - **Availability Domain**: Select availability domain
 
 **NOTE :** Boot Volume field is set to BOOT VOLUME and to the boot volume you detached from the original Instance.
