@@ -16,7 +16,7 @@
 ## Introduction
 This lab will show you how to login to the cloud and setup your environment using Oracle Resource Manager.  Once the environment setup is complete, you will proceed to the Docker lab.
 
-**PLEASE READ:**  If you already have a compute instance running DB19c configured, skip directly to [Section 5](#section-5-connect-to-your-instance).
+**PLEASE READ:**  If you already have a compute instance (running linux or DB 19c) configured, proceed directly to the [Docker Lab](https://oracle.github.io/learning-library/data-management-library/database/options/docker.html).
 
 
 ## Lab Assumptions
@@ -117,7 +117,7 @@ If you already have an ssh key pair, you may use that to connect to your environ
 You will be using Terraform to create your database environment.
 
 1.  Click on the link below to download the zip file you need to build your enviornment.  
-- [multitenant-compute.tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1LYMqYL4xK0fq4iw1lr0ByzxyOACFQ_viboPmaEFGqM/n/c4u03/b/labfiles/o/multitenant-compute.tf.zip) - Packaged terraform instance creation script for 19C Databases.
+- [linux-compute-london.tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-RNUYctv6aLnWqSEgbDo_CzVpNu5Zy8RW_8T6vW2gx8/n/c4u03/b/labfiles/o/linux-compute-london.tf.zip) - Packaged terraform instance creation script for Linux compute instance in London region.
 
 2.  Save in your downloads folder.
 
@@ -146,6 +146,8 @@ You will be using Terraform to create your database environment.
     ![](img/createstack3.png)
 
     Enter the following inforamtion. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
+
+    **Make sure you have switched to the correct Region.**
 
     **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
 
@@ -234,27 +236,8 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 8. Click Open to begin your session with the instance.
 
 [Back to Top](#table-of-contents)
-
-## Section 5b-Run the Setup Scripts
-
-1.  Copy the following commands into your terminal.  This script takes approximately 30 minutes to run.  It runs in the background so you should be able to exit out while it's running.  T
-
-    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
-
-    ````
-    cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
-    unzip multiscripts.zip; chmod +x *.sh
-    /home/opc/setupenv.sh
-    nohup /home/opc/setupdb.sh &> setupdb.out&
-    ````
-2.  To check the status of the script above run the command below.  This script takes about 30 minutes to complete.  You can also use the unix **jobs** command to see if the script is still running.
-
-    ````
-    tail -f /home/opc/setupdb.out
-    ````
-3.  Once the script is finished,        
-Congratulations!  Now you have the environment to run the In-Memory lab.   You may proceed to the [Docker Lab](https://oracle.github.io/learning-library/data-management-library/database/options/docker.html). 
+      
+Congratulations!  Now you have the environment to run the Docker lab.   You may proceed to the [Docker Lab](https://oracle.github.io/learning-library/data-management-library/database/options/docker.html). 
 
 [Back to Top](#table-of-contents)
 

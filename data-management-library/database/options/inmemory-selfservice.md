@@ -9,14 +9,15 @@
 - [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
 - [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
 - [Section 5-Connect to your instance](#section-5-connect-to-your-instance)
-- [Section 5b-Run the Setup Scripts](#section-5b-run-the-setup-scripts)
+- [Section 5b-Run the DB19c Scripts](#section-5b-run-the-db19c-scripts)
+- [Section 5c-Run the In Memory Scripts](#section-5c-run-the-in-memory-scripts)
 
 
 
 ## Introduction
 This lab will show you how to login to the cloud and setup your environment using Oracle Resource Manager.  Once the environment setup is complete, you will proceed to the Multitenant lab.
 
-**PLEASE READ:**  If you already have a compute instance running DB19c configured, skip directly to [Section 5](#section-5-connect-to-your-instance).
+**PLEASE READ:**  If you already have a compute instance (running the DB19c Image) configured, skip directly to [Section 5c-Run the In Memory Scripts](#section-5c-run-the-in-memory-scripts).
 
 
 ## Lab Assumptions
@@ -235,7 +236,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
 [Back to Top](#table-of-contents)
 
-## Section 5b-Run the Setup Scripts
+## Section 5b-Run the DB19c Scripts
 
 1.  Copy the following commands into your terminal.  This script takes approximately 30 minutes to run.  It runs in the background so you should be able to exit out while it's running.  T
 
@@ -253,7 +254,9 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     ````
     tail -f /home/opc/setupdb.out
     ````
-1.  Run this next command to setup the schemas for In-Memory.   This script takes about 15 minutes to complete.
+
+## Section 5c-Run the In Memory Scripts
+1.  Run this command to setup the schemas for In-Memory.   This script takes about 15 minutes to complete.
     ````
     cd /home/opc/
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/3UHs8zJo7p-gLc3HEfci6SkYAH81ZQNxTgrQvASP0Js/n/c4u03/b/labfiles/o/inmemoryscript.sh
@@ -266,8 +269,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     tail -f /home/opc/setupinmem.out
     ````
 
-3.  Once the script is finished,        
-Congratulations!  Now you have the environment to run the In-Memory lab.   You may proceed to the [In-Memory Lab](https://oracle.github.io/learning-library/data-management-library/database/options/in-memory.html). 
+3.  Once the script is finished, congratulations!  Now you have the environment to run the In-Memory lab.   You may proceed to the [In-Memory Lab](https://oracle.github.io/learning-library/data-management-library/database/options/in-memory.html). 
 
 [Back to Top](#table-of-contents)
 
