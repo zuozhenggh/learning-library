@@ -30,6 +30,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 - **VCN**: \<Provided by Oracle\>
 - **Region**: \<Provided by Oracle\>
 - **Subnet**: \<Provided by Oracle\>
+- **Image ID**: \<Provided by Oracle\>
 
 
 ## Section 1-Login to the Oracle Cloud
@@ -116,9 +117,8 @@ If you already have an ssh key pair, you may use that to connect to your environ
 ## Section 3-Login and Create Stack using Resource Manager
 You will be using Terraform to create your database environment.
 
-1.  Click on the link below to download the zip file you need to build your enviornment.  Make sure to download the zip file based on the region you were assigned.
-- [London - Linux Compute](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-RNUYctv6aLnWqSEgbDo_CzVpNu5Zy8RW_8T6vW2gx8/n/c4u03/b/labfiles/o/linux-compute-london.tf.zip) - Packaged terraform instance creation script for Linux compute instance in London region
-- [Frankfurt - Linux Compute](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-jM_i9oSbEi4Lmz73y19_lfIn4j3dH_mab_85fH-iEg/n/c4u03/b/labfiles/o/linux-compute-fra.tf.zip) - Packaged terraform instance creation script for Linux compute instance in London region.
+1.  Click on the link below to download the zip file you need to build your enviornment.  
+- [Linux Compute](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1SFA2T-3XMQybMzMbcVr5v0xvyszp0flP8BqEOzCa8A/n/c4u03/b/labfiles/o/linux-compute.zip) - Packaged terraform instance creation script for Linux compute instance in London region.
 
 
 2.  Save in your downloads folder.
@@ -145,18 +145,25 @@ You will be using Terraform to create your database environment.
 
 7.  Click **Next**.
 
-    ![](img/createstack3.png)
+    ![](img/linux-compute-stack-1.png)
 
     Enter the following inforamtion. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
 
     **Make sure you have switched to the correct Region.**
 
-    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
-
-    **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
+    **Choose a Name For Your Instance**
     
+    **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
+
+    **Enter Info from your SSWorkshop Email**
+    **Instance Image OCID**: Enter the Image ID you received in your SSWorkshop email
+
+    **Public Subnet ID**:  Enter the Subnet ID you received in your SSWorkshop email
+
     **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
     
+    **Enter Your Public Key**
+
     **SSH Public Key**:  Paste the public key you created in the earlier step (it should be one line)
 
 8. Click **Next**.
