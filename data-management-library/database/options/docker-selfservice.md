@@ -116,8 +116,10 @@ If you already have an ssh key pair, you may use that to connect to your environ
 ## Section 3-Login and Create Stack using Resource Manager
 You will be using Terraform to create your database environment.
 
-1.  Click on the link below to download the zip file you need to build your enviornment.  
-- [linux-compute-london.tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-RNUYctv6aLnWqSEgbDo_CzVpNu5Zy8RW_8T6vW2gx8/n/c4u03/b/labfiles/o/linux-compute-london.tf.zip) - Packaged terraform instance creation script for Linux compute instance in London region.
+1.  Click on the link below to download the zip file you need to build your enviornment.  Make sure to download the zip file based on the region you were assigned.
+- [London - Linux Compute](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-RNUYctv6aLnWqSEgbDo_CzVpNu5Zy8RW_8T6vW2gx8/n/c4u03/b/labfiles/o/linux-compute-london.tf.zip) - Packaged terraform instance creation script for Linux compute instance in London region
+- [Frankfurt - Linux Compute](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-jM_i9oSbEi4Lmz73y19_lfIn4j3dH_mab_85fH-iEg/n/c4u03/b/labfiles/o/linux-compute-fra.tf.zip) - Packaged terraform instance creation script for Linux compute instance in London region.
+
 
 2.  Save in your downloads folder.
 
