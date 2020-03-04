@@ -104,24 +104,20 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
 ## Section 2b-Run the Setup Scripts
 
-1.  Copy the following commands into your terminal.   
-
-    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
-
+1.  Run this command to setup the schemas for In-Memory.   This script takes about 15 minutes to complete.
     ````
     cd /home/opc/
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/3UHs8zJo7p-gLc3HEfci6SkYAH81ZQNxTgrQvASP0Js/n/c4u03/b/labfiles/o/inmemoryscript.sh
     nohup /home/opc/inmemoryscript.sh &> setupinmem.out&
     ````
 
-2.  To check the status of the script above run the command below.  This script takes about 15 minutes to complete.  You can also use the unix **jobs** command to see if the script is still running.
+2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.
 
     ````
     tail -f /home/opc/setupinmem.out
     ````
 
-3.  Once the script is finished,        
-Congratulations!  Now you have the environment to run the In-Memory lab.   You may proceed to the [In-Memory Lab](https://oracle.github.io/learning-library/data-management-library/database/options/in-memory.html). 
+3.  Once the script is finished, congratulations!  Now you have the environment to run the In-Memory lab.   You may proceed to the [In-Memory Lab](https://oracle.github.io/learning-library/data-management-library/database/options/in-memory.html). 
 
 [Back to Top](#table-of-contents)
 
