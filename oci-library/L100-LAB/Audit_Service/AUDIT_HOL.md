@@ -1,14 +1,12 @@
 # OCI Audit Service
   
-## Table of Contents
-
-[Overview](#overview)
-
-[Pre-Requisites](#pre-requisites)
-
-[Practice-1: Sign in to OCI Console and Create Object Storage Bucket](#practice-1-sign-in-to-oci-console-and-create-object-storage-bucket)
-
-[Practice-2: Upload Object and Check Audit logs](#practice-2-upload-object-and-check-audit-logs)
+- [OCI Audit Service](#oci-audit-service)
+  - [Overview](#overview)
+  - [Pre-Requisites](#pre-requisites)
+  - [Practice-1: Sign in to OCI Console and Create Object Storage Bucket](#practice-1-sign-in-to-oci-console-and-create-object-storage-bucket)
+  - [Practice-2: Upload Object and Check Audit logs](#practice-2-upload-object-and-check-audit-logs)
+  - [Conclusion](#conclusion)
+  - [Learn More](#learn-more)
 
 ## Overview
 
@@ -77,10 +75,18 @@ Ensure you have below information available:
 
 7. Select the file, then click **Upload Object** in the Dialog box.
 
-8. Using the main OCI menu, select **Governance -> Audit**. Scroll down or type the bucket name in 
-Keyword section. You can choose other options such as dates and Request Action Type. For this lab we will leave them as default. Audit logs for the Storage bucket should be visible
+8. Using the main OCI menu, select **Governance -> Audit**. Scroll down or type the bucket name in
+Keyword section. You can choose other options such as dates and Request Action Type. For this lab
+we will leave them as default. Audit logs for the Storage bucket should be visible.
 
-![Menu Governance -> Audit]( img/AUDIT008.PNG)
-![Audit Events]( img/AUDIT009.PNG)
+![Menu Governance -> Audit](img/AUDIT008.PNG)
+![Audit Events](img/AUDIT009.PNG)
 
-***You have utilized OCI’s Audit service to extract events specific to Storage bucket created. Audit service can be used to monitor operations performed on OCI resources and can assist in trouble shooting your OCI environment***
+## Conclusion
+
+You have utilized OCI’s Audit service to extract events specific to Storage bucket created. Audit service can be used to monitor operations performed on OCI resources and can assist in trouble shooting your OCI environment.
+
+## Learn More
+
+You can learn more about the Audit Service [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Audit/Concepts/auditoverview.htm)
+To see more about the log events in the Audit Service, [click this link](https://docs.cloud.oracle.com/en-us/iaas/Content/Audit/Tasks/viewinglogevents.htm)
