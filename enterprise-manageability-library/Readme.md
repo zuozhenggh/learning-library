@@ -2,7 +2,7 @@
 
 # Welcome to Oracle Enterprise and Cloud Manageability Workshops
 
-These labs are designed so each section can be done independently. Please look for the order of execution recommended by your instructor when attending a roadshow workshop. Note: there are a number of assumptions associated and documented for these labs. Please pay attention to those.
+These workshops are designed so each section can be done independently. Please look for the order of execution recommended by your instructor when attending a roadshow workshop. Note: there are a number of assumptions associated and documented for these workshops. Please pay attention to those.
 
 PLEASE DO NOT EXPORT OR DELETE THE EM CUSTOM IMAGE - IT WILL REMOVE IT FOR EVERYONE
 
