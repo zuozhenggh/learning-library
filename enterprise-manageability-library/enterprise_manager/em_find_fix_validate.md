@@ -512,12 +512,19 @@ We have already created a capture and we have created a Replay task where we hav
 
     ![](media/64b5a3171c5a513896dc14bfbe294e8d.png)
 
-10.  A new row appears with Ignore Preprocess warning and continue to check only
-    major database version. Check the **Check** box and click the **Next** button.
+10.  A new row appears with Ignore Preprocess warning and continue to check only major database version. Check the **Check** box and click the **Next** button.
+![](media/945e4dd4f68429f39e1380bf4309f91f.png)
 
-    ![](media/945e4dd4f68429f39e1380bf4309f91f.png)
 
-11.  The remap connection page allow us to remap any connections from the production connect string to the test connect string. From Enterprise Manager there are three different methods. Provide a single connect descriptor for all connections. Use a single TNS net service name or separate connect descriptors. In this case we have captured the workload from all PDB’s in a CDB and cannot use single connect descriptors. Each connect descriptor needs to be mapped to its own descriptor. Click the **Next** button.
+11.  The remap connection page enables you to remap any connections from the production connect string to the test connect string. From Enterprise Manager there are three different methods:
+ 
+ &ensp; &ensp; &ensp; &ensp; A. Provide a single connect descriptor for all connections.
+
+&ensp; &ensp; &ensp; &ensp; B. Use a single TNS net service name.
+
+&ensp; &ensp; &ensp; &ensp; C. Use a separate connect descriptors.
+
+ In this case we have captured the workload from all PDB’s in a CDB and cannot use single connect descriptors. Each connect descriptor needs to be mapped to it’s own descriptor Click the **Next** button.
 ![](media/eb111749b3668082f01706dca6bf7bc5.png)
 
 12.  The replay option screen provides the ability to change characteristics of the replay. Enterprise Manager provides three synchronization modes for backward compatibilities. Object ID is deprecated and functionality has been incorporated into SCN synchronization. Off which is used for this replay, is for later release changed to Time. 
