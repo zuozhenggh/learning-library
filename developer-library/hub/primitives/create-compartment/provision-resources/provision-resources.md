@@ -41,6 +41,7 @@ Creating a **Stack** involves uploading the Terraform configuration file, provid
 	* From the **Create in Compartment** drop-down, select the **Compartment** where you want to create the stack.
 
 	* Select the **Terraform Version** obtained from [**Before You Begin** -> **Required Parameters**] (?lab=about-this#RequiredParameters) section.
+
 		>The Terraform version is not backwards compatible so ensure you select the correct version.
 
 	* Optionally, you can apply tags.
