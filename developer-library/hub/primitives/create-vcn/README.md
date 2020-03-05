@@ -8,8 +8,6 @@ When you sign up for Oracle Cloud Infrastructure, Oracle creates your tenancy, w
 
 This template allows you to create a compartment in Oracle Cloud.
 
-> For more details, refer to Oracle Cloud Infrastructure Documentation [Managing Compartments](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
-
 ## Before You Begin
 
 Before you begin creating resources in Oracle Cloud Infrastructure, ensure that you have the following:
@@ -33,7 +31,7 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 ## Architecture
 
-![](./images/oci-compartments.png)
+![](./about-this/images/oci-compartments.png)
 
 ## Steps
 
