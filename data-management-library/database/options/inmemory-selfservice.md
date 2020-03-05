@@ -8,8 +8,8 @@
 - [Section 2-Generate an SSH key pair](#section-2-generate-an-ssh-key-pair)
 - [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
 - [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
-- [Section 5-Connect to your instance](#section-5-connect-to-your-instance)
-- [Section 5b-Run the DB19c Scripts](#section-5b-run-the-db19c-scripts)
+- [Section 5a-Connect to your instance](#section-5a-connect-to-your-instance)
+- [Section 5b-Download the Lab Files](#section-5b-download-the-lab-files)
 - [Section 5c-Run the In Memory Scripts](#section-5c-run-the-in-memory-scripts)
 
 
@@ -187,7 +187,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 [Back to Top](#table-of-contents)
 
 
-## Section 5-Connect to your instance
+## Section 5a-Connect to your instance
 
 Based on your laptop config, choose the appropriate step to connect to your instance.  
 
@@ -204,7 +204,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     ````
     ![](img/ssh-first-time.png) 
 
-3.  Continue to [Section 5b-Run the Setup Scripts](#section-5b-run-the-setup-scripts)
+3.  Continue to [Section 5b-Run the DB19c Scripts](#section-5b-run-the-db19c-scripts)
 
 ### Connecting via Windows
 
@@ -235,17 +235,25 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
 [Back to Top](#table-of-contents)
 
-## Section 5b-Run the DB19c Scripts
+## Section 5b-Download the Lab Files
 
-1.  Copy the following commands into your terminal.  This script takes approximately 30 minutes to run.  It runs in the background so you should be able to exit out while it's running.  T
-
-    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+1.  Copy the following commands into your terminal to download the files needed for this lab.  
 
     ````
     cd /home/opc/
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
     unzip multiscripts.zip; chmod +x *.sh
     /home/opc/setupenv.sh
+    ````
+2. If you are running this on an instance already running the configured DB19c image, skip section 5c and go straight to 5d when finished.  Otherwise, proceed to the next section.
+
+## Section 5b-Run the DB19c Scripts
+
+1.  Copy the following commands into your terminal to configure DB19c on your image.  This script takes approximately 30 minutes to run.  It runs in the background so you should be able to exit out while it's running.  
+
+    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+
+    ````
     nohup /home/opc/setupdb.sh &> setupdb.out&
     ````
 2.  To check the status of the script above run the command below.  This script takes about 30 minutes to complete.  You can also use the unix **jobs** command to see if the script is still running.

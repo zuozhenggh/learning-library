@@ -8,7 +8,7 @@
 - [Section 2-Generate an SSH key pair](#section-2-generate-an-ssh-key-pair)
 - [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
 - [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
-- [Section 5-Connect to your instance](#section-5-connect-to-your-instance)
+- [Section 5a-Connect to your instance](#section-5a-connect-to-your-instance)
 - [Section 5b-Download the Setup Scripts](#section-5b-download-the-setup-scripts)
 - [Section 5c-Run the DB19c Setup Scripts](#section-5c-run-the-db19c-setup-scripts)
 - [Section 5d-Run the Multitenant Setup Scripts](#section-5d-run-the-multitenant-setup-scripts)
@@ -187,7 +187,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 [Back to Top](#table-of-contents)
 
 
-## Section 5-Connect to your instance
+## Section 5a-Connect to your instance
 
 Based on your laptop config, choose the appropriate step to connect to your instance.  
 
