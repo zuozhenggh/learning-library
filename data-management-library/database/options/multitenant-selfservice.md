@@ -9,13 +9,17 @@
 - [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
 - [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
 - [Section 5-Connect to your instance](#section-5-connect-to-your-instance)
-- [Section 5b-Run the Setup Scripts](#section-5b-run-the-setup-scripts)
+- [Section 5b-Download the Setup Scripts](#section-5b-download-the-setup-scripts)
+- [Section 5c-Run the DB19c Setup Scripts](#section-5c-run-the-db19c-setup-scripts)
+- [Section 5d-Run the Multitenant Setup Scripts](#section-5d-run-the-multitenant-setup-scripts)
+
 
 
 
 ## Introduction
 This lab will show you how to login to the cloud and setup your environment using Oracle Resource Manager.  Once the environment setup is complete, you will proceed to the Multitenant lab.
 
+**PLEASE READ:**  If you already have a compute instance (running the DB19c Image) configured, go directly to [Section 5b-Download the Setup Scripts](#section-5b-download-the-setup-scripts) run it and Section 5d.
 
 ## Lab Assumptions
 - Each participant has been sent two emails, one from Oracle Cloud  with their username and another with the subject SSWorkshop, this contains their temporary password.
@@ -24,7 +28,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 - **Tenancy**:  c4u03
 - **Username/Password**:  Sent via email
 - **Compartment**: \<Provided by Oracle\>
-- **VCN**: \<Provided by Oracle\>
+- **Subnet ID**: \<Provided by Oracle\>
 - **Region**: \<Provided by Oracle\>
 
 
@@ -231,9 +235,9 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
 [Back to Top](#table-of-contents)
 
-## Section 5b-Run the Setup Scripts
+## Section 5b-Download the Setup Scripts
 
-1.  Copy the following commands into your terminal.  This script takes approximately 1.5hrs to run.  It is a series of scripts that create several databases in multiple ORACLE HOMES so that you can run both the Multitenant and Advanced Multitenant labs.  The last two scripts are run in the background so you should be able to exit out while it's running.  The setupdb.sh script takes approximately 25 minutes to run.  The setupcdb.sh takes 60 minutes to run, both run in the background.  
+1.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
 
     Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
 
@@ -242,6 +246,15 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
     unzip multiscripts.zip; chmod +x *.sh
     /home/opc/setupenv.sh
+    ````
+
+## Section 5c-Run the DB19c Setup Scripts
+If this is a new compute instance, run the following script to configure the 19c database.  Copy the following commands into your terminal.  This script runs in the background so you should be able to exit out while it's running, it takes approximately 25 minutes to run.  
+
+Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+
+1. Run the command below to configure the database.
+    ````
     nohup /home/opc/setupdb.sh &> setupdb.out&
     ````
 2.  To check the status of the script above run the command below.  This script takes about 30 minutes to complete.  You can also use the unix **jobs** command to see if the script is still running.
@@ -249,7 +262,10 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     ````
     tail -f /home/opc/setupdb.out
     ````
-2.  Once the database software has been installed, run the script to create the container databases and pluggable databases needed for the next lab.
+## Section 5d-Run the Multitenant Setup Scripts
+The setupcdb.sh takes 60 minutes to run and is also setup to run in the background. 
+
+1.  Once the database software has been configured, run the script to create the container databases and pluggable databases needed for the Multitenant lab.
 
      ````
     nohup /home/opc/setupcontainers.sh &> setupcontainers.out&
@@ -262,6 +278,8 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
         ````
 
 3.  Once the script is finished,        
+
+
 Congratulations!  Now you have the environment to run the Multitenant labs.   You may proceed to the [Multitenant Lab](https://oracle.github.io/learning-library/data-management-library/database/options/multitenant.html). 
 
 [Back to Top](#table-of-contents)

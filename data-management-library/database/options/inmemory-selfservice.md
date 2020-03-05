@@ -28,9 +28,8 @@ This lab will show you how to login to the cloud and setup your environment usin
 - **Tenancy**:  c4u03
 - **Username/Password**:  Sent via email
 - **Compartment**: \<Provided by Oracle\>
-- **VCN**: \<Provided by Oracle\>
 - **Region**: \<Provided by Oracle\>
-- **Subnet**: \<Provided by Oracle\>
+- **Subnet ID**: \<Provided by Oracle\>
 
 
 ## Section 1-Login to the Oracle Cloud
