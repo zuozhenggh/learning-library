@@ -10,14 +10,15 @@
 - [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
 - [Section 5a-Connect to your instance](#section-5a-connect-to-your-instance)
 - [Section 5b-Download the Lab Files](#section-5b-download-the-lab-files)
-- [Section 5c-Run the In Memory Scripts](#section-5c-run-the-in-memory-scripts)
+- [Section 5c-Run the DB19c Scripts](#section-5c-run-the-db19c-scripts)
+- [Section 5d-Run the In Memory Scripts](#section-5d-run-the-in-memory-scripts)
 
 
 
 ## Introduction
 This lab will show you how to login to the cloud and setup your environment using Oracle Resource Manager.  Once the environment setup is complete, you will proceed to the Multitenant lab.
 
-**PLEASE READ:**  If you already have a compute instance (running the DB19c Image) configured, skip directly to [Section 5c-Run the In Memory Scripts](#section-5c-run-the-in-memory-scripts).
+**PLEASE READ:**  If you already have a compute instance (running the DB19c Image) configured, skip directly to [Section 5b-Download the Lab Files](#section-5b-download-the-lab-files).
 
 
 ## Lab Assumptions
@@ -247,7 +248,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     ````
 2. If you are running this on an instance already running the configured DB19c image, skip section 5c and go straight to 5d when finished.  Otherwise, proceed to the next section.
 
-## Section 5b-Run the DB19c Scripts
+## Section 5c-Run the DB19c Scripts
 
 1.  Copy the following commands into your terminal to configure DB19c on your image.  This script takes approximately 30 minutes to run.  It runs in the background so you should be able to exit out while it's running.  
 
@@ -262,7 +263,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     tail -f /home/opc/setupdb.out
     ````
 
-## Section 5c-Run the In Memory Scripts
+## Section 5d-Run the In Memory Scripts
 1.  Run this command to setup the schemas for In-Memory.   This script takes about 15 minutes to complete.
     ````
     cd /home/opc/
