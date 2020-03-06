@@ -25,20 +25,20 @@ If you already have an account or an active trial, you may skip this section.  I
 
 - Open up a browser and navigate to www.oracle.com. Click the **Oracle Cloud Free Tier** button in the upper right hand corner.
 
-    ![](images/free-tier-account.png)
+    ![](free-tier-account.png)
 
 - Click on the **Start for Free** button
 
-    ![](images/free-tier-account-2.png)
+    ![](free-tier-account-2.png)
 
 - Follow the instructions to create your account.  Be sure to enter an email you can access.  
 
-  ![](images/free-tier-account-3.png)
+  ![](free-tier-account-3.png)
 
 
 - Once you complete the signup, you will receive the **Your Cloud Account is fully provisioned** Email, make note of your **Username and Cloud Account Name**.   *Note: `Usernames are usually your email address.`*  You can login by clicking the Sign In button or access it from any browser.
 
-    ![](images/signup-email-provisioned.png)
+    ![](signup-email-provisioned.png)
 
 ## Login to Oracle Cloud Account
 
@@ -46,19 +46,19 @@ If you already have an account or an active trial, you may skip this section.  I
 
     [https://www.oracle.com/](https://www.oracle.com/)
 
-    ![](images/login-screen.png)
+    ![](login-screen.png)
 
 - Click the icon in the upper right corner.  Click on **Sign in to Cloud** at the bottom of the drop down.  *NOTE:  Do NOT click the Sign-In button, this will take you to Single Sign-On, not the Oracle Cloud*
 
-    ![](images/signup.png)    
+    ![](signup.png)    
 
 - Enter your **Cloud Account Name** in the input field and click the **My Services** button. If you have a Free Tier account provisioned, this can be found in your welcome email. Otherwise, this will be supplied by your workshop instructor.
 
-    ![](images/login-tenancy.png)  
+    ![](login-tenancy.png)  
 
 - Enter your **Username** and **Password** in the input fields and click **Sign In**.
 
-    ![](images/cloud-login.png) 
+    ![](cloud-login.png) 
 
   **NOTE**: You will likely be prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
