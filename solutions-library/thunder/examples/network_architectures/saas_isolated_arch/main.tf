@@ -7,19 +7,10 @@ provider "oci" {
   region           = var.provider_oci.region
 }
 
-module "iam" {
-  source        = "../../modules/iam"
-  comp_params   = var.comp_params
-  user_params   = var.user_params
-  group_params  = var.group_params
-  policy_params = var.policy_params
-  auth_provider = var.provider_oci
-}
-
 module "network" {
-  source           = "../../modules/network"
+  source           = "../../../modules/network"
   vcn_params       = var.vcn_params
-  compartment_ids  = module.iam.compartments
+  compartment_ids  = var.compartment_ids
   igw_params       = var.igw_params
   ngw_params       = var.ngw_params
   rt_params        = var.rt_params
@@ -31,15 +22,10 @@ module "network" {
   drg_params       = var.drg_params
 }
 
-module "adw" {
-  source          = "../../modules/adw"
-  adw_params      = var.adw_params
-  compartment_ids = module.iam.compartments
-}
 
 module "compute" {
-  source              = "../../modules/instances"
-  compartment_ids     = module.iam.compartments
+  source              = "../../../modules/instances"
+  compartment_ids     = var.compartment_ids
   subnet_ids          = module.network.subnets_ids
   instance_params     = var.instance_params
   bv_params           = var.bv_params
@@ -50,9 +36,16 @@ module "compute" {
   region              = var.provider_oci.region
 }
 
+# module "dbaas" {
+#   source               = "../../../modules/dbaas"
+#   database_params      = var.database_params
+#   compartment_ids      = var.compartment_ids
+#   subnet_ids           = module.network.subnets_ids
+# }
+
 module "load-balancer" {
-  source               = "../../modules/load-balancer"
-  compartment_ids      = module.iam.compartments
+  source               = "../../../modules/load-balancer"
+  compartment_ids      = var.compartment_ids
   subnet_ids           = module.network.subnets_ids
   lb_params            = var.lb_params
   backend_sets         = var.backend_sets
@@ -62,9 +55,21 @@ module "load-balancer" {
   private_ip_instances = module.compute.all_private_ips
 }
 
-module "object-storage" {
-  source        = "../../modules/object-storage"
-  compartments  = module.iam.compartments
-  bucket_params = var.bucket_params
-  oci_provider  = var.provider_oci
+module "ipsec" {
+  source          = "../../../modules/ipsec"
+  ipsec_params    = var.ipsec_params
+  compartments    = var.compartment_ids
+  drgs            = module.network.drgs
 }
+
+# module "fastconnect" {
+#   source                   = "../../../modules/fastconnect"
+#   compartments             = var.compartment_ids
+#   drgs                     = module.network.drgs
+#   cc_group                 = var.cc_group
+#   cc                       = var.cc
+#   private_vc_no_provider   = var.private_vc_no_provider
+#   private_vc_with_provider = var.private_vc_with_provider
+#   public_vc_no_provider    = var.public_vc_no_provider
+#   public_vc_with_provider  = var.public_vc_with_provider
+# }

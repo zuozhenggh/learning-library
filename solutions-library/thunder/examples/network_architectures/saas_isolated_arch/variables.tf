@@ -3,39 +3,6 @@ variable "provider_oci" {
   type = map(string)
 }
 
-variable "comp_params" {
-  type = map(object({
-    name          = string
-    description   = string
-    enable_delete = bool
-  }))
-}
-
-variable "user_params" {
-  type = map(object({
-    name        = string
-    description = string
-    group_name  = string
-  }))
-}
-
-variable "group_params" {
-  type = map(object({
-    name        = string
-    description = string
-  }))
-}
-
-variable "policy_params" {
-  type = map(object({
-    name        = string
-    description = string
-    statements  = list(string)
-  }))
-}
-
-
-
 variable "vcn_params" {
   description = "VCN Parameters: vcn_cidr, display_name, dns_label"
   type = map(object({
@@ -44,6 +11,10 @@ variable "vcn_params" {
     display_name     = string
     dns_label        = string
   }))
+}
+
+variable "compartment_ids" {
+  type = map(string)
 }
 
 variable "igw_params" {
@@ -102,6 +73,7 @@ variable "sl_params" {
     }))
   }))
 }
+
 
 variable "nsg_params" {
   type = map(object({
@@ -172,20 +144,6 @@ variable "drg_params" {
     rt_names    = list(string)
   }))
 }
-
-variable "adw_params" {
-  type = map(object({
-    compartment_name    = string
-    cpu_core_count      = number
-    size_in_tbs         = number
-    db_name             = string
-    db_workload         = string
-    enable_auto_scaling = bool
-    is_free_tier        = bool
-  }))
-}
-
-
 variable "linux_images" {
   type = map(string)
 }
@@ -276,49 +234,6 @@ variable "database_params" {
   }))
 }
 
-
-variable "fss_params" {
-  type = map(object({
-    ad               = number
-    compartment_name = string
-    name             = string
-  }))
-}
-
-variable "mt_params" {
-  type = map(object({
-    ad               = number
-    compartment_name = string
-    name             = string
-    subnet_name      = string
-  }))
-}
-
-variable "export_params" {
-  type = map(object({
-    export_set_name = string
-    filesystem_name = string
-    path            = string
-    export_options = list(object({
-      source   = string
-      access   = string
-      identity = string
-      use_port = bool
-    }))
-  }))
-}
-
-
-variable "instance_principal_params" {
-  type = map(object({
-    dg_description     = string
-    dg_name            = string
-    policy_description = string
-    policy_name        = string
-    instance_name      = string
-  }))
-}
-
 variable "lb_params" {
   type = map(object({
     shape            = string
@@ -353,40 +268,12 @@ variable "backend_params" {
   type = map(any)
 }
 
-
-variable "bucket_params" {
+variable "ipsec_params" {
   type = map(object({
-    compartment_name = string
-    name             = string
-    access_type      = string
-    storage_tier     = string
-    events_enabled   = bool
-  }))
-}
-
-variable "zone_params" {
-  description = "The parameters of the zones: zone_name, zone_type, compartment_id"
-  type = map(object({
-    compartment_name = string
-    zone_name        = string
-    zone_type        = string
-    external_masters = list(object({
-      ip = string
-    }))
-  }))
-}
-
-variable "dns_records_params" {
-  description = "The DNS records for the domains(zones)"
-  type = map(object({
-    zone_name     = string
-    domain        = string
-    rtype         = string
-    ttl           = number
-    rdata         = string
-    use_lb        = bool
-    use_instance  = bool
-    lb_name       = string
-    instance_name = string
+    comp_name      = string
+    cpe_ip_address = string
+    name           = string
+    drg_name       = string
+    static_routes  = list(string)
   }))
 }

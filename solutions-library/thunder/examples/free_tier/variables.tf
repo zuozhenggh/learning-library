@@ -13,16 +13,16 @@ variable "comp_params" {
 
 variable "user_params" {
   type = map(object({
-    name          = string
-    description   = string
-    group_name    = string
+    name        = string
+    description = string
+    group_name  = string
   }))
 }
 
 variable "group_params" {
   type = map(object({
-    name          = string
-    description   = string
+    name        = string
+    description = string
   }))
 }
 
@@ -38,17 +38,17 @@ variable "policy_params" {
 
 variable "vcn_params" {
   description = "VCN Parameters: vcn_cidr, display_name, dns_label"
-  type        = map(object({
-    vcn_cidr          = string
-    compartment_name  = string
-    display_name      = string
-    dns_label         = string
+  type = map(object({
+    vcn_cidr         = string
+    compartment_name = string
+    display_name     = string
+    dns_label        = string
   }))
 }
 
 variable "igw_params" {
   description = "Placeholder for vcn index association and igw name"
-  type        = map(object({
+  type = map(object({
     vcn_name     = string
     display_name = string
   }))
@@ -56,7 +56,7 @@ variable "igw_params" {
 
 variable "ngw_params" {
   description = "Placeholder for vcn index association and ngw name"
-  type        = map(object({
+  type = map(object({
     vcn_name     = string
     display_name = string
   }))
@@ -64,10 +64,10 @@ variable "ngw_params" {
 
 variable "rt_params" {
   description = "Placeholder for vcn index association, rt name, route rules"
-  type        = map(object({
+  type = map(object({
     vcn_name     = string
     display_name = string
-    route_rules  = list(object({
+    route_rules = list(object({
       destination = string
       use_igw     = bool
       igw_name    = string
@@ -78,10 +78,10 @@ variable "rt_params" {
 
 variable "sl_params" {
   description = "Security List Params"
-  type        = map(object({
+  type = map(object({
     vcn_name     = string
-    display_name  = string
-    egress_rules  = list(object({
+    display_name = string
+    egress_rules = list(object({
       stateless   = string
       protocol    = string
       destination = string
@@ -105,22 +105,22 @@ variable "sl_params" {
 
 variable "nsg_params" {
   type = map(object({
-    vcn_name      = string
-    display_name  = string
+    vcn_name     = string
+    display_name = string
   }))
 }
 
 variable "nsg_rules_params" {
   type = map(object({
-    nsg_name          = string
-    protocol          = string
-    stateless         = string
-    direction         = string
-    source            = string
-    source_type       = string
-    destination       = string
-    destination_type  = string
-    tcp_options       = list(object({
+    nsg_name         = string
+    protocol         = string
+    stateless        = string
+    direction        = string
+    source           = string
+    source_type      = string
+    destination      = string
+    destination_type = string
+    tcp_options = list(object({
       destination_ports = list(object({
         min = number
         max = number
@@ -146,13 +146,30 @@ variable "nsg_rules_params" {
 
 variable "subnet_params" {
   type = map(object({
-    display_name               = string
-    cidr_block                 = string
-    dns_label                  = string
-    is_subnet_private          = bool
-    sl_name                    = string
-    rt_name                    = string
-    vcn_name                   = string
+    display_name      = string
+    cidr_block        = string
+    dns_label         = string
+    is_subnet_private = bool
+    sl_name           = string
+    rt_name           = string
+    vcn_name          = string
+  }))
+}
+
+variable "lpg_params" {
+  type = map(object({
+    acceptor     = string
+    requestor    = string
+    display_name = string
+  }))
+}
+
+variable "drg_params" {
+  type = map(object({
+    name        = string
+    vcn_name    = string
+    cidr_rt     = string
+    rt_names    = list(string)
   }))
 }
 
@@ -175,7 +192,7 @@ variable "linux_images" {
 
 variable "instance_params" {
   description = "Placeholder for the parameters of the instances"
-  type        = map(object({
+  type = map(object({
     ad                   = number
     shape                = string
     hostname             = string
@@ -192,13 +209,13 @@ variable "instance_params" {
 
 variable "bv_params" {
   description = "Placeholder the bv parameters"
-  type        = map(object({
-    ad             = number
-    display_name   = string
-    bv_size        = number
-    instance_name  = string
-    device_name    = string
-    freeform_tags  = map(string)
+  type = map(object({
+    ad            = number
+    display_name  = string
+    bv_size       = number
+    instance_name = string
+    device_name   = string
+    freeform_tags = map(string)
   }))
 }
 
@@ -208,7 +225,7 @@ variable "windows_images" {
 
 variable "win_instance_params" {
   description = "Placeholder for windows instances"
-  type        = map(object({
+  type = map(object({
     ad                   = number
     shape                = string
     hostname             = string
@@ -224,22 +241,22 @@ variable "win_instance_params" {
 
 variable "win_bv_params" {
   description = "Placeholder for windows bv"
-  type        = map(object({
-    ad             = number
-    display_name   = string
-    bv_size        = number
-    instance_name  = string
-    freeform_tags  = map(string)
+  type = map(object({
+    ad            = number
+    display_name  = string
+    bv_size       = number
+    instance_name = string
+    freeform_tags = map(string)
   }))
 }
 
 variable "lb_params" {
   type = map(object({
-    shape             = string
-    compartment_name  = string
-    subnet_names      = list(string)
-    display_name      = string
-    is_private        = bool
+    shape            = string
+    compartment_name = string
+    subnet_names     = list(string)
+    display_name     = string
+    is_private       = bool
   }))
 }
 
@@ -270,10 +287,10 @@ variable "backend_params" {
 
 variable "bucket_params" {
   type = map(object({
-    compartment_name  = string
-    name              = string
-    access_type       = string
-    storage_tier      = string
-    events_enabled    = bool
+    compartment_name = string
+    name             = string
+    access_type      = string
+    storage_tier     = string
+    events_enabled   = bool
   }))
 }
