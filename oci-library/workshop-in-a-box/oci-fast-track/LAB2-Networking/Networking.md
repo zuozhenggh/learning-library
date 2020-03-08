@@ -39,14 +39,14 @@ The networking creation process is very quick, and when finished, will be shown 
 
 ![](images/vcn_creation.png)
 
-##Subnets inside a VCN
+## Subnets Inside a VCN
 A VCN is a software-defined network that you set up in the Oracle Cloud Infrastructure data centers in a particular region. A subnet is a subdivision of a VCN in an Availability Domain. For an overview of VCNs, allowed size, default VCN components, and scenarios for using a VCN, see Overview of Networking.
 
 Each subnet in a VCN consists of a contiguous range of IP addresses that do not overlap with other subnets in the VCN. For example: 172.16.1.0/24. The first two IP addresses and the last in the subnet's CIDR are reserved by the Networking service. You can't change the size of the subnet after creation, so it's important to think about the size of subnets you need before creating them. 
 
 VCN is a cross-AD object. Inside it, we can create objects that will be positioned in any AD, inside the same region.
 
-##Internet Gateway 
+## Internet Gateway
 You can think of an Internet Gateway as a virtual router connecting the edge of the cloud network with the internet. Traffic that originates in your VCN and is destined for a public IP address outside the VCN goes through the Internet Gateway. 
 
 Route Configuration for the Internet Gateway
