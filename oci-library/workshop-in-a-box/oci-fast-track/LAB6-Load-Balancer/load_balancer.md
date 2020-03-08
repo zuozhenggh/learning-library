@@ -1,6 +1,6 @@
 ## Lab 6. Load Balancer
 
-The Oracle Cloud Infrastructure Load Balancing service provides automated traffic distribution from one entry point to multiple servers reachable from your virtual cloud network (VCN). The service offers a load balancer with your choice of a public or private IP address, and provisioned bandwidth.
+The Oracle Cloud Infrastructure Load Balancing service provides automated traffic distribution from one entry point to multiple servers reachable from your Virtual Cloud Network (VCN). The service offers a load balancer with your choice of a public or private IP address, and provisioned bandwidth.
 
 The Load Balancing service enables you to create a public or private load balancer within your VCN. A public load balancer has a public IP address that is accessible from the internet. A private load balancer has an IP address from the hosting subnet, which is visible only within your VCN. You can configure multiple for an IP address to load balance transport Layer 4 and Layer 7 (TCP and HTTP) traffic. Both public and private load balancers can route data traffic to any backend server that is reachable from the VCN.
 
@@ -11,27 +11,27 @@ Your load balancer has a backend set to route incoming traffic to your Compute i
 - Optional SSL handling.
 - Optional session persistence configuration.
 
-##Load Balancing Concepts
+## Load Balancing Concepts
 
-backend server
+**backend server**
 An application server responsible for generating content in reply to the incoming TCP or HTTP traffic. You typically identify application servers with a unique combination of overlay (private) IPv4 address and port, for example, 10.10.10.1:8080 and 10.10.10.2:8080.
 
 **backend set**
 A logical entity defined by a list of backend servers, a load balancing policy, and a health check policy. SSL configuration is optional. The backend set determines how the load balancer directs traffic to the collection of backend servers.
 
-**certificates**
+**certificate**
 If you use HTTPS or SSL for your listener, you must associate an SSL server certificate (X.509) with your load balancer. A certificate enables the load balancer to terminate the connection and decrypt incoming requests before passing them to the backend servers.
 
 **health check**
 A test to confirm the availability of backend servers. A health check can be a request or a connection attempt. Based on a time interval you specify, the load balancer applies the health check policy to continuously monitor backend servers. If a server fails the health check, the load balancer takes the server temporarily out of rotation. If the server subsequently passes the health check, the load balancer returns it to the rotation.
 
-##Objective
-Create a Public Load Balancer Service, with 2 backends.
-Before we start creating out LB service, please note that there are some important tasks to do. In order to have some “service” to be tested by the Load Balancer, we need to install an application server on the Linux server.
+## Objective
+Create a Public Load Balancer Service, with 2 backend servers.
+Before we start creating our LB service, please note that there are some important tasks to do. In order to have some “service” to be tested by the Load Balancer, we need to install an application server on the Linux server.
 
 To be successful, we need to execute the tasks in the following way:
 
-**1 –** Create a new Linux Server. Be sure to create the second server on an Availability Domain that is different from the first one.
+**1 –** Create a new Linux Server. Be sure to create the second server in an Availability Domain that is different from the first one.
 
 **2 –** Install Apache Application Server on each server:
 Following, you’ll find the necessary commands to start a Apache Web Server :
@@ -49,11 +49,11 @@ Following, you’ll find the necessary commands to start a Apache Web Server :
 
 **3 -** Test Apache’s behavior, all you need to do, is use the Compute Instance’s public IP on the browser to check if Apache’s main page will come up.
 
-REMINDER: Before test Apache on your browser, be Shure that you have already created an Ingress Rule on the VCN’s Security List, so Port 80 is cleared for traffic.
+REMINDER: Before test Apache on your browser, be sure that you have already created an Ingress Rule on the VCN’s Security List, so port 80 is cleared for traffic.
 
 
-Be shure to start Load Balancer creation only after both calls on apache is working. This is important, because if you create the load balancer without an available service, it will be created in “Error” state. Load Balancer usually takes 5 minutes to “calibrate” it’s status. 
-Our Goal, is to create Load Balancer service only after  both Apache servers are running, so LB service will have “ready” state, and will be ready to be tested.
+Be sure to start Load Balancer creation only after both calls on Apache are working. This is important, because if you create the load balancer without an available service, it will be created in “Error” state. The Load Balancer usually takes 5 minutes to “calibrate” its status. 
+Our Goal is to create Load Balancer service only after both Apache servers are running, so LB service will have a “ready” state, and will be ready to be tested.
 
 
 ## Load Balancer Creation Process
@@ -62,23 +62,23 @@ To access Load Balancer interface, again, we’re going to start from the “Act
 
 ![](images/lb_01.png)
 
-Then Hit the Create Load Balancer button :
+Then hit the Create Load Balancer button:
 ![](images/lb_02.png)
 
 ##Creating Load Balancer
-The Load Balancer creation screen is a Wizard Based model, where you’ll be guided on the process by the interface. In the main screen, you’ll provide the information below :
+The Load Balancer creation screen is a wizard based model, where you’ll be guided through the process by the interface. In the main screen, you’ll provide the information below :
 •	Name
 •	Visibility: Public or Private
-•	Supported Bandwidth (Small - 100, Medium - 400, or Large - 8 GB/s)
-•	VCN and subnets (choose 2 subnets, same subnets where your compute instances were created)
+•	Supported Bandwidth (Small - 100 MB/s, Medium - 400 MB/s, or Large - 8 GB/s)
+•	VCN and subnets (choose the 2 subnets where your compute instances were created)
 
 ![](images/lb_03.png)
 
-##Set the Load Balancer Policy
+## Set the Load Balancer Policy
 
 ![](images/lb_04.png)
 
-Enter the Backend Set servers :
+Enter the Backend Set servers:
 
 ![](images/lb_05.png)
 
@@ -90,9 +90,9 @@ Once the creation process is finished, you’ll have the following information:
 
 ![](images/lb_07.png)
 
-##Load Balancer Testing
+## Load Balancer Testing
 
 In order to simulate an application environment, we need to start a web service on both Compute instances. 
 
 
-To get different output’s on load balancer calls, add different contents to Index.html file on each compute.
+To get different outputs on load balancer calls, add different contents to Index.html file on each compute.
