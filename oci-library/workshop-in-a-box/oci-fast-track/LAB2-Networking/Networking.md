@@ -32,8 +32,8 @@ The OCI Console provides the option optimize the networking infrastructure creat
 
 Right below, you will have a description of the options that will be used in the VCN creation process:
 
-![](images/vcn_Resume.png)
-![](images/vcn_Resume_02.png)
+![](images/vcn_resume.png)
+![](images/vcn_resume_02.png)
 
 The networking creation process is very quick, and when finished, will be shown as below:
 
