@@ -1,4 +1,4 @@
-![](main_image.png)
+![](FastTrackHeader.png)
 # OCI Fast Track
 
 This directory contains the files used to build and run OCI hands on labs, part of the OCI FastTrack workshop
