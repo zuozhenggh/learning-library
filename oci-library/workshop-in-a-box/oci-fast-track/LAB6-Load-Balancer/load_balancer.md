@@ -63,9 +63,10 @@ To access Load Balancer interface, again, we’re going to start from the “Act
 ![](images/lb_01.png)
 
 Then hit the Create Load Balancer button:
+
 ![](images/lb_02.png)
 
-##Creating Load Balancer
+## Creating Load Balancer
 The Load Balancer creation screen is a wizard based model, where you’ll be guided through the process by the interface. In the main screen, you’ll provide the information below :
 •	Name
 •	Visibility: Public or Private
