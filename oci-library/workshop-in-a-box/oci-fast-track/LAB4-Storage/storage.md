@@ -13,9 +13,13 @@ You can create block volumes through the “Block Storage” interface. To acces
 Block Volume creation process is a very straight forward process, you just need to hit **“Create Block Volume”**, and fill the requested information:
 
 **Compartment_id:** Choose your own created compartment
+
 **Name:** Name for this disk volume
+
 **Availability Domain:** Choose the AD to store this disk volume
+
 **Size:** Disk size, from 50 GB to 32 TB
+
 **Backup Policy:** From none (No backup Policy) to Silver, Bronze and Gold (More on backup later)
 
 ![](images/cria_block_02.png)
