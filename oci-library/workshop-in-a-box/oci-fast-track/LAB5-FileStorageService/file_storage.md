@@ -16,7 +16,7 @@ Create a FileStorage Service filesystem, and access it through a Linux Compute I
 
 ## Creating File Storage Service FileSystem 
 
-1 – Access File Storage Service main screen through OCI Main Menu.
+Access File Storage Service main screen through OCI Main Menu.
 
 ![](images/cria_fs.png)
 
@@ -47,7 +47,7 @@ Here Oracle Cloud follows the same behavior as in the other wizards. All you nee
 ![](images/cria_fs_06.png)
 
 ## Connectivity Issues
-File Storage is a network service, and as such, its usage, is subject to firewall rules. In order to mount the created mount target, we’re going to create an ingress security rule to allow File Storage Service IP traffic.
+File Storage is a network service, and as such, its usage is subject to firewall rules. In order to mount the created mount target, we’re going to create an ingress security rule to allow File Storage Service IP traffic.
 
 ![](images/file_storage_07.png)
 
