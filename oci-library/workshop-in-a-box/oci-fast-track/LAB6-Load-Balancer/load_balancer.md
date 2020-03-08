@@ -69,7 +69,7 @@ Then hit the Create Load Balancer button:
 The Load Balancer creation screen is a wizard based model, where you’ll be guided through the process by the interface. In the main screen, you’ll provide the information below :
 •	Name
 •	Visibility: Public or Private
-•	Supported Bandwidth (Small - 100 MB/s, Medium - 400 MB/s, or Large - 8 GB/s)
+•	Supported Bandwidth (Small - 100 Mbps, Medium - 400 Mbps, or Large - 8 Gbps)
 •	VCN and subnets (choose the 2 subnets where your compute instances were created)
 
 ![](images/lb_03.png)
