@@ -1,0 +1,36 @@
+{
+    "tutorials": [
+        {         
+            "title": "Lab Introduction and Overview",
+            "description": "Introduction to Multitenant Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../intro/intro.md"
+        },
+        {         
+            "title": "Lab: Workshop Setup",
+            "description": "Setup Multitenant Workshop in Self Service Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../ssworkshop-setup/ssworkshop-setup.md"
+        },
+        {         
+            "title": "Lab: Multitenant Basics",
+            "description": "Clone, Plug and Drop Pluggable Databases",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../clone-plug-drop/clone-plug-drop.md"
+        },
+        {         
+            "title": "Lab: Application Containers",
+            "description": "Using Application Containers with Multitenant",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../app-containers/app-containers.md"
+        }
+    ]
+}

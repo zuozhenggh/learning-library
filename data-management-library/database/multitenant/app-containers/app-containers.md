@@ -1,18 +1,7 @@
-# Hands-on with Multitenant (Advanced) #
+# Application Containers #
 
 ## Lab Introduction
 This is a series of 12 hands-on labs designed to familiarize you with the Application Container functionality of Oracle Multitenant. In these labs, we follow the journey of a notional company, Walt’s Malts, as their business expands from a single store to a global powerhouse – “from startup to starship”. 
-
-## Setup
-
-### Lab Assumptions
-- Each participant has been provided a username and password to the tenancy c4u03.
-- Each participant has completed the Environment Setup lab.
-- Each participant has created an OCI compute instance using the database template.
-
-There are two container databases running:
-- CDB1 running on port 1523
-- CDB2 running on port 1524
 
 ### Lab Setup
 
