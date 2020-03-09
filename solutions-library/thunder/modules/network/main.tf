@@ -21,8 +21,25 @@ resource "oci_core_nat_gateway" "ngw" {
   display_name   = each.value.display_name
 }
 
+resource "oci_core_local_peering_gateway" "requestor_lpgs" {
+  for_each = var.lpg_params
+
+  display_name   = each.value.display_name
+  compartment_id = oci_core_virtual_network.vcn[each.value.acceptor].compartment_id
+  vcn_id         = oci_core_virtual_network.vcn[each.value.requestor].id
+  peer_id        = oci_core_local_peering_gateway.acceptor_lpgs[each.value.display_name].id
+}
+
+resource "oci_core_local_peering_gateway" "acceptor_lpgs" {
+  for_each = var.lpg_params
+
+  display_name   = each.value.display_name
+  compartment_id = oci_core_virtual_network.vcn[each.value.acceptor].compartment_id
+  vcn_id         = oci_core_virtual_network.vcn[each.value.acceptor].id
+}
+
 resource "oci_core_route_table" "route_table" {
-  for_each = var.rt_params
+  for_each       = var.rt_params
   compartment_id = oci_core_virtual_network.vcn[each.value.vcn_name].compartment_id
   vcn_id         = oci_core_virtual_network.vcn[each.value.vcn_name].id
   display_name   = each.value.display_name
@@ -30,11 +47,66 @@ resource "oci_core_route_table" "route_table" {
   dynamic "route_rules" {
     iterator = rr
     for_each = each.value.route_rules
-    content{
+    content {
       destination       = rr.value.destination
       network_entity_id = rr.value.use_igw ? oci_core_internet_gateway.igw[lookup(rr.value, "igw_name", null)].id : oci_core_nat_gateway.ngw[lookup(rr.value, "ngw_name", null)].id
     }
   }
+
+  dynamic "route_rules" {
+    iterator = lpg_rr
+
+    for_each = [for lpg in var.lpg_params :
+      {
+        "cidr" : var.vcn_params[lpg.requestor].vcn_cidr,
+        "lpg_id" : oci_core_local_peering_gateway.acceptor_lpgs[lpg.display_name].id
+      }
+      if lpg.acceptor == each.value.vcn_name
+    ]
+
+    content {
+      destination       = lpg_rr.value.cidr
+      network_entity_id = lpg_rr.value.lpg_id
+    }
+  }
+
+  dynamic "route_rules" {
+    iterator = lpg_rr
+    
+    for_each = [for lpg in var.lpg_params :
+      {
+        "cidr" : var.vcn_params[lpg.acceptor].vcn_cidr,
+        "lpg_id" : oci_core_local_peering_gateway.requestor_lpgs[lpg.display_name].id
+      }
+      if lpg.requestor == each.value.vcn_name 
+    ]
+
+    content {
+      destination       = lpg_rr.value.cidr
+      network_entity_id = lpg_rr.value.lpg_id
+    }
+  }
+
+  dynamic "route_rules" {
+    iterator = drg_rr
+
+    for_each = [ for drg in var.drg_params :
+      {
+        "cidr" : drg.cidr_rt,
+        "drg_id" : oci_core_drg.this[drg.name].id
+      }
+      if contains(drg.rt_names, each.value.display_name)
+    ]
+
+    content {
+      destination       = drg_rr.value.cidr
+      network_entity_id = drg_rr.value.drg_id
+    }
+  }
+
+  # lifecycle {
+  #   ignore_changes = all
+  # }
 }
 
 resource "oci_core_security_list" "sl" {
@@ -43,7 +115,7 @@ resource "oci_core_security_list" "sl" {
   vcn_id         = oci_core_virtual_network.vcn[each.value.vcn_name].id
   display_name   = each.value.display_name
 
-  dynamic "egress_security_rules"{
+  dynamic "egress_security_rules" {
     iterator = egress_rules
     for_each = each.value.egress_rules
     content {
@@ -63,33 +135,33 @@ resource "oci_core_security_list" "sl" {
       source      = ingress_rules.value.source
       source_type = ingress_rules.value.source_type
 
-        dynamic "tcp_options" {
-          iterator = tcp_options
-          for_each = (lookup(ingress_rules.value, "tcp_options", null) != null) ? ingress_rules.value.tcp_options : []
-          content {
-            max = tcp_options.value.max
-            min = tcp_options.value.min
-          }
+      dynamic "tcp_options" {
+        iterator = tcp_options
+        for_each = (lookup(ingress_rules.value, "tcp_options", null) != null) ? ingress_rules.value.tcp_options : []
+        content {
+          max = tcp_options.value.max
+          min = tcp_options.value.min
         }
+      }
 
-        dynamic "udp_options" {
-          iterator = udp_options
-          for_each = (lookup(ingress_rules.value, "udp_options", null) != null) ? ingress_rules.value.udp_options : []
-          content {
-            max = udp_options.value.max
-            min = udp_options.value.min
-          }
+      dynamic "udp_options" {
+        iterator = udp_options
+        for_each = (lookup(ingress_rules.value, "udp_options", null) != null) ? ingress_rules.value.udp_options : []
+        content {
+          max = udp_options.value.max
+          min = udp_options.value.min
         }
+      }
     }
   }
 }
 
 
 resource "oci_core_network_security_group" "nsg" {
-  for_each         = var.nsg_params
-  compartment_id   = oci_core_virtual_network.vcn[each.value.vcn_name].compartment_id
-  vcn_id           = oci_core_virtual_network.vcn[each.value.vcn_name].id
-  display_name     = each.value.display_name
+  for_each       = var.nsg_params
+  compartment_id = oci_core_virtual_network.vcn[each.value.vcn_name].compartment_id
+  vcn_id         = oci_core_virtual_network.vcn[each.value.vcn_name].id
+  display_name   = each.value.display_name
 }
 
 resource "oci_core_network_security_group_security_rule" "nsg_rules" {
@@ -99,11 +171,11 @@ resource "oci_core_network_security_group_security_rule" "nsg_rules" {
   stateless                 = each.value.stateless
   direction                 = each.value.direction
 
-  source                    = each.value.direction == "INGRESS" ? each.value.source : null
-  source_type               = each.value.direction == "INGRESS" ? each.value.source_type : null
+  source      = each.value.direction == "INGRESS" ? each.value.source : null
+  source_type = each.value.direction == "INGRESS" ? each.value.source_type : null
 
-  destination               = each.value.direction == "EGRESS" ? each.value.destination : null
-  destination_type          = each.value.direction == "EGRESS" ? each.value.destination_type : null
+  destination      = each.value.direction == "EGRESS" ? each.value.destination : null
+  destination_type = each.value.direction == "EGRESS" ? each.value.destination_type : null
 
 
   dynamic "tcp_options" {
@@ -111,20 +183,20 @@ resource "oci_core_network_security_group_security_rule" "nsg_rules" {
     for_each = each.value.tcp_options != null ? each.value.tcp_options : []
     content {
       dynamic "destination_port_range" {
-        iterator  = destination_ports
-        for_each  = lookup(tcp_options.value, "destination_ports", null) != null ? tcp_options.value.destination_ports : []
-          content {
-            min = destination_ports.value.min
-            max = destination_ports.value.max
-          }
+        iterator = destination_ports
+        for_each = lookup(tcp_options.value, "destination_ports", null) != null ? tcp_options.value.destination_ports : []
+        content {
+          min = destination_ports.value.min
+          max = destination_ports.value.max
+        }
       }
       dynamic "source_port_range" {
-        iterator  = source_ports
-        for_each  = lookup(tcp_options.value, "source_ports", null) != null ? tcp_options.value.source_ports : []
-          content {
-            min = source_ports.value.min
-            max = source_ports.value.max
-          }
+        iterator = source_ports
+        for_each = lookup(tcp_options.value, "source_ports", null) != null ? tcp_options.value.source_ports : []
+        content {
+          min = source_ports.value.min
+          max = source_ports.value.max
+        }
       }
     }
   }
@@ -134,21 +206,21 @@ resource "oci_core_network_security_group_security_rule" "nsg_rules" {
     for_each = each.value.udp_options != null ? each.value.udp_options : []
     content {
       dynamic "destination_port_range" {
-        iterator  = destination_ports
-        for_each  = lookup(udp_options.value, "destination_ports", null) != null ? udp_options.value.destination_ports : []
-          content {
-            min = destination_ports.value.min
-            max = destination_ports.value.max
-          }
+        iterator = destination_ports
+        for_each = lookup(udp_options.value, "destination_ports", null) != null ? udp_options.value.destination_ports : []
+        content {
+          min = destination_ports.value.min
+          max = destination_ports.value.max
+        }
       }
 
       dynamic "source_port_range" {
-        iterator  = source_ports
-        for_each  = lookup(udp_options.value, "source_ports", null) != null ? udp_options.value.source_ports : []
-          content {
-            min = source_ports.value.min
-            max = source_ports.value.max
-          }
+        iterator = source_ports
+        for_each = lookup(udp_options.value, "source_ports", null) != null ? udp_options.value.source_ports : []
+        content {
+          min = source_ports.value.min
+          max = source_ports.value.max
+        }
       }
     }
   }
@@ -165,4 +237,17 @@ resource "oci_core_subnet" "subnets" {
   vcn_id                     = oci_core_virtual_network.vcn[each.value.vcn_name].id
   route_table_id             = oci_core_route_table.route_table[each.value.rt_name].id
   security_list_ids          = [oci_core_security_list.sl[each.value.sl_name].id]
+}
+
+
+resource "oci_core_drg" "this" {
+  for_each       = var.drg_params
+  compartment_id = oci_core_virtual_network.vcn[each.value.vcn_name].compartment_id
+  display_name   = each.value.name
+}
+
+resource "oci_core_drg_attachment" "this" {
+  for_each       = var.drg_params
+  drg_id         = oci_core_drg.this[each.value.name].id
+  vcn_id         = oci_core_virtual_network.vcn[each.value.vcn_name].id
 }

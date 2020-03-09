@@ -8,12 +8,12 @@ provider "oci" {
 }
 
 module "iam" {
-  source              = "../../modules/iam"
-  comp_params         = var.comp_params
-  user_params         = var.user_params
-  group_params        = var.group_params
-  policy_params       = var.policy_params
-  auth_provider       = var.provider_oci
+  source        = "../../modules/iam"
+  comp_params   = var.comp_params
+  user_params   = var.user_params
+  group_params  = var.group_params
+  policy_params = var.policy_params
+  auth_provider = var.provider_oci
 }
 
 module "network" {
@@ -27,12 +27,14 @@ module "network" {
   nsg_params       = var.nsg_params
   nsg_rules_params = var.nsg_rules_params
   subnet_params    = var.subnet_params
+  lpg_params       = var.lpg_params
+  drg_params       = var.drg_params
 }
 
 module "adw" {
-  source              = "../../modules/adw"
-  adw_params          = var.adw_params
-  compartment_ids     = module.iam.compartments
+  source          = "../../modules/adw"
+  adw_params      = var.adw_params
+  compartment_ids = module.iam.compartments
 }
 
 module "compute" {
@@ -87,10 +89,10 @@ module "load-balancer" {
 }
 
 module "object-storage" {
-  source              = "../../modules/object-storage"
-  compartments        = module.iam.compartments
-  bucket_params       = var.bucket_params
-  oci_provider        = var.provider_oci
+  source        = "../../modules/object-storage"
+  compartments  = module.iam.compartments
+  bucket_params = var.bucket_params
+  oci_provider  = var.provider_oci
 }
 
 module "dns" {

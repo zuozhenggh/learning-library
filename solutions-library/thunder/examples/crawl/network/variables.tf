@@ -5,11 +5,11 @@ variable "provider_oci" {
 
 variable "vcn_params" {
   description = "VCN Parameters: vcn_cidr, display_name, dns_label"
-  type        = map(object({
-    vcn_cidr          = string
-    compartment_name  = string
-    display_name      = string
-    dns_label         = string
+  type = map(object({
+    vcn_cidr         = string
+    compartment_name = string
+    display_name     = string
+    dns_label        = string
   }))
 }
 
@@ -19,7 +19,7 @@ variable "compartment_ids" {
 
 variable "igw_params" {
   description = "Placeholder for vcn index association and igw name"
-  type        = map(object({
+  type = map(object({
     vcn_name     = string
     display_name = string
   }))
@@ -27,7 +27,7 @@ variable "igw_params" {
 
 variable "ngw_params" {
   description = "Placeholder for vcn index association and ngw name"
-  type        = map(object({
+  type = map(object({
     vcn_name     = string
     display_name = string
   }))
@@ -35,24 +35,24 @@ variable "ngw_params" {
 
 variable "rt_params" {
   description = "Placeholder for vcn index association, rt name, route rules"
-  type        = map(object({
+  type = map(object({
     vcn_name     = string
     display_name = string
-    route_rules  = list(object({
+    route_rules = list(object({
       destination = string
       use_igw     = bool
-      igw_name   = string
-      ngw_name   = string
+      igw_name    = string
+      ngw_name    = string
     }))
   }))
 }
 
 variable "sl_params" {
   description = "Security List Params"
-  type        = map(object({
-    vcn_name      = string
-    display_name  = string
-    egress_rules  = list(object({
+  type = map(object({
+    vcn_name     = string
+    display_name = string
+    egress_rules = list(object({
       stateless   = string
       protocol    = string
       destination = string
@@ -77,22 +77,22 @@ variable "sl_params" {
 
 variable "nsg_params" {
   type = map(object({
-    vcn_name      = string
-    display_name  = string
+    vcn_name     = string
+    display_name = string
   }))
 }
 
 variable "nsg_rules_params" {
   type = map(object({
-    nsg_name          = string
-    protocol          = string
-    stateless         = string
-    direction         = string
-    source            = string
-    source_type       = string
-    destination       = string
-    destination_type  = string
-    tcp_options       = list(object({
+    nsg_name         = string
+    protocol         = string
+    stateless        = string
+    direction        = string
+    source           = string
+    source_type      = string
+    destination      = string
+    destination_type = string
+    tcp_options = list(object({
       destination_ports = list(object({
         min = number
         max = number
@@ -118,12 +118,29 @@ variable "nsg_rules_params" {
 
 variable "subnet_params" {
   type = map(object({
-    display_name               = string
-    cidr_block                 = string
-    dns_label                  = string
-    is_subnet_private          = bool
-    sl_name                    = string
-    rt_name                    = string
-    vcn_name                   = string
+    display_name      = string
+    cidr_block        = string
+    dns_label         = string
+    is_subnet_private = bool
+    sl_name           = string
+    rt_name           = string
+    vcn_name          = string
+  }))
+}
+
+variable "lpg_params" {
+  type = map(object({
+    acceptor     = string
+    requestor    = string
+    display_name = string
+  }))
+}
+
+variable "drg_params" {
+  type = map(object({
+    name        = string
+    vcn_name    = string
+    cidr_rt     = string
+    rt_names    = list(string)
   }))
 }
