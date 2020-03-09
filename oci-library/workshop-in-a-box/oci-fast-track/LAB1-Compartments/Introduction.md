@@ -6,7 +6,7 @@ We’ll explore each of the available resources of Infrastructure as a Service (
 
 Through this guide, we will provision :
 
-- Network (VCN, and subnets)
+- Network (VCN and subnets)
 - Compute Instances (Linux and Windows)
 - Block Storage
 - Object Storage
@@ -94,6 +94,7 @@ Availability domains are isolated from each other, fault tolerant, and very unli
 
 
 **Working With Compartments**
+
 When you first start working with Oracle Cloud Infrastructure, you need to think carefully about how you want to organize and isolate your cloud resources. Compartments are fundamental to that process. Once you put a resource in a compartment, you can't move it, so it's important to think through your compartment design for your organization up front, before implementing anything.
 
 When creating a new compartment, you must provide a name for it (maximum 100 characters, including letters, numbers, periods, hyphens, and underscores) that is unique within its parent compartment. You must also provide a description, which is a non-unique, changeable description for the compartment, between 1 and 400 characters. Oracle will also assign the compartment a unique ID called an Oracle Cloud ID or OCID.
@@ -114,7 +115,9 @@ On the main menu, Hit “Identity”, then choose  “Compartments”
 Click on *“Create Compartment”* and fill in the information:
 
 Name: Compartimento-Trial
+
 Description: Compartment for resource testing
+
 Parent Compartment: root
 
 ![](images/compart_02.png)
