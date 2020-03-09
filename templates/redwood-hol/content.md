@@ -1,7 +1,7 @@
-# Enter tutorial title here
+# Enter lab title here
 ## Before You Begin
 
-This 15-minute tutorial walks you through the steps to ...
+This 15-minute lab walks you through the steps to ...
 
 ### Background
 Enter background information here..
@@ -51,15 +51,15 @@ Section conclusion can come here.
     Multiple lines of code
 	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
     ```
-	
+
 3. List item 3. To add a video, follow the following format:
-    
+
 	```
 	<copy>[](youtube:&lt;video_id&gt;)</copy>
 	For example:
 	[](youtube:zNKxJjkq0Pw)
     ```
-	
+
     [](youtube:zNKxJjkq0Pw)
 
 Conclusion of section 2 here.

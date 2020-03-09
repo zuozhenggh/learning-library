@@ -85,6 +85,10 @@ The Network module is able to create vcns, subnets, internet gateways, nat gatew
   * rt_name - The name of the route table used for the Subnet association
   * vcn_name - The name of the vcn used for the Subnet association
 
+* Local peering gateway (LPG) parameters
+  * requestor - The name of the requestor VCN
+  * acceptor - The name of the acceptor VCN
+  * display_name - The name of the LPG connection
 
 ## Example
 In the provided example, the following resources are created: 
@@ -414,6 +418,14 @@ subnet_params = {
     sl_name                    = "Hurricane2"
     rt_name                    = "hurricane2priv"
     vcn_name                   = "hur2"
+  }
+}
+
+lpg_params = {
+  lpg12 = {
+    requestor    = "hur1"
+    acceptor     = "hur2"
+    display_name = "lpg12"
   }
 }
 ```

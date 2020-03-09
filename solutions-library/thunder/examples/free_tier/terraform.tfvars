@@ -13,7 +13,7 @@ user_params = {
   Root_IAMAdmin = {
     name        = "Root_IAMAdmin"
     description = "User allowed to modify the Administrators and NetSecAdmins group"
-    group_name = "Root_IAMAdminManagers.grp"
+    group_name  = "Root_IAMAdminManagers.grp"
   }
 }
 
@@ -47,26 +47,21 @@ policy_params = {
 #----------- Network Resources -----
 vcn_params = {
   hur1 = {
-    compartment_name  = "sandbox"
-    display_name      = "hur1"
-    vcn_cidr          = "10.0.0.0/16"
-    dns_label         = "hur1"
+    compartment_name = "sandbox"
+    display_name     = "hur1"
+    vcn_cidr         = "10.0.0.0/16"
+    dns_label        = "hur1"
   }
 }
 
 igw_params = {
   hurricane1 = {
     display_name = "hurricane1"
-    vcn_name    = "hur1"
-  }
-}
-
-ngw_params = {
-  hurricane1 = {
-    display_name = "hurricane1"
     vcn_name     = "hur1"
   }
 }
+
+ngw_params = {}
 
 rt_params = {
   hurricane1pub = {
@@ -77,24 +72,11 @@ rt_params = {
       {
         destination = "0.0.0.0/0"
         use_igw     = true
-        igw_name   = "hurricane1"
-        ngw_name   = null
+        igw_name    = "hurricane1"
+        ngw_name    = null
       },
     ]
   },
-  hurricane1priv = {
-    display_name = "hurricane1priv"
-    vcn_name     = "hur1"
-
-    route_rules = [
-      {
-        destination = "0.0.0.0/0"
-        use_igw     = false
-        igw_name   = null
-        ngw_name   = "hurricane1"
-      },
-    ]
-  }
 }
 
 sl_params = {
@@ -154,60 +136,25 @@ sl_params = {
 }
 
 
-nsg_params = {
-  hurricane1 = {
-    display_name = "hurricane1"
-    vcn_name     = "hur1"
-  }
-}
+nsg_params = {}
 
-nsg_rules_params = {
-  hurricane1 = {
-    nsg_name         = "hurricane1"
-    protocol         = "6"
-    stateless        = "false"
-    direction        = "INGRESS"
-    source           = "11.0.0.0/16"
-    source_type      = "CIDR_BLOCK"
-    destination      = null
-    destination_type = null
-    tcp_options = [
-      {
-        destination_ports = [
-          {
-            min = 22
-            max = 22
-          }
-        ],
-        source_ports = []
-      }
-    ]
-    udp_options = []
-  }
-}
+nsg_rules_params = {}
 
 
 subnet_params = {
   hur1pub = {
-    display_name               = "hur1pub"
-    cidr_block                 = "10.0.1.0/24"
-    dns_label                  = "hur1pub"
-    is_subnet_private          = false
-    sl_name                    = "Hurricane1"
-    rt_name                    = "hurricane1pub"
-    vcn_name                   = "hur1"
-  }
-  hur1priv = {
-    display_name               = "hur1priv"
-    cidr_block                 = "10.0.2.0/24"
-    dns_label                  = "hur1priv"
-    is_subnet_private          = true
-    sl_name                    = "Hurricane1"
-    rt_name                    = "hurricane1priv"
-    vcn_name                   = "hur1"
+    display_name      = "hur1pub"
+    cidr_block        = "10.0.1.0/24"
+    dns_label         = "hur1pub"
+    is_subnet_private = false
+    sl_name           = "Hurricane1"
+    rt_name           = "hurricane1pub"
+    vcn_name          = "hur1"
   }
 }
 
+lpg_params = {}
+drg_params = {}
 #-----------------------------------
 
 
@@ -256,7 +203,7 @@ instance_params = {
     subnet_name          = "hur1pub"
     ssh_public_key       = "/root/.ssh/id_rsa.pub"
     device_disk_mappings = "/u01:/dev/oracleoci/oraclevdb"
-    freeform_tags        = {
+    freeform_tags = {
       "client" : "hurricane",
       "department" : "hurricane"
     }
@@ -265,12 +212,12 @@ instance_params = {
 
 bv_params = {
   bv10 = {
-    ad             = 1
-    display_name   = "bv10"
-    bv_size        = 50
-    instance_name  = "hur1"
-    device_name    = "/dev/oracleoci/oraclevdb"
-    freeform_tags        = {
+    ad            = 1
+    display_name  = "bv10"
+    bv_size       = 50
+    instance_name = "hur1"
+    device_name   = "/dev/oracleoci/oraclevdb"
+    freeform_tags = {
       "client" : "hurricane",
       "department" : "hurricane"
     }
@@ -278,19 +225,19 @@ bv_params = {
 }
 
 windows_images = {
-  ap-mumbai-1	   = "ocid1.image.oc1.ap-mumbai-1.aaaaaaaa4eoqz2o7ssqm63dkzvny5sld5tibr2ynvmyyp6mwoeblfdcjjtkq"
-  ap-seoul-1	   = "ocid1.image.oc1.ap-seoul-1.aaaaaaaakb7oq5eiao3rlyha6kf7emogydoy32p3mb22hn3gbwsm7ussfaca"
-  ap-sydney-1	   = "ocid1.image.oc1.ap-sydney-1.aaaaaaaah4oxmrdqptmcbpdigixfhrxii7rkaspmpq4fppnn3wc6xas2simq"
-  ap-tokyo-1	   = "ocid1.image.oc1.ap-tokyo-1.aaaaaaaagltuwbdjcdfmvj4gkzb7e32g5aedu6yfdzbmmqkxrrv4d7shixia"
-  ca-toronto-1	 = "ocid1.image.oc1.ca-toronto-1.aaaaaaaa2iaism6emqvjzgszpnpi7v725herq7u2fdiwswgrplcv4u3g4w6a"
+  ap-mumbai-1    = "ocid1.image.oc1.ap-mumbai-1.aaaaaaaa4eoqz2o7ssqm63dkzvny5sld5tibr2ynvmyyp6mwoeblfdcjjtkq"
+  ap-seoul-1     = "ocid1.image.oc1.ap-seoul-1.aaaaaaaakb7oq5eiao3rlyha6kf7emogydoy32p3mb22hn3gbwsm7ussfaca"
+  ap-sydney-1    = "ocid1.image.oc1.ap-sydney-1.aaaaaaaah4oxmrdqptmcbpdigixfhrxii7rkaspmpq4fppnn3wc6xas2simq"
+  ap-tokyo-1     = "ocid1.image.oc1.ap-tokyo-1.aaaaaaaagltuwbdjcdfmvj4gkzb7e32g5aedu6yfdzbmmqkxrrv4d7shixia"
+  ca-toronto-1   = "ocid1.image.oc1.ca-toronto-1.aaaaaaaa2iaism6emqvjzgszpnpi7v725herq7u2fdiwswgrplcv4u3g4w6a"
   eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa2rsmgdpbkbo5yrkpynd7mbl5nxpwhyrkp4nd4ev3hzcpfmkosu3q"
-  eu-zurich-1	   = "ocid1.image.oc1.eu-zurich-1.aaaaaaaawo4g3t6s34okuj7huyrixkucmxtfaqeiqhvsfiok4gxhe3pdpmaa"
-  sa-saopaulo-1	 = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaanunxttcfebrg3t34jupfsiy2dqry4wkoaak5h3pckpitylzm44qq"
-  uk-london-1	   = "ocid1.image.oc1.uk-london-1.aaaaaaaaanixvr63v5v5vvz5qv2c73m6vvc6okwrrqggfvqthyygalm536ra"
-  us-ashburn-1	 = "ocid1.image.oc1.iad.aaaaaaaaizov2horgjtlxsklhi3cxxjxbcpxzxmtfj5jiftygo76fetussuq"
-  us-langley-1	 = "ocid1.image.oc2.us-langley-1.aaaaaaaafiwiumrgcipjddg7cha7otxo46dd5hiw7za5llbwnugrgclxqbga"
-  us-luke-1	     = "ocid1.image.oc2.us-luke-1.aaaaaaaaelf7bq6rtwsxhvkjh6eumoa77ebniwkbyntfti5gtkgvwqnk6dsq"
-  us-phoenix-1	 = "ocid1.image.oc1.phx.aaaaaaaatte3vcpa7kkogul7zbvnxfjsgwzptmbx7n7qqrzk62skron5on7a"
+  eu-zurich-1    = "ocid1.image.oc1.eu-zurich-1.aaaaaaaawo4g3t6s34okuj7huyrixkucmxtfaqeiqhvsfiok4gxhe3pdpmaa"
+  sa-saopaulo-1  = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaanunxttcfebrg3t34jupfsiy2dqry4wkoaak5h3pckpitylzm44qq"
+  uk-london-1    = "ocid1.image.oc1.uk-london-1.aaaaaaaaanixvr63v5v5vvz5qv2c73m6vvc6okwrrqggfvqthyygalm536ra"
+  us-ashburn-1   = "ocid1.image.oc1.iad.aaaaaaaaizov2horgjtlxsklhi3cxxjxbcpxzxmtfj5jiftygo76fetussuq"
+  us-langley-1   = "ocid1.image.oc2.us-langley-1.aaaaaaaafiwiumrgcipjddg7cha7otxo46dd5hiw7za5llbwnugrgclxqbga"
+  us-luke-1      = "ocid1.image.oc2.us-luke-1.aaaaaaaaelf7bq6rtwsxhvkjh6eumoa77ebniwkbyntfti5gtkgvwqnk6dsq"
+  us-phoenix-1   = "ocid1.image.oc1.phx.aaaaaaaatte3vcpa7kkogul7zbvnxfjsgwzptmbx7n7qqrzk62skron5on7a"
 }
 
 win_instance_params = {}
@@ -300,11 +247,11 @@ win_bv_params = {}
 
 lb_params = {
   hur-lb = {
-    shape             = "10Mbps-Micro"
-    compartment_name  = "sandbox"
-    subnet_names      = ["hur1pub"]
-    display_name      = "hur-lb"
-    is_private        = false
+    shape            = "10Mbps-Micro"
+    compartment_name = "sandbox"
+    subnet_names     = ["hur1pub"]
+    display_name     = "hur-lb"
+    is_private       = false
   }
 }
 
@@ -321,33 +268,33 @@ backend_sets = {
 
 listeners = {
   hur-list = {
-    lb_name           = "hur-lb"
-    name              = "hur-list"
-    backend_set_name  = "hur1-bs"
-    port              = 80
-    protocol          = "HTTP"
-    ssl               = []
+    lb_name          = "hur-lb"
+    name             = "hur-list"
+    backend_set_name = "hur1-bs"
+    port             = 80
+    protocol         = "HTTP"
+    ssl              = []
   }
 }
 
 backend_params = {
   hur1-bs = {
-    backendset_name  = "hur1-bs"
-    use_instance     = true
-    instance_name    = "hur1"
-    lb_name          = "hur-lb"
-    port             = 80
+    backendset_name = "hur1-bs"
+    use_instance    = true
+    instance_name   = "hur1"
+    lb_name         = "hur-lb"
+    port            = 80
   }
 }
 
-certificates      = {}
+certificates = {}
 
-bucket_params   = {
+bucket_params = {
   hur-buck-1 = {
-    compartment_name  = "sandbox"
-    name              = "hur-buck-1"
-    access_type       = "NoPublicAccess"
-    storage_tier      = "Standard"
-    events_enabled    = false
+    compartment_name = "sandbox"
+    name             = "hur-buck-1"
+    access_type      = "NoPublicAccess"
+    storage_tier     = "Standard"
+    events_enabled   = false
   }
 }
