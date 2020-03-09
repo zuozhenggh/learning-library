@@ -350,8 +350,6 @@ a:active {
     backround-repeat: no-repeat;
 }
 
-
-
 .footer-links {
     justify-content: flex-end;
     padding-inline-start:0;
@@ -414,8 +412,6 @@ ul.footer-links li a {
     display:none;
     }
 
-
-
 @media (min-width:0px) and (max-width:770px) {
     .footer-links {
         display: flex;
@@ -455,7 +451,6 @@ ul.footer-links li a {
         height:0;
     }
 }
-
 
 /* Top Link */
 
