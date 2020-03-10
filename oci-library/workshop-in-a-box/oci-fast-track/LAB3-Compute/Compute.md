@@ -4,7 +4,7 @@ Creating Windows Server 2016 Virtual Machine
 
 **Objectives**
 - Quickly create a Virtual Machine
-- Identify main information needed for a OCI Compute Instance Creation 
+- Identify main information needed for an OCI Compute Instance creation 
 
 To access main screen, Hit Menu > Compute > Instances.
 ![](images/create_compute.png)
@@ -14,7 +14,7 @@ Hit **“Create Instance”**.
 
 ![](images/create_instance.png)
 
-**Name you instance:** VM-Windows2016
+**Name your instance:** VM-Windows2016
 **Availability Domain:** AD 1
 **Operating System:** Windows Server 2016 Standard
 **Instance Type:** Virtual Machine
@@ -32,33 +32,33 @@ After instance creation, you’ll see:
 
 ![](images/created_vm.png)
 
-Before step forward, find the  VM’public IP, and copy it :
+Before moving forward, find the VM’s public IP, and copy it :
 
 ![](images/vm_ip.png)
 
 Now try to access it, using “Remote Desktop Connection”. 
 ![](images/remote.png)
 
-Use instance’s Public IP address, and hit “Connect”.
+Use the instance’s Public IP address, and hit “Connect”.
 ![](images/remote_02.png)
 
 You’ll get the following error when trying to connect  …
 ![](images/conn_error.png)
 
-Don’t worry, that’s the expected behavior. In order to access a compute instance on Oracle Public Cloud, you need to configure firewall “Access Rules” first. On the next session, we’ll configure other resources, that can be created before the VM, and provide access permissions as well
+Don’t worry, that’s the expected behavior. In order to access a compute instance on OCI, you need to configure firewall “Access Rules” first. On the next session, we’ll configure other resources, that can be created before the VM, and provide access permissions as well.
 
 ## Security Rules
-You probably noticed that Linux VM could be accessed by SSH key right after it’s creation, but Windows instance  could not be accessed through RDP. 
+You might notice that Linux VMs can be accessed using an SSH key right after its creation, but Windows instance cannot be accessed through RDP. 
 
 To access Windows Compute, we’ll need to configure some firewall rules.
 
-Firewall rules are set inside in an object called **“Security List”**, that can be accessed within a subnet.
+Firewall rules are set inside in an object called **“Security List”**, that can be assigned to a subnet.
 
-Security Rules, are inside  the Security List, from there, we can setup which ports and protocols are allowed traffic inside a subnet.
+Security Rules, as part of a Security List, can be used to setup which ports and protocols are allowed traffic inside a subnet.
 
 ![](images/sec_list.png)
 
-To access the VCN’s firewall rules, choose the Security List you want to configure. In our example, you’ll find the “public” security list already created on our VCN. Clock on the “public” security list and the access rules console will come up.
+To access the VCN’s firewall rules, choose the Security List you want to configure. In our example, you’ll find the “public” security list already created on our VCN. Click on the “public” security list and the access rules console will come up.
 
 ![](images/vcn_sec_list.png)
 
@@ -76,15 +76,15 @@ Fill the blanks as follows:
 **Destination Port Range:** 3389 
 
 ## Windows access through Remote Desktop
-To access Windows VM, on Main Menu choose “Run”, type “mstsc”, then hit “OK”.
+To access Windows VM, from the Main Menu choose “Run”, type “mstsc”, then hit “OK”.
 
 ![](images/mstsc_02.png)
 
-Input Instance’s Public IP, then hit “Connect”
+Input the instance’s Public IP, then hit “Connect”
 
 ![](images/mstsc_03.png)
 
-IF everything was properly configured, you’ll be transported to Windows login page, where you will need to change OPC password on first access.
+If everything was properly configured, you’ll be transported to Windows login page, where you will need to change the OPC user's password on first access.
 
 ## Oracle Linux 7.6 Compute Instance Creation
 
@@ -94,7 +94,7 @@ IF everything was properly configured, you’ll be transported to Windows login 
 - Access compute instance using PuTTY
 
 ## Creating Virtual Machine 
-In Main Menu, hit : Compute > Instances, than “Create Instance” :
+From the Main Menu, hit : Compute > Instances, than “Create Instance” :
 
 **Name you instance:** VM-OracleLinux
 **Availability Domain:** AD 2
@@ -111,7 +111,7 @@ In Main Menu, hit : Compute > Instances, than “Create Instance” :
 ![](images/cria_vm_02.png)
 ![](images/cria_vm_03.png)
 
-Finishing this task, you’ll see that we now have 2 compute instances, each on it’s own AD.
+Finishing this task, you’ll see that we now have 2 compute instances, each in its own AD.
 ![](images/vms.png)
 
 ## Accessing Linux Compute Instance with PuTTY
