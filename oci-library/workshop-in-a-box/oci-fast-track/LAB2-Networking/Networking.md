@@ -19,7 +19,9 @@ To create a network, remember to choose your compartment, then hit:  Networking>
 ![](images/create_vcn.png)
 
 **Create in Compartment**: Compartimento-Trial
+
 **Name**: VCN-Trial
+
 - CREATE VIRTUAL CLOUD NETWORK PLUS RELATED REOURCES
 
 ![](images/create_vcn_02.png)
