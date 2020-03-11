@@ -1,21 +1,18 @@
-# Welcome to the Oracle Database Multitenant Github Learning Library
+# Oracle Database Multitenant Github
 
-## Oracle Multitenant
 
 Oracle Multitenant is the architecture for the next-generation database cloud. It delivers isolation, agility and economies of scale. A multitenant container database can hold many pluggable databases. An existing database can simply be adopted with no application changes required. Oracle Multitenant fully complements other options, including Oracle Real Application Clusters and Oracle Active Data Guard.  
 
 ## Workshops
 Click on one of our workshops below to access the content.
 
-![https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html](./images/multitenant-screenshot-freetier.png " ")  ![](./images/transparent.png " ")       ![https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html](./images/multitenant-screenshot-ssworkshop.png " ") 
+![https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html](./images/multitenant-screenshot-freetier.png)  ![](./images/transparent.png " ")       ![https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html](./images/multitenant-screenshot-ssworkshop.png) 
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)
-- [I have an account from SSWorkshop](http://127.0.0.1:5500/ssworkshop/index.html?lab=lab-workshop-setup)
+- [I have an account from SSWorkshop](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
 
 
-## Get an Oracle Cloud Account
-
-### Trial Account
+## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
 - $300 of free credits good for up to 3500 hours of Oracle Cloud usage
 - Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
@@ -25,8 +22,8 @@ Click here to request your trial account: [https://cloud.oracle.com/tryit](https
 
 
 ## Product Pages
-- [Multitenant](https://www.oracle.com/database/technologies/multitenant.html)
-- [Database 19c](https://www.oracle.com/database/technologies/multitenant.html)
+- [Oracle Multitenant](https://www.oracle.com/database/technologies/multitenant.html)
+- [Oracle Database 19c](https://www.oracle.com/database/technologies/multitenant.html)
 
 ## Documentation
 - [Introduction to the Multitenant Architecture](https://docs.oracle.com/en/database/oracle/oracle-database/19/multi/introduction-to-the-multitenant-architecture.html#GUID-267F7D12-D33F-4AC9-AA45-E9CD671B6F22)

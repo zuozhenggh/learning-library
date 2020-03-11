@@ -14,7 +14,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "../../../generate-ssh-key/generate-ssh-key.md"
+            "filename": "./../generate-ssh-key/generate-ssh-key.md"
         },
         {         
             "title": "Login to Oracle Cloud",
@@ -22,7 +22,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "../../../cloud-login/cloud-login.md"
+            "filename": "./../cloud-login/cloud-login.md"
         },
         {         
             "title": "Lab: Workshop Setup",
