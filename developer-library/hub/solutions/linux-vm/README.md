@@ -10,19 +10,17 @@ This solution template allows you to deploy an Oracle Linux virtual machine in O
 
 Before you begin creating resources in Oracle Cloud Infrastructure, ensure that you have the following:
 
-* Credentials for an Oracle Cloud tenancy.
+* Credentials for an Oracle Cloud tenancy
 
-* OCI Compartment, with permission to create and manage resources in it.
+* OCI Compartment, with permission to create and manage resources in it
 
 * Access to a computer that has the following software and access to the internet:
 
-    * Utility to generate SSH key pairs.
+    * Utility to generate SSH key pairs. Most UNIX-like systems have **ssh-keygen**. On Windows, you can use **PuTTY**.
 
-      Most UNIX-like systems have ssh-keygen. On Windows, you can use PuTTY.
+    * A [supported](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/web-browser-requirements.html) web browser for Oracle Cloud Infrastructure
 
-    * Web browser.
-
-* Basic knowledge of Oracle Cloud Infrastructure.
+* Basic knowledge of Oracle Cloud Infrastructure
 
 ### Prerequisites
 
@@ -40,7 +38,7 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 ## Architecture
 
-![](./about-this/images/subnet_architecture.png)
+![](./about-this/images/VM.png)
 
 ## Steps
 
