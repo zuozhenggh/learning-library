@@ -6,7 +6,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "../common-labs/intro/intro.md"
+            "filename": "../common-labs/adb-shared-intro/adb-shared-intro.md"
         },
         {         
             "title": "Lab: Sign up for a Free Tier Account - 5 min (optional)",
