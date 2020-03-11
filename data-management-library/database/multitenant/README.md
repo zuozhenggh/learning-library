@@ -40,4 +40,7 @@ Click here to request your trial account: [https://cloud.oracle.com/tryit](https
 - [Multitenant PDBs for Microservices and Clouds](https://www.youtube.com/watch?v=JdfATqdXuRc)
 - [The Hidden Data Economy](https://www.youtube.com/watch?v=CP3pwAwNepU)
 
+### Issues?
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+
 
