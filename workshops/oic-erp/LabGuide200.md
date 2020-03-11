@@ -11,23 +11,37 @@ Key takeaways from this lab:
 
 ## Creating an Integration:
 
-**Step 1:** On the Oracle Integration Cloud home page, click **Integrations.**
+**Step 1:**
+
+ On the Oracle Integration Cloud home page, click **Integrations.**
+
+
 
 ![](./images/200/Image1a_1.png " ")
 
-**Step 2:** On the Integrations page, click **Create**. The Create Integration - Select a Style/Pattern dialog is displayed.
+**Step 2:** 
+
+On the Integrations page, click **Create**. The Create Integration - Select a Style/Pattern dialog is displayed.
+
 
 ![](./images/200/Image1a_2.png " ")
 
-**Step 3:** Select the ***Scheduled Orchestration*** orchestration pattern, as this integration can be scheduled in frequent intervals as per the usecase.
+**Step 3:** 
+
+Select the ***Scheduled Orchestration*** orchestration pattern, as this integration can be scheduled in frequent intervals as per the usecase.
+
 
 ![](./images/200/Image1a_3.png " ")
 
-**Step 4:** 3.	After selecting ***Scheduled Orchestration*** type of integration.  The Create New Integration dialog is displayed.
+**Step 4:** 
+
+After selecting ***Scheduled Orchestration*** type of integration.  The Create New Integration dialog is displayed.
 
 ![](./images/200/Image1a_4.png " ")
 
-**Step 5:** Enter the details as mentioned below:
+**Step 5:** 
+
+Enter the details as mentioned below:
 
 ![](./images/200/Image1a_5.png " ")
 
@@ -35,29 +49,48 @@ After entering the details as mentioned above, you can see click the create butt
 
 ![](./images/200/hitthecreatebutton.png " ")
 
-**Step 6:** After Clicking **Create** the integration canvas is displayed as below:
+**Step 6:** 
+
+After Clicking **Create** the integration canvas is displayed as below:
 
 ![](./images/200/integrationCanvas.png " ")
 
-**Step 7:** Fetch the ***Journal Entries.zip*** file from **FTP**(FTP Adapter)
+**Step 7:**
+
+ Fetch the ***Journal Entries.zip*** file from **FTP**(FTP Adapter)
 >Hover over the wire between Schedule and Stop, and click on the + sign Select the FTP Connection (FTP_Ext) from the list
 
 ![](./images/200/FTPAdapter.png " ")
  
- **Step 8:** Enter details as in the screenshot below to define the endpoint in the flow.
+ **Step 8:** 
+ 
+ Enter details as in the screenshot below to define the endpoint in the flow.
 
  ![](./images/200/ConfiguringFTPAdapter1.png " ")
 
- **Step 9:** In the next screen, select “Download File” as the option and ASCII as the transfer mode.
-For the directory name, make sure you add your own prefix to the “Download directory” e.g  /upload/E_1. Leave the 3 checkboxes unchecked and click **"Next"**
+ **Step 9:** 
+ 
+In the next screen, select “Download File” as the option and ASCII as the transfer mode.
+
+For the directory name, make sure you add your own prefix to the “Download directory” e.g  /upload/E_1. 
+
+Leave the 3 checkboxes unchecked and click **"Next"**
 
 ![](./images/200/ConfiguringFTPAdapter2.png " ")
 
-**Step 10:** Review Summary page and click **"Done"**.
+**Step 10:** 
+
+Review Summary page and click **"Done"**.
 
 ![](./images/200/FTPConnectionSummary.png " ")
 
-**Step 11:** 7.	You will see your new FTP endpoint in the flow and a Mapping action that has been added automatically as well. Since we are not passing parameters through the Schedule action in this particular case, it is safe to delete the Mapping action. Click on the Delete option for the Mapping action and Confirm. 
+**Step 11:** 
+
+You will see your new FTP endpoint in the flow and a Mapping action that has been added automatically as well. 
+
+Since we are not passing parameters through the Schedule action in this particular case, it is safe to delete the Mapping action. 
+
+Click on the Delete option for the Mapping action and Confirm. 
 
 ![](./images/200/deleteMappingBeforeFTPAdapter.png " ")
 
