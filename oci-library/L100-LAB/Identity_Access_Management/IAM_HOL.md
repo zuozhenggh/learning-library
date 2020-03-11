@@ -16,12 +16,14 @@
 
 Oracle Cloud Infrastructure Identity and Access Management (IAM) Service lets you control who has access to your cloud resources. You control the types of access a group of users has and to which specific resources. The purpose of this lab is to give you an overview of the IAM Service components and an example scenario to help you understand how they work together.
 
+There is a recording of the instructor going through this lab here: [Identity and Access Management](https://youtu.be/wQU9mb9yX7o)
+
 ## Pre-Requisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:
   - Tenant, User name and Password
-  - URL for the Console: [https://cloud.oracle.com/](https://cloud.oracle.com/)
+  - URL for the Console: [https://oracle.com](https://oracle.com)
   - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
 
 ## Practice-1: Signing in to the Console
@@ -30,7 +32,7 @@ Oracle Cloud Infrastructure Identity and Access Management (IAM) Service lets yo
 
 In this practice, you sign in to the Oracle Cloud Infrastructure console using your credentials.
 
-1. Open a supported browser and go to the Console URL:  [https://cloud.oracle.com](https://cloud.oracle.com).
+1. Open a supported browser and go to the Console URL:  [https://oracle.com](https://oracle.com).
 
 2. Click on the portrait icon in the top-right section of the browser window, then click on the **Sign in to Cloud** link.
 
@@ -52,11 +54,11 @@ In this practice, you sign in to the Oracle Cloud Infrastructure console using y
 
 ### Compartments Overview
 
-A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create subcompartments to help manage your resources more efficiently.
+A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
 
-1. From the menu, select Identity and Compartments. Click on the blue **Create Compartment** button to create a subcompartment.
+1. From the menu, select Identity and Compartments. Click on the blue **Create Compartment** button to create a sub-compartment.
 
-   ![Create a cmpartment]( img/img005.png)
+   ![Create a compartment]( img/img005.png)
 
 2. Name the compartment **Demo** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment** button when ready.
 
@@ -70,7 +72,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 A user's permissions to access services comes from the _groups_ to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
 
-We'll create users, groups, and policies to understand the concept.
+We'll create a user, a group, and a security policy to understand the concept.
 
 1. Sign in to the console, on the **Menu** click **Identity**, then select **Groups**.
 
@@ -88,14 +90,14 @@ We'll create users, groups, and policies to understand the concept.
 
    ![New group is shown]( img/image006.png)
 
-5. Now, let’s **create a policy** that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to compartment **Demo** to members or group oci-group:
+5. Now, let’s create a security policy that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to compartment **Demo** to members or group oci-group:
 
    a) On the **Menu** click **Identity**, and then click **Policies**.
 
    b) On the left side, select **Demo** compartment.
    ![Select ***Demo** compartment]( img/img007.png)
 
-   > NOTE: You may need to click on the + sign next to your main compartment name to be able to see the subcompartment ***Demo***. If you do, and you still don't see the subcompartment, ***Refresh your browser***. Sometimes your browser caches the comparment information and does not update its internal cache.
+   > NOTE: You may need to click on the + sign next to your main compartment name to be able to see the sub-compartment ***Demo***. If you do, and you still don't see the sub-compartment, ***Refresh your browser***. Sometimes your browser caches the compartment information and does not update its internal cache.
 
    c) After you have selected the **Demo** compartment, click **Create Policy**.
 
@@ -121,9 +123,9 @@ We'll create users, groups, and policies to understand the concept.
 
    c) In the **New User** dialog box, enter the following:
 
-      - **Name:** Enter a unique name or email address for the new user. I recommend using a personal email address to which you have access (Gmail, Yahoo, etc) For Example: yourname@domain.com
+      - **Name:** Enter a unique name or email address for the new user. I recommend using a personal email address to which you have access (GMail, Yahoo, etc).
       _This value is the user's login name for the Console and it must be unique across all other users in your tenancy._
-      - **Description:** Enter a description. For example, New oci user.
+      - **Description:** Enter a description. For example, New `oci user`.
 
       ![New user form]( img/img008.png)
 
@@ -147,13 +149,13 @@ We'll create users, groups, and policies to understand the concept.
 
    e) Click the **Copy** link and then click **Close**. Make sure to copy this password to your notepad.
 
-   f) Click **Sign Out** from the user menu and log out of the admin user account.
+   f) Click **Sign Out** from the user menu and log out of the admin user account completely.
 
       ![Sign out]( img/image013.png)
 
-8. Sign in as the new user using a different web browser window.
+8. Sign in as the new user using a different web browser or an incognito window.
 
-   a) Go to [https://cloud.oracle.com](https://cloud.oracle.com).
+   a) Go to [https://oracle.com](https://oracle.com).
 
    b) Enter the Tenant name, if prompted.
 
@@ -181,9 +183,8 @@ We'll create users, groups, and policies to understand the concept.
 
 10. Add User to a Group
 
-      a) Sign in back with the admin account using the Single Sign-on (SSO) option. Click on **Menu** --> **Identity** --> **Users**.
-
-      b) From the **Users** list, click your user (for example, user01)  to go to the user details page.
+      a) Sign in back with the ***admin*** account.
+      b) From the **Users** list, click the user account that you just created (for example, `user01`)  to go to the user details page.
 
       c) Under the **Resources** menu on the left, click **Groups.**
 
@@ -194,11 +195,11 @@ We'll create users, groups, and policies to understand the concept.
       f) Click **Add**.
          ![Press the Add button](img/image017.png)
 
-      g) Sign out.
+      g) Sign out of the Oracle Cloud website.
 
 11. Verify user permissions when a user belongs to a specific group
 
-      a) Sign in with the local user created
+      a) Sign in with the local user01 account you created. Remember to use the latest password you assigned to this user.
 
       b) Go to the **Menu** click **Compute** and **Instances**.
 
