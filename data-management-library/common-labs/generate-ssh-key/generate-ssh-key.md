@@ -3,7 +3,7 @@
 ## Introduction
 If you already have an ssh key pair, you may use that to connect to your environment.  We recommend you use the Oracle Cloud Shell to connect to your instance.  However if you prefer to connect via your laptop, please choose based on your configuration.
 
-`IMPORTANT:  If the ssh key is not created correct, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly. ` 
+*IMPORTANT:  If the ssh key is not created correct, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.* 
 
 
 ## Option 1:  Oracle Cloud Shell
@@ -68,11 +68,11 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 ## Option 4:  For Windows - Using PuttyGen
 
 1. Open PuttyGen
-2. Click the [Generate] button
+2. Click the **Generate** button
 
     ![](./images/puttygen-generate.jpg) 
 3. Move your mouse around the screen randomly until the progress bar reaches 100%
-4. Click the [Save private key] button. Name the file `<<sshkeyname>>`.  This file will not have an extension.
+4. Click the **Save private key** button. Name the file `<<sshkeyname>>`.  This file will not have an extension.
 
     ![](./images/puttygen-saveprivatekey.jpg) 
 5. Save the public key (displayed in the text field) by copying it to the clipboard and saving it manually to a new text file. Name the file `<<sshkeyname>>.pub`.   You will need this to access your instance in Step 5.  
