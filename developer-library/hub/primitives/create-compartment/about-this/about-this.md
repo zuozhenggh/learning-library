@@ -6,7 +6,7 @@ Compartments allow you to organize and control access to your cloud resources. A
 
 When you sign up for Oracle Cloud Infrastructure, Oracle creates your tenancy, which is the root compartment that holds all your cloud resources. You then create additional compartments within the tenancy (root compartment) and corresponding policies to control access to the resources in each compartment. When you create a cloud resource such as an instance, block volume, or cloud network, you must specify to which compartment you want the resource to belong.
 
-This template allows you to create a compartment in Oracle Cloud.
+This template allows you to create a compartment in Oracle Cloud Infrastructure.
 
 > For more details, refer to Oracle Cloud Infrastructure Documentation [Managing Compartments](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
 
@@ -28,8 +28,9 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 | Resource       | Value |
 |----------------|-------|
-|Tenancy OCID    |Locate your [Tenancy OCID](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm)|
-|Terraform Version | 0.11.x|
+|Parent Compartment OCID | Locate the parent [Compartment OCID](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm)|
+|Compartment Name | Enter a compartment name |
+|Description | Enter a description |
 
 ## Architecture
 

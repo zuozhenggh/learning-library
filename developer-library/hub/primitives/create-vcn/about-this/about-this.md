@@ -4,7 +4,7 @@
 
 A virtual cloud network (VCN) is a customizable and private network in Oracle Cloud Infrastructure. Just like a traditional data center network, the VCN provides you with complete control over your network environment. This includes assigning your own private IP address space, creating subnets, route tables, and configuring stateful firewalls. A single tenant can contain multiple VCNs, thereby providing grouping and isolation of related resources. Oracle’s new 25Gb network infrastructure offers significantly more bandwidth and allows enterprises to cost effectively take full advantage of compute, storage, and database services.
 
-This template allows you to create a VCN in Oracle Cloud.
+This template creates a virtual cloud network (VCN) and a regional public subnet in Oracle Cloud Infrastructure.
 
 > For more details, refer to Oracle Cloud Infrastructure Documentation [Networking Overview](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 
@@ -20,7 +20,7 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 ### Prerequisites
 
-* [Download](../scripts/terraform/resmgr/compartment.zip) the prebuilt Terraform script
+* [Download](../scripts/terraform/resmgr/vcn.zip) the prebuilt Terraform script
 
 ### Required Parameters
 
@@ -31,9 +31,9 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 ## Architecture
 
-![](./images/oci-compartments.png)
+![](./images/oci-vcn.png)
 
 ## Steps
 
 - [Provision Resources](?lab=provision-resources)
-- [Validate Provisioning](?lab=validate-provisioning)
+- [Validate Resources](?lab=validate-resources)

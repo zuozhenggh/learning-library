@@ -40,7 +40,7 @@ Creating a **Stack** involves uploading the Terraform configuration file, provid
 
 	* From the **Create in Compartment** drop-down, select the **Compartment** where you want to create the stack.
 
-	* Select the **Terraform Version** obtained from [**Before You Begin** -> **Required Parameters**] (?lab=about-this#RequiredParameters) section.
+	* Select the **Terraform Version** obtained from [**Before You Begin** -> **Required Parameters**](?lab=about-this#RequiredParameters) section.
 		>The Terraform version is not backwards compatible so ensure you select the correct version.
 
 	* Optionally, you can apply tags.
@@ -50,7 +50,7 @@ Creating a **Stack** involves uploading the Terraform configuration file, provid
 
 4. Configure the variables the cloud resources will require when creating the Stack, and also when you run the Apply job (next Step).
 
-	Enter the values from **Before You Begin** -> **Required Parameters** section.
+	Enter the values from [**Before You Begin** -> **Required Parameters**](?lab=about-this#RequiredParameters) section.
 
 	* Click **Next**.
 
@@ -97,7 +97,7 @@ When you run an apply job for a Stack, Terraform creates the resources and execu
 
 ## Option 2: Provision using Terraform CLI
 
-[WIP ..]
+Coming soon ..
 
 ## Summary
 
