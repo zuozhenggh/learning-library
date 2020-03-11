@@ -4,6 +4,8 @@
 ## Introduction
 In this lab you will perform many multitenant basic tasks.  You will create a pluggable database (PDB), make a copy of this pluggable database, or clone it, explore the concepts of "plugging" and unplugging a PDB and finally drop it.  You will then explore the concepts of cloning unplugged databases and databases that are hot or active. 
 
+[](youtube:kzTQGs75IjA)
+
 ## Step 1: Create PDB
 This section looks at how to create a new PDB.
 
@@ -715,5 +717,14 @@ The tasks you will accomplish in this lab are:
     alter system set local_listener='LISTCDB2' scope=both;
     ````
 
-## Conclusion
+## Lab Cleanup
+
+1. Reset the container databases back to their original ports. If any errors about dropping databases appear they can be ignored.
+
+    ````
+    ./resetCDB.sh
+    ````
+
+## Lab Cleanup
+
 Now you've had a chance to try out the Multitenant option. You were able to create, clone, plug and unplug a pluggable database. You were then able to accomplish some advanced tasks that you could leverage when maintaining a large multitenant environment. 

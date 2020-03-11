@@ -3,30 +3,7 @@
 ## Lab Introduction
 This is a series of 12 hands-on labs designed to familiarize you with the Application Container functionality of Oracle Multitenant. In these labs, we follow the journey of a notional company, Walt’s Malts, as their business expands from a single store to a global powerhouse – “from startup to starship”. 
 
-### Lab Setup
-
-All the scripts for this lab are located in the /home/oracle/labs/multitenant/scripts folder.  
-
-1.  To access the scripts, secure shell into the OCI compute instance.
-
-2.  Change to the ssh directory and ssh into your instance.  The public IP address can be found by going to Compute -> Instance.
-   
-    ````
-    cd .ssh
-    ssh -i optionskey opc@<your public ip address>
-    oci os object bulk-download -bn Multitenant --download-dir /home/opc 
-	sudo mv champion.zip /home/oracle
-	sudo chown oracle:oinstall /home/oracle/champion.zip 
-    sudo su - oracle
-    unzip champion.zip
-    cd /home/oracle/labs/multitenant
-    ````
-
-3. Reset the container databases back to their original ports if they were changed in a previous lab. If any errors about dropping databases appear they can be ignored.
-
-    ````
-    ./resetCDB.sh
-    ````
+[](youtube:ZPOjjF3kCvo)
 
 ## Step 1: Instant SaaS
 This section shows how Multitenant with Application Containers provides an instant SaaS architecture for an application formerly architected for standalone deployment.
