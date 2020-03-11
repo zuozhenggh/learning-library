@@ -5,7 +5,7 @@ This solution creates the following Oracle Cloud resources :
 * Linux VM
 * Virtual Cloud Network
 
-Complete the following steps to validate the cloud resources created.
+Complete the following steps to validate the resources created.
 
 ## Validate Connectivity to the Linux VM
 
