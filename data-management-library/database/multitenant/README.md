@@ -1,13 +1,16 @@
-# Welcome to Oracle Database Multitenant Content
+# Welcome to the Oracle Database Multitenant Github Learning Library
 
 ## Oracle Multitenant
 
-Oracle Multitenant is the architecture for the next-generation database cloud. It delivers isolation, agility and economies of scale. A multitenant container database can hold many pluggable databases. An existing database can simply be adopted with no application changes required. Oracle Multitenant fully complements other options, including Oracle Real Application Clusters and Oracle Active Data Guard.  Click on one of our workshops below to access the content.
+Oracle Multitenant is the architecture for the next-generation database cloud. It delivers isolation, agility and economies of scale. A multitenant container database can hold many pluggable databases. An existing database can simply be adopted with no application changes required. Oracle Multitenant fully complements other options, including Oracle Real Application Clusters and Oracle Active Data Guard.  
 
-![http://127.0.0.1:5500/ssworkshop/index.html](./images/multitenant-screenshot-freetier.png "") ![http://127.0.0.1:5500/ssworkshop/index.html](./images/multitenant-screenshot-ssworkshop.png " ") 
+## Workshops
+Click on one of our workshops below to access the content.
 
-- [Multitenant Workshop on FreeTier or Oracle Cloud Accounts](http://127.0.0.1:5500/ssworkshop/index.html?lab=lab-workshop-setup)
-- [Multitenant Workshop - Self Service Workshop](http://127.0.0.1:5500/ssworkshop/index.html?lab=lab-workshop-setup)
+![http://127.0.0.1:5500/ssworkshop/index.html](./images/multitenant-screenshot-freetier.png " ")  ![](./images/transparent.png " ")       ![http://127.0.0.1:5500/ssworkshop/index.html](./images/multitenant-screenshot-ssworkshop.png " ") 
+
+- [I have a Freetier or Oracle Cloud account](http://127.0.0.1:5500/ssworkshop/index.html?lab=lab-workshop-setup)
+- [I have an account from SSWorkshop](http://127.0.0.1:5500/ssworkshop/index.html?lab=lab-workshop-setup)
 
 
 ## Get an Oracle Cloud Account
@@ -22,12 +25,26 @@ Click here to request your trial account: [https://cloud.oracle.com/tryit](https
 
 
 ## Product Pages
-- [Multitenant Product Page](https://www.oracle.com/database/technologies/multitenant.html)
+- [Multitenant](https://www.oracle.com/database/technologies/multitenant.html)
+- [Database 19c](https://www.oracle.com/database/technologies/multitenant.html)
+
 
 
 ## Documentation
 - [Introduction to the Multitenant Architecture](https://docs.oracle.com/en/database/oracle/oracle-database/19/multi/introduction-to-the-multitenant-architecture.html#GUID-267F7D12-D33F-4AC9-AA45-E9CD671B6F22)
 - [Multitenant Administrators Guide - 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/multi/index.html)
+- [Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
+
+
+## Videos
+- [Oracle Multitenant](https://www.youtube.com/watch?v=lho1kurDVWE)
+- [Multitenant for World-Class SaaS](https://www.youtube.com/watch?v=-okrTDHqAdA)
+- [Oracle Database 19c](https://www.youtube.com/watch?v=EVPNyL2vAVI)
+- [Upgrading to Oracle Database 19c](https://www.youtube.com/watch?v=lOzL5irmuJo)
+- [Converged Database Architcture](https://www.youtube.com/watch?v=9d76-LhgMQs)
+- [Multitenant PDBs for Microservices and Clouds](https://www.youtube.com/watch?v=JdfATqdXuRc)
+- [The Hidden Data Economy](https://www.youtube.com/watch?v=CP3pwAwNepU)
+
 
 
 
