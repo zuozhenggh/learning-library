@@ -1,6 +1,11 @@
 
 # Multitenant Basics  
 
+## Introduction
+In this lab you will perform many multitenant basic tasks.  You will create a pluggable database (PDB), make a copy of this pluggable database, or clone it, explore the concepts of "plugging" and unplugging a PDB and finally drop it.  You will then explore the concepts of cloning unplugged databases and databases that are hot or active. 
+
+[](youtube:kzTQGs75IjA)
+
 ## Step 1: Create PDB
 This section looks at how to create a new PDB.
 
@@ -10,13 +15,16 @@ The tasks you will accomplish in this lab are:
 1. Connect to **CDB1**  
 
     ````
+    <copy>
     sqlplus /nolog
     connect sys/oracle@localhost:1523/cdb1 as sysdba
+    </copy>
     ````
 
 2. Check to see who you are connected as. At any point in the lab you can run this script to see who or where you are connected.  
 
     ````
+    <copy>
     select
       'DB Name: '  ||Sys_Context('Userenv', 'DB_Name')||
       ' / CDB?: '     ||case
@@ -29,6 +37,7 @@ The tasks you will accomplish in this lab are:
       "Who am I?"
       from Dual
       /
+      </copy>
     ````
 
     ![](./images/whoisconnected.png " ")
@@ -36,10 +45,12 @@ The tasks you will accomplish in this lab are:
 3. Create a pluggable database **PDB2**.  
 
     ````
+    <copy>
     show  pdbs;
     create pluggable database PDB2 admin user PDB_Admin identified by oracle;
     alter pluggable database PDB2 open;
     show pdbs;
+    </copy>
     ````
     ![](./images/showpdbsbefore.png " ")
 
@@ -57,10 +68,12 @@ The tasks you will accomplish in this lab are:
 5. Grant **PDB_ADMIN** the necessary privileges and create the **USERS** tablespace for **PDB2**.  
 
     ````
+    <copy>
     grant sysdba to pdb_admin;
     create tablespace users datafile size 20M autoextend on next 1M maxsize unlimited segment space management auto;
     alter database default tablespace Users;
     grant create table, unlimited tablespace to pdb_admin;
+    </copy>
     ````
 
    ![](./images/grantsysdba.png " ")
@@ -74,11 +87,11 @@ The tasks you will accomplish in this lab are:
 7. Create a table **MY_TAB** in **PDB2**.  
 
     ````
+    <copy>
     create table my_tab(my_col number);
-
     insert into my_tab values (1);
-
     commit;
+    </copy>
     ````
 
    ![](./images/createtable.png " ")
@@ -86,6 +99,7 @@ The tasks you will accomplish in this lab are:
 8. Change back to **SYS** in the container database **CDB1** and show the tablespaces and datafiles created.  
 
     ````
+    <copy>
     connect sys/oracle@localhost:1523/cdb1 as sysdba
 
     COLUMN "Con_Name" FORMAT A10
@@ -113,6 +127,7 @@ The tasks you will accomplish in this lab are:
     from CDB_Temp_Files inner join Containers using (Con_ID)
     order by 1, 3
     /
+    </copy>
     ````
    ![](./images/containers.png " ")
 
@@ -702,5 +717,14 @@ The tasks you will accomplish in this lab are:
     alter system set local_listener='LISTCDB2' scope=both;
     ````
 
-## Conclusion
+## Lab Cleanup
+
+1. Reset the container databases back to their original ports. If any errors about dropping databases appear they can be ignored.
+
+    ````
+    ./resetCDB.sh
+    ````
+
+## Lab Cleanup
+
 Now you've had a chance to try out the Multitenant option. You were able to create, clone, plug and unplug a pluggable database. You were then able to accomplish some advanced tasks that you could leverage when maintaining a large multitenant environment. 
