@@ -1,0 +1,76 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction to ADB",
+            "description": "ADB Introduction",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../common-labs/intro/intro.md"
+        },
+        {         
+            "title": "Lab: Sign up for a Free Tier Account - 5 min (optional)",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/common-labs/cloud-login/register-free-tier-account.md"
+        },
+        {         
+            "title": "Lab: Login to Oracle Cloud - 2 min",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/common-labs/cloud-login/cloud-login.md"
+        },
+            {         
+            "title": "Lab: Provision ADB - 10 min",
+            "description": "Autonomous Database Provisioning",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/11/2020",
+            "contentid": "12nnnn",
+            "filename": "../common-labs/adb-shared-provisioning/adb-shared-provisioning.md"
+        },
+            {         
+            "title": "Lab: Load ADW - 20 min",
+            "description": "ADW Loading",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/11/2020",
+            "contentid": "12nnnn",
+            "filename": "../autonomous-data-warehouse/shared/adw-loading/adw-loading.md"
+        },
+            {         
+            "title": "Lab: ADW Machine Learning - 15 min",
+            "description": "ADW Loading",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/11/2020",
+            "contentid": "12nnnn",
+            "filename": "../autonomous-data-warehouse/shared/adw-machine-learning/adw-machine-learning.md"
+        },
+        {         
+        "title": "Lab: ATP Performance Hub - 15 min",
+        "description": "ADW Loading",
+        "partnumber": "Ennnnn_01",
+        "publisheddate": "03/11/2020",
+        "contentid": "12nnnn",
+        "filename": "../autonomous-transaction-processing/shared/atp-performance-hub/atp-performance-hub.md"
+        } ,
+        {         
+        "title": "Lab: APEX App on Existing Table - 15 min",
+        "description": "Create an app based on existing tables in Oracle DB",
+        "partnumber": "Ennnnn_01",
+        "publisheddate": "03/11/2020",
+        "contentid": "12nnnn",
+        "filename": "../autonomous-transaction-processing/shared/atp-apex-table-app/atp-apex-table-app.md"
+        }   ,
+        {         
+        "title": "Lab: APEX App on Spreadsheets - 15 min",
+        "description": "Create an app based on spreadsheet loaded into ATP",
+        "partnumber": "Ennnnn_01",
+        "publisheddate": "03/11/2020",
+        "contentid": "12nnnn",
+        "filename": "../autonomous-transaction-processing/shared/atp-apex-table-app/atp-apex-table-app.md"
+        }     
+    ]
+}
