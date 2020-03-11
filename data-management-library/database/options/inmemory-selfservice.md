@@ -16,7 +16,7 @@
 
 
 ## Introduction
-This lab will show you how to login to the cloud and setup your environment using Oracle Resource Manager.  Once the environment setup is complete, you will proceed to the Multitenant lab.
+This lab will show you how to login to the cloud and setup your environment using Oracle Resource Manager.  Once the environment setup is complete, you will proceed to the In-Memory lab.
 
 **PLEASE READ:**  If you already have a compute instance (running the DB19c Image) configured, skip directly to [Section 5b-Download the Lab Files](#section-5b-download-the-lab-files).
 
