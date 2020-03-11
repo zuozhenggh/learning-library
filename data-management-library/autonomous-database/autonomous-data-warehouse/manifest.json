@@ -3,50 +3,47 @@
       {
             "title": "Lab 1: Getting Started with Autonomous Data Warehouse (ADW)",
             "description": "This 15-minute tutorial walks you through the steps to...",
-            "partnumber": "E12345_01",
-            "publisheddate": "10/14/2019",
-            "contentid": "123456",
             "filename": "LabGuide1.md"
         },
         {
             "title": "Lab 2: Working with Data Warehouse Services and the free Sample Data Sets",
             "description": "This 15-minute tutorial walks you through the steps to...",
-            "partnumber": "E12345_01",
-            "publisheddate": "10/14/2019",
-            "contentid": "123456",
             "filename": "LabGuide2.md"
         },
       {
           "title": "Lab 3: Loading Data into Your New Autonomous Data Warehouse",
           "description": "This 15-minute tutorial walks you through the steps to...",
-          "partnumber": "E12345_01",
-          "publisheddate": "10/14/2019",
-          "contentid": "123456",
           "filename": "LabGuide3.md"
       },
      {
           "title": "Lab 4: Querying Data in External Files",
           "description": "This 15-minute tutorial walks you through the steps to...",
-          "partnumber": "E12345_01",
-          "publisheddate": "10/14/2019",
-          "contentid": "123456",
           "filename": "LabGuide4.md"
       },
       {
            "title": "Lab 5a: Connecting to ADW Securely with a Connection Wallet",
            "description": "This 15-minute tutorial walks you through the steps to...",
-           "partnumber": "E12345_01",
-           "publisheddate": "10/14/2019",
-           "contentid": "123456",
            "filename": "LabGuide5a_connection_wallet.md"
        },
      {
           "title": "Lab 5: Creating Rich Data Visualizations",
           "description": "This 15-minute tutorial walks you through the steps to...",
-          "partnumber": "E12345_01",
-          "publisheddate": "10/14/2019",
-          "contentid": "123456",
           "filename": "LabGuide5.md"
+        },
+      {
+           "title": "Bonus Lab 6: Managing and Monitoring Your Data Warehouse Instance using the Cloud Console",
+           "description": "This 15-minute tutorial walks you through the steps to...",
+           "filename": "LabGuide6.md"
+         },
+       {
+            "title": "Bonus Lab 7: Scaling and Performance in Your Autonomous Data Warehouse",
+            "description": "This 15-minute tutorial walks you through the steps to...",
+            "filename": "LabGuide7.md"
+          },
+        {
+             "title": "Bonus Lab 8:  Using Oracle Machine Learning SQL Notebooks",
+             "description": "This 15-minute tutorial walks you through the steps to...",
+             "filename": "LabGuide8.md"
       }
     ]
 }

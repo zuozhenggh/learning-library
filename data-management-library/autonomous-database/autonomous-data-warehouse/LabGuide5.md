@@ -113,48 +113,51 @@ For simplicity's sake, in this exercise we will use the SH schema provided and w
 
    ![](./images/500/create_connection_dialog.jpg " ")
 
-  - Upon success of creating a new connection to the Autonomous Data Warehouse, select the __Create__ button and select __Data Set__.  
+  - Upon success of creating a new connection to the Autonomous Data Warehouse, click __Create__ and click __Data Set__.  
 
-    ![](./images/900/image025.jpg " ")
+    ![](./images/500/click_create_data_set.jpg " ")
 
-  - We will now choose to select the sales data we want to analyze and visualize in our first project.  Select the connection we just created named __SALES_HISTORY__.
+  - We will now choose the sales data we want to analyze and visualize in our first project.  Select the connection we just created named __SALES_HISTORY__.
 
-   ![](./images/900/image027.png " ")
+   ![](./images/500/choose_sales_history_connection.jpg " ")
 
-  - Click on the __ADMIN__ schema in the data warehouse.
+  - Click the __ADMIN__ schema in the data warehouse.
 
-   ![](./images/900/image029.png " ")
+    **Note:** If you do not see schemas because you are behind a firewall or on a VPN, you may need to use an alias or shut down the VPN to connect to your ADW database.
 
-  - Find and Click on __DV_SH_VIEW__.
+   ![](./images/500/select_admin_schema.jpg " ")
 
-   ![](./images/900/image031.png " ")
+  - Find and click the __DV\_SH\_VIEW__ view table from the ADMIN schema.
 
-  - First click on the __Add All__ Label in the left column, type a new Name for the Data Set called, __‘SALES_HISTORY’__. You may click on the __'Get Preview'__ at the bottom to see some example records. Click on the __Add__ button to add the Data Set.
-  *NOTE*: It is important to use the new name of __‘SALES_HISTORY’__ as the rest of the lab exercises will reference that name.  
+   ![](./images/500/select_dv_sh_view_from_admin.jpg " ")
 
-   ![](./images/900/image032.png " ")
+  - First click the __Add All__ label in the left column, and type a new Name for the Data Set, naming it __SALES_HISTORY__. You may click __Get Preview Data__ at the bottom to see some example records. Click the __Add__ button to add the Data Set.
+
+  **NOTE**: It is important to use the new name of __SALES_HISTORY__ as the rest of the lab exercises will reference that name.  
+
+   ![](./images/500/add_all_data_to_data_set.jpg " ")
 
   - Once the __SALES_HISTORY__ Data Set has successfully been created, click on the main menu on the top left.
 
-   ![](./images/900/image035.png " ")
+   ![](./images/500/data_set_results_click_menu.jpg " ")
 
-  - Select the __Data__ menu option on the left.  This should reveal your new __SALES_HISTORY__ Data Set you created.  Click on it to open it up as a **Project**.
+  - Select the __Data__ menu option on the left.  This should reveal your new __SALES_HISTORY__ Data Set you created.  Click it to open it up as a **Project**.
 
-   ![](./images/900/image037.jpg " ")
+   ![](./images/500/click_sales_history_data_set_to_open_as_project.jpg " ")
 
- - We are going to override the data types for two columns recognized as measures (ie. numeric), and correct them to be treated as attributes -- __CALENDAR_YEAR__ and __CUST_YEAR_OF_BIRTH__.  Click the __CALENDAR_YEAR__ column name under Data Elements, and change the __‘Treat As’__ field to an __‘Attribute’__.  Repeat for the field, __CUST_YEAR_OF_BIRTH__.
+ - We are going to override the data types for two columns recognized as measures (ie. numeric), and correct them to be treated as attributes -- __CALENDAR\_YEAR__ and __CUST\_YEAR\_OF\_BIRTH__.  Click the __CALENDAR\_YEAR__ column name under Data Elements, and change the __‘Treat As’__ field to an __‘Attribute’__.  Repeat for the field, __CUST\_YEAR\_OF\_BIRTH__.
 
-   ![](./images/900/image039.jpg " ")
+   ![](./images/500/change_treat_as_from_measure_to_attribute.jpg " ")
 
 
 
-## Part 4: Working with your New Project in Oracle Data Visualization Desktop
+## Part 4: Working with your New Project in Oracle Analytics Desktop
 
 ### **Project Introduction**
 
 No matter what your role is in the organization, access to timely data can provide greater insights to improve the performance of your business.  Whether you’re creating a data warehouse or data mart for yourself or others, Autonomous Data Warehouse is making it far simpler than ever before.  Easy, fast and elastic.   This small project demonstrates this.  This is how business users would interact with the Autonomous Data Warehouse.
 
-SCENARIO: You work at an electronics reseller company. The founder started his business by selling camera and photography equipment.  He’s already diversified his business portfolio as he already owns many 1-hour photo processing and video rental stores.  Over the last few years, his computer reselling business has grown, but he’s not convinced that the PC/server business will last.  His instincts tell him to continue to focus on growing his photography equipment and supplies business rather than PCs.  If you had access to this technology and solution, what would this data tell him?  What insights could you share?  How could this data help him focus on the right investments, grow his business and better target his existing and potential customers?
+**SCENARIO:** You work at an electronics reseller company. The founder started his business by selling camera and photography equipment.  He’s already diversified his business portfolio as he already owns many 1-hour photo processing and video rental stores.  Over the last few years, his computer reselling business has grown, but he’s not convinced that the PC/server business will last.  His instincts tell him to continue to focus on growing his photography equipment and supplies business rather than PCs.  If you had access to this Oracle technology and solution, what would this data tell him?  What insights could you share?  How could this data help him focus on the right investments, grow his business and better target his existing and potential customers?
 
 ### **Step 5: Browse and Explore the Data**
 
@@ -162,11 +165,11 @@ SCENARIO: You work at an electronics reseller company. The founder started his b
 
    Notice how easy it is to browse the data elements to see what is available for you to further explore.  After scrolling through the data, click back on the highlighted __Visualize__ option to bring up the blank canvas.
 
-   ![](./images/900/image047.jpg " ")
+   ![](./images/500/browse_and_explore_data.jpg " ")
 
 ### **Step 6: Create Your First Data Visualization**
 
-  - We will now create a very simple visualization project to finish this lab.  Multi-select (ctrl+click) the 5 Data Elements within __SALES_HISTORY__ including __PROD_NAME__, __AMOUNT_SOLD__, __CALENDAR_YEAR__, __PROD_CATEGORY__, and __QUANTITY_SOLD__.  
+  - We will now create a very simple visualization project to finish this part of the lab.  Multi-select (ctrl+click) the 5 Data Elements within __SALES\_HISTORY__ including __PROD\_NAME__, __AMOUNT\_SOLD__, __CALENDAR\_YEAR__, __PROD\_CATEGORY__, and __QUANTITY\_SOLD__.  
 
 - Drag the five selected columns to the middle of the screen.
    ![](./images/900/image050.png " ")
@@ -177,11 +180,11 @@ SCENARIO: You work at an electronics reseller company. The founder started his b
 
  You may **Save** this project if you need.   At this point with very few steps, you now have something that can further bring your data to life and you can begin to make some data-driven decisions.  As you share this with others, more people will want to gain access to and benefit from the data. To enable this, the Autonomous Data Warehouse is easy to use, fast, elastic, and will be able to quickly scale to meet your growing data and user base.
 
-## Part 5: Create a Another Project with Multiple Canvases in Oracle Data Visualization Desktop
+## Part 5: Create Another Project with Multiple Canvases in Oracle Analytics Desktop
 
 ### **Step 7: Create a New Data Visualization project**
 
-In this part of the lab, we will create 3 basic interactive canvases within a single project.  You will see how easy and powerful you can gain insights and visualize your data in just a few clicks.  This lab is not intended to be an exhaustive view of all Oracle Data Visualization capabilities.
+In this part of the lab, we will create 3 basic interactive canvases within a single project.  You will see how easy and powerful you can gain insights and visualize your data in just a few clicks.  This lab is not intended to be an exhaustive view of all Oracle Analytics Desktop capabilities.
 
 While this will provide specific instructions to replicate the intended visualizations, don’t feel that you must be constrained.  Try other visualization types and layouts.  Modify filters and colors as you like.  If you run into trouble you can always undo the previous step with Ctrl-Z or the back arrow at the top right of the screen.
 
@@ -227,7 +230,7 @@ We will create Sales Summary using a Combo Chart to show the Amount Sold, Quanti
 
    ![](./images/900/imageE021.png " ")
 
-- Select the __Analytics__ icon option from the left Menu Navigator.  Then double click on __Trend Line__. This chart serves as valueable insight on month-over-month sales.
+- Select the __Analytics__ icon option from the left Menu Navigator.  Then double click on __Trend Line__. This chart serves as valuable insight on month-over-month sales.
 
    ![](./images/900/imageE025.png " ")
 
@@ -377,7 +380,7 @@ We will create our last chart on our Demographics Summary.  We will create a cha
 
 ### **Step 11: Switching to presentation mode - Narrate Your Data, Insights and Analytics**
 
-The narrate capability is intended to provide a live presentation mode that an analyst can use to explain their findings during meetings.  Instead of screen grabbing or exporting charts and pasting them statically into a DOC or PPT, this presentation mode provides a versatile graphical mode for stepping through your storyline.  Your storyline, or narrative, is the thinking that led to your finding – your workings that justify your conclusion.  During a meeting, in presentation mode, all navigation and build interfaces are hidden to maximize the view of the visualizations.  All visualizations remain dynamic and are drillable and you can even apply filters. If there are questions during your presentation, you are not trapped in a static PPT.
+The narrate capability is intended to provide a live presentation mode that an analyst can use to explain their findings during meetings.  Instead of screen grabbing or exporting charts and pasting them statically into a document or PowerPoint, this presentation mode provides a versatile graphical mode for stepping through your storyline.  Your storyline, or narrative, is the thinking that led to your finding – your workings that justify your conclusion.  During a meeting, in presentation mode, all navigation and build interfaces are hidden to maximize the view of the visualizations.  All visualizations remain dynamic and are drillable and you can even apply filters. If there are questions during your presentation, you are not trapped in a static PPT.
 
 - Click on the __Narrate__ button at the top right.  This switches the modes from creating visualizations to presenting them.
 
@@ -411,7 +414,7 @@ This step enables you to share your project file with colleges.
 
    ![](./images/900/imageE086.png " ")  
 
-  - Choose to export as a __File__.  Email may work if DV Desktop is able to interact with your local email client.  Cloud provides the mechanism to upload and share your project to <a href="https://cloud.oracle.com/en_US/oac" target="\_blank">Oracle Analytics Cloud</a>.
+  - Choose to export as a __File__.  Email may work if Oracle Analytics Desktop is able to interact with your local email client.  Cloud provides the mechanism to upload and share your project to <a href="https://cloud.oracle.com/en_US/oac" target="\_blank">Oracle Analytics Cloud</a>.
 
 - Choose the export options as shown below and save the DVA file to your desktop.
 
