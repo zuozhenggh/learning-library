@@ -6,7 +6,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../intro/intro.md"
+            "filename": "../intro/intro.md"
         },
         {         
             "title": "Generate SSH Key",
@@ -14,7 +14,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../../generate-ssh-key/generate-ssh-key.md"
+            "filename": "https://github.com/oracle/learning-library/data-management-library/generate-ssh-key/generate-ssh-key.md"
         },
         {         
             "title": "Login to Oracle Cloud",
