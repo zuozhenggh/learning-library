@@ -8,7 +8,8 @@ This document walks you through the steps needed to replicate this use case in y
 
 This section works through the steps that are required to build the integration from scratch.
 
-## Pre-requisites:
+**Pre-requisites:**
+
 You will need access to the following applications and products:
 
 • Oracle Integration Cloud (OIC)
@@ -21,66 +22,91 @@ You will need access to the following applications and products:
 
 ## Oracle Integration Cloud (OIC):
 
->**Step 1:** Login into the Oracle Integration Cloud Home page , after which you see the home page as below:
+**Step 1:** 
 
- ![](OICHomePage.jpeg)
+Login into the Oracle Integration Cloud Home page , after which you see the home page as below:
 
->**Step 2:** Click on the left side panel under Integrations tab so you can start creating integrations
+ ![](./images/100/OICHomePage.jpeg " ")
 
-![](IntegrationHomePage.png)
+**Step 2:**
+
+ Click on the left side panel under Integrations tab so you can start creating integrations
+
+![](./images/100/IntegrationHomePage.png " ")
 
 
->**Step 3:** On the left panel click on the connections and you will be able to see connections page as below:
+**Step 3:** 
 
-![](ConnectionPage.png)
+On the left panel click on the connections and you will be able to see connections page as below:
 
->**Step 4:** Click on the create button and you will be able to see list of adapters available currently in OIC
+![](./images/100/ConnectionPage.png " ")
 
-![](OICExistingAdapters.png)
+**Step 4:**
+
+ Click on the create button and you will be able to see list of adapters available currently in OIC
+
+![](./images/100/OICExistingAdapters.png " ")
 
 ## FTP Connection SetUp:
 
->**Step 5:** For Setting up **FTP Connection** on the search screen in **Step 4** type FTP and select the adapter as shown below:
+**Step 5:** 
 
-![](FTPConnection.png)
+For Setting up **FTP Connection** on the search screen in **Step 4** type FTP and select the adapter as shown below:
 
->**Step 6:** Click on select button and you will be able to see a page to enter details of Name of the connection and enter a brief description and click on the create button
+![](./images/100/FTPConnection.png " ")
 
-![](FTPConnectionNaming.png)
+**Step 6:** 
+
+Click on select button and you will be able to see a page to enter details of Name of the connection and enter a brief description and click on the create button
+
+![](./images/100/FTPConnectionNaming.png " ")
 
 
->**Step 7.1:** Enter the **FTP Server Host Address**, **Port** and make sure the **SFTP Connection** is set to **Yes** .
+**Step 7.1:** 
+
+Enter the **FTP Server Host Address**, **Port** and make sure the **SFTP Connection** is set to **Yes** .
 
  >**Details Picture 1:**
-![](FTPConnDetails1.png)
 
->**Step 7.2:** Select the **Security Policy** as ***"FTP Server Access Policy"*** and Enter the **UserName** and **Password** details as well.
+![](./images/100/FTPConnDetails1.png " ")
+
+**Step 7.2:** 
+
+Select the **Security Policy** as ***"FTP Server Access Policy"*** and Enter the **UserName** and **Password** details as well.
 
 
  >**Details Picture 2:**
-![](FTPConnDetails2.png)
+![](./images/100/FTPConnDetails2.png " ")
 
 
->**Step 8:** Make sure the % on top is 85% and after clicking on Test it should become 100% and display the message as shown below
+**Step 8:** 
 
-![](FTPConnectionTestedSuccessfully.png)
+Make sure the % on top is 85% and after clicking on Test it should become 100% and display the message as shown below
 
->** After this step hit the Save button and repeat the same until **Step 4** for ERP Connection.
+![](./images/100/FTPConnectionTestedSuccessfully.png " ")
+
+After this step hit the Save button and repeat the same until **Step 4** for ERP Connection.
 
 
 ## ERP Connection SetUp
 
->**Step 9:** Type Oracle ERP Cloud in the list of adapters ***search*** section and you can see the ***ERP adapter*** listed as in the image below:
+**Step 9:** 
 
-![](ERPConnection.png)
+Type Oracle ERP Cloud in the list of adapters ***search*** section and you can see the ***ERP adapter*** listed as in the image below:
 
->**Step 10:** Enter the details into this adapter like ***"ERP Services Catalog WSDL URL","ERP Events Catalog URL (optional)","Interface Catalog URL (optional)"*** and chose the **Security Policy** as *** Username Password Token*** and enter **Username** and **Password**.
+![](./images/100/ERPConnection.png " ") 
 
-![](ERPConnectionDetails.png)
+**Step 10:** 
 
->**Step 11:** After successful entering of details click on the Test Button on the top right corner and make sure it comes to a 100% and tested successfully.
+Enter the details into this adapter like ***"ERP Services Catalog WSDL URL","ERP Events Catalog URL (optional)","Interface Catalog URL (optional)"*** and chose the **Security Policy** as *** Username Password Token*** and enter **Username** and **Password**.
 
-![](TestingERPConnection.png)
+![](./images/100/ERPConnectionDetails.png  " ")
+
+**Step 11:** 
+
+After successful entering of details click on the Test Button on the top right corner and make sure it comes to a 100% and tested successfully.
+
+![](./images/100/TestingERPConnection.png " ")
  
 
  

@@ -13,80 +13,80 @@ Key takeaways from this lab:
 
 **Step 1:** On the Oracle Integration Cloud home page, click **Integrations.**
 
-![](Image1a_1.png)
+![](./images/200/Image1a_1.png " ")
 
 **Step 2:** On the Integrations page, click **Create**. The Create Integration - Select a Style/Pattern dialog is displayed.
 
-![](Image1a_2.png)
+![](./images/200/Image1a_2.png " ")
 
 **Step 3:** Select the ***Scheduled Orchestration*** orchestration pattern, as this integration can be scheduled in frequent intervals as per the usecase.
 
-![](Image1a_3.png)
+![](./images/200/Image1a_3.png " ")
 
 **Step 4:** 3.	After selecting ***Scheduled Orchestration*** type of integration.  The Create New Integration dialog is displayed.
 
-![](Image1a_4.png)
+![](./images/200/Image1a_4.png " ")
 
 **Step 5:** Enter the details as mentioned below:
 
-![](Image1a_5.png)
+![](./images/200/Image1a_5.png " ")
 
 After entering the details as mentioned above, you can see click the create button in order to create an integration.
 
-![](hitthecreatebutton.png)
+![](./images/200/hitthecreatebutton.png " ")
 
 **Step 6:** After Clicking **Create** the integration canvas is displayed as below:
 
-![](integrationCanvas.png)
+![](./images/200/integrationCanvas.png " ")
 
 **Step 7:** Fetch the ***Journal Entries.zip*** file from **FTP**(FTP Adapter)
 >Hover over the wire between Schedule and Stop, and click on the + sign Select the FTP Connection (FTP_Ext) from the list
 
-![](FTPAdapter.png)
+![](./images/200/FTPAdapter.png " ")
  
  **Step 8:** Enter details as in the screenshot below to define the endpoint in the flow.
 
- ![](ConfiguringFTPAdapter1.png)
+ ![](./images/200/ConfiguringFTPAdapter1.png " ")
 
  **Step 9:** In the next screen, select “Download File” as the option and ASCII as the transfer mode.
 For the directory name, make sure you add your own prefix to the “Download directory” e.g  /upload/E_1. Leave the 3 checkboxes unchecked and click **"Next"**
 
-![](ConfiguringFTPAdapter2.png)
+![](./images/200/ConfiguringFTPAdapter2.png " ")
 
 **Step 10:** Review Summary page and click **"Done"**.
 
-![](FTPConnectionSummary.png)
+![](./images/200/FTPConnectionSummary.png " ")
 
 **Step 11:** 7.	You will see your new FTP endpoint in the flow and a Mapping action that has been added automatically as well. Since we are not passing parameters through the Schedule action in this particular case, it is safe to delete the Mapping action. Click on the Delete option for the Mapping action and Confirm. 
 
-![](deleteMappingBeforeFTPAdapter.png)
+![](./images/200/deleteMappingBeforeFTPAdapter.png " ")
 
-![](confirmDelete.png)
+![](./images/200/confirmDelete.png " ")
 
 **Step 12:** 
 
 Next, we add our **ERP Cloud endpoint** to the flow. Hover on the wiring between the FTP endpoint and STOP action, and click on the + sign. Select the **ERP Connection.**
 
-![](ERPConnectionSetUp.png)
+![](./images/200/ERPConnectionSetUp.png " ")
 
 **Step 13:**
 
  Enter the name and description for ERP endpoint as follows.
 
 
-![](ERPConnectionDescription.png)
+![](./images/200/ERPConnectionDescription.png " ")
 
 **Step 14:** 
 
 Select the ***Bulk Data into ERP Cloud Application*** option (the screenshot below is an early preview – you might see a slightly different wording in your lab instance)
 
-![](ERPConnectionDetails2.png)
+![](./images/200/ERPConnectionDetails2.png " ")
 
 **Step 15:**   
 
 Select the ***Import Journals*** process. Leave the rest of the options at default.
 
-![](ERPConnectionDetails3.png)
+![](./images/200/ERPConnectionDetails3.png " ")
 
 **Step 16:** 
 
@@ -96,13 +96,13 @@ Select the ***Notification Mode*** and ***Occurrence*** as below.
 Leave the ***Enable Callback*** checkbox unchecked for now. We will come back here to configure it when we have created the Callback flow a bit later.
 
 
-![](ERPConnectionNotificationMode.png)
+![](./images/200/ERPConnectionNotificationMode.png " ")
 
 **Step 17:**
 
 Review your choices in the Summary window and click ***Done***
 
-![](ERPConnectionSummary.png)
+![](./images/200/ERPConnectionSummary.png " ")
 
 **Step 18:**
 
@@ -110,19 +110,19 @@ Review your choices in the Summary window and click ***Done***
 Click on the mapping action, and then the pencil icon to edit the mapping.
 
 
-![](IntegrationERPMapperFlow.png)
+![](./images/200/IntegrationERPMapperFlow.png " ")
 
 **Step 19:** 
 
    Map the ***FileReference*** and ***Properties*** elements from the FTP endpoint to the ERP endpoint as below in the mapper.  
 
-  ![](mappingbetweensourceandtarget.png)
+  ![](./images/200/mappingbetweensourceandtarget.png " ")
 
 **Step 20:**
 
   Click on ***Validate.*** Once confirmed that your mapping is valid, click on ***Close*** to get out of the mapper.
 
-![](clickonvalidateandclose.png)
+![](./images/200/clickonvalidateandclose.png " ")
 
 **Step 21:**
 
@@ -135,40 +135,40 @@ Click on the mapping action, and then the pencil icon to edit the mapping.
 
   Open the ***Actions*** tab, and drag the ***Notification*** action just above the ***Stop*** element.
 
-![](openingActionTab.png)
+![](./images/200/openingActionTab.png " ")
 
 **Step 23:**
 
 **Name** and **describe** your Action as below and click on **Create** button.
 
-![](emailactiondetails.png)
+![](./images/200/emailactiondetails.png " ")
 
 **Step 24:**
 
 Click the pencil icon for ***Form*** field.
 
-![](emailForm.png)
+![](./images/200/emailForm.png " ")
 
 
 **Step 25:**
 
 Enter your ***own email address*** in the expression in single quotes. Repeat this for the **To** field as well.
 
-![](enteringemailid.png)
+![](./images/200/enteringemailid.png " ")
 
 
 **Step 26:**
 
  Click on ***Validate*** and ***Close***.
 
- ![](validateandclose.png)
+ ![](./images/200/validateandclose.png " ")
 
 
 **Step 27:**
 
 Next, click on the pencil icon for the ***Subject***.
 
-![](emailActionSubject.png)
+![](./images/200/emailActionSubject.png " ")
 
 **Step 28:**
 
@@ -180,7 +180,7 @@ For second parameter, drag the ***$ImportIntoERPCloud->$ImportBulkDataResponse->
 
 Click on ***Validate*** and ***Close**.
 
-![](emaildetails.png)
+![](./images/200/emaildetails.png " ")
 
 
 **Step 29:**
@@ -189,7 +189,7 @@ Enter text as seen in the ***Body*** below (you don’t need the single quotes h
 
 
 
-![](emaildetailsaddition.png)
+![](./images/200/emaildetailsaddition.png " ")
 
 
 **Step 30:**
@@ -197,7 +197,7 @@ Enter text as seen in the ***Body*** below (you don’t need the single quotes h
 ***Validate*** your entries and then click on ***Close.*** You will be back in the flow designer with the new notification action
 
 
-![](integrationflow.png)
+![](./images/200/integrationflow.png " ")
 
 
 ## Configure Business Tracking Identifiers:
@@ -210,7 +210,7 @@ Click on the red icon on the top right, which shows the number of errors in your
 Click on the hamburger icon at the top right, and select ***Tracking***.
 
 
-![](tracking.png)
+![](./images/200/tracking.png " ")
 
 **Step 32:** 
 
@@ -218,7 +218,7 @@ Drag the **schedule->startTime** to the first ***Tracking Field*** cell in the t
 
 Here you are configuring OIC to identify instances of runs of this flow in the monitoring consoles with it’s start time as the unique ID.
 
-![](ConfiguringTracking.png)
+![](./images/200/ConfiguringTracking.png " ")
 
 
 **Step 33:** 
@@ -228,7 +228,7 @@ Click on ***Save*** .
 This will bring you back to the flow in the designer, and the red errors icon should no longer be there.
 
 
-![](integrationflowreturn.png)
+![](./images/200/integrationflowreturn.png " ")
 
 
 **Step 34:** 
@@ -237,7 +237,7 @@ This will bring you back to the flow in the designer, and the red errors icon sh
 
  And a dialogue box will open up for saving all the work on which you need to click on ***Save**.
 
- ![](SaveChangesOrExit.png)
+ ![](./images/200/SaveChangesOrExit.png " ")
 
 ## Creation of Call back Integration for ERP:
 
@@ -246,8 +246,8 @@ This will bring you back to the flow in the designer, and the red errors icon sh
   This will bring you to **Integrations** page.
 
   Click on **Create** button and select the **App Driven Orchestration**
-
-  ![](appdrivenorchestration2.png)
+ 
+  ![](./images/200/appdrivenorchestration2.png " ")
 
 
   **Step 36:**
@@ -255,7 +255,7 @@ This will bring you back to the flow in the designer, and the red errors icon sh
   Enter the details as mentioned in the screenshot below and click the **Create** button.
 
 
- ![](callbackIntegrationDetails.png)
+ ![](./images/200/callbackIntegrationDetails.png " ")
 
 
  **Step 37:**
@@ -265,7 +265,7 @@ This will bring you back to the flow in the designer, and the red errors icon sh
   you will be able to search for ERP adapter as shown in pic below:
 
 
-  ![](selectingERPAdapter.png)
+  ![](./images/200/selectingERPAdapter.png " ")
 
   **Step 38:**
     
@@ -276,7 +276,7 @@ This will bring you back to the flow in the designer, and the red errors icon sh
   **Step 41:**
 
 
-   ![](callbackdocumentid.png)
+   ![](./images/200/callbackdocumentid.png " ")
 
 
 
@@ -289,7 +289,7 @@ This will bring you back to the flow in the designer, and the red errors icon sh
  (you would typically have the tracking and payload options disabled on production instances, but we enable them here for this lab).
 
 
-  ![](activatingIntegration.png)
+  ![](./images/200/activatingIntegration.png " ")
 
   **Step 44:**
 
@@ -300,7 +300,7 @@ This will bring you back to the flow in the designer, and the red errors icon sh
   We will instead configure it as the Callback flow in the **ERP Cloud** (via the ERP endpoint in our Import Journal Entries flow), which **ERP Cloud** will then invoke on completion of the Import job.
 
 
-  ![](activatedCallbackIntegration.png)
+  ![](./images/200/activatedCallbackIntegration.png " ")
 
   **Step 45:**
 
@@ -312,7 +312,7 @@ This will bring you back to the flow in the designer, and the red errors icon sh
   
   For this, click on the hamburger menu on the top right, and go to ***Primary Info.***
 
-![](viewprimaryinfo.png)
+![](./images/200/viewprimaryinfo.png " ")
 
  **Step 46:**
 
@@ -320,7 +320,7 @@ This will bring you back to the flow in the designer, and the red errors icon sh
  
  You will need to use this in the next steps. Click **Close.**
 
- ![](detailsofprimaryinfo.png)
+ ![](./images/200/detailsofprimaryinfo.png " ")
 
 
 ## Complete Callback Config in the Journal Entries Import Flow:
@@ -329,20 +329,20 @@ This will bring you back to the flow in the designer, and the red errors icon sh
 
 From the Integrations listing, click on the hamburger icon for the ***Import Journals*** flow and select ***Edit***
 
-![](editingImportJournals.png)
+![](./images/200/editingImportJournals.png " ")
 
 **Step 48:**
 
 Click on the pencil icon to edit the ***ERP Cloud endpoint*** in the flow.
 
-![](EditingERPAdapter.png)
+![](./images/200/EditingERPAdapter.png " ")
 
 
 **Step 49:**
 
 This will load the ***Summary*** page. Click Back to get the ***Responses*** tab.
 
-![](ERPSummary.png)
+![](./images/200/ERPSummary.png " ")
 
 
 **Step 50:**
@@ -355,7 +355,7 @@ Note for the version we only need the first 2 digits.
 
 Click ***Next.***
 
-![](editingcallbackinerp.png)
+![](./images/200/editingcallbackinerp.png " ")
 
 
 **Step 51:**
@@ -366,13 +366,13 @@ updating the configuration and regenerating artifacts of the flow.
 
 
 
-![](UpdateConfiguration.png)
+![](./images/200/UpdateConfiguration.png " ")
 
 **Step 52:**
 
 Select the slider to activate the **Import Journals** flow.
 
-![](slidertoactivateintegration.png)
+![](./images/200/slidertoactivateintegration.png " ")
 
 
 **Step 53:**
@@ -389,7 +389,7 @@ troubleshooting **(you would typically have the tracking and payload options dis
 
 **on production instances, but we enable them here for this lab).**
 
- ![](activatingIntegration.png)
+ ![](./images/200/activatingIntegration.png " ")
 
 
 **Step 54:**
@@ -408,7 +408,7 @@ After activation you will get a info message giving the details of integration a
 
 in the pic below.
 
-![](activatedintegration.png)
+![](./images/200/activatedintegration.png " ")
 
 ## Triggering the Integration:
 
@@ -430,7 +430,7 @@ this lab we have these pre-created.
 
  confirm the zip file is present in the FTP location)
 
- ![](FTPServerFolder.png)
+ ![](./images/200/FTPServerFolder.png " ")
 
 
  **Step 56:**
@@ -439,13 +439,13 @@ this lab we have these pre-created.
  
  ***Submit Now***  to run the flow.
 
- ![](SubmitNow.png)
+ ![](./images/200/SubmitNow.png " ")
 
 A dialog box open up select the option of ***Ad hoc request*** and 
 
 once again click on ***Submit Now*** button.
 
-![](adhocrequestsubmitnow.png)
+![](./images/200/adhocrequestsubmitnow.png " ")
 
 
 **Step 57:**
@@ -457,7 +457,7 @@ running instance to track it.
 Click on the link to track the run.
 
 
-![](runninginstance.png)
+![](./images/200/runninginstance.png " ")
 
 
 **Step 58:**
@@ -467,7 +467,7 @@ This will take you to the **Monitoring** page where you should see your integrat
 
 either in ***Processing*** or ***Successful*** state
 
-![](TrackingFlow.png)
+![](./images/200/TrackingFlow.png " ")
 
 
 **Step 59:**
@@ -483,7 +483,7 @@ Once it is marked as ***Successful***, you should receive the submission confirm
  the status notification email.
 
 
- **Congratulations,** you have now completed this use case to 
+ **Congratulations!!** you have now completed this use case to 
  
  **Import Journal Entries (FBDI) into ERP Cloud!**
 
