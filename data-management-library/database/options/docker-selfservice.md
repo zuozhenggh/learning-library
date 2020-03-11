@@ -9,7 +9,6 @@
 - [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
 - [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
 - [Section 5-Connect to your instance](#section-5-connect-to-your-instance)
-- [Section 5b-Run the Setup Scripts](#section-5b-run-the-setup-scripts)
 
 
 
@@ -29,7 +28,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 - **Compartment**: \<Provided by Oracle\>
 - **VCN**: \<Provided by Oracle\>
 - **Region**: \<Provided by Oracle\>
-- **Subnet**: \<Provided by Oracle\>
+- **Subnet ID**: \<Provided by Oracle\>
 - **Linux Image ID**: \<Provided by Oracle\>
 
 

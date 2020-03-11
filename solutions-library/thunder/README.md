@@ -22,13 +22,14 @@ Before working through the examples, set up a config file with the required cred
 
 The examples are organized as follows:
 
-|  Type  |  Description  |  C1  |  C2  |  C3  |  C4  |  C5  |
-|:------:|:-------------:|:----:|:----:|:----:|:----:|:----:|
+|  Type  |  Description  |  C1  |  C2  |  C3  |  C4  |  C5  |  C6  |
+|:------:|:-------------:|:----:|:----:|:----:|:----:|:----:|:----:|
 | [enterprise_tier](./examples/enterprise_tier/README.MD)  | Contains all terraform components  | -  | -  | -  | -  | -  |
 | [free_tier](./examples/free_tier/README.MD)  | Contains the always free components  | -  | -  | -  | -  | -  |
 | **crawl** | The crawl is just getting the basics set up in OCI. How do I establish the basic building blocks needed for my journey?   |  [adw/atp](./examples/crawl/adw/README.md) |  [dbaas](./examples/crawl/dbaas/README.md) |  [iam](./examples/crawl/iam/README.md) | [instances](./examples/crawl/adw/README.md)  |  [network](./examples/crawl/network/README.md) |
 | **walk** | When you're looking to walk, the way you want to think about it is: In the crawl stage, you've established the foundations in the environment, now you're ready to start introducing components and concepts to take advantage of scale.   | [dns](./examples/walk/dns/README.md)  | [fss](./examples/walk/fss/README.md)  | [instance-principal](./examples/walk/instance-principal/README.md)  | [load balancer](./examples/walk/load-balancer/README.md)  | [object storage](./examples/walk/object-storage/README.md)  |
-| **run** | Now as you move on to the run, you're ready to start visualizing what your application will look like in OCI and designing your Architecture. You can also think through what your operating model will look like.  | [backup and restore](./examples/run/backup-restore/README.md)  | [glusterfs](./examples/run/glusterfs/README.md)  | [grafana](./examples/run/grafana/Readme.md)  | [start-stop](./examples/run/start-stop/README.md)  | -  |
+| **run** | Now as you move on to the run, you're ready to start visualizing what your application will look like in OCI and designing your Architecture. You can also think through what your operating model will look like.  | [backup and restore](./examples/run/backup-restore/README.md)  | [glusterfs](./examples/run/glusterfs/README.md)  | [grafana](./examples/run/grafana/Readme.md)  | [start-stop](./examples/run/start-stop/README.md)  | [autoscaling](./examples/run/asg/README.md)  | [remote-peering](./examples/run/remote-peering/README.md)  |
+| [network_architectures](./examples/network_architectures/README.md)  | Contains network architecture examples  | -  | -  | -  | -  | -  |
 
 
 All the phases will need an oci provider which can be defined in the terraform.tfvars or *.auto.tfvars file in every component and the values must reflect your OCI tenancy:

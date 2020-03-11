@@ -32,13 +32,11 @@ Your data values may be different than those shown in the screenshots in this la
   ![](./images/alerts-page-summary.png " ")
 
 
-
 -  View the totals for target databases, critical alerts, high risk alerts, medium risk alerts, and open alerts.
 
    At a glance, you can better understand whether the security of your database is in jeopardy and how you should prioritize your work.
 
    ![](./images/all-alerts-totals.png " ")
-
 
 - Scroll down to review the alerts in the table.
 
