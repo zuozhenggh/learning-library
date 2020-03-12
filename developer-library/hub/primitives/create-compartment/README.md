@@ -8,13 +8,15 @@ When you sign up for Oracle Cloud Infrastructure, Oracle creates your tenancy, w
 
 This template allows you to create a compartment in Oracle Cloud Infrastructure.
 
+> For more details, refer to Oracle Cloud Infrastructure Documentation [Managing Compartments](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
+
 ## Before You Begin
 
 Before you begin creating resources in Oracle Cloud Infrastructure, ensure that you have the following:
 
 * Credentials for an Oracle Cloud tenancy
 
-* Access to a computer that has the following software and access to the internet:
+* Access to a computer that has the following software and access to the internet :
 
     * A [supported](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/web-browser-requirements.html) web browser for Oracle Cloud Infrastructure
 
@@ -26,7 +28,9 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 | Resource       | Value |
 |----------------|-------|
-|Tenancy OCID    |Locate your [Tenancy OCID](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm)|
+|Parent Compartment OCID | Locate the parent [Compartment OCID](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm)|
+|Compartment Name | Enter a compartment name |
+|Description | Enter a description |
 |Terraform Version | 0.11.x|
 
 ## Architecture
