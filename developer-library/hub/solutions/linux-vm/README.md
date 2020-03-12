@@ -24,7 +24,7 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 ### Prerequisites
 
-* [Download](../scripts/terraform/resmgr/vcn-compute.zip) the prebuilt Terraform script for this solution.
+* [Download](./scripts/terraform/resmgr/vcn-compute.zip) the prebuilt Terraform script for this solution.
 
 ### Required Parameters
 

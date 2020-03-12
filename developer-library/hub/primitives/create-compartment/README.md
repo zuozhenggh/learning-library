@@ -22,7 +22,7 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 ### Prerequisites
 
-* [Download](../scripts/terraform/resmgr/compartment.zip) the prebuilt Terraform script
+* [Download](./scripts/terraform/resmgr/compartment.zip) the prebuilt Terraform script
 
 ### Required Parameters
 
