@@ -14,7 +14,7 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 * Credentials for an Oracle Cloud tenancy
 
-* Access to a computer that has the following software and access to the internet:
+* Access to a computer that has the following software and access to the internet :
 
     * A [supported](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/web-browser-requirements.html) web browser for Oracle Cloud Infrastructure
 
@@ -36,4 +36,4 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 ## Steps
 
 - [Provision Resources](?lab=provision-resources)
-- [Validate Resources](?lab=validate-resources)
+- [Validate Provisioning](?lab=validate-provisioning)

@@ -1,6 +1,6 @@
 # A Linux Compute Instance in Oracle Cloud
 
-## Solution Overview
+## Overview
 
 Oracle Cloud Infrastructure Compute offers significant price-performance and control improvements compared to on-premise data centers, while providing the elasticity and cost savings of the public cloud. Oracle has a longstanding reputation for providing technologies that empower enterprises to solve demanding business problems—and Oracle Cloud Infrastructure is the first cloud that's purpose-built to enable enterprises to run business-critical production workloads.
 
@@ -14,7 +14,7 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 * OCI Compartment, with permission to create and manage resources in it
 
-* Access to a computer that has the following software and access to the internet:
+* Access to a computer that has the following software and access to the internet :
 
     * Utility to generate SSH key pairs. Most UNIX-like systems have **ssh-keygen**. On Windows, you can use **PuTTY**.
 
