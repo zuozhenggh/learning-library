@@ -31,6 +31,7 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 |Parent Compartment OCID | Locate the parent [Compartment OCID](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm)|
 |Compartment Name | Enter a compartment name |
 |Description | Enter a description |
+|Terraform Version | 0.11.x|
 
 ## Architecture
 

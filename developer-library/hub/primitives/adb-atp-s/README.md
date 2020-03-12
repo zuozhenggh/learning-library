@@ -1,6 +1,6 @@
 # A Linux Compute Instance in Oracle Cloud
 
-## Overview
+## Solution Overview
 
 Oracle Cloud Infrastructure Compute offers significant price-performance and control improvements compared to on-premise data centers, while providing the elasticity and cost savings of the public cloud. Oracle has a longstanding reputation for providing technologies that empower enterprises to solve demanding business problems—and Oracle Cloud Infrastructure is the first cloud that's purpose-built to enable enterprises to run business-critical production workloads.
 
@@ -33,12 +33,15 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 |Tenancy OCID    |Locate your [Tenancy OCID](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm)|
 |Compartment OCID|Locate your [Compartment OCID](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm)|
 |Cloud Region Identifier | Retrieve the [Cloud Region Identifier](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm) of the Cloud region|
-|SSH Key Pairs   |Refer to the tutorial on [Generating an SSH Key Pair for Oracle Compute Cloud Service Instances](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)|
+|ADB Admin Password | Password for the ADMIN account (refer to [password rules](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/manage-users-admin.html#GUID-B227C664-EBA0-4B5E-B11C-A56B16567C1B))|
+|ADB DB Name | Database Name. Use letters and numbers only, starting with a letter, maximum length is 14 characters.|
+|ADB Display Name | Enter a name for the database for display purposes|
+|ADB License Model | LICENSE_INCLUDED or BYOL|
 |Terraform Version | 0.11.x|
 
 ## Architecture
 
-![](./images/VM.png)
+![](./about-this/images/VM.png)
 
 ## Steps
 
