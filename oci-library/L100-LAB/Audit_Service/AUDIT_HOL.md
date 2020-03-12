@@ -22,7 +22,7 @@ The purpose of this lab is to give you an overview of the Audit Service and an e
 
    **Before You Begin**
 
-- We recommend using Chrome or Edge as the browser. **Also set your browser zoom to 80%**
+- We recommend using Chrome, Firefox, Safari or Internet Explorer as the browser. Please do not use the MS Edge browser. **Also set your browser zoom to 80%**
 
 **Note:** The OCI UI is frequently updated thus some screenshots in the instructions might be different than actual UI
 
