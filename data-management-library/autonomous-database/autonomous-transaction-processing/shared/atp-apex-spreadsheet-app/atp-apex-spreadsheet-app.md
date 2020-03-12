@@ -8,7 +8,7 @@ Rather than trying to email a spreadsheet to gather information from different p
 
 ### What Do You Need? ###
 * Access to an instance of Oracle ATP.
-* Complete the previous lab **Provision ADB**.
+* Complete the lab **Provision ADB**.
 
 
 ## STEP 1: Access Application Express (APEX) ##

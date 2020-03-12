@@ -9,8 +9,8 @@ Oracle Autonomous Database (ADB) is a family of self-driving, self-securing, and
 *Types of Configurations*
 
 Oracle Autonomous Database is available exclusively from Oracle and is offered in two configurations, both of which are optimized to meet the specialized requirements for online transaction processing and data warehousing. 
-- Oracle Autonomous Transaction Processing Service (ATP)  allows much simpler application development and deployment for enabling real-time analytics, personalization, and fraud detection. 
-- Oracle Autonomous Data Warehouse delivers unprecedented reliability, performance, and highly elastic data management, enabling data warehouse deployment in seconds. 
+- *Oracle Autonomous Transaction Processing Service (ATP)* allows much simpler application development and deployment for enabling real-time analytics, personalization, and fraud detection. 
+- *Oracle Autonomous Data Warehouse (ADW)* delivers unprecedented reliability, performance, and highly elastic data management, enabling data warehouse deployment in seconds. 
 
 *ADB: Shared vs Dedicated*
 

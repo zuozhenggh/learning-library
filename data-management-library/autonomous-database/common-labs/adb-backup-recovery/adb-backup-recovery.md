@@ -27,19 +27,22 @@ full database or only the database metadata. Depending on the type of cloning
 being performed, this will provide a full point in time copy of the original
 database into a new standalone Autonomous Database
 
+### What Do You Need? ###
+* Access to an Oracle Cloud account
+* Complete the lab **Provision ADB**.
+
 ## Step 1:  Review Backup information from the Console
 
-1. Login in to your database console where you will see backups that were
-    created for your database. If your database is new and has not undergone a
-    full day of operation you will not see any backup and will not be able to
-    perform this lab.
+1. Login in to Oracle Cloud
+2.  Login to your ATP database console where you will see backups that were
+    created for your database. 
+3.  If your database is new and has not undergone a full day of operation click the Create Manual Backup button to take a backup.
 
-![](images/7a107bb9d4933a91757f5720ef4e6e56.png " ")
+    ![](images/7a107bb9d4933a91757f5720ef4e6e56.png " ")
 
 
 2. In the picture above you can see the daily backup that have been performed
     on this database and whether they are an incremental or full backup. 
-
 
     
 ## Step 2:  Perform a Point In Time Recovery
@@ -48,127 +51,110 @@ database into a new standalone Autonomous Database
     to recover from and click on the three dots at the far right of the backup,
     and select restore.
 
-![](images/4167347b2b1b48e7b1328e64b1d89fde.png " ")
-<p align="center">Figure 2-1</p>
+    ![](images/4167347b2b1b48e7b1328e64b1d89fde.png " ")
 
 2. A pop-up will ask to confirm you want to perform a restore from that backup,
     click Restore.
 
-![](images/3b5e0cab0db032290c4e6733e09bdf63.png " ")
-<p align="center">Figure 2-2</p>
+    ![](images/3b5e0cab0db032290c4e6733e09bdf63.png " ")
 
 3. The database goes into restore mode and is not available until the restore
     is done. The restore and re-start take time so make sure you won’t need your
     database in the imimageste future before performing a restore.
 
-![](images/dc1f1f3bf82e54dbbe4f20c464a7202e.png " ")
-<p align="center">Figure 2-3</p>
+    ![](images/dc1f1f3bf82e54dbbe4f20c464a7202e.png " ")
 
 4. When the restore completes, the database goes into STOPPED status and must
     be restarted by clicking on the Start button.
 
-![](images/dc72e6224e7ab9738118a940d648bf08.png " ")
-<p align="center">Figure 2-4</p>
+    ![](images/dc72e6224e7ab9738118a940d648bf08.png " ")
 
 5. Confirm you want to start the database. The database will go into STARTING
     mode. When the startup continues it will switch to AVAILABLE and the restore
     is complete.
 
-![](images/d7fa5abbe58194529d1353015e13dfc2.png " ")
-<p align="center">Figure 2-4</p>
+    ![](images/d7fa5abbe58194529d1353015e13dfc2.png " ")
 
-![](images/f900886cffab7081cc16edb017720eb6.png " ")
-<p align="center">Figure 2-5</p>
+    ![](images/f900886cffab7081cc16edb017720eb6.png " ")
 
 
-
- ## Step 3:  Cloning an Autonomous Database
+## Step 3: Cloning an Autonomous Database ##
 
 1. Login in to your database console where the Autonomous Database you want to
     clone resides.
 
-![](images/b93dac15864e372ba2a9d0897c4ea09d.png " ")
-<p align="center">Figure 3-1</p>
+    ![](images/b93dac15864e372ba2a9d0897c4ea09d.png " ")
 
 2. From the dropdown menu (three dots on the right of the database) select
     Create Clone
 
 ![](images/05ec970822b6431a7543c420130ed44f.png " ")
-<p align="center">Figure 3-2</p>
 
 3. The Create Autonomous Database Clone screen comes up. The first option to
     select is whether the clone will be a Full Clone or a Metadata Clone
 
--   **Full Clone**: creates a new database with the source database’s data and
+    -  **Full Clone**: creates a new database with the source database’s data and
     metadata.
 
--   **Metadata Clone**: creates a new database with the source database’s
+    -  **Metadata Clone**: creates a new database with the source database’s
     metadata without the data
 
-![](images/961a2b416629173ade69dae8f3e99b4e.png " ")
-<p align="center">Figure 3-3</p>
+    ![](images/961a2b416629173ade69dae8f3e99b4e.png " ")
 
 4. Next several parameters similar to original database creation must be
     provided:
 
--   **Compartment**: Select a compartment from the list of available
-    compartments.
+    -   **Compartment**: Select a compartment from the list of available
+        compartments.
 
--   **Display Name**: Specify a user-friendly description or other information
-    that helps you easily identify the resource. The display name does not have
-    to be unique. You can use the name provided, of the form: Clone of DBname or
-    change this to the name you want to use to identify the database. The
-    supplied DBname is the name of the source database that you are cloning.
+    -   **Display Name**: Specify a user-friendly description or other information
+        that helps you easily identify the resource. The display name does not have
+        to be unique. You can use the name provided, of the form: Clone of DBname or
+        change this to the name you want to use to identify the database. The
+        supplied DBname is the name of the source database that you are cloning.
 
--   **Database Name**: Specify the database name; it must consist of letters and
-    numbers only. The maximum length is 14 characters.
+    -   **Database Name**: Specify the database name; it must consist of letters and
+        numbers only. The maximum length is 14 characters.
 
--   **CPU Core Count**: Specify the number of cores for your Autonomous
-    Transaction Processing database.
+    -   **CPU Core Count**: Specify the number of cores for your Autonomous
+        Transaction Processing database.
 
--   **Storage (TB)**: Specify the storage you wish to make available to your
-    Autonomous Transaction Processing database, in terabytes.
+    -   **Storage (TB)**: Specify the storage you wish to make available to your
+        Autonomous Transaction Processing database, in terabytes.
 
-![](images/9706dcb5ae32829651a5eeca40b875a5.png " ")
-<p align="center">Figure 3-4</p>
+        ![](images/9706dcb5ae32829651a5eeca40b875a5.png " ")
 
--   Administrator Credentials: Set the password for the Autonomous Transaction
-    Processing Admin user. This password is for the admin user of the clone
-    database, you can use the same or different password than your original
-    database.
+    -   Administrator Credentials: Set the password for the Autonomous Transaction
+        Processing Admin user. This password is for the admin user of the clone
+        database, you can use the same or different password than your original
+        database.
 
--   License Type: The type of license you want to use for the Autonomous
-    Database.
+    -   License Type: The type of license you want to use for the Autonomous
+        Database.
 
 5. Select **Create Autonomous Database Clone** after filling the information.
 
-![](images/51a6ea1fd83874b52915b53e75845c4f.png " ")
-<p align="center">Figure 3-5</p>
+    ![](images/51a6ea1fd83874b52915b53e75845c4f.png " ")
 
-The clone database will be in provisioning mode and the logo color will
-    reflect that.
+The clone database will be in provisioning mode and the logo color will reflect that.
 
-![](images/41bea0ad6930cf7ce5bec730b68b6bcd.png " ")
-<p align="center">Figure 3-6</p>
+    ![](images/41bea0ad6930cf7ce5bec730b68b6bcd.png " ")
 
 6. Click on Autonomous Database on the top left to return to the Console, where
     you will see your original database and your clone. Notice your original
     database is not affected by the cloning process and continues to run
     uninterrupted.
 
-![](images/78022182cb513aa87124e1a91b607750.png " ")
-<p align="center">Figure 3-7</p>
+    ![](images/78022182cb513aa87124e1a91b607750.png " ")
 
-When the cloning process completes, the **State** will change to     **Available**. Select the database when it becomes available and examine and     use it right away.
+When the cloning process completes, the **State** will change to     **Available**. Select the database when it becomes available and examine and use it right away.
 
 ![](images/5871983748ae7bc624c301ed862ef111.png " ")
-<p align="center">Figure 3-8</p>
 
 ![](images/085e2f9db8e60cc18b4e82922927b756.png " ")
-<p align="center">Figure 3-9</p>
 
-**This concludes the backup, recovery, and cloning lab.**
 
-***END OF LAB***
+*Original Lab Author* - Eugenio Galiano, Oracle Sales & Partner Academy
+
 
  

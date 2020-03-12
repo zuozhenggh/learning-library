@@ -9,7 +9,7 @@
             "filename": "../common-labs/adb-shared-intro/adb-shared-intro.md"
         },
         {         
-            "title": "Lab: Sign up for a Free Tier Account - 5 min (optional)",
+            "title": "Lab: Sign up for a Free Tier Account",
             "description": "Login to Oracle Cloud",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
@@ -17,7 +17,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/common-labs/cloud-login/register-free-tier-account.md"
         },
         {         
-            "title": "Lab: Login to Oracle Cloud - 2 min",
+            "title": "Lab: Login to Oracle Cloud",
             "description": "Login to Oracle Cloud",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
@@ -25,7 +25,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/common-labs/cloud-login/cloud-login.md"
         },
             {         
-            "title": "Lab: Provision ADB - 10 min",
+            "title": "Lab: Provision ADB",
             "description": "Autonomous Database Provisioning",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/11/2020",
@@ -33,20 +33,20 @@
             "filename": "../common-labs/adb-shared-provisioning/adb-shared-provisioning.md"
         },
             {         
-            "title": "Lab: Load ADW - 20 min",
+            "title": "Lab: ADB Backup and Recovery",
             "description": "ADW Loading",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/11/2020",
             "contentid": "12nnnn",
-            "filename": "../autonomous-data-warehouse/shared/adw-loading/adw-loading.md"
+            "filename": "../common-labs/adb-backup-recovery/adb-backup-recovery.md"
         },
             {         
-            "title": "Lab: ADW Machine Learning - 15 min",
+            "title": "Lab: ADB Connecting with a Wallet",
             "description": "ADW Loading",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/11/2020",
             "contentid": "12nnnn",
-            "filename": "../autonomous-data-warehouse/shared/adw-machine-learning/adw-machine-learning.md"
+            "filename": "../common-labs/adb-connecting/adb-connecting.md"
         },
         {         
         "title": "Lab: ATP Performance Hub - 15 min",
