@@ -1,18 +1,18 @@
 # Login to Oracle Cloud - SSWorkshop #
 
 ## Introduction
-If you already have an ssh key pair, you may use that to connect to your environment.  We recommend you use the Oracle Cloud Shell to connect to your instance.  However if you prefer to connect via your laptop, please choose based on your configuration.
+SSWorkshop:  After you sign up for a self-service workshop, you’ll get two emails.  Check your spam and junk folders or contact your instructor.
+- *Email 1:  Verify Email Request* - this contains the URL to verify that your email is a valid one for this tenancy
+- *Email 2: SSWorkshop Account Created* - This contains important information needed to complete your workshop along with your username, password and a link to the lab.
 
-*IMPORTANT:  If the ssh key is not created correct, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
 
-
-1.  You should have received two emails.  **Email 1:**  From noreply with the subject **Verify Email Request** (check your spam and junk folders).  This has the link that verifies your email.  Without clicking on this link you cannot login to the tenancy.  Open up this email.  Click on the **Sign In to Oracle Cloud** link.  
+1.  Open up Email 1:  Verify Email Request from Oracle Cloud.  Click on the **Sign In to Oracle Cloud** link.  
 
     ![](./images/signin.png " ")
 
 
-2.  You should have received a 2nd email with your temporary password.  Enter your username and your password (Email 2) in the box on the right hand side that says *Oracle Infrastructure* (Do not use Single Sign-On (SSO), SSO is not enabled for this tenancy).  
+2.  Open up Email 2.  Note your username and your temporary password.  Enter your username and your password in the box on the right hand side that says *Oracle Infrastructure* (Do not use Single Sign-On (SSO), SSO is not enabled for this tenancy).  
 
     ![](./images/loginpage.png " ")
    

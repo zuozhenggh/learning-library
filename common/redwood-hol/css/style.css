@@ -311,7 +311,7 @@ a:active {
     clear: both;
     border-top: 1px solid rgba(0, 0, 0, .1);
     text-align: center;
-    padding: 36px;
+    /*padding: 36px;*/
 }
 
 #footer-banner {
