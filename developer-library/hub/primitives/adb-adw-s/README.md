@@ -31,7 +31,7 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 ### Prerequisites
 
-* [Download](../scripts/terraform/resmgr/adb-adw-s.zip) the prebuilt Terraform script for this solution.
+* [Download](./scripts/terraform/resmgr/adb-adw-s.zip) the prebuilt Terraform script for this solution.
 
 ### Required Parameters
 

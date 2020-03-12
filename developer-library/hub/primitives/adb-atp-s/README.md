@@ -1,10 +1,14 @@
-# A Linux Compute Instance in Oracle Cloud
+# Oracle Autonomous Transaction Processing
 
-## Solution Overview
+## Overview
 
-Oracle Cloud Infrastructure Compute offers significant price-performance and control improvements compared to on-premise data centers, while providing the elasticity and cost savings of the public cloud. Oracle has a longstanding reputation for providing technologies that empower enterprises to solve demanding business problems—and Oracle Cloud Infrastructure is the first cloud that's purpose-built to enable enterprises to run business-critical production workloads.
+Oracle Autonomous Transaction Processing delivers a self-driving, self-securing, self-repairing database service that can instantly scale to meet the demands of mission critical applications.
 
-This solution template allows you to deploy an Oracle Linux virtual machine in Oracle Cloud.
+Autonomous Transaction Processing provides all of the performance of the market-leading Oracle Database in an environment that is tuned and optimized to meet the demands of a variety of applications, including: mission-critical transaction processing, mixed transactions and analytics, IoT, and JSON document store.
+
+As a service Autonomous Transaction Processing does not require database administration. With Autonomous Transaction Processing you do not need to configure or manage any hardware, or install any software. Autonomous Transaction Processing handles creating the database, backing up the database, patching and upgrading the database, and growing or shrinking the database.
+
+This template creates a shared Oracle Autonomous Transaction Processing database.
 
 ## Before You Begin
 
@@ -16,15 +20,11 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 * Access to a computer that has the following software and access to the internet :
 
-    * Utility to generate SSH key pairs. Most UNIX-like systems have **ssh-keygen**. On Windows, you can use **PuTTY**.
-
     * A [supported](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/web-browser-requirements.html) web browser for Oracle Cloud Infrastructure
-
-* Basic knowledge of Oracle Cloud Infrastructure
 
 ### Prerequisites
 
-* [Download](../scripts/terraform/resmgr/vcn-compute.zip) the prebuilt Terraform script for this solution.
+* [Download](./scripts/terraform/resmgr/adb-atp-s.zip) the prebuilt Terraform script for this solution.
 
 ### Required Parameters
 
@@ -41,7 +41,7 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
 ## Architecture
 
-![](./about-this/images/VM.png)
+![](./about-this/images/atp-s.png)
 
 ## Steps
 
