@@ -36,7 +36,7 @@ In this practice, you sign in to the Oracle Cloud Infrastructure console using y
 
 2. Click on the portrait icon in the top-right section of the browser window, then click on the **Sign in to Cloud** link.
 
-   ![Main Sign-in age]( img/img001.png)
+   ![Main Sign-in page]( img/img001.png)
 
 3. Enter the name of your tenancy (aka your account name, not your user name), then click on the **Next** button.
 
