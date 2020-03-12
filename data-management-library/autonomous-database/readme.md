@@ -7,7 +7,7 @@ Click on one of our workshops below to access the content.
 
 ### Drop In Labs
 
-[![](./images/screenshot-dropinlabs-freetier.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/index.html)  ![](./images/transparent.png " ") [![](./images/screenshot-dropinlabs-freetier.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/ssworkshop/index.html) 
+[![](./images/screenshot-dropinlabs-freetier.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/index.html)  ![](./images/transparent.png " ") [![](./images/screenshot-dropinlabs-ss.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/ssworkshop/index.html) 
 
 ### Certification Labs
 
