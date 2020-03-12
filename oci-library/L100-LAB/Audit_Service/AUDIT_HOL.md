@@ -12,7 +12,7 @@
 
 The Oracle Cloud Infrastructure Audit service automatically records calls to all supported Oracle Cloud Infrastructure public application programming interface (API) endpoints as log events. Currently, all services support logging by Audit. Object Storage service supports logging for bucket-related events, but not for object-related events. Log events recorded by the Audit service include API calls made by the Oracle Cloud Infrastructure Console, Command Line Interface (CLI), Software Development Kits (SDK), your own custom clients, or other Oracle Cloud Infrastructure services
 
-Each log event includes a header ID, target resource(s), time stamp of the recorded event, request parameters, and response parameters. You can view events logged by the Auditservice by using the Console,API, or the Java SDK. You can view events, copy the details of individual events, as well as analyze events or store them separately. Data from events can be used to perform diagnostics, track resource usage, monitor compliance, and collect security-related events.
+Each log event includes a header ID, target resource(s), time stamp of the recorded event, request parameters, and response parameters. You can view events logged by the Audit Service by using the Console,API, or the Java SDK. You can view events, copy the details of individual events, as well as analyze events or store them separately. Data from events can be used to perform diagnostics, track resource usage, monitor compliance, and collect security-related events.
 
 The purpose of this lab is to give you an overview of the Audit Service and an example scenario to help you understand how the service works.
 
@@ -22,13 +22,9 @@ The purpose of this lab is to give you an overview of the Audit Service and an e
 
    **Before You Begin**
 
-- We recommend using Chrome or Edge as the broswer. **Also set your browser zoom to 80%**
+- We recommend using Chrome or Edge as the browser. **Also set your browser zoom to 80%**
 
 **Note:** The OCI UI is frequently updated thus some screenshots in the instructions might be different than actual UI
-
-Ensure you have below information available:
-
-- Tenant, User name, Password, and compartment name
 
 ## Practice-1: Sign in to OCI Console and Create Object Storage Bucket
 
@@ -55,7 +51,7 @@ Ensure you have below information available:
 1. Open a terminal window.
 
 2. Change directory to your Downloads folder Enter command:
-**Mac or Lunix**
+**Mac or Linux**
    ```cd ~/Downloads```
 **Windows**
    ```cd /c/Users/PhotonUser/Downloads/**```
