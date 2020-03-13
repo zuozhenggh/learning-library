@@ -14,7 +14,7 @@ The Oracle Cloud Infrastructure Audit service automatically records calls to all
 
 Each log event includes a header ID, target resource(s), time stamp of the recorded event, request parameters, and response parameters. You can view events logged by the Audit Service by using the Console,API, or the Java SDK. You can view events, copy the details of individual events, as well as analyze events or store them separately. Data from events can be used to perform diagnostics, track resource usage, monitor compliance, and collect security-related events.
 
-The purpose of this lab is to give you an overview of the Audit Service and an example scenario to help you understand how the service works.
+The purpose of this lab is to give you an overview of the Audit Service and an example scenario to help you understand how the service works. You can view a video recording of this lab at [Youtube](https://www.youtube.com/watch?v=hKGWn_m2zHU)
 
 ## Pre-Requisites
 
