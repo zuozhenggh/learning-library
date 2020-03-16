@@ -5,12 +5,13 @@ Oracle’s revolutionary cloud database is self-driving, self-securing, self-rep
 ## Workshops
 Click on one of our workshops below to access the content.
 
-[![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
+### Drop In Labs
 
+[![](./images/screenshot-dropinlabs-freetier.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/index.html)  ![](./images/transparent.png " ") [![](./images/screenshot-dropinlabs-ss.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/ssworkshop/index.html) 
 
-- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)
-- [I have an account from SSWorkshop](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
+### Certification Labs
 
+[![](./images/screenshot-dropinlabs-freetier.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/index.html)  ![](./images/transparent.png " ") [![](./images/screenshot-dropinlabs-freetier.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/ssworkshop/index.html) 
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -22,7 +23,7 @@ Click here to request your trial account: [https://cloud.oracle.com/tryit](https
 
 
 ## Product Pages
-- [Oracle ADB](https://www.oracle.com/database/autonomous-database.html)
+- [Oracle Autonomous Database](https://www.oracle.com/database/autonomous-database.html)
 - [Oracle Database 19c](https://www.oracle.com/database/technologies/multitenant.html)
 
 ## Documentation
@@ -43,8 +44,10 @@ Click here to request your trial account: [https://cloud.oracle.com/tryit](https
 - [Transitioning to ADB](https://www.youtube.com/watch?v=C8hml_gQlgE)
 - [Oracle Database 19c](https://www.youtube.com/watch?v=EVPNyL2vAVI)
 
-https://www.youtube.com/watch?v=Rgu4akZTNQs
+
 ### Issues?
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+
+-- Oracle Database Product Management
 
 
