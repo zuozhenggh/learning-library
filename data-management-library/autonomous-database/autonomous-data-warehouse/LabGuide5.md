@@ -19,7 +19,7 @@ At this point, you should have performed the following:
 
 
 ### Required Artifacts
-- Installation of Oracle Analytics Desktop (free with Autonomous Data Warehouse). If you already have Oracle Analytics Desktop installed, please check the version. The recommended version is 12.2.5.x.x or greater, to connect to your Oracle Autonomous Data Warehouse.
+- Installation of Oracle Analytics Desktop (free with Autonomous Data Warehouse). If you already have Oracle Analytics Desktop installed, please check the version. The recommended version is 5.5.0 or greater, to connect to your Oracle Autonomous Data Warehouse.
 - Access to an existing Autonomous Data Warehouse instance.
 
 ## <!--buggy, did this so Part 1 would collapse-->
@@ -133,7 +133,7 @@ For simplicity's sake, in this exercise we will use the SH schema provided and w
 
   - First click the __Add All__ label in the left column, and type a new Name for the Data Set, naming it __SALES_HISTORY__. You may click __Get Preview Data__ at the bottom to see some example records. Click the __Add__ button to add the Data Set.
 
-  **NOTE**: It is important to use the new name of __SALES_HISTORY__ as the rest of the lab exercises will reference that name.  
+  **NOTE**: It is important to use the new name of __SALES_HISTORY__ as the rest of the lab steps will reference that name.  
 
    ![](./images/500/add_all_data_to_data_set.jpg " ")
 
@@ -172,44 +172,48 @@ No matter what your role is in the organization, access to timely data can provi
   - We will now create a very simple visualization project to finish this part of the lab.  Multi-select (ctrl+click) the 5 Data Elements within __SALES\_HISTORY__ including __PROD\_NAME__, __AMOUNT\_SOLD__, __CALENDAR\_YEAR__, __PROD\_CATEGORY__, and __QUANTITY\_SOLD__.  
 
 - Drag the five selected columns to the middle of the screen.
-   ![](./images/900/image050.png " ")
+   ![](./images/500/drag_five_columns_to_middle.jpg " ")
 
 - Based upon this data, Oracle Data Visualization Desktop will choose a default visualization.  If not, choose the __Scatter__ chart so it matches the view below.   
 
-   ![](./images/900/image052.png " ")
+   ![](./images/500/first_visualization_scatter_chart.jpg " ")
 
  You may **Save** this project if you need.   At this point with very few steps, you now have something that can further bring your data to life and you can begin to make some data-driven decisions.  As you share this with others, more people will want to gain access to and benefit from the data. To enable this, the Autonomous Data Warehouse is easy to use, fast, elastic, and will be able to quickly scale to meet your growing data and user base.
 
 ## Part 5: Create Another Project with Multiple Canvases in Oracle Analytics Desktop
 
-### **Step 7: Create a New Data Visualization project**
+### **Step 7: Create a New Data Visualization Project**
 
-In this part of the lab, we will create 3 basic interactive canvases within a single project.  You will see how easy and powerful you can gain insights and visualize your data in just a few clicks.  This lab is not intended to be an exhaustive view of all Oracle Analytics Desktop capabilities.
+In this part of the lab, we will create 3 basic interactive canvases within a single project.  You will see how easily you can gain powerful insights and visualize your data in just a few clicks.  This lab is not intended to be an exhaustive view of all Oracle Analytics Desktop capabilities.
 
 While this will provide specific instructions to replicate the intended visualizations, don’t feel that you must be constrained.  Try other visualization types and layouts.  Modify filters and colors as you like.  If you run into trouble you can always undo the previous step with Ctrl-Z or the back arrow at the top right of the screen.
 
    ![](./images/900/imageE002.png " ")
 
-- Create a new Data Visualization project
+- **Create a new data visualization project**
 
    You will create a basic interactive dashboard with 3 canvases that summarizes:
     - __Sales Summary__
     - __Product Summary__
     - __Customer Demographics Summary__
 
-- Select the __“Data”__ menu option on the right to reveal the available Data Sets.  Your newly created __SALES_HISTORY__ should be visible with a red icon indicating a live ADW connection.
+- Open the menu in the upper left corner and select the __“Data”__ menu option to reveal the available data sets.  
 
-- Click on the __SALES_HISTORY__ data set, or open up the options menu and choose __“Create Project”__.
+   ![](./images/500/select_data_menu_option.jpg " ")
 
-   ![](./images/900/imageE005.jpg " ")
+- Your newly created __SALES_HISTORY__ data set should be visible with a red icon indicating a live ADW connection.
+
+- Click the __SALES_HISTORY__ data set, or open up the options menu and choose __“Create Project”__.
+
+   ![](./images/500/click_sales_history_data_set_step_seven.jpg " ")
 
 - This is your new Data Visualization project (blank canvas).
 
-   ![](./images/900/imageE010.png " ")
+   ![](./images/500/new_data_visualization_project_blank_canvas.jpg " ")
 
 ### **Step 8: Canvas 1 - Sales Summary**
 
-Questions Answered with Data in this section:
+**Questions answered with data in this section:**
 
 ```
 ‘What are my monthly sales by dollar and quantity sold?’
@@ -220,11 +224,11 @@ Questions Answered with Data in this section:
 
 We will create Sales Summary using a Combo Chart to show the Amount Sold, Quantity Sold by Month.  This will help answer the question, *‘What are my monthly sales by dollar and quantity sold?’*
 
-- Expand the __TIME_ID__ attribute to expose the component time dimension elements.  Create the first visualization by holding down __CTRL__ and multi-selecting __AMOUNT_SOLD__, __QUANTITY_SOLD__ and __MONTH__.  Drag those 3 fields from the left navigation pane to the center blank canvas (where it says "Drop Visualizations Here").  A scatterplot is created automatically as you added 2 numeric fields and 1 dimension.  From the __chart__ icon at the top right change the chart type to a __Combo__ chart.
+- Expand the __TIME_ID__ attribute to expose the component time dimension elements.  Create the first visualization by holding down __CTRL__ and multi-selecting __AMOUNT\_SOLD__, __QUANTITY\_SOLD__ and __MONTH__.  Drag those 3 fields from the left navigation pane to the center blank canvas (where it says "Drop Visualizations or Data Here").  An area chart is created automatically as you added 2 numeric fields and 1 dimension.  Click the __Auto Visualization__ button along the upper left side of the canvas and change the chart type to a __Combo__ chart.
 
-   ![](./images/900/imageE014.png " ")
+   ![](./images/500/choose_combo_chart_type.jpg " ")
 
-- Right click on the metric __QUANTITY_SOLD__ and choose __Y2 Axis__.  Right click the metric __QUANTITY_SOLD__ again and this time choose __Bar__ type display.
+- Right click the metric __QUANTITY\_SOLD__ and choose __Y2 Axis__.  Right click the metric __QUANTITY\_SOLD__ again and this time choose __Bar__ type display.
 
    ![](./images/900/imageE019.png " ")
 
@@ -242,7 +246,7 @@ We will create a Sales Summary using a Trend Line to show the Amount Sold by Pro
 
    ![](./images/900/imageE028.png " ")
 
-- Drag __AMOUNT_SOLD__, __COUNTRY_REGION__ and __PROD_CATEGORY__ from the navigator (using __CTRL__ for multi-select) onto the canvas at the bottom of the existing visual.  When the blue bar appears, drop the elements to create the next visualization.
+- Drag __AMOUNT\_SOLD__, __COUNTRY\_REGION__ and __PROD\_CATEGORY__ from the navigator (using __CTRL__ for multi-select) onto the canvas at the bottom of the existing visual.  When the blue bar appears, drop the elements to create the next visualization.
 
    ![](./images/900/imageE031.png " ")
 
@@ -258,7 +262,7 @@ We will create a Sales Summary using a Trend Line to show the Amount Sold by Pro
 
    ![](./images/900/imageE039.png " ")
 
-- We now have a useful chart below that tells us which products sell best in each country, and by how much. Rename the current canvas by click on the down triangle on the canvas name and choosing __rename__.  Change the name to __Sales Summary__. Save your project as __SALES_HISTORY__.
+- We now have a useful chart below that tells us which products sell best in each country, and by how much. Rename the current canvas by clicking the down triangle on the canvas name and choosing __rename__.  Change the name to __Sales Summary__. Save your project as __SALES_HISTORY__.
 
    ![](./images/900/imageE042.png " ")
 

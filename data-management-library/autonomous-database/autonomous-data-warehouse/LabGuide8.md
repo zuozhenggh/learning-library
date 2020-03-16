@@ -1,28 +1,23 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-
-<!--September 21, 2018-->
-</td>
-<td class="td-banner">
 # Bonus Lab 8:  Using Oracle Machine Learning SQL Notebooks
-</td></tr><table>
 
-
-## Introduction
+### Introduction
 
 In this lab, you will be using the Oracle Machine Learning (OML) SQL notebook application provided with your Autonomous Data Warehouse. This browser-based application provides a web interface to run SQL queries and scripts, which can be grouped together within a notebook. Notebooks can be used to build single reports, collections of reports, and even dashboards. OML provides a simple way to share workbooks, and collections of workbooks, with other OML users.
 
-## Objectives
+### Objectives
 
 -   Learn how to create OML Users
 -   Learn how to run a SQL Statement
 -   Learn how to share notebooks
 -   Learn how to create and run SQL scripts
 
-## Required Artifacts
+### Required Artifacts
 
 -   This lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-# Creating OML Users
+## <!--buggy, did this so Part 1 would collapse-->
+
+## Part 1: Creating OML Users
 
 The first step is to create two new users.
 
@@ -63,7 +58,7 @@ The first step is to create two new users.
 
 You will use these two users later in this workshop.
 
-# Exploring the OML Home Page
+## Part 2: Exploring the OML Home Page
 
 
 
@@ -126,7 +121,7 @@ Once you have successfully signed in to OML, the application home page will be d
 
 ![](./images/700/Picture700-17.png)
 
--   In the SQL paragraph area, copy and paste <a href="./scripts/700/new_SQL_query_scratchpad.txt" target="_blank">this code snippet</a>. Your screen should now look like this:
+-   In the SQL paragraph area, copy and paste <a href="./scripts/700/new_SQL_query_scratchpad.txt" target="\_blank">this code snippet</a>. Your screen should now look like this:
 
 ![](./images/700/Picture700-18.png)
 
@@ -187,9 +182,6 @@ The report should now look like the one shown below.
 ![](./images/700/Picture700-26.png)
 
 # Saving the Scratchpad as a New Notebook
-
-
-
 
 
 #### **STEP 9: Saving the Scratchpad as a New Notebook**
@@ -326,9 +318,9 @@ Notice that the script paragraph does not have any menus to control the display 
 
 #### **STEP 14: Creating and Running a SQL Script**
 
-In this section we are going to use a script from a SQL pattern matching tutorial, <a href="https://livesql.oracle.com/apex/livesql/file/tutorial_EWB8G5JBSHAGM9FB2GL4V5CAQ.html" target="_blank">Sessionization with MATCH\_RECOGNIZE and JSON</a>, on the free Oracle <a href="http://livesql.oracle.com/" target="_blank">livesql.oracle.com</a> site. This script shows how to use the SQL pattern matching **MATCH\_RECOGNIZE** feature for sessionization analysis based on **JSON** web log files.
+In this section we are going to use a script from a SQL pattern matching tutorial, <a href="https://livesql.oracle.com/apex/livesql/file/tutorial_EWB8G5JBSHAGM9FB2GL4V5CAQ.html" target="\_blank">Sessionization with MATCH\_RECOGNIZE and JSON</a>, on the free Oracle <a href="http://livesql.oracle.com/" target="\_blank">livesql.oracle.com</a> site. This script shows how to use the SQL pattern matching **MATCH\_RECOGNIZE** feature for sessionization analysis based on **JSON** web log files.
 
--   Copy and paste <a href="./scripts/700/Sessionization_with_MATCH_RECOGNIZE_and_JSON.txt" target="_blank">this code snippet</a> into the **%script** paragraph. After pasting the above code into the script paragraph it should look something like this:
+-   Copy and paste <a href="./scripts/700/Sessionization_with_MATCH_RECOGNIZE_and_JSON.txt" target="\_blank">this code snippet</a> into the **%script** paragraph. After pasting the above code into the script paragraph it should look something like this:
 
 ![](./images/700/Picture700-47.png)
 
@@ -343,7 +335,7 @@ In this section we are going to use a script from a SQL pattern matching tutoria
 -   You have completed all of the steps in this lab.
 
 <table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
+<tr><td class="td-logo">[![](images/hands_on_labs_tag.png " ")](#)</td>
 <td class="td-banner">
 ## Great Work - All Done!
 **You are ready to move on to the next lab. You may now close this tab.**
