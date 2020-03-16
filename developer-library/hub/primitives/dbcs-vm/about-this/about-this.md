@@ -18,18 +18,24 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
   * A [supported](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/web-browser-requirements.html) web browser for Oracle Cloud Infrastructure
 
-### Prerequisites
+###Prerequisites
 
 * [Download](./scripts/terraform/resmgr/vcn-dbcsvm.zip) the prebuilt Terraform script
 
-### Required Parameters
 
-| Resource          | Value                                                        |
-| ----------------- | ------------------------------------------------------------ |
-| Tenancy OCID      | Locate your [Tenancy OCID](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm) |
-| Terraform Version | 0.11.x                                                       |
 
-## 
+###Required Parameters
+
+| Resource                | Value                                                        |
+| ----------------------- | ------------------------------------------------------------ |
+| Tenancy OCID            | Locate your [Tenancy OCID](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm) |
+| Compartment OCID        | Locate your [Compartment OCID](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm) |
+| Cloud Region Identifier | Retrieve the [Cloud Region Identifier](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm) of the Cloud region |
+| SSH Key Pair            | Use for SSH access to the DB system                          |
+| Admin Password          | Password for the Database Adminstrator account (refer to [password rules](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/creatingDBsystem.htm)) |
+| Terraform Version       | 0.11.x                                                       |
+
+
 
 ## Architecture
 

@@ -1,6 +1,8 @@
 
 
-#Validate the DBCS VM
+#Validate Provisioning
+
+##Validate the DBCS VM
 
 1. Open the navigation menu. Under **Database** section,  click **Bare Metal, VM, and Exadata**.![image-20200216172240506](./img/image-20200216172240506.png)
 2. There is a DB system name DBCS*yyyymmddhhmm*. The sufix number is the time when you provision the  database. Click the DB system name link.![image-20200216191624066](./img/image-20200216191624066.png)

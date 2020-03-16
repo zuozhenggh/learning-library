@@ -1,8 +1,8 @@
-# Create a Database Cloud Service VM
+# Create a Database Cloud Service on Bare Metal
 
 ## Overview
 
-This template allow you to create a single DB instance VM in Oracle Cloud. It's will create a VCN which including the public subnet, security list, Internet Gateway, etc.
+This template allow you to create a single DB instance on bare metal in Oracle Cloud. It's will create a VCN which including the public subnet, security list, Internet Gateway, etc.
 
 The database is deployed in the public subnet, so it's can be accessed by the internet client tools.
 
@@ -18,13 +18,11 @@ Before you begin creating resources in Oracle Cloud Infrastructure, ensure that 
 
   * A [supported](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/web-browser-requirements.html) web browser for Oracle Cloud Infrastructure
 
-###Prerequisites
+### Prerequisites
 
-* [Download](./scripts/terraform/resmgr/vcn-dbcsvm.zip) the prebuilt Terraform script
+* [Download](./scripts/terraform/resmgr/dbcs-baremetal.zip) the prebuilt Terraform script
 
-
-
-###Required Parameters
+### Required Parameters
 
 | Resource                | Value                                                        |
 | ----------------------- | ------------------------------------------------------------ |
