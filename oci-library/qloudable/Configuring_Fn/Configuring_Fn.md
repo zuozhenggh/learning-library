@@ -283,13 +283,13 @@ sudo usermod -aG docker opc
 16. Docker is installed and user opc enabled to use Docker. Logout and log back in to the compute instance. Enter command;
 
 ```
-Exit
+exit
 ```
 
 ssh back in to the compute instance. Enter commands;
 
 ```
-Docker images 
+docker images 
 ```
 and ensure no error is displayed
 
