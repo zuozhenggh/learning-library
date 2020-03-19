@@ -1,10 +1,30 @@
 # OCI Basics Lab (VCN, Compute, Boot, Block Volume)
 
-Overview
+**Description**
 
-In this lab we will illustrate deploying a single instance development environment.  We will create a compute instance with a pre-installed development environment, setup a web server, attach block volume storage, and install a simple application which will utilize the block Volume storage.  Then we'll create a second compute instance that will re-use the boot volume of the first compute instance.  And finally we'll move the application block volume to the second compute instance.
+In this lab we will illustrate deploying a single instance web application environment.  We will create a Virtual Cloud Network (VCN), a compute instance, attach block volume storage, and install a simple application.  Then we'll create a second compute instance that will re-use the boot volume of the first compute instance.  And finally we'll move the application block volume to the second compute instance.
 
-The goal of this lab is to demonstrate basic functionality of OCI.  You'll create a VCN, a compute instance with a developer image pre-installed, create and mount a block volume for external storage.  And you'll demonstrate the ability to move both the boot and block volume to a new instance for portability and scaling needs.  
+The goal of this lab is to demonstrate basic functionality of OCI.  You'll create a VCN, a compute instance, and block volume storage.  You'll deploy a simple web-application.   Then you'll demonstrate the ability to move both the boot and block volume to a new instance for portability and scaling needs.  
+
+**Lab Objectives**
+
+- Create a virtual cloud network 
+- Deploy a Linux based virtual machine in the cloud
+- Attach block volume storage to the instance
+- Login remotely via secure connection
+- Install and configure a simple web-application
+- Terminate the instance and transfer the boot and block volumes to another instance
+- Remove the instance and associated boot and block volumes
+
+**Intended Audience**
+
+- Beginner/Intermediate technical learners
+- New to cloud
+- New to Oracle Cloud Infrastructure
+
+**Changelog**
+
+- March 19, 2020 - version 1
 
 ## Part 1: Obtain your credentials and login
 
