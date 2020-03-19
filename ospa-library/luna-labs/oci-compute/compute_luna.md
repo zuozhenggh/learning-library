@@ -1,12 +1,27 @@
 # Compute Service
 
-Overview
+**Description**
 
-Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts, known as instances. You can launch instances as needed to meet your compute and application requirements. After you launch an instance, you can access it securely from your computer, restart it, attach and detach volumes, and terminate it when you're done with it. Any changes made to the instance's local drives are lost when you terminate it. Any saved changes to volumes attached to the instance are retained.
+The workhorse of OCI is the compute instance.  Oracle offers Virtual Machine or Bare Metal instances in many shapes, from a single OCPU up to 24 OCPUs, catering to a variety of workloads and software architectures.  
+This lab will walk you through the deployment of a virtual machine instance and accompanying infrastructure.  After the instance is deployed, you'll access it securely from your computer, attach external block storage, install a simple web-application, and terminate it when you're done.
 
-Be sure to review [Best Parts for Your Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bestPartscompute.htm?target=_blank) for important information about working with your Oracle Cloud Infrastructure Compute instance.
+**Lab Objectives**
 
-In order to complete this lab, you'll need a user name and password, tenancy, and a compartment name.  We've created a security policy that will allow you to create any resources you'll need in order to complete the exercise.
+- Deploy a Linux based virtual machine in the cloud
+- Attach block volume storage to the instance
+- Install and configure a simple web-application
+- Terminate the instance and transfer the boot and block volumes to another instance
+- Remove the instance and associated boot and block volumes
+
+**Intended Audience**
+
+- Beginner/Intermediate technical learners
+- New to cloud
+- New to Oracle Cloud Infrastructure
+
+**Changelog**
+
+- March 19, 2020 - version 1
 
 ## Part 1: Obtain your credentials and login
 
@@ -30,14 +45,7 @@ Copy and paste the Username and Password credentials from the Luna Lab landing s
 
 ## Part 2: Create a Compute Instance 
 
-Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instances:
-
-- **Bare Metal**  - A bare metal compute instance gives you dedicated physical server access for highest performance and strong isolation.
-- **Virtual Machine**  - A Virtual Machine (VM) is an independent computing environment that runs on top of physical bare metal hardware. The virtualization makes it possible to run multiple VMs that are isolated from each other. VMs are ideal for running applications that do not require the performance and resources (CPU, memory, network bandwidth, storage) of an entire physical machine.
-
-An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as a Bare Metal instance, leveraging the same cloud-optimized hardware, firmware, software stack, and networking infrastructure.
-
-In this hands on exercise we will create a Virtual Machine compute instance.
+In this section of the lab you will create a Virtual Machine compute instance.
 
 1. Click on the OCI main navigation menu, choose **Compute** and from the fly out choose **Instances** 
 
@@ -51,9 +59,9 @@ In this hands on exercise we will create a Virtual Machine compute instance.
 
 ![](media/image006.png " ")
 
-The **Create Compute Instance** workflow will default to the most common selections.   We'll look at the the instance creation dialog as three sections, instance details, networking, and Adding SSH keys.
+The **Create Compute Instance** workflow will default to the most common selections.   You'll look at the the instance creation dialog as three sections, instance details, networking, and Adding SSH keys.
 
-**Note:**  *As this lab focuses on creating an instance, and not on networking, we will not step through network or VCN creation.   We will allow the Create Instance dialog to automatically create the VCN for us with the proper routing and security list information.  For training on OCI networking, see the network and VNC Hands On Labs.*
+**Note:**  *As this lab focuses on creating an instance, and not on networking, you will not step through network or VCN creation.   We will allow the Create Instance dialog to automatically create the VCN for us with the proper routing and security list information.  For training on OCI networking, see the network and VNC Hands On Labs.*
 
 4.  Click on **Create Compute Instance**.  
 
@@ -89,7 +97,7 @@ Next you'll need to create and paste SSH keys so that you can securely access th
 
 ![](media/image010.png " ")
 
-In this next step, we'll display the contents of the public SSH key so that we can copy it and paste it into our compute instance creation dialog.    Type
+In this next step, you'll display the contents of the public SSH key so that you can copy it and paste it into our compute instance creation dialog.    Type
 
 8.  Type the following command in the terminal window.
 
@@ -115,11 +123,11 @@ The instance will begin provisioning.  You should see the instance details scree
 
 ## Part 3: Connect to the instance
 
-1.  Examine the instance details screen.  Left click to drag and select the **Public IP Address** and right click or CTL-C to copy the IP address.  We'll need that to connect to the instance next.
+1.  Examine the instance details screen.  Left click to drag and select the **Public IP Address** and right click or CTL-C to copy the IP address.  you'll need that to connect to the instance next.
 
 ![](media/image016.png " ")
 
-2.  Return to the terminal window, or open a new one if you closed it earlier.   Type the following command to connect to the new instance via SSH.   This command uses the private SSH key we created earlier and is logging in as the default admin user, *opc*.
+2.  Return to the terminal window, or open a new one if you closed it earlier.   Type the following command to connect to the new instance via SSH.   This command uses the private SSH key you created earlier and is logging in as the default admin user, *opc*.
 
 ```ssh -i .ssh/id_rsa opc@<IP ADDRESS OF YOUR INSTANCE>```
 
@@ -157,7 +165,7 @@ In the next steps we will install and configure an Apache webserver via the Linu
 
 ![](media/image020.png " ")
 
-4.  Create the landing page for your web server.  For standard http the default web page is normally named index.html.  We'll use the linux *echo* command to alter the default file in its default location.
+4.  Create the landing page for your web server.  For standard http the default web page is normally named index.html.  you'll use the linux *echo* command to alter the default file in its default location.
 
 ```sudo bash -c 'echo This is my Web-Server running on OCI >> /var/www/html/index.html'```
 
