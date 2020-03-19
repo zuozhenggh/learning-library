@@ -78,35 +78,31 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
-
-3. Select the compartment assigned to you from drop down menu on left part of the screen
-
-
-**NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+2. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Networking QuickStart**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
+**NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
 4. Fill out the dialog box:
 
+- **VCN NAME**: Provide a name
+- **COMPARTMENT**: Ensure your compartment is selected
+- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
+- **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
+- **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
+- Click **Next**
 
-- **Create in Compartment:** Has the correct compartment
+5. Verify all the information and  Click **Create**
 
-- **Name:** Enter easy to remember name
+6. This will create a VCN with followig components.
 
-- **Create Virtual Cloud Network Plus Related Resources:** Select this option.
+**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
 
-- Click **Create Virtual Cloud Network**
-
-- Click **Close**
-
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
-              
+7. Click **View Virtual Cloud Network** to display your VCN details.
+             
 ## Create ssh keys Compute instance and ssh to compute instance
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
@@ -157,22 +153,28 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
 
-7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
+7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute** 
 
-8. Click Create Instance. Fill out the dialog box:
+8. Click **Create Instance**. Fill out the dialog box:
 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
-- **Choose Instance Type:** Select Virtual Machine
-- **Choose Instance Shape:** Select VM shape (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the VCN you created in the previous section. 
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the first Subnet
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
+
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 9. Click **Create**
 
@@ -187,7 +189,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE> -L 3000:localhost:3000
 ```
 **NOTE:** User name is opc.
@@ -279,15 +281,15 @@ instance created earlier**
 5. Save the file in and Note down the directory name where the file was saved. We will need to upload this zip file on to public Compute instance
 
 6. In Git bash window change to directory where zip file was saved, Enter command,
-``` 
+```bash 
 cd <Directory_Name> (cd ~/Downloads)
 ```
 7. Upload the zip file to compute instance, Enter command,
-```
+```bash
 sftp  -i /C/Users/PhotonUser/.ssh/id_rsa opc@ <PUBLIC_IP_OF_COMPUTE>
 ```
 8. At sftp prompt Enter command,
-```
+```bash
 put <ZIP_FILE_NAME> 
 ```
 **NOTE:** Usually the file name starts with 'Wallet'. Verify the file transfer completed
@@ -312,7 +314,7 @@ Answer 'Y' when prompted
 12. Enter below commands, replacing the value in < >. 
 (This will install a schema to run our transactions against)
 
-```
+```bash
 ./oewizard -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium  -ts DATA -dbap <DB_PASSWORD> -dba ADMIN -u soe -p <DB_PASSWORD> -async_off-scale 0.1 -hashpart -create -cl -v
 ```
 
@@ -325,7 +327,7 @@ Answer 'Y' when prompted
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_009.PNG" alt="image-alt-text">
 
 14. Validate the schema, Enter command:
-```
+```bash
 ./sbutil -soe -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium -u soe -p <DB_PASSWORD> -tables
 ```
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_010.PNG" alt="image-alt-text">
@@ -351,7 +353,7 @@ vi SOE_Server_Side_V2.xml
 cd ~/swingbench/bin. 
 ```
 Then Enter command:
-```
+```bash
 ./charbench -c ../configs/SOE_Server_Side_V2.xml -cf ~/<CREDENTIAL_ZIP_FILE>  -cs <DB_NAME>_medium -u soe -p <DB_PASSWORD> -v users,tpm,tps,vresp -intermin 0 -intermax 0 -min 0 -max 0 -uc 128 -di SQ,WQ,WA -rt 0:30.30
 ```
 
@@ -564,7 +566,7 @@ select * from channels;
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_024.PNG" alt="image-alt-text">
 
 5. Now we need to assign priviliges to this new user so it can access the data uploaded by the user we created earlier. Switch to SQL developer window and  from admin tab,Enter command:
-```
+```bash
 grant read any table to <USER_NAME>;
 ```
 
@@ -577,7 +579,7 @@ grant read any table to <USER_NAME>;
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_026.PNG" alt="image-alt-text">
 
 7. In the SQL statement section, Enter statement:
-```
+```bash
 %sql
 select * from <USER_NAME>.channels;
 ```

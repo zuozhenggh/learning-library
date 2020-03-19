@@ -4,16 +4,21 @@
 
 ## Introduction
 
-In Lab 50 (as Derek) you will initiate the Oracle cloud environment that you will use to create and deploy your microservices applications. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment. You will deploy two Oracle Cloud Services for this environment. An Oracle Cloud Developer Image will be used to develop and deploy your microservices code. The microservices will access data within an Autonomous Transaction Processing (ATP) Cloud Service. 
+In Lab 50 (as Derek) you will initiate the Oracle cloud environment that you will use to create and deploy your microservices applications. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment. You will deploy two Oracle Cloud Services for this environment. An Oracle Cloud Developer Image will be used to develop and deploy your microservices code. The microservices will access data within an Autonomous Transaction Processing (ATP) Cloud Service.
+
+To deploy these services, you will be using Terraform, a tool for building, changing, and versioning infrastructure safely and efficiently. It is an important tool for anyone looking to standardize IaaS (Infrastructure as a Service) within their organization.
 
 ***To log issues***, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
+***We recommend that you create a notes page to write down all of the credentials you will need.***
+
 ## Lab 050 Objectives
 
+- Log into OCI tenancy.
 - Setup your IAAS environment and create common components.
 - Create a new Cloud Developer Image from Marketplace.
 - Create an Autonomous Transaction Processing (ATP) Database.
-- Install Visual Studio Code into the Cloud Developer Image.
+- Create an Object Storage bucket.
 
 ## Steps
 
@@ -21,7 +26,8 @@ In Lab 50 (as Derek) you will initiate the Oracle cloud environment that you wil
 
 You have already applied for and received your Oracle Cloud Free Tier Account.
 
-### **STEP 2:** Log in to your OCI dashboard and Switch Regions
+
+### **STEP 2:** Log in to your OCI dashboard
 
 - From any browser go to oracle.com to access the Oracle Cloud.
 
@@ -37,158 +43,253 @@ You have already applied for and received your Oracle Cloud Free Tier Account.
 
   ![](images/050/002.png)
 
-    `Note this is NOT your email. This is the nane of your tenancy noted in the email you received during signup`
+    **Note this is NOT your email. This is the name of your tenancy noted in the email you received during signup**
 - Enter your username (this may be your email address) and password and click on **Sign In**.
   ![](images/050/003.png)
 
-- Once you log in you will see a page similar to the one below.  Click on the hamburger icon in the upper left corner to reveal the menu.
+- Once you log in you will see a page similar to the one below.
 
     ![](images/hamburger.png)  
 
 
-### **STEP 3:** Create a Compartment
+### **STEP 3:** Download and Install Terraform zip folder
 
-Compartments are used to isolate resources within your OCI tenant. User-based access policies can be applied to manage access to compute instances and other resources within a Compartment.
+- Grab the zip file [here](https://github.com/edercervantes/terraform-OCI-for-resource-manager) and save it somewhere you can find later.
 
-- Click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Governance and Administration** section, select **Identity** and select **Compartments**.
+    ![](images/050/018.png)
 
-  ![](images/050/011.png)
+### **STEP 4:** Get Your Oracle Cloud Credentials
 
-- Click **Create Compartment**.  Note that you can create the compartment in your root compartment, or create sub-compartments under the root compartment.  In this case we will be creating a new compartment under our 'demo' compartment (your root compartment will be different).
+To run our Terraform folder in the cloud, we will take advantage of OCI resource manager. It is a powerful tool for planning, and executing multiple Terraform jobs, all without having to installing anything locally. In order for resource manager to create resources for you, it needs to know a few key credentials on the OCI console.
 
-  ![](images/050/012.png)
-
-- In the **Name** field, enter `python4dev`. Enter a **Description** of your choice. Click **Create Compartment**.
+- Click on the profile icon in the top right. Then click into the tenancy link.
 
   ![](images/050/013.png)
 
-- In a moment, your new Compartment will show up in the list.
+- Copy the **Object Storage Namespace** in your notes.
 
   ![](images/050/014.png)
 
-### **STEP 4:** Create a VCN
+ ### **STEP 5:** Generate your SSH key pair
 
-We need a default VCN to define our networking within the python4dev compartment. This is where Subnets and Security Lists are defined for each Availablity Domain in your Tenancy. Oracle Cloud Infrastructure is hosted in regions and availability domains. A region is a localized geographic area, and an availability domain is one or more data centers located within a region. A region is composed of several availability domains. Availability domains are isolated from each other, fault tolerant, and very unlikely to fail simultaneously. Because availability domains do not share infrastructure such as power or cooling, or the internal availability domain network, a failure at one availability domain is unlikely to impact the availability of the others.
+- On Linux or Mac enter this in a command shell.
+    
+    `$ ssh-keygen -b 2048 -t rsa`
 
-All the availability domains in a region are connected to each other by a low latency, high bandwidth network, which makes it possible for you to provide high-availability connectivity to the Internet and customer premises, and to build replicated systems in multiple availability domains for both high-availability and disaster recovery.
+    You can call the key whatever you want (the default is easiest).  It will create a private key and a public key. The public key is used when you are prompted for a SSH key when you create services, and the matching private key is used to access those services after creation. (eg: Cloud Developer Image).
 
-- Navigate to `Networking` > `Virtual Cloud Networks`.
+    ![](images/050/028.png)
 
-  ![](images/050/030.png)
+**If you have Linux or Mac, you can skip ahead to Step 6.**
 
-- Select `Create Virtual Cloud Network`. 
+- On Windows, you must have **PUTTY**. If you don't, you can download it [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
-  ![](images/050/031.png)
+- Search for **PUTTYgen**, then open the application.
 
-- Call it ***py4devvcn***, and be sure to select the option to create related resources.  Be sure to select the ***python4dev*** compartment you created previously.  Then scroll down and click `Create Virtual Cloud Network`.
+    ![](images/050/018.1.png)
 
-  ![](images/050/032.png)
+- Make sure the type of key is RSA and the number of bits is 2048. Then click on **Generate**.
 
-  ![](images/050/033.png)
+    ![](images/050/058.png)
 
-The new [marketplace cloud developer image](https://blogs.oracle.com/linux/announcing-the-oracle-cloud-developer-image-for-oracle-cloud-infrastructure) for Oracle provides a great platform for application development, with all of the development tools you'll need pre-installed and configured.
+- Copy the public ssh key IN ITS ENTIRETY into your notes. Then press **Save private key**.
 
-### **STEP 5:** Create a new cloud developer image from the Oracle Marketplace Images.
+    ![](images/050/011.png)
 
-![](images/050/020.png)
+- You can create a password, but there is no need for our purposes. Press No.
 
-- First create a new ssh key pair.  On linux or a Mac enter this in a command shell.  Note to create a ssh key pair on Windows use puttygen.  See the following:  `https://www.ssh.com/ssh/putty/windows/puttygen`.  Call the key `alphakey`.  It will create a private key called `alphakey` and a public key called `alphakey.pub`.  The public key `alphakey.pub` is used when you are prompted for a SSH key when you create services, and the matching private key `alphakey` is used to access those services after creation. (eg: Cloud Developer Image). 
+    ![](images/050/012.png)
 
-`ssh-keygen -b 2048 -t rsa`
+- Call the private key `alphakey`, then press save.
 
-![](images/050/028.png)
+    ![](images/050/032.png)
 
-- Navigate to `Compute` > `Instances`.
+### **STEP 6:** Creating a Resource Manager Stack
 
-  ![](images/050/021.png)
+Now, we will see the true power of Terraform as opposed to manual creation. By using Terraform, you have a reusable process for creating infrastructure. In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects.
 
-- Select `Create Instance` (in your ***python4dev*** compartment).
+- On the OCI console, click on the hamburger menu and scroll down to **Solutions and Platform**. Hover over **Resource Manager** and click on **Stacks**.
 
-  ![](images/050/022.png)
+    ![](images/050/020.png)
 
-- Enter `AlphaOffice` as the name, and then select `Change Image Source`.
+- Make sure the **Compartment** on the left side says root. If not, then change it to root. Then, click **Create Stack**.
 
-  ![](images/050/023.png)
+    ![](images/050/030.png)
 
-- Select the `Oracle Cloud Developer Image`.  Click the checkbox to access the terms and restrictions.
+- Drag and drop the zip file you downloaded earlier into the dashed line box, or click on **Browse** and find it. Then, you can give your **Stack** a name, like `python4dev_terraform`. You can also give a description if you'd like, but it is not necessary. Make sure you are still in the root compartment, and using Terraform version 0.11.x. Then click **Next**.
 
-  ![](images/050/024.png)
+    ![](images/050/022.png)
 
-  ![](images/050/025.png)
+- You will see a list of variables that will be used. Find **SSH_PUBLIC_KEY** and paste the public ssh key you created earlier in the given field. **It must be in text format.**
 
-- Select your public ssh key you created above.
+    ![](images/050/023.png)
 
-  ![](images/050/026.png)
+- Then, make an **AUTONOMOUS_DATABASE_ADMIN_PASSWORD**. **The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.**
 
-- Select your Virtual Cloud Network Compartment `python4atp` and `py4devvcn` VCN and then `Create`.
+    ![](images/050/026.png)
 
-  ![](images/050/027.png)
+- Next, populate the **OBJ_STORE_NAMESPACE** field with the **Object Storage Namespace** credential you saved earlier. Then click **Next**.
+
+    ![](images/050/024.png)
+
+- Finally, review your variables and make sure everything looks good. Then click **create**.
+
+    ![](images/050/025.png)
 	
-### **STEP 6:** Create an Autonomous Transaction Processing (ATP) Database
+### **STEP 7:** Creating OCI resources in Resource Manager
 
-We require a Database to store the Alpha Office data which is accessed later in this workshop.  We will create an Autonomous Transaction Processing (ATP) Database to load data into.  Autonomous Transaction Processing is one of a family of cloud services built on the self-driving, self-securing, and self-repairing Oracle Autonomous Database.  Autonomous Transaction Processing uses machine learning and automation to eliminate human labor, human error, and manual tuning, delivering unprecedented cost saving, security, availability, and production. Autonomous Transaction Processing supports a complex mix of high-performance transactions, reporting, batch, IoT, and machine learning in a single database, allowing much simpler application development and deployment and enabling real-time analytics, personalization, and fraud detection.
+- Now inside of the resource manager, hover over **Terraform Actions** and click on **Plan**.
 
-- Click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Database** section of the menu, click **Autonomous Transaction Processing** .
+    ![](images/050/065.png)
 
-  ![](images/050/015.png)
+-  You can give the plan a name, or keep the default. Then click on **Plan** to begin.
 
-- Select the **Compartment** `python4dev` and click **Create Autonomous Database**.
+    ![](images/050/066.png)
 
-  ![](images/050/016.png)
+- Wait for the plan to succeed, then click on **Stack Details**.
 
-- Select the **Compartment** `python4dev` if it is not already selected. Enter the **Display Name** `AlphaOffice`, **Database Name** `orcl4py`, enter the **Administrator Password** of `a1phaOffice1_` and Click **Create Autonomous Database**
+    ![](images/050/019.png)
 
-  ![](images/050/017.png)
+- Again, hover over **Terraform Actions** and click on **Apply**.
 
-  ![](images/050/018.png)
+    ![](images/050/072.png)
 
-  ![](images/050/018.1.png)
+- You can give the apply a name, or keep the default. You can leave the other settings the same. Then click on **Apply**.
 
-- After approximately 5 minutes, the Autonomous Transaction Processing instance will be provisioned. You can immediately proceed to the next section.
+    ![](images/050/073.png)
 
-  ![](images/050/019.png)
+- **The apply may take several minutes. Please be patient.**
 
-### **STEP 7:** Connect to your marketplace developer image
+    ![](images/050/057.png)
 
-[See this link for more info](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984).  This info is copied below.
+### **STEP 8:** Connect to your Marketplace Developer Image
 
-- Navigate to `Comute` > `Instances` and select your image to identify the IP address
+For more information about the Marketplace Developer Image [click here](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984).
+
+- Click on the hamburger menu, and navigate to **Core Infrastructure**. Hover over **Compute** and click on **Instances**.
 
 	![](images/050/034.png)
 
-- Identify the IP address.  You will use this to ssh to the image.
+- Click on your image to identify the IP address. You will use this to ssh into the image.
 
 	![](images/050/035.png)
 
-- SSH to the image.  Open a terminal window on a Mac or command shell on Linux and enter the following command: `ssh -i privateKey opc@<your IP address>`.  Note if you are on Windows you will need to use putty.
+    **If you cannot see your instance, make sure you are in the python4dev compartment.**
+
+- **If you are on Linux or Mac, use these instructions.** SSH into the image.
+    **Note, if you are on Windows, the instructions are below.**
+    Open a terminal window on a Mac or command shell on Linux and enter the following command:
+
+    `$ ssh -i <path/to/your/private-key> opc@<instance IP address>`
 
 	![](images/050/036.png)
 
-- Enter `vncpasswd` to set your VNC access (make it a secure one!).
+    **If you have Linux or Mac, you can skip the Windows instructions**
+
+**If you are on Windows, use these instructions**
+
+- Search for and open PUTTY. Then in hostname put 'opc@instance-ip-address'. Make sure the port is 22.
+
+    ![](images/050/031.png)
+
+- On the left hand menu, under **Connection**, expand **SSH** by clicking the plus sign next to it. Then click on **Auth**. Once in the menu, click **Browse** next to the private key file field.
+
+    ![](images/050/061.png)
+
+- Choose the private key `alphakey` file you created earlier and open it.
+
+    ![](images/050/062.png)
+
+- Next, go back to **Session** on the left hand side and click on it. Save the profile with the name 'py4atp_profile'. Finally, click **Open**.
+
+    ![](images/050/067.png)
+
+- Click **Yes** when prompted.
+
+    ![](images/050/063.png)
+
+- You now have an ssh tunnel into your instance!
+
+    ![](images/050/015.png)
+
+**End of Windows instructions**
+
+- Enter `$ vncpasswd` to set your VNC access (make it a secure one!).
 
 	![](images/050/037.png)
 
-- Enter `vncserver` to start the vncserver.
+- Enter `$ vncserver` to start the vncserver.
 
 	![](images/050/038.png)
 
-- Open a SSH tunnel.  This example works on Linux and the MAC.  Note on Linux you will need to be su.  See [here](http://www.oracle.com) for information on how to create a tunnel on Windows.  ***NOTE:*** do not close this terminal window.  It maintains the tunnel to the developer image, which we access through VNC.  If for whatever reason the window is closed or you are otherwise logged out (sometimes tunnels drop), then just run this again to log in.
+- Enter `$ exit` to go back to your local directory.
 
-`ssh -i <your private key> -L 5901:localhost:5901 opc@<your marketplace compute IP>`
+- Open a SSH tunnel.
+    ***NOTE:*** do not close this terminal window.  It maintains the tunnel to the developer image, which we access through VNC.  If for whatever reason the window is closed or you are otherwise logged out (sometimes tunnels drop), then just run this again to log in.
+    
+    For Windows, see the Windows ssh instructions above, except, change the ports for connection to 5901.
 
-![](images/050/039.png)
+     This example works on Linux and Mac. **Note:** on Linux you will need to be su.
 
-- Open a vnc viewer session.  If you don't already have vncviewer you can download it [here](https://www.realvnc.com/en/connect/download/viewer/).
+     `$ ssh -i <path/to/your/private-key> -L 5901:localhost:5901 opc@<your IP address>`
+
+    ![](images/050/039.png)
+
+- Open a vnc viewer session.  If you don't already have vnc viewer you can download it [here](https://www.realvnc.com/en/connect/download/viewer/).
+
+    Enter `localhost::5901` into the browser and then press Enter.
+
+    ![](images/050/068.png)
+
+    Enter the **vncpasswd** password you created earlier. 
 
 	![](images/050/040.png)
 
+    Now you have a user interface for your instance.
+
 	![](images/050/041.png)
 
-### **STEP 8:** Download Files Used in this Workshop
+### **STEP 9:** Download Files Used in this Workshop
 
-**Click to Download.  Save the file to your Downloads directory.**
+[Click to Download](https://oracle.github.io/learning-library/workshops/python4atp/lab-resources.zip). **Keep track of which directory this zip file gets saved to.**
 
-[lab-resources.zip](https://oracle.github.io/learning-library/workshops/python4atp/lab-resources.zip)
+**These instructions are for Linux and Mac users.**
+
+- Next, open a new terminal window. **It is important that this is a new window, since the session you opened previously must not be closed.**
+
+- Run the command below.
+
+    `$ ssh -i <path/to/your/private-key> opc@<instance IP address>`
+
+    If you are prompted, enter `yes`.
+
+- Run `$ pwd` to view your home path. Then run `$ exit` to go back to your local environment. If your home path is different than the one below, then change it to yours.
+
+    `$ scp </path/to/lab-resources.zip> opc@<instance IP address>:/home/opc`
+
+    If you are prompted, enter `yes`.
+
+    _Now the zip file has been copied into your instance!_
+
+**End of instructions for Linux and Mac users. You can skip the instructions for Windows users.**
+
+**These instructions are for Windows users.**
+
+- Find and open **PSFTP**.
+
+    ![](images/050/069.png)
+
+- In the terminal window that opens up, enter `open py4atp_profile`.
+
+    ![](images/050/070.png)
+
+- Next, enter `put </path/to/lab-resources.zip>`
+
+    ![](images/050/071.png)
+
+    _Now the zip file has been copied into your instance!_
+
+**End of instructions for Windows users**
 
 **This completes the Lab!**
 
