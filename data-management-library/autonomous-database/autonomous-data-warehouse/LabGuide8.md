@@ -1,4 +1,4 @@
-# Bonus Lab 8:  Using Oracle Machine Learning SQL Notebooks
+# Bonus Lab 9:  Using Oracle Machine Learning SQL Notebooks
 
 ### Introduction
 

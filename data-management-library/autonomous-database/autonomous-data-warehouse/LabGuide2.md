@@ -1,14 +1,14 @@
 
 <!--September 21, 2018-->
 
-# Working with Data Warehouse Services and the free Sample Data Sets
+# Working with Autonomous Database Services and the free Sample Data Sets
 
 
 ## Introduction
 
-In this lab you will explore the provided sample data sets and learn more about the choices of database services that come with your ADW instance.
+In this lab you will explore the provided sample data sets and learn more about the choices of database services that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing ATP) instance.
 
-Autonomous Data Warehouse provides three database services that you can choose when connecting to your database. These are named as HIGH, MEDIUM, and LOW services and provide different levels of performance and concurrency.
+Autonomous databases provide three database services that you can choose when connecting to your database. These are named as HIGH, MEDIUM, and LOW services and provide different levels of performance and concurrency.
 <blockquote>
 The <strong>HIGH</strong> database service provides the maximum amount of CPU resources for a query; however this also means the number of concurrent queries you can run in this service will not be as much as the other services. The number of concurrent SQL statements that can be run in this service is 3; this number is independent of the number of CPUs in your database.
 <br><br>
@@ -25,11 +25,13 @@ This lab will demo queries on sample data sets provided out of the box with ADW.
 
 You will run a basic query on the SSB data set which is a 1TB data set with one fact table with around 6 billion rows, and several dimension tables.
 
+**Note:** While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.
+
 To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/issues/new" target="\_blank"> here </a> to go to the GitHub Oracle Repository issue submission form.
 
 ### Objectives
 
-- Learn about the different levels of ADW instance service (HIGH, MEDIUM, LOW)
+- Learn about the different levels of an autonomous database service (HIGH, MEDIUM, LOW)
 - Learn about the Star Schema Benchmark (SSB) and Sales History (SH) sample data sets
 - Run a query on an ADW sample dataset
 
@@ -37,7 +39,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 -   The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-### Run a Query on a Sample ADW Dataset
+### Run a Query on a Sample Autonomous Database Dataset
 
 #### **STEP 1: Open up SQL Developer Web to connect to the autonomous database you created in the previous lab**
 

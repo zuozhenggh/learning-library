@@ -1,24 +1,24 @@
-# Bonus Lab 7: Scaling and Performance in Your Autonomous Data Warehouse
+# Bonus Lab 8: Scaling and Performance in Your Autonomous Database
 
 ### Introduction
 
-In this lab you will scale up your Oracle Autonomous Data Warehouse (ADW) service to have more CPUs. And you will watch a demo that shows the performance and concurrency impacts of scaling your service online.
+In this lab you will scale up your Oracle Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP) service to have more CPUs. And you will watch a demo that shows the performance and concurrency impacts of scaling your service online.
 
-To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/issues/new" target="\_blank"> here </a> to go to the github oracle repository issue submission form.
+To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/issues/new" target="\_blank"> here </a> to go to the GitHub Oracle repository issue submission form.
 
 ### Objectives
 
--   Learn how to scale up an ADWC service
+-   Learn how to scale up an ADW or ATP service
 
--   Understand the performance and concurrency impacts of scaling your Autonomous Data Warehouse service online
+-   Understand the performance and concurrency impacts of scaling your autonomous database service online
 
 ### Required Artifacts
 
--   The following lab requires an Oracle Public Cloud account. If you don't already have your own cloud account then you can obtaina new cloud account through the free Oracle trial program.
+-   The following lab requires an Oracle Public Cloud account. If you don't already have your own cloud account then you can obtain a new cloud account through the free Oracle trial program.
 
 ## <!--buggy, did this so Part 1 would collapse-->
 
-## **Step 1: Scaling your ADWC instance**
+## Step 1: Scaling your Autonomous Database Instance
 
 -   Go back to the Cloud Console you used during the provisioning exercise and open the database instance's Details screen. From the **action menu**, click **Scale Up/Down**.
 
@@ -40,11 +40,11 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 ![](./images/600/Picture300-6.png " ")
 
 
-## **Step 2: Performance and concurrency benefits of dynamic scaling**
+## Step 2: Performance and Concurrency Benefits of Dynamic Scaling
 
 -   <a href="https://raw.githubusercontent.com/millerhoo/journey4-adwc/master/workshops/journey4-adwc/images/ADWC%20HOL%20-%20Scaling.mp4" target="\_blank">Click here</a> to watch a demo of the performance impact of scaling up your instance. In the demo you will see that scaling up provides more concurrency for your users.
 
--   The demo will show a workload that has 10 concurrent users running with the MEDIUM database service. You will see that on a 2 CPU ADWC instance 5 queries are running whereas 5 queries are waiting in the queue for resources.
+-   The demo will show a workload that has 10 concurrent users running with the MEDIUM database service. You will see that on a 2 CPU autonomous database instance 5 queries are running whereas 5 queries are waiting in the queue for resources.
 
 ![](./images/600/Picture300-7.png " ")
 

@@ -8,7 +8,7 @@
 
 In this lab, you will be querying files on the Oracle Cloud Infrastructure Object Storage (OCI) directly without loading them to your database.
 
-**Note:** Make sure you have completed Lab 3: Loading Data into Your New Autonomous Data Warehouse before you proceed with this lab. You will use the data files on the OCI Object Storage and the credential object from Lab 3 in this lab.
+**Note:** Make sure you have completed Lab 3, **Loading Data into Your New Autonomous Database**, before you proceed with this lab. You will use the data files on the OCI Object Storage and the credential object from Lab 3 in this lab.
 
 To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/issues/new" target="\_blank"> here </a> to go to the github oracle repository issue submission form.
 
@@ -23,9 +23,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
 -   The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-## Part 1: Querying External Data
-
-#### **STEP 1: Create External Tables with DBMS_CLOUD**
+## STEP 1: Create External Tables with DBMS_CLOUD
 
 -   While connected as your user in SQL Developer Web, copy and paste <a href="./scripts/400/create_external_tables_without_base_url.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet.  
 
@@ -43,7 +41,7 @@ To **log issues**, click <a href="https://github.com/millerhoo/journey4-adwc/iss
 
     Now you have **external tables** for the sample data pointing to files in the object store. Any query against the external tables will return the same result as against the original tables.
 
-#### **STEP 2: Querying External Data**
+## STEP 2: Querying External Data
 
 -   Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet. Compared to the query in the previous lab, we only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
 

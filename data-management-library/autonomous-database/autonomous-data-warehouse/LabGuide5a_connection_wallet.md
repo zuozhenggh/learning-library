@@ -1,15 +1,16 @@
 
 <!-- August 26, 2019 -->
 
-# Connecting to ADW Securely with a Connection Wallet
+# Bonus Lab 6: Connecting to an Autonomous Database Securely with a Connection Wallet
 
 
 ## Introduction
 
-This lab walks you through the steps to download and configure a connection wallet to connect securely to an Autonomous Data Warehouse (ADW) database. You will use this connection wallet to connect to the database using Oracle SQL Developer.
+This lab walks you through the steps to download and configure a connection wallet to connect securely to an Autonomous Database (Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]). You will use this connection wallet to connect to the database using Oracle SQL Developer.
 
+**Note:** While this lab uses ADW, the steps are identical for connecting to an autonomous database in ATP.
 
-Click [here](https://www.youtube.com/watch?v=PHQqbUX4T50&autoplay=0&html5=1) to watch a video demonstration of connecting to your new Autonomous Data Warehouse using SQL Developer.
+Click [here](https://www.youtube.com/watch?v=PHQqbUX4T50&autoplay=0&html5=1) to watch a video demonstration of connecting to an Autonomous Data Warehouse database using SQL Developer.
 
 To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issues/new)  to go to the GitHub Oracle repository issue submission form.
 
@@ -29,16 +30,9 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
     **Note:** If you are a Windows user on 64-bit platform, download the 'Windows 64-bit with JDK 8 included' distribution as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and connect to your Autonomous Data Warehouse.
     If you are a non-Windows user, download and install the appropriate [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) for your Operating System. Download and extract the [Java Cryptography Encryption Archive](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) to the directory as indicated in the README.txt.
 
-### Part 1. Connecting to ADW Securely with a Connection Wallet
-
-### Downloading the Connection Wallet
-
-
-As ADW only accepts secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page, or from the ADW service console.
-
-
 ## Step 1: Download the Connection Wallet
 
+-   As ADW and ATP accept only secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page, or from the ADW or ATP service console.
 -   In your database's instance details page, click **DB Connection**.
 
 ![](./images/500a/Picture100-34.png " ")
@@ -55,14 +49,9 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 ![](./images/500a/Picture100-16.png " ")
 
-
-### Connecting to the database using SQL Developer
-
-Start SQL Developer and create a connection for your database using the default administrator account 'ADMIN' by following these steps.
-
-
 ## Step 2: Connect to the database using SQL Developer
 
+-   Start SQL Developer and create a connection for your database using the default administrator account 'ADMIN' by following these steps.
 -   Click the **New Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
 
 ![](./images/500a/snap0014653.jpg " ")

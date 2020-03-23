@@ -1,12 +1,14 @@
 
 <!-- August 26, 2019 -->
 
-# Getting Started with Autonomous Data Warehouse (ADW)
+# Getting Started with Autonomous Database (ADW and ATP)
 
 
 ## Introduction
 
-This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse (ADW) on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance and connect to the database using Oracle SQL Developer Web.
+This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance and connect to the database using Oracle SQL Developer Web.
+
+**Note:** While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.
 
 <!--
 <a href="https://www.youtube.com/watch?v=Q6hxMaAPghI&autoplay=0&html5=1" target="_blank">-->Watch a video demonstration of provisioning a new autonomous data warehouse:
@@ -31,12 +33,12 @@ To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issue
 
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-## Part 1. Provisioning an ADW Instance
+#### **Provisioning an Autonomous Database Instance**
 
-In this section you will be provisioning an ADW instance using the cloud console.
+In this section you will be provisioning an ADW database instance using the cloud console.
 
 
-#### **STEP 1: Sign in to Oracle Cloud**
+## **STEP 1: Sign in to Oracle Cloud**
 
 -   Go to [cloud.oracle.com](https://cloud.oracle.com), click **Sign In** to sign in with your Oracle Cloud account.
 
@@ -50,11 +52,11 @@ In this section you will be provisioning an ADW instance using the cloud console
 
 ![](./images/100/Picture100-4.png " ")
 
-#### **STEP 2: Create an ADW Instance**
+## **STEP 2: Create an Autonomous Database Instance**
 
 -   Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
-__Note:__ You can also directly access your Autonomous Data Warehouse service in the __Quick Actions__ section of the dashboard.
+__Note:__ You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
 
 ![](./images/100/Picture100-36.png " ")
 
@@ -143,15 +145,14 @@ __Note:__ You can also directly access your Autonomous Data Warehouse service in
 ![](./images/100/Picture100-32.png " ")
 
 
-## Part 2. Connecting to your ADW Database with SQL Developer Web
+## **STEP 3: Connect with SQL Developer Web**
+
+#### **Connecting to your Autonomous Database with SQL Developer Web**
 
 ### Accessing SQL Developer Web
 
 
-Although you can connect to your ADW autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Developer Web directly from your ADW console.
-
-
-#### **STEP 4: Open SQL Developer Web**
+Although you can connect to your autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Developer Web directly from your ADW or ATP console.
 
 -   In your database's details page, click the **Tools** tab.
 
