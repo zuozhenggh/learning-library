@@ -25,6 +25,10 @@ To get started, choose one (or more!) of the defined learning paths below:
 | ------------- | ------------- |
 | ![security/data-safe/](common-template/img/security.png)| Practice the main features in Oracle Data Safe, including Activity Auditing, Data Discovery, Data Masking, User Assessment, and Security Assessment.   **[Click here to launch the lab series](security/data-safe)**  |
 
+<<<<<<< HEAD
+ **[Click here to launch the lab](autonomous-database/autonomous-data-warehouse)**
+=======
+>>>>>>> upstream/master
 
 
 ## **Develop on ADB Library Highlights**
@@ -35,10 +39,19 @@ To get started, choose one (or more!) of the defined learning paths below:
 
 ## **Database Tools Library Highlights**
 
+<<<<<<< HEAD
+ **[Click here to launch the lab](autonomous-transaction-processing/dedicated)**
+
+ ---
+=======
 New Library coming soon!
+>>>>>>> upstream/master
 
 
 
+<<<<<<< HEAD
+- Coming soon
+=======
 ## Helpful Links ##
 
 **Autonomous Database Cloud Specialist Certification** - [Learn More]([here](https://education.oracle.com/oracle-autonomous-database-cloud-2019-certified-specialist/trackp_OADB19))
@@ -47,3 +60,4 @@ New Library coming soon!
 
 
 
+>>>>>>> upstream/master

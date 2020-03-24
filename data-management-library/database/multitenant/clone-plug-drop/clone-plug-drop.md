@@ -533,6 +533,8 @@ The tasks you will accomplish in this lab are:
 - Create a load against the pluggable database **OE**
 - Create a hot clone **OE_DEV** in the container database **CDB2** from the pluggable database **OE**
 
+[](youtube:djp-ogM71oE)
+
 1. Connect to **CDB1**  
 
     ````
@@ -607,6 +609,8 @@ You can see that the clone of the pluggable database worked without having to st
 
 ## Step 8: PDB Refresh
 This section looks at how to hot clone a pluggable database, open it for read only and then refresh the database.
+
+[](youtube:L9l7v6dH-e8)
 
 The tasks you will accomplish in this lab are:
 - Leverage the **OE** pluggable database from the previous lab with the load still running against it.
