@@ -60,3 +60,12 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
     ![](images/username.png " ")
     
     [Description of the illustration username.png](files/username.txt)
+
+You may now proceed to the next lab.
+
+
+## Acknowledgements
+
+- **Last Updated By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
