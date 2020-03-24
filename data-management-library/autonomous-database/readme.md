@@ -5,13 +5,13 @@ Oracle’s revolutionary cloud database is self-driving, self-securing, self-rep
 ## Workshops
 Click on one of our workshops below to access the content.
 
-### Drop In Labs
+### ADB Shared Infrastructure
 
-[![](./images/screenshot-dropinlabs-freetier.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/index.html)  ![](./images/transparent.png " ") [![](./images/screenshot-dropinlabs-ss.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/ssworkshop/index.html) 
+[![](./images/screenshot-adb.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-journey-workshop/index.html)  ![](./images/transparent.png " ") 
 
-### Certification Labs
+### ADB Dedicated Infrasructure
 
-[![](./images/screenshot-dropinlabs-freetier.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/index.html)  ![](./images/transparent.png " ") [![](./images/screenshot-dropinlabs-freetier.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/drop-in-labs/ssworkshop/index.html) 
+New updated workshop coming soon!
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -19,7 +19,7 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
 - Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
 - Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
 
-Click here to request your trial account: [https://cloud.oracle.com/tryit](https://cloud.oracle.com/tryit)
+Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
 
 
 ## Product Pages
