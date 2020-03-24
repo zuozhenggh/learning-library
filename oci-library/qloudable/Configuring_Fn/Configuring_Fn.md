@@ -180,7 +180,7 @@ Switch to the OCI console. From OCI services menu, Click **Instances** under **C
 10. Enter **ls** and verify id_rsa file exists
 
 11. Enter command 
-```
+```bash
 ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -312,12 +312,12 @@ fn version
 18. Next create the new Fn Project CLI context. Enter command;
 
 **NOTE**: 'CONTEXT-NAME' below can be a name that you can choose e.g test-fn
-```
+```bash
  fn create context <CONTEXT NAME> --provider oracle
 ```
 
 19. Specify that the Fn Project CLI is to use the new context. Enter command;
-```
+```bash
 fn use context <CONTEXT NAME>
 ```
 
@@ -327,7 +327,7 @@ fn use context <CONTEXT NAME>
 
 22. Switch back to ssh session to compute instance. Configure the new context with the OCID of the compartment you want to own deployed functions. Enter Command;
 
-```
+```bash
 fn update context oracle.compartment-id <compartment-ocid>
 ```
 
@@ -342,7 +342,7 @@ fn update context api-url https://functions.us-<REGION NAME>.oraclecloud.com
 
 
 24. Configure the new context with the address of the Docker registry and repository that you want to use with Oracle Functions, Enter command;
-```
+```bash
 fn update context registry <region-code>.ocir.io/<tenancy-namespace>/<repo-name>
 ```
 
@@ -363,7 +363,7 @@ fn update context oracle.profile DEFAULT
 ```
 
 26. Next we will login to OCI Registry and ensure we have access. Enter command;
-```
+```bash
 docker login <region-code>.ocir.io
 ```
 
@@ -394,7 +394,7 @@ Click **Create**
 
 **NOTE** 'FUNCTION_NAME' below shoudl be what you created in above step
 
-```
+```bash
 fn init --runtime java <FUNCTION_NAME>
 ```
 A directory called <FUNCTION_NAME>-func is created, containing:
@@ -404,12 +404,12 @@ a /src directory containing source files and directories for the <FUNCTION_NAME>
 a Maven configuration file called pom.xml that specifies the dependencies required to compile the function
 
 32. Next we will deploy the function. Change directory to the <FUNCTION_NAME> directory created in the previous step
-```
+```bash
 cd <FUNCTION_NAME>-func
 ```
 
 33. Enter the following single Fn Project command to build the function and its dependencies as a Docker image called <FUNCTION_NAME>, push the image to the specified Docker registry, and deploy the function to Oracle Functions in the <NAME> used when **Create Application** was used. Enter command;
-```
+```bash
 fn deploy --app <NAME>
 ```
 
@@ -418,7 +418,7 @@ fn deploy --app <NAME>
 34. You can also Confirm that the <FUNCTION_NAME> image has been pushed to Oracle Cloud Infrastructure Registry by logging in to the Console. Under **Solutions and Platform**, go to **Developer Services** and click **Registry**. 
 
 35.  Now lets Invoke your first function. In the ssh session to compute instance, Enter command;
-```
+```bash
 fn invoke <NAME> <FUNCTION_NAME>-func
 ```
 **For exampel if in OCI console we used *helloworld-app* as the name and in compute instance we use *helloworld* then the command will be 'fn invoke helloworld-app helloworld-func'**

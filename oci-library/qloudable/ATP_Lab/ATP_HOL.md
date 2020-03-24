@@ -285,8 +285,10 @@ instance created earlier**
 cd <Directory_Name> (cd ~/Downloads)
 ```
 7. Upload the zip file to compute instance, Enter command,
+
 ```bash
 sftp  -i /C/Users/PhotonUser/.ssh/id_rsa opc@ <PUBLIC_IP_OF_COMPUTE>
+
 ```
 8. At sftp prompt Enter command,
 ```bash
@@ -300,6 +302,7 @@ put <ZIP_FILE_NAME>
 ``` 
 cd ~/swingbench/bin
 ```
+
 10. Enter command:
 ```
 which java
@@ -336,6 +339,7 @@ Answer 'Y' when prompted
 ```
 cd ~/swingbench/config
 ```
+
 16. Enter command:
 ```
 vi SOE_Server_Side_V2.xml
