@@ -11,5 +11,12 @@ Watch the video below for an overview of Oracle Multitenant.
 
 [](youtube:I7cygRKBbI8)
 
+## Acknowledgements
+
+**Authors/Contributors** - Patrick Wheeler, David Start, Vijay Balebail, Kay Malcolm
+
+**Last Updated By/Date** - Kay Malcolm, March 2020
+
+**Workshop Expiration Date** - March 31, 2021
 
 

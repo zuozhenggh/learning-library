@@ -172,4 +172,8 @@ The setupcdb.sh takes 60 minutes to run and is also setup to run in the backgrou
 
 Congratulations!  Now you have the environment to run the Multitenant labs.   
 
+## Acknowledgements
 
+**Author** - Kay Malcolm, Director, DB Product Management,
+
+**Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020

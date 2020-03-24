@@ -1,0 +1,28 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction to ADB Dedicated",
+            "description": "Introduction to ADB Dedicated",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        },
+        {         
+            "title": "Lab 1: Prepare Private Network",
+            "description": "Preparing your private network in the Oracle Cloud Infrastructure",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-network-prepare/adb-network-prepare.md"
+        },
+        {         
+            "title": "Lab 2: Multitenant Basics",
+            "description": "Clone, Plug and Drop Pluggable Databases",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../clone-plug-drop/clone-plug-drop.md"
+        }
+    ]
+}

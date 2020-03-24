@@ -732,3 +732,11 @@ The tasks you will accomplish in this lab are:
 ## Lab Cleanup
 
 Now you've had a chance to try out the Multitenant option. You were able to create, clone, plug and unplug a pluggable database. You were then able to accomplish some advanced tasks that you could leverage when maintaining a large multitenant environment. 
+
+## Acknowledgements
+
+**Author** - Patrick Wheeler, VP, Multitenant Product Management
+
+**Adapted to Cloud by** -  David Start, OSPA
+
+**Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020

@@ -9,23 +9,23 @@
             "filename": "../intro/intro.md"
         },
         {         
-            "title": "Lab: Generate SSH Key",
+            "title": "Lab 1: Generate SSH Key",
             "description": "Generate SSH Key",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/common-labs/generate-ssh-key/generate-ssh-key.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-key.md"
         },
         {         
-            "title": "Lab: Login to Oracle Cloud",
+            "title": "Lab 2: Login to Oracle Cloud",
             "description": "Login to Oracle Cloud",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/common-labs/cloud-login/cloud-login-ssworkshop.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-ssworkshop.md"
         },
         {         
-            "title": "Lab: Workshop Setup",
+            "title": "Lab 3: Workshop Setup",
             "description": "Setup Multitenant Workshop in Self Service Workshop",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
@@ -33,7 +33,7 @@
             "filename": "./../setup/ssworkshop-setup.md"
         },
         {         
-            "title": "Lab: Multitenant Basics",
+            "title": "Lab 4: Multitenant Basics",
             "description": "Clone, Plug and Drop Pluggable Databases",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
@@ -41,7 +41,7 @@
             "filename": "./../clone-plug-drop/clone-plug-drop.md"
         },
         {         
-            "title": "Lab: Application Containers",
+            "title": "Lab 5: Application Containers",
             "description": "Using Application Containers with Multitenant",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
