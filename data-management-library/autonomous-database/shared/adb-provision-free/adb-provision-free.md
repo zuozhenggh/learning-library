@@ -8,32 +8,27 @@
 
 This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. You will provision a new ADW instance and connect to the database using Oracle SQL Developer Web.
 
-**Note:** While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.
-
-Watch a video demonstration of provisioning a new autonomous data warehouse:
-
-[](youtube:Q6hxMaAPghI)
-
-Click [here](https://www.youtube.com/watch?v=PHQqbUX4T50&autoplay=0&html5=1) to watch a video demonstration of connecting to your new Autonomous Data Warehouse using SQL Developer.
-
-To **log issues**, click [here](https://github.com/millerhoo/journey4-adwc/issues/new)  to go to the GitHub Oracle repository issue submission form.
+*Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
 
 ### Objectives
 
 -   Learn how to provision a new Autonomous Data Warehouse
 
--   Learn how to connect to your new Autonomous Data Warehouse
-
 ### Required Artifacts
 
--   The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a FreeTier account, or a training account whose details were given to you by an Oracle instructor.
+The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a FreeTier account, or a training account whose details were given to you by an Oracle instructor.
 
-### Provisioning an Autonomous Database Instance
+### Lab Prerequisites
 
-This lab assumes you have already completed the Cloud Login lab.  In this lab you will be provisioning an ADB database instance using the cloud console.
+This lab assumes you have completed the *Login to Oracle Cloud* lab.
 
+### Video Preview
 
-## STEP 1: Create an Autonomous Database Instance
+Watch a video demonstration of provisioning a new autonomous data warehouse:
+
+[](youtube:Q6hxMaAPghI)
+
+## STEP 1: Cloud Login and Services Menu
 
 1. Login to the Oracle Cloud
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -58,12 +53,14 @@ This lab assumes you have already completed the Cloud Login lab.  In this lab yo
 
     ![](./images/Region.png " ")
 
-8. Click **Create Autonomous Database** to start the instance creation process.
+## STEP 2: Creating the ADB instance
+
+1. Click **Create Autonomous Database** to start the instance creation process.
 
     ![](./images/Picture100-23.png " ")
 
-9.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
-10. Provide basic information for the autonomous database:
+2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
+3. Provide basic information for the autonomous database:
 
     - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __ADW Finance Mart__.
@@ -71,21 +68,21 @@ This lab assumes you have already completed the Cloud Login lab.  In this lab yo
 
     ![](./images/Picture100-26.png " ")
 
-11. Choose a workload type. Select the workload type for your database from the choices:
+4. Choose a workload type. Select the workload type for your database from the choices:
 
     - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.
     - __Transaction Processing__ - Alternately, you could have chosen Transaction Processing as the workload type.
 
     ![](./images/Picture100-26b.png " ")
 
-12. Choose a deployment type. Select the deployment type for your database from the choices:
+5. Choose a deployment type. Select the deployment type for your database from the choices:
 
     - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     - __Dedicated Infrastructure__ - Alternately, you could have chosen Dedicated Infrastructure as the workload type.
 
     ![](./images/Picture100-26_deployment_type.png " ")
 
-13. Configure the database:
+6. Configure the database:
 
     - __Always Free__ - For this lab, do not select this option.
     - __Choose database version__ - Select a database version from the available versions.
@@ -96,7 +93,7 @@ This lab assumes you have already completed the Cloud Login lab.  In this lab yo
 
     ![](./images/Picture100-26c.png " ")
 
-14. Create administrator credentials:
+7. Create administrator credentials:
 
     - __Password and Confirm Password__ - Specify the password for ADMIN user of the service instance. The password must meet the following requirements:
     - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
@@ -107,52 +104,27 @@ This lab assumes you have already completed the Cloud Login lab.  In this lab yo
     - Re-enter the password to confirm it. Make a note of this password.
 
     ![](./images/Picture100-26d.png " ")
-15. Choose network access:
+8. Choose network access:
     - For this lab, accept the default, "Allow secure access from everywhere".
     - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
     - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
 
     ![](./images/Picture100-26e.png " ")
 
-16. Choose a license type. For this lab, choose __License Included__. The two license types are:
+9. Choose a license type. For this lab, choose __License Included__. The two license types are:
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
-17. Click __Create Autonomous Database__.
+10. Click __Create Autonomous Database__.
 
     ![](./images/Picture100-27.png " ")
 
-18.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
+11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
 
     ![](./images/Picture100-32.png " ")
 
-
-## STEP 2: Connect with SQL Developer Web
-
-#### **Connecting to your Autonomous Database with SQL Developer Web**
-
-### Accessing SQL Developer Web
-
-
-Although you can connect to your autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Developer Web directly from your ADW or ATP console.
--   In your database's details page, click the **Tools** tab.
-
-![](./images/Picture100-34.png " ")
-
--  The Tools page provides you access to SQL Developer Web, Oracle Application Express, and Oracle ML User Administration. In the SQL Developer Web box, click **Open SQL Developer Web**.
-
-![](./images/Picture100-15.png " ")
-
--   A sign in page opens for SQL Developer Web. For this lab, simply use your database instance's default administrator account, ADMIN, with the admin password you specified when creating the database. Click **Sign in**.
-
-![](./images/Picture100-16.png " ")
-
--   SQL Developer Web opens on a worksheet tab. The first time you open SQL Developer Web, a series of pop-up informational boxes introduce the main features.
-
-![](./images/Picture100-16b.png " ")
-
-You are ready to move on to the next lab. 
+Please proceed to the next lab.
 
 ## Acknowledgements
 
