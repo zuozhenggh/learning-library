@@ -2,15 +2,33 @@
 
 ## Introduction
 
-Free Tier:  After you sign up for the free Oracle Cloud promotion or sign up for a paid account, you’ll get a welcome email. The email provides you with your cloud account details and sign in credentials.
+Oracle Cloud is the industry's broadest and most integrated cloud provider, with deployment options ranging from the public cloud to your data center. Oracle Cloud offers best-in-class services across Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS).
 
-Oracle Cloud Paid Account:  When your tenancy is provisioned, Oracle sends an email to the default administrator at your company with the sign-in credentials and URL. This administrator can then create a user for each person who needs access to the Oracle Cloud. Check your email or contact your administrator for your credentials and account name.
+Use Oracle Infrastructure as a Service (IaaS) offerings to quickly set up the virtual machines, storage, and networking capabilities you need to run just about any kind of workload. Your infrastructure is managed, hosted, and supported by Oracle.
 
-### Lab Requirements
-- Cloud Account Name - Name of your tenancy supplied by the administrator or in your welcome email
+Use Oracle Platform as a Service offerings to provision ready-to-use environments for your enterprise IT and development teams, so they can build and deploy applications, based on proven Oracle databases and application servers.
+
+Use Oracle Software as a Service (SaaS) offerings to run your business from the Cloud. Oracle offers cloud-based solutions for Human Capital Management, Enterprise Resource Planning, Supply Chain Management, and many other applications, all managed, hosted, and supported by Oracle.
+
+### Types of Cloud Accounts
+
+We offer two types of Cloud Account
+
+*Free Tier Accounts*:  After you sign up for the free Oracle Cloud promotion or sign up for a paid account, you’ll get a welcome email. The email provides you with your cloud account details and sign in credentials.
+
+*Oracle Cloud Paid Accounts*:  When your tenancy is provisioned, Oracle sends an email to the default administrator at your company with the sign-in credentials and URL. This administrator can then create a user for each person who needs access to the Oracle Cloud. Check your email or contact your administrator for your credentials and account name.
+
+### Objectives
+
+- Learn how to login to your Oracle Cloud Account
+  
+
+### Lab Prerequisites
+- Cloud Account Name - The name of your tenancy (supplied by the administrator or in your Oracle Cloud welcome email)
 - Username
 - Password
 
+## Step 1:  Login to Oracle Cloud
 1. From any browser go to oracle.com to access the Oracle Cloud.
 
     [https://www.oracle.com/](https://www.oracle.com/)
@@ -34,3 +52,9 @@ Oracle Cloud Paid Account:  When your tenancy is provisioned, Oracle sends an em
   ![](./images/cloud-homepage.png " ") 
 
 You may now proceed to the next lab.
+
+## Acknowledgements
+
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Mgmt, March 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
