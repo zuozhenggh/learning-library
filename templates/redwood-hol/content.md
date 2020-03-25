@@ -68,3 +68,9 @@ Conclusion of section 2 here.
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
+
+## Acknowledgements
+* **Author** - <Name, Title, Group>
+* **Adapted for Cloud by** -  <Name, Group> -- optional
+* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
