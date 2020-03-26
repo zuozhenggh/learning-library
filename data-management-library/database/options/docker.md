@@ -340,6 +340,7 @@ This lab will show how you can share applications and make modifications in the 
     apt-get install vim
     ````
     ![](img/docker/section8step1.png)
+    
     ![](img/docker/section8step2.png)
 3.  Verify the dark_blue.jpg file is in the container and then use vim to edit the html file for the main page in your application.  
     ````
