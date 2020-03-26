@@ -17,12 +17,12 @@
             "filename": "./../adb-network-prepare/adb-network-prepare.md"
         },
         {         
-            "title": "Lab 2: Multitenant Basics",
-            "description": "Clone, Plug and Drop Pluggable Databases",
+            "title": "Lab 2: Provisioning Exadata",
+            "description": "Provisioning Exadata Infrastructure for Autonomous DB in OCI",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../clone-plug-drop/clone-plug-drop.md"
+            "filename": "./../adb-provisioning-exadata/adb-provisioning-exadata.md"
         }
     ]
 }
