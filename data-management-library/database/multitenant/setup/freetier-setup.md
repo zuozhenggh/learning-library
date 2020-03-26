@@ -174,6 +174,5 @@ Congratulations!  Now you have the environment to run the Multitenant labs.
 
 ## Acknowledgements
 
-**Author** - Kay Malcolm, Director, DB Product Management,
-
-**Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+- **Author** - Kay Malcolm, Director, DB Product Management
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020

@@ -1631,8 +1631,6 @@ The tasks you will accomplish in this lab are:
 
 ## Acknowledgements
 
-**Author** - Patrick Wheeler, VP, Multitenant Product Management
-
-**Adapted to Cloud by** -  David Start, OSPA
-
-**Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+- **Author** - Patrick Wheeler, VP, Multitenant Product Management
+- **Adapted to Cloud by** -  David Start, OSPA
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
