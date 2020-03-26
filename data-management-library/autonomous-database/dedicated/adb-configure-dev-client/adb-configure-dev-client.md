@@ -24,22 +24,22 @@ As a database user, DBA or application developer,
 
 ## STEP 1: Provision an OCI Marketplace Developer Client image instance
 
-We start with deploying a pre-configured client machine instance from the OCI marketplace
+We start with deploying a pre-configured client machine instance from the OCI marketplace.
 
-- Log into your cloud account using your tenant name, username and password
-- Click Compute Instance in the left side menu under services 
+- Log into your cloud account using your tenant name, username and password.
+- Click Compute Instance in the left side menu under services.
     ![](./images/createcompute.png " ")
 
-- Click create Instance
+- Click create Instance.
     ![](./images/createcomputebutton.png " ")
 
-- Specify a name for compute instance
+- Specify a name for compute instance.
     ![](./images/computename.png " ")
 
-- Choose Oracle Cloud Developer image from Oracle Image section
+- Choose Oracle Cloud Developer image from Oracle Image section.
     ![](./images/computeimage.png " ")
 
-- Choose instance type for Virtual Machine
+- Choose instance type for Virtual Machine.
     ![](./images/computeinstancetype.png " ")
 
 - Choose VCN and subnet where you would like your client machine deployed. This would likely be the application subnet created in previous labs. 
@@ -54,13 +54,13 @@ We start with deploying a pre-configured client machine instance from the OCI ma
     Ensure the public IP address button is selected. You would need to ssh into this instance over public internet.
         ![](./images/public_ip.png " ")
 
-- Add SSH key, you can choose to import ssh public key or paste ssh public key
+- Add SSH key, you can choose to import ssh public key or paste ssh public key.
     ![](./images/computekey.png " ")
 
-- Within a few mins your developement instance will be available and a public IP address assigned (if it is provisioned in a public subnet)
+- Within a few mins your developement instance will be available and a public IP address assigned (if it is provisioned in a public subnet).
     ![](./images/computewait.png " ")
 
-- Once provisioned, you can click on the instance name to see details
+- Once provisioned, you can click on the instance name to see details.
     ![](./images/computeready.png " ")
 
 
@@ -70,16 +70,16 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
 
  *Note: You may skip the download and secure copy steps below and download the wallet directly into your developer client machine once you connect to it via VNC*
 
-- From your local browser, navigate to OCI console
+- From your local browser, navigate to OCI console.
 
 - On the ATP console, select the dedicated ATP instance provisioned in [Lab 4](./../adb-provisioning-databases/adb-provisioning-databases.md).
     ![](./images/doneprovision.png " ")
 
-- Click on  *DB Connection* to open up Database Connection pop-up window
+- Click on  *DB Connection* to open up Database Connection pop-up window.
     ![](./images/dbconnection.png " ")
 
 - Click on *Download* to supply a password for the wallet and download your client credentials.
-    Please use below Keystore password to download the client credentials
+    Please use below Keystore password to download the client credentials.
 
     ```
     <copy>
@@ -92,11 +92,11 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
 - The credentials zip file contains the encryption wallet, Java keystore and other relevant files to make a secure TLS 1.2 connection to your database from client applications. 
 
 
-- Next we upload the wallet to the dev client
+- Next we upload the wallet to the dev client.
 
     *Mac users can scp the file using command below. Windows 10 users can use the same command from powershell. Older versions of windows may need to install an SFTP client on their local machine to upload the wallet*
 
-- secure copy the file using scp, sftp or a windows ftp client
+- Secure copy the file using scp, sftp or a windows ftp client.
 
     ```
     <copy>
@@ -104,7 +104,7 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
     </copy>
     ```
 
-    example, for mac users with a private key file named id_rsa in their home directoy,
+    Example, for mac users with a private key file named id_rsa in their home directoy,
 
     ```
     <copy>
@@ -117,7 +117,7 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
 
 First we shh into the dev client and invoke the VNC server that comes pre-installed.
 
-- SSH into your dev client compute instance
+- SSH into your dev client compute instance.
 
     ```
     <copy>
@@ -125,7 +125,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
     </copy>
     ```
 
-- Change the password on the VNC server
+- Change the password on the VNC server.
     
     ```
     <copy>
@@ -139,138 +139,134 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
     $ vncserver -geometry 1280x1024
     </copy>
     ```
-- Your development system may now be ready for accepting VNC connections
+- Your development system may now be ready for accepting VNC connections.
 
 **Mac Users**
 
-On your local laptop,
-
-- Open a terminal window and create an ssh tunnel using the following command,
-  
+  - Open a terminal window and create an ssh tunnel using the following command,
+    
     ```
     <copy>
     $ ssh -N -L 5901:127.0.0.1:5901 -i \<priv-key-file\> opc@<publicIP-of-your-devClient>
     </copy>
-    ```
+     ```
 
 **Windows Users**
-- Windows 10 users can use powershell to connect using command above.
+  - Windows 10 users can use powershell to connect using command above.
 
-- Alternatively, you may create and ssh tunnel using putty. Detailed instructions on using putty for ssh tunnels are provided in the [Appendix](./Appendix.md)
+  - Alternatively, you may create and ssh tunnel using putty. Detailed instructions on using putty for ssh tunnels are provided in the [Appendix](./Appendix.md).
 
+  You now have a secure ssh tunnel from your local laptop to your developement system in OCI on VNC port 5901.
 
-You now have a secure ssh tunnel from your local laptop to your developement system in OCI on VNC port 5901
+  *Note: As mentioned earlier, you need a VNC client installed on your laptop. This lab uses VNC Viewer.*
 
-*Note: As mentioned earlier, you need a VNC client installed on your laptop. This lab uses VNC Viewer*
+  Start VNC Viewer on your laptop and configure a client connection using the settings as shown.
+      ![](./images/vncViewer.png " ")
 
-Start VNC Viewer on your laptop and configure a client connection using the settings as shown
-    ![](./images/vncViewer.png " ")
+  - Note how the connect string for VNC Server is simply localhost:1  That is because the default port 5901 on your local machine is forwarded to 5901 on your OCI dev client over an ssh tunnel.
 
-Note how the connect string for VNC Server is simply localhost:1  That is because the default port 5901 on your local machine is forwarded to 5901 on your OCI dev client over an ssh tunnel
+  - Connect to your VNC desktop and provide the password you changed on the host earlier.
 
-Connect to your VNC desktop and provide the password you changed on the host earlier
-
-If all goes well, you should now see a linux desktop in your VNC window.
+  - If all goes well, you should now see a linux desktop in your VNC window.
 
 ## STEP 4: Connect to your autonomous DB using SQL Developer, SQLCL and SQL Plus
 
-In your VNC session, invoke SQL Developer from the top left Applications menu as shown below
+1. In your VNC session, invoke SQL Developer from the top left Applications menu as shown below.
     ![](./images/sql-developer-vnc.png " ")
 
 
-*Note: In the event you have issues launching SQL Developer and it prompts with a java classpath error, simply add the following line to ~/.sqldeveloper/19.1.0/product.conf and retry.*
+    *Note: In the event you have issues launching SQL Developer and it prompts with a java classpath error, simply add the following line to ~/.sqldeveloper/19.1.0/product.conf and retry.*
 
-````
-<copy>
-SetJavaHome /usr/java/jdk1.8.0_231-amd64
-</copy>
-````
+    ````
+    <copy>
+    SetJavaHome /usr/java/jdk1.8.0_231-amd64
+    </copy>
+    ````
 
-Create an new connection in sql*developer and provide the following information,
+2. Create an new connection in sql*developer and provide the following information,
 
-**Connection Name**: Name for your connection
+    **Connection Name**: Name for your connection
 
-**Username**: admin
+    **Username**: admin
 
-**Password**: <password>
+    **Password**: <password>
 
-**Connection Type**: Cloud Wallet
+    **Connection Type**: Cloud Wallet
 
-**Role**: Default
+    **Role**: Default
 
-**Configuration File**: Click on Browse and select the wallet file you downloaded
+    **Configuration File**: Click on Browse and select the wallet file you downloaded
 
-**Service**: 'databasename_high' Database name followed by suffix low, medium or high. These suffixes determine degree of parallelism used and are relevant for a DSS workload. For OLTP workloads it's safe to select any of them. Example: atpd_high
+    **Service**: 'databasename\_high' Database name followed by suffix low, medium or high. These suffixes determine degree of parallelism used and are relevant for a DSS workload. For OLTP workloads it's safe to select any of them. Example: **atpd\_high**
 
-- Test your connection and save. The *Status* bar will show *Success* if it is a successful connection!
+      - Test your connection and save. The *Status* bar will show *Success* if it is a successful connection!
 
-    *Let's also test connectivity through some command line client tools such as SQLCL and SQL-Plus*
+      - *Let's also test connectivity through some command line client tools such as SQLCL and SQL-Plus.*
 
-**Connect to ATP instance using Oracle SQLCL**
+3. Connect to ATP instance using Oracle SQLCL
 
-Assuming you are still connected to your OCI development system over VNC, simply open a terminal window and start command line sql as follows,
+    Assuming you are still connected to your OCI development system over VNC, simply open a terminal window and start command line sql as follows,
 
-```
-<copy>
-$ sql /nolog
-</copy>
-```
-Point to your database wallet folder,
+    ```
+    <copy>
+    $ sql /nolog
+    </copy>
+    ```
+    Point to your database wallet folder,
 
-```
-<copy>
-SQL> set cloudconfig /home/opc/Wallet_ATPD.zip
-</copy>
-```
-Connect to your database,
-    ![](./images/sqlclconfigure.png " ")
+    ```
+    <copy>
+    SQL> set cloudconfig /home/opc/Wallet_ATPD.zip
+    </copy>
+    ```
+    Connect to your database,
+        ![](./images/sqlclconfigure.png " ")
 
-```
-<copy>
-SQL> connect admin@atpd_high  (replace 'atpd_high' with an appropriate service for your instance)
-</copy>
-```
-Provide your admin password and you are in!
+    ```
+    <copy>
+    SQL> connect admin@atpd_high  (replace 'atpd_high' with an appropriate service for your instance)
+    </copy>
+    ```
+    Provide your admin password and you are in!
+        ![](./images/sqlclsuccess.png " ")
 
-    ![](./images/sqlclsuccess.png " ")
 
+4. Connect to ATP instance using Oracle SQL Plus.
 
-**Connect to ATP instance using Oracle SQL Plus**
+    For SQL*Plus, you will need to unzip the wallet in your local folder and edit sqlnet.ora as follows:
 
-For SQL*Plus, you will need to unzip the wallet in your local folder and edit sqlnet.ora as follows-
+    - Edit the sqlnet.ora file in /home/opc/wallet and change the line ?/network/admin:
 
-- Edit the sqlnet.ora file in /home/opc/wallet and change the line ?/network/admin:
+    Before:
 
-Before:
+    ```
+    <copy>
+    WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="?/network/admin")))
+    SSL_SERVER_DN_MATCH=yes
+    </copy>
+    ```
 
-```
-<copy>
-WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="?/network/admin")))
-SSL_SERVER_DN_MATCH=yes
-</copy>
-```
+    After:
+    ```
+    <copy>
+    WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/opc/wallet")))
+    SSL_SERVER_DN_MATCH=yes
+    </copy>
+    ```
 
-After:
-```
-<copy>
-WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/opc/wallet")))
-SSL_SERVER_DN_MATCH=yes
-</copy>
-```
+    Set the TNS_ADMIN env variable to point to wallet folder
 
-Set the TNS_ADMIN env variable to point to wallet folder
+            $export TNS_ADMIN=/home/opc/wallet
 
-        $export TNS_ADMIN=/home/opc/wallet
+    - Now, run:
 
-- Now, run:
+    ```
+    <copy>
+    sqlplus admin@atpd_high
+    </copy>
+    ```
 
-```
-<copy>
-sqlplus admin@atpd_high
-</copy>
-```
-
-Provide your admin password when prompted and you should be in!
+    Provide your admin password when prompted and you should be in!
 
 
 ## Acknowledgements

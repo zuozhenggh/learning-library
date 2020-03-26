@@ -142,7 +142,7 @@ For simplicity, only two subnets are being created here - a private subnet for e
 
 
 
-## Step 3: Login to  OCI as a network admin or a fleet admin
+## STEP 3: Login to  OCI as a network admin or a fleet admin
 
 
 
