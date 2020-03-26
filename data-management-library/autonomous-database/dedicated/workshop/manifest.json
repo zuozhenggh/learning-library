@@ -39,6 +39,14 @@
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
             "filename": "./../adb-provisioning-databases/adb-provisioning-databases.md"
+        },
+        {         
+            "title": "Lab 5: Configuring a Development System",
+            "description": "Configuring a development system for use with your dedicated autonomous database",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-configure-dev-client/adb-configure-dev-client.md"
         }
     ]
 }
