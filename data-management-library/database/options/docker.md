@@ -317,10 +317,10 @@ In this section, you will deploy an application, twitterfeed, that is stored in 
     ````
     docker run -d --name=alphaofficeui -p=8085:8085 wvbirder/alpha-office-ui-js
     ````
-    ![](img/docker/section7step.6png)
+    ![](img/docker/section7step6.png)
 
 7.  Go back to your broswer to see the application running on port 8085.  http://Public IP address:8085.  Click on one of the products to see the details and the twitterfeed comments. 
-   ![](img/docker/alphaoffice.6png)
+   ![](img/docker/alphaoffice.png)
 
 [Back to Top](#table-of-contents)
 
