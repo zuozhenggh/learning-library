@@ -23,6 +23,22 @@
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
             "filename": "./../adb-provisioning-exadata/adb-provisioning-exadata.md"
+        },
+        {         
+            "title": "Lab 3: Provisioning an Autonomous Container Database",
+            "description": "Provisioning an Autonomous Container Database",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-provisioning-autonomous-container/adb-provisioning-autonomous-container.md"
+        },
+        {         
+            "title": "Lab 4: Provisioning databases",
+            "description": "Provisioning databases on your dedicated Autonomous Infrastructure",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-provisioning-databases/adb-provisioning-databases.md"
         }
     ]
 }

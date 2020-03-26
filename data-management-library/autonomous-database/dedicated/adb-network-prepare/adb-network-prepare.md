@@ -87,7 +87,7 @@ The exadata subnet may be hosted in its own separate compartment**
 
 4a. Similarly, create a dbUserPolicy on the dbUserCompartment as show. *Make sure you pick the right compartment before you hit the 'Create Policy' button*
 
-    *Note: The assumption here is that the DB user will need to create other resources such as network, compute instances, storage buckets etc in their own compartment. This is highly dependant on a customer's individual requirement and can be configured in many different ways.*
+**Note: The assumption here is that the DB user will need to create other resources such as network, compute instances, storage buckets etc in their own compartment. This is highly dependant on a customer's individual requirement and can be configured in many different ways.**
 
     ````
     <copy>
@@ -142,7 +142,7 @@ For simplicity, only two subnets are being created here - a private subnet for e
 
 
 
-## Step 3: Login to  OCI as a network admin or a fleet admin**
+## Step 3: Login to  OCI as a network admin or a fleet admin
 
 
 
