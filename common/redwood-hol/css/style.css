@@ -60,11 +60,11 @@ a:active {
 
 
 /* Header */
-
 .hol-Header {
     background-color: #403C38;
     color: #fcfbfa;
-    position: absolute;
+    /* Suresh M - fixed header location at the top - March 26, 2020 */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
