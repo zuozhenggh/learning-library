@@ -53,9 +53,9 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](images/keylab-032.png " ")
 
-4a.  If you're ready to create an instance, copy the contents and paste when prompted for the ssh key.
+4.  If you're ready to create an instance, copy the contents and paste when prompted for the ssh key.
 
- ![](images/keylab-033.png " ")
+    ![](images/keylab-033.png " ")
 
 [Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
 
