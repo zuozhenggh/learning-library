@@ -195,6 +195,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
     ![](img/planjob1.png)
 
 2.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your instance and install Oracle 19c.
+
     ![](img/applyjob1.png)
 
     ![](img/applyjob2.png)
@@ -252,8 +253,6 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 7. Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session section.
 
 8. Click Open to begin your session with the instance.
-
-[Back to Top](#table-of-contents)
       
 Congratulations!  Now you have the environment to run the Docker lab.   You may proceed to the [Docker Lab](https://oracle.github.io/learning-library/data-management-library/database/options/docker.html). 
 
