@@ -47,16 +47,15 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 3.  Type the following commands in the terminal window to verify that the public and private keys were created.  And to copy the contents of the public key for use in creating your instance in the OCI dialog.
 
     ```
-    <copy>
     cd .ssh
     cat id_rsa.pub
-    </copy>
     ```
 
     ![](images/keylab-032.png " ")
 
 4a.  If you're ready to create an instance, copy the contents and paste when prompted for the ssh key.
-    ![](images/keylab-033.png " ")
+
+ ![](images/keylab-033.png " ")
 
 [Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
 
@@ -80,11 +79,11 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
 4.  Confirm that your keys exist and were created properly.   Enter the following commands in the Powershell window.
 
     ```
-    <copy>
+    
     cd .ssh
     ls
     cat id_rsa.pub
-    </copy>
+    
     ```
 
     ![](images/keylab-007.png " ")
@@ -257,9 +256,9 @@ Follow the below instructions to connect to a cloud instance via SSH using the P
 4.  Use the Linux ```cat``` command to list the contents of id_rsa.pub.
 
     ```
-    <copy>
+    
     cat id_rsa.pub
-    </copy>
+    
     ```
     ![](images/keylab-003.png " ")
 
