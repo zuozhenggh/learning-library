@@ -56,7 +56,6 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     ![](images/keylab-032.png " ")
 
 4a.  If you're ready to create an instance, copy the contents and paste when prompted for the ssh key.
-
     ![](images/keylab-033.png " ")
 
 [Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
@@ -174,7 +173,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility so third par
 
 6.  In the below screen, PuTTY has taken your mouse information and created a key. We need to do several things here that are a little different than other key generation methods.
 
-**Note:**  *PuTTY does not save keys in an OpenSSH compatible format. Thus, if you upload a public key file created with Putty to a Linux/Unix system using OpenSSH, the key will not read correctly.  However, the key information itself, when copied directly from the PuTTYgen application, does work correctly when **pasted** into fields that then use that information to create a proper OpenSSH compatible key.  For example, when creating an instance on OCI, you can **paste** the SSH key from PuTTY and it will work correctly.*
+    **Note:**  *PuTTY does not save keys in an OpenSSH compatible format. Thus, if you upload a public key file created with Putty to a Linux/Unix system using OpenSSH, the key will not read correctly.  However, the key information itself, when copied directly from the PuTTYgen application, does work correctly when **pasted** into fields that then use that information to create a proper OpenSSH compatible key.  For example, when creating an instance on OCI, you can **paste** the SSH key from PuTTY and it will work correctly.*
 
     ![](images/keylab-017.png " ")
 
@@ -185,6 +184,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility so third par
     ![](images/keylab-018.png " ")
 
 8.  Next you'll need to save the private key.   Click the **Save private key** button, answer **Yes** to the warning about saving without a passphrase. 
+
     ![](images/keylab-019.png " ")
 
 9.  Name the key and verify that it's saved with a ```.ppk``` extension to identify the file as the private key file.   Do not share your private key with anyone.
@@ -195,7 +195,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility so third par
 11.  Select the key text in the dialog box from start to finish, then right click and choose **Copy**.  You can then paste the key into a Notepad or directly into the instance creation dialog in the OCI console. 
 [](images/keylab-021.png " ")
 
-12.  Below is an example of the **Add SSH Key - Paste SSH Keys** dialog in the OCI instance creation form.
+1.   Below is an example of the **Add SSH Key - Paste SSH Keys** dialog in the OCI instance creation form.
 ![](images/keylab-022.png " ")
 
 This concludes the section on using Putty to generate an SSH key pair for versions of Windows prior to Windows 10.
@@ -278,3 +278,5 @@ You have created a public/private SSH key pair and can utilize it in any of the 
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
 * **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, March 27, 2020
 * **Workshop (or Lab) Expiry Date** - March 27, 2021
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
