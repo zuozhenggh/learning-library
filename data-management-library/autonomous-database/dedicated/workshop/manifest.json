@@ -47,6 +47,126 @@
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
             "filename": "./../adb-configure-dev-client/adb-configure-dev-client.md"
+        },
+        {         
+            "title": "Lab 6: Configuring VPN into private ATP network",
+            "description": "Configuring VPN connectivity into your private ATP network",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 7: Build and Deploy Node.js Application",
+            "description": "Building and deploying node.js application stacks on dedicated autonomous infrastructure",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-build-and-deploy-nodejs/adb-build-and-deploy-nodejs.md"
+        },
+        {         
+            "title": "Lab 8",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 9",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 10",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 11",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 12",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 13",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 14",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 15",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 16",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 17",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 18",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 19",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 20",
+            "description": "Description here",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
         }
     ]
 }
