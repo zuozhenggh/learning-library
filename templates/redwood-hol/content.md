@@ -74,3 +74,5 @@ Conclusion of section 2 here.
 * **Adapted for Cloud by** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

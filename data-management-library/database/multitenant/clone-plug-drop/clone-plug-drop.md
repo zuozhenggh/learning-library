@@ -232,6 +232,7 @@ The tasks you will accomplish in this lab are:
 4. Show the datafiles in **CDB1**.  
 
     ````
+    <copy>
     COLUMN "Con_Name" FORMAT A10
     COLUMN "T'space_Name" FORMAT A12
     COLUMN "File_Name" FORMAT A120
@@ -257,6 +258,7 @@ The tasks you will accomplish in this lab are:
     from CDB_Temp_Files inner join Containers using (Con_ID)
     order by 1, 3
     /
+    </copy>
     ````
 
     ![](./images/cdb1data.png " ")
@@ -433,8 +435,10 @@ The tasks you will accomplish in this lab are:
 4. Change **PDB2** back to read write  
 
     ````
+    <copy> 
     alter pluggable database PDB2 open read write force;
     show pdbs
+    </copy>
     ````
 
     ![](./images/mountgoldpdb.png " ")
@@ -442,6 +446,7 @@ The tasks you will accomplish in this lab are:
 5. Unplug **GOLDPDB** from **CDB1**  
 
     ````
+    <copy>
     show pdbs
     alter pluggable database GOLDPDB close immediate;
 
@@ -449,6 +454,7 @@ The tasks you will accomplish in this lab are:
     unplug into '/u01/app/oracle/oradata/CDB1/goldpdb.xml';
 
     show pdbs
+    </copy>
     ````
 
     ![](./images/unpluggold.png " ")
@@ -470,6 +476,7 @@ The tasks you will accomplish in this lab are:
 8. Validate **GOLDPDB** is compatibile with **CDB2**  
 
     ````
+    <copy>
     begin
       if not
         Sys.DBMS_PDB.Check_Plug_Compatibility
@@ -479,16 +486,19 @@ The tasks you will accomplish in this lab are:
       end if;
     end;
     /
+    </copy>
     ````
 
 9. Create a clone of **GOLDPDB** as **COPYPDB1**  
 
     ````
+    <copy>
     create pluggable database COPYPDB1 as clone
     using '/u01/app/oracle/oradata/CDB1/goldpdb.xml'
     storage (maxsize unlimited max_shared_temp_size unlimited)
     copy;
     show pdbs
+    </copy>
     ````
 
     ![](./images/clonegold1.png " ")
@@ -496,11 +506,13 @@ The tasks you will accomplish in this lab are:
 10. Create another clone of **GOLDPDB** as **COPYPDB2**  
 
     ````
+    <copy>
     create pluggable database COPYPDB2 as clone
     using '/u01/app/oracle/oradata/CDB1/goldpdb.xml'
     storage (maxsize unlimited max_shared_temp_size unlimited)
     copy;
     show pdbs
+    </copy>
     ````
 
     ![](./images/clonegold.png " ")
@@ -517,11 +529,13 @@ The tasks you will accomplish in this lab are:
 12. Look at the GUID for the two cloned databases  
 
     ````
+    <copy>
     COLUMN "PDB Name" FORMAT A20
     select PDB_Name "PDB Name", GUID
     from DBA_PDBs
     order by Creation_Scn
     /
+    </copy>
     ````
     ![](./images/guid.png " ")
 
@@ -545,62 +559,76 @@ The tasks you will accomplish in this lab are:
 2. Create a pluggable database **OE** with an admin user of **SOE**  
 
     ````
+    <copy>
     create pluggable database oe admin user soe identified by soe roles=(dba);
     alter pluggable database oe open;
     alter session set container = oe;
     grant create session, create table to soe;
     alter user soe quota unlimited on system;
-    ````
+     </copy>
+   ````
 
     ![](./images/oe.png " ")
 
 3. Connect as **SOE** and create the **sale_orders** table  
 
     ````
+    <copy>
     connect soe/soe@localhost:1523/oe
     CREATE TABLE sale_orders 
     (ORDER_ID      number, 
     ORDER_DATE    date, 
     CUSTOMER_ID   number);
+    </copy>
     ````
  
  4. Open a new terminal window, sudo to the oracle user and execute write-load.sh. Leave this window open and running throughout the rest of the multitenant labs.  
 
      ````
+    <copy>
     sudo su - oracle
     cd /home/oracle/labs/multitenant
     ./write-load.sh
+    </copy>
     ````
     Leave this window open and running for the next few labs.
 
 5. Go back to your original terminal window.  Connect to **CDB2** and create the pluggable **OE_DEV** from the database link **oe@cdb1_link**  
 
     ````
+    <copy>
     connect sys/oracle@localhost:1524/cdb2 as sysdba
     create pluggable database oe_dev from oe@cdb1_link;
     alter pluggable database oe_dev open;
+    </copy>
     ````
 
 6. Connect as **SOE** to **OE_DEV** and check the number of records in the **sale_orders** table  
 
     ````
+    <copy>
     connect soe/soe@localhost:1524/oe_dev
     select count(*) from sale_orders;
+    </copy>
     ````
 
 7. Connect as **SOE** to **OE** and check the number of records in the **sale_orders** table  
 
     ````
+    <copy>
     connect soe/soe@localhost:1523/oe
     select count(*) from sale_orders;
+    </copy>
     ````
 
 8. Close and remove the **OE_DEV** pluggable database  
 
     ````
+    <copy>
     connect sys/oracle@localhost:1524/cdb2 as sysdba
     alter pluggable database oe_dev close;
     drop pluggable database oe_dev including datafiles;
+    </copy>
     ````
 
 9. Leave the **OE** pluggable database open with the load running against it for the rest of the labs.
@@ -620,27 +648,34 @@ The tasks you will accomplish in this lab are:
 1. Connect to **CDB2**  
 
     ````
+    <copy>
     sqlplus /nolog
     connect sys/oracle@localhost:1524/cdb2 as sysdba
+    </copy>
     ````
 
 2. Create a pluggable database **OE_REFRESH**` with manual refresh mode from the database link **oe@cdb1_link**  
 
     ````
+    <copy>
     create pluggable database oe_refresh from oe@cdb1_link refresh mode manual;
     alter pluggable database oe_refresh open read only;
+    </copy>
     ````
 
 3. Connect as **SOE** to the pluggable database **OE_REFRESH**` and count the number of records in the sale_orders table  
 
     ````
+    <copy>
     conn soe/soe@localhost:1524/oe_refresh
     select count(*) from sale_orders;
+    </copy>
     ````
 
 4. Close the pluggable database **OE_REFRESH**` and refresh it from the **OE** pluggable database  
 
     ````
+    <copy>
     conn sys/oracle@localhost:1524/oe_refresh as sysdba
 
     alter pluggable database oe_refresh close;
@@ -648,22 +683,27 @@ The tasks you will accomplish in this lab are:
     alter session set container=oe_refresh;
     alter pluggable database oe_refresh refresh;
     alter pluggable database oe_refresh open read only;
+    </copy>
     ````
 
 5. Connect as **SOE** to the pluggable dataabse **OE_REFRESH**` and count the number of records in the **sale_orders** table. You should see the number of records change.  
 
     ````
+    <copy>
     conn soe/soe@localhost:1524/oe_refresh
     select count(*) from sale_orders;
+    </copy>
     ````
 
 6. Close and remove the **OE_DEV** pluggable database  
 
     ````
+    <copy>
     conn sys/oracle@localhost:1524/cdb2 as sysdba
 
     alter pluggable database oe_refresh close;
     drop pluggable database oe_refresh including datafiles;
+    </copy>
     ````
 
 7. Leave the **OE** pluggable database open with the load running against it for the rest of the labs.
@@ -681,34 +721,43 @@ The tasks you will accomplish in this lab are:
 1. Change **CDB2** to use the listener **LISTCDB1**  
 
     ````
+    <copy>
     sqlplus /nolog
     conn sys/oracle@localhost:1524/cdb2 as sysdba;
     alter system set local_listener='LISTCDB1' scope=both;
+    </copy>
     ````
 
 2. Connect to **CDB2** and relocate **OE** using the database link **oe@cdb1_link**  
 
     ````
+    <copy>
     conn sys/oracle@localhost:1523/cdb2 as sysdba;
     create pluggable database oe from oe@cdb1_link relocate;
     alter pluggable database oe open;
     show pdbs
+    </copy>
     ````
 
 3. Connect to **CDB1** and see what pluggable databases exist there  
 
     ````
+    <copy>
     conn sys/oracle@localhost:1523/cdb1 as sysdba
     show pdbs
+    </copy>
+
     ````
 
 4. Close and remove the **OE** pluggable database  
 
     ````
+    <copy>
     conn sys/oracle@localhost:1523/cdb2 as sysdba
 
     alter pluggable database oe close;
     drop pluggable database oe including datafiles;
+    </copy>
     ````
 
 5. The load program isn't needed anymore and that window can be closed.
@@ -716,9 +765,11 @@ The tasks you will accomplish in this lab are:
 6. If you are going to continue to use this environment you will need to change **CDB2** back to use **LISTCDB2**
 
     ````
+    <copy>
     sqlplus /nolog
     conn sys/oracle@localhost:1523/cdb2 as sysdba;
     alter system set local_listener='LISTCDB2' scope=both;
+    </copy>
     ````
 
 ## Lab Cleanup
@@ -729,14 +780,10 @@ The tasks you will accomplish in this lab are:
     ./resetCDB.sh
     ````
 
-## Lab Cleanup
-
 Now you've had a chance to try out the Multitenant option. You were able to create, clone, plug and unplug a pluggable database. You were then able to accomplish some advanced tasks that you could leverage when maintaining a large multitenant environment. 
 
 ## Acknowledgements
 
-**Author** - Patrick Wheeler, VP, Multitenant Product Management
-
-**Adapted to Cloud by** -  David Start, OSPA
-
-**Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+- **Author** - Patrick Wheeler, VP, Multitenant Product Management
+- **Adapted to Cloud by** -  David Start, OSPA
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020

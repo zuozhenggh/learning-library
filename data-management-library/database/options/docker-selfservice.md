@@ -2,13 +2,21 @@
 
 # SSWorkshop: Docker Lab
 ## Table of Contents 
-- [Introduction](#introduction)
-- [Lab Assumptions](#lab-assumptions)
-- [Section 1-Login to the Oracle Cloud](#section-1-login-to-the-oracle-cloud)
-- [Section 2-Generate an SSH key pair](#section-2-generate-an-ssh-key-pair)
-- [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
-- [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
-- [Section 5-Connect to your instance](#section-5-connect-to-your-instance)
+- [SSWorkshop: Docker Lab](#ssworkshop-docker-lab)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Lab Assumptions](#lab-assumptions)
+  - [Lab Settings](#lab-settings)
+  - [Section 1-Login to the Oracle Cloud](#section-1-login-to-the-oracle-cloud)
+  - [Section 2-Generate an SSH Key Pair](#section-2-generate-an-ssh-key-pair)
+    - [For MAC Users ###](#for-mac-users)
+    - [For Windows: Using GitBash or Windows Subsystem for Linux (WSL) ###](#for-windows-using-gitbash-or-windows-subsystem-for-linux-wsl)
+    - [For Windows: Using PuttyGen ###](#for-windows-using-puttygen)
+  - [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
+  - [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
+  - [Section 5-Connect to your instance](#section-5-connect-to-your-instance)
+    - [Connecting via MAC or Windows CYGWIN Emulator](#connecting-via-mac-or-windows-cygwin-emulator)
+    - [Connecting via Windows](#connecting-via-windows)
 
 
 
@@ -138,9 +146,9 @@ You will be using Terraform to create your database environment.
 
 
     Enter the following information and accept all the defaults
-    **Name**:  Enter your firstname and lastname and the day you were born (DO NOT ENTER ANY SPECIAL CHARACTERS HERE, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
-    **Description**:  Same as above
-    **Compartment**:  Select Compartment from Email 2
+    - **Name**:  Enter your firstname and lastname and the day you were born (DO NOT ENTER ANY SPECIAL CHARACTERS HERE, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
+    - **Description**:  Same as above
+    - **Compartment**:  Select Compartment from Email 2
 
 7.  Click **Next**.
 
@@ -187,6 +195,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
     ![](img/planjob1.png)
 
 2.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your instance and install Oracle 19c.
+
     ![](img/applyjob1.png)
 
     ![](img/applyjob2.png)
@@ -202,9 +211,12 @@ Based on your laptop config, choose the appropriate step to connect to your inst
 
 NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).  Also, the ssh-daemon is disable for the first 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.
 
+1.  Go to Compute -> Instance find the instance you created (make sure you choose the correct compartment)
+2.  On the instances homepage, find the Public IP addresss for your instance next to the Status column.
+
+    ![](img/instance-public-ip.png)
+
 ### Connecting via MAC or Windows CYGWIN Emulator
-1.  Go to Compute -> Instance and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP addresss for your instance.
 
 1.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -241,8 +253,6 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 7. Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session section.
 
 8. Click Open to begin your session with the instance.
-
-[Back to Top](#table-of-contents)
       
 Congratulations!  Now you have the environment to run the Docker lab.   You may proceed to the [Docker Lab](https://oracle.github.io/learning-library/data-management-library/database/options/docker.html). 
 
