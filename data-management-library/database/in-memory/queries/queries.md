@@ -2,106 +2,125 @@
 
 ## Introduction
 
-## **STEP 1-Logging In and Enabling In-Memory**
-1.  Open up a web browser and log back into the Oracle Cloud.  Navigate to **Compute**->**Instances**.  Find your instance and click the **Start** button to start it up.
+### Objectives
 
-    ![](images/start-instance.png) 
+-   Learn how to enable In-Memory on the Oracle Database
+-   Perform various queries on the In-Memory Column Store
 
-1.  Open up a terminal session or putty and ssh into the instance you created in the Environment Setup Lab.  The public IP address can be found by going to Compute -> Instance.
+### Lab Prerequisites
+
+This lab assumes you have completed the following labs:
+* Login to Oracle Cloud
+* Generate SSH Key
+* Setup
+
+
+## Step 1: Logging In and Enabling In-Memory
+
+1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
 
     ````
-    cd ~
-    ssh -i ./ssh/optionskey opc@<your public ip address>
-    ````
-2.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also give you the scripts to run as an alternative option.
-
-    ````
+    <copy>
     sudo su - oracle
     cd ~/labs/inmemory
     ls
+    </copy>
     ````
 
-3.  **If you are just starting the instance, it may take a moment for the instances and listeners to start.** 
-
-4. In-Memory is integrated into Oracle Database 12c and higher.  The IM column store is not enabled by default, but can be easily enabled via a few steps.  Before you enable it, let's take a look at the default configuration. 
+2. In-Memory is integrated into Oracle Database 12c and higher.  The IM column store is not enabled by default, but can be easily enabled via a few steps.  Before you enable it, let's take a look at the default configuration. 
 
     ````
+    <copy>
     . oraenv
     ORCL
     sqlplus / as sysdba
     show sga;
     show parameter inmemory; 
     show parameter keep
+    </copy>
     ````
     Notice that the SGA is made up of Fixed Size, Variable Size, Database Buffers and Redo.  There is no In-Memory in the SGA.  Let's enable it.
 
-    ![](images/inmemory/showsgainmem.png) 
+    ![](images/showsgainmem.png) 
 
-4.  Enter the commands to enable In-Memory.  The database will need to be restarted for the changes to take effect.
+3.  Enter the commands to enable In-Memory.  The database will need to be restarted for the changes to take effect.
     ````
+    <copy>
     alter system set inmemory_size=2G scope=spfile;
     shutdown immediate;
     startup;
+    </copy>
+
     ````
 
-5.  Now let's take a look at the parameters.
+4.  Now let's take a look at the parameters.
     ````
+    <copy>
     show sga;
     show parameter inmemory; 
     show parameter keep;
     exit
+    </copy>
     ````
-[Back to Top](#table-of-contents)
 
-## Section 2-Enabling In-Memory
+
+## Step 2: Enabling In-Memory
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account. 
 
 1.  Login to the pdb as the SSB user.  
     ````
-    cd /home/oracle/labs/inmemory/Part1
+    <copy>
     sqlplus ssb/Ora_DB4U@localhost:1521/orclpdb
     set pages 9999
     set lines 200
+    </copy>
     ````
 
-3.  The In-Memory area is sub-divided into two pools:  a 1MB pool used to store actual column formatted data populated into memory and a 64K pool to store metadata about the objects populated into the IM columns store.  V$INMEMORY_AREA shows the total IM column store.  The COLUMN command in these scripts identifies the column you want to format and the model you want to use.  Alternative script:  `@03_im_usage.sql`
+2.  The In-Memory area is sub-divided into two pools:  a 1MB pool used to store actual column formatted data populated into memory and a 64K pool to store metadata about the objects populated into the IM columns store.  V$INMEMORY_AREA shows the total IM column store.  The COLUMN command in these scripts identifies the column you want to format and the model you want to use.  
 
     ````
+    <copy>
     column alloc_bytes format 999,999,999,999;
     column used_bytes format 999,999,999,999;
     column populate_status format a15;
     --QUERY
 
     select * from v$inmemory_area;
+    </copy>
     ````
-     ![](images/inmemory/inmemoryarea.png) 
+     ![](images/inmemoryarea.png) 
 
-4.  To check if the IM column store is populated with objects run the 05_im_segments.sql script. Alternative script:  `@05_im_segments.sql` 
+3.  To check if the IM column store is populated with object, run the query below.
 
     ````
+    <copy>
     column name format a30
     column owner format a20
     --QUERY
 
     select v.owner, v.segment_name name, v.populate_status status from v$im_segments v; 
+    </copy>
     ````
-     ![](images/inmemory/segments.png)   
+     ![](images/segments.png)   
 
-5.  To add objects to the IM column store the inmemory attribute needs to be set.  This tells the Oracle DB these tables should be populated into the IM column store.   Alternative script:  `@06_im_alter_table.sql`
+4.  To add objects to the IM column store the inmemory attribute needs to be set.  This tells the Oracle DB these tables should be populated into the IM column store.   
 
     ````
+    <copy>
     ALTER TABLE lineorder INMEMORY;
     ALTER TABLE part INMEMORY;
     ALTER TABLE customer INMEMORY;
     ALTER TABLE supplier INMEMORY;
     ALTER TABLE date_dim INMEMORY;
+    </copy>
     ````
-     ![](images/inmemory/altertable.png)   
+     ![](images/altertable.png)   
 
-6.  This looks at the USER_TABLES view and queries attributes of tables in the SSB schema.  Alternative script:  `@07_im_attributes.sql`
+5.  This looks at the USER_TABLES view and queries attributes of tables in the SSB schema.  
 
     ````
+    <copy>
     set pages 999
     column table_name format a12
     column cache format a5;
@@ -116,25 +135,29 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     SELECT table_name, cache, buffer_pool, compression, compress_for, inmemory,
         inmemory_priority, inmemory_distribute, inmemory_compression 
     FROM   user_tables; 
+    </copy>
     ````
-     ![](images/inmemory/imattributes.png)   
+     ![](images/imattributes.png)   
 
 By default the IM column store is only populated when the object is accessed.
 
-7.  Let's populate the store with some simple queries. Alternative script:  `@08_im_start_pop.sql`
+1.  Let's populate the store with some simple queries.
 
     ````
+    <copy>
     SELECT /*+ full(d)  noparallel (d )*/ Count(*)   FROM   date_dim d; 
     SELECT /*+ full(s)  noparallel (s )*/ Count(*)   FROM   supplier s; 
     SELECT /*+ full(p)  noparallel (p )*/ Count(*)   FROM   part p; 
     SELECT /*+ full(c)  noparallel (c )*/ Count(*)   FROM   customer c; 
     SELECT /*+ full(lo)  noparallel (lo )*/ Count(*) FROM   lineorder lo; 
+    </copy>
     ````
-     ![](images/inmemory/startpop.png) 
+     ![](images/startpop.png) 
 
-8. Background processes are populating these segments into the IM column store.  To monitor this, you could query the V$IM_SEGMENTS.  Once the data population is complete, the BYTES_NOT_POPULATED should be 0 for each segment.  Alternative script:  `@09_im_populated.sql`
+2. Background processes are populating these segments into the IM column store.  To monitor this, you could query the V$IM_SEGMENTS.  Once the data population is complete, the BYTES_NOT_POPULATED should be 0 for each segment.  
 
     ````
+    <copy>
     column name format a20
     column owner format a15
     column segment_name format a30
@@ -145,39 +168,42 @@ By default the IM column store is only populated when the object is accessed.
 
     SELECT v.owner, v.segment_name name, v.populate_status status, v.bytes bytes_in_mem, v.bytes_not_populated 
     FROM v$im_segments v;
+    </copy>
     ````
 
-     ![](images/inmemory/im_populated.png) 
+     ![](images/im_populated.png) 
 
-9.  Now let's check the total space usage. Alternative script:  `@10_im_usage.sql`
+3.  Now let's check the total space usage. 
 
     ````
+    <copy>
     column alloc_bytes format 999,999,999,999;
     column used_bytes      format 999,999,999,999;
     column populate_status format a15;
     select * from v$inmemory_area;
     exit
+    </copy>
     ````
 
-    ![](images/inmemory/im_usage.png) 
+    ![](images/im_usage.png) 
 
-In this section you saw that the IM column store is configured by setting the initialization parameter INMEMORY_SIZE. The IM column store is a new static pool in the SGA, and once allocated it can be resized dynamically, but it is not managed by either of the automatic SGA memory features. 
+In this Step you saw that the IM column store is configured by setting the initialization parameter INMEMORY_SIZE. The IM column store is a new static pool in the SGA, and once allocated it can be resized dynamically, but it is not managed by either of the automatic SGA memory features. 
 
 You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this Lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
 
 Finally you got to see how to determine if the objects were fully populated and how much space was being consumed in the IM column store.
 
 
-[Back to Top](#table-of-contents)    
+    
 
 
-## Section 3-Querying the In-Memory Column Store
+## Step 3: Querying the In-Memory Column Store
 
 Now that you’ve gotten familiar with the IM column store let’s look at the benefits of using it. You will execute a series of queries against the large fact table LINEORDER, in both the buffer cache and the IM column store, to demonstrate the different ways the IM column store can improve query performance above and beyond the basic performance benefits of accessing data in memory only.
 
 1.  Let's switch to the Part2 folder and log back in to the PDB. 
     ````
-    cd /home/oracle/labs/inmemory/Part2
+    cd /home/oracle/labs/Part2
     sqlplus ssb/Ora_DB4U@localhost:1521/orclpdb
     set pages 9999
     set lines 100
@@ -201,7 +227,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     ````
     The execution plan shows that we performed a TABLE ACCESS INMEMORY FULL of the LINEORDER table.
 
-    ![](images/inmemory/lineorderquery.png) 
+    ![](images/lineorderquery.png) 
 
 3.  To execute the same query against the buffer cache you will need to disable the IM column store via a hint called NO_INMEMORY. If you don't, the Optimizer will try to access the data in the IM column store when the execution plan is a full table scan. Alternative script:  `@02_buffer_query_stats.sql`
 
@@ -251,7 +277,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     @../imstats.sql
     ````
    
-    ![](images/inmemory/single_key_im.png) 
+    ![](images/single_key_im.png) 
 
 4.  Think indexing lo_orderkey would provide the same performance as the IM column store? There is an invisible index already created on the lo_orderkey column of the LINEORDER table. By using the parameter OPTIMIZER_USE_INVISIBLE_INDEXES we can compare the performance of the IM column store and the index. Recall that we ran the script 03_single_key_im.sql in Step 3 to see the IM column store performance.  Run the script to see how well the index performs.  Alternative script: `@05_index_comparison.sql` 
 
@@ -271,7 +297,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     @../imstats.sql
     ````
 
-    ![](images/inmemory/part2-index_comparison.png) 
+    ![](images/part2-index_comparison.png) 
 
 7.  Analytical queries have more than one equality WHERE clause predicate. What happens when there are multiple single column predicates on a table? Traditionally you would create a multi-column index. Can storage indexes compete with that?  
 
@@ -303,10 +329,9 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     ````
     You can see that the In-Memory storage index is still used. In fact, we are able to use multiple storage indexes together in a similar manner to how Oracle Database can combine multiple bitmap indexes.
 
-    ![](images/inmemory/part2-06_multi_preds.png)   
+    ![](images/part2-06_multi_preds.png)   
 
-In this section you had an opportunity to try out Oracle’s in-memory performance claims with queries that run against a table with over 23 million rows (i.e. LINEORDER), which resides in both the IM column store and the buffer cache. From a very simple aggregation, to more complex queries with multiple columns and filter predicates, the IM column store was able to out perform the buffer cache queries. Remember both sets of queries are executing completely within memory, so that’s quite an impressive improvement.
+In this Step you had an opportunity to try out Oracle’s in-memory performance claims with queries that run against a table with over 23 million rows (i.e. LINEORDER), which resides in both the IM column store and the buffer cache. From a very simple aggregation, to more complex queries with multiple columns and filter predicates, the IM column store was able to out perform the buffer cache queries. Remember both sets of queries are executing completely within memory, so that’s quite an impressive improvement.
 
 These significant performance improvements are possible because of Oracle’s unique in-memory columnar format that allows us to only scan the columns we need and to take full advantage of SIMD vector processiong. We also got a little help from our new in-memory storage indexes, which allow us to prune out unnecessary data. Remember that with the IM column store, every column has a storage index that is automatically maintained for you.
 
-[Back to Top](#table-of-contents)
