@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="650" height="300" src="./media/banner.png">
+</p>
+
 # Application Development
 
 ## Table of Contents
@@ -20,15 +24,13 @@
 
   &nbsp;&nbsp;&nbsp;&nbsp;[Extra Lab 6: Review and edit JavaScript code “under the covers” of VBCS](#extra-lab-6-review-and-edit-javascript-code-under-the-covers-of-vbcs)
 
-  &nbsp;&nbsp;&nbsp;&nbsp;[Extra Lab 7: Publish Mobile App as PWA](#extra-lab-7-publish-mobile-app-as-pwa)
-
 ### [Appendices](#appendix)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix A: Create VBCS Instance](#appendix-a-create-vbcs-instance) - In case you don't have one already
 
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix B: Create Service Connection from Endpoint](#appendix-b-create-service-connection-from-endpoint) - For old-style RESTful APIs
 
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix C: Build Mama Maggy Data Application](#appendix-c-build-mama-maggy-data-application) - Used in Lab 4 and Extra Lab 5
+&nbsp;&nbsp;&nbsp;&nbsp;[Appendix A: Create Service Connection from Endpoint](#appendix-b-create-service-connection-from-endpoint) - For old-style RESTful APIs
+
+&nbsp;&nbsp;&nbsp;&nbsp;[Appendix B: Build Mama Maggy Data Application](#appendix-c-build-mama-maggy-data-application) - Used in Lab 4 and Extra Lab 5
 
 # Lab Guide Overview
 
@@ -124,128 +126,36 @@ the user interface.
 In this lab you will make sure you can access the VBCS instance for your
 classroom and supporting lab files.
 
-First, if you are part of an organized class, try using the URL from the Participant Guide (facilitator will also post on Slack); if that succeeds please jump to [Create Application](#create-application) (just before #6)
+First, go to cloud.oracle.com, click on **View Accounts** and select **Sign in to cloud**
 
-### ***SKIP TO [Create Application](#create-application) UNLESS DOING THIS LAB OUTSIDE OF A FORMAL CLASS*** 
+![](./media/cloudoracle.png)
 
-1.  Log into class tenancy using cloud.oracle.com
+Enter your tenant account
 
+![](./media/tenant.png)
 
-    ![](./media/cloud-oracle-com-tenancy.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.1.1 - Tenancy<br/>
-
-
-  ![](./media/image5.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.1.2   - Login<br/>
-
-Some systems will start with a "Quick Actions" screen as shown below
-
- ![](./media/new_quick_action1.png)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.1.3 - Quick Actions
-
-Use the "Hamburger" or "Navigator" icon in the upper left corner to display a navigation menu, then select "My Services Dashboard" [(jump to #3 Service Dashboard)](#service-dashboard) 
-
-![](./media/new_quick_action2.png)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.1.4 - My Services Dashboard choice
-
-2.  Some systems will offer a "Guided Journey"
+On the login screen select SSO and provide your credentials *(Contact your tenant admin if you are using a different login mechanism)*
 
 
-   ![](./media/cloud-guided-journey.png)
+![](./media/credentials.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.2.1 - Guided Journey<br/>
+![](./media/credentials_2.png)
 
-If you see the "Guided Journey" select the "Dashboard" icon
+Once in the main dashboard, open the **General Menu** located at the top left hand side of the screen, select **Platform Services**, and click on **Visual Builder**
 
-   ![](./media/cloud-guided-journey-dashboardbtn.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.2.2 - Guided Journey<br/>
+![](./media/vb_dashboard.png)
 
 
-On some systems you will go straight to a “dashboard” as shown below. (same as coming from Guided Journey)
+Click the dropdown menu next to your instance name, and select **Open Oracle Visual Builder Home Page** 
 
-  ![](./media/vbcs_cloud_dashboard.png)
+*Note: If you don't have an instance available, review the Appendix on how to create an instance* [Appendix A: Create VBCS Instance](#appendix-A:-create-vbcs-instance)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.2.3 - Dashboard<br/>
 
-   If you see the "Visual Builder' service box [jump to step 5 Open VBCS Home Page](#open-vbcs-home-page)
+![](./media/access_instance.png)
+![](./media/access_instance_2.png)
 
-  (if your dashboard does not show “Visual Builder” – click “Customize
-Dashboard”)
 
-   ![](./media/image7.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.2.4 – Customize Dashboard 1<br/>
-
-   Scroll to “Visual Builder” and click the “Show Button”
-
-   ![](./media/image8.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.2.5 – Show Visual Builder<br/>
-
-   On other systems you may see a different style of Dashboard<br/>
-
-  ![](./media/image9.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.2.6 – Visual Builder Icon<br/>
-
-  ![](./media/image10.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.2.7 – Visual Builder Icon (version 2)<br/>
-
-#### Service Dashboard
-
-3.  When the "Visual Builder" service box appears there are two ways to proceed to the service console: click on "Visual Builder" text and go through the "Visual Builder Cloud Service" page or use the service box menu.
-
-    ![](./media/image_c_3.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.3.1 – Visual Builder service box<br/> 
-
-*  Option 1: Use the “Hamburger Icon” ![](./media/image11.png) in the Visual
-    Builder service box and choose “Open Service Console” from the
-    upper-right corner of the screen.
-    
-    ![](./media/vb_13b.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.3.2 – Open Service Console Menu<br/> 
-
-*  Option 2: Click on the text "Visual Builder" to display the "Visual Builder Cloud Service" page.
-
-    ![](./media/image14.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.3.3 – Service: Oracle Visual Builder Cloud Service<br/> 
-
-## ** For 2019 Class Of SE - All participants will share the "OSPA-Class-Of-SE" instance **
-4.  A VBCS instance has been created and designated for your class to
-    share **"OSPA-Class-Of-SE"** please create your VBCS application in the OSPA-Class-Of-SE instance unless your facilitator says differently (your instance name may be different than the one shown; the facilitator will let you know.) 
-    (see Appendix A for instructions on creating a VBCS instance)
-
-    ![](./media/vbcs_instance_list.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.4 – VBCS Instances<br/>
-
-#### Open VBCS Home Page  
-
-5.  Find the VBCS instance being used for the lab in the list ("OSPA-Class-Of-SE" below), then using the “Hamburger Icon” ![](./media/image16.png) on the far right;
-    choose “Open Oracle Visual Builder Cloud Service Home Page”
-
-    ![](./media/vbcs_instance_0.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.5 – Open VBCS<br/>
-
-## Create Application
-
-**(if prompted, login to the tenancy first)**
-
-6.  You should briefly see the VBCS “splash” page.
-
-    ![](./media/image18.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.6 – VBCS Splash<br/>
-
-7.  When the “Visual Applications” welcome appears; choose the “New Application” button.
+When the “Visual Applications” welcome appears; choose the “New Application” button.
 
   ![](./media/New17.1_a.png)
 
@@ -258,7 +168,6 @@ Dashboard”)
 8.  When the “Create Application” page appears, provide a name for the
     application; you may call your applications anything you wish.
     
-    ### ** Note you must be working within VBCS instance "OSPA-Class-Of-SE" for all labs to work properly **
 
     If you are sharing your lab environment with a group of people you might find it convenient to follow a naming convention to make it easier for you to find your work and for the facilitators to help you.
     
@@ -365,7 +274,7 @@ upper-left corner.
 
 6.  For each new field the Name and General Data Type are specified
 
-<!-- end list -->
+ 
 
   - Set the label of the first field to “Product Name” note that Visual
     Builder creates the name as “productName”
@@ -388,7 +297,7 @@ upper-left corner.
 8.  Now add three more fields; be sure to mark the all “Required” so
     that you end up with a list like this (note that all four of the fields added should be marked "Required"):
 
-<!-- end list -->
+ 
 
   - A (text)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;productName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product Name (already done above)
 
@@ -409,7 +318,7 @@ upper-left corner.
 
     Add new fields as suggested below so that the final result looks like the screen shot in Figure 2.9.2 (please be sure to pick the correct "type" and make sure that all four of the new fields are marked "Required").
 
-<!-- end list -->
+ 
 
   - \# (numeric)&nbsp;&nbsp;&nbsp;&nbsp;associate &nbsp;&nbsp;Associate
 
@@ -528,7 +437,7 @@ The completed field list should look like this:
 
 13. Provide the following values for the new row:
 
-<!-- end list -->
+ 
 
   - Product Name MOZZARELLA
 
@@ -538,7 +447,7 @@ The completed field list should look like this:
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(click the "Checkmark" ![](./media/vbcs_checkmark.png) when done)
 
-![](./media/vbcs_add_row_2.13.1.png)
+![](./media/image49.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.13.1 – Add Mozzarella
 
@@ -636,11 +545,11 @@ Click the “Import” button to upload the selected file
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.21 – Add Product Order Line
 
-22. Now, using the technique illustrated in 16-18 above add data into (append to existing) the
+22. Now, using the technique illustrated in 16-18 above add data to the
     Product Order and Product Order Line business objects (note: file
     names same as business object names) using the provided data files
 
-<!-- end list -->
+ 
 
   - Product Order - ProductOrder.csv
 
@@ -721,27 +630,25 @@ them; now you will create a web application to work with them
   
   &nbsp;&nbsp;&nbsp;&nbsp;If you don’t see the navigator, click the “Expand Navigator” icon in the upper-left corner, then click the "Web Applications" button
 
-> ![](./media/image74.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.2.2 – Expand Navigator button
+ ![](./media/image74.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.2.2 – Expand Navigator button
 
 3.  Add a new Web Application;
 
-> First, you'll create a web application with two features; a list of all products that a manager/franchisee might order, and a page showing specifics about a chosen product.
+ First, you'll create a web application with two features; a list of all products that a manager/franchisee might order, and a page showing specifics about a chosen product.
 
-> If you don’t have any Web Applications yet; click the “+ Web
-> Application” button
-> 
-> ![](./media/image75.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.3.1 – Add Web App 1
-> 
-> Or, if you want to add to your existing Web Applications; click the plus
-> sign “+” at the top of the Web Apps list
-> 
-> ![](./media/image76.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.3.2 – Add Web App 2
+ If you don’t have any Web Applications yet; click the “+ Web
+ Application” button
+ ![](./media/image75.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.3.1 – Add Web App 1
+ 
+ Or, if you want to add to your existing Web Applications; click the plus sign “+” at the top of the Web Apps list
+
+ ![](./media/image76.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.3.2 – Add Web App 2
 
 4.  The first Web Application you will create will be called
     “productList” - type the name in the “Id” box and click the
@@ -760,7 +667,7 @@ them; now you will create a web application to work with them
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.5.1 – Web UI
 
-> Visual Builder will also display an object list in the navigator
+ Visual Builder will also display an object list in the navigator
 
 ![](./media/image82.png)
 
@@ -777,7 +684,7 @@ them; now you will create a web application to work with them
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.6.2 – Heading in Design window
 
-> Change the heading to “Product List” using the Property Inspector on the
+ Change the heading to “Product List” using the Property Inspector on the
 right-side of the screen. The “slider” may be used to alter the
 heading’s size.
 
@@ -785,14 +692,14 @@ heading’s size.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.6.3 – Heading Property Inspector
 
-> If you don’t see the Property Inspector; click the “Expand Property
+ If you don’t see the Property Inspector; click the “Expand Property
 Inspector Icon” in the upper-right corner.
 
 ![](./media/image86.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.6.4 – Expand Property Inspector icon
 
-> The screen should look something like this now.
+ The screen should look something like this now.
 
 ![](./media/image87.png)
 
@@ -801,15 +708,15 @@ Inspector Icon” in the upper-right corner.
 7.  Add a table to the application by scrolling the Components list
     until you see the Table icon.
 
-> ![](./media/image88.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.7.1 – Table icon
-> 
-> Drag the Table icon to the design area.
-> 
-> ![](./media/image89.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.7.2 – Empty table
+ ![](./media/image88.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.7.1 – Table icon
+ 
+ Drag the Table icon to the design area.
+ 
+ ![](./media/image89.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.7.2 – Empty table
 
 8.  To add data to the table, select the table and click the “Add Data”
     option from the list on the right.
@@ -818,17 +725,17 @@ Inspector Icon” in the upper-right corner.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.8.1 – Add Data
 
-> The “Add Data” wizard will list any Business Objects and/or Service
+ The “Add Data” wizard will list any Business Objects and/or Service
 Connections currently defined.
 
 ![](./media/image91.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.8.2 – Add Business Object
 
-> Choose the “Product” business object then click “Next” to go to the next
+ Choose the “Product” business object then click “Next” to go to the next
 step in the wizard.
 
-> Select the fields you wish to display (select them in the sequence to be
+ Select the fields you wish to display (select them in the sequence to be
 displayed, you can move them if you make a mistake) and click “Next” to
 continue in the wizard to “bind” the business object’s data to the
 objects on the screen.
@@ -837,14 +744,14 @@ objects on the screen.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.8.3 – Bind Data
 
-> For this app you will not be changing the query, so just click the
+ For this app you will not be changing the query, so just click the
 “Finish” button
 
 ![](./media/image93.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.8.4 – Finish Add Data
 
-> Visual Builder will then show some data in the design window.
+ Visual Builder will then show some data in the design window.
 
 ![](./media/image94.png)
 
@@ -857,13 +764,13 @@ objects on the screen.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.9.1 – Visual Builder menu bar
 
-> A new browser window will open with your running application.
+ A new browser window will open with your running application.
 
 ![](./media/image97.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.9.2 – Finished product list
 
-> Success\! Mama Maggy managers/franchisees can now see a list of the various products available for order (without having to call headquarters).
+ Success\! Mama Maggy managers/franchisees can now see a list of the various products available for order (without having to call headquarters).
 
 10. Now, let’s add a page of detail. Return to the Visual Builder
     Designer and select the table containing the property list. Notice
@@ -873,32 +780,32 @@ objects on the screen.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.1 – Table Properties
 
-> The “Quick Start” button makes adding to your application easy.
+ The “Quick Start” button makes adding to your application easy.
 
 ![](./media/image99.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.2 – Quick Start icon
 
-> The Quick Start options include: Adding data, building a Create Page
+ The Quick Start options include: Adding data, building a Create Page
 (new row), an Edit Page (update row), a Detail page (display single
 row), Delete Action (delete row), or Task Actions (add task controls).
 
 ![](./media/image100.png)
 
-> Click “Add Detail Page” to begin the wizard.
+ Click “Add Detail Page” to begin the wizard.
 
 ![](./media/image101.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.3 – Quick Start options
 
-> Once the wizard starts; select the “Product” Business Object and click
+ Once the wizard starts; select the “Product” Business Object and click
 “Next” to continue.
 
 ![](./media/image102.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.4 – Add Detail 1
 
-> Select the fields to be displayed; you may either select by checking
+ Select the fields to be displayed; you may either select by checking
 them in the list or “dragging” them to the fields in the center area.
 You may also change title and other features, even the name of the
 button that will display on the main page to launch this page. Click
@@ -908,7 +815,7 @@ button that will display on the main page to launch this page. Click
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.5 – Add Detail 2
 
-> When complete, the object navigator on the left will show the new page.
+ When complete, the object navigator on the left will show the new page.
 Select the new page “main-product-detail” to see what it looks like. Note that the "Product List" screen is called "main-start" and the "Product Detail" screen is called "main-product-detail" in Figure 3.10.6. (These may be renamed if desired but it's not really necessary.)
 
 ![](./media/image104.png)
@@ -1008,14 +915,14 @@ through.
 
   - Product Order Detail with list of matching Product Order Lines
 
-<!-- end list -->
+ 
 
 12. Create a new Web Application to display a list or Product Order
     business object rows. This is very similar to the Product List
     created earlier and you will end up with a screen that looks
     something like this. Include these fields:
 
-<!-- end list -->
+ 
 
   - Id
 
@@ -1042,7 +949,7 @@ list and dropping it into the date column.
 13. Create a Product Order Detail page for the Product Order page’s
     table, select these fields:
 
-<!-- end list -->
+ 
 
   - Id
 
@@ -1086,7 +993,7 @@ Nothing really new so far…
 
 17. In the “Bind Data” step of the Add Data wizard, select:
 
-<!-- end list -->
+ 
 
   - id
 
@@ -1096,9 +1003,9 @@ Nothing really new so far…
 
   - quantity (set type to Input Number)
 
-> ![](./media/image119.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.17 – Add Data wizard step 2
+ ![](./media/image119.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.17 – Add Data wizard step 2
 
 18. Here’s the key step\! In step 3 “Define Query” of the Add Data
     wizard you will connect the data from the Product Order and the
@@ -1274,12 +1181,12 @@ __*** find Product Name by drilling down ***__<br/>
     Unit Price (Input Number), and
     Quantity (Input Number).
 
-![](./media/endpoints2.png)
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.32 – Endpoint Drilldown and Column List  
-
->   
-> Use “Define Query” to connect the Product List to the list of Items as
-> follows:
+ ![](./media/image141.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.32 – Items table contents  
+   
+ Use “Define Query” to connect the Product List to the list of Items as
+ follows:
 
   - Open {} filterCriterion -\> \[\] criteria -\> {} item\[0\] -\>
 
@@ -1310,8 +1217,7 @@ __*** find Product Name by drilling down ***__<br/>
 
 Congratulations! You have made the daily lives of Mama Maggy managers/franchisees easier. Instead of calling headquarters to check the status of their product orders they can now use your mobile app when and where it is convenient.
 
-This concludes Lab 3.<br/>
-
+This concludes Lab 3.
 
 [Return to top of Section 3 – Create Mobile Application](#section-3--create-mobile-application)
 
@@ -1342,14 +1248,6 @@ access data for Mama Maggy stores and Mama Maggy associates. You will
 use these “Service Connections” to provide data services to your
 applications. 
 
- ### ** Note you must be working within VBCS instance "OSPA-Class-Of-SE" for this lab to work properly **
-
-Get the correct connection URL values for your class from the ["AppDev_Endpoints.txt" file in GitHub](https://github.com/oracle/learning-library/blob/master/ospa-library/appdev/application-development-lab/files/AppDev_Endpoints.txt) and copy them to your local machine to make the lab a little quicker to complete<br/> 
-(please
-ask the instructor if you have questions here).
-
-[Skip to Lab 4 beginning](#begin-lab-4)
-<br/><br/>
 
 *******************************************************************
 NOTE 1:
@@ -1377,31 +1275,31 @@ In this lab you will create new VBCS Web applications to display a list of Mama 
 3.  If you have not yet created any “Service Connections” click the “+
     Service Connection” button
 
-> ![](./media/image147.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.3.1 – Plus Service Connection
-> 
-> If you are presented with a list of one or more existing connections
-> click the plus “+” sign at the top of the list to the right of the
-> word “Services”
-> 
-> ![](./media/image148.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.3.2 – Services Plus
+ ![](./media/image147.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.3.1 – Plus Service Connection
+ 
+ If you are presented with a list of one or more existing connections
+ click the plus “+” sign at the top of the list to the right of the
+ word “Services”
+ 
+ ![](./media/image148.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.3.2 – Services Plus
 
 4.  The “Create Connection” wizard starts by asking for the source of
     the connection; for this lab we will choose “Define by
     Specification” for the connections created. Please click “Define
     by Specification” to continue. (if you only have an “endpoint” see
-    [Appendix B: Create Service Connection from Endpoint](#appendix-b-create-service-connection-from-endpoint) for an example of “Define by Endpoint”)
+    [Appendix A: Create Service Connection from Endpoint](#appendix-a-create-service-connection-from-endpoint) for an example of “Define by Endpoint”)
 
-> ![](./media/image149.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.4 – Define by Endpoint
+ ![](./media/image149.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.4 – Define by Endpoint
 
 5.  The wizard will then ask for specifics about the endpoint:
 
-<!-- end list -->
+ 
 
   - Choose “ADF Describe” from the API Type pulldown
 
@@ -1415,68 +1313,68 @@ In this lab you will create new VBCS Web applications to display a list of Mama 
 
   - Make sure “Enable Token Relay” is UNCHECKED (as shown)
 
-> ![](./media/image150.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.5.1 – Wizard Service Specification
-> 
-> When prompted to “Select Endpoints” open the navigator-style list
-> under “Associate” . and for this exercise choose the two GET methods;
-> one returns all “Associate” rows, the other selects specific
-> “Associate” rows using an id value.
-> 
-> ![](./media/image151.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.5.2 – Wizard URL complete
-> 
-> Click “Create” to complete the process.
-> 
-> ![](./media/image152.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.5.3 – Create Button
+ ![](./media/image150.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.5.1 – Wizard Service Specification
+ 
+ When prompted to “Select Endpoints” open the navigator-style list
+ under “Associate” . and for this exercise choose the two GET methods;
+ one returns all “Associate” rows, the other selects specific
+ “Associate” rows using an id value.
+ 
+ ![](./media/image151.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.5.2 – Wizard URL complete
+ 
+ Click “Create” to complete the process.
+ 
+ ![](./media/image152.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.5.3 – Create Button
 
 6.  Next, open the service for testing: select the connection, choose
     the “Endpoints” tab, find and select the desired endpoint
-    (highlighted below). Please notice we selected two of the endpoints provided by the API developer : <br/>**&nbsp;&nbsp;&nbsp;&nbsp;Get /Associate   (Get all Associate rows)<br/>&nbsp;&nbsp;&nbsp;&nbsp;Get /Associate/{Associate_Id}   (Get single Associate by ID)**
+    (highlighted below).
 
-> ![](./media/image153.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.6 – Naming Endpoint to test
+ ![](./media/image153.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.6 – Naming Endpoint to test
 
 7.  Test the connection by selecting the “Test” tab, filling in any
     necessary parameters, and clicking “Send” to make a request.
 
-> ![](./media/image154.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.1 – Test connection
-> 
-> When the service responds, look for a response status “200”
-> (everything ok) and check the results.
-> 
-> ![](./media/image155.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.2 – Test status 200
-> 
-> ![](./media/image156.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.3 – Response body
-> 
-> If the response looks good to you click the “Copy to Response Body” so
-> that Visual Builder will map out the response details as part of the
-> connection.
-> 
-> ![](./media/image157.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.4 – Copy to Reponse Body
-> 
+ ![](./media/image154.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.1 – Test connection
+ 
+ When the service responds, look for a response status “200”
+ (everything ok) and check the results.
+ 
+ ![](./media/image155.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.2 – Test status 200
+ 
+ ![](./media/image156.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.3 – Response body
+ 
+ If the response looks good to you click the “Copy to Response Body” so
+ that Visual Builder will map out the response details as part of the
+ connection.
+ 
+ ![](./media/image157.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.4 – Copy to Reponse Body
+ 
 
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.5 – Create button
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.5 – Create button
 
 8.  Locate the next endpoint to test and select it.
 
-> ![](./media/image159.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.8 – Associate by id endpoint
+ ![](./media/image159.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.8 – Associate by id endpoint
 
 9.  This endpoint gets a single “Associate” row that is identified by
     passing in an “{Associate\_Id}” value (or whatever the key field is
@@ -1484,16 +1382,19 @@ In this lab you will create new VBCS Web applications to display a list of Mama 
     to test.  
     ![](./media/image160.png)  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.9 – Test single associate connection
-> 
-> You have now created and tested two connections.
-<!-- end list -->
+ 
+ You have now created and tested two connections.
 
+10. Repeat the steps in 4.6 – 4.9 above to two the “mmstores” connection
+    endpoints.
 
-10. Repeat the steps in 4.6 – 4.9 above to create a service connection named "mmstores" for the two Mama Maggy Store endpoints selected: <br/><br/>**&nbsp;&nbsp;&nbsp;&nbsp;Get /Store   (Get all Store rows)<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;Get /Store/{Store_Id}   (Get single Store by ID)**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Test with Store ID value of 7 <br/><br/>
+ 
 
+  - Mama Maggy Store – get all
 
-> Be sure to test your connections.
+  - Mama Maggy Store – get single using {Store\_id}
+
+ Be sure to test your connections.
 
 11. Create a new Web Application named “storelist” that displays all of
     the Mama Maggy stores in a table. Refer to Lab 3: Web and Mobile
@@ -1502,35 +1403,34 @@ In this lab you will create new VBCS Web applications to display a list of Mama 
     Create a header that says “Mama Maggy Stores” and drop a table
     component below it.
 
-> Use the “mmstores” service connection as the data source for the
-> table.
-> 
-> ![](./media/image164.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.11 – mmstores data source
+ Use the “mmstores” service connection as the data source for the table.
+ 
+ ![](./media/image164.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.11 – mmstores data source
 
 12. Choose the id, name, city, and state. Be sure to select “id” as the
     Primary Key too. (no need to Define Query)
 
-> ![](./media/image165.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.12 – Add data items
+ ![](./media/image165.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.12 – Add data items
 
 13. The finished screen will look something like this.
 
-> ![](./media/image166.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.13 – Store List
+ ![](./media/image166.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.13 – Store List
 
 14. Use the table’s “Quick Start” ![](./media/image167.png) to “Add
     Detail Page” to get started.
 
-> ![](./media/image168.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.14.1 – Add Detail Page
-> 
-> Use the “mmstores” again (because our connection used the standardized
-> descriptors Visual Builder will choose the correct endpoint).
+ ![](./media/image168.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.14.1 – Add Detail Page
+ 
+ Use the “mmstores” again (because our connection used the standardized
+ descriptors Visual Builder will choose the correct endpoint).
 
 ![](./media/image164.png)
 
@@ -1539,91 +1439,91 @@ In this lab you will create new VBCS Web applications to display a list of Mama 
 15. Choose id, name, address, city, state, and mailcode from the
     Endpoint Structure. 
 
-> ![](./media/image169.png)
+ ![](./media/image169.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.15 – Store Detail data
 
 16. Your Store details screen should look something like this.
 
-> ![](./media/image170.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.16 – Sample Store Details
+ ![](./media/image170.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.16 – Sample Store Details
 
 17. Now create an “associatelist” web application to display all
     “Associate” rows (you pick the fields) and provide a “Add Detail Page” to display a
     single Associate (you pick the fields here too).
 
-<!-- end list -->
+ 
 
   - List display of all Associates (“mmassociates”)
 
   - Details display of selected Associate (“”mmassociates” using
     “associate\_id”)
 
-> Test your application.
+ Test your application.
 
 18. For something really fun; return to the “storelist” application and
     display the “Stores Detail” page (probably called
     “main-store-detail” or something close).
 
-> ![](./media/image171.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.18 – Store Details original
+ ![](./media/image171.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.18 – Store Details original
 
 19. Add a heading “Associates” under the “Back” button and add a “Table”
     component under the heading. Use the table’s “Quick Start“ menu to
     “Add Data” to the screen. Choose the “mmassociates” connection to
     supply the data.
 
-> ![](./media/image172.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.19.1 – mmassociates connection
-> 
-> Select id, name, email, and hire date. Also be sure the “Primary Key”
-> is set to the “id” field.
-> 
-> ![](./media/image173.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.19.2 – Associates data
+ ![](./media/image172.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.19.1 – mmassociates connection
+ 
+ Select id, name, email, and hire date. Also be sure the “Primary Key”
+ is set to the “id” field.
+ 
+ ![](./media/image173.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.19.2 – Associates data
 
 20. **STOP** on step (3) “Define Query” so that you can connect the
     Associates to the Store listed on the page. Under “Define Query”
     expand “{} filterCriterion -\> \[\] criteria -\> {} item\[0\].
 
-> ![](./media/image174.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.20.1 – Filtercriterion
-> 
-> Select “A attribute” and type “store” into the text box provided, this
-> is “static” content.
-> 
-> ![](./media/image175.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.20.2 - attribute
-> 
-> Select “A op” and type “$eq” into the text box provided, this is
-> “static” content.
-> 
-> ![](./media/image176.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.20.3 – op  
-> Expand the “Sources” values under “Page-\>{} store” and drag the “id”
-> value from the left side of the screen to the “A value” postion on the
-> right. This establishes the link between the current screen (source)
-> and the Associates data (target).
-> 
-> ![](./media/image177.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.20.4 - value
+ ![](./media/image174.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.20.1 – Filtercriterion
+ 
+ Select “A attribute” and type “store” into the text box provided, this
+ is “static” content.
+ 
+ ![](./media/image175.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.20.2 - attribute
+ 
+ Select “A op” and type “$eq” into the text box provided, this is
+ “static” content.
+ 
+ ![](./media/image176.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.20.3 – op  
+ Expand the “Sources” values under “Page-\>{} store” and drag the “id”
+ value from the left side of the screen to the “A value” postion on the
+ right. This establishes the link between the current screen (source)
+ and the Associates data (target).
+ 
+ ![](./media/image177.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.20.4 - value
 
 21. The completed screen should look something like this. Note, if the
     system is under stress it may take a few moments for the filtering
     to work properly. (This delay can be masked using an “if” test but
     is not necessary for our lab.)
 
-> ![](./media/image178.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.21 – Completed screen
+ ![](./media/image178.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.21 – Completed screen
 
 
 This concludes Lab 4.
@@ -1631,23 +1531,23 @@ This concludes Lab 4.
 **Congratulations\!** You’ve now finished the required labs for this
 course.
 
-You may save today���s work using Visual Builder’s “export” capability, this will provide you with a starting point if you would like to continue working on the labs, **but more importantly will give you a starting point when you want to create a customer demonstration using VBCS**:
+You may save today’s work using Visual Builder’s “export” capability, this will provide you with a starting point if you would like to continue working on the labs, **but more importantly will give you a starting point when you want to create a customer demonstration using VBCS**:
 
   - Return to the list of VBCS applications, highlight your application,
     then click the “Hamburger” menu icon on the right.
 
-> ![](./media/image179.png)
+ ![](./media/image179.png)
 
   - Choose “Export
 
-> ![](./media/image180.png)
+ ![](./media/image180.png)
 
   - Specify “Export with Data” and you will be prompted for the location
     where you want the application’s “.zip” file copied. (this file may
     be imported into another Visual Builder instance when you want to
     work some more).
 
-> ![](./media/image181.png)
+ ![](./media/image181.png)
 
 [Go to Extra Lab 5](#extra-lab-5-add-data-using-rest-call) 
 
@@ -1671,8 +1571,6 @@ In this lab you will work more with RESTful API calls.
     (single row access) to provide the associate’s “Name” rather than
     their “id” in the “Product Orders” list and “Product Order Detail”
     displays.
-
-    Hint: You can pick the value of a field and pass it as a param to the REST service. Check out the second half of this video https://www.youtube.com/watch?v=tHDA-BJ53tM See how the country code is passed from the BO to the country service. You can hook this up to a button or add a step to the existing action that fetches the record from your service connection.
 
 3.  (optional) Try to repeat \#2 and add replace the associate id with
     associate name in a copy of your mobile application (again, don’t
@@ -1718,259 +1616,89 @@ For instance:
 
 This concludes Extra Lab 6.
 
-[Go to Extra Lab 7](#extra-lab-7-publish-mobile-app-as-pwa) – 
 [Return to Table of Contents](#table-of-contents)
-
-# Extra Lab 7: Publish Mobile App as PWA
-
-The “Extra” labs are intended to “flex” the mind-muscles of those who
-have finished the other labs early so, they are short on explanation and
-there are no example solutions provided.
-
-For a little "BONUS" activity; try "Publishing" your mobile application as a Progressive Web App; here's a video that will show you how: https://blogs.oracle.com/vbcs/creating-progressive-web-apps-with-oracle-visual-builder
-
-<br/>
-
-[Return to Table of Contents](#table-of-contents)
-
-<br/>
 
 # Appendix
 
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix A: Create VBCS Instance](#appendix-a-create-vbcs-instance)
-
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix B: Create Service Connection from Endpoint](#appendix-b-create-service-connection-from-endpoint)
-
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix C: Build Mama Maggy Data Application](#appendix-c-build-mama-maggy-data-application)
-
-# Appendix A: Create VBCS Instance
-
-Creating a VBCS instance is not part of the current Labs; learners will
-be sharing a lab with others that has already been created.
-
-However, it is possible you may need to create a VBCS instance in order
-to learn more about VBCS or to create a customer demo. If you are
-creating a new instance to support a customer demonstration please do
-this BEFORE meeting with the customer; the process is simple but can
-sometimes take several minutes.
-
-1.  Log into your tenancy using cloud.oracle.com; be sure it has been
-    provisioned to allow Visual Builder Cloud Service and the database
-    and object storage instances also required.  
-    (check with your tenancy admin if unsure)
-
-![](./media/image_a_1.png)
-
-&nbsp;&nbsp;&nbsp;Figure 1.1 - Login
-
-2.  On some systems you will see a “dashboard” as shown below
-
-![](./media/image_a_2.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.2.1 – Starting Dashboard
-
-If you see a “Visual Builder” box as shown below, proceed to step 3.
-
-If you don’t see the “Visual Builder” service box like this we’ll add it
-to the display.
-
-![](./media/image_a_3.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.2.2 – Visual Builder box
-
-If you don’t see the “Visual Builder” box shown above; click on the
-“Customize Dashboard
-
-![](./media/image_a_4.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.2.3 – Customize Dashboard
-
-Scroll the “Customize Dashboard” looking for “Visual Builder” service.
-Services may be added/removed from the automatic display using the
-“Automatic/Expand/Collapse” buttons provided.
-
-![](./media/image_a_5.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.2.4 – Customize Dash choices
-
-Once you find “Visual Builder” click the “Show” button so that it
-appears in the dashboard.
-
-![](./media/image_a_6.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.2.5 – Show Visual Builder
-
-3.  From the “Visual Builder” service box there are two ways to open a
-    service console.
-
-> ![](./media/image_a_3.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.1.1 – Visual Builder service
-
-One method is to click on the box’s “Visual Builder” text to display an
-overview page.
-
-![](./media/image_a_7.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.1.2 – Visual Builder Overview
-
-From the overview page, click the “Open Service Console” button to
-continue.
-
-![](./media/image_a_8.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.1.3 – Open Service Console button
-
-> Another method is to click the “hamburger” icon
-> ![](./media/image_a_9.png) in the lower-right corner of the  
-> “Visual Builder” service box to display a menu.
-
-![](./media/image_a_3.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.2.1 – Visual Builder service box
-
-Select “Open Service Console” from the menu.
-
-![](./media/image_a_10.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.2.2 – Visual Builder service menu
-
-4.  If you have not created any services the Service Console prompts you
-    to begin the process.
-
-> **DO NOT** CLICK “CREATE INSTANCE” at this time, we will be using
-> “Quick Starts” (see step 5).
-> 
-> ![](./media/image_a_11.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.4.1 – Create Instance invitation
-> 
-> If Visual Builder instances already exist they will be shown in a
-> table.
-> 
-> ![](./media/image_a_12.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.4.2 – VBCS existing instance(s)
-> 
-> **DO NOT** CLICK “CREATE INSTANCE” at this time, we will be using
-> “Quick Starts” (see step 5).
-
-5.  Visual Builder provides a “Quick Starts” capability to build an
-    instance complete with supporting database and object storage. Click
-    the “Quick Starts” button to get started it is located in the
-    upper-right portion of the Service Console display inside the big
-    blue bar.
-
-> ![](./media/image_a_13.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.5.1 – Quick Starts button
-> 
-> When presented with the “QuickStarts” panel; provide an instance name
-> and click the “Start” button to begin the process.
-> 
-> ![](./media/image_a_14.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.5.2 – QuickStarts page
-> 
-> Creation should take place in less than five minutes.
-> 
-> ![](./media/image_a_15.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.5.3 – Create button
-> 
-> That’s it, you’ve created an instance that can support many VBCS
-> applications and user.
 
 
-NOTE:
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If others will be sharing your VBCS instance you will need to use Oracle Identity Cloud Service (IDCS)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to make sure they have 'ServiceDeveloper' (Visual Builder Administrator) role for your instance if they are developers<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- or 'ServiceAdministrator' (Visual Builder Administrator) role if they need to administer other's applications.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See Oracle Documentation for more information.
-
-
-[Return to Appendix list](#appendix)
-
-[Return to Table of Contents](#table-of-contents)
-
-# Appendix B: Create Service Connection from Endpoint
+# Appendix A: Create Service Connection from Endpoint
 
 
 1.  If you have not yet created any “Service Connections” click the “+
     Service Connection” button
 
-> ![](./media/image_1.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.1 – Plus Service Connection
-> 
-> If you are presented with a list of one or more existing connections
-> click the plus “+” sign at the top of the list to the right of the
-> word “Services”
-> 
-> ![](./media/image_2.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.2 – Services Plus
+ ![](./media/image_1.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.1 – Plus Service Connection
+ 
+ If you are presented with a list of one or more existing connections
+ click the plus “+” sign at the top of the list to the right of the
+ word “Services”
+ 
+ ![](./media/image_2.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.2 – Services Plus
 
 2.  The “Create Connection” wizard starts by asking for the source of
     the connection; for this lab we will choose “Define by Endpoint” for
     the connections created. Please click “Define by Endpoint” to
     continue.
 
-> ![](./media/image_3.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.4 – Define by Endpoint
+ ![](./media/image_3.png)
+ 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.4 – Define by Endpoint
 
 3.  The wizard will then ask for specifics about the endpoint.
 
-> ![](./media/image_4.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.5.1 – Wizard URL
-> 
-> Provide the “Method” (GET), “URL” (from course specifications), and
-> “Action Hint” (Get Many) then click “Next” to continue. This
-> connection will return all rows from the “Associate” data source.
-> 
-> ![](./media/image_5.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.5.2 – Wizard URL complete
+ ![](./media/image_4.png)
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.5.1 – Wizard URL
+ 
+ Provide the “Method” (GET), “URL” (from course specifications), and
+ “Action Hint” (Get Many) then click “Next” to continue. This
+ connection will return all rows from the “Associate” data source.
+ 
+ ![](./media/image_5.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.5.2 – Wizard URL complete
 
 4.  Provide a name for the connection (“mmassociate” in the example).
 
-> ![](./media/image_6.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.6 – Naming connection
+ ![](./media/image_6.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.6 – Naming connection
 
 5.  Test the connection by selecting the “Test” tab, filling in any
     necessary parameters, and clicking “Send” to make a request.
 
-> ![](./media/image_7.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.1 – Test connection
-> 
-> When the service responds, look for a response status “200”
-> (everything ok) and check the results.
-> 
-> ![](./media/image_8.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.2 – Test status 200
-> 
-> ![](./media/image_9.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.3 – Response body
-> 
-> If the response looks good to you click the “Copy to Response Body” so
-> that Visual Builder will map out the response details as part of the
-> connection.
-> 
-> ![](./media/image_10.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.4 – Copy to Reponse Body
-> 
-> Click the “Create” button to finish the process of building the
-> service connection.
-> 
-> ![](./media/image_11.png)
+ ![](./media/image_7.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.1 – Test connection
+ 
+ When the service responds, look for a response status “200”
+ (everything ok) and check the results.
+ 
+ ![](./media/image_8.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.2 – Test status 200
+ 
+ ![](./media/image_9.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.3 – Response body
+ 
+ If the response looks good to you click the “Copy to Response Body” so
+ that Visual Builder will map out the response details as part of the
+ connection.
+ 
+ ![](./media/image_10.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.4 – Copy to Reponse Body
+ 
+ Click the “Create” button to finish the process of building the
+ service connection.
+ 
+ ![](./media/image_11.png)
 
 6.  Create the next connection to select a single “Associate” row that
     is identified by passing in an “{id}” value (or whatever the key
@@ -1978,46 +1706,46 @@ NOTE:
     ![](./media/image_12.png)  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.6.1 – Create single associate connection
 
-> Provide a name for the connection (“mmassociateget” in the example).
-> 
-> ![](./media/image_13.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.6.2 – Name single connection
+ Provide a name for the connection (“mmassociateget” in the example).
+ 
+ ![](./media/image_13.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.6.2 – Name single connection
 
 7.  Test the connection; be sure to specify a valid id for the test.
     Please notice that the parameters are surrounded by curly-style
     braces “{id}” in the path and that a place is automatically provided
     to enter a test value.
 
-> ![](./media/image_14.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.1 – Test single connection
-> 
-> Check the response status and values, then click “Copy to Response
-> Body” and the “Create” button to finish things up.
-> 
-> ![](./media/image_15.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.2 – Single connection response
-> 
-> You have now created and tested two connections.
+ ![](./media/image_14.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.1 – Test single connection
+ 
+ Check the response status and values, then click “Copy to Response
+ Body” and the “Create” button to finish things up.
+ 
+ ![](./media/image_15.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure B.7.2 – Single connection response
+ 
+ You have now created and tested two connections.
 
 8.  Repeat the steps in 4.3 – 4.9 above to create two more connections.
 
-<!-- end list -->
+ 
 
   - Mama Maggy Store – get all (maybe “mmstoregetall”)
 
   - Mama Maggy Store – get single using {id}. (maybe “mmstoreget”)
 
-> Be sure to test your connections. Please ask the instructor if you
-> need assistance.
+ Be sure to test your connections. Please ask the instructor if you
+ need assistance.
 
 [Return to Appendix list](#appendix)
 
 [Return to Table of Contents](#table-of-contents)
 
-# Appendix C: Build Mama Maggy Data Application
+# Appendix B: Build Mama Maggy Data Application
 
 This appendix shows how the “Mama Maggy” application was created to serve
 as a data source for the Application Development labs.
@@ -2037,66 +1765,26 @@ In this lab you will create:
   - An “Associate” Business Object containing fields and data for Mama
     Maggy associates
 
-  - You will need two data files stored in a single .zip file named [setupfiles.zip](https://github.com/oracle/learning-library/blob/master/ospa-library/appdev/application-development-lab/files/setupfiles.zip) on GitHub; download the file and expand it to find the following two files (keep them handy they will be used later to load data):
-      - Store.csv
-      - Associate.csv
-      
-        (be sure to create “Store” before “Associate” (Associate references Store), and load data into “Store” first before loading data into “Associate”)
+  - Two .csv files are provided to provide data for Store and
+    Associate  
+    (be sure to create “Store” before “Associate” (Associate references
+    Store), and  
+    load data into “Store” first before loading data into “Associate”)
 
-<!-- end list -->
+ 
 
 1.  Log into your tenancy using cloud.oracle.com; be sure it has been
     provisioned to allow Visual Builder Cloud Service and the database
     and object storage instances also required.  
     (check with your tenancy admin if unsure)
 
-![](./media/image_c_1.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.1 - Login
-
-2.  On some systems you will see a “dashboard” as shown below
-
-![](./media/image_c_2.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.2.1 – Starting Dashboard
-
-If you see a “Visual Builder” box as shown below, proceed to step 3.
-
-If you don’t see the “Visual Builder” service box like this we’ll add it
-to the display.
-
-![](./media/image_c_3.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.2.2 – Visual Builder box
-
-If you don’t see the “Visual Builder” box shown above; click on the
-“Customize Dashboard
-
-![](./media/image_c_4.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.2.3 – Customize Dashboard
-
-Scroll the “Customize Dashboard” looking for “Visual Builder” service.
-Services may be added/removed from the automatic display using the
-“Automatic/Expand/Collapse” buttons provided.
-
-![](./media/image_c_5.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.2.4 – Customize Dash choices
-
-Once you find “Visual Builder” click the “Show” button so that it
-appears in the dashboard.
-
-![](./media/image_c_6.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.2.5 – Show Visual Builder
 
 3.  From the “Visual Builder” service box there are two ways to open a
     service console.
 
-> ![](./media/image_c_3.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.3.1.1 – Visual Builder service
+ ![](./media/image_c_3.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.3.1.1 – Visual Builder service
 
 One method is to click on the box’s “Visual Builder” text to display an
 overview page.
@@ -2112,9 +1800,9 @@ continue.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.3.1.3 – Open Service Console button
 
-> Another method is to click the “hamburger” icon
-> ![](./media/image_c_9.png) in the lower-right corner of the  
-> “Visual Builder” service box to display a menu.
+ Another method is to click the “hamburger” icon
+ ![](./media/image_c_9.png) in the lower-right corner of the  
+ “Visual Builder” service box to display a menu.
 
 ![](./media/image_c_3.png)
 
@@ -2150,9 +1838,9 @@ Select “Open Service Console” from the menu.
     what you type), provide a description (optional), and select the
     “Empty Application” template (should be the default).
 
-> ![](./media/image_c_14.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.6.1 – Create Application
+ ![](./media/image_c_14.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.6.1 – Create Application
 
 Click the “Finish” button when done.
 
@@ -2164,30 +1852,30 @@ Click the “Finish” button when done.
     be used by other applications via RESTful APIs; this is simulating
     the use of external API access such as database or SaaS application.
 
-> Select the “Business Object” button to start creating business
-> objects.
-> 
-> ![](./media/image_c_16.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.7 – Business Object button
+ Select the “Business Object” button to start creating business
+ objects.
+ 
+ ![](./media/image_c_16.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.7 – Business Object button
 
 8.  From the application page, click “+ Business Object” to begin adding
     a business object.
 
-> ![](./media/image_c_17.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.8.1 – Application Page
-> 
-> Provide a name “Store” and click the “checkbox” icon.
-> 
-> ![](./media/image_c_18.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.8.2 – Plus Business Object
+ ![](./media/image_c_17.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.8.1 – Application Page
+ 
+ Provide a name “Store” and click the “checkbox” icon.
+ 
+ ![](./media/image_c_18.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.8.2 – Plus Business Object
 
 9.  Add Fields to the Store object as follows (please create them as
     shown to match the .csv data):
 
-<!-- end list -->
+ 
 
   - Name
 
@@ -2207,7 +1895,7 @@ Click the “Finish” button when done.
     account for the reference in the “Associate” row to the “Store” row.
     Add fields as follows:
 
-<!-- end list -->
+ 
 
   - From the “Fields” tab, click “+ New Field” and add “Name”
 
@@ -2229,48 +1917,48 @@ Click the “Finish” button when done.
   - From the “Fields” tab, click “+ New Field” and add “Email” (email
     field)
 
-> ![](./media/image_c_20.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.10 – Associate object fields
+ ![](./media/image_c_20.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.10 – Associate object fields
 
 11. Use the Business Object “hamburger” icon’s ![](./media/image_c_9.png)
     menu to select “Diagram” option.
 
-> ![](./media/image_c_21.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.11.1 – Diagram option
+ ![](./media/image_c_21.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.11.1 – Diagram option
 
 The business object diagram should look like the following; if not
 please correct or redo.
 
-> ![](./media/image_c_22.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.11.2 – Object relationship diagram
+ ![](./media/image_c_22.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.11.2 – Object relationship diagram
 
 12. To load data into the objects, start by once again using the
     Business Object “hamburger” ![](./media/image_c_9.png)icon but this
     time select the “Data Manager” option.
 
-> ![](./media/image_c_23.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.12.1 – Data Manager option
-> 
-> Click on “Import from File” from the “Manage Application Data” panel.
-> 
-> ![](./media/image_c_24.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.12.2 – Manage Application Data
-> 
-> Click on the “Upload a file or drag it here” picture.
-> 
-> ![](./media/image_c_25.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.12.3 – Empty import data
-> 
-> Select the “Store.csv” file supplied as part of the course setup and
-> click the “Import” button.
-> 
-> ![](./media/image_c_26.png)
+ ![](./media/image_c_23.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.12.1 – Data Manager option
+ 
+ Click on “Import from File” from the “Manage Application Data” panel.
+ 
+ ![](./media/image_c_24.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.12.2 – Manage Application Data
+ 
+ Click on the “Upload a file or drag it here” picture.
+ 
+ ![](./media/image_c_25.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.12.3 – Empty import data
+ 
+ Select the “Store.csv” file supplied as part of the course setup and
+ click the “Import” button.
+ 
+ ![](./media/image_c_26.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.12.4 – Import Store.csv
 
@@ -2294,45 +1982,45 @@ Results should be.
 
 13. Review the added data using the “Data” tab for the two objects.
 
-> ![](./media/image_c_30.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.13.1 – Store data
-> 
-> ![](./media/image_c_31.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.13.2 – Associate data
+ ![](./media/image_c_30.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.13.1 – Store data
+ 
+ ![](./media/image_c_31.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.13.2 – Associate data
 
 14. Access points currently have a “version” number and will change each
     time the objects are modified. Currently only the “development”
     addresses are available. The steps below will show you how to publish and make the addresses constant.
 
-> ![](./media/image_c_32.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.14 – Development-only Resource API addresses
+ ![](./media/image_c_32.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.14 – Development-only Resource API addresses
 
 15. To “set” the access points so that they will not change over time;
     you must first “Stage” and then “Publish” the application.  (When the application is in "Development" and "Staging" the addresses are versioned; once an application is published to the "Live" environment the address will not change and is suitable for sharing.)
       
     First, return to the list of business objects.
 
-> ![](./media/image_c_33.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.15.1 – Application list
-> 
-> Using the “hamburger” icon ![](./media/image_c_9.png) (far right) open
-> the menu and select “Stage” for the application.
-> 
-> ![](./media/image_c_34.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.15.2 – Select stage
-> 
-> Select “Populate Stage with Development data” to copy the data loaded
-> previously into the staging environment, then click the “Stage”
-> button.
-> 
-> ![](./media/image_c_35.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.15.3 – Stage application
+ ![](./media/image_c_33.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.15.1 – Application list
+ 
+ Using the “hamburger” icon ![](./media/image_c_9.png) (far right) open
+ the menu and select “Stage” for the application.
+ 
+ ![](./media/image_c_34.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.15.2 – Select stage
+ 
+ Select “Populate Stage with Development data” to copy the data loaded
+ previously into the staging environment, then click the “Stage”
+ button.
+ 
+ ![](./media/image_c_35.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.15.3 – Stage application
 
 The addresses we need are still not final, so the application must be
 published. Return to the list of applications and click the “hamburger”
@@ -2353,35 +2041,35 @@ button.
     access the data in the application’s business objects the Resource
     API addresses must be made available.
 
-> Select the “Store” business object and click on the “Endpoints” tab.
-> Addresses are listed for Development, Staging, and Live environments.
-> Also there are two columns, the ones on the left provide Metadata that
-> more-advanced client applications (like Visual Builder) may take
-> advantage of. The column on the right shows data-only “Endpoints” that
-> require a little more work to use.
-> 
-> From the left column select the “Live” address and click the
-> “clipboard” icon ![](./media/image_c_38.png). Paste the resulting
-> string into a text file in your local environment to share with
-> applications wanting to use the data.
-> 
-> This is the address needed to access “Store” data.
-> 
-> ![](./media/image_c_39.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.16.1 – Store Resource APIs
-> 
-> ![](./media/image_c_40.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.16.2 – Address to copy
-> 
-> Select the “Associate” business object and once again display the
-> “Endpoints” tab. Copy the value from the “Metadata” column “Live”
-> row using the “clipboard” icon ![](./media/image_c_38.png). Paste the
-> resulting string into a text file in your local environment to share
-> with applications wanting to use the data.
-> 
-> This is the address needed to access “Associate” data
+ Select the “Store” business object and click on the “Endpoints” tab.
+ Addresses are listed for Development, Staging, and Live environments.
+ Also there are two columns, the ones on the left provide Metadata that
+ more-advanced client applications (like Visual Builder) may take
+ advantage of. The column on the right shows data-only “Endpoints” that
+ require a little more work to use.
+ 
+ From the left column select the “Live” address and click the
+ “clipboard” icon ![](./media/image_c_38.png). Paste the resulting
+ string into a text file in your local environment to share with
+ applications wanting to use the data.
+ 
+ This is the address needed to access “Store” data.
+ 
+ ![](./media/image_c_39.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.16.1 – Store Resource APIs
+ 
+ ![](./media/image_c_40.png)
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.16.2 – Address to copy
+ 
+ Select the “Associate” business object and once again display the
+ “Endpoints” tab. Copy the value from the “Metadata” column “Live”
+ row using the “clipboard” icon ![](./media/image_c_38.png). Paste the
+ resulting string into a text file in your local environment to share
+ with applications wanting to use the data.
+ 
+ This is the address needed to access “Associate” data
 
 That’s it, you’ve created an application with business objects that may
 be accessed using REST APIs like those used in Lab 4.
@@ -2389,3 +2077,5 @@ be accessed using REST APIs like those used in Lab 4.
 [Return to Appendix list](#appendix)
 
 [Return to Table of Contents](#table-of-contents)
+
+[Return to Main Page](README.md)
