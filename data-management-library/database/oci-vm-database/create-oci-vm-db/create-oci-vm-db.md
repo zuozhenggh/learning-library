@@ -155,3 +155,9 @@ Next, you'll create a Database running in a VM.
 * [Oracle Cloud Infrastructure: Network Setup for DB Systems](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/network.htm)
 * [Oracle Cloud Infrastructure: Creating Bare Metal and Virtual Machine DB Systems](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/creatingDBsystem.htm)
 * [Oracle Cloud Infrastructure: Connecting to a DB System](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/connectingDB.htm)
+
+## Acknowledgements
+* **Author** -Tom McGinn, Learning Architect, Database User Assistance
+* **Last Updated By/Date** - Tom McGinn, February 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

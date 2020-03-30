@@ -111,3 +111,9 @@ While you can access your database by tunneling over SSH, for the purpose of usi
 
 * [Oracle SQL Developer Documentation](https://docs.oracle.com/en/database/oracle/sql-developer/)
 * [Oracle Cloud Infrastructure: Connecting to an DB System](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/connectingDB.htm)
+
+## Acknowledgements
+* **Author** -Tom McGinn, Learning Architect, Database User Assistance
+* **Last Updated By/Date** - Tom McGinn, February 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
