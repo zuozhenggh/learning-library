@@ -10,9 +10,15 @@
 ### Lab Prerequisites
 
 This lab assumes you have completed the following labs:
-* Login to Oracle Cloud
-* Generate SSH Key
-* Setup
+* Lab: Login to Oracle Cloud
+* Lab: Generate SSH Key
+* Lab: Setup
+
+### Lab Preview
+
+Watch the video below to get an explanation of enabling the In-Memory column store.
+
+[](youtube:dZ9cnIL6KKw)
 
 
 ## Step 1: Logging In and Enabling In-Memory
@@ -194,10 +200,12 @@ You also had an opportunity to populate and view objects in the IM column store 
 Finally you got to see how to determine if the objects were fully populated and how much space was being consumed in the IM column store.
 
 
-    
-
-
 ## Step 3: Querying the In-Memory Column Store
+
+Watch a preview video of querying the In-Memory Column Store
+
+[](youtube:U9BmS53KuGs)
+
 
 Now that you’ve gotten familiar with the IM column store let’s look at the benefits of using it. You will execute a series of queries against the large fact table LINEORDER, in both the buffer cache and the IM column store, to demonstrate the different ways the IM column store can improve query performance above and beyond the basic performance benefits of accessing data in memory only.
 
@@ -331,7 +339,15 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
     ![](images/part2-06_multi_preds.png)   
 
-In this Step you had an opportunity to try out Oracle’s in-memory performance claims with queries that run against a table with over 23 million rows (i.e. LINEORDER), which resides in both the IM column store and the buffer cache. From a very simple aggregation, to more complex queries with multiple columns and filter predicates, the IM column store was able to out perform the buffer cache queries. Remember both sets of queries are executing completely within memory, so that’s quite an impressive improvement.
+## Conclusion
+
+In this Lab you had an opportunity to try out Oracle’s In-Memory performance claims with queries that run against a table with over 23 million rows (i.e. LINEORDER), which resides in both the IM column store and the buffer cache. From a very simple aggregation, to more complex queries with multiple columns and filter predicates, the IM column store was able to out perform the buffer cache queries. Remember both sets of queries are executing completely within memory, so that’s quite an impressive improvement.
 
 These significant performance improvements are possible because of Oracle’s unique in-memory columnar format that allows us to only scan the columns we need and to take full advantage of SIMD vector processiong. We also got a little help from our new in-memory storage indexes, which allow us to prune out unnecessary data. Remember that with the IM column store, every column has a storage index that is automatically maintained for you.
 
+## Acknowledgements
+
+- **Author** - Andy Rivenes, Sr. Principal Product Manager,  Database In-Memory
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

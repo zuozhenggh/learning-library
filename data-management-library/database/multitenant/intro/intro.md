@@ -42,4 +42,4 @@ Oracle Database Product Management Videos on Multitenant
 - **Last Updated By/Date** - Kay Malcolm, March 2020
 - **Workshop Expiration Date** - March 31, 2021
 
-
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
