@@ -20,7 +20,7 @@ Watch a preview video of querying the In-Memory Column Store
 
 [](youtube:U9BmS53KuGs)
 
-## Step 1: Querying the In-Memory Column Store
+## Step: Querying the In-Memory Column Store
 
 Now that you’ve gotten familiar with the IM column store let’s look at the benefits of using it. You will execute a series of queries against the large fact table LINEORDER, in both the buffer cache and the IM column store, to demonstrate the different ways the IM column store can improve query performance above and beyond the basic performance benefits of accessing data in memory only.
 
@@ -132,6 +132,8 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
     ![](images/num5.png) 
 
+    ![](images/num5b.png) 
+
 6.  Analytical queries have more than one equality WHERE clause predicate. What happens when there are multiple single column predicates on a table? Traditionally you would create a multi-column index. Can storage indexes compete with that?  
 
     Let’s change our query to look for a specific line item in an order and monitor the session statistics:
@@ -164,7 +166,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     ````
     You can see that the In-Memory storage index is still used. In fact, we are able to use multiple storage indexes together in a similar manner to how Oracle Database can combine multiple bitmap indexes.
 
-    ![](images/part2-06_multi_preds.png)   
+    ![](images/num6.png)   
 
 ## Conclusion
 
