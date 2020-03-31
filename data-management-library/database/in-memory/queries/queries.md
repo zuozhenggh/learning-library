@@ -33,6 +33,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     set lines 100
     </copy>
     ````
+    ![](images/step1num1.png) 
 
 2.  Let's begin with a simple query:  *What is the most expensive order we have received to date?*  There are no indexes or views setup for this.  So the execution plan will be to do a full table scan of the LINEORDER table.  Note the elapsed time. 
 
@@ -54,7 +55,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     ````
     The execution plan shows that we performed a TABLE ACCESS INMEMORY FULL of the LINEORDER table.
 
-    ![](images/lineorderquery.png) 
+    ![](images/step1num2.png) 
 
 3.  To execute the same query against the buffer cache you will need to disable the IM column store via a hint called NO_INMEMORY. If you don't, the Optimizer will try to access the data in the IM column store when the execution plan is a full table scan. 
 
@@ -75,14 +76,13 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     @../imstats.sql
     </copy>
     ````
-    
+
+     ![](images/num3.png)    
    
 
     As you can see the query executed extremely quickly in both cases because this is purely an in-memory scan. However, the performance of the query against the IM column store was significantly faster than the traditional buffer cache - why?  
 
     The IM column store only has to scan two columns - lo_ordtotalprice and lo_quantity - while the row store has to scan all of the columns in each of the rows until it reaches the lo_ordtotalprice and lo_quantity columns. The IM column store also benefits from the fact that the data is compressed so the volume of data scanned is much less.  Finally, the column format requires no additional manipulation for SIMD vector processing (Single Instruction processing Multiple Data values). Instead of evaluating each entry in the column one at a time, SIMD vector processing allows a set of column values to be evaluated together in a single CPU instruction.
-
-     ![](images/part2-02_buffer_query_stats.png)
 
     In order to confirm that the IM column store was used, we need to examine the session level statistics. Notice that in the INMEMORY run several IM statistics show up (for this lab we have only displayed some key statistics – there are lots more!). The only one we are really interested in now is the "IM scan CUs columns accessed" which has been highlighted.
 
@@ -108,9 +108,9 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     </copy>
     ````
    
-    ![](images/single_key_im.png) 
+    ![](images/num4.png) 
 
-5.  Think indexing lo_orderkey would provide the same performance as the IM column store? There is an invisible index already created on the lo_orderkey column of the LINEORDER table. By using the parameter OPTIMIZER_USE_INVISIBLE_INDEXES we can compare the performance of the IM column store and the index. Recall that we ran the script 03_single_key_im.sql in Step 3 to see the IM column store performance.  Run the script to see how well the index performs.  
+5.  Think indexing lo_orderkey would provide the same performance as the IM column store? There is an invisible index already created on the lo_orderkey column of the LINEORDER table. By using the parameter OPTIMIZER_USE_INVISIBLE_INDEXES we can compare the performance of the IM column store and the index. Let's see how well the index performs.  
 
     ````
     <copy>
@@ -130,7 +130,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     </copy>
     ````
 
-    ![](images/part2-index_comparison.png) 
+    ![](images/num5.png) 
 
 6.  Analytical queries have more than one equality WHERE clause predicate. What happens when there are multiple single column predicates on a table? Traditionally you would create a multi-column index. Can storage indexes compete with that?  
 
