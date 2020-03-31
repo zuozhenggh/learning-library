@@ -202,7 +202,9 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 2.  To check the status of the script above run the command below.  *This script takes about 30 minutes to complete and runs in the background*.  You can also use the unix **jobs** command to see if the script is still running if you are still in the same terminal session.  Do not proceed until you see 100% complete.
 
     ````
+    <copy>
     tail -f /home/opc/setupdb.out
+    </copy>
     ````
 
     ![](./images/tailscript.png " ") 
@@ -214,7 +216,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ![](./images/scriptcomplete.png " ") 
 
 ## Step 7: Run the In-Memory Setup Scripts
-1.  Run this command to setup the schema for In-Memory.   This script takes about 15 minutes to complete.
+1.  Run this command to setup the schema for In-Memory.   This script takes about 15 minutes to complete.   It downloads the ssb.dmp file and then imports it.
     ````
     <copy>
     cd /home/opc/
@@ -228,7 +230,9 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expeted.  The script should finish with 1 error*
 
     ````
+    <copy>
     tail -f /home/opc/setupinmem.out
+    </copy>
     ````
     ![](./images/inmemcomplete.png " ") 
 
