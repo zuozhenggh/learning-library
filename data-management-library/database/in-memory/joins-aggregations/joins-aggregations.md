@@ -2,16 +2,37 @@
 
 ## Introduction
 
-## Step 1: In-Memory Joins and Aggregation
+### Objectives
+
+-   Learn how to enable In-Memory on the Oracle Database
+-   Perform various queries on the In-Memory Column Store
+
+### Lab Prerequisites
+
+This lab assumes you have completed the following labs:
+* Lab: Login to Oracle Cloud
+* Lab: Generate SSH Key
+* Lab: Setup
+* Lab: Queries
+
+### Lab Preview
+
+Watch the video below to get an overview of joins using Database In-Memory.
+
+[](youtube:y3tQeVGuo6g)
+
+## Step: In-Memory Joins and Aggregation
 
 Up until now we have been focused on queries that scan only one table, the LINEORDER table. Let’s broaden the scope of our investigation to include joins and parallel execution. This section executes a series of queries that begin with a single join between the  fact table, LINEORDER, and a dimension table and works up to a 5 table join. The queries will be executed in both the buffer cache and the column store, to demonstrate the different ways the column store can improve query performance above and beyond the basic performance benefits of scanning data in a columnar format.
 
 1.  Let's switch to the Part2 folder and log back in to the PDB. 
     ````
+    <copy>
     cd /home/oracle/labs/inmemory/Part3
     sqlplus ssb/Ora_DB4U@localhost:1521/orclpdb
     set pages 9999
     set lines 100
+    <copy>    
     ````
 
     ![](images/part3.png) 
@@ -19,6 +40,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 2.  Join the LINEORDER and DATE_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  In the first one, execute it against the IM column store.  Alternative script:  `@01_join_im.sql`
 
     ````
+    <copy>
     set timing on
 
     SELECT SUM(lo_extendedprice * lo_discount) revenue 
@@ -34,14 +56,16 @@ Up until now we have been focused on queries that scan only one table, the LINEO
     select * from table(dbms_xplan.display_cursor());
 
     @../imstats.sql
+    </copy>
     ````
     The IM column store has no problem executing a query with a join because it is able to take advantage of Bloom Filters.  It’s easy to identify Bloom filters in the execution plan. They will appear in two places, at creation time and again when it is applied. Look at the highlighted areas in the plan above. You can also see what join condition was used to build the Bloom filter by looking at the predicate information under the plan. 
 
     ![](images/join_im.png) 
 
-2.  Let's run against the buffer cache now.   Alternative script:  `@02_join_buffer.sql`
+3.  Let's run against the buffer cache now.  
 
     ````
+    <copy>
     set timing on
 
     select /*+ NO_INMEMORY */
@@ -60,13 +84,15 @@ Up until now we have been focused on queries that scan only one table, the LINEO
     select * from table(dbms_xplan.display_cursor());
 
     @../imstats.sql
+    </copy>
     ````
 
     ![](images/join_buffer.png) 
 
-3. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results.  Alternative script:  `@03_3join_im.sql`
+4. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results.  Alternative script:  `@03_3join_im.sql`
 
     ````
+    <copy>
     set timing on
 
     SELECT d.d_year, p.p_brand1,SUM(lo_revenue) rev 
@@ -87,6 +113,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
     select * from table(dbms_xplan.display_cursor());
 
     @../imstats.sql
+    </copy>
     ````
 
     ![](images/3joinim.png) 
@@ -104,10 +131,15 @@ Up until now we have been focused on queries that scan only one table, the LINEO
     
 ## Conclusion
 
-Section 4 saw our performance comparison expanded to queries with both joins and aggregations. You had an opportunity to see just how efficiently a join, that is automatically converted to a Bloom filter, can be executed on the IM column store. 
+This lab saw our performance comparison expanded to queries with both joins and aggregations. You had an opportunity to see just how efficiently a join, that is automatically converted to a Bloom filter, can be executed on the IM column store. 
 
 You also got to see just how sophisticated the Oracle Optimizer has become over the last 30 plus years,  when it used a combination of complex query transformations to find the optimal execution plan for a star query. 
 
 Oracle Database adds in-memory database functionality to existing databases, and transparently accelerates analytics by orders of magnitude while simultaneously speeding up mixed-workload OLTP. With Oracle Database In-Memory, users get immediate answers to business questions that previously took hours. 
 
+## Acknowledgements
 
+- **Author** - Andy Rivenes, Sr. Principal Product Manager,  Database In-Memory
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

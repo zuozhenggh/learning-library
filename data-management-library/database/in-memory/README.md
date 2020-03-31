@@ -23,13 +23,13 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 
 
 ## Product Pages
-- [Oracle In-memory](https://www.oracle.com/database/technologies/in-memory.html)
+- [Oracle In-Memory](https://www.oracle.com/database/technologies/in-memory.html)
 - [Oracle Database 19c](https://www.oracle.com/database/)
 
 ## Documentation
 - [Introduction to the Oracle Database In-Mamory](https://docs.oracle.com/en/database/oracle/oracle-database/19/inmem/intro-to-in-memory-column-store.html#GUID-BFA53515-7643-41E5-A296-654AB4A9F9E7)
 - [In-memory Column Store Architecture](https://docs.oracle.com/en/database/oracle/oracle-database/19/inmem/in-memory-column-store-architecture.html#GUID-EEA265EE-8FBA-4457-8C3F-315B9EEA2224)
-- [Oracle Database In-Memory You Tube Channel](https://www.youtube.com/channel/UCSYHgTG68nrHa5aTGfFH4pA)
+- [Oracle Database In-Memory YouTube Channel](https://www.youtube.com/channel/UCSYHgTG68nrHa5aTGfFH4pA)
 - [Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
 ## Videos
