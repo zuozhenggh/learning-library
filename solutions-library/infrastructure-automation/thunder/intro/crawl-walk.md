@@ -73,17 +73,27 @@ All the mappings between all the resources are made by name and all of them will
 
 Some of these independent examples will have more than one external variable, but all of them are easily spotted at the beginning of their corresponding README.md file.
 
-### Crawl and Walk Components
+### Crawl 
 
-#### [IAM](https://github.com/oracle/learning-library/blob/master/solutions-library/infrastructure-automation/thunder/examples/crawl/iam/iam.md)
-#### [Network](https://github.com/oracle/learning-library/blob/master/solutions-library/infrastructure-automation/thunder/examples/crawl/network/network.md)
-#### [ADW](https://github.com/oracle/learning-library/blob/master/solutions-library/infrastructure-automation/thunder/examples/crawl/adw/adw.md)
-#### [DBaaS](https://github.com/oracle/learning-library/blob/master/solutions-library/infrastructure-automation/thunder/examples/crawl/dbaas/dbaas.md)
-#### [Compute Instances](https://github.com/oracle/learning-library/blob/master/solutions-library/infrastructure-automation/thunder/examples/crawl/instances/compute.md)
-#### [DNS](https://github.com/oracle/learning-library/blob/master/solutions-library/infrastructure-automation/thunder/examples/walk/dns/dns.md)
-#### [FSS](https://github.com/oracle/learning-library/blob/master/solutions-library/infrastructure-automation/thunder/examples/walk/fss/fss.md)
-#### [Instance Principal](https://github.com/oracle/learning-library/blob/master/solutions-library/infrastructure-automation/thunder/examples/walk/instance-principal/instance-principal.md)
-#### [Load Balancer](https://github.com/oracle/learning-library/blob/master/solutions-library/infrastructure-automation/thunder/examples/walk/load-balancer/load-balancer.md)
-#### [Object Storage](https://github.com/oracle/learning-library/blob/master/solutions-library/infrastructure-automation/thunder/examples/walk/object-storage/object-storage.md)
+Crawl consists of different components. In order to access the labs you can [click here](https://oracle.github.io/learning-library/solutions-library/infrastructure-automation/thunder/examples/crawl/crawl-workshop/index.html?lab=lab-1-crawl-intro)
+The available components in crawl are:
+- IAM
+- Network
+- ADW
+- DBaaS
+- Compute Instances
+
+### Walk
+
+Walk consists of different components. In order to access the labs you can [click here](https://oracle.github.io/learning-library/solutions-library/infrastructure-automation/thunder/examples/walk/walk-workshop/index.html?lab=lab-1-walk-intro)
+
+
+The available components in walk are:
+- DNS
+- FSS
+- Instance Principal
+- Load Balancer
+- Object Storage
+
 
 In each of these components, you will find examples on how to modify the **terraform.tfvars** file and how to run the code after achieving your desired infrastructure.
