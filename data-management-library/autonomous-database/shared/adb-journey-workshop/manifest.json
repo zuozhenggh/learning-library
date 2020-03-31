@@ -31,6 +31,22 @@
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
             "filename": "./../adb-loading/adb-loading.md"
+        },
+        {         
+            "title": "Lab 5: Query Data in External Files",
+            "description": "Query Data in External Files",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-query/adb-query.md"
+        },
+        {         
+            "title": "Lab 6: Create Rich Data Visualizations",
+            "description": "Create Rich Data Visualizations",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-visualizations/adb-visualizations.md"
         }
     ]
 }
