@@ -2,7 +2,9 @@
 
 ## Introduction
 
-To execute this workshop, click [here](https://oracle.github.io/learning-library/solutions-library/cloud-data-platform/index.html) to begin.
+To execute this workshop, click on the link below.
+
+[![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/solutions-library/cloud-data-platform/freetier/index.html)
 
 *Complete AI Portfolio:*
 Oracle offers a complete portfolio of products, services, and differentiated capabilities to power your enterprise with artificial intelligence. For business users, Oracle offers ready-to-go AI-powered cloud applications with intelligent features that drive better business outcomes. With Oracle’s ready-to-build AI platform, data scientists and application developers have a full suite of cloud services to build, deploy, and manage AI-powered solutions. With Oracle’s ready-to-work Autonomous Database, machine learning is working behind the scenes to automate security patching, backups, and optimize database query performance, which helps to eliminate human error and repetitive manual tasks so organizations can focus on higher-value activities.
