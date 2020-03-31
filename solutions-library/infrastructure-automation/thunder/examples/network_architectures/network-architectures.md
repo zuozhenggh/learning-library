@@ -1,4 +1,4 @@
-# Oracle ISV Thunder Cloud Adoption Framework
+# Network Architectures
 
 This segment of the crawl, walk, run framework provides a standard baseline for best practices around networking architecture. These three (for now) models will provide a great starting point for enterprise customers who are looking to prep their business for OCI. 
 
@@ -40,4 +40,19 @@ provider_oci = {
   key_file_path = ""
   region        = ""
 }
+```
+
+## Running the code
+
+In order to run the code, you will simply have to go to the directory containing the desired architecture you want to create (e.g thunder/examples/network_architectures/saas\_isolated\_arch) and do the following:
+
+```
+# Run init to get terraform modules
+$ terraform init
+
+# Create the infrastructure
+$ terraform apply --var-file=path_to_provider.auto.tfvars_file
+
+# If you are done with this infrastructure, take it down
+$ terraform destroy --var-file=path_to_provider.auto.tfvars_file
 ```

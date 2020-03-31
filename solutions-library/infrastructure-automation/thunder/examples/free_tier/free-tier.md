@@ -1,4 +1,8 @@
 # Always Free Resources
+
+## Introduction
+In order to be able to spin up the always free resources, you will have to navigate to thunder -> examples -> free_tier.
+
 In this example, only always free resources are created:
 * 1 Compute Instance (having a Micro shape)
 * 1 Autonomous Transaction Processing DB
@@ -10,19 +14,20 @@ In this example, only always free resources are created:
 * 1 VCN with 1 subnet
 * 1 Load balancer having one backend set, one listener and one backend
 
-Don't forget to populate the provider with the details of your tenancy as specified in the main README.md file.
+Don't forget to populate the provider with the details of your tenancy as specified in the prerequisites lab.
 
 ## Running the code
 
+From the free tier folder you can run the following commands:
 ```
 # Run init to get terraform modules
 $ terraform init
 
 # Create the infrastructure
-$ terraform apply
+$ terraform apply --var-file=path_to_provider.auto.tfvars_file
 
 # If you are done with this infrastructure, take it down
-$ terraform destroy
+$ terraform destroy --var-file=path_to_provider.auto.tfvars_file
 ```
 
 ## Useful links

@@ -36,7 +36,7 @@ The examples are organized as follows:
     <th width="10">C8</th>
   </tr>
   <tr>
-    <td><a href=./examples/enterprise_tier/README.MD>enterprise_tier</td>
+    <td><a href=./examples/enterprise_tier/enterprise-tier.md>enterprise_tier</td>
     <td>Contains all terraform components</td>
     <td>-</td>
     <td>-</td>
@@ -48,7 +48,7 @@ The examples are organized as follows:
     <td>-</td>
   </tr>
   <tr>
-    <td><a href=./examples/free_tier/README.MD>free_tier</td>
+    <td><a href=./examples/free_tier/free-tier.md>free_tier</td>
     <td>Contains the always free components</td>
     <td>-</td>
     <td>-</td>
@@ -62,11 +62,11 @@ The examples are organized as follows:
   <tr>
     <td>crawl</td>
     <td>The crawl is just getting the basics set up in OCI. How do I establish the basic building blocks needed for my journey?</td>
-    <td><a href=./examples/crawl/adw/README.md>adw_atp</td>
-    <td><a href=./examples/crawl/dbaas/README.md>dbaas</td>
-    <td><a href=./examples/crawl/iam/README.md>iam</td>
-    <td><a href=./examples/crawl/instances/README.md>instances</td>
-    <td><a href=./examples/crawl/network/README.md>network</td>
+    <td><a href=./examples/crawl/adw/adw.md>adw_atp</td>
+    <td><a href=./examples/crawl/dbaas/dbaas.md>dbaas</td>
+    <td><a href=./examples/crawl/iam/iam.md>iam</td>
+    <td><a href=./examples/crawl/instances/compute.md>instances</td>
+    <td><a href=./examples/crawl/network/network.md>network</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -74,11 +74,11 @@ The examples are organized as follows:
   <tr>
     <td>walk</td>
     <td>When you're looking to walk, the way you want to think about it is: In the crawl stage, you've established the foundations in the environment, now you're ready to start introducing components and concepts to take advantage of scale.</td>
-    <td><a href=./examples/walk/dns/README.md>dns</td>
-    <td><a href=./examples/walk/fss/README.md>fss</td>
-    <td><a href=./examples/walk/instance-principal/README.md>instance-principal</td>
-    <td><a href=./examples/walk/load-balancer/README.md>load-balancer</td>
-    <td><a href=./examples/walk/object-storage/README.md>object-storage</td>
+    <td><a href=./examples/walk/dns/dns.md>dns</td>
+    <td><a href=./examples/walk/fss/fss.md>fss</td>
+    <td><a href=./examples/walk/instance-principal/instance-principal.md>instance-principal</td>
+    <td><a href=./examples/walk/load-balancer/load-balancer.md>load-balancer</td>
+    <td><a href=./examples/walk/object-storage/object-storage.md>object-storage</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -86,17 +86,17 @@ The examples are organized as follows:
   <tr>
     <td>run</td>
     <td>Now as you move on to the run, you're ready to start visualizing what your application will look like in OCI and designing your Architecture. You can also think through what your operating model will look like.</td>
-    <td><a href=./examples/run/backup-restore/README.md>backup-restore</td>
-    <td><a href=./examples/run/glusterfs/README.md>glusterfs</td>
-    <td><a href=./examples/run/grafana/Readme.md>grafana</td>
-    <td><a href=./examples/run/start-stop/README.md>start-stop</td>
-    <td><a href=./examples/run/asg/README.md>asg</td>
-    <td><a href=./examples/run/remote-peering/README.md>remote-peering</td>
-    <td><a href=./examples/run/kms/README.md>kms</td>
-    <td><a href=./examples/run/waas/README.md>waas</td>
+    <td><a href=./examples/run/backup-restore/backup-restore.md>backup-restore</td>
+    <td><a href=./examples/run/glusterfs/glusterfs.md>glusterfs</td>
+    <td><a href=./examples/run/grafana/grafana.md>grafana</td>
+    <td><a href=./examples/run/start-stop/start-stop.md>start-stop</td>
+    <td><a href=./examples/run/asg/asg.md>asg</td>
+    <td><a href=./examples/run/remote-peering/remote-peering.md>remote-peering</td>
+    <td><a href=./examples/run/kms/kms.md>kms</td>
+    <td><a href=./examples/run/waas/waas.md>waas</td>
   </tr>
   <tr>
-    <td><a href=./examples/network_architectures/README.md>network architectures</td>
+    <td><a href=./examples/network_architectures/network-architectures.md>network architectures</td>
     <td>Contains network architecture examples</td>
     <td>-</td>
     <td>-</td>
