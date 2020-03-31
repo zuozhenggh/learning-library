@@ -24,3 +24,5 @@ Before starting with the frameworks, you will need to:
 
 There is also a partner image in OCI (Oracle Cloud Developer Image), that will have the prerequisites already installed (you will still need to gather your tenancy details).
 For more details on how to run the different components, click on the title.
+
+### [Click for Thunder Workshop](https://oracle.github.io/learning-library/solutions-library/infrastructure-automation/thunder/workshop/index.html)

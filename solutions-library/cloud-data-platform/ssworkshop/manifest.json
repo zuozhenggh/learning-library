@@ -1,52 +1,44 @@
 {
     "tutorials": [
-        {         
-            "title": "Introduction and Overview",
-            "description": "Introduction to Multitenant Workshop",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
+        {            
+            "title": "Workshop Introduction",
+            "publisheddate": "02/24/2020",
             "filename": "../intro/intro.md"
         },
-        {         
-            "title": "Lab: Generate SSH Key",
-            "description": "Generate SSH Key",
-            "partnumber": "Ennnnn_01",
+        {
+            "title": "Lab 1: Cloud Login",
             "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/common-labs/generate-ssh-key/generate-ssh-key.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-ssworkshop.md"
         },
-        {         
-            "title": "Lab: Login to Oracle Cloud",
-            "description": "Login to Oracle Cloud",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/common-labs/cloud-login/cloud-login-ssworkshop.md"
+        {            
+            "title": "Lab 2: Autonomous Data Warehouse (ADW) and Application Express (APEX)",
+            "publisheddate": "02/24/2020",
+            "filename": "../apex-app-on-adb/apex-app-on-adb.md"
         },
-        {         
-            "title": "Lab: Workshop Setup",
-            "description": "Setup Multitenant Workshop in Self Service Workshop",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
-            "filename": "./../setup/ssworkshop-setup.md"
+        {            
+            "title": "Lab 3: Use Oracle Machine Learning (OML) to Run a Machine Learning Model and SQL Developer to Grant User Privileges",
+            "publisheddate": "02/24/2020",
+            "filename": "../Lab200/LabGuide200.md"
         },
-        {         
-            "title": "Lab: Multitenant Basics",
-            "description": "Clone, Plug and Drop Pluggable Databases",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
-            "filename": "./../clone-plug-drop/clone-plug-drop.md"
+        {            
+            "title": "Lab 4: Enabling Oracle Restful Data Services (ORDS) with APEX to Call and Create APIs",
+            "publisheddate": "02/24/2020",
+            "filename": "../Lab300/LabGuide300.md"
         },
-        {         
-            "title": "Lab: Application Containers",
-            "description": "Using Application Containers with Multitenant",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
-            "filename": "./../app-containers/app-containers.md"
+        {            
+            "title": "Lab 5: Getting Started: Oracle Analytics Cloud (OAC)",
+            "publisheddate": "02/24/2020",
+            "filename": "../Lab400/LabGuide400.md"
+        },
+        {            
+            "title": "Lab 6: Visualizations in Oracle Analytics Cloud (OAC)",
+            "publisheddate": "02/24/2020",
+            "filename": "../Lab500/LabGuide500.md"
+        },
+        {
+            "title": "Lab 7: Implementing APIs into Oracle Digital Assistant (ODA)",
+            "publisheddate": "02/24/2020",
+            "filename": "../Lab600/LabGuide600.md"
         }
-    ]
+     ]
 }
