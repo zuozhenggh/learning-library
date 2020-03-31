@@ -40,15 +40,6 @@
             "contentid": "12nnnn",
             "filename": "../intro/crawl-walk.md"
         },
-        {
-            "title": "Lab 4A: IAM[Optional]",
-            "description": "IAM",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/01/2020",
-            "contentid": "12nnnn",
-            "filename": "../examples/crawl/iam/iam.md",
-            "optional": "yes"
-        },
         {         
             "title": "Lab 5: Free Tier",
             "description": "Free Tier",
