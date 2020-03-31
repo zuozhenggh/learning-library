@@ -9,9 +9,6 @@
 
 This lab walks you through the steps on how you can use the Oracle Analytics Cloud to visualize entities from a database such as the results of the model created in OML.
 
-
-**_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
-
 ### Objectives
 -   Learn how to visualize entities from a database in Oracle Analytics Cloud such as an Oracle Machine Learning generated model.
 

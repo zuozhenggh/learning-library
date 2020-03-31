@@ -18,9 +18,6 @@ Here is an example of that Cloud Data Platform Architecture which can be extende
 
 **Note**: Additionally, as much as possible, do not stray away from the naming conventions used for resources in this worshop. You may run into errors if you do.
 
-
-**_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
-
 ### Objectives
 - Provision an Autonomous Data Warehouse (ADW) Instance
 - Build an Oracle Application Express (APEX) App
@@ -34,16 +31,12 @@ Here is an example of that Cloud Data Platform Architecture which can be extende
 - A cloud tenancy where you have the resources available to provision an ADW instance with 2 OCPUs, an OAC instance with 2 OCPUs, and an ODA instance.
 - Oracle Cloud Infrastructure supports the following browsers and versions: Google Chrome 69 or later, Safari 12.1 or later, Firefox 62 or later.
 
-## Get an Oracle Cloud Trial Account for Free!
-If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
-- $300 of free credits good for up to 3500 hours of Oracle Cloud usage
-- Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
-- Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
+Please proceed to the next lab (right pane).
 
-Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
+## Acknowledgements
 
-## Navigate to Lab 050: Login to Oracle Cloud
+- **Author** - Author, Title
+- **Last Updated By/Date** - Jess Rein, Title, March 2020
 
--   You can always see a list of Lab Guides by clicking on the top right hamburger menu. A sidebar on the right of your browser window will come up. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  
 
--   **You're now ready to continue with Lab 050!**
