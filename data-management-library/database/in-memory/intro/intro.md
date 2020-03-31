@@ -34,6 +34,8 @@ Database In-Memory Channel
 Oracle Database Product Management Videos on In-Memory
 <a href="https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ/search?query=in-memory">![](./images/youtube.png " ") </a>
 
+Please proceed to the next lab.
+
 ## Acknowledgements
 
 - **Authors/Contributors** - Andy Rivenes, Senior Principal Product Manager, In-Memory
