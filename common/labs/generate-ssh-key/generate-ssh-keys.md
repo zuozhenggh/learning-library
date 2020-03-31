@@ -26,12 +26,13 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     ![](./images/cloudshell-ssh-keygen.png " ") 
     ![](./images/cloudshell-ssh-keygen-2.png " ") 
 
-3.  Examine the two files that you just created
+3.  Examine the two files that you just created.
     ````
     ls
     ````
     ![](./images/examine-cloudshell-keys.png " ") 
 
+4.  When pasting the key into the compute instance in future labs, make sure that you remove any hard returns that may have been added when copying.  *The *.pub key should be one line.*
 
 ## Option 2:  MacOS
 

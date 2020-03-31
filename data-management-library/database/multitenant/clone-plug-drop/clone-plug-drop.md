@@ -787,3 +787,5 @@ Now you've had a chance to try out the Multitenant option. You were able to crea
 - **Author** - Patrick Wheeler, VP, Multitenant Product Management
 - **Adapted to Cloud by** -  David Start, OSPA
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
