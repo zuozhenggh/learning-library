@@ -75,7 +75,7 @@ Some of these independent examples will have more than one external variable, bu
 
 ### Crawl 
 
-Crawl consists of different components. In order to access the labs you can [click here](https://oracle.github.io/learning-library/solutions-library/infrastructure-automation/thunder/crawl/crawl-workshop/index.html?lab=lab-1-crawl-intro)
+Crawl consists of different components. In order to access the labs you can [click here](https://oracle.github.io/learning-library/solutions-library/infrastructure-automation/thunder/examples/crawl/crawl-workshop/index.html?lab=lab-1-crawl-intro)
 The available components in crawl are:
 - IAM
 - Network
@@ -85,7 +85,7 @@ The available components in crawl are:
 
 ### Walk
 
-Walk consists of different components. In order to access the labs you can [click here](https://oracle.github.io/learning-library/solutions-library/infrastructure-automation/thunder/walk/walk-workshop/index.html?lab=lab-1-walk-intro)
+Walk consists of different components. In order to access the labs you can [click here](https://oracle.github.io/learning-library/solutions-library/infrastructure-automation/thunder/examples/walk/walk-workshop/index.html?lab=lab-1-walk-intro)
 
 
 The available components in walk are:
