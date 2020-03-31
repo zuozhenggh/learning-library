@@ -16,7 +16,7 @@ You will take on 2 Personas during the workshop. The **Data Scientist Persona** 
 
 Here is an example of that Cloud Data Platform Architecture which can be extended with further Oracle services such as federation through Identity Cloud Service (IDCS) and Oracle Integration Cloud (OIC):
 
-![](./LabOverview/images/cloud-data-construction-arch.jpg " ")
+![](./images/cloud-data-construction-arch.jpg)
 
 ### Objectives
 - Provision an Autonomous Data Warehouse (ADW) Instance
