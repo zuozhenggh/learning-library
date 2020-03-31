@@ -3,20 +3,34 @@
 ## Introduction
 This lab will show you how to setup your environment using Oracle Resource Manager.  
 
+### Objectives
+
+-   Setup a compute instance using the DB19c Marketplace image
+-   Install the SSB schema needed for future In-Memory labs
+-   Use Terraform and Resource Manager to complete the setup
+
+### Required Artifacts
+
+The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a FreeTier account, or a training account whose details were given to you by an Oracle instructor.
+
+### Lab Prerequisites
+
+This lab assumes you have already completed the Login to Oracle Cloud lab.  
+
 ## Step 1: Login and Create Stack using Resource Manager
 
 To learn more about OCI Resource Manager, take a look at the video below.
 
 [](youtube:udJdVCz5HYs)
 
-You will be using Terraform to create your database environment.
+You will be using Terraform zipped into a Resource Manager zipfile to create your database environment.
 
-1.  Click on the link below to download the zip file you need to build your enviornment.  
+1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
     - [db19c-terraform.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/poImQ8CxHXLJ_ejOQ0GbO9kZyL6gwR1BV6WRS1Snz8M/n/c4u03/b/labfiles/o/db19c-terraform.zip) - Packaged terraform instance creation script
 
 2.  Save in your downloads folder.
 
-3.  Open up the hamburger menu in the left hand corner.  Choose **Resource Manager > Stacks**.   Choose the compartment from your email, click the  **Create Stack** button
+3.  Open up the hamburger menu in the left hand corner.  Choose **Resource Manager > Stacks**.   Choose the compartment from your email, click the  **Create Stack** button.  *Note:  If you are in a workshop, double check your region to ensure you are on the assigned region*
 
     ![](./images/cloud-homepage.png " ") 
 
@@ -51,7 +65,7 @@ You will be using Terraform to create your database environment.
     
     **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
     
-    **SSH Public Key**:  Paste the public key you created in the earlier step (it should be one line)
+    **SSH Public Key**:  Paste the public key you created in the earlier step *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
 
 8. Click **Next**.
 
@@ -64,7 +78,7 @@ You will be using Terraform to create your database environment.
 
 
 ## Step 2: Terraform Plan (OPTIONAL)
-When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
+When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration.  This is an optional step in this lab.  
 
 1.  [OPTIONAL]Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
 
@@ -83,15 +97,19 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
     ![](./images/applyjob2.png " ")
 
-2.  Once this job succeeds, your environment is created!  Time to login to your instance to finish the configuration.
+2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 1 resource has been added.  Congratulations, your environment is created!  Time to login to your instance to finish the configuration.
+
+    ![](./images/applycomplete.png " ")
 
 
 
 ## Step 4: Connect to your instance
 
-Choose the environment where you created your ssh-key in the previous lab (Generate SSH Key)
+Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
 
-*NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).  Also, the ssh-daemon is disable for the first 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.*
+*NOTE 1:  If you are using your laptop to connect, you cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).  This does not apply to the Oracle Cloud Shell.*
+
+*NOTE 2: The ssh-daemon is disable for the first 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.*
 
 ### Oracle Cloud Shell
 
@@ -106,7 +124,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 5.  When prompted, answer **yes** to continue connecting.
-6.  Continue to Step 5.
+6.  Continue to Step 5 on the left hand menu.
 
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
@@ -166,6 +184,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     /home/opc/setupenv.sh
     </copy>
     ````
+    ![](./images/step5.png " ")   
 
 ## Step 6: Run the DB19c Setup Scripts
 
@@ -174,16 +193,28 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
 
     ````
+    <copy>
     nohup /home/opc/setupdb.sh &> setupdb.out&
+    </copy>
     ````
-2.  To check the status of the script above run the command below.  This script takes about 30 minutes to complete.  You can also use the unix **jobs** command to see if the script is still running.
+
+    ![](./images/runscript-1.png " ")     
+2.  To check the status of the script above run the command below.  *This script takes about 30 minutes to complete and runs in the background*.  You can also use the unix **jobs** command to see if the script is still running if you are still in the same terminal session.  Do not proceed until you see 100% complete.
 
     ````
     tail -f /home/opc/setupdb.out
     ````
 
+    ![](./images/tailscript.png " ") 
+
+    ![](./images/script.png " ") 
+
+3.  Once the script is complete, you should expect to see this message.  Note the script here took 24 minutes to complete.
+
+    ![](./images/scriptcomplete.png " ") 
+
 ## Step 7: Run the In-Memory Setup Scripts
-1.  Run this command to setup the schemas for In-Memory.   This script takes about 15 minutes to complete.
+1.  Run this command to setup the schema for In-Memory.   This script takes about 15 minutes to complete.
     ````
     <copy>
     cd /home/opc/
@@ -192,22 +223,20 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     nohup /home/opc/inmemoryscript.sh &> setupinmem.out&
     </copy>
     ````
+    ![](./images/ssbexists.png " ") 
 
-2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.
+2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expeted.  The script should finish with 1 error*
 
     ````
     tail -f /home/opc/setupinmem.out
     ````
+    ![](./images/inmemcomplete.png " ") 
 
-    ````
-    tail -f /home/opc/setupcontainers.out
-    ````
-
-Congratulations!  Now you have the environment to run the Multitenant labs.   
+You may now proceed to the next lab.  
 
 ## Acknowledgements
 
 - **Author** - Kay Malcolm, Director, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+- **Last Updated By/Date** - Kay Malcolm, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
