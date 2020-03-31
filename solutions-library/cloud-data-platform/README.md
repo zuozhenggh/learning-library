@@ -1,10 +1,19 @@
 # Oracle’s Cloud Data Platform: Autonomous-Driven & AI-Infused
 
-## Introduction
+Welcome to the workshop on Oracle's Cloud Data Platform.
 
 To execute this workshop, click on the link below.
 
 [![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/solutions-library/cloud-data-platform/freetier/index.html)
+
+### Workshop Highlights
+- Provision an Autonomous Data Warehouse (ADW) Instance
+- Build an Oracle Application Express (APEX) App
+- Create Machine Learning Models within the Autonomous Data Warehouse (ADW) Instance by using the Oracle Machine Learning Tool (OML)
+- Visualize Data and Prediction Models in Oracle Analytics Cloud (OAC)
+- Bonus: Integrate a 3rd Party Web App and Oracle Digital Assistant (ODA) Chatbot
+
+### Workshop Overview
 
 *Complete AI Portfolio:*
 Oracle offers a complete portfolio of products, services, and differentiated capabilities to power your enterprise with artificial intelligence. For business users, Oracle offers ready-to-go AI-powered cloud applications with intelligent features that drive better business outcomes. With Oracle’s ready-to-build AI platform, data scientists and application developers have a full suite of cloud services to build, deploy, and manage AI-powered solutions. With Oracle’s ready-to-work Autonomous Database, machine learning is working behind the scenes to automate security patching, backups, and optimize database query performance, which helps to eliminate human error and repetitive manual tasks so organizations can focus on higher-value activities.
@@ -18,13 +27,6 @@ Here is an example of that Cloud Data Platform Architecture which can be extende
 
 ![](./images/cloud-data-construction-arch.jpg)
 
-### Objectives
-- Provision an Autonomous Data Warehouse (ADW) Instance
-- Build an Oracle Application Express (APEX) App
-- Create Machine Learning Models within the Autonomous Data Warehouse (ADW) Instance by using the Oracle Machine Learning Tool (OML)
-- Visualize Data and Prediction Models in Oracle Analytics Cloud (OAC)
-- Bonus: Integrate a 3rd Party Web App and Oracle Digital Assistant (ODA) Chatbot
-
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
 - $300 of free credits good for up to 3500 hours of Oracle Cloud usage
@@ -33,3 +35,5 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
 
 Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
 
+### Issues?
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
