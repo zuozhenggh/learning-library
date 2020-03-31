@@ -9,9 +9,6 @@
 
 This lab walks you through the steps to make an OML user and use SQL Developer as an interface to the ADW instance for granting user privileges. Then you will use OML to run a SQL script to generate machine learning models.
 
-
-**_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
-
 ### Objectives
 -   Learn how to make an OML user
 -   Learn how to grant user privileges using SQL developer web

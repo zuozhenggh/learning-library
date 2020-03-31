@@ -9,9 +9,6 @@
 
 This lab walks you through the steps to use an existing Oracle Analytics Cloud (OAC) instance to connect to your Autonomous Data Warehouse (ADW) instance.
 
-
-**_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
-
 ### Objectives
 -   Learn how to navigate to an Oracle Analytics Cloud instance
 -   Learn how to connect the OAC instance to your ADW instance

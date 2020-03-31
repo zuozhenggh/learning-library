@@ -9,9 +9,6 @@
 
 This lab walks you through the steps to enabling Oracle Restful Data Services (ORDS) with APEX in order to call and create APIs.
 
-
-**_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
-
 ### Objectives
 -   Learn how to enable Oracle Restful Data Services (ORDS) with APEX
 -   Learn how to import SQL queries as APIs in APEX
