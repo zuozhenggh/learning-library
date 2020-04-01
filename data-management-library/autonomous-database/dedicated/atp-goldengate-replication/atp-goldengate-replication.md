@@ -153,18 +153,18 @@ Lets also assume that the schema we wish to replicate with Goldengate is the 'ap
 That is it! Your target DB is now ready.
 
 ## STEP 4: Configure Goldengate service
-By now, your Goldengate service instance must be deployed. On your OCI console navigate to *Compute* from top left menu and *choose your compartment*.
+- By now, your Goldengate service instance must be deployed. On your OCI console navigate to *Compute* from top left menu and *choose your compartment*.
 
-Click on your Goldengate compute instance to get to the details page that looks as follows.
+- Click on your Goldengate compute instance to get to the details page that looks as follows.
     ![](./images/ggcompute.png " ")
 
-Note down the public IP address of your instance. We will use this IP to ssh into the virtual machine.
+    *Note down the public IP address of your instance. We will use this IP to ssh into the virtual machine.*
 
-Before we launch the Goldengate admin console and start configuring the service, we need to provide connection information for both source and target databases.
+- Before we launch the Goldengate admin console and start configuring the service, we need to provide connection information for both source and target databases.
 
-Therefore, gather your source database connection TNS entries for both the common user and the appschema user. Remember, the CDB and PDB run different services, therefore the TNS entries differ.
+    - Therefore, gather your source database connection TNS entries for both the common user and the appschema user. Remember, the CDB and PDB run different services, therefore the TNS entries differ.
 
-A tns entry is typically found in your database's tnsnames.ora file and looks like this.
+    - A tns entry is typically found in your database's tnsnames.ora file and looks like this.
 
     ```
     <copy>
@@ -172,11 +172,11 @@ A tns entry is typically found in your database's tnsnames.ora file and looks li
     </copy>
     ```
 
-Also get your ATPD wallet zip file ready to upload / SCP to the goldengate instance. 
+- Also get your ATPD wallet zip file ready to upload / SCP to the goldengate instance. 
 
-*This file needs to go into the folder /u02/deployments/Databases/etc.*
+    *This file needs to go into the folder /u02/deployments/Databases/etc.*
 
-Remember the deployment name 'Databases' provided while provisioning the goldengate image? That is what it does. By proviing just one deployment, we can configure both source and target DB entries in one place for simplicity.
+    Remember the deployment name 'Databases' provided while provisioning the goldengate image? That is what it does. By proviing just one deployment, we can configure both source and target DB entries in one place for simplicity.
 
     ````
     <copy>
@@ -184,7 +184,7 @@ Remember the deployment name 'Databases' provided while provisioning the goldeng
     </copy>
     ````
 
-    Next, ssh into the instance and unzip the wallet.
+- Next, ssh into the instance and unzip the wallet.
 
     ```
     <copy>
@@ -192,9 +192,9 @@ Remember the deployment name 'Databases' provided while provisioning the goldeng
     $ cd /u02/deployments/Databases/etc
     $ unzip Wallet_MyATPDB.zip
     </copy>
-    ````
+    ```
 
-Edit the sqlnet.ora file and update the WALLET_LOCATION parameter to point to the wallet folder.
+- Edit the sqlnet.ora file and update the WALLET_LOCATION parameter to point to the wallet folder.
 
     ````
     <copy>
@@ -202,20 +202,20 @@ Edit the sqlnet.ora file and update the WALLET_LOCATION parameter to point to th
     </copy>
     ````
 
-Next we edit the tnsnames.ora file and add entries for the source common user and the source appschema user. This single tnsnames.ora will serve to connect to both source and target.
+- Next we edit the tnsnames.ora file and add entries for the source common user and the source appschema user. This single tnsnames.ora will serve to connect to both source and target.
 
--Open tnsnames.ora in vi and add TNS connection entries as shown in the example screen shot below. Note the 2 new TNS entries added at th bottom for the source DB in addition to the pre-existing entries for target.
+- Open tnsnames.ora in vi and add TNS connection entries as shown in the example screen shot below. Note the 2 new TNS entries added at th bottom for the source DB in addition to the pre-existing entries for target.
     ![](./images/tns-entries.png " ")
 
-Also, source DB is in a public network in this example hence hostname is the public IP address. 
+    - Also, source DB is in a public network in this example hence hostname is the public IP address. 
 
-*Note: All IP addresses in the lab guide are scrubbed for security purposes. None of the instances in the screenshots are accessible using the information provided.*
+    *Note: All IP addresses in the lab guide are scrubbed for security purposes. None of the instances in the screenshots are accessible using the information provided.*
 
 - We are now ready to access the goldengate admin console and configure our extract and replicat processes. 
 
-- The credentials to access the admin console are provided in a file called ogg-credentials.json in the home folder /home/opc
+- The credentials to access the admin console are provided in a file called ogg-credentials.json in the home folder /home/opc .
 
-Open the file and save the credentials on a notepad.
+    - Open the file and save the credentials on a notepad.
 
     ````
     <copy>
@@ -226,107 +226,103 @@ Open the file and save the credentials on a notepad.
     ````
 - Next we logon to the Goldengate admin console using credentials above.
 
-    *Open a browser and navigate to https://<ip_address_of_goldengate_image>*
+    *Open a browser and navigate to https://(ip\_address\_of\_goldengate\_image)*.
 
-If you have browser issues or get Unicode warning, try using Firefox browser. Fixing browser issues is beyond scope for this lab guide.
+    If you have browser issues or get Unicode warning, try using Firefox browser. Fixing browser issues is beyond scope for this lab guide.
     ![](./images/ogg1.png " ")
 
-Once logged on, click on the port # for Admin server to get into configurtion mode as shown below.
+- Once logged on, click on the port # for Admin server to get into configurtion mode as shown below.
     ![](./images/ogg2.png " ")
 
+    If prompted, login with the same credentials one more time.
 
-If prompted, login with the same credentials one more time.
-
-From the top left hamberger menu, select 'Configuration' as shown below:
+- From the top left hamberger menu, select 'Configuration' as shown below:
     ![](./images/ogg3.png " ")
 
-*Here we configure connectivity to our source and target databases. We will setup 3 connections - The Source DB common user, Source DB appschema user and Target DB ggadmin user.*
-
-Use the screenshots below as a guide - 
+    Here we configure connectivity to our source and target databases. We will setup 3 connections - The Source DB common user, Source DB appschema user and Target DB ggadmin user. 
     ![](./images/creds1.png " ")
 
-Add the first credential for C##user01 you created earlier in the lab in the source DB
+- Add the first credential for C##user01 you created earlier in the lab in the source DB.
     ![](./images/creds2.png " ")
 
-*Note the userid format is userid@connectString. The connect string is how it knows which database to connect to. It looks for this connect string in /u02/deployments/Databases/etc/tnsnames.ora*
+    *Note the userid format is userid@connectString. The connect string is how it knows which database to connect to. It looks for this connect string in /u02/deployments/Databases/etc/tnsnames.ora*
 
-Submit credentials and test connectivity as shown in screenshot below.
+- Submit credentials and test connectivity as shown in screenshot below.
     ![](./images/creds3.png " ")
 
-Similarly, add credentials for source DB appschema and target ATPD ggadmin schema as shown below. Note the ggadmin user connects using the same tns enty as 'admin' user.
+- Similarly, add credentials for source DB appschema and target ATPD ggadmin schema as shown below. Note the ggadmin user connects using the same tns enty as 'admin' user.
     ![](./images/creds4.png " ")
 
-Make sure you test connectivity for each credential.
+    *Make sure you test connectivity for each credential.*
 
-*Next, we create checkpoint tables in source and target databases.* Checkpoint tables keep track of changes in the database. We need one in the appschema in source and another in the ggadmin schema in target.
+- Next, we **create checkpoint tables** in source and target databases. Checkpoint tables keep track of changes in the database. We need one in the appschema in source and another in the ggadmin schema in target.
 
-Lets start with appschema in source. Connect and click + sign to add a checkpoint table as shown below.
-    ![](./images/chkpt1.png " ")
-    ![](./images/chkpt2.png " ")
+    - Lets start with appschema in source. Connect and click + sign to add a checkpoint table as shown below.
+        ![](./images/chkpt1.png " ")
+        ![](./images/chkpt2.png " ")
 
-We also specify the schema we want to replicate here. In the Transaction Information section below checkpoint, add the schema first by clicking the + sign and hit Submit.
-    ![](./images/chkpt3.png " ")
+    - We also specify the schema we want to replicate here. In the Transaction Information section below checkpoint, add the schema first by clicking the + sign and hit Submit.
+        ![](./images/chkpt3.png " ")
 
-Now when you enter the schema name and search for it, it shows up as shown below with 3 tables. 2 checkpoint tables and one 'comments' table we created earlier.
-    ![](./images/chkpt4.png " ")
-
-
-*Next, we add a checkpoint table to the target instance and also set the heartbeat.*
-
-Connect to the target DB from the goldengate admin console just like you did for the source DB. Lets also add a checkpoint table here.
-    ![](./images/chkpt5.png " ")
-    ![](./images/chkpt6.png " ")
-
-Scroll down and set the hearbeat for target. Use default configuration for the purpose of this lab.
-    ![](./images/heartbeat.png " ")
-
-*As a final step, we now create an 'extract' and a 'replicate' process to conduct the replication from source to target.*
-
-- Navigate back to the Goldengate Admin server dashboard so you can see both the extract and replicat setup as shown below.
-    ![](./images/extract1.png " ")
+    - Now when you enter the schema name and search for it, it shows up as shown below with 3 tables. 2 checkpoint tables and one 'comments' table we created earlier.
+        ![](./images/chkpt4.png " ")
 
 
-Choose *Integrated Extract* on the next screen and hit next.
+- Next, we **add a checkpoint table** to the target instance and also set the heartbeat.
 
-Entries on the following screen may be entered as follows,
-    ![](./images/extract2.png " ")
+    - Connect to the target DB from the goldengate admin console just like you did for the source DB. Lets also add a checkpoint table here.
+        ![](./images/chkpt5.png " ")
+        ![](./images/chkpt6.png " ")
 
-    *Process Name:* Provide any name of choice
+    - Scroll down and set the hearbeat for target. Use default configuration for the purpose of this lab.
+        ![](./images/heartbeat.png " ")
 
-    *Credential Domain:* Pick OracleGoldenGate from drop down
+- As a final step, we now **create an 'extract' and a 'replicate' process** to conduct the replication from source to target.
 
-    *Credential Alias:*  Pick the common user alias for source DB. In this lab we created sourceCommonUser alias
+    - Navigate back to the Goldengate Admin server dashboard so you can see both the extract and replicat setup as shown below.
+        ![](./images/extract1.png " ")
 
-    *Trail Name:* Any 2 character name
+    - Choose *Integrated Extract* on the next screen and hit next.
 
-Scroll down and click in the text box Register to PDBs. PDB1 should popup as shown.
-    ![](./images/extract3.png " ")
+    - Entries on the following screen may be entered as follows,
+        ![](./images/extract2.png " ")
 
-*If you do not see Register to PDBs text box, make sure you have picked the 'Common User' alias and provided all mandatory entries.*
+        *Process Name:* Provide any name of choice
 
-Click next. As a final step, add this entry at the end of your parameter file as shown below.
+        *Credential Domain:* Pick OracleGoldenGate from drop down
 
-    ````
-    <copy>
-    extract ext1
-    useridalias sourceCommonUser domain OracleGoldenGate
-    exttrail rt
-    table pdb1.appschema.*;
-    </copy>
-    ````
+        *Credential Alias:*  Pick the common user alias for source DB. In this lab we created sourceCommonUser alias
 
-    ![](./images/extract4.png " ")
+        *Trail Name:* Any 2 character name
 
-This tells Goldengate to capture changes on all tables in pdb1.appschema.
+    - Scroll down and click in the text box Register to PDBs. PDB1 should popup as shown.
+        ![](./images/extract3.png " ")
 
-Hit 'Create and Run'. If all goes well you should now see the extract running on source.
-    ![](./images/extract5.png " ")
+        *If you do not see Register to PDBs text box, make sure you have picked the 'Common User' alias and provided all mandatory entries.*
+
+    - Click next. As a final step, add this entry at the end of your parameter file as shown below.
+
+        ````
+        <copy>
+        extract ext1
+        useridalias sourceCommonUser domain OracleGoldenGate
+        exttrail rt
+        table pdb1.appschema.*;
+        </copy>
+        ````
+
+        ![](./images/extract4.png " ")
+
+        This tells Goldengate to capture changes on all tables in pdb1.appschema.
+
+    - Hit 'Create and Run'. If all goes well you should now see the extract running on source.
+        ![](./images/extract5.png " ")
 
 
-Next, we configure a replicat on the target. On the same screen hit the *+* sign on the *Replicats* side to start configuring one.
+- Next, we configure a replicat on the target. On the same screen hit the *+* sign on the *Replicats* side to start configuring one.
 
-Pick *Non-Integrated Replicat*
-    ![](./images/rep1.png " ")
+    - Pick *Non-Integrated Replicat*
+        ![](./images/rep1.png " ")
 
 - Fill out the mandatory items in *Basic Information* on the next screen as follows. You may leave the rest at default values.
 
@@ -346,7 +342,8 @@ Pick *Non-Integrated Replicat*
     ![](./images/rep3.png " ")
 
 - On the last and final screen (phew!) edit the parameter file to REPLACE the line mapping the source and target schemas as show below. 
-    *Note: Pls remove the original line MAP *.*, TARGET *.*;*
+  
+    *Note: Please remove the original line MAP \*.\*, TARGET \*.\*;*
 
     ![](./images/rep4.png " ")
 
@@ -355,7 +352,7 @@ Pick *Non-Integrated Replicat*
 
 Hurray! You have completed the replication setup. To test, simply connect to your source database, insert and commit some rows. Then check your corresponding target table and in a few secs you should see the data appear.
 
-A sample Insert script for the Comments table is provided below.
+- A sample Insert script for the Comments table is provided below.
 
     ````
     <copy>
