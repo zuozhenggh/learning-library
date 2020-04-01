@@ -52,7 +52,7 @@ classroom and supporting lab files.
 ## Video
 
 
-[![Creating a Visual Builder Cloud Service Instance](./media/playback_creating_instance.png)](https://otube.oracle.com/media/Oracle+Sales+and+Partner+Academy+-+AppDev+Virtual+Workshop/1_xryvhe4k)
+[![Creating a Visual Builder Cloud Service Instance](./media/playback_creating_instance.png)](https://otube.oracle.com/media/Oracle+Sales+and+Partner+Academy+-+AppDev+Virtual+Workshop/1_xryvhe4k){:target="_blank"}
 
 ## Guide
 
