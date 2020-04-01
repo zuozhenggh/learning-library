@@ -128,12 +128,6 @@ Select “Open Service Console” from the menu.
 ![](./media/image_a_11.png)
 
 
-
-If Visual Builder instances already exist they will be shown in a table.
-
-![](./media/image_a_12.png)
-
-
 5.  Visual Builder provides a “Quick Starts” capability to build an
     instance complete with supporting database and object storage. Click
     the “Quick Starts” button to get started it is located in the
