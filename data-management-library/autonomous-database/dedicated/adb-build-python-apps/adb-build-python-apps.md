@@ -28,7 +28,7 @@ As an application developer,
 - Login to your Oracle Cloud Infrastructure account and select *Compute* —> *Instances* from top left menu.
     ![](./images/Compute1.png " ")
 
-- Select the right Oracle Developer Cloud image you created in [Lab5](?lab=lab-5-configuring-development-system).
+- Select the right Oracle Developer Cloud image you created in [Lab 5](?lab=lab-5-configuring-development-system).
 
 - Copy the public IP address of the instance in a note pad. 
     ![](./images/Compute2.png " ")
