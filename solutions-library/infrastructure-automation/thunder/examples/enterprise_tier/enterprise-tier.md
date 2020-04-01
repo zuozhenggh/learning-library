@@ -9,7 +9,7 @@ Don't forget to populate the provider with the details of your tenancy as specif
 
 ## Running the code
 
-In order to be able to spin up the always free resources, you will have to navigate to **thunder -> examples -> enterprise_tier**.
+In order to be able to spin up the enterprise tier resources, you will have to navigate to **thunder -> examples -> enterprise_tier**.
 
 ```
 # Run init to get terraform modules
