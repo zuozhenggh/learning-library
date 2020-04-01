@@ -17,5 +17,3 @@ Solutions in this framework are split between multiple examples containing both 
 **Authors/Contributors** - Flavius Dinu, Ionut Sturzu, Ionut Irimia, Cristian Cozma, Marius Ciotir, Sorin Ionescu, Laura Paraschiv, Travis Mitchell, Thomas Liakos 
 
 **Last Updated By/Date** - Flavius Dinu, April 2020
-
-**Workshop Expiration Date** - April 30, 2021

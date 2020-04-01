@@ -3,8 +3,6 @@
 |  | |
 | ------------- | ------------- |
 | ![Lightning Free](./img/lightning-logo.png) | The lightning CAF utilizes Terraform 0.12 and Resource Manager to launch functional always-free or enterprise infrastructure in a few minutes.    |
-| 
-
 
 [Download **Always Free Tier** Resource Manager Stack zip file](./resource-manager-stacks/lightning-free-tier-1.0.3.zip)
 
@@ -74,6 +72,9 @@ Now as you move on to the run, you're ready to start visualizing what your appli
 - Scheduling the start and stop of resources
 - Automating activities on the OS
 
+
 ### Topology and Components
 
-Descriptions of the components included in lightning can be found [here.](./components/README.md)
+Descriptions of the components included in lightning can be found:
+- [If you are viewing this as a lab](?lab=components)
+- [If you are viewing this on github](https://github.com/flavius-dinu/learning-library/blob/master/solutions-library/infrastructure-automation/lightning/components/README.md)
