@@ -3,6 +3,13 @@
   <img width="650" height="300" src="./media/banner.png">
 </p>
 
+
+
+https://otube.oracle.com/media/1_47ujeur5
+
+[![OTube](./media/cloudoracle.png)](https://otube.oracle.com/media/1_47ujeur5)
+
+
 # Getting Started
 
 ## Lab Purpose and Rules
