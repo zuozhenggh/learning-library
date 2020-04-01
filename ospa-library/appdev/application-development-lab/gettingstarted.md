@@ -54,7 +54,7 @@ classroom and supporting lab files.
 
 [![Creating a Visual Builder Cloud Service Instance](./media/playback_creating_instance.png)](https://otube.oracle.com/media/Oracle+Sales+and+Partner+Academy+-+AppDev+Virtual+Workshop/1_xryvhe4k)
 
-*Note: By clicking the video, this will redirects you to OTube. Remember to go back to this page to continue with the Lab*
+*Note: By clicking the video, this will redirects you to OTube. Remember to get back to this page to continue with the Lab*
 
 
 ## Guide
