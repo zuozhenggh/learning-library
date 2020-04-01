@@ -1,0 +1,1 @@
+This image shows a portion of the Create Instance window. At the top of the image are two tabs: Quick Start Services and All Services. Quick Start Services is selected. Below the tabs are three rows: Compute, Java and Container. On the right side of each row is a Create button. The Create button in the Java row is highlighted.

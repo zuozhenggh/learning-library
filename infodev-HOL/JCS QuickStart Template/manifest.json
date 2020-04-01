@@ -1,0 +1,12 @@
+{
+    "tutorials": [
+        {
+            "title": "Getting Started with Oracle Java Cloud Service by Using a QuickStart Template",
+            "description": "Sample tutorial in Markdown (based on OBE version)",
+            "partnumber": "Q12345_01",
+            "publisheddate": "03/11/2020",
+            "contentid": "123456",
+            "filename": "content.md"
+        }
+    ]
+}

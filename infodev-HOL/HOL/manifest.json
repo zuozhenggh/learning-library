@@ -1,0 +1,44 @@
+{
+    "tutorials": [
+        {
+            "title": "About this Tutorial",
+            "description": "This tutorial walks you through the steps of creating a hands on lab(HOL).",
+            "partnumber": "E12345_01",
+            "publisheddate": "02/24/2020",
+            "contentid": "123456",
+            "filename": "about-this-lab/content.md"
+        },
+        {
+            "title": "Lab 01: Getting Started with GitHub",
+            "description": "This tutorial walks you through the steps of setting up a GitHub development environment.",
+            "partnumber": "E12345_01",
+            "publisheddate": "02/24/2020",
+            "contentid": "123456",
+            "filename": "getting-started-with-github/content.md"
+        },
+        {
+            "title": "Lab 02: Creating the Structure of Markdown Labs",
+            "description": "This tutorial walks you through the steps of creating project folders and files.",
+            "partnumber": "E12345_01",
+            "publisheddate": "02/24/2020",
+            "contentid": "123456",
+            "filename": "structure-of-markdown-labs/content.md"
+        },
+        {
+            "title": "Lab 03: Using Markdown Templates",
+            "description": "This tutorial walks you through the steps of using the content.md template.",
+            "partnumber": "E12345_01",
+            "publisheddate": "02/24/2020",
+            "contentid": "123456",
+            "filename": "using-markdown-templates/content.md"
+        },
+        {
+            "title": "Lab 04: Creating Learning Paths",
+            "description": "This tutorial walks you through the steps of combining multiple tutorials to form a learning path.",
+            "partnumber": "E12345_01",
+            "publisheddate": "02/24/2020",
+            "contentid": "123456",
+            "filename": "learning-paths/content.md"
+        }
+    ]
+}

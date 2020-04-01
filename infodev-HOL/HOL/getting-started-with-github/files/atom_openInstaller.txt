@@ -1,0 +1,1 @@
+Open Installer button in Atom

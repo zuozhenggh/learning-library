@@ -1,0 +1,1 @@
+This image shows a portion of the Stack Details page. To the right of the service icon is the name MyJCS. Below the service name is information about the service, including Type and Version. The Type is Oracle Java Cloud Service.

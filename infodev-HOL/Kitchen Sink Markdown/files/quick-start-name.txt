@@ -1,0 +1,1 @@
+This image shows a portion of the QuickStarts page. Below the title QuickStarts is a text field labeled Instance Name. The value of this text field is MyJCS.

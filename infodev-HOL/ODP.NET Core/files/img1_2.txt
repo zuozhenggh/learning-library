@@ -1,0 +1,5 @@
+Description of Second Image
+
+This image shows a Visual Studio GUI. Click on the File menu, then select New and then Select Project.
+
+There is another highlighted link on the Start Page of Visual Studio which reads Create New Project. You can use this link to create a new project.

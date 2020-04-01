@@ -1,0 +1,1 @@
+This image shows a portion of the Dashboard. Below the Welcome heading are two boxes: Guided Journey and Create Instance. The Create Instance box is highlighted.
