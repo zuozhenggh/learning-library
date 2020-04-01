@@ -1,0 +1,8 @@
+{
+    "tutorials": [
+          {
+            "title": "Create an Oracle Cloud Infrastructure VM Database",
+            "filename": "create-oci-vm-db.md"
+        }
+    ]
+}

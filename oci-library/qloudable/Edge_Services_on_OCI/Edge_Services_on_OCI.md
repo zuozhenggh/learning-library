@@ -207,7 +207,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 13.  ssh to **first** compute instance. Enter command:
             
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 **NOTE:** User name is ‘opc’.

@@ -131,9 +131,11 @@ Compute instance and id_rsa to connect via SSH into compute instance.
 cd /C/Users/PhotonUser/.ssh (No Spaces) 
 ```
 and then 
+
 ```
 ls 
 ```
+
 to verify the two files exist. 
 
 5. In git-bash Enter command  
@@ -185,7 +187,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 13.  ssh to **first** compute instance. Enter command:
             
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 **NOTE:** User name is ‘opc’.
@@ -210,6 +212,7 @@ ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 sudo yum -y install httpd (Install Apache HTTP Server)
 ```
+
 ```
 sudo firewall-cmd --permanent  --add-port=80/tcp 
 ```
@@ -242,6 +245,7 @@ echo 'WebServer1' >>/var/www/html/index.html
 ```
 sudo yum -y install httpd (Install Apache HTTP Server)
 ```
+
 ```
 sudo firewall-cmd --permanent  --add-port=80/tcp 
 ```
@@ -428,7 +432,7 @@ Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure 
 
 11. Click **Add Egress Rule**.
 
-12. Click **Security Lists**, and locate the Default Security List of the VCN Click **Add Egress Rule**.  Click **+Additional Egress Rule** and Add below 2 Rules for Ingress; Ensure to leave STATELESS flag un-checked.:
+12. Click **Security Lists**, and locate the Default Security List of the VCN Click **Add Ingress Rule**.  Click **+Additional Ingress Rule** and Add below 2 Rules for Ingress; Ensure to leave STATELESS flag un-checked.:
 
 **First Rule**
 
@@ -439,17 +443,16 @@ Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure 
 - Source Port Range: All
 - Destination Port Range: 80
 
-13. Click **+Additional Ingress Rule** and enter the following Egress rule; Ensure to leave STATELESS flag un-checked
+13. Click **+Additional Ingress Rule** and enter the following Ingress rule; Ensure to leave STATELESS flag un-checked
 
 **Second Rule**
-
 
 - Source Type: CIDR
 - Source CIDR: 10.0.5.0/24
 - IP Protocol: Select TCP
 - Destination Port Range: 80
 
-14. Click **Add Egress Rule**.
+14. Click **Add Ingress Rule**.
 
 We now have the set-up configured with 2 Compute instances running http server with a index.html file, Load Balancer with all relevant policies and components.
 

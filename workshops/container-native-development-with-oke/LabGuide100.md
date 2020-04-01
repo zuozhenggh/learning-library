@@ -41,7 +41,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
 - From any browser, go to:
 
-    [https://github.com/derekoneil/twitter-feed-oke](https://github.com/derekoneil/twitter-feed-oke)
+    [https://github.com/chipbaber/twitter-feed-oke](https://github.com/chipbaber/twitter-feed-oke)
 
 - Click **Fork** in the upper right hand corner of the browser. **Sign in** if prompted.
 

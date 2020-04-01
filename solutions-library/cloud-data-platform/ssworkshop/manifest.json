@@ -1,0 +1,44 @@
+{
+    "tutorials": [
+        {            
+            "title": "Workshop Introduction",
+            "publisheddate": "02/24/2020",
+            "filename": "../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Cloud Login",
+            "publisheddate": "03/10/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-ssworkshop.md"
+        },
+        {            
+            "title": "Lab 2: Autonomous Data Warehouse (ADW) and Application Express (APEX)",
+            "publisheddate": "02/24/2020",
+            "filename": "../apex-app-on-adb/apex-app-on-adb.md"
+        },
+        {            
+            "title": "Lab 3: Use Oracle Machine Learning (OML) to Run a Machine Learning Model and SQL Developer to Grant User Privileges",
+            "publisheddate": "02/24/2020",
+            "filename": "../Lab200/LabGuide200.md"
+        },
+        {            
+            "title": "Lab 4: Enabling Oracle Restful Data Services (ORDS) with APEX to Call and Create APIs",
+            "publisheddate": "02/24/2020",
+            "filename": "../Lab300/LabGuide300.md"
+        },
+        {            
+            "title": "Lab 5: Getting Started: Oracle Analytics Cloud (OAC)",
+            "publisheddate": "02/24/2020",
+            "filename": "../Lab400/LabGuide400.md"
+        },
+        {            
+            "title": "Lab 6: Visualizations in Oracle Analytics Cloud (OAC)",
+            "publisheddate": "02/24/2020",
+            "filename": "../Lab500/LabGuide500.md"
+        },
+        {
+            "title": "Lab 7: Implementing APIs into Oracle Digital Assistant (ODA)",
+            "publisheddate": "02/24/2020",
+            "filename": "../Lab600/LabGuide600.md"
+        }
+     ]
+}
