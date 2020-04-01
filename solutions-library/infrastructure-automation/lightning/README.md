@@ -75,4 +75,6 @@ Now as you move on to the run, you're ready to start visualizing what your appli
 
 ### Topology and Components
 
-Descriptions of the components included in lightning can be found [here.](?lab=components)
+Descriptions of the components included in lightning can be found:
+- [If you are viewing this as a lab](?lab=components)
+- [If you are viewing this on github](https://github.com/flavius-dinu/learning-library/blob/master/solutions-library/infrastructure-automation/lightning/components/README.md)
