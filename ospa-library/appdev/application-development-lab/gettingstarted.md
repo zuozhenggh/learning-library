@@ -5,11 +5,6 @@
 
 
 
-https://otube.oracle.com/media/1_47ujeur5
-
-[![OTube](./media/cloudoracle.png)](https://otube.oracle.com/media/1_47ujeur5)
-
-
 # Getting Started
 
 ## Lab Purpose and Rules
@@ -46,11 +41,20 @@ these lab exercises.
 
 # Create VBCS Instance
 
+
 As part of the lab, we expect learns to create the VBCS instance before the session delivery.
 If you are creating a new instance either for the lab purposes or a customer demonstration, please follow the next steps; the process is simple but require several minutes to complete.
 
 In this lab you will make sure you can access the VBCS instance for your
 classroom and supporting lab files.
+
+
+## Video
+
+
+[![Creating a Visual Builder Cloud Service Instance](./media/playback_creating_instance.png)](https://otube.oracle.com/media/Oracle+Sales+and+Partner+Academy+-+AppDev+Virtual+Workshop/1_xryvhe4k)
+
+## Guide
 
 First, go to cloud.oracle.com, click on **View Accounts** and select **Sign in to cloud**
 
@@ -83,34 +87,34 @@ Once in the main dashboard, open the **General Menu** located at the top left ha
 
 ![](./media/image_a_3.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.1.1 – Visual Builder service
+
 
 One method is to click on the box’s “Visual Builder” text to display an
 overview page.
 
 ![](./media/image_a_7.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.1.2 – Visual Builder Overview
+
 
 From the overview page, click the “Open Service Console” button to
 continue.
 
 ![](./media/image_a_8.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.1.3 – Open Service Console button
+
 
 Another method is to click the **General Menu** icon
 ![](./media/image_a_9.png) in the lower-right corner of the  “Visual Builder” service box to display a menu.
 
 ![](./media/image_a_3.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.2.1 – Visual Builder service box
+
 
 Select “Open Service Console” from the menu.
 
 ![](./media/image_a_10.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.2.2 – Visual Builder service menu
+
 
 4.  If you have not created any services the Service Console prompts you
     to begin the process.
@@ -120,15 +124,12 @@ Select “Open Service Console” from the menu.
 
 ![](./media/image_a_11.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.4.1 – Create Instance invitation
+
 
 If Visual Builder instances already exist they will be shown in a table.
 
 ![](./media/image_a_12.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.4.2 – VBCS existing instance(s)
-
-**DO NOT** CLICK “CREATE INSTANCE” at this time, we will be using “Quick Starts” (see step 5).
 
 5.  Visual Builder provides a “Quick Starts” capability to build an
     instance complete with supporting database and object storage. Click
@@ -138,24 +139,26 @@ If Visual Builder instances already exist they will be shown in a table.
 
 ![](./media/image_a_13.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.5.1 – Quick Starts button When presented with the “QuickStarts” panel; provide an instance name and click the “Start” button to begin the process.
- 
-![](./media/image_a_14.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.5.2 – QuickStarts page Creation should take place in less than five minutes.
+6. Click on **Custom**
  
-![](./media/image_a_15.png) 
+![](./media/vbcs_instance_custom.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.5.3 – Create button
- 
+7. Porivde an instance name, description, and region. Once complete, click next and confirm. The instance creation can take up to 10 min.
+
+![](./media/vbcs_instance_data.png)
+
+
+![](./media/vbcs_instance_creation.png)
+
 That’s it, you’ve created an instance that can support many VBCS applications and user.
 
 
 NOTE:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If others will be sharing your VBCS instance you will need to use Oracle Identity Cloud Service (IDCS)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to make sure they have 'ServiceDeveloper' (Visual Builder Administrator) role for your instance if they are developers or 'ServiceAdministrator' (Visual Builder Administrator) role if they need to administer other's applications.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See Oracle Documentation for more information.
+If others will be sharing your VBCS instance you will need to use Oracle Identity Cloud Service (IDCS)
+to make sure they have `ServiceDeveloper` (Visual Builder Administrator) role for your instance if they are developers or 'ServiceAdministrator' (Visual Builder Administrator) role if they need to administer other's applications.
+See Oracle Documentation for more information.
 
 
 [Return to Main Page](README.md)
