@@ -116,7 +116,7 @@
             "title": "Lab 14: Oracle Goldengate Replication",
             "description": "Live migration to ATP-Dedicated using Oracle Goldengate replication",
             "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
+            "publisheddate": "03/31/2020",
             "contentid": "12nnnn",
             "filename": "./../atp-goldengate-replication/atp-goldengate-replication.md"
         },
@@ -124,49 +124,57 @@
             "title": "Lab 15: Build Always On Applications",
             "description": "Building Always-On applications on the autonomous database",
             "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
+            "publisheddate": "03/31/2020",
             "contentid": "12nnnn",
-            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+            "filename": "./../adb-build-always-on-apps/adb-build-always-on-apps.md"
         },
         {         
             "title": "Lab 16: Managing Database Performance",
             "description": "Managing database performance with Performance Hub",
             "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
+            "publisheddate": "04/01/2020",
             "contentid": "12nnnn",
-            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+            "filename": "./../adb-performance-hub/adb-performance-hub.md"
         },
         {         
             "title": "Lab 17: Zero Downtime Scaling",
             "description": "Zero downtime scaling",
             "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
+            "publisheddate": "04/01/2020",
             "contentid": "12nnnn",
-            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+            "filename": "./../adb-scaling/adb-scaling.md"
         },
         {         
             "title": "Lab 18: Protect Data With Database Vault",
             "description": "Protecting your data with Database Vault",
             "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
+            "publisheddate": "04/01/2020",
             "contentid": "12nnnn",
-            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+            "filename": "./../adb-vault/adb-vault.md"
         },
         {         
             "title": "Lab 19: Recover Errors Using Flashback Recovery",
             "description": "Recovering from user errors using flashback recovery",
             "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
+            "publisheddate": "04/01/2020",
             "contentid": "12nnnn",
-            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+            "filename": "./../adb-flashback-recovery/adb-flashback-recovery.md"
         },
         {         
             "title": "Lab 20: OCI Notification Service",
             "description": "Setting up DB event notifications using OCI Notification service",
             "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
+            "publisheddate": "04/01/2020",
             "contentid": "12nnnn",
-            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+            "filename": "./../adb-event-notifications/adb-event-notifications.md"
+        },
+        {         
+            "title": "Appendix",
+            "description": "Common tools for windows Users Finding the IP address of your AEI Cluster.",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-appendix/adb-appendix.md"
         }
     ]
 }
