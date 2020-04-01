@@ -85,11 +85,10 @@ Once in the main dashboard, open the **General Menu** located at the top left ha
     (check with your tenancy admin if unsure)
 
 
-3.  From the “Visual Builder” service box there are two ways to open a
+2.  From the “Visual Builder” service box there are two ways to open a
     service console.
 
 ![](./media/image_a_3.png)
-
 
 
 One method is to click on the box’s “Visual Builder” text to display an
@@ -98,19 +97,16 @@ overview page.
 ![](./media/image_a_7.png)
 
 
-
-From the overview page, click the “Open Service Console” button to
-continue.
+From the overview page, click the “Open Service Console” button to continue.
 
 ![](./media/image_a_8.png)
 
 
-
 Another method is to click the **General Menu** icon
+
 ![](./media/image_a_9.png) in the lower-right corner of the  “Visual Builder” service box to display a menu.
 
 ![](./media/image_a_3.png)
-
 
 
 Select “Open Service Console” from the menu.
@@ -118,30 +114,23 @@ Select “Open Service Console” from the menu.
 ![](./media/image_a_10.png)
 
 
+3.  If you have not created any services the Service Console prompts you to begin the process.
 
-4.  If you have not created any services the Service Console prompts you
-    to begin the process.
-
-**DO NOT** CLICK “CREATE INSTANCE” at this time, we will be using
-“Quick Starts” (see step 5).
+**DO NOT** CLICK “CREATE INSTANCE” at this time, we will be using **Quick Starts** (see step 5).
 
 ![](./media/image_a_11.png)
 
 
-5.  Visual Builder provides a “Quick Starts” capability to build an
-    instance complete with supporting database and object storage. Click
-    the “Quick Starts” button to get started it is located in the
-    upper-right portion of the Service Console display inside the big
-    blue bar.
+4.  Visual Builder provides a “Quick Starts” capability to build an instance complete with supporting database and object storage. Click the “Quick Starts” button to get started it is located in the upper-right portion of the Service Console display inside the big blue bar.
 
 ![](./media/image_a_13.png)
 
 
-6. Click on **Custom**
+5. Click on **Custom**
  
 ![](./media/vbcs_instance_custom.png)
 
-7. Porivde an instance name, description, and region. Once complete, click next and confirm. The instance creation can take up to 10 min.
+6. Provide an instance name, description, and region. Once complete, click next and confirm. The instance creation can take up to 10 min.
 
 ![](./media/vbcs_instance_data.png)
 
@@ -154,7 +143,7 @@ That’s it, you’ve created an instance that can support many VBCS application
 NOTE:
 
 If others will be sharing your VBCS instance you will need to use Oracle Identity Cloud Service (IDCS)
-to make sure they have `ServiceDeveloper` (Visual Builder Administrator) role for your instance if they are developers or 'ServiceAdministrator' (Visual Builder Administrator) role if they need to administer other's applications.
+to make sure they have `ServiceDeveloper` (Visual Builder Administrator) role for your instance if they are developers or 'ServiceAdministrator' (Visual Builder Administrator) role if they need to administer other's applications. 
 See Oracle Documentation for more information.
 
 

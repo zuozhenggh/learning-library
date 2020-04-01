@@ -7,9 +7,9 @@
 # Application Development Lab
 
 
-### [Getting Started](gettingstarted.md)
-### [Lab Guide 1 - Application Development](applicationdevelopment-labguide.md)
-### [Lab Guide 2 - Digital Assistant](oda-labguide.md)
+* [Getting Started](gettingstarted.md)
+* [Lab Guide 1 - Application Development](applicationdevelopment-labguide.md)
+* [Lab Guide 2 - Digital Assistant](oda-labguide.md)
 
 ### Download all lab files as a zip
 
