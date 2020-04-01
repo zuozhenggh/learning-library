@@ -2,7 +2,7 @@
 
 |  | |
 | ------------- | ------------- |
-| ![Lightning Free](./img/lightning-logo.png) | The lightning CAF utilizes Terraform 0.12 and Resource Manager to launch functional always-free or enterprise infrastructure in a few minutes.    |
+| ![Lightning Free](./images/lightning-logo.png) | The lightning CAF utilizes Terraform 0.12 and Resource Manager to launch functional always-free or enterprise infrastructure in a few minutes.    |
 
 [Download **Always Free Tier** Resource Manager Stack zip file](./resource-manager-stacks/lightning-free-tier-1.0.3.zip)
 
@@ -40,7 +40,7 @@ In the span of a few minutes, the stacks provide vast majority components requir
 
 Watch the 2 minute video below to watch the framework build out the free tier, _**Enterprise tier works exactly the same way**_ in a paid tenancy. In 5 Clicks you have an operational enviornment. Simple modifications of the *.tfvars files allow you to adapt the examples to your needs.
 
-[![Alt text](./img/lightning-video-thumbnail.png)](https://www.youtube.com/watch?v=T6iDGTWzEWk)
+[![Alt text](./images/lightning-video-thumbnail.png)](https://www.youtube.com/watch?v=T6iDGTWzEWk)
 
 
 ### Crawl
