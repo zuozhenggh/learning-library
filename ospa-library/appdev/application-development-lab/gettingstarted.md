@@ -9,10 +9,7 @@
 
 ## Lab Purpose and Rules
 
-These labs are designed to provide you with an introduction to using
-Visual Builder to create Web and Mobile applications and to prepare you
-to demonstrate Visual Builder to customers or to use Visual Builder to
-demonstrate other products to Oracle’s customers.
+These labs are designed to provide you with an introduction to Visual Builder and Digital Assistant to prepare you to showcase these services.
 
 Here are some general guidelines that will help you get the most from
 these lab exercises.

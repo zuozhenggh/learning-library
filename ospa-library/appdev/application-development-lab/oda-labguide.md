@@ -54,8 +54,7 @@ The Create Skill dialog appears.
 
 ![](media/dialog_create-skill.png)
 
-9. For **Display Name** enter `Pizza King`
-. If you are working in an environment where others may also be creating the same tutorial, prefix `Pizza King` with your unique initials.
+9. For **Display Name** enter `Pizza King`. If you are working in an environment where others may also be creating the same tutorial, prefix `Pizza King` with your unique initials.
 
 10. For **Version**, enter `1.0`
 
@@ -124,7 +123,7 @@ For the PizzaKing example, you will create intents for ordering pizza, cancellin
 Your screen should look similar to what is shown in the image below:
 ![](media/screenshot_pizza-intents.png)
 
-**Note:** If you are stuck, you can import the intents and utterances using  [PizzaKing-Intents.csv](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-skill/files/PizzaKing-Intents.csv) .
+**Note:** If you are stuck, you can import the intents and utterances using  [PizzaKing-Intents.csv](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-skill/files/PizzaKing-Intents.csv).
 
 ### Train Your Intents
 You’ve now provided the basic ingredients that allow the skill to recognise user input for ordering a pizza, but right now, the skill has no cognition. It can’t understand any user input.
@@ -141,8 +140,8 @@ To enable it to understand the intents, you need to train it.
 # Test your Model 
 It is not realistic to get the training of your intent model right the first time you do it. Good intent models are created in an iterative cycle of training, testing, retraining, and retesting.
 A good intent model is one that has a low ambiguity between the different intents. So let’s see how well we’re doing so far.
-1. Click ![](media/left_nav_intents%202.png).
-2. Click the **Try it Out!** label (![](media/icon-try-it-out.png)).The Try Out Intents/Q&A dialog appears.
+1. Click ![](media/left_nav_intents%202.png)
+2. Click the **Try it Out!** label ![](media/icon-try-it-out.png).The Try Out Intents/Q&A dialog appears.
 3. In the **Message** field of the dialog, type `I want to order pizza` and click the **Send** button.As you might expect, the result is as shown in the image below.
 
 	![](media/screenshot_try-out1.png)
