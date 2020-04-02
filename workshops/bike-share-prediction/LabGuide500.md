@@ -51,7 +51,7 @@ This lab walks you through the steps to create a linear regression model in the 
 
 -   In the **Notebooks** section, click on **Import** and import the [**Bike Share Availability Prediction.json**](./files/scripts/Bike Share Availability Prediction.json) file.
 
--   If you are on Orale/learning library, click on <a href="https://github.com/oracle/learning-library/blob/master/workshops/bike-share-prediction/files/scripts/Bike%20Share%20Availability%20Prediction.json" target="_blank">here</a> to download the file.
+-   If you are on Orale/learning library, click on <a href="https://raw.githubusercontent.com/oracle/learning-library/master/workshops/bike-share-prediction/files/scripts/Bike%20Share%20Availability%20Prediction.json" target="_blank">here</a> to download the file.
 
 ![](./images/500/Picture500-17.png)
 
