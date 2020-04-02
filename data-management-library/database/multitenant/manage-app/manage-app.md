@@ -621,9 +621,7 @@ In some application in a Multitenant environment , It may **not be possible** to
 
 ## Proxy PDBs
 
-
-
-![](../images/MT_proxyPDB.png)
+![](./images/MT_proxyPDB.png " ")
 
 ![](https://docs.oracle.com/en/database/oracle/oracle-database/19/multi/img/admin110.png1)
 
