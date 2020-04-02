@@ -9,10 +9,7 @@
 
 ## Lab Purpose and Rules
 
-These labs are designed to provide you with an introduction to using
-Visual Builder to create Web and Mobile applications and to prepare you
-to demonstrate Visual Builder to customers or to use Visual Builder to
-demonstrate other products to Oracle’s customers.
+These labs are designed to provide you with an introduction to Visual Builder and Digital Assistant to prepare you to showcase these services.
 
 Here are some general guidelines that will help you get the most from
 these lab exercises.
@@ -78,59 +75,53 @@ Once in the main dashboard, open the **General Menu** located at the top left ha
 
 ![](./media/vb_dashboard.png)
 
-
-1.  Log into your tenancy using cloud.oracle.com; be sure it has been
-    provisioned to allow Visual Builder Cloud Service and the database
-    and object storage instances also required.  
-    (check with your tenancy admin if unsure)
+* Log into your tenancy using cloud.oracle.com; be sure it has been provisioned to allow Visual Builder Cloud Service and the database and object storage instances also required.  (check with your tenancy admin if unsure)
 
 
-2.  From the “Visual Builder” service box there are two ways to open a
-    service console.
+* From the “Visual Builder” service box there are two ways to open a service console.
 
 ![](./media/image_a_3.png)
 
 
-One method is to click on the box’s “Visual Builder” text to display an
-overview page.
+* One method is to click on the box’s “Visual Builder” text to display an overview page.
 
 ![](./media/image_a_7.png)
 
 
-From the overview page, click the “Open Service Console” button to continue.
+* From the overview page, click the “Open Service Console” button to continue.
 
 ![](./media/image_a_8.png)
 
 
-Another method is to click the **General Menu** icon
+* Another method is to click the **General Menu** icon
 
 ![](./media/image_a_9.png) in the lower-right corner of the  “Visual Builder” service box to display a menu.
 
 ![](./media/image_a_3.png)
 
 
-Select “Open Service Console” from the menu.
+* Select “Open Service Console” from the menu.
 
 ![](./media/image_a_10.png)
 
 
-3.  If you have not created any services the Service Console prompts you to begin the process.
+* If you have not created any services the Service Console prompts you to begin the process.
 
 **DO NOT** CLICK “CREATE INSTANCE” at this time, we will be using **Quick Starts** (see step 5).
 
 ![](./media/image_a_11.png)
 
 
-4.  Visual Builder provides a “Quick Starts” capability to build an instance complete with supporting database and object storage. Click the “Quick Starts” button to get started it is located in the upper-right portion of the Service Console display inside the big blue bar.
+* Visual Builder provides a “Quick Starts” capability to build an instance complete with supporting database and object storage. Click the “Quick Starts” button to get started it is located in the upper-right portion of the Service Console display inside the big blue bar.
 
 ![](./media/image_a_13.png)
 
 
-5. Click on **Custom**
+* Click on **Custom**
  
 ![](./media/vbcs_instance_custom.png)
 
-6. Provide an instance name, description, and region. Once complete, click next and confirm. The instance creation can take up to 10 min.
+* Provide an instance name, description, and region. Once complete, click next and confirm. The instance creation can take up to 10 min.
 
 ![](./media/vbcs_instance_data.png)
 
@@ -147,4 +138,4 @@ to make sure they have `ServiceDeveloper` (Visual Builder Administrator) role fo
 See Oracle Documentation for more information.
 
 
-[Return to Main Page](README.md)
+[Return to Main Page](https://oracle.github.io/learning-library/ospa-library/appdev/application-development-lab/index.html?page=README.md)
