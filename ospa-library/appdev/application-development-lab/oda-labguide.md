@@ -520,4 +520,4 @@ Congratulations! You have created your first skill and learned key aspects of de
 
 [Return to Table of Contents](#table-of-contents)
 
-[Return to Main Page](README.md)
+[Return to Main Page](https://oracle.github.io/learning-library/ospa-library/appdev/application-development-lab/index.html?page=README.md)

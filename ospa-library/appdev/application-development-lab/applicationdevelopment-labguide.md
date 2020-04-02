@@ -182,14 +182,10 @@ This concludes Lab 1.
 
 To build the solutions for Mama Maggy's managers/franchisees, data is required, right now that data is stored in several spreadsheets. We need to make that data available inside VBCS so that it may be used in the web and mobile applications created in these labs.
 
-Visual Builder provides two main methods to access data: built-in
-business objects, and service connections. VBCS business objects store data in tables like a database. This lab focuses on creating
-and using built-in business objects with data suppiled via spreadsheet (.csv/.xlsx)
-files. These files get copied into an Oracle Database (under the covers
-of VBCS) and are actually accessed using the same type of RESTful APIs
-as those used for service connections (more on this in Lab 4).
+Visual Builder provides two main methods to access data: built-in business objects, and service connections. VBCS business objects store data in tables like a database. This lab focuses on creating
+and using built-in business objects with data suppiled via spreadsheet (.csv/.xlsx) files. These files get copied into an Oracle Database (under the covers of VBCS) and are actually accessed using the same type of RESTful APIs as those used for service connections (more on this in Lab 4).
 
- NOTE: For this lab you will need three data files (Product.csv, ProductOrder.csv, and ProductOrderLine.csv), if you have not already downloaded them they may be obtained from GitHub as a .zip file named [vbcsfiles.zip](https://github.com/oracle/learning-library/blob/master/ospa-library/appdev/application-development-lab/files/vbcsfiles.zip); download the file and expand it to find the following three files (keep them handy they will be used later in this lab):
+NOTE: For this lab you will need three data files (Product.csv, ProductOrder.csv, and ProductOrderLine.csv), if you have not already downloaded them they may be obtained from GitHub as a .zip file named [vbcsfiles.zip](https://github.com/oracle/learning-library/blob/master/ospa-library/appdev/application-development-lab/files/vbcsfiles.zip); download the file and expand it to find the following three files (keep them handy they will be used later in this lab):
 - Product.csv
 - Products available for managers/franchisees to order
 - ProductOrder.csv 
@@ -1585,4 +1581,4 @@ In this lab you will create:
 
 [Return to Table of Contents](#table-of-contents)
 
-[Return to Main Page](README.md)
+[Return to Main Page](https://oracle.github.io/learning-library/ospa-library/appdev/application-development-lab/index.html?page=README.md)
