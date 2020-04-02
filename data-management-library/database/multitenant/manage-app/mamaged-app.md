@@ -750,7 +750,7 @@ A good scenario is hosting a multi tenant Application environment where each ten
 
 
 
-![](F:\work\PTS\Multitenant_work\MT03_RR.png)
+![](../images/MT03_RR.png)
 
 
 
