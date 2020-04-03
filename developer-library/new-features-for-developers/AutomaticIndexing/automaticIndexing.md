@@ -1,6 +1,13 @@
-# In-Memory Queries
+# Automatic Indexing
 
 ## Introduction
+The automatic indexing feature automates index management tasks based on changes in the application workload. This feature improves database performance by managing indexes automatically in an Oracle database.
+
+Traditionally, DBAs have been responsible to monitoring performance and deciding when and where to add, change or remove indexes in a tactical and often ad-hoc manner. This ad-hoc approach to index maintenance is prone to error because it is almost impossible to quantify the effect any change – both positive and negative. This may lead to a database that has many more indexes than necessary, where indexes have been gradually added over time and there is a reluctance to remove any of them for fear of negative consequences. This will lead to an increase the system resources required to maintain indexes when data is modified and processed. In addition, over-indexed environments often suffer from less stable SQL execution plans as the sheer number of indexes make the  optimizer's choice of index access path more and more finely balanced.
+
+Automatic indexing addresses these issues. It is not a simple advisor, but instead it is an expert system that implements indexes based on what a performance engineer skilled in index tuning would do. The Oracle Database analyzes the application workload and identifies the queries that will benefit from additional indexes. In other words, it identifies candidate indexes and validates them before implementation, and the entire process is fully automatic.
+Here is a summary of the workflow:
+   ![](images/ai_flow.png)
 
 ### Objectives
 
@@ -22,43 +29,50 @@ Watch the video below to get an explanation of enabling the Automatic Indexing f
 [](youtube:dZ9cnIL6KKw)
 
 
-## Step 1: Logging In and Enabling In-Memory
+## Step 1: Logging In and Examining Schema
 
-1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
+1.  All scripts for this lab are stored in the labs/new-features-for-developers/automaticindexing folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
 
     ````
     <copy>
     sudo su - oracle
-    cd ~/labs/inmemory
+    cd ~/labs/new-features-for-developers/automaticindexing
     ls
     </copy>
     ````
 
-2. In-Memory is integrated into Oracle Database 12c and higher.  The IM column store is not enabled by default, but can be easily enabled via a few steps.  Before you enable it, let's take a look at the default configuration. 
+2. Automatic Indexing is integrated into Oracle Database 19c and higher.  Automatic indexing requires little to no manual intervention, but a package called DBMS_AUTO_INDEX package is provided for changing a small number of defaults. 
+Create a new tablespace and make this the default for Automatic Indexing (Note that this is not necessary - it is just to illustrate use)
 
     ````
     <copy>
     . oraenv
     ORCL
-    sqlplus / as sysdba
-    show sga;
-    show parameter inmemory; 
-    show parameter keep
+    sqlplus SYS/Ora_DB4U/localhost:1521/orclpdb as sysdba
+       CREATE TABLESPACE TBS_AUTO_IDX
+       DATAFILE '/u01/app/oracle/oradata/DEVCDB/PDB01/tbs_auto_idx01.dbf'
+       SIZE 200M REUSE
+       AUTOEXTEND ON 
+       NEXT 50M MAXSIZE 10G; 
+	   
+	   exec DBMS_AUTO_INDEX.CONFIGURE('AUTO_INDEX_DEFAULT_TABLESPACE','TBS_AUTO_IDX');
+
     </copy>
     ````
-    Notice that the SGA is made up of Fixed Size, Variable Size, Database Buffers and Redo.  There is no In-Memory in the SGA.  Let's enable it.
+    Note that this can only be enabled on EXADATA systems. Attempting to enable Automatic Indexing on non-EXADATA machines will result in ORA-40216
 
-    ![](images/showsgainmem.png) 
 
-3.  Enter the commands to enable In-Memory.  The database will need to be restarted for the changes to take effect.
+3.  Enter the commands to enable Automatic Indexing
     ````
     <copy>
-    alter system set inmemory_size=2G scope=spfile;
-    shutdown immediate;
-    startup;
+    exec DBMS_AUTO_INDEX.CONFIGURE('AUTO_INDEX_MODE','IMPLEMENT');
     </copy>
 
     ````
+There are three possible values for AUTO_INDEX_MODE configuration setting: OFF (default), IMPLEMENT, and REPORT ONLY. 
+   - OFF disables automatic indexing in a database, so that no new auto indexes are created, and the existing auto indexes are disabled. 
+   - IMPLEMENT enables automatic indexing in a database and creates any new auto indexes as visible indexes, so that they can be used in SQL statements. 
+   - REPORT ONLY enables automatic indexing in a database, but creates any new auto indexes as invisible indexes, so that they cannot be used in SQL statements.
 
 4.  Now let's take a look at the parameters.
     ````
