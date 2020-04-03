@@ -607,8 +607,8 @@ SQL> select  A.*  FROM  containers(app_common.T_METADATA) A ;
 SQL> select  con$name, A.*  FROM  containers(app_common.T_METADATA) A ;
 CON$NAME                     ID     CON_ID
 -------------------- ---------- ----------
-APP_PDB1                      2          4
-APP_ROOT                      1          5
+APP_PDB1                      2          5
+APP_ROOT                      1          4
 ```
 
 
