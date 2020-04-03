@@ -36,20 +36,18 @@ these lab exercises.
 
 
 
-# Create VBCS Instance
-
+# Create a VBCS Instance
 
 As part of the lab, we expect learns to create the VBCS instance before the session delivery.
 If you are creating a new instance either for the lab purposes or a customer demonstration, please follow the next steps; the process is simple but require several minutes to complete.
 
-In this lab you will make sure you can access the VBCS instance for your
-classroom and supporting lab files.
+In this lab you will make sure you can access the VBCS instance for your classroom and supporting lab files.
 
 
 ## Video
 
 
-[![Creating a Visual Builder Cloud Service Instance](./media/playback_creating_instance.png)](https://otube.oracle.com/media/Oracle+Sales+and+Partner+Academy+-+AppDev+Virtual+Workshop/1_xryvhe4k)
+[![Creating a Visual Builder Cloud Service Instance](./media/playback_creating_instance_vbcs.png)](https://otube.oracle.com/media/Oracle+Sales+and+Partner+Academy+-+AppDev+Virtual+Workshop/1_xryvhe4k)
 
 *Note: By clicking the video, this will redirects you to OTube. Remember to get back to this page to continue with the Lab*
 
@@ -136,6 +134,111 @@ NOTE:
 If others will be sharing your VBCS instance you will need to use Oracle Identity Cloud Service (IDCS)
 to make sure they have `ServiceDeveloper` (Visual Builder Administrator) role for your instance if they are developers or 'ServiceAdministrator' (Visual Builder Administrator) role if they need to administer other's applications. 
 See Oracle Documentation for more information.
+
+
+# Create an Digital Assistant Instance
+
+As part of the lab, we expect learns to create the Digital Assitant instance before the session delivery.
+If you are creating a new instance either for the lab purposes or a customer demonstration, please follow the next steps; the process is simple but require several minutes to complete.
+
+## Video
+
+
+[![Creating a Digital Assistant Instance](./media/playback_creating_instance_oda.png)](https://otube.oracle.com/media/Oracle+Sales+and+Partner+Academy+-+AppDev+Virtual+Workshop+-+Creating+an+ODA+Instance/1_ee3m2ce9)
+
+*Note: By clicking the video, this will redirects you to OTube. Remember to get back to this page to continue with the Lab*
+
+
+## Guide
+
+* First, go to cloud.oracle.com, click on **View Accounts** and select **Sign in to cloud**
+
+![](./media/cloudoracle.png)
+
+* Enter your tenant account
+
+![](./media/tenant.png)
+
+* On the login screen select SSO and provide your credentials *(Contact your tenant admin if you are using a different login mechanism)*
+
+![](./media/credentials.png)
+
+![](./media/credentials_2.png)
+
+* Once in the main dashboard, open the **General Menu** located at the top left hand side of the screen and click on **Digital Assitant**
+
+![](./media/creating_oda_1.png)
+
+* In the Digital Assistant console, select the compartment where to deploy the new instance and click on **Create Digital Assistant Database**
+
+![](./media/creating_oda2.png)
+
+* In the Digital Assistant creation screen, provide a name, description, and shape (For the lab purposes select `Production`), and click **Create**
+
+
+![](./media/creating_oda_3.png)
+
+* The process might take a few minutes. Once created, you should see the instance as **Active**
+
+![](./media/creating_oda_4.png)
+
+
+That’s it, you’ve created your first Oracle Digital Assistant instance.
+
+
+# Create and ATP Instance
+
+As part of the lab, we expect learns to create the ATP instance before the session delivery.
+If you are creating a new instance either for the lab purposes or a customer demonstration, please follow the next steps; the process is simple but require several minutes to complete.
+
+## Video
+
+
+[![Creating a Digital Assistant Instance](./media/playback_creating_instance.png)](https://otube.oracle.com/media/Oracle+Sales+and+Partner+Academy+-+AppDev+Virtual+Workshop+-+Creating+and+ATP+Instance/1_r47n3ers)
+
+*Note: By clicking the video, this will redirects you to OTube. Remember to get back to this page to continue with the Lab*
+
+
+## Guide
+
+* First, go to cloud.oracle.com, click on **View Accounts** and select **Sign in to cloud**
+
+![](./media/cloudoracle.png)
+
+* Enter your tenant account
+
+![](./media/tenant.png)
+
+* On the login screen select SSO and provide your credentials *(Contact your tenant admin if you are using a different login mechanism)*
+
+![](./media/credentials.png)
+
+![](./media/credentials_2.png)
+
+* Once in the main dashboard, open the **General Menu** located at the top left hand side of the screen, click on **Autonomous Data Processing**
+
+![](./media/creating_atp_1.png)
+
+* In the ATP console, select the compartment where to deploy the new instance and click on **Create Autnomous Database**
+
+![](./media/creating_atp_2.png)
+
+* In the database creation screen, provide a display name, database name, password, the license type. and click **Create Autonomous Database**
+
+
+![](./media/creating_atp_3.png)
+
+![](./media/creating_atp_4.png)
+
+
+* The process might take a few minutes. Once created, you should see the instance as **Available**
+
+![](./media/creating_atp_5.png)
+
+
+That’s it, you’ve created your first ATP instance.
+
+
 
 
 [Return to Main Page](https://oracle.github.io/learning-library/ospa-library/appdev/application-development-lab/index.html?page=README.md)
