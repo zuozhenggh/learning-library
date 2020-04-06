@@ -124,17 +124,20 @@ For the PizzaKing example, you will create intents for ordering pizza, cancellin
 3. In the **Name** field, type `CancelPizza`.
 
 4. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key.
-    * Can I cancel my order?
-    * Cancel my order
-    * Cancel my Pizza please
-    * How do I cancel my order?
-    * I don’t want my Pizza anymore
-    * I really don’t want the Pizza anymore
-    * I’d like to cancel my order please
-    * Its been more than 20 mts. Please cancel my order and issue a refund to my card.
-    * Need to cancel my order
-    * Please cancel my pizza order
-    * Please don’t deliver my Pizza
+
+	```
+	Can I cancel my order?
+	Cancel my order
+    Cancel my Pizza please
+    How do I cancel my order?
+    I don’t want my Pizza anymore
+    I really don’t want the Pizza anymore
+    I’d like to cancel my order please
+    Its been more than 20 mts. Please cancel my order and issue a refund to my card.
+    Need to cancel my order
+    Please cancel my pizza order
+    Please don’t deliver my Pizza
+	```
     
 ### Create the File Complaint Intent
 
@@ -143,14 +146,16 @@ For the PizzaKing example, you will create intents for ordering pizza, cancellin
 2. In the **Name** field, type `FileComplaint`.
 
 3. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key.
-
-    * I am upset
-    * You charged me wrong
-    * I want to file a complaint
-    * I am not happy with my recent order
-    * I have some grief to share
-    * I want to speak with a manager
-    * Can I raise a complaint
+	
+	```
+    I am upset
+    You charged me wrong
+    I want to file a complaint
+    I am not happy with my recent order
+    I have some grief to share
+    I want to speak with a manager
+    Can I raise a complaint
+	```
 
     Your screen should look similar to what is shown in the image below:
 
@@ -322,11 +327,13 @@ Context variables are the skill’s temporary memory. They can be referenced thr
 
 4.  Under `variables:` add these five context variables: 
 
-    iResult: "nlpresult"<br>
-pizzaSize: "PizzaSize"<br>
-pizzaTopping: "PizzaTopping"<br>
-deliveryTime: "TIME"<br>
-pizzaOrderMsg: "string"<br>
+	```
+	iResult: "nlpresult"
+	pizzaSize: "PizzaSize"
+	pizzaTopping: "PizzaTopping"
+	deliveryTime: "TIME"
+	pizzaOrderMsg: "string"
+	```
 
 
     **Important:** Make sure that they are indented two spaces more than the `variables:` (four spaces total). If the indentation isn’t exact, metadata validation will fail. This is what the flow should now look like: 
@@ -358,6 +365,7 @@ First we’ll add the `System.Intent`
      property to`"iResult"` (including the quotation marks).This means that `iResult` will be the variable to which the NLP engine saves the intent resolution and entity extraction results to.
 
 6. Delete the following properties:
+    
 	* botName
 	* botVersion
 	* sourceVariable
@@ -490,20 +498,6 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 		transitions:`
 			next: "setPizzaTopping
 	```
-
-<br>
-
-```
-setPizzaSize:
-	component: "System.List"
-	properties:
-		options: "${pizzaSize.type.enumValues}"
-		prompt: "What size of pizza do you want?"
-		variable: "pizzaSize"
-		nlpResultVariable: "iResult"
-	transitions:`
-		next: "setPizzaTopping
-```
 <br>
 
 ### Set Pizza Topping
@@ -511,8 +505,8 @@ setPizzaSize:
  state, paste the following code (also based on the `System.List`
  component) to create the `setPizzaTopping`state:
 
-```
-setPizzaTopping:
+	```
+	setPizzaTopping:
 	component: "System.List"
 	properties:
 		options: "${pizzaTopping.type.enumValues}"
@@ -521,7 +515,8 @@ setPizzaTopping:
 			nlpResultVariable: "iResult"
 	transitions:
 		next: "setPizzaDeliveryTime"
-```
+	```
+
 <br>
 
 ### Set Pizza Delivery Time
@@ -531,23 +526,22 @@ setPizzaTopping:
 4. From the **Insert After** dropdown, select **setPizzaTopping**.
 5. Ensure the **Remove Comments** switch is ON.
 6. Click **Apply**.
-7. Change the state name of the newly added component from `text`
- to `setPizzaDeliveryTime`.
+7. Change the state name of the newly added component from `text` to `setPizzaDeliveryTime`.
 8. Edit the state to look like the following:
 
-```
-setPizzaDeliveryTime:
-	component: "System.Text"
-	properties:
-		prompt: "When can we deliver that for you?"
-		variable: "deliveryTime"
-		nlpResultVariable: "iResult"
-		maxPrompts: 3
-	transitions:
-		actions:
-			cancel: "maxError"
-			next: "setPizzaOrderMessage"
-```
+	```
+	setPizzaDeliveryTime:
+		component: "System.Text"
+		properties:
+			prompt: "When can we deliver that for you?"
+			variable: "deliveryTime"
+			nlpResultVariable: "iResult"
+			maxPrompts: 3
+		transitions:
+			actions:
+				cancel: "maxError"
+				next: "setPizzaOrderMessage"
+	```
 <br>
 
 ### Show Pizza Delivery Message
@@ -560,18 +554,18 @@ setPizzaDeliveryTime:
 7. Change the state name of the newly added component from `setVariable`to `setPizzaOrderMessage`.
 8. Edit the state to look like the following:
 
-```
-setPizzaOrderMessage:
-	component: "System.SetVariable"
-	properties:
-		variable: "pizzaOrderMsg"
-		value: 
-		- "Thank you for ordering from Pizza King!"
-		- "OK, so we are getting you the following items:"
-		- "A ${pizzaSize.value} ${pizzaTopping.value} pizza at ${deliveryTime.value.date?long?number_to_time?string(‘HH:mm’)}."
-```
+	```
+	setPizzaOrderMessage:
+		component: "System.SetVariable"
+		properties:
+			variable: "pizzaOrderMsg"
+			value: 
+			- "Thank you for ordering from Pizza King!"
+			- "OK, so we are getting you the following items:"
+			- "A ${pizzaSize.value} ${pizzaTopping.value} pizza at ${deliveryTime.value.date?long?number_to_time?string(‘HH:mm’)}."
+	```
 
-**Note:** The`text` property value uses the Apache FreeMarker expression ` |-` to print multi-line text in a single response bubble. Alternatively, you could have used multiple output text components.
+	**Note:** The `text` property value uses the Apache FreeMarker expression `|-` to print multi-line text in a single response bubble. Alternatively, you could have used multiple output text components.
 
 <br>
 
@@ -586,17 +580,16 @@ setPizzaOrderMessage:
  to `showPizzaOrder`.
 8. Edit the state to look like the following:
 
-```
-showPizzaOrder:
-	component: "System.Output"
-	properties:
-	text: |-
-		<#list pizzaOrderMsg.value as text>${text}
-		</#list>
-	transitions: 
-		return: "done"
-
-```
+	```
+	showPizzaOrder:
+		component: "System.Output"
+		properties:
+		text: |-
+			<#list pizzaOrderMsg.value as text>${text}
+			</#list>
+		transitions: 
+			return: "done"
+	```
 <br>
 <br>
 
