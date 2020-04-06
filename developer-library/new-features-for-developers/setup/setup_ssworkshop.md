@@ -182,6 +182,28 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     tail -f /home/opc/setupdb.out
     ````
 
+## Step 7: Install Sample Data
+
+1.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
+
+    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+
+    ````
+    <copy>
+    cd /home/opc/
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/tl07kg4dEnCkRwB6_F1on0rkfXOuKPSOzGbX8YF_JUU/n/c4u03/b/labfiles/o/nfscripts.zip
+    unzip nfscripts.zip; chmod +x *.sh
+    /home/opc/setupNF.sh
+    </copy>
+    ````
+2. Install the Sample Schemas
+
+    ````
+    <copy>
+    sudo su - oracle
+    . /home/oracle/setupNF_DB.sh
+    </copy>
+    ````
 Congratulations!  Now you have the environment to run the New Features for Developers labs.   
 
 ## Acknowledgements
