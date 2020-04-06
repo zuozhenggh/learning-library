@@ -522,249 +522,339 @@ In the last exercise you created three business objects and added data to them; 
 
 9. Test the application by clicking the **Run** button ![](./media/image95.png) in the upper-right part of the screen.
 
-![](./media/image96.png)
+   ![](./media/image96.png)
 
-1. A new browser window will open with your running application.
-![](./media/image97.png)
+   A new browser window will open with your running application.
 
-1. Success\! Mama Maggy managers/franchisees can now see a list of the various products available for order (without having to call headquarters).
+   ![](./media/image97.png)
 
-1. Now, let’s add a page of detail. Return to the Visual Builder Designer and select the table containing the property list. Notice the icon on the right side near the top of the Property Inspector.
-![](./media/image98.png)
+   Success\! Mama Maggy managers/franchisees can now see a list of the various products available for order (without having to call headquarters).
 
-1. The **Quick Start** button makes adding to your application easy.
-![](./media/image99.png)
+10. Now, let’s add a page of detail. Return to the Visual Builder Designer and select the table containing the property list. Notice the icon on the right side near the top of the Property Inspector.
 
-1. The Quick Start options include: Adding data, building a Create Page (new row), an Edit Page (update row), a Detail page (display single row), Delete Action (delete row), or Task Actions (add task controls).
-![](./media/image100.png)
+    ![](./media/image98.png)
+    
+    The **Quick Start** button makes adding to your application easy. ![](./media/image99.png)
+    
+    The Quick Start options include: Adding data, building a Create Page (new row), an Edit Page (update row), a Detail page (display single row), Delete Action (delete row), or Task Actions (add task controls).
+    
+    ![](./media/image100.png)
 
-1. Click **Add Detail Page** to begin the wizard.
-![](./media/image101.png)
+    Click **Add Detail Page** to begin the wizard.
+    
+    ![](./media/image101.png)
+    
+    Once the wizard starts; select the **Product** Business Object and click **Next** to continue.
+    
+    ![](./media/image102.png)
+    
+    Select the fields to be displayed; you may either select by checking them in the list or **dragging** them to the fields in the center area. You may also change title and other features, even the name of the button that will display on the main page to launch this page. Click **Finish** when done.
+    
+    ![](./media/3.10.5.png)
+    
+    When complete, the object navigator on the left will show the new page. Select the new page **main-product-detail** to see what it looks like. Note that the **Product List** screen is called **main-start** and the **Product Detail** screen is called **main-product-detail** (These may be renamed if desired but it's not really necessary.)
+    
+    ![](./media/3.10.6.png)
 
-1. Once the wizard starts; select the **Product** Business Object and click **Next** to continue.
-![](./media/image102.png)
+    ## **Potential Context Error**
+    
+    You may see an **error** message similar to the following. Remember that Visual Builder is WYSIWYG (what you see is what you get) and attempts to show real data during the design process. 
+    
+    ![](./media/image105.png)
+
+    This error frequently occurs because Visual Builder cannot find a **context** to tell it which data to display. (in this case, the VBCS editor wants to show the Product Detail page with **live** data, but, does not know which record to display) 
+    
+    **The process below uses the VBCS editor's **Live** capability to set the context.**
+    
+    First, look for the **Live/Design/Code** button in the upper-right part of the Visual Builder editor. Click on **Live** to begin the process.
+    
+    ![](./media/image106.png)
+    
+    Now, return to the Product List display and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
+    
+    ![](./media/image107.png)
+    
+    Click the **Product Detail** button to return to the Product Detail display and you should now see data rather than the error message
+    
+    ![](./media/image108.png)
+    
+
+The VBCS **Live** mode is useful in testing to see how changes might behave, it is not the same as running the application
+
+Click **Design** ![](./media/image109.png) to exit **Live** mode
 
 
-1. Select the fields to be displayed; you may either select by checking them in the list or **dragging** them to the fields in the center area. You may also change title and other features, even the name of the button that will display on the main page to launch this page. Click
-**Finish** when done.
-![](./media/image103.png)
+Now, to really test the application; run the application using the **run** ![](./media/image95.png) button in the upper-right corner. 
+
+When the **Product List** displays note the **Product Detail** button is not available (it is **grayed out**) since no product has been chosen. Select one of the products and the **Product Detail** button will become active. 
+
+Click on the **Product Detail** button to see the details for that product
+
+The following two images show something similar your results.
+
+![](./media/3.10.12.png)
+
+Once you have reviewed the product details, click the provided **Back** button to return to the list.
+
+![](./media/3.10.13.png)
 
 
-1. When complete, the object navigator on the left will show the new page. Select the new page **main-product-detail** to see what it looks like. Note that the **Product List** screen is called **main-start** and the **Product Detail** screen is called **main-product-detail** (These may be renamed if desired but it's not really necessary.)
-![](./media/image104.png)
+In addition to viewing the data; you may also use the **Quick Start** do add Create, Edit, and Delete pages for products. (not part of this exercise).
 
-1. **Potential Context Error**
-You may see an **error** message similar to the following. Remember that Visual Builder is WYSIWYG (what you see is what you get) and attempts to show real data during the design process. This error frequently occurs because Visual Builder cannot find a **context** to tell it which data to display. (in this case, the VBCS editor wants to show the Product Detail page with **live** data, but, does not know which record to display) The process below uses the VBCS editor's **Live** capability to set the context.
-![](./media/image105.png)
-
-
-1. Fortunately there is an easy fix for setting the context. First, look for the **Live/Design/Code** button in the upper-right part of the Visual Builder editor. Click on **Live** to begin the process.
-![](./media/image106.png)
-
-1. Now, return to the Product List display and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
-![](./media/image107.png)
-
-1. Click the **Product Detail** button to return to the Product Detail display and you should now see data rather than the error message
-![](./media/image108.png)
-
-1. The VBCS **Live** mode is useful in testing to see how changes might behave, it is not the same as running the application 
-
-1. Click **Design** to exit **Live** mode
-![](./media/image109.png)
-
-
-1. Now, to really test the application; run the application using the **run** ![](./media/image95.png) button in the upper-right corner. When the **Product List** displays note the **Product Detail** button is not available (it is **grayed out**) since no product has been chosen. Select one of the products and the **Product Detail** button will become active. Click on the **Product Detail** button to see the details for that product
-
-1. The following two images show something similar your results.
-![](./media/image110.png)
-
-1. Once you have reviewed the product details, click the provided **Back** button to return to the list.
-![](./media/image111.png)
-
-
-1. In addition to viewing the data; you may also use the **Quick Start** do add Create, Edit, and Delete pages for products. (not part of this exercise).
-
-Congratulations\! You’ve successfully created your first Visual Builder
-web application. 
+Congratulations\! You’ve successfully created your first Visual Builder web application. 
 
 You've also made a day in the life of a Mama Maggy manager/franchisee easier since they can now see what products are available to order without having to play telephone-tag with headquarters.
 
-[Return to top of Section 1 – Create First Web Application](#section-1--create-first-web-application)
-
-[Return to Table of Contents](#table-of-contents)
-
-
 ## Section 2 – Create Master-Detail Application
 
-In this section you will create a set of screens to represent product orders. As a reminder, here’s what the data model looked like.
+In this section you will create a set of screens to represent product orders. Here’s what the data model looks like.
+
 ![](./media/image65.png)
 
 The second application will allow Mama Maggy managers/franchisees to track the status of their product orders. This will include a list of all product orders, the ability to see the specifics of a single order including a list of each product in that order, its unit price, and the quantity ordered.
 
-In this exercise section you will create a two-screen application similar to the last one with a twist, the Product Order Detail screen will include the list of Product Order Lines that match the Product Order. The exercise guide will not be as detailed for activities you have already gone
-through.
+In this exercise section you will create a two-screen application similar to the last one with a twist, the Product Order Detail screen will include the list of Product Order Lines that match the Product Order. The exercise guide will not be as detailed for activities you have already gone through.
+
   - Product Order List
   - Product Order Detail with list of matching Product Order Lines
 
- 
 1. Create a new Web Application to display a list or Product Order business object rows. This is very similar to the Product List created earlier and you will end up with a screen that looks something like this. Include these fields:
-  - Id
-  - Associate
-  - Order Date
-![](./media/image112.png)
+     - Id
+     - Associate
+     - Order Date
+     
+    ![](./media/3.12.1.png)
 
 
 1. Wow, that date does not look very nice\! A simple way to change the format is by dragging the **Input Date Time** component from the component list and dropping it into the date column
-![](./media/image113.png)
-![](./media/image114.png)
+
+    ![](./media/image113.png)
+    
+    It should look like this
+   
+    ![](./media/image114.png)
 
 
-1. Create a Product Order Detail page for the Product Order page’s table, select these fields:
-  - Id
-  - Associate
-  - Order Date
-  - Order Status
-  - Action Date
+2. Create a Product Order Detail page for the Product Order page’s table. Click **Add Detail Page** to begin the wizard.
 
-1. Your page should look something like this when done (again, you may need to [switch into **Live** mode to set the context](#potential-context-error))
-![](./media/image115.png)
+    ![](./media/image101.png)
 
-1. Add a new heading **Order Items** BELOW the **Back** button on the Product Order Detail page, make the heading size 2
-![](./media/image116.png)
+    Select ProductOrder Business Object
+    
+    ![](./media/3.13.1.png)
+
+    Select these fields:
+    - Id
+    - Associate
+    - Order Date
+    - Order Status
+    - Action Date
+
+    Your page should look something like this when done (again, you may need to [switch into **Live** mode to set the context](#potential-context-error))
+    
+    ![](./media/image115.png)
+
+4. Add a new heading **Order Items** BELOW the **Back** button on the Product Order Detail page, make the heading size 2
+
+    ![](./media/image116.png)
 
 
-1. Now you’ll add a new table with data from the Product Order Line business object making sure that only lines matching the Product Order appear. First, drag a Table component under the new heading.
-![](./media/image117.png)
+5. Now you’ll add a new table with data from the Product Order Line business object making sure that only lines matching the Product Order appear. First, drag a Table component under the new heading.
+
+    ![](./media/image117.png)
 
 
-1. Add data to the table from the Product Order Line business object
-![](./media/image118.png)
+6. Add data to the table from the Product Order Line business object. Click **Add Data** to begin the wizard.
+
+    ![](./media/3.16.1.png)
+    
+    Choose ProductOrderLine as the source of your data:<p>
+
+    ![](./media/image118.png)
     
 
-1. In the **Bind Data** step of the Add Data wizard, select:
-  - id
-  - product
-  - unitPrice (set type to Input Number)
-  - quantity (set type to Input Number)
-![](./media/image119.png)
+7. In the **Bind Data** step of the Add Data wizard, select:
+  
+    - id
+    - product
+    - unitPrice (set type to Input Number)
+    - quantity (set type to Input Number)
+  
+    ![](./media/3.17.1.png)
+    
+    Set type to **Input Number**
+
+    ![](./media/3.17.2.png)
+
+    Your bind data should look something like this when done.
+
+    ![](./media/3.17.3.png)
  
+8. Here’s the key step\! In step 3 **Define Query** of the Add Data wizard you will connect the data from the Product Order and the Product Order Line
 
-1. Here’s the key step\! In step 3 **Define Query** of the Add Data wizard you will connect the data from the Product Order and the Product Order Line  **DO NOT CLICK **Finish** until complete\!**
-![](./media/image120.png)
-    
-    
-1. On the right-side of the **Define Query** wizard page under **Target** expand **{} filterCriterion -\> \[\] criteria -\>{} item\[0\] -\>** to expose attribute, op, and value** as shown below.
-![](./media/image121.png)
-    
-    
-1. Select **attribute** and type **productOrder** as a **static** value (references Product Order).
-![](./media/image122.png)
-    
-    
-1. Select **op** and type **$eq** also as a **static** value (equal condition test).
-![](./media/image123.png)
-    
-    
-1. Drag the **ProductOrderId** value from the left-hand **Sources** column and drop it onto the **value** under **Target**.
+   **DO NOT CLICK **Finish** until complete\!**
+       
+   ![](./media/3.18.1.png)
+   
+   On the right-side of the **Define Query** wizard page under **Target** expand **{} filterCriterion -\> \[\] criteria -\>{} item\[0\] -\>** to expose attribute, op, and value** as shown below.
 
-1. Click the **Finish** button when done.
-![](./media/image124.png)
+   ![](./media/3.18.2.png)
     
+   Select **attribute** and type **productOrder** as a **static** value (references Product Order).
     
-1. The Product Order Line information matching the current order should be displayed, if not, you may need to reset the context using the **Live** mode again (see [Section 1 – Create First Web Application
-\#10 for more](#potential-context-error))
-![](./media/AppDev3.18.6.png)
+   ![](./media/3.18.3.png)
     
+    Select **op** and type **$eq** also as a **static** value (equal condition test).
     
-1. You should now be able to test your Product Order – Product Order Line **master-detail** screens
+    ![](./media/3.18.4.png)
+    
+    Drag the **ProductOrderId** value from the left-hand **Sources** column and drop it onto the **value** under **Target**.
+    
+    ![](./media/image124.png)
+    
+    You will see an expression inserted in to value as shown here
+    
+    ![](./media/3.18.5.png)
+    
+    Click the **Finish** button when done.
+    
+    The Product Order Line information matching the current order should be displayed, if not, you may need to reset the context using the **Live** mode again
+    
+    ![](./media/AppDev3.18.6.png)
 
-1. You've enabled Mama Maggy's managers/franchisees to retrieve a list of their orders and check order status when it is convenient to them without having to call headquarters
-    
-1. This is a good time to use **Quick Start** to build Create, Edit, and Delete screens for both the Product Order List table (Product Order screen) and the Product Order Line table (Product Order Detail screen)
-    
-1. Congratulations\! You’re now ready to create your first Mobile application with Visual Builder
 
-[Return to top of Section 2 – Create Master-Detail Application](#section-2--create-master-detail-application)
+You should now be able to test your Product Order – Product Order Line **master-detail** screens
 
-[Return to Table of Contents](#table-of-contents)
+You've enabled Mama Maggy's managers/franchisees to retrieve a list of their orders and check order status when it is convenient to them without having to call headquarters
+    
+This is a good time to use **Quick Start** to build Create, Edit, and Delete screens for both the Product Order List table (Product Order screen) and the Product Order Line table (Product Order Detail screen)
+    
+Congratulations\! You’re now ready to create your first Mobile application with Visual Builder
+
+<br>
 
 ## Section 3 – Create Mobile Application
 
 Mama Maggy's managers/franchisees want to be able to check product order status anytime, not just when they are in their offices. So, in this exercise you will create a mobile application allowing them to check order status from their phone or other mobile devices, wherever they want, whenever they want
 
-1. Use Visual Builder’s Navigator to open Mobile Applications
-![](./media/image126.png)
+1. Use Visual Builder’s Navigator to open Mobile Applications ![](./media/image126.png)
 
 
-1. If you have not created any Mobile Applications yet click the ** + Mobile Applications** button; otherwise, click the **+** to the right of **Mobile Apps**  
-![](./media/image127.png)  
-![](./media/image128.png)
+2. If you have not created any Mobile Applications yet click the ** + Mobile Applications** button; 
+
+    ![](./media/image127.png)  
+
+    otherwise, click the **+** to the right of **Mobile Apps**
+
+    ![](./media/3.20.1.png)
 
 
-1. The New Mobile Application wizard has two steps; select **None** and click the right-arrow button **\>** to continue
-![](./media/image129.png)
+3. The New Mobile Application wizard has two steps; select **None** and click the right-arrow button **\>** to continue
+
+    ![](./media/3.21.1.png)
 
 
-1. Click **Finish** on the second page of the wizard
-![](./media/image130.png)
+4. Click **Finish** on the second page of the wizard
+
+    ![](./media/3.22.1.png)
 
 
-1. Notice the **mobile** frame to help visualize a mobile app; select the title then modify it in the property inspector
-![](./media/image131.png)
+5. Notice the **mobile** frame to help visualize a mobile app; select the title then modify it in the property inspector
+    
+    ![](./media/3.23.1.png)
 
 
-1. Drag a **Table** component into the body of the phone, below the title.
-![](./media/image132.png)
+6. Drag a **Table** component into the body of the phone, below the title.
+
+    ![](./media/image132.png)
 
 
-1. Click on the empty table, then use **Quick Start** to **Add Data** - choose the **Product Order** business object
-![](./media/image133.png)
+7. Click on the empty table, then use **Quick Start** to **Add Data** - choose the **Product Order** business object
+    
+    ![](./media/image133.png)
 
 
-1. Select the id (Input Number), `orderDate` (Input Date) , and `orderStatus` (Text) fields (no need to Define Query)
-![](./media/image134.png)
+8. Select the following fields (no need to Define Query):
+
+    `id` (Input Number)    
+    `orderDate` (Input Date)    
+    `orderStatus` (Text) fields 
+    
+    Click Finish when you are ready to continue.
+
+    ![](./media/3.26.1.png)
 
 
-1. Review the page; test
-![](./media/image135.png)
+9. Review the page. Make the Order Date column more readable.
+
+    ![](./media/3.27.1.png)
+
+    Drag and drop the **input date time** component to the Order Date column. That looks better!
+
+    ![](./media/3.27.2.png)
 
 
-1. Add a Detail page using the **Quick Start** menu and `ProductOrder`. Select `id`, `associate`, `orderDate`, and `orderStatus`
-![](./media/vbcs_add_detail_prodordermobile.png)
+10. Add a Detail page using the **Quick Start** menu and `ProductOrder`. Select `id`, `associate`, `orderDate`, and `orderStatus`
+
+    ![](./media/vbcs_add_detail_prodordermobile.png)
 
 
-1. The basic Order Detail page looks like this ![](./media/image137.png)
+11. View detail page by clicking each item on the screen. The basic Order Detail page looks like this.
+
+    ![](./media/image137.png)
 
 
-1. Add a heading **Items** below the Order Status by dragging the **Heading** component to the **Flex Container** in the Visual Builder Page Structure (click the Page Structure icon ![](./media/image138.png) to show/hide) then change the heading text to **Items** and the size to **H3**.
-![](./media/image139.png)
+12. Add a heading **Items** below the Order Status by dragging the **Heading** component to the **Flex Container** in the Visual Builder Page Structure (click the Page Structure icon ![](./media/image138.png) to show/hide) then change the heading text to **Items** and the size to **H3**.
+
+    ![](./media/image139.png)
 
 
-1. Add a table below the new heading by dragging a **Table** component to the **Flex Container** in the Page Structure display
-![](./media/image140.png)
+13. Add a table below the new heading by dragging a **Table** component to the **Flex Container** in the Page Structure display
+    
+    ![](./media/image140.png)
 
 
-1. Use the table’s **Quick Start** to **Add Data** from **ProductOrderLine** to the table, add Product Name (text) **Find Product Name by drilling down**
-![](./media/image141.png)
+14. Use the table’s **Quick Start** to **Add Data** from **ProductOrderLine** to the table:
 
-1. Use **Define Query** to connect the Product List to the list of Items as follows:
-  - Open {} filterCriterion -\> \[\] criteria -\> {} item\[0\] -\>
-  - Select **attribute** and type **productOrder**
-  - Select **op** and type **$eq**
-  - Drag **productOrderId** to **value**
-![](./media/image142.png)
+    __*** find Product Name by drilling down ***__<br/>
+&nbsp;&nbsp;&nbsp; __{} response <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [] items <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{} item\[i\] <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{} Product Object <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[] items <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{} item[i] <br>
 
-1. Product Order Line data populates table row(s)
-![](./media/image143.png)
+    Select the following fields:
+    - Product Name (Text)
+    - Unit Price (Input Number)
+    - Quantity (Input Number)
+  
+    ![](./media/3.32.1.png)
 
-1. Test the mobile application the two screens should look something like the following:
-![](./media/image144.png)
-![](./media/image145.png)
+
+15. Use **Define Query** to connect the Product List to the list of Items as follows:
+
+    - Open {} filterCriterion -\> \[\] criteria -\> {} item\[0\] -\>
+
+    - Select **attribute** and type **productOrder**
+
+      ![](./media/3.32.4.png)
+
+    - Select **op** and type **$eq**
+
+      ![](./media/3.32.5.png)
+
+    - Drag **productOrderId** to **value**
+
+      ![](./media/3.32.2.png)
+
+      ![](./media/3.32.6.png)
+
+    Click Finish when you are ready to continue.
 
 Congratulations! You have made the daily lives of Mama Maggy managers/franchisees easier. Instead of calling headquarters to check the status of their product orders they can now use your mobile app when and where it is convenient.
 
 This concludes exercise 3.
-
 
 <br>
 
