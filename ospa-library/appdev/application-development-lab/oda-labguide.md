@@ -542,6 +542,7 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 			- "Thank you for ordering from Pizza King!"
 			- "OK, so we are getting you the following items:"
 			- "A ${pizzaSize.value} ${pizzaTopping.value} pizza at ${deliveryTime.value.date?long?number_to_time?string(‘HH:mm’)}."
+			 
 	```
 
 	**Note:** The `text` property value uses the Apache FreeMarker expression `|-` to print multi-line text in a single response bubble. Alternatively, you could have used multiple output text components.
