@@ -401,12 +401,12 @@ The **Product Order Line** Business Object will contain specifics about each ite
 34. Now, using the technique illustrated in 16-18 above add data to the Product Order and Product Order Line business objects (note: file names same as business object names) using the provided data files
 
     - Product Order - ProductOrder.csv
-    
-    ![](./media/AppDev2.22.1.png)
+
+        ![](./media/AppDev2.22.1.png)
 
     - Product Order Line - ProductOrderLine.csv
 
-    ![](./media/image63.png)
+        ![](./media/image63.png)
 
 Congratulations! The data needed allowing Mama Maggy managers/franchisees to see what products are available to order and to check the status of existing orders is now ready for use. This data will be used in the next three exercises.
 
