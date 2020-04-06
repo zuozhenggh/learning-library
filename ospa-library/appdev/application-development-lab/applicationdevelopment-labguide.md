@@ -10,26 +10,18 @@
 
 * [Getting Started](#Getting-started)
 
-* [Exercise 1: Introduction, setup, and demo](#exercise-1-introduction-setup-and-demo)
+* [Day 1: Introduction, setup, and demo](#day-1-introduction-setup-and-demo)
 
-* [Exercise 2: Spreadsheet-based Business Objects](#exercise-2-spreadsheet-based-business-objects)
-
-* [Exercise 3: Web and Mobile Apps](#exercise-3-web-and-mobile-apps)
-
-* [Exercise 4: Data from service](#exercise-4-data-from-service)
+* [Day 2: Web and Mobile Apps](#Day-2-web-and-mobile-apps)
 
 * [Extra Exercise 5: Add Data Using REST Call](#extra-exercise-5-add-data-using-rest-call)
 
-* [Extra Exercise 6: Review and edit JavaScript code **under the covers** of VBCS](#extra-exercise-6-review-and-edit-javascript-code-under-the-covers-of-vbcs)
+* [Extra Exercise 6: Review and edit JavaScript code under the covers of VBCS](#extra-exercise-6-review-and-edit-javascript-code-under-the-covers-of-vbcs)
 
+* [Appendix A: Create Service Connection from Endpoint](#appendix-a-create-service-connection-from-endpoint) 
 
-### [Appendices](#appendix)
+* [Appendix B: Build Mama Maggy Data Application](#appendix-b-build-mama-maggy-data-application) 
 
-* [Appendix A: Create Service Connection from Endpoint](#appendix-a-create-service-connection-from-endpoint) - For old-style RESTful APIs
-
-* [Appendix B: Build Mama Maggy Data Application](#appendix-b-build-mama-maggy-data-application) - Used in Exercise 4 and Extra Exercise 5
-
-<br>
 
 # Exercises Guide Overview
 
@@ -78,10 +70,10 @@ In the interest of time this exercise focuses on creating apps to help managers/
 
 The exercise is presented in four parts:
 
-* Exercise 1 – Introduction and Setup,
-* Exercise 2 - Spreadsheet-based Business Objects, 
-* Exercise 3 – Web and Mobile Apps,
-* Exercise 4 – Data from Service. 
+* Exercise 1 – Introduction and Setup
+* Exercise 2 - Spreadsheet-based Business Objects
+* Exercise 3 – Web and Mobile Apps
+* Exercise 4 – Data from Service
 
 There are two additional **extra** exercises available for anyone who happens to finish early. No prior experience with Visual Builder is assumed or necessary.
 
@@ -90,11 +82,9 @@ The Extra labs are:
 - Extra Lab 5: Add Data Using REST Call
 - Extra Lab 6: Review and edit JavaScript code **under the covers** of VBCS
 
-<br>
 
 Click to go to [Getting Started](#getting-started) or return to [Table of Contents](#table-of-contents).
 
-<br>
 
 # Getting Started
 
@@ -119,15 +109,20 @@ All four files are available in a single .zip file named [vbcsfiles.zip](files/v
 
 **Disclaimer:**  This exercise is designed ONLY for large learning groups and assumes the groups are sharing the Oracle Cloud environment to execute this exercise.
  
-<br>
 
-Click to go to [Exercise 1: Introduction, setup, and demo](#exercise-1-introduction-setup-and-demo) or return to [Table of Contents](#table-of-contents).
 
-<br>
+Click to go to [Day 1 Introduction, setup, and demo](#day-1-introduction-setup-and-demo) or return to [Table of Contents](#table-of-contents).
 
-# Exercise 1: Introduction, setup, and demo
+# Day 1 Introduction, setup, and demo
+
+**Introduction**
+
+Visual Builder provides an easy-to-use WSYIWG *(What You See Is What You Get)* graphical interface for **painting** applications and providing values declaratively allowing people who are not professional developers to create applications. Professional developers may use Visual Builder too; they might also choose to use VBCS’s advanced features and coding capabilities to make applications more-robust.
 
 In this exercise you will make sure you can access a VBCS instance and create your VBCS application.
+
+
+### Exercise 1: Introduction, setup, and demo
 
 1. First, go to cloud.oracle.com, click on **View Accounts** and select **Sign in to cloud**<p>
 ![](./media/1.1.1.png)<p><br>
@@ -165,11 +160,8 @@ This concludes exercise 1.
 
 Click to go to [Exercise 2: Spreadsheet-based Business Objects](#exercise-2-spreadsheet-based-business-objects) or return to [Table of Contents](#table-of-contents).
 
-<br>
 
-<br>
-
-# Exercise 2: Spreadsheet-based Business Objects
+### Exercise 2: Spreadsheet-based Business Objects
 
 To build the solutions for Mama Maggy's managers/franchisees, data is required, right now that data is stored in several spreadsheets. We need to make that data available inside VBCS so that it may be used in the web and mobile applications created in these exercises.
 
@@ -184,7 +176,8 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
 |ProductOrderLine.csv  |Order lines showing the products requested in each of the current orders, their unit price, and the quantity desired |
 
 
-## Begin Excersice 2
+*************************************************************************************
+**Begin Exercise 2**
 
 1.  If you have logged out of the Oracle Cloud, please log back in and return to your VBCS application.
 
@@ -412,29 +405,25 @@ Congratulations! The data needed allowing Mama Maggy managers/franchisees to see
 
 This concludes exercise 2.
 
-Click to go to [Exercise 3: Web and Mobile Apps](#exercise-3-web-and-mobile-apps) or return to [Table of Contents](#table-of-contents).
+Click to go to [Day 2 Web and Mobile Apps](#day-2-web-and-mobile-apps) or return to [Table of Contents](#table-of-contents).
 
-<br>
 
-# Exercise 3: Web and Mobile Apps
+# Day 2 Web and Mobile Apps
 
-## Introduction
+**Introduction**
 
-Visual Builder provides an easy-to-use WSYIWG *(What You See Is What You Get)* graphical interface for **painting** applications and providing values declaratively allowing people who are not professional developers to create applications. Professional developers may use Visual Builder too; they might also choose to use VBCS’s advanced features and coding capabilities to make applications more-robust.
+In exercise 3 you will create web applications so that Mama Maggy managers and franchisees may see what products are available for order and to track the status of orders once they are made.
+In exercise 4 you will add useful information to your application using RESTful API calls rather than Business Objects.
 
-In this exercise you will create Web applications so that Mama Maggy managers/franchisees may see what products are available for order and to track the status of orders once they are made.
+Exercise 3 has three sections:
 
-This exercise has three sections:
+  - Section 1 – [Create First Web Application](#exercise-3-section-1--create-first-web-application)
 
-  - Section 1 – [Create First Web Application](#section-1--create-first-web-application)
+  - Section 2 – [Create Master-Detail Application](#exercise-3-section-2--create-master-detail-application)
 
-  - Section 2 – [Create Master-Detail Application](#section-2--create-master-detail-application)
+  - Section 3 – [Create Mobile Application](#exercise-3-section-3--create-mobile-application)
 
-  - Section 3 – [Create Mobile Application](#section-3--create-mobile-application)
-
-<br>
-
-## Section 1 – Create First Web Application
+### Exercise 3 - Section 1 – Create First Web Application
 
 In the last exercise you created three business objects and added data to them; now you will create a web application to work with them
 
@@ -556,7 +545,7 @@ In the last exercise you created three business objects and added data to them; 
     
     ![](./media/3.10.6.png)
 
-    ## **Potential Context Error**
+    **Potential Context Error**
     
     You may see an **error** message similar to the following. Remember that Visual Builder is WYSIWYG (what you see is what you get) and attempts to show real data during the design process. 
     
@@ -605,7 +594,7 @@ Congratulations\! You’ve successfully created your first Visual Builder web ap
 
 You've also made a day in the life of a Mama Maggy manager/franchisee easier since they can now see what products are available to order without having to play telephone-tag with headquarters.
 
-## Section 2 – Create Master-Detail Application
+### Exercise 3 - Section 2 – Create Master-Detail Application
 
 In this section you will create a set of screens to represent product orders. Here’s what the data model looks like.
 
@@ -626,7 +615,7 @@ In this exercise section you will create a two-screen application similar to the
     ![](./media/3.12.1.png)
 
 
-1. Wow, that date does not look very nice\! A simple way to change the format is by dragging the **Input Date Time** component from the component list and dropping it into the date column
+2. Wow, that date does not look very nice\! A simple way to change the format is by dragging the **Input Date Time** component from the component list and dropping it into the date column
 
     ![](./media/image113.png)
     
@@ -635,7 +624,7 @@ In this exercise section you will create a two-screen application similar to the
     ![](./media/image114.png)
 
 
-2. Create a Product Order Detail page for the Product Order page’s table. Click **Add Detail Page** to begin the wizard.
+3. Create a Product Order Detail page for the Product Order page’s table. Click **Add Detail Page** to begin the wizard.
 
     ![](./media/image101.png)
 
@@ -731,9 +720,7 @@ This is a good time to use **Quick Start** to build Create, Edit, and Delete scr
     
 Congratulations\! You’re now ready to create your first Mobile application with Visual Builder
 
-<br>
-
-## Section 3 – Create Mobile Application
+### Exercise 3 - Section 3 – Create Mobile Application
 
 Mama Maggy's managers/franchisees want to be able to check product order status anytime, not just when they are in their offices. So, in this exercise you will create a mobile application allowing them to check order status from their phone or other mobile devices, wherever they want, whenever they want
 
@@ -856,15 +843,13 @@ Congratulations! You have made the daily lives of Mama Maggy managers/franchisee
 
 This concludes exercise 3.
 
-<br>
 
 Click to go to [Exercise 4: Data from service](#exercise-4-data-from-service) or return to [Table of Contents](#table-of-contents).
 
-<br>
 
-# Exercise 4: Data from service
+### Exercise 4: Data from service
 
-## Introduction
+**Introduction**
 
 Mama Maggy's has multiple existing databases and other data stores being used to run their business. Mama Maggy management would prefer to access existing databases and any new databases directly rather than duplicating data in VBCS Business Objects.
 
@@ -876,7 +861,7 @@ In this exercise you will add useful information to your application using RESTf
 
 Your resources for this exercise include two (2) service connections used to access data for Mama Maggy stores and Mama Maggy associates. You will use these **Service Connections** to provide data services to your applications.
 
-## Prerequisite
+**Prerequisite**
 
 You will need two service connections (Rest services) to access data for:
    - Mama Maggy stores and
@@ -894,7 +879,7 @@ You will need two service connections (Rest services) to access data for:
 Exercise 4 assumes access to modern APIs that provide an industry-standard manifest; if only old-style endpoints are available use the instructions in [Appendix A: Create Service Connection from Endpoint](#appendix-a-create-service-connection-from-endpoint) instead of the instructions in this exercise to access the APIs.
 *******************************************************************
 
-## Begin Exercise 4
+**Begin Exercise 4**
 
 In this exercise you will create new VBCS Web applications to display a list of Mama Maggy stores and the Associates who work in them. This will make it easier for a Mama Maggy manager/franchisee to collaborate with other. 
 
@@ -1140,13 +1125,12 @@ You may save today’s work using Visual Builder’s **export** capability, this
 
 [Go to Extra Exercise 5](#extra-exercise-5-add-data-using-rest-call) 
 
-<br>
+
 
 Click to go to [Extra Exercise 5: Add Data Using REST Call](#extra-exercise-5-add-data-using-rest-call) or return to [Table of Contents](#table-of-contents).
 
-<br>
 
-# Extra Exercise 5: Add Data Using REST Call
+### Extra Exercise 5: Add Data Using REST Call
 
 The **Extra** exercises are intended to **flex** the mind-muscles of those who have finished the other exercises early so, they are short on explanation and there are no example solutions provided.
 
@@ -1162,13 +1146,13 @@ In this exercise you will work more with RESTful API calls
 
 This concludes Extra Exercise 5
 
-<br>
 
-Click to go to [Extra Exercise 6: Review and edit JavaScript code **under the covers** of VBCS](#extra-exercise-6-review-and-edit-javascript-code-under-the-covers-of-vbcs) or return to [Table of Contents](#table-of-contents).
 
-<br>
+Click to go to [Extra Exercise 6: Review and edit JavaScript code under the covers of VBCS](#extra-exercise-6-review-and-edit-javascript-code-under-the-covers-of-vbcs) or return to [Table of Contents](#table-of-contents).
 
-# Extra Exercise 6: Review and edit JavaScript code **under the covers** of VBCS
+
+
+### Extra Exercise 6: Review and edit JavaScript code **under the covers** of VBCS
 
 The **Extra** exercise are intended to **flex** the mind-muscles of those who have finished the other exercises early so, they are short on explanation and there are no example solutions provided.
 
@@ -1188,16 +1172,14 @@ For instance:
 **\<h4…\>Order Items\</h4\>** to make the heading much smaller
 This concludes Extra Exercise 6
 
-<br>
 
 Click to return to [Table of Contents](#table-of-contents).
 
-<br>
 
 # Appendix
 
 
-# Appendix A: Create Service Connection from Endpoint
+### Appendix A: Create Service Connection from Endpoint
 
 1.  If you have not yet created any **Service Connections** click the **+ Service Connection** button
     
@@ -1270,13 +1252,11 @@ Click to return to [Table of Contents](#table-of-contents).
   - Mama Maggy Store – get single using {id}. (maybe **mmstoreget**)
 Be sure to test your connections. Please ask the instructor if you need assistance
 
-<br>
 
 Click to return to [Table of Contents](#table-of-contents).
 
-<br>
 
-# Appendix B: Build Mama Maggy Data Application
+### Appendix B: Build Mama Maggy Data Application
 
 This appendix shows how the **Mama Maggy** application was created to serve as a data source for the Application Development exercises.
 
@@ -1440,9 +1420,8 @@ In this exercise you will create:
  
 1. This is the address needed to access **Store** data
 
-![](./media/image_c_39.png)
-
-![](./media/image_c_40.png)
+    ![](./media/image_c_39.png)
+    ![](./media/image_c_40.png)
  
  
 1. Select the **Associate** business object and once again display the **Endpoints** tab. Copy the value from the **Metadata** column **Live** row using the **clipboard** icon ![](./media/image_c_38.png). Paste the resulting string into a text file in your local environment to share with applications wanting to use the data
@@ -1451,7 +1430,5 @@ In this exercise you will create:
 
 1. That’s it, you’ve created an application with business objects that may be accessed using REST APIs like those used in exercise 4
 
-<br>
 
-Click to return to [Table of Contents](#table-of-contents).
 

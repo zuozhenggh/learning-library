@@ -83,11 +83,13 @@ In this lab you will make sure you can access the VBCS instance for your classro
 
 1. Another method is to click the **General Menu** icon
 ![](./media/image_a_9.png) in the lower-right corner of the  “Visual Builder” service box to display a menu.
-![](./media/image_a_3.png)
+
+    ![](./media/image_a_3.png)
 
 
 1. Select “Open Service Console” from the menu.
-![](./media/image_a_10.png)
+
+    ![](./media/image_a_10.png)
 
 
 1. If you have not created any services the Service Console prompts you to begin the process.
@@ -155,46 +157,5 @@ If you are creating a new instance either for the lab purposes or a customer dem
 
 That’s it, you’ve created your first Oracle Digital Assistant instance.
 
-
-# Create and ATP Instance
-
-As part of the lab, we expect learns to create the ATP instance before the session delivery.
-If you are creating a new instance either for the lab purposes or a customer demonstration, please follow the next steps; the process is simple but require several minutes to complete.
-
-## Video
-
-
-[![Creating a ATP Instance](./media/playback_creating_instance_atp.png)](https://otube.oracle.com/media/Oracle+Sales+and+Partner+Academy+-+AppDev+Virtual+Workshop+-+Creating+and+ATP+Instance/1_r47n3ers)
-
-*Note: By clicking the video, this will redirects you to OTube. Remember to get back to this page to continue with the Lab*
-
-
-## Guide
-
-1. First, go to cloud.oracle.com, click on **View Accounts** and select **Sign in to cloud**
-![](./media/cloudoracle.png)
-
-1. Enter your tenant account
-![](./media/tenant.png)
-
-1. On the login screen select SSO and provide your credentials *(Contact your tenant admin if you are using a different login mechanism)*
-![](./media/credentials.png)
-![](./media/credentials_2.png)
-
-1. Once in the main dashboard, open the **General Menu** located at the top left hand side of the screen, click on **Autonomous Data Processing**
-![](./media/creating_atp_1.png)
-
-1. In the ATP console, select the compartment where to deploy the new instance and click on **Create Autnomous Database**
-![](./media/creating_atp_2.png)
-
-1. In the database creation screen, provide a display name, database name, password, the license type. and click **Create Autonomous Database**
-![](./media/creating_atp_3.png)
-![](./media/creating_atp_4.png)
-
-
-1. The process might take a few minutes. Once created, you should see the instance as **Available**
-![](./media/creating_atp_5.png)
-
-That’s it, you’ve created your first ATP instance.
 
 [Return to Main Page](README.md)
