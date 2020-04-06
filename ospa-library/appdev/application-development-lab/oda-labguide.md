@@ -24,7 +24,6 @@ This 60-minute hands-on lab is an entry-level exercise for building a skill in O
 
 <br>
 
-
 ## Background
 Oracle Digital Assistant is an environment for building _digital assistants_, which are user interfaces driven by artificial intelligence (AI) that help users accomplish a variety of tasks in natural language conversations. Digital assistants consist of one or more _skills_, which are individual chatbots that are focused on specific types of tasks.
 
@@ -33,9 +32,12 @@ In this lab, you will create a skill that can be used for interactions with a pi
 * Design a conversation flow.
 * Validate, debug and test your skill.
 
+<br>
+
 ## What Do You Need?
 * Access to Oracle Digital Assistant.
 
+<br>
 <br>
 
 # Create a Skill
@@ -75,6 +77,7 @@ In this lab, we’re starting from scratch. So the first thing you’ll do is cr
 1.  Click **Create**.The designer will then open on the **Intents** page. Here’s where we’ll begin to express the use case (that is, the PizzaKing-customer activity flow) in terms of the concepts that support Natural Language Processing (NLP): intents and entities.
 
 <br>
+<br>
 
 # Create Intents
 
@@ -84,78 +87,91 @@ For the PizzaKing example, you will create intents for ordering pizza, cancellin
 
 
 ### Create the Order Pizza Intent
+
 1. In the left navigation for the designer, make sure that ![](media/left_nav_intents.png) is selected.
 2. Click the **+ Intent** button.
 3. In the **Conversation Name** field, type `Order Pizza`.
-5. In the **Name** field, type `OrderPizza`.
-6. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key. (Yes, you can paste all of them at once.)
-	* Would you happen to have thin crust options on your Pizzas?
-	* Let’s order a cheese pizza
-	* Would love a large Pepperoni please!
-	* I feel like eating some pizza
-	* I would like to order a pizza
-	* Can I order a Pizza?
-	* What’s on the menu today?
-	* I want pizza
-	* Do you server gluten-free pizza?
-	* I want to order pizza for lunch
-	* Do you have deep dish pizzas available?
-	* Order Pizza!
-7. You’ll notice that it's fine for utterances to have inconsistent punctuation and capitalization.
+4. In the **Name** field, type `OrderPizza`.
+5. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key. (Yes, you can paste all of them at once.)
+	
+	```
+	Would you happen to have thin crust options on your Pizzas?
+	Let’s order a cheese pizza
+	Would love a large Pepperoni please!
+	I feel like eating some pizza
+	I would like to order a pizza
+	Can I order a Pizza?
+	What’s on the menu today?
+	I want pizza
+	Do you server gluten-free pizza?
+	I want to order pizza for lunch
+	Do you have deep dish pizzas available?
+	Order Pizza!
+	```
+
+
+6. You’ll notice that it's fine for utterances to have inconsistent punctuation and capitalization.
 
 	![](media/intent_creation.png)
 
 
-    ### Create the Cancel Pizza Intent
+### Create the Cancel Pizza Intent
 
-    1. Click the **+ Intent** button.
-    2. In the **Conversation Name** field, type `Cancel Pizza`.
-    3. In the **Name** field, type `CancelPizza`.
-    4. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key.
-	    * Can I cancel my order?
-	    * Cancel my order
-	    * Cancel my Pizza please
-	    * How do I cancel my order?
-	    * I don’t want my Pizza anymore
-	    * I really don’t want the Pizza anymore
-	    * I’d like to cancel my order please
-	    * Its been more than 20 mts. Please cancel my order and issue a refund to my card.
-	    * Need to cancel my order
-	    * Please cancel my pizza order
-	    * Please don’t deliver my Pizza
+1. Click the **+ Intent** button.
     
-    ### Create the File Complaint Intent
-    1. Click the **+ Intent** button.
-    2. In the **Name** field, type `FileComplaint`.
-    3. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key.
-	    * I am upset
-	    * You charged me wrong
-	    * I want to file a complaint
-	    * I am not happy with my recent order
-	    * I have some grief to share
-	    * I want to speak with a manager
-	    * Can I raise a complaint
+2. In the **Conversation Name** field, type `Cancel Pizza`.
 
-        Your screen should look similar to what is shown in the image below:
+3. In the **Name** field, type `CancelPizza`.
 
-        ![](media/screenshot_pizza-intents.png)
+4. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key.
+    * Can I cancel my order?
+    * Cancel my order
+    * Cancel my Pizza please
+    * How do I cancel my order?
+    * I don’t want my Pizza anymore
+    * I really don’t want the Pizza anymore
+    * I’d like to cancel my order please
+    * Its been more than 20 mts. Please cancel my order and issue a refund to my card.
+    * Need to cancel my order
+    * Please cancel my pizza order
+    * Please don’t deliver my Pizza
+    
+### Create the File Complaint Intent
 
-    **Note:** If you are stuck, you can import the intents and utterances using  [PizzaKing-Intents.csv](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-skill/files/PizzaKing-Intents.csv).
+1. Click the **+ Intent** button.
+
+2. In the **Name** field, type `FileComplaint`.
+
+3. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key.
+
+    * I am upset
+    * You charged me wrong
+    * I want to file a complaint
+    * I am not happy with my recent order
+    * I have some grief to share
+    * I want to speak with a manager
+    * Can I raise a complaint
+
+    Your screen should look similar to what is shown in the image below:
+
+    ![](media/screenshot_pizza-intents.png)
+
+**Note:** If you are stuck, you can import the intents and utterances using  [PizzaKing-Intents.csv](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-skill/files/PizzaKing-Intents.csv).
 
 
-    ### Train Your Intents
+### Train Your Intents
 
-    You’ve now provided the basic ingredients that allow the skill to recognise user input for ordering a pizza, but right now, the skill has no cognition. It can’t understand any user input. To enable it to understand the intents, you need to train it.
+You’ve now provided the basic ingredients that allow the skill to recognise user input for ordering a pizza, but right now, the skill has no cognition. It can’t understand any user input. To enable it to understand the intents, you need to train it.
 
-    1. Locate the **Train button** (![](media/train-button.png)) on the right side of the page.
+1. Locate the **Train button** (![](media/train-button.png)) on the right side of the page.
 
-        ![](media/screenshot_train-button.png)
+    ![](media/screenshot_train-button.png)
 
-    2. Select `Trainer Ht` a Linguist based model.
+2. Select `Trainer Ht` a Linguist based model.
 
-	    ![](media/intent.png)
+    ![](media/intent.png)
 
-    3. Click ![](media/train-button%202.png), click **Submit**, and then wait a few seconds for the training to complete.
+3. Click ![](media/train-button%202.png), click **Submit**, and then wait a few seconds for the training to complete.
 
 <br>
 
@@ -184,7 +200,7 @@ The sentence "Dude, bring me pizza" deserves a higher confidence score, so we sh
 
 8. Click **Add Example** to add it.
 9. Click ![](media/train-button%203.png) to retrain the model.
-10. Again enter Dude, bring me pizza in the **Message** field and click **Send**.The confidence score should be much higher for OrderPizza (possibly even 100%).
+10. Again enter Dude, bring me pizza in the **Message** field and click **Send**. The confidence score should be much higher for OrderPizza (possibly even 100%).
 
     **Note:** Conversational AI does not compare input by exact matches of the words. Though "Dude, bring me pizza" is available as an utterance, when entering the sentence as a message, it is the intent model’s algorithm that determines the matching intent.
 
@@ -206,6 +222,8 @@ The sentence "Dude, bring me pizza" deserves a higher confidence score, so we sh
 
 16. Train the model again and then re-test.
 
+<br>
+
 ### Notes on What You Just Did
 In this part of the tutorial, you have tested the quality of your intent training with the goal being to ensure a high level of confidence when resolving intents.
 
@@ -213,6 +231,7 @@ In a real skill project, you would always need to go back to the intent testing 
 
 **Note:** Oracle Digital Assistant also has a batch mode that allows you to test based on a log of a previous set of tests. This is useful for re-running a set of tests iteratively as you fine-tune your intents.
 
+<br>
 <br>
 
 # Create Entities
@@ -285,6 +304,7 @@ In this part of the tutorial, you have created custom entities for the PizzaKing
 	
 Similar to the PizzaOrder intent, you would typically need to create and associate entities for the other intents as well. In the interest of time, this tutorial only focuses on the PizzaOrder intent.
 
+<br>
 <br>
 
 # Design the Dialog Flow
@@ -471,6 +491,7 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 			next: "setPizzaTopping
 	```
 
+<br>
 
 ```
 setPizzaSize:
@@ -577,11 +598,13 @@ showPizzaOrder:
 
 ```
 <br>
+<br>
 
 ### Validate the Dialog Flow
 
 * Click the **Validate** button on the top of the page, and then fix any errors that are revealed.If you have errors that you can’t resolve, you can copy and paste the code from  [complete-dialog-flow.txt](files/complete-dialog-flow.txt) .
 
+<br>
 <br>
 
 # Test Your Skill
