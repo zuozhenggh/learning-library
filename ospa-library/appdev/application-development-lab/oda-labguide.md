@@ -227,8 +227,6 @@ The sentence "Dude, bring me pizza" deserves a higher confidence score, so we sh
 
 16. Train the model again and then re-test.
 
-<br>
-
 ### Notes on What You Just Did
 In this part of the tutorial, you have tested the quality of your intent training with the goal being to ensure a high level of confidence when resolving intents.
 
@@ -269,7 +267,6 @@ We’ll create custom entities for size and topping and later use a built-in ent
 
 	![](media/screenshot_pizza-entities.png)
 
-<br>
 
 ### Associate the Entity with Its Intent
 For an entity to be recognised when parsing the user input message, it needs to be associated with an intent. So let’s associate our entities with the appropriate intents:
@@ -283,7 +280,6 @@ For an entity to be recognised when parsing the user input message, it needs to 
 
 	![](media/screenshot_entity-list.png)
 
-<br>
 
 ### Test the Entities
 
@@ -342,8 +338,6 @@ Context variables are the skill’s temporary memory. They can be referenced thr
 
     Now we’re ready to add some states.
 
-<br>
-
 ### Add a State to Determine User Intent
 First we’ll add the `System.Intent`
  component. This component evaluates user input to determine the user intent, extracts all of the entities, and then triggers a subsequent state.
@@ -383,8 +377,6 @@ First we’ll add the `System.Intent`
  		unresolvedIntent: "startUnresolved"
 	```
 
-<br>
-
 ### Add Initial States for Each Intent
 
 Next, you need to create the dialog flow states that each possible outcome navigates to. To save you some time, the states are provided in a text document for you to copy and paste.
@@ -393,7 +385,6 @@ Next, you need to create the dialog flow states that each possible outcome navig
 2. Copy the file’s contents and paste them at the bottom of the dialog flow.Make sure that the indentation is preserved in the pasted content.
 3. Verify the correctness of your edits by clicking the **Validate** button on the top of the page.
 
-<br>
 
 ### Troubleshooting Errors in the Dialog Flow
 
@@ -404,7 +395,6 @@ Mouse over the icon to display the tooltip with a description of the problem. In
 
 If you have gotten into a jam and can’t get anything to work, open the  [your-first-dialog-flow.txt](files/your-first-dialog-flow.txt)  and replace the content in your dialog flow with the content from the file.
 
-<br>
 
 ### Tune Intent Resolution
 
@@ -419,8 +409,6 @@ Let’s update these settings:
 3. Set the **Confidence Win Margin** property to `0.1`(meaning 10%).
 
     ![](media/screenshot_settings-thresholds.png)
-
-<br>
 
 ### Test the Basic Flow
 
@@ -450,8 +438,6 @@ Before doing any further development, let’s test the basic flow to make sure i
 
     As you can see, the confidence threshold level falls below this minimum value of 60% in this case, so the component triggers its unresolvedIntent action.
 
-<br>
-
 ### Build the Pizza Order Conversation Flow
 
 Now that we have verified that the basic intent model is working, the next step is to implement conversation flows for each intent. In the interest of time, we’ll do this just for the PizzaOrder intent.
@@ -471,15 +457,12 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 
     ![](media/screenshot_dialog-startOrderPizza.png)
 
-<br>
-
 ### Set Pizza Size
 1. Click ![](media/add-component%202.png) to open the gallery of component templates.
 2. Select the **User Interface** category.
 3. Select the **List – set variable** template.
 
 	![](media/screenshot_component-setvar.png)
-
 
 4. From the **Insert After** dropdown, select **startOrderPizza**.
 5. Ensure the **Remove Comments** switch is ON.
@@ -498,7 +481,6 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 		transitions:
 			next: "setPizzaTopping"
 	```
-<br>
 
 ### Set Pizza Topping
 1. Below the `setPizzaSize`
@@ -516,8 +498,6 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 		transitions:
 			next: "setPizzaDeliveryTime"
 	```
-
-<br>
 
 ### Set Pizza Delivery Time
 1. Click ![](media/add-component%203.png).
@@ -542,7 +522,6 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 				cancel: "maxError"
 				next: "setPizzaOrderMessage"
 	```
-<br>
 
 ### Show Pizza Delivery Message
 1. Click ![](media/add-component%204.png).
@@ -567,8 +546,6 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 
 	**Note:** The `text` property value uses the Apache FreeMarker expression `|-` to print multi-line text in a single response bubble. Alternatively, you could have used multiple output text components.
 
-<br>
-
 ### Show Pizza Order
 1. Click ![](media/add-component%205.png).
 2. Select the **User Interface** category.
@@ -590,8 +567,6 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 		transitions: 
 			return: "done"
 	```
-<br>
-<br>
 
 ### Validate the Dialog Flow
 
