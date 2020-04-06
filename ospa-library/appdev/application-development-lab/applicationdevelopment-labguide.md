@@ -418,6 +418,8 @@ Click to go to [Exercise 3: Web and Mobile Apps](#exercise-3-web-and-mobile-apps
 
 # Exercise 3: Web and Mobile Apps
 
+## Introduction
+
 Visual Builder provides an easy-to-use WSYIWG *(What You See Is What You Get)* graphical interface for **painting** applications and providing values declaratively allowing people who are not professional developers to create applications. Professional developers may use Visual Builder too; they might also choose to use VBCS’s advanced features and coding capabilities to make applications more-robust.
 
 In this exercise you will create Web applications so that Mama Maggy managers/franchisees may see what products are available for order and to track the status of orders once they are made.
@@ -430,94 +432,96 @@ This exercise has three sections:
 
   - Section 3 – [Create Mobile Application](#section-3--create-mobile-application)
 
+<br>
+
 ## Section 1 – Create First Web Application
 
 In the last exercise you created three business objects and added data to them; now you will create a web application to work with them
 
 1.  If you're still logged in to the Oracle Cloud and VBCS, skip to #2 below. 
 
-1. If you have logged out of the Oracle Cloud, please log back in and return to your VBCS application. You might find it useful to close any open windows.
+    If you have logged out of the Oracle Cloud, please log back in and return to your VBCS application. You might find it useful to close any open windows.
+    
+2. On the left-hand side of the Visual Builder interface is a navigator listing several options; choose **Web Applications** ![](./media/image66.png)
 
-1.  On the left-hand side of the Visual Builder interface is a navigator listing several options; choose **Web Applications** ![](./media/image66.png)
-
-| Mobile Applications | ![](./media/image67.png) |
-| ------------------- | ------------------------ |
-| Web Applications    | ![](./media/image68.png) |
-| Service Connections | ![](./media/image69.png) |
-| Business Objects    | ![](./media/image70.png) |
-| Components          | ![](./media/image71.png) |
-| Processes           | ![](./media/image72.png) |
-| Source View         | ![](./media/image73.png) |
-
-  
-1. If you don’t see the navigator, click the **Expand Navigator** icon in the upper-left corner, then click the **Web Applications** button
-![](./media/image74.png)
+    If you don’t see the navigator, click the **Expand Navigator** icon in the upper-left corner, then click the **Web Applications** button ![](./media/image74.png)
  
-1. Add a new Web Application
+3. Add a new Web Application
 
-1. First, you'll create a web application with two features; a list of all products that a manager/franchisee might order, and a page showing specifics about a chosen product.
-
-1. If you don’t have any Web Applications yet; click the **+ Web Application** button
-![](./media/image75.png)
- 
- 
-1. Or, if you want to add to your existing Web Applications; click the plus sign **+** at the top of the Web Apps list
-![](./media/image76.png)
+    First, you'll create a web application with two features; a list of all products that a manager/franchisee might order, and a page showing specifics about a chosen product.
+    
+    If you don’t have any Web Applications yet; click the **+ Web Application** button
+    
+    ![](./media/image75.png)
+    
+    Or, if you want to add to your existing Web Applications; click the plus sign **+** at the top of the Web Apps list
+    
+    ![](./media/image76.png)
  
 
-1. The first Web Application you will create will be called **productList** - type the name in the **Id** box and click the **Create** button to start building the application.
-![](./media/image77.png)
+4. The first Web Application you will create will be called **productList** - type the name in the **Id** box and click the **Create** button to start building the application.
+
+    ![](./media/3.4.1.png)
 
 
-1.  The Visual Builder interface has three main tabs for creating web applications: ![](./media/image78.png) Designer, ![](./media/image79.png) Components, and ![](./media/image80.png) Page Structure.
-![](./media/image81.png)
+5.  The Visual Builder interface has three main tabs for creating web applications: ![](./media/image78.png) Designer, ![](./media/image79.png) Components, and ![](./media/image80.png) Page Structure.
 
-1. Visual Builder will also display an object list in the navigator
-![](./media/image82.png)
+    ![](./media/3.5.1.png)
 
+    Visual Builder will also display an object list in the navigator
+    
+    ![](./media/3.5.2.png)
 
-1. Drag a **Heading** component from the Component list (icon is a toggle) to the display area
-![](./media/image83.png)
-![](./media/image84.png)
+6. Add a **Heading** component from the Component list (icon is a toggle)
 
+    ![](./media/image83.png)
 
-1. Change the heading to **Product List** using the Property Inspector on the right-side of the screen. The **slider** may be used to alter the heading’s size.
-![](./media/image85.png)
+    Drag and drop the component **Heading** to the design area as shown here
 
+    ![](./media/3.6.2.png)
 
-1. If you don’t see the Property Inspector; click the **Expand Property Inspector Icon** in the upper-right corner.
-![](./media/image86.png)
+    Change the heading to **Product List** using the Property Inspector on the right-side of the screen. The **slider** may be used to alter the heading’s size.
 
-1. The screen should look something like this now.
-![](./media/image87.png)
+    ![](./media/image85.png)
 
+    If you don’t see the Property Inspector; click the **Expand Property Inspector Icon** in the upper-right corner. ![](./media/image86.png)
 
-1. Add a table to the application by scrolling the Components list until you see the Table icon.
-![](./media/image88.png)
+    The screen should look something like this now.
+
+    ![](./media/image87.png)
+
+7. Add a table to the application by scrolling the Components list until you see the Table icon.
+    
+    ![](./media/image88.png)
  
+    Drag the Table icon to the design area.
  
-1. Drag the Table icon to the design area.
- ![](./media/image89.png)
+    ![](./media/image89.png)
  
+8. To add data to the table, select the table and click the **Add Data** option from the list on the right.
 
-1. To add data to the table, select the table and click the **Add Data** option from the list on the right.
-![](./media/image90.png)
+    ![](./media/image90.png)
 
-1. The **Add Data** wizard will list any Business Objects and/or Service Connections currently defined.
-![](./media/image91.png)
+    The **Add Data** wizard will list any Business Objects and/or Service Connections currently defined.
 
-1. Choose the **Product** business object then click **Next** to go to the next step in the wizard.
+    ![](./media/image91.png)
 
-1. Select the fields you wish to display (select them in the sequence to be displayed, you can move them if you make a mistake) and click **Next** to continue in the wizard to **bind** the business object’s data to the objects on the screen.
-![](./media/image92.png)
+    Choose the **Product** business object then click **Next** to go to the next step in the wizard.
 
-1. For this app you will not be changing the query, so just click the **Finish** button
-![](./media/image93.png)
+    Select the fields you wish to display (select them in the sequence to be displayed, you can move them if you make a mistake) and click **Next** to continue in the wizard to **bind** the business object’s data to the objects on the screen.
+    
+    ![](./media/image92.png)
 
-1. Visual Builder will then show some data in the design window.
-![](./media/image94.png)
+    For this app you will not be changing the query, so just click the **Finish** button
 
-1. Test the application by clicking the **Run** button ![](./media/image95.png) in the upper-right part of the screen.
+    ![](./media/3.8.4.png)
+
+    Visual Builder will then show some data in the design window.
+
+    ![](./media/3.8.5.png)
+
+9. Test the application by clicking the **Run** button ![](./media/image95.png) in the upper-right part of the screen.
+
 ![](./media/image96.png)
 
 1. A new browser window will open with your running application.
