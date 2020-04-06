@@ -495,8 +495,8 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 			prompt: "What size of pizza do you want?"
 			variable: "pizzaSize"
 			nlpResultVariable: "iResult"
-		transitions:`
-			next: "setPizzaTopping
+		transitions:
+			next: "setPizzaTopping"
 	```
 <br>
 
@@ -507,14 +507,14 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 
 	```
 	setPizzaTopping:
-	component: "System.List"
-	properties:
-		options: "${pizzaTopping.type.enumValues}"
+		component: "System.List"
+		properties:
+			options: "${pizzaTopping.type.enumValues}"
 			prompt: "What type of pizza would you like?"
 			variable: "pizzaTopping"
 			nlpResultVariable: "iResult"
-	transitions:
-		next: "setPizzaDeliveryTime"
+		transitions:
+			next: "setPizzaDeliveryTime"
 	```
 
 <br>
