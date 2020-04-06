@@ -44,9 +44,9 @@ In this lab, you will create a skill that can be used for interactions with a pi
 In this lab, we’re starting from scratch. So the first thing you’ll do is create a new skill.
 1. Access the cloud tenant using your Oracle SSO account.
 1. Click on the ![](media/hamburger.png) to open the side menu.
-1. Select `Platform Services` and click on `Digital Assitant`
+2. Select  `Digital Assitant`
 
-	![](media/cloud_dashboard.png)
+	![](media/cloud_dashboard_oda.png)
 
 1. On the Digital Assitance console, click the click ![](media/hamburger.png) next to the instance name and select `Digital Assitant Designer UI`
 

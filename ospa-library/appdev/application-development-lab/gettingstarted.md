@@ -70,7 +70,7 @@ In this lab you will make sure you can access the VBCS instance for your classro
 1. Log into your tenancy using cloud.oracle.com; be sure it has been provisioned to allow Visual Builder Cloud Service and the database and object storage instances also required.  (check with your tenancy admin if unsure)
 
 
-1. From the “Visual Builder” service box there are two ways to open a service console.
+2. From the “Visual Builder” service box there are two ways to open a service console.
 ![](./media/image_a_3.png)
 
 
@@ -83,13 +83,11 @@ In this lab you will make sure you can access the VBCS instance for your classro
 
 1. Another method is to click the **General Menu** icon
 ![](./media/image_a_9.png) in the lower-right corner of the  “Visual Builder” service box to display a menu.
-
-    ![](./media/image_a_3.png)
+![](./media/image_a_3.png)
 
 
 1. Select “Open Service Console” from the menu.
-
-    ![](./media/image_a_10.png)
+![](./media/image_a_10.png)
 
 
 1. If you have not created any services the Service Console prompts you to begin the process.
@@ -102,7 +100,7 @@ In this lab you will make sure you can access the VBCS instance for your classro
 
 
 1. Click on **Custom**
- ![](./media/vbcs_instance_custom.png)
+![](./media/vbcs_instance_custom.png)
 
 1. Provide an instance name, description, and region. Once complete, click next and confirm. The instance creation can take up to 10 min.
 ![](./media/vbcs_instance_data.png)
