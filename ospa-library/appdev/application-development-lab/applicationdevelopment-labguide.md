@@ -864,125 +864,164 @@ Click to go to [Exercise 4: Data from service](#exercise-4-data-from-service) or
 
 # Exercise 4: Data from service
 
+## Introduction
+
 Mama Maggy's has multiple existing databases and other data stores being used to run their business. Mama Maggy management would prefer to access existing databases and any new databases directly rather than duplicating data in VBCS Business Objects.
 
-While using Visual Builder’s built-in business objects is useful; they limit applications to data found within the Visual Builder instance.
-Most modern applications will use data from varied sources both in and outside of an organization’s systems. This is accomplished using service connections that take advantage of RESTful APIs exposed by databases and other providers. API stands for Application Programming Interface; a pre-defined calling mechanism used to read and modify data using standardized calls over the internet with HTTP/HTTPS (often called RESTful APIs). RESTful APIs are the most common way of using external data in
-modern applications. In this exercise you will add useful information to your application using RESTful API calls rather than Business Objects (though, the truth is that VBCS uses RESTful API calls when accessing Business Objects too).
+While using Visual Builder’s built-in business objects is useful; they limit applications to data found within the Visual Builder instance. Most modern applications will use data from varied sources both in and outside of an organization’s systems. 
 
-Your resources for this exercise include two (2) service connections used to access data for Mama Maggy stores and Mama Maggy associates. You will use these **Service Connections** to provide data services to your applications. 
+This is accomplished using service connections that take advantage of RESTful APIs exposed by databases and other providers. API stands for Application Programming Interface; a pre-defined calling mechanism used to read and modify data using standardized calls over the internet with HTTP/HTTPS (often called RESTful APIs). RESTful APIs are the most common way of using external data in modern applications. 
+
+In this exercise you will add useful information to your application using RESTful API calls rather than Business Objects (though, the truth is that VBCS uses RESTful API calls when accessing Business Objects too).
+
+Your resources for this exercise include two (2) service connections used to access data for Mama Maggy stores and Mama Maggy associates. You will use these **Service Connections** to provide data services to your applications.
+
+## Prerequisite
+
+You will need two service connections (Rest services) to access data for:
+   - Mama Maggy stores and
+   - Mama Maggy associates
+
+   You will use these **Service Connections** later in the lab to provide data to your applications. 
+   
+   If your environment does not have access to the Mama Maggy APIs; use the instructions in [Appendix B: Build Mama Maggy Data Application](#appendix-b-build-mama-maggy-data-application) to create them.
 
 
 *******************************************************************
-NOTE 1:
 
-  If your environment does not have access to the Mama Maggy APIs; use the instructions in [Appendix B: Build Mama Maggy Data Application](#appendix-c-build-mama-maggy-data-application) to create some that you may use.
+**NOTE:**
 
-NOTE 2:
-
-  Exercise 4 assumes access to modern APIs that provide an industry-standard manifest; if only old-style endpoints are available use the instructions in [Appendix A: Create Service Connection from Endpoint](#appendix-b-create-service-connection-from-endpoint) instead of the instructions in this exercise to access the APIs.
+Exercise 4 assumes access to modern APIs that provide an industry-standard manifest; if only old-style endpoints are available use the instructions in [Appendix A: Create Service Connection from Endpoint](#appendix-a-create-service-connection-from-endpoint) instead of the instructions in this exercise to access the APIs.
 *******************************************************************
 
+## Begin Exercise 4
 
-#### Begin Exercise 4
+In this exercise you will create new VBCS Web applications to display a list of Mama Maggy stores and the Associates who work in them. This will make it easier for a Mama Maggy manager/franchisee to collaborate with other. 
 
-In this exercise you will create new VBCS Web applications to display a list of Mama Maggy stores and the Associates who work in them. This will make it easier for a Mama Maggy manager/franchisee to collaborate with other. The data used to create these apps will come from **Service Connections** that you will create allowing the application to use data via RESTful APIs provided by the service provider.
+The data used to create these apps will come from **Service Connections** that you will create allowing the application to use data via RESTful APIs provided by the service provider.
 
 1. If you have logged out of the Oracle Cloud, please log back in and return to your VBCS application. You might find it useful to close any open windows
 
-1. On the left-hand side of the Visual Builder interface is a navigator listing several options; choose **Service Connections**
-![](./media/image146.png)
+    On the left-hand side of the Visual Builder interface is a navigator listing several options; choose **Service Connections** ![](./media/image146.png) to get started.
 
-1. If you have not yet created any **Service Connections** click the ** + Service Connection** button
-![](./media/4.3.1.png)
- 
- 
-1. If you are presented with a list of one or more existing connections click the plus **+** sign at the top of the list to the right of the word **Services**
-![](./media/4.3.2.png)
- 
+    If you have not yet created any **Service Connections** click the ** + Service Connection** button
 
-1.  The **Create Connection** wizard starts by asking for the source of the connection; for this exercise we will choose **Define by Specification** for the connections created. Please click **Define by Specification** to continue. (if you only have an **endpoint** see [Appendix A: Create Service Connection from Endpoint](#appendix-a-create-service-connection-from-endpoint) for an example of **Define by Endpoint**)
-![](./media/image149.png)
+    ![](./media/4.3.1.png)
+ 
+ 
+    If you are presented with a list of one or more existing connections click the plus **+** sign at the top of the list to the right of the word **Services**
+
+    ![](./media/4.3.2.png)
  
 
-1.  The wizard will then ask for specifics about the endpoint:
-  - Choose **ADF Describe** from the API Type pulldown
-  - Choose **Web Address** as the Service Specification
-  - Paste the URL into the space provided
-  - Name the Service Id **mmassociates**
-  - Choose **Oracle Cloud Account** from the Authentication pulldown
-  - Select Dynamic, the service supports CORS in Connection Type
-  - Click next when you are ready to continue
- ![](./media/4.5.1.png)
+2.  The **Create Connection** wizard starts by asking for the source of the connection; for this exercise we will choose **Define by Specification** for the connections created. Please click **Define by Specification** to continue. (if you only have an **endpoint** see [Appendix A: Create Service Connection from Endpoint](#appendix-a-create-service-connection-from-endpoint) for an example of **Define by Endpoint**)
+
+    ![](./media/image149.png)
  
- 
-1. When prompted to **Select Endpoints** open the navigator-style list under **Associate**; and for this exercise choose the two GET methods; one returns all **Associate** rows, the other selects specific **Associate** rows using an id value
+
+3.  The wizard will then ask for specifics about the endpoint:
+
+    - Choose **ADF Describe** from the API Type pulldown
+    - Choose **Web Address** as the Service Specification
+    - Paste the URL into the space provided
+    - Name the Service Id **mmassociates**
+    - Choose **Oracle Cloud Account** from the Authentication pulldown
+    - Select Dynamic, the service supports CORS in Connection Type
+    - Click next when you are ready to continue
   
-1. Click **Create** to complete the process
-![](./media/4.5.2.png)
+    Click next when you are ready to continue.
+   
+    ![](./media/4.5.1.png)
+ 
+ 
+    When prompted to **Select Endpoints** open the navigator-style list under **Associate**; and for this exercise choose the two GET methods; one returns all **Associate** rows, the other selects specific **Associate** rows using an id value
+  
+    Click **Create** to complete the process
+
+    ![](./media/4.5.2.png)
  
 
-1.  Next, open the service for testing: select the connection, choose the **Endpoints** tab, find and select the desired endpoint (highlighted below)
-![](./media/4.6.1.png)
+4. Next, open the service for testing: select the connection, choose the **Endpoints** tab, find and select the desired endpoint (highlighted below)
+    
+    ![](./media/4.6.1.png)
  
 
-1. Test the connection by selecting the **Test** tab, filling in any necessary parameters, and clicking **Send** to make a request
-![](./media/4.7.1.png)
-![](./media/4.7.1b.png)
+5. Test the connection by selecting the **Test** tab, filling in any necessary parameters
+    
+    ![](./media/4.7.1.png)
+
+    Then click **Send** to make a request.
+    
+    ![](./media/4.7.1b.png)
  
  
-1. When the service responds, look for a response status **200** (everything ok) and check the results
+6. When the service responds, look for a response status **200** (everything ok) and check the results
+
 ![](./media/4.7.2.png)
-![](./media/image156.png)
- 
- 
-1. If the response looks good to you click the **Copy to Response Body** so that Visual Builder will map out the response details as part of the connection
-![](./media/4.7.4.png)
 
-1. Locate the next endpoint to test and select it
-![](./media/image159.png)
+
+7. If the response looks good to you click the **Copy to Response Body** so that Visual Builder will map out the response details as part of the connection
+
+    ![](./media/4.7.4.png)
+
+8. Locate the next endpoint to test and select it
+
+    ![](./media/image159.png)
  
 
-1.  This endpoint gets a single **Associate** row that is identified by passing in an **{Associate\_Id}** value (or whatever the key field is named). Type an associate id number (**7 in the example**) and **Send** to test
-![](./media/4.9.1.png)  
+9.  This endpoint gets a single **Associate** row that is identified by passing in an **{Associate\_Id}** value (or whatever the key field is named). Type an associate id number (**7 in the example**) and **Send** to test
+
+    ![](./media/4.9.1.png)  
   
  
 1. You have now created and tested two connections
-![](./media/4.9.2.png)
+
+    ![](./media/4.9.2.png)
 
 1. Repeat the steps above to create the following two **mmstores** connection endpoints
-![](./media/4.10.1.png)
+
+    ![](./media/4.10.1.png)
   
 1. Select the GET endpoints
-![](./media/4.10.2.png)
+
+    ![](./media/4.10.2.png)
 
 1. Once you have created the connections, test them; repeat the steps 6 to 9 above for the two **mmstores** connection endpoints
     - Mama Maggy Store – get all
     - Mama Maggy Store – get single using {Store\_id}
-    ![](./media/4.10.3.png)
+    
+        ![](./media/4.10.3.png)
     
     - Test the endpoint **getall_Store**
-    ![](./media/4.10.4.png)
+    
+        ![](./media/4.10.4.png)
     
     - Test the last endpoint **get_Store** with store_id as value 2
-    ![](./media/4.10.5.png)
+    
+        ![](./media/4.10.5.png)
     
     - Check the result; dont forget to click **Save as Example Response**
     ![](./media/4.10.6.png)
 
 1. Create a new Web Application named **storelist** that displays all of the Mama Maggy stores in a table. Refer to exercise 3: Web and Mobile Apps if you need a refresher on the basic steps  
-![](./media/4.11.1.png)
+
+    ![](./media/4.11.1.png)
 
 1. Create a header that says **Mama Maggy Stores** 
-![](./media/4.11.2.png)
+
+    ![](./media/4.11.2.png)
 
 1. Drag and drop a table component below it
-![](./media/4.11.3.png)
+    
+    ![](./media/4.11.3.png)
 
 1. Add data source to the table; use the **mmstores** service connection as the data source
-![](./media/4.11.4.png)
+
+    ![](./media/4.11.4.png)
+
 1. Use the **mmstores** service connection as the data source for the table
-![](./media/4.11.5.png)
+
+    ![](./media/4.11.5.png)
 
 1. Choose the following fields and the primary key:
      - id
@@ -991,20 +1030,26 @@ In this exercise you will create new VBCS Web applications to display a list of 
      - state
  
 1. Be sure to select **id** as the Primary Key too
+
 1. Click the **Next** button when you are ready to continue
-![](./media/4.12.1.png)
+
+    ![](./media/4.12.1.png)
 
 1. No need to Define Query, click the **Finish** button to continue
-![](./media/4.13.1.png)
+
+    ![](./media/4.13.1.png)
 
 1. The finished screen will look something like this
-![](./media/4.13.2.png)
+    
+    ![](./media/4.13.2.png)
  
 1. Use the table’s **Quick Start** ![](./media/image167.png) to **Add Detail Page** to get started
-![](./media/image168.png)
+    
+    ![](./media/image168.png)
 
 1. Use the **mmstores** again (because our connection used the standardized descriptors Visual Builder will choose the correct endpoint)
-![](./media/image164.png)
+
+    ![](./media/image164.png)
 
 
 1. Choose the following fields from the Endpoint Structure:
@@ -1020,22 +1065,25 @@ In this exercise you will create new VBCS Web applications to display a list of 
 
 1. Your Store details screen should look something like this
 
- ![](./media/image170.png)
+     ![](./media/image170.png)
  
 
 1. Now create an **associatelist** web application to display all **Associate** rows (you pick the fields) and provide a **Add Detail Page** to display a single Associate (you pick the fields here too).
-  - List display of all Associates (**mmassociates**)
-  - Details display of selected Associate (****mmassociates** using
+
+    - List display of all Associates (**mmassociates**)
+    - Details display of selected Associate (****mmassociates** using
     **associate\_id**)
 
-1. Test your application
+   Test your application
 
 1. For something really fun; return to the **storelist** application and display the **Stores Detail** page (probably called **main-store-detail** or something close)
-![](./media/image171.png)
+
+   ![](./media/image171.png)
  
 
 1. Add a heading **Associates** under the **Back** button and add a **Table** component under the heading. Use the table’s **Quick Start** menu to **Add Data** to the screen. Choose the **mmassociates** connection to supply the data
-![](./media/image172.png)
+
+    ![](./media/image172.png)
  
  
 1. Select `id`, `name`, `email`, and `hire date`. Also be sure the **Primary Key** is set to the `id` field.
@@ -1043,22 +1091,27 @@ In this exercise you will create new VBCS Web applications to display a list of 
  
 
 1. **STOP** on step (3) **Define Query** so that you can connect the Associates to the Store listed on the page. Under **Define Query** expand **{} filterCriterion -\> \[\] criteria -\> {} item\[0\].
-![](./media/image174.png)
+
+    ![](./media/image174.png)
  
  
 1. Select **A attribute** and type **store** into the text box provided, this is **static** content.
-![](./media/image175.png)
+
+    ![](./media/image175.png)
  
  
 1. Select **A op** and type **$eq** into the text box provided, this is **static** content.
-![](./media/image176.png)
+
+    ![](./media/image176.png)
  
 1. Expand the **Sources** values under **Page-\>{} store** and drag the **id** value from the left side of the screen to the **A value** postion on the right. This establishes the link between the current screen (source) and the Associates data (target).
-![](./media/image177.png)
+
+    ![](./media/image177.png)
  
 
 1. The completed screen should look something like this. Note, if the system is under stress it may take a few moments for the filtering to work properly. (This delay can be masked using an **if** test but is not necessary for our exercise.)
-![](./media/image178.png)
+
+    ![](./media/image178.png)
  
 
 This concludes exercise 4.
@@ -1085,8 +1138,6 @@ You may save today’s work using Visual Builder’s **export** capability, this
  ![](./media/image181.png)
 
 
-
-
 [Go to Extra Exercise 5](#extra-exercise-5-add-data-using-rest-call) 
 
 <br>
@@ -1111,12 +1162,9 @@ In this exercise you will work more with RESTful API calls
 
 This concludes Extra Exercise 5
 
-[Return to Table of Contents](#table-of-contents)
-
 <br>
 
 Click to go to [Extra Exercise 6: Review and edit JavaScript code **under the covers** of VBCS](#extra-exercise-6-review-and-edit-javascript-code-under-the-covers-of-vbcs) or return to [Table of Contents](#table-of-contents).
-
 
 <br>
 
