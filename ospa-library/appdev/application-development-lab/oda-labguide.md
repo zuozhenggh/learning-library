@@ -31,36 +31,34 @@ In this lab, you will create a skill that can be used for interactions with a pi
 # Create a Skill
 In this lab, we’re starting from scratch. So the first thing you’ll do is create a new skill.
 1. Access the cloud tenant using your Oracle SSO account.
-2. Click on the ![](media/hamburger.png) to open the side menu.
-3. Select `Platform Services` and click on `Digital Assitant`
+1. Click on the ![](media/hamburger.png) to open the side menu.
+1. Select `Platform Services` and click on `Digital Assitant`
 
 	![](media/cloud_dashboard.png)
 
-4. On the Digital Assitance console, click the click ![](media/hamburger.png) next to the instance name and select `Digital Assitant Designer UI`
+1. On the Digital Assitance console, click the click ![](media/hamburger.png) next to the instance name and select `Digital Assitant Designer UI`
 
 	![](media/instance.png)
 
-5. With the Oracle Digital Assistant UI open in your browser, click ![](media/hamburger.png) to open the side menu.
-6. Click **Development** and select **Skills**.
+1. With the Oracle Digital Assistant UI open in your browser, click ![](media/hamburger.png) to open the side menu.
+1. Click **Development** and select **Skills**.
 
 	![](media/oda_dashboard.png)
 
-7. Click ![](media/hamburger%202.png) again to collapse the side menu.
-8. Click the **New Skill** tile.
-
+1. Click ![](media/hamburger%202.png) again to collapse the side menu.
+1. Click the **New Skill** tile
 ![](media/tile_new-skill.png)
 
-The Create Skill dialog appears.
-
+1. The Create Skill dialog appears.
 ![](media/dialog_create-skill.png)
 
-9. For **Display Name** enter `Pizza King`. If you are working in an environment where others may also be creating the same tutorial, prefix `Pizza King` with your unique initials.
+1. For **Display Name** enter `Pizza King`. If you are working in an environment where others may also be creating the same tutorial, prefix `Pizza King` with your unique initials.
 
-10. For **Version**, enter `1.0`
+1.  For **Version**, enter `1.0`
 
-11. Optionally, fill in a one-sentence description, e.g. `Skill` for ordering from Pizza King
+1.  Optionally, fill in a one-sentence description, e.g. `Skill` for ordering from Pizza King
 
-12. Click **Create**.The designer will then open on the **Intents** page. Here’s where we’ll begin to express the use case (that is, the PizzaKing-customer activity flow) in terms of the concepts that support Natural Language Processing (NLP): intents and entities.
+1.  Click **Create**.The designer will then open on the **Intents** page. Here’s where we’ll begin to express the use case (that is, the PizzaKing-customer activity flow) in terms of the concepts that support Natural Language Processing (NLP): intents and entities.
 
 
 # Create Intents
@@ -318,9 +316,13 @@ Next, you need to create the dialog flow states that each possible outcome navig
 3. Verify the correctness of your edits by clicking the **Validate** button on the top of the page.
 
 ### Troubleshooting Errors in the Dialog Flow
-If you don’t see a success message, then most likely you misspelled a property name or did not follow the required two-space indenting increments. In this case, scroll through the dialog flow until you see an ![](media/error-icon.png) icon in the left margin. Mouse over the icon to display the tooltip with a description of the problem.
-In addition, you can click the debug icon (![](media/debug-icon.png)), which appears to the left of the dialog flow editor. It often provides additional information about the reason. You close the debug window by clicking the debug icon again.
-_If you have gotten into a jam and can’t get anything to work_, open the  [your-first-dialog-flow.txt](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-skill/files/your-first-dialog-flow.txt)  and replace the content in your dialog flow with the content from the file.
+If you don’t see a success message, then most likely you misspelled a property name or did not follow the required two-space indenting increments. In this case, scroll through the dialog flow until you see an 
+![](media/error-icon.png) 
+icon in the left margin. Mouse over the icon to display the tooltip with a description of the problem.
+In addition, you can click the debug icon 
+![](media/debug-icon.png)
+which appears to the left of the dialog flow editor. It often provides additional information about the reason. You close the debug window by clicking the debug icon again.
+If you have gotten into a jam and can’t get anything to work, open the  [your-first-dialog-flow.txt](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-skill/files/your-first-dialog-flow.txt)  and replace the content in your dialog flow with the content from the file.
 
 ### Tune Intent Resolution
 Before moving further, let’s take a look at some settings that are useful for fine-tuning intent resolution.
@@ -519,5 +521,4 @@ You should receive an order confirmation similar to the one shown in the image b
 Congratulations! You have created your first skill and learned key aspects of defining intents, defining entities, designing the conversation flow, and using the tester to evaluate intent resolution and the conversation flow.
 
 [Return to Table of Contents](#table-of-contents)
-
-[Return to Main Page](https://oracle.github.io/learning-library/ospa-library/appdev/application-development-lab/index.html?page=README.md)
+[Return to Main Page](README.md)
