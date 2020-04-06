@@ -211,7 +211,7 @@ In this part of the tutorial, you have tested the quality of your intent trainin
 
 In a real skill project, you would always need to go back to the intent testing with user-provided entries you find in the conversation logs. If, using that test input, your intents are not matched the way they should be, you need to add them as example utterances to proper intents and then retrain the model.
 
-    **Note:** Oracle Digital Assistant also has a batch mode that allows you to test based on a log of a previous set of tests. This is useful for re-running a set of tests iteratively as you fine-tune your intents.
+**Note:** Oracle Digital Assistant also has a batch mode that allows you to test based on a log of a previous set of tests. This is useful for re-running a set of tests iteratively as you fine-tune your intents.
 
 <br>
 
@@ -279,11 +279,11 @@ Now let’s try another one.
 	![](media/screenshot_try-it-out6.png)
 
 
-    ### Notes on What You Just Did
+### Notes on What You Just Did
 	
-	In this part of the tutorial, you have created custom entities for the PizzaKing OrderPizza intent, associated the entities with the intent, and tested the entity recognition in the embedded skill tester.
+In this part of the tutorial, you have created custom entities for the PizzaKing OrderPizza intent, associated the entities with the intent, and tested the entity recognition in the embedded skill tester.
 	
-	Similar to the PizzaOrder intent, you would typically need to create and associate entities for the other intents as well. In the interest of time, this tutorial only focuses on the PizzaOrder intent.
+Similar to the PizzaOrder intent, you would typically need to create and associate entities for the other intents as well. In the interest of time, this tutorial only focuses on the PizzaOrder intent.
 
 <br>
 
@@ -346,14 +346,14 @@ First we’ll add the `System.Intent`
 	
 7. Update transition actions so that it looks like the following:
 
-```
-transitions:
- actions:
-	OrderPizza: "startOrderPizza"
-	CancelPizza: "cancelPizza"
-	FileComplaint: "fileComplaint"
- 	unresolvedIntent: "startUnresolved"
-```
+	```
+	transitions:
+ 	  actions:
+		OrderPizza: "startOrderPizza"
+		CancelPizza: "cancelPizza"
+		FileComplaint: "fileComplaint"
+ 		unresolvedIntent: "startUnresolved"
+	```
 
 <br>
 
@@ -458,6 +458,19 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 6. Click **Apply**.
 7. Change the state name of the newly added component from `variableList` to `setPizzaSize`.
 8. Edit the state to look like the following:
+
+	```
+	setPizzaSize:
+		component: "System.List"
+		properties:
+			options: "${pizzaSize.type.enumValues}"
+			prompt: "What size of pizza do you want?"
+			variable: "pizzaSize"
+			nlpResultVariable: "iResult"
+		transitions:`
+			next: "setPizzaTopping
+	```
+
 
 ```
 setPizzaSize:
