@@ -29,17 +29,36 @@
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
             "publisheddate": "3/24/2020",
             "filename": "../setup/setup_ssworkshop.md"
-        }
-    ,{            
+        },
+        {            
             "title": "Lab 4: Automatic Indexing",
             "description": "Automatic Indexing",
-            "publisheddate": "3/24/2020",
+            "publisheddate": "4/05/2020",
             "filename": "../automaticindexing/automaticIndexing.md"
-        },{            
-            "title": "Lab 5: Joins and Aggregation",
-            "description": "In-Memory Joins and Aggregation",
-            "publisheddate": "3/24/2020",
-            "filename": "../joins-aggregations/joins-aggregations.md"
-        }
+        },
+		{            
+            "title": "Lab 5: Hybrid Partitioning",
+            "description": "Hybrid Partition Tables",
+            "publisheddate": "4/05/2020",
+            "filename": "../partitioning/partitioning.md"
+        },
+		{            
+            "title": "Lab 6: Application Continuity",
+            "description": "Application Continuity",
+            "publisheddate": "4/05/2020",
+            "filename": "../appcont/appcont.md"
+        },
+		{            
+            "title": "Lab 7: Hybrid Partitioning",
+            "description": "JSON Documents",
+            "publisheddate": "4/05/2020",
+            "filename": "../json/json.md"
+        },
+		{            
+            "title": "Lab 8: Python Programming",
+            "description": "Python Programming",
+            "publisheddate": "4/05/2020",
+            "filename": "../python/python.md"
+        }		
     ]
 }
