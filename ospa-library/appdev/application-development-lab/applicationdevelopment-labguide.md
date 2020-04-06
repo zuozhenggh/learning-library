@@ -94,11 +94,11 @@ You will need four data files, three will be used in exercise 3 and one will be 
 
 All four files are available in a single .zip file named [vbcsfiles.zip](files/vbcsfiles.zip); download the file and expand it to find the following four files (keep them handy they will be used later in this exercise):
 
-- Exercise 2 (data for VBCS Business Objects)
+* Exercise 2 (data for VBCS Business Objects)
   - Product.csv
   - ProductOrder.csv
   - ProductOrderLine.csv
-
+<br>
 - Exercise 4 (links used for VBCS Service Connections)
   - AppDev_Endpoints.txt
 
