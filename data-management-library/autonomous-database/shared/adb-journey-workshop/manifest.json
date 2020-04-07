@@ -46,7 +46,47 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adb-visualizations/adb-visualizations.md"
+            "filename": "./../adw-visualizations/adw-visualizations.md"
+        },
+        {         
+            "title": "Bonus Lab 7: Connect Securely with a Connection Wallet",
+            "description": "Connecting Securely with a Connection Wallet",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adw-connection-wallet/adw-connection-wallet.md"
+        },
+        {         
+            "title": "Bonus Lab 8: Manage and Monitor ADB",
+            "description": "Managing and Monitoring Your Autonomous Database Instance using the Cloud Console",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adw-managing-monitoring/adw-managing-monitoring.md"
+        },
+        {         
+            "title": "Bonus Lab 9: Scaling and Performance",
+            "description": "Scaling and Performance in Your Autonomous Database",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adw-scaling-performance/adw-scaling-performance.md"
+        },
+        {         
+            "title": "Bonus Lab 10: Use OML SQL Notebooks",
+            "description": "Using Oracle Machine Learning SQL Notebooks",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adw-oml-notebooks/adw-oml-notebooks.md"
+        },
+        {         
+            "title": "Bonus Lab 11: Introducing Machine Learning Algorithms",
+            "description": "Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adw-machine-learning/adw-machine-learning.md"
         }
     ]
 }

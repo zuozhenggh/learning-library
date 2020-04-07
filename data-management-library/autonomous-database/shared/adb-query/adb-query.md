@@ -23,17 +23,17 @@ In this lab, you will query files on the Oracle Cloud Infrastructure Object Stor
 
 ## STEP 1: Create External Tables with DBMS_CLOUD
 
--   While connected as your user in SQL Developer Web, copy and paste <a href="./files/create_external_tables_without_base_url.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet.  
+1. While connected as your user in SQL Developer Web, copy and paste <a href="./files/create_external_tables_without_base_url.txt" target="\_blank">this code snippet</a> to SQL Developer worksheet.  
 
     Use the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create external tables on the files staged in your object store. Note that you are still using the same credential and the URLs of files on OCI Object Storage you used when loading data in the previous lab.
 
 <!--    -   At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable. -->
 
--   For each **file\_uri\_list** statement, specify the Object Store base URL that you copied and saved in the step "Copy the URLs of the Files on Your OCI Object Storage" above.
+2. For each **file\_uri\_list** statement, specify the Object Store base URL that you copied and saved in the step "Copy the URLs of the Files on Your OCI Object Storage" above.
 
     **Note:** In SQL Developer Web, you will soon be able to define the Object Store base URL once, to use as a variable in file\_uri\_list statements. This capability is already supported in the full Oracle SQL Developer client tool.
 
-- Run the script.
+3. Run the script.
 
     ![](./images/run_script_create_ext_tables_without_base_url.jpg " ")
 
@@ -41,9 +41,9 @@ In this lab, you will query files on the Oracle Cloud Infrastructure Object Stor
 
 ## STEP 2: Querying External Data
 
--   Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet. Compared to the query in the previous lab, we only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
+1. Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet. Compared to the query in the previous lab, we only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
 
--   **Run the script**. You will now see the same query result as in the previous lab, but from data pulled directly from the Object Store.
+2. **Run the script**. You will now see the same query result as in the previous lab, but from data pulled directly from the Object Store.
 
     ![](images/external_table_query_results.jpg " ")
 

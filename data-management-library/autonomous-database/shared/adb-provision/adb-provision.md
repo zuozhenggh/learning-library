@@ -28,16 +28,16 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
 [](youtube:Q6hxMaAPghI)
 
-## STEP 1: Cloud Login and Services Menu
+## STEP 1: Choosing ADW or ATP from the Services Menu
 
-1. Login to the Oracle Cloud
+1. Login to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
     __Note:__ You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
 
     ![](./images/Picture100-36.png " ")
 
-3. Click **Autonomous Data Warehouse**.
+3. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Data Warehouse database, so click **Autonomous Data Warehouse**.
 
     ![](images/LabGuide1-39fb4a5b.png " ")
 
