@@ -194,33 +194,31 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
 3.  From the application page, click **+ Business Object** to begin adding
     a business object
     
-    The first Business Object you will create will contain information about what products are available for managers/franchisees to order for their stores; we'll use the name **Product** to keep things simple.
+    The first Business Object you will create will contain information about what products are available for managers/franchisees to order for their stores; 
+    set the business object name to **Product** and when ready click **Create**.
     
-    Set the business object name to **Product** as shown here and click the **Create Field** when ready to continue.
-    
-    <br>![](./media/2.5.1.png)
 
-4. The Business Object page allows you to create Fields and manage your Business Object. Note that some fields have been defined automatically, this is normal. The **id** field is treated as a key and will be used to access items in the business object automatically later.
+4. The Business Object page allows you to create fields and manage your Business Object. Note that some fields have been defined automatically, this is normal. The **id** field is treated as a key and will be used to access items in the business object automatically later.
 
     ![](./media/image26.png)
 
-5. To add a field click the **+ New Field** button ![](./media/image27.png)
+5. To add a field click the **+New Field** button ![](./media/image27.png)
 
 6. For each new field the Name and General Data Type are specified
 
-    - Set the label of the first field to **Product Name** note that Visual Builder creates the name as **productName**
+    - Set the label of the first field to `Product Name` note that Visual Builder creates the name as `productName`
     
     - Set the Type to character by making sure the **A** ![](./media/image28.png) is selected as shown below (be sure to select the correct **type**)
 
     - Click the **Create Field** when done
       
-      ![](./media/2.6.2.png)
+    ![](./media/2.6.2.png)
 
 7.  In the box at the lower-right part of the VBCS editor set the field property to **Required**
 
     ![](./media/2.7.1.png)
 
-8.  Now add three more fields; be sure to mark the all **Required** 
+8.  Now add two more fields; be sure to mark the all **Required** 
 
      |    Display Label        | Field Name           | Type  |
      |:------------- |:-------------|:-----|
@@ -252,16 +250,16 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
     ![](./media/2.11.1.png)
 
 10. Create another Business Object named **Product Order Line** (ProductOrderLine).
-The **Product Order Line** Business Object will contain specifics about each item included in **Product Orders** made by managers/franchisees including the product ordered, its Unit Price, and the Quantity ordered.
+The **Product Order Line** Business Object will contain specifics about each item included in **Product Orders** made by managers/franchisees including the **Product** ordered, its Unit Price, and the Quantity ordered.
 
     To make it possible for VBCS to connect the **Product Order Line** with the correct **Product Order** and the **Product** being ordered (so that the product name can display rather than a product id) you will create two **Relationships**:
 
       - between the **Product Order Line** and its associated **Product Order** record
-      - between the **Product Order Line** and the Product being ordered
+      - between the **Product Order Line** and the **Product** being ordered
 
-    But this time before adding fields you will first add two relationships to the other business objects that will show up as 'references' later. 
+    But this time before adding fields you will first add two relationships to the other business objects that will show up as `references` later. 
     
-    These relationships connect specific products to product order lines and product order lines to product orders allowing VBCS to **automatically** connect that data when building web and mobile applications later.
+    These relationships connect specific `Products` to `Product Order Lines` and `Product Order Lines` to `Product Orders` allowing VBCS to **automatically** connect that data when building web and mobile applications later.
     
     ![](./media/2.10.2.png)
 
@@ -325,15 +323,16 @@ The **Product Order Line** Business Object will contain specifics about each ite
 
     (click the **Add Row** when done)
     
-    ![](./media/2.21.1.png)
+     ![](./media/2.21.1.png)
 
+    
 22. Add rows for DOUGH:
 
     - Product Name DOUGH
     - Product Description Dough
     - Unit Price 11
 
-    ![](./media/2.21.1.png)
+    ![](./media/2.21.2.png)
 
 23. Add rows for PIZZA\_SAUCE:
 
@@ -355,7 +354,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
 
     ![](./media/image54.png)
 
-27. Click on **Upload a file or drag it here
+27. Click on **Upload** a file or drag it here
     
     ![](./media/image55.png)
 
@@ -380,7 +379,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
     ![](./media/image59.png)
 
 
-32. Create an initial **Product Order** (Product Order -> Data -> + Add Row) as follows, then review your results  
+32. Create an initial **Product Order** (`Product Order -> Data -> + Add Row`) as follows, then review your results  
 ![](./media/2.32.1.png)
 
 
@@ -389,7 +388,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
     ![](./media/2.33.1.png)
 
 
-34. Now, using the technique illustrated in 16-18 above add data to the Product Order and Product Order Line business objects (note: file names same as business object names) using the provided data files
+34. Now, using the technique illustrated above import data to the Product Order and Product Order Line business objects in that order, (note: file names same as business object names) using the provided data files
 
     - Product Order - ProductOrder.csv
 
@@ -519,67 +518,64 @@ In the last exercise you created three business objects and added data to them; 
 
     ![](./media/image98.png)
     
-    The **Quick Start** button makes adding to your application easy. ![](./media/image99.png)
-    
-    The Quick Start options include: Adding data, building a Create Page (new row), an Edit Page (update row), a Detail page (display single row), Delete Action (delete row), or Task Actions (add task controls).
+1. The **Quick Start** button makes adding to your application easy. ![](./media/image99.png)
+ The Quick Start options include: Adding data, building a Create Page (new row), an Edit Page (update row), a Detail page (display single row), Delete Action (delete row), or Task Actions (add task controls).
     
     ![](./media/image100.png)
 
-    Click **Add Detail Page** to begin the wizard.
+1. Click **Add Detail Page** to begin the wizard.
     
     ![](./media/image101.png)
     
-    Once the wizard starts; select the **Product** Business Object and click **Next** to continue.
+1. Once the wizard starts; select the **Product** Business Object and click **Next** to continue.
     
     ![](./media/image102.png)
     
-    Select the fields to be displayed; you may either select by checking them in the list or **dragging** them to the fields in the center area. You may also change title and other features, even the name of the button that will display on the main page to launch this page. Click **Finish** when done.
+1. Select the fields to be displayed; you may either select by checking them in the list or **dragging** them to the fields in the center area. You may also change title and other features, even the name of the button that will display on the main page to launch this page. Click **Finish** when done.
     
     ![](./media/3.10.5.png)
     
-    When complete, the object navigator on the left will show the new page. Select the new page **main-product-detail** to see what it looks like. Note that the **Product List** screen is called **main-start** and the **Product Detail** screen is called **main-product-detail** (These may be renamed if desired but it's not really necessary.)
+1.  When complete, the object navigator on the left will show the new page. Select the new page **main-product-detail** to see what it looks like. Note that the **Product List** screen is called **main-start** and the **Product Detail** screen is called **main-product-detail** (These may be renamed if desired but it's not really necessary.)
     
     ![](./media/3.10.6.png)
 
-    **Potential Context Error**
+**Potential Context Error**
     
-    You may see an **error** message similar to the following. Remember that Visual Builder is WYSIWYG (what you see is what you get) and attempts to show real data during the design process. 
+You may see an **error** message similar to the following. Remember that Visual Builder is WYSIWYG (what you see is what you get) and attempts to show real data during the design process. 
     
-    ![](./media/image105.png)
+![](./media/image105.png)
 
-    This error frequently occurs because Visual Builder cannot find a **context** to tell it which data to display. (in this case, the VBCS editor wants to show the Product Detail page with **live** data, but, does not know which record to display) 
+This error frequently occurs because Visual Builder cannot find a **context** to tell it which data to display. (in this case, the VBCS editor wants to show the Product Detail page with **live** data, but, does not know which record to display) 
     
-    **The process below uses the VBCS editor's **Live** capability to set the context.**
+**The process below uses the VBCS editor's **Live** capability to set the context.**
     
-    First, look for the **Live/Design/Code** button in the upper-right part of the Visual Builder editor. Click on **Live** to begin the process.
+First, look for the **Live/Design/Code** button in the upper-right part of the Visual Builder editor. Click on **Live** to begin the process.
     
-    ![](./media/image106.png)
+![](./media/image106.png)
     
-    Now, return to the Product List display and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
+16. Now, return to the Product List display and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
     
-    ![](./media/image107.png)
+![](./media/image107.png)
     
-    Click the **Product Detail** button to return to the Product Detail display and you should now see data rather than the error message
+17. Click the **Product Detail** button to return to the Product Detail display and you should now see data rather than the error message
     
-    ![](./media/image108.png)
+![](./media/image108.png)
     
-
 The VBCS **Live** mode is useful in testing to see how changes might behave, it is not the same as running the application
 
 Click **Design** ![](./media/image109.png) to exit **Live** mode
-
 
 Now, to really test the application; run the application using the **run** ![](./media/image95.png) button in the upper-right corner. 
 
 When the **Product List** displays note the **Product Detail** button is not available (it is **grayed out**) since no product has been chosen. Select one of the products and the **Product Detail** button will become active. 
 
-Click on the **Product Detail** button to see the details for that product
+18. Click on the **Product Detail** button to see the details for that product
 
 The following two images show something similar your results.
 
 ![](./media/3.10.12.png)
 
-Once you have reviewed the product details, click the provided **Back** button to return to the list.
+19. Once you have reviewed the product details, click the provided **Back** button to return to the list.
 
 ![](./media/3.10.13.png)
 
