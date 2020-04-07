@@ -41,9 +41,15 @@ In this lab, we’re starting from scratch. So the first thing you’ll do is cr
 
 	![](media/cloud_dashboard_oda.png)
 
-1. On the Digital Assitance console, click the click ![](media/hamburger.png) next to the instance name and select `Digital Assitant Designer UI`
+3. On the Digital Assitance console, click the sub menu next to the instance name and select `Service Console`
 
-	![](media/instance.png)
+	![](media/oda_console_access.png)
+
+4. Provide your tenant name, and click continue
+	![](media/oda_tenant_access.png)
+
+1. Click on continue under SSO and provide your credentials if required
+	![](media/oda_tenant_login.png)
 
 1. With the Oracle Digital Assistant UI open in your browser, click ![](media/hamburger.png) to open the side menu.
 
@@ -61,13 +67,13 @@ In this lab, we’re starting from scratch. So the first thing you’ll do is cr
 
     ![](media/dialog_create-skill.png)
 
-1. For **Display Name** enter `Pizza King`. If you are working in an environment where others may also be creating the same tutorial, prefix `Pizza King` with your unique initials.
+1. For **Display Name** enter `Mama Maggy`. If you are working in an environment where others may also be creating the same tutorial, prefix `Mama Maggy` with your unique initials.
 
 1.  For **Version**, enter `1.0`
 
 1.  Optionally, fill in a one-sentence description, e.g. `Skill` for ordering from Pizza King
 
-1.  Click **Create**.The designer will then open on the **Intents** page. Here’s where we’ll begin to express the use case (that is, the PizzaKing-customer activity flow) in terms of the concepts that support Natural Language Processing (NLP): intents and entities.
+2.  Click **Create**.The designer will then open on the **Intents** page. Here’s where we’ll begin to express the use case in terms of the concepts that support Natural Language Processing (NLP): intents and entities.
 
 
 
@@ -75,15 +81,15 @@ In this lab, we’re starting from scratch. So the first thing you’ll do is cr
 
 Oracle Digital Assistant’s underlying natural language processing (NLP) engine doesn’t inherently know about the business or task that a skill is supposed to assist with. For the skill to understand what it should react to, you need to define intents and examples (utterances) for how a user would request a specific intent. 
 
-For the PizzaKing example, you will create intents for ordering pizza, cancelling an order, and filing a complaint.
+For the Mama Maggy example, you will create intents for ordering pizza, cancelling an order, and filing a complaint.
 
 
 ## Create the Order Pizza Intent
 
 1. In the left navigation for the designer, make sure that ![](media/left_nav_intents.png) is selected.
 2. Click the **+ Intent** button.
-3. In the **Conversation Name** field, type `Order Pizza`.
-4. In the **Name** field, type `OrderPizza`.
+3. In the **Name** field, type `OrderPizza`.
+4. The **Conversation Name** should be autopopulated with `OrderPizza`. Type it in otherwise by clicking the edit pencil next to the **Conversation Name**
 5. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key. (Yes, you can paste all of them at once.)
 	
 	```
@@ -109,11 +115,11 @@ For the PizzaKing example, you will create intents for ordering pizza, cancellin
 
 ## Create the Cancel Pizza Intent
 
-1. Click the **+ Intent** button.
+1. Click the **+Intent** button.
     
-2. In the **Conversation Name** field, type `Cancel Pizza`.
+2. In the **Name** field, type `CancelPizza`.
 
-3. In the **Name** field, type `CancelPizza`.
+3. The **Conversation Name** should be autopopulated with `CancelPizza`. Type it in otherwise by clicking the edit pencil next to the **Conversation Name**
 
 4. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key.
 
@@ -133,11 +139,13 @@ For the PizzaKing example, you will create intents for ordering pizza, cancellin
     
 ## Create the File Complaint Intent
 
-1. Click the **+ Intent** button.
+1. Click the **+Intent** button.
 
 2. In the **Name** field, type `FileComplaint`.
 
-3. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key.
+3. The **Conversation Name** should be autopopulated with `FileComplaint`. Type it in otherwise by clicking the edit pencil next to the **Conversation Name**
+
+4. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key.
 	
 	```
     I am upset
@@ -196,8 +204,8 @@ A good intent model is one that has a low ambiguity between the different intent
 The sentence "Dude, bring me pizza" deserves a higher confidence score, so we should add it to the list of utterances.
 
 8. Click **Add Example** to add it.
-9. Click ![](media/train-button%203.png) to retrain the model.
-10. Again enter Dude, bring me pizza in the **Message** field and click **Send**. The confidence score should be much higher for OrderPizza (possibly even 100%).
+9. Click ![](media/train-button%203.png) to retrain the model using `Trainer Ht` option
+10. Again enter `Dude, bring me pizza` in the **Message** field and click **Send**. The confidence score should be much higher for OrderPizza (possibly even 100%).
 
     **Note:** Conversational AI does not compare input by exact matches of the words. Though "Dude, bring me pizza" is available as an utterance, when entering the sentence as a message, it is the intent model’s algorithm that determines the matching intent.
 
@@ -262,9 +270,9 @@ We’ll create custom entities for size and topping and later use a built-in ent
 ### Associate the Entity with Its Intent
 For an entity to be recognised when parsing the user input message, it needs to be associated with an intent. So let’s associate our entities with the appropriate intents:
 1. In the left navigation for the designer, select ![](media/left_nav_intents%203.png).
-2. Select the OrderPizza intent.
+2. Select the `OrderPizza` intent.
 3. Click ![](media/add-entity%203.png) (in the upper right side of the page).
-4. Select the PizzaSize entity.
+4. Select the `PizzaSize` entity.
 5. Repeat the previous two steps for the PizzaTopping and TIME entities.(TIME is a built-in entity that we’ll use to help the skill process input for pizza delivery time.)
 
 6. Retrain the model by clicking ![](media/train-button%204.png).The entity list associated with the OrderPizza intent should look like what is shown in the image below (though the order may be different):
@@ -344,9 +352,7 @@ First we’ll add the `System.Intent`
 
 4. Click **Apply**.
 
-5. In the newly added state, set the value of the `Variable`
-
-     property to`"iResult"` (including the quotation marks).This means that `iResult` will be the variable to which the NLP engine saves the intent resolution and entity extraction results to.
+5. In the newly added state, set the value of the `Variable` property to`"iResult"` (including the quotation marks).This means that `iResult` will be the variable to which the NLP engine saves the intent resolution and entity extraction results to.
 
 6. Delete the following properties:
     
@@ -358,21 +364,21 @@ First we’ll add the `System.Intent`
 	
 7. Update transition actions so that it looks like the following:
 
-	`
+	```
 	transitions:
- 	  actions:
-		OrderPizza: "startOrderPizza"
-		CancelPizza: "cancelPizza"
-		FileComplaint: "fileComplaint"
- 		unresolvedIntent: "startUnresolved"
-	`
+      actions:
+        OrderPizza: "startOrderPizza"
+        CancelPizza: "cancelPizza"
+        FileComplaint: "fileComplaint"
+        unresolvedIntent: "startUnresolved" 
+	```
 
 ### Add Initial States for Each Intent
 
 Next, you need to create the dialog flow states that each possible outcome navigates to. To save you some time, the states are provided in a text document for you to copy and paste.
 
-1. Open [states.txt](files/states.txt).
-2. Copy the file’s contents and paste them at the bottom of the dialog flow.Make sure that the indentation is preserved in the pasted content.
+1. Open [states.txt](../files/states.txt).
+2. Copy the file’s contents and paste them at the bottom of the dialog flow. Make sure that the indentation is preserved in the pasted content.
 3. Verify the correctness of your edits by clicking the **Validate** button on the top of the page.
 
 
@@ -383,7 +389,12 @@ If you don’t see a success message, then most likely you misspelled a property
 
 Mouse over the icon to display the tooltip with a description of the problem. In addition, you can click the debug icon ![](media/debug-icon.png) which appears to the left of the dialog flow editor. It often provides additional information about the reason. You close the debug window by clicking the debug icon again.
 
-If you have gotten into a jam and can’t get anything to work, open the  [your-first-dialog-flow.txt](files/your-first-dialog-flow.txt)  and replace the content in your dialog flow with the content from the file.
+One useful tool to verify your YAML file is [CodeBeautify](https://codebeautify.org/yaml-validator). Paste your code and check it by clicking `Validate`.
+
+![](./media/codebeautify.png)
+
+
+If you have gotten into a jam and can’t get anything to work, open the  [your-first-dialog-flow.txt](../files/your-first-dialog-flow.txt)  and replace the content in your dialog flow with the content from the file.
 
 
 ## Tune Intent Resolution
@@ -422,7 +433,7 @@ Before doing any further development, let’s test the basic flow to make sure i
 
     As you can see, both CancelPizza and FileComplaint exceeded the confidence threshold of 60%. CancelPizza has a higher score than FileComplaint. However, since CancelPizza’s score exceeds that of FileComplaint by less than the confidence win margin that we set earlier (10%), the skill presents a dialog so that the user can select what she really wants.
 
-8. Finally, try a last random utterance: _Can you get me a radio taxi now?_
+8. Finally, try a last random utterance, click reset and in the message field type `Can you get me a radio taxi now?`
 
     ![](media/screenshot_test-intent-qa3.png)
 
@@ -462,14 +473,14 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 
 	```
 	setPizzaSize:
-		component: "System.List"
-		properties:
-			options: "${pizzaSize.type.enumValues}"
-			prompt: "What size of pizza do you want?"
-			variable: "pizzaSize"
-			nlpResultVariable: "iResult"
-		transitions:
-			next: "setPizzaTopping"
+      component: "System.List"
+      properties:
+        options: "${pizzaSize.type.enumValues}"
+        prompt: "What size of pizza do you want?"
+        variable: "pizzaSize"
+        nlpResultVariable: "iResult"
+      transitions:
+        next: "setPizzaTopping"
 	```
 
 ## Set Pizza Topping
@@ -479,14 +490,14 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 
 	```
 	setPizzaTopping:
-		component: "System.List"
-		properties:
-			options: "${pizzaTopping.type.enumValues}"
-			prompt: "What type of pizza would you like?"
-			variable: "pizzaTopping"
-			nlpResultVariable: "iResult"
-		transitions:
-			next: "setPizzaDeliveryTime"
+      component: "System.List"
+      properties:
+        options: "${pizzaTopping.type.enumValues}"
+        prompt: "What type of pizza would you like?"
+        variable: "pizzaTopping"
+        nlpResultVariable: "iResult"
+      transitions:
+        next: "setPizzaDeliveryTime"
 	```
 
 ## Set Pizza Delivery Time
@@ -500,17 +511,17 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 8. Edit the state to look like the following:
 
 	```
-	setPizzaDeliveryTime:
-		component: "System.Text"
-		properties:
-			prompt: "When can we deliver that for you?"
-			variable: "deliveryTime"
-			nlpResultVariable: "iResult"
-			maxPrompts: 3
-		transitions:
-			actions:
-				cancel: "maxError"
-				next: "setPizzaOrderMessage"
+	ssetPizzaDeliveryTime:
+      component: "System.Text"
+      properties:
+        prompt: "When can we deliver that for you?"
+        variable: "deliveryTime"
+        nlpResultVariable: "iResult"
+        maxPrompts: 3
+      transitions:
+        actions:
+          cancel: "maxError"
+          next: "setPizzaOrderMessage"
 	```
 
 ## Show Pizza Delivery Message
@@ -525,13 +536,13 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 
 	```
 	setPizzaOrderMessage:
-		component: "System.SetVariable"
-		properties:
-			variable: "pizzaOrderMsg"
-			value: 
-			- "Thank you for ordering from Pizza King!"
-			- "OK, so we are getting you the following items:"
-			- "A ${pizzaSize.value} ${pizzaTopping.value} pizza at ${deliveryTime.value.date?long?number_to_time?string(‘HH:mm’)}."
+      component: "System.SetVariable"
+      properties:
+        variable: "pizzaOrderMsg"
+        value: 
+          - "Thank you for ordering from Pizza King!"
+          - "OK, so we are getting you the following items:"
+          - "A ${pizzaSize.value} ${pizzaTopping.value} pizza at ${deliveryTime.value.date?long?number_to_time?string('HH:mm')}."
 			 
 	```
 
@@ -550,18 +561,18 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 
 	```
 	showPizzaOrder:
-		component: "System.Output"
-		properties:
-		text: |-
-			<#list pizzaOrderMsg.value as text>${text}
-			</#list>
-		transitions: 
-			return: "done"
+      component: "System.Output"
+      properties:
+        text: |-
+          <#list pizzaOrderMsg.value as text>${text}
+          </#list>
+      transitions: 
+        return: "done"
 	```
 
 ## Validate the Dialog Flow
 
-* Click the **Validate** button on the top of the page, and then fix any errors that are revealed.If you have errors that you can’t resolve, you can copy and paste the code from  [complete-dialog-flow.txt](files/complete-dialog-flow.txt) .
+* Click the **Validate** button on the top of the page, and then fix any errors that are revealed.If you have errors that you can’t resolve, you can copy and paste the code from  [complete-dialog-flow.txt](../files/complete-dialog-flow.txt) .
 
 <br>
 <br>
@@ -583,7 +594,7 @@ You should receive an order confirmation similar to the one shown in the image b
 	![](media/screenshot_tester-order-confirmation.png)
 
 7. Click **Reset**.
-8. Now try entering `Dude, can you get me the biggest hot and spicy pizza you can make at noon` and pressing Enter.This time, you should be immediately presented with the results of the order.
+8. Now try entering `Dude, can you get me the biggest hot and spicy pizza you can make at noon` and pressing Enter. This time, you should be immediately presented with the results of the order.
 
 	![](media/screenshot_tester-order-confirmation2.png)
 
@@ -591,7 +602,7 @@ You should receive an order confirmation similar to the one shown in the image b
 
 	![](media/screenshot_tester-variables.png)
 
-10. Finally, enter `I want to a veggie pizza at 8:00pm` and press Enter. This time the topping menu and the delivery time should be skipped, but the pizza size list should be displayed.
+10. Finally, Click **Reset**, type `I want to a veggie pizza at 8:00pm` and press Enter. This time the topping menu and the delivery time should be skipped, but the pizza size list should be displayed.
 
 <br>
 
