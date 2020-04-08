@@ -1,4 +1,4 @@
-# Automatic Indexing
+# JSON Data and the Oracle Database
 
 ## Introduction
 The automatic indexing feature automates index management tasks based on changes in the application workload. This feature improves database performance by managing indexes automatically in an Oracle database.
