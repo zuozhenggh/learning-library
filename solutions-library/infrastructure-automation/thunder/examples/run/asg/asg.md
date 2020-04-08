@@ -87,7 +87,7 @@ In the provided example, the following resources are created:
 * 1 Autoscaling Group
   
 .
-In the example from below, there is a list of compartments containing 1 elements and a list of subnets containing 2 elements. By setting in compute\_params `compartment_name` to sandbox, the instances will be created in the sandbox compartmanet `ocid1.compartment.oc1..aaaaaaaaiu3vfcpbjwwgpil3xakqts4jhtjq42kktmisriiszdvvouwsirgq`. The same thing is happening to subnet\_ids, backend\_sets and load\_balance\r_ids. All lists can be extended in order to satisfy your needs.
+In the example from below, there is a list of compartments containing 1 elements and a list of subnets containing 2 elements. By setting in compute\_params `compartment_name` to sandbox, the instances will be created in the sandbox compartment `ocid1.compartment.oc1..aaaaaaaaiu3vfcpbjwwgpil3xakqts4jhtjq42kktmisriiszdvvouwsirgq`. The same thing is happening to subnet\_ids, backend\_sets and load\_balance\r_ids. All lists can be extended in order to satisfy your needs.
 
 
 The example is based on terraform.tfvars values:

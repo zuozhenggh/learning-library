@@ -378,7 +378,7 @@ Click **Add new**
 
 6. Launch a new browser tab, open up the domain specified in your traffic policy(for webserver1) and you will be directed to the webserver1
 
-**http://<YOUR_USER_NAME>ocispl24.com**
+**http://<YOUR_USER_NAME>.ocispl24.com**
 
 **NOTE : <YOUR_USER_NAME> is what was specified as the sub domain**
 
