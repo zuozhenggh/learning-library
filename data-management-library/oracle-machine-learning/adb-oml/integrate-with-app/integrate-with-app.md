@@ -21,27 +21,27 @@ In this lab, you will:
 - Review the application to see how you can make predictions on the fly.
 - Expose your ml model as a REST end point so any application can use it.
 
-## **Step 1:** Prepare data for the lab in ***ATP***.
+## Step 1: Prepare data for the lab in ***ATP***.
 
 - To show how an application would use ml predictions we'll add some customer names to the original credit_scoring_100k data set.  Navigate to the ***ATP*** SQL Developer Web and log in with ml_user (if you are not already logged in from the previous lab).  Then select file upload on the left.
 
-  ![](./images/4/001.png  " ")
+  ![](./images/001.png  " ")
 
 - Select the files button, and then the customer_names.csv file in the install directory.
 
-  ![](./images/4/002.png  " ")
+  ![](./images/002.png  " ")
 
 - Accept the defaults and hit next.
 
-  ![](./images/4/003.png  " ")
+  ![](./images/003.png  " ")
 
 - Change the customer\_id data type to number and change the lengths.
 
-  ![](./images/4/004.png  " ")
+  ![](./images/004.png  " ")
 
 - Accept the remaining defaults.
 
-  ![](./images/4/005.png  " ")
+  ![](./images/005.png  " ")
 
 - Create a view that combines the names with the credit\_scoring\_100k data set.
 ```
@@ -50,7 +50,7 @@ from ml_user.customer_names a, credit_scoring_100k b
 where a.customer_id(+)= b.customer_id;</copy>
 ```
 
-  ![](./images/4/006.png  " ")
+  ![](./images/006.png  " ")
 
 - Create a new upload\_customers table.  This will be used in the application to show how newly loaded records can be scored on the fly.
 ```
@@ -95,182 +95,189 @@ customer_id number
 );</copy>
 ```
 
-  ![](./images/4/007.png  " ")
+  ![](./images/007.png  " ")
 
-## **Step 2:** Import the APEX Application
+## Step 2: Import the APEX Application
 
 - Navigate to the ATP APEX application through the ATP Service Console.
 
-  ![](./images/4/008.png  " ")
+  ![](./images/008.png  " ")
 
 - Select Development, then APEX.
 
-  ![](./images/4/009.png  " ")
+  ![](./images/009.png  " ")
 
 - Enter your admin password.
 
-  ![](./images/4/010.png  " ")
+  ![](./images/010.png  " ")
 
 - You will be prompted to create a workspace. 
 
-  ![](./images/4/011.png  " ")
+  ![](./images/011.png  " ")
 
 - Select ML\_USER for the workspace user and enter ML\_APPLICATION for the workspace name.
 
-  ![](./images/4/012.png  " ")
+  ![](./images/012.png  " ")
 
-  ![](./images/4/013.png  " ")
+  ![](./images/013.png  " ")
 
 - Sign out of user admin and log in with workspace ML\_APPLICATION and user ML\_USER.
 
-  ![](./images/4/014.png  " ")
+  ![](./images/014.png  " ")
 
-  ![](./images/4/015.png  " ")
+  ![](./images/015.png  " ")
 
-   ![](./images/4/016.png  " ")
+   ![](./images/016.png  " ")
 
 - You will be prompted to set the new application password for ml\_user.  Make the email proper (not necessarily valid) and accept defaults.
 
-   ![](./images/4/017.png  " ")
+   ![](./images/017.png  " ")
 
-   ![](./images/4/018.png  " ")
+   ![](./images/018.png  " ")
 
 - Select App Builder.
 
-   ![](./images/4/019.png  " ")
+   ![](./images/019.png  " ")
 
 - Select Import
 
-   ![](./images/4/020.png  " ")
+   ![](./images/020.png  " ")
 
 - Select choose file, and then select the ***f100.sql*** file in the git repo and then accept the defaults.
 
-   ![](./images/4/021.png  " ")
+   ![](./images/021.png  " ")
 
-   ![](./images/4/022.png  " ")
+   ![](./images/022.png  " ")
 
-   ![](./images/4/023.png  " ")
+   ![](./images/023.png  " ")
 
-   ![](./images/4/024.png  " ")
+   ![](./images/024.png  " ")
 
-   ![](./images/4/025.png  " ")
+   ![](./images/025.png  " ")
 
-   ![](./images/4/026.png  " ")
+   ![](./images/026.png  " ")
 
-   ![](./images/4/027.png  " ")
+   ![](./images/027.png  " ")
 
-   ![](./images/4/028.png  " ")
+   ![](./images/028.png  " ")
 
 - Log in as ml_user.
 
-   ![](./images/4/029.png  " ")
+   ![](./images/029.png  " ")
 
-   ![](./images/4/030.png  " ")
+   ![](./images/030.png  " ")
 
-## **Step 3:** Run the application and review on-the-fly prediction/scoring.
+## Step 3: Run the application and review on-the-fly prediction/scoring.
 
 - Select Customer Walk-in from the menu.  Select last name, and then first name.  Note the credit score prediction and the probability of that estimate.  These calculations are done as the data is queried.
 
-   ![](./images/4/031.png  " ")
+   ![](./images/031.png  " ")
 
 -  Next we will upload new customers and score those as a batch.  Select the Home menu item at the bottom of the page.
 
-   ![](./images/4/032.png  " ")
+   ![](./images/032.png  " ")
 
 - Select SQL Workshop.
 
-   ![](./images/4/033.png  " ")
+   ![](./images/033.png  " ")
 
 - Select Utilities.
 
-   ![](./images/4/034.png  " ")
+   ![](./images/034.png  " ")
 
 - Select Data Workshop.
 
-   ![](./images/4/035.png  " ")
+   ![](./images/035.png  " ")
 
 - Select Load Data.
 
-   ![](./images/4/036.png  " ")
+   ![](./images/036.png  " ")
 
 - Select the upload_customers.xlsx file.
 
-   ![](./images/4/037.png  " ")
+   ![](./images/037.png  " ")
 
 - Load to existing table upload_customers.
 
-   ![](./images/4/038.png  " ")
+   ![](./images/038.png  " ")
 
-   ![](./images/4/039.png  " ")
+   ![](./images/039.png  " ")
 
 - Return to the Alpha Office application.
 
-   ![](./images/4/040.png  " ")
+   ![](./images/040.png  " ")
 
-   ![](./images/4/041.png  " ")
+   ![](./images/041.png  " ")
 
 - Run the application
 
-   ![](./images/4/042.png  " ")
+   ![](./images/042.png  " ")
 
 - Now review the uploaded customers and note the predictions.
 
-   ![](./images/4/043.png  " ")
+   ![](./images/043.png  " ")
 
 - Select Customer Upload Summary.  This provides a summary measure of the uploaded customer number of new good credit versus other credit customers.  This shows there were 40 customers with 100 percent probability of good credit, 83 customers with a 50.7 percent probability of good credit, and 277 customers with a 1.2 percent probability of good credit.
 
-   ![](./images/4/044.png  " ")
+   ![](./images/044.png  " ")
 
 - Select Overall Credit Profile.  This provides an overall measure of the credit across the entire 100k credit database.  This scoring of 100k customers with 10 variables takes less than a second.  This shows Alpha Office has 12k customers with a 100 percent probability of good credit, 22k customers with a 50.7 probability of good credit, and 66k customers with a 1.2 percent probability of good credit.
 
-   ![](./images/4/045.png  " ")
+   ![](./images/045.png  " ")
 
-## **Step 4:** Expose the ml model as a REST end point so any application can call it.
+## Step 4: Expose the ml model as a REST end point so any application can call it.
 
 - Select the Home button at the bottom of the screen.
 
-   ![](./images/4/046.png  " ")
+   ![](./images/046.png  " ")
 
 - Select SQL Workshop.
 
-   ![](./images/4/047.png  " ")
+   ![](./images/047.png  " ")
 
 - Select RESTFul Services.
 
-   ![](./images/4/048.png  " ")
+   ![](./images/048.png  " ")
 
 - Select Module on the left, then Create Module.
 
-   ![](./images/4/049.png  " ")
+   ![](./images/049.png  " ")
 
 - Enter the following
     - Module Name - `Predict Credit`
     - Base Path - `/credit/`
 
-  ![](./images/4/050.png  " ")
+  ![](./images/050.png  " ")
 
 - Next create a Template.
 
-   ![](./images/4/051.png  " ")
+   ![](./images/051.png  " ")
 
 - Enter the following:
     - URI Template: `credit_scoring_100k_v/:wealth/:income`
 
-   ![](./images/4/052.png  " ")
+   ![](./images/052.png  " ")
 
 - Next create a handler.  Be sure to select Query one row, and enter the following sql query and select Create Handler.
     - `select prediction(n1_class_model using :wealth as wealth, :income as income) credit_prediction from dual`
 
-   ![](./images/4/053.png  " ")
+   ![](./images/053.png  " ")
 
-   ![](./images/4/054.png  " ")
+   ![](./images/054.png  " ")
 
-   ![](./images/4/055.png  " ")
+   ![](./images/055.png  " ")
 
 - Copy the URL and paste into your browser, and then replace the parameters :wealth and :income with Rich and 20000 respectively.  We are passing the wealth and income variables to the prediction model.  Note these are just two of the many variables we could pass to the model (just add additional ones).  After changing the URL just hit enter.
 
-   ![](./images/4/056.png  " ")
+   ![](./images/056.png  " ")
 
-   ![](./images/4/057.png  " ")
+   ![](./images/057.png  " ")
 
 This concludes this lab and the workshop.
+
+## Acknowledgements
+
+- **Author** - Derrick Cameron
+- **Last Updated By/Date** - Leah Bracken, March 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

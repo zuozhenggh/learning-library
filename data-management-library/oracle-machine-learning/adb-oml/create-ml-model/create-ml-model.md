@@ -15,95 +15,89 @@ In this lab you will use Apache Zeppelin notebooks to do this work. The lab will
 - Become familiar with Oracle Machine Learning Algorithms.
 - Create a machine learning model to determine factors that predict good credit.
 
-## **Step 1:** Sign in to Oracle Cloud
+### Lab Prerequisites
 
-- Log in, if you have not already done so.
+This lab assumes you have completed the following labs:
+- Register for Free Tier Account
+- Connect and Provision ADB
 
-  ![](./images/2/001.png  " ")
+## Step 1: Create ML User
 
-  ![](./images/2/002.png  " ")
+1. Login to Oracle Cloud and navigate to your ADW Instance
 
-  ![](./images/2/003.png  " ")
+  ![](./images/005.png  " ")
 
-  ![](./images/2/004.png  " ")
+2. Select `Service Console`
 
-## **Step 2:** Create ML User
+  ![](./images/006.png  " ")
 
-- Navigate to your ADW Instance
+3. Select Administration
 
-  ![](./images/2/005.png  " ")
+  ![](./images/007.png  " ")
 
-- Select `Service Console`
+4. Select `Manage Oracle ML Users.`
 
-  ![](./images/2/006.png  " ")
+  ![](./images/008.png  " ")
 
-- Select Administration
+5. Login as admin user and password that you assigned when you created the instance (admin and password you entered)
 
-  ![](./images/2/007.png  " ")
+  ![](./images/009.png  " ")
 
-- Select `Manage Oracle ML Users.`
+6. Create a new ML user. Enter user `ml_user` and create a password.
 
-  ![](./images/2/008.png  " ")
+  ![](./images/010.png  " ")
 
-- Login as admin user and password that you assigned when you created the instance (admin and password you entered)
+  ![](./images/011.png  " ")
 
-  ![](./images/2/009.png  " ")
+## Step 2: Create ML Notebook
 
-- Create a new ML user. Enter user `ml_user` and create a password.
+1. Select the home icon upper right.
 
-  ![](./images/2/010.png  " ")
-
-  ![](./images/2/011.png  " ")
-
-## **Step 3:** Create ML Notebook
-
-- Select the home icon upper right.
-
-  ![](./images/2/012.png  " ")
+  ![](./images/012.png  " ")
 
 - Log in as `ml\_user` and create your own password. Before you log in, you may wish to bookmark this page.
 
-  ![](./images/2/013.png  " ")
+  ![](./images/013.png  " ")
 
 - Navigate around to get familiar with the ML pages. Click on  `Examples`.
 
-  ![](./images/2/014.png  " ")
+  ![](./images/014.png  " ")
 
 - Note the various ML notebook examples. Feel free to review some of these. We will be creating a new ML notebook in this lab.
 
-  ![](./images/2/015.png  " ")
+  ![](./images/015.png  " ")
 
 - Click on the upper left icon to bring back the menu. Then select `Notebooks`.
 
-  ![](./images/2/016.png  " ")
+  ![](./images/016.png  " ")
 
-  ![](./images/2/017.png  " ")
+  ![](./images/017.png  " ")
 
 - We will create a notebook from the beginning, select `Create`.
 
-  ![](./images/2/018.png  " ")
+  ![](./images/018.png  " ")
 
 - Enter `adwc_notebook` as the name, the click `OK`.
 
-  ![](./images/2/019.png  " ")
+  ![](./images/019.png  " ")
 
-## **Step 4:** Add Content to Your ADWC Notebook
+## Step 3: Add Content to Your ADWC Notebook
 
 It is simple to create content in Zeppelin Notebooks, and the following exercise will give you experience in doing so. 
 
 - Select Notebooks in the upper left.
 
-  ![](./images/2/046.png  " ")
+  ![](./images/046.png  " ")
 
-  ![](./images/2/047.png  " ")
+  ![](./images/047.png  " ")
 
 - Select the notebook you just created.
 
-  ![](./images/2/048.png  " ")
+  ![](./images/048.png  " ")
 
 - Click on the gear icon in the upper right.  We must set the interpreter binding if we're going to connect to the ADW database and run queries.  Be sure to select at least one of the servics (High, Medium, or Low (or all)).
 
-  ![](./images/2/049.png  " ")
+  ![](./images/049.png  " ")
 
 - Zepplin notebooks are composed of paragraphs that can contain formatted text, sql, and script (pl/sql).  In fact notebooks can support a broad range of scripting languages (python, R, etc.), but we'll just be using these three.  We create different paragraphs with different interpreters based on what we want to put in the paragraphs.  The interpreter is set at the top of the paragraph:
     - %md - markdown language which is used for formatted text.
@@ -118,15 +112,15 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
 Heather has spent most of her time over the past couple of years extracting and preparing data for analysis.  The large volumes of data need extracting and processing mean she spends most of her time waiting for jobs to finish and very little of her time analyzing the data.  Demands from marketing are forcing a new approach whereby the data remains in the data warehouse and is processed there.  The alternative cloud solution is more complex, and has no direct out of the box processes to analyze the data in place.  She started taking a look at Oracle, and found the simple SQL commands in ADWC are familiar, and execute extremely fast, leveraging all the performance features of the platform.  Further once she is done can can apply the learning models to incoming data on the fly, and allow end user analysts to immediately see mining results.  This drastically reduces the cycle of data preparation, analysis, and publishing.  It also means there is no change to analysis/reporting Data Visualization toolset that users are familiar with.</copy>
 ```
 
-  ![](./images/2/050.png  " ")
+  ![](./images/050.png  " ")
 
-  ![](./images/2/051.png  " ")
+  ![](./images/051.png  " ")
 
 - Sometimes we just want the result (formatted text in this case), and not the code.  Click on the show editor icon to hide the code.
 
- ![](./images/2/052.png  " ")
+ ![](./images/052.png  " ")
 
- ![](./images/2/053.png  " ")
+ ![](./images/053.png  " ")
 
 - In the next paragraph enter the following, overwriting the %md that has defaulted in.  Then hit execute.
 ```
@@ -137,20 +131,20 @@ Heather has spent most of her time over the past couple of years extracting and 
 Select * from admin.credit_scoring_100k where rownum &lt; 100</copy>
 ```
 
- ![](./images/2/054.png  " ")
+ ![](./images/054.png  " ")
 
- ![](./images/2/055.png  " ")
+ ![](./images/055.png  " ")
 
 - To add a title click on the gear icon and select title. 
 
- ![](./images/2/056.png  " ")
+ ![](./images/056.png  " ")
 
 - Enter the following into the title
 ```
 <copy>Review Credit Scoring Data</copy>
 ```
 
- ![](./images/2/057.png  " ")
+ ![](./images/057.png  " ")
 
 - In this last example, enter the following in the next paragraph and then execute the script. Review Data by Mode of Job Contacts and Income
 ```
@@ -161,23 +155,23 @@ Select * from admin.credit_scoring_100k where rownum &lt; 100</copy>
 select customer_id, age, income, tenure, loan_type, loan_amount, occupation, number_of_current_accounts, max_cc_spent_amount, mode_job_of_contacts from admin.credit_scoring_100k where rownum &lt; 1000</copy>
 ```
 
- ![](./images/2/058.png  " ")
+ ![](./images/058.png  " ")
 
- ![](./images/2/059.png  " ")
+ ![](./images/059.png  " ")
 
 - Change the presentation style by selecting bar chart, and then select settings.
 
- ![](./images/2/060.png  " ")
+ ![](./images/060.png  " ")
 
 - Drag the fields into postion to review the results.
 
- ![](./images/2/061.png  " ")
+ ![](./images/061.png  " ")
 
- ![](./images/2/062.png  " ")
+ ![](./images/062.png  " ")
 
  - Hide the settings by clicking on the label again.
 
-  ![](./images/2/063.png  " ")
+  ![](./images/063.png  " ")
 
 - So how does all this help us build ml models, collaborate with others, and review and share the results/findings?  Zeppelin provides:
     - A collaborative shared workspace for model development.
@@ -188,84 +182,92 @@ select customer_id, age, income, tenure, loan_type, loan_amount, occupation, num
 
   - Finally, lets review some examples.  Navigate to the Home dashboard.
 
-![](./images/2/064.png  " ")
+![](./images/064.png  " ")
 
-![](./images/2/065.png  " ")
+![](./images/065.png  " ")
 
 - Navigate to Examples.
 
-![](./images/2/066.png  " ")
+![](./images/066.png  " ")
 
 - Select a model of interest.  In this example we will open Anomoly Detection.
 
-![](./images/2/067.png  " ")
+![](./images/067.png  " ")
 
-![](./images/2/068.png  " ")
+![](./images/068.png  " ")
 
 
-## **Step 5:** Import ML Notebook
+## Step 4: Import ML Notebook
 
 As you have seen adding content to a notebook is simple and fast.  However we have already built out all the steps that are normally followed when exploring data and building a machine learning model.  This has been saved to the Credit Score Predictions.json file.  We will import this notebook and review it.  It is important to note that you ***must execute all the steps in this notebook if you wish to continue on with lab 3 and 4***.  Executing the steps takes only a few minutes.
 
 - Navigate back to the Notebook page.
 
-  ![](./images/2/020.png  " ")
+  ![](./images/020.png  " ")
 
 - We will be importing a pre-built notebook, and using this for the remainder of the lab. Select `Import`.
 
-  ![](./images/2/021.png  " ")
+  ![](./images/021.png  " ")
 
 - Go to the install directory in your git repository and import `Targeting Customers That Complete All Payments.json` notebook.
 
-  ![](./images/2/022.png  " ")
+  ![](./images/022.png  " ")
 
 - Select the `Targeting Customers That Complete All Payments` notebook.
 
-  ![](./images/2/023.png  " ")
+  ![](./images/023.png  " ")
 
 - Before you start working the `Targeting Customers That Complete All Payments` you need to set the interpreter binging. Click on the gear icon.
 
-  ![](./images/2/024.png  " ")
+  ![](./images/024.png  " ")
 
 - Selection the `orcl_high` interpreter adn then `Save`.
 
-  ![](./images/2/025.png  " ")
+  ![](./images/025.png  " ")
 
 The rest of this lab will be done interactively in the notebook.  The following area just screen shots for your convenience.
 
 ## Screen Shots of ML Notebook
 
-![](./images/2/026.png  " ")
+![](./images/026.png  " ")
 
-![](./images/2/027.png  " ")
+![](./images/027.png  " ")
 
-![](./images/2/028.png  " ")
+![](./images/028.png  " ")
 
-![](./images/2/029.png  " ")
+![](./images/029.png  " ")
 
-![](./images/2/030.png  " ")
+![](./images/030.png  " ")
 
-![](./images/2/031.png  " ")
+![](./images/031.png  " ")
 
-![](./images/2/032.png  " ")
+![](./images/032.png  " ")
 
-![](./images/2/033.png  " ")
+![](./images/033.png  " ")
 
-![](./images/2/034.png  " ")
+![](./images/034.png  " ")
 
-![](./images/2/035.png  " ")
+![](./images/035.png  " ")
 
-![](./images/2/036.png  " ")
+![](./images/036.png  " ")
 
-![](./images/2/037.png  " ")
+![](./images/037.png  " ")
 
-![](./images/2/038.png  " ")
+![](./images/038.png  " ")
 
-![](./images/2/039.png  " ")
+![](./images/039.png  " ")
 
-![](./images/2/040.png  " ")
+![](./images/040.png  " ")
 
-![](./images/2/041.png  " ")
+![](./images/041.png  " ")
 
-![](./images/2/042.png  " ")
+![](./images/042.png  " ")
 
+Please proceed to the next lab.
+
+## Acknowledgements
+
+- **Author** - Derrick Cameron
+- **Last Updated By/Date** - Leah Bracken, March 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

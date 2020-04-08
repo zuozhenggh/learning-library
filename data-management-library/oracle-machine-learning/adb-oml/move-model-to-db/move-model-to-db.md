@@ -19,33 +19,33 @@ In this lab, you will:
     - Log in with ml_user and import the ml model.
     - Create a virtual column on the table that applies the model to rows in the table.
 
-## **Step 1:** Sign in to Oracle Cloud, Open SQL Developer Web, and grant priviledges to ml\_user.
+## Step 1: Sign in to Oracle Cloud, Open SQL Developer Web, and grant priviledges to ml\_user.
 
 - Log in, if you have not already done so.
 
-  ![](./images/3/001.png  " ")
+  ![](./images/001.png  " ")
 
 - Navigate to Autonomous Data Warehouse and then select your ADW instance.
 
-  ![](./images/3/002.png  " ")
+  ![](./images/002.png  " ")
 
-  ![](./images/3/003.png  " ")
+  ![](./images/003.png  " ")
 
 - Select the Service Console.
 
-  ![](./images/3/004.png  " ")
+  ![](./images/004.png  " ")
 
 - Select Development, and then SQL Developer Web.
 
-  ![](./images/3/005.png  " ")
+  ![](./images/005.png  " ")
 
 - Log in with your adw admin userid and password.
 
-  ![](./images/3/006.png  " ")
+  ![](./images/006.png  " ")
 
 - Close the popup help notes.
 
-  ![](./images/3/007.png  " ")
+  ![](./images/007.png  " ")
 
 - By default only the admin userid can use SQL Developer Web.  To enable ml\_user to use it, you need to enable this.  Enter the following and execute the procedure to grant sqldeveloper web access to ml\_user.
 ```
@@ -62,40 +62,40 @@ END;
 /</copy>
 ```
 
-  ![](./images/3/008.png  " ")
+  ![](./images/008.png  " ")
 
-  ![](./images/3/009.png  " ")
+  ![](./images/009.png  " ")
 
 - Grant storage priviledges to ml\_user.
 ```
 <copy>alter user ml_user quota 100m on data;</copy>
 ```
 
-  ![](./images/3/010.png  " ")
+  ![](./images/010.png  " ")
 
-## **Step 2:** Log into ***ADW*** SQL Developer Web with user ml\_user and export the machine learning model.
+## Step 2: Log into ***ADW*** SQL Developer Web with user ml\_user and export the machine learning model.
 
 - Go up to the URL and change the admin part of the URL to ml\_user and hit enter to log in as ***ml\_user***.  Copy the URL to a notepad - you will need it later.
 
-  ![](./images/3/011.png  " ")
+  ![](./images/011.png  " ")
 
 - Log in as ml\_user.
 
-  ![](./images/3/012.png  " ")
+  ![](./images/012.png  " ")
 
 - Create a temporary table to hold the data mining model.
 ```
 <copy>create table temp(my_model blob);</copy>
 ```
 
-  ![](./images/3/013.png  " ")
+  ![](./images/013.png  " ")
 
 - Confirm the machine learning model was built.  This would have been done in the lab 1 by executing the steps in the credit scoring notebook.
 ```
 <copy>select * from user_mining_models;</copy>
 ```
 
-  ![](./images/3/016.png  " ")
+  ![](./images/016.png  " ")
 
 - Export the ml model to this temporary table.  The model will be stored in a binary large object.
 ```
@@ -111,46 +111,46 @@ END;
 /</copy>
 ```
 
-  ![](./images/3/014.png  " ")
+  ![](./images/014.png  " ")
 
 - Confirm the model was exported by looking at the length of the blob (you can't see the binary data).  Note your length may differ slightly.
 ```
 <copy>select length(my_model) from temp;</copy>
 ```
 
-  ![](./images/3/015.png  " ")
+  ![](./images/015.png  " ")
 
-## **Step 3:** Log into ***ATP*** SQL Developer Web with userid ***admin*** and create user ml\_user and grant that user privileges to create tables and and access SQL Developer Web.
+## Step 3: Log into ***ATP*** SQL Developer Web with userid ***admin*** and create user ml\_user and grant that user privileges to create tables and and access SQL Developer Web.
 
 - Navigate to Autonomous Transaction Processing (ATP) menu item and then select your ATP instance.
 
-  ![](./images/3/017.png  " ")
+  ![](./images/017.png  " ")
 
-  ![](./images/3/018.png  " ")
+  ![](./images/018.png  " ")
 
 - Select the Service Console.
 
-  ![](./images/3/019.png  " ")
+  ![](./images/019.png  " ")
 
 - Select Administration, and then Manage Oracle ML Users.
 
-  ![](./images/3/020.png  " ")
+  ![](./images/020.png  " ")
 
 - Create new ML User.
 
-  ![](./images/3/021.png  " ")
+  ![](./images/021.png  " ")
 
 - Enter user ml\_user, an emailid, and passwords and select create.
 
-  ![](./images/3/022.png  " ")
+  ![](./images/022.png  " ")
 
 - Go back to the ADW Console (previous tab in your browser), select Development, and the SQL Developer Web.
 
-  ![](./images/3/023.png  " ")
+  ![](./images/023.png  " ")
 
 - Log in with your ***ATP admin*** userid.
 
-  ![](./images/3/024.png  " ")
+  ![](./images/024.png  " ")
 
 - Grant SQL Developer Web rights to ml\_user.
 ```
@@ -167,17 +167,17 @@ END;
 /</copy>
 ```
 
-  ![](./images/3/025.png  " ")
+  ![](./images/025.png  " ")
 
 - Grant storage priviledges to ml\_user.
 ```
 <copy>alter user ml_user quota 100m on data;</copy>
 ```
 
-  ![](./images/3/026.png  " ")
+  ![](./images/026.png  " ")
 
 
-## **Step 4:** Create a database link in ***ATP*** so you can copy the machine learning model in the temp table in ADW back to ATP.
+## Step 4: Create a database link in ***ATP*** so you can copy the machine learning model in the temp table in ADW back to ATP.
 
 - With the ***admin*** userid in ***ATP*** SQL Developer Web create a credential to copy your ADW wallet from Object Storage to the DATA\_PUMP\_DIR later in this step.  This is your cloud userid and generated auth token.
 ```
@@ -191,7 +191,7 @@ END;
 /</copy>
 ```
 
-  ![](./images/3/037.png  " ")
+  ![](./images/037.png  " ")
 
 - Create another credential for the ADW database.  This is your database admin userid and password.  This too will be used in the following steps.
 ```
@@ -205,25 +205,25 @@ END;
 /</copy>
 ```
 
-  ![](./images/3/028.png  " ")
+  ![](./images/028.png  " ")
 
 - Go back to your main console browser tab and navigate to object storage and select your adwc bucket.  object storage.
 
-  ![](./images/3/027.png  " ")
+  ![](./images/027.png  " ")
 
-  ![](./images/3/029.png  " ")
+  ![](./images/029.png  " ")
 
 - The database link needs access to your ADW wallet file cwallet.sso.  In Lab 1 we uploaded this file to object storage.
 
-  ![](./images/3/034.png  " ")
+  ![](./images/034.png  " ")
 
 - Click on the far right menu of the cwallet.sso file and view details.
 
-  ![](./images/3/035.png  " ")
+  ![](./images/035.png  " ")
 
 - Copy the URL to a notepad.  We'll need it next.
 
-  ![](./images/3/036.png  " ")
+  ![](./images/036.png  " ")
 
 - Switch browser tabs and go back to SQL Developer Web and copy the wallet to the ATP's DATA\_PUMP\_DIR.  When we create the database link in the next step this wallet will be required.
 ```
@@ -236,14 +236,14 @@ END;
 /</copy>
 ```
 
-  ![](./images/3/038.png  " ")
+  ![](./images/038.png  " ")
 
 - Retrieve values from the tnsnames.ora file which was in the ADW zip wallet file.  You will need the following.  Copy these values to a notepad.
   - hostname
   - service\_name
   - ssl\_server\_cert\_dn
 
-    ![](./images/3/039.png  " ")
+    ![](./images/039.png  " ")
 
 - Create database link.  This will allow you to copy data from ADW to ATP (in fact, bi-directional).
 ```
@@ -260,40 +260,40 @@ END;
 /</copy>
 ```
 
-  ![](./images/3/040.png  " ")
+  ![](./images/040.png  " ")
 
 - Test the database link by retrieving the date from the remote ADW instance:
 ```
 <copy>select sysdate from dual@adwlink;</copy>
 ```
 
-  ![](./images/3/041.png  " ")
+  ![](./images/041.png  " ")
 
-## **Step 5:** In ***ATP*** Sql Developer Web copy tables from ADW to ATP.
+## Step 5: In ***ATP*** Sql Developer Web copy tables from ADW to ATP.
 
 - First copy the credit\_scoring\_100k table into ml\_user in ATP.  Normally this table would already exist in the production system.  We could have loaded it in lab 1 when we loaded the table into ADW, but since we were going to create this database link we can just copy it from ADW.  We also need to copy the ml model, which is in the temp table (blob).  Enter the following.
 ```
 <copy>create table ml_user.credit_scoring_100k as select * from credit_scoring_100k@adwlink;<copy/>
 ```
 
-  ![](./images/3/042.png  " ")
+  ![](./images/042.png  " ")
 
 - Now copy the temp table.
 ```
 <copy>create table ml_user.temp as select * from ml_user.temp@adwlink;</copy>
 ```
 
-  ![](./images/3/043.png  " ")
+  ![](./images/043.png  " ")
 
-## **Step 6:** Log into SQL Developer Web as ml\_user and import the ml model.  
+## Step 6: Log into SQL Developer Web as ml\_user and import the ml model.  
 
 - Start by copying the SQL Developer URL for the admin user and paste that into your browser, but change the admin user value to ml\_user.
 
-  ![](./images/3/044.png  " ")
+  ![](./images/044.png  " ")
 
 - Change the user from admin to ml\_user and log in.
 
-  ![](./images/3/045.png  " ")
+  ![](./images/045.png  " ")
 
 - Import your model.  Note you will get a warning error message, but you can then confirm the model was imported.
 ```
@@ -308,14 +308,14 @@ END;
 /</copy>
 ```
 
-  ![](./images/3/046.png  " ")
+  ![](./images/046.png  " ")
 
 - Confirm the ml model was imported.
 ```
 <copy>select * from user_mining_models;</copy>
 ```
 
-  ![](./images/3/047.png  " ")
+  ![](./images/047.png  " ")
 
 - Test the model.
 ```
@@ -323,9 +323,9 @@ END;
 from dual;</copy>
 ```
 
-  ![](./images/3/048.png  " ")
+  ![](./images/048.png  " ")
 
-- To make the model prediction available to all applications we will use the Oracle Database's virtual column feature.  We'll add two new virtual columns: the prediction itself, and the probably that the prediction is correct.  **TIP:** You can also create a function index in the ml columns (not included here).  If you wish to use a function index the table must be analyzed to be used in queries.
+- To make the model prediction available to all applications we will use the Oracle Database's virtual column feature.  We'll add two new virtual columns: the prediction itself, and the probably that the prediction is correct.  **TIP: You can also create a function index in the ml columns (not included here).  If you wish to use a function index the table must be analyzed to be used in queries.
 ```
 <copy>alter table credit_scoring_100k add(
 likely_good_credit_pcnt AS (round((100*(prediction_probability(n1_class_model, 'Good Credit' USING
@@ -355,11 +355,21 @@ likely_good_credit_pcnt AS (round((100*(prediction_probability(n1_class_model, '
 );</copy>
 ```
 
-  ![](./images/3/049.png  " ")
+  ![](./images/049.png  " ")
 
 - Select some data to view predictions.
 ```
 <copy>select customer_id, wealth, income, credit_prediction, likely_good_credit_pcnt from credit_scoring_100k;</copy>
 ```
 
-  ![](./images/3/050.png  " ")
+  ![](./images/050.png  " ")
+
+Please proceed to the next lab.
+
+## Acknowledgements
+
+- **Author** - Derrick Cameron
+- **Last Updated By/Date** - Leah Bracken, March 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+
