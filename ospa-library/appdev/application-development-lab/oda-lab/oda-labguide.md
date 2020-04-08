@@ -697,6 +697,10 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
 1. Give the channel a name, a description, select channel type `Oracle Web`, in `Allow Domains` enter * and for the purpose of this lab disable `Cliente Authentication Enabled`.
 <br>![](media/oda_channel_3.png)
 
+
+4. Make sure the **Route To** is set and the **Channel Enabled** is enabled. 
+<br>![](media/oda_channel_4a.png)
+
 1. Copy the `Channel Id` and the `URI` to a notepad. We will use it for the WebApp configuration.
 <br>![](media/oda_channel_4.png)
 
