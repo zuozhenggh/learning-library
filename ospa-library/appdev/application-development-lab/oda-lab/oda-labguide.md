@@ -1,3 +1,6 @@
+
+<br>[**Return to Main Page**](../index.html)
+
 # Oracle Digital Assistant Lab
 
 **Before you begin**
@@ -26,14 +29,14 @@ In this lab, you will create a skill that can be used for interactions with a pi
 **What Do You Need?**
 * Access to Oracle Digital Assistant.
 
-
-[**Return to Main Page**](../index.html)
+<br>[**Return to Main Page**](../index.html)
 
 ****************
 
 ## Welcome to Oracle Digital Assistant
 
 ## Create a Skill
+
 In this lab, we’re starting from scratch. So the first thing you’ll do is create a new skill.
 1. Access the cloud tenant using your Oracle SSO account.
 1. Click on the ![](media/hamburger.png) to open the side menu.
@@ -71,7 +74,7 @@ In this lab, we’re starting from scratch. So the first thing you’ll do is cr
 
 2.  Click **Create**.The designer will then open on the **Intents** page. Here’s where we’ll begin to express the use case in terms of the concepts that support Natural Language Processing (NLP): intents and entities.
 
-
+<br>
 
 ## Create Intents
 
@@ -80,7 +83,7 @@ Oracle Digital Assistant’s underlying natural language processing (NLP) engine
 For the Mama Maggy example, you will create intents for ordering pizza, cancelling an order, and filing a complaint.
 
 
-## Create the Order Pizza Intent
+### Create the Order Pizza Intent
 
 1. In the left navigation for the designer, make sure that ![](media/left_nav_intents.png) is selected.
 2. Click the **+ Intent** button.
@@ -108,7 +111,7 @@ For the Mama Maggy example, you will create intents for ordering pizza, cancelli
 <br>![](media/intent_creation.png)
 
 
-## Create the Cancel Pizza Intent
+### Create the Cancel Pizza Intent
 
 1. Click the **+Intent** button.
     
@@ -132,7 +135,7 @@ For the Mama Maggy example, you will create intents for ordering pizza, cancelli
     Please don’t deliver my Pizza
 	```
     
-## Create the File Complaint Intent
+### Create the File Complaint Intent
 
 1. Click the **+Intent** button.
 
@@ -158,7 +161,7 @@ For the Mama Maggy example, you will create intents for ordering pizza, cancelli
 **Note:** If you are stuck, you can import the intents and utterances using  [intents.csv](../files/intents.csv).
 
 
-## Train Your Intents
+### Train Your Intents
 
 You’ve now provided the basic ingredients that allow the skill to recognise user input for ordering a pizza, but right now, the skill has no cognition. It can’t understand any user input. To enable it to understand the intents, you need to train it.
 
@@ -223,7 +226,7 @@ In a real skill project, you would always need to go back to the intent testing 
 
 **Note:** Oracle Digital Assistant also has a batch mode that allows you to test based on a log of a previous set of tests. This is useful for re-running a set of tests iteratively as you fine-tune your intents.
 
-
+<br>
 
 ## Create Entities
 
@@ -232,6 +235,7 @@ Now it’s time to add entities, which detect information in the user input that
 We’ll create custom entities for size and topping and later use a built-in entity for time. While we’re at it, we’ll add some synonyms (including some common misspellings) that optimize the entity’s ability to tag words from sloppy user input.
 
 ### Create Entities for Pizza Size and Pizza Topping
+
 1. In the left navigation for the designer, select ![](media/left_nav_entities.png)
 2. Click the `+ Entity` to create a new entity.
 <br>![](media/oda_entity_2.png)
@@ -271,6 +275,7 @@ We’ll create custom entities for size and topping and later use a built-in ent
 
 
 ### Associate the Entity with Its Intent
+
 For an entity to be recognised when parsing the user input message, it needs to be associated with an intent. So let’s associate our entities with the appropriate intents:
 
 1. In the left navigation for the designer, select ![](media/left_nav_intents%203.png).
@@ -313,7 +318,7 @@ In this part of the tutorial, you have created custom entities for the OrderPizz
 	
 Similar to the PizzaOrder intent, you would typically need to create and associate entities for the other intents as well. In the interest of time, this tutorial only focuses on the PizzaOrder intent.
 
-
+<br>
 
 ## Design the Dialog Flow
 
@@ -345,8 +350,8 @@ Our first step is to create the basic flow outline, including context variables 
     Now we’re ready to add some states.
 
 ### Add a State to Determine User Intent
-First we’ll add the `System.Intent`
- component. This component evaluates user input to determine the user intent, extracts all of the entities, and then triggers a subsequent state.
+
+First we’ll add the `System.Intent` component. This component evaluates user input to determine the user intent, extracts all of the entities, and then triggers a subsequent state.
 
 1. Click ![](media/oda_dialog_2.png) to open the gallery of component templates.
 
@@ -428,12 +433,11 @@ Next, you need to create the dialog flow states that each possible outcome navig
 
 
 1. Copy and paste the code at the bottom of the dialog flow. Make sure that the indentation is preserved in the pasted content.
-3. Verify the correctness of your edits by clicking the **Validate** button on the top of the page.
+
+2. Verify the correctness of your edits by clicking the **Validate** button on the top of the page.
 <br>![](media/oda_dialog_8.png)
 
-
-
-## Troubleshooting Errors in the Dialog Flow
+### Troubleshooting Errors in the Dialog Flow
 
 If you don’t see a success message, then most likely you misspelled a property name or did not follow the required two-space indenting increments. In this case, scroll through the dialog flow until you see an ![](media/error-icon.png) icon in the left margin. 
 
@@ -442,11 +446,9 @@ Mouse over the icon to display the tooltip with a description of the problem. In
 One useful tool to verify your YAML file is [CodeBeautify](https://codebeautify.org/yaml-validator). Paste your code and check it by clicking `Validate`.
 <br>![](./media/codebeautify.png)
 
+If you have gotten into a jam and can’t get anything to work, open the [your-first-dialog-flow.txt](../files/your-first-dialog-flow.txt)  and replace the content in your dialog flow with the content from the file.
 
-If you have gotten into a jam and can’t get anything to work, open the  [your-first-dialog-flow.txt](../files/your-first-dialog-flow.txt)  and replace the content in your dialog flow with the content from the file.
-
-
-## Tune Intent Resolution
+### Tune Intent Resolution
 
 Before moving further, let’s take a look at some settings that are useful for fine-tuning intent resolution.
 * **Confidence Threshold:** The skill uses this property to steer the conversation by the confidence level of the resolved intent. Set the minimum confidence level required to match an intent. When the level falls below this minimum value, the component triggers its unresolvedIntent action.
@@ -505,7 +507,7 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
     This is what the state should look like:
 <br>![](media/screenshot_dialog-startOrderPizza.png)
 
-## Set Pizza Size
+### Set Pizza Size
 1. Click **+ Components** to open the gallery of component templates.
 
 2. Select the **User Interface** category.
@@ -536,7 +538,7 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
           next: "setPizzaTopping"
 	```
 
-## Set Pizza Topping
+### Set Pizza Topping
 1. Below the `setPizzaSize`
  state, paste the following code (also based on the `System.List`
  component) to create the `setPizzaTopping`state:
@@ -553,7 +555,7 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
           next: "setPizzaDeliveryTime"
 	```
 
-## Set Pizza Delivery Time
+### Set Pizza Delivery Time
 
 1. Click **+ Components** to open the gallery of component templates.
 
@@ -585,7 +587,8 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
             next: "setPizzaOrderMessage"
 	```
 
-## Show Pizza Delivery Message
+### Show Pizza Delivery Message
+
 1. Click **+ Components** to open the gallery of component templates.
 2. Select the **Variables** category.
 3. Select the **Set variable** template.
@@ -609,7 +612,8 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 
 	**Note:** The `text` property value uses the Apache FreeMarker expression `|-` to print multi-line text in a single response bubble. Alternatively, you could have used multiple output text components.
 
-## Show Pizza Order
+### Show Pizza Order
+
 1. Click **+ Components** to open the gallery of component templates.
 2. Select the **User Interface** category.
 3. Select the **Output** template.
@@ -631,7 +635,7 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
           return: "done"
 	```
 
-## Validate the Dialog Flow
+### Validate the Dialog Flow
 
 * Click the **Validate** button on the top of the page, and then fix any errors that are revealed.If you have errors that you can’t resolve, you can copy and paste the code from  [complete-dialog-flow.txt](../files/complete-dialog-flow.txt) .
 
@@ -686,9 +690,9 @@ The SDK's features include:
 
 The SDK connects to the Oracle Chat Server, which stands between Oracle Digital Assistant and the skill (or digital assistant). The chat server then passes messages to the skill for processing and delivers the skill's response to the client.
 
-### Begin The Lab
+### Create The Channel
 
-1. Lets start by creating a channel. Login into your Oracle Digital Assistant Console, click on the **General Menu**, select **Development**, and then **Channels*.
+1. Lets start by creating a channel. Login into your Oracle Digital Assistant Console, click on the **General Menu**, select **Development**, and then **Channels**.
 <br>![](media/oda_channel_1.png)
 
 1. Click on the **General Menu** again to close the side menu and then **+Channel** to add a new channel.
@@ -703,6 +707,8 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
 
 1. Copy the `Channel Id` and the `URI` to a notepad. We will use it for the WebApp configuration.
 <br>![](media/oda_channel_4.png)
+
+### Create The VBCS Web App
 
 1. Now login into Visual Builder Cloud Service and create a new WebApp
 <br>![](./media/oda_channel_5.png)
@@ -750,5 +756,8 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
 *****************************
 Congratulations! You have created your first skill, learned key aspects of defining intents, defining entities, designing the conversation flow, and have integrate the skill with your Visual Builder Project.
 *****************************
-<br>
+
+
+<br>[**Return to Main Page**](../index.html)
+
 
