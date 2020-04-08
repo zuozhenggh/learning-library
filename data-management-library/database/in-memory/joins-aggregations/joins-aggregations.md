@@ -12,8 +12,9 @@
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
 * Lab: Generate SSH Key
-* Lab: Setup
-* Lab: Queries
+* Lab: Environment Setup
+* Lab: Enabling In-Memory
+* Lab: Querying the IMC
 
 ### Lab Preview
 
@@ -37,7 +38,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     ![](images/part3.png) 
 
-2.  Join the LINEORDER and DATE_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  In the first one, execute it against the IM column store.  Alternative script:  `@01_join_im.sql`
+2.  Join the LINEORDER and DATE_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  In the first one, execute it against the IM column store.  
 
     ````
     <copy>
@@ -89,7 +90,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     ![](images/join_buffer.png) 
 
-4. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results.  Alternative script:  `@03_3join_im.sql`
+4. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results.  
 
     ````
     <copy>
