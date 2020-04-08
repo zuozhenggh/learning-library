@@ -26,12 +26,6 @@ Here are some general guidelines that will help you get the most from these exer
   - Ask questions freely. The only dumb questions are those that are not asked.
 
 
-
-In this lab, you will create a skill that can be used for interactions with a pizzeria, including ordering pizzas and canceling orders. As part of this process, you will:
-* Define intents, utterances, entities.
-* Design a conversation flow.
-* Validate, debug and test your skill.
-
 **Intended Audience**
 
 - Beginner/Intermediate technical learners
@@ -135,7 +129,7 @@ In this exercise you will make sure you can access a VBCS instance and create yo
 4. Once in the main dashboard, open the **General Menu** located at the top left hand side of the screen, select **Platform Services**, and click on **Visual Builder**.<p>
 ![](./media/1.1.4.png)<p><br>
 
-5. Click the dropdown menu next to your instance name, and select **Open Oracle Visual Builder Home Page**.<p> 
+1. Click the dropdown menu next to your instance name, and select **Open Oracle Visual Builder**.<p> 
 ![](./media/1.1.5.png)<p><br>
 
 6. When the **Visual Applications** welcome appears; choose the **New Application** button.<p>
@@ -183,6 +177,8 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
 
 2. If you don’t see the navigator, click the **Expand Navigator** icon in the upper-left corner. ![](./media/image74.png)
 
+
+
     - If you don't have any Business Objects already you'll see the following **You don't have any business objects defined yet** image; click on the **+ Business Object** button.
 
       <br>![](./media/vbcs_no_biz_objects.png)
@@ -191,20 +187,23 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
     
       <br>![](./media/2.2.3.png)
 
-3.  From the application page, click **+ Business Object** to begin adding
+4.  From the application page, click **+ Business Object** to begin adding
     a business object
+   
     
     The first Business Object you will create will contain information about what products are available for managers/franchisees to order for their stores; 
     set the business object name to **Product** and when ready click **Create**.
     
+    <br>![](./media/vbcs_bo_creation.png)
 
-4. The Business Object page allows you to create fields and manage your Business Object. Note that some fields have been defined automatically, this is normal. The **id** field is treated as a key and will be used to access items in the business object automatically later.
+
+5. The Business Object page allows you to create fields and manage your Business Object. Note that some fields have been defined automatically, this is normal. The **id** field is treated as a key and will be used to access items in the business object automatically later.
 
     ![](./media/image26.png)
 
-5. To add a field click the **+New Field** button ![](./media/image27.png)
+6. To add a field click the **+New Field** button ![](./media/image27.png)
 
-6. For each new field the Name and General Data Type are specified
+7. For each new field the Name and General Data Type are specified
 
     - Set the label of the first field to `Product Name` note that Visual Builder creates the name as `productName`
     
@@ -214,11 +213,11 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
       
     ![](./media/2.6.2.png)
 
-7.  In the box at the lower-right part of the VBCS editor set the field property to **Required**
+8.  In the box at the lower-right part of the VBCS editor set the field property to **Required**
 
     ![](./media/2.7.1.png)
 
-8.  Now add two more fields; be sure to mark the all **Required** 
+9.  Now add two more fields; be sure to mark the all **Required** 
 
      |    Display Label        | Field Name           | Type  |
      |:------------- |:-------------|:-----|
@@ -230,7 +229,7 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
      ![](./media/2.10.1.png)
 
 
-9. Create another Business Object named **Product Order** (ProductOrder) by clicking the **plus sign** at the top of the Business Objects list again
+10. Create another Business Object named **Product Order** (ProductOrder) by clicking the **plus sign** at the top of the Business Objects list again
 
     ![](./media/2.9.1.png)
 
@@ -238,18 +237,18 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
    
    Add these fields; be sure to mark them all **Required**
 
-    | Display Label | Field Name  | Type     |
-    |:--------------|:------------|:----------|
-    | Associate     | associate   | #         |
-    | Order Date    | orderDate   | Date Time |
-    | Order Status  | orderStatus | A         |
-    | Action Date   | actionDate  | Date Time |
+| Display Label | Field Name  | Type     |
+|:--------------|:------------|:----------|
+| Associate     | associate   | #         |
+| Order Date    | orderDate   | Date Time |
+| Order Status  | orderStatus | A         |
+| Action Date   | actionDate  | Date Time |
     
-    The final result should looks like below (Check the fields added are set the correct **type** and marked **Required**)
+The final result should looks like below (Check the fields added are set the correct **type** and marked **Required**)
 
-    ![](./media/2.11.1.png)
+![](./media/2.11.1.png)
 
-10. Create another Business Object named **Product Order Line** (ProductOrderLine).
+11. Create another Business Object named **Product Order Line** (ProductOrderLine).
 The **Product Order Line** Business Object will contain specifics about each item included in **Product Orders** made by managers/franchisees including the **Product** ordered, its Unit Price, and the Quantity ordered.
 
     To make it possible for VBCS to connect the **Product Order Line** with the correct **Product Order** and the **Product** being ordered (so that the product name can display rather than a product id) you will create two **Relationships**:
@@ -346,7 +345,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
 
     ![](./media/image52.png)
 
-25. To load more rows from a .csv file; click on the **Product** Business Object’s hamburger menu ![](./media/image16.png) and choose **Data Management**
+25. To load more rows from a .csv file; click on the **Product** Business Object’s hamburger menu ![](./media/image16.png) and choose **Data Manager**
 
     ![](./media/2.25.1.png)  
 
@@ -426,9 +425,11 @@ In the last exercise you created three business objects and added data to them; 
 
     If you have logged out of the Oracle Cloud, please log back in and return to your VBCS application. You might find it useful to close any open windows.
     
-2. On the left-hand side of the Visual Builder interface is a navigator listing several options; choose **Web Applications** ![](./media/image66.png)
+2. On the left-hand side of the Visual Builder interface is a navigator listing several options; choose **Web Applications** 
 
-    If you don’t see the navigator, click the **Expand Navigator** icon in the upper-left corner, then click the **Web Applications** button ![](./media/image74.png)
+<br>![](./media/image66.png)
+
+If you don’t see the navigator, click the **Expand Navigator** icon in the upper-left corner, then click the **Web Applications** button ![](./media/image74.png)
  
 3. Add a new Web Application
 
@@ -443,7 +444,7 @@ In the last exercise you created three business objects and added data to them; 
     ![](./media/image76.png)
  
 
-4. The first Web Application you will create will be called **productList** - type the name in the **Id** box and click the **Create** button to start building the application.
+4. The first Web Application you will create will be called **productList** - Type the name in the Application Name box and click the **Create** button to start building the application.
 
     ![](./media/3.4.1.png)
 
@@ -504,7 +505,7 @@ In the last exercise you created three business objects and added data to them; 
 
     ![](./media/3.8.5.png)
 
-9. Test the application by clicking the **Run** button ![](./media/image95.png) in the upper-right part of the screen.
+9.  Test the application by clicking the **Run** button ![](./media/image95.png) in the upper-right part of the screen.
 
    ![](./media/image96.png)
 
@@ -514,11 +515,11 @@ In the last exercise you created three business objects and added data to them; 
 
    Success\! Mama Maggy managers/franchisees can now see a list of the various products available for order (without having to call headquarters).
 
-10. Now, let’s add a page of detail. Return to the Visual Builder Designer and select the table containing the property list. Notice the icon on the right side near the top of the Property Inspector.
+11. Now, let’s add a page of detail. Return to the Visual Builder Designer and select the table containing the property list. Notice the icon on the right side near the top of the Property Inspector.
 
     ![](./media/image98.png)
     
-1. The **Quick Start** button makes adding to your application easy. ![](./media/image99.png)
+12. The **Quick Start** button makes adding to your application easy. ![](./media/image99.png)
  The Quick Start options include: Adding data, building a Create Page (new row), an Edit Page (update row), a Detail page (display single row), Delete Action (delete row), or Task Actions (add task controls).
     
     ![](./media/image100.png)
@@ -728,12 +729,12 @@ Mama Maggy's managers/franchisees want to be able to check product order status 
     ![](./media/3.20.1.png)
 
 
-3. The New Mobile Application wizard has two steps; select **None** and click the right-arrow button **\>** to continue
+3. The New Mobile Application wizard has two steps; select **None** and click the Next button **\>** to continue
 
     ![](./media/3.21.1.png)
 
 
-4. Click **Finish** on the second page of the wizard
+4. Click **Create** on the second page of the wizard
 
     ![](./media/3.22.1.png)
 
@@ -759,7 +760,7 @@ Mama Maggy's managers/franchisees want to be able to check product order status 
     `orderDate` (Input Date)    
     `orderStatus` (Text) fields 
     
-    Click Finish when you are ready to continue.
+    Click **Next** and then **Finish** when you are ready to continue.
 
     ![](./media/3.26.1.png)
 
@@ -934,7 +935,7 @@ The data used to create these apps will come from **Service Connections** that y
 ![](./media/4.7.2.png)
 
 
-7. If the response looks good to you click the **Copy to Response Body** so that Visual Builder will map out the response details as part of the connection
+7. If the response looks good to you click the **Save as Example Response** so that Visual Builder will map out the response details as part of the connection
 
     ![](./media/4.7.4.png)
 
@@ -1260,7 +1261,7 @@ In this exercise you will create:
 <br>![](./media/image_c_8.png)
 
 
-1. Another method is to click the **hamburger** icon ![](./media/image_c_9.png) in the lower-right corner of the  **Visual Builder** service box to display a menu.
+1. Another method is to click the **General Menu** icon ![](./media/image_c_9.png) in the lower-right corner of the  **Visual Builder** service box to display a menu.
 <br>![](./media/image_c_3.png)
 
 
@@ -1322,7 +1323,7 @@ In this exercise you will create:
      - From the **Fields** tab, click **+ New Field** and add **Email** (email field)
 <br>![](./media/image_c_20.png)
  
-1. Use the Business Object **hamburger** icon’s ![](./media/image_c_9.png) menu to select **Diagram** option.
+1. Use the Business Object **General Menu** icon’s ![](./media/image_c_9.png) menu to select **Diagram** option.
 ![](./media/image_c_21.png)
  
 
@@ -1330,7 +1331,7 @@ In this exercise you will create:
 <br>![](./media/image_c_22.png)
  
 
-1. To load data into the objects, start by once again using the Business Object **hamburger** ![](./media/image_c_9.png)icon but this time select the **Data Manager** option
+1. To load data into the objects, start by once again using the Business Object **General Menu** ![](./media/image_c_9.png)icon but this time select the **Data Manager** option
 ![](./media/image_c_23.png)
  
  
