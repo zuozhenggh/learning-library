@@ -13,4 +13,4 @@ Welcome to the Oracle Machine Learning (OML) with Autonomous Database Workshop. 
 
 ## Access the Labs Using Our Web Interface
 **Click the image to use our easy to navigate HTML format:**
-[![Low Code Development Workshop](images/low-code-workshop.png " ")](https://oracle.github.io/learning-library/data-management-library/security/data-safe-HOL)
+[![Oracle Machine Learning](images/adb-oml.png " ")](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml)
