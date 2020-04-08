@@ -669,7 +669,7 @@ Now that all of the skill’s pieces are in place, let's test its behaviour.
 
 ## Integrate your Oracle Digital Assistant with a Visual Builder App
 
-This tutorial shows you how to use the Oracle Native SDK for Web/JavaScript (also known as Oracle Web SDK) to add to your web site a chat window that communicates with an Oracle Digital Assistant skill. You'll start with a basic web interface and then learn how to use the SDK to customize and enhance the behavior and look and feel.
+This tutorial shows you how to use the Oracle Native SDK for Web/JavaScript (also known as **Oracle Web SDK**) to add to your web site a chat window that communicates with an Oracle Digital Assistant skill. You'll start with a basic web interface and then learn how to use the SDK to customize and enhance the behavior and look and feel.
 
 **Note:** This tutorial won't work if you are using Oracle Digital Assistant Release 19.4.1, since the version of the SDK that this tutorial requires is only available for instances of Digital Assistant that have been provisioned on Oracle Cloud Infrastructure (Gen 2). For information on setting up a web channel on Digital Assistant 19.4.1, see [Expose Your Digital Assistant through a Web Channel](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-web-channel/index.html).
 
@@ -719,7 +719,7 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
 1. Fill the `URI` and `YOUR CHANNEL` variables with the information copied on step 4
 <br>![](./media/oda_channel_8.png)
 
-1. Download the ODA Web SDK script files [script.zip](../files/scripts.zip) to your laptop
+1. Download the ODA Web SDK script files [script.zip](../files/scripts.zip) to your laptop. You can download the latest version of the SDK from [Oracle Digital Assistant (ODA) and Oracle Mobile Cloud (OMC) Downloads](https://www.oracle.com/downloads/cloud/amce-downloads.html).
 
 2. Right click on **Resource**  and select **Import**
 <br>![](./media/oda_channel_9.png)
