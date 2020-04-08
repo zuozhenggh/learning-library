@@ -1,17 +1,19 @@
 # Oracle Machine Learning Github
 
 
-Oracle Database In-Memory (Database In-Memory) is a suite of features, first introduced in Oracle Database 12c, that greatly improves performance for real-time analytics and mixed workloads. The In-Memory Column Store (IM column store) is the key feature of Database In-Memory. The In-Memory Column Store (IM column store) stores tables and partitions in memory using a columnar format optimized for rapid scans. Oracle Database uses a sophisticated architecture to manage data in columnar and row formats simultaneously. 
+The Oracle Machine Learning product family enables scalable data science projects. Data scientists, analysts, developers, and IT can achieve data science project goals faster while taking full advantage of the Oracle platform.
+
+Oracle Machine Learning consists of complementary components supporting scalable machine learning algorithms for in-database and big data environments, notebook technology, SQL and R APIs, and Hadoop/Spark environments. 
+
+With Oracle Machine Learning, Oracle moves the algorithms to the data, processing data where it resides—minimizing or eliminating data movement, achieving scalability, preserving security, and accelerating time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with open source R.
 
 ## Workshops
-Click on one of our workshops below to access the content.
+Click on the workshop below to begin.
 
-[![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/ssworkshop/index.html)
+[![](./images/screenshot.png)](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml/workshop/index.html)  
 
 
-- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html)
-- [I have an account from SSWorkshop](https://oracle.github.io/learning-library/data-management-library/database/in-memory/ssworkshop/index.html)
-
+- [Access lab here](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml/workshop/index.html)
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -23,23 +25,16 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 
 
 ## Product Pages
-- [Oracle In-Memory](https://www.oracle.com/database/technologies/in-memory.html)
+- [Oracle Machine Learning - 19c](https://www.oracle.com/database/technologies/datawarehouse-bigdata/machine-learning.html)
 - [Oracle Database 19c](https://www.oracle.com/database/)
 
 ## Documentation
-- [Introduction to the Oracle Database In-Mamory](https://docs.oracle.com/en/database/oracle/oracle-database/19/inmem/intro-to-in-memory-column-store.html#GUID-BFA53515-7643-41E5-A296-654AB4A9F9E7)
-- [In-memory Column Store Architecture](https://docs.oracle.com/en/database/oracle/oracle-database/19/inmem/in-memory-column-store-architecture.html#GUID-EEA265EE-8FBA-4457-8C3F-315B9EEA2224)
-- [Oracle Database In-Memory YouTube Channel](https://www.youtube.com/channel/UCSYHgTG68nrHa5aTGfFH4pA)
-- [Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
+- [Machine Learning Algorithms Cheat Sheet](https://www.oracle.com/a/tech/docs/oml4sql-algorithm-cheat-sheet.pdf)
+- [Oracle Machine Learning - 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/data-warehousing.html)
+- [Oracle SQL Developer](https://docs.oracle.com/en/database/oracle/sql-developer/)
 
 ## Videos
-- [Real Time Analytics with Oracle Database In-Memory](https://www.youtube.com/watch?v=eToO3PRIs8k)
-- [Managing Oracle Database In-Memory](https://www.youtube.com/watch?v=IZ7UMoQxtLo)
-- [Oracle Database In-Memory Demo](https://www.youtube.com/watch?v=mF-h26iKTYY)
-- [Enabling the In-Memory Column Store](https://www.youtube.com/watch?v=dZ9cnIL6KKw)
-- [Exadata In-Memory High Availability](https://www.youtube.com/watch?v=j3n5ZjUvcD0)
-- [Oracle Database 19c](https://www.youtube.com/watch?v=EVPNyL2vAVI)
-- [Upgrading to Oracle Database 19c](https://www.youtube.com/watch?v=lOzL5irmuJo)
+- [Oracle Machine Learning Video Playlist](https://www.youtube.com/playlist?list=PLdtXkK5KBY57_y3Z0SW2cbCqGUPbfc94w)
 
 ### Issues?
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
