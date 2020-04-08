@@ -1,6 +1,6 @@
 # Introduction to Python Development with Autonomous Transaction Processing
 
-## 
+## Introduction
 
 Welcome to the Introduction to Python Development with Autonomous Transaction Processing Workshop. This workshop will introduce you to the most rapid and advanced full-stack development environment available today.
 
