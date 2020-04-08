@@ -1,11 +1,10 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Oracle Web SDK Sample</title>
-    <link rel="shortcut icon" href="">
-    <link rel="stylesheet" href="resources/css/style.css">
+    <head>
+        <meta charset="utf-8">
+        <title>Oracle Web SDK Sample</title>
+        <link rel="shortcut icon" href="https://oracle.github.io/learning-library/common/redwood-hol/img/favicon.ico" />
+        <link rel="stylesheet" href="resources/css/style.css">
 
     <script>
         var chatWidgetSettings = {
@@ -44,33 +43,38 @@
 
 </head>
 <body> 
-
+    <header class="hol-Header" role="banner">
+        <div class="hol-Header-wrap">
+            <div class="hol-Header-logo"><span>Hands on Labs</span></div>
+            <div class="hol-Header-actions">
+                <button id="openNav" class="hol-Header-button hol-Header-button--menu rightNav" aria-label="Open Menu"
+                    title="Open Menu">
+                    <span class="hol-Header-toggleIcon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
     
     <div class="wrapper">
-        <header class="header">
-            <h1>Enjoy Our Delicious Pizza</h1>
-            <p>Delivered right to your door</p>
+      <header class="header">
+             <h1>Enjoy Our Delicious Pizza</h1>
+
         </header>
-        <section class="content">
-            <h2>We offer these popular pizzas:</h2>
-            <ul>
-                <li>Basic Cheese</li>
-                <li>Ultimate Cheese Lover</li>
-                <li>Pepperoni</li>
-                <li>Meat Lover</li>
-                <li>Supreme</li>
-                <li>Premium Garden Veggie</li>
-                <li>Hawaiian Chicken</li>
-                <li>Bacon Spinich Alfredo</li>
-            </ul>
-        </section>
+        
+        <div class="img">
+            <img src="https://images.huffingtonpost.com/2015-10-07-1444224600-7634313-Pizza_1.jpeg">
+
+        </div>
+        
         <div id="chat-container" class="chatbox" 
             style="height: 600px; width: 400px; padding: 2;
             text-align: initial">
         </div>
+    
         <footer class="footer">
-            <p>To order, call us or talk to our Pizzabot.</p>	
-        </footer>
+            <p>Oracle Sales and Partner Academy</p>	
+        </footer>  
+        
     </div>            
 </body>
 </html>
