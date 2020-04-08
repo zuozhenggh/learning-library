@@ -5,8 +5,6 @@ Remember that we are trying to help Alpha Office predict the credit and payment 
 
 This lab uses a decision tree algorithm which is a classification technique. If these are new to you, here’s a [presentation](./files/Machine_Learning_Introduction.pdf) and short video that explains machine learning, classification and decision trees at a high level. 
 
-<video src="files/Machine_Learning_Introduction.mp4" width="320" height="200" controls preload></video>
-
 In this lab you will use Apache Zeppelin notebooks to do this work. The lab will help you create a new notebook, and also import an existing one with all the code, descriptions and examples that you need. You will then step through that notebook, examining the code, data and visualizations and, most importantly, executing each step to populate the database. 
 
 Watch the video below to learn more about Oracle Machine Learning notebooks.
@@ -109,22 +107,22 @@ Zepplin notebooks are composed of paragraphs that can contain formatted text, sq
     - %script - used to run multiple sql statements and pl/sql blocks.
 
 4. Paste the following into the first paragraph.  Then click on the arrow to run the code (format the text in this case.).  Note that it then displays the formatted text, and adds a new paragraph.  Notebooks save automatically.  There is no need to click a save button.
-  ````
-  <copy>%md
-  ### Targeting Likely Good Credit Customers using Oracle Machine Learning's (OML) Classification Models
+    ````
+    <copy>%md
+    ### Targeting Likely Good Credit Customers using Oracle Machine Learning's (OML) Classification Models
 
-  Heather has spent most of her time over the past couple of years extracting and preparing data for analysis.  The large volumes of data need extracting and processing mean she spends most of her time waiting for jobs to finish and very little of her time analyzing the data.  Demands from marketing are forcing a new approach whereby the data remains in the data warehouse and is processed there.  The alternative cloud solution is more complex, and has no direct out of the box processes to analyze the data in place.  She started taking a look at Oracle, and found the simple SQL commands in ADW are familiar, and execute extremely fast, leveraging all the performance features of the platform.  Further once she is done can can apply the learning models to incoming data on the fly, and allow end user analysts to immediately see mining results.  This drastically reduces the cycle of data preparation, analysis, and publishing.  It also means there is no change to analysis/reporting Data Visualization toolset that users are familiar with.</copy>
-  ````
+    Heather has spent most of her time over the past couple of years extracting and preparing data for analysis.  The large volumes of data need extracting and processing mean she spends most of her time waiting for jobs to finish and very little of her time analyzing the data.  Demands from marketing are forcing a new approach whereby the data remains in the data warehouse and is processed there.  The alternative cloud solution is more complex, and has no direct out of the box processes to analyze the data in place.  She started taking a look at Oracle, and found the simple SQL commands in ADW are familiar, and execute extremely fast, leveraging all the performance features of the platform.  Further once she is done can can apply the learning models to incoming data on the fly, and allow end user analysts to immediately see mining results.  This drastically reduces the cycle of data preparation, analysis, and publishing.  It also means there is no change to analysis/reporting Data Visualization toolset that users are familiar with.</copy>
+    ````
 
-  ![](./images/050.png  " ")
+    ![](./images/050.png  " ")
 
-  ![](./images/051.png  " ")
+    ![](./images/051.png  " ")
 
 5. Sometimes we just want the result (formatted text in this case), and not the code.  Click on the show editor icon to hide the code.
 
- ![](./images/052.png  " ")
+    ![](./images/052.png  " ")
 
- ![](./images/053.png  " ")
+    ![](./images/053.png  " ")
 
 6. In the next paragraph enter the following, overwriting the %md that has defaulted in.  Then hit execute.
   ````
@@ -169,9 +167,9 @@ Zepplin notebooks are composed of paragraphs that can contain formatted text, sq
 
 11. Drag the fields into postion to review the results.
 
- ![](./images/061.png  " ")
+  ![](./images/061.png  " ")
 
- ![](./images/062.png  " ")
+  ![](./images/062.png  " ")
 
 12. Hide the settings by clicking on the label again.
 
@@ -186,19 +184,19 @@ So how does all this help us build ml models, collaborate with others, and revie
 
 13. Finally, lets review some examples.  Navigate to the Home dashboard.
 
-![](./images/064.png  " ")
+  ![](./images/064.png  " ")
 
-![](./images/065.png  " ")
+  ![](./images/065.png  " ")
 
 14. Navigate to Examples.
 
-![](./images/066.png  " ")
+  ![](./images/066.png  " ")
 
 15. Select a model of interest.  In this example we will open Anomoly Detection.
 
-![](./images/067.png  " ")
+  ![](./images/067.png  " ")
 
-![](./images/068.png  " ")
+  ![](./images/068.png  " ")
 
 
 ## Step 4: Import ML Notebook

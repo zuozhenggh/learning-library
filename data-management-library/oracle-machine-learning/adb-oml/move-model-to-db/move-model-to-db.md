@@ -334,34 +334,34 @@ from dual;</copy>
   ![](./images/048.png  " ")
 
 6. To make the model prediction available to all applications we will use the Oracle Database's virtual column feature.  We'll add two new virtual columns: the prediction itself, and the probably that the prediction is correct.  **TIP: You can also create a function index in the ml columns (not included here).  If you wish to use a function index the table must be analyzed to be used in queries.
-```
-<copy>alter table credit_scoring_100k add(
-likely_good_credit_pcnt AS (round((100*(prediction_probability(n1_class_model, 'Good Credit' USING
+  ```
+  <copy>alter table credit_scoring_100k add(
+  likely_good_credit_pcnt AS (round((100*(prediction_probability(n1_class_model, 'Good Credit' USING
+      wealth
+    , customer_dmg_segment
+    , income
+    , highest_credit_card_limit
+    , residental_status
+    , max_cc_spent_amount_prev
+    , max_cc_spent_amount
+    , occupation
+    , delinquency_status
+    , customer_value_segment
+    , residental_status))),1))
+  , credit_prediction AS (prediction(n1_class_model USING   
     wealth
-  , customer_dmg_segment
-  , income
-  , highest_credit_card_limit
-  , residental_status
-  , max_cc_spent_amount_prev
-  , max_cc_spent_amount
-  , occupation
-  , delinquency_status
-  , customer_value_segment
-  , residental_status))),1))
-, credit_prediction AS (prediction(n1_class_model USING   
-  wealth
-  , customer_dmg_segment
-  , income
-  , highest_credit_card_limit
-  , residental_status
-  , max_cc_spent_amount_prev
-  , max_cc_spent_amount
-  , occupation
-  , delinquency_status
-  , customer_value_segment
-  , residental_status))
-);</copy>
-```
+    , customer_dmg_segment
+    , income
+    , highest_credit_card_limit
+    , residental_status
+    , max_cc_spent_amount_prev
+    , max_cc_spent_amount
+    , occupation
+    , delinquency_status
+    , customer_value_segment
+    , residental_status))
+  );</copy>
+  ```
 
   ![](./images/049.png  " ")
 

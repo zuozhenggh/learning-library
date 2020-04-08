@@ -94,7 +94,6 @@ You now have created your first ADW instance. Now, we are going to very similar 
 
     ![](./images/010.png  " ")
 
-
 7. Under `Choose a license type`, select   `Bring Your Own License (BYOL)` and then select `Create Autonomous Database`.
 
     ![](./images/011.png  " ")
@@ -175,11 +174,11 @@ You now have created your first ATP instance.
 
 5. We will also upload the cwallet.sso file from the wallet zip file we downloaded from the ADW Instance earlier. The cwallet.sso file will be used later, in Lab 3, but we will upload it now.
 
-![](./images/041.png  " ")
+  ![](./images/041.png  " ")
 
-![](./images/042.png  " ")
+  ![](./images/042.png  " ")
 
-![](./images/043.png  " ")
+  ![](./images/043.png  " ")
 
 
 6. To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and the OCI user Auth Token. Go back to the menu, click `Identity` and then select `Users`.
