@@ -6,7 +6,7 @@
     background-color: rgb(49, 45, 42);
     text-align: center;
      color: rgb(255,255,255);
-     padding: 30px;
+     padding: 20px;
      font-family: Arial, Helvetica, sans-serif;
      clear: both;
 }
@@ -19,7 +19,8 @@
      float: left;
 }
  .chatbox {
-    padding: 40px;
-    margin: -20px 0;
+    border: 2px solid;
+    border-color: rgb(49, 45, 42);
+    margin-right: 40px 0;
     float: right;
 }
