@@ -1,7 +1,7 @@
 ![](common-template/img/data-management-title.png)
 
 
-The Oracle Data Management Library is the central location for workshops related to all things Autonomous Database (ADB) Database, Big Data, Data Integration, Machine Learning and Security.  Across multiple deployment options:  on-premises and in the cloud.  
+The Oracle Data Management Library is the central location for workshops related to all things Autonomous Database (ADB), Database, Big Data, Data Integration, Machine Learning and Security.  Across multiple deployment options:  on-premises and in the cloud.  
 
 To get started, choose one (or more!) of the defined learning paths below:
 
@@ -36,8 +36,6 @@ To get started, choose one (or more!) of the defined learning paths below:
 ## **Database Tools Library Highlights**
 
 New Library coming soon!
-
-
 
 ## Helpful Links ##
 

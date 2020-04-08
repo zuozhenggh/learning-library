@@ -52,7 +52,8 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 
 ## Pre-Requisites
 
-1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
+1. Oracle Cloud Infrastructure account credentials (User, 
+   Password, Tenant, and Compartment)  
 
 2. OCI Training : https://cloud.oracle.com/en_US/iaas/training
 
@@ -86,9 +87,9 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
 
-4. Click **VCN with Internet Connectivity** and click **Start Workflow**
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
-5. Fill out the dialog box:
+4. Fill out the dialog box:
 
 
 - **VCN NAME**: Provide a name
@@ -98,19 +99,19 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 - **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
 - Click **Next**
 
-6. Verify all the information and  Click **Create**
+5. Verify all the information and  Click **Create**
 
-7. This will create a VCN with followig components.
+6. This will create a VCN with followig components.
 
 **VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
 
-8. Click **View Virtual Cloud Network** to display your VCN details.
+7. Click **View Virtual Cloud Network** to display your VCN details.
              
-9. We will open port 80 on this VCN to provide http access to app on the compute instance(to be installed later on. Click **Security List** and then **Default Security list for<YOUR_VCN_NAME>**
+8. We will open port 80 on this VCN to provide http access to app on the compute instance(to be installed later on. Click **Security List** and then **Default Security list for<YOUR_VCN_NAME>**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_001.PNG" alt="image-alt-text">
 
-10. Click **Add Ingress Rule** under **Ingress Rules** and add below rule:
+9. Click **Add Ingress Rule** under **Ingress Rules** and add below rule:
 
 - **Make sure STATELESS Flag in un-checked**
 - **SOURCE TYPE:** CIDR
@@ -121,7 +122,7 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_002.PNG" alt="image-alt-text">
 
-11. Click **Add Ingress Rule** at the bottom
+10. Click **Add Ingress Rule** at the bottom
               
 ## Create ssh keys, compute instance and Block Volume. Attach block volume to compute instance
 
@@ -130,6 +131,7 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL006.PNG" alt="image-alt-text">
 
 2. Enter command 
+
 ```
 ssh-keygen
 ```
@@ -165,7 +167,7 @@ to verify the two files exist.
 ```
 cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 ```
- , highlight the key and copy 
+, highlight the key and copy 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL009.PNG" alt="image-alt-text">
 
@@ -208,7 +210,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -296,14 +298,14 @@ sudo systemctl start httpd
 **HINT:** The Name sdb is the block volume storage. This name could change for your specific attachment (i.e sdc)
 
 5. To format the block volume, Enter Command: 
-```            
+```bash            
 sudo fdisk <DEVICE_PATH> -l 
 ```
 **For example sudo fdisk /dev/sdb -l**   
 Wait for formatting to complete
 
 6. Create a file system on the block volume, Enter Command: 
-```
+```bash
 sudo mkfs.ext4 -L datapartition <DEVICE_PATH> 
 ```         
 
@@ -376,7 +378,7 @@ sudo systemctl restart httpd
 ```
 
 19. Launch a web browser and Enter compute Instance's public IP:
-```
+```bash
 http://<COMPUTE_INSTANCE_PUBLIC_IP>
 ```
 
@@ -391,7 +393,7 @@ http://<COMPUTE_INSTANCE_PUBLIC_IP>
 **In this section we will detach the block volume, Stop the compute instance, use its boot volume to launch a second compute instance and delete the second compute instance**
 
 1. In ssh session to the compute instance unmount the directory from block volume, Enter command:
-```
+```bash
 sudo umount /dev/<VOLUME_NAME> 
 ```
 2. In OCI console window, Click your compute instance name and in **Attached Block Volume** section  Click the action icon and **Click Detach**
@@ -415,7 +417,8 @@ sudo umount /dev/<VOLUME_NAME>
 7. In the Boot Volume Details window Click **Create Instance:**
 
 - **Name your instance**: Enter a name 
-- **Choose an operating system or image source**: use Latest Oracle Linux available.
+- **Choose an operating system or image source**: Leave as is (It should show the boot volume of the terminated instance)
+
 - **Availability Domain**: Select availability domain
 
 **NOTE :** Boot Volume field is set to BOOT VOLUME and to the boot volume you detached from the original Instance.
@@ -443,7 +446,7 @@ sudo umount /dev/<VOLUME_NAME>
 9. Once the instance is in Running state, attach the block volume to this new instance using OCI Console.**Ensure to use Paravirtualized mode.**
 
 10. ssh to compute instance and mount the block volume as before, Enter Command:
-```
+```bash
 sudo mount  /dev/<VOLUME_NAME>  /mnt/www/html
 ```
 

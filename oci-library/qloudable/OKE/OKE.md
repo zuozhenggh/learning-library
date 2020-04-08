@@ -6,13 +6,11 @@
 
 [Pre-Requisites](#pre-requisites)
 
-[Sign in to OCI Console and create a VCN](#sign-in-to-oci-console-and-create-a-vcn)
+[Sign in to OCI Console and create Kubernetes Cluster](#sign-in-to-oci-console-and-create-kubernetes-cluster)
 
 [Install OCI CLI in your enviornment](#install-oci-cli-in-your-enviornment)
 
-[Create Kubernetes Cluster](#create-kubernetes-cluster)
-
-[Install Kubectl, OCI CLI and configure OCI CLI](#install-kubectl,-oci-cli-and-configure-oci-cli)
+[Install Kubectl](#install-kubectl)
 
 [Download get-kubeconfig.sh file and Initialize your environment](#download-get-kubeconfig.sh-file-and-initialize-your-environment)
 
@@ -60,9 +58,7 @@ Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, 
 
 4. Familiarity with Compartments: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm
 
-5. Connecting to a compute instance: https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm
-
-## Sign in to OCI Console and create a VCN
+## Sign in to OCI Console and create Kubernetes Cluster
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -73,206 +69,26 @@ Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Create Virtual Cloud Network**
+2. From OCI Services menu, Click **Container Clusters (OKE)** under Developer Services
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
+**No need to create any policies for OKE, all the policies are pre-configured**
 
+3. Click **Create Cluster**. Choose **Quick Create** and click **Launch Workflow**. 
 
-**NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+4. Fill out the dialog box:
 
-2. Fill out the dialog box:
+- NAME: Provide a name (oke-cluster in this example)
+- COMPARTMENT: Choose your compartment
+- CHOOSE VISIBILITY TYPE: Public
+- SHAPE: Choose a VM shape 
+- NUMBER OF NODES: 1
+- KUBERNETES DASHBOARD ENABLED: Make sure flag is checked
 
-- **VCN NAME**: Provide a name
-- **COMPARTMENT**: Ensure your compartment is selected
-- **VCN CIDR BLOCK**: 172.16.0.0/16
+5. Click **Next** and Click "**Create Cluster**
 
-3. Click **Create Virtual Cloud Network**
+**We now have a OKE cluster with 1 node and Virtual Cloud Network with all the necessary resources and configuration needed**
 
-4. Click **Route tables**, and Click **Create Route Table**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_003.PNG" alt="image-alt-text">
-
-5. **Click +Additional Route Rules**
-- Target Type: Select **Internet Gateway** 
-- Destination CIDR Block: 0.0.0.0/0 
-- Compartment: Make sure the correct Compartment is selected
-- Target Internet Gateway: Select the Internet Gateway for your VCN. 
-
-6. Click **Add Route Rules**.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Fundamentals_Lab/img/OCI_Fundamentals_003.PNG" alt="image-alt-text">
-
-7. Click your VCN name, then **Security Lists** and then **Create Security List** (You will be creating a new security list). Fill out the dialog box:
-
-- Name: Provide a Name
-- CREATE IN COMPARTMENT: Choose your compartment
-
-8. Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure to leave STATELESS flag un-checked
-
-
-- Source Type: CIDR
-- Source CIDR: 172.16.10.0/24
-- IP Protocol: ALL
-- Source Port Range: All
-- Destination Port Range: All
-
-9. Click **+Additional Ingress Rule**
-
-
-- Source Type: CIDR
-- Source CIDR: 172.16.11.0/24
-- IP Protocol: ALL
-- Source Port Range: All
-- Destination Port Range: All
-
-10. Click **+Additional Ingress Rule**
-
-
-- Source Type: CIDR
-- Source CIDR: 172.16.12.0/24
-- IP Protocol: ALL
-- Source Port Range: All
-- Destination Port Range: All
-
-11. Click **+Additional Ingress Rule**
-
-
-- Source Type: CIDR
-- Source CIDR: 0.0.0.0/0
-- IP Protocol: ICMP
-- Type: 3
-- Code: 4
-
-12. Click **+Additional Ingress Rule**
-
-
-- Source Type: CIDR
-- Source CIDR: 130.35.0.0/16
-- IP Protocol: TCP
-- Source Port Range: All
-- Destination Port Range: 22
-
-13. Click **+Additional Ingress Rule**
-
-
-- Source Type: CIDR
-- Source CIDR: 138.1.0.0/17
-- IP Protocol: TCP
-- Source Port Range: All
-- Destination Port Range: 22
-
-14. Click **+Additional Ingress Rule**
-
-
-- Source Type: CIDR
-- Source CIDR: 0.0.0.0/0
-- IP Protocol: TCP
-- Source Port Range: All
-- Destination Port Range: 22
-
-15. Click **+Additional Egress Rule** and enter the following Egress rule; Ensure to leave STATELESS flag un-checked
-
-
-- Destination Type: CIDR
-- Destination CIDR: 0.0.0.0/0
-- IP Protocol: All
-- Source Port Range: All
-- Destination Port Range: All
-
-16. Click **Create Security List**.
-
-17. Next we will create another Security Lists for Load Balancer (to be created later). Click **Security Lists** and then **Create Security List** (You will be creating a new security list). Fill out the dialog box:
-
-
-- Name: Provide a Name
-- CREATE IN COMPARTMENT: Choose your compartment
-
-18. Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure to leave STATELESS flag un-checked
-
-
-- Source Type: CIDR
-- Source CIDR: 0.0.0.0/0
-- IP Protocol: ALL
-- Source Port Range: All
-- Destination Port Range: ALL
-
-19. Click **Create Security List**.
-
-20. Next we will create three worker subnets and two load balancer subnets for Oracle Kubernetes Engine (OKE) implementation. In your VCN details page Click **Subnets**.
-
-21. Click **Create Subnet**. Fill out the dialog box:
-
-
-**Worker  Subnet # 1**
-- Name: Enter a name 
-- Subnet Type: Regional
-- CIDR Block: 172.16.10.0/24
-- Route Table: Select the Route Table you created earlier.
-- Subnet access: Public Subnet
-- DHCP Options: Select the default.
-- Security Lists: Select the First Security List created earlier.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Fundamentals_Lab/img/OCI_Fundamentals_004.PNG" alt="image-alt-text">
-
-22. Leave all other options as default, Click **Create Subnet**.
-
-23. Click **Create Subnet**. Fill out the dialog box:
-
-
-**Worker  Subnet # 2**
-- Name: Enter a name 
-- Subnet Type: Regional
-- CIDR Block: 172.16.11.0/24
-- Route Table: Select the Route Table you created earlier.
-- Subnet access: Public Subnet
-- DHCP Options: Select the default.
-- Security Lists: Select the First Security List created earlier.
-
-24. Leave all other options as default, Click **Create Subnet**.
-
-25. Click **Create Subnet**. Fill out the dialog box:
-
-
-**Worker  Subnet # 3**
-- Name: Enter a name 
-- Subnet Type: Regional
-- CIDR Block: 172.16.12.0/24
-- Route Table: Select the Route Table you created earlier.
-- Subnet access: Public Subnet
-- DHCP Options: Select the default.
-- Security Lists: Select the First Security List created earlier.
-
-26. Leave all other options as default, Click **Create Subnet**.
-
-27. Next we will create two load balancers. Click **Create Subnet**. Fill out the dialog box:
-
-
-**Load Balancer Subnet # 1**
-- Name: Enter a name 
-- Subnet Type: Regional
-- CIDR Block: 172.16.20.0/24
-- Route Table: Select the Route Table you created earlier.
-- Subnet access: Public Subnet
-- DHCP Options: Select the default.
-- Security Lists: Select the Second Security List created earlier.
-
-28. Click **Create Subnet**
-
-29. Click **Create Subnet**. Fill out the dialog box:
-
-
-**Load Balancer Subnet # 2**
-- Name: Enter a name 
-- Subnet Type: Regional
-- CIDR Block: 172.16.21.0/24
-- Route Table: Select the Route Table you created earlier.
-- Subnet access: Public Subnet
-- DHCP Options: Select the default.
-- Security Lists: Select the Second Security List created earlier.
-
-30. Click **Create Subnet**
-
-**We now have a Virtual Cloud Network with all the necessary resources and configuration needed for Oracle Kubernetes Engine (OKE) deployment. Next we will create Kubernetes Cluster**
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_015.PNG" alt="image-alt-text">
 
 
 ## Install OCI CLI in your enviornment
@@ -393,63 +209,8 @@ cat ~/.oci/oci_api_key_public.pem
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_007.PNG" alt="image-alt-text">
 
-## Create  Kubernetes Cluster
 
-1. From OCI Services menu, Click **Container Clusters (OKE)** under Developer Services
-
-2. Click **Create Cluster**. Fill out the dialog box
-
-3. There is Quick Create option which will create all  neccessay resources including VCN. Since we created VCN seperately in this lab we  will choose Custom Create options as it shows different options available. Choose **Custom Create**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_002.PNG" alt="image-alt-text">
-
-4. Fill out the dialog box:
-
-
-- NAME: Provide a name (oke-cluster in this example)
-- KUBERNETES VERSION: Choose the latest
-
-**Under Network Selection**
-
-
-- NETWORK COMPARTMENT: Choose your compartment
-- VCN: Select the VCN created earlier (oke-vcn)
-- KUBERNETES SERVICE LB SUBNETS: Select the two load balancer subnets (loadbalancer-1 and loadbalancer-2)
-- KUBERNETES SERVICE CIDR BLOCK: 10.96.0.0/16
-- PODS CIDR BLOCK: 10.244.0.0/16
-
-**Under Additional Add ons**
-
-
-- KUBERNETES DASHBOARD ENABLED: Make sure flag is checked
-- TILLER (HELM) ENABLED: Make sure flag is checked
-
-5. Click **Continue**
-
-**Under Node Pool**
-
-
-- NAME: Provide a name (oke-pool in this example)
-- VERSION: Choose the latest
-- IMAGE: Choose the latest
-- SHAPE: Choose a VM shape
-- SUBNETS: Select the three workers subnets created earlier (worker-1, worker-2 and worker-3) 
-- QUANTITY PER SUBNET: 1
-- PUBLIC SSH KEY: Copy the content of your SSH Public Key saved earlier (You can retrieve this again by **cat /C/Users/PhotonUser/.ssh/id_rsa.pub** in git bash window)
-
-
-**Under Kubernetes Labels**
-
-
-- Leave the fields as is
-
-6. Click **Review** . Review the configuration and Click **Create**
-
-7. Wait for Cluster status to change from **Creating** to **Active**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_003.PNG" alt="image-alt-text">
-
-## Install Kubectl, OCI CLI and configure OCI CLI
+## Install Kubectl
 
 In this section we will install kubectl. You can use the Kubernetes command line tool kubectl to perform operations on a cluster you've created with Container Engine for Kubernetes.
 
@@ -475,52 +236,15 @@ ls
 
 ## Download get-kubeconfig.sh file and Initialize your environment
 
-1. Switch to OCI console window and navigate to your cluster. In Cluster detail window Click **Access Kubeconfig**. Copy the 2nd command and enviornement variable command to notepad (using Built in Application)
-            
-**NOTE:** Since we already created .kube directory we dont need toexecute the first command 
+1. Switch to OCI console window and navigate to your cluster. In Cluster detail window Click **Quick Start**, under **Resources**. 
+Follow the steps under the **Quick Start** Section
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_005.PNG" alt="image-alt-text">
-
-2. Switch to git bash window and Enter the commands copied. Ensure the command is entered on a single line Ignore any errors related to Power shell.
+2. The Commands listed will need to be executed in your local terminal.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_006.PNG" alt="image-alt-text">
 
-3. Enter command ls and verify a file named **config** exists.
+3. Next follow the instruction under **Access Kubernetes Dashboard** to access the dash board.
 
-We have initialized the enviornment.
-
-## Starting the Kubernetes Dashboard
-
-In this section we will start Kubernetes Dashboard which is
-a web-based user interface that you can use as an alternative
-to the Kubernetes kubectl command line tool
-
-1. Switch to OCI Console window. From services menu, Click **Container Clusters(OKE)** under **Developer services**.
-
-2. Click your cluster name and verify Compute Node State shows active for all compute nodes
-
-3. Click **Getting Started** and Copy the URL under Getting Started
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_007.PNG" alt="image-alt-text">
-
-4. Switch to Git bash window, Enter Command:
-```
-./kubectl proxy and verify the service started.
-```
-
-5. Open a new browser tab and paste the URL copied earlier.
-
-6. This will open Kubernetes dash board. 
-
-7. Ensure Kubeconfig is selected, Click Action icon and browse to the location where config file is stored loclaly (/C/Users/Photonuser/.kube). This is being done for Authentication purposes.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_008.PNG" alt="image-alt-text">
-
-8. Kubernetes dash board should be displayed. Click **Overview** to see the applications deployed on the cluster
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_009.PNG" alt="image-alt-text">
-
-**We now have successfully accessed the Kubernetes Dash board**
 
 ## Deploying a Sample Nginx App on Cluster Using kubectl
 

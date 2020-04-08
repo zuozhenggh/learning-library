@@ -18,7 +18,11 @@
 9. Steps To Setup VCN for FastConnect
 10. Licensing Terms for the Enterprise Manager Marketplace Instance
 11. How to Reset user oracle  password or if Named Credentials for user oracle are not working
-12. Additional information on Oracle Cloud Infrastructure Setup
+12. Unable to connect to Enterprise Manager Console
+13. Unable to Select Shape for Creating an instance
+14. While trying to launch the EM instance: "Unable to accept Terms of Use." 
+15. Information about Oracle Cloud Infrastructure Pricing
+16. Additional information on Oracle Cloud Infrastructure Setup
 
 
 ### **1. How to Create a SSH key-pair for launching and connecting to an OCI Instance** ###
@@ -275,15 +279,13 @@ the routing rule and egress rules.
 
 ### **10. Licensing Terms for the Enterprise Manager Marketplace Instance**
 
-The Oracle Enterprise Manager Workshop instance can be used for free for 30 days
-under the terms of the **Oracle Technology Network License Agreement** 
-<https://www.oracle.com/downloads/licenses/standard-license.html>
+This workshop environment is solely intended for non-production use to specifically explore the use cases outlined in the workshop instructions as posted in the Oracle Licensing Library.  All licensed Oracle Enterprise Manager, Oracle Linux and Oracle Database products included in the workshop environment may only be used expressly for workshop purposes and for the duration of the workshop, and furthermore, licensed Enterprise Manager Packs may only be used against the target environments that are included in the base workshop image, for the duration of the workshop.
 
-In order to use the functionality, the following Licensed Packs have been enabled in the
-Enterprise Manager workshop image:
+In order to use the functionality, the following Licensed Packs have been enabled in the Enterprise Manager workshop image:
 
 For the Database Lifecycle Management
 -	Database Lifecycle Management Pack for Oracle  Database
+-   Cloud Management Pack for Oracle Database
 
 For Database Performance Management On-premises
 -	Oracle Diagnostics Pack
@@ -314,8 +316,27 @@ password in the Credentials Sections twice and **Click** on Save.
 Repeat for Credential ORACLE_HOST
 
 ![](media/2e38a554bdbc3a68ce7cbfd84a6a3588.png)
+### **12. Unable to connect to Enterprise Manager Console**
 
-### **13. Additional information on Oracle Cloud Infrastructure Setup**
+Make sure you are on a public network and not connected to a restricted corporate intranet or corporate wifi.
+Also ensure all web services are up and running by logging into your instance via SSH as indicated in this guide.
+
+### **13. Unable to Select Shape for Creating an instance**
+
+If you are seeing an Authorization Error while trying to Select Shape to Create an Instance:
+1. From the Hamburger Menu on the Top Left of the Oracle Cloud Home Page, Go to Compute->Instances
+2. Select the Compartment available to you in the Left Compartment Menu (not root)
+3. Now that the compartment is set-up for new user, re-do the steps to create the Enterprise Manager Workshop from the Listing Link
+
+### **14. While trying to launch the EM instance: Unable to accept Terms of Use.**
+
+Make sure your email has been verified. Log out and Log back in and restart from the listing link.
+Also, verify you are using the same region and compartment that was assigned to you.
+
+### **15. Additional information on Oracle Cloud Infrastructure Pricing**
+<https://www.oracle.com/cloud/pricing.html>
+
+### **16. Additional information on Oracle Cloud Infrastructure Setup**
 <https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm>
 
 

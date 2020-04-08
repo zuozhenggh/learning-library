@@ -18,6 +18,8 @@ components to improve the initial app.
 * Create an application on the new data structures
 * Refine the application
 
+*{Note: This lab assumes you are using Oracle APEX 19.2.}*
+
 ## Lab Modules
 
 | # | Module | Est. Time |
@@ -30,6 +32,8 @@ components to improve the initial app.
 | 6 | [Improving To Dos](6-improving-todos.md) | 10 min |
 | 7 | [Improving Links](7-improving-links.md) | 5 min |
 
+***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
+
 ## Navigating in the Lab
 To return to this page from anywhere within the lab click either Oracle Hands on Labs, or Home in the header.
 
@@ -38,6 +42,10 @@ To return to this page from anywhere within the lab click either Oracle Hands on
 Click the navigation menu icon, in the upper-left corner of the header, to see a list of modules in this lab. Click any of the list entries to navigate directly to that module.
 
 ![](images/0/lab-menu.png)
+
+## Downloads
+
+[Click here](proofofconcept-app.sql) to download the completed application. 
 
 ## Learn More - *Useful Links*
 

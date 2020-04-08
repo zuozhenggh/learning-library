@@ -1,0 +1,10 @@
+{
+    
+    "tutorials": [
+        {            
+            "title": "Getting Started",
+            "filename": "./gettingstarted.md"
+        }
+    ]
+}
+
