@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Oracle Web SDK Sample</title>
-        <link rel="shortcut icon" href="https://oracle.github.io/learning-library/common/redwood-hol/img/favicon.ico" />
-        <link rel="stylesheet" href="resources/scripts/style.css">
+
+<head>
+    <meta charset="utf-8">
+    <title>Oracle Web SDK Sample</title>
+    <link rel="shortcut icon" href="https://oracle.github.io/learning-library/common/redwood-hol/img/favicon.ico" />
+    <link rel="stylesheet" href="resources/css/style.css">
 
     <script>
         var chatWidgetSettings = {
@@ -12,12 +13,11 @@
             conversationBeginPosition: 'bottom',
             openChatOnLoad: true,
             position: {bottom: '2px', right: '2px'},
-            displayActionAsPills: true,
-            embedded: true,
-            targetElement: 'chat-container',    
+            displayActionAsPills: true,    
             embedTopStickyId: 'top-text',
             URI: '<YOUR URI>',
             channelId: '<YOUR CHANNEL>'
+
         };
         function initSdk(name) {
             // Default name is Bots
@@ -62,14 +62,7 @@
 
         </div>
         
-        <div id="chat-container" class="chatbox" 
-            style="height: 600px; width: 400px; padding: 0;
-            text-align: initial">
-        </div>
-        <!-- <footer class="footer">
-            <p>To order, call us or talk to our Pizzabot.</p>	
-        </footer>
-        -->
+ 
     </div>            
 </body>
 </html>

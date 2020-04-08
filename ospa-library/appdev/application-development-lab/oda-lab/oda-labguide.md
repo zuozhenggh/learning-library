@@ -742,8 +742,10 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
 14. Now it is time to test your new app, click the play button locate at the top right of your screen.
 <br>![](./media/oda_channel_14.png)
 
-1. You should see the App Screen with the Chat Bot window opened at the right.
+1. You should see the web app screen with the skill icon at the bottom right. *Note: The chatbot's default behavior is to popup as the webpage load. If it's not active, click on the chatbot icon to initiate the test.*
 <br>![](./media/oda_channel_15.png)
+<br>![](./media/oda_channel_15_b.png)
+
 
 1. Type `I want a pizza` and press enter. You will experience the same behavior in testing the Digital Assistant that you had created earlier.
 <br>![](./media/oda_channel_16.png)
