@@ -4,7 +4,7 @@
 
 The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between end points.  SSH Keys are an important part of securely accessing OCI compute instances in the cloud.    
 
-If you already have an ssh key pair, you may use that to connect to your environment.  We recommend you use the Oracle Cloud Shell to connect to your instance.  However if you prefer to connect via your laptop, please choose based on your configuration.
+If you already have an ssh key pair, you may use that to connect to your environment.  We recommend you use the Oracle Cloud Shell to interface with the Oracle Cloud compute instance you will create.  It is browser based, does not require installation or configuration of anything on your laptop and works independent of your network setup.  However if you prefer to connect via your laptop, please choose based on your configuration.
 
 *IMPORTANT:  If the ssh key is not created correct, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.* 
 
@@ -15,9 +15,11 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 1.  To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.
 
+    ![](./images/cloudshellsetup.png " ") 
+    
     ![](./images/cloudshell.png " ") 
 
-2.  Once the cloud shell has started, enter the following command.  Do not enter a passphrase, press Enter twice.
+2.  Once the cloud shell has started, enter the following command.  Choose a key name you can remember. This will be the keyname you will use to connect to any compute instances you create. Do not enter a passphrase, press Enter twice.
     ````
     mkdir .ssh
     cd .ssh
@@ -32,7 +34,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     ````
     ![](./images/examine-cloudshell-keys.png " ") 
 
-4.  When pasting the key into the compute instance in future labs, make sure that you remove any hard returns that may have been added when copying.  *The *.pub key should be one line.*
+4.  When pasting the key into the compute instance in future labs, make sure that you remove any hard returns that may have been added when copying.  *The .pub key should be one line.*
 
 ## Option 2:  MacOS
 
