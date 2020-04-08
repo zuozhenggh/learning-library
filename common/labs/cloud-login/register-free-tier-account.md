@@ -26,11 +26,6 @@ In this section, you'll fill out the registration form at [oracle.com/cloud/free
 5. Enter a password. Remeber this password so you can sign in to the Cloud later.
 6. Click **Review Terms and Conditions**. Read and agree to the Terms & Conditions by checking the box and click **Complete Sign-Up**.
 7. Your account is partitioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign in page. You'll also receive a confirmation email containing sign in information.
-8. Sign in to your Cloud account and select a lab! Your **user name** is your email address.
-
-    ![](images/FirstSignIn.png " ")
-
-    [Description of the illustration FirstSignIn.png](files/firstSignIn.txt)
 
 
 ## STEP 2: Sign in to Your Account ##
@@ -66,6 +61,8 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
+- **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
+- **Created By/Date** - Kay Malcolm, Director, Product Management, April 8, 2020
+
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
