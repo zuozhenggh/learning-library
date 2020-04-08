@@ -27,14 +27,14 @@ This lab assumes you have completed the following labs:
 
 Watch the video below to get an explanation of enabling the Automatic Indexing feature.
 
-[](youtube:dZ9cnIL6KKw)
+![](youtube:dZ9cnIL6KKw)
 
 ## Step 1: Verify sample data and drop indexes
 Index structures are an essential feature to database performance. Indexes are critical for OLTP applications, which use large data sets and run millions of SQL statements a day. Indexes are also critical for data warehousing applications, which typically query a relatively small amount of data from very large tables. If you do not update the indexes whenever there are changes in the application workload, the existing indexes can cause the database performance to deteriorate considerably.
 
 Automatic indexing improves database performance by managing indexes automatically and dynamically  based on changes in the application workload. To test this feature, we will start by listing and dropping existing indexes in our sample schema. This way we can experience, in a very simple hands-on exercise, how this feature works in Oracle 19c Database.
 
-This Lab will use the Sales History (SH) sample schema. Use SQL*Plus to connect to the PDB01 Pluggable database as SYS
+This Lab will use the Sales History (SH) sample schema. Use SQLPlus to connect to the PDB01 Pluggable database as SYS
 
     ````
     <copy>
@@ -78,7 +78,6 @@ For the purpose of this exercise we will drop all existing secondary indexes. DO
     drop index  SH.FW_PSC_S_MV_CHAN_BIX;
     drop index  SH.FW_PSC_S_MV_PROMO_BIX;
     drop index  SH.FW_PSC_S_MV_WD_BIX; 
-
     </copy>
     ````
 Gather SH schema statistics
@@ -321,7 +320,7 @@ Filter the query to focus on SYS_AUTO_INDEX_TASK. This task is run by default ev
 
 Automatic indexing improves database performance by managing indexes automatically and dynamically in an Oracle database based on changes in the application workload. This is why we need more workload on our Pluggable Database ORCLPDB, to simulate changes in the application workload.
 
-1. The following sample code will operate against the data in the SH schema. Execute these blocks of code from SQL*Plus (or SQLCI or SQLDeveloper if you have these installed)
+1. The following sample code will operate against the data in the SH schema. Execute these blocks of code from SQLPlus (or SQLCI or SQLDeveloper if you have these installed)
     ````
     <copy>
     sqlplus sh/Ora_DB4U@localhost:1521/order
@@ -376,7 +375,7 @@ A query executed multiple times in a FOR LOOP (stored as file /home/oracle/labs/
     ````
      ![](images/ai_query2_results.png) 
 
-3. Run the code blocks repeatedly from within SQL*Plus (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai_query3.sql)
+3. Run the code blocks repeatedly from within SQLPlus (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai_query3.sql)
 
     ````
     <copy>
@@ -438,7 +437,7 @@ A query executed multiple times in a FOR LOOP (stored as file /home/oracle/labs/
 Here is an example of an advanced analytical SQL statement. This query returns the percent change in market share for a grouping of SH top 20% of products for the current three-month period versus same period one year ago for accounts that grew by more than 20 percent in revenue.
 (available in file  /home/oracle/labs/new-features-for-developers/automaticindexing/ai_change_market_share.sql)
 
-   ````
+    ````
     <copy>
 WITH prod_list AS ( SELECT prod_id prod_subset, cume_dist_prod FROM ( SELECT s.prod_id, SUM(amount_sold),
          CUME_DIST() OVER (ORDER BY SUM(amount_sold)) cume_dist_prod
@@ -507,7 +506,8 @@ FROM ( SELECT  prod_id,
   GROUP BY prod_id);
     </copy>
     ````
-     ![](images/ai_change_markt_share_results.png)
+	
+    ![](images/ai_change_markt_share_results.png)
 
 7. Calculate a sales projection
 
@@ -524,6 +524,7 @@ First create a reference table of currency conversion factors (file /home/oracle
     to_us           NUMBER);
     </copy>
     ````
+	
      ![](images/startpop.png)
 
 Populate the table with conversion factors for each month for each country (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai_ins_curr_conv.sql):
@@ -539,7 +540,8 @@ Populate the table with conversion factors for each month for each country (file
     );
     </copy>
     ````
-     ![](images/ai_ins_curr_results.png) 
+	
+    ![](images/ai_ins_curr_results.png) 
 	 
 For this example we will only set the conversion factor for "Canada"
 
@@ -549,7 +551,7 @@ For this example we will only set the conversion factor for "Canada"
     </copy>
     ````
 
-Build the sales projection query (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai_sales_proj.sql) @:
+Build the sales projection query (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai_sales_proj.sql):
 
     ````
     <copy>
@@ -591,7 +593,8 @@ Build the sales projection query (file /home/oracle/labs/new-features-for-develo
     ORDER BY c, p, y, m;
     </copy>
     ````
-     ![](images/ai_sales_proj_results.png)
+	
+    ![](images/ai_sales_proj_results.png)
 	 
 Commit all results
 
@@ -606,11 +609,13 @@ Commit all results
 In this section you will look at how Automatic Indexing has worked to improve the performance of your queries.
  
 1. Connect to ORCLPDB as SYS
+
     ````
     <copy>
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as sysdba
     </copy>
     ````
+	
 2. Query DBA_ADVISOR_EXECUTIONS for information on Automatic Indexing task executions
 
     ````
@@ -620,6 +625,7 @@ In this section you will look at how Automatic Indexing has worked to improve th
     from dba_advisor_executions where task_name='SYS_AUTO_INDEX_TASK';
     </copy>
     ````
+	
 Note: Wait and make sure another automatic indexing task was executed since the last time we queried this view, by comparing the starting time of the last entry with the starting time we saved in the previous section.
 
 3. Validate Automatic Indexing
@@ -638,6 +644,7 @@ Count all VALID and VISIBLE indexes in the SH schema, that are auto indexes (AUT
       and table_owner = 'SH';
     </copy>
     ````
+	
 If everything was executed accurately following this guide, there are new auto indexes in our SH schema. 
 Note: If there are no valid visible new indexes, please run the workload again (Step 6) as SH user, and then re-run the query above (of DBA_INDEXES) as SYSDBA.
 
@@ -655,6 +662,7 @@ Note: If there are no valid visible new indexes, please run the workload again (
 	from dba_indexes where table_owner = 'SH';
     </copy>
     ````
+	
 Identify the auto indexes for the list. Observe the tables on which these indexes have been Ireated, and their types.
 
 5. Generate Automatic Indexing Report
@@ -727,6 +735,7 @@ INDEX DETAILS
 VERIFICATION DETAILS
 ...
     ````
+	
 In this example report, automatic indexing identified 18 candidates, and created 9 indexes, 5 visible and 4 invisible.
 
 Auto index candidates are identified based on the usage of table columns in SQL statements. 
@@ -742,7 +751,7 @@ Please review also the information in the Original Plan vs. Auto Index Plan comp
 
 ## Conclusion
 
-In this Lab you had an opportunity to try out the Automatic Indexing capabilities of Oracle Database 19c. 
+In this Lab you had an opportunity to examine the Automatic Indexing capabilities of Oracle Database 19c. 
 
 ## Acknowledgements
 
