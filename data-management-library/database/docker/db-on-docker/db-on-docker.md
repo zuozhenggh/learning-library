@@ -312,7 +312,7 @@ Now that you know how to start, stop and relocate a container, let's see how to 
     docker exec -it alphaofficeui bash
     </copy> 
     ````
-    Run the below command to confirm if vim exists.
+    Run below command to confirm if vim exists.
     ````
     <copy> 
     which vim
