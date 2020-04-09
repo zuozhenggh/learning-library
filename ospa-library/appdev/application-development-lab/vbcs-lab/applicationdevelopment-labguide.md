@@ -105,7 +105,7 @@ All four files are available in a single .zip file named [vbcsfiles.zip](files/v
 
 **NOTE:** Content is driven by external factors such as user data entries and login date. As a result, what you see displayed in your environment may not exactly match with the lab screenshots. Screenshots are provided solely for illustrative purposes to help guide you through the user interface.
 
-**Disclaimer:**  This exercise is designed ONLY for large learning groups and assumes the groups are sharing the Oracle Cloud environment to execute this exercise.
+**Disclaimer:**  This exercise is designed ONLY for individual learners; however you can share an instance and work along other team members.Keep in mind that you must set up Intance Access to your group before start the exercises.
  
 ## Welcome to Oracle Visual Builder Cloud Service
 
@@ -600,15 +600,24 @@ In this exercise section you will create a two-screen application similar to the
   - Product Order List
   - Product Order Detail with list of matching Product Order Lines
 
-1. Create a new Web Application to display a list or Product Order business object rows. This is very similar to the Product List created earlier and you will end up with a screen that looks something like this. Include these fields:
+1. Create a new Web Application to display a list or Product Order business object rows. Follow the same steps but using the **Product Order** business object.
+ ![](./media/vbcs_bo_productorder.png)
+
+
+2. Include these fields:
      - Id
      - Associate
      - Order Date
      
-    ![](./media/3.12.1.png)
+    ![](./media/vbcs_productorder_fields.png)
 
 
-2. Wow, that date does not look very nice\! A simple way to change the format is by dragging the **Input Date Time** component from the component list and dropping it into the date column
+3. This is very similar to the Product List created earlier and you will end up with a screen that looks something like this.
+
+    ![](./media/vbcs_productorder_screen_1.png)
+
+
+3. Wow, that date does not look very nice\! A simple way to change the format is by dragging the **Input Date Time** component from the component list and dropping it into the date column
 
     ![](./media/image113.png)
     
@@ -617,7 +626,7 @@ In this exercise section you will create a two-screen application similar to the
     ![](./media/image114.png)
 
 
-3. Create a Product Order Detail page for the Product Order page’s table. Click **Add Detail Page** to begin the wizard.
+4. Create a Product Order Detail page for the Product Order page’s table. Click **Add Detail Page** to begin the wizard.
 
     ![](./media/image101.png)
 
@@ -636,35 +645,34 @@ In this exercise section you will create a two-screen application similar to the
     
     ![](./media/image115.png)
 
-4. Add a new heading **Order Items** BELOW the **Back** button on the Product Order Detail page, make the heading size 2
+5. Add a new heading **Order Items** BELOW the **Back** button on the Product Order Detail page, make the heading size 2
 
     ![](./media/image116.png)
 
 
-5. Now you’ll add a new table with data from the Product Order Line business object making sure that only lines matching the Product Order appear. First, drag a Table component under the new heading.
+6. Now you’ll add a new table with data from the **Product Order Line** business object making sure that only lines matching the Product Order appear. First, drag a Table component under the new heading.
 
     ![](./media/image117.png)
 
 
-6. Add data to the table from the Product Order Line business object. Click **Add Data** to begin the wizard.
+7. Add data to the table from the **Product Order Line** business object. Click **Add Data** to begin the wizard.
 
     ![](./media/3.16.1.png)
     
-    Choose ProductOrderLine as the source of your data:<p>
+    Choose **ProductOrderLine** as the source of your data:<p>
 
     ![](./media/image118.png)
     
 
-7. In the **Bind Data** step of the Add Data wizard, select:
+8. In the **Bind Data** step of the Add Data wizard, select:
   
     - id
     - product
-    - unitPrice (set type to Input Number)
-    - quantity (set type to Input Number)
+    - unitPrice (set type to **Input Number**)
+    - quantity (set type to **Input Number**)
   
-    ![](./media/3.17.1.png)
     
-    Set type to **Input Number**
+9. Set type to **Input Number**
 
     ![](./media/3.17.2.png)
 
@@ -672,21 +680,21 @@ In this exercise section you will create a two-screen application similar to the
 
     ![](./media/3.17.3.png)
  
-8. Here’s the key step\! In step 3 **Define Query** of the Add Data wizard you will connect the data from the Product Order and the Product Order Line
+9.  Here’s the key step\! In step 3 **Define Query** of the Add Data wizard you will connect the data from the Product Order and the Product Order Line
 
    **DO NOT CLICK **Finish** until complete\!**
        
    ![](./media/3.18.1.png)
    
-   On the right-side of the **Define Query** wizard page under **Target** expand **{} filterCriterion -\> \[\] criteria -\>{} item\[0\] -\>** to expose attribute, op, and value** as shown below.
+10. On the right-side of the **Define Query** wizard page under **Target** expand **{} filterCriterion -\> \[\] criteria -\>{} item\[0\] -\>** to expose attribute, op, and value** as shown below.
 
    ![](./media/3.18.2.png)
     
-   Select **attribute** and type **productOrder** as a **static** value (references Product Order).
+11. Select **attribute** and type **productOrder** as a **static** value (references Product Order).
     
-   ![](./media/3.18.3.png)
+    ![](./media/3.18.3.png)
     
-    Select **op** and type **$eq** also as a **static** value (equal condition test).
+12. Select **op** and type **$eq** also as a **static** value (equal condition test).
     
     ![](./media/3.18.4.png)
     
@@ -705,7 +713,7 @@ In this exercise section you will create a two-screen application similar to the
     ![](./media/AppDev3.18.6.png)
 
 
-You should now be able to test your Product Order – Product Order Line **master-detail** screens
+You should now be able to test your **Product Order – Product Order Line** **master-detail** screens
 
 You've enabled Mama Maggy's managers/franchisees to retrieve a list of their orders and check order status when it is convenient to them without having to call headquarters
     
@@ -720,16 +728,16 @@ Mama Maggy's managers/franchisees want to be able to check product order status 
 1. Use Visual Builder’s Navigator to open Mobile Applications ![](./media/image126.png)
 
 
-2. If you have not created any Mobile Applications yet click the ** + Mobile Applications** button; 
+2. If you have not created any Mobile Applications yet click the **+ Mobile Applications** button; 
 
     ![](./media/image127.png)  
 
-    otherwise, click the **+** to the right of **Mobile Apps**
+    Otherwise, click the **+** to the right of **Mobile Apps**
 
     ![](./media/3.20.1.png)
 
 
-3. The New Mobile Application wizard has two steps; select **None** and click the Next button **\>** to continue
+3. The New Mobile Application wizard has two steps; Fill the **Application Name** (i.e. **ProductOrders**), select **None**,  and click the Next button **\>** to continue
 
     ![](./media/3.21.1.png)
 
@@ -804,7 +812,7 @@ Mama Maggy's managers/franchisees want to be able to check product order status 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[] items <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{} item[i] <br>
 
-    Select the following fields:
+    Select the following fields (As shown on the picture) and click **Next**:
     - Product Name (Text)
     - Unit Price (Input Number)
     - Quantity (Input Number)
@@ -831,8 +839,11 @@ Mama Maggy's managers/franchisees want to be able to check product order status 
       ![](./media/3.32.6.png)
 
     Click Finish when you are ready to continue.
+    
+    ![](./media/vbcs_mobile_productOrder.png)
 
 Congratulations! You have made the daily lives of Mama Maggy managers/franchisees easier. Instead of calling headquarters to check the status of their product orders they can now use your mobile app when and where it is convenient.
+
 
 **This concludes exercise 3.**
 
@@ -898,18 +909,16 @@ The data used to create these apps will come from **Service Connections** that y
 
     - Choose **ADF Describe** from the API Type pulldown
     - Choose **Web Address** as the Service Specification
-    - Paste the URL into the space provided
+    - Paste the **Associate** connection URL created during **Appendix B** into the space provided
     - Name the Service Id **mmassociates**
     - Choose **Oracle Cloud Account** from the Authentication pulldown
     - Select Dynamic, the service supports CORS in Connection Type
     - Click next when you are ready to continue
-  
-    Click next when you are ready to continue.
    
     ![](./media/4.5.1.png)
  
  
-    When prompted to **Select Endpoints** open the navigator-style list under **Associate**; and for this exercise choose the two GET methods; one returns all **Associate** rows, the other selects specific **Associate** rows using an id value
+1. When prompted to **Select Endpoints** open the navigator-style list under **Associate**; and for this exercise choose the two GET methods as shown in the screen; one returns all **Associate** rows, the other selects specific **Associate** rows using an id value
   
     Click **Create** to complete the process
 
@@ -932,7 +941,7 @@ The data used to create these apps will come from **Service Connections** that y
  
 6. When the service responds, look for a response status **200** (everything ok) and check the results
 
-![](./media/4.7.2.png)
+    ![](./media/4.7.2.png)
 
 
 7. If the response looks good to you click the **Save as Example Response** so that Visual Builder will map out the response details as part of the connection
@@ -944,24 +953,24 @@ The data used to create these apps will come from **Service Connections** that y
     ![](./media/image159.png)
  
 
-9.  This endpoint gets a single **Associate** row that is identified by passing in an **{Associate\_Id}** value (or whatever the key field is named). Type an associate id number (**7 in the example**) and **Send** to test
+9.  This endpoint gets a single **Associate** row that is identified by passing in an **{Associate\_Id}** value (or whatever the key field is named). Click on **URL Parameters** tab, type an associate id number (**7 in the example**) and **Send** to test
 
     ![](./media/4.9.1.png)  
   
  
-1. You have now created and tested two connections
+10. You have now created and tested two connections
 
     ![](./media/4.9.2.png)
 
-1. Repeat the steps above to create the following two **mmstores** connection endpoints
+11. Repeat the steps above to create the following two **mmstores** connection endpoints
 
     ![](./media/4.10.1.png)
   
-1. Select the GET endpoints
+12. Select the GET endpoints
 
     ![](./media/4.10.2.png)
 
-1. Once you have created the connections, test them; repeat the steps 6 to 9 above for the two **mmstores** connection endpoints
+13. Once you have created the connections, test them; repeat the steps 6 to 9 above for the two **mmstores** connection endpoints
     - Mama Maggy Store – get all
     - Mama Maggy Store – get single using {Store\_id}
     
@@ -978,56 +987,53 @@ The data used to create these apps will come from **Service Connections** that y
     - Check the result; dont forget to click **Save as Example Response**
     ![](./media/4.10.6.png)
 
-1. Create a new Web Application named **storelist** that displays all of the Mama Maggy stores in a table. Refer to exercise 3: Web and Mobile Apps if you need a refresher on the basic steps  
+14. Create a new Web Application named **storelist** that displays all of the Mama Maggy stores in a table. Refer to exercise 3: Web and Mobile Apps if you need a refresher on the basic steps  
 
     ![](./media/4.11.1.png)
 
-1. Create a header that says **Mama Maggy Stores** 
+15. Create a header that says **Mama Maggy Stores** 
 
     ![](./media/4.11.2.png)
 
-1. Drag and drop a table component below it
+16. Drag and drop a table component below it
     
     ![](./media/4.11.3.png)
 
-1. Add data source to the table; use the **mmstores** service connection as the data source
 
-    ![](./media/4.11.4.png)
-
-1. Use the **mmstores** service connection as the data source for the table
+17. Use the **mmstores** service connection as the data source for the table
 
     ![](./media/4.11.5.png)
 
-1. Choose the following fields and the primary key:
+18. Choose the following fields and the primary key:
      - id
      - name
      - city
      - state
  
-1. Be sure to select **id** as the Primary Key too
+19. Be sure to select **id** as the Primary Key too
 
-1. Click the **Next** button when you are ready to continue
+20. Click the **Next** button when you are ready to continue
 
     ![](./media/4.12.1.png)
 
-1. No need to Define Query, click the **Finish** button to continue
+21. No need to Define Query, click the **Finish** button to continue
 
     ![](./media/4.13.1.png)
 
-1. The finished screen will look something like this
+22. The finished screen will look something like this
     
     ![](./media/4.13.2.png)
  
-1. Use the table’s **Quick Start** ![](./media/image167.png) to **Add Detail Page** to get started
+23. Use the table’s **Quick Start** ![](./media/image167.png) to **Add Detail Page** to get started
     
     ![](./media/image168.png)
 
-1. Use the **mmstores** again (because our connection used the standardized descriptors Visual Builder will choose the correct endpoint)
+24. Use the **mmstores** again (because our connection used the standardized descriptors Visual Builder will choose the correct endpoint)
 
     ![](./media/image164.png)
 
 
-1. Choose the following fields from the Endpoint Structure:
+25. Choose the following fields from the Endpoint Structure:
     - id 
     - name
     - address
@@ -1038,30 +1044,30 @@ The data used to create these apps will come from **Service Connections** that y
     ![](./media/4.15.1.png)
 
 
-1. Your Store details screen should look something like this
+26. Your Store details screen should look something like this
 
      ![](./media/image170.png)
  
 
-1. Now create an **associatelist** web application to display all **Associate** rows (you pick the fields) and provide a **Add Detail Page** to display a single Associate (you pick the fields here too).
+27. Now create an **associatelist** web application to display all **Associate** rows (you pick the fields) and provide a **Add Detail Page** to display a single Associate (you pick the fields here too).
 
     - List display of all Associates (**mmassociates**)
-    - Details display of selected Associate (****mmassociates** using
+    - Details display of selected Associate (**mmassociates** using
     **associate\_id**)
 
    Test your application
 
-1. For something really fun; return to the **storelist** application and display the **Stores Detail** page (probably called **main-store-detail** or something close)
+29. For something really fun; return to the **storelist** application and display the **Stores Detail** page (probably called **main-store-detail** or something close)
 
    ![](./media/image171.png)
  
 
-1. Add a heading **Associates** under the **Back** button and add a **Table** component under the heading. Use the table’s **Quick Start** menu to **Add Data** to the screen. Choose the **mmassociates** connection to supply the data
+30. Add a heading **Associates** under the **Back** button and add a **Table** component under the heading. Use the table’s **Quick Start** menu to **Add Data** to the screen. Choose the **mmassociates** connection to supply the data
 
     ![](./media/image172.png)
  
  
-1. Select `id`, `name`, `email`, and `hire date`. Also be sure the **Primary Key** is set to the `id` field.
+31. Select `id`, `name`, `email`, and `hire date`. Also be sure the **Primary Key** is set to the `id` field.
 ![](./media/image173.png)
  
 
@@ -1236,7 +1242,7 @@ Click to return to [Table of Contents](#table-of-contents).
 
 This appendix shows how the **Mama Maggy** application was created to serve as a data source for the Application Development exercises.
 
-Make sure a co-worker has not already performed this task. However, it is possible you may need to create this VBCS application; it is used to simulate **external** data available via RESTful APIs.
+Make sure a co-worker has not already performed this task if you are working on a shared environment. However, it is possible you may need to create this VBCS application; it is used to simulate **external** data available via RESTful APIs.
 
 In this exercise you will create:
   - A VBCS Application to house the data components (we suggest the name **Mama Maggy**)
@@ -1248,28 +1254,10 @@ In this exercise you will create:
 
 1.  Log into your tenancy using cloud.oracle.com; be sure it has been provisioned to allow Visual Builder Cloud Service and the database and object storage instances also required. (check with your tenancy admin if unsure)
 
+2. Select **Platform Services** and click on **Visual Builder** 
+   
 
-1.  From the **Visual Builder** service box there are two ways to open a service console.
-<br>![](./media/image_c_3.png)
- 
-
-1. One method is to click on the box’s **Visual Builder** text to display a overview page.
-<br>![](./media/image_c_7.png)
-
-
-1. From the overview page, click the **Open Service Console** button to continue.
-<br>![](./media/image_c_8.png)
-
-
-1. Another method is to click the **General Menu** icon ![](./media/image_c_9.png) in the lower-right corner of the  **Visual Builder** service box to display a menu.
-<br>![](./media/image_c_3.png)
-
-
-1. Select **Open Service Console** from the menu
-<br>![](./media/image_c_10.png)
-
-
-1. When the VBCS Service Console **Instances** list appears; use the **Hamburger Icon** ![](./media/image_c_9.png)on the far right and choose **Open Oracle Visual Builder Cloud Service Home Page** to begin creating your new application
+3. When the VBCS Service Console **Instances** list appears; use the **General Menu Icon** ![](./media/image_c_9.png)on the far right and choose **Open Oracle Visual Builder Cloud Service Home Page** to begin creating your new application
 <br>![](./media/image_c_11.png)
 
 
@@ -1318,21 +1306,16 @@ In this exercise you will create:
        2.  Click **Relationships +**
        3.  Use dropdown to select **Store**
        4.  Make sure the relationship is one **Store** to many **Associate**
-       5.  Click **Done** when finished
+       5.  On the **Display Field** select **Id**
+       6.  Click **Create Relationship** when finished
      - From the **Fields** tab, click **+ New Field** and add **Hire Date** (date field)
      - From the **Fields** tab, click **+ New Field** and add **Email** (email field)
 <br>![](./media/image_c_20.png)
  
-1. Use the Business Object **General Menu** icon’s ![](./media/image_c_9.png) menu to select **Diagram** option.
-![](./media/image_c_21.png)
- 
 
-1. The business object diagram should look like the following; if not please correct or redo
-<br>![](./media/image_c_22.png)
- 
 
-1. To load data into the objects, start by once again using the Business Object **General Menu** ![](./media/image_c_9.png)icon but this time select the **Data Manager** option
-![](./media/image_c_23.png)
+1. To load data into the objects, select the **General Menu** within the business object section ![](./media/image_c_9.png), and click the **Data Manager** option
+<br>![](./media/image_c_23.png)
  
  
 1. Click on **Import from File** from the **Manage Application Data** panel
@@ -1364,31 +1347,27 @@ In this exercise you will create:
 <br>![](./media/image_c_31.png)
  
 
-1. Access points currently have a **version** number and will change each time the objects are modified. Currently only the **development** addresses are available. The steps below will show you how to publish and make the addresses constant
+1. Click on **Endpoints** to see resources. Access points currently have a **version** number and will change each time the objects are modified. Currently only the **development** addresses are available. The steps below will show you how to publish and make the addresses constant
 <br>![](./media/image_c_32.png)
  
 
 1. To **set** the access points so that they will not change over time; you must first **Stage** and then **Publish** the application.  (When the application is in **Development** and **Staging** the addresses are versioned; once an application is published to the **Live** environment the address will not change and is suitable for sharing)
-      
-1. First, return to the list of business objects
-<br>![](./media/image_c_33.png)
- 
- 
-1. Using the **hamburger** icon ![](./media/image_c_9.png) (far right) open the menu and select **Stage** for the application
+  
+2. Using the **General Menu** icon ![](./media/image_c_9.png) (far right) open the menu and select **Stage** for the application
 <br>![](./media/image_c_34.png)
  
  
 1. Select **Populate Stage with Development data** to copy the data loaded previously into the staging environment, then click the **Stage** button
 <br>![](./media/image_c_35.png)
  
-1. The addresses we need are still not final, so the application must be published. Return to the list of applications and click the **hamburger** icon again. This time choose the **Publish** option
+1. The addresses we need are still not final, so the application must be published. Return to the list of applications and click the **General Menu** icon again. This time choose the **Publish** option
 <br>![](./media/image_c_36.png)
 
 1. Be sure to **Include data from Stage** before you click the **Publish** button
 <br>![](./media/image_c_37.png)
 
 
-1. Reopen the application. In order for others to use REST APIs toaccess the data in the application’s business objects the Resource API addresses must be made available
+1. Reopen the application. In order for others to use REST APIs to access the data in the application’s business objects the Resource API addresses must be made available
 
 1. Select the **Store** business object and click on the **Endpoints** tab. Addresses are listed for Development, Staging, and Live environments. Also there are two columns, the ones on the left provide Metadata that more-advanced client applications (like Visual Builder) may take advantage of. The column on the right shows data-only **Endpoints** that require a little more work to use
  
