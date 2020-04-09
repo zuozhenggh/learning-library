@@ -1,11 +1,11 @@
 # Oracle Database Github
 
 
-Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Oracle offers choice, portability and interoperability with other technologies, including open source and third-party components. Developers can build with the latest technologies, such as AI/ML, autonomous databases, Gen 2 cloud infrastructure, Kubernetes, serverless, blockchain, digital assistants, and more.
+The industry’s leading database continues to deliver leading-edge innovations, including machine learning, to enable self-driving data management. This enterprise-proven, database cloud service is designed to support mixed workloads through any deployment strategy, on premises or in the cloud. Experience the power of the next-generation database with unmatched performance, ease, and flexibility by clicking on one of our hands-on workshops.
 
 
 ## Workshops
-Click on one of our workshops below to access the content.
+Click below to access the content.
 
 ### New Features for Developers Workshops
 
