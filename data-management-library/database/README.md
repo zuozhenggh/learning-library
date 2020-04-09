@@ -23,11 +23,9 @@ Click on one of our workshops below to access the content.
 
 [![](./images/create-oci-vm-db.png)](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db)  ![](./images/transparent.png " ") 
 
-## Connect SQL Developer to OCI VM Database
+### Connect SQL Developer to OCI VM Database
 
-[![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db)  ![](./images/transparent.png " ") 
-
-[![Create an Oracle Cloud Infrastructure VM Database](images/connect-oci-vm-db-sqldeveloper.png " ")](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/connect-oci-vm-db-sqldeveloper)
+[![](./images/connect-oci-vm-db-sqldeveloper.png)](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/connect-oci-vm-db-sqldeveloper)  ![](./images/transparent.png " ") 
 
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)
