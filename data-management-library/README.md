@@ -33,7 +33,7 @@ The Oracle Data Management Github is the central location for workshops related 
 
 ## Certifications ##
 
-**Autonomous Database Cloud Specialist Certification** - [Learn More]([here](https://education.oracle.com/oracle-autonomous-database-cloud-2019-certified-specialist/trackp_OADB19))
+**Autonomous Database Cloud Specialist Certification** - [Learn More](https://education.oracle.com/oracle-autonomous-database-cloud-2019-certified-specialist/trackp_OADB19)
 
 ## Videos
 - [Oracle Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
