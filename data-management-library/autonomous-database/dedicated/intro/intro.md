@@ -1,13 +1,7 @@
 # Workshop Introduction and Overview #
 
 ## Introduction to Oracle Autonomous Database Dedicated ##
-Oracle Autonomous Database offers two deployment choices - Serverless or  Dedicated.
-
-### ADB Serverless
-With Autonomous Database Serverless, Oracle automates all aspect of the infrastructure and database management for customers including provisioning, configuring, monitoring, backing up and tuning.
-
-### ADB Dedicated
-Autonomous Database Dedicated allows customers to implement a Private Database Cloud running on dedicated Exadata Infrastructure within the Oracle Public Cloud. Making it an ideal platform to consolidate multiple databases regardless of their workload type or size or to offer database as a service within an enterprise. Dedicated infrastructure provides complete isolation from other tenants and provides an opportunity to customize operational policies, such as software update schedules, availability and density, to match your business requirements.
+Oracle's Dedicated Autonomous Transaction Processing service allows an organization to Rethink Database IT, enabling a customizable private database cloud in the public cloud. The dedicated choice makes it possible to deliver a self-service database capability that aligns with organizational structure. Different lines of business or project teams can have complete autonomy in their individual execution while the company itself gets a fleet wide simplified aggregation of overall health, availability and cost management. This separation of Fleet vs Database administration allows simple budgeting controls and resource isolation without getting in the way of the line of business execution. And a dedicated database deployment will support the entire spectrum of needs from simple apps to apps that require the highest governance, consistent performance and operational controls.
 
 Watch the video below for an overview of Autonomous Database Dedicated
 
