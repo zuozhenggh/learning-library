@@ -2,12 +2,12 @@
 
 
 Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Oracle offers choice, portability and interoperability with other technologies, including open source and third-party components. Developers can build with the latest technologies, such as AI/ML, autonomous databases, Gen 2 cloud infrastructure, Kubernetes, serverless, blockchain, digital assistants, and more.
- 
+
 
 ## Workshops
 Click on one of our workshops below to access the content.
 
-[![](./images/nf-for-developers-screenshot-freetier.png)](https://oracle.github.io/learning-library/developer-library/new-features-for-developers/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/nf-for-developers-screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/developer-library/new-features-for-developers/ssworkshop/index.html)
+[![](./images/freetier.jpeg)](https://oracle.github.io/learning-library/developer-library/new-features-for-developers/freetier/index.html)  ![](./ssw_icon.png " ")  [![](./images/nf-for-developers-screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/developer-library/new-features-for-developers/ssworkshop/index.html)
 
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/developer-library/new-features-for-developers/freetier/index.html)
