@@ -305,10 +305,22 @@ Now that you know how to start, stop and relocate a container, let's see how to 
     </copy> 
     ````
 
-2.  wvbirder's container does not have vim installed.  So you will configure it.  First you need to login to the container.
+2.  If wvbirder's container does not have vim installed, you will configure it. First you need to login to the container.
+
     ````
     <copy> 
     docker exec -it alphaofficeui bash
+    </copy> 
+    ````
+    Run the below command to confirm if vim exists.
+    ````
+    <copy> 
+    which vim
+    </copy> 
+    ````
+    If the path of vim is displayed empty, install vim by running the below commands, else skip to step 3
+    ````
+    <copy> 
     apt-get update
     apt-get install vim
     </copy> 
@@ -350,15 +362,15 @@ Now that you know how to start, stop and relocate a container, let's see how to 
     docker run -d --name=alphaofficeui -p=8085:8085 (your-dockerhub-account)/(image-name)
     </copy> 
     ````
-3.  Go back to your broswer to view the application.  http://Public IP address:8085
+8.  Go back to your broswer to view the application.  http://Public IP address:8085
 
-4.  Now let's push this image to your docker hub account
+9.  Now let's push this image to your docker hub account
     ````
     <copy> 
     docker push (your-dockerhub-account)/(image-name)
     </copy> 
     ````
-5.  Open up a new browswer tab and login to hub.docker.com.  Verify your new account is there.
+10. Open up a new browswer tab and login to hub.docker.com.  Verify your new account is there.
 
 Congratulations, this lab is now complete!
 
