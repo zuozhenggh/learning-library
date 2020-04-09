@@ -3,12 +3,12 @@
 The Oracle Data Management Github is the central location for workshops related to all things Autonomous Database (ADB), Database, Big Data, Data Integration, Machine Learning, Security and more.  Across multiple deployment options:  on-premises and in the cloud.  
 
 ## Autonomous Database (ADB) Github
-[![](./images/adbgithub.png)](./autonomous-database/README.md) 
+[![](./images/adbgithub.png)](./autonomous-database) 
 - Autonomous Dedicated 
 - Autonomous Database Serverless
 
 ## Database Github
-[![](./images/dbgithub.png)](./database/README.md) 
+[![](./images/dbgithub.png)](./database) 
 - 19c
 - In-Memory
 - Multitenant
@@ -18,13 +18,13 @@ The Oracle Data Management Github is the central location for workshops related 
 - JSON
   
 ## Oracle Machine Learning (OML) Github
-[![](./images/omlgithub.png)](./oracle-machine-learning/README.md) 
+[![](./images/omlgithub.png)](./oracle-machine-learning) 
 - OML on ADB
   
 ## Security Github
-[![](./images/secgithub.png)](./security/README.md) 
+[![](./images/secgithub.png)](./security) 
 
-- Datasafe
+- Data Safe
 
 ## Certifications ##
 
