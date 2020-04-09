@@ -10,7 +10,6 @@ In the span of a few days or hours, the code examples provided here establish an
 Why bother with creating all the infrastructure manually, or creating all the terraform code from scratch when the only thing that you will have to modify in order to achieve the desired infrastructure is a **terraform.tfvars** file?
 
 Solutions in this framework are split between multiple examples containing both terraform and python automations.
-They are structured in the following way:
 The examples are organized as follows:
 
 <table>
