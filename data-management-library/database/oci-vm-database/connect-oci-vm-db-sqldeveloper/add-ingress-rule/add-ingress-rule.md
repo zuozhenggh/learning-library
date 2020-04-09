@@ -10,7 +10,7 @@ Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Databa
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](https://cloud.oracle.com/tryit).
 * An Oracle Virtual Cloud Network (VCN) instance
 
-## Add an Ingress Rule to your Virtual Cloud Network instance
+## **STEP 1**: Add an Ingress Rule to your Virtual Cloud Network instance
 
 1. After logging into your Oracle Cloud account, click on **Networking -> Virtual Cloud Networks** from the menu.
 
