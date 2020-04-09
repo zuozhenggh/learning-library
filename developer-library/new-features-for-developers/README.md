@@ -7,7 +7,7 @@ Oracle provides an open, modern, easy and intelligent platform and infrastructur
 ## Workshops
 Click on one of our workshops below to access the content.
 
-[![](./images/freetier.jpeg)](https://oracle.github.io/learning-library/developer-library/new-features-for-developers/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/ssw_workshop.png)](https://oracle.github.io/learning-library/developer-library/new-features-for-developers/ssworkshop/index.html)
+[![](./images/freetier.jpeg)](https://oracle.github.io/learning-library/developer-library/new-features-for-developers/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/ssw_icon.png)](https://oracle.github.io/learning-library/developer-library/new-features-for-developers/ssworkshop/index.html)
 
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/developer-library/new-features-for-developers/freetier/index.html)
