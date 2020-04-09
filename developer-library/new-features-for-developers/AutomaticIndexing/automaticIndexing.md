@@ -177,7 +177,6 @@ It is possible to specify which schemas are subject to auto indexing. The follow
     </copy>
 ```
 
-![](images/segments.png)
 
 The following statement removes all of the schemas from the exclusion list. All schemas in the database can use auto indexes.
 
@@ -222,7 +221,6 @@ Query DBA_AUTO_INDEX_CONFIG again to confirm:
     </copy>
 ```
 
-![](images/ai_report.png)
 
 This sample report will show Automatci Indexes activity for the last 30 days. If Automatci Indexing were OFF during this time, there may be minimal or no iformation.	 
 
@@ -729,20 +727,19 @@ Sample output of the activity report:
 
 
 | Owner   | Table        | Index                  | Key                        | Type   | Properties|
-| --------| -------------| ---------------------- | ---------------------------| -------| ----- |
-| AUTOIDX | CUSTOMERS_AI | * SYS_AI_cj7tna2ack2r6 | CUST_STATE_PROVINCE        | B-TREE | NONE  |
-| SH      | CUSTOMERS    | SYS_AI_8urpdk6h1ujkh   | COUNTRY_ID                 | B-TREE | NONE  |
-| SH      | CUSTOMERS    | SYS_AI_92r3r69avtpnj   | CUST_STATE_PROVINCE        | B-TREE | NONE  |
-| SH      | CUSTOMERS    | SYS_AI_fz1fyu74a1f87   | CUST_CITY_ID               | B-TREE | NONE  |
-| SH      | SALES        | * SYS_AI_5bcpzx4s8ts9j | CUST_ID                    | B-TREE | LOCAL |
-| SH      | SALES        | * SYS_AI_fkvdkj56j2q0a | TIME_ID,CHANNEL_ID,CUST_ID | B-TREE | LOCAL |
-| SH      | TIMES        | SYS_AI_7gxc48px5b52h   | CALENDAR_QUARTER_ID        | B-TREE | NONE  |
-| SH      | TIMES        | * SYS_AI_829bv4n435ysa | TIME_ID,CALENDAR_QUARTER_DESC | B-TREE |NONE|
-| SH      | TIMES        | SYS_AI_c45r9rthxz31w   | CALENDAR_QUARTER_DESC      | B-TREE | NONE  |
-
+| --------| -------------| ---------------------- | ---------------------------| -------| --------- |
+| AUTOIDX | CUSTOMERS_AI | * SYS_AI_cj7tna2ack2r6 | CUST_STATE_PROVINCE        | B-TREE | NONE      |
+| SH      | CUSTOMERS    | SYS_AI_8urpdk6h1ujkh   | COUNTRY_ID                 | B-TREE | NONE      |
+| SH      | CUSTOMERS    | SYS_AI_92r3r69avtpnj   | CUST_STATE_PROVINCE        | B-TREE | NONE      |
+| SH      | CUSTOMERS    | SYS_AI_fz1fyu74a1f87   | CUST_CITY_ID               | B-TREE | NONE      |
+| SH      | SALES        | * SYS_AI_5bcpzx4s8ts9j | CUST_ID                    | B-TREE | LOCAL     |
+| SH      | SALES        | * SYS_AI_fkvdkj56j2q0a | TIME_ID,CHANNEL_ID,CUST_ID | B-TREE | LOCAL     |
+| SH      | TIMES        | SYS_AI_7gxc48px5b52h   | CALENDAR_QUARTER_ID        | B-TREE | NONE      |
+| SH      | TIMES        | * SYS_AI_829bv4n435ysa | TIME_ID,CALENDAR_QUARTER_DESC | B-TREE | NONE   |
+| SH      | TIMES        | SYS_AI_c45r9rthxz31w   | CALENDAR_QUARTER_DESC      | B-TREE | NONE      |
 
 | VERIFICATION DETAILS   |
-| `````````````````````` |
+| ---------------------- |
 | Report continues       |
 
 
