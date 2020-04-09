@@ -1,70 +1,78 @@
-# Enter lab title here
-## Before You Begin
+# Workshop Introduction and Overview #
 
-This 15-minute lab walks you through the steps to ...
+## Introduction to Oracle Autonomous Database Dedicated ##
+Oracle Autonomous Database offers two deployment choices - Serverless or  Dedicated.
 
-### Background
-Enter background information here..
+### ADB Serverless
+With Autonomous Database Serverless, Oracle automates all aspect of the infrastructure and database management for customers including provisioning, configuring, monitoring, backing up and tuning.
 
-Next paragraph of background information
-* List item 1.
-* List item 2.
-* List item 3.
+### ADB Dedicated
+Autonomous Database Dedicated allows customers to implement a Private Database Cloud running on dedicated Exadata Infrastructure within the Oracle Public Cloud. Making it an ideal platform to consolidate multiple databases regardless of their workload type or size or to offer database as a service within an enterprise. Dedicated infrastructure provides complete isolation from other tenants and provides an opportunity to customize operational policies, such as software update schedules, availability and density, to match your business requirements.
 
-### What Do You Need?
+Watch the video below for an overview of Autonomous Database Dedicated
 
-* Item no 1.
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+[](youtube:fOKSNzDz1pk)
 
-## Section 1 title
+## Workshop Objectives
+- Prepare your private network in the Oracle Cloud Infrastructure
+- Provision Exadata Infrastructure in a private OCI network
+- Provision an Autonomous Container Database
+- Provision databases on your dedicated Autonomous Infrastructure
+- Setup VPN Connectivity to your Autonomous Exadata Infrastructure
+- Configure a development system for use with your dedicated autonomous database
+- Build and deploy Python application stacks on dedicated autonomous infrastructure
+- Build and deploy node.js application stacks on dedicated autonomous infrastructure
+- Build and deploy Java application stacks on dedicated autonomous infrastructure
+- Use OCI CLI commands to work with your autonomous databases
+- Invoke and use the sqldevweb console
+- Build apex applications on the autonomous database
+- Migrate an on-prem application schema using Data Pump
+- Setup live migration of business critical databases using Oracle Goldengate replication
+- Build 'Always-On' application on the autonomous database
+- Manage database performance with Performance Hub
+- Scale your database service with zero downtime
+- Protect your data with Database Vault
+- Recover from user errors using flashback recovery
+- Setup monitoring events and notifications
 
-Section 1 opening paragraph.
+## Lab Breakdown
+These hands-on lab guides provide step-by-step directions to setting up and using your dedicated Autonomous database platform in the Oracle Cloud Infrastructure. 
 
-One line with code example `HelloWorld.java`.
+*Lab 1*  - Deals with setting up the network, users and groups and requires administrator privileges on your OCI account.
+*Labs 2 & 3* - Geared towards the fleet administrator role responsible for deploying the autonomous exadata infrastructure and container databases.
+*Labs 4 and  6 - 12* - Intended for a regular database user, DBA or developer who simply want to spin up an autonomous database in one of the pre-provisioned containers and start building applications.
+*Lab 13 +* - Demonstrate the operational aspects of the service
 
-1. Ordered list item 1.
-2. Ordered list item 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+## A Private Database Cloud in the Oracle Public Cloud 
 
-    ![Image alt text](images/sample1.png "Image title")
+With Autonomous Database Dedicated, customers get their own Exadata infrastructure in the Oracle Cloud. The customers administrator simply specifies the size, region and availability domain where they want their dedicated Exadata infrastructure provisioned.  They also get to determine the update or patching schedule if they wish. Oracle automatically manages all patching activity but with Autonomous Database Dedicated service, customers have the option to customize the patching schedule.
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+## ADB Dedicated Architecture
 
-    ![Image alt text](images/sample1.png " ")
+Autonomous Databases on dedicated Exadata infrastructure have a three-level database architecture model that makes use of Oracle multitenant database architecture.  You must create the dedicated Exadata infrastructure resources in the following order:
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+1. Autonomous Exadata Infrastructure
+2. Autonomous Container Database
+3. Autonomous Database
 
-5. One example with bold **text**.
+### Autonomous Exadata Infrastructure
 
-   If you add another paragraph, add 3 spaces before the line.
+This is a hardware rack which includes compute nodes and storage servers, tied together by a high-speed, low-latency InfiniBand network and intelligent Exadata software.
 
-Section conclusion can come here.
+### Autonomous Container Database
 
-## Section 2 title
+This resource provides a container for multiple user databases. This resource is sometimes referred to as a CDB, and is functionally equivalent to the multitenant container databases found in Oracle 12c and higher databases.
 
-1. List item 1.
+### Autonomous Database
 
-2. List item 2.
+You can create multiple Autonomous Databases within the same container database. This level of the database architecture is analogous to the pluggable databases (PDBs) found in non-Autonomous Exadata systems. Your Autonomous Database can be configured for either transaction processing or data warehouse workloads.
 
-    ```
-    Adding code examples
-	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
-    ```
+Please proceed to the next lab.
 
-3. List item 3. To add a video, follow the following format:
+## Acknowledgements
 
-	```
-	<copy>[](youtube:&lt;video_id&gt;)</copy>
-	For example:
-	[](youtube:zNKxJjkq0Pw)
-    ```
+- **Authors/Contributors** - Tejus Subramanian, Kris Bhanushali, Yaisah Granillo
+- **Last Updated By/Date** - Kay Malcolm, April 2020
+- **Workshop Expiration Date** - April 31, 2021
 
-    [](youtube:zNKxJjkq0Pw)
-
-Conclusion of section 2 here.
-
-## Want to Learn More?
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

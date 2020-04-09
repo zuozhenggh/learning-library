@@ -12,8 +12,9 @@
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
 * Lab: Generate SSH Key
-* Lab: Setup
-* Lab: Queries
+* Lab: Environment Setup
+* Lab: Enabling In-Memory
+* Lab: Querying the IMC
 
 ### Lab Preview
 
@@ -35,9 +36,9 @@ Up until now we have been focused on queries that scan only one table, the LINEO
     <copy>    
     ````
 
-    ![](images/part3.png) 
+    ![](images/num1.png) 
 
-2.  Join the LINEORDER and DATE_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  In the first one, execute it against the IM column store.  Alternative script:  `@01_join_im.sql`
+2.  Join the LINEORDER and DATE_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  In the first one, execute it against the IM column store.  
 
     ````
     <copy>
@@ -58,9 +59,10 @@ Up until now we have been focused on queries that scan only one table, the LINEO
     @../imstats.sql
     </copy>
     ````
-    The IM column store has no problem executing a query with a join because it is able to take advantage of Bloom Filters.  It’s easy to identify Bloom filters in the execution plan. They will appear in two places, at creation time and again when it is applied. Look at the highlighted areas in the plan above. You can also see what join condition was used to build the Bloom filter by looking at the predicate information under the plan. 
 
-    ![](images/join_im.png) 
+    ![](images/num2.png) 
+
+    The IM column store has no problem executing a query with a join because it is able to take advantage of Bloom Filters.  It’s easy to identify Bloom filters in the execution plan. They will appear in two places, at creation time and again when it is applied. Look at the highlighted areas in the plan above. You can also see what join condition was used to build the Bloom filter by looking at the predicate information under the plan. 
 
 3.  Let's run against the buffer cache now.  
 
@@ -86,10 +88,9 @@ Up until now we have been focused on queries that scan only one table, the LINEO
     @../imstats.sql
     </copy>
     ````
+    ![](images/num3.png) 
 
-    ![](images/join_buffer.png) 
-
-4. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results.  Alternative script:  `@03_3join_im.sql`
+4. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results.  
 
     ````
     <copy>
@@ -116,13 +117,11 @@ Up until now we have been focused on queries that scan only one table, the LINEO
     </copy>
     ````
 
-    ![](images/3joinim.png) 
+    ![](images/num4a.png) 
 
-    ![](images/3joinim_2.png) 
+    ![](images/num4b.png) 
 
     The IM column store continues to out-perform the buffer cache query but what is more interesting is the execution plan for this query: 
-
-    ![](images/3joinim_3.png) 
 
     In this case, we noted above that three join filters have been created and applied to the scan of the LINEORDER table, one for the join to DATE_DIM table, one for the join to the PART table, and one for the join to the SUPPLIER table. How is Oracle able to apply three join filters when the join order would imply that the LINEORDER is accessed before the SUPPLER table? 
 
@@ -135,7 +134,7 @@ This lab saw our performance comparison expanded to queries with both joins and 
 
 You also got to see just how sophisticated the Oracle Optimizer has become over the last 30 plus years,  when it used a combination of complex query transformations to find the optimal execution plan for a star query. 
 
-Oracle Database adds in-memory database functionality to existing databases, and transparently accelerates analytics by orders of magnitude while simultaneously speeding up mixed-workload OLTP. With Oracle Database In-Memory, users get immediate answers to business questions that previously took hours. 
+Oracle Database adds In-Memory database functionality to existing databases, and transparently accelerates analytics by orders of magnitude while simultaneously speeding up mixed-workload OLTP. With Oracle Database In-Memory, users get immediate answers to business questions that previously took hours. 
 
 ## Acknowledgements
 
