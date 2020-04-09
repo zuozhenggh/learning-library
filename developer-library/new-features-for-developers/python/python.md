@@ -29,7 +29,7 @@ Watch the video below to get an explanation of using Python with the Oracle Data
 [](youtube:)
 
 
-## Step 1: Logging In and Examining Schema
+## Step 1: 
 
 ```python
 
@@ -40,9 +40,7 @@ print s
 
 ## Conclusion
 
-In this Lab you had an opportunity to try out Oracle’s In-Memory performance claims with queries that run against a table with over 23 million rows (i.e. LINEORDER), which resides in both the IM column store and the buffer cache. From a very simple aggregation, to more complex queries with multiple columns and filter predicates, the IM column store was able to out perform the buffer cache queries. Remember both sets of queries are executing completely within memory, so that’s quite an impressive improvement.
-
-These significant performance improvements are possible because of Oracle’s unique in-memory columnar format that allows us to only scan the columns we need and to take full advantage of SIMD vector processiong. We also got a little help from our new in-memory storage indexes, which allow us to prune out unnecessary data. Remember that with the IM column store, every column has a storage index that is automatically maintained for you.
+In this Lab you had an opportunity to try out Python in the Oracle Database.
 
 ## Acknowledgements
 
