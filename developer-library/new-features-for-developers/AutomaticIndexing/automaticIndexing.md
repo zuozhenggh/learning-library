@@ -7,7 +7,7 @@ Traditionally, DBAs have been responsible to monitoring performance and deciding
 
 Automatic indexing addresses these issues. It is not a simple advisor, but instead it is an expert system that implements indexes based on what a performance engineer skilled in index tuning would do. The Oracle Database analyzes the application workload and identifies the queries that will benefit from additional indexes. In other words, it identifies candidate indexes and validates them before implementation, and the entire process is fully automatic.
 Here is a summary of the workflow:
-   ![](images/ai_flow.png)
+  ![](images/ai_flow.png)
 
 ### Objectives
 
@@ -27,7 +27,7 @@ This lab assumes you have completed the following labs:
 
 Watch the video below to get an explanation of enabling the Automatic Indexing feature.
 
-[![]](youtube:dZ9cnIL6KKw)
+  ![](youtube:dZ9cnIL6KKw)
 
 ## Step 1: Verify sample data and drop indexes
 Index structures are an essential feature to database performance. Indexes are critical for OLTP applications, which use large data sets and run millions of SQL statements a day. Indexes are also critical for data warehousing applications, which typically query a relatively small amount of data from very large tables. If you do not update the indexes whenever there are changes in the application workload, the existing indexes can cause the database performance to deteriorate considerably.
@@ -37,30 +37,30 @@ Automatic indexing improves database performance by managing indexes automatical
 This Lab will use the Sales History (SH) sample schema. Use SQLPlus to connect to the PDB01 Pluggable database as SYS
 
 ```
-    <copy>
+<copy>
     sudo su - oracle
     . oraenv [ORCL]
 	  sqlplus sys/Ora_DB4U@localhost:1521/orclpdb
-    </copy>
+</copy>
 ```
 List all existing indexes in the SH schema
 
 ```
-    <copy>
+<copy>
     set linesize 120
     column table_name format a30
     column  index_name format a30
     column  index_type format a25
     column  last_analyzed format a25
     select table_name,index_name,index_type,last_analyzed from dba_indexes where table_owner = 'SH';
-    </copy>
+</copy>
 ```
-[![]](images/ai_indexes.png)
+![](images/ai_indexes.png)
 
 For the purpose of this exercise we will drop all existing secondary indexes. DO NOT DO THIS ON ANY PRODUCTION SYSTEM
 
 ```
-    <copy>
+<copy>
 	drop index  SH.COSTS_PROD_BIX;
     drop index  SH.COSTS_TIME_BIX;
     drop index  SH.SALES_PROD_BIX;
@@ -78,14 +78,14 @@ For the purpose of this exercise we will drop all existing secondary indexes. DO
     drop index  SH.FW_PSC_S_MV_CHAN_BIX;
     drop index  SH.FW_PSC_S_MV_PROMO_BIX;
     drop index  SH.FW_PSC_S_MV_WD_BIX;
-    </copy>
+</copy>
 ```
 Gather SH schema statistics
 
 ```
-    <copy>
+  <copy>
     exec dbms_stats.gather_schema_stats(ownname => 'SH', estimate_percent => DBMS_STATS.AUTO_SAMPLE_SIZE, method_opt => 'FOR ALL COLUMNS SIZE  AUTO', degree => 4);
-    </copy>
+  </copy>
 ```
 
 ## Step 2: Logging In and Examining Schema
@@ -262,13 +262,14 @@ In this Lab, we don’t have ay application running on our database, so we will 
 ```
 [![]](images/ai_cr_cust.png)
 
-Now we have some tables we can modify, and at the same time some OLTP workload was generated on our database. You can check how automatic indexing feature reacts to this type of workload, but before doing that it is recommended to gather statistics.
+Now you have some tables you can modify, and at the same time some OLTP workload was generated on our database. You can check how automatic indexing feature reacts to this type of workload, but before doing that it is recommended to gather statistics.
 
-	 ```
+```
     <copy>
     execute dbms_stats.gather_schema_stats(ownname => 'SH', estimate_percent=> DBMS_STATS.AUTO_SAMPLE_SIZE, method_opt => 'FOR ALL COLUMNS SIZE  AUTO', degree => 4);
     </copy>
-   ```
+```
+
 [![]](images/ai_stats_gather.png)
 
 ## Step 5: View Advisor Tasks
@@ -297,6 +298,7 @@ View the advisory
     from dba_advisor_tasks;
     </copy>
 ```
+
 [![]](images/ai_dba_advisor_tasks.png)
 
 Filter the query to focus on SYS_AUTO_INDEX_TASK. This task is run by default every 15 minutes.
@@ -411,7 +413,7 @@ A query executed multiple times in a FOR LOOP (stored as file /home/oracle/labs/
      </copy>
 ```
 
-   ![](images/ai_query4_results.png)
+![](images/ai_query4_results.png)
 
 5. These tables will be also used to identify candidate indexes, and we gathered optimizer statistics after their creation. (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai_query5.sql)
 
@@ -438,61 +440,61 @@ Here is an example of an advanced analytical SQL statement. This query returns t
 (available in file  /home/oracle/labs/new-features-for-developers/automaticindexing/ai_change_market_share.sql)
 
 ```
-    <copy>
-    WITH prod_list AS ( SELECT prod_id prod_subset, cume_dist_prod FROM ( SELECT s.prod_id, SUM(amount_sold),
-         CUME_DIST() OVER (ORDER BY SUM(amount_sold)) cume_dist_prod
-    FROM sales s, customers c, channels ch,  products p, times t
+<copy>
+WITH prod_list AS ( SELECT prod_id prod_subset, cume_dist_prod
+  FROM ( SELECT s.prod_id, SUM(amount_sold),CUME_DIST() OVER (ORDER BY SUM(amount_sold)) cume_dist_prod
+  FROM sales s, customers c, channels ch,  products p, times t
+  WHERE s.prod_id = p.prod_id AND p.prod_total_id = 1 AND
+    s.channel_id = ch.channel_id AND ch.channel_total_id = 1 AND
+    s.cust_id = c.cust_id AND
+    s.promo_id = 999 AND
+    s.time_id  = t.time_id AND t.calendar_quarter_id = 1776 AND
+    c.cust_city_id IN
+  (SELECT cust_city_id FROM
+  (SELECT cust_city_id, ((new_cust_sales - old_cust_sales) / old_cust_sales ) pct_change, old_cust_sales
+   FROM
+  (SELECT cust_city_id, new_cust_sales, old_cust_sales
+    FROM
+  ( SELECT cust_city_id,
+    SUM(CASE WHEN t.calendar_quarter_id = 1776
+    THEN amount_sold  ELSE  0  END ) new_cust_sales,
+    SUM(CASE WHEN t.calendar_quarter_id = 1772
+    THEN amount_sold ELSE 0 END) old_cust_sales
+    FROM sales s, customers c, channels ch, products p, times t
     WHERE s.prod_id = p.prod_id AND p.prod_total_id = 1 AND
-            s.channel_id = ch.channel_id AND ch.channel_total_id = 1 AND
-            s.cust_id = c.cust_id AND
-            s.promo_id = 999 AND
-            s.time_id  = t.time_id AND t.calendar_quarter_id = 1776 AND
-            c.cust_city_id IN
-     (SELECT cust_city_id FROM
-     (SELECT cust_city_id, ((new_cust_sales - old_cust_sales) / old_cust_sales ) pct_change, old_cust_sales
-       FROM
-     (SELECT cust_city_id, new_cust_sales, old_cust_sales
-        FROM
-     ( SELECT cust_city_id,
-            SUM(CASE WHEN t.calendar_quarter_id = 1776
-             THEN amount_sold  ELSE  0  END ) new_cust_sales,
-            SUM(CASE WHEN t.calendar_quarter_id = 1772
-             THEN amount_sold ELSE 0 END) old_cust_sales
-        FROM sales s, customers c, channels ch, products p, times t
-                WHERE s.prod_id = p.prod_id AND p.prod_total_id = 1 AND
-                      s.channel_id = ch.channel_id AND ch.channel_total_id = 1 AND
-                      s.cust_id = c.cust_id AND c.country_id = 52790 AND
-                      s.promo_id = 999 AND
-                      s.time_id  = t.time_id AND
-                     (t.calendar_quarter_id = 1776 OR t.calendar_quarter_id =1772)
-                GROUP BY cust_city_id) cust_sales_wzeroes
-              WHERE old_cust_sales > 0)  cust_sales_woutzeroes)
-        WHERE old_cust_sales > 0 AND  pct_change >= 0.20)
-GROUP BY s.prod_id )  prod_sales                    
+        s.channel_id = ch.channel_id AND ch.channel_total_id = 1 AND
+        s.cust_id = c.cust_id AND c.country_id = 52790 AND
+        s.promo_id = 999 AND
+        s.time_id  = t.time_id AND
+       (t.calendar_quarter_id = 1776 OR t.calendar_quarter_id =1772)
+    GROUP BY cust_city_id) cust_sales_wzeroes
+    WHERE old_cust_sales > 0)  cust_sales_woutzeroes)
+    WHERE old_cust_sales > 0 AND  pct_change >= 0.20)
+    GROUP BY s.prod_id )  prod_sales                    
     WHERE cume_dist_prod > 0.8 ) SELECT  prod_id, ( (new_subset_sales/new_tot_sales) - (old_subset_sales/old_tot_sales) ) *100  share_changes
-FROM ( SELECT  prod_id,
-     SUM(CASE WHEN t.calendar_quarter_id = 1776
-                   THEN amount_sold  ELSE  0  END )  new_subset_sales,
-        (SELECT SUM(amount_sold) FROM sales s, times t, channels ch,
-                customers c, countries co, products p
-          WHERE s.time_id  = t.time_id AND t.calendar_quarter_id = 1776 AND
-                s.channel_id = ch.channel_id AND ch.channel_total_id = 1 AND
-                s.cust_id = c.cust_id AND
-                c.country_id = co.country_id AND co.country_total_id = 52806 AND
-                s.prod_id = p.prod_id AND p.prod_total_id = 1 AND
-                s.promo_id = 999
+    FROM ( SELECT  prod_id,
+       SUM(CASE WHEN t.calendar_quarter_id = 1776
+       THEN amount_sold  ELSE  0  END )  new_subset_sales,
+       (SELECT SUM(amount_sold) FROM sales s, times t, channels ch,
+            customers c, countries co, products p
+        WHERE s.time_id  = t.time_id AND t.calendar_quarter_id = 1776 AND
+          s.channel_id = ch.channel_id AND ch.channel_total_id = 1 AND
+          s.cust_id = c.cust_id AND
+          c.country_id = co.country_id AND co.country_total_id = 52806 AND
+          s.prod_id = p.prod_id AND p.prod_total_id = 1 AND
+          s.promo_id = 999
         )   new_tot_sales,
      SUM(CASE WHEN t.calendar_quarter_id = 1772
-                   THEN amount_sold  ELSE  0  END)  old_subset_sales,
-        (SELECT SUM(amount_sold) FROM sales s, times t, channels ch,
-                customers c, countries co, products p
-          WHERE s.time_id  = t.time_id AND t.calendar_quarter_id = 1772 AND
-                s.channel_id = ch.channel_id AND ch.channel_total_id = 1 AND
-                s.cust_id = c.cust_id AND
-                c.country_id = co.country_id AND co.country_total_id = 52806 AND
-                       s.prod_id = p.prod_id AND p.prod_total_id = 1 AND
-                s.promo_id = 999
-        )   old_tot_sales
+    THEN amount_sold  ELSE  0  END)  old_subset_sales,
+      (SELECT SUM(amount_sold) FROM sales s, times t, channels ch,
+          customers c, countries co, products p
+       WHERE s.time_id  = t.time_id AND t.calendar_quarter_id = 1772 AND
+         s.channel_id = ch.channel_id AND ch.channel_total_id = 1 AND
+         s.cust_id = c.cust_id AND
+         c.country_id = co.country_id AND co.country_total_id = 52806 AND
+         s.prod_id = p.prod_id AND p.prod_total_id = 1 AND
+         s.promo_id = 999
+      )   old_tot_sales
  FROM sales s, customers c, countries co, channels ch, times t
  WHERE s.channel_id = ch.channel_id AND ch.channel_total_id = 1 AND
        s.cust_id = c.cust_id AND
@@ -502,11 +504,11 @@ FROM ( SELECT  prod_id,
       (t.calendar_quarter_id = 1776 OR t.calendar_quarter_id = 1772)
          AND s.prod_id IN
      (SELECT prod_subset FROM prod_list)
-  GROUP BY prod_id);
-    </copy>
+     GROUP BY prod_id);
+</copy>
 ```
 
-    ![](images/ai_change_markt_share_results.png)
+![](images/ai_change_markt_share_results.png)
 
 7. Calculate a sales projection
 
@@ -540,7 +542,7 @@ Populate the table with conversion factors for each month for each country (file
     </copy>
 ```
 
-    ![](images/ai_ins_curr_results.png)
+![](images/ai_ins_curr_results.png)
 
 For this example we will only set the conversion factor for "Canada"
 
@@ -579,10 +581,10 @@ Build the sales projection query (file /home/oracle/labs/new-features-for-develo
       DIMENSION BY (s.p p, ts.cal_y y, ts.cal_m m)
       MEASURES (s.s s, CAST(NULL AS NUMBER) nr, s.c cc )
       RULES ( nr[ANY, ANY, ANY]
-         = CASE WHEN s[CV(), CV(), CV()] IS NOT NULL
-         THEN s[CV(), CV(), CV()]
-         ELSE ROUND(AVG(s)[CV(), CV(), m BETWEEN 1 AND 12],2)
-         END, nr[ANY, 2002, ANY] = ROUND(
+       = CASE WHEN s[CV(), CV(), CV()] IS NOT NULL
+       THEN s[CV(), CV(), CV()]
+       ELSE ROUND(AVG(s)[CV(), CV(), m BETWEEN 1 AND 12],2)
+       END, nr[ANY, 2002, ANY] = ROUND(
 		 ((nr[CV(),2001,CV()] - nr[CV(),2000, CV()])/ nr[CV(),2000, CV()]) * nr[CV(),2001, CV()]
            + nr[CV(),2001, CV()],2),nr[ANY,y != 2002,ANY]
          = ROUND(nr[CV(),CV(),CV()]
@@ -593,7 +595,7 @@ Build the sales projection query (file /home/oracle/labs/new-features-for-develo
     </copy>
 ```
 
-    ![](images/ai_sales_proj_results.png)
+![](images/ai_sales_proj_results.png)
 
 Commit all results
 
@@ -715,7 +717,8 @@ Sample output of the activity report:
 | ---------------------------------------------------------------------------- |
 | 1. The following indexes were created:                                       |
 | *: invisible                                                                 |
------------------
+
+
 | Owner   | Table        | Index                  | Key                        | Type   | Properties|
 | --------| -------------| ---------------------- | ---------------------------| -------| ----- |
 | AUTOIDX | CUSTOMERS_AI | * SYS_AI_cj7tna2ack2r6 | CUST_STATE_PROVINCE        | B-TREE | NONE  |
@@ -728,9 +731,10 @@ Sample output of the activity report:
 | SH      | TIMES        | * SYS_AI_829bv4n435ysa | TIME_ID,CALENDAR_QUARTER_DESC | B-TREE |NONE|
 | SH      | TIMES        | SYS_AI_c45r9rthxz31w   | CALENDAR_QUARTER_DESC      | B-TREE | NONE  |
 
+
 | VERIFICATION DETAILS   |
 | `````````````````````` |
-| Report continues ...   |
+| Report continues       |
 
 
 In this example report, automatic indexing identified 18 candidates, and created 9 indexes, 5 visible and 4 invisible.
