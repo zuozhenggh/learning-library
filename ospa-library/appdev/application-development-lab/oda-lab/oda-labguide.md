@@ -687,7 +687,7 @@ This tutorial shows you how to use the Oracle Native SDK for Web/JavaScript (als
 **Note:** This tutorial won't work if you are using Oracle Digital Assistant Release 19.4.1, since the version of the SDK that this tutorial requires is only available for instances of Digital Assistant that have been provisioned on Oracle Cloud Infrastructure (Gen 2). For information on setting up a web channel on Digital Assistant 19.4.1, see [Expose Your Digital Assistant through a Web Channel](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-web-channel/index.html).
 
 As part of this exercise, you will be provided with the following assets:
-* [index.html](../files/index.html)
+* [index.html](../files/index.html) *Note: Click **Save As** and save it locally*
 * [style.css](../files/style.css)
 * [scripts.zip](../files/scripts.zip)
 
@@ -731,10 +731,11 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
 1. Now login into Visual Builder Cloud Service and create a new WebApp on a separate project.
 <br>![](./media/oda_channel_5.png)
 
-2. Select the app name at the root level and click on the code snippet, delete the content from the file and copy the code from the sample file [Index.html](../files/index.html)
+2. Select the app name at the root level and click on the code snippet, delete the content from the file and copy the code from the sample file [Index.html](../files/index.html). 
+*Note: You must edit the file with a code editor of your choice and copy it’s content.*
 <br>![](./media/oda_channel_7.png)
 
-3. Fill the `URI` and `YOUR CHANNEL` variables with the information copied on step 4
+3. Fill the `URI` and `YOUR CHANNEL` variables with the information copied on step 5 from the previous exercise.
 <br>![](./media/oda_channel_8.png)
 
 4. Download the ODA Web SDK script files [script.zip](../files/scripts.zip) to your laptop. You can download the latest version of the SDK from [Oracle Digital Assistant (ODA) and Oracle Mobile Cloud (OMC) Downloads](https://www.oracle.com/downloads/cloud/amce-downloads.html).
