@@ -5,7 +5,7 @@ This lab walks you through the steps to connect to an Oracle Database running in
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](https://cloud.oracle.com/tryit).
+* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here]http://oracle.com/cloud/free).
 * SSH keys
 * A Docker container running Oracle Database 19c
 * * An open port (1521) on your Oracle Cloud Virtual Cloud Network (VCN)

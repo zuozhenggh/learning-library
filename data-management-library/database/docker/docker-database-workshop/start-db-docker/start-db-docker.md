@@ -8,7 +8,7 @@ A Docker container is a running instance of a Docker image. However, unlike in t
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](https://cloud.oracle.com/tryit).
+* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * SSH keys
 * A Docker image built with Oracle Database 19c
 
@@ -21,28 +21,28 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
 
 1. If you don't have an open SSH connection to your compute instance, open and terminal window and connect using the public IP address of your compute instance:
 
-  ```
+    ```
     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
     Enter passphrase for key './myOracleCloudKey':
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 2. Create a folder to hold the data files:
 
-  ```
+    ```
     [opc@oraclelinux77 ~]$ <copy>mkdir oradata</copy>
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 
 3. Change the folder permissions:
 
-  ```
+    ```
     [opc@oraclelinux77 ~]$ <copy>chmod a+w oradata</copy>
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 
 4. Run the Oracle Database container:
 
-  ```
+    ```
     [opc@oraclelinux77 ~]$ <copy>docker run --name oracle-ee -p 1521:1521 -v /home/opc/oradata:/opt/oracle/oradata oracle/database:19.3.0-ee</copy>
     ORACLE PASSWORD FOR SYS, SYSTEM AND PDBADMIN: N2z6X3FBa08=1
 
@@ -95,7 +95,7 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
     XDB initialized.
     2020-04-07T20:28:28.304983+00:00
     ORCLPDB1(3):Resize operation completed for file# 10, old size 327680K, new size 337920K
-  ```
+    ```
   At this point, the database is running and ready for connections!
 
   Note the startup script generated a password for the database accounts. In the next step, you can reset the password to one of your choice.
@@ -104,15 +104,15 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
 
 1. In a new terminal window, open another connection to compute instance:
 
-  ```
+    ```
     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
     Enter passphrase for key './myOracleCloudKey':
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 
 2. Use the container provided `setPassword.sh` script to reset the password to `LetsDocker`:
 
-  ```
+    ```
     [opc@oraclelinux77 ~]$ <copy>docker exec oracle-ee ./setPassword.sh LetsDocker</copy>
     The Oracle base remains unchanged with value /opt/oracle
 
@@ -140,7 +140,7 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
     SQL> Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
     Version 19.3.0.0.0
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 
   You may now proceed to the next lab.
 

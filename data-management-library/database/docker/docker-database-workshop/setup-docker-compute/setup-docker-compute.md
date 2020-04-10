@@ -8,7 +8,7 @@ Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, a
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](https://cloud.oracle.com/tryit).
+* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * An Oracle Cloud Compute instance Public IP address
 * SSH keys
 
@@ -18,26 +18,26 @@ Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, a
 
 1. In a terminal window, navigate to the folder where you created the SSH keys and connect to your compute instance using `ssh`, and the public IP address of your compute instance:
 
-   ```
-   $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
-   The authenticity of host '123.123.123.123 (123.123.123.123)' can't be established.
-   ECDSA key fingerprint is SHA256:XzZBYaYn0amV0TkzrHpaemIROcEaoSxxLmFeePWHU9I.
-   Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-   Warning: Permanently added '123.123.123.123' (ECDSA) to the list of known hosts.
-   Enter passphrase for key './myOracleCloudKey':
-   [opc@oraclelinux77 ~]$
-   ```
+     ```
+     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+     The authenticity of host '123.123.123.123 (123.123.123.123)' can't be established.
+     ECDSA key fingerprint is SHA256:XzZBYaYn0amV0TkzrHpaemIROcEaoSxxLmFeePWHU9I.
+     Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+     Warning: Permanently added '123.123.123.123' (ECDSA) to the list of known hosts.
+     Enter passphrase for key './myOracleCloudKey':
+     [opc@oraclelinux77 ~]$
+     ```
 
 2. Switch to the root user:
 
-  ```
+    ```
     [opc@oraclelinux77 ~]$ <copy>sudo su -</copy>
     [root@oraclelinux77 ~]#
-  ```
+    ```
 
 3. Enable the `addons yum` repository:
 
-  ```
+    ```
     [root@oraclelinux77 ~]# <copy>yum-config-manager enable *addons*</copy>
     Loaded plugins: langpacks
     ================================= repo: ol7_addons ======================================
@@ -61,11 +61,11 @@ Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, a
     username =
 
     [root@oraclelinux77 ~]#
-  ```
+    ```
 
 4. Install the Docker engine:
 
-  ```
+    ```
     [root@oraclelinux77 ~]# <copy>yum install docker-engine</copy>
     Loaded plugins: langpacks, ulninfo
     ol7_UEKR5                                                                   | 2.8 kB  00:00:00
@@ -89,7 +89,7 @@ Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, a
 
     Complete!
     [root@oraclelinux77 ~]#
-  ```
+    ```
 
   Docker is now installed on the compute instance!
 
@@ -99,45 +99,47 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
 
 1. Determine which groups `opc` belongs to:
 
-  ```
+    ```
     [root@oraclelinux77 ~]# <copy>id opc</copy>
     uid=1000(opc) gid=1000(opc) groups=1000(opc),4(adm),10(wheel),190(systemd-journal)
     [root@oraclelinux77 ~]#
-  ```
+    ```
 
 2. Add `opc` to the `docker` group:
 
-  ```
+    ```
     [root@oraclelinux77 ~]# <copy>usermod -a -G docker opc</copy>
     [root@oraclelinux77 ~]#
-  ```
+    ```
 
 3. Check that `opc` is now part of the `docker` group:
 
-  ```
+    ```
     [root@oraclelinux77 ~]# <copy>id opc</copy>
     uid=1000(opc) gid=1000(opc) groups=1000(opc),4(adm),10(wheel),190(systemd-journal),992(docker)
     [root@oraclelinux77 ~]#
-  ```
+    ```
 
 ## **STEP 3**: Start Docker
 
 1. Start the Docker service.
 
-  ```
+    ```
     [root@oraclelinux77 ~]# <copy>systemctl start docker</copy>
     [root@oraclelinux77 ~]#
-  ```
+    ```
 
 2. Enable the Docker service.
-  ```
+
+    ```
     [root@oraclelinux77 ~]# <copy>systemctl enable docker</copy>
     Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
     [root@oraclelinux77 ~]#
-  ```
+    ```
 
 3. Check the status.
-  ```
+
+    ```
     [root@oraclelinux77 ~]# <copy>systemctl status docker</copy>
     ● docker.service - Docker Application Container Engine
        Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
@@ -150,21 +152,21 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
     Apr 07 18:21:26 oraclelinux77 systemd[1]: Started Docker Application Container Engine.
     Hint: Some lines were ellipsized, use -l to show in full.
     [root@oraclelinux77 ~]#
-  ```
+    ```
 
 ## **STEP 4**: Connect to Docker with the non-root user
 
 1. Open a new terminal window and connect again using SSH:
 
-  ```
+    ```
     <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
     Enter passphrase for key './myOracleCloudKey':
     Last login: Tue Apr  7 18:15:16 2020 from pool-108-26-202-194.bstnma.fios.verizon.net
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 2. Check that Docker is configured to allow non-root access:
 
-  ```
+    ```
     [opc@oraclelinux77 ~]$ <copy>docker run hello-world</copy>
     Unable to find image 'hello-world:latest' locally
     Trying to pull repository docker.io/library/hello-world ...
@@ -179,7 +181,7 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
     ...
 
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 
   You may now proceed to the next lab.
 

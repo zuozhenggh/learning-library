@@ -5,7 +5,7 @@ This lab walks you through the steps to manage your Docker container, including 
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](https://cloud.oracle.com/tryit).
+* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * SSH keys
 * A Docker container running Oracle Database 19c
 
@@ -15,19 +15,19 @@ This lab walks you through the steps to manage your Docker container, including 
 
 1. If you don't have an open SSH connection to your compute instance, open and terminal window and connect:
 
-  ```
+    ```
     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
     Enter passphrase for key './myOracleCloudKey':
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 
 2. Stop the docker container:
 
-  ```
+    ```
     [opc@oraclelinux77 ~]$ <copy>docker stop -t 600 oracle-ee</copy>
     oracle-ee
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 
 ## **STEP 2**: Starting a Docker Container
 
@@ -35,14 +35,14 @@ The docker `start` command will put the container into background and return con
 
 1. Start the docker container:
 
-  ```
+    ```
     [opc@oraclelinux77 ~]$ docker start oracle-ee
     oracle-ee
-  ```
+    ```
 
 2. Check the logs:
 
-  ```
+    ```
     [opc@oraclelinux77 ~]$ <copy>docker logs oracle-ee</copy>
     Starting /opt/oracle/product/19c/dbhome_1/bin/tnslsnr: please wait...
     ...
@@ -63,7 +63,7 @@ The docker `start` command will put the container into background and return con
 
     XDB initialized.
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 
   Note that using `docker logs -f` will tail the log.
 
