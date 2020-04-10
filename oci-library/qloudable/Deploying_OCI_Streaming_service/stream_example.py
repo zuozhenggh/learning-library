@@ -4,7 +4,7 @@ import base64
 import time
 
 # ==========================================================
-# This file provides an example of basic streaming usage on OCI
+# This file provides an example of basic streaming usage
 # * - List streams
 # * - Get a Stream
 # * - Create a Stream
