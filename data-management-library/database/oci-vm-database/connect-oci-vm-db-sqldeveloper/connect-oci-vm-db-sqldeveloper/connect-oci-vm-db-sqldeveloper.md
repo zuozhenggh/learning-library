@@ -13,7 +13,7 @@ Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Databa
 * An open port (1521) on your Oracle Cloud Virtual Cloud Network (VCN)
 * [Oracle SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html)
 
-## Locate your Virtual Machine Database
+## **STEP 1**: Locate your Virtual Machine Database
 
 1. From the menu, click on **Bare Metal, VM, and Exadata**.
 
@@ -27,7 +27,7 @@ Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Databa
 
   ![](images/db-system-details.png " ")
 
-## Create a connection through SQL Developer
+## **STEP 2**: Create a connection through SQL Developer
 
 1. Launch Oracle SQL Developer and select **New Connection** (the green + sign).
 
