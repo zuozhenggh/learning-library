@@ -1,7 +1,7 @@
 
 <br>[**Return to Main Page**](../index.html)
 
-# Oracle Digital Assistant Lab
+# Oracle Digital Assistant
 
 **Before you begin**
 This 60-minute hands-on lab is an entry-level exercise for building a skill in Oracle Digital Assistant.
@@ -12,10 +12,11 @@ Oracle Digital Assistant is an environment for building _digital assistants_, wh
 
 **Lab Objectives**
 
-In this lab, you will create a skill that can be used for interactions with a pizzeria, including ordering pizzas and canceling orders. As part of this process, you will:
+In this lab, you will create a skill that can be used by customers to interact with Mama Maggy stores, including ordering pizzas and canceling orders. As part of this process, you will:
 * Define intents, utterances, entities.
 * Design a conversation flow.
 * Validate, debug and test your skill.
+* Integrate your the skill with your WebApp/Mobile App
 
 **Intended Audience**
 
@@ -24,7 +25,7 @@ In this lab, you will create a skill that can be used for interactions with a pi
 - New to Oracle Cloud Infrastructure
 
 **Changelog**
-- April 6, 2020 - version 1
+- April 10, 2020 - version 1.1
 
 **What Do You Need?**
 * Access to Oracle Digital Assistant.
@@ -38,47 +39,55 @@ In this lab, you will create a skill that can be used for interactions with a pi
 ## Create a Skill
 
 In this lab, we’re starting from scratch. So the first thing you’ll do is create a new skill.
-1. Access the cloud tenant using your Oracle SSO account.
-1. Click on the ![](media/hamburger.png) to open the side menu.
-2. Select  `Digital Assitant`
+1. Access the cloud tenant using your **Oracle SSO account**.
+2. Click on the ![](media/hamburger.png) to open the side menu.
+3. Select  **Digital Assistant**
 
-	![](media/cloud_dashboard_oda.png)
+	![](.media/cloud_dashboard_oda.png)
 
-3. On the Digital Assitance console, click the sub menu next to the instance name and select `Service Console`; don't forget to select the compartment if you need to.
+4. On the Digital Assistance console, click the sub menu next to the instance name and select **Service Console**; don't forget to select the compartment if you need to.
 <br>![](media/oda_console_access2.png)
 
-4. Provide your tenant name, and click continue
+5. Provide your tenant name, and click continue
 <br>![](media/oda_tenant_access.png)
 
-1. Click on continue under SSO and provide your credentials if required
+6. Click on continue under SSO and provide your credentials if required
 <br>![](media/oda_tenant_login.png)
 
-1. With the Oracle Digital Assistant UI open in your browser, click ![](media/hamburger.png) to open the side menu.
+7. With the Oracle Digital Assistant UI open in your browser, click ![](media/hamburger.png) to open the side menu.
 
-1. Click **Development** and select **Skills**.
+8. Click **Development** and select **Skills**.
 <br>![](media/oda_dashboard2.png)
 
-1. Click ![](media/hamburger%202.png) again to collapse the side menu.
+9. Click ![](media/hamburger%202.png) again to collapse the side menu.
 
-1. Click the **+ New Skill** button
+10. Click the **+ New Skill** button
 <br>![](media/oda_new_skill.png)
 
-1. The Create Skill dialog appears.
+11. The Create Skill dialog appears.
 <br>![](media/dialog_create-skill.png)
 
-1. For **Display Name** enter `Mama Maggy`. If you are working in an environment where others may also be creating the same tutorial, prefix `Mama Maggy` with your unique initials.
+12. For **Display Name** enter `Mama Maggy`. If you are working in an environment where others may also be creating the same tutorial, prefix `Mama Maggy` with your unique initials.
 
-1.  For **Version**, enter `1.0`
+13.  For **Version**, enter `1.0`
 
-1.  Optionally, fill in a one-sentence description, e.g. `Skill` for ordering from Pizza King
+14.  Optionally, fill in a one-sentence description, e.g. `Skill` for ordering from Mama Maggy
 
-2.  Click **Create**.The designer will then open on the **Intents** page. Here’s where we’ll begin to express the use case in terms of the concepts that support Natural Language Processing (NLP): intents and entities.
+15.  Click **Create**.The designer will then open on the **Intents** page. Here’s where we’ll begin to express the use case in terms of the concepts that support Natural Language Processing (NLP): intents and entities.
 
 <br>
 
 ## Create Intents
 
-Oracle Digital Assistant’s underlying natural language processing (NLP) engine doesn’t inherently know about the business or task that a skill is supposed to assist with. For the skill to understand what it should react to, you need to define intents and examples (utterances) for how a user would request a specific intent. 
+Oracle Digital Assistant’s underlying natural language processing (NLP) engine doesn’t inherently know about the business or task that a skill is supposed to assist with. For the skill to understand what it should react to, you need to define intents and examples (*utterances*) for how a user would request a specific intent. 
+For example, if you want your skill to respond to a “Hello” message, you need to train it on the different variations of the same message:
+* *Hello*
+* *Hi*
+* *Howdy*
+* *Hey*
+* *What’s up*
+
+As the skill is trained, the engine will be able to automatically identify a “Hello” intent and deliver the expected “Welcome” message.
 
 For the Mama Maggy example, you will create intents for ordering pizza, cancelling an order, and filing a complaint.
 
@@ -117,7 +126,7 @@ For the Mama Maggy example, you will create intents for ordering pizza, cancelli
     
 2. In the **Name** field, type `CancelPizza`.
 
-3. The **Conversation Name** should be autopopulated with `CancelPizza`. Type it in otherwise by clicking the edit pencil next to the **Conversation Name**
+3. The **Conversation Name** should be auto-populated with `CancelPizza`. Type it in otherwise by clicking the edit pencil next to the **Conversation Name**
 
 4. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key.
 
@@ -141,7 +150,7 @@ For the Mama Maggy example, you will create intents for ordering pizza, cancelli
 
 2. In the **Name** field, type `FileComplaint`.
 
-3. The **Conversation Name** should be autopopulated with `FileComplaint`. Type it in otherwise by clicking the edit pencil next to the **Conversation Name**
+3. The **Conversation Name** should be auto-populated with `FileComplaint`. Type it in otherwise by clicking the edit pencil next to the **Conversation Name**
 
 4. Copy the example sentences below, paste them into the **Enter your example utterances here** field, and press the Enter key.
 	
@@ -163,12 +172,12 @@ For the Mama Maggy example, you will create intents for ordering pizza, cancelli
 
 ### Train Your Intents
 
-You’ve now provided the basic ingredients that allow the skill to recognise user input for ordering a pizza, but right now, the skill has no cognition. It can’t understand any user input. To enable it to understand the intents, you need to train it.
+You’ve now provided the basic ingredients that allow the skill to recognise user inputs for ordering a pizza, but right now, the skill has no cognition. It can’t understand any user input. To enable it to understand the intents, you need to train it.
 
 1. Locate the **Train button** (![](media/train-button.png)) on the right side of the page.
 <br>![](media/screenshot_train-button.png)
 
-2. Select `Trainer Ht` a Linguist based model.
+2. Select `Trainer Ht` a linguist based model.
 <br>![](media/oda_intent_2.png)
 
 3. Click ![](media/train-button%202.png), click **Submit**, and then wait a few seconds for the training to complete.
@@ -204,16 +213,16 @@ A good intent model is one that has a low ambiguity between the different intent
 11. Type `You are expensive and you still don’t deliver on time` in the **Message** field and click **Send**.
 <br>![](media/screenshot_try-it-out3.png)
 
-12. In all likelihood, the FileComplaint intent did not receive the highest score. In the above screenshot, OrderPizza "won", though it’s also possible that CancelPizza could get the highest score.
+12. In all likelihood, the `FileComplaint` intent did not receive the highest score. In the above screenshot, OrderPizza "won", though it’s also possible that CancelPizza could get the highest score.
 
-13. To help remedy this, in the FileComplaint intent row of the dialog, select the radio button and then click the **Add Example** button to add the utterance to the FileComplaint intent.
+13. To help remedy this, in the `FileComplaint` intent row of the dialog, select the radio button and then click the **Add Example** button to add the utterance to the FileComplaint intent.
 <br>![](media/screenshot_try-it-out4.png)
 
     **Note:** In these examples, you might get slightly different confidence scores than what are shown here. And in some cases, the matching intents themselves could vary, should the differing confidence scores push those intents above or below the given confidence thresholds. The cause of this variance is the non-deterministic nature of the AI behind the natural language processing and the fact that these skills have a limited number of training utterances (in order to make the lab simpler).
 
 14. Retrain the skill. 
 
-    **Note:** For us humans it is easy to see that "You are expensive and you still don’t deliver on time" is not an order but a complaint. However, a skill first needs to be trained before it is able to gain the same understanding. The NLP model in this lab is not trained with a lot of data, so it’s more likely to make mistakes.
+    **Note:** For us humans, it is easy to see that "You are expensive and you still don’t deliver on time" is not an order but a complaint. However, a skill first needs to be trained before it is able to gain the same understanding. The NLP model in this lab is not trained with a lot of data, so it’s more likely to make mistakes.
 
 15. Think of two or three more phrases that the system might have problems matching to an intent with high confidence and try them in the Intent tester. If you find one that doesn’t match well, select the intent that it should be resolved to and click **Add Example**.
 
@@ -230,14 +239,14 @@ In a real skill project, you would always need to go back to the intent testing 
 
 ## Create Entities
 
-Now it’s time to add entities, which detect information in the user input that can help the intent fulfill a user request. For the Pizza King business, such information could be the size of pizza, the toppings of pizza, and delivery time. For example, the user input "I’d like to order a _small meaty_ pizza at _9:00 pm_" contains all three of these information types.
+Now it’s time to add entities, which detect information in the user input that can help the intent fulfil a user request. For the Pizza King business, such information could be the size of pizza, the toppings of pizza, and delivery time. For example, the user input `I’d like to order a _small meaty_ pizza at _9:00 pm_` contains all three of these information types.
 
 We’ll create custom entities for size and topping and later use a built-in entity for time. While we’re at it, we’ll add some synonyms (including some common misspellings) that optimize the entity’s ability to tag words from sloppy user input.
 
 ### Create Entities for Pizza Size and Pizza Topping
 
 1. In the left navigation for the designer, select ![](media/left_nav_entities.png)
-2. Click the `+ Entity` to create a new entity.
+2. Click the **+ Entity** to create a new entity.
 <br>![](media/oda_entity_2.png)
 
 3. In the **Name** field, change the value to `PizzaSize`
@@ -245,7 +254,7 @@ We’ll create custom entities for size and topping and later use a built-in ent
 
 4. In the Configuration section, in the **Type** dropdown, select **Value list**.
 
-5. Click `+ Value`
+5. Click **+ Value**
 
 6. In the **Create Value** window, for **Value**, type `Small` 
 
@@ -261,14 +270,14 @@ We’ll create custom entities for size and topping and later use a built-in ent
     Your screen should look like what is shown here:
 <br>![](media/oda_entity_5.png)
 
-10. Click `Create` in the **Create Entity** window.
+11. Click **Create** in the **Create Entity** window.
 <br>![](media/oda_entity_6.png)
 
-11. Click ![](media/oda_entity_2.png) to create a new entity.
+12. Click ![](media/oda_entity_2.png) to create a new entity.
 
-12. In the **Name** field, change the value to `PizzaTopping`.
+13. In the **Name** field, change the value to `PizzaTopping`.
 
-13. In the Configuration section, in the **Type** dropdown, select **Value list**.
+14. In the Configuration section, in the **Type** dropdown, select **Value list**.
 
 15. Add values for `Meaty` , `Veggie`, `Hot and Spicy`, and `American Hot`. Your list of entities should look like what is shown here:
 <br>![](media/oda_entity_7.png)
@@ -282,7 +291,7 @@ For an entity to be recognised when parsing the user input message, it needs to 
 
 2. Select the `OrderPizza` intent.
 
-3. Click `+ Entity` (in the upper right side of the page).
+3. Click **+ Entity** (in the upper right side of the page).
 <br>![](media/oda_entity_8.png)
 
 
@@ -345,7 +354,11 @@ Our first step is to create the basic flow outline, including context variables 
 
 
     **Important:** Make sure that they are indented two spaces more than the `variables:` (four spaces total). If the indentation isn’t exact, metadata validation will fail. This is what the flow should now look like: 
-<br>![](media/screenshot_dialog-flow2.png)
+
+    <br>![](media/screenshot_dialog-flow2.png)
+One useful tool to verify your YAML file is [CodeBeautify](https://codebeautify.org/yaml-validator). Paste your code and check it by clicking `Validate`.
+
+    <br>![](./media/codebeautify.png)
 
     Now we’re ready to add some states.
 
@@ -370,11 +383,11 @@ First we’ll add the `System.Intent` component. This component evaluates user i
 
 6. Delete the following properties:
     
-	* botName
-	* botVersion
-	* sourceVariable
-	* autoNumberPostbackActions
-	* footerText
+	* **botName**
+	* **botVersion**
+	* **sourceVariable**
+	* **autoNumberPostbackActions**
+	* **footerText**
 
     ![](media/oda_dialog_7.png)
 
@@ -439,18 +452,18 @@ Next, you need to create the dialog flow states that each possible outcome navig
 
 ### Troubleshooting Errors in the Dialog Flow
 
-If you don’t see a success message, then most likely you misspelled a property name or did not follow the required two-space indenting increments. In this case, scroll through the dialog flow until you see an ![](media/error-icon.png) icon in the left margin. 
+If you don’t see a success message, then most likely you misspelled a property name or did not follow the required **two-space indenting increments**. In this case, scroll through the dialog flow until you see an ![](media/error-icon.png) icon in the left margin. 
 
 Mouse over the icon to display the tooltip with a description of the problem. In addition, you can click the debug icon ![](media/debug-icon.png) which appears to the left of the dialog flow editor. It often provides additional information about the reason. You close the debug window by clicking the debug icon again.
 
-One useful tool to verify your YAML file is [CodeBeautify](https://codebeautify.org/yaml-validator). Paste your code and check it by clicking `Validate`.
+As you keep adding lines, you might introduce syntax errors.  You can use [CodeBeautify](https://codebeautify.org/yaml-validator) to validate your code. 
 <br>![](./media/codebeautify.png)
 
 If you have gotten into a jam and can’t get anything to work, open the [your-first-dialog-flow.txt](../files/your-first-dialog-flow.txt)  and replace the content in your dialog flow with the content from the file.
 
 ### Tune Intent Resolution
 
-Before moving further, let’s take a look at some settings that are useful for fine-tuning intent resolution.
+Before moving further, let’s take a look at some settings that are useful for **fine-tuning** intent resolution.
 * **Confidence Threshold:** The skill uses this property to steer the conversation by the confidence level of the resolved intent. Set the minimum confidence level required to match an intent. When the level falls below this minimum value, the component triggers its unresolvedIntent action.
 * **Confidence Win Margin:** When a skill can’t determine a specific intent, it displays a list of possible intents and prompts the user to choose one. This property helps the skill determine what intents should be in the list. Set the maximum level to use for the delta between the respective confidence levels for the top intents. The list includes the intents that are greater than or equal to this delta and exceed the value set for the Confidence Threshold.
 Let’s update these settings:
@@ -463,7 +476,7 @@ Let’s update these settings:
 
 ## Test the Basic Flow
 
-Before doing any further development, let’s test the basic flow to make sure it responds correctly to initial user input.
+Let’s test the basic flow to make sure the skill responds correctly to initial user input.
 
 1. Open the skill tester by clicking (![](media/test_button.png)) in the bottom of the skill’s left navigation bar.
 
@@ -474,7 +487,7 @@ Before doing any further development, let’s test the basic flow to make sure i
 
 4. Click **Reset**.
 
-5. In the **Message** field, type `I want to cancel my order` and then press Enter. The skill should respond with a message regarding pizza cancelation. And, in the Intent Matches panel, you should see that the CancelPizza intent is matched.
+5. In the **Message** field, type `I want to cancel my order` and then press Enter. The skill should respond with a message regarding pizza cancelation. And, in the Intent Matches panel, you should see that the `CancelPizza` intent is matched.
 
 6. Click **Reset**.
 
@@ -486,7 +499,7 @@ Before doing any further development, let’s test the basic flow to make sure i
 8. Finally, try a last random utterance, click reset and in the message field type `Can you get me a radio taxi now?`
 <br>![](media/screenshot_test-intent-qa3.png)
 
-    As you can see, the confidence threshold level falls below this minimum value of 60% in this case, so the component triggers its unresolvedIntent action.
+	As you can see, the confidence threshold level falls below this minimum value of **60%** in this case, so the component triggers its unresolvedIntent action.
 
 ## Build the Pizza Order Conversation Flow
 
@@ -673,13 +686,18 @@ This tutorial shows you how to use the Oracle Native SDK for Web/JavaScript (als
 
 **Note:** This tutorial won't work if you are using Oracle Digital Assistant Release 19.4.1, since the version of the SDK that this tutorial requires is only available for instances of Digital Assistant that have been provisioned on Oracle Cloud Infrastructure (Gen 2). For information on setting up a web channel on Digital Assistant 19.4.1, see [Expose Your Digital Assistant through a Web Channel](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-web-channel/index.html).
 
+As part of this exercise, you will be provided with the following assets:
+* [index.html](../files/index.html)
+* [style.css](../files/style.css)
+* [scripts.zip](../files/scripts.zip)
+
+These files and their content will be explained during the live session. 
+
 **Background**
 
 While your customers can access your skills through many platforms, such as Android apps, Twilio SMS, Facebook Messenger, WeChat, and Slack, they also can access skills directly from your website through the Oracle Web SDK. This feature gives your customers the opportunity to ask questions, complete transactions, resolve problems, and so on, as they browse your web pages.
 
-The SDK's features include:
-
-- Configurable components, such as
+The SDK's features include configurable components, such as:
 - Timestamp display
 - Chat bubble size and padding
 - Font color and size
@@ -692,66 +710,63 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
 
 ### Create The Channel
 
-1. Lets start by creating a channel. Login into your Oracle Digital Assistant Console, click on the **General Menu**, select **Development**, and then **Channels**.
+1. Let's start by creating a channel. Login into your Oracle Digital Assistant Console, click on the **General Menu**, select **Development**, and then **Channels**.
 <br>![](media/oda_channel_1.png)
 
-1. Click on the **General Menu** again to close the side menu and then **+Channel** to add a new channel.
+2. Click on the **General Menu** again to close the side menu and then **+Channel** to add a new channel.
 <br>![](media/oda_channel_2.png)
 
-1. Give the channel a name, a description, select channel type `Oracle Web`, in `Allow Domains` enter * and for the purpose of this lab disable `Cliente Authentication Enabled`.
+3. Give the channel a name, a description, select channel type `Oracle Web`, in `Allow Domains` enter `*` and for the purpose of this lab disable `Cliente Authentication Enabled`.
 <br>![](media/oda_channel_3.png)
 
 
 4. Make sure the **Route To** is set and the **Channel Enabled** is enabled. 
 <br>![](media/oda_channel_4a.png)
 
-1. Copy the `Channel Id` and the `URI` to a notepad. We will use it for the WebApp configuration.
+5. Copy the `Channel Id` and the `URI` to a notepad. We will use it for the WebApp configuration.
 <br>![](media/oda_channel_4.png)
 
 ### Create The VBCS Web App
 
-1. Now login into Visual Builder Cloud Service and create a new WebApp
+1. Now login into Visual Builder Cloud Service and create a new WebApp on a separate project.
 <br>![](./media/oda_channel_5.png)
 
-1. Select the app name at the root level and click on the code snippet, delete the content from the file and copy the code from the sample file [Index.html](../files/index.html)
+2. Select the app name at the root level and click on the code snippet, delete the content from the file and copy the code from the sample file [Index.html](../files/index.html)
 <br>![](./media/oda_channel_7.png)
 
-1. Fill the `URI` and `YOUR CHANNEL` variables with the information copied on step 4
+3. Fill the `URI` and `YOUR CHANNEL` variables with the information copied on step 4
 <br>![](./media/oda_channel_8.png)
 
-1. Download the ODA Web SDK script files [script.zip](../files/scripts.zip) to your laptop. You can download the latest version of the SDK from [Oracle Digital Assistant (ODA) and Oracle Mobile Cloud (OMC) Downloads](https://www.oracle.com/downloads/cloud/amce-downloads.html).
+4. Download the ODA Web SDK script files [script.zip](../files/scripts.zip) to your laptop. You can download the latest version of the SDK from [Oracle Digital Assistant (ODA) and Oracle Mobile Cloud (OMC) Downloads](https://www.oracle.com/downloads/cloud/amce-downloads.html).
 
-2. Right click on **Resource**  and select **Import**
+5. Right click on **Resource**  and select **Import**
 <br>![](./media/oda_channel_9.png)
 
-
-1. Drag or search the scripts zip file downloaded in the previous step.
+6. Drag or search the scripts zip file downloaded in the previous step.
 <br>![](./media/oda_channel_10.png)
 
 
-1. Click on the + option next to **css** under **Resources**, and add a new page.
+7. Click on the + option next to **css** under **Resources**, and add a new page.
 <br>![](./media/oda_channel_11.png)
 
-1. Name it `style.css`
+8. Name it `style.css`
 <br>![](./media/oda_channel_12.png)
 
 
-1. Select the new `style.css` page and copy the content from [style.css](../files/style.css)
+9. Select the new `style.css` page and copy the content from [style.css](../files/style.css)
 <br>![](./media/oda_channel_13.png)
 
-14. Now it is time to test your new app, click the play button locate at the top right of your screen.
+10. Now it is time to test your new app, click the play button locate at the top right of your screen.
 <br>![](./media/oda_channel_14.png)
 
-1. You should see the web app screen with the skill icon at the bottom right. *Note: The chatbot's default behavior is to popup as the webpage load. If it's not active, click on the chatbot icon to initiate the test.
-  
+11. You should see the web app screen with the skill icon at the bottom right. *Note: The chatbot's default behavior is to popup as the webpage load. If it's not active, click on the chatbot icon to initiate the test.
 <br>![](./media/oda_channel_15.png)
 <br>![](./media/oda_channel_15_b.png)
 
-
-2. Type `I want a pizza` and press enter. You will experience the same behavior in testing the Digital Assistant that you had created earlier.
+12. Type `I want a pizza` and press enter. You will experience the same behavior in testing the Digital Assistant that you had created earlier.
 <br>![](./media/oda_channel_16.png)
 
-1. Finally, Let's use one of the message created during the training process. type the message `Dude, can you get me the biggest hot and spicy pizza you can make at noon` and press enter. You will immediately presented with the results of the order.
+13. Finally, Let's use one of the message created during the training process. type the message `Dude, can you get me the biggest hot and spicy pizza you can make at noon` and press enter. You will immediately presented with the results of the order.
 <br>![](./media/oda_channel_17.png)
 
 <br>
