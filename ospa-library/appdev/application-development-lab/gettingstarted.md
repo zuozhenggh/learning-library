@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started - Mobile and Digital Assistant Labs
 
 ## Lab Purpose and Rules
 
@@ -130,8 +130,4 @@ That’s it, you’ve created your first Oracle Digital Assistant instance.
 
 ## Hands-On Labs
 
-Once you have created Oracle Visual Builder Cloud Service and Oracle Digital Assistant instances, you can move to the labs page.
-
-[Lab 1: Oracle Visual Builder Cloud Service](./vbcs-lab/index.html)
-
-[Lab 2: Oracle Digital Assistant](./oda-lab/index.html)
+Labs Documentation URLs to be delivered during the Live Session.
