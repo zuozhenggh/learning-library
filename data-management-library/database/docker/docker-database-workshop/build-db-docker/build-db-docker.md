@@ -8,7 +8,7 @@ A Docker image contains all of the necessary code to execute an application for 
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](https://cloud.oracle.com/tryit).
+* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * SSH keys
 * Docker installed on an Oracle Cloud Compute instance.
 
@@ -18,16 +18,16 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
 
 1. If you don't have an open SSH connection to your compute instance, open and terminal window and connect using the public IP address of your compute instance:
 
-  ```
+    ```
     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
     Enter passphrase for key './myOracleCloudKey':
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 
 2. Use the `wget` to download the repo on the compute instance:
 
-  ```
-    [opc@oraclelinux77 ~]$ <copy>wget https://github.com/oracle/docker-images/archive/master.zip</copy>
+    ```
+      [opc@oraclelinux77 ~]$ <copy>wget https://github.com/oracle/docker-images/archive/master.zip</copy>
     --2020-04-07 18:23:39--  https://github.com/oracle/docker-images/archive/master.zip
     Resolving github.com (github.com)... 140.82.112.4
     Connecting to github.com (github.com)|140.82.112.4|:443... connected.
@@ -45,10 +45,10 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
     2020-04-07 18:23:39 (12.1 MB/s) - ‘master.zip’ saved [2797020]
 
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 3. Unzip the repo on your compute instance:
 
-  ```
+    ```
     [opc@oraclelinux77 ~]$ <copy>unzip master.zip</copy>
     Archive:  master.zip
     7e03e466934753bc547c1919729702e5f33e4eba
@@ -62,7 +62,7 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
       inflating: docker-images-master/OracleWebLogic/samples/wls-k8s-domain/k8s/wls-stateful.yml
       inflating: docker-images-master/README.md
     [opc@oraclelinux77 ~]$
-  ```
+    ```
 
 ## **STEP 2**: Upload Oracle Database zip to your compute instance
 
@@ -72,52 +72,52 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
 
 2. To transfer the zip file to your compute instance, connect using `sftp` and the public IP address of your compute instance:
 
-  ```
+    ```
     <copy>sftp -i ./myOracleCloudKey opc@</copy>123.123.123.123
     Enter passphrase for key './myOracleCloudKey':
     Connected to 129.213.35.186.
     s
-  ```
+    ```
 
 3. Change to the local directory (on your PC) where you downloaded Oracle Database:
 
-  ```
+    ```
     s     lcd <path to the zip file on your PC>
     s
-  ```
+    ```
 
 4. Change directories on the compute instance to the `19.3.0` directory of the Docker repo. It is important that you put the Oracle Database installation zip file into the directory that is named the same as the Database version.
 
 
-  ```
+    ```
     s     <copy>cd docker-images-master/OracleDatabase/SingleInstance/dockerfiles/19.3.0</copy>
     s
-  ```
+    ```
 
 5. Use the `put` command to copy the zip file to the Compute instance. When it is complete you can exit `sftp`. Depending on your local internet bandwidth, the upload can take up to 2 hours. **Do not unzip the file.**
 
-  ```
+    ```
     s     <copy>put LINUX.X64_193000_db_home.zip</copy>
     Uploading LINUX.X64_193000_db_home.zip to /home/opc/docker-images-master/OracleDatabase/SingleInstance/dockerfiles/19.3.0/LINUX.X64_193000_db_home.zip
     LINUX.X64_193000_db_home.zip                                        8%  248MB  29.5MB/s   01:30 ETA
     ...
     LINUX.X64_193000_db_home.zip                                      100% 2918MB  32.4MB/s   01:30
     s     exit
-  ```
+    ```
 
 ## **STEP 3**: Build the Docker image
 
 1. In the terminal window connected to your compute instance, change directories to the `dockerfiles` directory:
 
-  ```
+    ```
     [opc@oraclelinux77 ~]$<copy>cd docker-images-master/OracleDatabase/SingleInstance/dockerfiles</copy>
     [opc@oraclelinux77 dockerfiles]$
-  ```
+    ```
 
 2. Build the Docker image using the `buildDockerImage` script.
    Be sure to read the [README.md](https://github.com/oracle/docker-images/blob/master/OracleDatabase/SingleInstance/README.md) file which explains the build process in greater detail.
 
-  ```
+    ```
     [opc@oraclelinux77 dockerfiles]$ <copy>./buildDockerImage.sh -v 19.3.0 -e</copy>
     Checking Docker version.
     Checking if required packages are present and valid...
@@ -164,7 +164,7 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
       Build completed in 1850 seconds.
 
     [opc@oraclelinux77 dockerfiles]$
-  ```
+    ```
 
   Note when the script completes, it lists the new Docker image: `oracle/database:19.3.0-ee`.
 

@@ -8,7 +8,7 @@ Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Databa
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](https://cloud.oracle.com/tryit).
+* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * An instance of an Oracle Database running on an Oracle Cloud Virtual Machine
 * An open port (1521) on your Oracle Cloud Virtual Cloud Network (VCN)
 * [Oracle SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html)
