@@ -130,4 +130,4 @@ That’s it, you’ve created your first Oracle Digital Assistant instance.
 
 ## Hands-On Labs
 
-Instructors will provide the Labs Documentation URLs during the Live Session.
+Labs Documentation URLs to be delivered during the Live Session.
