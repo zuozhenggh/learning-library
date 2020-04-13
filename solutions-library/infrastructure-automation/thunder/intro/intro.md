@@ -97,6 +97,18 @@ The examples are organized as follows:
     <td>-</td>
     <td>-</td>
   </tr>
+    <tr>
+    <td><a href="?lab=lab-9-custom-images">custom images</td>
+    <td>Contains custom images examples</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
 </table>
 
 ## Acknowledgements
