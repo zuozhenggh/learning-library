@@ -108,18 +108,6 @@ The examples are organized as follows:
     <td>-</td>
   </tr>
   <tr>
-    <td><a href=./examples/network_architectures/network-architectures.md>network architectures</td>
-    <td>Contains network architecture examples</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  <tr>
     <td><a href=./examples/custom_images/custom-images.md>custom images</td>
     <td>Contains custom images examples</td>
     <td>-</td>
