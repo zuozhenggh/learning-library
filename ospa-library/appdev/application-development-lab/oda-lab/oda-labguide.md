@@ -570,9 +570,9 @@ Next, you need to create the dialog flow states that each possible outcome navig
           return: "done"  
 
 
-1. Copy and paste the code at the bottom of the dialog flow. Make sure that the indentation is preserved in the pasted content.
+8. Copy and paste the code at the bottom of the dialog flow. Make sure that the indentation is preserved in the pasted content.
 
-2. Verify the correctness of your edits by clicking the **Validate** button on the top of the page.
+9. Verify the correctness of your edits by clicking the **Validate** button on the top of the page.
 
    ![](media/oda_dialog_8.png)
 

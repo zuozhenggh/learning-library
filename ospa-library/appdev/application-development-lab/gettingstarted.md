@@ -47,60 +47,46 @@ In this lab you will make sure you can access the VBCS instance for your classro
 ### Oracle Visual Builder Cloud Service Instance Creation Guide
 
 1. First, go to cloud.oracle.com, click on **View Accounts** and select **Sign in to cloud**
-    
-    ![](./media/cloudoracle.png)
+<br>![](./media/cloudoracle.png)
 
 2. Enter your tenant account
-
-    ![](./media/tenant.png)
+<br>![](./media/tenant.png)
 
 1. On the login screen select SSO and provide your credentials *(Contact your tenant admin if you are using a different login mechanism)*
-    
-    ![](./media/credentials_2.png)
-    
-    If required enter a **Second Factor Authentication** when prompted
-    
-    ![](./media/credentials_3.png)
-
+<br>![](./media/credentials_2.png)
 
 1. Once in the main dashboard, open the **General Menu** located at the top left hand side of the screen, select **Platform Services**, and click on **Visual Builder**
+<br>![](./media/vb_dashboard.png)
 
-    ![](./media/vb_dashboard.png)
+1. Log into your tenancy using cloud.oracle.com; be sure it has been provisioned to allow Visual Builder Cloud Service and the database and object storage instances also required.  (check with your tenancy admin if unsure)
+   
+2. Select Platform Services and click on **Visual Builder**
 
 
 3. If you have not created any services the Service Console prompts you to begin the process.
 **DO NOT** CLICK “CREATE INSTANCE” at this time, we will be using **Quick Starts**
-
-    ![](./media/image_a_11.png)
+<br>![](./media/image_a_11.png)
 
 
 1. Visual Builder provides a “Quick Starts” capability to build an instance complete with supporting database and object storage. Click the “Quick Starts” button to get started it is located in the upper-right portion of the Service Console display inside the big blue bar.
-    
-    ![](./media/image_a_13.png)
+<br>![](./media/image_a_13.png)
 
 
 1. Click on **Custom**
+<br>![](./media/vbcs_instance_custom.png)
 
-    ![](./media/vbcs_instance_custom.png)
-
-
-1. Provide an instance name, description, and region. Once complete, click next and confirm. 
-
-    ![](./media/vbcs_instance_data.png)
-    
-    The instance creation can take up to 10 min.
-
-    ![](./media/vbcs_instance_creation.png)
-
-<br>
+1. Provide an instance name, description, and region. Once complete, click next and confirm. The instance creation can take up to 10 min.
+<br>![](./media/vbcs_instance_data.png)
+<br>![](./media/vbcs_instance_creation.png)
 
 That’s it, you’ve created an instance that can support many VBCS applications and user.
 
-NOTE: If others will be sharing your VBCS instance you will need to use Oracle Identity Cloud Service (IDCS)
+
+NOTE:
+If others will be sharing your VBCS instance you will need to use Oracle Identity Cloud Service (IDCS)
 to make sure they have `ServiceDeveloper` (Visual Builder Administrator) role for your instance if they are developers or 'ServiceAdministrator' (Visual Builder Administrator) role if they need to administer other's applications. 
 See Oracle Documentation for more information.
 
-<br>
 
 ## Create an Digital Assistant Instance
 
@@ -108,6 +94,7 @@ As part of the lab, we expect learns to create the Digital Assitant instance bef
 If you are creating a new instance either for the lab purposes or a customer demonstration, please follow the next steps; the process is simple but require several minutes to complete.
 
 ### Video
+
 
 [![Creating a Digital Assistant Instance](./media/playback_creating_instance_oda.png)](https://otube.oracle.com/media/Oracle+Sales+and+Partner+Academy+-+AppDev+Virtual+Workshop+-+Creating+an+ODA+Instance/1_ee3m2ce9)
 
@@ -117,46 +104,26 @@ If you are creating a new instance either for the lab purposes or a customer dem
 ### Oracle Digital Assistance Instance Creation Guide
 
 1. First, go to cloud.oracle.com, click on **View Accounts** and select **Sign in to cloud**
+<br>![](./media/cloudoracle.png)
 
-    ![](./media/cloudoracle.png)
+1. Enter your tenant account
+<br>![](./media/tenant.png)
 
-
-1. Enter the **Cloud Account Name**
-
-    ![](./media/tenant.png)
-
-
-1. On the login screen select SSO *(Contact your tenant admin if you are using a different login mechanism)*
-
-    ![](./media/credentials.png)
-
-    Provide your credentials 
-
-    ![](./media/credentials_2.png)
-
-    If required enter a **Second Factor Authentication** when prompted
-    
-    ![](./media/credentials_3.png)
-
+1. On the login screen select SSO and provide your credentials *(Contact your tenant admin if you are using a different login mechanism)*
+<br>![](./media/credentials.png)
+<br>![](./media/credentials_2.png)
 
 1. Once in the main dashboard, open the **General Menu** located at the top left hand side of the screen and click on **Digital Assitant**
-    
-    ![](./media/creating_oda_1.png)
-
+<br>![](./media/creating_oda_1.png)
 
 1. In the Digital Assistant console, select the compartment where to deploy the new instance and click on **Create Digital Assistant Database**
-
-    ![](./media/creating_oda_2.png)
-
+<br>![](./media/creating_oda2.png)
 
 1. In the Digital Assistant creation screen, provide a name, description, and shape (For the lab purposes select `Production`), and click **Create**
-    
-    ![](./media/creating_oda_3.png)
-
+<br>![](./media/creating_oda_3.png)
 
 1. The process might take a few minutes. Once created, you should see the instance as **Active**
-    
-    ![](./media/creating_oda_4.png)
+<br>![](./media/creating_oda_4.png)
 
 
 That’s it, you’ve created your first Oracle Digital Assistant instance.
