@@ -975,13 +975,13 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
 
     ![](./media/oda_channel_5.png)
 
-2. Select the app name at the root level and click on the code snippet, delete the content from the file and copy the code from the sample file [Index.html](../files/index.html). 
+2. Select the app name at the root level and click on the code snippet, delete the content from the file and copy and paste the code from the sample file [Index.html](../files/index.html). 
 
-   *Note: You must edit the file with a code editor of your choice and copy it’s content.*
+   *Note: You must edit the file with a code editor (or text editor) of your choice and copy it’s content.*
 
    ![](./media/oda_channel_7.png)
 
-3. Fill the `URI` and `YOUR CHANNEL` variables with the information copied on step 5 from the previous exercise.
+3. Replace the `URI` and `CHANNELID` variables with the information that you should already had saved from the previous exercise (step 5).
 
    ![](./media/oda_channel_8.png)
 
