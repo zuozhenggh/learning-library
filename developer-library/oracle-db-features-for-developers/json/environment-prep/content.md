@@ -21,7 +21,7 @@ For this lab we will use the ***Order Entry (OE)*** sample schema that is provid
 Connect to the **ORCLPDB** pluggable database, as SYSDBA.
 
 ````
-$ <copy>sqlplus sys/Ora_DB4UP@localhost:1521/orapdb as SYSDBA</copy>
+$ <copy>sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA</copy>
 ````
 
 Grant **OE** user some privileges required for the tasks we will execute in this lab.
@@ -52,11 +52,12 @@ end;
 /</copy>
 ````
 
-Just make sure the execution is successful.
+    ![](images/p_addACL.png)
+Ensure the execution is successful.
 
 ### SQL*Plus Formatting
 
-Close SYSDBA connection and connect as **OE** user to pluggable database PDB01. From this point, all tasks on the database side will be performed using **OE** user. For SQL*Plus, it is also useful to format the output. Feel free to use your own formatting, or just run these formatting commands every time you connect.
+Close the SYSDBA connection and connect as the **OE** user to pluggable database ORCLPDB. From this point, all tasks on the database side will be performed using the **OE** user. For SQL*Plus, it is also useful to format the output. Feel free to use your own formatting, or just run these formatting commands every time you connect.
 
 ````
 > <copy>conn oe/Ora_DB4U@localhost:1521/orclpdb</copy>
