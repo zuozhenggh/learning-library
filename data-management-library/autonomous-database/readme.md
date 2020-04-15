@@ -5,7 +5,7 @@ Oracle’s revolutionary cloud database is self-driving, self-securing, self-rep
 ## Workshops
 Click on one of our workshops below to access the content.
 
-### ADB Shared Infrastructure
+### ADB Serverless Infrastructure
 
 [![](./images/screenshot-adb.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-journey-workshop/index.html)  ![](./images/transparent.png " ") 
 

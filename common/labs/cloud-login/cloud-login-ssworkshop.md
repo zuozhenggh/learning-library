@@ -36,10 +36,14 @@ The following lab requires an Oracle Cloud account from the SSWorkshop Platform.
 
 4. Once you successfully login, you will be presented with the Oracle Cloud homepage. (NOTE: If you get an *Email Activation Unsuccessful* message, check to see if you can still access the cloud by looking for the hamburger menu to the left). 
 
-    ![](./images/cloud-homepage.png " ") 
+    ![](./images/emailactivation.png " ") 
+
+5. Click on the Oracle Cloud logo in the upper left corner to go to the Cloud homepage.
+   
+    ![](./images/topmenu.png " ") 
 
 
-5.  In Email 2, you were also assigned a region.  Click in the upper right hand corner and set your Region appropriately.   (*NOTE:  Setting the region is important, your network is region specific.  If you choose a different region you will get an error during certain parts of your lab*) 
+6.  In Email 2, you were also assigned a region.  Click in the upper right hand corner and set your Region appropriately.   (*NOTE:  Setting the region is important, your network is region specific.  If you choose a different region you will get an error during certain parts of your lab*) 
 
     ![](./images/changeregion.png " ") 
 

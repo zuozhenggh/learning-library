@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started - Mobile and Digital Assistant Labs
 
 ## Lab Purpose and Rules
 
@@ -59,30 +59,12 @@ In this lab you will make sure you can access the VBCS instance for your classro
 <br>![](./media/vb_dashboard.png)
 
 1. Log into your tenancy using cloud.oracle.com; be sure it has been provisioned to allow Visual Builder Cloud Service and the database and object storage instances also required.  (check with your tenancy admin if unsure)
+   
+2. Select Platform Services and click on **Visual Builder**
 
 
-2. From the “Visual Builder” service box there are two ways to open a service console.
-<br>![](./media/image_a_3.png)
-
-
-1. One method is to click on the box’s “Visual Builder” text to display an overview page.
-<br>![](./media/image_a_7.png)
-
-1. From the overview page, click the “Open Service Console” button to continue.
-<br>![](./media/image_a_8.png)
-
-
-1. Another method is to click the **General Menu** icon
-<br>![](./media/image_a_9.png) in the lower-right corner of the  “Visual Builder” service box to display a menu.
-<br>![](./media/image_a_3.png)
-
-
-1. Select “Open Service Console” from the menu.
-<br>![](./media/image_a_10.png)
-
-
-1. If you have not created any services the Service Console prompts you to begin the process.
-**DO NOT** CLICK “CREATE INSTANCE” at this time, we will be using **Quick Starts** (see step 5).
+3. If you have not created any services the Service Console prompts you to begin the process.
+**DO NOT** CLICK “CREATE INSTANCE” at this time, we will be using **Quick Starts**
 <br>![](./media/image_a_11.png)
 
 
@@ -148,8 +130,4 @@ That’s it, you’ve created your first Oracle Digital Assistant instance.
 
 ## Hands-On Labs
 
-Once you have created Oracle Visual Builder Cloud Service and Oracle Digital Assistant instances, you can move to the labs page.
-
-[Lab 1: Oracle Visual Builder Cloud Service](./vbcs-lab/index.html)
-
-[Lab 2: Oracle Digital Assistant](./oda-lab/index.html)
+Labs Documentation URLs to be delivered during the Live Session.

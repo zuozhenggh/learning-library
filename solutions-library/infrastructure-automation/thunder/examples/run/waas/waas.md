@@ -199,7 +199,7 @@ uri = {
 
 In the provided example, the following resources are created:
 
-- 1 WAF Policy with the rules:
+1 WAF Policy with the rules:
   - Access Rules
   - Rate Limiting
   - Captcha Challenge

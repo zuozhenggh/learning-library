@@ -107,9 +107,7 @@ Directory structure for Thunder, is shown below:
 
 ![Thunder Structure](../images/thunder-structure.png)
 
-In the **modules** folder, there are different terraform modules used by all of the automations. 
-
-Every module has the following structure:
+In the **modules** folder, there are different terraform modules used by all of the automations. Every module has the following structure:
 - **main.tf** -> Module logic (which components are going to be created and how are they going to be linked)
 - **variables.tf** -> Module variables (The parameters of the module)
 - **outputs.tf** -> Module outputs (Outputs can be used to print different resource values for a resource type, or to create links between other modules at instantiation)

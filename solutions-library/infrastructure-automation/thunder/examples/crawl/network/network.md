@@ -180,4 +180,4 @@ $ terraform destroy --var-file=path_to_provider.auto.tfvars
 ```
 
 ## Useful Links
-[Network Overview]https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
+[Network Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm)

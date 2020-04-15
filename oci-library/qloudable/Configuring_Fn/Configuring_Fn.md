@@ -397,7 +397,7 @@ Click **Create**
 ```bash
 fn init --runtime java <FUNCTION_NAME>
 ```
-A directory called <FUNCTION_NAME>-func is created, containing:
+A directory called <FUNCTION_NAME> is created, containing:
 
 a function definition file called func.yaml
 a /src directory containing source files and directories for the <FUNCTION_NAME> function
@@ -405,7 +405,7 @@ a Maven configuration file called pom.xml that specifies the dependencies requir
 
 32. Next we will deploy the function. Change directory to the <FUNCTION_NAME> directory created in the previous step
 ```bash
-cd <FUNCTION_NAME>-func
+cd <FUNCTION_NAME>
 ```
 
 33. Enter the following single Fn Project command to build the function and its dependencies as a Docker image called <FUNCTION_NAME>, push the image to the specified Docker registry, and deploy the function to Oracle Functions in the <NAME> used when **Create Application** was used. Enter command;

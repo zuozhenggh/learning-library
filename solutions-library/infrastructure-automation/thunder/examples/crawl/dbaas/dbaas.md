@@ -145,3 +145,5 @@ $ terraform destroy --var-file=path_to_provider.auto.tfvars
 [Database FAQ](https://cloud.oracle.com/database/faq)
 
 [Database Overview](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm)
+
+[Terraform Database Resource](https://www.terraform.io/docs/providers/oci/r/database_db_system.html)
