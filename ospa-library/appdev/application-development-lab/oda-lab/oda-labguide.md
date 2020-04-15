@@ -4,9 +4,11 @@
 # Oracle Digital Assistant
 
 **Before you begin**
+
 This 60-minute hands-on lab is an entry-level exercise for building a skill in Oracle Digital Assistant.
 
 **Background**
+
 Oracle Digital Assistant is an environment for building _digital assistants_, which are user interfaces driven by artificial intelligence (AI) that help users accomplish a variety of tasks in natural language conversations. Digital assistants consist of one or more _skills_, which are individual chatbots that are focused on specific types of tasks.
 
 
@@ -127,7 +129,7 @@ As the skill is trained, the engine will be able to automatically identify a `He
 For the Mama Maggy example, you will create intents for 
 * Ordering Pizza
 * Cancelling an Order
-* Filing a omplaint
+* Filing a complaint
 
 
 ### Create the Order Pizza Intent
@@ -663,30 +665,19 @@ Now that we have verified that the basic intent model is working, the next step 
 
 We’ll complete the pizza order process by fetching the pizza size, topping, and delivery time, and then printing an order summary.
 
-
-1. In the dialog flow, navigate to the `startOrderPizza` state.
-
-
+1. In the dialog flow, navigate to the `startOrderPizza` state
 2. Change the `text` property’s value to `"OK, lets get that order sorted"`.
-
-
-3. Change the `keepTurn` value to ` true`
-
-
-4. Delete the line `return: "done"`
-
-
-5. Replace the deleted line with `next: "setPizzaSize"` 
-
-    This is what the state should look like:
+3. Change the `keepTurn` value to ` true`.
+4. Delete the line `return: "done"`.
+5. Replace the deleted line with `next: "setPizzaSize"`. This is what the state should look like:
   
-       startOrderPizza:
-         component: "System.Output"
-         properties:
-           text: "OK, lets get that order sorted"
-           keepTurn: true
-         transitions:
-           next: "setPizzaSize"
+        startOrderPizza:
+          component: "System.Output"
+          properties:
+            text: "OK, lets get that order sorted"
+            keepTurn: true
+          transitions:
+            next: "setPizzaSize"
 
 
 
