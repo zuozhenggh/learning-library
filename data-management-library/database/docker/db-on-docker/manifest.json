@@ -1,0 +1,40 @@
+{
+    "tutorials": [
+        {
+          "title": "Workshop Overview",
+          "filename":"./workshop-intro/intro.md"
+        },
+        {
+          "title": "Lab 1: Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+          "title": "Lab 2: Lab Setup",
+          "filename": "./lab-setup/lab-setup.md"
+        },
+        {
+          "title": "Lab 3: Docker Basic Concepts",
+          "filename": "./docker-basic-concepts/docker-basic-concepts.md"
+        },
+        {
+          "title": "Lab 4: Docker Networking Basics",
+          "filename":"./docker-networking-basics/docker-networking-basics.md"
+        },
+		    {
+          "title": "Lab 5: Create an Oracle Database Container",
+          "filename": "./create-db-container/create-db-container.md"
+        },
+		    {
+          "title": "Lab 6: Create Schema in Database Container",
+          "filename": "./create-schema-in-db-container/create-schema-in-db-container.md"
+        },
+		    {
+          "title": "Lab 7: Deploy Application",
+          "filename": "./deploy-application/deploy-application.md"
+        },
+        {
+          "title": "Lab 8: Change Application",
+          "filename": "./change-application/change-application.md"
+        }
+    ]
+}
