@@ -8,9 +8,9 @@ This workshop requires an Oracle Database 19c installation. The virtual machine,
 
 This lab assumes you have completed the following labs:
 
-Lab: Login to Oracle Cloud
-Lab: Generate SSH Key
-Lab: Setup
+ Lab: Login to Oracle Cloud
+ Lab: Generate SSH Key
+ Lab: Setup
 
 ## Lab User Schema
 
