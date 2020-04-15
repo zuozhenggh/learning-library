@@ -395,7 +395,7 @@ Test get_castles function, using as input ***Valencia*** region (adminCode1 : 60
 > <copy>select get_castles('ES', 60, 'A') castles_document from dual;</copy>
 ````
 
-![](../images/p_jsonDoc_10)
+![](../images/p_jsonDoc_10.png)
 
 Use this function in a loop to retrieve castles from all sub-regions, as shown in the following example, storing the JSON documents inside the same table.
 
@@ -426,7 +426,7 @@ end;
 </copy>
 ````
 
-![](../images/p_jsonFunc_3)
+![](../images/p_jsonFunc_3.png)
 
 At this point we have enough JSON documents inside the database, and all the information to develop our application that provides information about medieval castles in Spain.
 
@@ -447,7 +447,7 @@ JSON_TABLE(DOC, '$' COLUMNS
               fcode VARCHAR2(6) PATH '$.fcode')))
 AS jt  WHERE (fcode = 'CSTL');</copy>
 ````
-![](../images/p_jsonDoc_11)
+![](../images/p_jsonDoc_11.png)
 
 > This query should return 269 rows.
 
