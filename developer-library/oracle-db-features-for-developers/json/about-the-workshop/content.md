@@ -31,19 +31,19 @@ This document is intended for attendees of the workshop for their private use. I
 
 - **Environment Preparation**
 
-For this workshop we will use the ***Order Entry (OE)*** sample schema that comes with Oracle Database installation. Just to make sure we have the same data in all environments, we use Data Pump to import one particular version of OE schema, exported in a dump file. 
+For this workshop we will use the ***Order Entry (OE)*** sample schema that comes with Oracle Database installation. 
 
 - **Working with JSON**
 
-This workshop covers the use of database languages and features to work with JSON data that is stored in Oracle Database. In particular, it covers how to use SQL and PL/SQL with JSON data. 
+This workshop covers the use of database languages and features to work with JSON data that is stored in Oracle Database. In particular, it covers how to use SQL and PL/SQL with JSON data.
 
 - **Syntax Simplifications**
 
-In Oracle 19c, there were some improvements in the simplicity of querying JSON documents using SQL. Other improvements were made as well in generating JSON documents on the fly from relational data. 
+In Oracle 19c, there were some improvements in the simplicity of querying JSON documents using SQL. Other improvements were made as well in generating JSON documents on the fly from relational data.
 
 - **Updating a JSON Document**
 
-You can now update a JSON document declaratively using the new SQL function ***JSON_MERGEPATCH***. You can apply one or more changes to multiple documents by using a single statement. This feature improves the flexibility of JSON update operations. 
+You can now update a JSON document declaratively using the new SQL function ***JSON_MERGEPATCH***. You can apply one or more changes to multiple documents by using a single statement. This feature improves the flexibility of JSON update operations.
 
 - **JSON Materialized View Support**
 
@@ -53,7 +53,7 @@ This feature is particularly useful when the JSON documents in a table contain a
 
 - **JSON-Object Mapping**
 
-This feature enables the mapping of JSON data to and from user-defined SQL object types and collections. You can convert JSON data to an instance of a SQL object type using SQL/JSON function ***JSON_VALUE***. In the opposite direction, you can generate JSON data from an instance of a SQL object type using SQL/JSON function ***JSON_OBJECT*** or ***JSON_ARRAY***. 
+This feature enables the mapping of JSON data to and from user-defined SQL object types and collections. You can convert JSON data to an instance of a SQL object type using SQL/JSON function ***JSON_VALUE***. In the opposite direction, you can generate JSON data from an instance of a SQL object type using SQL/JSON function ***JSON_OBJECT*** or ***JSON_ARRAY***.
 
 ## Access the labs
 
