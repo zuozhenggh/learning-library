@@ -448,7 +448,7 @@ With the Natural language processing (NLP) model created, you are ready to build
 Our first step is to create the basic flow outline, including context variables and states to handle the user’s initial input. Context variables are the skill’s temporary memory. They can be referenced throughout the dialog flow. We’ll add context variables to hold values returned by the intent engine, entity values, and the value for the pizza order message.
 
 
-1. In the left navigation for the designer, click on the **Flows* button ![](media/left_nav_dialog.png) to open the dialog flow editor.
+1. In the left navigation for the designer, click on the **Flows** button ![](media/left_nav_dialog.png) to open the dialog flow editor.
 
 
 2. Delete all content between the `variables` and the `states` elements.
@@ -473,11 +473,15 @@ Our first step is to create the basic flow outline, including context variables 
 
     ![](media/screenshot_dialog-flow2.png)
 
+**** 
+
 One useful tool to verify your YAML file is [CodeBeautify](https://codebeautify.org/yaml-validator). Paste your code and check it by clicking `Validate`.
 
-    <br>![](./media/codebeautify.png)
+![](./media/codebeautify.png)
 
-    Now we’re ready to add some states.
+****
+
+Now we’re ready to add some states.
 
 ### Add a State to Determine User Intent
 

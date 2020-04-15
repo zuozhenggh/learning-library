@@ -3,7 +3,7 @@
 metadata:
   platformVersion: "1.1"
 main: true
-name: PizzaKing
+name: MammaMaggy
 #context: Define the variables which will used throughout the dialog flow here.
 
 
@@ -75,7 +75,7 @@ states:
     properties:
       variable: "pizzaOrderMsg"
       value: 
-        - "Thank you for ordering from Pizza King!"
+        - "Thank you for the order!"
         - "OK, so we are getting you the following items:"
         - "A ${pizzaSize.value} ${pizzaTopping.value} pizza at ${deliveryTime.value.date?long?number_to_time?string('HH:mm')}."
   
