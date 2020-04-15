@@ -85,6 +85,6 @@ For the purpose of this exercise we will use a web service, that return informat
 - Share — copy and redistribute the material in any medium or format;
 - Adapt — remix, transform, and build upon the material for any purpose, even commercially.
 
-Click '**login**' link on the upper right corner of GeoNames website, and create a new account. Note: When you create your GeoNames account you will receive an email to activate the account. You also have to enable the account for web services on the account page [GeoNames Account Page](http://www.geonames.org/manageaccount)
+Click '**login**' link on the upper right corner of GeoNames website, and create a new account. **Note:** When you create your GeoNames account you will receive an email to activate the account. You also have to enable the account for web services on the account page [GeoNames Account Page](http://www.geonames.org/manageaccount)
 
 ---
