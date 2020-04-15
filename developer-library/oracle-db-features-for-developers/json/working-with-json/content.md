@@ -39,30 +39,9 @@ end;
 
 Sample output.
 
-````
-{"geonames": [{
-  "continent": "EU",
-  "capital": "Madrid",
-  "languages": "es-ES,ca,gl,eu,oc",
-  "geonameId": 2510769,
-  "south": 36.0001044260548,
-  "isoAlpha3": "ESP",
-  "north": 43.7913565913767,
-  "fipsCode": "SP",
-  "population": "46505963",
-  "east": 4.32778473043961,
-  "isoNumeric": "724",
-  "areaInSqKm": "504782.0",
-  "countryCode": "ES",
-  "west": -9.30151567231899,
+![Geonames Sample Output](images/p_GeoNameSampleOutput.png)
 
-"countryName": "Spain",
-  "continentName": "Europe",
-  "currencyCode": "EUR"
-}]}
-````
-
-Please make sure you receive a similar output as the sample above.
+Please make sure you receive a similar output to the sample shown above.
 
 ### Store Json Documents Into Oracle Database
 
@@ -104,6 +83,7 @@ set long 90000
 ````
 > <copy>SELECT j.doc FROM MYJSON j;</copy>
 ````
+![](images/p_jsonDoc_1.png)
 
 Oracle database SQL engine allows you to use a **simple-dot-notation (SDN)** syntax on your JSON data. With other words, you can write SQL queries that contain something like ***TABLE_Alias.JSON_Column.JSON_Property.JSON_Property>*** which comes quite handy as the region attribute is an attribute of the nested object location within the JSON document. Remember, SDN syntax is case sensitive.
 
@@ -121,6 +101,8 @@ column LOCATION format a20
 ````
 > <copy>SELECT j.doc.workshopName, j.doc.location.region FROM MYJSON j;</copy>
 ````
+
+![](images/p_jsonDoc_2.png)
 
 Test other queries and review the output.
 
@@ -156,6 +138,7 @@ The input of the function we just created is the ISO code of a country. Run this
 ````
 <copy>select get_country_info('ES') country_info from dual;</copy>
 ````
+![](images/p_jsonFunc_1.png)
 
 Insert the JSON document retrieved from the web service into the JSON column of that same table, even though this JSON document has a totally different structure.
 
@@ -173,6 +156,8 @@ Select the contents of that table, and notice we use the same column.
 <copy>select * from MYJSON;</copy>
 ````
 
+![](images/p_jsonDoc_3.png)
+
 Working with attributes, allows us to get the information we want from a specific document. We can assign default values for attributes that do not match, and treat the issue further from the application. The SQL/JSON function ***JSON_VALUE*** finds a specified scalar JSON value in JSON data and returns it as a SQL value.
 
 ````
@@ -186,6 +171,7 @@ column COUNTRY format a40
   JSON_VALUE(doc, '$.geonames.countryName' DEFAULT 'Not a country' ON ERROR) AS Country
     FROM MYJSON;</copy>
 ````
+![](images/p_jsonDoc_4.png)
 
 Or we can filter the results to receive only the documents that are useful for the query, using the SDN syntax.
 
@@ -193,6 +179,7 @@ Or we can filter the results to receive only the documents that are useful for t
 > <copy>select j.doc.geonames.geonameId GeoNameID, j.doc.geonames.countryName Country
     from MYJSON j where j.doc.geonames.isoAlpha3 IS NOT NULL;</copy>
 ````
+![](images/p_jsonDoc_5.png)
 
 In both cases, we can see that Spain geonameId is 2510769. This value will be used in the following steps.
 
@@ -224,6 +211,8 @@ Test this function using the following inputs.
 ````
 > <copy>select get_subdivision(2510769, 'medium') regions_document from dual;</copy>
 ````
+
+![](images/p_jsonFunc_2.png)
 
 If the test is successful, insert this new JSON document in the same table.
 
@@ -257,6 +246,7 @@ column NAME format a32
               fcode VARCHAR2(6) PATH '$.fcode')))
   AS jt  WHERE (fcode = 'ADM1');</copy>
 ````
+![](images/p_jsonDoc_6.png)
 
 Having all regions from Spain, we can ask again GeoNames web service for more information about each region, for example Andalucia with **geonameId** 2593109.
 
@@ -269,6 +259,8 @@ So our next goal is to get more details about each region, and for that we need 
 ````
 > <copy>SELECT j.doc.geonames.geonameId FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%';</copy>
 ````
+
+![](images/p_jsonDoc_7.png)
 
 The SDN syntax returns an array, not a relational view of JSON data in one column.
 
@@ -286,18 +278,20 @@ However, there are performance considerations, for example when using regular ex
 
 ````
 > <copy>WITH DATA AS
-    (SELECT substr(j.doc.geonames.geonameId, 2, length(j.doc.geonames.geonameId)-2) as GEONAMES 
+    (SELECT substr(j.doc.geonames.geonameId, 2, length(j.doc.geonames.geonameId)-2) as GEONAMES
      FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%')
   SELECT trim(regexp_substr(geonames, '[^,]+', 1, LEVEL)) geonames
   FROM DATA
   CONNECT BY instr(geonames, ',', 1, LEVEL - 1) > 0;</copy>
 ````
 
+![](images/p_jsonDoc_8.png)
+
 Take a note of the execution time, and compare it with the following code, that returns the same result, but faster.
 
 ````
 > <copy>WITH ids ( GEONAMES, start_pos, end_pos ) AS
-  ( SELECT GEONAMES, 1, INSTR( GEONAMES, ',' ) FROM 
+  ( SELECT GEONAMES, 1, INSTR( GEONAMES, ',' ) FROM
 (SELECT substr(j.doc.geonames.geonameId, 2, length(j.doc.geonames.geonameId)-2) as GEONAMES FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%')
   UNION ALL
   SELECT GEONAMES,
@@ -320,8 +314,8 @@ Using a cursor, and the query you like most, we can run a loop, to retrieve the 
 <copy>declare
    cursor c1 is
 	WITH ids ( GEONAMES, start_pos, end_pos ) AS
-	  ( SELECT GEONAMES, 1, INSTR( GEONAMES, ',' ) FROM 
-	(SELECT substr(j.doc.geonames.geonameId, 2, length(j.doc.geonames.geonameId)-2) as GEONAMES 
+	  ( SELECT GEONAMES, 1, INSTR( GEONAMES, ',' ) FROM
+	(SELECT substr(j.doc.geonames.geonameId, 2, length(j.doc.geonames.geonameId)-2) as GEONAMES
 	 FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%')
 	  UNION ALL
 	  SELECT GEONAMES,
@@ -352,8 +346,8 @@ column REGION format a20
 ````
 
 ````
-> <copy>SELECT jt.countryName Country, 
-       convert(jt.adminName1,'WE8ISO8859P1','AL32UTF8') Region, 
+> <copy>SELECT jt.countryName Country,
+       convert(jt.adminName1,'WE8ISO8859P1','AL32UTF8') Region,
        convert(jt.toponymName,'WE8ISO8859P1','AL32UTF8') Title,
        convert(jt.name,'WE8ISO8859P1','AL32UTF8') Name, jt.adminCode1, jt.adminCode2 FROM MYJSON,
 JSON_TABLE(DOC, '$' COLUMNS
@@ -367,6 +361,8 @@ JSON_TABLE(DOC, '$' COLUMNS
               fcode VARCHAR2(6) PATH '$.fcode')))
 AS jt  WHERE (fcode = 'ADM2');</copy>
 ````
+
+![](images/p_jsonDoc_9.png)
 
 Now we have the entire geographic division.
 
@@ -399,7 +395,9 @@ Test get_castles function, using as input ***Valencia*** region (adminCode1 : 60
 > <copy>select get_castles('ES', 60, 'A') castles_document from dual;</copy>
 ````
 
-Use this function is a loop, to retrieve castles from all sub-regions, like in the following example, storing the JSON documents inside the same table.
+![](images/p_jsonDoc_10)
+
+Use this function in a loop to retrieve castles from all sub-regions, as shown in the following example, storing the JSON documents inside the same table.
 
 ````
 <copy>column SUB_REGION format a20
@@ -428,11 +426,13 @@ end;
 </copy>
 ````
 
+![](images/p_jsonFunc_3)
+
 At this point we have enough JSON documents inside the database, and all the information to develop our application that provides information about medieval castles in Spain.
 
 ````
-> <copy>SELECT jt.countryName Country, 
-       convert(jt.adminName1,'WE8ISO8859P1','AL32UTF8') Region, 
+> <copy>SELECT jt.countryName Country,
+       convert(jt.adminName1,'WE8ISO8859P1','AL32UTF8') Region,
        convert(jt.adminName2,'WE8ISO8859P1','AL32UTF8') Sub_Region,
        jt.fcode, convert(jt.toponymName,'WE8ISO8859P1','AL32UTF8') Title,
        convert(jt.name,'WE8ISO8859P1','AL32UTF8') Name FROM MYJSON,
@@ -447,8 +447,9 @@ JSON_TABLE(DOC, '$' COLUMNS
               fcode VARCHAR2(6) PATH '$.fcode')))
 AS jt  WHERE (fcode = 'CSTL');</copy>
 ````
+![](images/p_jsonDoc_11)
 
 > This query should return 269 rows.
- 
+
 
 ---
