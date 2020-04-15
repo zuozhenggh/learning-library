@@ -1,13 +1,16 @@
 
 # Visual Builder Cloud Service
 
+
 **Before you begin**
 
 This 4 hours hands-on lab is an entry-level exercise for building a Web and Mobile App.
 
+
 **Background**
 
 Visual Builder provides an easy-to-use WSYIWG *(What You See Is What You Get)* graphical interface for **painting** applications and providing values declaratively allowing people who are not professional developers to create applications. Professional developers may use Visual Builder too; they might also choose to use VBCS’s advanced features and coding capabilities to make applications more-robust.
+
 
 **Lab Objectives**
 
@@ -32,16 +35,14 @@ Here are some general guidelines that will help you get the most from these exer
 - New to cloud
 - New to Oracle Cloud Infrastructure
 
+
 **Changelog**
 - April 6, 2020 - version 1
+
 
 **What Do You Need?**
 * Access to Oracle Visual Builder Cloud Service.
 
-
-[**Return to Main Page**](../index.html)
-
-****************
 
 **Mama Maggy Need Your Help**
 
@@ -57,6 +58,7 @@ In addition, if store managers/franchisees wish to contact other stores to ask a
 These processes are often inconvenient and slow, the managers/franchisees would like to improve things.
 
 In these exercises you will use Visual Builder to help Mama Maggy by adding product ordering and order tracking solutions.
+
 
 **The Solution**
 
@@ -100,40 +102,58 @@ All four files are available in a single .zip file named [vbcsfiles.zip](files/v
 - Exercise 4 (links used for VBCS Service Connections)
   - AppDev_Endpoints.txt
 
+*****************************
+**NOTE** 
 
-**NOTE:** All four files may also be downloaded directly from GitHub, however, to download the .csv files directly will require extra steps;  open the .csv in your browser, then, click 'Save As' to store the file as .csv (use the .zip file it's easier)
+* All four files may also be downloaded directly from GitHub, however, to download the .csv files directly will require extra steps;  open the .csv in your browser, then, click 'Save As' to store the file as .csv (use the .zip file it's easier)
 
-**NOTE:** Content is driven by external factors such as user data entries and login date. As a result, what you see displayed in your environment may not exactly match with the lab screenshots. Screenshots are provided solely for illustrative purposes to help guide you through the user interface.
+* Content is driven by external factors such as user data entries and login date. As a result, what you see displayed in your environment may not exactly match with the lab screenshots. Screenshots are provided solely for illustrative purposes to help guide you through the user interface.
+
 
 **Disclaimer:**  This exercise is designed ONLY for individual learners; however you can share an instance and work along other team members.Keep in mind that you must set up Intance Access to your group before start the exercises.
  
+*****************************
+
+<br>
+
 ## Welcome to Oracle Visual Builder Cloud Service
 
 ## Day 1 Introduction, setup, and demo
 
 **Introduction**
+
 In this exercise you will make sure you can access a VBCS instance and create your VBCS application.
 
 
 ### Exercise 1: Introduction, setup, and demo
 
-1. First, go to cloud.oracle.com, click on **View Accounts** and select **Sign in to cloud**<p>
-![](./media/1.1.1.png)<p><br>
+1. First, go to cloud.oracle.com, click on **View Accounts** and select **Sign in to cloud**
 
-2. Enter the name of your **tenancy** or the **cloud account**.<p>
-![](./media/1.1.2.png)<p><br>
+    ![](./media/1.1.1.png)
 
-3. On the login screen select Oracle SSO and provide your credentials.<p>
-![](./media/1.1.3.png)<p><br>
 
-4. Once in the main dashboard, open the **General Menu** located at the top left hand side of the screen, select **Platform Services**, and click on **Visual Builder**.<p>
-![](./media/1.1.4.png)<p><br>
+2. Enter the name of your **tenancy** or the **cloud account**.
+    ![](./media/1.1.2.png)
 
-1. Click the dropdown menu next to your instance name, and select **Open Oracle Visual Builder**.<p> 
-![](./media/1.1.5.png)<p><br>
 
-6. When the **Visual Applications** welcome appears; choose the **New Application** button.<p>
-![](./media/1.1.6.png)<p><br>
+3. On the login screen select Oracle SSO and provide your credentials.
+
+    ![](./media/1.1.3.png)
+
+
+4. Once in the main dashboard, open the **General Menu** located at the top left hand side of the screen, select **Platform Services**, and click on **Visual Builder**.
+    
+    ![](./media/1.1.4.png)
+
+
+1. Click the dropdown menu next to your instance name, and select **Open Oracle Visual Builder**.
+    
+    ![](./media/1.1.5.png)
+
+
+6. When the **Visual Applications** welcome appears; choose the **New Application** button.
+    
+    ![](./media/1.1.6.png)
 
 9.  When the **Create Application** page appears, provide a name for the application; you may call your applications anything you wish.
 
@@ -151,7 +171,7 @@ In this exercise you will make sure you can access a VBCS instance and create yo
 
 **This concludes exercise 1.**
 
-
+<br>
 
 ### Exercise 2: Spreadsheet-based Business Objects
 
@@ -169,39 +189,41 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
 
 
 *************************************************************************************
+
 **Begin Exercise 2**
 
 1.  If you have logged out of the Oracle Cloud, please log back in and return to your VBCS application.
 
-    <br>![](./media/2.1.1.png)
+    ![](./media/2.1.1.png)
+
 
 2. If you don’t see the navigator, click the **Expand Navigator** icon in the upper-left corner. ![](./media/image74.png)
 
-
-
     - If you don't have any Business Objects already you'll see the following **You don't have any business objects defined yet** image; click on the **+ Business Object** button.
-
-      <br>![](./media/vbcs_no_biz_objects.png)
+    
+        ![](./media/vbcs_no_biz_objects.png)
 
     - If you already have Business Objects a list will appear; click the plus sign **+** at the top of the Business Objects list.
     
-      <br>![](./media/2.2.3.png)
+       ![](./media/2.2.3.png)
+
 
 4.  From the application page, click **+ Business Object** to begin adding
     a business object
-   
-    
+       
     The first Business Object you will create will contain information about what products are available for managers/franchisees to order for their stores; 
     set the business object name to **Product** and when ready click **Create**.
     
-    <br>![](./media/vbcs_bo_creation.png)
+     ![](./media/vbcs_bo_creation.png)
 
 
 5. The Business Object page allows you to create fields and manage your Business Object. Note that some fields have been defined automatically, this is normal. The **id** field is treated as a key and will be used to access items in the business object automatically later.
 
     ![](./media/image26.png)
 
+
 6. To add a field click the **+New Field** button ![](./media/image27.png)
+
 
 7. For each new field the Name and General Data Type are specified
 
@@ -213,9 +235,11 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
       
     ![](./media/2.6.2.png)
 
+
 8.  In the box at the lower-right part of the VBCS editor set the field property to **Required**
 
     ![](./media/2.7.1.png)
+
 
 9.  Now add two more fields; be sure to mark the all **Required** 
 
@@ -233,20 +257,21 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
 
     ![](./media/2.9.1.png)
 
-   The **Product Order** Business Object will contain specifics about orders made by managers/franchisees including the associate that made the order, the order date, the current order status (open, shipped, complete) , and the last date some action (order shipped, order closed, etc.) occurred on the order.
+    The **Product Order** Business Object will contain specifics about orders made by managers/franchisees including the associate that made the order, the order date, the current order status (open, shipped, complete) , and the last date some action (order shipped, order closed, etc.) occurred on the order.
    
-   Add these fields; be sure to mark them all **Required**
+    Add these fields; be sure to mark them all **Required**
 
-| Display Label | Field Name  | Type     |
-|:--------------|:------------|:----------|
-| Associate     | associate   | #         |
-| Order Date    | orderDate   | Date Time |
-| Order Status  | orderStatus | A         |
-| Action Date   | actionDate  | Date Time |
+    | Display Label | Field Name  | Type     |
+    |:--------------|:------------|:----------|
+    | Associate     | associate   | #         |
+    | Order Date    | orderDate   | Date Time |
+    | Order Status  | orderStatus | A         |
+    | Action Date   | actionDate  | Date Time |
     
-The final result should looks like below (Check the fields added are set the correct **type** and marked **Required**)
+    The final result should looks like below (Check the fields added are set the correct **type** and marked **Required**)
 
-![](./media/2.11.1.png)
+    ![](./media/2.11.1.png)
+
 
 11. Create another Business Object named **Product Order Line** (ProductOrderLine).
 The **Product Order Line** Business Object will contain specifics about each item included in **Product Orders** made by managers/franchisees including the **Product** ordered, its Unit Price, and the Quantity ordered.
@@ -333,6 +358,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
 
     ![](./media/2.21.2.png)
 
+
 23. Add rows for PIZZA\_SAUCE:
 
     - Product Name PIZZA\_SAUCE
@@ -341,17 +367,21 @@ The **Product Order Line** Business Object will contain specifics about each ite
     
     ![](./media/2.23.1.png)
 
+
 24. Review the rows
 
     ![](./media/image52.png)
+
 
 25. To load more rows from a .csv file; click on the **Product** Business Object’s hamburger menu ![](./media/image16.png) and choose **Data Manager**
 
     ![](./media/2.25.1.png)  
 
+
 26. Choose **Import from File**
 
     ![](./media/image54.png)
+
 
 27. Click on **Upload** a file or drag it here
     
@@ -397,10 +427,16 @@ The **Product Order Line** Business Object will contain specifics about each ite
 
         ![](./media/image63.png)
 
-Congratulations! The data needed allowing Mama Maggy managers/franchisees to see what products are available to order and to check the status of existing orders is now ready for use. This data will be used in the next three exercises.
+
+*****************************
+
+**Congratulations!** The data needed allowing Mama Maggy managers/franchisees to see what products are available to order and to check the status of existing orders is now ready for use. This data will be used in the next three exercises.
+
+*****************************
 
 **This concludes exercise 2.**
 
+<br>
 
 ## Day 2 Web and Mobile Apps
 
@@ -417,9 +453,12 @@ Exercise 3 has three sections:
 
   - Section 3 – [Create Mobile Application](#exercise-3-section-3--create-mobile-application)
 
+<br>
+
 ### Exercise 3 - Section 1 – Create Web Application
 
 In the last exercise you created three business objects and added data to them; now you will create a web application to work with them
+
 
 1.  If you're still logged in to the Oracle Cloud and VBCS, skip to #2 below. 
 
@@ -427,10 +466,11 @@ In the last exercise you created three business objects and added data to them; 
     
 2. On the left-hand side of the Visual Builder interface is a navigator listing several options; choose **Web Applications** 
 
-<br>![](./media/image66.png)
+    ![](./media/image66.png)
 
-If you don’t see the navigator, click the **Expand Navigator** icon in the upper-left corner, then click the **Web Applications** button ![](./media/image74.png)
+    If you don’t see the navigator, click the **Expand Navigator** icon in the upper-left corner, then click the **Web Applications** button ![](./media/image74.png)
  
+
 3. Add a new Web Application
 
     First, you'll create a web application with two features; a list of all products that a manager/franchisee might order, and a page showing specifics about a chosen product.
@@ -457,6 +497,7 @@ If you don’t see the navigator, click the **Expand Navigator** icon in the upp
     
     ![](./media/3.5.2.png)
 
+
 6. Add a **Heading** component from the Component list (icon is a toggle)
 
     ![](./media/image83.png)
@@ -475,6 +516,7 @@ If you don’t see the navigator, click the **Expand Navigator** icon in the upp
 
     ![](./media/image87.png)
 
+
 7. Add a table to the application by scrolling the Components list until you see the Table icon.
     
     ![](./media/image88.png)
@@ -483,6 +525,7 @@ If you don’t see the navigator, click the **Expand Navigator** icon in the upp
  
     ![](./media/image89.png)
  
+
 8. To add data to the table, select the table and click the **Add Data** option from the list on the right.
 
     ![](./media/image90.png)
@@ -505,87 +548,112 @@ If you don’t see the navigator, click the **Expand Navigator** icon in the upp
 
     ![](./media/3.8.5.png)
 
+
 9.  Test the application by clicking the **Run** button ![](./media/image95.png) in the upper-right part of the screen.
 
-   ![](./media/image96.png)
+    ![](./media/image96.png)
 
-   A new browser window will open with your running application.
+    A new browser window will open with your running application.
 
-   ![](./media/image97.png)
+    ![](./media/image97.png)
 
-   Success! Mama Maggy managers/franchisees can now see a list of the various products available for order (without having to call headquarters).
+    Success! Mama Maggy managers/franchisees can now see a list of the various products available for order (without having to call headquarters).
+
 
 11. Now, let’s add a page of detail. Return to the Visual Builder Designer and select the table containing the property list. Notice the icon on the right side near the top of the Property Inspector.
 
     ![](./media/image98.png)
     
+
 12. The **Quick Start** button makes adding to your application easy. ![](./media/image99.png)
  The Quick Start options include: Adding data, building a Create Page (new row), an Edit Page (update row), a Detail page (display single row), Delete Action (delete row), or Task Actions (add task controls).
     
     ![](./media/image100.png)
 
+
 13. Click **Add Detail Page** to begin the wizard.
     
     ![](./media/image101.png)
-    
+
+
 14. Once the wizard starts; select the **Product** Business Object and click **Next** to continue.
     
     ![](./media/image102.png)
     
+
 15. Select the fields to be displayed; you may either select by checking them in the list or **dragging** them to the fields in the center area. You may also change title and other features, even the name of the button that will display on the main page to launch this page. Click **Finish** when done.
     
     ![](./media/3.10.5.png)
-    
-16.  When complete, the object navigator on the left will show the new page. Select the new page **main-product-detail** to see what it looks like. Note that the **Product List** screen is called **main-start** and the **Product Detail** screen is called **main-product-detail** (These may be renamed if desired but it's not really necessary.)
-    
+
+
+16. When complete, the object navigator on the left will show the new page. Select the new page **main-product-detail** to see what it looks like. Note that the **Product List** screen is called **main-start** and the **Product Detail** screen is called **main-product-detail** (These may be renamed if desired but it's not really necessary).
+
     ![](./media/3.10.6.png)
+    
+    **Potential Context Error**
+    
+    You may see an **error** message similar to the following. Remember that Visual Builder is WYSIWYG (*what you see is what you get*) and attempts to show real data during the design process.
+    
+    ![](./media/image105.png)
 
-**Potential Context Error**
-    
-You may see an **error** message similar to the following. Remember that Visual Builder is WYSIWYG (*what you see is what you get*) and attempts to show real data during the design process. 
-    
-![](./media/image105.png)
+    This error frequently occurs because Visual Builder cannot find a **context** to tell it which data to display. (in this case, the VBCS editor wants to show the Product Detail page with **live** data, but, does not know which record to display). 
 
-This error frequently occurs because Visual Builder cannot find a **context** to tell it which data to display. (in this case, the VBCS editor wants to show the Product Detail page with **live** data, but, does not know which record to display) 
-    
-**The process below uses the VBCS editor's **Live** capability to set the context.**
-    
-First, look for the **Live/Design/Code** button in the upper-right part of the Visual Builder editor. Click on **Live** to begin the process.
-    
-![](./media/image106.png)
-    
-16. Now, return to the Product List display and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
-    
-![](./media/image107.png)
-    
-17. Click the **Product Detail** button to return to the Product Detail display and you should now see data rather than the error message
-    
-![](./media/image108.png)
-    
-The VBCS **Live** mode is useful in testing to see how changes might behave, it is not the same as running the application
+    There are two methods to set the context.
 
-Click **Design** ![](./media/image109.png) to exit **Live** mode
+    **Method 1: Use the Page Input Parameters button**
 
-Now, to really test the application; run the application using the **run** ![](./media/image95.png) button in the upper-right corner. 
+    Click on the Page Input Parameters button
+   
+    ![](./media/3.10.6.1.png)
+ 
+    Enter the details of the context, in this example it is the product ID number:
 
-When the **Product List** displays note the **Product Detail** button is not available (it is **grayed out**) since no product has been chosen. Select one of the products and the **Product Detail** button will become active. 
+    ![](./media/3.10.6.2.png)
+ 
+    
+    **Method 2: Use the VBCS editor's **Live** capability**
+    
+    First, look for the **Live/Design/Code** button in the upper-right part of the Visual Builder editor. Click on **Live** to begin the process.
+
+    ![](./media/image106.png)
+
+    Now, return to the Product List display and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
+
+    ![](./media/image107.png)
+    
+    Click the **Product Detail** button to return to the Product Detail display and you should now see data rather than the error message
+    
+    ![](./media/image108.png)
+    
+    The VBCS **Live** mode is useful in testing to see how changes might behave, it is not the same as running the application
+
+    Click **Design** ![](./media/image109.png) to exit **Live** mode
+
+17. Now, to really test the application; run the application using the **run** ![](./media/image95.png) button in the upper-right corner. 
+
+    When the **Product List** displays note the **Product Detail** button is not available (it is **grayed out**) since no product has been chosen. Select one of the products and the **Product Detail** button will become active. 
 
 18. Click on the **Product Detail** button to see the details for that product
+  
+    ![](./media/3.10.12.png)
 
-The following two images show something similar your results.
+6. Once you have reviewed the product details, click the provided **Back** button to return to the list.
 
-![](./media/3.10.12.png)
-
-19. Once you have reviewed the product details, click the provided **Back** button to return to the list.
-
-![](./media/3.10.13.png)
+    ![](./media/3.10.13.png)
 
 
-In addition to viewing the data; you may also use the **Quick Start** do add Create, Edit, and Delete pages for products. (not part of this exercise).
+    In addition to viewing the data; you may also use the **Quick Start** do add Create, Edit, and Delete pages for products. (not part of this exercise).
 
-Congratulations! You’ve successfully created your first Visual Builder web application. 
+*****************************
+
+**Congratulations!** 
+
+You’ve successfully created your first Visual Builder web application. 
 
 You've also made a day in the life of a Mama Maggy manager/franchisee easier since they can now see what products are available to order without having to play telephone-tag with headquarters.
+*****************************
+
+<br>
 
 ### Exercise 3 - Section 2 – Create Master-Detail Application
 
@@ -601,7 +669,8 @@ In this exercise section you will create a two-screen application similar to the
   - Product Order Detail with list of matching Product Order Lines
 
 1. Create a new Web Application to display a list or Product Order business object rows. Follow the same steps but using the **Product Order** business object.
- ![](./media/vbcs_bo_productorder.png)
+
+    ![](./media/vbcs_bo_productorder.png)
 
 
 2. Include these fields:
@@ -680,6 +749,7 @@ In this exercise section you will create a two-screen application similar to the
 
     ![](./media/3.17.3.png)
  
+
 11.  Here’s the key step\! In step 3 **Define Query** of the Add Data wizard you will connect the data from the Product Order and the Product Order Line
 
    **DO NOT CLICK **Finish** until complete!**
@@ -715,11 +785,15 @@ In this exercise section you will create a two-screen application similar to the
 
 You should now be able to test your **Product Order – Product Order Line** **master-detail** screens
 
+*****************************   
+**Congratulations\!**
+
 You've enabled Mama Maggy's managers/franchisees to retrieve a list of their orders and check order status when it is convenient to them without having to call headquarters
     
-This is a good time to use **Quick Start** to build Create, Edit, and Delete screens for both the Product Order List table (Product Order screen) and the Product Order Line table (Product Order Detail screen)
-    
-Congratulations\! You’re now ready to create your first Mobile application with Visual Builder
+You’re now ready to create your first Mobile application with Visual Builder
+*****************************
+
+<br>
 
 ### Exercise 3 - Section 3 – Create Mobile Application
 
@@ -842,11 +916,18 @@ Mama Maggy's managers/franchisees want to be able to check product order status 
     
     ![](./media/vbcs_mobile_productOrder.png)
 
-Congratulations! You have made the daily lives of Mama Maggy managers/franchisees easier. Instead of calling headquarters to check the status of their product orders they can now use your mobile app when and where it is convenient.
+*****************************
+**Congratulations!** 
 
+You have made the daily lives of Mama Maggy managers/franchisees easier. 
+
+Instead of calling headquarters to check the status of their product orders they can now use your mobile app when and where it is convenient.
+*****************************
 
 **This concludes exercise 3.**
 
+
+<br>
 
 ### Exercise 4: Data from service
 
@@ -971,6 +1052,7 @@ The data used to create these apps will come from **Service Connections** that y
     ![](./media/4.10.2.png)
 
 14. Once you have created the connections, test them; repeat the steps 6 to 9 above for the two **mmstores** connection endpoints
+
     - Mama Maggy Store – get all
     - Mama Maggy Store – get single using {Store\_id}
     
@@ -1095,30 +1177,30 @@ The data used to create these apps will come from **Service Connections** that y
     ![](./media/image178.png)
  
 
-**This concludes exercise 4.**
+*****************************
+**Congratulations!** 
 
-**Congratulations!** You’ve now finished the required exercises for this
-course.
+You have created your first web and mobile applications, learned key aspects of design, data sources and Restful APIs. 
+
+*****************************
+
+**This concludes exercise 4.**
 
 You may save today’s work using Visual Builder’s **export** capability, this will provide you with a starting point if you would like to continue working on the exercises, **but more importantly will give you a starting point when you want to create a customer demonstration using VBCS**:
 
-  - Return to the list of VBCS applications, highlight your application,
-    then click the **Hamburger** menu icon on the right.
+  - Return to the list of VBCS applications, highlight your application, then click the **Option** menu icon on the right.
 
- ![](./media/image179.png)
+     ![](./media/image179.png)
 
-  - Choose **Export
+  - Choose **Export**
 
- ![](./media/image180.png)
+     ![](./media/image180.png)
 
-  - Specify **Export with Data** and you will be prompted for the location
-    where you want the application’s **.zip** file copied. (this file may
-    be imported into another Visual Builder instance when you want to
-    work some more).
+  - Specify **Export with Data** and you will be prompted for the location where you want the application’s **.zip** file copied. (this file may be imported into another Visual Builder instance when you want to work some more).
 
- ![](./media/image181.png)
+     ![](./media/image181.png)
 
-
+<br>
 
 ## Extra Exercise 5: Add Data Using REST Call
 
@@ -1136,7 +1218,9 @@ In this exercise you will work more with RESTful API calls
 
 **This concludes Extra Exercise 5**
 
+[**Return to Main Page**](../index.html)
 
+<br>
 
 ## Extra Exercise 6: Review and edit JavaScript code under the covers of VBCS
 
@@ -1159,7 +1243,9 @@ For instance:
 
 **This concludes Extra Exercise 6**
 
+[**Return to Main Page**](../index.html)
 
+<br>
 
 ## Appendix A: Create Service Connection from Endpoint
 
@@ -1170,67 +1256,70 @@ For instance:
  
 2. If you are presented with a list of one or more existing connection click the plus **+** sign at the top of the list to the right of the word **Services**
     
-    ![](./media/image_2.png)
+    ![](./media/app_a_2.1.png)
  
+
 3.  The **Create Connection** wizard starts by asking for the source of the connection; for this exercise we will choose **Define by Endpoint** for the connections created. Please click **Define by Endpoint** to continue
 
-    ![](./media/image_3.png)
+    ![](./media/app_a_3.1.png)
  
+
 4. The wizard will then ask for specifics about the endpoint
- ![](./media/image_4.png)
+
+   ![](./media/app_a_4.1.png)
+
 
  5. Provide the **Method** (GET), **URL** (from course specifications), and **Action Hint** (Get Many) then click **Next** to continue. This connection will return all rows from the **Associate** data source
 
-    ![](./media/image_5.png)
+    ![](./media/app_a_5.1.png)
  
 6. Provide a name for the connection (**mmassociate** in the example)
     
-    ![](./media/image_6.png)
+    ![](./media/app_a_6.1.png)
  
 7.  Test the connection by selecting the **Test** tab, filling in any necessary parameters, and clicking **Send** to make a request
-![](./media/image_7.png)
+![](./media/app_a_7.1.png)
  
  
 8. When the service responds, look for a response status **200** (everything ok) and check the results
 
-    ![](./media/image_8.png)
-
-    ![](./media/image_9.png)
+    ![](./media/app_a_8.1.png)
  
- 
-9. If the response looks good to you click the **Copy to Response Body** so that Visual Builder will map out the response details as part of the connection
+9. If the response looks good to you click the **Save as Example Response** so that Visual Builder will map out the response details as part of the connection
 
-    ![](./media/image_10.png)
+    ![](./media/app_a_9.1.png)
  
  
 10. Click the **Create** button to finish the process of building the service connection.
  
-11. Create the next connection to select a single **Associate** row that is identified by passing in an **{id}** value (or whatever the key field is named)
 
-    ![](./media/image_12.png)  
+11. Create the next connection to select a single **Associate** row 
 
-12. Provide a name for the connection (**mmassociateget** in the example)
+    ![](./media/app_a_11.1.png)
+ 
+ 12. Enter the parameter **{id}** value in the path (or whatever the key field is named) and provide a name for the connection (**mmassociateget** in the example)
     
-    ![](./media/image_13.png)
+     ![](./media/app_a_12.1.png)
  
 
-13.  Test the connection; be sure to specify a valid id for the test. Please notice that the parameters are surrounded by curly-style braces **{id}** in the path and that a place is automatically provided to enter a test value
-![](./media/image_14.png)
- 
- 
-14. Check the response status and values, then click **Copy to Response Body** and the **Create** button to finish things up.  You have now created and tested two connections.
+13.  Test the connection; be sure to specify a valid id for the test. Notice that the parameters are surrounded by curly-style braces **{id}** in the path and that a place is automatically provided to enter a test value
 
-    ![](./media/image_15.png)
+     ![](./media/app_a_13.1.png)
+  
 
+14. Check the response status and values, then click **Save as Example Response** and the **Create** button to finish things up. You have now created and tested two connections.
+
+     ![](./media/app_a_14.1.png)
+ 
 
 15.  Repeat the steps above to create two more connections
   - Mama Maggy Store – get all (maybe **mmstoregetall**)
   - Mama Maggy Store – get single using {id}. (maybe **mmstoreget**)
 Be sure to test your connections. Please ask the instructor if you need assistance
 
+[**Return to Main Page**](../index.html)
 
-Click to return to [Table of Contents](#table-of-contents).
-
+<br>
 
 ## Appendix B: Build Mama Maggy Data Application
 
@@ -1244,50 +1333,57 @@ In this exercise you will create:
   - An **Associate** Business Object containing fields and data for Mama Maggy associates
   - Two .csv files are provided to provide data for Store and Associate   (be sure to create **Store** before **Associate** (Associate references Store), and load data into **Store** first before loading data into **Associate**)
 
- 
-
-1.  Log into your tenancy using cloud.oracle.com; be sure it has been provisioned to allow Visual Builder Cloud Service and the database and object storage instances also required. (check with your tenancy admin if unsure)
+1. Log into your tenancy using cloud.oracle.com; be sure it has been provisioned to allow Visual Builder Cloud Service and the database and object storage instances also required. (check with your tenancy admin if unsure)
 
 2. Select **Platform Services** and click on **Visual Builder** 
    
 
 3. When the VBCS Service Console **Instances** list appears; use the **General Menu Icon** ![](./media/image_c_9.png)on the far right and choose **Open Oracle Visual Builder Cloud Service Home Page** to begin creating your new application
-<br>![](./media/image_c_11.png)
+
+    ![](./media/image_c_11.png)
 
 
 4. When the **Visual Applications** list appears; choose the **New** button
-<br>![](./media/image_c_12.png)
-<br>![](./media/image_c_13.png)
+   
+   ![](./media/image_c_12.png)
 
 
-5.  When the **Create Application** panel opens; provide an **Application Name** of **Mama Maggy** (**Application Info** will default based upon what you type), provide a description (optional), and select the **Empty Application** template (should be the default)
-<br>![](./media/image_c_14.png)
+5. When the **Create Application** panel opens; provide an **Application Name** of **Mama Maggy** (**Application Info** will default based upon what you type), provide a description (optional), and select the **Empty Application** template (should be the default)
+
+   ![](./media/image_c_14.png)
  
+
 6. Click the **Finish** button when done
-<br>![](./media/image_c_15.png)
+
+   ![](./media/image_c_15.png)
 
 
 7. This application will be used to host two Business Objects that will be used by other applications via RESTful APIs; this is simulating the use of external API access such as database or SaaS application
 
 8. Select the **Business Object** button to start creating business objects
-<br>![](./media/image_c_16.png)
+
+   ![](./media/image_c_16.png)
  
 
 9. From the application page, click **+ Business Object** to begin adding a business object
-<br>![](./media/image_c_17.png)
+
+   ![](./media/image_c_17.png)
  
  
 10. Provide a name **Store** and click the **checkbox** icon
-<br>![](./media/image_c_18.png)
+
+    ![](./media/image_c_18.png)
  
 
-11.  Add Fields to the Store object as follows (please create them as shown to match the .csv data):
+11. Add Fields to the Store object as follows (please create them as shown to match the .csv data):
+    
     - Name
     - Address
     - City
     - State
     - Mailcode
-<br>![](./media/image_c_19.png)
+
+    ![](./media/image_c_19.png)
 
 
 12. Create an **Associate** object next; this will happen in steps to account for the reference in the **Associate** row to the **Store** row
@@ -1304,84 +1400,104 @@ In this exercise you will create:
        6.  Click **Create Relationship** when finished
      - From the **Fields** tab, click **+ New Field** and add **Hire Date** (date field)
      - From the **Fields** tab, click **+ New Field** and add **Email** (email field)
-<br>![](./media/image_c_20.png)
+    
+    ![](./media/image_c_20.png)
  
 
-
 14. To load data into the objects, select the **General Menu** within the business object section ![](./media/image_c_9.png), and click the **Data Manager** option
-<br>![](./media/image_c_23.png)
+
+    ![](./media/image_c_23.png)
  
  
 15. Click on **Import from File** from the **Manage Application Data** panel
-![](./media/image_c_24.png)
+    ![](./media/image_c_24.png)
  
  
 16. Click on the **Upload a file or drag it here** picture
-<br>![](./media/image_c_25.png)
+
+    ![](./media/image_c_25.png)
  
  
 17. Select the **Store.csv** file supplied as part of the course setup and click the **Import** button
-<br>![](./media/image_c_26.png)
+    
+    ![](./media/image_c_26.png)
 
 
 18. Visual Builder will report upon the success/failure of the import
-<br>![](./media/image_c_27.png)
+
+    ![](./media/image_c_27.png)
 
 
 19. Import the **Associate.csv** file using the same technique
-<br>![](./media/image_c_28.png)
+    
+    ![](./media/image_c_28.png)
 
 
 20. Results should be.
-<br>![](./media/image_c_29.png)
+
+    ![](./media/image_c_29.png)
 
 
 21. Review the added data using the **Data** tab for the two objects
-<br>![](./media/image_c_30.png)
-<br>![](./media/image_c_31.png)
+
+    * Store
+    
+      ![](./media/image_c_30.png)
+
+    * Associate
+
+      ![](./media/image_c_31.png)
  
 
 22. Click on **Endpoints** to see resources. Access points currently have a **version** number and will change each time the objects are modified. Currently only the **development** addresses are available. The steps below will show you how to publish and make the addresses constant
-<br>![](./media/image_c_32.png)
+
+    ![](./media/image_c_32.png)
  
 
 23. To **set** the access points so that they will not change over time; you must first **Stage** and then **Publish** the application.  (When the application is in **Development** and **Staging** the addresses are versioned; once an application is published to the **Live** environment the address will not change and is suitable for sharing)
   
+
 24. Using the **General Menu** icon ![](./media/image_c_9.png) (far right) open the menu and select **Stage** for the application
-<br>![](./media/image_c_34.png)
+
+    ![](./media/image_c_34.png)
  
  
 25. Select **Populate Stage with Development data** to copy the data loaded previously into the staging environment, then click the **Stage** button
-<br>![](./media/image_c_35.png)
+
+    ![](./media/image_c_35.png)
  
+
 26. The addresses we need are still not final, so the application must be published. Return to the list of applications and click the **General Menu** icon again. This time choose the **Publish** option
-<br>![](./media/image_c_36.png)
+
+    ![](./media/image_c_36.png)
+
 
 27. Be sure to **Include data from Stage** before you click the **Publish** button
-<br>![](./media/image_c_37.png)
+
+    ![](./media/image_c_37.png)
 
 
 28. Reopen the application. In order for others to use REST APIs to access the data in the application’s business objects the Resource API addresses must be made available
 
+
 29. Select the **Store** business object and click on the **Endpoints** tab. Addresses are listed for Development, Staging, and Live environments. Also there are two columns, the ones on the left provide Metadata that more-advanced client applications (like Visual Builder) may take advantage of. The column on the right shows data-only **Endpoints** that require a little more work to use
  
+
 30. From the left column select the **Live** address and click the **clipboard** icon ![](./media/image_c_38.png). Paste the resulting string into a text file in your local environment to share with applications wanting to use the data
  
-31. This is the address needed to access **Store** data
-<br>![](./media/image_c_39.png)
-<br>![](./media/image_c_40.png)
- 
- 
+    ![](./media/image_c_39.png)
+
+     This is the address needed to access **Store** data
+
+
 32. Select the **Associate** business object and once again display the **Endpoints** tab. Copy the value from the **Metadata** column **Live** row using the **clipboard** icon ![](./media/image_c_38.png). Paste the resulting string into a text file in your local environment to share with applications wanting to use the data
- 
-33. This is the address needed to access **Associate** data
 
-34. That’s it, you’ve created an application with business objects that may be accessed using REST APIs like those used in exercise 4
-
-*****************************
-**Congratulations!** You have created your first web and mobile applications, learned key aspects of design, data sources and Restful APIs. You can export the project and use it as foundation for your projects.
-*****************************
+    ![](./media/image_c_40.png)
+    
+    This is the address needed to access **Associate** data
 
 
-<br>[**Return to Main Page**](../index.html)
+That’s it, you’ve created an application with business objects that may be accessed using REST APIs like those used in exercise 4
 
+
+[**Return to Main Page**](../index.html)
