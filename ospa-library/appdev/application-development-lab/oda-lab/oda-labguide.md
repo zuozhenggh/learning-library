@@ -919,7 +919,7 @@ For information on setting up a web channel on Digital Assistant 19.4.1, see [Ex
 
 As part of this exercise, you will be provided with the following assets:
 
-* [index.html](../files/index.html) *Note: Click **Save As** and save it locally*
+* [index.html](../files/index.html) (Click **Save As** and save it locally)
 * [style.css](../files/style.css)
 * [scripts.zip](../files/scripts.zip)
 
@@ -954,7 +954,7 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
     ![](media/oda_channel_2.png)
 
 
-3. Give the channel a name, a description, select channel type `Oracle Web`, in `Allow Domains` enter `*` and for the purpose of this lab disable `Cliente Authentication Enabled`.
+3. Give the channel a name, a description, select channel type `Oracle Web`, in `Allow Domains` enter `*` and for the purpose of this lab disable `Client Authentication Enabled`.
 
     ![](media/oda_channel_3.png)
 
@@ -977,13 +977,13 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
 
 2. Select the app name at the root level and click on the code snippet, delete the content from the file and copy the code from the sample file [Index.html](../files/index.html). 
 
-*Note: You must edit the file with a code editor of your choice and copy it’s content.*
+   *Note: You must edit the file with a code editor of your choice and copy it’s content.*
 
-    ![](./media/oda_channel_7.png)
+   ![](./media/oda_channel_7.png)
 
 3. Fill the `URI` and `YOUR CHANNEL` variables with the information copied on step 5 from the previous exercise.
 
-    ![](./media/oda_channel_8.png)
+   ![](./media/oda_channel_8.png)
 
 
 4. Download the ODA Web SDK script files [script.zip](../files/scripts.zip) to your laptop. You can download the latest version of the SDK from [Oracle Digital Assistant (ODA) and Oracle Mobile Cloud (OMC) Downloads](https://www.oracle.com/downloads/cloud/amce-downloads.html).
@@ -1035,7 +1035,7 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
     ![](./media/oda_channel_16.png)
 
 
-13. Finally, Let's use one of the message created during the training process. type the message `Dude, can you get me the biggest hot and spicy pizza you can make at noon` and press enter. You will immediately presented with the results of the order.
+13. Finally, Let's use one of the message created during the training process. type the message `Dude, can you get me the biggest hot and spicy pizza you can make at noon` and press enter. 
 
     ![](./media/oda_channel_17.png)
 
