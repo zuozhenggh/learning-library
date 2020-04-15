@@ -15,7 +15,7 @@ In this lab you will scale up your Oracle Autonomous Data Warehouse (ADW) or Aut
 
 ### Required Artifacts
 
--   The following lab requires an Oracle Public Cloud account. If you don't already have your own cloud account then you can obtain a new cloud account through the free Oracle trial program.
+-   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. If you don't already have your own cloud account then you can obtain a new cloud account through the free Oracle trial program.
 
 ## <!--buggy, did this so Part 1 would collapse-->
 
@@ -59,6 +59,7 @@ In this lab you will scale up your Oracle Autonomous Data Warehouse (ADW) or Aut
 ## Acknowledgements
 
 - **Author** - Nilay Panchal, ADB Product Management
-- **Last Updated By/Date** - Richard Green, DB Docs Team, March 2020
+- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
+- **Last Updated By/Date** - Richard Green, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

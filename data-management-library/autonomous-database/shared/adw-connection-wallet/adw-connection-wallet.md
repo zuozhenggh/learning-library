@@ -1,7 +1,7 @@
 
 <!-- Updated March, 2020 -->
 
-# Bonus Lab 7: Connecting to an Autonomous Database Securely with a Connection Wallet
+# Bonus Lab 7: Connect Securely using SQL Developer with a Connection Wallet
 
 
 ## Introduction
@@ -20,7 +20,7 @@ Click [here](https://www.youtube.com/watch?v=PHQqbUX4T50&autoplay=0&html5=1) to 
 
 ### Required Artifacts
 
--   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+-   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 -   Oracle SQL Developer 19.2 or later is recommended (see <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">Oracle Technology Network download site.</a>)
     Please use SQL Developer version 18.3 or later as this version contains enhancements for key Autonomous Data Warehouse features, including using ADW behind a VPN or Firewall.
@@ -75,10 +75,32 @@ Start SQL Developer and create a connection for your database using the default 
 
 4. If you are behind a VPN or Firewall and this Test fails, make sure you have <a href="https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">SQL Developer 18.3</a> or higher. This version and above will allow you to select the "Use HTTP Proxy Host" option for a Cloud Wallet type connection. While creating your new ADW connection here, provide your proxy's Host and Port. If you are unsure where to find this, you may look at your computer's connection settings or contact your Network Administrator.
 
+## Step 3: Querying Your Autonomous Database with SQL Developer
+
+The SH schema provides a small data set you can use to run the sample queries in the <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/sql-analysis-reporting-data-warehouses.html#GUID-1D8E3429-735B-409C-BD16-54004964D89B" target="\_blank">Database Data Warehousing Guide</a>. For example, the following query shows you how the SQL function RANK() works:
+
+1. In a SQL Developer worksheet, perform the following `SH` query.
+
+    ````
+    <copy>
+    SELECT channel_desc, TO_CHAR(SUM(amount_sold),'9,999,999,999') SALES$,
+    RANK() OVER (ORDER BY SUM(amount_sold)) AS default_rank,
+    RANK() OVER (ORDER BY SUM(amount_sold) DESC NULLS LAST) AS custom_rank
+    FROM sh.sales, sh.products, sh.customers, sh.times, sh.channels, sh.countries
+    WHERE sales.prod_id=products.prod_id AND sales.cust_id=customers.cust_id
+    AND customers.country_id = countries.country_id AND sales.time_id=times.time_id
+    AND sales.channel_id=channels.channel_id
+    AND times.calendar_month_desc IN ('2000-09', '2000-10')
+    AND country_iso_code='US'
+    GROUP BY channel_desc;
+    </copy>
+    ````
+    ![](./images/sh-query-results.jpg " ")
 
 ## Acknowledgements
 
 - **Author** - Richard Green, DB Docs Team
-- **Last Updated By/Date** - Richard Green, DB Docs Team, March 2020
+- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
+- **Last Updated By/Date** - Richard Green, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

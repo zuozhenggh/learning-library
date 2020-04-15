@@ -204,6 +204,7 @@ Please proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Nilay Panchal, ADB Product Managemnt
-- **Last Updated By/Date** - Richard Green, DB Docs Team, March 2020
+- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
+- **Last Updated By/Date** - Richard Green, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

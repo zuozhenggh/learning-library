@@ -38,13 +38,13 @@ For more information about loading data, see the documentation [Loading Data fro
 
 ### Required Artifacts
 
--   The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+-   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 In Steps 1 to 3, you will create one ADW table, CHANNELS_LOCAL, and load it with sample data from your local file system. In the remaining steps, you will create several ADW tables and load them with sample data that you stage to an OCI Object Store.
 
 ### Lab Prerequisites
 
-This lab assumes you have completed the *Login to Oracle Cloud* and *Provision ADB* labs.
+This lab assumes you have completed the *Login to Oracle Cloud* and *Provision ADB* labs in the menu on the right.
 
 
 ## STEP 1: Download Sample Data and Create Local Table
@@ -199,7 +199,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 In order to access data in the Object Store you have to enable your database user to authenticate itself with the Object Store using your OCI object store account and Auth token. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
 
 1. Connected as your user in SQL Developer Web, copy and paste <a href="./files/create_credential.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet.
-   
+
 2. Specify the credentials for your Oracle Cloud Infrastructure Object Storage service: The username will be your **OCI username** (usually your email address, not your database username) and the password is the OCI Object Store **Auth Token** you generated in the previous step.  In this example, the credential object named **OBJ\_STORE\_CRED** is created. You reference this credential name in the following steps.
 
     ![](./images/create_credential_sql_dev_web.jpg " ")
@@ -270,6 +270,7 @@ Please proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Nilay Panchal, ADB Product Managemnt
-- **Last Updated By/Date** - Richard Green, DB Docs Team, March 2020
+- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
+- **Last Updated By/Date** - Richard Green, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

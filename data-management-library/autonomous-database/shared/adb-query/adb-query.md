@@ -8,7 +8,7 @@
 
 In this lab, you will query files on the Oracle Cloud Infrastructure Object Storage (OCI) directly without loading them to your database.
 
-*Note: Make sure you have completed the previous lab, __Loading Data into an Autonomous Database Instance__, before you proceed with this lab. You will use the data files on the OCI Object Storage and the credential object from Lab 3 in this lab.*
+*Note: Make sure you have completed the previous lab in the menu on the right, __Load Data into ADB__, before you proceed with this lab. In that lab, you created data files on the OCI Object Storage and you created the credential object, all of which you will use in this lab.*
 
 ## Objectives
 
@@ -19,7 +19,7 @@ In this lab, you will query files on the Oracle Cloud Infrastructure Object Stor
 
 ## Required Artifacts
 
--   The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+-   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 ## STEP 1: Create External Tables with DBMS_CLOUD
 
@@ -52,6 +52,7 @@ In this lab, you will query files on the Oracle Cloud Infrastructure Object Stor
     ## Acknowledgements
 
     - **Author** - Nilay Panchal, ADB Product Management
-    - **Last Updated By/Date** - Richard Green, DB Docs Team, March 2020
+    - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
+    - **Last Updated By/Date** - Richard Green, March 2020
 
     See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

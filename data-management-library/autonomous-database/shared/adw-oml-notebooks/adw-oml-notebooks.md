@@ -16,7 +16,7 @@ In this lab, you will be using the Oracle Machine Learning (OML) SQL notebook ap
 
 ### Required Artifacts
 
--   This lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+-   This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 
 ## STEP 1: Creating OML Users
@@ -307,6 +307,7 @@ In this section we are going to use a script from a SQL pattern matching tutoria
 ## Acknowledgements
 
 - **Author** - Nilay Panchal, ADB Product Management
-- **Last Updated By/Date** - Richard Green, DB Docs Team, March 2020
+- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
+- **Last Updated By/Date** - Richard Green, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
