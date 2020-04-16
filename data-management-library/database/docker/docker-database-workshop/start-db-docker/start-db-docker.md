@@ -16,7 +16,7 @@ A Docker container is a running instance of a Docker image. However, unlike in t
 
 Once the Docker image build is complete, you can start and run the Oracle Database inside a Docker container using the `docker run` command. There a few important parameters:
 - The **`-p`** parameter maps ports inside the container to the outside world. We need to map port 1521 to enable access to the database.
-- The **`-v`** parameter allows data files created by the database to exist outside of the Docker container. This separation means that even if the container is destroyed, the data files will be preserved. You should always use the `-v` parameter or create a named Docker volume.
+- The **`-v`** parameter allows data files created by the database to exist outside of the Docker container. This separation means that even if the container is destroyed, the data files will be preserved. You should always use the `-v` parameter and create a named Docker volume.
 - The **`--name`** parameter specifies the name of the container. Starting and stopping the container requires the container name as a parameter. If you omit this parameter, a random name is generated.
 
 1. If you don't have an open SSH connection to your compute instance, open and terminal window and connect using the public IP address of your compute instance:
@@ -26,24 +26,17 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
     Enter passphrase for key './myOracleCloudKey':
     [opc@oraclelinux77 ~]$
     ```
-2. Create a folder to hold the data files:
+2. Create a docker volume to hold the data files:
 
     ```
-    [opc@oraclelinux77 ~]$ <copy>mkdir oradata</copy>
+    [opc@oraclelinux77 ~]$ <copy>docker volume create oradata</copy>
+    oradata
     [opc@oraclelinux77 ~]$
     ```
-
-3. Change the folder permissions:
-
-    ```
-    [opc@oraclelinux77 ~]$ <copy>chmod a+w oradata</copy>
-    [opc@oraclelinux77 ~]$
-    ```
-
-4. Run the Oracle Database container:
+3. Run the Oracle Database container:
 
     ```
-    [opc@oraclelinux77 ~]$ <copy>docker run --name oracle-ee -p 1521:1521 -v /home/opc/oradata:/opt/oracle/oradata oracle/database:19.3.0-ee</copy>
+    [opc@oraclelinux77 ~]$ <copy>docker run --name oracle-ee -p 1521:1521 -v oradata:/opt/oracle/oradata oracle/database:19.3.0-ee</copy>
     ORACLE PASSWORD FOR SYS, SYSTEM AND PDBADMIN: N2z6X3FBa08=1
 
     LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 07-APR-2020 19:58:10
