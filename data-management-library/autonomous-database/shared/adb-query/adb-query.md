@@ -8,7 +8,7 @@
 
 In this lab, you will query files on the Oracle Cloud Infrastructure Object Storage (OCI) directly without loading them to your database.
 
-*Note: Make sure you have completed the previous lab in the menu on the right, __Load Data into ADB__, before you proceed with this lab. In that lab, you created data files on the OCI Object Storage and you created the credential object, all of which you will use in this lab.*
+*Note: Make sure you have completed the previous lab in the menu on the right, [Load Data into ADB] (?lab=lab-4-load-data-into-adb), before you proceed with this lab. In that lab, you created data files on the OCI Object Storage and you created the credential object, all of which you will use in this lab.*
 
 ## Objectives
 

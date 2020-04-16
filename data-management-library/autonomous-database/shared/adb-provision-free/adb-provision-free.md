@@ -20,7 +20,7 @@ The following lab requires an Oracle Cloud account. You may use your own cloud a
 
 ### Lab Prerequisites
 
-This lab assumes you have completed the *Login to Oracle Cloud* lab.
+This lab assumes you have completed the [Log in to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) lab.
 
 ### Video Preview
 
