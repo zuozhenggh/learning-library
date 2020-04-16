@@ -30,7 +30,7 @@ these lab exercises.
 
 ## Create a VBCS Instance
 
-As part of the lab, we expect learns to create the VBCS instance before the session delivery.
+As part of the lab, we expect learners to create the VBCS instance before the session delivery.
 If you are creating a new instance either for the lab purposes or a customer demonstration, please follow the next steps; the process is simple but require several minutes to complete.
 
 In this lab you will make sure you can access the VBCS instance for your classroom and supporting lab files.
