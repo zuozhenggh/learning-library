@@ -1,4 +1,4 @@
-# Create SSH Keyscd .
+# Create SSH Keys
 
 ## Introduction
 
