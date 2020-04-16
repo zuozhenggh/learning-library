@@ -1,0 +1,46 @@
+{
+    "tutorials": [
+        {
+            "title": "Workshop Overview",
+            "description":"Workhop Overview",
+            "publisheddate": "04/15/2020",
+            "filename":"./about-the-workshop/content.md"
+        },
+        {
+            "title": "Lab 2: Environment Preparation",
+            "description":"Environment Preparation",
+            "publisheddate": "04/15/2020",
+            "filename":"./environment-prep/content.md"
+        },
+        {
+            "title": "Lab 3: Working with JSON",
+            "description":"Working with JSON",
+            "publisheddate": "04/15/2020",
+            "filename":"./working-with-json/content.md"
+        },
+        {
+            "title": "Lab 4: Syntax Simplifications",
+            "description":"Syntax Simplifications",
+            "publisheddate": "04/15/2020",
+            "filename":"./syntax-simplifications/content.md"
+        },
+        {
+            "title": "Lab 5: Updating a JSON Document",
+            "description":"Updating a JSON Document",
+            "publisheddate": "04/15/2020",
+            "filename":"./updating-a-json-doc/content.md"
+        },
+        {
+            "title": "Lab 6: JSON Materialized View Support",
+            "description":"JSON Materialized View Support",
+            "publisheddate": "04/15/2020",
+            "filename":"./json-mv-support/content.md"
+        },
+        {
+            "title": "Lab 7: JSON-Object Mapping",
+            "description":"JSON-Object Mapping",
+            "publisheddate": "04/15/2020",
+            "filename":"./json-object-mapping/content.md"
+        }
+    ]
+}
