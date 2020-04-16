@@ -2,9 +2,10 @@
     
     "tutorials": [
         {            
-            "title": "Webcast - Mobile and Digital Assistant Labs",
+            "title": "Getting Started",
             "filename": "./gettingstarted.md"
         }
+
     ]
 }
 

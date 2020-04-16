@@ -209,17 +209,13 @@ appear.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text">
 
-8. Navigate to **Functions** under **Developer Servies**. Click the action icon and Click **Delete**
+8. From OCI Services menu,Click **Notifications** under **Application Integration**. Click your Topic name
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Configuring_Fn/img/Fn_002.PNG" alt="image-alt-text">
+9. Click **Delete**
 
-9. From OCI Services menu,Click **Notifications** under **Application Integration**. Click your Topic name
+10. From OCI Services menu,Click **Event Service** under **Application Integration**
 
-10. Click **Delete**
-
-11. From OCI Services menu,Click **Event Service** under **Application Integration**
-
-12. Click your Rule name and Click **Delete**. In the dialog box type **DELETE** and click **Delete**
+11. Click your Rule name and Click **Delete**. In the dialog box type **DELETE** and click **Delete**
  
 
 **Congratulations! You have successfully completed the lab**

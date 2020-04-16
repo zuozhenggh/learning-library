@@ -1,4 +1,4 @@
-# Getting Started - Mobile and Digital Assistant Labs
+# Getting Started
 
 ## Lab Purpose and Rules
 
