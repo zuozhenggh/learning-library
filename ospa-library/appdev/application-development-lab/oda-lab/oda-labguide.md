@@ -104,7 +104,7 @@ In this lab, we’re starting from scratch. So the first thing you’ll do is cr
 
 **Congratulations!**
 
-You have created an VBCS instance. 
+You have created an Oracle Digital Assistant instance. 
 
 *****************
 
