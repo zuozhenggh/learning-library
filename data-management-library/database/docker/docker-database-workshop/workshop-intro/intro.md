@@ -24,7 +24,7 @@ Docker is an open source container designed to separate an application from its 
 
 ### **Let's Get Started!**
 
-- Click on **Sign Up for a Free Trial** from the menu on the right. If you already have an Oracle Cloud account, click on **Lab 2: Create SSH Keys**.
+- Click on **[Lab 1: Sign Up for a Free Trial](?lab=lab-1-sign-up-for-free-trial)** from the menu on the right. If you already have an Oracle Cloud account, click on **[Lab 2: Create SSH Keys](?lab=lab-2-create-ssh-keys)**.
 
 - If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/MenuButton.png)) at the top of the page.
 

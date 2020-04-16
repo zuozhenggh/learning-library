@@ -14,7 +14,7 @@ Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, a
 
 ## **STEP 1**: Set up the Docker environment
 
-  Docker is shipped as addon with Oracle Linux 7 UEK4. Enable the `addons yum` repository and install the docker-engine package as root.
+  Docker is shipped as addon with Oracle Linux 7 UEK4. On Oracle Cloud Compute instances, the `addons yum` repository is now enabled by default, so you only need to install the docker-engine package as root.
 
 1. In a terminal window, navigate to the folder where you created the SSH keys and connect to your compute instance using `ssh`, and the public IP address of your compute instance:
 
@@ -35,35 +35,7 @@ Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, a
     [root@oraclelinux77 ~]#
     ```
 
-3. Enable the `addons yum` repository:
-
-    ```
-    [root@oraclelinux77 ~]# <copy>yum-config-manager enable *addons*</copy>
-    Loaded plugins: langpacks
-    ================================= repo: ol7_addons ======================================
-    [ol7_addons]
-    async = True
-    bandwidth = 0
-    base_persistdir = /var/lib/yum/repos/x86_64/7Server
-    baseurl = http://yum-iad.oracle.com/repo/OracleLinux/OL7/addons/x86_64/
-    cache = 0
-    ...
-    ssl_check_cert_permissions = True
-    sslcacert =
-    sslclientcert =
-    sslclientkey =
-    sslverify = True
-    throttle = 0
-    timeout = 30.0
-    ui_id = ol7_addons/x86_64
-    ui_repoid_vars = releasever,
-       basearch
-    username =
-
-    [root@oraclelinux77 ~]#
-    ```
-
-4. Install the Docker engine:
+3. Install the Docker engine:
 
     ```
     [root@oraclelinux77 ~]# <copy>yum install docker-engine</copy>
