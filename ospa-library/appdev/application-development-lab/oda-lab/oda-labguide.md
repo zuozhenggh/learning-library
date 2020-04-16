@@ -4,9 +4,11 @@
 # Oracle Digital Assistant
 
 **Before you begin**
+
 This 60-minute hands-on lab is an entry-level exercise for building a skill in Oracle Digital Assistant.
 
 **Background**
+
 Oracle Digital Assistant is an environment for building _digital assistants_, which are user interfaces driven by artificial intelligence (AI) that help users accomplish a variety of tasks in natural language conversations. Digital assistants consist of one or more _skills_, which are individual chatbots that are focused on specific types of tasks.
 
 
@@ -102,7 +104,7 @@ In this lab, we’re starting from scratch. So the first thing you’ll do is cr
 
 **Congratulations!**
 
-You have created an VBCS instance. 
+You have created an Oracle Digital Assistant instance. 
 
 *****************
 
@@ -127,7 +129,7 @@ As the skill is trained, the engine will be able to automatically identify a `He
 For the Mama Maggy example, you will create intents for 
 * Ordering Pizza
 * Cancelling an Order
-* Filing a omplaint
+* Filing a complaint
 
 
 ### Create the Order Pizza Intent
@@ -448,7 +450,7 @@ With the Natural language processing (NLP) model created, you are ready to build
 Our first step is to create the basic flow outline, including context variables and states to handle the user’s initial input. Context variables are the skill’s temporary memory. They can be referenced throughout the dialog flow. We’ll add context variables to hold values returned by the intent engine, entity values, and the value for the pizza order message.
 
 
-1. In the left navigation for the designer, click on the **Flows* button ![](media/left_nav_dialog.png) to open the dialog flow editor.
+1. In the left navigation for the designer, click on the **Flows** button ![](media/left_nav_dialog.png) to open the dialog flow editor.
 
 
 2. Delete all content between the `variables` and the `states` elements.
@@ -473,11 +475,15 @@ Our first step is to create the basic flow outline, including context variables 
 
     ![](media/screenshot_dialog-flow2.png)
 
+**** 
+
 One useful tool to verify your YAML file is [CodeBeautify](https://codebeautify.org/yaml-validator). Paste your code and check it by clicking `Validate`.
 
-    <br>![](./media/codebeautify.png)
+![](./media/codebeautify.png)
 
-    Now we’re ready to add some states.
+****
+
+Now we’re ready to add some states.
 
 ### Add a State to Determine User Intent
 
@@ -659,30 +665,19 @@ Now that we have verified that the basic intent model is working, the next step 
 
 We’ll complete the pizza order process by fetching the pizza size, topping, and delivery time, and then printing an order summary.
 
-
-1. In the dialog flow, navigate to the `startOrderPizza` state.
-
-
+1. In the dialog flow, navigate to the `startOrderPizza` state
 2. Change the `text` property’s value to `"OK, lets get that order sorted"`.
-
-
-3. Change the `keepTurn` value to ` true`
-
-
-4. Delete the line `return: "done"`
-
-
-5. Replace the deleted line with `next: "setPizzaSize"` 
-
-    This is what the state should look like:
+3. Change the `keepTurn` value to ` true`.
+4. Delete the line `return: "done"`.
+5. Replace the deleted line with `next: "setPizzaSize"`. This is what the state should look like:
   
-       startOrderPizza:
-         component: "System.Output"
-         properties:
-           text: "OK, lets get that order sorted"
-           keepTurn: true
-         transitions:
-           next: "setPizzaSize"
+        startOrderPizza:
+          component: "System.Output"
+          properties:
+            text: "OK, lets get that order sorted"
+            keepTurn: true
+          transitions:
+            next: "setPizzaSize"
 
 
 
@@ -924,7 +919,7 @@ For information on setting up a web channel on Digital Assistant 19.4.1, see [Ex
 
 As part of this exercise, you will be provided with the following assets:
 
-* [index.html](../files/index.html) *Note: Click **Save As** and save it locally*
+* [index.html](../files/index.html) (Click **Save As** and save it locally)
 * [style.css](../files/style.css)
 * [scripts.zip](../files/scripts.zip)
 
@@ -959,7 +954,7 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
     ![](media/oda_channel_2.png)
 
 
-3. Give the channel a name, a description, select channel type `Oracle Web`, in `Allow Domains` enter `*` and for the purpose of this lab disable `Cliente Authentication Enabled`.
+3. Give the channel a name, a description, select channel type `Oracle Web`, in `Allow Domains` enter `*` and for the purpose of this lab disable `Client Authentication Enabled`.
 
     ![](media/oda_channel_3.png)
 
@@ -980,15 +975,15 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
 
     ![](./media/oda_channel_5.png)
 
-2. Select the app name at the root level and click on the code snippet, delete the content from the file and copy the code from the sample file [Index.html](../files/index.html). 
+2. Select the app name at the root level and click on the code snippet, delete the content from the file and copy and paste the code from the sample file [Index.html](../files/index.html). 
 
-*Note: You must edit the file with a code editor of your choice and copy it’s content.*
+   *Note: You must edit the file with a code editor (or text editor) of your choice and copy it’s content.*
 
-    ![](./media/oda_channel_7.png)
+   ![](./media/oda_channel_7.png)
 
-3. Fill the `URI` and `YOUR CHANNEL` variables with the information copied on step 5 from the previous exercise.
+3. Replace the `URI` and `CHANNELID` variables with the information that you should already had saved from the previous exercise (step 5).
 
-    ![](./media/oda_channel_8.png)
+   ![](./media/oda_channel_8.png)
 
 
 4. Download the ODA Web SDK script files [script.zip](../files/scripts.zip) to your laptop. You can download the latest version of the SDK from [Oracle Digital Assistant (ODA) and Oracle Mobile Cloud (OMC) Downloads](https://www.oracle.com/downloads/cloud/amce-downloads.html).
@@ -1040,7 +1035,7 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
     ![](./media/oda_channel_16.png)
 
 
-13. Finally, Let's use one of the message created during the training process. type the message `Dude, can you get me the biggest hot and spicy pizza you can make at noon` and press enter. You will immediately presented with the results of the order.
+13. Finally, Let's use one of the message created during the training process. type the message `Dude, can you get me the biggest hot and spicy pizza you can make at noon` and press enter. 
 
     ![](./media/oda_channel_17.png)
 
