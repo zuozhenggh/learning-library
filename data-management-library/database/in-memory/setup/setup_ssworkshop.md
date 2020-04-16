@@ -6,7 +6,7 @@ This lab will show you how to setup your environment using Oracle Resource Manag
 ### Objectives
 
 -   Setup a compute instance using the DB19c Marketplace image
--   Install the SSB schema needed for future In-Memory labs
+-   Install the SSB schema
 -   Use Terraform and Resource Manager to complete the setup
 
 ### Required Artifacts
