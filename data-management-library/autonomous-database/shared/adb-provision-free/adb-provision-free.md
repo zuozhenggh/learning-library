@@ -16,11 +16,11 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 ### Required Artifacts
 
-The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a FreeTier account, or a training account whose details were given to you by an Oracle instructor.
+The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
 ### Lab Prerequisites
 
-This lab assumes you have completed the *Login to Oracle Cloud* lab.
+This lab assumes you have completed the [Log in to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) lab.
 
 ### Video Preview
 
