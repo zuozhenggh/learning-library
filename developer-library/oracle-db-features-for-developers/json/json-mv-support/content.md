@@ -122,4 +122,11 @@ Plan hash value: 3162132558
 
 If the query is too simple, there may not be a query rewrite, in this case it will not be eligible to be rewritten to use the materialized view.
 
+## Acknowledgements
+
+- **Author** - Valentin Leonard Tabacaru
+- **Last Updated By/Date** - Troy Anthony, April 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+
 ---

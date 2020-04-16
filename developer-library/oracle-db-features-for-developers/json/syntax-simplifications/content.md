@@ -109,4 +109,10 @@ The workaround for this issue is to create a view on the original table. This vi
 
 In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias.
 
+## Acknowledgements
+
+- **Author** - Valentin Leonard Tabacaru
+- **Last Updated By/Date** - Troy Anthony, April 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
 ---

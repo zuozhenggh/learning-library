@@ -141,4 +141,10 @@ This one looks much nicer. Remember to commit changes if you want to keep them i
 
 Updating JSON documents inside the Oracle Database is that simple.
 
+## Acknowledgements
+
+- **Author** - Valentin Leonard Tabacaru
+- **Last Updated By/Date** - Troy Anthony, April 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
 ---

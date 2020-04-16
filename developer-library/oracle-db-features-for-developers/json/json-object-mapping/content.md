@@ -194,4 +194,10 @@ As before, the pretty format could be useful in understanding the output.
 
 We hope you enjoyed this lab.
 
+## Acknowledgements
+
+- **Author** - Valentin Leonard Tabacaru
+- **Last Updated By/Date** - Troy Anthony, April 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
 ---
