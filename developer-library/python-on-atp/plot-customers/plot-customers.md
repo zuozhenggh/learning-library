@@ -13,11 +13,11 @@ Support is interested in a new app that provides insights into customer and serv
 
 - Open the terminal,click on **Applications**, select **Favorites** and then click on **Visual Studio**.
 
-  ![](images/2/1-1.png " ")
+  ![](images/1-1.png " ")
 
 - Click on **File** and then click on **Open Folder** 
 
-  ![](images/2/1.png " ")
+  ![](images/1.png " ")
 
 -  In the Dialog box go to the unzipped **lab-resources** folder, look inside of it, click on **mapplottingpy**, and then click on **OK**.
 
@@ -25,41 +25,41 @@ Support is interested in a new app that provides insights into customer and serv
 
 - Open the inbuilt Visual Studio Code terminal by clicking on **View** and then click on **Terminal**. You can also open by keyboard shortcut **[Ctrl +]**.
 
-  ![](images/2/4.png " ")
+  ![](images/4.png " ")
 
 - In the terminal enter command 
 ```
 <copy>pip install virtualenv</copy>
 ```
 
-  ![](images/2/5.png " ")
+  ![](images/5.png " ")
 
 - Next enter this to create entry point.
 ```
 <copy>virtualenv env</copy>
 ``` 
 
-![](images/2/6.png " ")
+![](images/6.png " ")
 
 - To run the virtual environment enter the following.  If successfull you will see (env) before the path that means you are now in virtual env.
 ```
 <copy>source env/bin/activate</copy>
 ```
 
-![](images/2/7.png " ")
+![](images/7.png " ")
 
 - We have all the required packages in requirements file. To install it run the command.  Ensure you are in the **/home/opc/lab-resources/mapPlottingPy** directory.
 ```
 <copy>pip install -r requirements.txt</copy>
 ```
 
-![](images/2/8.png " ")
+![](images/8.png " ")
 
-## **STEP 2: Plot customers on Map
+## STEP 2: Plot customers on Map
 
 - Leave the terminal open. Click on **config.py** file from the left pane and change the details in the file with your Autonomous Transaction Processing Database information.  
 
-  ![](images/2/9.png " ")
+  ![](images/9.png " ")
 
 - We are using **Bokeh** open source library to plot the data we get from  on map. Bokeh is an interactive visualization library that targets modern web browsers for presentation. Its goal is to provide elegant, concise construction of versatile graphics, and to extend this capability with high-performance interactivity over very large or streaming datasets.
 
@@ -70,39 +70,39 @@ Support is interested in a new app that provides insights into customer and serv
  
 - Now we have our web application running. Leave the terminal as it is.
 
-  ![](images/3/003.png " ")
+  ![](images/003.png " ")
 
 - To confirm everything works fine, open firefox and go to URL [http://localhost:5006/customers](http://localhost:5006/customers).
     
-  ![](images/3/001.png " ")
+  ![](images/001.png " ")
 
 - Make sure to have zoom box selected by click the icon as below.
 
-  ![](images/3/002.png " ")
+  ![](images/002.png " ")
 
 - To zoom in drag and make square to get  better visibility of points.
 
-  ![](images/3/map.gif)
+  ![](images/map.gif " ")
 
 - Points on the map are the location of customer and service provider, when you hover over the points, it shows the customer address and the distance to the nearest service provider.
 
 -  As seen above the distance between the customer and service provider is calculated using the SQL query and using package **SDO\_NN\_DISTANCE**. To understand more we have two tables( i.e Customers and Service providers) with each having GeoCordinate, **SDO\_NN\_DISTANCE** calculates the distance between these two points and we calculate that distance in miles and sort by distance. All this is done by the query following below.  Go to your cloud console, and then to your ATP instance (menu upper left.)
 
-  ![](images/3/004.png " ")
+  ![](images/004.png " ")
 
 - Select Tools, and then SQL Developer Web.
 
-  ![](images/3/005.png " ")
+  ![](images/005.png " ")
 
-  ![](images/3/006.png " ")
+  ![](images/006.png " ")
 
 - Go up to the URL and change the part that says **admin** to **alpha** and hit enter to refresh the screen.
 
-  ![](images/3/007.png " ")
+  ![](images/007.png " ")
 
 - Log in as user **alpha**.
 
-  ![](images/3/008.png " ")
+  ![](images/008.png " ")
 
 - Paste the following into the worksheet.  This queries customers that within a mile of a service provider.
 ``` 
@@ -124,9 +124,9 @@ Support is interested in a new app that provides insights into customer and serv
  MDSYS.SDO_NN_DISTANCE(1)</copy>
  ```
 
-![](images/3/009.png " ")
+![](images/009.png " ")
 
-## Useful Links:
+## Useful Links
 - Here are some useful links to show more about the Spatial Database features.
     - [Oracle docs](https://docs.oracle.com/database/121/SPATL/sdo_nn.htm#SPATL1032)
     - [Blog on Spatial Database](https://blogs.oracle.com/oraclespatial/spatial-with-python-and-geopandas-made-easy-with-cx_oracle)

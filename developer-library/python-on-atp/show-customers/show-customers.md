@@ -17,17 +17,17 @@ Marketing is also interested in a map like interface to assess and establish sal
 
 - Now we have our web service running. Leave the terminal as it is.
 
-  ![](images/4/001.png " ")
+  ![](images/001.png " ")
 
 - To confirm everything works fine, open firefox and go to URL [http://localhost:5006/regions](http://localhost:5006/regions).
 
-  ![](images/4/003.png " ")
+  ![](images/003.png " ")
 
 - The regions you see in the map are plotted from the data in the shapefile. If you want to check the files it is in the application folder named demo_region. We are using **geopandas** to convert the shapefile in dataframe and perform operations on it.
 
 - To show/hide hover points click on the hover tool in the toolbar as shown below.
  
-  ![](images/4/002.png " ")
+  ![](images/002.png " ")
 
 ## Conclusion
 
