@@ -1,7 +1,7 @@
 
 <!--September 21, 2018-->
 
-# Working with Autonomous Database Services and the free Sample Data Sets
+# Connect to ADB with SQL Developer Web and Run Your First Query
 
 
 ## Introduction
@@ -36,10 +36,10 @@ You will run a basic query on the SSB data set which is a 1TB data set with one 
 
 ### Required Artifacts
 
--   The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+-   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 ### Lab Prerequisites
-This lab assumes you have completed the *Login to Oracle Cloud* and *Provision ADB* labs.
+This lab assumes you have completed the [Login to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) and [Provision ADB] (?lab=lab-2-provision-adb) labs in the menu on the right.
 
 ### Video Preview
 Watch a video demonstration of connecting to your new Autonomous Database instance using SQL Developer.
@@ -75,7 +75,7 @@ Although you can connect to your autonomous database from local PC desktop tools
 
     ````
     <copy>
-    select /* low */ c_city,c_region,count(*) 
+    select /* low */ c_city,c_region,count(*)
     from ssb.customer c_low
     group by c_region, c_city
     order by count(*);
@@ -88,15 +88,14 @@ Although you can connect to your autonomous database from local PC desktop tools
 
 3.  When possible, ADW also *caches* the results of a query for you. If you run identical queries more than once, you will notice a much lower response time when your results have been cached.
 
-## STEP 3: Experiment with running other sample queries
-
-1. You can find more sample queries to run in the ADW documentation.  Try some of the queries from the ADW Documentation <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sample-queries.html" target="\_blank">here</a>.
+4. You can find more sample queries to run in the ADW documentation.  Try some of the queries from the ADW Documentation <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sample-queries.html" target="\_blank">here</a>.
 
 Please proceed to the next lab.
 
 ## Acknowledgements
 
 - **Author** - Nilay Panchal, ADB Product Managemnt
-- **Last Updated By/Date** - Richard Green, DB Docs Team, March 2020
+- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
+- **Last Updated By/Date** - Richard Green, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
