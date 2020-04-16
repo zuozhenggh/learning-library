@@ -46,10 +46,10 @@ In Oracle 19c, function ***JSON_OBJECT*** can generate JSON objects receiving as
 Another improvement was made in generating JSON documents in 19c using wildcard. The argument in this case can be the table name or alias, or a view name, followed by a dot and an asterisk wildcard (.*), or just an asterisk wildcard like in the following example.
 
 ````
-> <copy>SELECT json_object(*) FROM ORDERS;</copy>
+> <copy>SELECT JSON_OBJECT(*) FROM ORDERS;</copy>
 ````
 
-In conclusion, in Oracle 19c we can say that ***JSON_OBJECT*** function follows what is allowed for column names and wildcards in a SQL SELECT query. 
+In conclusion, in Oracle 19c we can say that ***JSON_OBJECT*** function follows what is allowed for column names and wildcards in a SQL SELECT query.
 
 ### Using Custom Types And Wildcard
 
@@ -57,7 +57,7 @@ There are some cases, exceptions, where wildcards are not accepted for tables wi
 
 ````
 > <copy>desc CUSTOMERS</copy>  
-       
+
  Name                      Null?    Type
  ------------------------- -------- ---------------------
  CUSTOMER_ID               NOT NULL NUMBER(6)
@@ -81,7 +81,7 @@ Asterisk wildcard is allowed in a normal SQL query.
 
 ````
 > <copy>select * from CUSTOMERS;</copy>
-```` 
+````
 
 But we receive an error if we try to use the asterisk wildcard with ***JSON_OBJECT*** function.
 
@@ -90,7 +90,8 @@ But we receive an error if we try to use the asterisk wildcard with ***JSON_OBJE
 
 ERROR at line 1:
 ORA-40579: star expansion is not allowed
-```` 
+````
+![](../images/p_synExp-1.png)
 
 There is a solution for that.
 
@@ -106,6 +107,6 @@ The workaround for this issue is to create a view on the original table. This vi
 > <copy>SELECT json_object(*) FROM view_cust;</copy>
 ````
 
-In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias. 
+In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias.
 
 ---

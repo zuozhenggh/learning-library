@@ -20,7 +20,7 @@ REFRESH FAST ON STATEMENT
 ENABLE QUERY REWRITE
 AS
 SELECT j.id jsonID, jt.geonameId ID, jt.countryName Country,
-       convert(jt.adminName1,'WE8ISO8859P1','AL32UTF8') Region, 
+       convert(jt.adminName1,'WE8ISO8859P1','AL32UTF8') Region,
        convert(jt.adminName2,'WE8ISO8859P1','AL32UTF8') Sub_Region,
        jt.fcode, convert(jt.toponymName,'WE8ISO8859P1','AL32UTF8') Title,
        convert(jt.name,'WE8ISO8859P1','AL32UTF8') Name FROM MYJSON j,
@@ -37,7 +37,7 @@ JSON_TABLE(DOC, '$' COLUMNS
 AS jt;</copy>
 ````
 
-Test the materialized view with the following query. Optionally, use set timing on when running this query, and the query we used to retrieve information about castles after we retrieved all required JSON documents from GeoNames web service, and compare the results. The difference may look insignificant, because there are only 269 castles, but imagine we could have millions of rows in one application, and thousands on concurrent users. 
+Test the materialized view with the following query. Optionally, use set timing on when running this query, and the query we used to retrieve information about castles after we retrieved all required JSON documents from the GeoNames web service, and compare the results. The difference may look insignificant, because there are only 269 castles, but imagine that we could have millions of rows in one application, and thousands of concurrent users.
 
 ````
 <copy>set timing on</copy>
@@ -72,6 +72,9 @@ from MYJSON
   where JSON_VALUE(doc, '$.geonames[0].fcode') = 'CSTL'
   order by Region, Sub_Region;</copy>
 ````
+![](../images/p_mvSupp_1a.png)
+
+![](../images/p_mvSupp_1b.png)
 
 Flush the shared pool, flushing the cached execution plan and SQL Queries from memory.
 
@@ -115,7 +118,8 @@ Plan hash value: 3162132558
 |*  6 |    JSONTABLE EVALUATION |		  |	  |	  |	  |	       |	  |
 ---------------------------------------------------------------------------------------------------
 ````
+![](../images/p_mvSupp_2.png)
 
-If the query is too simple, there may not be a query rewrite, in this case it will not be eligible to be rewritten to use the materialized view. 
+If the query is too simple, there may not be a query rewrite, in this case it will not be eligible to be rewritten to use the materialized view.
 
 ---
