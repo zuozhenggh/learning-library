@@ -29,9 +29,9 @@ This lab assumes you have completed the following labs:
 - Create Machine Learning Model
 - Migrate ML Model to ATP
 
-## Step 1: Prepare data for the lab in ***ATP***.
+## Step 1: Prepare data for the lab in ATP
 
-1. To show how an application would use ml predictions we'll add some customer names to the original credit_scoring_100k data set.  Navigate to the ***ATP*** SQL Developer Web and log in with ml_user (if you are not already logged in from the previous lab).  Then select file upload on the left.
+1. To show how an application would use ml predictions we'll add some customer names to the original credit\_scoring\_100k data set.  Navigate to the ATP SQL Developer Web and log in with ml_user (if you are not already logged in from the previous lab).  Then select file upload on the left.
 
   ![](./images/001.png  " ")
 
@@ -53,14 +53,17 @@ This lab assumes you have completed the following labs:
 
 6. Create a view that combines the names with the credit\_scoring\_100k data set.
    ````
-   <copy>create or replace view ml_user.credit_scoring_100k_v as select a.first_name, a.last_name, b.*
+   <copy>
+   create or replace view ml_user.credit_scoring_100k_v as select a.first_name, 
+   a.last_name, b.*
    from ml_user.customer_names a, credit_scoring_100k b
-   where a.customer_id(+)= b.customer_id;</copy>
+   where a.customer_id(+)= b.customer_id;
+   </copy>
    ````
 
   ![](./images/006.png  " ")
 
-7. Create a new upload\_customers table.  This will be used in the application to show how newly loaded records can be scored on the fly.
+7. Create a new upload_customers table.  This will be used in the application to show how newly loaded records can be scored on the fly.
    ````
    <copy>create table upload_customers (
    customer_id number
@@ -151,7 +154,7 @@ This lab assumes you have completed the following labs:
 
    ![](./images/020.png  " ")
 
-10. Select choose file, and then select the ***f100.sql*** file in the git repo and then accept the defaults.
+10. Select choose file, and then select the f100.sql file in the git repo and then accept the defaults.
 
    ![](./images/021.png  " ")
 
@@ -175,7 +178,7 @@ This lab assumes you have completed the following labs:
 
    ![](./images/030.png  " ")
 
-## Step 3: Run the application and review on-the-fly prediction/scoring.
+## Step 3: Run the application and review on-the-fly prediction/scoring
 
 1. Select Customer Walk-in from the menu.  Select last name, and then first name.  Note the credit score prediction and the probability of that estimate.  These calculations are done as the data is queried.
 
@@ -233,7 +236,7 @@ This lab assumes you have completed the following labs:
 
    ![](./images/045.png  " ")
 
-## Step 4: Expose the ml model as a REST end point so any application can call it.
+## Step 4: Expose the ml model as a REST end point so any application can call it
 
 1. Select the Home button at the bottom of the screen.
 
