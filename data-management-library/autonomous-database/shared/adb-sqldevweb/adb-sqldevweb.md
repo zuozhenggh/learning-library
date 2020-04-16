@@ -39,7 +39,7 @@ You will run a basic query on the SSB data set which is a 1TB data set with one 
 -   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 ### Lab Prerequisites
-This lab assumes you have completed the [Log in to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) and [Provision ADB] (?lab=lab-2-provision-adb) labs in the menu on the right.
+This lab assumes you have completed the [Login to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) and [Provision ADB] (?lab=lab-2-provision-adb) labs in the menu on the right.
 
 ### Video Preview
 Watch a video demonstration of connecting to your new Autonomous Database instance using SQL Developer.
