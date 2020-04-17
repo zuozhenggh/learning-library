@@ -7,7 +7,7 @@ This is the first of several labs that are part of the Predicting Flight Delays 
 -   Learn how to provision a new Autonomous Data Warehouse (ADW) 
 -   Learn how to creae Oracle Machine Leaning (OML) Notebook Users
 
-## Required Artifacts
+### Required Artifacts
 The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 
