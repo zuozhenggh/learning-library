@@ -55,9 +55,9 @@ A Docker container is a running instance of a Docker image. However, unlike in t
    
     ````
     [opc@oraclelinux77 ~]$ <copy>docker ps</copy> 
-    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-    [opc@oraclelinux77 ~]$
     ````
+
+    ![](images/step1.2_application_status " ")
    
 3.  Start your application, `restclient`, in docker on port 8002 in JSON format.  
 
@@ -93,12 +93,6 @@ A Docker container is a running instance of a Docker image. However, unlike in t
 
     ````
     [opc@oraclelinux77 ~]$ <copy>docker ps -a</copy>
-    
-    [opc@oraclelinux77 ~]$
-    ````
-
-    ````
-    [opc@oraclelinux77 ~]$ <copy>docker ps -a</copy> 
     ````
 
     ![](images/step1.4_application_running_status.png " ")
@@ -131,8 +125,9 @@ A Docker container is a running instance of a Docker image. However, unlike in t
 
     ````
     [opc@oraclelinux77 ~]$ <copy>docker ps -a</copy>
-    [opc@oraclelinux77 ~]$ 
     ````
+
+    ![](images/step2.1_stop_application_status.png " ")
 
 ## **STEP 3**: Start the Container in Another Port
 
@@ -148,8 +143,9 @@ A Docker container is a running instance of a Docker image. However, unlike in t
 
     ````
     [opc@oraclelinux77 ~]$ <copy>docker ps -a</copy>
-    [opc@oraclelinux77 ~]$ 
     ````
+
+    ![](images/step3.2_another_port_application_status.png " ")
 
 3.  Go back to your browser and change the port to 18002 to see the products in your application.
 

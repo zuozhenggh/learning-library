@@ -30,8 +30,7 @@ OPTIONAL: If you are running this on a compute instance that has Oracle already 
 1.  Switch to `oracle` user:
 
     ````
-    [opc@oraclelinux77 ~]$ <copy>sudo su - oracle</copy>
-
+    <copy>sudo su - oracle</copy>
     ````
 
 2.  Now let's check the listener status. If the listener is not running proceed to step 3.

@@ -3,11 +3,6 @@
 
 This lab walks you through the steps to create a schema in a running Oracle database container and login to Enterprise Manager Express.
 
-
-### Background
-
-
-
 ### What Do You Need?
 
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
@@ -25,12 +20,13 @@ This lab walks you through the steps to create a schema in a running Oracle data
 2.  Let's make sure the /dbfiles directory mapped earlier is writeable
 
     ````
-    <copy> 
-    cd /dbfiles
+    <copy> cd /dbfiles
     touch xxx
     ls
     </copy> 
     ````
+
+    ![](images/section6step2.png " ")
 
 3.  Now run the sql scipt from inside the container using sqlplus
    
@@ -41,6 +37,8 @@ This lab walks you through the steps to create a schema in a running Oracle data
     exit
     </copy> 
     ````
+
+    ![](images/section6step3.png " ")
 
 ## **STEP 2**: Login to Enterprise Manager Express
 
@@ -63,6 +61,10 @@ Now that our schema is created, let's login to Enterprise Manager Express.
     Check the "as SYSDBA" checkbox
     </copy>
     ````
+
+    ![](images/em-express.png " ")
+
+    ![](images/emexpress.png " ")
 
 You may now proceed to the next lab.
 
