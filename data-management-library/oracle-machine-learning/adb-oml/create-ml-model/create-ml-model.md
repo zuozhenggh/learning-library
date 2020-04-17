@@ -57,7 +57,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/012.png  " ")
 
-2. Log in as `ml\_user` and create your own password. Before you log in, you may wish to bookmark this page.
+2. Log in as `ml_user` and create your own password. Before you log in, you may wish to bookmark this page.
 
   ![](./images/013.png  " ")
 
@@ -154,7 +154,8 @@ Zepplin notebooks are composed of paragraphs that can contain formatted text, sq
 
   /* This is a basic example of a chart visualization in Zepplin.  This particular one is a column graph.  Click on the 'settings' link below.  That will show you the fields in the query that were used to create the chart.  After you review the settings you can click on the link again to hide the settings. */
 
-  select customer_id, age, income, tenure, loan_type, loan_amount, occupation, number_of_current_accounts, max_cc_spent_amount, mode_job_of_contacts from admin.credit_scoring_100k where rownum &lt; 1000</copy>
+  select customer_id, age, income, tenure, loan_type, loan_amount, occupation, number_of_current_accounts, max_cc_spent_amount, mode_job_of_contacts from admin.credit_scoring_100k where rownum &lt; 1000
+  </copy>
   ````
 
  ![](./images/058.png  " ")
@@ -201,7 +202,7 @@ So how does all this help us build ml models, collaborate with others, and revie
 
 ## Step 4: Import ML Notebook
 
-As you have seen adding content to a notebook is simple and fast.  However we have already built out all the steps that are normally followed when exploring data and building a machine learning model.  This has been saved to the Credit Score Predictions.json file.  We will import this notebook and review it.  It is important to note that you ***must execute all the steps in this notebook if you wish to continue on with lab 3 and 4***.  Executing the steps takes only a few minutes.
+As you have seen adding content to a notebook is simple and fast.  However we have already built out all the steps that are normally followed when exploring data and building a machine learning model.  This has been saved to the Credit Score Predictions.json file.  We will import this notebook and review it.  It is important to note that you *must execute all the steps in this notebook if you wish to continue on with lab 3 and 4*.  Executing the steps takes only a few minutes.
 
 1. Navigate back to the Notebook page.
 

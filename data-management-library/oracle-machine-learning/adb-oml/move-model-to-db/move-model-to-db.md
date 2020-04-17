@@ -83,7 +83,7 @@ This lab assumes you have completed the following labs:
 
 ## Step 2: Export the machine learning model
 
-1. Go up to the URL and change the admin part of the URL to ml\_user and hit enter to log in as ***ml\_user***.  Copy the URL to a notepad - you will need it later.
+1. Go up to the URL and change the admin part of the URL to ml\_user and hit enter to log in as ml\_user.  Copy the URL to a notepad - you will need it later.
 
   ![](./images/011.png  " ")
 
@@ -156,24 +156,24 @@ This lab assumes you have completed the following labs:
 
   ![](./images/023.png  " ")
 
-7. Log in with your ***ATP admin*** userid.
+7. Log in with your ATP admin userid.
 
   ![](./images/024.png  " ")
 
 8. Grant SQL Developer Web rights to ml\_user.
-  ````
-  <copy>BEGIN
-    ORDS_ADMIN.ENABLE_SCHEMA(
-      p_enabled => TRUE,
-      p_schema => 'ML_USER',
-      p_url_mapping_type => 'BASE_PATH',
-      p_url_mapping_pattern => 'ml_user',
-      p_auto_rest_auth => TRUE
-    );
-    COMMIT;
-  END;
-  /</copy>
-  ````
+    ````
+    <copy>BEGIN
+      ORDS_ADMIN.ENABLE_SCHEMA(
+        p_enabled => TRUE,
+        p_schema => 'ML_USER',
+        p_url_mapping_type => 'BASE_PATH',
+        p_url_mapping_pattern => 'ml_user',
+        p_auto_rest_auth => TRUE
+      );
+      COMMIT;
+    END;
+    /</copy>
+    ````
 
   ![](./images/025.png  " ")
 
@@ -187,7 +187,7 @@ This lab assumes you have completed the following labs:
 
 ## Step 4: Copy Machine Learning Models between ADW and ATP
 
-1. With the ***admin*** userid in ***ATP*** SQL Developer Web create a credential to copy your ADW wallet from Object Storage to the DATA\_PUMP\_DIR later in this step.  This is your cloud userid and generated auth token.
+1. With the admin userid in ATP SQL Developer Web create a credential to copy your ADW wallet from Object Storage to the DATA\_PUMP\_DIR later in this step.  This is your cloud userid and generated auth token.
   ````
   BEGIN
     DBMS_CLOUD.CREATE_CREDENTIAL(
@@ -255,7 +255,8 @@ This lab assumes you have completed the following labs:
 
 9. Create database link.  This will allow you to copy data from ADW to ATP (in fact, bi-directional).
   ````
-  <copy>BEGIN
+  <copy>
+  BEGIN
       DBMS_CLOUD_ADMIN.CREATE_DATABASE_LINK(
             db_link_name => 'adwlink',
             hostname => '&lt;your ADW host&gt;',
@@ -277,23 +278,25 @@ This lab assumes you have completed the following labs:
 
   ![](./images/041.png  " ")
 
-## Step 5: Copy tables from ADW to ATP.
+## Step 5: Copy tables from ADW to ATP
 
 1. First copy the credit\_scoring\_100k table into ml\_user in ATP.  Normally this table would already exist in the production system.  We could have loaded it in lab 1 when we loaded the table into ADW, but since we were going to create this database link we can just copy it from ADW.  We also need to copy the ml model, which is in the temp table (blob).  Enter the following.
-```
-<copy>create table ml_user.credit_scoring_100k as select * from credit_scoring_100k@adwlink;<copy/>
-```
+  ```
+  <copy>
+  create table ml_user.credit_scoring_100k as select * from credit_scoring_100k@adwlink;
+  </copy>
+  ```
 
   ![](./images/042.png  " ")
 
 2. Now copy the temp table.
-```
-<copy>create table ml_user.temp as select * from ml_user.temp@adwlink;</copy>
-```
+  ```
+  <copy>create table ml_user.temp as select * from ml_user.temp@adwlink;</copy>
+  ```
 
   ![](./images/043.png  " ")
 
-## Step 6: Import the ml model.  
+## Step 6: Import the ml model 
 
 1. Start by copying the SQL Developer URL for the admin user and paste that into your browser, but change the admin user value to ml\_user.
 
@@ -304,7 +307,7 @@ This lab assumes you have completed the following labs:
   ![](./images/045.png  " ")
 
 3. Import your model.  Note you will get a warning error message, but you can then confirm the model was imported.
-  ```
+  ````
   <copy>DECLARE
   v_blob blob;
   BEGIN
@@ -314,22 +317,22 @@ This lab assumes you have completed the following labs:
   dbms_lob.freetemporary(v_blob);
   END;
   /</copy>
-  ```
+  ````
 
   ![](./images/046.png  " ")
 
 4. Confirm the ml model was imported.
-```
-<copy>select * from user_mining_models;</copy>
-```
+  ```
+  <copy>select * from user_mining_models;</copy>
+  ```
 
   ![](./images/047.png  " ")
 
 5. Test the model.
-```
-<copy>select prediction(N1_CLASS_MODEL USING 'Rich' as WEALTH, 2000 as income, 'Silver' as customer_value_segment) credit_prediction
-from dual;</copy>
-```
+  ```
+  <copy>select prediction(N1_CLASS_MODEL USING 'Rich' as WEALTH, 2000 as income, 'Silver' as customer_value_segment) credit_prediction
+  from dual;</copy>
+  ```
 
   ![](./images/048.png  " ")
 
@@ -366,9 +369,9 @@ from dual;</copy>
   ![](./images/049.png  " ")
 
 7. Select some data to view predictions.
-```
-<copy>select customer_id, wealth, income, credit_prediction, likely_good_credit_pcnt from credit_scoring_100k;</copy>
-```
+  ```
+  <copy>select customer_id, wealth, income, credit_prediction, likely_good_credit_pcnt from credit_scoring_100k;</copy>
+  ```
 
   ![](./images/050.png  " ")
 

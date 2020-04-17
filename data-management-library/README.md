@@ -39,7 +39,7 @@ The Oracle Data Management Github is the central location for workshops related 
 - [Oracle Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
 ## Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.  Make sure to include the name of the workshop when submitting.
 
 -- Oracle Database Product Management
 
