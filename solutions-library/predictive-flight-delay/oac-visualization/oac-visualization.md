@@ -1,12 +1,8 @@
 # Visualizing results of Validation and Prediction in Oracle Analytics Cloud (OAC)
 
-![](images/500/Picture500-lab.png)  
-Updated: January 4, 2019
 
 ## Introduction
 This lab walks you through the steps to visualize results of validation and prediction in Oracle Analytics Cloud (OAC).  
-
-**_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
 ## Objectives
 -   Learn how to visualize the results in Oracle Analytics Cloud
@@ -20,7 +16,7 @@ This lab walks you through the steps to visualize results of validation and pred
 
 ## Part 1. Visualize Results of Validation in OAC. 
 
-### **STEP 1: Load the Validation Result Table onto OAC**
+### **STEP 1**: Load the Validation Result Table onto OAC
 
 -   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 
@@ -38,7 +34,7 @@ This lab walks you through the steps to visualize results of validation and pred
 
 ![](./images/500/Picture500-4.png)
 
-### **STEP 2: Visualize Results of Validation using Combo chart**
+### **STEP 2**: Visualize Results of Validation using Combo chart
 -   Once you have uploaded the validation result table onto OAC successfully, click **Visualize** tap.  
 ![](./images/500/Picture500-5.png)
 
@@ -58,11 +54,11 @@ This lab walks you through the steps to visualize results of validation and pred
 
 ## Part 2. Visualize Results of Prediction in OAC. 
 
-### **STEP 3: Load the Prediction Result Table onto OAC**
+### **STEP 1**: Load the Prediction Result Table onto OAC
 
-- Repeat **Part 1.STEP1** to load the prediction result table (**OT_Pred_Res**) onto OAC. 
+- Repeat **Part 1.STEP 1** to load the prediction result table (**OT_Pred_Res**) onto OAC. 
 
-### **STEP 4: Make a new CARRIER column on tap of Prepare**
+### **STEP 2**: Make a new CARRIER column on tap of Prepare
 - Click **Option** button on the column of **UNIQUECARRIER** and select **Duplicate**. 
 ![](./images/500/Picture500-8.png)
 
@@ -77,7 +73,7 @@ This lab walks you through the steps to visualize results of validation and pred
 
 ![](./images/500/Picture500-11.png)
 
-### **STEP 5: Visualize Results of Prediction using Bar graph**
+### **STEP 3**: Visualize Results of Prediction using Bar graph
 -   Once you have uploaded the prediction result table onto OAC successfully, click **Visualize** tap.  
 
 -   Make visualization by following below steps to visualize the prediction result. 
@@ -97,6 +93,3 @@ This lab walks you through the steps to visualize results of validation and pred
 **Notes:** This graph shows predicted delay time for flights from LAX to SFO on a Thursday. Each color represents three major airlines, a, b, and c. This graph predicts that on a Thursday, airline “B” from LAX to SFO leaving at 4:50 p.m. will arrive about 17 minutes late. On the other hand, airline “C” from leaving at 4:45 p.m. will arrive only about 5 minutes late.
 
 
-
-## Great Work - All Done with Lab500!
-**Congrats! You are all done. You may now close this tab.**
