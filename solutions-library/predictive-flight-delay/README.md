@@ -1,4 +1,4 @@
-# Oracle’s Predicting Flight Delays Workshop 
+# Oracle’s Predictive Flight Delays Workshop 
 
 Welcome to the workshop on Predicting Flight Delays.
 
