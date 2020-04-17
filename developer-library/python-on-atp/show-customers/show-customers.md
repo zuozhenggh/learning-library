@@ -10,22 +10,22 @@ Marketing is also interested in a map like interface to assess and establish sal
 
 ## STEP 1: Plot customer based on region
 
-- If you closed the terminal, open it again and make sure to be in virtual env. Run the command
-```
-<copy>bokeh serve regions.py</copy>
-```
+1. If you closed the terminal, open it again and make sure to be in virtual env. Run the command
+  ```
+  <copy>bokeh serve regions.py</copy>
+  ```
 
-- Now we have our web service running. Leave the terminal as it is.
+2.  Now we have our web service running. Leave the terminal as it is.
 
   ![](images/001.png " ")
 
-- To confirm everything works fine, open firefox and go to URL [http://localhost:5006/regions](http://localhost:5006/regions).
+3. To confirm everything works fine, open firefox and go to URL [http://localhost:5006/regions](http://localhost:5006/regions).
 
   ![](images/003.png " ")
 
-- The regions you see in the map are plotted from the data in the shapefile. If you want to check the files it is in the application folder named demo_region. We are using **geopandas** to convert the shapefile in dataframe and perform operations on it.
+4. The regions you see in the map are plotted from the data in the shapefile. If you want to check the files it is in the application folder named demo_region. We are using **geopandas** to convert the shapefile in dataframe and perform operations on it.
 
-- To show/hide hover points click on the hover tool in the toolbar as shown below.
+5. To show/hide hover points click on the hover tool in the toolbar as shown below.
  
   ![](images/002.png " ")
 
@@ -44,4 +44,4 @@ Finally you created a pair of spatial applications that utilized the GeoPandas e
 - **Last Updated By/Date** - Kay Malcolm, April 2020
 - **Workshop Expiration Date** - April 31, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

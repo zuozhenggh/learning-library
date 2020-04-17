@@ -12,7 +12,7 @@ Finally as Derek, you will create a pair of spatial applications. To do this you
 
 Please proceed to the next lab.
 
-## Acknowledgements
+### Acknowledgements
 
 - **Authors/Contributors** - Derrick Cameron
 - **Last Updated By/Date** - Kay Malcolm, April 2020
