@@ -116,16 +116,13 @@ On Step 2 of the Import Wizard, you control the import method and parameters. Le
 
 ## Part 3. Create Data for Machine Learning Training in Oracle Analytics Cloud (OAC)
 
--   Copy and paste [this code snippet](./files/scripts/data_OAC.sql) to a SQL Developer worksheet and run the script. This code is to create the train portion of the data which you will use to train a ML model in OAC. 
+-   Copy and paste [this code snippet](./files/data_OAC.sql) to a SQL Developer worksheet and run the script. This code is to create the train portion of the data which you will use to train a ML model in OAC. 
 
 
 
 ## Part 4. Grant Privileges to the OML User to Access All Datasets
 
--   Copy and paste [this code snippet](./files/scripts/grant_Privileges.sql) to a SQL Developer worksheet and run the script. This code is to grant privileges to the OML User (**omluser1**) which we created on previous lab. 
+-   Copy and paste [this code snippet](./files/grant_Privileges.sql) to a SQL Developer worksheet and run the script. This code is to grant privileges to the OML User (**omluser1**) which we created on previous lab. 
 
 
-
-## Great Work - All Done with Lab200!
-**You are ready to move on to the next lab. You may now close this tab.**
 
