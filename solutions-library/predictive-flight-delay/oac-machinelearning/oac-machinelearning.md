@@ -15,7 +15,6 @@ This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 
-
 # Provision Oracle Analytics Cloud (OAC) and Connect to Autonomous Data Warehouse (ADW)
 
 ## Part 1. Create an OAC Instance
@@ -70,10 +69,7 @@ In this section, you will create an OAC instance.
 
 
 
-
 ## Part 2. Connect OAC to ADW
-
-### **STEP 3: Connect OAC to ADW**
 
 -   In the Oracle Analytics Cloud main page, click on the **Create** button on the top-right and then click on **Connection** in the popped menu.
 
@@ -98,8 +94,6 @@ In this section, you will create an OAC instance.
 
 ## Part 3. Upload Dataset from ADW to OAC
 
-### **STEP 4: Upload Dataset from ADW to OAC to build ML Models**
-
 -   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 
 ![](./images/picture300-41.png)
@@ -123,7 +117,6 @@ In this section, you will create an OAC instance.
 
 ## Part 4. Build Machine Learning Models in OAC 
 
-### **STEP 5: Create Data Flow to Build Machine Learning Models**
 Once you have created connection and uploaded dataset from ADW to OAC successfully, let's create **Data Flow** to build machine learning model. 
 
 -   On the main page of OAC, click **Data Flow** to create the machine learning model. 
@@ -168,7 +161,7 @@ Once you have created connection and uploaded dataset from ADW to OAC successful
 
 ## Part 5. Find Out Which ML Model Fits Flight Delay Prediction the Best 
 
-### **STEP 6: Import the ML_ModelQuality.dva Project File**
+### **STEP 1**: Import the ML_ModelQuality.dva Project File
 You can repeat the same process and create four different ML models for predicting flight delay time, then compare them and find out which model fits our problem the best using statistical methods. However, to simplify the process, we have already created all those models in OAC. And then, we have saved statistical results from each model in the project of  **ML_ModelQuality.dva**. From follwing steps, you will import the project of **ML_ModelQuality.dva**  and find out which model fits our problem the best. 
 
 - Click [ML_ModelQuality.dva](./files/mlmodel.dva) to download the project file to a directory on your local computer.
@@ -192,7 +185,7 @@ You can repeat the same process and create four different ML models for predicti
 
 ![](./images/picture300-63.png)
 
-### **STEP 7: Find Out Which ML Model Fits Flight Delay Prediction the Best**
+### **STEP 2**: Find Out Which ML Model Fits Flight Delay Prediction the Best
 
 We have created four different ml models in OAC. And then, to find out which model fits our problem the best, we have calculated Mean Absolute Error (MAE) of each model. MAE is commonly used statistics for evaluating the overall quality of model. MAE value ranges from zero to infinity, and smaller MAE value means better model quality. 
 
