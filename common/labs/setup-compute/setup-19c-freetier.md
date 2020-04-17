@@ -1,4 +1,4 @@
-# Setup - Freetier or Existing Cloud Account #
+# Setup - Freetier or Existing Cloud Account 
 
 ## Introduction
 This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running a pre-configured Oracle Database 19c install using Oracle Resource Manager and Terraform.  
@@ -42,7 +42,7 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/createstackpage.png " ")
 
-4.  Click the **Browse** button and select the zip file (db19c-compute-vcn.zip) that you downloaded. Click **Select**.
+4.  Click the **Browse** link and select the zip file (db19c-compute-vcn.zip) that you downloaded. Click **Select**.
 
     ![](./images/create-db-stack.png " ")
 

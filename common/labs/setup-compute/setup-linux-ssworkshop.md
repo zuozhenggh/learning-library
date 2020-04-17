@@ -30,7 +30,7 @@ This lab assumes you have already completed the following labs:
 ## Step 1: Login and Create Stack using Resource Manager
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [linux-compute.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/bFbsRlVGlmd1EQbFyAZuYIFppAFysOUoShkIZAC9K2U/n/c4u03/b/labfiles/o/linux-compute.zip) - Packaged terraform instance creation script
+    - [linux-compute.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k3xZLXdJAT1vE-i1jMotl3nhDMtfKn0YOq1QgrWsmKo/n/c4u03/b/labfiles/o/linux-compute.zip) - Packaged terraform instance creation script
 
 2.  Save in your downloads folder.
 
@@ -44,9 +44,9 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/createstackpage.png " ")
 
-4.  Click the **Browse** button and select the zip file (linux-compute.zip) that you downloaded. Click **Select**.
+4.  Click the **Browse** link and select the zip file (linux-compute.zip) that you downloaded. Click **Select**.
 
-    ![](./images/createstack2.png " ")
+    ![](./images/create-stack-orig.png " ")
 
 
     Enter the following information and accept all the defaults
@@ -59,16 +59,17 @@ This lab assumes you have already completed the following labs:
 
 5.  Click **Next**.
 
-    ![](./images/linux-create-stack.png " ")
+    ![](./images/linux-compute-ss.png " ")
 
     Enter the following information:
 
     **Choose a Name for your Instance:** Enter a display name. This will be the display name for the compute instance you create.  We recommend your name and a set of numbers
-    
-    **Image Cloud ID:** The image id was provided in Email 2.  Enter that information here.
 
     **SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
 
+    **Image ID:** The image id was provided in Email 2.  Enter that information here.
+
+    **Subnet ID:** The subnet id which is the address for the pre-created network was provided in Email 2.  Enter that information here.
 
 6. Click **Next**.
 

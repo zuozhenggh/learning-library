@@ -1,7 +1,7 @@
 # Setup - FreeTier or Existing Cloud Account 
 
 ## Introduction
-This lab will show you how to setup a Oracle Cloud network (VCN) and acompute instance running Oracle Linux 7 using Oracle Resource Manager and Terraform.  
+This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running Oracle Linux 7 using Oracle Resource Manager and Terraform.  
 
 ### About Terraform and Oracle Cloud Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
@@ -42,7 +42,7 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/createstackpage.png " ")
 
-4.  Click the **Browse** button and select the zip file (linux-compute-vcn.zip) that you downloaded. Click **Select**.
+4.  Click the **Browse** link and select the zip file (linux-compute-vcn.zip) that you downloaded. Click **Select**.
 
     ![](./images/create-db-stack.png " ")
 
