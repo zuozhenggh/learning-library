@@ -19,6 +19,10 @@ Click below to access the content.
 
 [![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/ssworkshop/index.html)
 
+### Create a Database in a Docker Container
+
+[![](./images/create-oci-vm-db.png)](https://oracle.github.io/learning-library/data-management-library/database/docker/create-database-in-docker)  ![](./images/transparent.png " ") 
+
 ### Create a Database on OCI VM 
 
 [![](./images/create-oci-vm-db.png)](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db)  ![](./images/transparent.png " ") 
