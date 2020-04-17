@@ -4,20 +4,17 @@
 
 This lab walks you through the steps to load datasets from local file system into the Autonomous Data Warehouse (ADW) instance that you provisioned in the previous lab. You will use SQL Developer for connecting and uploading datasets to ADW. 
 
-## Objectives
+### Objectives
 -   Learn how to connect to your new Autonomous Data Warehouse using SQL Developer
 -   Learn how to use the SQL Developer Data Import Wizard to load datasets
 -   Learn how to prepare datasets for training machine learning model in OAC 
 -   Learn how to grant privileges to the OML User to access all datasets
 
-## Required Artifacts
+### Required Artifacts
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-
 -   Oracle SQL Developer 18.3 or later (see <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">Oracle Technology Network download site</a>)
 Please use SQL Developer version 18.3 or later as this version contains enhancements for key Autonomous Data Warehouse features, including using ADW behind a VPN or Firewall.
 
-
-# Connect to ADW and Load Datasets to the ADW instance using SQL Developer
 
 ## Part 1. Connect SQL Developer to the ADW Instance
 In this section you will connect the SQL Developer to the ADW instance that you provisioned in Lab 100.
