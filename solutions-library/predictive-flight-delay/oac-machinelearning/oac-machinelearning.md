@@ -15,7 +15,6 @@ This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 
-# Provision Oracle Analytics Cloud (OAC) and Connect to Autonomous Data Warehouse (ADW)
 
 ## Part 1. Create an OAC Instance
 In this section, you will create an OAC instance.
