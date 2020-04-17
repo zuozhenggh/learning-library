@@ -4,18 +4,15 @@
 ## Introduction
 This lab walks you through the steps to visualize results of validation and prediction in Oracle Analytics Cloud (OAC).  
 
-## Objectives
+### Objectives
 Learn how to visualize the results in Oracle Analytics Cloud
 
-## Required Artifacts
+### Required Artifacts
 The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 
 
-# Visualizing results of Validation and Prediction in Oracle Analytics Cloud (OAC)
-
 ## Part 1. Visualize Results of Validation in OAC. 
-
 ### **STEP 1**: Load the Validation Result Table onto OAC
 
 -   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
