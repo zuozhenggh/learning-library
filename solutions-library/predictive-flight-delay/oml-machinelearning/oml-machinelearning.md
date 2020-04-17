@@ -4,16 +4,13 @@
 
 This lab walks you through the steps to build a linear regression model in Oracle Machine Learning (OML) Notebook since we learned that linear regression algorithm is one of the best models on previous lab. 
 
+### Objectives
+Learn how to build and apply machine learning model in Oracle Machine Learning (OML)
 
-## Objectives
--   Learn how to build and apply machine learning model in Oracle Machine Learning (OML)
-
-## Required Artifacts
--   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-
+### Required Artifacts
+The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 
-# Building a Machine Learning Model in Oracle Machine Learning (OML) Notebook
 
 ## Part 1. Import Notebook File to OML 
 
