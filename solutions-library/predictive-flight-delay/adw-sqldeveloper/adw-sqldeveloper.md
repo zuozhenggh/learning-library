@@ -71,7 +71,7 @@ example, if you the database you created was named adwfinance, select adwfinance
 
 ### **STEP 1**: Download the Data File to Your Local Computer
 
-For this lab, you will need a data file. Click [here](./files/datasets/Int_Flights_Aircraft_Weather.zip) to download a zipfile of the data file and unzip it to a directory on your local computer. This data file is the resulting integrated table including flight, weather, and aircraft data at each time and each airport.
+For this lab, you will need a data file. Click [here](./files/flights_aircraft_weather.zip) to download a zipfile of the data file and unzip it to a directory on your local computer. This data file is the resulting integrated table including flight, weather, and aircraft data at each time and each airport.
 
 ### **STEP 2**: Load the Data File to the ADW Instance using SQL Developer Data Import Wizard**
 
