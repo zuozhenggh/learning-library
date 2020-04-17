@@ -1,13 +1,9 @@
-# Getting Started with Autonomous Data Warehouse (ADW)
+# Provision Autonomous Data Warehouse (ADW) 
 
-![](images/100/Picture100-lab.png)  
-Updated: January 4, 2019
+## Introduction
 
-## **Introduction**
+This is the first of several labs that are part of the Predicting Flight Delays with Oracle Machine Learning & Autonomous Data Warehouse Cloud Service workshop. This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse (ADW) on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance during this lab. 
 
-This is the first of several labs that are part of the **Predicting Flight Delays with Oracle Machine Learning & Autonomous Data Warehouse Cloud Service** workshop. This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse (ADW) on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance during this lab. 
-
-**_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
 ## Objectives
 -   Learn how to provision a new Autonomous Data Warehouse (ADW) 
@@ -16,27 +12,8 @@ This is the first of several labs that are part of the **Predicting Flight Delay
 ## Required Artifacts
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-# Provision Autonomous Data Warehouse (ADW)
 
 ## Part 1. Provisioning an ADW Instance
-
-In this section, you will be provisioning an ADW instance using the cloud console.
-
-### **STEP 1: Sign in to Oracle Cloud**
-
--   Go to [cloud.oracle.com](https://cloud.oracle.com), click **Sign In** to sign in with your Oracle Cloud account.
-
-![](./images/100/Picture100-2.png)
-
--   Enter your **Cloud Account Name** and click **My Services**.
-
-![](./images/100/Picture100-3.jpg)
-
--   Enter your Oracle Cloud **username** and **password**, and click **Sign In**.
-
-![](./images/100/Picture100-4.png)
-
-### **STEP 2: Create an ADW Instance**
 
 -   Once you are logged in, you are taken to the OCI Console. Click **Create a data warehouse**
 
@@ -76,7 +53,6 @@ In this section, you will be provisioning an ADW instance using the cloud consol
 
 
 ## Part 2. Creating OML Users
-### **STEP 3: Creating OML Users**
 
 - Click the **Service Console** button on your Autonomous Data Warehouse details page.
 
@@ -110,6 +86,3 @@ This will open OML user Administration page as a new tab within your browser.
 
 You will use **omluser1** later in this workshop. 
 
-
-## Great Work - All Done with Lab100!
-**You are ready to move on to the next lab. You may now close this tab.**
