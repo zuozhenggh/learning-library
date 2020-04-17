@@ -1,11 +1,7 @@
 # Deploy and Change Application
 ## Before you begin
 
-This lab walks you through the steps to deploy and change the application. 
-
-### Backround
-
-
+This lab walks you through the steps to deploy an application, twitterfeed, that is stored in the hub.docker.com site under the account wvbirder.  You will then run the rest client using an oracle database as the data source. You can share applications and make modifications in the container.
 
 ### What Do You Need?
 
@@ -20,13 +16,19 @@ This lab walks you through the steps to deploy and change the application.
     <copy>docker run -d --name=twitterfeed -p=9080:9080 wvbirder/twitterfeed</copy> 
     ````
 
+    ![](images/section7step1.png " ")
+
 2.  Check to see which containers are running.  
     
     ````
     <copy>docker ps</copy>
     ````
 
+    ![](images/section7step2.png " ")
+
 3.  Open up a broswer to see the application with the stream of texts.  http://Public IP address:9080/statictweets
+
+    ![](images/section7step3.png " ")
 
 ## **STEP 2**: Run Restclient with Oracle Database as Datasource
 
@@ -38,6 +40,8 @@ This lab walks you through the steps to deploy and change the application.
 
 2.  Go back to your broswer to see the application with the stream of texts.  http://Public IP address:8002/products
 
+    ![](images/twitterproducts.png " ")
+
 ## **STEP 3**: Run AlphaOfficeUI Application
 
 1.  An application called AlphaOfficeUI has been staged in wvbirders docker hub account.  Let's download it, extract and run it.
@@ -46,7 +50,11 @@ This lab walks you through the steps to deploy and change the application.
     <copy>docker run -d --name=alphaofficeui -p=8085:8085 wvbirder/alpha-office-ui-js</copy> 
     ````
 
-2.  Go back to your broswer to see the application running on port 8085.  http://Public IP address:8085.  Click on one of the products to see the details and the twitterfeed comments. 
+    ![](images/section7step6.png " ")
+
+2.  Go back to your broswer to see the application running on port 8085.  http://Public IP address:8085.  Click on one of the products to see the details and the twitterfeed comments.
+
+    ![](images/alphaoffice.png " ")
 
 ## **STEP 4**: Copy Background Image
 
@@ -64,6 +72,8 @@ This lab walks you through the steps to deploy and change the application.
     <copy>docker exec -it alphaofficeui bash</copy> 
     ````
 
+    ![](images/section8step1.png " ")
+
     Run below command to confirm if vim exists.
 
     ````
@@ -80,6 +90,8 @@ This lab walks you through the steps to deploy and change the application.
     <copy>apt-get install vim</copy> 
     ````
 
+    ![](images/section8step2.png " ")
+
 ## **STEP 6**: Change Application
 
 1.  Verify the dark_blue.jpg file is in the container.
@@ -94,15 +106,24 @@ This lab walks you through the steps to deploy and change the application.
     <copy>vim /pipeline/source/public/alpha.html</copy> 
     ````
 
+    ![](images/section8step4.png " ")
+
 3.  Let's edit the css file as well and change the background color of the app and exit.
 
     ````
     <copy>vim /pipeline/source/public/css/alpha.css</copy>
     ````
     
+    ![](images/section8step5b.png " ")
+
     ````
     <copy>exit</copy> 
     ````
+
+4. Let's view the running application now.  Notice the name and the background has changed.
+
+    ![](images/section8step9.png " ")
+
 
 ## **STEP 7**: Commit Docker Image
 
@@ -112,11 +133,15 @@ This lab walks you through the steps to deploy and change the application.
     <copy>docker commit alphaofficeui (your-dockerhub-account)/(image-name)</copy>
     ````
 
+    ![](images/section8step5a.png " ")
+
 2.  Now let's list the images. Note that your image is now listed.
 
     ````
-    <copy>docker images</copy> 
+    <copy>docker images</copy>
     ````
+
+    ![](images/section8step5.png " ")
 
 ## **STEP 8**: Start Container Based on Image
 
@@ -132,6 +157,8 @@ This lab walks you through the steps to deploy and change the application.
     <copy>docker rm alphaofficeui</copy> 
     ````
 
+    ![](images/section8step6.png " ")
+
 ## **STEP 9**: View Image
 
 1.  Let's download, extract and install the new container from your docker account.
@@ -139,6 +166,8 @@ This lab walks you through the steps to deploy and change the application.
     ````
     <copy>docker run -d --name=alphaofficeui -p=8085:8085 (your-dockerhub-account)/(image-name)</copy> 
     ````
+
+    ![](images/section8step7.png " ")
 
 2.  Go back to your broswer to view the application.  http://Public IP address:8085
 
