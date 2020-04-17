@@ -3,7 +3,7 @@
 ## Before You Begin
 ### Objectives
 - Setup Python application 
-- Check the distance between customer and service provider.
+- Check the distance between customer and service provider
 
 #### Introduction
 

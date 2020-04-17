@@ -1,32 +1,36 @@
-# Setup - SSWorkshop #
+# Setup - SSWorkshop 
 
 ## Introduction
-This lab will show you how to setup your environment using Oracle Resource Manager.  
+This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running a pre-configured Oracle Database 19c install using Oracle Resource Manager and Terraform.  
 
-### Objectives
+### About Terraform and Oracle Cloud Resource Manager
+Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Database 19c.
 
--   Setup a compute instance using the DB19c Marketplace image
--   Install the SSB schema
--   Use Terraform and Resource Manager to complete the setup
-
-### Required Artifacts
-
-The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a FreeTier account, or a training account whose details were given to you by an Oracle instructor.
-
-### Lab Prerequisites
-
-This lab assumes you have already completed the Login to Oracle Cloud lab.  
-
-## Step 1: Login and Create Stack using Resource Manager
-
-To learn more about OCI Resource Manager, take a look at the video below.
+Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
 
 [](youtube:udJdVCz5HYs)
 
-You will be using Terraform zipped into a Resource Manager zipfile to create your database environment.
+### Oracle Cloud Marketplace
+
+The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Database 19c marketplace image.
+
+Link to Marketplace - https://www.oracle.com/cloud/marketplace/
+
+### Objectives
+
+-   Setup a network and compute instance using the DB19c Marketplace image
+-   Use Terraform and Resource Manager to complete the setup
+
+### Lab Prerequisites
+
+This lab assumes you have already completed the following labs:
+- Register for Free Tier
+- Create SSH Keys
+
+## Step 1: Login and Create Stack using Resource Manager
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [db19c-terraform.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/poImQ8CxHXLJ_ejOQ0GbO9kZyL6gwR1BV6WRS1Snz8M/n/c4u03/b/labfiles/o/db19c-terraform.zip) - Packaged terraform instance creation script
+    - [db19c-compute.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WKtfJjHxnpeJFFAXH_sNk5Tg0RRzRiD1-9ugmyjhBKo/n/c4u03/b/labfiles/o/db19c-compute.zip) - Packaged terraform instance creation script
 
 2.  Save in your downloads folder.
 
@@ -40,7 +44,7 @@ You will be using Terraform zipped into a Resource Manager zipfile to create you
 
     ![](./images/createstackpage.png " ")
 
-6.  Click the **Browse** button and select the zip file (db19c-terraform.zip) that you downloaded. Click **Select**.
+4.  Click the **Browse** button and select the zip file (db19c-compute.zip) that you downloaded. Click **Select**.
 
     ![](./images/createstack2.png " ")
 
@@ -53,7 +57,7 @@ You will be using Terraform zipped into a Resource Manager zipfile to create you
     
     - **Compartment**:  Select Compartment from Email 2
 
-7.  Click **Next**.
+5.  Click **Next**.
 
     ![](./images/createstack3.png " ")
 
@@ -67,11 +71,11 @@ You will be using Terraform zipped into a Resource Manager zipfile to create you
     
     **SSH Public Key**:  Paste the public key you created in the earlier step *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
 
-8. Click **Next**.
+6. Click **Next**.
 
     ![](./images/createstack4.png " ")
 
-9.  Your stack has now been created!  Now to create your environment.  *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
+7.  Your stack has now been created!  Now to create your environment.  *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 
     ![](./images/stackcreated.png " ")
 
@@ -215,27 +219,6 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
     ![](./images/scriptcomplete.png " ") 
 
-## Step 7: Run the In-Memory Setup Scripts
-1.  Run this command to setup the schema for In-Memory.   This script takes about 15 minutes to complete.   It downloads the ssb.dmp file and then imports it.
-    ````
-    <copy>
-    cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/axp5T8m0cF0_p1N832Qo6ImwczP_V6bSQi9ABLti6Ug/n/c4u03/b/labfiles/o/inmemoryscript.sh
-    chmod +x /home/opc/inmemoryscript.sh
-    nohup /home/opc/inmemoryscript.sh &> setupinmem.out&
-    </copy>
-    ````
-    ![](./images/ssbexists.png " ") 
-
-2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expeted.  The script should finish with 1 error*
-
-    ````
-    <copy>
-    tail -f /home/opc/setupinmem.out
-    </copy>
-    ````
-    ![](./images/inmemcomplete.png " ") 
-
 You may now proceed to the next lab.  
 
 ## Acknowledgements
@@ -243,4 +226,4 @@ You may now proceed to the next lab.
 - **Author** - Kay Malcolm, Director, DB Product Management
 - **Last Updated By/Date** - Kay Malcolm, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.
