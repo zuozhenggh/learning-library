@@ -1,5 +1,3 @@
-<!-- Updated March 24, 2020 -->
-
 # Oracle Database On Docker
 
 ## Lab Introduction 
@@ -24,7 +22,8 @@ Each of the labs are 5 -10 minutes in length, so you'll be up and running in no 
 
 ### Access the Labs Using Our Web Interface
 **Click the image to use our easy to navigate HTML format:**
-<!-- Add image and link -->
+
+[![Oracle Database on Docker Workshop](images/workshop_overview.png " ")](https://oracle.github.io/learning-library/data-management-library/database/docker/db-on-docker)
 
 ## Step 1: Login and Lab Setup 
 

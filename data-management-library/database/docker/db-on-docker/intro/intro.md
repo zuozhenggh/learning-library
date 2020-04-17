@@ -14,7 +14,6 @@ Each of the labs are 5 -10 minutes in length, so you'll be up and running in no 
 
 ## Lab Assumptions
 - Each participant has succesfully created a compute instance running Oracle Linux
-- The Virtual Compute Network (VCN) has been created with the appropriate Ingress rules
 - Each participant has created a docker hub [account](http://hub.docker.com)
 - Participants are using Chrome as the preferred browser and have installed Chrome's JSON formatter
 
