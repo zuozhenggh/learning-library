@@ -5,13 +5,13 @@
 This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and connect it to the instance of ADW you created. In addition, we will demonstrate how to build machine learning models and how to find out which model fits flight delay prediction the best in OAC which is "no-code" development platform. 
 
 
-## Objectives
+### Objectives
 -   Learn how to provision a new Oracle Analytics Cloud (OAC) Instance
 -   Learn how to connect the OAC instance to the instance of ADW you created 
 -   Learn how to build machine learning models in OAC
 -   Learn how to find out which ML model fits the flight delay prediction the best in OAC 
 
-## Required Artifacts
+### Required Artifacts
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 
