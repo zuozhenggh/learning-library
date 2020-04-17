@@ -10,7 +10,7 @@ Hands on Labs - Gigis pizza microservices/serverless app (Oracle Cloud Infraestr
 
 
 ## Other interesting information for the HOL
-- [HOL additional information](https://github.com/oraclespainpresales/GigisPizzaHOL/blob/master/microservices/notes.md)
+- [HOL additional information](https://github.com/oracle/learning-library/blob/master/developer-library/cloud-native/microservices/notes.md)
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
