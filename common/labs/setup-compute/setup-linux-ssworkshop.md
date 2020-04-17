@@ -1,4 +1,4 @@
-# Setup - SSWorkshop #
+# Setup - SSWorkshop 
 
 ## Introduction
 This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running a pre-configured Oracle Linux 7 install using Oracle Resource Manager and Terraform.  
@@ -30,7 +30,7 @@ This lab assumes you have already completed the following labs:
 ## Step 1: Login and Create Stack using Resource Manager
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [db19c-terraform.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/poImQ8CxHXLJ_ejOQ0GbO9kZyL6gwR1BV6WRS1Snz8M/n/c4u03/b/labfiles/o/db19c-terraform.zip) - Packaged terraform instance creation script
+    - [linux-compute.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/bFbsRlVGlmd1EQbFyAZuYIFppAFysOUoShkIZAC9K2U/n/c4u03/b/labfiles/o/linux-compute.zip) - Packaged terraform instance creation script
 
 2.  Save in your downloads folder.
 
@@ -44,7 +44,7 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/createstackpage.png " ")
 
-4.  Click the **Browse** button and select the zip file (db19c-terraform.zip) that you downloaded. Click **Select**.
+4.  Click the **Browse** button and select the zip file (linux-compute.zip) that you downloaded. Click **Select**.
 
     ![](./images/createstack2.png " ")
 
@@ -59,17 +59,16 @@ This lab assumes you have already completed the following labs:
 
 5.  Click **Next**.
 
-    ![](./images/createstack3.png " ")
+    ![](./images/linux-create-stack.png " ")
 
-    Enter the following information. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
+    Enter the following information:
 
-    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
-
-    **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
+    **Choose a Name for your Instance:** Enter a display name. This will be the display name for the compute instance you create.  We recommend your name and a set of numbers
     
-    **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
-    
-    **SSH Public Key**:  Paste the public key you created in the earlier step *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
+    **Image Cloud ID:** The image id was provided in Email 2.  Enter that information here.
+
+    **SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
+
 
 6. Click **Next**.
 
@@ -113,7 +112,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 *NOTE 1:  If you are using your laptop to connect, you cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).  This does not apply to the Oracle Cloud Shell.*
 
-*NOTE 2: The ssh-daemon is disable for the first 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.*
+*NOTE 2: The ssh-daemon is disable for up to 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.*
 
 ### Oracle Cloud Shell
 
@@ -162,7 +161,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
 
-5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
+5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You may not be able to connect while on any corporate VPN or in the Oracle office on clear-corporate (choose clear-internet if you are in an Oracle office).
 
     ![](./images/putty-auth.png " ") 
 
@@ -171,53 +170,6 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 7. Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session Step.
 
 8. Click Open to begin your session with the instance.
-
-
-
-## Step 5: Download the Setup Scripts
-
-1.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
-
-    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
-
-    ````
-    <copy>
-    cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
-    unzip multiscripts.zip; chmod +x *.sh
-    /home/opc/setupenv.sh
-    </copy>
-    ````
-    ![](./images/step5.png " ")   
-
-## Step 6: Run the DB19c Setup Scripts
-
-1.  Copy the following commands into your terminal to configure DB19c on your image.  This script takes approximately 30 minutes to run.  It runs in the background so you should be able to exit out while it's running.  
-
-    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
-
-    ````
-    <copy>
-    nohup /home/opc/setupdb.sh &> setupdb.out&
-    </copy>
-    ````
-
-    ![](./images/runscript-1.png " ")     
-2.  To check the status of the script above run the command below.  *This script takes about 30 minutes to complete and runs in the background*.  You can also use the unix **jobs** command to see if the script is still running if you are still in the same terminal session.  Do not proceed until you see 100% complete.
-
-    ````
-    <copy>
-    tail -f /home/opc/setupdb.out
-    </copy>
-    ````
-
-    ![](./images/tailscript.png " ") 
-
-    ![](./images/script.png " ") 
-
-3.  Once the script is complete, you should expect to see this message.  Note the script here took 24 minutes to complete.
-
-    ![](./images/scriptcomplete.png " ") 
 
 You may now proceed to the next lab.  
 

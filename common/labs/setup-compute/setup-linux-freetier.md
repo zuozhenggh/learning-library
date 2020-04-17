@@ -1,4 +1,4 @@
-# Setup - Freetier #
+# Setup - FreeTier or Existing Cloud Account 
 
 ## Introduction
 This lab will show you how to setup a Oracle Cloud network (VCN) and acompute instance running Oracle Linux 7 using Oracle Resource Manager and Terraform.  
@@ -30,7 +30,7 @@ This lab assumes you have already completed the following labs:
 ## Step 1: Login and Create Stack using Resource Manager
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [db19c-compute-vcn.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/hQ4Pz1twHYF6Cq0oXQZGt6UyR8FxD4wcIHAe-rTyELE/n/c4u03/b/labfiles/o/db19c-compute-vcn.zip) - Packaged terraform instance creation script for creating network and instance running the Oracle Linux 7
+    - [linux-compute-vcn.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/02kryFLPblAodOjJ1Ih1wstYpJ7FSnJ61uknIYHUAYU/n/c4u03/b/labfiles/o/linux-compute-vcn.zip) - Packaged terraform instance creation script for creating network and instance running the Oracle Linux 7
 
 2.  Save in your downloads folder.
 
@@ -42,7 +42,7 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/createstackpage.png " ")
 
-4.  Click the **Browse** button and select the zip file (db19c-compute-vcn.zip) that you downloaded. Click **Select**.
+4.  Click the **Browse** button and select the zip file (linux-compute-vcn.zip) that you downloaded. Click **Select**.
 
     ![](./images/create-db-stack.png " ")
 
@@ -54,13 +54,23 @@ This lab assumes you have already completed the following labs:
     
 5.  Click **Next**.
 
-    ![](./images/create-db-19c-stack.png " ")
+    ![](./images/linux-create-stack.png " ")
 
     Enter the following information:
 
     **Choose a Name for your Instance:** Enter a display name. This will be the display name for the compute instance you create.  We recommend your name and a set of numbers
-        
+    
+    **Image Cloud ID:** The image cloud OCI ID for various regions are listed below. This is the unique identifer of the Oracle Linux image you will use to build your instance.  These IDs are different cross region so make sure you find your corresponding ID for your region.  If you do not see your region, click [here](https://docs.cloud.oracle.com/en-us/iaas/images/image/54f930a3-0bf3-4f5d-b573-10eeeb7c7b03/) to access the full list.  *All regions are NOT displayed below*
+
     **SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
+
+    Image IDs:
+    - Ashburn - ocid1.image.oc1.iad.aaaaaaaa6tp7lhyrcokdtf7vrbmxyp2pctgg4uxvt4jz4vc47qoc2ec4anha
+    - Amsterdam - ocid1.image.oc1.eu-amsterdam-1.aaaaaaaashhgpi4jrjvogh2ditlujvspzujci2giy7ju5bndneh4hlcrfjwa
+    - Phoenix - ocid1.image.oc1.phx.aaaaaaaa6hooptnlbfwr5lwemqjbu3uqidntrlhnt45yihfj222zahe7p3wq
+    - Frankfurt - ocid1.image.oc1.eu-frankfurt-1.aaaaaaaadvi77prh3vjijhwe5xbd6kjg3n5ndxjcpod6om6qaiqeu3csof7a
+    - Montreal - ocid1.image.oc1.ca-montreal-1.aaaaaaaaqswshvu66v5u236nb5kyvtdyrnjjciyeu4smx6xzgr33dcdn3zzq
+   -  Tokyo - ocid1.image.oc1.ap-tokyo-1.aaaaaaaa3i5j5ackcuimnjh7ns3xjwedwq7r6ejgu7eikwaqd6m3sqbjgrqq
 
 6. Click **Next**.
 
@@ -104,7 +114,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 *NOTE 1:  If you are using your laptop to connect your corporate VPN may prevent you from logging in.
 
-*NOTE 2: The ssh-daemon is disabled for the first 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.*
+*NOTE 2: The ssh-daemon is disabled for the up to 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.*
 
 ### Oracle Cloud Shell
 
@@ -153,7 +163,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
 
-5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
+5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.    NOTE:  You may not be able to connect while on any corporate VPN or in the Oracle office on clear-corporate (choose clear-internet if you are in an Oracle office).
 
     ![](./images/putty-auth.png " ") 
 

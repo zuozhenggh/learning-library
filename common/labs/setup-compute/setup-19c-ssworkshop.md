@@ -1,4 +1,4 @@
-# Setup - SSWorkshop #
+# Setup - SSWorkshop 
 
 ## Introduction
 This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running a pre-configured Oracle Database 19c install using Oracle Resource Manager and Terraform.  
@@ -30,7 +30,7 @@ This lab assumes you have already completed the following labs:
 ## Step 1: Login and Create Stack using Resource Manager
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [db19c-terraform.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/poImQ8CxHXLJ_ejOQ0GbO9kZyL6gwR1BV6WRS1Snz8M/n/c4u03/b/labfiles/o/db19c-terraform.zip) - Packaged terraform instance creation script
+    - [db19c-compute.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WKtfJjHxnpeJFFAXH_sNk5Tg0RRzRiD1-9ugmyjhBKo/n/c4u03/b/labfiles/o/db19c-compute.zip) - Packaged terraform instance creation script
 
 2.  Save in your downloads folder.
 
@@ -44,7 +44,7 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/createstackpage.png " ")
 
-4.  Click the **Browse** button and select the zip file (db19c-terraform.zip) that you downloaded. Click **Select**.
+4.  Click the **Browse** button and select the zip file (db19c-compute.zip) that you downloaded. Click **Select**.
 
     ![](./images/createstack2.png " ")
 
