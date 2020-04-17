@@ -11,9 +11,9 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-ssworkshop.md"
         },
         {         
-            "title": "Lab2: ADW Provision",
+            "title": "Lab2: ADW and OML User",
             "publisheddate": "03/10/2020",
-            "filename": "../adw-provision/adw-provision.md"
+            "filename": "../adw-oml-provision/adw-oml-provision.md"
         },
         {         
             "title": "Lab3: ADW and Sql Developer",
