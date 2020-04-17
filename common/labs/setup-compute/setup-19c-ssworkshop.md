@@ -44,9 +44,9 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/createstackpage.png " ")
 
-4.  Click the **Browse** button and select the zip file (db19c-compute.zip) that you downloaded. Click **Select**.
+4.  Click the **Browse** link and select the zip file (db19c-compute.zip) that you downloaded. Click **Select**.
 
-    ![](./images/createstack2.png " ")
+    ![](./images/create-stack-orig.png " ")
 
 
     Enter the following information and accept all the defaults
@@ -73,7 +73,7 @@ This lab assumes you have already completed the following labs:
 
 6. Click **Next**.
 
-    ![](./images/createstack4.png " ")
+    ![](./images/create-db19c-stack-3.png " ")
 
 7.  Your stack has now been created!  Now to create your environment.  *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 

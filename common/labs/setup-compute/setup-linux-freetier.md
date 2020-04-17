@@ -42,7 +42,7 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/createstackpage.png " ")
 
-4.  Click the **Browse** button and select the zip file (linux-compute-vcn.zip) that you downloaded. Click **Select**.
+4.  Click the **Browse** link and select the zip file (linux-compute-vcn.zip) that you downloaded. Click **Select**.
 
     ![](./images/create-db-stack.png " ")
 
