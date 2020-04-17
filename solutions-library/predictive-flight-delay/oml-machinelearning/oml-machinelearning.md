@@ -42,7 +42,7 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 ![](./images/picture400-3.jpeg)
 
 
-- To download the .json notebook file, click [here](./files/scripts/FlightDelayPrediction.json). In the **Notebooks** section, click on **Import** to import the downloaded file. 
+- To download the .json notebook file, click [here](./files/flightdelayprediction.json). In the **Notebooks** section, click on **Import** to import the downloaded file. 
 
 ![](./images/picture400-4.jpeg)
 
