@@ -13,6 +13,7 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 
 
 ## Part 1. Visualize Results of Validation in OAC. 
+
 ### **STEP 1**: Load the Validation Result Table onto OAC
 
 -   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
