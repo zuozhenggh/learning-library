@@ -26,7 +26,7 @@ This lab assumes you have completed the following labs:
 In this section you will be provisioning an ADWC database and an ATP database using the cloud console.
 
 
-## Step 1: Create an ADW Instances
+## Step 1: Create an ADW Instance
 
 First, we are going to create an ADW Instance:
 
@@ -68,7 +68,7 @@ First, we are going to create an ADW Instance:
 
 You now have created your first ADW instance. Now, we are going to very similar steps to create an ATP Database.
 
-## Step 1: Create an ATP Instances
+## Step 1: Create an ATP Instance
 
 1. Click on the side menu and select Autonomous Transaction processing
 
@@ -224,7 +224,7 @@ You now have created your first ATP instance.
 
 ## Step 7: Create a Database Credential for Your Users
 
-1. Log into SQL Develop Web from the your **ADW Instance**, your screen should look like the following:
+1. Log into SQL Develop Web from the your *ADW Instance*, your screen should look like the following:
 
   ![](./images/054.png  " ")
 
@@ -248,7 +248,7 @@ You now have created your first ATP instance.
 
 Now you are ready to load data from the Object Store.
 
-## Step 8: Loading Data Using dbms\_cloud.copy_data package
+## Step 8: Loading Data Using dbms\_cloud.copy\_data package
 
 1. First, create your table. Enter the following in SQL Developer Web.
 
@@ -352,7 +352,7 @@ Now you are ready to load data from the Object Store.
 
   ![](./images/058.png  " ")
 
-3. Enter the following code snippit and then execute. Make sure to replace the file\_uri\_list with the **URL Path** you copied earlier from the Bucket created in Object Storage.
+3. Enter the following code snippit and then execute. Make sure to replace the file\_uri\_list with the *URL Path* you copied earlier from the Bucket created in Object Storage.
 
   ````
   <copy>
@@ -377,4 +377,4 @@ Please proceed to the next lab.
 - **Author** - Derrick Cameron
 - **Last Updated By/Date** - Leah Bracken, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

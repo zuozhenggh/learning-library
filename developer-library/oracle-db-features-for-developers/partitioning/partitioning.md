@@ -711,4 +711,4 @@ Partitions of hybrid partitioned tables can reside on both Oracle tablespaces an
 - **Author** - 
 - **Last Updated By/Date** - Troy Anthony, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

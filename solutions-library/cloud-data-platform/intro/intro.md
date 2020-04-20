@@ -38,5 +38,5 @@ Please proceed to the next lab (right pane).
 - **Author** - NATD Solution Engineering - Austin Hub (Jess Rein, Philip Pavlov)
 - **Last Updated By/Date** - Jess Rein, Solutions Engineer, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request.
 

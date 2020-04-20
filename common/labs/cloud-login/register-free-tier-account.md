@@ -55,12 +55,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-<<<<<<< HEAD
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
-- **Created By/Date** - Kay Malcolm, Director, Product Management, April 8, 2020
+- **Last Updated By/Date** - Kay Malcolm, Database Product Management, April 2020
 
-=======
-- **Last Updated By/Date** - Tom McGinn, Learning Architect, UA DB Development, March 2020
->>>>>>> upstream/master
-
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request.

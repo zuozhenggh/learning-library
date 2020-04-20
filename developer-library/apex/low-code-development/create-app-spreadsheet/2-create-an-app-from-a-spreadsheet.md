@@ -90,4 +90,4 @@ This completes this lab. You now know how to create an application from a spread
 * **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
 * **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
