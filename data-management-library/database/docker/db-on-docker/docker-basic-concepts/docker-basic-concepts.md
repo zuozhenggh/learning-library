@@ -1,10 +1,7 @@
 # Docker Basic Concepts
 ## Before Your Begin
 
-This lab walks you through the steps to start, stop, relocate and get information about the network of a Docker container.  This lab takes approximately 10 minutes.
-
-### What is Docker?
-Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications.  A Docker container is a running instance of a Docker image. However, unlike in traditional virtualization with a type 1 or type 2 hypervisor, a Docker container runs on the kernel of the host operating system. Within a Docker container, there is no separate operating system.
+This lab walks you through the steps to start, stop, relocate and get information about the network of a Docker container.  This lab takes approximately XX minutes.
 
 ### Docker Basic Commands
 
@@ -26,75 +23,110 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
 
 * Chrome Browser (preferred)
 * Install JSON Extension [click here]()
-* Completed the following labs:  Login to Oracle Cloud/Setup Free Tier, Create SSH Keys, Setup Compute Instance
-  
+* Participant has completed the following labs:
+    - Login to Cloud/Register for Free Tier
+    - Create SSH Keys 
+    - Setup Compute Instance
 
-## **STEP 1**: Start the Application
 
-1.  Check the version of docker:
+## Step 1: Lab Setup
+
+1. Using the terminal of your choice (we recommend the Oracle Cloud Shell) login to the instance you created using secure shell (ssh)
 
     ````
-    [opc@oraclelinux77 ~]$ <copy>docker version</copy>
-    Client: Docker Engine - Community
-    Version:           19.03.1-ol
-    API version:       1.40
-    Go version:        go1.12.5
-    Git commit:        ead9442
-    Built:             Wed Sep 11 06:40:28 2019
-    OS/Arch:           linux/amd64
-    Experimental:      false
-
-    Server: Docker Engine - Community
-     Engine:
-      Version:          19.03.1-ol
-      API version:      1.40 (minimum version 1.12)
-      Go version:       go1.12.5
-      Git commit:       ead9442
-      Built:            Wed Sep 11 06:38:43 2019
-      OS/Arch:          linux/amd64
-      Experimental:     false
-      Default Registry: docker.io
-     containerd:
-      Version:          v1.2.0-rc.0-108-gc444666
-      GitCommit:        c4446665cb9c30056f4998ed953e6d4ff22c7c39
-     runc:
-      Version:          spec: 1.0.1-dev
-      GitCommit:        
-     docker-init:
-      Version:          0.18.0
-      GitCommit:        fec3683
-    [opc@oraclelinux77 ~]$
-    ````
-
-2.  The `ps` command is used to list the existing docker containers.
+    <copy>
+    ssh -i optionskey opc@ </copy>your ip address
    
     ````
-    [opc@oraclelinux77 ~]$ <copy>docker ps</copy> 
-    ````
 
-    ![](images/step1.2_application_status " ")
-   
-3.  Start your application, `restclient`, in docker on port 8002 in JSON format.  
+1.  OPTIONAL:  If you are running this on a compute instance that has Oracle already installed, you may need to shut down the listener.  If you do not have a listener running, proceed to the next step.
 
     ````
-    [opc@oraclelinux77 ~]$ <copy>docker run -d -it --rm --name restclient -p=8002:8002 -e DS='json' wvbirder/restclient</copy>
-    Unable to find image 'wvbirder/restclient:latest' locally
-    Trying to pull repository docker.io/wvbirder/restclient ... 
-    latest: Pulling from docker.io/wvbirder/restclient
-    d3c7072f2c09: Pull complete 
-    2b20841a9829: Pull complete 
-    c116f21f499c: Pull complete 
-    d75d720b3ed2: Pull complete 
-    fdb28d19184b: Pull complete 
-    52877892e2e0: Pull complete 
-    dfc9dc6c0d02: Pull complete 
-    d53863f7e327: Pull complete 
-    8127b1a45280: Pull complete 
-    2218da00cfd9: Pull complete 
-    Digest: sha256:56cc4b9e8dddf4922e0189c1840c682df6c806e80db8ea93f1c957bc96b4f932
-    Status: Downloaded newer image for wvbirder/restclient:latest
-    d4eb73679d8f8629fa7f4c79b24b573c977bcc2d0beed9ceaca4b42be0745f2d
-    [opc@oraclelinux77 ~]$ 
+    <copy>
+    sudo su - oracle
+    ps -ef | grep tns
+    lsnrctl status LISTENER
+    lsnrctl stop LISTENER
+    ps -ef | grep tns
+    exit
+    </copy>
+    ````
+
+2. You will use yum (a package management tool for Linux) to install the Docker engine, enable it to start on re-boot, grant docker privledges to the opc user and finally install GIT.  When prompted, press *Y* to download.  All of these steps will be performed as the root user.
+
+    ````
+    <copy>
+    sudo -s
+    yum install docker-engine
+    usermod -aG docker opc
+    systemctl enable docker
+    systemctl start docker
+    </copy>
+    ````
+   ![](images/python1.png " ") 
+
+    ![](images/python2.png " ") 
+
+3. Next, we are going to install git using yum as the root user
+
+    ````
+    <copy>
+    yum install git
+    </copy>
+    ````
+    ![](images/installgit.png " ") 
+
+4.  Verify the version by switching to the opc user
+
+    ````
+    <copy>
+    su - opc
+    docker version
+    docker images
+    git --version
+    </copy>
+    ````
+    ![](images/gitversion.png " ") 
+
+5.  Place your server in permissive mode
+
+    ````
+    <copy>
+    exit
+    setenforce 0
+    sestatus
+    </copy>
+    ````
+    ![](images/setenforce.png " ") 
+
+6. Switch back to the opc user and verify you are the `opc` user
+
+    ````
+    <copy>
+    su - opc
+    whoami
+    </copy>
+    ````
+
+## Step 2: Docker Basic Concepts
+
+1.  Check the version of docker
+
+    ````
+    <copy>
+    docker version
+    </copy>
+    ````
+    ![](images/dockerversion2.png " ") 
+
+2.  Start your application, restclient, in docker on port 8002 in json format.  
+
+
+    ````
+    <copy>
+    docker ps
+    docker run -d -it --rm --name restclient -p=8002:8002 -e DS='json' wvbirder/restclient
+    </copy>
     ````
 
     - "-d" flag runs the container in the background
@@ -103,152 +135,82 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
     - "-p" We map port 8002 from within the container to the same ports on the HOST for accessibility from outside of the container's private subnet (typically 172.17.0.0/16). This allows the container to be accessed from the HOST, for example. The default port for Oracle's tns listener is on port 1521 and port 5600 is used for HTTP access to Enterprise Manager Express
     - "--name" The name of the container will be "restclient"
     - "-v" This maps the directory where you downloaded the restclient setup.
+    ![](images/dockerps.png " ") 
 
-4.  The `ps` command with the `-a` option shows the status of all containers that are running.
+3.  Find the public IP address of your instances.  Compute -> Instance. It is listed on the main page.  If you would like to do more exploration, it is also listed in the page for your instance.
 
-    ````
-    [opc@oraclelinux77 ~]$ <copy>docker ps -a</copy>
-    ````
+    ![](images/computeinstance.png " ") 
 
-    ![](images/step1.4_application_running_status.png " ")
+    ![](images/instance-public-ip.png " ")
 
-5.  To find the public IP address of your instance, click on Compute -> Instance in Oracle Console as shown in below image.
+    ![](images/selectdboptions2.png " ") 
 
-    ![](images/step1.5.1_compute_instance.png " ")
+    ![](images/dboptions2.png " ") 
 
-    Make note of the public IP address for your compute instance under the `Public IP` column as highlighted in below image.
+4.  Open up a browser on your laptop and go to your public URL on port 8002.  Go to http://Enter IP Address:8002/products. Depending on whether you have a JSON formatter, you should see the products in your application, in RAW or FORMATTED format.  `Note:  If you are on the VPN, disconnect`
 
-    ![](images/step1.5.2_instance_public_ip.png " ")
+    ![](images/products2-8002.png " ") 
 
-6.  Navigate to http://YOUR PUBLIC IP ADDRESS:8002/products in a new tab on your browser using public IP address copied earlier. You should see the products in your application in JSON format. To visualize the JSON data in parsed format you should install `JSON Formatter` browser extension.
-   
-    `Note: Disconnect from Oracle's VPN`
+    ![](images/products.png " ")    
 
-    ![](images/step1.6_product_json.png " ")
-
-## **STEP 2**: Stop the Application
-
-1.  The `restclient` container was started earlier with the `-rm` remove option. While stopping, it removes all allocated resources.
+5.  The `restclient` container was started earlier with the -rm option.  This means when stopping it will remove ALL allocated resources.  The `ps` command with the `-a` option shows the status of ALL containers that are running.  As you can see, there are no containers running.
 
     ````
-    [opc@oraclelinux77 ~]$ <copy>docker stop restclient</copy>
-    restclient
-    [opc@oraclelinux77 ~]$ 
+    <copy>
+    docker stop restclient
+    docker ps -a
+    </copy>
     ````
+    ![](images/restclient2.png " ")
 
-2.  After stopping the application, you can see that there are no containers running.
-
-    ````
-    [opc@oraclelinux77 ~]$ <copy>docker ps -a</copy>
-    ````
-
-    ![](images/step2.1_stop_application_status.png " ")
-
-## **STEP 3**: Start the Container in Another Port
-
-1.  Let's start another container on your compute instance on 18002 port. Type the following command:
+ 6.  Let's start another container on your compute instance's 18002 port.  Type the following command:
 
     ````
-    [opc@oraclelinux77 ~]$ <copy>docker run -d -it --rm --name restclient -p=18002:8002 -e DS='json' wvbirder/restclient</copy>
-    ecf27782c56e75df376e9d6d0aaa915c17e50362e9487f2ab98441a11369df6d
-    [opc@oraclelinux77 ~]$ 
-    ````
+    <copy>
+    docker run -d -it --rm --name restclient -p=18002:8002 -e DS='json' wvbirder/restclient
+    docker ps -a
+    </copy>
+    ```` 
+    ![](images/restclient.png " ")
 
-2.  Check the status of all the containers that are running.
+7.  Go back to your browser and change the port to 18002.
 
-    ````
-    [opc@oraclelinux77 ~]$ <copy>docker ps -a</copy>
-    ````
+    ![](images/18002.png " ")
 
-    ![](images/step3.2_another_port_application_status.png " ")
 
-3.  Go back to your browser and change the port to 18002 to see the products in your application.
+## Step 3: Docker Networking Basics
 
-    ![](images/step3.3_another_application_product_json.png " ")
+Now that you know how to start, stop and relocate a container, let's see how to get information about the network.
 
-## **STEP 4**: Inspect the Network Bridge
-
-Inspecting the network bridge shows network information about all the containers running on the default bridge.
-
-1.  Inspect the network bridge that docker created for you out of the box. We see that our restclient container is assigned IP address 172.17.0.2. You can ping that address from your compute instance.
+1.  Inspect the network bridge that docker created for you out of the box.  This shows network information about all the containers running on the default bridge. We see that our restclient container is assigned IP Address 172.17.0.2. You can ping that address from your compute instance.
 
     ````
-    [opc@oraclelinux77 ~]$ <copy>docker network inspect bridge</copy>
-    [
-        {
-            "Name": "bridge",
-            "Id": "8f7a23f70a68e29ca058c4756fb43155d9a6db9d6ede50da08cae8d2e473f0ed",
-            "Created": "2020-04-16T21:05:39.515702648Z",
-            "Scope": "local",
-            "Driver": "bridge",
-            "EnableIPv6": false,
-            "IPAM": {
-                "Driver": "default",
-                "Options": null,
-                "Config": [
-                    {
-                        "Subnet": "172.17.0.0/16"
-                    }
-                ]
-            },
-            "Internal": false,
-            "Attachable": false,
-            "Ingress": false,
-            "ConfigFrom": {
-                "Network": ""
-            },
-            "ConfigOnly": false,
-            "Containers": {
-                "ecf27782c56e75df376e9d6d0aaa915c17e50362e9487f2ab98441a11369df6d": {
-                    "Name": "restclient",
-                    "EndpointID": "3a7d4f37aafa814a61c288ac974c0faeb238b9471ac8ead6610ca0bdda5f5ede",
-                    "MacAddress": "02:42:ac:11:00:02",
-                    "IPv4Address": "172.17.0.2/16",
-                    "IPv6Address": ""
-                }
-            },
-            "Options": {
-                "com.docker.network.bridge.default_bridge": "true",
-                "com.docker.network.bridge.enable_icc": "true",
-                "com.docker.network.bridge.enable_ip_masquerade": "true",
-                "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
-                "com.docker.network.bridge.name": "docker0",
-                "com.docker.network.driver.mtu": "1500"
-            },
-            "Labels": {}
-        }
-    ]
-    [opc@oraclelinux77 ~]$ 
+    <copy>
+    docker network inspect bridge
+    </copy>
     ````
+    ![](images/network.png " ")
 
-2.  Ping IP address for your restclient container from your compute instance.
+2.  Ping that address for your restclient container from your compute instance.
 
     ````
-    [opc@oraclelinux77 ~]$ <copy>ping 172.17.0.2 -c3</copy>
-    PING 172.17.0.2 (172.17.0.2) 56(84) bytes of data.
-    64 bytes from 172.17.0.2: icmp_seq=1 ttl=64 time=0.075 ms
-    64 bytes from 172.17.0.2: icmp_seq=2 ttl=64 time=0.054 ms
-    64 bytes from 172.17.0.2: icmp_seq=3 ttl=64 time=0.063 ms
-
-    --- 172.17.0.2 ping statistics ---
-    3 packets transmitted, 3 received, 0% packet loss, time 2075ms
-    rtt min/avg/max/mdev = 0.054/0.064/0.075/0.008 ms
-    [opc@oraclelinux77 ~]$ 
+    <copy>
+    ping 172.17.0.2 -c3
+    </copy>
     ````
-
-3.  Stop your restclient container.
+4.  Stop your restclient container
 
     ````
-    [opc@oraclelinux77 ~]$ <copy>docker stop restclient</copy>
-    restclient
-    [opc@oraclelinux77 ~]$ 
+    <copy>
+    docker stop restclient
+    </copy>
     ````  
     
 You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Oracle NATD Solution Engineering
-* **Last Updated By/Date** - Anoosha Pilli, April 2020
+* **Last Updated By/Date** - Kay, April 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
 
