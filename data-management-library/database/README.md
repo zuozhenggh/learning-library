@@ -5,13 +5,11 @@ The industry’s leading database continues to deliver leading-edge innovations,
 
 
 ## Workshops
-Click below to access the content.
+[New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)  
 
-[New Features for Developers Workshops](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)  
+[Multitenant Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  
 
-[Multitenant](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  
-
-[In-Memory](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html) 
+[In-Memory Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html) 
 
 [Containerized Development on the Oracle Database](https://oracle.github.io/learning-library/data-management-library/database/docker/db-on-docker) 
 
