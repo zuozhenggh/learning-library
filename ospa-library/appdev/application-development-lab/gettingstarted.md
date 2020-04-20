@@ -116,7 +116,7 @@ If you are creating a new instance either for the lab purposes or a customer dem
 1. Once in the main dashboard, open the **General Menu** located at the top left hand side of the screen and click on **Digital Assitant**
 <br>![](./media/creating_oda_1.png)
 
-1. In the Digital Assistant console, select the compartment where to deploy the new instance and click on **Create Digital Assistant Database**
+1. In the Digital Assistant console, select the compartment where to deploy the new instance and click on **Create Digital Assistant**
 <br>![](./media/creating_oda2.png)
 
 1. In the Digital Assistant creation screen, provide a name, description, and shape (For the lab purposes select `Production`), and click **Create**
