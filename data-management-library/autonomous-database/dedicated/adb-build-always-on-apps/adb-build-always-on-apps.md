@@ -267,4 +267,4 @@ That is it. You are now ready to fire up your transactional workload.
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

@@ -291,4 +291,4 @@ This concludes this lab and this workshop.
 - **Author** - Derrick Cameron
 - **Last Updated By/Date** - Leah Bracken, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

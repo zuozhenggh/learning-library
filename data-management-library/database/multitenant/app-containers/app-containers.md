@@ -1635,4 +1635,4 @@ The tasks you will accomplish in this lab are:
 - **Adapted to Cloud by** -  David Start, OSPA
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

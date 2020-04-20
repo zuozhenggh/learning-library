@@ -12,11 +12,11 @@ Finally as Derek, you will create a pair of spatial applications. To do this you
 
 Please proceed to the next lab.
 
-## Acknowledgements
+### Acknowledgements
 
 - **Authors/Contributors** - Derrick Cameron
 - **Last Updated By/Date** - Kay Malcolm, April 2020
 - **Workshop Expiration Date** - April 31, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
 

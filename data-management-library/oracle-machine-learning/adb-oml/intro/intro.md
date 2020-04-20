@@ -27,4 +27,4 @@ We will lead you through all the steps to create an Oracle Cloud trial account, 
 - **Last Updated By/Date** - Kay Malcolm, April 2020
 - **Workshop Expiration Date** - April 31, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

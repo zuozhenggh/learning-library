@@ -64,7 +64,8 @@ Within your new database, APEX is not yet configured. Therefore, when you first 
     | Password | **`SecretPassw0rd`** |
     | Workspace Name | **DEMO** |
 
-    Click **Create Workspace**.  
+    Click **Create Workspace**.
+  
     ![](images/create-workspace.png " ")
 
 6.  In the PEX Instance Administration page, click the **DEMO** link in the success message.         
@@ -83,5 +84,5 @@ This completes this lab. At this point, you know how to create a new Autonomous 
 ## Acknowledgements
 * **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
 * **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
-
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

@@ -162,4 +162,4 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
 * **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

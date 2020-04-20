@@ -217,4 +217,4 @@ You may now proceed to the next lab.
 - **Author** - Kay Malcolm, Director, DB Product Management
 - **Last Updated By/Date** - Kay Malcolm, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 

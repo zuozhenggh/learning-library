@@ -239,4 +239,4 @@ You have completed the lab, well done! At this point you should have a basic und
 * **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
 * **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

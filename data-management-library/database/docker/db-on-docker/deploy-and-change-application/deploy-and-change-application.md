@@ -3,11 +3,6 @@
 
 This lab walks you through the steps to deploy an application, twitterfeed, that is stored in the hub.docker.com site under the account wvbirder.  You will then run the rest client using an oracle database as the data source. You can share applications and make modifications in the container.
 
-### What Do You Need?
-
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
-* SSH keys
-
 ## **STEP 1**: Run the Docker Image in Container
 
 1.  Download the docker image, twitterfeed, extract it and run the container. The download is from the wvbirder docker hub account where this application is staged.
@@ -185,7 +180,6 @@ Congratulations, this lab is now complete!
 
 ## Acknowledgements
 * **Author** - Oracle NATD Solution Engineering
-* **Adapted for Cloud by** -  
-* **Last Updated By/Date** - Anoosha, April 2020
+* **Last Updated By/Date** - Anoosha Pilli, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

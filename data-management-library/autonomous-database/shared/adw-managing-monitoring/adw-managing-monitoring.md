@@ -19,4 +19,4 @@ The following demo will walk you through the service console and show you a runn
 - **Author** - Richard Green, DB Docs Team
 - **Last Updated By/Date** - Richard Green, DB Docs Team, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

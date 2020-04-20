@@ -141,4 +141,4 @@ Oracle Database adds In-Memory database functionality to existing databases, and
 - **Author** - Andy Rivenes, Sr. Principal Product Manager,  Database In-Memory
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 

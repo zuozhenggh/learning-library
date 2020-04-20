@@ -179,4 +179,4 @@ These significant performance improvements are possible because of Oracle’s un
 - **Author** - Andy Rivenes, Sr. Principal Product Manager, Oracle Database In-Memory
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request.  
