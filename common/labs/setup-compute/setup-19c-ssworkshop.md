@@ -42,11 +42,11 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/choosecompartment.png " ")
 
-    ![](./images/createstackpage.png " ")
+    ![](./images/step1.3-createstackpage.png " ")
 
 4.  Click the **Browse** link and select the zip file (db19c-compute.zip) that you downloaded. Click **Select**.
 
-    ![](./images/create-stack-orig.png " ")
+    ![](./images/step1.4-create-stack-orig.png " ")
 
 
     Enter the following information and accept all the defaults
@@ -59,25 +59,23 @@ This lab assumes you have already completed the following labs:
 
 5.  Click **Next**.
 
-    ![](./images/createstack3.png " ")
+    ![](./images/step1.5-createstack3.png " ")
 
-    Enter the following information. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
-
-    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
+    Enter the following information. You will be updating Public Subnet, Display Name and SSH Key.
 
     **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
     
-    **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
-    
     **SSH Public Key**:  Paste the public key you created in the earlier step *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
+
+    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
 
 6. Click **Next**.
 
-    ![](./images/create-db19c-stack-3.png " ")
+    ![](./images/step1.6-create-db19c-stack-3.png " ")
 
 7.  Your stack has now been created!  Now to create your environment.  *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 
-    ![](./images/stackcreated.png " ")
+    ![](./images/step1.7-stackcreated.png " ")
 
 
 
