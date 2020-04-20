@@ -5,8 +5,6 @@ This lab walks you through the steps to create a schema in a running Oracle data
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
-* SSH keys
 * A running Oracle Database Container
 
 ## **STEP 1**: Create a Schema
@@ -70,7 +68,6 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Oracle NATD Solution Engineering
-* **Adapted for Cloud by** -  
-* **Last Updated By/Date** - Anoosha, April 2020
+* **Last Updated By/Date** - Anoosha Pilli, DB Product Management, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

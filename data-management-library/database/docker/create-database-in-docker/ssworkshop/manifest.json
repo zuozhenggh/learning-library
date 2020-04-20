@@ -2,11 +2,11 @@
     "tutorials": [
         {
           "title": "Workshop Overview",
-          "filename":"./workshop-intro/intro.md"
+          "filename":"../workshop-intro/intro.md"
         },
         {
-          "title": "Lab 1: Sign Up for Free Trial",
-          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+          "title": "Lab 1: Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-ssworkshop.md"
         },
         {
           "title": "Lab 2: Create SSH Keys",
@@ -18,23 +18,23 @@
         },
 		    {
           "title": "Lab 4: Setup Docker on an Oracle Compute instance",
-          "filename": "./setup-docker-compute/setup-docker-compute.md"
+          "filename": "../setup-docker-compute/setup-docker-compute.md"
         },
 		    {
           "title": "Lab 5: Build an Oracle Database Docker image",
-          "filename": "./build-db-docker/build-db-docker.md"
+          "filename": "../build-db-docker/build-db-docker.md"
         },
 		    {
           "title": "Lab 6: Start a Docker Container",
-          "filename": "./start-db-docker/start-db-docker.md"
+          "filename": "../start-db-docker/start-db-docker.md"
         },
         {
           "title": "Lab 7: Connect to Oracle Database in a Docker Container",
-          "filename": "./connect-db-docker/connect-db-docker.md"
+          "filename": "../connect-db-docker/connect-db-docker.md"
         },
         {
           "title": "Lab 8: Manage a Docker Container",
-          "filename": "./manage-docker-container/manage-docker-container.md"
+          "filename": "../manage-docker-container/manage-docker-container.md"
         }
     ]
 }

@@ -36,11 +36,10 @@ This will create your cloud resources (VCN, Compute Image, Autonomous Transactio
 
 1. Download the terraform zip file [here](./files/python4atp-tf.zip).  Then unzip it.
 
-2. Now create a private key (id\_rsa) and a public key (id\_rsa.pub). The public key is used when you are prompted for a SSH key when you create services, and the matching private key is used to access those services after creation. (eg: Cloud Developer Image).  Enter this in a command shell or terminal window
-  ```
+2. Now create a private key (id\_rsa) and a public key (id\_rsa.pub). The public key is used when you are prompted for a SSH key when you create services, and the matching private key is used to access those services after creation. (eg: Cloud Developer Image).  Enter this in a command shell or terminal window. 
+  ````
   <copy>ssh-keygen -b 2048 -t rsa</copy>
-  ```
-
+  ````
   ![](images/006.png " ")
 
 3.  Now open the ssh\_keys folder and note that it is empty. This is because we need to add our private key.
@@ -316,5 +315,5 @@ Please proceed to the next lab.
 - **Last Updated By/Date** - Kay Malcolm, April 2020
 - **Workshop Expiration Date** - April 31, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
 

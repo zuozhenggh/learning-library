@@ -205,10 +205,10 @@ As Database Vault owner, execute:
 - Restart the database, go to the console to Stop and Start the ATP database.
 
 ## Acknowledgements
-*Congratulations! You successfully learnt to use  database vault in your autonomous database.*
+*Congratulations! You successfully learned to use database vault in your autonomous database.*
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

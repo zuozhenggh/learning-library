@@ -1,18 +1,33 @@
 # Docker Basic Concepts
 ## Before Your Begin
 
-This lab walks you through the steps to start, stop, relocate and how to get information about the network of a Docker container.
+This lab walks you through the steps to start, stop, relocate and get information about the network of a Docker container.  This lab takes approximately 10 minutes.
 
-### Background
+### What is Docker?
+Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications.  A Docker container is a running instance of a Docker image. However, unlike in traditional virtualization with a type 1 or type 2 hypervisor, a Docker container runs on the kernel of the host operating system. Within a Docker container, there is no separate operating system.
 
-A Docker container is a running instance of a Docker image. However, unlike in traditional virtualization with a type 1 or type 2 hypervisor, a Docker container runs on the kernel of the host operating system. Within a Docker container, there is no separate operating system.
+### Docker Basic Commands
 
-### What Do You Need?
+This lab will walk you through a few basic commands used in docker.  Here's a list of common commands for your reference.
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
-* An Oracle Cloud Compute instance Public IP address
-* SSH keys
-* Using Chrome as the preferred browser and have installed Chrome's JSON extension.
+- docker run – Runs a command in a new container.
+- docker start – Starts one or more stopped containers
+- docker stop – Stops one or more running containers
+- docker build – Builds an image form a Docker file
+- docker pull – Pulls an image or a repository from a registry
+- docker push – Pushes an image or a repository to a registry
+- docker export – Exports a container’s filesystem as a tar archive
+- docker exec – Runs a command in a run-time container
+- docker search – Searches the Docker Hub for images
+- docker attach – Attaches to a running container
+- docker commit – Creates a new image from a container’s changes
+
+### Lab Prerequisites?
+
+* Chrome Browser (preferred)
+* Install JSON Extension [click here]()
+* Completed the following labs:  Login to Oracle Cloud/Setup Free Tier, Create SSH Keys, Setup Compute Instance
+  
 
 ## **STEP 1**: Start the Application
 
@@ -233,9 +248,8 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Oracle NATD Solution Engineering
-* **Adapted for Cloud by** -  
-* **Last Updated By/Date** - Anoosha, April 2020
+* **Last Updated By/Date** - Anoosha Pilli, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
 
 
