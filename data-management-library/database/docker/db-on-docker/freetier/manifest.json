@@ -1,7 +1,7 @@
 {
   "tutorials": [
       {
-        "title": "Workshop Overview",
+        "title": "Introduction",
         "filename":"../intro/intro.md"
       },
       {
@@ -18,7 +18,7 @@
       },
       {
         "title": "Lab 3: Docker Setup & Basic Concepts",
-        "filename": "../setup/setup.md"
+        "filename": "../docker-basic-concepts/docker-basic-concepts.md"
       },
       {
         "title": "Lab 4: Create an Oracle Database Container and Schema",
