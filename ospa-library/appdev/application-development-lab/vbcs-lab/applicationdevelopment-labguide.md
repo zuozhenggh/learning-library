@@ -14,7 +14,7 @@ Visual Builder provides an easy-to-use WSYIWG *(What You See Is What You Get)* g
 
 **Lab Objectives**
 
-These exercises are designed to provide you with an introduction to using Visual Builder to create Web and Mobile applications and to prepare you to demonstrate it's features to customers.
+These exercises are designed to provide you with an introduction to using Visual Builder to create Web and Mobile applications and to prepare you to demonstrate its features to customers.
 
 Here are some general guidelines that will help you get the most from these exercises.
 
@@ -64,8 +64,8 @@ In these exercises you will use Visual Builder to help Mama Maggy by adding prod
 
 In our exercise we will BEGIN to address the needs of the managers/franchisees by creating the following applications:
 
-- Web application allowing managers/franchisees to see what products are available for order and what the prices are.
-- Web application to list all product orders including each line in the order's product, quantity, and prices.
+- Product Catalog Web application for managers/franchisees.
+- Web application to help managers/franchisees to track order's product, quantity, and prices.
 - Mobile application allowing busy manager/franchisee to check the status of their orders from anywhere with their phone.
 - Web application to list all Mama Maggy stores and their locations and the list of associates in that location along with contact information.
 
@@ -82,8 +82,8 @@ There are two additional **extra** exercises available for anyone who happens to
 
 The Extra labs are: 
 
-- Extra Lab 5: Add Data Using REST Call
-- Extra Lab 6: Review and edit JavaScript code under the covers of VBCS
+- Extra Lab 5: Add Data Using REST Call *(Estimated Time - 10 Min)*
+- Extra Lab 6: Review and edit JavaScript code under the covers of VBCS *(Estimated Time - 10 Min)*
 
 
 **Getting Started**
@@ -116,7 +116,7 @@ You will need to download the data files, all the files are available in a singl
 * Content is driven by external factors such as user data entries and login date. As a result, what you see displayed in your environment may not exactly match with the lab screenshots. Screenshots are provided solely for illustrative purposes to help guide you through the user interface.
 
 
-**Disclaimer:**  This exercise is designed ONLY for individual learners; however you can share an instance and work along other team members.Keep in mind that you must set up Intance Access to your group before start the exercises.
+**Disclaimer:**  This exercise is designed ONLY for individual learners; however you can share an instance and work along other team members.Keep in mind that you must set up instance access to your group before start the exercises.
  
 *****************************
 
@@ -183,14 +183,14 @@ In this exercise you will make sure you can access a VBCS instance and create yo
 
 To build the solutions for Mama Maggy's managers/franchisees, data is required, right now that data is stored in several spreadsheets. We need to make that data available inside VBCS so that it may be used in the web and mobile applications created in these exercises.
 
-Visual Builder provides two main methods to access data: built-in business objects, and service connections. VBCS business objects store data in tables like a database. This exercise focuses on creating and using built-in business objects with data suppiled via spreadsheet (.csv/.xlsx) files. These files get copied into an Oracle Database (under the covers of VBCS) and are actually accessed using the same type of RESTful APIs as those used for service connections (more on this in exercise 4).
+Visual Builder provides two main methods to access data: built-in business objects, and service connections. VBCS business objects store data in tables like a database. This exercise focuses on creating and using built-in business objects with data supplied via spreadsheet (.csv/.xlsx) files. These files get copied into an Oracle Database (under the covers of VBCS) and are actually accessed using the same type of RESTful APIs as those used for service connections (more on this in exercise 4).
 
 NOTE: For this exercise you will need three data files (Product.csv, ProductOrder.csv, and ProductOrderLine.csv), if you have not already downloaded them they may be obtained from GitHub as a .zip file named [vbcsfiles.zip](files/vbcsfiles.zip); download the file and expand it to find the following three files (keep them handy they will be used later in this exercise):
 
 | File                 | Description                                                  |
 |----------------------|--------------------------------------------------------------|
 | Product.csv          | Products available for managers/franchisees to order         |
-| ProductOrder.csv     | Existing order information: date of order, status, and associate who made the order |
+| ProductOrder.csv     | A list of order submitted by manager/franchisses  |
 | ProductOrderLine.csv | Order lines showing the products requested in each of the current orders, their unit price, and the quantity desired |
 
 
@@ -203,7 +203,7 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
     ![](./media/2.1.1.png)
 
 
-2. If you don’t see the navigator, click the **Expand Navigator** icon in the upper-left corner. ![](./media/image74.png)
+2. Select business objects, if you don’t see the navigator, click the **Expand Navigator** icon in the upper-left corner. ![](./media/image74.png)
 
     - If you don't have any Business Objects already you'll see the following **You don't have any business objects defined yet** image; click on the **+ Business Object** button.
     
@@ -214,7 +214,7 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
        ![](./media/2.2.3.png)
 
 
-4.  From the application page, click **+ Business Object** to begin adding
+3.  From the application page, click **+ Business Object** to begin adding
     a business object
        
     The first Business Object you will create will contain information about what products are available for managers/franchisees to order for their stores; 
@@ -223,15 +223,15 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
      ![](./media/vbcs_bo_creation.png)
 
 
-5. The Business Object page allows you to create fields and manage your Business Object. Note that some fields have been defined automatically, this is normal. The **id** field is treated as a key and will be used to access items in the business object automatically later.
+4. The Business Object page allows you to create fields and manage your Business Object. Note that some fields have been defined automatically, this is normal. The **id** field is treated as a key and will be used to access items in the business object automatically later.
 
     ![](./media/image26.png)
 
 
-6. To add a field click the **+New Field** button ![](./media/image27.png)
+5. To add a field click the **+New Field** button ![](./media/image27.png)
 
 
-7. For each new field the Name and General Data Type are specified
+6. For each new field the Name and General Data Type are specified
 
     - Set the label of the first field to `Product Name` note that Visual Builder creates the name as `productName`
     
@@ -242,12 +242,12 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
     ![](./media/2.6.2.png)
 
 
-8.  In the box at the lower-right part of the VBCS editor set the field property to **Required**
+7.  In the box at the lower-right part of the VBCS editor set the field property to **Required**. This setting will make this field mandatory.
 
     ![](./media/2.7.1.png)
 
 
-9.  Now add two more fields; be sure to mark the all **Required** 
+8.  Now add two more fields; be sure to mark the all **Required** 
 
      |    Display Label        | Field Name           | Type  |
      |:------------- |:-------------|:-----|
@@ -259,11 +259,11 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
      ![](./media/2.10.1.png)
 
 
-10. Create another Business Object named **Product Order** (ProductOrder) by clicking the **plus sign** at the top of the Business Objects list again
+9.  Create another Business Object named **Product Order** (ProductOrder) by clicking the **plus sign** at the top of the Business Objects list again
 
     ![](./media/2.9.1.png)
 
-    The **Product Order** Business Object will contain specifics about orders made by managers/franchisees including the associate that made the order, the order date, the current order status (open, shipped, complete) , and the last date some action (order shipped, order closed, etc.) occurred on the order.
+    The **Product Order** Business Object will contain specifics about orders made by managers/franchisees including the associate that made the order, the order date, the current order status (open, shipped, complete) , and the last transaction date (order shipped, order closed, etc.) occurred on the order.
    
     Add these fields; be sure to mark them all **Required**
 
@@ -279,7 +279,7 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
     ![](./media/2.11.1.png)
 
 
-11. Create another Business Object named **Product Order Line** (ProductOrderLine).
+10. Create another Business Object named **Product Order Line** (ProductOrderLine).
 The **Product Order Line** Business Object will contain specifics about each item included in **Product Orders** made by managers/franchisees including the **Product** ordered, its Unit Price, and the Quantity ordered.
 
     To make it possible for VBCS to connect the **Product Order Line** with the correct **Product Order** and the **Product** being ordered (so that the product name can display rather than a product id) you will create two **Relationships**:
@@ -321,7 +321,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
     
     ![](./media/vbcs_two_rel.png)
 
-16. Return to the **Fields** tab; the two relationships are now listed as fields with a **reference** icon ![](./media/image42.png) indicating the relationship. Select the last row, **Product** as shown in next screenshot and click **+ New Field** icon ![](./media/vbcs_plus_new_field_small.png) to continue (VBCS adds new fields below the currently selected field).
+16. Return to the **Fields** tab; the two relationships are now listed as fields with a **reference** icon ![](./media/image42.png) indicating the relationship is established. Select the last row, **Product** as shown in next screenshot and click **+ New Field** icon ![](./media/vbcs_plus_new_field_small.png) to continue (VBCS adds new fields below the currently selected field).
 
     ![](./media/image43.png)
 
@@ -335,11 +335,11 @@ The **Product Order Line** Business Object will contain specifics about each ite
     
     ![](./media/image46.png)
 
-19. Examine the **Endpoints** created by VBCS for each of the Business Objects you defined; these are the RESTful APIs that allow your applications (and others) to access the Business Object; Get (read, Post (create), Patch (update), Delete (delete) – we will use at least two of these in the next lab.
+19. Examine the **Endpoints** created by VBCS for each of the Business Objects you defined; these are the RESTful APIs that allow your applications (and others) to access the Business Object; Get (read), Post (create), Patch (update), Delete (delete) – we will use at least two of these in the next lab.
 
     ![](./media/2.19.1.png)
 
-20. It will be useful for testing purposes to have some data in the **Product** Business Object. VBCS provides a way to load single rows/records manually as shown below. (Later you will add many rows/records from an input file).
+20. It will be useful for testing purposes to have some data in the **Product** Business Object. VBCS provides a way to load single rows/records manually as shown below. (Later you will add many rows/records from an input **csv** file).
 
     Reopen the **Product** Business Object (from the Business Objects list); click on the **Data** tab and then click **+ Add Row** to add a row of data
 
@@ -423,7 +423,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
     ![](./media/2.33.1.png)
 
 
-34. Now, using the technique illustrated above import data to the Product Order and Product Order Line business objects in that order, (note: file names same as business object names) using the provided data files
+34. Now, using the technique illustrated above, import data to the Product Order and Product Order Line business objects in that order, (note: file names same as business object names) using the provided data files
 
     - Product Order - ProductOrder.csv
 
@@ -436,7 +436,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
 
 *****************************
 
-**Congratulations!** The data needed allowing Mama Maggy managers/franchisees to see what products are available to order and to check the status of existing orders is now ready for use. This data will be used in the next three exercises.
+**Congratulations!** The data needed allowing Mama Maggy managers/franchisees to see what products are available to order and to check the status of existing orders is now ready for use. This data will be used in the web and mobile application you are going to build.
 
 *****************************
 
@@ -448,7 +448,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
 
 **Introduction**
 
-In exercise 3 you will create a web and mobile applications so that Mama Maggy managers and franchisees may see what products are available for order and to track the status of orders once they are made.
+In exercise 3 you will create web and mobile applications so that Mama Maggy managers and franchisees may see what products are available for order and to track the status of orders once they are made.
 In exercise 4 you will add useful information to your application using RESTful API calls rather than Business Objects.
 
 Exercise 3 has three sections:
@@ -479,7 +479,7 @@ In the last exercise you created three business objects and added data to them; 
 
 3. Add a new Web Application
 
-    First, you'll create a web application with two features; a list of all products that a manager/franchisee might order, and a page showing specifics about a chosen product.
+    First, you'll create a web application with two features; displaying a list of all products that a manager/franchisee might order, and a page showing specifics about a chosen product.
     
     If you don’t have any Web Applications yet; click the **+ Web Application** button
     
@@ -504,7 +504,7 @@ In the last exercise you created three business objects and added data to them; 
     ![](./media/3.5.2.png)
 
 
-6. Add a **Heading** component from the Component list (icon is a toggle)
+6. Let's start designing our app. Add a **Heading** component from the Component list (icon is a toggle)
 
     ![](./media/image83.png)
 
@@ -523,7 +523,7 @@ In the last exercise you created three business objects and added data to them; 
     ![](./media/image87.png)
 
 
-7. Add a table to the application by scrolling the Components list until you see the Table icon.
+7. Add a table to the application by scrolling the Components list until you see the Table icon. This component will allow us to display the results organized on a table format.
     
     ![](./media/image88.png)
  
@@ -540,7 +540,7 @@ In the last exercise you created three business objects and added data to them; 
 
     ![](./media/image91.png)
 
-    Choose the **Product** business object then click **Next** to go to the next step in the wizard.
+    Choose the **Product** business object created in the previous exercise, and then click **Next** to go to the next step in the wizard.
 
     Select the fields you wish to display (select them in the sequence to be displayed, you can move them if you make a mistake) and click **Next** to continue in the wizard to **bind** the business object’s data to the objects on the screen.
     
@@ -555,7 +555,7 @@ In the last exercise you created three business objects and added data to them; 
     ![](./media/3.8.5.png)
 
 
-9.  Test the application by clicking the **Run** button ![](./media/image95.png) in the upper-right part of the screen.
+9.  Test the application by clicking the **Preview** button ![](./media/image95.png) in the upper-right part of the screen.
 
     ![](./media/image96.png)
 
@@ -566,7 +566,7 @@ In the last exercise you created three business objects and added data to them; 
     Success! Mama Maggy managers/franchisees can now see a list of the various products available for order (without having to call headquarters).
 
 
-11. Now, let’s add a page of detail. Return to the Visual Builder Designer and select the table containing the property list. Notice the icon on the right side near the top of the Property Inspector.
+11. Now, let’s add a page of detail, this page will allow us to drill down and get further information on the specific items. Return to the Visual Builder Designer and select the table containing the property list. Notice the icon on the right side near the top of the Property Inspector.
 
     ![](./media/image98.png)
     
@@ -635,7 +635,7 @@ In the last exercise you created three business objects and added data to them; 
 
     Click **Design** ![](./media/image109.png) to exit **Live** mode
 
-17. Now, to really test the application; run the application using the **run** ![](./media/image95.png) button in the upper-right corner. 
+17. Now, to really test the application; run the application using the **Preview** ![](./media/image95.png) button in the upper-right corner. 
 
     When the **Product List** displays note the **Product Detail** button is not available (it is **grayed out**) since no product has been chosen. Select one of the products and the **Product Detail** button will become active. 
 
@@ -674,7 +674,7 @@ In this exercise section you will create a two-screen application similar to the
   - Product Order List
   - Product Order Detail with list of matching Product Order Lines
 
-1. Create a new Web Application to display a list or Product Order business object rows. Follow the same steps but using the **Product Order** business object.
+1. Create a new Web Application to display a list of **Product Order** business object rows. Follow the same steps but using the **Product Order** business object.
 
     ![](./media/vbcs_bo_productorder.png)
 
@@ -877,7 +877,7 @@ Mama Maggy's managers/franchisees want to be able to check product order status 
     ![](./media/image139.png)
 
 
-13. Add a table below the new heading by dragging a **Table** component to the **Flex Container** in the Page Structure display
+13. Add a table below the new heading by dragging a **Table** component to the mobile **Flex Container** in the Page Structure display
     
     ![](./media/image140.png)
 
@@ -935,17 +935,17 @@ Instead of calling headquarters to check the status of their product orders they
 
 <br>
 
-### Exercise 4: Data from service
+### Exercise 4: Accessing external data using VBCS service connection features
 
 **Introduction**
 
-Mama Maggy's has multiple existing databases and other data stores being used to run their business. Mama Maggy management would prefer to access existing databases and any new databases directly rather than duplicating data in VBCS Business Objects.
+Mama Maggy has multiple existing databases and other data stores being used to run their business. Mama Maggy management would prefer to access existing databases and any new databases directly rather than duplicating data in VBCS Business Objects.
 
 While using Visual Builder’s built-in business objects is useful; they limit applications to data found within the Visual Builder instance. Most modern applications will use data from varied sources both in and outside of an organization’s systems. 
 
 This is accomplished using service connections that take advantage of RESTful APIs exposed by databases and other providers. API stands for Application Programming Interface; a pre-defined calling mechanism used to read and modify data using standardized calls over the internet with HTTP/HTTPS (often called RESTful APIs). RESTful APIs are the most common way of using external data in modern applications. 
 
-In this exercise you will add useful information to your application using RESTful API calls rather than Business Objects (though, the truth is that VBCS uses RESTful API calls when accessing Business Objects too).
+In this exercise you will add stores and associate information to another brand new application using RESTful API calls rather than Business Objects (though, the truth is that VBCS uses RESTful API calls when accessing Business Objects too).
 
 Your resources for this exercise include two (2) service connections used to access data for Mama Maggy stores and Mama Maggy associates. You will use these **Service Connections** to provide data services to your applications.
 
@@ -1097,7 +1097,7 @@ The data used to create these apps will come from **Service Connections** that y
      - city
      - state
  
-20. Be sure to select **id** as the Primary Key too
+20. Be sure to select **id** as the Primary Key too. This will allow you to use the store id as unique key, rather than a name that might affect the end result.
 
 21. Click the **Next** button when you are ready to continue
 
