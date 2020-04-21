@@ -16,9 +16,9 @@ Lab: Setup
 
 For this lab we will use the ***Order Entry (OE)*** sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the ***OE*** schema installed.
 
-### Grant Required Privileges
+### Step 1: Grant Required Privileges
 
-Connect to the **ORCLPDB** pluggable database, as SYSDBA.
+1. Connect to the **ORCLPDB** pluggable database, as SYSDBA.
 
 ````
 $ <copy>sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA</copy>
@@ -37,9 +37,9 @@ GRANT ALTER SYSTEM TO oe;
 
 >**Note**: The ***ALTER SYSTEM*** privilege is required to flush the Shared Pool in one exercise about performance.
 
-### Create Network Access Control List
+### Step 2: Create Network Access Control List
 
-Our database needs to connect to a web service, and retrieve information over HTTP, and this requires an ***Access Control List (ACL)***. This ACL can be created by a user with SYSDBA privileges, SYS in this case, from the Pluggable Database called **ORCLPDB**, by executing the following procedure.
+1. Our database needs to connect to a web service, and retrieve information over HTTP, and this requires an ***Access Control List (ACL)***. This ACL can be created by a user with SYSDBA privileges, SYS in this case, from the Pluggable Database called **ORCLPDB**, by executing the following procedure.
 
 ````
 <copy>begin
@@ -55,9 +55,9 @@ end;
     ![](images/p_addACL.png)
 Ensure the execution is successful.
 
-### SQL*Plus Formatting
+### Step 3: SQL*Plus Formatting and GeoNames registration
 
-Close the SYSDBA connection and connect as the **OE** user to pluggable database ORCLPDB. From this point, all tasks on the database side will be performed using the **OE** user. For SQL*Plus, it is also useful to format the output. Feel free to use your own formatting, or just run these formatting commands every time you connect.
+1. Close the SYSDBA connection and connect as the **OE** user to pluggable database ORCLPDB. From this point, all tasks on the database side will be performed using the **OE** user. For SQL*Plus, it is also useful to format the output. Feel free to use your own formatting, or just run these formatting commands every time you connect.
 
 ````
 > <copy>conn oe/Ora_DB4U@localhost:1521/orclpdb</copy>
@@ -80,7 +80,7 @@ column REGION format a12
 </copy>
 ````
 
-For the purpose of this exercise we will use a web service, that return information in JSON format, provided by GeoNames - [geonames.org](http://www.geonames.org/). GeoNames is licensed under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/). You are free to:
+2. For the purpose of this exercise we will use a web service, that return information in JSON format, provided by GeoNames - [geonames.org](http://www.geonames.org/). GeoNames is licensed under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/). You are free to:
 
 - Share — copy and redistribute the material in any medium or format;
 - Adapt — remix, transform, and build upon the material for any purpose, even commercially.
