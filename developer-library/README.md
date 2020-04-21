@@ -5,13 +5,30 @@ Oracle provides an open, modern, easy and intelligent platform and infrastructur
 
 Click on one of our workshops below to access the content.
 
+## Microservices Workshops
+Coming Soon
+
 ## Database 19c for Developer Workshops
 
 [Database Features for Developers - Full Workshop](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/) 
 [Hybrid Partitioning](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/hybridpart-freetier) 
 [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier) 
 [Automatic Indexing](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/autoindex-freetier) 
-[Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier)
+[Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier) 
+
+## APEX Workshops
+
+Each lab is completely independent and does not rely on any other lab, therefore, you can complete the labs in any order you choose. The labs do not require any prior knowledge of APEX. 
+
+| # | Module | Est. Time |
+| --- | --- | --- |
+| 1 | [Building an App from a Spreadsheet](./apex/spreadsheet) | 45 min |
+| 2 | [Building an App on Existing Tables](./aoex/existing-tables) | 75 min |
+| 3 | [Building a Proof-of-Concept](./apex/proof-of-concept) | 60 min |
+| 4 | [Building an App using REST Web Sources](./apex/rest-web-source) | 50 min |
+| 5 | [Building an App using a Remote Data Source](./apex/remote-data-source) | 45 min |
+| 6 | [Low Code Development](./apex/low-code-development) | 60 min |
+| 7 | [Introduction to JavaScript for APEX Developers](./apex/intro-to-javascript) | 60 min |
 
 
 ## Get an Oracle Cloud Trial Account for Free!
@@ -34,6 +51,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 
 ## Videos
 - [How I automated by barn using Oracle Autonomous Database - Todd Sharp](https://developer.oracle.com/?ytid=iaesH24B9zg)
+- [Oracle APEX Use Cases](https://www.youtube.com/playlist?list=PLdtXkK5KBY556P2cGBkse-2fxBaz1-azI)
 - [Oracle Developers Channel](https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g)
 - [Oracle Product Management](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
