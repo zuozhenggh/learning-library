@@ -31,15 +31,15 @@ This lab assumes you have completed the following labs:
 
 ## Step 1: Prepare data for the lab in ATP
 
-1. To show how an application would use ml predictions we'll add some customer names to the original credit\_scoring\_100k data set.  Navigate to the ATP SQL Developer Web and log in with ml_user (if you are not already logged in from the previous lab).  Then select file upload on the left.
+1. To show how an application would use ml predictions we'll add some customer names to the original credit\_scoring\_100k data set.  Navigate to the **ATP SQL Developer Web** and log in with **ml_user** (if you are not already logged in from the previous lab).  Then select file upload on the left.
 
   ![](./images/001.png  " ")
 
-2. Select the files button, and then the customer_names.csv file in the install directory.
+2. Select the files button, and then the customer\_names.csv file in the install directory.
 
   ![](./images/002.png  " ")
 
-3. Accept the defaults and hit next.
+3. Accept the defaults and hit **next**.
 
   ![](./images/003.png  " ")
 
@@ -63,7 +63,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/006.png  " ")
 
-7. Create a new upload_customers table.  This will be used in the application to show how newly loaded records can be scored on the fly.
+7. Create a new *upload_customers* table.  This will be used in the application to show how newly loaded records can be scored on the fly.
    ````
    <copy>create table upload_customers (
    customer_id number
@@ -110,11 +110,11 @@ This lab assumes you have completed the following labs:
 
 ## Step 2: Import the APEX Application
 
-1. Navigate to the ATP APEX application through the ATP Service Console.
+1. Navigate to the ATP APEX application through the **ATP Service Console**.
 
   ![](./images/008.png  " ")
 
-2. Select Development, then APEX.
+2. Select **Development**, then **APEX**.
 
   ![](./images/009.png  " ")
 
@@ -146,11 +146,11 @@ This lab assumes you have completed the following labs:
 
    ![](./images/018.png  " ")
 
-8. Select App Builder.
+8. Select **App Builder**.
 
    ![](./images/019.png  " ")
 
-9. Select Import
+9. Select **Import**
 
    ![](./images/020.png  " ")
 
@@ -180,35 +180,35 @@ This lab assumes you have completed the following labs:
 
 ## Step 3: Run the application and review on-the-fly prediction/scoring
 
-1. Select Customer Walk-in from the menu.  Select last name, and then first name.  Note the credit score prediction and the probability of that estimate.  These calculations are done as the data is queried.
+1. Select Customer Walk-in from the menu.  Select **last name**, and then **first name**.  Note the credit score prediction and the probability of that estimate.  These calculations are done as the data is queried.
 
    ![](./images/031.png  " ")
 
-2.  Next we will upload new customers and score those as a batch.  Select the Home menu item at the bottom of the page.
+2.  Next we will upload new customers and score those as a batch.  Select the **Home menu** item at the bottom of the page.
 
    ![](./images/032.png  " ")
 
-3. Select SQL Workshop.
+3. Select **SQL Workshop**.
 
    ![](./images/033.png  " ")
 
-4. Select Utilities.
+4. Select **Utilities**.
 
    ![](./images/034.png  " ")
 
-5. Select Data Workshop.
+5. Select **Data Workshop**.
 
    ![](./images/035.png  " ")
 
-6. Select Load Data.
+6. Select **Load Data**.
 
    ![](./images/036.png  " ")
 
-7. Select the upload_customers.xlsx file.
+7. Select the **upload\_customers.xlsx** file.
 
    ![](./images/037.png  " ")
 
-8. Load to existing table upload_customers.
+8. Load to existing table **upload\_customers**.
 
    ![](./images/038.png  " ")
 
@@ -228,48 +228,48 @@ This lab assumes you have completed the following labs:
 
    ![](./images/043.png  " ")
 
-12.Select Customer Upload Summary.  This provides a summary measure of the uploaded customer number of new good credit versus other credit customers.  This shows there were 40 customers with 100 percent probability of good credit, 83 customers with a 50.7 percent probability of good credit, and 277 customers with a 1.2 percent probability of good credit.
+12. Select **Customer Upload Summary**.  This provides a summary measure of the uploaded customer number of new good credit versus other credit customers. *This shows there were 40 customers with 100 percent probability of good credit, 83 customers with a 50.7 percent probability of good credit, and 277 customers with a 1.2 percent probability of good credit.*
 
    ![](./images/044.png  " ")
 
-13. Select Overall Credit Profile.  This provides an overall measure of the credit across the entire 100k credit database.  This scoring of 100k customers with 10 variables takes less than a second.  This shows Alpha Office has 12k customers with a 100 percent probability of good credit, 22k customers with a 50.7 probability of good credit, and 66k customers with a 1.2 percent probability of good credit.
+13. Select **Overall Credit Profile**.  This provides an overall measure of the credit across the entire 100k credit database.  This scoring of 100k customers with 10 variables takes less than a second.  *This shows Alpha Office has 12k customers with a 100 percent probability of good credit, 22k customers with a 50.7 probability of good credit, and 66k customers with a 1.2 percent probability of good credit*.
 
    ![](./images/045.png  " ")
 
 ## Step 4: Expose the ml model as a REST end point so any application can call it
 
-1. Select the Home button at the bottom of the screen.
+1. Select the **Home** button at the bottom of the screen.
 
    ![](./images/046.png  " ")
 
-2. Select SQL Workshop.
+2. Select **SQL Workshop**.
 
    ![](./images/047.png  " ")
 
-3. Select RESTFul Services.
+3. Select **RESTFul Services**.
 
    ![](./images/048.png  " ")
 
-4. Select Module on the left, then Create Module.
+4. Select **Module** on the left, then **Create Module**.
 
    ![](./images/049.png  " ")
 
 5. Enter the following
-    - Module Name - `Predict Credit`
-    - Base Path - `/credit/`
+    - Module Name - *Predict Credit*
+    - Base Path - */credit/*
 
   ![](./images/050.png  " ")
 
-6. Next create a Template.
+6. Next create a **Template**.
 
    ![](./images/051.png  " ")
 
 7. Enter the following:
-    - URI Template: `credit_scoring_100k_v/:wealth/:income`
+    - URI Template: *credit_scoring_100k\_v/:wealth/:income*
 
    ![](./images/052.png  " ")
 
-8. Next create a handler.  Be sure to select Query one row, and enter the following sql query and select Create Handler.
+8. Next create a handler.  Be sure to select **Query one row**, and enter the following sql query and select **Create Handler**.
     - `select prediction(n1_class_model using :wealth as wealth, :income as income) credit_prediction from dual`
 
    ![](./images/053.png  " ")
@@ -278,7 +278,7 @@ This lab assumes you have completed the following labs:
 
    ![](./images/055.png  " ")
 
-10. Copy the URL and paste into your browser, and then replace the parameters :wealth and :income with Rich and 20000 respectively.  We are passing the wealth and income variables to the prediction model.  Note these are just two of the many variables we could pass to the model (just add additional ones).  After changing the URL just hit enter.
+9.  Copy the URL and paste into your browser, and then replace the parameters :wealth and :income with Rich and 20000 respectively.  We are passing the wealth and income variables to the prediction model.  Note these are just two of the many variables we could pass to the model (just add additional ones).  After changing the URL just hit enter.
 
    ![](./images/056.png  " ")
 

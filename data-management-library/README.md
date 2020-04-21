@@ -9,14 +9,15 @@ The Oracle Data Management Github is the central location for workshops related 
 
 # Autonomous Database (ADB) Github
 [![](./images/adbgithub.png)](./autonomous-database) 
-- Autonomous Dedicated 
-- Autonomous Database Serverless
+- Autonomous Database - Dedicated Infrastructure
+- Autonomous Database - Shared Infrastructure
 
 # Database Github
 [![](./images/dbgithub.png)](./database) 
 - 19c
 - In-Memory
 - Multitenant
+- Docker
 - Developer New Features for 19c
 - DBs on OCI VMs
 - Database on Docker

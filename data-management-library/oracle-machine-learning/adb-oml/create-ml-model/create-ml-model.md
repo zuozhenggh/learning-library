@@ -1,4 +1,4 @@
-# Machine Learning
+# Build a Machine Learning Model
 
 This is the lab where you’re going to do the work of building and training a machine learning model that will help Alpha Office.
 Remember that we are trying to help Alpha Office predict the credit and payment suitability of their customers. We can use machine learning to help us here because we already have a set of customers with known credit and payment status. This is what we are going to use to train a model that will predict for new customers, if their credit is suitable.
@@ -29,15 +29,15 @@ This lab assumes you have completed the following labs:
 
   ![](./images/005.png  " ")
 
-2. Select `Service Console`
+2. Select **Service Console**
 
   ![](./images/006.png  " ")
 
-3. Select Administration
+3. Select **Administration**
 
   ![](./images/007.png  " ")
 
-4. Select `Manage Oracle ML Users.`
+4. Select **Manage Oracle ML Users.**
 
   ![](./images/008.png  " ")
 
@@ -45,7 +45,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/009.png  " ")
 
-6. Create a new ML user. Enter user `ml_user` and create a password.
+6. Create a new ML user. Enter user **ml\_user** and create a password.
 
   ![](./images/010.png  " ")
 
@@ -53,15 +53,15 @@ This lab assumes you have completed the following labs:
 
 ## Step 2: Create ML Notebook
 
-1. Select the home icon upper right.
+1. Select the **home icon** upper right.
 
   ![](./images/012.png  " ")
 
-2. Log in as `ml_user` and create your own password. Before you log in, you may wish to bookmark this page.
+2. Log in as **ml\_user** and create your own password. Before you log in, you may wish to bookmark this page.
 
   ![](./images/013.png  " ")
 
-3. Navigate around to get familiar with the ML pages. Click on  `Examples`.
+3. Navigate around to get familiar with the ML pages. Click on  **Examples**.
 
   ![](./images/014.png  " ")
 
@@ -69,17 +69,17 @@ This lab assumes you have completed the following labs:
 
   ![](./images/015.png  " ")
 
-5. Click on the upper left icon to bring back the menu. Then select `Notebooks`.
+5. Click on the upper left icon to bring back the menu. Then select **Notebooks**.
 
   ![](./images/016.png  " ")
 
   ![](./images/017.png  " ")
 
-6. We will create a notebook from the beginning, select `Create`.
+6. We will create a notebook from the beginning, select **Create**.
 
   ![](./images/018.png  " ")
 
-7. Enter `ADW_notebook` as the name, the click `OK`.
+7. Enter **ADW_notebook** as the name, the click **OK**.
 
   ![](./images/019.png  " ")
 
@@ -87,17 +87,17 @@ This lab assumes you have completed the following labs:
 
 It is simple to create content in Zeppelin Notebooks, and the following exercise will give you experience in doing so. 
 
-1. Select Notebooks in the upper left.
+1. Select **Notebooks** in the upper left.
 
   ![](./images/046.png  " ")
 
   ![](./images/047.png  " ")
 
-2. Select the notebook you just created.
+2. Select the **notebook** you just created.
 
   ![](./images/048.png  " ")
 
-3. Click on the gear icon in the upper right.  We must set the interpreter binding if we're going to connect to the ADW database and run queries.  Be sure to select at least one of the servics (High, Medium, or Low (or all)).
+3. Click on the **gear** icon in the upper right.  We must set the interpreter binding if we're going to connect to the ADW database and run queries.  Be sure to select at least one of the **services** (High, Medium, or Low (or all)).
 
   ![](./images/049.png  " ")
 
@@ -106,7 +106,7 @@ Zepplin notebooks are composed of paragraphs that can contain formatted text, sq
     - %sql - used to run sql statements.  Note you can only run one statement per paragraph, otherwise use script.
     - %script - used to run multiple sql statements and pl/sql blocks.
 
-4. Paste the following into the first paragraph.  Then click on the arrow to run the code (format the text in this case.).  Note that it then displays the formatted text, and adds a new paragraph.  Notebooks save automatically.  There is no need to click a save button.
+4. Paste the following into the first paragraph.  Then click on the **arrow** to run the code (format the text in this case.).  Note that it then displays the formatted text, and adds a new paragraph.  Notebooks save automatically.  There is no need to click a save button.
     ````
     <copy>%md
     ### Targeting Likely Good Credit Customers using Oracle Machine Learning's (OML) Classification Models
@@ -118,13 +118,13 @@ Zepplin notebooks are composed of paragraphs that can contain formatted text, sq
 
     ![](./images/051.png  " ")
 
-5. Sometimes we just want the result (formatted text in this case), and not the code.  Click on the show editor icon to hide the code.
+5. Sometimes we just want the result (formatted text in this case), and not the code.  Click on the **show editor** icon to hide the code.
 
     ![](./images/052.png  " ")
 
     ![](./images/053.png  " ")
 
-6. In the next paragraph enter the following, overwriting the %md that has defaulted in.  Then hit execute.
+6. In the next paragraph enter the following, overwriting the %md that has defaulted in.  Then hit **execute**.
   ````
   <copy>%sql
 
@@ -137,7 +137,7 @@ Zepplin notebooks are composed of paragraphs that can contain formatted text, sq
 
  ![](./images/055.png  " ")
 
-7. To add a title click on the gear icon and select title. 
+7. To add a title click on the **gear** icon and select title. 
 
  ![](./images/056.png  " ")
 
@@ -162,7 +162,7 @@ Zepplin notebooks are composed of paragraphs that can contain formatted text, sq
 
  ![](./images/059.png  " ")
 
-10. Change the presentation style by selecting bar chart, and then select settings.
+10. Change the presentation style by selecting **bar chart**, and then select **settings**.
 
  ![](./images/060.png  " ")
 
@@ -183,17 +183,17 @@ So how does all this help us build ml models, collaborate with others, and revie
     - A visual palet to display data and ml results.
     - A shared platform where discussion, documentation, execution and results are presented together.
 
-13. Finally, lets review some examples.  Navigate to the Home dashboard.
+13. Finally, lets review some examples.  Navigate to the **Home** dashboard.
 
   ![](./images/064.png  " ")
 
   ![](./images/065.png  " ")
 
-14. Navigate to Examples.
+14. Navigate to **Examples**.
 
   ![](./images/066.png  " ")
 
-15. Select a model of interest.  In this example we will open Anomoly Detection.
+15. Select a model of interest.  In this example we will open **Anomoly Detection**.
 
   ![](./images/067.png  " ")
 
@@ -208,23 +208,23 @@ As you have seen adding content to a notebook is simple and fast.  However we ha
 
   ![](./images/020.png  " ")
 
-2. We will be importing a pre-built notebook, and using this for the remainder of the lab. Select `Import`.
+2. We will be importing a pre-built notebook, and using this for the remainder of the lab. Select **Import**.
 
   ![](./images/021.png  " ")
 
-3. Go to the install directory in your git repository and import `Targeting Customers That Complete All Payments.json` notebook.
+3. Go to the install directory in your git repository and import **Targeting Customers That Complete All Payments.json** notebook.
 
   ![](./images/022.png  " ")
 
-4. Select the `Targeting Customers That Complete All Payments` notebook.
+4. Select the **Targeting Customers That Complete All Payments** notebook.
 
   ![](./images/023.png  " ")
 
-5. Before you start working the `Targeting Customers That Complete All Payments` you need to set the interpreter binging. Click on the gear icon.
+5. Before you start working the **Targeting Customers That Complete All Payments** you need to set the interpreter binging. Click on the gear icon.
 
   ![](./images/024.png  " ")
 
-6. Selection the `orcl_high` interpreter adn then `Save`.
+6. Selection the **orcl_high** interpreter adn then **Save**.
 
   ![](./images/025.png  " ")
 
