@@ -283,9 +283,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     </copy>
     ```
 
-- In your _local machine_, open the terminal and create kubeconfig file and paste the copied content, press **i** and paste, 
-
-**Note**: Remember the path where you are creating this file
+- In your _local machine_, open the terminal and create kubeconfig file and paste the copied content, press **i** and paste: 
 
     ```bash
     <copy>
@@ -293,11 +291,16 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     </copy>
     ```
 
+**Note**: Remember the path where you are creating this file
+
+   
+
 - We need to modify the file, remove all the content after user and it should look as follow:
 
     ![](images/200/Step7/Lab200-step7-2.png)
 
-- Now paste the token which we copied in **Step 5** in the file as follow: to exit press escape key in keyboard and type **:wq** and press enter:
+- Now paste the token which we copied in **Step 5** in the file as follow
+- Once the changes are made to **save and exit** press escape key in keyboard and type **:wq** and press enter.
 
     ![](images/200/Step7/Lab200-step7-3.png)
 **Note**: Make sure the intendation is correct for token. it should be 4 spaces from the beginning of line.
@@ -309,6 +312,9 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     export KUBECONFIG=path_of_kubeconfig_file
     </copy>
     ```
+
+  **Note**: Make sure to replace the path in above command
+  
 - We can use `kubectl` to start a proxy that will give us access to the Kubernetes Dashboard through a web browser at a localhost URL. Run the following command in the same terminal window:
 
   **Windows**
