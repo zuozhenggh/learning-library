@@ -137,7 +137,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 ### **STEP 5**: Prepare Token using Cloud Shell
 
-  - You are now ready to download the `kubeconfig` file using the OCI CLI that you just installed. From the OCI Console navigation menu, select **Developer Services->Container Clusters (OKE)**, then click the name of your cluster, **cluster1**
+  - From the OCI Console navigation menu, select **Developer Services->Container Clusters (OKE)**, then click the name of your cluster, **cluster1**
 
     ![](images/200/LabGuide200-5c0a2b4c.png)
 
@@ -169,11 +169,10 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 <copy>vi oke-admin-service-account.yaml</copy>
 ```
 
-- press **i** and **copy and paste** the following content:
+- press **i** and **copy and paste** the following content: Once done press esc key from keyboard, type **:wq** and press enter to exit.
 
-    ```
+    ```bash
     <copy>
-    bash
     apiVersion: v1
     kind: ServiceAccount
     metadata:
@@ -275,9 +274,48 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     </copy>
     ```
 
+- To access the dashboard we need to create kubeconfig file.
+- In _Cloud Shell Session_, run the following command and copy the output
 
+    ```bash
+    <copy>
+    cat ~/.kube/config
+    </copy>
+    ```
 
-- Now that we've increased the session timeout, we can use `kubectl` to start a proxy that will give us access to the Kubernetes Dashboard through a web browser at a localhost URL. Run the following command in the same terminal window:
+- In your _local machine_, open the terminal and create kubeconfig file and paste the copied content, press **i** and paste: 
+
+    ```bash
+    <copy>
+    vi kubeconfig
+    </copy>
+    ```
+
+**Note**: Remember the path where you are creating this file
+
+   
+
+- We need to modify the file, remove all the content after user and it should look as follow:
+
+    ![](images/200/Step7/Lab200-step7-2.png)
+
+- Now paste the token which we copied in **Step 5** in the file as follow
+- Once the changes are made to **save and exit** press escape key in keyboard and type **:wq** and press enter.
+
+    ![](images/200/Step7/Lab200-step7-3.png)
+**Note**: Make sure the intendation is correct for token. it should be 4 spaces from the beginning of line.
+
+- Export the path of KUBECONFIG to the file.
+  
+    ```bash
+    <copy>
+    export KUBECONFIG=path_of_kubeconfig_file
+    </copy>
+    ```
+
+  **Note**: Make sure to replace the path in above command
+  
+- We can use `kubectl` to start a proxy that will give us access to the Kubernetes Dashboard through a web browser at a localhost URL. Run the following command in the same terminal window:
 
   **Windows**
     ```bash
@@ -299,9 +337,9 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 - Leave the proxy server running and navigate to the [Kubernetes Dashboard by Clicking on this link](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/), and choosing **open in a new browser tab**.
 
-- In the [Kubernetes Dashboard](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/), select Token and **paste the value of the token: element you copied earlier in Step 5** into the Token field. Click **Open**, then click **Sign In**.
+- In the [Kubernetes Dashboard](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/), select **Kubeconfig** and click three dots to choose the kubeconfig file, then click **Sign In**.
 
-  ![](images/200/LabGuide200-2a1a02ce.png)
+  ![](images/200/Step7/Lab200-step7-4.png)
 
 - After authenticating, you are presented with the Kubernetes dashboard.
 
@@ -482,7 +520,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
     ```bash
     <copy>
-    echo $(./kubectl config view | grep server | cut -f 2- -d ":" | tr -d " ")
+    echo $(kubectl config view | grep server | cut -f 2- -d ":" | tr -d " ")
     </copy>
     ```
 
