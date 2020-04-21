@@ -82,9 +82,11 @@ This lab assumes you have already completed the following labs:
 ## Step 2: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration.  This is an optional step in this lab.  
 
-1.  [OPTIONAL]Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
+1.  [OPTIONAL]Click **Terraform Actions** -> **Plan** to validate your configuration.  Click **Plan**. This takes about a minute, please be patient.
 
     ![](./images/terraformactions.png " ")
+
+    ![](./images/step2.1-terraformclickplan.png " ")
 
     ![](./images/planjob.png " ")
 
@@ -94,10 +96,15 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 ## Step 3: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
 
-1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your instance and install Oracle 19c.
+1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**. Click **Apply**. This will create your instance and install Oracle 19c. This takes about a minute, please be patient.
+
     ![](./images/applyjob1.png " ")
 
+    ![](./images/step3.1-terraformclickapply.png " ")
+
     ![](./images/applyjob2.png " ")
+
+    ![](./images/step3.1-applyjob3.png " ")
 
 2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 1 resource has been added.  Congratulations, your environment is created!  Time to login to your instance to finish the configuration.
 
@@ -120,12 +127,21 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ![](./images/cloudshell.png " ") 
 
 2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+
+    ![](./images/step4.1.2-computeinstance.png " ")
+
 3.  On the instance homepage, find the Public IP addresss for your instance.
+
+    ![](./images/step4.1.3-instancehomepage.png " ")
+
 4.  Enter the command below to login to your instance.    
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 5.  When prompted, answer **yes** to continue connecting.
+
+    ![](./images/step4.1.5-instancelogin.png " ")
+
 6.  Continue to Step 5 on the left hand menu.
 
 ### MAC or Windows CYGWIN Emulator
