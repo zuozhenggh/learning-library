@@ -89,7 +89,30 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
     </copy>
    ``` 
 
+
+- Create the application in Oracle Functions, give the name of app,for example imageConverter. Also replace the subnet OCID value.
+- To get the Subnet OCID value, Click on Hamburger menu on top left, click on **Networking**, then click on **Virtual Cloud Networks**.
+
+    ![](images/500/Step1/Lab500-step1-5.png)
+
+- Choose the subnet we created for OKE, and then click on **subnet**
     
+    ![](images/500/Step1/Lab500-step1-6.png)
+
+- Copy the OCID of the subnet     
+  
+    ![](images/500/Step1/Lab500-step1-7.png)
+
+    ```bash
+    <copy>
+    fn create app [APP_NAME] --annotation oracle.com/oci/subnetIds='["SUBNET_OCID"]'
+    </copy>
+    ```
+
+- For example
+  ```bash
+  fn create app imageConverter --annotation oracle.com/oci/subnetIds='["ocid1.subnet.oc1.iad.aaaaaaaazvxnwpmelac35mdiazxhobtm2qhhang6ikysgfi7fp7hq"]'
+  ```
 
 - You’re ready to deploy functions. Git clone the repository
 
@@ -185,8 +208,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
 
 
-- Now we're ready to **Deploy the function** (and application) to the remote Fn Server using the same command you used in **STEP 3**, but without the --local flag.
-
+- Now we're ready to **Deploy the function**
   ```bash
   <copy>
   fn deploy --create-app --app imgconvert
