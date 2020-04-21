@@ -31,9 +31,156 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
 # Extend Your Application Using a Function
 
+## Provision VM
+
+### **STEP 1**: Launch a Cloud Compute Instance for Cluster Management
+
+  - Before we can launch a compute instance, we need two things: a Virtual Cloud Network to connect it to, and an SSH key pair to use for authentication. We could create a new VCN, but since the cluster wizard is already going to create one, we will just make use of that. So let's work on creating an SSH key pair for our instance. The method of generating an SSH key pair will depend on your operating system.
+
+    **NOTE**: There are several files that will be downloaded or created on your local machine during this workshop. We recommend creating a directory to store them in for ease of locating and cleaning up. In this step, you will create a directory inside your home/user directory called `container-workshop`. You are free to change the location and name of this directory, but the lab guide will assume it is located at `~/container-workshop/`. **You will need to modify the given terminal commands throughout this lab** if you change the location or name of the directory.
+
+    **Mac/Linux**:
+
+      - Open a terminal or shell window and run the following commands:
+
+        ```bash
+        cd ~
+        mkdir container-workshop && cd container-workshop && mkdir ssh-keys && cd ssh-keys
+        ssh-keygen -f ./ssh-key -N ""
+        ```
+        ![](images/200/LabGuide200-a5328c9e.png)
+
+    **Windows**:
+
+      - If you don't already have them, download PuTTY and PuTTYgen from [http://www.putty.org/](http://www.putty.org/)
+
+        ![](images/200/LabGuide200-395eff32.png)
+        ![](images/200/LabGuide200-e2207b4c.png)
+
+      - Locate and run **puttygen.exe** in the PuTTY install folder.
+
+      - Ensure that **RSA** or **SSH-2 RSA** is selected in the `Type of key to generate` field (which one you see is dependent on your version of PuTTY)
+
+      ![](images/LabGuide200-614f9c26.png)
+
+      ![](images/LabGuide200-f0a8b7ba.png)
+
+      - Click **Generate**
+
+        ![](images/200/LabGuide200-4c048053.png)
+
+      - **Move your mouse around the blank area** as instructed to genereate random data.
+
+        ![](images/200/LabGuide200-eb2e6690.png)
+
+      - Click **Save private key** and then click **Yes** to continue saving without a passphrase.
+
+        ![](images/200/LabGuide200-2f7bb25a.png)
+
+      - In the save dialog box:
+
+      - Navigate to your home directory/user folder (usually **C:\Users\\<username\>**).
+      
+      - Click **New Folder** and name the folder `container-workshop`.
+
+        ![](images/200/LabGuide200-b203da00.png)
+          
+      - **Double-click** the `container-workshop` folder to enter it.
+      
+      - Click **New Folder** again. This time name the folder `ssh-keys`.
+
+          ![](images/200/LabGuide200-af71f041.png)
+          
+      - **Double click** on `ssh-keys` to enter that folder.
+      
+      - Finally, name the key **ssh-key.ppk** and click **Save**.
+
+          ![](images/200/LabGuide200-0f4dd743.png)
+
+      - Select and copy the **public key** using Control-C, which is displayed in the `Public key for pasting into OpenSSH authorized_keys file` region. Paste it into a **new text file** using **notepad** and save the file in the `C:\Users\username\container-workshop\ssh-keys` folder.
+
+        **NOTE**: Do not use the Save public key button, as it uses an incompatible key format.
+
+        ![](images/200/LabGuide200-dfe10559.png)
+        ![](images/200/LabGuide200-81767c01.png)
+
+      - When you SSH to your instance in a later step, use PuTTY to connect instead of a command-line ssh session.
+
+  - With the keys generated, we are ready to launch an instance. From the OCI Console navigation menu, select **Compute->Instances**. Ensure you are still working in the **Demo** compartment using the drop down list in the left pane.
+
+    ![](images/200/LabGuide200-bdda7d5d.png)
+
+  - Click the **Create Instance** button.
+
+    ![](images/200/LabGuide200-071f038f.png)
+
+  - Leave the Availability Domain, Image Source, and Instance Type settings at the defaults.
+
+    ![](images/LabGuide200-026d5a7f.png)
+
+  - In the Instance Shape field, click **Change Shape**. We will use a 2-OCPU VM, since we are using all of our available 1-OCPU VMs for Kubernetes worker nodes.
+
+    ![](images/LabGuide200-e8686157.png)
+
+  - In the Browse All Shapes pane, check the box next to **VM.Standard2.2** and click **Select Shape**.
+
+    ![](images/LabGuide200-e02b046c.png)
+
+  - In the Add SSH Key area, click **Choose Files** and select the **ssh public key** you generated at the beginning of this step (e.g. `~/container-workshop/ssh-keys/ssh-key.pub`).
+
+    ![](images/LabGuide200-4b3f9759.png)
+
+  - Make the following selections in the **Configure Networking** form:
+    - In the VCN Compartment field, ensure **Demo** is selected.
+    - In the VCN field, ensure **oke-vcn-quick-cluster1** is selected (if you changed the name of your cluster, the `cluster1` portion of these name will differ).
+    - In the Subnet Compartment field, ensure **Demo** is selected.
+    - In the Subnet field, select the subnet that begins with **oke-svclbsubnet-quick-cluster1**, which is in the **Public Subnets** section. Take care __not__ to select the subnet that begins with oke-subnet, as this one is a private subnet (not accessible from the internet).
+
+    ![](images/LabGuide200-e67f88fa.png)
+
+  - Make sure to select **Assign a public IP address**
+
+    ![](images/200/LabGuide-instance-1.png)
+  
+  - Click **Create**
+
+    ![](images/LabGuide200-68185e86.png)
+
+  - You will be brought to the instance details page. Wait for your instance to transition from the Provisioning state to the **Running** state before proceeding.
+
+    ![](images/LabGuide200-585fa5fe.png)
+
+### **STEP 2**: SSH into your Compute instance 
+
+  - Your instance should now be in the **Running** state. Let's SSH into the instance and install the command line utility that will let us interact with our cluster. Still on the instance details page, find the **Public IP Address** and copy it to the clipboard.
+    ![](images/200/LabGuide200-3986ce91.png)
+
+  - Open an SSH connection to the instance using the following OS-specific method:
+
+    **Mac/Linux**
+      - Open a terminal or shell window
+      - Run the following commands, pasting in the **Public IP Address** from your clipboard in place of <Public IP Address>
+
+        ```
+        cd ~/container-workshop/ssh-keys/
+        ssh -i ssh-key opc@<Public IP Address>
+        ```
+      - Type **yes** and **press enter** when asked if you want to continue connecting
+
+        ![](images/200/LabGuide200-edc8f079.png)
+
+    **Windows**
+      - Open PuTTY
+      - In the Category pane, select Session and enter the following:
+        - Host Name (or IP address): **opc@[Public IP Address you copied to the clipboard]**
+        - Connection type: SSH
+        - Port: 22
+      - In the Category pane, expand Connection, expand SSH, and then click **Auth**. Click **Browse** and select your private key (for example, **C:\Users\\<username\>\container-workshop\ssh-keys\ssh-key.ppk**).
+      - Click **Open** to start the session.
+
 ## Run Your Function Locally
 
-### **STEP 1**: Install Fn Server on Your Virtual Machine
+### **STEP 3**: Install Fn Server on Your Virtual Machine
 
 - We are going to use the virtual machine that you created in OCI as our local or development machine for Fn. Return to your **SSH session** either in PuTTY or your terminal window. If you have closed it, start a new one using the same method as you did in Lab 200 (e.g. `cd ~/container-workshop/ssh-keys; ssh -i ssh-key opc@<IP-Address-of-Your-VM>`);
 
@@ -103,7 +250,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
 - Looks good, let's move on to creating our first function.
 
-### **STEP 2**: Clone the Function Repository
+### **STEP 4**: Clone the Function Repository
 
 - Now we're ready to get a copy of the image resizing function and test it out on our local Fn Server. Clone the Git repository into your home directory using the following command.
 
@@ -115,7 +262,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
 **NOTE**: Functions deployed to Fn are packaged in Docker containers. You can use any programming language to write your functions, and you can deploy them to any Fn Server -- local, running on your server, or hosted in the cloud. The function you just cloned actually involves no code at all, it is simply a Dockerfile that installs and executes the open source command line tool ImageMagick. Using functions like this is a quick and easy way to convert open source or command line tools to auto-scaling web services.
 
-### **STEP 3**: Deploy the Function Locally
+### **STEP 5**: Deploy the Function Locally
 
 - Now that you have the function 'code', you can deploy it to the local Fn Server you started earlier by running the following commands in your terminal window:
 
@@ -127,7 +274,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
   ![](images/500/11.png)
 
-### **STEP 4**: Test the Function Using curl
+### **STEP 6**: Test the Function Using curl
 
 - Before we can test our function, we must disable SELinux, as it interferes with the ability of Fn to run containers. Run these commands to **disable SELinux**
 
@@ -156,7 +303,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
 ## Deploy Your Function to Fn on Kubernetes
 
-### **STEP 5**: Deploy Fn Server to Kubernetes
+### **STEP 7**: Deploy Fn Server to Kubernetes
 
 - We are going to use the Kubernetes Dashboard **Create An App** wizard to deploy Fn to Kubernetes. This is suitable for a test environment, but does not account for production best practices. For a production deployment, consider using [Helm](https://github.com/kubernetes/helm#install) and the [fn-helm chart](https://github.com/fnproject/fn-helm) to bring up your Fn Server.
 
@@ -216,7 +363,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
     ![](images/LabGuide500-aab88037.png)
 
-### **STEP 6**: Deploy Your Function to Fn Server on Kubernetes
+### **STEP 8**: Deploy Your Function to Fn Server on Kubernetes
 
 - In your _SSH session_, change directories to cloned function directory from **STEP 2**.
 
@@ -320,7 +467,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
 - Our function is deployed and available on our remote Fn Server, which is running in our Kubernetes cluster. The last thing to verify is that the product catalog application is able to find and use our function. Let's test out the upload image feature.
 
-### **STEP 7**: Test Your Function in the Product Catalog
+### **STEP 9**: Test Your Function in the Product Catalog
 
 - Open the **product catalog** website in a browser _on your local machine_. If you don't have the URL, you can look in the Kubernetes dashboard for the **external endpoint** of the product-catalog-service, or you can run the following command from your SSH session:
 
