@@ -5,7 +5,7 @@ Welcome to the Oracle Database Docker Workshop. Using Docker build files for Ora
 
 - Sign up for an Oracle Free Trial account and sign in to your account
 - Create a set of SSH keys
-- Create a Virtual Cloud Network (VCN) instance
+- Create a Virtual Cloud Network (VCN) instance (Free Tier and Cloud Accounts)
 - Create an Oracle Cloud Compute instance
 - Set up Docker on the Cloud Compute instance
 - Build an Oracle Database Docker image

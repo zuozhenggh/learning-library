@@ -5,13 +5,15 @@ Oracle’s revolutionary cloud database is self-driving, self-securing, self-rep
 ## Workshops
 Click on one of our workshops below to access the content.
 
-### ADB Serverless Infrastructure
+### ADB Shared Infrastructure
 
-[![](./images/screenshot-adb.png)](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-journey-workshop/index.html)  ![](./images/transparent.png " ") 
+[Journey to Autonomous Database](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-journey-workshop/index.html) 
+
+[Autonomous Database Fundamentals](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/freetier-overview)  
 
 ### ADB Dedicated Infrasructure
 
-New updated workshop coming soon!
+[Autonomous Database Dedicated Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/dedicated/workshop/index.html)
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
