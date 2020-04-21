@@ -48,7 +48,6 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/create-stack-orig.png " ")
 
-
     Enter the following information and accept all the defaults
 
     - **Name**:  Enter your firstname and lastname and the day you were born (DO NOT ENTER ANY SPECIAL CHARACTERS HERE, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
@@ -59,7 +58,7 @@ This lab assumes you have already completed the following labs:
 
 5.  Click **Next**.
 
-    ![](./images/createstack3.png " ")
+    ![](./images/create-stack-19c.png " ")
 
     Enter the following information. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
 
