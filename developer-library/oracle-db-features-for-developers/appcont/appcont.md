@@ -29,13 +29,13 @@ This lab assumes you have completed the following labs:
 
 ## Step 1: The Beginning
 
-Lab under construction
+Lab under construction. Please come back soon!
 
 ## Conclusion
 
 In this Lab you had an opportunity to examine Application Continuity.
 
-You will have learnt that Application Continuity improves the user experience for both unplanned outages and planned maintenance. Application Continuity enhances the fault tolerance of systems and applications that use an Oracle database.
+You will have learned that Application Continuity improves the user experience for both unplanned outages and planned maintenance. Application Continuity enhances the fault tolerance of systems and applications that use an Oracle database.
 
 Transparent Application Continuity is enabled by default in the Oracle Autonomous Database. No application knowledge is needed for you to use TAC.
 

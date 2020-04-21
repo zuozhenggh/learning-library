@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.
+This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
 
 ## About JSON in the Oracle Database
 
@@ -132,104 +132,107 @@ This lab covers the use of database languages and features to work with JSON dat
     doc CLOB CONSTRAINT valid_json CHECK (doc IS JSON));</copy>
   ````
 
-Using JSON inside Oracle database is very flexible, and does not require a predefined data structure, or specific schema. You can store any JSON document in a relational table, like the one we just created, with any internal document structure. Here is another JSON document example, with a totally different structure than the one we have received from GeoNames, and we can store it in the same table.
+3. Using JSON inside Oracle database is very flexible, and does not require a predefined data structure, or specific schema. You can store any JSON document in a relational table, like the one we just created, with any internal document structure. Here is another JSON document example, with a totally different structure than the one we have received from GeoNames, and we can store it in the same table.
 
-````
-<copy>INSERT INTO MYJSON (doc) VALUES (
-   '{
-      "workshopName": "Database 19c New Features for Developers",
-      "audienceType": "Partners Technical Staff",
-      "location": {
-        "company": "Oracle",
-        "office": "Customer Visiting Center",
-        "region": "EMEA"
-      }
-    }');</copy>
-````
+  ````
+  <copy>
+  INSERT INTO MYJSON (doc) VALUES (
+  '{
+    "workshopName": "Database 19c New Features for Developers",
+    "audienceType": "Partners Technical Staff",
+    "location": {
+      "company": "Oracle",
+      "office": "Customer Visiting Center",
+      "region": "EMEA"
+    }
+  }');
+  </copy>
+  ````
 
-````
-<copy>commit;</copy>
-````
+  ````
+  <copy>commit;</copy>
+  ````
 
-3. Once stored, we can query these documents and retrieve the JSON values as traditional relational data.
+4. Once stored, we can query these documents and retrieve the JSON values as traditional relational data.
 
-````
-<copy>set pages 9999
-set long 90000
-</copy>
-````
+  ````
+  <copy>set pages 9999
+  set long 90000
+  SELECT j.doc FROM MYJSON j;
+  </copy>
+  ````
 
-````
-> <copy>SELECT j.doc FROM MYJSON j;</copy>
-````
-![](./images/p_jsonDoc_1.png " ")
+  ![](./images/p_jsonDoc_1.png " ")
 
-4. Oracle database SQL engine allows you to use a **simple-dot-notation (SDN)** syntax on your JSON data. With other words, you can write SQL queries that contain something like ***TABLE_Alias.JSON_Column.JSON_Property.JSON_Property>*** which comes quite handy as the region attribute is an attribute of the nested object location within the JSON document. Remember, SDN syntax is case sensitive.
+## Step 5:  Single Dot Notation
+
+Oracle database SQL engine allows you to use a **simple-dot-notation (SDN)** syntax on your JSON data. With other words, you can write SQL queries that contain something like ***TABLE_Alias.JSON_Column.JSON_Property.JSON_Property>*** which comes quite handy as the region attribute is an attribute of the nested object location within the JSON document. Remember, JSDN syntax is case sensitive.
 
 The return value for a dot-notation query is always a string (data type VARCHAR2(4000)) representing JSON data. The content of the string depends on the targeted JSON data, as follows:
 - If a single JSON value is targeted, then that value is the string content, whether it is a JSON scalar, object, or array.
 - If multiple JSON values are targeted, then the string content is a JSON array whose elements are those values.
 
-````
-<copy>
-column WORKSHOPNAME format a50
-column LOCATION format a20
-</copy>
-````
+1.  Let's format your SQL query environment
+  ````
+  <copy>
+  column WORKSHOPNAME format a50
+  column LOCATION format a20
+  </copy>
+  ````
 
-````
-> <copy>SELECT j.doc.workshopName, j.doc.location.region FROM MYJSON j;</copy>
-````
+2.  Issue the query to choose the workshop name and region from the table you loaded earlier.
+  ````
+  > <copy>SELECT j.doc.workshopName, j.doc.location.region FROM MYJSON j;</copy>
+  ````
 
-![](./images/p_jsonDoc_2.png " ")
+  ![](./images/p_jsonDoc_2.png " ")
 
-Test other queries and review the output.
+3. Test other queries and review the output.
 
-## Retrieve Sample Data
+## Step 6: Retrieve Sample Data
 
-5. The objective for our lab is to retrieve information about castles in Europe, and use them as JSON documents in different scenarios. Imagine you are starting the development of a new mobile application that provides recommendations for tourists.
+The objective for our lab is to retrieve information about castles in Europe, and use them as JSON documents in different scenarios. Imagine you are starting the development of a new mobile application that provides recommendations for tourists.  For convenience and comfort, we can encapsulate the communication with a web service into a function. This way, we don’t have to write all the code required for a simple request, which in most of the cases is even more complicated than our simple example here, because they require a more complex authentication.
 
-### Retrieve Country Information In JSON Format
+*Note: Remember to replace <GeoNames_username>*
 
-For convenience and comfort, we can encapsulate the communication with a web service into a function. This way, we don’t have to write all the code required for a simple request, which in most of the cases is even more complicated than our simple example here, because they require a more complex authentication.
+1.  Create a function to get country information
 
->**Note**: Remember to replace ***<GeoNames_username>***
+  ````
+  <copy>create or replace function get_country_info (countryCode in VARCHAR2) return clob
+    is
+      t_http_req  utl_http.req;
+      t_http_resp  utl_http.resp;
+      t_response_text clob;
+    begin   
+      t_http_req:= utl_http.begin_request('http://api.geonames.org/countryInfoJSON?formatted=true' || '&' || 'country=' || countryCode || '&' || 'username=<GeoNames_username>' || '&' || 'style=full', 'GET', 'HTTP/1.1');
+      t_http_resp:= utl_http.get_response(t_http_req);
+      UTL_HTTP.read_text(t_http_resp, t_response_text);
+      UTL_HTTP.end_response(t_http_resp);
+      return t_response_text;
+    end;
+  /
+  </copy>
+  ````
 
-````
-<copy>create or replace function get_country_info (countryCode in VARCHAR2) return clob
-  is
-    t_http_req  utl_http.req;
-    t_http_resp  utl_http.resp;
-    t_response_text clob;
-  begin   
-    t_http_req:= utl_http.begin_request('http://api.geonames.org/countryInfoJSON?formatted=true' || '&' || 'country=' || countryCode || '&' || 'username=<GeoNames_username>' || '&' || 'style=full', 'GET', 'HTTP/1.1');
-    t_http_resp:= utl_http.get_response(t_http_req);
-    UTL_HTTP.read_text(t_http_resp, t_response_text);
-    UTL_HTTP.end_response(t_http_resp);
-    return t_response_text;
-  end;
-/
-</copy>
-````
+2. The input of the function we just created is the ISO code of a country. Run this query to get information about Spain, for example.
 
-6. The input of the function we just created is the ISO code of a country. Run this query to get information about Spain, for example.
+  ````
+  <copy>select get_country_info('ES') country_info from dual;</copy>
+  ````
 
-````
-<copy>select get_country_info('ES') country_info from dual;</copy>
-````
-![](./images/p_jsonFunc_1.png " ")
+  ![](./images/p_jsonFunc_1.png " ")
 
-7. Insert the JSON document retrieved from the web service into the JSON column of that same table, even though this JSON document has a totally different structure.
+3. Insert the JSON document retrieved from the web service into the JSON column of that same table, even though this JSON document has a totally different structure.
 
-````
-<copy>insert into MYJSON (doc) values (get_country_info('ES'));</copy>
-````
+  ````
+  <copy>insert into MYJSON (doc) values (get_country_info('ES'));</copy>
+  ````
 
-````
-<copy>commit;</copy>
-````
+  ````
+  <copy>commit;</copy>
+  ````
 
-8. Select the contents of that table, and notice we use the same column.
+4. Select the contents of that table, and notice we use the same column.
 
 ````
 <copy>select * from MYJSON;</copy>
@@ -237,113 +240,112 @@ For convenience and comfort, we can encapsulate the communication with a web ser
 
 ![](./images/p_jsonDoc_3.png " ")
 
-9. Working with attributes, allows us to get the information we want from a specific document. We can assign default values for attributes that do not match, and treat the issue further from the application. The SQL/JSON function ***JSON_VALUE*** finds a specified scalar JSON value in JSON data and returns it as a SQL value.
+5. Working with attributes, allows us to get the information we want from a specific document. We can assign default values for attributes that do not match, and treat the issue further from the application. The SQL/JSON function ***JSON_VALUE*** finds a specified scalar JSON value in JSON data and returns it as a SQL value.
 
-````
-<copy>column GEONAMEID format a10
-column COUNTRY format a40
-</copy>
-````
+  ````
+  <copy>column GEONAMEID format a10
+  column COUNTRY format a40
+  </copy>
+  ````
 
-````
-> <copy>SELECT JSON_VALUE(doc, '$.geonames.geonameId' NULL ON ERROR) AS GeoNameID,
+  ````
+  > <copy>SELECT JSON_VALUE(doc, '$.geonames.geonameId' NULL ON ERROR) AS GeoNameID,
   JSON_VALUE(doc, '$.geonames.countryName' DEFAULT 'Not a country' ON ERROR) AS Country
-    FROM MYJSON;</copy>
-````
-![](./images/p_jsonDoc_4.png " ")
+  FROM MYJSON;</copy>
+  ````
 
-10. Or we can filter the results to receive only the documents that are useful for the query, using the SDN syntax.
+  ![](./images/p_jsonDoc_4.png " ")`
 
-````
-> <copy>select j.doc.geonames.geonameId GeoNameID, j.doc.geonames.countryName Country
-    from MYJSON j where j.doc.geonames.isoAlpha3 IS NOT NULL;</copy>
-````
-![](./images/p_jsonDoc_5.png " ")
+6. Or we can filter the results to receive only the documents that are useful for the query, using the SDN syntax.
 
-11. In both cases, we can see that Spain geonameId is 2510769. This value will be used in the following steps.
+  ````
+  > <copy>select j.doc.geonames.geonameId GeoNameID, j.doc.geonames.countryName Country
+      from MYJSON j where j.doc.geonames.isoAlpha3 IS NOT NULL;</copy>
+  ````
 
-### Retrieve Regions Information In JSON Format
+  ![](./images/p_jsonDoc_5.png " ")
 
-12. A new function is required to retrieve JSON documents with country regions information from GeoNames web service. This function requires the  **geonameId** of the country, and a style value used internally by GeoNames web service to specify the level of details.
+7. In both cases, we can see that Spain geonameId is 2510769. This value will be used in the following steps.
 
->**Note**: Remember to replace ***<GeoNames_username>***
+8. A new function is required to retrieve JSON documents with country regions information from GeoNames web service. This function requires the  **geonameId** of the country, and a style value used internally by GeoNames web service to specify the level of details.
 
-````
-<copy>create or replace function get_subdivision (geonameId in NUMBER, style in VARCHAR2) return clob
-  is
-    t_http_req  utl_http.req;
-    t_http_resp  utl_http.resp;
-    t_response_text clob;
-  begin
-    t_http_req:= utl_http.begin_request('http://api.geonames.org/childrenJSON?formatted=true' || '&' || 'geonameId=' || geonameId || '&' || 'username=<GeoNames_username>' || '&' || 'style=' || style, 'GET', 'HTTP/1.1');
-    t_http_resp:= utl_http.get_response(t_http_req);
-    UTL_HTTP.read_text(t_http_resp, t_response_text);
-    UTL_HTTP.end_response(t_http_resp);
-    return t_response_text;
-  end;
-/
-</copy>
-````
+*Note: Remember to replace <GeoNames_username>*
 
-13. Test this function using the following inputs.
+  ````
+  <copy>create or replace function get_subdivision (geonameId in NUMBER, style in VARCHAR2) return clob
+    is
+      t_http_req  utl_http.req;
+      t_http_resp  utl_http.resp;
+      t_response_text clob;
+    begin
+      t_http_req:= utl_http.begin_request('http://api.geonames.org/childrenJSON?formatted=true' || '&' || 'geonameId=' || geonameId || '&' || 'username=<GeoNames_username>' || '&' || 'style=' || style, 'GET', 'HTTP/1.1');
+      t_http_resp:= utl_http.get_response(t_http_req);
+      UTL_HTTP.read_text(t_http_resp, t_response_text);
+      UTL_HTTP.end_response(t_http_resp);
+      return t_response_text;
+    end;
+  /
+  </copy>
+  ````
 
-````
-> <copy>select get_subdivision(2510769, 'medium') regions_document from dual;</copy>
-````
+9. Test this function using the following inputs.
 
-![](./images/p_jsonFunc_2.png " ")
+  ````
+  > <copy>select get_subdivision(2510769, 'medium') regions_document from dual;</copy>
+  ````
 
-If the test is successful, insert this new JSON document in the same table.
+  ![](./images/p_jsonFunc_2.png " ")
 
-````
-> <copy>insert into MYJSON (doc) values (get_subdivision(2510769, 'medium'));</copy>
-````
+10. If the test is successful, insert this new JSON document in the same table.
 
-````
-<copy>commit;</copy>
-````
+  ````
+  > <copy>insert into MYJSON (doc) values (get_subdivision(2510769, 'medium'));</copy>
+  ````
 
-14. The SQL/JSON function ***JSON_TABLE*** creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. You can query the result returned by the function as a virtual relational table using SQL. The main purpose of ***JSON_TABLE*** is to create a row of relational data for each object inside a JSON array and output JSON values from within that object as individual SQL column values.
+  ````
+  <copy>commit;</copy>
+  ````
 
-Nested clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the ***JSON_TABLE*** function.
+11. The SQL/JSON function ***JSON_TABLE*** creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. You can query the result returned by the function as a virtual relational table using SQL. The main purpose of ***JSON_TABLE*** is to create a row of relational data for each object inside a JSON array and output JSON values from within that object as individual SQL column values. Nested clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the ***JSON_TABLE*** function.
 
-````
-<copy>column TITLE format a35
-column NAME format a32
-</copy>
-````
+  ````
+  <copy>column TITLE format a35
+  column NAME format a32
+  </copy>
+  ````
 
-````
-> <copy>SELECT jt.countryName Country, jt.fcode, convert(jt.toponymName,'WE8ISO8859P1','AL32UTF8') Title,
-  convert(jt.name,'WE8ISO8859P1','AL32UTF8') Name, jt.geonameId GeoNameID FROM MYJSON,
-  JSON_TABLE(DOC, '$' COLUMNS
-    (NESTED PATH '$.geonames[*]'
-       COLUMNS (countryName VARCHAR2(80) PATH '$.countryName',
-              toponymName VARCHAR2(120) PATH '$.toponymName',
-              geonameId VARCHAR2(20) PATH '$.geonameId',
-              name VARCHAR2(80) PATH '$.name',
-              fcode VARCHAR2(6) PATH '$.fcode')))
-  AS jt  WHERE (fcode = 'ADM1');</copy>
-````
-![](./images/p_jsonDoc_6.png " ")
+  ````
+  > <copy>SELECT jt.countryName Country, jt.fcode, convert(jt.toponymName,'WE8ISO8859P1','AL32UTF8') Title,
+    convert(jt.name,'WE8ISO8859P1','AL32UTF8') Name, jt.geonameId GeoNameID FROM MYJSON,
+    JSON_TABLE(DOC, '$' COLUMNS
+      (NESTED PATH '$.geonames[*]'
+        COLUMNS (countryName VARCHAR2(80) PATH '$.countryName',
+                toponymName VARCHAR2(120) PATH '$.toponymName',
+                geonameId VARCHAR2(20) PATH '$.geonameId',
+                name VARCHAR2(80) PATH '$.name',
+                fcode VARCHAR2(6) PATH '$.fcode')))
+    AS jt  WHERE (fcode = 'ADM1');</copy>
+  ````
 
-Having all regions from Spain, we can ask the GeoNames web service for more information about each region, for example Andalucia with **geonameId** 2593109.
+  ![](./images/p_jsonDoc_6.png " ")
 
-````
-> <copy>SELECT get_subdivision(2593109, 'full') sub_regions FROM dual;</copy>
-````
+12. Having all regions from Spain, we can ask the GeoNames web service for more information about each region, for example Andalucia with **geonameId** 2593109.
 
-15. Our next goal is to get more details about each region, and for that we need the geonameId for each region. One option is to use ***JSON_TABLE*** to return only that column, or the following SDN syntax.
+  ````
+  > <copy>SELECT get_subdivision(2593109, 'full') sub_regions FROM dual;</copy>
+  ````
 
-````
-> <copy>SELECT j.doc.geonames.geonameId FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%';</copy>
-````
+13. Our next goal is to get more details about each region, and for that we need the geonameId for each region. One option is to use ***JSON_TABLE*** to return only that column, or the following SDN syntax.
 
-![](./images/p_jsonDoc_7.png " ")
+  ````
+  > <copy>SELECT j.doc.geonames.geonameId FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%';</copy>
+  ````
+
+  ![](./images/p_jsonDoc_7.png " ")
 
 The SDN syntax returns an array, not a relational view of JSON data in one column.
 
-## Performance Considerations
+## Step 7: Performance Considerations
 
 Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle database, using standard functions and procedures.
 
