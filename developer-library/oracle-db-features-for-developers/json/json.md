@@ -689,7 +689,7 @@ You can use ***JSON_MERGEPATCH*** in a SELECT list, to modify the selected docum
 > <copy>select DOC from MYJSON j where j.doc.geonames.geonameId = '2510769';</copy>
 ````
 
-![](./images/updateJsonDoc_1.png)
+![](./images/p_updateJsonDoc_1.png)
 
 JSON Merge Patch acts a bit like a UNIX patch utility — you give it:
   * a source document to patch and
@@ -699,7 +699,7 @@ Here is a very simple example, changing one attribute in a two attributes JSON d
 ````
 > <copy>SELECT json_mergepatch('{"CountryName":"Spain", "Capital":"Madrid"}', '{"Capital":"Toledo"}' RETURNING CLOB PRETTY) Medieval FROM dual;</copy>
 ````
-![](./images/updateJsonDoc_2.png)
+![](./images/p_updateJsonDoc_2.png)
 
 However, you cannot use it to add, remove, or change array elements (except by explicitly replacing the whole array). For example, our documents received from GeoNames are all arrays.
 
@@ -726,7 +726,7 @@ The Country description for Spain has one field geonames that has an array value
 > <copy>SELECT j.doc.geonames[0] FROM MYJSON j where j.doc.geonames.geonameId = '2510769';</copy>
 ````
 
-![](./images/updateJsonDoc_3.png)
+![](./images/p_updateJsonDoc_3.png)
 
 Take a note of the capital attribute in that document — ***"capital":"Madrid"***. There is always a solution.
 
@@ -739,7 +739,7 @@ Take a note of the capital attribute in that document — ***"capital":"Madrid"*
   FROM myjson j where j.doc.geonames.geonameId = '2510769';</copy>
 ````
 
-![](./images/updateJsonDoc_4.png)
+![](./images/p_updateJsonDoc_4.png)
 
 3. Change two attributes in that JSON document. Remember, the return value for a dot-notation query is always a string, and we can work with strings. For example we can add the first part of it, before element geonames[0], and the last part, to convert this single element back into an array, and print the resulted array in a pretty format.
 
@@ -747,7 +747,7 @@ Take a note of the capital attribute in that document — ***"capital":"Madrid"*
 > <copy>SELECT json_mergepatch(j.doc, '{"geonames": [' || json_mergepatch(j.doc.geonames[0], '{"capital":"Toledo", "countryName" : "Medieval Spain"}') || ']}' RETURNING CLOB PRETTY) Medieval
   FROM myjson j where j.doc.geonames.geonameId = '2510769';</copy>
 ````
-![](./images/updateJsonDoc_5.png)
+![](./images/p_updateJsonDoc_5.png)
 
 4. Further, we can add the altered element with the updated values, as an additional JSON document, to the first element with the original value. For example, we can keep our original array elements, and add new ones with new values.
 
@@ -755,7 +755,7 @@ Take a note of the capital attribute in that document — ***"capital":"Madrid"*
 > <copy>SELECT json_mergepatch(j.doc, '{"geonames": [' || j.doc.geonames[0] || ',' || json_mergepatch(j.doc.geonames[0], '{"capital":"Toledo", "countryName" : "Medieval Spain"}') || ']}' RETURNING CLOB PRETTY) Medieval
   FROM myjson j where j.doc.geonames.geonameId = '2510769';</copy>
 ````
-![](./images/updateJsonDoc_6.png)
+![](./images/p_updateJsonDoc_6.png)
 
 In the end, everything is possible, there are no restrictions.
 
@@ -777,7 +777,7 @@ In this case, we insert a new document.
 ````
 > <copy>select DOC from MYJSON where ID = 1;</copy>
 ````
-![](./images/updateJsonDoc_7.png)
+![](./images/p_updateJsonDoc_7.png)
 
 This is a simple JSON document, with three fields. The third field is also a collection with three fields.
 
@@ -792,7 +792,7 @@ We can update the second field, using the plain UPDATE statement and ***JSON_MER
 ````
 > <copy>select DOC from MYJSON where ID = 1;</copy>
 ````
-![](./images/updateJsonDoc_8.png)
+![](./images/p_updateJsonDoc_8.png)
 
 So we can add the ***PRETTY*** clause to the UPDATE statement, and have more clarity when returning the document from our table.
 
@@ -803,7 +803,7 @@ So we can add the ***PRETTY*** clause to the UPDATE statement, and have more cla
 ````
 > <copy>select DOC from MYJSON where ID = 1;</copy>
 ````
-![](./images/updateJsonDoc_9.png)
+![](./images/p_updateJsonDoc_9.png)
 
 This one looks much nicer. Remember to commit changes if you want to keep them in the database.
 
