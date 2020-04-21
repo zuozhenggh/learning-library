@@ -29,9 +29,9 @@ This document is intended for attendees of the workshop for their private use. I
 
 This lab assumes you have completed the following labs:
 
-Lab: Login to Oracle Cloud
-Lab: Generate SSH Key
-Lab: Setup
+  * Lab: Login to Oracle Cloud
+  * Lab: Generate SSH Key
+  * Lab: Setup
 
 ## Lab User Schema
 
@@ -73,7 +73,7 @@ end;
 /</copy>
 ````
 
-    ![](images/p_addACL.png)
+    ![](./images/p_addACL.png)
 Ensure the execution is successful.
 
 SQL*Plus Formatting is suggested
@@ -654,6 +654,7 @@ But we receive an error if we try to use the asterisk wildcard with ***JSON_OBJE
 ERROR at line 1:
 ORA-40579: star expansion is not allowed
 ````
+
 ![](./images/p_synExp-1.png)
 
 There is a solution for that.
