@@ -1,7 +1,7 @@
 {
     "tutorials": [
         {
-            "title": "New Features for Developers Introduction",
+            "title": "Introduction",
             "description": "About the New features for Developers Workshop",
             "partnumber": "Ennnnn_01",
             "publisheddate": "04/01/2020",
@@ -41,30 +41,6 @@
             "description": "Automatic Indexing",
             "publisheddate": "4/05/2020",
             "filename": "../automatic-indexing/automatic-indexing.md"
-        },
-		{
-            "title": "Lab 5: Hybrid Partitioning",
-            "description": "Hybrid Partition Tables",
-            "publisheddate": "4/05/2020",
-            "filename": "../partitioning/partitioning.md"
-        },
-		{
-            "title": "Lab 6: Application Continuity",
-            "description": "Application Continuity",
-            "publisheddate": "4/05/2020",
-            "filename": "../appcont/appcont.md"
-        },
-		{
-            "title": "Lab 7: JSON Documents",
-            "description": "JSON Documents",
-            "publisheddate": "4/05/2020",
-            "filename": "../json/json.md"
-        },
-		{
-            "title": "Lab 8: Python Programming",
-            "description": "Python Programming",
-            "publisheddate": "4/05/2020",
-            "filename": "../python/python.md"
         }
     ]
 }

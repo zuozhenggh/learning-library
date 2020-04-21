@@ -1,168 +1,136 @@
 # Oracle Database 19c JSON Documents
 
-**JavaScript Object Notation (JSON)** is defined in standards ECMA-404 (JSON Data Interchange Format) and ECMA-262 (ECMAScript Language Specification, third edition). The JavaScript dialect of ECMAScript is a general programming language used widely in web browsers and web servers.
-
-**Oracle Database** supports **JavaScript Object Notation (JSON)** data natively with relational database features, including transactions, indexing, declarative querying, and views.
+## Introduction
 
 This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.
 
-***Schemaless*** development based on persisting application data in the form of JSON documents lets you quickly react to changing application requirements. You can change and redeploy your application without needing to change the storage schemas it uses.
+## About JSON in the Oracle Database
 
-SQL and relational databases provide flexible support for complex data analysis and reporting, as well as rock-solid data protection and access control. This is typically not the case for NoSQL databases, which have often been associated with schemaless development with JSON in the past.
+**JavaScript Object Notation (JSON)** is defined in standards ECMA-404 (JSON Data Interchange Format) and ECMA-262 (ECMAScript Language Specification, third edition). The JavaScript dialect of ECMAScript is a general programming language used widely in web browsers and web servers.  **Oracle Database** supports **JavaScript Object Notation (JSON)** data natively with relational database features, including transactions, indexing, declarative querying, and views.
 
-Oracle Database provides all of the benefits of SQL and relational databases to JSON data, which you store and manipulate in the same ways and with the same confidence as any other type of database data.
+Watch this video to learn more about JSON in the Oracle Database.
 
-## Workshop Requirements
+[](youtube:OXxA6SFqlJ4)
 
-* Oracle Database 19c
-    * Installed on local machine, virtual machine, or cloud compute node
-* Oracle sample schemas
-    * Order Entry (OE) sample schema
-* No previous knowledge of JSON development required
 
-## Disclaimer
+***Schemaless*** development based on persisting application data in the form of JSON documents lets you quickly react to changing application requirements. You can change and redeploy your application without needing to change the storage schemas it uses. SQL and relational databases provide flexible support for complex data analysis and reporting, as well as rock-solid data protection and access control. This is typically not the case for NoSQL databases, which have often been associated with schemaless development with JSON in the past. Oracle Database provides all of the benefits of SQL and relational databases to JSON data, which you store and manipulate in the same ways and with the same confidence as any other type of database data.
 
-Unless explicitly identified as such, the sample code here is not certified or supported by Oracle; it is intended for educational or testing purposes only. The code samples may be modified but not redistributed.
-This document is intended for attendees of the workshop for their private use. It is not to be sold, distributed to others, or posted on internal or external web sites without the written consent of the Oracle Corporation.
 
-## Lab Prerequisites
+### Lab Prerequisites
 
 This lab assumes you have completed the following labs:
+* Lab: Login to Oracle Cloud
+* Lab: Generate SSH Key
+* Lab: Environment Setup
+* Lab: Sample Schema Setup
 
-  * Lab: Login to Oracle Cloud
-  * Lab: Generate SSH Key
-  * Lab: Setup
-
-## Lab User Schema
+### Lab User Schema
 
 For this lab we will use the ***Order Entry (OE)*** sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the ***OE*** schema installed.
 
-### Section 1: Environment Preparation
+## Step 1: Environment Preparation
 
 Grant Required Privileges to the OE user
 
 1. Connect to the **ORCLPDB** pluggable database, as SYSDBA.
 
-````
-$ <copy>sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA</copy>
-````
+  ````
+  $ <copy>sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA</copy>
+  ````
 
-Grant **OE** user some privileges required for the tasks we will execute in this lab.
+2. Grant **OE** user some privileges required for the tasks we will execute in this lab.
 
-````
-<copy>GRANT SELECT ON v_$session TO oe;
-GRANT SELECT ON v_$sql_plan_statistics_all TO oe;
-GRANT SELECT ON v_$sql_plan TO oe;
-GRANT SELECT ON v_$sql TO oe;
-GRANT ALTER SYSTEM TO oe;
-</copy>
-````
+  ````
+  <copy>GRANT SELECT ON v_$session TO oe;
+  GRANT SELECT ON v_$sql_plan_statistics_all TO oe;
+  GRANT SELECT ON v_$sql_plan TO oe;
+  GRANT SELECT ON v_$sql TO oe;
+  GRANT ALTER SYSTEM TO oe;
+  </copy>
+  ````
 
->**Note**: The ***ALTER SYSTEM*** privilege is required to flush the Shared Pool in one exercise about performance.
+*Note: The ***ALTER SYSTEM*** privilege is required to flush the Shared Pool in one exercise about performance.*
 
-2. Create Network Access Control List as our database needs to connect to a web service, and retrieve information over HTTP, and this requires an ***Access Control List (ACL)***. This ACL can be created by a user with SYSDBA privileges, SYS in this case, from the Pluggable Database called **ORCLPDB**, by executing the following procedure.
+3. Create Network Access Control List as our database needs to connect to a web service, and retrieve information over HTTP, and this requires an ***Access Control List (ACL)***. This ACL can be created by a user with SYSDBA privileges, SYS in this case, from the Pluggable Database called **ORCLPDB**, by executing the following procedure.
 
-````
-<copy>begin
-  DBMS_NETWORK_ACL_ADMIN.append_host_ace (
-    host       => 'api.geonames.org',
-    ace        => xs$ace_type(privilege_list => xs$name_list('http','connect','resolve'),
-                              principal_name => 'OE',
-                              principal_type => xs_acl.ptype_db));
-end;
-/</copy>
-````
+  ````
+  <copy>begin
+    DBMS_NETWORK_ACL_ADMIN.append_host_ace (
+      host       => 'api.geonames.org',
+      ace        => xs$ace_type(privilege_list => xs$name_list('http','connect','resolve'),
+                                principal_name => 'OE',
+                                principal_type => xs_acl.ptype_db));
+  end;
+  /</copy>
+  ````
 
-    ![](./images/p_addACL.png)
-Ensure the execution is successful.
+  ![](./images/p_addACL.png " ")
 
-SQL*Plus Formatting is suggested
+4. Ensure the execution is successful.  SQL*Plus Formatting is suggested
 
 3. Close the SYSDBA connection and connect as the **OE** user to pluggable database ORCLPDB. From this point, all tasks on the database side will be performed using the **OE** user. For SQL*Plus, it is also useful to format the output. Feel free to use your own formatting, or just run these formatting commands every time you connect.
 
-````
-> <copy>conn oe/Ora_DB4U@localhost:1521/orclpdb</copy>
-````
+  ````
+  > <copy>conn oe/Ora_DB4U@localhost:1521/orclpdb</copy>
+  ````
 
-````
-<copy>set linesize 130
-set serveroutput on
-set pages 9999
-set long 90000
-column WORKSHOPNAME format a50
-column LOCATION format a20
-column COUNTRY format a8
-column GEONAMEID format a10
-column TITLE format a35
-column NAME format a32
-column REGION format a20
-column SUB_REGION format a22
-column REGION format a12
-</copy>
-````
+  ````
+  <copy>set linesize 130
+  set serveroutput on
+  set pages 9999
+  set long 90000
+  column WORKSHOPNAME format a50
+  column LOCATION format a20
+  column COUNTRY format a8
+  column GEONAMEID format a10
+  column TITLE format a35
+  column NAME format a32
+  column REGION format a20
+  column SUB_REGION format a22
+  column REGION format a12
+  </copy>
+  ````
 
-GeoNames registration is required
+## Step 2:  Register for Geonames
 
-4. For the purpose of this exercise we will use a web service, that returns information in JSON format, provided by GeoNames - [geonames.org](http://www.geonames.org/). GeoNames is licensed under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/). You are free to:
+For the purpose of this exercise we will use a web service, that returns information in JSON format, provided by GeoNames - [geonames.org](http://www.geonames.org/). GeoNames is licensed under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/). You are free to:
 
 - Share — copy and redistribute the material in any medium or format;
 - Adapt — remix, transform, and build upon the material for any purpose, even commercially.
 
-Click '**login**' link on the upper right corner of GeoNames website, and create a new account. **Note:** When you create your GeoNames account you will receive an email to activate the account. You also have to enable the account for web services on the account page [GeoNames Account Page](http://www.geonames.org/manageaccount)
+1. Click '**login**' link on the upper right corner of GeoNames website, and create a new account. **Note:** When you create your GeoNames account you will receive an email to activate the account. 
+   
+2. Enable the account for web services on the account page [GeoNames Account Page](http://www.geonames.org/manageaccount)
 
 
-## Section 2: Working with JSON
+## Step 3: Generate JSON Data
 
-First step is to generate some JSON data into the database, or retrieve sample documents from a web service. Oracle Database supports ***JavaScript Object Notation (JSON)*** data natively with relational database features, including transactions, indexing, declarative querying, and views.
+First step is to generate some JSON data into the database, or retrieve sample documents from a web service. Oracle Database supports *JavaScript Object Notation (JSON)* data natively with relational database features, including transactions, indexing, declarative querying, and views.
 
-This workshop covers the use of database languages and features to work with JSON data that is stored in Oracle Database. In particular, it covers how to use SQL and PL/SQL with JSON data.
+This lab covers the use of database languages and features to work with JSON data that is stored in Oracle Database. In particular, it covers how to use SQL and PL/SQL with JSON data.
+1. Please make sure you activate your GeoNames account before continuing with the exercise.
 
-### Access JSON Web Service
+2. Test the access to the external web service – in this case countryInfo web service from GeoNames. You have to replace **<GeoNames_username>** with the username of your account on GeoNames website.
 
-Please make sure you activate your GeoNames account before continuing with the exercise.
+  ````
+  <copy>set serveroutput on</copy>
+  ````
 
-### Test Connection To Web Service
+3.  Preview the sample output below.
 
-1. Test the access to the external web service – in this case countryInfo web service from GeoNames. You have to replace **<GeoNames_username>** with the username of your account on GeoNames website.
+  ![Geonames Sample Output](./images/p_GeoNameSampleOutput.png " ")
 
-````
-<copy>set serveroutput on</copy>
-````
+4. Please make sure you receive a similar output to the sample shown above.
 
->**Note**: Remember to replace ***<GeoNames_username>***
-
-````
-<copy>
-declare
-    t_http_req  utl_http.req;
-    t_http_resp  utl_http.resp;
-    t_response_text clob;
-begin   
-    t_http_req:= utl_http.begin_request('http://api.geonames.org/countryInfoJSON?formatted=true' || '&' || 'country=ES' || '&' || 'username=<GeoNames_username>' || '&' || 'style=full', 'GET', 'HTTP/1.1');
-    t_http_resp:= utl_http.get_response(t_http_req);
-    UTL_HTTP.read_text(t_http_resp, t_response_text);
-    UTL_HTTP.end_response(t_http_resp);
-    DBMS_OUTPUT.put_line(t_response_text);
-end;
-/
-</copy>
-````
-
-Sample output.
-
-![Geonames Sample Output](./images/p_GeoNameSampleOutput.png)
-
-Please make sure you receive a similar output to the sample shown above.
-
-### Store Json Documents Into Oracle Database
+## Step 4: Store Json Documents Into Oracle Database
 
 2. Create a new table to store all JSON documents inside the pluggable database.
 
-````
-<copy>CREATE TABLE MYJSON (
-  id NUMBER GENERATED BY DEFAULT ON NULL AS IDENTITY (CACHE 5) PRIMARY KEY,
-  doc CLOB CONSTRAINT valid_json CHECK (doc IS JSON));</copy>
-````
+  ````
+  <copy>CREATE TABLE MYJSON (
+    id NUMBER GENERATED BY DEFAULT ON NULL AS IDENTITY (CACHE 5) PRIMARY KEY,
+    doc CLOB CONSTRAINT valid_json CHECK (doc IS JSON));</copy>
+  ````
 
 Using JSON inside Oracle database is very flexible, and does not require a predefined data structure, or specific schema. You can store any JSON document in a relational table, like the one we just created, with any internal document structure. Here is another JSON document example, with a totally different structure than the one we have received from GeoNames, and we can store it in the same table.
 
@@ -194,7 +162,7 @@ set long 90000
 ````
 > <copy>SELECT j.doc FROM MYJSON j;</copy>
 ````
-![](./images/p_jsonDoc_1.png)
+![](./images/p_jsonDoc_1.png " ")
 
 4. Oracle database SQL engine allows you to use a **simple-dot-notation (SDN)** syntax on your JSON data. With other words, you can write SQL queries that contain something like ***TABLE_Alias.JSON_Column.JSON_Property.JSON_Property>*** which comes quite handy as the region attribute is an attribute of the nested object location within the JSON document. Remember, SDN syntax is case sensitive.
 
@@ -213,7 +181,7 @@ column LOCATION format a20
 > <copy>SELECT j.doc.workshopName, j.doc.location.region FROM MYJSON j;</copy>
 ````
 
-![](./images/p_jsonDoc_2.png)
+![](./images/p_jsonDoc_2.png " ")
 
 Test other queries and review the output.
 
@@ -249,7 +217,7 @@ For convenience and comfort, we can encapsulate the communication with a web ser
 ````
 <copy>select get_country_info('ES') country_info from dual;</copy>
 ````
-![](./images/p_jsonFunc_1.png)
+![](./images/p_jsonFunc_1.png " ")
 
 7. Insert the JSON document retrieved from the web service into the JSON column of that same table, even though this JSON document has a totally different structure.
 
@@ -267,7 +235,7 @@ For convenience and comfort, we can encapsulate the communication with a web ser
 <copy>select * from MYJSON;</copy>
 ````
 
-![](./images/p_jsonDoc_3.png)
+![](./images/p_jsonDoc_3.png " ")
 
 9. Working with attributes, allows us to get the information we want from a specific document. We can assign default values for attributes that do not match, and treat the issue further from the application. The SQL/JSON function ***JSON_VALUE*** finds a specified scalar JSON value in JSON data and returns it as a SQL value.
 
@@ -282,7 +250,7 @@ column COUNTRY format a40
   JSON_VALUE(doc, '$.geonames.countryName' DEFAULT 'Not a country' ON ERROR) AS Country
     FROM MYJSON;</copy>
 ````
-![](./images/p_jsonDoc_4.png)
+![](./images/p_jsonDoc_4.png " ")
 
 10. Or we can filter the results to receive only the documents that are useful for the query, using the SDN syntax.
 
@@ -290,7 +258,7 @@ column COUNTRY format a40
 > <copy>select j.doc.geonames.geonameId GeoNameID, j.doc.geonames.countryName Country
     from MYJSON j where j.doc.geonames.isoAlpha3 IS NOT NULL;</copy>
 ````
-![](./images/p_jsonDoc_5.png)
+![](./images/p_jsonDoc_5.png " ")
 
 11. In both cases, we can see that Spain geonameId is 2510769. This value will be used in the following steps.
 
@@ -323,7 +291,7 @@ column COUNTRY format a40
 > <copy>select get_subdivision(2510769, 'medium') regions_document from dual;</copy>
 ````
 
-![](./images/p_jsonFunc_2.png)
+![](./images/p_jsonFunc_2.png " ")
 
 If the test is successful, insert this new JSON document in the same table.
 
@@ -357,7 +325,7 @@ column NAME format a32
               fcode VARCHAR2(6) PATH '$.fcode')))
   AS jt  WHERE (fcode = 'ADM1');</copy>
 ````
-![](./images/p_jsonDoc_6.png)
+![](./images/p_jsonDoc_6.png " ")
 
 Having all regions from Spain, we can ask the GeoNames web service for more information about each region, for example Andalucia with **geonameId** 2593109.
 
@@ -371,7 +339,7 @@ Having all regions from Spain, we can ask the GeoNames web service for more info
 > <copy>SELECT j.doc.geonames.geonameId FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%';</copy>
 ````
 
-![](./images/p_jsonDoc_7.png)
+![](./images/p_jsonDoc_7.png " ")
 
 The SDN syntax returns an array, not a relational view of JSON data in one column.
 
@@ -396,7 +364,7 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
   CONNECT BY instr(geonames, ',', 1, LEVEL - 1) > 0;</copy>
 ````
 
-![](./images/p_jsonDoc_8.png)
+![](./images/p_jsonDoc_8.png " ")
 
 Take a note of the execution time, and compare it with the following code, that returns the same result, but faster.
 
@@ -473,7 +441,7 @@ JSON_TABLE(DOC, '$' COLUMNS
 AS jt  WHERE (fcode = 'ADM2');</copy>
 ````
 
-![](./images/p_jsonDoc_9.png)
+![](./images/p_jsonDoc_9.png " ")
 
 Now we have the entire geographic division.
 
@@ -506,7 +474,7 @@ Now we have the entire geographic division.
 > <copy>select get_castles('ES', 60, 'A') castles_document from dual;</copy>
 ````
 
-![](./images/p_jsonDoc_10.png)
+![](./images/p_jsonDoc_10.png " ")
 
 20. Use this function in a loop to retrieve castles from all sub-regions, as shown in the following example, storing the JSON documents inside the same table.
 
@@ -537,7 +505,7 @@ end;
 </copy>
 ````
 
-![](./images/p_jsonFunc_3.png)
+![](./images/p_jsonFunc_3.png " ")
 
 At this point we have enough JSON documents inside the database, and all the information to develop our application that provides information about medieval castles in Spain.
 
@@ -558,12 +526,12 @@ JSON_TABLE(DOC, '$' COLUMNS
               fcode VARCHAR2(6) PATH '$.fcode')))
 AS jt  WHERE (fcode = 'CSTL');</copy>
 ````
-![](./images/p_jsonDoc_11.png)
+![](./images/p_jsonDoc_11.png " ")
 
 > This query should return 269 rows.
 
 
-## Section 3: Syntax Simplifications
+## Step 3: Syntax Simplifications
 
 In Oracle Database 19c, there were some improvements in the simplicity of querying JSON documents using SQL. Other improvements were made as well in generating JSON documents on the fly from relational data.
 
@@ -655,7 +623,7 @@ ERROR at line 1:
 ORA-40579: star expansion is not allowed
 ````
 
-![](./images/p_synExp-1.png)
+![](./images/p_synExp-1.png " ")
 
 There is a solution for that.
 
@@ -674,7 +642,7 @@ The workaround for this issue is to create a view on the original table. This vi
 In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias.
 
 
-## Section 4: Updating a JSON Document
+## Step 4: Updating a JSON Document
 
 You can now update a JSON document declaratively using the new SQL function **JSON_MERGEPATCH**. You can apply one or more changes to multiple documents by using a single statement. This feature improves the flexibility of JSON update operations.
 
@@ -690,7 +658,7 @@ You can use ***JSON_MERGEPATCH*** in a SELECT list, to modify the selected docum
 > <copy>select DOC from MYJSON j where j.doc.geonames.geonameId = '2510769';</copy>
 ````
 
-![](./images/p_updateJsonDoc_1.png)
+![](./images/p_updateJsonDoc_1.png " ")
 
 JSON Merge Patch acts a bit like a UNIX patch utility — you give it:
   * a source document to patch and
@@ -700,7 +668,7 @@ Here is a very simple example, changing one attribute in a two attributes JSON d
 ````
 > <copy>SELECT json_mergepatch('{"CountryName":"Spain", "Capital":"Madrid"}', '{"Capital":"Toledo"}' RETURNING CLOB PRETTY) Medieval FROM dual;</copy>
 ````
-![](./images/p_updateJsonDoc_2.png)
+![](./images/p_updateJsonDoc_2.png " ")
 
 However, you cannot use it to add, remove, or change array elements (except by explicitly replacing the whole array). For example, our documents received from GeoNames are all arrays.
 
@@ -727,7 +695,7 @@ The Country description for Spain has one field geonames that has an array value
 > <copy>SELECT j.doc.geonames[0] FROM MYJSON j where j.doc.geonames.geonameId = '2510769';</copy>
 ````
 
-![](./images/p_updateJsonDoc_3.png)
+![](./images/p_updateJsonDoc_3.png " ")
 
 Take a note of the capital attribute in that document — ***"capital":"Madrid"***. There is always a solution.
 
@@ -740,7 +708,7 @@ Take a note of the capital attribute in that document — ***"capital":"Madrid"*
   FROM myjson j where j.doc.geonames.geonameId = '2510769';</copy>
 ````
 
-![](./images/p_updateJsonDoc_4.png)
+![](./images/p_updateJsonDoc_4.png " ")
 
 3. Change two attributes in that JSON document. Remember, the return value for a dot-notation query is always a string, and we can work with strings. For example we can add the first part of it, before element geonames[0], and the last part, to convert this single element back into an array, and print the resulted array in a pretty format.
 
@@ -748,7 +716,7 @@ Take a note of the capital attribute in that document — ***"capital":"Madrid"*
 > <copy>SELECT json_mergepatch(j.doc, '{"geonames": [' || json_mergepatch(j.doc.geonames[0], '{"capital":"Toledo", "countryName" : "Medieval Spain"}') || ']}' RETURNING CLOB PRETTY) Medieval
   FROM myjson j where j.doc.geonames.geonameId = '2510769';</copy>
 ````
-![](./images/p_updateJsonDoc_5.png)
+![](./images/p_updateJsonDoc_5.png " ")
 
 4. Further, we can add the altered element with the updated values, as an additional JSON document, to the first element with the original value. For example, we can keep our original array elements, and add new ones with new values.
 
@@ -756,7 +724,7 @@ Take a note of the capital attribute in that document — ***"capital":"Madrid"*
 > <copy>SELECT json_mergepatch(j.doc, '{"geonames": [' || j.doc.geonames[0] || ',' || json_mergepatch(j.doc.geonames[0], '{"capital":"Toledo", "countryName" : "Medieval Spain"}') || ']}' RETURNING CLOB PRETTY) Medieval
   FROM myjson j where j.doc.geonames.geonameId = '2510769';</copy>
 ````
-![](./images/p_updateJsonDoc_6.png)
+![](./images/p_updateJsonDoc_6.png " ")
 
 In the end, everything is possible, there are no restrictions.
 
@@ -778,7 +746,7 @@ In this case, we insert a new document.
 ````
 > <copy>select DOC from MYJSON where ID = 1;</copy>
 ````
-![](./images/p_updateJsonDoc_7.png)
+![](./images/p_updateJsonDoc_7.png " ")
 
 This is a simple JSON document, with three fields. The third field is also a collection with three fields.
 
@@ -793,7 +761,7 @@ This is a simple JSON document, with three fields. The third field is also a col
 ````
 > <copy>select DOC from MYJSON where ID = 1;</copy>
 ````
-![](./images/p_updateJsonDoc_8.png)
+![](./images/p_updateJsonDoc_8.png " ")
 
 8. You can add the ***PRETTY*** clause to the UPDATE statement, and have more clarity when returning the document from our table.
 
@@ -804,7 +772,7 @@ This is a simple JSON document, with three fields. The third field is also a col
 ````
 > <copy>select DOC from MYJSON where ID = 1;</copy>
 ````
-![](./images/p_updateJsonDoc_9.png)
+![](./images/p_updateJsonDoc_9.png " ")
 
 This one looks much nicer. Remember to commit changes if you want to keep them in the database.
 
@@ -814,7 +782,7 @@ This one looks much nicer. Remember to commit changes if you want to keep them i
 
 Updating JSON documents inside the Oracle Database is that simple.
 
-## Section 5: JSON Materialized View Support
+## Step 5: JSON Materialized View Support
 
 Materialized views query rewriting has been enhanced so that queries with ***JSON_EXISTS***, ***JSON_VALUE*** and other functions can utilize a materialized view created over a query that contains a ***JSON_TABLE*** function.
 
@@ -861,7 +829,7 @@ AS jt;</copy>
 > <copy>SELECT Country, Region, Sub_Region, Title, Name FROM json_castles_mv WHERE fcode = 'CSTL';</copy>
 ````
 
-In the following section we will get into more details about performance.
+In the following Step we will get into more details about performance.
 
 ## Performance Boost
 
@@ -886,9 +854,9 @@ from MYJSON
   where JSON_VALUE(doc, '$.geonames[0].fcode') = 'CSTL'
   order by Region, Sub_Region;</copy>
 ````
-![](./images/p_mvSupp_1a.png)
+![](./images/p_mvSupp_1a.png " ")
 
-![](./images/p_mvSupp_1b.png)
+![](./images/p_mvSupp_1b.png " ")
 
 4. Flush the shared pool, flushing the cached execution plan and SQL Queries from memory.
 
@@ -932,11 +900,11 @@ Plan hash value: 3162132558
 |*  6 |    JSONTABLE EVALUATION |		  |	  |	  |	  |	       |	  |
 ---------------------------------------------------------------------------------------------------
 ````
-![](./images/p_mvSupp_2.png)
+![](./images/p_mvSupp_2.png " ")
 
 If the query is too simple, there may not be a query rewrite, in this case it will not be eligible to be rewritten to use the materialized view.
 
-## Section 6: JSON-Object Mapping
+## Step 6: JSON-Object Mapping
 
 This feature enables the mapping of JSON data to and from user-defined SQL object types and collections. You can convert JSON data into an instance of a SQL object type using SQL/JSON function ***JSON_VALUE***. In the opposite direction, you can generate JSON data from an instance of a SQL object type using SQL/JSON function ***JSON_OBJECT*** or ***JSON_ARRAY***.
 
@@ -958,7 +926,7 @@ We will start with the second use case, generating JSON data using SQL/JSON func
              FORMAT JSON)
   FROM json_castles_mv WHERE fcode = 'CSTL';</copy>
 ````
-![](./images/p_jsonObject_1.png)
+![](./images/p_jsonObject_1.png " ")
 
 2. Some client drivers (like SQL Developer, for example) might try to scan query text and identify bind variables before sending the query to the database. In some such cases a colon as name–value separator in ***JSON_OBJECT*** might be misinterpreted as introducing a bind variable. You can use keyword VALUE as the separator to avoid this problem ('Country ' VALUE country), or you can simply enclose the value part of the pair in parentheses: 'Country':(country). Here is the same SELECT statement, that can be executed successfully in SQL Developer.
 
@@ -990,7 +958,7 @@ We will start with the second use case, generating JSON data using SQL/JSON func
 ````
 > <copy>COMMIT;</copy>
 ````
-![](./images/p_jsonObject_2.png)
+![](./images/p_jsonObject_2.png " ")
 
 4. Run the following select to verify the inserted documents, and observe these are individual JSON objects, describing each medieval castle, from the 269 entries we have in this database.
 
@@ -998,7 +966,7 @@ We will start with the second use case, generating JSON data using SQL/JSON func
 > <copy>SELECT j.id, JSON_SERIALIZE(j.doc PRETTY) FROM myjson j WHERE j.doc."CastleID" is not null;</copy>
 ````
 
-![](./images/p_jsonObject_3.png)
+![](./images/p_jsonObject_3.png " ")
 
 Observe the structure, and values, in these JSON documents. Note it is easier for our Tourist Recommendations application to list these castles for our end users.
 
@@ -1027,7 +995,7 @@ Conversely, you can convert JSON documents to a user-defined object type.
 ````
 > <copy>SELECT JSON_VALUE(j.doc, '$' RETURNING t_castle) AS castle FROM myjson j WHERE j.doc."CastleID" is not null;</copy>
 ````
-![](./images/p_jsonObject_4.png)
+![](./images/p_jsonObject_4.png " ")
 
 In Oracle Database 19c, the function ***JSON_VALUE*** also accepts an optional ***RETURNING*** clause, apart from the optional ERROR clause we tested already. In this case, the ***JSON_VALUE*** function uses the user-defined object type in the ***RETURNING*** clause, and returns the instantiated object type from a query, based on the data in the source JSON document.
 
@@ -1049,7 +1017,7 @@ In Oracle Database 19c, the function ***JSON_VALUE*** also accepts an optional *
 ````
 > <copy>SELECT JSON_VALUE(j.doc, '$' RETURNING t_castle_short) AS castle FROM myjson j WHERE j.doc."CastleID" is not null;</copy>
 ````
-![](./images/p_jsonObject_5.png)
+![](./images/p_jsonObject_5.png " ")
 
 These custom object types can be used to optimize our applications, directly from the database layer.
 
@@ -1078,7 +1046,7 @@ These custom object types can be used to optimize our applications, directly fro
 ````
 > <copy>SELECT * FROM mycastles;</copy>
 ````
-![](./images/p_jsonObject_6.png)
+![](./images/p_jsonObject_6.png " ")
 
 Now we have just the castles in a new table, with the attributes we need in our application.
 
@@ -1093,7 +1061,7 @@ It would be equally easy to convert user-defined SQL object type instances into 
 ````
 > <copy>SELECT JSON_OBJECT(castle) AS castle FROM mycastles;</copy>
 ````
-![](./images/p_jsonObject_7.png)
+![](./images/p_jsonObject_7.png " ")
 
 In this case our application uses JSON format, and you can make this conversion on the fly from the SELECT statement.
 
@@ -1104,7 +1072,7 @@ In this case our application uses JSON format, and you can make this conversion 
 ````
 > <copy>SELECT JSON_SERIALIZE( JSON_OBJECT(castle) PRETTY) AS castle FROM mycastles;</copy>
 ````
-![](./images/p_jsonObject_8.png)
+![](./images/p_jsonObject_8.png " ")
 
 This is a very simple example, and it is not totally necessary, but imagine you have JSON documents with hundreds of attributes.
 
@@ -1115,7 +1083,7 @@ This is a very simple example, and it is not totally necessary, but imagine you 
 ````
 > <copy>SELECT JSON_ARRAY(c.castle."CastleID", castle) AS castle FROM mycastles c;</copy>
 ````
-![](./images/p_jsonObject_9.png)
+![](./images/p_jsonObject_9.png " ")
 
 The output is a collection with two records, having a valid JSON structure.
 
@@ -1126,7 +1094,7 @@ The output is a collection with two records, having a valid JSON structure.
 ````
 > <copy>SELECT JSON_SERIALIZE( JSON_ARRAY(c.castle."CastleID", castle) PRETTY) AS castle FROM mycastles c;</copy>
 ````
-![](./images/p_jsonObject_10.png)
+![](./images/p_jsonObject_10.png " ")
 
 We hope you enjoyed this lab.
 
