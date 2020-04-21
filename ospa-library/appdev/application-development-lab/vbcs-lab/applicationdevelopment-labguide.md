@@ -146,7 +146,7 @@ In this exercise you will make sure you can access a VBCS instance and create yo
     ![](./media/1.1.4.png)
 
 
-1. Click the dropdown menu next to your instance name, and select **Open Oracle Visual Builder**.
+1. Click the dropdown menu next to your instance name, and select **Open Visual Builder Home Page**.
     
     ![](./media/1.1.5.png)
 
@@ -851,7 +851,7 @@ Mama Maggy's managers/franchisees want to be able to check product order status 
 
     ![](./media/3.27.1.png)
 
-    Drag and drop the **input date time** component to the Order Date column. That looks better!
+10. Drag and drop the **input date time** component to the Order Date column. That looks better!
 
     ![](./media/3.27.2.png)
 
@@ -1006,7 +1006,7 @@ The data used to create these apps will come from **Service Connections** that y
     ![](./media/4.5.2.png)
  
 
-5. Next, open the service for testing: select the connection, choose the **Endpoints** tab, find and select the desired endpoint (highlighted below)
+5. Next, open the service for testing: select the connection, choose the **Endpoints** tab, find, select and click the desired endpoint (highlighted below)
     
     ![](./media/4.6.1.png)
  
@@ -1035,11 +1035,10 @@ The data used to create these apps will come from **Service Connections** that y
  
 
 10.  This endpoint gets a single **Associate** row that is identified by passing in an **{Associate\_Id}** value (or whatever the key field is named). Click on **URL Parameters** tab, type an associate id number (**7 in the example**) and **Send** to test
-
     ![](./media/4.9.1.png)  
   
  
-11. You have now created and tested two connections
+11. 	You now have created a connection and tested two endpoints
 
     ![](./media/4.9.2.png)
 
@@ -1115,7 +1114,7 @@ The data used to create these apps will come from **Service Connections** that y
     ![](./media/image164.png)
 
 
-26. Choose the following fields from the Endpoint Structure:
+26. Choose the following fields from the Endpoint Structure and **Click Finish** once you are done:
     - id 
     - name
     - address

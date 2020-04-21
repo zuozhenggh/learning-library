@@ -18,7 +18,7 @@ You will be using Terraform to create your database environment.
 
 3.  Open up the hamburger menu in the left hand corner.  Choose **Resource Manager > Stacks**.   Choose the compartment from your email, click the  **Create Stack** button
 
-    ![](./images/cloud-homepage.png " ") 
+    ![](./images/cloud-homepage.png " ")
 
     ![](./images/resource.png " ")
 
@@ -34,9 +34,9 @@ You will be using Terraform to create your database environment.
     Enter the following information and accept all the defaults
 
     - **Name**:  Enter your firstname and lastname and the day you were born (DO NOT ENTER ANY SPECIAL CHARACTERS HERE, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
-    
+
     - **Description**:  Same as above
-    
+
     - **Compartment**:  Select Compartment from Email 2
 
 7.  Click **Next**.
@@ -48,9 +48,9 @@ You will be using Terraform to create your database environment.
     **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
 
     **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
-    
+
     **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
-    
+
     **SSH Public Key**:  Paste the public key you created in the earlier step (it should be one line)
 
 8. Click **Next**.
@@ -97,7 +97,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
 
-    ![](./images/cloudshell.png " ") 
+    ![](./images/cloudshell.png " ")
 
 2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP addresss for your instance.
@@ -117,9 +117,9 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ````
     ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
     ````
-    ![](./images/cloudshellssh.png " ") 
+    ![](./images/cloudshellssh.png " ")
 
-    ![](./images/cloudshelllogin.png " ") 
+    ![](./images/cloudshelllogin.png " ")
 
 4.  After successfully logging in, proceed to Step 5.
 
@@ -130,11 +130,11 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ````
     ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
     ````
-    ![](./images/ssh-first-time.png " ") 
+    ![](./images/ssh-first-time.png " ")
 
 2.  Enter a name for the session and click **Save**.
 
-    ![](./images/putty-setup.png " ") 
+    ![](./images/putty-setup.png " ")
 
 3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root.
 
@@ -142,7 +142,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 
-    ![](./images/putty-auth.png " ") 
+    ![](./images/putty-auth.png " ")
 
 6. The file path for the SSH private key file now displays in the Private key file for authentication field.
 
@@ -184,6 +184,19 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 ## Step 7: Install Sample Data
 
+In this step you will install a selection of the Oracle Database Sample Schemas as covered by the following license agreement:
+Oracle Database Sample Schemas
+
+Copyright (c) 2019 Oracle
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+By completing the instruction below the sample schemas **SH**, **OE**, and **HR** will be installed. These schemas are used in Oracle documentation to show SQL language concepts and other database features. The schemas themselves are documented in Oracle Database Sample Schemas [Oracle Database Sample Schemas](https://www.oracle.com/pls/topic/lookup?ctx=dblatest&id=COMSC).
+
 1.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
 
     Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
@@ -211,4 +224,4 @@ Congratulations!  Now you have the environment to run the New Features for Devel
 - **Author** - Kay Malcolm, Director, DB Product Management
 - **Last Updated By/Date** - Troy Anthony, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

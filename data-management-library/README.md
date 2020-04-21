@@ -9,14 +9,15 @@ The Oracle Data Management Github is the central location for workshops related 
 
 # Autonomous Database (ADB) Github
 [![](./images/adbgithub.png)](./autonomous-database) 
-- Autonomous Dedicated 
-- Autonomous Database Serverless
+- Autonomous Database - Dedicated Infrastructure
+- Autonomous Database - Shared Infrastructure
 
 # Database Github
 [![](./images/dbgithub.png)](./database) 
 - 19c
 - In-Memory
 - Multitenant
+- Docker
 - Developer New Features for 19c
 - DBs on OCI VMs
 - Database on Docker
@@ -39,7 +40,7 @@ The Oracle Data Management Github is the central location for workshops related 
 - [Oracle Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
 ## Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.  Make sure to include the name of the workshop when submitting.
 
 -- Oracle Database Product Management
 

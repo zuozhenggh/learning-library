@@ -144,6 +144,7 @@ For this lab you will need a Github account. Use the following link to set one u
 - In the **Edit new file** input box, **paste** the following:
 
     ```yaml
+    <copy>
     #Use OpenJDK base docker image from dockerhub and open the application port on the docker container
     box:
       id: openjdk:8
@@ -158,6 +159,7 @@ For this lab you will need a Github account. Use the following link to set one u
         - script:
             name: maven build
             code: mvn clean assembly:assembly
+      </copy>
     ```
 
 - You should have **14 lines** of YAML in the editor:
@@ -230,6 +232,7 @@ For this lab you will need a Github account. Use the following link to set one u
 - After the definition of the build pipeline, **paste** the following YAML:
 
     ```yaml
+    <copy>
     #Push the docker image with our built and tested application to the Oracle Container Registry
     push-release:
       steps:
@@ -242,6 +245,7 @@ For this lab you will need a Github account. Use the following link to set one u
             working-dir: /pipeline/source
             ports: 8080
             cmd: sh target/bin/start
+    </copy>
     ```
 
   ![](images/100/LabGuide100-0274b607.png)
@@ -270,4 +274,4 @@ For this lab you will need a Github account. Use the following link to set one u
 
   **NOTE**: If you receive an error message that says `Tenant with name XYZ not found`, don't worry. Your cloud account may be in a different region than we specified in the environment variable above. We will correct that in the next lab, once we log in to the OCI console.
 
-**You are now ready to move to the next lab: [Lab 200](LabGuide200.md)**
+**You are now ready to move to the next lab: Lab 200**

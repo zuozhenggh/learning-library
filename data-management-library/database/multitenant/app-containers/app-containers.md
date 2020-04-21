@@ -16,22 +16,27 @@ The tasks you will accomplish in this lab are:
 
 1. Connect to **CDB1**.
     ````
+    <copy>
     sqlplus /nolog
     connect sys/oracle@localhost:1523/cdb1 as sysdba
+    </copy>
     ````
 
 2. Create and open the master application root
     ````
+    <copy>
     conn system/oracle@localhost:1523/cdb1;
 
     create pluggable database wmStore_Master as application container
     admin user wm_admin identified by oracle;
 
     alter pluggable database wmStore_Master open;
+    </copy>
     ````
 
 3. Define the application master
     ````
+    <copy>
     conn system/oracle@localhost:1523/wmStore_Master;
     alter pluggable database application wmStore begin install '1.0';
 
@@ -134,32 +139,40 @@ The tasks you will accomplish in this lab are:
     commit;
 
     alter pluggable database application wmStore end install '1.0';
+    </copy>
     ````
 
 4. Create the application seed
     ````
+    <copy>
     conn system/oracle@localhost:1523/wmStore_Master;
 
     create pluggable database as seed
     admin user wm_admin identified by oracle;
+    </copy>
     ````
 
 5. Open the application seed
     ````
+    <copy>
     connect sys/oracle@localhost:1523/wmStore_Master as SysDBA
 
     alter pluggable database wmStore_Master$Seed open;
+    </copy>
     ````
 
 6. Sync the seed with the application wmStore
     ````
+    <copy>
     conn system/oracle@localhost:1523/wmStore_Master$Seed;
 
     alter pluggable database application wmStore sync;
+    </copy>
     ````
 
 7.  Provision the application databases for the 4 stores
     ````
+    <copy>
     conn system/oracle@localhost:1523/wmStore_Master;
 
     create pluggable database Tulsa
@@ -175,12 +188,15 @@ The tasks you will accomplish in this lab are:
     admin user wm_admin identified by oracle;
 
     alter pluggable database all open;
+    </copy>
     ````
 
 8. Create franchise specific data
     ````
+    <copy>
     conn system/oracle@localhost:1523/wmStore_Master;
     @Franchise_Data_Lab1
+    </copy>
     ````
 
 ## Step 2: PDB Exploration
@@ -198,6 +214,7 @@ The tasks you will accomplish in this lab are:
 
 2. Show PDBs created so far
     ````
+    <copy>
     set linesize 180
 
     column c0  noprint new_value            CDB_Name
@@ -243,10 +260,12 @@ The tasks you will accomplish in this lab are:
     ,        P.Application_Seed desc
     ,        P.Name
     ;
+    </copy>
     ````
 
 3. You should be able to set your container to Tulsa because weStore_Admin is an Application Common user but it should fail if you try to set it to CDB$Root since that container is outside of the application container.
     ````
+    <copy>
     show user
 
     alter session set container=wmStore_Master;
@@ -256,10 +275,12 @@ The tasks you will accomplish in this lab are:
     alter session set container = Tulsa;
 
     alter session set container = CDB$Root;
+    </copy>
     ````
 
 4. You can connect directly as the various local users. Keep in mind these are local users, it just happens to be that they have the same password. Notice that the local user for Califorina cannot use the Tulsa container because it is local to the Califorina container.
     ````
+    <copy>
     connect wm_admin/oracle@localhost:1523/Tulsa;
     
     alter session set container = Tulsa;
@@ -267,6 +288,7 @@ The tasks you will accomplish in this lab are:
     connect wm_admin/oracle@localhost:1523/California;
 
     alter session set container = Tulsa;
+    </copy>
     ````
 
 5. When prompted give one of the PDBs that was created (Tulsa, California, NYC, or Tahoe). You can rerun this script giving a different store if you want to view the data.
@@ -1635,4 +1657,4 @@ The tasks you will accomplish in this lab are:
 - **Adapted to Cloud by** -  David Start, OSPA
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

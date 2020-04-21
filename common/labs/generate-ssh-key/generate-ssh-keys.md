@@ -281,4 +281,4 @@ You have created a public/private SSH key pair and can utilize it in any of the 
 * **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, March 27, 2020
 * **Workshop (or Lab) Expiry Date** - March 27, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

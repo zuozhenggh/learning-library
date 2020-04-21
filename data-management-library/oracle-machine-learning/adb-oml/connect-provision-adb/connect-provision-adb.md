@@ -18,36 +18,34 @@ What Alpha Office want is to deploy this machine learning model in a production 
 ### Lab Prerequisites
 
 This lab assumes you have completed the following labs:
-* Register for Free Tier Account
-
+* Login to Oracle Cloud
 
 *Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs.  This is because the workshop was developed using different accounts over time.*
 
 In this section you will be provisioning an ADWC database and an ATP database using the cloud console.
 
-
-## Step 1: Create an ADW Instances
+## Step 1: Create an ADW Instance
 
 First, we are going to create an ADW Instance:
 
-1. Search for Autonomous Data Warehouse and click on it
+1. Click the hamburger menu, search for Autonomous Data Warehouse and click on it
 
-  ![](./images/005.png  " ")
+  ![](./images/create-adw.png  " ")
 
 
-2. Select Create Autonomous Data Warehouse
+2. Select **Create Autonomous Data Warehouse**
 
   ![](./images/006.png  " ")
 
-3. Enter Select `Compartment` (yours will be different - do not select `ManagedCompartmentforPaaS`) and then enter `Display Name`, `Database Name`.
+3. Enter Select **Compartment** (yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **Display Name**, **Database Name**.
 
   ![](./images/007.png  " ")
 
-4. Under `Choose a workload type` and `Choose a deployment type`, select `Data Warehouse` and `Shared Infrastructure`
+4. Under **Choose a workload type** and **Choose a deployment type**, select **Data Warehouse** and **Shared Infrastructure**
 
   ![](./images/008.png  " ")
 
-5. Under `Configure the database`, leave `Choose database version` and `Storage (TB)` and `OCPU Count` as they are.
+5. Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
   ![](./images/009.png  " ")
 
@@ -56,7 +54,7 @@ First, we are going to create an ADW Instance:
   ![](./images/010.png  " ")
 
 
-7. Under `Choose a license type`, select   `License Included` and then select `Create Autonomous Database`.
+7. Under **Choose a license type**, select   **License Included** and then select **Create Autonomous Database**.
 
   ![](./images/011.png  " ")
 
@@ -68,7 +66,7 @@ First, we are going to create an ADW Instance:
 
 You now have created your first ADW instance. Now, we are going to very similar steps to create an ATP Database.
 
-## Step 1: Create an ATP Instances
+## Step 2: Create an ATP Instance
 
 1. Click on the side menu and select Autonomous Transaction processing
 
@@ -78,15 +76,15 @@ You now have created your first ADW instance. Now, we are going to very similar 
 
   ![](./images/015.png  " ")
 
-3. Enter Select `Compartment` (yours will be different - do not select `ManagedCompartmentforPaaS`) and then enter `Display Name`, `Database Name`.
+3. Enter Select **Compartment** (yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **Display Name**, **Database Name**.
 
     ![](./images/016.png  " ")
 
-4. Under `Choose a workload type` and `Choose a deployment type`, select `Transaction Processing` and `Shared Infrastructure`
+4. Under **Choose a workload type** and **Choose a deployment type**, select **Transaction Processing** and **Shared Infrastructure**
 
     ![](./images/017.png  " ")
 
-5. Under `Configure the database`, leave `Choose database version` and `Storage (TB)` and `OCPU Count` to how they are.
+5. Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** to how they are.
 
     ![](./images/009.png  " ")
 
@@ -94,7 +92,7 @@ You now have created your first ADW instance. Now, we are going to very similar 
 
     ![](./images/010.png  " ")
 
-7. Under `Choose a license type`, select   `Bring Your Own License (BYOL)` and then select `Create Autonomous Database`.
+7. Under **Choose a license type**, select   **Bring Your Own License (BYOL)** and then select **Create Autonomous Database**.
 
     ![](./images/011.png  " ")
 
@@ -118,7 +116,7 @@ You now have created your first ATP instance.
 
     ![](./images/025.png  " ")
 
-3. Click on `Administration` and click `Download a Connection Wallet`
+3. Click on **Administration** and click **Download a Connection Wallet**
 
     ![](./images/026.png  " ")
 
@@ -134,9 +132,9 @@ You now have created your first ATP instance.
 
 ## Step 4: Download Files Used in Lab 2
 
-1. Click to Download
+1. Click the link below to download the install file.
 
-[install.zip](install/install.zip)
+  [install.zip](install/install.zip)
 
 2. Save the install.zip to a download directory and then unzip the file.
 
@@ -148,13 +146,13 @@ You now have created your first ATP instance.
 
   ![](./images/031.png  " ")
 
-2. Create a bucket called `adwc`.  Create the bucket in your compartment (not ManagedCompartmentForPaas).
+2. Create a bucket called **adwc**.  Create the bucket in your compartment (not ManagedCompartmentForPaas).
 
   ![](./images/032.png  " ")
 
   ![](./images/033.png  " ")
 
-3. Select the `adw` bucket and upload file `credit_scoring_100k` in git directory `ADWC4Dev/workshops/adwc4dev/install`.
+3. Select the **adw** bucket and upload file **credit\_scoring\_100k** in git directory **ADWC4Dev/workshops/adwc4dev/install**.
 
   ![](./images/034.png  " ")
 
@@ -181,7 +179,7 @@ You now have created your first ATP instance.
   ![](./images/043.png  " ")
 
 
-6. To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and the OCI user Auth Token. Go back to the menu, click `Identity` and then select `Users`.
+6. To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and the OCI user Auth Token. Go back to the menu, click **Identity** and then select **Users**.
 
   ![](./images/044.png  " ")
 
@@ -189,7 +187,7 @@ You now have created your first ATP instance.
 
   ![](./images/045.png  " ")
 
-8. On the left side of the page, click Auth Tokens, and then `Generate Token`.  Call it `adwc_token`. *Be sure to copy it to a notepad as you won't be able to see it again*.
+8. On the left side of the page, click Auth Tokens, and then **Generate Token**.  Call it **adwc_token**. *Be sure to copy it to a notepad as you won't be able to see it again*.
 
   ![](./images/046.png  " ")
 
@@ -202,7 +200,7 @@ You now have created your first ATP instance.
 
 ## Step 6: Log in to SQL Developer Web
 
-1. Next we will log into SQL Developer Web. Start by navigating to the ADW Instance page and clicking on `Service Console`
+1. Next we will log into SQL Developer Web. Start by navigating to the ADW Instance page and clicking on **Service Console**
 
   ![](./images/023.png  " ")
 
@@ -210,21 +208,21 @@ You now have created your first ATP instance.
 
   ![](./images/025.png  " ")
 
-2. Click on `Development`
+2. Click on **Development**
 
   ![](./images/051.png  " ")
 
-3. Select `SQL Developer Web`
+3. Select **SQL Developer Web**
 
   ![](./images/052.png  " ")
 
-4. Log in with `Username` `admin`, and with the  password you created for the ADW Instance back in Step 2.
+4. Log in with **Username** **admin**, and with the  password you created for the ADW Instance back in Step 2.
 
   ![](./images/053.png  " ")
 
 ## Step 7: Create a Database Credential for Your Users
 
-1. Log into SQL Develop Web from the your **ADW Instance**, your screen should look like the following:
+1. Log into SQL Develop Web from the your *ADW Instance*, your screen should look like the following:
 
   ![](./images/054.png  " ")
 
@@ -248,11 +246,11 @@ You now have created your first ATP instance.
 
 Now you are ready to load data from the Object Store.
 
-## Step 8: Loading Data Using dbms\_cloud.copy_data package
+## Step 8: Loading Data Using dbms\_cloud.copy\_data package
 
 1. First, create your table. Enter the following in SQL Developer Web.
 
-  `````
+  ````
   <copy>
   create table admin.credit_scoring_100k
     (    customer_id number(38,0),
@@ -352,10 +350,9 @@ Now you are ready to load data from the Object Store.
 
   ![](./images/058.png  " ")
 
-3. Enter the following code snippit and then execute. Make sure to replace the file\_uri\_list with the **URL Path** you copied earlier from the Bucket created in Object Storage.
+3. Enter the following code snippit and then execute. Make sure to replace the file\_uri\_list with the *URL Path* you copied earlier from the Bucket created in Object Storage.
 
   ````
-  <copy>
   begin
    dbms_cloud.copy_data(
       table_name =>'credit_scoring_100k',
@@ -364,17 +361,19 @@ Now you are ready to load data from the Object Store.
       format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD HH24:MI:SS', 'blankasnull' value 'true', 'delimiter' value ',', 'skipheaders' value '1')
    );
   end;
-  /</copy>
+  /
   ````
   ![](./images/059.png  " ")
 
-4. The data has been loaded. 
+4. Given that you entered the correct URI path, the data should be loaded.  
+   
+5. The data has been loaded. 
 
 Please proceed to the next lab.
 
 ## Acknowledgements
 
-- **Author** - Derrick Cameron
-- **Last Updated By/Date** - Leah Bracken, March 2020
+- **Author** - Derrick Cameron, Leah Bracken (v2)
+- **Last Updated By/Date** - Kay Malcolm, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

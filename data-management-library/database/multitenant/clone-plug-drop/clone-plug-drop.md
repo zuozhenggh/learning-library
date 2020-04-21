@@ -6,6 +6,26 @@ In this lab you will perform many multitenant basic tasks.  You will create a pl
 
 [](youtube:kzTQGs75IjA)
 
+
+## Step 0: Run the Multitenant Setup Scripts
+Once you have an instance running the 19c database, a script needs to be run to setup the instance for the rest of the labs.  The setupcdb.sh takes 60 minutes to run and is also setup to run in the background. 
+
+1.  Once the database software has been configured, run the script to create the container databases and pluggable databases needed for the Multitenant lab.
+
+    ````
+    <copy>
+    nohup /home/opc/setupcontainers.sh &> setupcontainers.out&
+    </copy>
+    ````
+
+2.   To check on the progress of this script, enter the command below.  This script takes about 60 minutes to complete.  Note:  Ignore the [WARNING] [DBT-06208] that occur in the 2nd script.
+
+    ````
+    <copy>
+    tail -f /home/opc/setupcontainers.out
+    </copy>
+    ````
+
 ## Step 1: Create PDB
 This section looks at how to create a new PDB.
 
@@ -788,4 +808,4 @@ Now you've had a chance to try out the Multitenant option. You were able to crea
 - **Adapted to Cloud by** -  David Start, OSPA
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

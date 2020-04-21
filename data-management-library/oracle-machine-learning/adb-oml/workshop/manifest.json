@@ -7,7 +7,7 @@
         "filename": "../intro/intro.md"
       },
       {         
-        "title": "Lab A: Register for Free Tier Account",
+        "title": "Lab 0: Login to Oracle Cloud",
         "description": "Register for Free Tier Account",
         "partnumber": "Ennnnn_01",
         "publisheddate": "03/10/2020",
@@ -33,7 +33,7 @@
         "filename": "../move-model-to-db/move-model-to-db.md"
       },
       {
-        "title": "Lab 4: Operationalize the ML Model in an Application and Expose it as a REST Endpoint",
+        "title": "Lab 4: Using Prediction in an Application",
         "description": "Set up the ATP environment, import and APEX application and explore how ADB can be embedded into applications.",
         "publisheddate": "3/24/2020",
         "filename": "../integrate-with-app/integrate-with-app.md"
