@@ -90,17 +90,23 @@ The Extra labs are:
 
 Before starting these exercises, you should have an OCI login and access VBCS instance.
 
-You will need four data files, three will be used in exercise 3 and one will be used in exercise 4. 
-
-All four files are available in a single .zip file named [vbcsfiles.zip](files/vbcsfiles.zip); download the file and expand it to find the following four files (keep them handy they will be used later in this exercise):
+You will need to download the data files, all the files are available in a single .zip file named [vbcsfiles.zip](files/vbcsfiles.zip); download the file and expand it to find the following files (keep them handy they will be used later in this exercise):
+<br>
 
 * Exercise 2 (data for VBCS Business Objects)
   - Product.csv
   - ProductOrder.csv
   - ProductOrderLine.csv
 <br>
-- Exercise 4 (links used for VBCS Service Connections)
-  - AppDev_Endpoints.txt
+<br>
+* Exercise 4 (Links used for VBCS Service Connections)
+  - AppDev_Endpoints.txt (Your instructor will tell you if you need to use this file)
+<br>
+<br>
+* Appendix B (Build Mama Maggy Data Application)
+  - Associate.csv
+  - Store.csv
+
 
 *****************************
 **NOTE** 
