@@ -784,7 +784,7 @@ This is a simple JSON document, with three fields. The third field is also a col
 
 ### Update Specific Element In A JSON Document
 
-We can update the second field, using the plain UPDATE statement and ***JSON_MERGEPATCH*** function. When running the same SELECT statement, we notice that the document is not pretty-printed any more.
+7. We can update the second field, using the plain UPDATE statement and ***JSON_MERGEPATCH*** function. When running the same SELECT statement, we notice that the document is not pretty-printed any more.
 
 ````
 > <copy>update MYJSON set DOC = json_mergepatch(DOC, '{"audienceType": "Developers and DBAs"}') where ID = 1;</copy>
@@ -795,7 +795,7 @@ We can update the second field, using the plain UPDATE statement and ***JSON_MER
 ````
 ![](./images/p_updateJsonDoc_8.png)
 
-So we can add the ***PRETTY*** clause to the UPDATE statement, and have more clarity when returning the document from our table.
+8. You can add the ***PRETTY*** clause to the UPDATE statement, and have more clarity when returning the document from our table.
 
 ````
 > <copy>update MYJSON set DOC = json_mergepatch(DOC, '{"audienceType": "Developers and DBAs"}' RETURNING CLOB PRETTY) where ID = 1;</copy>
