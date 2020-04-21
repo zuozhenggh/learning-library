@@ -1,4 +1,4 @@
-# Creating the Machine Learning Model
+# Deploy the Machine Learning Model into ATP
 
 In lab 2 you created a machine learning model that can predict customer credit. Congratulations! But you’re not finished. It’s a good model, but models have to be deployed into production systems, they have to positively impact the business, and too many machine learning projects fail at this point. We are going to spend the next two labs making sure you deploy this model so that Alpha Office employees can use it in their day to day work.
 
@@ -33,21 +33,21 @@ This lab assumes you have completed the following labs:
 
   ![](./images/001.png  " ")
 
-2. Navigate to Autonomous Data Warehouse and then select your ADW instance.
+2. Navigate to Autonomous Data Warehouse and then select your **ADW instance**.
 
   ![](./images/002.png  " ")
 
   ![](./images/003.png  " ")
 
-3. Select the Service Console.
+3. Select the **Service Console**.
 
   ![](./images/004.png  " ")
 
-4. Select Development, and then SQL Developer Web.
+4. Select **Development**, and then **SQL Developer Web**.
 
   ![](./images/005.png  " ")
 
-5. Log in with your adw admin userid and password.
+5. Log in with your **adw admin userid** and **password**.
 
   ![](./images/006.png  " ")
 
@@ -130,17 +130,17 @@ This lab assumes you have completed the following labs:
 
 ## Step 3: Grant Create Table Privileges
 
-1. Navigate to Autonomous Transaction Processing (ATP) menu item and then select your ATP instance.
+1. Navigate to Autonomous Transaction Processing (ATP) menu item and then select your **ATP instance**.
 
   ![](./images/017.png  " ")
 
   ![](./images/018.png  " ")
 
-2. Select the Service Console.
+2. Select the **Service Console**.
 
   ![](./images/019.png  " ")
 
-3. Select Administration, and then Manage Oracle ML Users.
+3. Select **Administration**, and then **Manage Oracle ML Users**.
 
   ![](./images/020.png  " ")
 
@@ -215,7 +215,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/028.png  " ")
 
-3. Go back to your main console browser tab and navigate to object storage and select your adwc bucket.  object storage.
+3. Go back to your main console browser tab and navigate to object storage and select your adwc bucket object storage.
 
   ![](./images/027.png  " ")
 
@@ -225,7 +225,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/034.png  " ")
 
-5. Click on the far right menu of the cwallet.sso file and view details.
+5. Click on the far right menu of the **cwallet.sso** file and view details.
 
   ![](./images/035.png  " ")
 
@@ -336,7 +336,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/048.png  " ")
 
-6. To make the model prediction available to all applications we will use the Oracle Database's virtual column feature.  We'll add two new virtual columns: the prediction itself, and the probably that the prediction is correct.  **TIP: You can also create a function index in the ml columns (not included here).  If you wish to use a function index the table must be analyzed to be used in queries.
+6. To make the model prediction available to all applications we will use the Oracle Database's virtual column feature.  We'll add two new virtual columns: the prediction itself, and the probably that the prediction is correct.  *TIP: You can also create a function index in the ml columns (not included here)*.  If you wish to use a function index the table must be analyzed to be used in queries.
   ```
   <copy>alter table credit_scoring_100k add(
   likely_good_credit_pcnt AS (round((100*(prediction_probability(n1_class_model, 'Good Credit' USING
