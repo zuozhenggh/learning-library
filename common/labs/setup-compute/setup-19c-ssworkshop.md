@@ -48,7 +48,6 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/step1.4-create-stack-orig.png " ")
 
-
     Enter the following information and accept all the defaults
 
     - **Name**:  Enter your firstname and lastname and the day you were born (DO NOT ENTER ANY SPECIAL CHARACTERS HERE, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)

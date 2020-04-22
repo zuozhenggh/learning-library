@@ -50,16 +50,20 @@ During this lab, you will take on the **DevOps Engineer Persona** and perform a 
 - After **line 16** in the **spec.template.metadata.labels** section of your Deployment definition, paste the following label on a new line:
 
     ```
+    <copy>
     color: blue
+    </copy>
     ```
 
 This label will identify our Kubernetes pods as the blue version of the code.
 
   ![](images/400/4.png)
 
-- After **line 26**, in the **spec.template.spec.containers** section of your Deployment definition, paste the following YAML. This will create and mount a volume on our pods that uses the Kubernetes [Downward API](https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/) to expose the pod's labels to our application. The application will display the pod's color so we can see which version (blue or green) served our webpage.
+- After **line 26**, in the **spec.template.spec.containers** section of your Deployment definition, **paste** the following YAML. 
+- This will create and mount a volume on our pods that uses the Kubernetes [Downward API](https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/) to expose the pod's labels to our application. The application will display the pod's color so we can see which version (blue or green) served our webpage.
 
   ```yaml
+  <copy>
           volumeMounts:
               - name: podinfo
                 mountPath: /tmp
@@ -71,6 +75,7 @@ This label will identify our Kubernetes pods as the blue version of the code.
               - path: "labels"
                 fieldRef:
                   fieldPath: metadata.labels
+  </copy>
   ```
 
 **NOTE**: YAML files are _sensitive to indentation_ -- make sure that `volumeMounts` is indented to the same level as `ports` on line 23. Also ensure that `volumes` is indented to the same level as `containers` on line 19. Your file should look like this:
@@ -79,7 +84,11 @@ This label will identify our Kubernetes pods as the blue version of the code.
 
 - After **line 53**, in the **spec.selector** section of your Service definition, paste the following label on a new line:
 
-  `color: blue`
+  ```
+  <copy>
+  color: blue
+  </copy>
+  ```
 
 This selector will instruct your load balancer to only route traffic to the blue version of our code.
 
@@ -128,7 +137,9 @@ This selector will instruct your load balancer to only route traffic to the blue
 - Change **line 17**, in the **spec.template.metadata.labels** section of your deployment, to read:
 
     ```
+    <copy>
     color: green
+    </copy>
     ```
 
   ![](images/400/15.png)
@@ -181,4 +192,4 @@ This selector will instruct your load balancer to only route traffic to the blue
 
 - If an unexpected issue were to arise with the green code version, it would be very easy to undo the change we made to the Service and switch back over to the blue pods, since they are still running. Eventually, the blue version can be taken down by deleting the Deployment that created them. Once again this can be accomplished through the GUI, the kubectl CLI, or via an automation system like Wercker.
 
-**You are now ready to move to the next lab: [Lab 500](LabGuide500.md)**
+**You are now ready to move to the next lab: Lab 500**
