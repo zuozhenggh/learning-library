@@ -42,5 +42,12 @@
             "publisheddate": "4/05/2020",
             "filename": "../../json/json.md"
         }
+        ,
+        {
+            "title": "Lab 4: JSON in the Oracle DB - Advanced",
+            "description": "JSON Documents",
+            "publisheddate": "4/05/2020",
+            "filename": "../../json/json-advanced.md"
+        }
     ]
 }
