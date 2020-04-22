@@ -67,7 +67,7 @@ This lab assumes you have already completed the following labs:
 
     **SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
 
-    **Image ID:** The image id was provided in Email 2.  Enter that information here.
+    **Image ID**: The image cloud OCI ID is the unique identifier for the Oracle Cloud Developer Image you will use to build your instance.  Enter the string in the box.  *ID:*  ocid1.image.oc1..aaaaaaaa2es7kqqgmmjyymzdaaeqmmehrprg6gdjxs4on5lpzwiv64przksa
 
     **Subnet ID:** The subnet id which is the address for the pre-created network was provided in Email 2.  Enter that information here.
 
@@ -78,8 +78,6 @@ This lab assumes you have already completed the following labs:
 7.  Your stack has now been created!  Now to create your environment.  *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 
     ![](./images/stackcreated.png " ")
-
-
 
 ## Step 2: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration.  This is an optional step in this lab.  
@@ -177,6 +175,6 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Kay Malcolm, Director, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, March 2020
+- **Last Updated By/Date** - Kay Malcolm, April 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 

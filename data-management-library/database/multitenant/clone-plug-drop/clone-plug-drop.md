@@ -521,7 +521,7 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
-    ![](./images/clonegold1.png " ")
+    ![](./images/clonegold.png " ")
 
 10. Create another clone of **GOLDPDB** as **COPYPDB2**  
 
@@ -535,7 +535,7 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
-    ![](./images/clonegold.png " ")
+    ![](./images/clonegold1.png " ")
 
 11. Open all of the pluggable databases  
 

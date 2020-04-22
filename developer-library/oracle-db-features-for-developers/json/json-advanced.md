@@ -4,7 +4,7 @@
 
 This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
 
-## About JSON in the Oracle Database
+### About JSON in the Oracle Database
 
 **JavaScript Object Notation (JSON)** is defined in standards ECMA-404 (JSON Data Interchange Format) and ECMA-262 (ECMAScript Language Specification, third edition). The JavaScript dialect of ECMAScript is a general programming language used widely in web browsers and web servers.  **Oracle Database** supports **JavaScript Object Notation (JSON)** data natively with relational database features, including transactions, indexing, declarative querying, and views.
 
@@ -34,9 +34,9 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
   
 2.  There are performance considerations, for example when using regular expressions on strings, as in this example.
 
-````
-<copy>set timing on</copy>
-````
+    ````
+    <copy>set timing on</copy>
+    ````
 
 ````
 > <copy>WITH DATA AS

@@ -16,7 +16,7 @@ By completing the instruction below the sample schemas **SH**, **OE**, and **HR*
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/tl07kg4dEnCkRwB6_F1on0rkfXOuKPSOzGbX8YF_JUU/n/c4u03/b/labfiles/o/nfscripts.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/DMyiDSFocz6Wj7Lwoqt2cPdiizHyp47nDrKrFaTA1ak/n/c4u03/b/labfiles/o/nfscripts.zip
     unzip nfscripts.zip; chmod +x *.sh
     /home/opc/setupNF.sh
     </copy>
