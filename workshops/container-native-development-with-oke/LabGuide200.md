@@ -12,7 +12,7 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
 
 **_To log issues_**, click here to go to the [GitHub oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
-## Objectives
+### Objectives
 
 **Automate Deployment to Kubernetes**
 
@@ -22,7 +22,7 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
   - Configure and Run Wercker Deployment Pipelines
   - Deploy and Test the Product Catalog Application
 
-## Required Artifacts
+### Required Artifacts
 
 - The following lab requires:
   - an Oracle Cloud Trial Account
@@ -35,37 +35,26 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
 
 - If you are using a Trial Account, **you must wait until you receive this email** indicating that your Cloud Account has been provisioned. _Please note that this email may arrive in your spam or promotions folder pending your email settings._
 
-  ![](images/oraclecode/code_9.png)
+  ![](images/200/Step1/Lab200-Step1-1.png)
 
-- Once you receive the **Get Started with Oracle Cloud** Email, make note of your **Username, Password and Cloud Account Name**.
+- Once you receive the **Your Oracle Cloud Account is Fully Provisioned** Email, make note of your **Username, Password and Cloud Account Name**.
 
-  ![](images/200/0.1.png)
-
-- From any browser go to:
+- From any browser go to and click on **View Accounts** and then click on **Sign in to Cloud**:
 
     [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in)
 
-- Enter your **Cloud Account Name** in the input field and click the **My Services** button. If you have a trial account, this can be found in your welcome email. Otherwise, this will be supplied by your workshop instructor.
+    ![](images/200/Step1/Lab200-Step1-2.png)
 
-  ![](images/200/1.png)
+- Enter your **Cloud Account Name** in the input field and click the **Next** button. If you have a trial account, this can be found in your welcome email. Otherwise, this will be supplied by your workshop instructor.
+
+  ![](images/200/Step1/Lab200-Step1-3.png)
 
 - Enter your **Username** and **Password** in the input fields and click **Sign In**. If you have a trial account, these can be found in your welcome email. Otherwise, these will be supplied by your workshop instructor.
 
-  ![](images/200/2.png)
+  ![](images/200/Step1/Lab200-Step1-4.png)
 
 **NOTE**: If you have used your trial account already, you may have been prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
-- In the top left corner of the dashboard, click the **hamburger menu**
-
-  ![](images/200/3.png)
-
-- Click to expand the **Services** submenu, then click **Compute**
-
-  ![](images/200/4.png)
-
-- On the OCI Console sign in page, enter the same **Username** as you did on the previous sign in page. If you are using a trial account and this is your first time logging into the OCI Console, enter the **temporary password** from your trial account welcome email. If you have already visited the OCI Console and changed your password, enter your **new password**. Otherwise, this password will be supplied by your workshop instructor.
-
-  ![](images/200/5.png)
 
 ### **STEP 2**: Create a Compartment for your Kubernetes nodes
 
@@ -284,7 +273,8 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     ```
 
 - In your _local machine_, open the terminal and create kubeconfig file and paste the copied content, press **i** and paste: 
-
+- If possible create file in container-workshop directory
+  
     ```bash
     <copy>
     vi kubeconfig
@@ -303,15 +293,40 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 - Once the changes are made to **save and exit** press escape key in keyboard and type **:wq** and press enter.
 
     ![](images/200/Step7/Lab200-step7-3.png)
-**Note**: Make sure the intendation is correct for token. it should be 4 spaces from the beginning of line and space between token and value.
+**Note**: Make sure the intendation is correct for token. It should be 4 spaces from the beginning of line and space between token and value.
 
 - Export the path of KUBECONFIG to the file.
   
+    **Windows**
     ```bash
     <copy>
-    export KUBECONFIG=path_of_kubeconfig_file
+    set KUBECONFIG=%USERPROFILE%\PATH_OF_KUBECONFIG_FILE
     </copy>
     ```
+
+    ```bash
+    <copy>
+    kubectl.exe cluster-info
+    ubectl.exe get nodes
+    </copy>
+    ```
+    
+
+  **Mac/Linux**
+    ```bash
+    <copy>
+    export KUBECONFIG=PATH_OF_KUBECONFIG_FILE
+    </copy>
+    ```
+
+    ```bash
+    <copy>
+    ./kubectl cluster-info
+    ./kubectl get nodes
+    </copy>
+    ```
+
+
 
   **Note**: Make sure to replace the path in above command
 

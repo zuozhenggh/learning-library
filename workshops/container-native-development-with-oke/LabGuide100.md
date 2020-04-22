@@ -12,14 +12,14 @@ During this lab, you will take on the **Lead Developer Persona** and work on con
 
 **_To log issues_**, click here to go to the [GitHub oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
-## Objectives
+### Objectives
 
 **Containerize Your Java Application and Automate Building and Packaging**
 
-- Create Wercker Application
+
   - Fork Java Application on GitHub
   - Create a Wercker account
-  - Create Wercker application
+  - Create Wercker Application
 - Create and Run Wercker Pipelines
   - Configure Pipelines and Workflow in Wercker
   - Define Wercker Build Pipeline
@@ -27,7 +27,7 @@ During this lab, you will take on the **Lead Developer Persona** and work on con
   - Define Wercker Publish Pipeline
   - Validate Workflow Execution
 
-## Required Artifacts
+### Required Artifacts
 
 For this lab you will need a Github account. Use the following link to set one up:
 
@@ -213,9 +213,9 @@ For this lab you will need a Github account. Use the following link to set one u
 
   ![](images/LabGuide100-9f627c8b.png)
 
-  - Your tenancy name can be found under the User menu in the OCI Console:
+  - Your tenancy name can be found under the **User menu** in the OCI Console navbar, click **Tenancy** and then look for Object Storage Namespace.
 
-  ![](images/500/LabGuide500-e51e6a21.png)
+  ![](images/100/step6/Lab100-step1-1.png)
 
   - Your Oracle Cloud username is the email address that you used when you created your trial account
 
