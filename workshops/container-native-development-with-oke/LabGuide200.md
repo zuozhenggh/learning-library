@@ -4,9 +4,7 @@
 
 ## Introduction
 
-This is the second of several labs that are part of the **Oracle Public Cloud Container Native Development workshop.** This workshop will walk you through the process of moving an existing application into a containerized CI/CD pipeline and deploying it to a Kubernetes cluster in the Oracle Public Cloud.
-
-You will take on 2 personas during the workshop. The **Lead Developer Persona** will be responsible for configuring the parts of the automated build and deploy process that involve details about the application itself. The **DevOps Engineer Persona** will configure the parts of the automation involving the Kubernetes infrastructure. To containerize and automate the building and deploying of this application you will make use of Wercker Pipelines for CI/CD, OCI Registry for a container registry, and OCI Container Engine for Kubernetes for provisioning a Kubernetes cluster on Oracle Cloud Infrastructure.
+This is the second of several labs that are part of the **Oracle Public Cloud Container Native Development workshop.** 
 
 During this lab, you will take on the **DevOps Engineer Persona**. You will provision a Kubernetes cluster and all of the infrastructure that it requires using the OCI console. OCI will provision the Virtual Cloud Network, Load Balancers, Kubernetes Master and Worker instances, and etcd instance required to support your cluster.
 
@@ -241,7 +239,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     ```bash
     <copy>
     cd %USERPROFILE%\container-workshop
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.11.2/bin/windows/amd64/kubectl.exe
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/windows/amd64/kubectl.exe
     </copy>
     ```
 
@@ -251,6 +249,12 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     cd ~/container-workshop
     curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl
     chmod +x ./kubectl
+    </copy>
+    ```
+    - To install with brew
+    ```bash
+    <copy>
+    brew install kubectl 
     </copy>
     ```
 
@@ -293,6 +297,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 - Once the changes are made to **save and exit** press escape key in keyboard and type **:wq** and press enter.
 
     ![](images/200/Step7/Lab200-step7-3.png)
+
 **Note**: Make sure the intendation is correct for token. It should be 4 spaces from the beginning of line and space between token and value.
 
 - Export the path of KUBECONFIG to the file.
@@ -300,14 +305,23 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     **Windows**
     ```bash
     <copy>
-    set KUBECONFIG=%USERPROFILE%\PATH_OF_KUBECONFIG_FILE
+    set KUBECONFIG=PATH_OF_KUBECONFIG_FILE
     </copy>
     ```
+  **Note**: Make sure to replace the path in above command
+  - Example, if path is ~/container-workshop
 
     ```bash
     <copy>
+   set KUBECONFIG=%USERPROFILE%\container-workshop\kubeconfig
+    </copy>
+    ```
+   - To confirm the config is correct, try the following commands:
+   
+    ```bash
+    <copy>
     kubectl.exe cluster-info
-    ubectl.exe get nodes
+    kubectl.exe get nodes
     </copy>
     ```
     
@@ -318,6 +332,16 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     export KUBECONFIG=PATH_OF_KUBECONFIG_FILE
     </copy>
     ```
+  
+   **Note**: Make sure to replace the path in above command
+  - Example, if path is ~/container-workshop
+
+    ```bash
+    <copy>
+   export KUBECONFIG=~/container-workshop/kubeconfig
+    </copy>
+    ```
+- To confirm the config is correct, try the following commands:
 
     ```bash
     <copy>
@@ -325,10 +349,6 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     ./kubectl get nodes
     </copy>
     ```
-
-
-
-  **Note**: Make sure to replace the path in above command
 
 - We can use `kubectl` to start a proxy that will give us access to the Kubernetes Dashboard through a web browser at a localhost URL. Run the following command in the same terminal window:
 
