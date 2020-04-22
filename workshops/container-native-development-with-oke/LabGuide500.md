@@ -2,34 +2,31 @@
 
 ## Introduction
 
-This is the fifth lab that is part of the **Oracle Public Cloud Container Native Development workshop.** This workshop will walk you through the process of moving an existing application into a containerized CI/CD pipeline and deploying it to a Kubernetes cluster in the Oracle Public Cloud.
+This is the fifth lab that is part of the **Oracle Public Cloud Container Native Development workshop.** 
 
-You will take on 2 personas during the workshop. The **Lead Developer Persona** will be responsible for configuring the parts of the automated build and deploy process that involve details about the application itself. The **DevOps Engineer Persona** will configure the parts of the automation involving the Kubernetes infrastructure. To containerize and automate the building and deploying of this application you will make use of Wercker Pipelines for CI/CD, OCI Registry for a container registry, and OCI Container Engine for Kubernetes for provisioning a Kubernetes cluster on Oracle Cloud Infrastructure.
-
-During this lab, you will take on the **Lead Developer Persona** and extend your application using a serverless function. You will install an Fn Server on your Kubernetes cluster, download your function code from GitHub, try out your function locally, deploy your function to the Fn Server on Kubernetes, and test it in the product catalog application.
+During this lab, you will take on the **Lead Developer Persona** and extend your application using a serverless function. You will install an Fn Server on your Kubernetes cluster, download your function code from GitHub,deploy your function to the Fn Server on Kubernetes using Oracle Cloud Shell, and test it in the product catalog application.
 
 **_To log issues_**, click here to go to the [GitHub oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
-## Objectives
+### Objectives
 
-**Extend Your Application Using a Function**
-
+  - Extend Your Application Using a Function
   - Clone the Function Repository
   - Deploy Your Function to Fn on Kubernetes
   - Deploy Fn Server to Kubernetes
   - Deploy Your Function to Fn Server on Kubernetes
   - Test Your Function in the Product Catalog
 
-## Required Artifacts
+### Required Artifacts
 - The following lab requires:
   - an Oracle Cloud Trial Account
   - a [GitHub account](https://github.com/join)
 
 # Extend Your Application Using a Function
 
-## Deploy Your Function to Fn on Kubernetes
+<!-- ## Deploy Your Function to Fn on Kubernetes -->
 
-### **STEP 1**: Configure Cloud Shell and deploy function
+## **STEP 1**: Configure Cloud Shell to use Oracle Functions and Docker Registry(OCIR)
 
 - Click Launch Cloud Shell, from the navigation bar.
 
@@ -43,7 +40,8 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
     </copy>
     ```
 
-- Set the region 
+- Set the region.
+- **Note:** If your home region is different than ashburn use that.
   
     ```bash
     <copy>
@@ -67,10 +65,11 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
     ![](images/500/Step1/Lab500-step1-3.png)
 
 - Update the Oracle Cloud Infrastructure Registry location where you will push images.
+- **Note:** iad represents US East (Ashburn) region, if your home region is different use that. Region key can be found [here](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm)
 
     ```bash
     <copy>
-    fn update context registry iad.ocir.io/[YOUR TENANCY NAMESPACE]/
+    fn update context registry iad.ocir.io/YOUR_TENANCY_NAMESPACE/
     </copy>
     ```
 
@@ -85,7 +84,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
    ```bash
     <copy>
-    docker login -u [YOUR TENANCY NAMESPACE]/[YOUR USERNAME] iad.ocir.io
+    docker login -u YOUR_TENANCY_NAMESPACE/YOUR_USERNAME iad.ocir.io
     </copy>
    ``` 
 
@@ -94,6 +93,10 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 - To get the Subnet OCID value, Click on Hamburger menu on top left, click on **Networking**, then click on **Virtual Cloud Networks**.
 
     ![](images/500/Step1/Lab500-step1-5.png)
+
+- Make sure the right compartment is selected and click on VCN we creted for OKE.
+
+    ![](images/500/Step1/Lab500-step1-8.png)
 
 - Choose the subnet we created for OKE, and then click on **subnet**
     
@@ -105,14 +108,16 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
     ```bash
     <copy>
-    fn create app [APP_NAME] --annotation oracle.com/oci/subnetIds='["SUBNET_OCID"]'
+    fn create app imgconvert --annotation oracle.com/oci/subnetIds='["SUBNET_OCID"]'
     </copy>
     ```
 
 - For example
   ```bash
-  fn create app imageConverter --annotation oracle.com/oci/subnetIds='["ocid1.subnet.oc1.iad.aaaaaaaazvxnwpmelac35mdiazxhobtm2qhhang6ikysgfi7fp7hq"]'
+  fn create app imgconvert --annotation oracle.com/oci/subnetIds='["ocid1.subnet.oc1.iad.aaaaaaaazvxnwpmelac35mdiazxhobtm2qhhang6ikysgfi7fp7hq"]'
   ```
+
+**Note:** Remember the app name which is in this case is imgconvert.
 
 - You’re ready to deploy functions. Git clone the repository
 
@@ -123,7 +128,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
   ```
 
 
-### **STEP 2**: Deploy Fn Server to Kubernetes
+## **STEP 2**: Deploy Fn Server to Kubernetes
 
 - We are going to use the Kubernetes Dashboard **Create An App** wizard to deploy Fn to Kubernetes. This is suitable for a test environment, but does not account for production best practices. For a production deployment, consider using [Helm](https://github.com/kubernetes/helm#install) and the [fn-helm chart](https://github.com/fnproject/fn-helm) to bring up your Fn Server.
 
@@ -173,7 +178,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
   ```bash
   <copy>
-  export FN_API_URL= [Paste-URL-From-Clipboard]
+  export FN_API_URL=Paste-URL-From-Clipboard
   </copy>
   ```
 
@@ -194,7 +199,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
     ![](images/LabGuide500-aab88037.png)
 
-### **STEP 3**: Deploy Your Function to Fn Server on Kubernetes
+## **STEP 3**: Deploy Your Function to Fn Server on Kubernetes
 
 - In your _Cloud Shell session_, change directories to cloned function directory from **STEP 2**.
 
@@ -208,7 +213,8 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
 
 
-- Now we're ready to **Deploy the function**
+- Now we're ready to **Deploy the function**. 
+- **Note:** Here the app name is similar to what we created in step 1. If you used different name use that.
   ```bash
   <copy>
   fn deploy --create-app --app imgconvert
@@ -245,7 +251,7 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
 - Our function is deployed and available on our remote Fn Server, which is running in our Kubernetes cluster. The last thing to verify is that the product catalog application is able to find and use our function. Let's test out the upload image feature.
 
-### **STEP 4**: Test Your Function in the Product Catalog
+## **STEP 4**: Test Your Function in the Product Catalog
 
 - Open the **product catalog** website in a browser _on your local machine_. If you don't have the URL, you can look in the Kubernetes dashboard for the **external endpoint** of the product-catalog-service, or you can run the following command from your _Cloud Shell session_:
 
@@ -257,11 +263,11 @@ During this lab, you will take on the **Lead Developer Persona** and extend your
 
 - Click any of the **product images** to open the detail view.
 
-  ![](images/500/23.png)
+  ![](images/500/Step4/Lab500-step4-1.png =700x500)
 
 - In the **Upload an image** pane, click **Choose file**. Select any JPG or PNG image from your machine (or [load the sample image](https://github.com/derekoneil/image-resize/raw/master/sample-image.jpg), right click, and choose 'Save Image As' first) and click **open**.
 
-  ![](images/500/24.png)
+  ![](images/500/24.png =700x500)
 
 - You'll see a loading spinner in the upload pane while your browser uploads the full size image to the product catalog server. The product catalog server invokes your function (resolved using Kubernetes DNS service at the URL `http://my-release-fn-api/t/imgconvert/resize128`). The thumbnail is returned to the product catalog server, which passes it back to your browser to be displayed. If everything worked correctly, you'll see the generated thumbnail displayed in the upload pane.
 
