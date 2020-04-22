@@ -303,7 +303,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 - Once the changes are made to **save and exit** press escape key in keyboard and type **:wq** and press enter.
 
     ![](images/200/Step7/Lab200-step7-3.png)
-**Note**: Make sure the intendation is correct for token. it should be 4 spaces from the beginning of line.
+**Note**: Make sure the intendation is correct for token. it should be 4 spaces from the beginning of line and space between token and value.
 
 - Export the path of KUBECONFIG to the file.
   
@@ -314,7 +314,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     ```
 
   **Note**: Make sure to replace the path in above command
-  
+
 - We can use `kubectl` to start a proxy that will give us access to the Kubernetes Dashboard through a web browser at a localhost URL. Run the following command in the same terminal window:
 
   **Windows**
@@ -552,7 +552,9 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
   ![](images/200/LabGuide200-a04556fa.png)
 
-- Click the **Copy** link under the generated token, then click **Close**. Switch back to your Wercker browser tab and **Paste** this token into the Value field of the **OCI_AUTH_TOKEN** environment variable you started creating earlier. Check the **Protected** box and click **Save**.
+- Click the **Copy** link under the generated token, then click **Close**. Save the token in notes we will use the same token in Lab 500
+  
+- Switch back to your Wercker browser tab and **Paste** this token into the Value field of the **`OCI_AUTH_TOKEN`** environment variable you started creating earlier. Check the **Protected** box and click **Save**.
 
   ![](images/200/LabGuide200-8313bb92.png)
 
