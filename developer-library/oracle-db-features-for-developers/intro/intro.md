@@ -16,12 +16,9 @@ Watch this video to gain insight into why Oracle Database 19c is the best databa
 
 ## Acknowledgements
 
-**Authors** -  Database Partner Technical Services (PTS)
-
-**Contributors** - Troy Anthony, Kay Malcolm
-
-**Last Updated By/Date** - Troy Anthony, March 2020
-
-**Workshop Expiration Date** - March 31, 2021
+- **Authors** -  Database Partner Technical Services (PTS)
+- **Contributors** - Troy Anthony, Kay Malcolm
+- **Last Updated By/Date** - Troy Anthony, March 2020
+- **Workshop Expiration Date** - March 31, 2021
 
 

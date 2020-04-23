@@ -32,6 +32,12 @@ For this lab we will use the *Order Entry (OE)* sample schema that is provided w
 
 Grant Required Privileges to the OE user
 
+0. Login to the instance using ssh.  We recommend using the Oracle Cloud Shell
+
+    ````
+    ssh -i yourkeyname opc@ your ip address
+    ````
+
 1. Connect to the **ORCLPDB** pluggable database, as SYSDBA.
 
   ````

@@ -34,11 +34,19 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
 1. Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the opc user
 
+        ````
+        <copy>
         ssh -i <your key name> opc@<your ip address>
+        </copy>
+        ````
 
 2.	Check if python3 has been installed by running the command
 
+        ````
+        <copy>
         sudo yum -y install python3 python3-tools
+        </copy>
+        ````
 
 The system will either install packages or let you know they are already installed.
 
@@ -48,21 +56,29 @@ There are several ways to execute Python code.  In this Step we start with two e
 
 1. To execute code from command line open the Python command line editor and type the following commands, one by one (each line is one command): 
 
-        $ python3
-        >>> var1 = "hello world"
-        >>> var1
+        ````
+        $ <copy>python3
+        var1 = "hello world"</copy>
+        var1
         'hello world'
+        ````
 
 2.  To create a simple script, open up a text editor (like vi) and enter the following script.
 
+        ````
+        <copy>
         var1 = "hello world"
         print(var1)
+        </copy>
+        ````
 
 3. Save the file as test.py in the /home/oracle directory.
 
+        ````
+        <copy>
         $ python3 /home/oracle/test.py
-
-        hello world
+        </copy>
+        ````
 
 ## Step 3: Install Python Oracle module and connect
 
@@ -72,37 +88,47 @@ cx\_Oracle is a python module that enables access to Oracle databases.  This mod
 
     Since our client libraries are installed in our VM under the oracle user, we will now 'sudo' into the oracle user. (If you have an environment that does not have client libraries accessible to the user running the python3 script, install the Oracle instant client as described in the documentation)
 
-        sudo su - oracle
+        ````
+        <copy>
+                sudo su - oracle
+        </copy>
+        ````
 
 2.  Install cx_Oracle using pip
 
     Install the module using python3 and pip for the oracle user:
 
+        ````
+        <copy>
         python3 -m pip install --user cx_Oracle
+        </copy>
+        ````
 
 3.  Test your install by launching the python console and list the available modules
 
+        ````
         $. oraenv
         ORACLE_SID = [ORCL] ? ORCL
         The Oracle base remains unchanged with value /u01/app/oracle
 
         $ python3
-        >>> help('modules')
-
+        help('modules')
+````
     This command will show you a list of installed modules which should include the cx\_Oracle module we installed in the previous step.
 
 
-4.  Connect to the Oracle database and print the version of the database via python.  
+1.  Connect to the Oracle database and print the version of the database via python.  
     (This confirms you are connected to an Oracle instance and returns the database version) 
 
-
-        >>> import cx_Oracle
-        >>> con = cx_Oracle.connect('system/Ora_DB4U@localhost:1521/orclpdb')
-        >>> print(con.version)
-         
-        19.5.0.0.0 (example output)
-
-        >>> quit()
+        ````
+        <copy>
+        import cx_Oracle
+        con = cx_Oracle.connect('system/Ora_DB4U@localhost:1521/orclpdb')
+        print(con.version)
+        
+        quit()
+        </copy>
+        ````
 
 ## Step 4: Querying the Oracle database
     
@@ -110,6 +136,8 @@ Retrieving records from Oracle database using cursors is a simple as embedding t
 
 1.  Create a script called /home/oracle/db_connect.py with the following contents:
 
+        ````
+        <copy>
         import cx_Oracle
 
         con = cx_Oracle.connect('ssb/Ora_DB4U@localhost:1521/orclpdb')
@@ -118,15 +146,21 @@ Retrieving records from Oracle database using cursors is a simple as embedding t
         cur.execute('select c_name,c_address,c_city from customer where rownum < 100')
 
         for row in cur:
-          print (row)
+                print (row)
 
         cur.close()
 
         con.close()
+        </copy>
+        ````
 
 2.  Execute the script and check the result:
 
+        ````
+        <copy>
         python3 /home/oracle/db_connect.py
+        </copy>
+        ````
 
     The result should be a list of customers.  
 
