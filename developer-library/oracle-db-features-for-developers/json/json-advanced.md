@@ -26,7 +26,13 @@ For this lab we will use the *Order Entry (OE)* sample schema that is provided w
 
 Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle database, using standard functions and procedures.
 
-1. Login to Oracle cloud and use Oracle Cloud Shell, connect to the **ORCLPDB** pluggable database, as SYSDBA.
+0. Login to the instance using Oracle Cloud Shell and ssh
+
+    ````
+    ssh -i yourkeyname opc@ your ip address
+    ````
+    
+1. Connect to the **ORCLPDB** pluggable database, as SYSDBA.
 
   ````
   $ <copy>sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA</copy>

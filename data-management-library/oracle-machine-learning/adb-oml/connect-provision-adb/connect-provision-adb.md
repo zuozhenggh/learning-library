@@ -134,7 +134,7 @@ You now have created your first ATP instance.
 
 1. Click the link below to download the install file.
 
-  [install.zip](install/install.zip)
+  [install.zip](./files/install.zip)
 
 2. Save the install.zip to a download directory and then unzip the file.
 

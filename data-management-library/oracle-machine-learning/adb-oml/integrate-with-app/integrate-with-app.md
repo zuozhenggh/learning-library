@@ -35,7 +35,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/001.png  " ")
 
-2. Select the files button, and then the customer\_names.csv file in the install directory.
+2.  Select the files button, and then the customer\_names.csv file (from the install.zip you downloaded) in the install directory.
 
   ![](./images/002.png  " ")
 
@@ -154,7 +154,7 @@ This lab assumes you have completed the following labs:
 
    ![](./images/020.png  " ")
 
-10. Select choose file, and then select the f100.sql file in the git repo and then accept the defaults.
+10. Select choose file, and then select the f100.sql file from your downloads folder and then accept the defaults.
 
    ![](./images/021.png  " ")
 
