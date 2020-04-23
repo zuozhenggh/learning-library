@@ -42,11 +42,11 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/choosecompartment.png " ")
 
-    ![](./images/createstackpage.png " ")
+    ![](./images/step1.3-createstackpage.png " ")
 
 4.  Click the **Browse** link and select the zip file (db19c-compute.zip) that you downloaded. Click **Select**.
 
-    ![](./images/create-stack-orig.png " ")
+    ![](./images/step1.4-create-stack-orig.png " ")
 
     Enter the following information and accept all the defaults
 
@@ -58,34 +58,34 @@ This lab assumes you have already completed the following labs:
 
 5.  Click **Next**.
 
-    ![](./images/create-stack-19c.png " ")
+    ![](./images/step1.5-createstack3.png " ")
 
-    Enter the following information. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
-
-    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
+    Enter the following information. You will be updating Public Subnet, Display Name and SSH Key.
 
     **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
     
-    **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
-    
     **SSH Public Key**:  Paste the public key you created in the earlier step *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
+
+    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
 
 6. Click **Next**.
 
-    ![](./images/create-db19c-stack-3.png " ")
+    ![](./images/step1.6-create-db19c-stack-3.png " ")
 
 7.  Your stack has now been created!  Now to create your environment.  *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 
-    ![](./images/stackcreated.png " ")
+    ![](./images/step1.7-stackcreated.png " ")
 
 
 
 ## Step 2: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration.  This is an optional step in this lab.  
 
-1.  [OPTIONAL]Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
+1.  [OPTIONAL]Click **Terraform Actions** -> **Plan** to validate your configuration.  Click **Plan**. This takes about a minute, please be patient.
 
     ![](./images/terraformactions.png " ")
+
+    ![](./images/step2.1-terraformclickplan.png " ")
 
     ![](./images/planjob.png " ")
 
@@ -95,10 +95,15 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 ## Step 3: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
 
-1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your instance and install Oracle 19c.
+1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**. Click **Apply**. This will create your instance and install Oracle 19c. This takes about a minute, please be patient.
+
     ![](./images/applyjob1.png " ")
 
+    ![](./images/step3.1-terraformclickapply.png " ")
+
     ![](./images/applyjob2.png " ")
+
+    ![](./images/step3.1-applyjob3.png " ")
 
 2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 1 resource has been added.  Congratulations, your environment is created!  Time to login to your instance to finish the configuration.
 
@@ -121,12 +126,21 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ![](./images/cloudshell.png " ") 
 
 2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+
+    ![](./images/step4.1.2-computeinstance.png " ")
+
 3.  On the instance homepage, find the Public IP addresss for your instance.
+
+    ![](./images/step4.1.3-instancehomepage.png " ")
+
 4.  Enter the command below to login to your instance.    
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 5.  When prompted, answer **yes** to continue connecting.
+
+    ![](./images/step4.1.5-instancelogin.png " ")
+
 6.  Continue to Step 5 on the left hand menu.
 
 ### MAC or Windows CYGWIN Emulator
