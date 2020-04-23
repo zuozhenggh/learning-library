@@ -7,36 +7,29 @@ Partitioning also enables database designers and administrators to solve some di
 
 The Hybrid Partition Tables feature extends Oracle Partitioning by enabling partitions to reside in both Oracle Database segments and in external files and sources. This feature significantly enhances the functionality of partitioning for Big Data SQL where large portions of a table can reside in external partitions.
 
-Hybrid Partition Tables enable you to easily integrate internal partitions and external partitions into a single partition table. With this feature, you can also easily move non-active partitions to external files, such as Oracle Data Pump files, for a cheaper storage solution.
-Partitions of hybrid partitioned tables can reside on both Oracle tablespaces and external sources, such as Linux files with comma-separated values (CSV) records or files on Hadoop Distributed File System (HDFS) with Java server. Hybrid partitioned tables support all existing external table types for external partitions: ORACLE_DATAPUMP, ORACLE_LOADER, ORACLE_HDFS, ORACLE_HIVE. External table types for external partitions use the following access driver types:
-   - ORACLE_DATAPUMP
-   - ORACLE_LOADER
-   - ORACLE_HDFS
-   - ORACLE_HIVE
+Watch the video below to get an explanation of Hybrid Partitioning.
 
-For external partitions of ORACLE_LOADER and ORACLE_DATAPUMP access driver type, you must grant the following privileges to the user:
+[](youtube:Z21-Mc_s3a4w)
+
+Hybrid Partition Tables enable you to easily integrate internal partitions and external partitions into a single partition table. With this feature, you can also easily move non-active partitions to external files, such as Oracle Data Pump files, for a cheaper storage solution.
+Partitions of hybrid partitioned tables can reside on both Oracle tablespaces and external sources, such as Linux files with comma-separated values (CSV) records or files on Hadoop Distributed File System (HDFS) with Java server. Hybrid partitioned tables support all existing external table types for external partitions: ORACLE\_DATAPUMP, ORACLE\_LOADER, ORACLE\_HDFS, ORACLE\_HIVE. External table types for external partitions use the following access driver types:
+   - ORACLE\_DATAPUMP
+   - ORACLE\_LOADER
+   - ORACLE\_HDFS
+   - ORACLE\_HIVE
+
+For external partitions of ORACLE\_LOADER and ORACLE\_DATAPUMP access driver type, you must grant the following privileges to the user:
    - READ privileges on directories with data files
    - WRITE privileges on directories with logging and bad files
    - EXECUTE privileges on directories with pre-processor programs 
-
-### Objectives
-
--   Learn how to enable In-Memory on the Oracle Database
--   Perform various queries on the In-Memory Column Store
 
 ### Lab Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
 * Lab: Generate SSH Key
-* Lab: Setup
-
-### Lab Preview
-
-Watch the video below to get an explanation of Hybrid Partitioning.
-
-[](youtube:Z21-Mc_s3a4w)
-
+* Lab: Environment Setup
+* Lab: Sample Schema Setup
 
 ## Step 1: Create External Directories
 
@@ -74,6 +67,7 @@ Watch the video below to get an explanation of Hybrid Partitioning.
     ````
 
 4.  Grant additional privileges to SH user 
+   
     ````
     <copy>
     GRANT CREATE ANY DIRECTORY TO sh;
@@ -81,7 +75,7 @@ Watch the video below to get an explanation of Hybrid Partitioning.
     GRANT EXECUTE ON utl_file TO sh;
     </copy>
     ````
-The DBMS_SQL package provides an interface to use dynamic SQL to parse any data manipulation language (DML) or data definition language (DDL) statement using PL/SQL. Using the UTL_FILE package, PL/SQL programs can read and write operating system text files. Basically, UTL_FILE provides a restricted version of operating system stream file I/O. One use case is for exporting data into flat files, that will become external partitions.
+The DBMS\_SQL package provides an interface to use dynamic SQL to parse any data manipulation language (DML) or data definition language (DDL) statement using PL/SQL. Using the UTL\_FILE package, PL/SQL programs can read and write operating system text files. Basically, UTL\_FILE provides a restricted version of operating system stream file I/O. One use case is for exporting data into flat files, that will become external partitions.
 
 ## Step 2: Review current SALES table
 
@@ -116,7 +110,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     select TABLE_NAME, NUM_ROWS, PARTITIONED, HYBRID from USER_TABLES ORDER BY TABLE_NAME;
     </copy>
     ````
-     ![](images/p_tablesparthbrid.png)
+     ![](images/p_tablesparthbrid.png " ")
 	 
 Table SALES is partitioned, and does not use hybrid partitioning. We will use this table as an example, to see how hybrid partitioning works.
 
@@ -131,7 +125,8 @@ Table SALES is partitioned, and does not use hybrid partitioning. We will use th
     select unique to_char(TIME_ID, 'YYYY') from SALES order by 1; 
     </copy>
     ````
-     There is 5 years of data in the SALES table: 1998, 1999, 2000, 2001, 2002. The data is partitioned in yearly quarters. (Note that the 2003 partitions exist but are empty)
+There is 5 years of data in the SALES table: 1998, 1999, 2000, 2001, 2002. The data is partitioned in yearly quarters. *(Note that the 2003 partitions exist but are empty)*
+    
     ````
     <copy>
     column name format a30
@@ -144,18 +139,19 @@ Table SALES is partitioned, and does not use hybrid partitioning. We will use th
     order by substr(PARTITION_NAME, 10) || substr(PARTITION_NAME, 8, 1);
  
     </copy>
-    ````	 
-	![](images/p_sales_partitions.png)   
+    ````
+
+	![](images/p_sales_partitions.png " ")   
   
 
 ## Step 3: Rethink Storage Organization
 You can convert a table with only internal partitions to a hybrid partitioned table. For example, the SALES table could be converted to a hybrid partitioned table by adding external partition attributes using an ALTER TABLE command, then add external partitions. Note that at least one partition must be an internal partition. However, in this lab you will create a new hybrid partitioned table, as a copy of the SALES table instead. 
 
-1.  Let's create some external files initially
-  
-The external partitions will be defined using comma-separated (CSV) data files stored in directories, that point to folders on disk. The CSV files are exported using existing internal partitions of the SALES table. 
+Let's create some external files initially.  The external partitions will be defined using comma-separated (CSV) data files stored in directories, that point to folders on disk. The CSV files are exported using existing internal partitions of the SALES table. 
 
-The following procedure will be used to export individual partitions of a table into CSV files on disk. Create this procedure in the SALES schema from your SQL*Plus session:
+The following procedure will be used to export individual partitions of a table into CSV files on disk. 
+
+1. Create this procedure in the SALES schema from your SQL*Plus session:
 
     ````
     <copy>
@@ -164,7 +160,7 @@ The following procedure will be used to export individual partitions of a table 
        p_pname in varchar2,
        p_dir in varchar2,
        p_filename in varchar2)
-    is
+        is
        l_output utl_file.file_type;
        l_theCursor integer default dbms_sql.open_cursor;
        l_columnValue varchar2(4000);
@@ -209,7 +205,7 @@ The following procedure will be used to export individual partitions of a table 
     </copy>
     ````
 
-2.  Use the DIRECTORY objects created previously. Check they exist
+1.  Use the DIRECTORY objects created previously. Check they exist
 
     ````
     <copy>
@@ -222,7 +218,7 @@ The following procedure will be used to export individual partitions of a table 
 
     </copy>
     ````
-     ![](images/p_dir_names.png) 
+     ![](images/p_dir_names.png " ") 
 
 2. Export partition SALES_Q1_1998 from table SALES as an external file SALES_Q1_1998.CSV placing the CSV file in the directory SALES_98:  
 
@@ -232,7 +228,7 @@ The following procedure will be used to export individual partitions of a table 
     </copy>
     ````
 
-     ![](images/p_export_part.png) 
+     ![](images/p_export_part.png " ") 
 
 3.  Open another terminal window in to your environment (Duplicate Putty session for example) and examine the CSV file. The following example uses vim, but any editor will suffice:
 
@@ -242,9 +238,9 @@ The following procedure will be used to export individual partitions of a table 
     </copy>
     ````
 
-    ![](images/p_csv_data.png) 
+    ![](images/p_csv_data.png " ") 
 
-The first line of the file contains the names of the columns. All data fields are enclosed within double quotes and fields are separated by a comma. This format can be customized. For this lab session we will use this same format for the rest of the SALES table partitions that store data for the years 1998 and 1999.
+4. The first line of the file contains the names of the columns. All data fields are enclosed within double quotes and fields are separated by a comma. This format can be customized. For this lab session we will use this same format for the rest of the SALES table partitions that store data for the years 1998 and 1999.
 
     ````
     <copy>
@@ -258,7 +254,7 @@ The first line of the file contains the names of the columns. All data fields ar
     </copy>
     ````
 
-4. Ensure all partitions were exported
+5. Ensure all partitions were exported
 
     ````
     <copy>
@@ -266,7 +262,8 @@ The first line of the file contains the names of the columns. All data fields ar
 	ls -alh /u01/External/sales_1999/
     </copy>
     ````
-    ![](images/p_export_part_all.png) 	
+
+    ![](images/p_export_part_all.png " ") 	
 
 ## Step 4: Implement Hybrid Partition Tables
 
@@ -277,7 +274,9 @@ You will copy and then redefine a table (maintaining application transparency). 
 1.  As you will copy SALES, retrieve the DDL script from the database: 
 
     ````
+    <copy>
     sqlplus sh/Ora_DB4U@localhost:1521/orclpdb
+    <copy>
     ````
 
     ````
@@ -487,9 +486,10 @@ You will copy and then redefine a table (maintaining application transparency). 
     alter table "SH"."HYBRID_SALES" add CONSTRAINT "HYBRID_SALES_CHANNEL_FK" FOREIGN KEY ("CHANNEL_ID") REFERENCES "SH"."CHANNELS" ("CHANNEL_ID") RELY DISABLE NOVALIDATE;
     </copy>
     ````
-    This statement assumes that the Primary Key is in the RELY state. If you get the following error: 
 
-    ![](images/p_norely.png) 
+3. This statement assumes that the Primary Key is in the RELY state. If you get the following error: 
+
+    ![](images/p_norely.png " ") 
 
     check the constraints associated with the CHANNELS table.
 	
@@ -499,17 +499,17 @@ You will copy and then redefine a table (maintaining application transparency). 
     from user_constraints where table_name='CHANNELS';
     </copy>
     ````
-    ![](images/p_channels_ref.png) 
+    ![](images/p_channels_ref.png " ") 
 	
-	Place the CHANNELS_PK constraint in RELY state
+4. Place the CHANNELS_PK constraint in RELY state
 	
-	    ````
+	````
 	<copy>
     alter table "SH"."CHANNELS" modify constraint CHANNELS_PK rely;
     </copy>
     ````
 	
-	Confirm the constraint state:
+5. Confirm the constraint state:
 	
     ````
 	<copy>
@@ -517,15 +517,17 @@ You will copy and then redefine a table (maintaining application transparency). 
     from user_constraints where table_name='CHANNELS';
     </copy>
     ````
-    ![](images/p_channels_rely.png) 
+
+    ![](images/p_channels_rely.png " ") 
 	
-	Add the RELY Foreign Key constraint on the HYBRID_SALES table:
+6. Add the RELY Foreign Key constraint on the HYBRID\_SALES table:
 	
     ````
 	<copy>
 	alter table "SH"."HYBRID_SALES" add CONSTRAINT "HYBRID_SALES_CHANNEL_FK" FOREIGN KEY ("CHANNEL_ID") REFERENCES "SH"."CHANNELS" ("CHANNEL_ID") RELY DISABLE NOVALIDATE;
     </copy>
     ````
+
 Addition foreign key constraints from the original SALES table could be added to the HYBRID_SALES table using the same methodology.
 	
 ## Step 5:  Compare internal and external partition operations
@@ -537,7 +539,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
 -   Altering an existing partitioned internal table to a hybrid partitioned table containing both internal and external partitions
 -   Changing the existing location to an empty location resulting in an empty external partition
 -   Creating global partial non-unique indexes on internal partitions
--	Creating materialized views that include external partitions in QUERY_REWRITE_INTEGRITY stale tolerated mode only
+-	Creating materialized views that include external partitions in QUERY\_REWRITE\_INTEGRITY stale tolerated mode only
 -	Full partition wise refreshing on external partitions
 -   DML trigger operations on a hybrid partitioned table on internal partitions
 
@@ -553,9 +555,9 @@ Hybrid Partitioned Tables support many partition level operations, including:
     select count(*) from HYBRID_SALES partition (SALES_Q4_1999);
     </copy>
     ````
-    ![](images/p_external_part_data.png)     
+    ![](images/p_external_part_data.png " ")     
 
-But there is no data in the internal partitions   
+2. But there is no data in the internal partitions   
 
     ````
     <copy>
@@ -565,9 +567,10 @@ But there is no data in the internal partitions
     select count(*) from HYBRID_SALES partition (SALES_Q3_2002);
     </copy>
     ````
-    ![](images/p_internal_part_data.png)   
+
+    ![](images/p_internal_part_data.png " ")   
 	
-You can insert rows into internal partitions from the original SALES table. Using the partition extension clause PARTITION (partition_name), we can specify the name of the partition within SALES table from which we want to retrieve data, in order to populate a given internal partition.
+3. You can insert rows into internal partitions from the original SALES table. Using the partition extension clause PARTITION (partition\_name), we can specify the name of the partition within SALES table from which we want to retrieve data, in order to populate a given internal partition.
 
     ````
     <copy>
@@ -578,29 +581,29 @@ You can insert rows into internal partitions from the original SALES table. Usin
 	commit;
     </copy>
     ````
-    ![](images/p_internal_part_data.png) 
+
+    ![](images/p_internal_part_data.png " ") 
 	
-Confirm the data was added:
+4. Confirm the data was added:
 
     ````
     <copy>
     select count(*) from HYBRID_SALES partition (SALES_Q1_2000);
     </copy>
     ````
-    ![](images/p_q1_2000_data.png) 
+    ![](images/p_q1_2000_data.png " ") 
 	
-2. Insert records in to the new table
-
-Verify individualrecords in the HYBRID_SALES table, filtering on PROD_ID (product id) and CUST_ID (customer id):
+5. Insert records in to the new table. Verify individualrecords in the HYBRID\_SALES table, filtering on PROD\_ID (product id) and CUST\_ID (customer id):
 
     ````
     <copy>
     select * from HYBRID_SALES where PROD_ID = 136 and CUST_ID = 6033;
     </copy>
     ````
-    ![](images/p_prodid136_1.png)  
+
+    ![](images/p_prodid_136_1.png " ")  
 	
-Insert data in to the new table. Notice that this will insert in to an internal partition:
+6. Insert data in to the new table. Notice that this will insert in to an internal partition:
 
     ````
     <copy> 
@@ -611,18 +614,18 @@ Insert data in to the new table. Notice that this will insert in to an internal 
 
     </copy>
     ````
-    ![](images/p_prodid136_2.png)
+    ![](images/p_prodid_136_2.png " ")
 
-We can also read data from an external partition
+7. We can also read data from an external partition
 
     ````
     <copy>
     select * from HYBRID_SALES where PROD_ID = 13 and CUST_ID = 987;
     </copy>
     ````
-    ![](images/p_prodid13_1.png) 
+    ![](images/p_prodid_13_1.png " ") 
 	
-However, if we try to insert or update data in an external partition, we get an error. Data in external partitions cannot be modified using traditional commands, it is as if we have specified the READ ONLY clause at the partition level in the CREATE TABLE statement.
+8. However, if we try to insert or update data in an external partition, we get an error. Data in external partitions cannot be modified using traditional commands, it is as if we have specified the READ ONLY clause at the partition level in the CREATE TABLE statement.
 
     ````
     <copy>
@@ -630,40 +633,40 @@ However, if we try to insert or update data in an external partition, we get an 
      values (13, 987, TO_DATE('1998-04-15 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 3, 999, 2, 232.16);
     </copy>
     ````
-    ![](images/p_prodid13_2.png) 
+    ![](images/p_prodid_13_2.png " ") 
 	
-An ALTER TABLE statement can not enable read-write mode on an external partition:
+9. An ALTER TABLE statement can not enable read-write mode on an external partition:
 
     ````
     <copy>
      alter table HYBRID_SALES modify partition SALES_Q2_1998 read write;
     </copy>
     ````
-    ![](images/p_rw_mode_error.png)
 
-Only data in internal partitions can be updated or inserted
+    ![](images/p_rw_mode_error.png " ")
+
+10. Only data in internal partitions can be updated or inserted
 
     ````
     <copy>
-     insert into HYBRID_SALES (PROD_ID, CUST_ID, TIME_ID, CHANNEL_ID, PROMO_ID, QUANTITY_SOLD, AMOUNT_SOLD) 
-     values (13, 987, TO_DATE('2003-04-15 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 3, 999, 2, 232.16);
-     
-	 commit;
-    </copy>
+    insert into HYBRID_SALES (PROD_ID, CUST_ID, TIME_ID, CHANNEL_ID, PROMO_ID, QUANTITY_SOLD, AMOUNT_SOLD) 
+    values (13, 987, TO_DATE('2003-04-15 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 3, 999, 2, 232.16);   
+    commit;</copy>
     ````	
 
-While queries can read and join data from both internal and external partitions
+11. While queries can read and join data from both internal and external partitions
 
     ````
     <copy>
     select * from HYBRID_SALES where PROD_ID = 13 and CUST_ID = 987;
     </copy>
     ````
-    ![](images/p_prodid13_3.png) 	
-	
-3. Gathering Statistics
 
-Gathering schema statistics for schemas with Hybrid Partitioned Tables is performed in the same way as usual.
+    ![](images/p_prodid_13_3.png " ") 	
+	
+## Step 6: Gathering Statistics
+
+1. Gathering schema statistics for schemas with Hybrid Partitioned Tables is performed in the same way as usual.
 
     ````
     <copy>
@@ -676,11 +679,13 @@ Gathering schema statistics for schemas with Hybrid Partitioned Tables is perfor
     /
     </copy>
     ````
-	![](images/p_stats_gather.png)
 
-Verify the tables in SALES HISTORY schema: number of rows, partitioned or not, and if partitioned are they using Hybrid Partitioning
+	![](images/p_stats_gather.png " ")
+
+2. Verify the tables in SALES HISTORY schema: number of rows, partitioned or not, and if partitioned are they using Hybrid Partitioning
 
     ````
+    <copy>
     SET LINESIZE 120
     col TABLE_NAME format a27
 	
@@ -688,7 +693,8 @@ Verify the tables in SALES HISTORY schema: number of rows, partitioned or not, a
 
     </copy>
     ````
-	![](images/p_stats_sh.png)
+    
+	![](images/p_stats_sh.png " ")
 	
 ## Conclusion
 
@@ -698,12 +704,12 @@ Oracle hybrid partitioned tables combine classical internal partitioned tables w
 
 Hybrid partitioned tables enable you to easily integrate internal partitions and external partitions (those residing on sources outside the database) into a single partition table. Using this feature also enables you to easily move non-active partitions to external files for a cheaper storage solution.
 
-Partitions of hybrid partitioned tables can reside on both Oracle tablespaces and external sources, such as Linux files with comma-separated values (CSV) records or files on Hadoop Distributed File System (HDFS) with Java server. Hybrid partitioned tables support all existing external table types for external partitions: ORACLE_DATAPUMP, ORACLE_LOADER, ORACLE_HDFS, ORACLE_HIVE. External table types for external partitions use the following access driver types:
+Partitions of hybrid partitioned tables can reside on both Oracle tablespaces and external sources, such as Linux files with comma-separated values (CSV) records or files on Hadoop Distributed File System (HDFS) with Java server. Hybrid partitioned tables support all existing external table types for external partitions: ORACLE\_DATAPUMP, ORACLE\_LOADER, ORACLE\_HDFS, ORACLE\_HIVE. External table types for external partitions use the following access driver types:
 
-- ORACLE_DATAPUMP
-- ORACLE_LOADER
-- ORACLE_HDFS
-- ORACLE_HIVE
+- ORACLE\_DATAPUMP
+- ORACLE\_LOADER
+- ORACLE\_HDFS
+- ORACLE\_HIVE
 
 
 ## Acknowledgements

@@ -10,6 +10,10 @@ Python's capabilities span the whole range of software needs; the language's sim
 
 Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!
 
+To learn about how to connect to an oracle database from python, watch the video below.
+
+[](youtube:C9op6I-4WM0)
+
 ### Objectives
 
 -   Learn how to use Python in the Oracle Database
@@ -20,33 +24,27 @@ Python is open-source, cross-platform, and free of cost. There's no excuse not t
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
 * Lab: Generate SSH Key
-* Lab: Setup
-
-### Lab Preview
-
-Watch the video below to get an explanation of using Python with the Oracle Database.
-
-[](youtube:)
+* Lab: Environment Setup
+* Lab: Sample Schema Setup
 
 
-## Section 1 - Lab Setup
+## Step 1: Lab Setup
 
-Python comes preinstalled on most Linux distributions, and it is available as a package on others. The Python packages can be obtained from the software repository of your Linux distribution using the package manager. There are two Python versions available, 2.X and 3.X, the VM used for this lab comes preinstalled with Python 2.7 but since this version will reach the end of support on January 1st, 2020, we will use Python3 for this excercise. 
+Python comes preinstalled on most Linux distributions, and it is available as a package on others. The Python packages can be obtained from the software repository of your Linux distribution using the package manager. 
 
-1. Open up a terminal and ssh into your compute instance as the opc user
+1. Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the opc user
 
-        ssh -i optionskey opc@<your ip address>
+        ssh -i <your key name> opc@<your ip address>
 
 2.	Check if python3 has been installed by running the command
 
         sudo yum -y install python3 python3-tools
 
-    The system will either install packages or let you know they are already installed.
+The system will either install packages or let you know they are already installed.
 
-[Back to Top](#table-of-contents)
-## Section 2 - Python Programming
+## Step 2: Python Programming
 
-There are several ways to execute Python code.  In this section we start with two examples on how to execute Python code from the command line. The first example executing code from the command prompt i.e. executing commands directly in the interpreter. The second example to save your code in a .py file and invoke the interpreter to execute the file.
+There are several ways to execute Python code.  In this Step we start with two examples on how to execute Python code from the command line. The first example executing code from the command prompt i.e. executing commands directly in the interpreter. The second example to save your code in a .py file and invoke the interpreter to execute the file.
 
 1. To execute code from command line open the Python command line editor and type the following commands, one by one (each line is one command): 
 
@@ -60,15 +58,13 @@ There are several ways to execute Python code.  In this section we start with tw
         var1 = "hello world"
         print(var1)
 
-    Save the file as test.py in the /home/oracle directory.
+3. Save the file as test.py in the /home/oracle directory.
 
         $ python3 /home/oracle/test.py
 
         hello world
 
-[Back to Top](#table-of-contents)
-
-## Section 3 - Install Python Oracle module and connect
+## Step 3: Install Python Oracle module and connect
 
 cx\_Oracle is a python module that enables access to Oracle databases.  This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
 
@@ -108,7 +104,7 @@ cx\_Oracle is a python module that enables access to Oracle databases.  This mod
 
         >>> quit()
 
-## Section 4 - Querying the Oracle database
+## Step 4: Querying the Oracle database
     
 Retrieving records from Oracle database using cursors is a simple as embedding the SQL statement within the cursor().execute statement. For this example we will use an existing table that was imported for the In-Memory lab.
 
@@ -136,11 +132,11 @@ Retrieving records from Oracle database using cursors is a simple as embedding t
 
 ## Conclusion
 
-In this Lab you had an opportunity to try out Python in the Oracle Database.
+In this Lab you had an opportunity to try out connecting Python in the Oracle Database.
 
 ## Acknowledgements
 
-- **Author** -
+- **Author** - Database Partner Technical Services
 - **Last Updated By/Date** - Troy Anthony, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

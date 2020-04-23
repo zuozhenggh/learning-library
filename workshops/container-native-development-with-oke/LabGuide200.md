@@ -4,15 +4,13 @@
 
 ## Introduction
 
-This is the second of several labs that are part of the **Oracle Public Cloud Container Native Development workshop.** This workshop will walk you through the process of moving an existing application into a containerized CI/CD pipeline and deploying it to a Kubernetes cluster in the Oracle Public Cloud.
-
-You will take on 2 personas during the workshop. The **Lead Developer Persona** will be responsible for configuring the parts of the automated build and deploy process that involve details about the application itself. The **DevOps Engineer Persona** will configure the parts of the automation involving the Kubernetes infrastructure. To containerize and automate the building and deploying of this application you will make use of Wercker Pipelines for CI/CD, OCI Registry for a container registry, and OCI Container Engine for Kubernetes for provisioning a Kubernetes cluster on Oracle Cloud Infrastructure.
+This is the second of several labs that are part of the **Oracle Public Cloud Container Native Development workshop.** 
 
 During this lab, you will take on the **DevOps Engineer Persona**. You will provision a Kubernetes cluster and all of the infrastructure that it requires using the OCI console. OCI will provision the Virtual Cloud Network, Load Balancers, Kubernetes Master and Worker instances, and etcd instance required to support your cluster.
 
 **_To log issues_**, click here to go to the [GitHub oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
-## Objectives
+### Objectives
 
 **Automate Deployment to Kubernetes**
 
@@ -22,7 +20,7 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
   - Configure and Run Wercker Deployment Pipelines
   - Deploy and Test the Product Catalog Application
 
-## Required Artifacts
+### Required Artifacts
 
 - The following lab requires:
   - an Oracle Cloud Trial Account
@@ -35,37 +33,26 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
 
 - If you are using a Trial Account, **you must wait until you receive this email** indicating that your Cloud Account has been provisioned. _Please note that this email may arrive in your spam or promotions folder pending your email settings._
 
-  ![](images/oraclecode/code_9.png)
+  ![](images/200/Step1/Lab200-Step1-1.png)
 
-- Once you receive the **Get Started with Oracle Cloud** Email, make note of your **Username, Password and Cloud Account Name**.
+- Once you receive the **Your Oracle Cloud Account is Fully Provisioned** Email, make note of your **Username, Password and Cloud Account Name**.
 
-  ![](images/200/0.1.png)
-
-- From any browser go to:
+- From any browser go to and click on **View Accounts** and then click on **Sign in to Cloud**:
 
     [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in)
 
-- Enter your **Cloud Account Name** in the input field and click the **My Services** button. If you have a trial account, this can be found in your welcome email. Otherwise, this will be supplied by your workshop instructor.
+    ![](images/200/Step1/Lab200-Step1-2.png)
 
-  ![](images/200/1.png)
+- Enter your **Cloud Account Name** in the input field and click the **Next** button. If you have a trial account, this can be found in your welcome email. Otherwise, this will be supplied by your workshop instructor.
+
+  ![](images/200/Step1/Lab200-Step1-3.png)
 
 - Enter your **Username** and **Password** in the input fields and click **Sign In**. If you have a trial account, these can be found in your welcome email. Otherwise, these will be supplied by your workshop instructor.
 
-  ![](images/200/2.png)
+  ![](images/200/Step1/Lab200-Step1-4.png)
 
 **NOTE**: If you have used your trial account already, you may have been prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
-- In the top left corner of the dashboard, click the **hamburger menu**
-
-  ![](images/200/3.png)
-
-- Click to expand the **Services** submenu, then click **Compute**
-
-  ![](images/200/4.png)
-
-- On the OCI Console sign in page, enter the same **Username** as you did on the previous sign in page. If you are using a trial account and this is your first time logging into the OCI Console, enter the **temporary password** from your trial account welcome email. If you have already visited the OCI Console and changed your password, enter your **new password**. Otherwise, this password will be supplied by your workshop instructor.
-
-  ![](images/200/5.png)
 
 ### **STEP 2**: Create a Compartment for your Kubernetes nodes
 
@@ -137,7 +124,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 ### **STEP 5**: Prepare Token using Cloud Shell
 
-  - You are now ready to download the `kubeconfig` file using the OCI CLI that you just installed. From the OCI Console navigation menu, select **Developer Services->Container Clusters (OKE)**, then click the name of your cluster, **cluster1**
+  - From the OCI Console navigation menu, select **Developer Services->Container Clusters (OKE)**, then click the name of your cluster, **cluster1**
 
     ![](images/200/LabGuide200-5c0a2b4c.png)
 
@@ -169,11 +156,10 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 <copy>vi oke-admin-service-account.yaml</copy>
 ```
 
-- press **i** and **copy and paste** the following content:
+- press **i** and **copy and paste** the following content: Once done press esc key from keyboard, type **:wq** and press enter to exit.
 
-    ```
+    ```bash
     <copy>
-    bash
     apiVersion: v1
     kind: ServiceAccount
     metadata:
@@ -253,7 +239,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     ```bash
     <copy>
     cd %USERPROFILE%\container-workshop
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.11.2/bin/windows/amd64/kubectl.exe
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/windows/amd64/kubectl.exe
     </copy>
     ```
 
@@ -263,6 +249,12 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     cd ~/container-workshop
     curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl
     chmod +x ./kubectl
+    </copy>
+    ```
+    - To install with brew
+    ```bash
+    <copy>
+    brew install kubectl 
     </copy>
     ```
 
@@ -275,9 +267,90 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     </copy>
     ```
 
+- To access the dashboard we need to create kubeconfig file.
+- In _Cloud Shell Session_, run the following command and copy the output
 
+    ```bash
+    <copy>
+    cat ~/.kube/config
+    </copy>
+    ```
 
-- Now that we've increased the session timeout, we can use `kubectl` to start a proxy that will give us access to the Kubernetes Dashboard through a web browser at a localhost URL. Run the following command in the same terminal window:
+- In your _local machine_, open the terminal and create kubeconfig file and paste the copied content, press **i** and paste: 
+- If possible create file in container-workshop directory
+  
+    ```bash
+    <copy>
+    vi kubeconfig
+    </copy>
+    ```
+
+**Note**: Remember the path where you are creating this file
+
+   
+
+- We need to modify the file, remove all the content after user and it should look as follow:
+
+    ![](images/200/Step7/Lab200-step7-2.png)
+
+- Now paste the token which we copied in **Step 5** in the file as follow
+- Once the changes are made to **save and exit** press escape key in keyboard and type **:wq** and press enter.
+
+    ![](images/200/Step7/Lab200-step7-3.png)
+
+**Note**: Make sure the intendation is correct for token. It should be 4 spaces from the beginning of line and space between token and value.
+
+- Export the path of KUBECONFIG to the file.
+  
+    **Windows**
+    ```bash
+    <copy>
+    set KUBECONFIG=PATH_OF_KUBECONFIG_FILE
+    </copy>
+    ```
+  **Note**: Make sure to replace the path in above command
+  - Example, if path is ~/container-workshop
+
+    ```bash
+    <copy>
+   set KUBECONFIG=%USERPROFILE%\container-workshop\kubeconfig
+    </copy>
+    ```
+   - To confirm the config is correct, try the following commands:
+   
+    ```bash
+    <copy>
+    kubectl.exe cluster-info
+    kubectl.exe get nodes
+    </copy>
+    ```
+    
+
+  **Mac/Linux**
+    ```bash
+    <copy>
+    export KUBECONFIG=PATH_OF_KUBECONFIG_FILE
+    </copy>
+    ```
+  
+   **Note**: Make sure to replace the path in above command
+  - Example, if path is ~/container-workshop
+
+    ```bash
+    <copy>
+   export KUBECONFIG=~/container-workshop/kubeconfig
+    </copy>
+    ```
+- To confirm the config is correct, try the following commands:
+
+    ```bash
+    <copy>
+    ./kubectl cluster-info
+    ./kubectl get nodes
+    </copy>
+    ```
+
+- We can use `kubectl` to start a proxy that will give us access to the Kubernetes Dashboard through a web browser at a localhost URL. Run the following command in the same terminal window:
 
   **Windows**
     ```bash
@@ -299,9 +372,9 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 - Leave the proxy server running and navigate to the [Kubernetes Dashboard by Clicking on this link](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/), and choosing **open in a new browser tab**.
 
-- In the [Kubernetes Dashboard](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/), select Token and **paste the value of the token: element you copied earlier in Step 5** into the Token field. Click **Open**, then click **Sign In**.
+- In the [Kubernetes Dashboard](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/), select **Kubeconfig** and click three dots to choose the kubeconfig file, then click **Sign In**.
 
-  ![](images/200/LabGuide200-2a1a02ce.png)
+  ![](images/200/Step7/Lab200-step7-4.png)
 
 - After authenticating, you are presented with the Kubernetes dashboard.
 
@@ -482,7 +555,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
     ```bash
     <copy>
-    echo $(./kubectl config view | grep server | cut -f 2- -d ":" | tr -d " ")
+    echo $(kubectl config view | grep server | cut -f 2- -d ":" | tr -d " ")
     </copy>
     ```
 
@@ -514,7 +587,9 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
   ![](images/200/LabGuide200-a04556fa.png)
 
-- Click the **Copy** link under the generated token, then click **Close**. Switch back to your Wercker browser tab and **Paste** this token into the Value field of the **OCI_AUTH_TOKEN** environment variable you started creating earlier. Check the **Protected** box and click **Save**.
+- Click the **Copy** link under the generated token, then click **Close**. Save the token in notes we will use the same token in Lab 500
+  
+- Switch back to your Wercker browser tab and **Paste** this token into the Value field of the **`OCI_AUTH_TOKEN`** environment variable you started creating earlier. Check the **Protected** box and click **Save**.
 
   ![](images/200/LabGuide200-8313bb92.png)
 
