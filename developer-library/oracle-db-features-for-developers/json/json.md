@@ -98,8 +98,8 @@ For the purpose of this exercise we will use a web service, that returns informa
 - Share — copy and redistribute the material in any medium or format;
 - Adapt — remix, transform, and build upon the material for any purpose, even commercially.
 
-1. Click '**login**' link on the upper right corner of GeoNames website, and create a new account. **Note:** When you create your GeoNames account you will receive an email to activate the account. 
-   
+1. Click '**login**' link on the upper right corner of GeoNames website, and create a new account. **Note:** When you create your GeoNames account you will receive an email to activate the account.
+
 2. Enable the account for web services on the account page [GeoNames Account Page](http://www.geonames.org/manageaccount)
 
 
@@ -115,7 +115,25 @@ This lab covers the use of database languages and features to work with JSON dat
   ````
   <copy>set serveroutput on</copy>
   ````
+  >**Note**: Remember to replace ***<GeoNames_username>***
 
+  ````
+  <copy>
+  declare
+      t_http_req  utl_http.req;
+      t_http_resp  utl_http.resp;
+      t_response_text clob;
+  begin   
+      t_http_req:= utl_http.begin_request('http://api.geonames.org/countryInfoJSON?formatted=true' || '&' || 'country=ES' || '&' || 'username=<GeoNames_username>' || '&' || 'style=full', 'GET', 'HTTP/1.1');
+      t_http_resp:= utl_http.get_response(t_http_req);
+      UTL_HTTP.read_text(t_http_resp, t_response_text);
+      UTL_HTTP.end_response(t_http_resp);
+      DBMS_OUTPUT.put_line(t_response_text);
+  end;
+  /
+  </copy>
+  ````
+  
 3.  Preview the sample output below.
 
   ![Geonames Sample Output](./images/p_GeoNameSampleOutput.png " ")
@@ -353,4 +371,3 @@ Please proceed to the next lab
 - **Last Updated By/Date** - Troy Anthony, April 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
-
