@@ -9,8 +9,7 @@ This part of the hands-on lab is an entry-level exercise for modifying a skill i
 Oracle Digital Assistant is an environment for building digital assistants, which are user interfaces driven by artificial intelligence
 (AI) that help users accomplish a variety of tasks in natural language conversations. Digital assistants consist of one or more skills, which are individual chatbots that are focused on specific types of tasks.
 
-In this lab, we are going to modify a skill that can be used for interactions with a pizzeria, including ordering. As part of this
-process, you will:
+In this lab, we are going to modify a skill that can be used for interactions with a pizzeria, including ordering. As part of this process, you will:
 
   - Modify a conversation flow.
   - Validate, debug, and test your skill.
@@ -28,7 +27,7 @@ process, you will:
 In this lab, we're starting from an existing one. So, the first thing you'll do is clone an existing skill.
 
 1. With the Oracle Digital Assistant UI open in your browser, click ![main menu icon](./images/image173.png) to open the side menu.
-2. Click Development and select Skills.
+2. Click **Development** and select Skills.
 3. Click ![main menu icon](./images/image173.png) again to collapse the side menu.
 4. Search “HOL\_Microservices”
 
@@ -38,7 +37,7 @@ In this lab, we're starting from an existing one. So, the first thing you'll do 
 
   ![](./images/image175.png " ")
 
-6. Click Clone to open Create clone form.
+6. Click **Clone** to open Create clone form.
 7. Introduce these values:    
     - Display Name: HOL\_XX (where XX is your initials. Example: John Snow Green should use HOL\_JSG)    
     - Name: HOL\_XX    
@@ -57,7 +56,7 @@ As we don’t have enough time, we will skip this step.
 
 On this case, we are going to modify the existing dialog flow to ask the user to carry out an upgrade of their order, and we will give him a towel.
 
-1. After cloning the skill on step one, you can test that all it’s ok. So, click Train button on the upper right corner.
+1. After cloning the skill on step one, you can test that all it’s ok. So, click **Train** on the upper right corner.
 
   ![](./images/image176.png " ")
 
@@ -65,7 +64,7 @@ On this case, we are going to modify the existing dialog flow to ask the user to
 
   In this case, we are going to use Ht
 
-  Now click on Submit button
+  Now click **Submit**
 
   ![](./images/image177.png " ")
 
@@ -79,7 +78,7 @@ On this case, we are going to modify the existing dialog flow to ask the user to
 
   You define each bit of dialog and its related operations as a sequence of transitory states, which manage the logic within the dialog flow. To cue the action, each state node within your OBotML definition names a component that provides the functionality needed at that point in the dialog. States are essentially built around the components. They contain component-specific properties and define the transitions to other states that get triggered after the component executes.*
 
-  Now, click on flows button on the left side.
+  Now, click **Flows** on the left side.
 
   ![](./images/image179.png " ")
 
@@ -93,7 +92,7 @@ On this case, we are going to modify the existing dialog flow to ask the user to
 
   There are two types of components that you can use in a dialog flow – built-in components and custom components. When the Dialog Engine enters a state in the dialog flow, it assesses the component. When it encounters one of the built-in components (noted by System.), it executes one of the generic tasks, such as display a message or prompt the user to enter text. When the Dialog Engine discovers a custom component, however, it calls the component's service, which hosts one or more custom components.
 
-7. Now, click on Components button.
+7. Now, click **Components**.
 
   ![](./images/image181.png " ")
 
@@ -101,7 +100,7 @@ On this case, we are going to modify the existing dialog flow to ask the user to
 
   ![](./images/image182.png " ")
 
-8. Now choose “Text”, after that on the value list select “confirmation” to insert the System.Text component after “confirmation” status and click on Apply
+8. Now choose “Text”, after that on the value list select “confirmation” to insert the System.Text component after “confirmation” status and click **Apply**
 
   ![](./images/image183.png " ")
 
@@ -128,7 +127,7 @@ On this case, we are going to modify the existing dialog flow to ask the user to
 
   ![](./images/image186.png " ")  ![](./images/image187.png " ")
 
-12. To check that your new code it’s okay, click on Validate button.
+12. To check that your new code it’s okay, click **Validate**.
 
   ![](./images/image188.png " ")
 
@@ -192,7 +191,7 @@ Now that all of the skill's pieces are in place let's test its behavior.
 
 6. Enter a delivery location
 
-  You should receive an order confirmation similar to the one shown in the image below. Please click on Send Location
+  You should receive an order confirmation similar to the one shown in the image below. Please click **Send Location**
 
   ![](./images/image199.png " ")
 

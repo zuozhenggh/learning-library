@@ -22,11 +22,11 @@ Rather than requiring that you install Python and other software, the front-end 
 
   ![](./images/image70.png " ")
 
-3. Then choose the path to the .OVA copied or downloaded before and click in Continue button:
+3. Then choose the path to the .OVA copied or downloaded before and click **Continue**:
 
   ![](./images/image71.png " ")
 
-4. Leave default options and click on Import button:
+4. Leave default options and click **Import**:
 
   ![](./images/image72.png " ")
 
@@ -38,13 +38,13 @@ Rather than requiring that you install Python and other software, the front-end 
 
   ![](./images/image74.png " ")
 
-7. It should take some time to start the VM. Click on enter and you should see the login screen.
+7. It should take some time to start the VM. Click enter and you should see the login screen.
 
   **NOTE:** If you face any issue, please check that Graphic Controller selected is VBoxSVGA as there are some issues in VirtualBox 6 if you use a different one.
 
   ![](./images/image75.png " ")
 
-8. Click on Hand-On Lab User. Password for user is oracle.
+8. Click **Hand-On Lab User**. Password for user is `oracle`.
 
   ![](./images/image76.png " ")
 
@@ -99,7 +99,7 @@ Rather than requiring that you install Python and other software, the front-end 
 
   ![](./images/image312.png " ")
 
-8. Click on SIGN IN button and finally you are logged in Kube Dashboard:
+8. Click **SIGN IN** and finally you are logged in Kube Dashboard:
 
   ![](./images/image90.png " ")
 

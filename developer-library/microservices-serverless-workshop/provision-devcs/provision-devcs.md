@@ -6,7 +6,7 @@ In this lab you will provision an Oracle Developer Cloud Service instance, gathe
 
 ## **Step 1**: Provision a Developer Cloud Service instance
 
-1. Click in the hamburger icon on the top left side and select **Platform Services** (under More Oracle Cloud Services” Area), then select **Developer**.
+1. Click the hamburger icon on the top left side and select **Platform Services** (under More Oracle Cloud Services Area), then select **Developer**.
 
   ![](./images/image13.png " ")
 
@@ -59,7 +59,7 @@ Before we are able to configure a Developer Cloud Service Instance, let’s gath
 
 5. Now we will create an Auth token for the user by using a public and private key. We will provide you with two already created .pem keys to download in:
 
-  [<span class="underline">https://github.com/oraclespainpresales/GigisPizzaHOL/tree/master/microservices/Credentials</span>](https://github.com/oraclespainpresales/GigisPizzaHOL/tree/master/microservices/Credentials)
+  [https://github.com/oraclespainpresales/GigisPizzaHOL/tree/master/microservices/Credentials](https://github.com/oraclespainpresales/GigisPizzaHOL/tree/master/microservices/Credentials)
 
 6. First thing you need to do is view the content of Private Key and copying private key, making a note in a txt file. Then do the same with public key and copy content into clipboard.
 
@@ -92,8 +92,7 @@ Before we are able to configure a Developer Cloud Service Instance, let’s gath
   ![](./images/image28.png " ")
 
 12. Click **Create Compartment** to open the Create Compartment dialog, and fill the Name field (for example
-HandsOnLab), Description and Parent Compartment (it must be root referred
-with Tenancy name) and click **Create Compartment**:
+HandsOnLab), Description and Parent Compartment (it must be root referred with Tenancy name) and click **Create Compartment**:
 
   ![](./images/image29.png " ")
 
@@ -119,7 +118,7 @@ Now let’s check that Developer Cloud Service has been created so that we can c
 
   ![](./images/image34.png " ")
 
-3. You will see next screen where you are requested to run some extra configurations related with Compute & Storage. Click in OCI Credentials link in Message and have close to you the txt file with OCI information previously gathered:
+3. You will see next screen where you are requested to run some extra configurations related with Compute & Storage. Click **OCI Credentials** link in Message and have close to you the txt file with OCI information previously gathered:
 
   ![](./images/image35.png " ")
 

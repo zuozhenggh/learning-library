@@ -10,13 +10,13 @@ In this lab you will create a Kubernetes Cluster to deploy the microservices you
 
   ![](./images/image56.png " ")
 
-2. Check that root compartment is selected. Then click in Button Create Policy and fill in fields taking special care of filling in Statement field in Policy Statements area with this value:
+2. Check that root compartment is selected. Then click **Button Create Policy** and fill in fields taking special care of filling in Statement field in Policy Statements area with this value:
 
    ```
    <copy>Allow service OKE to manage all-resources in tenancy</copy>
    ```
 
-3. And then click in Create button:
+3. And then click **Create**:
 
   ![](./images/image57.png " ")
 
@@ -30,7 +30,7 @@ In this lab you will create a Kubernetes Cluster to deploy the microservices you
 
   ![](./images/image59.png " ")
 
-2. Select the compartment you have previously created under List Scope and click in Create Cluster button:
+2. Select the compartment you have previously created under List Scope and click **Create Cluster**:
 
   ![](./images/image60.png " ")
 
@@ -38,15 +38,15 @@ In this lab you will create a Kubernetes Cluster to deploy the microservices you
 
   ![](./images/image300.png " ")
 
-4. Select Shape VM.Standard1.1 and 3 (or less if you don't want to create a 3 workernodes nodepool) in the NUMBER OF NODES (this number is the VMs that will be created into the node pool). Then click in NEXT button setting the default options for the rest of parameters for a cluster review:
+4. Select Shape VM.Standard1.1 and 3 (or less if you don't want to create a 3 workernodes nodepool) in the NUMBER OF NODES (this number is the VMs that will be created into the node pool). Then click **NEXT** setting the default options for the rest of parameters for a cluster review:
 
   ![](./images/image301.png " ")
 
-5. Review the cluster information before to create it, and click on Create Cluster Button or back to modify cluster options:
+5. Review the cluster information before to create it, and click **Create Cluster** or back to modify cluster options:
 
   ![](./images/image302.png " ")
 
-6. The previous QUICK CREATE Option will setup a 3 nodes Kubernetes Cluster with predefined Virtual Cloud Network, 3 Subnets, Security Lists, Route tables. When you are done with checks, please click on the Requesting Cluster area in your Cluster name.
+6. The previous QUICK CREATE Option will setup a 3 nodes Kubernetes Cluster with predefined Virtual Cloud Network, 3 Subnets, Security Lists, Route tables. When you are done with checks, please click the Requesting Cluster area in your Cluster name.
 
   *Note: Cluster creation process can take several minutes.*
 

@@ -5,11 +5,11 @@ Once that we have a Kubernetes Cluster, let’s move on to next step which is im
 
 ## **Step 1**: Import a Developer Cloud Service Project
 
-1. Go to your DevCS instance and in Organization Menu option, under Projects tab, click in Create:
+1. Go to your DevCS instance and in Organization Menu option, under Projects tab, click **Create**:
 
   ![](./images/image101.png " ")
 
-2. Enter a Name for your Project, for Security select Private and your Preferred Language. Then Click in Next:
+2. Enter a Name for your Project, for Security select Private and your Preferred Language. Then Click **Next**:
 
   ![](./images/image102.png " ")
 
@@ -25,7 +25,7 @@ https://github.com/oraclespainpresales/GigisPizzaHOL/tree/master/microservices/C
 
   ![](./images/image104.png " ")
 
-6. In next section, select the Container named: “DevCS\_Clone\_Wedodevops” and the zip File available with the Project export to be imported. Then Click in Finish:
+6. In next section, select the Container named: “DevCS\_Clone\_Wedodevops” and the zip File available with the Project export to be imported. Then Click **Finish**:
 
   ![](./images/image105.png " ")
 
@@ -51,7 +51,7 @@ https://github.com/oraclespainpresales/GigisPizzaHOL/tree/master/microservices/C
 
   ![](./images/image110.png " ")
 
-12. And click in Pipelines tab to check different Pipelines
+12. And click **Pipelines** tab to check different Pipelines
 
   ![](./images/image111.png " ")
 

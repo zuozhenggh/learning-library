@@ -5,7 +5,7 @@
             "filename": "./workshop-intro/workshop-intro.md"
         },
         {
-          "title": "Sign Up for Free Trial",
+          "title": "Sign Up for a Free Trial",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
@@ -14,7 +14,7 @@
         },
         {
           "title": "Lab 2: Build Virtual Machines in Developer Cloud Service",
-          "filename": "./create-vm-templates/create-vm-templates.md"
+          "filename": "./build-vm-configuration/build-vm-configuration.md"
         },
         {
           "title": "Lab 3: Create a Kubernetes Cluster",
@@ -29,7 +29,7 @@
           "filename": "./import-devcs-project/import-devcs-project.md"
         },
         {
-          "title": "Lab 6: Configure the Project",
+          "title": "Lab 6: Configure the Project to Match the Kubernetes Cluster",
           "filename": "./configure-devcs-project-oke/configure-devcs-project-oke.md"
         },
         {

@@ -4,31 +4,31 @@
 
 What we have to do now is to adapt parameters and code in project we have just imported to fit with our OKE deployment in your OCI tenancy.
 
-But before we have to create DNS Zones in OCI. A zone is a portion of the DNS namespace. A Start of Authority record (SOA) defines a zone. A zone contains all labels underneath itself in the tree, unless otherwise specified.
+Before we have to create DNS Zones in OCI. A zone is a portion of the DNS namespace. A Start of Authority record (SOA) defines a zone. A zone contains all labels underneath itself in the tree, unless otherwise specified.
 
 ## **Step 1**: Create DNS Zone
 
-1. So let’s create a couple of DNS Zones. These will be used later to modify DNSZONE parameter in project. In OCI Dashboard Menu go to: Networking-\>DNS Zone Management
+1. So let’s create a couple of DNS Zones. These will be used later to modify DNSZONE parameter in project. In OCI Dashboard Menu go to: **Networking \> DNS Zone Management**
 
   ![](./images/image112.png " ")
 
-2. If not selected yet, select Compartment we created in List Scope Area. Then, click in Create Zone Button:
+2. If not selected yet, select Compartment we created in List Scope Area. Then, click **Create Zone**:
 
   ![](./images/image113.png " ")
 
-3. And create a Manual Zone of type Primary named for example hol5967 and your username.com:
+3. And create a Manual Zone of type Primary named `hol5967` (for example ) and your username.com:
 
   ```
   hol5967-carlos.j.olivares.com
   ```
 
-4. Then click in Submit button:
+4. Then click **Submit**:
 
   ![](./images/image114.png " ")
 
   ![](./images/image115.png " ")
 
-5. You have to create a second DNS zone with same parameters but named like previous one prefixed with front-:
+5. You have to create a second DNS zone with same parameters but named like previous one prefixed with `front-`:
 
   ```
   front-hol5967-carlos.j.olivares.com
@@ -38,7 +38,7 @@ But before we have to create DNS Zones in OCI. A zone is a portion of the DNS na
 
   ![](./images/image116.png " ")
 
-Now let’s go back to DevCS instance and let’s configure Build Jobs and Git:
+Now let’s go back to DevCS instance and let’s configure Build Jobs and Git.
 
 ## **Step 2**: Configuring Builds
 
@@ -46,16 +46,15 @@ In this project we have three types of builds, one for Fn Function (Serverless) 
 
 ### Fn Function Jobs modification
 
-1. In DevCs interface, Click in Build Menu option, then select the Job named fn\_discount\_to\_FaaS\_CK. Then click in Configure button(right side of screen):
+1. In DevCs interface, Click **Build Menu**, then select the Job named `fn_discount_to_FaaS_CK`. Then click **Configure** (from the right side of screen):
 
   ![](./images/image117.png " ")
 
-2. The screen will appear and will take you to Software tab where you have to select a Software template. Make sure you select
-Vm\_basic\_Template\_FN so that Fn function build process will work:
+2. The screen will appear and will take you to Software tab where you have to select a Software template. Make sure you select `Vm_basic_Template_FN` so that Fn function build process will work:
 
   ![](./images/image118.png " ")
 
-3. Now click in ![](./images/image119.png), then in Git tab and make sure that discount-func.git is selected as Repository
+3. Now click ![](./images/image119.png), then in Git tab and make sure that `discount-func.git` is selected as Repository
 
   ![](./images/image120.png " ")
 
@@ -97,15 +96,15 @@ Vm\_basic\_Template\_FN so that Fn function build process will work:
 
   `front_order_docker_create`
 
-3. Then click in Configure Button:
+3. Then click **Configure**:
 
   ![](./images/image124.png " ")
 
-4. The screen will appear and will take you to Software tab where you have to select a Software template. Make sure you select Vm\_basic\_Template so that microservices and docker build process will work:
+4. The screen will appear and will take you to Software tab where you have to select a Software template. Make sure you select `Vm_basic_Template` so that microservices and docker build process will work:
 
   ![](./images/image125.png " ")
 
-5. Now click in ![](./images/image119.png), then in Git tab and make sure that gigis-order-front.git is selected as Repository
+5. Now click ![](./images/image119.png), then the Git tab and make sure that `gigis-order-front.git` is selected as Repository
 
   ![](./images/image126.png " ")
 
@@ -136,7 +135,7 @@ From:
 
   ![](./images/image129.png " ")
 
-9. And Click Save Button
+9. And click **Save**
 
 10. Change the three other docker Jobs in the same way:
 
@@ -153,23 +152,23 @@ From:
   Front_order_to_OKE
   ```
 
-2. Then click in Configure Button:
+2. Then click **Configure**:
 
   ![](./images/image130.png " ")
 
-3. The screen will appear and will take you to Software tab where you have to select a Software template. Make sure you select Vm\_basic\_Template so that microservices and docker build process will work:
+3. The screen will appear and will take you to Software tab where you have to select a Software template. Make sure you select `Vm_basic_Template` so that microservices and docker build process will work:
 
   ![](./images/image131.png " ")
 
-4. Now click in ![](./images/image119.png), then in Git tab and make sure that gigis\_order\_front.git is selected as Repository:
+4. Now click ![](./images/image119.png), then the Git tab and make sure that `gigis_order_front.git` is selected as Repository:
 
   ![](./images/image132.png " ")
 
-5. Click in Parameters tab and change Parameters from:
+5. Click **Parameters** tab and change Parameters from:
 
   ![](./images/image133.png " ")
 
-  Changed to(your tenancy details):
+  Changed to (your tenancy details):
 
 6. Leave demozone as it is (default)
 
@@ -177,7 +176,7 @@ From:
 
   ![](./images/image134.png " ")
 
-7. Click in Steps tab and Change steps from:
+7. Click **Steps** tab and Change steps from:
 
   ![](./images/image135.png " ")
 
@@ -185,7 +184,7 @@ From:
 
   ![](./images/image136.png " ")
 
-9. And Click Save
+9. And Click **Save**
 
 10. Important Note: modify the three other docker Jobs in the same way as
 previous job:
@@ -204,13 +203,13 @@ previous job:
 
 ## **Step 3**: Configuring Git repositories
 
-Now let’s change the yaml in different GIT repositories to fit with your Tenancy details(review all but db\_management.git, discount-func.git and PizzaDeliveryMobileapp.git).
+Now let’s change the yaml in different GIT repositories to fit with your Tenancy details (review all but `db\_management.git`, `discount-func.git` and `PizzaDeliveryMobileapp.git`).
 
-1. Let’s get started by selecting microservice\_orchestrator.git:
+1. Let’s get started by selecting `microservice_orchestrator.git`:
 
   ![](./images/image137.png " ")
 
-2. Select only microservice-orchestrator.yaml (the two other .yaml don’t require to be modified):
+2. Select only `microservice-orchestrator.yaml` (the two other .yaml don’t require to be modified):
 
   ![](./images/image138.png " ")
 
@@ -226,12 +225,12 @@ Now let’s change the yaml in different GIT repositories to fit with your Tenan
 
   ![](./images/image141.png " ")
 
-6. Now it is time to manually launch the build process….but before we have to do a couple of things:
+6. Now it is time to manually launch the build process, but before we have to do a couple of things:
 
     - Create the application for the Fn function in OCI
-    - Create a policy so that the Fn fuction Managed Service(FaaS) can manage all the resources in the tenancy
+    - Create a policy so that the Fn function Managed Service(FaaS) can manage all the resources in the tenancy
 
-7. Let’s start creating the application for the Fn function in OCI. Go back to OCI Dashboard console and go to: Developer Services -\> Functions:
+7. Let’s start creating the application for the Fn function in OCI. Go back to OCI Dashboard console and go to: **Developer Services \> Functions**:
 
   ![](./images/image142.png " ")
 
@@ -239,47 +238,49 @@ Now let’s change the yaml in different GIT repositories to fit with your Tenan
 
   ![](./images/image143.png " ")
 
-9. Click in Create Application button:
+9. Click **Create Application**:
 
   ![](./images/image144.png " ")
 
-10. Important Note: So that we don’t have to modify source code, the application name must be: gigis-fn. Also remember to add the three subnets.
+10. Important Note: So that we don’t have to modify source code, the application name must be: `gigis-fn`. Also remember to add the three subnets.
 
   ![](./images/image145.png " ")
 
-11. And click in create
+11. And click **Create**
 
 ## **Step 4**: Create Policy
-1. Now let’s create the policy above mentioned. In OCI Console Menu go to: Identity -\>Policies:
+1. Now let’s create the policy above mentioned. In OCI Console Menu go to: **Identity \> Policies**:
 
   ![](./images/image146.png " ")
 
-2. If not selected yet, select root Compartment in List Scope Area and click in Create Policy Button:
+2. If not selected yet, select root Compartment in List Scope Area and click **Create Policy**:
 
   ![](./images/image147.png " ")
 
-3. Fill in Name: Fn\_Tenancy\_Policy\_Resources add a Description and finally add next Statement:
+3. Fill in Name: `Fn_Tenancy_Policy_Resources` add a Description, this statement below:
 
-  `allow service FaaS to manage all-resources in tenancy`
+  ```
+  <copy>allow service FaaS to manage all-resources in tenancy</copy>
+  ```
 
   ![](./images/image148.png " ")
 
-4. Then click in Create Button.
+4. Click **Create**:
 
   ![](./images/image149.png " ")
 
   A new policy is created.
 
-## **Step 5**: Run Build Process
+## **Step 5**: Run the Build Process
 1. Now let’s run the build process to check if all the changes have been done correctly. Go back to DevCS Dashboard and select Builds menu. There select Pipelines tab:
 
   ![](./images/image150.png " ")
 
-2. Then in gigispizza\_CD pipeline click in Build button so that build process starts:   ![](./images/image151.png " ")
+2. Then in `gigispizza_CD` pipeline click **Build** so that build process starts: ![](./images/image151.png)
 
   ![](./images/image152.png " ")
 
-3. Check parameters are correct and click in Build Now button. Shortly afterwards The build process will start and you will have to wait for executor to start(an executor is one of the VM build servers that you previously configured):
+3. Check parameters are correct and click **Build Now**. Shortly afterwards The build process will start and you will have to wait for executor to start (an executor is one of the VM build servers that you previously configured):
 
   ![](./images/image153.png " ")
 
@@ -291,9 +292,9 @@ Now let’s change the yaml in different GIT repositories to fit with your Tenan
 
   ![](./images/image155.png " ")
 
-  Note: If not successful, Click in View Recent Build History and check what Job failed.
+  Note: If not successful, Click **View Recent Build History** and check what Job failed.
 
-6. Now let’s launch the second pipeline named gigispizza\_front in the same way, check parameters in popup window and click in Build now button:
+6. Now let’s launch the second pipeline named `gigispizza_front` in the same way, check parameters in popup window and click **Build now**:
 
   ![](./images/image156.png " ")
 
@@ -301,8 +302,8 @@ Now let’s change the yaml in different GIT repositories to fit with your Tenan
 
   ![](./images/image157.png " ")
 
-8. Finally go back to jobs tab, select the one named fn\_discount\_to\_FaaS\_CK and manually launch the build process for the
-Fn Function service by clicking in Build Now button:
+8. Finally go back to jobs tab, select the one named `fn_discount_to_FaaS_CK` and manually launch the build process for the
+Fn Function service by clicking **Build Now**:
 
   ![](./images/image158.png " ")
 
