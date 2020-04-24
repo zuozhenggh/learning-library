@@ -8,17 +8,6 @@
 
 In this lab you will explore the provided sample data sets and learn more about the choices of database services that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing ATP) instance.
 
-Autonomous databases provide three database services that you can choose when connecting to your database. These are named as HIGH, MEDIUM, and LOW services and provide different levels of performance and concurrency.
-<blockquote>
-The <strong>HIGH</strong> database service provides the maximum amount of CPU resources for a query; however this also means the number of concurrent queries you can run in this service will not be as much as the other services. The number of concurrent SQL statements that can be run in this service is 3; this number is independent of the number of CPUs in your database.
-<br><br>
-The <strong>MEDIUM</strong> database service provides multiple compute and IO resources for a query. This service provides more concurrency compared to the HIGH database service. The number of concurrent SQL statements that can be run in this service depends on the number of CPUs in your database, and scales linearly with the number of CPUs.
-<br><br>
-The <strong>LOW</strong> database service provides the least amount of resources for a query. You can run any number of concurrent queries in this service.
-<br>
-</blockquote>
-As a user you need to pick the database service based on your performance and concurrency requirements.
-
 This lab uses SQL Developer Web, which currently connects only with the LOW database service level. For performance or for a higher degree of parallelism, you can use Oracle SQL Developer, as described in another lab in this series.
 
 This lab will demo queries on sample data sets provided out of the box with ADW. ADW provides the Oracle Sales History sample schema and the Star Schema Benchmark (SSB) data set; these data sets are in the SH and SSB schemas, respectively.
