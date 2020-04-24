@@ -13,10 +13,13 @@ The following demo will walk you through the service console and show you a runn
 
 <a href="https://www.youtube.com/watch?v=Imxl2JiYicQ&autoplay=0&html5=1">ADW Service Console and Monitoring video</a>
 
+## Want to Learn More?
+
+Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/manage-service.html#GUID-759EFFFA-9FAC-4439-B47F-281E470E01DE) for documentation on managing and monitoring an autonomous database.
 
 ## Acknowledgements
 
 - **Author** - Richard Green, DB Docs Team
 - **Last Updated By/Date** - Richard Green, DB Docs Team, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
