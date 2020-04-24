@@ -12,7 +12,5 @@ Welcome to the Oracle Machine Learning (OML) with Autonomous Database Workshop. 
 ***To log issues***, click here to go to the [issue](https://github.com/oracle/learning-library/issues/new) submission form.
 
 ## Access the Workshop Using Our Web Interface
-
-# Access the Labs Using Our Web Interface
 **Click the image to use our easy to navigate HTML format:**
-[![Oracle Machine Learning](images/adboml.png " ")](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml)
+[![Oracle Machine Learning](images/adboml.png " ")](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml/workshop)
