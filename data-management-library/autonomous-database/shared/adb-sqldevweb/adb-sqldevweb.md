@@ -6,18 +6,7 @@
 
 ## Introduction
 
-In this lab you will explore the provided sample data sets and learn more about the choices of database services that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing ATP) instance.
-
-Autonomous databases provide three database services that you can choose when connecting to your database. These are named as HIGH, MEDIUM, and LOW services and provide different levels of performance and concurrency.
-<blockquote>
-The <strong>HIGH</strong> database service provides the maximum amount of CPU resources for a query; however this also means the number of concurrent queries you can run in this service will not be as much as the other services. The number of concurrent SQL statements that can be run in this service is 3; this number is independent of the number of CPUs in your database.
-<br><br>
-The <strong>MEDIUM</strong> database service provides multiple compute and IO resources for a query. This service provides more concurrency compared to the HIGH database service. The number of concurrent SQL statements that can be run in this service depends on the number of CPUs in your database, and scales linearly with the number of CPUs.
-<br><br>
-The <strong>LOW</strong> database service provides the least amount of resources for a query. You can run any number of concurrent queries in this service.
-<br>
-</blockquote>
-As a user you need to pick the database service based on your performance and concurrency requirements.
+In this lab you will explore the provided sample data sets that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing ATP) instance.
 
 This lab uses SQL Developer Web, which currently connects only with the LOW database service level. For performance or for a higher degree of parallelism, you can use Oracle SQL Developer, as described in another lab in this series.
 
@@ -30,7 +19,6 @@ You will run a basic query on the SSB data set which is a 1TB data set with one 
 
 ### Objectives
 - Learn how to connect to your new Autonomous Database using SQL Developer Web
-- Learn about the different levels of an autonomous database service (HIGH, MEDIUM, LOW)
 - Learn about the Star Schema Benchmark (SSB) and Sales History (SH) sample data sets
 - Run a query on an ADW sample dataset
 
