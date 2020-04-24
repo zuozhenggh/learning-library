@@ -6,7 +6,7 @@
 
 ## Introduction
 
-In this lab you will explore the provided sample data sets and learn more about the choices of database services that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing ATP) instance.
+In this lab you will explore the provided sample data sets that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing ATP) instance.
 
 This lab uses SQL Developer Web, which currently connects only with the LOW database service level. For performance or for a higher degree of parallelism, you can use Oracle SQL Developer, as described in another lab in this series.
 
@@ -19,7 +19,6 @@ You will run a basic query on the SSB data set which is a 1TB data set with one 
 
 ### Objectives
 - Learn how to connect to your new Autonomous Database using SQL Developer Web
-- Learn about the different levels of an autonomous database service (HIGH, MEDIUM, LOW)
 - Learn about the Star Schema Benchmark (SSB) and Sales History (SH) sample data sets
 - Run a query on an ADW sample dataset
 
