@@ -55,6 +55,9 @@ In this lab you will scale up your Oracle Autonomous Data Warehouse (ADW) or Aut
 
 4. ADW allows you to dynamically scale your service online when you require more concurrency and performance.
 
+## Want to Learn More?
+
+Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-add-resources.html#GUID-DA72422A-5A70-42FA-A363-AB269600D4B0) for documentation on enabling auto-scaling.
 
 ## Acknowledgements
 
@@ -62,4 +65,4 @@ In this lab you will scale up your Oracle Autonomous Data Warehouse (ADW) or Aut
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
