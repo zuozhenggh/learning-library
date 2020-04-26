@@ -18,7 +18,7 @@ In this lab, you will create a skill that can be used by customers to interact w
 * Define intents, utterances, entities.
 * Design a conversation flow.
 * Validate, debug and test your skill.
-* Integrate your the skill with your WebApp/Mobile App
+* Integrate the skill with your WebApp/Mobile App
 
 **Intended Audience**
 
@@ -920,8 +920,8 @@ For information on setting up a web channel on Digital Assistant 19.4.1, see [Ex
 As part of this exercise, you will be provided with the following assets:
 
 * [index.html](../files/index.html) (Click **Save As** and save it locally)
-* [style.css](../files/style.css)
-* [scripts.zip](../files/scripts.zip)
+* [style.css](../files/style.css) (Click **Save As** and save it locally)
+* [scripts.zip](../files/scripts.zip) (Click **Save As** and save it locally)
 
 
 
@@ -1045,7 +1045,11 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
 
 **Congratulations!**
 
-You have created your first skill, learned key aspects of defining intents, defining entities, designing the conversation flow, and have integrate the skill with your Visual Builder Project.
+You have created your first skill that can be used by customers to interact with Mama Maggy stores, including ordering pizzas and canceling orders. As part of this process, you have completed the following tasks:
+* Define intents, utterances, entities.
+* Design a conversation flow.
+* Validate, debug and test your skill.
+* Integrate the skill with your WebApp/Mobile App
 
 *****************************
 
