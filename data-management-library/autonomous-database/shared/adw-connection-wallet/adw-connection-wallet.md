@@ -97,10 +97,14 @@ The SH schema provides a small data set you can use to run the sample queries in
     ````
     ![](./images/sh-query-results.jpg " ")
 
+## Want to Learn More?
+
+Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-data-warehouse.html#GUID-94719269-9218-4FAF-870E-6F0783E209FD) for documentation on other methods for connecting securely to an autonomous database in Autonomous Data Warehouse.
+
 ## Acknowledgements
 
 - **Author** - Richard Green, DB Docs Team
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

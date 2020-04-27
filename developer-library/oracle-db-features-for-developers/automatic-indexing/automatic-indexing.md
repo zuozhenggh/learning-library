@@ -36,6 +36,11 @@ Automatic indexing improves database performance by managing indexes automatical
 
 This Lab will use the Sales History (SH) sample schema. 
 
+0. Login to the instance using ssh
+
+    ````
+    ssh -i yourkeyname opc@ your ip address
+    ````
 1. Use SQLPlus to connect to the PDB01 Pluggable database as SYS
 
   ```
