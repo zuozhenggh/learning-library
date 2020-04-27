@@ -71,28 +71,27 @@ In our exercise we will BEGIN to address the needs of the managers/franchisees b
 
 In the interest of time this exercise focuses on creating apps to help managers/franchisees to self-serve information they currently rely on headquarters for. Future work will be necessary to automate the creation and update of orders and/or the other information.
 
-The exercise is presented in six parts:
+The exercise is presented in five parts:
 
 * Exercise 1 – Introduction and Setup
 * Exercise 2 - Spreadsheet-based Business Objects
-* Exercise 3 - Create Service Connection from Endpoint
-* Exercise 4 - Build Mama Maggy Data Application
-* Exercise 5 – Web and Mobile Apps
-* Exercise 6 – Data from Service
+* Exercise 3 - Build Mama Maggy Data Application
+* Exercise 4 – Web and Mobile Apps
+* Exercise 5 – Data from Service
 
 There are two additional **extra** exercises available for anyone who happens to finish early. No prior experience with Visual Builder is assumed or necessary.
 
 The Extra labs are: 
 
-- Extra Lab 7: Add Data Using REST Call *(Estimated Time - 10 Min)*
-- Extra Lab 8: Review and edit JavaScript code under the covers of VBCS *(Estimated Time - 10 Min)*
+- Extra Lab 6: Add Data Using REST Call *(Estimated Time - 10 Min)*
+- Extra Lab 7: Review and edit JavaScript code under the covers of VBCS *(Estimated Time - 10 Min)*
 
 
 **Getting Started**
 
 Before starting these exercises, you should have an OCI login and access VBCS instance.
 
-You will need to download the data files, all the files are available in a single .zip file named [vbcsfiles.zip](files/vbcsfiles.zip); download the file and expand it to find the following files (keep them handy they will be used later in this exercise):
+You will need to download the data files, all the files are available in a single .zip file named [vbcsfiles.zip](..files/vbcsfiles.zip); download the file and expand it to find the following files (keep them handy they will be used later in this exercise):
 <br>
 
 * Exercise 2 (Data for VBCS Business Objects)
@@ -188,7 +187,7 @@ To build the solutions for Mama Maggy's managers/franchisees, data is required, 
 
 Visual Builder provides two main methods to access data: built-in business objects, and service connections. VBCS business objects store data in tables like a database. This exercise focuses on creating and using built-in business objects with data supplied via spreadsheet (.csv/.xlsx) files. These files get copied into an Oracle Database (under the covers of VBCS) and are actually accessed using the same type of RESTful APIs as those used for service connections (more on this in exercise 5).
 
-NOTE: For this exercise you will need three data files (Product.csv, ProductOrder.csv, and ProductOrderLine.csv), if you have not already downloaded them they may be obtained from GitHub as a .zip file named [vbcsfiles.zip](files/vbcsfiles.zip); download the file and expand it to find the following three files (keep them handy they will be used later in this exercise):
+NOTE: For this exercise you will need three data files (Product.csv, ProductOrder.csv, and ProductOrderLine.csv), if you have not already downloaded them they may be obtained from GitHub as a .zip file named [vbcsfiles.zip](../files/vbcsfiles.zip); download the file and expand it to find the following three files (keep them handy they will be used later in this exercise):
 
 | File                 | Description                                                  |
 |----------------------|--------------------------------------------------------------|
@@ -307,7 +306,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
     ![](./media/image37.png)
 
 
-17. Use the **drop down** on the right side of the screen to select **Product Order** and check to make sure that **Product Order** is on the **One** side and **ProductOrderLine** is on the **Many** side of the relationship. Click **Create Relationship** (default values are ok).
+17. Use the **drop down** on the right side of the screen to select **Product Order** and check to make sure that **Product Order** is on the **One** side and **ProductOrderLine** is on the **Many** side of the relationship. Click **Create Relationship** once you are done.
 
     ![](./media/vbcs_productorderlinerel.png)
 
@@ -316,7 +315,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
 
     ![](./media/vbcs_onerel.png)
 
-15. Using the drop-down on the right side of the screen select the **Product** and make sure that **Product Order Line** is on the **Many** side and that **Product** is on the **One** side of the relationship. Click **Create Relationship** when done (defaults are ok).
+19. Using the drop-down on the right side of the screen select the **Product** and make sure that **Product Order Line** is on the **Many** side and that **Product** is on the **One** side of the relationship. Click **Create Relationship** when done (defaults are ok).
 
     ![](./media/vbcs_productorderproductrel.png)
     
@@ -324,100 +323,100 @@ The **Product Order Line** Business Object will contain specifics about each ite
     
     ![](./media/vbcs_two_rel.png)
 
-16. Return to the **Fields** tab; the two relationships are now listed as fields with a **reference** icon ![](./media/image42.png) indicating the relationship is established. Select the last row, **Product** as shown in next screenshot and click **+ New Field** icon ![](./media/vbcs_plus_new_field_small.png) to continue (VBCS adds new fields below the currently selected field).
+20. Return to the **Fields** tab; the two relationships are now listed as fields with a **reference** icon ![](./media/image42.png) indicating the relationship is established. Select the last row, **Product** as shown in next screenshot and click **+ New Field** icon ![](./media/vbcs_plus_new_field_small.png) to continue (VBCS adds new fields below the currently selected field).
 
     ![](./media/image43.png)
 
-17. Next, you will add two fields in the usual manner. Add **Unit Price** and **Quantity** as numeric fields.
+21. Next, you will add two fields in the usual manner. Add **Unit Price** and **Quantity** as numeric fields.
 
     ![](./media/2.17.1.png)
 
     ![](./media/2.17.2.png)
 
-18. The completed field list should look like this:
+22. The completed field list should look like this:
     
     ![](./media/image46.png)
 
-19. Examine the **Endpoints** created by VBCS for each of the Business Objects you defined; these are the RESTful APIs that allow your applications (and others) to access the Business Object; Get (read), Post (create), Patch (update), Delete (delete) – we will use at least two of these in the next lab.
+23. Examine the **Endpoints** created by VBCS for each of the Business Objects you defined; these are the RESTful APIs that allow your applications (and others) to access the Business Object; Get (read), Post (create), Patch (update), Delete (delete) – we will use at least two of these in the next lab.
 
     ![](./media/2.19.1.png)
 
-20. It will be useful for testing purposes to have some data in the **Product** Business Object. VBCS provides a way to load single rows/records manually as shown below. (Later you will add many rows/records from an input **csv** file).
+24. It will be useful for testing purposes to have some data in the **Product** Business Object. VBCS provides a way to load single rows/records manually as shown below. (Later you will add many rows/records from an input **csv** file).
 
     Reopen the **Product** Business Object (from the Business Objects list); click on the **Data** tab and then click **+ Add Row** to add a row of data
 
     ![](./media/image48.png)
 
-21. Provide the following values for the new row:
+25. Provide the following values for the new row:
 
-    - Product Name MOZZARELLA
-    - Product Description Mozzarella cheese
-    - Unit Price 7
+    - Product Name: MOZZARELLA
+    - Product Description: Mozzarella cheese
+    - Unit Price: 7
 
     (click the **Add Row** when done)
     
      ![](./media/2.21.1.png)
 
     
-22. Add rows for DOUGH:
+26. Add rows for DOUGH:
 
-    - Product Name DOUGH
-    - Product Description Dough
-    - Unit Price 11
+    - Product Name: DOUGH
+    - Product Description: Dough
+    - Unit Price: 11
 
     ![](./media/2.21.2.png)
 
 
-23. Add rows for PIZZA\_SAUCE:
+27. Add rows for PIZZA\_SAUCE:
 
-    - Product Name PIZZA\_SAUCE
-    - Product Description Pizza Sauce
-    - Unit Price 6
+    - Product Name: PIZZA\_SAUCE
+    - Product Description: Pizza Sauce
+    - Unit Price: 6
     
     ![](./media/2.23.1.png)
 
 
-24. Review the rows
+28. Review the rows
 
     ![](./media/image52.png)
 
 
-25. To load more rows from a .csv file; click on the **Product** Business Object’s hamburger menu ![](./media/image16.png) and choose **Data Manager**
+29. To load more rows from a .csv file; click on the **Product** Business Object’s hamburger menu ![](./media/image16.png) and choose **Data Manager**
 
     ![](./media/2.25.1.png)  
 
 
-26. Choose **Import from File**
+30. Choose **Import from File**
 
     ![](./media/image54.png)
 
 
-27. Click on **Upload** a file or drag it here
+31. Click on **Upload** a file or drag it here
     
     ![](./media/image55.png)
 
 
-28. Select the **Product.csv** file provided
+32. Select the **Product.csv** file provided
     
     ![](./media/image56.png)
 
 
-29. Click the **Import** button to upload the selected file
+33. Click the **Import** button to upload the selected file
     
     ![](./media/image57.png)
 
 
-30. You should see success message like the following; if not, try again or ask the instructor for help; click **OK** button when complete
+34. You should see success message like the following; if not, try again or ask the instructor for help; click **OK** button when complete
     
     ![](./media/image58.png)
 
 
-31. Review the **Product** business object data to see the results of the load. 
+35. Review the **Product** business object data to see the results of the load. 
     
     ![](./media/image59.png)
 
 
-32. Create an initial **Product Order** (`Product Order -> Data -> + Add Row`) as follows, then review your results  
+36. Create an initial **Product Order** (`Product Order -> Data -> + Add Row`) as follows, then review your results  
 ![](./media/2.32.1.png)
 
 
@@ -426,7 +425,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
     ![](./media/2.33.1.png)
 
 
-34. Now, using the technique illustrated above, import data to the Product Order and Product Order Line business objects in that order, (note: file names same as business object names) using the provided data files
+34. Now, using the technique illustrated above, import data to the **Product Order** and **Product Order Line** business objects in that order, (note: file names same as business object names) using the provided data files
 
     - Product Order - ProductOrder.csv
 
@@ -446,87 +445,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
 **This concludes exercise 2.**
 
 
-### Exercise 3: Create Service Connection from Endpoint
-
-1.  Click the **+ Service Connection** button
-    
-    ![](./media/image_1.png)
- 
- 
-2. If you are presented with a list of one or more existing connection click the plus **+** sign at the top of the list to the right of the word **Services**
-    
-    ![](./media/app_a_2.1.png)
- 
-
-3.  The **Create Connection** wizard starts by asking for the source of the connection; for this exercise we will choose **Define by Endpoint** for the connections created. Please click **Define by Endpoint** to continue
-
-    ![](./media/app_a_3.1.png)
- 
-
-4. The wizard will then ask for specifics about the endpoint
-
-   ![](./media/app_a_4.1.png)
-
-
- 1. Provide the **Method** (GET), **URL** (from course specifications), and **Action Hint** (Get Many) then click **Next** to continue. This connection will return all rows from the **Associate** data source
-
-    ![](./media/app_a_5.1.png)
- 
-5. Provide a name for the connection (**mmassociate** in the example)
-    
-    ![](./media/app_a_6.1.png)
- 
-6.  Test the connection by selecting the **Test** tab, filling in any necessary parameters, and clicking **Send** to make a request
-![](./media/app_a_7.1.png)
- 
- 
-8. When the service responds, look for a response status **200** (everything ok) and check the results
-
-    ![](./media/app_a_8.1.png)
- 
-9. If the response looks good to you click the **Save as Example Response** so that Visual Builder will map out the response details as part of the connection
-
-    ![](./media/app_a_9.1.png)
- 
- 
-10. Click the **Create** button to finish the process of building the service connection.
- 
-
-11. Create the next connection to select a single **Associate** row 
-
-    ![](./media/app_a_11.1.png)
- 
- 12. Enter the parameter **{id}** value in the path (or whatever the key field is named) and provide a name for the connection (**mmassociateget** in the example)
-    
-     ![](./media/app_a_12.1.png)
- 
-
-13.  Test the connection; be sure to specify a valid id for the test. Notice that the parameters are surrounded by curly-style braces **{id}** in the path and that a place is automatically provided to enter a test value
-
-     ![](./media/app_a_13.1.png)
-  
-
-14. Check the response status and values, then click **Save as Example Response** and the **Create** button to finish things up. You have now created and tested two connections.
-
-     ![](./media/app_a_14.1.png)
- 
-
-15.  Repeat the steps above to create two more connections
-  - Mama Maggy Store – **get all** (maybe **mmstoregetall**)
-  - Mama Maggy Store – **get single using {id}**. (maybe **mmstoreget**)
-Be sure to test your connections. Please ask the instructor if you need assistance
-
-
-*****************************
-
-**Congratulations!** You have created four service connections that we will use later in the labs.
-
-*****************************
-
-**This concludes exercise 3.**
-
-
-### Exercise 4: Build Mama Maggy Data Application
+### Exercise 3: Build Mama Maggy Data Application
 
 This exercise shows how the **Mama Maggy** application was created to serve as a data source for the Application Development exercises.
 
@@ -580,7 +499,7 @@ In this exercise you will create:
     ![](./media/image_c_18.png)
  
 
-11. Add Fields to the Store object as follows (please create them as shown to match the .csv data):
+11. Add the following fields as required to the Store object (please create them as shown to match the .csv data):
     
     - Name
     - Address
@@ -595,7 +514,7 @@ In this exercise you will create:
 
 
 13. Add fields as follows:
-     - From the **Fields** tab, click **+ New Field** and add **Name**
+     - From the **Fields** tab, click **+ New Field** and add **Name** as required
      - Define the **Store** relationship:
        1.  Switch to the **Overview** tab
        2.  Click **Relationships +**
@@ -603,8 +522,8 @@ In this exercise you will create:
        4.  Make sure the relationship is one **Store** to many **Associate**
        5.  On the **Display Field** select **Id**
        6.  Click **Create Relationship** when finished
-     - From the **Fields** tab, click **+ New Field** and add **Hire Date** (date field)
-     - From the **Fields** tab, click **+ New Field** and add **Email** (email field)
+     - From the **Fields** tab, click **+ New Field** and add **Hire Date** as required (date field)
+     - From the **Fields** tab, click **+ New Field** and add **Email** as required (email field)
     
     ![](./media/image_c_20.png)
  
@@ -695,20 +614,22 @@ In this exercise you will create:
      This is the address needed to access **Store** data
 
 
-32. Select the **Associate** business object and once again display the **Endpoints** tab. Copy the value from the **Metadata** column **Live** row using the **clipboard** icon ![](./media/image_c_38.png). Paste the resulting string into a text file in your local environment to share with applications wanting to use the data
+31. Select the **Associate** business object and once again display the **Endpoints** tab. Copy the value from the **Metadata** column **Live** row using the **clipboard** icon ![](./media/image_c_38.png). Paste the resulting string into a text file in your local environment to share with applications wanting to use the data
 
     ![](./media/image_c_40.png)
     
     This is the address needed to access **Associate** data
 
+*Note: Keep these endpoints information in a notepad. We will use it as part of another exercise.*
+
 
 *****************************
 
-**Congratulations!** you’ve created an application with business objects that may be accessed using REST APIs like those used in exercise 6.
+**Congratulations!** you’ve created an application with business objects that may be accessed using REST APIs like those used in exercise 5.
 
 *****************************
 
-**This concludes exercise 4.**
+**This concludes exercise 3.**
 
 
 <br>
@@ -717,10 +638,10 @@ In this exercise you will create:
 
 **Introduction**
 
-In exercise 5 you will create web and mobile applications so that Mama Maggy managers and franchisees may see what products are available for order and to track the status of orders once they are made.
-In exercise 5 you will add useful information to your application using RESTful API calls rather than Business Objects.
+In exercise 4 you will create web and mobile applications so that Mama Maggy managers and franchisees may see what products are available for order and to track the status of orders once they are made.
+In exercise 4 you will add useful information to your application using RESTful API calls rather than Business Objects.
 
-Exercise 5 has three sections:
+Exercise 4 has three sections:
 
   - Section 1 – [Create First Web Application](#exercise-3-section-1--create-first-web-application)
 
@@ -730,7 +651,7 @@ Exercise 5 has three sections:
 
 <br>
 
-### Exercise 5 - Section 1 – Create Web Application
+### Exercise 4 - Section 1 – Create Web Application
 
 In the last exercise you created three business objects and added data to them; now you will create a web application to work with them
 
@@ -930,7 +851,7 @@ You've also made a day in the life of a Mama Maggy manager/franchisee easier sin
 
 <br>
 
-### Exercise 5 - Section 2 – Create Master Detail Application
+### Exercise 4 - Section 2 – Create Master Detail Application
 
 In this section you will create a set of screens to represent product orders. Here’s what the data model looks like.
 
@@ -1070,7 +991,7 @@ You’re now ready to create your first Mobile application with Visual Builder
 
 <br>
 
-### Exercise 5 - Section 3 – Create Mobile Application
+### Exercise 4 - Section 3 – Create Mobile Application
 
 Mama Maggy's managers/franchisees want to be able to check product order status anytime, not just when they are in their offices. So, in this exercise you will create a mobile application allowing them to check order status from their phone or other mobile devices.
 
@@ -1199,12 +1120,12 @@ You have made the daily lives of Mama Maggy managers/franchisees easier.
 Instead of calling headquarters to check the status of their product orders they can now use your mobile app when and where it is convenient.
 *****************************
 
-**This concludes exercise 5.**
+**This concludes exercise 4.**
 
 
 <br>
 
-### Exercise 6: Accessing external data using VBCS service connection features
+### Exercise 5: Accessing external data using VBCS service connection features
 
 **Introduction**
 
@@ -1226,17 +1147,10 @@ You will need two service connections (Rest services) to access data for:
 
    You will use these **Service Connections** later in the lab to provide data to your applications. 
    
-   If your environment does not have access to the Mama Maggy APIs; use the instructions in [Appendix B: Build Mama Maggy Data Application](#appendix-b-build-mama-maggy-data-application) to create them.
+   If your environment does not have access to the Mama Maggy APIs; use the instructions in [Exercise 3: Build Mama Maggy Data Application](#exercise-3-build-mama-maggy-data-application) to create them.
 
 
-*******************************************************************
-
-**NOTE:**
-
-Exercise 6 assumes access to modern APIs that provide an industry-standard manifest; if only old-style endpoints are available use the instructions in [Appendix A: Create Service Connection from Endpoint](#appendix-a-create-service-connection-from-endpoint) instead of the instructions in this exercise to access the APIs.
-*******************************************************************
-
-**Begin Exercise 6**
+**Begin Exercise 5**
 
 In this exercise you will create new VBCS Web applications to display a list of Mama Maggy stores and the Associates who work in them. This will make it easier for a Mama Maggy manager/franchisee to collaborate with other. 
 
@@ -1246,7 +1160,7 @@ The data used to create these apps will come from **Service Connections** that y
 
     On the left-hand side of the Visual Builder interface is a navigator listing several options; choose **Service Connections** ![](./media/image146.png) to get started.
 
-    If you have not yet created any **Service Connections** click the ** + Service Connection** button
+    If you have not yet created any **Service Connections** click the **+ Service Connection** button
 
     ![](./media/4.3.1.png)
  
@@ -1256,7 +1170,7 @@ The data used to create these apps will come from **Service Connections** that y
     ![](./media/4.3.2.png)
  
 
-2.  The **Create Connection** wizard starts by asking for the source of the connection; for this exercise we will choose **Define by Specification** for the connections created. Please click **Define by Specification** to continue. (if you only have an **endpoint** see [Appendix A: Create Service Connection from Endpoint](#appendix-a-create-service-connection-from-endpoint) for an example of **Define by Endpoint**)
+2.  The **Create Connection** wizard starts by asking for the source of the connection; for this exercise we will choose **Define by Specification** for the connections created. Please click **Define by Specification** to continue. 
 
     ![](./media/image149.png)
  
@@ -1265,7 +1179,7 @@ The data used to create these apps will come from **Service Connections** that y
 
     - Choose **ADF Describe** from the API Type pulldown
     - Choose **Web Address** as the Service Specification
-    - Paste the **Associate** connection URL created during **Appendix B** into the space provided
+    - Paste the **Associate** connection URL created during **Exercise 3 - Step 30** into the space provided
     - Name the Service Id **mmassociates**
     - Choose **Oracle Cloud Account** from the Authentication pulldown
     - Select Dynamic, the service supports CORS in Connection Type
@@ -1281,7 +1195,7 @@ The data used to create these apps will come from **Service Connections** that y
     ![](./media/4.5.2.png)
  
 
-5. Next, open the service for testing: select the connection, choose the **Endpoints** tab, find, select and click the desired endpoint (highlighted below)
+5. Next, open the service for testing: select the connection, choose the  **Endpoints** tab, find and click over the **getall_associate** endpoint as shown in the screen 
     
     ![](./media/4.6.1.png)
  
@@ -1313,7 +1227,7 @@ The data used to create these apps will come from **Service Connections** that y
     ![](./media/4.9.1.png)  
   
  
-11. 	You now have created a connection and tested two endpoints
+11. You now have created a connection and tested two endpoints
 
     ![](./media/4.9.2.png)
 
@@ -1336,7 +1250,7 @@ The data used to create these apps will come from **Service Connections** that y
     
         ![](./media/4.10.4.png)
     
-    - Test the last endpoint **get_Store** with store_id as value 2
+    - Test the last endpoint **get_Store** with **store_id** as value 2
     
         ![](./media/4.10.5.png)
     
@@ -1427,7 +1341,7 @@ The data used to create these apps will come from **Service Connections** that y
 ![](./media/image173.png)
  
 
-32. **STOP** on step (3) **Define Query** so that you can connect the Associates to the Store listed on the page. Under **Define Query** expand **{} filterCriterion -\> \[\] criteria -\> {} item\[0\].
+32. **STOP** on step (3) **Define Query** so that you can connect the Associates to the Store listed on the page. Under **Define Query** expand **{} filterCriterion -\> \[\] criteria -\> {} item\[0\]**.
 
     ![](./media/image174.png)
  
@@ -1485,9 +1399,9 @@ We hope you have enjoyed Oracle Visual Builder Cloud Service. We encourage you t
 
 *****************************
 
-**This concludes exercise 6.**
+**This concludes exercise 5.**
 
-## Extra Exercise 7: Add Data Using REST Call
+## Extra Exercise 6: Add Data Using REST Call
 
 The **Extra** exercises are intended to **flex** the mind-muscles of those who have finished the other exercises early so, they are short on explanation and there are no example solutions provided.
 
@@ -1501,13 +1415,13 @@ In this exercise you will work more with RESTful API calls
 
 1.  (optional) Try to repeat \#2 and add replace the associate id with associate name in a copy of your mobile application (again, don’t mess up the original).
 
-**This concludes Extra Exercise 7**
+**This concludes Extra Exercise 6**
 
 [**Return to Main Page**](../index.html)
 
 <br>
 
-## Extra Exercise 8: Review and edit JavaScript code under the covers of VBCS
+## Extra Exercise 7: Review and edit JavaScript code under the covers of VBCS
 
 The **Extra** exercise are intended to **flex** the mind-muscles of those who have finished the other exercises early so, they are short on explanation and there are no example solutions provided.
 
@@ -1526,7 +1440,7 @@ For instance:
 **\<h2…\>Order Items\</h2\>** on line 19 above might be changed to
 **\<h4…\>Order Items\</h4\>** to make the heading much smaller
 
-**This concludes Extra Exercise 8**
+**This concludes Extra Exercise 7**
 
 
 [**Return to Main Page**](../index.html)
