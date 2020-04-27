@@ -1,5 +1,5 @@
 
-# Loading Data into an Autonomous Database Instance
+# Upload Files using OCI Object Store
 
 ## Introduction
 
@@ -46,52 +46,6 @@ In Steps 1 to 3, you will create one ADW table, CHANNELS_LOCAL, and load it with
 
 This lab assumes you have completed the [Login to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) and [Provision ADB] (?lab=lab-2-provision-adb) labs seen in the menu on the right.
 
-
-## STEP 1: Download Sample Data and Create Local Table
-
-1. For this step, you will download a .csv file to your local computer, then use it to populate the CHANNELS_LOCAL table that you will create in your ADW database in the next step.  Click <a href="./files/channels.csv" target="\_blank">here</a> to download the sample channels.csv file, saving it to a directory on your local computer.
-
-2. In your autonomous database's details page, click the **Tools** tab. Click **Open SQL Developer Web**.
-
-    ![](./images/open_sql_developer_web.jpg " ")
-
-3. To define the CHANNELS_LOCAL table, click <a href="./files/define_channels_local_table.txt" target="\_blank">here</a> to copy or download the table creation code snippet. Then paste it into the SQL Developer Web worksheet and click the **Run Script** button to run it.
-
-    ![](./images/run_script_create_channels_local_table.jpg " ")
-
-## STEP 2: Load Local Data Using SQL Developer Web
-
-1. In the Navigator, **right-click** your new CHANNELS_LOCAL table. You might need to refresh the Navigator to see the new table. In the menu, select **Data loading → Upload Data...**:
-
-    ![](./images/select_upload_data_from_menu.jpg " ")
-
-2. The Data Import Wizard is started. Perform the following:
-
-    -   Click **Select files** to select the file for data uploading.
-
-    -   Click the browse button and navigate to the channels.csv file that you downloaded in Step 1.
-
-    ![](./images/click_select_files_in_import_data_wizard.jpg " ")    
-
-3. After you select the file, the wizard provides a **Data preview** step. You can click the **Show/Hide options** button to perform actions including skipping rows and limiting rows to upload. Use the horizontal toolbar to check the data.
-
-4. When you are satisfied with the file's data, click **NEXT**.
-
-    ![](./images/data_preview_in_import_data_wizard.jpg " ")
-<!--When newline is fixed ![](./images/snap0014654.jpg " ")-->
-
-  *Note - If your source .csv file has delimiters other than commas between words, or line delimiters other than new-line characters, you will need to use SQL Developer for now, rather than SQL Developer Web.*
-
-5. In Step 2 of the Import Wizard, **Column mapping**, you can change the source-to-target column mappings. For this exercise, leave them as default and click **NEXT**.
-
-    ![](./images/column_mapping_in_import_data_wizard.jpg " ")
-
-6.  The final step of the Import Wizard, **Review**, reflects all of the choices you made in the Wizard. Click **FINISH** to load the data into your newly created table *CHANNELS_LOCAL*. If you don't see it in your object tree under Tables, right click on Tables and hit refresh.
-    ![](./images/review_step_in_import_data_wizard.jpg " ")
-
-7. Click **OK** to confirm the import. Depending on the size of the data file you are importing, the import may take some time.
-
-    ![](./images/click_ok_to_confirm_import.jpg " ")
 
 ## STEP 3: Download Sample Data and Create Target Tables
 
@@ -210,60 +164,6 @@ In order to access data in the Object Store you have to enable your database use
 
 4.  Now you are ready to load data from the Object Store.
 
-## STEP 9: Loading Data from the Object Store Using the PL/SQL Package, DBMS_CLOUD
-
-As an alternative to the wizard-guided data load, you can use the PL/SQL package **DBMS_CLOUD** directly. This is the preferred choice for any load automation.
-
-1. Connected as your user in SQL Developer Web, copy and paste <a href="./files/load_data_without_base_url.txt" target="\_blank">this code snippet</a> to a SQL Developer Web  worksheet. This script uses the **copy\_data** procedure of the **DBMS\_CLOUD** package to copy the data in the source files to the target tables you created before.
-
-<!--   At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable. You have copied and saved this URL in the step "Copy the URLs of the Files on Your OCI Object Storage" above. -->
-
-2. For each **file\_uri\_list** statement, specify the Object Store base URL that you copied and saved in the step "Copy the URLs of the Files on Your OCI Object Storage" above.
-
-    **Note:** In SQL Developer Web, you will soon be able to define the Object Store base URL once, to use as a variable in file\_uri\_list statements. This capability is already supported in the full Oracle SQL Developer client tool.
-
-3. For the **credential_name** parameter in the **copy\_data** procedure, it is the name of the credential you defined in the step "Create a Database Credential for Your User" above.  You can use that credential.
-
-4. For the **format** parameter, it is a list of DBMS_CLOUD options (you can read more about these options <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/dbmscloud-reference.html">here</a>).
-
-5. Run the script.
-
-    ![](./images/run_data_loading_script_in_sql_dev_web_without_base_url.jpg " ")
-
-6. You have successfully loaded the sample tables. You can now run any sample query in the <a href="https://docs.oracle.com/database/122/DWHSG/part-relational-analytics.htm#DWHSG8493" target="\_blank">relational analytics</a> section of the Oracle documentation. For example, to analyze the cumulative amount sold for specific customer IDs in quarter 2000, you could run the query in <a href="./files/query_tables.txt" target="\_blank">this code snippet</a>.   <a href="https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dwhsg/introduction-data-warehouse-concepts.html#GUID-452FBA23-6976-4590-AA41-1369647AD14D" target="\_blank">Click Here</a> to read more about Data Warehousing.
-
-    ![](./images/query_results_after_loading_in_sql_dev_web.jpg " ")
-
-## STEP 10: Troubleshooting DBMS_CLOUD data loads
-
-1. Connected as your user in SQL Developer Web, run the following query to look at past and current data loads.
-    ```
-    $ <copy>select * from user_load_operations;
-    line 2
-    line 3
-    line x
-    </copy>
-    ```
-    *Notice how this table lists the past and current load operations in your schema.  Any data copy and data validation operation will have backed up records in your Cloud.*
-
-2. For an example of how to troubleshoot a data load, we will attempt to load a data file with the wrong format (chan_v3_error.dat).  Specifically, the default separator is the | character, but the channels_error.csv file uses a semicolon instead.  To attempt to load bad data, copy and paste <a href="./files/load_data_with_errors.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet and run the script as your user in SQL Developer Web. Specify the URL that points to the **chan\_v3\_error.dat** file. You have copied and saved the URL in the step "Copy the URLs of the Files on Your OCI Object Storage" above. Expect to see "reject limit" errors when loading your data this time.
-
-    ![](images/query_results_after_loading_in_sql_dev_web.jpg " ")
-
-3. Run the following query to see the load that errored out.
-    ```
-    select * from user_load_operations where status='FAILED';
-    ```
-
-    ![](./images/bad_file_table_in_sql_dev_web.jpg " ")
-
-    A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The logfile\_table column shows the name of the table you can query to look at the log of a load operation. The column badfile_table shows the name of the table you can query to look at the rows that got errors during loading.
-
-4. Query the log and bad tables to see detailed information about an individual load. In this example, the names are copy$25\_log and copy$25\_bad respectively.
-
-    ![](./images/query_log_and_bad_files.jpg " ")    
-
-5.  To learn more about how to specify file formats, delimiters, reject limits, and more, review the <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/dbmscloud-reference.html" target="\_blank"> DBMS_CLOUD Package Format Options </a>
 
 Please proceed to the next lab.
 
