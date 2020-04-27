@@ -95,19 +95,17 @@ You will need to download the data files, all the files are available in a singl
 <br>
 
 * Exercise 2 (Data for VBCS Business Objects)
-  - Product.csv
-  - ProductOrder.csv
-  - ProductOrderLine.csv
+  * Product.csv
+  * ProductOrder.csv
+  * ProductOrderLine.csv
 <br>
 <br>
-* Exercise 4 (Build Mama Maggy Data Application)
-  - Associate.csv
-  - Store.csv
+* Exercise 3 (Build Mama Maggy Data Application)
+  * Associate.csv
+  * Store.csv
 <br>
 <br>
-* Exercise 6 (Links used for VBCS Service Connections)
-  - AppDev_Endpoints.txt (Your instructor will tell you if you need to use this file)
-
+* Exercise 5 (Links used for VBCS Service Connections)
 
 
 *****************************
@@ -181,6 +179,8 @@ In this exercise you will make sure you can access your VBCS instance and naviga
 
 <br>
 
+******
+
 ### Exercise 2: Spreadsheet-based Business Objects
 
 To build the solutions for Mama Maggy's managers/franchisees, data is required, right now that data is stored in several spreadsheets. We need to make that data available inside VBCS so that it may be used in the web and mobile applications created in these exercises.
@@ -196,7 +196,7 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
 | ProductOrderLine.csv | Order lines showing the products requested in each of the current orders, their unit price, and the quantity desired |
 
 
-*************************************************************************************
+******
 
 **Begin Exercise 2**
 
@@ -444,6 +444,7 @@ The **Product Order Line** Business Object will contain specifics about each ite
 
 **This concludes exercise 2.**
 
+******
 
 ### Exercise 3: Build Mama Maggy Data Application
 
@@ -631,6 +632,7 @@ In this exercise you will create:
 
 **This concludes exercise 3.**
 
+******
 
 <br>
 
@@ -1122,8 +1124,8 @@ Instead of calling headquarters to check the status of their product orders they
 
 **This concludes exercise 4.**
 
+******
 
-<br>
 
 ### Exercise 5: Accessing external data using VBCS service connection features
 
@@ -1401,6 +1403,8 @@ We hope you have enjoyed Oracle Visual Builder Cloud Service. We encourage you t
 
 **This concludes exercise 5.**
 
+******
+
 ## Extra Exercise 6: Add Data Using REST Call
 
 The **Extra** exercises are intended to **flex** the mind-muscles of those who have finished the other exercises early so, they are short on explanation and there are no example solutions provided.
@@ -1416,6 +1420,8 @@ In this exercise you will work more with RESTful API calls
 1.  (optional) Try to repeat \#2 and add replace the associate id with associate name in a copy of your mobile application (again, don’t mess up the original).
 
 **This concludes Extra Exercise 6**
+
+******
 
 [**Return to Main Page**](../index.html)
 
@@ -1441,6 +1447,8 @@ For instance:
 **\<h4…\>Order Items\</h4\>** to make the heading much smaller
 
 **This concludes Extra Exercise 7**
+
+******
 
 
 [**Return to Main Page**](../index.html)
