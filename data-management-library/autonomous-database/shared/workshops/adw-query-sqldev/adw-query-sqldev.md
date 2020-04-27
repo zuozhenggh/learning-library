@@ -30,50 +30,7 @@ Click [here](https://www.youtube.com/watch?v=PHQqbUX4T50&autoplay=0&html5=1) to 
 
 ## Step 1: Download the Connection Wallet
 
-As ADW and ATP accept only secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page, or from the ADW or ATP service console.
-1. In your database's instance details page, click **DB Connection**.
-
-    ![](./images/Picture100-34.png " ")
-
-2. Use the Database Connection dialog to download client credentials.
-    - Select a wallet type. For this lab, select **Instance Wallet**. This wallet type is for a single database only; this provides a database-specific wallet.
-    - **Note:** Oracle recommends you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.
-    - Click **Download Wallet**.
-
-    ![](./images/Picture100-15.png " ")
-
-3. Specify a password of your choice for the wallet. You will need this password when connecting to the database via SQL Developer later, and is also used as the JKS keystore password for JDBC applications that use JKS for security. Click **Download** to download the wallet file to your client machine.
-*Note*: If you are prevented from downloading your Connection Wallet, it may be due to your browser's pop-blocker. Please disable it or create an exception for Oracle Cloud domains.
-
-    ![](./images/Picture100-16.png " ")
-
-## Step 2: Connect to the database using SQL Developer
-
-Start SQL Developer and create a connection for your database using the default administrator account 'ADMIN' by following these steps.
-1. Click the **New Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
-
-    ![](./images/snap0014653.jpg " ")
-
-2. Fill in the connection details as below:
-
-    -   **Connection Name:** admin_high
-
-    -   **Username:** admin
-
-    -   **Password:** The password you specified during provisioning your instance
-
-    -   **Connection Type:** Cloud Wallet
-
-    -   **Configuration File:** Enter the full path for the wallet file you downloaded before, or click the **Browse button** to point to the location of the file.
-
-    -   **Service:** There are 3 pre-configured database services for each database. Pick **<*databasename*>\_high** for this lab. For
-        example, if the database you created was named adwfinance, select **adwfinance_high** as the service.
-
-    ![](./images/Picture100-18.jpg " ")
-
-3. Test your connection by clicking the **Test** button, if it succeeds save your connection information by clicking **Save**, then connect to your database by clicking the **Connect** button. An entry for the new connection appears under Connections.
-
-4. If you are behind a VPN or Firewall and this Test fails, make sure you have <a href="https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">SQL Developer 18.3</a> or higher. This version and above will allow you to select the "Use HTTP Proxy Host" option for a Cloud Wallet type connection. While creating your new ADW connection here, provide your proxy's Host and Port. If you are unsure where to find this, you may look at your computer's connection settings or contact your Network Administrator.
+1. Refer to [Configure Connection WAllet](../adw-configure-connection-wallet/adw-configure-connection-wallet.md)
 
 ## Step 3: Querying Your Autonomous Database with SQL Developer
 
