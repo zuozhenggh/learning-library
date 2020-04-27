@@ -14,7 +14,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adb-provision/adb-provision.md"
+            "filename": "./../../adb-provision/adb-provision.md"
         },
         {
             "title": "Lab 3: Connect to ADB with SQL Dev Web and Run Your First Query",
@@ -22,7 +22,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adb-sqldevweb/adb-sqldevweb.md"
+            "filename": "./../../adb-sqldevweb/adb-sqldevweb.md"
         },
         {
             "title": "Lab 4: Load Data into ADB",
@@ -30,7 +30,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adb-loading/adb-loading.md"
+            "filename": "./../../adb-loading/adb-loading.md"
         },
         {
             "title": "Lab 5: Query Data in External Files",
@@ -38,7 +38,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adb-query/adb-query.md"
+            "filename": "./../../adb-query/adb-query.md"
         },
         {
             "title": "Lab 6: Create Rich Data Visualizations",
@@ -46,7 +46,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adw-visualizations/adw-visualizations.md"
+            "filename": "./../../adw-visualizations/adw-visualizations.md"
         },
         {
             "title": "Lab 7: Connect Securely using SQL Developer with a Connection Wallet",
@@ -54,7 +54,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adw-connection-wallet/adw-connection-wallet.md"
+            "filename": "./../../adw-connection-wallet/adw-connection-wallet.md"
         },
         {
             "title": "Lab 8: Manage and Monitor ADB",
@@ -62,7 +62,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adw-managing-monitoring/adw-managing-monitoring.md"
+            "filename": "./../../adw-managing-monitoring/adw-managing-monitoring.md"
         },
         {
             "title": "Lab 9: Scaling and Performance",
@@ -70,7 +70,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adw-scaling-performance/adw-scaling-performance.md"
+            "filename": "./../../adw-scaling-performance/adw-scaling-performance.md"
         },
         {
             "title": "Lab 10: Use OML SQL Notebooks",
@@ -78,7 +78,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adw-oml-notebooks/adw-oml-notebooks.md"
+            "filename": "./../../adw-oml-notebooks/adw-oml-notebooks.md"
         },
         {
             "title": "Lab 11: Introducing Machine Learning Algorithms",
@@ -86,7 +86,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adw-machine-learning/adw-machine-learning.md"
+            "filename": "./../../adw-machine-learning/adw-machine-learning.md"
         }
     ]
 }
