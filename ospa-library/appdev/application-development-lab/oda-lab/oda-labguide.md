@@ -5,7 +5,7 @@
 
 **Before you begin**
 
-This 60-minute hands-on lab is an entry-level exercise for building a skill in Oracle Digital Assistant.
+This 120-minute hands-on lab is an entry-level exercise for building a skill in Oracle Digital Assistant.
 
 **Background**
 
