@@ -131,7 +131,7 @@ You will need to download the data files, all the files are available in a singl
 
 **Introduction**
 
-In this exercise you will make sure you can access a VBCS instance and create your VBCS application.
+In this exercise you will make sure you can access your VBCS instance and navigate the main console.
 
 
 ### Exercise 1: Introduction, setup, and demo
