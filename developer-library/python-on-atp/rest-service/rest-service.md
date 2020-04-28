@@ -108,7 +108,7 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
 12. Next enter command to create entry point.
   ```
   <copy>virtualenv env</copy>
-  ``` 
+  ```
 
   ![](images/6.png " ")
 
