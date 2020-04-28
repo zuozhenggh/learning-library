@@ -14,7 +14,7 @@
 
 [Selecting the Compartment](#selecting-the-compartment)
 
-[Open a Notebook](#open-a-notebook)
+[Opening the Notebook](#opening-the-notebook)
 
 [Working with JupyterLab](#working-with-jupyterlab)
 
@@ -54,7 +54,7 @@ A note for Mac OS users. Use Ctrl+C / Ctrl+V to copy and paste inside the OCI Co
 
 Have fun and enjoy learning about binary classification, exploratory data analysis (EDA), AutoML, model validation and selection, and machine learning explainability (MLX).
 
-## The Data Science Service
+## Data Science Service
 
 * Provides infrastructure and data science tools, such as open source technologies, libraries, and packages for machine learning and artificial intelligence. It also offers Oracle ML products, such as Oracle Labs AutoML and model explanation tools.
 
