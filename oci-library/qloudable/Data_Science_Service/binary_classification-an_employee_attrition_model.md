@@ -6,43 +6,33 @@
 
 [Pre Requisites](#pre-requisites)
 
-[Sign in to OCI Console](#sign-in-to-oci-console)
+[Getting Started](#getting-started)
 
-[Open a notebook](#open-a-notebook)
+[Data Science Service](#data-science-service)
+
+[Sign in to the OCI Console](#sign-in-to-the-oci-console)
+
+[Selecting the Compartment](#selecting-the-compartment)
+
+[Open a Notebook](#open-a-notebook)
 
 [Working with JupyterLab](#working-with-jupyterlab)
 
 [Binary Classification Model](#binary-classification-model)
 
-[Delete the resources](#delete-the-resources)
+[Next Steps](#next-steps)
 
 ## Overview
 
 The Oracle Data Science Service is a fully managed, self-service platform for data science teams to build, train, and manage machine learning (ML) models in Oracle Cloud Infrastructure.
 
-**Some Key points;**
+In this model we will build a binary classification model in an effort to predict employee attrition. Using the Accelerated Data Science (ADS) SDK we will do an exploratory data analysis (EDA) to understand the nature and distribution of the data. We will visualize the data and assess the correlation between predictors. The Oracle AutoML tools will be used to perform and automatically tune Light Gradient Boosting Machine (GBM), XG Boost, Random Forest and Logistic Regression classifiers. These models will be evaluated and compared using ADS's model evaluation tools. Once the best model is selected, we will use the machine learning explainability (MLX) tools to explain the global and local behavior of the model. That is, we will see what features are important in the model using feature permutation importance, partial dependence plots (PDP), individual conditional expectation (ICE) and several other methods used to determine why the model made the prediction that it did. 
 
-**We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%**
-
-
-- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
-
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-**Cloud Tenant Name**
-**User Name**
-**Password**
-**Compartment Name (Provided Later)**
-
-**Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
+**We recommend using Chrome or Edge as the browser. Also set your browser zoom to 80%**
 
 ## Pre-Requisites
+
+This module uses the Data Science Service on Oracle Cloud Infrastructure (OCI). While we will guide through the menu items, it would be helpful to have a basic familiarity with the OCI Console. The module uses JupyterLab notebooks. It has an intuitive interface but it would also be helpful if you have used it before. The code is written in python. You will not have to write any code in the lab but it would be best if you had a basic understanding of the syntax. If you know other languages you will generally be alright in following what is happening with the code. Below are some links to resources that will be helpful in getting the most out of this module.
 
 1. OCI Training : https://cloud.oracle.com/en_US/iaas/training
 
@@ -54,24 +44,17 @@ The Oracle Data Science Service is a fully managed, self-service platform for da
 
 5. Familiarity with python: https://www.python.org/
 
+## Getting Started
 
-## Sign in to OCI Console
+Welcome to the module on using the OCI Data Science Service to build a binary classification module. In the instructions there are a few screen shots. The service is always changing and while we try to keep up with the changes, please note that they are there for your reference only and things may look a little different.
 
-* **Tenant Name:** {{Cloud Tenant}}
-* **User Name:** {{User Name}}
-* **Password:** {{Password}}
-* **Compartment:**{{Compartment}}
+You will need to log in to use this module. The instructions that tell you how to do this will have the information that you need.
 
-**Note: Credentials can be accessed at any time by clicking on the icon at the top of the screen with the key on it.**
+A note for Mac OS users. Use Ctrl+C / Ctrl+V to copy and paste inside the OCI Console
 
-1. Enter your tenant name.
+Have fun and enjoy learning about binary classification, exploratory data analysis (EDA), AutoML, model validation and selection, and machine learning explainability (MLX).
 
-2. Sign in using your user name and password. Use the login option under **Oracle Cloud Infrastructure**
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="Login Screen">
-
-3. Once you have successfully logged in, you will see the console home page.
-
-**The Data Science Service**
+## The Data Science Service
 
 * Provides infrastructure and data science tools, such as open source technologies, libraries, and packages for machine learning and artificial intelligence. It also offers Oracle ML products, such as Oracle Labs AutoML and model explanation tools.
 
@@ -79,50 +62,59 @@ The Oracle Data Science Service is a fully managed, self-service platform for da
 
 * Helps data scientists concentrate on methodology and domain expertise to deliver more models to production in the Oracle Cloud Infrastructure.
 
-**Data Science Concepts**
+**Data Science Service Concepts**
 
 Review the following concepts and terms to help you get started with Data Science.
 
-**PROJECT:**
+* Project: Projects are collaborative workspaces for organizing and documenting Data Science assets such as notebook sessions and models.
 
-Projects are collaborative workspaces for organizing and documenting Data Science assets such as notebook sessions and models.
+* Notebook Session: Data Science notebook sessions are interactive coding environments for building and training models. Notebook sessions come with many pre-installed open source and Oracle developed machine learning and data science packages.
 
-**NOTEBOOK SESSION:**
+* Accelerated Data Science SDK: The Oracle Accelerated Data Science (ADS) SDK is a Python library that is included as part of the Oracle Cloud Infrastructure Data Science service. ADS has many functions and objects that automate or simplify many of the steps in the Data Science workflow, including connecting to data, exploring and visualizing data, training a model with AutoML, evaluating models, and explaining models. In addition, ADS provides a simple interface to access the Data Science service model catalog and other Oracle Cloud Infrastructure services including Object Storage. To familiarize yourself with ADS, see the Accelerated Data Science Library.
 
-Data Science notebook sessions are interactive coding environments for building and training models. Notebook sessions come with many pre-installed open source and Oracle developed machine learning and data science packages.
+* Model: Models define a mathematical representation of your data and business processes. The model catalog is a place to store, track, share, and manage models.
 
-**ACCELERATED DATA SCIENCE SDK:**
+## Sign in to the OCI Console
 
-The Oracle Accelerated Data Science (ADS) SDK is a Python library that is included as part of the Oracle Cloud Infrastructure Data Science service. ADS has many functions and objects that automate or simplify many of the steps in the Data Science workflow, including connecting to data, exploring and visualizing data, training a model with AutoML, evaluating models, and explaining models. In addition, ADS provides a simple interface to access the Data Science service model catalog and other Oracle Cloud Infrastructure services including Object Storage. To familiarize yourself with ADS, see the Accelerated Data Science Library.
+* **Tenant Name:** {{Cloud Tenant}}
+* **User Name:** {{User Name}}
+* **Password:** {{Password}}
 
-**MODEL:**
+**Note: Credentials can be accessed at any time by clicking on the icon at the top of the screen with the key on it.**
 
-Models define a mathematical representation of your data and business processes. The model catalog is a place to store, track, share, and manage models.
+1. Enter your tenant name and click continue.
 
-## Open a notebook
+2. Enter the user name and password that was provided to you. Use the login option under **Oracle Cloud Infrastructure**. Click Sign In.
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-**Locate Your Compartment**
+3. Once you have successfully logged in, you will see the console home page.
 
-Your account has a root compartment and some compartments that are part of that. To access the notebook, you will need to select the compartment that has been assigned to you. The following instructions will help you do this.
+## Selecting the Compartment
+
+**Compartment:** {{Compartment}}
+
+Your account has a root compartment and some compartments that are part of it. To access the notebook, you will need to select the compartment that has been assigned to you. The following instructions will help you do this.
 
 1. Click on the OCI Services menu. This is the hamburger menu (3 horizontal lines) in the top left corner.
 
 2. Scroll down the menu to Data Science. The menu will expand.
 
-3. Click on Projects and Projects screen will open.
+3. Click on Projects. The Projects screen will open.
 
 4. Note, you will not see any projects listed on the Projects page until you select your compartment.
 
-5. On the left-hand side you will see a compartment. This is the root compartment. Click on the drop-down. If there is a + sign beside the compartment name, click the + sign to expand the list of compartments. A list of compartments will be presented.
+5. On the left-hand side you will see a compartment drop-down. Click on this.
 
-6. Select your compartment, If you have done this correctly, you will see a project listed under the Projects page.
+6. In the compartment drop-down you will see the root compartment with a + sign. Click on the + sign and the list of choices will expand.
+
+7. Select your compartment. If you have done this correctly, you will see a project listed under the Projects page.
 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Data_Science_Service/img/compartment.png" alt="image-alt-text">
 
-**Opening the notebook**
+## Opening the Notebook
 
-JupyterLab notebooks are grouped in projects. Now that the correct compartment is selected, the notebook can be accessed using the following steps.
+JupyterLab notebooks are grouped into projects. Now that the correct compartment is selected, the notebook can be accessed using the following steps.
 
 1. From the Projects page, click on the project "initial-datascience-project-XXXX". This will take you to the Notebook Sessions page for that project.
 
@@ -141,7 +133,7 @@ Now that JupyterLab is open, it can be seen that the screen is split into two se
 
 The size of the two sections can be adjusted by clicking on the bar between them and dragging it to the right or left. The left section of the screen can be collapsed by clicking on any menu item to the left so that it will toggle the component. To view it again, click on the icon. For example, click on the large file folder icon.
 
-There is a menu across the top of the screen. For this lab, the most interesting menu item is "Run". It will allow you to execute the different code cells in the document. It is recommended that you manually execute the cells one at a time as you get to them. It is, generally important, that you execute them in order. To do this from the keyboard, press shift+enter in a cell and it will execute it and advance to the next cell. This same action can be done by clicking on Run then "Run Selected Cells".
+There is a menu across the top of the screen. For this lab, the most interesting menu item is "Run". It will allow you to execute the different code cells in the document. It is recommended that you manually execute the cells one at a time as you get to them. It is, generally important, that you execute them in order. To do this from the keyboard, press shift+enter in a cell and it will execute it and advance to the next cell. Alternatively, you can run all of the cells at once. To do this, click on Run then "Run Selected Cells".
 
 ## Binary Classification Model
 
@@ -153,31 +145,20 @@ To open the notebook, that will be used in this lab, have the file browser open.
 
 3. Double click on the ads_binary-classification-attrition.ipynb. It will open in a new tab.
 
-4. Read through the document. When you encounter a chunk of code, click in the cell and press shift+Enter to execute it. When the cell is running a [*] will appear in the top left of the cell. When it is finished, a number will appear in [ ].
+4. Read through the document. When you encounter a chunk of code, click in the cell and press shift+Enter to execute it. When the cell is running a [*] will appear in the top left of the cell. When it is finished, a number will appear in [ ], for example [1].
 
 5. Execute the cells in order. If you run into problems and want to start over again, click on "Kernel" then "Restart Kernel and Clear All Outputs..."
 
-6. Step through the lab and look at the tools that are provided by Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes by analyzing the data and creating appropriate outputs. Or you can run all of the cells by clicking on Run menu option then chose "Restart Kernel and Run All Cells"
+6. Step through the lab and look at the tools that are provided by Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes by analyzing the data and creating appropriate outputs.
 
-## Delete the resources
-
-1. Switch to  OCI console window
-
-2. Navigate back to your Data Science VM and delete the VM
-
-3. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
-appear.
-
-4. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text">
+## Next Steps
 
 **Congratulations! You have successfully completed the lab**
 
 If you have time, there are some other notebooks that you may find interesting.
 
-* ads_data_visualizations.ipynb: It provides a comprehensive overview of the data visualization tools in ADS. This includes smart data visualization for columns based on data types and values.
-* ads_transforming_data-3.ipynb: Learn about the ADSDatasetFactory and how it can clean and transform data.
-* ads_model_feature_1.ipynb: See the capabilities of the ADSModel class. See how ADSModel makes the ADS pipeline completely modular and adaptable to 3rd party models.
+* **ads_data_visualizations.ipynb**: It provides a comprehensive overview of the data visualization tools in ADS. This includes smart data visualization for columns based on data types and values.
+* **ads_transforming_data-3.ipynb**: Learn about the ADSDatasetFactory and how it can clean and transform data.
+* **ads_model_feature_1.ipynb**: See the capabilities of the ADSModel class. See how ADSModel makes the ADS pipeline completely modular and adaptable to 3rd party models.
 
 When you are done, you can close the lab by clicking on the x with a circle around it in the top right corner.
