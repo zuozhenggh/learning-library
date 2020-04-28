@@ -84,7 +84,7 @@ Your account has a root compartment and some compartments that are part of that.
 1. Click on Projects and Projects screen will open.
 1. Note, you will not see any projects listed on the Projects page until you select your compartment.
 1. On the left-hand side you will see a compartment. This is the root compartment. Click on the drop-down. If there is a + sign beside the compartment name, click the + sign to expand the list of compartments. A list of compartments will be presented.
-1. Select your compartment: {{Compartment}. } If you have done this correctly, you will see a project listed under the Projects page.
+1. Select your compartment: {{Compartment}}. If you have done this correctly, you will see a project listed under the Projects page.
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Data_Science_Service/img/compartment.png" alt="compartment">
 
 ### Opening the notebook
