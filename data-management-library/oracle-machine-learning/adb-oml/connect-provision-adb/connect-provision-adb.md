@@ -1,4 +1,4 @@
-# Introduction and Setup
+# Provision and Setup
 
 Lab 1 is all about getting your environment setup correctly. Here we will show you how to provision two different autonomous database instances, load data into object storage, and setup credentials and tools.
 
