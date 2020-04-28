@@ -9,7 +9,7 @@ Click on one of our workshops below to access the content.
 
 [Journey to Autonomous Database](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-journey-workshop/index.html) 
 
-[Autonomous Database Fundamentals](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/freetier-overview)  
+[Autonomous Database Quickstart](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-overview)  
 
 ### ADB Dedicated Infrasructure
 

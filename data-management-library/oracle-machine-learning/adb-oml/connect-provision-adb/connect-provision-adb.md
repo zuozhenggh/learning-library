@@ -1,4 +1,4 @@
-# Introduction and Setup
+# Provision and Setup
 
 Lab 1 is all about getting your environment setup correctly. Here we will show you how to provision two different autonomous database instances, load data into object storage, and setup credentials and tools.
 
@@ -134,7 +134,7 @@ You now have created your first ATP instance.
 
 1. Click the link below to download the install file.
 
-  [install.zip](install/install.zip)
+  [install.zip](./files/install.zip)
 
 2. Save the install.zip to a download directory and then unzip the file.
 

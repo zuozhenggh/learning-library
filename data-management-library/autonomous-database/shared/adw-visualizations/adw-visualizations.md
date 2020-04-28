@@ -101,58 +101,78 @@ Although you can connect to your autonomous database from local PC desktop tools
 
 ## Step 3: Create a Connection to Your Autonomous Database from Oracle Analytics Desktop
 
-1. Start Oracle Analytics Desktop. When Oracle Analytics Desktop opens, click the __‘Connect to Oracle Autonomous Data Warehouse’__ button.
+### Download the Connection Wallet
+
+As ADW and ATP accept only secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page, or from the ADW or ATP service console.
+
+1. In your database's instance details page, click **DB Connection**.
+
+    ![](./images/Picture100-34.png " ")
+
+2. Use the Database Connection dialog to download client credentials.
+    - Select a wallet type. For this lab, select **Instance Wallet**. This wallet type is for a single database only; this provides a database-specific wallet.
+    - **Note:** Oracle recommends you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.
+    - Click **Download Wallet**.
+
+    ![](./images/Picture100-15.png " ")
+
+3. Specify a password of your choice for the wallet. You will need this password when connecting to the database via SQL Developer later, and is also used as the JKS keystore password for JDBC applications that use JKS for security. Click **Download** to download the wallet file to your client machine.
+*Note*: If you are prevented from downloading your Connection Wallet, it may be due to your browser's pop-blocker. Please disable it or create an exception for Oracle Cloud domains.
+
+    ![](./images/Picture100-16.png " ")
+
+4. Start Oracle Analytics Desktop. When Oracle Analytics Desktop opens, click the __‘Connect to Oracle Autonomous Data Warehouse’__ button.
 
    ![](./images/click_connect_to_oracle_autonomous_data_warehouse.jpg " ")
 
-2. In the **Create Connection** dialog, enter the following information:
+5. In the **Create Connection** dialog, enter the following information:
 
 
    | Connection Info       | Entry                                             |  
    | --------------------- | :--------------------------------------------- |
    | Connection Name:      | Type in 'SALES_HISTORY'                             |
-   | Client Credentials:   | Click 'Select' and select the zip file that you noted in Step 2. A file with .sso extension will appear in the field.   |
+   | Client Credentials:   | Click 'Select' and select the zip file that you noted in Step 3. A file with .sso extension will appear in the field.   |
    | Username:             | Insert username created in previous labs; likely **admin**.  Same as SQL Developer Web and SQL Developer credentials. |                                            
    | Password              | Insert password created in previous labs.  Same as SQL Developer Web and SQL Developer credentials. |
    | Service Name:         | Scroll the drop-down field and select **adwfinance_high**, or the **high** service level of the database name you specified in the first lab. |
 
-  3. After completing the fields, click __‘Save’__.
+6. After completing the fields, click __‘Save’__.
 
    ![](./images/create_connection_dialog.jpg " ")
 
-  4. Upon success of creating a new connection to the Autonomous Data Warehouse, click __Create__ and click __Data Set__.  
+7. Upon success of creating a new connection to the Autonomous Data Warehouse, click __Create__ and click __Data Set__.  
 
     ![](./images/click_create_data_set.jpg " ")
 
-  5. We will now choose the sales data we want to analyze and visualize in our first project.  Select the connection we just created named __SALES_HISTORY__.
+8. We will now choose the sales data we want to analyze and visualize in our first project.  Select the connection we just created named __SALES_HISTORY__.
 
    ![](./images/choose_sales_history_connection.jpg " ")
 
-  6. Click the __ADMIN__ schema in the data warehouse.
+9. Click the __ADMIN__ schema in the data warehouse.
 
     **Note:** If you do not see schemas because you are behind a firewall or on a VPN, you may need to use an alias or shut down the VPN to connect to your ADW database.
 
    ![](./images/select_admin_schema.jpg " ")
 
-7. Find and click the __DV\_SH\_VIEW__ view table from the ADMIN schema.
+10. Find and click the __DV\_SH\_VIEW__ view table from the ADMIN schema.
 
    ![](./images/select_dv_sh_view_from_admin.jpg " ")
 
-8. First click the __Add All__ label in the left column, and type a new Name for the Data Set, naming it __SALES_HISTORY__. You may click __Get Preview Data__ at the bottom to see some example records. Click the __Add__ button to add the Data Set.
+11. First click the __Add All__ label in the left column, and type a new Name for the Data Set, naming it __SALES_HISTORY__. You may click __Get Preview Data__ at the bottom to see some example records. Click the __Add__ button to add the Data Set.
 
   **NOTE**: It is important to use the new name of __SALES_HISTORY__ as the rest of the lab steps will reference that name.  
 
    ![](./images/add_all_data_to_data_set.jpg " ")
 
-9. Once the __SALES_HISTORY__ Data Set has successfully been created, click on the main menu on the top left.
+12. Once the __SALES_HISTORY__ Data Set has successfully been created, click on the main menu on the top left.
 
    ![](./images/data_set_results_click_menu.jpg " ")
 
-10. Select the __Data__ menu option on the left.  This should reveal your new __SALES_HISTORY__ Data Set you created.  Click it to open it up as a **Project**.
+13. Select the __Data__ menu option on the left.  This should reveal your new __SALES_HISTORY__ Data Set you created.  Click it to open it up as a **Project**.
 
    ![](./images/click_sales_history_data_set_to_open_as_project.jpg " ")
 
-11. We are going to override the data types for two columns recognized as measures (ie. numeric), and correct them to be treated as attributes -- __CALENDAR\_YEAR__ and __CUST\_YEAR\_OF\_BIRTH__.  Click the __CALENDAR\_YEAR__ column name under Data Elements, and change the __‘Treat As’__ field to an __‘Attribute’__.  Repeat for the field, __CUST\_YEAR\_OF\_BIRTH__.
+14. We are going to override the data types for two columns recognized as measures (ie. numeric), and correct them to be treated as attributes -- __CALENDAR\_YEAR__ and __CUST\_YEAR\_OF\_BIRTH__.  Click the __CALENDAR\_YEAR__ column name under Data Elements, and change the __‘Treat As’__ field to an __‘Attribute’__.  Repeat for the field, __CUST\_YEAR\_OF\_BIRTH__.
 
    ![](./images/change_treat_as_from_measure_to_attribute.jpg " ")
 
@@ -201,10 +221,14 @@ This step enables you to share your project file with colleagues.
 
 Please proceed to the next lab.
 
+## Want to Learn More?
+
+Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/create-reports-analytics.html#GUID-30A575A6-2CAD-4A8A-971E-2F751C8E6F90) for documentation on working with analytics and visualization of data in your autonomous database.
+
 ## Acknowledgements
 
 - **Author** - Nilay Panchal, ADB Product Managemnt
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

@@ -1,4 +1,4 @@
-# Setup - SSWorkshop 
+# Setup - LiveLabs 
 
 ## Introduction
 This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running a pre-configured Oracle Linux 7 install using Oracle Resource Manager and Terraform.  
