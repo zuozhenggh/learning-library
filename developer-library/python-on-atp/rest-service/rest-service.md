@@ -110,7 +110,7 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
   <copy>virtualenv env</copy>
   ``` 
 
-  ![](images/6.png " ")`
+  ![](images/6.png " ")
 
 13. To run the virtual enviornment type the following. If successfull you will see (env) before the path that means you are now in virtual env.
   ```
