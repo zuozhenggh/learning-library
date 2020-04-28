@@ -40,7 +40,7 @@ For the microservices to talk to the ATP instances, we need to create an OCI
   ![](images/7feb61fbebb010b7acada8a1e8b5a742.png " ")
 
   ```
-  <copy>cd \$MSDATAWORKSHOP_LOCATION/osb-atp-and-oss</copy>
+  <copy>cd $MSDATAWORKSHOP_LOCATION/osb-atp-and-oss</copy>
   ```
 
   ![](images/b5353f252300596df91d16bd1ef80e51.png " ")
@@ -57,7 +57,7 @@ For the microservices to talk to the ATP instances, we need to create an OCI
 
   ![](images/5585b29d866e1b039318d2e16e84d989.png " ")
 
-3.  Modify the values in `<>` brackets:
+3.  Modify the values in **`<>`** brackets:
 
   ```
     kubectl create clusterrolebinding cluster-admin-brokers --clusterrole=cluster-admin --user=<USER_ID>
@@ -70,14 +70,14 @@ For the microservices to talk to the ATP instances, we need to create an OCI
     \--from-file=privatekey=<PRIVATEKEY_FILE_LOCATION>
   ```
 
-  Keep in mind that `<USER_ID>` is not equal to `<USER_OCID>`, and it is a new parameter not used yet. Leave it as your username. In our example it’s `msdataworkshop.user1`.
+4. Keep in mind that `<USER_ID>` is not equal to `<USER_OCID>`, and it is a new parameter not used yet. Leave it as your username. In our example it’s `msdataworkshop.user1`.
 
-  - `<TENANCY_OCID>` - is the Tenancy OCID
-  - `<USER_OCID>` - is the User OCID
-  - `<USER_FINGERPRINT>` - is the fingerprint value created when adding the Public key in the console
-  - `<REGION_CODE>` - is the Region identifier
-  - `<PRIVATEKEY_PASSPHRASE>` - is the passphrase used to create the Private key file
-  - `<PRIVATEKEY_FILE_LOCATION>` - is the absolute path for Private key file location
+    - `<TENANCY_OCID>` - is the Tenancy OCID
+    - `<USER_OCID>` - is the User OCID
+    - `<USER_FINGERPRINT>` - is the fingerprint value created when adding the Public key in the console
+    - `<REGION_CODE>` - is the Region identifier
+    - `<PRIVATEKEY_PASSPHRASE>` - is the passphrase used to create the Private key file
+    - `<PRIVATEKEY_FILE_LOCATION>` - is the absolute path for Private key file location
 
     Once you have edited the two `kubectl` commands, the result should look
     something like this.
@@ -86,7 +86,7 @@ For the microservices to talk to the ATP instances, we need to create an OCI
 
 4.  Once the script was edited, execute it using the following command. The
     script has basic setup for Kubernetes service catalog. It installs the
-    service catalog cli svcat, adds the service catalog helm repo. It also
+    service catalog `cli svcat`, adds the service catalog helm repo. It also
     generates a secret that is being used to install the OCI service broker, and
     set it up with the Kubernetes cluster.
 
@@ -102,14 +102,14 @@ For the microservices to talk to the ATP instances, we need to create an OCI
 
   ![](images/7fc70a49ddb3a78e095f22785266c3be.png " ")
 
-5.  *Optional.* If the broker is still not ready, continue to check again with the
+5.  (Optional) If the broker is still not ready, continue to check again with the
     commands:
 
   ```
   <copy>svcat get brokers</copy>
   ```
 
-  Once ready, it should show the oci-service-broker with status “Ready”.
+  Once ready, it should show the `oci-service-broker` with status “Ready”.
 
   ![](images/51092536338e20f9eff4140550b6d22d.png " ")
 
@@ -133,45 +133,47 @@ Storage and others.
 
 1.  You will now use the created OCI service broker and create bindings to the
     two Autonomous Transaction Processing databases. In Cloud Shell go to the
-    service broker folder
+    service broker folder:
 
     ```
-    <copy>cd \$MSDATAWORKSHOP_LOCATION/osb-atp-and-oss</copy>
-    ```    
+    <copy>cd $MSDATAWORKSHOP_LOCATION/osb-atp-and-oss</copy>
+    ```
 
   ![](images/670c73c7cd087d66e2043567e402f55a.png " ")
 
-2.  Edit the setupATP.sh with vi.
+2.  Edit the `setupATP.sh` with `vi`.
 
-    vi setupATP.sh
+    ```
+    <copy>vi setupATP.sh</copy>
+    ```
 
   ![](images/9091a5da45fb894fda742dfe3a91bc5d.png " ")
 
-3.  Modify the values in `<>` brackets:
+3.  Modify the values in **`<>`** brackets:
 
   ```
-    export orderpdb_ocid=<ORDERPDB_OCID>
-    export orderpdb_compartmentId=<ORDERPDB_COMPARTENT_OCID>
-    export orderpdb_walletPassword=$(echo <ORDERPDB_WALLET_PW> | base64)
-    export orderpdb_admin_password=$(echo <ORDERPDB_ADMIN_PW> | base64)
-    export orderpdb_orderuser_password=$(echo <ORDERPDB_ORDERUSER_PW> | base64)
-    export inventorypdb_ocid=<INVENTORYPDB_OCID>
-    export inventorypdb_compartmentId=<INVENTORYPDB_COMPARTENT_OCID>
-    export inventorypdb_walletPassword=$(echo <INVENTORYPDB_WALLET_PW> | base64)
-    export inventorypdb_admin_password=$(echo <INVENTORYPDB_ADMIN_PW> | base64)
-    export inventorypdb_inventoryuser_password=$(echo <INVENTORYPDB_INVENTORYUSER_PW> | base64)
+  export orderpdb_ocid=<ORDERPDB_OCID>
+  export orderpdb_compartmentId=<ORDERPDB_COMPARTENT_OCID>
+  export orderpdb_walletPassword=$(echo <ORDERPDB_WALLET_PW> | base64)
+  export orderpdb_admin_password=$(echo <ORDERPDB_ADMIN_PW> | base64)
+  export orderpdb_orderuser_password=$(echo <ORDERPDB_ORDERUSER_PW> | base64)
+  export inventorypdb_ocid=<INVENTORYPDB_OCID>
+  export inventorypdb_compartmentId=<INVENTORYPDB_COMPARTENT_OCID>
+  export inventorypdb_walletPassword=$(echo <INVENTORYPDB_WALLET_PW> | base64)
+  export inventorypdb_admin_password=$(echo <INVENTORYPDB_ADMIN_PW> | base64)
+  export inventorypdb_inventoryuser_password=$(echo <INVENTORYPDB_INVENTORYUSER_PW> | base64)
   ```
 
-    `<ORDERPDB_OCID>` and `<INVENTORYPDB_OCID>` are the OCIDs copied when
-    creating the two ATP instances.
+  `<ORDERPDB_OCID>` and `<INVENTORYPDB_OCID>` are the OCIDs copied when
+  creating the two ATP instances.
 
-    `<ORDERPDB_COMPARTENT_OCID>` and `<INVENTORYPDB_COMPARTENT_OCID>` are the
-    OCID used when creating the compartment.
+  `<ORDERPDB_COMPARTENT_OCID>` and `<INVENTORYPDB_COMPARTENT_OCID>` are the
+  OCID used when creating the compartment.
 
-    For all the passwords use the original password when creating the two ATP
-    instances.
+  For all the passwords use the original password when creating the two ATP
+  instances.
 
-    Once you have edited the lines, the result should look something like this:
+  Once you have edited the lines, the result should look something like this:
 
   ![](images/3066d511196e52a4e0e96a89a2510f3a.png " ")
 
@@ -202,7 +204,7 @@ Storage and others.
 You will verify the connectivity from the frontend Helidon microservice
     deployment to the ATP using the previously created service broker binding.
 
-    *Reviewer: can these files be local - or moved into the oracle/learning-library repo*
+    *Reviewer: can these files be local - or moved into the oracle/learning-library repo?*
 
 1.  First, let’s analyze the Kubernetes deployment YAML file:
     [https://github.com/paulparkinson/msdataworkshop/blob/master/atpaqadmin/atpaqadmin-deployment.yaml](https://github.com/paulparkinson/msdataworkshop/blob/master/atpaqadmin/atpaqadmin-deployment.yaml)
@@ -273,8 +275,7 @@ In this step you will set up the AQ messaging queue by creating database
     going to download the connection information zip file for each of the ATP
     instances.
 
-1.  Go to the Cloud Console and click **Autonomous Transaction
-    Processing**.
+1.  Go to the Cloud Console and click **Autonomous Transaction Processing**.
 
   ![](images/8b3a05eecdbc4b140ac4fc81c8d49c89.png " ")
 
@@ -300,7 +301,7 @@ In this step you will set up the AQ messaging queue by creating database
 
 5.  Once downloaded, extract the zip file on your computer, and upload the
     `cwallet.sso` into object storage. Go to the Object Storage page and click **Create
-    a bucket**. Make sure you are in the `msdataworkshop` compartment.
+    Bucket**. Make sure you are in the `msdataworkshop` compartment.
 
   ![](images/6fcb7b50a017498192e3d3b268e416b8.png " ")
 
@@ -342,7 +343,7 @@ In this step you will set up the AQ messaging queue by creating database
 9.  Open the Cloud Shell and go to the `atpaqadmin` folder.
 
   ```
-  <copy>cd \$MSDATAWORKSHOP_LOCATION/atpaqadmin</copy>
+  <copy>cd $MSDATAWORKSHOP_LOCATION/atpaqadmin</copy>
   ```
 
   ![](images/7b2c01d83a10447de8761c7843183d16.png " ")
@@ -358,15 +359,15 @@ In this step you will set up the AQ messaging queue by creating database
 11.  We need to provide values in the section marked with “\# PROVIDE VALUES FOR
     THE FOLLOWING...”. Provide values for the following items:
 
-    \- cwalletobjecturi
-    \- orderhostname
-    \- orderport
-    \- orderservice_name
-    \- orderssl_server_cert_dn
-    \- inventoryhostname
-    \- inventoryport
-    \- inventoryservice_name
-    \- inventoryssl_server_cert_dn
+    - cwalletobjecturi
+    - orderhostname
+    - orderport
+    - orderservice_name
+    - orderssl_server_cert_dn
+    - inventoryhostname
+    - inventoryport
+    - inventoryservice_name
+    - inventoryssl_server_cert_dn
 
     `cwalletobjecturi` – is the pre-authenticated URL which we’ve created in the previous step, when uploading `cwallet.sso` to the Object storage.
 
@@ -378,7 +379,7 @@ In this step you will set up the AQ messaging queue by creating database
 
   ![](images/e0cc650777e2d759de02ed49f6fcc8b8.png " ")
 
-  12.  Redeploy the atpaqadmin image.
+  12.  Redeploy the `atpaqadmin` image.
 
   ```
   <copy>./redeploy.sh</copy>
