@@ -91,7 +91,7 @@ The Extra labs are:
 
 Before starting these exercises, you should have an OCI login and access VBCS instance.
 
-You will need to download the data files, all the files are available in a single .zip file named [vbcsfiles.zip](..files/vbcsfiles.zip); download the file and expand it to find the following files (keep them handy they will be used later in this exercise):
+You will need to download the data files, all the files are available in a single .zip file named [vbcsfiles.zip](../files/vbcsfiles.zip); download the file and expand it to find the following files (keep them handy they will be used later in this exercise):
 <br>
 
 * Exercise 2 (Data for VBCS Business Objects)
