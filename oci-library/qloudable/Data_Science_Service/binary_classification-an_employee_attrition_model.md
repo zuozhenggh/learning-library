@@ -1,4 +1,4 @@
-# Binary Classification, an Employee Attrition Model
+# Speed up data science with the Accelerated Data Science SDK
 
 ## Table of Contents
 
@@ -161,4 +161,4 @@ If you have time, there are some other notebooks that you may find interesting.
 * **ads_transforming_data-3.ipynb**: Learn about the ADSDatasetFactory and how it can clean and transform data.
 * **ads_model_feature_1.ipynb**: See the capabilities of the ADSModel class. See how ADSModel makes the ADS pipeline completely modular and adaptable to 3rd party models.
 
-When you are done, you can close the lab by clicking on the x with a circle around it in the top right corner.
+When you are done, you can close the lab by clicking on the "Finish Lab" button.
