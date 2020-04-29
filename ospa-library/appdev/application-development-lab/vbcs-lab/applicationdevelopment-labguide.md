@@ -645,11 +645,11 @@ In exercise 4 you will create web and mobile applications so that Mama Maggy man
 
 Exercise 4 has three sections:
 
-  - Section 1 – [Create First Web Application](#exercise-3-section-1--create-first-web-application)
+  - Section 1 – [Create First Web Application](#exercise-4-section-1--create-first-web-application)
 
-  - Section 2 – [Create Master-Detail Application](#exercise-3-section-2--create-master-detail-application)
+  - Section 2 – [Create Master-Detail Application](#exercise-4-section-2--create-master-detail-application)
 
-  - Section 3 – [Create Mobile Application](#exercise-3-section-3--create-mobile-application)
+  - Section 3 – [Create Mobile Application](#exercise-4-section-3--create-mobile-application)
 
 <br>
 
@@ -815,7 +815,7 @@ In exercise 2 you created three business objects and uploaded data to the embedd
 
     ![](./media/image106.png)
 
-    Now, return to the Product List display and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
+    Now, return to the Product List page, you can click the **Back** button or select the **main-start** page (You should see **main-start** on the top bar as a tab), and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
 
     ![](./media/image107.png)
     
@@ -835,7 +835,7 @@ In exercise 2 you created three business objects and uploaded data to the embedd
   
     ![](./media/3.10.12.png)
 
-6. Once you have reviewed the product details, click the provided **Back** button to return to the list.
+19. Once you have reviewed the product details, click the provided **Back** button to return to the list.
 
     ![](./media/3.10.13.png)
 
@@ -1281,6 +1281,21 @@ The data used to create these apps will come from **Service Connections** that y
 
     ![](./media/4.11.5.png)
 
+
+***
+
+**Note**: If you are not able to see the **mmstores** as data source, click the **Pencil** icon located at the bottom right corner to edit your connections.
+Verify that you have the GET /store/{Store_Id} selected. Click next and finish.
+
+![](./media/add_connection_1.png)
+
+</br>
+
+![](./media/add_connection_2.png)
+
+***
+
+
 19. Choose the following fields and the primary key:
      - id
      - name
@@ -1324,7 +1339,28 @@ The data used to create these apps will come from **Service Connections** that y
 27. Your Store details screen should look something like this
 
      ![](./media/image170.png)
- 
+
+***
+**Note**: If you get a **"Could not load data"** error message, you must check whether the Endpoint **StoreID** is mapped.
+
+* Click on the **main-store-detail** page, click **Actions** and select **LoadAssociateChain**
+
+    ![](./media/error_store_link_1.png)
+
+
+* Select the main node **Call REST Endpoint mmstores/get_Store** and on the right hand side of the screen click the **Store_Id** field.
+
+    ![](./media/error_store_link_2.png)
+
+* On the query page, drag and drop the **storeid** value from the left to the **Store_Id** parameter located in the right. Click Save
+
+    ![](./media/error_store_link_3.png)
+
+
+* Now you should be able to see data. Go to the **main** page, select a field and drill down to the detail page.
+
+***
+
 
 28. Now create an **associatelist** web application to display all **Associate** rows (you pick the fields) and provide a **Add Detail Page** to display a single Associate (you pick the fields here too).
 
@@ -1332,7 +1368,16 @@ The data used to create these apps will come from **Service Connections** that y
     - Details display of selected Associate (**mmassociates** using
     **associate\_id**)
 
-   Test your application
+**Note**: If you face the same issue when displaying **Detail page** information as described for Store, follow the same steps to map the **Associate_Id** parameter.
+
+![](./media/error_associate_link_1.png)
+
+![](./media/error_associate_link_2.png)
+
+
+**Test your application**
+
+***
 
 29. For something really fun; return to the **storelist** application and display the **Stores Detail** page (probably called **main-store-detail** or something close)
 
