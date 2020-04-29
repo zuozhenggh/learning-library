@@ -3,6 +3,8 @@
 ## Lab Introduction
 This is a series of 12 hands-on labs designed to familiarize you with the Application Container functionality of Oracle Multitenant. In these labs, we follow the journey of a notional company, Walt’s Malts, as their business expands from a single store to a global powerhouse – “from startup to starship”.
 
+Estimated time: 45 - 60 minutes
+
 [](youtube:ZPOjjF3kCvo)
 
 ## Step 1: Instant SaaS
@@ -1942,6 +1944,6 @@ The tasks you will accomplish in this lab are:
 
 - **Author** - Patrick Wheeler, VP, Multitenant Product Management
 - **Adapted to Cloud by** -  David Start, OSPA
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
