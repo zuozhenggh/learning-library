@@ -6,11 +6,6 @@ This lab will show you how to build images, push them to Oracle Cloud
 Infrastructure Registry and deploy the microservices on our Kubernetes cluster.
 You will also clone a GitHub repository.
 
-The video will demonstrate the below described steps:
-
-[](youtube:) -- use video msdatademoworkshop-task3.mp4 and
-msdatademoworkshop-task4.mp4
-
 ### Objectives
 
   -   Clone a GitHub repository
@@ -22,7 +17,7 @@ msdatademoworkshop-task4.mp4
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * Setup the OKE cluster and the ATP databases
 
-## STEP 1: Create the cluster namespace
+## **STEP 1**: Create the cluster namespace
 
 In order to divide and isolate cluster resources, you will create a cluster
     namespace which will host all related resources to this application, such as
@@ -44,17 +39,21 @@ In order to divide and isolate cluster resources, you will create a cluster
   You have successfully created the `msdataworkshop` namespace which is used for
   deploying the application code.
 
-## STEP 2: Build the Microservices image from the GitHub repo
+## **STEP 2**: Build the Microservices image from the GitHub repo
 
-1.  To work with application code, you need to clone the GitHub repository using
-    the following command. The Cloud Shell already has the git package
+1.  To work with application code, you need to download GitHub repository using
+    the following command. The Cloud Shell already has the `wget` command
     installed:
 
     ```
-    <copy>git clone https://github.com/paulparkinson/msdataworkshop.git</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/S0A1BNckU3xKNW-XIQVgJ76ESgAtRIZ2sT47AOrBdjc/n/c4u03/b/labfiles/o/msdataworkshop-master.zip</copy>
     ```
 
-  ![](images/cdbbce199f05ea894158964daa70d129.png " ")
+2. Unzip the file you downloaded:
+
+  ```
+  <copy>unzip msdataworkshop-master.zip</copy>
+  ```
 
 2.  You need to compile, test and package into a .jar file the Helidon front-end
     application code using maven. The maven package is already installed in the
@@ -62,10 +61,8 @@ In order to divide and isolate cluster resources, you will create a cluster
     folder.
 
     ```
-    <copy>cd msdataworkshop/frontend-helidon</copy>
+    <copy>cd msdataworkshop-master/frontend-helidon</copy>
     ```
-
-  ![](images/845a43447bebf6d1c0f52dc8e4db526d.png " ")
 
 3.  Run `maven` to build the package using the following command. Since this is
     the first time maven is executed, nothing is cached, thus it will first
@@ -82,12 +79,12 @@ In order to divide and isolate cluster resources, you will create a cluster
 4. Execute the following command to investigate the target folder.
 
   ```
-  copy>ls -al target/</copy>
+  <copy>ls -al target/</copy>
   ```
 
   ![](images/a88b7e437c7a46e3b9878adb62942107.png " ")
 
-## STEP 3: Push image to OCI Registry, deploy and access microservices
+## **STEP 3**: Push image to OCI Registry, deploy and access microservices
 
 After you have successfully compiled the application code, you are ready to push it as a docker image into the OCI Registry. Once the image resides in the OCI registry, it can be used for deploying into the cluster. You are going to log into OCIR through the Cloud Shell using the following command.
 
@@ -124,7 +121,7 @@ After you have successfully compiled the application code, you are ready to push
 4. Append the following lines at the end of the file:
 
   ```
-  export MSDATAWORKSHOP_LOCATION=~/msdataworkshop
+  export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
   source $MSDATAWORKSHOP_LOCATION/shortcutaliases
   export PATH=$PATH:$MSDATAWORKSHOP_LOCATION/utils/
   export DOCKER_REGISTRY="<region-key>.ocir.io/<tenancy-namespace>/<repo-name>"
@@ -144,7 +141,7 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
-## STEP 4: Build the Docker image
+## **STEP 4**: Build the Docker image
 
 1.  You are ready to build a docker image of the front-end helidon application.
     Change directory into frontend helidon microservice folder:
@@ -157,7 +154,9 @@ After you have successfully compiled the application code, you are ready to push
 
 2.  Run the build script which will build the frontend-helidon application, store it in a docker image and push it to OCIR
 
-    ./build.sh
+  ```
+  <copy>./build.sh</copy>
+  ```
 
   ![](images/807b7c494dab6ccb6864c60344ca7e0e.png " ")
 
@@ -166,14 +165,15 @@ After you have successfully compiled the application code, you are ready to push
   ![](images/cb413dce71ae945decf19e468a94a89e.png " ")
 
 3.  Go to the Console, click the hamburger menu in the top-left corner and open
-    **Developer Services > Registry (OCIR)**. You should see the newly created
-    image in the list. Click the repository with the new image.
+    **Developer Services > Registry (OCIR)**.
 
   ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
 
+4. You should see the newly created image in the list. Click the repository with the new image.
+
   ![](images/b4a27ed98282369ffa60e48e6cea591b.png " ")
 
-4.  To simplify the usage of this image and avoid the need to do `docker login` in
+5.  To simplify the usage of this image and avoid the need to do `docker login` in
     the deployment yaml file or git CI/CD, we will change the image from Private
     to Public, by clicking **Actions > Change to Public**.
 
@@ -181,7 +181,7 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/62015eda55591496a1becfe11063fac5.png " ")
 
-5.  Go back to the Cloud Shell and run the deploy script from the same directory
+6.  Go back to the Cloud Shell and run the deploy script from the same directory
     as build. This will create a new pod and service for this image in the OKE
     cluster `msdataworkshop` namespace:
 
@@ -191,7 +191,7 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/5b817258e6f0f7b55d4ab3f6327a1779.png " ")
 
-6.  Once successfully created, check that the frontend pod is running:
+7.  Once successfully created, check that the frontend pod is running:
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
@@ -203,7 +203,7 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
-7.  Check that the load balancer service is running, and note the external IP
+8.  Check that the load balancer service is running, and note the external IP
     address and port.
 
     ```
@@ -216,12 +216,12 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/72c888319c294bed63ad9db029b68c5e.png " ")
 
-8.  You are ready to access the frontend page. Open a new browser tab and access
+9.  You are ready to access the frontend page. Open a new browser tab and access
     the external page `http://<external-IP>:8080`:
 
   ![](images/0335beb6b95e66bef6b3a5154833094f.png " ")
 
-9.  Run the remaining build script to build and push the rest of the
+10.  Run the remaining build script to build and push the rest of the
     microservices images into the repository
 
     ```
@@ -234,18 +234,20 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/bdd2f05cfc0d1aac84b09dbe5b48993a.png " ")
 
-10.  Go to the Console, click the hamburger menu in the top-left corner and open
-    **Developer Services > Registry (OCIR)**. Mark all the images as public, as you did
-    previously for the frontend image:
+11.  Go to the Console, click the hamburger menu in the top-left corner and open
+    **Developer Services > Registry (OCIR)**.
 
   ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
+
+12. Mark all the images as public, as you did previously for the frontend image:
 
   ![](images/71310f61e92f7c1167f2016bb17d67b0.png " ")
 
 You may now proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Author** - Paul Parkinson, Consulting Member of Technical Staff
+* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Last Updated By/Date** - Tom McGinn, April 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

@@ -13,7 +13,7 @@ You will create a highly scalable application that relies on Oracle Container En
 
 ### Let's Get Started!
 
-Click on [Sign Up For a Free Trial](?lab=?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Provision a DevCS Instance](?lab=lab-1-provision-devcs-instance).
+Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Provision a DevCS Instance](?lab=lab-1-setup-oci,-oke,-atp-cloud-shell).
 
 ## Want to Learn More?
 
@@ -23,7 +23,8 @@ Click on [Sign Up For a Free Trial](?lab=?lab=sign-up-for-free-trial) to get you
 * [https://developer.oracle.com/](https://developer.oracle.com/)
 
 ## Acknowledgements
-* **Author** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Author** - Paul Parkinson, Consulting Member of Technical Staff
+* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Last Updated By/Date** - Tom McGinn, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

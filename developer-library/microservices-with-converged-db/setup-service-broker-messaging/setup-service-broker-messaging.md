@@ -7,12 +7,6 @@ Broker and bind it to the two existing Autonomous Transaction Processing
 databases. This way we will be able to connect the OKE Helidon microservices to
 the ATP instances.
 
-The video will demonstrate the below described steps:
-
-\<embed youtube video\> -- use video msdatademoworkshop-task5.mp4;
-msdatademoworkshop-task6.mp4; msdatademoworkshop-task7.mp4 and
-msdatademoworkshop-task8.mp4
-
 ### Objectives
 -   Create and bind OCI Service Broker to existing ATP instance
 -   Setup Oracle Advanced Queuing in existing ATP instances
@@ -23,7 +17,7 @@ msdatademoworkshop-task8.mp4
 * OKE cluster and the ATP databases created
 * Microservices code from GitHub built and deployed
 
-## STEP 1: Setup OCI Open Service Broker
+## **STEP 1**: Setup OCI Open Service Broker
 
 For the microservices to talk to the ATP instances, we need to create an OCI
     Service Broker. OCI Service Broker for Kubernetes is an implementation of
@@ -35,9 +29,11 @@ For the microservices to talk to the ATP instances, we need to create an OCI
 
 1.  Log in to the Cloud Console and open the Cloud
     Shell by clicking the Cloud Shell icon in the top-right corner of the
-    Console. Inside Cloud Shell go to the service broker folder.
+    Console.
 
   ![](images/7feb61fbebb010b7acada8a1e8b5a742.png " ")
+
+2. Inside Cloud Shell go to the service broker folder.
 
   ```
   <copy>cd $MSDATAWORKSHOP_LOCATION/osb-atp-and-oss</copy>
@@ -45,7 +41,7 @@ For the microservices to talk to the ATP instances, we need to create an OCI
 
   ![](images/b5353f252300596df91d16bd1ef80e51.png " ")
 
-2.  Edit the `setupOSB.sh` with `vi` and set the following variables. You can expand
+3.  Edit the `setupOSB.sh` with `vi` and set the following variables. You can expand
     the cloud shell window for convenience, by clicking the maximize button on
     the top-right corner of the Cloud Shell.
 
@@ -84,7 +80,7 @@ For the microservices to talk to the ATP instances, we need to create an OCI
 
   ![](images/a1af01b9fe9ccd13e65e4c26d4aec57e.png " ")
 
-4.  Once the script was edited, execute it using the following command. The
+5.  Once the script was edited, execute it using the following command. The
     script has basic setup for Kubernetes service catalog. It installs the
     service catalog `cli svcat`, adds the service catalog helm repo. It also
     generates a secret that is being used to install the OCI service broker, and
@@ -102,7 +98,7 @@ For the microservices to talk to the ATP instances, we need to create an OCI
 
   ![](images/7fc70a49ddb3a78e095f22785266c3be.png " ")
 
-5.  (Optional) If the broker is still not ready, continue to check again with the
+6.  (Optional) If the broker is still not ready, continue to check again with the
     commands:
 
   ```
@@ -129,11 +125,11 @@ The commands are used to check the available OCI services that could be accessed
 through the service broker, such as Autonomous Transaction Processing, Object
 Storage and others.
 
-## STEP 2: Using OCI service broker, create binding to 2 existing ATP instances
+## **STEP 2**: Using OCI service broker, create binding to 2 existing ATP instances
+You will now use the created OCI service broker and create bindings to the
+    two Autonomous Transaction Processing databases.
 
-1.  You will now use the created OCI service broker and create bindings to the
-    two Autonomous Transaction Processing databases. In Cloud Shell go to the
-    service broker folder:
+1.  In Cloud Shell go to the service broker folder:
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/osb-atp-and-oss</copy>
@@ -177,7 +173,7 @@ Storage and others.
 
   ![](images/3066d511196e52a4e0e96a89a2510f3a.png " ")
 
-4.  Once the script was edited, execute it.
+4.  Once the script is edited, execute it:
 
   ```
   <copy>./setupATP.sh</copy>
@@ -200,14 +196,15 @@ Storage and others.
 
   ![](images/162620d9980ac83f2084ae4c46838f45.png " ")
 
-## STEP 3: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
+## **STEP 3**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
 You will verify the connectivity from the frontend Helidon microservice
     deployment to the ATP using the previously created service broker binding.
 
-    *Reviewer: can these files be local - or moved into the oracle/learning-library repo?*
+1.  First, let’s analyze the Kubernetes deployment YAML file: `atpaqadmin-service.yaml`.
 
-1.  First, let’s analyze the Kubernetes deployment YAML file:
-    [https://github.com/paulparkinson/msdataworkshop/blob/master/atpaqadmin/atpaqadmin-deployment.yaml](https://github.com/paulparkinson/msdataworkshop/blob/master/atpaqadmin/atpaqadmin-deployment.yaml)
+    ```
+    <copy>cat ~/msdataworkshop-master/atpaqadmin/atpaqadmin-service.yaml</copy>
+    ```
 
     The volumes are set up and credentials are brought from each of the bindings
     (inventory and order). The credential files in the secret are base64 encoded
@@ -217,8 +214,11 @@ You will verify the connectivity from the frontend Helidon microservice
     connection information such as the JDBC URL, DB credentials and Wallet,
     created in the previous step.
 
-2.  Let’s analyze the `microprofile-config.properties` file:
-    [https://github.com/paulparkinson/msdataworkshop/blob/master/atpaqadmin/src/main/resources/META-INF/microprofile-config.properties](https://github.com/paulparkinson/msdataworkshop/blob/master/atpaqadmin/src/main/resources/META-INF/microprofile-config.properties)
+2.  Let’s analyze the `microprofile-config.properties` file.
+
+    ```
+    <copy>cat ~/msdataworkshop-master/atpaqadmin/src/main/resources/META-INF/microprofile-config.properties</copy>
+    ```
 
     This file defines the `microprofile` standard. It also has the definition of
     the data sources that will be injected. You will be using the universal
@@ -226,17 +226,20 @@ You will verify the connectivity from the frontend Helidon microservice
     inject the datasource. The file has default values which will be overwritten
     with the values specific for our Kubernetes deployment.
 
-3.  Let’s also look at the microservice source file `ATPAQAdminResource.java`:
-    [https://github.com/paulparkinson/msdataworkshop/blob/master/atpaqadmin/src/main/java/oracle/db/microservices/ATPAQAdminResource.java](https://github.com/paulparkinson/msdataworkshop/blob/master/atpaqadmin/src/main/java/oracle/db/microservices/ATPAQAdminResource.java)
+3.  Let’s also look at the microservice source file `ATPAQAdminResource.java`.
+
+    ```
+    <copy>cat ~/msdataworkshop-master/atpaqadmin/src/main/java/oracle/db/microservices/ATPAQAdminResource.java</copy>
+    ```
 
     Look for the inject portion. The `@Inject` will have the two data sources
     under `@Named` as “orderpdb” and “inventorypdb” which were mentioned in the
     `microprofile-config.properties` file.
 
-4.  Go into the ATP admin folder
+4.  Go into the ATP admin folder.
 
     ```
-    <copy>cd \$MSDATAWORKSHOP_LOCATION/atpaqadmin</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/atpaqadmin</copy>
     ```
 
   ![](images/6ba636763c8534771619ae9a55d3322c.png " ")
@@ -259,16 +262,18 @@ You will verify the connectivity from the frontend Helidon microservice
 
   ![](images/33ed0b2b6316c6cdbbb2939947759119.png " ")
 
-7.  Use the URL `http://<external-IP>:8080` to open the frontend webpage. Click **testdatasources**.
+7.  Use the URL `http://<external-IP>:8080` to open the frontend webpage.
 
   ![](images/490686705b79e262def7f41968498d8a.png " ")
+
+8. Click **testdatasources**.
 
   ![](images/430872b9b99ce788dddb45c5e1de71ce.png " ")
 
   The frontend is calling the `atpaqadmin` service and has successfully established
   connections to both databases `orderpdb` and `inventorypdb`.
 
-## STEP 4: Setup AQ in the database
+## **STEP 4**: Setup AQ in the database
 In this step you will set up the AQ messaging queue by creating database
     links between the two ATP databases, and perform queue propagation. Advanced
     Queuing provides database-integrated message queuing functionality. We are
@@ -289,17 +294,17 @@ In this step you will set up the AQ messaging queue by creating database
   ![](images/6873d607319af22e64d0aa11f8bd2ed8.png " ")
 
 4.  On the InventoryDB page click **DB Connection**, select the
-    regional Wallet and download the zip file. On the next page you will be
-    asked to provide the password, please type the same password used when you
-    created the instance.
+    regional Wallet and download the zip file.
 
   ![](images/d4ffd87731799f3961dfa13f36dd44a1.png " ")
 
   ![](images/1b05d273a509a51f681e0efc514f09f4.png " ")
 
+5. On the next page you will be asked to provide the password, please type the same password used when you created the instance.
+
   ![](images/73b7e7e550731c525b8a93939ef67188.png " ")
 
-5.  Once downloaded, extract the zip file on your computer, and upload the
+6.  Once downloaded, extract the zip file on your computer, and upload the
     `cwallet.sso` into object storage. Go to the Object Storage page and click **Create
     Bucket**. Make sure you are in the `msdataworkshop` compartment.
 
@@ -307,15 +312,14 @@ In this step you will set up the AQ messaging queue by creating database
 
   ![](images/9f3e11006885ae7e63ddbfd7d1c8fb77.png " ")
 
-6.  Name the compartment as `msdataworkshopbucket`, leave the defaults and click
+7.  Name the compartment `msdataworkshopbucket`, leave the defaults and click
     **Create Bucket**. You should see the newly created bucket in the list.
 
   ![](images/b40c72b4a398854e5a07c9c219075d73.png " ")
 
-7.  Click `msdataworkshopbucket`, under Object, click **Upload Objects**, select
+8.  Click `msdataworkshopbucket`, under Object, click **Upload Objects**, select
     the extracted `cwallet.sso` file from your computer and click **Upload
-    Objects**. Once uploaded, go back to the `msdataworkshopbucket` page, and you
-    should see the uploaded file in the list.
+    Objects**.
 
   ![](images/438426876ac0d4ebbb964ae25d24c8f0.png " ")
 
@@ -327,9 +331,11 @@ In this step you will set up the AQ messaging queue by creating database
 
   ![](images/48599172582ed1a60b4d47307a5c04fc.png " ")
 
+9. Once uploaded, go back to the `msdataworkshopbucket` page, and you should see the uploaded file in the list.
+
   ![](images/e7d97fd1eeae32cf65f68072fbb497b3.png " ")
 
-8.  For convenience, create a pre-authenticated URL to the Object eliminating
+10.  For convenience, create a pre-authenticated URL to the Object eliminating
     the need to sign-in when accessing the object. Click the other options icon
     located to the right of the `cwallet.sso` object, and select **Create
     Pre-Authenticated Request**. On the next page confirm the defaults and click
@@ -340,7 +346,7 @@ In this step you will set up the AQ messaging queue by creating database
 
   ![](images/3caac1410392a9c844675c60b166a371.png " ")
 
-9.  Open the Cloud Shell and go to the `atpaqadmin` folder.
+11.  Open the Cloud Shell and go to the `atpaqadmin` folder.
 
   ```
   <copy>cd $MSDATAWORKSHOP_LOCATION/atpaqadmin</copy>
@@ -348,7 +354,7 @@ In this step you will set up the AQ messaging queue by creating database
 
   ![](images/7b2c01d83a10447de8761c7843183d16.png " ")
 
-10.  Edit the Kubernetes deployment file atpaqadmin-deployment.yaml with vi.
+12.  Edit the Kubernetes deployment file `atpaqadmin-deployment.yaml` with vi.
 
   ```
   <copy>vi atpaqadmin-deployment.yaml</copy>
@@ -356,18 +362,18 @@ In this step you will set up the AQ messaging queue by creating database
 
   ![](images/341f75a208337ea66db5a007dc7c1664.png " ")
 
-11.  We need to provide values in the section marked with “\# PROVIDE VALUES FOR
+13.  We need to provide values in the section marked with “\# PROVIDE VALUES FOR
     THE FOLLOWING...”. Provide values for the following items:
 
     - cwalletobjecturi
     - orderhostname
     - orderport
-    - orderservice_name
-    - orderssl_server_cert_dn
+    - orderservice\_name
+    - orderssl\_server\_cert\_dn
     - inventoryhostname
     - inventoryport
-    - inventoryservice_name
-    - inventoryssl_server_cert_dn
+    - inventoryservice\_name
+    - inventoryssl\_server\_cert\_dn
 
     `cwalletobjecturi` – is the pre-authenticated URL which we’ve created in the previous step, when uploading `cwallet.sso` to the Object storage.
 
@@ -379,7 +385,7 @@ In this step you will set up the AQ messaging queue by creating database
 
   ![](images/e0cc650777e2d759de02ed49f6fcc8b8.png " ")
 
-  12.  Redeploy the `atpaqadmin` image.
+14.  Redeploy the `atpaqadmin` image.
 
   ```
   <copy>./redeploy.sh</copy>
@@ -387,7 +393,7 @@ In this step you will set up the AQ messaging queue by creating database
 
   ![](images/280c423cdfa5b825b704e8a2bdee2621.png " ")
 
-13.  Once created, run the following command to check that the `atpaqadmin` pod is
+15.  Once created, run the following command to check that the `atpaqadmin` pod is
     in running state. You should see the `atpaqadmin` pod up and running
 
     ```
@@ -396,7 +402,7 @@ In this step you will set up the AQ messaging queue by creating database
 
   ![](images/1f226568abdce39d7fc9eacd9279fbab.png " ")
 
-14.  Open the frontend microservice home page and click the following buttons in
+16.  Open the frontend microservice home page and click the following buttons in
     order: **createUsers**, **createInventoryTable**, **createDBLinks**,
     **setupTablesQueuesAndPropagation**.
 
@@ -420,7 +426,7 @@ In this step you will set up the AQ messaging queue by creating database
   to complete, therefore we could open the Cloud Shell and check the logs, as we
   are waiting until all the messages have been received and confirmed.
 
-15. (Optional) While waiting for `setupTablesQueuesAndPropagation` to complete, open the Cloud Shell and check the logs using the following command:
+17. (Optional) While waiting for `setupTablesQueuesAndPropagation` to complete, open the Cloud Shell and check the logs using the following command:
 
     ```
     <copy>logpod admin</copy>
@@ -433,7 +439,7 @@ In this step you will set up the AQ messaging queue by creating database
 
   ![](images/cf0526b6ef1c3f21bb865947462bdb17.png " ")
 
-16. (Optional) If it is necessary to restart, rerun the process or clean up the
+18. (Optional) If it is necessary to restart, rerun the process or clean up the
     database:
 
     If **setupTablesQueuesAndPropagation** was executed, you need to run
@@ -449,7 +455,8 @@ You have successfully configured the databases with the necessary users, tables
 and message propagation across the two ATP instances.
 
 ## Acknowledgements
-* **Author** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Author** - Paul Parkinson, Consulting Member of Technical Staff
+* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Last Updated By/Date** - Tom McGinn, April 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
