@@ -641,7 +641,7 @@ In this exercise you will create:
 **Introduction**
 
 In exercise 4 you will create web and mobile applications so that Mama Maggy managers and franchisees may see what products are available for order and to track the status of orders once they are made.
-In exercise 4 you will add useful information to your application using RESTful API calls rather than Business Objects.
+
 
 Exercise 4 has three sections:
 
@@ -655,7 +655,7 @@ Exercise 4 has three sections:
 
 ### Exercise 4 - Section 1 – Create Web Application
 
-In the last exercise you created three business objects and added data to them; now you will create a web application to work with them
+In exercise 2 you created three business objects and uploaded data to the embedded database; now you will create a web application to work with them.
 
 
 1.  If you're still logged in to the Oracle Cloud and VBCS, skip to #2 below. 
@@ -758,12 +758,12 @@ In the last exercise you created three business objects and added data to them; 
     Success! Mama Maggy managers/franchisees can now see a list of the various products available for order (without having to call headquarters).
 
 
-11. Now, let’s add a page of detail, this page will allow us to drill down and get further information on the specific items. Return to the Visual Builder Designer and select the table containing the property list. Notice the icon on the right side near the top of the Property Inspector.
+10. Now, let’s add a page of detail, this page will allow us to drill down and get further information on the specific items. Return to the Visual Builder Designer and select the table containing the property list. Notice the icon on the right side near the top of the Property Inspector.
 
     ![](./media/image98.png)
     
 
-12. The **Quick Start** button makes adding to your application easy. ![](./media/image99.png)
+11. The **Quick Start** button makes adding to your application easy. ![](./media/image99.png)
  The Quick Start options include: Adding data, building a Create Page (new row), an Edit Page (update row), a Detail page (display single row), Delete Action (delete row), or Task Actions (add task controls).
     
     ![](./media/image100.png)
