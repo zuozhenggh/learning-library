@@ -273,17 +273,12 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 - **Virtual cloud network compartment**: Select your compartment
 - **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Subnet:** Choose the Private Subnet under **Private Subnets** 
 - **Use network security groups to control traffic** : Leave un-checked
-- **Assign a public IP address**: Check this option
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
-
 - **Boot Volume:** Leave the default
 - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 13. Click **Create**
-
 
 **NOTE:** If 'Service limit' error is displayed choose a different shape such as VM.Standard.E2.2 OR VM.Standard2.2
 

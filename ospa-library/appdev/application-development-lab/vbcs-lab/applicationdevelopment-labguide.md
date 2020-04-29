@@ -633,7 +633,7 @@ In this exercise you will create:
 **This concludes exercise 3.**
 
 ******
-
+<br>
 <br>
 
 ## Day 2 Web and Mobile Apps
@@ -641,21 +641,21 @@ In this exercise you will create:
 **Introduction**
 
 In exercise 4 you will create web and mobile applications so that Mama Maggy managers and franchisees may see what products are available for order and to track the status of orders once they are made.
-In exercise 4 you will add useful information to your application using RESTful API calls rather than Business Objects.
+
 
 Exercise 4 has three sections:
 
-  - Section 1 – [Create First Web Application](#exercise-3-section-1--create-first-web-application)
+  - Section 1 – [Create First Web Application](#exercise-4-section-1--create-first-web-application)
 
-  - Section 2 – [Create Master-Detail Application](#exercise-3-section-2--create-master-detail-application)
+  - Section 2 – [Create Master-Detail Application](#exercise-4-section-2--create-master-detail-application)
 
-  - Section 3 – [Create Mobile Application](#exercise-3-section-3--create-mobile-application)
+  - Section 3 – [Create Mobile Application](#exercise-4-section-3--create-mobile-application)
 
 <br>
 
 ### Exercise 4 - Section 1 – Create Web Application
 
-In the last exercise you created three business objects and added data to them; now you will create a web application to work with them
+In exercise 2 you created three business objects and uploaded data to the embedded database; now you will create a web application to work with them.
 
 
 1.  If you're still logged in to the Oracle Cloud and VBCS, skip to #2 below. 
@@ -758,12 +758,12 @@ In the last exercise you created three business objects and added data to them; 
     Success! Mama Maggy managers/franchisees can now see a list of the various products available for order (without having to call headquarters).
 
 
-11. Now, let’s add a page of detail, this page will allow us to drill down and get further information on the specific items. Return to the Visual Builder Designer and select the table containing the property list. Notice the icon on the right side near the top of the Property Inspector.
+10. Now, let’s add a page of detail, this page will allow us to drill down and get further information on the specific items. Return to the Visual Builder Designer and select the table containing the property list. Notice the icon on the right side near the top of the Property Inspector.
 
     ![](./media/image98.png)
     
 
-12. The **Quick Start** button makes adding to your application easy. ![](./media/image99.png)
+11. The **Quick Start** button makes adding to your application easy. ![](./media/image99.png)
  The Quick Start options include: Adding data, building a Create Page (new row), an Edit Page (update row), a Detail page (display single row), Delete Action (delete row), or Task Actions (add task controls).
     
     ![](./media/image100.png)
@@ -815,7 +815,7 @@ In the last exercise you created three business objects and added data to them; 
 
     ![](./media/image106.png)
 
-    Now, return to the Product List display and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
+    Now, return to the Product List page, you can click the **Back** button or select the **main-start** page (You should see **main-start** on the top bar as a tab), and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
 
     ![](./media/image107.png)
     
@@ -835,7 +835,7 @@ In the last exercise you created three business objects and added data to them; 
   
     ![](./media/3.10.12.png)
 
-6. Once you have reviewed the product details, click the provided **Back** button to return to the list.
+19. Once you have reviewed the product details, click the provided **Back** button to return to the list.
 
     ![](./media/3.10.13.png)
 
@@ -954,7 +954,7 @@ In this exercise section you will create a two-screen application similar to the
        
    ![](./media/3.18.1.png)
    
-10. On the right-side of the **Define Query** wizard page under **Target** expand **{} filterCriterion -\> \[\] criteria -\>{} item\[0\] -\>** to expose attribute, op, and value** as shown below.
+10. On the right-side of the **Define Query** wizard page under **Target** expand **{} filterCriterion -\> \[\] criteria -\>{} item\[0\] -\>** to expose attribute, op, and **value** as shown below.
 
    ![](./media/3.18.2.png)
     
@@ -1074,9 +1074,15 @@ Mama Maggy's managers/franchisees want to be able to check product order status 
     ![](./media/image140.png)
 
 
-14. Use the table’s **Quick Start** to **Add Data** from **ProductOrderLine** to the table:
+14. Use the table’s **Quick Start** to **Add Data** from **ProductOrderLine** to the table
 
-    __*** find Product Name by drilling down ***__<br/>
+15. Select the following fields (As shown on the picture) and click **Next**:
+    - ID (Input Number)
+    - Product Name (Text) 
+    - Unit Price (Input Number)
+    - Quantity (Input Number)
+
+    **How to Find Product Name by drilling down**<br/>
 &nbsp;&nbsp;&nbsp; __{} response <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [] items <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{} item\[i\] <br/>
@@ -1084,15 +1090,14 @@ Mama Maggy's managers/franchisees want to be able to check product order status 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[] items <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{} item[i] <br>
 
-    Select the following fields (As shown on the picture) and click **Next**:
-    - Product Name (Text)
-    - Unit Price (Input Number)
-    - Quantity (Input Number)
-  
+
+
     ![](./media/3.32.1.png)
 
+    ![](./media/3.32.1.a.png)
 
-15. Use **Define Query** to connect the Product List to the list of Items as follows:
+
+1.  Use **Define Query** to connect the Product List to the list of Items as follows:
 
     - Open {} filterCriterion -\> \[\] criteria -\> {} item\[0\] -\>
 
@@ -1276,6 +1281,21 @@ The data used to create these apps will come from **Service Connections** that y
 
     ![](./media/4.11.5.png)
 
+
+***
+
+**Note**: If you are not able to see the **mmstores** as data source, click the **Pencil** icon located at the bottom right corner to edit your connections.
+Verify that you have the GET /store/{Store_Id} selected. Click next and finish.
+
+![](./media/add_connection_1.png)
+
+</br>
+
+![](./media/add_connection_2.png)
+
+***
+
+
 19. Choose the following fields and the primary key:
      - id
      - name
@@ -1319,7 +1339,28 @@ The data used to create these apps will come from **Service Connections** that y
 27. Your Store details screen should look something like this
 
      ![](./media/image170.png)
- 
+
+***
+**Note**: If you get a **"Could not load data"** error message, you must check whether the Endpoint **StoreID** is mapped.
+
+* Click on the **main-store-detail** page, click **Actions** and select **LoadAssociateChain**
+
+    ![](./media/error_store_link_1.png)
+
+
+* Select the main node **Call REST Endpoint mmstores/get_Store** and on the right hand side of the screen click the **Store_Id** field.
+
+    ![](./media/error_store_link_2.png)
+
+* On the query page, drag and drop the **storeid** value from the left to the **Store_Id** parameter located in the right. Click Save
+
+    ![](./media/error_store_link_3.png)
+
+
+* Now you should be able to see data. Go to the **main** page, select a field and drill down to the detail page.
+
+***
+
 
 28. Now create an **associatelist** web application to display all **Associate** rows (you pick the fields) and provide a **Add Detail Page** to display a single Associate (you pick the fields here too).
 
@@ -1327,7 +1368,16 @@ The data used to create these apps will come from **Service Connections** that y
     - Details display of selected Associate (**mmassociates** using
     **associate\_id**)
 
-   Test your application
+**Note**: If you face the same issue when displaying **Detail page** information as described for Store, follow the same steps to map the **Associate_Id** parameter.
+
+![](./media/error_associate_link_1.png)
+
+![](./media/error_associate_link_2.png)
+
+
+**Test your application**
+
+***
 
 29. For something really fun; return to the **storelist** application and display the **Stores Detail** page (probably called **main-store-detail** or something close)
 
