@@ -645,11 +645,11 @@ In exercise 4 you will create web and mobile applications so that Mama Maggy man
 
 Exercise 4 has three sections:
 
-  - Section 1 – [Create First Web Application](#exercise-3-section-1--create-first-web-application)
+  - Section 1 – [Create First Web Application](#exercise-4-section-1--create-first-web-application)
 
-  - Section 2 – [Create Master-Detail Application](#exercise-3-section-2--create-master-detail-application)
+  - Section 2 – [Create Master-Detail Application](#exercise-4-section-2--create-master-detail-application)
 
-  - Section 3 – [Create Mobile Application](#exercise-3-section-3--create-mobile-application)
+  - Section 3 – [Create Mobile Application](#exercise-4-section-3--create-mobile-application)
 
 <br>
 
