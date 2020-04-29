@@ -3,44 +3,44 @@
         {
             "title": "Workshop Overview",
             "description":"Workhop Overview",
-            "publisheddate": "01/15/2020",
-            "filename":"./about-the-workshop/content.md"
+            "publisheddate": "04/15/2020",
+            "filename":"./../intro/intro.md"
         },
         {
             "title": "Lab 0: Connect to HOL image",
             "description":"Setup the Lab Environment",
-            "publisheddate": "03/20/2020",
-            "filename":"./lab000/content.md"
+            "publisheddate": "04/15/2020",
+            "filename":"./../19c-hol-setup/19c-hol-setup.md"
         },
         {
             "title": "Lab 1: Create 19c target",
             "description":"Install software and create a new 19c database",
-            "publisheddate": "03/20/2020",
-            "filename":"./lab100/content.md"
+            "publisheddate": "04/15/2020",
+            "filename":"./../19c-install-create-target/19c-install-create-target.md"
         },
         {
             "title": "Lab 2: Auto Upgrade to 19c",
             "description":"Upgrade using the new AutoUpgrade tool",
-            "publisheddate": "03/20/2020",
-            "filename":"./lab200/content.md"
+            "publisheddate": "04/15/2020",
+            "filename":"./../19c-autoupgrade/19c-autoupgrade.md"
         },
         {
             "title": "Lab 3: Full Transportable to 19c",
             "description":"Upgrade using Full Transportable Tablespaces",
-            "publisheddate": "03/20/2020",
-            "filename":"./lab300/content.md"
+            "publisheddate": "04/15/2020",
+            "filename":"./../19c-full-transportable/19c-full-transportable.md"
         },
         {
             "title": "Lab 4: Unplug and Plug to 19c",
             "description":"Upgrade using unplugging a PDB from the old version and plug it into a new version",
-            "publisheddate": "03/20/2020",
-            "filename":"./lab400/content.md"
+            "publisheddate": "04/15/2020",
+            "filename":"./../19c-pluggable-db/19c-pluggable-db.md"
         },
         {
             "title": "Lab 5: MV2ADB to 19c ADB",
             "description":"Upgrade to 19c on Oracle Autonomous Database cloud using MV2ADB",
-            "publisheddate": "03/20/2020",
-            "filename":"./lab500/content.md"
+            "publisheddate": "04/15/2020",
+            "filename":"./../19c-MV2ADB-upgrade/19c-MV2ADB-upgrade.md"
         }
     ]
 }
