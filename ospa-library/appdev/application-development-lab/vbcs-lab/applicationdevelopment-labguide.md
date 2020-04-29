@@ -633,7 +633,7 @@ In this exercise you will create:
 **This concludes exercise 3.**
 
 ******
-
+<br>
 <br>
 
 ## Day 2 Web and Mobile Apps
