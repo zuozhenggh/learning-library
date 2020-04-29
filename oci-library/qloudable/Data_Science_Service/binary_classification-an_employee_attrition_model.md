@@ -1,4 +1,4 @@
-# Binary Classification, an Employee Attrition Model
+# Speed up data science with the Accelerated Data Science SDK
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@
 
 [Selecting the Compartment](#selecting-the-compartment)
 
-[Open a Notebook](#open-a-notebook)
+[Opening the Notebook](#opening-the-notebook)
 
 [Working with JupyterLab](#working-with-jupyterlab)
 
@@ -26,7 +26,9 @@
 
 The Oracle Data Science Service is a fully managed, self-service platform for data science teams to build, train, and manage machine learning (ML) models in Oracle Cloud Infrastructure.
 
-In this model we will build a binary classification model in an effort to predict employee attrition. Using the Accelerated Data Science (ADS) SDK we will do an exploratory data analysis (EDA) to understand the nature and distribution of the data. We will visualize the data and assess the correlation between predictors. The Oracle AutoML tools will be used to perform and automatically tune Light Gradient Boosting Machine (GBM), XG Boost, Random Forest and Logistic Regression classifiers. These models will be evaluated and compared using ADS's model evaluation tools. Once the best model is selected, we will use the machine learning explainability (MLX) tools to explain the global and local behavior of the model. That is, we will see what features are important in the model using feature permutation importance, partial dependence plots (PDP), individual conditional expectation (ICE) and several other methods used to determine why the model made the prediction that it did. 
+The Accelerated Data Science (ADS) SDK will help you build better machine learning models faster. It can significantly speed up your workflow by automating common tasks like exploratory data analysis (EDA), feature engineering, algorithm selection and tuning, machine learning explanation (MLX) and much more. This lab will introduce the Accelerated Data Science SDK, showing you how it can speed up your workflow and make you more productive.
+
+In this module we will build a binary classification model in an effort to predict employee attrition. Using the Accelerated Data Science (ADS) SDK we will do an exploratory data analysis (EDA) to understand the nature and distribution of the data. We will visualize the data and assess the correlation between predictors. The Oracle AutoML tools will be used to perform and automatically tune Light Gradient Boosting Machine (GBM), XG Boost, Random Forest and Logistic Regression classifiers. These models will be evaluated and compared using ADS's model evaluation tools. Once the best model is selected, we will use the machine learning explainability (MLX) tools to explain the global and local behavior of the model. That is, we will see what features are important in the model using feature permutation importance, partial dependence plots (PDP), individual conditional expectation (ICE) and several other methods used to determine why the model made the prediction that it did. 
 
 **We recommend using Chrome or Edge as the browser. Also set your browser zoom to 80%**
 
@@ -54,7 +56,7 @@ A note for Mac OS users. Use Ctrl+C / Ctrl+V to copy and paste inside the OCI Co
 
 Have fun and enjoy learning about binary classification, exploratory data analysis (EDA), AutoML, model validation and selection, and machine learning explainability (MLX).
 
-## The Data Science Service
+## Data Science Service
 
 * Provides infrastructure and data science tools, such as open source technologies, libraries, and packages for machine learning and artificial intelligence. It also offers Oracle ML products, such as Oracle Labs AutoML and model explanation tools.
 
@@ -161,4 +163,4 @@ If you have time, there are some other notebooks that you may find interesting.
 * **ads_transforming_data-3.ipynb**: Learn about the ADSDatasetFactory and how it can clean and transform data.
 * **ads_model_feature_1.ipynb**: See the capabilities of the ADSModel class. See how ADSModel makes the ADS pipeline completely modular and adaptable to 3rd party models.
 
-When you are done, you can close the lab by clicking on the x with a circle around it in the top right corner.
+When you are done, you can close the lab by clicking on the "Finish Lab" button.
