@@ -169,7 +169,6 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
 1. Locate your menu bar and click on the **person icon** at the far right.  From the pull-out menu, select your **user's name** (remember this username could be an email). 
 
- #   ![](./images/Create_Swift_Password_01.jpg " ")
     ![](./images/navigate-to-auth-token-2.png " ")
 
     ![](./images/navigate-to-auth-token.png " ")
