@@ -4,19 +4,19 @@
             "title": "Setup with Docker",
             "description":"Setup with Docker",
             "publisheddate": "04/30/2020",
-            "filename":"./lab100/setup_with_docker.md"
+            "filename":"../lab100/setup_with_docker.md"
         },
         {
             "title": "Customer 360 Analysis",
             "description":"Customer 360 Analysis",
             "publisheddate": "04/30/2020",
-            "filename":"./lab200/customer_360_analysis.md"
+            "filename":"../lab200/customer_360_analysis.md"
         },
         {
             "title": "Setup with Free Tier",
             "description":"Setup environment with Always Free",
             "publisheddate": "04/30/2020",
-            "filename":"./lab300/setup_always_free.md"
+            "filename":"../lab300/setup_always_free.md"
         }
     ]
 }
