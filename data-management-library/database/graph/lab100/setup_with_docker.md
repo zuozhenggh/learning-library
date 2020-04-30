@@ -1,4 +1,4 @@
-# Setup Graph enviroment
+# Setup Graph enviromment
 
 ## Disclaimer
 The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle’s products remains at the sole discretion of Oracle.
@@ -36,17 +36,17 @@ Build and pull images, create containers, and start them.
     $ <copy>cd oracle-pg/docker/</copy>
     $ <copy>docker-compose up -d</copy>
 
-It takes some time. To check the progress, see Appendix 1.
+It takes some time. To check the progress, see **Appendix 1**.
 
 Access Graph Visualization.
 
  - [http://localhost:7007/ui/](http://localhost:7007/ui/)
 
-Access to Zeppelin and start graph analytics, e.g. [Customer 360 Analysis](,,/lab200/customer_360_analisys.md).
+Access to Zeppelin and start graph analytics, e.g. [Customer 360 Analysis](../lab200/customer_360_analisys.md).
 
 - [http://localhost:8080/#/](http://localhost:8080/#/)
 
-To stop, restart, or remove the containers, see Appendix 2.
+To stop, restart, or remove the containers, see **Appendix 2**.
 
 ### Appendix 1
 To check the progress, see logs.
@@ -125,7 +125,9 @@ Next step is Create Graph on Database.
 
 Connect the database as "sys" user, and create a user, "customer_360".
 
-`$ <copy$ docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>`
+```
+$ <copy$ docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
+```
 
 ```
 SQL> <copy>@/graphs/customer_360/create_user.sql<copy>
@@ -134,7 +136,9 @@ SQL> EXIT
 
 Connect the database as "customer_360" user, and create tables.
 
-`$ <copy>docker exec -it oracle-db sqlplus customer_360/Welcome1@localhost:1521/orclpdb1</copy>`
+```
+$ <copy>docker exec -it oracle-db sqlplus customer_360/Welcome1@localhost:1521/orclpdb1</copy>
+```
 
 ```
 SQL> <copy>@/graphs/customer_360/create_tables.sql</copy>
@@ -182,14 +186,17 @@ Exit Graph Client. See also **Appendix 2**.
 
 Set the new loading configuration into the list of preload graphs.
 
-![](./images/create_conf.jpg)
+![](./images/load_conf.jpg)
 
-pgx-rdbms.conf
+`pgx-rdbms.conf`
 
-$ oracle-pg/docker/conf/pgx-rdbms.conf
+```
+$ <copy>oracle-pg/docker/conf/pgx-rdbms.conf</copy>
 "preload_graphs": [
   {"path": "/graphs/customer_360/rdbms.json", "name": "Customer 360"},
-rdbms.json (abbreviated)
+```
+
+`rdbms.json`
 
 ```
 {
