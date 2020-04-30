@@ -363,51 +363,64 @@ con = cx_Oracle.connect('sh/Ora_DB4U@localhost:1521/orclpdb')
 
 cur=con.cursor()
 ````
-3. To create an external table pointing to the JSON document, execute the following in the Python shell:
+3. To create an external table pointing to the JSON document *departments.dmp*, execute the following in the Python shell:
 
 ````
 <copy>
-cur.execute('create table json (doc clob) organization external (type oracle_loader default directory samples access parameters (records delimited by newline nobadfile nologfile fields (doc char(50000))) location (samples:\'departments.dmp\')) parallel reject limit unlimited')
+cur.execute('create table empdept (deptdoc clob) organization external (type oracle_loader default directory samples access parameters (records delimited by newline nobadfile nologfile fields (doc char(50000))) location (samples:\'departments.dmp\')) parallel reject limit unlimited')
 </copy>
 ````
 
 4. Query the JSON table retrieving all the documents
 ````
 <copy>
-cur.execute('select json_query(doc, \'$\') from json')
+cur.execute('select json_query(deptdoc, \'$\') from empdept')
 
 for row in cur: print (row)
 </copy>
 ````
 ![](./images/p_pythQuery-12.png)
 
-5. Top retrieve individual attributes use JSON_QUERY with dot notation
+5. The data in the file *departments.dmp* is not a single JSON document. Each row is JSON data consisting of a *Department* object which contains an array of *employees* objects. Each employees object has a Name, a Job Title and a Hire Date. The Oracle database can manipulate JSON directly, as you have seen with the SQL/JSON operator json_query. Other operators include json_value, json_table and so on.
+
+Use Python to retrieve the data from our table, load it in to an array and print the first department name (the indentation is important):
 
 ````
 <copy>
-cur.execute('select json_query(doc, \'$.department\') from json')
+rv = []
+
+cur.execute('select to_char(deptdoc) from empdept')
+
+for r in cur:
+    rv.append(loads(r[0]))
+
+print(rv[0]['department'])
 
 for row in cur: print(row)
 </copy>
 ````
 ![](./images/p_pythQuery-13.png)
 
-6. To count how many employees per department change the query to:
+6. Now determine how many employees there are per department:
 ````
 <copy>
-cur.execute('select json_query(doc, \'$.department\'), count(*)  from json group by json_value(doc, \'$.departments\')')
+for row in rv:
+   print (row['department'] + ": " + str(len(row['employees'])))
 
-for row in cur: print(row)
+
 </copy>
 ````
-
+![](./images/p_pythQuery-14.png)
 ## Conclusion
 
 In this Lab you had an opportunity to try out connecting Python in the Oracle Database.
+The guide shows the Developer how to use the Python Interpreter to interact with the Oracle Database through the Python API. We start by introducing Python and then review its installation requirements and tools required to run the demo. TThe Python API cx_Oracle is an open source Python package that Oracle contributes to. It is used to access an Oracle Database from Python.
+The second part of the guide goes through a number of demo cases available through the Python API, including a simple Hello World application, and retrieving records from the Oracle Database using the cursor technology. There is a module on working with JSON data: loading the records to the database and querying them.
+An additional lab on using Python with Spatial data is also available elsewhere in this module.
 
 ## Acknowledgements
 
-- **Author** - Database Partner Technical Services
-- **Last Updated By/Date** - Troy Anthony, March 2020
+- **Author** - Troy Anthony
+- **Last Updated By/Date** - Troy Anthony, April 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
