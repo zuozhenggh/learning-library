@@ -1,0 +1,47 @@
+{
+    "tutorials": [
+        {
+            "title": "Create Graph as Files",
+            "description":"Create Graph as Files",
+            "publisheddate": "04/30/2020",
+            "filename":"./lab100/graph_as_files.md"
+        },
+        {
+            "title": "Create Graph on Database",
+            "description":"Create Graph on Database",
+            "publisheddate": "04/30/2020",
+            "filename":"./lab200/graphs_on_database.md"
+        },
+        {
+            "title": "Customer 360 Analysis",
+            "description":"Customer 360 Analysis",
+            "publisheddate": "04/30/2020",
+            "filename":"./lab300/customer_360_analysis.md"
+        },
+        {
+            "title": "Load from Database",
+            "description":"Load from Database",
+            "publisheddate": "04/30/2020",
+            "filename":"./lab400/load_from_database.md"
+        },
+        {
+            "title": "Load from Files",
+            "description":"Load from Filess",
+            "publisheddate": "04/30/2020",
+            "filename":"./lab500/load_from_files.md"
+        },
+        {
+            "title": "Setup Lab",
+            "description":"Setup Lab",
+            "publisheddate": "04/30/2020",
+            "filename":"./lab600/setup_lab.md"
+        },
+        {
+            "title": "Setup with Docker",
+            "description":"Setup with Docker",
+            "publisheddate": "04/30/2020",
+            "filename":"./lab700/setup_with_docker.md"
+        }
+    ]
+}
+
