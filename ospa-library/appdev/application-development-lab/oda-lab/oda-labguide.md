@@ -584,7 +584,7 @@ Next, you need to create the dialog flow states that each possible outcome navig
 
 ### Troubleshooting Errors in the Dialog Flow
 
-If you don’t see a success message, then most likely you misspelled a property name or did not follow the required **two-space indenting increments**. In this case, scroll through the dialog flow until you see an ![](media/error-icon.png) icon in the left margin. 
+If you see an error message after validating your code, then most likely you misspelled a property name or did not follow the required **two-space indenting increments**. In this case, scroll through the dialog flow until you see an ![](media/error-icon.png) icon in the left margin. 
 
 Mouse over the icon to display the tooltip with a description of the problem. In addition, you can click the debug icon ![](media/debug-icon.png) which appears to the left of the dialog flow editor. It often provides additional information about the reason. You close the debug window by clicking the debug icon again.
 
@@ -726,7 +726,7 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 ### Set Pizza Topping
 1. Below the `setPizzaSize`
  state, paste the following code (also based on the `System.List`
- component) to create the `setPizzaTopping`state:
+ component) to create the `setPizzaTopping` state:
 
 	```
 	  setPizzaTopping:
@@ -857,7 +857,7 @@ We’ll complete the pizza order process by fetching the pizza size, topping, an
 
 ### Validate the Dialog Flow
 
-* Click the **Validate** button on the top of the page, and then fix any errors that are revealed.If you have errors that you can’t resolve, you can copy and paste the code from  [complete-dialog-flow.txt](../files/complete-dialog-flow.txt) .
+* Click the **Validate** button on the top of the page, and then fix any errors that are revealed. If you have errors that you can’t resolve, you can copy and paste the code from  [complete-dialog-flow.txt](../files/complete-dialog-flow.txt) .
 
 <br>
 
@@ -919,9 +919,9 @@ For information on setting up a web channel on Digital Assistant 19.4.1, see [Ex
 
 As part of this exercise, you will be provided with the following assets:
 
-* [index.html](../files/index.html) (Click **Save As** and save it locally)
-* [style.css](../files/style.css) (Click **Save As** and save it locally)
-* [scripts.zip](../files/scripts.zip) (Click **Save As** and save it locally)
+* [index.html](../files/index.html) (Click **Save Link As** and save it locally)
+* [style.css](../files/style.css) (Click **Save Link As** and save it locally)
+* [scripts.zip](../files/scripts.zip) (Click **Save Link As** and save it locally)
 
 
 
@@ -954,7 +954,7 @@ The SDK connects to the Oracle Chat Server, which stands between Oracle Digital 
     ![](media/oda_channel_2.png)
 
 
-3. Give the channel a name, a description, select channel type `Oracle Web`, in `Allow Domains` enter `*` and for the purpose of this lab disable `Client Authentication Enabled`.
+3. Give the channel a name, a description, select channel type `Oracle Web`, in `Allow Domains` enter `*` and for the purpose of this lab disable `Client Authentication Enabled`. Click **Create**
 
     ![](media/oda_channel_3.png)
 
