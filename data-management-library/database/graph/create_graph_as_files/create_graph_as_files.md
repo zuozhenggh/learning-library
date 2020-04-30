@@ -13,13 +13,10 @@ Go to `graphs/customer_360/` directory.
 
 Check the following files. Those datasets are collected from different data sources, and converted to graph data format. Here, we use `.pg` format (detail).
 
-`$ <copy>more master.pg</copy>`
-
-`$ <copy>more purchase.pg</copy>`
-
-`$ </copy>more transfer.pg</copy>`
-
-
+    $ more master.pg
+    $ more purchase.pg
+    $ more transfer.pg
+    
 `master.pg`
 
 
@@ -128,4 +125,3 @@ Next step is [Load from Files](,,/load_from_files/load_from_files.md).
 
 - **Author** - Ryota Yamanaka - Product Manager in Asia-Pacific for geospatial and graph technologies
 - **Converted to Oracle GitHub** - Adrian Galindo - Database Product Manager - PTS LAD
-- 
