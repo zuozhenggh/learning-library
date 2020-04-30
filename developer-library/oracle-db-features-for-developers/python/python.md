@@ -42,17 +42,16 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
 2.	Check if python3 has been installed by running the command
 
-<<<<<<< HEAD
 ````
     python -V
 ````
-=======
+
         ````
         <copy>
         sudo yum -y install python3 python3-tools
         </copy>
         ````
->>>>>>> upstream/master
+
 
 3. If Python is not installed then install it
 ````
@@ -127,7 +126,7 @@ cx\_Oracle is a python module that enables access to Oracle databases.  This mod
 
 3.  Test your install by launching the python console and list the available modules
 
-        ````
+````
         $. oraenv
         ORACLE_SID = [ORCL] ? ORCL
         The Oracle base remains unchanged with value /u01/app/oracle
@@ -139,7 +138,6 @@ cx\_Oracle is a python module that enables access to Oracle databases.  This mod
 
 ![](./images/p_installcxOracle-2.png)
 
-<<<<<<< HEAD
 4.  Connect to the Oracle database and print the version of the database via python.  
     (This confirms you are connected to an Oracle instance and returns the database version)
 
@@ -151,20 +149,19 @@ cx\_Oracle is a python module that enables access to Oracle databases.  This mod
         19.5.0.0.0 (example output)
 
         >>> quit()
-=======
+
 1.  Connect to the Oracle database and print the version of the database via python.  
-    (This confirms you are connected to an Oracle instance and returns the database version) 
+    (This confirms you are connected to an Oracle instance and returns the database version)
 
         ````
         <copy>
         import cx_Oracle
         con = cx_Oracle.connect('system/Ora_DB4U@localhost:1521/orclpdb')
         print(con.version)
-        
+
         quit()
         </copy>
         ````
->>>>>>> upstream/master
 
 ![](./images/p_python-3.png)
 
@@ -174,14 +171,11 @@ Retrieving records from Oracle database using cursors is a simple as embedding a
 
 1.  Create a script called /home/oracle/db_connect.py with the following contents:
 
-<<<<<<< HEAD
+
 ````
-    <copy>import cx_Oracle
-=======
-        ````
-        <copy>
+    <copy>
+
         import cx_Oracle
->>>>>>> upstream/master
 
         con = cx_Oracle.connect('sh/Ora_DB4U@localhost:1521/orclpdb')
 
@@ -194,14 +188,9 @@ Retrieving records from Oracle database using cursors is a simple as embedding a
         cur.close()
 
         con.close()
-<<<<<<< HEAD
+
     </copy>    
 ````
-=======
-        </copy>
-        ````
->>>>>>> upstream/master
-
 2.  Execute the script and check the result:
 
         ````
