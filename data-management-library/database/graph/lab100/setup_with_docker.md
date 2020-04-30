@@ -1,4 +1,4 @@
-# Setup Graph enviromment
+# Setup Graph environment
 
 ## Disclaimer
 The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle’s products remains at the sole discretion of Oracle.
@@ -6,6 +6,7 @@ The following is intended to outline our general product direction. It is intend
 ## Overview
 
 Let's load graph data from files before setting up database.
+
 ![](./images/load_data.jpg)
 
 ## Step 1: Launch Graph Server
@@ -27,14 +28,18 @@ Put the following files to `oracle-pg/docker/tmp/`
  
 Run the following script to extract packages:
 
-    $ <copy>cd oracle-pg/docker/tmp/</copy>
-    $ <copy>sh extract.sh</copy>
+```
+$ <copy>cd oracle-pg/docker/tmp/</copy>
+$ <copy>sh extract.sh</copy>
+```
 
 ### Start Containers
 Build and pull images, create containers, and start them.
 
-    $ <copy>cd oracle-pg/docker/</copy>
-    $ <copy>docker-compose up -d</copy>
+```
+$ <copy>cd oracle-pg/docker/</copy>
+$ <copy>docker-compose up -d</copy>
+```
 
 It takes some time. To check the progress, see **Appendix 1**.
 
@@ -61,13 +66,17 @@ $ <copy>docker-compose logs -f</copy>
 ### Appendix 2
 To start, stop, or restart the containers.
 
-    $ <copy>cd oracle-pg/docker/ ;</copy>
-    $ <copy>docker-compose start|stop|restart</copy>
+```
+$ <copy>cd oracle-pg/docker/ ;</copy>
+$ <copy>docker-compose start|stop|restart</copy>
+```
 
 To remove the docker containers.
 
-    $ <copy>cd oracle-pg/docker/ ;</copy>
-    $ <copy>docker-compose down</copy>
+```
+$ <copy>cd oracle-pg/docker/ ;</copy>
+$ <copy>docker-compose down</copy>
+```
 
 ## Step 2: Configure database on Docker
 
@@ -77,7 +86,9 @@ In this tutorial, we will create a docker container for Oracle Database as a bac
 ### Build Docker Image
 Clone `docker-images` repository.
 
-    $ <copy>git clone https://github.com/oracle/docker-images.git</copy>
+```
+$ <copy>git clone https://github.com/oracle/docker-images.git</copy>
+```
 
 Download Oracle Database.
 
@@ -89,25 +100,31 @@ Put `LINUX.X64_193000_db_home.zip` under:
 
 Build the image.
 
-    $ <copy>cd docker-images/OracleDatabase/SingleInstance/dockerfiles/ ;</copy>
-    $ <copy>bash buildDockerImage.sh -v 19.3.0 -e </copy>
+```
+$ <copy>cd docker-images/OracleDatabase/SingleInstance/dockerfiles/ ;</copy>
+$ <copy>bash buildDockerImage.sh -v 19.3.0 -e </copy>
+```
 
 ### Start Containers
 
 Start the containers for **Oracle Database** only.
 
-    $ <copy>cd oracle-pg/docker/ ;</copy>
-    $ <copy>docker-compose -f docker-compose-rdbms.yml up -d oracle-db </copy>
+```
+$ <copy>cd oracle-pg/docker/ ;</copy>
+$ <copy>docker-compose -f docker-compose-rdbms.yml up -d oracle-db </copy>
+```
 
 This step takes time. Please have a coffee break. See also **Appendix 1**.
 
 ### Configure Oracle Database
 
 Connect to the Oracle Database server.
-    
-    $ <copy>docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
 
-Set max_string_size running max_string_size.sql.
+```    
+$ <copy>docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
+```
+
+Set max\_string\_size running max\_string\_size.sql.
 
 ```
 SQL> <copy>@/home/oracle/scripts/max_string_size.sql</copy>
@@ -126,7 +143,7 @@ Next step is Create Graph on Database.
 Connect the database as "sys" user, and create a user, "customer_360".
 
 ```
-$ <copy$ docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
+$ <copy> docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
 ```
 
 ```
@@ -191,7 +208,7 @@ Set the new loading configuration into the list of preload graphs.
 `pgx-rdbms.conf`
 
 ```
-$ <copy>oracle-pg/docker/conf/pgx-rdbms.conf</copy>
+$ oracle-pg/docker/conf/pgx-rdbms.conf
 "preload_graphs": [
   {"path": "/graphs/customer_360/rdbms.json", "name": "Customer 360"},
 ```
