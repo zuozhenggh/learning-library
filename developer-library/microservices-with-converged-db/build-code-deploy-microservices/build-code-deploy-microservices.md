@@ -23,16 +23,16 @@ In order to divide and isolate cluster resources, you will create a cluster
     namespace which will host all related resources to this application, such as
     pods and services.
 
-1.  Log in to the Cloud Console and open the Cloud Shell by
+1. Log in to the Cloud Console and open the Cloud Shell by
     clicking the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/7feb61fbebb010b7acada8a1e8b5a742.png " ")
 
-2.  Create the `msdataworkshop` namespace using the following command:
+2. Create the `msdataworkshop` namespace using the following command:
 
-  ```
-  <copy>kubectl create ns msdataworkshop</copy>
-  ```
+    ```
+    <copy>kubectl create ns msdataworkshop</copy>
+    ```
 
   ![](images/0b897b3ec674bba2f8042287514cd9d5.png " ")
 
@@ -41,7 +41,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
 ## **STEP 2**: Build the Microservices image from the GitHub repo
 
-1.  To work with application code, you need to download GitHub repository using
+1. To work with application code, you need to download GitHub repository using
     the following command. The Cloud Shell already has the `wget` command
     installed:
 
@@ -51,11 +51,11 @@ In order to divide and isolate cluster resources, you will create a cluster
 
 2. Unzip the file you downloaded:
 
-  ```
-  <copy>unzip msdataworkshop-master.zip</copy>
-  ```
+    ```
+    <copy>unzip msdataworkshop-master.zip</copy>
+    ```
 
-2.  You need to compile, test and package into a .jar file the Helidon front-end
+3.  You need to compile, test and package into a .jar file the Helidon front-end
     application code using maven. The maven package is already installed in the
     Cloud Shell. Inside Cloud Shell go to the frontend helidon microservice
     folder.
@@ -64,23 +64,23 @@ In order to divide and isolate cluster resources, you will create a cluster
     <copy>cd msdataworkshop-master/frontend-helidon</copy>
     ```
 
-3.  Run `maven` to build the package using the following command. Since this is
+4.  Run `maven` to build the package using the following command. Since this is
     the first time maven is executed, nothing is cached, thus it will first
     download all the necessary libraries and bundles.
 
-  ```
-  <copy>mvn clean install</copy>
-  ```
+    ```
+    <copy>mvn clean install</copy>
+    ```
 
   The build should be completed in 1-2 minutes, and a target folder with the related Java files is created.
 
   ![](images/2826286b95e74bd51237859bd7d3d891.png " ")
 
-4. Execute the following command to investigate the target folder.
+5. Execute the following command to investigate the target folder.
 
-  ```
-  <copy>ls -al target/</copy>
-  ```
+    ```
+    <copy>ls -al target/</copy>
+    ```
 
   ![](images/a88b7e437c7a46e3b9878adb62942107.png " ")
 
@@ -112,20 +112,20 @@ After you have successfully compiled the application code, you are ready to push
 
 3.  For convenience, let’s store some environment variables into the `.bashrc` file. Open `bashrc` file with `vi` editor
 
-  ```
-  <copy>vi ~/.bashrc</copy>
-  ```
+    ```
+    <copy>vi ~/.bashrc</copy>
+    ```
 
   ![](images/36b9360ef7998ffe686346031227258f.png " ")
 
 4. Append the following lines at the end of the file:
 
-  ```
-  export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
-  source $MSDATAWORKSHOP_LOCATION/shortcutaliases
-  export PATH=$PATH:$MSDATAWORKSHOP_LOCATION/utils/
-  export DOCKER_REGISTRY="<region-key>.ocir.io/<tenancy-namespace>/<repo-name>"
-  ```
+    ```
+    export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
+    source $MSDATAWORKSHOP_LOCATION/shortcutaliases
+    export PATH=$PATH:$MSDATAWORKSHOP_LOCATION/utils/
+    export DOCKER_REGISTRY="<region-key>.ocir.io/<tenancy-namespace>/<repo-name>"
+    ```
 
   Where `<region-key>` and `<tenancy-namespace>` are the same as in the previous step, and `<repo-name>` is the Repository full name when creating an OCIR repository.
 
@@ -135,9 +135,9 @@ After you have successfully compiled the application code, you are ready to push
 
 5. Source the newly created bashrc file with the following command.
 
-  ```
-  <copy>source ~/.bashrc</copy>
-  ```
+    ```
+    <copy>source ~/.bashrc</copy>
+    ```
 
   ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
@@ -154,9 +154,9 @@ After you have successfully compiled the application code, you are ready to push
 
 2.  Run the build script which will build the frontend-helidon application, store it in a docker image and push it to OCIR
 
-  ```
-  <copy>./build.sh</copy>
-  ```
+    ```
+    <copy>./build.sh</copy>
+    ```
 
   ![](images/807b7c494dab6ccb6864c60344ca7e0e.png " ")
 
@@ -203,7 +203,7 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
-8.  Check that the load balancer service is running, and note the external IP
+8. Check that the load balancer service is running, and note the external IP
     address and port.
 
     ```
@@ -216,12 +216,12 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/72c888319c294bed63ad9db029b68c5e.png " ")
 
-9.  You are ready to access the frontend page. Open a new browser tab and access
+9. You are ready to access the frontend page. Open a new browser tab and access
     the external page `http://<external-IP>:8080`:
 
   ![](images/0335beb6b95e66bef6b3a5154833094f.png " ")
 
-10.  Run the remaining build script to build and push the rest of the
+10. Run the remaining build script to build and push the rest of the
     microservices images into the repository
 
     ```
