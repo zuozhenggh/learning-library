@@ -1,4 +1,4 @@
-# Setup - SSWorkshop #
+# Setup - LiveLabs #
 
 ## Introduction
 This lab will show you how to setup your environment using Oracle Resource Manager.  

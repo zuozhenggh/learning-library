@@ -33,7 +33,17 @@ This lab assumes you have completed the following labs:
 
 ## Step 1: Create External Directories
 
+<<<<<<< HEAD
 1.  This lab uses the Sales History sample schema (SH). Create two new folders on disk (using the opc user). These folders will be used later as location for some external partitions.
+=======
+0. Login to the instance using Oracle Cloud Shell and ssh
+
+    ````
+    ssh -i yourkeyname opc@ your ip address
+    ````
+
+1.  This lab uses the Sales History sample schema (SH). Create two new folders on disk (using the opc user). These folders will be used later as location for some external partitions. 
+>>>>>>> upstream/master
 
     ````
     <copy>

@@ -1,7 +1,7 @@
 
 <!-- Updated March, 2020 -->
 
-# Bonus Lab 10:  Using Oracle Machine Learning SQL Notebooks
+# Bonus Lab 10:  Using Oracle Machine Learning Notebooks
 
 ## Introduction
 
@@ -304,10 +304,14 @@ In this section we are going to use a script from a SQL pattern matching tutoria
 
     ![](./images/Picture700-48.png " ")
 
+## Want to Learn More?
+
+Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/create-dashboards.html#GUID-56831078-BBF0-4418-81BB-D03D221B17E9) for documentation on creating dashboards, reports, and notebooks with an autonomous database.
+
 ## Acknowledgements
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

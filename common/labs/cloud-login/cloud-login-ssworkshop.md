@@ -1,22 +1,22 @@
-# Login to Oracle Cloud - SSWorkshop #
+# Login to Oracle Cloud - LiveLabs #
 
 ## Introduction
 
 Oracle Cloud is the industry's broadest and most integrated cloud provider, with deployment options ranging from the public cloud to your data center. Oracle Cloud offers best-in-class services across Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS).
 
-Oracle DB Product Management runs a Self Service Workshop platform for running select workshops.  
+Oracle DB Product Management runs a LiveLabs platform for running select workshops.  
 
-SSWorkshop:  After you sign up on the platform, you’ll get two emails.   Check your spam and junk folders.  You should expect the following emails:
+LiveLabs:  After you sign up on the platform, you’ll get two emails.   Check your spam and junk folders.  You should expect the following emails:
 - *Email 1:  Verify Email Request* - this contains the URL to verify that your email is a valid one for this tenancy
-- *Email 2: SSWorkshop Account Created* - This contains important information needed to complete your workshop along with your username, password and a link to the lab.
+- *Email 2: [LiveLabs] Account Created* - This contains important information needed to complete your workshop along with your username, password and a link to the lab.
 
 ### Objectives
 
-- Learn how to login to the SSWorkshop Oracle Cloud Tenancy
+- Learn how to login to the LiveLabs Oracle Cloud Tenancy
   
 ### Required Artifacts
 
-The following lab requires an Oracle Cloud account from the SSWorkshop Platform.  
+The following lab requires an Oracle Cloud account from the LiveLabs Platform.  
 
 ## Step 1:  Login to Oracle Cloud
 
