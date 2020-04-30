@@ -27,35 +27,36 @@ Put the following files to `oracle-pg/docker/tmp/`
  
 Run the following script to extract packages:
 
-`$ <copy>cd oracle-pg/docker/tmp/</copy>`
-
-`$ <copy>sh extract.sh</copy>`
+    $ <copy>cd oracle-pg/docker/tmp/</copy>
+    $ <copy>sh extract.sh</copy>
 
 ### Start Containers
 Build and pull images, create containers, and start them.
 
-`$ <copy>cd oracle-pg/docker/</copy>`
-
-`$ <copy>docker-compose up -d</copy>`
+    $ <copy>cd oracle-pg/docker/</copy>
+    $ <copy>docker-compose up -d</copy>
 
 It takes some time. To check the progress, see Appendix 1.
 
 Access Graph Visualization.
 
- - http://localhost:7007/ui/
+ - [http://localhost:7007/ui/](http://localhost:7007/ui/)
 
 Access to Zeppelin and start graph analytics, e.g. [Customer 360 Analysis](,,/lab200/customer_360_analisys.md).
 
-- http://localhost:8080/#/
+- [http://localhost:8080/#/](http://localhost:8080/#/)
 
 To stop, restart, or remove the containers, see Appendix 2.
 
 ### Appendix 1
 To check the progress, see logs.
 
-$ cd oracle-pg/docker/
-$ docker-compose logs -f
-Cnt+C to quit.
+```
+$ <copy>cd oracle-pg/docker/ ;</copy>
+$ <copy>docker-compose logs -f</copy>
+```
+
+`Ctl+C` to quit.
 
 ### Appendix 2
 To start, stop, or restart the containers.
@@ -81,7 +82,6 @@ Clone `docker-images` repository.
 Download Oracle Database.
 
 [Oracle Database 19.3.0 for Linux x86-64 (ZIP)](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html)
-
 
 Put `LINUX.X64_193000_db_home.zip` under:
 
@@ -235,29 +235,36 @@ See also **Appendix 4**.
 
 Open Graph Visualization and check if this graph is successfully loaded.
 
-http://localhost:7007/ui/
+[http://localhost:7007/ui/](http://localhost:7007/ui/)
 
 Open Zeppelin and try running "Customer 360" analytics example.
 
-http://localhost:8080/
+[http://localhost:8080/](http://localhost:8080/)
 
 ### Appendix 1
 
 You will get this error when you try to connect before the database is created.
 
-$ docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba
+```
+$ <copy>docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
 ...
 ORA-12514: TNS:listener does not currently know of service requested in connect
+```
+
 To check the progress, see logs.
 
+```
 $ cd oracle-pg/docker/
 $ docker-compose -f docker-compose-rdbms.yml logs -f oracle-db
-Cnt+C to quit.
+```
+
+`Ctl+C` to quit.
 
 ### Appendix 2
 
 You can check the graph by query (= PGQL on RDBMS), e.g. how many nodes are in the new property graph.
 
+```
 > Consumer<String> query = q -> {
     try(var s = pgql.prepareStatement(q)) {
       s.execute();
@@ -272,29 +279,40 @@ You can check the graph by query (= PGQL on RDBMS), e.g. how many nodes are in t
 +----------+
 | 8        |
 +----------+
+```
 
 ### Appendix 3
 
 To test loading configuration, you can access to Graph Server and try loading.
 
+```
 $ docker exec -it graph-client opg-jshell -b http://graph-server:7007
 > var graph = session.readGraphWithProperties("/graphs/customer_360/rdbms.json")
+```
+
 You can also load the graph to "Graph Client", only because it uses the server package this time.
 
+```
 $ docker exec -it graph-client opg-rdbms-jshell --secret_store /opt/oracle/keystore.p12
 > var graph = session.readGraphWithProperties("/graphs/customer_360/rdbms.json")
+```
+
 
 ### Appendix 4
 
 Start, stop, or restart the containers.
 
+```
 $ cd oracle-pg/docker/
 $ docker-compose -f docker-compose-rdbms.yml start|stop|restart
+```
+
 Stop the containers and remove them.
 
+```
 $ cd oracle-pg/docker/
 $ docker-compose -f docker-compose-rdbms.yml down
-
+```
 
 
 ## Acknowledgements ##
