@@ -1,6 +1,6 @@
-# Title #
+# Setup Graph enviroment
 
-## Disclaimer ##
+## Disclaimer
 The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle’s products remains at the sole discretion of Oracle.
 
 ## Overview
@@ -8,7 +8,7 @@ The following is intended to outline our general product direction. It is intend
 Let's load graph data from files before setting up database.
 ![](./images/load_data.jpg)
 
-## Step1 
+## Step 1: Launch Graph Server
 
 ### Clone this Repository
     $ <copy>git clone https://github.com/ryotayamanaka/oracle-pg.git</copy>
@@ -69,7 +69,7 @@ To remove the docker containers.
     $ <copy>cd oracle-pg/docker/ ;</copy>
     $ <copy>docker-compose down</copy>
 
-## Step 2
+## Step 2: Configure database on Docker
 
 In this tutorial, we will create a docker container for Oracle Database as a backend storage of graphs.
 ![](./images/build_docker.jpg)

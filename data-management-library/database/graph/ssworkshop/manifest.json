@@ -2,13 +2,13 @@
     "tutorials": [
         {
             "title": "Setup with Docker",
-            "description":"Setup with Docker",
+            "description":"Setup environment with Docker",
             "publisheddate": "04/30/2020",
             "filename":"../lab100/setup_with_docker.md"
         },
         {
             "title": "Customer 360 Analysis",
-            "description":"Customer 360 Analysis",
+            "description":"Use Case: Customer 360 Analysis",
             "publisheddate": "04/30/2020",
             "filename":"../lab200/customer_360_analysis.md"
         },
