@@ -118,10 +118,9 @@ You will get the separate files for nodes and edges.
 ```$ more all.pgx.edges```
 
 ## Next Step
-Next step is [Load from Files](,,/load_from_files/load_from_files.md).
+Next step is [Load from Files](../load_from_files/load_from_files.md).
 
 
 ## Acknowledgements ##
 
 - **Author** - Ryota Yamanaka - Product Manager in Asia-Pacific for geospatial and graph technologies
-- **Converted to Oracle GitHub** - Adrian Galindo - Database Product Manager - PTS LAD
