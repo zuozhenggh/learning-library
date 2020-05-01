@@ -7,7 +7,7 @@ Click on one of our workshops below to access the content.
 
 ### [Autonomous Database on Shared Infrasructure Workshops](./shared/adb-landing-page)
 
-### [Autonomous Database on Dedicated on Workshop](./dedicated/workshop/)
+### [Autonomous Database on Dedicated Infrasructure Workshop](./dedicated/workshop/)
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
