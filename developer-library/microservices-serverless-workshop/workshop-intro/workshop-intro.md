@@ -1,4 +1,4 @@
-# Gigi's Pizza Microservices Hands-on Lab
+# Microservices/Serverless Workshop (Gigi's Pizza)
 ## **Introduction**
 
 This Hands-on Lab (HOL) is based on a Demo developed by the WeDo Team as part of an innovation initiative to approach Oracle Cloud Solutions by providing practical examples that can be “touched” and easily understood.
@@ -23,3 +23,9 @@ Finally we have tied a chatbot(Skill) with the microservice-order as a front-en
 ### Let's Get Started!
 
 Click on [Sign Up For a Free Trial](?lab=?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Provision a DevCS Instance](?lab=lab-1-provision-devcs-instance).
+
+## Acknowledgements
+* **Authors** -  Iván Postigo, Jesus Guerra, Carlos Olivares - Oracle Spain SE Team
+* **Last Updated By/Date** - Tom McGinn, May 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
