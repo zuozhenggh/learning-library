@@ -1,5 +1,13 @@
 {
     "tutorials": [
+      {
+          "title": "Introduction to this Workshop",
+          "description": "Introduction to this workshop",
+          "partnumber": "Ennnnn_01",
+          "publisheddate": "03/10/2020",
+          "contentid": "12nnnn",
+          "filename": "./intro.md"
+      },
         {
             "title": "Lab 1: Login to Oracle Cloud",
             "description": "Login to Oracle Cloud",
