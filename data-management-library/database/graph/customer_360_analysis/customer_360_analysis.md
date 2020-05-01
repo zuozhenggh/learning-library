@@ -6,9 +6,9 @@ The combined dataset is then used to perform the following common graph query an
 
 For the data preparation process, please see:
 
-[Create Graph as Files](./create_graph_as_files/create_graph_as_files.md)
+[Create Graph as Files](../create_graph_as_files/create_graph_as_files.md)
 
-[Load from Files](./load_from_files/load_from_files.md)
+[Load from Files](../load_from_files/load_from_files.md)
 
 ## Pattern Matching
 
