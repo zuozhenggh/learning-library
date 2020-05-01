@@ -7,9 +7,9 @@ Click on one of our workshops below to access the content.
 
 ### ADB Shared Infrastructure
 
-[Journey to Autonomous Database](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-journey-workshop/index.html) 
+[Autonomous Database Quickstart](./shared/workshops/adb-quickstart-workshop)  
 
-[Autonomous Database Quickstart](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-overview)  
+[Analyzing your data with Autonomous Database](./shared/adb-advanced-workshop)
 
 ### ADB Dedicated Infrasructure
 
@@ -51,5 +51,3 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
 
 -- Oracle Database Product Management
-
-
