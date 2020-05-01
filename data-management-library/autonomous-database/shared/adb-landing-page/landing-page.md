@@ -9,7 +9,7 @@ This page lists the various available Autonomous Database (ADB) workshops. You m
 
 The following workshops require an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-###[Workshop 1: Getting Started with Autonomous Database Basics](./../adb-getting-started-workshop/)
+###[Workshop 1: Autonomous Database Quickstart](./../adb-getting-started-workshop/)
 - Learn about an Autonomous Database and how to create one
 - Load data into your ADB and query it
 
