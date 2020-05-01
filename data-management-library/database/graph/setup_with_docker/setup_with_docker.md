@@ -342,4 +342,3 @@ $ docker-compose -f docker-compose-rdbms.yml down
 ## Acknowledgements ##
 
 - **Author** - Ryota Yamanaka - Product Manager in Asia-Pacific for geospatial and graph technologies
-- **Converted to Oracle GitHub** - Adrian Galindo - Database Product Manager - PTS LAD

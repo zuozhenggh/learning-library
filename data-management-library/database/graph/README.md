@@ -3,12 +3,13 @@
 ## Oracle as a Property Graph
 As part of the Converged Oracle Database, you have a scalable property graph database; a powerful in-memory analyst with 50 built-in, parallel analytic functions; and a graph query language and developer APIs. Graph algorithms enable you to explore and discover relationships in social networks, IoT, big data, data warehouses and complex transaction data for applications such as fraud detection in banking, customer 360, and smart manufacturing.
 
+Click on one of our [workshops](./ssworkshop/) below to access the content
 
-## Workshops
-Click on one of our workshops below to access the content.
+## Tutorial
+- [Setup with Docker](./setup_with_docker/setup_with_docker.md)
 
-[![](./images/graph.png)](./ssworkshop/index.html)  
-
+## Use Cases
+- [Customer 360 Analysis](./customer_360_analysis/customer_360_analysis.md)
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
