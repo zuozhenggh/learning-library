@@ -92,7 +92,6 @@ Check the following files. Those datasets are collected from different data sour
 ## Data Integration
 We can simply concatenate the files.
 
-
     $ <copy>cat master.pg purchase.pg transfer.pg > all.pg</copy>
 
 ![](images/all.jpg)
@@ -101,23 +100,21 @@ We can simply concatenate the files.
 ## Data Conversion
 Convert the data into PGX format using pg2pgx tool ([detail](https://pg-format.readthedocs.io/en/latest/contents/pg-converters.html)).
 
-```$ <copy>alias pg2pgx='docker run --rm -v $PWD:/work g2glab/pg:0.3.4 pg2pgx</copy>'```
+    $ <copy>alias pg2pgx='docker run --rm -v $PWD:/work g2glab/pg:0.3.4 pg2pgx</copy>'
+    
+    $ <copy>pg2pgx all.pg</copy>
 
-```$ <copy>pg2pgx all.pg</copy>```
-
-```
-"all.pgx.nodes" has been created.
-"all.pgx.edges" has been created.
-"all.pgx.json" has been created.
-```
+    "all.pgx.nodes" has been created.
+    "all.pgx.edges" has been created.
+    "all.pgx.json" has been created.
 
 You will get the separate files for nodes and edges.
-
-```$ more all.pgx.nodes```
-
-```$ more all.pgx.edges```
+    
+    $ more all.pgx.nodes
+    $ more all.pgx.edges
 
 ## Next Step
+
 Next step is [Load from Files](../load_from_files/load_from_files.md).
 
 
