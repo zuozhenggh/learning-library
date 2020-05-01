@@ -5,7 +5,7 @@ Oracle’s revolutionary cloud database is self-driving, self-securing, self-rep
 ## Workshops
 Click on one of our workshops below to access the content.
 
-### [Autonomous Database on Shared Infrasructure Workshops](./shared/workshops/adb-landing-page)
+### [Autonomous Database on Shared Infrasructure Workshops](./shared/adb-landing-page)
 
 ### [Autonomous Database on Dedicated on Workshop](./dedicated/workshop/)
 
