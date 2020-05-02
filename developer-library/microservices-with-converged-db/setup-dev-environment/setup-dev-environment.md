@@ -49,51 +49,65 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
 2. Once the Cloud Shell has started, confirm that the `.oci` directory doesn’t already exist.
 
-  ```
-  <copy>ls ~/.oci</copy>
-  ```
+    ```
+    <copy>ls ~/.oci</copy>
+    ```
+
+  ![](images/8-confirm-oci-dir.png " ")
 
 3. Assuming the` ~/.oci` directory does not already exist, create it using the following command.
 
-  ```
-  <copy>mkdir ~/.oci</copy>
-  ```
+    ```
+    <copy>mkdir ~/.oci</copy>
+    ```
+
+  ![](images/8A-create-oci-dir.png " ")
 
 4. Generate a private key with the following command. Choose a private key name you can remember. When prompted, enter a passphrase to encrypt the private key file. Be sure to make a note of the passphrase you enter, as you will need it later. When prompted again, re-enter the passphrase to confirm it.
 
-  ```
-  <copy>openssl genrsa -out ~/.oci/user1_api_key_private.pem -aes128 2048</copy>
-  ```
+    ```
+    <copy>openssl genrsa -out ~/.oci/user1_api_key_private.pem -aes128 2048</copy>
+    ```
+
+  ![](images/8B-gen-private-key.png " ")
 
 5. Confirm that the private key file has been created in the directory you specified using the following command.
 
-  ```
-  <copy>ls -l ~/.oci/user1_api_key_private.pem</copy>
-  ```
+    ```
+    <copy>ls -l ~/.oci/user1_api_key_private.pem</copy>
+    ```
+
+  ![](images/8C-confirm-private-key.png " ")
 
 6. Change permissions on the file to ensure that only you can read it.
 
-  ```
-  <copy>chmod go-rwx ~/.oci/user1_api_key_private.pem</copy>
-  ```
+    ```
+    <copy>chmod go-rwx ~/.oci/user1_api_key_private.pem</copy>
+    ```
+
+  ![](images/8D-change-perm-priv-key.png " ")
 
 7. Generate a public key in the same location as the private key file using the following command. When prompted, enter the same passphrase you previously used to encrypt the private key file.
 
-  ```
-  <copy>openssl rsa -pubout -in ~/.oci/user1_api_key_private.pem -out ~/.oci/user1_api_key_public.pem</copy>
-  ```
+    ```
+    <copy>openssl rsa -pubout -in ~/.oci/user1_api_key_private.pem -out ~/.oci/user1_api_key_public.pem</copy>
+    ```
+
+  ![](images/8E-gen-public-key.png " ")
 
 8. Confirm that the public key file has been created in the directory you specified.
 
-  ```
-  <copy>ls -l ~/.oci</copy>
-  ```
+    ```
+    <copy>ls -l ~/.oci</copy>
+    ```
+
+  ![](images/9-confim-public-key.png " ")
 
 9. Copy in your clipboard the content of the public key file you just created by opening the file, selecting the entire content and right-click to copy.
 
-  ```
-  <copy>cat ~/.oci/user1_api_key_public.pem</copy>
-  ```
+    ```
+    <copy>cat ~/.oci/user1_api_key_public.pem</copy>
+    ```
 
   ![](images/10-copy-public-key.png " ")
 
@@ -133,7 +147,7 @@ You will now create a compartment which would hold the resources used by OKE and
 
   ![](images/20-compartment-ocid.png " ")
 
-## STEP 4: Create an Oracle Cloud Infrastructure Registry and Auth key
+## **STEP 4**: Create an Oracle Cloud Infrastructure Registry and Auth key
 You are now going to create an Oracle Cloud Infrastructure Registry and an Auth key. Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development to production workflow by storing, sharing, and managing development artifacts such as Docker images.
 
 1. Open up the hamburger button in the top-left corner of the console and go to **Developer Services > Registry (OCIR)**.
@@ -218,7 +232,7 @@ note down the Cluster ID.
   ![](images/36-create-atp-instance.png " ")
 
 3. You will create two ATP databases called `orderdb` and `inventorydb`. On the Create
-Autonomous Database page provide the following basic information.
+Autonomous Database page provide the following basic information and click **Create Autonomous Database**:
 
     -   Compartment: `msdataworkshop`
     -   Display name: `Order DB`
@@ -231,7 +245,6 @@ Autonomous Database page provide the following basic information.
     -   Leave the defaults for network access, which is “Allow secure access from
         everywhere”
     -   License type: `License included`
-    -   Click **Create Autonomous Database**
 
   ![](images/37-create-atp2.png " ")
 
@@ -245,7 +258,7 @@ Database main page and click **Create Autonomous Database**.
   ![](images/39-create-second-atp.png " ")
 
 5. For `inventorydb` database follow the same steps and provide the following basic
-information:
+information and click **Create Autonomous Database**:
 
     -   Compartment: `msdataworkshop`
     -   Display name: `Inventory DB`
@@ -258,7 +271,6 @@ information:
     -   Leave the defaults for network access, which is “Allow secure access from
         everywhere”
     -   License type: `License included`
-    -   Click **Create Autonomous Database**
 
   ![](images/40-create-second-atp2.png " ")
 
