@@ -34,7 +34,7 @@ Index structures are an essential feature to database performance. Indexes are c
 
 Automatic indexing improves database performance by managing indexes automatically and dynamically  based on changes in the application workload. To test this feature, we will start by listing and dropping existing indexes in our sample schema. This way we can experience, in a very simple hands-on exercise, how this feature works in Oracle 19c Database.
 
-This Lab will use the Sales History (SH) sample schema. 
+This Lab will use the Sales History (SH) sample schema.
 
 0. Login to the instance using ssh
 
@@ -117,7 +117,7 @@ Create a new tablespace and make this the default for Automatic Indexing (Note t
   sqlplus SYS/Ora_DB4U/localhost:1521/orclpdb as sysdba
 
   CREATE TABLESPACE TBS_AUTO_IDX
-  DATAFILE '/u01/app/oracle/oradata/DEVCDB/PDB01/tbs_auto_idx01.dbf'
+  DATAFILE '/u01/app/oracle/oradata/ORCL/orclpdb/tbs_auto_idx01.dbf'
   SIZE 200M REUSE
   AUTOEXTEND ON
   NEXT 50M MAXSIZE 10G;
@@ -770,4 +770,4 @@ In this Lab you had an opportunity to examine the Automatic Indexing capabilitie
 - **Author** - Jean-Francois Verrier
 - **Last Updated By/Date** - Troy Anthony, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
