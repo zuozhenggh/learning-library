@@ -47,7 +47,7 @@ Access Graph Visualization.
 
  - [http://localhost:7007/ui/](http://localhost:7007/ui/)
 
-Access to Zeppelin and start graph analytics, e.g. [Customer 360 Analysis](../lab200/customer_360_analisys.md).
+Access to Zeppelin and start graph analytics, e.g. [Customer 360 Analysis](../customer_360_analisys/customer_360_analisys.md).
 
 - [http://localhost:8080/#/](http://localhost:8080/#/)
 
@@ -279,7 +279,7 @@ To check the progress, see logs.
 
 ```
 $ cd oracle-pg/docker/
-$ docker-compose -f docker-compose-rdbms.yml logs -f oracle-db
+$ <copy>docker-compose -f docker-compose-rdbms.yml logs -f oracle-db</copy>
 ```
 
 `Ctl+C` to quit.
@@ -310,14 +310,14 @@ You can check the graph by query (= PGQL on RDBMS), e.g. how many nodes are in t
 To test loading configuration, you can access to Graph Server and try loading.
 
 ```
-$ docker exec -it graph-client opg-jshell -b http://graph-server:7007
+$ <copy>docker exec -it graph-client opg-jshell -b http://graph-server:7007</copy>
 > var graph = session.readGraphWithProperties("/graphs/customer_360/rdbms.json")
 ```
 
 You can also load the graph to "Graph Client", only because it uses the server package this time.
 
 ```
-$ docker exec -it graph-client opg-rdbms-jshell --secret_store /opt/oracle/keystore.p12
+$ <copy>docker exec -it graph-client opg-rdbms-jshell --secret_store /opt/oracle/keystore.p12</copy>
 > var graph = session.readGraphWithProperties("/graphs/customer_360/rdbms.json")
 ```
 
@@ -335,7 +335,7 @@ Stop the containers and remove them.
 
 ```
 $ cd oracle-pg/docker/
-$ docker-compose -f docker-compose-rdbms.yml down
+$ <copy>docker-compose -f docker-compose-rdbms.yml down</copy>
 ```
 
 
