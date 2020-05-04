@@ -47,7 +47,7 @@ Access Graph Visualization.
 
  - [http://localhost:7007/ui/](http://localhost:7007/ui/)
 
-Access to Zeppelin and start graph analytics, e.g. [Customer 360 Analysis](../customer_360_analisys/customer_360_analisys.md).
+Access to Zeppelin and start graph analytics, e.g. [Customer 360 Analysis](../customer_360_analysis/customer_360_analysis.md).
 
 - [http://localhost:8080/#/](http://localhost:8080/#/)
 
