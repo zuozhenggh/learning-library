@@ -132,7 +132,7 @@ This Lab will use the Sales History (SH) sample schema.
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA
 
     CREATE TABLESPACE TBS_AUTO_IDX
-    DATAFILE '/u01/app/oracle/oradata/DEVCDB/PDB01/tbs_auto_idx01.dbf'
+    DATAFILE '/u01/app/oracle/oradata/ORCL/orclpdb/tbs_auto_idx01.dbf'
     SIZE 200M REUSE
     AUTOEXTEND ON
     NEXT 50M MAXSIZE 10G;
