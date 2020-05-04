@@ -41,7 +41,7 @@ In this lab, you will query files on the Oracle Cloud Infrastructure Object Stor
 
 ## STEP 2: Querying External Data
 
-1. Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet. Compared to the query in the previous lab, we only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
+1. Copy and paste <a href="./files/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet. Compared to the query in the previous lab, we only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
 
 2. **Run the script**. You will now see the same query result as in the previous lab, but from data pulled directly from the Object Store.
 

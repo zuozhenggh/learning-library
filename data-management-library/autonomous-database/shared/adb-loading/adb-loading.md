@@ -167,9 +167,11 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
 To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the native URI, and the OCI user Auth Token.
 
-1. Go back to the **Autonomous Data Warehouse Console** in your browser. From the pull-out menu on the top left, under **Identity**, click **Users**.
+1. Locate your menu bar and click on the **person icon** at the far right.  From the pull-out menu, select your **user's name** (remember this username could be an email). 
 
-    ![](./images/Create_Swift_Password_01.jpg " ")
+    ![](./images/navigate-to-auth-token-2.png " ")
+
+    ![](./images/navigate-to-auth-token.png " ")
 
 2. Click the **user's name** to view the details.  Also, remember the username as you will need that in the next step. This username could also be an email address.
 
