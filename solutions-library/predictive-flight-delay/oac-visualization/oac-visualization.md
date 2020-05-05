@@ -76,14 +76,14 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 
 2.   Make visualization by following below steps to visualize the prediction result. 
 ![](./images/picture500-12.png)
-    - Change **Aggregation** of PREDICTEDDELAY columns as **Average**.
-    - Change SCHEDULEDEEPTTIME, DAYOFWEEK as **Attribute**. 
-    - Create a **Bar** graph
-    - **Values (Y-Axis)**: PREDICTEDDELAY
-    - **Category (X-Axis)**: SCHEDULEDEEPTTIME
-    - **Color**: CARRIER
-    - Add ORIGIN (**LAX**), DEST(**SFO**), DAYOFWEEK(**4**, Thursday) and CARRIER(**A,B,C**) as filter. 
-    - Save the visualization (e.g. Visualization_Prediction) 
+- Change **Aggregation** of PREDICTEDDELAY columns as **Average**.
+- Change SCHEDULEDEEPTTIME, DAYOFWEEK as **Attribute**. 
+- Create a **Bar** graph
+- **Values (Y-Axis)**: PREDICTEDDELAY
+- **Category (X-Axis)**: SCHEDULEDEEPTTIME
+- **Color**: CARRIER
+- Add ORIGIN (**LAX**), DEST(**SFO**), DAYOFWEEK(**4**, Thursday) and CARRIER(**A,B,C**) as filter. 
+- Save the visualization (e.g. Visualization_Prediction) 
 
 3. Click the tap of **Narrate** and click **Present**. Now, you can see the graph as presentation mode. 
 ![](./images/picture500-13.png)
