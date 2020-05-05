@@ -37,12 +37,12 @@ In this section, you will create an OAC instance.
 
 5.   Enter the following information and then click on **Next**.
 
-    - **Instance Name:** Enter a name for your service instance (e.g. OAC_FlightDelay)
-    - **Notification Email:** Enter the email address of the person you want to notify when this service is ready to use and receive other status updates about this service in the future
-    - **Region:** Select the region where you want to deploy Oracle Analytics Cloud (e.g. us-Phoenix-1)
-    - **License Type:** Select whether you want to use your on-premises license with Oracle Analytics Cloud and to be charged the Bring Your Own License (BYOL) rate or subscribe to a new license for Oracle Analytics Cloud
-    - **Edition:** Select the edition that you want to use (e.g. Enterprise Edition) 
-    - **Feature Set:** Select the features that you want to deply. The options available to you depend on the deition you are subscribed to. (e.g. Business Intelligence) 
+- Instance Name: Enter a name for your service instance (e.g. OAC_FlightDelay)
+- Notification Email: Enter the email address of the person you want to notify when this service is ready to use and receive other status updates about this service in the future
+- Region: Select the region where you want to deploy Oracle Analytics Cloud (e.g. us-Phoenix-1)
+- License Type: Select whether you want to use your on-premises license with Oracle Analytics Cloud and to be charged the Bring Your Own License (BYOL) rate or subscribe to a new license for Oracle Analytics Cloud
+- Edition: Select the edition that you want to use (e.g. Enterprise Edition) 
+- Feature Set: Select the features that you want to deply. The options available to you depend on the deition you are subscribed to. (e.g. Business Intelligence) 
     
 ![](./images/picture300-24.png)
 
@@ -82,11 +82,11 @@ In this section, you will create an OAC instance.
 
 4.   You should fill the following connection fields, then click **Save**:
 
-    - **Connection Name:** Type a name for this connection (e.g. FlightDelayPrediction)
-    - **Client Credentials:** Click on **‘Select’** and select the zipped **Wallet** file (The **cwallet.sso** file will be automatically extracted from the **Wallet** file)
-    - **Username:** Admin (the username you created during the ADW provisioning)
-    - **Password:** The password you specified during provision of your ADW instance
-    - **Service Name:** Select your database name and desired service level (low, medium, high) from the drop down list. (e.g.  ADW_FlightDelay_HIGH)
+- Connection Name: Type a name for this connection (e.g. FlightDelayPrediction)
+- Client Credentials: Click on **‘Select’** and select the zipped **Wallet** file (The **cwallet.sso** file will be automatically extracted from the **Wallet** file)
+- Username: Admin (the username you created during the ADW provisioning)
+- Password: The password you specified during provision of your ADW instance
+- Service Name: Select your database name and desired service level (low, medium, high) from the drop down list. (e.g.  ADW_FlightDelay_HIGH)
 
 ![](images/picture300-33-updated.png)
 

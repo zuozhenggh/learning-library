@@ -38,32 +38,25 @@ As ADW only accepts secure connections to the database, you need to download a w
 ### **STEP 2**: Connect to the Database using SQL Developer
 Start SQL Developer and create a connection for your database using the default administrator account 'ADMIN' by following these steps.
 
-4.   Click the **New Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
+1.   Click the **New Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
 
 ![](./images/snap0014653.jpg)
 
-5.   Fill in the connection details as below:
+2.   Fill in the connection details as below:
 
-  -   **Connection Name:** admin_high
-
-  -   **Username:** admin
-
-  -   **Password:** The password you specified during provisioning your instance
-
-  -   **Connection Type:** Cloud Wallet
-
-  -   **Configuration File:** Enter the full path for the wallet file you downloaded before, or click the **Browse button** to point to the location of the file.
-
-  -   **Service:** There are 3 pre-configured database services for each database. Pick **&lt;databasename&gt;_high** for this lab. For
-example, if you the database you created was named adwfinance, select adwfinance_high as the service.
-
+-   Connection Name: admin_high
+-   Username: admin
+-   Password: The password you specified during provisioning your instance
+-   Connection Type: Cloud Wallet
+-   Configuration File: Enter the full path for the wallet file you downloaded before, or click the **Browse button** to point to the location of the file.
+-   Service: There are 3 pre-configured database services for each database. Pick **&lt;databasename&gt;_high** for this lab. For example, if you the database you created was named adwfinance, select adwfinance_high as the service.
 *Note* : SQL Developer versions prior to 18.3 ask for a **Keystore Password.** Here, you would enter the password you specified when downloading the wallet from ADW.
 
 ![](./images/picture200-18.jpg)
 
-6.  Test your connection by clicking the **Test** button, if it succeeds, save your connection information by clicking **Save**, then connect to your database by clicking the **Connect** button. An entry for the new connection appears under Connections.
+3.  Test your connection by clicking the **Test** button, if it succeeds, save your connection information by clicking **Save**, then connect to your database by clicking the **Connect** button. An entry for the new connection appears under Connections.
 
-7.  If you are behind a VPN or Firewall and this Test fails, make sure you have <a href="https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">SQL Developer 18.3</a> or higher. This version and above will allow you to select the "Use HTTP Proxy Host" option for a Cloud Wallet type connection. While creating your new ADW connection here, provide your proxy's Host and Port. If you are unsure where to find this, you may look at your computer's connection settings or contact your Network Administrator.
+4.  If you are behind a VPN or Firewall and this Test fails, make sure you have <a href="https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">SQL Developer 18.3</a> or higher. This version and above will allow you to select the "Use HTTP Proxy Host" option for a Cloud Wallet type connection. While creating your new ADW connection here, provide your proxy's Host and Port. If you are unsure where to find this, you may look at your computer's connection settings or contact your Network Administrator.
 
 
 
@@ -81,9 +74,8 @@ For this lab, you will need a data file. Click [here](./files/flights_aircraft_w
 
 2. The Data Import Wizard is started. Enter the following information:
 
-  - Select **Local File** as source for the data load
-
-  - Click the browse button and navigate to the Int_Flights_Aircraft_Weather.csv file which you unzipped before 
+- Select **Local File** as source for the data load
+- Click the browse button and navigate to the Int_Flights_Aircraft_Weather.csv file which you unzipped before 
   
 After selecting the file, you can preview the data and select the appropriate file formats. When you are satisfied with the file content view, click **NEXT**.
 

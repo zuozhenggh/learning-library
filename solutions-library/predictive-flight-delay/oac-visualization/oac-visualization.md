@@ -38,11 +38,11 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 
 2.   Make visualization by following below steps to visualize the validation result. 
 ![](./images/picture500-6.png)
-    - Change **Aggregation** of DELAY, PREDICTEDDELAY columns as **Average**.
-    - Create a **Combo** chart
-    - **Values (Y-Axis)**: DELAY (Bar) and PREDICTEDDELAY (Line) 
-    - **Category (X-Axis)**: DEST
-    - Save the visualization (e.g. Visualization_Validation) 
+- Change Aggregation of DELAY, PREDICTEDDELAY columns as **Average**.
+- Create a Combo chart
+- Values (Y-Axis): DELAY (Bar) and PREDICTEDDELAY (Line) 
+- Category (X-Axis): DEST
+- Save the visualization (e.g. Visualization_Validation) 
 
 3. Click the tap of **Narrate** and click **Present**. Now, you can see the graph as presentation mode. 
 ![](./images/picture500-7.png)
