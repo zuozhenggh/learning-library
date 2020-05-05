@@ -7,20 +7,25 @@ The Oracle Data Management Github is the central location for workshops related 
 - [Oracle Machine Learning](./oracle-machine-learning) 
 - [Security](./security) 
 
-# Autonomous Database (ADB) Github
+# Autonomous Database (ADB) 
 - [Autonomous Database on Shared Infrasructure Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-overview/)
 
 - [Autonomous Database on Dedicated Infrasructure Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/dedicated/workshop/)
 
 
-## Converged Database Workshops
+## For Developers
 - [Building Microservices with Oracle's Converged Database](https://oracle.github.io/learning-library/developer-library/microservices-with-converged-db)
-
-
-# Database Github
-- [New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)  
-
 - [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier) 
+
+- [Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier) 
+- [Containerized Development on the Oracle Database](https://oracle.github.io/learning-library/data-management-library/database/docker/db-on-docker/freetier) 
+
+- [Create a Database in a Docker Container](https://oracle.github.io/learning-library/data-management-library/database/docker/create-database-in-docker) 
+
+- [Create a Database on OCI VM ](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db) 
+
+## Database 
+- [New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)  
 
 - [Spatial](https://oracle.github.io/learning-library/data-management-library/database/spatial/freetier/index.html)
 
@@ -32,22 +37,14 @@ The Oracle Data Management Github is the central location for workshops related 
 
 - [Automatic Indexing](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/autoindex-freetier) 
 
-- [Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier) 
-
-- [Containerized Development on the Oracle Database](https://oracle.github.io/learning-library/data-management-library/database/docker/db-on-docker/freetier) 
-
-- [Create a Database in a Docker Container](https://oracle.github.io/learning-library/data-management-library/database/docker/create-database-in-docker) 
-
-- [Create a Database on OCI VM ](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db) 
-
 - [Connect SQL Developer to OCI VM Database](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db/) 
 
   
-# Oracle Machine Learning (OML) Github
+## Oracle Machine Learning (OML) 
 [![](./images/omlgithub.png)](./oracle-machine-learning) 
 - OML on ADB
   
-# Security Github
+## Security 
 [![](./images/secgithub.png)](./security) 
 
 - Data Safe
