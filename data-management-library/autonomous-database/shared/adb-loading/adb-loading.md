@@ -157,7 +157,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
 2. Take a look at the URL you copied. In this example above, the **region name** is us-ashburn-1, the **Namespace** is idthydc0kinr, and the **bucket name** is ADWCLab.
 
-    *Note:The URL can also be constructed as below:*
+    *Note: The URL can also be constructed as below:*
 
     `https://objectstorage.<`**region name**`>.oraclecloud.com/n/<`**namespace name**`>/b/<`**bucket name**`>/o`
 
@@ -167,11 +167,13 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
 To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the native URI, and the OCI user Auth Token.
 
-1. Locate your menu bar and click on the **person icon** at the far right.  From the pull-out menu, select your **user's name** (remember this username could be an email). 
+1. Locate your menu bar and click on the **person icon** at the far upper right.  From the drop-down menu, select your **user's name** (remember this username could be an email).
 
     ![](./images/navigate-to-auth-token-2.png " ")
 
     ![](./images/navigate-to-auth-token.png " ")
+
+    *Note: If you don't see your user name in the drop-down menu, you might be a "federated" user. In that case, go instead to the menu on the left side and open Users. Federated users are “federated” from another user service, whether it is an Active Directory LDAP type service or users from the older OCI Classic.
 
 2. Click the **user's name** to view the details.  Also, remember the username as you will need that in the next step. This username could also be an email address.
 

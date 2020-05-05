@@ -9,7 +9,7 @@ This page lists the available Autonomous Database on Shared Infrastructure (ADB-
 
 The following workshops require an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-###[Workshop 1: Autonomous Database Quickstart (45 minutes)] (./../adb-quickstart-workshop/)
+###[Workshop 1: Autonomous Database Quickstart (45 minutes)](./../adb-quickstart-workshop/)
 - Learn about Autonomous Database on Shared Infrastructure and how to create an instance in just a few clicks
 - Load data into your database and query it
 
