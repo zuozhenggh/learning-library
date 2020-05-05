@@ -8,20 +8,40 @@ The Oracle Data Management Github is the central location for workshops related 
 - [Security](./security) 
 
 # Autonomous Database (ADB) Github
-[![](./images/adbgithub.png)](./autonomous-database) 
-- Autonomous Database - Dedicated Infrastructure
-- Autonomous Database - Shared Infrastructure
+- [Autonomous Database on Shared Infrasructure Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-overview/)
+
+- [Autonomous Database on Dedicated Infrasructure Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/dedicated/workshop/)
+
+
+## Converged Database Workshops
+- [Building Microservices with Oracle's Converged Database](https://oracle.github.io/learning-library/developer-library/microservices-with-converged-db)
+
 
 # Database Github
-[![](./images/dbgithub.png)](./database) 
-- 19c
-- In-Memory
-- Multitenant
-- Docker
-- Developer New Features for 19c
-- DBs on OCI VMs
-- Database on Docker
-- JSON
+- [New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)  
+
+- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier) 
+
+- [Spatial](https://oracle.github.io/learning-library/data-management-library/database/spatial/freetier/index.html)
+
+- [Multitenant Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  
+
+- [In-Memory Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html) 
+
+- [Hybrid Partitioning](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/hybridpart-freetier) 
+
+- [Automatic Indexing](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/autoindex-freetier) 
+
+- [Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier) 
+
+- [Containerized Development on the Oracle Database](https://oracle.github.io/learning-library/data-management-library/database/docker/db-on-docker/freetier) 
+
+- [Create a Database in a Docker Container](https://oracle.github.io/learning-library/data-management-library/database/docker/create-database-in-docker) 
+
+- [Create a Database on OCI VM ](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db) 
+
+- [Connect SQL Developer to OCI VM Database](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db/) 
+
   
 # Oracle Machine Learning (OML) Github
 [![](./images/omlgithub.png)](./oracle-machine-learning) 

@@ -7,11 +7,10 @@ The spatial features of Spatial and Graph include both basic spatial data manage
 Oracle Spatial and Graph is included at no extra cost with all Oracle Database cloud services and on-prem editions. Not all Spatial features are enabled on Autonomous Database as described [here ](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/experienced-database-users.html)under the section Restrictions for Database Features.
 
 ## Workshops
-Click on one of our workshops below to access the content.
-
+Click on one of our workshops below to access the workshop.
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/spatial/freetier/index.html)
-- [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/spatial/ssworkshop/index.html)
+- [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/spatial/livelabs/index.html)
 
 
 ## Get an Oracle Cloud Trial Account for Free!
