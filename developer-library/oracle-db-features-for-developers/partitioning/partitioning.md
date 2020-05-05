@@ -169,6 +169,30 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 
 	![](images/p_sales_partitions.png " ")
 
+4. Add additional rows to the SALES table
+Generate new data from the existing data in the 1998 Partitions
+````
+<copy>
+insert into SALES (PROD_ID, CUST_ID, TIME_ID, CHANNEL_ID, PROMO_ID, QUANTITY_SOLD, AMOUNT_SOLD)
+  select PROD_ID, CUST_ID, add_months(TIME_ID,48), CHANNEL_ID, PROMO_ID, QUANTITY_SOLD, AMOUNT_SOLD from
+   SALES where to_char(TIME_ID, 'YY') = '98';
+
+commit;
+</copy>
+````
+5. Count the number of new rows using the partition extension clause
+The Partition extension clause PARTITION (partition_name) specify the name of the partition within table from which you want to retrieve data.
+
+````
+<copy>
+select count(*) from SALES PARTITION (SALES_Q3_2002);
+</copy>
+````
+There should be 50515 rows counted.
+
+Re-run the Query against USER_TAB_PARTITIONS described in Step 3. If the partitions from Q3_2002 are not present, why? (think about statistics)
+
+
 ## Step 3: Rethink Storage Organization
 You can convert a table with only internal partitions to a hybrid partitioned table. For example, the SALES table could be converted to a hybrid partitioned table by adding external partition attributes using an ALTER TABLE command, then add external partitions. Note that at least one partition must be an internal partition. However, in this lab you will create a new hybrid partitioned table, as a copy of the SALES table instead.
 
