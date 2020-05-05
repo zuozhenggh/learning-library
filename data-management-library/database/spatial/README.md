@@ -10,8 +10,8 @@ Oracle Spatial and Graph is included at no extra cost with all Oracle Database c
 Click on one of our workshops below to access the content.
 
 
-- [I have a Freetier or Oracle Cloud account](https://minqiaowang.github.io/spatial/freetier/index.html)
-- [I have an account on LiveLabs](https://minqiaowang.github.io/spatial/ssworkshop/index.html)
+- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/spatial/freetier/index.html)
+- [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/spatial/ssworkshop/index.html)
 
 
 ## Get an Oracle Cloud Trial Account for Free!
