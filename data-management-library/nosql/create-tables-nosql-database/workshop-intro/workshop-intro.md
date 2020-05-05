@@ -8,7 +8,7 @@ Many of the more recent applications have been designed to personalize the user 
 ### Let's Get Started!
 The Oracle NoSQL Database Cloud Service is a server-less, fully managed data store that delivers predictable single digit response times and allows application to scale on demand via provisioning API calls.  There are four simple steps to getting started with the Oracle NoSQL Database Cloud Service.
 
-* Download the Oracle NoSQL Database driver
+* Download an Oracle NoSQL Database SDK
 * Connect to the Oracle NoSQL Database Cloud Service
 * Create a table with provisioned reads/sec, writes/sec, and GB storage
 * Write data to the table and read data from the table
