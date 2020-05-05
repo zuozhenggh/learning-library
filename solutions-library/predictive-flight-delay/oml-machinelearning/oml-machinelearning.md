@@ -57,26 +57,26 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 
 3. Refer to below explanations about each paragrph. 
 
-  - Here, all data are from 2008. Let’s imagine today is 10/31/2008 and you want to predict future flight delays in November and December of 2008. 
-  - Paragraphs 1 & 2: These are to segment the data into training, validation, and prediction parts. 
+  Here, all data are from 2008. Let’s imagine today is 10/31/2008 and you want to predict future flight delays in November and December of 2008. 
+  Paragraphs 1 & 2: These are to segment the data into training, validation, and prediction parts. 
     ![](./images/picture400-6.jpeg)
 
-  - Paragraphs 3, 4 & 5: These are to clean up any previously existing model objects with the same name as new model. Then, create setting table and set parameters to build linear regression model. 
+  Paragraphs 3, 4 & 5: These are to clean up any previously existing model objects with the same name as new model. Then, create setting table and set parameters to build linear regression model. 
     ![](./images/picture400-7.jpeg)
 
-  - Paragraph 6: This is to train this model on the portion of data you created for training.
+  Paragraph 6: This is to train this model on the portion of data you created for training.
     ![](./images/picture400-8.jpeg)
 
-  - Paragraph 7,8 & 9: These are to show model setting information, attribute name on the model and statistics for each attribute.
+  Paragraph 7,8 & 9: These are to show model setting information, attribute name on the model and statistics for each attribute.
   ![](./images/picture400-9.jpeg)
 
-  - Paragraph 10: To validate our model, you will apply the trained model to the validation portion of the data. Then, store the result in a table in our autonomous data warehouse. Then, you will load it onto OAC for visualization on the following lab.
+  Paragraph 10: To validate our model, you will apply the trained model to the validation portion of the data. Then, store the result in a table in our autonomous data warehouse. Then, you will load it onto OAC for visualization on the following lab.
   ![](./images/picture400-10.jpeg)
 
-  - Paragraph 11: You will use the model to predict flight delay at each airport and at any given time by applying the model to the future data.  This result is saved as table in ADW for visualization using OAC as well. You will load it onto OAC for visualtion on the following lab. 
+  Paragraph 11: You will use the model to predict flight delay at each airport and at any given time by applying the model to the future data.  This result is saved as table in ADW for visualization using OAC as well. You will load it onto OAC for visualtion on the following lab. 
   ![](./images/picture400-11.jpeg)
 
-  - Paragraph 12: This is **optional**. Thanks to the DBMS_Scheduler package included in ADW, you can define repeating schedules, such as "every Tuesday and Friday at 4:00 p.m." or "the second Wednesday of every month.” Using DBMS_ Scheduler, you can get your machine learning model refreshed as new live data comes in, and the model can provide new recommendations. To  run this paragraph, you should define the parameters depend on your choice first. 
+  Paragraph 12: This is **optional**. Thanks to the DBMS_Scheduler package included in ADW, you can define repeating schedules, such as "every Tuesday and Friday at 4:00 p.m." or "the second Wednesday of every month.” Using DBMS_ Scheduler, you can get your machine learning model refreshed as new live data comes in, and the model can provide new recommendations. To  run this paragraph, you should define the parameters depend on your choice first. 
   ![](./images/picture400-12.jpeg)
 
 
