@@ -19,36 +19,28 @@ If your account name supplied to you is your **Oracle email address**,  proceed 
 
 If your account name supplied to you begins with **user** or **ssuer**, please proceed.  Otherwise, proceed to Step 1B.
 
-1. From any supported browser go to oracle.com to access the Oracle Cloud.
+1. From any supported browser go to http://bit.ly/c4u03login to access the Oracle Cloud LiveLabs Tenancy.
 
     [https://www.oracle.com/](https://www.oracle.com/)
 
-    ![](images/cloud-login-1.png " ")
+    ![](./images/loginpage.png " ")
 
-2.  Click the *View Accounts* button in the upper right corner.  Click on **Sign in to Cloud** underneath the Sign in to Cloud.  *NOTE:  Do NOT click the Sign-In button under ORACLE ACCOUNT, this will take you to Single Sign-On, not the Oracle Cloud*
-
-    ![](images/cloud-login-2.png " ")   
-
-3. Enter your Cloud Account Name.  This will be provided by your Workshop Lead.
-
-    ![](images/cloud-login-tenant.png " ")   
-
-4. Your Workshop Lead will provide you with a username and temporary password, enter that information here and click **Sign In**. *Note: The username provided will begin with ssuser or user*.
+2. Your Workshop Lead will provide you with a **username** and **temporary password**, enter that information here and click **Sign In**. *Note: The username provided will begin with ssuser or user*.
 
     ![](images/cloud-login-3.png " ")   
 
    
-5. You will then be taken to a screen to change your password.  Choose a new password that you can remember and click **Sign In** (make sure you are using an approved browser.  IE is not supported)
+3. You will then be taken to a screen to change your password.  Choose a new password that you can remember and click **Sign In** (make sure you are using an approved browser.  IE is not supported)
 
     ![](./images/changepwd.png " ")
 
 
-6. Once you successfully login, you will be presented with the Oracle Cloud homepage. 
+4. Once you successfully login, you will be presented with the Oracle Cloud homepage. 
 
     ![](./images/homepage.png " ")
 
 
-7.  Your workshop leader assigned you a region.  Click in the upper right hand corner and set your Region appropriately.   (*NOTE:  Setting the region is important, your network is region specific.  If you choose a different region you will get an error during certain parts of your workshop*) 
+5.  Your workshop leader assigned you a region.  Click in the upper right hand corner and set your Region appropriately.   (*NOTE:  Setting the region is **important**, your network is region specific.  If you choose a different region you will get an error during certain parts of your workshop*) 
 
     ![](./images/changeregion.png " ") 
 
@@ -59,14 +51,14 @@ Once you have set your region to the assigned value, proceed to the next lab.
 
 After you sign up on the platform, you’ll get two emails.   Check your spam and junk folders.  You should expect the following emails:
 - *Email 1:  Verify Email Request* - this contains the URL to verify that your email is a valid one for this tenancy
-- *Email 2: [LiveLabs] Account Created* - This contains important information needed to complete your workshop along with your username, password and a link to the lab.
+- *Email 2: [LIVELABS] Account Created* - This contains important information needed to complete your workshop along with your username, password and a link to the lab.
 
-1.  Open up Email 1:  Verify Email Request from Oracle Cloud.  Click on the **Sign In to Oracle Cloud** link.  
+1.  Open up *Email 1:  Verify Email Request* from Oracle Cloud.  Click on the **Sign In to Oracle Cloud** link.  This opens up the Cloud login page in your browser (IE is not a supported browser, Firefox or Google Chrome are recommended).
 
     ![](./images/signin.png " ")
 
 
-2.  Open up Email 2.  Note your username and your temporary password.  Enter your username and your password in the box on the right hand side that says *Oracle Infrastructure* (Do not use Single Sign-On (SSO), SSO is not enabled for this tenancy).  
+2.  Open up *Email 2*.  Note your username and your temporary password.  Enter your username and your password in the box on the right hand side that says *Oracle Infrastructure* (Do not use Single Sign-On (SSO), SSO is not enabled for this tenancy).  
 
     ![](./images/loginpage.png " ")
    
