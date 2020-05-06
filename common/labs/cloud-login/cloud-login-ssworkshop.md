@@ -4,6 +4,8 @@
 
 Oracle Cloud is the industry's broadest and most integrated cloud provider, with deployment options ranging from the public cloud to your data center. Oracle Cloud offers best-in-class services across Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS).
 
+Oracle LiveLabs is a group of tenancies sponsored by Product Management used for completion of workshops on Oracle Technologies.  
+
 ### Objectives
 
 - Learn how to login to the LiveLabs Oracle Cloud
@@ -12,10 +14,10 @@ Oracle Cloud is the industry's broadest and most integrated cloud provider, with
 
 The following lab requires an Oracle Cloud account from the LiveLabs Platform.  
 
-If your account name supplied to you begins with **user** or **ssuer**, proceed to Step 1A.
-If your account name supplied to you is your **Oracle email address**,  proceed to Step 1B.
+If your account name supplied to you begins with **user** or **ssuer**, proceed to **Option 1**.
+If your account name supplied to you is your **Oracle email address**,  proceed to **Option 2**.
 
-## Step 1A:  Login to Oracle Cloud - ssusersxx and userxx
+## Option 1:  Login to Oracle Cloud - ssusersxx and userxx
 
 If your account name supplied to you begins with **user** or **ssuer**, please proceed.  Otherwise, proceed to Step 1B.
 
@@ -41,7 +43,7 @@ If your account name supplied to you begins with **user** or **ssuer**, please p
 Once you have set your region to the assigned value, proceed to the next lab.
 
 
-## Step 1B:  Login to Oracle Cloud - Oracle Emails
+## Step 2:  Login to Oracle Cloud - Oracle Emails
 
 After you sign up on the platform, you’ll get two emails.   Check your spam and junk folders.  You should expect the following emails:
 - *Email 1:  Verify Email Request* - this contains the URL to verify that your email is a valid one for this tenancy
