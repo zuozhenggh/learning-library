@@ -20,15 +20,9 @@ If your account name supplied to you is your **Oracle email address**,  proceed 
 If your account name supplied to you begins with **user** or **ssuer**, please proceed.  Otherwise, proceed to Step 1B.
 
 1. From any supported browser go to http://bit.ly/c4u03login to access the Oracle Cloud LiveLabs Tenancy.
-
-    [https://www.oracle.com/](https://www.oracle.com/)
-
-    ![](./images/loginpage.png " ")
-
 2. Your Workshop Lead will provide you with a **username** and **temporary password**, enter that information here and click **Sign In**. *Note: The username provided will begin with ssuser or user*.
 
-    ![](images/cloud-login-3.png " ")   
-
+    ![](./images/loginpage.png " ")
    
 3. You will then be taken to a screen to change your password.  Choose a new password that you can remember and click **Sign In** (make sure you are using an approved browser.  IE is not supported)
 
