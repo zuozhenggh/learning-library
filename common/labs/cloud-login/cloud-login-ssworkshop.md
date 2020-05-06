@@ -4,21 +4,62 @@
 
 Oracle Cloud is the industry's broadest and most integrated cloud provider, with deployment options ranging from the public cloud to your data center. Oracle Cloud offers best-in-class services across Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS).
 
-Oracle DB Product Management runs a LiveLabs platform for running select workshops.  
-
-LiveLabs:  After you sign up on the platform, you’ll get two emails.   Check your spam and junk folders.  You should expect the following emails:
-- *Email 1:  Verify Email Request* - this contains the URL to verify that your email is a valid one for this tenancy
-- *Email 2: [LiveLabs] Account Created* - This contains important information needed to complete your workshop along with your username, password and a link to the lab.
-
 ### Objectives
 
-- Learn how to login to the LiveLabs Oracle Cloud Tenancy
+- Learn how to login to the LiveLabs Oracle Cloud
   
 ### Required Artifacts
 
 The following lab requires an Oracle Cloud account from the LiveLabs Platform.  
 
-## Step 1:  Login to Oracle Cloud
+If your account name supplied to you begins with **user** or **ssuer**, proceed to Step 1A.
+If your account name supplied to you is your **Oracle email address**,  proceed to Step 1B.
+
+## Step 1A:  Login to Oracle Cloud - ssusersxx and userxx
+
+If your account name supplied to you begins with **user** or **ssuer**, please proceed.  Otherwise, proceed to Step 1B.
+
+1. From any supported browser go to oracle.com to access the Oracle Cloud.
+
+    [https://www.oracle.com/](https://www.oracle.com/)
+
+    ![](images/cloud-login-1.png " ")
+
+2.  Click the *View Accounts* button in the upper right corner.  Click on **Sign in to Cloud** underneath the Sign in to Cloud.  *NOTE:  Do NOT click the Sign-In button under ORACLE ACCOUNT, this will take you to Single Sign-On, not the Oracle Cloud*
+
+    ![](images/cloud-login-2.png " ")   
+
+3. Enter your Cloud Account Name.  This will be provided by your Workshop Lead.
+
+    ![](images/cloud-login-tenant.png " ")   
+
+4. Your Workshop Lead will provide you with a username and temporary password, enter that information here and click **Sign In**. *Note: The username provided will begin with ssuser or user*.
+
+    ![](images/cloud-login-3.png " ")   
+
+   
+5. You will then be taken to a screen to change your password.  Choose a new password that you can remember and click **Sign In** (make sure you are using an approved browser.  IE is not supported)
+
+    ![](./images/changepwd.png " ")
+
+
+6. Once you successfully login, you will be presented with the Oracle Cloud homepage. 
+
+    ![](./images/homepage.png " ")
+
+
+7.  Your workshop leader assigned you a region.  Click in the upper right hand corner and set your Region appropriately.   (*NOTE:  Setting the region is important, your network is region specific.  If you choose a different region you will get an error during certain parts of your workshop*) 
+
+    ![](./images/changeregion.png " ") 
+
+Once you have set your region to the assigned value, proceed to the next lab.
+
+
+## Step 1B:  Login to Oracle Cloud - Oracle Emails
+
+After you sign up on the platform, you’ll get two emails.   Check your spam and junk folders.  You should expect the following emails:
+- *Email 1:  Verify Email Request* - this contains the URL to verify that your email is a valid one for this tenancy
+- *Email 2: [LiveLabs] Account Created* - This contains important information needed to complete your workshop along with your username, password and a link to the lab.
 
 1.  Open up Email 1:  Verify Email Request from Oracle Cloud.  Click on the **Sign In to Oracle Cloud** link.  
 
@@ -51,6 +92,6 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Mgmt, March 2020
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Mgmt, April 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

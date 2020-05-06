@@ -18,7 +18,7 @@ Follow these general steps:
 2. Review the predefined sensitive types in the Oracle Data Safe Library. Check if there is a sensitive type that discovers department IDs.
 3. Connect to your ExaCS database as the SYS user with SQL Developer.
 4. In SQL Developer, inspect the `HCM1.DEPARTMENTS.DEPARTMENT_ID` column. Inspect its type, size, and data. Analyzing the data helps you to define patterns for your sensitive type.
-5. In the Oracle Data Safe Console, create a sensitive type by using the **Create Like** option to model your sensitive type after **Employee ID Number**. Save your sensitive type as** <username> Custom Department ID Number** in a custom sensitive category named **<username> Sensitive Category**.
+5. In the Oracle Data Safe Console, create a sensitive type by using the **Create Like** option to model your sensitive type after **Employee ID Number**. Save your sensitive type as **<username> Custom Department ID Number** in a custom sensitive category named **<username> Sensitive Category**.
 
 ## Steps
 
@@ -48,7 +48,7 @@ Follow these general steps:
 ![](./images/dbsec/datasafe/discovery/sensitive-types-page.png " ")
 
 - Move the **Hide Oracle Predefined** slider to the right.
-The list becomes empty because you haven't created any sensitive types yet.
+The list removes the Oracle defined sensitive types, showing only the ones that you have defined.
 
 ![](./images/dbsec/datasafe/discovery/sensitive-custom3.png " ")
 
@@ -78,7 +78,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
 ```
-<copy>ALTER SESSION SET CONTAINER=PDB1;</copy>
+<copy>ALTER SESSION SET CONTAINER=YOUR_PDB_NAME;</copy>
 ```
 - Run the following script:
 
