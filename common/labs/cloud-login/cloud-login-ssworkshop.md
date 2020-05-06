@@ -24,7 +24,7 @@ If your account name supplied to you begins with **user** or **ssuer**, please p
 
     ![](./images/loginpage.png " ")
    
-3. You will then be taken to a screen to change your password.  Choose a new password that you can remember and click **Sign In** (make sure you are using an approved browser.  IE is not supported)
+3. You will then be taken to a screen to change your password.  Choose a **new password** that you can remember and click **Sign In** *(Note: Make sure you are using an approved browser.  IE is not supported)*
 
     ![](./images/changepwd.png " ")
 
@@ -34,7 +34,7 @@ If your account name supplied to you begins with **user** or **ssuer**, please p
     ![](./images/homepage.png " ")
 
 
-5.  Your workshop leader assigned you a region.  Click in the upper right hand corner and set your Region appropriately.   (*NOTE:  Setting the region is **important**, your network is region specific.  If you choose a different region you will get an error during certain parts of your workshop*) 
+5.  Your workshop leader assigned you a region.  Click in the **upper right hand corner** and **set your Region** to the region you were assigned.    (*NOTE:  We have precreated certain objects in this assigned region to assist with workshop completion.  Failure to set the correct region will result in lab failure )* 
 
     ![](./images/changeregion.png " ") 
 
@@ -52,11 +52,11 @@ After you sign up on the platform, you’ll get two emails.   Check your spam an
     ![](./images/signin.png " ")
 
 
-2.  Open up *Email 2*.  Note your username and your temporary password.  Enter your username and your password in the box on the right hand side that says *Oracle Infrastructure* (Do not use Single Sign-On (SSO), SSO is not enabled for this tenancy).  
+2.  Open up *Email 2*.  Note your username and your temporary password.  Enter your **username** and your **temporary password** in the box on the right hand side that says *Oracle Infrastructure* (Do not use Single Sign-On (SSO), SSO is not enabled for this tenancy).  
 
     ![](./images/loginpage.png " ")
    
-3. You will then be taken to a screen to change your password.  Choose a new password that you can remember and click **Sign In** (make sure you are using an approved browser.  IE is not supported)
+3. You will then be taken to a screen to change your password.  Choose a **new password** that you can remember and click **Sign In** (make sure you are using an approved browser.  IE is not supported)
 
     ![](./images/changepwd.png " ")
 
@@ -70,7 +70,7 @@ After you sign up on the platform, you’ll get two emails.   Check your spam an
     ![](./images/topmenu.png " ") 
 
 
-6.  In Email 2, you were also assigned a region.  Click in the upper right hand corner and set your Region appropriately.   (*NOTE:  Setting the region is important, your network is region specific.  If you choose a different region you will get an error during certain parts of your lab*) 
+6.  In Email 2, you were also assigned a region.   Click in the **upper right hand corner** and **set your Region** to the region you were assigned.    (*NOTE:  We have precreated certain objects in this assigned region to assist with workshop completion.  Failure to set the correct region will result in lab failure )* 
 
     ![](./images/changeregion.png " ") 
 
