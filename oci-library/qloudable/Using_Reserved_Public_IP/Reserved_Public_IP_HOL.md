@@ -186,7 +186,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 - **Subnet Compartment:** Choose your compartment. 
 - **Subnet:** Choose the Public Subnet under **Public Subnets** 
 - **Use network security groups to control traffic** : Leave un-checked
-- **Assign a public IP address**: Check this option
+- **Do Not Assign a public IP address**: Check this option
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
 

@@ -454,11 +454,10 @@ appear.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text">
 
-8. From OCI services menu Click **Networking**, then **Public IPs**,locate the Reserved Public IP you created. Click Action icon and then **Terminate**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0019.PNG" alt="image-alt-text">
 
-9. Navigate to **Health Checks** page, click your Health Check name and in Health Check details page, Click **Delete**
+8. Navigate to **Health Checks** page, click your Health Check name and in Health Check details page, Click **Delete**
 
 
 ***Congratulations! You have successfully completed the lab. ***

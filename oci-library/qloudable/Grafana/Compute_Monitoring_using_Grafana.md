@@ -233,6 +233,8 @@ sudo systemctl start grafana-server
 
 5. Now we will login to Grafana Console, Open a new Broswer tab and enter URL http://localhost:3000 , You should see grafana console
 
+**NOTE: You can use your OCI compute instance Public IP instead of 'localhot' as well**
+
 User name and password are 'admin' 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_003.PNG" alt="image-alt-text">
