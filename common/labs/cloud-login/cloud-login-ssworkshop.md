@@ -40,7 +40,7 @@ If your account name supplied to you begins with **user** or **ssuer**, please p
 
     ![](./images/changeregion.png " ") 
 
-Once you have set your region to the assigned value, proceed to the next lab.
+Once you have set your region to the assigned value, *proceed to the next lab*.
 
 
 ## Step 2:  Login to Oracle Cloud - Oracle Emails
