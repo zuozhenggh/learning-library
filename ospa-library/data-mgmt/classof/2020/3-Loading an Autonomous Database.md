@@ -29,7 +29,6 @@ In the previous lab you created a user MAMA_MAGGY, a URL for them, and logged in
 1. Make sure you are logged into your URL as MAMA_MAGGY.
 
 ![](media/sqlwebdev_mamamaggy.png)
-<p align="center">Figure 3-1</p>
 
 2. Let’s create 2 tables, using SQL in the Worksheet screen, one named **DEPT** and
 one name **EMP**. Copy the SQL below and post it in the Worksheet window, then click **Run Script** (the smaller green arrow).
@@ -53,19 +52,15 @@ DEPTNO NUMBER(2) CONSTRAINT FK_DEPTNO REFERENCES DEPT
 );
 ```
 
-
 ![](media/sqlwebdev_table_create.png)
-<p align="center">Figure 3-2</p>
 
 3. Hit the Refresh Button on the Navigator window and the tables you just created are now displayed.
 
 ![](media/sqlwebdev_nav_window.png)
-<p align="center">Figure 3-3</p>
 
 4. To load data into your tables click on the trash can in the worksheet window to clear the worksheet so we can paste the next step in.
 
 ![](media/sqlwebdev_clear.png)
-<p align="center">Figure 3-4</p>
 
 5. Copy and paste the code below, which inserts several rows of information into
 both tables. Paste it into the worksheet window you just cleared. Then click the **Run Script** button.
@@ -94,8 +89,6 @@ COMMIT;
 ```
 
 ![](media/sqlwebdev_inserts.png)
-<p align="center">Figure 3-5</p>
-
 
 5. Clear the worksheet again like you did above and cut and paste the following
 code and run it (by clicking on Run Script):
@@ -107,7 +100,6 @@ select * from dept;
 ```
 
 ![](media/sqlwebdev_select_tables.png)
-<p align="center">Figure 3-6</p>
 
 Look in the Script Output window. You just used SQL to query the tables you created and inserted data into, and have displayed the information in the tables!
 
@@ -124,17 +116,14 @@ table called channels in your database.
 1. Download the file called **mm_order_stats.csv** ([from here](https://oradocs-corp.documents.us2.oraclecloud.com/documents/link/LD67BF60471BB8666A167A50F6C3FF17C1177A968060/fileview/D58165A8FC2BAB77F65D05CEF6C3FF17C1177A968060/_channels.csv)) Please note the local directory you save it in as you will need it in the next step. See screenshots on how to download and save the file.
 
 ![](media/noimage.png)
-<p align="center">Figure 3-7</p>
 
 2. In SQL Developer Web at the bottom of the page you will see a tab called **Data Loading**. Click on that tab and then click on the Cloud to start the wizard.
 
 ![](media/sqlwebdev_data_load.png)
-<p align="center">Figure 3-8</p>
 
 3. You can either click on Select files or drag and drop the channels.csv file into the window.
 
 ![](media/sqlwebdev_data_load1.png)
-<p align="center">Figure 3-9</p>
 
 Once the file is selected and open, information from the file will be pre-loaded
 into the fields in the wizard. Notice it correctly determined this is a comma
@@ -142,34 +131,26 @@ delimited file. The first line in the file has the table column names and the
 next lines in the file have the actual data.
 
 ![](media/sqlwebdev_data_load2.png)
-<p align="center">Figure 3-10</p>
 
 4. Click **Next** and you will be placed on the Table definition screen. Here you can name the table which we will call **MM_ORDER_STATS**. Also you can set the column types, the length, primary keys, and if the column can be nullable. Further to the right are example rows so you can see what the data will look like. For our example we will just leave the column definitions the way they are.
 
 ![](media/sqlwebdev_data_load3.png)
-<p align="center">Figure 3-11</p>
 
-5. Click Next and it will give you a preview of what will be run. The DDL for the table will be generated as well as the column mapping. Click **Finish** and the upload will run. This will take about 5 minutes.
+5. Click Next and it will give you a preview of what will be run. The DDL for the table will be generated as well as the column mapping. Click **Finish** and the upload will run. This will take about 2-5 minutes.
 
 ![](media/sqlwebdev_data_load4.png)
-<p align="center">Figure 3-12</p>
 
 6. In the bottom left of the screen you will see a message that says "Importing data".
 
 ![](media/sqlwebdev_data_load5.png)
-<p align="center">Figure 3-13</p>
 
 7.  When the load finishes that will change to "Data import completed" and you will see an entry appear in the Data Loading tab.
 
 ![](media/sqlwebdev_data_load6.png)
-<p align="center">Figure 3-14</p>
-
-
 
 8. Hit the Refresh Button on the Navigator Window. You will now see the **MM_ORDER_STATS** Table you just created displayed there as well as an error table called **SDW$ERR$\_MM_ORDER_STATS**. Any issues loading the table will show up in the ERR table.
 
 ![](media/sqlwebdev_nav_window2.png)
-<p align="center">Figure 3-15</p>
 
 10. Go back to the Worksheet screen and erase the code you have there (hit the
 trash can button) and copy and paste the SQL below and run it like you did before. In the Script Output you will see 10 rows of the data you loaded into the table you just created. We will also drop the error table since we didn't have any errors loading. Also we are going to grant select on the table so that our Oracle Machine Learning user later can use it for analysis.
@@ -181,7 +162,6 @@ grant select on mm_order_stats to public;
 ```
 
 ![](media/sqlwebdev_table_loaded.png)
-<p align="center">Figure 3-16</p>
 
 You have queried the table you just created and loaded with SQL Developer Web from your text file on your local machine.
 

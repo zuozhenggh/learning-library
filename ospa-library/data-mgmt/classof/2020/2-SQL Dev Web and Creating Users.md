@@ -19,18 +19,15 @@ Traditionally you would have to download and install client tools onto your loca
 
 1. From the Autonomous Database Details page of the database that you just created there is a Tools tab located in the middle of the page. On this tab you will see SQL Developer Web, Oracle ML User Administration, and Oracle Application Express. Click on "Open SQL Developer Web" to launch the login page.
 
-![](media/atp_tools.png)
-<p align="center">Figure 2-1</p>
+![](media/atp_tools_sql_web_dev.png)
 
 2. Since you haven't created any users yet, you first have to login as ADMIN using the password you specified when you created the Autonomous Database.
 
 ![](media/sql_web_dev_admin_login.png)
-<p align="center">Figure 2-2</p>
 
 3. Once you are logged in you will be presented with a screen that looks like the one below:
 
 ![](media/sqlwebdev_landing.png)
-<p align="center">Figure 2-3</p>
 
 4. The components of the window that you can explore:
 * **Worksheet-** This is where you will type all of your commands and run them. Most of the time we spend in SQL Developer Web will be in the worksheet. The large green play button will run a single command. The smaller green play button will run many commands as a script. You have the option of saving and opening worksheets. There are some more advanced buttons like explain plans and autotrace that once you are more familiar with SQL you will be able to try out.
@@ -44,7 +41,6 @@ Traditionally you would have to download and install client tools onto your loca
 * **Data Modeler-** We won't be looking into the data modeler, however, if you were working on designing an actual system you can use the data modeler to visually design and generate the schema.
 
 ![](media/sqlwebdev_landing_markup.png)
-<p align="center">Figure 2-4</p>
 
 [Back to Top](#table-of-contents)
 *****
@@ -67,7 +63,6 @@ alter user mama_maggy quota unlimited on data;
 ```
 
 ![](media/sqlwebdev_create_users.png)
-<p align="center">Figure 2-5</p>
 
 You will use the user mama_maggy in SQL Developer Web to load some data in a future lab. To enable SQL Developer Web for this user there are two more steps to do. The first is enabling their schema to log into SQL Developer Web. The second is building a URL for the user to use to log into.
 
@@ -87,20 +82,17 @@ END;
 /
 ```
 ![](media/sqlwebdev_enable_schema.png)
-<p align="center">Figure 2-6</p>
 
 4. The second step is you have to create a specific URL for that user to use. If you look at the URL for your SQL Developer Web session it will break down like the one below. Make sure to copy your URL and make the change for the p_url_mapping_pattern you created in the previous step. I used mamamaggy so you can see I substituted mamamaggy for admin, the rest of the URL stays the same.
 
 ![](media/sqlwebdev_old_url.png)
 ![](media/sqlwebdev_new_url.png)
-<p align="center">Figure 2-7</p>
 
 **Save this URL. We will use it in future labs**
 
 5. If you want to try logging in as MAMA_MAGGY, open a new window and paste your URL in and try it. We will be using this user and URL for the Loading an Autonomous Database Lab.
 
 ![](media/sqlwebdev_mamamaggy_login.png)
-<p align="center">Figure 2-8</p>
 
 [Back to Top](#table-of-contents)
 *****
