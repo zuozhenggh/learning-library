@@ -258,13 +258,6 @@ The rest of this lab will be done interactively in the notebook.  The following 
 
 ![](./images/038.png  " ")
 
-![](./images/039.png  " ")
-
-![](./images/040.png  " ")
-
-![](./images/041.png  " ")
-
-![](./images/042.png  " ")
 
 Please proceed to the next lab.
 

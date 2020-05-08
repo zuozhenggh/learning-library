@@ -567,7 +567,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
     ![](images/200/LabGuide200-9d5e858e.png)
 
-- The last environment variable we need to create in Wercker is a token for Wercker to authenticate to OCI so that it can push our Docker image to the OCI Repository (OCIR). We will generate this authentication token in the OCI Console and then paste it into a Wercker environment variable. Add a new environment variable with the key **OCI_AUTH_TOKEN**.
+- The last environment variable we need to create in Wercker is a token for Wercker to authenticate to OCI so that it can push our Docker image to the OCI Repository (OCIR). We will generate this authentication token in the OCI Console and then paste it into a Wercker environment variable. Add a new environment variable with the key **`OCI_AUTH_TOKEN`**.
 
   ![](images/200/LabGuide200-ad86d83b.png)
 

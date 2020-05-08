@@ -41,7 +41,7 @@ In this lab, you will query files on the Oracle Cloud Infrastructure Object Stor
 
 ## STEP 2: Querying External Data
 
-1. Copy and paste <a href="./scripts/400/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet. Compared to the query in the previous lab, we only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
+1. Copy and paste <a href="./files/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet. Compared to the query in the previous lab, we only replaced the original table names **TABLE\_NAME** with **TABLE\_NAME\_EXT** in the sample query.  
 
 2. **Run the script**. You will now see the same query result as in the previous lab, but from data pulled directly from the Object Store.
 
@@ -49,10 +49,14 @@ In this lab, you will query files on the Oracle Cloud Infrastructure Object Stor
 
     Please proceed to the next lab.
 
-    ## Acknowledgements
+## Want to Learn More?
 
-    - **Author** - Nilay Panchal, ADB Product Management
-    - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-    - **Last Updated By/Date** - Richard Green, March 2020
+Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833) for documentation on querying external data with Autonomous Data Warehouse.
 
-    See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Acknowledgements
+
+- **Author** - Nilay Panchal, ADB Product Management
+- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
+- **Last Updated By/Date** - Richard Green, March 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
