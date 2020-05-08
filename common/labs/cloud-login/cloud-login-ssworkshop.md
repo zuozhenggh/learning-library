@@ -19,7 +19,7 @@ The following lab requires an Oracle Cloud account from the LiveLabs Platform.
 
 ## Option 1:  Login to Oracle Cloud - ssusersxx and userxx
 
-If your account name supplied to you begins with **user** or **ssuer**, please proceed. Otherwise, proceed to Option 2.
+If your account name supplied to you begins with **user** or **ssuser**, please proceed. Otherwise, proceed to Option 2.
 
 1.  From any supported browser go to http://bit.ly/c4u03login to access the Oracle Cloud LiveLabs Tenancy.
 
