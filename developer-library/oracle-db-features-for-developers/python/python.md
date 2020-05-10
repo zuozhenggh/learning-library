@@ -4,7 +4,7 @@
 
 PL/SQL is ideal for programming tasks within Oracle Database. Most Oracle professionals, however, aren't confined to working strictly within the database itself.
 
-Python is easy to use but also easy to use well, producing code that is readable and well organized. This way, when you return to a piece of code months after it was written, you can understand it, modify it, and reuse it. Python's clean, elegant syntax is sometimes called "executable pseudocode," for its nearly self-documenting appearance. It is highly object-oriented and makes it easy to learn and follow good programming style, even for those of us without formal training in software engineering. Its smooth learning curve makes it appeal to novices and experts alike.
+Python is easy to use but also easy to use well, producing code that is readable and well organized. This way, when you return to a piece of code months after it was written, you can understand it, modify it, and reuse it. Python's clean, elegant syntax is sometimes called "executable pseudocode," for its nearly self-documenting appearance. It is highly object-oriented and makes it easy to learn and follow a good programming style, even for those of us without formal training in software engineering. Its smooth learning curve makes it appeal to novices and experts alike.
 
 Python's capabilities span the whole range of software needs; the language's simplicity doesn't imply shallowness or narrowness. You won't run up against gaps in Python's abilities that send you looking for a third language.
 
@@ -59,9 +59,9 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
 ## Step 2: The Python Interpreter
 
-There are several ways to execute Python code. In this step we start with two examples on how to execute Python code from the command line. The first example executing code from the command prompt i.e. executing commands directly in the interpreter. The second example to save your code in a .py file and invoke the interpreter to execute the file.
+There are several ways to execute Python code. In this step, we start with two examples on how to execute Python code from the command line. The first example executing code from the command prompt i.e. executing commands directly in the interpreter. The second example to save your code in a .py file and invoke the interpreter to execute the file.
 
-1.  To execute code from command line open the Python command line editor and type the following commands, one by one (each line is one command).
+1.  To execute code from command line open the Python command-line editor and type the following commands, one by one (each line is one command).
 
     ````
     <copy>
@@ -74,7 +74,7 @@ There are several ways to execute Python code. In this step we start with two ex
 
     ![](./images/p_python-1.png " " )
 
-    To quit from the Python interpreter type *quit()* in the command line editor .
+    To quit from the Python interpreter type *quit()* in the command-line editor.
 
 2.  To create a simple script, open up a text editor (like vi) as *vi test.py* and enter the following script.
 
@@ -97,7 +97,7 @@ There are several ways to execute Python code. In this step we start with two ex
 
 ## Step 3: Install Python Oracle module and connect to a database
 
-*cx\_Oracle* is a python module that enables access to Oracle databases. This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
+*cx\_Oracle* is a python module that enables access to Oracle databases. This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example, we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
 
 1.  Since our client libraries are installed in our VM under the oracle user, we will now 'sudo' into the oracle user. (If you have an environment that does not have client libraries accessible to the user running the python3 script, install the Oracle instant client as described in the documentation.) Become the *Oracle* user.
 
@@ -134,7 +134,7 @@ There are several ways to execute Python code. In this step we start with two ex
     </copy>
     ````
 
-    This command will show you a list of installed modules which should include the cx\_Oracle module we installed in the previous step.
+    This command will show you a list of installed modules that should include the cx\_Oracle module we installed in the previous step.
 
     ![](./images/p_installcxOracle-2.png " ")
 
@@ -156,7 +156,7 @@ There are several ways to execute Python code. In this step we start with two ex
 
 ## Step 4: Querying the Oracle database
 
-Retrieving records from Oracle database using cursors is a simple as embedding a SQL statement within a cursor().execute statement. For this example we will use an existing table from the *SH* sample schema.
+Retrieving records from Oracle database using cursors is a simple as embedding a SQL statement within a cursor().execute statement. For this example, we will use an existing table from the *SH* sample schema.
 
 1.  Create a script called /home/oracle/db_connect.py with the following contents.
 
@@ -168,7 +168,7 @@ Retrieving records from Oracle database using cursors is a simple as embedding a
 
     cur = con.cursor()
 
-    cur.execute('select cust_first_name, cust_last_name,  cust_street_address, cust_city from customer where rownum < 100')
+    cur.execute('select cust_first_name, cust_last_name,  cust_street_address, cust_city from customers where rownum < 100')
 
     for row in cur:
             print (row)
@@ -191,9 +191,9 @@ Retrieving records from Oracle database using cursors is a simple as embedding a
 
     ![](./images/p_python-4.png " ")
 
-Querying Oracle database from Python leverages cursor technology and follows the standard cursor execution cycle: opening a cursor, the fetching stage and closing a cursor to flush the allocated memory. The cursor syntax cx_Oracle uses can be found under: [http://cx-oracle.readthedocs.org/en/latest/index.html](https://cx-oracle.readthedocs.io/en/latest/api_manual/cursor.html#cursor-object "documentation")
+Querying Oracle database from Python leverages cursor technology and follows the standard cursor execution cycle: opening a cursor, the fetching stage, and closing a cursor to flush the allocated memory. The cursor syntax cx_Oracle uses can be found under: [http://cx-oracle.readthedocs.org/en/latest/index.html](https://cx-oracle.readthedocs.io/en/latest/api_manual/cursor.html#cursor-object "documentation")
 
-Retrieving records from Oracle database using cursors is a simple as embedding the SQL statement within the cursor().execute statement.
+Retrieving records from the Oracle database using cursors is a simple as embedding the SQL statement within the cursor().execute statement.
 
 **Note**: Closing the cursor is considered good practice. Oracle will automatically close the cursor after the execution of its parent block finishes.
 
@@ -227,7 +227,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
 
 2.  Query the table data.
 
-    **Note**: Ensure to have three spaces in front of the *‘print row’* command. These three spaces are a code indentation that indicate a block of code in Python, you must indent each line of the block by the same amount. In this case, ‘print row’ is the block of code we execute in the loop ‘for row in cur:’. Make sure you have those spaces when you execute the command. Hit Enter to close the block of code in the loop.
+    **Note**: Ensure to have three spaces in front of the *‘print row’* command. These three spaces are a code indentation that indicates a block of code in Python, you must indent each line of the block by the same amount. In this case, ‘print row’ is the block of code we execute in the loop ‘for row in cur:’. Make sure you have those spaces when you execute the command. Hit Enter to close the block of code in the loop.
 
     ````
     <copy>
@@ -242,7 +242,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
 
     Python returns an empty row.
 
-3.  Insert a row in to the table.
+3.  Insert a row into the table.
 
     ````
     <copy>
@@ -337,7 +337,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
 
 9.  *Is it JSON? Or NOT?*
 
-    Insert a second row in to the  *test\_json* table in a non-JSON formatted.
+    Insert a second row into the  *test\_json* table in a non-JSON formatted.
 
     ````
     <copy>
@@ -349,7 +349,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
 
     ![](./images/step5.9-insertsecondrow.png " " )
 
-    The record is committed to the database without an error because the table does not specifically define its input has to be of JSON format. Check that the record has been added to the table by counting the number of rows *test\_json*.
+    The record is committed to the database without an error because the table does not specifically define its input has to be of the JSON format. Check that the record has been added to the table by counting the number of rows *test\_json*.
 
     ````
     <copy>
@@ -402,13 +402,13 @@ This section provides detail on how to work with JSON data in Oracle Database 19
 
 ## Step 6: Load JSON data into a table using PYTHON
 
-It is likely that rather than writing one JSON row at a time to the database, you will want to load many JSON records at once. In this example we will leverage Oracle External Tables functionality to do this.
+It is likely that rather than writing one JSON row at a time to the database, you will want to load many JSON records at once. In this example, we will leverage Oracle External Tables functionality to do this.
 
-In the following section we will create a new JSON external table that points to a JSON document and query the records from Python’s shell.
+In the following section, we will create a new JSON external table that points to a JSON document and query the records from Python’s shell.
 
 The access driver requires that a DIRECTORY object is defined to specify the location from which to read and write files. A DIRECTORY object assigns a name to a directory name on the file system. For example, the following statement creates a directory object named downloads that is mapped to a directory located at */home/oracle/labs/python/External*. Usually, all directories are created by the SYSDBA user, DBAs, or any user with the CREATE ANY DIRECTORY privilege.
 
-**Note**: If you have already completed the HYBRID PARTITIONINING lab the *SH* user has been granted the CREATE ANY DIRECTORY privilege.
+**Note**: If you have already completed the HYBRID PARTITIONING lab the *SH* user has been granted the CREATE ANY DIRECTORY privilege.
 
 1.  Connect to the database as SYS and create a new DIRECTORY object.
 
@@ -452,7 +452,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
     ````
     <copy>
-    cur.execute('create table empdept (deptdoc clob) organization external (type oracle_loader default directory samples access parameters (records delimited by newline nobadfile nologfile fields (doc char(50000))) location (samples:\'departments.dmp\')) parallel reject limit unlimited')
+    cur.execute('create table empdept (deptdoc clob) organization external (type oracle_loader default directory samples access parameters (records delimited by newline nobadfile nologfile fields (deptdoc char(5000))) location (\'departments.dmp\')) parallel 5 reject limit unlimited')
     </copy>
     ````
 
@@ -468,26 +468,26 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
     ![](./images/p_pythQuery-12.png " " )
 
-5.  The data in the file *departments.dmp* is not a single JSON document. Each row is JSON data consisting of a *Department* object which contains an array of *employees* objects. Each employees object has a Name, a Job Title and a Hire Date. The Oracle database can manipulate JSON directly, as you have seen with the SQL/JSON operator json\_query. Other operators include json\_value, json\_table and so on.
+5.  The data in the file *departments.dmp* is not a single JSON document. Each row is JSON data consisting of a *Department* object which contains an array of *employees* objects. Each employees object has a Name, a Job Title, and a Hire Date. The Oracle database can manipulate JSON directly, as you have seen with the SQL/JSON operator json\_query. Other operators include json\_value, json\_table, and so on.
 
-    Use Python to retrieve the data from our table, load it in to an array and print the first department name (the indentation is important).
+    Use Python to retrieve the data from our table, load it into an array, and print the first department name (the indentation is important).
 
     ````
     <copy>
+    from json import loads
+
     rv = []
 
     cur.execute('select to_char(deptdoc) from empdept')
 
     for r in cur:
-        rv.append(loads(r[0]))
+       rv.append(loads(r[0]))
 
     print(rv[0]['department'])
-
-    for row in cur: print(row)
     </copy>
     ````
 
-    ![](./images/p_pythQuery-13.png " " )
+    ![](./images/step6.5-retrievedata.png " " )
 
 6.  Now determine how many employees there are per department.
 
@@ -502,8 +502,8 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
 ## Conclusion
 
-In this Lab you had an opportunity to try out connecting Python in the Oracle Database.
-The guide shows the Developer how to use the Python Interpreter to interact with the Oracle Database through the Python API. We start by introducing Python and then review its installation requirements and tools required to run the demo. TThe Python API cx_Oracle is an open source Python package that Oracle contributes to. It is used to access an Oracle Database from Python.
+In this Lab, you had an opportunity to try out connecting Python in the Oracle Database.
+The guide shows the Developer how to use the Python Interpreter to interact with the Oracle Database through the Python API. We start by introducing Python and then review its installation requirements and tools required to run the demo. TThe Python API cx_Oracle is an open-source Python package that Oracle contributes to. It is used to access an Oracle Database from Python.
 
 The second part of the guide goes through a number of demo cases available through the Python API, including a simple Hello World application, and retrieving records from the Oracle Database using the cursor technology. There is a module on working with JSON data: loading the records to the database and querying them.
 
@@ -512,6 +512,6 @@ An additional lab on using Python with Spatial data is also available elsewhere 
 ## Acknowledgements
 
 - **Author** - Troy Anthony
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
+- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
