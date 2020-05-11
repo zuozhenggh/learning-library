@@ -6,7 +6,7 @@ As part of the Converged Oracle Database, you have a scalable property graph dat
 Click on one of our [workshops](./livelabs/) below to access the content
 
 ## Tutorial
-- [Setup with Docker](./setup_with_docker/setup_with_docker.md)
+- [Setup with Docker](./setup/setup_with_docker.md)
 
 ## Use Cases
 - [Customer 360 Analysis](./customer_360_analysis/customer_360_analysis.md)
