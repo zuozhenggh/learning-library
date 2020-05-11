@@ -10,6 +10,7 @@ Click on one of our [workshops](./livelabs/) below to access the content
 
 ## Use Cases
 - [Customer 360 Analysis](./customer_360_analysis/customer_360_analysis.md)
+Note: This assumes you have completed the setup steps and have an environment up and running with Docker.
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
