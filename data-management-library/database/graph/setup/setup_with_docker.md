@@ -20,13 +20,13 @@ Go to the following pages and download the packages.
 - [Oracle Graph Server and Client 20.1](https://www.oracle.com/database/technologies/spatialandgraph/property-graph-features/graph-server-and-client/graph-server-and-client-downloads.html)
 - [Apache Groovy 2.4.18](https://dl.bintray.com/groovy/maven/apache-groovy-binary-2.4.18.zip)
 
-Put the following files to `oracle-pg/docker/tmp/`
+Put the following files into `oracle-pg/docker/tmp/`
 
 - oracle-graph-20.1.0.x86_64.rpm
 - oracle-graph-zeppelin-interpreter-20.1.0.zip
 - apache-groovy-binary-2.4.18.zip
  
-Run the following script to extract packages:
+Run the following script to extract the packages:
 
 ```
 $ <copy>cd oracle-pg/docker/tmp/</copy>
@@ -41,20 +41,20 @@ $ <copy>cd oracle-pg/docker/</copy>
 $ <copy>docker-compose up -d</copy>
 ```
 
-It takes some time. To check the progress, see **Appendix 1**.
+This takes some time. To check the progress, see **Appendix 1**.
 
 Access Graph Visualization.
 
  - [http://localhost:7007/ui/](http://localhost:7007/ui/)
 
-Access to Zeppelin and start graph analytics, e.g. [Customer 360 Analysis](../customer_360_analysis/customer_360_analysis.md).
+Access Zeppelin and start querying and analyzing graphs, e.g. [Customer 360 Analysis](../customer_360_analysis/customer_360_analysis.md).
 
 - [http://localhost:8080/#/](http://localhost:8080/#/)
 
 To stop, restart, or remove the containers, see **Appendix 2**.
 
 ### Appendix 1
-To check the progress, see logs.
+View the contaners' log files to check the progress of creating and starting them.
 
 ```
 $ <copy>cd oracle-pg/docker/ ;</copy>
@@ -114,7 +114,7 @@ $ <copy>cd oracle-pg/docker/ ;</copy>
 $ <copy>docker-compose -f docker-compose-rdbms.yml up -d oracle-db </copy>
 ```
 
-This step takes time. Please have a coffee break. See also **Appendix 1**.
+This step takes time becuase it starts the container and then builds the databse itself. View the container's log to track progress.  **Appendix 1**.
 
 ### Configure Oracle Database
 
@@ -136,11 +136,11 @@ NAME              TYPE        VALUE
 max_string_size   string      EXTENDED
 ```
 
-Next step is Create Graph on Database.
+Next step is to create a graph in the database.
 
 ### Load Table Data
 
-Connect the database as "sys" user, and create a user, "customer_360".
+Connect to the database as "sys" user, and create a user, "customer_360".
 
 ```
 $ <copy> docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
@@ -151,7 +151,7 @@ SQL> <copy>@/graphs/customer_360/create_user.sql<copy>
 SQL> EXIT
 ```
 
-Connect the database as "customer_360" user, and create tables.
+Connect to the database as the "customer_360" user, and create tables.
 
 ```
 $ <copy>docker exec -it oracle-db sqlplus customer_360/Welcome1@localhost:1521/orclpdb1</copy>
@@ -164,7 +164,7 @@ SQL> EXIT
 
 ### Create Property Graph
 
-The following DDL creates a property graph (= node table and edge table) from the table data.
+The following DDL creates a property graph (i.e. node and edge tables) from the relational table data.
 
 ![](./images/create_graph.jpg)
 
@@ -265,12 +265,16 @@ pgql.prepareStatement(Files.readString(Paths.get("{$REPO_HOME}/graphs/customer_3
 Note: The execute() above will return `false` on completion since the first result is not a ResultSet. 
 
 Exit Graph Client. See also **Appendix 2**.
-
-    > \exit
-
+```
+\exit
+```
 ### Loading Configuration
 
-Set the new loading configuration into the list of preload graphs.
+The following configuration files determine the graph server startup settings and optionally the graphs that are pre-loaded. 
+
+The pgx-rdbms.conf file under {$REPO_HOME}/docker/conf/ specifies which graph to pre-load.
+
+The configuration of the graph itself, i.e. how and what to load, is in the JFON file rdbms.json under {$REPO_HOME}/graphs/customer_360/.
 
 ![](./images/load_conf.jpg)
 
@@ -279,7 +283,7 @@ Set the new loading configuration into the list of preload graphs.
 ```
 $ oracle-pg/docker/conf/pgx-rdbms.conf
 "preload_graphs": [
-  {"path": "/graphs/customer_360/rdbms.json", "name": "Customer 360"},
+  {"path": "/graphs/customer_360/rdbms.json", "name": "Customer360_db"},
 ```
 
 `rdbms.json`
@@ -314,7 +318,7 @@ $ oracle-pg/docker/conf/pgx-rdbms.conf
 }
 ```
 
-Note that vertex labels are also loaded and the graph is partitioned by the labels.
+Note that edge labels are also loaded.
 
 See also **Appendix 3**.
 
@@ -355,10 +359,19 @@ $ <copy>docker-compose -f docker-compose-rdbms.yml logs -f oracle-db</copy>
 
 ### Appendix 2
 
-You can check the graph by query (= PGQL on RDBMS), e.g. how many nodes are in the new property graph.
+You can check the graph by executing the following code aqnd query (= PGQL on RDBMS) in the JShell.  
+How many nodes are in the newly created property graph?
+
+Start a JShell. Then check which graph is loaded. Then query it.
 
 ```
-> Consumer<String> query = q -> {
+<copy>docker exec -it graph-client opg-rdbms-jshell -b http://graph-server:7007</copy>
+```
+
+Enter the following code in JShell.
+```
+<copy>
+Consumer<String> query = q -> {
     try(var s = pgql.prepareStatement(q)) {
       s.execute();
       s.getResultSet().print();
@@ -366,7 +379,9 @@ You can check the graph by query (= PGQL on RDBMS), e.g. how many nodes are in t
       throw new RuntimeException(e);
     }
   }
-> query.accept("select count(v) from customer_360 match (v)")
+
+query.accept("select count(v) from Customer360-PG match (v)");
+</copy>
 +----------+
 | count(v) |
 +----------+
@@ -376,18 +391,11 @@ You can check the graph by query (= PGQL on RDBMS), e.g. how many nodes are in t
 
 ### Appendix 3
 
-To test loading configuration, you can access to Graph Server and try loading.
+To test the database graph loading configuration (i.e. rdbms.json) start JShell and execute the code below.
 
 ```
-$ <copy>docker exec -it graph-client opg-jshell -b http://graph-server:7007</copy>
-> var graph = session.readGraphWithProperties("/graphs/customer_360/rdbms.json")
-```
-
-You can also load the graph to "Graph Client", only because it uses the server package this time.
-
-```
-$ <copy>docker exec -it graph-client opg-rdbms-jshell --secret_store /opt/oracle/keystore.p12</copy>
-> var graph = session.readGraphWithProperties("/graphs/customer_360/rdbms.json")
+$ <copy>docker exec -it graph-client opg-rdbms-jshell -b http://graph-server:7007</copy>
+var graph = session.readGraphWithProperties("/graphs/customer_360/rdbms.json")
 ```
 
 
@@ -410,4 +418,5 @@ $ <copy>docker-compose -f docker-compose-rdbms.yml down</copy>
 
 ## Acknowledgements ##
 
-- **Author** - Ryota Yamanaka - Product Manager in Asia-Pacific for geospatial and graph technologies
+- **Author** - Ryota Yamanaka - Product Manager in Asia-Pacific for geospatial and graph technologies  
+- With a little help from colleagues (Albert Godfrin and Jayant Sharma).
