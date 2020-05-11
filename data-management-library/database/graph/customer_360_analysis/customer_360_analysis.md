@@ -52,18 +52,18 @@ WHERE <condition>
 ```
 
 PGQL provides a specific construct known as the MATCH clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints.  
-(v) indicates a vertex variable `v`   
+`(v)` indicates a vertex variable `v`   
 \- indicates an undirected edge, as in (source)-(dest)  
 \-> an outgoing edge from source to destination  
 <- an incoming edge from destination to source  
-[e] indicates an edge variable `e`
+`[e]` indicates an edge variable `e`
 
 Let's find accounts that have had an outbound and and inbound transfer of over 500 on the same day.
 
 The PGQL query for this is:
 ```
 <copy>SELECT * 
-MATCH (FromAcct)-[TransferOut:transfer]-(ToAcct1), (ToAcct2)-[TransferIn:transfer]->(FromAcct)
+MATCH (FromAcct)-[TransferOut:transfer]->(ToAcct1), (ToAcct2)-[TransferIn:transfer]->(FromAcct)
 WHERE TransferOut.date = TransferIn.date and TransferOut.amount > 500 and TransferIn.amount > 500
 </copy>
 ```
