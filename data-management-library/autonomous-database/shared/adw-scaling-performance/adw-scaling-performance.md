@@ -1,7 +1,7 @@
 
 <!-- Updated March, 2020 -->
 
-# Bonus Lab 9: Scaling and Performance in Your Autonomous Database
+# Scaling and Performance in Your Autonomous Database
 
 ### Introduction
 
@@ -16,6 +16,13 @@ In this lab you will scale up your Oracle Autonomous Data Warehouse (ADW) or Aut
 ### Required Artifacts
 
 -   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. If you don't already have your own cloud account then you can obtain a new cloud account through the free Oracle trial program.
+
+### Video Preview
+
+Watch a video demonstration of monitoring an autonomous database in the Autonomous Data Warehouse cloud service:
+
+[](youtube:Imxl2JiYicQ)
+
 
 ## <!--buggy, did this so Part 1 would collapse-->
 
@@ -43,17 +50,13 @@ In this lab you will scale up your Oracle Autonomous Data Warehouse (ADW) or Aut
 
 ## Step 2: Performance and Concurrency Benefits of Dynamic Scaling
 
-1. <a href="https://raw.githubusercontent.com/millerhoo/journey4-adwc/master/workshops/journey4-adwc/images/ADWC%20HOL%20-%20Scaling.mp4" target="\_blank">Click here</a> to watch a demo of the performance impact of scaling up your instance. In the demo you will see that scaling up provides more concurrency for your users.
+1. Watch a demo of the performance impact of scaling up your instance. It shows how you can dynamically scale up a database while the workload is running, to increase transaction throughput. Scaling up can also provide more concurrency for your users.
 
-2. The demo will show a workload that has 10 concurrent users running with the MEDIUM database service. You will see that on a 2 CPU autonomous database instance 5 queries are running whereas 5 queries are waiting in the queue for resources.
+[](youtube:YgwbqurhxjM)
 
-    ![](./images/Picture300-7.png " ")
+2. In this example, scaling up the CPUs from 2 to 8 increased the transaction throughput from 2000 to 7500 transactions per second.
 
-3. While the workload is running the database will be scaled up from 2 CPUs to 4 CPUs. You will see that the queries waiting in the queue are now able to start and there are no sessions waiting in the queue anymore.
-
-    ![](./images/Picture300-8.png " ")
-
-4. ADW allows you to dynamically scale your service online when you require more concurrency and performance.
+    ![](./images/screenshot-of-increased-transaction-throughput.png " ")
 
 ## Want to Learn More?
 
