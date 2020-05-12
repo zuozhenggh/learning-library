@@ -491,6 +491,10 @@ In this step you will set up the AQ messaging queue by creating database
 
 4. Once you’ve successfully built the docker image, go ahead and deploy it.
 
+    ```
+    <copy>./deploy.sh</copy>
+    ```
+
    ![](images/fa8d34335bbf7bd8b98a2f210580135d.png " ")
 
 5. Go ahead and execute the same steps for building and deploying the inventory

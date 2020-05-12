@@ -237,9 +237,21 @@ see the liveness and readiness of the service.
 
    ![](images/4a2f42213cc046507816ae014558751c.png " ")
 
-   ![](images/jaegercollapsed.png " ")
+7. On the Jaeger page make sure you select `jaeger-query` service, `/api/traces` operation, and click **Find Traces**.
 
-   ![](images/jaegerexpanded.png " ")
+   ![](images/34df63311bd13a87fb2d3d90034df86b.png " ")
+
+8.  Click on the trace item to check the details.
+
+   ![](images/706684a3b103f04590880545658ad069.png " ")
+
+9.  Click the item again to expand operations.
+
+   ![](images/27ff364a164804faee1a0a6e93cd457d.png " ")
+
+   The expanded view looks like this:
+
+   ![](images/6bdc35daf4f61badd98414182fa59915.png " ")
 
 You may now proceed to the next lab.
 
