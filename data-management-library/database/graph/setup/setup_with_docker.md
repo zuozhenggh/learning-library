@@ -54,7 +54,7 @@ Access Zeppelin and start querying and analyzing graphs, e.g. [Customer 360 Anal
 To stop, restart, or remove the containers, see **Appendix 2**.
 
 ### Appendix 1
-View the contaners' log files to check the progress of creating and starting them.
+View the containers' log files to check the progress of creating and starting them.
 
 ```
 $ <copy>cd oracle-pg/docker/ ;</copy>

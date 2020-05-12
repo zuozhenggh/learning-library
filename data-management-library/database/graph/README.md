@@ -1,16 +1,32 @@
 # Oracle Database Graph Github
 
-## Oracle as a Property Graph
-As part of the Converged Oracle Database, you have a scalable property graph database; a powerful in-memory analyst with 50 built-in, parallel analytic functions; and a graph query language and developer APIs. Graph algorithms enable you to explore and discover relationships in social networks, IoT, big data, data warehouses and complex transaction data for applications such as fraud detection in banking, customer 360, and smart manufacturing.
+## Oracle as a Graph Database
+As part of the Converged Oracle Database, you have a scalable graph database for both RDF (semantic) and Property graphs. 
 
-Click on one of our [workshops](./livelabs/) below to access the content
+### Property Graphs
+The property graph supports consists of graph storage, indexing, and search; a powerful in-memory analyst with 50 built-in, parallel analytic functions; a graph query language and developer APIs. Graph algorithms enable you to explore and discover relationships in social networks, IoT, big data, data warehouses and complex transaction data for applications such as fraud detection in banking, customer 360, and smart manufacturing.
 
-## Tutorial
-- [Setup with Docker](./setup/setup_with_docker.md)
+### RDF 
+The converged database supports standards based RDF data management and analysis. It provides native support for RDF and OWL, W3C-standards for representing and defining knowledge graphs, semantic data, and SPARQL, a graph query language, enabling comprehensive RDF query, reasoning, and analytics.  
+RDF graph leverages features such as triple-level security, Exadata, RAC, compression, partitioning, In-Memory Database, parallel query, and high availability for excellent performance and scalability, for data sets in the trillions of quads.  
+RDF graphs create a unified metadata layer for disparate applications that facilitates identification, integration, and discovery.  RDF graphs are central to knowledge management, linked data and social network applications common in the healthcare and life sciences, finance, media and intelligence communities.
 
-## Use Cases
+
+Click on one of our workshops below to access the content.
+
+## Property Graph Workshops
+
+### Tutorial: Setup a property graph environment in Docker
+- [Setup with Docker](./livelabs/)
+
+### Customer 360 analysis 
 - [Customer 360 Analysis](./customer_360_analysis/customer_360_analysis.md)
-Note: This assumes you have completed the setup steps and have an environment up and running with Docker.
+Note: This assumes you have completed the setup steps and have an environment up and running with Docker. The use case is included in the workshop accessible from the setup link above. 
+
+## RDF/Semantic Graph Workshops
+
+Coming soon ...
+
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
