@@ -24,13 +24,13 @@ Ideally, most of the CI/CD chain (workflow or pipeline) is automated. Organizati
 Alternatively, you can follow the labs on this repo :
 
 - [Introduction](./introduction/content.md)
-- [Oracle Cloud Infrastructure (OCI)](./lab01/content.md)
-- [GitHub Code Repository](./lab02/content.md)
-- [Oracle Wercker CI Service](./lab03/content.md)
-- [Oracle Database for Python](./lab04/content.md)
-- [Push Docker Image to Registry (OCIR)](./lab05/content.md)
-- [Deploy Python App on Container Cluster (OKE)](./lab06/content.md)
-- [Oracle Database Changes in CI/CD Workflow](./lab07/content.md)
+- [Oracle Cloud Infrastructure (OCI)](./oci/oci.md)
+- [GitHub Code Repository](./github/github.md)
+- [Oracle Wercker CI Service](./wercker/wercker.md)
+- [Oracle Database for Python](./cx-oracle/cx-oracle.md)
+- [Push Docker Image to Registry (OCIR)](./ocir/ocir.md)
+- [Deploy Python App on Container Cluster (OKE)](./deploy/deploy.md)
+- [Oracle Database Changes in CI/CD Workflow](./change-log/change-log.md)
 
 ## Oracle Cloud Account
 
