@@ -1,6 +1,7 @@
 # Hybrid Partitioning
 
 ## Introduction
+
 Partitioning can provide tremendous benefit to a wide variety of applications by improving performance, manageability, and availability. It is not unusual for partitioning to greatly improve the performance of certain queries or maintenance operations. Moreover, partitioning can greatly simplify common administration tasks.
 
 Partitioning also enables database designers and administrators to solve some difficult problems posed by cutting-edge applications. Partitioning is a key tool for building multi-terabyte systems or systems with extremely high availability requirements.
@@ -39,7 +40,7 @@ This lab assumes you have completed the following labs:
     ssh -i yourkeyname opc@ your ip address
     ````
 
-1.  This lab uses the Sales History sample schema (SH). Create two new folders on disk (using the opc user). These folders will be used later as location for some external partitions.
+1.  This lab uses the Sales History sample schema (SH). Create two new folders on disk (using the *opc* user). These folders will be used later as a location for some external partitions.
 
     ````
     <copy>
@@ -52,7 +53,7 @@ This lab assumes you have completed the following labs:
     </copy>
     ````
 
-    ![](./images/step1.1-newfolders.png " " )
+    ![](./images/step1.1-shschema.png " ")
 
 2.  Connect to the ORCLPDB as SYS.
 
@@ -65,7 +66,9 @@ This lab assumes you have completed the following labs:
     </copy>
     ````
 
-3.  Create two external directories and grant access to the sh user.
+    ![](./images/step1.2-connectassys.png " ")
+
+3.  Create two external directories and grant access to the SH user.
 
     ````
     <copy>
@@ -79,27 +82,28 @@ This lab assumes you have completed the following labs:
     </copy>
     ````
 
-    ![](./images/step1.3-access.png " ")
+    ![](./images/step1.3-grantaccess.png " ")
 
 4.  Grant additional privileges to SH user.
 
     ````
     <copy>
     GRANT CREATE ANY DIRECTORY TO sh;
+
     GRANT EXECUTE ON dbms_sql TO sh;
     GRANT EXECUTE ON utl_file TO sh;
     </copy>
     ````
 
-    ![](./images/step1.4-grantpriv.png " ")
+    ![](./images/step1.4-grantaddaccess.png " ")
 
-    The DBMS\_SQL package provides an interface to use dynamic SQL to parse any data manipulation language (DML) or data definition language (DDL) statement using PL/SQL. Using the UTL\_FILE package, PL/SQL programs can read and write operating system text files. Basically, UTL\_FILE provides a restricted version of operating system stream file I/O. One use case is for exporting data into flat files, that will become external partitions.
+    The DBMS\_SQL package provides an interface to use dynamic SQL to parse any data manipulation language (DML) or data definition language (DDL) statement using PL/SQL. Using the UTL\_FILE package, PL/SQL programs can read and write operating system text files. UTL\_FILE provides a restricted version of the operating system stream file I/O. One use case is for exporting data into flat files, that will become external partitions.
 
-## Step 2: Review current SALES table
+## Step 2: Review the current SALES table
 
-The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account.
+The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssh account.
 
-1.  Login to the pdb as the SH user and set some formatting for SQL*Plus output.
+1.  Login to the pdb as the *SH* user and set some formatting for SQL*Plus output.
 
     ````
     <copy>
@@ -123,9 +127,9 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     </copy>
     ````
 
-    ![](./images/step2.1-formatoutput.png " ")
+    ![](./images/step2.1-formatting.png " ")
 
-2.  Examine the Sales History scehma.
+2.  Examine the Sales History schema.
 
     ````
     <copy>
@@ -137,7 +141,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 
     ![](images/p_tablesparthbrid.png " ")
 
-    Table SALES is partitioned, and does not use hybrid partitioning. We will use this table as an example, to see how hybrid partitioning works.
+    Table SALES is partitioned and does not use hybrid partitioning. We will use this table as an example, to see how hybrid partitioning works.
 
 3.  Examine the data in the table.
 
@@ -151,7 +155,10 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     select unique to_char(TIME_ID, 'YYYY') from SALES order by 1;
     </copy>
     ````
-    There is 5 years of data in the SALES table: 1998, 1999, 2000, 2001, 2002. The data is partitioned in yearly quarters. *(Note that the 2003 partitions exist but are empty)*
+
+    ![](./images/step2.3-examinedata.png " ")
+
+    There are 5 years of data in the SALES table: 1998, 1999, 2000, 2001, 2002. The data is partitioned in yearly quarters. *(Note that the 2003 partitions exist but are empty)*
 
     ````
     <copy>
@@ -170,65 +177,63 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 	![](images/p_sales_partitions.png " ")
 
 ## Step 3: Rethink Storage Organization
+
 You can convert a table with only internal partitions to a hybrid partitioned table. For example, the SALES table could be converted to a hybrid partitioned table by adding external partition attributes using an ALTER TABLE command, then add external partitions. Note that at least one partition must be an internal partition. However, in this lab you will create a new hybrid partitioned table, as a copy of the SALES table instead.
 
 Let's create some external files initially.  The external partitions will be defined using comma-separated (CSV) data files stored in directories, that point to folders on disk. The CSV files are exported using existing internal partitions of the SALES table.
 
 The following procedure will be used to export individual partitions of a table into CSV files on disk.
 
-1.  Create this procedure in the SALES schema from your SQL*Plus session:
+1.  Create this procedure in the SALES schema from your SQL*Plus session.
 
     ````
     <copy>
     create or replace PROCEDURE table_part_to_csv (
-       p_tname in varchar2,
-       p_pname in varchar2,
-       p_dir in varchar2,
-       p_filename in varchar2)
-        is
-       l_output utl_file.file_type;
-       l_theCursor integer default dbms_sql.open_cursor;
-       l_columnValue varchar2(4000);
-       l_status integer;
-       l_query varchar2(1000) default 'select * from '|| p_tname || ' partition (' || p_pname || ') where 1=1';
-       l_colCnt number := 0;
-       l_separator varchar2(1);
-       l_descTbl dbms_sql.desc_tab;
+    p_tname in varchar2,
+    p_pname in varchar2,
+    p_dir in varchar2,
+    p_filename in varchar2)
+    is
+    l_output utl_file.file_type;
+    l_theCursor integer default dbms_sql.open_cursor;
+    l_columnValue varchar2(4000);
+    l_status integer;
+    l_query varchar2(1000) default 'select * from '|| p_tname || ' partition (' || p_pname || ') where 1=1';
+    l_colCnt number := 0;
+    l_separator varchar2(1);
+    l_descTbl dbms_sql.desc_tab;
     begin
-
     --create an empty file on disk
-       l_output := utl_file.fopen( p_dir, p_filename, 'w','32760');
-       execute immediate 'alter session set nls_date_format=''dd-mon-yyyy hh24:mi:ss'' ';
-       dbms_sql.parse( l_theCursor, l_query, dbms_sql.native );
-       dbms_sql.describe_columns( l_theCursor, l_colCnt, l_descTbl );
-
+    l_output := utl_file.fopen( p_dir, p_filename, 'w','32760');
+    execute immediate 'alter session set nls_date_format=''dd-mon-yyyy hh24:mi:ss'' ';
+    dbms_sql.parse( l_theCursor, l_query, dbms_sql.native );
+    dbms_sql.describe_columns( l_theCursor, l_colCnt, l_descTbl );
     --write column names into the new file
-       for i in 1 .. l_colCnt loop
-         utl_file.put( l_output, l_separator || '"' || l_descTbl(i).col_name || '"' );
-         dbms_sql.define_column( l_theCursor, i, l_columnValue, 4000 );
-         l_separator := ',';
-       end loop;
-       utl_file.new_line( l_output );
-
+    for i in 1 .. l_colCnt loop
+    utl_file.put( l_output, l_separator || '"' || l_descTbl(i).col_name || '"' );
+    dbms_sql.define_column( l_theCursor, i, l_columnValue, 4000 );
+    l_separator := ',';
+    end loop;
+    utl_file.new_line( l_output );
     --write data into the new file and close
-       l_status := dbms_sql.execute(l_theCursor);
-
-       while ( dbms_sql.fetch_rows(l_theCursor) > 0 ) loop
-         l_separator := '';
-         for i in 1 .. l_colCnt loop
-           dbms_sql.column_value( l_theCursor, i, l_columnValue );
-           utl_file.put( l_output, l_separator || '"' || l_columnValue || '"');
-           l_separator := ',';
-         end loop;
-         utl_file.new_line( l_output );
-       end loop;
-       dbms_sql.close_cursor(l_theCursor);
-       utl_file.fclose( l_output );
-
+    l_status := dbms_sql.execute(l_theCursor);
+    while ( dbms_sql.fetch_rows(l_theCursor) > 0 ) loop
+    l_separator := '';
+    for i in 1 .. l_colCnt loop
+        dbms_sql.column_value( l_theCursor, i, l_columnValue );
+        utl_file.put( l_output, l_separator || '"' || l_columnValue || '"');
+        l_separator := ',';
+    end loop;
+    utl_file.new_line( l_output );
+    end loop;
+    dbms_sql.close_cursor(l_theCursor);
+    utl_file.fclose( l_output );
     END table_part_to_csv;
-
+    /
     </copy>
     ````
+
+    ![](./images/step3.1-createprocedure.png " ")
 
 2.  Use the DIRECTORY objects created previously. Check they exist.
 
@@ -257,7 +262,7 @@ The following procedure will be used to export individual partitions of a table 
 
     ![](images/p_export_part.png " ")
 
-4.  Open another terminal window in to your environment (Duplicate Putty session for example) and examine the CSV file. The following example uses vim, but any editor will suffice.
+4.  Open another terminal window into your environment (Duplicate Putty session for example) and examine the CSV file. The following example uses vim, but any editor will suffice.
 
     ````
     <copy>
@@ -267,7 +272,7 @@ The following procedure will be used to export individual partitions of a table 
 
     ![](images/p_csv_data.png " ")
 
-5.  The first line of the file contains the names of the columns. All data fields are enclosed within double quotes and fields are separated by a comma. This format can be customized. For this lab session we will use this same format for the rest of the SALES table partitions that store data for the years 1998 and 1999.
+5.  The first line of the file contains the names of the columns. All data fields are enclosed within double quotes and fields are separated by a comma. This format can be customized. For this lab session, we will use this same format for the rest of the SALES table partitions that store data for the years 1998 and 1999.
 
     ````
     <copy>
@@ -281,7 +286,9 @@ The following procedure will be used to export individual partitions of a table 
     </copy>
     ````
 
-6.  Ensure all partitions were exported.
+    ![](./images/step3.5-execute.png " ")
+
+6.  In the other opened terminal window, ensure all partitions were exported.
 
     ````
     <copy>
@@ -294,11 +301,11 @@ The following procedure will be used to export individual partitions of a table 
 
 ## Step 4: Implement Hybrid Partition Tables
 
-In this example we assume our OLTP application will continue to run on the original SALES table, and we can drop the partitions containing old data, for example years 1998 and 1999. For reporting and compliancy we will store old data outside the database, on a cheaper storage solution.
+In this example, we assume our OLTP application will continue to run on the original SALES table, and we can drop the partitions containing old data, for example, years 1998 and 1999. For reporting and compliancy, we will store old data outside the database, on a cheaper storage solution.
 
-You will copy and then redefine a table (maintaining application transparency). The new table will have the same structure as the original SALES table, however there are some restrictions for Hybrid Partition Tables we need to consider. Only single level LIST and RANGE partitioning is supported, no column default value is allowed, and only RELY constraints are allowed. You will check the original table, and make sure all these restrictions are applied to the new table.
+You will copy and then redefine a table (maintaining application transparency). The new table will have the same structure as the original SALES table, however, there are some restrictions for Hybrid Partition Tables we need to consider. Only single-level LIST and RANGE partitioning are supported, no column default value is allowed, and only RELY constraints are allowed. You will check the original table, and make sure all these restrictions are applied to the new table.
 
-1.  As you will copy SALES, retrieve the DDL script from the database:
+1.  As you will copy SALES, retrieve the DDL script from the database.
 
     ````
     <copy>
@@ -320,7 +327,11 @@ You will copy and then redefine a table (maintaining application transparency). 
     </copy>
     ````
 
-    You can edit the CREATE TABLE statement to create a TABLE named HYBRID_SALES where the partitions containing data from 1998 and 1999 reference the CSV files created previously. Or just use the example below. Note the the DDL retrieved from the database cannot be run directly to create a hybrid partitioned table;  you must remove all Foreign Keys from the original statement, because of the restrictions on Hybrid Partitioned Tables, only RELY constraints are allowed.
+    ![](./images/step4.1-retrieveddlscript.png " ")
+
+    ![](./images/step4.1-retrieveddlscript2.png " ")
+
+	You can edit the CREATE TABLE statement to create a TABLE named HYBRID_SALES where the partitions containing data from 1998 and 1999 reference the CSV files created previously. Or just use the example below. Note that the DDL retrieved from the database cannot be run directly to create a hybrid partitioned table; you must remove all Foreign Keys from the original statement, because of the restrictions on Hybrid Partitioned Tables, only RELY constraints are allowed.
 
 	The hybrid range-partitioned table is created with eight external partitions and sixteen internal partitions. You can specify for each external partition different attributes than the default attributes defined at the table level, DIRECTORY for example.
 
@@ -519,7 +530,7 @@ You will copy and then redefine a table (maintaining application transparency). 
     </copy>
     ````
 
-3.  This statement assumes that the Primary Key is in the RELY state. If you get the following error:
+3.  This statement assumes that the Primary Key is in the RELY state. If you get the following error.
 
     ![](images/p_norely.png " ")
 
@@ -542,6 +553,8 @@ You will copy and then redefine a table (maintaining application transparency). 
     </copy>
     ````
 
+    ![](./images/step4.4-placeconstraint.png " ")
+
 5.  Confirm the constraint state.
 
     ````
@@ -561,13 +574,15 @@ You will copy and then redefine a table (maintaining application transparency). 
     </copy>
     ````
 
-    Addition foreign key constraints from the original SALES table could be added to the HYBRID_SALES table using the same methodology.
+    ![](./images/step4.6-addrelyconstraint.png " ")
+
+    Additional foreign key constraints from the original SALES table could be added to the HYBRID_SALES table using the same methodology.
 
 ## Step 5:  Compare internal and external partition operations
 
 Hybrid Partitioned Tables support many partition level operations, including:
--	Creating single level RANGE and LIST partitioning methods
--   Using ALTER TABLE .. DDLs such as ADD, DROP, and RENAME partitions
+-	Creating a single level RANGE and LIST partitioning methods
+-   Using ALTER TABLE .. DDLs such as ADD, DROP and RENAME partitions
 -   Modifying for external partitions the location of the external data sources at the partition level
 -   Altering an existing partitioned internal table to a hybrid partitioned table containing both internal and external partitions
 -   Changing the existing location to an empty location resulting in an empty external partition
@@ -606,7 +621,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
 
     ![](images/p_internal_part_data.png " ")
 
-3.  You can insert rows into internal partitions from the original SALES table. Using the partition extension clause PARTITION (partition\_name), we can specify the name of the partition within SALES table from which we want to retrieve data, in order to populate a given internal partition.
+3.  You can insert rows into internal partitions from the original SALES table. Using the partition extension clause PARTITION (partition\_name), we can specify the name of the partition within the SALES table from which we want to retrieve data, in order to populate a given internal partition.
 
     ````
     <copy>
@@ -618,7 +633,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
     </copy>
     ````
 
-    ![](images/p_internal_part_data.png " ")
+    ![](./images/step5.3-insertrows.png " ")
 
 4.  Confirm the data was added.
 
@@ -630,7 +645,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
 
     ![](images/p_q1_2000_data.png " ")
 
-5.  Insert records in to the new table. Verify individualrecords in the HYBRID\_SALES table, filtering on PROD\_ID (product id) and CUST\_ID (customer id).
+5.  Insert records into the new table. Verify individual records in the HYBRID\_SALES table, filtering on PROD\_ID (product id) and CUST\_ID (customer id).
 
     ````
     <copy>
@@ -640,7 +655,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
 
     ![](images/p_prodid_136_1.png " ")
 
-6.  Insert data in to the new table. Notice that this will insert in to an internal partition.
+6.  Insert data into the new table. Notice that this will insert into an internal partition.
 
     ````
     <copy>
@@ -667,7 +682,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
 
     ````
     <copy>
-     insert into HYBRID_SALES (PROD_ID, CUST_ID, TIME_ID, CHANNEL_ID, PROMO_ID, QUANTITY_SOLD, AMOUNT_SOLD)
+    insert into HYBRID_SALES (PROD_ID, CUST_ID, TIME_ID, CHANNEL_ID, PROMO_ID, QUANTITY_SOLD, AMOUNT_SOLD)
      values (13, 987, TO_DATE('1998-04-15 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 3, 999, 2, 232.16);
     </copy>
     ````
@@ -678,7 +693,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
 
     ````
     <copy>
-     alter table HYBRID_SALES modify partition SALES_Q2_1998 read write;
+    alter table HYBRID_SALES modify partition SALES_Q2_1998 read write;
     </copy>
     ````
 
@@ -689,11 +704,13 @@ Hybrid Partitioned Tables support many partition level operations, including:
     ````
     <copy>
     insert into HYBRID_SALES (PROD_ID, CUST_ID, TIME_ID, CHANNEL_ID, PROMO_ID, QUANTITY_SOLD, AMOUNT_SOLD)
-    values (13, 987, TO_DATE('2003-04-15 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 3, 999, 2, 232.16);   
+    values (13, 987, TO_DATE('2003-04-15 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), 3, 999, 2, 232.16);
 
     commit;
     </copy>
     ````
+
+    ![](./images/step5.10-internal.png " ")
 
 11. While queries can read and join data from both internal and external partitions.
 
@@ -723,7 +740,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
 
 	![](images/p_stats_gather.png " ")
 
-2.  Verify the tables in SALES HISTORY schema: number of rows, partitioned or not, and if partitioned are they using Hybrid Partitioning.
+2.  Verify the tables in SALES HISTORY schema: the number of rows, partitioned or not, and if partitioned are they using Hybrid Partitioning.
 
     ````
     <copy>
@@ -732,6 +749,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
     col TABLE_NAME format a27
 
 	select TABLE_NAME, NUM_ROWS, PARTITIONED, HYBRID from USER_TABLES;
+
     </copy>
     ````
 
@@ -739,7 +757,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
 
 ## Conclusion
 
-In this Lab you had an opportunity to try out Hybrid Partitioning.
+In this Lab, you had an opportunity to try out Hybrid Partitioning.
 
 Oracle hybrid partitioned tables combine classical internal partitioned tables with Oracle external partitioned tables to form a more general partitioning called hybrid partitioned tables.
 
@@ -755,6 +773,6 @@ Partitions of hybrid partitioned tables can reside on both Oracle tablespaces an
 ## Acknowledgements
 
 - **Author** -
-- **Last Updated By/Date** - Troy Anthony, April 2020
+- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
