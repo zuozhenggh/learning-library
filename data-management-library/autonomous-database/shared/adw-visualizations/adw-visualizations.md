@@ -116,7 +116,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
 
     ![](./images/Picture100-15.png " ")
 
-3. Specify a password of your choice for the wallet. You will need this password when connecting to the database via SQL Developer later, and is also used as the JKS keystore password for JDBC applications that use JKS for security. Click **Download** to download the wallet file to your client machine.
+3. Specify a password of your choice for the wallet. You will need this password when connecting Oracle Analytics Desktop to the database in the next step. Click **Download** to download the wallet file to your client machine.
 *Note*: If you are prevented from downloading your Connection Wallet, it may be due to your browser's pop-blocker. Please disable it or create an exception for Oracle Cloud domains.
 
     ![](./images/Picture100-16.png " ")
