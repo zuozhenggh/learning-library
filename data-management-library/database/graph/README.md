@@ -8,7 +8,9 @@ The property graph supports consists of graph storage, indexing, and search; a p
 
 ### RDF 
 The converged database supports standards based RDF data management and analysis. It provides native support for RDF and OWL, W3C-standards for representing and defining knowledge graphs, semantic data, and SPARQL, a graph query language, enabling comprehensive RDF query, reasoning, and analytics.  
+
 RDF graph leverages features such as triple-level security, Exadata, RAC, compression, partitioning, In-Memory Database, parallel query, and high availability for excellent performance and scalability, for data sets in the trillions of quads.  
+
 RDF graphs create a unified metadata layer for disparate applications that facilitates identification, integration, and discovery.  RDF graphs are central to knowledge management, linked data and social network applications common in the healthcare and life sciences, finance, media and intelligence communities.
 
 
@@ -38,7 +40,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 
 
 ## Product Pages
-- [Oracle Spatial and Graph](https://www.oracle.com/database/technologies/spatialandgraph.html)
+- [Oracle as an RDF Graph](https://www.oracle.com/database/technologies/spatialandgraph/rdf-graph-features.html)
 - [Oracle as a Property Graph](https://www.oracle.com/database/technologies/spatialandgraph/property-graph-features.html)
 - [Oracle Database 19c](https://www.oracle.com/database/)
 
@@ -48,6 +50,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
 ## Videos
+- [Overcoming the challenges of Knowledge Graphs](https://youtu.be/csvEBI0swwo)
 - [Introduction to Oracle's Property Graph](https://youtube.com/watch?v=-DYVgYJPbQA&feature=youtu.be)
 - [Property Graphs 101: How to Analyze Billions of Relationships in Data by Dan Vlamis, Vlamis Software](https://youtu.be/qaQO-mW6lFs)
 - [Analyzing Blockchain and Bitcoin Transaction Data as a Graph](https://youtu.be/w8OEVobyhFE)
