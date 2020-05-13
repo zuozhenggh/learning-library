@@ -233,7 +233,7 @@ CREATE PROPERTY GRAPH customer_360
       )
   )
 ```
-Note: The file is part of the repository under the graphs/customer_360/ directory. So if your REPOR_HOME is  /gitrepos/oracle-pg then the file's path is /gitrepos/oracle-pg/graphs/customer_360/create_pg.pgql. You will need the correct file path below.
+Note: The file is part of the repository under the `graphs/customer_360/` directory. So if your REPO_HOME is  `/gitrepos/oracle-pg` then the file's path is `/gitrepos/oracle-pg/graphs/customer_360/create_pg.pgql`. You will need the correct file path below.
 
 Using Graph Client, connect to Oracle Database and run the DDL above.
 
@@ -431,4 +431,4 @@ $ <copy>docker-compose -f docker-compose-rdbms.yml down</copy>
 ## Acknowledgements ##
 
 - **Author** - Ryota Yamanaka - Product Manager in Asia-Pacific for geospatial and graph technologies  
-- With a little help from colleagues (Albert Godfrin and Jayant Sharma).
+  With a little help from colleagues (Albert Godfrind and Jayant Sharma).

@@ -21,10 +21,10 @@ Click on one of our workshops below to access the content.
 ## Property Graph Workshops
 
 ### Tutorial: Setup a property graph environment in Docker
-- [Setup with Docker](./livelabs/)
+- [Setup with Docker](https://oracle.github.io/learning-library/data-management-library/database/graph/livelabs/)
 
 ### Customer 360 analysis 
-- [Customer 360 Analysis](./customer_360_analysis/customer_360_analysis.md)  
+- [Customer 360 Analysis](https://oracle.github.io/learning-library/data-management-library/database/graph/livelabs/) 
 Note: This assumes you have completed the setup steps and have an environment up and running with Docker. The use case is included in the workshop accessible from the setup link above. 
 
 ## RDF/Semantic Graph Workshops

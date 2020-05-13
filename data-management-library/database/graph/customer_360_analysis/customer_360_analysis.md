@@ -5,7 +5,7 @@ This example shows how integrating multiple datasets, using a graph, facilitates
 
 The combined dataset is then used to perform the following common graph query and analyses: pattern matching, detection of cycles, finding important nodes, community detection, and recommendation.
 
-**Note:** This lab assumes you have successfully completed Lab 1 [Setup with Docker](?lab=lab-1-setup-docker) and have an environment up and running with Zeppelin at [http://localhost:8080](http://localhost:8080/) and the Graph Visualization component at [http://localhost:7007/ui/](http://localhost:7007/ui/).
+**Note:** This lab assumes you have successfully completed Lab 1 [Setup with Docker](https://oracle.github.io/learning-library/data-management-library/database/graph/livelabs/) and have an environment up and running with Zeppelin at [http://localhost:8080](http://localhost:8080/) and the Graph Visualization component at [http://localhost:7007/ui/](http://localhost:7007/ui/).
 
 ## Graph Query and Analysis in Apache Zeppelin 
 
