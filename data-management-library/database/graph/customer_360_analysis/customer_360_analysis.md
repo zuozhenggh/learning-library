@@ -32,7 +32,7 @@ You should see a graph similar to the screenshot below.
 ![Customer 360 graph](./images/GraphVizFirst50.png)
 
 Now let's add some lables and other visual context. These are known as highlights. 
-Click on the Load button under Highlights (on the right side of the screen). Browse to the customer_360 folder in the repository that you cloned in Lab1. That is, to oracle-pg/graphs/customer_360 and choose the file named 'highlights.json' and click Open to load that.  
+Click on the Load button under Highlights (on the right side of the screen). Browse to the `customer_360` folder in the repository that you cloned in Lab1. That is, to `oracle-pg/graphs/customer_360` and choose the file named 'highlights.json' and click Open to load that.  
 ![Load highlights for graph](./images/GraphVizLoadHighlights.png)
 
 The graph should now look like  
@@ -52,11 +52,11 @@ WHERE <condition>
 ```
 
 PGQL provides a specific construct known as the MATCH clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints.  
-`(v)` indicates a vertex variable `v`   
-\- indicates an undirected edge, as in (source)-(dest)  
-\-> an outgoing edge from source to destination  
-<- an incoming edge from destination to source  
-`[e]` indicates an edge variable `e`
+- `(v)` indicates a vertex variable `v`   
+- `-` indicates an undirected edge, as in (source)-(dest)  
+- `->` an outgoing edge from source to destination  
+- `<-` an incoming edge from destination to source  
+- `[e]` indicates an edge variable `e`
 
 Let's find accounts that have had an outbound and and inbound transfer of over 500 on the same day.
 
@@ -136,7 +136,7 @@ Check to see which graphs have been loaded into the graph server.
 <copy>session.getGraphs();</copy>
 ```
 The result will be something like:  
-$1 ==> {Customer360-PG=PgxGraph[name=Customer360-PG,N=15,E=24,created=1589032892327]}  
+`$1 ==> {Customer360-PG=PgxGraph[name=Customer360-PG,N=15,E=24,created=1589032892327]}`  
 If the graph server loaded the graph from files the name will be 'Customer360-PG'. If the graph was loaded from the database it will be named 'Customer360_db'.
 
 Now get a handle to that graph so you and query and analyse it in your shell's session. use the appropriate graph anme, i.e. "Customer360-PG" or "Customer360_db".
@@ -268,77 +268,37 @@ Filter customers from the graph.
 ```
 <copy>
 var result = analyst.wcc(sg);
-var iv = result.iterator();
-var i=0;
-while (iv.hasNext()){println("Partition " + i++ + " has " + iv.next().size() + " vertices");}
+// The partition value is stored in a property named wcc
+sg.queryPgql(
+" SELECT a.wcc, COUNT(a) MATCH (a) GROUP BY a.wcc"
+).print();
 </copy>
-
-Partition 0 has 6 vertices
 ```
 
-Get the partition includes "201" (John's account) and list all other nodes in this partition.
-
-First find the ID for John's account, since the graph loaded from files and the one loaded from the database will have different ID values.
-```
-<copy>g.queryPgql("select id(v) as vid match (v) where v.account_no='xxx-yyy-201'").print();</copy>
-
-+-----+
-| vid |
-+-----+
-| 201 |
-+-----+
-```
-
-Then use the correct ID value below.
-
-```
-<copy>
-var partition = result.getPartitionByVertex(g.getVertex(201));
-// define a function toprint the vertex id and property value
-Consumer<PgxVertex> printVidAndProp = v->{
-try {println(v.getId() + " " + v.getProperty("account_no"));}
-catch (Exception e) {throw new RuntimeException(e); } }
-
-partition.forEach(printVidAndProp);
-</copy>
-
-201 xxx-yyy-201
-202 xxx-yyy-202
-203 xxx-yyy-203
-204 xxx-yyy-204
-211 xxx-zzz-001
-212 xxx-zzz-002
-```
+Run a strongly connected components algorithm, SCC Kosaraju, instead.
 
 [Strongly connected component](https://docs.oracle.com/cd/E56133_01/latest/reference//analytics/algorithms/scc.html) algorithm detects three partitions.
 
 ```
 <copy>
 result = analyst.sccKosaraju(sg);
-iv = result.iterator();
-i=0;
-while (iv.hasNext()){println("Partition " + i++ + " has " + iv.next().size() + " vertices");}
+// List partitions and number of vertices in each
+sg.queryPgql(
+" SELECT a.scc_kosaraju, COUNT(a) MATCH (a) GROUP BY a.scc_kosaraju"
+).print();
+
 </copy>
 
-Partition 0 has 1 vertices
-Partition 1 has 4 vertices
-Partition 2 has 1 vertices
++---------------------------+  
+| a.scc_kosaraju | COUNT(a) |  
++---------------------------+  
+| 1              | 4        |  
+| 2              | 1        |  
+| 0              | 1        |  
++---------------------------+  
 ```
 
-Get the partition includes "201" (John's account) and list all other nodes in this partition.
-Use the correct vertex id for the graph (see above).
-
-```
-<copy>
-partition = result.getPartitionByVertex(g.getVertex(201))
-partition.forEach(printVidAndProp);
-</copy>
-
-201 xxx-yyy-201
-202 xxx-yyy-202
-203 xxx-yyy-203
-204 xxx-yyy-204
-```
+List the other accounts in the same conneted component (partition) as John's account.
 
 The partition (or component) id is added as a property named scc_kosaraju for use in PGQL queries.
 
@@ -352,13 +312,13 @@ sg.queryPgql(
 ).print();
 </copy>
 
-+-------------------------------------------------------+
-| component   | COUNT(a.account_no) | MAX(a.account_no) |
-+-------------------------------------------------------+
-| 0           | 1                   | xxx-zzz-001       |
-| 1           | 4                   | xxx-yyy-204       |
-| 2           | 1                   | xxx-zzz-002       |
-+-------------------------------------------------------+
++-------------------------------------------------------+  
+| component   | COUNT(a.account_no) | MAX(a.account_no) |  
++-------------------------------------------------------+  
+| 0           | 1                   | xxx-zzz-001       |  
+| 1           | 4                   | xxx-yyy-204       |  
+| 2           | 1                   | xxx-zzz-002       |  
++-------------------------------------------------------+  
 ```
 
 ![](./images/community.jpg)

@@ -12,7 +12,7 @@ Let's load graph data from files before setting up database.
 ## Step 1: Launch Graph Server
 
 ### Clone this Repository
-    $ <copy>git clone https://github.com/ryotayamanaka/oracle-pg.git</copy>
+    $ <copy>git clone https://github.com/jayant62/oracle-pg.git</copy>
 
 ### Download and Extract Packages
 Go to the following pages and download the packages.
@@ -124,7 +124,7 @@ Connect to the Oracle Database server.
 $ <copy>docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
 ```
 
-Set max\_string\_size running max\_string\_size.sql.
+Set max\_string\_size running max\_string\_size.sql. At the SQL prompt enter:
 
 ```
 SQL> <copy>@/home/oracle/scripts/max_string_size.sql</copy>
@@ -146,9 +146,12 @@ Connect to the database as "sys" user, and create a user, "customer_360".
 $ <copy> docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
 ```
 
+At the SQL prompt enter:
 ```
-SQL> <copy>@/graphs/customer_360/create_user.sql<copy>
-SQL> EXIT
+<copy>
+@/graphs/customer_360/create_user.sql
+EXIT
+</copy>
 ```
 
 Connect to the database as the "customer_360" user, and create tables.
@@ -157,9 +160,12 @@ Connect to the database as the "customer_360" user, and create tables.
 $ <copy>docker exec -it oracle-db sqlplus customer_360/Welcome1@localhost:1521/orclpdb1</copy>
 ```
 
+At the SQL prompt enter:
 ```
-SQL> <copy>@/graphs/customer_360/create_tables.sql</copy>
-SQL> EXIT
+<copy>
+@/graphs/customer_360/create_tables.sql
+EXIT
+</copy>
 ```
 
 ### Create Property Graph
@@ -230,6 +236,12 @@ CREATE PROPERTY GRAPH customer_360
 Note: The file is part of the repository under the graphs/customer_360/ directory. So if your REPOR_HOME is  /gitrepos/oracle-pg then the file's path is /gitrepos/oracle-pg/graphs/customer_360/create_pg.pgql. You will need the correct file path below.
 
 Using Graph Client, connect to Oracle Database and run the DDL above.
+
+If the graph-client is not up and runnning start it by executing the following command.
+```
+<copy>docker-compose -f docker-compose-rdbms.yml up -d graph-client</copy>
+```
+Then start a JShell in the client.
 
 ```
 $ <copy>docker exec -it graph-client opg-rdbms-jshell</copy>
@@ -326,7 +338,7 @@ Start Graph Server
 Run Docker containers for Graph Server, Graph Client, and Zeppelin.
 
     $ <copy>cd oracle-pg/docker/ ;</copy>
-    $ <copy>docker-compose -f docker-compose-rdbms.yml restart</copy>
+    $ <copy>docker-compose -f docker-compose-rdbms.yml -d up</copy>
 
 See also **Appendix 4**.
 
