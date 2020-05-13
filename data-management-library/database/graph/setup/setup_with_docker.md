@@ -284,9 +284,9 @@ Exit Graph Client. See also **Appendix 2**.
 
 The following configuration files determine the graph server startup settings and optionally the graphs that are pre-loaded. 
 
-The pgx-rdbms.conf file under `{$REPO_HOME}/docker/conf/` specifies which graph to pre-load.
+The pgx-rdbms.conf file under `{$REPO\_HOME}/docker/conf/` specifies which graph to pre-load.
 
-The configuration of the graph itself, i.e. how and what to load, is in the JFON file rdbms.json under `{$REPO\_HOME}/graphs/customer\_360/`.
+The configuration of the graph itself, i.e. how and what to load, is in the JSON file rdbms.json under `{$REPO\_HOME}/graphs/customer\_360/`.
 
 ![](./images/load_conf.jpg)
 
