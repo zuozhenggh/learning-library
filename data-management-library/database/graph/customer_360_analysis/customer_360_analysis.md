@@ -286,7 +286,6 @@ result = analyst.sccKosaraju(sg);
 sg.queryPgql(
 " SELECT a.scc_kosaraju, COUNT(a) MATCH (a) GROUP BY a.scc_kosaraju"
 ).print();
-
 </copy>
 
 +---------------------------+  
