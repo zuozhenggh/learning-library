@@ -47,7 +47,7 @@ Access Graph Visualization.
 
  - [http://localhost:7007/ui/](http://localhost:7007/ui/)
 
-Access Zeppelin and start querying and analyzing graphs, e.g. [Customer 360 Analysis](../customer_360_analysis/customer_360_analysis.md).
+Access Zeppelin and start querying and analyzing graphs, e.g. Lab 2: Customer 360 Analysis.
 
 - [http://localhost:8080/#/](http://localhost:8080/#/)
 
@@ -233,7 +233,7 @@ CREATE PROPERTY GRAPH customer_360
       )
   )
 ```
-Note: The file is part of the repository under the `graphs/customer_360/` directory. So if your `REPO_HOME` is  `/gitrepos/oracle-pg` then the file's path is `/gitrepos/oracle-pg/graphs/customer_360/create_pg.pgql`. You will need the correct file path below.
+Note: The file is part of the repository under the `graphs/customer\_360/` directory. So if your `REPO\_HOME` is  `/gitrepos/oracle-pg` then the file's path is `/gitrepos/oracle-pg/graphs/customer\_360/create_pg.pgql`. You will need the correct file path below.
 
 Using Graph Client, connect to Oracle Database and run the DDL above.
 
@@ -286,7 +286,7 @@ The following configuration files determine the graph server startup settings an
 
 The pgx-rdbms.conf file under `{$REPO_HOME}/docker/conf/` specifies which graph to pre-load.
 
-The configuration of the graph itself, i.e. how and what to load, is in the JFON file rdbms.json under `{$REPO_HOME}/graphs/customer_360/`.
+The configuration of the graph itself, i.e. how and what to load, is in the JFON file rdbms.json under `{$REPO\_HOME}/graphs/customer\_360/`.
 
 ![](./images/load_conf.jpg)
 
