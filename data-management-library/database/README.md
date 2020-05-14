@@ -3,7 +3,7 @@
 
 The industry’s leading database continues to deliver leading-edge innovations, including machine learning, to enable self-driving data management. This enterprise-proven, database cloud service is designed to support mixed workloads through any deployment strategy, on premises or in the cloud. Experience the power of the next-generation database with unmatched performance, ease, and flexibility by clicking on one of our hands-on workshops.
 
-- [converged-database](https://github.com/laxmi-oss/converged-database/freetier/)
+- [converged-database](https://github.com/laxmi-oss/converged-database/tree/master/freetier)
 
 ## Workshops
 Click below to access the content.
