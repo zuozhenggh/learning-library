@@ -8,13 +8,13 @@ This is the lab where you’re going to do the work of building and training a m
 
 Remember that we are trying to help Alpha Office predict the credit and payment suitability of their customers. We can use machine learning to help us here because we already have a set of customers with known credit and payment status. This is what we are going to use to train a model that will predict for new customers if their credit is suitable.
 
-This lab uses a decision tree algorithm which is a classification technique. If these are new to you, here’s a [presentation](./files/Machine_Learning_Introduction.pdf) and a short video that explains machine learning, classification, and decision trees at a high level. 
+This lab uses a decision tree algorithm which is a classification technique. If these are new to you, here’s a [presentation](./files/Machine_Learning_Introduction.pdf) and a short video below that explains machine learning, classification, and decision trees at a high level.
 
+<video controls poster="../create-ml-model/files/Video_Introduction.png">
+    <source src="../create-ml-model/files/Machine_Learning_Introduction.mp4" type="video/mp4">
+</video>
+<br>
 In this lab, you will use Apache Zeppelin notebooks to do this work. The lab will help you create a new notebook, and also import an existing one with all the code, descriptions, and examples that you need. You will then step through that notebook, examining the code, data, and visualizations and, most importantly, executing each step to populate the database.
-
-Watch the video below to learn more about Oracle Machine Learning notebooks.
-
-[](youtube:3ja7_F0MNjY)
 
 Estimated time: 20 - 30 minutes
 
