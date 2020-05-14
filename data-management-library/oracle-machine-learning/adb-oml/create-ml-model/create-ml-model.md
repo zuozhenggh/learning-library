@@ -12,9 +12,7 @@ This lab uses a decision tree algorithm which is a classification technique. If 
 
 In this lab, you will use Apache Zeppelin notebooks to do this work. The lab will help you create a new notebook, and also import an existing one with all the code, descriptions, and examples that you need. You will then step through that notebook, examining the code, data, and visualizations and, most importantly, executing each step to populate the database.
 
-Watch the video below to learn more about Oracle Machine Learning notebooks.
-
-[](youtube:3ja7_F0MNjY)
+Watch the [video](./files/Machine_Learning_Introduction.mp4) to learn more about Oracle Machine Learning.
 
 Estimated time: 20 - 30 minutes
 
