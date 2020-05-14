@@ -16,13 +16,6 @@ Click below to access the content.
 
 [![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
 
-###
-Coverged-database
-
-[![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/converged-database/freetier/index.html)  ![](./images/transparent.png " ")  
-[![](./images/multitenant-screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/converged-dataabase/ssworkshop/index.html)
-
-
 ### In-Memory Workshops
 
 [![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/ssworkshop/index.html)
