@@ -18,7 +18,7 @@ Click below to access the content.
 
 ### Converged
 
-[![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
+[![](./images/multitenant-screenshot-freetier.png)](https://laxmi-oss.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-ssworkshop.png)](https://laxmi-oss.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
 
 ### In-Memory Workshops
 
