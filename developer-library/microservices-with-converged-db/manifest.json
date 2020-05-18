@@ -19,6 +19,10 @@
       {
         "title": "Lab 3: Setup the Service Broker and Messaging",
         "filename": "./setup-service-broker-messaging/setup-service-broker-messaging.md"
+      },
+      {
+        "title": "Lab 4: Scaling Application Platform",
+        "filename": "./scale-app-platform/scale-app-platform.md"
       }
     ]
 }
