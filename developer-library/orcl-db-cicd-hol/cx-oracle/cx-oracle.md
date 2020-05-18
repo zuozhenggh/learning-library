@@ -208,6 +208,8 @@ Hit Ctrl-C to quit.
 
 Use the web browser on your laptop to open [http://localhost:8080/conn](http://localhost:8080/conn). The response is '19.6.0.0.0'. Your Python web micro service application is connected to your Oracle Database. Press Ctrl-C to stop the application.
 
+>**Note** : The response may be '19.6.0.0.0' or higher, depending on the version of Oracle Database you have on your Database Cloud Service instance. If this is the case, please consider your actual version for the rest of the workshop.
+
 Edit test_promotion.py, and add a unit test for database connection. This is how it has to be:
 
 ````
