@@ -278,7 +278,7 @@ After an access token has been acquired, the client application must remember th
 
 ## Acknowledgements
 
- - **Author** - Troy Anthony, May 2020
+ - **Author** - Jeff Smith, 2019
  - **Last Updated By/Date** - Troy Anthony, May 20 2020
 
  See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
