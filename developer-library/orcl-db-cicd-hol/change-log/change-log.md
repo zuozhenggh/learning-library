@@ -29,7 +29,7 @@ wget https://github.com/liquibase/liquibase/releases/download/v3.8.9/liquibase-3
 
 mkdir liquibase3.8.9
 
-tar -xvf liquibase-3.8.9.tar.gz -d liquibase3.8.9/
+tar -xvf liquibase-3.8.9.tar.gz -C liquibase3.8.9/
 ````
 
 Add a symbolic link to Liquibase executable command to oracle's binary files.
@@ -37,7 +37,7 @@ Add a symbolic link to Liquibase executable command to oracle's binary files.
 ````
 mkdir bin
 
-ln -s liquibase3.8.9/liquibase bin/liquibase
+ln -s /home/oracle/liquibase3.8.9/liquibase /home/oracle/bin/liquibase
 ````
 
 Check Liquibase version.
@@ -51,7 +51,7 @@ Liquibase Version: 3.8.9
 This is the entire Liquibase installation process. We also need SQL*Plus. It is already installed, with Oracle Instant Client. We just add a symbolic link to the executable in oracle's binary files.
 
 ````
-ln -s /bin/sqlplus64 bin/sqlplus
+ln -s /bin/sqlplus64 /home/oracle/bin/sqlplus
 ````
 
 Go back to our working directory.
