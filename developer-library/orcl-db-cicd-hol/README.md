@@ -46,4 +46,5 @@ Click here to request your trial account: https://cloud.oracle.com/tryit
 ## Learn More about CI/CD on Oracle Cloud
 
 - [Oracle and Wercker](https://www.oracle.com/corporate/acquisitions/wercker/)
+- [CI/CD With Containers](https://developer.oracle.com/a/devo/docs/cicd-with-containers.pdf)
 
