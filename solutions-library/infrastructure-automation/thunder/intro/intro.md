@@ -126,6 +126,6 @@ The examples are organized as follows:
 
 ## Acknowledgements
 
-**Authors/Contributors** - Flavius Dinu, Ionut Sturzu, Ionut Irimia, Cristian Cozma, Marius Ciotir, Sorin Ionescu, Laura Paraschiv, Emanuel Grama, Travis Mitchell, Thomas Liakos 
+**Authors/Contributors** - Flavius Dinu, Ionut Sturzu, Ionut Irimia, Cristian Cozma, Marius Ciotir, Sorin Ionescu, Laura Paraschiv, Bogdan Darie, Emanuel Grama, Travis Mitchell, Thomas Liakos 
 
 **Last Updated By/Date** - Flavius Dinu, April 2020
