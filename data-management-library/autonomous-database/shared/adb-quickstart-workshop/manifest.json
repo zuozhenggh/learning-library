@@ -49,12 +49,12 @@
             "filename": "./../adb-query/adb-query.md"
         },
         {
-            "title": "Lab 6: Scaling and Performance",
-            "description": "Scaling and Performance in Your Autonomous Database",
+            "title": "Lab 6: Visualizing Your Data",
+            "description": "Visualizing Your Data",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../adw-scaling-performance/adw-scaling-performance.md"
+            "filename": "./../adw-visualizations/adw-visualizations.md"
         }
     ]
 }
