@@ -34,7 +34,7 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
 This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
-1. Download the terraform zip file [here](./files/python4atp-tf.zip).  Then unzip it.
+1. Download the terraform zip file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/python4atp/o/python4atp-tf.zip).  Then unzip it.
 
 2. Now create a private key (id\_rsa) and a public key (id\_rsa.pub). The public key is used when you are prompted for a SSH key when you create services, and the matching private key is used to access those services after creation. (eg: Cloud Developer Image).  Enter this in a command shell or terminal window. 
   ````
@@ -128,7 +128,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/025.png " ")
 
-5. [Download the database export file](./files/expdp_alpha.dmp).
+5. [Download the database export file](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/python4atp/o/expdp_alpha.dmp).
 
 6. Go back to the console, and click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Core Infrastructure** section, select **Object Storage** then **Object Storage** .
 
