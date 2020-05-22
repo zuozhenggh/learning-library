@@ -1,19 +1,12 @@
-# Welcome to the Oracle Data Safe Workshop
-This workshop lets you practice the main features in Oracle Data Safe, including Activity Auditing, Data Discovery, Data Masking, User Assessment, and Security Assessment.
+# Welcome to Oracle Security Content
 
-## Access the Labs Using Our Web Interface
-**[Data Safe Hands-on Workshop](https://oracle.github.io/learning-library/data-management-library/security/data-safe-HOL)** to use our easy to navigate HTML format.
+## Oracle Data Safe
 
-## Access the Labs on the Repo
-Alternatively, you can follow the labs on this repo:
-- [About this lab](./data-safe-HOL/about-this-lab/content.md)
-- [View a Registered Target Database](./data-safe-HOL/view-registered-target-db/content.md)
-- [Provision Audit and Alert Policies](./data-safe-HOL/provision-audit-alert-policies/content.md)
-- [Assess Database Configurations and Users](./data-safe-HOL/assess-db-config-users/content.md)
-- [Analyze Alerts and Audit Reports](./data-safe-HOL/analyze-alerts-audit-reports/content.md)
-- [Discover and Mask Sensitive Data](./data-safe-HOL/discover-mask-data/content.md)
+Data Safe is a unified control center for your Oracle Databases which helps you understand the sensitivity of your data, evaluate risks to data, mask sensitive data, implement and monitor security controls, assess user security, monitor user activity, and address data security compliance requirements. Whether you’re using Oracle Autonomous Database or Oracle Database Cloud Service (Exadata, Virtual Machine, or Bare Metal), Data Safe delivers essential data security capabilities as a service on Oracle Cloud Infrastructure.
 
-## Oracle Cloud Account
+[Access Oracle Data Safe Content](./data-safe)
+
+## Get an Oracle Cloud Account
 
 ### Trial Account
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -21,7 +14,7 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
 - Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
 - Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
 
-Click here to request your trial account: https://cloud.oracle.com/tryit
+Click here to request your trial account: [https://cloud.oracle.com/tryit](https://cloud.oracle.com/tryit)
 
 ### Self-Paced Labs
-Self-paced labs provide hands-on experience with Oracle Cloud Infrastructure in real cloud environments. You can try self-paced labs here: https://ocitraining.qloudable.com/
+Self-paced labs provide hands-on experience with Oracle Cloud Infrastructure in real cloud environments. You can try self-paced labs here: [https://ocitraining.qloudable.com/](https://ocitraining.qloudable.com/)

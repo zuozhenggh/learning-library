@@ -66,9 +66,7 @@ In this lab we will create a compute instance, download a script to configure st
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Networking QuickStart**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
@@ -177,7 +175,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -240,7 +238,7 @@ sudo pip install virtualenv
 
 9. Now create a virtual environment, Enter command:
 
-```
+```bash
 virtualenv <Environment_Name>
 ```
 For example **virtualenv stream_env**
@@ -251,6 +249,7 @@ Now initialize the virtual enviornment, Enter command:
 ```
 cd /home/opc/stream_env/bin
 ```
+
 ```
 source ~/stream_env/bin/activate
 ```
@@ -268,9 +267,11 @@ pip install oci
 ```
 cd /home/opc
 ```
+
 ```
 rm stream_example.py
 ```
+
 ```
 wget https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/stream_example.py
 ```
@@ -280,9 +281,11 @@ wget https://raw.githubusercontent.com/oracle/learning-library/master/oci-librar
 ```
 cd /home/opc/stream_env/lib/python2.7/site-packages/oci/streaming/
 ```
+
 ```
 rm stream_admin_client_composite_operations.py
 ```
+
 ```
 wget https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/stream_admin_client_composite_operations.py
 ```
@@ -291,7 +294,7 @@ wget https://raw.githubusercontent.com/oracle/learning-library/master/oci-librar
 
 14. Switch to ssh session and run the script, Enter command:
 
-```
+```bash
 python ~/stream_example.py <COMPARTMENT_OCID>
 ```
 

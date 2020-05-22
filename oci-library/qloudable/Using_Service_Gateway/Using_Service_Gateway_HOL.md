@@ -126,9 +126,7 @@ This should create a file by the name "samplefile" in the Downloads folder
 
 13. File should be visible under Objects
 
-14. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Networking QuickStart**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
+14. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
@@ -273,17 +271,12 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 - **Virtual cloud network compartment**: Select your compartment
 - **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Subnet:** Choose the Private Subnet under **Private Subnets** 
 - **Use network security groups to control traffic** : Leave un-checked
-- **Assign a public IP address**: Check this option
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
-
 - **Boot Volume:** Leave the default
 - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 13. Click **Create**
-
 
 **NOTE:** If 'Service limit' error is displayed choose a different shape such as VM.Standard.E2.2 OR VM.Standard2.2
 
@@ -294,7 +287,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 15. In Order to ssh into private instance we will use the ssh proxy command. This command allows us to “tunnel” through the bastion host to our private instance. Storing private SSH keys on a public server such as a Bastion host(First Compute instance) is not recommended.
 
 16. Ensure you have both the Public IP of first compute and Private IP of second compute. In git-bash window ensure you are in **/C/Users/PhotonUser/.ssh** directory. Enter Command:
-``` 
+```bash 
 ssh -t -o ProxyCommand='ssh -i <SSH_Private_Key_Name> opc@<FIRST_COMPUTE_PUBLIC_IP> -W %h:%p %r' -i <SSH_Private_Key_Name> opc@<SECOND_COMPUTE_PRIVATE_IP>
 ```
 
@@ -352,7 +345,7 @@ the one in OCI console window and make sure they match
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Using_Service_Gateway/img/SGW_032.PNG" alt="image-alt-text">
 
 5. Switch to git-bash window (ssh session to second compute instance) and download samplefile. Enter command:
-```
+```bash
 oci os object get --namespace <NAME_SPACE> --bucket-name <BUCKET_NAME> --name samplefile --file ./
 ```
 
@@ -405,7 +398,7 @@ and verify samplefile was not downloaded.
 14. Switch to git-bash window (with ssh to second compute instance).
 
 15. Re-enter download command:
-```
+```bash
 oci os object get --namespace <NAME_SPACE> --bucket-name<BUCKET_NAME> --name samplefile --file ./
 ```
 

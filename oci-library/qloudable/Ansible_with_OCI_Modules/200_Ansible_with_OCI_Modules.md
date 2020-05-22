@@ -65,10 +65,7 @@ This lab will demonstration both provisioning and configuration of your infrastr
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2.  From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Networking QuickStart**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
-
+2.  From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
@@ -174,7 +171,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -218,7 +215,7 @@ cat ~/.oci/oci_api_key_public.pem
 22. Navigate to ``Identity`` --> ``Compartments`` and locate the OCID for your assigned compartment.  Copy it.
 
 23. Return to your SSH terminal session.  To validate that the CLI is working properly run the following command.
-```
+```bash
 oci compute instance list --compartment-id <value you copied in previous step>
 ```
 

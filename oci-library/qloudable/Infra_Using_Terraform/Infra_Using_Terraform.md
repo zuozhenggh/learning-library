@@ -64,10 +64,7 @@ Terraform is Infrastructure as Code tool for building and managing infrastructur
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Networking QuickStart**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
-
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
@@ -180,7 +177,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -256,13 +253,11 @@ cd tflab
 
 11. tf_setup.sh creates a example .tf called **tftest.tf**, this file needs to be removed as we will download another .tf file to create infrastructure. Enter command
 
-
 ```
 rm tftest.tf
 ```
 
 12. Now edit the env-variables file. We will updated 2 variables. Enter command:
-
 
 ```
 vi env-vars
@@ -288,7 +283,6 @@ Paste this OCID in **env-vars** file
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Infra_Using_Terraform/img/Terraform_008.PNG" alt="image-alt-text">
 
 16. Save the file and then source it, Etner command:
-
 
 ```
 source env-vars

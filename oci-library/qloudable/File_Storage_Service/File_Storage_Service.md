@@ -73,10 +73,7 @@ In this lab you will create and mount File Storage System to a compute instance 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Networking QuickStart**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
-
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
@@ -257,7 +254,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -287,7 +284,7 @@ sudo mkdir -p /mnt/nfs-data
 to create a mount point.
 
 3. Mount the file system, Enter command: 
-```
+```bash
 sudo mount 10.x.x.x:/<EXPORT_PATH_NAME> /mnt/nfs-data
 ```
 **NOTE:** The 10.x.x.x should be replaced with the  IP of File Storage system  and <EXPORT_PATH_NAME> should be replaced with Export path name used earlier(Example: If '/' was the EXPORT_PATH_NAME then **sudo mount 10.0.0.3:/ /mnt/nfs-data**).
