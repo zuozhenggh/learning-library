@@ -5,29 +5,30 @@ This example shows how integrating multiple datasets, using a graph, facilitates
 
 The combined dataset is then used to perform the following common graph query and analyses: pattern matching, detection of cycles, finding important nodes, community detection, and recommendation.
 
-**Note:** This lab assumes you have successfully completed the previous steps (Labs 1 through 6).
+**Note:** This lab assumes you have successfully completed the previous steps (Labs 3.1 through 3.7).
 
 
 ## Graph Query and Analysis in JShell
 
-Open an SSH connection to the compute instance. `su` to the `oracle` user or whichever user deployed the graph server and client kit and was added to the oraclegraph group in Lab 3.
-Start the graph server.
-
+**Skip the following if you completed the Create Graph step and the graph server and client are up.**  
+>Open an SSH connection to the compute instance. `su` to the `oracle` user or whichever user deployed the graph server and client kit and was added to the oraclegraph group in Lab 3.3.
+>Start the graph server.
+>
 ```
 <copy>/opt/oracle/graph/pgx/bin/start-server</copy>
 ```
-
-Once it has started and you see the notification `INFO: Starting ProtocolHandler ["http-nio-7007"]` open a new SSH connection, if necessary, to the compute instance.  
-`su` to the `oracle` user or whichever user deployed the graph server and client kit and was added to the oraclegraph group in Lab 3.  
-
-Start the JShell in the graph server. Copy and paste the following command to do that.
+>
+>Once it has started and you see the notification `INFO: Starting ProtocolHandler ["http-nio-7007"]` open a new SSH connection, if necessary, to the compute instance.  
+>`su` to the `oracle` user or whichever user deployed the graph server and client kit and was added to the >oraclegraph group in Lab 3.  
+>
+>Start the JShell in the graph server. Copy and paste the following command to do that.
 ```
 <copy>/opt/oracle/graph/bin/opg-jshell --base_url http://localhost:7007</copy>
 ```
-
-That starts up a shell which connects to the server instance running on the graph server.
-Once it starts up you should see the following:
-
+>
+>That starts up a shell which connects to the server instance running on the graph server.
+>Once it starts up you should see the following:
+>
 ```
 For an introduction type: /help intro
 Oracle Graph Server Shell 20.2.0
@@ -37,6 +38,7 @@ PGQL version: 1.3
 Variables instance, session, and analyst ready to use.
 opg-jshell>
 ```
+**End of portion to skip when server and client are up.**
 
 Check to see which graphs have been loaded into the graph server. 
 

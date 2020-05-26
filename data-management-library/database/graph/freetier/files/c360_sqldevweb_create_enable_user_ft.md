@@ -51,3 +51,8 @@ END;
 ```
 
 ![Enable SQLDevWeb for Customer_360](../images/ADB_SDW_EnableLoginFor_C360.png)
+
+The URL for SQLDeveloperWeb for the Customer_360 user will have `c360` in place of `admin` in it.   
+Save the URL for the next step.  
+
+For details, see the ["Provide SQL Developer Web Access to Database Users"](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA) section in the documentation. 

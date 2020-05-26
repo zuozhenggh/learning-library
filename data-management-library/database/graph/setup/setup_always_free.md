@@ -9,7 +9,7 @@ In this lab you will:
 - Create and populate tables in the ADB instance.
 - Query, analyze, and visualize that data as graphs.
 
-## Notes specific to this workshop for Lab 4 (Setup ADB Free Tier)
+## Notes specific to this workshop for Lab 3.3 (Setup ADB Free Tier)
 
 ### In STEP 1:Choosing ADW or ATP from the Services Menu.
 - Choose Autonomous Transaction Processing (ATP)) from the menu the 3rd step.     

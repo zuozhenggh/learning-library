@@ -24,6 +24,8 @@ DROP TABLE transfer;
 </copy>
 ```
 
+![Drop existing tables](../images/ADB_SDW_C360_DropTables.png)
+
 ### Create and populate the Account table
 
 Clear the SQL Worksheet and copy, paste, and run the following SQL script.
@@ -76,7 +78,7 @@ COMMIT;
 </copy>
 ```
 
-![Create Customer table](../images/ADB_SDW_CreateCustomerTable.png)
+![Create Customer table](../images/ADB_SDW_C360_CreateCustomerTable.png)
 
 ### Create and populate the Merchant table 
 
@@ -102,7 +104,7 @@ COMMIT;
 
 ```
 
-![Create Merchant table](../images/ADB_SDW_CreateMerchantTable.png)
+![Create Merchant table](../images/ADB_SDW_C360_CreateMerchantTable.png)
 
 ### Create and populate the Owned_By table
 
@@ -124,7 +126,7 @@ COMMIT;
 </copy>
 ```
 
-![Create owned_by table](../images/ADB_SDW_CreateOwnedByTable.png)
+![Create owned_by table](../images/ADB_SDW_C360_CreateOwnedByTable.png)
 
 ### Create and populate the Parent_Of table
 
@@ -142,7 +144,6 @@ COMMIT;
 </copy>
 ```
 
-![Create owned_by table](../images/ADB_SDW_CreateParentOfTable.png)
 
 ### Create and populate the Purchased table
 
@@ -171,7 +172,7 @@ COMMIT;
 </copy>
 ```
 
-![Create owned_by table](../images/ADB_SDW_CreatePurchasedTable.png)
+![Create purcahsed table](../images/ADB_SDW_C360_CreatePurchasedTable.png)
 
 ## Create and populate the Transfer table
 
@@ -199,4 +200,4 @@ INSERT INTO transfer (from_id,to_id,amount,"DATE") VALUES (202,201,300,'2018-10-
 COMMIT;
 </copy>
 ```
-![Create owned_by table](../images/ADB_SDW_CreateTransferTable.png)
+![Create transfer table](../images/ADB_SDW_C360_CreateTransferTable.png)
