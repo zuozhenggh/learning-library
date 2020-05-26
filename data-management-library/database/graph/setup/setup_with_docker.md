@@ -33,6 +33,15 @@ $ <copy>cd oracle-pg/docker/tmp/</copy>
 $ <copy>sh extract.sh</copy>
 ```
 
+### Modify the PGX interpreter settings for Zeppelin
+
+The extract script above copies the necessary jar files and a json configuration file into the `oracle-pg/docker/zeppelin/interpreter/pgx` directory. Open the file `interpreter-settings.json` in a text editor and change the default PGX_BASE_URL property in it. i.e. change the line (line 15)
+` "defaultValue":"https://localhost:7007" `
+to 
+```
+<copy>"defaultValue":"http://graph-server:7007"</copy>
+```
+
 ### Start Containers
 Build and pull images, create containers, and start them.
 
@@ -233,7 +242,7 @@ CREATE PROPERTY GRAPH customer_360
       )
   )
 ```
-Note: The file is part of the repository under the `graphs/customer_360/` directory. So if your `REPO_HOME` is  `/gitrepos/oracle-pg` then the file's path is `/gitrepos/oracle-pg/graphs/customer_360/create_pg.pgql`. You will need the correct file path below.
+Note: The file is part of the repository under the `graphs/customer_360/` directory. The parent directory is mapped to `/graphs` in the container.
 
 Using Graph Client, connect to Oracle Database and run the DDL above.
 
@@ -270,7 +279,7 @@ var jdbcUrl = "jdbc:oracle:thin:@oracle-db:1521/orclpdb1";
 var conn = DriverManager.getConnection(jdbcUrl, "customer_360", "Welcome1");
 conn.setAutoCommit(false);
 var pgql = PgqlConnection.getConnection(conn);
-pgql.prepareStatement(Files.readString(Paths.get("{$REPO_HOME}/graphs/customer_360/create_pg.pgql"))).execute(); 
+pgql.prepareStatement(Files.readString(Paths.get("/graphs/customer_360/create_pg.pgql"))).execute(); 
 </copy>
 ```
 
@@ -431,4 +440,4 @@ $ <copy>docker-compose -f docker-compose-rdbms.yml down</copy>
 ## Acknowledgements ##
 
 - **Author** - Ryota Yamanaka - Product Manager in Asia-Pacific for geospatial and graph technologies  
-  With a little help from colleagues (Albert Godfrind and Jayant Sharma).
+  With a little help from colleagues (Albert Godfrind and Jayant Sharma).  

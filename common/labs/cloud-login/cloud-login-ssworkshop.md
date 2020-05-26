@@ -21,9 +21,9 @@ The following lab requires an Oracle Cloud account from the LiveLabs Platform.
 
 If your account name supplied to you begins with **user** or **ssuser**, please proceed. Otherwise, proceed to Option 2.
 
-1.  From any supported browser go to http://bit.ly/c4u03login to access the Oracle Cloud LiveLabs Tenancy.
-
-2.  Your workshop lead will provide you with a **username** and a **temporary password**, enter that information here and click **Sign In**. *Note: The username provided will begin with ssuser or user.*
+1. From any supported browser go to [http://bit.ly/c4u03login](http://bit.ly/c4u03login) to access the Oracle Cloud LiveLabs Tenancy.
+   
+2. Your Workshop Lead will provide you with a **username** and **temporary password**, enter that information here and click **Sign In**. *Note: The username provided will begin with ssuser or user*.
 
     ![](./images/loginpage.png " ")
 
