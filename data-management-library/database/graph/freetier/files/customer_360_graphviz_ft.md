@@ -13,20 +13,22 @@ Next we will use the Graph Visualization component to explore the graph and run 
 Open the Graph Viz at `http://<public_ip_for_free_tier_compute>:7007/ui`. Replace `public_ip_for_free_tier_compute` with the one for your instance.
 
 You should see a screen similar to the screenshot below.  
-![GraphViz on startup](./images/GraphVizStartup.png)
+![GraphViz on startup](../images/ADB_GViz_Landing.png)
 
 
 Modify the query to get the first 50 rows, i.e. change LIMIT 10 to LIMIT 50, and click Run.
 
 You should see a graph similar to the screenshot below.  
-![Customer 360 graph](./images/GraphVizFirst50.png)
+![Customer 360 graph](../images/ADB_GViz_Show50Elements.png)
 
-Now let's add some lables and other visual context. These are known as highlights. 
-Click on the Load button under Highlights (on the right side of the screen). Browse to the `customer_360` folder in the repository that you cloned in Lab1. That is, to `oracle-pg/graphs/customer_360` and choose the file named 'highlights.json' and click Open to load that.  
-![Load highlights for graph](./images/GraphVizLoadHighlights.png)
+Now let's add some labels and other visual context. These are known as highlights.  
+**Note:** If you did the first lab (Setup witn Docker) and cloned the `oracle-pg` repo then the required `highlights.json` file is in the `customer_360` folder. If however you are doing tis (Setup with Free Tier) lab by itself then click on this link [download highlights.json](highlights.json) to download it.
+
+Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder (i.e. either to `oracle-pg/graphs/customer_360`  or the folder where you just downloaed it) and choose the file named 'highlights.json' and click Open to load that.  
+![Load highlights for graph](../../customer_360_analysis/images/GraphVizLoadHighlights.png)
 
 The graph should now look like  
-![Customer 360 graph with highlights](./images/GraphVizWithHighlights.png)
+![Customer 360 graph with highlights](../../customer_360_analysis/images/GraphVizWithHighlights.png)
 
 ### Pattern matching with PGQL
 Next let's run a few PGQL queries. 
@@ -64,7 +66,7 @@ Click Run.
 
 The result should look as shown below.
 
-![Same day txns of more than 500](./images/GraphVizInOutTxns.png)
+![Same day txns of more than 500](../images/ADB_Gviz_SameDayTransfers.png)
 
 The next query finds patterns of transfers to and from the same two accounts, i.e. from A->B and back B->A.
 
@@ -81,7 +83,7 @@ Click Run.
 
 The result should look as shown below.
 
-![Transfer A to B to A](./images/GraphVizABATxn.png)
+![Transfer A to B to A](../images/ADB-GViz_ABA_Transfer.png)
 
 Let's add one more account to that query to find a circular transfer pattern between 3 accounts. 
 
@@ -98,7 +100,7 @@ Click Run.
 
 The result should look as shown below.
 
-![Circular transfer A to B to C to A](./images/GraphVizABCATxn.png)
+![Circular transfer A to B to C to A](../images/ADB_GViz_ABCA_Transfer.png)
 
 
 ## Acknowledgements ##

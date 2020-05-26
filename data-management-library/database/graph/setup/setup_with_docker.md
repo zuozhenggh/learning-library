@@ -441,4 +441,3 @@ $ <copy>docker-compose -f docker-compose-rdbms.yml down</copy>
 
 - **Author** - Ryota Yamanaka - Product Manager in Asia-Pacific for geospatial and graph technologies  
   With a little help from colleagues (Albert Godfrind and Jayant Sharma).  
-  And special thanks to Prashanth Ragunath for painstakingly testing it.

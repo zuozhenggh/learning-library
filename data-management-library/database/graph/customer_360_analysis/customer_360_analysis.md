@@ -31,7 +31,7 @@ Modify the query to get the first 50 rows, i.e. change LIMIT 10 to LIMIT 50, and
 You should see a graph similar to the screenshot below.  
 ![Customer 360 graph](./images/GraphVizFirst50.png)
 
-Now let's add some lables and other visual context. These are known as highlights. 
+Now let's add some labels and other visual context. These are known as highlights. 
 Click on the Load button under Highlights (on the right side of the screen). Browse to the `customer_360` folder in the repository that you cloned in Lab1. That is, to `oracle-pg/graphs/customer_360` and choose the file named 'highlights.json' and click Open to load that.  
 ![Load highlights for graph](./images/GraphVizLoadHighlights.png)
 

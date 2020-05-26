@@ -14,18 +14,18 @@ Open an SSH connection to the compute instance. `su` to the `oracle` user or whi
 Start the graph server.
 
 ```
-<copy>/opt/oracle/graph/pgx/bin/ostart-server</copy>
+<copy>/opt/oracle/graph/pgx/bin/start-server</copy>
 ```
 
 Once it has started and you see the notification `INFO: Starting ProtocolHandler ["http-nio-7007"]` open a new SSH connection, if necessary, to the compute instance.  
 `su` to the `oracle` user or whichever user deployed the graph server and client kit and was added to the oraclegraph group in Lab 3.  
 
-Start the JShell in the graph-client. Copy and paste the following command to do that.
+Start the JShell in the graph server. Copy and paste the following command to do that.
 ```
 <copy>/opt/oracle/graph/bin/opg-jshell --base_url http://localhost:7007</copy>
 ```
 
-That starts up a shell which connects to the server instance running on graph-server.
+That starts up a shell which connects to the server instance running on the graph server.
 Once it starts up you should see the following:
 
 ```
@@ -38,8 +38,60 @@ Variables instance, session, and analyst ready to use.
 opg-jshell>
 ```
 
-Check to see which graphs have been loaded into the graph server.
+Check to see which graphs have been loaded into the graph server. 
 
+```
+<copy>session.getGraphs();</copy>
+```
+
+If the `Customer_360' graph exists in the in-memory graphbserver then load it into the client shell.
+```
+<copy>var graph = session.getGraph("Customer_360");</copy>
+```
+
+If it **does not exist** then read it from the database. 
+The necessary steps are:
+- Set up the JDBC connection. **Modify the URL for your instance**  
+For <db_service> use  database service name from the tnsnames file in the ADB Wallet you downloaded when setting up your ADB instance.  
+For <wallet_location> specify the directory where you unzipped the downlaoded wallet in the compute instance.
+- Specifcy a graph config.
+- Read the graph into memory.
+
+```
+<copy>
+var jdbcUrl = "jdbc:oracle:thin:@<db_service>?TNS_ADMIN=<unzipped_wallet_location>";
+var user = "customer_360";
+var pass = "Welcome1_C360";
+var conn = DriverManager.getConnection(jdbcUrl, user, pass) ;
+
+// now load the graph into memory to run some more analyses
+// specify the graph config (i.e. vertex and edge properties and datatypes)
+Supplier<GraphConfig> pgxConfig = () -> { return GraphConfigBuilder.forPropertyGraphRdbms()
+ .setJdbcUrl(jdbcUrl)
+ .setUsername(user)
+ .setPassword(pass)
+ .setName("Customer_360")
+ .addVertexProperty("type", PropertyType.STRING)
+ .addVertexProperty("name", PropertyType.STRING)
+ .addVertexProperty("location", PropertyType.STRING)
+ .addVertexProperty("gender", PropertyType.STRING)
+ .addVertexProperty("student", PropertyType.STRING)
+ .addVertexProperty("account_no", PropertyType.STRING)
+ .addVertexProperty("age", PropertyType.INTEGER)
+ .addVertexProperty("balance", PropertyType.DOUBLE)
+ .addEdgeProperty("since", PropertyType.STRING)
+ .addEdgeProperty("date", PropertyType.STRING)
+ .addEdgeProperty("amount", PropertyType.DOUBLE)
+ .setLoadVertexLabels(false)
+ .setLoadEdgeLabel(true)
+ .setKeystoreAlias("alias")
+ .build(); }
+
+// load the graph. Can take 4-5 minutes depending on network bandwidth
+
+var graph = session.readGraphWithProperties(pgxConfig.get()) ;
+</copy>
+```
 
 Now we can query this graph and run some analyses on it.
 
@@ -88,7 +140,7 @@ The first query could be expressed as:
 +---------------------------------------------------------------------------------+
 ```
 
-![](./images/detection.jpg)
+![](../../customer_360_analysis/images/detection.jpg)
 
 The second query just adds one more transfer to the pattern (list) and could be expressed as:
 
@@ -110,7 +162,7 @@ The second query just adds one more transfer to the pattern (list) and could be 
 +-----------------------------------------------------------------------------------+
 ```
 
-![](./images/detection2.jpg)
+![](../../customer_360_analysis/images/detection2.jpg)
 
 
 ### Influential Accounts
@@ -216,7 +268,7 @@ sg.queryPgql(
 +-------------------------------------------------------+  
 ```
 
-![](./images/community.jpg)
+![](../../customer_360_analysis/images/community.jpg)
 
 
 ### Recommendation
@@ -254,10 +306,10 @@ sg.queryPgql(
 +---------------------------------------------------+
 ```
 
-![](./images/recommendation1.jpg)
+![](../../customer_360_analysis/images/recommendation1.jpg)
 
 
-![](./images/recommendation2.jpg)
+![](../../customer_360_analysis/images/recommendation2.jpg)
 
 We will focus on the account no. xxx-yyy-201 (John's account) and run PPR.
 
