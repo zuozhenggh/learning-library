@@ -117,14 +117,14 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
   *To learn more about the OCI Object Storage, refer to its <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="\_blank">documentation</a>*
 
-2. You should now be on the **Object Storage** page. Choose the **root** compartment in the **Compartment** drop-down if it is not already chosen.
+2. You should now be on the **Object Storage** page. Choose any compartment to which you have access. In this example, the **root** compartment is chosen.
     ![](images/snap0014298.jpg " ")
 
 3. Click the **Create Bucket** button:
 
     ![](images/snap0014299.jpg " ")
 
-4. Name your bucket **ADWCLab** and click the **Create Bucket** button.
+4. Bucket names must be unique per tenancy and region; otherwise you will receive an "already exists" message. Enter a unique bucket name and click the **Create Bucket** button.
 
     ![](images/snap0014300.jpg " ")
 

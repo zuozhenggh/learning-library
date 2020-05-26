@@ -22,6 +22,11 @@ API Keys require PEM Public key. Convert Private key to Public PEM.
 openssl rsa -pubout -in ~/.ssh/id_rsa -out ~/.ssh/id_rsa_pub.pem
 ````
 
+>**Note** : If you receive an error like '*Expecting: ANY PRIVATE KEY*' when running the above command, it means your private key start with '*-----BEGIN OPENSSH PRIVATE KEY-----*'. We expect it to start with '*-----BEGIN RSA PRIVATE KEY-----*'. This can be fixed by executing:
+>````
+>ssh-keygen -p -N "" -m pem -f ~/.ssh/id_rsa
+>````
+
 Some cloud instances require a Public SSH2 key. Convert Public OpenSSH to Public SSH2.
 
 ````
