@@ -11,8 +11,8 @@ These labs are designed to be executed in sequence. There are a number of assump
 -  Google Chrome with JSON Formatter Plugin
 -  Familiarity with VI
 
-## Oracle Management Clhttps://github.com/oracle/learning-library/blob/master/omcunified.mdoud Labs 
-1. [Environment setup](./omc_setup.md)
+## Oracle Management Cloud Labs 
+1. [OMC for EBS](./omcebs.md)
 2. [APM](./omcunified.md)
 3. [Log Analytics](./log_analytics_of_databases.md)
 4. [IT Analytics](./pro_dbperf_ita.md)
