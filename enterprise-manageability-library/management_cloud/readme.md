@@ -13,10 +13,9 @@ These labs are designed to be executed in sequence. There are a number of assump
 
 ## Oracle Management Cloud Labs 
 1. [Environment setup](management_cloud/omc_setup.md)
-2. [APM](management_cloud/apm.md)
-3. [Log Analytics](management_cloud/log.md)
-4. [IT Analytics](management_cloud/it.md)
-5. More to come
+2. [APM](management_cloud/omcunified.md)
+3. [Log Analytics](management_cloud/log_analytics_of_databases.md)
+4. [IT Analytics](management_cloud/pro_dbperf_ita.md)
 
 
 
