@@ -33,12 +33,12 @@
             "filename": "../../nodejs/env-setup-nodejs.md"
         },
         {         
-            "title": "Lab 3:  Environment Setup",
+            "title": "Lab 3:  Environment Setup - Node.js",
             "description": "Env Setup",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "../../nodejs/setup.md"
+            "filename": "../../nodejs/env-setup-nodejs.md"
         },
         {         
             "title": "Lab 4:  All About the Application",
@@ -46,7 +46,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "../../nodejs/intro.md"
+            "filename": "../../nodejs/intro-nodejs.md"
         },     
         {         
             "title": "Lab 5:  Node.js Rest API",
@@ -54,7 +54,14 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "../../nodejs/postman.md"
+            "filename": "../../nodejs/nodejs_lab.md"
+        } ,    {         
+            "title": "Introduction to Spatial and Graph",
+            "description": "Env Setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../graph/intro.md"
         }
                  ]
 }
