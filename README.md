@@ -1,7 +1,7 @@
 ![](common/images/learning-library-title.png)
 ---
 # Build, test and deploy applications on Oracle's Cloud! #
-The Oracle Learning Library is a place to explore Oracle's products and services using labs designed to enhance your experience building and deploying applications on the Cloud and On-Premises.   This library of assets covers everything from how to provision the world's first autonomous database to setting up a webserver on our world class Generation 2 infrastructure, machine learning and much more.  Use your existing Oracle Cloud account or a Free Tier account to build, test, and deploy applications on Oracle's Cloud. 
+Test123...   The Oracle Learning Library is a place to explore Oracle's products and services using labs designed to enhance your experience building and deploying applications on the Cloud and On-Premises.   This library of assets covers everything from how to provision the world's first autonomous database to setting up a webserver on our world class Generation 2 infrastructure, machine learning and much more.  Use your existing Oracle Cloud account or a Free Tier account to build, test, and deploy applications on Oracle's Cloud. 
 
 ### How do I get started? ###
 First, you need an Oracle Cloud account.  Sign up [here](https://oracle.com/free) to create a free-tier account.  Second, visit one of our libraries below or start with one of our featured labs for this month. 
