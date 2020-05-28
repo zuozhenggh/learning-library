@@ -8,7 +8,7 @@ JSON is text, and we can convert any JavaScript object into JSON, and send JSON 
 
 This way we can work with the data as JavaScript objects, with no complicated parsing and translations.
 
-**JSON with Oracle Database:**
+### JSON with Oracle Database
 
 JSON data  can be used in Oracle Database in similar ways. Unlike relational data, it can be stored, indexed, and queried without any need for a schema that defines the data. Oracle Database supports JSON natively with relational database features, including transactions, indexing, declarative querying, and views.
 
@@ -16,7 +16,7 @@ So it's likely we want to send and receive JSON documents from and to our databa
 
 Oracle database provides a comprehensive implemention of SQL, for both analytics and batch processing. JSON held in the Oracle Database can be directly accessed via SQL, without the need to convert it into an intermediary form. JSON collections can be joined to other JSON collections or to relational tables using standard SQL queries.
 
-**Storing and Managing JSON Documents**
+### Storing and Managing JSON Documents
 
 JSON documents can be stored usinga VARCHAR2, CLOB,or BLOB column. An IS JSON SQL constraint ensures that the column contains only valid JSON documents, allowingthe database to understand that the column is being used as a container for JSON documents.
 
@@ -26,37 +26,20 @@ The first thing to realize about JSON is that it remains a simple text format—
 
  ![](./images/json_intro.PNG " ")
 
+### Video - Oracle JSON Overview
 
- **Watch the video below for an overview of Oracle JSON**
+Watch the video below for an overview of Oracle JSON
 
-  
   [![JSON Datatype for Oracle Converged Database](./images/json_intro_video.PNG " ")](https://otube.oracle.com/media/0_k5j15wn4)
 
-  
 
-
-
-- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)
-- [I have an account from SSWorkshop](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
-
-
-## Get an Oracle Cloud Trial Account for Free!
-If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
--	$300 of freee credits good for up to 3500 hours of Oracle Cloud usage
--	Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
--	Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
-
-Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
-
- 
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Arvind Bhope,Venkata Bandaru,Ashish Kumar,Priya Dhuriya , Maniselvan K.
-
-- **Last Updated By/Date** - Laxmi A, kanika Sharma May 2020
-
-- **Workshop Expiration Date**
+- **Authors** - Arvind Bhope
+- **Contributors** - Arvind Bhope, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Last Updated By/Date** - Laxmi A, Kanika Sharma, Hub Solution Engineer, North America, May 2020
+- **Workshop Expiration Date** - May 2021
 
 
 ### Issues?
