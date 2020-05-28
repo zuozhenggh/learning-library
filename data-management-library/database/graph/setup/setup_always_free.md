@@ -1,4 +1,4 @@
-# Setup a Graph environment with Always Free tier#
+# Setup a Graph environment with Always Free Tier#
 
 ## Overview
 This lab shows you how to deploy, configure, and use the Graph Server and Client package to query, analyze, and visualize graph content stored in a Free Tier Autonomous Database (ADB) instance. 
