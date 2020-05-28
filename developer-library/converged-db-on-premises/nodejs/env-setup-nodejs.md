@@ -1,27 +1,15 @@
-
 # Oracle Node.js 
 
+## Before You Begin
 
+This lab walks you through the steps to connect to an Oracle Database running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper.
 
-## Steps:#
+### Prerequisites
+This lab assumes you have completed the following labs:
+- Lab 1:  Login to Oracle Cloud
+- Lab 2:  Generate SSH Key
 
-
- **Node-js Application Environment setup**
-
- **Before You Begin**
-
-This lab walks you through the steps to build an application Node-js with Docker image on an Oracle Cloud Compute instance.
-
-**Background**
-
-A Docker image contains all of the necessary code to execute an application for a host kernel. In this lab, you will pull the Docker image from OCI registry for Application.
-
-**What Do You Need?**
-
--	An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click here.
--	SSH keys
--	OCI image and Docker will be the pre-installed with image.
-
+## Step 1: Start Docker and Run Node.js application
 
 1. Start Docker by using below command 
    
@@ -33,34 +21,33 @@ A Docker image contains all of the necessary code to execute an application for 
     </copy>
     ````
     
-2. Run Script to start the Node-js Application
-    
-         
+2. Run Script to start the Node-js Application.     Check the directory Name Docker script 
+        
     ````
     <copy>
-    Check the directory Name Docker script 
-
 	cd /docker
-
-	Check the script is available and run the script by using below command.
-
-	./ApplicationScript.sh
-
-             </copy>
+    </copy>
     ````
-   
-3. Verify Application on browser 
-   
+
+3. Check the script is available and run the script by using below command.
    
     ````
     <copy>
-   Application URL: - http://<Public-IP>:3000/
-   Application API URL: - http://<Public-IP>:3001/products
-   </copy>
+	./ApplicationScript.sh
+    </copy>
     ````
- 
-  
+
+## Step 2:  Verify Application 
+1. Verify the Application in your browser.  Open up a web browser on your PC and visit this Application URL. *http://Public-IP:3000/*
+
+2. Verify the Application API in your browser.  Open up a web browser on your PC and visit this Application URL. *http://Public-IP:3001/*
+
     ![](./images/env_setup_nodejs.PNG " ") 
 
+## Acknowledgements
+* **Author** - Gerald Venzl, Master Product Manager, Database Development
+* **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
+* **Last Updated By/Date** - Tom McGinn, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+### Issues
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
