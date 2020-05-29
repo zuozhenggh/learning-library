@@ -1,4 +1,4 @@
-# WebLogic Migration to Oracle Cloud Infrastructure - Hands-On-Lab
+### WebLogic Migration to Oracle Cloud Infrastructure 
 
 ## Objective
 Perform the end-to-end migration of a local WebLogic domain to Oracle Cloud Infrastructure using provisioning with the OCI Marketplace.
@@ -32,7 +32,8 @@ Perform the end-to-end migration of a local WebLogic domain to Oracle Cloud Infr
 
 ### 2) Get the code
 
-**Download the source code required for this lab from** <a href="./weblogic-to-oci.zip" target="_blank">here</a>
+**Download the source code required for this lab from** <a href="./weblogic-to-oci.zip" target="_blank">here</a></br>
+or at <a href="https://github.com/oracle/learning-library/raw/master/developer-library/weblogic-to-oci/workshop/weblogic-to-oci.zip" target="_blank">https://github.com/oracle/learning-library/raw/master/developer-library/weblogic-to-oci/workshop/weblogic-to-oci.zip</a>
 
 <!-- Or alternatively use the `git clone` command or the `Download` option to fetch the whole `learning-library` repository locally (~7GB)
 
@@ -1469,4 +1470,4 @@ https://`LOAD_BALANCER_IP`/SimpleDB/
  - **Last Updated By/Date** - Emmanuel Leroy, May 20 2020
 
 
-***To log issues***, submit an Github [issue](https://github.com/oracle/learning-library/issues/new?title=Weblogic%20on%20OCI%20livelab&body=Issue%20with%20Weblogic%20on%20OCI%20livelab).  Please provide the name of the workshop, the link, and the step along with details of the issue.
+***To log issues***, submit an Github [issue](https://github.com/oracle/learning-library/issues/new?title=Weblogic%20to%20OCI%20livelab&body=Issue%20with%20Weblogic%20to%20OCI%20livelab).  Please provide the name of the workshop, the link, and the step along with details of the issue.
