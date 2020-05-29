@@ -34,7 +34,7 @@ Each table stores location using Oracle's native spatial data type, SDO-GEOMETRY
 
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)
-- [I have an account from SSWorkshop](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
+- [I have an account from Livelabs](https://oracle.github.io/learning-library/data-management-library/database/multitenant/livelabs/index.html)
 
 
 ## Get an Oracle Cloud Trial Account for Free!

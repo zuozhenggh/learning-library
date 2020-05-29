@@ -14,7 +14,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "04/01/2020",
             "contentid": "12nnnn",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-ssworkshop.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
             "title": "Lab 2: Generate SSH Key",
@@ -34,7 +34,7 @@
             "title": "Lab 4: Build a Compute Instance and create a database",
             "description": "Build a Compute Instance",
             "publisheddate": "5/20/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-ssworkshop.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-livelabs.md"
         },
         {
             "title": "Lab 5: Install Sample Schemas",
