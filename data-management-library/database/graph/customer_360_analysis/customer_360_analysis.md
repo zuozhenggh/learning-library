@@ -31,7 +31,7 @@ Modify the query to get the first 50 rows, i.e. change LIMIT 10 to LIMIT 50, and
 You should see a graph similar to the screenshot below.  
 ![Customer 360 graph](./images/GraphVizFirst50.png)
 
-Now let's add some lables and other visual context. These are known as highlights. 
+Now let's add some labels and other visual context. These are known as highlights. 
 Click on the Load button under Highlights (on the right side of the screen). Browse to the `customer_360` folder in the repository that you cloned in Lab1. That is, to `oracle-pg/graphs/customer_360` and choose the file named 'highlights.json' and click Open to load that.  
 ![Load highlights for graph](./images/GraphVizLoadHighlights.png)
 
@@ -304,10 +304,10 @@ The partition (or component) id is added as a property named scc_kosaraju for us
 ```
 <copy>
 sg.queryPgql(
-" SELECT a.component, COUNT(a.account_no), MAX(a.account_no) " +
+" SELECT a.scc_kosaraju as component, COUNT(a.account_no), MAX(a.account_no) " +
 " MATCH (a) " +
-" GROUP BY a.component " +
-" ORDER BY a.component"
+" GROUP BY component " +
+" ORDER BY component"
 ).print();
 </copy>
 
@@ -336,8 +336,8 @@ Add reverse edges.
 
 ```
 <copy>
-cs = sg.<Integer>createChangeSet();
-rs = sg.queryPgql("SELECT id(a), id(x) MATCH (a)-[]->(x)");
+var cs = sg.<Integer>createChangeSet();
+var rs = sg.queryPgql("SELECT id(a), id(x) MATCH (a)-[]->(x)");
 for (var r : rs) {
    var e = cs.addEdge(r.getInteger(2),r.getInteger(1)).setLabel("purchased_by");
 }
@@ -363,7 +363,7 @@ sg.queryPgql(
 
 ![](./images/recommendation2.jpg)
 
-We will focus on the account no. a01 (John's account) and run PPR.
+We will focus on the account no. xxx-yyy-201 (John's account) and run PPR.
 
 ```
 <copy>
