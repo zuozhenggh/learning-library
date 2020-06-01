@@ -137,7 +137,7 @@ You now have created your first ATP instance.
 
 1.  Click the link below to download the install file.
 
-    [install.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/dbcs/o/oci_ws_alpha.dmp)
+    [install.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/adbml/o/install.zip)
 
 2.  Save the install.zip to a download directory and then unzip the file.
 
