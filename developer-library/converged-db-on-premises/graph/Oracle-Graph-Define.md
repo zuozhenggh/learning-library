@@ -1,7 +1,7 @@
 
 # Oracle Graph 
 
-<br>
+## Introduction 
 
 **Defining and creating the graph representation**
 
@@ -14,34 +14,60 @@ A first cut at a graph model simply examines the primary key/foreign key relatio
 In this instance the Vertex (or Node) entities are CUSTOMERS, ORDERS, STORES, and PRODUCTS. 
 While the Edge(s) are CUSTOMER ORDERED (from CUSTOMERS to ORDERS), ORDERED BY (the reverse edge from ORDERS to CUSTOMERS), ORDERED FROM STORE (ORDERS to STORES), STORE GOT ORDER (STORES to ORDERS), ORDER HAS PRODUCT (ORDERS to PRODUCTS), and PRODUCT IN ORDER (PRODUCTS to ORDERS)
 
-At the jshell prompt , Make a JDBC connection to the database:
+## Before You Begin
+
+This lab assumes you have completed the following labs:
+- Lab 1:  Login to Oracle Cloud
+- Lab 2:  Generate SSH Key
+- Lab 3:  Create Compute instance 
+- Lab 4:  Environment setup
+- Note :  Below steps are pre-configured in the image.
+- The Oracle Graph Server and Graph Client must be installed.
+- Max string size parameter should be set to extended.
+- AL16UTF16 (instead of UTF8) must be specified as the NLS NCHAR CHARACTERSET.
+- AL32UTF8 (UTF8) should be the default character set, but AL16UTF16 must be the NLS NCHAR CHARACTERSET.
+
+
+**What Do You Need?**
+
+This lab assumes you have completed the following labs:
+- Lab 1:  Login to Oracle Cloud
+- Lab 2:  Generate SSH Key
+
+
+## Step 1: Make a JDBC connection to the database:
+At the jshell prompt.
 
 ````
 <copy>
 var jdbcUrl ="jdbc:oracle:thin:@<instance_ip_address>:<DB_Port>/<PDB_Name>";
-
 var user = "graphuser";
-
 var pass = "graphuser";
-
 var conn = DriverManager.getConnection(jdbcUrl, user, pass) ;
 </copy>
 ````
 
-Set auto commit to false. This is needed for PGQL DDL and other queries.
+**Set auto commit to false. **
+
+This is needed for PGQL DDL and other queries.
 
 ````
 <copy>
 conn.setAutoCommit(false);
 </copy>
 ````
-Get a PgqlConnection that will run PGQL queries directly against the VT$ (vertex) and GE$ (edge) tables 
+
+## Step 2: Get a PgqlConnection 
+
+This will run PGQL queries directly against the VT$ (vertex) and GE$ (edge) tables 
 ````
 <copy>
 var pgql = PgqlConnection.getConnection(conn);
 </copy>
 ````
 ![](./images/IMGG5.PNG) 
+
+## Step 3: Create View
 
 Create the required views first for the use of orders and order_items as multiple edge tables. Execute these in sqlplus :
 
@@ -57,6 +83,8 @@ Create or replace view po_edge as select * from order_items;
 ````
 
 ![](./images/IMGG6.PNG) 
+
+## Step 4: Use property graph query language(PGQL)
 
 We will use a property graph query language [PGQL](http://pgql-lang.org) DDL to define and populate the graph.  The statement is as follows:
 
@@ -111,7 +139,7 @@ LATITUDE, LONGITUDE)
 
 Save the above PQGL query as sql file (CreatePropertyGraph.sql) and then run the below command at jshell.
 
-Run only once to create the graph-
+**create the graph-**
 
 ````
 <copy>
@@ -120,7 +148,6 @@ pgql.prepareStatement(Files.readString(Paths.get("/u01/CreatePropertyGraph.sql")
 ````
 
 The Graph Server kit includes the necessary components (a server application and JShell client) that will execute the above CREATE PROPERTY GRAPH statement and create the graph representation. 
-
 
 The graph itself is stored in a set of tables named 
 
@@ -161,23 +188,14 @@ Consumer<String> query = q -> { try(var s = pgql.prepareStatement(q)) { s.execut
 </copy>
 ````
 
-**A very brief note on PGQL**
+## Acknowledgements
 
-The [pgql-lang.org](pgql-lang.org) site and specification [pgql-land.org/spec/1.2](pgql-land.org/spec/1.2) are the best reference for details and examples. For the purposes of this lab, however, here are minimal basics. 
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists.
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021   
 
-The general structure of a PGQL query is
-
-SELECT (select list) FROM (graph name) MATCH (graph pattern) WHERE (condition)
-
-
-PGQL provides a specific construct known as the MATCH clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints. 
-() indicates a vertex variable
-
-  -an undirected edge, as in (source)-(dest)
-
--> an outgoing edge from source to destination
-
-<- an incoming edge from destination to source
-
-[]  indicates an edge variable
-
+**Issues-**
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+  

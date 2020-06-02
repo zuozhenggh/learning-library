@@ -1,9 +1,9 @@
 # Oracle Node.js  
   
    
-**Overview**: - 
+## Introduction
 
-**About REST architecture: -** 
+**About REST architecture:**
 
 REST stands for Representational State Transfer. REST is web standards based architecture and uses HTTP Protocol. It revolves around resource where every component is a resource and a resource is accessed by a common interface using HTTP standard methods. REST was first introduced by Roy Fielding in 2000.
 
@@ -24,21 +24,24 @@ A web service is a collection of open protocols and standards used for exchangin
 
 Web services based on REST Architecture are known as RESTful web services. These web services uses HTTP methods to implement the concept of REST architecture. A RESTful web service usually defines a URI, Uniform Resource Identifier a service, which provides resource representation such as JSON and set of HTTP Methods.
 
-**Before You Begin**
+## Before You Begin
 
-This lab walks you through the steps to use Application API to add , view and update the product details in database by using RestAPI.
+This lab walks you through the steps to use Application API to add , view and update the product details in database.
+
 
 **What Do You Need?**
+  -	Postman should be installed on your local system. Please use the below link to download the postman if you have not downloaded yet.
+  (https://www.postman.com/downloads/)
 
--	Postman should be installed on your local system. Please use the below link to download the postman if you have not downloaded yet.
-https://www.postman.com/downloads/
+This lab assumes you have completed the following labs:
+- Lab 1: Login to Oracle Cloud
+- Lab 2: Generate SSH Key
+- Lab 3: All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
+- Lab 4: Environment Setup 
+- Lab 5: Node.js environment setup
 
 
-
-
-## Steps:
-
-1. Add the Product details in JSON format into Oracle database by using HTTP POST method. 
+## Step 1: Add the Product details in JSON format using HTTP POST method. 
 
    a.	Launch the Postman
         
@@ -75,7 +78,7 @@ https://www.postman.com/downloads/
 
 
 
-2. Verify the product details added into oracle database by using HTTP GET method.
+## Step 2: Verify the product details using HTTP GET method.
     
     a.	Launch the Postman.
 
@@ -83,7 +86,7 @@ https://www.postman.com/downloads/
 
     c.	Select GET Method and enter the request URL
 
-    ````
+  ````
     <copy>
     Method: - GET
     To get list of all the product details
@@ -92,7 +95,7 @@ https://www.postman.com/downloads/
     URL: - <Public-IP>:3001/products/<PID>
 
       </copy>
-    ````
+   ````
      
     
    ![](./images/nodejs-postman4.PNG " ")
@@ -102,29 +105,30 @@ https://www.postman.com/downloads/
 
     ![](./images/nodejs-postman5.PNG " ")
 
-3. To UPDATE the product details by using HTTP UPDATE Method. 
+## Step 3: UPDATE the product details by using HTTP UPDATE Method. 
     
-    a.	Launch the Postman.
+    
+  a.	Launch the Postman.
 
-      ![](./images/nodejs-postman6.PNG " ")
+  ![](./images/nodejs-postman6.PNG " ")
 
-    b.	Open a new workspace.
+  b.	Open a new workspace.
        
-      ![](./images/nodejs-postman6a.PNG " ")
+  ![](./images/nodejs-postman6a.PNG " ")
 
-    c.	Before update, Please check the product details format by using GET Method.
+  c.	Before update, Please check the product details format by using GET Method.
  
-     ![](./images/nodejs-postman7.PNG " ")
+  ![](./images/nodejs-postman7.PNG " ")
 
-      We are going to update the price from 9$ to 12$ for the product PID=13.
+  We are going to update the price from 9$ to 12$ for the product PID=13.
 
-      Check the key value format for the price field.
+  Check the key value format for the price field.
 
 			{“Key”: “value”}
 		
     	   {"price": "9"}
    
-    d. Select POST Method and enter the request URL to update the price value for the PID=13
+  d. Select POST Method and enter the request URL to update the price value for the PID=13
   	Method: - POST
 
     URL: - <PUBLIC-IP>:3001/updateProduct/13
@@ -136,14 +140,22 @@ https://www.postman.com/downloads/
 		   {"price": "12"}
 
      
-    ![](./images/nodejs-postman8.PNG " ")
+ ![](./images/nodejs-postman8.PNG " ")
 
    
         
-4. Verify the Updated product details by using HTTP GETmethod.  
+## Step 4: Verify product details by using HTTP GET method.  
     
-    ![](./images/nodejs-postman9.PNG " ")
+![](./images/nodejs-postman9.PNG " ")
 
-   
+## Acknowledgements
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).        
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists.
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021   
+
+**Issues-**
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+      

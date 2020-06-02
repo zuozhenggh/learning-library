@@ -1,20 +1,31 @@
 
 # Oracle Graph 
 
-<br>
-**Visualize the Graph**
+## Introduction
 
-We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result.
+This lab will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result.
 
 GraphViz should be accessible at host:7007/ui
 
 The principal points of entry for the GraphViz application are the query editor and the graph lists.
 When you start GraphViz, the graph list will be populated with the graphs loaded in the graph server. To run queries against a graph, select that graph. The query lets you write PGQL queries that can be visualized. (PGQL is the SQL-like query language supported by GraphViz.)
 
-Once the query is ready and the desired graph is selected, click Run to execute the query.
 
+## Before You Begin
 
-<br>
+This lab assumes you have completed the following labs:
+- Lab 1:  Login to Oracle Cloud
+- Lab 2:  Generate SSH Key
+- Lab 3:  Create Compute instance 
+- Lab 4:  Environment setup
+- Note :  Below steps are pre-configured in the image.
+- The Oracle Graph Server and Graph Client must be installed.
+- Max string size parameter should be set to extended.
+- AL16UTF16 (instead of UTF8) must be specified as the NLS NCHAR CHARACTERSET.
+- AL32UTF8 (UTF8) should be the default character set, but AL16UTF16 must be the NLS NCHAR CHARACTERSET.
+  
+## Step 1: Visualize the Graph
+
 **Scenario 1 : What products did customer 202 buy from which store(s)?**
 
 ````
@@ -42,9 +53,7 @@ Select label as the vertex label and then click OK
 ![](./images/IMGG23.PNG)
 
 
-<br>
-**Scenario 2 : Which customers placed orders from  store with id 1 (the Online store)? 
-Show the first 100 results**
+**Scenario 2 : Which customers placed orders from store with id 1 (the Online store)? Show the first 100 results**
 
 ````
 <copy>
@@ -112,8 +121,7 @@ The resulting viz should look like
 ![](./images/IMGG32.PNG)
 
 
-<br>
-**Scenario 3 :What products did Dale Hughes buy?**
+**Scenario 3 :What products did customer buy?**
 
 ````
 <copy>
@@ -142,8 +150,7 @@ Click on the +  sign to add conditions
 ![](./images/IMGG35.PNG)
 
 
-<br>
-**Scenario 4 : Which customers bought product with id 44? Shows 100 results per page**
+**Scenario 4 : Which customers bought product with id 44? Show 100 results per page**
 
 ````
 <copy>
@@ -156,8 +163,8 @@ where store.STORE_ID=1;
  
 ![](./images/IMGG36.PNG)
 
-<br>
-**Scenario 5 : Which customers bought product with id 44? Shows 100 results per page**
+
+**Scenario 5 : Which customers bought product with id 44? Show 100 results per page**
 
 ````
 <copy>
@@ -169,8 +176,8 @@ where product.PRODUCT_ID=44;
  
 ![](./images/IMGG37.PNG)
 
-<br>
-**Deleting the Graph**
+
+## Step 2: Deleting the Graph
 
 Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the following statements to delete the in-memory graph 
 
@@ -180,6 +187,12 @@ graph.destroy();
 </copy>
 ````
 
- 
- 
- 
+## Acknowledgements
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021
+
+**Issues-**
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly. 

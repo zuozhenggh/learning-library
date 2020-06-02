@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d3b9d82949cc156548ad5a7e93cd5f0e4e7b508d
 # Workshop Introduction and Overview
 
 ## Introduction to Oracle Converged Database
@@ -43,6 +46,7 @@ Watch the video below to watch Andy Mendehlson, VP of Database Product Managemen
   
   [](youtube:Sbbw2mcrfiA)
 
+<<<<<<< HEAD
 ## Get Started
 
 - [JSON](https://laxmi-oss.github.io/converged-database/workshops/json-freetier/)
@@ -131,3 +135,32 @@ Please submit an issue on our [issues](https://github.com/oracle/learning-librar
 
 
 >>>>>>> upstream/master
+=======
+## Want to Learn More
+
+This Converged Database workshop will help the participants to get hands-on features and benefits - JSON, XML, SPATIAL, GRAPH and Node.JS retail application.
+
+- [Converged-DB](https://www.oracle.com/database/technologies/)
+
+## Oracle Database Sample Schemas Agreement
+Copyright (c) 2019 Oracle
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+## Acknowledgements
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021
+
+**Issues-**
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+
+
+>>>>>>> d3b9d82949cc156548ad5a7e93cd5f0e4e7b508d

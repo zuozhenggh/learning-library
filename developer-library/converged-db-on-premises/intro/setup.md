@@ -2,27 +2,71 @@
 
 ## Introduction
 
-Need introduction content  
+This lab will show you that how to launch a compute instance from OCI Marketplace which is pre-configured with Oracle Database 19c and explained about how to start database instance and listener from putty window,also this covers how to setup vncserver and sqldeveloper etc. 
 
 ## Step 1: Start the Database
-1.  Open up putty and create a new connection. Enter the IP address assigned to your instance.
 
-2.  Enter a name for the session and click **Save**.
+1.  Get the IP Address and host name of the server.
+
+````
+   <copy> 
+ [oracle@convergeddb]$ curl ifconfig.co
+
+ 150.136.xx.xxx
+
+ [oracle@convergeddb admin]$ hostname
+   
+ convergeddb
+  </copy>
+ ````
+
+
+
+2. Open tnsnames.ora in vi-editor and replace the old hostname by new hostname/IP address
+   
+   ````
+    <copy>
+
+   :%s/convergeddb.sub09051050000.oemvcn.oraclevcn.com/NEW IPADDRESS or HOSTNAME
+    
+    </copy>
+   ````
+
+   ![](./images/envs3.png " ") 
+
+3. Similarly do the same changes for listener.ora through vi-editor
+  
+   ![](./images/envs4.png " ") 
+
+4. Then Bring up the listener and make sure the new hostname/IP address are reflected.
+   
+   **Note** – If have any trouble with starting the listener then the new hostname/IP address would not be updated properly.
+
+   **Secondly**, Make sure all the PDB services should be listed in the status service column if not then, do the below steps 
+
+   ![](./images/envs5.png " ") 
+
+5. Similarly, do tnsping validation and check the response from DB 
+    
+    ![](./images/envs7.png " ") 
+
+6.  Open up putty and create a new connection. Enter the IP address assigned to your instance.
+
+7.  Enter a name for the session and click **Save**.
  
     ![](./images/es1.png) 
 
-3.	Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session Step.
+8.	Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session Step.
 
-4.	Click Open to begin your session with the instance.
+9.	Click Open to begin your session with the instance.
 
-5.	Enter the details when prompted
+10.	Enter the details when prompted
 
-    Username:  oracle
-    Password:  H0la@1234
-
+    Username:  opc
+    
     ![](./images/es2.png) 
 
-6.	Check for the oratab file and get the SID  and the oracle home details for the DB to start.
+11.	Check for the oratab file and get the SID  and the oracle home details for the DB to start.
 
     ````
     <copy>
@@ -32,7 +76,7 @@ Need introduction content
 
     ![](./images/es3.png) 
 
-7.	Start the database
+12.	Start the database
 
     ````
     <copy>
@@ -46,7 +90,7 @@ Need introduction content
     ````
     ![](./images/es4.png) 
 
-8.	Check for the pdbs status and open it.
+13.	Check for the pdbs status and open it.
 
     ````
     <copy>
@@ -57,47 +101,33 @@ Need introduction content
     ````
     ![](./images/es5.png) 
 
-## Step 2: Start the Listener
-
-1.	Check for the listener file and get the listener name.
-
-    ````
-    <copy>
-    cd $ORACLE_HOME
-    cat listener.ora
-    </copy>
-    ````
-    ![](./images/es6.png)
-
-2.	Start the listener
-
-    ````
-    <copy>
-    lsnrctl start LISTENER_CONVERGEDDB
-    </copy>
-    ````
-    ![](./images/es7.png)
-
-3.	Check the listener status
-
+14. Register database service with listener.
+    
+   ````
+   <copy>
+   show parameter local_listener
+   </copy>
+   ````
+   ````
+   <copy>
+   alter system set local_listener='(ADDRESS = (PROTOCOL=TCP)(HOST=NEW HOSTNAME/IPADDRESS)(PORT=1521))';
+   </copy>
+   ````
+   ````
+   <copy>
+   alter system register;
+   </copy>
+   ````
+15. Check the status of listerner and make sure all the database services should be registered.
+    
     ````
     <copy>
     lsnrctl status LISTENER_CONVERGEDDB
     </copy>
     ````
-    ![](./images/es8.png)
+    ![](./images/envs6.png) 
 
-4.	Check if the database and listener is up and running
-
-    ````
-    <copy>
-    ps -ef|grep pmon
-    ps -ef|grep tns
-    </copy>
-    ````
-    ![](./images/es9.png)
-
-## Step 3:  Setup VNC
+## Step 2:  Setup VNC
 
 1.	Run the command below and start vncserver as oracle user. It will prompt us to set the password for the first time, please provide the password and it will again ask to confirm the same.
 
@@ -142,13 +172,18 @@ Need introduction content
 
 You may now proceed to the next lab.
 
+
 ## Acknowledgements
 
-- **Authors/Contributors** - Brian Hengen, Balasubramanian Ramamoorthy, Arvind Bhope
-- **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, May 2020
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists.
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021   
 
-### Issues?
+**Issues-**
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+  
 
 
 
