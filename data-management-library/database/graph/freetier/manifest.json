@@ -1,8 +1,8 @@
 {
     "tutorials": [
         {
-            "title": "Lab 3.0: Setup with Free Tier",
-            "description": "Register for a Free Tier account",
+            "title": "Lab 3.0: Setup Graph with Free Tier",
+            "description": "Introduction",
             "filename":"../setup/setup_always_free.md"
         },
         {
