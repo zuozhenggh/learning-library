@@ -17,7 +17,7 @@ First, you need an Oracle Cloud account.  Sign up [here](https://oracle.com/free
 - [Multitenant Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  
 - [Create a Database in a Docker Container](https://oracle.github.io/learning-library/data-management-library/database/docker/create-database-in-docker) 
 - [Machine Learning on Autonomous Database](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml/workshop/)
-- [Database 19c New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/ssworkshop/)
+- [Database 19c New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/livelabs/)
 
 Workshops are being added daily, please visit frequently for new content.
 
