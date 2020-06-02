@@ -25,10 +25,16 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {
-            "title": "Lab 3: Setup",
+            "title": "Lab 3A: Environment Setup",
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
             "publisheddate": "3/24/2020",
-            "filename": "../setup/setup_ssworkshop.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-ssworkshop.md"
+        },
+        {
+            "title": "Lab 3B: Sample Schema Setup",
+            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "publisheddate": "3/24/2020",
+            "filename": "../setup/setup.md"
         },
         {
             "title": "Lab 4: Automatic Indexing",
@@ -43,19 +49,25 @@
             "filename": "../partitioning/partitioning.md"
         },
 		{
-            "title": "Lab 6: Application Continuity",
+            "title": "Lab 6: Application Continuity - Coming soon",
             "description": "Application Continuity",
             "publisheddate": "4/05/2020",
             "filename": "../appcont/appcont.md"
         },
 		{
-            "title": "Lab 7: JSON Documents",
+            "title": "Lab 7: JSON in the Oracle DB",
             "description": "JSON Documents",
             "publisheddate": "4/05/2020",
             "filename": "../json/json.md"
         },
+        {
+            "title": "Lab 8: JSON in the Oracle DB - Advanced",
+            "description": "JSON Documents",
+            "publisheddate": "4/05/2020",
+            "filename": "../json/json-advanced.md"
+        },
 		{
-            "title": "Lab 8: Python Programming",
+            "title": "Lab 9: Python Programming",
             "description": "Python Programming",
             "publisheddate": "4/05/2020",
             "filename": "../python/python.md"

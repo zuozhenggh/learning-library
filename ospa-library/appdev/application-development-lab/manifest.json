@@ -2,9 +2,20 @@
     
     "tutorials": [
         {            
-            "title": "Webcast - Mobile and Digital Assistant Labs",
+            "title": "Getting Started",
             "filename": "./gettingstarted.md"
+        },
+
+        {            
+            "title": "Visual Builder Cloud Service",
+            "filename": "./vbcs-lab/applicationdevelopment-labguide.md"
+        },
+
+        {            
+            "title": "Digital Assistant",
+            "filename": "./oda-lab/oda-labguide.md"
         }
+
     ]
 }
 

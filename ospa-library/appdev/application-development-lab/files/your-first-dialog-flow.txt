@@ -3,7 +3,7 @@
 metadata:
   platformVersion: "1.0"
 main: true
-name: PizzaKing
+name: MamaMaggy
 #context: Define the variables which will used throughout the dialog flow here.
 
 context:

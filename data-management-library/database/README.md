@@ -6,35 +6,37 @@ The industry’s leading database continues to deliver leading-edge innovations,
 
 
 ## Workshops
-Click below to access the content.
+- [New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)  
 
-### New Features for Developers Workshops
+- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier) 
 
-[![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/ssworkshop/index.html)
+- [Spatial](https://oracle.github.io/learning-library/data-management-library/database/spatial/freetier/index.html)
 
-### Multitenant Workshops
+- [Multitenant Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  
 
-[![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
+- [In-Memory Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html) 
 
+<<<<<<< HEAD
 ### Converged
 
 [![](./images/converged-database.png)](https://laxmi-oss.github.io/learning-library/data-management-library/database/converged-database/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/converged-database.png)](https://laxmi-oss.github.io/learning-library/data-management-library/database/converged-database/ssworkshop/index.html)
 
 ### In-Memory Workshops
+=======
+- [Hybrid Partitioning](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/hybridpart-freetier) 
+>>>>>>> upstream/master
 
-[![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/ssworkshop/index.html)
+- [Automatic Indexing](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/autoindex-freetier) 
 
-### Create a Database on OCI VM 
+- [Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier) 
 
-[![](./images/create-oci-vm-db.png)](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db)  ![](./images/transparent.png " ") 
+- [Containerized Development on the Oracle Database](https://oracle.github.io/learning-library/data-management-library/database/docker/db-on-docker/freetier) 
 
-### Connect SQL Developer to OCI VM Database
+- [Create a Database in a Docker Container](https://oracle.github.io/learning-library/data-management-library/database/docker/create-database-in-docker) 
 
-[![](./images/connect-oci-vm-db-sqldeveloper.png)](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/connect-oci-vm-db-sqldeveloper)  ![](./images/transparent.png " ") 
+- [Create a Database on OCI VM ](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db) 
 
-
-- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)
-- [I have an account from SSWorkshop](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/ssworkshop/index.html)
+- [Connect SQL Developer to OCI VM Database](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db/) 
 
 
 ## Get an Oracle Cloud Trial Account for Free!
