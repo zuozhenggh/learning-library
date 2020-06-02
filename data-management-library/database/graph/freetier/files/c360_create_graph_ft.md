@@ -3,13 +3,17 @@
 Now that the tables are created and populated let's create a graph represnetation of them.
 
 The steps are:
+- Modify the graph server configuration to disable TLS (SSL) for this lab
 - Start the graph server
 - Start a client (JShell) that connects to the server
 - Setup a PGQL connection to the database
 - Use PGQL DDL (CREATE PROPERTY GRAPH) to instantiate a graph
 
 
-### Start the graph server
+### Modify the graph server config file
+
+
+
 
 SSH into the compute instance where you installed the graph server.  
 Switch to the user account (e.g. `oracle`) that has the database wallet and will run the server and client instances. 
@@ -19,6 +23,21 @@ Switch to the user account (e.g. `oracle`) that has the database wallet and will
 su - oracle 
 </copy>
 ```
+
+Then edit the `/etc/oracle/graph/server.conf` file. 
+```
+<copy>
+vi /etc/oracle/graph/server.conf
+</copy>
+```
+
+Change the line
+` "enable_tls": true,`
+to
+` "enable_tls": false,`
+Save the file and exit.
+
+### Start the graph server
 
 Check that JAVA_HOME and JAVA11_HOME env variables are set and correct. That is, JAVA_HOME points to JDK1.8 and Java11_HOME to jdk1.11.  
 Then, as the `oracle` user, start the server using 
