@@ -2,18 +2,18 @@
 
 ## Introduction
 
-The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between end points.  SSH Keys are an important part of securely accessing Oracle Cloud Infrastructure compute instances in the cloud.    
+The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between end points.  SSH keys are an important part of securely accessing Oracle Cloud Infrastructure compute instances in the cloud.    
 
-If you already have an SSH key pair, you may use that to connect to your environment.  We recommend you use the **Oracle Cloud Shell** to interface with the OCI compute instance you will create.  It is browser-based, does not require installation or configuration of anything on your laptop and works independently of your network setup.  However, if you prefer to connect via your laptop, please choose based on your configuration.
+If you already have an SSH key pair, you may use that to connect to your environment.  We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute instance you will create.  Oracle Cloud Shell is browser-based, does not require installation or configuration of anything on your laptop and works independently of your network setup.  However, if you prefer to connect via your laptop, please choose based on your configuration.
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
 
 ## Option 1:  Oracle Cloud Shell
 
-The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated OCI CLI, set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM policy.
+The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI, set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM policy.
 
-1.  To start the Oracle Cloud shell, go to your Cloud console (home page) and click the cloud shell icon to the right of the region.
+1.  To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
 
     ![](./images/cloudshellopen.png " ")
     
@@ -37,9 +37,9 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     ````
     ![](./images/examine-cloudshell-keys.png " ")
 
-    Note in the output that there are two files, a *private key:* ```<<sshkeyname>>``` and a *public key:* ```<<sshkeyname>>.pub```.   Keep the private key safe and don't share it's contents with anyone.   The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
+    Note in the output that there are two files, a *private key:* ```<<sshkeyname>>``` and a *public key:* ```<<sshkeyname>>.pub```.   Keep the private key safe and don't share its content with anyone.   The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
-4. Use the cat command ```cat id_rsa.pub``` to list the contents of id_rsa.pub.
+4. Use the cat command ```cat <<sshkeyname>>.pub``` to list the contents of the public key.
 
     ![](images/cat-in-cloudshell.png " ")
 
@@ -52,7 +52,7 @@ You may now *proceed to the next lab*.
 ## Option 2:  MacOS
 
 1.  If you don't already have a shortcut to the terminal application for MacOS, you can find it in the **Applications** > **Utilities** menu or (Shift+Command+U) on your keyboard.   
-2.  Start up Terminal and type in the command ```ssh-keygen```.  ssh-keygen will ask you where to save the key, accept the default of your home directory in the .ssh folder by pressing Enter.  File name will be ```id_rsa``` or whatever you choose to name your key.  Press Enter twice for no passphrase.   Remember the directory where you saved your key (~/.ssh), you'll need to reference it later when you create your instance.
+2.  Start up **Terminal** and type in the command ```ssh-keygen```.  ssh-keygen will ask you where to save the key, accept the default of the .ssh folder in your home directory by pressing Enter.  File name will be ```id_rsa``` or whatever you choose to name your key.  Press Enter twice for no passphrase.   Remember the directory where you saved your key (~/.ssh), you'll need to reference it later when you create your instance.
     ````
     ssh-keygen
     ````
@@ -70,7 +70,7 @@ You may now *proceed to the next lab*.
 
     ![](images/keylab-032.png " ")
 
-    Note in the output that there are two files, a *private key:* ```id_rsa``` and a *public key:* ```id_rsa.pub```.   Keep the private key safe and don't share it's contents with anyone.   The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
+    Note in the output that there are two files, a *private key:* ```id_rsa``` and a *public key:* ```id_rsa.pub```.   Keep the private key safe and don't share its content with anyone.   The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
 
 4.  If you're ready to create an instance, copy the contents and paste when prompted for the SSH key.  Make sure that you remove any hard returns that may have been added when copying.
@@ -91,7 +91,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
 
 2.  Enter the command ```ssh-keygen``` into the terminal window.  Pay particular attention to where the file will be saved so you can locate it later.   ```ssh-keygen``` will default to the standard .ssh directory under the user's base directory.  
 
-3.  Press Enter at all of the prompts to accept the default location, no passphrase, and default file names.
+3.  Press Enter at all of the prompts to accept the default location, default file names, and no passphrase.
 
     *Note: In Unix variants, a folder with a dot (.) in front of it was usually designated for configuration files and 'hidden' from normal view.   However, a dot (.) doesn't mean anything special in front of Windows folders.  So the folder will exist but won't be hidden.*
 
@@ -109,15 +109,15 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
 
     ![](images/keylab-007.png " ")
 
-    You now have a working SSH key-pair and can use them for secure communications to instances in the cloud.   Do not share the *private* key with anyone unless you understand what you're doing.  You should only ever need to share and copy the public key.
+    You now have a working SSH key pair and can use it for secure communications to instances in the cloud.   Do not share the *private key* with anyone unless you understand what you're doing.  You should only ever need to share and copy the *public key*.
 
-5.  Also note that if you elect to copy/paste the contents of the key into certain dialogs for your labs, you will need to locate the file in Windows, either through Powershell, Explorer, or other directory tool, and open the public key file to copy its contents.  The example below is using Powershell to ```cat``` the contents.  You can select the text with your mouse but the copy/paste commands aren't available.  Use ```<ctrl-c>``` to copy the contents to the clipboard for pasting into other application dialogs.
+5.  Also note that if you elect to copy/paste the content of the key into certain dialogs for your labs, you will need to locate the file in Windows, either through Powershell, Explorer, or other directory tools, and open the public key file to copy its content.  The example below is using Powershell to ```cat``` the content.  You can select the text with your mouse but the copy/paste commands aren't available.  Use ```<ctrl-c>``` to copy the contents to the clipboard for pasting into other application dialogs.
 
     ![](images/keylab-008.png " ")
 
-    Or you can just open the file with Notepad, Wordpad, or other text editor.   
+    Or you can just open the file with Notepad, Wordpad, or other text editors.   
 
-    *Note: Don't use MS Word or any other rich text editor as they might add extra formatting characters which will render the key unusable.*
+    *Note: Don't use MS Word or any other rich text editors as they might add extra formatting characters which will render the key unusable.*
 
     ![](images/keylab-009.png " ")
 
@@ -128,9 +128,9 @@ You may now *proceed to the next lab*.
 
 ## Option 4a: Prior Windows Versions - Git for Windows
 
-In earlier versions of Windows, ssh-keygen was not a native utility so third party utilities had to be utilized.   In this section, we'll illustrate using **Git for Windows**.  **Git for Windows** includes a Unix like shell called ```gitbash``` which is what you'll use to create keys, and establish SSH communications with your cloud host systems.  If you prefer **PuTTY** go to the next section.
+In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized.   In this section, we'll illustrate using **Git for Windows**.  **Git for Windows** includes a Unix like shell called ```Git Bash``` which is what you'll use to create keys, and establish SSH communications with your cloud host systems.  If you prefer **PuTTY** go to the next section.
 
-1.  If you don't already have it installed, access the link below and download the application.  If you are unable to download files on your laptop, we recommend you use the Oracle Cloud shell method above.
+1.  If you don't already have it installed, access the link below and download the application.  If you are unable to install anything on your laptop due to permission issues, please use the Oracle Cloud Shell option above.
 
     [Click here to download Git for Windows](https://git-scm.com/download/win)
 
@@ -160,9 +160,9 @@ In earlier versions of Windows, ssh-keygen was not a native utility so third par
 
     ![](images/keylab-012.png " ")
 
-    Note in the output that there are two files, a *private key:* ```id_rsa``` and a *public key:* ```id_rsa.pub```.   Keep the private key safe and don't share it's contents with anyone.   The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
+    Note in the output that there are two files, a *private key:* ```id_rsa``` and a *public key:* ```id_rsa.pub```.   Keep the private key safe and don't share its content with anyone.   The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
-6.  Make a note of where your SSH public and private key files are located.  You may be asked to upload the file or to copy/paste the contents in other labs for Oracle Cloud Services.  Copy the key contents exactly, capturing space after the key characters may render your key invalid.  In the example below, you can use the gitbash ```cat``` command to display the public key file contents.  You can select the key file contents and left-click to **Copy** the key.  Or you can upload it directly.  Keep the private key safe and don't share it's contents with anyone.   The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
+6.  Make a note of where your SSH public and private key files are located.  You may be asked to upload the file or to copy/paste the content in other labs for Oracle Cloud Services.  Copy the key content exactly, capturing space after the key characters may render your key invalid.  In the example below, you can use the gitbash ```cat``` command to display the public key file content.  You can select the key file content and left-click to **Copy** the key.  Or you can upload the file directly.
 
     ![](images/keylab-013.png " ")
 
@@ -172,7 +172,7 @@ You may now *proceed to the next lab*.
 
 ## Option 4b: Windows Versions - PuTTY
 
-In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized.   In this section, we'll illustrate using **PuTTY**.  If you prefer **Git for Windows** visit the option prior to this one.
+In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized.   In this section, we'll illustrate using **PuTTY**.  If you prefer **Git for Windows**, visit the option prior to this one.
 
 1.  If you don't already have it installed, access the link below and download the application.   For Oracle employees, **PuTTY** is also available for download internally via the **MyDesktop** application.  For non-Oracle employees and customers, use the below link.  If you are unable to install anything on your laptop due to permission issues, please use the Oracle Cloud Shell option above.
 
@@ -180,7 +180,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
 2. Follow the instructions for installation.  *Note: Installing PuTTY is beyond the scope of this lab document.*
 
-    Once installed, you should have an entry in your Windows Start menu, and perhaps a desktop shortcut for PuTTY.  PuTTY is an actually a suite of secure communication utilities.  We'll be using two of them, the PuTTY utility for terminal access and the PuTTYgen utility for generating a secure SSH key.
+    Once installed, you should have an entry in your Windows Start menu, and perhaps a desktop shortcut for PuTTY.  PuTTY is actually a suite of secure communication utilities.  We'll be using two of them, the PuTTY utility for terminal access and the PuTTYgen utility for generating a secure SSH key.
 
 3.   Open the Windows start menu and navigate to the PuTTY folder.  Select the PuTTYgen utility.
     ![](images/keylab-014.png " ")
@@ -203,7 +203,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     ![](images/keylab-018.png " ")
 
-8.  Next you'll need to save the private key.   Click the **Save private key** button, answer **Yes** to the warning about saving without a passphrase.  Keep the private key safe and don't share it's contents with anyone.
+8.  Next you'll need to save the private key.   Click the **Save private key** button, answer **Yes** to the warning about saving without a passphrase.
 
     ![](images/keylab-019.png " ")
 
@@ -211,7 +211,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     ![](images/keylab-020.png " ")
 
-10.  Now that you've saved the keys for future reference, all you have to do is copy the key information from the PuTTY dialog.  
+10.  Now you've saved the keys for future reference, all you have to do is copy the key information from the PuTTY dialog.  
 
 
 11.  Select the key text in the dialog box from start to finish, then right click and choose **Copy**.  You can then paste the key into a Notepad or directly into the instance creation dialog in the OCI console.
@@ -220,9 +220,9 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 1.    Below is an example of the **Add SSH key - Paste SSH keys** dialog in the OCI instance creation form.
 ![](images/keylab-022.png " ")
 
-This concludes the section on using PuTTY to generate an SSH key pair for versions of Windows prior to Windows 10.
+This concludes the section on using PuTTY to generate a SSH key pair for versions of Windows prior to Windows 10.
 
-Followelow instructions to connect to a cloud instance via SSH using the PuTTY terminal.
+Follow below instructions to connect to a cloud instance via SSH using the PuTTY terminal.
 
 ### Connecting to an instance using PuTTY
 1.  Open the PuTTY utility from the Windows start menu.   In the dialog box, enter the IP address of your OCI Compute Instance.  This can be obtained from the **OCI Console > Compute > Instances > Instance Details** screen.
@@ -235,7 +235,7 @@ Followelow instructions to connect to a cloud instance via SSH using the PuTTY t
 
     ![](images/keylab-024.png " ")
 
-3.  Under **Category**, navigate to **Connection** - **SSH** and choose the **Auth** category.   Click on the **Browse** button and locate the ```Private Key file``` you created in the earlier step.   Click the **Open** button to initiate the SSH connection to your cloud instance.
+3.  Under **Category**, navigate to **Connection** - **SSH** and choose the **Auth** category.   Click on the **Browse** button and locate the ```private key file``` you created in the earlier step.   Click the **Open** button to initiate the SSH connection to your cloud instance.
 
     ![](images/keylab-025.png " ")
 
@@ -258,12 +258,12 @@ You may now *proceed to the next lab*.
 ## Option 5: SSH Keys for Linux
 
 
-1. Open a terminal window and type in the ssh-keygen command.   There are a few command line options for the ssh-keygen utility, however, for quick and dirty key creation for lab use, no options are necessary.    Type ```ssh-keygen --help``` in your terminal window to see all the possible options.   For now, just run the command by itself.
+1. Open a terminal window and type in the ```ssh-keygen``` command.   There are a few command line options for the ssh-keygen utility; however, for quick and dirty key creation for lab use, no options are necessary.    Type ```ssh-keygen --help``` in your terminal window to see all the possible options.   For now, just run the command by itself.
 
     ```
     ssh-keygen
     ```
-2. You should run this command from your home directory.  In this case as the user-id ```opc```.   The dialog will default to a hidden directory, ```~/.ssh```.  If you don't already have keys created, accept the default file name ```id_rsa``` by hitting the Enter key.   Press the Enter key two more times to create a key with no passphrase.   The best practice in a production environment would be to use a secure passphrase, however, we don't need to bother with these practice labs.
+2. You should run this command from your home directory.  In this case as the user-id ```opc```.   The dialog will default to a hidden directory, ```~/.ssh```.  If you don't already have keys created, accept the default file name ```id_rsa``` by hitting the Enter key.   Press the Enter key two more times to create a key with no passphrase.   The best practice in a production environment would be to use a secure passphrase; however, we don't need to bother with these practice labs.
 
     ![](images/keylab-001.png " ")
 
@@ -278,7 +278,7 @@ You may now *proceed to the next lab*.
 
     ![](images/keylab-002.png " ")
 
-    Note in the output that there are two files, a *private key:* ```id_rsa``` and a *public key:* ```id_rsa.pub```.   Keep the private key safe and don't share it's contents with anyone.   The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.  
+    Note in the output that there are two files, a *private key:* ```id_rsa``` and a *public key:* ```id_rsa.pub```.   Keep the private key safe and don't share its contents with anyone.   The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.  
 
 4.  Use the Linux ```cat``` command to list the contents of ```id_rsa.pub```.
 
