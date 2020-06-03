@@ -73,6 +73,7 @@ var user = "customer_360";
 var pass = "Welcome1_C360";
 var conn = DriverManager.getConnection(jdbcUrl, user, pass) ;
 </copy>
+// conn ==> oracle.jdbc.driver.T4CConnection@54d11c70
 ```
 
 Copy, paste, and execute the following code in JShell.
@@ -85,22 +86,23 @@ Supplier<GraphConfig> pgxConfig = () -> { return GraphConfigBuilder.forPropertyG
  .setUsername(user)
  .setPassword(pass)
  .setName("Customer_360")
- .addVertexProperty("type", PropertyType.STRING)
- .addVertexProperty("name", PropertyType.STRING)
- .addVertexProperty("location", PropertyType.STRING)
- .addVertexProperty("gender", PropertyType.STRING)
- .addVertexProperty("student", PropertyType.STRING)
- .addVertexProperty("account_no", PropertyType.STRING)
- .addVertexProperty("age", PropertyType.INTEGER)
- .addVertexProperty("balance", PropertyType.DOUBLE)
- .addEdgeProperty("since", PropertyType.STRING)
- .addEdgeProperty("date", PropertyType.STRING)
- .addEdgeProperty("amount", PropertyType.DOUBLE)
+ .addVertexProperty("TYPE", PropertyType.STRING)
+ .addVertexProperty("NAME", PropertyType.STRING)
+ .addVertexProperty("LOCATION", PropertyType.STRING)
+ .addVertexProperty("GENDER", PropertyType.STRING)
+ .addVertexProperty("STUDENT", PropertyType.STRING)
+ .addVertexProperty("ACCOUNT_NO", PropertyType.STRING)
+ .addVertexProperty("AGE", PropertyType.INTEGER)
+ .addVertexProperty("BALANCE", PropertyType.DOUBLE)
+ .addEdgeProperty("SINCE", PropertyType.STRING)
+ .addEdgeProperty("DATE", PropertyType.STRING)
+ .addEdgeProperty("AMOUNT", PropertyType.DOUBLE)
  .setLoadVertexLabels(false)
  .setLoadEdgeLabel(true)
  .setKeystoreAlias("alias")
  .build(); }
 
+// pgxConfig ==> $Lambda$607/0x0000000800add440@616d9a6d
 ```
 
 ```
@@ -109,6 +111,7 @@ Supplier<GraphConfig> pgxConfig = () -> { return GraphConfigBuilder.forPropertyG
 
 var graph = session.readGraphWithProperties(pgxConfig.get()) ;
 </copy>
+// graph ==> PgxGraph[name=Customer_360,N=15,E=24,created=1591215633384]
 ```
 
 Now we can query this graph and run some analyses on it.
@@ -120,13 +123,14 @@ PGQL Query is convenient for detecting specific patterns.
 Find accounts that had an inbound and an outbound transfer, of over 500, on the same day. The PGQL query for this is:
 
 ```
-<copy>graph.queryPgql(
-  " SELECT a.account_no, a.balance, t1.amount, t2.amount, t1.date " +
-  " MATCH (a)<-[t1:transfer]-(a1) " +
-  "    , (a)-[t2:transfer]->(a2) " +
-  " WHERE t1.date = t2.date " +
-  "  AND t1.amount > 500 " +
-  "  AND t2.amount > 500 "
+<copy>
+graph.queryPgql(
+  " SELECT a.ACCOUNT_NO, a.BALANCE, t1.AMOUNT, t2.AMOUNT, t1.DATE " +
+  " MATCH (a)<-[t1:TRANSFER]-(a1) " +
+  "    , (a)-[t2:TRANSFER]->(a2) " +
+  " WHERE t1.DATE = t2.DATE " +
+  "  AND t1.AMOUNT > 500 " +
+  "  AND t2.AMOUNT > 500 "
 ).print();
 </copy>
 
@@ -144,10 +148,11 @@ Next we use PGQL to find a series of transfers that start and end at the same ac
 The first query could be expressed as:
 
 ```
-<copy>graph.queryPgql(
-"  SELECT a1.account_no, t1.date, t1.amount, a2.account_no, t2.date, t2.amount " +
-"  MATCH (a1)-[t1:transfer]->(a2)-[t2:transfer]->(a1) " +
-" WHERE t1.date < t2.date"
+<copy>
+graph.queryPgql(
+"  SELECT a1.ACCOUNT_NO, t1.DATE, t1.AMOUNT, a2.ACCOUNT_NO, t2.DATE, t2.AMOUNT " +
+"  MATCH (a1)-[t1:TRANSFER]->(a2)-[t2:TRANSFER]->(a1) " +
+" WHERE t1.DATE < t2.DATE"
 ).print();
 </copy>
 
@@ -164,12 +169,13 @@ The second query just adds one more transfer to the pattern (list) and could be 
 
 
 ```
-<copy>graph.queryPgql(
-"  SELECT a1.account_no, t1.amount, a2.account_no, t2.amount " +
-"       , a3.account_no, t3.amount " + 
-"  MATCH (a1)-[t1:transfer]->(a2)-[t2:transfer]->(a3)-[t3:transfer]->(a1) " +
-"  WHERE t1.date < t2.date " +
-"    AND t2.date < t3.date "
+<copy>
+graph.queryPgql(
+"  SELECT a1.ACCOUNT_NO, t1.AMOUNT, a2.ACCOUNT_NO, t2.AMOUNT " +
+"       , a3.ACCOUNT_NO, t3.AMOUNT " + 
+"  MATCH (a1)-[t1:TRANSFER]->(a2)-[t2:TRANSFER]->(a3)-[t3:TRANSFER]->(a1) " +
+"  WHERE t1.DATE < t2.DATE " +
+"    AND t2.DATE < t3.DATE "
 ).print();
 </copy>
 
@@ -188,7 +194,7 @@ The second query just adds one more transfer to the pattern (list) and could be 
 Filter customers from the graph. (cf. [Filter Expressions](https://docs.oracle.com/cd/E56133_01/latest/prog-guides/filter.html))
 
 ```
-<copy>var sg = graph.filter(new EdgeFilter("edge.label()='transfer'")); </copy>
+<copy>var sg = graph.filter(new EdgeFilter("edge.label()='TRANSFER'")); </copy>
 ```  
 Run [pagerank](https://docs.oracle.com/cd/E56133_01/latest/reference/analytics/algorithms/pagerank.html) algorithm.
 
@@ -199,10 +205,11 @@ Run [pagerank](https://docs.oracle.com/cd/E56133_01/latest/reference/analytics/a
 Show the result.
 
 ```
-<copy>sg.queryPgql(
-" SELECT a.account_no, a.pagerank " +
+<copy>
+sg.queryPgql(
+" SELECT a.ACCOUNT_NO, a.PAGERANK " +
 " MATCH (a) " + 
-" ORDER BY a.pagerank DESC "
+" ORDER BY a.PAGERANK DESC "
 ).print();
 </copy>
 
@@ -226,7 +233,7 @@ The first step is to create a subgraph that only has the accounts and the transf
 
 Filter customers from the graph.
 ```
-<copy>var sg = graph.filter(new EdgeFilter("edge.label()='transfer'")); </copy>
+<copy>var sg = graph.filter(new EdgeFilter("edge.label()='TRANSFER'")); </copy>
 ```  
 
 [Weakly connected component](https://docs.oracle.com/cd/E56133_01/latest/reference/analytics/algorithms/wcc.html) algorithm detects only one partition.
@@ -236,7 +243,7 @@ Filter customers from the graph.
 var result = analyst.wcc(sg);
 // The partition value is stored in a property named wcc
 sg.queryPgql(
-" SELECT a.wcc, COUNT(a) MATCH (a) GROUP BY a.wcc"
+" SELECT a.WCC, COUNT(a) MATCH (a) GROUP BY a.WCC"
 ).print();
 </copy>
 ```
@@ -250,7 +257,7 @@ Run a strongly connected components algorithm, SCC Kosaraju, instead.
 result = analyst.sccKosaraju(sg);
 // List partitions and number of vertices in each
 sg.queryPgql(
-" SELECT a.scc_kosaraju, COUNT(a) MATCH (a) GROUP BY a.scc_kosaraju"
+" SELECT a.SCC_KOSARAJU, COUNT(a) MATCH (a) GROUP BY a.SCC_KOSARAJU"
 ).print();
 </copy>
 
@@ -270,7 +277,7 @@ The partition (or component) id is added as a property named scc_kosaraju for us
 ```
 <copy>
 sg.queryPgql(
-" SELECT a.scc_kosaraju as component, COUNT(a.account_no), MAX(a.account_no) " +
+" SELECT a.SCC_KOSARAJU as component, COUNT(a.ACCOUNT_NO), MAX(a.ACCOUNT_NO) " +
 " MATCH (a) " +
 " GROUP BY component " +
 " ORDER BY component"
@@ -295,22 +302,25 @@ Lastly let's use Personalized PageRank to find stores that John may purchase fro
 
 Filter customers and merchants from the graph.
 ```
-<copy>var sg = graph.filter(new EdgeFilter("edge.label()='purchased'"));</copy>
+<copy>var sg = graph.filter(new EdgeFilter("edge.label()='PURCHASED'"));</copy>
 ```
 
-Add reverse edges.
+Add reverse edges. Copy, paste, and execute both sets of code cnippets below.
+
+```
+var cs = sg.<Long>createChangeSet();
+```
 
 ```
 <copy>
-var cs = sg.<Long>createChangeSet();
 var rs = sg.queryPgql("SELECT id(a), id(x) MATCH (a)-[]->(x)");
 for (var r : rs) {
-   var e = cs.addEdge(r.getLong(2),r.getLong(1)).setLabel("purchased_by");
+   var e = cs.addEdge(r.getLong(2),r.getLong(1)).setLabel("PURCHASED_BY");
 }
 sg = cs.build();
 sg.queryPgql(
-" SELECT ID(r), x.name, LABEL(r), a.account_no" +
-"  MATCH (x)-[r:purchased_by]->(a)" +
+" SELECT ID(r), x.NAME, LABEL(r), a.ACCOUNT_NO" +
+"  MATCH (x)-[r:PURCHASED_BY]->(a)" +
 " LIMIT 3"
 ).print();
 </copy>
@@ -333,7 +343,7 @@ We will focus on the account no. xxx-yyy-201 (John's account) and run PPR.
 
 ```
 <copy>
-sg.queryPgql("select id(a) match (a) where a.account_no='xxx-yyy-201'").print();
+sg.queryPgql("select id(a) match (a) where a.ACCOUNT_NO='xxx-yyy-201'").print();
 </copy>
 
 +---------------------+
@@ -343,9 +353,14 @@ sg.queryPgql("select id(a) match (a) where a.account_no='xxx-yyy-201'").print();
 +---------------------+
 ```
 
+Copy, paste, and execute both sets of code snippets below.
+```
+var vertexSet = sg.<Long>createVertexSet();
+
+```
+
 ```
 <copy>
-var vertexSet = sg.<Long>createVertexSet();
 vertexSet.addAll(3244710687574720295L);
 var ppr = analyst.personalizedPagerank(sg, vertexSet);
 </copy>
@@ -356,15 +371,15 @@ Show the result. (cf. [EXISTS and NOT EXISTS subqueries](https://pgql-lang.org/s
 ```
 <copy>
 sg.queryPgql(
-"  SELECT ID(x), x.name, x.pagerank " +
+"  SELECT ID(x), x.NAME, x.PAGERANK " +
 "  MATCH (x) " +
-"  WHERE x.type = 'merchant' " +
+"  WHERE x.TYPE = 'merchant' " +
 "    AND NOT EXISTS ( " +
 "     SELECT * " +
-"     MATCH (x)-[:purchased_by]->(a) " +
+"     MATCH (x)-[:PURCHASED_BY]->(a) " +
 "     WHERE ID(a) = 3244710687574720295 " +
 "    ) " +
-"  ORDER BY x.pagerank DESC"
+"  ORDER BY x.PAGERANK DESC"
 ).print();
 </copy>
 
@@ -391,4 +406,4 @@ graph.publish(VertexProperty.ALL, EdgeProperty.ALL) ;
 ## Acknowledgements ##
 
 - **Author** -  Jayant Sharma - Product Manager, Spatial and Graph  
-With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).
+With a little help from colleagues (Albert Godfrind and Ryota Yamanaka). And lots from Jenny Tsai. Thank you.
