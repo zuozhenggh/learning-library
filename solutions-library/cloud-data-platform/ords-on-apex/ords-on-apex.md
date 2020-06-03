@@ -182,8 +182,8 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
 ## Acknowledgements
 
-- **Author** - NATD Solution Engineering - Austin Hub (Jess Rein, Philip Pavlov)
-- **Last Updated By/Date** - Jess Rein, Solutions Engineer, March 2020
+- **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
+- **Last Updated By/Date** - Jess Rein, Cloud Engineer, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  
 

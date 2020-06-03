@@ -35,8 +35,8 @@ Please proceed to the next lab (right pane).
 
 ## Acknowledgements
 
-- **Author** - Author, Title
-- **Last Updated By/Date** - Jess Rein, Title, March 2020
+- **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
+- **Last Updated By/Date** - Jess Rein, Cloud Engineer, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  
 
