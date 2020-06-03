@@ -1,29 +1,37 @@
 
 # Oracle JSON 
 
+## Introduction
 
+This lab will show you how to use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. You pass it a JSON Merge Patch document, which specifies the changes to make to a specified JSON document. JSON Merge Patch is an IETF standard
 
-## Steps:#
+## Before You Begin
 
- **Insert and Update on JSON data**
+**What Do You Need?**
 
-  We can use standard database APIs to insert or update JSON data in Oracle Database. We can work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. We can use JSON Merge Patch to update a JSON document.
+This lab assumes you have completed the following labs:
+- Lab 1:  Login to Oracle Cloud
+- Lab 2:  Generate SSH Key
+- Lab 3:  Create Compute instance 
+- Lab 4:  Environment setup
+- Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
+  
+## Step 1: Take a count of the rows in the json table-
 
+We can use standard database APIs to insert or update JSON data in Oracle Database. We can work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. We can use JSON Merge Patch to update a JSON document.
 
-1. Take a count of the rows in the json table-
-   
-    ````
+  ````
     <copy>
     select count(*) from purchase_order;
     </copy>
-    ````
+  ````
     
-    ![](./images/insert_json.PNG " ")
+  ![](./images/insert_json.PNG " ")
 
-2. Insert a record.
+## Step 2: Insert a record.
     
          
-    ````
+  ````
     <copy>
     INSERT INTO purchase_order
   VALUES (
@@ -61,31 +69,26 @@ to_date('05-MAY-2020'),
 
     
              </copy>
-    ````
+  ````
    
 
-3. Now take the count after the insert-
+## Step 3: Verify the count after insert.
 
-       ````
+  
+  ````
     <copy>
-    Select * from purchase_order j where j.po_document.PONumber-10001;
+   Select * from purchase_order j where j.po_document.PONumber-10001;
     </copy>
-    ````
+   ````
     
     
-    ![](./images/json_select_count1.PNG " ")
+  ![](./images/json_select_count1.PNG " ")
    
-
- 
- **UPDATE**
-
-We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.
- 
- 
-3. Update Table.
-      
+  
+## Step 4: Update Table.
+  We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
    
-    ````
+   ````
     <copy>
     update purchase_order
      set    PO_DOCUMENT = json_mergepatch ( 
@@ -97,10 +100,21 @@ We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json
     where id ='A4E055B4CF4A23A4E0530900000A60C2';
 
     </copy>
-    ````
     
-    ![](./images/json_lab7_6.PNG " ")
+  ````
+    
+  ![](./images/json_lab7_6.PNG " ")
 
 
+## Acknowledgements
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists.
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021   
+
+**Issues-**
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+      
+

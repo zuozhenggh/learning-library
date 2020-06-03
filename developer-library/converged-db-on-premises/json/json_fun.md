@@ -1,15 +1,21 @@
 # Oracle JSON  
 
+## Introduction
 
+## Before You Begin
 
-## Steps:#
+**What Do You Need?**
 
+This lab assumes you have completed the following labs:
+- Lab 1:  Login to Oracle Cloud
+- Lab 2:  Generate SSH Key
+- Lab 3:  Create Compute instance 
+- Lab 4:  Environment setup
+- Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
- **Usage of JSON Functions**
+## Step 1: Customers who ordered products from specific Geo location   
 
-1. Customers who ordered products from specific Geo location   
-
-    ````
+   ````
     <copy>
     select j.PO_DOCUMENT.Reference,
     j.PO_DOCUMENT.Requestor,
@@ -20,7 +26,7 @@
     /
 
       </copy>
-    ````
+   ````
   
   ![](./images/select_count.PNG " ")
     
@@ -28,16 +34,16 @@
 
  (json_exists)**
 
-2. Find all customers who purchased an items tagged with a specific UPC
+## Step 2: Find all customers who purchased an items tagged with a specific UPC
 
-    ````
+  ````
     <copy>
     SELECT po.po_document.PONumber,po.po_document.Requestor
     FROM purchase_orderpo
     WHERE json_exists(po.po_document,'$?(@.LineItems.Part.UPCCode == 85391628927)');
 
       </copy>
-    ````
+   ````
   
    ![](./images/count_po_document.PNG " ")
     
@@ -48,9 +54,10 @@
    [UPC, short form for  Universal Product Code, is a type of code printed on retail product packaging to aid in identifying a particular item. It consists of two parts – the machine-readable barcode, which is a series of unique black bars, and the unique 12-digit number beneath it.]
 
 
-3. Find the customers who all are purchased a specific products
+## Step 3: Find the customers who all are purchased a specific products
 
-    ````
+  **3a) Based on PONumber**
+  ````
     <copy>
     select D.* from PURCHASE_ORDER p,
     JSON_TABLE(
@@ -76,13 +83,14 @@
     /
 
       </copy>
-    ````
+   ````
   
    ![](./images/specific_product1.PNG " ")
 
-4. Find Row Count.
+
+  **3b) Based on the description of the product**
     
-    ````
+  ````
     <copy>
     select D.* from PURCHASE_ORDER p,
     JSON_TABLE(
@@ -107,16 +115,16 @@
     where description='A Walk on the Moon'
     /
      </copy>
-    ````
+  ````
     
-   ![](./images/specific_product2.PNG " ")
+ ![](./images/specific_product2.PNG " ")
     
-    **Notes:**The JSON_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
+  **Notes:** The JSON_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
 
-5. How Many orders were done by a customer with minimum 7 quantity and unit price minimum 25$ in each order
+## Step 4: How Many orders were done by a customer with minimum 7 quantity and unit price minimum 25$ in each order
    For this , we will create two views as below:
     
-    ````
+   ````
     <copy>
     create or replace view PURCHASE_ORDER_MASTER_VIEW
     AS SELECT M.* FROM PURCHASE_ORDER p,
@@ -141,16 +149,7 @@
     INSTRUCTIONS VARCHAR2(2048 CHAR) PATH '$.SpecialInstructions') m
     /
 
-      </copy>
-    ````
-  
-  ![](./images/json_fun_view1.PNG " ")
-
-6. Create View.
-   
-    ````
-    <copy>
-   create or replace view PURCHASE_ORDER_DETAIL_VIEW
+    create or replace view PURCHASE_ORDER_DETAIL_VIEW
     AS
     SELECT D.* FROM PURCHASE_ORDER p,
    JSON_TABLE(
@@ -185,33 +184,29 @@
     ) d
      /
 
-     </copy>
-    ````
-  
-  ![](./images/json_fun_view2.PNG " ")  
-    
-    
-7. Run select query  
-
-    ````
-    <copy>
-    select PO_NUMBER, REFERENCE, INSTRUCTIONS, ITEMNO, UPCCODE, DESCRIPTION, QUANTITY, UNITPRICE
+  select PO_NUMBER, REFERENCE, INSTRUCTIONS, ITEMNO, UPCCODE, DESCRIPTION, QUANTITY, UNITPRICE
     from PURCHASE_ORDER_DETAIL_VIEW d
    where REQUESTOR = 'Steven King'
    and QUANTITY  > 7
    and UNITPRICE > 25.00
     /
+
       </copy>
-    ````
+  ````
   
+  ![](./images/json_fun_view1.PNG " ")
+  ![](./images/json_fun_view2.PNG " ")  
   ![](./images/lab5_snap3.PNG " ")    
+    
+ 
 
    **Notes** The above statements show how, once the relational views have been created, the full power of SQL can now be applied to JSON content, without requiring any knowledge of the structure of the JSON or how to manipulate JSON using SQL.
 
-8. Customer Purchase History Details  (with PRETTY)
+## Step 5: Customer Purchase History Details 
+**5a)With PRETTY**
     
 
-    ````
+  ````
     <copy>
     select JSON_QUERY(PO_DOCUMENT,'$.LineItems[0]' PRETTY) LINEITEMS
      from PURCHASE_ORDER p
@@ -219,15 +214,13 @@
      /
        
        </copy>
-    ````
+  ````
   
   ![](./images/json_fun_5a.PNG " ")  
 
-
-
-9. Customer Purchase History Details  (without PRETTY)
+**5b)Without PRETTY**
    
-    ````
+  ````
     <copy>
     select JSON_QUERY(PO_DOCUMENT,'$.LineItems[0]') LINEITEMS
      from PURCHASE_ORDER p
@@ -237,26 +230,28 @@
 
        
        </copy>
-    ````
+  ````
   
   ![](./images/json_fun_5b.PNG " ")  
 
-10. 
-     ````
-    <copy>
-    select JSON_QUERY(PO_DOCUMENT,'$.LineItems[0]') LINEITEMS
-     from PURCHASE_ORDER p
-    where JSON_VALUE(PO_DOCUMENT,'$.Requestor') = 1600
-     /
-
-       
-       </copy>
-    ````
-  
-  ![](./images/json_fun_5c.PNG " ")  
- 
+    
    **Notes:** JSON-QUERY finds one or more specified JSON values in JSON data and returns the values in a character string. expr. Use this clause to specify the JSON data to be evaluated. For expr , specify an expression that evaluates to a text literal.
 
    JSON-VALUE selects a scalar value from JSON data and returns it as a SQL value. You can also use json-value to create function-based B-tree indexes for use with JSON data — see Indexes for JSON Data. Function json_value has two required arguments and accepts optional returning and error clauses.
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## Acknowledgements
+
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists.
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021   
+
+**Issues-**
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+      
+
+      
+
+
+
