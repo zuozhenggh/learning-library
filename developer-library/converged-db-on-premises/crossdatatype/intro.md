@@ -16,6 +16,7 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
+
 **Issues-**
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
      
