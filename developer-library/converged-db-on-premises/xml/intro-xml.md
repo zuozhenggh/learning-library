@@ -27,7 +27,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
  [![xml Datatype for Oracle Converged Database](./images/xml_db_image.PNG " ")](https://www.oracle.com/technetwork/database-features/xmldb/overview/xmldb-ppt-12cr1-1964805.pdf)
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)
-- [I have an account from SSWorkshop](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
+- [I have an account from Livelabs](https://oracle.github.io/learning-library/data-management-library/database/multitenant/livelabs/index.html)
 
 
 ## Get an Oracle Cloud Trial Account for Free!

@@ -10,8 +10,10 @@
 
 ### Lab Prerequisites
 This lab assumes you have completed the following labs:
-* Lab: [Login to Oracle Cloud]()
-* Lab: [Provision an Autonomous Database]()
+[Login to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) and [Provision ADB] (?lab=lab-2-provision-adb)
+* Lab: [Login to Oracle Cloud](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-1-login-oracle-cloud)
+* Lab: [Provision an Autonomous Database](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-2-provision-adb)
+* Lab: [Connect to ADB with SQL Dev Web](https://oracle.github.io/learning-library/developer-library/rest-services-for-adb/livelabs/?lab=lab-3-connect-to-adb-with-sql-dev-web)
 
 A Source database is needed. You may already have Virtual Box on your laptop, a database in your data centre, a Docker container running Oracle, and so on.
 
@@ -99,7 +101,7 @@ Service: atplab_high (dbname_high)
 4. Connect to the ADB Instance and enter the password (if you did not save it with the connection)
 ![](../../images/SQLDeveloper_connect_ATP_2.png.png)
 
-5. 
+5.
 
 ## Step 1 Connect SQL Developer to your local Instance
 1. Start SQLDeveloper on your Compute Instance
