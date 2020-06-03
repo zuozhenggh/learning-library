@@ -92,3 +92,5 @@ $ terraform destroy --var-file=path_to_provider.auto.tfvars
 
 ## Useful Links
 [Autonomous Overview](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm)
+
+[Autonomous Terraform Resource](https://www.terraform.io/docs/providers/oci/r/database_autonomous_database.html)

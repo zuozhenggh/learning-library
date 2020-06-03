@@ -381,4 +381,4 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Last Updated By/Date** - Jess Rein, Cloud Engineer, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 

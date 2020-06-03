@@ -22,7 +22,10 @@ Go to [python.org](https://www.python.org/downloads/release/python-370/) and dow
 
 ## Prepare Terraform Provider Values
 
-In order to prepare provider.auto.tfvars file, you will need the following:
+**Provider.auto.tfvars** is located in the root directory of thunder. This file is used in order to be able to make API calls in OCI, hence it will be needed by all terraform automations.
+This file can be used by all the terraform automations in Thunder, by specifying it with **--var-file** flag when are you are *planning / applying / destroying* the infrastructure. If you don't want to use the **--var-file** flag when running the code, you can add it to the root directory of the example that you want to run. 
+
+In order to prepare **provider.auto.tfvars** file, you will need the following:
 - Tenancy OCID
 - User OCID
 - Local Path to your private oci api key
@@ -97,3 +100,21 @@ provider_oci = {
   region        = "us-ashburn-1"
 }
 ```
+
+## Understanding terraform structure
+
+Directory structure for Thunder, is shown below:
+
+![Thunder Structure](../images/thunder-structure.png)
+
+In the **modules** folder, there are different terraform modules used by all of the automations. Every module has the following structure:
+- **main.tf** -> Module logic (which components are going to be created and how are they going to be linked)
+- **variables.tf** -> Module variables (The parameters of the module)
+- **outputs.tf** -> Module outputs (Outputs can be used to print different resource values for a resource type, or to create links between other modules at instantiation)
+
+In the **examples** folder, there are different instantions based on the modules described above.
+Every terraform based examples will have the following structure:
+- **main.tf** -> Example logic (which modules are going to be instantiated and how are they going to be linked) 
+- **variables.tf** -> Example variables (the variables used to instantiate the modules)
+- **terraform.tfvars** -> Values for all the variables (this file will define how your infrastructure will look like. You can add / delete / modify values for all of the variables and based on those changes you will be able to achieve your desired infrastrucutre)
+- **outputs.tf** -> Example outputs (prints different values of resources to the console.)

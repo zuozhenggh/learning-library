@@ -5,8 +5,6 @@ This project will build GlusterFS infrastructure using terraform both georeplica
 
 ## Prerequisites
 * Terraform v0.12.12 or greater <https://www.terraform.io/downloads.html>
-
-## Assumptions
 * The networking components should already exist (VCN, route tables, etc.)
 * The compartment(s) should already exist
 * You will need to have ssh connectivity from the instance you are running the code to the glusterfs nodes that will be provisioned by it

@@ -1,28 +1,21 @@
 {
-  "workshop": {
-    "title": "Webcast – Mobile and Digital Assistant Labs",
-    "description":
-      "Welcome to this **Mobile and Digital Assistant** Labs. We will walk you through the process of developing mobile applications using Visual Builder Cloud Services, and leveraging Oracle Digital Assistant capabilities to build your first chatbot.",
-    "theme": "default",
-    "labs": [
-      {
-        "number": "0",
-        "filename": "README.md",
-        "title": "Getting Started",
-        "description": "Set up your environment"
-      },
-      {
-        "number": "50",
-        "filename": "applicationdevelopment-labguide.md",
-        "title": "Lab 1: Visual Builder Cloud Service",
-        "description": "Learn how to develop your website and mobile app using our low code solutions"
-      },
-      {
-        "number": "100",
-        "filename": "oda-labguide.md",
-        "title": "Lab 2: Oracle Digital Assistant",
-        "description": "Learn how to build your first chatbot in minutes"
-      }
+    
+    "tutorials": [
+        {            
+            "title": "Getting Started",
+            "filename": "./gettingstarted.md"
+        },
+
+        {            
+            "title": "Visual Builder Cloud Service",
+            "filename": "./vbcs-lab/applicationdevelopment-labguide.md"
+        },
+
+        {            
+            "title": "Digital Assistant",
+            "filename": "./oda-lab/oda-labguide.md"
+        }
+
     ]
-  }
 }
+

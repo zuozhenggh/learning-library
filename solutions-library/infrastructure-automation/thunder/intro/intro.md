@@ -10,7 +10,6 @@ In the span of a few days or hours, the code examples provided here establish an
 Why bother with creating all the infrastructure manually, or creating all the terraform code from scratch when the only thing that you will have to modify in order to achieve the desired infrastructure is a **terraform.tfvars** file?
 
 Solutions in this framework are split between multiple examples containing both terraform and python automations.
-They are structured in the following way:
 The examples are organized as follows:
 
 <table>
@@ -98,10 +97,35 @@ The examples are organized as follows:
     <td>-</td>
     <td>-</td>
   </tr>
+    <tr>
+    <td><a href="?lab=lab-9-custom-images">custom images</td>
+    <td>Contains custom images examples</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tr>
+    <tr>
+    <td><a href="?lab=lab-10-dev-tools">developer tools</td>
+    <td>Contains developer tools examples</td>
+    <td>OKE</td>
+    <td>API Gateway</td>
+    <td>Functions</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
 </table>
 
 ## Acknowledgements
 
-**Authors/Contributors** - Flavius Dinu, Ionut Sturzu, Ionut Irimia, Cristian Cozma, Marius Ciotir, Sorin Ionescu, Laura Paraschiv, Travis Mitchell, Thomas Liakos 
+**Authors/Contributors** - Flavius Dinu, Ionut Sturzu, Ionut Irimia, Cristian Cozma, Marius Ciotir, Sorin Ionescu, Laura Paraschiv, Bogdan Darie, Emanuel Grama, Travis Mitchell, Thomas Liakos 
 
 **Last Updated By/Date** - Flavius Dinu, April 2020

@@ -1,6 +1,15 @@
-# Predicting Flight Delays with Oracle Machine Learning & Autonomous Data Warehouse Cloud Service
+# Oracle’s Predictive Flight Delays Workshop 
 
-## Introduction
+Welcome to the workshop on Predicting Flight Delays.
+
+### Workshop Highlights
+- Provision an Autonomous Data Warehouse (ADW) Instance
+- Build and Apply Machine Learning Models in Oracle Analytics Cloud (OAC)
+- Build Machine Learning models in OAC which is “no-code” development platform
+- Build and Apply Machine Learning Models in Oracle Machine Learning Tool (OML) which is built-in tool in ADW 
+- Make Visualization using OAC 
+
+### Workshop Overview
 
 Welcome to **Predicting Flight Delays with Oracle Machine Learning & Autonomous Data Warehouse Cloud Service** workshop. This workshop will walk you through the process of building flight delay prediction model enabling travel and transportation industry to supply reliable travel plans to passengers by predicting and preparing against unforeseeable delays caused by factors like weather, maintenance, or airport conditinos. 
 
@@ -10,34 +19,13 @@ To learn more about this workshop please watch the video below.
 
 <a href="https://www.youtube.com/watch?v=wBkXHoWiHTw" target="_video">Workshop Overview</a>
 
+## Get an Oracle Cloud Trial Account for Free!
+If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
+- $300 of free credits good for up to 3500 hours of Oracle Cloud usage
+- Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
+- Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
 
-**_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
+Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
 
-## Objectives
-- Provision an Autonomous Data Warehouse (ADW) Instance
-- Transfer Data to the ADW Instance
-- Build and Apply Machine Learning Models in Oracle Analytics Cloud (OAC)
-- Connect the OAC instance to the ADW instance to access the datasets
-- Build Machine Learning models in OAC which is “no-code” development platform 
-- Build and Apply Machine Learning Models in Oracle Machine Learning Tool (OML) which is built-in tool in ADW 
-- Make Visualization using OAC 
-
-## Required Artifacts
-- The following lab requires an Oracle Public Cloud account that will either be supplied by your instructor, or can be obtained through the following steps.
-
-# Acquire Oracle Cloud Account and Sign-in
-
-### Step 1: Acquire an Oracle Cloud Trial or Workshop Account
-- Bookmark this page for future reference.
-
-- Please click on the URL to create your <a class=“trial-link”  href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ex:tb:::RC_NAMK190227P00084:PredictDemandML_ADW_HOL&SC=:ex:tb:::RC_NAMK190227P00084:PredictDemandML_ADW_HOL&pcode=NAMK190227P00084" target="trial">Free Account</a> and complete all the required steps. When you complete the registration process you'll receive a $300 credit that will enable you to complete the lab for free. Additionally, you'll have 1000s of hours left over to continue to explore the Oracle Cloud.
-
-- Soon after requesting your trial you will receive the following email. You may begin working on this lab once you receive this email.
-
-![](images/common/cloud_ready.jpg)
-
-### Step 2: Navigate to Lab 100
-- Begin working on [Lab 100](LabGuide100.md)
-- You can see a list of Lab Guides by clicking on the Menu Icon in the upper left corner of the browser window. You're now ready to continue with Lab 100.
-
- ![](images/common/WorkshopMenu.png)
+### Issues?
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.

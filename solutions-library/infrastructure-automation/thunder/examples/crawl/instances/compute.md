@@ -1,7 +1,9 @@
 # Compute Examples
 
 ## Introduction
+
 Oracle Cloud Infrastructure Compute offers significant price-performance and control improvements compared to on-premise data centers, while providing the elasticity and cost savings of the public cloud. Oracle has a longstanding reputation for providing technologies that empower enterprises to solve demanding business problems—and Oracle Cloud Infrastructure is the first cloud that's purpose-built to enable enterprises to run business-critical production workloads.
+
 
 ## Description
 
@@ -409,4 +411,10 @@ $ terraform destroy --var-file=path_to_provider.auto.tfvars
 
 [Compute Overview](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm)
 
+[Terraform Compute Resource](https://www.terraform.io/docs/providers/oci/r/core_instance.html)
+
 [Block Storage Overview](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm)
+
+[Terraform Block Storage Resource](https://www.terraform.io/docs/providers/oci/r/core_volume.html)
+
+[Terraform Block Volume Attachment Resource](https://www.terraform.io/docs/providers/oci/r/core_volume_attachment.html)
