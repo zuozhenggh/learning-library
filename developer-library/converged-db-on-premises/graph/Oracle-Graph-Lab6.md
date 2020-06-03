@@ -1,15 +1,27 @@
 
 # Oracle Graph 
 
-<br>
-**Loading the Graph into memory**
-
-To load the graph into memory and run PGQL queries against the in-memory graph instead of the graph in the database. 
+## Introduction
+This lab will show you how to load the graph into memory and run PGQL queries against the in-memory graph. 
 
 1.	define the graph to be loaded into memory 
 2.	specify where to load the graph from and which graph
 3.	specify which vertex and edge properties to load and the Java types for them
 
+## Before You Begin
+
+This lab assumes you have completed the following labs:
+- Lab 1:  Login to Oracle Cloud
+- Lab 2:  Generate SSH Key
+- Lab 3:  Create Compute instance 
+- Lab 4:  Environment setup
+- Note :  Below steps are pre-configured in the image.
+- The Oracle Graph Server and Graph Client must be installed.
+- Max string size parameter should be set to extended.
+- AL16UTF16 (instead of UTF8) must be specified as the NLS NCHAR CHARACTERSET.
+- AL32UTF8 (UTF8) should be the default character set, but AL16UTF16 must be the NLS NCHAR CHARACTERSET.
+
+## Step 1: Loading the Graph into memory
 
 ````
 <copy>
@@ -56,7 +68,7 @@ var graph = session.readGraphWithProperties(pgxConfig.get()) ;
 
 Run similar PGQL queries against the in-memory graph 
 
-<br>
+
 **Scenario 1 : Which stores did customer with id 202 order from?**
 
 ````
@@ -67,8 +79,8 @@ session.queryPgql("select s.STORE_NAME from oe_sample_graph match (c:CUSTOMERS)-
  
 ![](./images/IMGG17.PNG)
 
-<br>
-**Scenario 2 : what products did customer 202 buy?**
+
+**Scenario 2 : What products did customer 202 buy?**
 
 ````
 <copy>
@@ -79,7 +91,7 @@ session.queryPgql("select s.STORE_NAME, o.ORDER_ID, p.PRODUCT_NAME from oe_sampl
 ![](./images/IMGG18.PNG)
 
 
-<br>
+
 **Scenario 3 : List the first 50 other customers who ordered from the same store(s) as customer 202**
 
 ````
@@ -91,7 +103,7 @@ session.queryPgql("Select c.CUSTOMER_ID, c.FULL_NAME from oe_sample_graph match 
 ![](./images/IMGG19.PNG)
 
 
-<br>
+
 **Scenario 4 : List the first 30 products that customers ordered from the same stores as customer 202**
 
 ````
@@ -103,7 +115,7 @@ session.queryPgql("select c2.FULL_NAME, p2.PRODUCT_NAME from oe_sample_graph mat
 ![](./images/IMGG20.PNG)
 
 
-<br>
+
 **Scenario 5 : list the 10 customers who had the most product purchases in common with customer 202, see definition of qStr above or just enter qStr in the shell to see its content**
 
 ````
@@ -128,6 +140,17 @@ graph.publish(VertexProperty.ALL, EdgeProperty.ALL) ;
 ````
 
 ![](./images/g6.png)
+
+## Acknowledgements
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021
+
+**Issues-**
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+
 
 
 

@@ -25,36 +25,44 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {         
-            "title": "The eShop Story",
-            "description": "Env Setup",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
-            "filename": "../../nodejs/env-setup-nodejs.md"
-        },
-        {         
             "title": "Lab 3:  Environment Setup",
             "description": "Env Setup",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "../../nodejs/env-setup-nodejs.md"
+            "filename": "../../nodejs/setup.md"
         },
         {         
-            "title": "Lab 4:  All About the Application",
+            "title": "The eShop Story",
+            "description": "Env Setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../nodejs/setup.md"
+        },
+        {         
+            "title": "Introduction to Node.js",
             "description": "Introduction to Node.js Workshop",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "../../nodejs/intro-nodejs.md"
-        },     
+            "filename": "../../nodejs/intro.md"
+        }, 
+        {         
+            "title": "Lab 4: Node.js Environment Setup",
+            "description": "Env Setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../nodejs/setup.md"
+        },    
         {         
             "title": "Lab 5:  Node.js Rest API",
             "description": "",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "../../nodejs/nodejs_lab.md"
+            "filename": "../../nodejs/postman.md"
         }
                  ]
 }

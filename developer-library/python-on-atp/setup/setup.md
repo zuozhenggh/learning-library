@@ -204,18 +204,18 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/040.png " ")
 
-9. Import the data.  Paste this into your worksheet window.  The ONLY THING you need to change is the object storage file location.  
+9. Import the data.  Paste this into your worksheet window.   
   ```
-  <copy>
-  set scan off
-  set serveroutput on
-  set escape off
-  DECLARE
+<copy>
+set scan off
+set serveroutput on
+set escape off
+DECLARE
     s varchar2(1000); 
     h1 number;
     errorvarchar varchar2(100):= 'ERROR';
     tryGetStatus number := 0;
-  begin
+begin
     h1 := dbms_datapump.open (operation => 'IMPORT', job_mode => 'SCHEMA', job_name => 'IMPALPHA', version => 'COMPATIBLE'); 
     tryGetStatus := 1;
     dbms_datapump.set_parameter(h1, 'TRACE', 167144-96) ; 
@@ -226,28 +226,28 @@ Terraform provides a reusable process for creating infrastructure.  In some case
     dbms_datapump.add_file(handle => h1, filename => 'IMPORT-'||to_char(sysdate,'hh24_mi_ss')||'.LOG', directory => 'DATA_PUMP_DIR', filetype=>DBMS_DATAPUMP.KU$_FILE_TYPE_LOG_FILE); 
     dbms_datapump.set_parameter(handle => h1, name => 'KEEP_MASTER', value => 1); 
     dbms_datapump.metadata_filter(handle => h1, name => 'SCHEMA_EXPR', value => 'IN(''ALPHA'')'); 
-  -----------------------------------------------------
-    dbms_datapump.add_file(handle => h1, filename => '&lt;object storage file location&gt;', directory => 'PY4DEV_TOKEN', filetype =&gt; 5);
-  -----------------------------------------------------
+-----------------------------------------------------
+    dbms_datapump.add_file(handle => h1, filename => '&lt;object storage file location&gt;', directory => 'PY4DEV_TOKEN', filetype => 5);
+-----------------------------------------------------
     dbms_datapump.set_parameter(handle => h1, name => 'INCLUDE_METADATA', value => 1); 
     dbms_datapump.set_parameter(handle => h1, name => 'DATA_ACCESS_METHOD', value => 'AUTOMATIC'); 
     dbms_datapump.set_parameter(handle => h1, name => 'SKIP_UNUSABLE_INDEXES', value => 0);
     dbms_datapump.start_job(handle => h1, skip_current => 0, abort_step => 0); 
     dbms_datapump.detach(handle => h1); 
     errorvarchar := 'NO_ERROR'; 
-  EXCEPTION
+EXCEPTION
     WHEN OTHERS THEN
     BEGIN 
-      IF ((errorvarchar = 'ERROR')AND(tryGetStatus=1)) THEN 
-        DBMS_DATAPUMP.DETACH(h1);
+        IF ((errorvarchar = 'ERROR')AND(tryGetStatus=1)) THEN 
+            DBMS_DATAPUMP.DETACH(h1);
         END IF;
-      EXCEPTION 
-      WHEN OTHERS THEN 
+    EXCEPTION 
+    WHEN OTHERS THEN 
         NULL;
-      END;
-      RAISE;
-  END;
-  /</copy>
+    END;
+    RAISE;
+END;
+/</copy>
   ```
 
   ![](images/041.png " ")
