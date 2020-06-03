@@ -174,7 +174,7 @@ COMMIT;
 
 ![Create purcahsed table](../images/ADB_SDW_C360_CreatePurchasedTable.png)
 
-## Create and populate the Transfer table
+### Create and populate the Transfer table
 
 Clear the SQL Worksheet and copy, paste, and run the following SQL script.
 

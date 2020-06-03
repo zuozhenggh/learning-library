@@ -3,13 +3,14 @@
 Now that the tables are created and populated let's create a graph represnetation of them.
 
 The steps are:
+- Modify the graph server configuration to disable TLS (SSL) for this lab
 - Start the graph server
 - Start a client (JShell) that connects to the server
 - Setup a PGQL connection to the database
 - Use PGQL DDL (CREATE PROPERTY GRAPH) to instantiate a graph
 
 
-### Start the graph server
+### Modify the graph server config file
 
 SSH into the compute instance where you installed the graph server.  
 Switch to the user account (e.g. `oracle`) that has the database wallet and will run the server and client instances. 
@@ -19,6 +20,21 @@ Switch to the user account (e.g. `oracle`) that has the database wallet and will
 su - oracle 
 </copy>
 ```
+
+Then edit the `/etc/oracle/graph/server.conf` file. 
+```
+<copy>
+vi /etc/oracle/graph/server.conf
+</copy>
+```
+
+Change the line  
+` "enable_tls": true,`
+to  
+` "enable_tls": false,`  
+Save the file and exit.
+
+### Start the graph server
 
 Check that JAVA_HOME and JAVA11_HOME env variables are set and correct. That is, JAVA_HOME points to JDK1.8 and Java11_HOME to jdk1.11.  
 Then, as the `oracle` user, start the server using 
@@ -55,12 +71,12 @@ Then start a client shell instance that connects to the server.
 Enter the following sets of commands once the JShell has started and is ready.
 
 First setup the database connection. Enter the following into the JShell.  
-Replace <db_tns_name> with the appropriate database service name in the tnsnames.ora file of the wallet (e.g. `db_adb_af_high`).  
-Replace <wallet_location> with the full path to the directory which has the unzipped wallet (e.g. `/home/oracle/wallets`).
+Replace {db_tns_name} with the appropriate database service name in the tnsnames.ora file of the wallet (e.g. `db_adb_af_high`).  
+Replace {wallet_location} with the full path to the directory which has the unzipped wallet (e.g. `/home/oracle/wallets`).
 
 ```
 // Copy the following line too but replace the placeholders with the correct values
-var jdbcUrl = "jdbc:oracle:thin:@<db_tns_name>?TNS_ADMIN=<wallet_location>";
+var jdbcUrl = "jdbc:oracle:thin:@{db_tns_name}?TNS_ADMIN={wallet_location}";
 <copy>
 var user = "customer_360";
 var pass = "Welcome1_C360";
@@ -126,17 +142,24 @@ pgql.prepareStatement(cpgStmtStr).execute();
 <copy>
 ```
 
-The create graph process can take 3-4 minutes depending on various factors such as netwrok bandwidth and database load.
+The create graph process can take 3-4 minutes depending on various factors such as network bandwidth and database load.
 
 ### Check the newly created graph
 
 Check that the graph was created. Copy, paste, and run the following statements in the JShell.
 
+Copy the following code, paste, and execute it in the JShell.
+
 ```
-<copy>
+
 // create a helper method for preparing, executing, and printing the results of PGQL statements
 Consumer<String> query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
+```
 
+Then copy, paste, and execute the following.
+
+```
+<copy>
 // query the graph 
 
 // what are the edge labels i.e. categories of edges
