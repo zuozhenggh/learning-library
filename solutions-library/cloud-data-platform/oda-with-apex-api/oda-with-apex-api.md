@@ -9,6 +9,11 @@
 
 In this lab, you will learn how to navigate to an Oracle Digital Assistant instance and design a Skill in which you will implement your APIs from the APEX portion of this workshop.  These APIs will be utilized in order to make REST calls to the Autonomous Data Warehouse to get information on store predictions.  These REST API calls will be tested through interacting with the chatbot dialogue.
 
+
+*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
+[![Lab 600 Walkthrough Video](./images/lab600tn.png " ")](https://www.youtube.com/watch?v=I5prg0Ucso4 "Lab 600 Walkthrough Video - Click to Watch!")
+
+
 ### Objectives
 
 -   Learn how to provision an Oracle Digital Assistant (ODA) instance
@@ -149,7 +154,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 
 ## Acknowledgements
 
-- **Author** - NATD Solution Engineering - Austin Hub (Jess Rein, Philip Pavlov)
-- **Last Updated By/Date** - Jess Rein, Solutions Engineer, June 2020
+- **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
+- **Last Updated By/Date** - Jess Rein, Cloud Engineer, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 

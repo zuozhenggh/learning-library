@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d3b9d82949cc156548ad5a7e93cd5f0e4e7b508d
 # Workshop Introduction and Overview
 
 ## Introduction to Oracle Converged Database
