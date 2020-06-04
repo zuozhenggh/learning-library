@@ -9,14 +9,6 @@
             "filename": "../../graph/intro.md"
         },
         {         
-            "title": "Brief note on Property Graph",
-            "description": "Which products did customer 40202 buy from which store(s)?",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
-            "filename": "../../graph/Oracle-Graph-PropertyGraph.md"
-        },
-        {         
             "title": "Property Graph  Environment setup",
             "description": "Which products did customer 40202 buy from which store(s)?",
             "partnumber": "Ennnnn_01",

@@ -1,12 +1,30 @@
 # Oracle Cross Datatype
 
 ## Introduction
-Fill in introduction
 
-## Step 1: Product, those sold with payment mode – Cash on Delivery
+This lab will show you how to use cross data functions.
+- JSON with Relational 
+- XML with Relational 
+- JSON with Spatial
 
-1. 
-    ````
+## Before You Begin
+
+**What Do You Need?**
+
+This lab assumes you have completed the following labs:
+- Lab 1:  Login to Oracle Cloud
+- Lab 2:  Generate SSH Key
+- Lab 3:  Create Compute instance 
+- Lab 4:  Environment setup
+
+
+## Step 1: JSON with Relational 
+
+ JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data
+
+ **Product, those sold with payment mode – Cash on Delivery**
+**    
+  ````
     <copy>
     select D.*
       from PURCHASE_ORDER p,
@@ -33,29 +51,31 @@ Fill in introduction
     where "Special Instructions"='COD'
     /
     </copy>
-    ````
+  ````
   
   ![](./images/cd1.png " ") 
 
 
-## Step 2: Purchase order history count based on City**
+
+
+**Purchase order history count based on City**
 
   ![](./images/cd2.png " ") 
 
   ````
   <copy>
-  select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by ship_to_city;
+select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by ship_to_city;
   </copy>
   ````
   
   ![](./images/cd3.png)
 
-## Step 3: Relational to XML
+## Step 2: Relational to XML
 
-**XMLTABLE**: Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
+**XMLTABLE:** Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
 
-    ````
+  ````
     <copy>
     CREATE TABLE purchaseorder_table (reference           VARCHAR2(28),
                                       requestor           VARCHAR2(48),
@@ -70,12 +90,14 @@ Fill in introduction
                       specialinstructions VARCHAR2(2048));
 
     </copy>
-    ````
+   ````
       
-    ![](./images/cd4.png " ") 
+   ![](./images/cd4.png " ") 
 
 
-    ````
+  **Insert XML data**
+
+  ````
     <copy>
     INSERT INTO purchaseorder_table (reference, requestor, userid, costcenter, shiptoname, street,city,state,zipCode,country,specialinstructions)  SELECT t.reference, t.requestor, t.userid, t.costcenter, t.shiptoname, t.street, t.city,t.state,t.zipCode,t.country, t.specialinstructions    FROM purchaseorder p,
     XMLTable('/PurchaseOrder' PASSING p.OBJECT_VALUE
@@ -91,12 +113,13 @@ Fill in introduction
     country             VARCHAR2(512)  PATH 'ShippingInstructions/Address/country',
     specialinstructions VARCHAR2(2048) PATH 'Special_Instructions') t;
     </copy>
-    ````
+  ````
     
-    ![](./images/cd5.png)
+  ![](./images/cd5.png)
 
+  **Create table**
 
-    ````
+  ````
     <copy>
     CREATE TABLE purchaseorder_lineitem (reference  VARCHAR2(28),
                                         lineno      NUMBER(10), 
@@ -105,15 +128,16 @@ Fill in introduction
                                         quantity    NUMBER(10),
                                         unitprice   NUMBER(12,2));
     </copy>
-    ````
+ ````
     
-    ![](./images/cd6.png)
+  ![](./images/cd6.png)
 
-    ````
+   **Insert XML Data**
+   ````
     <copy>
-    
+ 
 
-    INSERT INTO purchaseorder_lineitem (reference, lineno, upc, description, quantity, unitprice)
+     INSERT INTO purchaseorder_lineitem (reference, lineno, upc, description, quantity, unitprice)
     SELECT t.reference, li.lineno, li.upc, li.description, li.quantity, li.unitprice
         FROM purchaseorder p,
             XMLTable('/PurchaseOrder' PASSING p.OBJECT_VALUE
@@ -126,17 +150,19 @@ Fill in introduction
                               quantity    NUMBER(10)    PATH 'Quantity',
                               unitprice   NUMBER(12,2)  PATH 'Part/UnitPrice') li;
     </copy>
-    ````
+   ````
 
-    ![](./images/cd7.png)
+  ![](./images/cd7.png)
 
-    ![](./images/cd8.png)
+  ![](./images/cd8.png)
 
-    ![](./images/cd9.png)
+  ![](./images/cd9.png)
 
-<br>
 
-**Scenario 3 : Customers who ordered quantity of items more than 5 and unit price is greater than $15**
+
+**Scenario**
+Customers who ordered quantity of items more than 5 and unit price is greater than $15
+
 
 ````
 <copy>
@@ -146,9 +172,9 @@ select * from purchaseorder_table a join purchaseorder_lineitem b on a.REFERENCE
 
 ![](./images/cd10.png)
 
-<br>
 
-**Scenario 4 : History of customers who ordered for a specific products**
+
+**Scenario: SHistory of customers who ordered for a specific products**
 
 ````
 <copy>
@@ -157,9 +183,9 @@ select * from purchaseorder_table a join purchaseorder_lineitem b on a.REFERENCE
 ````
 ![](./images/cd11.png)
 
-<br>
 
-## JSON to Spatial
+
+## Step 3: JSON with Spatial
 
 GeoJSON Objects: Geometry, Feature, Feature Collection
 
@@ -291,15 +317,19 @@ SDO_GEOMETRY),
 
 This is the end of the lab.
 
+
+
 ## Acknowledgements
 
-- **Authors/Contributors** - Enter author  name
-- **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, May 2020
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists.
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021   
 
-### Issues?
+**Issues-**
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
-
-
+     
 
 
 
