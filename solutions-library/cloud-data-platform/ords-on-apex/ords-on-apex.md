@@ -9,6 +9,11 @@
 
 This lab walks you through the steps to enabling Oracle Restful Data Services (ORDS) with APEX in order to call and create APIs.
 
+
+*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
+[![Lab 300 Walkthrough Video](./images/lab300tn.png " ")](https://www.youtube.com/watch?v=Zq0qEgF0bMU "Lab 300 Walkthrough Video - Click to Watch!")
+
+
 ### Objectives
 -   Learn how to enable Oracle Restful Data Services (ORDS) with APEX
 -   Learn how to import SQL queries as APIs in APEX
