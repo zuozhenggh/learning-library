@@ -9,7 +9,7 @@
             "filename": "./../../intro/intro-ziplab.md"
         },
         {
-            "title": "Lab 0: Login to Oracle Cloud",
+            "title": "Login to Oracle Cloud",
             "description": "Login to Oracle Cloud",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
@@ -17,7 +17,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
-            "title": "Lab 1: Provision an ADW instance",
+            "title": "Lab 1: Provision an ADW Instance",
             "description": "Provision a new ADW instance and connect to the database",
             "partnumber": "Ennnnn_01",
             "publisheddate": "04/29/2020",
