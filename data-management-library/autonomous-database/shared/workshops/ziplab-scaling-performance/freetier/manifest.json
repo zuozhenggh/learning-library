@@ -22,10 +22,10 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "04/29/2020",
             "contentid": "12nnnn",
-            "filename": "./../../../adb-provision-free/adb-provision-free.md"
+            "filename": "./../../../adb-provision/adb-provision.md"
         },
         {
-            "title": "Lab 9: Scaling and Performance",
+            "title": "Lab 3: Scaling and Performance",
             "description": "Scaling and Performance in Your Autonomous Database",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",

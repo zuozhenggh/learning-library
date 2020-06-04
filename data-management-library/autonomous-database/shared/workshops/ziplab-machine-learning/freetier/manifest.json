@@ -22,10 +22,10 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "04/29/2020",
             "contentid": "12nnnn",
-            "filename": "./../../../adb-provision-free/adb-provision-free.md"
+            "filename": "./../../../adb-provision/adb-provision.md"
         },
         {
-            "title": "Lab 4: Loading Data",
+            "title": "Lab 3: Loading Data",
             "description": "Load data into ADB",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
@@ -33,7 +33,7 @@
             "filename": "./../../../adb-loading/adb-loading.md"
         },
         {
-            "title": "Lab 10: Getting Started with Machine Learning Notebooks",
+            "title": "Lab 4: Getting Started with Machine Learning Notebooks",
             "description": "Using Oracle Machine Learning Notebooks",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
@@ -41,7 +41,7 @@
             "filename": "./../../../adw-oml-notebooks/adw-oml-notebooks.md"
         },
         {
-            "title": "Lab 11: Building a Simple Machine Learning Algorithm",
+            "title": "Lab 5: Building a Simple Machine Learning Algorithm",
             "description": "Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",

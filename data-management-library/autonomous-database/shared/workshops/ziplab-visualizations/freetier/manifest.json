@@ -22,7 +22,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "04/29/2020",
             "contentid": "12nnnn",
-            "filename": "./../../../adb-provision-free/adb-provision-free.md"
+            "filename": "./../../../adb-provision/adb-provision.md"
         },
         {
             "title": "Lab 3: Working with Free Sample Data Sets",
@@ -41,7 +41,7 @@
             "filename": "./../../../adb-loading/adb-loading.md"
         },
         {
-            "title": "Lab 6: Visualizing Your Data",
+            "title": "Lab 5: Visualizing Your Data",
             "description": "Create Rich Data Visualizations",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
