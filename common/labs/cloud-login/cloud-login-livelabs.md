@@ -14,24 +14,24 @@ Oracle LiveLabs is a group of tenancies sponsored by Product Management used for
 
 The following lab requires an Oracle Cloud account from the LiveLabs Platform.
 
-- If your account name supplied to you begins with **user** or **ssuser**, proceed to **Option 1**.
-- If your account name supplied to you is your **Oracle email address**,  proceed to **Option 2**.
+- If the account name supplied to you begins with **user** or **ssuser**, proceed to **Option 1**.
+- If the account name supplied to you is your **Oracle email address**,  proceed to **Option 2**.
 
 ## Option 1:  Login to Oracle Cloud - ssusersxx and userxx
 
-If your account name supplied to you begins with **user** or **ssuser**, please proceed. Otherwise, proceed to Option 2.
+If the account name supplied to you begins with **user** or **ssuser**, please proceed. Otherwise, proceed to Option 2.
 
-1. From any supported browser go to [http://bit.ly/c4u03login](http://bit.ly/c4u03login) to access the Oracle Cloud LiveLabs Tenancy.
+1. From any supported browser go to [http://bit.ly/c4u03login](http://bit.ly/c4u03login) to access the Oracle Cloud LiveLabs Tenancy. *Note: IE is not a supported browser, Firefox or Google Chrome are recommended.*
    
-2. Your Workshop Lead will provide you with a **username** and **temporary password**, enter that information here and click **Sign In**. *Note: The username provided will begin with ssuser or user*.
+2. Your Workshop Lead will provide you with a **user name** and **temporary password**, enter that information here and click **Sign In**. *Note: The user name provided will begin with ssuser or user*.
 
     ![](./images/loginpage.png " ")
 
-3.  You will then be taken to a screen to change your password. Choose a **new password** that you can remember and click **Sign In**. *Note: Make sure you are using an approved browser. IE is not supported.*
+3.  You will then be taken to a screen to change your password. Choose a **new password** that you can remember and click **Save New Password**. *Note: Make sure you are using an approved browser. IE is not supported.*
 
     ![](./images/changepwd.png " ")
 
-4.  Once you successfully login, you will be presented with the Oracle Cloud homepage.
+4.  Once you successfully save your new password, you will be presented with the Oracle Cloud homepage.
 
     ![](./images/homepage.png " ")
 
@@ -45,21 +45,21 @@ Once you have set your region to the assigned value, *proceed to the next lab*.
 
 After you sign up on the platform, you’ll get two emails. Check your spam and junk folders. You should expect the following emails:
 - *Email 1: Verify Email Request* - this contains the URL to verify that your email is a valid one for this tenancy.
-- *Email 2: [LIVELABS] Account Created* - This contains important information needed to complete your workshop along with your username, password, and a link to the lab.
+- *Email 2: [LIVELABS]: (Name of Workshop) - Account Created* - This contains important information needed to complete your workshop along with your user name, password, and a link to the lab.
 
 1.  Open up *Email 1: Verify Email Request* from Oracle Cloud. Click on the **Sign in to Oracle Cloud** link. This opens up the Cloud login page in your browser. *Note: IE is not a supported browser, Firefox or Google Chrome are recommended.*
 
     ![](./images/signin.png " ")
 
-2.  Open up *Email 2: [LIVELABS] Account Created*. Note your username and your temporary password.  Enter your **username** and your **temporary password** in the box on the right-hand side that says *Oracle Infrastructure*. *Note: Do not use Single Sign-On (SSO), SSO is not enabled for this tenancy.*
+2.  Open up *Email 2: [LIVELABS]: (Name of Workshop) - Account Created*. Note your user name and your temporary password.  Enter your **user name** and your **temporary password** in the box on the right-hand side that says *Oracle Infrastructure*. *Note: Do not use Single Sign-On (SSO), SSO is not enabled for this tenancy.*
 
     ![](./images/loginpage.png " ")
 
-3.  You will then be taken to a screen to change your password. Choose a **new password** that you can remember and click **Sign In**. Make sure you are using an approved browser. IE is not supported.
+3.  You will then be taken to a screen to change your password. Choose a **new password** that you can remember and click **Save New Password**. *Note: Make sure you are using an approved browser. IE is not supported.*
 
     ![](./images/changepwd.png " ")
 
-4.  Once you successfully login, you will be presented with the Oracle Cloud Homepage. Note: If you get an *Email Activation Unsuccessful* message, check to see if you can still access the cloud by looking for the hamburger menu to the left.
+4.  Once you successfully save your new password, you will be presented with the Oracle Cloud Homepage. Note: If you get an *Email Activation Unsuccessful* message, check to see if you can still access the cloud by looking for the hamburger menu to the left.
 
     ![](./images/emailactivation.png " ")
 
