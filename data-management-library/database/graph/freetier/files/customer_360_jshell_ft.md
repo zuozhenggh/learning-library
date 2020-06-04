@@ -10,8 +10,15 @@ The combined dataset is then used to perform the following common graph query an
 
 ## Graph Query and Analysis in JShell
 
-**Skip the following if you completed the Create Graph step and the graph server and client are up.**  
+#### Skip the following if you completed the Create Graph step and the graph server and client are up.  
 >Open an SSH connection to the compute instance. `su` to the `oracle` user or whichever user deployed the graph server and client kit and was added to the oraclegraph group in Lab 3.3.
+>
+> Check that  the line  
+>` "enable_tls": true,`  
+>in `/etc/oracle/graph/server.conf` is set to false, i.e. it is  
+>` "enable_tls": false,`  
+
+>
 >Start the graph server.
 >
 ```
@@ -38,7 +45,7 @@ PGQL version: 1.3
 Variables instance, session, and analyst ready to use.
 opg-jshell>
 ```
-**End of portion to skip when server and client are up.**
+#### End of portion to skip when server and client are already up and running.
 
 Check to see which graphs have been loaded into the graph server. 
 
@@ -54,18 +61,23 @@ If the `Customer_360' graph exists in the in-memory graphbserver then load it in
 If it **does not exist** then read it from the database. 
 The necessary steps are:
 - Set up the JDBC connection. **Modify the URL for your instance**  
-For <db_service> use  database service name from the tnsnames file in the ADB Wallet you downloaded when setting up your ADB instance.  
-For <wallet_location> specify the directory where you unzipped the downlaoded wallet in the compute instance.
+For `{db_service}` use  database service name from the tnsnames file in the ADB Wallet you downloaded when setting up your ADB instance.  
+For `{wallet_location}` specify the directory where you unzipped the downlaoded wallet in the compute instance.
 - Specifcy a graph config.
 - Read the graph into memory.
 
 ```
 <copy>
-var jdbcUrl = "jdbc:oracle:thin:@<db_service>?TNS_ADMIN=<unzipped_wallet_location>";
+var jdbcUrl = "jdbc:oracle:thin:@{db_service}?TNS_ADMIN={unzipped_wallet_location}";
 var user = "customer_360";
 var pass = "Welcome1_C360";
 var conn = DriverManager.getConnection(jdbcUrl, user, pass) ;
+</copy>
+```
 
+Copy, paste, and execute the following code in JShell.
+
+```
 // now load the graph into memory to run some more analyses
 // specify the graph config (i.e. vertex and edge properties and datatypes)
 Supplier<GraphConfig> pgxConfig = () -> { return GraphConfigBuilder.forPropertyGraphRdbms()
@@ -89,6 +101,10 @@ Supplier<GraphConfig> pgxConfig = () -> { return GraphConfigBuilder.forPropertyG
  .setKeystoreAlias("alias")
  .build(); }
 
+```
+
+```
+<copy>
 // load the graph. Can take 4-5 minutes depending on network bandwidth
 
 var graph = session.readGraphWithProperties(pgxConfig.get()) ;

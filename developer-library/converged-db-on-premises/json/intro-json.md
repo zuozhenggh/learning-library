@@ -8,7 +8,7 @@ JSON is text, and we can convert any JavaScript object into JSON, and send JSON 
 
 This way we can work with the data as JavaScript objects, with no complicated parsing and translations.
 
-### JSON with Oracle Database
+**JSON with Oracle Database**
 
 JSON data  can be used in Oracle Database in similar ways. Unlike relational data, it can be stored, indexed, and queried without any need for a schema that defines the data. Oracle Database supports JSON natively with relational database features, including transactions, indexing, declarative querying, and views.
 
@@ -16,7 +16,7 @@ So it's likely we want to send and receive JSON documents from and to our databa
 
 Oracle database provides a comprehensive implemention of SQL, for both analytics and batch processing. JSON held in the Oracle Database can be directly accessed via SQL, without the need to convert it into an intermediary form. JSON collections can be joined to other JSON collections or to relational tables using standard SQL queries.
 
-### Storing and Managing JSON Documents
+**Storing and Managing JSON Documents**
 
 JSON documents can be stored usinga VARCHAR2, CLOB,or BLOB column. An IS JSON SQL constraint ensures that the column contains only valid JSON documents, allowingthe database to understand that the column is being used as a container for JSON documents.
 
@@ -26,23 +26,24 @@ The first thing to realize about JSON is that it remains a simple text format—
 
  ![](./images/json_intro.PNG " ")
 
-### Video - Oracle JSON Overview
+## Oracle JSON Video
 
-Watch the video below for an overview of Oracle JSON
+  [](youtube:oiOCp23T1ZU)
 
-  [![JSON Datatype for Oracle Converged Database](./images/json_intro_video.PNG " ")](https://otube.oracle.com/media/0_k5j15wn4)
-
-
+## Want to learn more
+- [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
+  
 
 ## Acknowledgements
 
-- **Authors** - Arvind Bhope
-- **Contributors** - Arvind Bhope, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
-- **Last Updated By/Date** - Laxmi A, Kanika Sharma, Hub Solution Engineer, North America, May 2020
-- **Workshop Expiration Date** - May 2021
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists.
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021   
 
-
-### Issues?
+**Issues-**
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+      
 
 

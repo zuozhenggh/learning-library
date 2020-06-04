@@ -20,7 +20,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 -	Node.js eliminates the waiting, and simply continues with the next request.
 -	Node.js runs single-threaded, non-blocking, asynchronously programming, which is very memory efficient.
 
-**What Can Node.js Do?**
+**What Node.js can do?**
 -	Node.js can generate dynamic page content
 -	Node.js can create, open, read, write, delete, and close files on the server
 -	Node.js can collect form data
@@ -33,47 +33,28 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 **A Vast Number of Libraries**
    Npm with its simple structure helped the ecosystem of Node.js proliferate, and now the npm registry hosts over 1,000,000 open source packages you can freely use.
 
- **Watch the video below for an overview of Oracle Node.js**
-
+## Oracle Node.js Video
   
  [](youtube:zQtRwTOwisI)
 
-## Product Pages
+## Want to learn more
 
-- [Node-js Link](https//nodejs.org/en/)
-- [Node-js for oracle Linux](https//yum.oracle.com/oracle-linux-nodejs.html)
-  
+- [Node-js](https//nodejs.org/en/)
+- [Node-js for oracle Linux](https//yum.oracle.com/oracle-linux-nodejs.html)  
 - [Node-js Driver](https//oracle.github.io/node-oracledb/)
 - [Oracle Instant Client](https//www.oracle.com/in/database/technologies/instant-client/downloads.html)
 - [Docker](https//www.docker.com/)
-- [Oracle Database 19c](https//www.oracle.com/database/)
-
 - [Postman](https//www.postman.com/)
-
-- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)
-- [I have an account from SSWorkshop](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
-
-
-## Get an Oracle Cloud Trial Account for Free!
-If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
--	$300 of freee credits good for up to 3500 hours of Oracle Cloud usage
--	Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
--	Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
-
-Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
-
- 
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Arvind Bhope,Venkata Bandaru,Ashish Kumar,Priya Dhuriya , Maniselvan K.
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya,         Maniselvan K.
+- **Team** - North America Database Specialists.
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management
+- **Expiration Date** - June 2021
 
-- **Last Updated By/Date** - Laxmi A, kanika Sharma May 2020
-
-- **Workshop Expiration Date**
-
-
-### Issues?
+**Issues-**
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
 
 
