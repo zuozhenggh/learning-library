@@ -126,7 +126,6 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 tail -f /u01/ocidb/buildsingle1.log
 </copy>
 ````
-
     ![](./images/tailOfBuildDBInstanceLog.png " ")
 
 2. When you see the following message the database setup is complete **Completed successfully in XXXX seconds** (this may take up to 25 minutes)
