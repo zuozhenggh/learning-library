@@ -34,8 +34,8 @@ This workshop requires an Oracle Cloud account. You may use your own cloud accou
 - **Lab 2:** Provision your first Autonomous Database.
 - **Lab 3:** Connect to the database with SQL Developer Web.
 - **Lab 4:** Familiarize with the structures and data in the Sales History (SH) sample schema that comes with the database.
-- **Lab 4:** Query the SH sample schema.
-- **Lab 5:** Create a schema, add a user, assign privileges to the user, and create tables.
+- **Lab 5:** Query the SH sample schema.
+- **Lab 6:** Create a user (schema), assign privileges to the user, create tables, add and maintain records, and maintain the schema.
 
 **After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
 
