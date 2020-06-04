@@ -6,7 +6,8 @@ Oracle provides an open, modern, easy and intelligent platform and infrastructur
 Click on one of our workshops below to access the content.
 
 ## Microservices Workshops
-Coming Soon
+- [Building Microservices with Oracle's Converged Database](https://oracle.github.io/learning-library/developer-library/microservices-with-converged-db)
+
 
 ## Database 19c for Developer Workshops
 

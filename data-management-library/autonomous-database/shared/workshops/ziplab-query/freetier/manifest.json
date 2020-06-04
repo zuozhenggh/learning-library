@@ -22,7 +22,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "04/29/2020",
             "contentid": "12nnnn",
-            "filename": "./../../../adb-provision/adb-provision.md"
+            "filename": "./../../../adb-provision-free/adb-provision-free.md"
         },
         {         
             "title": "Lab 3: ADB Loading",
@@ -40,14 +40,6 @@
             "publisheddate": "04/29/2020",
             "contentid": "12nnnn",
             "filename": "./../../../adb-query/adb-query.md"
-        } ,
-        {         
-            "title": "Conclusion",
-            "description": "Conclusion",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/29/2020",
-            "contentid": "12nnnn",
-            "filename": "./conclusion/conclusion.md"
         }
     ]
 }

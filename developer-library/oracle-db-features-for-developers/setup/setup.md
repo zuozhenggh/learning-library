@@ -5,19 +5,24 @@ This lab will show you how to setup your environment using Oracle Resource Manag
 
 ## Step 1: Install Sample Data
 
-In this step you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
+In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
 By completing the instruction below the sample schemas **SH**, **OE**, and **HR** will be installed. These schemas are used in Oracle documentation to show SQL language concepts and other database features. The schemas themselves are documented in Oracle Database Sample Schemas [Oracle Database Sample Schemas](https://www.oracle.com/pls/topic/lookup?ctx=dblatest&id=COMSC).
 
-1.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
+1.  Copy the following commands into your terminal. These commands download the files needed to run the lab.
 
-    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0.
+    Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
 
     ````
     <copy>
     cd /home/opc/
+
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/3chG0fCfimn_Dq6kER9r0qOBqjPLfM3I4b3l0EaN2w4/n/c4u03/b/labfiles/o/nfscripts.zip
-    unzip nfscripts.zip; chmod +x *.sh
+
+    unzip nfscripts.zip;
+
+    chmod +x *.sh
+
     /home/opc/setupNF.sh
     </copy>
     ````
@@ -26,7 +31,7 @@ By completing the instruction below the sample schemas **SH**, **OE**, and **HR*
 
     ![](./images/step1.1-setupscript2.png " " )
 
-2. Install the Sample Schemas.
+2.  Install the Sample Schemas.
 
     ````
     <copy>
@@ -37,7 +42,7 @@ By completing the instruction below the sample schemas **SH**, **OE**, and **HR*
 
     ![](./images/step1.2-setupcomplete.png " " )
 
-Congratulations!  Now you have the environment to run the labs.
+Congratulations! Now you have the environment to run the labs.
 
 ## Oracle Database Sample Schemas Agreement
 
@@ -52,6 +57,6 @@ The above copyright notice and this permission notice shall be included in all c
 ## Acknowledgements
 
 - **Author** - Troy Anthony, DB Product Management
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
+- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

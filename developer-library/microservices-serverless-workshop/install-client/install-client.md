@@ -1,4 +1,4 @@
-# Install a Front-end Client ???
+# Install a Front-end Client
 
 ## Before You Begin
 
@@ -12,7 +12,7 @@ Rather than requiring that you install Python and other software, the front-end 
 
 ## Option 1: Install the Front-end Client as a VirtualBox image
 
-1. Download OVA image from [here](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/hZnw2wJSeVpigjnOHBwSO9-GcZrdNyjqgWi1FObBvHg/n/wedoinfra/b/DevCS_Clone_WedoDevops/o/HOL5967-OOW2019.ova "ova hol").
+1. Download OVA image from [here](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/smpE_ekRW19rd4H31B4fPspIqXxRm-iSuaQ9kOc8_K8/n/wedoinfra/b/DevCS_Clone_WedoDevops/o/HOL5967-OOW2019%20OVAHOL5967-OOW2019.ova "ova hol").
 
   *Note: If you are not familiar with VirtualBox, please make sure you have Guest Additions installed or follow this manual to install: [https://www.virtualbox.org/manual/ch04.html\#sharedfolders](https://www.virtualbox.org/manual/ch04.html#sharedfolders)*
 
@@ -225,6 +225,6 @@ Now let’s configure access to oci tenancy via ocicli with our tenancy details.
 
   ## Acknowledgements
   * **Authors** -  Iván Postigo, Jesus Guerra, Carlos Olivares - Oracle Spain SE Team
-  * **Last Updated By/Date** - Tom McGinn, April 2020
+  * **Last Updated By/Date** - Tom McGinn, May 2020
 
   See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

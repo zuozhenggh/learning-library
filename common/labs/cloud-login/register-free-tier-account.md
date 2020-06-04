@@ -1,6 +1,6 @@
-# Access an Oracle Cloud Free Tier Account #
+# Get an Oracle Cloud Free Tier Account
 
-## Before You Begin ##
+## Introduction
 This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.
 
 
@@ -23,7 +23,7 @@ In this section, you'll fill out the registration form at [oracle.com/cloud/free
      * Provide a mobile number and click **Next: Verify Mobile Number**. In a few seconds, you should receive a verification code through SMS-text. Enter this code in the appropriate field and click **Verify**.
      * Click **Add Credit Card Details**. You will NOT be charged unless you elect to upgrade the account later. Enter the billing information, card details, and click **Finish**.
 4. Validate your address.
-5. Enter a password. Remeber this password so you can sign in to the Cloud later.
+5. Enter a password. Remember this password so you can sign in to the Cloud later.
 6. Click **Review Terms and Conditions**. Read and agree to the Terms & Conditions by checking the box and click **Complete Sign-Up**.
 7. Your account is partitioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign in page. You'll also receive a confirmation email containing sign in information.
 

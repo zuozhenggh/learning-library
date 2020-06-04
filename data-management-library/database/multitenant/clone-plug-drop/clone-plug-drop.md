@@ -1,4 +1,3 @@
-
 # Multitenant Basics
 
 ## Introduction
@@ -20,7 +19,7 @@ Once you have an instance running the 19c database, a script needs to be run to 
     </copy>
     ````
 
-2.  To check on the progress of this script, enter the command below.  This script takes about 60 minutes to complete.  Note:  Ignore the [WARNING] [DBT-06208] that occur in this script.
+2.  To check on the progress of this script, enter the command below.  This script takes about 60 minutes to complete.  *Note:  Ignore the [WARNING] [DBT-06208] that occur in this script.*
 
     ````
     <copy>
