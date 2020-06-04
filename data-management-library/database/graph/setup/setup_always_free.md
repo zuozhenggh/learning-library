@@ -23,4 +23,5 @@ In this lab you will:
 ## Acknowledgements ##
 
 - **Author** - Jayant Sharma - Product Manager, Spatial and Graph.  
-  With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).
+  With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
+  Thanks to Jenny Tsai for helpful, constructive feedback that greatly helped improve this workshop.
