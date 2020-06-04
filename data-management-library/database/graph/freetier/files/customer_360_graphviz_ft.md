@@ -54,9 +54,10 @@ Let's find accounts that have had an outbound and and inbound transfer of over 5
 
 The PGQL query for this is:
 ```
-<copy>SELECT * 
-MATCH (FromAcct)-[TransferOut:transfer]->(ToAcct1), (ToAcct2)-[TransferIn:transfer]->(FromAcct)
-WHERE TransferOut.date = TransferIn.date and TransferOut.amount > 500 and TransferIn.amount > 500
+<copy>
+SELECT * 
+MATCH (FromAcct)-[TransferOut:TRANSFER]->(ToAcct1), (ToAcct2)-[TransferIn:TRANSFER]->(FromAcct)
+WHERE TransferOut.DATE = TransferIn.DATE and TransferOut.AMOUNT > 500 and TransferIn.AMOUNT > 500
 </copy>
 ```
 In the query text above (FromAcct) indicates the source vertex and (ToAcct1) the destination, while [TransferOut:transfer] is the edge connecting them. The [:transfer] specifies that the TransferOut edge has  the label 'transfer'. The comma (',') between the two patterns is an AND condition. 
@@ -72,9 +73,10 @@ The next query finds patterns of transfers to and from the same two accounts, i.
 
 The PGQL query for this is:
 ```
-<copy>SELECT * 
-MATCH (FromAcct)-[TransferOut:transfer]->(ToAcct)-[TransferIn:transfer]->(FromAcct)
-WHERE TransferOut.date < TransferIn.date 
+<copy>
+SELECT * 
+MATCH (FromAcct)-[TransferOut:TRANSFER]->(ToAcct)-[TransferIn:TRANSFER]->(FromAcct)
+WHERE TransferOut.DATE < TransferIn.DATE 
 </copy>
 ```
 
@@ -90,8 +92,8 @@ Let's add one more account to that query to find a circular transfer pattern bet
 The PGQL query becomes:
 ```
 <copy>SELECT * 
-MATCH (FromAcct)-[TxnAB:transfer]->(ToAcctB)-[TxnBC:transfer]->(ToAcctC)-[TxnCA:transfer]->(FromAcct)
-WHERE TxnAB.date < TxnBC.date and TxnBC.date < TxnCA.date
+MATCH (FromAcct)-[TxnAB:TRANSFER]->(ToAcctB)-[TxnBC:TRANSFER]->(ToAcctC)-[TxnCA:TRANSFER]->(FromAcct)
+WHERE TxnAB.DATE < TxnBC.DATE and TxnBC.DATE < TxnCA.DATE
 </copy>
 ```
 

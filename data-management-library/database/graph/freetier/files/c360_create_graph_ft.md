@@ -82,6 +82,8 @@ var user = "customer_360";
 var pass = "Welcome1_C360";
 var conn = DriverManager.getConnection(jdbcUrl, user, pass) ;
 </copy>
+// example jshell output
+// conn ==> oracle.jdbc.driver.T4CConnection@54d11c70
 ```
 
 Then create a PGQL connection and set its properties.
@@ -93,6 +95,9 @@ Then create a PGQL connection and set its properties.
 conn.setAutoCommit(false);
 var pgql = PgqlConnection.getConnection(conn);
 </copy>
+
+// example jshell output
+// pgql ==> oracle.pg.rdbms.pgql.PgqlConnection@6493f780
 ```
 
 Next set up the create property graph statement.
@@ -131,15 +136,25 @@ var cpgStmtStr = "CREATE PROPERTY GRAPH customer_360 " +
  "     PROPERTIES (amount, date)" +
  " )" ;
 </copy>
+// example jshell output
+// cpgStmtStr ==> "CREATE PROPERTY GRAPH customer_360     VERTEX TABLES (     customer      PROPERTIES (type, name, age, location, gender, student)    , account      PROPERTIES (type, account_no, balance)  , merchant      PROPERTIES (type, name)  )  EDGE TABLES (    owned_by      SOURCE KEY(from_id) REFERENCES account      DESTINATION KEY(to_id) REFERENCES customer      LABEL owned_by      PROPERTIES (since)  , parent_of      SOURCE KEY(from_id) REFERENCES customer      DESTINATION KEY(to_id) REFERENCES customer      LABEL parent_of  , purchased      SOURCE KEY(from_id) REFERENCES account      DESTINATION KEY(to_id) REFERENCES merchant      LABEL purchased      PROPERTIES (amount)  , transfer      SOURCE KEY(from_id) REFERENCES account      DESTINATION KEY(to_id) REFERENCES account      LABEL transfer      PROPERTIES (amount, date) )"
 ```
 
-Now execute the PGQL DDL.
+Now execute the PGQL DDL to first DROP any existing graph of the same name before CREATEing it.
 
 ```
 <copy>
-// Run the following only once only to create the graph 
+
+var dropPgStmt = "DROP PROPERTY GRAPH customer_360";
+// drop any existing garph
+pgql.prepareStatement(dropPgStmt).execute();
+// Now create the graph 
 pgql.prepareStatement(cpgStmtStr).execute();
+
+
 <copy>
+// example jshell output
+// $12 ==> false
 ```
 
 The create graph process can take 3-4 minutes depending on various factors such as network bandwidth and database load.
@@ -154,6 +169,9 @@ Copy the following code, paste, and execute it in the JShell.
 
 // create a helper method for preparing, executing, and printing the results of PGQL statements
 Consumer<String> query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
+
+// sample jshell output
+// query ==> $Lambda$583/0x0000000800695c40@65021bb4
 ```
 
 Then copy, paste, and execute the following.
