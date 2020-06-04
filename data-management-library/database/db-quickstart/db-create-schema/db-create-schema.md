@@ -74,8 +74,6 @@ In this lab, you will create a user (schema), assign privileges to the user, cre
 
 2. text
 
-3. text
-
 ## Want to Learn More?
 
 Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/introduction-to-oracle-database.html#GUID-A42A6EF0-20F8-4F4B-AFF7-09C100AE581E) for documentation introducing Oracle database fundamentals.
