@@ -70,7 +70,7 @@ select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by
   
   ![](./images/cd3.png)
 
-## Step 2: Relational to XML
+## Step 2: XML with Relational
 
 **XMLTABLE:** Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 

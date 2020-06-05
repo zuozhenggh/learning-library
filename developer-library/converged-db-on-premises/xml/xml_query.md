@@ -2,8 +2,8 @@
 
 ## Introduction
 
- This lab will show you how to retrieve the XML contents.
- There are many ways to retrieve the XML Contents. 
+ This lab walks you through different ways to query XML data. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL.
+ We can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable.
 
 ## Before You Begin
 
@@ -84,7 +84,7 @@ This lab assumes you have completed the following labs:
    ![](./images/xml_query_meth4.PNG " ")
 
 
-## Step 6: Searching xml document
+## Step 6: Searching XML document
      
  ````
     <copy>

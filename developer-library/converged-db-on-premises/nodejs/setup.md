@@ -44,11 +44,14 @@ This lab assumes you have completed the following labs:
     ````
 
 ## Step 2:  Verify Application 
-1. Verify the Application in your browser.  Open up a web browser on your PC and visit this Application URL. *http://Public-IP:3000/*
+   1. Verify the Application in your browser.  Open up a web browser on your PC and visit this Application URL. *http://Public-IP:3000/*
 
-2. Verify the Application API in your browser.  Open up a web browser on your PC and visit this Application URL. *http://Public-IP:3001/*
+   2. Verify the Application API in your browser.  Open up a web browser on your PC and visit this Application URL. *http://Public-IP:3001/*
+   
+   **Note**: Please refer the Lab 4 environment setup to find the IP address.
 
-    ![](./images/env_setup_nodejs.PNG " ") 
+
+      ![](./images/env_setup_nodejs.PNG " ") 
 
 ## Acknowledgements
 

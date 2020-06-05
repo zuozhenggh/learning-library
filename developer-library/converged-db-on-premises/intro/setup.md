@@ -27,7 +27,7 @@ This lab will show you that how to launch a compute instance from OCI Marketplac
    ````
     <copy>
 
-   :%s/convergeddb.sub09051050000.oemvcn.oraclevcn.com/NEW IPADDRESS or HOSTNAME
+   :%s/convergeddb.suXXXX.oeXX.oraclevcn.com/NEW IPADDRESS or HOSTNAME
     
     </copy>
    ````
@@ -81,10 +81,6 @@ This lab will show you that how to launch a compute instance from OCI Marketplac
     ````
     <copy>
     .oraenv
-    </copy>
-    ````
-    ````
-    <copy>
     startup
     </copy>
     ````

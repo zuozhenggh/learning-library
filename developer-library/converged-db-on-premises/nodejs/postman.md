@@ -31,7 +31,7 @@ This lab walks you through the steps to use Application API to add , view and up
 
 **What Do You Need?**
   -	Postman should be installed on your local system. Please use the below link to download the postman if you have not downloaded yet.
-  (https://www.postman.com/downloads/)
+  - [Download Postman](https://www.postman.com/downloads/)
 
 This lab assumes you have completed the following labs:
 - Lab 1: Login to Oracle Cloud
@@ -103,7 +103,7 @@ This lab assumes you have completed the following labs:
 
     d.	Open any browser and verify the above result.
 
-    ![](./images/nodejs-postman5.PNG " ")
+  ![](./images/nodejs-postman5.PNG " ")
 
 ## Step 3: UPDATE the product details by using HTTP UPDATE Method. 
     

@@ -3,7 +3,8 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. You pass it a JSON Merge Patch document, which specifies the changes to make to a specified JSON document. JSON Merge Patch is an IETF standard
+This lab walks you through the steps of inserting and updating json data. We can use standard database APIs to insert or update JSON data. We can work directly with JSON data contained in file-system files by creating an external table that exposes it to the database.
+In this lab we can add a row to our json table purchase_order using insert query and  we can use Oracle SQL function json_mergepatch to update specific portions of a JSON document.
 
 ## Before You Begin
 
@@ -17,8 +18,6 @@ This lab assumes you have completed the following labs:
 - Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
   
 ## Step 1: Take a count of the rows in the json table-
-
-We can use standard database APIs to insert or update JSON data in Oracle Database. We can work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. We can use JSON Merge Patch to update a JSON document.
 
   ````
     <copy>

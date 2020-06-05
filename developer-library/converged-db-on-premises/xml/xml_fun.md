@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This Lab will show case how to use few XML functions with respect to Retail Concept
+This lab walks you through the steps of inserting and updating xml data. We can add a row to our xml table purchaseorder using insert query. Also we can use Oracle UPDATEXML function to update XML content stored in Database.
 
 ## Before You Begin
 
