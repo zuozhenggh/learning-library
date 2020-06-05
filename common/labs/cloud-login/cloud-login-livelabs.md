@@ -21,13 +21,13 @@ The following lab requires an Oracle Cloud account from the LiveLabs Platform.
 
 If the account name supplied to you begins with **user** or **ssuser**, please proceed. Otherwise, proceed to Option 2.
 
-1. From any supported browser go to [http://bit.ly/c4u03login](http://bit.ly/c4u03login) to access the Oracle Cloud LiveLabs Tenancy. *Note: IE is not a supported browser, Firefox or Google Chrome are recommended.*
+1. From any supported browser go to [http://bit.ly/c4u03login](http://bit.ly/c4u03login) to access the Oracle Cloud LiveLabs Tenancy. *Note: Internet Explorer is not a supported browser, Firefox or Google Chrome are recommended.*
    
 2. Your Workshop Lead will provide you with a **user name** and **temporary password**, enter that information here and click **Sign In**. *Note: The user name provided will begin with ssuser or user*.
 
     ![](./images/loginpage.png " ")
 
-3.  You will then be taken to a screen to change your password. Choose a **new password** that you can remember and click **Save New Password**. *Note: Make sure you are using an approved browser. IE is not supported.*
+3.  You will then be taken to a screen to change your password. Choose a **new password** that you can remember and click **Save New Password**. *Note: Make sure you are using an approved browser. Internet Explorer is not supported.*
 
     ![](./images/changepwd.png " ")
 
@@ -47,7 +47,7 @@ After you sign up on the platform, you’ll get two emails. Check your spam and 
 - *Email 1: Verify Email Request* - this contains the URL to verify that your email is a valid one for this tenancy.
 - *Email 2: [LIVELABS]: (Name of Workshop) - Account Created* - This contains important information needed to complete your workshop along with your user name, password, and a link to the lab.
 
-1.  Open up *Email 1: Verify Email Request* from Oracle Cloud. Click on the **Sign in to Oracle Cloud** link. This opens up the Cloud login page in your browser. *Note: IE is not a supported browser, Firefox or Google Chrome are recommended.*
+1.  Open up *Email 1: Verify Email Request* from Oracle Cloud. Click on the **Sign in to Oracle Cloud** link. This opens up the Cloud login page in your browser. *Note: Internet Explorer is not a supported browser, Firefox or Google Chrome are recommended.*
 
     ![](./images/signin.png " ")
 
@@ -55,7 +55,7 @@ After you sign up on the platform, you’ll get two emails. Check your spam and 
 
     ![](./images/loginpage.png " ")
 
-3.  You will then be taken to a screen to change your password. Choose a **new password** that you can remember and click **Save New Password**. *Note: Make sure you are using an approved browser. IE is not supported.*
+3.  You will then be taken to a screen to change your password. Choose a **new password** that you can remember and click **Save New Password**. *Note: Make sure you are using an approved browser. Internet Explorer is not supported.*
 
     ![](./images/changepwd.png " ")
 
