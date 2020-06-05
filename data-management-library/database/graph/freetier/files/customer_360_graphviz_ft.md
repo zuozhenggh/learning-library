@@ -91,7 +91,8 @@ Let's add one more account to that query to find a circular transfer pattern bet
 
 The PGQL query becomes:
 ```
-<copy>SELECT * 
+<copy>
+SELECT * 
 MATCH (FromAcct)-[TxnAB:TRANSFER]->(ToAcctB)-[TxnBC:TRANSFER]->(ToAcctC)-[TxnCA:TRANSFER]->(FromAcct)
 WHERE TxnAB.DATE < TxnBC.DATE and TxnBC.DATE < TxnCA.DATE
 </copy>
@@ -108,4 +109,4 @@ The result should look as shown below.
 ## Acknowledgements ##
 
 - **Author** - Jayant Sharma - Product Manager, Spatial and Graph.  
-With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).
+With a little help from colleagues (Albert Godfrind and Ryota Yamanaka). And lots from Jenny Tsai. Thank you.
