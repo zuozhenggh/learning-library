@@ -2,7 +2,7 @@
 
 Login as the Admin user in SQLDevWeb of the newly cerated ADB Free Tier instance.
 
-That is, open the ADB Console, choose Development from the list onthe left, then click the SQLDeveloperWeb Link.
+That is, open the ADB Console, choose Development from the list on the left, then click the SQLDeveloperWeb Link.
 
 ![ADB Console Development Page](../images/ADB_ConsoleDevTab.png)
 
@@ -16,9 +16,9 @@ Now create the `CUSTOMER_360` user. Enter the following commands into the SQL Wo
 <copy>
 CREATE USER customer_360 
 IDENTIFIED BY Welcome1_C360 
-DEFAULT TABLESPACE users 
+DEFAULT TABLESPACE data 
 TEMPORARY TABLESPACE temp 
-QUOTA UNLIMITED ON users;  
+QUOTA UNLIMITED ON data;  
 
 GRANT connect, resource TO customer_360;
 </copy>
@@ -33,7 +33,7 @@ Now provide SQLDevWeb access for this user. See the [documentation](https://docs
 for details.
 First clear the previous text in the SQL Worksheet. 
 
-Copy and paste the following text into the SQLs Worksheet and run it. 
+Copy and paste the following text into the SQL Worksheet and run it. 
 ```
 <copy>
 BEGIN
