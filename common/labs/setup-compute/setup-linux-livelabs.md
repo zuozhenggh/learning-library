@@ -57,9 +57,7 @@ This lab assumes you have already completed the following labs:
     
     - **Compartment**:  Select Compartment from Email 2
 
-    Click **Next**.
-
-5.  
+5.  Click **Next**.
 
     ![](./images/linux-compute-ss.png " ")
 
