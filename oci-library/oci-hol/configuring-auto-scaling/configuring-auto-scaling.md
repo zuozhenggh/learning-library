@@ -64,7 +64,7 @@ A cooldown period between autoscaling events lets the system stabilize at the up
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
-    ![](./../Grafana/img/Grafana_015.PNG " ")
+    ![](./../Grafana/images/Grafana_015.PNG " ")
 
 2. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**.
 
@@ -108,7 +108,7 @@ A cooldown period between autoscaling events lets the system stabilize at the up
     - **VIRTUAL CLOUD NETWORK**: Choose your Virtual Cloud Network
     - **SUBNET**: Choose the **Public Subnet**
 
-    ![](./../OCI_Fundamentals_Lab/img/OCI_Fundamentals_006.PNG " ")
+    ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_006.PNG " ")
 
     Click **Next**.
 
@@ -117,7 +117,7 @@ A cooldown period between autoscaling events lets the system stabilize at the up
     - **SPECIFY A LOAD BALANCING POLICY**: Weighted Round Robin
     - **Add Backends**: Don't add any backend. This will be managed by the instance pool. 
 
-    ![](./../OCI_Fundamentals_Lab/img/OCI_Fundamentals_007.PNG " ")
+    ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_007.PNG " ")
 
     **Under SPECIFY HEALTH CHECK POLICY**
 
@@ -161,7 +161,7 @@ Enter the following ingress rule; Ensure to leave STATELESS flag un-checked
 
 1. Configure instance pool requires creating a instance configuration. First we will create ssh keys and a compute instance to create instance configuration. 
 Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
-    ![](./../OCI_Quick_Start/img/RESERVEDIP_HOL006.PNG " ")
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL006.PNG " ")
 
 2. Enter command 
     ```
@@ -171,10 +171,10 @@ Click the Apps icon in the toolbar and select  Git-Bash to open a terminal windo
     ```
     **HINT:** You can swap between OCI window, 
     git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon.
-    ![](./../OCI_Quick_Start/img/RESERVEDIP_HOL007.PNG " ")
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL007.PNG " ")
 
 3. Press Enter When asked for 'Enter File in which to save the key', 'Created Directory, 'Enter passphrase', and 'Enter Passphrase again.
-    ![](./../OCI_Quick_Start/img/RESERVEDIP_HOL008.PNG " ")
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL008.PNG " ")
 
 4. You should now have the Public and Private keys:
 
@@ -205,10 +205,10 @@ Click the Apps icon in the toolbar and select  Git-Bash to open a terminal windo
     </copy>
     ```
     , highlight the key and copy 
-        ![](./../OCI_Quick_Start/img/RESERVEDIP_HOL009.PNG " ")
+        ![](./../oci-quick-start/images/RESERVEDIP_HOL009.PNG " ")
 
 6. Click the apps icon, launch notepad and paste the key in Notepad (as backup).
-    ![](./../OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG " ")
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL0010.PNG " ")
 
 7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**.
 
@@ -229,7 +229,7 @@ Click the Apps icon in the toolbar and select  Git-Bash to open a terminal windo
       - **Use network security groups to control traffic** : Leave un-checked
       - **Assign a public IP address**: Check this option
 
-      ![](./../OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG " ")
+      ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
 
       - **Boot Volume:** Leave the default
       - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
@@ -255,20 +255,20 @@ Click the Apps icon in the toolbar and select  Git-Bash to open a terminal windo
     </copy>
     ```
 
-    ![](./img/Auto_Scaling_013.PNG " ")
+    ![](./images/Auto_Scaling_013.PNG " ")
 
 10. Click **Create**.
 
     **NOTE:** If 'Service limit' error is displayed choose a different shape such as VM.Standard.E2.2 OR VM.Standard2.2 OR choose a different AD.
 
-    ![](./../OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG " ")
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
 
 11. Wait for Instance to be in **Running** state. 
 
 12. Click Instance name and then select **Create Instance Configuration** from the Action menu.  
 Fill out the dialog box:
 
-    ![](./img/Auto_Scaling_001.PNG " ")
+    ![](./images/Auto_Scaling_001.PNG " ")
 
 
     **CREATE IN COMPARTMENT**: Choose your compartment
@@ -279,7 +279,7 @@ Fill out the dialog box:
 
 14.  In the Instance Configuration page, Click **Create Instance Pool**.
 
-    ![](./img/Auto_Scaling_002.PNG " ")
+    ![](./images/Auto_Scaling_002.PNG " ")
 
 15.  Click **Create Instance Pool**. A new dialog box will appear. This is used to create initial configuration of the instance pool such as how many compute instance to create initially, VCN, and Availability domain the instance pool should be created in. Fill out the dialog box:
 
@@ -326,14 +326,14 @@ Fill out the dialog box:
 
     - For this lab use two different availability domains.
 
-    ![](./img/Auto_Scaling_003.PNG " ")
+    ![](./images/Auto_Scaling_003.PNG " ")
 
-    ![](./img/Auto_Scaling_003-1.PNG " ")
+    ![](./images/Auto_Scaling_003-1.PNG " ")
 
 17. Click **Create Instance Pool**. Wait for Instance Pool to be in **RUNNING** state (turns green).
 
 18. From the instance pool details page, Click **Actions** and choose **Create Auto Scaling Configuration**.
-    ![](./img/Auto_Scaling_004.PNG " ")
+    ![](./images/Auto_Scaling_004.PNG " ")
 
 19. Fill out the dialog box:
 
@@ -356,9 +356,9 @@ Fill out the dialog box:
     *Leave other fields as is.*
 
 20. Click **Create**.
-    ![](./img/Auto_Scaling_005.PNG " ")
+    ![](./images/Auto_Scaling_005.PNG " ")
 
-    ![](./img/Auto_Scaling_006.PNG " ")
+    ![](./images/Auto_Scaling_006.PNG " ")
 
     We have now created a auto scaling policy that will start with creating 1 compute instance in the designated pool. Once the CPU utilization is determined to be above 10% for at least 300 seconds another compute instance will be launched automatically. Once the CPU utilization is determined to be less than 5% for 300 seconds, one compute instance will be removed. At all times there will be at least 1 compute instance in the pool.
 
@@ -367,7 +367,7 @@ Fill out the dialog box:
 ## Step 4: Test the setup
 
 1. Click **Instance Pools** under **Compute** and then your pool name. You should see a Compute instance created. Click the Compute Instance name.
-    ![](./img/Auto_Scaling_007.PNG " ")
+    ![](./images/Auto_Scaling_007.PNG " ")
 
 2. Note down the Public and Private IP of compute instance from the details page (Under **Primary VNIC Information** section). 
 
@@ -390,7 +390,7 @@ Fill out the dialog box:
     **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command
 
 8. Enter 'Yes' when prompted for security message
-    ![](./../OCI_Quick_Start/img/RESERVEDIP_HOL0014.PNG " ")
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
  
 9. Now start CPU stress, Enter command:
 
@@ -403,10 +403,10 @@ Fill out the dialog box:
     *Spawn 4 workers spinning on sqrt() with a timeout of 350 seconds.*
 
 10. Switch back to OCI console and navigate to Instance pool details page. Click your instance name and scroll down to **Metric** screen, you should see CPU spiking up after a minute or so.
-    ![](./img/Auto_Scaling_009.PNG " ")
+    ![](./images/Auto_Scaling_009.PNG " ")
 
 11. Navigate to your Instance Pool details page. In about 3-4 minutes (time configured when we created auto scale configuration), status of Pool should change to **Scaling** and a second compute instance should launch.
-    ![](./img/Auto_Scaling_010.PNG " ")
+    ![](./images/Auto_Scaling_010.PNG " ")
 
     *This is since our criteria of CPU utilization > 10 was met.*
 
@@ -427,23 +427,23 @@ Fill out the dialog box:
 2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**.
 
 3. Locate first compute instance, Click Action icon and then **Terminate**.
-    ![](./../OCI_Quick_Start/img/RESERVEDIP_HOL0016.PNG " ")
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
 
 4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate.
-    ![](./../OCI_Quick_Start/img/RESERVEDIP_HOL0017.PNG " ")
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL0017.PNG " ")
 
 5. In OCI console window from Instance Pool Details page, Click **Terminate** under **Action**. Provide Instance Pool name in the pop up dialog box and Click **Terminate**. This will delete the pool along with the compute instance and auto scale configuration.
-    ![](./img/Auto_Scaling_011.PNG " ")
+    ![](./images/Auto_Scaling_011.PNG " ")
 
 6. Navigate to **Instance Configurations** Under **Compute**. For your Instance Configuration, Click **Delete** under the three Vertical dots.
-    ![](./img/Auto_Scaling_012.PNG " ")
+    ![](./images/Auto_Scaling_012.PNG " ")
 
 7. Navigate to **AutoScaling Configurations** Under **Compute**. For your Instance Configuration, Click **Delete**.
 
 8. From OCI services menu Click **Load Balancers** under Networking, locate your Load Balancer and Click Terminate under the three Vertical dots.
 
 9. From OCI services menu Click **Virtual Cloud Networks** under Networking, Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
-    ![](./../OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG " ")
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
 
 
 ## Acknowledgements
