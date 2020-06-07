@@ -27,7 +27,7 @@ This lab assumes you have already completed the following labs:
 - Register for Free Tier
 - Create SSH Keys
 
-## Step 1: Login and Create Stack using Resource Manager
+## STEP 1: Login and Create Stack using Resource Manager
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
     - [linux-compute.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k3xZLXdJAT1vE-i1jMotl3nhDMtfKn0YOq1QgrWsmKo/n/c4u03/b/labfiles/o/linux-compute.zip) - Packaged terraform instance creation script
@@ -94,7 +94,7 @@ This lab assumes you have already completed the following labs:
 
 
 
-## Step 2: Terraform Plan (OPTIONAL)
+## STEP 2: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a Terraform **plan** to verify the configuration.  This is an optional step in this lab.  
 
 1.  [OPTIONAL]Click **Terraform Actions** -> **Plan**, then **Plan** in dialog box to validate your configuration.  This takes about a minute, please be patient. Proceed after the image RMJ (Resource Manager Job) turns green.
@@ -106,7 +106,7 @@ When using Resource Manager to deploy an environment, execute a Terraform **plan
     ![](./images/planjob1.png " ")
 
 
-## Step 3: Terraform Apply
+## STEP 3: Terraform Apply
 When using Resource Manager to deploy an environment, execute a Terraform **plan** and **apply**.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  Click **Terraform Actions** -> **Apply**, then **Apply** in dialog box.  This will create your instance and install Oracle 19c.
@@ -121,7 +121,7 @@ When using Resource Manager to deploy an environment, execute a Terraform **plan
 *Note: If you fail in this step, you may enter the wrong SSH Public Keys in earlier step. Try to restart from Step 1.*
 
 
-## Step 4: Connect to your instance
+## STEP 4: Connect to your instance
 
 Choose the environment where you created your SSH Key in the previous lab (Generate SSH Keys)
 
