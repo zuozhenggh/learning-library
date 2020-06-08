@@ -177,7 +177,7 @@ sudo yum install oracle-graph-20.2.0.x86_64.rpm
 **Ignore the error about the `jar` executable. This lab does not use the `war` files.**
 You can use `alternatives` or some other means to set the `jar` executable (to the one in JDK8) if you wish.
 
-Move the ADB wallet to the `oracle` user. Modify the coomands as appropriate for your environment and execute them as `opc`. 
+Move the ADB wallet to the `oracle` user. Modify the commands as appropriate for your environment and execute them as `opc`. 
 
 ```
 sudo chown oracle ADB_Wallet.zip 
