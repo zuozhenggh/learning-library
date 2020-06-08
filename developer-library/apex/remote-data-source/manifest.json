@@ -1,35 +1,52 @@
 {
-  "lab": {
-    "title": "Building an App using a Remote Data Source",
-    "modules": [
-      {
-        "filename": "README.md",
-        "title": "Lab Introduction"
-      },
-      {
-        "filename": "1-sign-up-apex.md",
-        "title": "Module 1: Signing up for an APEX Workspace"
-      },
-      {
-        "filename": "2-create-table.md",
-        "title": "Module 2: Creating the Table"
-      },
-      {
-          "filename": "3-populating-table.md",
-          "title": "Module 3: Populating the Table"
-      },
-      {
-        "filename": "4-improving-report.md",
-        "title": "Module 4: Improving the Report"
-      },
-      {
-        "filename": "5-adding-chart.md",
-        "title": "Module 5: Adding a Chart"
-      },
-      {
-        "filename": "6-adding-chart-criteria.md",
-        "title": "Module 6: Adding Chart Criteria"
-      }
+    "tutorials": [
+        {
+            "title": "Lab Introduction",
+            "description": "Lab Introduction",
+            "publisheddate": "04/01/2020",
+            "filename": "README.md"
+        },
+        {
+            "title": "Module 1: Signing up for an APEX Workspace",
+            "description": "Module 1: Signing up for an APEX Workspace",
+            "publisheddate": "04/01/2020",
+            "filename": "1-sign-up-apex.md"
+        },
+        {
+            "title": "Module 2: Creating the Table",
+            "description": "Module 2: Creating the Table",
+            "publisheddate": "04/01/2020",
+            "filename": "2-create-table.md"
+        },
+        {
+            "title": "Module 3: Populating the Table",
+            "description": "Module 3: Populating the Table",
+            "publisheddate": "04/01/2020",
+            "filename": "3-populating-table.md"
+        },
+        {
+            "title": "Lab 4: Oracle Database for Python",
+            "description": "Oracle Database for Python",
+            "publisheddate": "04/01/2020",
+            "filename": "../../cx-oracle/cx-oracle.md"
+        },
+        {
+            "title": "Lab 5: Push Docker Image to Registry (OCIR)",
+            "description": "Push Docker Image to Registry (OCIR)",
+            "publisheddate": "04/01/2020",
+            "filename": "../../ocir/ocir.md"
+        },
+        {
+            "title": "Lab 6: Deploy Python App on Container Cluster (OKE)",
+            "description": "Deploy Python App on Container Cluster (OKE)",
+            "publisheddate": "04/01/2020",
+            "filename": "../../deploy/deploy.md"
+        },
+        {
+            "title": "Lab 7: Oracle Database Changes in CI/CD Workflow",
+            "description": "Oracle Database Changes in CI/CD Workflow",
+            "publisheddate": "04/01/2020",
+            "filename": "../../change-log/change-log.md"
+        }
     ]
-  }
 }
