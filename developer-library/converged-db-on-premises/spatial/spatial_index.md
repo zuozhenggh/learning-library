@@ -2,7 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to create indexes for each tables- CUSTOMERS, WAREHOUSES and WAREHOUSES_DTP
+This lab walks you through the steps of creating indexes on spatial tables. A spatial index, like any other index, provides a mechanism to limit searches. However, spatial indexes are highly recommended, and not using them can negatively affect performance in some cases.
+
+Note: Below lab is completed and indexes are already created for the tables.
 
 ## Before You Begin
 

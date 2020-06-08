@@ -2,7 +2,9 @@
 
 ## Introduction
 
-This lab will show how to load Spatial data.
+This lab walks you through the steps of creating spatial table with column type SDO_GEOMETRY. We will see how to insert data into the tables and also add spatial metadata to tables.
+
+Note: Below lab is completed and spatial data is already loaded into the tables.
 
 ## Before You Begin
 
