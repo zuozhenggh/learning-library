@@ -25,28 +25,22 @@
             "filename": "3-populating-table.md"
         },
         {
-            "title": "Lab 4: Oracle Database for Python",
-            "description": "Oracle Database for Python",
+            "title": "Module 4: Improving the Report",
+            "description": "Module 4: Improving the Report",
             "publisheddate": "04/01/2020",
-            "filename": "../../cx-oracle/cx-oracle.md"
+            "filename": "4-improving-report.md"
         },
         {
-            "title": "Lab 5: Push Docker Image to Registry (OCIR)",
-            "description": "Push Docker Image to Registry (OCIR)",
+            "title": "Module 5: Adding a Chart",
+            "description": "Module 5: Adding a Chart",
             "publisheddate": "04/01/2020",
-            "filename": "../../ocir/ocir.md"
+            "filename": "5-adding-chart.md"
         },
         {
-            "title": "Lab 6: Deploy Python App on Container Cluster (OKE)",
-            "description": "Deploy Python App on Container Cluster (OKE)",
+            "title": "Module 6: Adding Chart Criteria",
+            "description": "Module 6: Adding Chart Criteria",
             "publisheddate": "04/01/2020",
-            "filename": "../../deploy/deploy.md"
-        },
-        {
-            "title": "Lab 7: Oracle Database Changes in CI/CD Workflow",
-            "description": "Oracle Database Changes in CI/CD Workflow",
-            "publisheddate": "04/01/2020",
-            "filename": "../../change-log/change-log.md"
+            "filename": "6-adding-chart-criteria.md"
         }
     ]
 }
