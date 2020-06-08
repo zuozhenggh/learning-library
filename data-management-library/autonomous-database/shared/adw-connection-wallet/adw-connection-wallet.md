@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a bonus lab that walks you through the steps to download and configure a connection wallet to connect securely to an Autonomous Database (Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]). You will use this connection wallet to connect to the database using Oracle SQL Developer.
+This lab walks you through the steps to download and configure a connection wallet to connect securely to an autonomous database (Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]). You will use this connection wallet to connect to the database using **Oracle SQL Developer**. (Previous labs in this workshop used **SQL Developer Web** from a web browser, to access an autonomous database directly from the cloud console without a connection wallet. SQL Developer Web is a convenient browser-based tool offering a subset of the features and functions of Oracle SQL Developer.)
 
 **Note:** While this lab uses ADW, the steps are identical for connecting to an autonomous database in ATP.
 
