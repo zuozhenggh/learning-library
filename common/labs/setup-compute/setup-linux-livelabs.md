@@ -34,7 +34,7 @@ This lab assumes you have already completed the following labs:
 
 2.  Save in your downloads folder.
 
-3.  Open up the hamburger menu in the left hand corner.  Choose **Resource Manager > Stacks**.   Choose the compartment from your email, click the  **Create Stack** button.  *Note:  If you are in a workshop, double check your region to ensure you are on the assigned region*
+3.  Open up the hamburger menu in the left hand corner.  Under **Solutions and Platform**, choose **Resource Manager > Stacks**.   Choose the compartment from your email, click the  **Create Stack** button.  *Note:  If you are in a workshop, double check your region to ensure you are on the assigned region*
 
     ![](./images/cloud-homepage.png " ") 
 
@@ -44,7 +44,7 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/createstackpage.png " ")
 
-4.  Click the **Browse** link and select the zip file (linux-compute.zip) that you downloaded. Click **Select**.
+4.  Click the **Browse** link and select the zip file (linux-compute.zip) that you downloaded. Click **Open**.
 
     ![](./images/create-stack-orig.png " ")
 

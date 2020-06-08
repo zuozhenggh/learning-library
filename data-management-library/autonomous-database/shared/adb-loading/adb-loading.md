@@ -38,13 +38,13 @@ In steps 1 to 3, you will create one ADW table, CHANNELS_LOCAL, and load it with
 -   Learn how to load data from the Object Store
 -   Learn how to troubleshoot data loads
 
-### Required Artifacts
-
--   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud Account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-
 ### Lab Prerequisites
 
+-   This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud Account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+
 - This lab assumes you have completed the [Login to Oracle Cloud] (?lab=lab-0-login-oracle-cloud) and [Provision ADB] (?lab=lab-1-provision-adw-instance) labs seen in the menu on the right.
+
+- To upload data files to an object store in Oracle Cloud Infrastructure Object Storage, your cloud administrator or lab instructor must provide your cloud user with **read/write privileges** to the object store location where the data is to be stored. Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/StorageGateway/Tasks/interactingwithobjectstorage.htm#createIAM) for documentation on Object Storage. 
 
 ## STEP 1: Download Sample Data and Create Local Table
 

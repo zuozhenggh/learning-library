@@ -11,7 +11,7 @@ If you already have an SSH key pair, you may use that to connect to your environ
 
 ## Option 1:  Oracle Cloud Shell
 
-The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI, set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM policy.
+The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI (command line interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (identity and access management) policy.
 
 1.  To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
 
@@ -162,7 +162,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     Note in the output that there are two files, a *private key:* ```id_rsa``` and a *public key:* ```id_rsa.pub```.   Keep the private key safe and don't share its content with anyone.   The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
-6.  Make a note of where your SSH public and private key files are located.  You may be asked to upload the file or to copy/paste the content in other labs for Oracle Cloud Services.  Copy the key content exactly, capturing space after the key characters may render your key invalid.  In the example below, you can use the gitbash ```cat``` command to display the public key file content.  You can select the key file content and left-click to **Copy** the key.  Or you can upload the file directly.
+6.  Make a note of where your SSH public and private key files are located.  You may be asked to upload the file or to copy/paste the content in other labs for Oracle Cloud Services.  Copy the key content exactly, capturing space after the key characters may render your key invalid.  In the example below, you can use the gitbash ```cat``` command to display the public key file content.  You can select the key file content and right-click to **Copy** the key.  Or you can upload the file directly.
 
     ![](images/keylab-013.png " ")
 
@@ -231,7 +231,7 @@ Follow below instructions to connect to a cloud instance via SSH using the PuTTY
 
     ![](images/see-IP-address.png " ")
 
-2.  Under **Category** select **Connection** and then choose the **Data** field.  Enter the assigned username.  OCI instances will default to the username ```opc```.  Enter ```opc```.
+2.  Under **Category** select **Connection** and then choose the **Data** field.  Enter the assigned instance's username.  OCI instances will default to the username ```opc```.  Enter ```opc```.
 
     ![](images/keylab-024.png " ")
 
@@ -249,9 +249,9 @@ Follow below instructions to connect to a cloud instance via SSH using the PuTTY
 
     You are now able to connect securely using the PuTTY terminal utility.   You can save the connection information for future use and configure PuTTY with your own custom settings.  
 
-    [For more information on using PuTTY](https://the.earth.li/~sgtatham/putty/0.73/htmldoc/)
-
     *Note: If you've already installed PuTTY, don't bother with Git for Windows.   It's your choice which to use for key generation and terminal access.*
+
+    [For more information on using PuTTY](https://the.earth.li/~sgtatham/putty/0.73/htmldoc/)
 
 You may now *proceed to the next lab*.
 
@@ -295,9 +295,7 @@ You may now *proceed to the next lab*.
 
 You have created a public/private SSH key pair and can utilize it in any of the Oracle OCI labs that require an SSH key.
 
-* [Click here for more details on SSH](https://www.ssh.com/ssh/key)
-
-    In case you're interested, here's a short tutorial on initiating a connection from a Linux instance with the SSH keys we just created.
+In case you're interested, click [here](https://www.ssh.com/ssh/key) for more details on SSH, a short tutorial on initiating a connection from a Linux instance with the SSH keys we just created.
 
 You may now *proceed to the next lab*.
 
