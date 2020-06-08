@@ -49,7 +49,7 @@ Then, as the `oracle` user, start the server using
 Once the graph server is up and running, open a new SSH connection to the same compute instance.  
 Check that the exploded database wallet is in the compute instance and accessible from the user account which will run the graph client.
 
-Assuming the user is named `oracle` and the wallet is in `/home/oracle/wallets` check that it exists and has the right permissions. Switch
+Assuming the user is named `oracle` and the wallet is in `/home/oracle/wallets` check that it exists and has the right permissions. 
 
 ```
 <copy>
