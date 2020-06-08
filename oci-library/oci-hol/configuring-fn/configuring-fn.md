@@ -67,10 +67,10 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 5. Verify all the information and  Click **Create**.
 
 6. This will create a VCN with followig components.
-7. 
+   
     *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
 
-8. Click **View Virtual Cloud Network** to display your VCN details.
+7. Click **View Virtual Cloud Network** to display your VCN details.
               
 ## Step 2: Create ssh keys and compute instance
 
@@ -387,26 +387,26 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
     </copy>
     ```
 
-26. Next we will login to OCI Registry and ensure we have access. Enter command;
-    ```
-    <copy>
-    bash
-    docker login <region-code>.ocir.io
-    </copy>
-    ```
-
-    **For example: docker login iad.ocir.io**
+26. Next we will login to OCI Registry and ensure we have access. Enter command:
+    
+        ```
+        <copy>
+        bash
+        docker login <region-code>.ocir.io
+        </copy>
+        ```
+        *For example: docker login iad.ocir.io*
 
 27. When prompted, enter your user name in the format:
 
-    **tenancy-namespace>/<username**
+    *tenancy-namespace>/<username>*
 
-    *For example: ansh81vru1zp/jdoe@acme.com*
+    For example: ansh81vru1zp/jdoe@acme.com
  
 28. When prompted for a password, enter the auth token generated ealier.
     ![](./../configuring-fn/images/Fn_001.PNG " ")
 
-29. Next we will create our fist applicaiton. Login to OCI console. Under OCI serverices menu, click  **Solutions and Platform**, click **Developer Services** and then **Functions**
+29. Next we will create our fist applicaiton. Login to OCI console. Under OCI serverices menu, click  **Solutions and Platform**, click **Developer Services** and then **Functions**.
 
 30. Click **Create Application** and fill out the dialog box:
 
@@ -449,7 +449,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
     </copy>
     ```
 
-    *NOTE: <FUNCTION_NAME> is what was used in the compute instance and <NAME> is what was used in OCI Console*
+    *NOTE: <FUNCTION_NAME> is what was used in the compute instance and <NAME> is what was used in OCI Console.*
 
 34. You can also Confirm that the <FUNCTION_NAME> image has been pushed to Oracle Cloud Infrastructure Registry by logging in to the Console. Under **Solutions and Platform**, go to **Developer Services** and click **Registry**. 
 
@@ -460,7 +460,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
     fn invoke <NAME> <FUNCTION_NAME>-func
     </copy>
     ```
-    **For example if in OCI console we used *helloworld-app* as the name and in compute instance we use *helloworld* then the command will be 'fn invoke helloworld-app helloworld-func'**
+    For example if in OCI console we used *helloworld-app* as the name and in compute instance we use *helloworld* then the command will be 'fn invoke helloworld-app helloworld-func'.
 
 36. Verify 'Hello World !' message is displayed.
 
@@ -483,9 +483,7 @@ Congratulations! You've just created, deployed, and invoked your first function 
 6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
 appear.
 
-7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
-
+7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is 
 8. Navigate to **Functions** under **Developer Servies**. Click the action icon and Click **Delete**.
     ![](./../configuring-fn/images/Fn_002.PNG " ")
 
