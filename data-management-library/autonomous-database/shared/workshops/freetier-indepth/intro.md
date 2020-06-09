@@ -41,18 +41,6 @@ Oracle’s Autonomous Database is the perfect quick-start service for fast data 
 ## Workshop Prerequisites
 This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
-### How to Get Your Free Cloud Trial Account
-If you already have an Oracle Cloud account then you can skip this section. If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
-- $300 of free credits good for up to 3500 hours of Oracle Cloud usage
-- Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
-- Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
-
-Click on the image below to go to the trial sign-up page which will allow you to request your free cloud account:
-
-  <a href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ex:tb:::RC_NAMK181017P00031:ADW_IMHOL&SC=:ex:tb:::RC_NAMK181017P00031:ADW_IMHOL&pcode=NAMK181017P00031" target="\_blank"><img src="http://www.oracle.com/webfolder/technetwork/tutorials/learning_path/images/700705-auto-dw-social-bn728_-152.png"/></a>
-
-Once your trial account is created, you will receive a Welcome to Oracle Cloud email that contains your cloud account password along with links to useful collateral. To sign into the Oracle Cloud, go to: <a href="https://www.oracle.com/cloud/sign-in.html" target="\_blank">https://www.oracle.com/cloud/sign-in.html</a>
-
 ###Getting Help During This Workshop
 If you have a question during this workshop then use the <a href="https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary" target="\_blank">**Autonomous Data Warehouse Forum**</a> on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Autonomous Data Warehouse.
 

@@ -25,7 +25,7 @@ Click [here](https://www.youtube.com/watch?v=PHQqbUX4T50&autoplay=0&html5=1) to 
 
 ### Lab Prerequisites
 
-- This lab assumes you have completed the [Login to Oracle Cloud] (?lab=lab-0-login-oracle-cloud) and [Provision ADB] (?lab=lab-1-provision-adw-instance) labs seen in the menu on the right.
+- This lab assumes you have completed the **Login to Oracle Cloud** and **Provision ADB** labs seen in the menu on the right.
 
 ## Step 1: Download the Connection Wallet
 

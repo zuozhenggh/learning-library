@@ -6,10 +6,10 @@
           "filename": "./intro.md"
       },
       {
-          "title": "Lab 1: Login to Oracle Cloud",
-          "description": "Login to Oracle Cloud",
-          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
-      },
+           "title": "Lab 1: Get a Free Trial",
+           "description": "Get a Free Trial",
+           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+       },
         {
             "title": "Lab 2: Getting Started",
             "description": "Provision Autonomous Database",

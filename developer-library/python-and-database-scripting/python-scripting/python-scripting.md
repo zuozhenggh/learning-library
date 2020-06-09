@@ -4,13 +4,9 @@
 
 cx\_Oracle is a Python extension module that enables access to Oracle Database. It conforms to the Python database API 2.0 specification with a considerable number of additions and a couple of exclusions. See the homepage for a feature list.
 
-cx\_Oracle 8 has been tested with Python versions 3.5 through 3.8. You can use cx\_Oracle with Oracle Database 11.2, 12c, 18c and 19c client libraries. Oracle's standard client-server version interoperability allows connection to both older and newer databases. For example Oracle 19c client libraries can connect to Oracle Database 11.2. Older versions of cx\_Oracle may work with older versions of Python.
+cx\_Oracle 7 has been tested with Python versions 3.5 through 3.8. You can use cx\_Oracle with Oracle Database 11.2, 12c, 18c and 19c client libraries. Oracle's standard client-server version interoperability allows connection to both older and newer databases. For example Oracle 19c client libraries can connect to Oracle Database 11.2. Older versions of cx\_Oracle may work with older versions of Python.
 
 Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!
-
-To learn about how to connect to an oracle database from python, watch the video below.
-
-[](youtube:C9op6I-4WM0)
 
 ### Overview
 
@@ -45,8 +41,8 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
    python -V
    </copy>
    ````
-For this tutorial Python Version 3.6 (or later) is preferred. **You will typically have to update Python**
-cx\_Oracle version 7.2 (or later) is needed
+For this tutorial Python Version 3.6 (or later) is preferred. **You will typically have to update Python**.
+cx\_Oracle version 7.2 (or later) is needed.
 Oracle database 19c is installed with the 19c client libraries. SQL*Plus is preinstalled
 The Advanced Queuing section requires Oracle client 12.2 or later. The SODA section requires Oracle client 18.5, or later, and Oracle Database 18 or later.
 
@@ -57,8 +53,6 @@ The Advanced Queuing section requires Oracle client 12.2 or later. The SODA sect
     sudo yum -y install python3 python3-tools
     </copy>
     ````
-
-    ![](./images/step1.3-installpython3.png " " )
 
     ![](./images/p_installPython.jpg " ")
 
@@ -75,7 +69,7 @@ The Advanced Queuing section requires Oracle client 12.2 or later. The SODA sect
     <copy>
     mkdir -p python
     cd /python
-    wget  https://objectstorage.us-ashburn-1.oraclecloud.com/p/NBqvCUUdoUHWnmiiyMofncU7K03zg9tEJxolXE0HKGo/n/c4u03/b/labfiles/o/ python_setup.zip
+    wget  https://objectstorage.us-ashburn-1.oraclecloud.com/p/NBqvCUUdoUHWnmiiyMofncU7K03zg9tEJxolXE0HKGo/n/c4u03/b/labfiles/o/python_setup.zip
     unzip python_setup.zip
     </copy>
     ````
@@ -103,7 +97,7 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
     </copy>
     ````
 
-2.  Install the `cx\_Oracle` module using python3 and pip for the oracle user.
+2.  Install the `cx_Oracle` module using python3 and pip for the oracle user.
 
     ````
     <copy>
@@ -116,7 +110,7 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
 3.  Test your install by launching the python console and list the available modules.
     ````
     <copy>
-    . oraenv
+    source oraenv
     </copy>
     ORACLE_SID = [ORCL] ? ORCL
     The Oracle base remains unchanged with value /u01/app/oracle
@@ -380,7 +374,7 @@ There are several ways to execute Python code. In this step, we start with two e
     Any cx\_Oracle installation can connect to older and newer Oracle Database versions. By checking the Oracle Database and client versions numbers, the application can make use of the best Oracle features available.
 
 ## Step 6 Connection Pooling
-1.  Session pooling
+1.  Connection pooling
 
     Review the code contained in connect\_pool.py:
 
@@ -412,11 +406,11 @@ There are several ways to execute Python code. In this step, we start with two e
     print("All done!")
     ````
 
-    The **SessionPool()** function creates a pool of Oracle "sessions" for the user. Sessions in the pool can be used by cx\_Oracle  connections by calling **pool.acquire()**. The initial pool size is 2 sessions. The maximum size is 5 sessions. When the pool    needs to grow, 1 new session will be created at a time. The pool can shrink back to the minimum size of 2 when sessions are no     longer in use.
+    The **SessionPool()** function creates a pool of Oracle connections for the user. Connections in the pool can be used by cx\_Oracle  connections by calling **pool.acquire()**. The initial pool size is 2 connections. The maximum size is 5 connections. When the pool needs to grow, 1 new connection will be created at a time. The pool can shrink back to the minimum size of 2 when connections are no longer in use.
 
     The **def Query():** line creates a method that is called by each thread.
 
-    In the method, the **pool.acquire()** call gets one session from the pool (as long as less than 5 are already in use). This     session is used in a loop of 4 iterations to query the sequence myseq. At the end of the method, cx\_Oracle will automatically   close the cursor and release the session back to the pool for reuse.
+    In the method, the **pool.acquire()** call gets one connection from the pool (as long as less than 5 are already in use). This connection is used in a loop of 4 iterations to query the sequence myseq. At the end of the method, cx\_Oracle will automatically close the cursor and release the connection back to the pool for reuse.
 
     The **seqval, = cur.fetchone()** line fetches a row and puts the single value contained in the result tuple into the variable   seqval. Without the comma, the value in seqval would be a tuple like "(1,)".
 
@@ -433,7 +427,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     The output shows interleaved query results as each thread fetches values independently. The order of interleaving may vary from run to run.
 
-2. Session pool experiments
+2. Connection pool experiments
 
     Review connect\_pool2.py, which has a loop for the number of threads, each iteration invoking the Query() method:
     ````
@@ -472,18 +466,18 @@ There are several ways to execute Python code. In this step, we start with two e
     python3 connect_pool2.py
     </copy>
     ````
-    Experiment with different values of the pool parameters and **numberOfThreads**. Larger initial pool sizes will make the pool creation slower, but the sessions will be available immediately when needed. When **numberOfThreads** exceeds the maximum size of the pool, the **acquire()** call will generate an error. Adding the additional argument **getmode = cx\_Oracle.SPOOL\_ATTRVAL\_WAIT** to the **cx\_Oracle.SessionPool()** call will prevent the exception from taking place, but will cause the thread to wait until a session is available.
+    Experiment with different values of the pool parameters and **numberOfThreads**. Larger initial pool sizes will make the pool creation slower, but the connections will be available immediately when needed. When **numberOfThreads** exceeds the maximum size of the pool, the **acquire()** call will generate an error such as *ORA-24459: OCISessionGet() timed out waiting for the pool to create new connections*. Adding the additional argument **getmode = cx\_Oracle.SPOOL\_ATTRVAL\_WAIT** to the **cx\_Oracle.SessionPool()** call will prevent the exception from taking place, but will cause the thread to wait until a connection is available.
 
-    Pool configurations where min is the same as max (and increment = 0) are often recommended as a way to avoid connection storms on the database server.
+    Pool configurations where min is the same as max (and increment = 0) are often recommended as a best practice. This avoids connection storms on the database server.
 
 3. Creating a Database Resident Connection Pool (DRCP) Connection
 
     Database Resident Connection Pooling allows multiple Python processes on multiple machines to share a small pool of database server processes.
 
-    Below left is a diagram without DRCP. Every application connection or session has its own 'dedicated' database server process. Application connect and close calls require the expensive create and destroy of those database server processes. To avoid these costs, scripts may hold connections open even when not doing database work: these idle server processes consumes database host resources. Below right is a diagram with DRCP. Scripts can use database servers from a precreated pool of servers and return them when they are not in use.
+    Below left is a diagram without DRCP. Every application connection has its own 'dedicated' database server process. Application connect and close calls require the expensive create and destroy of those database server processes. To avoid these costs, scripts may hold connections open even when not doing database work: these idle server processes consumes database host resources. Below right is a diagram with DRCP. Scripts can use database servers from a precreated pool of servers and return them when they are not in use.
     Without DRCP: ![](./images/python_nopool.png "Without DRCP " ) With DRCP: ![](./images/python_pool.png "Without DRCP ")
 
-    DRCP is useful when the database host machine does not have enough memory to handled the number of database server processes required. However, if database host memory is large enough, then the default, 'dedicated' server process model is generally recommended. If DRCP is enabled, it is best used in conjunction with cx_Oracle session pooling.
+    DRCP is useful when the database host machine does not have enough memory to handled the number of database server processes required. However, if database host memory is large enough, then the default, 'dedicated' server process model is generally recommended. If DRCP is enabled, it is best used in conjunction with cx\_Oracle middle-tier connection pooling.
 
     Batch scripts doing long running jobs should generally use dedicated connections. Both dedicated and DRCP servers can be used in the same database for different applications.
 
@@ -502,7 +496,18 @@ There are several ways to execute Python code. In this step, we start with two e
 
     Applications that should never share session information should use a different connection class and/or use ATTR\_PURITY\_NEW to force creation of a new session. This reduces overall scalability but prevents applications mis-using session information.
 
-    Run connect\_drcp.py in a terminal window.
+    Before you run the **connect\_drcp.py** code you will need to start the default connection pool in the instance:
+    Connect to the oracle instance as *sys*
+    ````
+    sqlplus sys/Ora_DB4U@localhost:1521/orcl as sysdba
+    ````
+    ````
+    <copy>
+    exec dbms_connection_pool.start_pool;
+    </copy>
+    ````
+
+    Run **connect\_drcp.py** in a terminal window.
     ````
     <copy>  
     python connect_drcp.py
@@ -510,9 +515,11 @@ There are several ways to execute Python code. In this step, we start with two e
     ````
     The output is simply the version of the database.     
 
-4. Session pooling and DRCP
+    **Note** If you get an error: **"ORA-12520 TNS: Listener could not find available handler"**, you have not started the DRCP connection pool
 
-    DRCP works well with session pooling.
+4. Connection pooling and DRCP
+
+    DRCP works well with cx\_Oracle's connection pooling.
 
     Edit connect\_pool2.py, reset any changed pool options, and modify it to use DRCP:
 
@@ -555,7 +562,7 @@ There are several ways to execute Python code. In this step, we start with two e
     </copy>
     ````
 
-    If you get the error **"ORA-24418: Cannot open further sessions"**, it is because connection requests are being made while the pool is starting or growing. Add the argument getmode = cx\_Oracle.SPOOL\_ATTRVAL\_WAIT to the cx\_Oracle.SessionPool() call so connection requests wait for pooled sessions to be available.
+    If you get the error **"ORA-24459: OCISessionGet() timed out waiting for pool to create new connections"** or **"ORA-24418: Cannot open further sessions"**, it is because connection requests are being made while the pool is starting or growing. Add the argument getmode = cx\_Oracle.SPOOL\_ATTRVAL\_WAIT to the cx\_Oracle.SessionPool() call so connection requests wait for pooled connections to be available.
 
     Open a new a terminal window and invoke SQL*Plus:
 
@@ -569,7 +576,7 @@ There are several ways to execute Python code. In this step, we start with two e
     To see the pool configuration you can query DBA\_CPOOL\_INFO.
 5. More DRCP investigation
 
-    To explore the behaviors of session and DRCP pooling futher, you could try changing the purity to **cx\_Oracle.ATTR\_PURITY\_NEW** to see the effect on the DRCP **NUM\_MISSES** statistic.
+    To explore the behaviors of cx\_Oracle connection pooling and DRCP pooling further, you could try changing the purity to **cx\_Oracle.ATTR\_PURITY\_NEW** to see the effect on the DRCP **NUM\_MISSES** statistic.
 
     Another experiment is to include the time module at the file top:
     ````
@@ -774,7 +781,7 @@ There are several ways to execute Python code. In this step, we start with two e
     python3 query_arraysize.py
     </copy>
     ````
-    Reload a few times to see the average times.
+    Rerun a few times to see the average times.
 
     Experiment with different arraysize values. For example, edit query\_arraysize.py and change the arraysize to:
 
@@ -859,7 +866,7 @@ Bind variables enable you to re-execute statements with new data values, without
     ````
     The 'rows' array contains the data to be inserted.
 
-    The executemany() call inserts all rows. This calls allows "array binding", which is an efficient way to insert multiple records.
+    The executemany() call inserts all rows. This call allows "array binding", which is an efficient way to insert multiple records.
 
     The final part of the script queries the results back and displays them as a list of tuples.
 
@@ -940,11 +947,11 @@ Bind variables enable you to re-execute statements with new data values, without
 
     The other data gets inserted and is queried back.
 
-    At the end of the script, cx\_Oracle will rollback an uncommitted transaction. If you want to commit results, you can use:
+    At the end of the script, cx\_Oracle will roll back an uncommitted transaction. If you want to commit results, you can use:
     ````
     con.commit()
     ````
-    To force a rollback in cx\_Oracle, use:
+    To force cx\_Oracle to roll back, use:
 
     ````
     con.rollback()
@@ -1865,7 +1872,7 @@ Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be ins
 In this Lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
 * Create connections
-* Use sessions pooling and Database Resident Connection Pooling
+* Use cx\_Oracle connection pooling and Database Resident Connection Pooling
 * Execute queries and fetch data
 * Use bind variables
 * Use PL/SQL stored functions and procedures
@@ -1876,7 +1883,7 @@ An additional lab on using Python with is available in the New Features for Deve
 
 ## Acknowledgements
 
-* **Author** - Christopher Jones
+* **Author** - Christopher Jones, Anthony Tuininga
 * **Contributors** - Jaden McElvey Technical Lead Oracle LiveLabs
 * **Last Updated By/Date** - Troy Anthony, DB Product Management, June 2020
 

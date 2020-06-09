@@ -20,7 +20,7 @@ Watch a video demonstration of provisioning a new Autonomous Data Warehouse:
 
 ### Lab Prerequisites
 
-- This lab assumes you have already completed the [Log in to Oracle Cloud] (?lab=lab-0-login-oracle-cloud) lab seen in the menu on the right. In this lab, you will be provisioning an ADB database instance using the cloud console.
+- This lab assumes you have already completed the **Log in to Oracle Cloud** lab seen in the menu on the right. In this lab, you will be provisioning an ADB database instance using the cloud console.
 
 ## STEP 1: Choosing ADW or ATP from the Services Menu
 
