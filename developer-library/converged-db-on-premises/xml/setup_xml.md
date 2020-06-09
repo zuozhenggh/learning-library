@@ -28,10 +28,18 @@ This lab assumes you have completed the following labs:
   ````
     <copy>
      . oraenv
-     ConvergedCDB
+     </copy>
+````
+
+````
+    <copy>
+    ConvergedCDB
+    </copy>
+````
+
+````
+    <copy>
      sqlplus appxml/Oracle_4U@JXLPDB
-
-
     </copy>
 ````
 

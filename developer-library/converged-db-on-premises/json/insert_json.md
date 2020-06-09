@@ -4,7 +4,7 @@
 ## Introduction
 
 This lab walks you through the steps of inserting and updating json data. We can use standard database APIs to insert or update JSON data. We can work directly with JSON data contained in file-system files by creating an external table that exposes it to the database.
-In this lab we can add a row to our json table purchase_order using insert query and  we can use Oracle SQL function json_mergepatch to update specific portions of a JSON document.
+In this lab we can add a row to our json table using insert query and  we can use Oracle SQL function json_mergepatch to update specific portions of a JSON document.
 
 ## Before You Begin
 
@@ -16,8 +16,10 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
 - Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
-  
-## Step 1: Take a count of the rows in the json table-
+
+## Step 1: Insert a record.
+
+  a. **Take a count of the rows in the json table-**
 
   ````
     <copy>
@@ -25,11 +27,10 @@ This lab assumes you have completed the following labs:
     </copy>
   ````
     
-  ![](./images/insert_json.PNG " ")
+  ![](./images/insert_json.PNG " ")  
 
-## Step 2: Insert a record.
-    
-         
+ b. Insert a record.
+
   ````
     <copy>
     INSERT INTO purchase_order
@@ -70,13 +71,28 @@ to_date('05-MAY-2020'),
              </copy>
   ````
    
+The above insert query is also available as a sql file in the directory “/u01/workshop/json”.
+The script is called as insert.sql. You can run this connecting to the SQL prompt.
 
-## Step 3: Verify the count after insert.
+Set your oracle environment and connect to PDB.
+ ````
+    <copy>
+. oraenv
+ConvergedCDB
+sqlplus appjson/Oracle_4U@JXLPDB
+SQL>@insert.sql
+</copy>
+   ````
+    
+
+
+c. **Verify the count after insert.**
 
   
   ````
     <copy>
-   Select * from purchase_order j where j.po_document.PONumber-10001;
+   Select * from purchase_order j where j.po_document.PONumber=10001;
+    
     </copy>
    ````
     
@@ -84,7 +100,7 @@ to_date('05-MAY-2020'),
   ![](./images/json_select_count1.PNG " ")
    
   
-## Step 4: Update Table.
+## Step 2: Update Table.
   We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
    
    ````
@@ -101,8 +117,24 @@ to_date('05-MAY-2020'),
     </copy>
     
   ````
+
+ 
+The above update query is also available as a sql file in the directory “/u01/workshop/json”.
+The script is called as update.sql. You can run this to the SQL prompt.
+
+ ````
+    <copy>
     
+SQL>@update.sql
+
+  </copy>
+    
+  ````
+
   ![](./images/json_lab7_6.PNG " ")
+
+
+
 
 
 ## Acknowledgements

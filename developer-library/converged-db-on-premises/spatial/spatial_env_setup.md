@@ -21,7 +21,7 @@ This lab assumes you have completed the following labs:
     <copy>
      . oraenv
      ConvergedCDB
-     sqlplus appstat/Oracle_4U@SGRPDB
+     sqlplus APPSPAT/Oracle_4U@SGRPDB
 
 
     </copy>
@@ -31,7 +31,7 @@ This lab assumes you have completed the following labs:
    
 ````
     <copy>
-	Name: Spatial
+  	Name: Spatial
     Username: appspat
     Password: Oracle_4U
     Hostname: <machine_IP_address>

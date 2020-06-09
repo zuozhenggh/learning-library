@@ -24,7 +24,7 @@ This lab assumes you have completed the following labs:
     j.PO_DOCUMENT.CostCenter,
     j.PO_DOCUMENT.ShippingInstructions.Address.city
     from PURCHASE_ORDER j 
-    wherej.PO_DOCUMENT.ShippingInstructions.Address.city = 'South San Francisco'
+    where j.PO_DOCUMENT.ShippingInstructions.Address.city = 'South San Francisco'
     /
 
       </copy>
@@ -40,7 +40,7 @@ This lab assumes you have completed the following labs:
   ````
     <copy>
     SELECT po.po_document.PONumber,po.po_document.Requestor
-    FROM purchase_orderpo
+    FROM purchase_order po
     WHERE json_exists(po.po_document,'$?(@.LineItems.Part.UPCCode == 85391628927)');
 
       </copy>
