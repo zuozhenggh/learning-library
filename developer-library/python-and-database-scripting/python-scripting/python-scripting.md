@@ -4,13 +4,9 @@
 
 cx\_Oracle is a Python extension module that enables access to Oracle Database. It conforms to the Python database API 2.0 specification with a considerable number of additions and a couple of exclusions. See the homepage for a feature list.
 
-cx\_Oracle 8 has been tested with Python versions 3.5 through 3.8. You can use cx\_Oracle with Oracle Database 11.2, 12c, 18c and 19c client libraries. Oracle's standard client-server version interoperability allows connection to both older and newer databases. For example Oracle 19c client libraries can connect to Oracle Database 11.2. Older versions of cx\_Oracle may work with older versions of Python.
+cx\_Oracle 7 has been tested with Python versions 3.5 through 3.8. You can use cx\_Oracle with Oracle Database 11.2, 12c, 18c and 19c client libraries. Oracle's standard client-server version interoperability allows connection to both older and newer databases. For example Oracle 19c client libraries can connect to Oracle Database 11.2. Older versions of cx\_Oracle may work with older versions of Python.
 
 Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!
-
-To learn about how to connect to an oracle database from python, watch the video below.
-
-[](youtube:C9op6I-4WM0)
 
 ### Overview
 
@@ -45,8 +41,8 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
    python -V
    </copy>
    ````
-For this tutorial Python Version 3.6 (or later) is preferred. **You will typically have to update Python**
-cx\_Oracle version 7.2 (or later) is needed
+For this tutorial Python Version 3.6 (or later) is preferred. **You will typically have to update Python**.
+cx\_Oracle version 7.2 (or later) is needed.
 Oracle database 19c is installed with the 19c client libraries. SQL*Plus is preinstalled
 The Advanced Queuing section requires Oracle client 12.2 or later. The SODA section requires Oracle client 18.5, or later, and Oracle Database 18 or later.
 
@@ -73,7 +69,7 @@ The Advanced Queuing section requires Oracle client 12.2 or later. The SODA sect
     <copy>
     mkdir -p python
     cd /python
-    wget  https://objectstorage.us-ashburn-1.oraclecloud.com/p/NBqvCUUdoUHWnmiiyMofncU7K03zg9tEJxolXE0HKGo/n/c4u03/b/labfiles/o/ python_setup.zip
+    wget  https://objectstorage.us-ashburn-1.oraclecloud.com/p/NBqvCUUdoUHWnmiiyMofncU7K03zg9tEJxolXE0HKGo/n/c4u03/b/labfiles/o/python_setup.zip
     unzip python_setup.zip
     </copy>
     ````
@@ -101,7 +97,7 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
     </copy>
     ````
 
-2.  Install the `cx\_Oracle` module using python3 and pip for the oracle user.
+2.  Install the `cx_Oracle` module using python3 and pip for the oracle user.
 
     ````
     <copy>
@@ -114,7 +110,7 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
 3.  Test your install by launching the python console and list the available modules.
     ````
     <copy>
-    . oraenv
+    source oraenv
     </copy>
     ORACLE_SID = [ORCL] ? ORCL
     The Oracle base remains unchanged with value /u01/app/oracle
@@ -1887,7 +1883,7 @@ An additional lab on using Python with is available in the New Features for Deve
 
 ## Acknowledgements
 
-* **Author** - Christopher Jones
+* **Author** - Christopher Jones, Anthony Tuininga
 * **Contributors** - Jaden McElvey Technical Lead Oracle LiveLabs
 * **Last Updated By/Date** - Troy Anthony, DB Product Management, June 2020
 
