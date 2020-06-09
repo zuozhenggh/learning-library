@@ -19,7 +19,7 @@ Watch a video demonstration of monitoring an autonomous database in the Autonomo
 
 ### Lab Prerequisites
 
--   This lab assumes you have completed the [Login to Oracle Cloud] (?lab=lab-0-login-oracle-cloud) and [Provision ADB] (?lab=lab-1-provision-adw-instance) labs seen in the menu on the right.
+-   This lab assumes you have completed the **Login to Oracle Cloud** and **Provision ADB** labs seen in the menu on the right.
 
 ## <!--buggy, did this so Part 1 would collapse-->
 
