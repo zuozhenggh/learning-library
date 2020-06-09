@@ -1,7 +1,7 @@
 # Use Case: Customer 360 analysis #
 
 ## Overview
-This example shows how integrating multiple datasets, using a graph, facilitates additional analytics can lead to new insights. We will use three small datasets for illustrative purposes. The first contains accounts and account  owners. The second is purchases by the people who own those accounts. The third is transactions between these accounts.
+This example shows how integrating multiple datasets, using a graph, facilitates additional analytics and can lead to new insights. We will use three small datasets for illustrative purposes. The first contains accounts and account  owners. The second is purchases by the people who own those accounts. The third is transactions between these accounts.
 
 The combined dataset is then used to perform the following common graph query and analyses: pattern matching, detection of cycles, finding important nodes, community detection, and recommendation.
 
@@ -18,13 +18,13 @@ The combined dataset is then used to perform the following common graph query an
 >in `/etc/oracle/graph/server.conf` is set to false, i.e. it is  
 >` "enable_tls": false,`  
 
->
+
 >Start the graph server.
->
+
 ```
 <copy>/opt/oracle/graph/pgx/bin/start-server</copy>
 ```
->
+
 >Once it has started and you see the notification `INFO: Starting ProtocolHandler ["http-nio-7007"]` open a new SSH connection, if necessary, to the compute instance.  
 >`su` to the `oracle` user or whichever user deployed the graph server and client kit and was added to the >oraclegraph group in Lab 3.  
 >
@@ -32,10 +32,10 @@ The combined dataset is then used to perform the following common graph query an
 ```
 <copy>/opt/oracle/graph/bin/opg-jshell --base_url http://localhost:7007</copy>
 ```
->
+
 >That starts up a shell which connects to the server instance running on the graph server.
 >Once it starts up you should see the following:
->
+
 ```
 For an introduction type: /help intro
 Oracle Graph Server Shell 20.2.0
@@ -53,7 +53,7 @@ Check to see which graphs have been loaded into the graph server.
 <copy>session.getGraphs();</copy>
 ```
 
-If the `Customer_360' graph exists in the in-memory graphbserver then load it into the client shell.
+If the `Customer_360' graph exists in the in-memory graph server then load it into the client shell.
 ```
 <copy>var graph = session.getGraph("Customer_360");</copy>
 ```
