@@ -1,11 +1,13 @@
 # Use Case: Customer 360 analysis #
 
 ## Overview
-This example shows how integrating multiple datasets, using a graph, facilitates additional analytics can lead to new insights. We will use three small datasets for illustrative purposes. The first contains accounts and account  owners. The second is purchases by the people who own those accounts. The third is transactions between these accounts.
+The results of the analyses done in the previous labs can easily be visualized using Graph Visualization.
 
-The combined dataset is then used to perform the following common graph query and analyses: pattern matching, detection of cycles, finding important nodes, community detection, and recommendation.
+The following video provides an overview of the visualization component.
 
-**Note:** This lab assumes you have successfully completed Lab 8 and published the graph. It also assumes the Graph Visualization component is up and running on the compute instance on `public_ip_for_compute:7007/ui`.
+[](youtube:zfefKdNfAY4)
+
+**Note:** This lab assumes you have successfully completed Lab 3.8 and published the graph. It also assumes the Graph Visualization component is up and running on the compute instance on `public_ip_for_compute:7007/ui`.
 
 ## Graph Visualization
 
@@ -22,7 +24,7 @@ You should see a graph similar to the screenshot below.
 ![Customer 360 graph](../images/ADB_GViz_Show50Elements.png)
 
 Now let's add some labels and other visual context. These are known as highlights.  
-**Note:** If you did the first lab (Setup witn Docker) and cloned the `oracle-pg` repo then the required `highlights.json` file is in the `customer_360` folder. If however you are doing tis (Setup with Free Tier) lab by itself then click on this link [download highlights.json](highlights.json) to download it.
+**Note:** If you did the first lab (Setup witn Docker) and cloned the `oracle-pg` repo then the required `highlights.json` file is in the `customer_360` folder. If however you are doing this (Setup with Free Tier) lab by itself then right-click on this link [download highlights.json](highlights.json) to download it.
 
 Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder (i.e. either to `oracle-pg/graphs/customer_360`  or the folder where you just downloaed it) and choose the file named 'highlights.json' and click Open to load that.  
 ![Load highlights for graph](../../customer_360_analysis/images/GraphVizLoadHighlights.png)
@@ -91,7 +93,8 @@ Let's add one more account to that query to find a circular transfer pattern bet
 
 The PGQL query becomes:
 ```
-<copy>SELECT * 
+<copy>
+SELECT * 
 MATCH (FromAcct)-[TxnAB:TRANSFER]->(ToAcctB)-[TxnBC:TRANSFER]->(ToAcctC)-[TxnCA:TRANSFER]->(FromAcct)
 WHERE TxnAB.DATE < TxnBC.DATE and TxnBC.DATE < TxnCA.DATE
 </copy>
@@ -108,4 +111,4 @@ The result should look as shown below.
 ## Acknowledgements ##
 
 - **Author** - Jayant Sharma - Product Manager, Spatial and Graph.  
-With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).
+With a little help from colleagues (Albert Godfrind and Ryota Yamanaka). And lots from Jenny Tsai. Thank you.

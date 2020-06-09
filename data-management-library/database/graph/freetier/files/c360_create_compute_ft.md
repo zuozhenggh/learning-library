@@ -83,7 +83,7 @@ The steps are as follows:
 - Open the firewall for port 7007.
 - Copy the ADB wallet zip file into the compute.
 - Move it to the `oracle` user's home directory and change the file owner and group.
-- Switch to the `oracle` user. Add JAVA_HOME and JAVA11_HOME to the bash_profile
+- Switch to the `oracle` user. Add `JAVA_HOME` and `JAVA11_HOME` to the bash_profile
 - Create the `wallets` directory. Unzip the ADB wallet into that directory.
 
 SSH into the compute using the private key you created earlier.
@@ -177,7 +177,7 @@ sudo yum install oracle-graph-20.2.0.x86_64.rpm
 **Ignore the error about the `jar` executable. This lab does not use the `war` files.**
 You can use `alternatives` or some other means to set the `jar` executable (to the one in JDK8) if you wish.
 
-Move the ADB wallet to the `oracle` user. Modify the coomands as appropriate for your environment and execute them as `opc`. 
+Move the ADB wallet to the `oracle` user. Modify the commands as appropriate for your environment and execute them as `opc`. 
 
 ```
 sudo chown oracle ADB_Wallet.zip 
@@ -205,11 +205,11 @@ mv <ADB_Wallet>.zip /home/oracle/wallets
 cd wallets
 unzip <ADB_Wallet>.zip
 
-## open .bash_profile in a text editor and add the env vars for JAVA_HOME and JAVA11_HOME
+## open .bash_profile in a text editor and add the env vars for JAVA_HOME and JAVA11_HOME  
 vi /home/oracle/.bash_profile
 
 ## Add these lines in oracle's bash_profile 
-JAVA_HOME=/usr/java/jdk1.8.0_231-amd64
+JAVA_HOME=/usr/java/jdk1.8.0_251-amd64
 JAVA11_HOME=/usr/java/jdk-11.0.5
 
 export JAVA_HOME
@@ -220,31 +220,28 @@ export JAVA11_HOME
 ## open the tnsnames and get the service name you will use later.
 cat /home/oracle/wallets/tnsnames.ora
 
-## you will something similar to
-ADWC1_high =
-       (description=
-             (address=
-                   (https_proxy=proxyhostname)(https_proxy_port=80)(protocol=tcps)(port=1522)(host=adwc.example.oraclecloud.com)
-             )
-             (connect_data=(service_name=adwc1_high.adwc.oraclecloud.com)
-             )
-             (security=(ssl_server_cert_dn="adwc.example.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")
-             )
-       )
-
+## you will see something similar to
+ADWC1_high = 
+    (description=
+        (address=
+            (https_proxy=proxyhostname)(https_proxy_port=80)(protocol=tcps)(port=1522)
+            (host=adwc.example.oraclecloud.com)
+        )
+         (connect_data=(service_name=adwc1_high.adwc.oraclecloud.com))
+         (security=(ssl_server_cert_dn="adwc.example.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))
+ )
 ```
 
 An entry in tnsnames.ora is of the form  
-`<addressname> =
- (DESCRIPTION =
-   (ADDRESS_LIST =
-     (ADDRESS = (PROTOCOL = TCP)(Host = <hostname>)(Port = <port>))
-   )
- (CONNECT_DATA =
-   (SERVICE_NAME = <service_name>)
- )
-)
-`
+`<addressname> =`  
+&nbsp;&nbsp;`(DESCRIPTION =`  
+&nbsp;&nbsp;&nbsp;&nbsp;`(ADDRESS_LIST = `  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`(ADDRESS = (PROTOCOL = TCP)(Host = <hostname>)(Port = <port>)) `  
+&nbsp;&nbsp;&nbsp;&nbsp;`) `  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`(CONNECT_DATA =  `  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`(SERVICE_NAME = <service_name>)  `  
+&nbsp;&nbsp;&nbsp;&nbsp;`) `  
+&nbsp;&nbsp;`)`  
 
 Note the `addressname`, e.g. `ADWC1_high` that you will use later when connecting to the databases using JDBC.
 
