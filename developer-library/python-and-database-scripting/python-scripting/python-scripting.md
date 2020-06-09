@@ -472,7 +472,7 @@ There are several ways to execute Python code. In this step, we start with two e
     ````
     Experiment with different values of the pool parameters and **numberOfThreads**. Larger initial pool sizes will make the pool creation slower, but the connections will be available immediately when needed. When **numberOfThreads** exceeds the maximum size of the pool, the **acquire()** call will generate an error such as *ORA-24459: OCISessionGet() timed out waiting for the pool to create new connections*. Adding the additional argument **getmode = cx\_Oracle.SPOOL\_ATTRVAL\_WAIT** to the **cx\_Oracle.SessionPool()** call will prevent the exception from taking place, but will cause the thread to wait until a connection is available.
 
-    Pool configurations where min is the same as max (and increment = 0) are often recommended as a way to avoid connection storms on the database server.
+    Pool configurations where min is the same as max (and increment = 0) are often recommended as a best practice. This avoids connection storms on the database server.
 
 3. Creating a Database Resident Connection Pool (DRCP) Connection
 
