@@ -24,6 +24,7 @@ This lab will walk you through the steps to connect Oracle Analytics Desktop (fo
 ## Step 1: Installing Oracle Analytics Desktop on a Windows Desktop
 
 1.  Download the latest version of Oracle Analytics Desktop (formerly Data Visualization Desktop) from <a href="http://www.oracle.com/technetwork/middleware/oracle-data-visualization/downloads/oracle-data-visualization-desktop-2938957.html" target="\_blank"> here</a>.
+**Note:** If you experience difficulty downloading the file, you may be encountering a bug on the download website that is in the process of being fixed.
 
 2.  After saving the installer executable file, click on the installer and follow the guided steps.
 
