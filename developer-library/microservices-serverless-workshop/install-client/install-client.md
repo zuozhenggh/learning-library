@@ -77,9 +77,9 @@ Then select **Shared Folders** and click the add folder button. Use the drop dow
 
   ![](./images/image60.png " ")
 
-1. Once logged in, open a terminal window and execute the next command to configure ocicli:
+3. Once logged in, open a terminal window and execute the next command to configure ocicli:
 
-![](./images/image64.png " ")
+  ![](./images/image64.png " ")
 
   ```
   <copy>cd /
@@ -89,22 +89,22 @@ Then select **Shared Folders** and click the add folder button. Use the drop dow
 
   ![](./images/image59.png " ")
 
-2. Keep the txt file with your OCI Tenancy parameters close as you will be asked for those parameters. When prompted to enter a location for your config press enter. When prompted for a user OCID copy and paste your user OCID from the text file. When prompted to enter a tenancy OCID copy and paste you tenancy OCID from the text file.
+4. Keep the txt file with your OCI Tenancy parameters close as you will be asked for those parameters. When prompted to enter a location for your config press enter. When prompted for a user OCID copy and paste your user OCID from the text file. When prompted to enter a tenancy OCID copy and paste you tenancy OCID from the text file.
 
   ![](./images/image78.png " ")
 
-3. Decline to generate a new RSA key pair by typing `n` and hitting enter. When prompted for the location of your private key file enter the command below.
+5. Decline to generate a new RSA key pair by typing `n` and hitting enter. When prompted for the location of your private key file enter the command below.
 
   ```
   <copy>/home/holuser/.oci/private.pem</copy>
   ```
   ![](./images/image58.png " ")
 
-4. Now let’s configure kubectl. Inside your cluster information page, click the “Access Cluster” button:
+6. Now let’s configure kubectl. Inside your cluster information page, click the “Access Cluster” button:
 
   ![](./images/image57.png " ")
 
-5. A popup window will appear providing you with the commands you have to run to configure kubectl to connect to the Kubernetes cluster just created(change value below with your own cluster id and region):
+7. A popup window will appear providing you with the commands you have to run to configure kubectl to connect to the Kubernetes cluster just created(change value below with your own cluster id and region):
 
   ```
   <copy>mkdir -p $HOME/.kube
@@ -112,9 +112,9 @@ Then select **Shared Folders** and click the add folder button. Use the drop dow
   export KUBECONFIG=$HOME/.kube/config</copy>
   ```
 
-  ![](./images/image311.png " ")
+  ![](./images/image101.png " ")
 
-6. When you execute commands below, you can face an issue and you must run an extra command to configure private key permissions:
+8. When you execute commands below, you can face an issue and you must run an extra command to configure private key permissions:
 
    ```
    <copy>oci setup-repair-file-permissions –file /home/holouser/.oci/private.pem</copy>
@@ -122,15 +122,15 @@ Then select **Shared Folders** and click the add folder button. Use the drop dow
 
   ![](./images/image83.png " ")
 
-7. You will follow steps mentioned in Access Kubernetes Dashboard section, so that we can launch the Kubernetes Dashboard:
+9. You will follow steps mentioned in Access Kubernetes Dashboard section, so that we can launch the Kubernetes Dashboard:
 
-  ![](./images/image312.png " ")
+  ![](./images/image102.png " ")
 
-8. Click **SIGN IN** and finally you are logged in Kube Dashboard:
+10. Click **SIGN IN** and finally you are logged in Kube Dashboard:
 
   ![](./images/image90.png " ")
 
-9. To enable Kubernetes to pull an image from Oracle Cloud Infrastructure Registry when deploying an application, you need to create a Kubernetes secret. The secret includes all the login details you would provide if you were manually logging in to Oracle Cloud Infrastructure Registry using the docker login command, including your auth token.
+11. To enable Kubernetes to pull an image from Oracle Cloud Infrastructure Registry when deploying an application, you need to create a Kubernetes secret. The secret includes all the login details you would provide if you were manually logging in to Oracle Cloud Infrastructure Registry using the docker login command, including your auth token.
 
   Run kubectl command below with your credentials(remember that username is made of object storage namespace/username and password is the Authtoken we generated):
 
@@ -140,7 +140,7 @@ Then select **Shared Folders** and click the add folder button. Use the drop dow
 
   ![](./images/image91.png " ")
 
-10. If you go then to Kubernetes Dashboard in browser inside the VM and navigate to Secrets menu under Config and Storage Area, you will see the Secret you have just created:
+12. If you go then to Kubernetes Dashboard in browser inside the VM and navigate to Secrets menu under Config and Storage Area, you will see the Secret you have just created:
 
   ![](./images/image92.png " ")
 
