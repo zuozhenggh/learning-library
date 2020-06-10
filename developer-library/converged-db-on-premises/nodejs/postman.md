@@ -31,36 +31,48 @@ This lab walks you through the steps to use Application API to add , view and up
 
 **What Do You Need?**
   -	Postman should be installed on your local system. Please use the below link to download the postman if you have not downloaded yet.
-  (https://www.postman.com/downloads/)
+ 
 
 This lab assumes you have completed the following labs:
 - Lab 1: Login to Oracle Cloud
 - Lab 2: Generate SSH Key
-- Lab 3: All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
-- Lab 4: Environment Setup 
-- Lab 5: Node.js environment setup
+- Lab 3: Node.js environment setup
 
 
 ## Step 1: Add the Product details in JSON format using HTTP POST method. 
+   
+   a. Download the Postman.
 
-   a.	Launch the Postman
+-  [Click here to download Postman](https://www.postman.com/downloads/)
+
+  ![](./images/Postman1.PNG " ")
+
+  ![](./images/postman2.PNG " ")
+   
+   b.	Launch the Postman
         
   ![](./images/nodejs-postman1.PNG " ")
 
-   b.	Open a new workspace.
+   c.	Open a new tab.
   
    ![](./images/nodejs-postman2.PNG " ")
    
-  c.	Select POST Method and enter the request URL
-           
-        
+  d. Select POST Method and enter the request URL
+````
+    <copy>
+    - Method: - POST
+    -  URL: - <PUBLIC-IP>:3001/addproduct
+    - Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)
+    - Product details: - Example     
+
+    
+      </copy>
+  ```` 
+
    ````
     <copy>
-    Method: - POST
-    URL: - <PUBLIC-IP>:3001/addproduct
-    Format: - Body and JSON(check the image below attached)
-	  Product details: - Example
-		{
+     
+	 {
    "pid": "488",
    "category": "Puma Shoe ",
    "title": "Puma-shoe Demo3",
@@ -80,11 +92,9 @@ This lab assumes you have completed the following labs:
 
 ## Step 2: Verify the product details using HTTP GET method.
     
-    a.	Launch the Postman.
+    a.	Open a new tab
 
-    b.	Open a new workspace
-
-    c.	Select GET Method and enter the request URL
+    b.	Select GET Method and enter the request URL
 
   ````
     <copy>
@@ -92,7 +102,7 @@ This lab assumes you have completed the following labs:
     To get list of all the product details
     URL: - <Public-IP>:3001/products
     To get the specific product details by using PID.
-    URL: - <Public-IP>:3001/products/<PID>
+    URL: - <Public-IP>:3001/products/31
 
       </copy>
    ````
@@ -101,22 +111,18 @@ This lab assumes you have completed the following labs:
    ![](./images/nodejs-postman4.PNG " ")
     
 
-    d.	Open any browser and verify the above result.
+    d.	Open the browser and verify the above using link- "localhost:3001/products/31"
 
-    ![](./images/nodejs-postman5.PNG " ")
+  ![](./images/nodejs-postman5.PNG " ")
 
-## Step 3: UPDATE the product details by using HTTP UPDATE Method. 
+## Step 3: UPDATE the product details by using HTTP POST Method. 
     
     
-  a.	Launch the Postman.
-
-  ![](./images/nodejs-postman6.PNG " ")
-
-  b.	Open a new workspace.
+  a.	Open a new tab.
        
   ![](./images/nodejs-postman6a.PNG " ")
 
-  c.	Before update, Please check the product details format by using GET Method.
+  b.	Before applying the POST method, please check the product table format by using GET Method.
  
   ![](./images/nodejs-postman7.PNG " ")
 
@@ -128,11 +134,11 @@ This lab assumes you have completed the following labs:
 		
     	   {"price": "9"}
    
-  d. Select POST Method and enter the request URL to update the price value for the PID=13
+  c. Select POST Method and enter the request URL to update the price value for the PID=13
   	Method: - POST
 
     URL: - <PUBLIC-IP>:3001/updateProduct/13
-    Format: - Body and JSON (check the image below attached)
+    Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)
 		Product details: - Example
 		
     

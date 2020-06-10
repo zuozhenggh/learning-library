@@ -1,7 +1,8 @@
 # Oracle Spatial 
 
 ## Introduction
-This lab will show how to setup Environment for Spatial Use cases
+
+This lab walks you through the steps of setting up the environment for Spatial lab. You can connect Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper.
 
 
 ## Before You Begin
@@ -20,7 +21,7 @@ This lab assumes you have completed the following labs:
     <copy>
      . oraenv
      ConvergedCDB
-     sqlplus appstat/Oracle_4U@SGRPDB
+     sqlplus APPSPAT/Oracle_4U@SGRPDB
 
 
     </copy>
@@ -30,7 +31,7 @@ This lab assumes you have completed the following labs:
    
 ````
     <copy>
-	Name: Spatial
+  	Name: Spatial
     Username: appspat
     Password: Oracle_4U
     Hostname: <machine_IP_address>

@@ -7,6 +7,7 @@ This lab will show you how to use cross data functions.
 - XML with Relational 
 - JSON with Spatial
 
+
 ## Before You Begin
 
 **What Do You Need?**
@@ -22,8 +23,34 @@ This lab assumes you have completed the following labs:
 
  JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data
 
- **Product, those sold with payment mode – Cash on Delivery**
-**    
+
+a. Set your oracle environment and connect to PDB
+       
+  ````
+    <copy>
+     . oraenv
+     ConvergedCDB
+     sqlplus CRSTYPE/Oracle_4U@APPPDB
+
+    </copy>
+````
+
+b. Make a connection to sqldeveloper.Provide the details as below and click on connect.
+   
+````
+    <copy>
+	Name: JSON
+    Username: CRSTYPE
+    Password: Oracle_4U
+    Hostname: <machine_IP_address>
+    Port: 1521
+    Service name: APPPDB
+
+    </copy>
+   ````
+
+ c. Find all the Products, those sold with payment mode – Cash on Delivery
+  
   ````
     <copy>
     select D.*
@@ -58,7 +85,7 @@ This lab assumes you have completed the following labs:
 
 
 
-**Purchase order history count based on City**
+d. Purchase order history count based on City
 
   ![](./images/cd2.png " ") 
 
@@ -70,7 +97,7 @@ select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by
   
   ![](./images/cd3.png)
 
-## Step 2: Relational to XML
+## Step 2: XML with Relational
 
 **XMLTABLE:** Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
@@ -112,6 +139,9 @@ select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by
     zipCode             VARCHAR2(512)  PATH 'ShippingInstructions/Address/zipCode',
     country             VARCHAR2(512)  PATH 'ShippingInstructions/Address/country',
     specialinstructions VARCHAR2(2048) PATH 'Special_Instructions') t;
+
+    commit;
+
     </copy>
   ````
     
@@ -149,13 +179,28 @@ select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by
                               description VARCHAR2(128) PATH 'Part/Description',
                               quantity    NUMBER(10)    PATH 'Quantity',
                               unitprice   NUMBER(12,2)  PATH 'Part/UnitPrice') li;
+
+                              commit;
     </copy>
    ````
 
+
+
   ![](./images/cd7.png)
 
+````
+    <copy>
+     select * from purchaseorder_table;
+    </copy>
+````
   ![](./images/cd8.png)
 
+
+````
+    <copy>
+     select * from purchaseorder_lineitem;
+    </copy>
+````
   ![](./images/cd9.png)
 
 
@@ -199,8 +244,6 @@ A geometry object has a type field and (except for a geometry-collection object)
 
 A geometry collection is a geometry object with type GeometryCollection. Instead of a coordinates field it has a geometries field, whose value is an array of geometry objects other than GeometryCollection objects.
 
-![](./images/cd12.png)
-
 ````
 <copy>
 CREATE TABLE json_geo
@@ -209,7 +252,7 @@ CREATE TABLE json_geo
 
 </copy>
 ````
-![](./images/cd13.png)
+![](./images/cd12.png)
 
 ````
 <copy>
@@ -267,7 +310,7 @@ INSERT INTO json_geo
 }');
 </copy>
 ````
-![](./images/cd14.png)
+![](./images/cd13.png)
 
 ````
 <copy>
@@ -277,7 +320,8 @@ CREATE INDEX geo_first_feature_idx_1
   INDEXTYPE IS MDSYS.SPATIAL_INDEX;
 </copy>
 ````
-<br>
+![](./images/cd14.png)
+
 
 **Scenario 5 : Compute the distance in KM from specific point to each Geometry**
 
@@ -300,7 +344,7 @@ SDO_GEOMETRY),
  NULL),
  100, -- Tolerance in meters
  'unit=KM') "Distance in kilometers"
- FROM j_geo
+ FROM json_geo
  WHERE sdo_within_distance(
  json_value(geo_doc, '$.features[0].geometry' RETURNING
 SDO_GEOMETRY),

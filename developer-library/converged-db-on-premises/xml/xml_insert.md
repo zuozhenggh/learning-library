@@ -16,8 +16,10 @@ This lab assumes you have completed the following labs:
 - Note :  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user. 
   
  
-## Step 1: Select xml record before Insert.
-    
+## Step 1: Insert XML record.
+
+ 1. Lets take a count of the rows we have currently and then will do a insert.
+   
   ````
     <copy>
     select t.object_value.getclobval() from purchaseorder t;
@@ -28,41 +30,38 @@ This lab assumes you have completed the following labs:
  ![](./images/xml_insert1.PNG " ")
 
 
-## Step 2: Insert xml record
+  2. Insert XML record
     
     
   ````
     <copy>
-     Insert into purchaseorder values (' <PurchaseOrder> <PONumber>10001</PONumber>      <Reference>MSD-20200505</Reference>
-         <Requestor>MS Dhoni</Requestor>     <User> TGATES </User>         <CostCenter>A50</CostCenter>         <ShippingInstructions>
-         <name>MS Dhoni</name> <Address>  <street>200 Sporting Green</street><city>South San Francisco</city>
-         <state>CA</state>         <zipCode>99236</zipCode>
-         <country>United States of America</country> </Address>
-         <Phone> <type>Office</type>
-         <number>131-555-5589</number> </Phone>
-         </ShippingInstructions>         <LineItems>
-         <ItemNumber>1</ItemNumber>         <Part>
-         <Description>Ivanhoe</Description>         <UnitPrice>19.95</UnitPrice>
-         <UPCCode>66479101648</UPCCode>         </Part>
-         <Quantity>2</Quantity>         </LineItems>
-         <LineItems>         <ItemNumber>2</ItemNumber>
-         <Part>         <Description>Karaoke: Classic Country Hits Vol. 3 203</Description>
-         <UnitPrice>19.95</UnitPrice>         <UPCCode>13023003897</UPCCode>
-         </Part>         <Quantity>2</Quantity>
-         </LineItems>         <LineItems>
-         <ItemNumber>3</ItemNumber>         <Part>
-         <Description>Urban Legend</Description>         <UnitPrice>19.95</UnitPrice>
-         <UPCCode>43396030916</UPCCode>         </Part>
-         <Quantity>9</Quantity>         </LineItems>
-         <Special_Instructions>COD</Special_Instructions>         </PurchaseOrder>
-          ');
+  Insert into purchaseorder values (' <PurchaseOrder> <PONumber>10001</PONumber>  <Reference>MSD-20200505</Reference>
+  <Requestor>MS Dhoni</Requestor>     <User> TGATES </User>  <CostCenter>A50</CostCenter>     <ShippingInstructions> <name>MS Dhoni</name> <Address>  <street>200 Sporting Green</street><city>South San Francisco</city> <state>CA</state>  <zipCode>99236</zipCode> <country>United States of America</country> </Address> <Phone> <type>Office</type> <number>131-555-5589</number> </Phone> </ShippingInstructions> <LineItems> <ItemNumber>1</ItemNumber> <Part> <Description>Ivanhoe</Description> <UnitPrice>19.95</UnitPrice>
+  <UPCCode>66479101648</UPCCode> </Part> <Quantity>2</Quantity>  </LineItems>
+  <LineItems>  <ItemNumber>2</ItemNumber>
+  <Part> <Description>Karaoke: Classic Country Hits Vol. 3 203</Description> <UnitPrice>19.95</UnitPrice> <UPCCode>13023003897</UPCCode> </Part> <Quantity>2</Quantity> </LineItems> <LineItems> <ItemNumber>3</ItemNumber>         <Part> <Description>Urban Legend</Description>  <UnitPrice>19.95</UnitPrice> <UPCCode>43396030916</UPCCode> </Part>
+  <Quantity>9</Quantity>  </LineItems>
+  <Special_Instructions>COD</Special_Instructions> </PurchaseOrder>
+  ');
           
         </copy>
   ````
-     
+
+  The above insert query is also available as a sql file in the directory “/u01/workshop/xml”.
+The script is called as insert.sql. You can run this connecting to the SQL prompt.
+
+Set your oracle environment and connect to PDB.
+````
+    <copy>
+. oraenv
+ConvergedCDB
+sqlplus appxml/Oracle_4U@JXLPDB
+SQL>@insert.sql
+</copy>
+  ````
   ![](./images/xml_insert2.PNG " ")
 
-## Step 3: Verify XML record post insert
+3.  Verify XML record post insert
     
   ````
     <copy>
@@ -73,7 +72,7 @@ This lab assumes you have completed the following labs:
   ![](./images/xml_insert3.PNG " ")
 
   
-## Step 4: Update table using XML function.
+## Step 2: Update XML table
     
  ````
     <copy>
@@ -84,19 +83,29 @@ This lab assumes you have completed the following labs:
          
        </copy>
   ````
+
+  The above update query is also available as a sql file in the directory “/u01/workshop/xml”.
+The script is called as update.sql. You can run this connecting to the SQL prompt.
+
+Set your oracle environment and connect to PDB.
+````
+    <copy>
+. oraenv
+ConvergedCDB
+sqlplus appxml/Oracle_4U@JXLPDB
+SQL>@update.sql
+</copy>
+  ````
+
+
   ![](./images/xml_update1.PNG " ")
 
-## Step 5:  Select XML using function
+ 1. Below is the select query to check if user is updated. 
      
    ````
     <copy>
-
-     SELECT extractValue(OBJECT_VALUE, '/PurchaseOrder/User')
-       FROM purchaseorder
-             WHERE existsNode(OBJECT_VALUE, '/PurchaseOrder[Reference="MSD-20200505"]') =1;
-     /
-
-     </copy>
+     SELECT extractValue(OBJECT_VALUE, '/PurchaseOrder/User') FROM purchaseorder WHERE existsNode(OBJECT_VALUE, '/PurchaseOrder[Reference="MSD-20200505"]') =1;
+    </copy>
   ````
   ![](./images/xml_update2.PNG " ")
 
