@@ -151,9 +151,11 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 ## STEP 6: Object Store URL
 1. Copy following base URL that points to the location of your files staged in the OCI Object Storage. The simplest way to get this URL is from the "Object Details" in the right hand side ellipsis menu in the Object Store.
 
- ![](images/ConstructURLs.jpg " ")
+  ![](images/ConstructUrls.jpg " ")
 
- ![](images/ConstructUrls-2.png " ")
+1.  Copy following base URL that points to the location of your files staged in the OCI Object Storage. The simplest way to get the URL is by clicking on right-hand side ellipsis menu for an object in the object store and click on **View Object Details**. Copy and save the base URL in **URL Path(URI)** in a text notepad. We will use the base URL in the upcoming steps.
+
+ ![](images/step6.2-constructurls2.png " ")
 
 2. Take a look at the URL you copied. In this example above, the **region name** is us-ashburn-1, the **Namespace** is idthydc0kinr, and the **bucket name** is ADWCLab.
 
@@ -191,8 +193,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/snap0015310.jpg " ")
 
-6. The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard.  You probably want to save this in a temporary notepad document for the next few minutes (you'll use it in the next step).
-    *Note:* You can't retrieve the Auth Token again after closing the dialog box.
+6.  The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard. Save the contents of the clipboard in your text notepad file. You will use it in the next steps. *Note: You can't retrieve the Auth Token again after closing the dialog box.*
 
     ![](./images/snap0015311.jpg " ")
 
@@ -204,7 +205,10 @@ In order to access data in the Object Store you have to enable your database use
 
 1. Connected as your user in SQL Developer Web, copy and paste <a href="./files/create_credential.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet.
 
-2. Specify the credentials for your Oracle Cloud Infrastructure Object Storage service: The username will be your **OCI username** (usually your email address, not your database username) and the password is the OCI Object Store **Auth Token** you generated in the previous step.  In this example, the credential object named **OBJ\_STORE\_CRED** is created. You reference this credential name in the following steps.
+    - **username** - Replace `<Username>` with the **OCI Username** you copied in step 7.
+    - **password** - Replace `<Auth Token>` with the OCI Object Store **Auth Token** you generated in the step 7.
+
+    *{Be sure that you keep the single quotes!}*
 
     ![](./images/create_credential_sql_dev_web.jpg " ")
 
@@ -218,31 +222,32 @@ In order to access data in the Object Store you have to enable your database use
 
 As an alternative to the wizard-guided data load, you can use the PL/SQL package **DBMS_CLOUD** directly. This is the preferred choice for any load automation.
 
-1. Click the Hamburger menu and select Administration > Tenancy Details. The copy your Object Storage namespace as this will be needed. 
+1. Download <a href="./files/load_data_without_base_url.txt" target="\_blank">this code snippet</a> to a text editor.
 
-![](./images/adbquicklab4step9.jpg " ")
+2. Replace `<file_uri_base>` in the code with the base URL you copied in Step 6. You should make 11 substitutions. The top of the file should look similar to the example below:
 
-2. Connected as your user in SQL Developer Web, copy and paste <a href="./files/load_data_without_base_url.txt" target="\_blank">this code snippet</a> to a SQL Developer Web  worksheet. This script uses the **copy\_data** procedure of the **DBMS\_CLOUD** package to copy the data in the source files to the target tables you created before.
+    ```
+    /* Replace the <file_uri_base> variable in this file with the URL you copied from your files in OCI Object Storage.
+    /* set define on */
 
-<!--   At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable. You have copied and saved this URL in the step "Copy the URLs of the Files on Your OCI Object Storage" above. -->
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'CHANNELS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u03/b/ADWCLab/o/chan_v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
+     );
+    end;
+    ...
+    ```
 
-3. For each **file\_uri\_list** statement, specify the Object Store base URL that you copied and saved in the step "Copy the URLs of the Files on Your OCI Object Storage" above.
+3.  Copy and paste your edited file to a SQL Developer Web worksheet. This script uses the **copy\_data** procedure of the **DBMS\_CLOUD** package to copy the data in the source files to the target tables you created before.
 
-    - Change us-phoenix-1 to your real region name. The name is case-sensitive.
-    - Change idthydc0kinr to your real namespace. The name is case-sensitive.
-    - Change ADWCLab to your real bucket name. The name is case-sensitive.
-
-    **Note:** In SQL Developer Web, you will soon be able to define the Object Store base URL once, to use as a variable in file\_uri\_list statements. This capability is already supported in the full Oracle SQL Developer client tool.
-
-4. For the **credential_name** parameter in the **copy\_data** procedure, it is the name of the credential you defined in the step "Create a Database Credential for Your User" above.  You can use that credential.
-
-5. For the **format** parameter, it is a list of DBMS_CLOUD options (you can read more about these options <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/dbmscloud-reference.html">here</a>).
-
-6. Run the script.
+4.  Run the script.
 
     ![](./images/run_data_loading_script_in_sql_dev_web_without_base_url.jpg " ")
 
-7. You have successfully loaded the sample tables. You can now run any sample query in the <a href="https://docs.oracle.com/database/122/DWHSG/part-relational-analytics.htm#DWHSG8493" target="\_blank">relational analytics</a> section of the Oracle documentation. For example, to analyze the cumulative amount sold for specific customer IDs in quarter 2000, you could run the query in <a href="./files/query_tables.txt" target="\_blank">this code snippet</a>.   <a href="https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dwhsg/introduction-data-warehouse-concepts.html#GUID-452FBA23-6976-4590-AA41-1369647AD14D" target="\_blank">Click Here</a> to read more about Data Warehousing.
+5.  You have successfully loaded the sample tables. You can now run any sample query in the <a href="https://docs.oracle.com/database/122/DWHSG/part-relational-analytics.htm#DWHSG8493" target="\_blank">relational analytics</a> section of the Oracle documentation. For example, to analyze the cumulative amount sold for specific customer IDs in quarter 2000, you could run the query in <a href="./files/query_tables.txt" target="\_blank">this code snippet</a> using the Run Script button.   <a href="https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dwhsg/introduction-data-warehouse-concepts.html#GUID-452FBA23-6976-4590-AA41-1369647AD14D" target="\_blank">Click Here</a> to read more about Data Warehousing.
 
     ![](./images/query_results_after_loading_in_sql_dev_web.jpg " ")
 
