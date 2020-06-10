@@ -151,9 +151,11 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 ## STEP 6: Object Store URL
 1. Copy following base URL that points to the location of your files staged in the OCI Object Storage. The simplest way to get this URL is from the "Object Details" in the right hand side ellipsis menu in the Object Store.
 
+  ![](images/ConstructUrls.jpg " ")
+
 1.  Copy following base URL that points to the location of your files staged in the OCI Object Storage. The simplest way to get the URL is by clicking on right-hand side ellipsis menu for an object in the object store and click on **View Object Details**. Copy and save the base URL in **URL Path(URI)** in a text notepad. We will use the base URL in the upcoming steps.
 
- ![](images/ConstructUrls-2.png " ")
+ ![](images/step6.2-constructurls2.png " ")
 
 2. Take a look at the URL you copied. In this example above, the **region name** is us-ashburn-1, the **Namespace** is idthydc0kinr, and the **bucket name** is ADWCLab.
 
@@ -222,7 +224,7 @@ As an alternative to the wizard-guided data load, you can use the PL/SQL package
 
 1. Download <a href="./files/load_data_without_base_url.txt" target="\_blank">this code snippet</a> to a text editor.
 
-2. Replace `<file_uri_base>` in the code with the base URL you copied in Step 7. You should make 11 substitutions. The top of the file should look similar to the example below:
+2. Replace `<file_uri_base>` in the code with the base URL you copied in Step 6. You should make 11 substitutions. The top of the file should look similar to the example below:
 
     ```
     /* Replace the <file_uri_base> variable in this file with the URL you copied from your files in OCI Object Storage.
