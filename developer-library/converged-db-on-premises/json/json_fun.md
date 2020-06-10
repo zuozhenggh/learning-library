@@ -2,6 +2,8 @@
 
 ## Introduction
 
+This lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON_EXISTS, JSON_VALUE and other functions can utilize a materialized view created over a query that contains a JSON_TABLE function.
+
 ## Before You Begin
 
 **What Do You Need?**
@@ -22,7 +24,7 @@ This lab assumes you have completed the following labs:
     j.PO_DOCUMENT.CostCenter,
     j.PO_DOCUMENT.ShippingInstructions.Address.city
     from PURCHASE_ORDER j 
-    wherej.PO_DOCUMENT.ShippingInstructions.Address.city = 'South San Francisco'
+    where j.PO_DOCUMENT.ShippingInstructions.Address.city = 'South San Francisco'
     /
 
       </copy>
@@ -32,14 +34,13 @@ This lab assumes you have completed the following labs:
     
    **Note:** Oracle database allows a simple ‘dotted’ notation to be used to perform a limited set of operations on columns containing JSON.In order to use the dotted notation, a table alias must be assigned to the table in the FROM clause, and any reference to the JSON column must be prefixed with the assigned alias. All data is returned as VARCHAR2(4000).
 
- (json_exists)**
 
 ## Step 2: Find all customers who purchased an items tagged with a specific UPC
 
   ````
     <copy>
     SELECT po.po_document.PONumber,po.po_document.Requestor
-    FROM purchase_orderpo
+    FROM purchase_order po
     WHERE json_exists(po.po_document,'$?(@.LineItems.Part.UPCCode == 85391628927)');
 
       </copy>

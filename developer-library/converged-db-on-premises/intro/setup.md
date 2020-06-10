@@ -27,7 +27,7 @@ This lab will show you that how to launch a compute instance from OCI Marketplac
    ````
     <copy>
 
-   :%s/convergeddb.sub09051050000.oemvcn.oraclevcn.com/NEW IPADDRESS or HOSTNAME
+   :%s/convergeddb.suXXXX.oeXX.oraclevcn.com/NEW IPADDRESS or HOSTNAME
     
     </copy>
    ````
@@ -80,11 +80,7 @@ This lab will show you that how to launch a compute instance from OCI Marketplac
 
     ````
     <copy>
-    .oraenv
-    </copy>
-    ````
-    ````
-    <copy>
+    . oraenv
     startup
     </copy>
     ````
@@ -95,7 +91,7 @@ This lab will show you that how to launch a compute instance from OCI Marketplac
     ````
     <copy>
     show pdbs
-    alter pluggable datababse all open;
+    alter pluggable database all open;
     show pdbs
     </copy>
     ````
@@ -109,7 +105,7 @@ This lab will show you that how to launch a compute instance from OCI Marketplac
    </copy>
    ````
    ````
-   <copy>
+   <copy>set
    alter system set local_listener='(ADDRESS = (PROTOCOL=TCP)(HOST=NEW HOSTNAME/IPADDRESS)(PORT=1521))';
    </copy>
    ````
@@ -122,7 +118,7 @@ This lab will show you that how to launch a compute instance from OCI Marketplac
     
     ````
     <copy>
-    lsnrctl status LISTENER_CONVERGEDDB
+    lsnrctl status LISTENER_CONVERGEDCDB
     </copy>
     ````
     ![](./images/envs6.png) 
