@@ -1,4 +1,4 @@
-# Using the Create Application Wizard
+# Use the Create Application Wizard
 
 ## Introduction
 

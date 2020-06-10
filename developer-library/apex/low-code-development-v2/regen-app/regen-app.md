@@ -1,4 +1,4 @@
-# Regenerating the Application
+# Regenerate the Application
 
 ## Introduction
 
