@@ -1,4 +1,4 @@
-# Signing up for an Oracle APEX Workspace
+# Sign up for an Oracle APEX Workspace
 
 ## Introduction
 

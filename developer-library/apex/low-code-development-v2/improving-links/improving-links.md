@@ -1,4 +1,4 @@
-# Improving Links
+# Improve Links
 
 ## Introduction
 

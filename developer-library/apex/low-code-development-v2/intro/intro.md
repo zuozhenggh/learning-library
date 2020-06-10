@@ -16,17 +16,23 @@ This workshop starts with a napkin design of data structures we would like to us
 
 | Lab # | Lab | Est. Time |
 | --- | --- | --- |
-| 1 | Signing up for an APEX Workspace| 5 min |
-| 2 | Defining New Data Structures | 15 min |
-| 3 | Creating the Application | 5 min |
-| 4 | Regenerating the Application] | 5 min |
-| 5 | Improving Tasks] | 15 min |
-| 6 | Improving To Dos]| 10 min |
-| 7 | Improving Links | 5 min |
+| 1 | Sign for an APEX Workspace| 5 min |
+| 2 | Define New Data Structures | 15 min |
+| 3 | Create the Application | 5 min |
+| 4 | Regenerate the Application | 5 min |
+| 5 | Improve Tasks | 15 min |
+| 6 | Improve To Dos | 10 min |
+| 7 | Improve Links | 5 min |
+
+### **Let's Get Started!**
+
+- Click on **Sign Up for a Free Trial** from the menu on the right. If you already have an Oracle Cloud account, click on **Lab 1: Sign up for an APEX Workspace**.
+
+- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top of the page.
 
 ### Downloads
 
-[Click here](proofofconcept-app.sql) to download the completed application.
+[Click here](./files/proofofconcept-app.sql) to download the completed application.
 
 ## Learn More - *Useful Links*
 
