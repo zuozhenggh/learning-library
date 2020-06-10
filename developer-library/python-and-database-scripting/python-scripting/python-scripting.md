@@ -32,15 +32,15 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
 1.  Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the `opc` user. `sudo su` to the `oracle` user
 
-   ````
-   ssh -i your key name opc@your ip address
-   ````
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
 2.  Check if python3 has been installed by running the command.
-   ````
-   <copy>
-   python -V
-   </copy>
-   ````
+    ````
+    <copy>
+    python -V
+    </copy>
+    ````
 For this tutorial Python Version 3.6 (or later) is preferred. **You will typically have to update Python**.
 cx\_Oracle version 7.2 (or later) is needed.
 Oracle database 19c is installed with the 19c client libraries. SQL*Plus is preinstalled
@@ -58,32 +58,57 @@ The Advanced Queuing section requires Oracle client 12.2 or later. The SODA sect
 
 ## Step 2: Add a sample schema in your database
 1. Download a setup file and build sample schemas
- Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the `opc` user. `sudo su` to the `oracle` user
+ Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the `opc` user if you have not already. Then `sudo su` to the `oracle` user.
 
    ````
-   ssh -i your key name opc@your ip address
-   sudo su - oracle
+   ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
    ````
-2. Create a directory structure named `python/SQL` and get the SQL setup scripts
+   ````
+   <copy>
+   sudo su - oracle
+    </copy>
+   ````
+2.  It is necessary to correctly set the environment variables so that we can later run `sqlplus`. Copy and paste the following.
     ````
     <copy>
-    mkdir -p python
-    cd /python
+    . oraenv
+    </copy>
+    ````
+    When prompted with `ORACLE_SID = [orcl] ?` copy and paste the following then press enter.
+    ````
+    <copy>
+    ORCL
+    </copy>
+    ````
+
+3. Create a directory structure named `python/SQL` and get the SQL setup scripts
+    ````
+    <copy>
+    mkdir -p python/SQL
+    cd python/SQL
     wget  https://objectstorage.us-ashburn-1.oraclecloud.com/p/NBqvCUUdoUHWnmiiyMofncU7K03zg9tEJxolXE0HKGo/n/c4u03/b/labfiles/o/python_setup.zip
     unzip python_setup.zip
     </copy>
     ````
     ![](./images/setupEnv-1.png " ")
 
-3. Install the sample schema
+4. Install the sample schema
     ````
     <copy>
-    sqlplus sys/Ora_DB4U@localhost/orclpdb as sysdba @/home/oracle/python/sql/SetupSamples
+    sqlplus sys/Ora_DB4U@localhost/orclpdb as sysdba @/home/oracle/python/SQL/sql/SampleEnv
     </copy>
     ````
     The **SetupSamples** script will create a user `pythonhol` with a password "welcome"
 
     ![](./images/pythonhol_user.png " ")
+
+    To leave `sqlplus` you need to use the exit command. Copy and paste the text below into your terminal to exit `sqlplus` and move to the next step.
+
+    ````
+    <copy>
+    exit
+    </copy>
+    ````
 
 ## Step 3: Install Python Oracle module and connect to a database
 
@@ -110,13 +135,6 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
 3.  Test your install by launching the python console and list the available modules.
     ````
     <copy>
-    source oraenv
-    </copy>
-    ORACLE_SID = [ORCL] ? ORCL
-    The Oracle base remains unchanged with value /u01/app/oracle
-    ````
-    ````
-    <copy>
     python3
     help('modules')
     </copy>
@@ -135,7 +153,7 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
     print(con.version)
     </copy>
     ````
-    The output should be similar to 19.7.0.0.0
+    The output should be similar to 19.7.0.0.0. Copy and paste the `quit` command below this will exit the python command line editor.
     ````
     <copy>
     quit()
@@ -156,14 +174,19 @@ There are several ways to execute Python code. In this step, we start with two e
     var1 = "Hello World"
     var1
     </copy>
-    'Hello World'
     ````
+    The output will be `'Hello World'`.
 
     ![](./images/p_python-1.png " " )
 
-    To quit from the Python interpreter type `quit()` in the command-line editor.
-
-2.  To create a simple script, open up a text editor (like vi) as `vi test.py` and enter the following script.
+2.  To create a simple script, open up the nano text editor by copying and pasting the command `nano test.py`.
+    ````
+    <copy>
+    cd ~
+    nano test.py
+    </copy>
+    ````
+    Enter the following script into nano.
 
     ````
     <copy>
@@ -172,11 +195,13 @@ There are several ways to execute Python code. In this step, we start with two e
     </copy>
     ````
 
-3.  Save the file as `test.py` in the /home/oracle directory.
+3.  If you are using nano. Type `Ctrl+x` to exit the file. When prompted press `y`. Then press `ENTER` to confirm. The file should be named `test.py` and be located in the `/home/oracle directory`. 
+
+*This process of opening and closing files in nano will be used throughout the rest of this lab. Remember to open a file in nano, first navigate to the directory with the file. Open the file with the command `nano FileName`. Save and close the file with `Ctrl+x`, then `y`, then `ENTER`.*
 
     ````
     <copy>
-    $ python3 /home/oracle/test.py
+    python3 ~/test.py
     </copy>
     ````
 
@@ -188,13 +213,27 @@ There are several ways to execute Python code. In this step, we start with two e
 
     Review db\_config.py and db\_config.sql in the tutorial directory. These are included in other Python and SQL files in this tutorial:
 
-    db\_config.py
+    To view db\_config.py copy and paste the following.
+    ````
+    <copy>
+    cd ~/python/SQL/tutorial
+    cat db_config.py
+    </copy>
+    ````
+    The output should say
     ````
     user = "pythonhol"
     pw = "welcome"
     dsn = "localhost:1521/orclpdb"
     ````
-    db\_config.sql
+    To view db\_config.sql copy and paste the following.
+    ````
+    <copy>
+    cd ~/python/SQL/tutorial
+    cat db_config.sql
+    </copy>
+    ````
+    The output should say
     ````
     def user = "pythonhol"
     def pw = "welcome"
@@ -216,11 +255,15 @@ There are several ways to execute Python code. In this step, we start with two e
 
     Open a command terminal and change to the tutorial directory:
     ````
-    cd /home/oracle/python/tutorial
+    <copy>
+    cd /home/oracle/python/SQL/tutorial
+    </copy>
     ````
     Run the Python script:
     ````
+    <copy>
     python3 connect.py
+    </copy>
     ````
     ![](./images/python_connect.png " " )
 
@@ -233,14 +276,16 @@ There are several ways to execute Python code. In this step, we start with two e
 
     There are no statement terminators or begin/end keywords or braces to indicate blocks of code.
 
-    Open connect.py in an editor. Indent the print statement with some spaces:
+    Open connect.py in an editor with the command `nano connect.py`. Indent the print statement with some spaces:
 
     ````
+    <copy>
     import cx_Oracle
     import db_config
 
     con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
       print("Database version:", con.version)
+    </copy>
     ````
 
     Save the script and run it again:
@@ -264,14 +309,10 @@ There are several ways to execute Python code. In this step, we start with two e
     con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
     ````
 
-    Edit the file and add the code shown in bold below:
+    Edit the file and add the code shown in below to the end of the file:
 
     ````
     <copy>
-    import cx_Oracle
-    import db_config
-
-    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
 
     cur = con.cursor()
     cur.execute("select * from dept order by deptno")
@@ -287,7 +328,9 @@ There are several ways to execute Python code. In this step, we start with two e
     Save the file and run it:
 
     ````
+    <copy>
     python3 query.py
+    </copy>
     ````
 
     ![](./images/python_query.png " " )
@@ -345,11 +388,13 @@ There are several ways to execute Python code. In this step, we start with two e
     ````
     Run the script:
     ````
+    <copy>
     python3 versions.py
+    <copy>
     ````
     This gives the version of the cx\_Oracle interface.
 
-    Edit the file to print the version of the database, and of the Oracle client libraries used by cx\_Oracle:
+    Replace the text in `versions.py` with the text below to print the version of the database, and of the Oracle client libraries used by cx\_Oracle:
     ````
     <copy>
     import cx_Oracle
@@ -420,6 +465,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ````
     <copy>
+    cd ~/python/SQL/tutorial
     python3 connect_pool.py
     </copy>
     ````
@@ -463,10 +509,11 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ````
     <copy>
+    cd ~/python/SQL/tutorial
     python3 connect_pool2.py
     </copy>
     ````
-    Experiment with different values of the pool parameters and **numberOfThreads**. Larger initial pool sizes will make the pool creation slower, but the connections will be available immediately when needed. When **numberOfThreads** exceeds the maximum size of the pool, the **acquire()** call will generate an error such as *ORA-24459: OCISessionGet() timed out waiting for the pool to create new connections*. Adding the additional argument **getmode = cx\_Oracle.SPOOL\_ATTRVAL\_WAIT** to the **cx\_Oracle.SessionPool()** call will prevent the exception from taking place, but will cause the thread to wait until a connection is available.
+    Experiment with different values of the pool parameters and **numberOfThreads**. Larger initial pool sizes will make the pool creation slower, but the connections will be available immediately when needed. When **numberOfThreads** exceeds the maximum size of the pool, the **acquire()** call will generate an error such as **ORA-24459: OCISessionGet() timed out waiting for the pool to create new connections**. Adding the additional argument **getmode = cx\_Oracle.SPOOL\_ATTRVAL\_WAIT** to the **cx\_Oracle.SessionPool()** call will prevent the exception from taking place, but will cause the thread to wait until a connection is available.
 
     Pool configurations where min is the same as max (and increment = 0) are often recommended as a best practice. This avoids connection storms on the database server.
 
@@ -497,9 +544,11 @@ There are several ways to execute Python code. In this step, we start with two e
     Applications that should never share session information should use a different connection class and/or use ATTR\_PURITY\_NEW to force creation of a new session. This reduces overall scalability but prevents applications mis-using session information.
 
     Before you run the **connect\_drcp.py** code you will need to start the default connection pool in the instance:
-    Connect to the oracle instance as *sys*
+    Connect to the oracle instance as `sys`
     ````
+    <copy>
     sqlplus sys/Ora_DB4U@localhost:1521/orcl as sysdba
+    </copy>
     ````
     ````
     <copy>
@@ -619,9 +668,14 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ````
     <copy>
+    cd ~/python/SQL/tutorial
     python3 query2.py
     </copy>
     ````
+
+    ![](./images/query2Output.png " " )
+
+    
 2. Using fetchone()
 
     When the number of rows is large, the fetchall() call may use too much memory.
@@ -825,10 +879,12 @@ Bind variables enable you to re-execute statements with new data values, without
     From a terminal window, run:
     ````
     <copy>
+    cd ~/python/SQL/tutorial
     python3 bind_query.py
     </copy>
     ````
     The output shows the details for the two departments.
+    ![](./images/bindQueryOutput.png " " )
 
 2. Binding in inserts
 
@@ -842,6 +898,8 @@ Bind variables enable you to re-execute statements with new data values, without
     sqlplus /nolog @bind_insert.sql
     </copy>
     ````
+
+    ![](./images/bindInsertOutput.png " " )
     Review the code contained in bind\_insert.py:
     ````
     import cx_Oracle
@@ -884,14 +942,29 @@ Bind variables enable you to re-execute statements with new data values, without
 
     The Batcherrors features allows invalid data to be identified while allowing valid data to be inserted.
 
-    Edit the data values in bind\_insert.py and create a row with a duplicate key:
+    Edit the data values in bind\_insert.py and create a row with a duplicate key. Replace the text in bind\_insert.py and create a row with a duplicate key.
     ````
     <copy>
+    import cx_Oracle
+    import db_config
+
+    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
+    cur = con.cursor()
+
     rows = [ (1, "First" ), (2, "Second" ),
             (3, "Third" ), (4, "Fourth" ),
             (5, "Fifth" ), (6, "Sixth" ),
             (6, "Duplicate" ),
             (7, "Seventh" ) ]
+
+    cur.executemany("insert into mytab(id, data) values (:1, :2)", rows)
+
+    # Now query the results back
+
+    cur2 = con.cursor()
+    cur2.execute('select * from mytab')
+    res = cur2.fetchall()
+    print(res)
     </copy>
     ````
     From a terminal window, run:
@@ -903,7 +976,7 @@ Bind variables enable you to re-execute statements with new data values, without
     ````
     The duplicate generates the error "ORA-00001: unique constraint (PYTHONHOL.MY\_PK) violated". The data is rolled back and the query returns no rows.
 
-    Edit the file again and enable batcherrors like:
+    Edit the file again and enable batcherrors and query the results back. Copy and replace `bind_insert.py` with the below text.
 
     ````
     <copy>
@@ -923,12 +996,7 @@ Bind variables enable you to re-execute statements with new data values, without
 
     for error in cur.getbatcherrors():
         print("Error", error.message.rstrip(), "at row offset", error.offset)
-    </copy>
-    ````
 
-    Now query the results back
-    ````
-    <copy>
     cur2 = con.cursor()
     cur2.execute('select * from mytab')
     res = cur2.fetchall()
@@ -1036,7 +1104,7 @@ Bind variables enable you to re-execute statements with new data values, without
     python3 bind_sdo.py
     </copy>
     ````
-
+    ![](./images/bindOutput.png " " )
     The new SDO is shown as an object, similar to:
 
     ````
@@ -1045,7 +1113,7 @@ Bind variables enable you to re-execute statements with new data values, without
     To show the attribute values, edit the the query code section at the end of the file. Add a new method that traverses the object. The file below the existing comment "# (Change below here)") should look like:
 
 ## Step 9 PL/SQL
-    PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and functions are stored and run in the database. Using PL/SQL lets all database applications reuse logic, no matter how the application accesses the database. Many data-related operations can be performed in PL/SQL faster than extracting the data into a program (for example, Python) and then processing it.
+PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and functions are stored and run in the database. Using PL/SQL lets all database applications reuse logic, no matter how the application accesses the database. Many data-related operations can be performed in PL/SQL faster than extracting the data into a program (for example, Python) and then processing it.
 
 1. PL/SQL functions
 
@@ -1085,6 +1153,7 @@ Bind variables enable you to re-execute statements with new data values, without
 
     ````
     <copy>
+    cd ~/python/SQL/tutorial
     python3 plsql_func.py
     </copy>
     ````
@@ -1227,6 +1296,7 @@ Bind variables enable you to re-execute statements with new data values, without
 
     ````
     <copy>
+    cd ~/python/SQL/tutorial
     python3 type_output.py
     </copy>
     ````
@@ -1288,7 +1358,7 @@ Bind variables enable you to re-execute statements with new data values, without
     Value: 0.1 * 3 = 0.30000000000000004
     ````
 
-    Edit the file and add a type handler that uses a Python decimal converter:
+    Replace the text file in the file with the text below to add a type handler that uses a Python decimal converter:
 
     ````
     <copy>
@@ -1324,14 +1394,25 @@ Bind variables enable you to re-execute statements with new data values, without
     Value: 0.1 * 3 = 0.3
     ````
 
-    Although the code demonstrates the use of outconverter, in this particular case, the variable can be created simply by using the following code to replace the outputtypehandler function defined above:
+    Although the code demonstrates the use of outconverter, in this particular case, the variable can be created simply by using the following code to replace the outputtypehandler function defined above. Replace the file with the text below.
 
     ````
     <copy>
+    import cx_Oracle
+    import decimal
+    import db_config
+
+    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
+    cur = con.cursor()
+
     def ReturnNumbersAsDecimal(cursor, name, defaultType, size, precision, scale):
         if defaultType == cx_Oracle.NUMBER:
             return cursor.var(decimal.Decimal, arraysize = cursor.arraysize)
 
+    cur.outputtypehandler = ReturnNumbersAsDecimal
+
+    for value, in cur.execute("select 0.1 from dual"):
+        print("Value:", value, "* 3 =", value * 3)
     </copy>
     ````
 
@@ -1471,9 +1552,11 @@ Oracle Database "LOB" long objects can be streamed using a LOB locator, or worke
     To see the output, run the file:
     ````
     <copy>
+    cd ~/python/SQL/tutorial
     python3 clob.py
     </copy>
     ````
+    ![](./images/clobOutput.png " " )
     Edit the file and experiment reading chunks of data by giving start character position and length, such as clob.read(1,10)
 
     2. Fetching a CLOB as a string
@@ -1552,9 +1635,11 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     Run the file:
     ````
     <copy>
+    cd ~/python/SQL/tutorial
     python3 rowfactory.py
     </copy>
     ````
+    ![](./images/rowFactoryOutput.png " " )
     Both access methods gives the same results.
 
     To use a rowfactory function, edit rowfactory.py and add this code at the bottom:
@@ -1615,6 +1700,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     Run the file:
     ````
     <copy>
+    cd ~/python/SQL/tutorial
     python3 subclass.py
     </copy>
     ````
@@ -1622,8 +1708,9 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
 2. Subclassing cursors
 
-    Edit subclass.py and extend the cursor() method with a new MyCursor class:
+    Edit subclass.py and extend the cursor() method with a new MyCursor class. Copy and replace the text in `subclass.py` with the text below.
     ````
+    <copy>
     import cx_Oracle
     import db_config
 
@@ -1637,24 +1724,21 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
          return MyCursor(self)
 
     class MyCursor(cx_Oracle.Cursor):
-
-    def execute(self, statement, args):
-        print("Executing:", statement)
-        print("Arguments:")
-        for argIndex, arg in enumerate(args):
-            print("  Bind", argIndex + 1, "has value", repr(arg))
-            return super(MyCursor, self).execute(statement, args)
-
-    def fetchone(self):
-        print("Fetchone()")
-        return super(MyCursor, self).fetchone()
-
+        def execute(self, statement, args):
+            print("Executing:", statement)
+            print("Arguments:")
+            for argIndex, arg in enumerate(args):
+                print("  Bind", argIndex + 1, "has value", repr(arg))
+                return super(MyCursor, self).execute(statement, args)
+        def fetchone(self):
+            print("Fetchone()")
+            return super(MyCursor, self).fetchone()
     con = MyConnection()
     cur = con.cursor()
-
     cur.execute("select count(*) from emp where deptno = :bv", (10,))
     count, = cur.fetchone()
     print("Number of rows:", count)
+    </copy>
     ````
     When the application gets a cursor from the MyConnection class, the new cursor() method returns an instance of our new MyCursor class.
 
@@ -1751,6 +1835,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     Run the file:
     ````
     <copy>
+    cd ~/python/SQL/tutorial
     python3 aq.py
     </copy>
     ````
@@ -1817,6 +1902,7 @@ Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be ins
 
     ````
     <copy>
+    cd ~/python/SQL/tutorial
     python3 soda.py
     </copy>
     ````
@@ -1884,7 +1970,7 @@ An additional lab on using Python with is available in the New Features for Deve
 ## Acknowledgements
 
 * **Author** - Christopher Jones, Anthony Tuininga
-* **Contributors** - Jaden McElvey Technical Lead Oracle LiveLabs
+* **Contributors** - Jaden McElvey Technical Lead Oracle LiveLabs Intern
 * **Last Updated By/Date** - Troy Anthony, DB Product Management, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
