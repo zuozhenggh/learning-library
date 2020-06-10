@@ -30,7 +30,7 @@ Watch a video demonstration of connecting to your new Autonomous Database instan
 
 ### Lab Prerequisites
 
-- This lab assumes you have completed the [Login to Oracle Cloud] (?lab=lab-0-login-oracle-cloud) and [Provision ADB] (?lab=lab-1-provision-adw-instance) labs seen in the menu on the right.
+- This lab assumes you have completed the **Login to Oracle Cloud** and **Provision ADB** labs seen in the menu on the right.
 
 ## STEP 1: Connect with SQL Developer Web
 
