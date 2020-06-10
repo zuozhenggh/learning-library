@@ -2,7 +2,8 @@
 # Oracle Spatial  
 
 ## Introduction
-This lab will show how to use Spatial functions.
+
+This lab walks you through the modules performing location-based queries using Oracle Spatial.
 
 ## Before You Begin
 

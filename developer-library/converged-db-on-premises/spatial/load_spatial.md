@@ -2,7 +2,10 @@
 
 ## Introduction
 
-This lab will show how to load Spatial data.
+This lab walks you through the steps of creating spatial table with column type SDO_GEOMETRY. We will see how to insert data into the tables and also add spatial metadata to tables.
+
+**Below lab is completed and spatial data is already loaded into the tables.**
+
 
 ## Before You Begin
 
@@ -12,8 +15,12 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
   
-## Step 1: Create Table Customers,Warehouses and Warehouses_dtp
-   
+## Step 1: Create spatial tables
+
+We have created tables and spatial metadata for CUSTOMERS, WAREHOUSES and WAREHOUSES_DTP 
+Notice that each has a column of type SDO_GEOMETRY to store location. 
+
+
    ````
     <copy>
     CREATE TABLE CUSTOMERS                                             
@@ -46,9 +53,11 @@ CREATE TABLE "WAREHOUSES_DTP"
 
     </copy>
 ````
-## Step 2 : Add Spatial metadata for the CUSTOMERS and WAREHOUSES tables to the **USER-SDO-GEOM-METADATA** view. 
+## Step 2 : Add spatial metadata
 
-Each SDO-GEOMETRY column is registered      with a row in   USER-SDO-GEOM-METADATA.
+Next we added Spatial metadata for the CUSTOMERS, WAREHOUSES and WAREHOUSES_DTP 
+tables to the USER_SDO_GEOM_METADATA view. Each SDO_GEOMETRY column is registered with a row in USER_SDO_GEOM_METADATA.
+
 
 ````
     <copy>
@@ -72,9 +81,16 @@ Insert into user_sdo_geom_metadata values (
 -	 MDSYS.SDO-DIM-ARRAY: Constructor which holds the MDSYS.SDO-DIM-ELEMENT object,which in turn stores the extents of the spatial data  in each dimension (-180.0, 180.0), and a tolerance value (0.05). The tolerance is a round-off error value used by Oracle Spatial, and is in meters for longitude and latitude data. In this example, the tolerance is 5 mm.
 -	4326: Spatial reference system id (SRID): a foreign key to an Oracle dictionary table  (MDSYS.CS-SRS) tha  contains all the     supported coordinate systems. It is important to associate your customer's location to a coordinate system. In this example, 4326    corresponds to "Longitude / Latitude (WGS 84).".
 
-## Step 3: Insert Spatial data using spatial functions     
+
+We have inserted spatial data and we have used two spatial functions for this.
+ 
 - we use sdo_cs.transform() to convert to our desired coordinate system SRID of 4326, and 
-- we use sdo-geom.validate-geometry() to insert only valid geometries.
+- we use sdo_geom.validate_geometry() to insert only valid geometries.
+
+
+## Step 3: Sample insert query 
+
+Below is the sample insert query-
 
 ````
     <copy>
