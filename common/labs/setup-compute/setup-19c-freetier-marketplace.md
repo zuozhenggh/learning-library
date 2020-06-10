@@ -129,11 +129,11 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 ## Step 3: Verify the database setup has completed
 
 1.  From your connected session (either Putty, Cloud Shell, CYGWIN) **tail** the **dbsingle.log** file
-````
-<copy>
-tail -f /u01/ocidb/buildsingle1.log
-</copy>
-````
+    ````
+    <copy>
+    tail -f /u01/ocidb/buildsingle1.log
+    </copy>
+    ````
     ![](./images/tailOfBuildDBInstanceLog.png " ")
 
 2. When you see the following message the database setup is complete **Completed successfully in XXXX seconds** (this may take up to 25 minutes)
@@ -141,12 +141,12 @@ tail -f /u01/ocidb/buildsingle1.log
     ![](./images/tailOfBuildDBInstanceLog_finished.png " ")
 
 3. Connect to the Database using SQL*Plus as the **oracle** user
-````
-<copy>
-sudo su - oracle
-sqlplus system/Ora_DB4U@localhost:1521/orclpdb
-</copy>
-````
+    ````
+    <copy>
+    sudo su - oracle
+    sqlplus system/Ora_DB4U@localhost:1521/orclpdb
+    </copy>
+    ````
     ![](./images/sqlplus_login_orclpdb.png " ")
 
 
