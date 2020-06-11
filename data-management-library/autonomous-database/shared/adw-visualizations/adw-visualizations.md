@@ -30,6 +30,7 @@ At this point, you should have performed the following:
 
 2. After saving the installer executable file, click on the installer and follow the guided steps.
 
+
    ![](./images/install_oad_4.jpg " ")
 
    ![](./images/install_oad_5.jpg " ")
