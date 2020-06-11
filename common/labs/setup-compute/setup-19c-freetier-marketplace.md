@@ -141,28 +141,43 @@ Once the Compute Instance has been provisioned and is **RUNNING** you can connec
 
 ## Step 3: Verify the database setup has completed
 
+<<<<<<< HEAD
+1.  From your connected session (either Putty, Cloud Shell, CYGWIN) **tail** the **dbsingle.log** file
+=======
 1.  From your connected session (either Putty, Cloud Shell, CYGWIN) **tail** the **dbsingle.log** file.
 
+>>>>>>> upstream/master
     ````
     <copy>
     tail -f /u01/ocidb/buildsingle1.log
     </copy>
     ````
+<<<<<<< HEAD
+=======
 
+>>>>>>> upstream/master
     ![](./images/tailOfBuildDBInstanceLog.png " ")
 
 2.  When you see the following message the database setup is complete - **Completed successfully in XXXX seconds** (this may take up to 30 minutes).
 
     ![](./images/tailOfBuildDBInstanceLog_finished.png " ")
 
+<<<<<<< HEAD
+3. Connect to the Database using SQL*Plus as the **oracle** user
+=======
 3.  Connect to the database using SQL*Plus as the **oracle** user.
 
+>>>>>>> upstream/master
     ````
     <copy>
     sudo su - oracle
     sqlplus system/Ora_DB4U@localhost:1521/orclpdb
     </copy>
     ````
+<<<<<<< HEAD
+    ![](./images/sqlplus_login_orclpdb.png " ")
+=======
+>>>>>>> upstream/master
 
     ![](./images/sqlplus_login_orclpdb.png " ")
 

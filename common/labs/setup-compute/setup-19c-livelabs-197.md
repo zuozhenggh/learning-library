@@ -30,7 +30,7 @@ This lab assumes you have already completed the following labs:
 ## Step 1: Login and Create Stack using Resource Manager
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [db19c-compute.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WKtfJjHxnpeJFFAXH_sNk5Tg0RRzRiD1-9ugmyjhBKo/n/c4u03/b/labfiles/o/db19c-compute.zip) - Packaged terraform instance creation script
+    - [db19c-compute-v19-7.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k52Q1PBzZUsUlTUEKwdfN63LY9naMuiOA9QaK5naUHE/n/c4u03/b/labfiles/o/db19c-compute-v19-7.zip) - Packaged terraform instance creation script
 
 2.  Save in your downloads folder.
 
@@ -62,11 +62,11 @@ This lab assumes you have already completed the following labs:
 
     Enter the following information. You will be updating Public Subnet, Display Name and SSH Key.
 
-    **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
+    **Display Name:** Enter your firstname and lastname and the day you were born *(do not enter any special characters here, including periods, it may mess up the configuration)*
     
     **SSH Public Key**:  Paste the public key you created in the earlier step *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
 
-    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
+    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2 or an email from your Workshop Lead
 
 6. Click **Next**.
 
@@ -185,58 +185,36 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 8. Click Open to begin your session with the instance.
 
+## Step 5: Verify the ORCL database is up
 
-
-## Step 5: Download the Setup Scripts
-
-1.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
-
-    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+1. Run the following command to verify the database with the SID **ORCL** is up and running
 
     ````
     <copy>
-    cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
-    unzip multiscripts.zip; chmod +x *.sh
-    /home/opc/setupenv.sh
+    ps -ef | grep ORCL
     </copy>
     ````
-    ![](./images/step5.png " ")   
 
-## Step 6: Run the DB19c Setup Scripts
+    ![](./images/pseforcl.png " ") 
 
-1.  Copy the following commands into your terminal to configure DB19c on your image.  This script takes approximately 30 minutes to run.  It runs in the background so you should be able to exit out while it's running.  
 
-    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
-
+2. Verify the listener is running
     ````
     <copy>
-    nohup /home/opc/setupdb.sh &> setupdb.out&
+    ps -ef | grep tns
     </copy>
     ````
 
-    ![](./images/runscript-1.png " ")     
-2.  To check the status of the script above run the command below.  *This script takes about 30 minutes to complete and runs in the background*.  You can also use the unix **jobs** command to see if the script is still running if you are still in the same terminal session.  Do not proceed until you see 100% complete.
+    ![](./images/pseftns.png " ") 
 
-    ````
-    <copy>
-    tail -f /home/opc/setupdb.out
-    </copy>
-    ````
-
-    ![](./images/tailscript.png " ") 
-
-    ![](./images/script.png " ") 
-
-3.  Once the script is complete, you should expect to see this message.  Note the script here took 24 minutes to complete.
-
-    ![](./images/scriptcomplete.png " ") 
+Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
 You may now proceed to the next lab.  
 
 ## Acknowledgements
 
 - **Author** - Kay Malcolm, Director, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, March 2020
+- **Contributors** - Quintin Hill, Brian McGraw, Oracle North America Technology
+- **Last Updated By/Date** - Kay Malcolm, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 

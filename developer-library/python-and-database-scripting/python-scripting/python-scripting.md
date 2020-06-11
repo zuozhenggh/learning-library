@@ -30,7 +30,7 @@ This lab assumes you have completed the following labs:
 
 Python comes preinstalled on most Linux distributions, and it is available as a package on others. The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
-1.  Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the `opc` user. `sudo su` to the `oracle` user
+1.  Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the `opc` user.
 
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
@@ -57,18 +57,14 @@ The Advanced Queuing section requires Oracle client 12.2 or later. The SODA sect
     ![](./images/p_installPython.jpg " ")
 
 ## Step 2: Add a sample schema in your database
-1. Download a setup file and build sample schemas
- Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the `opc` user if you have not already. Then `sudo su` to the `oracle` user.
+1. Switch to the oracle user using the sudo command. 
 
-   ````
-   ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-   ````
    ````
    <copy>
    sudo su - oracle
     </copy>
    ````
-2.  It is necessary to correctly set the environment variables so that we can later run `sqlplus`. Copy and paste the following.
+1.  It is necessary to correctly set the environment variables so that we can later run `sqlplus`. Copy and paste the following.
     ````
     <copy>
     . oraenv
@@ -81,7 +77,7 @@ The Advanced Queuing section requires Oracle client 12.2 or later. The SODA sect
     </copy>
     ````
 
-3. Create a directory structure named `python/` and get the SQL setup scripts
+2. Create a directory structure named `python/` and get the SQL setup scripts
     ````
     <copy>
     mkdir -p python
@@ -92,7 +88,7 @@ The Advanced Queuing section requires Oracle client 12.2 or later. The SODA sect
     ````
     ![](./images/setupEnv-1.png " ")
 
-4. Install the sample schema using the script **SetupSamples**
+3. Install the sample schema using the script **SetupSamples**
     ````
     <copy>
     sqlplus sys/Ora_DB4U@localhost/orclpdb as sysdba @/home/oracle/python/sql/SetupSamples
