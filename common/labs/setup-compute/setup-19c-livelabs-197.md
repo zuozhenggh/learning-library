@@ -24,7 +24,7 @@ Link to Marketplace - https://www.oracle.com/cloud/marketplace/
 ### Lab Prerequisites
 
 This lab assumes you have already completed the following labs:
-- Register for Free Tier
+- Login to Oracle Cloud
 - Create SSH Keys
 
 ## Step 1: Login and Create Stack using Resource Manager
@@ -113,11 +113,11 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 ## Step 4: Connect to your instance
 
-Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
+Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys).  
 
 *NOTE 1:  If you are using your laptop to connect, you cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).  This does not apply to the Oracle Cloud Shell.*
 
-*NOTE 2: The ssh-daemon is disable for the first 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.*
+*NOTE 2: The ssh-daemon may be disabled for the first 5 minutes or so while the instance is processing.  If you are unable to connect and certain you have a valid key, wait a few minutes and try again.*
 
 ### Oracle Cloud Shell
 
