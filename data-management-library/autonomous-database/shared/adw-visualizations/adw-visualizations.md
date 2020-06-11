@@ -1,6 +1,3 @@
-
-<!-- Updated March 31, 2020 -->
-
 # Creating Rich Data Visualizations
 
 ## Introduction
@@ -24,7 +21,7 @@ At this point, you should have performed the following:
 - Access to an existing Autonomous Data Warehouse instance.
 
 
-## Step 1: Installing Oracle Analytics Desktop on a Windows Desktop
+## **STEP 1**: Installing Oracle Analytics Desktop on a Windows Desktop
 
 1. Download the latest version of Oracle Analytics Desktop (formerly Data Visualization Desktop) from <a href="http://www.oracle.com/technetwork/middleware/oracle-data-visualization/downloads/oracle-data-visualization-desktop-2938957.html" target="\_blank"> here</a>.
 
@@ -36,14 +33,11 @@ At this point, you should have performed the following:
    ![](./images/install_oad_5.jpg " ")
 
 
-## Step 2: Create a View by Executing the Provided Script in SQL Developer Web
-
-For simplicity's sake, in this exercise we will use the SH schema provided to create a simple view.
-
-### Accessing SQL Developer Web
-
+## **STEP 2**: Create a View by Executing the Provided Script in SQL Developer Web
 
 Although you can connect to your autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Developer Web directly from your ADW or ATP console.
+
+For simplicity's sake, in this exercise we will use the SH schema provided to create a simple view.
 
 1. In your database's details page, click the **Tools** tab.
 
@@ -100,29 +94,29 @@ Although you can connect to your autonomous database from local PC desktop tools
 
    ![](./images/execute_script_in_sql_dev_web_to_create_view.jpg " ")
 
-## Step 3: Create a Connection to Your Autonomous Database from Oracle Analytics Desktop
-
-### Download the Connection Wallet
+## **STEP 3**: Create a Connection to Your Autonomous Database from Oracle Analytics Desktop
 
 As ADW and ATP accept only secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page, or from the ADW or ATP service console.
 
 1. In your database's instance details page, click **DB Connection**.
 
-    ![](./images/Picture100-34.png " ")
+    ![](./images/dbconnection.png " ")
 
 2. Use the Database Connection dialog to download client credentials.
     - Select a wallet type. For this lab, select **Instance Wallet**. This wallet type is for a single database only; this provides a database-specific wallet.
     - **Note:** Oracle recommends you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.
     - Click **Download Wallet**.
 
-    ![](./images/Picture100-15.png " ")
+    ![](./images/download-instance-wallet.png " ")
 
 3. Specify a password of your choice for the wallet. You will need this password when connecting Oracle Analytics Desktop to the database in the next step. Click **Download** to download the wallet file to your client machine.
 *Note*: If you are prevented from downloading your Connection Wallet, it may be due to your browser's pop-blocker. Please disable it or create an exception for Oracle Cloud domains.
 
-    ![](./images/Picture100-16.png " ")
+    ![](./images/password-download-wallet.png " ")
 
-4. Start Oracle Analytics Desktop. When Oracle Analytics Desktop opens, click the __‘Connect to Oracle Autonomous Data Warehouse’__ button.
+    Click **Close** when the download is complete.
+
+4. Start Oracle Analytics Desktop. When Oracle Analytics Desktop opens, click **Connect to Oracle Autonomous Data Warehouse**.
 
    ![](./images/click_connect_to_oracle_autonomous_data_warehouse.jpg " ")
 
@@ -137,11 +131,13 @@ As ADW and ATP accept only secure connections to the database, you need to downl
    | Password              | Insert password created in previous labs.  Same as SQL Developer Web and SQL Developer credentials. |
    | Service Name:         | Scroll the drop-down field and select **adwfinance_high**, or the **high** service level of the database name you specified in the first lab. |
 
-6. After completing the fields, click __‘Save’__.
+6. After completing the fields, click **Save**.
 
    ![](./images/create_connection_dialog.jpg " ")
 
-7. Upon success of creating a new connection to the Autonomous Data Warehouse, click __Create__ and click __Data Set__.  
+7. Click **Close** when the Save is complete.
+
+8. Upon success of creating a new connection to the Autonomous Data Warehouse, click __Create__ and click __Data Set__.  
 
     ![](./images/click_create_data_set.jpg " ")
 
@@ -177,9 +173,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
 
    ![](./images/change_treat_as_from_measure_to_attribute.jpg " ")
 
-## Step 4: Explore the Data in your New Project in Oracle Analytics Desktop
-
-### **Project Introduction**
+## **STEP 4**: Explore the Data in your New Project in Oracle Analytics Desktop
 
 No matter what your role is in the organization, access to timely data can provide greater insights to improve the performance of your business.  Whether you’re creating a data warehouse or data mart for yourself or others, Autonomous Data Warehouse is making it far simpler than ever before.  Easy, fast and elastic.   This small project demonstrates this.  This is how business users would interact with the Autonomous Data Warehouse.
 
@@ -191,7 +185,7 @@ No matter what your role is in the organization, access to timely data can provi
 
    ![](./images/browse_and_explore_data.jpg " ")
 
-## Step 5: Create Your First Data Visualization
+## **Step 5**: Create Your First Data Visualization
 
 1. We will now create a very simple visualization project to finish this part of the lab.  Multi-select (ctrl+click) the 5 Data Elements within __SALES\_HISTORY__ including __PROD\_NAME__, __AMOUNT\_SOLD__, __CALENDAR\_YEAR__, __PROD\_CATEGORY__, and __QUANTITY\_SOLD__.  
 
@@ -204,7 +198,7 @@ No matter what your role is in the organization, access to timely data can provi
 
  You may **Save** this project if you need. At this point, with very few steps, you now have something that can further bring your data to life and you can begin to make some data-driven decisions.  As you share this with others, more people will want to gain access to and benefit from the data. To enable this, the Oracle autonomous database in ADW or ATP is easy to use, fast, elastic, and will be able to quickly scale to meet your growing data and user base.
 
-## Optional Step 6: Exporting your DVA (project) File
+## (Optional) **STEP 6**: Exporting your DVA (project) File
 
 This step enables you to share your project file with colleagues.
 
@@ -228,7 +222,7 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 ## Acknowledgements
 
-- **Author** - Nilay Panchal, ADB Product Managemnt
+- **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, March 2020
 
