@@ -123,6 +123,7 @@ Create the cluster as follows:
 * [Overview of Oracle Cloud Infrastructure Identity and Access Management](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
 
 ## Acknowledgements
+
 * **Authors:**
     * Martin Gubar, Director, Oracle Big Data Product Management
     * Lauran Serhal, Principal Developer, Oracle Database and Big Data User Assistance
