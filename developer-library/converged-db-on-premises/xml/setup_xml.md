@@ -15,11 +15,13 @@ This lab assumes you have completed the following labs:
   
 
 ## Step 1: Navigate to the path.
-   
+
+As oracle user navigate to below path- 
+
 ````
     <copy>
+    sudo su - oracle
     cd /u01/workshop/xml
-
    </copy>
    ````
     
@@ -47,10 +49,10 @@ This lab assumes you have completed the following labs:
    
 ````
     <copy>
-	Name: XML
+    Name: XML
     Username: appxml
     Password: Oracle_4U
-    Hostname: <machine_IP_address>
+    Hostname: localhost
     Port: 1521
     Service name: JXLPDB
 

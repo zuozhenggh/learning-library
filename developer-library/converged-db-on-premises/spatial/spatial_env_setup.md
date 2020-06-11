@@ -15,7 +15,7 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
     
-## Step 1: Set your oracle environment and connect to PDB
+## Step 1: Set your oracle environment and connect to PDB as oracle user
        
   ````
     <copy>
@@ -31,11 +31,11 @@ This lab assumes you have completed the following labs:
    
 ````
     <copy>
-  	Name: Spatial
-    Username: appspat
+    Name    : Spatial
+    Username: APPSPAT
     Password: Oracle_4U
-    Hostname: <machine_IP_address>
-    Port: 1521
+    Hostname: localhost
+    Port    : 1521
     Service name: SGRPDB
 
     </copy>
