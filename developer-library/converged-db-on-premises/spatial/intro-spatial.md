@@ -15,15 +15,15 @@ Oracle Spatial consists of the following:
 -	Schema (MDSYS)
 -	A spatial indexing mechanism  	
 -	Operators, functions, and procedures
--	Native data type for vector data called SDO-GEOMETRY(An Oracle table can contain one or more SDO-GEOMETRY columns.)
+-	Native data type for vector data called SDO\_GEOMETRY(An Oracle table can contain one or more SDO\_GEOMETRY columns.)
 
 
 Scenario
 MyCompany has several major warehouses. It needs to locate its customers who are near a given warehouse, to inform them of new advertising promotions. To locate its customers and perform location-based analysis, MyCompany must store location data for both its customers and warehouses.
 
-We will be using three tables – CUSTOMERS, WAREHOUSES and WAREHOUSES_DTP.
+We will be using three tables – CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP.
 
-Each table stores location using Oracle's native spatial data type, SDO-GEOMETRY. A location can be stored as a point in an SDO-GEOMETRY column of a table. The customer's location is associated with longitude and latitude values on the Earth's surface—for example, -63.13631, 52.485426.
+Each table stores location using Oracle's native spatial data type, SDO\_GEOMETRY. A location can be stored as a point in an SDO\_GEOMETRY column of a table. The customer's location is associated with longitude and latitude values on the Earth's surface—for example, -63.13631, 52.485426.
 
 
 ## Oracle SPATIAL Video
