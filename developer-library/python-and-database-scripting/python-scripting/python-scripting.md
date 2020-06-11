@@ -110,15 +110,7 @@ The Advanced Queuing section requires Oracle client 12.2 or later. The SODA sect
 
 cx\_Oracle is a python module that enables access to Oracle databases. This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example, we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
 
-1.  Since our client libraries are installed in our VM under the oracle user, we will now 'sudo' into the oracle user. (If you have an environment that does not have client libraries accessible to the user running the python3 script, install the Oracle instant client as described in the documentation.) Become the Oracle user.
-
-    ````
-    <copy>
-    sudo su - oracle
-    </copy>
-    ````
-
-2.  Install the `cx_Oracle` module using python3 and pip for the oracle user.
+1.  Install the `cx_Oracle` module using python3 and pip for the oracle user.  If your terminal disconnected and you are opc again, enter the command sudo su - oracle to switch back to the oracle user.
 
     ````
     <copy>
@@ -128,7 +120,7 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
 
     ![](./images/p_installcxOracle.png " " )
 
-3.  Test your install by launching the python console and list the available modules.
+2.  Test your install by launching the python console and list the available modules.
     ````
     <copy>
     python3
@@ -140,7 +132,7 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
 
     ![](./images/p_installcxOracle-2.png " ")
 
-4.  Connect to the Oracle database and print the version of the database via python. (This confirms you are connected to an Oracle instance and returns the database version.)
+3.  Connect to the Oracle database and print the version of the database via python. (This confirms you are connected to an Oracle instance and returns the database version.)
 
     ````
     <copy>
@@ -175,6 +167,14 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ![](./images/p_python-1.png " " )
 
+1.  Quit the python terminal
+
+    ````
+    <copy>
+    quit()
+    </copy>
+    ````
+
 2.  To create a simple script, open up the nano text editor by copying and pasting the command `nano test.py`.
     ````
     <copy>
@@ -191,9 +191,9 @@ There are several ways to execute Python code. In this step, we start with two e
     </copy>
     ````
 
-3.  If you are using nano. Type `Ctrl+x` to exit the file. When prompted press `y`. Then press `ENTER` to confirm. The file should be named `test.py` and be located in the `/home/oracle directory`.
+3.  If you are using nano. Type **Ctrl+x** to exit the file. When prompted press **y**. Then press **ENTER** to confirm. The file should be named **test.py** and be located in the **/home/oracle directory**.
 
-*This process of opening and closing files in nano will be used throughout the rest of this lab. Remember to open a file in nano, first navigate to the directory with the file. Open the file with the command `nano FileName`. Save and close the file with `Ctrl+x`, then `y`, then `ENTER`.*
+    *This process of opening and closing files in nano will be used throughout the rest of this lab. Remember to open a file in nano, first navigate to the directory with the file. Open the file with the command `nano FileName`. Save and close the file with `Ctrl+x`, then `y`, then `ENTER`.*
 
     ````
     <copy>
@@ -237,7 +237,7 @@ There are several ways to execute Python code. In this step, we start with two e
     ````
 2. Creating a basic connection
 
-    Review the code contained in connect.py:
+    Review the code contained in connect.py by issuing the command **cat connect.py**
     ````
     import cx_Oracle
     import db_config
@@ -249,7 +249,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     The **connect()** method is passed the username, the password and the connection string that you configured in the **db\_config.py** module. In this case, Oracle's Easy Connect connection string syntax is used. It consists of the hostname of your machine,  localhost, and the database service name **orclpdb**.
 
-    Open a command terminal and change to the tutorial directory:
+    In your command terminal change to the tutorial directory:
     ````
     <copy>
     cd /home/oracle/python/tutorial
@@ -272,7 +272,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     There are no statement terminators or begin/end keywords or braces to indicate blocks of code.
 
-    Open connect.py in an editor with the command `nano connect.py`. Indent the print statement with some spaces:
+    Open connect.py in an editor with the command **nano connect.py**. Indent the print statement with some spaces:
 
     ````
     <copy>
@@ -284,7 +284,7 @@ There are several ways to execute Python code. In this step, we start with two e
     </copy>
     ````
 
-    Save the script and run it again:
+4. Save the script (**^x**) and run it again:
     ````
     python connect.py
     ````
@@ -549,13 +549,14 @@ There are several ways to execute Python code. In this step, we start with two e
     ````
     <copy>
     exec dbms_connection_pool.start_pool;
+    exit;
     </copy>
     ````
 
     Run **connect\_drcp.py** in a terminal window.
     ````
     <copy>  
-    python connect_drcp.py
+    python3 connect_drcp.py
     </copy>
     ````
     The output is simply the version of the database.     
@@ -728,7 +729,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     The first three rows of the table are returned as a list (Python's name for an array) of tuples.
 
-    You can access elements of the lists by position indexes. To see this, edit the file and add:
+    You can access elements of the lists by position indexes. To see this, **edit the file** and add:
 
     ````
     <copy>
