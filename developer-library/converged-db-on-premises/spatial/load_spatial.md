@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps of creating spatial table with column type SDO_GEOMETRY. We will see how to insert data into the tables and also add spatial metadata to tables.
+This lab walks you through the steps of creating spatial table with column type SDO\_GEOMETRY. We will see how to insert data into the tables and also add spatial metadata to tables.
 
 **Below lab is completed and spatial data is already loaded into the tables.**
 
@@ -17,8 +17,8 @@ This lab assumes you have completed the following labs:
   
 ## Step 1: Create spatial tables
 
-We have created tables and spatial metadata for CUSTOMERS, WAREHOUSES and WAREHOUSES_DTP 
-Notice that each has a column of type SDO_GEOMETRY to store location. 
+We have created tables and spatial metadata for CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP 
+Notice that each has a column of type SDO\_GEOMETRY to store location. 
 
 
    ````
@@ -55,8 +55,8 @@ CREATE TABLE "WAREHOUSES_DTP"
 ````
 ## Step 2 : Add spatial metadata
 
-Next we added Spatial metadata for the CUSTOMERS, WAREHOUSES and WAREHOUSES_DTP 
-tables to the USER_SDO_GEOM_METADATA view. Each SDO_GEOMETRY column is registered with a row in USER_SDO_GEOM_METADATA.
+Next we added Spatial metadata for the CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP 
+tables to the USER\_SDO\_GEOM\_METADATA view. Each SDO\_GEOMETRY column is registered with a row in USER\_SDO\_GEOM\_METADATA.
 
 
 ````
@@ -84,8 +84,8 @@ Insert into user_sdo_geom_metadata values (
 
 We have inserted spatial data and we have used two spatial functions for this.
  
-- we use sdo_cs.transform() to convert to our desired coordinate system SRID of 4326, and 
-- we use sdo_geom.validate_geometry() to insert only valid geometries.
+- we use sdo\_cs.transform() to convert to our desired coordinate system SRID of 4326, and 
+- we use sdo\_geom.validate\_geometry() to insert only valid geometries.
 
 
 ## Step 3: Sample insert query 
@@ -100,10 +100,10 @@ Insert into WAREHOUSES (WAREHOUSE_ID,WAREHOUSE_NAME,LOCATION_ID,WH_GEO_LOCATION)
 ```` 
 
 The elements of the constructor are: 
--	2001: SDO_GTYPE attribute and it is set to 2001 when storing a two-dimensional single point such as a customer's location.
--	4326: This is the spatial reference system ID (SRID): a foreign key to an Oracle dictionary table (MDSYS.CS_SRS) that contains all the supported coordinate systems. It is important to associate your customer's location to a coordinate system. In this example, 4326 corresponds to "Longitude / Latitude (WGS 84)."
--	MDSYS.SDO-POINT-TYPE: This is where you store your longitude and latitude values within the SDO_GEOMETRY constructor. Note that you can store a third value also, but for these tutorials, all the customer data is two-dimensional.
--	NULL, NULL: The last two null values are for storing linestrings, polygons, and geometry collections. For more information on all the fields of the SDO_GEOMETRY object, please refer to the Oracle Spatial Developer's Guide. For this tutorial with point data, these last two fields should be set to NULL.
+-	2001: SDO\_GTYPE attribute and it is set to 2001 when storing a two-dimensional single point such as a customer's location.
+-	4326: This is the spatial reference system ID (SRID): a foreign key to an Oracle dictionary table (MDSYS.CS\_SRS) that contains all the supported coordinate systems. It is important to associate your customer's location to a coordinate system. In this example, 4326 corresponds to "Longitude / Latitude (WGS 84)."
+-	MDSYS.SDO-POINT-TYPE: This is where you store your longitude and latitude values within the SDO\_GEOMETRY constructor. Note that you can store a third value also, but for these tutorials, all the customer data is two-dimensional.
+-	NULL, NULL: The last two null values are for storing linestrings, polygons, and geometry collections. For more information on all the fields of the SDO\_GEOMETRY object, please refer to the Oracle Spatial Developer's Guide. For this tutorial with point data, these last two fields should be set to NULL.
 
 
 

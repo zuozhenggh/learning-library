@@ -55,12 +55,19 @@ This lab assumes you have completed the following labs:
 
   ````
     <copy>
-    SELECT XMLSERIALIZE(CONTENT COLUMN_VALUE AS CLOB INDENT SIZE=2) 
-    FROM   Purchaseorder p, XMLTable('<Summary> { for $r in 
-    /PurchaseOrder/LineItems/Part   return $r/Description }    </Summary>' passingobject_value   )
-    WHERE  xmlexists('/PurchaseOrder/LineItems/Part[UnitPrice/text()=$UnitPrice]' passing object_value, '27.95' AS "UnitPrice" ); 
-    /
-
+    SELECT XMLSERIALIZE(CONTENT COLUMN_VALUE AS CLOB INDENT SIZE=2)
+FROM  Purchaseorder p,
+      XMLTable(
+        '<Summary>
+         {
+          for $r in /PurchaseOrder/LineItems/Part
+          return $r/Description
+         }
+         </Summary>'
+         passing object_value
+      )
+WHERE xmlexists('/PurchaseOrder/LineItems/Part[UnitPrice/text()=$UnitPrice]' passing object_value, '27.95' AS "UnitPrice" );
+/
       </copy>
   ````
   
@@ -75,21 +82,21 @@ This lab assumes you have completed the following labs:
    ````
     <copy>
     SELECT xmlquery(
-    '<POSummary lineItemCount="{count($XML/PurchaseOrder/LineItems/ItemNumber)}">{
-    $XML/PurchaseOrder/User, $XML/PurchaseOrder/Requestor,
-    $XML/PurchaseOrder/LineItems/LineItem[2]
-    }
-    </POSummary>' passingobject_value AS "XML"
-    returning content 
-    ).getclobval() initial_state
-    FROM   PURCHASEORDER
-    WHERE  xmlExists(
-    '$XML/PurchaseOrder[CostCenter=$CS]'
-    passingobject_value AS "XML",
-    'A90' AS "CS"       )
-    /
-
-
+        '<POSummary lineItemCount="{count($XML/PurchaseOrder/LineItems/ItemNumber)}">{
+           $XML/PurchaseOrder/User,
+           $XML/PurchaseOrder/Requestor,
+           $XML/PurchaseOrder/LineItems/LineItem[2]
+         }
+         </POSummary>'
+        passing object_value AS "XML"
+        returning content
+      ).getclobval() initial_state
+FROM  PURCHASEORDER
+WHERE xmlExists(
+        '$XML/PurchaseOrder[CostCenter=$CS]'
+         passing object_value AS "XML",
+                 'A90' AS "CS"      )
+                 /
       </copy>
   ````
   

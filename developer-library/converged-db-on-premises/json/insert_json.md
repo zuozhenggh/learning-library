@@ -74,13 +74,13 @@ to_date('05-MAY-2020'),
 The above insert query is also available as a sql file in the directory “/u01/workshop/json”.
 The script is called as insert.sql. You can run this connecting to the SQL prompt.
 
-Set your oracle environment and connect to PDB.
+Set your oracle environment and connect to PDB as **oracle** user.
  ````
     <copy>
 . oraenv
 ConvergedCDB
 sqlplus appjson/Oracle_4U@JXLPDB
-SQL>@insert.sql
+@insert.sql
 </copy>
    ````
     
@@ -97,12 +97,15 @@ c. **Verify the count after insert.**
    ````
     
     
-  ![](./images/json_select_count1.PNG " ")
+  ![](./images/json.PNG " ")
    
-  
-## Step 2: Update Table.
+  **Note:** Please copy the red highlighted id which we will use in our next section of update query.
+
+## Step 2: Update a Table.
   We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
    
+   **Note:** In the above update query replace the id which we copied in previous step.
+
    ````
     <copy>
     update purchase_order
@@ -112,26 +115,12 @@ c. **Verify the count after insert.**
            "Requestor" : "MSDhoni"
          }'
        )
-    where id ='A4E055B4CF4A23A4E0530900000A60C2';
+    where id ='ID_copied_from_previous_step';
 
     </copy>
     
   ````
-
- 
-The above update query is also available as a sql file in the directory “/u01/workshop/json”.
-The script is called as update.sql. You can run this to the SQL prompt.
-
- ````
-    <copy>
-    
-SQL>@update.sql
-
-  </copy>
-    
-  ````
-
-  ![](./images/json_lab7_6.PNG " ")
+ ![](./images/json_lab7_6.PNG " ")
 
 
 

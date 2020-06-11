@@ -58,20 +58,14 @@ This lab assumes you have completed the following labs:
    ![](./images/nodejs-postman2.PNG " ")
    
   d. Select POST Method and enter the request URL
-````
-    <copy>
-    - Method: - POST
-    -  URL: - <PUBLIC-IP>:3001/addproduct
-    - Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)
-    - Product details: - Example     
 
-    
-      </copy>
-  ```` 
-
+  - Method: - POST
+  - URL: - <\PUBLIC-IP>:3001/addproduct
+  - Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)
+  - Product details: - Example     
+  
    ````
-    <copy>
-     
+    <copy>  
 	 {
    "pid": "488",
    "category": "Puma Shoe ",
@@ -79,8 +73,7 @@ This lab assumes you have completed the following labs:
    "details": "Puma-shoe-Original",
    "price": "9",
    "picture": "https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedbAppImage3/o/Puma-shoe-dietmar-hannebohn-_G94gB2cms0-unsplash.jpg"
-   }
-  
+   }  
       </copy>
   ````    
   
@@ -96,16 +89,12 @@ This lab assumes you have completed the following labs:
 
     b.	Select GET Method and enter the request URL
 
-  ````
-    <copy>
-    Method: - GET
+  -  Method: - GET
     To get list of all the product details
-    URL: - <Public-IP>:3001/products
+  -  URL: - <\PUBLIC-IP>:3001/products
     To get the specific product details by using PID.
-    URL: - <Public-IP>:3001/products/31
+  -  URL: - <\PUBLIC-IP>:3001/products/31
 
-      </copy>
-   ````
      
     
    ![](./images/nodejs-postman4.PNG " ")
@@ -130,19 +119,19 @@ This lab assumes you have completed the following labs:
 
   Check the key value format for the price field.
 
-			{“Key”: “value”}
+			{"Key": "value"}
 		
-    	   {"price": "9"}
+    	{"price": "9"}
    
   c. Select POST Method and enter the request URL to update the price value for the PID=13
-  	Method: - POST
 
-    URL: - <PUBLIC-IP>:3001/updateProduct/13
-    Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)
-		Product details: - Example
+  -	Method: - POST
+  - URL: - <\PUBLIC-IP>:3001/updateProduct/13
+  - Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)
+	- Product details: - Example
 		
     
-           {“Key”: “value”}
+       {"Key": "value"}
 		   {"price": "12"}
 
      
