@@ -45,7 +45,9 @@ Your simple HA cluster will have the following profile:
 **Note:**
 For better performance and scalability, change the above specs appropriately. Consider **DensIO** shapes (with direct attached storage) and **Bare Metal** shapes.
 
-When you create the cluster, the **Create Cluster** wizard will prompt you to provide information about your network and to make choices based on your network. To prepare for those questions, see [Create a Network](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-network.html#GUID-36C46027-65AB-4C9B-ACD7-2956B2F1B3D4). Create the cluster as follows:
+When you create the cluster, the **Create Cluster** wizard will prompt you to provide information about your network and to make choices based on your network. To prepare for those questions, see [Create a Network](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-network.html#GUID-36C46027-65AB-4C9B-ACD7-2956B2F1B3D4).
+
+Create the cluster as follows:
 
 1. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page.
 
