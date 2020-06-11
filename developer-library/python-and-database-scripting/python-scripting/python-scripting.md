@@ -286,7 +286,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
 4. Save the script (**^x**) and run it again:
     ````
-    python connect.py
+    python3 connect.py
     ````
     ![](./images/python_indent_error.png " " )
 
@@ -414,7 +414,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     Any cx\_Oracle installation can connect to older and newer Oracle Database versions. By checking the Oracle Database and client versions numbers, the application can make use of the best Oracle features available.
 
-## Step 6 Connection Pooling
+## Step 6: Connection Pooling
 1.  Connection pooling
 
     Review the code contained in connect\_pool.py:
@@ -632,7 +632,7 @@ There are several ways to execute Python code. In this step, we start with two e
     ````
     and add calls to **time.sleep(1)** in the code, for example in the query loop. Then look at the way the threads execute. Use **drcp\_query.sql** to monitor the pool's behavior.
 
-## Step 7 Fetching Data
+## Step 7: Fetching Data
 1. A simple query
 
     There are a number of functions you can use to query an Oracle database, but the basics of querying are always the same:
@@ -847,7 +847,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     If you know a query only returns a few records, decrease the arraysize from the default to reduce memory usage.
 
-## Step 8 Binding Data
+## Step 8: Binding Data
 Bind variables enable you to re-execute statements with new data values, without the overhead of reparsing the statement. Bind variables improve code reusability, and can reduce the risk of SQL injection attacks.
 1. Binding in queries
 
@@ -1178,7 +1178,7 @@ Bind variables enable you to re-execute statements with new data values, without
 
     The gettype() and newobject() methods can also be used to bind PL/SQL Records and Collections.
 
-## Step 9 PL/SQL
+## Step 9: PL/SQL
 PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and functions are stored and run in the database. Using PL/SQL lets all database applications reuse logic, no matter how the application accesses the database. Many data-related operations can be performed in PL/SQL faster than extracting the data into a program (for example, Python) and then processing it.
 
 1. PL/SQL functions
@@ -1268,7 +1268,7 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
     ````
     The getvalue() method displays the returned value.
 
-## Step 10 Type Handlers
+## Step 10: Type Handlers
 
 1. Basic output type handler
 
@@ -1514,7 +1514,7 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
     </copy>
     ````
 
-## Step 11 LOBs
+## Step 11: LOBs
 Oracle Database "LOB" long objects can be streamed using a LOB locator, or worked with directly as strings or bytes.
 1. Fetching a CLOB using a locator
 
@@ -1602,7 +1602,7 @@ Oracle Database "LOB" long objects can be streamed using a LOB locator, or worke
     python3 clob_string.py
     </copy>
     ````
-## Step 12 Rowfactory functions
+## Step 12: Rowfactory functions
 Rowfactory functions enable queries to return objects other than tuples. They can be used to provide names for the various columns or to return custom objects.
 
 1. Rowfactory for mapping column names
@@ -1664,7 +1664,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     ````
     The output results are the same.
 
-## Step 13 Subclassing connections and cursors
+## Step 13: Subclassing connections and cursors
 1. Subclassing connections
 
     Review the code contained in subclass.py:
@@ -1748,7 +1748,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     </copy>
     ````
 
-## Step 14 Advanced Queueing
+## Step 14: Advanced Queueing
 
 1. Message passing with Oracle Advanced Queuing
 
@@ -1861,7 +1861,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     If you are stuck, look in the **solutions** directory at the aq-dequeue.py, aq-enqueue.py and aq-queuestart.py files.
 
-## Step 15 Simple Oracle Document Access (SODA)
+## Step 15: Simple Oracle Document Access (SODA)
 Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be inserted, queried, and retrieved from Oracle Database. By default, documents are JSON strings. SODA APIs exist in many languages.
 
 1. Inserting JSON Documents
@@ -1967,7 +1967,7 @@ An additional lab on using Python with is available in the New Features for Deve
 ## Acknowledgements
 
 * **Author** - Christopher Jones, Anthony Tuininga
-* **Contributors** - Jaden McElvey Technical Lead Oracle LiveLabs Intern
-* **Last Updated By/Date** - Troy Anthony, DB Product Management, June 2020
+* **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
+* **Last Updated By/Date** - Kay Malcolm, DB Product Management, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

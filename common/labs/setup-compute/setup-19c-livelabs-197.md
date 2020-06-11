@@ -27,6 +27,10 @@ This lab assumes you have already completed the following labs:
 - Login to Oracle Cloud
 - Create SSH Keys
 
+### Estimated Time
+
+This lab takes approximately 10 minutes to complete.
+
 ## Step 1: Login and Create Stack using Resource Manager
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
@@ -187,7 +191,19 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 ## Step 5: Verify the ORCL database is up
 
-1. Run the following command to verify the database with the SID **ORCL** is up and running
+1.  From your connected session of choice **tail** the **dbsingle.log** file.  This file configures the database.
+    ````
+    <copy>
+    tail -f /u01/ocidb/buildsingle1.log
+    </copy>
+    ````
+    ![](./images/tailOfBuildDBInstanceLog.png " ")
+
+2.  When you see the following message, the database setup is complete - **Completed successfully in XXXX seconds** (this may take up to 30 minutes).  However certain labs may proceed without the entire database setup being finished.
+   
+    ![](./images/tailOfBuildDBInstanceLog_finished.png " ")
+
+3. Run the following command to verify the database with the SID **ORCL** is up and running
 
     ````
     <copy>
@@ -198,7 +214,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ![](./images/pseforcl.png " ") 
 
 
-2. Verify the listener is running
+4. Verify the listener is running
     ````
     <copy>
     ps -ef | grep tns
@@ -206,6 +222,16 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ````
 
     ![](./images/pseftns.png " ") 
+
+5.  Connect to the Database using SQL*Plus as the **oracle** user.
+    ````
+    <copy>
+    sudo su - oracle
+    sqlplus system/Ora_DB4U@localhost:1521/orclpdb
+    exit
+    </copy>
+    ````
+    ![](./images/sqlplus_login_orclpdb.png " ")
 
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
