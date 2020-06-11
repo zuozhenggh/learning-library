@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will perform few tasks that are required to get started with BDS. Several of these tasks need to be performed by the Cloud Administrator for your tenancy. There are also optional tasks that make it easier to manage your environment. For example, creating compartments and groups are optional; however, they will simplify administration tasks as your environment expands.
+In this lab, you will perform a few tasks that are required to get started with BDS. Several of these tasks need to be performed by the Cloud Administrator for your tenancy. There are also optional tasks that make it easier to manage your environment. For example, creating compartments and groups are optional; however, they will simplify administration tasks as your environment expands.
 
 ### Objectives
 
@@ -233,7 +233,9 @@ Setup (create) the Virtual Cloud Network to be used by your Big Data Service; al
 * [Overview of Oracle Cloud Infrastructure Identity and Access Management](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
 
 ## Acknowledgements
-* **Author** - Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date** - Lauran Serhal, Oracle Database and Big Data User Assistance, June 2020
+* **Authors:**
+    * Martin Gubar, Director, Oracle Big Data Product Management
+    * Lauran Serhal, Principal Developer, Oracle Database and Big Data User Assistance
+* **Last Updated By/Date:** Lauran Serhal, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

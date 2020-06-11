@@ -37,10 +37,9 @@ There are many options when creating a cluster. You will need to understand the 
 
 Your simple HA cluster will have the following profile:
 
-* **2** Master nodes, **2** Utility nodes, and **3** Worker nodes.  
-* **VM.Standard2.4** shape for all nodes in the cluster. This shape provides **4 CPUs** and **60 GB** of memory.
-* **250 GB** Block Storage size for both the Master and Utility nodes.
-* **750 GB** Block Storage size for the Worker nodes.
+* **Nodes:** **2** Master nodes, **2** Utility nodes, and **3** Worker nodes.  
+* **Shape:** **VM.Standard2.4** shape for all nodes in the cluster. This shape provides **4 CPUs** and **60 GB** of memory.
+* **Storage Size:** **250 GB** block storage for the Master and Utility nodes and **750 GB** block storage for the Worker nodes.
 
 
 **Note:**
@@ -110,7 +109,8 @@ When you create the cluster, the **Create Cluster** wizard will prompt you to pr
      ![](./images/create-cluster-5.png " ")
 
 
-4.   Click **Create Cluster**. The **Clusters** page is re-displayed. The status of the new cluster is     initially **Creating**.
+4.  Click **Create Cluster**. The **Clusters** page is re-displayed. The status of the new cluster      
+    is initially **Creating**.
 
 
 
@@ -121,7 +121,9 @@ When you create the cluster, the **Create Cluster** wizard will prompt you to pr
 * [Overview of Oracle Cloud Infrastructure Identity and Access Management](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
 
 ## Acknowledgements
-* **Author** - Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date** - Lauran Serhal, Oracle Database and Big Data User Assistance, June 2020
+* **Authors:**
+    * Martin Gubar, Director, Oracle Big Data Product Management
+    * Lauran Serhal, Principal Developer, Oracle Database and Big Data User Assistance
+* **Last Updated By/Date:** Lauran Serhal, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

@@ -54,7 +54,9 @@ Use these links to get more information about BDS and OCI:
 
 ## Acknowledgements
 
-* **Author** - Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date** - Lauran Serhal, Oracle Database and Big Data User Assistance, June 2020
+* **Authors:**
+    * Martin Gubar, Director, Oracle Big Data Product Management
+    * Lauran Serhal, Principal Developer, Oracle Database and Big Data User Assistance
+* **Last Updated By/Date:** Lauran Serhal, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.
