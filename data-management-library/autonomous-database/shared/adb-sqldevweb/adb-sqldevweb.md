@@ -32,7 +32,7 @@ Watch a video demonstration of connecting to your new Autonomous Database instan
 
 - This lab assumes you have completed the **Login to Oracle Cloud** and **Provision ADB** labs seen in the menu on the right.
 
-## STEP 1: Connect with SQL Developer Web
+## **STEP 1**: Connect with SQL Developer Web
 
 Although you can connect to your autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Developer Web directly from your ADW or ATP console.
 
@@ -58,7 +58,7 @@ Although you can connect to your autonomous database from local PC desktop tools
 
     ![](./images/Picture100-16b.png " ")
 
-## STEP 2: Run Scripts in SQL Developer Web
+## **STEP 2**: Run Scripts in SQL Developer Web
 
 Run a Query on a Sample Autonomous Database Dataset.
 
@@ -89,7 +89,7 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 ## Acknowledgements
 
-- **Author** - Nilay Panchal, ADB Product Managemnt
+- **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, March 2020
 
