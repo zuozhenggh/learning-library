@@ -1,0 +1,46 @@
+{
+    "tutorials": [
+      {
+          "title": "Introduction to Oracle Big Data Service (BDS)",
+          "description": "Introduction to Oracle Big Data Service",
+          "filename": "./intro.md"
+      },
+        {
+            "title": "Lab 1: Set Up the BDS Environment", 
+            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
+            "filename": "./../bds-getting-started/bds-getting-started.md"
+        }
+        ,
+        {
+            "title": "Lab 2: Create a BDS Hadoop Cluster",
+            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
+            "filename": "./../bds-create-cluster/bds-create-cluster.md"
+        }
+        ,
+        {
+            "title": "Lab 3: Create a Hadoop User",
+            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
+            "filename": "./../bds-getting-started/bds-getting-started.md"
+        }
+        ,
+        {
+            "title": "Lab 4: Access a BDS Node Using a Public IP",
+            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
+            "filename": "./../bds-getting-started/bds-getting-started.md"
+        }
+        ,
+        {
+            "title": "Lab 5: Create an Edge Node to Access Your Cluster",
+            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
+            "filename": "./../bds-getting-started/bds-getting-started.md"
+        }
+        ,
+        {
+            "title": "Lab 6: Backup Your Hadoop Cluster to Oracle Object Storage",
+            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
+            "filename": "./../bds-getting-started/bds-getting-started.md"
+        }
+
+
+                 ]
+}
