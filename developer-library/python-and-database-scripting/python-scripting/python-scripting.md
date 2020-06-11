@@ -81,24 +81,24 @@ The Advanced Queuing section requires Oracle client 12.2 or later. The SODA sect
     </copy>
     ````
 
-3. Create a directory structure named `python/SQL` and get the SQL setup scripts
+3. Create a directory structure named `python/` and get the SQL setup scripts
     ````
     <copy>
-    mkdir -p python/SQL
-    cd python/SQL
+    mkdir -p python
+    cd python
     wget  https://objectstorage.us-ashburn-1.oraclecloud.com/p/NBqvCUUdoUHWnmiiyMofncU7K03zg9tEJxolXE0HKGo/n/c4u03/b/labfiles/o/python_setup.zip
     unzip python_setup.zip
     </copy>
     ````
     ![](./images/setupEnv-1.png " ")
 
-4. Install the sample schema
+4. Install the sample schema using the script **SetupSamples**
     ````
     <copy>
-    sqlplus sys/Ora_DB4U@localhost/orclpdb as sysdba @/home/oracle/python/SQL/sql/SampleEnv
+    sqlplus sys/Ora_DB4U@localhost/orclpdb as sysdba @/home/oracle/python/sql/SetupSamples
     </copy>
     ````
-    The **SetupSamples** script will create a user `pythonhol` with a password "welcome"
+    The **SetupSamples** script will create a user `pythonhol` with a password `welcome`
 
     ![](./images/pythonhol_user.png " ")
 
@@ -195,7 +195,7 @@ There are several ways to execute Python code. In this step, we start with two e
     </copy>
     ````
 
-3.  If you are using nano. Type `Ctrl+x` to exit the file. When prompted press `y`. Then press `ENTER` to confirm. The file should be named `test.py` and be located in the `/home/oracle directory`. 
+3.  If you are using nano. Type `Ctrl+x` to exit the file. When prompted press `y`. Then press `ENTER` to confirm. The file should be named `test.py` and be located in the `/home/oracle directory`.
 
 *This process of opening and closing files in nano will be used throughout the rest of this lab. Remember to open a file in nano, first navigate to the directory with the file. Open the file with the command `nano FileName`. Save and close the file with `Ctrl+x`, then `y`, then `ENTER`.*
 
@@ -216,7 +216,7 @@ There are several ways to execute Python code. In this step, we start with two e
     To view db\_config.py copy and paste the following.
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     cat db_config.py
     </copy>
     ````
@@ -229,7 +229,7 @@ There are several ways to execute Python code. In this step, we start with two e
     To view db\_config.sql copy and paste the following.
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     cat db_config.sql
     </copy>
     ````
@@ -256,7 +256,7 @@ There are several ways to execute Python code. In this step, we start with two e
     Open a command terminal and change to the tutorial directory:
     ````
     <copy>
-    cd /home/oracle/python/SQL/tutorial
+    cd /home/oracle/python/tutorial
     </copy>
     ````
     Run the Python script:
@@ -465,7 +465,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     python3 connect_pool.py
     </copy>
     ````
@@ -509,7 +509,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     python3 connect_pool2.py
     </copy>
     ````
@@ -668,14 +668,14 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     python3 query2.py
     </copy>
     ````
 
     ![](./images/query2Output.png " " )
 
-    
+
 2. Using fetchone()
 
     When the number of rows is large, the fetchall() call may use too much memory.
@@ -879,7 +879,7 @@ Bind variables enable you to re-execute statements with new data values, without
     From a terminal window, run:
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     python3 bind_query.py
     </copy>
     ````
@@ -1112,54 +1112,6 @@ Bind variables enable you to re-execute statements with new data values, without
     ````
     To show the attribute values, edit the the query code section at the end of the file. Add a new method that traverses the object. The file below the existing comment "# (Change below here)") should look like:
 
-## Step 9 PL/SQL
-PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and functions are stored and run in the database. Using PL/SQL lets all database applications reuse logic, no matter how the application accesses the database. Many data-related operations can be performed in PL/SQL faster than extracting the data into a program (for example, Python) and then processing it.
-
-1. PL/SQL functions
-
-    Review plsql\_func.sql which creates a PL/SQL stored function myfunc() to insert a row into a new table named ptab and return double the inserted value:
-    ````
-    create table ptab (mydata varchar(20), myid number);
-
-    create or replace function myfunc(d_p in varchar2, i_p in number) return number as
-    begin
-        insert into ptab (mydata, myid) values (d_p, i_p);
-        return (i_p * 2);
-    end;
-    /
-    ````
-    Run the script using:
-    ````
-    <copy>
-    sqlplus /nolog @plsql_func.sql
-    </copy>
-    ````
-    Review the code contained in plsql\_func.py:
-
-    ````
-    import cx_Oracle
-    import db_config
-
-    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
-    cur = con.cursor()
-
-    res = cur.callfunc('myfunc', int, ('abc', 2))
-    print(res)
-    ````
-
-    This uses callfunc() to execute the function. The second parameter is the type of the returned value. It should be one of the types supported by cx\_Oracle or one of the type constants defined by cx\_Oracle (such as cx\_Oracle.NUMBER). The two PL/SQL function parameters are passed as a tuple, binding them to the function parameter arguments.
-
-    From a terminal window, run:
-
-    ````
-    <copy>
-    cd ~/python/SQL/tutorial
-    python3 plsql_func.py
-    </copy>
-    ````
-
-    The output is a result of the PL/SQL function calculation.
-
     ````
     # (Change below here)
 
@@ -1229,6 +1181,54 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
 
     The gettype() and newobject() methods can also be used to bind PL/SQL Records and Collections.
 
+## Step 9 PL/SQL
+PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and functions are stored and run in the database. Using PL/SQL lets all database applications reuse logic, no matter how the application accesses the database. Many data-related operations can be performed in PL/SQL faster than extracting the data into a program (for example, Python) and then processing it.
+
+1. PL/SQL functions
+
+    Review plsql\_func.sql which creates a PL/SQL stored function myfunc() to insert a row into a new table named ptab and return double the inserted value:
+    ````
+    create table ptab (mydata varchar(20), myid number);
+
+    create or replace function myfunc(d_p in varchar2, i_p in number) return number as
+    begin
+        insert into ptab (mydata, myid) values (d_p, i_p);
+        return (i_p * 2);
+    end;
+    /
+    ````
+    Run the script using:
+    ````
+    <copy>
+    sqlplus /nolog @plsql_func.sql
+    </copy>
+    ````
+    Review the code contained in plsql\_func.py:
+
+    ````
+    import cx_Oracle
+    import db_config
+
+    con = cx_Oracle.connect(db_config.user, db_config.pw, db_config.dsn)
+    cur = con.cursor()
+
+    res = cur.callfunc('myfunc', int, ('abc', 2))
+    print(res)
+    ````
+
+    This uses callfunc() to execute the function. The second parameter is the type of the returned value. It should be one of the types supported by cx\_Oracle or one of the type constants defined by cx\_Oracle (such as cx\_Oracle.NUMBER). The two PL/SQL function parameters are passed as a tuple, binding them to the function parameter arguments.
+
+    From a terminal window, run:
+
+    ````
+    <copy>
+    cd ~/python/tutorial
+    python3 plsql_func.py
+    </copy>
+    ````
+
+    The output is a result of the PL/SQL function calculation.
+
 2. PL/SQL procedures
 
     Review plsql\_proc.sql which creates a PL/SQL procedure myproc() to accept two parameters. The second parameter contains an OUT return value.
@@ -1296,7 +1296,7 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
 
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     python3 type_output.py
     </copy>
     ````
@@ -1552,7 +1552,7 @@ Oracle Database "LOB" long objects can be streamed using a LOB locator, or worke
     To see the output, run the file:
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     python3 clob.py
     </copy>
     ````
@@ -1635,7 +1635,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     Run the file:
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     python3 rowfactory.py
     </copy>
     ````
@@ -1700,7 +1700,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     Run the file:
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     python3 subclass.py
     </copy>
     ````
@@ -1835,7 +1835,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     Run the file:
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     python3 aq.py
     </copy>
     ````
@@ -1902,7 +1902,7 @@ Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be ins
 
     ````
     <copy>
-    cd ~/python/SQL/tutorial
+    cd ~/python/tutorial
     python3 soda.py
     </copy>
     ````
