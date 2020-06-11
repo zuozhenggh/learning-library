@@ -34,60 +34,87 @@ Rather than requiring that you install Python and other software, the front-end 
 
   ![](./images/image73.png " ")
 
-6. Once imported, you will have a VM named DOC-1017486. Start the VM by clicking in start button:
+6. Once imported, you will have a VM named DOC-1017486. Select the VM and then click **Settings**. 
+Then select **Shared Folders** and click the add folder button. Use the drop down and add the folder that contains your txt file with your information from the previous labs. Make sure that **Auto-mount** is enabled. and select **OK**.
+
+  ![](./images/image65.png " ")
+
+  ![](./images/image66.png " ")
+
+7. Start the VM by clicking in start button:
 
   ![](./images/image74.png " ")
 
-7. It should take some time to start the VM. Click enter and you should see the login screen.
+8. It should take some time to start the VM. Click enter and you should see the login screen.
 
-  **NOTE:** If you face any issue, please check that Graphic Controller selected is VBoxSVGA as there are some issues in VirtualBox 6 if you use a different one.
+  *NOTE: If you face any issue, please check that Graphic Controller selected is VBoxSVGA as there are some issues in VirtualBox 6 if you use a different one.*
 
-  ![](./images/image75.png " ")
+   ![](./images/image75.png " ")
 
-8. Click **Hand-On Lab User**. Password for user is `oracle`.
+  *NOTE: You may encounter an issue stating "Implementation of the USB 2.0 controller not found!". To fix this issue you will need to select the HOL5967-OOW2019 virtual machine and then click Settings. Next select USB from the right side menu and make sure that "Enable USB Controller" is unselected.*
+
+  ![](./images/image67.png " ")
+
+  ![](./images/image68.png " ")
+
+  ![](./images/image69.png " ")
+
+9. Click **Hand-On Lab User**. Password for user is `oracle`.
 
   ![](./images/image76.png " ")
 
 ### Configure `ocicli`
 
-1. Once logged in, open a terminal window and execute next command to configure ocicli:
+1. Once logged in, double click the mounted device and open the text file with information from the previous labs. You will now see the text file containing the information you will need to configure ocicli.
+
+  ![](./images/image63.png " ")
+
+2. Open the text editor **Applications>Accessories>TextEditor**. Then copy the private key from your text file to the new blank text file. Last click save in the upper left corner and save in the directory holuser/.oci with the name private.pem. 
+
+  ![](./images/image62.png " ")
+
+  ![](./images/image61.png " ")
+
+  ![](./images/image60.png " ")
+
+3. Once logged in, open a terminal window and execute the next command to configure ocicli:
+
+  ![](./images/image64.png " ")
 
   ```
-  <copy>oci setup config</copy>
+  <copy>cd /
+  oci setup config
+  </copy>
   ```
 
-  ![](./images/image77.png " ")
+  ![](./images/image59.png " ")
 
-2. Keep the txt file with your OCI Tenancy parameters close as you will be asked for those parameters. Before starting, please copy into the VM the private key previously provided:
+4. Keep the txt file with your OCI Tenancy parameters close as you will be asked for those parameters. When prompted to enter a location for your config press enter. When prompted for a user OCID copy and paste your user OCID from the text file. When prompted to enter a tenancy OCID copy and paste you tenancy OCID from the text file.
 
   ![](./images/image78.png " ")
 
-  ![](./images/image79.png " ")
-
-3. Decline to generate a new RSA key pair, copy your private key previously provided into the VM. We recommend you to paste it into this path:
+5. Decline to generate a new RSA key pair by typing `n` and hitting enter. When prompted for the location of your private key file enter the command below.
 
   ```
-  <copy>/home/holouser/.oci</copy>
+  <copy>/home/holuser/.oci/private.pem</copy>
   ```
+  ![](./images/image58.png " ")
 
-  ![](./images/image80.png " ")
+6. Now let’s configure kubectl. Inside your cluster information page, click the “Access Cluster” button:
 
-4. Now let’s configure kubectl. Inside your cluster information page, click the “Access Kubeconfig” button:
+  ![](./images/image57.png " ")
 
-  ![](./images/image81.png " ")
-
-5. A popup window will appear providing you with the commands you have to run to configure kubectl to connect to the Kubernetes cluster just created(change value below with your own cluster id and region):
+7. A popup window will appear providing you with the commands you have to run to configure kubectl to connect to the Kubernetes cluster just created(change value below with your own cluster id and region):
 
   ```
   <copy>mkdir -p $HOME/.kube
-  mkdir -p $HOME/.kube
-  oci ce cluster create-kubeconfig --cluster-id <your_cluster_id> --file $HOME/.kube/config --region eu-frankfurt-1 --token-version 2.0.0
+  oci ce cluster create-kubeconfig --cluster-id &ltyour_cluster_id&gt --file $HOME/.kube/config --region &ltyour_region&gt --token-version 2.0.0
   export KUBECONFIG=$HOME/.kube/config</copy>
   ```
 
-  ![](./images/image311.png " ")
+  ![](./images/image101.png " ")
 
-6. When you execute commands below, you can face an issue and you must run an extra command to configure private key permissions:
+8. When you execute commands below, you can face an issue and you must run an extra command to configure private key permissions:
 
    ```
    <copy>oci setup-repair-file-permissions –file /home/holouser/.oci/private.pem</copy>
@@ -95,15 +122,15 @@ Rather than requiring that you install Python and other software, the front-end 
 
   ![](./images/image83.png " ")
 
-7. You will follow steps mentioned in Access Kubernetes Dashboard section, so that we can launch the Kubernetes Dashboard:
+9. You will follow steps mentioned in Access Kubernetes Dashboard section, so that we can launch the Kubernetes Dashboard:
 
-  ![](./images/image312.png " ")
+  ![](./images/image102.png " ")
 
-8. Click **SIGN IN** and finally you are logged in Kube Dashboard:
+10. Click **SIGN IN** and finally you are logged in Kube Dashboard:
 
   ![](./images/image90.png " ")
 
-9. To enable Kubernetes to pull an image from Oracle Cloud Infrastructure Registry when deploying an application, you need to create a Kubernetes secret. The secret includes all the login details you would provide if you were manually logging in to Oracle Cloud Infrastructure Registry using the docker login command, including your auth token.
+11. To enable Kubernetes to pull an image from Oracle Cloud Infrastructure Registry when deploying an application, you need to create a Kubernetes secret. The secret includes all the login details you would provide if you were manually logging in to Oracle Cloud Infrastructure Registry using the docker login command, including your auth token.
 
   Run kubectl command below with your credentials(remember that username is made of object storage namespace/username and password is the Authtoken we generated):
 
@@ -113,11 +140,11 @@ Rather than requiring that you install Python and other software, the front-end 
 
   ![](./images/image91.png " ")
 
-10. If you go then to Kubernetes Dashboard in browser inside the VM and navigate to Secrets menu under Config and Storage Area, you will see the Secret you have just created:
+12. If you go then to Kubernetes Dashboard in browser inside the VM and navigate to Secrets menu under Config and Storage Area, you will see the Secret you have just created:
 
   ![](./images/image92.png " ")
 
-**IMPORTANT NOTE:** Once you have completed section, proceed to the next lab []().
+**IMPORTANT NOTE:** Once you have completed section, proceed to the [next lab](?lab=lab-5-import-developer-cloud-service).
 
 ## Option 2: Install the Front-end Client as a Docker image
 
@@ -218,13 +245,14 @@ Now let’s configure access to oci tenancy via ocicli with our tenancy details.
 
   You can proceed to the next lab.
 
-  ## Want to Learn More?
+## Want to Learn More?
 
-  * [Oracle VirtualBox Documentation](https://www.virtualbox.org/wiki/Documentation)
-  * [Docker Documentation](https://docs.docker.com/)
+* [Oracle VirtualBox Documentation](https://www.virtualbox.org/wiki/Documentation)
+* [Docker Documentation](https://docs.docker.com/)
 
-  ## Acknowledgements
-  * **Authors** -  Iván Postigo, Jesus Guerra, Carlos Olivares - Oracle Spain SE Team
-  * **Last Updated By/Date** - Tom McGinn, May 2020
+## Acknowledgements
+* **Authors** -  Iván Postigo, Jesus Guerra, Carlos Olivares - Oracle Spain SE Team
+* **Contributors** - Jaden McElvey Technical Lead Oracle LiveLabs Intern
+* **Last Updated By/Date** - Tom McGinn, May 2020
 
-  See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

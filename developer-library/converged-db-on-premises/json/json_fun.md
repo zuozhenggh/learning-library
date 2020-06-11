@@ -2,6 +2,8 @@
 
 ## Introduction
 
+This lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
+
 ## Before You Begin
 
 **What Do You Need?**
@@ -22,9 +24,8 @@ This lab assumes you have completed the following labs:
     j.PO_DOCUMENT.CostCenter,
     j.PO_DOCUMENT.ShippingInstructions.Address.city
     from PURCHASE_ORDER j 
-    wherej.PO_DOCUMENT.ShippingInstructions.Address.city = 'South San Francisco'
+    where j.PO_DOCUMENT.ShippingInstructions.Address.city = 'South San Francisco'
     /
-
       </copy>
    ````
   
@@ -32,24 +33,22 @@ This lab assumes you have completed the following labs:
     
    **Note:** Oracle database allows a simple ‘dotted’ notation to be used to perform a limited set of operations on columns containing JSON.In order to use the dotted notation, a table alias must be assigned to the table in the FROM clause, and any reference to the JSON column must be prefixed with the assigned alias. All data is returned as VARCHAR2(4000).
 
- (json_exists)**
 
 ## Step 2: Find all customers who purchased an items tagged with a specific UPC
 
   ````
     <copy>
     SELECT po.po_document.PONumber,po.po_document.Requestor
-    FROM purchase_orderpo
+    FROM purchase_order po
     WHERE json_exists(po.po_document,'$?(@.LineItems.Part.UPCCode == 85391628927)');
-
       </copy>
    ````
   
    ![](./images/count_po_document.PNG " ")
     
-   **Note:** The JSON-EXISTS operator is used in the WHERE clause of a SQL statement. It is used to test whether or not a JSON document contains content that matches the provided JSON path expression.
+   **Note:** The JSON\_EXISTS operator is used in the WHERE clause of a SQL statement. It is used to test whether or not a JSON document contains content that matches the provided JSON path expression.
 
-   The JSON-EXISTS operator takes two arguments, a JSON column and a JSON path expression. It returns TRUE if the document contains a key that matches the JSON path expression, FALSE otherwise. JSON-EXISTS provides a set of modifiers that provide control over how to handle any errors encountered while evaluating the JSON path expression.
+   The JSON\_EXISTS operator takes two arguments, a JSON column and a JSON path expression. It returns TRUE if the document contains a key that matches the JSON path expression, FALSE otherwise. JSON\_EXISTS provides a set of modifiers that provide control over how to handle any errors encountered while evaluating the JSON path expression.
 
    [UPC, short form for  Universal Product Code, is a type of code printed on retail product packaging to aid in identifying a particular item. It consists of two parts – the machine-readable barcode, which is a series of unique black bars, and the unique 12-digit number beneath it.]
 
@@ -119,7 +118,7 @@ This lab assumes you have completed the following labs:
     
  ![](./images/specific_product2.PNG " ")
     
-  **Notes:** The JSON_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
+  **Notes:** The JSON\_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
 
 ## Step 4: How Many orders were done by a customer with minimum 7 quantity and unit price minimum 25$ in each order
    For this , we will create two views as below:
@@ -148,7 +147,11 @@ This lab assumes you have completed the following labs:
     SHIP_TO_PHONE VARCHAR2(24 CHAR) PATH '$.ShippingInstructions.Phone[0].number',
     INSTRUCTIONS VARCHAR2(2048 CHAR) PATH '$.SpecialInstructions') m
     /
-
+ </copy>
+ ````
+ 
+ ````
+    <copy>
     create or replace view PURCHASE_ORDER_DETAIL_VIEW
     AS
     SELECT D.* FROM PURCHASE_ORDER p,
@@ -183,7 +186,12 @@ This lab assumes you have completed the following labs:
     )
     ) d
      /
+    
+    </copy>
+ ````
 
+ ````
+    <copy>
   select PO_NUMBER, REFERENCE, INSTRUCTIONS, ITEMNO, UPCCODE, DESCRIPTION, QUANTITY, UNITPRICE
     from PURCHASE_ORDER_DETAIL_VIEW d
    where REQUESTOR = 'Steven King'
@@ -195,8 +203,8 @@ This lab assumes you have completed the following labs:
   ````
   
   ![](./images/json_fun_view1.PNG " ")
-  ![](./images/json_fun_view2.PNG " ")  
-  ![](./images/lab5_snap3.PNG " ")    
+    ![](./images/json_fun_view2.PNG " ")  
+    ![](./images/lab5_snap3.PNG " ")    
     
  
 
@@ -235,9 +243,9 @@ This lab assumes you have completed the following labs:
   ![](./images/json_fun_5b.PNG " ")  
 
     
-   **Notes:** JSON-QUERY finds one or more specified JSON values in JSON data and returns the values in a character string. expr. Use this clause to specify the JSON data to be evaluated. For expr , specify an expression that evaluates to a text literal.
+   **Notes:** JSON\_QUERY finds one or more specified JSON values in JSON data and returns the values in a character string. expr. Use this clause to specify the JSON data to be evaluated. For expr , specify an expression that evaluates to a text literal.
 
-   JSON-VALUE selects a scalar value from JSON data and returns it as a SQL value. You can also use json-value to create function-based B-tree indexes for use with JSON data — see Indexes for JSON Data. Function json_value has two required arguments and accepts optional returning and error clauses.
+   JSON\_VALUE selects a scalar value from JSON data and returns it as a SQL value. You can also use json\_value to create function-based B-tree indexes for use with JSON data — see Indexes for JSON Data. Function json\_value has two required arguments and accepts optional returning and error clauses.
 
 ## Acknowledgements
 

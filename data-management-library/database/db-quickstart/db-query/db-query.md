@@ -29,6 +29,8 @@ In this section, you execute the `SELECT` statement to retrieve data from tables
 -   A `FROM` clause, which specifies the table containing the columns listed in the SELECT clause
     -   Syntax:  `SELECT {*|[DISTINCT] column|expression [alias],...} FROM <table>`
 
+**Note:** Remember that you need to prefix the table names with the schema name SH in your queries.
+
 1. You can display all columns of data in a table by entering an asterisk * after the SELECT keyword. Execute the following statement to view all rows and columns in the   `DEPARTMENTS` table:
 
     `SELECT *
@@ -81,6 +83,27 @@ In this section, you use the `ORDER BY` clause to sort the rows that are retriev
     `WHERE  job_id='SA_REP'`
 
     `ORDER BY hire_date DESC;`
+
+    ![](./images/blahblahblahblah.jpg " ")  
+
+## STEP 4:  Ranking Data
+
+In this section, you use the `RANK ()` function to rank the rows that are retrieved from the `SELECT` statement. You can use the RANK function as an **aggregate**  function (takes multiple rows and returns a single number) or as an **analytical** function (takes criteria and shows a number for each record).
+
+1. Execute the following `SELECT` statement to rank the rows using RANK as an analytical function.
+
+```
+<copy>SELECT channel_desc, TO_CHAR(SUM(amount_sold), '9,999,999,999') SALES$,
+RANK() OVER (ORDER BY SUM(amount_sold)) AS default_rank,
+RANK() OVER (ORDER BY SUM(amount_sold) DESC NULLS LAST) AS custom_rank
+FROM sh.sales, sh.products, sh.customers, sh.times, sh.channels, sh.countries
+WHERE sales.prod_id=products.prod_id AND sales.cust_id=customers.cust_id
+AND customers.country_id = countries.country_id AND sales.time_id=times.time_id
+AND sales.channel_id=channels.channel_id
+AND times.calendar_month_desc IN ('2000-09', '2000-10')
+AND country_iso_code='US'
+GROUP BY channel_desc;</copy>
+```
 
     ![](./images/blahblahblahblah.jpg " ")  
 
