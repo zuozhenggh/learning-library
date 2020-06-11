@@ -22,12 +22,12 @@ The following lab requires an Oracle Cloud account from the LiveLabs Platform.
 If the account name supplied to you begins with **user** or **ssuser**, please proceed. Otherwise, proceed to Option 2.
 
 1. From any supported browser go to [http://bit.ly/c4u03login](http://bit.ly/c4u03login) to access the Oracle Cloud LiveLabs Tenancy. *Note: Internet Explorer is not a supported browser, Firefox or Google Chrome are recommended.*
-   
-2. Your Workshop Lead will provide you with a **user name** and **temporary password**, enter that information here and click **Sign In**. *Note: The user name provided will begin with ssuser or user*.
+
+2. Your workshop Lead will provide you with a **User Name** and **Temporary Password**, enter that information here, and click on **Sign In**. *Note: The user name provided will begin with ssuser or user*.
 
     ![](./images/loginpage.png " ")
 
-3.  You will then be taken to a screen to change your password. Choose a **new password** that you can remember and click **Save New Password**. *Note: Make sure you are using an approved browser. Internet Explorer is not supported.*
+3.  You will then be taken to a screen to change your password. Choose a **New Password** that you can remember and click **Save New Password**. *Note: Make sure you are using an approved browser. Internet Explorer is not supported.*
 
     ![](./images/changepwd.png " ")
 
@@ -35,7 +35,7 @@ If the account name supplied to you begins with **user** or **ssuser**, please p
 
     ![](./images/homepage.png " ")
 
-5.  Your workshop leader assigned you a region. Click on the **upper right-hand corner** and **set your Region** to the region you were assigned. *Note: We have pre-created certain objects in this assigned region to assist with workshop completion. Failure to set the correct region will result in lab failure.*
+5.  Your workshop leader assigned you a region. Click on the **upper right-hand corner** and **set your region** to the region you were assigned. *Note: We have pre-created certain objects in this assigned region to assist with workshop completion. Failure to set the correct region will result in lab failure.*
 
     ![](./images/changeregion.png " ")
 
@@ -51,11 +51,11 @@ After you sign up on the platform, you’ll get two emails. Check your spam and 
 
     ![](./images/signin.png " ")
 
-2.  Open up *Email 2: [LIVELABS]: (Name of Workshop) - Account Created*. Note your user name and your temporary password.  Enter your **user name** and your **temporary password** in the box on the right-hand side that says *Oracle Infrastructure*. *Note: Do not use Single Sign-On (SSO), SSO is not enabled for this tenancy.*
+2.  Open up *Email 2: [LIVELABS]: (Name of Workshop) - Account Created*. Note your user name and your temporary password.  Enter your **User Name** and your **Temporary Password** in the box on the right-hand side that says *Oracle Infrastructure*. *Note: Do not use Single Sign-On (SSO), SSO is not enabled for this tenancy.*
 
     ![](./images/loginpage.png " ")
 
-3.  You will then be taken to a screen to change your password. Choose a **new password** that you can remember and click **Save New Password**. *Note: Make sure you are using an approved browser. Internet Explorer is not supported.*
+3.  You will then be taken to a screen to change your password. Choose a **New Password** that you can remember and click **Save New Password**. *Note: Make sure you are using an approved browser. Internet Explorer is not supported.*
 
     ![](./images/changepwd.png " ")
 
