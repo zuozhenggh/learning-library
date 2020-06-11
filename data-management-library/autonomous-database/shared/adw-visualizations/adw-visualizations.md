@@ -141,35 +141,35 @@ As ADW and ATP accept only secure connections to the database, you need to downl
 
     ![](./images/click_create_data_set.jpg " ")
 
-8. We will now choose the sales data we want to analyze and visualize in our first project.  Select the connection we just created named __SALES_HISTORY__.
+9. We will now choose the sales data we want to analyze and visualize in our first project.  Select the connection we just created named __SALES_HISTORY__.
 
    ![](./images/choose_sales_history_connection.jpg " ")
 
-9. Click the __ADMIN__ schema in the data warehouse.
+10. Click the __ADMIN__ schema in the data warehouse.
 
     **Note:** If you do not see schemas because you are behind a firewall or on a VPN, you may need to use an alias or shut down the VPN to connect to your ADW database.
 
    ![](./images/select_admin_schema.jpg " ")
 
-10. Find and click the __DV\_SH\_VIEW__ view table from the ADMIN schema.
+11. Find and click the __DV\_SH\_VIEW__ view table from the ADMIN schema.
 
    ![](./images/select_dv_sh_view_from_admin.jpg " ")
 
-11. First click the __Add All__ label in the left column, and type a new Name for the Data Set, naming it __SALES_HISTORY__. You may click __Get Preview Data__ at the bottom to see some example records. Click the __Add__ button to add the Data Set.
+12. First click the __Add All__ label in the left column, and type a new Name for the Data Set, naming it __SALES_HISTORY__. You may click __Get Preview Data__ at the bottom to see some example records. Click the __Add__ button to add the Data Set.
 
   **NOTE**: It is important to use the new name of __SALES_HISTORY__ as the rest of the lab steps will reference that name.  
 
    ![](./images/add_all_data_to_data_set.jpg " ")
 
-12. Once the __SALES_HISTORY__ Data Set has successfully been created, click on the main menu on the top left.
+13. Once the __SALES_HISTORY__ Data Set has successfully been created, click on the main menu on the top left.
 
    ![](./images/data_set_results_click_menu.jpg " ")
 
-13. Select the __Data__ menu option on the left.  This should reveal your new __SALES_HISTORY__ Data Set you created.  Click it to open it up as a **Project**.
+14. Select the __Data__ menu option on the left.  This should reveal your new __SALES_HISTORY__ Data Set you created.  Click it to open it up as a **Project**.
 
    ![](./images/click_sales_history_data_set_to_open_as_project.jpg " ")
 
-14. We are going to override the data types for two columns recognized as measures (ie. numeric), and correct them to be treated as attributes -- __CALENDAR\_YEAR__ and __CUST\_YEAR\_OF\_BIRTH__.  Click the __CALENDAR\_YEAR__ column name under Data Elements, and change the __‘Treat As’__ field to an __‘Attribute’__.  Repeat for the field, __CUST\_YEAR\_OF\_BIRTH__.
+15. We are going to override the data types for two columns recognized as measures (ie. numeric), and correct them to be treated as attributes -- __CALENDAR\_YEAR__ and __CUST\_YEAR\_OF\_BIRTH__.  Click the __CALENDAR\_YEAR__ column name under Data Elements, and change the __‘Treat As’__ field to an __‘Attribute’__.  Repeat for the field, __CUST\_YEAR\_OF\_BIRTH__.
 
    ![](./images/change_treat_as_from_measure_to_attribute.jpg " ")
 
@@ -185,7 +185,7 @@ No matter what your role is in the organization, access to timely data can provi
 
    ![](./images/browse_and_explore_data.jpg " ")
 
-## **Step 5**: Create Your First Data Visualization
+## **STEP 5**: Create Your First Data Visualization
 
 1. We will now create a very simple visualization project to finish this part of the lab.  Multi-select (ctrl+click) the 5 Data Elements within __SALES\_HISTORY__ including __PROD\_NAME__, __AMOUNT\_SOLD__, __CALENDAR\_YEAR__, __PROD\_CATEGORY__, and __QUANTITY\_SOLD__.  
 
