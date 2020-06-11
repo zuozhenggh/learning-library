@@ -26,9 +26,15 @@ This lab assumes you have already completed the following labs:
 
 2.  Enter *oracle database 19c* in the search bar and select the image *Oracle Database Oracle Database (single image)*.
     ![](./images/cloud_console_2.png " ")
-*Note* that you can directly access the image page via the link [Oracle Database 19c Image - Overview](https://console.ap-sydney-1.oraclecloud.com/marketplace/application/47726045/overview)
+    *Note* that you can directly access the image page via the address
 
-3.  From the Pull-down menu on the right, choose Oracle Database 19.x, the correct compartment name (in which to create your compute instance) and agree to the terms and conditions. Click **Launch Instance**
+    ```
+    <copy>
+    https://console.YOUR-REGION.oraclecloud.com/marketplace/application/47726045/overview)
+    </copy>
+    ```
+
+3.  From the Pull-down menu on the right, choose Oracle Database 19.x, a compartment (in which to create your compute instance) and agree to the terms and conditions. Click **Launch Instance**
     ![](./images/cloud_console_4.png " ")   
 
 4.  Enter the following information:
@@ -56,7 +62,7 @@ You will need the Public IP Address assigned to your Instance
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
 
-*NOTE 1:  If you are using your laptop to connect your corporate VPN may prevent you from logging in.
+*NOTE 1:  If you are using your laptop to connect your corporate VPN may prevent you from logging in.*
 
 *NOTE 2: The ssh-daemon is disabled for the first 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.*
 
@@ -72,6 +78,8 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
+
+    *Note: You may recieve an error that the connection was refused. If you recieve this error wait a minute and re enter the previous command.*
 5.  When prompted, answer **yes** to continue connecting.
 6.  Continue to Step 5 on the left hand menu.
 

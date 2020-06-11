@@ -1,4 +1,4 @@
-# Defining New Data Structures Using Quick SQL
+# Define New Data Structures Using Quick SQL
 
 ## Introduction
 

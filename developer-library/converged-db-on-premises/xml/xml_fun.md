@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This Lab will show case how to use few XML functions with respect to Retail Concept
+This lab walks you through the steps of inserting and updating xml data. We can add a row to our xml table purchaseorder using insert query. Also we can use Oracle UPDATEXML function to update XML content stored in Database.
 
 ## Before You Begin
 
@@ -97,12 +97,9 @@ This lab assumes you have completed the following labs:
 
   **Notes:** XMLQUERY lets you query XML data in SQL statements. It takes an XQuery expression as a string literal, an optional context item, and other bind variables and returns the result of evaluating the XQuery expression using these input values. XQuery string is a complete XQuery expression, including prolog.
         
-## Step 5: Custer Delivery Priority Instruction  
+## Step 5: Custer Delivery Priority Instruction for e.g Ex - Courier, Expidite,Surface Mail,Air Mail etc..  
     
-  Ex - Courier, Expidite,Surface Mail,Air Mail etc..
-
-   ExistsNode() checks if xpath-expression returns at least one XML element or text node. If so, existsNode returns 1, otherwise, it returns 0. existsNode should only be used in the where clause of the select statement.
-
+  Condition -1: Special_Instructions="Next Day Air 
 
    ````
     <copy>
@@ -115,7 +112,7 @@ This lab assumes you have completed the following labs:
  
   ![](./images/xml_m10_a.PNG " ")
 
-## Step 6: Run Select Query
+  Condition -2: Special_Instructions="Priority Overnight
     
     
  ````

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the step to setup the environment for XML lab. You can connect the Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper
+This lab walks you through the steps of setting up the environment for XML lab . You can connect Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper.
 
 ## Before You Begin
 
@@ -28,10 +28,18 @@ This lab assumes you have completed the following labs:
   ````
     <copy>
      . oraenv
-     ConvergedCDB
+     </copy>
+````
+
+````
+    <copy>
+    ConvergedCDB
+    </copy>
+````
+
+````
+    <copy>
      sqlplus appxml/Oracle_4U@JXLPDB
-
-
     </copy>
 ````
 
