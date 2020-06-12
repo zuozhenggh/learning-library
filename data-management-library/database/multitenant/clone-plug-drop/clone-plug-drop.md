@@ -9,15 +9,32 @@ Estimated time: 2 - 3 hours
 
 
 ## Step 0: Run the Multitenant Setup Scripts
-Once you have an instance running the 19c database, a script needs to be run to setup container databases and pluggable databases needed for the rest of Multitenant labs.
 
-1.  Once the database software has been configured, run the script to create the container databases and pluggable databases needed for the Multitenant lab.
+The next steps will download the files needed for the rest of the workshop and create a 2nd set container databases and pluggable databases.
+
+1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the compute instance you created in the previous lab.
+
+
+2.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
+
+    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+
+    ````
+    <copy>
+    cd /home/opc/
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
+    unzip multiscripts.zip; chmod +x *.sh
+    /home/opc/setupenv.sh
+    </copy>
+    ````    
+
+3.  Once the database software has been configured, run the script to create the container databases and pluggable databases needed for the Multitenant lab.
 
     ````
     <copy>nohup /home/opc/setupcontainers.sh &> setupcontainers.out&</copy>
     ````
 
-2.  To check on the progress of this script, enter the command below.  This script takes about 60 minutes to complete.  *Note:  Ignore the [WARNING] [DBT-06208] that occur in this script.*
+4.  To check on the progress of this script, enter the command below.  This script takes about 60 minutes to complete.  *Note:  Ignore the [WARNING] [DBT-06208] that occur in this script.*
 
     ````
     <copy>tail -f /home/opc/setupcontainers.out</copy>
@@ -27,7 +44,7 @@ Once you have an instance running the 19c database, a script needs to be run to 
 
     ![](./images/step0.2-setupscript2.png " ")
 
-3.  The cloud shell terminal disconnects the session after 20 minutes of inactivity. **Reconnect** to cloud shell. Run the following commands to login in to your instance and check the progress of the script.
+5.  The cloud shell terminal disconnects the session after 20 minutes of inactivity. **Reconnect** to cloud shell. Run the following commands to login in to your instance and check the progress of the script.
 
     ````
     <copy>cd .ssh</copy>
@@ -49,7 +66,7 @@ Once you have an instance running the 19c database, a script needs to be run to 
 
     ![](./images/step0.3-reconnecting.png " ")
 
-4.  Once the script is complete, you should expect to see this message.
+6.  Once the script is complete, you should expect to see this message.
 
     ![](./images/step0.4-setupscript3.png " ")
 
@@ -1099,7 +1116,7 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Patrick Wheeler, VP, Multitenant Product Management
-- **Adapted to Cloud by** -  David Start, OSPA
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
+- **Contributors** -  David Start, Anoosha Pilli, Brian McGraw, Quintin Hill
+- **Last Updated By/Date** - Kay Malcolm, Product Manager, DB Product Management, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

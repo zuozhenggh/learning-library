@@ -13,42 +13,82 @@ You can connect to an Node.js running in a Docker container on an Oracle Cloud C
 This lab assumes you have completed the following labs:
 - Lab 1: Login to Oracle Cloud
 - Lab 2: Generate SSH Key
-- Lab 3: All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
-- Lab 4: Environment Setup 
+- Lab 3: Environment Setup 
+
+
 ## Step 1: Start Docker and Run Node.js application
 
-1. Start Docker by using below command 
-   
-    ````
-    <copy>
-    systemctl start docker
-    systemctl status docker
+ 1. Check the Firewall status by using below command from opc user
 
+````
+    <copy>
+    sudo systemctl status firewalld
+       </copy>
+   ````
+  
+2. If firewall enable or running, Please Disable and stop it by using below command from opc user.
+   
+````
+    <copy>
+     sudo systemctl stop firewalld
+     sudo systemctl disable firewalld
     </copy>
-    ````
-    
-2. Run Script to start the Node-js Application.     Check the directory Name Docker script 
+ ````
+
+3. After disabling the firewalld restart Docker service by using below command from opc user. 
+     
+````
+    <copy>
+     sudo systemctl restart docker
+    </copy>
+  ````
+
+
+4. After restart docker service  switch to oracle user and check the status of docker 
         
-    ````
+ ````
     <copy>
-	cd /docker
+	sudo su - oracle
+    systemctl status docker
     </copy>
-    ````
+````
 
-3. Check the script is available and run the script by using below command.
+5. Check the script in the below location using below command.
    
-    ````
+````
     <copy>
-	./ApplicationScript.sh
+	cd /u01/workshop/application
     </copy>
-    ````
+  ````
+6. Before running the script collect the database host IP- address by using below command.
+   
+ ````
+    <copy>
+	curl ifconfig.co
+    </copy>
+    
+````
+
+7. Run the script,it will start downloading the image from OCI registry and it will ask for Database Server Public IP to make connection with the Database.
+
+````
+    <copy>
+	./applicationscript.sh
+    </copy>
+    
+````
+
+
 
 ## Step 2:  Verify Application 
-1. Verify the Application in your browser.  Open up a web browser on your PC and visit this Application URL. *http://Public-IP:3000/*
+   1. Verify the Application in your browser.  Open up a web browser on your PC and visit this Application URL. *http://Public-IP:3000/*
 
-2. Verify the Application API in your browser.  Open up a web browser on your PC and visit this Application URL. *http://Public-IP:3001/*
+   2. Verify the Application API in your browser.  Open up a web browser on your PC and visit this Application URL. *http://Public-IP:3001/*
+   
+   **Note**: Please refer the Lab 4 environment setup to find the IP address.
 
-    ![](./images/env_setup_nodejs.PNG " ") 
+
+![](./images/env_nodejs.PNG " ") 
 
 ## Acknowledgements
 

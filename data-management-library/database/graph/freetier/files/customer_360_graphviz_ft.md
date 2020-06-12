@@ -4,7 +4,6 @@
 The results of the analyses done in the previous labs can easily be visualized using Graph Visualization.
 
 The following video provides an overview of the visualization component.
-
 [](youtube:zfefKdNfAY4)
 
 **Note:** This lab assumes you have successfully completed Lab 3.8 and published the graph. It also assumes the Graph Visualization component is up and running on the compute instance on `public_ip_for_compute:7007/ui`.

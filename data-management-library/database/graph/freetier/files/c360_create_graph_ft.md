@@ -15,6 +15,8 @@ The steps are:
 SSH into the compute instance where you installed the graph server.  
 Switch to the user account (e.g. `oracle`) that has the database wallet and will run the server and client instances. 
 
+**Note: You must logout and then log back in for the changes in the `oracle` user's `bash_profile` to take effect.**
+
 ```
 <copy>
 su - oracle 
@@ -43,6 +45,11 @@ Then, as the `oracle` user, start the server using
 /opt/oracle/graph/pgx/bin/start-server
 </copy>
 ```
+
+**Note: The graph server proces will run in the foreground so do not exit the shell.**
+
+You will see the following log output once the server is up and running.  
+>INFO: Starting ProtocolHandler ["http-nio-7007"]
 
 ### Start a client shell 
 
