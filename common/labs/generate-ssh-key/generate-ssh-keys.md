@@ -186,7 +186,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
     ```
     Then navigate 'down' into the .ssh folder in your normal home directory.
 
-    ````
+    ```
     cd Users/<your home folder name>/.ssh/
     ```
     *Note: The angle brackets <> should not appear in your code.*
