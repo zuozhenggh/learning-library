@@ -79,9 +79,10 @@ var conn = DriverManager.getConnection(jdbcUrl, user, pass) ;
 Copy, paste, and execute the following code in JShell.
 
 ```
+<copy>
 // now load the graph into memory to run some more analyses
 // specify the graph config (i.e. vertex and edge properties and datatypes)
-Supplier<GraphConfig> pgxConfig = () -> { return GraphConfigBuilder.forPropertyGraphRdbms()
+Supplier&lt;GraphConfig&gt; pgxConfig = () -> { return GraphConfigBuilder.forPropertyGraphRdbms()
  .setJdbcUrl(jdbcUrl)
  .setUsername(user)
  .setPassword(pass)
@@ -101,7 +102,7 @@ Supplier<GraphConfig> pgxConfig = () -> { return GraphConfigBuilder.forPropertyG
  .setLoadEdgeLabel(true)
  .setKeystoreAlias("alias")
  .build(); }
-
+</copy>
 // pgxConfig ==> $Lambda$607/0x0000000800add440@616d9a6d
 ```
 
@@ -308,11 +309,8 @@ Filter customers and merchants from the graph.
 Add reverse edges. Copy, paste, and execute both sets of code cnippets below.
 
 ```
-var cs = sg.<Long>createChangeSet();
-```
-
-```
 <copy>
+var cs = sg.&lt;Long&gt;createChangeSet();
 var rs = sg.queryPgql("SELECT id(a), id(x) MATCH (a)-[]->(x)");
 for (var r : rs) {
    var e = cs.addEdge(r.getLong(2),r.getLong(1)).setLabel("PURCHASED_BY");
@@ -354,13 +352,11 @@ sg.queryPgql("select id(a) match (a) where a.ACCOUNT_NO='xxx-yyy-201'").print();
 ```
 
 Copy, paste, and execute both sets of code snippets below.
-```
-var vertexSet = sg.<Long>createVertexSet();
 
-```
 
 ```
 <copy>
+var vertexSet = sg.&lt;Long&gt;createVertexSet();
 vertexSet.addAll(3244710687574720295L);
 var ppr = analyst.personalizedPagerank(sg, vertexSet);
 </copy>
