@@ -19,14 +19,14 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
 [oracle@dbstby ~]$ sqlplus / as sysdba
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Wed Feb 5 05:31:25 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
 
 Connected to:
 Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 SQL> select open_mode,database_role,flashback_on from v$database;
 
@@ -73,7 +73,7 @@ READ WRITE	     PRIMARY	      YES
 
 SQL> exit
 Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 [oracle@dbstby ~]$ 
 ```
 
@@ -84,7 +84,7 @@ Version 19.5.0.0.0
 ```
 [oracle@dbstby ~]$ dgmgrl sys/Ora_DB4U@orcl
 DGMGRL for Linux: Release 19.0.0.0.0 - Production on Wed Feb 5 05:41:24 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
 
@@ -182,14 +182,14 @@ Now, the primary is the on-premise database, and the standby database is disable
 [oracle@dbstby ~]$ sqlplus / as sysdba  
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Wed Feb 5 05:48:11 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
 
 Connected to:
 Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 SQL> shutdown immediate
 Database closed.
@@ -206,7 +206,7 @@ Redo Buffers		   24399872 bytes
 Database mounted.
 SQL> exit
 Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 [oracle@dbstby ~]$  
 ```
 
@@ -239,14 +239,14 @@ DGMGRL>
 [oracle@dbstby ~]$ sqlplus / as sysdba
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Wed Feb 5 05:53:48 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
 
 Connected to:
 Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 SQL> select open_mode,database_role from v$database;
 

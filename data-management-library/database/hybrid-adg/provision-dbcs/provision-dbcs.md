@@ -88,7 +88,7 @@ This lab assumes you have already completed the following labs:
 5. In the **Database Information** page, Specify the following:
 
     - **Database name:** **ORCL**, same as the on premise database
-    - Check the Display all available versions box, select the Database version: 19.5.0.0. same version as the on premise database
+    - Check the Display all available versions box, select the Database version: 19.7.0.0. same version as the on premise database
     - PDB name: orclpdb
 
     ![](./images/image-20200130181300472.png " ")

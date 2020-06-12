@@ -1,6 +1,6 @@
 # Prepare On Premise Database
 
-In this lab, You will use a compute instance in the OCI to simulate the on-premise primary database. In Lab3, the Oracle 19c database has been installed and patched to 19.5.0. The on-premise primary database can deploy into a different region from the cloud database which will act as your stand-by database.
+In this lab, You will use a compute instance in the OCI to simulate the on-premise primary database. In Lab3, the Oracle 19c database has been installed and patched to 19.7.0. The on-premise primary database can deploy into a different region from the cloud database which will act as your stand-by database.
 
 ## Lab Prerequisites
 
@@ -122,14 +122,14 @@ ENCRYPTION_WALLET_LOCATION =
 [oracle@workshop ~]$ sqlplus / as sysdba
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Fri Jan 31 03:26:52 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
 
 Connected to:
 Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 SQL> administer key management create keystore '/u01/app/oracle/admin/ORCL/wallet' identified by "Ora_DB4U";
 
@@ -358,7 +358,7 @@ Crypto-checksumming service for Linux: Version 19.0.0.0.0 - Production
 
 SQL> exit
 Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 [oracle@primary ~]$
 ```
 
@@ -389,14 +389,14 @@ SQLNET.CRYPTO_CHECKSUM_TYPES_CLIENT=(SHA1)
 [oracle@workshop ~]$ sqlplus / as sysdba
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Fri Jan 31 03:51:46 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
 
 Connected to:
 Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 SQL> set linesize 120
 SQL> col network_service_banner for a85

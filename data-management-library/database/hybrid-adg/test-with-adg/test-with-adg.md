@@ -16,14 +16,14 @@ This lab assumes you have already completed the following labs:
 [oracle@workshop ~]$ sqlplus / as sysdba
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Sat Feb 1 06:52:50 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
 
 Connected to:
 Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 SQL> show pdbs
 
@@ -60,14 +60,14 @@ SQL>exit;
 [oracle@workshop ~]$ sqlplus testuser/testuser@workshop:1521/orclpdb
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Sat Feb 1 06:59:56 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
 
 Connected to:
 Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 SQL> create table test(a number,b varchar2(20));
 
@@ -89,14 +89,14 @@ SQL>
 [oracle@dbstby ~]$ sqlplus / as sysdba
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Sat Feb 1 07:04:39 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
 
 Connected to:
 Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 SQL> select open_mode,database_role from v$database;
 
@@ -127,7 +127,7 @@ READ ONLY WITH APPLY PHYSICAL STANDBY
 
 SQL> exit
 Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 [oracle@dbstby ~]$ 
 ```
 
@@ -137,7 +137,7 @@ Version 19.5.0.0.0
 [oracle@dbstby ~]$ sqlplus testuser/testuser@dbstby:1521/orclpdb
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Sat Feb 1 07:09:27 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
@@ -145,7 +145,7 @@ Last Successful login time: Sat Feb 01 2020 06:59:56 +00:00
 
 Connected to:
 Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 SQL> select * from test;
 
@@ -195,7 +195,7 @@ SQL> select * from test;
 
 SQL> exit
 Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 [oracle@dbstby ~]$ 
 ```
 
@@ -211,7 +211,7 @@ SQL> select * from test;
 
 SQL> exit
 Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 [oracle@adgstudent1 ~]$ 
 ```
 
@@ -228,7 +228,7 @@ Switchovers are always a planned event that guarantees no data is lost. To execu
 ```
 [oracle@workshop ~]$ dgmgrl sys/Ora_DB4U@orcl
 DGMGRL for Linux: Release 19.0.0.0.0 - Production on Sat Feb 1 07:21:55 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
 
@@ -309,14 +309,14 @@ DGMGRL>
 [oracle@workshop ~]$ sqlplus / as sysdba
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Sat Feb 1 10:16:54 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
 
 Connected to:
 Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 SQL> show pdbs
 
@@ -339,14 +339,14 @@ SQL>
 [oracle@dbstby ~]$ sqlplus / as sysdba
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Sat Feb 1 10:20:06 2020
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
 
 Connected to:
 Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.5.0.0.0
+Version 19.7.0.0.0
 
 SQL> show pdbs
 
