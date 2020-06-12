@@ -42,7 +42,7 @@ This lab assumes you have already completed the following labs:
 
     ![](./images/createstackpage.png " ")
 
-4.  Click the **Browse** link and select the zip file (db19c-compute-vcn.zip) that you downloaded. Click **Select**.
+4.  Click the **Browse** link and select the zip file (db19c-compute-vcn.zip) that you downloaded. Click **Open**.
 
     ![](./images/create-db-stack.png " ")
 
@@ -51,18 +51,22 @@ This lab assumes you have already completed the following labs:
     - **Name**:  Enter a name  (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
     
     - **Description**:  Same as above
+
+    Click **Next**
     
-5.  Click **Next**.
+5.  Now, configure your instance.
 
     ![](./images/create-db-19c-stack.png " ")
 
     Enter the following information:
 
-    **Choose a Name for your Instance:** Enter a display name. This will be the display name for the compute instance you create.  We recommend your name and a set of numbers
+    **Choose a Display Name For Your Instance:** Enter a display name. This will be the display name for the compute instance you create.  We recommend your name and a set of numbers
         
     **SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
 
-6. Click **Next**.
+    Click **Next**.
+
+6. After confirming the stack information and the variables are correct, click **Create**.
 
     ![](./images/create-db19c-stack-3.png " ")
 
@@ -118,6 +122,8 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
+
+    *Note: The angle brackets <> should not appear in your code.*
 5.  When prompted, answer **yes** to continue connecting.
 6.  Continue to Step 5 on the left hand menu.
 
@@ -134,6 +140,8 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
     ![](./images/cloudshelllogin.png " ") 
 
+    *Note: The angle brackets <> should not appear in your code.*
+
 4.  After successfully logging in, proceed to Step 5.
 
 ### Windows using Putty
@@ -144,6 +152,8 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/ssh-first-time.png " ") 
+
+    *Note: The angle brackets <> should not appear in your code.*
 
 2.  Enter a name for the session and click **Save**.
 

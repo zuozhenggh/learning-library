@@ -3,7 +3,7 @@
 ## Introduction
 In this lab you will perform many multitenant basic tasks.  You will create a pluggable database (PDB), make a copy of this pluggable database, or clone it, explore the concepts of "plugging" and unplugging a PDB and finally drop it.  You will then explore the concepts of cloning unplugged databases and databases that are hot or active.
 
-Estimated time: 45 - 60 minutes
+Estimated time: 2 - 3 hours
 
 [](youtube:kzTQGs75IjA)
 
@@ -14,17 +14,13 @@ Once you have an instance running the 19c database, a script needs to be run to 
 1.  Once the database software has been configured, run the script to create the container databases and pluggable databases needed for the Multitenant lab.
 
     ````
-    <copy>
-    nohup /home/opc/setupcontainers.sh &> setupcontainers.out&
-    </copy>
+    <copy>nohup /home/opc/setupcontainers.sh &> setupcontainers.out&</copy>
     ````
 
 2.  To check on the progress of this script, enter the command below.  This script takes about 60 minutes to complete.  *Note:  Ignore the [WARNING] [DBT-06208] that occur in this script.*
 
     ````
-    <copy>
-    tail -f /home/opc/setupcontainers.out
-    </copy>
+    <copy>tail -f /home/opc/setupcontainers.out</copy>
     ````
 
     ![](./images/step0.2-setupscript1.png " ")
@@ -34,13 +30,19 @@ Once you have an instance running the 19c database, a script needs to be run to 
 3.  The cloud shell terminal disconnects the session after 20 minutes of inactivity. **Reconnect** to cloud shell. Run the following commands to login in to your instance and check the progress of the script.
 
     ````
-    <copy>
-    cd .ssh
-    ssh -i ~/.ssh/sshkeyname opc@Your Compute Instance Public IP Address
+    <copy>cd .ssh</copy>
+    ````
 
-    cd /home/opc/
-    tail -f /home/opc/setupcontainers.out
-    </copy>
+    ````
+    <copy>ssh -i ~/.ssh/sshkeyname opc@Your Compute Instance Public IP Address<copy>
+    ````
+
+    ````
+    <copy>cd /home/opc/</copy>
+    ````
+
+    ````
+    <copy>tail -f /home/opc/setupcontainers.out</copy>
     ````
 
     ![](./images/step0.3-reconnectpopup.png " ")
@@ -51,6 +53,8 @@ Once you have an instance running the 19c database, a script needs to be run to 
 
     ![](./images/step0.4-setupscript3.png " ")
 
+*Note: Some commands throughout the rest of this lab may take 10-60 seconds to complete.*  
+
 ## Step 1: Login and Create PDB
 This section looks at how to login and create a new PDB.
 
@@ -60,23 +64,29 @@ The tasks you will accomplish in this lab are:
 1. All scripts for this lab are stored in the labs/multitenant folder and are run as the oracle user. Let's navigate to the path now.
 
     ````
-    <copy>
-    ls
-    sudo su - oracle
-    cd /home/oracle/labs/multitenant
-    </copy>
+    <copy>ls</copy>
+    ````
+
+    ````
+    <copy>sudo su - oracle</copy>
+    ````
+
+    ````
+    <copy>cd /home/oracle/labs/multitenant</copy>
     ````
 
 2.  Set your oracle environment and connect to **CDB1**.
 
     ````
-    <copy>
-    . oraenv
-    CDB1
+    <copy>. oraenv</copy>
+    ````
+    
+    ````
+    <copy>sqlplus /nolog</copy>
+    ````
 
-    sqlplus /nolog
-    connect sys/oracle@localhost:1523/cdb1 as sysdba
-    </copy>
+    ````
+    <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
     ````
 
     ![](./images/step1.2-connectoraenv.png " ")
@@ -107,15 +117,17 @@ The tasks you will accomplish in this lab are:
 4. Create a pluggable database **PDB2**.
 
     ````
-    <copy>
-    show  pdbs;
+    <copy>show  pdbs;</copy>
+    ````
 
-    create pluggable database PDB2 admin user PDB_Admin identified by oracle;
+    ````
+    <copy>create pluggable database PDB2 admin user PDB_Admin identified by oracle;
 
-    alter pluggable database PDB2 open;
+    alter pluggable database PDB2 open;</copy>
+    ````
 
-    show pdbs;
-    </copy>
+    ````
+    <copy>show pdbs;</copy>
     ````
 
     ![](./images/showpdbsbefore.png " ")
@@ -127,9 +139,7 @@ The tasks you will accomplish in this lab are:
 5. Change the session to point to **PDB2**.
 
     ````
-    <copy>
-    alter session set container = PDB2;
-    </copy>
+    <copy>alter session set container = PDB2;</copy>
     ````
 
     ![](./images/altersession.png " ")
@@ -137,15 +147,19 @@ The tasks you will accomplish in this lab are:
 6. Grant **PDB_ADMIN** the necessary privileges and create the **USERS** tablespace for **PDB2**.
 
     ````
-    <copy>
-    grant sysdba to pdb_admin;
+    <copy>grant sysdba to pdb_admin;</copy>
+    ````
+    
+    ````
+    <copy>create tablespace users datafile size 20M autoextend on next 1M maxsize unlimited segment space management auto;</copy>
+    ````
 
-    create tablespace users datafile size 20M autoextend on next 1M maxsize unlimited segment space management auto;
+    ````
+    <copy>alter database default tablespace Users;</copy>
+    ````
 
-    alter database default tablespace Users;
-
-    grant create table, unlimited tablespace to pdb_admin;
-    </copy>
+    ````
+    <copy>grant create table, unlimited tablespace to pdb_admin;</copy>
     ````
 
    ![](./images/grantsysdba.png " ")
@@ -153,21 +167,21 @@ The tasks you will accomplish in this lab are:
 7. Connect as **PDB_ADMIN** to **PDB2**.
 
     ````
-    <copy>
-    connect pdb_admin/oracle@localhost:1523/pdb2
-    </copy>
+    <copy>connect pdb_admin/oracle@localhost:1523/pdb2</copy>
     ````
 
 8. Create a table **MY_TAB** in **PDB2**.
 
     ````
-    <copy>
-    create table my_tab(my_col number);
+    <copy>create table my_tab(my_col number); </copy>
+    ````
 
-    insert into my_tab values (1);
+    ````
+    <copy>insert into my_tab values (1); </copy>
+    ````
 
-    commit;
-    </copy>
+    ````
+    <copy>commit;</copy>
     ````
 
    ![](./images/createtable.png " ")
@@ -217,11 +231,11 @@ The tasks you will accomplish in this lab are:
 1. Connect to **CDB1**.
 
     ````
-    <copy>
-    sqlplus /nolog
+    <copy>sqlplus /nolog </copy>
+    ````
 
-    connect sys/oracle@localhost:1523/cdb1 as sysdba
-    </copy>
+    ````
+    <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
     ````
 
 2. Change **PDB2** to read only.
@@ -241,13 +255,15 @@ The tasks you will accomplish in this lab are:
 3. Create a pluggable database **PDB3** from the read only database **PDB2**.
 
     ````
-    <copy>
-    create pluggable database PDB3 from PDB2;
+    <copy>create pluggable database PDB3 from PDB2;</copy>
+    ````
 
-    alter pluggable database PDB3 open force;
+    ````
+    <copy>alter pluggable database PDB3 open force;</copy>
+    ````
 
-    show pdbs
-    </copy>
+    ````
+    <copy>show pdbs</copy>
     ````
 
    ![](./images/createpdb3.png " ")
@@ -255,11 +271,11 @@ The tasks you will accomplish in this lab are:
 4. Change **PDB2** back to read write.
 
     ````
-    <copy>
-    alter pluggable database PDB2 open read write force;
+    <copy>alter pluggable database PDB2 open read write force;</copy>
+    ````
 
-    show pdbs
-    </copy>
+    ````
+    <copy>show pdbs</copy>
     ````
 
    ![](./images/pdb2write.png " ")
@@ -267,11 +283,11 @@ The tasks you will accomplish in this lab are:
 5. Connect to **PDB2** and show the table **MY_TAB**.
 
     ````
-    <copy>
-    connect pdb_admin/oracle@localhost:1523/pdb2
+    <copy>connect pdb_admin/oracle@localhost:1523/pdb2</copy>
+    ````
 
-    select * from my_tab;
-    </copy>
+    ````
+    <copy>select * from my_tab;</copy>
     ````
 
    ![](./images/pdb2mytab.png " ")
@@ -279,11 +295,11 @@ The tasks you will accomplish in this lab are:
 6. Connect to **PDB3** and show the table **MY_TAB**.
 
     ````
-    <copy>
-    connect pdb_admin/oracle@localhost:1523/pdb3
+    <copy>connect pdb_admin/oracle@localhost:1523/pdb3</copy>
+    ````
 
-    select * from my_tab;
-    </copy>
+    ````
+    <copy>select * from my_tab;</copy>
     ````
 
    ![](./images/pdb3mytab.png " ")
@@ -297,27 +313,33 @@ The tasks you will accomplish in this lab are:
 1. Connect to **CDB1**.
 
     ````
-    <copy>
-    sqlplus /nolog
-
-    connect sys/oracle@localhost:1523/cdb1 as sysdba
-    </copy>
+    <copy>sqlplus /nolog</copy>
+    ````
+    
+    ````
+    <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
     ````
 
 2. Unplug **PDB3** from **CDB1**.
 
     ````
+    <copy>show pdbs</copy>
+    ````
+
+    ````
+    <copy>alter pluggable database PDB3 close immediate;</copy>
+    ````
+
+    ````
     <copy>
-    show pdbs
-
-    alter pluggable database PDB3 close immediate;
-
     alter pluggable database PDB3
     unplug into
     '/u01/app/oracle/oradata/CDB1/pdb3.xml';
-
-    show pdbs
     </copy>
+    ````
+
+    ````
+    <copy>show pdbs</copy>
     ````
 
    ![](./images/unplugpdb3.png " ")
@@ -325,11 +347,11 @@ The tasks you will accomplish in this lab are:
 3. Remove **PDB3** from **CDB1**.
 
     ````
-    <copy>
-    drop pluggable database PDB3 keep datafiles;
+    <copy>drop pluggable database PDB3 keep datafiles;</copy>
+    ````
 
-    show pdbs
-    </copy>
+    ````
+    <copy>show pdbs</copy>
     ````
 
    ![](./images/droppdb3.png " ")
@@ -371,9 +393,7 @@ The tasks you will accomplish in this lab are:
 5. Look at the XML file for the pluggable database **PDB3**.
 
     ````
-    <copy>
-    host cat /u01/app/oracle/oradata/CDB1/pdb3.xml
-    </copy>
+    <copy>host cat /u01/app/oracle/oradata/CDB1/pdb3.xml</copy>
     ````
 
     ![](./images/xmlfile.png " ")
@@ -387,11 +407,15 @@ The tasks you will accomplish in this lab are:
 1. Connect to **CDB2**.
 
     ````
+    <copy>sqlplus /nolog</copy>
+    ````
+    
+    ````
+    <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
+    ````
+
+    ````
     <copy>
-    sqlplus /nolog
-
-    connect sys/oracle@localhost:1524/cdb2 as sysdba
-
     COLUMN "Who am I?" FORMAT A120
     select
       'DB Name: '  ||Sys_Context('Userenv', 'DB_Name')||
@@ -405,9 +429,11 @@ The tasks you will accomplish in this lab are:
       "Who am I?"
     from Dual
     /
-
-    show pdbs
     </copy>
+    ````
+
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/whoamicdb2.png " ")
@@ -437,13 +463,19 @@ The tasks you will accomplish in this lab are:
     create pluggable database PDB3
     using '/u01/app/oracle/oradata/CDB1/pdb3.xml'
     move;
-
-    show pdbs
-
-    alter pluggable database PDB3 open;
-
-    show pdbs
     </copy>
+    ````
+
+    ````
+    <copy>show pdbs</copy>
+    ````
+
+    ````
+    <copy>alter pluggable database PDB3 open;</copy>
+    ````
+
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/createwithxml.png " ")
@@ -486,11 +518,11 @@ The tasks you will accomplish in this lab are:
 5. Connect as **PDB\_ADMIN** to **PDB3** and look at **MY\_TAB**.
 
     ````
-    <copy>
-    connect pdb_admin/oracle@localhost:1524/pdb3
+    <copy>connect pdb_admin/oracle@localhost:1524/pdb3</copy>
+    ````
 
-    select * from my_tab;
-    </copy>
+    ````
+    <copy>select * from my_tab;</copy>
     ````
 
     ![](./images/pdb3mytab2.png " ")
@@ -504,25 +536,29 @@ The tasks you will accomplish in this lab are:
 1. Connect to **CDB2**.
 
     ````
-    <copy>
-    sqlplus /nolog
-
-    connect sys/oracle@localhost:1524/cdb2 as sysdba
-    </copy>
+    <copy>sqlplus /nolog</copy>
+    ````
+    
+    ````
+    <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
     ````
 
 2. Drop **PDB3** from **CDB2**.
 
     ````
-    <copy>
-    show pdbs
+    <copy>show pdbs</copy>
+    ````
 
-    alter pluggable database PDB3 close immediate;
+    ````
+    <copy>alter pluggable database PDB3 close immediate;</copy>
+    ````
 
-    drop pluggable database PDB3 including datafiles;
+    ````
+    <copy>drop pluggable database PDB3 including datafiles;</copy>
+    ````
 
-    show pdbs
-    </copy>
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/droppdb.png " ")
@@ -538,21 +574,21 @@ The tasks you will accomplish in this lab are:
 1. Connect to **CDB1**.
 
     ````
-    <copy>
-    sqlplus /nolog
+    <copy>sqlplus /nolog</copy>
+    ````
 
-    connect sys/oracle@localhost:1523/cdb1 as sysdba
-    </copy>
+    ````
+    <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
     ````
 
 2. Change **PDB2** to read only.
 
     ````
-    <copy>
-    alter pluggable database PDB2 open read only force;
+    <copy>alter pluggable database PDB2 open read only force;</copy>
+    ````
 
-    show pdbs
-    </copy>
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/step6.2-pdbreadonly.png " ")
@@ -560,13 +596,15 @@ The tasks you will accomplish in this lab are:
 3. Create a pluggable database **GOLDPDB** from the read only database **PDB2**.
 
     ````
-    <copy>
-    create pluggable database GOLDPDB from PDB2;
+    <copy>create pluggable database GOLDPDB from PDB2;</copy>
+    ````
 
-    alter pluggable database GOLDPDB open force;
+    ````
+    <copy>alter pluggable database GOLDPDB open force;</copy>
+    ````
 
-    show pdbs
-    </copy>
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/step6.3-goldpdb.png " ")
@@ -574,11 +612,11 @@ The tasks you will accomplish in this lab are:
 4. Change **PDB2** back to read write.
 
     ````
-    <copy>
-    alter pluggable database PDB2 open read write force;
+    <copy>alter pluggable database PDB2 open read write force;</copy>
+    ````
 
-    show pdbs
-    </copy>
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/step6.4-mountgoldpdb.png " ")
@@ -586,16 +624,22 @@ The tasks you will accomplish in this lab are:
 5. Unplug **GOLDPDB** from **CDB1**.
 
     ````
+    <copy>show pdbs</copy>
+    ````
+
+    ````
+    <copy>alter pluggable database GOLDPDB close immediate;</copy>
+    ````
+
+    ````
     <copy>
-    show pdbs
-
-    alter pluggable database GOLDPDB close immediate;
-
     alter pluggable database GOLDPDB
     unplug into '/u01/app/oracle/oradata/CDB1/goldpdb.xml';
-
-    show pdbs
     </copy>
+    ````
+
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/step6.5-unpluggold.png " ")
@@ -603,11 +647,11 @@ The tasks you will accomplish in this lab are:
 6. Remove **GOLDPDB** from **CDB1**.
 
     ````
-    <copy>
-    drop pluggable database GOLDPDB keep datafiles;
+    <copy>drop pluggable database GOLDPDB keep datafiles;</copy>
+    ````
 
-    show pdbs
-    </copy>
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/step6.6-removegoldpdb.png " ")
@@ -615,9 +659,7 @@ The tasks you will accomplish in this lab are:
 7. Connect to **CDB2**.
 
     ````
-    <copy>
-    connect sys/oracle@localhost:1524/cdb2 as sysdba
-    </copy>
+    <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
     ````
 
 8. Validate **GOLDPDB** is compatibile with **CDB2**.
@@ -646,9 +688,11 @@ The tasks you will accomplish in this lab are:
     using '/u01/app/oracle/oradata/CDB1/goldpdb.xml'
     storage (maxsize unlimited max_shared_temp_size unlimited)
     copy;
-
-    show pdbs
     </copy>
+    ````
+
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/step6.9-clonegold.png " ")
@@ -661,9 +705,11 @@ The tasks you will accomplish in this lab are:
     using '/u01/app/oracle/oradata/CDB1/goldpdb.xml'
     storage (maxsize unlimited max_shared_temp_size unlimited)
     copy;
-
-    show pdbs
     </copy>
+    ````
+
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/step6.10-clonegold1.png " ")
@@ -671,11 +717,11 @@ The tasks you will accomplish in this lab are:
 11. Open all of the pluggable databases.
 
     ````
-    <copy>
-    alter pluggable database all open;
+    <copy>alter pluggable database all open;</copy>
+    ````
 
-    show pdbs
-    </copy>
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/step6.11-allopen.png " ")
@@ -707,36 +753,45 @@ The tasks you will accomplish in this lab are:
 1. Connect to **CDB1**.
 
     ````
-    <copy>
-    sqlplus /nolog
+    <copy>sqlplus /nolog</copy>
+    ````
 
-    connect sys/oracle@localhost:1523/cdb1 as sysdba
-    </copy>
+    ````
+    <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
     ````
 
 2. Create a pluggable database **OE** with an admin user of **SOE**.
 
     ````
-    <copy>
-    create pluggable database oe admin user soe identified by soe roles=(dba);
+    <copy>create pluggable database oe admin user soe identified by soe roles=(dba);</copy>
+    ````
 
-    alter pluggable database oe open;
+    ````
+    <copy>alter pluggable database oe open;</copy>
+    ````
 
-    alter session set container = oe;
+    ````
+    <copy>alter session set container = oe;</copy>
+    ````
 
-    grant create session, create table to soe;
+    ````
+    <copy>grant create session, create table to soe;</copy>
+    ````
 
-    alter user soe quota unlimited on system;
-    </copy>
-   ````
+    ````
+    <copy>alter user soe quota unlimited on system;</copy>
+    ````
 
     ![](./images/oe.png " ")
 
 3. Connect as **SOE** and create the **sale_orders** table.
 
     ````
+    <copy>connect soe/soe@localhost:1523/oe</copy>
+    ````
+
+    ````
     <copy>
-    connect soe/soe@localhost:1523/oe
     CREATE TABLE sale_orders
     (ORDER_ID      number,
     ORDER_DATE    date,
@@ -748,16 +803,24 @@ The tasks you will accomplish in this lab are:
 
  4. Open a new terminal window, login into your instance, sudo to the oracle user, and execute write-load.sh. Leave this window open and running throughout for the rest of this lab.
 
-     ````
-    <copy>
-    cd .ssh
-    ssh -i ~/.ssh/sshkeyname opc@Your Compute Instance Public IP Address
+    ````
+    <copy>cd .ssh</copy>
+    ````
 
-    sudo su - oracle
-    cd /home/oracle/labs/multitenant
+    ````
+    <copy>ssh -i ~/.ssh/sshkeyname opc@Your Compute Instance Public IP Address</copy>
+    ````
 
-    ./write-load.sh
-    </copy>
+    ````
+    <copy>sudo su - oracle</copy>
+    ````
+
+    ````
+    <copy>cd /home/oracle/labs/multitenant</copy>
+    ````
+
+    ````
+    <copy>./write-load.sh</copy>
     ````
 
     ![](./images/step7.4-writeloadscript.png " ")
@@ -767,13 +830,15 @@ The tasks you will accomplish in this lab are:
 5. Go back to your original terminal window.  Connect to **CDB2** and create the pluggable **OE\_DEV** from the database link **oe@cdb1\_link**.
 
     ````
-    <copy>
-    connect sys/oracle@localhost:1524/cdb2 as sysdba
+    <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
+    ````
 
-    create pluggable database oe_dev from oe@cdb1_link;
+    ````
+    <copy>create pluggable database oe_dev from oe@cdb1_link;</copy>
+    ````
 
-    alter pluggable database oe_dev open;
-    </copy>
+    ````
+    <copy>alter pluggable database oe_dev open;</copy>
     ````
 
     ![](./images/step7.5-createoedev.png " ")
@@ -781,11 +846,11 @@ The tasks you will accomplish in this lab are:
 6. Connect as **SOE** to **OE\_DEV** and check the number of records in the **sale\_orders** table.
 
     ````
-    <copy>
-    connect soe/soe@localhost:1524/oe_dev
+    <copy>connect soe/soe@localhost:1524/oe_dev</copy>
+    ````
 
-    select count(*) from sale_orders;
-    </copy>
+    ````
+    <copy>select count(*) from sale_orders;</copy>
     ````
 
     ![](./images/step7.6-checkrecordsoedev.png " ")
@@ -793,11 +858,11 @@ The tasks you will accomplish in this lab are:
 7. Connect as **SOE** to **OE** and check the number of records in the **sale_orders** table.
 
     ````
-    <copy>
-    connect soe/soe@localhost:1523/oe
+    <copy>connect soe/soe@localhost:1523/oe</copy>
+    ````
 
-    select count(*) from sale_orders;
-    </copy>
+    ````
+    <copy>select count(*) from sale_orders;</copy>
     ````
 
     ![](./images/step7.7-checkrecordsoe.png " ")
@@ -805,13 +870,15 @@ The tasks you will accomplish in this lab are:
 8. Close and remove the **OE_DEV** pluggable database.
 
     ````
-    <copy>
-    connect sys/oracle@localhost:1524/cdb2 as sysdba
+    <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
+    ````
 
-    alter pluggable database oe_dev close;
+    ````
+    <copy>alter pluggable database oe_dev close;</copy>
+    ````
 
-    drop pluggable database oe_dev including datafiles;
-    </copy>
+    ````
+    <copy>drop pluggable database oe_dev including datafiles;</copy>
     ````
 
     ![](./images/step7.8-closeoedev.png " ")
@@ -833,21 +900,21 @@ The tasks you will accomplish in this lab are:
 1. Connect to **CDB2**.
 
     ````
-    <copy>
-    sqlplus /nolog
+    <copy>sqlplus /nolog</copy>
+    ````
 
-    connect sys/oracle@localhost:1524/cdb2 as sysdba
-    </copy>
+    ````
+    <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
     ````
 
 2. Create a pluggable database **OE\_REFRESH**` with manual refresh mode from the database link **oe@cdb1\_link**.
 
     ````
-    <copy>
-    create pluggable database oe_refresh from oe@cdb1_link refresh mode manual;
+    <copy>create pluggable database oe_refresh from oe@cdb1_link refresh mode manual;</copy>
+    ````
 
-    alter pluggable database oe_refresh open read only;
-    </copy>
+    ````
+    <copy>alter pluggable database oe_refresh open read only;</copy>
     ````
 
     ![](./images/step8.2-createoerefresh.png " ")
@@ -855,11 +922,11 @@ The tasks you will accomplish in this lab are:
 3. Connect as **SOE** to the pluggable database **OE\_REFRESH**` and count the number of records in the **sale\_orders** table.
 
     ````
-    <copy>
-    conn soe/soe@localhost:1524/oe_refresh
+    <copy>conn soe/soe@localhost:1524/oe_refresh</copy>
+    ````
 
-    select count(*) from sale_orders;
-    </copy>
+    ````
+    <copy>select count(*) from sale_orders;</copy>
     ````
 
     ![](./images/step8.3-connectassoe.png " ")
@@ -867,17 +934,23 @@ The tasks you will accomplish in this lab are:
 4. Close the pluggable database **OE_REFRESH**` and refresh it from the **OE** pluggable database.
 
     ````
-    <copy>
-    conn sys/oracle@localhost:1524/oe_refresh as sysdba
+    <copy>conn sys/oracle@localhost:1524/oe_refresh as sysdba</copy>
+    ````
 
-    alter pluggable database oe_refresh close;
+    ````
+    <copy>alter pluggable database oe_refresh close;</copy>
+    ````
 
-    alter session set container=oe_refresh;
+    ````
+    <copy>alter session set container=oe_refresh;</copy>
+    ````
 
-    alter pluggable database oe_refresh refresh;
+    ````
+    <copy>alter pluggable database oe_refresh refresh;</copy>
+    ````
 
-    alter pluggable database oe_refresh open read only;
-    </copy>
+    ````
+    <copy>alter pluggable database oe_refresh open read only;</copy>
     ````
 
     ![](./images/step8.4-closeoerefresh.png " ")
@@ -885,11 +958,11 @@ The tasks you will accomplish in this lab are:
 5. Connect as **SOE** to the pluggable dataabse **OE\_REFRESH**` and count the number of records in the **sale\_orders** table. You should see the number of records change.
 
     ````
-    <copy>
-    conn soe/soe@localhost:1524/oe_refresh
+    <copy>conn soe/soe@localhost:1524/oe_refresh</copy>
+    ````
 
-    select count(*) from sale_orders;
-    </copy>
+    ````
+    <copy>select count(*) from sale_orders;</copy>
     ````
 
     ![](./images/step8.5-countrecords.png " ")
@@ -897,13 +970,15 @@ The tasks you will accomplish in this lab are:
 6. Close and remove the **OE_DEV** pluggable database.
 
     ````
-    <copy>
-    conn sys/oracle@localhost:1524/cdb2 as sysdba
+    <copy>conn sys/oracle@localhost:1524/cdb2 as sysdba</copy>
+    ````
 
-    alter pluggable database oe_refresh close;
+    ````
+    <copy>alter pluggable database oe_refresh close;</copy>
+    ````
 
-    drop pluggable database oe_refresh including datafiles;
-    </copy>
+    ````
+    <copy>drop pluggable database oe_refresh including datafiles;</copy>
     ````
 
     ![](./images/step8.6-removeoedev.png " ")
@@ -922,13 +997,15 @@ The tasks you will accomplish in this lab are:
 1. Change **CDB2** to use the listener **LISTCDB1**.
 
     ````
-    <copy>
-    sqlplus /nolog
+    <copy>sqlplus /nolog</copy>
+    ````
 
-    conn sys/oracle@localhost:1524/cdb2 as sysdba;
+    ````
+    <copy>conn sys/oracle@localhost:1524/cdb2 as sysdba;</copy>
+    ````
 
-    alter system set local_listener='LISTCDB1' scope=both;
-    </copy>
+    ````
+    <copy>alter system set local_listener='LISTCDB1' scope=both;</copy>
     ````
 
     ![](./images/step9.1-changelistener.png " ")
@@ -936,15 +1013,19 @@ The tasks you will accomplish in this lab are:
 2. Connect to **CDB2** and relocate **OE** using the database link **oe@cdb1_link**.
 
     ````
-    <copy>
-    conn sys/oracle@localhost:1523/cdb2 as sysdba;
+    <copy>conn sys/oracle@localhost:1523/cdb2 as sysdba;</copy>
+    ````
 
-    create pluggable database oe from oe@cdb1_link relocate;
+    ````
+    <copy>create pluggable database oe from oe@cdb1_link relocate;</copy>
+    ````
 
-    alter pluggable database oe open;
+    ````
+    <copy>alter pluggable database oe open;</copy>
+    ````
 
-    show pdbs
-    </copy>
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/step9.2-relocateoe.png " ")
@@ -952,11 +1033,11 @@ The tasks you will accomplish in this lab are:
 3. Connect to **CDB1** and see what pluggable databases exist there.
 
     ````
-    <copy>
-    conn sys/oracle@localhost:1523/cdb1 as sysdba
+    <copy>conn sys/oracle@localhost:1523/cdb1 as sysdba</copy>
+    ````
 
-    show pdbs
-    </copy>
+    ````
+    <copy>show pdbs</copy>
     ````
 
     ![](./images/step9.3-showcdb1pdbs.png " ")
@@ -964,13 +1045,15 @@ The tasks you will accomplish in this lab are:
 4. Close and remove the **OE** pluggable database.
 
     ````
-    <copy>
-    conn sys/oracle@localhost:1523/cdb2 as sysdba
+    <copy>conn sys/oracle@localhost:1523/cdb2 as sysdba</copy>
+    ````
 
-    alter pluggable database oe close;
+    ````
+    <copy>alter pluggable database oe close;</copy>
+    ````
 
-    drop pluggable database oe including datafiles;
-    </copy>
+    ````
+    <copy>drop pluggable database oe including datafiles;</copy>
     ````
 
     ![](./images/step9.4-removeoepdb.png " ")
@@ -980,13 +1063,15 @@ The tasks you will accomplish in this lab are:
 6. If you are going to continue to use this environment you will need to change **CDB2** back to use **LISTCDB2**.
 
     ````
-    <copy>
-    sqlplus /nolog
+    <copy>sqlplus /nolog</copy>
+    ````
 
-    conn sys/oracle@localhost:1523/cdb2 as sysdba;
+    ````
+    <copy>conn sys/oracle@localhost:1523/cdb2 as sysdba;</copy>
+    ````
 
-    alter system set local_listener='LISTCDB2' scope=both;
-    </copy>
+    ````
+    <copy>alter system set local_listener='LISTCDB2' scope=both;</copy>
     ````
 
     ![](./images/step9.6-changetolistcdb2.png " ")
@@ -996,11 +1081,11 @@ The tasks you will accomplish in this lab are:
 1. Exit from the SQL command prompt and reset the container databases back to their original ports. If any errors about dropping databases appear they can be ignored.
 
     ````
-    <copy>
-    exit
+    <copy>exit</copy>
+    ````
 
-    ./resetCDB.sh
-    </copy>
+    ````
+    <copy>./resetCDB.sh</copy>
     ````
 
     ![](./images/step10-labcleanup1.png " ")
