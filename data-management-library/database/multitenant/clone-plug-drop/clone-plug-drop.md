@@ -1,7 +1,7 @@
 # Multitenant Basics
 
 ## Introduction
-In this lab you will perform many multitenant basic tasks.  You will create a pluggable database (PDB), make a copy of this pluggable database, or clone it, explore the concepts of "plugging" and unplugging a PDB and finally drop it.  You will then explore the concepts of cloning unplugged databases and databases that are hot or active.
+In this lab you will perform many multitenant basic tasks.  You will create a pluggable database (PDB), make a copy of this pluggable database, or clone it, explore the concepts of "plugging" and "unplugging" a PDB and finally drop it.  You will then explore the concepts of cloning unplugged databases and databases that are hot or active.
 
 Estimated time: 2 - 3 hours
 
@@ -10,7 +10,7 @@ Estimated time: 2 - 3 hours
 
 ## Step 0: Run the Multitenant Setup Scripts
 
-The next steps will download the files needed for the rest of the workshop and create a 2nd set container databases and pluggable databases.
+The next steps will download the files needed for the rest of the workshop and create a second set container databases and pluggable databases.
 
 1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the compute instance you created in the previous lab.
 
@@ -26,7 +26,7 @@ The next steps will download the files needed for the rest of the workshop and c
     unzip multiscripts.zip; chmod +x *.sh
     /home/opc/setupenv.sh
     </copy>
-    ````    
+    ````
 
 3.  Once the database software has been configured, run the script to create the container databases and pluggable databases needed for the Multitenant lab.
 
@@ -97,6 +97,10 @@ The tasks you will accomplish in this lab are:
     ````
     <copy>. oraenv</copy>
     ````
+
+    ````
+    <copy>CDB1</copy>
+    ````
     
     ````
     <copy>sqlplus /nolog</copy>
@@ -140,11 +144,9 @@ The tasks you will accomplish in this lab are:
     ````
     <copy>create pluggable database PDB2 admin user PDB_Admin identified by oracle;
 
-    alter pluggable database PDB2 open;</copy>
-    ````
-
-    ````
-    <copy>show pdbs;</copy>
+    alter pluggable database PDB2 open;
+    
+    show pdbs;</copy>
     ````
 
     ![](./images/showpdbsbefore.png " ")
@@ -258,11 +260,8 @@ The tasks you will accomplish in this lab are:
 2. Change **PDB2** to read only.
 
     ````
-    <copy>
-    alter pluggable database PDB2 open read only force;
-
-    show pdbs
-    </copy>
+    <copy>alter pluggable database PDB2 open read only force;
+    show pdbs</copy>
     ````
 
    ![](./images/alterplug.png " ")
@@ -649,10 +648,8 @@ The tasks you will accomplish in this lab are:
     ````
 
     ````
-    <copy>
-    alter pluggable database GOLDPDB
-    unplug into '/u01/app/oracle/oradata/CDB1/goldpdb.xml';
-    </copy>
+    <copy>alter pluggable database GOLDPDB
+    unplug into '/u01/app/oracle/oradata/CDB1/goldpdb.xml';</copy>
     ````
 
     ````

@@ -110,7 +110,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
 
-*NOTE 1:  If you are using your laptop to connect your corporate VPN may prevent you from logging in.
+*NOTE 1:  If you are using your laptop to connect your corporate VPN may prevent you from logging in.*
 
 *NOTE 2: The ssh-daemon is disabled for the first 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.*
 
@@ -212,6 +212,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ![](./images/pseftns.png " ") 
 
 5.  Connect to the Database using SQL*Plus as the **oracle** user.
+    
     ````
     <copy>
     sudo su - oracle
@@ -219,6 +220,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     exit
     </copy>
     ````
+    
     ![](./images/sqlplus_login_orclpdb.png " ")
 
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
