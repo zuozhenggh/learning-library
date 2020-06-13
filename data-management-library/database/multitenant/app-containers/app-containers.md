@@ -7,7 +7,12 @@ Estimated time: 45 - 60 minutes
 
 [](youtube:ZPOjjF3kCvo)
 
-## Step 1: Instant SaaS
+## Step 0: Connect to Your Instance and Login
+Before you begin, please connect to your instance, using the commands from **[Lab 3, Step 4](?lab=lab-3-environment-setup#Step4:Connecttoyourinstance)** 
+
+Then, login using the commands from **[Lab 4, Step 1.1 and 1.2](?lab=lab-4-multitenant-basics#Step1:LoginandCreatePDB)**
+
+## Step 1: Instant Sa
 This section shows how Multitenant with Application Containers provides an instant SaaS architecture for an application formerly architected for standalone deployment.
 
 The tasks you will accomplish in this lab are:
@@ -55,6 +60,8 @@ The tasks you will accomplish in this lab are:
     <copy>alter pluggable database application wmStore begin install '1.0';</copy>
     ````
 
+    ![](./images/step1.3.1-connectwmstore.png " ")
+
     ````
     <copy>create tablespace wmStore_TBS datafile size 100M autoextend on next 10M maxsize 200M;</copy>
     ````
@@ -66,6 +73,8 @@ The tasks you will accomplish in this lab are:
     ````
     <copy>grant create session, dba to wmStore_Admin;</copy>
     ````
+
+    ![](./images/step1.3.2-createwmstoreadmin.png " ")
 
     ````
     <copy>alter user wmStore_Admin default tablespace wmStore_TBS;</copy>
@@ -119,6 +128,8 @@ The tasks you will accomplish in this lab are:
     ;
     </copy>
     ````
+
+    ![](./images/step1.3.3-createtable1.png " ")
 
     ````
     <copy>
@@ -180,6 +191,8 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
+    ![](./images/step1.3.4-createtable2.png " ")
+
     ````
     <copy>
     insert into wm_Campaigns (Row_GUID, Name) values ('01', 'Locals vs Yokels');
@@ -205,14 +218,6 @@ The tasks you will accomplish in this lab are:
     ````
     <copy>alter pluggable database application wmStore end install '1.0';</copy>
     ````
-
-    ![](./images/step1.3.1-connectwmstore.png " ")
-
-    ![](./images/step1.3.2-createwmstoreadmin.png " ")
-
-    ![](./images/step1.3.3-createtable1.png " ")
-
-    ![](./images/step1.3.4-createtable2.png " ")
 
     ![](./images/step1.3.5-insertvalues.png " ")
 
@@ -340,6 +345,8 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
+    ![](./images/step2.2-showpdbs1.png " ")
+
     ````
     <copy>
     ttitle "PDBs in CDB &CDB_Name"
@@ -368,8 +375,6 @@ The tasks you will accomplish in this lab are:
     ;
     </copy>
     ````
-
-    ![](./images/step2.2-showpdbs1.png " ")
 
     ![](./images/step2.2-showpdbs2.png " ")
 
@@ -497,6 +502,8 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
+    ![](./images/step3.1-createupgrade1.png " ")
+
     ````
     <copy>
     update wm_Products
@@ -518,8 +525,6 @@ The tasks you will accomplish in this lab are:
     ````
     <copy>alter pluggable database application wmStore end upgrade;</copy>
     ````
-
-    ![](./images/step3.1-createupgrade1.png " ")
 
     ![](./images/step3.1-createupgrade2.png " ")
 
@@ -814,6 +819,8 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
+    ![](./images/step5.2-reviewpdb1.png " ")
+
     ````
     <copy>ttitle "PDBs in CDB &CDB_Name"</copy>
     ````
@@ -846,8 +853,6 @@ The tasks you will accomplish in this lab are:
     ;
     </copy>
     ````
-
-    ![](./images/step5.2-reviewpdb1.png " ")
 
     ![](./images/step5.2-reviewpdb2.png " ")
 
@@ -957,6 +962,8 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
+    ![](./images/step5.8-lookpdbs1.png " ")
+
     ````
     <copy>ttitle "PDBs in CDB &CDB_Name"</copy>
     ````
@@ -989,8 +996,6 @@ The tasks you will accomplish in this lab are:
     ;
     </copy>
     ````
-
-    ![](./images/step5.8-lookpdbs1.png " ")
 
     ![](./images/step5.8-lookpdbs2.png " ")
 
@@ -1427,6 +1432,8 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
+    ![](./images/step8.1-createupgrade1.png " ")
+
     ````
     <copy>
     insert into wm_List_Of_Values (Type_Code, Value_Code) values ('Type', 'Currency');
@@ -1454,6 +1461,8 @@ The tasks you will accomplish in this lab are:
     insert into wm_List_Of_Values (Type_Code, Value_Code) values ('Country', 'Japan');
     </copy>
     ````
+
+    ![](./images/step8.1-createupgrade2.png " ")
 
     ````
     <copy>commit;</copy>
@@ -1493,6 +1502,8 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
+    ![](./images/step8.1-createupgrade3.png " ")
+
     ````
     <copy>commit;</copy>
     ````
@@ -1500,12 +1511,6 @@ The tasks you will accomplish in this lab are:
     ````
     <copy>alter pluggable database application wmStore end upgrade;</copy>
     ````
-
-    ![](./images/step8.1-createupgrade1.png " ")
-
-    ![](./images/step8.1-createupgrade2.png " ")
-
-    ![](./images/step8.1-createupgrade3.png " ")
 
     ![](./images/step8.1-createupgrade4.png " ")
 
@@ -1547,17 +1552,19 @@ The tasks you will accomplish in this lab are:
     <copy>connect system/oracle@localhost:1524/WMSTORE_INTERNATIONAL$SEED</copy>
     ````
 
-    ```
+    ````
     <copy>alter pluggable database application wmStore sync;</copy>
     ````
 
-    ```
+    ````
     <copy>connect system/oracle@localhost:1524/DENMARK</copy>
     ````
 
     ````
     <copy>alter pluggable database application wmStore sync;</copy>
     ````
+
+    ![](./images/step8.2-syncpdbs1.png " ")
 
     ````
     <copy>connect system/oracle@localhost:1524/FRANCE</copy>
@@ -1606,8 +1613,6 @@ The tasks you will accomplish in this lab are:
     ````
     <copy>alter pluggable database application wmStore sync;</copy>
     ````
-
-    ![](./images/step8.2-syncpdbs1.png " ")
 
     ![](./images/step8.2-syncpdbs2.png " ")
 
@@ -1965,6 +1970,8 @@ The tasks you will accomplish in this lab are:
     <copy>set echo off</copy>
     ````
 
+    ![](./images/step10.1.png " ")
+
 2. DBA_APPLICATIONS
 
     ````
@@ -2012,6 +2019,10 @@ The tasks you will accomplish in this lab are:
     <copy>set echo off</copy>
     ````
 
+    ![](./images/step10.2.1.png " ")
+
+    ![](./images/step10.2.2.png " ")
+
 3. DBA_APP_VERSIONS
 
     ````
@@ -2029,6 +2040,8 @@ The tasks you will accomplish in this lab are:
     ````
     <copy>set echo off</copy>
     ````
+
+    ![](./images/step10.3.png " ")
 
 4. DBA_APP_PATCHES
 
@@ -2048,6 +2061,8 @@ The tasks you will accomplish in this lab are:
     <copy>set echo off</copy>
     ````
 
+    ![](./images/step10.4.png " ")
+
 5. DBA_APP_PDB_STATUS
 
     ````
@@ -2055,7 +2070,7 @@ The tasks you will accomplish in this lab are:
     ````
 
     ````
-    <copy> desc DBA_App_PDB_Status</copy>
+    <copy>desc DBA_App_PDB_Status</copy>
     ````
 
     ````
@@ -2065,6 +2080,8 @@ The tasks you will accomplish in this lab are:
     ````
     <copy>set echo off</copy>
     ````
+
+    ![](./images/step10.5.png " ")
 
 6. DBA_APP_STATEMENTS
 
@@ -2083,6 +2100,14 @@ The tasks you will accomplish in this lab are:
     ````
     <copy>set echo off</copy>
     ````
+    
+    ![](./images/step10.6.1.png " ")
+
+    ![](./images/step10.6.2.png " ")
+
+    ![](./images/step10.6.3.png " ")
+
+    ![](./images/step10.6.4.png " ")
 
 7. DBA_APP_ERRORS
 
@@ -2106,6 +2131,8 @@ The tasks you will accomplish in this lab are:
     <copy>set echo off</copy>
     ````
 
+    ![](./images/step10.7.png " ")
+
 ## Step 11: Diagnosing, Correcting Problems, and Restarting Sync
 This section we explore the restartability of the patching process.
 
@@ -2118,22 +2145,20 @@ The tasks you will accomplish in this lab are:
 1. Create an index that will break the sync.
 
     ````
-    <copy>connect wmStore_Admin/oracle@localhost:1523/NYC</copy>
+    <copy>connect wmStore_Admin/oracle@localhost:1523/NYC
+    create index wm_Orders_M1 on wm_Orders(Order_Date);</copy>
     ````
 
-    ````
-    <copy>create index wm_Orders_M1 on wm_Orders(Order_Date);</copy>
-    ````
+    ![](./images/step11.1.png " ")
 
 2. Try the sync and have it fail.
 
     ````
-    <copy>connect system/oracle@localhost:1523/NYC</copy>
+    <copy>connect system/oracle@localhost:1523/NYC
+    alter pluggable database application wmStore sync;</copy>
     ````
 
-    ````
-    <copy>alter pluggable database application wmStore sync;</copy>
-    ````
+    ![](./images/step11.2.png " ")
 
 3. Check for errors.
 
@@ -2151,23 +2176,23 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
+    ![](./images/step11.3.png " ")
+
 4. Correct the issue and try the sync again.
 
     ````
-    <copy>connect wmStore_Admin/oracle@localhost:1523/NYC</copy>
+    <copy>
+    connect wmStore_Admin/oracle@localhost:1523/NYC
+
+    drop index wm_Orders_M1;
+
+    connect system/oracle@localhost:1523/NYC
+
+    alter pluggable database application wmStore sync;
+    </copy>
     ````
-    
-    ````
-    <copy>drop index wm_Orders_M1;</copy>
-    ````
-    
-    ````
-    <copy>connect system/oracle@localhost:1523/NYC</copy>
-    ````
-    
-    ````
-    <copy>alter pluggable database application wmStore sync;</copy>
-    ````
+
+    ![](./images/step11.4.png " ")
 
 ## Step 12: Container Map
 This section we explore another location transparency technology: Container Map. Here we follow the expansion of Walt's Malts through the acquisition of a formerly independent distributor of Walt's Malts products. This company is named Terminally Chill, and their niche was selling Walt's Malts produce through a number of small kiosks in various airports globally. The Terminally Chill application has a different design from the original wmStore application. Whereas wmStore was originally designed for standalone deployment, Terminally Chill used a single database to manage data for all kiosks in all airports. The application server tiers are designed to connect directly to a single database, with query predicates to retrieve data for the right airport and kiosk. In this lab, we'll see how Container Map can help accommodate applications of this design.
@@ -2182,64 +2207,52 @@ The tasks you will accomplish in this lab are:
 1. Create the application root.
 
     ````
-    <copy>connect system/oracle@localhost:1523/cdb1</copy>
-    ````
- 
-    ````
-    <copy>create pluggable database Terminal_Master as application container
-    admin user tc_admin identified by oracle;</copy>
+    <copy>
+    connect system/oracle@localhost:1523/cdb1
+    
+    create pluggable database Terminal_Master as application container
+    admin user tc_admin identified by oracle;
+    
+    alter pluggable database Terminal_Master open;
+    </copy>
     ````
 
-    ````
-    <copy>alter pluggable database Terminal_Master open;</copy>
-    ````
+    ![](./images/step12.1.png " ")
 
 2. Create the Application PDBs.
 
     ````
-    <copy>connect system/oracle@localhost:1523/Terminal_Master</copy>
-    ````
-
-    ````
-    <copy>create pluggable database LHR
-    admin user tc_admin identified by oracle;</copy>
-    ````
-
-    ````
-    <copy>create pluggable database SFO
-    admin user tc_admin identified by oracle;</copy>
-    ````
-
-    ````
-    <copy>create pluggable database JFK
-    admin user tc_admin identified by oracle;</copy>
-    ````
-
-    ````
-    <copy>create pluggable database LAX
-    admin user tc_admin identified by oracle;</copy>
-    ````
-
-    ````
-    <copy>alter session set container=CDB$Root;</copy>
+    <copy>
+    connect system/oracle@localhost:1523/Terminal_Master
+    
+    create pluggable database LHR
+    admin user tc_admin identified by oracle;
+    
+    create pluggable database SFO
+    admin user tc_admin identified by oracle;
+    
+    create pluggable database JFK
+    admin user tc_admin identified by oracle;
+    
+    create pluggable database LAX
+    admin user tc_admin identified by oracle;
+    
+    alter session set container=CDB$Root;
+    alter pluggable database all open;
+    </copy>
     ````
     
-    ````
-    <copy>alter pluggable database all open;</copy>
-    ````
+    ![](./images/step12.2.png " ")
 
 3. Create the 1.0 Terminal Install.
 
     ````
     <copy>
-    connect system/oracle@localhost:1523/Terminal_Master</copy>
-    ````
+    connect system/oracle@localhost:1523/Terminal_Master
+    
+    alter pluggable database application Terminal begin install '1.0';
 
-    alter pluggable database application Terminal begin install '1.0';</copy>
-    ````
-
-    connect system/oracle@localhost:1523/Terminal_Master</copy>
-    ````
+    connect system/oracle@localhost:1523/Terminal_Master
 
     create table tc_Kiosk_Map
     (Kiosk varchar2(30) not null
@@ -2251,23 +2264,15 @@ The tasks you will accomplish in this lab are:
     ,partition LAX values ('LAX INTL','LAX 7/8')
     )
     ;
-    </copy>
-    ````
 
-    alter database set Container_Map = 'SYSTEM.tc_Kiosk_Map';</copy>
-    ````
+    alter database set Container_Map = 'SYSTEM.tc_Kiosk_Map';
 
-    create tablespace Terminal_TBS datafile size 100M autoextend on next 10M maxsize 200M;</copy>
-    ````
-    create user Terminal_Admin identified by oracle container=all;</copy>
-    ````
-    grant create session, dba to Terminal_Admin;</copy>
-    ````
-    alter user Terminal_Admin default tablespace Terminal_TBS;</copy>
-    ````
+    create tablespace Terminal_TBS datafile size 100M autoextend on next 10M maxsize 200M;
+    create user Terminal_Admin identified by oracle container=all;
+    grant create session, dba to Terminal_Admin;
+    alter user Terminal_Admin default tablespace Terminal_TBS;
 
-    connect Terminal_Admin/oracle@localhost:1523/Terminal_Master</copy>
-    ````
+    connect Terminal_Admin/oracle@localhost:1523/Terminal_Master
 
     create table tc_Products
     sharing = extended data
@@ -2276,14 +2281,11 @@ The tasks you will accomplish in this lab are:
     ,Local_Product_YN char(1)           default 'Y'                   not null
     )
     ;
-    </copy>
-    ````
+    
     alter table tc_Products add constraint Local_Product_Bool
     check (Local_Product_YN in ('Y','N'))
     ;
-    </copy>
-    ````
-
+    
     create table tc_Coupons
     sharing = data
     (Row_GUID         raw(16)           default Sys_GUID()                      primary key 
@@ -2295,6 +2297,10 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
+    ![](./images/step12.3.1.png " ")
+
+    ````
+    <copy>
     create table tc_Orders
     sharing = metadata
     (Row_GUID         raw(16)           default Sys_GUID()                      primary key 
@@ -2305,15 +2311,12 @@ The tasks you will accomplish in this lab are:
     ,Campaign_Code    varchar2(30)      null
     )
     ;
-    </copy>
-    ````
+    
     alter table tc_Orders add constraint tc_Orders_F1 
     foreign key (Coupon_ID)
     references tc_Coupons(Row_GUID)
     disable
     ;
-    </copy>
-    ````
 
     create table tc_Order_Items
     sharing = metadata
@@ -2324,6 +2327,7 @@ The tasks you will accomplish in this lab are:
     ,Order_Qty        number(16,0)      not null
     )
     ;
+
     alter table tc_Order_Items add constraint tc_Order_Items_F1 
     foreign key (Order_ID)
     references tc_Orders(Row_GUID)
@@ -2342,6 +2346,13 @@ The tasks you will accomplish in this lab are:
     ,Value_Code  varchar2(30)   not null
     )
     ;
+    </copy>
+    ````
+
+    ![](./images/step12.3.2.png " ")
+
+    ````
+    <copy>
     alter table tc_List_Of_Values  add constraint tc_List_Of_Values_U1
     unique (Type_Code, Value_Code)
     ;
@@ -2369,7 +2380,13 @@ The tasks you will accomplish in this lab are:
     insert into tc_List_Of_Values (Type_Code, Value_Code) values ('Campaign','Lost Weekend');
     insert into tc_List_Of_Values (Type_Code, Value_Code) values ('Campaign','Road Warrior');
     insert into tc_List_Of_Values (Type_Code, Value_Code) values ('Campaign','World Citizen');
+    </copy>
+    ````
 
+    ![](./images/step12.3.3.png " ")
+
+    ````
+    <copy>
     insert into tc_List_Of_Values (Type_Code, Value_Code) values ('Type', 'Financial Quarter');
     insert into tc_List_Of_Values (Type_Code, Value_Code) values ('Financial Quarter', 'Q1,FY2016');
     insert into tc_List_Of_Values (Type_Code, Value_Code) values ('Financial Quarter', 'Q2,FY2016');
@@ -2388,7 +2405,13 @@ The tasks you will accomplish in this lab are:
     insert into tc_Products (Row_GUID, Name, Local_Product_YN) values ('04', 'Yokie Dokie Okie Eggnog', 'N');
 
     commit;
+    </copy>
+    ````
 
+    ![](./images/step12.3.4.png " ")
+
+    ````
+    <copy>
     alter table tc_Orders enable containers_default;
 
     alter table tc_Orders enable container_map;
@@ -2396,6 +2419,10 @@ The tasks you will accomplish in this lab are:
     alter pluggable database application Terminal end install '1.0';
     </copy>
     ````
+
+    ![](./images/step12.3.5.png " ")
+
+    ![](./images/step12.3.6.png " ")
 
 4. Sync the Application databases to install 1.0.
 
@@ -2419,11 +2446,19 @@ The tasks you will accomplish in this lab are:
     </copy>
     ````
 
+    ![](./images/step12.4.png " ")
+
 5. Load the Terminal Data.
 
     ````
-    @Terminal_Data_Lab12
+    <copy>@Terminal_Data_Lab12</copy>
     ````
+
+    ![](./images/step12.5.1.png " ")
+
+    ![](./images/step12.5.2.png " ")
+
+    ![](./images/step12.5.3.png " ")
 
 6. Review the Container Map.
 
@@ -2455,6 +2490,8 @@ The tasks you will accomplish in this lab are:
     ;
     </copy>
     ````
+
+    ![](./images/step12.6.png " ")
 
 ## Acknowledgements
 
