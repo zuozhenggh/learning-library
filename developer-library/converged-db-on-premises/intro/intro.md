@@ -53,6 +53,18 @@ Watch the video below to watch Andy Mendehlson, VP of Database Product Managemen
   
   [](youtube:Sbbw2mcrfiA)
 
+## Files Needed For This Workshop
+
+To complete this workshop, you will use a preconfigured image available in Oracle's Cloud Marketplace.  
+
+The Image OCID is below. Please copy it to a notepad, you will need it for later.
+
+- **Converged DB 1.4 OCID**: 
+  ````
+  <copy>
+  ocid1.image.oc1..aaaaaaaaqa2rgmwe7qjvscsagpyyog4j3ihgbt3dlpoz7zfrprx7ffdzbozq
+  </copy>
+  ````
 ## Want to Learn More
 
 This Converged Database workshop will help the participants to get hands-on features and benefits - JSON, XML, SPATIAL, GRAPH and Node.JS retail application.
