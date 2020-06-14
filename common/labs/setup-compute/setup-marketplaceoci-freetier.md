@@ -30,7 +30,7 @@ This lab assumes you have already completed the following labs:
 ## Step 1: Login and Create Stack using Resource Manager
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [linux-compute-vcn.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/02kryFLPblAodOjJ1Ih1wstYpJ7FSnJ61uknIYHUAYU/n/c4u03/b/labfiles/o/linux-compute-vcn.zip) - Packaged terraform instance creation script for creating network and instance running the Oracle Linux 7
+    - [linux-compute-vcn.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/02kryFLPblAodOjJ1Ih1wstYpJ7FSnJ61uknIYHUAYU/n/c4u03/b/labfiles/o/linux-compute-vcn.zip) - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2.  Save in your downloads folder.
 
