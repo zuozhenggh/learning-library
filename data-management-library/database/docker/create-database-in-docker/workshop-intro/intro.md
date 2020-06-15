@@ -6,8 +6,8 @@ Welcome to the Oracle Database Docker Workshop. Using Docker build files for Ora
 - Sign up for an Oracle Free Trial account and sign in to your account
 - Create a set of SSH keys
 - Create a Virtual Cloud Network (VCN) instance
-- Create an Oracle Cloud Compute instance
-- Set up Docker on the Cloud Compute instance
+- Create an Oracle Cloud compute instance
+- Set up Docker on the Cloud compute instance
 - Build an Oracle Database Docker image
 - Start the Oracle Database in a Docker container
 - Add an Ingress rule to the VCN
@@ -24,9 +24,9 @@ Docker is an open source container designed to separate an application from its 
 
 ### **Let's Get Started!**
 
-- Click on **[Lab 1: Login to Oracle Cloud](?lab=lab-1-login-oracle-cloud)** from the menu on the right. If you already have an Oracle Cloud account, click on **[Lab 2: Create SSH Keys](?lab=lab-2-create-ssh-keys)**.
+- Click on **Lab 1** from the menu on the right. If you already have an Oracle Cloud account, click on **[Lab 2: Create SSH Keys](?lab=lab-2-create-ssh-keys)**.
 
-- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/MenuButton.png)) at the top of the page.
+- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/MenuButton.png)) at the top right of the page.
 
 ### Learn More
 
