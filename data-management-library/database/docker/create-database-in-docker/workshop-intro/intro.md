@@ -4,10 +4,10 @@
 Welcome to the Oracle Database Docker Workshop. Using Docker build files for Oracle Database provided on GitHub, you can containerize an application - in this case, an instance of Oracle Database. This workshop will walk you through the following tasks:
 
 - Sign up for an Oracle Free Trial account and sign in to your account
-- Create a set of SSH keys
+- Create a set of SSH keys in local shell
 - Create a Virtual Cloud Network (VCN) instance
-- Create an Oracle Cloud Compute instance
-- Set up Docker on the Cloud Compute instance
+- Create an Oracle Cloud compute instance
+- Set up Docker on the Cloud compute instance
 - Build an Oracle Database Docker image
 - Start the Oracle Database in a Docker container
 - Add an Ingress rule to the VCN
@@ -16,7 +16,9 @@ Welcome to the Oracle Database Docker Workshop. Using Docker build files for Ora
 
 Each of the labs is 5 -10 minutes in length, so you'll be up and running in no time.
 
-*Note: You will need a Free Trial or an existing Oracle Cloud account for this workshop (Not all services in this workshop are Always Free services)*
+*Note 1: You will need a Free Trial or an existing Oracle Cloud account for this workshop (Not all services in this workshop are Always Free services)*
+
+*Note 2: This workshop requires a local shell, Oracle Cloud Shell does NOT work*
 
 ### About Docker
 
@@ -24,9 +26,9 @@ Docker is an open source container designed to separate an application from its 
 
 ### **Let's Get Started!**
 
-- Click on **[Lab 1: Login to Oracle Cloud](?lab=lab-1-login-oracle-cloud)** from the menu on the right. If you already have an Oracle Cloud account, click on **[Lab 2: Create SSH Keys](?lab=lab-2-create-ssh-keys)**.
+- Click on **Lab 1** from the menu on the right. If you already have an Oracle Cloud account, click on **[Lab 2: Create SSH Keys](?lab=lab-2-create-ssh-keys)**.
 
-- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/MenuButton.png)) at the top of the page.
+- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/MenuButton.png)) at the top right of the page.
 
 ### Learn More
 

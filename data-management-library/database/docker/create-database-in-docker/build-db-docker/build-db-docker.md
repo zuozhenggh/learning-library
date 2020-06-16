@@ -16,7 +16,7 @@ A Docker image contains all of the necessary code to execute an application for 
 
 Oracle has provided a complete set of Docker build files on an Oracle GitHub repository. There are several ways to get the files to the compute instance, but for simplicity, you will use GitHub's download option.
 
-1. If you don't have an open SSH connection to your compute instance, open a Terminal window and connect using the public IP address of your compute instance:
+1. If you don't have an open SSH connection to your compute instance, open a Terminal window. Navigate to the folder where you created the SSH keys and connect using the public IP address of your compute instance:
 
     ```
     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
@@ -27,7 +27,7 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
 2. Use the `wget` to download the repository on the compute instance:
 
     ```
-      [opc@oraclelinux77 ~]$ <copy>wget https://github.com/oracle/docker-images/archive/master.zip</copy>
+    [opc@oraclelinux77 ~]$ <copy>wget https://github.com/oracle/docker-images/archive/master.zip</copy>
     --2020-04-07 18:23:39--  https://github.com/oracle/docker-images/archive/master.zip
     Resolving github.com (github.com)... 140.82.112.4
     Connecting to github.com (github.com)|140.82.112.4|:443... connected.

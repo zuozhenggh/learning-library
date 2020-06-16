@@ -4,65 +4,12 @@
 
 The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between endpoints. SSH keys are an important part of securely accessing Oracle Cloud Infrastructure compute instances in the cloud.
 
-If you already have an SSH key pair, you may use that to connect to your environment. We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute instance you will create. Oracle Cloud Shell is browser-based, does not require installation or configuration of anything on your laptop, and works independently of your network setup. However, if you prefer to connect via your laptop, please choose based on your configuration.
+This workshop requires a local shell, and Oracle Cloud Shell does NOT work. If you already have a local SSH key pair, you may use that to connect to your environment.
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
-## Option 1:  Oracle Cloud Shell
 
-The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI (Command Line Interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
-
-1.  To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
-
-    ![](./images/cloudshellopen.png " ")
-
-    ![](./images/cloudshellsetup.png " ")
-
-    ![](./images/cloudshell.png " ")
-
-2.  Once the cloud shell has started, enter the following command. Choose the key name you can remember. This will be the keyname you will use to connect to any compute instances you create. Press Enter twice for no passphrase.
-
-    ````
-    <copy>mkdir .ssh</copy>
-    ````
-
-    ````
-    <copy>cd .ssh</copy>
-    ````
-
-    ````
-    ssh-keygen -b 2048 -t rsa -f <<sshkeyname>>
-    ````
-
-    *Note: The angle brackets <<>> should not appear in your code.*
-
-    ![](./images/cloudshell-ssh-keygen.png " ")
-
-    ![](./images/cloudshell-ssh-keygen-2.png " ")
-
-3.  Examine the two files that you just created.
-
-    ````
-    <copy>ls</copy>
-    ````
-
-    ![](./images/examine-cloudshell-keys.png " ")
-
-    Note in the output that there are two files, a *private key:* ```<<sshkeyname>>``` and a *public key:* ```<<sshkeyname>>.pub```. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
-
-4. To list the contents of the public key, use the cat command ```cat <<sshkeyname>>.pub```
-    
-    *Note: The angle brackets <<>> should not appear in your code.*
-
-    ![](images/cat-in-cloudshell.png " ")
-
-5.  When pasting the key into the compute instance in future labs, make sure that you remove any hard returns that may have been added when copying. *The .pub key should be one line.*
-
-    ![](images/copy-publickey-cloudshell.png " ")
-
-You may now *proceed to the next lab*.
-
-## Option 2:  MacOS
+## Option 1:  MacOS
 
 1.  If you don't already have a shortcut to the terminal application for MacOS, you can find it in the **Applications** > **Utilities** menu or (Shift+Command+U) on your keyboard.
 
@@ -101,7 +48,7 @@ You may now *proceed to the next lab*.
 
 You may now *proceed to the next lab*.
 
-## Option 3:  Windows 10
+## Option 2:  Windows 10
 
 Creating keys for Windows can be interesting as ```ssh-keygen``` was not a native utility for Windows until the release of Windows 10. And it wasn't included in the initial Windows 10 builds. In this section, we'll assume your version of Windows 10 actually has ```ssh-keygen``` installed.  Note that you might have an earlier build that doesn't include ssh-keygen. If you can't find it, either upgrade or try one of the other methods listed for earlier versions of Windows.
 
@@ -154,11 +101,11 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
 
 You may now *proceed to the next lab*.
 
-## Option 4a: Prior Windows Versions - Git for Windows
+## Option 3a: Prior Windows Versions - Git for Windows
 
 In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **Git for Windows**. **Git for Windows** includes a Unix like shell called ```Git Bash``` which is what you'll use to create keys, and establish SSH communications with your cloud host systems. If you prefer **PuTTY**, go to the next section.
 
-1.  If you don't already have it installed, access the link below and download the application. If you are unable to install anything on your laptop due to permission issues, please use the **Oracle Cloud Shell** option above.
+1.  If you don't already have it installed, access the link below and download the application.
 
     [Click here to download Git for Windows](https://git-scm.com/download/win)
 
@@ -206,11 +153,11 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
 You may now *proceed to the next lab*.
 
-## Option 4b: Windows Versions - PuTTY
+## Option 3b: Windows Versions - PuTTY
 
 In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **PuTTY**. If you prefer **Git for Windows**, visit the option prior to this one.
 
-1.  If you don't already have it installed, access the link below and download the application. For Oracle employees, **PuTTY** is also available for download internally via the **MyDesktop** application. For non-Oracle employees and customers, use the below link. If you are unable to install anything on your laptop due to permission issues, please use the **Oracle Cloud Shell** option above.
+1.  If you don't already have it installed, access the link below and download the application. For Oracle employees, **PuTTY** is also available for download internally via the **MyDesktop** application. For non-Oracle employees and customers, use the below link.
 
     [Click here to download PuTTY for Windows](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
@@ -294,7 +241,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
 You may now *proceed to the next lab*.
 
-## Option 5: SSH Keys for Linux
+## Option 4: SSH Keys for Linux
 
 1. Open a terminal window and type in the ```ssh-keygen``` command.   There are a few command line options for the ssh-keygen utility; however, for quick and dirty key creation for lab use, no options are necessary.    Type ```ssh-keygen --help``` in your terminal window to see all the possible options.   For now, just run the command by itself.
 

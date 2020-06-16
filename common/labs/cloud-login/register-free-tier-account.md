@@ -9,7 +9,7 @@ This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Ti
 * An email address
 * Ability to receive SMS text verification (only if your email isn't recognized)
 
-## STEP 1: Create Your Account ##
+## STEP 1: Create Your Free Trial Account ##
 
 In this section, you'll fill out the registration form at [oracle.com/cloud/free](https://oracle.com/cloud/free).
 
@@ -48,7 +48,7 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
     ![](images/cloud-login-2.png " ")
 
-4. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's not your email address. If you've forgotten the name, see the confirmation email.
+4. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
     ![](images/cloud-login-tenant.png " ")
 
