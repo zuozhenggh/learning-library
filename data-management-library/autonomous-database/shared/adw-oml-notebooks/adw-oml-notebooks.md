@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this bonus lab, you will be using the Oracle Machine Learning (OML) SQL notebook application provided with your Autonomous Data Warehouse. This browser-based application provides a web interface to run SQL queries and scripts, which can be grouped together within a notebook. Notebooks can be used to build single reports, collections of reports, and even dashboards. OML provides a simple way to share workbooks, and collections of workbooks, with other OML users.
+In this bonus lab, you use the Oracle Machine Learning (OML) SQL notebook application provided with your Autonomous Data Warehouse. This browser-based application provides a web interface to run SQL queries and scripts, which can be grouped together within a notebook. Notebooks can be used to build single reports, collections of reports, and even dashboards. OML provides a simple way to share workbooks, and collections of workbooks, with other OML users.
 
 ### Understanding Key Concepts
 
@@ -25,25 +25,23 @@ In this bonus lab, you will be using the Oracle Machine Learning (OML) SQL noteb
 -   Learn how to share notebooks
 -   Learn how to create and run SQL scripts
 
-### Required Artifacts
+### Lab Prerequisites
 
 -   This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-### Lab Prerequisites
-
--   This lab assumes you have completed the **Login to Oracle Cloud** and **Provision ADB** labs seen in the menu on the right.
+-   This lab assumes you have completed the **Login to Oracle Cloud** and **Getting Started** labs seen in the menu on the right.
 
 ## STEP 1: Creating OML Users
 
 The first step is to create two new users.
 
-1.  If you are not logged in to Oracle Cloud Console, login and select Autonomous Data Warehouse from the hamburger menu and navigate into your ADW Finance Mart instance.
+1.  If you are not logged in to Oracle Cloud Console, log in and select Autonomous Data Warehouse from the hamburger menu and navigate into your ADW Finance Mart instance.
 
     ![](images/step1.1-LabGuide1-39fb4a5b.png " ")
 
     ![](images/step1.1-adb.png " ")
 
-2.  In the details page for your Autonomous Data Warehouse database, click on **Service Console**.
+2.  In the details page for your Autonomous Data Warehouse database, click **Service Console**.
 
     ![](./images/Picture700-1.png " ")
 
@@ -57,7 +55,7 @@ The first step is to create two new users.
 
     ![](./images/Picture700-5.png " ")
 
-5.  Enter the required information for this user. Name the user  **omluser1**. If you supplied a valid **Email Address**, a welcome email should arrive within a few minutes to your Inbox. Click  **Create** in the top-right corner of the page to create the user.
+5.  Enter the required information for this user. Name the user  **omluser1**. If you supplied a valid **Email Address**, a welcome email should arrive within a few minutes to your Inbox. Click **Create** in the top-right corner of the page to create the user.
 
     ![](./images/Picture700-7.png " ")
 
@@ -303,6 +301,6 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, March 2020
+- **Last Updated By/Date** - Richard Green, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
