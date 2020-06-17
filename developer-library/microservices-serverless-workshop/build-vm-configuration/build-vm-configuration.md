@@ -1,8 +1,21 @@
 # Build Virtual Machines in Developer Cloud Service
 
-## Before You Begin
+## Introduction
 
-In this lab you will create template configuration files and using these files. built virtual machines in Oracle Developer Cloud Service.
+In this lab you will create template configuration files and using these files to build virtual machines in Oracle Developer Cloud Service.
+
+Estimated time: 15 - 20 min
+
+### Objectives
+
+* Learn how to create template configuration files
+* Learn how to build virtual machines in Oracle Developer Cloud Service.
+
+### Lab Prerequisites
+
+This lab assumes you have completed the following labs:
+* Lab: Sign up for a Free Trial
+* Lab: Provision a DevCS Instance
 
 ## **Step 1**: Configure Virtual Machines Templates in DevCS
 
@@ -14,15 +27,15 @@ In this lab you will create template configuration files and using these files. 
 
   ![](./images/image38.png " ")
 
-3. Click **Create**:
+3. Click **Create**.
 
   ![](./images/image39.png " ")
 
-4. Provide a Name (like VM\_basic\_Template) and select Oracle Linux 7 as Platform:
+4. Provide a Name (like VM\_basic\_Template) and select Oracle Linux 7 as Platform.
 
   ![](./images/image40.png " ")
 
-5. Click **Configure Software**:
+5. Click **Configure Software**.
 
   ![](./images/image41.png " ")
 

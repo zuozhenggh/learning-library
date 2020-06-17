@@ -156,13 +156,16 @@ You may now *proceed to the next lab*.
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter the command below to login to your instance.  Enter **yes** when prompted.
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
     *Note: You should not include the angle brackets <> in your code.*
 
 
-    ![](./images/cloudshelllogin.png " ") 
+    ![](./images/instance_public_ip_address.png " ")
+
+    ![](./images/connect_instance_mac.png " ")
+     
 
 4.  After successfully logging in, you may now *proceed to the next lab*.
 
