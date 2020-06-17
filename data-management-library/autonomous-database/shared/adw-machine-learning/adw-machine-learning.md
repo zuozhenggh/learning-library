@@ -8,7 +8,7 @@ During this bonus lab you will be using the Oracle Machine Learning (OML) notebo
 
 -   Learn how to import notebooks into Oracle ML Notebook
 -   Learn how to use DBMS\_PREDICTIVE\_ANALYTICS routines
--   Learn how to use Oracle ML Gallery
+-   Learn how to use Oracle ML Examples
 
 ### Required Artifacts
 
@@ -29,11 +29,11 @@ The first step is to download the sample notebook and then import it into the Or
 
     ![](./images/Picture700-12.png " ")
 
-## STEP 3: Click the Go to Notebooks link
+## STEP 3: Click the Notebooks link
 
-1. Click the **Go to Notebooks** link.
+1. Click the **Notebooks** link.
 
-    ![](./images/snap0014521.jpg " ")
+    ![](./images/oml_dashboard_link.png " ")
 
 ## STEP 4: Click the Import button
 
@@ -59,15 +59,15 @@ The first step is to download the sample notebook and then import it into the Or
 
     ![](./images/snap0014525.jpg " ")
 
-## STEP 8: Create a machine learning notebook using an OML Gallery template
+## STEP 8: Create a machine learning notebook using an OML Example
 
-1. Go back to OML dashboard and click **Go to Gallery**. The Gallery page lists pre-populated Oracle Machine Learning notebook templates which you can view, like, and use it to create new templates.
+1. Go back to OML dashboard and click **Examples**. The Examples lists pre-populated Oracle Machine Learning notebook templates which you can view, like, and use it to create new templates.
 
-    ![](./images/25.png " ")
+    ![](./images/oml_dashboard_link.png " ")
 
-2. In the Gallery page, select the template based on which you want to create a notebook.
+2. In the Examples page, select the template based on which you want to create a notebook.
 
-    ![](./images/26.png " ")
+    ![](./images/association_rules.png " ")
 
 3. Click **New Notebook**, and in the Create Notebook window, the name of the selected template appears. Enter information for notebook name and description and click on **OK**. For Association Rules example, it performs analysis based on SH schema. The results of the paragraphs have been shown. You can rerun each paragraph if you would like. You can go through this notebook at your own pace.
 
@@ -79,7 +79,7 @@ The first step is to download the sample notebook and then import it into the Or
 
 - Experiment with DBMS\_PREDICTIVE\_ANALYTICS with your data
 - Review the Oracle Database Data Mining documentation: [https://docs.oracle.com/en/database/oracle/oracle-database/18/dmapi/introduction-to-oracle-data-mining.html](https://docs.oracle.com/en/database/oracle/oracle-database/18/dmapi/introduction-to-oracle-data-mining.html)
-- Look at the DBMS\_DATA\_MINING sample notebooks in the Oracle ML Notebook Gallery
+- Look at the DBMS\_DATA\_MINING sample notebooks in the Oracle ML Notebook Examples
 
 ## Want to Learn More?
 
