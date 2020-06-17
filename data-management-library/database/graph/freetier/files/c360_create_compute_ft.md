@@ -114,7 +114,7 @@ sudo yum install jdk1.8.x86_64 jdk-11.0.5.x86_64
 Check which is the default java and change it using `alternatives`.
 
 ```
-alternatives --list 
+$ alternatives --list 
 libnssckbi.so.x86_64	auto	/usr/lib64/pkcs11/p11-kit-trust.so
 ld	auto	/usr/bin/ld.bfd
 mta	auto	/usr/sbin/sendmail.postfix

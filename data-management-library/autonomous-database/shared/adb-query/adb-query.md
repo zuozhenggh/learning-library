@@ -40,7 +40,17 @@ In this lab, you will query files on the Oracle Cloud Infrastructure Object Stor
 
     This code uses the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create external tables on the files staged in your object store. Note that you are still using the same credential and the URLs of files on OCI Object Storage you used when loading data in the previous lab.
 
+    For each `<file_uri_list>` statement:
+        
+    - Change `us-phoenix-1` to your real region name. The name is case-sensitive.
+    - Change `idthydc0kinr` to your real namespace. The name is case-sensitive.
+    - Change `ADWCLab` to your real bucket name. The name is case-sensitive.
+
+    ![](./images/step1.4.png " ")
+
 5.  Run the script. In the Substitutions Variables dialog, paste the base URL you copied in Lab 4, Step 6 and click **OK**.
+
+  ![](images/step1.5.png " ")
 
   ![](images/substitution-variables.png " ")
 
