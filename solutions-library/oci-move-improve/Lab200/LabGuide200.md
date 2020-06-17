@@ -1,10 +1,16 @@
-# Lab 200: High Availability for the OsCommerce instance 
+# Lab 200: High Availability for the OsCommerce instance
 
 ## Introduction
 Below, we have a demo of how you can setup disaster recovery for your app in Oracle Cloud leveraging different availability domains (or across regions). One of the key principles of designing high availability solutions is to avoid single point of failure.
  We will deploy Compute instances that perform the same tasks in multiple availability domains. You can use the custom image you used for primary compute instance to deploy secondary compute instance in a different Availability domain. This design removes a single point of failure by introducing redundancy. The following diagram illustrates how we can achieve high availability.
 
 ![](./images/1.png "")
+
+For technical videos that walk through this portion of the lab, please see the links below:<br>
+[Video 1](https://video.oracle.com/detail/video/6164388509001/lab-200-creating-a-secondary-application-instance?autoStart=true&q=ocimoveimprove)<br>
+[Video 2](https://video.oracle.com/detail/video/6164412367001/lab-200-rsync-part-1?autoStart=true&q=ocimoveimprove)<br>
+[Video 3](https://video.oracle.com/detail/video/6163747278001/lab-200-rsync-part-2?autoStart=true&q=ocimoveimprove)<br>
+[Video 4](https://video.oracle.com/detail/video/6164412913001/lab-200-creating-a-failover-policy?autoStart=true&q=ocimoveimprove)
 
 ### Objectives
 
@@ -32,7 +38,7 @@ Estimated time to complete this lab is three hours.
 
 Run the following command on primary compute instance.
 
-``` 
+```
 sudo apt-get install rsync
 ```
 Repeat the same for secondary compute instance.
@@ -77,7 +83,7 @@ ssh into Server B, and append the contents of that to the it's authorized_keys f
 cat >> ~/.ssh/authorized_keys
 ```
 
-Paste your clipboard contents. 
+Paste your clipboard contents.
 
 ### Step 3: Replicate web server files and database files
 
@@ -172,13 +178,13 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'ip_address';
 
 Now, go to the secondary server:
 
-Delete the oscommerce database and create an empty oscommerce database as follows: 
+Delete the oscommerce database and create an empty oscommerce database as follows:
 
 ![](./images/5a.png "")
 
 Now run the following command to replicate the database
 
-Note: Run this command in  secondary server terminal (not in mysql terminal) 
+Note: Run this command in  secondary server terminal (not in mysql terminal)
 
 ```
  mysqldump --host=1.2.3.4 --user=MYDBUSER -pMYDBPASSWORD --add-drop-table --no-create-db --skip-lock-tables MYDBNAME | mysql --user=MYDBUSER -pMYDBPASSWORD MYDBNAME
@@ -198,7 +204,7 @@ Check if the database tables are replicated properly by using the following:
 
 ![](./images/5b.png "")
 
-Note this particular mysqldump command does not create a dump file, but rather migrates all tables of the specified database from source to the target thereby keeping the source and target database consistent. 
+Note this particular mysqldump command does not create a dump file, but rather migrates all tables of the specified database from source to the target thereby keeping the source and target database consistent.
 
 For production environments, you can run it as a cronjob. Run ‘crontab -e’, then add your mysqldump command:
 
@@ -227,7 +233,7 @@ sudo nano /etc/apache2/sites-available/000-default.conf
 
 Change from ```"DocumentRoot /var/www/html" ```to ```"DocumentRoot /var/www/html/catalog"```
 
-Add 
+Add
 
 ```
 “DirectoryIndex index.php”
@@ -249,7 +255,7 @@ Restart the server using the command
 sudo service apache2 restart
 ```
 
-Now, if you hit your public ip address in the browser, you should be able to see your app running. 
+Now, if you hit your public ip address in the browser, you should be able to see your app running.
 
 ### If you already have your DNS Zone within Oracle Cloud Infrastructure, Skip step 2 and step 3
 
@@ -298,7 +304,7 @@ Note the name servers. You can use the noted name servers to change your domain'
 
 ![](./images/15.png "")
 
-I’m using google-domain in this case. Add name servers to your domain name server’s management console as shown below 
+I’m using google-domain in this case. Add name servers to your domain name server’s management console as shown below
 
 ![](./images/16.png "")
 
@@ -324,7 +330,7 @@ Note the "NAME" box, this where you would create a sub-domain name that would be
 Click Submit.
 
 ![](./images/41.png "")
- 
+
 Once your records have been added, click Publish Changes.
 
 ![](./images/42.png "")
@@ -379,7 +385,7 @@ Once you've created traffic management steering policy, Click on overview.make s
 
 ![](./images/44.png "")
 
-With a  web browser, access the oscommerce application using the sub-domain name 
+With a  web browser, access the oscommerce application using the sub-domain name
 
 Example: "public1.oscommercesite.com"
 
