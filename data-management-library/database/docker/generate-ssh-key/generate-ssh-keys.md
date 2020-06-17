@@ -22,7 +22,7 @@ This workshop requires a local shell, and Oracle Cloud Shell does NOT work. If y
     ![](images/keylab-028.png " ")
 
 
-3.  Type the following commands in the terminal window to verify that the public and private keys were created.  And to copy the contents of the public key for use in creating your instance in the OCI dialog.
+3.  Type the following commands in the Terminal window to verify that the public and private keys were created.  And copy the contents of the public key for use in creating your instance in the OCI dialog.
 
     ```
     <copy>cd .ssh</copy>

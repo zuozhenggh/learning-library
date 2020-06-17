@@ -70,7 +70,7 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
 
   ![](images/otn-download.png " ")
 
-2. To transfer the zip file to your compute instance, connect using `sftp` and the public IP address of your compute instance:
+2. Transfer the zip file to your compute instance. Do not close your current Terminal window. Open a new Terminal window, navigate to the folder where you created the SSH keys, and connect using `sftp` and the public IP address of your compute instance:
 
     ```
     <copy>sftp -i ./myOracleCloudKey opc@</copy>123.123.123.123
@@ -105,16 +105,17 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
     s     exit
     ```
 
+  ![](images/step2.png " ")
 ## **STEP 3**: Build the Docker image
 
-1. In the terminal window connected to your compute instance, change directories to the `dockerfiles` directory:
+1. In the terminal window connected to your compute instance (your previous Terminal window), change directories to the `dockerfiles` directory:
 
     ```
     [opc@oraclelinux77 ~]$<copy>cd docker-images-master/OracleDatabase/SingleInstance/dockerfiles</copy>
     [opc@oraclelinux77 dockerfiles]$
     ```
 
-2. Build the Docker image using the `buildDockerImage` script.
+2. Build the Docker image using the `buildDockerImage` script. This process may take around 30 minutes.
    Be sure to read the [README.md](https://github.com/oracle/docker-images/blob/master/OracleDatabase/SingleInstance/README.md) file which explains the build process in greater detail.
 
     ```
@@ -168,7 +169,7 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
 
   Note when the script completes, it lists the new Docker image: `oracle/database:19.3.0-ee`.
 
-  You may now proceed to the next lab.
+  You may now *proceed to the next lab*.
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
