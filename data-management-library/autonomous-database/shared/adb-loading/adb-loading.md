@@ -273,7 +273,7 @@ As an alternative to the wizard-guided data load, you can use the PL/SQL package
 
     A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The logfile\_table column shows the name of the table you can query to look at the log of a load operation. The column badfile_table shows the name of the table you can query to look at the rows that got errors during loading.
 
-4. Query the log and bad tables to see detailed information about an individual load. In this example, the names are copy$25\_log and copy$25\_bad respectively.
+4. Query the log and bad tables to see detailed information about an individual load. In this example, the names are `copy$25\_log` and `copy$25\_bad` respectively.
 
     ![](./images/query_log_and_bad_files.jpg " ")    
 
