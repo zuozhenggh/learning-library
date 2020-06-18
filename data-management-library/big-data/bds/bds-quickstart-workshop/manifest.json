@@ -6,7 +6,7 @@
           "filename": "./intro.md"
       },
         {
-            "title": "Lab 1: Set Up the BDS Environment", 
+            "title": "Lab 1: Set Up the BDS Environment",
             "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
             "filename": "./../bds-getting-started/bds-getting-started.md"
         }
@@ -19,8 +19,8 @@
         ,
         {
             "title": "Lab 3: Create a Hadoop User",
-            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
-            "filename": "./../bds-getting-started/bds-getting-started.md"
+            "description": "This lab walks you through the required tasks ...",
+            "filename": "./../create-hadoop-user/create-hadoop-user.md"
         }
         ,
         {

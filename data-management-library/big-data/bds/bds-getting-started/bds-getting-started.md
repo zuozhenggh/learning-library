@@ -73,7 +73,7 @@ Create a new **Administrator** group that will have full access rights to the ne
 
 3. On the **Users** page, click **Create User**.
 
-4. In the **Create User** dialog box, enter **`training-bds-admin`** in the **NAME** field, **`training BDS Admin User`** in the  **DESCRIPTION** field, and an optional email address for the user in the **EMAIL** field, and then click **Create**.
+4. In the **Create User** dialog box, enter **`training-bds-admin`** in the **NAME** field, **`training BDS Admin User`** in the  **DESCRIPTION** field, an optional email address for the user in the **EMAIL** field, and then click **Create**.
 
   **Note:**
   An email address can be used as the user name, but it isn't required.
@@ -96,7 +96,7 @@ Create a BDS group whose members will be granted permissions to manage the BDS c
 
    ![](./images/create-group.png " ")
 
-4. In the **Create Group** dialog box, enter **`training-bds-admin-group`** in the **Name** field and **`Training BDS Admin. Group`** in the **Description** field, and then click **Create**.
+4. In the **Create Group** dialog box, enter **`training-bds-admin-group`** in the **Name** field, **`Training BDS Admin. Group`** in the **Description** field, and then click **Create**.
 
    ![](./images/create-group-dialog-box.png " ")
 
@@ -113,7 +113,7 @@ Create a BDS group whose members will be granted permissions to manage the BDS c
    ![](./images/add-user-group.png " ")
 
     **Note:**
-    If you haven't created the user who will be an administrator yet, go back to **STEP 3: Create an IAM User to be the BDS Administrator to create the user**, and then return to this step.
+    If you haven't created the user who will be an administrator yet, go back to **STEP 3: Create an IAM User to be the BDS Administrator to create the user**, create the user, and then return to this step.
 
 8. The **Group Details** page is re-displayed and the newly added user to this group is displayed in the **Group Members** section.
 
@@ -128,7 +128,9 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
    ![](./images/search-box.png " ")
 
-   **Note:** You can use the **Search compartments** text box to quickly find your compartment.
+   Type part of the compartment's name in the **Search compartments** text box. When the compartment is displayed in the list, select it.  
+
+   ![](./images/search-compartment.png " ")
 
 3.  Click **Create Policy**.  
 
@@ -140,7 +142,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
       + Enter **`Training Admin Group Policy`** in the **DESCRIPTION** field.
       + Select the **KEEP POLICY CURRENT** option.
       + Use the **COMPARTMENT** drop-down list to select your compartment, if you have not done that yet.
-      + In the **Policy Statements** section, copy the following policy statement, and then paste it in the **STATEMENT 1** box:
+      + In the **Policy Statements** section, use the **Copy** button to copy the following policy statement, and then paste it in the **STATEMENT 1** box:
 
         ```
         <copy>allow group training-bds-admin-group to manage virtual-network-family in compartment training-compartment</copy>
@@ -158,14 +160,14 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
         ![](./images/policy-1-created.png " ")
 
 
-10. Create a new policy granted on the compartment that contains the network resources that will be used by the BDS cluster(s). The policy statement in this new policy grants the system the rights to interact with various networking components. Click **Create Policy**.  
+5. Create a new policy granted on the **`training-compartment`** which will contain the network resources that will be used by your **`training-cluster`**. The policy statement in this new policy grants the system the rights to interact with various networking components. Click **Create Policy**.  
 
-11. In the **Create Policy** dialog box, provide the following information:
+6. In the **Create Policy** dialog box, provide the following information:
 
     + Enter **`training-bds-policy`** in the **NAME** field.
     + Enter **`Training BDS Service Policy`** in the **DESCRIPTION** field.
     + Select the **KEEP POLICY CURRENT** option.
-    + Use the **COMPARTMENT** drop-down list to select your compartment, if it's not yet selected.
+    + Use the **COMPARTMENT** drop-down list to select your compartment, if it's not already  selected.
     + In the a **Policy Statements** section, copy the following policy statement and paste it in the **STATEMENT 1** box:
 
         ```
@@ -173,14 +175,13 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
         ```
     ![](./images/create-policy-2-dialog.png " ")
 
-    + Click **Create**.
-    + The newly created policy is displayed in the list of available policies.
+    + Click **Create**. The newly created policy is displayed in the list of available policies.
 
       ![](./images/policy-2-created.png " ")
 
 
 ## STEP 6: Create a Virtual Cloud Network (VCN)
-Setup (create) the Virtual Cloud Network to be used by your Big Data Service; alternatively, if you already have an existing VCN, you can use it instead of creating a new one. Your existing VCN must be  using a Regional subnet and the appropriate ports must be opened. In this section, you will create a new VCN.       
+In this step of the lab, you will create a new Virtual Cloud Network (VCN) that will be used by your Big Data Service cluster. In general, if you already have an existing VCN, you can use it instead of creating a new one; however, your existing VCN must be using a `Regional` subnet and the appropriate ports must be opened.       
 
 1. In the **Oracle Cloud Console** Home page, click the **Navigation** menu, and then navigate to **Networking > Virtual Cloud Networks**.
 
@@ -197,15 +198,15 @@ Setup (create) the Virtual Cloud Network to be used by your Big Data Service; al
 3. The **Configuration** page of the wizard is displayed.
 
     In the **Basic Information** section, provide the following information:
-    + **VCN Name:** Enter **`training-vcn`**.
-    + **Compartment:** Select **`training-compartment`**.
+    + **VCN NAME:** Enter **`training-vcn`**.
+    + **COMPARTMENT:** Select **`training-compartment`**.
 
     ![](./images/basic-information.png " ")        
 
     In the **Configure VCN and Subnets** section, provide the following information:
     + **VCN CIDR BLOCK:** Enter the range of IP addresses for the network as a Classless Inter-Domain Routing (CIDR) block such as **`10.0.0.0/16`**.
-    + **Public Subnet CIDR Block:** Enter the CIDR block for the public subnet such as **`10.0.0.0/24`**.
-    + **Private Subnet CIDR Block:** Enter the CIDR block for the private subnet such as **`10.0.1.0/24`**.
+    + **PUBLIC SUBNET CIDR BLOCK:** Enter the CIDR block for the public subnet such as **`10.0.0.0/24`**.
+    + **PRIVATE SUBNET CIDR BLOCK:** Enter the CIDR block for the private subnet such as **`10.0.1.0/24`**.
     + In the **DNS RESOLUTION** section, select the **USE DNS HOSTNAMES IN THIS VCN** check box. This allows the use of host names instead of IP addresses for hosts to communicate with each other.
 
     ![](./images/configure-vcn-subnets.png " ")        
@@ -226,11 +227,18 @@ Setup (create) the Virtual Cloud Network to be used by your Big Data Service; al
 
    ![](./images/vcn-details.png " ")
 
+**This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
+
 ## Want to Learn More?
 
+* [VCN and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm)
+* [Create a Network](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-network.html#GUID-36C46027-65AB-4C9B-ACD7-2956B2F1B3D4)
 * [Using Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/index.html)
 * [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
-* [Overview of Oracle Cloud Infrastructure Identity and Access Management](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
+* [Overview of Oracle Cloud Infrastructure Identity and Access Management (IAM)](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
+* [Oracle Cloud Infrastructure Self-paced Learning Modules] (https://www.oracle.com/cloud/iaas/training/foundations.html)
+* [Overview of Compute Service](https://www.oracle.com/pls/topic/lookup?ctx=cloud&id=oci_compute_overview)
+
 
 ## Acknowledgements
 * **Authors:**
