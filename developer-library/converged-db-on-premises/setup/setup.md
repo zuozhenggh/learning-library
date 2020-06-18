@@ -43,7 +43,7 @@ Estimated time: 1 hour
       </copy>
       ````
 
-   ![](./images/putty_snap4.png " ")
+   ![](./images/env1.png " ")
 
 5.  Check for the oratab file and get the SID  and the oracle home details for the DB to start.
 
@@ -53,7 +53,7 @@ Estimated time: 1 hour
       </copy>
       ````
 
-   ![](./images/putty_snap5.png " ")
+   ![](./images/env2.png " ")
 
 
 7. Start the database by first sourcing the environment.
@@ -61,32 +61,54 @@ Estimated time: 1 hour
        ````
       <copy>
       . oraenv
+      </copy>
+      ````
+      ![](./images/env3.png " ")
+
+       ````
+      <copy>
       ConvergedCDB
       </copy>
       ````
+      ![](./images/env4.png " ")
 
 8. Use sqlplus to startup the database
  
       ````
       <copy>
       sqlplus / as sysdba
+      </copy>
+      ````
+      ![](./images/env5.png " ")
+
+      ````
+      <copy>
       startup 
       </copy>
       ````
-
-      ![](./images/putty_snap6.png " ")
+      ![](./images/env6.png " ")
 
 9. Start up all the pluggable databases (pdbs) and open them up for access
   
       ````
       <copy>
       show pdbs
+      </copy>
+      ````
+      ![](./images/env7.png " ")
+
+      ````
+      <copy>
       alter pluggable database all open;
-      show pdbs 
       </copy>
       ````
 
-      ![](./images/putty_snap7.png " ")
+      ````
+      <copy>
+      show pdbs 
+      </copy>
+      ````
+      ![](./images/env8.png " ")
 
 9.	Exit out of sqlplus
  
@@ -105,20 +127,27 @@ Estimated time: 1 hour
       cat /etc/hosts
       </copy>
       ````
-      ![](./images/putty_snap8.png " ")
+      ![](./images/get_hostname.png " ")
 
   **Note:**In above screenshot red highlighted one is the full qualified hostname. Gather similar details from your respective instance.
 
-2.	Open tnsnames.ora in nano and replace the LISTENER_CONVERGEDCDB lab with the old hostname with the new hostname from Step 1.
-
+2.	Open tnsnames.ora in nano and replace the LISTENER_CONVERGEDCDB lab with the old hostname with the new hostname from Step 
+1.
       ````
       <copy>
       cd $ORACLE_HOME/network/admin
+      </copy>
+      ````
+
+      ````
+      <copy>
       nano tnsnames.ora
       </copy>
       ````
 
 3. Replace the existing hostname with **your fully qualified hostname**
+
+      ![](./images/replace_hostname.png " ")
 
 4.  Save the file using the command **^O** and **^X** to exit
 
@@ -130,7 +159,9 @@ Estimated time: 1 hour
       </copy>
       ````
 
-1. Replace the fully qualified hostname and save the file
+6. Replace the fully qualified hostname and save the file
+
+      ![](./images/env9.png " ")
 
 7.	Check for the listener name. 
       ````
@@ -139,7 +170,7 @@ Estimated time: 1 hour
       </copy>
       ````
 
-      ![](./images/putty_snap9.png " ")
+      ![](./images/env10.png " ")
 
 8.	Start the listener
       ````
@@ -147,7 +178,7 @@ Estimated time: 1 hour
       lsnrctl start LISTENER_CONVERGEDDB
       </copy>
       ````
-      ![](./images/putty_snap10.png " ")
+      ![](./images/env11.png " ")
 
 15.	Check the listener status
       ````
@@ -155,7 +186,7 @@ Estimated time: 1 hour
       lsnrctl status LISTENER_CONVERGEDDB
       </copy>
       ````
-      ![](./images/putty_snap11.png " ")
+      ![](./images/env12.png " ")
 
 16.	Register the service into database. Login via sqlplus as sysdba. 
       ````
@@ -163,21 +194,28 @@ Estimated time: 1 hour
       sqlplus  / as sysdba
       </copy>
       ````
+      ![](./images/env13.png " ")
 
 1.  Set the local listener by replacing the **hostname** with the hostname you identified in earlier.
       ````
       alter system set local_listener='(ADDRESS = (PROTOCOL=TCP)(HOST=hostname)(PORT=1521))';
       ````
+      ![](./images/env14.png " ")
 
 2.   Register the listener and exit sqlplus.
 
       ````
       <copy>
       alter system register;
+      </copy>
+      ````
+      ![](./images/env15.png " ")
+
+      ````
+      <copy>
       exit
       </copy>
       ````
-      ![](./images/putty_snap12.png " ")
 
 17.	Check the listener status.
       ````
@@ -185,24 +223,33 @@ Estimated time: 1 hour
       lsnrctl status LISTENER_CONVERGEDDB
       </copy>
       ````
-      ![](./images/putty_snap13.png " ")
+      ![](./images/env16.png " ")
 
 18.	Ensure the database, **ConvergedCDB**, and the listener, **LISTENER_CONVERGEDDB** is up and running
       ````
       <copy>
       ps -ef|grep pmon
+      </copy>
+      ````
+      ![](./images/env17.png " ")
+      ````
+      <copy>
       ps -ef|grep tns
 
       </copy>
       ````
-      ![](./images/putty_snap14.png " ")
 
-## Step 3:  Connect SQL Developer to Converged DB Instance
+      ![](./images/env18.png " ")
 
-1.  Download [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) from the Oracle.com site and install on your system.
-   
-2.  Once installed, open up the SQL Developer console.
+## Step 3: Set up SQL Developer
 
+Certain workshops require SQL Developer.  To setup SQL Developer, follow the steps below.
+
+1. Download [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) from the Oracle.com site and install on your system.
+
+2. Once installed, open up the SQL Developer console.
+
+You may proceed to the next workshop.
 
 
 You may proceed to the next workshop.
@@ -220,7 +267,7 @@ You may proceed to the next workshop.
 
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 - **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K., Robbie Ruppel
-- **Team** - North America Database Specialists.
+- **Team** - North America Database Specialists
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 

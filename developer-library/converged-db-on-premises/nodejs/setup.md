@@ -77,11 +77,18 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
     ````
     <copy>
     sudo systemctl stop firewalld
+    </copy>
+    ````
+
+    ````
+    <copy>
     sudo systemctl disable firewalld
     </copy>
     ````
 
-3. After disabling the firewalld restart the docker service by using the command below.
+    ![](./images/nodejs1.png " ")
+
+3. After disabling the firewall restart the docker service by using the command below.
      
     ````
     <copy>
@@ -96,6 +103,11 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
     ````
     <copy>
     sudo su - oracle
+    </copy>
+    ````
+
+    ````
+    <copy>
     systemctl status docker
     </copy>
     ````
