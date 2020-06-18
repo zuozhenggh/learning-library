@@ -14,7 +14,7 @@ Estimated time: 1 hour
 - Lab 1: Login to Oracle Cloud
 - Lab 2: Generate SSH Key
 - Lab 3: Create Compute Instance
-
+- SQL Developer Client
 
 ## Step 1: Start the Database
 
@@ -197,49 +197,24 @@ Estimated time: 1 hour
       ````
       ![](./images/putty_snap14.png " ")
 
-## Step 3: Start VNC  
+## Step 3:  Connect SQL Developer to Converged DB Instance
 
-1. Run the below command and start vncserver as **oracle** user. 
+1.  Download [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) from the Oracle.com site and install on your system.
+   
+2.  Once installed, open up the SQL Developer console.
 
-````
-    <copy>
-   vncserver
-   </copy>
-   ````
-![](./images/vnc1.png " ")
 
-2. Check if the  vncserver process is running.
-  ````
-    <copy>
-   ps -ef|grep vnc
-   </copy>
-   ````
-![](./images/vnc2.png " ")
 
-3. Lets do the tunnelling  for the  port mentioned in the vnc process
+You may proceed to the next workshop.
 
-Go to putty settings -> SSH -> Tunnels and provide the source port and destination details.
+## Converged Database Workshop Collection
 
-![](./images/vnc3.png " ")
-
-4.	Then click on Add, Once we click on add we can see an entry in the forwarded ports, then click on Apply.
-
-![](./images/vnc4.png " ")
-
-5.	Start the VNC viewer.Provide the VNC server details, click on connect and provide the password as “vncserver”.
-![](./images/vnc5.png " ")
-
-6.	Open a terminal in vnc and follow below steps to start the sqldeveloper.
-````
-    <copy>
-   cd /u01/graph/jdk-11.0.5/
-   export JAVA_HOME=/u01/graph/jdk-11.0.5/
-   echo $JAVA_HOME
-   sqldeveloper
-   </copy>
-   ````
-
-You may proceed to the next lab.
+- [Node.js](?lab=node.js-lab-1-intro-setup) - Use Rest API to add products to the eShop Application
+- [Json](?lab=json-lab-1-intro-setup) - Store and read JSON documents from the Oracle Database
+- [XML](?lab=xml-lab-1-setup)- Manage XML content in the Oracle Database
+- [Spatial](?lab=spatial-lab-1-setup) - Work with Spatial Data in the Oracle Database
+- [Graph](?lab=graph-lab-1-intro-setup) - Work with Graph Data in the Oracle Database
+- [Cross Datatype](?lab=cross-lab-1-intro-usage) - Work with Cross Data Types
 
 ## Acknowledgements
 

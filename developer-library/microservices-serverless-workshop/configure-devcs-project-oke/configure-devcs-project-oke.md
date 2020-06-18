@@ -1,10 +1,26 @@
 # Configure the Project to Match the Kubernetes Cluster
 
-## Before You Begin
+## Introduction
 
 What we have to do now is to adapt parameters and code in project we have just imported to fit with our OKE deployment in your OCI tenancy.
 
 Before we have to create DNS Zones in OCI. A zone is a portion of the DNS namespace. A Start of Authority record (SOA) defines a zone. A zone contains all labels underneath itself in the tree, unless otherwise specified.
+
+Estimated time: 20 - 25 min
+
+### Objectives
+
+* Learn how to adapt parameters and code in project to fit with OKE deployment in OCI tenancy.
+
+### Lab Prerequisites
+
+This lab assumes you have completed the following labs:
+* Lab: Sign up for a Free Trial
+* Lab: Provision a DevCS Instance
+* Lab: Build Virtual Machines in Developer Cloud Service
+* Lab: Create a Kubernetes Cluster
+* Lab: Install the Front-end Client
+* Lab: Import a Developer Cloud Service Project
 
 ## **Step 1**: Create DNS Zone
 
@@ -18,9 +34,9 @@ Before we have to create DNS Zones in OCI. A zone is a portion of the DNS namesp
 
 3. And create a Manual Zone of type Primary named `hol5967` (for example ) and your username.com:
 
-  ```
-  hol5967-carlos.j.olivares.com
-  ```
+	````
+	hol5967-carlos.j.olivares.com
+	````
 
 4. Then click **Submit**:
 
@@ -30,9 +46,9 @@ Before we have to create DNS Zones in OCI. A zone is a portion of the DNS namesp
 
 5. You have to create a second DNS zone with same parameters but named like previous one prefixed with `front-`:
 
-  ```
-  front-hol5967-carlos.j.olivares.com
-  ```
+	````
+	front-hol5967-carlos.j.olivares.com
+	````
 
 6. You should have a DNS Zone Management like this:
 
@@ -66,21 +82,21 @@ In this project we have three types of builds, one for Fn Function (Serverless) 
 
   Remember that for Docker Login you have to enter as user:
 
-  ```
-  <object storage namespace>/<OCI tenancy user>
-  ```
+	````
+	<object storage namespace>/<OCI tenancy user>
+	````
 
 6. And password is:
 
-  ```
-  Authtoken for OCI Tenancy user
-  ```
+	````
+	Authtoken for OCI Tenancy user
+	````
 
 7. Also for Fn OCI section our Passphrase is empty. This has to be reflected as two single quotation marks:
 
-  ```
-  ''
-  ```
+	````
+	''
+	````
 
 8. Finally check Unix Shell and modify it accordingly with your tenancy details:
 
@@ -121,15 +137,15 @@ From:
 
 8. Remember that for Docker Login you have to enter as user:
 
-  ```
-  <object storage namespace>/<OCI tenancy user>
-  ```
+	````
+	<object storage namespace>/<OCI tenancy user>
+	````
 
   And password is:
 
-  ```
-  Authtoken for OCI Tenancy user
-  ```
+	````
+	Authtoken for OCI Tenancy user
+	````
 
   ![](./images/image128.png " ")
 
@@ -139,18 +155,19 @@ From:
 
 10. Change the three other docker Jobs in the same way:
 
-  ```
+  	````
     - ms_orchestrator_docker_create
     - ms_order_docker_create
     - ms_payment_docker_create
-  ```
+  	````
 
 ### OKE Jobs modification
 
 1. Now let’s change the 4 Docker Jobs. Go back to Builds menu and select the Job named:
-  ```
-  Front_order_to_OKE
-  ```
+
+	````
+	Front_order_to_OKE
+	````
 
 2. Then click **Configure**:
 
@@ -189,17 +206,17 @@ From:
 10. Important Note: modify the three other docker Jobs in the same way as
 previous job:
 
-  - ms\_orchestrator\_to\_OKE    
-      - VM Template: VM\_Basic\_Template    
-      - Git Repo: microservice\_orchestrator.git
+	- ms\_orchestrator\_to\_OKE    
+		- VM Template: VM\_Basic\_Template    
+		- Git Repo: microservice\_orchestrator.git
 
-  - ms\_order\_to\_OKE    
-      - VM Template: VM\_Basic\_Template    
-      - Git Repo: gigis-order-front.git
+	- ms\_order\_to\_OKE    
+		- VM Template: VM\_Basic\_Template    
+		- Git Repo: gigis-order-front.git
 
-  - ms\_payment\_to\_OKE:    
-      - VM Template: VM\_Basic\_Template    
-      - Git Repo: microservice-payment.git
+	- ms\_payment\_to\_OKE:    
+		- VM Template: VM\_Basic\_Template    
+		- Git Repo: microservice-payment.git
 
 ## **Step 3**: Configuring Git repositories
 
@@ -249,6 +266,7 @@ Now let’s change the yaml in different GIT repositories to fit with your Tenan
 11. And click **Create**
 
 ## **Step 4**: Create Policy
+
 1. Now let’s create the policy above mentioned. In OCI Console Menu go to: **Identity \> Policies**:
 
   ![](./images/image146.png " ")
@@ -259,9 +277,11 @@ Now let’s change the yaml in different GIT repositories to fit with your Tenan
 
 3. Fill in Name: `Fn_Tenancy_Policy_Resources` add a Description, this statement below:
 
-  ```
-  <copy>allow service FaaS to manage all-resources in tenancy</copy>
-  ```
+	````
+	<copy>
+	allow service FaaS to manage all-resources in tenancy
+	</copy>
+	````
 
   ![](./images/image148.png " ")
 
@@ -272,6 +292,7 @@ Now let’s change the yaml in different GIT repositories to fit with your Tenan
   A new policy is created.
 
 ## **Step 5**: Run the Build Process
+
 1. Now let’s run the build process to check if all the changes have been done correctly. Go back to DevCS Dashboard and select Builds menu. There select Pipelines tab:
 
   ![](./images/image150.png " ")
@@ -302,8 +323,7 @@ Now let’s change the yaml in different GIT repositories to fit with your Tenan
 
   ![](./images/image157.png " ")
 
-8. Finally go back to jobs tab, select the one named `fn_discount_to_FaaS_CK` and manually launch the build process for the
-Fn Function service by clicking **Build Now**:
+8. Finally go back to jobs tab, select the one named `fn_discount_to_FaaS_CK` and manually launch the build process for the Fn Function service by clicking **Build Now**:
 
   ![](./images/image158.png " ")
 
@@ -311,7 +331,7 @@ Fn Function service by clicking **Build Now**:
 
   ![](./images/image159.png " ")
 
-  You can proceed to the next lab.
+You can proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** -  Iván Postigo, Jesus Guerra, Carlos Olivares - Oracle Spain SE Team

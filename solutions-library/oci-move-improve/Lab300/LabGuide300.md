@@ -1,7 +1,8 @@
 # Lab 300: Integrate Oracle Cloud Platform services with your app.
 
 ## Introduction
-This lab walks you through the steps to integrate your third party app with Oracle Cloud PaaS. First, we will connect MySQL database and then Oracle Autonomous Data warehouse to Oracle Integration Cloud. After both the connections has been established, we will migrate the data from MySQL database to Oracle Autonomous Datawarehouse(ADW). Lastly, we will connect Oracle Analytics Cloud service to Oracle Autonomous Data warehouse to perform some analytics.
+This lab walks you through the steps to integrate your third party app with Oracle Cloud PaaS. First, we will connect MySQL database and then Oracle Autonomous Data warehouse to Oracle Integration Cloud. After both the connections has been established, we will migrate the data from MySQL database to Oracle Autonomous Datawarehouse(ADW). Lastly, we will connect Oracle Analytics Cloud service to Oracle Autonomous Data warehouse to perform some analytics. For a technical video that walks through this portion of the lab, please see the below link:<br>
+[Video](https://video.oracle.com/detail/video/6164371972001/lab-300-oic-adw-and-oac?autoStart=true&q=ocimoveimprove)
 
 ### Objectives
 * Establish connection from MySQL to Oracle Integration Cloud
@@ -49,13 +50,13 @@ Next, download the agent zip folder by clicking on Download > Connectivity Agent
 
 SSH to the oscommerce primary instance. Create a directory in oscommerce compute for oic agent. For example - /home/oscommerce/oicagent
 
-Secure copy (scp/winscp) file from your local computer to the oscommerce instance by running the following command in a terminal window - 
+Secure copy (scp/winscp) file from your local computer to the oscommerce instance by running the following command in a terminal window -
 
 ```
 scp -i /Users/mimehta/Desktop/sshkeybundle/privateKey /Users/mimehta/Desktop/oic_connectivity_agent opc@132.145.167.51:/home/opc/oicagent
 ```
 
-Unzip oic_connectivity_agent.zip using the command 
+Unzip oic_connectivity_agent.zip using the command
 
 ```
 unzip oic_connectivity_agent.zip
@@ -69,9 +70,9 @@ Download [JDK](https://www.oracle.com/java/technologies/javase/javase8u211-later
 
 Create another directory for Java installation - /home/opc/java.
 
-Copy JDK in the /home/opc/java directory and MySQL agent in the directory - /home/oscommerce/oicagent/agenthome/thirdparty/lib folder. 
+Copy JDK in the /home/opc/java directory and MySQL agent in the directory - /home/oscommerce/oicagent/agenthome/thirdparty/lib folder.
 
-Unzip and install JDK on oscommerce compute by navigating to the Java directory and running the command - 
+Unzip and install JDK on oscommerce compute by navigating to the Java directory and running the command -
 
 ```
 tar zxvf jdk-8u241-linux-x64.tar.gz
@@ -131,7 +132,7 @@ Database Name: oscommerce. This is the database name we used in Step 2
 
 Username & Password: Use the credentials that you used in Step 2
 
-Agent Group: In the Oracle Integration Cloud instance, there will be an Agent Group preconfigured for you. Select that one. If there is no agent, follow the steps from this [link](https://docs.oracle.com/en/cloud/paas/integration-cloud/integrations-user/agent-download-and-installation.html#GUID-72491B67-7445-4B52-94FA-CEC8488E0F4A) to install a new agent. 
+Agent Group: In the Oracle Integration Cloud instance, there will be an Agent Group preconfigured for you. Select that one. If there is no agent, follow the steps from this [link](https://docs.oracle.com/en/cloud/paas/integration-cloud/integrations-user/agent-download-and-installation.html#GUID-72491B67-7445-4B52-94FA-CEC8488E0F4A) to install a new agent.
 
 Please note: In order for our OIC instance to communicate with MySQL database, make sure the agent has write permission to your MySQL database. Please perform the following steps in order for to do that:
 
@@ -150,9 +151,9 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'ip_address';
 
 ### Step 2: Establish connection from Oracle Autonomous Database and Oracle Integration Cloud
 
-Creating a connection between an Oracle Autonomous Database and Oracle Integration Cloud is a very similar process to creating a connection between our MySQL database and OIC. 
+Creating a connection between an Oracle Autonomous Database and Oracle Integration Cloud is a very similar process to creating a connection between our MySQL database and OIC.
 
-Click on the same create button under the Connections tab and search for your respective Oracle Autonomous Database, either Autonomous Transaction Processing or Autonomous Warehouse. 
+Click on the same create button under the Connections tab and search for your respective Oracle Autonomous Database, either Autonomous Transaction Processing or Autonomous Warehouse.
 
 ![](./images/6.png "")
 
@@ -183,19 +184,19 @@ Before making connection, we have to ensure the target database table exists in 
 ![](./images/5d.png "")
 
 ```
-CREATE TABLE "ADMIN"."PRODUCTS" 
-   (	"PRODUCTS_ID" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
-	"PRODUCTS_QUANTITY" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
-	"PRODUCTS_MODEL" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
-	"PRODUCTS_IMAGE" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
-	"PRODUCTS_PRICE" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
-	"PRODUCTS_DATE_ADDED" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
-	"PRODUCTS_LAST_MODIFIED" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
-	"PRODUCTS_DATE_AVAILABLE" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
-	"PRODUCTS_WEIGHT" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
-	"PRODUCTS_STATUS" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
-	"PRODUCTS_TAX_CLASS_ID" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
-	"MANUFACTURERS_ID" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP", 
+CREATE TABLE "ADMIN"."PRODUCTS"
+   (	"PRODUCTS_ID" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
+	"PRODUCTS_QUANTITY" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
+	"PRODUCTS_MODEL" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
+	"PRODUCTS_IMAGE" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
+	"PRODUCTS_PRICE" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
+	"PRODUCTS_DATE_ADDED" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
+	"PRODUCTS_LAST_MODIFIED" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
+	"PRODUCTS_DATE_AVAILABLE" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
+	"PRODUCTS_WEIGHT" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
+	"PRODUCTS_STATUS" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
+	"PRODUCTS_TAX_CLASS_ID" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
+	"MANUFACTURERS_ID" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP",
 	"PRODUCTS_ORDERED" VARCHAR2(250 BYTE) COLLATE "USING_NLS_COMP"
    )  DEFAULT COLLATION "USING_NLS_COMP" ;
 
