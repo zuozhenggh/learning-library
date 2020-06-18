@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. You will provision a new ATP instance and connect to the database using Oracle SQL Developer Web.
+This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. You will provision a new ATP instance using the cloud console.
 
 *Note: While this lab uses ATP, the steps are identical for creating and connecting to an ADW database.*
 
@@ -10,13 +10,11 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 -   Learn how to provision a new Autonomous Transaction Processing instance
 
-### Required Artifacts
+### What Do You Need?
 
-The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
+* An <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
-### Lab Prerequisites
-
-This lab assumes you have already completed the [Register for Free Tier] (?lab=lab-1-register-for-free-tier) lab seen in the menu on the right.  In this lab you will be provisioning an Autonomous Transaction Processing instance using the cloud console.
+* You have already completed the [Register for Free Tier] (?lab=lab-1-register-for-free-tier) lab seen in the menu on the right.
 
 ### Video Preview
 
