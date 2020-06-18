@@ -35,45 +35,41 @@ Web services based on REST Architecture are known as RESTful web services. These
 
 ## Step 1: Download Postman
    
-1. Download the Postman.
+ 1. Download the Postman.
+    -  [Click here to download Postman](https://www.postman.com/downloads/)
 
--  [Click here to download Postman](https://www.postman.com/downloads/)
+    ![](./images/Postman1.PNG " ")
 
-  ![](./images/Postman1.PNG " ")
+    ![](./images/postman2.PNG " ")
 
-  ![](./images/postman2.PNG " ")
-   
-2. 	Launch the Postman
-        
-  ![](./images/nodejs-postman1.PNG " ")
+ 2. Launch the Postman.
+    ![](./images/nodejs-postman1.PNG " ")
 
-3. Open a new tab.
-  
-   ![](./images/nodejs-postman2.PNG " ")
-   
-4. Select POST Method and enter the request URL
+ 3. Open a new tab. 
+    ![](./images/nodejs-postman2.PNG " ")
 
-  - Method: - POST
-  - URL: - <\PUBLIC-IP>:3001/addproduct
-  - Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)
-  - Product details: - Example     
-  
-   ````
+ 4. Select POST Method and enter the request URL
+    - Method: - POST
+    - URL: - <\PUBLIC-IP>:3001/addproduct
+    - Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)
+    - Product details: - Example
+     
+    ````
     <copy>  
-	 {
-   "pid": "488",
-   "category": "Puma Shoe ",
-   "title": "Puma-shoe Demo3",
-   "details": "Puma-shoe-Original",
-   "price": "9",
-   "picture": "https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedbAppImage3/o/Puma-shoe-dietmar-hannebohn-_G94gB2cms0-unsplash.jpg"
-   }  
-  </copy>
-  ````    
+	  {
+    "pid": "488",
+    "category": "Puma Shoe ",
+    "title": "Puma-shoe Demo3",
+    "details": "Puma-shoe-Original",
+    "price": "9",
+    "picture": "https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedbAppImage3/o/Puma-shoe-dietmar-hannebohn-_G94gB2cms0-unsplash.jpg"
+    }  
+    </copy>
+    ````    
   
-  ![](./images/nodejs-postman3.PNG " ")
-  
-5. Click on the **Submit** button, Postman return the HTTP 200 after successfully added product in oracle database.
+  ![](./images/nodejs2.PNG " ")
+
+5. Click on the **Submit** button, Postman return the HTTP 200 after successfully adding the product in oracle database.
 
 
 ## Step 2: Using HTTP GET method.
@@ -88,7 +84,7 @@ Web services based on REST Architecture are known as RESTful web services. These
     To get the specific product details by using PID.
   -  URL: - <\PUBLIC-IP>:3001/products/31
     
-   ![](./images/nodejs-postman4.PNG " ")
+  ![](./images/nodejs-postman4.PNG " ")
     
 
  3. Open the browser and verify the above using link- "localhost:3001/products/31"
@@ -126,7 +122,7 @@ Web services based on REST Architecture are known as RESTful web services. These
 		   {"price": "12"}
 
      
- ![](./images/nodejs-postman8.PNG " ")
+    ![](./images/nodejs-postman8.PNG " ")
 
    
         
