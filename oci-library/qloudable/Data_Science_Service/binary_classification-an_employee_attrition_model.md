@@ -64,7 +64,7 @@ Welcome to the module on using the OCI Data Science Service to build a binary cl
 
 You will need to log in to use this module. The instructions that tell you how to do this will have the information that you need.
 
-**A note for Mac OS users. Use Ctrl+C / Ctrl+V to copy and paste inside the OCI Console**
+**A note for Mac OS users. Use Ctrl+C / Ctrl+V to copy and paste.**
 
 Have fun and enjoy learning about binary classification, exploratory data analysis (EDA), AutoML, model validation and selection, and machine learning explainability (MLX).
 
