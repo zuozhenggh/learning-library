@@ -10,16 +10,18 @@ During this bonus lab you will be using the Oracle Machine Learning (OML) notebo
 -   Learn how to use DBMS\_PREDICTIVE\_ANALYTICS routines
 -   Learn how to use Oracle ML Examples
 
-### Required Artifacts
+### Lab Prerequisites
 
--   The following lab requires a user with access to the Oracle Machine Learning Notebook application (note: you created such a user in the previous lab).
+-   This lab requires a user with access to the Oracle Machine Learning Notebook application
+
+    **Note:** you created such a user in the previous lab.
 
 ## STEP 1: Download the sample notebook for this lab
 The first step is to download the sample notebook and then import it into the Oracle ML notebook application.
 
-1. Download the sample notebook for this lab to a folder on your local computer from <a href="./files/Basic%20Machine%20Learning.zip" target="\_blank">here</a>.
+1. **Right-click** <a href="./files/Basic_Machine_Learning.json" download="./files/Basic_Machine_Learning.json" target="\_blank">here</a> and select **Save Link As...** from the menu, to download the sample notebook for this lab, Basic\_Machine\_Learning.json, to a folder on your local computer.
 
-  **Note:** the download is zipped and you will want to unzip it and copy the file in the zip to a known location on your computer.  After unzipping, you should have a file called "Basic Machine Learning.json".  Remember the location of where you have saved this file.
+  **Note:** Because this notebook is a JSON file, you cannot left-click to download the file.
 
 ## STEP 2: Login to the Oracle ML Notebook as one of your ML notebook users
 
@@ -41,9 +43,9 @@ The first step is to download the sample notebook and then import it into the Or
 
     ![](./images/snap0014522.jpg " ")
 
-## STEP 5: Select the unzipped lab notebook .json file you downloaded earlier
+## STEP 5: Select the lab notebook .json file you downloaded earlier
 
-1. Select the unzipped lab notebook **Basic Machine Learning.json** file you downloaded previously in Step 1.
+1. Select the lab notebook **Basic\_Machine\_Learning.json** file you downloaded previously in Step 1.
 
     ![](./images/snap0014523.jpg " ")
 
@@ -89,6 +91,6 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/20/dmapi
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, March 2020
+- **Last Updated By/Date** - Richard Green, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

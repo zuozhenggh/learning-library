@@ -4,10 +4,6 @@
 
 In this lab you will scale up your Oracle Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP) service to have more CPUs. And you will watch a demo that shows the performance and concurrency impacts of scaling your service online.
 
-Watch a video demonstration of monitoring an autonomous database in the Autonomous Data Warehouse cloud service.
-
-[](youtube:Imxl2JiYicQ)
-
 ### Objectives
 
 -   Learn how to scale up an ADW or ATP service
@@ -21,32 +17,30 @@ Watch a video demonstration of monitoring an autonomous database in the Autonomo
 
 -   This lab assumes you have completed the **Login to Oracle Cloud** and **Provision ADB** labs seen in the menu on the right.
 
-## <!--buggy, did this so Part 1 would collapse-->
+### Video Preview
+Watch a video demonstration of monitoring an autonomous database in the Autonomous Data Warehouse cloud service.
+
+[](youtube:Imxl2JiYicQ)
 
 ## Step 1: Scaling your Autonomous Database Instance
 
-1.  If you are not logged in to Oracle Cloud Console, login and select Autonomous Data Warehouse from the hamburger menu and navigate into your ADW Finance Mart instance.
-
-    ![](images/step1.1-LabGuide1-39fb4a5b.png " ")
-
-    ![](images/step1.1-adb.png " ")
-
-2.  In the database instance's details screen, from the action menu, click **Scale Up/Down**.
+1. Go back to the Cloud Console you used during the provisioning exercise and open the database instance's Details screen. From the **action menu**, click **Scale Up/Down**.
 
     ![](./images/Picture300-2.jpg " ")
 
-3.  Fill in the form with the following information.
+2.  Fill in the form with the following information.
 
     -   **CPU core count :** 8
     -   **Storage capacity:** 2 TB
-
-4.  Click **Update** after filling in the form. This will take you to the database instance's Details screen.
+    -   **Auto-Scaling:** Disabled
+  
+3.  Click **Update** after filling in the form. This will take you to the database instance's Details screen.
 
     ![](./images/Picture300-3.jpg " ")
 
-    **Note** The applications can continue running during the scale operation without downtime.
+    *Note: The applications can continue running during the scale operation without downtime.*
 
-5.  **Refresh** the page to see the result of the scaled operation.
+4.  **Refresh** the page to see the result of the scaled operation.
 
     ![](./images/Picture300-6.png " ")
 
@@ -69,5 +63,6 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, March 2020
+- **Contributors** - Jeffrey Malcolm Jr, Arabella Yao, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

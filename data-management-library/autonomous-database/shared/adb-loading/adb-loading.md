@@ -49,7 +49,7 @@ This lab assumes you have completed the [Login to Oracle Cloud] (?lab=lab-1-logi
 
 ## **STEP 1**: Download Sample Data and Create Local Table
 
-1. For this step, you will download a .csv file to your local computer, then use it to populate the CHANNELS_LOCAL table that you will create in your ADW database in the next step.  Click <a href="./files/channels.csv" target="\_blank">here</a> to download the sample channels.csv file, saving it to a directory on your local computer.
+1. For this step, you will download a .csv file to your local computer, then use it to populate the CHANNELS_LOCAL table that you will create in your ADW database in the next step.  Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/A5zXkuuOG2C5AOBHTiVpJd3obiECvsk8omPtnzvTwP0/n/c4u03/b/data-management-library-files/o/channels.csv" target="\_blank">here</a> to download the sample channels.csv file, saving it to a directory on your local computer.
 
 2. In your autonomous database's details page, click the **Tools** tab. Click **Open SQL Developer Web**.
 
