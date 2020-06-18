@@ -197,7 +197,7 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
 
 You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your big data sources. When you add Cloud SQL support to a cluster, a query server node is added and big data cell servers are created on all worker nodes. For information about using Cloud SQL with Big Data Service see [Use Cloud SQL with Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-cloud-sql-big-data-service.html).
 
-**Note:** Cloud SQL is not included with Big Data Service. You must pay an extra fee for use of Cloud SQL.
+**Note:** Cloud SQL is not included with Big Data Service. You must pay an extra fee for using Cloud SQL.
 
 1. Click the **Clusters** link in the breadcrumb at the top of the page to re-display the **Clusters** page.
 
