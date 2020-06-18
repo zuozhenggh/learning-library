@@ -1,10 +1,22 @@
 # Create and Configure a Developer Cloud Service Instance
 
-## Before You Begin
+## Introduction
 
-In this lab you will provision an Oracle Developer Cloud Service instance, gather data from your Oracle Cloud Tenancy and use the data to configure your Developer Cloud Service instance
+In this lab you will provision an Oracle Developer Cloud Service instance, gather data from your Oracle Cloud Tenancy and use the data to configure your Developer Cloud Service instance.
 
-## **Step 1**: Provision a Developer Cloud Service instance
+Estimated time: 15 - 20 min
+
+### Objectives
+
+* Learn how to provision an Oracle Developer Cloud Service instance
+* Learn how to configure an Oracle Developer Cloud Service instance
+
+### Lab Prerequisites
+
+This lab assumes you have completed the following labs:
+* Lab: Sign up for a Free Trial
+
+## **Step 1**: Provision a Developer Cloud Service Instance
 
 1. Click the hamburger icon on the top left side and select **Platform Services** (under More Oracle Cloud Services Area), then select **Developer**.
 
@@ -14,11 +26,11 @@ In this lab you will provision an Oracle Developer Cloud Service instance, gathe
 
   ![](./images/image14.png " ")
 
-3. On the next screen provide an instance name and fill in the region you want to create your instance in, then click **Next**:
+3. On the next screen provide an instance name and fill in the region you want to create your instance in, then click **Next**.
 
   ![](./images/image15.png " ")
 
-4. Check the selections from the previous screen and click **Create**:
+4. Check the selections from the previous screen and click **Create**.
 
   ![](./images/image16.png " ")
 
@@ -28,7 +40,7 @@ In this lab you will provision an Oracle Developer Cloud Service instance, gathe
 
 This process will take some time. Proceed to the next step to gather the data you'll need to configure the Developer Cloud Service Instance when it is ready.
 
-## **Step 2**: Gather key config data from the Oracle Cloud Tenancy
+## **Step 2**: Gather Key Config Data from the Oracle Cloud Tenancy
 
 Before we are able to configure a Developer Cloud Service Instance, let’s gather some key info about our OCI tenancy that will be required throughout the rest of the lab. We recommend that you create a `txt` file where you can store the basic info you will be required to use several times during this lab:
 
@@ -41,7 +53,7 @@ Before we are able to configure a Developer Cloud Service Instance, let’s gath
   - Compartment OCID
   - Object Storage Namespace
 
-1. From the Oracle Cloud Infrastructure interface menu, click **Administration \> Tenancy Details**:
+1. From the Oracle Cloud Infrastructure interface menu, click **Administration \> Tenancy Details**.
 
   ![](./images/image18.png " ")
 
@@ -91,8 +103,7 @@ Before we are able to configure a Developer Cloud Service Instance, let’s gath
 
   ![](./images/image28.png " ")
 
-12. Click **Create Compartment** to open the Create Compartment dialog, and fill the Name field (for example
-HandsOnLab), Description and Parent Compartment (it must be root referred with tenancy name) and click **Create Compartment**:
+12. Click **Create Compartment** to open the Create Compartment dialog, and fill the Name field (for example HandsOnLab), Description and Parent Compartment (it must be root referred with tenancy name) and click **Create Compartment**:
 
   ![](./images/image29.png " ")
 

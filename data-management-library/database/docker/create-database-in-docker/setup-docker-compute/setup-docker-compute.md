@@ -35,7 +35,7 @@ Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, a
     [root@oraclelinux77 ~]#
     ```
 
-3. Install the Docker engine:
+3. Install the Docker engine, enter **y** when prompted:
 
     ```
     [root@oraclelinux77 ~]# <copy>yum install docker-engine</copy>

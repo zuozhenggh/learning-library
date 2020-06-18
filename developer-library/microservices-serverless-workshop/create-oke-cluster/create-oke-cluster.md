@@ -1,8 +1,21 @@
 # Create a Kubernetes Cluster
 
-## Before You Begin
+## Introduction
 
 In this lab you will create a Kubernetes Cluster to deploy the microservices you will create in a later lab.
+
+Estimated time: 20 - 25 min
+
+### Objectives
+
+* Learn how to create a Kubernetes Cluster
+
+### Lab Prerequisites
+
+This lab assumes you have completed the following labs:
+* Lab: Sign up for a Free Trial
+* Lab: Provision a DevCS Instance
+* Lab: Build Virtual Machines in Developer Cloud Service
 
 ## **Step 1**: Create Policies
 
@@ -14,11 +27,13 @@ In this lab you will create a Kubernetes Cluster to deploy the microservices you
 
   ![](./images/image68.png " ")
 
-   ```
-   <copy>Allow service OKE to manage all-resources in tenancy</copy>
-   ```
+	````
+	<copy>
+    Allow service OKE to manage all-resources in tenancy
+    </copy>
+    ````
 
-3. And then click **Create**:
+3. And then click **Create**.
 
   ![](./images/image57.png " ")
 
@@ -28,23 +43,23 @@ In this lab you will create a Kubernetes Cluster to deploy the microservices you
 
 ## **Step 2**: Create OKE Clusters
 
-1. In the OCI Dashboard Menu go to: Developer Services-\> Container Clusters (OKE)
+1. In the OCI Dashboard Menu go to: Developer Services-\> Container Clusters (OKE).
 
   ![](./images/image59.png " ")
 
-2. Select the compartment you created in lab 2 under List Scope and click **Create Cluster**:
+2. Select the compartment you created in lab 2 under List Scope and click **Create Cluster**.
 
   ![](./images/image60.png " ")
 
-3. Provide a name for the cluster, then select the QUICK CREATE option and click the **Launch Workflow** button:
+3. Provide a name for the cluster, then select the QUICK CREATE option and click the **Launch Workflow** button.
 
   ![](./images/image300.png " ")
 
-4. Select VM.Standard2.1 for SHAPE and 3 (or less if you don't want to create a 3 workernodes nodepool) for the NUMBER OF NODES (this number is the VMs that will be created into the node pool). Then click **NEXT**. Leave the rest of the parameters as defaults:
+4. Select VM.Standard2.1 for SHAPE and 3 (or less if you don't want to create a 3 workernodes nodepool) for the NUMBER OF NODES (this number is the VMs that will be created into the node pool). Then click **NEXT**. Leave the rest of the parameters as defaults.
 
   ![](./images/image301.png " ")
 
-5. Review the cluster information before to create it, and click **Create Cluster** or back to modify cluster options:
+5. Review the cluster information before to create it, and click **Create Cluster** or back to modify cluster options.
 
   ![](./images/image302.png " ")
 
@@ -56,11 +71,11 @@ In this lab you will create a Kubernetes Cluster to deploy the microservices you
 
   ![](./images/image64.png " ")
 
-7. Then you are taken to the Cluster Information page. Please copy Cluster id and don’t forget to make a note in a txt file as you will need this data later:
+7. Then you are taken to the Cluster Information page. Please copy Cluster id and don’t forget to make a note in a txt file as you will need this data later.
 
   ![](./images/image65.png " ")
 
-8. It will take several minutes for the cluster to be created and you may need to refresh the page. Once created, you can scroll down and select **Node Pools** under the Resources area, you can check that a node pool with three node clusters has been created:
+8. It will take several minutes for the cluster to be created and you may need to refresh the page. Once created, you can scroll down and select **Node Pools** under the Resources area, you can check that a node pool with three node clusters has been created.
 
   ![](./images/image66.png " ")
 

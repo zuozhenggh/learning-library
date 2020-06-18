@@ -398,7 +398,7 @@ Start a JShell. Then check which graph is loaded. Then query it.
 Enter the following code in JShell.
 ```
 <copy>
-Consumer<String> query = q -> {
+Consumer&lt;String&gt; query = q -> {
     try(var s = pgql.prepareStatement(q)) {
       s.execute();
       s.getResultSet().print();

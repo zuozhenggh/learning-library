@@ -1,11 +1,27 @@
 # Importing a Developer Cloud Service Project
 
+## Introduction
 
 Once that we have a Kubernetes Cluster, let’s move on to next step which is importing a DevCS that contains all the microservices that we will have to deploy in this Kubernetes Cluster.
 
+Estimated time: 10 - 15 min
+
+### Objectives
+
+* Learn how to import a DevCS that contains all the microservices
+
+### Lab Prerequisites
+
+This lab assumes you have completed the following labs:
+* Lab: Sign up for a Free Trial
+* Lab: Provision a DevCS Instance
+* Lab: Build Virtual Machines in Developer Cloud Service
+* Lab: Create a Kubernetes Cluster
+* Lab: Install the Front-end Client
+
 ## **Step 1**: Import a Developer Cloud Service Project
 
-1. Go to your DevCS instance and in Organization Menu option, under Projects tab, click **Create**:
+1. Go to your DevCS instance and in Organization Menu option, under Projects tab, click **Create**.
 
   ![](./images/image101.png " ")
 
@@ -19,7 +35,7 @@ Once that we have a Kubernetes Cluster, let’s move on to next step which is im
 
 4. For Properties section, we will provide you with details to connect to a preconfigured DevCS instance from which you an import the project in this url:
 
-https://github.com/oraclespainpresales/GigisPizzaHOL/tree/master/microservices/Credentials
+  [https://github.com/oraclespainpresales/GigisPizzaHOL/tree/master/microservices/Credentials](https://github.com/oraclespainpresales/GigisPizzaHOL/tree/master/microservices/Credentials)
 
 5. Click on Next:
 
@@ -47,11 +63,11 @@ https://github.com/oraclespainpresales/GigisPizzaHOL/tree/master/microservices/C
 
   ![](./images/image109.png " ")
 
-11. Now go to Builds Menu option and check different Jobs
+11. Now go to Builds Menu option and check different Jobs.
 
   ![](./images/image110.png " ")
 
-12. And click **Pipelines** tab to check different Pipelines
+12. And click **Pipelines** tab to check different Pipelines.
 
   ![](./images/image111.png " ")
 

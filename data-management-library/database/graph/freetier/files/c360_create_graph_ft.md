@@ -15,6 +15,8 @@ The steps are:
 SSH into the compute instance where you installed the graph server.  
 Switch to the user account (e.g. `oracle`) that has the database wallet and will run the server and client instances. 
 
+**Note: You must logout and then log back in for the changes in the `oracle` user's `bash_profile` to take effect.**
+
 ```
 <copy>
 su - oracle 
@@ -43,6 +45,11 @@ Then, as the `oracle` user, start the server using
 /opt/oracle/graph/pgx/bin/start-server
 </copy>
 ```
+
+**Note: Do not exit this shell since the graph server process runs in the foreground.**
+
+You will see the following log output once the server is up and running.  
+>INFO: Starting ProtocolHandler ["http-nio-7007"]
 
 ### Start a client shell 
 
@@ -166,10 +173,10 @@ Check that the graph was created. Copy, paste, and run the following statements 
 Copy the following code, paste, and execute it in the JShell.
 
 ```
-
+<copy>
 // create a helper method for preparing, executing, and printing the results of PGQL statements
-Consumer<String> query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
-
+Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
+</copy>
 // sample jshell output
 // query ==> $Lambda$583/0x0000000800695c40@65021bb4
 ```
