@@ -12,9 +12,9 @@ Before continuing to the first lab, follow the steps below to create an APEX wor
 
 | # | Lab | Est. Time |
 | --- | --- | --- |
-| 1 | [JavaScript Basics](?lab=lab-1-javascript-basics) | 30 min |
-| 2 | [Adding JavaScript to APEX Apps](?lab=lab-2-adding-javascript-to-apex-apps) | 30 min |
-| 3 | [Working with jQuery and the DOM](?lab=lab-3-working-with-the-dom-and-jquery) | 30 min |
+| 1 | [JavaScript Basics](?lab=lab-1-javascript-basics) | 20 min |
+| 2 | [Adding JavaScript to APEX Apps](?lab=lab-2-adding-javascript-to-apex-apps) | 60 min |
+| 3 | [Working with jQuery and the DOM](?lab=lab-3-working-with-the-dom-and-jquery) | 60 min |
 
 ## **Step 1**: Acquire an Oracle Cloud trial account
 
