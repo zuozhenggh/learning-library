@@ -1,20 +1,20 @@
 # Introduction
 
-## Lab overview and setup
+## Workshop overview and setup
 
-Welcome to the Introduction to JavaScript for APEX Developers hands-on lab. For developers that know SQL and PL/SQL, no other framework is as empowering as Oracle Application Express (APEX). But at the end of the day, APEX creates web apps, and it's JavaScript that programs the web. Over the years, JavaScript's role in APEX apps has increased, both for the creators of APEX and the developers using it - a trend that will continue in the years to come.
+Welcome to the Introduction to JavaScript for APEX Developers workshop. For developers that know SQL and PL/SQL, no other framework is as empowering as Oracle Application Express (APEX). But at the end of the day, APEX creates web apps, and it's JavaScript that programs the web. Over the years, JavaScript's role in APEX apps has increased, both for the creators of APEX and the developers using it - a trend that will continue in the years to come.
 
-APEX developers only need to know a little bit of JavaScript to have a significant impact, and that's what this hands-on lab is all about! You'll start by learning some of the basics of JavaScript, then learn how to add JavaScript to APEX apps, and finally, you'll learn to use jQuery to work with the DOM.
+APEX developers only need to know a little bit of JavaScript to have a significant impact, and that's what this workshop is all about! You'll start by learning some of the basics of JavaScript, then learn how to add JavaScript to APEX apps, and finally, you'll learn to use jQuery to work with the DOM.
 
-Before continuing to the first lab, follow the steps below to create an APEX workspace using the free tier in Oracle Cloud. If you already have a workspace you'd like to use, you may [proceed to the first lab](?lab=module-1-javascript-basics).
+Before continuing to the first lab, follow the steps below to create an APEX workspace using the free tier in Oracle Cloud. If you already have a workspace you'd like to use, you may [proceed to the first lab](?lab=lab-1-javascript-basics).
 
 **Labs**
 
 | # | Lab | Est. Time |
 | --- | --- | --- |
-| 1 | [JavaScript Basics](?module=javascript-basics) | 20 min |
-| 2 | [Adding JavaScript to APEX Apps](?module=adding-javascript-to-apex-apps) | 60 min |
-| 3 | [Working with jQuery and the DOM](?module=working-with-the-dom-and-jquery) | 60 min |
+| 1 | [JavaScript Basics](?lab=lab-1-javascript-basics) | 30 min |
+| 2 | [Adding JavaScript to APEX Apps](?lab=lab-2-adding-javascript-to-apex-apps) | 30 min |
+| 3 | [Working with jQuery and the DOM](?lab=lab-3-working-with-the-dom-and-jquery) | 30 min |
 
 ## **Step 1**: Acquire an Oracle Cloud trial account
 
@@ -74,23 +74,19 @@ In this step, you will create an instance of the Autonomous Transaction Processi
 
 When you first access APEX you will need to log in as an APEX instance administrator to create a workspace. A workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
 
-1.  Click the **Service Console** button.
+1.  Click the **Tools** tab and then the **Open APEX** button.
 
-    ![](images/click-atp-service-console.png)
+    ![](images/click-open-apex.png)
 
-2.  Click **Tools** option in the menu on the left, then click the **Oracle APEX** option.
-
-    ![](images/click-oracle-apex.png)
-
-3.  Enter the password for the Administration Services and click **Sign In to Administration**. The password is the same as the one entered for the ADMIN user when creating the ATP instance: **`SecretPassw0rd`**
+2.  Enter the password for the Administration Services and click **Sign In to Administration**. The password is the same as the one entered for the ADMIN user when creating the ATP instance: **`SecretPassw0rd`**
 
     ![](images/log-in-as-admin.png)
 
-4.  Click **Create Workspace**.
+3.  Click **Create Workspace**.
 
    ![](images/welcome-create-workspace.png)
 
-5.  Enter the following details and click **Create Workspace**.
+4.  Enter the following details and click **Create Workspace**.
 
     | Property | Value |
     | --- | --- |
@@ -100,18 +96,19 @@ When you first access APEX you will need to log in as an APEX instance administr
 
     ![](images/create-workspace.png)
 
-6.  Click the **DEMO** link in the success message. This will log you out of APEX administration so that you can log into your new workspace.
+5.  Click the **DEMO** link in the success message. This will log you out of APEX administration so that you can log into your new workspace.
 
     ![](images/log-out-from-admin.png)
 
-7.  Enter **`SecretPassw0rd`** for the password, check the **Remember workspace and username** checkbox, and then click **Sign In**.
+6.  Enter **`SecretPassw0rd`** for the password, check the **Remember workspace and username** checkbox, and then click **Sign In**.
 
     ![](images/log-in-to-workspace.png)
 
-You may now proceed to the next lab.
+You may now proceed to the [next lab](?lab=lab-1-javascript-basics).
 
 ## **Acknowledgements**
- - **Author/Contributors** -  David Peake, Database Product Management
+
+ - **Author/Contributors** -  Dan McGhan, Database Product Management
  - **Last Updated By/Date** - Jeffrey Malcolm, LiveLabs QA, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request. 
