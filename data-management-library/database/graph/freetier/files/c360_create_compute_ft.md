@@ -1,16 +1,23 @@
-## Setup a Linux Compute instance
+# Setup a Linux Compute Instance
 
-*Notes:*  
- - *This is based on Practice 2 of the [OCI Lab L100](https://oracle.github.io/learning-library/oci-library/L100-LAB/Compute_Services/Compute_HOL.html#practice-2-creating-a-web-server-on-a-compute-instance) for setting up a web server on a compute.*  
- - *Some of the UIs might look a little different than the screen shots included in the instructions.*
+## Introduction
 
-This step assumes you have registered for a Cloud account and have cerated the SSH Keys.
+### Objectives
 
-### Create a free tier VM
 
-An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as a Bare Metal instance, leveraging the same cloud-optimized hardware, firmware, software stack, and networking infrastructure.
+### What Do You Need? 
+* Registered cloud account
+* Created SSH Keys
+  
+*Note 1: This is based on Practice 2 of the [OCI Lab L100](https://oracle.github.io/learning-library/oci-library/L100-LAB/Compute_Services/Compute_HOL.html#practice-2-creating-a-web-server-on-a-compute-instance) for setting up a web server on a compute.*
 
-1. Navigate to the **Compute** tab and click **Create Instance**. We will launch a VM instance for this lab.
+*Note 2: Some of the UIs might look a little different from the screenshots in the instructions.*
+
+## STEP 1: Create a Free Tier Virtual Machine
+
+An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the same hardware as a Bare Metal instance, leveraging the same cloud-optimized hardware, firmware, software stack, and networking infrastructure.
+
+1. Go to your Cloud Console. Navigate to the **Compute** tab and click **Create Instance**. We will launch a VM instance for this lab.
 
 2. The Create Compute Instance wizard will launch. Set the name of the server to *Graph-Server* (instead of Web-Server as shown in the screenshot). Click on the *Show Shape, Networking, Storage Options* link to expand that area of the page. Choose an Always Free eligible shape (i.e. a Micro VM).
     ![Create step 1](https://oracle.github.io/learning-library/oci-library/L100-LAB/Compute_Services//media/Create1.png)
@@ -20,7 +27,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ***NOTE:*** *You need a public IP address so that you can SSH into the running instance later in this lab.*
 
-4. Scroll down to the SSH area of the page. Choose the *id_rsa.pub* SSH key that you created earlier in this lab. Press the *Create* button to create your instance.
+4. Scroll down to the SSH area of the page. Choose the *id_rsa.pub* SSH key that you created earlier in this lab. Press the **Create** button to create your instance.
 
     Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute and the instance state will change from provisioning to running.
 
@@ -66,8 +73,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ```
 
 
-
-### Copy and deploy Graph Server and Client on the Linux Compute
+## STEP 2: Copy and deploy Graph Server and Client on the Linux Compute
 
 The [Property Graph developer's guide](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/property-graph-overview-spgdg.html#GUID-FF149F69-574D-43B8-B888-4CCD019DAE56) describes the installation and configuration process in greater detail. 
 
@@ -103,7 +109,7 @@ sudo usermod -a -G oraclegraph oracle
 </copy>
 ```
 
-Install the JDK8 and 11.
+Install the JDK8 and 11. Enter **y** when prompted.
 
 ```
 <copy>
@@ -114,7 +120,7 @@ sudo yum install jdk1.8.x86_64 jdk-11.0.5.x86_64
 Check which is the default java and change it using `alternatives`.
 
 ```
-$ alternatives --list 
+$ <copy>alternatives --list</copy>
 libnssckbi.so.x86_64	auto	/usr/lib64/pkcs11/p11-kit-trust.so
 ld	auto	/usr/bin/ld.bfd
 mta	auto	/usr/sbin/sendmail.postfix
@@ -126,7 +132,7 @@ javac	auto	/usr/java/jdk1.8.0_251-amd64/bin/javac
 Use alternatives set java executable to JDK8.
 
 ```
-sudo alternatives --config java
+<copy>sudo alternatives --config java</copy>
 
 There are 2 programs which provide 'java'.
 
@@ -140,7 +146,7 @@ Enter to keep the current selection[+], or type selection number: 2
 
 Check the java version now.
 ```
-java -version
+<copy>java -version</copy>
 java version "1.8.0_251"
 Java(TM) SE Runtime Environment (build 1.8.0_251-b08)
 Java HotSpot(TM) 64-Bit Server VM (build 25.251-b08, mixed mode)
@@ -244,7 +250,3 @@ An entry in tnsnames.ora is of the form
 &nbsp;&nbsp;`)`  
 
 Note the `addressname`, e.g. `ADWC1_high` that you will use later when connecting to the databases using JDBC.
-
-
-
-
