@@ -1,6 +1,6 @@
 # JSON Github
 
-##Introduction to JSON Data and Oracle Database
+## Introduction to JSON Data and Oracle Database
 
 Schemaless development based on persisting application data in the form of JSON documents lets you quickly react to changing application requirements. You can change and redeploy your application without needing to change the storage schemas it uses.
 
@@ -8,10 +8,10 @@ SQL and relational databases provide flexible support for complex data analysis 
 
 Oracle Database provides all of the benefits of SQL and relational databases to JSON data, which you store and manipulate in the same ways and with the same confidence as any other type of database data.
 
-    [JSON in Oracle Database]https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/json-in-oracle-database.html#GUID-A8A58B49-13A5-4F42-8EA0-508951DAE0BB
+    [JSON in Oracle Database](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/json-in-oracle-database.html#GUID-A8A58B49-13A5-4F42-8EA0-508951DAE0BB)
     Oracle Database supports JavaScript Object Notation (JSON) data natively with relational database features, including transactions, indexing, declarative querying, and views.
 
-    [JSON Data]https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/json-data.html#GUID-615A4146-6DC0-4E66-9AD0-CD74C90D208A
+    [JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/json-data.html#GUID-615A4146-6DC0-4E66-9AD0-CD74C90D208A)
     JavaScript Object Notation (JSON) is defined in standards ECMA-404 (JSON Data Interchange Format) and ECMA-262 (ECMAScript Language Specification, third edition). The JavaScript dialect of ECMAScript is a general programming language used widely in web browsers and web servers.
 
 
