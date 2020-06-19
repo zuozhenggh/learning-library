@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. You will provision a new ADW instance and connect to the database using Oracle SQL Developer Web.
+This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. You will provision a new ATP instance and connect to the database using Oracle SQL Developer Web.
 
-*Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
+*Note: While this lab uses ATP, the steps are identical for creating and connecting to an ADW database.*
 
 ### Objectives
 
--   Learn how to provision a new Autonomous Data Warehouse
+-   Learn how to provision a new Autonomous Transaction Processing instance
 
 ### Required Artifacts
 
@@ -16,32 +16,32 @@ The following lab requires an <a href="https://www.oracle.com/cloud/free/" targe
 
 ### Lab Prerequisites
 
-This lab assumes you have already completed the [Log in to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) lab seen in the menu on the right.  In this lab you will be provisioning an ADB database instance using the cloud console.
+This lab assumes you have already completed the [Register for Free Tier] (?lab=lab-1-register-for-free-tier) lab seen in the menu on the right.  In this lab you will be provisioning an Autonomous Transaction Processing instance using the cloud console.
 
 ### Video Preview
 
-Watch a video demonstration of provisioning a new autonomous data warehouse:
+Watch a video demonstration of provisioning an autonomous database in Autonomous Transaction Processing (same steps apply to creating an autonomous database in Autonomous Data Warehouse):
 
 [](youtube:Q6hxMaAPghI)
 
-## **STEP 1**: Choosing ADW or ATP from the Services Menu
+## **STEP 1**: Choose ATP from the Services Menu
 
 1. Login to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
     __Note:__ You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
 
-    ![](./images/Picture100-36.png " ")
+    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-36.png " ")
 
-3. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Data Warehouse database, so click **Autonomous Data Warehouse**.
+3. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Transaction Processing (ATP) database, so click **Autonomous Transaction Processing**.
 
     ![](images/LabGuide1-39fb4a5b.png " ")
 
-4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. You can use the __List Scope__ drop-down menu to select a compartment. Select your __root compartment__, or __another compartment of your choice__ where you will create your new ADW instance. If you want to create a new compartment or learn more about them, click <a href="https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#three" target="\_blank">here</a>.
+4. Make sure your workload type is __Transaction Processing__ or __All__ to see your Autonomous Transaction Processing instances. You can use the __List Scope__ drop-down menu to select a compartment. Select your __root compartment__, or __another compartment of your choice__ where you will create your new ATP instance. If you want to create a new compartment or learn more about them, click <a href="https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#three" target="\_blank">here</a>.
 
- __Note__ - Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
+ *__Note__ - Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
 
-5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the state of the databases (available, stopped, terminated, and so on). You can also sort by __Workload Type__. Here, the __Data Warehouse__ workload type is selected.
+5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the state of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
 
     ![](./images/Compartment.png " ")
 
@@ -66,8 +66,8 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
 4. Choose a workload type. Select the workload type for your database from the choices:
 
-    - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.
-    - __Transaction Processing__ - Alternately, you could have chosen Transaction Processing as the workload type.
+    - __Transaction Processing__ - For this lab, choose __Transaction Processing__ as the workload type.
+    - __Data Warehouse__ - Alternately, you could have chosen Data Warehouse as the workload type.
 
     ![](./images/Picture100-26b.png " ")
 
@@ -76,9 +76,9 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
     - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     - __Dedicated Infrastructure__ - Alternately, you could have chosen Dedicated Infrastructure as the workload type.
 
-    ![](./images/Picture100-26_deployment_type.png " ")
+    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-26_deployment_type.png " ")
 
-6. Configure the database:
+6. Configure the database, select the **Always Free** option:
 
     - __Always Free__ - For this lab, you can select this option to create an always free autonomous database, or not select this option and create a database using your paid subscription. An always free database comes with 1 CPU and 20 GB of storage. Selecting Always Free will suffice for this lab.
     - __Choose database version__ - Select a database version from the available versions.
@@ -87,7 +87,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
     - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do __not__ select it.
 
-    ![](./images/Picture100-26c.png " ")
+    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-26c.png " ")
 
 7. Create administrator credentials:
 
@@ -99,13 +99,13 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
     - The password must not be the same password that is set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
-    ![](./images/Picture100-26d.png " ")
+    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-26d.png " ")
 8. Choose network access:
     - For this lab, accept the default, "Allow secure access from everywhere".
     - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
     - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
 
-    ![](./images/Picture100-26e.png " ")
+    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-26e.png " ")
 
 9. Choose a license type. For this lab, choose __License Included__. The two license types are:
 
@@ -114,13 +114,13 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
 10. Click __Create Autonomous Database__.
 
-    ![](./images/Picture100-27.png " ")
+    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-27.png " ")
 
-11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
+11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Transaction Processing database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
 
     ![](./images/Picture100-32.png " ")
 
-Please proceed to the next lab.
+Please *proceed to the next lab*.
 
 ## Want to Learn More?
 
@@ -131,6 +131,5 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, March 2020
-- **Contributors** - Jeffrey Malcolm Jr, Arabella Yao, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

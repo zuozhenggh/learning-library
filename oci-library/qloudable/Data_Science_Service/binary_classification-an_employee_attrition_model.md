@@ -60,7 +60,7 @@ This module uses the Oracle Cloud Infrastructure (OCI) Data Science service. Whi
 
 **Follow the guided instructions to login and access the course.**
 
-Welcome to the module on using the OCI Data Science Service to build a binary classification module. In the instructions there are a few screen shots. The service is always changing and while we try to keep up with the changes, please note that they are there for your reference only and things may look a little different.
+Welcome to the module on using the OCI Data Science service to build a binary classification module. In the instructions there are a few screen shots. The service is always changing and while we try to keep up with the changes, please note that they are there for your reference only and things may look a little different.
 
 You will need to log in to use this module. The instructions that tell you how to do this will have the information that you need.
 
