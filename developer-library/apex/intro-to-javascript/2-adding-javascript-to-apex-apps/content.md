@@ -265,7 +265,7 @@ In the last step, you added JavaScript code directly to page and component level
 
 ## **Summary**
 
-This completes Lab 2. At this point, you should have a solid understanding of the options available for adding JavaScript to APEX applications. Please proceed to [Lab 3](?lab=lab-3-working-with-the-dom-and-jquery).
+This completes Lab 2. At this point, you should have a solid understanding of the options available for adding JavaScript to APEX applications. Please proceed to [Lab 3](?lab=lab-3-working-dom-jquery).
 
 ## **Acknowledgements**
  - **Author/Contributors** -  Dan McGhan, Database Product Management

@@ -155,7 +155,7 @@ Objects and functions are used to compose and organize code in JavaScript. It's 
 
 ## **Summary**
 
-This completes Lab 1. At this point, you should be getting comfortable working with the console and some of JavaScript's core concepts. Please proceed to [Lab 2](?lab=lab-2-adding-javascript-to-apex-apps) .
+This completes Lab 1. At this point, you should be getting comfortable working with the console and some of JavaScript's core concepts. Please proceed to [Lab 2](?lab=lab-2-adding-javascript-apex-apps) .
 
 ## **Acknowledgements**
  - **Author/Contributors** -  Dan McGhan, Database Product Management
