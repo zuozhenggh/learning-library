@@ -46,7 +46,7 @@ In order to divide and isolate cluster resources, you will create a cluster
     installed:
 
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/S0A1BNckU3xKNW-XIQVgJ76ESgAtRIZ2sT47AOrBdjc/n/c4u03/b/labfiles/o/msdataworkshop-master.zip</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZaegTuNX8_vVPyP6QF1W6LaMXdziREUN1U_8JUEU9Zw/n/c4u03/b/data-management-library-files/o/msdataworkshop-master.zip</copy>
     ```
 
 2. Unzip the file you downloaded:
@@ -55,8 +55,8 @@ In order to divide and isolate cluster resources, you will create a cluster
     <copy>unzip msdataworkshop-master.zip</copy>
     ```
 
-3.  You need to compile, test and package into a .jar file the Helidon front-end
-    application code using maven. The maven package is already installed in the
+3.  You need to compile, test and package the Helidon front-end
+    application code into a `.jar` file using maven. The maven package is already installed in the
     Cloud Shell. Inside Cloud Shell go to the frontend helidon microservice
     folder.
 
@@ -90,15 +90,15 @@ After you have successfully compiled the application code, you are ready to push
 
 1.  You will need the following parameters which you have already noted down in the previous Labs.
 
-    - `<region-key>` - is the Region identifier
-    - `<tenancy-namespace>` - is Object Storage namespace
-    - `<username>` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname`
+    - `<region-id>` - is the Region identifier
+    - `<object-store-namespace>` - is Object Storage namespace
+    - `<username>` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something`
 
     ```
-    docker login <region-key>.ocir.io -u <tenancy-namespace>/<username>
+    docker login <region-id>.ocir.io -u <object-store-namespace>/<username>
     ```
 
-    *When prompted for password use the Auth token you generated.*
+    *When prompted for password use the Auth token (msdataworkshoptoken) you generated.*
 
   ![](images/1bcf17e7001e44e1e7e583e61618acbf.png " ")
 
@@ -110,7 +110,7 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
-3.  For convenience, let’s store some environment variables into the `.bashrc` file. Open `bashrc` file with `vi` editor
+3.  For convenience, let’s store some environment variables into the `.bashrc` file. Open `bashrc` file with `vi` editor. Alternatively, you can use the `nano` editor.
 
     ```
     <copy>vi ~/.bashrc</copy>
@@ -124,16 +124,16 @@ After you have successfully compiled the application code, you are ready to push
     export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
     source $MSDATAWORKSHOP_LOCATION/shortcutaliases
     export PATH=$PATH:$MSDATAWORKSHOP_LOCATION/utils/
-    export DOCKER_REGISTRY="<region-key>.ocir.io/<tenancy-namespace>/<repo-name>"
+    export DOCKER_REGISTRY="<region-id>.ocir.io/<object-store-namespace>/<repo-name>"
     ```
 
-  Where `<region-key>` and `<tenancy-namespace>` are the same as in the previous step, and `<repo-name>` is the Repository full name when creating an OCIR repository.
+  Where `<region-key>` and `<tenancy-namespace>` are the same as in the previous step, and `<repo-name>` is the Repository full name you created in the OCIR Registry (`firstname.lastname/msdataworkshop`).
 
   ![](images/86828131170ee9c9fdb11fe1641ef34b.png " ")
 
   ![](images/05cb8e8493d83f0db1e36ca85ac84b40.png " ")
 
-5. Source the newly created bashrc file with the following command.
+5. Source the newly created `.bashrc` file with the following command.
 
     ```
     <copy>source ~/.bashrc</copy>
@@ -248,6 +248,6 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Paul Parkinson, Consulting Member of Technical Staff
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Last Updated By/Date** - Tom McGinn, May 2020
+* **Last Updated By/Date** - Tom McGinn, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
