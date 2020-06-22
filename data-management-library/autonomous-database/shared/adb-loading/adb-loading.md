@@ -49,7 +49,7 @@ This lab assumes you have completed the [Login to Oracle Cloud] (?lab=lab-1-logi
 
 ## **STEP 1**: Download Sample Data and Create Local Table
 
-1. For this step, you will download a .csv file to your local computer, then use it to populate the CHANNELS_LOCAL table that you will create in your ADW database in the next step.  Click <a href="./files/channels.csv" target="\_blank">here</a> to download the sample channels.csv file, saving it to a directory on your local computer.
+1. For this step, you will download a .csv file to your local computer, then use it to populate the CHANNELS_LOCAL table that you will create in your ADW database in the next step.  Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/A5zXkuuOG2C5AOBHTiVpJd3obiECvsk8omPtnzvTwP0/n/c4u03/b/data-management-library-files/o/channels.csv" target="\_blank">here</a> to download the sample channels.csv file, saving it to a directory on your local computer.
 
 2. In your autonomous database's details page, click the **Tools** tab. Click **Open SQL Developer Web**.
 
@@ -273,7 +273,7 @@ As an alternative to the wizard-guided data load, you can use the PL/SQL package
 
     A load or external table validation that errors out is indicated by status=FAILED in this table. Get the names of the log and bad files for the failing load operation from the column **logfile\_table** and **badfile\_table**. The logfile\_table column shows the name of the table you can query to look at the log of a load operation. The column badfile_table shows the name of the table you can query to look at the rows that got errors during loading.
 
-4. Query the log and bad tables to see detailed information about an individual load. In this example, the names are copy$25\_log and copy$25\_bad respectively.
+4. Query the log and bad tables to see detailed information about an individual load. In this example, the names are `copy$25\_log` and `copy$25\_bad` respectively.
 
     ![](./images/query_log_and_bad_files.jpg " ")    
 

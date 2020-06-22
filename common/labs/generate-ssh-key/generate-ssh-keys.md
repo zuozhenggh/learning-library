@@ -74,7 +74,6 @@ You may now *proceed to the next lab*.
 
     ![](images/keylab-028.png " ")
 
-3.  Type the following commands in the terminal window to verify that the public and private keys were created. And to copy the contents of the public key for use in creating your instance in the OCI dialog.
 
 3.  Type the following commands in the terminal window to verify that the public and private keys were created.  And to copy the contents of the public key for use in creating your instance in the OCI dialog.
 
@@ -138,7 +137,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
 
     ![](images/keylab-007.png " ")
 
-    You now have a working SSH key pair and can use it for secure communications to instances in the cloud. Do not share the *private key* with anyone unless you understand what you're doing. You should only ever need to share and copy the *public key*.
+    You now have a working SSH key pair and can use it for secure communications to instances in the cloud. Do not share the *private key* `id_rsa` with anyone unless you understand what you're doing. You should only ever need to share and copy the *public key* `id_rsa.pub`.
 
 5.  Also note that if you elect to copy/paste the content of the key into certain dialogs for your labs, you will need to locate the file in Windows, either through Powershell, Explorer, or other directory tools, and open the public key file to copy its content. The example below is using Powershell to ```cat``` the content. You can select the text with your mouse but the copy/paste commands aren't available. Use ```<ctrl-c>``` to copy the contents to the clipboard for pasting into other application dialogs.
 
@@ -157,9 +156,9 @@ You may now *proceed to the next lab*.
 
 ## Option 4a: Prior Windows Versions - Git for Windows
 
-In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **Git for Windows**. **Git for Windows** includes a Unix like shell called ```Git Bash``` which is what you'll use to create keys, and establish SSH communications with your cloud host systems. If you prefer **PuTTY** go to the next section.
+In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **Git for Windows**. **Git for Windows** includes a Unix like shell called ```Git Bash``` which is what you'll use to create keys, and establish SSH communications with your cloud host systems. If you prefer **PuTTY**, go to the next section.
 
-1.  If you don't already have it installed, access the link below and download the application. If you are unable to install anything on your laptop due to permission issues, please use the Oracle Cloud Shell option above.
+1.  If you don't already have it installed, access the link below and download the application. If you are unable to install anything on your laptop due to permission issues, please use the **Oracle Cloud Shell** option above.
 
     [Click here to download Git for Windows](https://git-scm.com/download/win)
 
@@ -211,7 +210,7 @@ You may now *proceed to the next lab*.
 
 In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **PuTTY**. If you prefer **Git for Windows**, visit the option prior to this one.
 
-1.  If you don't already have it installed, access the link below and download the application. For Oracle employees, **PuTTY** is also available for download internally via the **MyDesktop** application. For non-Oracle employees and customers, use the below link. If you are unable to install anything on your laptop due to permission issues, please use the Oracle Cloud Shell option above.
+1.  If you don't already have it installed, access the link below and download the application. For Oracle employees, **PuTTY** is also available for download internally via the **MyDesktop** application. For non-Oracle employees and customers, use the below link. If you are unable to install anything on your laptop due to permission issues, please use the **Oracle Cloud Shell** option above.
 
     [Click here to download PuTTY for Windows](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 

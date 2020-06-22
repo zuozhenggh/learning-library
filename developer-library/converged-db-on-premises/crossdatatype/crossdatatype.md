@@ -8,9 +8,7 @@ This lab will show you how to use cross data functions.
 - JSON with Spatial
 
 
-## Before You Begin
-
-**What Do You Need?**
+### Before You Begin
 
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud
@@ -18,13 +16,18 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
 
+### About Oracle Cross Datatype
+
+JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns.
+
+The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
 
 ## Step 1: JSON with Relational 
 
  JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data
 
 
-a. Set your oracle environment and connect to PDB
+1. Set your oracle environment and connect to the PDB
        
   ````
     <copy>
@@ -35,7 +38,7 @@ a. Set your oracle environment and connect to PDB
     </copy>
 ````
 
-b. Make a connection to sqldeveloper.Provide the details as below and click on connect.
+2. Make a connection to sqldeveloper.Provide the details as below and click on connect.
    
 ````
     <copy>
@@ -49,7 +52,7 @@ b. Make a connection to sqldeveloper.Provide the details as below and click on c
     </copy>
    ````
 
- c. Find all the Products, those sold with payment mode – Cash on Delivery
+3. Find all the Products, those sold with payment mode – Cash on Delivery
   
   ````
     <copy>
@@ -85,7 +88,7 @@ b. Make a connection to sqldeveloper.Provide the details as below and click on c
 
 
 
-d. Purchase order history count based on City
+4.  Purchase order history count based on City
 
   ![](./images/cd2.png " ") 
 
@@ -99,7 +102,7 @@ select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by
 
 ## Step 2: XML with Relational
 
-**XMLTABLE:** Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
+1. **XMLTABLE:** Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
 
   ````
@@ -122,7 +125,7 @@ select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by
    ![](./images/cd4.png " ") 
 
 
-  **Insert XML data**
+2. Insert XML data
 
   ````
     <copy>
@@ -147,7 +150,7 @@ select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by
     
   ![](./images/cd5.png)
 
-  **Create table**
+3. Create table
 
   ````
     <copy>
@@ -219,7 +222,7 @@ select * from purchaseorder_table a join purchaseorder_lineitem b on a.REFERENCE
 
 
 
-**Scenario: SHistory of customers who ordered for a specific products**
+4. Scenario: SHistory of customers who ordered for a specific products**
 
 ````
 <copy>
@@ -237,13 +240,13 @@ GeoJSON Objects: Geometry, Feature, Feature Collection
 
 GeoJSON uses JSON objects that represent various geometrical entities and combinations of these together with user-defined properties.
 
+- A position is an array of two or more spatial (numerical) coordinates, the first three of which generally represent longitude, latitude, and altitude.
 
-A position is an array of two or more spatial (numerical) coordinates, the first three of which generally represent longitude, latitude, and altitude.
+- A geometry object has a type field and (except for a geometry-collection object) a coordinates field
 
-A geometry object has a type field and (except for a geometry-collection object) a coordinates field
+- A geometry collection is a geometry object with type GeometryCollection. Instead of a coordinates field it has a geometries field, whose value is an array of geometry objects other than GeometryCollection objects.
 
-A geometry collection is a geometry object with type GeometryCollection. Instead of a coordinates field it has a geometries field, whose value is an array of geometry objects other than GeometryCollection objects.
-
+1. 
 ````
 <copy>
 CREATE TABLE json_geo
@@ -254,6 +257,7 @@ CREATE TABLE json_geo
 ````
 ![](./images/cd12.png)
 
+2. 
 ````
 <copy>
 INSERT INTO json_geo
@@ -361,13 +365,20 @@ SDO_GEOMETRY),
 
 This is the end of the lab.
 
+## Converged Database Workshop Collection
 
+- [Node.Js](?lab=node.js-lab-1-intro-setup) - Use Rest API to add products to the eShop Application
+- [Json](?lab=json-lab-1-intro-setup) - Store and read JSON documents from the Oracle Database
+- [XML](?lab=xml-lab-1-setup)- Manage XML content in the Oracle Database
+- [Spatial](?lab=spatial-lab-1-setup) - Work with Spatial Data in the Oracle Database
+- [Graph](?lab=graph-lab-1-intro-setup) - Work with Graph Data in the Oracle Database
+- [Cross Datatype](?lab=cross-lab-1-intro-usage) - Work with Cross Data Types
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 - **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
-- **Team** - North America Database Specialists.
+- **Team** - North America Database Specialists
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 

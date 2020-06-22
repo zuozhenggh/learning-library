@@ -11,7 +11,6 @@ horizontal pod scaling and configure tracing with Jaeger.
 - Measure health and readiness of microservices
 - Monitor Microservices performance
 - Implement horizontal scaling of OKE pod
-- See tracing with Jaeger
 
 ### Prerequisite
 This lab assumes you have already completed the following labs:
@@ -68,7 +67,7 @@ This lab assumes you have already completed the following labs:
 
    ![](images/c85dc4495ee6d2fc2d5a8b94d1e18df6.png " ")
 
-   The livenessProbe can be set up with different criteria, such as reading from a
+   The `livenessProbe` can be set up with different criteria, such as reading from a
 file or an HTTP GET request. In this example the OKE health probe will use HTTP
 GET to check the /health/live and /health/ready addresses every 3 seconds, to
 see the liveness and readiness of the service.
@@ -88,13 +87,19 @@ see the liveness and readiness of the service.
    ![](images/bb361bd61e7817c61fb5356637bb7bfa.png " ")
 
 ## **STEP 2**: Implement horizontal scaling of OKE pod
-
-1. Horizontal scaling is an important aspect for microservices architecture
+Horizontal scaling is an important aspect for microservices architecture
     when it comes to providing application availability as the amount of
     workload or number of connections increases. In this example you will
     configure the OKE horizontal pod autoscaler. Horizontal pod autoscaler can
     be configured to check a certain advertised customer or standard metric.
-    Open the Cloud Shell and run the following command to deploy a simple Linux
+
+1. Install the metric server first.
+
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION ; ./installMetricsServer.sh</copy>
+    ```
+
+1. Open the Cloud Shell and run the following command to deploy a simple Linux
     pod.
 
     ```
@@ -118,8 +123,7 @@ see the liveness and readiness of the service.
     of pods is set to 1, while the maximum is 10.
 
     ```
-    <copy>kubectl autoscale deployment oraclelinux77-hpa-demo --cpu-percent=50 --min=1
-    --max=10 -n msdataworkshop</copy>
+    <copy>kubectl autoscale deployment oraclelinux77-hpa-demo --cpu-percent=50 --min=1 --max=10 -n msdataworkshop</copy>
     ```
 
    ![](images/fe370c12f8de0f64e8425ff0a9b0d5c5.png " ")
@@ -128,8 +132,7 @@ see the liveness and readiness of the service.
     and CPU utilization of the pod.
 
     ```
-    <copy>hpa ; toppod linux ; k get deployment oraclelinux77-hpa-demo -n
-    msdataworkshop ; pods \|grep linux ;echo ----------------</copy>
+    <copy>hpa ; toppod linux ; k get deployment oraclelinux77-hpa-demo -n msdataworkshop ; pods | grep linux ;echo ----------------</copy>
     ```
 
    ![](images/31c3a877bc6cc5ee6e28337a3e88ce6e.png " ")
@@ -156,12 +159,10 @@ see the liveness and readiness of the service.
 
    ![](images/e4d252c59984f38a7ef73ec7b1b46804.png " ")
 
-7. Execute the commands below to get additional information about the HPA and
-    linux pods.
+7. Execute the commands below to get additional information about the HPA and linux pods.
 
     ```
-    <copy>hpa ; toppod linux ; k get deployment oraclelinux77-hpa-demo -n
-    msdataworkshop ; pods \|grep linux ;echo ----------------</copy>
+    <copy>hpa ; toppod linux ; k get deployment oraclelinux77-hpa-demo -n msdataworkshop ; pods | grep linux ;echo ----------------</copy>
     ```
 
     Notice that we currently have 5 pods deployed due to the stress test.
@@ -184,80 +185,9 @@ see the liveness and readiness of the service.
 
    This was a basic demonstration of horizontal autoscaling with microservices. It’s important to note that with the implementation of horizontal scaling the design of the application changes, as it needs to be able to handle the addition of replicas.
 
-## **STEP 3**: See tracing with Jaeger
-
-1. To monitor, trace and troubleshoot microservices activities and
-    transactions, you will install Jaeger. Jaeger is an open-source, end-to-end
-    distributed tracing system that is used for distributed context propagation,
-    distributed transaction monitoring, root cause analysis, service dependency
-    analysis and performance/latency optimization. Install Jaeger using the
-    following command.
-
-    ```
-    <copy>kubectl create -f
-    https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml
-    -n msdataworkshop</copy>
-    ```
-
-   ![](images/292c1afcfbbcc1db93ace6573f97c14d.png " ")
-
-2. Check the tracing properties from the Jaeger yaml file located in
-    [https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml](https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml)
-
-   ![](images/3391d8009c9dc0e69090fdfa62bafab9.png " ")
-
-3. Make sure the Order Helidon microprofile-config.properties file matches to
-    the properties from the Jaeger yaml file. Open the
-    microprofile-config.properties file.
-
-    ```
-    <copy>$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties</copy>
-    ```
-
-   ![](images/f8f09b376472ed3671e83c200a6c4891.png " ")
-
-4. Observe the tracing dependency in the order-helidon pom file located in
-    `$MSDATAWORKSHOP_LOCATION/order-helidon/pom.xml`
-
-   ![](images/57c061279af6aed31d631df83c2efbdb.png " ")
-
-5. Observe the invocation of Traced in the Java source code located in
-    `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java`
-
-   ![](images/ed3116d72fe19c4a834205e3bb025764.png " ")
-
-   ![](images/612af6b4fcce067347924502ac8642e1.png " ")
-
-6. Check the IP address and port for the jaeger-query service, and access the
-    Jaeger page using that IP-port combination
-
-    ```
-    <copy>services</copy>
-    ```
-
-   ![](images/4a2f42213cc046507816ae014558751c.png " ")
-
-7. On the Jaeger page make sure you select `jaeger-query` service, `/api/traces` operation, and click **Find Traces**.
-
-   ![](images/34df63311bd13a87fb2d3d90034df86b.png " ")
-
-8.  Click on the trace item to check the details.
-
-   ![](images/706684a3b103f04590880545658ad069.png " ")
-
-9.  Click the item again to expand operations.
-
-   ![](images/27ff364a164804faee1a0a6e93cd457d.png " ")
-
-   The expanded view looks like this:
-
-   ![](images/6bdc35daf4f61badd98414182fa59915.png " ")
-
-You may now proceed to the next lab.
-
 ## Acknowledgements
 * **Author** - Paul Parkinson, Consulting Member of Technical Staff
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Last Updated By/Date** - Tom McGinn, May 2020
+* **Last Updated By/Date** - Tom McGinn, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

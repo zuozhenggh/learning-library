@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this bonus lab, you will be using the Oracle Machine Learning (OML) SQL notebook application provided with your Autonomous Data Warehouse. This browser-based application provides a web interface to run SQL queries and scripts, which can be grouped together within a notebook. Notebooks can be used to build single reports, collections of reports, and even dashboards. OML provides a simple way to share workbooks, and collections of workbooks, with other OML users.
+In this bonus lab, you use the Oracle Machine Learning (OML) SQL notebook application provided with your Autonomous Data Warehouse. This browser-based application provides a web interface to run SQL queries and scripts, which can be grouped together within a notebook. Notebooks can be used to build single reports, collections of reports, and even dashboards. OML provides a simple way to share workbooks, and collections of workbooks, with other OML users.
 
 ### Understanding Key Concepts
 
@@ -25,25 +25,23 @@ In this bonus lab, you will be using the Oracle Machine Learning (OML) SQL noteb
 -   Learn how to share notebooks
 -   Learn how to create and run SQL scripts
 
-### Required Artifacts
+### Lab Prerequisites
 
 -   This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-### Lab Prerequisites
-
--   This lab assumes you have completed the **Login to Oracle Cloud** and **Provision ADB** labs seen in the menu on the right.
+-   This lab assumes you have completed the **Login to Oracle Cloud** and **Getting Started** labs seen in the menu on the right.
 
 ## STEP 1: Creating OML Users
 
 The first step is to create two new users.
 
-1.  If you are not logged in to Oracle Cloud Console, login and select Autonomous Data Warehouse from the hamburger menu and navigate into your ADW Finance Mart instance.
+1.  If you are not logged in to Oracle Cloud Console, log in and select Autonomous Data Warehouse from the hamburger menu and navigate into your ADW Finance Mart instance.
 
     ![](images/step1.1-LabGuide1-39fb4a5b.png " ")
 
     ![](images/step1.1-adb.png " ")
 
-2.  In the details page for your Autonomous Data Warehouse database, click on **Service Console**.
+2.  In the details page for your Autonomous Data Warehouse database, click **Service Console**.
 
     ![](./images/Picture700-1.png " ")
 
@@ -57,7 +55,7 @@ The first step is to create two new users.
 
     ![](./images/Picture700-5.png " ")
 
-5.  Enter the required information for this user. Name the user  **omluser1**. If you supplied a valid **Email Address**, a welcome email should arrive within a few minutes to your Inbox. Click  **Create** in the top-right corner of the page to create the user.
+5.  Enter the required information for this user. Name the user  **omluser1**. If you supplied a valid **Email Address**, a welcome email should arrive within a few minutes to your Inbox. Click **Create** in the top-right corner of the page to create the user.
 
     ![](./images/Picture700-7.png " ")
 
@@ -123,7 +121,7 @@ The first step is to create two new users.
 
     ![](./images/Picture700-20.png " ")
 
-## STEP 5: Changing the Report Type
+## STEP 4: Changing the Report Type
 
 1.  Using the report menu bar, you can change the table to a graph and/or export the result set to a CSV or TSV file.
 
@@ -143,7 +141,7 @@ The first step is to create two new users.
 
 6.  To remove a column from the Keys, Groups of Values panel just click on the **x** next to the column name displayed in the relevant panel.
 
-## STEP 6: Changing the Layout of the Graph
+## STEP 5: Changing the Layout of the Graph
 
 1.  With the graph settings panel visible:
 
@@ -156,7 +154,7 @@ The first step is to create two new users.
 
     ![](./images/Picture700-24.png " ")
 
-## STEP 7: Tidying Up the Report
+## STEP 6: Tidying Up the Report
 
 1.  Click the **Settings** link to hide the layout controls.
 
@@ -168,7 +166,7 @@ The first step is to create two new users.
 
     ![](./images/Picture700-26.png " ")
 
-## STEP 8: Saving the Scratchpad as a New Notebook
+## STEP 7: Saving the Scratchpad as a New Notebook
 
 The SQL Scratchpad in the previous section is simply a default type notebook with a system generated name. But we can change the name of the scratchpad we have just created, **SQL Query Scratchpad**.
 
@@ -202,7 +200,7 @@ The SQL Scratchpad in the previous section is simply a default type notebook wit
 
     ![](./images/Picture700-34.png " ")
 
-## STEP 9: Logging In to OML as the Second OML (OMLUSER2) User and Sharing Notebooks
+## STEP 8: Logging In to OML as the Second OML (OMLUSER2) User and Sharing Notebooks
 
 By default, when you create a notebook it’s only visible to you. To make it available to other users you need to share the workspace containing the notebook. You can create new workspaces and projects to organize your notebooks for ease of use and to share with other users. To demonstrate the sharing process let’s begin by logging in to OML as our second OML (OMLUSER2) user and checking if any notebooks are available.
 
@@ -212,7 +210,7 @@ By default, when you create a notebook it’s only visible to you. To make it av
 
 2.  Now sign in as OML user **OMLUSER2** using the password you entered at the beginning of this workshop:
 
-    ![](./images/Picture700-36.png " ")
+    ![](./images/sign_in_OML.png " ")
 
     ![](./images/Picture700-37.png " ")
 
@@ -224,7 +222,7 @@ By default, when you create a notebook it’s only visible to you. To make it av
 
 4.  Repeat the previous steps to logout of OML and sign into OML as **OMLUSER1**.
 
-## STEP 10: Changing Workspace Permissions
+## STEP 9: Changing Workspace Permissions
 
 1.  From the OML home page, click the **OML Project (OML Workspace)** link in the top right corner on the OML home page to display the workspace-project menu. Then select **Workspace Permissions**.
 
@@ -248,7 +246,7 @@ By default, when you create a notebook it’s only visible to you. To make it av
 
 6.  Finally, click the **OK** button.
 
-## STEP 11: Accessing shared notebooks
+## STEP 10: Accessing shared notebooks
 
 1.  Now, repeat the process you followed at the start of this section and sign-out of OML and sign-in to OML again as user **OMLUSER2**.
 
@@ -264,14 +262,14 @@ By default, when you create a notebook it’s only visible to you. To make it av
 
     ![](./images/Picture700-44.png " ")
 
-## STEP 12: Getting Started with SQL Scripts
+## STEP 11: Getting Started with SQL Scripts
 
 1.  Log out from user OMLUSER2 and log in as OMLUSER1.
 The “Run SQL Statement” link on the home page allows you to run a single query in a paragraph. To be able to run scripts you can use the “Create a SQL Script” link on the home page.
 
-2.  On the OML home page, click **Create a SQL Script** link within the **Quick Actions** panel.
+2.  On the OML home page, click **Run SQL Scripts** link within the **Quick Actions** panel.
 
-    ![](./images/Picture700-45.png " ")
+    ![](./images/run_SQL_script.png " ")
 
 3.  A new **SQL scratchpad** will be created with the **%script** identifier already selected, this identifier allows you to run multiple SQL statements.
 
@@ -279,7 +277,7 @@ The “Run SQL Statement” link on the home page allows you to run a single que
 
     Notice that the script paragraph does not have any menus to control the display and formatting of the output. You can, however, use SQL SET commands to control how data is formatted for display.
 
-## STEP 13: Creating and Running a SQL Script
+## STEP 12: Creating and Running a SQL Script
 
 In this section we are going to use a script from a SQL pattern matching tutorial, <a href="https://livesql.oracle.com/apex/livesql/file/tutorial_EWB8G5JBSHAGM9FB2GL4V5CAQ.html" target="\_blank">Sessionization with MATCH\_RECOGNIZE and JSON</a>, on the free Oracle <a href="http://livesql.oracle.com/" target="\_blank">livesql.oracle.com</a> site. This script shows how to use the SQL pattern matching **MATCH\_RECOGNIZE** feature for sessionization analysis based on **JSON** web log files.
 
@@ -303,6 +301,6 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, March 2020
+- **Last Updated By/Date** - Richard Green, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
