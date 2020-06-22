@@ -2,7 +2,7 @@
     "tutorials": [
         {         
             "title": "Introduction and Overview",
-            "description": "Introduction to Multitenant Workshop",
+            "description": "Introduction to JSON Workshop",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
@@ -36,7 +36,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../json-indexes/json-indexes.md"
+            "filename": "./../indexes-queries/indexes-queries.md"
         },
         {         
             "title": "Lab 5: RESFful queries through Oracle Application Express",
@@ -44,7 +44,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../app-containers/app-containers.md"
+            "filename": "./../restful-queries/restful-queries.md"
         }
     ]
 }
