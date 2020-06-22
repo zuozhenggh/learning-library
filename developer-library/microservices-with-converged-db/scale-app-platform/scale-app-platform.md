@@ -11,7 +11,6 @@ horizontal pod scaling and configure tracing with Jaeger.
 - Measure health and readiness of microservices
 - Monitor Microservices performance
 - Implement horizontal scaling of OKE pod
-- See tracing with Jaeger
 
 ### Prerequisite
 This lab assumes you have already completed the following labs:
@@ -68,7 +67,7 @@ This lab assumes you have already completed the following labs:
 
    ![](images/c85dc4495ee6d2fc2d5a8b94d1e18df6.png " ")
 
-   The livenessProbe can be set up with different criteria, such as reading from a
+   The `livenessProbe` can be set up with different criteria, such as reading from a
 file or an HTTP GET request. In this example the OKE health probe will use HTTP
 GET to check the /health/live and /health/ready addresses every 3 seconds, to
 see the liveness and readiness of the service.
@@ -160,8 +159,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/e4d252c59984f38a7ef73ec7b1b46804.png " ")
 
-7. Execute the commands below to get additional information about the HPA and
-    linux pods.
+7. Execute the commands below to get additional information about the HPA and linux pods.
 
     ```
     <copy>hpa ; toppod linux ; k get deployment oraclelinux77-hpa-demo -n msdataworkshop ; pods | grep linux ;echo ----------------</copy>
