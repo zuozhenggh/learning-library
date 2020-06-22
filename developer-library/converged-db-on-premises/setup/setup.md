@@ -8,13 +8,13 @@ Estimated time: 1 hour
 
 ### Objectives
 - Start the Oracle Database and Listener
+- Download and Setup SQL Developer Client
 
 ### Lab Prerequisites
 
 - Lab 1: Login to Oracle Cloud
 - Lab 2: Generate SSH Key
 - Lab 3: Create Compute Instance
-- SQL Developer Client
 
 ## Step 1: Start the Database
 
@@ -241,15 +241,50 @@ Estimated time: 1 hour
 
       ![](./images/env18.png " ")
 
-## Step 3: Set up SQL Developer
+## Step 3: Download SQL Developer
 
 Certain workshops require SQL Developer.  To setup SQL Developer, follow the steps below.
 
-1. Download [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) from the Oracle.com site and install on your system.
+1. Download [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) from the Oracle.com site and install on your local system.
 
 2. Once installed, open up the SQL Developer console.
 
-You may proceed to the next workshop.
+      ![](./images/start-sql-developer.png " ")
+
+## Step 4:  Setup SSH Tunnel to the OCI Instance
+
+1.  Click **View** -> **SSH**
+
+      ![](./images/view-ssh.png " ")
+
+2.  Notice the SSH Hosts window opened on the left panel
+
+3. Right click to create a **New SSH Host**
+
+   - Names - Any name which is meaningful 
+   - Host - Must be the OCI instance public address 
+   - User name - OPC Pass the private key through browse 
+
+      ![](./images/new-ssh-host.png " ")
+
+
+4. Right click and click **Test** to test that the connection can clearly connect
+   
+## Step 5:  Test a connection
+
+1.  In the connections page click the green plus arrow to create a new connection
+
+2.  Enter the following connection information to test your connection
+
+3.  Once your connection is successful in the SQL Developer panel execute the query below
+      ````
+      <copy>
+      select name, open_mode from v$database;
+      </copy>
+      ````
+
+      ![](./images/vdatabase.png " ")
+
 
 
 You may proceed to the next workshop.
@@ -271,7 +306,7 @@ You may proceed to the next workshop.
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-**Issues-**
+**Issues**
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
   
 
