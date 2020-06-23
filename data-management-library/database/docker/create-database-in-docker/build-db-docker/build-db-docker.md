@@ -69,31 +69,7 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
 Choose the environment where you created your SSH Key.
 
 ### Oracle Cloud Shell
-1. Download Oracle Database 19c (19.3) for Linux x86-64 to your local machine from [Oracle Technology Network](https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html).
-
-  ![](images/otn-download.png " ")
-
-2. Upload the image zip file to Object Storage. Go to your Cloud Console, click Navigation button. Under **Core Infrastructure**, select **Object Storage**.
-
-  ![](images/open_object_storage.png " ")
-
-3. Click **Create Bucket**. In Create Bucket window, **Bucket Name** is automatically generated, select **Standard** as Storage Tier, you can accept all other defaults. Click **Create Bucket** to finish.
-
-  ![](images/create_bucket.png " ")
-
-4. Click on the Bucket you just created. Click **Upload** to upload the image zip file you downloaded. Click **Close** when uploading is finished.
-
-  ![](images/upload_zip.png " ")
-
-5. Create a Pre-Authenticated Request (PAR). In the bucket, find the file and click on the ellipses to the right. Click **Create Pre-Authenticated Request**. Determine how long you want the PAR - generally, one year. Accept other defaults.
-
-  ![](images/create_PAR.png " ")
-
-6. In Pre-Authenticated Request Details page, copy the **Pre-Authenticated Request URL** and save it on your local computer.
-
-  ![](images/PAR_url.png " ")
-
-7. Download the zip file to your compute instance by using its URL. Open your Cloud Shell, navigate to the folder where you created the SSH keys, and connect using:
+1. Oracle Database 19c (19.3) for Linux x86-64 has been uploaded to Oracle Object Storage for you. Download the zip file to your compute instance by using its Pre-Authenticated Request (PAR) URL. Open your Cloud Shell, navigate to the folder where you created the SSH keys, and connect using:
     ```
     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
     ```
@@ -103,9 +79,9 @@ Choose the environment where you created your SSH Key.
     <copy>cd docker-images-master/OracleDatabase/SingleInstance/dockerfiles/19.3.0</copy>
     ```
 
-  Download the zip file to this folder. *Note: Replace PAR_URL with the url you just copied from the Pre-Auenticated Request Details page*
+  Download the zip file to this folder.
     ```
-    <copy>wget PAR_URL</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/stLcOoar25AiY52XlpwYP2pie5XTvKw3uF-0qyewXoA/n/idq7tl4pseo1/b/bucket-20200622-1405/o/LINUX.X64_193000_db_home.zip</copy>
     ```
 
   ![](images/download_PAR.png " ")

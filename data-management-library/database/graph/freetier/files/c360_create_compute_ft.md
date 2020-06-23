@@ -230,6 +230,28 @@ Choose the environment where you created your SSH Key.
 
     ![](../../images/copy_url.png " ")
 
+6. Download the Graph Server and ADB Wallet to your compute instance by using their Pre-Authenticated Request (PAR) URL. Open your Cloud Shell, navigate to the folder where you created the SSH keys, and connect using:
+    ```
+    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    ```
+
+    Navigate to the folder where you want to put your image zip file.
+    ```
+    <copy>cd /home/opc</copy>
+    ```
+
+    Download Graph Server to this folder.
+    ```
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ikOzqqHyADoMOaAb5nwZrQOMLZr1EGGifvpnhMb4RPg/n/idviyv1druod/b/bucket-20200622-1124/o/oracle-graph-20.2.0.x86_64.rpm</copy>
+    ```
+
+    Download ADB Wallet to this folder.
+    ```
+    <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/l5eC1DH15D0FFaflZDJQTAciLj4iMpHwC69FNrdwx54/n/idviyv1druod/b/bucket-20200622-1124/o/Wallet_ATPFINANCE.zip</copy>
+    ```
+
+  ![](images/download_PAR.png " ")
+
 
 
 ### Other
