@@ -41,7 +41,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
 ## **STEP 2**: Build the Microservices image from the GitHub repo
 
-1. To work with application code, you need to download GitHub repository using
+1. To work with application code, you need to download a GitHub repository using
     the following command. The Cloud Shell already has the `wget` command
     installed:
 
@@ -90,12 +90,12 @@ After you have successfully compiled the application code, you are ready to push
 
 1.  You will need the following parameters which you have already noted down in the previous Labs.
 
-    - `<region-id>` - is the Region identifier
-    - `<object-store-namespace>` - is Object Storage namespace
-    - `<username>` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something`
+    - `REGION-ID` - is the Region identifier
+    - `OBJECT-STORAGE-NAMESPACE` - is Object Storage namespace
+    - `USERNAME` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something`
 
     ```
-    docker login <region-id>.ocir.io -u <object-store-namespace>/<username>
+    <copy>docker login REGION-ID.ocir.io -u OBJECT-STORAGE-NAMESPACE/USERNAME<copy>
     ```
 
     *When prompted for password use the Auth token (msdataworkshoptoken) you generated.*
@@ -110,10 +110,10 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
-3.  For convenience, let’s store some environment variables into the `.bashrc` file. Open `bashrc` file with `vi` editor. Alternatively, you can use the `nano` editor.
+3.  For convenience, let’s store some environment variables into the `.bashrc` file. Open `bashrc` file with `nano` editor. Alternatively, you can use the `vi` editor if you are familiar with `vi`.
 
     ```
-    <copy>vi ~/.bashrc</copy>
+    <copy>nano ~/.bashrc</copy>
     ```
 
   ![](images/36b9360ef7998ffe686346031227258f.png " ")
@@ -121,17 +121,19 @@ After you have successfully compiled the application code, you are ready to push
 4. Append the following lines at the end of the file:
 
     ```
-    export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
+    <copy>export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
     source $MSDATAWORKSHOP_LOCATION/shortcutaliases
     export PATH=$PATH:$MSDATAWORKSHOP_LOCATION/utils/
-    export DOCKER_REGISTRY="<region-id>.ocir.io/<object-store-namespace>/<repo-name>"
+    export DOCKER_REGISTRY="REGION-ID.ocir.io/OBJECT-STORAGE-NAMESPACE/REPO-NAME"</copy>
     ```
 
-  Where `<region-key>` and `<tenancy-namespace>` are the same as in the previous step, and `<repo-name>` is the Repository full name you created in the OCIR Registry (`firstname.lastname/msdataworkshop`).
+  Where `REGION-ID` and `OBJECT-STORAGE-NAMESPACE` are the same as in the previous step, and `REPO-NAME` is the Repository full name you created in the OCIR Registry (`firstname.lastname/msdataworkshop`). You can use `Ctrl+SHIFT+V` to paste text into nano.
 
   ![](images/86828131170ee9c9fdb11fe1641ef34b.png " ")
 
   ![](images/05cb8e8493d83f0db1e36ca85ac84b40.png " ")
+
+  Close nano with the commands `CTRL+X`, `SHIFT+Y`, and `ENTER`.
 
 5. Source the newly created `.bashrc` file with the following command.
 
@@ -248,6 +250,7 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Paul Parkinson, Consulting Member of Technical Staff
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
