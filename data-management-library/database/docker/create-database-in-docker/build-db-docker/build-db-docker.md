@@ -66,11 +66,58 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
 
 ## **STEP 2**: Upload Oracle Database zip to your compute instance
 
+Choose the environment where you created your SSH Key.
+
+### Oracle Cloud Shell
 1. Download Oracle Database 19c (19.3) for Linux x86-64 to your local machine from [Oracle Technology Network](https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html).
 
   ![](images/otn-download.png " ")
 
-2. Transfer the zip file to your compute instance. Do not close your current Terminal window. Open a new Terminal window, navigate to the folder where you created the SSH keys, and connect using `sftp` and the public IP address of your compute instance:
+2. Upload the image zip file to Object Storage. Go to your Cloud Console, click Navigation button. Under **Core Infrastructure**, select **Object Storage**.
+
+  ![](images/open_object_storage.png " ")
+
+3. Click **Create Bucket**. In Create Bucket window, **Bucket Name** is automatically generated, select **Standard** as Storage Tier, you can accept all other defaults. Click **Create Bucket** to finish.
+
+  ![](images/create_bucket.png " ")
+
+4. Click on the Bucket you just created. Click **Upload** to upload the image zip file you downloaded. Click **Close** when uploading is finished.
+
+  ![](images/upload_zip.png " ")
+
+5. Create a Pre-Authenticated Request (PAR). In the bucket, find the file and click on the ellipses to the right. Click **Create Pre-Authenticated Request**. Determine how long you want the PAR - generally, one year. Accept other defaults.
+
+  ![](images/create_PAR.png " ")
+
+6. In Pre-Authenticated Request Details page, copy the **Pre-Authenticated Request URL** and save it on your local computer.
+
+  ![](images/PAR_url.png " ")
+
+7. Download the zip file to your compute instance by using its URL. Open your Cloud Shell, navigate to the folder where you created the SSH keys, and connect using:
+    ```
+    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    ```
+
+  Navigate to the folder where you want to put your image zip file.
+    ```
+    <copy>cd docker-images-master/OracleDatabase/SingleInstance/dockerfiles/19.3.0</copy>
+    ```
+
+  Download the zip file to this folder. *Note: Replace PAR_URL with the url you just copied from the Pre-Auenticated Request Details page*
+    ```
+    <copy>wget PAR_URL</copy>
+    ```
+
+  ![](images/download_PAR.png " ")
+
+  You have finished uploading Oracle Database zip to your compute instance. You can now *move to Step 3*
+
+### Other
+1. Download Oracle Database 19c (19.3) for Linux x86-64 to your local machine from [Oracle Technology Network](https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html).
+
+  ![](images/otn-download.png " ")
+
+2. Transfer the zip file to your compute instance. Open a new Terminal window, navigate to the folder where you created the SSH keys, and connect using `sftp` and the public IP address of your compute instance:
 
     ```
     <copy>sftp -i ./myOracleCloudKey opc@</copy>123.123.123.123
