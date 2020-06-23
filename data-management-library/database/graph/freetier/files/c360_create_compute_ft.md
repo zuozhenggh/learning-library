@@ -88,7 +88,7 @@ An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the
     ![](../images/ssh_first_time.png " ")
 
 
-## STEP 2: Copy and deploy Graph Server and Client on the Linux Compute
+## STEP 2: Configure your Compute Instance, Download Graph Server and ADB Wallet
 
 The [Property Graph Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/property-graph-overview-spgdg.html#GUID-FF149F69-574D-43B8-B888-4CCD019DAE56) describes the installation and configuration process in greater detail. 
 
@@ -204,7 +204,58 @@ The steps are as follows:
 
     Content in this section is adapted from [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1)
 
-8.  Now, copy your Graph Server RPM and ADB Wallet to you compute instance.  Let's assume both files are in ~/Downloads.
+## STEP 3: Copy and deploy Graph Server and Client, and ADB Wallet on the Linux Compute
+
+Choose the environment where you created your SSH Key.
+
+### Oracle Cloud Shell
+1. If you have not created your Bucket in Oracle Cloud, first create a Bucket. Go to your Cloud Console, click Navigation button. Under **Core Infrastructure**, select **Object Storage**.
+
+    ![](../../images/open_object_storage.png " ")
+
+2. Click **Create Bucket**. In Create Bucket window, **Bucket Name** is automatically generated, select **Standard** as Storage Tier, you can accept all other defaults. Click **Create Bucket** to finish.
+   ![](../../images/create_bucket.png " ")
+
+3. Click on the Bucket you just created. Click **Upload** to upload the *Graph Server* rpm file and your *ADB Wallet* zip file to your Bucket. Click **Close** when uploading is finished.
+
+    ![](../../images/upload_finish.png " ")
+
+4. Create a Pre-Authenticated Request (PAR) for ADB Wallet. In the bucket, find the file and click on the ellipses to the right. Click **Create Pre-Authenticated Request**. Determine how long you want the PAR - generally, one year. Accept other defaults. Click **Create Pre-Authenticated Request**.
+
+    ![](../../images/create_PAR.png " ")    
+    
+    ![](../../images/create_PAR_dialog.png " ")
+
+5. In Pre-Authenticated Request Details page, copy the **Pre-Authenticated Request URL** and save it on your local computer. Also, create a PAR for *Graph Server* and save it, following the same procedure.
+
+    ![](../../images/copy_url.png " ")
+
+6. Download the Graph Server and ADB Wallet to your compute instance by using their Pre-Authenticated Request (PAR) URL. Open your Cloud Shell, navigate to the folder where you created the SSH keys, and connect using:
+    ```
+    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    ```
+
+    Navigate to the folder where you want to put your image zip file.
+    ```
+    <copy>cd /home/opc</copy>
+    ```
+
+    Download Graph Server to this folder.
+    ```
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ikOzqqHyADoMOaAb5nwZrQOMLZr1EGGifvpnhMb4RPg/n/idviyv1druod/b/bucket-20200622-1124/o/oracle-graph-20.2.0.x86_64.rpm</copy>
+    ```
+
+    Download ADB Wallet to this folder.
+    ```
+    <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/l5eC1DH15D0FFaflZDJQTAciLj4iMpHwC69FNrdwx54/n/idviyv1druod/b/bucket-20200622-1124/o/Wallet_ATPFINANCE.zip</copy>
+    ```
+
+  ![](images/download_PAR.png " ")
+
+
+
+### Other
+1.  Now, copy your Graph Server RPM and ADB Wallet to you compute instance.  Let's assume both files are in ~/Downloads.
     ![](../images/download_folder.png " ")
     On your desktop or laptop (i.e. your machine), do not close your old Terminal window. Open a new Terminal, navigate to the folder where you created your SSH Keys:
 
@@ -222,7 +273,7 @@ The steps are as follows:
     ![](../images/copy_wallet.png " ")
 
 
-9.  Now go back to the Terminal window which is connected (via SSH) to the compute instance as `opc`, enter **y** when prompted during installation.
+2.  Now go back to the Terminal window which is connected (via SSH) to the compute instance as `opc`, enter **y** when prompted during installation.
 
     ```
     ## install numactl if it is not already installed
@@ -238,7 +289,7 @@ The steps are as follows:
 
     You can use `alternatives` or some other means to set the `jar` executable (to the one in JDK8) if you wish.
 
-10. Move the ADB wallet to the `oracle` user. Modify the commands as appropriate for your environment and execute them as `opc`. 
+3. Move the ADB wallet to the `oracle` user. Modify the commands as appropriate for your environment and execute them as `opc`. 
 
     ```
     <copy>sudo chown oracle ADB_Wallet.zip</copy>
@@ -252,7 +303,7 @@ The steps are as follows:
     <copy>sudo mv ADB_Wallet.zip /home/oracle</copy>
     ```
 
-11. Open the firewall for port 7007.
+4. Open the firewall for port 7007.
 
     ```
     <copy>sudo firewall-cmd --permanent --zone=public --add-port=7007/tcp</copy>
@@ -264,7 +315,7 @@ The steps are as follows:
 
     ![](../images/move_wallet_open_firewall.png " ")
 
-12. Now `su` to `oracle` and complete the setup. Modify the commands as appropriate for your environment and execute them as `opc`.
+5. Now `su` to `oracle` and complete the setup. Modify the commands as appropriate for your environment and execute them as `opc`.
 
     ```
     <copy>su - oracle</copy>
