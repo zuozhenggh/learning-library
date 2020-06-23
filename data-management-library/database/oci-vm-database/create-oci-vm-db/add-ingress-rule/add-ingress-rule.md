@@ -36,7 +36,8 @@ Oracle Cloud Infrastructure provides a quick and easy way to create an Oracle Da
 
   ![](images/add-ingress-rule-2.png " ")
 
-  Note: If you reconnect at a later date or connect to your company's VPN, your local machine's IP address may change.
+  *Note 1: If you reconnect at a later date or connect to your company's VPN, your local machine's IP address may change.*
+  *Note 2: Make sure to enter your PC's IP address, not your LAN/Wifi's IP address.*
 
 7. You can remove or edit the Ingress rule by clicking the checkbox for the rule and the clicking the **Edit** or **Remove** buttons.
 
@@ -51,5 +52,6 @@ Oracle Cloud Infrastructure provides a quick and easy way to create an Oracle Da
 ## Acknowledgements
 * **Author** -Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, March 2020
+* **Contributor** - Arabella Yao, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
