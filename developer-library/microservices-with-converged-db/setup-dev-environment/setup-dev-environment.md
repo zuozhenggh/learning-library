@@ -73,7 +73,7 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
   ![](images/8B-gen-private-key.png " ")
 
-5. Confirm that the private key file has been created in the directory you specified using the following command.
+5. Confirm that the private key file has been created in the directory you specified using the following command. Note the complete path to the private key because you will need it later.
 
     ```
     <copy>ls -l ~/.oci/user1_api_key_private.pem</copy>
@@ -199,12 +199,14 @@ balancers. Click **Launch Workflow**.
 
   ![](images/29-create-oke-wizard.png " ")
 
-4. Change the name of the cluster to `msdataworkshopcluster`, accept all the other
+4. Change the name of the cluster to `msdataworkshopcluster`, set the kubernetes version to **v1.15.7**, and accept all the other
 defaults, and click **Next** to review the cluster settings.
+
+  *The default kubernetes version is v1.16.8. If you do not change the version to v1.15.7 you may encounter errors that prevent the completion of this workshop.*
 
   ![](images/30-create-oke-wizard2.png " ")
 
-5. The defaults will create 3 worker nodes in a private subnet with a `VM.Standard2.1` shape and install the latest Kubernetes version on the master nodes. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
+5. The defaults will create 3 worker nodes in a private subnet with a `VM.Standard2.1` shape. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
 
   ![](images/31-create-oke-wizard3.png " ")
 
@@ -329,6 +331,7 @@ You may proceed to the next lab.
 ## Acknowledgements
 * **Author** - Paul Parkinson, Consulting Member of Technical Staff
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

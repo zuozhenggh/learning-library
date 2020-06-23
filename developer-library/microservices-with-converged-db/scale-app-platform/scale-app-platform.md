@@ -188,6 +188,7 @@ Horizontal scaling is an important aspect for microservices architecture
 ## Acknowledgements
 * **Author** - Paul Parkinson, Consulting Member of Technical Staff
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
