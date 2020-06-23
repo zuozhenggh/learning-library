@@ -31,6 +31,9 @@ This lab walks you through the steps to connect to an Oracle Database running in
    ![](images/sd-new-connection.png " ")
 
 4. Click **Test** to check your connection. You will see a Success message in the **Status** field.
+
+  *Note: If you see `The Network Adapter could not establish the connection` error, you may want to check if the Source CIDR of Ingress Rule was entered correctly in the previous lab.*  
+
 5. Click **Save** to save your connection details and then click **Connect**.
 
   ![](images/sd-save.png " ")
@@ -50,5 +53,6 @@ This lab walks you through the steps to connect to an Oracle Database running in
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
 * **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, March 2020
+* **Contributor** - Arabella Yao, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
