@@ -42,3 +42,6 @@ When you first access APEX you will need to log in as an APEX instance administr
 
 You have successfully created an APEX workspace where you can begin creating applications.
 
+## **Step 2:** Create a new APEX App
+
+Click the following URL to download an Excel file that contains a small sample of the type of data that the microservices would collect: <a href="order_items_data.xlsx">order_items_data.xlsx</a>
