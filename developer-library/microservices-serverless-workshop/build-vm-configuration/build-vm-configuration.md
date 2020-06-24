@@ -110,7 +110,7 @@ You can proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** -  Iván Postigo, Jesus Guerra, Carlos Olivares - Oracle Spain SE Team
-* **Contributors** - Jaden McElvey Technical Lead Oracle LiveLabs Intern
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, April 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
