@@ -99,33 +99,33 @@ Choose the environment where you created your SSH Key.
     <copy>sftp -i ./myOracleCloudKey opc@</copy>123.123.123.123
     Enter passphrase for key './myOracleCloudKey':
     Connected to 129.213.35.186.
-    s
+    sftp&gt;
     ```
 
 3. Change to the local directory (on your PC) where you downloaded Oracle Database:
 
     ```
-    s     lcd <path to the zip file on your PC>
-    s
+    sftp>     lcd <path to the zip file on your PC>
+    sftp>
     ```
 
 4. Change directories on the compute instance to the `19.3.0` directory of the Docker repo. It is important that you put the Oracle Database installation zip file into the directory that is named the same as the Database version.
 
 
     ```
-    s     <copy>cd docker-images-master/OracleDatabase/SingleInstance/dockerfiles/19.3.0</copy>
-    s
+    sftp&gt;     <copy>cd docker-images-master/OracleDatabase/SingleInstance/dockerfiles/19.3.0</copy>
+    sftp&gt;
     ```
 
 5. Use the `put` command to copy the zip file to the Compute instance. When it is complete you can exit `sftp`. Depending on your local internet bandwidth, the upload can take up to 2 hours. **Do not unzip the file.**
 
     ```
-    s     <copy>put LINUX.X64_193000_db_home.zip</copy>
+    sftp&gt;     <copy>put LINUX.X64_193000_db_home.zip</copy>
     Uploading LINUX.X64_193000_db_home.zip to /home/opc/docker-images-master/OracleDatabase/SingleInstance/dockerfiles/19.3.0/LINUX.X64_193000_db_home.zip
     LINUX.X64_193000_db_home.zip                                        8%  248MB  29.5MB/s   01:30 ETA
     ...
     LINUX.X64_193000_db_home.zip                                      100% 2918MB  32.4MB/s   01:30
-    s     exit
+    sftp&gt;     exit
     ```
 
   ![](images/step2.png " ")
