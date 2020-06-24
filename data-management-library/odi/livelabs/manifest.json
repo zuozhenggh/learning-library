@@ -1,0 +1,40 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction to ODI",
+            "description": "Introduction to ODI Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "06/25/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/odi_intro.md"
+          },
+          {
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 3: Provision an Autonomous Database",
+            "description": "Provision an Autonomous Database - with ODI repository and seed data",
+            "publisheddate": "5/20/2020",
+            "filename": "../setup/odi_setup_ADW.md"
+        },
+        {
+            "title": "Lab 4: Create an ODI instance from Marketplace",
+            "description": "Build a Compute Instance",
+            "publisheddate": "5/20/2020",
+            "filename": "../setup/setup_odi_rep.md"
+        }
+    ]
+}
