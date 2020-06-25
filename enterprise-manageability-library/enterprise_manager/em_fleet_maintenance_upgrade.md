@@ -469,8 +469,7 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
 
 10.  Set Version 19.7 to Status Current
 
-   a) View a list of versions available for a specific image with the following
-    command:
+   a) View a list of versions available for a specific image with the following command:
 
    [oracle\@emcc \~]\$ emcli db_software_maintenance -getVersions
    -image_id=A5F3D8523BDF635BE0531A00000AA55B      
