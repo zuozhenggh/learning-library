@@ -182,36 +182,36 @@ managing the database estate.
 
     Let us see details of the reports in next steps.
 
-1.  Click on Generate Report.
+5.  Click on Generate Report.
 
-2.  Click on Current Configurations to open the Excel report
+6.  Click on Current Configurations to open the Excel report
 
-![](media/0e038f3bcf66c76ae804361dad21ffa2.jpg)
+    ![](media/0e038f3bcf66c76ae804361dad21ffa2.jpg)
 
-When opening the downloaded Excel Spreadsheet report, a warning on XLS format
-and file extension mismatch may pop up (see below). Simply click on “Yes” to
-ignore the warning and open the file.
+    When opening the downloaded Excel Spreadsheet report, a warning on XLS format
+    and file extension mismatch may pop up (see below). Simply click on “Yes” to
+    ignore the warning and open the file.
 
-![](media/d9ea997d07c30f80083e097f6b578200.png)
+    ![](media/d9ea997d07c30f80083e097f6b578200.png)
 
-Current Configuration shows five different Oracle home software versions
+    Current Configuration shows five different Oracle home software versions
+    
+    ![](media/84e0ac92b29e45e91b9d17a8e0b3a2da.jpg)
 
-![](media/84e0ac92b29e45e91b9d17a8e0b3a2da.jpg)
+7.  Next, click on Recommended Configurations to open the Excel Report
 
-1.  Next, click on Recommended Configurations to open the Excel Report
+    ![](media/02a39c45b351146bec1e94859830a0ea.jpg)
 
-![](media/02a39c45b351146bec1e94859830a0ea.jpg)
+    The EM Recommended Configuration report recommends reducing 5 configurations and
+    standardizing the database estate on 2 configurations, one based on 18c and the
+    other based on 19c. This means All Oracle Homes of Release 18c should uptake the
+    corresponding 18c configuration and the 19c homes will use the one based on
+    Release 19c
 
-The EM Recommended Configuration report recommends reducing 5 configurations and
-standardizing the database estate on 2 configurations, one based on 18c and the
-other based on 19c. This means All Oracle Homes of Release 18c should uptake the
-corresponding 18c configuration and the 19c homes will use the one based on
-Release 19c
+    ![](media/06ff90fdba8aa5abebd066086e33f700.jpg)
 
-![](media/06ff90fdba8aa5abebd066086e33f700.jpg)
-
-Recommendation is based on union of all bugs included in the Patches in all OHs
-and based on configuration type.
+    Recommendation is based on union of all bugs included in the Patches in all OHs
+    and based on configuration type.
 
 ## Summary
 
@@ -251,14 +251,14 @@ Container Database will automatically get patched.
 1.  Log on to Enterprise Manager Console and review the status and version of DB
     Target.
 
-![](media/ec0b6926d4f65b52a771483ace24055c.png)
+    ![](media/ec0b6926d4f65b52a771483ace24055c.png)
 
-![](media/c064eebf1a17dfd14d9c5921a88f93cb.jpg)
+    ![](media/c064eebf1a17dfd14d9c5921a88f93cb.jpg)
 
-You will see **hr.subnet.vcn.oraclevcn.com** Container Database has a pluggable
-database ‘HRPDB’. Both the Container Database and Pluggable database targets
-have status ‘UP’ and version 18.3.0.0.0. If target status is ‘DOWN’, start the
-target (using /home/oracle/start_db_hr.sh).
+    You will see **hr.subnet.vcn.oraclevcn.com** Container Database has a pluggable
+    database ‘HRPDB’. Both the Container Database and Pluggable database targets
+    have status ‘UP’ and version 18.3.0.0.0. If target status is ‘DOWN’, start the
+    target (using /home/oracle/start_db_hr.sh).
 
 ### Create Gold Image
 
