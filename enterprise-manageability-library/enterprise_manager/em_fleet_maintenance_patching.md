@@ -60,7 +60,7 @@ and the Enterprise Manager console (browser)
 
 ## Prerequisites
 
-Prior to starting, you will:
+Prior to starting, you will need:
 
 -   SSH Private Key to access the host via SSH
 
@@ -87,9 +87,9 @@ First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
 
 1.  OMS URL: and Credentials:
 
--   Username: **sysman**
+    -   Username: **sysman**
 
--   password: **welcome1**
+    -   password: **welcome1**
 
 You may see an error on the browser while accessing the Web Console - “*Your
 connection is not secure*”, add exception and proceed. Access this URL and
