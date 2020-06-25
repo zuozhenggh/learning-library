@@ -46,7 +46,7 @@ You have successfully created an APEX workspace where you can begin creating app
 
 In this step, you will create a new APEX app based on a file that contains a small sample of the type of data that the microservices would collect.
 
-1.  Click the following link to download an Excel file: <a href="order-items-data.xlsx">order-items-data.xlsx</a>. That's the data you will build an app on in this lab.
+1.  Click the following link to download an Excel file: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/naln4K9wHitqILEbK8mPVK6TDzHjsTpM17RNln4JHVU/n/c4u03/b/developer-library/o/order-items-data.xlsx">order-items-data.xlsx</a>. That's the data you will build an app on in this lab.
 
 2. Return to your APEX workspace and click the down arrow in the **SQL Workshop** tab, then select **SQL Commands**.
 
