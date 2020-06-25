@@ -1,12 +1,7 @@
-| [./media/image1.emf](./media/image1.emf)                              |
-|-----------------------------------------------------------------------|
-|                                                                       |
-|                                                                       |
-| [./media/image2.png](./media/image2.png)                              |
-|                                                                       |
-| Version Copyright © 2020, Oracle and/or its affiliates Confidential – |
+![](media/rdwd-emheader.png)
 
-# Purpose Statement
+Introduction
+============
 
 Database Fleet Maintenance is an end-to-end automated solution for patching and
 upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching
@@ -17,28 +12,10 @@ This document provides an overview of features and enhancements included in
 release . It is intended solely to help you assess the business benefits of
 upgrading to and to plan your I.T. projects.
 
-# Disclaimer
+### Contents
+**Workshop Activity 1:** Detect Configuration Pollution
 
-This document in any form, software or printed matter, contains proprietary
-information that is the exclusive property of Oracle. Your access to and use of
-this confidential material is subject to the terms and conditions of your Oracle
-software license and service agreement, which has been executed and with which
-you agree to comply. This document and information contained herein may not be
-disclosed, copied, reproduced or distributed to anyone outside Oracle without
-prior written consent of Oracle. This document is not part of your license
-agreement nor can it be incorporated into any contractual agreement with Oracle
-or its subsidiaries or affiliates.
-
-This document is for informational purposes only and is intended solely to
-assist you in planning for the implementation and upgrade of the product
-features described. It is not a commitment to deliver any material, code, or
-functionality, and should not be relied upon in making purchasing decisions. The
-development, release, and timing of any features or functionality described in
-this document remains at the sole discretion of Oracle.
-
-Due to the nature of the product architecture, it may not be possible to safely
-include all features described in this document without risking significant
-destabilization of the code.
+**Workshop Activity 2:** Standalone Database Server Patching with Fleet Maintenance
 
 # Workshop Highlights
 
