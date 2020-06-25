@@ -486,48 +486,44 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
 
 ### Deploy New Image Version
 
-1.  Gold Image Deployment
+11. Gold Image Deployment
 
-2.  A new Oracle Home is deployed on the host where DB target is running with
+    a) A new Oracle Home is deployed on the host where DB target is running with
     the below commands.
 
->   [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
->   -name="deploy197" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database
->   -target_list=finance.subnet.vcn.oraclevcn.com
->   -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN
->   -input_file="data:/home/oracle/fleet/deploy197_finance.inp"
->   -procedure_name_prefix="DEPLOY"  
->   **OR**  
->   [oracle\@emcc \~]\$ sh deploy197_finance.sh  
->   Where:
+    [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
+    -name="deploy197" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database
+    -target_list=finance.subnet.vcn.oraclevcn.com
+    -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN
+    -input_file="data:/home/oracle/fleet/deploy197_finance.inp"
+    -procedure_name_prefix="DEPLOY"  
+    **OR**  
+    [oracle\@emcc \~]\$ sh deploy197_finance.sh  
+    Where:
 
-NEW_ORACLE_HOME_LIST = Absolute path to the File System location where new
-Oracle Home will be deployed.
+    NEW_ORACLE_HOME_LIST = Absolute path to the File System location where new
+    Oracle Home will be deployed.
 
-procedure_name_prefix = optional, prefix for the deployment procedure instance
-name
+    procedure_name_prefix = optional, prefix for the deployment procedure instance
+    name
 
-name = Name of the operation. This is a logical name and should be kept unique
+    name = Name of the operation. This is a logical name and should be kept unique
 
-purpose = There are standard purposes defined which can be performed by Fleet
-Operations. “DEPLOY_DB_SOFTWARE” is one of them. These are predefined and should
-not be changed. Admin shall select one of the below mentioned purposes as and
-when needed.
+    purpose = There are standard purposes defined which can be performed by Fleet
+    Operations. “DEPLOY_DB_SOFTWARE” is one of them. These are predefined and should
+    not be changed. Admin shall select one of the below mentioned purposes as and
+    when needed.
 
-target_type = The type of target being provided in this operation.
+    target_type = The type of target being provided in this operation.
 
-target_list =
-
-1.  This is a comma separated list of targets which need to be patched.
-
-2.  Targets of homogenous types are supported in a single fleet operation.
-
-3.  The system will calculate the unique list of hosts based on this target list
-    and start stage of Oracle home software on those hosts.
-
-4.  If targets running from same Oracle home are provided in this list, the
-    stage and deploy operation will be triggered only once and not for all
-    targets.
+    target_list =
+        1. This is a comma separated list of targets which need to be patched.
+        2. Targets of homogenous types are supported in a single fleet operation.
+        3. The system will calculate the unique list of hosts based on this target list
+        and start stage of Oracle home software on those hosts.
+        4. If targets running from same Oracle home are provided in this list, the
+        stage and deploy operation will be triggered only once and not for all
+        targets.
 
     normal_credential = This should be provided in the format \<Named
     Credential: Credential Owner\>.
