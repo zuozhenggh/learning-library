@@ -467,22 +467,22 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
 
     ![](media/0dedb16ddd453f5fa9d312229e9bd072.png)
 
-10.  Set Version 19.7 to Status Current
+10. Set Version 19.7 to Status Current
 
-   a) View a list of versions available for a specific image with the following command:
+    a) View a list of versions available for a specific image with the following command:
 
-   [oracle\@emcc \~]\$ emcli db_software_maintenance -getVersions
-   -image_id=A5F3D8523BDF635BE0531A00000AA55B      
+    [oracle\@emcc \~]\$ emcli db_software_maintenance -getVersions
+    -image_id=A5F3D8523BDF635BE0531A00000AA55B      
 
-   ![](media/9bba5ae0276141179ba6b22e984ba3f7.png)
+    ![](media/9bba5ae0276141179ba6b22e984ba3f7.png)
 
-   b) Using the VERSION ID from Step above, review and execute the following
-   command to set Version Name 19.7 to Status Current
+    b) Using the VERSION ID from Step above, review and execute the following
+    command to set Version Name 19.7 to Status Current
 
-   [oracle\@emcc \~]\$ emcli db_software_maintenance -updateVersionStatus
-   -status=CURRENT -version_id=A79931EC777968D6E0532A00000A806B
+    [oracle\@emcc \~]\$ emcli db_software_maintenance -updateVersionStatus
+    -status=CURRENT -version_id=A79931EC777968D6E0532A00000A806B
 
-   ![](media/7796c07b2b8273dc93221a84b784dc63.png)
+    ![](media/7796c07b2b8273dc93221a84b784dc63.png)
 
 ### Deploy New Image Version
 
