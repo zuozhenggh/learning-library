@@ -517,13 +517,16 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
     target_type = The type of target being provided in this operation.
 
     target_list =
-        1. This is a comma separated list of targets which need to be patched.
-        2. Targets of homogenous types are supported in a single fleet operation.
-        3. The system will calculate the unique list of hosts based on this target list
-        and start stage of Oracle home software on those hosts.
-        4. If targets running from same Oracle home are provided in this list, the
-        stage and deploy operation will be triggered only once and not for all
-        targets.
+       1. This is a comma separated list of targets which need to be patched.
+        
+       2. Targets of homogenous types are supported in a single fleet operation.
+        
+       3. The system will calculate the unique list of hosts based on this target list
+       and start stage of Oracle home software on those hosts.
+       
+       4. If targets running from same Oracle home are provided in this list, the
+       stage and deploy operation will be triggered only once and not for all
+       targets.
 
     normal_credential = This should be provided in the format \<Named
     Credential: Credential Owner\>.
