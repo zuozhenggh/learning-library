@@ -635,7 +635,7 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
 
     ![](media/228ae0280ff2878bb4902cb263529bb9.png)
 
-3.  Review and execute the following command to cleanup finance  
+    b) Review and execute the following command to cleanup finance  
     [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
     -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE
     -target_type=oracle_database -normal_credential=ORACLE:SYSMAN
@@ -645,46 +645,46 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
 
     [oracle\@emcc \~]\$ sh cleanup_finance.sh
 
-![](media/3f41abadf32e4b8d4900467985a093ef.png)
+    ![](media/3f41abadf32e4b8d4900467985a093ef.png)
 
-1.  Navigate to the Procedure Activity Page and monitor the progress of this
+    c) Navigate to the Procedure Activity Page and monitor the progress of this
     operation with ‘CLEANUP_SOFTWARE_...’ deployment procedure instance.
 
-![](media/94954554c777d24280599507c28a75d3.png)
+    ![](media/94954554c777d24280599507c28a75d3.png)
 
-1.  Review the Procedure Activity steps performed
+    d) Review the Procedure Activity steps performed
 
-![](media/777053c04e0851859856c8d32b9d94c2.png)
+    ![](media/777053c04e0851859856c8d32b9d94c2.png)
 
-1.  Verify to confirm that the two old Oracle Homes reported have been removed
+    e) Verify to confirm that the two old Oracle Homes reported have been removed
 
-[oracle\@emcc \~]\$ ls -l /u01/app/18c/sales188
-/u01/app/oracle/product/18/db_home1
+    [oracle\@emcc \~]\$ ls -l /u01/app/18c/sales188
+    /u01/app/oracle/product/18/db_home1
 
-![](media/58ba7d42eb61331e3d0bec6588086b47.png)
+    ![](media/58ba7d42eb61331e3d0bec6588086b47.png)
 
-1.  As part of the cleanup operation, LISTENER_1525 which support
+    f) As part of the cleanup operation, LISTENER_1525 which support
     “finance.subnet.oraclevcn.com” is shutdown. Set your environment by passing
     “finance” to “oraenv” when prompted and start the listener back up.
 
->   [oracle\@emcc \~]\$ . oraenv \# Type in “finance” when prompted for the SID
+    [oracle\@emcc \~]\$ . oraenv \# Type in “finance” when prompted for the SID
 
->   [oracle\@emcc \~]\$ lsnrctl start LISTENER_1525
+    [oracle\@emcc \~]\$ lsnrctl start LISTENER_1525
 
-![](media/b3d1a555c6eeb3d0d899da4291a6441c.png)
+    ![](media/b3d1a555c6eeb3d0d899da4291a6441c.png)
 
-1.  Force Listener registration and confirm that it is now servicing
+    g) Force Listener registration and confirm that it is now servicing
     “**finance.subnet.vcn.oraclevcn.com**”
 
-[oracle\@emcc \~]\$ sqlplus '/as sysdba'
+    [oracle\@emcc \~]\$ sqlplus '/as sysdba'
 
-SQL\> alter system register;
+    SQL\> alter system register;
 
-SQL\> exit
+    SQL\> exit
 
-[oracle\@emcc \~]\$ lsnrctl status LISTENER_1525
+    [oracle\@emcc \~]\$ lsnrctl status LISTENER_1525
 
-![](media/7626fd3264e4a514fde576ecd9369456.png)
+    ![](media/7626fd3264e4a514fde576ecd9369456.png)
 
 ## Summary
 
