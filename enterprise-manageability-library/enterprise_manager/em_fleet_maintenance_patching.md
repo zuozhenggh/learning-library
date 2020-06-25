@@ -262,13 +262,13 @@ Container Database will automatically get patched.
 
 ### Create Gold Image
 
-1.  Gold Image Creation
+2.  Gold Image Creation
 
 Gold Image represents a software end state. An Enterprise Manager Software
 Library Gold Image is a software archive created from a patched oracle home
 uploaded to EM Software Library.
 
-1.  Reference Home Setup [READ-ONLY– This step has already been implemented]
+    a.  Reference Home Setup [READ-ONLY– This step has already been implemented]
 
 In order to create a Gold Image of the ‘recommended patch configuration’, you
 need to manually create such an Oracle Home as a pre-requisite step. As the goal
