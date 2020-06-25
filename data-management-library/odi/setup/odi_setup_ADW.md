@@ -138,8 +138,7 @@ Accept the Terms&Conditions and click **Launch Stack**
 
     Your instance will have your initials as a Prefix (provided you added them as instructed)
     ![](./images/odi_instance_create_2.png " ")
-
-## Step 4: Create an ODI instance from OCI Marketplace         
+      
 
 Congratulations!  Now you have the environment to run the ODI labs.   
 
