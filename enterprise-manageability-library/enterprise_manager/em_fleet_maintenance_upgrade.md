@@ -583,7 +583,7 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
     final UPDATE operation which upgrades the database by switching it to the
     newly deployed home.
 
-1.  Review and execute below command to update DB Target
+    a) Review and execute below command to update DB Target
     finance.subnet.vcn.oraclevcn.com
 
     [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
@@ -595,34 +595,34 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
 
     [oracle\@emcc \~]\$ sh update_finance.sh
 
-Where:
+    Where:
 
->   Name – Name of the operation. This is a logical name and should be kept
->   unique  
->   Purpose – There are standard purposes defined which can be performed by
->   Fleet Operations. “UPDATE_DB” is one of them.
+    Name – Name of the operation. This is a logical name and should be kept
+    unique  
+    Purpose – There are standard purposes defined which can be performed by
+    Fleet Operations. “UPDATE_DB” is one of them.
 
-![](media/c1eb432957066af8ddc4062159d28f47.png)
+    ![](media/c1eb432957066af8ddc4062159d28f47.png)
 
-1.  Navigate to the Procedure Activity Page and monitor the progress of this
+    b) Navigate to the Procedure Activity Page and monitor the progress of this
     operation with ‘Fleet_UPDATE_...’ deployment procedure instance.
 
-![](media/5f7ea1d549b6bb5edf2cfadcc0fad0bc.png)
+    ![](media/5f7ea1d549b6bb5edf2cfadcc0fad0bc.png)
 
-1.  Review the Procedure Activity steps performed
+    c) Review the Procedure Activity steps performed
 
-![](media/fa46b7e21ac3396ec567446a8a12a6d2.png)
+    ![](media/fa46b7e21ac3396ec567446a8a12a6d2.png)
 
-1.  Verify the Upgraded target by going to Targets-\>Databases as shown below.
+    d) Verify the Upgraded target by going to Targets-\>Databases as shown below.
     Operation above will take \~40 minutes to complete.
 
-![](media/0dd5dbdbd9c2f2eac424cf9cf976aa34.png)
+    ![](media/0dd5dbdbd9c2f2eac424cf9cf976aa34.png)
 
 ### Cleanup Old Homes
 
-1.  Clean up Database Finance
+14. Clean up Database Finance
 
-2.  Review and execute the following command to cleanup finance in reportOnly
+    a) Review and execute the following command to cleanup finance in reportOnly
     mode  
     [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
     -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE
