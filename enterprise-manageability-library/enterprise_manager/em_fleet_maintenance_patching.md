@@ -341,39 +341,39 @@ Container Database will automatically get patched.
        Whenever we run a DEPLOY operation for a target, Gold Image version marked
        as CURRENT is used to deploy the new Oracle Home.
 
-1.  Verify if Gold Image is Applicable
+4.  Verify if Gold Image is Applicable
 
-This step verifies if the image can be used to patch a specified database
-target. This is done by comparing the bug fixes available in the current Oracle
-home of the database target and the image. In effect this check is run to
-identify patch conflicts.
+    This step verifies if the image can be used to patch a specified database
+    target. This is done by comparing the bug fixes available in the current Oracle
+    home of the database target and the image. In effect this check is run to
+    identify patch conflicts.
 
-1.  Review and execute below emcli command:  
-    [oracle\@emcc \~]\$ emcli db_software_maintenance -checkApplicability
-    -image_id=\<*IMAGE ID from List available gold images\>*
-    -target_list=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database \>
-    /home/oracle/applicability.out
+    a) Review and execute below emcli command:  
+       [oracle\@emcc \~]\$ emcli db_software_maintenance -checkApplicability
+       -image_id=\<*IMAGE ID from List available gold images\>*
+       -target_list=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database \>
+       /home/oracle/applicability.out
 
-    [oracle\@emcc \~]\$ cat /home/oracle/applicability.out
+       [oracle\@emcc \~]\$ cat /home/oracle/applicability.out
 
-    Output of above command is redirected to a file. You may review the output
-    using any standard editor or tool of your choice.
+       Output of above command is redirected to a file. You may review the output
+       using any standard editor or tool of your choice.
 
-![](media/5f050173735f58aabd279987996192ea.png)
+       ![](media/5f050173735f58aabd279987996192ea.png)
 
->   This command can show one of the following results:
+       This command can show one of the following results:
 
--   Applicable: The image and database target contain the same set of bug fixes.
-    The image can be applied on the specified target.
+       -   Applicable: The image and database target contain the same set of bug fixes.
+           The image can be applied on the specified target.
 
--   Applicable and Image has more bug fixes: The image contains more bug fixes
-    than those applied on the database. The list of extra bugs is displayed. The
-    image can be applied on the specified target.
+       -   Applicable and Image has more bug fixes: The image contains more bug fixes
+           than those applied on the database. The list of extra bugs is displayed. The
+           image can be applied on the specified target.
 
--   Not Applicable: The database contains more bug fixes than those included in
-    the image. The list of missing bugs is displayed. The administrator has to
-    create a new version of the image that includes the missing bugs before the
-    database can uptake the same.
+       -   Not Applicable: The database contains more bug fixes than those included in
+           the image. The list of missing bugs is displayed. The administrator has to
+           create a new version of the image that includes the missing bugs before the
+           database can uptake the same.
 
 ### Subscribe Database 
 
