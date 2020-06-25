@@ -377,11 +377,11 @@ Container Database will automatically get patched.
 
 ### Subscribe Database 
 
-1.  Subscribing Targets to the Selected Gold Image
+5.  Subscribing Targets to the Selected Gold Image
 
-![](media/1168b19325ea9b9c0624cf404d0cb689.jpg)
+    ![](media/1168b19325ea9b9c0624cf404d0cb689.jpg)
 
-1.  Execute below command to subscribe the target hr.subnet.vcn.oraclevcn.com to
+    a)  Execute below command to subscribe the target hr.subnet.vcn.oraclevcn.com to
     Gold Image
 
     [oracle\@emcc \~]\$ emcli db_software_maintenance -subscribeTarget
@@ -390,63 +390,63 @@ Container Database will automatically get patched.
 
     Where:
 
--   target_name – Name of the Database target which needs to be patched
+    -   target_name – Name of the Database target which needs to be patched
 
--   target_type – type of target to be patched. This should be oracle_database
+    -   target_type – type of target to be patched. This should be oracle_database
     in this case
 
--   image_id – ID of the Gold Image to which the target should be patched
+    -   image_id – ID of the Gold Image to which the target should be patched
 
-![](media/ca94c4b76f9c24eee24f4d06b35c6764.png)
+    ![](media/ca94c4b76f9c24eee24f4d06b35c6764.png)
 
 ### Deploy Image 
 
-1.  Gold Image Deployment
+6.  Gold Image Deployment
 
-![](media/dadf62c68bd6d2180a20b977086a26a1.jpg)
+    ![](media/dadf62c68bd6d2180a20b977086a26a1.jpg)
 
-1.  A new Oracle Home is deployed on the host where DB target is running with
+    a) A new Oracle Home is deployed on the host where DB target is running with
     the below commands:
 
->   [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
->   -name="deploy1810" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database
->   -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN
->   -privilege_credential=ROOT:SYSMAN
->   -input_file="data:/home/oracle/fleet/deploy1810_hr.inp"
->   -procedure_name_prefix="DEPLOY"
+    [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
+    -name="deploy1810" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database
+    -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN
+    -privilege_credential=ROOT:SYSMAN
+    -input_file="data:/home/oracle/fleet/deploy1810_hr.inp"
+    -procedure_name_prefix="DEPLOY"
 
->   **OR**  
->   [oracle\@emcc \~]\$ sh deploy1810_hr.sh
+    **OR**  
+    [oracle\@emcc \~]\$ sh deploy1810_hr.sh
 
-Where:
+    Where:
 
-NEW_ORACLE_HOME_LIST = Absolute path to the File System location where new
-Oracle Home will be deployed.
+    NEW_ORACLE_HOME_LIST = Absolute path to the File System location where new
+    Oracle Home will be deployed.
 
-procedure_name_prefix = optional, prefix for the deployment procedure instance
-name
+    procedure_name_prefix = optional, prefix for the deployment procedure instance
+    name
 
-name = Name of the operation. This is a logical name and should be kept unique
+    name = Name of the operation. This is a logical name and should be kept unique
 
-purpose = There are standard purposes defined which can be performed by Fleet
-Operations. “DEPLOY_DB_SOFTWARE” is one of them. These are predefined and should
-not be changed. Admin shall select one of the below mentioned purposes as and
-when needed.
+    purpose = There are standard purposes defined which can be performed by Fleet
+    Operations. “DEPLOY_DB_SOFTWARE” is one of them. These are predefined and should
+    not be changed. Admin shall select one of the below mentioned purposes as and
+    when needed.
 
-target_type = The type of target being provided in this operation.
+    target_type = The type of target being provided in this operation.
 
-target_list =
+    target_list =
 
-1.  This is a comma separated list of targets which need to be patched.
+       1.  This is a comma separated list of targets which need to be patched.
 
-2.  Targets of homogenous types are supported in a single fleet operation.
+       2.  Targets of homogenous types are supported in a single fleet operation.
 
-3.  The system will calculate the unique list of hosts based on this target list
-    and start stage of Oracle home software on those hosts.
+       3.  The system will calculate the unique list of hosts based on this target list
+           and start stage of Oracle home software on those hosts.
 
-4.  If targets running from same Oracle home are provided in this list, the
-    stage and deploy operation will be triggered only once and not for all
-    targets.
+       4.  If targets running from same Oracle home are provided in this list, the
+           stage and deploy operation will be triggered only once and not for all
+           targets.
 
     normal_credential = This should be provided in the format \<Named
     Credential: Credential Owner\>.
@@ -458,23 +458,23 @@ target_list =
     needs to be done in future. Format: “start_time:yyyy/mm/dd HH:mm”. It’s an
     optional parameter, if not provided, operation will start immediately
 
-![](media/af4139d4bf2fd69f82fa8903e6520833.png)
+    ![](media/af4139d4bf2fd69f82fa8903e6520833.png)
 
-1.  Navigate to Enterprise \> Provisioning and Patching \> Procedure Activity to
-    Review Execution Details of this operation via Enterprise Manager Console.
-    Click on ‘DEPLOY_SYSMAN_\*’ run
+    b) Navigate to Enterprise \> Provisioning and Patching \> Procedure Activity to
+       Review Execution Details of this operation via Enterprise Manager Console.
+       Click on ‘DEPLOY_SYSMAN_\*’ run
 
-![](media/e3002b6d99e5a3654676f41911a3766d.png)
+    ![](media/e3002b6d99e5a3654676f41911a3766d.png)
 
-1.  Review the Procedure Activity steps performed.
+    c) Review the Procedure Activity steps performed.
 
-![](media/68541ee5acf4db8b4f26a5a794b1c15c.png)
+    ![](media/68541ee5acf4db8b4f26a5a794b1c15c.png)
 
 ### Migrate Listener
 
-1.  Migrate Listener
+7.  Migrate Listener
 
-2.  Review and execute the following command to Migrate the Listener
+    a) Review and execute the following command to Migrate the Listener
 
     [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
     -name="Migrate Listener" -purpose=migrate_listener
@@ -485,28 +485,27 @@ target_list =
 
     ![](media/3b1e1e85cf38e639a314570bc212a3ac.png)
 
-3.  Navigate to Enterprise \> Provisioning and Patching \> Procedure Activity to
+    b) Navigate to Enterprise \> Provisioning and Patching \> Procedure Activity to
     Review Execution Details of this operation via Enterprise Manager Console.
     Click on ‘Fleet_migrate_\*’ run
 
-![](media/c90e201dd7b74e1dbe0cab82acafe6fa.png)
+    ![](media/c90e201dd7b74e1dbe0cab82acafe6fa.png)
 
-1.  Review the Procedure Activity steps performed.  
+    c) Review the Procedure Activity steps performed.  
     
-
     ![](media/91d2873ae19a8b7b53a5d31c842b5b9f.png)
 
 ### Update Database – Patch 18.3 to 18.10 
 
-1.  Database Update
+8.  Database Update
 
->   Once the deploy operation completes successfully. We are ready to run the
->   final UPDATE operation which patches the database by switching it to the
->   newly deployed home.
+    Once the deploy operation completes successfully. We are ready to run the
+    final UPDATE operation which patches the database by switching it to the
+    newly deployed home.
 
-![](media/427b340f11443b09283ed979935fe1fc.jpg)
+    ![](media/427b340f11443b09283ed979935fe1fc.jpg)
 
-1.  Review and execute below command to update DB Target
+    a) Review and execute below command to update DB Target
     hr.subnet.vcn.oraclevcn.com
 
     [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
@@ -517,38 +516,36 @@ target_list =
 
     [oracle\@emcc \~]\$ sh update_hr.sh
 
-Where:
+    Where:
 
->   Name – Name of the operation. This is a logical name and should be kept
->   unique  
->   Purpose – There are standard purposes defined which can be performed by
->   Fleet Operations. “UPDATE_DB” is one of them.
+    Name – Name of the operation. This is a logical name and should be kept
+    unique  
+    Purpose – There are standard purposes defined which can be performed by
+    Fleet Operations. “UPDATE_DB” is one of them.
 
-![](media/8ddbd68dee0300c0223d11cc9407c08a.png)
+    ![](media/8ddbd68dee0300c0223d11cc9407c08a.png)
 
-1.  Navigate to the Procedure Activity Page and monitor the progress of this
+    b) Navigate to the Procedure Activity Page and monitor the progress of this
     operation with ‘Fleet_UPDATE_...’ deployment procedure instance.
 
-![](media/7a784412472d166c3eb16a775dea578e.png)
+    ![](media/7a784412472d166c3eb16a775dea578e.png)
 
-1.  Review the Procedure Activity steps performed  
-      
-    
+    c) Review the Procedure Activity steps performed  
 
     ![](media/b47cafe1b4d1342e408c52e86f3102ce.png)
 
-2.  Verify the patched target by going to Targets-\>Databases as shown below.
+    d) Verify the patched target by going to Targets-\>Databases as shown below.
     Operation above will take 10-15 minutes to complete.
 
-![](media/425da84e806d9024383be869fda527d4.png)
+    ![](media/425da84e806d9024383be869fda527d4.png)
 
 ### Rollback Database – Reversed Patch 18.10 to 18.3 
 
-1.  Database Rollback
+9.  Database Rollback
 
     Once the database is updated, we will perform a rollback to 18.3
 
-2.  Review and execute below command to rollback DB Target
+    a) Review and execute below command to rollback DB Target
     hr.subnet.vcn.oraclevcn.com  
     [oracle\@emcc \~]\$ curl -i -X POST
     https://emcc.marketplace.com:7803/em/websvcs/restful/emws/db/fleetmaintenance/performOperation/rollback
@@ -558,37 +555,32 @@ Where:
     **OR**
 
     [oracle\@emcc \~]\$ sh rollback_hr.sh  
-      
-    
 
     ![](media/acb8ad0f4fb9ad39503081f5cdfb9e79.png)
 
-3.  Navigate to the Procedure Activity Page and monitor the progress of this
+    b) Navigate to the Procedure Activity Page and monitor the progress of this
     operation with ‘Fleet_ROLLBACK_...’ deployment procedure instance.
 
-![](media/6999f44a0845085f3660f365bb24d7d3.png)
+    ![](media/6999f44a0845085f3660f365bb24d7d3.png)
 
-1.  Review the Procedure Activity steps performed  
-      
-    
+    c) Review the Procedure Activity steps performed         
 
     ![](media/6a12674bdf0e9535535b90cf043a1605.png)
 
-2.  Verify the rolled back target by going to Targets-\>Databases as shown
+    d) Verify the rolled back target by going to Targets-\>Databases as shown
     below.
 
     ![](media/7afa56b6cb5fee053c57b141a5c08245.png)
 
 ### Cleanup Old Homes
 
-1.  Clean up Database HR
-
+10. Clean up Database HR
     In order to have an old empty home previously used by
     “**hr.subnet.vcn.oraclevcn.com**” at our disposal to demonstrate a cleanup
     operation, we will now re-update the database by running the commands from
     Step 8.
 
-2.  Review and execute below command to update DB Target
+    a) Review and execute below command to update DB Target
     hr.subnet.vcn.oraclevcn.com again to 18.10 version
 
     [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
@@ -596,30 +588,29 @@ Where:
     -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN
     -privilege_credential=ROOT:SYSMAN -database_credential=sales_SYS:SYSMAN  
     **OR**
-
     [oracle\@emcc \~]\$ sh update_hr.sh
 
-Where:
+    Where:
 
->   Name – Name of the operation. This is a logical name and should be kept
->   unique  
->   Purpose – There are standard purposes defined which can be performed by
->   Fleet Operations. “UPDATE_DB” is one of them.
+    Name – Name of the operation. This is a logical name and should be kept
+    unique  
+    Purpose – There are standard purposes defined which can be performed by
+    Fleet Operations. “UPDATE_DB” is one of them.
 
-![](media/05dc434c461c068b157f9dd7cd6b10ce.png)
+    ![](media/05dc434c461c068b157f9dd7cd6b10ce.png)
 
-1.  Verify that the update has been completed successfully before proceeding
+    b) Verify that the update has been completed successfully before proceeding
     with any cleanup action, Same as done in step \#8, this should complete
     within 10\~15 minutes.
 
-![](media/444749cbf21602a501446fe9c14b1949.png)
+    ![](media/444749cbf21602a501446fe9c14b1949.png)
 
-1.  Verify and confirm that the target has been re-patched to 18.10 by going to
+    c) Verify and confirm that the target has been re-patched to 18.10 by going to
     Targets Databases as shown below
 
-![](media/05d8c8153c8c990ac80810fef434baa3.png)
+    ![](media/05d8c8153c8c990ac80810fef434baa3.png)
 
-1.  Review and execute the following command to cleanup hr in reportOnly mode  
+    d) Review and execute the following command to cleanup hr in reportOnly mode  
     [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
     -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE
     -target_type=oracle_database -normal_credential=ORACLE:SYSMAN
@@ -631,7 +622,7 @@ Where:
 
     ![](media/9b5d405577571043afe9ead1fc723392.png)
 
-2.  Review and execute the following command to cleanup hr  
+    e) Review and execute the following command to cleanup hr  
     [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
     -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE
     -target_type=oracle_database -normal_credential=ORACLE:SYSMAN
@@ -641,47 +632,45 @@ Where:
 
     [oracle\@emcc \~]\$ sh cleanup_hr.sh
 
-![](media/f0443cb23cec56d4d3c3818720c73c80.png)
+    ![](media/f0443cb23cec56d4d3c3818720c73c80.png)
 
-1.  Navigate to the Procedure Activity Page and monitor the progress of this
+    f) Navigate to the Procedure Activity Page and monitor the progress of this
     operation with ‘CLEANUP_SOFTWARE_...’ deployment procedure instance.
 
-![](media/1ffb1bc964b9ca980d6f6034d4882156.png)
+    ![](media/1ffb1bc964b9ca980d6f6034d4882156.png)
 
-1.  Review the Procedure Activity steps performed  
-      
-    
+    g) Review the Procedure Activity steps performed        
 
     ![](media/c2062c09719c5c4b41ceff3138b3d44e.png)
 
-2.  Verify to confirm the old Oracle Home has been removed
+    h) Verify to confirm the old Oracle Home has been removed
 
->   [oracle\@emcc \~]\$ ls -l /u01/app/1806/hr
+    [oracle\@emcc \~]\$ ls -l /u01/app/1806/hr
 
-![](media/31324fdd072b03be848fa9362de9ae7b.png)
+    ![](media/31324fdd072b03be848fa9362de9ae7b.png)
 
-1.  As part of the cleanup operation, LISTENER_1522 which support
+    i)  As part of the cleanup operation, LISTENER_1522 which support
     “hr.subnet.oraclevcn.com” is shutdown. Set your environment by passing “hr”
     to “oraenv” when prompted and start the listener back up.
 
->   [oracle\@emcc \~]\$ . oraenv \# Type in “hr” when prompted for the SID
+    [oracle\@emcc \~]\$ . oraenv \# Type in “hr” when prompted for the SID
 
->   [oracle\@emcc \~]\$ lsnrctl start LISTENER_1522
+    [oracle\@emcc \~]\$ lsnrctl start LISTENER_1522
 
-![](media/465b2cea9ae4e176c314eff253ef4b68.png)
+    ![](media/465b2cea9ae4e176c314eff253ef4b68.png)
 
-1.  Force Listener registration and confirm that it is now servicing
+    j) Force Listener registration and confirm that it is now servicing
     “**hr.subnet.vcn.oraclevcn.com**”
 
-[oracle\@emcc \~]\$ sqlplus '/as sysdba'
+    [oracle\@emcc \~]\$ sqlplus '/as sysdba'
 
-SQL\> alter system register;
+    SQL\> alter system register;
 
-SQL\> exit
+    SQL\> exit
 
-[oracle\@emcc \~]\$ lsnrctl status LISTENER_1522
+    [oracle\@emcc \~]\$ lsnrctl status LISTENER_1522
 
-![](media/b95a982c86b233dfa1af34d29c03aa6e.png)
+    ![](media/b95a982c86b233dfa1af34d29c03aa6e.png)
 
 ## Summary
 
