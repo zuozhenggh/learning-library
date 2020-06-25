@@ -264,27 +264,27 @@ Container Database will automatically get patched.
 
 2.  Gold Image Creation
 
-Gold Image represents a software end state. An Enterprise Manager Software
-Library Gold Image is a software archive created from a patched oracle home
-uploaded to EM Software Library.
+    Gold Image represents a software end state. An Enterprise Manager Software
+    Library Gold Image is a software archive created from a patched oracle home
+    uploaded to EM Software Library.
 
-   a)  Reference Home Setup [READ-ONLY– This step has already been implemented]
+    a)  Reference Home Setup [READ-ONLY– This step has already been implemented]
 
-In order to create a Gold Image of the ‘recommended patch configuration’, you
-need to manually create such an Oracle Home as a pre-requisite step. As the goal
-is to patch Database 18.3 targets with Database 18.10 RU, a reference Oracle
-home fully patched to 18.10 [ /u01/app/oracle/product/18/db_home_src] was
-created and used to create the initial version of the Gold Image as further
-described in the next steps..
+    In order to create a Gold Image of the ‘recommended patch configuration’, you
+    need to manually create such an Oracle Home as a pre-requisite step. As the goal
+    is to patch Database 18.3 targets with Database 18.10 RU, a reference Oracle
+    home fully patched to 18.10 [ /u01/app/oracle/product/18/db_home_src] was
+    created and used to create the initial version of the Gold Image as further
+    described in the next steps..
 
-This patched reference Oracle Home is discovered in Enterprise Manager as shown
-below and will be used for Gold Image Creation.
+    This patched reference Oracle Home is discovered in Enterprise Manager as shown
+    below and will be used for Gold Image Creation.
 
-Navigate to “Targets \> All Targets” and type in
-“Orasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192” in the “Search
-Target Name” box.
+    Navigate to “Targets \> All Targets” and type in
+    “Orasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192” in the “Search
+    Target Name” box.
 
-![](media/ea2416958193764cc47426f0ad8a0a67.jpg)
+    ![](media/ea2416958193764cc47426f0ad8a0a67.jpg)
 
 1.  Create New Gold Image from ssh terminal using the following emcli command
 
