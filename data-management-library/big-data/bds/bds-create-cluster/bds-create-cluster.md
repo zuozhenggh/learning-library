@@ -8,7 +8,6 @@ In this lab, you will learn how to create a Highly-Available (HA) Cloudera Distr
 
 * Learn how to create an HA Hadoop cluster using BDS and OCI.
 * Learn how to monitor the cluster creation.
-* Learn how to maintain your cluster.
 
 ### What Do You Need?
 
@@ -21,44 +20,35 @@ Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 [](youtube:zpASc1xvKOY)
 
 
-## STEP 1: Login to the Oracle Cloud Console
-
-1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
-
-  ![](./images/oci-signin.png " ")
-
-  The **Oracle Cloud Console** Home page is displayed.
-  ![](./images/oracle-cloud-console-home.png " ")
-
-## STEP 2: Create a Cluster
+## STEP 1: Create a Cluster
 There are many options when creating a cluster. You will need to understand the sizing requirements based on your use case and performance needs. In this lab, you will create a small testing and development cluster that is not intended to process huge amounts of data. It will be based on small Virtual Machine (VM) shapes that are perfect for developing applications and testing functionality at a minimal cost.
 
 Your simple HA cluster will have the following profile:
+  + **Nodes:** **2** Master nodes, **2** Utility nodes, and **3** Worker nodes.  
+  + **Shape:** **VM.Standard2.4** shape for all nodes in the cluster. This shape provides **4 CPUs** and **60 GB** of memory.  
+  + **Storage Size:** **250 GB** block storage for the Master and Utility nodes and **750 GB**  block storage for the Worker nodes.
 
-* **Nodes:** **2** Master nodes, **2** Utility nodes, and **3** Worker nodes.  
-* **Shape:** **VM.Standard2.4** shape for all nodes in the cluster. This shape provides **4 CPUs** and **60 GB** of memory.
-* **Storage Size:** **250 GB** block storage for the Master and Utility nodes and **750 GB** block storage for the Worker nodes.
+  ![](./images/cluster-layout.png " ")
 
-
-**Note:**
-For better performance and scalability, change the preceding specifications appropriately. Consider **DensIO** shapes (with direct attached storage) and **Bare Metal** shapes.
-
-When you create the cluster, the **Create Cluster** wizard will prompt you to provide information about your network and to make choices based on your network. To prepare for those questions, see [Create a Network](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-network.html#GUID-36C46027-65AB-4C9B-ACD7-2956B2F1B3D4) and refer to **Lab1: Setup the BDS Environment** seen in the menu on the right.
+  **Note:**    
+  For better performance and scalability, change the preceding specifications appropriately. Consider **DensIO** shapes (with direct attached storage) and **Bare Metal** shapes.
 
 Create the cluster as follows:
 
-1. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page.
+1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. Under **Data & AI**, select **Big Data**.
+2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page.
+
+3. Under **Data & AI**, select **Big Data**.
 
    ![](./images/big-data.png " ")
 
-3. On the **Clusters** page, click **Create Cluster**.
+4. On the **Clusters** page, click **Create Cluster**.
 
   ![](./images/clusters-page.png " ")
 
 
-  At the top of the **Create Cluster** panel, provide the cluster details as follows:
+5. At the top of the **Create Cluster** wizard, provide the cluster details as follows:
     * **CLUSTER NAME:** **`training-cluster`**.
     * **CLUSTER ADMIN PASSWORD:** Enter a `cluster admin password` of your choice such as **`Training123`**. You'll need this password to sign into Cloudera Manager and to perform certain actions on the cluster through the Cloud Console.
     * **CONFIRM CLUSTER ADMIN PASSWORD:** Confirm your password.
@@ -67,7 +57,7 @@ Create the cluster as follows:
 
     ![](./images/create-cluster-1.png " ")
 
-  In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
+6. In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
 
     * **CHOOSE INSTANCE TYPE:** **`Virtual Machine`**.
     * **CHOOSE MASTER/UTILITY NODE SHAPE:** **`VM.Standard2.4`**.
@@ -78,7 +68,7 @@ Create the cluster as follows:
 
     **Note:** For information on the supported cluster layout, shape, and storage, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D).
 
-  In the **Hadoop Nodes > Worker Nodes** section, provide the following details:
+7. In the **Hadoop Nodes > Worker Nodes** section, provide the following details:
 
     * **CHOOSE INSTANCE TYPE:** **`Virtual Machine`**.
     * **CHOOSE MASTER/UTILITY NODE SHAPE:** **`VM.Standard2.4`**.
@@ -87,21 +77,21 @@ Create the cluster as follows:
 
     ![](./images/create-cluster-3.png " ")
 
-   In the **Network Setting > Cluster Private Network** section, provide the following details:
+8. In the **Network Setting > Cluster Private Network** section, provide the following details:
 
      * **CIDR BLOCK:** **`10.1.0.0/16`**. This CIDR block assigns the range of contiguous IP addresses available for the cluster's private network that BDS creates for the cluster. This private network is created in the Oracle tenancy and not in your customer tenancy. It is used exclusively for private communication among the nodes of the cluster. No other traffic travels over this network, it isn't accessible by outside hosts, and you can't modify it once it's created. All ports are open on this private network.
 
      **Note:** Use CIDR block **`10.1.0.0/16`** instead of the already displayed **`10.0.0.0/16`** CIDR block range. This avoids overlaping IP addresses since you already used the **`10.0.0.0/16`** CIDR block range for for the **`training-vcn`** VCN that you created in **Lab 1**.
 
-    In the **Network Setting > Customer Network** section, provide the following details:
+9. In the **Network Setting > Customer Network** section, provide the following details:
 
-      * **CHOOSE VCN IN `training-compartment`:** **`training-vcn`**. The VCN must contain a regional subnet.   **Note:** Make sure that **`training-compartment`** is selected; if it's not, click the _CHANGE COMPARTMENT_ link, and then search for and select your **`training-compartment`**.
-      * **CHOOSE REGIONAL SUBNET IN `training-compartment`:** **`Public Subnet-training-vcn`**. This is the public subnet that was created for you when you created your **`training-vcn`** VCN in **Lab 1**.
-      * **Networking Options:** **`DEPLOY ORACLE-MANAGED SERVICE GATEWAY AND NAT GATEWAY (QUICK START)`**. This simplifies your network configuration by allowing Oracle to provide and manage these communication gateways for private use by the cluster. These gateways are created in the Oracle tenancy and can't be modified after the cluster is created.
+    * **CHOOSE VCN IN `training-compartment`:** **`training-vcn`**. The VCN must contain a regional subnet.   **Note:** Make sure that **`training-compartment`** is selected; if it's not, click the _CHANGE COMPARTMENT_ link, and then search for and select your **`training-compartment`**.
+    * **CHOOSE REGIONAL SUBNET IN `training-compartment`:** **`Public Subnet-training-vcn`**. This is the public subnet that was created for you when you created your **`training-vcn`** VCN in **Lab 1**.
+    * **Networking Options:** **`DEPLOY ORACLE-MANAGED SERVICE GATEWAY AND NAT GATEWAY (QUICK START)`**. This simplifies your network configuration by allowing Oracle to provide and manage these communication gateways for private use by the cluster. These gateways are created in the Oracle tenancy and can't be modified after the cluster is created.
 
-      ![](./images/create-cluster-4.png " ")
+    ![](./images/create-cluster-4.png " ")
 
-   In the **Additional Options > SSH PUBLIC KEY** section, associate a public SSH key with the cluster. You can use the associated private SSH key to make SSH connections to the cluster.
+10. In the **Additional Options > SSH PUBLIC KEY** section, associate a public SSH key with the cluster. You can use the associated private SSH key to make SSH connections to the cluster.
 
     **Note:** If you already have an existing public key, you can use it in this step; you don't have to create a new public key. If you need to create a new SSH key pair, see the [Creating a Key Pair] (https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm?Highlight=ssh%20key#CreatingaKeyPair) OCI documentation topic or the
     [Generate SSH key](https://oracle.github.io/learning-library/common/labs/generate-ssh-key/) lab.
@@ -114,121 +104,80 @@ Create the cluster as follows:
      ![](./images/create-cluster-5.png " ")
 
 
-4.  Click **Create Cluster**. The **Clusters** page is re-displayed. The state of the cluster is initially **Creating**.
+11.  Click **Create Cluster**. The **Clusters** page is re-displayed. The state of the cluster is initially **Creating**.
 
     ![](./images/status-creating.png " ")
 
-## STEP 3: Monitor the Cluster Creation
+## STEP 2: Monitor the Cluster Creation
 
 The process of creating the cluster can take some time; however, you can monitor the cluster creation progress as follows:
 
-1. On the **Clusters** page, click **`training-cluster`** from the list of available clusters.
+1. To view the cluster's details, click **`training-cluster`** in the **Name** column to display the **Cluster Details** page.
 
-    ![](./images/cluster-name-link.png " ")
-
-2. On the **Cluster Details** page, in the **Resources** section on the left, click **Work Requests**.
-
-    ![](./images/cluster-details-page.png " ")  
-
-3. The **Work Requests** section on the page displays the status of the cluster creation and other details such as the **Operation**, **Status**, **% Complete**, **Accepted**, **Started**, and **Finished**. Click the **CREATE_BDS** name link in the **Operation** column.
-
-  ![](./images/work-requests.png " ")
-
-4. The **CREATE_BDS** page displays the work request information, logs, and errors, if any.
-
-  ![](./images/create-bds-page.png " ")
-
-5. Click the **Clusters** link in the breadcrumb at the top of the page to re-display the **Clusters** page.
-
-  ![](./images/breadcrumb.png " ")  
-
-6. Once the **`training-cluster`** cluster is created successfully, the status changes to **Active**.   
-
-   ![](./images/cluster-active.png " ")  
-
-7. To view the cluster's details, click **`training-cluster`** in the **Name** column to display the **Cluster Details** page.
+   ![](./images/cluster-name-link.png " ")
 
    The **Cluster Information** tab displays the cluster's general and network information.
 
-   ![](./images/cluster-information-tab.png " ")  
+   ![](./images/cluster-details-page-2.png " ")  
 
-    The **List of cluster nodes** section displays the following information for each node in the cluster: Name, status, type, shape, private IP address, and date and time of creation.
+   The **List of cluster nodes** section displays the following information for each node in the cluster: Name, status, type, shape, private IP address, and date and time of creation.
 
-    ![](./images/list-nodes.png " ")  
+   ![](./images/list-nodes.png " ")  
 
-    The name of a node is the concatenation of the **first seven** letters of the cluster's name, **`trainin`**, followed by two letters representing the node type such as **`mn`** for a **Master** node, **`un`** for a **Utility** node, and **`wn`** for a **Worker** node. The numeric value represents the node type order in the list such as Worker nodes **`0`**, **`1`**, and **`2`**.
+   **Note:**
+   The name of a node is the concatenation of the **first seven** letters of the cluster's name, **`trainin`**, followed by two letters representing the node type such as **`mn`** for a **Master** node, **`un`** for a **Utility** node, and **`wn`** for a **Worker** node. The numeric value represents the node type order in the list such as Worker nodes **`0`**, **`1`**, and **`2`**.
 
-8. To view the details of a node, click the node's name link in the **Name** column. For example, click the **`traininmn0`** first Master node in the **Name** column to display the metrics about the first Master node.
+   ![](./images/cluster-nodes.png " ")
 
-    ![](./images/first-master-node.png " ")  
+2. To view the details of a node, click the node's name link in the **Name** column. For example, click the **`traininmn0`** first Master node in the **Name** column to display the **Node Details** page.
 
-    The **Node Details** page is displayed. It contains two sections that display node information and node metrics charts.
+   ![](./images/first-master-node.png " ")  
 
-  ![](./images/node-details.png " ")  
+   The **Node Information** tab displays the node's general information and the network information.
 
-9. To display the block storage attached to this node, in the **Resources** section on the left, click the **Attached Block Volume Storage** link.
+   ![](./images/node-details-1.png " ")  
 
-  ![](./images/attached-block-volume.png " ")  
+   The **Node Metrics** section displays the following charts: CPU UTILIZATION, MEMORY UTILIZATION, NETWORK BYTES IN, and NETWORK BYTES OUT. You can hover over any chart to get additional details.
 
-10. Click the **Clusters** link in the breadcrumb at the top of the page to re-display the **Clusters** page.
-
-  ![](./images/breadcrumb-2.png " ")  
+   ![](./images/node-details-2.png " ")  
 
 
-## STEP 4: Maintain the Cluster
+3. To display the block storage attached to this node, in the **Resources** section on the left, click the **Attached Block Volume Storage** link.
 
-You can use the **Clusters** and **Cluster Details** pages to maintain your clusters.
+   ![](./images/attached-block-volume.png " ")  
 
-1. On the **Clusters** page, on the row for the **`training-cluster`** cluster, click the **Actions** button. You can use the **View Cluster Details** context menu to add nodes, block storage, Cloud SQL, and also to rename or terminate the cluster.
+4. Click the **Cluster Details** link in the breadcrumbs at the top of the page to re-display the **Cluster Details** page.
 
-    ![](./images/actions-button.png " ")  
+   ![](./images/cluster-details-breadcrumb.png " ")  
 
-2.  Click **`training-cluster`** in the **Name** column to display the **Cluster Details** page. You can use the buttons at the top of the page to do the following:
+5. In the **Resources** section on the left, click **Work Requests**.
 
-    + Add tags to the cluster.
-    + Move resources from the current compartment to a different compartment.
-    + Add **Worker** nodes to the **`training-cluster`** cluster. Any new nodes that you add will use the same instance shape and amount of attached block storage as the existing **Worker** nodes in the cluster.
-    + Add block storage.
-    + Use the **More Actions** drop-down list to add Cloud SQL, rename the cluster, and terminate the cluster.
+   ![](./images/cluster-details-page-3.png " ")  
 
-    ![](./images/maintain-cluster-2.png " ")  
+6. The **Work Requests** section on the page displays the status of the cluster creation and other details such as the **Operation**, **Status**, **% Complete**, **Accepted**, **Started**, and **Finished**. Click the **CREATE_BDS** name link in the **Operation** column.
 
-## STEP 5: Add Oracle Cloud SQL to the Cluster
+   ![](./images/work-requests.png " ")
 
-You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your big data sources. When you add Cloud SQL support to a cluster, a query server node is added and big data cell servers are created on all worker nodes. For information about using Cloud SQL with Big Data Service see [Use Cloud SQL with Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-cloud-sql-big-data-service.html).
+   The **CREATE_BDS** page displays the work request information, logs, and errors, if any.
 
-**Note:** Cloud SQL is not included with Big Data Service. You must pay an extra fee for using Cloud SQL.
+   ![](./images/create-bds-page.png " ")
 
-1. Click the **Clusters** link in the breadcrumb at the top of the page to re-display the **Clusters** page.
+7. Click the **Clusters** link in the breadcrumbs at the top of the page to re-display the **Clusters** page.
 
-2. On the **Clusters** page, on the row for the **`training-cluster`**, click the **Actions** button. From the **View Cluster Details** context menu, select **Add Cloud SQL**.
+    ![](./images/breadcrumb.png " ")  
 
-  ![](./images/add-cloud-sql-menu-option.png " ")  
+8. Once the **`training-cluster`** cluster is created successfully, the status changes to **Active**.   
 
-3. In the **Add Cloud SQL** dialog box, provide the following information:
-    + **QUERY SERVER NODE SHAPE CONFIGURATION:** Select **`VM.Standard2.4`**.
-    + **QUERY SERVER NODE BLOCK STORAGE (IN GB):** Enter **`1000`**.
-    + **CLUSTER ADMIN PASSWORD:** Enter your cluster administration password that you chose when you created the cluster such as **`Training123`**.
+  ![](./images/cluster-active.png " ")  
 
-      ![](./images/add-cloud-sql.png " ")  
+## STEP 3: Review Locations of Services in the Cluster
 
-    **Note:** For information on the supported Query Server node shapes and block storage size, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D).
+  The `training-cluster` cluster is a highly available (HA) cluster; therefore, the services are distributed as follows:
 
-4. Click **Add**. The **Clusters** page is re-displayed. The status of the **`training-cluster`** is now **Updating** and the number of nodes in the cluster is now **`8`** instead of **`7`**.
+  | Master Node 1<br />**`traininmn0`**| Master Node 2<br />**`traininmn1`** | Utility <br />Node 1 **`traininmn0`** | Utility Node 2<br />**`traininmn1`** | Worker Nodes<br />**`traininmn0`** **`traininmn1`** **`traininmn2`** |
+  |:----:|:----:|:----:|:----:|:----:|
+  HDFS Failover Controller<br />HDFS JournalNode<br />HDFS NameNode<br />Key Trustee KMS  Proxy<br />Key Trustee Server Active<br />KTS Active Database<br />Spark History Server<br />YARN JobHistory Server<br />YARN ResourceManager<br />ZooKeeper Server<br />MIT KDC Primary| HDFS Balancer<br />HDFS Failover Controller<br />HDFS HttpFS<br />HDFS JournalNode<br />HDFS NameNode<br />Hue Load Balancer<br />Hue Server<br />Hue Kerberos Ticket Renewer<br />Key Trustee KMS Proxy<br />KTS Passive Database<br />KTS Passive<br />ResourceManager<br />ZooKeeper Server<br />MIT KDC Secondary| HDFS JournalNode<br />Cloudera Manager<br /> CM Alert Publisher<br />CM Service Event Server<br />CM Service Host Monitor<br />CM Service Navigator Audit Server<br />CM Service Navigator Metadata Server<br />CM Service Reports Manager<br />CM Service Monitor<br />Sentry Server<br />Zookeeper Server| Hive Metastore Server<br />HiveServer2<br />Hive WebHCat Server<br />Hue Load Balancer<br />Hue Server<br />Hue Kerberos Ticket Renewer<br />Oozie Server<br />Sentry Server|HDFS DataNode<br />YARN NodeManager
 
-    ![](./images/updating-cluster.png " ")  
-
-5. Click the **`training-cluster`** name link in the **Name** column to display the **Cluster Details** page. The **Cluster Information** tab displays the Cloud SQL Information. In addition, the newly added Cloud SQL node is displayed in the **List of cluster nodes** section.
-
-    ![](./images/cluster-details-cs.png " ")
-
-6. You can also navigate to **Clusters > Cluster Details > Work Requests** to display the status, logs, and errors (if any) of adding the Cloud SQL node to the cluster.
-
-    ![](./images/add-cloud-sql-wr.png " ")
-
-7. Once the Cloud SQL node is successfully added to the cluster, the cluster's state changes to **Active**.
-
-    ![](./images/cs-active.png " ")    
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 

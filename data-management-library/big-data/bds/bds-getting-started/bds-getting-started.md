@@ -6,12 +6,17 @@ In this lab, you will perform a few tasks that are required to get started with 
 
 ### Objectives
 
-* Learn how to create a compartment.
-* Learn how to create a user that will be your BDS administrator.
-* Learn how to create a BDS Administrators group.
-* Learn how to add the BDS administrator to the BDS Administrators group.
-* Learn how to create policies.
-* Learn how to create a Virtual Cloud Network (VCN).
+In this lab, you will practice performing both the required and optional tasks described in the following table for educational purposes. If you have restrictions on what you can create in your setup, you can use your existing resources; however, make a note of your resources' names which you'll need when you create your cluster in the next lab.
+
+**Note:** The steps in this lab and any other labs should be performed sequesntially. 
+
+| Task                                                             | Purpose                                                                                                                                                                                                                                                                                                                 | Who?                                      | Required? |
+|------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|-----------|
+| [STEP 2: Create a Compartment for BDS Resources](#STEP2:CreateaCompartment)                         | Create a compartment named **`training-compartment `** in your tenancy to help organize your BDS resources.                                                                                                                                         | Cloud Administrator                      | No        |
+| [STEP 3: Create an IAM User to be the BDS Administrator](#STEP3:CreateanIAMUsertoBetheBDSAdministrator)           | Create a user named **`training-bds-admin`** that you'll add to the administrators group to become a BDS Administrator.                                                                                                                                                                                                          | Cloud Administrator                      | No        |
+| [STEP 4: Create a BDS Administrator's Group and Add an Administrator User](#STEP4:CreateanIAMBDSAdministratorsGroupandAddtheNewUsertotheGroup) | <ul><li>Create an administrators group named **`training-bds-admin-group`** with permissions to create and manage your BDS resources.</ul></li><ul> <li>Add the new user to this group to become a BDS Administrator.</ul></li> | Cloud Administrator                      | No        |
+| [STEP 5: Create Policies for Administering Your Service](#STEP5:CreatePoliciesforAdministeringYourService) |<ul><li>Create a policy named **`training-admin-policy`** to grant permissions to the BDS Administrator group to manage the cluster.</ul></li><ul><li>Create a second policy named **`training-bds-policy`** to grant permissions to BDS to create clusters in your tenancy.</ul></li>| Cloud Administrator or BDS Administrator   | **Yes**       |
+| [STEP 6: Create a Virtual Cloud Network (VCN)](#STEP6:CreateaVirtualCloudNetwork(VCN))                             | Create a Virtual Cloud Network (VCN) in your tenancy, to be used by your cluster(s). Alternatively, you can use an existing VCN in the tenancy.                                                                                                                                                              | Cloud Administrator or BDS Administrator | **Yes**       |
 
 ### What Do You Need?
 
@@ -29,7 +34,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 
 ## STEP 2: Create a Compartment
-A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Big Data Service resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your BDS resources.
+A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Big Data Service resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your BDS resources that you will use in the lab.
 
 1. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page.
 

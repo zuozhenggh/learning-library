@@ -4,43 +4,31 @@
           "title": "Introduction to Oracle Big Data Service (BDS)",
           "description": "Introduction to Oracle Big Data Service",
           "filename": "./intro.md"
-      },
-        {
+      }
+      ,
+      {
             "title": "Lab 1: Set Up the BDS Environment",
-            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
+            "description": "This lab walks you through the required and optional tasks to setup your Big Data Service environment before you can create clusters.",
             "filename": "./../bds-getting-started/bds-getting-started.md"
-        }
-        ,
-        {
+      }
+      ,
+      {
             "title": "Lab 2: Create a BDS Hadoop Cluster",
-            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
+            "description": "This lab walks you through how to create a BDS Highly Available (HA) Hadoop cluster.",
             "filename": "./../bds-create-cluster/bds-create-cluster.md"
-        }
-        ,
-        {
-            "title": "Lab 3: Create a Hadoop User",
-            "description": "This lab walks you through the required tasks ...",
-            "filename": "./../create-hadoop-user/create-hadoop-user.md"
-        }
-        ,
-        {
+      }
+      ,
+      {
+            "title": "Lab 3: Add Oracle Cloud SQL to the Cluster",
+            "description": "This lab shows you how to add Oracle Cloud SQL to your BDS cluster.",
+            "filename": "./../bds-add-cloud-sql/bds-add-cloud-sql.md"
+      }
+      ,
+      {
             "title": "Lab 4: Access a BDS Node Using a Public IP",
-            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
+            "description": "This lab shows you how to map a node's private IP address to a public IP address",
             "filename": "./../bds-getting-started/bds-getting-started.md"
         }
-        ,
-        {
-            "title": "Lab 5: Create an Edge Node to Access Your Cluster",
-            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
-            "filename": "./../bds-getting-started/bds-getting-started.md"
-        }
-        ,
-        {
-            "title": "Lab 6: Backup Your Hadoop Cluster to Oracle Object Storage",
-            "description": "This lab walks you through the required tasks before you can get started with Big Data Service.",
-            "filename": "./../bds-getting-started/bds-getting-started.md"
-        }
-
 
                  ]
 }

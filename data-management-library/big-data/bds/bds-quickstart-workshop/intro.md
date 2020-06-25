@@ -18,20 +18,16 @@ Watch our short video that explains key features in Oracle Big Data Service:
 
 
 ## Workshop Objectives
-- Prepare for using the service
-- Create a Big Data Service cluster
-- Access the cluster
-- Get started with Cloud SQL
-- Back up and restore your cluster
-- Migrate to Big Data Service from Cloudera Enterprise Data Hub clusters
+- Prepare for using the Oracle Big Data Service (BDS).
+- Create a Big Data Service Hadoop cluster.
+- Add Cloud SQL to the cluster.
+- Access a BDS utility node using a public IP address.
 
 ## Lab Breakdown
-- **Lab 1:** Prepare your Big Data Service environment.
-- **Lab 2:** Create a BDS Hadoop Cluster.
-- **Lab 3:** Create a Hadoop Admin User. **_[Available soon]_**
-- **Lab 4:** Access a BDS Utility Node Using a Public IP Address. **_[Available soon]_**
-- **Lab 5:** Create an Edge Node for Your Cluster. **_[Available soon]_**
-- **Lab 6:** Backup Your Hadoop Cluster to Oracle Object Storage. **_[Available soon]_**
+- **Lab 1:** Prepare your Big Data Service Environment
+- **Lab 2:** Create a BDS Hadoop Cluster
+- **Lab 3:** Add Oracle Cloud SQL to the Cluster
+- **Lab 4:** Access a BDS Utility Node Using a Public IP Address
 
 **After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
 
