@@ -1,6 +1,7 @@
 # Create and enable a user in SQLDeveloper Web
 
 ## Introduction
+This lab walks you through the steps to get started with SQL Developer Web. You will learn how to create a user in SQL Developer Web and provide that user the access to SQL Develoepr Web.
 
 ### What Do You Need?
 * Register cloud account
