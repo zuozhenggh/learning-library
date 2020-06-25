@@ -1,12 +1,6 @@
-| [./media/image1.emf](./media/image1.emf)                              |
-|-----------------------------------------------------------------------|
-|                                                                       |
-|                                                                       |
-| [./media/image2.png](./media/image2.png)                              |
-|                                                                       |
-| Version Copyright © 2020, Oracle and/or its affiliates Confidential – |
+![](media/rdwd-emheader.png)
 
-# Purpose Statement
+# Purpose 
 
 Database Fleet Maintenance is an end-to-end automated solution for patching and
 upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching
@@ -17,34 +11,16 @@ This document provides an overview of features and enhancements included in
 release . It is intended solely to help you assess the business benefits of
 upgrading to and to plan your I.T. projects.
 
-# Disclaimer
 
-This document in any form, software or printed matter, contains proprietary
-information that is the exclusive property of Oracle. Your access to and use of
-this confidential material is subject to the terms and conditions of your Oracle
-software license and service agreement, which has been executed and with which
-you agree to comply. This document and information contained herein may not be
-disclosed, copied, reproduced or distributed to anyone outside Oracle without
-prior written consent of Oracle. This document is not part of your license
-agreement nor can it be incorporated into any contractual agreement with Oracle
-or its subsidiaries or affiliates.
+# Content
+**Workshop Activity 1:** Detect Configuration Pollution
 
-This document is for informational purposes only and is intended solely to
-assist you in planning for the implementation and upgrade of the product
-features described. It is not a commitment to deliver any material, code, or
-functionality, and should not be relied upon in making purchasing decisions. The
-development, release, and timing of any features or functionality described in
-this document remains at the sole discretion of Oracle.
+**Workshop Activity 2:** Standalone Database Server Upgrade with Fleet Maintenance
 
-Due to the nature of the product architecture, it may not be possible to safely
-include all features described in this document without risking significant
-destabilization of the code.
-
-# Workshop Highlights
 
 The estimated time to complete the workshop is 75 minutes
 
-| Workshop ActiviTY No | FEATURE                                                   | APPROX Time | Details                                                                                                              | Value Proposition |
+| Workshop Activity No | Feature                                                   | Approx Time | Details                                                                                                              | Value Proposition |
 |----------------------|-----------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                            | 10 minutes  | Analyze the database estate using Software Standardization.                                                          |                   |
 | 2                    | Standalone Database Server Upgrade with Fleet Maintenance | 1hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
@@ -97,29 +73,29 @@ Prior to starting, you will:
 
 -   Login to Host using SSH Key based authentication
 
-Refer to Frequently Asked Questions doc  
-(<https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md>)
+    Refer to Frequently Asked Questions doc  
+    (<https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md>)
 
-relevant to your SSH client type (e.g. Putty on Windows or Native such as
-terminal on Mac OS):
+    relevant to your SSH client type (e.g. Putty on Windows or Native such as
+    terminal on Mac OS):
 
--   Authentication OS User - “opc”
+    -   Authentication OS User - “opc”
 
--   Authentication method - SSH RSA Key
+    -   Authentication method - SSH RSA Key
 
--   Oracle EM and DB Software OS User – “oracle”.
+    -   Oracle EM and DB Software OS User – “oracle”.
 
-First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
+    First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
 
 -   OMS URL: and Credentials:
 
--   Username: **sysman**
+    -   Username: **sysman**
 
--   password: **welcome1**
+    -   password: **welcome1**
 
-You may see an error on the browser while accessing the Web Console - “*Your
-connection is not secure*”, add exception and proceed. Access this URL and
-ensure that you are able to access Enterprise Manager Web Console.
+    You may see an error on the browser while accessing the Web Console - “*Your
+    connection is not secure*”, add exception and proceed. Access this URL and
+    ensure that you are able to access Enterprise Manager Web Console.
 
 ## Update the Named Credentials with your SSH Key
 
@@ -201,17 +177,17 @@ managing the database estate.
 
 2.  Click on Targets \> Databases.
 
-![](media/038585c9308635261ae7e4aa956525af.png)
+    ![](media/038585c9308635261ae7e4aa956525af.png)
 
-1.  In the Databases targets page, click on Administration \> Click Software
+3.  In the Databases targets page, click on Administration \> Click Software
     Standardization Advisor
 
-![](media/6198ae4976d5ddad0fde0432c472e9e8.jpg)
+    ![](media/6198ae4976d5ddad0fde0432c472e9e8.jpg)
 
-1.  Software Standardization Advisor shows two graphs depicting current
+4.  Software Standardization Advisor shows two graphs depicting current
     configuration and recommended configuration.
 
-![](media/47b4e9b7912393c2a93a283db42e61a1.jpg)
+    ![](media/47b4e9b7912393c2a93a283db42e61a1.jpg)
 
 A Software Configuration is identified by Database Release, Platform and set of
 Patches installed on the target.
@@ -224,36 +200,36 @@ Configurations”.
 
 Let us see details of the reports in next steps.
 
-1.  Click on Generate Report.
+5.  Click on Generate Report.
 
-2.  Click on Current Configurations to open the Excel report
+6.  Click on Current Configurations to open the Excel report
 
-![](media/0e038f3bcf66c76ae804361dad21ffa2.jpg)
+    ![](media/0e038f3bcf66c76ae804361dad21ffa2.jpg)
 
-When opening the downloaded Excel Spreadsheet report, a warning on XLS format
-and file extension mismatch may pop up (see below). Simply click on “Yes” to
-ignore the warning and open the file.
+    When opening the downloaded Excel Spreadsheet report, a warning on XLS format
+    and file extension mismatch may pop up (see below). Simply click on “Yes” to
+    ignore the warning and open the file.
 
-![](media/d9ea997d07c30f80083e097f6b578200.png)
+    ![](media/d9ea997d07c30f80083e097f6b578200.png)
 
-Current Configuration shows five different Oracle home software versions
+    Current Configuration shows five different Oracle home software versions
 
-![](media/84e0ac92b29e45e91b9d17a8e0b3a2da.jpg)
+    ![](media/84e0ac92b29e45e91b9d17a8e0b3a2da.jpg)
 
-1.  Next, click on Recommended Configurations to open the Excel Report
+7.  Next, click on Recommended Configurations to open the Excel Report
 
-![](media/02a39c45b351146bec1e94859830a0ea.jpg)
+    ![](media/02a39c45b351146bec1e94859830a0ea.jpg)
 
-The EM Recommended Configuration report recommends reducing 5 configurations and
-standardizing the database estate on 2 configurations, one based on 18c and the
-other based on 19c. This means All Oracle Homes of Release 18c should uptake the
-corresponding 18c configuration and the 19c homes will use the one based on
-Release 19c
+    The EM Recommended Configuration report recommends reducing 5 configurations and
+    standardizing the database estate on 2 configurations, one based on 18c and the
+    other based on 19c. This means All Oracle Homes of Release 18c should uptake the
+    corresponding 18c configuration and the 19c homes will use the one based on
+    Release 19c
 
-![](media/06ff90fdba8aa5abebd066086e33f700.jpg)
+    ![](media/06ff90fdba8aa5abebd066086e33f700.jpg)
 
-Recommendation is based on union of all bugs included in the Patches in all OHs
-and based on configuration type.
+    Recommendation is based on union of all bugs included in the Patches in all OHs
+    and based on configuration type.
 
 ## Summary
 
@@ -296,7 +272,7 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
 1.  Log on to Enterprise Manager Console and review the status and version of DB
     Target.
 
-![C:\\Users\\saurjjai\\Documents\\OOW\\2019\\HOLs\\Fleet Maintenance\\screenshots\\navigate_database_targets.PNG](media/ec0b6926d4f65b52a771483ace24055c.png)
+![](media/ec0b6926d4f65b52a771483ace24055c.png)
 
 ![](media/05ab9d53e622fe6b226647d67750c1dd.jpg)
 
@@ -308,134 +284,118 @@ are listed here for your information only.
 
 ### Create Gold Image [READ-ONLY– This step has already been implemented]
 
-1.  Review as prescribed
+2.  Review as prescribed
 
-Gold Image represents a software end state. An Enterprise Manager Software
-Library Gold Image is a software archive created from a patched oracle home
-uploaded to EM Software Library. Steps in this section are already implemented
-and are available here for review.
+    Gold Image represents a software end state. An Enterprise Manager Software
+    Library Gold Image is a software archive created from a patched oracle home
+    uploaded to EM Software Library. Steps in this section are already implemented
+    and are available here for review.
 
-1.  Reference Home Setup
+    a) Reference Home Setup
 
-In order to create a Gold Image of the ‘recommended patch configuration’, you
-need to manually create such an Oracle Home as a pre-requisite step.
+    In order to create a Gold Image of the ‘recommended patch configuration’, you
+    need to manually create such an Oracle Home as a pre-requisite step.
 
-As the goal of this lab is to upgrade Database target from 18.10 to 19.7, a
-reference Oracle home fully patched to 18.10
-[Orasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192,
-/u01/app/oracle/product/18/db_home_src] was created and used to create the
-initial version of the Gold Image as further described in the next steps.
+    As the goal of this lab is to upgrade Database target from 18.10 to 19.7, a
+    reference Oracle home fully patched to 18.10
+    [Orasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192,
+    /u01/app/oracle/product/18/db_home_src] was created and used to create the
+    initial version of the Gold Image as further described in the next steps.
 
-This reference Oracle Home is discovered in Enterprise Manager as shown below
-and will be used for Gold Image Creation.
+    This reference Oracle Home is discovered in Enterprise Manager as shown below
+    and will be used for Gold Image Creation.
 
-Navigate to “Targets \> All Targets” and type in
-“Orasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192” in the “Search
-Target Name” box.
+    Navigate to “Targets \> All Targets” and type in
+    “Orasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192” in the “Search
+    Target Name” box.
 
-![](media/ea2416958193764cc47426f0ad8a0a67.jpg)
+    ![](media/ea2416958193764cc47426f0ad8a0a67.jpg)
 
-1.  Review “Create New Gold Image” from ssh terminal using the following emcli
+    b) Review “Create New Gold Image” from ssh terminal using the following emcli
     command
 
-[oracle\@emcc \~]\$ cd fleet
+    [oracle\@emcc \~]\$ cd fleet
 
-[oracle\@emcc \~]\$ cat create_image_Tier1_sidb_x64.sh
+    [oracle\@emcc \~]\$ cat create_image_Tier1_sidb_x64.sh
 
-![](media/e4a3896e00184146230d4d974e64a528.png)
+    ![](media/e4a3896e00184146230d4d974e64a528.png)
 
-1.  Click on Enterprise \> Provisioning and Patching \> Procedure Activity to
-    review Execution details of this operation via Enterprise Manager Console
+3.  List Available Gold Images
 
-![C:\\Users\\saurjjai\\Documents\\OOW\\2019\\HOLs\\Fleet Maintenance\\screenshots\\navigate_procedure_activity.PNG](media/e9091a9e1e04a1a988cb61d9171a483d.png)
-
-Click on ‘CreateGoldImageProfile_...’ run and review the steps performed.  
-  
-
-
-![](media/a66de6065c1d60b154146b0e940e96ed.png)
-
-1.  Use ‘Show’ filter ‘Steps Not Skipped’ ; View:‘Expand All’ for detailed view
-    of all the steps performed to complete an operation.
-
-![](media/6cad3b30cb62f3148c07a2df72c211cc.png)
-
-1.  List Available Gold Images
-
-2.  Execute the following commands in ssh terminal to see the list of Gold
+    a) Execute the following commands in ssh terminal to see the list of Gold
     Images available for deployment, locate ‘Tier \#1 SI DB Linux64*’* in the
     emcli command output:
 
     [oracle\@emcc \~]\$ emcli db_software_maintenance -getImages
 
-![](media/81fa9422f35c2dadac8595ef44a5f772.png)
+    ![](media/81fa9422f35c2dadac8595ef44a5f772.png)
 
->   IMAGE ID retrieved from the output of above command is used in further
->   operations like Target Subscription.
+    IMAGE ID retrieved from the output of above command is used in further
+    operations like Target Subscription.
 
-1.  After retrieving a list of the available images, one can view a list of
+    b) After retrieving a list of the available images, one can view a list of
     versions available for a specific image with the following command:
 
     [oracle\@emcc \~]\$ emcli db_software_maintenance -getVersions
     -image_id=A5F3D8523BDF635BE0531A00000AA55B
 
-![](media/8c48a86f30874b71459424dc8f69e05f.png)
+    ![](media/8c48a86f30874b71459424dc8f69e05f.png)
 
->   When a Gold Image is created for the first time, its first version is
->   created as per the input and marked as current
+    When a Gold Image is created for the first time, its first version is
+    created as per the input and marked as current
 
->   Whenever we run a DEPLOY operation for a target, Gold Image version marked
->   as CURRENT is used to deploy the new Oracle Home.
+    Whenever we run a DEPLOY operation for a target, Gold Image version marked
+    as CURRENT is used to deploy the new Oracle Home.
 
-1.  Verify if Gold Image is Applicable
+4.  Verify if Gold Image is Applicable
 
->   This step verifies if the image can be used to patch a specified database
->   target. This is done by comparing the bug fixes available in the current
->   Oracle home of the database target and the image. In effect this check is
->   run to identify patch conflicts.
+    This step verifies if the image can be used to patch a specified database
+    target. This is done by comparing the bug fixes available in the current
+    Oracle home of the database target and the image. In effect this check is
+    run to identify patch conflicts.
 
-1.  Review and execute below emcli command:  
+    a) Review and execute below emcli command:  
     [oracle\@emcc \~]\$ emcli db_software_maintenance -checkApplicability
     -image_id="A5F3D8523BDF635BE0531A00000AA55B"
     -target_list=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database
 
-![](media/a7ef76d93e9ee75da1a6a16a7f7620d4.png)
+    ![](media/a7ef76d93e9ee75da1a6a16a7f7620d4.png)
 
->   This command can show one of the following results:
+    This command can show one of the following results:
 
--   Applicable: The image and database target contain the same set of bug fixes.
-    The image can be applied on the specified target.
+    -   Applicable: The image and database target contain the same set of bug fixes.
+        The image can be applied on the specified target.
 
--   Applicable and Image has more bug fixes: The image contains more bug fixes
-    than those applied on the database. The list of extra bugs is displayed. The
-    image can be applied on the specified target.
+    -   Applicable and Image has more bug fixes: The image contains more bug fixes
+        than those applied on the database. The list of extra bugs is displayed. The
+        image can be applied on the specified target.
 
--   Not Applicable: The database contains more bug fixes than those included in
-    the image. The list of missing bugs is displayed. The administrator has to
-    create a new version of the image that includes the missing bugs before the
-    database can uptake the same.
+    -   Not Applicable: The database contains more bug fixes than those included in
+        the image. The list of missing bugs is displayed. The administrator has to
+        create a new version of the image that includes the missing bugs before the
+        database can uptake the same.
 
 ### Subscribe Database - [READ ONLY – This step has already been implemented]
 
-1.  Review steps
+5.  Review steps
 
-    1.  emcli command
+    a) emcli command
 
-        [oracle\@emcc \~]\$ emcli db_software_maintenance -subscribeTarget
-        -target_name=finance.subnet.vcn.oraclevcn.com
-        -target_type=oracle_database
-        -image_id="A5F3D8523BDF635BE0531A00000AA55B"
+       [oracle\@emcc \~]\$ emcli db_software_maintenance -subscribeTarget
+       -target_name=finance.subnet.vcn.oraclevcn.com
+       -target_type=oracle_database
+       -image_id="A5F3D8523BDF635BE0531A00000AA55B"
 
-        ![](media/95439c2138aabd69382c9b0489f14c3b.png)
+       ![](media/95439c2138aabd69382c9b0489f14c3b.png)
 
-        Where:
+       Where:
 
--   target_name – Name of the Database target which needs to be patched
+       -   target_name – Name of the Database target which needs to be patched
 
--   target_type – type of target to be patched. This should be oracle_database
-    in this case
-
--   image_id – ID of the Gold Image to which the target should be patched
+       -   target_type – type of target to be patched. This should be oracle_database
+           in this case
+ 
+       -   image_id – ID of the Gold Image to which the target should be patched
 
 ### Deploy Image - [READ ONLY – This step has already been implemented]
 
