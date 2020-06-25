@@ -272,15 +272,15 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
 1.  Log on to Enterprise Manager Console and review the status and version of DB
     Target.
 
-![](media/ec0b6926d4f65b52a771483ace24055c.png)
+    ![](media/ec0b6926d4f65b52a771483ace24055c.png)
 
-![](media/05ab9d53e622fe6b226647d67750c1dd.jpg)
+    ![](media/05ab9d53e622fe6b226647d67750c1dd.jpg)
 
-You will see finance.subnet.vcn.oraclevcn.com. If target status is ‘DOWN’, start
-the target (using /home/oracle/start_db_finance.sh).
+    You will see finance.subnet.vcn.oraclevcn.com. If target status is ‘DOWN’, start
+    the target (using /home/oracle/start_db_finance.sh).
 
-The next [READ ONLY] blocks are fully covered by the Patching lab (Part \#1) and
-are listed here for your information only.
+    The next [READ ONLY] blocks are fully covered by the Patching lab (Part \#1) and
+    are listed here for your information only.
 
 ### Create Gold Image [READ-ONLY– This step has already been implemented]
 
@@ -399,66 +399,54 @@ are listed here for your information only.
 
 ### Deploy Image - [READ ONLY – This step has already been implemented]
 
-1.  Review steps
+6.  Review steps
 
-    1.  emcli command
+    a) emcli command
 
-[oracle\@emcc \~]\$ cat deploy1810_finance.sh
+    [oracle\@emcc \~]\$ cat deploy1810_finance.sh
 
-![](media/81d4a98e953a1d2ee999a1b718fd825b.png)
-
-1.  Review execution details
-
-![](media/8db90d0065f26a68815461ad0383d254.png)
+    ![](media/81d4a98e953a1d2ee999a1b718fd825b.png)
 
 ### Migrate Listener - [READ ONLY – This step has already been implemented]
 
-1.  Review steps
+7.  Review steps
 
-    1.  emcli command
+    a) emcli command
 
-[oracle\@emcc \~]\$ cat migrate_listener_finance_update.sh
+    [oracle\@emcc \~]\$ cat migrate_listener_finance_update.sh
 
-![](media/17322b2523052b40c7d105c51b6a2967.png)
-
-1.  Review execution details
-
-![](media/6397010039925320070bc51096dfae79.png)
+    ![](media/17322b2523052b40c7d105c51b6a2967.png)
 
 ### Update Database – Patch to 18.10 - [READ ONLY – This step has already been implemented]
 
-1.  Review steps
+8.  Review steps
 
-    1.  emcli command
+    a) emcli command
 
-[oracle\@emcc \~]\$ cat update_finance.sh
+    [oracle\@emcc \~]\$ cat update_finance.sh
 
-![](media/ed90e634e7779548a6f7aebecec5e189.png)
-
-1.  Review execution details
-
-![](media/04fd143ff5382b5d70f1805b99b96df0.png)
+    ![](media/ed90e634e7779548a6f7aebecec5e189.png)
 
 ### Create New Image Version
 
-1.  Add Image version 19.7 to Gold Image Tier1 SIDB Linux-x64
+9.  Add Image version 19.7 to Gold Image Tier1 SIDB Linux-x64
 
-2.  Reference Home Setup [READ-ONLY– This step has already been implemented]
+    a) Reference Home Setup [READ-ONLY– This step has already been implemented]
 
-Just as it was done for the first version of this image, a reference 19.7 Oracle
-Home is needed to create a new version of the image and was setup in advance. [
-/u01/app/oracle/product/19/db_home_src].
+    Just as it was done for the first version of this image, a reference 19.7 Oracle
+    Home is needed to create a new version of the image and was setup in advance. [
+    /u01/app/oracle/product/19/db_home_src].
 
-This reference Oracle Home is discovered in Enterprise Manager as shown below
-and will be used to create and new version of the Gold Image.
+    This reference Oracle Home is discovered in Enterprise Manager as shown below
+    and will be used to create and new version of the Gold Image.
 
-Navigate to “Targets \> All Targets” and type in
-“Orasidb19c_home1_2020_05_13_04_24_10_emcc.marketplace.com_2953” in the “Search
-Target Name” box.
+    Navigate to “Targets \> All Targets” and type in
+    “Orasidb19c_home1_2020_05_13_04_24_10_emcc.marketplace.com_2953” in the “Search
+    Target Name” box.
 
-![](media/a3ba55228f1e4a239c81bd01ed86c299.png)
+    ![](media/a3ba55228f1e4a239c81bd01ed86c299.png)
 
-1.  Review and execute the following command to add Image version 19.7 to Tier1
+    b) Review and execute the following command to add Image version 19.7 to Tier1
     SIDB Linux-x64
 
     [oracle\@emcc \~]\$ emcli db_software_maintenance -createSoftwareImage
@@ -469,35 +457,33 @@ Target Name” box.
 
     ![](media/d3f1d7ec4ab73bd6e50aab47fbf3ffca.png)
 
-2.  Navigate to Enterprise \> Provisioning and Patching \> Procedure Activity to
+    c) Navigate to Enterprise \> Provisioning and Patching \> Procedure Activity to
     Review Execution Details of this operation via Enterprise Manager Console.
     Click on ‘CreateGoldImage\*’ run
 
-![](media/98008aab963de3d4439767ccab3fbba0.png)
+    ![](media/98008aab963de3d4439767ccab3fbba0.png)
 
-1.  Review the Procedure Activity steps performed.
+    d) Review the Procedure Activity steps performed.
 
-![](media/0dedb16ddd453f5fa9d312229e9bd072.png)
+    ![](media/0dedb16ddd453f5fa9d312229e9bd072.png)
 
-1.  Set Version 19.7 to Status Current
+10.  Set Version 19.7 to Status Current
 
-2.  View a list of versions available for a specific image with the following
+   a) View a list of versions available for a specific image with the following
     command:
 
-    [oracle\@emcc \~]\$ emcli db_software_maintenance -getVersions
-    -image_id=A5F3D8523BDF635BE0531A00000AA55B  
-      
-    
+   [oracle\@emcc \~]\$ emcli db_software_maintenance -getVersions
+   -image_id=A5F3D8523BDF635BE0531A00000AA55B      
 
-    ![](media/9bba5ae0276141179ba6b22e984ba3f7.png)
+   ![](media/9bba5ae0276141179ba6b22e984ba3f7.png)
 
-3.  Using the VERSION ID from Step above, review and execute the following
-    command to set Version Name 19.7 to Status Current
+   b) Using the VERSION ID from Step above, review and execute the following
+   command to set Version Name 19.7 to Status Current
 
-    [oracle\@emcc \~]\$ emcli db_software_maintenance -updateVersionStatus
-    -status=CURRENT -version_id=A79931EC777968D6E0532A00000A806B
+   [oracle\@emcc \~]\$ emcli db_software_maintenance -updateVersionStatus
+   -status=CURRENT -version_id=A79931EC777968D6E0532A00000A806B
 
-    ![](media/7796c07b2b8273dc93221a84b784dc63.png)
+   ![](media/7796c07b2b8273dc93221a84b784dc63.png)
 
 ### Deploy New Image Version
 
