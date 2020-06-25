@@ -17,11 +17,9 @@ upgrading to and to plan your I.T. projects.
 
 **Workshop Activity 2:** Standalone Database Server Patching with Fleet Maintenance
 
-# Workshop Highlights
-
 The estimated time to complete the workshop is 60 minutes
 
-| Workshop ActiviTY No | FEATURE                                                    | APPROX Time | Details                                                                                                                                                                    | Value Proposition |
+| Workshop Activity No | Feature                                                    | Approx Time | Details                                                                                                                                                                    | Value Proposition |
 |----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                             | 10 minutes  | Analyze the database estate using Software Standardization.                                                                                                                |                   |
 | 2                    | Standalone Database Server Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
@@ -253,7 +251,7 @@ Container Database will automatically get patched.
 1.  Log on to Enterprise Manager Console and review the status and version of DB
     Target.
 
-![C:\\Users\\saurjjai\\Documents\\OOW\\2019\\HOLs\\Fleet Maintenance\\screenshots\\navigate_database_targets.PNG](media/ec0b6926d4f65b52a771483ace24055c.png)
+![](media/ec0b6926d4f65b52a771483ace24055c.png)
 
 ![](media/c064eebf1a17dfd14d9c5921a88f93cb.jpg)
 
