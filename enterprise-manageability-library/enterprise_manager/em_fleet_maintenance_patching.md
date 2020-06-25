@@ -306,45 +306,40 @@ Container Database will automatically get patched.
 
     ![](media/e9091a9e1e04a1a988cb61d9171a483d.png)
 
-1.  Click on ‘CreateGoldImageProfile_...’ run and review the steps performed.  
-      
-    
+    d) Click on ‘CreateGoldImageProfile_...’ run and review the steps performed.  
 
     ![](media/f30e3920a7a7e18e4bdfffa328e9d483.png)
 
-2.  Use ‘Show’ filter ‘Steps Not Skipped’ ; View:‘Expand All’ for detailed view
+    e) Use ‘Show’ filter ‘Steps Not Skipped’ ; View:‘Expand All’ for detailed view
     of all the steps performed to complete an operation.
 
-![](media/c3d174049d514ac6c22ce65167d55776.png)
+    ![](media/c3d174049d514ac6c22ce65167d55776.png)
 
-1.  List Available Gold Images
+3.  List Available Gold Images
 
-2.  Execute the following commands in ssh terminal to see the list of Gold
-    Images available for deployment, locate ‘Tier \#2 SI DB Linux64*’* in the
-    emcli command output:
+    a) Execute the following commands in ssh terminal to see the list of Gold
+       Images available for deployment, locate ‘Tier \#2 SI DB Linux64*’* in the
+       emcli command output:
+       [oracle\@emcc \~]\$ emcli db_software_maintenance -getImages
 
-    [oracle\@emcc \~]\$ emcli db_software_maintenance -getImages
+       ![](media/979c7a2ab44a65b0a6faf911cac1b64a.png)
+       IMAGE ID retrieved from the output of above command is used in further operations like Target Subscription.
 
-    ![](media/979c7a2ab44a65b0a6faf911cac1b64a.png)
+    b) After retrieving a list of the available images, one can view a list of
+       versions available for a specific image with the following command:
 
->   IMAGE ID retrieved from the output of above command is used in further
->   operations like Target Subscription.
+       [oracle\@emcc \~]\$ emcli db_software_maintenance -getVersions
+       -image_id=\<*IMAGE ID from List available gold images*\>
 
-1.  After retrieving a list of the available images, one can view a list of
-    versions available for a specific image with the following command:
+       This command lists Gold Image versions with their VERSION ID and STATUS.
 
-    [oracle\@emcc \~]\$ emcli db_software_maintenance -getVersions
-    -image_id=\<*IMAGE ID from List available gold images*\>
+       ![](media/a9b1233fb416f91b34518744dc0d7e9a.png)
 
-    This command lists Gold Image versions with their VERSION ID and STATUS.
+       When a Gold Image is created for the first time, its first version is
+       created as per the input and marked as current
 
-![](media/a9b1233fb416f91b34518744dc0d7e9a.png)
-
->   When a Gold Image is created for the first time, its first version is
->   created as per the input and marked as current
-
->   Whenever we run a DEPLOY operation for a target, Gold Image version marked
->   as CURRENT is used to deploy the new Oracle Home.
+       Whenever we run a DEPLOY operation for a target, Gold Image version marked
+       as CURRENT is used to deploy the new Oracle Home.
 
 1.  Verify if Gold Image is Applicable
 
