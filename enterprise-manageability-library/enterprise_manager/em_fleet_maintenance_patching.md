@@ -286,28 +286,25 @@ Container Database will automatically get patched.
 
     ![](media/ea2416958193764cc47426f0ad8a0a67.jpg)
 
-1.  Create New Gold Image from ssh terminal using the following emcli command
+    b) Create New Gold Image from ssh terminal using the following emcli command
 
-[oracle\@emcc \~]\$ cd \~/fleet
+    [oracle\@emcc \~]\$ cd \~/fleet
 
-[oracle\@emcc \~]\$ emcli db_software_maintenance -createSoftwareImage
--input_file="data:/home/oracle/fleet/sidb18c_tier2.inp"
+    [oracle\@emcc \~]\$ emcli db_software_maintenance -createSoftwareImage
+    -input_file="data:/home/oracle/fleet/sidb18c_tier2.inp"
 
-**OR**
+    **OR**
 
-[oracle\@emcc \~]\$ sh create_image_Tier2_sidb_x64.sh  
+    [oracle\@emcc \~]\$ sh create_image_Tier2_sidb_x64.sh  
   
 
 
-![](media/1791b5df10396b908e81340d2c6abed4.png)
+    ![](media/1791b5df10396b908e81340d2c6abed4.png)
 
-1.  Click on Enterprise \> Provisioning and Patching \> Procedure Activity to
-    review Execution details of this operation via Enterprise Manager Console
+    c) Click on Enterprise \> Provisioning and Patching \> Procedure Activity to
+        review Execution details of this operation via Enterprise Manager Console
 
-![](media/e9091a9e1e04a1a988cb61d9171a483d.png)
-
->   C:\\Users\\saurjjai\\Documents\\OOW\\2019\\HOLs\\Fleet
->   Maintenance\\screenshots\\navigate_procedure_activity.PNG
+    ![](media/e9091a9e1e04a1a988cb61d9171a483d.png)
 
 1.  Click on ‘CreateGoldImageProfile_...’ run and review the steps performed.  
       
