@@ -159,28 +159,28 @@ managing the database estate.
 
 2.  Click on Targets \> Databases.
 
-![](media/038585c9308635261ae7e4aa956525af.png)
+    ![](media/038585c9308635261ae7e4aa956525af.png)
 
-1.  In the Databases targets page, click on Administration \> Click Software
+3.  In the Databases targets page, click on Administration \> Click Software
     Standardization Advisor
 
-![](media/6198ae4976d5ddad0fde0432c472e9e8.jpg)
+    ![](media/6198ae4976d5ddad0fde0432c472e9e8.jpg)
 
-1.  Software Standardization Advisor shows two graphs depicting current
+4.  Software Standardization Advisor shows two graphs depicting current
     configuration and recommended configuration.
 
-![](media/47b4e9b7912393c2a93a283db42e61a1.jpg)
+    ![](media/47b4e9b7912393c2a93a283db42e61a1.jpg)
 
-A Software Configuration is identified by Database Release, Platform and set of
-Patches installed on the target.
+    A Software Configuration is identified by Database Release, Platform and set of
+    Patches installed on the target.
 
-The Software Configuration Advisor run shows that there are 5 Unique Software
-Configurations in the environment as shown in the pie chart labelled as “Current
-Unique Software Configurations” and recommendation is to maintain 2 Software
-Configurations as shown in the pie chart labelled as “Recommended Software
-Configurations”.
+    The Software Configuration Advisor run shows that there are 5 Unique Software
+    Configurations in the environment as shown in the pie chart labelled as “Current
+    Unique Software Configurations” and recommendation is to maintain 2 Software
+    Configurations as shown in the pie chart labelled as “Recommended Software
+    Configurations”.
 
-Let us see details of the reports in next steps.
+    Let us see details of the reports in next steps.
 
 1.  Click on Generate Report.
 
