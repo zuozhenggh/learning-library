@@ -1,7 +1,7 @@
 ![](media/rdwd-emheader.png)
 
-Introduction
-============
+Purpose
+=======
 
 Database Fleet Maintenance is an end-to-end automated solution for patching and
 upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching
