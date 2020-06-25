@@ -1,4 +1,7 @@
-## Create the Customer_360 user
+# Create a user and enable SQLDeveloper Web for that user
+
+
+## STEP 1: Create the Customer_360 user
 
 Login as the Admin user in SQLDevWeb of the newly cerated ADB Free Tier instance.
 
@@ -27,7 +30,7 @@ GRANT connect, resource TO customer_360;
 ![Create User Customer_360](../images/ADB_SDW_CreateUser_C360.png) 
 
 
-## Enable SQLDevWeb for Customer_360
+## STEP 2: Enable SQLDevWeb for Customer_360
 
 Now provide SQLDevWeb access for this user. See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA)
 for details.

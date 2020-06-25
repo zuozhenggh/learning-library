@@ -5,8 +5,8 @@
 This lab walks you through the steps to get started with setting up and connecting to a Linux compute instance on Oracle Cloud. You will also learn how to copy and deploy Graph Server and Client, as well as ADB Wallet on your compute instance.
 
 ### What Do You Need? 
-* Registered cloud account
-* Created SSH Keys
+* Register cloud account
+* Create SSH Keys
   
 *Note 1: This is based on Practice 2 of the [OCI Lab L100](https://oracle.github.io/learning-library/oci-library/L100-LAB/Compute_Services/Compute_HOL.html#practice-2-creating-a-web-server-on-a-compute-instance) for setting up a web server on a compute instance.*
 
@@ -36,7 +36,7 @@ An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the
 
     ***NOTE:*** *You need a public IP address so that you can SSH into the running instance later in this lab.*
 
-4. Scroll down to the SSH area of the page. Choose the *id_rsa.pub* SSH key that you created earlier in this workshop. If you cannot find your SSH Key in the browse window using the **Choose SSH Key Files** option, and are sure you have generated your SSH Key, you can use the **Paste SSH Keys** option instead.  Press the **Create** button to create your instance. 
+4. Scroll down to the SSH area of the page. Choose the SSH key that you created earlier in this workshop. If you cannot find your SSH Key in the browse window using the **Choose SSH Key Files** option, and are sure you have generated your SSH Key, you can use the **Paste SSH Keys** option instead.  Press the **Create** button to create your instance. 
 
     ![](../images/paste_ssh_keys.png " ")
 
@@ -47,7 +47,7 @@ An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the
     ![](../images/public_ip_address.png " ")
 
 
-6. To connect to the instance, go the environment where you generated your SSH Key. You can use `Oracle Cloud Shell`, `Terminal` if you are using MAC or `Gitbash` if you are using Windows. On your terminal or gitbash enter the following command:
+6. To connect to the instance, go the environment where you generated your SSH Key. You can use `Oracle Cloud Shell`, `Terminal` if you are using MAC, or `Gitbash` if you are using Windows. On your terminal or gitbash enter the following command:
 
     *Note: For Oracle Linux VMs, the default username is **opc***
 
@@ -140,9 +140,7 @@ The steps are as follows:
 3. Install the JDK8 and 11. Enter **y** when prompted. You should receive a `Complete!` message when installation is finished.
 
     ```
-    <copy>
-    sudo yum install jdk1.8.x86_64 jdk-11.0.5.x86_64 
-    </copy>
+    <copy>sudo yum install jdk1.8.x86_64 jdk-11.0.5.x86_64</copy>
     ```
 
 4. Check which is the default java and change it using `alternatives`.
@@ -157,7 +155,7 @@ The steps are as follows:
     javac	auto	/usr/java/jdk1.8.0_251-amd64/bin/javac
     ```
 
-5. Use alternatives set java executable to JDK8, enter **2** when prompted.
+5. Use alternatives to set java executable to JDK8, enter **2** when prompted.
 
     ```
     <copy>sudo alternatives --config java</copy>
@@ -226,7 +224,7 @@ Choose the environment where you created your SSH Key.
     
     ![](../../images/create_PAR_dialog.png " ")
 
-5. In Pre-Authenticated Request Details page, copy the **Pre-Authenticated Request URL** and save it on your local computer. You don't need to download or create PAR url for the image zip file - that is already done for you.
+5. In Pre-Authenticated Request Details page, copy the **Pre-Authenticated Request URL** and save it on your local computer. You don't need to download or create PAR url for the Graph Server rpm file - that is already done for you.
 
     ![](../../images/copy_url.png " ")
 
@@ -247,7 +245,7 @@ Choose the environment where you created your SSH Key.
 
     Download ADB Wallet to this folder.
     ```
-    <copy>wget &lt;PAR url for your ADB Wallet>/copy>
+    <copy>wget &lt;PAR url for your ADB Wallet></copy>
     ```
 
   ![](../../images/download_rpm.png " ")
@@ -265,7 +263,7 @@ Choose the environment where you created your SSH Key.
 
 2.  Now, copy your Graph Server RPM and ADB Wallet to you compute instance.  Let's assume both files are in ~/Downloads.
     ![](../images/download_folder.png " ")
-    On your desktop or laptop (i.e. your machine), do not close your old Terminal window. Open a new Terminal, navigate to the folder where you created your SSH Keys:
+    On your desktop or laptop (i.e. your machine), do not close your old Terminal window. Open a new Terminal, navigate to the folder where you created your SSH Keys, and enter the following command:
 
     ```
     ## replace with specifics for your environment: private_key, location of downloaded rpm, public ip address of compute instance
@@ -398,6 +396,8 @@ Choose the environment where you created your SSH Key.
     &nbsp;&nbsp;`)`  
 
     Note the `addressname`, e.g. `atpfinance_high` that you will use later when connecting to the databases using JDBC.
+
+    You may now *proceed to the next lab*.
 
 ## Acknowledgements ##
 
