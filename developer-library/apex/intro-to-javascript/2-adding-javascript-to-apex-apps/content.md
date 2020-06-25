@@ -275,6 +275,6 @@ This completes Lab 2. At this point, you should have a solid understanding of th
 
 ## **Acknowledgements**
  - **Author/Contributors** -  David Peake, Database Product Management
- - **Last Updated By/Date** - Jeffrey Malcolm, LiveLabs QA, June 2020
+ - **Last Updated By/Date** - Jeffrey Malcolm, Arabella Yao, LiveLabs QA, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
