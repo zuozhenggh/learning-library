@@ -540,21 +540,21 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
 
     ![](media/75e3dbfe7a2cfe2a8a6fc286d3f5caa2.png)
 
-5.  Navigate to Enterprise \> Provisioning and Patching \> Procedure Activity to
+    b) Navigate to Enterprise \> Provisioning and Patching \> Procedure Activity to
     Review Execution Details of this operation via Enterprise Manager Console.
     Click on ‘DEPLOY_SYSMAN_\*’ run
 
-![](media/aa899356fbcdb73732d72b507bc6a7df.png)
+    ![](media/aa899356fbcdb73732d72b507bc6a7df.png)
 
-1.  Review the Procedure Activity steps performed.
+    c) Review the Procedure Activity steps performed.
 
-![](media/2db6aa6336c6d7b6d846a90fad68f5c7.png)
+    ![](media/2db6aa6336c6d7b6d846a90fad68f5c7.png)
 
 ### Migrate Listener to New Upgraded Home
 
-1.  Migrate Listener
+12. Migrate Listener
 
-2.  Review and execute the following command to Migrate the Listener
+    a) Review and execute the following command to Migrate the Listener
 
     [oracle\@emcc \~]\$ emcli db_software_maintenance -performOperation
     -name="Migrate Listener" -purpose=migrate_listener
@@ -563,25 +563,25 @@ Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
     OR  
     [oracle\@emcc \~]\$ sh migrate_listener_finance_update.sh
 
-![](media/bc197f2a6ee3475949e203a1a250352d.png)
+    ![](media/bc197f2a6ee3475949e203a1a250352d.png)
 
-1.  Navigate to Enterprise \> Provisioning and Patching \> Procedure Activity to
+    b) Navigate to Enterprise \> Provisioning and Patching \> Procedure Activity to
     Review Execution Details of this operation via Enterprise Manager Console.
     Click on ‘Fleet_migrate_\*’ run
 
-![](media/7d1f66b6cf7dcc1ef60ae87ae4a1f176.png)
+    ![](media/7d1f66b6cf7dcc1ef60ae87ae4a1f176.png)
 
-1.  Review the Procedure Activity steps performed.
+    c) Review the Procedure Activity steps performed.
 
-![](media/5b63a9af8400bf71eb838f3a00cc2667.png)
+    ![](media/5b63a9af8400bf71eb838f3a00cc2667.png)
 
 ### Update Database – Upgrade to 19.7
 
-1.  Database Update
+13. Database Update
 
->   Once the deploy operation completes successfully. We are ready to run the
->   final UPDATE operation which upgrades the database by switching it to the
->   newly deployed home.
+    Once the deploy operation completes successfully. We are ready to run the
+    final UPDATE operation which upgrades the database by switching it to the
+    newly deployed home.
 
 1.  Review and execute below command to update DB Target
     finance.subnet.vcn.oraclevcn.com
