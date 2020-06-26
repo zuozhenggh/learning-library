@@ -25,8 +25,8 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {
-            "title": "Lab 3: Provision an Autonomous Database",
-            "description": "Provision an Autonomous Database - with ODI repository and seed data",
+            "title": "Lab 3: Provision an Autonomous Database and link to an ODI repository",
+            "description": "Provision an Autonomous Database and link to an ODI repository",
             "publisheddate": "5/20/2020",
             "filename": "../setup/odi_setup_ADW.md"
         },
@@ -35,6 +35,18 @@
             "description": "Build a Compute Instance",
             "publisheddate": "5/20/2020",
             "filename": "../setup/setup_odi_rep.md"
-        }
+        },
+        {
+            "title": "Lab 5: Getting Started with the Oracle Data Integrator",
+            "description": "Introduction to the O",
+            "publisheddate": "5/20/2020",
+            "filename": "../odi/odi12c_lab.md"
+        },
+        {
+            "title": "Lab 6: ODI12c - Working with Mappings",
+            "description": "ODI12c - introduction to mappings",
+            "publisheddate": "5/20/2020",
+            "filename": "../mappin/odi12c_mappings.md"
+        }		
     ]
 }
