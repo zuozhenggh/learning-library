@@ -11,7 +11,7 @@ In this lab, you will learn how to create a Highly-Available (HA) Cloudera Distr
 
 ### What Do You Need?
 
-This lab assumes that you have successfully completed **Lab 1: Setup the BDS Environment** in the menu on the right.
+This lab assumes that you have successfully completed **Lab 1: Setup the BDS Environment** in the **Contents** menu on the right.
 
 ### Video Preview
 

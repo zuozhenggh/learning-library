@@ -11,7 +11,7 @@ In this lab, you will learn how to maintain the new cluster that you created in 
 
 ### What Do You Need?
 
-This lab assumes that you have successfully completed the following labs in the menu on the right:
+This lab assumes that you have successfully completed the following labs in the **Contents** menu on the right:
 + **Lab 1: Setup the BDS Environment**
 + **Lab 2: Create a BDS Hadoop Cluster**
 

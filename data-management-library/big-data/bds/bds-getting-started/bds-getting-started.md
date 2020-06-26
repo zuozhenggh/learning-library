@@ -8,7 +8,7 @@ In this lab, you will perform a few tasks that are required to get started with 
 
 In this lab, you will practice performing both the required and optional tasks described in the following table for educational purposes. If you have restrictions on what you can create in your setup, you can use your existing resources; however, make a note of your resources' names which you'll need when you create your cluster in the next lab.
 
-**Note:** The steps in this lab and any other labs should be performed sequesntially.
+**Note:** The steps in this lab and any other labs should be performed sequentially.
 
 | Task                                                             | Purpose                                                                                                                                                                                                                                                                                                                 | Who?                                      | Required? |
 |------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|-----------|
