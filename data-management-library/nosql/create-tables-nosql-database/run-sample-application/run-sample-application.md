@@ -51,11 +51,11 @@ To get started with the service, you create a table.
     ```
 ## STEP 2: Download, build and run the sample application
 
-1. Download the provided [HelloWorld.java](files/HelloWorld.java) file your home directory.
+1. Download the provided [HelloWorld.java](https://objectstorage.us-ashburn-1.oraclecloud.com/p/qCpBRv5juyWwIF4dv9h98YWCDD50574Y6OwsIHhEMgI/n/c4u03/b/data-management-library-files/o/HelloWorld.java) file your home directory.
 
 2. Review the sample application. You can access the [JavaAPI Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html) to reference Java classes, methods, and interfaces included in this sample application.
 
-3. Use `vi` to create a `config` file. When `SignatureProvider` is constructed without any parameters, the default [SDK Configuration File](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm) is located in the `~/.oci/config`.
+3. Use `vi` or `nano` to create a file named `config`. When `SignatureProvider` is constructed without any parameters, the default [SDK Configuration File](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm) is located in the `~/.oci/config` directory.
 
     ```
     $ <copy>vi ~/.oci/config</copy>
