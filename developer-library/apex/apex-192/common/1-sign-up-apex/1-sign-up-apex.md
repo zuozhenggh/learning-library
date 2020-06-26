@@ -18,7 +18,7 @@ Click one of the options below to proceed.
 
 ## **Option 1**: Oracle Autonomous Database
 
-In this part, you will create an Oracle Cloud trial account. Once you have signed up for the service you will create an Autonomous Transaction Processing database. The final step in the process is to provision Oracle APEX.
+In this part, you will create an Oracle Cloud trial account. Once you have signed up for the service you will create an *Autonomous Transaction Processing* database. The final step in the process is to provision Oracle APEX.
 
 1.  Please [click this link to create your free account](https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType). When you complete the registration process you'll receive an account with a $300 credit and several "forever free" services that will enable you to complete the lab for free. You can then use any remaining credit to continue to explore the Oracle Cloud. The forever free services will continue to work after the trial expires.
 
@@ -64,7 +64,7 @@ In this part, you will create an Oracle Cloud trial account. Once you have signe
 
     ![](images/status-available.png " ")
 
-9. Within your new database, APEX is not yet configured. Therefore, when you first access APEX you will need to log in as an APEX Instance Administrator to create a workspace.
+9. Within your new database, APEX is not yet configured. Therefore, when you first access APEX, you will need to log in as an APEX Instance Administrator to create a workspace.
 
     Click the **Tools** tab.
     Click **Open APEX**.
@@ -88,10 +88,11 @@ In this part, you will create an Oracle Cloud trial account. Once you have signe
     | Password | **`SecretPassw0rd`** |
     | Workspace Name | DEMO |
 
-    Click **Create Workspace**.
+    Click **Create Workspace**.
+
     ![](images/create-workspace.png " ")
 
-13. In the PEX Instance Administration page, click the **DEMO** link in the success message.         
+13. In the APEX Instance Administration page, click the **DEMO** link in the success message.         
     *{Note: This will log you out of APEX Administration so that you can log into your new workspace.}*
 
     ![](images/log-out-from-admin.png " ")
@@ -143,11 +144,11 @@ your email correctly}*
 
 This completes the lab setup. At this point, you know how to create an APEX Workspace and you are ready to start building amazing apps, fast.
 
-You may now proceed to the [next lab](?lab=lab-2-create-app-spreadsheet).
+You may now *proceed to the [next lab](?lab=lab-2-create-app-spreadsheet)*.
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
+ - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff | Arabella Yao, Product Manager Intern, Database Mangement, June 2020
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
