@@ -99,9 +99,9 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
 4. You should now have the Public and Private keys:
 
-    /C/Users/ PhotonUser/.ssh/id_rsa (Private Key)
+    /C/Users/ PhotonUser/.ssh/id\_rsa (Private Key)
 
-    /C/Users/PhotonUser/.ssh/id_rsa.pub (Public Key)
+    /C/Users/PhotonUser/.ssh/id\_rsa.pub (Public Key)
 
     **NOTE:** id\_rsa.pub will be used to create 
     Compute instance and id\_rsa to connect via SSH into compute instance.

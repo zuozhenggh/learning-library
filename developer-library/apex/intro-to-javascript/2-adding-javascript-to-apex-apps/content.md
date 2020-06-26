@@ -2,7 +2,7 @@
 
 ## Lab overview
 
-Up to this point, you have been working with JavaScript outside of APEX. In this lab, you will learn the most common ways to add JavaScript to APEX applications. The options include Dynamic Actions, Dynamic Actions with JavaScript hooks, page- and component-level attributes, and application files. 
+Up to this point, you have been working with JavaScript outside of APEX. In this Lab, you will learn the most common ways to add JavaScript to APEX applications. The options include Dynamic Actions, Dynamic Actions with JavaScript hooks, page- and component-level attributes, and application files. 
 
 Think of these options as a progression, with each one requiring more knowledge of JavaScript, APEX's JavaScript APIs, and web development in general. New APEX developers should start by learning Dynamic Actions and progress to subsequent options only when they are ready and the application requirements cannot be satisfied without a more advanced approach. Generally speaking, the more declarative the solution, the easier it will be to implement and maintain.
 
@@ -141,6 +141,11 @@ In this step, you will use these features in the Dynamic Action you created in t
     </copy>
     ```
 
+
+   The action should appear as follows.
+
+    ![](images/show-javascript-2.png)
+
 11. Set the **Fire on Initialization** attribute to **On**.
 
     ![](images/fire-on-init-2.png)
@@ -199,9 +204,10 @@ In addition to Dynamic Actions, there are various attributes at the page and com
         data.series[1].color = '#9DC183';
         data.series[2].color = '#708238';
         
-        return data;
-      };
 
+
+            return data;
+      };
       return options;
     }
     </copy>
@@ -265,10 +271,10 @@ In the last step, you added JavaScript code directly to page and component level
 
 ## **Summary**
 
-This completes Lab 2. At this point, you should have a solid understanding of the options available for adding JavaScript to APEX applications. Please proceed to [Lab 3](?lab=lab-3-working-dom-jquery).
+This completes Lab 2. At this point, you should have a solid understanding of the options available for adding JavaScript to APEX applications. Please proceed to Lab 3.
 
 ## **Acknowledgements**
  - **Author/Contributors** -  Dan McGhan, Database Product Management
- - **Last Updated By/Date** - Jeffrey Malcolm, LiveLabs QA, June 2020
+ - **Last Updated By/Date** - Jeffrey Malcolm, Arabella Yao, LiveLabs QA, June 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

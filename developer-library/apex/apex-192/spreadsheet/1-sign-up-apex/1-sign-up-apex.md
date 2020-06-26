@@ -88,7 +88,8 @@ In this part, you will create an Oracle Cloud trial account. Once you have signe
     | Password | **`SecretPassw0rd`** |
     | Workspace Name | DEMO |
 
-    Click **Create Workspace**.
+    Click **Create Workspace**.
+
     ![](images/create-workspace.png " ")
 
 13. In the PEX Instance Administration page, click the **DEMO** link in the success message.         

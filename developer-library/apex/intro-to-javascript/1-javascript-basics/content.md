@@ -14,13 +14,13 @@ Play the video below to learn about this lab.
 
 ## **Step 1:** Using the browser's console
 
-In this step, you will learn how to declare variables and work with different operators in your web browser's console.
+In this part, you will learn how to declare variables and work with different operators in your web browser's console.
 
 1.  In Chrome, press **Command+Option+J** (Mac) or **Control+Shift+J** (Windows/Linux) to open the DevTools Console tab.
 
     ![](images/open-console.png)
 
-2.  The developer tools window can be docked to the browser in different ways or undocked altogether. Take a moment to practice resizing and changing the position of the developer tools window using the customization menu. 
+2.  The developer tools window can be docked to the browser in different ways or completely undocked. Take a moment to practice resizing and changing the position of the developer tools window using the customization menu. 
 
     Go to the next step when you have the developer tools window positioned as you like it.
 
@@ -69,7 +69,7 @@ In this step, you will learn how to declare variables and work with different op
 
     Note that if you type the full name of a variable and press **Enter**, the value of the variable will be displayed in the console.
 
-8.  Refresh the web page and try typing the name of a variable again. The variables will not show up because each time a page is loaded in the browser, it gets its own new JavaScript context. 
+8.  Refresh the web page and try typing the name of a variable again. They will not show up because each time a page is loaded in the browser, it gets its own new JavaScript context. 
 
 ## **Step 2:** Variables, data types, and operators
 
@@ -99,7 +99,7 @@ Now that you have a basic working knowledge of the console, it's time to get you
 
 Programming wouldn't be possible without conditionals and loops. The basic `if` statement and `for` loop are all you really need to get going with JavaScript.
 
-1.  Add on to the code from the previous step by writing an `if` statement of your choosing. Use the following code as a guide.
+1.  Add on to the code from the previous part by writing an `if` statement of your choosing. Use the following code as a guide.
 
     ```
     <copy>
@@ -142,11 +142,9 @@ Objects and functions are used to compose and organize code in JavaScript. It's 
     </copy>
     ```
 
-    After executing the code above, the variable `person` and the function `sayHello` will be added to the global scope.
+2.  Using the console, type and execute code that sets the values of the `first` and `last` attributes of the `person` variable.
 
-2.  Using the console, write and execute code that sets the values of the `first` and `last` attributes of the `person` variable.
-
-3.  Using the console, write and execute code that invokes the `sayHello` function while passing it the `person` variable.
+3.  Using the console, type and execute code that invokes the `sayHello` function while passing it the `person` variable.
 
 4. If time permits, consider making the following enhancements:
 
@@ -155,10 +153,10 @@ Objects and functions are used to compose and organize code in JavaScript. It's 
 
 ## **Summary**
 
-This completes Lab 1. At this point, you should be getting comfortable working with the console and some of JavaScript's core concepts. Please proceed to [Lab 2](?lab=lab-2-adding-javascript-apex-apps) .
+This completes Lab 1. At this point, you should be getting comfortable working with the console and some of JavaScript's core concepts. Please proceed to Lab 2.
 
 ## **Acknowledgements**
  - **Author/Contributors** -  Dan McGhan, Database Product Management
- - **Last Updated By/Date** - Jeffrey Malcolm, LiveLabs QA, June 2020
+ - **Last Updated By/Date** - Jeffrey Malcolm, Arabella Yao, LiveLabs QA, June 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

@@ -1,5 +1,8 @@
-## Create the tables and insert data
+# Create the tables and insert data
 
+## Introduction
+
+## Step 0: Log in to SQLDevWeb as user c360
 Open the correct URL for SQlDevWeb for the Customer_360 user. It is almost the same URL as the one for the Admin user execpt that `admin` in that url is replaced with the schema-alias we provided, i.e. with `c360`.
 
 Login as `CUSTOMER_360` using the password you entered when creating the user.
@@ -8,7 +11,7 @@ Login as `CUSTOMER_360` using the password you entered when creating the user.
 
 ![Connected as Customer_360](../images/ADB_SDW_ConnectedAsC360.png)
 
-### Drop existing tables if any
+## STEP 1: Drop existing tables if any
 To ensure a clean slate drop any existing tables. Copy, paste, and execute the following commands into the SQL Worksheet.
 
 ```
@@ -26,7 +29,7 @@ DROP TABLE transfer;
 
 ![Drop existing tables](../images/ADB_SDW_C360_DropTables.png)
 
-### Create and populate the Account table
+## STEP 2: Create and populate the Account table
 
 Clear the SQL Worksheet and copy, paste, and run the following SQL script.
 
@@ -53,7 +56,7 @@ COMMIT;
 
 ![Create Account table](../images/ADB_SDW_C360_CreateAccountTable.png)
 
-### Create and populate the Customer table
+## STEP 3: Create and populate the Customer table
 
 Clear the SQL Worksheet and copy, paste, and run the following SQL script.
 
@@ -80,7 +83,7 @@ COMMIT;
 
 ![Create Customer table](../images/ADB_SDW_C360_CreateCustomerTable.png)
 
-### Create and populate the Merchant table 
+## STEP 4: Create and populate the Merchant table 
 
 Clear the SQL Worksheet and copy, paste, and run the following SQL script.
 
@@ -106,7 +109,7 @@ COMMIT;
 
 ![Create Merchant table](../images/ADB_SDW_C360_CreateMerchantTable.png)
 
-### Create and populate the Owned_By table
+## STEP 5: Create and populate the Owned_By table
 
 Clear the SQL Worksheet and copy, paste, and run the following SQL script.
 
@@ -128,7 +131,7 @@ COMMIT;
 
 ![Create owned_by table](../images/ADB_SDW_C360_CreateOwnedByTable.png)
 
-### Create and populate the Parent_Of table
+## STEP 6: Create and populate the Parent_Of table
 
 Clear the SQL Worksheet and copy, paste, and run the following SQL script.
 
@@ -145,7 +148,7 @@ COMMIT;
 ```
 
 
-### Create and populate the Purchased table
+## STEP 7: Create and populate the Purchased table
 
 Clear the SQL Worksheet and copy, paste, and run the following SQL script.
 
@@ -174,7 +177,7 @@ COMMIT;
 
 ![Create purcahsed table](../images/ADB_SDW_C360_CreatePurchasedTable.png)
 
-### Create and populate the Transfer table
+## STEP 8: Create and populate the Transfer table
 
 Clear the SQL Worksheet and copy, paste, and run the following SQL script.
 
@@ -201,3 +204,13 @@ COMMIT;
 </copy>
 ```
 ![Create transfer table](../images/ADB_SDW_C360_CreateTransferTable.png)
+
+## Acknowledgements ##
+
+- **Author** - Jayant Sharma - Product Manager, Spatial and Graph.  
+  With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
+  Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
+
+- **Contributor** - Arabella Yao, June 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
