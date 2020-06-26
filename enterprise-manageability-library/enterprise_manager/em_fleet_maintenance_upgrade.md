@@ -15,7 +15,7 @@ upgrading to and to plan your I.T. projects.
 # Content
 **Workshop Activity 1:** Detect Configuration Pollution
 
-**Workshop Activity 2:** Standalone Database Server Upgrade with Fleet Maintenance
+**Workshop Activity 2:** Database Server Upgrade with Fleet Maintenance
 
 
 The estimated time to complete the workshop is 75 minutes
@@ -23,7 +23,7 @@ The estimated time to complete the workshop is 75 minutes
 | Workshop Activity No | Feature                                                   | Approx Time | Details                                                                                                              | Value Proposition |
 |----------------------|-----------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                            | 10 minutes  | Analyze the database estate using Software Standardization.                                                          |                   |
-| 2                    | Standalone Database Server Upgrade with Fleet Maintenance | 1hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
+| 2                    | Database Server Upgrade with Fleet Maintenance | 1hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
 
 # Introduction
 
@@ -251,7 +251,7 @@ following using Enterprise Manager 13c Fleet Maintenance.
 
 -   Upgrade “finance.subnet.vcn.oraclevcn.com” from 18.10 to 19.7
 
-# Workshop Activity 2: Standalone Database Server Upgrade with Fleet Maintenance
+# Workshop Activity 2: Database Server Upgrade with Fleet Maintenance
 
 ## Database Fleet Maintenance 
 
