@@ -132,11 +132,11 @@ session.
 In the interest of simplifying the setup and save time, the following steps were
 completed in advance for part \#2 covered in this lab:
 
--   Creation of the gold copy Oracle Home and patching to 18.10 release
+-   We have created a pre-patched Oracle Home with 18.10 release using which we will create the gold image
     [/u01/app/oracle/product/18/db_home_src,
     Orasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192]
 
--   Creation of the gold copy Oracle Home and patching to 19.7 release
+-   We have created a pre-patched Oracle Home with 19.7 release using which we will create the gold image
     [/u01/app/oracle/product/19/db_home_src,
     Orasidb19c_home1_2020_05_13_04_24_10_emcc.marketplace.com_2953]
 
