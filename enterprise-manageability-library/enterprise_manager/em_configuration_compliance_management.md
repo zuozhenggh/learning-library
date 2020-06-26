@@ -223,7 +223,6 @@ using customized configuration monitoring template
 1.  In the drift definition details page, provide a unique name for the drift
     definition
     
-    ![](media/d198d1081fd4ae5035dfdb0757edf18f.png)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ![](media/d198d1081fd4ae5035dfdb0757edf18f.png)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
