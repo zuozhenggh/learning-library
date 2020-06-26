@@ -1,65 +1,20 @@
-| ./media/image1.emf                                                       |
-|--------------------------------------------------------------------------|
-|                                                                          |
-|                                                                          |
-| [./media/image2.png](../../../Downloads/media/image2.png)                |
-|                                                                          |
-| \| Version Copyright © 2020, Oracle and/or its affiliates Confidential – |
+![](media/rdwd-emheader.png)
 
-# Purpose Statement
+# Purpose 
 
 This document provides an overview of Configuration and Compliance Management
 features in . It is intended solely to help you assess the business benefits of
 upgrading to and to plan your I.T. projects.
 
-# Disclaimer
 
-This document in any form, software or printed matter, contains proprietary
-information that is the exclusive property of Oracle. Your access to and use of
-this confidential material is subject to the terms and conditions of your Oracle
-software license and service agreement, which has been executed and with which
-you agree to comply. This document and information contained herein may not be
-disclosed, copied, reproduced or distributed to anyone outside Oracle without
-prior written consent of Oracle. This document is not part of your license
-agreement nor can it be incorporated into any contractual agreement with Oracle
-or its subsidiaries or affiliates.
+### Contents
+**Workshop Activity 1:** Inventory & Usage details 
 
-This document is for informational purposes only and is intended solely to
-assist you in planning for the implementation and upgrade of the product
-features described. It is not a commitment to deliver any material, code, or
-functionality, and should not be relied upon in making purchasing decisions. The
-development, release, and timing of any features or functionality described in
-this document remains at the sole discretion of Oracle.
+**Workshop Activity 2:** One-time database comparison
 
-Due to the nature of the product architecture, it may not be possible to safely
-include all features described in this document without risking significant
-destabilization of the code.
+**Workshop Activity 3:** Database configuration drift management
 
-# Disclaimers For Pre-Release, Pre-GA Products
-
-The **revenue recognition disclaimer** on this page is required for any white
-paper that addresses future functionality or for products that are not yet
-generally available (GA). If you are unsure whether your statement of direction
-needs the disclaimer, read the [revenue recognition
-policy](https://stbeehive.oracle.com/content/dav/st/GDMI/Public/REFG-P06.htm).
-If you have further questions about your content and the disclaimer
-requirements, e-mail [REVREC_US\@oracle.com](http://REVREC_US@oracle.com).
-
-The **testing disclaimer** in the copyright section on the last page
-(highlighted in yellow) is provided by the FCC for hardware products. It must
-appear in the copyright section for all pre-release, pre-GA hardware products.
-Be sure to remove the yellow highlighting before publishing. When the product
-becomes GA, update your collateral by removing the disclaimer from the copyright
-section. If your product is already GA or if you are writing about a software
-product, delete the disclaimer from the copyright section.
-
-**Important:** If your product is not GA, then you cannot include any regulatory
-compliance information in the statement of direction. Regulatory compliance
-information may be included for GA products only if you have completed all
-required safety and emissions testing, and you have received the certificates
-issued by the testing organization
-
-# Workshop Highlights
+**Workshop Activity 4:** Database and host security compliance using custom compliance framework
 
 | Workshop Activity No                                      | Feature                                                                 | Approx. Time | Details                                                                                                                                                                                    | Value proposition                                                                                                   |
 |-----------------------------------------------------------|-------------------------------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
@@ -67,10 +22,7 @@ issued by the testing organization
 | 2                                                         | One-time database comparison                                            | 10 minutes   | Compare latest reference configuration to one or more targets to determine the configuration differences                                                                                   | Validate the configuration of new database provisioned aligns with IT configuration policy                          |
 | 3                                                         | Database configuration drift management                                 | 20 minutes   | Compare latest or saved target configuration to one or more targets.                                                                                                                       | Monitor databases in your organization for any configuration drift, remediate to align with reference configuration |
 | 4                                                         | Database and host security compliance using custom compliance framework | 20 minutes   | Aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets                                                                                      | Monitor security compliance for heterogenous targets from one customized dashboard.                                 |
-| [./media/image4.jpg](../../../Downloads/media/image4.jpg) |                                                                         |              |                                                                                                                                                                                            |                                                                                                                     |
 
-\~ A picture containing elephant, clothing, table Description automatically
-generated
 
 # Introduction
 
@@ -108,7 +60,7 @@ inventory usage details within Enterprise Manager for all supported targets
 
 6.  In the Details table below, you will see details like
 
--   a. Database instance name
+    a. Database instance name
 
     b. Host on which this database is located
 
@@ -171,7 +123,7 @@ initialization parameters to ensure it is compliant with reference target
 
 12. Filter configurations items to review only Initialization Parameters
 
--   You can see the differences in the Initialization Parameters between the two
+    You can see the differences in the Initialization Parameters between the two
     targets.
 
     Under the target compared column, you will see few icons. The icons that
