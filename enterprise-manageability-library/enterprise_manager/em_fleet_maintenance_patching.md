@@ -15,14 +15,14 @@ upgrading to and to plan your I.T. projects.
 ### Contents
 **Workshop Activity 1:** Detect Configuration Pollution
 
-**Workshop Activity 2:** Standalone Database Server Patching with Fleet Maintenance
+**Workshop Activity 2:** Database Server Patching with Fleet Maintenance
 
 The estimated time to complete the workshop is 60 minutes
 
 | Workshop Activity No | Feature                                                    | Approx Time | Details                                                                                                                                                                    | Value Proposition |
 |----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                             | 10 minutes  | Analyze the database estate using Software Standardization.                                                                                                                |                   |
-| 2                    | Standalone Database Server Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
+| 2                    | Database Server Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
 
 # Introduction
 
@@ -229,7 +229,7 @@ following using Enterprise Manager 13c Fleet Maintenance.
 
 -   Patch database “hr.subnet.vcn.oraclevcn.com” from 18.3 to 18.10
 
-# Workshop Activity 2: Standalone Database Server patching with Fleet maintenance
+# Workshop Activity 2: Database Server patching with Fleet maintenance
 
 ## Database Fleet Maintenance 
 
