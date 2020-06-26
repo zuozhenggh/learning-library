@@ -220,25 +220,37 @@ using customized configuration monitoring template
 
 2.  From the Enterprise menu select Configuration, then select “Configuration &
     Drift Management”. Review the different types of comparisons supported.
+    
+    ![](media/133fbb62c871d1ccb0dc8b1f794d4544.png)
 
+    ![](media/b2083f388a80e86887ca1b4172099834.png)
+    
 3.  Go to Templates library on the left panel and look for Database Instance
     Template as shown below.
+
+    ![](media/5adb3c98058d26b2f4a293b2accf21c3.png)
 
 4.  With Database Instance Template highlighted, choose ‘Create Like’ to create
     a copy of this template for further customization. Provide a unique name to
     the new template and click OK
 
+    ![](media/bd2caacd4e9de95a80de2e0ff60e903a.png)
+    
 5.  A complete copy of Database Instance template with unique name is created
     with all configuration items enabled, by default Highlight this new template
     and click Edit
+    
+    ![](media/2490137204f36d4284fba0011681286a.png)
 
 6.  In this workshop, we will customize this template and monitor configuration
     drift for two configuration items. To begin with, uncheck all configuration
     items
+    
+    ![](media/41906277250d12aeb21e2ecb60b617fa.png)
 
 7.  Select the following three configuration items only
 
--   a. Instance Caging Information
+    a. Instance Caging Information
 
     b. Instance Information
 
@@ -246,101 +258,100 @@ using customized configuration monitoring template
 
     d. Click Save
 
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ![](media/357e138f7e4e83c065bd3a602c21284f.png)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
 
-1.  A new customized configuration drift monitoring template is created. This
+8.  A new customized configuration drift monitoring template is created. This
     template can be used for drift monitoring
+    
+    ![](media/8806e0150c8b23ad28107645a68f902a.png)
 
-2.  Go to Overview tab to create Drift Management definition
+9.  Go to Overview tab to create Drift Management definition
 
-3.  Click on Create Definition under Drift Management.
+    ![](media/69773287e3949b98c6f396a9bba33fa7.png)
 
--   a. Choose Database Instance as the Target Type
+10. Click on Create Definition under Drift Management.
+
+    a. Choose Database Instance as the Target Type
 
     b. Select the template created in the previous step
 
     c. Click OK
+    
+    ![](media/49133b1d7369795d4928bab7fd4f842b.png)
 
-1.  In the drift definition details page, provide a unique name for the drift
+11. In the drift definition details page, provide a unique name for the drift
     definition
     
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-![](media/d198d1081fd4ae5035dfdb0757edf18f.png)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ![](media/d198d1081fd4ae5035dfdb0757edf18f.png)
 
-1.  Under Source Configuration, do the following
+12. Under Source Configuration, do the following
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-a.  Select ‘Latest Configuration’
+    a.  Select ‘Latest Configuration’
 
-b.  Click search to choose Source Target  
-
+    b.  Click search to choose Source Target  
 
     ![](media/bd6ec634cc1a0ff215b5344fcfdbfc07.png)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.  Choose emrep.us.oracle.com as your source target. Click on Select
+13. Choose emrep.us.oracle.com as your source target. Click on Select
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-![](media/a1795cc618351de79a2c62259efe0fd8.png)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ![](media/a1795cc618351de79a2c62259efe0fd8.png)
 
-1.  You will see Source Target (emrep.us.oracle.com) is selected that acts as
+
+14. You will see Source Target (emrep.us.oracle.com) is selected that acts as
     your reference target
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-![](media/d1b9cfa33b29fb02a4437553945dcf14.png)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ![](media/d1b9cfa33b29fb02a4437553945dcf14.png)
 
-1.  Select ‘Save and Associate Targets’ to select targets to be monitored
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-![](media/845ceef6b0575df974d16ca15ea3668a.png)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+15. Select ‘Save and Associate Targets’ to select targets to be monitored
 
-1.  Click on Add to select and associate a target to be monitored for drift
+    ![](media/845ceef6b0575df974d16ca15ea3668a.png)
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-![](media/54c89f117d23109909ab91c600f0a3c8.png)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.  Select finance.subnet.vcn.oraclevcn.com as the target.
+16. Click on Add to select and associate a target to be monitored for drift
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-![](media/4d5efec3df75acd856bed601ee3cc553.png)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ![](media/54c89f117d23109909ab91c600f0a3c8.png)
 
-1.  Click Select. You will see one target selected to be associated with drift
+
+17. Select finance.subnet.vcn.oraclevcn.com as the target.
+
+    ![](media/4d5efec3df75acd856bed601ee3cc553.png)
+
+
+18. Click Select. You will see one target selected to be associated with drift
     definition.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-![](media/411c89c5c0a697cd0b27c573c51abe1d.png)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ![](media/411c89c5c0a697cd0b27c573c51abe1d.png)
 
-1.  Click OK. A pop-up will ask for confirmation to save association. Select
+
+19. Click OK. A pop-up will ask for confirmation to save association. Select
     Yes. This will start the association of this target to drift definition and
     initiated the configuration comparison and continuous drift monitoring.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-![](media/ce95e718210e8754fbb7e43e1d38b224.png)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ![](media/ce95e718210e8754fbb7e43e1d38b224.png)
 
-1.  Once you select Yes in the previous step, you will come to main dashboard
+
+20. Once you select Yes in the previous step, you will come to main dashboard
     page. Drift monitoring has already been initiated. After a minute, refresh
     the page to see the drift monitoring completed. You should see an updated in
     the ‘Drifted Targets’ widget in the main dashboard
+    
+    ![](media/50df13b44d9331cf225a8f25d0e332c1.png)
 
-2.  Click on Drift Results tab on the left panel (2nd tab from the top). This
+21. Click on Drift Results tab on the left panel (2nd tab from the top). This
     page will show results for all drift definitions managed by this instance of
     Enterprise Manager. Identify the drift definition you created for further
     analysis of configuration drift results.
+    
+    ![](media/f53f930cf1d3c26a0835a549dcb2d6e0.png)
 
-3.  Review the drift details. Click on the Drift Definition (ECM003-Drift-Demo –
+22. Review the drift details. Click on the Drift Definition (ECM003-Drift-Demo –
     Drift) for detailed analysis of configuration drift
 
--   You can see the differences in the Initialization Parameters between the two
+    ![](media/24d11534484b24b7f0dc8f3b17e16bdd.png)
+    
+    You can see the differences in the Initialization Parameters between the two
     targets.
 
     Under the target compared column, you will see few icons. The icons that
@@ -359,13 +370,17 @@ b.  Click search to choose Source Target
     d. A red box 2 (right only) means that the comparison did not find a
     matching item to compare to the second configuration
 
-1.  Export the comparison results into an excel report for offline analysis. In
+23. Export the comparison results into an excel report for offline analysis. In
     the Drift Results page, highlight the definition and choose Export Results.
     You can choose the specific results to export.
+    
+    ![](media/8d3848466300651212e5a3ec61caac04.png)
 
-2.  Exported results in excel for offline analysis looks like:
+24. Exported results in excel for offline analysis looks like:
 
--   In this workshop, you learnt about continuous configuration drift monitoring
+    ![](media/41c1a47cf0799f69a1837f7d51bab9bb.png)
+    
+    In this workshop, you learnt about continuous configuration drift monitoring
     of database targets against a reference target for initialization parameters
     using customized configuration monitoring template. This can be customized
     to align with your policies. By establishing a configuration drift
