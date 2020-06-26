@@ -4,7 +4,7 @@
 
 Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. To start, you will need to decide which Oracle Database you are going to use for the workshop, and then create an APEX workspace in that database.
 
-If you already have an APEX 19.2 Workspace provisioned you can skip this lab and go straight to Lab 2 by clicking the navigation menu icon, in the upper-right corner of the header.
+If you already have an APEX 19.2 Workspace provisioned, you can skip this lab and go straight to Lab 2 by clicking the navigation menu icon, in the upper-right corner of the header.
 
 ### What is an APEX Workspace?
 An APEX Workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
@@ -12,7 +12,7 @@ An APEX Workspace is a logical domain where you define APEX applications. Each w
 ### Where to Run the Lab
 You can run this lab in any Oracle Database with APEX 19.2 installed. This includes the "Always Free" Oracle Autonomous Database, the free, "Development Only" apex.oracle.com service, your on-premises Oracle Database (providing APEX 19.2 is installed), on a third party cloud provider where APEX 19.2 is installed, or even on your laptop by installing Oracle XE or the Oracle VirtualBox App Dev VM and installing APEX 19.2.
 
-Below are steps on how to sign-up for either an Oracle Autonomous Database cloud service or apex.oracle.com service. The always free Oracle Autonomous Database is ideal for learning about the Oracle Database and APEX, and provides 1 OCPU and 20 GB of compressed storage. This service can also be utilized for production applications, and can readily be upgraded to a paid service as necessary. On the other hand apex.oracle.com is also a free service, however, it is only designated for development purposes, and running production apps is not allowed. For conducting these labs either service can be utilized.
+Below are steps on how to sign-up for either an Oracle Autonomous Database cloud service or apex.oracle.com service. The always free Oracle Autonomous Database is ideal for learning about the Oracle Database and APEX, and provides 1 OCPU and 20 GB of compressed storage. This service can also be utilized for production applications, and can readily be upgraded to a paid service as necessary. On the other hand, apex.oracle.com is also a free service, however, it is only designated for development purposes, and running production apps is not allowed. For conducting these labs, either service can be utilized.
 
 Click one of the options below to proceed.
 
@@ -114,8 +114,7 @@ Signing up for apex.oracle.com is simply a matter of providing details on the wo
     ![](images/request-workspace.png " ")
 
 4. On the Request a Workspace dialog, enter your Identification details – First Name, Last Name, Email, Workspace  
-   *{Note: For workspace enter a unique name,
-such as first initial and last name}*
+   *{Note: For workspace, enter a unique name, such as first initial and last name}*
 
     Click **Next**.
 
@@ -123,11 +122,8 @@ such as first initial and last name}*
 
 5. Complete the remaining wizard steps.
 
-6. Check your email. You should get an email from oracle- application-express_ww@oracle.com
-within a few minutes.  
-   *{Note: If you don’t get an email go
-back to Step 3 and make sure to enter
-your email correctly}*
+6. Check your email. You should get an email from `oracle-application-express_ww@oracle.com` within a few minutes.  
+   *{Note: If you don’t get an email go back to Step 3 and make sure to enter your email correctly}*
 
     Within the email body, click **Create Workspace**
 
@@ -144,7 +140,7 @@ your email correctly}*
 
 This completes the lab setup. At this point, you know how to create an APEX Workspace and you are ready to start building amazing apps, fast.
 
-You may now *proceed to the [next lab](?lab=lab-2-create-app-spreadsheet)*.
+You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 

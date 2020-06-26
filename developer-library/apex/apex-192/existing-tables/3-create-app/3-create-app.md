@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will learn how to create the initial app based on existing tables in your Oracle database. In practice, you will generally only start with one or two pages, and then use the Create Page Wizard to add additional pages to your app.
+In this lab, you will learn how to create the initial app based on existing tables in your Oracle database. In practice, generally you will start with only one or two pages, and then use the Create Page Wizard to add additional pages to your app.
 
 ## **STEP 1** - Creating an App
 
