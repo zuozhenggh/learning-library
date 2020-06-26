@@ -72,19 +72,22 @@ inventory usage details within Enterprise Manager for all supported targets
 
     f. Most importantly, LOB/Department information
 
-Details table gives more information of each Database instance for you to get a
-good understanding of number of database targets deployed on a given host with
-OS version. If your organization uses properties like Lifecycle, Line of
-Business or Department, then you will be able to determine the number of targets
-deployed for a given business unit
+    Details table gives more information of each Database instance for you to get a
+    good understanding of number of database targets deployed on a given host with
+    OS version. If your organization uses properties like Lifecycle, Line of
+    Business or Department, then you will be able to determine the number of targets
+    deployed for a given business unit
 
-Explore these features to get a good handle on Inventory and Usage Details
+    Explore these features to get a good handle on Inventory and Usage Details
 
-1.  Export inventory details to excel for reports. These inventory details can
+7.  Export inventory details to excel for reports. These inventory details can
     be exported to an excel file for offline analysis or sharing the report to
     management. With the excel report, you can filter based on the properties
     you are using to show department or line of business specific assets
     allocation and usage
+    
+    ![](media/c94cba301516e0ea135b3e9cb66e12cc.png)
+
 
 # Workshop Activity 2: One Time Database Comparison
 
