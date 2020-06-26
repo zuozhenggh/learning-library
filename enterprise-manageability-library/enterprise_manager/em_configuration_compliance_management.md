@@ -389,7 +389,7 @@ using customized configuration monitoring template
 
 # Workshop Activity 4: Database and Host Security Compliance
 
-Summary:
+## Summary:
 
 Compliance Management provides the ability to evaluate the compliance of targets
 and systems as they relate to business best practices for configuration,
@@ -440,147 +440,247 @@ more compliance standards
 
 2.  From the Enterprise menu,select Compliance, then select Library
 
+    ![](media/f0cb7078dc7b26619211bd41d5059895.png)
+
 3.  Compliance Standards tab contains all standards for various supported
     targets.
+    
+    ![](media/0ea94ae830a631ed2792d5d0e423c04d.png)
 
 4.  In the Compliance Standards tab, search for “Basic Security Configuration
     for Oracle Database” standard
+    
+    ![](media/71e078511a08cd3e92ace897af69bccf.png)
 
 5.  Select the Basic Security Configuration for Oracle Database standard
+
+    ![](media/ccc43e0a40d0e92ce6842d823a3dd440.png)
 
 6.  Create a copy of this database standard by clicking on ‘Create Like’. Give a
     unique name to the new standard you are creating to imply this is a new
     database standard. Also change the Author name per your preference
+    
+    ![](media/8ebd9bdeea25fac70a54faedae9f2297.png)
 
 7.  Review the various compliance rules for Basic Security standard grouped
     based on the configuration area. Click Save
+    
+    ![](media/e29387a24b8fd553e9f6087ff8550f56.png)
 
 8.  A new custom database standard is created. Pop-up confirms the successful
     creation of this standards
+    
+    ![](media/383384626faa8bf8a1174552f6d17f64.png)
 
 9.  Select the newly created custom database standard
 
+    ![](media/9049e94e535f59ecea4406e0a4f40657.png)
+
 10. Click on “Associate Targets” to associate a database target for this newly
     created custom standard
+    
+    ![](media/0f0ec092fe24f44635306284346619e3.png)
 
 11. When Associate Target option is chosen, you will be taken to a page to add
     database targets.
 
--   Click Add to add targets for association with this compliance standard
+    Click Add to add targets for association with this compliance standard
 
-1.  Choose emrep.us.oracle.com target to check the compliance security posture
+    ![](media/4b8f9f5fd15188e7d3031bd40bce4815.png)
 
-2.  The list of targets chosen will show up in the target association page as
+12. Choose emrep.us.oracle.com target to check the compliance security posture
+
+    ![](media/bb10defd8e64f1a4e1a5b75e1915e7c3.png)
+
+13. The list of targets chosen will show up in the target association page as
     shown below
+    
+    ![](media/0c6ca16ce7541f7e76ffac92330d7663.png)
 
-3.  Click OK and a pop-up shows up to confirm association. Click Yes to save the
+14. Click OK and a pop-up shows up to confirm association. Click Yes to save the
     association which initiates compliance check on this target by executing all
     the compliance rules associated with this compliance standard
+    
+    ![](media/bd66c09acb247b604a6a79ee6e22f21a.png)
 
-4.  To check if the compliance check is complete, click the target number in
+15. To check if the compliance check is complete, click the target number in
     ‘Association Count’ column.
+    
+    ![](media/e9ed8e51970bf8eec4ad0d22fed2be47.png)
 
-5.  If the Transfer Status indicates ‘Successfully Done’, it means compliance
+16. If the Transfer Status indicates ‘Successfully Done’, it means compliance
     check is complete. Click cancel button
+    
+    ![](media/19633b4dcc6db721efc5600ecb34e22c.png)
 
-6.  Go to Compliance Results page to check the compliance posture
+17. Go to Compliance Results page to check the compliance posture
 
-7.  Highlight the standard that you created in the previous steps to review the
+    ![](media/c227c249d1d7d2011963b5bcc4787769.png)
+
+18. Highlight the standard that you created in the previous steps to review the
     overall compliance score, target evaluations and violation details
+    
+    ![](media/b30d166f8e80094721414302dc094979.png)
 
-8.  Click on the Compliance Standard name to see the details of the result
+19. Click on the Compliance Standard name to see the details of the result
 
-9.  Explore different tabs in this results page. Result By Compliance Standard
+    ![](media/e9e704632617015555c81562eb1dc772.png)
+
+20. Explore different tabs in this results page. Result By Compliance Standard
     Rule tab gives you more details of each compliance rule executed on this
     selected target
 
--   All these will give you a security posture of database target
+    ![](media/6630856a69efd3ee50512c8e15c171d1.png)
 
-1.  Now, let’s go repeat these steps for host target. Go to Compliance Library
+    All these will give you a security posture of database target
+
+21. Now, let’s go repeat these steps for host target. Go to Compliance Library
     page
 
-2.  Search for Secure Configuration for Host and select that standard
+    ![](media/8a928ec977207423de129f1b39ea0d94.png)
 
-3.  Create a copy of this host standard by clicking on ‘Create Like’. Give a
+22. Search for Secure Configuration for Host and select that standard
+
+    ![](media/90521cbcf04cce5a7c62c2f7e82bf08b.png)
+
+23. Create a copy of this host standard by clicking on ‘Create Like’. Give a
     unique name to the new standard you are creating to imply this is a new host
     standard. Also change the Author name per your preference
 
-4.  Review the various compliance rules for Basic Security standard grouped
+    ![](media/5ac00c32f35425ddbb5185748e0da5c1.png)
+
+24. Review the various compliance rules for Basic Security standard grouped
     based on the configuration area. Click Save
 
-5.  A new custom host standard is created. Pop-up confirms the successful
+    ![](media/eb67f99226f08715d5e5bf45361d00af.png)
+
+25. A new custom host standard is created. Pop-up confirms the successful
     creation of this standards
 
-6.  Select the newly created custom host standard
+    ![](media/1cf2a908e466c167ad930e3b820b4c5b.png)
 
-7.  Click on “Associate Targets” to associate a host target for this newly
+26. Select the newly created custom host standard
+
+    ![](media/65113057e1aceb89a1c3469735413874.png)
+
+27. Click on “Associate Targets” to associate a host target for this newly
     created custom standard
 
-8.  When Associate Target option is chosen, you will be taken to a page to add
+    ![](media/764fe3a6ea3c27f3c19a6472a678a960.png)
+
+28. When Associate Target option is chosen, you will be taken to a page to add
     database targets
 
-9.  Choose emcc.marketplace.com target to check the compliance security posture
+    ![](media/d292fa6f56ed092b61398c2abc864e94.png)
 
-10. The list of targets chosen will show up in the target association page as
+29. Choose emcc.marketplace.com target to check the compliance security posture
+
+    ![](media/2c75dfc83689f5988b52ae1dc841eb00.png)
+
+30. The list of targets chosen will show up in the target association page as
     shown below
+    
+    ![](media/d798f57aea9022efa472466690ce2152.png)    
 
-11. Click OK and a pop-up shows up to confirm association. Click Yes to save the
+31. Click OK and a pop-up shows up to confirm association. Click Yes to save the
     association which initiates compliance check on this target by executing all
     the compliance rules associated with this compliance standard
+    
+    ![](media/a03a851c889aab744c8895fada74fca3.png)    
 
-12. Go to Compliance Results page to check the compliance posture
+32. Go to Compliance Results page to check the compliance posture
 
-13. Highlight the standard that you created in the previous steps to review the
+    ![](media/d5c600c49dcac9b010d29b9788fa556d.png)
+
+33. Highlight the standard that you created in the previous steps to review the
     overall compliance score, target evaluations and violation details
 
-14. Click on the Compliance Standard name to see the details of the result
+    ![](media/e69faecf29da41db8cbc94f18ca37fe5.png)
 
-15. Now, let’s create Compliance Framework to include the two standards you
+34. Click on the Compliance Standard name to see the details of the result
+
+    ![](media/1e87046f07a787488fa2b15058854563.png)
+
+35. Now, let’s create Compliance Framework to include the two standards you
     created so far. Objective here is to look at aggregated compliance score of
     both database and host at framework level. Go to Compliance Library page
 
-16. Go to Compliance Framework tab
+    ![](media/e340f410d134688663c985c8f582bd27.png)
 
-17. Create a new framework. Click Create, provide a unique name for the
+36. Go to Compliance Framework tab
+
+    ![](media/e175c37661cf28b335e4bec317c461b2.png)
+
+37. Create a new framework. Click Create, provide a unique name for the
     framework and author
+    
+    ![](media/3fa0c8b11aad2266faddbcdbb1f224e6.png)    
 
-18. Click Continue. This will take you to a new page so that compliance
+38. Click Continue. This will take you to a new page so that compliance
     standards can be added
+    
+    ![](media/7a91fe3c117e4011401f81ac8cc7a52e.png)
 
-19. With right-mouse button on the framework name in the left panel, you will
+39. With right-mouse button on the framework name in the left panel, you will
     see a menu list for adding standards.
 
-20. Click Add Standard that will pop-up a window to select the standards to add
+    ![](media/2468ca941d17cacc23d7bce5810d7e10.png)
 
-21. Filter the standards by choosing Database Instance in “Applicable To” menu.
+40. Click Add Standard that will pop-up a window to select the standards to add
+
+    ![](media/75775a99c565214542a8940d30819d11.png)
+
+41. Filter the standards by choosing Database Instance in “Applicable To” menu.
     Choose the database compliance standard you created in the previous steps
 
-22. Repeat the above steps for adding
+    ![](media/25e1f78e471ea906fff67b5737cb28bc.png)
 
-23. Now both database and host custom compliance standards have been added to
+42. Repeat the above steps for adding
+
+    ![](media/e1d1f0ee030f384e30b10220583113ad.png)
+
+    ![](media/bbd99e3a29d171104127c80af5229114.png)
+
+43. Now both database and host custom compliance standards have been added to
     the new custom compliance framework as shown below
 
-24. Click Save. A pop-up confirms the successful creation of custom framework
+    ![](media/744f3f8412ae9ac692fa878fdcf15fd6.png)
 
-25. Since two compliance standards are associated to this new framework, you can
+44. Click Save. A pop-up confirms the successful creation of custom framework
+
+    ![](media/dbb1791108b4cf36102470ff53f04709.png)
+
+45. Since two compliance standards are associated to this new framework, you can
     review the compliance results at framework level. Go to compliance results
     page
 
-26. In the results page, go to Compliance Framework tab to see the framework you
+    ![](media/f697ca1790163653dea6ae04ba99b912.png)
+
+46. In the results page, go to Compliance Framework tab to see the framework you
     created. You see an aggregated compliance score at framework level. This is
     an aggregation of both database and host standard you added to this
     framework.
 
-27. Click on the framework name to see details of the results. You can see the
+    ![](media/914692ccab1d8d4a3aa636e937dd3989.png)
+
+47. Click on the framework name to see details of the results. You can see the
     results at target level
 
-28. You can also look at results at compliance standard level by choosing the
+    ![](media/86b6af426fcb18ba52d217f84ac99589.png)
+
+48. You can also look at results at compliance standard level by choosing the
     standard tab. You will be able to see compliance score for each standard
 
-29. You can also step into standard level score from the left panel as shown
+    ![](media/4caed891e78778403a46b0dd6eff9d54.png)
+
+49. You can also step into standard level score from the left panel as shown
     below for database standard
 
-30. And below is the compliance score and details for the host standard
+    ![](media/7ce67aa61ceb1570b24e1d1ee75d207b.png)
+
+50. And below is the compliance score and details for the host standard
+
+    ![](media/51156affe21b950ea871f65e68498f4b.png)
 
 With this workshop, you got a hands-on experience in creating a custom framework
 to monitor the security compliance of heterogeneous targets (Database and Host,
@@ -588,3 +688,5 @@ this example). This will help you assess overall security compliance of all
 Enterprise Manager managed targets from one aggregated view. And if required,
 you can drill down into each standard to assess details of target specific
 security compliance
+
+Thank You!
