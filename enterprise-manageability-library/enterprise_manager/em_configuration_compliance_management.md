@@ -403,37 +403,37 @@ Terminology Used in this Compliance specific workshop
 
 -   Compliance Framework
 
-A compliance framework is an organized list of control areas that need to be
-followed for a company to stay in compliance in their industry. Enterprise
-Manager uses compliance frameworks as a pyramid structure to map standards and
-rules to the control areas they affect. Compliance frameworks are hierarchical
-to allow for direct representation of these industry frameworks.
+    A compliance framework is an organized list of control areas that need to be
+    followed for a company to stay in compliance in their industry. Enterprise
+    Manager uses compliance frameworks as a pyramid structure to map standards and
+    rules to the control areas they affect. Compliance frameworks are hierarchical
+    to allow for direct representation of these industry frameworks.
 
-A single framework control area maps to one or more compliance standards. The
-outcome of these compliance standard evaluations results in a score for the
-given framework area.
+    A single framework control area maps to one or more compliance standards. The
+    outcome of these compliance standard evaluations results in a score for the
+    given framework area.
 
 -   Compliance Standard
 
-A compliance standard is a collection of checks or rules that follow broadly
-accepted best practices. It is the Cloud Control representation of a compliance
-control that must be tested against some set of IT infrastructure to determine
-if the control is being followed. This ensures that IT infrastructure,
-applications, business services and processes are organized, configured,
-managed, and monitored properly. A compliance standard evaluation can provide
-information related to platform compatibility, known issues affecting other
-customers with similar configurations, security vulnerabilities, patch
-recommendations, and more. A compliance standard is also used to define where to
-perform real-time change monitoring.
+    A compliance standard is a collection of checks or rules that follow broadly
+    accepted best practices. It is the Cloud Control representation of a compliance
+    control that must be tested against some set of IT infrastructure to determine
+    if the control is being followed. This ensures that IT infrastructure,
+    applications, business services and processes are organized, configured,
+    managed, and monitored properly. A compliance standard evaluation can provide
+    information related to platform compatibility, known issues affecting other
+    customers with similar configurations, security vulnerabilities, patch
+    recommendations, and more. A compliance standard is also used to define where to
+    perform real-time change monitoring.
 
-A compliance standard is mapped to one or more compliance standard rules and is
-associated to one or more targets which should be evaluated.
+    A compliance standard is mapped to one or more compliance standard rules and is
+    associated to one or more targets which should be evaluated.
 
 -   Compliance Standard Rule
 
-A compliance standard rule is a specific test to determine if a configuration
-data change affects compliance. A compliance standard rule is mapped to one or
-more compliance standards
+    A compliance standard rule is a specific test to determine if a configuration
+    data change affects compliance. A compliance standard rule is mapped to one or
+    more compliance standards
 
 1.  Log into your Enterprise Manager VM using the IP provided on your cheat
     sheet.
