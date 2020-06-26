@@ -15,14 +15,14 @@ upgrading to and to plan your I.T. projects.
 ### Contents
 **Workshop Activity 1:** Detect Configuration Pollution
 
-**Workshop Activity 2:** Database Server Patching with Fleet Maintenance
+**Workshop Activity 2:** Oracle Database Patching with Fleet Maintenance
 
 The estimated time to complete the workshop is 60 minutes
 
 | Workshop Activity No | Feature                                                    | Approx Time | Details                                                                                                                                                                    | Value Proposition |
 |----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                             | 10 minutes  | Analyze the database estate using Software Standardization.                                                                                                                |                   |
-| 2                    | Database Server Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
+| 2                    | Oracle Database Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
 
 # Introduction
 
@@ -46,6 +46,8 @@ Benefits with Fleet Maintenance:
     systems like Exadata
 
 ![](media/a5e5d36c2da3bb5669a7a6c79e46a555.png)
+
+For more details refer to [Fleet Maintenance](https://www.oracle.com/manageability/enterprise-manager/technologies/fleet-maintenance.html) documentation
 
 # Know Your Environment
 
@@ -236,8 +238,9 @@ subscription based out of place patching solution. Gold Image(s) are software
 library entities storing archive of a patched software home. Targets, to be
 patched, subscribe to a relevant Gold Image. Target subscription persists
 through the lifecycle of the Target or Gold Image unless modified by an
-administrator.
-<Insert Image>
+administrator. We will go through the following steps for this Fleet Maintenance Exercise.
+
+![](media/DB_Fleet_Patching.png)
 
 ## Patching with Fleet Maintenance
 
