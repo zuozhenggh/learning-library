@@ -81,17 +81,17 @@ Prior to starting, you will need:
 
     -   Oracle EM and DB Software OS User – “oracle”.
 
-First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
-
-1.  OMS URL: and Credentials:
+    First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
+    
+2.  OMS URL: and Credentials:
 
     -   Username: **sysman**
 
     -   password: **welcome1**
 
-You may see an error on the browser while accessing the Web Console - “*Your
-connection is not secure*”, add exception and proceed. Access this URL and
-ensure that you are able to access Enterprise Manager Web Console.
+    You may see an error on the browser while accessing the Web Console - “*Your
+    connection is not secure*”, add exception and proceed. Access this URL and
+    ensure that you are able to access Enterprise Manager Web Console.
 
 ## Update the Named Credentials with your SSH Key
 
