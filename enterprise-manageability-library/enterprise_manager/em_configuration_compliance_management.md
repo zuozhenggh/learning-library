@@ -48,15 +48,21 @@ inventory usage details within Enterprise Manager for all supported targets
 
 2.  From the Enterprise menu, select Configuration, then select Inventory and
     Usage Details
+    
+    ![](media/0e4c2e20dec851fcdf23fd2e92bdee7a.png)
 
 3.  In the ‘Show’ filter menu, select **Databases** to see all database
     instances managed by Enterprise Manager
+    
+    ![](media/cd409c11afa638eb7a1ab8f7cbc4f015.png)
 
 4.  Analyze various database versions and number of instances for each version
 
 5.  Explore pie chart to see the break-down of database inventory by color-code
     percentages. Also, in the **Graphical View**, choose **Trend** radio button
     to see the growth of given database instance over a period of time.
+    
+    ![](media/f79cd8ba7800098fa43363b5d4329323.png)
 
 6.  In the Details table below, you will see details like
 
