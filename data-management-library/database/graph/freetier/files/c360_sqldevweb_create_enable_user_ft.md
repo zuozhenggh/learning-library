@@ -23,7 +23,7 @@ This lab walks you through the steps to get started with SQL Developer Web. You 
 
   ![ADB Console Development Page](../images/ADB_ConsoleDevTab.png " ")
 
-  Enter `ADMIN` as Username, and the enter the password you set up at Lab 4.
+  Enter `ADMIN` as Username, and the enter the password you set up at Lab 3, Step 2, Section 7.
 
   ![](../../images/login.png " ")
   Login as the ADMIN user. 
