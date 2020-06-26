@@ -72,10 +72,7 @@ Prior to starting, you will need:
 
 1.  Login to Host using SSH Key based authentication
 
-Refer to Frequently Asked Questions doc  
-(<https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md>)  
-for detailed instructions relevant to your SSH client type (e.g. Putty on
-Windows or Native such as terminal on Mac OS):
+Refer to [https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md] [Frequently Asked Questions] doc for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
 
 -   Authentication OS User - “opc”
 
@@ -131,7 +128,7 @@ session.
 In the interest of simplifying the setup and save time, the following steps were
 completed in advance:
 
--   Creation of the gold copy Oracle Home and patching to 18.10 release
+-   We have created a pre-patched Oracle Home with 18.10 release using which we will create the gold image
     [/u01/app/oracle/product/18/db_home_src,
     Orasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192]
 
@@ -239,6 +236,7 @@ library entities storing archive of a patched software home. Targets, to be
 patched, subscribe to a relevant Gold Image. Target subscription persists
 through the lifecycle of the Target or Gold Image unless modified by an
 administrator.
+<Insert Image>
 
 ## Patching with Fleet Maintenance
 
