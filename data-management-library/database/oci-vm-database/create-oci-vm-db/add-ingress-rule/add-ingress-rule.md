@@ -52,6 +52,6 @@ Oracle Cloud Infrastructure provides a quick and easy way to create an Oracle Da
 ## Acknowledgements
 * **Author** -Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, March 2020
-* **Contributor** - Arabella Yao, June 2020
+* **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
