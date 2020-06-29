@@ -53,24 +53,24 @@
             "description": "ODI12c - Mapping TRG_SALES",
             "publisheddate": "6/29/2020",
             "filename": "../mappings/odi12c_mappings_2.md"		
-		},
-		{
+        },
+        {
             "title": "Lab 8: ODI12c - Implementing Data Quality Control",
             "description": "ODI12c - Data Quality Control",
             "publisheddate": "6/29/2020",
             "filename": "../quality/odi12c_quality.md"		
-		},
-		{
+        },
+        {
             "title": "Lab 9: ODI12c - Working with Packages",
             "description": "ODI12c - Working with Packages",
             "publisheddate": "6/29/2020",
             "filename": "../packages/odi12c_packages.md"		
-		},
-		{
+        },
+        {
             "title": "Lab 10: ODI12c - Deploying Integrated Applications ",
             "description": "ODI12c - Working with Packages",
             "publisheddate": "6/29/2020",
             "filename": "../production/odi12c_production.md"		
-		}
+        }
     ]
 }
