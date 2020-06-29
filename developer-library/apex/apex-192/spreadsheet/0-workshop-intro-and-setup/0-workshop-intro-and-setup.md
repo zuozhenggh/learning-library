@@ -13,7 +13,7 @@ In the future, rather than emailing spreadsheets around to gather information, y
 * Improve the Search and Report pages
 * Link pages
 
-*{Note: This lab assumes you are using Oracle APEX 19.2.}*
+*{Note: This workshop assumes you are using Oracle APEX 19.2.}*
 
 ### Lab Modules
 
@@ -29,7 +29,7 @@ In the future, rather than emailing spreadsheets around to gather information, y
 
 ### **Let's Get Started!**
 
-If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top of the page.
+If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the upper-right corner of the page.
 
 ### Downloads
 
@@ -45,7 +45,7 @@ If the menu is not displayed, you can open by clicking the menu button (![Menu i
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
+ - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff | Arabella Yao, Product Manager Intern, Database Mangement, June 2020
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

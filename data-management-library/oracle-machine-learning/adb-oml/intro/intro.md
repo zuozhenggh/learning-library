@@ -24,7 +24,7 @@ We will lead you through all the steps to create an Oracle Cloud trial account, 
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Derrick Cameron, Leah Bracken, Charlie Berger
+- **Authors/Contributors** - Derrick Cameron, Leah Bracken, Charlie Berger, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr
 - **Last Updated By/Date** - Kay Malcolm, April 2020
 - **Workshop Expiration Date** - April 31, 2021
 

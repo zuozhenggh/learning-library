@@ -146,6 +146,6 @@ This completes Lab 3. At this point, you should have a good idea of how to use j
 
 ## **Acknowledgements**
  - **Author/Contributors** -  Dan McGhan, Database Product Management
- - **Last Updated By/Date** - Jeffrey Malcolm, LiveLabs QA, June 2020
+ - **Last Updated By/Date** - Jeffrey Malcolm, Arabella Yao, LiveLabs QA, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
