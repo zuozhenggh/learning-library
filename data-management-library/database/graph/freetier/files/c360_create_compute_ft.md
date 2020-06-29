@@ -405,6 +405,6 @@ Choose the environment where you created your SSH Key.
   With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
 
-- **Contributor** - Arabella Yao, June 2020
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

@@ -23,4 +23,4 @@ In this workshop you will:
   With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
 
-- **Contributor** - Arabella Yao, June 2020
+- **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
