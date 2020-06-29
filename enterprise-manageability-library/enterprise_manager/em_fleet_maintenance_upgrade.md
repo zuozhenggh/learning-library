@@ -261,7 +261,7 @@ upgraded, subscribe to a relevant Gold Image. Target subscription persists
 through the lifecycle of the Target or Gold Image unless modified by an
 administrator. We will go through the following steps for this Fleet Maintenance Exercise.
 
-![](media/DB_Fleet_Upgrade.png)
+![](media/DB_Fleet_Patching.png)
 
 ## Upgrading with Fleet Maintenance
 
