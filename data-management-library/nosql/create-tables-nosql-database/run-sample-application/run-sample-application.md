@@ -75,15 +75,21 @@ To get started with the service, you create a table.
 
     ![](images/compile.png " ")
 
-6. Run the application (on Windows):
+5. Run the application (on Windows):
 
     ```
     <copy>java -cp ".;oracle-nosql-java-sdk-5.2.11/lib/*" HelloWorld</copy>
     ```
+    ![](images/run-helloworld.png " ")
+
+6. Run the application (on Mac)
 
     *On a Mac, replace the semicolon with a colon (:) in the command above.*
 
-    ![](images/run-helloworld.png " ")
+    ```
+    <copy>java -cp ".:oracle-nosql-java-sdk-5.2.11/lib/*" HelloWorld</copy>
+    ```
+    ![](images/mac-output.png " ")
 
     Note: In the main method of `HelloWorld.java`, the `dropTable(handle)` is commented out to allow you to see the result of creating the tables in the Oracle Cloud Console.
 
@@ -117,7 +123,7 @@ Oracle NoSQL Database also supports Python, Node.js and Go. This application acc
 
 ## Acknowledgements
 * **Author** - Dave Rubin, Senior Director, NoSQL and Embedded Database Development and Michael Brey, Director, NoSQL Product Development
-* **Adapted for Cloud by** -  Tom McGinn, Database User Assistance
-* **Last Updated By/Date** - Tom McGinn, June 2020
+* **Adapted for Cloud by** -  Tom McGinn, Database Innovations Architect, Product Management
+* **Last Updated By/Date** - Tom McGinn, Robert Ruppel, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
