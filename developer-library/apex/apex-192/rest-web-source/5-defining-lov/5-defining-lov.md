@@ -1,8 +1,10 @@
-# Module 5 - Defining List of Values
+# Defining List of Values
 
 ## Introduction
 
 In this lab, you will learn how to utilize Web Source modules as the basis for list of values for use within an application.
+
+Estimated Time: 10 minutes
 
 ### Background Information
 When you ran the script in your first workspace you created a REST handler for both the EMP and DEPT tables. You have already created a Web Source module for the EMP table. If you also create a Web Source module for the DEPT table, you can readily define List of Values for each in Shared Components. These can then be utilized within your pages to improve the data displayed and significantly improve data entry and quality.
@@ -10,7 +12,8 @@ When you ran the script in your first workspace you created a REST handler for b
 ## **STEP 1** – Add Web Source for DEPT
 
 1. Return to the Application Builder.
-2. Go to the App Builder Home Page.
+2. Go to the App Builder Home Page by clicking the name of the application in the top left.
+    ![](images/return-Application.png " ")
 3. Select your application.
 4. On the application home page, click **Shared Components**.
 
@@ -22,7 +25,7 @@ When you ran the script in your first workspace you created a REST handler for b
 
 6. On the Web Source Modules page, click **Create**.
 
-    On the Create Web Source Module - Method dialog, click **Next**.    *{Default: From Scratch}*
+    On the Create Web Source Module - Method dialog, click **Next**. The default option is from scratch.
 
     ![](images/set-method.png " ")
 
@@ -30,8 +33,7 @@ When you ran the script in your first workspace you created a REST handler for b
 
     - Web Source Type - select **ORACLE REST Data Services**
     - Name - enter **REST DEPT Source**
-    - URL Endpoint - enter the REST URI for the dept.rest handler
-{Similar to https://{cloud\_url}/ords/{your_workspace}/**dept**/hol/ }
+    - URL Endpoint - Enter the REST URI for the dept.rest handler. This is the same URI you got in lab 2 step 3 but `emp` is replaced with `dept`. {Similar to https://{cloud\_url}/ords/{your_workspace}/**dept**/hol/ }
 
     Click **Next**.
 
@@ -42,11 +44,10 @@ When you ran the script in your first workspace you created a REST handler for b
 
     ![](images/review-urls.png " ")
 
-    *{Note: As you have already defined a Web Source with the same base path, for the REST EMP Source, then the Base URL is not updateable.}*
+    *Note: As you have already defined a Web Source with the same base path, for the REST EMP Source, then the Base URL is not updateable.*
 
-9. On the Authentication dialog, click **Discover**.
-    {Authentication Required = No}
-10. On the Preview dialog, click **Create Web Source**
+9. On the Authentication dialog, click **Discover**. This sets **Authentication Required** equal to No.
+10. On the Preview dialog, click **Create Web Source**.
 
     ![](images/create-ws.png " ")
 
@@ -63,8 +64,7 @@ You now have the Web Source modules which can be used as the basis for List of V
 
 3. On the List of Values page, click **Create**.
 
-    On the Create List of Values - Source dialog, click **Next**.       
-    *{Default: From Scratch}*
+    On the Create List of Values - Source dialog, click **Next**. The default option is from scratch.
 
     ![](images/set-source.png " ")
 
@@ -94,8 +94,7 @@ You now have the Web Source modules which can be used as the basis for List of V
 7. To create the List of Values for Departments is the same as above.
 
     On the List of Values page, click **Create**.   
-    On the Create List of Values - Source dialog, click **Next**.       
-    *{Default: From Scratch}*
+    On the Create List of Values - Source dialog, click **Next**.  The default option is from scratch.
 
 8. On the Name and Type dialog, for Name, enter **REST DEPT LOV**.       
     Click **Next**.
@@ -135,7 +134,7 @@ If you review the Maintain Employee form page more closely you will see that the
 
 3. From Page Designer, in the Rendering tree (left pane), click **P3_MGR**.
 
-    In the Property Editor (right pane), enter the following:
+    In the Property Editor (right pane), enter the following(you may need to scroll down to see the List of Values section):
 
     - Identification > Type - select **Select List**
     - List of Values > Type - select **Shared Component**
@@ -156,30 +155,30 @@ Similarly, the Employees report shows numerical values rather than names.
 
 2. Given this is a report you will need to modify columns instead of items.
 
-    In the Rendering tree (left pane), click Columns, click **MGR**  
+    In the Rendering tree (left pane), click Columns, click **MGR**.
 
     In the Property Editor (right pane), enter the following:
 
-    - Type - select **Plain Text (based on List of Values)**
+    - Type - select **Plain Text (based on List of Values)** not **Plain Text**
     - List of Values - select **REST EMP LOV**
-    - Heading > Alignment - click **Start**
-    - Layout > Column Alignment - click **Start**
+    - Heading > Alignment - **left**
+    - Layout > Column Alignment - **left**
 
     ![](images/set-mgr-col.png " ")
 
-3. In the Rendering tree (left pane), under Columns, click **DEPTNO**  
+3. In the Rendering tree (left pane), under Columns, click **DEPTNO**.
 
     In the Property Editor (right pane), enter the following:
 
-    - Type - select **Plain Text (based on List of Values)**
+    - Type - select **Plain Text (based on List of Values)** not **Plain Text**
     - List of Values - select **REST DEPT LOV**
-    - Heading > Alignment - click **Start**
-    - Layout > Column Alignment - click **Start**
+    - Heading > Alignment - **left**
+    - Layout > Column Alignment - **left**
 
     Click **Save**.
 
-4. Navigate to the application Runtime Environment
-5. Refresh your browser
+4. Navigate to the application Runtime Environment.
+5. Refresh your browser.
 
     ![](images/runtime-report.png " ")
 
@@ -192,7 +191,7 @@ Similarly, the Employees report shows numerical values rather than names.
 ## **Summary**
 This completes Lab 5 and the workshop. You now know how to define List of Values against REST endpoints and then utilize those within an application.
 
-## Learn More - *Useful Links*
+## Learn More - Useful Links
 
 - [APEX on Autonomous](https://apex.oracle.com/autonomous)
 - [APEX Collateral](https://apex.oracle.com)
@@ -203,6 +202,7 @@ This completes Lab 5 and the workshop. You now know how to define List of Values
 ## **Acknowledgements**
 
  - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
+ - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
