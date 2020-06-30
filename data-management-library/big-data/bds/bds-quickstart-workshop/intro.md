@@ -10,7 +10,7 @@ Oracle Big Data Service is a platform cloud service specifically designed for a 
 * Expand on premise Hadoop; deploy test and development to the cloud.
 * Any scale using high performance bare metal or cost effective virtual machine (VM) shapes.
 * End-to-end data management; use with Autonomous Database, Analytics Cloud, OCI Streaming, OCI Data Catalog, OCI Data Science, and OCI Data Flow.
-* Use Oracle SQL to query across Hadoop, Object Stores, Kafka, and NoSQL with Cloud SQL ???  which includes Oracle Big Data Spatial and Graph, Big Data Connectors, and Oracle Data Integrator.
+* Use Oracle SQL to query across Hadoop, Object Stores, Kafka, and NoSQL with Cloud SQL. 
 
 Watch our short video that explains key features in Oracle Big Data Service:
 
@@ -32,7 +32,7 @@ Watch our short video that explains key features in Oracle Big Data Service:
 **After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
 
 ## Workshop Pre-requisites
-This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
+This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 **You are all set to begin the labs! Please click Lab 1: Setup the BDS Environment in the Contents menu on the right.**
 
