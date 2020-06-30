@@ -1,6 +1,8 @@
-## Create the Customer_360 graph from the tables
+# Create the Customer_360 graph from the tables
 
-Now that the tables are created and populated let's create a graph represnetation of them.
+## Introduction
+
+Now, the tables are created and populated with data. Let's create a graph representation of them.
 
 The steps are:
 - Modify the graph server configuration to disable TLS (SSL) for this lab
@@ -10,59 +12,57 @@ The steps are:
 - Use PGQL DDL (CREATE PROPERTY GRAPH) to instantiate a graph
 
 
-### Modify the graph server config file
+## STEP 1: Modify the graph server config file
 
 SSH into the compute instance where you installed the graph server.  
-Switch to the user account (e.g. `oracle`) that has the database wallet and will run the server and client instances. 
+Switch to the user account (e.g. `oracle`) that has the database wallet and will run the server and client instances.
 
-**Note: You must logout and then log back in for the changes in the `oracle` user's `bash_profile` to take effect.**
+*Note: You must logout and then log back in for the changes in the `oracle` user's `bash_profile` to take effect.*
 
 ```
-<copy>
-su - oracle 
-</copy>
+<copy>su - oracle</copy>
 ```
 
-Then edit the `/etc/oracle/graph/server.conf` file. 
+Then edit the `/etc/oracle/graph/server.conf` file.
 ```
-<copy>
-vi /etc/oracle/graph/server.conf
-</copy>
+<copy>vi /etc/oracle/graph/server.conf</copy>
 ```
 
 Change the line  
 ` "enable_tls": true,`
 to  
 ` "enable_tls": false,`  
+
 Save the file and exit.
 
-### Start the graph server
+## STEP 2: Start the graph server
 
-Check that JAVA_HOME and JAVA11_HOME env variables are set and correct. That is, JAVA_HOME points to JDK1.8 and Java11_HOME to jdk1.11.  
+Check that JAVA\_HOME and JAVA11\_HOME env variables are set and correct. That is, JAVA\_HOME points to JDK1.8 and Java11\_HOME to jdk1.11.  
+
 Then, as the `oracle` user, start the server using 
 ```
-<copy>
-/opt/oracle/graph/pgx/bin/start-server
-</copy>
+<copy>/opt/oracle/graph/pgx/bin/start-server</copy>
 ```
 
-**Note: Do not exit this shell since the graph server process runs in the foreground.**
+*Note: Do not exit this shell since the graph server process runs in the foreground.*
 
-You will see the following log output once the server is up and running.  
+You will see the following log output once the server is up and running. It may take a minute for this log output to show up.
 >INFO: Starting ProtocolHandler ["http-nio-7007"]
 
-### Start a client shell 
+## STEP 3: Start a client shell
 
 Once the graph server is up and running, open a new SSH connection to the same compute instance.  
+
 Check that the exploded database wallet is in the compute instance and accessible from the user account which will run the graph client.
 
-Assuming the user is named `oracle` and the wallet is in `/home/oracle/wallets` check that it exists and has the right permissions. 
+Assuming the user is named `oracle` and the wallet is in `/home/oracle/wallets`. Check that the wallet exists and has the right permissions.
 
 ```
-<copy>
-su - oracle
-ls -l /home/oracle/wallets
-</copy>
+<copy>su - oracle</copy>
+```
+
+```
+<copy>ls -l /home/oracle/wallets</copy>
 ```
 
 Then start a client shell instance that connects to the server.
@@ -73,12 +73,12 @@ Then start a client shell instance that connects to the server.
 </copy>
 ```
 
-### Create the graph
+## STEP 4: Create the graph
 
 Enter the following sets of commands once the JShell has started and is ready.
 
 First setup the database connection. Enter the following into the JShell.  
-Replace {db_tns_name} with the appropriate database service name in the tnsnames.ora file of the wallet (e.g. `db_adb_af_high`).  
+Replace {db\_tns\_name} with the appropriate database service name in the tnsnames.ora file of the wallet (e.g. `db_adb_af_high`).  
 Replace {wallet_location} with the full path to the directory which has the unzipped wallet (e.g. `/home/oracle/wallets`).
 
 ```
@@ -166,7 +166,7 @@ pgql.prepareStatement(cpgStmtStr).execute();
 
 The create graph process can take 3-4 minutes depending on various factors such as network bandwidth and database load.
 
-### Check the newly created graph
+## STEP 5: Check the newly created graph
 
 Check that the graph was created. Copy, paste, and run the following statements in the JShell.
 
@@ -202,4 +202,14 @@ query.accept("select count(e), label(e) from customer_360 match ()-[e]->() group
 </copy>
 ```
 
-Continue on to the next section of this lab, i.e. query and analyse the graph in JShell.
+You may now *proceed to the next lab* (query and analyse the graph in JShell)
+
+## Acknowledgements
+
+- **Author** - Jayant Sharma - Product Manager, Spatial and Graph.  
+  With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
+  Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
+
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
