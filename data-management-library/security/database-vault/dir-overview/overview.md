@@ -38,36 +38,25 @@ In general, the first step you take is to create a realm composed of the databas
 - Works in a Multitenant Environment increasing security for consolidation 
 
 ---
-![](../../images/banner_Docs.PNG)
-- [Oracle Database Vault 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/dvadm/introduction-to-oracle-database-vault.html#GUID-0C8AF1B2-6CE9-4408-BFB3-7B2C7F9E7284)
-
----
-![](../../images/banner_Video.PNG)
-
-&nbsp; Watch DB Vault presentations on OTube (**Internal only**):
-- [Second Thursday: Database Vault](https://otube.oracle.com/media/SecondThursday_20190314_DatabaseVault/1_up4g7dlr) *(March 2019)*
-- [Second Thursday: Database Vault Basics](https://otube.oracle.com/media/Second+Thursday+March+2020-+Database+Vault+basics/1_vty3jz9g) *(March 2020)*
-- [Second Thursday: DB Vault Advanced Use Cases - Part1](https://otube.oracle.com/media/SecondThursday_20190808_DatabaseVault_UseCases_Part1/1_s2p4zikw) *(August 2019)*
-- [Second Thursday: DB Vault Advanced Use Cases - Part2](https://otube.oracle.com/media/SecondThursday_20191114_DB_Vault_Adv_II/1_wlenw8jd) *(January 2020)*
-
----
 ![](../../images/banner_Labs.PNG)
 
 Version tested in this lab: `Oracle DB 19.5`
 
 For these labs, you can also use **Enterprise Manager**, **Glassfish** or **SQL Developer** to check DB Vault impacts.
 
-- **Before beginning**, make sure you follow the [Enable_Database_Vault](Enable_Database_Vault/README.md) steps
+- [Getting connected](dir-getting-connected/get-connected.md)
 
-- [Simple Realm on EMPLOYEESEARCH_PROD Schema](Simple_Realm/README.md)
+- **Before** Continuing with the remainder of the labs, you must [Enable Database Vault](Enable_Database_Vault/README.md)
 
-- [Simulation Mode](Simulation_Mode/README.md)
+- [How to create a simple realm to protect sensitive data](dir-simple-realm/simple-realm.md)
 
-- [Operations Control](Ops_Control/README.md)
+- [How to configure multi-factor authorization / trusted path](dir-trusted-app-path/trusted-app-path.md)
 
-- [Trusted Application Path](Trusted_App_Path/README.md)
+- [How to use Simulation Mode to test Database Vault controls](dir-simulation-mode/simulation-mode.md)
 
-- When you are finished, make sure you follow the [Disable_Database_Vault](Disable_Database_Vault/README.md) steps
+- [How to use Operations Control to protect pluggable databases](dir-ops-control/ops-control.md)
+
+- When you are finished, you can [disable Database Vault](dir-disable-database-vault/disable-database-vault.md) and run through the labs again to see just how much is possible without effective controls
 
 ---
 
