@@ -6,6 +6,8 @@ Oracle Application Express (APEX) is a feature of Oracle Database, including the
 
 If you already have an APEX 19.2 Workspace provisioned, you can skip this lab and go straight to Lab 2 by clicking the navigation menu icon, in the upper-right corner of the header.
 
+Estimated Time: 5 minutes
+
 ### What is an APEX Workspace?
 An APEX Workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
 
@@ -93,7 +95,7 @@ In this part, you will create an Oracle Cloud trial account. Once you have signe
     ![](images/create-workspace.png " ")
 
 13. In the APEX Instance Administration page, click the **DEMO** link in the success message.         
-    *{Note: This will log you out of APEX Administration so that you can log into your new workspace.}*
+    *Note: This will log you out of APEX Administration so that you can log into your new workspace.*
 
     ![](images/log-out-from-admin.png " ")
 
@@ -114,7 +116,7 @@ Signing up for apex.oracle.com is simply a matter of providing details on the wo
     ![](images/request-workspace.png " ")
 
 4. On the Request a Workspace dialog, enter your Identification details – First Name, Last Name, Email, Workspace  
-   *{Note: For workspace, enter a unique name, such as first initial and last name}*
+   *Note: For workspace, enter a unique name, such as first initial and last name*
 
     Click **Next**.
 
@@ -123,7 +125,7 @@ Signing up for apex.oracle.com is simply a matter of providing details on the wo
 5. Complete the remaining wizard steps.
 
 6. Check your email. You should get an email from `oracle-application-express_ww@oracle.com` within a few minutes.  
-   *{Note: If you don’t get an email go back to Step 3 and make sure to enter your email correctly}*
+   *Note: If you don’t get an email go back to Step 3 and make sure to enter your email correctly*
 
     Within the email body, click **Create Workspace**
 
