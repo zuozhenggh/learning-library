@@ -15,14 +15,14 @@ upgrading to and to plan your I.T. projects.
 ### Contents
 **Workshop Activity 1:** Detect Configuration Pollution
 
-**Workshop Activity 2:** Database Server Patching with Fleet Maintenance
+**Workshop Activity 2:** Oracle Database Patching with Fleet Maintenance
 
 The estimated time to complete the workshop is 60 minutes
 
 | Workshop Activity No | Feature                                                    | Approx Time | Details                                                                                                                                                                    | Value Proposition |
 |----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                             | 10 minutes  | Analyze the database estate using Software Standardization.                                                                                                                |                   |
-| 2                    | Database Server Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
+| 2                    | Oracle Database Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
 
 # Introduction
 
@@ -46,6 +46,8 @@ Benefits with Fleet Maintenance:
     systems like Exadata
 
 ![](media/a5e5d36c2da3bb5669a7a6c79e46a555.png)
+
+For more details refer to [Fleet Maintenance](https://www.oracle.com/manageability/enterprise-manager/technologies/fleet-maintenance.html) documentation
 
 # Know Your Environment
 
@@ -72,28 +74,26 @@ Prior to starting, you will need:
 
 1.  Login to Host using SSH Key based authentication
 
-Refer to Frequently Asked Questions doc  
-(<https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md>)  
-for detailed instructions relevant to your SSH client type (e.g. Putty on
-Windows or Native such as terminal on Mac OS):
+    Refer to [Frequently Asked Questions](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md) 
+    doc for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
 
--   Authentication OS User - “opc”
+    -   Authentication OS User - “opc”
 
--   Authentication method - SSH RSA Key
+    -   Authentication method - SSH RSA Key
 
--   Oracle EM and DB Software OS User – “oracle”.
+    -   Oracle EM and DB Software OS User – “oracle”.
 
-First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
-
-1.  OMS URL: and Credentials:
+    First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
+    
+2.  OMS URL: and Credentials:
 
     -   Username: **sysman**
 
     -   password: **welcome1**
 
-You may see an error on the browser while accessing the Web Console - “*Your
-connection is not secure*”, add exception and proceed. Access this URL and
-ensure that you are able to access Enterprise Manager Web Console.
+    You may see an error on the browser while accessing the Web Console - “*Your
+    connection is not secure*”, add exception and proceed. Access this URL and
+    ensure that you are able to access Enterprise Manager Web Console.
 
 ## Update the Named Credentials with your SSH Key
 
@@ -131,7 +131,7 @@ session.
 In the interest of simplifying the setup and save time, the following steps were
 completed in advance:
 
--   Creation of the gold copy Oracle Home and patching to 18.10 release
+-   We have created a pre-patched Oracle Home with 18.10 release using which we will create the gold image
     [/u01/app/oracle/product/18/db_home_src,
     Orasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192]
 
@@ -238,7 +238,9 @@ subscription based out of place patching solution. Gold Image(s) are software
 library entities storing archive of a patched software home. Targets, to be
 patched, subscribe to a relevant Gold Image. Target subscription persists
 through the lifecycle of the Target or Gold Image unless modified by an
-administrator.
+administrator. We will go through the following steps for this Fleet Maintenance Exercise.
+
+![](media/DB_Fleet_Patching.png)
 
 ## Patching with Fleet Maintenance
 
