@@ -30,101 +30,46 @@ This section describes the mapping Load TRG\_CUSTOMER that will be created in th
 
 The Load TRG\_CUSTOMER mapping uses the following data and transformations:
   * One target datastore. Details:
-|-----------------------|---------------|-------------|--------------|
+
 | Model                 | Datastore     | Description |  Type        |
 |-----------------------|---------------|-------------|--------------|
-| Sales Administration  | TRG\_CUSTOMER |             | Oracle Table |
-|-----------------------|---------------|-------------|--------------|
+| Sales Administration  | TRG_CUSTOMER |              | Oracle Table |
 
   * Three source datastores:
 
-|-----------------------|---------------|-------------|--------------|  
 | Model                 | Datastore     | Description |  Type        |
 |-----------------------|---------------|-------------|--------------|
-| Orders Application    | SRC\_CUSTOMER | Customers in| Oracle Table |
-|                       |               | the source  |              |
-|                       |               | system      |              |
-|-----------------------|---------------|-------------|--------------|  
-| Parameters            | SRC\_AGE\_GRO | Age bracket | File         |
-|                       | UP            | file        | delimited by |
-|                       |               |             | semicolons   |
-|-----------------------|---------------|-------------|--------------|
-| Parameters            | SRC\_SALES\_P | Salesperson | File         |
-|                       | ERSON         | File        | delimited by |
-|                       |               |             | semicolons   |
-|-----------------------|---------------|-------------|--------------|
+| Orders Application    | SRC_CUSTOMER | Customers in the source system | Oracle Table |
+| Parameters            | SRC_AGE_GROUP | Age bracket file | File delimited by semicolons |
+| Parameters            | SRC_SALES_PERSON | Salesperson File | File delimited by semicolons |
 
   * One Join:
 
-|-----------------------|---------------|----------------------------|
-| Join                  | Description   | SQL RULE                   |
-|-----------------------|---------------|----------------------------|
-| Sales Representatives | Join          | SRC\_CUSTOMER.SALES\_PERS\_|
-| and Customers         | SRC\_SALES\_P | ID = SRC\_SALES\_PERSON\.S |
-|                       | ERSON and     | ALES\_PERS\_ID             |
-|                       | SRC\_CUSTOMER |                            |
-|-----------------------|---------------|----------------------------|
+| Join                  | Description                                | SQL RULE                   |
+|-----------------------|--------------------------------------------|----------------------------|
+| Sales Representatives and Customers | Join SRC_SALES_PERSON and SRC_CUSTOMER | SRC_CUSTOMER.SALES_PERS_ID = SRC_SALES_PERSON.SALES_PERS_ID |
 
   * One **Lookup** table:
 
-|-----------------------|---------------|----------------------------|
-| Lookup                | Description   | SQL RULE                   |
-|-----------------------|---------------|----------------------------|
-| Customers and         | The customers | SRC\_CUSTOMER.AGE between  |
-| age range             | age must be   | SRC\_AGE_GROUP.AGE\_MIN and|
-|                       | between the mi| SRC\_AGE_GROUP.AGE\_MAX    |
-|                       | n and max ages|                            |
-|                       | in the file   |                            |
-|-----------------------|---------------|----------------------------|  
+| Lookup                   | Description   | SQL RULE                                                        |
+|--------------------------|---------------------------------------------|-----------------------------------|
+| Customers and age range  | The customers age must be between the min and max ages in the file | SRC_CUSTOMER.AGE between SRC_AGE_GROUP.AGE_MIN and SRC_AGE_GROUP.AGE_MAX  |
 
   * Several transformation rules:
 
-|---------------|-------------------------|-------------------------|
-| Target Column | Origin                  | SQL Rule(Expression)    |
-|---------------|-------------------------|-------------------------|
-| CUST\_ID      | SRC\_ CUSTOMER.CUSTID   | SRC\_ CUSTOMER.CUSTID   |
-|---------------|-------------------------|-------------------------|
-| DEAR          | If SRC\_CUSTOMER.DEAR = | CASE                    |
-|               | 0                       |                         |
-|               |                         | WHEN CUSTOMER.DEAR=0    |
-|               | then \'MR\'             | THEN \'Mr\'             |
-|               |                         |                         |
-|               | If SRC\_ CUSTOMER.DEAR  | WHEN CUSTOMER.DEAR=1    |
-|               | = 1                     | THEN \'Mrs\'            |
-|               |                         |                         |
-|               | then \'MRS\' else       | ELSE \'Ms\'             |
-|               | \'MS\'                  |                         |
-|               |                         | END                     |
-|---------------|-------------------------|-------------------------|
-| CUST\_NAME    | Concatenation of SRC\_  | TRIM(SRC                |
-|               | CUSTOMER.FIRST\_NAME    | \_CUSTOMER.FIRST\_NAME) |
-|               | and SRC\_               | \|\| \' \' \|\|         |
-|               | CUSTOMER.LAST\_NAME in  | UPPER(TRIM(SRC          |
-|               | upper case              | \_CUSTOMER.LAST\_NAME)) |
-|---------------|-------------------------|-------------------------|
-| ADDRESS       | SRC\_CUSTOMER.ADDDRESS  | SRC\_CUSTOMER.ADDRESS   |
-|---------------|-------------------------|-------------------------|
-| CITY\_ID      | SRC\_CUSTOMER.CITY\_ID  | SRC\_CUSTOMER.CITY\_ID  |
-|---------------|-------------------------|-------------------------|
-| PHONE         | SRC\_CUSTOMER.PHONE     | SRC\_CUSTOMER.PHONE     |
-|---------------|-------------------------|-------------------------|
-| AGE           | SRC\_CUSTOMER.AGE       | SRC\_CUSTOMER.AGE       |
-|---------------|-------------------------|-------------------------|
-| AGE\_RANGE    | SRC\_AGE\_              | SRC\_AGE\_              |
-|               | GROUP.AGE\_RANGE        | GROUP.AGE\_RANGE        |
-|---------------|-------------------------|-------------------------|
-| SALES\_PERS   | Concatenation of        | TRIM(SRC\_SAL           |
-|               | SRC\_SA                 | ES\_PERSON.FIRST\_NAME) |
-|               | LES\_PERSON.FIRST\_NAME | \|\| \' \' \|\|         |
-|               | and                     | UPPER(TRIM(SRC\_SAL     |
-|               | SRC\_S                  | ES\_PERSON.LAST\_NAME)) |
-|               | ALES\_PERSON.LAST\_NAME |                         |
-|               | in uppercase            |                         |
-|---------------|-------------------------|-------------------------|
-| CRE\_DATE     | Today's date            | SYSDATE                 |
-|---------------|-------------------------|-------------------------|
-| UPD\_DATE     | Today's date            | SYSDATE                 |
-|---------------|-------------------------|-------------------------|
+| Target Column | Origin                               | SQL Rule(Expression)                                                       |
+|---------------|--------------------------------------|----------------------------------------------------------------------------|
+| CUST_ID       | SRC_CUSTOMER.CUSTID                  | SRC_CUSTOMER.CUSTID      |
+| DEAR          | If SRC\_CUSTOMER.DEAR = 0 then 'Mr'  If SRC_CUSTOMER.DEAR = 1 then 'MRS' else 'MS'| CASE  WHEN CUSTOMER.DEAR=o THEN 'Mr' WHEN CUSTOMER.DEAR=1 THEN 'Mrs' ELSE 'MS' END |
+| CUST_NAME     | Concatenation of SRC_CUSTOMER.FIRST_NAME and SRC_CUSTOMER.LAST_NAME in upper case | TRIM(SRC_CUSTOMER.FIRST_NAME) \|\| '' \|\| UPPER(TRIM(SRC_CUSTOMER.LAST_NAME))      |
+| ADDRESS       | SRC_CUSTOMER.ADDDRESS                | SRC_CUSTOMER.ADDRESS   |
+| CITY_ID       | SRC_CUSTOMER.CITY_ID                 | SRC_CUSTOMER.CITY_ID   |
+| PHONE         | SRC_CUSTOMER.PHONE                   | SRC_CUSTOMER.PHONE     |
+| AGE           | SRC_CUSTOMER.AGE                     | SRC_CUSTOMER.AGE       |
+| AGE_RANGE     | SRC_AGE_GROUP.AGE_RANGE              | SRC_AGE_GROUP.AGE_RANGE|
+| SALES_PERS    | Concatenation of SRC_SALES_PERSON.FIRST_NAME and SRC_SALES_PERSON.LAST_NAME in upper case | TRIM(SRC_SALES_PERSON.FIRST_NAME) \|\| '' UPPER(TRIM(SRC_SALES_PERSON.LAST_NAME)) |
+| CRE_DATE      | Today's date                         | SYSDATE                 |
+| UPD_DATE      | Today's date            | SYSDATE                 |
 
 ## Step 2: Creating the Mapping
 
