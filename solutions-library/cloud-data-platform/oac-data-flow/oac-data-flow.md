@@ -37,9 +37,9 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
 3.   Make sure you are in the correct compartment by selecting your compartment from the dropdown on the lefthand side (hint: use the same compartment as your ADW instance).  Then, cllick on **Create Instance**.
 
-   ![](./images/0b.png " ")
+   ![](./images/ob.png " ")
 
-4.   Provide all the required information (fields specified by \*). For the **Instance Name**, input a name such as **OACDEMO**.  Make sure that you have the correct compartment selected (use the same one that you have your ADW instance in).  Leave the rest of the selections as the default selections, as shown in the image below.  When you are finished, click **Create**.
+4.   Provide all the required information. For the **Instance Name**, input a name such as **OACDEMO**.  Make sure that you have the correct compartment selected (use the same one that you have your ADW instance in).  Leave the rest of the selections as the default selections, as shown in the image below.  When you are finished, click **Create**.
 
    ![](./images/0c.png " ")
 
