@@ -58,7 +58,7 @@
             "title": "Lab 8: ODI12c - Implementing Data Quality Control",
             "description": "ODI12c - Data Quality Control",
             "publisheddate": "6/29/2020",
-            "filename": "../quality/odi12c_quality.md"		
+            "filename": "../quality/odi12c_data_quality_control.md"		
         },
         {
             "title": "Lab 9: ODI12c - Working with Packages",

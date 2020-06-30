@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to login to the cloud and setup your environment using Oracle Resource Manager.  
 
-# This lab to be changed to follow a different ADW setup - June 25
+# This lab to be changed to follow a different ODI Repository Setup - June 25
 # LAB UNDER CONSTRUCTION
 
 **PLEASE READ:**  *If you already have access to a running compute instance (running the DB19c Image) configured, go directly to Step 3b run it, skip Step 3c, then run Step 3d.*
@@ -93,7 +93,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
     The detail page shows the DISPLAY NAME and the DB_NAME
 
-## Step 3: Create an ODI instance from OCI Marketplace
+## Step 1: Create an ODI instance from OCI Marketplace
 
 1. Login to the OCI Console and choose **Marketplace -> Applications**
 
