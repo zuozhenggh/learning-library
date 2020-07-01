@@ -10,7 +10,7 @@
             "title": "Getting Connected",
             "description":"How to get connected to the workshop environment",
             "publisheddate": "06/30/2020",
-            "filename":"./dir-get-connected/get-connected.md"
+            "filename":"./dir-getting-connected/get-connected.md"
         },
         {
             "title": "Enable Database Vault",
