@@ -98,7 +98,7 @@ To create the reference constraint:
 
 6.  Right-click the Constraints node and select **New Reference** as:
 
-  ![](./images/insert_new_reference.png)
+ ![](./images/insert_new_reference.png)
 
 7.  In the Definition tab of the Reference Editor:
   * From the Type list, select **User Reference**.
@@ -112,6 +112,7 @@ To create the reference constraint:
 9.  On the Columns tab, click **Add**:
 
   ![](./images/columns_tab.png)
+
  A new row is inserted in the columns table.
 
 10.  In this step you define the matching columns:
