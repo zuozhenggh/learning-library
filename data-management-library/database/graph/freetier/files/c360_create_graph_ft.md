@@ -4,12 +4,12 @@
 
 Now, the tables are created and populated with data. Let's create a graph representation of them.
 
-The steps are:
-- Modify the graph server configuration to disable TLS (SSL) for this lab
+### Steps
+- Modify the graph server configuration to disable Transport Layer Security (TLS) / Secure Sockets Layer (SSL) for this lab
 - Start the graph server
 - Start a client (JShell) that connects to the server
-- Setup a PGQL connection to the database
-- Use PGQL DDL (CREATE PROPERTY GRAPH) to instantiate a graph
+- Setup a Property Graph Query Language (PGQL) connection to the database
+- Use PGQL Data Definition Language (DDL) (e.g. CREATE PROPERTY GRAPH) to instantiate a graph
 
 
 ## STEP 1: Modify the graph server config file
@@ -101,7 +101,9 @@ Enter the following sets of commands once the JShell has started and is ready.
 
 1. First setup the database connection. Enter the following into the JShell.  
    
-    Replace *{db\_tns\_name}* with the appropriate database service name in the tnsnames.ora file of the wallet (e.g. `atpfinance_high`).  
+    Replace *{db\_tns\_name}* with the appropriate database service name in the tnsnames.ora file of the wallet (e.g. `atpfinance_high`, if you follow the previous labs exactly).
+    *Please refer back to Lab 4, Step 4, to check the content of `tnsnames.ora` file.*
+
     Replace *{wallet_location}* with the full path to the directory which has the unzipped wallet (e.g. `/home/oracle/wallets`).
 
     ```
