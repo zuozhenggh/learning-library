@@ -61,13 +61,13 @@ The Load TRG\_CUSTOMER mapping uses the following data and transformations:
 |----------------|--------------------------------------|----------------------------------------------------------------------------|
 | CUST\_ID       | SRC\_CUSTOMER.CUSTID                 | SRC\_CUSTOMER.CUSTID      |
 | DEAR           | If SRC\_CUSTOMER.DEAR = 0 then 'Mr'  If SRC\_CUSTOMER.DEAR = 1 then 'MRS' else 'MS'| CASE  WHEN CUSTOMER.DEAR=0 THEN 'Mr' WHEN CUSTOMER.DEAR=1 THEN 'Mrs' ELSE 'MS' END |
-| CUST\_NAME     | Concatenation of SRC\_CUSTOMER.FIRST_NAME and SRC\_CUSTOMER.LAST_NAME in upper case | TRIM(SRC\_CUSTOMER.FIRST_NAME) \|\| ' ' \|\| UPPER(TRIM(SRC\_CUSTOMER.LAST\_NAME))    |
+| CUST\_NAME     | Concatenation of SRC\_CUSTOMER.FIRST\_NAME and SRC\_CUSTOMER.LAST\_NAME in upper case | TRIM(SRC\_CUSTOMER.FIRST\_NAME) \|\| ' ' \|\| UPPER(TRIM(SRC\_CUSTOMER.LAST\_NAME))    |
 | ADDRESS        | SRC\_CUSTOMER.ADDDRESS                | SRC\_CUSTOMER.ADDRESS   |
 | CITY\_ID       | SRC\_CUSTOMER.CITY\_ID                | SRC\_CUSTOMER.CITY\_ID   |
 | PHONE          | SRC\_CUSTOMER.PHONE                   | SRC\_CUSTOMER.PHONE     |
 | AGE            | SRC\_CUSTOMER.AGE                     | SRC\_CUSTOMER.AGE       |
 | AGE\_RANGE     | SRC\_AGE\_GROUP.AGE\_RANGE            | SRC\_AGE\_GROUP.AGE\_RANGE|
-| SALES\_PERS    | Concatenation of SRC\_SALES_PERSON.FIRST_NAME and SRC\_SALES\_PERSON.LAST\_NAME in upper case | TRIM(SRC\_SALES\_PERSON.FIRST\_NAME) \|\| ' ' UPPER(TRIM(SRC\_SALES\_PERSON.LAST\_NAME)) |
+| SALES\_PERS    | Concatenation of SRC\_SALES\_PERSON.FIRST\_NAME and SRC\_SALES\_PERSON.LAST\_NAME in upper case | TRIM(SRC\_SALES\_PERSON.FIRST\_NAME) \|\| ' ' UPPER(TRIM(SRC\_SALES\_PERSON.LAST\_NAME)) |
 | CRE\_DATE      | Today's date                         | SYSDATE                 |
 | UPD\_DATE      | Today's date            | SYSDATE                 |
 

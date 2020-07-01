@@ -31,10 +31,10 @@ Accept the Terms&Conditions and click **Launch Stack**
     ![](./images/odi_config_5.png " ")  
 
 6. Scroll down to **ODI Instance Settings** and choose the
-   **VM Shape** (*VM.Standard.2.4*),
-   **SSH Key**: Paste the Public Key you created earlier (it should be only ONE line)
-   **Availability Domain**: Choose a domain based on your last name (A-J -> 1, K - M -> 2, N-Z -> 3)
-   **VNC Password**: create and remember a password to access your VNC environment (This password will not be accessible again and is required to access the VNC from which to run ODI Studio)
+  * **VM Shape** (*VM.Standard.2.4*),
+  * **SSH Key**: Paste the Public Key you created earlier (it should be only ONE line)
+  * **Availability Domain**: Choose a domain based on your last name (A-J -> 1, K - M -> 2, N-Z -> 3)
+  * **VNC Password**: create and remember a password to access your VNC environment (This password will not be accessible again and is required to access the VNC from which to run ODI Studio)
     ![](./images/odi_config_6a.png " ")
 
 7. Click **NEXT** and then click **CREATE** in the next page
@@ -153,7 +153,7 @@ The import will take approximately 5 minutes
 
 You will see connections for all available ADW databases. These could be used in a data integration project. For this exercise we will focus on the **DEMO\_SRC\_DB** and **DEMO\_TRG\_DB** which you have imported from the training master repository.
 
-2. Open **DEMO\_SRC\_DB**. You will get an **ERROR** stating *wallet can not be found*. This occurs because the wallet file we are using is a different format to what is expected.
+2. Open **DEMO\_SRC\_DB**. You will get an **ERROR** stating *wallet can not be found*. This occurs because the wallet file we are using is stored in a different location to that expected.
 
 3. Click **OK** to close the error window
 
