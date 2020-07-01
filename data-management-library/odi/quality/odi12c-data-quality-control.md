@@ -68,54 +68,56 @@ This section describes how to create the following constraints:
 
 1. Creating an age constraints consists in adding a data validity condition on a column. To create the age constraint:
 
-  1.  In the Models accordion in Designer Navigator, expand the *Orders Application* model.
-  2.  Expand the SRC\_CUSTOMER datastore.
-  3.  Right-click the Constraints node and select **New Condition** as
+  * In the Models accordion in Designer Navigator, expand the *Orders Application* model.
+  * Expand the SRC\_CUSTOMER datastore.
+  * Right-click the Constraints node and select **New Condition** as
 
   ![](./images/insert_new_condition.png)  
 
-  4.  In the Definition tab of the Condition Editor:
-    * In the Name field, enter the name of your condition. For example: AGE \> 21.
-    * From the Type list, select **Oracle Data Integrator Condition**.
-    * In the Where clause field, enter the following SQL code: SRC\_CUSTOMER.AGE \> 21
-    **Note:** You can enter this text directly in the Where clause field or you can use the Expression Editor. To open the Expression Editor click **Launch the expression editor** in the Where clause toolbar menu. The constraints created by Oracle Data Integrator are not actually created on the database. The constraints are stored in the ODI Repository.
-    * In the Message field, specify the error message as it will appear in your error table:
-    ````
-    Customer Age is not over 21
-    ````
+In the Definition tab of the Condition Editor:
+  * In the Name field, enter the name of your condition. For example: AGE \> 21.
+  * From the Type list, select **Oracle Data Integrator Condition**.
+  * In the Where clause field, enter the following SQL code: SRC\_CUSTOMER.AGE \> 21
+  **Note:** You can enter this text directly in the Where clause field or you can use the Expression Editor. To open the Expression Editor click **Launch the expression editor** in the Where clause toolbar menu. The constraints created by Oracle Data Integrator are not actually created on the database. The constraints are stored in the ODI Repository.
+  * In the Message field, specify the error message as it will appear in your error table:
+
+  ````
+  Customer Age is not over 21
+  ````
+
   ![](./images/condition_editor.png)
+
 2.  From the File main menu, select **Save** to save the condition.
 
 3. Reference Constraint
+
 This section describes how to create a reference constraint based on the CITY\_ID column between the SRC\_CUSTOMER table and the SRC\_CITY table.
 This constraint allows checking that customers are located in a city that exists in the SRC\_CITY table.
 
 To create the reference constraint:
 
-4.  In the Models accordion in Designer Navigator, expand the *Orders Application* model.
-
-5.  Expand the SRC\_CUSTOMER datastore.
-
-6.  Right-click the Constraints node and select **New Reference** as:
+  * In the Models accordion in Designer Navigator, expand the *Orders Application* model.
+  * Expand the SRC\_CUSTOMER datastore.
+  * Right-click the Constraints node and select **New Reference** as:
 
   ![](./images/insert_new_reference.png)
 
-7.  In the Definition tab of the Reference Editor:
+4.  In the Definition tab of the Reference Editor:
   * From the Type list, select **User Reference**.
   * From the Model list in the Parent Model/Table section, select **Orders Application**. This is the data model containing the table you want to link to.
   * From the Table list, select **SRC\_CITY**. This is the table you want to link to.
 
   ![](./images/reference_editor.png)  
 
-8.  In the Reference Editor, go to the Attributes tab.
+5.  In the Reference Editor, go to the Attributes tab.
 
-9.  On the Columns tab, click **Add**:
+6.  On the Columns tab, click **Add**:
 
   ![](./images/columns_tab.png)
 
  A new row is inserted in the columns table.
 
-10.  In this step you define the matching columns:
+7.  In this step you define the matching columns:
   * Click on the row that appears. This will bring up a drop-down list containing all of the columns in the appropriate table.
   * From the Columns (Foreign Table) list, select **CITY\_ID**.
   * From the Columns (Primary Table) list, select **CITY\_ID**.
@@ -124,7 +126,7 @@ To create the reference constraint:
 
 Note that in this example the Foreign Table is SRC\_CUSTOMER and the Primary Table is SRC\_CITY. Note also that it is not required for foreign keys that the column names of the Foreign Table and the Primary Table match. It just happens that they do in this example.
 
-11.  Select **File** \> **Save** to save this reference.
+8.  Select **File** \> **Save** to save this reference.
 
 **Tip:** You can alternately use the \[CTRL - S\] shortcut to save the current Editor.
 
@@ -176,9 +178,9 @@ The log comprises 3 levels:
 This section describes how to determine the invalid records. These are the records that do not satisfy the constraints and has been rejected by the static control.
 
 1. Determining the Number of Invalid Records
-  1. In the Session List accordion in Operator Navigator, expand the All Executions node and the SRC\_CUSTOMER session.
-  2. Double-click the SRC\_CUSTOMER step to open the Session Step Editor.
-  3. The Record Statistics section details the changes performed during the static control. These changes include the number of inserts, updates, deletes, errors, and the total number of rows handled during this step.
+  * In the Session List accordion in Operator Navigator, expand the All Executions node and the SRC\_CUSTOMER session.
+  * Double-click the SRC\_CUSTOMER step to open the Session Step Editor.
+  * The Record Statistics section details the changes performed during the static control. These changes include the number of inserts, updates, deletes, errors, and the total number of rows handled during this step.
 
   ![](./images/cust_session_step_editor.png)
 
