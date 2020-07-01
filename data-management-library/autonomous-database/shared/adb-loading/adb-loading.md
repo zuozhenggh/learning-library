@@ -153,11 +153,11 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
 1. Locate the base URL of the objects in your object store. The simplest way to get this URL is from the "Object Details" in the right hand side ellipsis menu in the Object Store.
 
-  ![](images/ConstructUrls.jpg " ")
+    ![](images/ConstructUrls.jpg " ")
 
 2.  Copy the base URL that points to the location of your files staged in the OCI Object Storage. *Do not include the trailing slash.* Save the base URL in a text notepad. We will use the base URL in the upcoming steps.
 
- ![](images/step6.2-constructurls2.png " ")
+    ![](images/step6.2-constructurls2.png " ")
 
 3. Take a look at the URL you copied. In this example above, the **region name** is us-ashburn-1, the **Namespace** is idthydc0kinr, and the **bucket name** is ADWCLab.
 
