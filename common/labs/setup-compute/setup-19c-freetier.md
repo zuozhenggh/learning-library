@@ -34,7 +34,7 @@ This lab takes approximately 10 minutes to complete.
 ## Step 1: Login and Create Stack using Resource Manager
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [db19c-compute-vcn-19-7.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2qqj6QERdmH59DuAYvL2FmpzUZjECSwGeJGOm6yF2ZU/n/c4u03/b/labfiles/o/db19c-compute-vcn-19-7.zip) - Packaged terraform instance creation script for creating network and instance running the 19c Oracle Database
+    - [db19c-compute-vcn-19-7.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k52Q1PBzZUsUlTUEKwdfN63LY9naMuiOA9QaK5naUHE/n/c4u03/b/labfiles/o/db19c-compute-v19-7.zip) - Packaged terraform instance creation script for creating network and instance running the 19c Oracle Database
 
 2.  Save in your downloads folder.
 
