@@ -60,7 +60,7 @@ To view the execution results of the LOAD\_SALES\_ADMINISTRATION scenario in Des
 
 2. Refresh the displayed information by clicking **Refresh** in the Designer Navigator toolbar menu.
 
-3.  The log for the execution session of the LOAD\_SALES\_ADMINISTRATION scenario appears as shown in Figure 8--3.
+3.  The log for the execution session of the LOAD\_SALES\_ADMINISTRATION scenario appears as shown:
 
   ![](./images/load_sales_admin_log.png)
 

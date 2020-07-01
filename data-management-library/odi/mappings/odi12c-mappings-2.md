@@ -35,41 +35,41 @@ The Load TRG\_SALES mapping uses the following data and transformations:
   * One target datastore.
   | Model                 | Datastore            | Description                                           |  Type        |
   |-----------------------|----------------------|-------------------------------------------------------|--------------|
-  | Sales Administration  | TRG_SALES            | Target table in the Sales Administration System | Oracle Table |
+  | Sales Administration  | TRG\_SALES           | Target table in the Sales Administration System | Oracle Table |
 
   * Two source datastores.
   | Model                 | Datastore          | Description                                     |  Type        |
   |-----------------------|--------------------|------------------------------------------------------|--------------|
-  | Orders Application    | SRC_ORDERS         | Orders table in the source systems              | Oracle Table |
-  | Orders Application    | SRC_ORDER_LINES    | Order lines table in the source systems         | Oracle Table |
+  | Orders Application    | SRC\_ORDERS        | Orders table in the source systems              | Oracle Table |
+  | Orders Application    | SRC\_ORDER\_LINES  | Order lines table in the source systems         | Oracle Table |
 
   * One **Join**.
 
-  | Join                      | Description                                  | SQL Rule               |
-  |---------------------------|----------------------------------------------|------------------------|
-  | Commands and Order Lines  | Join SRC_ORDERS and SRC_ORDER_LINES          | SRC_ORDERS.ORDER_ ID = SRC_ORDER_LINES.ORDER_ID |
+  | Join                      | Description                                  | SQL Rule                                           |
+  |---------------------------|----------------------------------------------|----------------------------------------------------|
+  | Commands and Order Lines  | Join SRC\_ORDERS and SRC\_ORDER\_LINES       | SRC\_ORDERS.ORDER\_ID = SRC\_ORDER\_LINES.ORDER_ID |
 
 
   * One **Filter**
 
   | Description                      | SQL Rule                                  |
   |----------------------------------|-------------------------------------------|
-  | Only retrieve completed orders   | SRC_ORDERS.STATUS = 'CLO'                 |
+  | Only retrieve completed orders   | SRC\_ORDERS.STATUS = 'CLO'                |
   | Orders Application               | Order lines table in the source system    |
 
   * Several transformation rules.
 
-  | Target Column         | Origin                                             | SQL Rule (expression)              |
-  |-----------------------|----------------------------------------------------|------------------------------------|
-  |CUST_ID                |CUST_ID from SRC_ORDERS                             | SRC_ORDERS.CUST_ID                 |
-  |PRODUCT_ID             |PRODUCT_ID from SRC_ORDERS_LINES                    | SRC_ORDER_LINES.PRODUCT_ID     |
-  |FIRST_ORD_ID           |Smallest value of ORDER_ID                          | MIN(SRC_ORDERS.ORDER_ID)         |
-  |FIRST_ORD_DATE         |Smallest value of the ORDER_DATE from SRC_ORDERS    | MIN(SRC_ORDERS.ORDER_DATE)     |
-  |LAST_ORD_ID          |Largest value of ORDER_ID                          | MAX(SRC_ORDERS.ORDER_ID)        |
-  |LAST_ORD_DATE         |Largest value of the ORDER_DATE from SRC_ORDERS   | MAX(SRC_ORDERS.ORDER_DATE)     |
-  |QTY                    |Sum of the QTY quantities from the order lines      | SUM(SRC_ORDER_LINES.QTY)        |
-  |AMOUNT                 |Sum of the amounts from the order lines             | SUM(SRC_ORDER_LINES.AMOUNT)     |
-  |PROD_AVG_PRICE       |Average amount from the order lines                 | AVG(SRC_ORDER_LINES.AMOUNT)     |
+  | Target Column         | Origin                                             | SQL Rule (expression)            |
+  |-----------------------|----------------------------------------------------|----------------------------------|
+  |CUST\_ID               |CUST_ID from SRC\_ORDERS                            | SRC\_ORDERS.CUST\_ID             |
+  |PRODUCT\_ID            |PRODUCT_ID from SRC\_ORDERS\_LINES                  | SRC\_ORDER\_LINES.PRODUCT\_ID    |
+  |FIRST\_ORD\_ID         |Smallest value of ORDER_ID                          | MIN(SRC\_ORDERS.ORDER\_ID)       |
+  |FIRST\_ORD\_DATE       |Smallest value of the ORDER\_DATE from SRC\_ORDERS  | MIN(SRC\_ORDERS.ORDER\_DATE)     |
+  |LAST\_ORD\_ID          |Largest value of ORDER\_ID                          | MAX(SRC\_ORDERS.ORDER\_ID)       |
+  |LAST\_ORD\_DATE        |Largest value of the ORDER\_DATE from SRC\_ORDERS   | MAX(SRC\_ORDERS.ORDER\_DATE)     |
+  |QTY                    |Sum of the QTY quantities from the order lines      | SUM(SRC\_ORDER\_LINES.QTY)       |
+  |AMOUNT                 |Sum of the amounts from the order lines             | SUM(SRC\_ORDER\_LINES.AMOUNT)    |
+  |PROD\_AVG\_PRICE       |Average amount from the order lines                 | AVG(SRC\_ORDER\_LINES.AMOUNT)    |
 
 ## Step 2: Creating the Mapping
 
