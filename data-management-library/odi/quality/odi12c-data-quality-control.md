@@ -98,7 +98,7 @@ To create the reference constraint:
 
 6.  Right-click the Constraints node and select **New Reference** as:
 
- ![](./images/insert_new_reference.png)
+  ![](./images/insert_new_reference.png)
 
 7.  In the Definition tab of the Reference Editor:
   * From the Type list, select **User Reference**.
@@ -120,7 +120,7 @@ To create the reference constraint:
   * From the Columns (Foreign Table) list, select **CITY\_ID**.
   * From the Columns (Primary Table) list, select **CITY\_ID**.
 
-  ![](./images/columns_tab_matching_cols.png.png)
+  ![](./images/columns_tab_matching_cols.png)
 
 Note that in this example the Foreign Table is SRC\_CUSTOMER and the Primary Table is SRC\_CITY. Note also that it is not required for foreign keys that the column names of the Foreign Table and the Primary Table match. It just happens that they do in this example.
 
