@@ -46,7 +46,7 @@ For these labs, you can also use **Enterprise Manager**, **Glassfish** or **SQL 
 
 - [Getting connected](dir-getting-connected/get-connected.md)
 
-- **Before** Continuing with the remainder of the labs, you must [Enable Database Vault](Enable_Database_Vault/README.md)
+- **Before** Continuing with the remainder of the labs, you must [Enable Database Vault](dir-enable-database-vault/enable-dv.md)
 
 - [How to create a simple realm to protect sensitive data](dir-simple-realm/simple-realm.md)
 
