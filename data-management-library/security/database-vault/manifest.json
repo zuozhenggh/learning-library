@@ -16,7 +16,7 @@
             "title": "Enable Database Vault",
             "description":"This lab will walk you through how to enable Database Vault for the workshop image",
             "publisheddate": "06/30/2020",
-            "filename":"./dir-enable-database-vault/enable-dv.mdd"
+            "filename":"./dir-enable-database-vault/enable-dv.md"
         },
         {
             "title": "How to create a simple realm",
