@@ -75,12 +75,16 @@ The Load TRG\_CUSTOMER mapping uses the following data and transformations:
 
 This section describes how to create the Load TRG\_CUSTOMER mapping. To create the Load TRG\_CUSTOMER mapping perform the following procedure:
 1. Insert a New Mapping
-   To create a new mapping:
-   1. In Designer Navigator, expand the Demo project node in the Projects accordion.
-   2. Expand the Sales Administration node.
-   3. In the Sales Administration folder, right-click the Mapping node and select **New Mapping**:
-  ![](./images/mapping_new_instance.png)
-   4. Enter the name of your mapping (Load TRG\_CUSTOMER) in the Name field:
+
+To create a new mapping:
+   a. In Designer Navigator, expand the Demo project node in the Projects accordion.
+   b. Expand the Sales Administration node.
+   c. In the Sales Administration folder, right-click the Mapping node and select **New Mapping**:
+
+ ![](./images/mapping_new_instance.png)
+
+   d. Enter the name of your mapping (Load TRG\_CUSTOMER) in the Name field:
+
   ![](./images/mapping_editor.png)
      Ensure the *Create Empty Dataset* option is not selected.
 

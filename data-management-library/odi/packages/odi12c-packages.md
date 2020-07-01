@@ -32,10 +32,10 @@ In the Lab *Load Sales Administration Package Example*, you will create and run 
 **Scenarios**
 A *scenario* is designed to put source components (mapping, package, procedure, variable) into production. A scenario results from the generation of code (SQL, shell, and so forth) for this component. Once generated, the code of the source component is frozen and the scenario is stored inside the Work repository. A scenario can be exported and then imported into different production environments.
 
-**Note:** Once generated, the scenario\'s code is frozen, and all subsequent modifications of the package and/or data models which contributed to its creation will not affect it. If you want to update a scenario - for example because one of its mappings has been changed, then you must generate a new version of the scenario from the package or regenerate the existing scenario.
-Refer to *Workig with Scenarios* in the *Oracle Fusion Middleware Developer\'s Guide for Oracle Data Integrator* for more information.
+**Note:** Once generated, the scenario's code is frozen, and all subsequent modifications of the package and/or data models which contributed to its creation will not affect it. If you want to update a scenario - for example because one of its mappings has been changed, then you must generate a new version of the scenario from the package or regenerate the existing scenario.
+Refer to *Working with Scenarios* in the *Oracle Fusion Middleware Developer's Guide for Oracle Data Integrator* for more information.
 
-In the lab *Deploying Integrated Applications*, you will generate the *LOAD\_ SALES\_ADMINISTRATION* scenario from a package and run this scenario from Oracle Data Integrator Studio.
+In the lab *Deploying Integrated Applications*, you will generate the *LOAD\_SALES\_ADMINISTRATION* scenario from a package and run this scenario from Oracle Data Integrator Studio.
 
 ## Step 2: Load Sales Administration Package Example
 This section contains the following topics:
@@ -55,6 +55,7 @@ The demo repository is delivered with a number of Mappings. The Demo project now
   * **Load TRG\_PROD\_FAMILY**: a mapping that populates the TRG\_PROD\_FAMILY table. This mapping is delivered with the demo repository.
   * **Load TRG\_REGION**: a mapping that populates the TRG\_REGION table. This mapping is delivered with the demo repository.
   * **Load TRG\_SALES**: a mapping that populates the TRG\_SALES table. This mapping is created in Lab *Load TRG\_SALES Mapping*.
+
 **One procedure:**
 The **Delete Targets** procedure empties all of the tables in the *Sales Administration* application. This operation is performed by using a *Delete* statement on each table.
 
