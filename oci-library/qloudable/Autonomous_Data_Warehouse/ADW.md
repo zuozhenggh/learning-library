@@ -75,20 +75,29 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 - DISPLAY NAME: Provide a name
 - DATABASE NAME: Provide a name
 - Choose a Workload type: Data Warehouse
+- Choose a Deployment type: Shared Infrastructure
+
 Under **Configure the database**
+
 - Always Free: Leave Default
 - Choose database version: Leave Default
 - OCPU count: 1
-- Auto Sclaing: Make sure flag is checked
+- Auto Sclaing: Make sure flag is Un-checked
+
 Under **Create administrator credentials**
+
 - Username: Provide a username 
 - Password: Provide a password (example Oracle123!!!!)
 - Confirm Password: Confirm the password provided
+
 Under **Choose network access**
+
 - Allow secure accces from anywhere: Make sure this option is checked
 - Confifure access conrol rules: Leave default (unchecked)
+
 Under **Choose a license type**
-- License Included: Check this opttion
+
+- License Included: Check this option
 
 4. Click **Create Autonomous Database**
 

@@ -4,7 +4,7 @@
 
 **Before you begin**
 
-This 4 hours hands-on lab is an entry-level exercise for building a Web and Mobile App.
+This 3 hours hands-on lab is an entry-level exercise for building a Web and Mobile App.
 
 
 **Background**
@@ -79,13 +79,6 @@ The exercise is presented in five parts:
 * Exercise 4 – Web and Mobile Apps
 * Exercise 5 – Data from Service
 
-There are two additional **extra** exercises available for anyone who happens to finish early. No prior experience with Visual Builder is assumed or necessary.
-
-The Extra labs are: 
-
-- Extra Lab 6: Add Data Using REST Call *(Estimated Time - 10 Min)*
-- Extra Lab 7: Review and edit JavaScript code under the covers of VBCS *(Estimated Time - 10 Min)*
-
 
 **Getting Started**
 
@@ -106,7 +99,6 @@ You will need to download the data files, all the files are available in a singl
 <br>
 <br>
 * Exercise 5 (Links used for VBCS Service Connections)
-
 
 *****************************
 **NOTE** 
@@ -633,7 +625,7 @@ In this exercise you will create:
 **This concludes exercise 3.**
 
 ******
-
+<br>
 <br>
 
 ## Day 2 Web and Mobile Apps
@@ -645,11 +637,11 @@ In exercise 4 you will create web and mobile applications so that Mama Maggy man
 
 Exercise 4 has three sections:
 
-  - Section 1 – [Create First Web Application](#exercise-3-section-1--create-first-web-application)
+  - Section 1 – [Create First Web Application](#exercise-4-section-1--create-first-web-application)
 
-  - Section 2 – [Create Master-Detail Application](#exercise-3-section-2--create-master-detail-application)
+  - Section 2 – [Create Master-Detail Application](#exercise-4-section-2--create-master-detail-application)
 
-  - Section 3 – [Create Mobile Application](#exercise-3-section-3--create-mobile-application)
+  - Section 3 – [Create Mobile Application](#exercise-4-section-3--create-mobile-application)
 
 <br>
 
@@ -815,7 +807,7 @@ In exercise 2 you created three business objects and uploaded data to the embedd
 
     ![](./media/image106.png)
 
-    Now, return to the Product List display and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
+    Now, return to the Product List page, you can click the **Back** button or select the **main-start** page (You should see **main-start** on the top bar as a tab), and select a row, this sets the context to the selected row. (**MOZZARELLA** selected below)
 
     ![](./media/image107.png)
     
@@ -835,7 +827,7 @@ In exercise 2 you created three business objects and uploaded data to the embedd
   
     ![](./media/3.10.12.png)
 
-6. Once you have reviewed the product details, click the provided **Back** button to return to the list.
+19. Once you have reviewed the product details, click the provided **Back** button to return to the list.
 
     ![](./media/3.10.13.png)
 
@@ -1281,6 +1273,21 @@ The data used to create these apps will come from **Service Connections** that y
 
     ![](./media/4.11.5.png)
 
+
+***
+
+**Note**: If you are not able to see the **mmstores** as data source, click the **Pencil** icon located at the bottom right corner to edit your connections.
+Verify that you have the GET /store/{Store_Id} selected. Click next and finish.
+
+![](./media/add_connection_1.png)
+
+</br>
+
+![](./media/add_connection_2.png)
+
+***
+
+
 19. Choose the following fields and the primary key:
      - id
      - name
@@ -1324,7 +1331,28 @@ The data used to create these apps will come from **Service Connections** that y
 27. Your Store details screen should look something like this
 
      ![](./media/image170.png)
- 
+
+***
+**Note**: If you get a **"Could not load data"** error message, you must check whether the Endpoint **StoreID** is mapped.
+
+* Click on the **main-store-detail** page, click **Actions** and select **LoadAssociateChain**
+
+    ![](./media/error_store_link_1.png)
+
+
+* Select the main node **Call REST Endpoint mmstores/get_Store** and on the right hand side of the screen click the **Store_Id** field.
+
+    ![](./media/error_store_link_2.png)
+
+* On the query page, drag and drop the **storeid** value from the left to the **Store_Id** parameter located in the right. Click Save
+
+    ![](./media/error_store_link_3.png)
+
+
+* Now you should be able to see data. Go to the **main** page, select a field and drill down to the detail page.
+
+***
+
 
 28. Now create an **associatelist** web application to display all **Associate** rows (you pick the fields) and provide a **Add Detail Page** to display a single Associate (you pick the fields here too).
 
@@ -1332,7 +1360,16 @@ The data used to create these apps will come from **Service Connections** that y
     - Details display of selected Associate (**mmassociates** using
     **associate\_id**)
 
-   Test your application
+**Note**: If you face the same issue when displaying **Detail page** information as described for Store, follow the same steps to map the **Associate_Id** parameter.
+
+![](./media/error_associate_link_1.png)
+
+![](./media/error_associate_link_2.png)
+
+
+**Test your application**
+
+***
 
 29. For something really fun; return to the **storelist** application and display the **Stores Detail** page (probably called **main-store-detail** or something close)
 
@@ -1404,56 +1441,14 @@ We hope you have enjoyed Oracle Visual Builder Cloud Service. We encourage you t
 
 [Oracle Visual Build Cloud Service at Oracle.com](https://www.oracle.com/application-development/cloud-services/visual-builder/)
 
-*****************************
+******
 
 **This concludes exercise 5.**
 
 ******
 
-## Extra Exercise 6: Add Data Using REST Call
-
-The **Extra** exercises are intended to **flex** the mind-muscles of those who have finished the other exercises early so, they are short on explanation and there are no example solutions provided.
-
-In this exercise you will work more with RESTful API calls
-
-1.  Review the **orderlist** web application and the similar mobile application
-
-1.  Recreate the **orderlist** as a new application (so that you don’t mess up the old one) 
-      
-1. See if you can get data from the **mmassociates** service connection (single row access) to provide the associate’s **Name** rather than their **id** in the **Product Orders** list and **Product Order Detail** displays
-
-1.  (optional) Try to repeat \#2 and add replace the associate id with associate name in a copy of your mobile application (again, don’t mess up the original).
-
-**This concludes Extra Exercise 6**
-
-******
-
-[**Return to Main Page**](../index.html)
-
-<br>
-
-## Extra Exercise 7: Review and edit JavaScript code under the covers of VBCS
-
-The **Extra** exercise are intended to **flex** the mind-muscles of those who have finished the other exercises early so, they are short on explanation and there are no example solutions provided.
-
-In this exercise you will work actually **code** (assuming you know something about JET or at least HTML5, JavaScript, and CSS).
-
-1. Reopen one of your Web or Mobile application pages. Select the **Code** view
-![](./media/image182.png)
 
 
-2. This will display the actual code that supports your screen
-![](./media/image183.png)
-
-3. Depending upon the time available and your proficiency coding, experiment a little with the code
-4. If you’re light on coding skills just try something as simple as changing the size of one of the headings
-For instance:  
-**\<h2…\>Order Items\</h2\>** on line 19 above might be changed to
-**\<h4…\>Order Items\</h4\>** to make the heading much smaller
-
-**This concludes Extra Exercise 7**
-
-******
 
 
 [**Return to Main Page**](../index.html)
