@@ -25,7 +25,7 @@
       }
       ,
       {
-            "title": "Lab 4: Access a BDS Node Using a Public IP",
+            "title": "Lab 4: Access a BDS Node Using a Public IP Address",
             "description": "This lab shows you how to map a node's private IP address to a public IP address",
             "filename": "./../bds-access-utility-node/bds-access-utility-node.md"
         }

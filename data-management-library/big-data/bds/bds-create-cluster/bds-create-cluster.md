@@ -174,9 +174,80 @@ The process of creating the cluster can take some time; however, you can monitor
 
   The `training-cluster` cluster is a highly available (HA) cluster; therefore, the services are distributed as follows:
 
-  | Master Node 1<br />**`traininmn0`**| Master Node 2<br />**`traininmn1`** | Utility <br />Node 1 **`traininun0`** | Utility Node 2<br />**`traininun1`** | Worker Nodes<br />**`traininwn0`** **`traininwn1`** **`traininwn2`** |
-  |:----:|:----:|:----:|:----:|:----:|
-  HDFS Failover Controller<br />HDFS JournalNode<br />HDFS NameNode<br />Key Trustee KMS  Proxy<br />Key Trustee Server Active<br />KTS Active Database<br />Spark History Server<br />YARN JobHistory Server<br />YARN ResourceManager<br />ZooKeeper Server<br />MIT KDC Primary| HDFS Balancer<br />HDFS Failover Controller<br />HDFS HttpFS<br />HDFS JournalNode<br />HDFS NameNode<br />Hue Load Balancer<br />Hue Server<br />Hue Kerberos Ticket Renewer<br />Key Trustee KMS Proxy<br />KTS Passive Database<br />KTS Passive<br />ResourceManager<br />ZooKeeper Server<br />MIT KDC Secondary| HDFS JournalNode<br />Cloudera Manager<br /> CM Alert Publisher<br />CM Service Event Server<br />CM Service Host Monitor<br />CM Service Navigator Audit Server<br />CM Service Navigator Metadata Server<br />CM Service Reports Manager<br />CM Service Monitor<br />Sentry Server<br />Zookeeper Server| Hive Metastore Server<br />HiveServer2<br />Hive WebHCat Server<br />Hue Load Balancer<br />Hue Server<br />Hue Kerberos Ticket Renewer<br />Oozie Server<br />Sentry Server|HDFS DataNode<br />YARN NodeManager
+**First Master Node, `traininmn0`:**
+
+  + HDFS Failover Controller
+  + HDFS JournalNode
+  + HDFS Failover Controller
+  + HDFS JournalNode
+  + HDFS NameNode
+  + Hive Gateway
+  + Key Trustee KMS Key Management Server Proxy
+  + Key Trustee Server Active Database
+  + Key Trustee Server Active Key Trustee Server
+  + Spark Gateway
+  + Spark History Server
+  + YARN (MR2 Included) JobHistory Server
+  + YARN (MR2 Included) ResourceManager
+  + ZooKeeper Server
+
+**Second Master Node, `traininmn1`:**
+
+  + HDFS Balancer
+  + HDFS Failover Controller
+  + HDFS HttpFS
+  + HDFS JournalNode
+  + HDFS NameNode
+  + Hive Gateway
+  + Hue Load Balancer
+  + Hue Server
+  + Hue Kerberos Ticket Renewer
+  + Key Trustee KMS Key Management Server Proxy
+  + Key Trustee Server Passive Database
+  + Key Trustee Server Passive Key Trustee Server
+  + YARN (MR2 Included) ResourceManager
+  + ZooKeeper Server
+
+**First Utility Node, `traininun0`:**
+
+  + HDFS Gateway  
+  + HDFS JournalNode
+  + Hive Gateway
+  + Cloudera Management Service Alert Publisher
+  + Cloudera Management Service Event Server
+  + Cloudera Management Service Host Monitor
+  + Cloudera Management Service Navigator Audit Server
+  + Cloudera Management Service Navigator Metadata Server
+  + Cloudera Management Service Reports Manager
+  + Cloudera Management Service Service Monitor
+  + Sentry Server
+  + Spark Gateway
+  + YARN (MR2 Included) Gateway
+  + ZooKeeper Server
+
+
+**Second Utility Node, `traininun1`:**
+
+  + HDFS Gateway
+  + Hive Gateway
+  + Hive Metastore Server
+  + HiveServer2
+  + Hive WebHCat Server
+  + Hue Load Balancer
+  + Hue Server
+  + Hue Kerberos Ticket Renewer
+  + Oozie Server
+  + Sentry Server
+  + Spark Gateway
+  + YARN (MR2 Included) Gateway
+
+
+**Worker nodes, `traininwn0`, `traininwn1`, `traininwn2`:**
+
+  + HDFS DataNode  
+  + Hive Gateway
+  + Spark Gateway
+  + YARN (MR2 Included) NodeManager
 
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
