@@ -138,6 +138,7 @@ In this step, you will learn how to edit a public IP address using both the **Cl
     ```
     $ oci network public-ip delete --public-ip-id "ocid1.publicip.oc1.iad.amaaaaaayrywvyyaqzeylbrtkwidyvrsyivmh55jdwb3fjpm2zyoq5iyajca"
     ```
+    **Note:** Don't delete any of your public IP addresses as you will need them in this workshop. 
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 
