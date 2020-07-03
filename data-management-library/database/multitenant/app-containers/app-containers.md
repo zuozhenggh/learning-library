@@ -12,7 +12,7 @@ Before you begin, please connect to your instance, using the commands from **[La
 
 Then, login using the commands from **[Lab 4, Step 1.1 and 1.2](?lab=lab-4-multitenant-basics#Step1:LoginandCreatePDB)**
 
-## Step 1: Instant Sa
+## Step 1: Instant SaaS
 This section shows how Multitenant with Application Containers provides an instant SaaS architecture for an application formerly architected for standalone deployment.
 
 The tasks you will accomplish in this lab are:
