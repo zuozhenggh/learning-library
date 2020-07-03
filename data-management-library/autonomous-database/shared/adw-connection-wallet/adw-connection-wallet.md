@@ -1,4 +1,4 @@
-# Bonus Lab: Connect Securely Using SQL Developer with a Connection Wallet
+# Connect Securely Using SQL Developer with a Connection Wallet
 
 ## Introduction
 
