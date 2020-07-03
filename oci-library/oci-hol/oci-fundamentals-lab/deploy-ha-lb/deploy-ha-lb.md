@@ -20,14 +20,6 @@ The Load Balancing Service provides automated traffic distribution from one entr
 Lab 1: Login to Oracle Cloud
 Lab 2: Create SSH Keys - Cloud Shell
 
-### Recommended Resources
-
-1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-4. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
-
 ## Step 1: Create a Virtual Cloud Network
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
