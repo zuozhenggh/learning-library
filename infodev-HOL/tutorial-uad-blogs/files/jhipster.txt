@@ -1,0 +1,1 @@
+This image shows JHipster and Oracle Cloud Infrastructure artwork.
