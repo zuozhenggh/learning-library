@@ -51,11 +51,12 @@ An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the
 
     *Note: For Oracle Linux VMs, the default username is **opc***
 
+    If your SSH Keys are kept under `HOME/.ssh/` directory, run:
     ```shell
     <copy>ssh opc@</copy>&lt;public_ip_address>
     ```
 
-    If you have a different path for your SSH key enter the following:
+    If you have a different path for your SSH key, enter the following:
 
     ```shell
     <copy>ssh -i &lt;path_to_private_ssh_key> opc@&lt;public_ip_address></copy>
@@ -401,10 +402,11 @@ Choose the environment where you created your SSH Key.
 
 ## Acknowledgements ##
 
-- **Author** - Jayant Sharma - Product Manager, Spatial and Graph.  
-  With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
+* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
+
+* **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
 
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
+* **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

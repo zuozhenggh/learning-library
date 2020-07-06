@@ -467,8 +467,9 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 
 ## Acknowledgements ##
 
-* **Author** -  Jayant Sharma - Product Manager, Spatial and Graph  
-With a little help from colleagues (Albert Godfrind and Ryota Yamanaka). And lots from Jenny Tsai. Thank you.
+* **Author** -  Jayant Sharma, Product Manager, Spatial and Graph  
+
+* **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka). And lots from Jenny Tsai. Thank you.
 
 * **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
