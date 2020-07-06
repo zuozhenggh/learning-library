@@ -8,7 +8,7 @@ The Oracle Application Express architecture requires some form of web server to 
 
 Watch the video below for a comprehensive overview of REST and how ORDS provides what you need to deliver RESTful Services for your Oracle Database.
 
-[](https://youtu.be/rvxTbTuUm5k)
+[](youtube:rvxTbTuUm5k)
 
 ### Lab Prerequisites
 This lab assumes you have completed the following labs:
