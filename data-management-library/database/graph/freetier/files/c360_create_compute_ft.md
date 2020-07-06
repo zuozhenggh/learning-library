@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to get started with setting up and connecting to a Linux compute instance on Oracle Cloud. You will also learn how to copy and deploy Graph Server and Client, as well as ADB Wallet on your compute instance.
+This lab walks you through the steps to get started with setting up and connecting to a Linux compute instance on Oracle Cloud. You will also learn how to copy and deploy Graph Server and ADB Wallet on your compute instance.
 
 ### What Do You Need? 
 * Register cloud account
@@ -202,7 +202,7 @@ The steps are as follows:
     Content in this section is adapted from [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1)
 
 
-## STEP 3: Download and Copy Graph Server and Client, Copy ADB Wallet to the Linux Compute
+## STEP 3: Download and Copy Graph Server, Copy ADB Wallet to the Linux Compute
 
 Choose the environment where you created your SSH Key.
 
@@ -255,9 +255,9 @@ Choose the environment where you created your SSH Key.
 
 
 ### Other
-1.  Download the Graph Server and Client RPM.
+1.  Download the Graph Server RPM.
 
-    Click [here](https://www.oracle.com/database/technologies/spatialandgraph/property-graph-features/graph-server-and-client/graph-server-and-client-downloads.html) to download the Graph Server and the Client. Login and accept the license terms and downlaod the 20.2 Graph Server RPM.
+    Click [here](https://www.oracle.com/database/technologies/spatialandgraph/property-graph-features/graph-server-and-client/graph-server-and-client-downloads.html) to download the Graph Server. Login and accept the license terms and downlaod the 20.2 Graph Server RPM.
 
     ![](../images/download_graph_server.png " ")
 

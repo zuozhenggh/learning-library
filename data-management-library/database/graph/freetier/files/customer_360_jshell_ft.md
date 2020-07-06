@@ -1,4 +1,4 @@
-# Use Case: Customer 360 Analysis #
+# Use Case: Customer 360 Graph Analysis #
 
 ## Overview
   This example shows how integrating multiple datasets and using a graph facilitate additional analytics and can lead to new insights. We will use three small datasets for illustrative purposes. The first contains accounts and account  owners. The second is purchases by the people who own those accounts. The third is transactions between these accounts.
