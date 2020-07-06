@@ -1,6 +1,7 @@
 # Create the tables and insert data
 
 ## Introduction
+  In this lab, you are going to log in as user c360. You will learn how to clear previous tables, create new tables, and populate the tables with your data.
 
 ## Step 0: Log in to SQLDevWeb as user c360
 1. Open the correct URL for SQlDevWeb for the CUSTOMER_360 user. It is almost the same URL as the one for the Admin user execpt that `admin` in that url is replaced with the schema-alias we provided, i.e. with `c360`.
@@ -39,7 +40,7 @@
     ```
 
 ## STEP 1: Drop existing tables if any
-1. To ensure a clean slate drop any existing tables. Copy, paste, and execute the following commands into the SQL Worksheet.
+1. To ensure a clean slate, drop any existing tables. Copy, paste, and execute the following commands into the SQL Worksheet.
 
 ```
 <copy>
@@ -54,11 +55,11 @@ DROP TABLE transfer;
 </copy>
 ```
 
-![Drop existing tables](../images/ADB_SDW_C360_DropTables.png)
+![Drop existing tables](../images/ADB_SDW_C360_DropTables.png " ")
 
 ## STEP 2: Create and populate the Account table
 
-1. Clear the SQL Worksheet and copy, paste, and run the following SQL script.
+1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
 ```
 <copy>
@@ -81,11 +82,11 @@ COMMIT;
 </copy>
 ```
 
-![Create Account table](../images/ADB_SDW_C360_CreateAccountTable.png)
+![Create Account table](../images/ADB_SDW_C360_CreateAccountTable.png " ")
 
 ## STEP 3: Create and populate the Customer table
 
-1. Clear the SQL Worksheet and copy, paste, and run the following SQL script.
+1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
 ```
 <copy>
@@ -108,11 +109,11 @@ COMMIT;
 </copy>
 ```
 
-![Create Customer table](../images/ADB_SDW_C360_CreateCustomerTable.png)
+![Create Customer table](../images/ADB_SDW_C360_CreateCustomerTable.png " ")
 
 ## STEP 4: Create and populate the Merchant table 
 
-1. Clear the SQL Worksheet and copy, paste, and run the following SQL script.
+1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
 ```
 <copy>
@@ -134,11 +135,11 @@ COMMIT;
 
 ```
 
-![Create Merchant table](../images/ADB_SDW_C360_CreateMerchantTable.png)
+![Create Merchant table](../images/ADB_SDW_C360_CreateMerchantTable.png " ")
 
 ## STEP 5: Create and populate the Owned_By table
 
-1. Clear the SQL Worksheet and copy, paste, and run the following SQL script.
+1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
 ```
 <copy>
@@ -156,11 +157,11 @@ COMMIT;
 </copy>
 ```
 
-![Create owned_by table](../images/ADB_SDW_C360_CreateOwnedByTable.png)
+![Create owned_by table](../images/ADB_SDW_C360_CreateOwnedByTable.png " ")
 
 ## STEP 6: Create and populate the Parent_Of table
 
-1. Clear the SQL Worksheet and copy, paste, and run the following SQL script.
+1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
 ```
 <copy>
@@ -174,10 +175,11 @@ COMMIT;
 </copy>
 ```
 
+![Create parent_of table](../images/ADB_SDW_C360_CreateParentOfTable.png " ")
 
 ## STEP 7: Create and populate the Purchased table
 
-1. Clear the SQL Worksheet and copy, paste, and run the following SQL script.
+1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
 ```
 <copy>
@@ -202,13 +204,13 @@ COMMIT;
 </copy>
 ```
 
-![Create purcahsed table](../images/ADB_SDW_C360_CreatePurchasedTable.png)
+![Create purcahsed table](../images/ADB_SDW_C360_CreatePurchasedTable.png " ")
 
 ## STEP 8: Create and populate the Transfer table
 
-1. Clear the SQL Worksheet and copy, paste, and run the following SQL script.
+1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
-The quotes are needed since DATE is a reserved word.
+  The quotes are needed since DATE is a reserved word.
 
 ```
 <copy>
@@ -230,7 +232,9 @@ INSERT INTO transfer (from_id,to_id,amount,"DATE") VALUES (202,201,300,'2018-10-
 COMMIT;
 </copy>
 ```
-![Create transfer table](../images/ADB_SDW_C360_CreateTransferTable.png)
+![Create transfer table](../images/ADB_SDW_C360_CreateTransferTable.png " ")
+
+You may now *proceed to the next lab*
 
 ## Acknowledgements ##
 
