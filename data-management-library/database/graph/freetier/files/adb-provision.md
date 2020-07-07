@@ -6,7 +6,7 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 *Note1: While this lab uses ATP, the steps are identical for creating and connecting to an ADW database.*
 
-*Note2: Always Free Resources are only available in certain regions, so choose the region where Always Free Resources are available.*
+*Note2: If you want to create an Always Free autonomous database, you need to be in a region where Always Free Resources are available. (Not all regions have Always Free Resources)*
 
 ### Objectives
 
@@ -45,7 +45,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
 
     ![](../images/Compartment.png " ")
 
-6. You can see your current default **region** in the top, right hand corner of the page. Go ahead and select a region where Always Free Resources are available.
+6. You can see your current default **region** in the top, right hand corner of the page. You can select a different region. If you want to create an Always Free ADB, go ahead and select a region where Always Free Resources are available.
 
     ![](./../../../../autonomous-database/shared/adb-provision/images/Region.png " ")
 
