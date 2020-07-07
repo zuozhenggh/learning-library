@@ -1,0 +1,141 @@
+image:
+  name: ubuntu:latest
+
+stages:
+  - Create image
+  - Create instance
+
+before_script:
+
+# Create config & key files
+
+  - mkdir ~/.oci
+  - echo '[DEFAULT]' >> ~/.oci/config
+  - echo "user=$OCI_USER_OCID" >> ~/.oci/config
+  - echo "fingerprint=$OCI_FINGERPRINT" >> ~/.oci/config
+  - echo "region=$OCI_REGION" >> ~/.oci/config
+  - echo "tenancy=$OCI_TENANCY_OCID" >> ~/.oci/config
+  - echo 'key_file=/root/.oci/key.pem' >> ~/.oci/config
+  - echo "$OCI_API_KEY" >> ~/.oci/key.pem
+  - echo "$VM_SSH_PUB_KEY" | tr -d '\r' > ~/.oci/id_rsa.pub
+  
+# Create ssh keys
+  
+  - mkdir ~/.ssh
+  - echo "$VM_SSH_PUB_KEY" | tr -d '\r' > ~/.ssh/id_rsa.pub
+  - echo "$VM_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+
+Create Packer image:
+ stage: Create image
+ 
+ script:
+ 
+# Install Packer
+
+  - apt-get update
+  - apt install wget -y
+  - export VER="1.5.6"
+  - wget https://releases.hashicorp.com/packer/${VER}/packer_${VER}_linux_amd64.zip
+  - apt install unzip -y
+  - unzip packer_${VER}_linux_amd64.zip
+  - mv packer /usr/local/bin
+  - packer --version
+  
+# Run packer
+
+  - packer validate -var-file packer-variables.json oci-packer.json
+  - packer build -machine-readable -var-file packer-variables.json oci-packer.json | tee build.log
+  - grep 'artifact,0,id' build.log | cut -d, -f6 > ocid.txt
+  
+# Install OCI CLI
+  
+  - apt-get update
+  - apt install python3-pip -y
+  - pip3 install oci-cli
+  - export LANG=C.UTF-8
+  - oci --version
+  - oci setup repair-file-permissions --file ~/.oci/config
+  - oci setup repair-file-permissions --file ~/.oci/key.pem
+
+# Send image ocid to OCI bucket
+
+  - oci os bucket create --compartment-id "$VM_COMPARTMENT_OCID" --name CI-CD 
+  - oci os object put --bucket-name CI-CD --file ocid.txt
+  
+ artifacts:
+  paths:
+  - ocid.txt
+ only:
+  - merge_requests
+
+Create instance:
+ stage: Create instance
+ 
+ script:
+ 
+# Write provider.auto.tfvars
+
+  - echo "provider_oci = {" >> ~/.oci/provider.auto.tfvars
+  - echo "user_id = \"$OCI_USER_OCID\"" >> ~/.oci/provider.auto.tfvars
+  - echo "fingerprint = \"$OCI_FINGERPRINT\"" >> ~/.oci/provider.auto.tfvars
+  - echo "region = \"$OCI_REGION\"" >> ~/.oci/provider.auto.tfvars
+  - echo "tenancy = \"$OCI_TENANCY_OCID\"" >> ~/.oci/provider.auto.tfvars
+  - echo 'key_file_path = "~/.oci/key.pem"' >> ~/.oci/provider.auto.tfvars
+  - echo "}" >> ~/.oci/provider.auto.tfvars
+ 
+# Install OCI CLI
+  
+  - apt-get update
+  - apt install python3-pip -y
+  - pip3 install oci-cli
+  - export LANG=C.UTF-8
+  - oci --version
+  - oci setup repair-file-permissions --file ~/.oci/config
+  - oci setup repair-file-permissions --file ~/.oci/key.pem
+  
+# Get image ocid from OCI bucket & delete bucket
+
+  - oci os object bulk-download --bucket-name CI-CD --download-dir bucket
+  - oci os object bulk-delete --bucket-name CI-CD --force
+  - oci os bucket delete --bucket-name CI-CD --force
+
+# Launch instance
+
+  - image_ocid=$(cat bucket/ocid.txt)
+  - echo $image_ocid
+
+  - oci compute instance launch --compartment-id "$VM_COMPARTMENT_OCID" --availability-domain "$VM_AVAILABILITY_DOMAIN" --shape "$VM_SHAPE" --assign-public-ip true --ssh-authorized-keys-file /root/.oci/id_rsa.pub --display-name ci-cd-packer-instance --image-id $image_ocid --subnet-id "$VM_SUBNET_OCID" --wait-for-state RUNNING
+  
+# Instance principal
+
+  - instance_id=$(oci compute instance list --compartment-id "$VM_COMPARTMENT_OCID" --lifecycle-state "RUNNING" --query "data [?\"display-name\"=='ci-cd-packer-instance'].{OCID:\"id\"}" | grep OCID | awk -F'[\"|\"]' '{print $4}')
+  - oci iam dynamic-group create --description "CI/CD Packer" --matching-rule "ALL {instance.id = '$instance_id'}" --name "CI-CD-Sorin" --compartment-id "$OCI_TENANCY_OCID" --wait-for-state "ACTIVE"
+  - oci iam policy create --compartment-id "$OCI_TENANCY_OCID" --name "CI-CD-Packer-Sorin" --statements '["allow dynamic-group CI-CD-Sorin to manage instance-family in tenancy"]' --description "CI/CD Packer" 
+ 
+# Copy provider file to instance
+
+  - apt install openssh-client -y
+  - sleep 120
+  - instance_id=$(oci compute instance list --compartment-id "$VM_COMPARTMENT_OCID" --lifecycle-state "RUNNING" --query "data [?\"display-name\"=='ci-cd-packer-instance'].{OCID:\"id\"}" | grep OCID | awk -F'[\"|\"]' '{print $4}')
+  - instance_ip=$(oci compute instance list-vnics --instance-id  $instance_id --query "data [*].{ip:\"public-ip\"}" | grep ip | awk -F'[\"|\"]' '{print $4}')
+  - scp -r -o "StrictHostKeyChecking no" ~/.oci/provider.auto.tfvars opc@$instance_ip:/home/opc
+  - ssh opc@$instance_ip sudo mv provider.auto.tfvars /home/opc/learning-library/solutions-library/infrastructure-automation/thunder
+ 
+ only:
+ - master
+  
+
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

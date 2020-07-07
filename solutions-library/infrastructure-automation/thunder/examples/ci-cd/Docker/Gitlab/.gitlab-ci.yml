@@ -1,0 +1,49 @@
+stages:
+  - build
+docker-build:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - apk add python3 curl bash make openssh gcc libffi-dev musl-dev openssl-dev python3-dev py3-pip
+    - pip install --ignore-installed oci-cli oci
+    - docker login -u "$OKE_REGISTRY_USER" -p "$OKE_REGISTRY_PASSWORD" $OKE_REGISTRY
+    - curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/latest.txt)/bin/linux/amd64/kubectl
+    - chmod +x /usr/bin/kubectl
+    - kubectl version --client
+    - mkdir ~/.oci
+    - echo '[DEFAULT]' >> ~/.oci/config
+    - echo "user=$USER_OCID" >> ~/.oci/config
+    - echo "fingerprint=$FINGERPRINT" >> ~/.oci/config
+    - echo "region=$REGION" >> ~/.oci/config
+    - echo "tenancy=$TENANCY_OCID" >> ~/.oci/config
+    - echo "$API_KEY" >> ~/.oci/oci_api_key.pem 
+    - echo 'key_file=~/.oci/oci_api_key.pem' >> ~/.oci/config
+    - oci setup repair-file-permissions --file ~/.oci/config
+    - oci setup repair-file-permissions --file ~/.oci/oci_api_key.pem
+
+    
+  script:
+    - docker build -t "$OKE_REGISTRY_IMAGE" .
+    - docker tag "$OKE_REGISTRY_IMAGE" "$OKE_REGISTRY_NEW_IMAGE"
+    - docker push "$OKE_REGISTRY_NEW_IMAGE"
+    - mkdir -p $HOME/.kube
+    - export KUBECONFIG=$HOME/.kube/config
+    - oci ce cluster create-kubeconfig --cluster-id $CLUSTER_ID --file $HOME/.kube/config --region $CLUSTER_REGION --token-version 2.0.0
+    - secret=$(kubectl get secret | grep -w regcred | awk '{ print $1 }' || echo fail)
+    - if [ "$secret" == "regcred" ]; 
+      then 
+        kubectl delete secret regcred;
+        kubectl create secret docker-registry regcred --docker-server="$OKE_REGISTRY" --docker-username="$OKE_REGISTRY_USER" --docker-password="$OKE_REGISTRY_PASSWORD";
+      else 
+        kubectl create secret docker-registry regcred --docker-server="$OKE_REGISTRY" --docker-username="$OKE_REGISTRY_USER" --docker-password="$OKE_REGISTRY_PASSWORD"; 
+      fi
+    - pod=$(kubectl get pod | grep -w dockerpod | awk '{ print $1 }' || echo fail)
+    - if [ "$pod" == "dockerpod" ]; 
+      then 
+        kubectl delete pod dockerpod;
+        kubectl create -f kube.yml;
+      else 
+        kubectl create -f kube.yml; 
+      fi

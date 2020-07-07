@@ -1,0 +1,84 @@
+# This is a basic workflow to help you get started with Actions
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  pull_request:
+    branches: [ master ]
+    
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+        
+    # Write Config & Key Files in ~/.oci
+    - name: Write Config & Key Files
+      run: |
+        mkdir ~/.oci
+        echo "[DEFAULT]" >> ~/.oci/config
+        echo "user=${{secrets.USER_OCID}}" >> ~/.oci/config
+        echo "fingerprint=${{secrets.FINGERPRINT}}" >> ~/.oci/config
+        echo "region=${{secrets.REGION}}" >> ~/.oci/config
+        echo "tenancy=${{secrets.TENANCY_OCID}}" >> ~/.oci/config
+        echo "key_file=~/.oci/oci_api_key.pem" >> ~/.oci/config
+        echo "${{secrets.API_KEY}}" >> ~/.oci/oci_api_key.pem   
+        echo "${{secrets.SSH_PUB_KEY}}" | tr -d '\r' > ~/.oci/id_rsa.pub    
+    
+    
+    # Validate the syntax and configuration of the template file
+    - name: Packer validate 
+      run: packer validate -var-file packer-variables.json oci-packer.json
+      
+    # Check what the template file is defining
+    - name: Packer inspect
+      run: packer inspect oci-packer.json
+      
+    # Build the image and save the ocid of the image in image_ocid.txt
+    - name: Packer build
+      run: |
+        PACKER_LOG=1 packer build -machine-readable -var-file packer-variables.json oci-packer.json | tee build.log
+        grep 'artifact,0,id' build.log | cut -d, -f6 | cut -d: -f2 > image_ocid.txt
+        
+    # Upload the ocid of the image created in this job
+    - name: Upload image ocid
+      uses: actions/upload-artifact@v1
+      with:
+        name: image_ocid
+        path: image_ocid.txt   
+        
+        
+    # Install OCI CLI
+    - name: Install OCI CLI
+      run: |
+        curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
+        chmod +x install.sh
+        ./install.sh --accept-all-defaults
+        echo "::add-path::/home/runner/bin"
+        exec -l $SHELL
+        
+        
+    # fix the permissions on those files so we can use the CLI
+    - name: Fix Config File Permissions
+      run: |
+        oci setup repair-file-permissions --file /home/runner/.oci/config
+        oci setup repair-file-permissions --file /home/runner/.oci/oci_api_key.pem    
+        
+        
+    # Create bucket and add an object with the image ocid to it
+    - name: Create bucket
+      run: |
+        oci os bucket create \
+        --name "CI-CD-Laura" \
+        --compartment-id ${{secrets.COMPARTMENT_OCID}}
+        oci os object put \
+        -bn CI-CD-Laura \
+        --name image_ocid.txt \
+        --file image_ocid.txt

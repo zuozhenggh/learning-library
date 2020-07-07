@@ -1,0 +1,14 @@
+---
+- name: Install httpd
+  hosts: devwebservers
+  remote_user: opc
+  become: true
+  roles:
+    - httpserver
+
+- name: Install MariaDB
+  hosts: devdbservers
+  remote_user: opc
+  become: true
+  roles: 
+    - dbserver

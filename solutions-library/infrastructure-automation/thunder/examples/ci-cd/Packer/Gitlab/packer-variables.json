@@ -1,0 +1,14 @@
+{
+    "oci_availability_domain": "TenancyIdentifier:US-ASHBURN-AD-1",
+    "oci_compartment_ocid": "ocid1.compartment....",
+    "oci_subnet_ocid": "ocid1.subnet.....",
+    "image_id": "ocid1.image.....",
+    "region": "us-ashburn-1",
+    "image_name": "mypacker2",
+    "source_script": "./install-tools.sh",
+    "fingerprint": "30:1b:....",
+    "user": "ocid1.user....",
+    "tenancy": "ocid1.tenancy....",
+    "key_file": "~/.oci/key.pem",
+    "shape": "VM.Standard2.2"
+}

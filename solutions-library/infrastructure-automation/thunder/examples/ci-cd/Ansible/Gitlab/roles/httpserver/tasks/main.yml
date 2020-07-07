@@ -1,0 +1,33 @@
+---
+  - name: install version of http
+    yum:
+      name: httpd
+      state: latest
+
+  - name: prepare index.html
+    template:
+      src: ../templates/index.html.j2
+      dest: /var/www/html/index.html
+
+  - name: open port 80
+    firewalld:
+      port: 80/tcp
+      permanent: yes
+      zone: public
+      state: enabled
+      immediate: yes
+
+  - name: start http
+    service:
+      name: httpd
+      state: started
+
+  - name: check http
+    command: curl localhost:80
+    args:
+      warn: false
+    register: curl_result
+
+  - name: show http result
+    debug:
+      var: curl_result.stdout_lines
