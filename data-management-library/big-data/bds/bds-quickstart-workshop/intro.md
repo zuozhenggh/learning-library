@@ -10,7 +10,7 @@ Oracle Big Data Service is a platform cloud service specifically designed for a 
 * Expand on premise Hadoop; deploy test and development to the cloud.
 * Any scale using high performance bare metal or cost effective virtual machine (VM) shapes.
 * End-to-end data management; use with Autonomous Database, Analytics Cloud, OCI Streaming, OCI Data Catalog, OCI Data Science, and OCI Data Flow.
-* Use Oracle SQL to query across Hadoop, Object Stores, Kafka, and NoSQL with Cloud SQL. 
+* Use Oracle SQL to query across Hadoop, Object Stores, Kafka, and NoSQL with Cloud SQL.
 
 Watch our short video that explains key features in Oracle Big Data Service:
 
@@ -52,7 +52,7 @@ Use these links to get more information about BDS and OCI:
 
 * **Authors:**
     * Martin Gubar, Director, Oracle Big Data Product Management
-    * Lauran Serhal, Principal Developer, Oracle Database and Big Data User Assistance
+    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Last Updated By/Date:** Lauran Serhal, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.

@@ -60,7 +60,7 @@ In this step, you will set three variables using the **`export`** command. The v
       ```
     $ export DISPLAY_NAME="traininun0-public-ip"
       ```
-3. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it in the command line. Replace the **_``subnet-ocid``_** with your own `subnet-ocid` that you identified in **STEP 1** of this lab. This is the OCID of the customer public subnet used by the cluster.  
+3. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it in the command line.   
 
       ```
     <b>$</b> <copy>export SUBNET_OCID=<i>"subnet-ocid</i>"</copy>
@@ -114,7 +114,7 @@ In this step, you will learn how to edit a public IP address using both the **Cl
 
     ![](./images/edit-ip-name.png " ")
 
-4. In the **Edit** dialog box, change the **RESERVED PUBLIC IP NAME** to **`traininqs0-public-ip`**, and then click **Save Changes**.
+4. In the **Edit** dialog box, in the **RESERVED PUBLIC IP NAME** field, enter **`traininqs0-public-ip`**, and then click **Save Changes**.
 
     ![](./images/edit-dialog.png " ")  
 
@@ -138,7 +138,7 @@ In this step, you will learn how to edit a public IP address using both the **Cl
     ```
     $ oci network public-ip delete --public-ip-id "ocid1.publicip.oc1.iad.amaaaaaayrywvyyaqzeylbrtkwidyvrsyivmh55jdwb3fjpm2zyoq5iyajca"
     ```
-    **Note:** Don't delete any of your public IP addresses as you will need them in this workshop. 
+    **Note:** Don't delete any of your public IP addresses as you will need them in this workshop.
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 
@@ -153,7 +153,7 @@ In this step, you will learn how to edit a public IP address using both the **Cl
 ## Acknowledgements
 
 * **Author:**
-    + Lauran Serhal, Principal Developer, Oracle Database and Big Data User Assistance
+    + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributors:**
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation  
