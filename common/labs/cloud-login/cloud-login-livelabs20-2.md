@@ -1,20 +1,6 @@
 # Login to Oracle Cloud - LiveLabs 2.0 #
 
-## Introduction
-
-Oracle Cloud is the industry's broadest and most integrated cloud provider, with deployment options ranging from the public cloud to your data center. Oracle Cloud offers best-in-class services across Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS).
-
-Oracle LiveLabs is a group of tenancies sponsored by Product Management used for the completion of workshops on Oracle Technologies.
-
-### Objectives
-
-- Learn how to login to the LiveLabs Oracle Cloud environment
-
-### Required Artifacts
-
-The following workshop requires an Oracle Cloud account from the LiveLabs Platform and a valid reservation.
-
-## Login to Oracle Cloud - Username: LLxxx-USER
+## Get Started - Login to your Oracle Cloud Environment
 
 1. After creating a reservation for a LiveLab Workshop, you will receive an e-mail indicating that your reservation is being processed, followed by an e-mail indicating that your environment has been created.
 
@@ -46,7 +32,7 @@ The following workshop requires an Oracle Cloud account from the LiveLabs Platfo
 
     ![](./images/homepage.png " ")
 
-8.  Compare the region you are logged into to the region specified on the Attend Workshop screen. If you need to change to regions, click on the **upper right-hand corner** and **set your region** to the region you were assigned. *Note: We have pre-created certain objects in this assigned region to assist with workshop completion. Failure to set the correct region will result in lab failure.*
+8.  Compare the region you are logged into with the region specified on the **Attend Workshop** page. If you need to change to regions, click on the **upper right-hand corner** and **set your region** to the region you were assigned. *Note: We have pre-created certain objects in this assigned region to assist with workshop completion. Failure to set the correct region will result in lab failure.*
 
     ![](./images/changeregion.png " ")
 
