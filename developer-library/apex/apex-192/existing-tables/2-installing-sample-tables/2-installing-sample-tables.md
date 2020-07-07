@@ -38,7 +38,8 @@ This completes Lab 2. You now know how to install a sample dataset. [Click here 
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff | Arabella Yao, Product Manager Intern, Database Mangement, June 2020
+ - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Contributors** - Arabella Yao, Product Manager Intern, Database Mangement
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

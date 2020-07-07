@@ -206,7 +206,8 @@ This completes Lab 3. You now know how to create an application, with numerous d
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff | Tom McGinn, Database Cloud Services, Product Management, June 2020
+ - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
  - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Mangement, June 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

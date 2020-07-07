@@ -8,6 +8,7 @@ In the runtime environment, if you navigate to Milestones, and then from the rep
 
 ## **STEP 1** - Delete Generated App
 Given you are going to regenerate the app from the Create Application Wizard, it is best to delete the app you just generated to avoid confusion.
+(See how to access runtime environment from previous lab)
 
 1. In the runtime environment, within the develop toolbar, click **Application xxxxx**.  
 
@@ -82,13 +83,13 @@ The **SAMPLE$PROJECT_STATUS** table is used to maintain project statuses. This t
 ## **STEP 5** - Completing the App
 The Create Application Wizard also has the ability to add various features to your app, such as Access Control, Activity Reporting, Feedback, and more, to make it more functionally complete, and "production-ready".
 
-1. In the Create Application wizard, for Features, click **Check All**
+1. In the Create Application wizard, for Features, click **Check All** - scroll down
 2. Click **Create Application**
 
     ![](images/check-features.png " ")
     *{Note: Your new application will generally have a new Application Id}*
 
-    Your new application will be displayed in the Application Builder.
+    Your new application will be displayed in the *App Builder*.
 
 3. Click **Run Application**.
 4. Enter your user credentials.
@@ -109,7 +110,8 @@ This completes Lab 4. You now know how to regenerate an application, and add add
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
- - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
+ - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
+ - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Mangement, July 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
