@@ -10,7 +10,7 @@ Play the video below to learn about this lab.
 
 [](youtube:uK7vCqfXxNs)
 
- <a href="https://www.slideshare.net/DanielMcGhan/module-3-working-with-the-dom-and-jquery" target="_blank">Click here</a> to view the slides.
+ <a href="https://www.slideshare.net/DanielMcGhan/module-3-working-with-the-dom-and-jquery" target="\_blank">Click here</a> to view the slides.
 
 ## **Step 1:** Basic selection, traversal, and manipulation in the DOM
 
@@ -149,4 +149,4 @@ This completes Lab 3. At this point, you should have a good idea of how to use j
  - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
  - **Last Updated By/Date** - Jeffrey Malcolm, LiveLabs QA, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
