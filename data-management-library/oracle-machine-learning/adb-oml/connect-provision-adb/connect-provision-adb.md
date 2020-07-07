@@ -137,7 +137,7 @@ You now have created your first ATP instance.
 
 1.  Click the link below to download the install file.
 
-    [install.zip](./files/install.zip)
+    [install.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/adbml/o/install.zip)
 
 2.  Save the install.zip to a download directory and then unzip the file.
 
@@ -390,5 +390,6 @@ Please proceed to the next lab.
 
 - **Author** - Derrick Cameron, Leah Bracken (v2)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
+- **Contributors** -  Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

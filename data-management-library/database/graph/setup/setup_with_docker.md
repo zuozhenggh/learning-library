@@ -1,7 +1,13 @@
 # Setup Graph environment
 
-## Disclaimer
-The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle’s products remains at the sole discretion of Oracle.
+## Introduction
+Property graphs have become a useful way to model, manage, query and analyze much of the connected data found in today’s applications and information systems.  They allow you to represent data based on relationships and connectivity, query data by traversing those connections, and analyze data using algorithms that evaluate the strength of the connections, patterns and anomalies in the graph, the importance of elements in the graph, and other factors.
+
+Oracle Database property graph support consists of graph storage, indexing, and search; a powerful in-memory analyst with 50 built-in, parallel analytic functions; a graph query language and developer APIs. Graph algorithms enable you to explore and discover relationships in social networks, IoT, big data, data warehouses and complex transaction data for applications such as fraud detection in banking, customer 360, and smart manufacturing.
+
+Watch the video below for an overview of Oracle Graph.
+[](youtube:-DYVgYJPbQA)
+
 
 ## Overview
 
@@ -31,6 +37,15 @@ Run the following script to extract the packages:
 ```
 $ <copy>cd oracle-pg/docker/tmp/</copy>
 $ <copy>sh extract.sh</copy>
+```
+
+### Modify the PGX interpreter settings for Zeppelin
+
+The extract script above copies the necessary jar files and a json configuration file into the `oracle-pg/docker/zeppelin/interpreter/pgx` directory. Open the file `interpreter-settings.json` in a text editor and change the default PGX_BASE_URL property in it. i.e. change the line (line 15)
+` "defaultValue":"https://localhost:7007" `
+to 
+```
+<copy>"defaultValue":"http://graph-server:7007"</copy>
 ```
 
 ### Start Containers
@@ -233,7 +248,7 @@ CREATE PROPERTY GRAPH customer_360
       )
   )
 ```
-Note: The file is part of the repository under the `graphs/customer_360/` directory. So if your `REPO_HOME` is  `/gitrepos/oracle-pg` then the file's path is `/gitrepos/oracle-pg/graphs/customer_360/create_pg.pgql`. You will need the correct file path below.
+Note: The file is part of the repository under the `graphs/customer_360/` directory. The parent directory is mapped to `/graphs` in the container.
 
 Using Graph Client, connect to Oracle Database and run the DDL above.
 
@@ -270,7 +285,7 @@ var jdbcUrl = "jdbc:oracle:thin:@oracle-db:1521/orclpdb1";
 var conn = DriverManager.getConnection(jdbcUrl, "customer_360", "Welcome1");
 conn.setAutoCommit(false);
 var pgql = PgqlConnection.getConnection(conn);
-pgql.prepareStatement(Files.readString(Paths.get("{$REPO_HOME}/graphs/customer_360/create_pg.pgql"))).execute(); 
+pgql.prepareStatement(Files.readString(Paths.get("/graphs/customer_360/create_pg.pgql"))).execute(); 
 </copy>
 ```
 
@@ -383,7 +398,7 @@ Start a JShell. Then check which graph is loaded. Then query it.
 Enter the following code in JShell.
 ```
 <copy>
-Consumer<String> query = q -> {
+Consumer&lt;String&gt; query = q -> {
     try(var s = pgql.prepareStatement(q)) {
       s.execute();
       s.getResultSet().print();
@@ -431,4 +446,4 @@ $ <copy>docker-compose -f docker-compose-rdbms.yml down</copy>
 ## Acknowledgements ##
 
 - **Author** - Ryota Yamanaka - Product Manager in Asia-Pacific for geospatial and graph technologies  
-  With a little help from colleagues (Albert Godfrind and Jayant Sharma).
+  With a little help from colleagues (Albert Godfrind and Jayant Sharma).  
