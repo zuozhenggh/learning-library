@@ -1,41 +1,63 @@
 
 # Oracle Graph 
 
-<br>
+## Introduction 
 
-**Defining and creating the graph representation**
+This section describes how the tables are modeled as a graph and how the graph representation is generated from them.
+In this instance the Vertex (or Node) entities are CUSTOMERS, ORDERS, STORES, and PRODUCTS.
+While the Edge(s) are CUSTOMER\_ORDERED (from CUSTOMERS to ORDERS), ORDERED\_BY (the reverse edge from ORDERS to CUSTOMERS), ORDERED\_FROM\_STORE (ORDERS to STORES), STORE\_GOT\_ORDER (STORES to ORDERS), ORDER\_HAS\_PRODUCT (ORDERS to PRODUCTS), and PRODUCT\_IN\_ORDER (PRODUCTS to ORDERS)
+A first cut at a graph model simply examines the primary key/foreign key relationships and uses the foreign keys to define the edges.
 
-This section describes how the above tables were modeled as a graph and how the graph representation is generated from them. 
+## Before You Begin
 
-**Note:** This is just a quick and simplified model for illustrative purposes. It includes ORDERS as a vertex entity for convenience. It is possible to model and generate a more compact graph for the same set of tables and relationships between the tables. That model, and process, will be included in an advanced version of this lab.
+**What Do You Need?**
 
-A first cut at a graph model simply examines the primary key/foreign key relationships and uses the foreign keys to define the edges. 
+This lab assumes you have completed the following labs:
+- Lab 1:  Login to Oracle Cloud
+- Lab 2:  Generate SSH Key
+- Lab 3:  Create Compute instance 
+- Lab 4:  Environment setup
 
-In this instance the Vertex (or Node) entities are CUSTOMERS, ORDERS, STORES, and PRODUCTS. 
-While the Edge(s) are CUSTOMER ORDERED (from CUSTOMERS to ORDERS), ORDERED BY (the reverse edge from ORDERS to CUSTOMERS), ORDERED FROM STORE (ORDERS to STORES), STORE GOT ORDER (STORES to ORDERS), ORDER HAS PRODUCT (ORDERS to PRODUCTS), and PRODUCT IN ORDER (PRODUCTS to ORDERS)
-
-At the jshell prompt , Make a JDBC connection to the database:
+## Step 1: Make a JDBC connection to the database:
+At the jshell prompt.
 
 ````
 <copy>
-var jdbcUrl ="jdbc:oracle:thin:@<instance_ip_address>:<DB_Port>/<PDB_Name>";
+var jdbcUrl = "jdbc:oracle:thin:@<\instance_ip_address>:<\DB_Port>/SGRPDB";
 
-var user = "graphuser";
+</copy>
+````
 
-var pass = "graphuser";
+````
+<copy>
+var user = "appgrph";
+</copy>
+````
 
+````
+<copy>
+var pass = "Oracle_4U";
+</copy>
+````
+
+````
+<copy>
 var conn = DriverManager.getConnection(jdbcUrl, user, pass) ;
 </copy>
 ````
 
-Set auto commit to false. This is needed for PGQL DDL and other queries.
+Set auto commit to false.
+
+This is needed for PGQL DDL and other queries.
 
 ````
 <copy>
 conn.setAutoCommit(false);
 </copy>
 ````
-Get a PgqlConnection that will run PGQL queries directly against the VT$ (vertex) and GE$ (edge) tables 
+
+Get a PgqlConnection.This will run PGQL queries directly against the VT$ (vertex) and GE$ (edge) tables 
+
 ````
 <copy>
 var pgql = PgqlConnection.getConnection(conn);
@@ -43,7 +65,11 @@ var pgql = PgqlConnection.getConnection(conn);
 ````
 ![](./images/IMGG5.PNG) 
 
-Create the required views first for the use of orders and order_items as multiple edge tables. Execute these in sqlplus :
+## Step 2: Create Graph
+
+**Note: Below steps are already completed.**
+
+We have created the views for the use of orders and order_items as multiple edge tables using below commands. 
 
 ````
 <copy>
@@ -58,7 +84,8 @@ Create or replace view po_edge as select * from order_items;
 
 ![](./images/IMGG6.PNG) 
 
-We will use a property graph query language [PGQL](http://pgql-lang.org) DDL to define and populate the graph.  The statement is as follows:
+
+We used a property graph query language [PGQL](http://pgql-lang.org) DDL to define and populate the graph.  The statement is as follows:
 
 ````
 <copy>
@@ -108,19 +135,15 @@ LATITUDE, LONGITUDE)
   )
 </copy>
 ````
-
-Save the above PQGL query as sql file (CreatePropertyGraph.sql) and then run the below command at jshell.
-
-Run only once to create the graph-
+The above PQGL query is saved as sql file (CreatePropertyGraph.sql) and stored in path /u01/graph and is run at jshell prompt.
 
 ````
 <copy>
-pgql.prepareStatement(Files.readString(Paths.get("/u01/CreatePropertyGraph.sql"))).execute();
+pgql.prepareStatement(Files.readString(Paths.get("/u01/graph/CreatePropertyGraph.sql"))).execute();
 </copy>
 ````
 
 The Graph Server kit includes the necessary components (a server application and JShell client) that will execute the above CREATE PROPERTY GRAPH statement and create the graph representation. 
-
 
 The graph itself is stored in a set of tables named 
 
@@ -152,32 +175,24 @@ select count(distinct eid) from oe_sample_graphge$;
 ````
 
 (eid is the edge id)
+## Step-3:  Required step to print the result of a PGQL statement
 
 Create a convenience function which prepares, executes, and prints the result of a PGQL statement
 
 ````
 <copy>
-Consumer<String> query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
+Consumer<\String> query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
 </copy>
 ````
 
-**A very brief note on PGQL**
+## Acknowledgements
 
-The [pgql-lang.org](pgql-lang.org) site and specification [pgql-land.org/spec/1.2](pgql-land.org/spec/1.2) are the best reference for details and examples. For the purposes of this lab, however, here are minimal basics. 
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists.
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021   
 
-The general structure of a PGQL query is
-
-SELECT (select list) FROM (graph name) MATCH (graph pattern) WHERE (condition)
-
-
-PGQL provides a specific construct known as the MATCH clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints. 
-() indicates a vertex variable
-
-  -an undirected edge, as in (source)-(dest)
-
--> an outgoing edge from source to destination
-
-<- an incoming edge from destination to source
-
-[]  indicates an edge variable
-
+**Issues-**
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+  

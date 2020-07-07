@@ -2,13 +2,13 @@
 
 ## Introduction to Oracle JSON 
 
-JSON(JavaScript Object Notation)is a syntax for storing and exchanging data. When exchanging data between a browser and a server, the data can only be text.
+JSON(JavaScript Object Notation) is a syntax for storing and exchanging data. When exchanging data between a browser and a server, the data can only be text.
 
-JSON is text, and we can convert any JavaScript object into JSON, and send JSON to the server.We can also convert any JSON received from the server into JavaScript objects.
+JSON is text, and we can convert any JavaScript object into JSON, and send JSON to the server. We can also convert any JSON received from the server into JavaScript objects.
 
 This way we can work with the data as JavaScript objects, with no complicated parsing and translations.
 
-**JSON with Oracle Database:**
+**JSON with Oracle Databse**
 
 JSON data  can be used in Oracle Database in similar ways. Unlike relational data, it can be stored, indexed, and queried without any need for a schema that defines the data. Oracle Database supports JSON natively with relational database features, including transactions, indexing, declarative querying, and views.
 
@@ -26,40 +26,24 @@ The first thing to realize about JSON is that it remains a simple text format—
 
  ![](./images/json_intro.PNG " ")
 
+## Oracle JSON Video
 
- **Watch the video below for an overview of Oracle JSON**
+  [](youtube:oiOCp23T1ZU)
 
+## Want to learn more
+- [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
   
-  [![JSON Datatype for Oracle Converged Database](./images/json_intro_video.PNG " ")](https://otube.oracle.com/media/0_k5j15wn4)
-
-  
-
-
-
-- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)
-- [I have an account from SSWorkshop](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
-
-
-## Get an Oracle Cloud Trial Account for Free!
-If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
--	$300 of freee credits good for up to 3500 hours of Oracle Cloud usage
--	Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
--	Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
-
-Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
-
- 
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Arvind Bhope,Venkata Bandaru,Ashish Kumar,Priya Dhuriya , Maniselvan K.
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel.
+- **Team** - North America Database Specialists.
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021   
 
-- **Last Updated By/Date** - Laxmi A, kanika Sharma May 2020
-
-- **Workshop Expiration Date**
-
-
-### Issues?
+**Issues-**
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+      
 
 

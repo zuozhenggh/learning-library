@@ -1,154 +1,122 @@
 # Oracle Spatial  
 
- 
+## Introduction
 
-## Steps ##
+This lab walks you through the steps of creating spatial table with column type SDO\_GEOMETRY. We will see how to insert data into the tables and also add spatial metadata to tables.
 
-**Load Data And Metadata:**
+**Below lab is completed and spatial data is already loaded into the tables.**
 
 
-1. Login to the PDB:
-   
+## Before You Begin
+
+This lab assumes you have completed the following labs:
+- Lab 1:  Login to Oracle Cloud
+- Lab 2:  Generate SSH Key
+- Lab 3:  Create Compute instance 
+- Lab 4:  Environment setup
+  
+## Step 1: Create spatial tables
+
+We have created tables and spatial metadata for CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP 
+Notice that each has a column of type SDO\_GEOMETRY to store location. 
+
+
    ````
     <copy>
-    ps -ef|grep|pmon
-    . oraenv
-    sqlplus ' / as sysdba'
-    alter session set container=SPAGRAPDB;
+    CREATE TABLE CUSTOMERS                                             
+(
+  CUSTOMER_ID NUMBER(6, 0),
+  CUST_FIRST_NAME VARCHAR2(20 CHAR),
+  CUST_LAST_NAME VARCHAR2(20 CHAR), 
+  GENDER VARCHAR2(1 CHAR), 
+  CUST_GEO_LOCATION SDO_GEOMETRY, 
+  ACCOUNT_MGR_ID NUMBER(6, 0)
+);  
+
+
+CREATE TABLE WAREHOUSES                                           
+(
+WAREHOUSE_ID NUMBER(3,0), 
+WAREHOUSE_NAME VARCHAR2(35 CHAR), 
+LOCATION_ID NUMBER(4,0), 
+WH_GEO_LOCATION SDO_GEOMETRY); 
+
+
+
+CREATE TABLE "WAREHOUSES_DTP" 
+(       "WAREHOUSE_ID" NUMBER, 
+	"WAREHOUSE_NAME" VARCHAR2(30), 
+	"LOCATION_ID" NUMBER, 
+	"DRIVE_TIME_MIN" NUMBER, 
+	"GEOMETRY" "SDO_GEOMETRY"
+);
+
     </copy>
-    ````
+````
+## Step 2 : Add spatial metadata
 
-   
-2. Create a  user **app_test**
+Next we added Spatial metadata for the CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP 
+tables to the USER\_SDO\_GEOM\_METADATA view. Each SDO\_GEOMETRY column is registered with a row in USER\_SDO\_GEOM\_METADATA.
 
-    ````
+
+````
     <copy>
-    create user app_test identified by app container=current;
-    </copy>
-    ````
-    
-3. Grant dba privilage to **app_test** user.
+ EXECUTE SDO_UTIL.INSERT_SDO_GEOM_METADATA (sys_context('userenv','current_user'), -
+ 'CUSTOMERS', 'CUST_GEO_LOCATION', -  SDO_DIM_ARRAY(SDO_DIM_ELEMENT('X',-180, 180, 0.05), - SDO_DIM_ELEMENT('Y', -90, 90, 0.05)),-  4326);
 
-    ````
-    <copy>
-    grant dba to app_test;
-    </copy>
-    ````
-   
-4. Connect Container **SPAGRAPDB** as user **app_test**
+EXECUTE SDO_UTIL.INSERT_SDO_GEOM_METADATA (sys_context('userenv','current_user'), -
+'WAREHOUSES', 'WH_GEO_LOCATION', - SDO_DIM_ARRAY(SDO_DIM_ELEMENT('X',-180, 180, 0.05), - SDO_DIM_ELEMENT('Y', -90, 90, 0.05)),-  4326);
 
-    ````
-    <copy>
-    sqlplus app_test/app@SPAGRAPDB
-    </copy>
-    ````
-   
-5. Create  table **CUSTOMERS**  and **WAREHOUSES** 
-
-    ````
-    <copy>
-    CREATE TABLE CUSTOMERS
-    ( 
-    CUSTOMER_ID NUMBER(6, 0),
-    CUST_FIRST_NAME VARCHAR2(20 CHAR),
-    CUST_LAST_NAME VARCHAR2(20 CHAR), 
-    GENDER VARCHAR2(1 CHAR), 
-    CUST_GEO_LOCATION SDO_GEOMETRY,
-    ACCOUNT_MGR_ID NUMBER(6, 0)
-    );
-    
-    CREATE TABLE WAREHOUSES
-    (
-    WAREHOUSE_ID    NUMBER(3,0), 
-    WAREHOUSE_NAME        VARCHAR2(35 CHAR), 
-    LOCATION_ID   NUMBER(4,0), 
-    WH_GEO_LOCATION       SDO_GEOMETRY
-    );
-    </copy>
-    ````
-    
-6. Create  table **CUSTOMERS**  and **WAREHOUSES** 
-
-    ````
-    <copy>
-    CREATE TABLE CUSTOMERS
-    ( 
-    CUSTOMER_ID NUMBER(6, 0),
-    CUST_FIRST_NAME VARCHAR2(20 CHAR),
-    CUST_LAST_NAME VARCHAR2(20 CHAR), 
-    GENDER VARCHAR2(1 CHAR), 
-    CUST_GEO_LOCATION SDO_GEOMETRY,
-    ACCOUNT_MGR_ID NUMBER(6, 0)
-    );
-  
-    CREATE TABLE WAREHOUSES
-    (
-    WAREHOUSE_ID    NUMBER(3,0), 
-    WAREHOUSE_NAME        VARCHAR2(35 CHAR), 
-    LOCATION_ID   NUMBER(4,0), 
-    WH_GEO_LOCATION       SDO_GEOMETRY
-    );
+Insert into user_sdo_geom_metadata values (
+'WAREHOUSES_DTP','GEOMETRY',MDSYS.SDO_DIM_ARRAY(MDSYS.SDO_DIM_ELEMENT('X', -180, 180, 0.05), MDSYS.SDO_DIM_ELEMENT('Y', -90, 90, 0.05)),4326);
       </copy>
-
-    ````
+    
+````
 
      
 **Here is a description of the items that were entered:**
 
-     -	TABLE-NAME: Name of the table which contains the spatial data.
-     -	COLUMN-NAME: Name of the SDO-GEOMETRY column which stores the spatial data.
-     -	 MDSYS.SDO-DIM-ARRAY: Constructor which holds the MDSYS.SDO-DIM-ELEMENT object,which in turn stores the extents of the spatial data  in each dimension (-180.0, 180.0), and a tolerance value (0.05). The tolerance is a round-off error value used by Oracle Spatial, and is in meters for longitude and latitude data. In this example, the tolerance is 5 mm.
-     -	4326: Spatial reference system id (SRID): a foreign key to an Oracle dictionary table  (MDSYS.CS-SRS) tha  contains all the     supported coordinate systems. It is important to associate your customer's location to a coordinate system. In this example, 4326    corresponds to "Longitude / Latitude (WGS 84).".
+-	TABLE-NAME: Name of the table which contains the spatial data.
+-	COLUMN-NAME: Name of the SDO-GEOMETRY column which stores the spatial data.
+-	 MDSYS.SDO-DIM-ARRAY: Constructor which holds the MDSYS.SDO-DIM-ELEMENT object,which in turn stores the extents of the spatial data  in each dimension (-180.0, 180.0), and a tolerance value (0.05). The tolerance is a round-off error value used by Oracle Spatial, and is in meters for longitude and latitude data. In this example, the tolerance is 5 mm.
+-	4326: Spatial reference system id (SRID): a foreign key to an Oracle dictionary table  (MDSYS.CS-SRS) tha  contains all the     supported coordinate systems. It is important to associate your customer's location to a coordinate system. In this example, 4326    corresponds to "Longitude / Latitude (WGS 84).".
+
+
+We have inserted spatial data and we have used two spatial functions for this.
  
- 
-
-**Load data**
-
-First we load CUSTOMERS by copying from the table oeuser.CUSTOMERS
-
-   **Note that we are using two spatial functions in this -**
-   -  we use sdo_cs.transform() to convert to our desired coordinate system SRID of 4326.
-   -  we use sdo-geom.validate-geometry() to insert only valid geometries. 
-    
+- we use sdo\_cs.transform() to convert to our desired coordinate system SRID of 4326, and 
+- we use sdo\_geom.validate\_geometry() to insert only valid geometries.
 
 
+## Step 3: Sample insert query 
 
-7. Insert Data into **CUSTOMERS** Table
+Below is the sample insert query-
 
-    ````
+````
     <copy>
-    INSERT INTO CUSTOMERS
-    SELECT CUSTOMER_ID, CUST_FIRST_NAME, CUST_LAST_NAME , sdo_cs.transform(CUST_GEO_LOCATION,4326), ACCOUNT_MGR_ID
-    FROM oeuser.customers WHERE sdo_geom.validate_geometry(CUST_GEO_LOCATION,0.05)='TRUE';
-    
-    commit;
+Insert into WAREHOUSES (WAREHOUSE_ID,WAREHOUSE_NAME,LOCATION_ID,WH_GEO_LOCATION) values (1,'Speedway Facility',1400,MDSYS.SDO_GEOMETRY(2001, 4326, MDSYS.SDO_POINT_TYPE(-86.2508, 39.7927, NULL), NULL, NULL));
     </copy>
-    ````
     
+```` 
 
-8. Manually load **warehouses** using the **SDO-GEOMETRY** constructor.
-
-    ````
-    <copy>
-    INSERT INTO WAREHOUSES values (1,'Southlake, TX',1400,SDO_GEOMETRY(2001, 4326, MDSYS.SDO_POINT_TYPE(-103.00195, 36.500374, NULL), NULL, NULL));
-
-    INSERT INTO WAREHOUSES values (2,'San Francisco, CA',1500,SDO_GEOMETRY(2001, 4326, MDSYS.SDO_POINT_TYPE(-124.21014, 41.998016, NULL), NULL, NULL));
-
-    INSERT INTO WAREHOUSES values (3,'Sussex, NJ',1600,SDO_GEOMETRY(2001, 4326, MDSYS.SDO_POINT_TYPE(-74.695305, 41.35733, NULL), NULL, NULL));
-
-    INSERT INTO WAREHOUSES values (4,'Seattle, WA',1700, SDO_GEOMETRY(2001, 4326, MDSYS.SDO_POINT_TYPE(-123.61526, 46.257458, NULL), NULL, NULL));
-
-    COMMIT;
-    </copy>
-    ````
-   
+The elements of the constructor are: 
+-	2001: SDO\_GTYPE attribute and it is set to 2001 when storing a two-dimensional single point such as a customer's location.
+-	4326: This is the spatial reference system ID (SRID): a foreign key to an Oracle dictionary table (MDSYS.CS\_SRS) that contains all the supported coordinate systems. It is important to associate your customer's location to a coordinate system. In this example, 4326 corresponds to "Longitude / Latitude (WGS 84)."
+-	MDSYS.SDO-POINT-TYPE: This is where you store your longitude and latitude values within the SDO\_GEOMETRY constructor. Note that you can store a third value also, but for these tutorials, all the customer data is two-dimensional.
+-	NULL, NULL: The last two null values are for storing linestrings, polygons, and geometry collections. For more information on all the fields of the SDO\_GEOMETRY object, please refer to the Oracle Spatial Developer's Guide. For this tutorial with point data, these last two fields should be set to NULL.
 
 
-**The elements of the constructor are:**
 
-   -	2001: SDO-GTYPE attribute and it is set to 2001 when storing a two-dimensional single point such as a customer's location.
-   -	4326: This is the spatial reference system ID (SRID): a foreign key to an Oracle dictionary table  (MDSYS.CS-SRS) that contains all the supported coordinate systems. It is important to associate your customer's location to a coordinate system. In this example, 4326 corresponds to "Longitude / Latitude (WGS 84)."
-   -	MDSYS.SDO-POINT-TYPE: This is where you store your longitude and latitude values within the SDO_GEOMETRY constructor. 
-     Note that you can store a third value also, but for these tutorials, all the customer data is two-dimensional.
-   -	NULL, NULL: The last two null values are for storing linestrings, polygons, and geometry collections. 
-     For more information on all the fields of the SDO_GEOMETRY object, please refer to the Oracle Spatial Developer's Guide. For this tutorial with point data,  these last two fields should be set to NULL.
+
+
+## Acknowledgements
+
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists.
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021   
+
+**Issues-**
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+      

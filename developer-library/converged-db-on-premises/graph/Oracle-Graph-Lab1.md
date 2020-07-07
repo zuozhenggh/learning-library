@@ -1,13 +1,41 @@
 
 # Oracle Graph 
 
-<br>
+## Introduction
 
-**Querying graph via PGQL**
+The [pgql-lang.org](pgql-lang.org) site and specification [pgql-land.org/spec/1.2](pgql-land.org/spec/1.2) are the best reference for details and examples. For the purposes of this lab, however, here are minimal basics. 
+
+The general structure of a PGQL query is
+
+SELECT (select list) FROM (graph name) MATCH (graph pattern) WHERE (condition)
+
+
+PGQL provides a specific construct known as the MATCH clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints. 
+() indicates a vertex variable
+
+  -an undirected edge, as in (source)-(dest)
+
+-> an outgoing edge from source to destination
+
+<- an incoming edge from destination to source
+
+[]  indicates an edge variable
+
+
+## Before You Begin
+
+This lab assumes you have completed the following labs:
+- Lab 1:  Login to Oracle Cloud
+- Lab 2:  Generate SSH Key
+- Lab 3:  Create Compute instance 
+- Lab 4:  Environment setup
+
+
+## Step 1: Querying graph using PGQL
 
 Below are some of the examples where we can query against the graph we created using PGQL:
 
-Find the edge labels. We used labels here to tag an edge with a relationship type
+1. Find the edge labels. We used labels here to tag an edge with a relationship type
 
 ````
 <copy>
@@ -17,6 +45,7 @@ query.accept("select distinct label(e) from oe_sample_graph match ()-[e]->(m)");
 
 ![](./images/g3.png " ") 
 
+2. Finding vertex label using PGQL
 Find the vertex labels. We used labels here to tag a vertex as an entity type.
 ````
 <copy>
@@ -25,8 +54,10 @@ query.accept("select distinct label(v) from oe_sample_graph match (v)") ;
 ````
 ![](./images/g4.png " ") 
 
+## Step-2: Examples about customers and their orders using PGQL
+Lets look at some of the examples about customers and their orders. 
 
-How many Customers are there?
+**Scenario 1 : Getting count from customer table**
 
 ````
 <copy>
@@ -37,10 +68,7 @@ query.accept("select count(v) from oe_sample_graph match (v:CUSTOMERS)");
 ![](./images/g5.png " ") 
 
 
-Lets look at some of the examples about customers and their orders. 
-
-
-**Scenario 1 : Which stores did customer with id 202 order from?**
+**Scenario 2 : Identifying the store using PGQL**
 
  ````
  <copy>
@@ -50,8 +78,8 @@ Lets look at some of the examples about customers and their orders.
   
 ![](./images/IMGG11.PNG " ") 
 
-<br>
-**Scenario 2 : What did Dale Hughes buy?**
+
+**Scenario 3 : Identifying customer's purchases using PGQL**
 
 ````
 <copy>
@@ -62,9 +90,9 @@ query.accept(
  
 ![](./images/IMGG12.PNG)
 
-<br>
 
-**Scenario 3 : What did people buy from the Online Store. Return first 50 results.**
+
+**Scenario 4 : What did people buy from the Online Store. Return first 50 results.**
 
  ````
  <copy>
@@ -76,8 +104,8 @@ query.accept(
 ![](./images/IMGG13.PNG " ") 
 
 
-<br>
-**Scenario 4 : Who bought how much of product  with id 19**
+
+**Scenario 5 : Who bought how much of product  with id 19**
 
 ````
 <copy>
@@ -88,8 +116,8 @@ query.accept("select c.FULL_NAME, op.QUANTITY from oe_sample_graph match (c)-[co
 ![](./images/IMGG14.PNG)
 
 
-<br>
-**Scenario 5 : Which customers bought products that customer 202 bought? Return the first 10 results  that had the most products in common with 202**
+
+**Scenario 6 : Which customers bought products that customer 202 bought? Return the first 10 results  that had the most products in common with 202**
 
 ````
 <copy>
@@ -110,6 +138,14 @@ query.accept(qStr);
  
 ![](./images/IMGG15.PNG)
 
-All of the above 5  queries are run against the database tables. Let’s load the graph into memory and perform that same set of PGQL queries against the in-memory graph.
+- Note : All of the above 5  queries are run against the database tables. Let’s load the graph into memory and perform that same set of PGQL queries against the in-memory graph.
 
+## Acknowledgements
+- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Team** - North America Database Specialists
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021
 
+**Issues-**
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.

@@ -330,5 +330,6 @@ This concludes this lab and this workshop.
 
 - **Author** - Derrick Cameron
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
+- **Contributors** - Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
