@@ -201,12 +201,12 @@ The form page for editing records also needs some improvement.
     ![](images/show-delete.png " ")
 
 ## **Summary**
-This completes Module 4. You now know how to utilize a REST endpoint to develop a report and form to allow full CRUD operations. [Click here to navigate to Module 5](?lab=lab-5-defining-list-values).
+This completes Lab 4. You now know how to utilize a REST endpoint to develop a report and form to allow full CRUD operations. [Click here to navigate to Lab 5](?lab=lab-5-defining-list-values).
 
 ## **Acknowledgements**
 
  - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
- - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+ - **Contributors** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Jeffrey Malcolm Jr, Intern)
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

@@ -40,10 +40,10 @@ If the menu is not displayed, you can open by clicking the menu button (![Menu i
 - [Community](https://apex.oracle.com/community)
 - [External Site + Slack](http://apex.world)
 
-## **Acknowledgements**
+## Acknowledgements
 
  - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
- - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+ - **Contributors** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Jeffrey Malcolm Jr, Intern)
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
