@@ -1,14 +1,14 @@
-# Access a BDS Node Using a Public IP
+#  Use Cloudera Manager (CM) and Hue to Access a BDS Cluster
 
 ## Introduction
 
-Big Data Service nodes are by default assigned private IP addresses, which aren't accessible from the public internet. One way to make a node accessible from the internet is to map a node's private IP address to a public IP address.
+To ensure security, when BDS deploys a cluster, the nodes in the cluster are not accessible on the public internet. By default, the IP addresses for the cluster nodes are private.
 
-In this lab, you will use the **Oracle Cloud Infrastructure Cloud Shell**, which is a web browser-based terminal accessible from the **Oracle Cloud Console**. You'll gather some information about your network and your cluster nodes, and then you'll pass that information to commands in the shell. Finally, you learn how to edit an existing public IP address. To perform this task, you must have a cluster running in a VCN in your tenancy, and that cluster must have a regional, public subnet.
-
-**Important:**
+In the previous lab, you made the first utility node accessible from the internet when you mapped a the node's private IP address to a public IP address.
 
 Making the first utility node publicly available isn't enough to make services that run on this node such as Cloudera Manager (CM) and Hue available from the internet. Before you can access those services on this node using a Web browser, you must also open the ports associated with both services. You do this by adding an ingress rule to a security list for each service. You will do this in the next lab. See [Define Security Rules](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html#GUID-42EDCC75-D170-489E-B42F-334267CE6C92)
+
+In this lab, you'll learn how to access CM and Hue directly in a Web browser.
 
 ### Objectives
 
@@ -157,6 +157,6 @@ In this step, you will learn how to edit a public IP address using both the **Cl
 * **Technical Contributors:**
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation  
-* **Last Updated By/Date:** Lauran Serhal, July 2020
+* **Last Updated By/Date:** Lauran Serhal, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

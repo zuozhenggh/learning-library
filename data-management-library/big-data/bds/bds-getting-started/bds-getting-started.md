@@ -242,6 +242,6 @@ In this step of the lab, you will create a new Virtual Cloud Network (VCN) that 
 * **Authors:**
     * Martin Gubar, Director, Oracle Big Data Product Management
     * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
-* **Last Updated By/Date:** Lauran Serhal, June 2020
+* **Last Updated By/Date:** Lauran Serhal, July 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

@@ -30,5 +30,11 @@
             "filename": "./../bds-access-utility-node/bds-access-utility-node.md"
         }
 
-                 ]
+        ,
+        {
+              "title": "Lab 5:  Use Cloudera Manager and Hue to Access a BDS Cluster",
+              "description": "This lab shows you how to use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.",
+              "filename": "./../bds-use-cm-hue-access-cluster/bds-use-cm-hue-access-cluster.md"
+          }
+           ]
 }

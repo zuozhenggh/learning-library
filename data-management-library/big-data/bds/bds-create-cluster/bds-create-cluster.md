@@ -265,6 +265,6 @@ The process of creating the cluster can take some time; however, you can monitor
 * **Technical Contributors:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
-* **Last Updated By/Date:** Lauran Serhal, June 2020
+* **Last Updated By/Date:** Lauran Serhal, July 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
