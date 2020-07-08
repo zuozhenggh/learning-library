@@ -25,7 +25,7 @@ Link to Marketplace - https://www.oracle.com/cloud/marketplace/
 
 This lab assumes you have already completed the following labs:
 - Register for Free Tier
-- Create SSH Keys
+- Generate SSH Keys
 
 ### Estimated Time
 

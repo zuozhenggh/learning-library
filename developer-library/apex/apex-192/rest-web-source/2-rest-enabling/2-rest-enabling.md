@@ -218,12 +218,12 @@ Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled 
     *Note: Depending on your browser you may just see the raw JSON document rather than the formatted output displayed above.*
 
 ## **Summary**
-This completes Module 2. You now know how to REST enable database objects include all of the necessary handlers. [Click here to navigate to Module 3](?lab=lab-3-defining-web-sources).
+This completes Lab 2. You now know how to REST enable database objects include all of the necessary handlers. [Click here to navigate to Lab 3](?lab=lab-3-defining-web-sources).
 
 ## **Acknowledgements**
 
  - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
- - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+ - **Contributors** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Jeffrey Malcolm Jr, Intern)
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

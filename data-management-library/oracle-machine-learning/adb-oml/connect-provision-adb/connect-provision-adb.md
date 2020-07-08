@@ -22,7 +22,7 @@ What Alpha Office wants is to deploy this machine learning model in a production
 ### Lab Prerequisites
 
 This lab assumes you have completed the following labs:
-* Login to Oracle Cloud
+* Login to Oracle Cloud/Sign Up for Free Tier
 
 *Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 

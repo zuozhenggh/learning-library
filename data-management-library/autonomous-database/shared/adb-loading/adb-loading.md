@@ -44,7 +44,7 @@ In Steps 1 to 3, you will create one ADW table, CHANNELS_LOCAL, and load it with
 
 ### Lab Prerequisites
 
-This lab assumes you have completed the [Login to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) and [Provision ADB] (?lab=lab-2-provision-adb) labs seen in the menu on the right.
+- This lab assumes you have completed the **Login to Oracle Cloud/Sign Up for Free Trial** and **Getting Started**  labs seen in the menu on the right.
 
 
 ## **STEP 1**: Download Sample Data and Create Local Table
