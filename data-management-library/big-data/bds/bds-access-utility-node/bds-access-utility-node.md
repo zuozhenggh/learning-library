@@ -12,16 +12,17 @@ Big Data Service nodes are by default assigned private IP addresses, which aren'
 **Note:**     
 Using a Bastion Host, VPN Connect, and OCI FastConnect provide more private and secure options than making the IP address public.
 
-In this lab, you will use the **Oracle Cloud Infrastructure Cloud Shell**, which is a web browser-based terminal accessible from the **Oracle Cloud Console**. You'll gather some information about your network and your cluster nodes, and then you'll pass that information to commands in the shell. Finally, you learn how to edit an existing public IP address. To perform this task, you must have a cluster running in a VCN in your tenancy, and that cluster must have a regional, public subnet.
+**Important:**    
+A Utility node generally contains utilities used for accessing the cluster. Making the utility nodes in the cluster publicly available (which you will do in this lab) isn't enough to make services that run on the utility nodes available from the internet. For example, in an HA-cluster such as our **`training-cluster`**, Cloudera Manager (CM) runs on the first utility node, **`traininun0`**, and Hue runs on the second utility node, **`traininun1`**. Before you can access CM and Hue on the utility nodes using a Web browser, you must also open the ports associated with both services. You do this by adding an ingress rule to a security list for each service. You will do this in **Lab 5, Use Cloudera Manager (CM) and Hue to Access a BDS Cluster**. See [Define Security Rules](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html#GUID-42EDCC75-D170-489E-B42F-334267CE6C92)
 
-**Important:**
 
-Making the first utility node publicly available isn't enough to make services that run on this node such as Cloudera Manager (CM) and Hue available from the internet. Before you can access those services on this node using a Web browser, you must also open the ports associated with both services. You do this by adding an ingress rule to a security list for each service. You will do this in the next lab. See [Define Security Rules](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html#GUID-42EDCC75-D170-489E-B42F-334267CE6C92)
+In this lab, you will use the **Oracle Cloud Infrastructure Cloud Shell**, which is a web browser-based terminal accessible from the **Oracle Cloud Console**. You'll gather some information about your network and your cluster utility nodes, and then you'll pass that information to commands in the shell. Finally, you learn how to edit an existing public IP address. To perform this task, you must have a cluster running in a VCN in your tenancy, and that cluster must have a regional, public subnet.
+
 
 ### Objectives
 
 * Learn how to gather information about the cluster.
-* Learn how to map private IP address of a node to a public IP address.
+* Learn how to map the private IP address of a node to a public IP address.
 * Learn how to edit a public IP address using both the **Oracle Cloud Console** and the OCI Command Line Interface (CLI).
 
 ### What Do You Need?
@@ -43,13 +44,13 @@ This lab assumes that you have successfully completed the following labs in the 
 
   ![](./images/subnet-ocid.png " ")
 
-5. On the same page, in the **List of Cluster Nodes** section, in the **IP Address** column, find the private IP address for the first utility node, **`traininun0`**. Save the IP address so that you can retrieve it later. In our example, the private IP address of our first utility node in the cluster is **`10.0.0.12`**.
+5. On the same page, in the **List of Cluster Nodes** section, in the **IP Address** column, find the private IP addresses for the first and second utility nodes, **`traininun0`** and **`traininun1`**. Save the IP addresses as you will need them in later steps. In our example, the private IP address of our first utility node in the cluster is **`10.0.0.12`** and **`10.0.0.15`** for the second utility node.
 
-  ![](./images/un0-private-ip.png " ")
+  ![](./images/un-private-ips.png " ")
 
-## STEP 2: Map the Private IP Address to a Public IP Address
+## STEP 2: Map the Private IP Address of the First Utility Node to a Public IP Address
 
-In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the first utility node to a public IP address.
+In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first utility node** to a new public IP address.
 
 1. On the **Oracle Cloud Console** banner at the top of the page, click the **Cloud Shell** icon. It may take a few moments to connect and authenticate you.
 
@@ -93,24 +94,64 @@ In this step, you will set three variables using the **`export`** command. The v
     $ export PRIVATE_IP="10.0.0.12"
       ```
 
-5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any breaks_**, or use the **Copy** button to copy the command, and then paste it on the command line.
+5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or use the **Copy** button to copy the command, and then paste it on the command line.
 
       ```
     <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>
       ```
-6.  In the output returned, find the value for **ip-address** field. In our example, it's **`129.213.193.15`**. This is the new reserved public IP address that is mapped to the private IP address of the first utility node.
+6.  In the output returned, find the value for **ip-address** field. In our example, it's **`129.213.193.15`**. This is the new reserved public IP address that is mapped to the private IP address of your **first utility node**.
 
   ![](./images/output-white-ip-address.png " ")
 
-7.  To see the reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > Virtual Cloud Networks**. In the **Networking** section on the left, click **Public IPs**. The new reserved public IP address appears in the **Reserved Public IPs** list. If you did specify a descriptive name as explained earlier, that name will appear in the **Name** column; Otherwise, a name such as  **publicip_nnnnnnnnn_** is generated.
+7.  To see the newly created reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > Public IPs**. The new reserved public IP address is displayed in the **Reserved Public IPs** list. If you did specify a descriptive name as explained earlier, that name will appear in the **Name** column; Otherwise, a name such as  **publicip_nnnnnnnnn_** is generated.
 
   ![](./images/reserved-public-ip.png " ")
 
-## STEP 3: Edit a Public IP Address
+## STEP 3: Map the Private IP Address of the Second Utility Node to a Public IP Address
+
+In this step, you will set three variables using the **`export`** command. Next, you use the **`oci network`** command to map the private IP address of the **second utility node** to a new public IP address.
+
+  1. In the **Cloud Shell**, at the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line.
+
+    ```
+    $ <copy>export DISPLAY_NAME="traininun1-public-ip"</copy>
+    ```
+
+  2. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it in the command line.   
+
+    ```
+    $ <copy>export SUBNET_OCID="ocid1.subnet.oc1.iad.aaaaaaaagmjtgzrviqqpfmypt4aeuwrhtcwku53bs6bi7qjfyvxckrxdpgga"</copy>
+    ```
+
+    **Note:** In the preceding command, substitute the **_``subnet-ocid``_** value shown with your own **`subnet-ocid`** value that you identified in **STEP 1** of this lab.
+
+  4. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line. Remember, the **`ip-address`** is the private IP address that is assigned to the second utility node that you want to map to a public IP address.
+
+    ```
+    $ <copy>export PRIVATE_IP="10.0.0.15"</copy>
+    ```
+    **Note:** In the preceding command, substitute the **_`ip-address`_** shown with your own second utility node's private IP address that you identified in **STEP 1** of this lab.
+
+  5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or use the **Copy** button to copy the command, and then paste it on the command line.
+
+    ```
+    $ <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>
+    ```
+
+  6.  In the output returned, find the value for **ip-address** field. In our example, it's **`150.136.199.24`**. This is the new reserved public IP address that is mapped to the private IP address of your **second utility node**.
+
+    ![](./images/output-white-ip-address-2.png " ")
+
+  7.  To see the newly created reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > Public IPs**. The new reserved public IP address is displayed in the **Reserved Public IPs** page.
+
+    ![](./images/reserved-public-ip-3.png " ")
+
+
+## STEP 4: Edit a Public IP Address
 
 In this step, you will learn how to edit a public IP address using both the **Cloud Console** and the **Cloud Shell**.
 
-1. On the **Oracle Cloud Console** banner at the top of the page, click the Navigation menu and navigate to **Core Infrastructure > Networking > Virtual Cloud Networks**. In the **Networking** section on the left, click **Public IPs**. The **Reserved Public IPs** page lists the available public IP addresses.
+1. On the **Oracle Cloud Console** banner at the top of the page, click the Navigation menu and navigate to **Core Infrastructure > Networking > Public IPs**. The **Reserved Public IPs** page lists the available public IP addresses.
 
   ![](./images/list-public-ip.png " ")
 
