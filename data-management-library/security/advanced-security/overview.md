@@ -1,3 +1,7 @@
+# Advanced Security Option
+
+## Transparent Data Encryption
+
 ![](../../images/banner_ASO.PNG)
 
 Hard-coded within the Oracle Database core product, two features comprise this option:
@@ -33,19 +37,6 @@ You can configure Oracle Key Vault as part of the TDE implementation. This enabl
 - You do not need to modify your applications to handle the encrypted data. The database manages the data encryption and decryption.
 
 - Oracle Database automates TDE master encryption key and keystore management operations. The user or application does not need to manage TDE master encryption keys.
-
----
-![](../../images/banner_Docs.PNG)
-
-- [Transparent Data Encryption (TDE) 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/asoag/asopart1.html)
-
----
-![](../../images/banner_Video.PNG)
-
-&nbsp; Watch TDE presentations on OTube (**Internal only**):
-- [Second Thursday - TDE (Impact on Backups)](https://otube.oracle.com/media/Second+Thursday+-+TDE_Impact_on_backups/0_li9q8tfu?st=1380) *(June 2018)*
-- [Second Thursday - TDE Advanced Use Cases - Part1 (Data Guard and Multi-Tenant)](https://otube.oracle.com/media/Second+Thursday+January+2020+-+TDE+with+Data+Guard+and+Multi-Tenant/1_vuawxl2s) *(January 2020)*
-- [Second Thursday - TDE Advanced Use Cases - Part2 (RAC and Key Vault)](https://otube.oracle.com/media/Second+Thursday+February+2020-+TDE%2C+RAC%2C+and+Key+Vault/1_23mxbfdk) *(February 2020)*
     
 ---
 ![](../../images/banner_Labs.PNG)
@@ -54,6 +45,8 @@ You can configure Oracle Key Vault as part of the TDE implementation. This enabl
 
 ---
 <br>
+
+## Data Redaction
 
 ![](../../images/banner_DR.PNG)
 
@@ -90,17 +83,6 @@ Data Redaction performs the redaction at runtime, that is, the moment that the u
 
 - The Data Redaction policies enable you to create a wide variety of function conditions based on SYS_CONTEXT values, which can be used at runtime to decide when the Data Redaction policies will apply to the results of the application user's query.
 
----
-![](../../images/banner_Docs.PNG)
-
-- [Data Redaction 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/asoag/asopart2.html)
-
----
-![](../../images/banner_Video.PNG)
-
-&nbsp; Watch Data Redaction presentation on OTube (**Internal only**):
-- Nothing for the moment!
-    
 ---
 ![](../../images/banner_Labs.PNG)
 
