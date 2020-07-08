@@ -15,7 +15,7 @@ In this lab, you will query files on the Oracle Cloud Infrastructure Object Stor
 
 ### Lab Prerequisites
 
-- This lab assumes you have completed the **Login to Oracle Cloud** and **Provision ADB** labs seen in the menu on the right.
+- This lab assumes you have completed the **Login to Oracle Cloud/Sign Up for Free Trial** and **Getting Started**  labs seen in the menu on the right.
 - Make sure you have completed the previous lab in the menu on the right, [Load Data into ADB](?lab=lab-3-loading-data), before you proceed with this lab. In that lab, you created data files on the OCI Object Storage and you created the credential object, all of which you will use in this lab.
 
 ## **STEP 1**: Create External Tables with DBMS_CLOUD
