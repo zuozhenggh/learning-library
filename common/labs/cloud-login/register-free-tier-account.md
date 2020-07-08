@@ -1,4 +1,4 @@
-# Signup for Oracle Cloud Free Tier Account
+# Sign Up for Oracle Cloud Free Tier Account
 
 ## Introduction
 
