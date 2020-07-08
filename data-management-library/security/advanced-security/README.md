@@ -39,9 +39,7 @@ You can configure Oracle Key Vault as part of the TDE implementation. This enabl
 - Oracle Database automates TDE master encryption key and keystore management operations. The user or application does not need to manage TDE master encryption keys.
     
 ---
-![](../../images/banner_Labs.PNG)
-
-- Click here to access to the [Transparent Data Encryption (TDE)](TDE/README.md) labs
+Click here to access to the [Transparent Data Encryption (TDE)](TDE/README.md) labs
 
 ---
 <br>
@@ -84,9 +82,7 @@ Data Redaction performs the redaction at runtime, that is, the moment that the u
 - The Data Redaction policies enable you to create a wide variety of function conditions based on SYS_CONTEXT values, which can be used at runtime to decide when the Data Redaction policies will apply to the results of the application user's query.
 
 ---
-![](../../images/banner_Labs.PNG)
-
-- Click here to access to the [Oracle Data Redaction](Data_Redaction/README.md) labs
+Click here to access to the [Oracle Data Redaction](Data_Redaction/README.md) labs
 
 ---
 <br>
