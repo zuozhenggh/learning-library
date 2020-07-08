@@ -6,15 +6,14 @@ To ensure security, when BDS deploys a cluster, the nodes in the cluster are not
 
 In the previous lab, you made the first utility node accessible from the internet when you mapped a the node's private IP address to a public IP address.
 
-Making the first utility node publicly available isn't enough to make services that run on this node such as Cloudera Manager (CM) and Hue available from the internet. Before you can access those services on this node using a Web browser, you must also open the ports associated with both services. You do this by adding an ingress rule to a security list for each service. You will do this in the next lab. See [Define Security Rules](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html#GUID-42EDCC75-D170-489E-B42F-334267CE6C92)
+Making the first utility node publicly available isn't enough to make services that run on this node such as Cloudera Manager (CM) and Hue available from the internet. Before you can access those services on this node using a Web browser, you must also open the ports associated with both services. You do this by adding an ingress rule to a security list for each service. You will do this in this lab. See [Define Security Rules](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html#GUID-42EDCC75-D170-489E-B42F-334267CE6C92)
 
 In this lab, you'll learn how to access CM and Hue directly in a Web browser.
 
 ### Objectives
 
-* Learn how to gather information about the cluster.
-* Learn how to map private IP address of a node to a public IP address.
-* Learn how to edit a public IP address using both the **Oracle Cloud Console** and the OCI Command Line Interface (CLI).
+* Learn how to use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.
+* Learn how to add ingress rules to the default security rule that enables you to access both CM and Hue.
 
 ### What Do You Need?
 
@@ -22,6 +21,7 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 1: Setup the BDS Environment**
 + **Lab 2: Create a BDS Hadoop Cluster**
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
++ **Lab 4: Access a BDS Node Using a Public IP Address**
 
 ## STEP 1: Gather Information About the Cluster
 
