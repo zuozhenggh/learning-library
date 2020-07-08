@@ -1,8 +1,11 @@
 # Introduction
 
-Welcome to the Low Code Development with Oracle Autonomous Database workshop. 
+## Workshop Overview
 
-## Objectives
+Welcome to the Low Code Development with Oracle Autonomous Database hands-on workshop.
+
+### Objectives
+
 -  Create an Autonomous Transaction Processing instance
 -  Access APEX in the Oracle Cloud
 -  Create an APEX Workspace
