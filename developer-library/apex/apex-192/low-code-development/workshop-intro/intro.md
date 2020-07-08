@@ -1,7 +1,10 @@
-# Low Code Development with Oracle Autonomous Database Workshop
-## Introduction
+# Introduction
 
-Welcome to the Low Code Development with Oracle Autonomous Database hands-on lab. This lab will walk you through the following tasks:
+## Workshop Overview
+
+Welcome to the Low Code Development with Oracle Autonomous Database hands-on workshop.
+
+### Objectives
 
 -  Create an Autonomous Transaction Processing instance
 -  Access APEX in the Oracle Cloud
