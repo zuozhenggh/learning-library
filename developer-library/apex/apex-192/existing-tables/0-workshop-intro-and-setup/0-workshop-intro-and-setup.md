@@ -1,10 +1,10 @@
 # Introduction
 
-## Overview
+## Workshop Overview
 
 This workshop walks you through creating an application based on existing tables in your Oracle Database. Go from zero to hero in a ridiculously short period of time!
 
-### Lab Objectives
+### Objectives
 
 * Obtain a free development environment
 * Build a first cut of an app based on existing tables
