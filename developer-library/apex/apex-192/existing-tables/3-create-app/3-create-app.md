@@ -147,9 +147,9 @@ The **EBA\_PROJECT_TASKS** table is the primary table, where records will be rev
     - Check **Include Form**
     - Expand Lookup Columns
         - Lookup Key 1 - select **PROJECT_ID**
-        - Display Col 1 - select **SAMPLE$PROJECTS.NAME**
+        - Display Col 1 - select **EBA\_PROJECTS.NAME**
         - Lookup Key 2 - select **MILESTONE_ID**
-        - Display Col 2 - select **SAMPLE$PROJECT_MILESTONES.NAME**
+        - Display Col 2 - select **EBA\_PROJECT_MILESTONES.NAME**
 
     - Click **Add Page**  
 
