@@ -16,7 +16,7 @@ The following lab requires an <a href="https://www.oracle.com/cloud/free/" targe
 
 ### Lab Prerequisites
 
-This lab assumes you have already completed the [Log in to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) lab seen in the menu on the right.  In this lab you will be provisioning an ADB database instance using the cloud console.
+- This lab assumes you have completed the **Login to Oracle Cloud/Sign Up for Free Trial** lab seen in the menu on the right.  In this lab you will be provisioning an ADB database instance using the cloud console.
 
 ### Video Preview
 

@@ -135,7 +135,7 @@ Search indexes take a significant time to create on large collections. As earlie
     select u.jtext.name, r.jtext.text
     from reviews r, users u
     where json_textcontains(r.jtext, '$.text', 'sushi') 
-    and u.jtext.user_id = r.jtext.user_;
+    and u.jtext.user_id = r.jtext.user_id;
     </copy>
     ```
     And finally to make the query actually useful, we'll get the business name and search only within a range of zip codes. We'll also add some the number of stars, and some column aliases (meaning we can distinguish between user name and business name).

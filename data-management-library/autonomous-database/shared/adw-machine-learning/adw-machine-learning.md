@@ -1,8 +1,8 @@
-# Bonus Lab: Simple Introduction to Machine Learning Algorithms (DBMS\_PREDICTIVE\_ANALYTICS)
+# Simple Introduction to Machine Learning Algorithms (DBMS\_PREDICTIVE\_ANALYTICS)
 
 ## Introduction
 
-During this bonus lab you will be using the Oracle Machine Learning (OML) notebook application provided with ADWC to explore some samples of the DBMS\_PREDICTIVE\_ANALYTICS functionality. DBMS\_PREDICTIVE\_ANALYTICS provides a set of easy-to-use machine learning procedures to simplify the machine learning process.
+In this lab you will be using the Oracle Machine Learning (OML) notebook application provided with ADWC to explore some samples of the DBMS\_PREDICTIVE\_ANALYTICS functionality. DBMS\_PREDICTIVE\_ANALYTICS provides a set of easy-to-use machine learning procedures to simplify the machine learning process.
 
 ### Objectives
 
@@ -19,9 +19,7 @@ During this bonus lab you will be using the Oracle Machine Learning (OML) notebo
 ## STEP 1: Download the sample notebook for this lab
 The first step is to download the sample notebook and then import it into the Oracle ML notebook application.
 
-1. **Right-click** <a href="./files/Basic_Machine_Learning.json" download="./files/Basic_Machine_Learning.json" target="\_blank">here</a> and select **Save Link As...** from the menu, to download the sample notebook for this lab, Basic\_Machine\_Learning.json, to a folder on your local computer.
-
-  **Note:** Because this notebook is a JSON file, you cannot left-click to download the file.
+1. **Click** <a href="./files/Basic_Machine_Learning.json" download="./files/Basic_Machine_Learning.json" target="\_blank">here</a> and download the sample notebook for this lab, Basic\_Machine\_Learning.json, to a folder on your local computer.
 
 ## STEP 2: Login to the Oracle ML Notebook as one of your ML notebook users
 
