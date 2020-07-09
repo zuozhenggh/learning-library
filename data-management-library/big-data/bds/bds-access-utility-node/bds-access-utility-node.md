@@ -1,4 +1,4 @@
-# Access a BDS Node Using a Public IP
+# Access a BDS Node Using a Public IP Address
 
 ## Introduction
 

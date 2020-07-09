@@ -4,11 +4,13 @@
 
 To ensure security, when BDS deploys a cluster, the nodes in the cluster are not accessible on the public internet. By default, the IP addresses for the cluster nodes are private.
 
-In the previous lab, you made the first utility node accessible from the internet when you mapped a the node's private IP address to a public IP address.
+In the previous lab, you made the two utility nodes in your HA-cluster accessible from the internet by mapping the nodes' private IP addresses to public IP addresses; however, making the utility nodes publicly available isn't enough to make services that run on those nodes available from the internet.
 
-Making the first utility node publicly available isn't enough to make services that run on this node such as Cloudera Manager (CM) and Hue available from the internet. Before you can access those services on this node using a Web browser, you must also open the ports associated with both services. You do this by adding an ingress rule to a security list for each service. You will do this in this lab. See [Define Security Rules](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html#GUID-42EDCC75-D170-489E-B42F-334267CE6C92)
+All services are only available on certain ports. For example, in an HA-cluster such as **`training-cluster`**, Cloudera Manager (CM) runs on the first utility node, **`traininun0`**, and Hue runs on the second utility node, **`traininun1`**. Before you can access CM and Hue on the utility nodes using a Web browser, you must also open the ports associated with both services. You do this by defining  an ingress rule on the public subnet to a security list for each service. In this lab, you'll learn how to access CM and Hue directly in a Web browser.
 
-In this lab, you'll learn how to access CM and Hue directly in a Web browser.
+Security lists act as virtual firewalls for your Compute instances and other kinds of resources with ingress and egress rules that specify the types of traffic allowed in and out of the cluster. Ingress security rules expose HTTP and HTTPS routes from outside the cluster to services within the cluster.
+To use a specific service on a node in the cluster, an administrator must explicitly open the port associated with that service by adding an ingress security rule that allows traffic into the cluster.
+
 
 ### Objectives
 
@@ -23,140 +25,177 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
 + **Lab 4: Access a BDS Node Using a Public IP Address**
 
-## STEP 1: Gather Information About the Cluster
+## STEP 1: Create Ingress Security Rules (and Open Ports) for CM and Hue
+
+In this step, you will add ingress security rules for CM and Hue to the default security list in your cluster's VCN.
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page. Under **Data & AI**, select **Big Data**.
+2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page. Under **Networking**, select **Virtual Cloud Networks**.
 
-3. On the **Clusters** page, click the **`training-cluster`** link in the **Name** column to display the **Cluster Details** page.
+3. On the **Virtual Cloud Networks** page, click your cluster's Virtual Cloud Network, **`training-vcn`**.
 
-4. In the **Cluster Information** tab, in the **Network Information** section, click the **Copy** link next to **Subnet OCID**. Next, paste that OCID to an editor or a file, so you can retrieve it later in **STEP 2** in this lab.
+  ![](./images/cluster-vcn.png " ")
 
-  ![](./images/subnet-ocid.png " ")
+4. Next, you will update the default security list in your VCN. Only public subnets can have a public IP address assigned to them. Remember, when you created the cluster, you needed to specify that your cluster belongs to a public subnet. In the **Subnets** section on the **Virtual Cloud Network Details** page, click the public subnet for the selected network.
 
-5. On the same page, in the **List of Cluster Nodes** section, in the **IP Address** column, find the private IP address for the first utility node, **`traininun0`**. Save the IP address so that you can retrieve it later. In our example, the private IP address of our first utility node in the cluster is **`10.0.0.12`**.
+  ![](./images/vcn-details-page.png " ")
 
-  ![](./images/un0-private-ip.png " ")
+5. In the **Security Lists** section on the **Subnet Details** page, click your **Default Security List** link for your selected network in the **Name** column.
 
-## STEP 2: Map the Private IP Address to a Public IP Address
+  ![](./images/default-security-list.png " ")
 
-In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the first utility node to a public IP address.
+6. On the **Default Security List** page, scroll-down to the **Ingress Rules** section. This section shows the currently available security rules in the selected **Default Security List**. Next, click **Add Ingress Rules**.
 
-1. On the **Oracle Cloud Console** banner at the top of the page, click the **Cloud Shell** icon. It may take a few moments to connect and authenticate you.
+  ![](./images/add-ingress-rule-1.png " ")
 
-  ![](./images/cloud-shell-started.png " ")
+7. In the **Add Ingress Rules** dialog box, add the rule for the TCP protocol which enables you to use Cloudera Manager to access your cluster. You can customize this dialog box to meet your security needs. In our example, we are opening up the port to all sources by entering **`0.0.0.0/0`** for the **Source CIDR**.  Anyone on the internet can access port **`7183`** for CM. No egress rule is required to allow the response traffic. Update the source to a more restrictive CDIR if required. Provide the following information:
 
-2. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
+    + For the **SOURCE TYPE**, select **`CIDR`**.
+    + For the **SOURCE CIDR**, enter **`0.0.0.0/0`**.
+    + For the **IP PROTOCOL**, select **`TCP`**.
+    + For the **SOURCE PORT RANGE**, enter **`All`**.
+    + For the **DESTINATION PORT RANGE**, enter **`7180`**.
+    + For the **DESCRIPTION**, enter **`For CM Access on Port 7183`**.
 
-      ```
-    <b>$</b> <copy>export DISPLAY_NAME=<i>"display-name"</i></copy>
-      ```
+  ![](./images/cm-ingress-rule.png " ")
 
-    **Note:** In the preceding command, substitute **_`display-name`_** with a descriptive name of your choice.
+8. Click **+Additional Ingress Rule** to add an ingress security rule for Hue.
 
-    In our example, we will use **`traininun0-public-ip`** for the descriptive name.
+9. At the bottom of the **Add Ingress Rules** dialog box, the **Ingress Rule 2** section is displayed. Provide the following information:
 
-      ```
-    $ export DISPLAY_NAME="traininun0-public-ip"
-      ```
-3. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it in the command line.   
+    + For the **SOURCE TYPE**, select **`CIDR`**.
+    + For the **SOURCE CIDR**, enter **`0.0.0.0/0`**.
+    + For the **IP PROTOCOL**, select **`TCP`**.
+    + For the **SOURCE PORT RANGE**, enter **`All`**.
+    + For the **DESTINATION PORT RANGE**, enter **`8888`**.
+    + For the **DESCRIPTION**, enter **`For Hue Access on Port 8888`**.
 
-      ```
-    <b>$</b> <copy>export SUBNET_OCID=<i>"subnet-ocid</i>"</copy>
-      ```
-    **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **STEP 1** of this lab.
+10. Click **Add Ingress Rules**.
 
-    In our example, we replaced the **_``subnet-ocid``_** with our own **`subnet-ocid`**:
-      ```
-    $ export SUBNET_OCID="ocid1.subnet.oc1.iad.aaaaaaaagmjtgzrviqqpfmypt4aeuwrhtcwku53bs6bi7qjfyvxckrxdpgga"
-      ```
+  ![](./images/add-ingress-rules.png " ")
 
-4. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
+  The two ingress rules are added to the **Default Security List**.
 
-      ```
-    <b>$</b> <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
-      ```
-  **Note:** In the preceding command, substitute **_`ip-address`_** with your first utility node's private IP address.
+  ![](./images/ingress-rules-added.png " ")
 
-  In our example, we replaced the **_``ip-address``_** with the private IP address of our first utility node that we identified in **STEP 1** of this lab.
+## STEP 2: Use Cloudera Manager to Access the Cluster
 
-      ```
-    $ export PRIVATE_IP="10.0.0.12"
-      ```
+In this step, you will use CM to access the cluster. In an HA-cluster, CM runs on the first utility node, **`traininun0`**. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
-5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any breaks_**, or use the **Copy** button to copy the command, and then paste it on the command line.
+1. Open a Web browser window.
 
-      ```
-    <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>
-      ```
-6.  In the output returned, find the value for **ip-address** field. In our example, it's **`129.213.193.15`**. This is the new reserved public IP address that is mapped to the private IP address of the first utility node.
-
-  ![](./images/output-white-ip-address.png " ")
-
-7.  To see the reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > Virtual Cloud Networks**. In the **Networking** section on the left, click **Public IPs**. The new reserved public IP address appears in the **Reserved Public IPs** list. If you did specify a descriptive name as explained earlier, that name will appear in the **Name** column; Otherwise, a name such as  **publicip_nnnnnnnnn_** is generated.
-
-  ![](./images/reserved-public-ip.png " ")
-
-## STEP 3: Edit a Public IP Address
-
-In this step, you will learn how to edit a public IP address using both the **Cloud Console** and the **Cloud Shell**.
-
-1. On the **Oracle Cloud Console** banner at the top of the page, click the Navigation menu and navigate to **Core Infrastructure > Networking > Virtual Cloud Networks**. In the **Networking** section on the left, click **Public IPs**. The **Reserved Public IPs** page lists the available public IP addresses.
-
-  ![](./images/list-public-ip.png " ")
-
-2. On the row for the reserved public IP address that you want to edit, click the **Actions** button. You can use the context menu to do the following for the selected pubic IP address: Edit its name, move it to another compartment, copy its OCID, view its tags and add new tags, and terminate it.
-
-  ![](./images/context-menu.png " ")
-
-3. Change the name of the public IP address associated with the Cloud SQL node from `traininqs0` to **`traininqs0-public-ip`**. On the row for `traininqs0`, click the **Actions** button, and then select **Edit** from the context menu.
-
-    ![](./images/edit-ip-name.png " ")
-
-4. In the **Edit** dialog box, in the **RESERVED PUBLIC IP NAME** field, enter **`traininqs0-public-ip`**, and then click **Save Changes**.
-
-    ![](./images/edit-dialog.png " ")  
-
-    The renamed public IP address is displayed.
-
-    ![](./images/ip-renamed.png " ")  
-
-5. You can also edit public IP addresses using the OCI CLI. See [OCI CLI Command Reference - public-ip](https://docs.cloud.oracle.com/en-us/iaas/tools/oci-cli/2.9.0/oci_cli_docs/cmdref/network/public-ip.html#) in the _Oracle Cloud Infrastructure_ documentation.
-
-  ![](./images/public-ip-cli.png " ")
-
-6. For example, you can delete a public IP address using the OCI CLI command as follows:
+2. Enter the following URL:
 
     ```
-    $ oci network public-ip delete --public-ip-id value
+    https://<ip-address>:7183
     ```
-    **Note:** The `value` for **``--public-ip-id``** in the preceding command is displayed in the output returned when you ran the **`oci network`** command in this lab; however, the actual name of the field is **`"id"`**. Substitute `value` with the actual value of the `"id"` field.
+    **Note:**    
+    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the first utility node in your cluster, **`traininun0`**, which you created in the previous lab.
 
-    ![](./images/id-field.png " ")
+    In our example, we used the reserved public IP address that is associated with our first utility node as follows:
 
     ```
-    $ oci network public-ip delete --public-ip-id "ocid1.publicip.oc1.iad.amaaaaaayrywvyyaqzeylbrtkwidyvrsyivmh55jdwb3fjpm2zyoq5iyajca"
+    https://129.213.193.15:7183
     ```
-    **Note:** Don't delete any of your public IP addresses as you will need them in this workshop.
+
+3. On the CM Login screen, enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training123`**.
+
+  ![](./images/cm-login-page.png " ")
+
+4. In the CM Home page, note the name of the cluster, the CDH version, and the services running on the cluster.
+
+  ![](./images/cm-home-page.png " ")
+
+5. From the **Hosts** drop-down menu, select **All Hosts**.
+
+  ![](./images/all-hosts.png " ")
+
+  The hosts of the cluster are displayed. Hosts are configured with one or more role instances, each of which corresponds to a service. The role indicates which daemon, also known as service, runs on the host. Typically, a host will run multiple roles in support of the various services running in the cluster.
+
+   ![](./images/hosts.png " ")
+
+6. Drill-down on the roles associated with the first Master node in the cluster, **`traininmn0`**.
+
+   ![](./images/mn0-roles.png " ")
+
+    The services and roles that are running on the Master node are displayed such as the `HDFS NameNode`, `Spark History Server`, `YARN's Job History Server`, and `Yarn's ResourceManager` among other services and gateways. A gateway is a type of role that typically provides client access to specific cluster services. For example, Hive and Spark each have gateway roles to provide access for their clients to their respective services.
+
+    ![](./images/mn0-roles-display.png " ")
+
+7. From the **Hosts** drop-down menu, select **Roles**.
+
+    ![](./images/hosts-roles.png " ")
+
+8. The **Roles** page displays the hosts in the cluster and all the roles (services and gateways) that are running on each host. The table is also grouped by hosts having the same roles assigned to them. For example, all three worker nodes run the same roles such as Big Data SQL server, DataNode, Hive and Spark Gateways, and YARN NodeManager.
+
+    ![](./images/roles-table.png " ")
+
+    **Note:**    
+    You can hover over any icon in the table to display the name of the service or gateway.
+
+    ![](./images/icon-hover.png " ")
+
+9. Exit CM. From the **User** drop-down menu, select **Sign out**.
+
+    ![](./images/logout-cm.png " ")
+
+## STEP 3: Use Hue to Access the Cluster
+
+In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun1`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
+
+1. Open a Web browser window.
+
+2. Enter the following URL:
+
+    ```
+    https://<ip-address>:8888
+    ```
+    **Note:**    
+    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the second utility node in your cluster, **`traininun1`**, which you created in the previous lab.
+
+    In our example, we used the reserved public IP address that is associated with our second utility node as follows:
+
+    ```
+    https://150.136.199.24:8888
+    ```
+
+3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training123`**.
+
+  ![](./images/hue-login-page.png " ")
+
+  The **Hue Editor** page is displayed.
+
+  ![](./images/hue-home-page.png " ")
+
+4. For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
+
+  ![](./images/hue-doc.png " ")
+
+5. Exit Hue. From the **User** drop-down menu, select **Sign out**.
+
+  ![](./images/hue-logout.png " ")
+
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 
 ## Want to Learn More?
 
-* [Using Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/index.html)
+* [Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/)
 * [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
-* [Getting Started with the Command Line Interface (CLI)](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/gettingstartedwiththeCLI.htm)
-* [OCI CLI Command Reference - Public-IP](https://docs.cloud.oracle.com/en-us/iaas/tools/oci-cli/2.9.0/oci_cli_docs/cmdref/network/public-ip.html#)
-* [OCI CLI Command Reference - Big Data Service (bds)](https://docs.cloud.oracle.com/en-us/iaas/tools/oci-cli/2.10.0/oci_cli_docs/cmdref/bds.html)
+* [Security Lists](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/securitylists.htm)
+* [Security Rules](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/securityrules.htm)
+* [Configure Security Rules for the Network](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html)
+* [VCN and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm)
+* [Cloudera Manager](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cloudera_manager.html)
+* [Using Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue_using.html)
 
 ## Acknowledgements
 
 * **Author:**
     + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
-* **Technical Contributors:**
+* **Technical Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-    + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation  
-* **Last Updated By/Date:** Lauran Serhal, June 2020
+* **Last Updated By/Date:** Lauran Serhal, July 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
