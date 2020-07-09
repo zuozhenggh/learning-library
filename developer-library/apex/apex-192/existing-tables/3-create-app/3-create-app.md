@@ -147,9 +147,9 @@ The **EBA\_PROJECT_TASKS** table is the primary table, where records will be rev
     - Check **Include Form**
     - Expand Lookup Columns
         - Lookup Key 1 - select **PROJECT_ID**
-        - Display Col 1 - select **SAMPLE$PROJECTS.NAME**
+        - Display Col 1 - select **EBA\_PROJECTS.NAME**
         - Lookup Key 2 - select **MILESTONE_ID**
-        - Display Col 2 - select **SAMPLE$PROJECT_MILESTONES.NAME**
+        - Display Col 2 - select **EBA\_PROJECT_MILESTONES.NAME**
 
     - Click **Add Page**  
 
@@ -172,7 +172,7 @@ The **EBA\_PROJECT_TASKS** table is the primary table, where records will be rev
 
     ![](images/set-calendar.png " ")
 
-*Note: If you go to SQL Workshop > Object Browser, select the _SAMPLE$PROJECT\_TASKS_ table and then click _Create App_ then it will create an app with a Dashboard page, Faceted Search page, Report and Form pages, and a Calendar page (if appropriate) all based on the selected table. This technique provides a great starting point for creating your apps, especially if you are not sure what pages you want up front.*
+*Note: If you go to SQL Workshop > Object Browser, select the EBA\_PROJECT\_TASKS table and then click _Create App_ then it will create an app with a Dashboard page, Faceted Search page, Report and Form pages, and a Calendar page (if appropriate) all based on the selected table. This technique provides a great starting point for creating your apps, especially if you are not sure what pages you want up front.*
 
 ![](images/object-browser-create-app.png " ")
 

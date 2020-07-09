@@ -13,7 +13,7 @@ In the future, rather than emailing spreadsheets around to gather information, y
 * Improve the Search and Report pages
 * Link pages
 
-*{Note: This workshop assumes you are using Oracle APEX 19.2.}*
+*Note: This workshop assumes you are using Oracle APEX 19.2.*
 
 ### Labs
 
