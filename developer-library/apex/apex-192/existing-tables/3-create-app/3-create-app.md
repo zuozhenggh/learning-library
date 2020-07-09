@@ -172,7 +172,7 @@ The **EBA\_PROJECT_TASKS** table is the primary table, where records will be rev
 
     ![](images/set-calendar.png " ")
 
-*Note: If you go to SQL Workshop > Object Browser, select the _SAMPLE$PROJECT\_TASKS_ table and then click _Create App_ then it will create an app with a Dashboard page, Faceted Search page, Report and Form pages, and a Calendar page (if appropriate) all based on the selected table. This technique provides a great starting point for creating your apps, especially if you are not sure what pages you want up front.*
+*Note: If you go to SQL Workshop > Object Browser, select the EBA\_PROJECT\_TASKS table and then click _Create App_ then it will create an app with a Dashboard page, Faceted Search page, Report and Form pages, and a Calendar page (if appropriate) all based on the selected table. This technique provides a great starting point for creating your apps, especially if you are not sure what pages you want up front.*
 
 ![](images/object-browser-create-app.png " ")
 
