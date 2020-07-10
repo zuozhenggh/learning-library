@@ -23,7 +23,7 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
 
 2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page. Under **Data & AI**, select **Big Data**.
 
-3. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button. You can use the **View Cluster Details** context menu to add nodes, block storage, Cloud SQL, and also to rename or terminate the cluster.
+3. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button. You can use the context menu to view the cluster's details, add nodes, block storage, Cloud SQL, and also to rename or terminate the cluster.
 
     ![](./images/actions-button.png " ")  
 
@@ -43,7 +43,7 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
 
 **Note:** Cloud SQL is not included with Big Data Service. You must pay an extra fee for using Cloud SQL.
 
-1. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button. From the **View Cluster Details** context menu, select **Add Cloud SQL**.
+1. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button. From the context menu, select **Add Cloud SQL**.
 
   ![](./images/add-cloud-sql-menu-option.png " ")  
 

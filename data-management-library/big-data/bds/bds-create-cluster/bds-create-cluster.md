@@ -31,7 +31,7 @@ Your simple HA cluster will have the following profile:
   ![](./images/cluster-layout.png " ")
 
   **Note:**    
-  For better performance and scalability, change the preceding specifications appropriately. Consider **DensIO** shapes (with direct attached storage) and **Bare Metal** shapes.
+  VM Standard Shapes offer the most flexibility. For example, you can increase the storage capacity for each node. For better performance and scalability, change the preceding specifications appropriately. Consider **DenseIO** shapes and **Bare Metal** shapes. **DenseIO** shapes are designed for large databases, big data workloads, and applications that require high-performance local storage. They include direct locally-attached NVMe-based SSDs. See [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vm-dense).
 
 Create the cluster as follows:
 
@@ -81,13 +81,15 @@ Create the cluster as follows:
 
      * **CIDR BLOCK:** **`10.1.0.0/16`**. This CIDR block assigns the range of contiguous IP addresses available for the cluster's private network that BDS creates for the cluster. This private network is created in the Oracle tenancy and not in your customer tenancy. It is used exclusively for private communication among the nodes of the cluster. No other traffic travels over this network, it isn't accessible by outside hosts, and you can't modify it once it's created. All ports are open on this private network.
 
-     **Note:** Use CIDR block **`10.1.0.0/16`** instead of the already displayed **`10.0.0.0/16`** CIDR block range. This avoids overlaping IP addresses since you already used the **`10.0.0.0/16`** CIDR block range for for the **`training-vcn`** VCN that you created in **Lab 1**.
+     **Note:** Use CIDR block **`10.1.0.0/16`** instead of the already displayed **`10.0.0.0/16`** CIDR block range. This avoids overlaping IP addresses since you already used the **`10.0.0.0/16`** CIDR block range for for the **`training-vcn`** VCN that you created in **Lab 1**. A CIDR block of **`10.1.0.0/16`** provides you with **`65,536`** contiguous IP addresses, **`10.1.0.0`** to **`10.1.255.255`**. You can decrease the range of available IP addresses to free them for other uses by choosing a CIDR block such as **`10.1.0.0/24`**. This provides you with only **`256`** contiguous IP addresses, **`10.1.0.0`** to **`10.1.0.255`**.
 
 9. In the **Network Setting > Customer Network** section, provide the following details:
 
     * **CHOOSE VCN IN `training-compartment`:** **`training-vcn`**. The VCN must contain a regional subnet.   **Note:** Make sure that **`training-compartment`** is selected; if it's not, click the _CHANGE COMPARTMENT_ link, and then search for and select your **`training-compartment`**.
     * **CHOOSE REGIONAL SUBNET IN `training-compartment`:** **`Public Subnet-training-vcn`**. This is the public subnet that was created for you when you created your **`training-vcn`** VCN in **Lab 1**.
     * **Networking Options:** **`DEPLOY ORACLE-MANAGED SERVICE GATEWAY AND NAT GATEWAY (QUICK START)`**. This simplifies your network configuration by allowing Oracle to provide and manage these communication gateways for private use by the cluster. These gateways are created in the Oracle tenancy and can't be modified after the cluster is created.
+
+    **Note:** Select the **`USE THE GATEWAYS IN YOUR SELECTD CUSTOMER VCN (CUSTOMIZABLE)`** option if you want more control over the networking configuration.
 
     ![](./images/create-cluster-4.png " ")
 
@@ -110,7 +112,7 @@ Create the cluster as follows:
 
 ## STEP 2: Monitor the Cluster Creation
 
-The process of creating the cluster can take some time; however, you can monitor the cluster creation progress as follows:
+The process of creating the cluster takes approximately one hour to complete; however, you can monitor the cluster creation progress as follows:
 
 1. To view the cluster's details, click **`training-cluster`** in the **Name** column to display the **Cluster Details** page.
 
@@ -143,6 +145,8 @@ The process of creating the cluster can take some time; however, you can monitor
 
 
 3. To display the block storage attached to this node, in the **Resources** section on the left, click the **Attached Block Volume Storage** link.
+
+  **Note:** You can increase the amount of block storage that is available for each worker node in the cluster from within BDS. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button. From the context menu, select **Add Block Storage**, and then follow the prompts. Don't add block storage from outside of BDS.
 
    ![](./images/attached-block-volume.png " ")  
 
@@ -257,6 +261,8 @@ The process of creating the cluster can take some time; however, you can monitor
 * [Using Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/index.html)
 * [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
 * [Overview of Oracle Cloud Infrastructure Identity and Access Management](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
+* [Overview of the Compute Service](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/Concepts/computeoverview.htm)  
+* [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vm-dense)
 
 ## Acknowledgements
 
