@@ -204,10 +204,34 @@ Now that you have added all the pages, it is time to generate the app and review
 
 This completes Lab 3. You now know how to create an application, with numerous different page types, based on existing database objects. [Click here to navigate to Lab 4](?lab=lab-4-regenerating-app)
 
+## Learn More / Troubleshooting: How to change a page's name
+If you want to change a page's name after you create an application, the process is involved. Though it is recommended that you give a page an accurate name at the beginning, here are the instructions on how you can change a page's name.
+
+1. In *App Builder*, click you Project. In you Project home page, click the page you want to edit. In *Page Designer*, change **Identification > Name** and **Identification > Title** to the new name. Click **Save and Run Page**. In the runtime environment, you will see the tab's name is updated.
+
+    ![](images/change_name.png " ")
+
+2. In your Project home page, click **Shared Component** in the development toolbar.
+    ![](images/shared_component.png " ")
+
+    In Shared Component home page, under **Navigation**, click **Breadcrumbs**. Click **Breadcrumbs** again, click the page you want to edit.
+    ![](images/shared_component_menu.png " ")
+
+    Change **Entry > Short Name** to the new name. Click **Apply Changes**. In the runtime environment, you will see the title of the page is updated.
+    ![](images/breadcrumb.png " ")
+
+3. In Shared Component home page, under **Navigation**, click **Navigation Menu**, click **Desktop Nagivation Menu**. Click the page you want to edit, change **Entry > List Entry Label** to the new name. Click **Apply Changes**. You will see the page's name is updated on the left navigation menu.
+
+    ![](images/navigation_menu.png " ")
+
+4. In Shared Component home page, under **Navigation**, click **Lists**, then click **Page Navigation**. Click the page you want to edit, change **Entry > List Entry Label** to the new name. Click **Apply Changes**. You will see the page's name is updated in the Home page of you application.
+
+    ![](images/page_navigation.png " ")
+
 ## **Acknowledgements**
 
  - **Author** -  David Peake, Consulting Member of Technical Staff
  - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
- - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Mangement, June 2020
+ - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Mangement, July 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
