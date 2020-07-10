@@ -2,9 +2,11 @@
 
 ## Introduction
 
-Before you get started, you'll need an Oracle Cloud account. This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.  
+Before you get started, you'll need an Oracle Cloud account. This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.
 
-If you already have an access to an Oracle Cloud Account, skip this lab and proceed to the Introduction.
+### Existing Cloud Accounts
+
+If you already have an access to an Oracle Cloud Account, including an Oracle Cloud account using [Oracle Universal Credits(https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html)], skip this lab and proceed to the **Introduction**.
 
 ### Two Cloud Offers in One
 
