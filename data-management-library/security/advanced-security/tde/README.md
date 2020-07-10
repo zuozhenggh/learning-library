@@ -1,6 +1,6 @@
 ![](../../../images/banner_ASO.PNG)
 
-# [Lab] Oracle Transparent Data Encryption (TDE)
+# Oracle Transparent Data Encryption (TDE)
 
 Version tested in this lab: `Oracle DB 19.5`
 
