@@ -29,7 +29,7 @@ While APEX developers spend the majority of their time in the App Builder, you s
 
     ![](images/copy-paste-projects-tasks.png " ")
 
-6.  Review the parsed data. Set Table Name to **PROJECT_TASKS** and click **Load Data**. (DELETE:Note that the Error Table Name defaults to the Table Name with a postfix of \_ERR$.)
+6.  Review the parsed data. Set Table Name to **PROJECT_TASKS** and click **Load Data**.
 
     ![](images/new-table-name.png " ")
 
@@ -75,13 +75,13 @@ The Data Load wizard has created a new table and populated that table with the r
 
     ![](images/sign-in.png " ")
 
-3.  Explore the application a little. Click **Dashboard** (in the home menu or the navigation menu) to view the charts created. Click **Project Tasks Search**, in the navigation menu, to play with the faceted search. Click **Project Tasks Report** to view an interactive report, then click the edit icon for a record to display the details in an editable Project Task "form" page. Next, navigate to the **Calendar** page and review the data displayed (*Note: You may need to scroll back several months to see data, data displayed May 2020 - December 2020*). Finally, review features available under **Administration**.
+3.  Explore the application a little. Click **Dashboard** (in the home menu or the navigation menu) to view the charts created. Click **Project Tasks Search**, in the navigation menu, to play with the faceted search. Click **Project Tasks Report** to view an interactive report, then click the edit icon for a record to display the details in an editable Project Task "form" page. Next, navigate to the **Calendar** page and review the data displayed (*Note: You may need to scroll back several months to see data, only May 2020 - December 2020 has data*). Finally, review features available under **Administration**.
 
     ![](images/new-app.png " ")
 
 ## **Summary**
 
-This completes Lab 2. You now know how to create an application from a spreadsheet by either dragging and dropping a file or loading sample data for training purposes. [Click here to navigate to Module 3](?lab=lab-3-improve-faceted-search)
+This completes Lab 2. You now know how to create an application from a spreadsheet by either dragging and dropping a file or loading sample data for training purposes. [Click here to navigate to Lab 3](?lab=lab-3-improve-faceted-search)
 
 ## **Acknowledgements**
 
