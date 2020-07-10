@@ -4,7 +4,7 @@
 
 The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between endpoints. SSH keys are an important part of securely accessing Oracle Cloud Infrastructure compute instances in the cloud.
 
-If you already have an SSH key pair, you may use that to connect to your environment. We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute instance you will create. Oracle Cloud Shell is browser-based, does not require installation or configuration of anything on your laptop, and works independently of your network setup. However, if you prefer to connect via your laptop, please choose based on your configuration.
+If you already have an SSH key pair, you may use that to connect to your environment. We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute instance you will create. Oracle Cloud Shell is browser-based, does not require installation or configuration of anything on your laptop, and works independently of your network setup. However, if you prefer to connect via your laptop, please select an option based on your configuration.
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
@@ -51,7 +51,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     Note in the output that there are two files, a *private key:* ```<<sshkeyname>>``` and a *public key:* ```<<sshkeyname>>.pub```. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
 4. To list the contents of the public key, use the cat command ```cat <<sshkeyname>>.pub```
-    
+
     *Note: The angle brackets <<>> should not appear in your code.*
 
     ![](images/cat-in-cloudshell.png " ")
@@ -84,7 +84,7 @@ You may now *proceed to the next lab*.
     ```
     <copy>ls</copy>
     ```
-    
+
     ```
     <copy>cat id_rsa.pub</copy>
     ```
@@ -130,7 +130,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     ```
     <copy>ls</copy>
     ```
-    
+
     ```
     <copy>cat id_rsa.pub</copy>
     ```

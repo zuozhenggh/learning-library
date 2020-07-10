@@ -16,7 +16,9 @@ In this lab, you will learn how to install sample tables and views from Sample D
 
 3. Click **Next**.
 4. Click **Install Dataset**.
-5. Click **Exit**.    
+5. Click **Exit**.
+
+    ![](images/install_finish.png " ")
     *{Note: You do not want to click _Create Application_, as you will manually create an application}*
 
 ## **STEP 2** - Review Database Objects
@@ -26,17 +28,18 @@ In this lab, you will learn how to install sample tables and views from Sample D
 
     ![](images/go-object-browser.png " ")
 
-3. Click on the tables starting with **SAMPLE$** and the various tabs, such as Data, Constraints, and so forth, to review the table details.  
+3. Click on the tables starting with **EBA** and the various tabs, such as Data, Constraints, and so forth, to review the table details.  
 
     ![](images/review-tables.png " ")
 
 ## **Summary**
 
-This completes Lab 2. You now know how to install a sample dataset. [Click here to navigate to Lab 3](?lab=lab-3-create-the-app)
+This completes Lab 2. You now know how to install a sample dataset. [Click here to navigate to Lab 3](?lab=lab-3-creating-application)
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
+ - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Contributors** - Arabella Yao, Product Manager Intern, Database Mangement
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

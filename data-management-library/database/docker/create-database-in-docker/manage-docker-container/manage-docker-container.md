@@ -77,6 +77,6 @@ Congratulations! You have completed this workshop. Oracle has also provided buil
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
 * **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, March 2020
-* **Contributor** - Arabella Yao, June 2020
+* **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

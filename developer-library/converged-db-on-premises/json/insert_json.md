@@ -75,26 +75,37 @@ The above insert query is also available as a sql file in the directory “/u01/
 The script is called as insert.sql. You can run this connecting to the SQL prompt.
 
 Set your oracle environment and connect to PDB as **oracle** user.
- ````
-    <copy>
-. oraenv
-ConvergedCDB
-sqlplus appjson/Oracle_4U@JXLPDB
-@insert.sql
-</copy>
-   ````
+````
+  <copy>
+  . oraenv
+  </copy>
+````
+````
+  <copy>
+  ConvergedCDB
+  <copy>
+````
+````
+  <copy>
+  sqlplus appjson/Oracle_4U@JXLPDB
+  </copy>
+````
+````
+  <copy>
+  @insert.sql
+  </copy>
+````
     
 
 
 c. **Verify the count after insert.**
 
   
-  ````
-    <copy>
-   Select * from purchase_order j where j.po_document.PONumber=10001;
-    
-    </copy>
-   ````
+````
+  <copy>
+  Select * from purchase_order j where j.po_document.PONumber=10001;
+  </copy>
+````
     
     
   ![](./images/json.PNG " ")
@@ -129,7 +140,7 @@ c. **Verify the count after insert.**
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel.
 - **Team** - North America Database Specialists.
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   

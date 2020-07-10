@@ -46,6 +46,8 @@ This lab walks you through the steps to get started with SQL Developer Web. You 
 
   ![](../images/ADB_SDW_CreateUser_C360.png " ")
 
+  *Note: The `IDENTIFIED BY` clause specifies the password (“Welcome1_C360”)*
+
 
 ## STEP 2: Enable SQLDevWeb for Customer_360
 
@@ -80,10 +82,11 @@ This lab walks you through the steps to get started with SQL Developer Web. You 
 
 ## Acknowledgements ##
 
-- **Author** - Jayant Sharma - Product Manager, Spatial and Graph.  
-  With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
+* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
+
+* **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
 
-- **Contributor** - Arabella Yao, June 2020
+* **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
