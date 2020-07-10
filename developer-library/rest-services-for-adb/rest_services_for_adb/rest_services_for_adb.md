@@ -1,8 +1,10 @@
 # RESTful Services for your Autonomous Database
 
-## Introduction
+## **Introduction**
 
 In this lab you will use the SQL Developer Web browser-based tool, connect to your Autonomous Database and REST enable tables and views and/or develop custom RESTful Services based on your SQL and PL/SQL code.
+
+Estimate time: 30-45 minutes
 
 ### Objectives
 - Enable a user for REST access
@@ -174,6 +176,9 @@ The **Script Output** tab at the bottom of the screen shows the result of the SQ
     ````
     https://IDENTIFIER-DBNAME.adb.REGION.oraclecloudapps.com/ords/got/test/itaot/
     ````
+
+    *Note: Outputs may look different, depending on the browser you are using.*
+
     ![](../images/SQLDevWeb-7.png)
 
 4. Protect the Module with an ORDS privilege
@@ -333,10 +338,10 @@ The **Script Output** tab at the bottom of the screen shows the result of the SQ
 ## Conclusion
 In this Lab, you had an opportunity to get an introduction to REST services.
 
-## Acknowledgements
+## **Acknowledgements**
 
  - **Author** - Jeff Smith, 2019
- - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+ - **Contributors** - Oracle LiveLabs QA Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Ayden Smith, Intern)
  - **Last Updated By/Date** - Troy Anthony, May 20 2020
 
  See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
