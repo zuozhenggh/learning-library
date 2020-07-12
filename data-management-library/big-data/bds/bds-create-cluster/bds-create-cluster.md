@@ -180,10 +180,10 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
 **First Master Node, `traininmn0`:**
 
-  + HDFS Failover Controller
-  + HDFS JournalNode
-  + HDFS NameNode
-  + Hive Gateway
+  + HDFS Failover Controller    
+  + HDFS JournalNode    
+  + HDFS NameNode    
+  + Hive Gateway    
   + Key Trustee KMS Key Management Server Proxy
   + Key Trustee Server Active Database
   + Key Trustee Server Active Key Trustee Server
@@ -193,7 +193,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
   + YARN (MR2 Included) ResourceManager
   + ZooKeeper Server
 
-  **Second Master Node, `traininmn1`:**
+**Second Master Node, `traininmn1`:**
 
   + HDFS Balancer
   + HDFS Failover Controller
@@ -212,7 +212,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
 **First Utility Node, `traininun0`:**
 
-  + HDFS Gateway  
+  + HDFS Gateway
   + HDFS JournalNode
   + Hive Gateway
   + Cloudera Management Service Alert Publisher
