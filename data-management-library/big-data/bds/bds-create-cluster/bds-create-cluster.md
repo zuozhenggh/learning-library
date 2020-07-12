@@ -182,8 +182,6 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
   + HDFS Failover Controller
   + HDFS JournalNode
-  + HDFS Failover Controller
-  + HDFS JournalNode
   + HDFS NameNode
   + Hive Gateway
   + Key Trustee KMS Key Management Server Proxy
@@ -195,7 +193,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
   + YARN (MR2 Included) ResourceManager
   + ZooKeeper Server
 
-**Second Master Node, `traininmn1`:**
+  **Second Master Node, `traininmn1`:**
 
   + HDFS Balancer
   + HDFS Failover Controller
@@ -229,7 +227,6 @@ The process of creating the cluster takes approximately one hour to complete; ho
   + YARN (MR2 Included) Gateway
   + ZooKeeper Server
 
-
 **Second Utility Node, `traininun1`:**
 
   + HDFS Gateway
@@ -245,14 +242,12 @@ The process of creating the cluster takes approximately one hour to complete; ho
   + Spark Gateway
   + YARN (MR2 Included) Gateway
 
-
 **Worker nodes, `traininwn0`, `traininwn1`, `traininwn2`:**
 
   + HDFS DataNode  
   + Hive Gateway
   + Spark Gateway
   + YARN (MR2 Included) NodeManager
-
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 
