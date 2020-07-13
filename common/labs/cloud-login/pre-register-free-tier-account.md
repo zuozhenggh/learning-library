@@ -6,7 +6,7 @@ Before you get started, you'll need an Oracle Cloud account. This 5-minute lab w
 
 ### Existing Cloud Accounts
 
-If you already have an access to an Oracle Cloud Account, including an Oracle Cloud account using [Oracle Universal Credits(https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html)], skip this lab and proceed to the **Introduction**.
+If you already have an access to an Oracle Cloud Account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip this lab and proceed to the **Introduction**.
 
 ### Two Cloud Offers in One
 
