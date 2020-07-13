@@ -1,5 +1,5 @@
-Update January 22, 2018
+Update July 11, 2020
 
 # Setup
 
-Setup steps to create all elements required for DIPC workshop
+Setup steps to create all elements required for  GGBDworkshop
