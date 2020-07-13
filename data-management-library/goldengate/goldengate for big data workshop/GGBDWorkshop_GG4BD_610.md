@@ -22,302 +22,89 @@ For the Lab terminal session:
 
 ------
 
-## MySQL Source Configuration
-### STEP 1: Log in to your Oracle Cloud console and find the public IP address of the source instance. Open a terminal or a Putty and ssh into that source instance with the following command:
-```
-$ ssh -i <path_to_private_key> opc@<public_IP_address>
-```
-
-### STEP 2: Check where GoldenGate `mgr` process is running.
-1. Change to `oracle` user
-    ```
-    $ sudo su - oracle
-    ```
-2. Search for the process `mgr`
-    ```
-    $ ps -ef | grep mgr
-    ```
-3. You see that `mgr` is running and GoldenGate for MySQL is installed in the location `/u01/app/oracle/product/18.1.0_GGMySQL`.
-
-    ![](images/600/Lab600-image1.jpg)
-
-4. Change directory to the path we found in the previous step.
-
-    ```
-    $ cd /u01/app/oracle/product/18.1.0_GGMySQL
-    ```
-5. Start GGSCI
-    ```
-    $ ./ggsci
-    ```
-6. Steps to set up Extract on MySQL
-### STEP 3: Setting up the Environment For MySQL.
-    
-In this step we will configuring the environment,which is done by editing ASCII files and running OS utilitiesMySQL.  
+##  Configuration
+   The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
-1. Edit the MySQL server configuration file,which is exist at /etc/my.cnf.
+1)	view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
+2)	Optionally view these files, same as in previous lab:
+/u01/gg4mysql/dirprm/mgr.prm
+/u01/gg4mysql/dirprm/extmysql.prm
+/u01/gg4mysql/dirprm/pmpmysql.prm
+3)	view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby
+4)	view /u01/gg4hadoop123010/dirprm/rkafka.prm
+5)	view /u01/gg4hadoop123010/dirprm/rkafka.properties
+6)	view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
 
-```
-datadir=/var/lib/mysql
-socket=/var/lib/mysql/mysql.sock
-log-error=/var/log/mysqld.log
-pid-file=/var/run/mysqld/mysqld.pid
-default_authentication_plugin=mysql_native_password
-```
-
-### STEP 4: Goldengate Extract Setup for base extract and pump for all the labs and .
-
-1. Configuring the Primary Extract .
-
-```
-[oracle@gg4dbd-source01 ~]$ cd /u01/app/oracle/product/18.1.0_GGMySQL
-[oracle@gg4dbd-source01 18.1.0_GGMySQL]$ ./ggsci
-
-Oracle GoldenGate Command Interpreter for MySQL
-Version 18.1.0.0.0 OGGCORE_18.1.0.0.0_PLATFORMS_180928.0432
-Linux, x64, 64bit (optimized), MySQL Enterprise on Sep 28 2018 19:34:16
-Operating system character set identified as UTF-8.
+First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-Copyright (C) 1995, 2018, Oracle and/or its affiliates. All rights reserved.
-
 
+In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
-GGSCI (gg4dbd-source01) 1> ADD EXTRACT E_MYSQL, TRANLOG, BEGIN NOW
-EXTRACT added.
+![](images/600/image6xx_1.png)
 
-GGSCI (gg4dbd-source01) 2> edit param E_MYSQL
-```
+In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
-Add the below parameters in the parameter file :
-```
-EXTRACT E_MYSQL
---------------------------------------------------------------------------
--- ADD EXTRACT E_MYSQL, TRANLOG, BEGIN NOW
--- ADD EXTTRAIL ./dirdat/ea, EXTRACT E_MYSQL
---------------------------------------------------------------------------
-SETENV (MYSQL_HOME='/var/lib/mysql')
-SETENV (MYSQL_UNIX_PORT='/var/lib/mysql/mysql.sock')
-GETENV (MYSQL_HOME)
-GETENV (MYSQL_TCP_PORT)
-GETENV (MYSQL_UNIX_PORT)
-sourcedb employees,userid ggbd,password W3lcome_123#
-reportcount every 60 seconds, rate
-EXTTRAIL ./dirdat/ea
-TRANLOGOPTIONS ALTLOGDEST "/var/lib/mysql/binlog.index"
---TRANLOGOPTIONS ALTLOGDEST REMOTE
-GETTRUNCATES;
-TABLE employees.employees;
-TABLE employees.departments;
-TABLE employees.dept_manager;
-TABLE employees.dept_emp;
-TABLE employees.titles;
-TABLE employees.salaries;
+![](images/600/image6xx_1.png)
 
-```
+In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
-3. Start the Primary Extract E_MYSQL.
+![](images/600/image6xx_1.png)
 
-```
-GGSCI (gg4dbd-source01) 3> start E_MYSQL
+![](images/600/image6xx_1.png)
 
-Sending START request to MANAGER ...
-EXTRACT E_MYSQL starting
+Now that the source side is setup, let’s configure GG on the target side (Kafka).
 
+In the GG for Hadoop session, you’ll need to modify the Kafka properties by removing the ‘---‘ from the highlighted values:
 
-GGSCI (gg4dbd-source01) 4> info all
+![](images/600/image6xx_1.png)
 
-Program     Status      Group       Lag at Chkpt  Time Since Chkpt
+Now create the Kafka replicat process:
 
-MANAGER     RUNNING
-EXTRACT     RUNNING     E_MYSQL     00:00:00      00:00:03
+![](images/600/image6xx_1.png)
 
-```
+****Before we start the GG Kafka replicat process, we need to start the Kafka Broker. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
-4. Configuring the Secondary Extract (PUMP).
+![](images/600/image6xx_1.png)
 
-```
-[oracle@gg4dbd-source01 ~]$ cd /u01/app/oracle/product/18.1.0_GGMySQL
-[oracle@gg4dbd-source01 18.1.0_GGMySQL]$ ./ggsci
+Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
-Oracle GoldenGate Command Interpreter for MySQL
-Version 18.1.0.0.0 OGGCORE_18.1.0.0.0_PLATFORMS_180928.0432
-Linux, x64, 64bit (optimized), MySQL Enterprise on Sep 28 2018 19:34:16
-Operating system character set identified as UTF-8.
 
-Copyright (C) 1995, 2018, Oracle and/or its affiliates. All rights reserved.
+![](images/600/image6xx_1.png)
 
+Now that GG processes have been created and the Kafka Broker has been started, let’s start the GG replicat for Kafka. Go back to the GG Home for Hadoop ggsci session:
 
+![](images/600/image6xx_1.png)
 
-GGSCI (gg4dbd-source01) 1> ADD EXTRACT P_MYSQL, EXTTRAILSOURCE ./dirdat/ea
-EXTRACT added.
+Now go back to the previous session, where you ran ‘showtopics’; we’ll load some data on the MySQL database ‘ggsource’ and GG will extract and write it to the Kafka topics.
 
+![](images/600/image6xx_1.png)
 
-GGSCI (gg4dbd-source01) 2> ADD RMTTRAIL /tmp/ggbd_home1/dirdat/ac, EXTRACT P_MYSQL
-RMTTRAIL added.
+![](images/600/image6xx_1.png)
 
-GGSCI (gg4dbd-source01) 2> edit param P_MYSQL
-```
-Add the below parameters in the parameter file :
-```
-EXTRACT P_MYSQL
---------------------------------------------------------------------------
--- ADD EXTRACT P_MYSQL, EXTTRAILSOURCE ./dirdat/ea
--- ADD RMTTRAIL /tmp/ggbd_home1/dirdat/ac, EXTRACT P_MYSQL
---------------------------------------------------------------------------
---RMTHOST 132.145.181.107, MGRPORT 7100
---RMTTRAIL /u01/app/ggbd_home1/dirdat/eb
-RMTHOST 129.213.49.56, MGRPORT 7100
-RMTTRAIL /tmp/ggbd_home1/dirdat/ac
-PASSTHRU
-REPORTCOUNT EVERY 60 SECONDS, RATE
+ctrl-c	-- to get the prompt back
 
-TABLE employees.*;
+![](images/600/image6xx_1.png)
 
-```
+![](images/600/image6xx_1.png)
 
-5. Start the Secondary Extract P_MYSQL.
+Next we’ll apply more DML to the source, then we’ll consume the emp topic, and see the additional data get appended to the topic. Run this from another session, since the consumetopic command runs in the foreground, and outputs the results. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
-```
-GGSCI (gg4dbd-source01) 3> start P_MYSQL
+![](images/600/image6xx_1.png)
 
-Sending START request to MANAGER ...
-EXTRACT P_MYSQL starting
+Now go back to the previous session, and run the DML script:
 
+![](images/600/image6xx_1.png)
 
-GGSCI (gg4dbd-source01) 4> info all
+Now go back to the session running ‘consumetopic gg2kafka_json.emp’, you should see the new messages written to the emp topics. Scroll up to see "op_type":"U" or "D". For Updates, GG will write the before and after image of the operation
 
-Program     Status      Group       Lag at Chkpt  Time Since Chkpt
+![](images/600/image6xx_1.png)
 
-MANAGER     RUNNING
-EXTRACT     RUNNING     E_MYSQL     00:00:00      00:00:04
-EXTRACT     RUNNING     P_MYSQL     00:00:00      00:00:02
+Let’s confirm that GG replicated the data that it captured. In the GG for Hadoop home
 
-```
-## HDFS Target Configuration
-1. Go to `/u01/app/ggbd_home1/AdapterExamples/big-data/hdfs`. You should have 2 files `hdfs.props` and `rhdfs.prm`.
-    ```
-    $ cd /u01/app/ggbd_home1/AdapterExamples/big-data/hdfs
-    $ ls -al
-    ```
-    ![](images/600/Lab600-image2.png)
+![](images/600/image6xx_1.png)
 
-2. Take back up of these files.
-    ```
-    $ cp hdfs.props hdfs.props_bkp
-    $ cp rhdfs.prm rhdfs.prm_bkp
-    ```
+In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
+‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rkafka’ read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
 
-3. Edit `hdfs.props` file
-
-    ```
-    $ vi hdfs.props
-    ```
-    * Enter the following contents:
-    ```
-    javawriter.stats.full=TRUE
-
-    gg.log=log4j
-    gg.log.level=INFO
-
-    gg.report.time=30sec
-
-    #Sample gg.classpath for Apache Hadoop
-    #gg.classpath=/var/lib/hadoop/share/hadoop/common/*:/var/lib/hadoop/share/hadoop/common/lib/*:/var/lib/hadoop/share/hadoop/hdfs/*:/var/lib/hadoop/share/hadoop/hdfs/lib/*:/var/lib/hadoop/etc/hadoop/:
-
-    gg.classpath=ggjava/ggjava.jar:/u01/app/hadoop-2.7.6/etc/hadoop/:/u01/app/hadoop-2.7.6/share/hadoop/common/*:/u01/app/hadoop-2.7.6/share/hadoop/common/lib/*:/u01/app/hadoop-2.7.6/share/hadoop/hdfs/*:/u01/app/hadoop-2.7.6/share/hadoop/hdfs/lib/*:/u01/app/jars/hadoop-hdfs-2.4.0.jar
-    #Sample gg.classpath for CDH
-    #gg.classpath=/opt/cloudera/parcels/CDH/lib/hadoop/client/*:/etc/hadoop/conf
-    #Sample gg.classpath for HDP
-    #gg.classpath=/usr/hdp/current/hadoop-client/client/*:/etc/hadoop/conf
-
-    javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=ggjava/ggjava.jar
-    ```
-
-    * Save and quit.
-4. Edit `rhdfs.prm` file.
-    ```
-    $ vi rhdfs.prm
-    ```
-
-    * Enter the following contents:
-    ```
-    REPLICAT rhdfs
-    ---------------------------------------------------------------------------------------
-    -- Trail file for this example is located in "AdapterExamples/trail" directory
-    -- Command to add REPLICAT
-    -- add replicat rhdfs, exttrail ./dirdat/eb
-    ---------------------------------------------------------------------------------------
-    TARGETDB LIBFILE libggjava.so SET property=dirprm/hdfs.props
-    REPORTCOUNT EVERY 1 MINUTES, RATE
-    GROUPTRANSOPS 10000
-    MAP employees.*, TARGET employees.*;
-    ```
-
-    * Save and quit.
-
-5. Move these files to `/u01/app/ggbd_home1/dirprm` directory.
-    ```
-    $ mv /u01/app/ggbd_home1/AdapterExamples/big-data/hdfs/* /u01/app/ggbd_home1/dirprm
-    ```
-
-6. Add and start replicat `rhdfs`.
-    ```
-    [oracle@gg4bd-target01 ggbd_home1]$ cd /u01/app/ggbd_home1
-    [oracle@gg4bd-target01 ggbd_home1]$ ./ggsci
-    GGSCI (gg4bd-target01) 1> add replicat rhdfs, exttrail ./dirdat/eb
-    GGSCI (gg4bd-target01) 2> start rhdfs
-    GGSCI (gg4bd-target01) 3> info all
-    ```
-    ![](images/600/Lab600-image3.png)
-    ![](images/600/Lab600-image4.png)
-
-7. Once the replicat is started and running, everything is ready for replication. To see the statistics of the data being replicated, issue the following command in `./ggsci`:
-
-    ```
-    GGSCI (gg4bd-target01) 4> send rhdfs stats
-
-    Sending STATS request to REPLICAT RHDFS ...
-
-    Start of Statistics at 2019-05-07 15:30:23.
-
-    Replicating from employees.departments to employees.departments:
-
-    *** Total statistics since 2019-05-07 15:30:19 ***
-        Total inserts                                     10.00
-        Total updates                                      1.00
-        Total deletes                                      0.00
-        Total discards                                     0.00
-        Total operations                                  11.00
-
-    *** Daily statistics since 2019-05-07 15:30:19 ***
-        Total inserts                                     10.00
-        Total updates                                      1.00
-        Total deletes                                      0.00
-        Total discards                                     0.00
-        Total operations                                  11.00
-
-    *** Hourly statistics since 2019-05-07 15:30:19 ***
-        Total inserts                                     10.00
-        Total updates                                      1.00
-        Total deletes                                      0.00
-        Total discards                                     0.00
-        Total operations                                  11.00
-
-    *** Latest statistics since 2019-05-07 15:30:19 ***
-        Total inserts                                     10.00
-        Total updates                                      1.00
-        Total deletes                                      0.00
-        Total discards                                     0.00
-        Total operations                                  11.00
-    ```
-Congratulations, you have finished lab 600!
-    
-
-
-
-
-
-
-
-
+End of Lab 6.
 
