@@ -6,7 +6,7 @@ We can update XML content or replace either the entire contents of a document or
 The ability to perform partial updates on XML documents is very powerful, particularly when we make small changes to large documents, as it can significantly reduce the amount of network traffic and disk input-output required to perform the update.
 The Oracle UPDATEXML function allows us to update XML content stored in Oracle Database.
 
-## Before You Begin
+### Before You Begin
 
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud
@@ -27,7 +27,7 @@ This lab assumes you have completed the following labs:
      </copy>
   ````
 
- ![](./images/xml_insert1.PNG " ")
+ ![](./images/xml_insert1.png " ")
 
 
   2. Insert XML record
@@ -37,14 +37,33 @@ The script is called as **insert.sql.** You can run this connecting to the SQL p
 
 Set your oracle environment and connect to PDB as **oracle** user.
 ````
-    <copy>
-. oraenv
-ConvergedCDB
-cd /u01/workshop/xml
-sqlplus appxml/Oracle_4U@JXLPDB
-SQL>@insert.sql
-</copy>
-  ````
+  <copy>
+  . oraenv
+  </copy>
+````
+````
+  <copy>
+  ConvergedCDB
+  </copy>
+````
+````
+  <copy>
+  cd /u01/workshop/xml
+  </copy>
+````
+````
+  <copy>
+  sqlplus appxml/Oracle_4U@JXLPDB
+  </copy>
+````
+
+  ![](./images/xml_input2.png " ")
+````
+  <copy>
+  @insert.sql
+  </copy>
+````
+![](./images/xml_input3.png " ")
   
 3.  Verify XML record post insert
     
@@ -54,7 +73,7 @@ SQL>@insert.sql
          
          </copy>
   ````
-  ![](./images/xml_insert3.PNG " ")
+  ![](./images/xml_insert3.png " ")
 
   
 ## Step 2: Update XML table
@@ -64,29 +83,50 @@ The script is called as **update.sql**. You can run this connecting to the SQL p
 
 Set your oracle environment and connect to PDB as **oracle** user.
 ````
-    <copy>
-. oraenv
-ConvergedCDB
-cd /u01/workshop/xml
-sqlplus appxml/Oracle_4U@JXLPDB
-SQL>@update.sql
-</copy>
-  ````
+  <copy>
+  . oraenv
+  </copy>
+````
+
+````
+  <copy>
+  ConvergedCDB
+  </copy>
+````
+````
+  <copy>
+  cd /u01/workshop/xml
+  </copy>
+````
+````
+  <copy>
+  sqlplus appxml/Oracle_4U@JXLPDB
+  </copy>
+````
+
+![](./images/xml_input2.png " ")
+````
+  <copy>
+  @update.sql
+  </copy>
+````
+
+![](./images/xml_input4.png " ")
 
  1. Below is the select query to check if user is updated. 
      
    ````
     <copy>
-     SELECT extractValue(OBJECT_VALUE, '/PurchaseOrder/User') FROM purchaseorder WHERE existsNode(OBJECT_VALUE, '/PurchaseOrder[Reference="MSD-20200505"]') =1;
+    SELECT extractValue(OBJECT_VALUE, '/PurchaseOrder/User') FROM purchaseorder WHERE existsNode(OBJECT_VALUE, '/PurchaseOrder[Reference="MSD-20200505"]') =1;
     </copy>
   ````
-  ![](./images/xml_update2.PNG " ")
+  ![](./images/xml_update2.png " ")
 
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel.
 - **Team** - North America Database Specialists.
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
