@@ -24,11 +24,17 @@ The GoldenGate for Big Data Workshop is designed to introduce replication capabi
 There are 7 hands-on labs in this workshop. GoldenGate software for MySQL are auto-installed as part of the initial setup. After running Lab 1 – Install GG for Big Data, the rest of the labs can be run independently of each other, and in any order.
 
 Lab 1 – Install GoldenGate for Big Data 
+
 Lab 2 – MySQL -> MySQL 
-Lab 3  – MySQL -> HDFS (CSV format)  
+
+Lab 3  – MySQL -> HDFS (CSV format) 
+
 Lab 4 – MySQL -> Hive (Avro format) 
+
 Lab 5 – MySQL -> HBase
+
 Lab 6 – MySQL -> Kafka (Json format) 
+
 Lab 7 – MySQL -> Cassandra
 
 
