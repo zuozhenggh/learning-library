@@ -24,148 +24,98 @@ For the Lab terminal session:
 
 ### STEP 1: Setting up the Environment For MySQL.
     
-In this step we will configuring the environment,which is done by editing ASCII files and running OS utilitiesMySQL.  
+If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
-1. Edit the MySQL server configuration file,which is exist at /etc/my.cnf.
-
-```
-datadir=/var/lib/mysql
-socket=/var/lib/mysql/mysql.sock
-log-error=/var/log/mysqld.log
-pid-file=/var/run/mysqld/mysqld.pid
-default_authentication_plugin=mysql_native_password
-```
-
-### STEP 2: Goldengate Replicat Setup for base extract and pump for all the labs and .
-
-1. Configuring the Primary Extract .
-
-```
-[oracle@gg4dbd-source01 ~]$ cd /u01/app/oracle/product/18.1.0_GGMySQL
-[oracle@gg4dbd-source01 18.1.0_GGMySQL]$ ./ggsci
-
-Oracle GoldenGate Command Interpreter for MySQL
-Version 18.1.0.0.0 OGGCORE_18.1.0.0.0_PLATFORMS_180928.0432
-Linux, x64, 64bit (optimized), MySQL Enterprise on Sep 28 2018 19:34:16
-Operating system character set identified as UTF-8.
-
-Copyright (C) 1995, 2018, Oracle and/or its affiliates. All rights reserved.
-
-
-
-GGSCI (gg4dbd-source01) 1> ADD EXTRACT E_MYSQL, TRANLOG, BEGIN NOW
-EXTRACT added.
-
-GGSCI (gg4dbd-source01) 2> edit param E_MYSQL
-```
-
-Add the below parameters in the parameter file :
-```
-EXTRACT E_MYSQL
---------------------------------------------------------------------------
--- ADD EXTRACT E_MYSQL, TRANLOG, BEGIN NOW
--- ADD EXTTRAIL ./dirdat/ea, EXTRACT E_MYSQL
---------------------------------------------------------------------------
-SETENV (MYSQL_HOME='/var/lib/mysql')
-SETENV (MYSQL_UNIX_PORT='/var/lib/mysql/mysql.sock')
-GETENV (MYSQL_HOME)
-GETENV (MYSQL_TCP_PORT)
-GETENV (MYSQL_UNIX_PORT)
-sourcedb employees,userid ggbd,password W3lcome_123#
-reportcount every 60 seconds, rate
-EXTTRAIL ./dirdat/ea
-TRANLOGOPTIONS ALTLOGDEST "/var/lib/mysql/binlog.index"
---TRANLOGOPTIONS ALTLOGDEST REMOTE
-GETTRUNCATES;
-TABLE employees.employees;
-TABLE employees.departments;
-TABLE employees.dept_manager;
-TABLE employees.dept_emp;
-TABLE employees.titles;
-TABLE employees.salaries;
+The following Lab Menu will be displayed, select R to reset the lab environment, then select 4 (this step may take a couple of minutes, or longer if you have allocated less than 8GB to the VM).
+Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 ```
 
-3. Start the Primary Extract E_MYSQL.
+The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
-```
-GGSCI (gg4dbd-source01) 3> start E_MYSQL
+1)	view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
+2)	Optionally view these files, same as in previous lab:
+/u01/gg4mysql/dirprm/mgr.prm
+/u01/gg4mysql/dirprm/extmysql.prm
+/u01/gg4mysql/dirprm/pmpmysql.prm
+3)	view /u01/gg4hadoop123010/dirprm/create_hive_replicat.oby
+4)	view /u01/gg4hadoop123010/dirprm/rhive.prm
+5)	view /u01/gg4hadoop123010/dirprm/rhive.properties
 
-Sending START request to MANAGER ...
-EXTRACT E_MYSQL starting
+First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
+In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
-GGSCI (gg4dbd-source01) 4> info all
+![](images/400/image4xx_1.png)
 
-Program     Status      Group       Lag at Chkpt  Time Since Chkpt
-
-MANAGER     RUNNING
-EXTRACT     RUNNING     E_MYSQL     00:00:00      00:00:03
-
-```
-
-4. Configuring the Secondary Extract (PUMP).
-
-```
-[oracle@gg4dbd-source01 ~]$ cd /u01/app/oracle/product/18.1.0_GGMySQL
-[oracle@gg4dbd-source01 18.1.0_GGMySQL]$ ./ggsci
-
-Oracle GoldenGate Command Interpreter for MySQL
-Version 18.1.0.0.0 OGGCORE_18.1.0.0.0_PLATFORMS_180928.0432
-Linux, x64, 64bit (optimized), MySQL Enterprise on Sep 28 2018 19:34:16
-Operating system character set identified as UTF-8.
-
-Copyright (C) 1995, 2018, Oracle and/or its affiliates. All rights reserved.
+In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
 
+![](images/400/image4xx_1.png)
 
-GGSCI (gg4dbd-source01) 1> ADD EXTRACT P_MYSQL, EXTTRAILSOURCE ./dirdat/ea
-EXTRACT added.
+In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
+![](images/400/image4xx_1.png)
 
-GGSCI (gg4dbd-source01) 2> ADD RMTTRAIL /tmp/ggbd_home1/dirdat/ac, EXTRACT P_MYSQL
-RMTTRAIL added.
+![](images/400/image4xx_1.png)
 
-GGSCI (gg4dbd-source01) 2> edit param P_MYSQL
-```
-Add the below parameters in the parameter file :
-```
-EXTRACT P_MYSQL
---------------------------------------------------------------------------
--- ADD EXTRACT P_MYSQL, EXTTRAILSOURCE ./dirdat/ea
--- ADD RMTTRAIL /tmp/ggbd_home1/dirdat/ac, EXTRACT P_MYSQL
---------------------------------------------------------------------------
---RMTHOST 132.145.181.107, MGRPORT 7100
---RMTTRAIL /u01/app/ggbd_home1/dirdat/eb
-RMTHOST 129.213.49.56, MGRPORT 7100
-RMTTRAIL /tmp/ggbd_home1/dirdat/ac
-PASSTHRU
-REPORTCOUNT EVERY 60 SECONDS, RATE
+Now that the source side is setup, let’s configure GG on the target side (Hive Avro format).
 
-TABLE employees.*;
+In the GG for Hadoop session, you’ll need to modify the Hive properties by removing the ‘---‘ from the highlighted values:
 
-```
+![](images/400/image4xx_1.png)
 
-5. Start the Secondary Extract P_MYSQL.
+![](images/400/image4xx_1.png)
 
-```
-GGSCI (gg4dbd-source01) 3> start P_MYSQL
+Now create and start the Hive replicat process:
 
-Sending START request to MANAGER ...
-EXTRACT P_MYSQL starting
+![](images/400/image4xx_1.png)
+
+Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the Hive directories (schema & data) – they should be empty. Then we’ll load some data on
+the MySQL database ‘ggsource’ and GG will extract and write it to the Hive target. GG will create a subdirectory for each table in the base directory /user/ggtarget/hive/data.
+
+Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
 
-GGSCI (gg4dbd-source01) 4> info all
+![](images/400/image4xx_1.png)
 
-Program     Status      Group       Lag at Chkpt  Time Since Chkpt
+There should be several .avro files in the data directory, and 3 .avsc files in the schema directory. You will notice that a new directory has been created for each table in the data directory.
 
-MANAGER     RUNNING
-EXTRACT     RUNNING     E_MYSQL     00:00:00      00:00:04
-EXTRACT     RUNNING     P_MYSQL     00:00:00      00:00:02
+![](images/400/image4xx_1.png)
 
-```
+![](images/400/image4xx_1.png)
 
-You have completed lab 400! Great Job!
+![](images/400/image4xx_1.png)
+
+Also take a look at the Avro schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
+
+You can also see the Hive data created by GG from Hue:
+
+Open a Browser window> http://127.0.0.1:8888/ Login to Hue: cloudera/cloudera
+
+1-	Click on Query Editor, Hive
+2-	Pull down on Database selection, and select ggtarget2hive_avro
+3-	Then hover the mouse over the emp table, and click the ‘preview sample data’ –small grey icon Hue screens:
+
+![](images/400/image4xx_1.png)
+![](images/400/image4xx_1.png)
+
+You can also see the files that are created in the Hive directory in HDFS:
+
+Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hive… Take a look at the .avro and the schema .avsc files:
+
+![](images/400/image4xx_1.png)
+![](images/400/image4xx_1.png)
+![](images/400/image4xx_1.png)
+
+Let’s confirm that GG replicated the data that it captured. In a GG Home for Hadoop session:
+
+![](images/400/image4xx_1.png)
+![](images/400/image4xx_1.png)
+
+In summary, we loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
+‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhive’ read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and
+/user/ggtarget/hive/schem* End of Lab 4.
 
 
 

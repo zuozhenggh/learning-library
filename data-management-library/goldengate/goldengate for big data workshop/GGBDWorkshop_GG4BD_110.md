@@ -1,4 +1,4 @@
-# Lab 100 -  Installation of Golden Gate for BigData Workshop: 
+# Lab 1 -  Installation of Golden Gate for BigData Workshop: 
 July 13, 2020
 
 ![](images/100/image110_1.png)
@@ -86,7 +86,7 @@ Approximately 30 min
 ### What Do You Need?
 
 
-### STEP 1: Access GGBD Cloud Image or Cloud Machine via putty
+### STEP 1: Access GGBD Image 
 
           Will update with Live Labs connectivity
 
