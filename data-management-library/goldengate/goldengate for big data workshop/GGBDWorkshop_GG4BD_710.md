@@ -115,3 +115,9 @@ In summary, you loaded data in MySQL database ‘ggsource’, GG extract process
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rcass’ read the remote trail files, created the Cassandra tables and wrote the data to those tables.
 
 End of Lab 7.
+
+
+
+Congrats! You have completed the GoldenGate for Big Data Workshop!! 
+
+
