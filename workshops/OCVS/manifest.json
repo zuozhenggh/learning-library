@@ -1,0 +1,34 @@
+{
+  "tutorials": [
+      {
+        "title": "Workshop README",
+        "description": "Oracle Cloud VMware Solution Self-Guided Hands-On Workshop Overview",
+        "publisheddate": "6/10/2020",
+        "filename": "README.md"
+      },
+      {
+        "title": "Lab 100: Provision Infrastructure for OCVS",
+        "description": "Provisioning the infrastructure for the OCVS solution",
+        "publisheddate": "6/10/2020",
+        "filename": "ProvisionOCVS.md" 
+      },
+      {
+        "title": "Lab 200: Generate Export of On-Premises workload",
+        "description": "Export on-premises workload in the form of a .ovf file",
+        "publisheddate": "6/20/2020",
+        "filename": "ExportWorkload.md"
+      },
+      {
+        "title": "Lab 300: Migrate On-Premises workload to OCVS",
+        "description": "Migrate on-premises workload to OCVS",
+        "publisheddate": "6/20/2020",
+        "filename": "MigratingOnPremtoOCI.md"
+      },
+      {
+        "title": "Lab 400: Extend Application to OCI",
+        "description": "Extend the solution to use OCI services",
+        "publisheddate": "6/20/2020",
+        "filename": "ExtendApptoOCI.md"
+      }
+    ]
+}
