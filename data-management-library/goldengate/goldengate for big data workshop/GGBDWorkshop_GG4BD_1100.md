@@ -1,4 +1,4 @@
-# Optional:Lab 8: MySQL to Oracle (using jdbc)
+# Optional:Lab 9: MySQL to Oracle (using jdbc)
 
 ## Before You Begin
 
@@ -6,7 +6,7 @@
 In this lab we will use goldengate for bigdata Java Database Connectivity (JDBC) Handler to replicate source transactional data to a target or database.
 
 ### Objectives
-- Replicate from MySQL to Oracle in OCI using jdbc
+- Replicate from MySQL to Oracle using jdbc
 
 ### Time to Complete
 Approximately 30 minutes
@@ -16,11 +16,12 @@ Your will need:
 - Goldengate for Bigdata
 - Oracle JDBC Java Driver
 
-### STEP 1: Setting up the Environment For Connection to OCI Cloud.
+### STEP 1: Setting up the Environment For Connection 
 
-1. We already have a trail file created in the GGBD home. We will be using the same trail file to replicate to OCI Object Storage.
+1. We already have a trail file created in the GGBD home. We will be using the same trail file to replicate .
 
-![](images/1100/image100_1.png)
+
+![](images/1100/image9xx_1.png)
 
 Please refer to Lab 400 for more information.
 
@@ -114,7 +115,8 @@ javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./
 
 5. Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
 
-![](images/1100/image100_2.png)
+
+![](images/1100/image9xx_1.png)
 
 And we can goto the database and see the record count as well. For that log in to GG4BD_Source01 (129.213.97.81)
 
@@ -138,6 +140,7 @@ select 'titles          table -> '|| count(1) from employees.titles UNION ALL
 select 'salaries        table -> '|| count(1) from employees.salaries;
 ```
 
-![](images/1100/image100_3.png)
 
-You have completed lab 1100! Great Job!
+![](images/1100/image9xx_1.png)
+
+You have completed lab 8! Great Job!
