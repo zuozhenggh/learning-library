@@ -1,23 +1,23 @@
-# Improve the Calendar
+# Improve and Link the Calendar
 
 ## Introduction
-In this lab, you will learn how to improve a calendar and link an existing page to a modal form page.
+In this lab, you will learn how to improve a calendar and link an existing page (Calendar) to a modal form page.
 
-## **STEP 1** - Improving the Calendar
+## **STEP 1:** Improving the Calendar
 The **Calendar** page currently displays the project, rather than the task name, and only shows the start date, instead of displaying duration-based events.
 
 1. In the runtime environment, click **Calendar**.
 
     ![](images/show-initial.png " ")
 
-    *Note - You may have to use the arrows at the top of the calendar to navigate backward or forward months to see data displayed.*
+    *Note: You may have to use the arrows at the top of the calendar to navigate backward or forward months to see data displayed.*
 
-2. In the Developer Toolbar, click **Edit Page 6**. Alternatively, navigate back to the APEX App Builder browser tab and manually navigate to Page 6.
+2. In the Developer Toolbar, click **Edit Page 7**. Alternatively, navigate back to the APEX App Builder browser tab and manually navigate to Page 7.
 
-3. You can change the displayed column and make the events duration based by updating the calendar attributes.
+3. You can change the displayed column and make the events duration-based by updating the calendar attributes.
 
     In Page Designer, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
-    Within the Property Editor (right pane), for Settings > Display Column select **TASK_NAME**, and for End Date Column select **END_DATE**.
+    Within the Property Editor (right pane), for Settings > Display Column select **TASK\_NAME**, and for End Date Column select **END\_DATE**.
 
     ![](images/update-attributes.png " ")
 
@@ -27,7 +27,7 @@ The **Calendar** page currently displays the project, rather than the task name,
 
 5. Reviewing the revised calendar changing to duration-based events is not optimal. Therefore, you should remove the End Date Column added above.
 
-    Navigate back to the APEX App Builder, in Page Designer, with Page 6 selected, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
+    Navigate back to the APEX App Builder, in Page Designer, with Page 7 selected, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
     Within the Property Editor (right pane), for Settings > End Date Column select **- Select -** to clear the **END_DATE** entry.
 
     ![](images/remove-end-date.png " ")
@@ -36,28 +36,28 @@ The **Calendar** page currently displays the project, rather than the task name,
 
     ![](images/upd-calendar2.png " ")
 
-## **STEP 2** - Linking the Calendar
-When you click on a calendar entry then it shows event details. It would be far better to link to the Project Task form page and allow end users to update the details.
+## **STEP 2:** Linking the Calendar
+When you click on a calendar entry, then it shows event details. It would be far better to link to the Project Task form page and allow end users to update the details.
 
-1. Navigate to the APEX App Builder, and ensure Page Designer is displayed with Page 6 selected.
+1. Navigate to the APEX App Builder, and ensure Page Designer is displayed with Page 7 selected.
 
-2. Define a view / edit link from the **Calendar** region to **Page 5**, the Project Tasks form page you modified in the previous lab.
+2. Define a view / edit link from the **Calendar** region to **Page 6**, the Project Tasks form page you modified in the previous lab.
 
     In Page Designer, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
     Within the Property Editor (right pane), for Settings > View / Edit Link click **No Link Defined**.
 
-    In the Link Builder page, enter the following and click **Ok**.
+    In the Link Builder page, enter/select the following and click **OK**.
 
     | Property | Value |
     | --- | --- |
-    | Page | **5** |
-    | Set Items > Name | **P5_ID** |
-    | Set Items > Value | **&ID.** |
-    | Clear Cache | **5** |
+    | Page | **6** |
+    | Set Items > Name | **P6_ID** |
+    | Set Items > Value | **&ID.** (select ID)|
+    | Clear Cache | **6** |
 
     ![](images/set-link.png " ")
 
-3. It is important that the calendar is updated whenever the Task Name or Start Date is changed using the new link. To ensure the page is updated appropriately you need to define a Dynamic Action to refresh the calendar region when the dialog (modal page) is closed.
+3. It is important that the Calendar is updated whenever the Task Name or Start Date is changed using the Project Task form page. To ensure the page is updated appropriately, you need to define a *Dynamic Action* to refresh the calendar region when the dialog (modal page) is closed.
 
     A Dynamic Action is a declarative way to define client-side interactivity. Developers specify when an event fires, what actions are to be taken, and on what components the action is to be performed.
 
@@ -65,7 +65,7 @@ When you click on a calendar entry then it shows event details. It would be far 
 
     ![](images/create-dynamic-action.png " ")
 
-4. With the Dynamic Action selected, within the Property Editor (right pane), enter the following.
+4. With the Dynamic Action selected, within the Property Editor (right pane), enter/select the following.
 
     | Group | Property | Value |
     | --- | --- | --- |
@@ -88,7 +88,7 @@ When you click on a calendar entry then it shows event details. It would be far 
 
 6. In Page Designer, within the toolbar, click **Save and Run** to review the completed application.
 
-    In the runtime environment, from the Calendar, select an event. In the Project Task form page update the Task Name and Start Date. Click **Apply Changes**.
+    In the runtime environment, from the Calendar, select an event. In the Project Task form page, update the Task Name and Start Date. Click **Apply Changes**.
 
     ![](images/edit-final.png " ")
 
@@ -101,7 +101,7 @@ When you click on a calendar entry then it shows event details. It would be far 
 
 This completes Lab 5. You now know how to create an application by uploading a file, enhancing the page using runtime environment and page designer, and also linking pages to enhance the application.
 
-## **Learn More** - *Useful Links*
+## Learn More - *Useful Links*
 
 - [APEX on Autonomous](https://apex.oracle.com/autonomous)
 - [APEX Collateral](https://apex.oracle.com)
