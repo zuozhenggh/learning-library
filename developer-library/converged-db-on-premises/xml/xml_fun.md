@@ -104,7 +104,7 @@ WHERE xmlExists(
 
   **Notes:** XMLQUERY lets you query XML data in SQL statements. It takes an XQuery expression as a string literal, an optional context item, and other bind variables and returns the result of evaluating the XQuery expression using these input values. XQuery string is a complete XQuery expression, including prolog.
         
-## Step 5: Custer Delivery Priority Instruction for e.g Ex - Courier, Expidite,Surface Mail,Air Mail etc..  
+## Step 5: Custer Delivery Priority Instruction for e.g Ex - Courier, Expidite, Surface Mail, Air Mail etc..  
     
   Condition -1: Special_Instructions="Next Day Air 
 
