@@ -147,3 +147,11 @@ If you would like to auto-install GoldenGate for Big Data, you can select this o
 
 
 You have completed lab 1! Great Job!
+
+## Ackknoledgements
+- ** Authors ** - Brian Elliott, Zia Khan
+- ** Contributors ** - Brian Elliott, Zia Khan
+- ** Team ** - Data Integration Team
+- ** Last Updated By ** - Brian Elliott, Zia Khan
+- ** Expiration Date ** – July 2021
+- 

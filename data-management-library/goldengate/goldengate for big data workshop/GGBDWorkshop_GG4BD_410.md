@@ -9,7 +9,7 @@ In this lab we will load data in MySQL database ‘ggsource’, GG extract proce
 process ‘rhive’ will read the trail file, create the Hive tables, write the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and /user/ggtarget/hive/schema/*
 
 ### Objectives
-- GoldenGate replication from MySQL to Hive
+- GoldenGate replication from **MySQL to Hive**
 
 ### Time to Complete
 Approximately 60 minutes
@@ -117,5 +117,10 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhive’ read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and
 /user/ggtarget/hive/schem* End of Lab 4.
 
-
+## Ackknoledgements
+- ** Authors ** - Brian Elliott, Zia Khan
+- ** Contributors ** - Brian Elliott, Zia Khan
+- ** Team ** - Data Integration Team
+- ** Last Updated By ** - Brian Elliott, Zia Khan
+- ** Expiration Date ** – July 2021
 

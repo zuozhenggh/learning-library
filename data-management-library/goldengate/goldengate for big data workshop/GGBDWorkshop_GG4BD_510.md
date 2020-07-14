@@ -10,7 +10,7 @@ process ‘rhbase’ will read the remote trail files, create the HBase tables a
 
 
 ### Objectives
-- GoldenGate replication from MySQL to HBase
+- GoldenGate replication from **MySQL to HBase**
 
 ### Time to Complete
 Approximately 60 minutes
@@ -107,6 +107,12 @@ The results are shown:
 
 In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhbase’ read the remote trail files, created the HBase tables and wrote the data to those tables.
+
 End of Lab 5.
 
-
+## Ackknoledgements
+- ** Authors ** - Brian Elliott, Zia Khan
+- ** Contributors ** - Brian Elliott, Zia Khan
+- ** Team ** - Data Integration Team
+- ** Last Updated By ** - Brian Elliott, Zia Khan
+- ** Expiration Date ** – July 2021

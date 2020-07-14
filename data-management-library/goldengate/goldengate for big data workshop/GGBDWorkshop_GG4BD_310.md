@@ -3,13 +3,13 @@
 
 ![](images/300/image300_1.png)
 
-### Introduction
+## Introduction
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
 process ‘rhdfs’ will read the remote trail files, and write the data to the HDFS target directory
 /user/ggtarget/hdfs/
 
 ### Objectives
-- GoldenGate replication from MySQL to HDFS
+- GoldenGate replication from **MySQL to HDFS**
 
 For the Lab:
 User ID: ggadmin
@@ -108,3 +108,9 @@ Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hdfs…
 
 End of Lab 3.
 
+## Ackknoledgements
+- ** Authors ** - Brian Elliott, Zia Khan
+- ** Contributors ** - Brian Elliott, Zia Khan
+- ** Team ** - Data Integration Team
+- ** Last Updated By ** - Brian Elliott, Zia Khan
+- ** Expiration Date ** – July 2021

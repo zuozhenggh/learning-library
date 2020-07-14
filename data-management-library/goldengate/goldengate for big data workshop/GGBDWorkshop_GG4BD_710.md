@@ -13,7 +13,7 @@ process ‘rcass’ will read the remote trail files, create the Cassandra table
 
 
 ### Objectives
-- GoldenGate replication from MySQL to Cassandra
+- GoldenGate replication from **MySQL to Cassandra**
 
 ### Time to Complete
 Approximately 60 minutes
@@ -120,7 +120,12 @@ In summary, you loaded data in MySQL database ‘ggsource’, GG extract process
 
 End of Lab 7.
 
-
+## Ackknoledgements
+- ** Authors ** - Brian Elliott, Zia Khan
+- ** Contributors ** - Brian Elliott, Zia Khan
+- ** Team ** - Data Integration Team
+- ** Last Updated By ** - Brian Elliott, Zia Khan
+- ** Expiration Date ** – July 2021
 
 Congrats! You have completed the GoldenGate for Big Data Workshop!! 
 

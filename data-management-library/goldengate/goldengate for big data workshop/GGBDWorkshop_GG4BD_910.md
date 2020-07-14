@@ -7,7 +7,7 @@
 In this lab we will use goldengate for bigdata Java Database Connectivity (JDBC) Handler to replicate source transactional data to a target or database.
 
 ### Objectives
-- Replicate from MySQL to Oracle using jdbc
+- Replicate from **MySQL to Oracle using jdbc**
 
 ### Time to Complete
 Approximately 30 minutes
@@ -145,3 +145,12 @@ select 'salaries        table -> '|| count(1) from employees.salaries;
 ![](images/1100/image9xx_1.png)
 
 You have completed lab 8! Great Job!
+
+## Ackknoledgements
+
+- ** Authors ** - Brian Elliott, Zia Khan
+- ** Contributors ** - Brian Elliott, Zia Khan
+- ** Team ** - Data Integration Team
+- ** Last Updated By ** - Brian Elliott, Zia Khan
+- ** Expiration Date ** – July 2021
+
