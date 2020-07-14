@@ -3,7 +3,8 @@ July 14, 2020
 
 ![](images/100/image110_1.png)
 
-## Before You Begin
+## Want to learn more:
+" https://www.oracle.com/middleware/data-integration/goldengate/big-data/ "
 
 ### Introduction
 Contents
@@ -15,7 +16,7 @@ Introduction
 
  Lab 1 – Install GoldenGate binaries for Big Data 
 
-Lab Architecture 
+**Lab Architecture **
 
  Optional step (Do not select Auto-install if you already installed GG manually) 
  
@@ -41,7 +42,7 @@ Lab Architecture
 
 Lab 7 – MySQL --> Cassandra 
 
-Lab Architecture 
+**Lab Architecture **
 
 
 Appendix A – Handler Configuration Properties 

@@ -20,6 +20,8 @@ Approximately 30 minutes
 
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
+
+
 ## Before You Begin
 For the Lab terminal session:
 
