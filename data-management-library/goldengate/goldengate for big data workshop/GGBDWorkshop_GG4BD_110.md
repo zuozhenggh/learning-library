@@ -156,3 +156,8 @@ You have completed lab 1! Great Job!
  - ** Team ** - Data Integration Team
  - ** Last Updated By ** - Brian Elliott, Zia Khan
  - ** Expiration Date ** – July 2021
+
+Please submit an issue on our issues page:
+[issues](https://github.com/oracle/learning-library/issues) 
+
+ We review it regularly. 
