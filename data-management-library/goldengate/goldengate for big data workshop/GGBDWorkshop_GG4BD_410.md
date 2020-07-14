@@ -119,9 +119,11 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 
 ## Acknowledgements
 
-  ** Authors ** - Brian Elliott, Zia Khan
-  ** Contributors ** - Brian Elliott, Zia Khan
-  ** Team ** - Data Integration Team
-  ** Last Updated By ** - Brian Elliott, Zia Khan
-  ** Expiration Date ** – July 2021
+## Acknowledgements
+
+ - ** Authors ** - Brian Elliott, Zia Khan
+ - ** Contributors ** - Brian Elliott, Zia Khan
+ - ** Team ** - Data Integration Team
+ - ** Last Updated By ** - Brian Elliott, Zia Khan
+ - ** Expiration Date ** – July 2021
 
