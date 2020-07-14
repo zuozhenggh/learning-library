@@ -108,9 +108,10 @@ Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hdfs…
 
 End of Lab 3.
 
-## Ackknoledgements
-- ** Authors ** - Brian Elliott, Zia Khan
-- ** Contributors ** - Brian Elliott, Zia Khan
-- ** Team ** - Data Integration Team
-- ** Last Updated By ** - Brian Elliott, Zia Khan
-- ** Expiration Date ** – July 2021
+## Acknowledgements
+
+  ** Authors ** - Brian Elliott, Zia Khan
+  ** Contributors ** - Brian Elliott, Zia Khan
+  ** Team ** - Data Integration Team
+  ** Last Updated By ** - Brian Elliott, Zia Khan
+  ** Expiration Date ** – July 2021
