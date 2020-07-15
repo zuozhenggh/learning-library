@@ -64,7 +64,6 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     . oraenv
     </copy>
     ````
-  3. 
 
     ````
     <copy>
