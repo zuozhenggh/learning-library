@@ -5,7 +5,7 @@ Oracle Application Express (APEX) is a feature of Oracle Database, including the
 
 ### Objectives
 
-* Obtain an APEX free development environment
+* Obtain a APEX free development environment
 * Build your first app through uploading a Spreadsheet
 * Improve the Faceted Search page
 * Improve the Interactive Report and form pages
