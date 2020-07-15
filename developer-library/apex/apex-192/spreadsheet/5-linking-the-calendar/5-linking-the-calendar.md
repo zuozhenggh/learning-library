@@ -1,12 +1,7 @@
 # Improve the Calendar
 
-<<<<<<< HEAD
 ## **Introduction**
 In this lab, you will learn how to improve a Calendar and link an existing page (Calendar) to a modal form page.
-=======
-## Introduction
-In this lab, you will learn how to improve a calendar and link an existing page to a modal form page.
->>>>>>> parent of fdccfc8dc... Changes to 'Spreadsheet'
 
 ## **STEP 1** - Improving the Calendar
 The **Calendar** page currently displays the project, rather than the task name, and only shows the start date, instead of displaying duration-based events.
@@ -22,11 +17,7 @@ The **Calendar** page currently displays the project, rather than the task name,
 3. You can change the displayed column and make the events duration based by updating the calendar attributes.
 
     In Page Designer, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
-<<<<<<< HEAD
     Within the Property Editor (right pane), for Settings > Display Column select **TASK\_NAME**, and for End Date Column select **END\_DATE**. Click **Save and Run** to review your changes
-=======
-    Within the Property Editor (right pane), for Settings > Display Column select **TASK_NAME**, and for End Date Column select **END_DATE**.
->>>>>>> parent of fdccfc8dc... Changes to 'Spreadsheet'
 
     ![](images/update-attributes.png " ")
 
@@ -34,13 +25,7 @@ The **Calendar** page currently displays the project, rather than the task name,
 
     ![](images/upd-calendar.png " ")
 
-<<<<<<< HEAD
 5. Navigate back to the APEX App Builder, in Page Designer, with Page 7 selected, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
-=======
-5. Reviewing the revised calendar changing to duration-based events is not optimal. Therefore, you should remove the End Date Column added above.
-
-    Navigate back to the APEX App Builder, in Page Designer, with Page 6 selected, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
->>>>>>> parent of fdccfc8dc... Changes to 'Spreadsheet'
     Within the Property Editor (right pane), for Settings > End Date Column select **- Select -** to clear the **END_DATE** entry.
 
     ![](images/remove-end-date.png " ")
@@ -49,21 +34,12 @@ The **Calendar** page currently displays the project, rather than the task name,
 
     ![](images/upd-calendar2.png " ")
 
-<<<<<<< HEAD
 ## **STEP 2:** Linking the Calendar
 When you click on a calendar entry, it shows event details. It would be far better to link to the Project Task form page and allow end users to update the details.
 
 1. Navigate to the APEX App Builder, and ensure Page Designer is displayed with Page 6 selected.
 
-2. Define a *View / Edit Link* from the **Calendar** region to **Page 6**, the Project Tasks form page you modified in the previous lab.
-=======
-## **STEP 2** - Linking the Calendar
-When you click on a calendar entry then it shows event details. It would be far better to link to the Project Task form page and allow end users to update the details.
-
-1. Navigate to the APEX App Builder, and ensure Page Designer is displayed with Page 6 selected.
-
-2. Define a view / edit link from the **Calendar** region to **Page 5**, the Project Tasks form page you modified in the previous lab.
->>>>>>> parent of fdccfc8dc... Changes to 'Spreadsheet'
+2. Define a *View / Edit Link* from the **Calendar** region to **Page 5**, the Project Tasks form page you modified in the previous lab.
 
     In Page Designer, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
     Within the Property Editor (right pane), for Settings > View / Edit Link, click **No Link Defined**.
@@ -108,13 +84,7 @@ When you click on a calendar entry then it shows event details. It would be far 
 
     ![](images/define-action.png " ")
 
-<<<<<<< HEAD
 6. In the runtime environment, from the Calendar, select an event. In the Project Task form page, update the Task Name and Start Date. Click **Apply Changes**.
-=======
-6. In Page Designer, within the toolbar, click **Save and Run** to review the completed application.
-
-    In the runtime environment, from the Calendar, select an event. In the Project Task form page update the Task Name and Start Date. Click **Apply Changes**.
->>>>>>> parent of fdccfc8dc... Changes to 'Spreadsheet'
 
     ![](images/edit-final.png " ")
 
