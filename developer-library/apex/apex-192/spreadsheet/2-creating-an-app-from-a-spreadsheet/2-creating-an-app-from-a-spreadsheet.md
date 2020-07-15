@@ -1,6 +1,6 @@
 # Create an App from a Spreadsheet
 
-## Introduction
+## **Introduction**
 
 In this lab, you will learn how to create an APEX App on top of data imported from a spreadsheet. To simplify the lab, you will use sample data that's built into APEX. However, the sequence will be the same when uploading your own data.
 
@@ -79,9 +79,36 @@ The Data Load wizard has created a new table and populated that table with the r
 
     ![](images/new-app.png " ")
 
+
 ## **Summary**
 
 This completes Lab 2. You now know how to create an application from a spreadsheet by either dragging and dropping a file or loading sample data for training purposes. [Click here to navigate to Lab 3](?lab=lab-3-improve-faceted-search)
+
+
+## Learn More / Troubleshooting: How to change a page's name
+If you want to change a page's name after you create an application, the process is involved. Here are the instructions on how you can change a page's name.
+
+1. In *App Builder*, click you Project. In you Project home page, click the page you want to edit. In *Page Designer*, change **Identification > Name** and **Identification > Title** to the new name. Click **Save and Run Page**. In the runtime environment, you will see the tab's name is updated.
+
+    ![](../../common/change-page-name/images/change_name.png " ")
+
+2. In your Project home page, click **Shared Component** in the development toolbar.
+    ![](../../common/change-page-name/images/shared_component.png " ")
+
+    In Shared Component home page, under **Navigation**, click **Breadcrumbs**. Click **Breadcrumbs** again, click the page you want to edit.
+    ![](../../common/change-page-name/images/shared_component_menu.png " ")
+
+    Change **Entry > Short Name** to the new name. Click **Apply Changes**. In the runtime environment, you will see the title of the page is updated.
+    ![](../../common/change-page-name/images/breadcrumb.png " ")
+
+3. In Shared Component home page, under **Navigation**, click **Navigation Menu**, click **Desktop Nagivation Menu**. Click the page you want to edit, change **Entry > List Entry Label** to the new name. Click **Apply Changes**. You will see the page's name is updated on the left navigation menu.
+
+    ![](../../common/change-page-name/images/navigation_menu.png " ")
+
+4. In Shared Component home page, under **Navigation**, click **Lists**, then click **Page Navigation**. Click the page you want to edit, change **Entry > List Entry Label** to the new name. Click **Apply Changes**. You will see the page's name is updated in the Home page of you application.
+
+    ![](../../common/change-page-name/images/page_navigation.png " ")
+
 
 ## **Acknowledgements**
 
