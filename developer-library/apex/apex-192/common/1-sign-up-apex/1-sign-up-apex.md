@@ -1,6 +1,6 @@
 # Sign up for an Oracle APEX Workspace
 
-## Introduction
+## **Introduction**
 
 Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. To start, you will need to decide which Oracle Database you are going to use for the workshop, and then create an APEX workspace in that database.
 
