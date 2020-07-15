@@ -25,7 +25,7 @@ The **Calendar** page currently displays the project, rather than the task name,
 
     ![](images/upd-calendar.png " ")
 
-5. Navigate back to the APEX App Builder, in Page Designer, with Page 7 selected, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
+5. Navigate back to the APEX App Builder, in Page Designer, with Page 6 selected, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
     Within the Property Editor (right pane), for Settings > End Date Column select **- Select -** to clear the **END_DATE** entry.
 
     ![](images/remove-end-date.png " ")
