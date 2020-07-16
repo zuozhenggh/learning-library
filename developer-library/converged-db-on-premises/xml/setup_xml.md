@@ -22,7 +22,7 @@ The basic building block of an XML document is an element, defined by tags. An e
 For example, XML documents can be very simple, such as the following:
 
 
- ![](./images/xml_snap.png " ") 
+ ![](./images/xml_snapa.png " ") 
 
 
 ### XML with Oracle Database
@@ -55,7 +55,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     </copy>
   ````
 
-  ![](./images/xml_input.png " ")
+  ![](./images/xml_inputa.png " ")
 
  2. Enter instructions.  Choose the ConvergedCDB sid
        
@@ -84,7 +84,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     Service name: JXLPDB
     ````
  
-  ![](./images/env_xml.png " ") 
+  ![](./images/env_xmla.png " ") 
 
 You may proceed to the next lab.
 
