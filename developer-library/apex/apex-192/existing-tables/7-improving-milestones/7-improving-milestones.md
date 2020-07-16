@@ -71,7 +71,7 @@ Once again reviewing the report, it would be beneficial to rearrange the columns
 The changes you have made to the grid layout are only your view of the grid. If other users log in, they will see the original layout with the previous column order and column sizes. Therefore, you need to save the Default report layout.
 
 1. In the runtime environment, click **Actions**, select **Report**, and then select **Save**. You will receive a success message "Default report saved for all users"
-   
+
     *Note: Only developers, who have run the application from App Builder, can "Save" the Default report. End users can only use "Save As"*
 
     ![](images/save.png " ")
@@ -84,6 +84,6 @@ This completes Lab 7. You now know how to manipulate an Interactive Grid and sav
 
  - **Author** -  David Peake, Consulting Member of Technical Staff
  - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
- - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Mangement, July 2020
+ - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
