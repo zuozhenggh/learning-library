@@ -8,7 +8,7 @@
       {
            "title": "Lab 1: Get a Free Trial",
            "description": "Get a Free Trial",
-           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
        },
         {
             "title": "Lab 2: Getting Started",
@@ -41,7 +41,7 @@
             "filename": "./../../adw-connection-wallet/adw-connection-wallet.md"
         },
         {
-            "title": "Lab 8: Managing and Monitoring",
+            "title": "Lab 8: Monitoring",
             "description": "Managing and Monitoring Your Autonomous Database Instance using the Cloud Console",
             "filename": "./../../adw-managing-monitoring/adw-managing-monitoring.md"
         },

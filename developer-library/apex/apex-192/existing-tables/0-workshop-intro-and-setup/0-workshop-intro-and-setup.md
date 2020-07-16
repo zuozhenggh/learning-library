@@ -1,10 +1,10 @@
-# Creating an App based on Existing Tables for Oracle Autonomous Cloud Service
+# Introduction
 
-## Overview
+## Workshop Overview
 
 This workshop walks you through creating an application based on existing tables in your Oracle Database. Go from zero to hero in a ridiculously short period of time!
 
-### Lab Objectives
+### Objectives
 
 * Obtain a free development environment
 * Build a first cut of an app based on existing tables
@@ -48,7 +48,8 @@ If the menu is not displayed, you can open by clicking the menu button (![Menu i
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff | Arabella Yao, Product Manager Intern, Database Management, June 2020
+ - **Author** -  David Peake, Consulting Member of Technical Staff 
+ - **Contributors** - Arabella Yao, Product Manager Intern, Database Management
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

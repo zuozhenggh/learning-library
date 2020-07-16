@@ -14,10 +14,6 @@ You will run a basic query on the SSB data set which is a 1TB data set with one 
 
 *Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
 
-Watch a video demonstration of connecting to your new Autonomous Database instance using SQL Developer.
-
-[](youtube:PHQqbUX4T50)
-
 ### Objectives
 
 - Learn how to connect to your new Autonomous Database using SQL Developer Web
@@ -30,7 +26,7 @@ Watch a video demonstration of connecting to your new Autonomous Database instan
 
 ### Lab Prerequisites
 
-- This lab assumes you have completed the **Login to Oracle Cloud** and **Provision ADB** labs seen in the menu on the right.
+- This lab assumes you have completed the **Login to Oracle Cloud/Sign Up for Free Trial** and **Getting Started** labs seen in the menu on the right.
 
 ## **STEP 1**: Connect with SQL Developer Web
 

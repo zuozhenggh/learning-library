@@ -158,7 +158,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 3. Open up a web browser and visit the Application API indicated in your terminal.   http://your address:3000/
       - your address - Your Public IP Address
 
-    ![](./images/env_nodejs.PNG " ") 
+    ![](./images/env_nodejs.png " ") 
 
 You may proceed to the next lab.
 
