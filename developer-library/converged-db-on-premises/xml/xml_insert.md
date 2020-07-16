@@ -27,43 +27,43 @@ This lab assumes you have completed the following labs:
      </copy>
   ````
 
- ![](./images/xml_insert1.png " ")
+ ![](./images/xml_insert1a.png " ")
 
 
-  2. Insert XML record
+2. Insert XML record
     
-The insert query is available as a sql file in the directory “**/u01/workshop/xml**”.
-The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
+  The insert query is available as a sql file in the directory “**/u01/workshop/xml**”.
+  The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
 
-Set your oracle environment and connect to PDB as **oracle** user.
-````
-  <copy>
-  . oraenv
-  </copy>
-````
-````
-  <copy>
-  ConvergedCDB
-  </copy>
-````
-````
-  <copy>
-  cd /u01/workshop/xml
-  </copy>
-````
-````
-  <copy>
-  sqlplus appxml/Oracle_4U@JXLPDB
-  </copy>
-````
+  Set your oracle environment and connect to PDB as **oracle** user.
+  ````
+    <copy>
+    . oraenv
+    </copy>
+  ````
+  ````
+    <copy>
+    ConvergedCDB
+    </copy>
+  ````
+  ````
+    <copy>
+    cd /u01/workshop/xml
+    </copy>
+  ````
+  ````
+    <copy>
+    sqlplus appxml/Oracle_4U@JXLPDB
+    </copy>
+  ````
 
-  ![](./images/xml_input2.png " ")
-````
-  <copy>
-  @insert.sql
-  </copy>
-````
-![](./images/xml_input3.png " ")
+    ![](./images/xml_input2a.png " ")
+  ````
+    <copy>
+    @insert.sql
+    </copy>
+  ````
+  ![](./images/xml_input3a.png " ")
   
 3.  Verify XML record post insert
     
@@ -73,54 +73,54 @@ Set your oracle environment and connect to PDB as **oracle** user.
          
          </copy>
   ````
-  ![](./images/xml_insert3.png " ")
+  ![](./images/xml_insert3a.png " ")
 
   
 ## Step 2: Update XML table
   
-The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
-The script is called as **update.sql**. You can run this connecting to the SQL prompt.
+1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
+  The script is called as **update.sql**. You can run this connecting to the SQL prompt.
 
-Set your oracle environment and connect to PDB as **oracle** user.
-````
-  <copy>
-  . oraenv
-  </copy>
-````
+  Set your oracle environment and connect to PDB as **oracle** user.
+  ````
+    <copy>
+    . oraenv
+    </copy>
+  ````
 
-````
-  <copy>
-  ConvergedCDB
-  </copy>
-````
-````
-  <copy>
-  cd /u01/workshop/xml
-  </copy>
-````
-````
-  <copy>
-  sqlplus appxml/Oracle_4U@JXLPDB
-  </copy>
-````
+  ````
+    <copy>
+    ConvergedCDB
+    </copy>
+  ````
+  ````
+    <copy>
+    cd /u01/workshop/xml
+    </copy>
+  ````
+  ````
+    <copy>
+    sqlplus appxml/Oracle_4U@JXLPDB
+    </copy>
+  ````
 
-![](./images/xml_input2.png " ")
-````
-  <copy>
-  @update.sql
-  </copy>
-````
+  ![](./images/xml_input2a.png " ")
+  ````
+    <copy>
+    @update.sql
+    </copy>
+  ````
 
-![](./images/xml_input4.png " ")
+  ![](./images/xml_input4a.png " ")
 
- 1. Below is the select query to check if user is updated. 
+ 2. Below is the select query to check if user is updated. 
      
    ````
     <copy>
     SELECT extractValue(OBJECT_VALUE, '/PurchaseOrder/User') FROM purchaseorder WHERE existsNode(OBJECT_VALUE, '/PurchaseOrder[Reference="MSD-20200505"]') =1;
     </copy>
   ````
-  ![](./images/xml_update2.png " ")
+  ![](./images/xml_update2a.png " ")
 
 
 ## Acknowledgements

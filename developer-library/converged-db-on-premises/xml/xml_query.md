@@ -23,7 +23,7 @@ This lab assumes you have completed the following labs:
   </copy>
 ````
      
-   ![](./images/xml_m1.PNG " ")
+   ![](./images/xml_m1a.png " ")
 
 ## Step 2: Retrieving the content of an XML document-using pseudocolumn OBJECT_VALUE
     
@@ -35,8 +35,8 @@ This lab assumes you have completed the following labs:
  
        </copy>
  ````
-  ![](./images/xml_query_m2.PNG " ")
-  ![](./images/xml_m2.PNG " ")
+  ![](./images/xml_query_m2a.png " ")
+  ![](./images/xml_m2a.png " ")
 
 ## Step 3:  Accessing text node value
 
@@ -50,8 +50,8 @@ This lab assumes you have completed the following labs:
     </copy>
    ````
 
-   ![](./images/xml_m4.PNG " ")
-   ![](./images/xml_query_meth4.PNG " ")
+   ![](./images/xml_m4a.png " ")
+   ![](./images/xml_query_meth4a.png " ")
 
 
 ## Step 4: Searching XML document
@@ -66,8 +66,8 @@ This lab assumes you have completed the following labs:
   
      
     
-  ![](./images/xml_query_meth5.PNG " ")
-  ![](./images/xml_m5.PNG " ")
+  ![](./images/xml_query_meth5a.png " ")
+  ![](./images/xml_m5a.png " ")
         
 
 ## Acknowledgements

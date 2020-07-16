@@ -82,7 +82,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
     </copy>
     ````
  
-  ![](./images/spatial_env.png " ") 
+  ![](./images/spatial_enva.png " ") 
 
 ## Acknowledgements
 

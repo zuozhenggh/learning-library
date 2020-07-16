@@ -26,7 +26,7 @@ This lab assumes you have completed the following labs:
       </copy>
    ````
  
-   ![](./images/xml_m6.png " ")
+   ![](./images/xml_m6a.png " ")
 
   **Notes:** XMLEXISTS is an SQL/XML operator that we can use to query XML values in SQL, in a regular query we can use the xmlexists function to look if a specific value is present in an xmltype column.
 
@@ -43,7 +43,7 @@ This lab assumes you have completed the following labs:
       </copy>
    ````
   
-   ![](./images/xml_m7.png " ")
+   ![](./images/xml_m7a.png " ")
 
   **Notes:** The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
    
@@ -71,7 +71,7 @@ WHERE xmlexists('/PurchaseOrder/LineItems/Part[UnitPrice/text()=$UnitPrice]' pas
       </copy>
   ````
   
-  ![](./images/xml_m8.png " ")
+  ![](./images/xml_m8a.png " ")
     
    **Notes:** XMLSERIALIZE is a SQL/XML operator that you can use to convert an XML type to a character type.
 
@@ -100,7 +100,7 @@ WHERE xmlExists(
       </copy>
   ````
   
-  ![](./images/xml_m9.png " ")
+  ![](./images/xml_m9a.png " ")
 
   **Notes:** XMLQUERY lets you query XML data in SQL statements. It takes an XQuery expression as a string literal, an optional context item, and other bind variables and returns the result of evaluating the XQuery expression using these input values. XQuery string is a complete XQuery expression, including prolog.
         
@@ -117,7 +117,7 @@ WHERE xmlExists(
    ````
   
  
-  ![](./images/xml_m10_a.png " ")
+  ![](./images/xml_m10_aa.png " ")
 
   Condition -2: Special_Instructions="Priority Overnight
     
@@ -132,8 +132,8 @@ WHERE xmlExists(
       </copy>
   ````
   
-  ![](./images/xml_m10_b.png " ")
-  ![](./images/xml_m10_c.png " ")
+  ![](./images/xml_m10_ba.png " ")
+  ![](./images/xml_m10_ca.png " ")
    
   **Notes**: ExistsNodechecks if xpath-expression returns at least one XML element or text node. If so, existsNode returns 1, otherwise, it returns 0. existsNode should only be used in the where clause of the select statement.
 
