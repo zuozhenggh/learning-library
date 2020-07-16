@@ -38,15 +38,15 @@ Web services based on REST Architecture are known as RESTful web services. These
  1. Download the Postman.
     -  [Click here to download Postman](https://www.postman.com/downloads/)
 
-    ![](./images/Postman1.png " ")
+    ![](./images/postman1a.png " ")
 
-    ![](./images/postman2.png " ")
+    ![](./images/postman2a.png " ")
 
  2. Launch the Postman.
-    ![](./images/nodejs-postman1.png " ")
+    ![](./images/nodejs-postman1a.png " ")
 
  3. Open a new tab. 
-    ![](./images/nodejs-postman2.png " ")
+    ![](./images/nodejs-postman2a.png " ")
 
  4. Select POST Method and enter the request URL
     - Method: - POST
@@ -54,19 +54,19 @@ Web services based on REST Architecture are known as RESTful web services. These
     - Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)
     - Product details: - Example
      
-    ````
-    <copy>  
-	  {
-    "pid": "488",
-    "category": "Puma Shoe ",
-    "title": "Puma-shoe Demo3",
-    "details": "Puma-shoe-Original",
-    "price": "9",
-    "picture": "https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedbAppImage3/o/Puma-shoe-dietmar-hannebohn-_G94gB2cms0-unsplash.jpg"
-    }  
-    </copy>
-    ````    
-    ![](./images/nodejs2.png " ")
+      ````
+      <copy>  
+      {
+      "pid": "488",
+      "category": "Puma Shoe ",
+      "title": "Puma-shoe Demo3",
+      "details": "Puma-shoe-Original",
+      "price": "9",
+      "picture": "https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedbAppImage3/o/Puma-shoe-dietmar-hannebohn-_G94gB2cms0-unsplash.jpg"
+      }  
+      </copy>
+      ````
+    ![](./images/nodejs2a.png " ")
   
 
 5. Click on the **Submit** button, Postman return the HTTP 200 after successfully adding the product in oracle database.
@@ -84,19 +84,19 @@ Web services based on REST Architecture are known as RESTful web services. These
     To get the specific product details by using PID.
   -  URL: - <\PUBLIC-IP>:3001/products/31
 
-![](./images/postman10.png " ")
+![](./images/postman10a.png " ")
 
 
  3. Open the browser and verify the above using link- "PUBLIC-IP:3001/products/31"
 
-  ![](./images/nodejs-postman5.png " ")
+  ![](./images/nodejs-postman5a.png " ")
 
 ## Step 3: Using HTTP POST Method
     
 
 1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL http://&lt;localhost&gt;:3001/products/13.
  
-  ![](./images/postman11.png " ")
+  ![](./images/postman11a.png " ")
 
   We are going to update the price from 9$ to 12$ for the product PID=13.
 
@@ -123,13 +123,13 @@ Web services based on REST Architecture are known as RESTful web services. These
     ```` 
 
      
-    ![](./images/postman12.png " ")
+    ![](./images/postman12a.png " ")
 
    
         
 ## Step 4: Verify product details by using HTTP GET method.  
     
-![](./images/nodejs-postman9.png " ")
+![](./images/nodejs-postman9a.png " ")
 
 You may now proceed to the next lab. 
 
