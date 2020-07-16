@@ -232,6 +232,6 @@ If you want to change a page's name after you create an application, the process
 
  - **Author** -  David Peake, Consulting Member of Technical Staff
  - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
- - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Mangement, July 2020
+ - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
