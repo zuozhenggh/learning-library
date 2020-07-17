@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will explore the provided sample data sets that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing ATP) instance.
+In this lab, you will explore the provided sample data sets that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP) instance using SQL Developer Web.
 
 ### Before You Begin
 
