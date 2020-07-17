@@ -235,7 +235,7 @@ APEX includes different components for viewing and working with data in differen
 
 ## Summary
 
-You have completed the lab, well done! At this point you should have a basic understanding of how the Autonomous Transaction Processing service, along with APEX and SQL Developer Web can be used to develop data driven applications with very little code.
+You have completed the workshop, well done! At this point you should have a basic understanding of how the Autonomous Transaction Processing service, along with APEX and SQL Developer Web can be used to develop data driven applications with very little code.
 
 ## Acknowledgements
 * **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express

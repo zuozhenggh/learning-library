@@ -4,7 +4,9 @@
 
 In this lab, you will learn how to add an item to a page, utilize the page item in chart series, and define client-side interactivity.
 
-## Background Information
+Estimated Time: 5 minutes
+
+### Background Information
 The chart currently has the ISO code for Australia (AUS) hardcoded. By adding a select list with a list of the countries, and then modifying the chart series to utilize this page item you can easily make it easy to review the exchange rate history for any country.
 
 To refresh the chart whenever the country in the select list is changed, you need to utilize a Dynamic Action. A Dynamic Action defines client-side interactivity, and based on a specific action
@@ -110,7 +112,7 @@ To ensure the value from the item can be used it must be set in session state. R
     ![](images/final-runtime.png " ")
 
 ## **Summary**
-This completes Lab 6 and the workshop. In this lab you learned how to create items, define Dynamic Actions, and refresh regions based on user input fields.
+This completes Lab 5 and the workshop. In this lab you learned how to create items, define Dynamic Actions, and refresh regions based on user input fields.
 
 ## **Learn More** - *Useful Links*
 

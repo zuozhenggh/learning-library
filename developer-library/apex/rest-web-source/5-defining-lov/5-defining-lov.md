@@ -3,6 +3,8 @@
 ## Introduction
 In this lab, you will learn how to utilize Web Source modules as the basis for list of values for use within an application.
 
+Estimated Time: 10 minutes
+
 ### Information
 
 When you ran the script in your first workspace you created a REST
@@ -191,7 +193,7 @@ Similarly, the Employees report shows numerical values rather than names.
     ![](images/runtime-form.png " ")
 
 ## **Summary**
-This completes Lab 5 and the workshop. You now know how to define List of Values against REST endpoints and then utilize those within an application.
+This completes Lab 4 and the workshop. You now know how to define List of Values against REST endpoints and then utilize those within an application.
 
 ## Learn More - Useful Links
 
