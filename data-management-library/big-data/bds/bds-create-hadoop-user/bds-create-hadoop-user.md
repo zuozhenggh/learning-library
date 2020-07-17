@@ -10,9 +10,12 @@ In this lab, you will map the private IP address of the **first master node** to
 
 ### Objectives
 
-* Learn how to add a Kerberos user.
-* Learn how to add a user to the Linux OS.
-* Learn how to add this new user to Hadoop administrator groups.
+* Map the private IP address of the first master node to a public IP address.
+* Connect to the cluster's first master node using Putty.
+* Create a new Kerberos principal.
+* Create a new Linux administrator user.
+* Access HDFS using the newly created user.
+* Add the new user to Hue.
 
 ### What Do You Need?
 This lab assumes that you have successfully completed all the labs in the **Contents** menu on the right.
@@ -109,7 +112,7 @@ The Kerberos Distribution Center (KDC) is running on the cluster's first master 
     ![](./images/traininmn0-connected.png " ")
 
 
-## STEP 4: Create the Administrator **`training`** Kerberos Principal
+## STEP 4: Create the **`training`** Administrator Kerberos Principal
 
 In this step, you will create a new Kerberos principal named **`training`**. Identities in Kerberos are called principals. Every user and service that uses the Kerberos authentication protocol requires a principal to uniquely identify itself. There are user principals and service principals. User principal names, or UPNs, represent regular users such as **`training`**.
 
@@ -141,7 +144,11 @@ In this step, you will create a new Kerberos principal named **`training`**. Ide
 
     ![](./images/addprinc-training.png " ")
 
-4.  Create the **`training`** linux administrator user. Assign **`training`** the **supergroup** superuser group as the primary group, and **hdfs**, **hadoop**, and **hive** as the secondary groups. The **`dcli`** utility allows you to run the command that you specify across each node of the cluster. The syntax for the **`dcli`** utility is as follows:
+## STEP 5: Create the **`training`** Linux OS Administrator User
+
+Create the **`training`** Linux administrator user. Assign **`training`** the **supergroup** superuser group as the primary group, and **hdfs**, **hadoop**, and **hive** as the secondary groups.
+
+1. The **`dcli`** utility allows you to run the command that you specify across each node of the cluster. The syntax for the **`dcli`** utility is as follows:
 
     ```
     dcli [option] [command]
@@ -159,7 +166,7 @@ In this step, you will create a new Kerberos principal named **`training`**. Ide
     ![](./images/training-added.png " ")
 
 
-5. Use the linux **`id`** command to confirm the creation of the new user and to list its groups membership.
+2. Use the linux **`id`** command to confirm the creation of the new user and to list its groups membership.
 
     ```
     # <copy>id training</copy>
@@ -167,7 +174,7 @@ In this step, you will create a new Kerberos principal named **`training`**. Ide
 
     ![](./images/id-training.png " ")
 
-## STEP 5: Access HDFS Using the New `training` Administrator User
+## STEP 6: Access HDFS Using the New **`training`** Administrator User
 
 Log into any of the Big Data Service nodes such as the **first master node**, get a Kerberos ticket for the **`training`** user, and then perform a file listing of HDFS:
 
@@ -191,7 +198,7 @@ Log into any of the Big Data Service nodes such as the **first master node**, ge
 
     ![](./images/no-ticket.png " ")
 
-## STEP 6: Add the `Training` User to Hue (optional)
+## STEP 7: Add the **`Training`** User to Hue (optional)
 
 In this step, you log into Hue as an administrator and add the **`training`** user as an administrator. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun1`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
