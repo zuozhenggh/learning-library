@@ -198,7 +198,7 @@ Log into any of the Big Data Service nodes such as the **first master node**, ge
 
     ![](./images/no-ticket.png " ")
 
-## STEP 7: Add the **`Training`** User to Hue (optional)
+## STEP 7: Add the **`training`** User to Hue (optional)
 
 In this step, you log into Hue as an administrator and add the **`training`** user as an administrator. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun1`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
