@@ -4,6 +4,8 @@
 
 In this lab, you will learn how to create a table by defining the data structures in Quick SQL.
 
+Estimated Time: 10 minutes
+
 ## **STEP 1** - Open Quick SQL
 1. Log into your workspace
 2. Click **SQL Workshop**
@@ -102,7 +104,7 @@ App from Script” button perform the following steps:*
     *{Note: When you click on Mac Index there will be no data displayed. You don't want to manually enter in data as the table will be populated in the next lab.}*
 
 ## **Summary**
-This completes Lab 2. You now know how to utilize Quick SQL to build a simple table and create an application on top of it. [Click here to navigate to Lab 3](?lab=lab-3-populating-table)
+This completes Lab 1. You now know how to utilize Quick SQL to build a simple table and create an application on top of it. [Click here to navigate to Lab 2](?lab=lab-2-populating-table)
 
 ## **Acknowledgements**
 

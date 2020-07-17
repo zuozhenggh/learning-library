@@ -3,6 +3,8 @@
 ## Introduction
 In this lab, you will learn how to utilize the REST APIs you created in the previous lab as the basis for Web Sources.
 
+Estimated Time: 10 minutes
+
 ## **STEP 1** – Create an App  
 In a normal development environment, rather than in a lab, at this point you would log out of the remote database, where you defined the REST APIs, and log into your local database where you want to build the application. However, given for this lab you are using the same workspace for both, there is no need to log out and log back in.
 
@@ -101,7 +103,7 @@ Given the URL Endpoint used above, the _Create Web Source_ operation determined 
 
 
 ## **Summary**
-This completes Lab 3. You now know how to define a Web Source module within an application and add the required operations for full CRUD operations. [Click here to navigate to Lab 4](?lab=lab-4-creating-pages).
+This completes Lab 2. You now know how to define a Web Source module within an application and add the required operations for full CRUD operations. [Click here to navigate to Lab 3](?lab=lab-3-creating-pages).
 
 ## **Acknowledgements**
 

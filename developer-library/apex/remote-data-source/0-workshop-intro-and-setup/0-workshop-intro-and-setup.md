@@ -6,6 +6,8 @@ This workshop utilizes Quick SQL to build a table in your local database. Then y
 The data used is the Big Mac Index from the Economist, which uses the price of McDonald’s Big Mac as the benchmark to measure the purchasing power parity between currencies.   
 *Note: this data is only updated every six months*
 
+Estimated Time: 50 minutes
+
 ### Objectives
 
 * Obtain a free development environment
@@ -19,12 +21,11 @@ The data used is the Big Mac Index from the Economist, which uses the price of M
 
 | # | Module | Est. Time |
 | --- | --- | --- |
-| 1 | [Signing up for an APEX Workspace](?lab=lab-1-sign-up-for-apex-workspace) | 5 min |
-| 2 | [Creating the Table](?lab=lab-2-creating-table) | 10 min |
-| 3 | [Populating the Table](?lab=lab-3-populating-table) | 5 min |
-| 4 | [Improving the Report](?lab=lab-4-improving-report) | 15 min |
-| 5 | [Adding a Chart](?lab=lab-5-adding-chart) | 5 min |
-| 6 | [Adding Chart Criteria](?lab=lab-6-adding-chart-criteria) | 5 min |
+| 1 | [Creating the Table](?lab=lab-1-creating-table) | 10 minutes |
+| 2 | [Populating the Table](?lab=lab-2-populating-table) | 5 minutes |
+| 3 | [Improving the Report](?lab=lab-3-improving-report) | 15 minutes |
+| 4 | [Adding a Chart](?lab=lab-4-adding-chart) | 5 minutes |
+| 5 | [Adding Chart Criteria](?lab=lab-5-adding-chart-criteria) | 5 minutes |
 
 **To log issues**, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
 
