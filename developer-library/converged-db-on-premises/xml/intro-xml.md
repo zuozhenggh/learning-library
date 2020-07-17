@@ -9,7 +9,7 @@ The basic building block of an XML document is an element, defined by tags. An e
 For example, XML documents can be very simple, such as the following:
 
 
- ![](./images/xml_snap.png " ") 
+ ![](./images/xml_snapa.png " ") 
 
 
 **XML with Oracle Database**
