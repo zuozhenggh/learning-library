@@ -98,7 +98,7 @@ In this step, you will use CM to access the cluster. In an HA-cluster, CM runs o
     https://129.213.193.15:7183
     ```
 
-3. On the CM Login screen, enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training123`**.
+3. On the CM Login screen, enter your **`username`** which is **`admin`** by default in CM. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training123`**.
 
   ![](./images/cm-login-page.png " ")
 
@@ -151,7 +151,7 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
     https://<ip-address>:8888
     ```
     **Note:**    
-    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the second utility node in your cluster, **`traininun1`**, which you created in the previous lab.
+    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **second utility node** in your cluster, **`traininun1`**, which you created in the previous lab.
 
     In our example, we used the reserved public IP address that is associated with our second utility node as follows:
 
@@ -159,7 +159,7 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
     https://150.136.199.24:8888
     ```
 
-3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** and **`password`**. Use the **`password`** that you specified when you created the cluster such as **`Training123`**.
+3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** which is **`admin`** by default in Hue. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training123`**.
 
   ![](./images/hue-login-page.png " ")
 
@@ -171,7 +171,7 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
 
   ![](./images/hue-doc.png " ")
 
-5. Exit Hue. From the **User** drop-down menu, select **Sign out**.
+5. Exit Hue. From the **admin** drop-down menu, select **Sign out**.
 
   ![](./images/hue-logout.png " ")
 
