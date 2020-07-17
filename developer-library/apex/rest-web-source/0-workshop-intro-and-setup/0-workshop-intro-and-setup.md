@@ -3,7 +3,7 @@
 ## Workshop Overview
 This workshop REST enables database objects, and then uses those REST endpoints as the basis for Web Source Modules within an application. Application components are then defined against these Web Source Modules, instead of being defined on local database objects.
 
-Estimated Time: 50 minutes
+Estimated Time: 45 minutes
 
 ### Objectives
 
@@ -18,11 +18,10 @@ Estimated Time: 50 minutes
 
 | # | Module | Est. Time |
 | --- | --- | --- |
-| 1 | [Signing up for an APEX Workspace](?lab=lab-1-sign-up-for-apex-workspace) | 5 min |
-| 2 | [REST Enabling Database Objects](?lab=lab-2-rest-enabling-database-objects) | 10 min |
-| 3 | [Defining Web Sources](?lab=lab-3-defining-web-sources) | 10 min |
-| 4 | [Creating Pages](?lab=lab-4-creating-pages) | 15 min |
-| 5 | [Defining a List of Values](?lab=lab-5-defining-list-values) | 10 min |
+| 1 | [REST Enabling Database Objects](?lab=lab-1-rest-enabling-database-objects) | 10 minutes |
+| 2 | [Defining Web Sources](?lab=lab-2-defining-web-sources) | 10 minutes |
+| 3 | [Creating Pages](?lab=lab-3-creating-pages) | 15 minutes |
+| 4 | [Defining a List of Values](?lab=lab-4-defining-list-values) | 10 minutes |
 
 **To log issues**, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
 

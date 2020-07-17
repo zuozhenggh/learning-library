@@ -4,6 +4,8 @@
 
 This workshop walks you through creating an application based on existing tables in your Oracle Database. Go from zero to hero in a ridiculously short period of time!
 
+Estimated Time: 70 minutes
+
 ### Objectives
 
 * Obtain a free development environment

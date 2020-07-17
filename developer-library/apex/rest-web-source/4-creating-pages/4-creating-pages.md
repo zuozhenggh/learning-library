@@ -3,6 +3,8 @@
 ## Introduction
 In this lab, you will learn how to utilize Web Source modules as the basis for creating reports and forms within the application.
 
+Estimated Time: 15 minutes
+
 ## **STEP 1** – Use the Create Page Wizard
 
 1. Return to the Application Home Page.     
@@ -198,7 +200,7 @@ The form page for editing records also needs some improvement.
     ![](images/show-delete.png " ")
 
 ## **Summary**
-This completes Lab 4. You now know how to utilize a REST endpoint to develop a report and form to allow full CRUD operations. [Click here to navigate to Lab 5](?lab=lab-5-defining-list-values).
+This completes Lab 3. You now know how to utilize a REST endpoint to develop a report and form to allow full CRUD operations. [Click here to navigate to Lab 4](?lab=lab-4-defining-list-values).
 
 ## **Acknowledgements**
 

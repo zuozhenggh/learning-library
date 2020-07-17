@@ -3,6 +3,8 @@
 ## Introduction
 In this lab, you will learn how to manipulate an Interactive Report to improve the data displayed and make it easier for users to analyze the data.
 
+Estimated Time: 15 minutes
+
 ### Background Information
 Now you have data loaded into the BIG\_MAC\_INDEX table you can start reviewing the local price of a McDonalds Big Mac and the exchange rate with the US Dollar.
 
@@ -164,7 +166,7 @@ Currently the changes you have made in the runtime environment can only be seen 
     ![](images/set-default.png " ")
 
 ## **Summary**
-This completes Lab 4. In this lab you learnt how to utilize a SQL query as the basis for a report, how to improve how columns are displayed, remove unwanted page elements, manipulate the report layout, and then save it for everyone to utilize. [Click here to navigate to Lab 5](?lab=lab-5-adding-chart)
+This completes Lab 3. In this lab you learnt how to utilize a SQL query as the basis for a report, how to improve how columns are displayed, remove unwanted page elements, manipulate the report layout, and then save it for everyone to utilize. [Click here to navigate to Lab 4](?lab=lab-4-adding-chart)
 
 ## **Acknowledgements**
 

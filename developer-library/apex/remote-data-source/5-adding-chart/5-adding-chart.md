@@ -3,6 +3,8 @@
 ## Introduction
 In this lab, you will learn how to add a chart page to the application.
 
+Estimated Time: 5 minutes
+
 ### Background Information
 The Big Mac Index includes data for countries over the last 20 years. Therefore, to better visualize trends in a country's exchange rate over time it would be highly beneficial to create a chart that is country specific.
 
@@ -162,7 +164,7 @@ Time to update the existing chart line (series), and add a few more data series.
     ![](images/final-runtime.png " ")
 
 ## **Summary**
-This completes Lab 5. In this lab you learnt how to create and modify a chart adding multiple series. [Click here to navigate to Lab 6](?lab=lab-6-adding-chart-criteria)
+This completes Lab 4. In this lab you learnt how to create and modify a chart adding multiple series. [Click here to navigate to Lab 5](?lab=lab-5-adding-chart-criteria)
 
 ## **Acknowledgements**
 

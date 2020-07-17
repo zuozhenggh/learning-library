@@ -3,6 +3,8 @@
 ## Introduction
 In this lab, you will learn how to insert data into a table from a REST API.
 
+Estimated Time: 5 minutes
+
 ### Background Information
 
 The **apex\_data\_parser** is a PL/SQL package which provides an easy interface to parse files from various file formats, including comma-delimited (.csv). The parser is implemented as a table function - so the developer accesses parser results like a table. Therefore, the parser can utilize INSERT ... SELECT statements to insert rows directly into a table from the specified file.
@@ -85,7 +87,7 @@ There are several ways to review the data.
     *{Note: Review the decimal places on the _DOLLAR\_EXCHANGE\_RATE_ column. In the next lab you will ensure the data displays properly.}*
 
 ## **Summary**
-This completes Lab 3. You now know how to utilize **apex\_data\_parser** and **apex\_web\_service.make\_rest\_request\_b** to populate a table in the Oracle database based on a REST endpoint. [Click here to navigate to Lab 4](?lab=lab-4-improving-report)
+This completes Lab 2. You now know how to utilize **apex\_data\_parser** and **apex\_web\_service.make\_rest\_request\_b** to populate a table in the Oracle database based on a REST endpoint. [Click here to navigate to Lab 3](?lab=lab-3-improving-report)
 
 ## **Acknowledgements**
 
