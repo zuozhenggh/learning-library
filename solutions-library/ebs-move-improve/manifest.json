@@ -1,0 +1,29 @@
+{
+    "tutorials": [
+        {
+            "title": "Workshop Overview",
+            "publisheddate": "05/22/2020",
+            "filename": "./README.md"
+        },
+        {
+            "title": "Lab 100: Preparing Your Tenancy for Oracle E-Business Suite",
+            "publisheddate": "05/22/2020",
+            "filename": "./lab100/labguide100.md"
+        },
+        {
+            "title": "Lab 200: Oracle E-Business Suite Cloud Manager Deployment and Configuration",
+            "publisheddate": "05/22/2020",
+            "filename": "./lab200/labguide200.md"
+        },
+        {
+            "title": "Lab 300: Provision Your Oracle E-Business Suite Environment",
+            "publisheddate": "05/22/2020",
+            "filename": "./lab300/labguide300.md"
+        },
+        {
+            "title": "Lab 400: Clone Your Oracle E-Business Suite Environment",
+            "publisheddate": "05/22/2020",
+            "filename": "./lab400/labguide400.md"
+        }
+     ]
+}
