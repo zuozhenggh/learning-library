@@ -1,31 +1,27 @@
 
 # Loading Data into an Autonomous Database Instance
 
-## Introduction
+## **Introduction**
 
 In this lab, you will upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
 
 You can load data into your new autonomous database (Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]) using Oracle Database tools, and Oracle and 3rd party data integration tools. You can load data:
 
-+ from files local to your client computer, or
++ from local files in your client computer, or
 + from files stored in a cloud-based object store
 
-For the fastest data loading experience Oracle recommends uploading the source files to a cloud-based object store, such as Oracle Cloud Infrastructure Object Storage, before loading the data into your ADW or ATP database.
+For the fastest data loading experience, Oracle recommends uploading the source files to a cloud-based object store, such as *Oracle Cloud Infrastructure Object Storage*, before loading the data into your ADW or ATP database.
 
-To load data from files in the cloud into your autonomous database, use the new PL/SQL `DBMS_CLOUD` package. The `DBMS_CLOUD` package supports loading data files from the following Cloud sources: Oracle Cloud Infrastructure Object Storage, Oracle Cloud Infrastructure Object Storage Classic, Amazon AWS S3, and Microsoft Azure Object Store.
+To load data from files in the cloud into your autonomous database, use the new PL/SQL *`DBMS_CLOUD`* package. The `DBMS_CLOUD` package supports loading data files from the following Cloud sources: Oracle Cloud Infrastructure Object Storage, Oracle Cloud Infrastructure Object Storage Classic, Amazon AWS S3, and Microsoft Azure Object Store.
 
 This lab shows how to load data from Oracle Cloud Infrastructure Object Storage using two of the procedures in the `DBMS_CLOUD` package:
 
 + **create_credential**: Stores the object store credentials in your Autonomous Data Warehouse schema.
     + You will use this procedure to create object store credentials in your ADW admin schema.
 + **copy_data**: Loads the specified source file to a table. The table must already exist in ADW.
-    + You will use this procedure to load tables in your admin schema with data from data files staged in the Oracle Cloud Infrastructure Object Storage cloud service.
+    + You will use this procedure to load tables to your admin schema with data from data files staged in the Oracle Cloud Infrastructure Object Storage cloud service.
 
-**Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
-
-### More Information
-For more information about loading data, see the documentation [Loading Data from Files in the Cloud](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-data-warehouse-cloud&id=CSWHU-GUID-07900054-CB65-490A-AF3C-39EF45505802).
-
+*Note: While this lab uses ADW, the steps are identical for loading data into an ATP database.*
 
 ### Objectives
 
@@ -36,22 +32,20 @@ For more information about loading data, see the documentation [Loading Data fro
 -   Learn how to load data from the Object Store
 -   Learn how to troubleshoot data loads
 
-### Required Artifacts
-
--   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-
-In Steps 1 to 3, you will create one ADW table, CHANNELS_LOCAL, and load it with sample data from your local file system. In the remaining steps, you will create several ADW tables and load them with sample data that you stage to an OCI Object Store.
+In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it with sample data from your *local file system*. In the remaining steps, you will create several ADW tables and load them with sample data that you stage to an *OCI Object Store*.
 
 ### Lab Prerequisites
 
-- This lab assumes you have completed the **Login to Oracle Cloud/Sign Up for Free Trial** and **Getting Started**  labs seen in the menu on the right.
+- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+
+- This lab assumes you have completed the **Prerequisites** and **Lab 1** seen in the Contents menu on the right.
 
 
 ## **STEP 1**: Download Sample Data and Create Local Table
 
 1. For this step, you will download a .csv file to your local computer, then use it to populate the CHANNELS_LOCAL table that you will create in your ADW database in the next step.  Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/A5zXkuuOG2C5AOBHTiVpJd3obiECvsk8omPtnzvTwP0/n/c4u03/b/data-management-library-files/o/channels.csv" target="\_blank">here</a> to download the sample channels.csv file, saving it to a directory on your local computer.
 
-2. In your autonomous database's details page, click the **Tools** tab. Click **Open SQL Developer Web**.
+2. In your Autonomous Database Details page, click the **Tools** tab. Click **Open SQL Developer Web**.
 
     ![](./images/open_sql_developer_web.jpg " ")
 
@@ -70,41 +64,44 @@ In Steps 1 to 3, you will create one ADW table, CHANNELS_LOCAL, and load it with
     -   Click **Select files** to select the file for data uploading.
 
     -   Click the browse button and navigate to the channels.csv file that you downloaded in Step 1.
+  
+    -   Or, you can drag and drop the channels.csv file
 
     ![](./images/click_select_files_in_import_data_wizard.jpg " ")    
 
 3. After you select the file, the wizard provides a **Data preview** step. You can click the **Show/Hide options** button to perform actions including skipping rows and limiting rows to upload. Use the horizontal toolbar to check the data.
 
-4. When you are satisfied with the file's data, click **NEXT**.
+4. When you are satisfied with the file's data, click **Next**.
 
     ![](./images/data_preview_in_import_data_wizard.jpg " ")
 <!--When newline is fixed ![](./images/snap0014654.jpg " ")-->
 
-  *Note - If your source .csv file has delimiters other than commas between words, or line delimiters other than new-line characters, you will need to use SQL Developer for now, rather than SQL Developer Web.*
+  *Note: If your source .csv file has delimiters other than commas between words, or line delimiters other than new-line characters, you will need to use SQL Developer for now, rather than SQL Developer Web.*
 
-5. In Step 2 of the Import Wizard, **Column mapping**, you can change the source-to-target column mappings. For this exercise, leave them as default and click **NEXT**.
+5. In Step 2 of the Import Wizard, **Data mapping**, you can change the source-to-target column mappings. For this exercise, leave them as default and click **Next**.
 
     ![](./images/column_mapping_in_import_data_wizard.jpg " ")
 
-6.  The final step of the Import Wizard, **Review**, reflects all of the choices you made in the Wizard. Click **FINISH** to load the data into your newly created table *CHANNELS_LOCAL*. If you don't see it in your object tree under Tables, right click on Tables and hit refresh.
+6.  The final step of the Import Wizard, **Review**, reflects all of the choices you made in the Wizard. Click **Finish** to load the data into your newly created table *CHANNELS_LOCAL*. 
     ![](./images/review_step_in_import_data_wizard.jpg " ")
 
-7. Click **OK** to confirm the import. Depending on the size of the data file you are importing, the import may take some time.
+7. Click **OK** to confirm the import. Depending on the size of the data file you are importing, the import may take some time. After importing finishes, you can expand the *CHANNELS_LOCAL* table to see the data being imported. If you don't see your table or your data in your object tree under Tables, click the refresh button.
 
     ![](./images/click_ok_to_confirm_import.jpg " ")
+    ![](./images/import_finish.jpg " ")
 
 ## **STEP 3**: Download Sample Data and Create Target Tables
 
-In Steps 1 and 2, you created an ADW table and loaded it with sample data from your local file system. Now, you will create several ADW tables and load them with sample data that you stage to an OCI Object Store.
+In Steps 1 and 2, you created an ADW table and loaded it with sample data from your local file system. Now, you will create several ADW tables and load them with sample data that you stage to an *OCI Object Store*.
 
 <!-- The data file is located in the c4u03 Object Store. This PAR link is good through June 23, 2025 -->
 1. For this step, you will need a handful of data files.  Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/gDf44URh0sFPADBZo7fp6wIgXb-0PO5ZadFQTq2nqNo/n/c4u03/b/data-management-library-files/o/adb_sample_data_files.zip" target="\_blank">here</a> to download a zip file of the sample source files for you to upload to the object store. Unzip it to a directory on your local computer.
 
-2. Connected as your admin user in SQL Developer Web, copy and paste <a href="./files/create_tables.txt" target="\_blank">this code snippet</a> to a worksheet. Take a moment to examine the script. Then click the **Run Script** button to run it.
+2. Connected as your ADMIN user in SQL Developer Web, copy and paste <a href="./files/create_tables.txt" target="\_blank">this code snippet</a> to a worksheet. Take a moment to examine the script. You will first drop any tables with the same name before creating tables. Then click the **Run Script** button to run it.
 
--   It is expected that you may get ORA-00942 *table or view does not exist* errors during the DROP TABLE commands for the first execution of the script, but you should not see any other errors.
+      -  It is expected that you may get *ORA-00942 table or view does not exist* errors during the DROP TABLE commands for the first execution of the script, but you should not see any other errors.
 
-    ![](./images/table_creation_results_sql_dev_web.jpg " ")
+       ![](./images/table_creation_results_sql_dev_web.jpg " ")
 
 *Note that you do not need to specify anything other than the list of columns when creating tables in the SQL scripts. You can use primary keys and foreign keys if you want, but they are not required.*
 
@@ -112,7 +109,7 @@ In Steps 1 and 2, you created an ADW table and loaded it with sample data from y
 
 In OCI Object Storage, a bucket is the terminology for a container of multiple files.
 
-1. Now you set up the OCI Object Store. From the Autonomous Data Warehouse console, pull out the left side menu from the top-left corner and select **Object Storage > Object Storage**. To revisit signing-in and navigating to ADW, please see [Lab 1](LabGuide1.md).
+1. Now you set up the OCI Object Store. From the Autonomous Data Warehouse console, pull out the left side menu from the top-left corner and select **Object Storage > Object Storage**. To revisit signing-in and navigating to ADW, please see [Lab 1](?lab=lab-1-provision-autonomous-database).
 
   ![](images/snap0014294.jpg " ")
 
@@ -135,17 +132,15 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
     ![](images/snap0014301.jpg " ")
 
-2. Click the **Upload Objects** button:
+2. Click the **Upload** button:
 
     ![](images/snap0014302.jpg " ")
 
-3. Drag and drop, or click  **select files**,  to select all the files downloaded in Step 1. Click **Upload Objects** and wait for the upload to complete:
+3. Drag and drop, or click  **select files**,  to select all the files downloaded in Step 3. Click **Upload** and wait for the upload to complete:
 
     ![](images/snap0014303.jpg " ")
 
-4. Repeat this for all files you downloaded in Step 1 for this lab. When the upload is complete, click **Close.**
-
-5. The end result should look like this with all files listed under Objects:
+4. The end result should look like this with all files listed under Objects:
 
     ![](images/snap0014304.jpg " ")
 
@@ -159,7 +154,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
     ![](images/step6.2-constructurls2.png " ")
 
-3. Take a look at the URL you copied. In this example above, the **region name** is us-ashburn-1, the **Namespace** is idthydc0kinr, and the **bucket name** is ADWCLab.
+3. Take a look at the URL you copied. In this example above, the **region name** is us-ashburn-1, the **Namespace** is c4u03, and the **bucket name** is ADWCLab.
 
     *Note: The URL can also be constructed as below:*
 
@@ -167,7 +162,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
 ## **STEP 7**: Creating an Object Store Auth Token
 
-To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the native URI, and the OCI user Auth Token.
+To load data from the Oracle Cloud Infrastructure (OCI) Object Storage, you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the native URI, and the OCI user Auth Token.
 
 1. Locate your menu bar and click on the **person icon** at the far upper right.  From the drop-down menu, select your **user's name** (remember this username could be an email).
 
@@ -201,7 +196,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
 ## **STEP 8**: Create a Database Credential for Your User
 
-In order to access data in the Object Store you have to enable your database user to authenticate itself with the Object Store using your OCI object store account and Auth token. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
+In order to access data in the Object Store, you have to enable your database user to authenticate itself with the Object Store using your OCI object store account and Auth token. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
 
 1. Connected as your user in SQL Developer Web, copy and paste <a href="./files/create_credential.txt" target="\_blank">this code snippet</a> to a SQL Developer Web worksheet.
 
@@ -283,9 +278,11 @@ Please proceed to the next lab.
 
 ## Want to Learn More?
 
-Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/load-data.html#GUID-1351807C-E3F7-4C6D-AF83-2AEEADE2F83E) for documentation on loading data into an autonomous database.
+For more information about loading data, see the documentation [Loading Data from Files in the Cloud](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-data-warehouse-cloud&id=CSWHU-GUID-07900054-CB65-490A-AF3C-39EF45505802).
 
-## Acknowledgements
+Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/load-data.html#GUID-1351807C-E3F7-4C6D-AF83-2AEEADE2F83E) for documentation on loading data into an Autonomous Data Warehouse.
+
+## **Acknowledgements**
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
