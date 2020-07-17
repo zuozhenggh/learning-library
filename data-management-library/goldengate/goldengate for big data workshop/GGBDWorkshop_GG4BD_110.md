@@ -151,13 +151,13 @@ You have completed lab 1! Great Job!
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott, Zia Khan
- - ** Contributors ** - Brian Elliott, Zia Khan
+ - ** Authors ** - Brian Elliott
+ - ** Contributors ** - Brian Elliott
  - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott, Zia Khan
+ - ** Last Updated By ** - Brian Elliott
  - ** Expiration Date ** – July 2021
 
 Please submit an issue on our issues page:
 [issues](https://github.com/oracle/learning-library/issues) 
 
- We review it regularly. 
+ We review it regularly.
