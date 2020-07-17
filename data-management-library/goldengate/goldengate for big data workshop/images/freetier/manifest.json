@@ -17,72 +17,66 @@
         ],
         "labs": [
             {
-                "number": "0",
+                "number": "1",
                 "filename": "GGBDWorkshop_GG4BD_110.md",
                 "title": "README First",
                 "description": "Step-by-step workshop instructions",
                 "labels": {"version": "Instructor Led"}
             },
             {
-                "number": "1",
+                "number": "2",
                 "filename": "GGBDWorkshop_GG4BD_210.md",
                 "title": "Lab 100: Provision Golden Gate for Big Data",
                 "description": "Steps ",
                 "labels": {"version": "Instructor Led"}
             },
-            {
-                "number": "2",
-                "filename": "GGBDWorkshop_GG4BD_300.md",
-                "title": "Lab 200: MySQL   MySQL unidirectional replication",
-                "description": "steps",
-                "labels": {"version": "Instructor Led"}
-            },
+           
             {
                 "number": "3",
-                "filename": "GGBDWorkshop_GG4BD_400.md",
-                "title": "Lab 300: Lab 3 – MySQL --> HDFS (delimited text format)",
+                "filename": "GGBDWorkshop_GG4BD_310.md",
+                "title": "Lab 3 – MySQL --> HDFS (delimited text format)",
                 "description": "lab",
                 "labels": {"version": "Instructor Led"}
             },
             {
                 "number": "4",
-                "filename": "GGBDWorkshop_GG4BD_500.md",
-                "title": "Lab 400: Lab 4 – MySQL --> Hive (Avro format)",
+                "filename": "GGBDWorkshop_GG4BD_410.md",
+                "title": "Lab 4 – MySQL --> Hive (Avro format)",
                 "description": "lab 400",
                 "labels": {"version": "Instructor Led"}
             },
             {
                 "number": "5",
-                "filename": "GGBDWorkshop_GG4BD_600.md",
-                "title": "Lab 500: MySQL --> HBase",
+                "filename": "GGBDWorkshop_GG4BD_510.md",
+                "title": "Lab 5: MySQL --> HBase",
                 "description": "lab",
                 "labels": {"version": "Instructor Led"}
             },
             {
                 "number": "6",
-                "filename": "GGBDWorkshop_GG4BD_700.md",
-                "title": "Lab 600: Lab 6 – MySQL --> Kafka (Json format)",
+                "filename": "GGBDWorkshop_GG4BD_610.md",
+                "title": "Lab 6 – MySQL --> Kafka (Json format)",
                 "description": "lab",
                 "labels": {"version": "Instructor Led"}
             },
             {
                 "number": "7",
-                "filename": "GGBDWorkshop_GG4BD_800.md",
-                "title": "Lab 700: MySQL --> Cassandra",
+                "filename": "GGBDWorkshop_GG4BD_710.md",
+                "title": "Lab 7: MySQL --> Cassandra",
                 "description": "lab",
                 "labels": {"version": "Instructor Led"}
             },
             {
                 "number": "8",
-                "filename": "GGBDWorkshop_GG4BD_900.md",
-                "title": "Lab 800: Appendix A – Handler Configuration Properties",
+                "filename": "GGBDWorkshop_GG4BD_910.md",
+                "title": "Lab 8: Appendix A – Handler Configuration Properties",
                 "description": "lab",
                 "labels": {"version": "Instructor Led"}
             },
             {
                 "number": "9",
-                "filename": "GGBDWorkshop_GG4BD_900.md",
-                "title": "Lab 900 - MySQL to Oracle using JDBC",
+                "filename": "GGBDWorkshop_GG4BD_910.md",
+                "title": "Lab 9 - MySQL to Oracle using JDBC",
                 "labels": {"version": "Instructor Led"}
             },
             {
