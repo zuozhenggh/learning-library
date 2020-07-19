@@ -1,4 +1,4 @@
-# About This Hands-On Lab and Workbook
+# Move and Improve E-Business Suite to Oracle Cloud Infrastructure (OCI)
 
 ## Introduction
 Approximately 2 hours are required to complete this workshop.
