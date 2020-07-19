@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Big Data Service nodes are by default assigned private IP addresses, which aren't accessible from the public internet. In **Lab 4: Access a BDS Node Using a Public IP Address**, you learned about the different methods you can make the nodes in the cluster publicly available on the internet.
+Big Data Service nodes are by default assigned private IP addresses, which aren't accessible from the public internet. In **Lab 4: Access a BDS Node Using a Public IP Address**, you learned about the different methods that you can use to make the nodes in the cluster publicly available on the internet.
 
 In this lab, you will map the private IP address of the **first master node** to a new public IP addresses to make this node publicly available on the internet. _**This assumes that making the IP address public is an acceptable security risk.**_ You will also create a Hadoop Administrator (superuser) that will be used for the Big Data Service Cluster. This user will have full access to all the data and metadata on the cluster.
 
@@ -46,15 +46,15 @@ In this step, you will set three variables using the **`export`** command. The v
 
 2. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
 
-      ```
-      $ <copy>export DISPLAY_NAME=<i>"traininmn0-public-ip"</i></copy>
-      ```
+    ```
+    $ <copy>export DISPLAY_NAME=<i>"traininmn0-public-ip"</i></copy>
+    ```
 
 3. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it in the command line.   
 
-      ```
-      $ <copy>export SUBNET_OCID=<i>"subnet-ocid</i>"</copy>
-      ```
+    ```
+    $ <copy>export SUBNET_OCID=<i>"subnet-ocid</i>"</copy>
+    ```
     **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **STEP 1** of this lab.
 
     In our example, we replaced the **_``subnet-ocid``_** with our own **`subnet-ocid`**:
@@ -64,9 +64,9 @@ In this step, you will set three variables using the **`export`** command. The v
 
 4. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
 
-      ```
-      $ <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
-      ```
+    ```
+    $ <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
+    ```
   **Note:** In the preceding command, substitute **_`ip-address`_** with your first utility node's private IP address.
 
   In our example, we replaced the **_``ip-address``_** with the private IP address of our first utility node that we identified in **STEP 1** of this lab.
