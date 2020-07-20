@@ -1,0 +1,12 @@
+# Copyright (c) 2020 Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+#!/bin/bash
+ 
+sudo yum update -y
+sudo /usr/bin/ol_yum_configure.sh
+sudo yum install bind -y
+sudo firewall-offline-cmd --add-port=53/udp
+sudo firewall-offline-cmd --add-port=53/tcp
+sudo /bin/systemctl restart firewalld
+sudo cp ~/named.conf /etc/named.conf
+sudo service named restart
