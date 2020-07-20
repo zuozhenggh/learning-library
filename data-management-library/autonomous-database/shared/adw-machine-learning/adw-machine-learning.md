@@ -1,8 +1,8 @@
 # Simple Introduction to Machine Learning Algorithms (DBMS\_PREDICTIVE\_ANALYTICS)
 
-## Introduction
+## **Introduction**
 
-In this lab you will be using the Oracle Machine Learning (OML) notebook application provided with ADWC to explore some samples of the DBMS\_PREDICTIVE\_ANALYTICS functionality. DBMS\_PREDICTIVE\_ANALYTICS provides a set of easy-to-use machine learning procedures to simplify the machine learning process.
+In this lab, you will be using the Oracle Machine Learning (OML) notebook application provided with Autonomous Data Warehouse Cloud (ADWC) to explore some samples of the DBMS\_PREDICTIVE\_ANALYTICS functionality. DBMS\_PREDICTIVE\_ANALYTICS provides a set of easy-to-use machine learning procedures to simplify the machine learning process.
 
 ### Objectives
 
@@ -14,14 +14,14 @@ In this lab you will be using the Oracle Machine Learning (OML) notebook applica
 
 -   This lab requires a user with access to the Oracle Machine Learning Notebook application
 
-    **Note:** you created such a user in the previous lab.
+    *Note: you created such a user in the previous lab.*
 
-## STEP 1: Download the sample notebook for this lab
+## **STEP 1**: Download the sample notebook for this lab
 The first step is to download the sample notebook and then import it into the Oracle ML notebook application.
 
 1. **Click** <a href="./files/Basic_Machine_Learning.json" download="./files/Basic_Machine_Learning.json" target="\_blank">here</a> and download the sample notebook for this lab, Basic\_Machine\_Learning.json, to a folder on your local computer.
 
-## STEP 2: Login to the Oracle ML Notebook as one of your ML notebook users
+## **STEP 2**: Login to the Oracle ML Notebook as one of your ML notebook users
 
 1. In the previous lab, you created 2 users for the Oracle ML Notebook (omluser1 and omluser2).  Login to Oracle ML Notebook as one of those users.  Hint: the link to sign in to Oracle ML Notebook was sent to the email address you provided when you created the new users.
 
@@ -29,37 +29,37 @@ The first step is to download the sample notebook and then import it into the Or
 
     ![](./images/Picture700-12.png " ")
 
-## STEP 3: Click the Notebooks link
+## **STEP 3**: Click the Notebooks link
 
 1. Click the **Notebooks** link.
 
     ![](./images/oml_dashboard_link.png " ")
 
-## STEP 4: Click the Import button
+## **STEP 4**: Click the Import button
 
 1. Click the **Import** button.
 
     ![](./images/snap0014522.jpg " ")
 
-## STEP 5: Select the lab notebook .json file you downloaded earlier
+## **STEP 5**: Select the lab notebook .json file you downloaded earlier
 
 1. Select the lab notebook **Basic\_Machine\_Learning.json** file you downloaded previously in Step 1.
 
     ![](./images/snap0014523.jpg " ")
 
-## STEP 6: Click the Basic Machine Learning link to open it
+## **STEP 6**: Click the Basic Machine Learning link to open it
 
 1. Click the **Basic Machine Learning** link to open it.
 
     ![](./images/snap0014524.jpg " ")
 
-## STEP 7: Read and Run the Basic Machine Learning notebook, paragraph by paragraph, to learn about using DBMS\_PREDICTIVE\_ANALYTICS
+## **STEP 7**: Read and Run the Basic Machine Learning notebook, paragraph by paragraph, to learn about using DBMS\_PREDICTIVE\_ANALYTICS
 
 1.  The notebook will provide some live examples of DBMS\_PREDICTIVE\_ANALYTICS in action against the sample SALES HISTORY tables.  There are additional instructions and steps in the notebook itself.
 
     ![](./images/snap0014525.jpg " ")
 
-## STEP 8: Create a machine learning notebook using an OML Example
+## **STEP 8**: Create a machine learning notebook using an OML Example
 
 1. Go back to OML dashboard and click **Examples**. The Examples lists pre-populated Oracle Machine Learning notebook templates which you can view, like, and use it to create new templates.
 
@@ -85,10 +85,10 @@ The first step is to download the sample notebook and then import it into the Or
 
 Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/20/dmapi/oml4sql-basics.html#GUID-BFA7FAAE-F5CB-4A42-886A-47B6D502B492) for documentation on Oracle Machine Learning algorithms.
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, June 2020
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

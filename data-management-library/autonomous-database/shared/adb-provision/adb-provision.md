@@ -88,6 +88,8 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
     - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do NOT select it.
 
+    *Note: You cannot scale up/down an Always Free autonomous database. If you will do **Scaling and Performance** lab, you should NOT select **Always Free** in this step.*
+    
     ![](./images/Picture100-26c.png " ")
 
 7. Create administrator credentials:
