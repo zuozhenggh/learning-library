@@ -3,7 +3,7 @@
         {
             "title": "Prerequisites",
             "description": "Note that the title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "../../../common/prerequisite-freetier-lab/prerequisite-freetier-lab.md"
+"filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Introduction",
@@ -24,8 +24,8 @@
             "filename": "../../../data-load-lab/data-load-lab.md"
         },
         {
-            "title": "Lab 4: Query",
-            "filename": "../../../query-lab/query-lab.md"
+            "title": "Lab 4: Visualize",
+            "filename": "../../../visualize-lab/visualize-lab.md"
         }
     ]
 }

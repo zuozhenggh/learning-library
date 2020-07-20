@@ -12,7 +12,7 @@
 
 In this example, the goal is to create several "children" workshops from one longer "parent" workshop. The children are made up of parts from the parent.
 
-workshop-with-common-labs/
+workshop-with-shared-labs/
   product-area/
     product-type/
 
@@ -55,7 +55,7 @@ The Prerequisite "lab" is common to all three workshop types, and is in a common
   "filename": "../../../common/prerequisite-freetier-lab/prerequisite-freetier-lab.md"
   ```
 
-The labs are also located three levels up, for example:
+The labs are located three levels up, for example:
 
   ```
   "filename": "../../../provision-lab/provision-lab.md"
@@ -68,6 +68,14 @@ These two workshops are "children" or subsets of the full workshop. One covers j
 Read through the manifest.json file in the just-visualize-workshop and compare it to the manifest.json file of the everything-workshop.
 
 You'll note that Lab 6 of the everything workshop is now Lab 4 in the just-visualize workshop.
+
+### For example
+
+* The [https://github.com/oracle/learning-library/tree/master/data-management-library/autonomous-database/shared] folder is a good example of a workshop with shared labs in several offerings.
+* [The full set of 10 ADB labs](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-indepth/)
+* [A "quick start" version with the first 6 labs](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-overview/)
+* [A workshop that just covers provisioning](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/provision/freetier/)
+* [A workshop that covers just what is required to visualize data](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/visualizations/freetier)
 
 ### More information
 
