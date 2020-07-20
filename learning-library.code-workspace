@@ -1,10 +1,6 @@
 {
 	"folders": [
 		{
-			"name": "GG4BigData",
-			"path": "../GG4BigData"
-		},
-		{
 			"name": "learning-library",
 			"path": "."
 		}
