@@ -1,7 +1,7 @@
 # Lab 100: Preparing Your Tenancy for Oracle E-Business Suite
 
 ## Introduction
-In this exercise, you will prepare your tenancy for Oracle E-Business Suite.
+In this 30 mins exercise, you will prepare your tenancy for Oracle E-Business Suite.
 
 ## Part 1. Sign Up for a Trial Account
 
