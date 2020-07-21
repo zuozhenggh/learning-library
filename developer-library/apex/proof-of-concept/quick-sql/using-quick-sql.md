@@ -29,7 +29,7 @@ You should notice that the new model allows the assignment of Team Members to Pr
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account, LiveLabs account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+- An Oracle Cloud paid account, LiveLabs account or free trial. 
 - An APEX Workspace
 
 ## **Step 1** - Open Quick SQL

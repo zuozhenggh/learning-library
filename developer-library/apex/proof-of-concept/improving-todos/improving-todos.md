@@ -12,7 +12,7 @@ Estimated Time: 10 minutes
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+* An Oracle Cloud paid account, a LiveLabs account or free trial. 
 * An APEX Workspace and application
 
 ## **Step 1** - Adding Columns to the Report.
