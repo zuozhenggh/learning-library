@@ -4,7 +4,7 @@ The labs in this workshop walk you through all the steps to get started using th
 
 With Oracle Autonomous Database, we make it quick and easy for you to create a secure, fully managed database service in the Oracle Cloud which allows you to start loading and analyzing your data immediately.
 
-## What is an Autonomous Database?
+## **What is an Autonomous Database?**
 Oracle Autonomous Data Warehouse and Oracle Autonomous Transaction Processing are built around the market-leading Oracle database and come with fully automated data warehouse and transaction processing specific features that deliver outstanding query performance. This environment is delivered as a fully managed cloud service running on optimized high-end Oracle hardware systems.  You don’t need to spend time thinking about how you should store your data, when or how to back it up, or how to tune your queries. We take care of everything for you.
 
 Watch our short video that explains key features in Oracle's Autonomous Database:
@@ -13,7 +13,7 @@ Watch our short video that explains key features in Oracle's Autonomous Database
 
 Oracle’s Autonomous Database is the perfect quick-start service for fast data loading and sophisticated data reporting and analysis. Oracle manages everything for you, so you can focus on your data.
 
-## Workshop Objectives
+## **Workshop Objectives**
 - Get comfortable with Oracle's public cloud services
 - Provision a new Autonomous Database instance on Shared Infrastructure
 - Run sample queries against the sample data sets
@@ -23,7 +23,7 @@ Oracle’s Autonomous Database is the perfect quick-start service for fast data 
 - Create Oracle Machine Learning SQL notebooks
 - Use the in-database DBMS\_PREDICTIVE\_ANALYTICS functionality
 
-## Lab Breakdown
+## **Lab Breakdown**
 - **Lab 1:** Provision your first Autonomous Data Warehouse.
 - **Lab 2:** Explore SQL Developer Web with provided sample data sets.
 - **Lab 3:** Upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
@@ -37,7 +37,7 @@ Oracle’s Autonomous Database is the perfect quick-start service for fast data 
 
 **After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
 
-## Workshop Prerequisites
+## **Workshop Prerequisites**
 This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
 ###Getting Help During This Workshop

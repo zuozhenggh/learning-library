@@ -1,6 +1,6 @@
 # Query Data in External Files
 
-## Introduction
+## **Introduction**
 
 In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Object Storage directly without loading them to your database.
 
@@ -13,7 +13,7 @@ In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Objec
 
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have completed the **Prerequisites** and **Lab 1** seen in the Contents menu on the right.
-- Make sure you have completed the previous lab in the Contents menu on the right, [Lab 3: Loading Data](?lab=lab-3-loading-data), before you proceed with this lab. In Lab 3, you created data files on the OCI Object Storage and you created the credential object, all of which you will use in this lab.
+- Make sure you have completed the previous lab in the Contents menu on the right, *Loading Data*, before you proceed with this lab. In Loading Data, you created data files on the OCI Object Storage and you created the credential object, all of which you will use in this lab.
 
 ## **STEP 1**: Create External Tables with DBMS_CLOUD
 

@@ -1,6 +1,6 @@
 # Prerequisites
 
-## Introduction
+## **Introduction**
 
 Before you get started, you'll need an Oracle Cloud account. This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.
 
@@ -19,7 +19,7 @@ Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which p
 * A valid email address
 * Ability to receive SMS text verification (only if your email isn't recognized)
 
-## STEP 1: Create Your Free Trial Account
+## **STEP 1**: Create Your Free Trial Account
 
 In this section, you will fill out the registration form at [oracle.com/cloud/free](https://oracle.com/cloud/free).
 
@@ -46,7 +46,7 @@ In this section, you will fill out the registration form at [oracle.com/cloud/fr
 
 7. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign-in page. You'll also receive a confirmation email containing sign-in information.
 
-## STEP 2: Sign in to Your Account
+## **STEP 2**: Sign in to Your Account
 
 If you've signed out of the Oracle Cloud, use these steps to sign back in. Click **View Accounts** to bring up a menu.
 
@@ -72,7 +72,7 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in. Click
 
 You may now *proceed to the next lab*.
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
 - **Last Updated By/Date** - Kay Malcolm, Database Product Management, June 2020
