@@ -27,7 +27,7 @@ In this lab, you use the Oracle Machine Learning (OML) SQL notebook application 
 
 ### Lab Prerequisites
 
--   This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+-   This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 
 -   This lab assumes you have completed the **Login to Oracle Cloud** and **Getting Started** labs seen in the menu on the right.
 

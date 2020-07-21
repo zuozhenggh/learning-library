@@ -11,7 +11,7 @@ In this lab you will scale up your Oracle Autonomous Data Warehouse (ADW) or Aut
 
 ### Required Artifacts
 
--   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. If you don't already have your own cloud account then you can obtain a new cloud account through the free Oracle trial program.
+-   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. If you don't already have your own cloud account or a LiveLabs account then you can obtain a new cloud account through the free Oracle trial program.
 
 ### Lab Prerequisites
 
