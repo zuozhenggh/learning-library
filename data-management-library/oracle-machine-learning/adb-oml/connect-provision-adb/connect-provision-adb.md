@@ -97,7 +97,7 @@ You now have created your first ADW instance. Now, we are going to work on very 
 
 7.  Under **Choose a license type**, select **Bring Your Own License (BYOL)**.
 
-    ![](./images/011.png  " ")
+    ![](./images/011a.png  " ")
 
 8.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
