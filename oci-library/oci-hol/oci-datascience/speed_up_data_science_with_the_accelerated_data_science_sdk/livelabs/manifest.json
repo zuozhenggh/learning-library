@@ -3,7 +3,7 @@
         {
             "title": "Data Science Service",
             "description": "Introduction to the Data Science Service",
-            "filename": "./../intro/intro.md"
+            "filename": "./../../common/ODSC-intro.md"
         },
         {
             "title": "Lab 1: Sign Up for Free Trial",
