@@ -22,7 +22,7 @@ To determine which release of Oracle Application Express you are currently runni
   ![](images/version.png)
 
 ### Where to Run the Lab
-You can run this lab in any Oracle Database with APEX 19.2 installed. This includes the "Always Free" Oracle Autonomous Database, the free, "Development Only" apex.oracle.com service, your on-premises Oracle Database (providing APEX 19.2 is installed), on a third party cloud provider where APEX 19.2 is installed, or even on your laptop by installing Oracle XE or the Oracle VirtualBox App Dev VM and installing APEX 19.2.
+You can run this lab in any Oracle Database with APEX 20.1 installed. This includes the "Always Free" Oracle Autonomous Database, the free, "Development Only" apex.oracle.com service, your on-premises Oracle Database (providing APEX 20.1 is installed), on a third party cloud provider where APEX 20.1 is installed, or even on your laptop by installing Oracle XE or the Oracle VirtualBox App Dev VM and installing APEX 20.1.
 
 This lab is designed for a LiveLabs environment. If you haven't already done so, reserve an environment to run this workshop.
 
@@ -40,10 +40,10 @@ In this step, you will create an *Autonomous Transaction Processing* database, a
 
     ![](images/click-create-autonomous-database.png " ")
 
-3. Select the **Always Free** option, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.
+3. Select your compartment, leave Always Free unchecked, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.
 
     ![](images/atp-settings-1.png " ")
-    ![](images/atp-settings-2.png " ")
+    ![](images/atp-settings-2-notaf.png " ")
     ![](images/atp-settings-3.png " ")
 
 4. After clicking **Create Autonomous Database**, you will be redirected to the Autonomous Database Details page for the new instance.
