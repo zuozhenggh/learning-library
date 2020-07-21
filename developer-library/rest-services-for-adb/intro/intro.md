@@ -1,6 +1,6 @@
 # Introduction
 
-## About Oracle REST Data Services
+## **About Oracle REST Data Services**
 
 Oracle REST Data Services (ORDS) is a Java EE-based alternative for Oracle HTTP Server and *mod_plsql*. The Java EE implementation offers increased functionality including a command line based configuration, enhanced security, file caching, and RESTful web services. Oracle REST Data Services also provides increased flexibility by supporting deployments using Oracle WebLogic Server, Apache Tomcat, and a standalone mode.
 
@@ -16,9 +16,10 @@ This workshop assumes you have completed the following labs:
 * Lab: [Login to Oracle Cloud](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-1-login-oracle-cloud)
 * Lab: [Provision an Autonomous Database](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-2-provision-adb)
 
-## Acknowledgements
+## **Acknowledgements**
 
- - **Author** - Troy Anthony, May 2020
+ - **Author** - Troy Anthony, Database Product Management, May 2020
+ - **Contributors** - Arabella Yao, Product Manager Intern, Database Management
  - **Last Updated By/Date** - Troy Anthony, May 20 2020
 
  See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
