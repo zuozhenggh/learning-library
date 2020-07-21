@@ -33,9 +33,9 @@ In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Objec
 
 3. Download <a href="./files/create_external_tables_without_base_url.txt" target="\_blank">this code snippet</a> to a text editor.
 
-4. Replace `<file_uri_base>` in the code with the base URL you copied in Lab 3, Step 6. You should make 9 substitutions.
+4. Replace `<file_uri_base>` in the code with the base URL you copied in Loading Data Lab, Step 6. You should make 9 substitutions.
 
-    This code uses the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create external tables on the files staged in your object store. Note that you are still using the same credential and URLs of files on OCI Object Storage you used when loading data in Lab 3.
+    This code uses the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create external tables on the files staged in your object store. Note that you are still using the same credential and URLs of files on OCI Object Storage you used when loading data in Loading Data Lab.
 
     For each `<file_uri_list>` statement:
         
@@ -45,7 +45,7 @@ In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Objec
 
     ![](./images/step1.4.png " ")
 
-5.  Run the script. In the Substitutions Variables dialog, paste the base URL you copied in Lab 3, Step 6, and click **OK**.
+5.  Run the script. In the Substitutions Variables dialog, paste the base URL you copied in Loading Data Lab, Step 6, and click **OK**.
 
   ![](images/step1.5.png " ")
 
