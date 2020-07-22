@@ -143,7 +143,7 @@ The **EBA\_PROJECT\_TASKS** table is the primary table, where records will be re
     In the Create Application wizard, click **Add Page**.
 7. Click **Interactive Report**.
 8. On the Add Report Page, enter the following:
-      - Page Name - enter **Tasks**
+      - Page Name - enter **Tasks Report**
       - Table or View - select **EBA\_PROJECT\_TASKS**
       - Check **Include Form**
 

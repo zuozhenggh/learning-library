@@ -209,9 +209,9 @@ Currently a Completed Date can be entered on any project. However, it would grea
 
     ![](images/set-date.png " ")
 
-6. Now to review the Project form page.     
+6. Now to review the Project Form page.     
     Click **Save**  
-    *Note: If you click Save and Run Page, your changes will be saved but the page will not be run. Given this is a modal page, it must be run from a calling page, rather than directly from Page Designer*
+    *Note: If you click the Save and Run Page button, your changes will be saved but the page will not be run. Given the Project Form page is a modal page, it must be run from a calling page, rather than directly from Page Designer*
 
 7. Navigate back to the Runtime environment, refresh the browser, and within the Navigation Menu (left side) click **Projects**.     
     Click a card record to display the corresponding record in the form page.    
@@ -227,7 +227,7 @@ This completes Lab 5. You now know how to add additional pages to your applicati
 ## **Acknowledgements**
 
  - **Author** -  David Peake, Consulting Member of Technical Staff
- - **Contributors** - Arabella Yao, Product Manager Intern, Database Management
+ - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
