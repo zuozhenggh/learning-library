@@ -38,15 +38,17 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     ![](images/LabGuide1-39fb4a5b.png " ")
 
-4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. You can use the __List Scope__ drop-down menu to select a compartment. Select your __root compartment__, or __another compartment of your choice__ where you will create your new ADW instance. If you want to create a new compartment or learn more about them, click <a href="https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#three" target="\_blank">here</a>.
+4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment.
 
- *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
+    ![](images/livelabs-compartment.png " ")
+
+   *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
 
 5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Data Warehouse__ workload type is selected.
 
     ![](./images/Compartment.png " ")
 
-6. If you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page. You can go ahead and select a different available region such as **Phoenix** or **Toronto**.
+6. If you using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page. You can go ahead and select a different available region such as **Phoenix** or **Toronto**.
 
     ![](./images/Region.png " ")
 
@@ -88,8 +90,8 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
     - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do NOT select it.
 
-    *Note: You cannot scale up/down an Always Free autonomous database. If you will do **Scaling and Performance** lab, you should NOT select **Always Free** in this step.*
-    
+    *Note: You cannot scale up/down an Always Free autonomous database.*
+
     ![](./images/Picture100-26c.png " ")
 
 7. Create administrator credentials:
