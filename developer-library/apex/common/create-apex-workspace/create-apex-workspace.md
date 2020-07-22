@@ -40,7 +40,7 @@ In this step, you will create an *Autonomous Transaction Processing* database an
 
     ![](images/click-create-autonomous-database.png " ")
 
-3. Select your compartment, leave Always Free unchecked, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.
+3. Select your compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. Leave Always Free unchecked, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.
 
     ![](images/atp-settings-1.png " ")
     ![](images/atp-settings-2-notaf.png " ")
