@@ -40,10 +40,10 @@ In this step, you will create an *Autonomous Transaction Processing* database an
 
     ![](images/click-create-autonomous-database.png " ")
 
-3. Select the **Always Free** option, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.
+3. Select your compartment, leave Always Free unchecked, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.
 
     ![](images/atp-settings-1.png " ")
-    ![](images/atp-settings-2.png " ")
+    ![](images/atp-settings-2-notaf.png " ")
     ![](images/atp-settings-3.png " ")
 
 4. After clicking **Create Autonomous Database**, you will be redirected to the Autonomous Database Details page for the new instance.
