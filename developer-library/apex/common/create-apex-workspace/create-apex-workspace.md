@@ -28,7 +28,7 @@ This lab is designed for a LiveLabs environment. If you haven't already done so,
 
 ## **STEP 1**: Create an APEX Workspace on an Autonomous Transaction Processing instance
 
-In this step, you will create an *Autonomous Transaction Processing* database, and provision an Oracle APEX Workspace.
+In this step, you will create an *Autonomous Transaction Processing* database and provision an Oracle APEX Workspace.
 
 1. From within your Oracle Cloud environment, you will create an instance of the Autonomous Transaction Processing database service.
 

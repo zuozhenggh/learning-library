@@ -9,7 +9,7 @@ In this lab you will build an interactive application on the data structures you
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+- An Oracle Cloud paid account, a LiveLabs account or free trial. 
 - Data structures with sample data
 
 ## **Step 1** – Run the Create App Wizard
