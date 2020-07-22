@@ -1,9 +1,9 @@
 # Workshop Introduction and Overview                                    
 
-The labs in this workshop walk you through all the steps to get started using the **Oracle Big Data Service (BDS)**.
+The labs in this workshop walk you through all the steps to get started using **Oracle Big Data Service (BDS)**.
 
 ## What is Oracle Big Data Service?
-Oracle Big Data Service is a platform cloud service specifically designed for a diverse set of big data use cases and workloads. From short-lived clusters used to tackle specific tasks to long-lived clusters that manage large data lakes, Big Data Service scales to meet an organization’s requirements at a low cost and with the highest levels of security.
+Oracle Big Data Service is an Oracle Cloud Infrastructure service designed for a diverse set of big data use cases and workloads. From short-lived clusters used to tackle specific tasks to long-lived clusters that manage large data lakes, Big Data Service scales to meet an organization’s requirements at a low cost and with the highest levels of security.
 
 * Vertically integrated for Hadoop, Kafka, and Spark using Cloudera Enterprise Data Hub.
 * Highly secure and highly available clusters provisioned in minutes.
@@ -18,7 +18,7 @@ Watch our short video that explains key features in Oracle Big Data Service:
 
 
 ## Workshop Objectives
-- Prepare for using the Oracle Big Data Service (BDS).
+- Prepare for using Oracle Big Data Service (BDS).
 - Create a Big Data Service Hadoop cluster.
 - Add Cloud SQL to the cluster.
 - Access a BDS utility node using a public IP address.
@@ -32,7 +32,7 @@ Watch our short video that explains key features in Oracle Big Data Service:
 **After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
 
 ## Workshop Pre-requisites
-This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+This workshop requires an Oracle Cloud account. You may use your own cloud account or a training account whose details were given to you by an Oracle instructor.
 
 **You are all set to begin the labs! Please click Lab 1: Setup the BDS Environment in the Contents menu on the right.**
 

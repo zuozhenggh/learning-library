@@ -31,13 +31,14 @@ Your simple HA cluster will have the following profile:
   ![](./images/cluster-layout.png " ")
 
   **Note:**    
-  VM Standard Shapes offer the most flexibility. For example, you can increase the storage capacity for each node. For better performance and scalability, change the preceding specifications appropriately. Consider **DenseIO** shapes and **Bare Metal** shapes. **DenseIO** shapes are designed for large databases, big data workloads, and applications that require high-performance local storage. They include direct locally-attached NVMe-based SSDs. See [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vm-dense).
+  VM Standard Shapes offer the most flexibility. For example, you can increase the storage capacity for each node. For better performance and scalability, change the preceding specifications appropriately. Consider **DenseIO** shapes and **Bare Metal** shapes. **DenseIO** shapes are designed for large databases, big data workloads, and applications that require high-performance local storage. They include direct locally-attached NVMe-based SSDs. See [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vm-dense) in the Oracle Cloud Infrastructure documentation.
+
 
 Create the cluster as follows:
 
-1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
+1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, for example **`training-bds-admin`**, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page.
+2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** page.
 
 3. Under **Data & AI**, select **Big Data**.
 
@@ -139,7 +140,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
    ![](./images/node-details-1.png " ")  
 
-   The **Node Metrics** section displays the following charts: CPU UTILIZATION, MEMORY UTILIZATION, NETWORK BYTES IN, and NETWORK BYTES OUT. You can hover over any chart to get additional details.
+   The **Node Metrics** section at the bottom of the page is displayed after the cluster is provisioned. It displays the following charts: CPU UTILIZATION, MEMORY UTILIZATION, NETWORK BYTES IN, and NETWORK BYTES OUT. You can hover over any chart to get additional details.
 
    ![](./images/node-details-2.png " ")  
 
@@ -261,7 +262,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
 ## Acknowledgements
 
-* **Authors:**  
+* **Author:**  
     + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributors:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
