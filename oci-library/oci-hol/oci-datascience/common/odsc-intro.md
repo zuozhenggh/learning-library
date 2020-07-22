@@ -1,9 +1,5 @@
 # Data Science Service
 
-## Course Overview
-
-[](youtube:3giYLy3Qm3k)
-
 ## Introduction
 
 Oracle Cloud Infrastructure Data Science is a fully managed and serverless platform for data science teams to build, train, and manage machine learning models using Oracle Cloud Infrastructure.
@@ -32,7 +28,6 @@ Review the following concepts and terms to help you get started with Data Scienc
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
-* **Contributors**: Peter Jeffcock
 * **Last Updated By/Date**: John Peach, July 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

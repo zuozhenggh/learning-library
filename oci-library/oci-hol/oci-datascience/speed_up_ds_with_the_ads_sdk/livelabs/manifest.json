@@ -1,0 +1,29 @@
+{
+    "tutorials": [
+        {
+            "title": "Data Science Service",
+            "description": "Introduction to the Data Science Service",
+            "filename": "./../../common/odsc-intro.md"
+        },
+        {
+            "title": "Accelerated Data Science SDK",
+            "description": "Introduction to the Accelerated Data Science SDK",
+            "filename": "./../../common/ads-intro.md"
+        },
+        {
+            "title": "Lab 1: Sign Up for Free Trial",
+            "description": "Login to Oracle Cloud",
+            "filename": "../../../../../common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 2: Configure Data Science Service",
+            "description": "Configure the tenancy to work with the Data Science Service",
+            "filename": "./../../common/orm-solution-hub-setup.md"
+        },
+        {
+            "title": "Lab 3: Binary Classification Model",
+            "description": "Learn about ADS using a binary classification model",
+            "filename": "./../binary-classification-attrition.md"
+        }
+    ]
+}
