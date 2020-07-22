@@ -191,7 +191,7 @@ This completes Lab 7 and the workshop. You now know how to create a Shared Compo
 - [APEX Community](https://apex.oracle.com/community)
 - [APEX External Site + Slack](http://apex.world)
 
-## **Acknowledgements**
+## Acknowledgements
 
  - **Author** -  David Peake, Consulting Member of Technical Staff
  - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
