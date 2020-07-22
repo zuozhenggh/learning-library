@@ -1,4 +1,4 @@
-# Sign up for an Oracle APEX Workspace
+# Sign up for an APEX Workspace
 
 ## Introduction
 
@@ -15,6 +15,10 @@ An APEX Workspace is a logical domain where you define APEX applications. Each w
 To determine which release of Oracle Application Express you are currently running, do one of the following:
 * View the release number on the Workspace home page:
     - Sign in to Oracle Application Express. The Workspace home page appears. The current release version displays in bottom right corner.
+
+    ![](images/release-number.png " ")
+    ![](images/release-number2.png " ")
+
 * View the About Application Express page:
     - Sign in to Oracle Application Express. The Workspace home page appears.
     - Click the Help menu at the top of the page and select About. The About Application Express page appears.
@@ -118,17 +122,17 @@ In this part, you will create an Oracle Cloud trial account. Once you have signe
 ## **Option 2**: apex.oracle.com
 Signing up for apex.oracle.com is simply a matter of providing details on the workspace you wish to create and then waiting for the approval email.
 
-1. Go to [https://apex.oracle.com](https://apex.oracle.com.)
-2. Click **Get Started for Free**
+1. Go to [https://apex.oracle.com](https://apex.oracle.com.).
+2. Click **Get Started for Free**.
 
     ![](images/get-started.png " ")
 
-3. Scroll down until you see details for apex.oracle.com.  Click **Request a Free Workspace**
+3. Scroll down until you see details for apex.oracle.com.  Click **Request a Free Workspace**.
 
     ![](images/request-workspace.png " ")
 
-4. On the Request a Workspace dialog, enter your Identification details – First Name, Last Name, Email, Workspace  
-   *Note: For workspace, enter a unique name, such as first initial and last name*
+4. On the Request a Workspace dialog, enter your Identification details – First Name, Last Name, Email, Workspace. 
+   *Note: For workspace, enter a unique name, such as first initial and last name.*
 
     Click **Next**.
 
@@ -137,9 +141,9 @@ Signing up for apex.oracle.com is simply a matter of providing details on the wo
 5. Complete the remaining wizard steps.
 
 6. Check your email. You should get an email from `oracle-application-express_ww@oracle.com` within a few minutes.  
-   *Note: If you don’t get an email go back to Step 3 and make sure to enter your email correctly*
+   *Note: If you don’t get an email go back to Step 3 and make sure to enter your email correctly.*
 
-    Within the email body, click **Create Workspace**
+    Within the email body, click **Create Workspace**.
 
     ![](images/create-aoc-workspace.png " ")
 
@@ -152,14 +156,14 @@ Signing up for apex.oracle.com is simply a matter of providing details on the wo
 
 ## **Summary**
 
-This completes the lab setup. At this point, you know how to create an APEX Workspace and you are ready to start building amazing apps, fast.
+This completes lab 1. At this point, you know how to create an APEX Workspace and you are ready to start building amazing apps, fast.
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](?lab=lab-2-rest-enabling-database-objects).
 
 ## **Acknowledgements**
 
  - **Author** -  David Peake, Consulting Member of Technical Staff
- - **Contributors** - Arabella Yao, Product Manager Intern, Database Mangement
+ - **Contributors** - Arabella Yao, Product Manager Intern, Database Mangement | Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

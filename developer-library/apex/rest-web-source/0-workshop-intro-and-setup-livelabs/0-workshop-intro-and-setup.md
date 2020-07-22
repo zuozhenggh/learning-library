@@ -18,7 +18,7 @@ Estimated Time: 45 minutes
 
 | # | Module | Est. Time |
 | --- | --- | --- |
-| 1 | [Signing up for an APEX Workspace](?lab=lab-1-sign-up-for-apex-workspace) | 5 minutes |
+| 1 | [Create an APEX Workspace](?lab=lab-1-create-apex-workspace) | 5 minutes |
 | 2 | [REST Enabling Database Objects](?lab=lab-2-rest-enabling-database-objects) | 10 minutes |
 | 3 | [Defining Web Sources](?lab=lab-3-defining-web-sources) | 10 minutes |
 | 4 | [Creating Pages](?lab=lab-4-creating-pages) | 15 minutes |
