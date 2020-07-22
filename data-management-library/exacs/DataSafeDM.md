@@ -5,6 +5,10 @@ Using Data Safe, view sensitive data in your Exadata Cloud Service (ExaCS) datab
 
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
+Watch the video below for an overview on how to discover and mask sensitive data by using default masking formats in Oracle Data Safe
+
+<div style="max-width:768px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2171811/sp/217181100/embedIframeJs/uiconf_id/35965902/partner_id/2171811?iframeembed=true&playerId=kaltura_player&entry_id=1_r3xno1g8&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_8umiyo4o" width="768" height="432" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
+
 ## Objectives
 
 In this lab, you learn how to do the following:
@@ -31,11 +35,17 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 
 ### Step 2: View sensitive data in your ExaCS database
 
-- On the **Navigator** tab in SQL Developer Web, select the HCM1 schema from the first dropdown menu. In the second drop-down menu, ensure that Tables is selected.
-- Drag the `EMPLOYEES` table to the worksheet.
-- When prompted to choose an insertion type, click Select, and then click Apply.
-- View the SQL query on the worksheet.
-- On the toolbar, click the Run Statement button (green circle with a white arrow) to execute the query.
+- In the SQL Developer worksheet, run the following command to connect to your PDB:
+```
+<copy>ALTER SESSION SET CONTAINER= <PDBNAME></copy>
+```
+
+- Run the following query to select the `EMPLOYEES` table:
+
+```
+<copy>SELECT * FROM HCM1.EMPLOYEES</copy>
+```
+
 - Review the query results. Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, `hire_date`, `job_id`, `salary`, and `manager_id` are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
 - Keep this tab open so that you can return to it later in part 4 when you view the masked
 data.

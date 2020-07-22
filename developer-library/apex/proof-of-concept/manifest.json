@@ -1,39 +1,36 @@
 {
-  "lab": {
-    "title": "Building a Proof-of-Concept",
-    "modules": [
+    "tutorials": [
       {
-        "filename": "README.md",
-        "title": "Lab Introduction"
+        "title": "Prerequisites",
+        "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"
       },
       {
-        "filename": "1-sign-up-apex.md",
-        "title": "Module 1: Signing up for an APEX Workspace"
+        "title": "Introduction",
+        "filename": "intro/intro.md"
       },
       {
-        "filename": "2-using-quick-sql.md",
-        "title": "Module 2: Defining New Data Structures"
+        "title": "Lab 1: Define New Data Structures",
+        "filename": "quick-sql/using-quick-sql.md"
       },
       {
-          "filename": "3-create-app.md",
-          "title": "Module 3: Creating the Application"
+        "title": "Lab 2: Create the Application",
+          "filename": "create-app/create-app.md"
       },
       {
-        "filename": "4-regen-app.md",
-        "title": "Module 4: Regenerating the Application"
+        "title": "Lab 3: Regenerate the Application",
+        "filename": "regen-app/regen-app.md"
       },
       {
-        "filename": "5-improving-tasks.md",
-        "title": "Module 5: Improving Tasks"
+        "title": "Lab 4: Improve Tasks",
+        "filename": "improving-tasks/improving-tasks.md"
       },
       {
-        "filename": "6-improving-todos.md",
-        "title": "Module 6: Improving To Dos"
+        "title": "Lab 5: Improve To Dos",
+        "filename": "improving-todos/improving-todos.md"
       },
       {
-        "filename": "7-improving-links.md",
-        "title": "Module 7: Improving Links"
+        "title": "Lab 6: Improve Links",
+        "filename": "improving-links/improving-links.md"
       }
     ]
-  }
 }
