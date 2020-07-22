@@ -22,9 +22,9 @@ To determine which release of Oracle Application Express you are currently runni
   ![](images/version.png)
 
 ### Where to Run the Lab
-You can run this lab in any Oracle Database with APEX 20.1 installed. This includes the "Always Free" Oracle Autonomous Database, the free, "Development Only" apex.oracle.com service, your on-premises Oracle Database (providing APEX 20.1 is installed), on a third party cloud provider where APEX 20.1 is installed, or even on your laptop by installing Oracle XE or the Oracle VirtualBox App Dev VM and installing APEX 20.1.
+You can run this lab in any Oracle Database with APEX 20.1 installed. This includes [a LiveLabs environment](http://bit.ly/golivelabs), the "Always Free" Oracle Autonomous Database, the free, "Development Only" [apex.oracle.com](https://apex.oracle.com/) service, your on-premises Oracle Database (providing APEX 20.1 is installed), on a third party cloud provider where APEX 20.1 is installed, or even on your laptop by installing Oracle XE or the Oracle VirtualBox App Dev VM and installing APEX 20.1.
 
-This lab is designed for a LiveLabs environment. If you haven't already done so, reserve an environment to run this workshop.
+This lab is designed for a [a LiveLabs environment](http://bit.ly/golivelabs). If you haven't already done so, reserve an environment to run this workshop.
 
 ## **STEP 1**: Create an APEX Workspace on an Autonomous Transaction Processing instance
 
@@ -105,5 +105,5 @@ You may now *proceed to the next lab*.
  - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff | Arabella Yao, Product Manager Intern, Database Management, June 2020
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
-## **See an issue?** 
+## **See an issue?**
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
