@@ -1,17 +1,8 @@
 # Oracle Solutions Learning Library
 
-Welcome!  To get started, click on one of our workshops below.
+Welcome! 
 
-## Autonomous Database + Artificial Intelligence
-[![](./images/screenshot-adwai.png)](https://oracle.github.io/learning-library/solutions-library/cloud-data-platform/freetier/index.html)
-
-### Workshop Highlights
-- Provision an Autonomous Data Warehouse (ADW) Instance
-- Build an Oracle Application Express (APEX) App
-- Create Machine Learning Models within the Autonomous Data Warehouse (ADW) Instance by using the Oracle Machine Learning Tool (OML)
-- Visualize Data and Prediction Models in Oracle Analytics Cloud (OAC)
-- Bonus: Integrate a 3rd Party Web App and Oracle Digital Assistant (ODA) Chatbot
-
+Click [here](http://bit.ly/golivelabs) to access solutions content.
 
 
 ## Get an Oracle Cloud Trial Account for Free!

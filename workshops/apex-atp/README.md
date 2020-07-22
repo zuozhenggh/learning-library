@@ -18,4 +18,4 @@ Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?
 
 ## Access the Labs Using Our Web Interface
 **Click the image to use our easy to navigate HTML format:**
-[![Low Code Development Workshop](images/low-code-workshop.png " ")](https://oracle.github.io/learning-library/developer-library/apex/low-code-development/)
+[![Low Code Development Workshop](images/low-code-workshop.png " ")](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=634)

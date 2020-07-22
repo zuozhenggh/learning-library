@@ -10,10 +10,10 @@ With Oracle Machine Learning, Oracle moves the algorithms to the data, processin
 ## Workshops
 Click on the workshop below to begin.
 
-[![](./images/screenshot.png)](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml/workshop/index.html)  
+[![](./images/screenshot.png)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=560)  
 
 
-- [Access lab here](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml/workshop/index.html)
+- [Access lab here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=560)
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:

@@ -3,13 +3,7 @@
 Oracle’s revolutionary cloud database is self-driving, self-securing, self-repairing, and designed to eliminate error-prone manual data management. Easily deploy new or move your existing OLTP and data warehouse to the cloud. The secured, intelligent, highly available database in the cloud enables you to get more value from your data to grow your business.
 
 ## Workshops
-Click on one of our workshops below to access the content.
-
-### [Autonomous Database on Shared Infrastructure Quickstart Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-quickstart-workshop/freetier/)
-
-### [Autonomous Database on Shared Infrastructure Advanced Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-advanced-workshop/freetier/)
-
-### [Autonomous Database on Dedicated Infrastructure Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/dedicated/workshop/)
+Click [here](http://bit.ly/golivelabs) to access ADB content.
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
