@@ -22,11 +22,10 @@ workshop-single-set-labs/
         query-lab/
         analyze-lab/
         visualize-lab
-
-    workshops/
-      product-workshop-name/    -- contains one of the prerequisites and all 6 individual labs
         introduction/
           introduction.md       -- description of the everything workshop
+
+    workshops/
        freetier/                -- freetier version of the workshop
         index.html
         manifest.json
@@ -54,11 +53,22 @@ The Prerequisite "lab" is the first lab in a common folder three levels up:
   "filename": "../../../common/prerequisite-freetier-lab/prerequisite-freetier-lab.md"
   ```
 
-The labs are also located three levels up, for example:
+Labs that are common across all workshops are linked using an absolute path, for example:
+
+```
+"filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+```
+
+The labs are located three levels up, for example:
 
   ```
   "filename": "../../../provision-lab/provision-lab.md"
   ```
+
+### For example
+
+This [APEX Workshop](https://oracle.github.io/learning-library/developer-library/apex/spreadsheet/workshops/freetier/) is a good example a workshop with a single set of labs: [https://github.com/oracle/learning-library/tree/master/developer-library/apex/spreadsheet](https://github.com/oracle/learning-library/tree/master/developer-library/apex/spreadsheet).
+
 
 ### More information
 
