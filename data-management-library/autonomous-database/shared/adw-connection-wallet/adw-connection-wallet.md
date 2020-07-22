@@ -17,7 +17,7 @@ Watch a video demonstration of connecting to an autonomous database instance usi
 
 ### Lab Prerequisites
 
--   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+-   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 
 -   Oracle SQL Developer 19.2 or later is recommended (see <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">Oracle SQL Developer Downloads site</a>).
     Please use SQL Developer version 18.3 or later, as this version contains enhancements for key Autonomous Data Warehouse features, including using ADW behind a VPN or Firewall.

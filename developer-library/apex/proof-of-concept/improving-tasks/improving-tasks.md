@@ -12,7 +12,7 @@ Estimated Time: 15 minutes
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+- An Oracle Cloud paid account, a LiveLabs account or free trial. 
 - An APEX application
 
 ## **Step 1** - Improving the Projects List of Values.
