@@ -22,9 +22,9 @@ To determine which release of Oracle Application Express you are currently runni
   ![](images/version.png)
 
 ### Where to Run the Lab
-You can run this lab in any Oracle Database with APEX 20.1 installed. This includes the "Always Free" Oracle Autonomous Database, the free, "Development Only" apex.oracle.com service, your on-premises Oracle Database (providing APEX 20.1 is installed), on a third party cloud provider where APEX 20.1 is installed, or even on your laptop by installing Oracle XE or the Oracle VirtualBox App Dev VM and installing APEX 20.1.
+You can run this lab in any Oracle Database with APEX 20.1 installed. This includes [a LiveLabs environment](http://bit.ly/golivelabs), the "Always Free" Oracle Autonomous Database, the free, "Development Only" [apex.oracle.com](https://apex.oracle.com/) service, your on-premises Oracle Database (providing APEX 20.1 is installed), on a third party cloud provider where APEX 20.1 is installed, or even on your laptop by installing Oracle XE or the Oracle VirtualBox App Dev VM and installing APEX 20.1.
 
-This lab is designed for a LiveLabs environment. If you haven't already done so, reserve an environment to run this workshop.
+This lab is designed for a [a LiveLabs environment](http://bit.ly/golivelabs). If you haven't already done so, reserve an environment to run this workshop.
 
 ## **STEP 1**: Create an APEX Workspace on an Autonomous Transaction Processing instance
 
@@ -40,7 +40,7 @@ In this step, you will create an *Autonomous Transaction Processing* database an
 
     ![](images/click-create-autonomous-database.png " ")
 
-3. Select your compartment, leave Always Free unchecked, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.
+3. Select your compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. Leave Always Free unchecked, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.
 
     ![](images/atp-settings-1.png " ")
     ![](images/atp-settings-2-notaf.png " ")

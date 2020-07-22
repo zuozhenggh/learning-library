@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Before you get started, you should have a LiveLabs reservation. Go to [LiveLabs 2.0](https://apexapps-stage.oracle.com/pls/apex/dbpm/r/livelabs-v2-0) and click  ![](images/reserve.png) to request a reservation for this workshop.
+Before you get started, you should have a LiveLabs reservation. Go to [LiveLabs 2.0](http://bit.ly/golivelabs) and click  ![](images/reserve.png) to request a reservation for this workshop.
 
 If you already have a reservation, start your workshop by reading through the Introduction!
 
