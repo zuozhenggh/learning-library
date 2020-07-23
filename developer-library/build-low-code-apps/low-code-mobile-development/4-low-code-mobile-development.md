@@ -339,7 +339,7 @@ Service Connections are REST endpoints pointing to various services. In this ste
 
 **This completes the Lab!**
 
-**You are ready to proceed to** *Lab 500*
+**You are ready to proceed to** *Lab 5*
 
 ## Acknowledgements
 

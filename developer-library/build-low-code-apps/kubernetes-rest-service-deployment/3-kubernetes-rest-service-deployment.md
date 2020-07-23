@@ -156,7 +156,7 @@ Now that our REST service is deployed to Kubernetes, let's build a user interfac
 
 **This completes the Lab!**
 
-**You are ready to proceed to** *Lab 400*
+**You are ready to proceed to** *Lab 4*
 
 ## Acknowledgements
 

@@ -345,7 +345,7 @@ Now you are ready to move on to Step 4.
 
 **This completes the Lab!**
 
-**You are ready to proceed to** *Lab 100*
+**You are ready to proceed to** *Lab 1*
 
 ## Acknowledgements
 

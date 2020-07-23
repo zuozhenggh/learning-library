@@ -445,7 +445,7 @@ Go to OCI console, and click on cloud shell, once it is ready with your user dir
 
 **This completes the Lab!**
 
-**You are ready to proceed to [Lab 300](300.md)**
+**You are ready to proceed to** *Lab 3*
 
 ## Acknowledgements
 

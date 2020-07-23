@@ -278,7 +278,7 @@ In this lab you will use your Oracle Cloud Trial Account to upload a Data Pump e
 
 **This completes the Lab!**
 
-**You are ready to proceed to** *Lab 200*
+**You are ready to proceed to** *Lab 2*
 
 ## **STEP 5:** Grant Access to Alpha user to SQL Developer Web (Optional)
 
