@@ -2,28 +2,28 @@
 
 ## Instructions
 
-1. Open the workshop-single-set-labs template in Atom or Visual Studio Code using workshop-single-set-labs
+1. Open the workshop-multiple template in Atom or Visual Studio Code using workshop-multiple
 2. Start atom-live-server (Atom) or live-server (Visual Studio Code)
-3. Look at workshop-with-common-labs/product-area/product-type/workshops/everything-workshop-name/freetier
-4. In another tab, open workshop-with-common-labs/product-area/product-type/workshops/just-query-workshop-name
-5. In a third tab, open workshop-with-common-labs/product-area/product-type/workshops/just-visualization-workshop-name
+3. Look at workshop-with-commons/product-solution-short-name/workshops/everything-workshop-name/freetier
+4. In another tab, open workshop-with-commons/product-solution-short-name/workshops/just-query-workshop-name
+5. In a third tab, open workshop-with-commons/product-solution-short-name/workshops/just-visualization-workshop-name
 
 ## Folder Structure
 
 In this example, the goal is to create several "children" workshops from one longer "parent" workshop. The children are made up of parts from the parent.
 
-workshop-with-shared-labs/
-  product-area/
-    product-type/
+workshop-with-shareds/
+  
+    product-solution-short-name/
 
         -- individual labs
 
-        provision-lab/
-        setup-lab/
-        dataload-lab/
-        query-lab/
-        analyze-lab/
-        visualize-lab
+        provision/
+        setup/
+        dataload/
+        query/
+        analyze/
+        visualize
 
     workshops/
       everything-workshop-name/      -- contains one of the prerequisites and all 6 individual labs
@@ -52,13 +52,13 @@ Look at the everything-workshop/freetier folder and look at the manifest.json fi
 The Prerequisite "lab" is common to all three workshop types, and is in a common folder three levels up:
 
   ```
-  "filename": "../../../common/prerequisite-freetier-lab/prerequisite-freetier-lab.md"
+  "filename": "../../../common/prerequisite-freetier/prerequisite-freetier.md"
   ```
 
 The labs are located three levels up, for example:
 
   ```
-  "filename": "../../../provision-lab/provision-lab.md"
+  "filename": "../../../provision/provision.md"
   ```
 
 ### The just-query and just-visualize workshops
