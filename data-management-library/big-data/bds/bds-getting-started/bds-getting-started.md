@@ -12,7 +12,7 @@ In this lab, you will practice performing both the required and optional tasks d
 
 | Task                                                             | Purpose                                                                                                                                                                                                                                                                                                                 | Who?                                      | Required? |
 |------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|-----------|
-| [STEP 1: Login to Oracle Cloud Console](#STEP1:LogintotheOracleCloudConsole)                         | Login to the Oracle Cloud Console to create a compartment, a user, a group, policies, a virtual cloud network, and a BDS cluster. | Cloud Administrator                      | No        |
+| [STEP 1: Log in to Oracle Cloud Console](#STEP1:LogintotheOracleCloudConsole)                         | Log in to the Oracle Cloud Console to create a compartment, a user, a group, policies, a virtual cloud network, and a BDS cluster. | Cloud Administrator                      | No        |
 | [STEP 2: Create a Compartment for BDS Resources](#STEP2:CreateaCompartment)                         | Create a compartment named **`training-compartment `** in your tenancy to help organize your BDS resources.                                                                                                                                         | Cloud Administrator                      | No        |
 | [STEP 3: Create an IAM User to be the BDS Administrator](#STEP3:CreateanIAMUsertoBetheBDSAdministrator)           | Create a user named **`training-bds-admin`** that you'll add to the administrators group to become a BDS Administrator.                                                                                                                                                                                                          | Cloud Administrator                      | No        |
 | [STEP 4: Create an IAM BDS Administrators Group and Add the New User to the Group](#STEP4:CreateanIAMBDSAdministratorsGroupandAddtheNewUsertotheGroup) | <ul><li>Create an administrators group named **`training-bds-admin-group`** with permissions to create and manage your BDS resources.</ul></li><ul> <li>Add the new user to this group to become a BDS Administrator.</ul></li> | Cloud Administrator                      | No        |
@@ -24,7 +24,7 @@ In this lab, you will practice performing both the required and optional tasks d
 Login credentials and a tenancy name for the Oracle Cloud Infrastructure Console.
 
 
-## STEP 1: Login to the Oracle Cloud Console
+## STEP 1: Log in to the Oracle Cloud Console
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.

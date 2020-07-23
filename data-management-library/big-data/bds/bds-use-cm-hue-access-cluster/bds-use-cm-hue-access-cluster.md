@@ -8,7 +8,7 @@ In the previous lab, you made the two utility nodes in your HA-cluster accessibl
 
 All services are only available on certain ports. For example, in an HA-cluster such as **`training-cluster`**, Cloudera Manager (CM) runs on the first utility node, **`traininun0`**, and Hue runs on the second utility node, **`traininun1`**. Before you can access CM and Hue on the utility nodes using a Web browser, you must also open the ports that are associated with both services. You do this by defining an ingress rule on the public subnet to a security list for each service. Security lists act as virtual firewalls for your Compute instances and other kinds of resources with ingress and egress rules that specify the types of traffic allowed in and out of the cluster. Ingress security rules expose HTTP and HTTPS routes from outside the cluster to services within the cluster.
 
-In this lab, you'll learn how to access CM and Hue directly in a Web browser.
+In this lab, you'll learn how to access CM and Hue directly in a web browser.
 
 
 ### Objectives
@@ -36,7 +36,7 @@ In this step, you will add ingress security rules for CM and Hue to the default 
 
   ![](./images/cluster-vcn.png " ")
 
-4. Next, you will update the default security list in your VCN. Only public subnets can have a public IP address assigned to them. Remember, when you created the cluster, you needed to specify that your cluster belongs to a public subnet. In the **Subnets** section on the **Virtual Cloud Network Details** page, click the public subnet for the selected network.
+4. Next, you will update the default security list for the public subnet in your VCN. Remember, when you created the cluster, you needed to specify that your cluster belongs to a public subnet. In the **Subnets** section on the **Virtual Cloud Network Details** page, click the public subnet for the selected network.
 
   ![](./images/vcn-details-page.png " ")
 
@@ -48,7 +48,7 @@ In this step, you will add ingress security rules for CM and Hue to the default 
 
   ![](./images/add-ingress-rule-1.png " ")
 
-7. In the **Add Ingress Rules** dialog box, add the rule for the TCP protocol which enables you to use Cloudera Manager to access your cluster. You can customize this dialog box to meet your security needs. In our example, we are opening up the port to all sources by entering **`0.0.0.0/0`** for the **Source CIDR**.  Anyone on the internet can access port **`7183`** for CM. No egress rule is required to allow the response traffic. Update the source to a more restrictive CDIR if required. Provide the following information:
+7. In the **Add Ingress Rules** dialog box, add the rule for the TCP protocol which enables you to use Cloudera Manager to access your cluster. You can add values to this dialog box to meet your security needs. In our example, we are opening up the port to all sources by entering **`0.0.0.0/0`** for the **Source CIDR**.  Anyone on the internet can access port **`7183`** for CM. No egress rule is required to allow the response traffic. Update the source to a more restrictive CDIR if required. Provide the following information:
 
     + For the **SOURCE TYPE**, select **`CIDR`**.
     + For the **SOURCE CIDR**, enter **`0.0.0.0/0`**.

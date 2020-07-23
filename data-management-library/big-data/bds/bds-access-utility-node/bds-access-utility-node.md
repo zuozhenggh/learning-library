@@ -5,7 +5,7 @@
 Big Data Service nodes are by default assigned private IP addresses, which aren't accessible from the public internet. You can make the nodes in the cluster available using one of the following methods:
 
 * You can map the private IP addresses of selected nodes in the cluster to public IP addresses to make them publicly available on the internet. _**We will use this method in this lab which assumes that making the IP address public is an acceptable security risk.**_
-* You can setup an SSH tunnel using a Bastion host. Only the Bastion host is exposed to the public internet. A Bastion host provides access to the cluster's private network from the public internet. See [Bastion Hosts Protected Access for Virtual Cloud Networks](https://www.oracle.com/a/ocom/docs/bastion-hosts.pdf).
+* You can set up an SSH tunnel using a bastion host. Only the Bastion host is exposed to the public internet. A Bastion host provides access to the cluster's private network from the public internet. See [Bastion Hosts Protected Access for Virtual Cloud Networks](https://www.oracle.com/a/ocom/docs/bastion-hosts.pdf).
 * You can also use VPN Connect which provides a site-to-site Internet Protocol Security (IPSec) VPN between your on-premises network and your virtual cloud network (VCN). IPSec VPN is a popular set of protocols used to ensure secure and private communications over IP networks. See [VPN Connect](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Tasks/managingIPsec.htm).
 * Finally, you can use OCI FastConnect to access services in OCI without going over the public internet. With FastConnect, the traffic goes over your private physical connection. [See FastConnect](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-data-warehouse-cloud/user&id=oci-fastconnect).
 
@@ -52,11 +52,11 @@ This lab assumes that you have successfully completed the following labs in the 
 
 In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first utility node** to a new public IP address.
 
-1. On the **Oracle Cloud Console** banner at the top of the page, click the **Cloud Shell** icon. It may take a few moments to connect and authenticate you.
+1. On the **Oracle Cloud Console** banner at the top of the page, click **Cloud Shell** <img src="images/cloud-shell-icon.png" alt="Cloud Shell icon">. It may take a few moments to connect and authenticate you.
 
   ![](./images/cloud-shell-started.png " ")
 
-2. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
+2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
 
       ```
     <b>$</b> <copy>export DISPLAY_NAME=<i>"display-name"</i></copy>
@@ -69,7 +69,7 @@ In this step, you will set three variables using the **`export`** command. The v
       ```
     $ export DISPLAY_NAME="traininun0-public-ip"
       ```
-3. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it in the command line.   
+3. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it in the command line.   
 
       ```
     <b>$</b> <copy>export SUBNET_OCID=<i>"subnet-ocid</i>"</copy>
@@ -81,7 +81,7 @@ In this step, you will set three variables using the **`export`** command. The v
     $ export SUBNET_OCID="ocid1.subnet.oc1.iad.aaaaaaaagmjtgzrviqqpfmypt4aeuwrhtcwku53bs6bi7qjfyvxckrxdpgga"
       ```
 
-4. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
+4. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
 
       ```
     <b>$</b> <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
@@ -94,7 +94,7 @@ In this step, you will set three variables using the **`export`** command. The v
     $ export PRIVATE_IP="10.0.0.12"
       ```
 
-5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or use the **Copy** button to copy the command, and then paste it on the command line.
+5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or click **Copy** to copy the command, and then paste it on the command line.
 
       ```
     <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>
@@ -109,40 +109,35 @@ In this step, you will set three variables using the **`export`** command. The v
 
 ## STEP 3: Map the Private IP Address of the Second Utility Node to a Public IP Address
 
-In this step, you will set three variables using the **`export`** command. Next, you use the **`oci network`** command to map the private IP address of the **second utility node** to a new public IP address.
+In this step, you will set two variables using the **`export`** command. Next, you use the **`oci network`** command to map the private IP address of the **second utility node** to a new public IP address.
 
-  1. In the **Cloud Shell**, at the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line.
+  1. In the **Cloud Shell**, at the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line.
 
     ```
     $ <copy>export DISPLAY_NAME="traininun1-public-ip"</copy>
     ```
 
-  2. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it in the command line.   
+    **Note:**    
+    In the previous step, you already set the **`SUBNET_OCID`** variable to your own **`subnet-ocid`** value that you identified in **STEP 1** of this lab. You don't need to set the variable again.
 
-    ```
-    $ <copy>export SUBNET_OCID="ocid1.subnet.oc1.iad.aaaaaaaagmjtgzrviqqpfmypt4aeuwrhtcwku53bs6bi7qjfyvxckrxdpgga"</copy>
-    ```
-
-    **Note:** In the preceding command, substitute the **_``subnet-ocid``_** value shown with your own **`subnet-ocid`** value that you identified in **STEP 1** of this lab.
-
-  4. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line. Remember, the **`ip-address`** is the private IP address that is assigned to the second utility node that you want to map to a public IP address.
+  3. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. Remember, the **`ip-address`** is the private IP address that is assigned to the second utility node that you want to map to a public IP address.
 
     ```
     $ <copy>export PRIVATE_IP="10.0.0.15"</copy>
     ```
     **Note:** In the preceding command, substitute the **_`ip-address`_** shown with your own second utility node's private IP address that you identified in **STEP 1** of this lab.
 
-  5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or use the **Copy** button to copy the command, and then paste it on the command line.
+  4.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or click **Copy** to copy the command, and then paste it on the command line.
 
     ```
     $ <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>
     ```
 
-  6.  In the output returned, find the value for **ip-address** field. In our example, it's **`150.136.199.24`**. This is the new reserved public IP address that is mapped to the private IP address of your **second utility node**.
+  5.  In the output returned, find the value for **ip-address** field. In our example, it's **`150.136.199.24`**. This is the new reserved public IP address that is mapped to the private IP address of your **second utility node**.
 
     ![](./images/output-white-ip-address-2.png " ")
 
-  7.  To see the newly created reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > Public IPs**. The new reserved public IP address is displayed in the **Reserved Public IPs** page.
+  6.  To see the newly created reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > Public IPs**. The new reserved public IP address is displayed in the **Reserved Public IPs** page.
 
     ![](./images/reserved-public-ip-3.png " ")
 
