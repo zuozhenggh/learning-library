@@ -6,7 +6,7 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 ## Part 1. Access the Clone Environment Page
 1. Navigate to the Cloud Manager Environments page.
 2. For ebsholenv1, click Action and select Clone. Enter Details (see screenshot and points below)
-![](./imgs/1.png "")
+![](./images/1.png "")
 
 3. Enter the following values for the clone details:<br>
   * Environment Name: ebsholenv2
@@ -35,7 +35,7 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
     iii. In Notepad, navigate to File > Open. <br>
     iv. And browse to ```C:\\Windows\System32\drivers\etc.``` <br>
     v. Find the file ```hosts```. <br>
-    ![](./imgs/2.png "")
+    ![](./images/2.png "")
 
     vi. In the hosts file, scroll down to the end of the content. <br>
     vii. Add the following entry to the very end of the file: ```<ip_address> ebsholenv1.example.com``` <br>
@@ -51,4 +51,4 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
   a. In your browser, navigate to the following URL: https://ebsholenv2.example.com /OA_HTML/AppsLocalLogin.jsp <br>
   b. When prompted, accept the warning concerning the certificate coming from an unauthorized certificate authority as we are using a self-signed certificate. (You will change the certificate with your own when executing this procedure outside of this hands-on lab.) <br>
   c. On this page, you will log in to Oracle E-Business Suite. <br>
-  ![](./imgs/3.png "")
+  ![](./images/3.png "")

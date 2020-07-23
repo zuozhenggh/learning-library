@@ -1,4 +1,4 @@
-# Move and Improve E-Business Suite to Oracle Cloud Infrastructure (OCI)
+# Lift and Shift on-premises E-Business Suite to Oracle Cloud Infrastructure (OCI)
 
 ## Introduction
 Approximately 2 hours are required to complete this workshop.
@@ -34,7 +34,7 @@ You will need the following in order to complete this workshop:
 
 ## Setup Lab Workstation
 
-In this section, you will prepare your workstation with the required files for the hands-on lab exercises. Your instructor will provide you a USB flash drive or use [this](https://github.com/burlingtonsolutionshub/EBS-Move-Improve/blob/master/HOL-EBS.zip) link to download the files.
+In this section, you will prepare your workstation with the required files for the hands-on lab exercises. Your instructor will provide you a USB flash drive or use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/mAWDPAT5jDjg34fUnSHtu-u_ztJ0_D9igCl1Bpoi7_E/n/orasenatdecanational01/b/EBS-Folder/o/EBSHOL-EBS.zip) link to download the files.
 
 Proceed to the appropriate section, depending on your workstation operating system:
 

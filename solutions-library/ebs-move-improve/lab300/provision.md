@@ -7,7 +7,7 @@ In this 45 mins lab, we will use the One-Click Provisioning feature of Oracle E-
 1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your Key-Data.txt file.
 2. Log in with your Oracle Identity Cloud Service credentials.
 
-![](./imgs/1.png "")
+![](./images/1.png "")
 
 ## Part 2. Provision an Environment Using One-Click Provisioning
 1. On the Oracle E-Business Suite Cloud Manager Environments page, click Provision Environment and select One-Click.
@@ -36,7 +36,7 @@ You can check the status of the activity to provision the environment in the Act
 
 2. On the Load Balancers page, you will find a load balancer named ebsholenv1-lbaas. Obtain the public IP address of this load balancer and record this in your Key-Data.txt file.
 
-![](./imgs/2.png "")
+![](./images/2.png "")
 
 3. Edit the local hosts file on your laptop and add an entry.<br>
   a. *For Windows Users*<br>
@@ -45,7 +45,7 @@ You can check the status of the activity to provision the environment in the Act
     iii. In Notepad, navigate to File > Open. <br>
     iv. Browse to C:\\Windows\System32\drivers\etc <br>
     v. Find the file hosts <br>
-    ![](./imgs/3.png "")
+    ![](./images/3.png "")
 
     vi. In the hosts file, scroll down to the end of the content. <br>
     vii. Add the following entry to the very end of the file: ```<ip_address> ebsholenv1.example.com``` <br>
@@ -60,4 +60,4 @@ You can check the status of the activity to provision the environment in the Act
   a. In your browser, navigate to the following URL: ```https://ebsholenv1.example.com/OA_HTML/AppsLocalLogin.jsp``` <br>
   b. When prompted, accept the warning concerning the certificate coming from an unauthorized certificate authority as we are using a self-signed certificate. (You will change the certificate with your own when executing this procedure outside of this hands-on lab.) <br>
   c. On this page, you will log in to Oracle E-Business Suite.
-  ![](./imgs/4.png "")
+  ![](./images/4.png "")
