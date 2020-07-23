@@ -16,10 +16,10 @@ If you already have an account or an active trial/free tier account, you may ski
 
   - Use the Contents Menu to access the next lab. For example, to proceed to Lab 050, click **Lab 50: Setup Cloud Environment** from the menu on the right.
 
-  ![](images/0/WorkshopMenu.png " ")
+  ![](images/common/WorkshopMenu.png " ")
 
 - Close the menu by clicking the X.
 
-  ![](images/0/Menu.png " ")
+  ![](images/common/Menu.png " ")
 
 You're now ready to continue with **Lab 050**.
