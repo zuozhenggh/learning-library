@@ -1,4 +1,4 @@
-# Lab 400: Clone Your Oracle E-Business Suite Environment
+# Clone Your Oracle E-Business Suite Environment
 
 ## Introduction
 In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite Cloud Manager to clone your Oracle E-Business Suite environment.

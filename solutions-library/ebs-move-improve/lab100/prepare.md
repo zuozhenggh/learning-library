@@ -1,11 +1,11 @@
-# Lab 100: Preparing Your Tenancy for Oracle E-Business Suite
+# Preparing Your Tenancy for Oracle E-Business Suite
 
 ## Introduction
 In this 30 mins exercise, you will prepare your tenancy for Oracle E-Business Suite.
 
 ## Part 1. Sign Up for a Trial Account
 
-1. From your laptop, go to (oracle.com/cloud/free)[oracle.com/cloud/free] and click “Start for free”.
+1. From your laptop, go to [this](oracle.com/cloud/free) link
 
 2. On the Oracle Cloud Sign Up page, enter the requested information including your desired tenancy name and tenancy password.
 
@@ -17,7 +17,7 @@ Note: Ensure that you use the same email address used when you registered.
 
 You will be directed to the Oracle Cloud Infrastructure console where you will execute the remainder of the lab.
 
-![](./images/1.png "")
+![](./images/1.png " ")
 
 4. Record your trial user name and password to ``Tenancy_Admin_User`` and ``Tenancy_Admin_Password`` in your ``Key-Data.txt`` file.
 
@@ -63,13 +63,13 @@ You will be directed to the Oracle Cloud Infrastructure console where you will e
 
         v. Deselect the check box Use email address as the user name.
         
-    ![](./images/2.png "")
+    ![](./images/2.png " ")
     
     d. Click **Next**.
     
     e. On the Step 2: Assign User to Groups dialog window, select the check box for the group you just created (``idcs-ebscm-grp``).
     
-    ![](./images/3.png "")
+    ![](./images/3.png " ")
     
     f. Click **Finish**.
     
@@ -85,7 +85,7 @@ You will be directed to the Oracle Cloud Infrastructure console where you will e
 
 8. In the Add Users to the Administrator Role dialog box, select the check box for the EBS Cloud Manager Administrator (``ebscm.admin@example.com``).
 
-![](./images/5.png "")
+![](./images/5.png " ")
 
 9. Click **OK**.
 
@@ -173,7 +173,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
         ii.  Client Secret
 
-![](./images/6.png "")
+![](./images/6.png " ")
 
 16. Click **Close**.
 
@@ -185,4 +185,4 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 20. Copy the value displayed for Instance GUID. Record this as ``Client_Tenant`` in the ``Key-Data.txt``. Your IDCS Client Tenant begins with the characters ``idcs-`` and then is followed by a string of numbers and letters, for example, ``idcs-6572bfeb183b4becad9e649bfa14a488``.
 
-![](./images/7.png "")
+![](./images/7.png " ")

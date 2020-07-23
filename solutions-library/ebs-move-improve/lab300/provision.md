@@ -1,4 +1,4 @@
-# Lab 300: Provision Your Oracle E-Business Suite Environment
+# Provision Your Oracle E-Business Suite Environment
 
 ## Introduction
 In this 45 mins lab, we will use the One-Click Provisioning feature of Oracle E-Business Suite Cloud Manager to provision an Oracle E-Business Suite environment.

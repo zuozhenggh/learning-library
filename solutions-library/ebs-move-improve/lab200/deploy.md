@@ -1,4 +1,4 @@
-# Lab 200: Oracle E-Business Suite Cloud Manager Deployment and Configuration
+# Oracle E-Business Suite Cloud Manager Deployment and Configuration
 
 ## Introduction
 In this 30 mins lab, we will deploy the Oracle E-Business Suite Cloud Manager Compute instance using an Oracle Cloud Infrastructure Marketplace image and configure Oracle E-Business Suite Cloud Manager.
