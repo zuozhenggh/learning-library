@@ -2,26 +2,25 @@
 
 ## Instructions
 
-1. Open the workshop-single-set-labs template in Atom or Visual Studio Code using workshop-single-set-labs
+1. Open the workshop-single-sets template in Atom or Visual Studio Code using workshop-single
 2. Start atom-live-server (Atom) or live-server (Visual Studio Code)
-3. Look at workshop-single-set-labs/product-area/product-type/workshops/product-workshop-name/freetier
+3. Look at workshop-single/product-solution-short-name/workshops//freetier
 
 ## Folder Structure
 
 In this example, the goal is to create several "children" workshops from one longer "parent" workshop. The children are made up of parts from the parent.
 
-workshop-single-set-labs/
-  product-area/
-    product-type/
+workshop-single/
+    product-solution-short-name/
 
         -- individual labs
 
-        provision-lab/
-        setup-lab/
-        dataload-lab/
-        query-lab/
-        analyze-lab/
-        visualize-lab
+        provision/
+        setup/
+        dataload/
+        query/
+        analyze/
+        visualize
         introduction/
           introduction.md       -- description of the everything workshop
 
@@ -50,7 +49,7 @@ Look at the product-name-workshop/freetier folder and look at the manifest.json 
 The Prerequisite "lab" is the first lab in a common folder three levels up:
 
   ```
-  "filename": "../../../common/prerequisite-freetier-lab/prerequisite-freetier-lab.md"
+  "filename": "../../../common/prerequisite-freetier/prerequisite-freetier.md"
   ```
 
 Labs that are common across all workshops are linked using an absolute path, for example:
@@ -62,7 +61,7 @@ Labs that are common across all workshops are linked using an absolute path, for
 The labs are located three levels up, for example:
 
   ```
-  "filename": "../../../provision-lab/provision-lab.md"
+  "filename": "../../../provision/provision.md"
   ```
 
 ### For example
