@@ -44,13 +44,13 @@ In this step, you will set three variables using the **`export`** command. The v
 
   ![](./images/cloud-shell-started.png " ")
 
-2. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
+2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
 
     ```
     $ <copy>export DISPLAY_NAME=<i>"traininmn0-public-ip"</i></copy>
     ```
 
-3. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it in the command line.   
+3. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it in the command line.   
 
     ```
     $ <copy>export SUBNET_OCID=<i>"subnet-ocid</i>"</copy>
@@ -62,7 +62,7 @@ In this step, you will set three variables using the **`export`** command. The v
     $ export SUBNET_OCID="ocid1.subnet.oc1.iad.aaaaaaaagmjtgzrviqqpfmypt4aeuwrhtcwku53bs6bi7qjfyvxckrxdpgga"
       ```
 
-4. At the **$** command line prompt, enter the following command, or use the **Copy** button to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
+4. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
 
     ```
     $ <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
@@ -75,7 +75,7 @@ In this step, you will set three variables using the **`export`** command. The v
     $ export PRIVATE_IP="10.0.0.9"
       ```
 
-5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or use the **Copy** button to copy the command, and then paste it on the command line.
+5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or click **Copy** to copy the command, and then paste it on the command line.
 
       ```
     <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>
@@ -89,9 +89,22 @@ In this step, you will set three variables using the **`export`** command. The v
   ![](./images/mn0-reserved-public-ip.png " ")
 
 
-## STEP 3: Connect to the Cluster's First Master Node Using Putty
+## STEP 3: Connect to the Cluster's First Master Node Using Secure Shell (SSH)
 
-The Kerberos Distribution Center (KDC) is running on the cluster's first master node. In this lab, you will connect to the first master node using ssh as user **`opc`** (Oracle Public Cloud). In this example, we are using Putty on Microsoft Windows. You can use any other method that you prefer to ssh into your first master node.
+The Kerberos Distribution Center (KDC) is running on the cluster's first master node. In this lab, you will connect to the first master node using ssh as user **`opc`** (Oracle Public Cloud).
+
+In this example, we are using PuTTY on Microsoft Windows; however, you can connect to your cluster using SSH using the following command with a non-PuTTY private key. This is the private key that is associated with the public key that you used when you created the cluster in Lab 2:
+
+```
+# <copy>ssh –i private_key username@public-ip-address</Copy>
+```
++ **`private_key`** is the full path and name of the file that contains the private key associated with the instance you want to access.
++  **`username`** is the default name for the cluster. The default user name is **`opc'**.
++ **`public-ip-address`** is the public IP address of the cluster node you want to access.
+
+For additional information on connecting to a node in the cluster using SSH, see [Connect to a Cluster Node By Using Secure Shell (SSH)](https://docs.oracle.com/en/cloud/paas/big-data-service/user/connect-cluster-ssh.html) in the Using Oracle Big Data Service documentation.
+
+_If you are connecting to your cluster's first master node using another SSH method besides PuTTY, you can skip the rest of the steps in this section and proceed to **STEP 4, Create the training Administrator Kerberos Principal**._ 
 
 1. Start Putty. The **PuTTY Configuration** window is displayed. In the **Category** pane, select the **Session** parameter, if not already selected. In the **Basic options for your PuTTY session** section, provide the following information:
 
@@ -146,14 +159,23 @@ In this step, you will create a new Kerberos principal named **`training`**. Ide
 
 ## STEP 5: Create the **`training`** Linux OS Administrator User
 
-Create the **`training`** Linux administrator user. Assign **`training`** the **supergroup** superuser group as the primary group, and **hdfs**, **hadoop**, and **hive** as the secondary groups.
+Create the **`training`** Linux administrator user and the OS group **`supergroup`**. Assign **`training`** the **`supergroup`** superuser group as the primary group, and **hdfs**, **hadoop**, and **hive** as the secondary groups.
 
 1. The **`dcli`** utility allows you to run the command that you specify across each node of the cluster. The syntax for the **`dcli`** utility is as follows:
 
     ```
     dcli [option] [command]
     ```
-    Use the **`-C`** option to run the specified command on all the nodes in the cluster. Enter the following command at the **`#`** prompt to create the **`training`** administrator user and add it to the listed groups on each node in the **`training-cluster`**. The **`useradd`** linux command creates the new **`training`** user and adds it to the specified groups.
+    Use the **`-C`** option to run the specified command on all the nodes in the cluster.
+
+    Enter the following command at the **`#`** prompt to create the OS group
+    **`supergroup`** which is defined as the **`superuser`** group in hadoop.
+
+    ```
+    # <copy>dcli -C "groupadd supergroup"</copy>
+    ```
+
+2. Enter the following command at the **`#`** prompt to create the **`training`** administrator user and add it to the listed groups on each node in the **`training-cluster`**. The **`useradd`** linux command creates the new **`training`** user and adds it to the specified groups.
 
     ```
     # <copy>dcli -C "useradd -g supergroup -G hdfs,hadoop,hive training"</copy>
@@ -166,7 +188,7 @@ Create the **`training`** Linux administrator user. Assign **`training`** the **
     ![](./images/training-added.png " ")
 
 
-2. Use the linux **`id`** command to confirm the creation of the new user and to list its groups membership.
+3. Use the linux **`id`** command to confirm the creation of the new user and to list its groups membership.
 
     ```
     # <copy>id training</copy>

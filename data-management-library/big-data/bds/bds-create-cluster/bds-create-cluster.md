@@ -94,15 +94,18 @@ Create the cluster as follows:
 
     ![](./images/create-cluster-4.png " ")
 
-10. In the **Additional Options > SSH PUBLIC KEY** section, associate a public SSH key with the cluster. You can use the associated private SSH key to make SSH connections to the cluster.
+10. In the **Additional Options > SSH PUBLIC KEY** section, associate a public (Secure Shell) SSH key with the cluster. You can use the private SSH key that is associated with the public SSH key to make SSH connections to the cluster. You will SSH into your cluster in **Lab 6**.
 
-    **Note:** If you already have an existing public key, you can use it in this step; you don't have to create a new public key. If you need to create a new SSH key pair, see the [Creating a Key Pair] (https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm?Highlight=ssh%20key#CreatingaKeyPair) OCI documentation topic or the
+    **Note:** If you already have an existing public key, you can use it in this step; you don't have to create a new public key. If you need to create a new SSH key pair (using different formats), see the [Creating a Key Pair] (https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm?Highlight=ssh%20key#CreatingaKeyPair) OCI documentation topic and the
     [Generate SSH key](https://oracle.github.io/learning-library/common/labs/generate-ssh-key/) lab.
 
     Enter an SSH public key in any of the following ways:
      * Select **CHOOSE SSH KEY FILE**, and then either Drag and drop a public SSH key file into the box,
       or click **Select one...** and navigate to and choose a public SSH key file from your local file system.
      * Select **PASTE SSH PUBLIC KEY**, and then paste the contents from a public SSH key file into the box.
+
+     **Note:** In this lab, we use our own SSH public key that we created using **PuTTYgen** named `mykey.pub`. In **Lab 6**, we will connect to our cluster using **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key.  
+
 
      ![](./images/create-cluster-5.png " ")
 

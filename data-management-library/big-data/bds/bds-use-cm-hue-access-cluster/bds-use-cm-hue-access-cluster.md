@@ -24,9 +24,9 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
 + **Lab 4: Access a BDS Node Using a Public IP Address**
 
-## STEP 1: Create Ingress Security Rules (and Open Ports) for CM and Hue
+## STEP 1: Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
 
-In this step, you will add ingress security rules for CM and Hue to the default security list in your cluster's VCN.
+In this step, you will add ingress security rules to the default security list in your cluster's VCN. This will allow access from anywhere on the internet to Cloudera Manager on port **`7183`** and Hue on port **`8888`**.
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
@@ -48,7 +48,7 @@ In this step, you will add ingress security rules for CM and Hue to the default 
 
   ![](./images/add-ingress-rule-1.png " ")
 
-7. In the **Add Ingress Rules** dialog box, add the rule for the TCP protocol which enables you to use Cloudera Manager to access your cluster. You can add values to this dialog box to meet your security needs. In our example, we are opening up the port to all sources by entering **`0.0.0.0/0`** for the **Source CIDR**.  Anyone on the internet can access port **`7183`** for CM. No egress rule is required to allow the response traffic. Update the source to a more restrictive CDIR if required. Provide the following information:
+7. In the **Add Ingress Rules** dialog box, add the rule for the TCP protocol which enables you to use Cloudera Manager to access your cluster. You can add values to this dialog box to meet your security needs. In our example, we are opening up the port for Cloudera Manager to all sources by entering **`0.0.0.0/0`** for the **Source CIDR**. Anyone on the internet can access port **`7183`** for CM. No egress rule is required to allow the response traffic. Update the source to a more restrictive CDIR if required. Provide the following information:
 
     + For the **SOURCE TYPE**, select **`CIDR`**.
     + For the **SOURCE CIDR**, enter **`0.0.0.0/0`**.
@@ -80,7 +80,7 @@ In this step, you will add ingress security rules for CM and Hue to the default 
 
 ## STEP 2: Use Cloudera Manager to Access the Cluster
 
-In this step, you will use CM to access the cluster. In an HA-cluster, CM runs on the first utility node, **`traininun0`**. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
+In this step, you will use CM to access the cluster. In an HA-cluster, CM runs on the first utility node, **`traininun0`**. You will use the reserved public IP address that is associated with **`traininun0`** that you created in step 2 of **Lab 4, Access a BDS Node Using a Public IP Address**.
 
 1. Open a Web browser window.
 
