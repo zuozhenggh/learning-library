@@ -1,4 +1,4 @@
-# Lab 400: Low Code, Microservice Mobile Development
+# Low Code, Microservice Mobile Development
 
 ## Before You Begin
 ### Objectives

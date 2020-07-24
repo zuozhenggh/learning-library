@@ -14,7 +14,7 @@ If you already have an account or an active trial/free tier account, you may ski
 
 ## Navigate to Lab Setup Cloud Enviornment
 
-  - Use the Contents Menu to access the next lab. For example, to proceed to Lab 050, click **Setup Cloud Environment** from the menu on the right.
+  - Use the Contents Menu to access the next lab. For example, to proceed to the lab Setup Cloud Environment , click **Setup Cloud Environment** from the menu on the right.
 
   ![](images/common/WorkshopMenu.png " ")
 
@@ -22,4 +22,4 @@ If you already have an account or an active trial/free tier account, you may ski
 
   ![](images/common/Menu.png " ")
 
-You're now ready to continue with **Lab Setup Cloud Environment**.
+You're now ready to continue with **Lab: Setup Cloud Environment**.

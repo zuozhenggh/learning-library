@@ -1,4 +1,4 @@
-# Lab 200: Building, Containerizing Java REST Services
+# Building, Containerizing Java REST Services
 
 ## Before You Begin
 ### Objectives
