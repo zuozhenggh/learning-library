@@ -131,7 +131,7 @@ Signing up for apex.oracle.com is simply a matter of providing details on the wo
 
     ![](images/request-workspace.png " ")
 
-4. On the Request a Workspace dialog, enter your Identification details – First Name, Last Name, Email, Workspace. 
+4. On the Request a Workspace dialog, enter your Identification details – First Name, Last Name, Email, Workspace.
    *Note: For workspace, enter a unique name, such as first initial and last name.*
 
     Click **Next**.
@@ -158,12 +158,12 @@ Signing up for apex.oracle.com is simply a matter of providing details on the wo
 
 This completes lab 1. At this point, you know how to create an APEX Workspace and you are ready to start building amazing apps, fast.
 
-You may now [proceed to the next lab](?lab=lab-2-rest-enabling-database-objects).
+You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 
  - **Author** -  David Peake, Consulting Member of Technical Staff
- - **Contributors** - Arabella Yao, Product Manager Intern, Database Mangement | Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+ - **Contributors** - Arabella Yao, Product Manager Intern, Database Management | Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 ## See an issue?
