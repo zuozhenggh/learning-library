@@ -1,4 +1,4 @@
-# Lab 300: Kubernetes REST Service Deployment
+# Kubernetes REST Service Deployment
 
 ## Before You Begin
 ### Objectives

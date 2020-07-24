@@ -1,4 +1,4 @@
-# Lab 050: Setup Cloud Environment
+# Setup Cloud Environment
 
 ## Before You Begin
 ### Objectives
