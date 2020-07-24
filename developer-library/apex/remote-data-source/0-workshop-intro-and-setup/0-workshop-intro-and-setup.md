@@ -21,11 +21,12 @@ Estimated Time: 50 minutes
 
 | # | Module | Est. Time |
 | --- | --- | --- |
-| 1 | [Creating the Table](?lab=lab-1-creating-table) | 10 minutes |
-| 2 | [Populating the Table](?lab=lab-2-populating-table) | 5 minutes |
-| 3 | [Improving the Report](?lab=lab-3-improving-report) | 15 minutes |
-| 4 | [Adding a Chart](?lab=lab-4-adding-chart) | 5 minutes |
-| 5 | [Adding Chart Criteria](?lab=lab-5-adding-chart-criteria) | 5 minutes |
+| 1 | [Create an Oracle APEX Workspace](?lab=lab-1-create-oracle-apex-workspace) | 5 minutes |
+| 2 | [Creating the Table](?lab=lab-2-creating-table) | 10 minutes |
+| 3 | [Populating the Table](?lab=lab-3-populating-table) | 5 minutes |
+| 4 | [Improving the Report](?lab=lab-4-improving-report) | 15 minutes |
+| 5 | [Adding a Chart](?lab=lab-5-adding-chart) | 5 minutes |
+| 6 | [Adding Chart Criteria](?lab=lab-6-adding-chart-criteria) | 5 minutes |
 
 ### **Let's Get Started!**
 
