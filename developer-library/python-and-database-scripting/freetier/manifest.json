@@ -14,7 +14,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "04/01/2020",
             "contentid": "12nnnn",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
             "title": "Lab 2: Generate SSH Key",
@@ -28,7 +28,7 @@
             "title": "Lab 3: Environment Setup",
             "description": "Setup compute instance running 19c using Oracle Database Image from Marketplace",
             "publisheddate": "3/24/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier-marketplace.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
         },
         {         
             "title": "Lab 4: Python and Oracle Database: Scripting for the Future",

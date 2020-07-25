@@ -3,7 +3,7 @@
 ## Introduction
 Oracle offers a complete portfolio of products, services, and differentiated capabilities to power your enterprise. For business users, Oracle offers ready-to-go networking options, server shapes, and enterprise-grade infrastructure that drives better business outcomes. With Oracle's Autonomous Database and Analytics tools, data scientists and application developers have a full suite of cloud services to build, deploy, and manage any type of solution. Machine learning is working behind the scenes in these products to automate security patching, backups, and optimize database query performance, which helps to eliminate human error and repetitive manual tasks so organizations can focus on higher-value activities.
 
-This lab series is part of *Oracle Cloud Infrastructure's Third Party Move & Improve* workshop. This series will walk you through the process of migrating an existing eCommerce application from an on-prem environment to being natively deployed within the cloud. It will walk you through how to capture a custom image of this app and deploy it on OCI with necessary infrastructure like Networking, Security Lists and route rules. The lab will also walk you through the process of making the application highly-available in the case of disaster scenarios by leveraging Oracle's DNS services for traffic steering. Finally, the lab will leverage PaaS services such as Autonomous Data Warehouse (ADW), Oracle Analytics Cloud (OAC), and Oracle Integration Cloud (OIC) in order to show how you can gain even more insight into your application data.
+This lab series is part of *Oracle Cloud Infrastructure's Third Party Move & Improve* workshop. This series will walk you through the process of migrating an existing eCommerce application from an on-prem environment to being natively deployed within the cloud. It will walk you through how to capture a custom image of this app and deploy it on OCI with necessary infrastructure like Networking, Security Lists and route rules. The lab will also walk you through the process of making the application highly-available in the case of disaster scenarios by leveraging Oracle's DNS services for traffic steering. Finally, the lab will leverage PaaS services such as Autonomous Data Warehouse (ADW), Oracle Analytics Cloud (OAC), and Oracle Integration Cloud (OIC) in order to show how you can gain even more insight into your application data. For a technical overview of the lab, see the following [video](https://youtu.be/2OkGX7vmvUE).
 
 Attached below is a sample architecture of the final solution:
 ![](Architecture.png)
@@ -18,7 +18,7 @@ Attached below is a sample architecture of the final solution:
 * Make application Highly Available with Traffic Steering Policies and Active Failover
 * Provision Oracle Analytics Cloud instace, Oracle Integration Cloud instance, and Autonomous Data Warehouse Instance
 * Pull data from MySQL database into Oracle Autonomous Data Warehouse
-* Perform Analytics with Oracle Analytics Cloud 
+* Perform Analytics with Oracle Analytics Cloud
 
 ### Required Artifacts
 * The following lab requires an Oracle Public Cloud account that will either be supplied by your instructor, or can be obtained through the following steps.

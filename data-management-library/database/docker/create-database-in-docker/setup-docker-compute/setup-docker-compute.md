@@ -35,7 +35,7 @@ Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, a
     [root@oraclelinux77 ~]#
     ```
 
-3. Install the Docker engine:
+3. Install the Docker engine, enter **y** when prompted:
 
     ```
     [root@oraclelinux77 ~]# <copy>yum install docker-engine</copy>
@@ -161,5 +161,7 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
 * **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, March 2020
+* **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

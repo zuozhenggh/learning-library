@@ -4,7 +4,7 @@
 
 The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between endpoints. SSH keys are an important part of securely accessing Oracle Cloud Infrastructure compute instances in the cloud.
 
-If you already have an SSH key pair, you may use that to connect to your environment. We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute instance you will create. Oracle Cloud Shell is browser-based, does not require installation or configuration of anything on your laptop, and works independently of your network setup. However, if you prefer to connect via your laptop, please choose based on your configuration.
+If you already have an SSH key pair, you may use that to connect to your environment. We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute instance you will create. Oracle Cloud Shell is browser-based, does not require installation or configuration of anything on your laptop, and works independently of your network setup. However, if you prefer to connect via your laptop, please select an option based on your configuration.
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
@@ -51,7 +51,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     Note in the output that there are two files, a *private key:* ```<<sshkeyname>>``` and a *public key:* ```<<sshkeyname>>.pub```. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
 4. To list the contents of the public key, use the cat command ```cat <<sshkeyname>>.pub```
-    
+
     *Note: The angle brackets <<>> should not appear in your code.*
 
     ![](images/cat-in-cloudshell.png " ")
@@ -74,7 +74,6 @@ You may now *proceed to the next lab*.
 
     ![](images/keylab-028.png " ")
 
-3.  Type the following commands in the terminal window to verify that the public and private keys were created. And to copy the contents of the public key for use in creating your instance in the OCI dialog.
 
 3.  Type the following commands in the terminal window to verify that the public and private keys were created.  And to copy the contents of the public key for use in creating your instance in the OCI dialog.
 
@@ -85,7 +84,7 @@ You may now *proceed to the next lab*.
     ```
     <copy>ls</copy>
     ```
-    
+
     ```
     <copy>cat id_rsa.pub</copy>
     ```
@@ -131,14 +130,14 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     ```
     <copy>ls</copy>
     ```
-    
+
     ```
     <copy>cat id_rsa.pub</copy>
     ```
 
     ![](images/keylab-007.png " ")
 
-    You now have a working SSH key pair and can use it for secure communications to instances in the cloud. Do not share the *private key* with anyone unless you understand what you're doing. You should only ever need to share and copy the *public key*.
+    You now have a working SSH key pair and can use it for secure communications to instances in the cloud. Do not share the *private key* `id_rsa` with anyone unless you understand what you're doing. You should only ever need to share and copy the *public key* `id_rsa.pub`.
 
 5.  Also note that if you elect to copy/paste the content of the key into certain dialogs for your labs, you will need to locate the file in Windows, either through Powershell, Explorer, or other directory tools, and open the public key file to copy its content. The example below is using Powershell to ```cat``` the content. You can select the text with your mouse but the copy/paste commands aren't available. Use ```<ctrl-c>``` to copy the contents to the clipboard for pasting into other application dialogs.
 
@@ -157,9 +156,9 @@ You may now *proceed to the next lab*.
 
 ## Option 4a: Prior Windows Versions - Git for Windows
 
-In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **Git for Windows**. **Git for Windows** includes a Unix like shell called ```Git Bash``` which is what you'll use to create keys, and establish SSH communications with your cloud host systems. If you prefer **PuTTY** go to the next section.
+In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **Git for Windows**. **Git for Windows** includes a Unix like shell called ```Git Bash``` which is what you'll use to create keys, and establish SSH communications with your cloud host systems. If you prefer **PuTTY**, go to the next section.
 
-1.  If you don't already have it installed, access the link below and download the application. If you are unable to install anything on your laptop due to permission issues, please use the Oracle Cloud Shell option above.
+1.  If you don't already have it installed, access the link below and download the application. If you are unable to install anything on your laptop due to permission issues, please use the **Oracle Cloud Shell** option above.
 
     [Click here to download Git for Windows](https://git-scm.com/download/win)
 
@@ -211,7 +210,7 @@ You may now *proceed to the next lab*.
 
 In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **PuTTY**. If you prefer **Git for Windows**, visit the option prior to this one.
 
-1.  If you don't already have it installed, access the link below and download the application. For Oracle employees, **PuTTY** is also available for download internally via the **MyDesktop** application. For non-Oracle employees and customers, use the below link. If you are unable to install anything on your laptop due to permission issues, please use the Oracle Cloud Shell option above.
+1.  If you don't already have it installed, access the link below and download the application. For Oracle employees, **PuTTY** is also available for download internally via the **MyDesktop** application. For non-Oracle employees and customers, use the below link. If you are unable to install anything on your laptop due to permission issues, please use the **Oracle Cloud Shell** option above.
 
     [Click here to download PuTTY for Windows](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
@@ -344,4 +343,5 @@ You may now *proceed to the next lab*.
 * **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, March 27, 2020
 * **Workshop (or Lab) Expiry Date** - March 27, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
