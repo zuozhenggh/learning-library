@@ -23,7 +23,7 @@ Let's load graph data from files before setting up database.
 ### Download and Extract Packages
 Go to the following pages and download the packages.
 
-- [Oracle Graph Server and Client 20.1](https://www.oracle.com/database/technologies/spatialandgraph/property-graph-features/graph-server-and-client/graph-server-and-client-downloads.html)
+- [Oracle Graph Server and Client 20.1](https://www.oracle.com/database/technologies/spatialandgraph/property-graph-features/graph-server-and-client/graph-server-and-client-downloads.html) Note: This version of the lab only works with the **20.1** Graph Server & Client kit. It will not work later versions.
 - [Apache Groovy 2.4.18](https://dl.bintray.com/groovy/maven/apache-groovy-binary-2.4.18.zip)
 
 Put the following files into `oracle-pg/docker/tmp/`
@@ -41,7 +41,7 @@ $ <copy>sh extract.sh</copy>
 
 ### Modify the PGX interpreter settings for Zeppelin
 
-The extract script above copies the necessary jar files and a json configuration file into the `oracle-pg/docker/zeppelin/interpreter/pgx` directory. Open the file `interpreter-settings.json` in a text editor and change the default PGX_BASE_URL property in it. i.e. change the line (line 15)
+The extract script above copies the necessary jar files and a json configuration file into the `oracle-pg/docker/zeppelin/interpreter/pgx` directory. Open the file `interpreter-settings.json` in a text editor and change the default `PGX_BASE_URL` property in it. i.e. change the line (line 15)
 ` "defaultValue":"https://localhost:7007" `
 to 
 ```
