@@ -47,9 +47,6 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     ![](./images/Compartment.png " ")
 
-6. If you using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page. You can go ahead and select a different available region such as **Phoenix** or **Toronto**.
-
-    ![](./images/Region.png " ")
 
 ## **STEP 2**: Creating the ADB instance
 
@@ -62,7 +59,7 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __ADW Finance Mart__.
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __ADWFINANCE__ and append your user id. For example, if your user id is **LL-185**, then enter __ADWFINANCE185__
+    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __ADWFINANCE__ and **append your user id**. For example, if your user id is **LL-185**, then enter __ADWFINANCE185__
 
     ![](./images/Picture100-26-livelabs.png " ")
 
