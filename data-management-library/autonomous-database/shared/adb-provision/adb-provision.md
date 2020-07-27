@@ -47,7 +47,7 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     ![](./images/Compartment.png " ")
 
-6. If you using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page. You can go ahead and select a different available region such as **Phoenix** or **Toronto**.
+6. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page. You can go ahead and select a different available region such as **Phoenix** or **Toronto**.
 
     ![](./images/Region.png " ")
 
