@@ -16,34 +16,19 @@ Introduction
 
  Lab 1 – Install GoldenGate binaries for Big Data 
 
-**Lab Architecture **
-
  Optional step (Do not select Auto-install if you already installed GG manually) 
  
 Lab 2 – MySQL ->  MySQL unidirectional replication
-
-Lab Architecture 
   
 Lab 3 – MySQL --> HDFS (delimited text format) 
 
-Lab Architecture 
-
 Lab 4 – MySQL --> Hive (Avro format) 
-
-Lab Architecture 
 
 Lab 5 – MySQL --> HBase 38 
 
-Lab Architecture 
-
 Lab 6 – MySQL --> Kafka (Json format) 
 
-Lab Architecture 
-
 Lab 7 – MySQL --> Cassandra 
-
-**Lab Architecture **
-
 
 Appendix A – Handler Configuration Properties 
 
