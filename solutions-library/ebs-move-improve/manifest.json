@@ -2,28 +2,36 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "publisheddate": "05/22/2020",
+            "description": "Introduction to EBS lift and shift",
             "filename": "./README.md"
         },
         {
-            "title": "Lab 100: Preparing Your Tenancy for Oracle E-Business Suite",
-            "publisheddate": "05/22/2020",
-            "filename": "./lab100/prepare.md"
+            "title": "Lab 1: Sign Up for Free Trial",
+            "description": "Sign Up for Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
-            "title": "Lab 200: Oracle E-Business Suite Cloud Manager Deployment and Configuration",
-            "publisheddate": "05/22/2020",
-            "filename": "./lab200/deploy.md"
+            "title": "Lab 2: Preparing Your Tenancy for Oracle E-Business Suite",
+            "description": "Preparing Your Tenancy for Oracle E-Business Suite",
+            "filename": "./prepare/prepare.md"
         },
         {
-            "title": "Lab 300: Provision Your Oracle E-Business Suite Environment",
-            "publisheddate": "05/22/2020",
-            "filename": "./lab300/provision.md"
+            "title": "Lab 3: Oracle E-Business Suite Cloud Manager Deployment and Configuration",
+            "description": "Oracle E-Business Suite Cloud Manager Deployment and Configuration",
+            "filename": "./deploy/deploy.md"
         },
         {
-            "title": "Lab 400: Clone Your Oracle E-Business Suite Environment",
-            "publisheddate": "05/22/2020",
-            "filename": "./lab400/clone.md"
+            "title": "Lab 4: Provision Your Oracle E-Business Suite Environment",
+            "description": "Provision Your Oracle E-Business Suite Environment",
+            "filename": "./provision/provision.md"
+        },
+        {
+            "title": "Lab 5: Clone Your Oracle E-Business Suite Environment",
+            "description": "Clone Your Oracle E-Business Suite Environment",
+            "filename": "./clone/clone.md"
         }
      ]
 }
+
+
+

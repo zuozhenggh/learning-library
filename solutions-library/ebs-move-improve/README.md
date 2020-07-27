@@ -1,7 +1,8 @@
-# Lift and Shift on-premises E-Business Suite to Oracle Cloud Infrastructure (OCI)
+# Introduction
 
-## Introduction
-Approximately 2 hours are required to complete this workshop.
+## Lift and Shift on-premises E-Business Suite to Oracle Cloud Infrastructure (OCI)
+
+Approximately 1.5 hours are required to complete this workshop.
 
 This workshop showcases the use of the Oracle E-Business Suite Cloud Manager graphical user interface to provision and clone environments on Oracle Cloud Infrastructure. In addition, a demonstration of the lift and shift of an on-premises Oracle E-Business Suite environment to Oracle Cloud Infrastructure will be conducted.
 
@@ -161,6 +162,12 @@ Table W-1: User Names and Personas
 | User Name          | Application       |  Description |
 | ------------- |:-------------:|:-------------:|
 |  < trial user name> | OCI service console login | An IT administrator in your organization responsible for managing the EBS environments|
-| opc      | Linux   | Privileged Linux user used to connect to Compute instances |
-| oracle     |Linux   | Linux user owning the Oracle E-Business Suite Cloud Manager binaries and configuration|
 
+You may now proceed to the next lab.
+
+## Acknowledgements
+
+- **Last Updated By/Date** - Santiago Bastidas, Product Management Director, July 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

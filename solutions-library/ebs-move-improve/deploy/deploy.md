@@ -3,7 +3,7 @@
 ## Introduction
 In this 30 mins lab, we will deploy the Oracle E-Business Suite Cloud Manager Compute instance using an Oracle Cloud Infrastructure Marketplace image and configure Oracle E-Business Suite Cloud Manager.
 
-## Part 1. Sign in to the Oracle Cloud Infrastructure Console
+## Step 1. Sign in to the Oracle Cloud Infrastructure Console
 
 Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastructure console.
 
@@ -15,7 +15,7 @@ Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastruct
 
 * **Password**: ``Tenancy Admin Password``
 
-## Part 2. Deploy and Configure Oracle E-Business Suite Cloud Manager
+## Step 2. Deploy and Configure Oracle E-Business Suite Cloud Manager
 
 You will now create a Resource Manager Stack that will perform the following tasks:
 
@@ -115,7 +115,7 @@ You will now create a Resource Manager Stack that will perform the following tas
 
 11. Copy and paste **Private IP, Public IP, Login URL** and **LB Public IP** to your ``Key-Data.txt``. These variables are needed for the remainder of the procedures in this lab.
 
-## Part 3. Log in to Oracle E-Business Suite Cloud Manager
+## Step 3. Log in to Oracle E-Business Suite Cloud Manager
 
 Before login in to the Oracle E-Business Suite Cloud Manager web application, you need to add the **hostname** in the Login URL to your local computer hosts file. 
 
@@ -160,3 +160,12 @@ Using the Login URL generated previously, log into the Oracle E-Business Suite C
 Once logged in, you are on the **Environments page**.
 
 ![](./images/15.png "")
+
+You may now proceed to the next lab.
+
+## Acknowledgements
+
+- **Last Updated By/Date** - Santiago Bastidas, Product Management Director, July 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
