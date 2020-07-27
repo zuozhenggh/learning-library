@@ -1,5 +1,5 @@
 # Lab 1 -  Installation of Golden Gate for BigData Workshop: 
-July 27, 2020
+July 27th, 2020
 
 ![](images/100/image110_1.png)
 
