@@ -55,23 +55,13 @@ Using and maintaining a whole bunch of tools, especially legacy ones, ones that 
 
 **Duration**: 15 mins.
 
-![](media/omcdash.jpg)
+1. After you have entered your information, click the Sign In button. After login, go to the upper left of the window and use the navigation menu (looks like 3 stacked lines aka hamburger menu) to navigate to a service. From the Navigation drop down menu continue down till you see E-Business Suite and select it and then choose the **ebs1229** instance.
 
-1. After you have entered your information, click the Sign In button. After login, go to the upper left of the window and use the navigation menu (looks like 3 stacked lines aka hamburger menu) to navigate to Oracle Management Cloud and its Dashboards.
+![](media/omcselectebs.png)
 
-![](media/7d61202715d4ef0c141f8768180c8097.jpg)
+2. See how it provides in one view, complete visibility to E-Business services whether they are running on-premise or deployed in the cloud - natively monitored by OMC. View the associated entities and their status, alerts, performance, database errors, middleware errors, CPU utilization, memory utilization and more.
 
-2. **Click** on the Dashboards tile.
-
-![](media/aad5c57c98305c02c64dcfcf18b87fdf.jpg)
-
-3. From the available dashboards, locate the one for EBS Health. It is a custom dashboard designed to manage all EBS related entities and associated infrastructure. Using it, you will experience an example of how Oracle Management Cloud (OMC) can manage Oracle EBS Infrastructure on the Oracle Cloud within a single view. **Click** the EBS Health dashboard. Alternatively from the left navigation menu of the Oracle Management Cloud home page, **Select** E-Business Suite.
-
-![](media/cde6c381db1096c38bb509ee313d5ef3.jpg)
-
-4. See how it provides in one view, complete visibility to E-Business services whether they are running on-premise or deployed in the cloud - natively monitored by OMC. View the associated entities and their status, alerts, performance, database errors, middleware errors, CPU utilization, memory utilization and more.
-
-![](media/897c4722621329593cca1aecf4371ecd.jpg)
+![](media/omcebsfleet2.png)
 
 5. Next, we will search for a specific EBS composite entity. **Type** EBS in the Global Context Bar, just to the right of the Topology icon (that looks like a snowflake icon) on the top left and **Select** the EBS12_2_OCI entity from the drop down menu.
 
