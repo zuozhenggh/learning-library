@@ -72,9 +72,9 @@ Create the cluster as follows:
 7. In the **Hadoop Nodes > Worker Nodes** section, provide the following details:
 
     * **CHOOSE INSTANCE TYPE:** **`Virtual Machine`**.
-    * **CHOOSE MASTER/UTILITY NODE SHAPE:** **`VM.Standard2.4`**.
-    * **BLOCK STORAGE SIZE PER MASTER/UTILITY NODE (IN GB):** **`750 GB`**.
-    * **NUMBER OF WORKER NODE:** **`3`**. This is the minimum allowed for a cluster.
+    * **CHOOSE WORKER NODE SHAPE:** **`VM.Standard2.4`**.
+    * **BLOCK STORAGE SIZE PER WORKER NODE (IN GB):** **`750 GB`**.
+    * **NUMBER OF WORKER NODES:** **`3`**. This is the minimum allowed for a cluster.
 
     ![](./images/create-cluster-3.png " ")
 
@@ -143,12 +143,12 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
    ![](./images/node-details-1.png " ")  
 
-   The **Node Metrics** section at the bottom of the page is displayed after the cluster is provisioned. It displays the following charts: CPU UTILIZATION, MEMORY UTILIZATION, NETWORK BYTES IN, and NETWORK BYTES OUT. You can hover over any chart to get additional details.
+   The **Node Metrics** section at the bottom of the page is displayed after the cluster is provisioned. It displays the following charts: CPU UTILIZATION, MEMORY UTILIZATION, NETWORK BYTES IN, NETWORK BYTES OUT, and DISK UTILIZATION. You can hover over any chart to get additional details.
 
    ![](./images/node-details-2.png " ")  
 
 
-3. To display the block storage attached to this node, in the **Resources** section on the left, click the **Attached Block Volume Storage** link.
+3. To display the block storage attached to this node, in the **Resources** section on the left, click the **Attached Block Storage Volume** link.
 
   **Note:** You can increase the amount of block storage that is available for each worker node in the cluster from within BDS. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button. From the context menu, select **Add Block Storage**, and then follow the prompts. Don't add block storage from outside of BDS.
 
@@ -252,6 +252,8 @@ The process of creating the cluster takes approximately one hour to complete; ho
   + Hive Gateway
   + Spark Gateway
   + YARN (MR2 Included) NodeManager
+
+**Note:** In **Lab 5, Use Cloudera Manager (CM) and Hue to Access a BDS Cluster**, you will use Cloudera Manager to view the roles, services, and gateways that are running on each node in the cluster. 
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 
