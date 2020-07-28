@@ -54,7 +54,7 @@ In this step, you will add ingress security rules to the default security list i
     + For the **SOURCE CIDR**, enter **`0.0.0.0/0`**.
     + For the **IP PROTOCOL**, select **`TCP`**.
     + For the **SOURCE PORT RANGE**, enter **`All`**.
-    + For the **DESTINATION PORT RANGE**, enter **`7183`**.
+    + For the **DESTINATION PORT RANGE**, enter **`7180`**.
     + For the **DESCRIPTION**, enter **`For CM Access on Port 7183`**.
 
   ![](./images/cm-ingress-rule.png " ")
