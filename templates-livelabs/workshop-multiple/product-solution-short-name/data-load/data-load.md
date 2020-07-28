@@ -1,4 +1,4 @@
-# Data Load Lab
+# Load Data into an Instance
 
 ## Introduction
 

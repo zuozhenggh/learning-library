@@ -1,4 +1,4 @@
-# Query Lab
+# Provision an Instance
 
 ## Introduction
 
