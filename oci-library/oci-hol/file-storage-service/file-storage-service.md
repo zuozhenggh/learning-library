@@ -1,6 +1,6 @@
 # File System Storage Service
 
-## Introduction
+## **Introduction**
 
 Welcome to the Cloud Storage (File System Storage) self-paced lab from Oracle!
 
@@ -35,11 +35,11 @@ In this lab, you will create and mount File System Storage to a compute instance
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 
-2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+2. [Familiarizing with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
 
 3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
 
-4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+4. [Familiarizing with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
 
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
@@ -48,7 +48,7 @@ In this lab, you will create and mount File System Storage to a compute instance
 *Note: OCI UI is being updated, thus some screenshots in the instructions may be different from the actual UI*
 
 
-## Step 1: Sign in to OCI Console and Create VCN
+## **Step 1**: Sign in to OCI Console and Create VCN
 
 * **Tenant Name:** {{Cloud Tenant Name}}
 * **User Name:** {{User Name}}
@@ -113,7 +113,7 @@ In this lab, you will create and mount File System Storage to a compute instance
 
 10. Click **Add Ingress Rules**
 
-## Step 2: Create File System Storage
+## **Step 2**: Create File System Storage
 
 In this section, we will create File System Storage.
 
@@ -139,7 +139,7 @@ In this section, we will create File System Storage.
 
 We now have a File System Storage created. Next we will create a SSH key pair that will be used to login to a compute instance and mount the file system.
 
-## Step 3: Create and Connect to Compute Instance
+## **Step 3**: Create and Connect to Compute Instance
 
 You are assumed to have generated your SSH Keys.
 
@@ -202,7 +202,7 @@ You are assumed to have generated your SSH Keys.
 
 8.  Verify opc@COMPUTE\_INSTANCE\_NAME appears on the prompt
 
-## Step 4: Mount the File System Storage to Compute Instance
+## **Step 4**: Mount the File System Storage to Compute Instance
 
 Users of Ubuntu and Linux operating systems (we launched a Oracle Linux instance) can use the command line to connect to a file system and write files. Mount targets serve as file system network access points. After your mount target is assigned an IP address, you can use it to mount the file system. You need to install an NFS client and create a mount point. When you mount the file system, the mount point effectively represents the root directory of the File Storage system, allowing you to write files to the file system from the instance.
 
@@ -247,6 +247,8 @@ Users of Ubuntu and Linux operating systems (we launched a Oracle Linux instance
     ```
     and verify the mounted File System Storage.
 
+    *Note: You may need to change `nfs-data` to the mount point directory you just created.*
+
      ![](./../file-storage-service/images/FSS_007.png " ")
 
      ![](./../file-storage-service/images/FSS_008.png " ")
@@ -263,7 +265,7 @@ Users of Ubuntu and Linux operating systems (we launched a Oracle Linux instance
 
 You have now mounted Enterprise grade File System Storage created in OCI to your compute instance. You can place files in this file system. All other VM instances that have mounted this file system will have access to it.
 
-## Step 5: Delete the resources
+## **Step 5**: Delete the Resources
 
 In this section, we will delete all the resources we created in this lab.
 
@@ -304,7 +306,7 @@ In this section, we will delete all the resources we created in this lab.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Manager, July 2020
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
