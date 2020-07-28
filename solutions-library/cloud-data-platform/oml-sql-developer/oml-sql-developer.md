@@ -11,7 +11,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-[](youtube:uprqKyeuxik)
+[![Lab 200 Walkthrough Video](./images/lab200tn.png " ")](https://www.youtube.com/watch?v=uprqKyeuxik "Lab 200 Walkthrough Video - Click to Watch!")
 
 
 ### Objectives
@@ -89,11 +89,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
     ![](./images/sqlw3.png " ")
 
 7. Let's grant this user some privileges. Copy and paste the following SQL query into the **[Worksheet]** section: 
-```
-<copy>
-GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP ANY TABLE, INSERT ANY TABLE, READ ANY TABLE, SELECT ANY TABLE, UNDER ANY TABLE, UPDATE ANY TABLE TO TESTUSER
-</copy>
-```
+> GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP ANY TABLE, INSERT ANY TABLE, READ ANY TABLE, SELECT ANY TABLE, UNDER ANY TABLE, UPDATE ANY TABLE TO TESTUSER
 
 - Note: if you created an OML user with a different name other than **TESTUSER**, make sure to modify the end of the above SQL code with your specific user name appropriately.
 
@@ -121,7 +117,7 @@ GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP AN
 
     ![](./images/20.png " ")
 
-4. You will download a dataset file from this workshop to load into OML. You can download it by right clicking on the following text link and selecting **Save link as**. Keep the default options when downloading: [Download ML-Prediction-Models.json here](./files/ML-Prediction-Models.json). Then, open your browser window again back to the OML page.
+4. You will download a dataset file from this workshop to load into OML. You can download it by right clicking on the following text link and selecting **Save link as**. Keep the default options when downloading: [Download ML-Prediction-Models.json here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/oaoaQIJWKEKsh0QaEnJfcJ5A7tak48DxjpeCQBSfSJk/n/c4u03/b/solutions-library/o/ML-Prediction-Models.json). Then, open your browser window again back to the OML page.
 
 5. Click **Import** and select **ML-Prediction-Models.json** that you just downloaded.
 
@@ -184,10 +180,10 @@ GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP AN
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
-- **Last Updated By/Date** - Jeffrey Malcolm, QA Specialist, July 2020
+- **Last Updated By/Date** - Jess Rein, Cloud Engineer, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
 
 
 
