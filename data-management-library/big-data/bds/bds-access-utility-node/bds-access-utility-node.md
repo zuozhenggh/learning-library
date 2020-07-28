@@ -46,7 +46,6 @@ This lab assumes that you have successfully completed the following labs in the 
 
 5. On the same page, in the **List of Cluster Nodes** section, in the **IP Address** column, find the private IP addresses for the first utility node, **`traininun0`**, second utility node, **`traininun1`**, and the Cloud SQL node, **`traininqs0`**. Save the IP addresses as you will need them in later steps. In our example, the private IP address of our first utility node in the cluster is **`10.0.0.12`** and **`10.0.0.15`** for the second utility node. The private IP address for the Cloud SQL node in the cluster is **`10.0.0.16`**.
 
-  ![](./images/un-private-ips.png " ")
 
 ## STEP 2: Map the Private IP Address of the First Utility Node to a Public IP Address
 
