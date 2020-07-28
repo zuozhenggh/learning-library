@@ -44,7 +44,7 @@ This lab assumes that you have successfully completed the following labs in the 
 
   ![](./images/subnet-ocid.png " ")
 
-5. On the same page, in the **List of Cluster Nodes** section, in the **IP Address** column, find the private IP addresses for the first and second utility nodes, **`traininun0`** and **`traininun1`**. Save the IP addresses as you will need them in later steps. In our example, the private IP address of our first utility node in the cluster is **`10.0.0.12`** and **`10.0.0.15`** for the second utility node.
+5. On the same page, in the **List of Cluster Nodes** section, in the **IP Address** column, find the private IP addresses for the first utility node, **`traininun0`**, second utility node, **`traininun1`**, and the Cloud SQL node, **`traininqs0`**. Save the IP addresses as you will need them in later steps. In our example, the private IP address of our first utility node in the cluster is **`10.0.0.12`** and **`10.0.0.15`** for the second utility node. The private IP address for the Cloud SQL node in the cluster is **`10.0.0.16`**.
 
   ![](./images/un-private-ips.png " ")
 
@@ -142,7 +142,40 @@ In this step, you will set two variables using the **`export`** command. Next, y
     ![](./images/reserved-public-ip-3.png " ")
 
 
-## STEP 4: Edit a Public IP Address
+## STEP 4: Map the Private IP Address of the Cloud SQL Node to a Public IP Address
+
+In this step, you will set two variables using the **`export`** command. Next, you use the **`oci network`** command to map the private IP address of the **Cloud SQL node** to a new public IP address.
+
+1. In the **Cloud Shell**, at the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line.
+
+    ```
+    $ <copy>export DISPLAY_NAME="traininqs0"</copy>
+    ```
+
+    **Note:**    
+    In the previous step, you already set the **`SUBNET_OCID`** variable to your own **`subnet-ocid`** value that you identified in **STEP 1** of this lab. You don't need to set the variable again.
+
+2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. Remember, the **`ip-address`** is the private IP address that is assigned to the Cloud SQL node that you want to map to a public IP address.
+
+    ```
+    $ <copy>export PRIVATE_IP="10.0.0.16"</copy>
+    ```
+
+    **Note:** In the preceding command, substitute the **_`ip-address`_** shown with your own Cloud SQL node's private IP address that you identified in **STEP 1** of this lab.
+
+3.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or click **Copy** to copy the command, and then paste it on the command line.
+
+    ```
+    $ <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>
+    ```
+
+4.  In the output returned, find the value for **ip-address** field. In our example, it's **`150.136.26.166`**. This is the new reserved public IP address that is mapped to the private IP address of your **Cloud SQL node**.
+
+5.  To see the newly created reserved public IP address in the console, click the Navigation menu and navigate to **Core Infrastructure > Networking > Public IPs**. The new reserved public IP address is displayed in the **Reserved Public IPs** page.
+
+      ![](./images/list-public-ip.png " ")
+
+## STEP 5: Edit a Public IP Address
 
 In this step, you will learn how to edit a public IP address using both the **Cloud Console** and the **Cloud Shell**.
 
