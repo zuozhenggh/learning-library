@@ -1,4 +1,4 @@
-# Provision Lab
+# Load Data into an Instance
 
 ## Introduction
 

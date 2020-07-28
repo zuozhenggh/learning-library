@@ -1,4 +1,4 @@
-# Analyze Data
+# Query Your Data
 
 ## Introduction
 
@@ -65,18 +65,18 @@ Step 1 opening paragraph.
   | 2 |Some text or a link | More text |
   | 3 | Some text or a link | More text |
 
-2. You can also include bulleted lists - make sure to indent by at three spaces:
+2. You can also include bulleted lists - make sure to indent 4 spaces:
 
-      - List item 1
-      - List item 2
+    - List item 1
+    - List item 2
 
 3. Code examples
 
     ```
     Adding code examples
-	Indentation is important for the code example to appear inside the step
+  	Indentation is important for the code example to appear inside the step
     Multiple lines of code
-	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
+  	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
     ```
 
 4. Code examples that include variables
