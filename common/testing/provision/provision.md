@@ -31,13 +31,12 @@ In this lab, you'll:
 
 Step 1 opening paragraph.
 
-1. Sub step 1
+1. **Conditional content test:** Select your compartment. <if type="livelabs">**LiveLabs only:** If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. Leave Always Free unchecked </if>, <if type="freetier">**FreeTier Only:** Choose a compartment, select "Always Free", </if>and enter `SecretPassw0rd` for the ADMIN password, then click **Create Autonomous Database**.
 
-  To create a link to local file you want the reader to download, use this format:
-
-  Download the [starter file](files/starter-file.sql) SQL code.
-
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+    ![](images/atp-settings-1.png " ")
+    <if type="livelabs">![](images/atp-settings-2-notaf.png " ")</if>
+    <if type="freetier">![](images/atp-settings-2.png " ")</if>
+    ![](images/atp-settings-3.png " ")
 
 2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
 
@@ -52,6 +51,14 @@ Step 1 opening paragraph.
 5. One example with bold **text**.
 
    If you add another paragraph, add 3 spaces before the line.
+
+6. Links to external files
+
+   To create a link to local file you want the reader to download, use this format:
+
+   Download the [starter file](files/starter-file.sql) SQL code.
+
+   *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
 
 ## **STEP 2:** title
 
