@@ -1,4 +1,4 @@
-# Setup Lab
+# Visualize Your Data
 
 ## Introduction
 

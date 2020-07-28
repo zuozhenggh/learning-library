@@ -1,4 +1,4 @@
-# Visualize Lab
+# Provision an Instance
 
 ## Introduction
 
