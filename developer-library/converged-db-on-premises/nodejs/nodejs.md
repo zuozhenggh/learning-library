@@ -11,7 +11,7 @@ This lab assumes you have completed the following labs:
 - Lab 1: Login to Oracle Cloud
 - Lab 2: Generate SSH Key
 - Lab 3: Create Compute Instance
-- Lab 4: Environment Setup (Is this one needed for this lab - Kay)
+- Lab 4: Environment Setup
 
 ### About Oracle Node.js
 
@@ -43,23 +43,20 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
 **Download Node.js**
 
-   The official Node.js website has installation instructions for Node.js: https://nodejs.org
-
-**A Vast Number of Libraries**
-   Npm with its simple structure helped the ecosystem of Node.js proliferate, and now the npm registry hosts over 1,000,000 open source packages you can freely use.  
+   The official Node.js website has installation instructions for [Node.js](https://yum.oracle.com/oracle-linux-nodejs.html).
 
 ### Want to learn more
 
-   - [Node-js](https//nodejs.org/en/)
-   - [Node-js for oracle Linux](https//yum.oracle.com/oracle-linux-nodejs.html)  
-   - [Node-js Driver](https//oracle.github.io/node-oracledb/)
-   - [Oracle Instant Client](https//www.oracle.com/in/database/technologies/instant-client/downloads.html)
-   - [Docker](https//www.docker.com/)
-   - [Postman](https//www.postman.com/)
+   - [Node-js](https://nodejs.org/en/)
+   - [Node-js for Oracle Linux](https://yum.oracle.com/oracle-linux-nodejs.html)  
+   - [Node-js Driver](https://oracle.github.io/node-oracledb/)
+   - [Oracle Instant Client](https://www.oracle.com/in/database/technologies/instant-client/downloads.html)
+   - [Docker](https://www.docker.com/)
+   - [Postman](https://www.postman.com/)
 
 ## Step 1:  Verify Application
 
-1.  The script (env_setup_script.sh) which was run in Lab-4 has started the application. Also at the end of the script. you      will be presented with two URLs.
+1.  The script (env\_setup\_script.sh) which was run in Lab-4 has started the application. Also at the end of the script. you      will be presented with two URLs.
 
    ![](./images/appscript4a.png " ")
 
@@ -67,10 +64,10 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
       - your address - Your Public IP Address
 
-3. Open up a web browser and visit the Application API indicated in your terminal.   http://your address:3000/
+3. Open up a web browser and visit the Application API indicated in your terminal.   http://your address:3001/
       - your address - Your Public IP Address
 
-    ![](./images/env_nodejsa.png " ")
+    ![](./images/application_home_pageupdated.png " ")
 
 You may proceed to the next lab.
 
@@ -117,58 +114,53 @@ You may proceed to the next lab.
 
 1. Open a new tab
 
-2. Select GET Method and enter the request URL http://&lt;PUBLIC-IP&gt;:3001/products/31
+2. Select GET Method and enter the request URL http://&lt;PUBLIC-IP&gt;:3001/products/31  
+-Method: - GET
+-To get list of all the product details. URL: - http://&lt;PUBLIC-IP&gt;:3001/products  
+-To get the specific product details by using PID. URL: - http://&lt;PUBLIC-IP&gt;:3001/products/31  
 
-  -  Method: - GET
-    To get list of all the product details
-  -  URL: - <\PUBLIC-IP>:3001/products
-    To get the specific product details by using PID.
-  -  URL: - <\PUBLIC-IP>:3001/products/31
+3. Click on the **Send** button, Postman return the HTTP 200 Ok which is a successful GET.
 
 ![](./images/postman10a.png " ")
 
+4. Open the browser and verify the above using link- http://&lt;PUBLIC-IP&gt;:3001/products/31"
 
- 3. Open the browser and verify the above using link- "PUBLIC-IP:3001/products/31"
-
-  ![](./images/nodejs-postman5a.png " ")
+![](./images/nodejs-postman5a.png " ")
 
 ## Step 4: Using HTTP POST Method
 
 
-1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL http://&lt;localhost&gt;:3001/products/13.
+1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL http://&lt;PUBLIC-IP&gt;:3001/products/13.
 
   ![](./images/postman11a.png " ")
 
-  We are going to update the price from 9$ to 12$ for the product PID=13.
+  We are going to update the price from $9 to $12 for the product PID=13.
 
   Check the key value format for the price field.
 
-		{"Key": "value"}
+	{"Key": "value"}
 
-    	{"price": "9"}
+  {"price": "9"}
 
-3. Select POST Method and enter the request URL to update the price value for the PID=13
+2. Select POST Method and enter the request URL to update the price value for the PID=13
 
-  -	Method: - POST
-  - URL: - <\PUBLIC-IP>:3001/updateProduct/13
-  - Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)
-	- Product details: - Example
+-Method: - POST  
+-URL: - http://&lt;PUBLIC-IP&gt;:3001/updateProduct/13  
+-Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)  
+-Product details: Copy the entry from below  
 
-
-       {"Key": "value"}
-
-    ````
+````
   <copy>
 	{"price": "12"}
   </copy>
-    ````
+````
 
 
-    ![](./images/postman12a.png " ")
+![](./images/postman12a.png " ")
 
+3. Click on the Send button, Postman return the HTTP 200 OK after successfully updating the product price.
 
-
-4. Verify product details by using HTTP GET method.  
+4. Verify product details by using HTTP GET method. Select the GET method, enter the URL http://&lt;PUBLIC-IP&gt;:3001/products/13 and click on Send. Notice the data in the body section and price is updated.  
 
 ![](./images/nodejs-postman9a.png " ")
 
