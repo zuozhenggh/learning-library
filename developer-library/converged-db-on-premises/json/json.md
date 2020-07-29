@@ -58,163 +58,79 @@ The first thing to realize about JSON is that it remains a simple text format, w
 **Want to learn more**
 - [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 
-## Step 1: Connect to your Instance
+## Step 1: Connect to the Pluggable Database (PDB)
 
-**Oracle Cloud Shell**
-1. Open Oracle Cloud Shell by clicking on the Cloud Shell icon in the top right corner.
+1. Open a terminal window and sudo to the user **oracle**
 
-    ![](./images/oracleshell.png " ")
-
-2. Go to Compute -> Instance and select the instance you created (make sure you choose the correct compartment)
-
-3. On the instance homepage, find the Public IP addresss for your instance.
-
-4. Enter the command below to login to your instance.
-
-    ````
-    ssh -i ~/<sshkeylocation> opc@<Your Compute Instance Public IP address>
-    ````
-
-5. When prompted, answer yes to continue connecting.
-
-**MAC or Windows CYGWIN Emulator**
-1. Go to Compute -> Instance and select the instance you created (make sure you choose the correct compartment)
-
-2. On the instance homepage, find the Public IP addresss for your instance.
-
-3. Open up a terminal (MAC) or cygwin emulator as the opc user. Enter yes when prompted.
-
-4. Enter the command below to login to your instance
-
-    ````
-    ssh -i ~/<sshkeylocation> opc@<Your Compute InstancePublic IP address>
-    ````
-
-**Windows using Putty**
-1. Open up putty and connect to your instance.
-
-    ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
-    ````
-    ![](./images/sshconnect.png " ")
-
-2. Enter a name for the session and Click "Save".
-
-    ![](./images/puttyconnect.png " ")
-
-3. Click **Connection > Data** in the left navigation pane and set the Auto-login username to root.
-
-4. Click **Connection > SSH > Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
-
-5. Navigate to the location where you saved your SSH private key file, select the file, and click Open. NOTE: You may not be able to connect while on any corporate VPN or in the Oracle office on clear-corporate (choose clear-internet if you are in an Oracle office).
-
-    ![](./images/puttyconfig.png " ")
-
-6. The file path for the SSH private key file now displays in the Private key file for authentication field.
-
-7. Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session Step.
-
-8. Click Open to begin your session with the instance.
-
-## Step 2: Setup
-**Setup your Oracle Environment**
-1. Open the Oracle Cloud Shell by clicking on the icon next to the reigon name.
-
-    ![](./images/oracleshell.png " ")
-
-
-2. As oracle user navigate to the json workshop directory by entering the following commands.
-
-    ````
+````
     <copy>
     sudo su - oracle
     </copy>
-    ````
-
-    ````
+````
+2. Navigate to the json directory.
+````
     <copy>
     cd /u01/workshop/json
     </copy>
-    ````
-    ![](./images/json1.png " ")
+````
 
-2. Set your environment variables to the ConvergedCDB home.
+3. Set your environment.
 
-    ````
+````
     <copy>
     . oraenv
     </copy>
-    ````
-
-    ````
+````
+4. When prompted paste the following:
+````
     <copy>
-    ConvergedCDB
+    convergedcdb
     </copy>
-    ````
-    ![](./images/json2.png " ")
-
-    ````
+````
+5. Open sqlplus as the user appjson
+````
     <copy>
     sqlplus appjson/Oracle_4U@JXLPDB
     </copy>
-    ````
-    ![](./images/json3.png " ")
+````
 
-**Connect to Sql Developer**
+## Step 2: Connect to SQL Developer
 
-1. Download Sql Developer for your device.[https://www.oracle.com/tools/downloads/sqldev-downloads.html](https://www.oracle.com/tools/downloads/sqldev-downloads.html). You will also need JDK 11 which can be downloaded here [https://www.oracle.com/java/technologies/javase-jdk11-downloads.html](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+1. Make a connection to sqldeveloper. Use the details as below and click on connect.
 
-2. Under connections right click on "Oracle Connections" and click "New Connection"
-
-    ![](./images/json4.png " ")
-
-3.  Provide the details as below and click on connect.
-
-    ````
-    Name: opc
+````
+    Name: JSON
     Username: appjson
     Password: Oracle_4U
-    Hostname: Instance Public IP address
+    Hostname: PUBLIC-IP
     Port: 1521
     Service name: JXLPDB
-    ````
-
-  ![](./images/env_json.png " ")
-
-4. Click Connect
-
-**Create a directory**
-
-We will create a directory which will point to the location where json dump file is stored-
-
-  ````
-
-  create or replace directory ORDER_ENTRY
-  as '/home/oracle/Spatial/script/db-sample-schemas-19.2/order_entry/';
-
-  ````
-
-**Create a simple table to store JSON documents**
-In Oracle there is no dedicated JSON data type. JSON documents are stored in the database using standard Oracle data types such as VARCHAR2, CLOB and BLOB.
-
-In order to ensure that the content of the column is valid JSON data, a new constraint **IS JSON**, is provided that can be applied to a column. This constraint returns TRUE if the content of the column is well-formed, valid JSON and FALSE otherwise.
-
-This first statement in this module creates a table which will be used to contain JSON documents. These statements can be entered using SQLdeveloper or the connection to SQLdeveloper from your local terminal.
-
-````
-create table PURCHASE_ORDER (
-  ID            RAW(16) NOT NULL,
-  DATE_LOADED   TIMESTAMP(6) WITH TIME ZONE,
-  PO_DOCUMENT CLOB CHECK (PO_DOCUMENT IS JSON)
-  )
-/
 ````
 
-This statement creates a very simple table, PURCHASE\_ORDER. The table has a column PO\_DOCUMENT of type CLOB. The IS JSON constraint is applied to the column PO\_DOCUMENT, ensuring that the column can store only well formed JSON documents.
+  ![](./images/sql_developer_json.png " ")
 
 ## Step 3: Loading JSON Documents into the database  
 
-This statement creates a simple external table that can read JSON documents from a dump file generated by a typical No-SQL style database. In this case, the documents are contained in the file PurchaseOrders.dmp. The SQL directory object ORDER\_ENTRY points to the folder containing the dump file, and also points to the database’s trace folder which will contain any ‘log’ or ‘bad’ files generated when the table is processed.
+**For Step 3 only the SQL statements have already been run. The SQL has been provided as reference.**
+
+1. We will create a directory which will point to the location where json dump file is stored.
+
+````
+create or replace directory ORDER_ENTRY as '/u01/workshop/dump';
+````
+
+2. This statement creates a very simple table, PURCHASE\_ORDER. The table has a column PO\_DOCUMENT of type CLOB. The IS JSON constraint is applied to the column PO\_DOCUMENT, ensuring that the column can store only well formed JSON documents. In Oracle there is no dedicated JSON data type. JSON documents are stored in the database using standard Oracle data types such as VARCHAR2, CLOB and BLOB. In order to ensure that the content of the column is valid JSON data, a new constraint IS JSON, is provided that can be applied to a column. This constraint returns TRUE if the content of the column is well-formed, valid JSON and FALSE otherwise. This first statement in this module creates a table which will be used to contain JSON documents.
+
+````
+create table PURCHASE_ORDER (
+	ID RAW(16) NOT NULL,
+	DATE_LOADED  TIMESTAMP(6) WITH TIME ZONE,
+	PO_DOCUMENT CLOB CHECK (PO_DOCUMENT IS JSON)
+	)
+	/
+````
+
+3. This statement creates a simple external table that can read JSON documents from a dump file generated by a typical No-SQL style database. In this case, the documents are contained in the file PurchaseOrders.dmp. The SQL directory object ORDER\_ENTRY points to the folder containing the dump file, and also points to the database’s trace folder which will contain any ‘log’ or ‘bad’ files generated when the table is processed.
 
 ````
 CREATE TABLE PURCHASE_EXT(
@@ -241,9 +157,7 @@ CREATE TABLE PURCHASE_EXT(
 /
 ````
 
-## Steps 4: Loading data from the external table into JSON table
-
-The following statement copies the JSON documents from the dump file into the PURCHASE\_ORDER table.
+4. The following statement copies the JSON documents from the dump file into the PURCHASE\_ORDER table.
 
 ````
 insert into PURCHASE_ORDER
@@ -255,10 +169,7 @@ commit
 /
 ````
 
-![](./images/purchase_order_count.png " ")
-![](./images/insert_ot.png " ")
-
-## Step 5: Insert a record.
+## Step 4: Insert a record.
 
 1. **Take a count of the rows in the json table-**
 
@@ -323,7 +234,7 @@ Set your oracle environment and connect to PDB as **oracle** user.
 ````
 ````
 <copy>
-      ConvergedCDB
+      convergedcdb
 <copy>
 ````
 ````
@@ -349,7 +260,7 @@ Set your oracle environment and connect to PDB as **oracle** user.
 
 **Note:** Please copy the red highlighted id which we will use in our next section of update query.
 
-## Step 6: Update a Table.
+## Step 5: Update a Table.
 We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
 
 **Note:** In the above update query replace the id which we copied in previous step.
@@ -370,7 +281,7 @@ We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json
 
 ![](./images/json_lab7_6.png " ")
 
-## Step 7: Example Queries
+## Step 6: Example Queries
 1. Customers who ordered products from specific Geo location   
 
 ````
@@ -438,7 +349,7 @@ The JSON\_EXISTS operator takes two arguments, a JSON column and a JSON path exp
 </copy>
 ````
 
-        ![](./images/specific_product1.png " ")
+![](./images/specific_product1.png " ")
 
 
 4. Find the customers who all are purchased a specific products based on the description of the product

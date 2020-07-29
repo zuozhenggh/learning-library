@@ -43,55 +43,58 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
 
 
 ## Step 1: Connect to the Pluggable Database (PDB)
-1. Set the Oracle environment    
-    ````
+1. Open a terminal window and sudo to the user **oracle**
+
+````
     <copy>
     sudo su - oracle
     </copy>
-    ````   
-    ````
+````
+2. Set your environment.
+
+````
     <copy>
     . oraenv
     </copy>
-    ````
-
-    ````
+````
+3. When prompted paste the following:
+````
     <copy>
-    ConvergedCDB
+    convergedcdb
     </copy>
-    ````
-
-2.  Login as the appspat user using SQL*Plus
-    ````
+````
+4. Open sqlplus as the user appjson
+````
     <copy>
-    sqlplus APPSPAT/Oracle_4U@SGRPDB
+    sqlplus appspat/Oracle_4U@SGRPDB
     </copy>
-    ````
+````
 
-3. Make a connection to sqldeveloper.  Provide the details as below and click on connect.
 
-    ````
-    <copy>
-    Name    : Spatial
-    Username: APPSPAT
+## Step 2: Connect to SQL Developer
+
+1. Make a connection to sqldeveloper. Use the details as below and click on connect.
+
+````
+    Name: Spatial
+    Username: appspat
     Password: Oracle_4U
     Hostname: PUBLIC-IP
-    Port    : 1521
+    Port: 1521
     Service name: SGRPDB
+````
 
-    </copy>
-    ````
-
-  ![](./images/spatial_enva.png " ")
+![](./images/spatial_sql_developer.png " ")
 
 
-## Step 2: Create spatial tables
+## Step 3: Setting Up Spatial
 
-We have created tables and spatial metadata for CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP
+**For Step 3 only the SQL statements have already been run. The SQL has been provided as reference.**
+
+1. We have created tables and spatial metadata for CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP
 Notice that each has a column of type SDO\_GEOMETRY to store location.
 
 ````
-      <copy>
       CREATE TABLE CUSTOMERS                                             
   (
     CUSTOMER_ID NUMBER(6, 0),
@@ -119,19 +122,12 @@ Notice that each has a column of type SDO\_GEOMETRY to store location.
   	"DRIVE_TIME_MIN" NUMBER,
   	"GEOMETRY" "SDO_GEOMETRY"
   );
-
-      </copy>
 ````
 
-## Step 3: Add spatial metadata
-
-  Next we added Spatial metadata for the CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP
-  tables to the USER\_SDO\_GEOM\_METADATA view. Each SDO\_GEOMETRY column is registered with a row in USER\_SDO\_GEOM\_METADATA.
-
+2. Next we added Spatial metadata for the CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP tables to the USER\_SDO\_GEOM\_METADATA view. Each SDO\_GEOMETRY column is registered with a row in USER\_SDO\_GEOM\_METADATA.
 
   ````
-      <copy>
-   EXECUTE SDO_UTIL.INSERT_SDO_GEOM_METADATA (sys_context('userenv','current_user'), -
+     EXECUTE SDO_UTIL.INSERT_SDO_GEOM_METADATA (sys_context('userenv','current_user'), -
    'CUSTOMERS', 'CUST_GEO_LOCATION', -  SDO_DIM_ARRAY(SDO_DIM_ELEMENT('X',-180, 180, 0.05), - SDO_DIM_ELEMENT('Y', -90, 90, 0.05)),-  4326);
 
   EXECUTE SDO_UTIL.INSERT_SDO_GEOM_METADATA (sys_context('userenv','current_user'), -
@@ -139,10 +135,7 @@ Notice that each has a column of type SDO\_GEOMETRY to store location.
 
   Insert into user_sdo_geom_metadata values (
   'WAREHOUSES_DTP','GEOMETRY',MDSYS.SDO_DIM_ARRAY(MDSYS.SDO_DIM_ELEMENT('X', -180, 180, 0.05), MDSYS.SDO_DIM_ELEMENT('Y', -90, 90, 0.05)),4326);
-        </copy>
-
   ````
-
 
   **Here is a description of the items that were entered:**
 
@@ -152,34 +145,25 @@ Notice that each has a column of type SDO\_GEOMETRY to store location.
   -	4326: Spatial reference system id (SRID): a foreign key to an Oracle dictionary table  (MDSYS.CS-SRS) tha  contains all the     supported coordinate systems. It is important to associate your customer's location to a coordinate system. In this example, 4326    corresponds to "Longitude / Latitude (WGS 84).".
 
 
-  We have inserted spatial data and we have used two spatial functions for this.
+We have inserted spatial data and we have used two spatial functions for this.
 
-  - We use sdo\_cs.transform() to convert to our desired coordinate system SRID of 4326, and
-  - We use sdo\_geom.validate\_geometry() to insert only valid geometries.
+We use sdo\_cs.transform() to convert to our desired coordinate system SRID of 4326, and we use sdo\_geom.validate\_geometry() to insert only valid geometries.
 
-
-## Step 4: Sample insert query
-
-  Below is the sample insert query-
+3. Below is the sample insert query-
 
   ````
-      <copy>
-  Insert into WAREHOUSES (WAREHOUSE_ID,WAREHOUSE_NAME,LOCATION_ID,WH_GEO_LOCATION) values (1,'Speedway Facility',1400,MDSYS.SDO_GEOMETRY(2001, 4326, MDSYS.SDO_POINT_TYPE(-86.2508, 39.7927, NULL), NULL, NULL));
-      </copy>
-
+    Insert into WAREHOUSES (WAREHOUSE_ID,WAREHOUSE_NAME,LOCATION_ID,WH_GEO_LOCATION) values (1,'Speedway Facility',1400,MDSYS.SDO_GEOMETRY(2001, 4326, MDSYS.SDO_POINT_TYPE(-86.2508, 39.7927, NULL), NULL, NULL));
   ````
 
   The elements of the constructor are:
-  -	2001: SDO\_GTYPE attribute and it is set to 2001 when storing a two-dimensional single point such as a customer's location.
-  -	4326: This is the spatial reference system ID (SRID): a foreign key to an Oracle dictionary table (MDSYS.CS\_SRS) that contains all the supported coordinate systems. It is important to associate your customer's location to a coordinate system. In this example, 4326 corresponds to "Longitude / Latitude (WGS 84)."
-  -	MDSYS.SDO-POINT-TYPE: This is where you store your longitude and latitude values within the SDO\_GEOMETRY constructor. Note that you can store a third value also, but for these tutorials, all the customer data is two-dimensional.
-  -	NULL, NULL: The last two null values are for storing linestrings, polygons, and geometry collections. For more information on all the fields of the SDO\_GEOMETRY object, please refer to the Oracle Spatial Developer's Guide. For this tutorial with point data, these last two fields should be set to NULL.
+2001: SDO\_GTYPE attribute and it is set to 2001 when storing a two-dimensional single point such as a customer's location.
+4326: This is the spatial reference system ID (SRID): a foreign key to an Oracle dictionary table (MDSYS.CS\_SRS) that contains all the supported coordinate systems. It is important to associate your customer's location to a coordinate system. In this example, 4326 corresponds to "Longitude / Latitude (WGS 84)."
+MDSYS.SDO-POINT-TYPE: This is where you store your longitude and latitude values within the SDO\_GEOMETRY constructor. Note that you can store a third value also, but for these tutorials, all the customer data is two-dimensional.
+NULL, NULL: The last two null values are for storing linestrings, polygons, and geometry collections. For more information on all the fields of the SDO\_GEOMETRY object, please refer to the Oracle Spatial Developer's Guide. For this tutorial with point data, these last two fields should be set to NULL.
 
-## Step 5:  Create Indexes
-  We have created indexes for each table- CUSTOMERS, WAREHOUSES and WAREHOUSES_DTP
+4. We have created indexes for each table- CUSTOMERS, WAREHOUSES and WAREHOUSES_DTP
 
   ````
-      <copy>
   CREATE INDEX customers_sidx ON customers(CUST_GEO_LOCATION)
   indextype is mdsys.spatial_index;
 
@@ -188,9 +172,8 @@ Notice that each has a column of type SDO\_GEOMETRY to store location.
 
   CREATE INDEX "WAREHOUSES_DTP_SIDX" ON "WAREHOUSES_DTP" ("GEOMETRY")
   INDEXTYPE IS "MDSYS"."SPATIAL_INDEX" ;
-  </copy>
   ````
-## Step 6: Example Queries
+## Step 4: Example Queries
 
 1. Find the five customers closest to the warehouse whose warehouse name  is 'Ferndale Facility'
 

@@ -3,8 +3,8 @@
 ## Introduction
 
 This lab will show you how to use cross data functions.
-- JSON with Relational 
-- XML with Relational 
+- JSON with Relational
+- XML with Relational
 - JSON with Spatial
 
 
@@ -13,7 +13,7 @@ This lab will show you how to use cross data functions.
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud
 - Lab 2:  Generate SSH Key
-- Lab 3:  Create Compute instance 
+- Lab 3:  Create Compute instance
 - Lab 4:  Environment setup
 
 ### About Oracle Cross Datatype
@@ -22,45 +22,63 @@ JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON 
 
 The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
 
-## Step 1: JSON with Relational 
+## Step 1: Connect to the Pluggable Database (PDB)
+
+1. Open a terminal window and sudo to the user **oracle**
+
+````
+    <copy>
+    sudo su - oracle
+    </copy>
+````
+ 2. Set your environment.
+
+````
+    <copy>
+    . oraenv
+    </copy>
+````
+3. When prompted paste the following:
+````
+    <copy>
+    convergedcdb
+    </copy>
+````
+4. Open sqlplus as the user crstype
+````
+    <copy>
+    sqlplus crstype/Oracle_4U@APPPDB
+    </copy>
+````
+
+## Step 2: Connect to SQL Developer
+
+1. Make a connection to sqldeveloper. Use the details as below and click on connect.
+
+````
+    Name: CROSSTYPE
+    Username: crstype
+    Password: Oracle_4U
+    Hostname: PUBLIC-IP
+    Port: 1521
+    Service name: APPPDB
+````
+
+![](./images/cross_sql_developer.png " ")
+
+## Step 3: JSON with Relational
 
  JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data
 
+1. Find all the Products, those sold with payment mode – Cash on Delivery
 
-1. Set your oracle environment and connect to the PDB
-       
-  ````
-    <copy>
-     . oraenv
-     ConvergedCDB
-     sqlplus CRSTYPE/Oracle_4U@APPPDB
-
-    </copy>
-````
-
-2. Make a connection to sqldeveloper.Provide the details as below and click on connect.
-   
-````
-    <copy>
-	Name: JSON
-    Username: CRSTYPE
-    Password: Oracle_4U
-    Hostname: <machine_IP_address>
-    Port: 1521
-    Service name: APPPDB
-
-    </copy>
-   ````
-
-3. Find all the Products, those sold with payment mode – Cash on Delivery
-  
   ````
     <copy>
     select D.*
       from PURCHASE_ORDER p,
           JSON_TABLE(
             p.PO_DOCUMENT,
-            '$' 
+            '$'
             columns(
               PO_NUMBER            NUMBER(10)                  path  '$.PONumber',
               REFERENCE            VARCHAR2(30 CHAR)           path  '$.Reference',
@@ -70,10 +88,10 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
           "Special Instructions" VARCHAR2(4000) PATH '$."Special Instructions"',
               NESTED PATH '$.LineItems[*]'
               columns(
-                ITEMNO         NUMBER(16)             path '$.ItemNumber', 
-                DESCRIPTION    VARCHAR2(32 CHAR)      path '$.Part.Description', 
-                UPCCODE        VARCHAR2(14 CHAR)      path '$.Part.UPCCode', 
-                QUANTITY       NUMBER(5,4)            path '$.Quantity', 
+                ITEMNO         NUMBER(16)             path '$.ItemNumber',
+                DESCRIPTION    VARCHAR2(32 CHAR)      path '$.Part.Description',
+                UPCCODE        VARCHAR2(14 CHAR)      path '$.Part.UPCCode',
+                QUANTITY       NUMBER(5,4)            path '$.Quantity',
                 UNITPRICE      NUMBER(5,2)            path '$.Part.UnitPrice'
               )
             )
@@ -82,25 +100,23 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
     /
     </copy>
   ````
-  
-  ![](./images/cd1.png " ") 
+
+  ![](./images/cd1.png " ")
 
 
 
 
 4.  Purchase order history count based on City
 
-  ![](./images/cd2.png " ") 
-
   ````
   <copy>
 select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by ship_to_city;
   </copy>
   ````
-  
+
   ![](./images/cd3.png)
 
-## Step 2: XML with Relational
+## Step 4: XML with Relational
 
 1. **XMLTABLE:** Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
@@ -121,8 +137,8 @@ select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by
 
     </copy>
    ````
-      
-   ![](./images/cd4.png " ") 
+
+   ![](./images/cd4.png " ")
 
 
 2. Insert XML data
@@ -147,7 +163,7 @@ select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by
 
     </copy>
   ````
-    
+
   ![](./images/cd5.png)
 
 3. Create table
@@ -155,20 +171,20 @@ select ship_to_city,count(ship_to_city) from PURCHASE_ORDER_DETAIL_VIEW group by
   ````
     <copy>
     CREATE TABLE purchaseorder_lineitem (reference  VARCHAR2(28),
-                                        lineno      NUMBER(10), 
+                                        lineno      NUMBER(10),
                                         upc         VARCHAR2(14),
                                         description VARCHAR2(128),
                                         quantity    NUMBER(10),
                                         unitprice   NUMBER(12,2));
     </copy>
  ````
-    
+
   ![](./images/cd6.png)
 
-   **Insert XML Data**
+4. Insert XML Data
    ````
     <copy>
- 
+
 
      INSERT INTO purchaseorder_lineitem (reference, lineno, upc, description, quantity, unitprice)
     SELECT t.reference, li.lineno, li.upc, li.description, li.quantity, li.unitprice
@@ -246,7 +262,7 @@ GeoJSON uses JSON objects that represent various geometrical entities and combin
 
 - A geometry collection is a geometry object with type GeometryCollection. Instead of a coordinates field it has a geometries field, whose value is an array of geometry objects other than GeometryCollection objects.
 
-1. 
+1.
 ````
 <copy>
 CREATE TABLE json_geo
@@ -257,7 +273,7 @@ CREATE TABLE json_geo
 ````
 ![](./images/cd12.png)
 
-2. 
+2.
 ````
 <copy>
 INSERT INTO json_geo
@@ -363,17 +379,6 @@ SDO_GEOMETRY),
 ````
 ![](./images/cd15.png)
 
-This is the end of the lab.
-
-## Converged Database Workshop Collection
-
-- [Node.Js](?lab=node.js-lab-1-intro-setup) - Use Rest API to add products to the eShop Application
-- [Json](?lab=json-lab-1-intro-setup) - Store and read JSON documents from the Oracle Database
-- [XML](?lab=xml-lab-1-setup)- Manage XML content in the Oracle Database
-- [Spatial](?lab=spatial-lab-1-setup) - Work with Spatial Data in the Oracle Database
-- [Graph](?lab=graph-lab-1-intro-setup) - Work with Graph Data in the Oracle Database
-- [Cross Datatype](?lab=cross-lab-1-intro-usage) - Work with Cross Data Types
-
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
@@ -384,15 +389,3 @@ This is the end of the lab.
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
-     
-
-
-
-
-
-
-
-
-
-
-
