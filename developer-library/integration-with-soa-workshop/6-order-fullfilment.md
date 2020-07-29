@@ -30,4 +30,4 @@ When it’s completed, your overall fullfillOrder project will look similar to c
 
 This completes Module 6. You now know how to enhance how to deploy a project for SOA composites and Service Bus, how to debug and different ways to test within JDeveloper and Enterprise Manager Fusion Middleware Control. 
 
-[Click here to navigate to Module 7](7-Summary-and-next-step.md) 
+[Click here to navigate to Module 7](7-summary-and-next-step.md) 

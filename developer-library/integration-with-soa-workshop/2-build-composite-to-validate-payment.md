@@ -87,6 +87,6 @@ Please start page 54, in the SOA suite tutorial pdf.
 
 Congratulations you have just completed your first SOA Suite 12c composite! in Part 1 and 2 for developing validate payment using SOA Composite approach.
 
-[Click here to navigate to the next Module 3](3-Process-order-using-composite.md)
+[Click here to navigate to the next Module 3](3-process-order-using-composite.md)
 
 ### ** Summary ** ###

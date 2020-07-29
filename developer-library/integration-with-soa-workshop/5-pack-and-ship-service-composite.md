@@ -17,7 +17,7 @@ The Pack and ship composite in JDeveloper would look like the following:
 
 This completes Module 5. The next module will build the fulfillment order service, which identifies the shipping provider and calls the pack and ship service.
 
-[Click here to navigate to Module 6](6-Order-Fullfilment.md)
+[Click here to navigate to Module 6](6-order-fullfilment.md)
 
 ### **Learn More** - *Useful Links*
 

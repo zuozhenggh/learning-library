@@ -72,4 +72,4 @@ Please start from <ins>chapter 4, page 163 in the Tutorial pdf document</ins>.
 
 
 ### **Summary**
-This completes Module 4. You've successfully added new File order channel in the ProcessOrder app leveraging the work done in previous chapters. You've also added new Proxy to handle incoming orders by file and translate common- delimited format with nXSD. [Click here to navigate to Module 5](5-Pack-and-Ship-Service-composite.md)
+This completes Module 4. You've successfully added new File order channel in the ProcessOrder app leveraging the work done in previous chapters. You've also added new Proxy to handle incoming orders by file and translate common- delimited format with nXSD. [Click here to navigate to Module 5](5-pack-and-ship-service-composite.md)

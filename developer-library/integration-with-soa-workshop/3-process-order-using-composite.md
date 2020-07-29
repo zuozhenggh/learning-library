@@ -40,4 +40,4 @@ For now, you will just create an HTTP / SOAP Proxy and Pipeline for Process Orde
 To complete part 2, please start on chapter 3, page 117
 ### **Summary**
 
-This completes Module 3. You now know how to enhance a faceted search page and have been introduced to Page Designer. [Click here to navigate to Module 4](4-Add-new-channel-for-Ordering.md)
+This completes Module 3. You now know how to enhance a faceted search page and have been introduced to Page Designer. [Click here to navigate to Module 4](4-add-new-channel-for-ordering.md)
