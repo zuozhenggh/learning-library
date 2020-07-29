@@ -31,7 +31,7 @@ In this lab, you'll:
 
 Step 1 opening paragraph.
 
-1. **Conditional content test:** Select your compartment. <if type="livelabs">**LiveLabs only:** If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. Leave Always Free unchecked </if>, <if type="freetier">**FreeTier Only:** Choose a compartment, select "Always Free", </if>and enter `SecretPassw0rd` for the ADMIN password, then click **Create Autonomous Database**.
+1. **Conditional content test:** Select your compartment. <if type="livelabs">**LiveLabs only:** If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. Leave Always Free unchecked,</if><if type="freetier">**FreeTier Only:** Choose any compartment, select "Always Free",</if> and enter `SecretPassw0rd` for the ADMIN password, then click **Create Autonomous Database**.
 
     ![](images/atp-settings-1.png " ")
     <if type="livelabs">![](images/atp-settings-2-notaf.png " ")</if>
