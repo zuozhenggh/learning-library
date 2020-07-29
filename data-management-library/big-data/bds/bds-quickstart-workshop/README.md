@@ -1,6 +1,6 @@
-# Welcome to the \<title\> Hands-on Lab!
-<!-- Add text here to describe the labs at a high level. For example -->
-This workshop lets you practice the main features in Oracle Data Safe, including Activity Auditing, Data Discovery, Data Masking, User Assessment, and Security Assessment.
+# Welcome to the Getting Started with Oracle Big Data Service Hands-on Workshop!
+
+The labs in this workshop walk you through all the steps to get started using Oracle Big Data Service (BDS).
 
 ## Access the Labs Using Our Web Interface
 <!-- Add the link to the top level of your HOL folder -->
@@ -15,6 +15,15 @@ Alternatively, you can follow the labs on this repo:
 - [Assess Database Configurations and Users](./assess-db-config-users/content.md)
 - [Analyze Alerts and Audit Reports](./analyze-alerts-audit-reports/content.md)
 - [Discover and Mask Sensitive Data](./discover-mask-data/content.md)
+
+- [Introduction to Oracle Big Data Service](./bds-quickstart-workshop/intro.md)
+- [Setup the BDS Environment](./bds-getting-started/bds-getting-started.md)
+- [Create a BDS Hadoop Cluster](./bds-create-cluster/bds-create-cluster.md)
+- [Add Oracle Cloud SQL to the Cluster](./bds-add-cloud-sql/bds-add-cloud-sql.md)
+- [Access a BDS Node Using a Public IP Address](./bds-access-utility-node\bds-access-utility-node.md)
+- [Use Cloudera Manager and Hue to Access a BDS Cluster](./bds-use-cm-hue-access-cluster\bds-use-cm-hue-access-cluster.md)
+- [Create a Hadoop Administrator User](./bds-create-hadoop-user\bds-create-hadoop-user.md)
+
 
 <!-- Keep this content -->
 ## Oracle Cloud Account
