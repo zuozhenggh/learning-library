@@ -35,13 +35,13 @@ Upon fulfillment processing and orders being sent to the packaging department, a
 
 | # | Module | Est. Time |
 | --- | --- | --- |
-| 1 | [Introduction to SOA](1-Introduction-to-SOA.md) | 5 min |
-| 2 | [Build Composite to validate payment](2-Build-composite-to-validate-payment.md) | 25 min |
-| 3 | [Processing Order using composite](3-Process-order-using-composite.md) | 20 min |
-| 4 | [Add new chnanel for Order](4-Add-new-channel-for-ordering.md) | 20 min |
-| 5 | [Pack and ship service composite](5-Pack-and-Ship-Service-composite.md) | 20 min |
-| 6 | [Order Fullfilment](6-Order-Fullfilment.md) | 15 min |
-| 7 | [Summary and next step](7-Summary-and-next-step.md) | 10 min |
+| 1 | [Introduction to SOA](1-introduction-to-soa.md) | 5 min |
+| 2 | [Build Composite to validate payment](2-build-composite-to-validate-payment.md) | 25 min |
+| 3 | [Processing Order using composite](3-process-order-using-composite.md) | 20 min |
+| 4 | [Add new chnanel for Order](4-add-new-channel-for-ordering.md) | 20 min |
+| 5 | [Pack and ship service composite](5-pack-and-ship-service-composite.md) | 20 min |
+| 6 | [Order Fullfilment](6-order-fullfilment.md) | 15 min |
+| 7 | [Summary and next step](7-summary-and-next-step.md) | 10 min |
 
 ***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
 
