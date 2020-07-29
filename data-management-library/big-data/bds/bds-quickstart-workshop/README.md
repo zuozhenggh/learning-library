@@ -6,6 +6,9 @@ The labs in this workshop walk you through all the steps to get started using Or
 <!-- Add the link to the top level of your HOL folder -->
 **[Click here](https://oracle.github.io/learning-library/data-management-library/security/data-safe-HOL)** to use our easy to navigate HTML format.
 
+**[Click here](https://oracle.github.io/learning-library/data-management-library/big-data/bds/bds-quickstart-workshop)** to use our easy to navigate HTML format.
+
+
 ## Access the Labs on the Repo
 <!-- Add local links to the content.md files in your project -->
 Alternatively, you can follow the labs on this repo:
