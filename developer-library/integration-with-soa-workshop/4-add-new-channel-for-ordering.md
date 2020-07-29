@@ -1,0 +1,75 @@
+# Module 4: Add new channel for Order
+
+After you completed previous modules, the core order system is built, you will extend and add a new interface so that existing systems may place orders without impacting an existing application. Service Bus can provide intelligent routing to respective business services, protocol and data enrichment to minimize any disruption to the backend business logic of Process Order.
+In this chapter, you will add new File order channel for your ProcessOrder leveraging the work done in previous chapters. You will add new Proxy to handled incoming orders by file and translate common- delimited format with nXSD.
+
+### **Part 1**: Add file adapter proxy and connectivity to pipeline
+**High level steps** 
+
+1. Configure a File Adapter Proxy with nXSD translation.
+2. Wire to the existing Process Order Pipeline and Business Service.
+3. Test the end to end application.
+
+
+    ![](images/4/Chapter4-ProxyService.png)
+    ![](images/4/Chapter4-Proxy2.png)
+
+### Details: ###
+Please start from <ins>chapter 4, page 139 in the Tutorial pdf document</ins>.
+### **Part 2**: Review Service Bus in Enterprise Manager
+
+Let’s take a look at the Service Bus monitoring in Enterprise Manager 12c. In earlier release, Service Bus packaged its own monitoring console along with the Design Console. The monitoring console has been consolidated with the rest of SOA Suite. Now all of SOA Suite components can be management by administrators from one unified Enterprise Manager Console.
+
+**High level steps**
+1. Bring up the Enterprise Manager console and navigate to Service Bus
+
+    At the top of the report, click **Actions**, select **Data**, and then select **Compute**.
+
+    ![](images/4/SB-EM-console.png)
+
+2. Enable monitoring on all services in the Operations tab.
+
+
+    ![](images/4/enable-monitor-sb.png)
+
+
+3. Review the various monitoring tabs.
+
+    ![](images/4/Monitoring-tabs.png)
+
+4. Review Message Reports.
+
+    ![](images/4/MessagingReport.png)
+
+### Details: ###
+Please start from <ins>chapter 4, page 154 in the Tutorial pdf document</ins>.
+
+### **Part 3**: Service Bus debugging tool Enterprise Manager
+
+Service Bus root-cause analysis framework has been brought into IDE, JDeveloper. This lab is a simple one and should take you a few moments.
+
+**High level steps**
+
+1. Navigate to the ValidatePayment Pipeline.
+2. Set a breakpoint in the Pipeline
+3. Right-click your Pipeline or Proxy from the canvas and select the ‘Debug’ option.
+4. Enter test data into the Test Console.
+
+Please follow the details from **Chapter 4, page 163** in the tutorial pdf.
+
+![](images/4/DebugginSB.png)
+
+
+### **Part 4**: Build the nXSD translation as data enrichment and mapping
+
+**High level steps**
+
+1. Invoke the Native Format Builder from the File Adapter Configuration Wizard
+2. Build comprehensive data enrichment and mapping configuration
+
+### Details: ###
+Please start from <ins>chapter 4, page 163 in the Tutorial pdf document</ins>.
+
+
+### **Summary**
+This completes Module 4. You've successfully added new File order channel in the ProcessOrder app leveraging the work done in previous chapters. You've also added new Proxy to handle incoming orders by file and translate common- delimited format with nXSD. [Click here to navigate to Module 5](5-Pack-and-Ship-Service-composite.md)
