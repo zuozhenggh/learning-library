@@ -59,6 +59,7 @@ In this step, you will add ingress security rules to the default security list i
 
   ![](./images/cm-ingress-rule.png " ")
 
+
 8. Click **+Additional Ingress Rule** to add an ingress security rule for Hue.
 
 9. At the bottom of the **Add Ingress Rules** dialog box, the **Ingress Rule 2** section is displayed. Provide the following information:
