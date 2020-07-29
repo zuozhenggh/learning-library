@@ -7,23 +7,23 @@
         "title": "Lab Introduction"
       },
       {
-        "filename": "1-Introduction-to-SOA.md",
+        "filename": "1-introduction-to-soa.md",
         "title": "Module 1: Introduction to SOA Suite"
       },
       {
-        "filename": "2-Build-composite-to-validate-payment.md",
+        "filename": "2-build-composite-to-validate-payment.md",
         "title": "Module 2: Build composite app to validate payment"
       },
       {
-          "filename": "3-Process-order-using-composite.md",
+          "filename": "3-process-order-using-composite.md",
           "title": "Module 3: Using SOA composite to build Process order"
       },
       {
-        "filename": "4-Add-new-channel-for-ordering.md",
+        "filename": "4-add-new-channel-for-ordering.md",
         "title": "Module 4: Add new channel for order app"
       },
       {
-        "filename": "5-Pack-and-ship-service-composite.md",
+        "filename": "5-pack-and-ship-service-composite.md",
         "title": "Module 5: Pack and ship composite app service"
       },
       {
