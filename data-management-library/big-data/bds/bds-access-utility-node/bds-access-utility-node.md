@@ -120,7 +120,7 @@ In this step, you will set two variables using the **`export`** command. Next, y
     **Note:**    
     In the previous step, you already set the **`SUBNET_OCID`** variable to your own **`subnet-ocid`** value that you identified in **STEP 1** of this lab. You don't need to set the variable again.
 
-  3. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. Remember, the **`ip-address`** is the private IP address that is assigned to the second utility node that you want to map to a public IP address.
+  2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. Remember, the **`ip-address`** is the private IP address that is assigned to the second utility node that you want to map to a public IP address.
 
     ```
     <b>$</b> <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
@@ -134,17 +134,17 @@ In this step, you will set two variables using the **`export`** command. Next, y
     $ <copy>export PRIVATE_IP="10.0.0.15"</copy>
     ```
 
-  4.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or click **Copy** to copy the command, and then paste it on the command line.
+  3.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or click **Copy** to copy the command, and then paste it on the command line.
 
     ```
     $ <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>
     ```
 
-  5.  In the output returned, find the value for **ip-address** field. In our example, it's **`150.136.199.24`**. This is the new reserved public IP address that is mapped to the private IP address of your **second utility node**.
+  4.  In the output returned, find the value for **ip-address** field. In our example, it's **`150.136.199.24`**. This is the new reserved public IP address that is mapped to the private IP address of your **second utility node**.
 
     ![](./images/output-white-ip-address-2.png " ")
 
-  6.  To see the newly created reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > Public IPs**. The new reserved public IP address is displayed in the **Reserved Public IPs** page.
+  5.  To see the newly created reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > Public IPs**. The new reserved public IP address is displayed in the **Reserved Public IPs** page.
 
     ![](./images/reserved-public-ip-3.png " ")
 

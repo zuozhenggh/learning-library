@@ -50,6 +50,7 @@ In this step, you will add ingress security rules to the default security list i
 
 7. In the **Add Ingress Rules** dialog box, add the rule for the TCP protocol which enables you to use Cloudera Manager to access your cluster. You can add values to this dialog box to meet your security needs. In our example, we are opening up the port for Cloudera Manager to all sources by entering **`0.0.0.0/0`** for the **Source CIDR**. Anyone on the internet can access port **`7183`** for CM. No egress rule is required to allow the response traffic. Update the source to a more restrictive CDIR if required. Provide the following information:
 
+    + For the **STATELESS** checkbox, leave it unchecked which makes the rule stateful. This means that any response to the incoming traffic is allowed back to the originating host, regardless of any egress rules applicable to the instance.
     + For the **SOURCE TYPE**, select **`CIDR`**.
     + For the **SOURCE CIDR**, enter **`0.0.0.0/0`**.
     + For the **IP PROTOCOL**, select **`TCP`**.
@@ -64,6 +65,7 @@ In this step, you will add ingress security rules to the default security list i
 
 9. At the bottom of the **Add Ingress Rules** dialog box, the **Ingress Rule 2** section is displayed. Provide the following information:
 
+    + For the **STATELESS** checkbox, leave it unchecked which makes the rule stateful.
     + For the **SOURCE TYPE**, select **`CIDR`**.
     + For the **SOURCE CIDR**, enter **`0.0.0.0/0`**.
     + For the **IP PROTOCOL**, select **`TCP`**.
@@ -91,7 +93,7 @@ In this step, you will use CM to access the cluster. In an HA-cluster, CM runs o
     https://<ip-address>:7183
     ```
     **Note:**    
-    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the first utility node in your cluster, **`traininun0`**, which you created in the previous lab.
+    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the first utility node in your cluster, **`traininun0`**, which you created in the previous lab. To view your reserved public IP address in the console, click the Navigation menu and navigate to **Core Infrastructure > Networking > Public IPs**. The  reserved public IP address is displayed in the **Reserved Public IPs** list.
 
     In our example, we used the reserved public IP address that is associated with our first utility node as follows:
 
@@ -144,7 +146,7 @@ In this step, you will use CM to access the cluster. In an HA-cluster, CM runs o
 
 In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun1`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
-1. Open a Web browser window.
+1. Open a web browser window.
 
 2. Enter the following URL:
 
@@ -160,7 +162,9 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
     https://150.136.199.24:8888
     ```
 
-3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** which is **`admin`** by default in Hue. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training123`**.
+3. On the Hue Login screen, enter your **`username`** which is **`admin`** by default in Hue. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training123`**.
+
+**Note:** If Hue accounts haven’t been created yet, you can create other user and administrator accounts.
 
   ![](./images/hue-login-page.png " ")
 
@@ -168,7 +172,7 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
 
   ![](./images/hue-home-page.png " ")
 
-4. For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
+4. For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **admin** drop-down menu for general help topics.
 
   ![](./images/hue-doc.png " ")
 

@@ -4,7 +4,7 @@
 
 Big Data Service nodes are by default assigned private IP addresses, which aren't accessible from the public internet. In **Lab 4: Access a BDS Node Using a Public IP Address**, you learned about the different methods that you can use to make the nodes in the cluster publicly available on the internet.
 
-In this lab, you will map the private IP address of the **first master node** to a new public IP addresses to make this node publicly available on the internet. _**This assumes that making the IP address public is an acceptable security risk.**_ You will also create a Hadoop Administrator (superuser) that will be used for the Big Data Service Cluster. This user will have full access to all the data and metadata on the cluster.
+In this lab, you will map the private IP address of the **first master node** to a new public IP address to make this node publicly available on the internet. _**This assumes that making the IP address public is an acceptable security risk.**_ You will also create a Hadoop Administrator (superuser) that will be used for the Big Data Service Cluster. This user will have full access to all the data and metadata on the cluster.
 
 **Note:** This lab assumes that your cluster has been created as secure and highly available. If you did not create a secure and HA-cluster, then there is no need to create the Kerberos user.
 
@@ -67,9 +67,9 @@ In this step, you will set three variables using the **`export`** command. The v
     ```
     $ <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
     ```
-  **Note:** In the preceding command, substitute **_`ip-address`_** with your first utility node's private IP address.
+  **Note:** In the preceding command, substitute **_`ip-address`_** with your first master node's private IP address.
 
-  In our example, we replaced the **_``ip-address``_** with the private IP address of our first utility node that we identified in **STEP 1** of this lab.
+  In our example, we replaced the **_``ip-address``_** with the private IP address of our first master node that we identified in **STEP 1** of this lab.
 
       ```
     $ export PRIVATE_IP="10.0.0.9"
@@ -99,12 +99,12 @@ In this example, we are using PuTTY on Microsoft Windows; however, you can conne
 # <copy>ssh –i private_key username@public-ip-address</Copy>
 ```
 + **`private_key`** is the full path and name of the file that contains the private key associated with the instance you want to access.
-+  **`username`** is the default name for the cluster. The default user name is **`opc'**.
++  **`username`** is the default name for the cluster. The default user name is **`opc`**.
 + **`public-ip-address`** is the public IP address of the cluster node you want to access.
 
 For additional information on connecting to a node in the cluster using SSH, see [Connect to a Cluster Node By Using Secure Shell (SSH)](https://docs.oracle.com/en/cloud/paas/big-data-service/user/connect-cluster-ssh.html) in the Using Oracle Big Data Service documentation.
 
-_If you are connecting to your cluster's first master node using another SSH method besides PuTTY, you can skip the rest of the steps in this section and proceed to **STEP 4, Create the training Administrator Kerberos Principal**._ 
+_If you are connecting to your cluster's first master node using another SSH method besides PuTTY, you can skip the rest of the steps in this section and proceed to **STEP 4, Create the training Administrator Kerberos Principal**._
 
 1. Start Putty. The **PuTTY Configuration** window is displayed. In the **Category** pane, select the **Session** parameter, if not already selected. In the **Basic options for your PuTTY session** section, provide the following information:
 
