@@ -15,7 +15,7 @@ In this lab, you examine the structures and data in the Sales History (SH) sampl
 -   Use the DESCRIBE command to examine the details of an SH table
 
 
-## Lab Prerequisites
+## Prerequisites
 
 -   This lab requires completion of the preceding 3 labs in the Contents menu on the right.
 

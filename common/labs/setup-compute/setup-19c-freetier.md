@@ -1,4 +1,4 @@
-# Setup 19c Compute Image
+# Setup Oracle Database 19c Compute Image
 
 ## Introduction
 This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running a pre-configured Oracle Database 19c install using Oracle Resource Manager.  
@@ -16,7 +16,7 @@ Resource Manager is an Oracle Cloud Infrastructure service that allows you to au
 
 The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Database 19c marketplace image.
 
-Link to Marketplace - https://www.oracle.com/cloud/marketplace/
+[Link to Marketplace](https://www.oracle.com/cloud/marketplace/)
 
 ### Objectives
 In this lab, you'll:
@@ -74,7 +74,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 12. Copy the subnet ID to a notepad.
 ![Image alt text](images/db19c-freetier-step1-18.png " ")        
    
-## **STEP 3**: Setup Compute Stack Apply Job
+## **STEP 3**: Setup Compute Stack 
 
 Now that you have a network for your compute instance, it's time to create the compute instance running the 19c database.  
 
@@ -131,7 +131,7 @@ Now that you have a network for your compute instance, it's time to create the c
 
     ![](./images/db19c-freetier-step3-7.png " ")
 
-## **STEP 4**: Use Terraform Apply to create Compute Instance
+## **STEP 4**: Run Compute Stack Apply Job
 
 1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your  instance that comes pre-installed Oracle 19c.
     ![](./images/db19c-freetier-step3-8.png " ")
@@ -220,7 +220,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 8. Click Open to begin your session with the instance.
 
-## **STEP 5**: Verify the ORCL database is up
+## **STEP 6**: Verify the ORCL database is up
 
 1.  From your connected session of choice **tail** the **dbsingle.log** file.  This file configures the database.
     ````

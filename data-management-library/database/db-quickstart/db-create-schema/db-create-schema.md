@@ -16,7 +16,7 @@ In this lab, you will create a user (schema), assign privileges to the user, cre
 -   Learn how to query external data by the external tables
 
 
-## Lab Prerequisites
+## Prerequisites
 
 -   This lab requires completion of the prior 4 labs in the Contents menu on the right.
 

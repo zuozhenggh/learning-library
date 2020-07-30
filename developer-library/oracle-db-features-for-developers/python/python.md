@@ -19,7 +19,7 @@ To learn about how to connect to an oracle database from python, watch the video
 -   Learn how to use Python in the Oracle Database
 -   Learn how to validate Python operations
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud

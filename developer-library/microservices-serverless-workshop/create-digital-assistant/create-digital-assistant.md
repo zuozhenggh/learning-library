@@ -28,7 +28,7 @@ In this lab, we are going to modify a skill that can be used for interactions wi
 
 * Learn how to modify a skill in Oracle Digital Assistant.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial

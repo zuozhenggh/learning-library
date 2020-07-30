@@ -15,7 +15,7 @@ This lab covers using the Database Service Console, OCI Monitoring Console, and 
 The ADW or ATP Service Console provides dashboards to monitor the real-time and historical CPU and storage utilization, as well as database activity, like the number of running or queued statements. It also provides Real-Time SQL Monitoring to look at current and past long-running SQL statements in your instance and allows you to cancel long-running queries or set thresholds for ADW or ATP to automatically cancel them for you.
 
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the preceding labs shown in the Contents menu on the right.
 

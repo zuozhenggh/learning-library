@@ -6,7 +6,7 @@
 
 -   Prepare the sample schema for spatial. Starting with Oracle Database 12c Release 2, the latest version of the sample schema scripts are available on GitHub. You can refer the doucment at [https://github.com/oracle/db-sample-schemas](https://github.com/oracle/db-sample-schemas).
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud

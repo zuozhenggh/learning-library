@@ -12,7 +12,7 @@ Benefits with Fleet Maintenance:
 - Ability to schedule/retry/suspend/resume.
 - Database patching across different infrastructure including engineered systems like Exadata
 
-![](images/em-fleet-maintenance-overview-1.png " ")
+![](images/em-fleet-maintenance-overview.png " ")
 
 ### Background
 The estimated time to complete the workshop is 60 minutes as further detailed below.
