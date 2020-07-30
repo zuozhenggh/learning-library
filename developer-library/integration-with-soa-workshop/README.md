@@ -56,9 +56,9 @@ Click the navigation menu icon, in the upper-left corner of the header, to see a
 
 ## Downloads
 
-[Click here]([spreadsheet-app.sql](https://www.oracle.com/middleware/technologies/soasuite/12c-samples-tutorials-downloads.html)) to download a complete entire tutorial applications. 
+[Click here](https://www.oracle.com/middleware/technologies/soasuite/12c-samples-tutorials-downloads.html) to download a complete entire tutorial applications. 
 
-## Learn More - *Useful Links*
+## Learn More - Useful Links
 
 - SOA on Marketplace   https://cloudmarketplace.oracle.com/marketplace/en_US/listing/74792101
 - SOA suite   https://www.oracle.com/middleware/technologies/soasuite.html
