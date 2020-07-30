@@ -16,7 +16,7 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 -   Learn how to load data with APEX
 -   Learn how to create an app with APEX
 
-### Lab Prerequisites
+### Prerequisites
 -   Assumes the participant has completed the Register for Free Tier/Cloud Login Lab
 
 ### Estimated Time to Complete Lab

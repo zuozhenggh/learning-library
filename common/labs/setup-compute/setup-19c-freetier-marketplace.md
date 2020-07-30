@@ -13,7 +13,7 @@ Link to Marketplace - [https://www.oracle.com/cloud/marketplace/](https://www.or
 
 -   Setup a network and compute instance using the DB19c Marketplace image
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have already completed the following labs:
 - Register for Free Tier

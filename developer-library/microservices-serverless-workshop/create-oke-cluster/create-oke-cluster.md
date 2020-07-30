@@ -10,7 +10,7 @@ Estimated time: 20 - 25 min
 
 * Learn how to create a Kubernetes Cluster
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial

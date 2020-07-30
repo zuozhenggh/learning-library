@@ -18,7 +18,7 @@ Estimated time: 45 - 90 min
 
 * Learn how to install the front-end client as a Virtual Box image (VM) or Docker image.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial

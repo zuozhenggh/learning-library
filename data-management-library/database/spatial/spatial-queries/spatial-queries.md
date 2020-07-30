@@ -6,7 +6,7 @@
 
 -    Learn how to use location-based queries with Spatial
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud

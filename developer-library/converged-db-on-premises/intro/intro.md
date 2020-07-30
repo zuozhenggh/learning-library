@@ -9,13 +9,14 @@ You don't need to manage and maintain multiple systems or worry about having to 
 ### Objectives
 In this workshop, you'll gain first-hand experience of using data types beyond relational data - JSON, XML, Spatial and Graph.
 
-The first four labs in this workshop cover these individual data types, and the final lab consists of multi-model examples:
+Once you complete your setup, the next four labs in this workshop cover these individual data types, and the final lab consists of multi-model examples:
 
-- Lab 1: JSON
-- Lab 2: XML
-- Lab 3: Spatial
-- Lab 4: Graph
-- Lab 5: Multi-model
+- Lab 4: NODE.JS
+- Lab 5: JSON
+- Lab 6: XML
+- Lab 7: Spatial
+- Lab 8: Graph
+- Lab 9: Multi-model
 
 You will also download Oracle SQL Developer to help execute the programs associated with the lab. We will use Docker containers and demonstrate multiple use cases with a Node.js application.
 
@@ -31,12 +32,9 @@ Estimated Workshop Time:  2.5 hours
 ## More Information
 Feel free to share with your colleagues.
 
-1. Specialized databases or Converged Database 
-2. Oracle Spatial and Graph License now included 
-3. Blogs
+1. Blogs
       - [What is a converged database?](https://blogs.oracle.com/database/what-is-a-converged-database)
       - [Many single purpose database vs a converged database](https://blogs.oracle.com/database/many-single-purpose-databases-versus-a-converged-database)
-4. White paper: War on IT Complexity
 
 ## Acknowledgements
 - **Owners** - Balasubramanian Ramamoorthy, Arvind Bhope

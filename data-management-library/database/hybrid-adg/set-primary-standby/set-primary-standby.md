@@ -2,7 +2,7 @@
 
 In a Data Guard configuration, information is transmitted in both directions between primary and standby databases. This requires basic configuration, network tuning and opening of ports at both primary and standby databases. 
 
-##Lab Prerequisites
+##Prerequisites
 
 This lab assumes you have already completed the following labs:
 
