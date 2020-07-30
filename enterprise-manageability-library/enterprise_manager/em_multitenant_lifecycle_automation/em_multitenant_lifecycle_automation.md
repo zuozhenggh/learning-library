@@ -19,7 +19,7 @@ The estimated time to complete all the Step activities is approximately 60 minut
 | 6    | Administrative Setup for PDBaaS (Private Cloud)- Review only               | 10min                     | An overview of the administrative setup involved for PDBaaS (Private Cloud) which includes setting up a PaaS Infrastructure Zone, Pluggable Database Pool, Data Sources, Service Template, etc. | Setup private cloud using Enterprise Manager where admin can define resources and EM’s placement algorithm and make sure that resources are utilized to their best. It is complimented by metering, and show back/chargeback capabilities. |
 
 ### Prerequisites
-- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
+- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have completed the **Prerequisites** and reviewed all items shown in the Contents menu on the right up to **Lab 1**.  
 - This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
@@ -477,14 +477,14 @@ That concludes this lab.
 
 ## Want to Learn More?
 
-- [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
-- [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
-- [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
-- [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
+- <a href="https://www.oracle.com/enterprise-manager/" target="\_blank">Oracle Enterprise Manager</a>
+- <a href="https://docs.oracle.com/en/enterprise-manager/index.html" target="\_blank">Enterprise Manager Documentation Library</a>
+- <a href="https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html" target="\_blank">Database Lifecycle Management</a>
+- <a href="https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html" target="\_blank">Database Cloud Management</a>
 
 ## Acknowledgements
 * **Author** - Pankaj Chandiramani, Oracle Enterprise Manager Product Management
 * **Adapted for Cloud by** -  Rene Fontcha, Oracle Enterprise Manager Sales Engineering
 * **Last Updated By/Date** - Rene Fontcha, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+See an issue?  Please open up a request <a href="https://github.com/oracle/learning-library/issues" target="\_blank">here</a>.   Please include the workshop name and lab in your request.

@@ -23,7 +23,7 @@ The estimated time to complete the workshop is 75 minutes as further detailed be
 | 2                    | Oracle Database Upgrade with Fleet Maintenance | 1hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
 
 ### Prerequisites
-- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
+- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have completed the **Prerequisites** and reviewed all items shown in the Contents menu on the right up to **Lab 1**.  
 - This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
@@ -546,15 +546,15 @@ Thank you!
 
 ## Want to Learn More?
 
-  - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
-  - [Oracle Enterprise Manager Fleet Maintenance](https://www.oracle.com/manageability/enterprise-manager/technologies/fleet-maintenance.html)
-  - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
-  - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
-  - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
+- <a href="https://www.oracle.com/enterprise-manager/" target="\_blank">Oracle Enterprise Manager</a>
+- <a href="https://docs.oracle.com/en/enterprise-manager/index.html" target="\_blank">Enterprise Manager Documentation Library</a>
+- <a href="https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html" target="\_blank">Database Lifecycle Management</a>
+- <a href="https://www.oracle.com/manageability/enterprise-manager/technologies/fleet-maintenance.html" target="\_blank">Oracle Enterprise Manager Fleet Maintenance</a>
+- <a href="https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html" target="\_blank">Database Cloud Management</a>
 
 ## Acknowledgements
 * **Author** - Shefali Bhargava, Oracle Enterprise Manager Product Management
 * **Adapted for Cloud by** -  Rene Fontcha, Oracle Enterprise Manager Sales Engineering
 * **Last Updated By/Date** - Rene Fontcha, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+See an issue?  Please open up a request <a href="https://github.com/oracle/learning-library/issues" target="\_blank">here</a>.   Please include the workshop name and lab in your request.
