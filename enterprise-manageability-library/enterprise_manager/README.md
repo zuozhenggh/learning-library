@@ -16,22 +16,24 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
 - Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
 - Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
 
-Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free){target="_blank"}
+Click here to request your trial account: <a href="https://www.oracle.com/cloud/free" target="\_blank">Oracle Cloud Free Trial</a>
 
 ## Product Pages
-- [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
-- [Oracle Database 19c](https://www.oracle.com/database/)
+- <a href="https://www.oracle.com/enterprise-manager/" target="\_blank">Oracle Enterprise Manager</a>
+- <a href="https://www.oracle.com/database/" target="\_blank">Oracle Database 19c</a>
+
+- <a href="" target="\_blank"></a>
 
 ## Documentation
-- [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html){target="_blank"}
-- [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html){target="_blank"}
-- [Database Performance and Change Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/performance.html){target="_blank"}
-- [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html){target="_blank"}
+- <a href="https://docs.oracle.com/en/enterprise-manager/index.html" target="\_blank">Enterprise Manager Documentation Library</a>
+- <a href="https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html" target="\_blank">Database Lifecycle Management</a>
+- <a href="https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/performance.html" target="\_blank">Database Performance and Change Management</a>
+- <a href="https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html" target="\_blank">Database Cloud Management</a>
 
 ## Videos
-- [Oracle Enterprise Videos](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/videos.html){target="_blank"}
+- <a href="https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/videos.html" target="\_blank">Oracle Enterprise Videos</a>
 
 ### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues){target="_blank"} page.  We review it regularly.
+Please submit an issue on our <a href="https://github.com/oracle/learning-library/issues" target="\_blank">issues</a> page.  We review it regularly.
 
 -- Oracle Enterprise Manager Product Management
