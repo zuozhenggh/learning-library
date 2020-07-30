@@ -13,6 +13,12 @@ At the end of this module, your solution will look similar to the following proc
 
 ![](images/3/Module3-SOA.png)
 
+# High Level Steps #
+
+1. Open e2e-1201-servicebus application and import Pipeline template resources (new feature!).
+2. Configure ProcessOrder Business Service.
+3. Configure Pipeline and Proxy using Pipeline template.
+4. Test your application end-to-end.
 
 ### **Part 1**: Build Process Order Composite
 
@@ -25,19 +31,12 @@ The order status update will be converted to a BPEL subprocess to make it easily
 
 To complete part 1, the details start in <ins> **Chapter 3, page 80 to 116** of the tutorial </ins>
 
- ### **Part 2**: Register Process Order on Service Bus 
+### **Part 2**: Register Process Order on Service Bus 
 
 As you have completed and tested the Process Order composite, you will register it on Service Bus to make it available for external consumers. Service Bus will allow the Process Order composite to be made available over different protocols and data formats without disruption to the core business logic in the composite. Service Bus will also validate the Order data and report for auditing.
 For now, you will just create an HTTP / SOAP Proxy and Pipeline for Process Order. You can also add a File Proxy and Pipeline to allow orders to be processed from existing systems.
 
 ![](images/3/ProxyService.png)
-
-# High Level Steps #
-
-1. Open e2e-1201-servicebus application and import Pipeline template resources (new feature!).
-2. Configure ProcessOrder Business Service.
-3. Configure Pipeline and Proxy using Pipeline template.
-4. Test your application end-to-end.
 
 To complete part 2, please start on <ins> **chapter 3, page 117 to 137** </ins> in the SOA suite Tutorial.pdf document
 
