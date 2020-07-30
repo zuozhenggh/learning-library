@@ -2,7 +2,7 @@
 
 This procedure is basically the same as migrating the database from on-premise to OCI. The Data Guard setup for a Single Instance (SI) or RAC should be the same. In the following steps you will setup Data Guard from an SI on-premise to an SI in the cloud infrastructure. If you want to setup Data Guard from an SI on-premise to a 2-Node RAC in the cloud infrastructure or RAC on-premise to an SI in the cloud infrastructure please refer to the whitepaper [hybrid-dg-to-oci-5444327](https://www.oracle.com/technetwork/database/availability/hybrid-dg-to-oci-5444327.pdf).
 
-##Lab Prerequisites
+##Prerequisites
 
 This lab assumes you have already completed the following labs:
 

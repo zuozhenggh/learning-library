@@ -10,7 +10,7 @@ Estimated time: 15 - 20 min
 
 * Learn how to check the working of deployed microservices
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial

@@ -4,7 +4,7 @@
 
 This lab walks you through the steps of setting up the environment for JSON lab . You can connect an Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud

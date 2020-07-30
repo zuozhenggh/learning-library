@@ -17,7 +17,7 @@ The Api Gateway let you more configuration options and more management improves.
 
 Lets create an OCI Api Gateway!
 
-### Lab Prerequisites
+### Prerequisites
 You must have finished the microservices HOL and the serverless HOL.
 
 ## Step 1: OCI Policies to use API Gateway.

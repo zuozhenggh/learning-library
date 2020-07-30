@@ -10,7 +10,7 @@ In this lab, you will be using the Oracle Machine Learning (OML) notebook applic
 -   Learn how to use DBMS\_PREDICTIVE\_ANALYTICS routines
 -   Learn how to use Oracle ML Examples
 
-### Lab Prerequisites
+### Prerequisites
 
 -   This lab requires a user with access to the Oracle Machine Learning Notebook application
 

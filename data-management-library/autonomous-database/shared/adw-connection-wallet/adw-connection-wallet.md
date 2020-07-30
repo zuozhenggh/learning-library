@@ -15,7 +15,7 @@ Watch a video demonstration of connecting to an autonomous database instance usi
 -   Learn how to download and configure a connection wallet
 -   Learn how to connect to your Autonomous Data Warehouse with Oracle SQL Developer
 
-### Lab Prerequisites
+### Prerequisites
 
 -   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 

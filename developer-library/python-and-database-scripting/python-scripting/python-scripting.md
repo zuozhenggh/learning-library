@@ -19,7 +19,7 @@ Follow the steps in this document. The **tutorial** directory has scripts to run
 * Learn how to use Python in the Oracle Database
 * Learn how to validate Python operations
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud

@@ -14,7 +14,7 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have already completed the [Log in to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) lab seen in the menu on the right.  In this lab you will be provisioning an ADW database instance using the cloud console.
 

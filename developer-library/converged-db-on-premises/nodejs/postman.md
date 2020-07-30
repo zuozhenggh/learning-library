@@ -5,7 +5,7 @@
 
 This lab walks you through the steps to use Application API to add, view and update the product details in database.
 
-### Lab Prerequisites
+### Prerequisites
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud
 - Lab 2:  Generate SSH Key
