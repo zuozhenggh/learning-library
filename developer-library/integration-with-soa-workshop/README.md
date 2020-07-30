@@ -9,9 +9,9 @@ This lab walks you through in improving an order processing system to accommodat
 
 The order processing system must be accessible through multiple protocols, data formats, and client types, including mobile devices:
 
-  * Business trends indicate that Company X must launch a mobile application soon and the new order processing service must support access through RESTful APIs.
+  * Business trends indicate that Company X, let's called it Avitek, must launch a mobile application soon and the new order processing service must support access through RESTful APIs.
 
-  * In addition to the existing online direct store, Company X plans to launch a service in which orders are received through a different channel (as batch comma-separated value (CSV) files over FTP or EDI format via EDI Trading Partner). They must eventually be processed and fulfilled using the same new order provisioning infrastructure.
+  * In addition to the existing online direct store, Avitek plans to launch a service in which orders are received through a different channel (as batch comma-separated value (CSV) files over FTP or EDI via B2B Trading Partner. They must eventually be processed and fulfilled using the same new order provisioning infrastructure.
 
 
 For large orders, a customer's credit history must be checked before sending the order for fulfillment. Otherwise, the order is rejected. Initially, credit is checked by internal departments, but later must be integrated with PayPal. Changing credit providers must not disrupt order processing operations.
@@ -24,8 +24,8 @@ Upon fulfillment processing and orders being sent to the packaging department, a
 
 ## Lab Objectives
 
-* Obtain access to development environment
-* Build your first app using JDeveloper-SOA
+* Obtain access to development environment through livelab weorkshop
+* Build your first composite app using JDeveloper-SOA
 * Improve and design service orchestration
 * Link pages
 
@@ -35,12 +35,12 @@ Upon fulfillment processing and orders being sent to the packaging department, a
 
 | # | Module | Est. Time |
 | --- | --- | --- |
-| 1 | [Introduction to SOA](1-introduction-to-soa.md) | 5 min |
-| 2 | [Build Composite to validate payment](2-build-composite-to-validate-payment.md) | 25 min |
-| 3 | [Processing Order using composite](3-process-order-using-composite.md) | 20 min |
-| 4 | [Add new chnanel for Order](4-add-new-channel-for-ordering.md) | 20 min |
-| 5 | [Pack and ship service composite](5-pack-and-ship-service-composite.md) | 20 min |
-| 6 | [Order Fullfilment](6-order-fullfilment.md) | 15 min |
+| 1 | [Introduction to SOA](1-introduction-to-soa.md) | 10 min |
+| 2 | [Build Composite to validate payment](2-build-composite-to-validate-payment.md) | 35 min |
+| 3 | [Processing Order using composite](3-process-order-using-composite.md) | 45 min |
+| 4 | [Add new chnanel for Order](4-add-new-channel-for-ordering.md) | 45 min |
+| 5 | [Pack and ship service composite](5-pack-and-ship-service-composite.md) | 45 min |
+| 6 | [Order Fullfilment](6-order-fullfilment.md) | 25 min |
 | 7 | [Summary and next step](7-summary-and-next-step.md) | 10 min |
 
 ***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
@@ -56,7 +56,7 @@ Click the navigation menu icon, in the upper-left corner of the header, to see a
 
 ## Downloads
 
-[Click here](spreadsheet-app.sql) to download the completed application. 
+[Click here]([spreadsheet-app.sql](https://www.oracle.com/middleware/technologies/soasuite/12c-samples-tutorials-downloads.html)) to download a complete entire tutorial applications. 
 
 ## Learn More - *Useful Links*
 
