@@ -10,8 +10,8 @@
 This lab walks you through the steps to use an existing Oracle Analytics Cloud (OAC) instance to connect to your Autonomous Data Warehouse (ADW) instance.
 
 
-*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-[![Lab 400 Walkthrough Video](./images/lab400tn.png " ")](https://www.youtube.com/watch?v=H_SGzbIW3DA "Lab 400 Walkthrough Video - Click to Watch!")
+*In addition to the workshop*, feel free to watch the walkthrough companion video:
+[](youtube:H_SGzbIW3DA)
 
 
 ### Objectives
@@ -260,7 +260,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 6. We are done renaming columns. 
 
-### **STEP 2**: Add Columns
+### **STEP 4**: Add Columns
 
 1. Let's finish constructing our master table by adding columns. Do this by clicking on the **Circled Plus** button again and then on **Add Columns** to help finalize the columns.
 
@@ -374,7 +374,8 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Last Updated By/Date** - Jess Rein, Cloud Engineer, June 2020
+- **Contributors** - Jeffrey Malcolm, QA Specialist
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
