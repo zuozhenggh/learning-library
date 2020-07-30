@@ -1,4 +1,4 @@
-# Visualize Lab
+# Load Data into an Instance
 
 ## Introduction
 
@@ -39,17 +39,33 @@ Step 1 opening paragraph.
 
   *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+2. Code examples - test pattern for `< and >` characters
+
+    ```
+    Not included in the copy: <copy>This code example contains a <variable> using the less-than and greater-than symbols</copy>
+    ```
+
+    ```
+    Not included in the copy: <copy>This code example contains a &lt;variable&gt; that uses the escaped characters</copy>
+    ```
+
+3. Sample inline image that is 100 x 100 pixels ![100x100](images/sample3.png) (max size for an in-line image)
+
+4. Image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
 
     ![Image alt text](images/sample1.png "Image title")
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+5. 1200 pixel wide Image with a title.
 
-    ![Image alt text](images/sample1.png " ")
+    ![Image alt text](images/cloud-login.png " ")
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+6. 1200 pixel wide Image without a title (no " ")
 
-5. One example with bold **text**.
+    ![Image alt text](images/cloud-login.png)
+
+7. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+
+8. One example with bold **text**.
 
    If you add another paragraph, add 3 spaces before the line.
 
@@ -70,13 +86,14 @@ Step 1 opening paragraph.
     - List item 1
     - List item 2
 
-3. Code examples
+3. Code examples - test pattern for `< and >` characters
 
     ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
+    Not included in the copy: <copy>This code example contains a <variable> using the less-than and greater-than symbols</copy>
+    ```
+
+    ```
+    Not included in the copy: <copy>This code example contains a &lt;variable&gt; that uses the escaped characters</copy>
     ```
 
 4. Code examples that include variables

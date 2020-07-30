@@ -1,9 +1,9 @@
 
 # Introduction
 
-The labs in this workshop provide some of the foundational skills and knowledge you'll need to attempt the [Oracle Cloud Infrastructure Foundations Certification](https://www.oracle.com/cloud/iaas/training/foundations.html) offered by Oracle University.
+The labs in this workshop provide some of the foundational skills and knowledge you'll need to attempt the [Oracle Cloud Infrastructure Architect Associate Certification](https://www.oracle.com/cloud/iaas/training/architect-associate.html) offered by Oracle University.
 
-The Oracle Cloud Infrastructure Foundations Certification provides candidates with foundational knowledge of core cloud computing concepts and an understanding of those services in Oracle Cloud Infrastructure. The certification is intended for candidates with technical and non-technical backgrounds who want to validate their understanding of Oracle Cloud infrastructure.
+The Oracle Cloud Infrastructure Architect Associate Certification provides cloud architects with an understanding of Oracle Cloud Infrastructure services, and provides a competitive edge for industry professionals. 
 
 The labs featured on this page cover various solutions, skill levels, and categories based on Oracle Cloud Infrastructure (OCI).
 

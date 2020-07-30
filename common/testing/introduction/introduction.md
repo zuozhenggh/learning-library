@@ -1,22 +1,29 @@
-# Query Lab
+# Introduction
 
-## Introduction
+## About this Workshop
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This introduction covers the complete "parent" workshop. The objectives are written to cover all of the labs included in the workshop.
 
-Estimated Lab Time: &lt;n&gt; minutes
+Estimated Lab Time: &lt;n&gt; minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
 
 ### About Product/Technology
-Enter background information here..
+Enter background information here....
+
+*You may add an option video, using this format: [](youtube:&lt;YouTube video id&gt;)*
+
+  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+*List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:*
 
 In this lab, you'll:
-* Objective 1
-* Objective 2
-* Objective 3
+* Provision
+* Setup
+* Data Load
+* Query
+* Analyze
+* Visualize
 
 ### Prerequisites
 
