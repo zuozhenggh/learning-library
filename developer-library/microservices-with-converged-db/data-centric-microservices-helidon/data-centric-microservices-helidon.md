@@ -1,11 +1,9 @@
-# Setup Service Broker and Messaging
+# Data-centric microservices walkthrough with Helidon MP
 
 ## Introduction
 
-This lab will show you how to create an Oracle Cloud Infrastructure Service
-Broker and bind it to the two existing Autonomous Transaction Processing
-databases. This way we will be able to connect the OKE Helidon microservices to
-the ATP instances.
+This lab will show you how to deploy and run data-centric microservices highlighting use of different data types, data and transaction patterns, and various Helidon MP features.
+The lab will then show you metrics, health checks and probes, and tracing that have been enabled via Helidon annotations and configuration.
 
 ![](images/veggie-dash-app-arch.png " ")
 
@@ -21,11 +19,11 @@ the ATP instances.
 
 
 
-## **STEP 5**: Verify streaming orders into the orders database
+## **STEP 1**: Verify order and inventory activity of GrubDash store
 
 1. As you have successfully set up the databases, you can now test the
-    “VeggieDash” Food Order application. You will interact with several
-    different data types, check the event driven communication, event sourcing
+    “GrubDash” Food Order application. You will interact with several
+    different data types, check the event-driven communication, saga, event-sourcing
     and Command Query Responsibility Segregation via order and inventory
     services. Go ahead and deploy the related order, inventory and supplier
     Helidon services. The Food Order application consists of the following
@@ -99,42 +97,40 @@ the ATP instances.
 8. The services are ready, and you can proceed to test the application
     mechanisms. Open the frontend microservices home page.
 
-   ![](images/1c5362a024946b1552d659b0374a87e4.png " ")
+9. Click **Transactional** under **Labs**.
 
-9. To allow the inventory service to listen for events click **listenForMessages**.
+   ![](images/transactionalpage-blank.png " ")
 
-   ![](images/8375e5e1f5a392735101a1b04ef3c48e.png " ")
-
-10. Check the inventory of a given item such as cucumbers, by typing `cucumbers`
-    in the veggie field and clicking **getInventory**. You should see the inventory
+10. Check the inventory of a given item such as sushi, by typing `sushi`
+    in the `food` field and clicking **Get Inventory**. You should see the inventory
     count result 0.
 
-   ![](images/ea46ee63349f987bd43f772ed6562a87.png " ")
+   ![](images/sushicount0.png " ")
 
-11. (Optional) If for any reason you see a different count, click **removeInventory** to bring back the count to 0.
+11. (Optional) If for any reason you see a different count, click **Remove Inventory** to bring back the count to 0.
 
-12. Let’s try to place an order for cucumbers by clicking **place order**.
+12. Let’s try to place an order for sushi by clicking **Place Order**.
 
-   ![](images/3ed8a96fec2a7ed044dda26b67865df2.png " ")
+   ![](images/placeorderpending.png " ")
 
-13. To check the status of the order, click **showorder**. You should see a failed
+13. To check the status of the order, click **Show Order**. You should see a failed
     order status.
 
-   ![](images/657d263f888691e7f1070d92201757b7.png " ")
+   ![](images/showorderfailed.png " ")
 
-   This is expected, because the inventory count for cucumbers was 0.
+   This is expected, because the inventory count for sushi was 0.
 
-14. Click **addInventory** to add the cucumbers in the inventory. You
+14. Click **Add Inventory** to add the sushi in the inventory. You
     should see the outcome being an incremental increase by 1.
 
-   ![](images/2acf1d8f9634c598b44b5dd0f3815457.png " ")
+   ![](images/sushicount1.png " ")
 
-15. Go ahead and place another order by clicking **place order**, and then click
-    **showorder** to check the order status.
+15. Go ahead and place another order by clicking **Place Order**, and then click
+    **Show Order** to check the order status.
 
-   ![](images/173839f1dd7c467a9706e551433af67b.png " ")
+   ![](images/placeorderpending.png " ")
 
-   ![](images/4916798cb22e9cd8a7dfa4d8dc01c5b9.png " ")
+   ![](images/showorderfailed.png " ")
 
    The order should have been successfully placed, which is demonstrated with the order status showing success.
 
@@ -207,8 +203,88 @@ and message propagation across the two ATP instances. You may proceed to the
 next lab.
 
 
+## **STEP 2**: Verify metrics
+
+1. Notice @Timed and @Counted annotations on placeOrder method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
+
+   ![demo-erd.png](images/OrderResourceAnnotations.png " ")
+
+
+2. Click **Tracing, Metrics, Health**
+
+   ![demo-erd.png](images/tracingmetricshealth-blankpage.png " ")
+   
+2. Click **Metrics** and notice the long string of metrics (including those from placeOrder timed and counted) in prometheus format.
+
+   ![demo-erd.png](images/metrics.png " ")
+
+
+## **STEP 3**: Verify health
+
+1. Notice health check class at $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderServiceLivenessHealthCheck.java
+
+   ![demo-erd.png](images/livenesshealthcheck.png " ")
+   
+2. Notice liveness probe specified in $MSDATAWORKSHOP_LOCATION/order-helidon/order-helidon-deployment.yaml
+
+   ![demo-erd.png](images/livenessprobeinyaml.png " ")
+
+3. Click **Show Health: Liveness**
+
+   ![demo-erd.png](images/healthliveliness.png " ")
+
+4. Click **Get Last Container Start Time** and note the time.
+
+   ![demo-erd.png](images/lastcontainerstarttime1.png " ")
+
+5. Click **Set Liveness to False** . This will cause the Helidon Health Check to report false for liveness which will result in OKE restarting the pod/microservice
+
+   ![demo-erd.png](images/lastcontainerstarttime1.png " ")
+
+6. Click **Get Last Container Start Time**.
+   The probe settings can be adjusted, however, for this example it will take a minute or two for the probe to notice the failed state and conduct the restart and as it does you may see a connection refused exception.
+
+   ![demo-erd.png](images/connectionrefused.png " ")
+
+    Eventually you will see the container restart and note the new/later container startup time.
+    
+   ![demo-erd.png](images/lastcontainerstartuptime2.png " ")
+
+
+
+## **STEP 4**: Verify tracing
+
+1. If not previously done, install Jaeger (or Zipkin), notice the services it installs, and restart the Order Service
+
+   ![demo-erd.png](images/jaegerinstall.png " ")
+   
+   Issue the `services` command and notice the services it installs.  
+   
+   ![demo-erd.png](images/jaegerservice.png " ")
+   
+   The jaeger-collector is referenced in $MSDATAWORKSHOP_LOCATION/order-helidon/target/classes/META-INF/microprofile-config.properties
+   
+   ![demo-erd.png](images/tracingprops.png " ")
+   
+   and the jaeger-query is the load balancer address for visualizing the Jaeger UI 
+   
+   If any changes were made to the order service `/.build.sh` it again.
+   
+   Restart the order microservice by issuing `deletepod order`
+   
+2. Notice @Traced annotations and calls to set tags, baggage, etc. on placeOrder method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
+
+   ![demo-erd.png](images/ordertracingsrc.png " ")
+
+3. Place an order as done in Step 1
+
+4. Open the Jaeger UI (gain this is the jaeger-query service mentioned above) a view various traces including the placeOrder trace.
+
+   ![demo-erd.png](images/jaegerui.png " ")
+
+
 ## Acknowledgements
-* **Author** - Paul Parkinson, Consulting Member of Technical Staff
+* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020

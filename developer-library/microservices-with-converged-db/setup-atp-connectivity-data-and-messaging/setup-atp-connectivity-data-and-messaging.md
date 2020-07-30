@@ -98,7 +98,6 @@ You will verify the connectivity from the frontend Helidon microservice
     <copy>cd $MSDATAWORKSHOP_LOCATION/atpaqadmin</copy>
     ```
 
-  ![](images/6ba636763c8534771619ae9a55d3322c.png " ")
 
 5.  Create the `atpaqadmin` deployment and service using the following command.
 
@@ -120,11 +119,11 @@ You will verify the connectivity from the frontend Helidon microservice
 
 7.  Use the URL `http://<external-IP>:8080` to open the frontend webpage.
 
-  ![](images/490686705b79e262def7f41968498d8a.png " ")
+  ![](images/testdatasourcescreen.png " ")
 
 8. Click **testdatasources**.
 
-  ![](images/430872b9b99ce788dddb45c5e1de71ce.png " ")
+  ![](images/testdatasourcescreen-withoutput.png " ")
 
   *If you do not see the correct results immediate wait a few minutes and click testdatasources again.*
 
@@ -236,13 +235,13 @@ In this step you will set up the AQ messaging queue by creating database
 
     `cwalletobjecturi` – is the pre-authenticated URL which we’ve created in the previous step, when uploading `cwallet.sso` to the Object storage.
 
-  The rest of the values should be in the `tnsnames.ora` file which was extracted from the zip file. When looking for the information in `tnsnames.ora` look for the information under the \_HIGH TNS aliases, so for `orderdb` look for values in `orderdb_high` connection string, and for `inventorydb` look for values in `inventorydb_high` connection string.
+  The rest of the values should be in the `tnsnames.ora` file which was extracted from the zip file. When looking for the information in `tnsnames.ora` look for the information under the \_tp TNS aliases, so for `orderdb` look for values in `orderdb_tp` connection string, and for `inventorydb` look for values in `inventorydb_tp` connection string.
 
-  ![](images/dd5993c4b3d9fd0bf606fd467c0b5c3f.png " ")
+  ![](images/tnsnamesora.png " ")
 
   Once you have edited the lines, the result should look like this:
 
-  ![](images/e0cc650777e2d759de02ed49f6fcc8b8.png " ")
+  ![](images/atpaqadmindeployment-dblinkvalues.png " ")
 
 15. Redeploy the `atpaqadmin` image.
 
@@ -262,30 +261,16 @@ In this step you will set up the AQ messaging queue by creating database
   ![](images/1f226568abdce39d7fc9eacd9279fbab.png " ")
 
 16.  Open the frontend microservice home page and click the following buttons in
-    order: **createUsers**, **createInventoryTable**, **createDBLinks**,
-    **setupTablesQueuesAndPropagation**.
+    order: **Create Users**, **Create Inventory Table**, **Create Database Links**,
+    **Setup Tables Queues and Propagation**.
 
-  ![](images/3041592eb42deecf17bb9012b09ace18.png " ")
+  ![](images/setupteardownpage.png " ")
 
-  ![](images/7ecbfad49b0fe271b2d18e7fa297a112.png " ")
-
-  ![](images/cb73b47be1514662756e2dbc5128aebf.png " ")
-
-  ![](images/28321f572e02aaa349e1edc5c89fe1c5.png " ")
-
-  ![](images/17754016120ef6c74ab84c0981eb274f.png " ")
-
-  ![](images/20f00980ce66e36ff6f5992e25e98c4d.png " ")
-
-  ![](images/a9c9c8224138421e5f5e53c9f1ff8a8d.png " ")
-
-  ![](images/b992c2c86bca0ef278b6d608042997e2.png " ")
-
-  The results of `setupTablesQueuesAndPropagation` should take a couple of minutes
+  The results of `Setup Tables Queues and Propagation` should take a couple of minutes
   to complete, therefore we could open the Cloud Shell and check the logs, as we
   are waiting until all the messages have been received and confirmed.
 
-17. (Optional) While waiting for `setupTablesQueuesAndPropagation` to complete, open the Cloud Shell and check the logs using the following command:
+17. (Optional) While waiting for `Setup Tables Queues and Propagation` to complete, open the Cloud Shell and check the logs using the following command:
 
     ```
     <copy>logpod admin</copy>
@@ -301,11 +286,17 @@ In this step you will set up the AQ messaging queue by creating database
 18. (Optional) If it is necessary to restart, rerun the process or clean up the
     database:
 
-    If **setupTablesQueuesAndPropagation** was executed, you need to run
-    **unschedulePropagation** first.
+    If **Setup Tables Queues and Propagation** was executed, you need to run
+    **Unschedule Propagation** first.]
+    
+    Afterwards, click **Delete Users**.
 
-  ![](images/6198a8af3b2c821a9378d493c60880ae.png " ")
 
-  Afterwards, click **deleteUsers**.
+## Acknowledgements
+* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+* **Last Updated By/Date** - Tom McGinn, June 2020
 
-  ![](images/76d791ffeb225ff0249f72b9d74595d8.png " ")
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
