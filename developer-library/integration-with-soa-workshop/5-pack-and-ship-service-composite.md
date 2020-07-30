@@ -1,12 +1,12 @@
 # Module 5: Pack and ship composite
-In this module, you will build the first part of the order fulfillment service. After the order has been successfully processed, it needs to be packed and shipped.
-Avitek, as fictitious company, has a number of preferred shipping providers, each of them assigned to a specific shipping method. This method is calculated based on the shipping speed the customer chose when placing the order and the shipping state (in address).
+
+In this module, you will build the first part of the order fulfillment service. After the order has been successfully processed, it needs to be packed and shipped. Avitek, as fictitious company, has a number of preferred shipping providers, each of them assigned to a specific shipping method. This method is calculated based on the shipping speed the customer chose when placing the order and the shipping state (in address).
 Once the order has been shipped, an email is sent to the customer confirming the shipping provider and the order status is updated to Shipped.
 This chapter will build the pack and ship service, including the email notification.
 
 
 ### **Details ** ###
-Please start from <ins>chapter 5, page 191 in the Tutorial pdf document</ins>.
+Please start from <ins> **chapter 5, page 191 to 253** in the tutorial document</ins>.
 
 The Pack and ship composite in JDeveloper would look like the following:
 
@@ -15,11 +15,24 @@ The Pack and ship composite in JDeveloper would look like the following:
 
 ### **Summary**
 
-This completes Module 5. The next module will build the fulfillment order service, which identifies the shipping provider and calls the pack and ship service.
+This completes Module 5. You've successfully:
+
+1. Created a new project PackAndShipService
+2. Created a SOA REST inbound interface using Shipping as a resource
+3. Built a SOA-BPEL (as process flow) to
+* set the status of the order shipped
+* update the status of the order
+* send an email to the customer that the order has been shipped
+4. Add a composite sensor fo the ShippingProvider
+5. Tested the service in JDeveloper
+6. Inspect the process flow instance being tracked in the enterprise manager
+
+
+ The next module will build the fulfillment order service, which identifies the shipping provider and calls the pack and ship service.
 
 [Click here to navigate to Module 6](6-order-fullfilment.md)
 
-### **Learn More** - *Useful Links*
+### **Learn More - useful Links** ###
 
 - SOA suite on Marketplace  https://cloudmarketplace.oracle.com/marketplace/en_US/listing/70268091
 - Community  https://cloudcustomerconnect.oracle.com/

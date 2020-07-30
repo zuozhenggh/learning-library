@@ -13,7 +13,7 @@ The business has indicated a new credit card fraud detection system must be put 
 
 # Part 1 Build the payment validation process flow
 
-## **High-Level Steps**  ##
+## **High-Level Steps:**  ##
  
 1.  Create a new composite application e2e-1201-composites and SOA project named ValidatePayment
 2.  Use the new SOA Project template to create the ValidatePayment composite.
@@ -56,7 +56,9 @@ In part 1, you have completed the validatePayment process composite, you will re
 
 Service Bus will protect consumers of the validatePayment composite from routine changes such as deployment location and implementation updates. Service Bus will help scale the service to handle higher volume of requests and provide resiliency for the service if it needs to be taken down for routine maintenance.
 
-Please start page 54, in the SOA suite tutorial pdf.
+Please follow the construction details from <ins>**page 54 to 77**, in the SOA suite tutorial</ins>.
+
+## **High-Level Steps:**  ##
 
 1.  Create a new Service Bus application and new project **ValidatePayment.**. 
 
@@ -82,11 +84,21 @@ Please start page 54, in the SOA suite tutorial pdf.
 
     ![](images/2/Deploy-and-Test.png)
 
-    Test Console
+6.   Test Console
+   
     ![](images/2/ServiceBusProxyTesting.png)
+
 
 Congratulations you have just completed your first SOA Suite 12c composite! in Part 1 and 2 for developing validate payment using SOA Composite approach.
 
 [Click here to navigate to the next Module 3](3-process-order-using-composite.md)
 
 ### ** Summary ** ###
+
+In the second part of module 2, 
+
+- You've created the Proxy and Pipeline to invoke the ValidateBS Business Service using the Service Bus.
+- A routing action is automatically configured for you in the Pipeline.
+- You've also deployed the validate payment service and used test console inside the JDeveloper 12c 
+
+Congratulations you completed your first SOA Suite 12c composite! in Part 1 and 2 for developing validate payment using SOA Composite approach.

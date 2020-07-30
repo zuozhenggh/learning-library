@@ -23,11 +23,15 @@ When it’s completed, your overall fullfillOrder project will look similar to c
 
 ![](images/6/OrderFullfillment.png)
     
-    
-     
-   
+        
 ### **Summary**
 
 This completes Module 6. You now know how to enhance how to deploy a project for SOA composites and Service Bus, how to debug and different ways to test within JDeveloper and Enterprise Manager Fusion Middleware Control. 
+
+### **Learn More - useful Links** ###
+
+- SOA suite on Marketplace  https://cloudmarketplace.oracle.com/marketplace/en_US/listing/70268091
+- Community  https://cloudcustomerconnect.oracle.com/
+- Integration https://www.oracle.com/middleware/technologies/soasuite.html
 
 [Click here to navigate to Module 7](7-summary-and-next-step.md) 

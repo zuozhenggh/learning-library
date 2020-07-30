@@ -8,8 +8,8 @@ Recall a few of the business requirements for Avitek ‘s new order processing s
 
 In this module, you will see templates, a new feature in SOA Suite, at work in BPEL as well as Service
 Bus. You will leverage the validatePayment service you built in Chapter 2.
-At the end of this module, your solution will look similar to the following (from an architectural
-perspective).
+At the end of this module, your solution will look similar to the following process flow diagram:
+
 
 ![](images/3/Module3-SOA.png)
 
@@ -18,10 +18,12 @@ perspective).
 
 You will now create another SOA application that will accept new purchase orders, approve them and forward them to the fulfillment system. You will use a project template to implement the basic order processing scenario, add a call to the payment validation service built in chapter 2 and update the order status in the database based on the outcome of the payment validation.
 The order status update will be converted to a BPEL subprocess to make it easily re-usable. Once completed, your composite will look like this:
+
+
 ![](images/3/ProcessOrderComposite.png)
 
 
-To complete part 1, please start on chapter 3, page 80 of the tutorial document
+To complete part 1, the details start in <ins> **Chapter 3, page 80 to 116** of the tutorial </ins>
 
  ### **Part 2**: Register Process Order on Service Bus 
 
@@ -37,7 +39,15 @@ For now, you will just create an HTTP / SOAP Proxy and Pipeline for Process Orde
 3. Configure Pipeline and Proxy using Pipeline template.
 4. Test your application end-to-end.
 
-To complete part 2, please start on chapter 3, page 117
-### **Summary**
+To complete part 2, please start on <ins> **chapter 3, page 117 to 137** </ins> in the SOA suite Tutorial.pdf document
 
-This completes Module 3. You now know how to enhance a faceted search page and have been introduced to Page Designer. [Click here to navigate to Module 4](4-add-new-channel-for-ordering.md)
+
+### **Summary** ###
+
+In module 3, you've accomplished:
+- Created Service Bus pipeline from an existing template.
+- Providing Data validatio, Routing and manage exception inside the pipeline
+- Provided API for backend service from a service bus. This is exposed using Proxy Service within a Service Bus.
+  
+
+This completes Module 3.  [Click here to navigate to Module 4](4-add-new-channel-for-ordering.md)
