@@ -17,7 +17,7 @@ In this lab we can add a row to our json table using insert query and  we can us
 Steps 10-14
 This lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
 
-**Lab Prerequisites**
+### Lab Prerequisites
 
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud
@@ -26,7 +26,7 @@ This lab assumes you have completed the following labs:
 - Lab 4:  Environment setup
 - Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
-**About Oracle JSON**
+### About Oracle JSON
 
 JSON (JavaScript Object Notation) is a syntax for storing and exchanging data. When exchanging data between a browser and a server, the data can only be text.
 
@@ -53,10 +53,6 @@ Oracle’s JSON capabilities are focused on providing full support for schemales
 The first thing to realize about JSON is that it remains a simple text format, which is relatively easy to read and inspect with the naked eye. At a syntax level, what starts to set JSON apart from other formats is the characters used to separate data, which are mainly constrained to apostrophes ', brackets ( ), [ ], { }, colons :, and commas ,. This listing illustrates what a JSON payload looks like:
 
 ![](./images/json_intro.png " ")
-
-
-**Want to learn more**
-- [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 
 ## Step 1: Connect to the Pluggable Database (PDB)
 
@@ -171,7 +167,7 @@ commit
 
 ## Step 4: Insert a record.
 
-1. **Take a count of the rows in the json table-**
+1. Take a count of the rows in the json table
 
 ````
 <copy>
@@ -223,32 +219,7 @@ commit
  </copy>
 ````
 
-The above insert query is also available as a sql file in the directory “/u01/workshop/json”.
-The script is called as insert.sql. You can run this connecting to the SQL prompt.
-
-Set your oracle environment and connect to PDB as **oracle** user.
-````
-<copy>
-      . oraenv
-      </copy>
-````
-````
-<copy>
-      convergedcdb
-<copy>
-````
-````
-<copy>
-      sqlplus appjson/Oracle_4U@JXLPDB
-</copy>
-````
-````
-<copy>
-      @insert.sql
-</copy>
-````
-
-3. **Verify the count after insert.**
+3. Verify the count after insert. Please copy the red highlighted ID and save it. We will use that ID the update section of the lab.
 
 ````
 <copy>
@@ -258,12 +229,10 @@ Set your oracle environment and connect to PDB as **oracle** user.
 
 ![](./images/json.png " ")
 
-**Note:** Please copy the red highlighted id which we will use in our next section of update query.
-
 ## Step 5: Update a Table.
-We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
+1. We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
 
-**Note:** In the above update query replace the id which we copied in previous step.
+2. Copy the following update statement and substitute the ID you saved from the previous step in where it says ID\_copied\_from\_previous\_step. Run the statement.
 
 ````
 <copy>
@@ -282,7 +251,7 @@ We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json
 ![](./images/json_lab7_6.png " ")
 
 ## Step 6: Example Queries
-1. Customers who ordered products from specific Geo location   
+1. Let's look at customers who ordered products from a specific location. The Oracle database allows a simple ‘dotted’ notation to be used to perform a limited set of operations on columns containing JSON. In order to use the dotted notation, a table alias must be assigned to the table in the FROM clause, and any reference to the JSON column must be prefixed with the assigned alias. All data is returned as VARCHAR2(4000).
 
 ````
 <copy>
@@ -298,10 +267,7 @@ We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json
 
 ![](./images/select_count.png " ")
 
-**Note:** Oracle database allows a simple ‘dotted’ notation to be used to perform a limited set of operations on columns containing JSON. In order to use the dotted notation, a table alias must be assigned to the table in the FROM clause, and any reference to the JSON column must be prefixed with the assigned alias. All data is returned as VARCHAR2(4000).
-
-
-2. Find all customers who purchased an items tagged with a specific UPC
+2. Find all customers who purchased an items tagged with a specific UPC. The JSON\_EXISTS operator is used in the WHERE clause of a SQL statement. It is used to test whether or not a JSON document contains content that matches the provided JSON path expression. The JSON\_EXISTS operator takes two arguments, a JSON column and a JSON path expression. It returns TRUE if the document contains a key that matches the JSON path expression, FALSE otherwise. JSON\_EXISTS provides a set of modifiers that provide control over how to handle any errors encountered while evaluating the JSON path expression. The UPC, Universal Product Code, is a type of code printed on retail product packaging to aid in identifying a particular item. It consists of two parts – the machine-readable barcode, which is a series of unique black bars, and the unique 12-digit number beneath it.
 
 ````
 <copy>
@@ -312,13 +278,6 @@ We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json
 ````
 
 ![](./images/count_po_document.png " ")
-
-**Note:** The JSON\_EXISTS operator is used in the WHERE clause of a SQL statement. It is used to test whether or not a JSON document contains content that matches the provided JSON path expression.
-
-The JSON\_EXISTS operator takes two arguments, a JSON column and a JSON path expression. It returns TRUE if the document contains a key that matches the JSON path expression, FALSE otherwise. JSON\_EXISTS provides a set of modifiers that provide control over how to handle any errors encountered while evaluating the JSON path expression.
-
-[UPC, short form for  Universal Product Code, is a type of code printed on retail product packaging to aid in identifying a particular item. It consists of two parts – the machine-readable barcode, which is a series of unique black bars, and the unique 12-digit number beneath it.]
-
 
 3. Find the customers who all are purchased a specific products based on PONumber
 ````
@@ -352,7 +311,7 @@ The JSON\_EXISTS operator takes two arguments, a JSON column and a JSON path exp
 ![](./images/specific_product1.png " ")
 
 
-4. Find the customers who all are purchased a specific products based on the description of the product
+4. Find the customers who all are purchased a specific products based on the description of the product. The JSON\_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
 
 ````
 <copy>
@@ -383,9 +342,7 @@ The JSON\_EXISTS operator takes two arguments, a JSON column and a JSON path exp
 
 ![](./images/specific_product2.png " ")
 
-**Notes:** The JSON\_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
-
-5. How Many orders were done by a customer with minimum 7 quantity and unit price minimum 25$ in each order
+5. How Many orders were done by a customer with minimum 7 quantity and unit price minimum $25 in each order. To accomplish this we will create two relational views. The statements show how, once the relational views have been created, the full power of SQL can now be applied to JSON content, without requiring any knowledge of the structure of the JSON or how to manipulate JSON using SQL.
 
 For this , we will create two views as below:
 
@@ -467,16 +424,10 @@ create or replace view PURCHASE_ORDER_DETAIL_VIEW
 
 </copy>
 ````
-
-![](./images/json_fun_view1.png " ")
-![](./images/json_fun_view2.png " ")  
 ![](./images/lab5_snap3.png " ")    
 
 
-
-**Notes** The above statements show how, once the relational views have been created, the full power of SQL can now be applied to JSON content, without requiring any knowledge of the structure of the JSON or how to manipulate JSON using SQL.
-
-6. Customer Purchase History Details with PRETTY
+6. Customer Purchase History Details with PRETTY. JSON\_QUERY finds one or more specified JSON values in JSON data and returns the values in a character string. expr. Use this clause to specify the JSON data to be evaluated. For expr , specify an expression that evaluates to a text literal.
 
 ````
 <copy>
@@ -489,7 +440,7 @@ select JSON_QUERY(PO_DOCUMENT,'$.LineItems[0]' PRETTY) LINEITEMS
 
 ![](./images/json_fun_5a.png " ")  
 
-7. Customer Purchase History Details without PRETTY**
+7. Customer Purchase History Details without PRETTY. JSON\_VALUE selects a scalar value from JSON data and returns it as a SQL value. You can also use json\_value to create function-based B-tree indexes for use with JSON data — see Indexes for JSON Data. Function json\_value has two required arguments and accepts optional returning and error clauses.
 
 ````
 <copy>
@@ -502,17 +453,13 @@ select JSON_QUERY(PO_DOCUMENT,'$.LineItems[0]') LINEITEMS
 
 ![](./images/json_fun_5b.png " ")  
 
-**Notes:** JSON\_QUERY finds one or more specified JSON values in JSON data and returns the values in a character string. expr. Use this clause to specify the JSON data to be evaluated. For expr , specify an expression that evaluates to a text literal.
-
-JSON\_VALUE selects a scalar value from JSON data and returns it as a SQL value. You can also use json\_value to create function-based B-tree indexes for use with JSON data — see Indexes for JSON Data. Function json\_value has two required arguments and accepts optional returning and error clauses.
+##Want to learn more
+- [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 
 ## Acknowledgements
+* **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start
+* **Last Updated By/Date** - David Start, Product Manager, Database Product Management, July 2020
 
-- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel.
-- **Team** - North America Database Specialists.
-- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
-- **Expiration Date** - June 2021   
-
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -45,7 +45,7 @@ Estimated time: 10 Minutes
 
    ![](./images/env1.png " ")
 
-5.  Run the script env\_setup\_script.sh, this will start the database, listener, oracle rest data service and our eshop application. This script could take 15-20 minutes to run.
+5.  Run the script env\_setup\_script.sh, this will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run.
 
 
 ````
@@ -59,7 +59,7 @@ cd /u01/script
 
 Certain workshops require SQL Developer.  To setup SQL Developer, follow the steps below.
 
-1. Download [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) version 19.4 from the Oracle.com site and install on your local system.
+1. Download [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) from the Oracle.com site and install on your local system.
 
 2. Once installed, open up the SQL Developer console.
 
@@ -67,7 +67,7 @@ Certain workshops require SQL Developer.  To setup SQL Developer, follow the ste
 
 ## Step 3:  Test a connection
 
-1.  In the connections page click the green plus arrow to create a new connection
+1.  In the connections page click the green plus to create a new connection
 
 2.  Enter the following connection information to test your connection:
 ````
@@ -92,12 +92,9 @@ SID: convergedcdb
 
 
 ## Acknowledgements
-
-- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K., Robbie Ruppel
-- **Team** - North America Database Specialists
-- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
-- **Expiration Date** - June 2021   
+* **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
+* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start
+* **Last Updated By/Date** - David Start, Product Manager, Database Product Management, July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
