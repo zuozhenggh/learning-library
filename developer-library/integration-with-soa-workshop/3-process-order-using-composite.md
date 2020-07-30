@@ -42,7 +42,7 @@ For now, you will just create an HTTP / SOAP Proxy and Pipeline for Process Orde
 To complete part 2, please start on <ins> **chapter 3, page 117 to 137** </ins> in the SOA suite Tutorial.pdf document
 
 
-### **Summary** ###
+### **Summary**
 
 In module 3, you've accomplished:
 - Created Service Bus pipeline from an existing template.
