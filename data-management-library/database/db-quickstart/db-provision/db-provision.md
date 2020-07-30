@@ -14,7 +14,7 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 -   Learn how to provision a new Autonomous Data Warehouse
 
-## Lab Prerequisites
+## Prerequisites
 
 -   This lab requires completion of the **Get a Free Trial** lab in the Contents menu on the right.  
 

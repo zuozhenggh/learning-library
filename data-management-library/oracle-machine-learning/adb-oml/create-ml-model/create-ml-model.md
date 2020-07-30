@@ -22,7 +22,7 @@ Estimated time: 20 - 30 minutes
 - Become familiar with Oracle Machine Learning Algorithms.
 - Create a machine learning model to determine factors that predict good credit.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 - Login to Oracle Cloud/Sign Up for Free Tier Account

@@ -17,7 +17,7 @@ In this lab we can add a row to our json table using insert query and  we can us
 Steps 10-14
 This lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud

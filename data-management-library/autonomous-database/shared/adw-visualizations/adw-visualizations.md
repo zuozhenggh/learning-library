@@ -11,7 +11,7 @@ This lab will walk you through the steps to connect *Oracle Analytics Desktop* (
 - Learn how to access and gain insights from data in the Autonomous Database
 
 
-### Lab Prerequisites
+### Prerequisites
 - Obtained an Oracle Cloud account
 - Created a new autonomous database instance in ADW or ATP
 - Installation of Oracle Analytics Desktop (free with Autonomous Data Warehouse). If you already have Oracle Analytics Desktop installed, please check the version. The recommended version is 5.5.0 or greater, to connect to your Oracle Autonomous Database.
