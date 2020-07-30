@@ -1,4 +1,4 @@
-# Part 1: Build SOA Composite
+# Module 2: Build Payment validation Composite
 
 In this module, you will build your first Oracle SOA Suite 12c composite to validate a credit card payment.
 In this composite, credit card payments will be validated and the payment status will be returned. If the payment is denied, the order will not be processed.
@@ -10,6 +10,8 @@ Avitek, a fictitious company, has embarked upon a modernization project to align
 One of **the issue in the current application is that credit card payments are often denied for various, sometimes minor reasons, such as expiration date, etc. Since the process to correct these issues varies across Avitek’s order entry systems, on-premise or new adopted Cloud SaaS application there is no consistent follow-up and resolution with customers. Orders may end up lost or delayed in the system leading to customer dissatisfaction**.
 
 The business has indicated a new credit card fraud detection system must be put in place before year’s end to thwart credit card abuses. A consistent fraud mechanism will require the credit validation process to be consolidated across all order entry systems.
+
+# Part 1 Build the payment validation process flow
 
 ## **High-Level Steps**  ##
  
@@ -23,7 +25,6 @@ The business has indicated a new credit card fraud detection system must be put 
     ![](images/2/composite-details.png)
 
     
-
 4.  Add a database connection to Java DB (it is an embedded database inside JDeveloper 12c. The embedded weblogic requires to be started prior to establishing connection to the embedded database) 
 
     ![](images/2/db-connectivity.png)
@@ -41,19 +42,18 @@ The business has indicated a new credit card fraud detection system must be put 
 
     ![](images/2/deployment.png)
 
-Please go to Chapter 2, start on page 11 of SOASuite12c_Tutorial.pdf document to follow details for completing this lab module. 
+To complete Part 1, please go to Chapter 2, from <ins>**page 11 to 53** in the  SOASuite12c_Tutorial.pdf</ins> document.
 
-The tutorial pdf document can be found on the desktop of your OCI Linux instance. The lab exercise start on <ins>**page 9 to 37** in the SOASuite12c_Tutorial.pdf</ins>.
+The tutorial pdf document can be found on the desktop of your OCI Linux instance.
 
 ![](images/2/SOAsuite-pdf.png)
 
 
-    
-   
 
 # Part 2 Register the composite on SOA Service Bus
 
-In part 1, you have completed the validatePayment composite, you will register it on Service Bus.
+In part 1, you have completed the validatePayment process composite, you will register this process composite on Service Bus.
+
 Service Bus will protect consumers of the validatePayment composite from routine changes such as deployment location and implementation updates. Service Bus will help scale the service to handle higher volume of requests and provide resiliency for the service if it needs to be taken down for routine maintenance.
 
 Please start page 54, in the SOA suite tutorial pdf.
