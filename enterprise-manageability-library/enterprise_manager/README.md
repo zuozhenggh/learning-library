@@ -5,7 +5,7 @@ Oracle Enterprise Manager is Oracle’s on-premise management platform that prov
 ## Workshops
 Click on one of the options below to access the content.
 
-[![](./images/em-freetier.png)](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/em-livelabs.png)](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/livelabs/index.html)
+[![](./images/em-freetier.png " ")](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/em-livelabs.png " ")](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/livelabs/index.html)
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/index.html)
 - [I have an account on LiveLabs](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/livelabs/index.html)
@@ -16,22 +16,22 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
 - Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
 - Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
 
-Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
+Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free){target="_blank"}
 
 ## Product Pages
 - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
 - [Oracle Database 19c](https://www.oracle.com/database/)
 
 ## Documentation
-- [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
-- [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
-- [Database Performance and Change Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/performance.html)
-- [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
+- [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html){target="_blank"}
+- [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html){target="_blank"}
+- [Database Performance and Change Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/performance.html){target="_blank"}
+- [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html){target="_blank"}
 
 ## Videos
-- [Oracle Enterprise Videos](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/videos.html)
+- [Oracle Enterprise Videos](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/videos.html){target="_blank"}
 
 ### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues){target="_blank"} page.  We review it regularly.
 
 -- Oracle Enterprise Manager Product Management
