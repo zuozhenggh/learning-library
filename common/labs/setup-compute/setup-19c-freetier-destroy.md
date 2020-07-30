@@ -1,28 +1,14 @@
-# Setup 19c Compute Image
+# Destroy 19c Compute Image and VCN
 
 ## Introduction
-This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running a pre-configured Oracle Database 19c install using Oracle Resource Manager.  
+This lab will show you how to clean up your tenancy and remove the Oracle Cloud network (VCN) and compute instance you created.  
 
-Estimated Lab Time:  30 minutes
-
-### About Terraform and Oracle Cloud Resource Manager
-Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Database 19c.
-
-Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, preview the video below.
-
-[](youtube:udJdVCz5HYs)
-
-### About Oracle Cloud Marketplace
-
-The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Database 19c marketplace image.
-
-Link to Marketplace - https://www.oracle.com/cloud/marketplace/
+Estimated Lab Time:  10 minutes
 
 ### Objectives
 In this lab, you'll:
-* Setup a VCN (Virtual Compute Network) using Resource Manager
-* Setup a compute instance running the DB19c 
-* Login to your compute instance
+* Setup a VCN (Virtual Compute Network) and a compute instance using the DB19c Marketplace image
+* Use Resource Manager to complete the setup
 
 ### Prerequisites
 
@@ -115,8 +101,6 @@ Now that you have a network for your compute instance, it's time to create the c
 
     **DISPLAY_NAME** - Enter a display name. This will be the display name for the compute instance you create.  
 
-    **AD** - Choose availability domain 1 (or choose the AD that matches the subnet you chose)
-
     **SSH_PUBLIC_KEY**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
 
     *Accept all other defaults*
@@ -127,11 +111,11 @@ Now that you have a network for your compute instance, it's time to create the c
 
     ![](./images/db19c-freetier-step3-6.png " ")
 
-7.  Your stack has now been created!  You will now run the apply process in Resource Manager to create your DB19c instance.
+7.  Your stack has now been created!  Now to create your network and instance. 
 
     ![](./images/db19c-freetier-step3-7.png " ")
 
-## **STEP 4**: Use Terraform Apply to create Compute Instance
+## **STEP 4**: Terraform Apply
 
 1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your  instance that comes pre-installed Oracle 19c.
     ![](./images/db19c-freetier-step3-8.png " ")
@@ -149,12 +133,6 @@ Now that you have a network for your compute instance, it's time to create the c
 
 ## **STEP 5**: Connect to your instance
 
-There are multiple ways to connect to your cloud instance.  Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
-
-- Oracle Cloud Shell
-- MAC or Windows CYCGWIN Emulator
-- Windows Using Putty
-  
 ### Oracle Cloud Shell
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
@@ -230,7 +208,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     ````
     ![](./images/tailOfBuildDBInstanceLog.png " ")
 
-2.  When you see the following message, the database setup is complete - *Completed successfully in XXXX seconds* (this may take up to 30 minutes).  However certain labs may proceed without the entire database setup being finished.
+2.  When you see the following message, the database setup is complete - **Completed successfully in XXXX seconds** (this may take up to 30 minutes).  However certain labs may proceed without the entire database setup being finished.
 
     ![](./images/tailOfBuildDBInstanceLog_finished.png " ")
 
@@ -272,7 +250,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management
-- **Contributors** - Anoosha Pilli, Sanjay Narvekar, David Start, Arabella Yao
+- **Contributors** - Sanjay Narvekar, OCI Development
 - **Last Updated By/Date** - Kay Malcolm, July 2020
 
 ## See an issue?
