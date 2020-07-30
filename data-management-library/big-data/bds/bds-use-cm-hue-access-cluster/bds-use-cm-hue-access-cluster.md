@@ -50,7 +50,7 @@ In this step, you will add ingress security rules to the default security list i
 
 7. In the **Add Ingress Rules** dialog box, add the rule for the TCP protocol which enables you to use Cloudera Manager to access your cluster. You can add values to this dialog box to meet your security needs. In our example, we are opening up the port for Cloudera Manager to all sources by entering **`0.0.0.0/0`** for the **Source CIDR**. Anyone on the internet can access port **`7183`** for CM. No egress rule is required to allow the response traffic. Update the source to a more restrictive CDIR if required. Provide the following information:
 
-    + For the **STATELESS** checkbox, leave it unchecked which makes the rule stateful. This means that any response to the incoming traffic is allowed back to the originating host, regardless of any egress rules applicable to the instance.
+    + For the **STATELESS** checkbox, leave it unchecked which makes the rule stateful. Any response to the incoming traffic is allowed back to the originating host, regardless of any egress rules applicable to the instance.
     + For the **SOURCE TYPE**, select **`CIDR`**.
     + For the **SOURCE CIDR**, enter **`0.0.0.0/0`**.
     + For the **IP PROTOCOL**, select **`TCP`**.
