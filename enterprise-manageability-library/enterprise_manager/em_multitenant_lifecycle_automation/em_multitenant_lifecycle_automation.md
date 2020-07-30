@@ -19,7 +19,7 @@ The estimated time to complete all the Step activities is approximately 60 minut
 | 6    | Administrative Setup for PDBaaS (Private Cloud)- Review only               | 10min                     | An overview of the administrative setup involved for PDBaaS (Private Cloud) which includes setting up a PaaS Infrastructure Zone, Pluggable Database Pool, Data Sources, Service Template, etc. | Setup private cloud using Enterprise Manager where admin can define resources and EM’s placement algorithm and make sure that resources are utilized to their best. It is complimented by metering, and show back/chargeback capabilities. |
 
 ### Prerequisites
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
+- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have completed the **Prerequisites** and reviewed all items shown in the Contents menu on the right up to **Lab 1**.  
 - This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
@@ -211,7 +211,7 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
-  ![](images/dblmcompliancelibrary.png " ")
+  ![](images/dblmcompliancelibrary.png)
 
 1.  **Click** the Compliance Standards tab,  **Select** the row “Corporate Database Standard”, and then **Click** the Associate Targets tab
 
@@ -221,11 +221,11 @@ Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
 3. In the Save Association dialog box, **Click** Yes
 
-  ![](images/0ccc894ff6c91bdd0aa1b7e5f78fbe6e.png " ")
+  ![](images/0ccc894ff6c91bdd0aa1b7e5f78fbe6e.png)
 
 4. Then upon the Information processing prompt, **Click** OK
 
-  ![](images/a01dffb956af685a866f02e68eff72b1.png " ")
+  ![](images/a01dffb956af685a866f02e68eff72b1.png)
 
 5.  You need to refresh PDB statistics to see notifications. To refresh:
 
@@ -235,7 +235,7 @@ Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
 6.  Now Navigate to ***Enterprise >> Compliance >> Results***
 
-  ![](images/1317deb228d80211d9e6a2edf2cbba9e.png " ")
+  ![](images/1317deb228d80211d9e6a2edf2cbba9e.png)
 
 7. Click Corporate Database Standard under Compliance Standards
 
@@ -251,7 +251,7 @@ Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
 10. You will see open cursors notification. Scroll down as needed then **Click** on the link “Submit from Library” link under the Corrective Actions heading.
 
-  ![](images/19317a4da691bc2a1049ca7923414db3.png " ")
+  ![](images/19317a4da691bc2a1049ca7923414db3.png)
 
 11. From the Corrective Actions popup box, Select the “FIX OPEN CURSOR” corrective action.
 
@@ -477,14 +477,14 @@ That concludes this lab.
 
 ## Want to Learn More?
 
-- <a href="https://www.oracle.com/enterprise-manager/" target="\_blank">Oracle Enterprise Manager</a>
-- <a href="https://docs.oracle.com/en/enterprise-manager/index.html" target="\_blank">Enterprise Manager Documentation Library</a>
-- <a href="https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html" target="\_blank">Database Lifecycle Management</a>
-- <a href="https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html" target="\_blank">Database Cloud Management</a>
+- [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
+- [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
+- [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
+- [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
 
 ## Acknowledgements
 * **Author** - Pankaj Chandiramani, Oracle Enterprise Manager Product Management
 * **Adapted for Cloud by** -  Rene Fontcha, Oracle Enterprise Manager Sales Engineering
 * **Last Updated By/Date** - Rene Fontcha, July 2020
 
-See an issue?  Please open up a request <a href="https://github.com/oracle/learning-library/issues" target="\_blank">here</a>.   Please include the workshop name and lab in your request.
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
