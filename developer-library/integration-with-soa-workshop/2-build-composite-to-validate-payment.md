@@ -46,7 +46,7 @@ To complete Part 1, please go to Chapter 2, from <ins>**page 11 to 53** in the  
 
 The tutorial pdf document can be found on the desktop of your OCI Linux instance.
 
-![](images/2/SOAsuite-pdf.png)
+![](images/2/soa-tutorialpdf.png)
 
 
 
