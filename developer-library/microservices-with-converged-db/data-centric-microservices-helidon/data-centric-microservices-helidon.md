@@ -221,19 +221,27 @@ next lab.
 
 ## **STEP 3**: Verify health
 
-1. Notice health check class at $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderServiceLivenessHealthCheck.java
+1. Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) provides
+       health probes which check a given container for its liveness (checking if
+       the pod is up or down) and readiness (checking if the pod is ready to take
+       requests or not). In this STEP you will see how the probes pick up the
+       health that the Helidon microservice advertises. Click **Tracing, Metrics, Health** and click **Show Health: Liveness**
 
-   ![demo-erd.png](images/livenesshealthcheck.png " ")
+   ![demo-erd.png](images/healthliveliness.png " ")
    
-2. Notice liveness probe specified in $MSDATAWORKSHOP_LOCATION/order-helidon/order-helidon-deployment.yaml
+2. Notice health check class at `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderServiceLivenessHealthCheck.java` and how the liveness method is being calculated.
+     
+      ![](images/c6b4bf43b0ed4b9b4e67618b31560041.png " ")
+   
+3. Notice liveness probe specified in $MSDATAWORKSHOP_LOCATION/order-helidon/order-helidon-deployment.yaml The `livenessProbe` can be set up with different criteria, such as reading from a
+                                                                                                           file or an HTTP GET request. In this example the OKE health probe will use HTTP
+                                                                                                           GET to check the /health/live and /health/ready addresses every 3 seconds, to
+                                                                                                           see the liveness and readiness of the service.
 
    ![demo-erd.png](images/livenessprobeinyaml.png " ")
 
-3. Click **Show Health: Liveness**
-
-   ![demo-erd.png](images/healthliveliness.png " ")
-
-4. Click **Get Last Container Start Time** and note the time.
+4. In order to observe how OKE will manage the pods, the microservice has been
+       created with the possibility to set up the liveliness to “false”. Click **Get Last Container Start Time** and note the time the container started.
 
    ![demo-erd.png](images/lastcontainerstarttime1.png " ")
 
@@ -242,11 +250,11 @@ next lab.
    ![demo-erd.png](images/lastcontainerstarttime1.png " ")
 
 6. Click **Get Last Container Start Time**.
-   The probe settings can be adjusted, however, for this example it will take a minute or two for the probe to notice the failed state and conduct the restart and as it does you may see a connection refused exception.
+   It will take a minute or two for the probe to notice the failed state and conduct the restart and as it does you may see a connection refused exception.
 
    ![demo-erd.png](images/connectionrefused.png " ")
 
-    Eventually you will see the container restart and note the new/later container startup time.
+   Eventually you will see the container restart and note the new/later container startup time reflecting that the pod was restarted.
     
    ![demo-erd.png](images/lastcontainerstartuptime2.png " ")
 
