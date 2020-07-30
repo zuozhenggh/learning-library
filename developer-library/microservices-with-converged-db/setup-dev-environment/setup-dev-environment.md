@@ -244,7 +244,7 @@ Autonomous Database page provide the following basic information and click **Cre
     -   Workload type: `Transaction Processing`
     -   Deployment type: `Shared Infrastructure`
     -   Leave the defaults for version, OCPU count and Storage
-    -   Leave Auto scaling on
+    -   Leave Auto scaling: off
     -   Provide the admin password - *Note: do not use special characters in the password, instead use integers and upper and lower case characters.*
     -   Leave the defaults for network access, which is “Allow secure access from
         everywhere”
