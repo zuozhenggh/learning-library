@@ -38,7 +38,7 @@ Upon fulfillment processing and orders being sent to the packaging department, a
 | 1 | [Introduction to SOA](1-introduction-to-soa.md) | 10 min |
 | 2 | [Build composite integration to validate payment](2-build-composite-to-validate-payment.md) | 35 min |
 | 3 | [Processing order using composite app](3-process-order-using-composite.md) | 45 min |
-| 4 | [Add new chnanel for order](4-add-new-channel-for-ordering.md) | 45 min |
+| 4 | [Add new channel for order](4-add-new-channel-for-ordering.md) | 45 min |
 | 5 | [Pack and ship service composite app](5-pack-and-ship-service-composite.md) | 45 min |
 | 6 | [Order fullfilment](6-order-fullfilment.md) | 25 min |
 | 7 | [Summary and next step](7-summary-and-next-step.md) | 10 min |

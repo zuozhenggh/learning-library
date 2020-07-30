@@ -20,6 +20,7 @@ At the end of this module, your solution will look similar to the following proc
 3. Configure Pipeline and Proxy using Pipeline template.
 4. Test your application end-to-end.
 
+
 ### **Part 1**: Build Process Order Composite
 
 You will now create another SOA application that will accept new purchase orders, approve them and forward them to the fulfillment system. You will use a project template to implement the basic order processing scenario, add a call to the payment validation service built in chapter 2 and update the order status in the database based on the outcome of the payment validation.
