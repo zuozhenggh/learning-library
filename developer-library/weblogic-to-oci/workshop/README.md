@@ -1,5 +1,8 @@
 # WebLogic Migration to Oracle Cloud Infrastructure 
 
+## [Go to the Free Tier Web version](./freetier/)
+## [Go to the LiveLab Web version](./livelab/)
+
 ## [Introduction](./intro/README.md)
 ## [Login to Oracle Cloud Infrastructure](https://github.com/oracle/learning-library/blob/master/common/labs/cloud-login/cloud-login.md)
 ## [Prepare the OCI environment to deploy WebLogic Server](./prepare/README.md)
