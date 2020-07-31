@@ -26,7 +26,11 @@
       },
       {
         "title": "Lab 5: Scaling Application Platform",
+<<<<<<< HEAD
         "filename": "./scaling/scaling.md"
+=======
+        "filename": "./scale-app-platform/scale-app-platform.md"
+>>>>>>> upstream/master
       },
       {
         "title": "Lab 6: Polyglot Microservices",

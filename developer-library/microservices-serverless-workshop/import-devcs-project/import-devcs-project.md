@@ -9,7 +9,7 @@ Estimated time: 20 - 30 min
 
 * Learn how to import a DevCS that contains all the microservices
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial

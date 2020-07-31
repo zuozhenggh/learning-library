@@ -2,7 +2,7 @@
 
 Now we can run some testing with the ADG.
 
-## Lab Prerequisites
+## Prerequisites
 
 This lab assumes you have already completed the following labs:
 

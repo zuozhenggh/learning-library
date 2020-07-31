@@ -13,7 +13,7 @@ In this section of the lab you will deploy the remaining containers to support t
 *AlphaOfficeUI*: Node.js application container that displays data obtained via the TwitterFeed and ClientREST containers.
 
 
-### Lab Prerequisites?
+### Prerequisites?
 
 * Create a docker hub [account](http://hub.docker.com)
 * Participant has completed the following labs:

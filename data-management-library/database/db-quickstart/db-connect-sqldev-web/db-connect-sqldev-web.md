@@ -12,7 +12,7 @@ In this lab, you will connect to the database using SQL Developer Web, a browser
 
 -   Learn how to connect to your new autonomous database using SQL Developer Web
 
-## Lab Prerequisites
+## Prerequisites
 
 -   This lab requires completion of the 2 prior labs in this workshop: **Get a Free Trial** and **Provision an Autonomous Database**, in the Contents menu on the right.
 

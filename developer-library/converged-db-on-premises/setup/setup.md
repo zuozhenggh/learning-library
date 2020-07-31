@@ -10,7 +10,7 @@ Estimated time: 10 Minutes
 - Start the Oracle Database and Listener
 - Download and Setup SQL Developer Client
 
-### Lab Prerequisites
+### Prerequisites
 
 - Lab 1: Login to Oracle Cloud
 - Lab 2: Generate SSH Key
