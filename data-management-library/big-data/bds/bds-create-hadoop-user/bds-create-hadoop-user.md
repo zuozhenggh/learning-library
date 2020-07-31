@@ -91,20 +91,23 @@ In this step, you will set three variables using the **`export`** command. The v
 
 ## STEP 3: Connect to the Cluster's First Master Node Using Secure Shell (SSH)
 
-The Kerberos Distribution Center (KDC) is running on the cluster's first master node. In this lab, you will connect to the first master node using ssh as user **`opc`** (Oracle Public Cloud).
+The Kerberos Distribution Center (KDC) is running on the cluster's first master node. In this lab, you will connect to the first master node using SSH as user **`opc`** (the default Oracle Public Cloud user).
 
-In this example, we are using PuTTY on Microsoft Windows; however, you can connect to your cluster using SSH using the following command with a non-PuTTY private key. This is the private key that is associated with the public key that you used when you created the cluster in Lab 2:
+Remember, in **Lab 2**, we used our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub` and associated that key with our cluster. In this lab,  we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell using the **`ssh`** command below. PuTTY uses a different key file format than OpenSSH.
 
 ```
-# <copy>ssh –i private_key username@public-ip-address</Copy>
+<copy>ssh –i private_key username@public-ip-address</Copy>
 ```
+**Note:** For information on how to connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
+
+
 + **`private_key`** is the full path and name of the file that contains the private key associated with the instance you want to access.
 +  **`username`** is the default name for the cluster. The default user name is **`opc`**.
 + **`public-ip-address`** is the public IP address of the cluster node you want to access.
 
 For additional information on connecting to a node in the cluster using SSH, see [Connect to a Cluster Node By Using Secure Shell (SSH)](https://docs.oracle.com/en/cloud/paas/big-data-service/user/connect-cluster-ssh.html) in the Using Oracle Big Data Service documentation.
 
-_If you are connecting to your cluster's first master node using another SSH method besides PuTTY, you can skip the rest of the steps in this section and proceed to **STEP 4, Create the training Administrator Kerberos Principal**._
+_If you are already connected to your cluster's first master node using the OpenSSH format with the **`ssh`** command above, you can skip the rest of the steps in this section and proceed to **STEP 4, Create the training Administrator Kerberos Principal**._
 
 1. Start Putty. The **PuTTY Configuration** window is displayed. In the **Category** pane, select the **Session** parameter, if not already selected. In the **Basic options for your PuTTY session** section, provide the following information:
 

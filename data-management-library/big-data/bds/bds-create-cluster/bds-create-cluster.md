@@ -94,18 +94,19 @@ Create the cluster as follows:
 
     ![](./images/create-cluster-4.png " ")
 
-10. In the **Additional Options > SSH PUBLIC KEY** section, associate a public (Secure Shell) SSH key with the cluster. You can use the private SSH key that is associated with the public SSH key to make SSH connections to the cluster. You will SSH into your cluster in **Lab 6**.
+10. In the **Additional Options > SSH PUBLIC KEY** section, associate a public Secure Shell (SSH) key with the cluster.
 
-    **Note:** If you already have an existing public key, you can use it in this step; you don't have to create a new public key. If you need to create a new SSH key pair (using different formats), see the [Creating a Key Pair] (https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm?Highlight=ssh%20key#CreatingaKeyPair) OCI documentation topic and the
+    Linux instances use an SSH key pair instead of a password to authenticate a remote user. A key pair file contains a private key and public key. You keep the private key on your computer and provide the public key when you create an instance. When you connect to the instance using SSH, you provide the path to the private key in the SSH command. Later in **Lab 6**, you will connect to your cluster's master node using the private SSH key that is associated with the public SSH key that you specify here for your cluster.
+
+    **Note:** If you already have an existing public key, you can use it in this step; you don't have to create a new public key. If you need to create a new SSH key pair (using different formats), see the [Creating a Key Pair](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm?Highlight=ssh%20key#CreatingaKeyPair) OCI documentation topic and the
     [Generate SSH key](https://oracle.github.io/learning-library/common/labs/generate-ssh-key/) lab.
 
-    Enter an SSH public key in any of the following ways:
+    Specify an SSH public key using one of the following methods:
      * Select **CHOOSE SSH KEY FILE**, and then either Drag and drop a public SSH key file into the box,
       or click **Select one...** and navigate to and choose a public SSH key file from your local file system.
      * Select **PASTE SSH PUBLIC KEY**, and then paste the contents from a public SSH key file into the box.
 
-     **Note:** In this lab, we use our own SSH public key that we created using **PuTTYgen** named `mykey.pub`. In **Lab 6**, we will connect to our cluster using **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key.  
-
+     **Note:** In this lab, we use our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub`. In **Lab 6**, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you create OpenSSH key pair using your Linux system or Windows PowerShell, you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell. PuTTY uses a different key file format than OpenSSH. To connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
 
      ![](./images/create-cluster-5.png " ")
 
@@ -253,7 +254,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
   + Spark Gateway
   + YARN (MR2 Included) NodeManager
 
-**Note:** In **Lab 5, Use Cloudera Manager (CM) and Hue to Access a BDS Cluster**, you will use Cloudera Manager to view the roles, services, and gateways that are running on each node in the cluster. 
+**Note:** In **Lab 5, Use Cloudera Manager (CM) and Hue to Access a BDS Cluster**, you will use Cloudera Manager to view the roles, services, and gateways that are running on each node in the cluster.
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 
@@ -261,6 +262,8 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
 * [Using Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/index.html)
 * [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
+* [Creating a Key Pair](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm?Highlight=ssh%20key#CreatingaKeyPair)
+* [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh)
 * [Overview of Oracle Cloud Infrastructure Identity and Access Management](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
 * [Overview of the Compute Service](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/Concepts/computeoverview.htm)  
 * [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vm-dense)
