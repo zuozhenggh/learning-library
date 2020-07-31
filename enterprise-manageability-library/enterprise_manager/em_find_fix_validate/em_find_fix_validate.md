@@ -1,4 +1,4 @@
-oracle# Database Performance Management: Find, Fix, Validate
+# Database Performance Management: Find, Fix, Validate
 ## Introduction
 
 ### Objectives

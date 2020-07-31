@@ -1,4 +1,4 @@
-oracle# Automated Database Upgrade at Scale with Fleet Maintenance
+# Automated Database Upgrade at Scale with Fleet Maintenance
 ## Introduction
 
 ### Objectives
