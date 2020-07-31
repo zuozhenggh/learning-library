@@ -18,7 +18,7 @@
       },
       {
         "title": "Lab 3: Setup database connection secrets, tables, and AQ messaging",
-        "filename": "./setup-service-broker-messaging/setup-service-broker-messaging.md"
+        "filename": "./setup-atp-connectivity-data-and-messaging/setup-atp-connectivity-data-and-messaging.md"
       },
       {
         "title": "Lab 4: Data-centric microservices walkthrough with Helidon MP",
