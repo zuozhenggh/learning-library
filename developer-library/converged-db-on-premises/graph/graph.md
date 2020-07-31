@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps of setting up the environment for property graph.
+This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. The rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
 
 ### Before You Begin
 
@@ -221,7 +221,7 @@ The graph itself is stored in a set of tables named
 The important ones are the ones that store the vertices (OE SAMPLE GRAPHVT$) and edges (OE SAMPLE GRAPHGE$).
 
 
-4. Create a convenience function which prepares, executes, and prints the result of a PGQL statement
+5. Create a convenience function which prepares, executes, and prints the result of a PGQL statement
 
 ````
 <copy>
@@ -333,7 +333,7 @@ query.accept(qStr);
 
 ## Step 4: Load the graph into memory and publish it.
 
-1. Run the below command in jshell prompt so that queries can be run about customers and their orders after the graph is loaded into memory.
+1. Run the below command in jshell prompt. This step will run the script called "04_graphintoMemory.jsh"  which will perform two steps. The first step is loading the graph into memory. The second step is publishing the graph. After running this command we will look at some of the examples about customers and their orders.
 ````
 <copy>
 /open /u01/script/graph_startup/04_graphintoMemory.jsh
@@ -394,17 +394,9 @@ session.queryPgql(qStr).print().close();
 
 ![](./images/IMGG21.PNG)
 
-7. It is required to have the graph loaded into memory and published before visualizing it. The previous steps loaded the graph into memory. This step will publish the graph. Make sure you have completed the previous steps before running this step.
-
-````
-<copy>
-graph.publish(VertexProperty.ALL, EdgeProperty.ALL) ;
-</copy>
-````
-
 ## Step 5: Visualize the Graph
 
-We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result.
+We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
 
 GraphViz should be accessible at http://&lt;instance\_ip\_address&gt;:7007/ui
 
@@ -412,13 +404,13 @@ The principal points of entry for the GraphViz application are the query editor 
 When you start GraphViz, the graph list will be populated with the graphs loaded in the graph server. To run queries against a graph, select that graph. The query lets you write PGQL queries that can be visualized. (PGQL is the SQL-like query language supported by GraphViz.)
 Once the query is ready and the desired graph is selected, click Run to execute the query.
 
-1. What products did customer 202 buy from which store(s)?
+1. **This statement shows what products did customer 202 buy from which store(s)?**
 
 ````
 <copy>
 select * from oe_sample_graph
 match (c:CUSTOMERS)-[co]->(o:ORDERS)-[os]->(s:STORES), (o:ORDERS)-[e:ORDER_HAS_PRODUCT]->(p:PRODUCTS)
-where c.CUSTOMER_ID=202;
+where c.CUSTOMER_ID=202
 </copy>
 ````
 
@@ -426,17 +418,17 @@ where c.CUSTOMER_ID=202;
 
 2. Add some labels to the vertices. Click on Settings -> Then choose the Visualization tab
 
-3. Select label as the vertex label and then click OK.
+3. Scroll down to Labeling and in the Vertex Label drop down select "label" then click OK.
 
 ![](./images/IMGG23.PNG)
 
-4. Which customers placed orders from store with id 1 (the Online store)? Show the first 100 results
+4. **Here we look at which customers placed orders from store with id 1 (the Online store) displaying the first 100 results**
 
 ````
 <copy>
 Select * from oe_sample_graph
 Match (c)-[co]->(o)-[os:ORDERED_FROM_STORE]->(s)
-Where s.STORE_ID=1 LIMIT 100;
+Where s.STORE_ID=1 LIMIT 100
 </copy>
 ````
 
@@ -446,27 +438,29 @@ Where s.STORE_ID=1 LIMIT 100;
 
 ![](./images/IMGG27.PNG)
 
-6. We will add two conditions that match cancelled or refunded orders. Select Apply To Vertices (i.e. the conditions apply to Vertices)
+6. We will add two conditions that match cancelled or refunded orders. Select Filter By Vertices and apply to Vertex (i.e. the conditions apply to Vertices)
 
 7. Click on the +  sign to add a condition
 
-8. Choose label = ORDERS
+8. In the drop down choose label and then on the right side of the = type in ORDERS. It should look like label = ORDERS
 
 9. Again, Click + sign  to add another condition
 
-10. Choose ORDER_STATUS = CANCELLED
+10. Repeat the above for ORDER_STATUS = CANCELLED
 
 11. Click the checkbox for Color (vertex color) and choose a red color from the color-picker
 
 ![](./images/IMGG28.PNG)
 
-12. Scroll down and enter Cancelled as the Legend Title and then Click Add Highlight.
+12. Scroll down and Check the box for Legend Title and enter Cancelled as the Legend Title and then Click Add Highlight.
 
 ![](./images/IMGG29.PNG)
 
 13. Repeat the above process to add one more highlight for Refunded Orders.
 
-14. Select Apply To Vertices (i.e. the conditions apply to Vertices)
+14. Click on New Highlight
+
+14. Select Filter By Vertices and Apply to Vertex (i.e. the conditions apply to Vertices)
 
 15. Click on the +  sign to add a condition
 
@@ -493,13 +487,13 @@ Where s.STORE_ID=1 LIMIT 100;
 ![](./images/IMGG32.PNG)
 
 
-24. What products did customer buy?
+24. **The following statement will look at what products did customer buy?**
 
 ````
 <copy>
 select customer, coEdge, orders, opEdge, product from oe_sample_graph match
 (customer:CUSTOMERS)-[coEdge:CUSTOMER_ORDERED]->(orders:ORDERS)-[opEdge:ORDER_HAS_PRODUCT]->(product:PRODUCTS)
-where customer.FULL_NAME='Dale Hughes';
+where customer.FULL_NAME='Dale Hughes'
 </copy>
 ````
 
@@ -522,36 +516,34 @@ where customer.FULL_NAME='Dale Hughes';
 ![](./images/IMGG35.PNG)
 
 
-29. Which customers bought product with id 44? Show 100 results per page**
+29. **This statement will show Which customers bought product with id 44 and will display 100 results per page**
 
 ````
 <copy>
 select customer, coEdge, orders, opEdge, product from oe_sample_graph match
 (orders)-[os:ORDERED_FROM_STORE]->(store:STORES),
 (customer:CUSTOMERS)-[coEdge:CUSTOMER_ORDERED]->(orders:ORDERS)-[opEdge:ORDER_HAS_PRODUCT]->(product:PRODUCTS)
-where store.STORE_ID=1;
+where store.STORE_ID=1
 </copy>
 ````
 
 ![](./images/IMGG36.PNG)
 
 
-30. Which customers bought product with id 44? Show 100 results per page**
+30. **Now let's look at which customers bought product with id 44 displaying 100 results per page**
 
 ````
 <copy>
 select customer,opEdge, product, coEdge, orders from oe_sample_graph match
 (customer:CUSTOMERS)-[coEdge:CUSTOMER_ORDERED]->(orders:ORDERS)-[opEdge:ORDER_HAS_PRODUCT]->(product:PRODUCTS)
-where product.PRODUCT_ID=44;
+where product.PRODUCT_ID=44
 </copy>
 ````
 
 ![](./images/IMGG37.PNG)
 
 
-31. Deleting the Graph
-
-Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the following statements to delete the in-memory graph
+31. Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the following statements to delete the in-memory graph
 
 ````
 <copy>
