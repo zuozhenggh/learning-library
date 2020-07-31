@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to the Python Development with Autonomous Transaction Processing Workshop. This workshop will introduce you to the most rapid and advanced full-stack development environment available today.
+Welcome to the Developing Python Apps using Oracle Autonomous Transaction Processing Workshop. This workshop will build three cloud-based microservice database applications using Python and the ATP database.
 
 ## Workshop Overview
 

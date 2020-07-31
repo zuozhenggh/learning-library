@@ -46,13 +46,13 @@ In order to divide and isolate cluster resources, you will create a cluster
     installed:
 
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZaegTuNX8_vVPyP6QF1W6LaMXdziREUN1U_8JUEU9Zw/n/c4u03/b/data-management-library-files/o/msdataworkshop-master.zip</copy>
+    <copy>wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/qYQmiFVtgrKf0Oy40MbArSpXKmZmniD_XHS8o8wcQBE/n/stevengreenberginc/b/msdataworkshop/o/msdataworkshop.zip</copy>
     ```
 
 2. Unzip the file you downloaded:
 
     ```
-    <copy>unzip msdataworkshop-master.zip</copy>
+    <copy>unzip msdataworkshop.zip</copy>
     ```
 
 3.  You need to compile, test and package the Helidon front-end
@@ -61,7 +61,7 @@ In order to divide and isolate cluster resources, you will create a cluster
     folder.
 
     ```
-    <copy>cd msdataworkshop-master/frontend-helidon</copy>
+    <copy>cd msdataworkshop/frontend-helidon</copy>
     ```
 
 4.  Run `maven` to build the package using the following command. Since this is
@@ -121,7 +121,7 @@ After you have successfully compiled the application code, you are ready to push
 4. Append the following lines at the end of the file:
 
     ```
-    <copy>export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
+    <copy>export MSDATAWORKSHOP_LOCATION=~/msdataworkshop
     source $MSDATAWORKSHOP_LOCATION/shortcutaliases
     export PATH=$PATH:$MSDATAWORKSHOP_LOCATION/utils/
     export DOCKER_REGISTRY="REGION-ID.ocir.io/OBJECT-STORAGE-NAMESPACE/REPO-NAME"</copy>
@@ -248,7 +248,7 @@ After you have successfully compiled the application code, you are ready to push
 You may now proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Consulting Member of Technical Staff
+* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020

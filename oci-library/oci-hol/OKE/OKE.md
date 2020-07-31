@@ -25,7 +25,7 @@ Estimated time: 1 hour
 - Create Kubernetes Cluster
 - Deploy a sample app
 
-### Lab Prerequisites
+### Prerequisites
 - Lab 1: Login to Oracle Cloud
 - Lab 2: Create SSH Keys - Cloud Shell
 

@@ -19,7 +19,7 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
 - docker attach – Attaches to a running container
 - docker commit – Creates a new image from a container’s changes
 
-### Lab Prerequisites?
+### Prerequisites?
 
 * Chrome Browser (preferred)
 * Install JSON Extension on Chrome Browser [click here](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en)

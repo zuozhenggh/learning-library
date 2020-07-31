@@ -26,7 +26,7 @@ In this lab, you will:
 - Review the application to see how you can make predictions on the fly.
 - Expose your ml model as a REST endpoint so any application can use it.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 - Login to Oracle Cloud/Sign Up for Free Tier Account

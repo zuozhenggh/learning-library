@@ -21,7 +21,7 @@ Watch the video below to view the benefits of the Automatic Indexing feature.
 -   Discover how Automatic Indexing manages indexes in the Oracle Database
 -   Validate Automatic Index operations
 
-### Lab Prerequisites
+### Prerequisites
 
 *Note : This Lab can ONLY be run on Exadata environments; attempting to enable Automatic Indexing on non-Exadata systems will result in an error.*
 

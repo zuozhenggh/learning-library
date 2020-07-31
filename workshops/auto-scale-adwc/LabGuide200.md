@@ -40,7 +40,7 @@ Oracle’s Autonomous Data Warehouse is the perfect quick-start service for fast
 Read on to begin your Getting Started journey with Oracle Autonomous Data Warehouse.
 
 
-### **STEP 2**: Lab Prerequisites – Required Software
+### **STEP 2**: Prerequisites – Required Software
 - Oracle APEX Release 18.2.0.00.12
 - Oracle REST Data Services 18.4
 

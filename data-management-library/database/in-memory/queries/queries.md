@@ -6,7 +6,7 @@
 
 -   Perform various queries on the In-Memory Column Store
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud

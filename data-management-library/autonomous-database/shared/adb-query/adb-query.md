@@ -9,7 +9,7 @@ In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Objec
 -   Learn how to create external tables on top of files residing on the object store
 -   Learn how to query external data by the external tables
 
-### Lab Prerequisites
+### Prerequisites
 
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have completed the **Prerequisites** and **Lab 1** seen in the Contents menu on the right.
