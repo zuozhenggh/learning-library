@@ -2,8 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to start the Docker as well as Node.js Retail application .
-You can connect to an Node.js running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper
+This lab walks you through the steps to start the Docker as well as Node.js Retail application. You can connect to an Node.js running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper.
 
 ### Lab Prerequisites
 
@@ -137,7 +136,7 @@ http://&lt;PUBLIC-IP&gt;:3001/
 
 ![](./images/postman12a.png " ")
 
-5. Verify product details by using HTTP GET method. Select the GET method, enter the URL http://&lt;PUBLIC-IP&gt;:3001/products/13 and click on Send. Notice the data in the body section and price is updated.  
+4. Verify product details by using HTTP GET method. Select the GET method, enter the URL http://&lt;PUBLIC-IP&gt;:3001/products/13 and click on Send. Notice the data in the body section and price is updated.  
 
 ![](./images/postman_after_update.png " ")
 
