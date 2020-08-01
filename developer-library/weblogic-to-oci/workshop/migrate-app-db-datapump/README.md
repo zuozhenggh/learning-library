@@ -11,7 +11,7 @@ DataPump export function creates a DDL + data dump of the user schema, which is 
 If you used the Docker environment, use this command to get inside the DB container:
 ```
 <copy>
-docker exec -it on-prems-setup_oracledb_1 /bin/bash
+docker exec -it weblogic-to-oci_oracledb_1 /bin/bash
 </copy>
 ```
 Note: you should already be inside the DB container from the SSH key creation step, so you can skip the above step unless you exited the container

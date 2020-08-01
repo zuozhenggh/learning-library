@@ -35,7 +35,7 @@ Migration with WebLogic Deploy Tooling (WDT) consists in 3 steps:
 
   ```bash
   <copy>
-  docker exec -it on-prems-setup_wls_admin_1 /bin/bash
+  docker exec -it weblogic-to-oci_wls_admin_1 /bin/bash
   </copy>
   ```
 
@@ -497,7 +497,7 @@ appDeployments:
 
 - Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`
 
-- Enter the JDBC Connection password for the `RIDERS` user pdb (this is can be found in the `./on-prems-setup/weblogic/env` file under `DS_PASSWORD`).
+- Enter the JDBC Connection password for the `RIDERS` user pdb (this is can be found in the `./weblogic-to-oci/weblogic/env` file under `DS_PASSWORD`).
 
   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
 
