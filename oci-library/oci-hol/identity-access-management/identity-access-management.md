@@ -66,7 +66,7 @@ We'll create a user, a group, and a security policy to understand the concept.
 
      - **Name:** Enter a unique name for your group such as "oci-group” Note that the group name cannot contain spaces.
      - **Description:** Enter a description (for example, “New group for oci users”).
-     - Click **Submit**.
+     - Click **Create**.
 
    ![Create Group]( images/image005.png " ")
 
@@ -204,6 +204,7 @@ We'll create a user, a group, and a security policy to understand the concept.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Tom McGinn, Database Product Management
+- **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Tom McGinn, July 2020
 
 ## See an issue?
