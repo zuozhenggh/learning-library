@@ -19,7 +19,7 @@ the ATP instances.
 ## **STEP 1**: Create Secrets To Connect To ATP PDBs
 You will run a script that will download the connection information (wallet, tnsnames.ora, etc.) and then create kubernetes secrets from the information that will be used to connect to the ATP instrances provisioned earlier.
 
-1.  Verify values are set in $MSDATAWORKSHOP_LOCATION/msdataworkshop.properties 
+1.  Verify values are set in the copy of $MSDATAWORKSHOP_LOCATION/msdataworkshop.properties created previously
 
 2.  cd into atp-secrets-setup dir.
 
@@ -50,13 +50,12 @@ You will run a script that will download the connection information (wallet, tns
         ``` 
 
   ![](images/deleteAll.png " ")
-    ```
+  
 
 ## **STEP 2**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
-You will verify the connectivity from the frontend Helidon microservice
-    deployment to the ATP using the previously created service broker binding.
+You will verify the connectivity from the frontend Helidon microservice to the atp admin microservice connecting to the ATP PDBs.
 
-1.  First, let’s analyze the Kubernetes deployment YAML file: `atpaqadmin-service.yaml`.
+1.  First, let’s analyze the Kubernetes deployment YAML file: `atpaqadmin-deployment.yaml`.
 
     ```
     <copy>cat $MSDATAWORKSHOP_LOCATION/atpaqadmin/atpaqadmin-service.yaml</copy>
@@ -99,7 +98,7 @@ You will verify the connectivity from the frontend Helidon microservice
     ```
 
 
-5.  Create the `atpaqadmin` deployment and service using the following command.
+5.  Setup information necessary for ATP DB links and AQ propagation and create the `atpaqadmin` deployment and service using the following command.
 
     ```
     <copy>./deploy.sh</copy>
@@ -121,146 +120,14 @@ You will verify the connectivity from the frontend Helidon microservice
 
   ![](images/testdatasourcescreen.png " ")
 
-8. Click **testdatasources**.
+8. Click **Datasources** tab and then **Test Data Sources** button.
 
   ![](images/testdatasourcescreen-withoutput.png " ")
-
-  *If you do not see the correct results immediate wait a few minutes and click testdatasources again.*
 
   The frontend is calling the `atpaqadmin` service and has successfully established
   connections to both databases `orderpdb` and `inventorypdb`.
 
-## **STEP 3**: Setup AQ in the database
-In this step you will set up the AQ messaging queue by creating database
-    links between the two ATP databases, and perform queue propagation. Advanced
-    Queuing provides database-integrated message queuing functionality. We are
-    going to download the connection information zip file for each of the ATP
-    instances.
-
-1.  Go to the Cloud Console and click **Autonomous Transaction Processing**.
-
-  ![](images/8b3a05eecdbc4b140ac4fc81c8d49c89.png " ")
-
-2.  If you don’t see the two ATP instances, make sure you have selected the
-    right compartment.
-
-  ![](images/4097cb788800a3a28dcd3a349698d0f0.png " ")
-
-3.  Click on the `InventoryDB` name.
-
-  ![](images/6873d607319af22e64d0aa11f8bd2ed8.png " ")
-
-4.  On the InventoryDB page click **DB Connection**, select the regional Wallet and download the zip file.
-
-  ![](images/d4ffd87731799f3961dfa13f36dd44a1.png " ")
-
-  *Note: Make sure you select Regional Wallet.*
-
-  ![](images/1b05d273a509a51f681e0efc514f09f4.png " ")
-
-5. On the next page you will be asked to provide the password, please type the same password used when you created the instance and click **Download**.
-
-  ![](images/73b7e7e550731c525b8a93939ef67188.png " ")
-
-6.  Once downloaded, extract the zip file on your computer, and upload the
-    `cwallet.sso` into object storage. Go to the Object Storage page and click **Create
-    Bucket**. Make sure you are in the `msdataworkshop` compartment.
-
-  ![](images/6fcb7b50a017498192e3d3b268e416b8.png " ")
-
-  ![](images/9f3e11006885ae7e63ddbfd7d1c8fb77.png " ")
-
-7.  Name the compartment `msdataworkshopbucket`, leave the defaults and click
-    **Create Bucket**. You should see the newly created bucket in the list.
-
-  ![](images/b40c72b4a398854e5a07c9c219075d73.png " ")
-
-8.  Click `msdataworkshopbucket`, under Object, click **Upload Objects**, select
-    the extracted `cwallet.sso` file from your computer and click **Upload
-    Objects**.
-
-  ![](images/438426876ac0d4ebbb964ae25d24c8f0.png " ")
-
-  ![](images/8dcb5509c1ff0d7adef8fdde1042c0a5.png " ")
-
-  ![](images/f65f8096ed72e77fe51111fd1a687f44.png " ")
-
-  ![](images/04fa91b2738e69df048f38e9e562a198.png " ")
-
-  ![](images/48599172582ed1a60b4d47307a5c04fc.png " ")
-
-9. Once uploaded, go back to the `msdataworkshopbucket` page, and you should see the uploaded file in the list.
-
-  ![](images/e7d97fd1eeae32cf65f68072fbb497b3.png " ")
-
-10.  For convenience, create a pre-authenticated URL to the Object eliminating
-    the need to sign-in when accessing the object. Click the other options icon
-    located to the right of the `cwallet.sso` object, and select **Create
-    Pre-Authenticated Request**.
-
-  ![](images/ed954be119a3586da81bc9ee928da70c.png " ")
-
-11. On the next page confirm the defaults and click **Create Pre-Authenticated Request**. Once created, copy the Pre-authenticated request URL, as it will not be shown again. Save the URL in your text file.
-
-  ![](images/3caac1410392a9c844675c60b166a371.png " ")
-
-12. Open the Cloud Shell and go to the `atpaqadmin` folder.
-
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/atpaqadmin</copy>
-    ```
-
-  ![](images/7b2c01d83a10447de8761c7843183d16.png " ")
-
-13. Edit the Kubernetes deployment file `atpaqadmin-deployment.yaml` with nano.
-
-    ```
-    <copy>nano atpaqadmin-deployment.yaml</copy>
-    ```
-
-  ![](images/341f75a208337ea66db5a007dc7c1664.png " ")
-
-14.  We need to provide values in the section marked with “\# PROVIDE VALUES FOR
-    THE FOLLOWING...”. Provide values for the following items:
-
-    - cwalletobjecturi
-    - orderhostname
-    - orderport
-    - orderservice\_name
-    - orderssl\_server\_cert\_dn
-    - inventoryhostname
-    - inventoryport
-    - inventoryservice\_name
-    - inventoryssl\_server\_cert\_dn
-
-    `cwalletobjecturi` – is the pre-authenticated URL which we’ve created in the previous step, when uploading `cwallet.sso` to the Object storage.
-
-  The rest of the values should be in the `tnsnames.ora` file which was extracted from the zip file. When looking for the information in `tnsnames.ora` look for the information under the \_tp TNS aliases, so for `orderdb` look for values in `orderdb_tp` connection string, and for `inventorydb` look for values in `inventorydb_tp` connection string.
-
-  ![](images/tnsnamesora.png " ")
-
-  Once you have edited the lines, the result should look like this:
-
-  ![](images/atpaqadmindeployment-dblinkvalues.png " ")
-
-15. Redeploy the `atpaqadmin` image.
-
-    ```
-    <copy>./redeploy.sh</copy>
-    ```
-
-  ![](images/280c423cdfa5b825b704e8a2bdee2621.png " ")
-
-15.  Once created, run the `pods` command to check that the `atpaqadmin` pod is
-    in running state. You should see the `atpaqadmin` pod up and running
-
-    ```
-    <copy>pods</copy>
-    ```
-
-  ![](images/1f226568abdce39d7fc9eacd9279fbab.png " ")
-
-16.  Open the frontend microservice home page and click the following buttons in
+9.  Open the frontend microservice home page and click the following buttons in
     order: **Create Users**, **Create Inventory Table**, **Create Database Links**,
     **Setup Tables Queues and Propagation**.
 
@@ -291,6 +158,8 @@ In this step you will set up the AQ messaging queue by creating database
     
     Afterwards, click **Delete Users**.
 
+
+## Conclusion
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
