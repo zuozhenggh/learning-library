@@ -63,8 +63,9 @@ Step by step details in <ins> **chapter 4, page 163 to 166** in the tutorial</in
 
 **High level steps**
 
-1. Invoke the Native Format Builder from the File Adapter Configuration Wizard. nXSD, Native XML Schema Definition, in the wizard utilized to convert the native format to XML structure and vice versa.
-2. Build comprehensive data enrichment and mapping configuration
+1. Invoke the Native Format Builder from the File Adapter Configuration Wizard. 
+2. nXSD, Native XML Schema Definition is in the wizard utilized to convert the native format to XML structure and vice versa.
+3. Build comprehensive data enrichment and mapping configuration
 
 ### Details: ###
 Please start in <ins> **chapter 4, page 167 to 190** in the tutorial document</ins>.
