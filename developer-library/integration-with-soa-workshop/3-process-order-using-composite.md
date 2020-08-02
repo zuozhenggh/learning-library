@@ -6,8 +6,12 @@ Recall a few of the business requirements for Avitek ‘s new order processing s
 2. With a mobile app launch in progress, next year at the latest, the new order processing system must support access via RESTful API.
 3. It must allow existing systems to place orders using xml files and CSV files. These should be processed and fulfilled using the same new order provisioning infrastructure.
 
-In this module, you will see templates, a new feature in SOA Suite, at work in BPEL as well as Service Bus. You will leverage the validatePayment service you built in Chapter 2.
+In this module, you will see templates, a new feature in SOA Suite, at work in BPEL. As well as Service Bus. 
+
+You will leverage the validatePayment service you built in Chapter 2.
 At the end of this module, your solution will look similar to the following process flow diagram:
+
+![](images/3/Module3-SOA.png)
 
 # High Level Steps
 
@@ -16,7 +20,6 @@ At the end of this module, your solution will look similar to the following proc
 3. Configure Pipeline and Proxy using Pipeline template.
 4. Test your application end-to-end.
 
-    ![](images/3/Module3-SOA.png)
 
 ### **Part 1**: Build Process Order Composite
 
