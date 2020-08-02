@@ -57,17 +57,17 @@ Service Bus root-cause analysis framework has been brought into IDE, JDeveloper.
     ![](images/4/DebugginSB.png)
 
 ### Details: ###
-Step by step details in <ins> **Chapter 4, page 163 to 166** in the tutorial</ins>
+Step by step details in <ins> **chapter 4, page 163 to 166** in the tutorial</ins>
 
 ### **Part 4**: Build the nXSD translation as data enrichment and mapping
 
 **High level steps**
 
-1. Invoke the Native Format Builder from the File Adapter Configuration Wizard
+1. Invoke the Native Format Builder from the File Adapter Configuration Wizard. nXSD, Native XML Schema Definition, in the wizard utilized to convert the native format to XML structure and vice versa.
 2. Build comprehensive data enrichment and mapping configuration
 
 ### Details: ###
-Please start in <ins> **chapter 4, page 167 to 190** in the Tutorial pdf document</ins>.
+Please start in <ins> **chapter 4, page 167 to 190** in the tutorial document</ins>.
 
 
 ### **Summary**
