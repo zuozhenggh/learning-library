@@ -15,7 +15,7 @@ In this chapter, you will add new File order channel for your ProcessOrder lever
     ![](images/4/Chapter4-Proxy2.png)
 
 ### Details: ###
-Please start from <ins> **chapter 4 page 139 to 153**  in the tutorial document</ins>.
+Please start in <ins> **chapter 4 page 139 to 153**, the tutorial document</ins>.
 
 ### **Part 2**: Review Service Bus in Enterprise Manager
 
@@ -41,7 +41,7 @@ Let’s take a look at the Service Bus monitoring in Enterprise Manager 12c. In 
     ![](images/4/MessagingReport.png)
 
 ### Details: ###
-Please start from <ins> **chapter 4 page 154 to 162** in the Tutorial document</ins>.
+Please start in <ins> **chapter 4 page 154 to 162** in the tutorial document</ins>.
 
 ### **Part 3**: Service Bus debugging tool inside Enterprise Manager
 
@@ -57,7 +57,7 @@ Service Bus root-cause analysis framework has been brought into IDE, JDeveloper.
     ![](images/4/DebugginSB.png)
 
 ### Details: ###
-Step by step details from <ins> **Chapter 4, page 163 to 166** in the tutorial</ins>
+Step by step details in <ins> **Chapter 4, page 163 to 166** in the tutorial</ins>
 
 ### **Part 4**: Build the nXSD translation as data enrichment and mapping
 
@@ -67,7 +67,7 @@ Step by step details from <ins> **Chapter 4, page 163 to 166** in the tutorial</
 2. Build comprehensive data enrichment and mapping configuration
 
 ### Details: ###
-Please start from <ins> **chapter 4, page 167 to 190** in the Tutorial pdf document</ins>.
+Please start in <ins> **chapter 4, page 167 to 190** in the Tutorial pdf document</ins>.
 
 
 ### **Summary**
