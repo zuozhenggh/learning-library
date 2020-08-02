@@ -23,11 +23,9 @@ At the end of this module, your solution will look similar to the following proc
 You will now create another SOA application that will accept new purchase orders, approve them and forward them to the fulfillment system. You will use a project template to implement the basic order processing scenario, add a call to the payment validation service built in chapter 2 and update the order status in the database based on the outcome of the payment validation.
 The order status update will be converted to a BPEL subprocess to make it easily re-usable. Once completed, your composite will look like this:
 
+    ![](images/3/ProcessOrderComposite.png)
 
-![](images/3/ProcessOrderComposite.png)
-
-
-To complete part 1, the details start in <ins> **Chapter 3, page 80 to 116** of the tutorial </ins>
+    To complete part 1, the details start in <ins> **Chapter 3, page 80 to 116** of the tutorial </ins>
 
 ### **Part 2**: Register Process Order on Service Bus 
 
@@ -37,7 +35,6 @@ For now, you will just create an HTTP / SOAP Proxy and Pipeline for Process Orde
 ![](images/3/ProxyService.png)
 
 To complete part 2, please start on <ins> **chapter 3, page 117 to 137** </ins> in the SOA suite Tutorial.pdf document
-
 
 ### **Summary**
 
