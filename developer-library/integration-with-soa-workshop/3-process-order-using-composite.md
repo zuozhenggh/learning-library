@@ -22,15 +22,24 @@ At the end of this module, your solution will look similar to the following proc
 
 
 ### **Part 1**: Build process order Composite
-You will now create another SOA application that will accept new purchase orders, approve them and forward them to the fulfillment system. You will use a project template to implement the basic order processing scenario, add a call to the payment validation service built in chapter 2 and update the order status in the database based on the outcome of the payment validation. The order status update will be converted to a BPEL subprocess to make it easily re-usable. 
-    Once completed, your composite will look like this:
+You will now create another SOA application that will accept new purchase orders, approve them and forward them to the fulfillment system. You will use a project template 
+
+1. To implement the basic order processing scenario
+2. Add a call to the payment validation service built in chapter 2 and 
+3. Update the order status in the database based on the outcome of the payment validation
+4. The order status update will be converted to a BPEL subprocess to make it easily re-usable. Once completed, your composite will look like this:
+
     ![](images/3/ProcessOrderComposite.png)
 
 To complete part 1, the details start <ins>**Chapter 3, page 80 to 116** of the tutorial </ins>
 
 ### **Part 2**: Register process order on Service Bus 
-As you have completed and tested the Process Order composite, you will register it on Service Bus to make it available for external consumers. Service Bus will allow the Process Order composite to be made available over different protocols and data formats without disruption to the core business logic in the composite. Service Bus will also validate the Order data and report for auditing. For now, you will just create an HTTP / SOAP Proxy and Pipeline for Process Order. You can also add a File Proxy and Pipeline to allow orders to be processed from existing systems.
-    Here is the pipeline
+As you have completed and tested the Process Order composite, you will register it on Service Bus to make it available for external consumers. 
+1. Service Bus will allow the Process Order composite to be made available over different protocols and data formats without disruption to the core business logic in the composite
+2. Service Bus will also validate the Order data and report for auditing. For now, you will just create an HTTP / SOAP Proxy and Pipeline for Process Order. 
+3. You can also add a File Proxy and Pipeline to allow orders to be processed from existing systems.
+
+
     ![](images/3/ProxyService.png)
 
 To complete part 2, please start on <ins> **chapter 3, page 117 to 137** </ins> in the SOA suite Tutorial.pdf document
@@ -38,7 +47,7 @@ To complete part 2, please start on <ins> **chapter 3, page 117 to 137** </ins> 
 ### **Summary**
 In module 3, you've accomplished:
 - Created Service Bus pipeline from an existing template.
-- Providing Data validatio, Routing and manage exception inside the pipeline
+- Providing Data validation, Routing and manage exception inside the pipeline
 - Provided API for backend service from a service bus. This is exposed using Proxy Service within a Service Bus.
   
 
