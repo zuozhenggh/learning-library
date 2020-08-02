@@ -54,11 +54,10 @@ Service Bus root-cause analysis framework has been brought into IDE, JDeveloper.
 3. Right-click your Pipeline or Proxy from the canvas and select the ‘Debug’ option.
 4. Enter test data into the Test Console.
 
+    ![](images/4/DebugginSB.png)
+
 ### Details: ###
 Step by step details from <ins> **Chapter 4, page 163 to 166** in the tutorial</ins>
-
-![](images/4/DebugginSB.png)
-
 
 ### **Part 4**: Build the nXSD translation as data enrichment and mapping
 
