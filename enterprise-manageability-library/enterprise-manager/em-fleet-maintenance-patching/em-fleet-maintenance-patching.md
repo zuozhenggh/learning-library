@@ -12,7 +12,7 @@ Benefits with Fleet Maintenance:
 - Ability to schedule/retry/suspend/resume.
 - Database patching across different infrastructure including engineered systems like Exadata
 
-![](images/em-fleet-maintenance-overview.png " ")
+![](images/em-fleet-maintenance-overview-1.png " ")
 
 ### Background
 The estimated time to complete the workshop is 60 minutes as further detailed below.
@@ -48,6 +48,13 @@ Refer to [Environment Setup](https://oracle.github.io/learning-library/enterpris
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
+
+### Video Preview
+Watch a video demonstration how database patching using Oracle Enterprise Manager Fleet Maintenance:
+
+[](youtube:JlspEvqebHE)
+
+*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
 
 ## Step 0: Running your lab
 
