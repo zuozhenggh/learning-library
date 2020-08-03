@@ -374,7 +374,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Contributors** - Jeffrey Malcolm, QA Specialist
+- **Contributors** - Jeffrey Malcolm, QA Specialist, Kamryn Vinson, QA Specialist
 - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
 ## See an issue?
