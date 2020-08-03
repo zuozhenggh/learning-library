@@ -61,12 +61,12 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 
 4. Switch to OCI window and click the Bucket Name.
 
-5. Bucket detail window should be visible. Click **Upload Object**
+5. Bucket detail window should be visible. Click **Upload**
   ![]( images/OBJECT-STORAGE007.PNG " ")
 
-6. Click on *Upload Object* and then browse to where you created your *samplefile* moments ago.
+6. Click on *Upload* and then browse to where you created your *samplefile* moments ago.
 
-7. Select the file, then click **Upload Object** in the Dialog box.
+7. Select the file, then click **Upload** in the Dialog box.
 
 8. File should be visible under Objects. Click Action icon and click **Create Pre-Authenticated Request**. This will create a web link that can be used to access the object without requiring any additional authentication.
 
