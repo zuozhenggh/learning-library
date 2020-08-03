@@ -22,7 +22,7 @@ The EM Workshop is a fully functional Oracle Enterprise Manager environment conf
 - Tuning Pack for Oracle Database
 - Real Application Testing
 
-## Workshop Supported Used Cases
+## Workshop Supported Use Cases
 
 ### 1. Database Fleet Maintenance
 * Detect Configuration Pollution
