@@ -19,7 +19,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
 
 
-## **STEP 1**: Verify order and inventory activity of GrubDash store
+## **STEP 1**: Build and deploy GrubDash store services
 
 1. As you have successfully set up the databases, you can now test the
     “GrubDash” Food Order application. You will interact with several
@@ -95,37 +95,43 @@ The lab will then show you metrics, health checks and probes, and tracing that h
    ![](images/5fad32d4c759a78653a31f68cffedfac.png " ")
 
 8. The services are ready, and you can proceed to test the application
-    mechanisms. Open the frontend microservices home page.
+    mechanisms. 
+    
+    
+    
+## **STEP 2**: Verify order and inventory activity of GrubDash store
 
-9. Click **Transactional** under **Labs**.
+1.   Open the frontend microservices home page.
+
+2. Click **Transactional** under **Labs**.
 
    ![](images/transactionalpage-blank.png " ")
 
-10. Check the inventory of a given item such as sushi, by typing `sushi`
+3. Check the inventory of a given item such as sushi, by typing `sushi`
     in the `food` field and clicking **Get Inventory**. You should see the inventory
     count result 0.
 
    ![](images/sushicount0.png " ")
 
-11. (Optional) If for any reason you see a different count, click **Remove Inventory** to bring back the count to 0.
+4. (Optional) If for any reason you see a different count, click **Remove Inventory** to bring back the count to 0.
 
-12. Let’s try to place an order for sushi by clicking **Place Order**.
+5. Let’s try to place an order for sushi by clicking **Place Order**.
 
    ![](images/placeorderpending.png " ")
 
-13. To check the status of the order, click **Show Order**. You should see a failed
+6. To check the status of the order, click **Show Order**. You should see a failed
     order status.
 
    ![](images/showorderfailed.png " ")
 
    This is expected, because the inventory count for sushi was 0.
 
-14. Click **Add Inventory** to add the sushi in the inventory. You
+7. Click **Add Inventory** to add the sushi in the inventory. You
     should see the outcome being an incremental increase by 1.
 
    ![](images/sushicount1.png " ")
 
-15. Go ahead and place another order by clicking **Place Order**, and then click
+8. Go ahead and place another order by clicking **Place Order**, and then click
     **Show Order** to check the order status.
 
    ![](images/placeorderpending.png " ")
@@ -202,7 +208,7 @@ and message propagation across the two ATP instances. You may proceed to the
 next lab.
 
 
-## **STEP 2**: Verify metrics
+## **STEP 3**: Verify metrics
 
 1. Notice @Timed and @Counted annotations on placeOrder method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
@@ -218,7 +224,7 @@ next lab.
    ![demo-erd.png](images/metrics.png " ")
 
 
-## **STEP 3**: Verify health
+## **STEP 4**: Verify health
 
 1. Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) provides
        health probes which check a given container for its liveness (checking if
@@ -259,7 +265,7 @@ next lab.
 
 
 
-## **STEP 4**: Verify tracing
+## **STEP 5**: Verify tracing
    
 1. Notice @Traced annotations and calls to set tags, baggage, etc. on placeOrder method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
