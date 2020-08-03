@@ -79,7 +79,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 Now that you have a network for your compute instance, it's time to create the compute instance running the 19c database.  
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [db19c-compute-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xbuVfRwRZRhZCiGrsFOa3l_3mW3wyk3ZNl4pm7GzCak/n/c4u03/b/labfiles/o/db19c-compute-livelabs-v1.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
+    - [db19c-compute-livelabs-v2.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_CvkOA6FEQhZoE6_Z4B5dEpnzGlQuWJVcC_lBJBR4YU/n/c4u03/b/labfiles/o/db19c-compute-livelabs-v2.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 
 2.  Save in your downloads folder.
 
@@ -275,7 +275,7 @@ You may now proceed to the next lab.
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management
 - **Contributors** - Anoosha Pilli, Sanjay Narvekar, David Start, Arabella Yao
-- **Last Updated By/Date** - Kay Malcolm, July 2020
+- **Last Updated By/Date** - Kay Malcolm, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
