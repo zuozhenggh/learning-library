@@ -49,6 +49,13 @@ Log into your Enterprise Manager VM using the Public IP of your EM instance and 
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
+### Video Preview
+Watch a video demonstration how database patching using Oracle Enterprise Manager Fleet Maintenance:
+
+[](youtube:JlspEvqebHE)
+
+*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
+
 ## Step 0: Running your lab
 
 1. Update the Named Credentials with your SSH Key
