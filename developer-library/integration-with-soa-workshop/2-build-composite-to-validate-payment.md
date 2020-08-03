@@ -11,9 +11,9 @@ One of **the issue in the current application is that credit card payments are o
 
 The business has indicated a new credit card fraud detection system must be put in place before year’s end to thwart credit card abuses. A consistent fraud mechanism will require the credit validation process to be consolidated across all order entry systems.
 
-# Part 1 Build the payment validation process flow
+### **Part 1**: Build the payment validation process flow
 
-## **High-Level Steps:**  ##
+**High-Level Steps:**
  
 1.  Create a new composite application e2e-1201-composites and SOA project named ValidatePayment
 2.  Use the new SOA Project template to create the ValidatePayment composite.
@@ -49,8 +49,7 @@ The tutorial pdf document can be found on the desktop of your OCI Linux instance
 ![](images/2/soa-tutorialpdf.png)
 
 
-
-# Part 2 Register the composite on SOA Service Bus
+### **Part 2**: Register the composite on SOA Service Bus
 
 In part 1, you have completed the validatePayment process composite, you will register this process composite on Service Bus.
 
@@ -58,7 +57,7 @@ Service Bus will protect consumers of the validatePayment composite from routine
 
 Please follow the construction details from <ins>**page 54 to 77**, in the SOA suite tutorial</ins>.
 
-## **High-Level Steps:**  ##
+**High-Level Steps:**
 
 1.  Create a new Service Bus application and new project **ValidatePayment.**. 
 
@@ -93,7 +92,7 @@ Congratulations you have just completed your first SOA Suite 12c composite! in P
 
 [Click here to navigate to the next Module 3](3-process-order-using-composite.md)
 
-### ** Summary ** ###
+### **Summary**
 
 In the second part of module 2, 
 
