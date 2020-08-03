@@ -4,8 +4,8 @@ In this module, you will build the first part of the order fulfillment service. 
 Once the order has been shipped, an email is sent to the customer confirming the shipping provider and the order status is updated to Shipped.
 This chapter will build the pack and ship service, including the email notification.
 
-
-### **Details**
+### **Primary task**: Build the pack and ship service
+**Details**
 
 1. Create a new SOA project PackAndShipService with an empty composite in the application e2e-1201-composites.
 2. Define a REST interface for the Packing Service Project
