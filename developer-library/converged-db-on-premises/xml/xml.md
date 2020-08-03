@@ -2,7 +2,7 @@
 
 ## Introduction
 
-There are several steps within this lab. The first step walks you through the steps of setting up the environment for XML lab . You can connect Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper. The second step shows different ways to query XML data. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL. We can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable. The third set of steps you will get to insert and update XML contents. We can update XML content or replace either the entire contents of a document or only particular parts of a document.
+There are several steps within this lab. The first step walks you through the steps of setting up the environment for XML lab . You can connect Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQL Developer. The second step shows different ways to query XML data. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL. We can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable. The third set of steps you will get to insert and update XML contents. We can update XML content or replace either the entire contents of a document or only particular parts of a document.
 The ability to perform partial updates on XML documents is very powerful, particularly when we make small changes to large documents, as it can significantly reduce the amount of network traffic and disk input-output required to perform the update. The Oracle UPDATEXML function allows us to update XML content stored in Oracle Database. The last step you will look at various sample queries and functions within XML.
 
 Estimated Lab Time: 15 Minutes
@@ -38,7 +38,7 @@ Oracle XML DB also supports the SQL/XML standard, which allows SQL-centric devel
 
 Oracle XML DB allows an organization to manage XML content in the same way that ii manages traditional relational data. This allows organizations to save costs and improve return on investment by using a single platform to manage and secure all of their mission critical data. Oracle XML DB was first released with Oracle 9iR2, and it has been enhanced in each subsequent major release of the database.
 
-## Step 1: Connect to the Pluggable Database (PDB)
+## STEP 1: Connect to the Pluggable Database (PDB)
 
 1. Open a terminal window and sudo to the user **oracle**
     ````
@@ -68,28 +68,28 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     </copy>
     ````
 
-5. Open sqlplus as the user appjson
+5. Open SQLPlus as the user appjson
     ````
     <copy>
     sqlplus appxml/Oracle_4U@JXLPDB
     </copy>
     ````
 
-## Step 2: Connect to SQL Developer
+## STEP 2: Connect to SQL Developer
 
-1. Make a connection to sqldeveloper. Use the details as below and click on connect.
-    ````
-    Name: XML
-    Username: appxml
-    Password: Oracle_4U
-    Hostname: PUBLIC-IP
-    Port: 1521
-    Service name: JXLPDB
-    ````
+1. Make a connection to SQL Developer. Use the details as below and click on connect.
+
+      - **Name**: XML
+      - **Username**: appxml
+      - **Password**: Oracle_4U
+      - **Hostname**: PUBLIC-IP
+      - **Port**: 1521
+      - **Service name**: JXLPDB
+
 
     ![](./images/xml_sql_developer.png " ")
 
-## Step 3: XML Query
+## STEP 3: XML Query
 
 1. Getting the number of XML documents.
     ````
@@ -136,9 +136,9 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
     ![](./images/xml_step3_search.png " ")
 
-## Step 4: Insert XML record.
+## STEP 4: Insert XML record.
 
-1. Lets take a count of the rows we have currently and then will do a insert.
+1. Let's take a count of the rows we have currently and then do a insert.
 
     ````
     <copy>
@@ -150,7 +150,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
      ![](./images/xml_s4_p1.png " ")
 
 
-2. The insert query is available as a sql file in the directory “**/u01/workshop/xml**”. The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
+2. The insert query is available as a SQL file in the directory “**/u01/workshop/xml**”. The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
 
 
 3. Set your oracle environment and connect to PDB as **oracle** user.
@@ -185,14 +185,11 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 4. Verify XML record post insert
 
     ````
-    <copy>
-    select t.object_value.getclobval() from purchaseorder t;    
-
-         </copy>
+    <copy>select t.object_value.getclobval() from purchaseorder t;</copy>
     ````
     ![](./images/xml_s4_p3.png " ")
 
-## Step 5: Update XML table
+## STEP 5: Update XML table
 
 1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
   The script is called as **update.sql**. You can run this connecting to the SQL prompt.
@@ -238,7 +235,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     ````
     ![](./images/xml_s5_p2.png " ")
 
-## Step 6: Example Queries
+## STEP 6: Example Queries
 
 1. Get the list of the customer and their purchased information from a geo graphical location.  
     **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.
@@ -261,7 +258,6 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
       SELECT t.object_value.getclobval()
       FROM   purchaseorder p,
       XMLTABLE('for $r in /PurchaseOrder[Reference/text()=$REFERENCE] return $r' passing object_value, 'AHUNOLD-20141130' AS  "REFERENCE") t;  
-
     </copy>
     ````
 
@@ -284,7 +280,6 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
            passing object_value
         )
         WHERE xmlexists('/PurchaseOrder/LineItems/Part[UnitPrice/text()=$UnitPrice]' passing object_value, '27.95' AS "UnitPrice" );
-
     </copy>
     ````
 
@@ -317,7 +312,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     ![](./images/xml_m9a.png " ")
 
 5. Next Day Air - Customer Delivery Priority Instruction for e.g Ex - Courier, Expidite, Surface Mail, Air Mail etc..  
-    **ExistsNodechecks** if xpath-expression returns at least one XML element or text node. If so, existsNode returns 1, otherwise, it returns 0. existsNode should only be used in the where clause of the select statement.
+    **ExistsNodechecks** if xpath-expression returns at least one XML element or text node. If so, `existsNode` returns 1, otherwise, it returns 0. `existsNode` should only be used in the where clause of the select statement.
 
     ````
     <copy>
@@ -330,7 +325,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     ![](./images/xml_m10_gg.png " ")
 
 6. Priority Overnight - Customer Delivery Priority Instruction for e.g Ex - Courier, Expidite, Surface Mail, Air Mail etc..  
-    **ExistsNodechecks** if xpath-expression returns at least one XML element or text node. If so, existsNode returns 1, otherwise, it returns 0. existsNode should only be used in the where clause of the select statement.
+    **ExistsNodechecks** if xpath-expression returns at least one XML element or text node. If so, `existsNode` returns 1, otherwise, it returns 0. `existsNode` should only be used in the where clause of the select statement.
 
     ````
     <copy>

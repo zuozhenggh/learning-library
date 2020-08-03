@@ -101,7 +101,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
 
 
-## Step 1: Connect to Graph Server and Client
+## STEP 1: Connect to Graph Server and Client
 
 **The graph server has already been setup for you. For more information on the graph server setup see the "Want to learn more section" of this lab.**
 
@@ -134,7 +134,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
     </copy>
     ````
 
-## Step 2: Create Graph
+## STEP 2: Create Graph
 
 **For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh. The SQL has been provided as reference.**
 
@@ -153,9 +153,9 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
     ![](./images/IMGG6.PNG)
 
 2. We used a property graph query language [PGQL](http://pgql-lang.org) DDL to define and populate the graph.  The statement is as follows:
+
     ````
-    <copy>
-    CREATE PROPERTY GRAPH OE_SAMPLE_GRAPH
+    <copy>CREATE PROPERTY GRAPH OE_SAMPLE_GRAPH
     VERTEX TABLES (
     customers KEY (CUSTOMER_ID) LABEL CUSTOMERS
     PROPERTIES(CUSTOMER_ID, EMAIL_ADDRESS, FULL_NAME),
@@ -223,11 +223,11 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ````
     <copy>
-    Consumer<\String> query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
+    Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
     </copy>
     ````
 
-## Step 3: Querying graph using PGQL
+## STEP 3: Querying graph using PGQL
 
 1. Find the edge labels. We used labels here to tag an edge with a relationship type
 
@@ -288,7 +288,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG13.PNG " ")
 
-7. Who bought how much of product  with id 19
+7. Who bought how much of product with id 19?
 
     ````
     <copy>
@@ -319,7 +319,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG15.PNG)
 
-## Step 4: Load the graph into memory and publish it.
+## STEP 4: Load the graph into memory and publish it.
 
 1. Run the below command in jshell prompt. This step will run the script called "04_graphintoMemory.jsh"  which will perform two steps. The first step is loading the graph into memory. The second step is publishing the graph. After running this command we will look at some of the examples about customers and their orders.
     ````
@@ -380,7 +380,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG21.PNG)
 
-## Step 5: Visualize the Graph
+## STEP 5: Visualize the Graph
 
 We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
 
