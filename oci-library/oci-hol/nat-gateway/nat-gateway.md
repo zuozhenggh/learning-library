@@ -154,7 +154,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
     - Target Type: Select **NAT Gateway** 
     - Destination CIDR Block: Enter 0.0.0.0/0 
-    - Compartment:  Make sure the correct Compartment is selected: 
+    - Compartment:  Make sure the correct Compartment is selected
     - Target NAT Gateway: Select the NATGateway for your VCN. 
 
 4. Click **Create Route Table**.
@@ -170,7 +170,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
       **NOTE:** Do not choose the 'Default route table'. This is being done so all routing for compute instances in this subnet are via the NAT gateway. 
 
-      - Subnet access:Private Subnet.
+      - Subnet access: Private Subnet. (Ignore the screenshot where `Public Subnet` is selected)
       - DHCP Options: Select the default.
       - Security Lists: Select the Security List you created earlier.
 
@@ -278,7 +278,7 @@ appear.
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Contributos** - Kamryn Vinson, QA Intern
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
