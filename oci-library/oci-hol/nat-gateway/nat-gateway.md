@@ -163,20 +163,20 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 5. Click your VCN name to display the VCN details. Click **Create Subnet**. Fill out the dialog box:
 
-      - Name: Enter a name 
+      - Name: Enter a name
       - Subnet Type: Regional
       - CIDR Block: Provide a CIDR (e.g 10.0.5.0/24).
       - Route Table: Choose the Route table created earlier
 
       **NOTE:** Do not choose the 'Default route table'. This is being done so all routing for compute instances in this subnet are via the NAT gateway. 
 
-      - Subnet access:Private Subnet.
+      - Subnet access: Private Subnet.
       - DHCP Options: Select the default.
       - Security Lists: Select the Security List you created earlier.
 
 6. Leave all other options as default, Click **Create Subnet**.
 
-    ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_004.PNG " ")
+    ![](./images/create_subnet.png " ")
 
 7. Go to your Cloud shell Terminal. Generate ssh key pair, enter command:
 
