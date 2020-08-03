@@ -25,13 +25,13 @@ You will run a script that will download the connection information (wallet, tns
 
     ```
         <copy>cd $MSDATAWORKSHOP_LOCATION/atp-secrets-setup</copy>
-        ``` 
+    ``` 
 
 3.  execute createAll.sh and notice output creating secrets.
 
     ```
         <copy>./createAll.sh</copy>
-        ``` 
+    ``` 
 
   ![](images/createAll.png " ")
 
