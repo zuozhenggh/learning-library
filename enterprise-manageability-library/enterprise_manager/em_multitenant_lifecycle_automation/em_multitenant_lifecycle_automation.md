@@ -211,7 +211,7 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
-  ![](images/dblmcompliancelibrary.png)
+  ![](images/dblmcompliancelibrary.png " ")
 
 1.  **Click** the Compliance Standards tab,  **Select** the row “Corporate Database Standard”, and then **Click** the Associate Targets tab
 
@@ -221,11 +221,11 @@ Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
 3. In the Save Association dialog box, **Click** Yes
 
-  ![](images/0ccc894ff6c91bdd0aa1b7e5f78fbe6e.png)
+  ![](images/0ccc894ff6c91bdd0aa1b7e5f78fbe6e.png " ")
 
 4. Then upon the Information processing prompt, **Click** OK
 
-  ![](images/a01dffb956af685a866f02e68eff72b1.png)
+  ![](images/a01dffb956af685a866f02e68eff72b1.png " ")
 
 5.  You need to refresh PDB statistics to see notifications. To refresh:
 
@@ -235,7 +235,7 @@ Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
 6.  Now Navigate to ***Enterprise >> Compliance >> Results***
 
-  ![](images/1317deb228d80211d9e6a2edf2cbba9e.png)
+  ![](images/1317deb228d80211d9e6a2edf2cbba9e.png " ")
 
 7. Click Corporate Database Standard under Compliance Standards
 
@@ -251,7 +251,7 @@ Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
 10. You will see open cursors notification. Scroll down as needed then **Click** on the link “Submit from Library” link under the Corrective Actions heading.
 
-  ![](images/19317a4da691bc2a1049ca7923414db3.png)
+  ![](images/19317a4da691bc2a1049ca7923414db3.png " ")
 
 11. From the Corrective Actions popup box, Select the “FIX OPEN CURSOR” corrective action.
 

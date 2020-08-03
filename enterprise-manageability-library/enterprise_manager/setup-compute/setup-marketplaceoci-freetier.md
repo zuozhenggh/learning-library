@@ -1,4 +1,4 @@
-# Setup - FreeTier or Existing Cloud Account
+# Environment Setup on FreeTier or Existing Cloud Account
 
 ## Introduction
 This lab will show you how to setup an Oracle Cloud Network (VCN) and a compute instance running Oracle Linux 7 and preloaded with Enterprise Manager 13c and monitored database targets, using Oracle Resource Manager and Terraform.  
