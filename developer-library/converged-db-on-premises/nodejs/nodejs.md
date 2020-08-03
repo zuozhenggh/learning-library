@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to start the Docker as well as Node.js Retail application. You can connect to an Node.js running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper.
+This lab walks you through the steps to start the Docker and Node.js Retail application. You can connect to an Node.js running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQL Developer.
 
 Estimated Lab Time: 20 Minutes
 ### Prerequisites
@@ -35,7 +35,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 -	Node.js eliminates the waiting, and simply continues with the next request.
 -	Node.js runs single-threaded, non-blocking, asynchronously programming, which is very memory efficient.
 
-**What Node.js can do?**
+**What can Node.js do?**
 -	Node.js can generate dynamic page content
 -	Node.js can create, open, read, write, delete, and close files on the server
 -	Node.js can collect form data
@@ -45,9 +45,9 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
    The official Node.js website has installation instructions for [Node.js](https://yum.oracle.com/oracle-linux-nodejs.html).
 
-## Step 1:  Verify Application
+## STEP 1:  Verify Application
 
-1.  The script (env\_setup\_script.sh) which was run in Lab-4 has started the application. Also at the end of the script. you      will be presented with two URLs.
+1.  The script (env\_setup\_script.sh) which you ran started the application. Also at the end of the script. you will be presented with two URLs.
 
     ![](./images/appscript4a.png " ")
 
@@ -59,16 +59,16 @@ http://&lt;PUBLIC-IP&gt;:3001/
 
     ![](./images/application_home_pageupdated.png " ")
 
-## Step 2: Download Postman
+## STEP 2: Download Postman
 
- 1. Download the Postman.
+ 1. Download Postman.
     -  [Click here to download Postman](https://www.postman.com/downloads/)
 
     ![](./images/postman1a.png " ")
 
     ![](./images/postman2a.png " ")
 
- 2. Launch the Postman.
+ 2. Launch Postman.
     ![](./images/nodejs-postman1a.png " ")
 
  3. Open a new tab by clicking File then New Tab or by clicking the plus button in the center of the screen next to launch pad.
@@ -80,16 +80,14 @@ http://&lt;PUBLIC-IP&gt;:3001/
     - Click on Body and select raw and then in the drop down choose JSON
     - In the data portion of the Body insert the JSON data below
       ````
-      <copy>  
-      {
-      "pid": "488",
-      "category": "Puma Shoe ",
-      "title": "Puma-shoe Demo3",
-      "details": "Puma-shoe-Original",
-      "price": "9",
-      "picture": "https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedbAppImage3/o/Puma-shoe-dietmar-hannebohn-_G94gB2cms0-unsplash.jpg"
-      }  
-      </copy>
+      <copy>{
+        "pid": "488",
+        "category": "Puma Shoe ",
+        "title": "Puma-shoe Demo3",
+        "details": "Puma-shoe-Original",
+        "price": "9",
+        "picture": "https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedbAppImage3/o/Puma-shoe-dietmar-hannebohn-_G94gB2cms0-unsplash.jpg"
+      }</copy>
       ````
     ![](./images/nodejs2a.png " ")
 
@@ -97,7 +95,7 @@ http://&lt;PUBLIC-IP&gt;:3001/
 5. Click on the **Send** button, Postman should return the HTTP 200 after successfully adding the product in oracle database.
 ![](./images/postman_return.png " ")
 
-## Step 3: Using HTTP GET method.
+## STEP 3: Using HTTP GET method.
 
 1. Open a new tab
 
@@ -113,7 +111,7 @@ http://&lt;PUBLIC-IP&gt;:3001/
 
     ![](./images/nodejs-postman5a.png " ")
 
-## Step 4: Using HTTP POST Method
+## STEP 4: Using HTTP POST Method
 
 
 1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL http://&lt;PUBLIC-IP&gt;:3001/products/13.
@@ -130,9 +128,7 @@ http://&lt;PUBLIC-IP&gt;:3001/
     - In the data portion of the Body insert the JSON data below
     - Click on the Send button, Postman return the HTTP 200 OK after successfully updating the product price.
     ````
-    <copy>
-	   {"price": "12"}
-    </copy>
+    <copy>{"price": "12"}</copy>
     ````
 
     ![](./images/postman12a.png " ")
