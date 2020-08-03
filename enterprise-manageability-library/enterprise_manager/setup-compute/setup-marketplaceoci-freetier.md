@@ -1,4 +1,4 @@
-# Setup - FreeTier or Existing Cloud Account
+# Environment Setup on FreeTier or Existing Cloud Account
 
 ## Introduction
 This lab will show you how to setup an Oracle Cloud Network (VCN) and a compute instance running Oracle Linux 7 and preloaded with Enterprise Manager 13c and monitored database targets, using Oracle Resource Manager and Terraform.  
@@ -19,7 +19,7 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 -   Setup a network and compute instance using the  Marketplace image specified in the Introduction
 -   Use Terraform and Resource Manager to complete the setup
 
-### Lab Prerequisites
+### Prerequisites
 This lab assumes you have already completed the following labs:
 * [Lab 1: Login to Oracle Cloud](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-1-login-oracle-cloud)
 * [Lab 2: Generate SSH Key](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-2-generate-ssh-key)

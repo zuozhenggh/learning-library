@@ -12,7 +12,7 @@ Estimated time: 5 minutes
 
 -   Learn how to provision a new Autonomous Database
 
-### Lab Prerequisites
+### Prerequisites
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have completed the **Prerequisites** lab seen in the Contents menu on the right.  In this lab, you will provision an ADB database instance using the cloud console.
 

@@ -19,7 +19,7 @@ What Alpha Office wants is to deploy this machine learning model in a production
 -   Learn how to provision an ATP instance
 -   Learn how to connect to ADW
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Login to Oracle Cloud/Sign Up for Free Tier

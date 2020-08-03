@@ -34,7 +34,7 @@ This lab shows how to load data from Oracle Cloud Infrastructure Object Storage 
 
 In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it with sample data from your *local file system*. In the remaining steps, you will create several ADW tables and load them with sample data that you stage to an *OCI Object Store*.
 
-### Lab Prerequisites
+### Prerequisites
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 
 - This lab assumes you have completed the **Prerequisites** and **Lab 1** seen in the Contents menu on the right.

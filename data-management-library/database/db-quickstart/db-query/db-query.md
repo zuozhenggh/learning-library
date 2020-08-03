@@ -18,7 +18,7 @@ In this lab, you will query the Sales History (SH) sample schema that comes with
 -   Learn how to use the ORDER BY clause to sort the rows that are retrieved from the SELECT statement
 
 
-## Lab Prerequisites
+## Prerequisites
 
 -   This lab requires completion of the preceding 4 labs in the Contents menu on the right.
 

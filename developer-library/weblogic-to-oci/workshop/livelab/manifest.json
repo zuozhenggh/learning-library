@@ -1,0 +1,64 @@
+
+{
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "publisheddate": "07/30/2020",
+            "filename": "../intro/README.md"
+        },
+        {         
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 2: Setup an on-premises environment",
+            "publisheddate": "07/30/2020",
+            "filename": "../on-prems-env/README.md"
+        },
+        {
+            "title": "Lab 2 Option A: Setup an on-premises environment with the Workshop Marketplace stack",
+            "publisheddate": "07/30/2020",
+            "filename": "../on-prems-env-mp/README.md"
+        },
+        {
+            "title": "Lab 2 Option B: Setup a local (on-premises) environment with Docker",
+            "publisheddate": "07/30/2020",
+            "filename": "../on-prems-env-docker/README.md"
+        },
+        {
+            "title": "Lab 3: Prepare the OCI account",
+            "publisheddate": "07/30/2020",
+            "filename": "../prepare/README.md"
+        },
+        {
+            "title": "Lab 4: Provision the WebLogic infrastructure",
+            "publisheddate": "07/30/2020",
+            "filename": "../provision-wls/README.md"
+        },
+        {
+            "title": "Lab 5: Provision the Database on OCI",
+            "publisheddate": "07/30/2020",
+            "filename": "../provision-app-db/README.md"
+        },
+        {
+            "title": "Lab 6: Migrate the Application Database",
+            "publisheddate": "07/30/2020",
+            "filename": "../migrate-app-db-datapump/README.md"
+        },
+        {
+            "title": "Lab 7: Migrate the WebLogic domain",
+            "publisheddate": "07/30/2020",
+            "filename": "../migrate-wls-wdt/README.md"
+        },
+        {
+            "title": "Lab 8: Tear down the environment",
+            "publisheddate": "07/30/2020",
+            "filename": "../tear-down/README.md"
+        }
+
+     ]
+}

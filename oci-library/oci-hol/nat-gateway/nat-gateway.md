@@ -1,4 +1,4 @@
-# NAT gateway
+# Configuring NAT Gateway for Private Compute Instance
 
 ## Introduction
 
@@ -40,6 +40,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
+7. Completed ***Lab 1: Generate SSH Keys***
 
 ## Step 1: Sign in to OCI Console and create VCN
 
@@ -60,7 +61,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**.
+3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
 
 4. Fill out the dialog box:
 
@@ -79,66 +80,14 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
               
-## Step 2: Create ssh keys compute instance
+## Step 2: Create and connect to compute instance
 
-1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL006.PNG " ")
+1. Got to your OCI console. From OCI services menu, under **Compute**, click **Instances**.
 
-2. Enter command 
-    ```
-    <copy>
-    ssh-keygen
-    </copy>
-    ```
-    **HINT:** You can swap between OCI window, git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon. 
-
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL007.PNG " ")
-
-3. Press Enter When asked for 'Enter File in which to save the key', 'Created Directory, 'Enter passphrase', and 'Enter Passphrase again.
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL008.PNG " ")
-
-4. You should now have the Public and Private keys:
-
-    /C/Users/ PhotonUser/.ssh/id\_rsa (Private Key)
-
-    /C/Users/PhotonUser/.ssh/id\_rsa.pub (Public Key)
-
-    **NOTE:** id\_rsa.pub will be used to create 
-    Compute instance and id\_rsa to connect via SSH into compute instance.
-
-    **HINT:** Enter command 
-    ```
-    <copy>
-    cd /C/Users/PhotonUser/.ssh (No Spaces) 
-    </copy>
-    ```
-    and then 
-    ```
-    <copy>
-    ls 
-    </copy>
-    ```
-    to verify the two files exist. 
-
-5. In git-bash Enter command  
-    ```
-    <copy>
-    cat /C/Users/PhotonUser/.ssh/id_rsa.pub
-    </copy>
-    ```
-    , highlight the key and copy 
-
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL009.PNG " ")
-
-6. Click the apps icon, launch notepad and paste the key in Notepad (as backup).
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0010.PNG " ")
-
-7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**. 
-
-8. Click **Create Instance**. Fill out the dialog box:
+2. Click **Create Instance**. Fill out the dialog box:
 
       - **Name your instance**: Enter a name 
-      - **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+      - **Choose an operating system or image source**: For the image, we recommend using the Latest *Oracle Linux* available.
       - **Availability Domain**: Select availability domain
       - **Instance Type**: Select Virtual Machine 
       - **Instance Shape**: Select VM shape 
@@ -156,42 +105,41 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
       - **Boot Volume:** Leave the default
       - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
-9. Click **Create**.
+3. Click **Create**.
 
     **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
 
-10. Wait for Instance to be in **Running** state. In git-bash Enter Command:
+4.  Wait for Instance to be in **Running** state. In Cloud shell Terminal, enter command:
    
     ```
-    <copy>
-    cd /C/Users/PhotonUser/.ssh
-    </copy>
+    <copy>cd .ssh</copy>
     ```
-11. Enter **ls** and verify id\_rsa file exists.
 
-12. Enter command 
+5.  Enter **ls** and verify you SSH key file exists.
+
+6.  Enter command:
     ```
-    <copy>
-    bash
-    ssh -i id_rsa opc@PUBLIC_IP_OF_COMPUTE
-    </copy>
+    <copy>bash</copy>
+    ```
+
+    ```
+    <copy>ssh -i id_rsa opc@PUBLIC_IP_OF_COMPUTE</copy>
     ```
     **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste ssh command.
 
-
-13. Enter 'Yes' when prompted for security message.
+7.  Enter 'yes' when prompted for security message.
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
  
-14. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
+8.  Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
 ## Step 3: Configure NAT gateway
 
 **We will now create a route table in the VCN.**
 
-1. Switch to OCI console. From OCI services menu Click **Virtual Cloud Networks** under Networking. Locate your VCN and Click the VCN name to display VCN details. 
+1. Switch to OCI console. From OCI services menu, click **Virtual Cloud Networks** under **Networking**. Locate your VCN and click the VCN name to display VCN details. 
 
 2. Click **NAT Gateways**. 
 
@@ -213,7 +161,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
     ![](./../nat-gateway/images/NAT_002.PNG " ")
 
-5. Click your VCN name to display the VCN details.Click **Create Subnet**. Fill out the dialog box:
+5. Click your VCN name to display the VCN details. Click **Create Subnet**. Fill out the dialog box:
 
       - Name: Enter a name 
       - Subnet Type: Regional
@@ -230,42 +178,32 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
     ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_004.PNG " ")
 
-7. Switch to Git bash session with ssh to compute instance Generate ssh key pair, Enter command:
+7. Go to your Cloud shell Terminal. Generate ssh key pair, enter command:
 
     ```
-    <copy>
-    ssh-keygen 
-    </copy>
+    <copy>ssh-keygen</copy>
     ```
-8. Press Enter When asked for ‘Enter File in which to save the key’, ‘Created Directory, ‘Enter passphrase’, and ‘Enter Passphrase  again.
+8. Press Enter When asked for ‘Enter File in which to save the key’, ‘Created Directory, ‘Enter passphrase’, and ‘Enter Passphrase'  again.
 
-9. Enter command 
+9. Enter command:
     ```
-    <copy>
-    cd ~/.ssh
-    </copy>
+    <copy>cd ~/.ssh</copy>
     ```
     and then 
     ```
-    <copy>
-    ls
-    </copy>
+    <copy>ls</copy>
     ``` 
-    You should have the Public and Private keys:
-    /home/opc/.ssh/id\_rsa (Private Key)
-    /home/opc/.ssh/id\_rsa.pub (Public Key)
+    You should have the Private and Public keys: /home/opc/.ssh/&lt;sshkeyname> (Private Key) and /home/opc/.ssh/&lt;sshkeyname>.pub (Public Key)
 
-10. Enter command 
+10. Enter command:
 
     ```
-    <copy>
-    cat ~/.ssh/id_rsa.pub
-    </copy>
-    ``` 
+    <copy>cat ~/.ssh/id_rsa.pub</copy>
+    ```
 
     copy and paste the public key content to Notepad. We will use this public key to launch a compute instance in private subnet of the VCN.
 
-11. Switch to OCI console window and launch a second compute instance as done previously. **Ensure the subnet chosen is the private subnet that we created previously**.
+11. Switch to OCI console window and launch a second compute instance as done previously (Step 2, Section 2). **Ensure the subnet chosen is the private subnet that we created previously**.
 
 12. Once the Instance is running, Note down private IP address of the instance from instance detail page (by Clicking Instance name). 
 
@@ -330,7 +268,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
 appear.
 
-7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
+7. Locate your VCN, Click Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
 
@@ -339,7 +277,8 @@ appear.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, June 2020
+- **Contributos** - Kamryn Vinson, QA Intern
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
