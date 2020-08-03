@@ -10,8 +10,8 @@
 In this lab, you will learn how to navigate to an Oracle Digital Assistant instance and design a Skill in which you will implement your APIs from the APEX portion of this workshop.  These APIs will be utilized in order to make REST calls to the Autonomous Data Warehouse to get information on store predictions.  These REST API calls will be tested through interacting with the chatbot dialogue.
 
 
-*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-[![Lab 600 Walkthrough Video](./images/lab600tn.png " ")](https://www.youtube.com/watch?v=I5prg0Ucso4 "Lab 600 Walkthrough Video - Click to Watch!")
+*In addition to the workshop*, feel free to watch the walkthrough companion video:
+[](youtube:I5prg0Ucso4)
 
 
 ### Objectives
@@ -90,7 +90,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 
     ![](./images/10.png " ")
 
-3. Before Importing the skill in the next step, please make sure you **download** this file via this text link: [Download ODA Skill .zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MYxOb3NlvZ7F0HQ3AsMrTuXRUoD954Fvq8eZBhPndzw/n/c4u03/b/solutions-library/o/DemoDigitalAssistantSkill.zip)
+3. Before Importing the skill in the next step, please make sure you **download** this file via this text link: [Download DemoDigitalAssistantSkill.zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MYxOb3NlvZ7F0HQ3AsMrTuXRUoD954Fvq8eZBhPndzw/n/c4u03/b/solutions-library/o/DemoDigitalAssistantSkill.zip)
 
 4. On the skill, click on the **Import Skill** button in the top right corner.
 
@@ -155,7 +155,8 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Last Updated By/Date** - Jess Rein, Cloud Engineer, June 2020
+- **Contributors** - Jeffrey Malcolm, QA Specialist
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

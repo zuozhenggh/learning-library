@@ -11,7 +11,7 @@ Estimated time: 20 - 30 min
 * Learn how to provision an Oracle Developer Cloud Service instance
 * Learn how to configure an Oracle Developer Cloud Service instance
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial

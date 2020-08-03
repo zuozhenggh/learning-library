@@ -26,7 +26,7 @@ In the previous lab you have seen how easy it is to use Python against the Oracl
 
 -   Learn how to use Python with Spatial Data in the Oracle Database
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud

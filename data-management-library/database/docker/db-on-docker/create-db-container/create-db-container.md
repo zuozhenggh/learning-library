@@ -14,7 +14,7 @@ One of the benefits of using Docker is quick and easy provisioning.  Oracle prov
 
 You will use various Docker commands to setup, run and connect into containers. Concepts of Docker volumes, networking and intra-container communication will be used.
 
-### Lab Prerequisites?
+### Prerequisites?
 
 * Create a docker hub [account](http://hub.docker.com)
 * Participant has completed the following labs:

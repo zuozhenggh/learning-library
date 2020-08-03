@@ -19,7 +19,7 @@ Starting with Oracle Database18c, Transparent Application Continuity (TAC) trans
 -   Discover how Application Continuity protects applications
 -   See how application draining enables you to hide maintenance activities
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud

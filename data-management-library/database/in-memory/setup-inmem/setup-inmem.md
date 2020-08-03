@@ -7,7 +7,7 @@
 -   Learn how to enable In-Memory on the Oracle Database
 -   Explore various views to monitor In-Memory
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud

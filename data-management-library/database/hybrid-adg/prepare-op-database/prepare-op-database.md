@@ -2,7 +2,7 @@
 
 In this lab, You will use a compute instance in the OCI to simulate the on-premise primary database. In Lab3, the Oracle 19c database has been installed and patched to 19.7.0. The on-premise primary database can deploy into a different region from the cloud database which will act as your stand-by database.
 
-## Lab Prerequisites
+## Prerequisites
 
 This lab assumes you have completed the following labs:
 

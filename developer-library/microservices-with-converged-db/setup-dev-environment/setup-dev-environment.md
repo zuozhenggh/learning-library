@@ -250,7 +250,7 @@ Autonomous Database page provide the following basic information and click **Cre
         everywhere”
     -   License type: `License included`
 
-  ![](images/37-create-atp2.png " ")
+  ![](images/37-create-atp3.png " ")
 
 4. It will take a couple of minutes for the database to be provisioned, in the
 meantime you can proceed to create the second ATP instance. Click the Autonomous

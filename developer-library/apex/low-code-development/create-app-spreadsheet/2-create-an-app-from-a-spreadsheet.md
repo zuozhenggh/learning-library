@@ -86,11 +86,11 @@ The Data Load wizard has created a new table and populated that table with the r
 
 ## Summary
 
-This completes this lab. You now know how to create an application from a spreadsheet by either dragging and dropping a file or loading sample data for training purposes. Click on **Lab 3: Build Database Objects in Autonomous Database** to generate database objects using Quick SQL.
+This completes this lab. You now know how to create an application from a spreadsheet by either dragging and dropping a file or loading sample data for training purposes. Click on ***Lab 2: Build Database Objects in Autonomous Database*** to generate database objects using Quick SQL.
 
 ## Acknowledgements
 * **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
-* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+* **Contributors** - Oracle LiveLabs QA Team (Jaden McElvey, Technical Lead, Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
 ## See an issue?

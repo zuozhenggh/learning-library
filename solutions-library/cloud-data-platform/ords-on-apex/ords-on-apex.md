@@ -10,8 +10,8 @@
 This lab walks you through the steps to enabling Oracle Restful Data Services (ORDS) with APEX in order to call and create APIs.
 
 
-*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-[![Lab 300 Walkthrough Video](./images/lab300tn.png " ")](https://www.youtube.com/watch?v=Zq0qEgF0bMU "Lab 300 Walkthrough Video - Click to Watch!")
+*In addition to the workshop*, feel free to watch the walkthrough companion video:
+[](youtube:Zq0qEgF0bMU)
 
 
 ### Objectives
@@ -101,7 +101,9 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 7. Change the **Source Type** to **Query**.
 
 8. Then, input the following into the Source box:
-> select * from OOW\_DEMO\_REGIONS
+```
+<copy>select * from OOW_DEMO_REGIONS</copy>
+```
 
 9. Finish by clicking on **Create Handler**.
 
@@ -136,8 +138,16 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
     ![](./images/17v1.png " ")
 
 2. Next, do the same with the following 2 APIs, copying each **Full URL** and pasting each into that same separate notes file.  Be sure to label which URL is which so that you do not confuse them later.
-> product/inventoryForecastingAPI/{store\_add\}
-> product/trendingProductAPI/{store\_add\}
+```
+<copy>
+product/inventoryForecastingAPI/{store_add}
+</copy>
+```
+```
+<copy>
+product/trendingProductAPI/{store_add}
+</copy>
+```
 
    ![](./images/17v2.png " ")
 
@@ -188,7 +198,8 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Last Updated By/Date** - Jess Rein, Cloud Engineer, March 2020
+- **Contributor** - Jeffrey Malcolm, QA Specialist
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

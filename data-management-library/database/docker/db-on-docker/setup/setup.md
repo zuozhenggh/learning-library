@@ -7,7 +7,7 @@ This lab walks you through the steps to setup Docker engine.  It also covers bas
 ### Background
 
 
-### Lab Prerequisites
+### Prerequisites
 
 Participant has completed the following labs:
 

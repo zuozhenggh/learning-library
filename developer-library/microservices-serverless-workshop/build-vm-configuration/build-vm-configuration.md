@@ -11,7 +11,7 @@ Estimated time: 15 - 20 min
 * Learn how to create template configuration files
 * Learn how to build virtual machines in Oracle Developer Cloud Service.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial
