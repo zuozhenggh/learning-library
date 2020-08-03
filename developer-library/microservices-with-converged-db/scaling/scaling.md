@@ -1,4 +1,4 @@
-# Scaling Application Platform
+# Scaling The Application
 ## Introduction
 
 This lab will show how the application can be scaled at the microservice and database level to maintain optimal performance.
@@ -24,10 +24,12 @@ This lab assuemes that you have already completed labs 1 through 4.
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
     ```
 
+![](images/veggie-dash-app-arch.png " ")
+
 2. Start an external load balancer for the order service.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext_order_service.yaml</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext_order_service.yaml -n msdataworkshop</copy>
     ```
 TODO
 
@@ -45,7 +47,7 @@ TODO
     <copy>export LB='<note IP address>'</copy>
     ```
 
-## **STEP 2**: Load Test and Scale the Microservice Tier
+## **STEP 2**: Load Test and Scale the Application Tier
 
 1. Execute a 300 Request Per Second test by executing the following command.
     ```
