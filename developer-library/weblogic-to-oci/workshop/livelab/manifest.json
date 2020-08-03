@@ -15,12 +15,17 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 2a: Setup an on-premises environment with the Workshop Marketplace stack",
+            "title": "Lab 2: Setup an on-premises environment",
+            "publisheddate": "07/30/2020",
+            "filename": "../on-prems-env/README.md"
+        },
+        {
+            "title": "Lab 2 Option A: Setup an on-premises environment with the Workshop Marketplace stack",
             "publisheddate": "07/30/2020",
             "filename": "../on-prems-env-mp/README.md"
         },
         {
-            "title": "Lab 2b: Setup a local (on-premises) environment with Docker",
+            "title": "Lab 2 Option B: Setup a local (on-premises) environment with Docker",
             "publisheddate": "07/30/2020",
             "filename": "../on-prems-env-docker/README.md"
         },

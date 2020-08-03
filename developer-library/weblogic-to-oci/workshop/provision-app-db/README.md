@@ -115,7 +115,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
   <img src="./images/provision-db-16-storage.png" width="70%">
 
 - **Upload** the **SSH public key** created earlier, and if you have another, upload it as well for safety.
-  The key created in the container can be found in the folder `./on-prems-setup/common`
+  The key created in the container can be found in the folder `./weblogic-to-oci/ssh`
 
   <img src="./images/provision-db-17-ssh.png" width="70%">
 
@@ -142,7 +142,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
   <img src="./images/provision-db-22-pdb.png" width="70%">
 
 - Enter and confirm the **SYS Database password** as it is on-premises: `YpdCNR6nua4nahj8__`
-This is found in the `env` file under `DB_PWD` in the `on-prems-setup/weblogic` folder
+This is found in the `env` file under `DB_PWD` in the `weblogic-to-oci/weblogic` folder
 
   <img src="./images/provision-db-23-creds.png" width="70%">
 

@@ -33,7 +33,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ***NOTE:*** *You need a public IP address so that you can SSH into the running instance later in this lab.*
 
-4. Scroll down to the SSH area of the page. Choose the *id_rsa.pub* SSH key that you created earlier in this lab. Press the *Create* button to create your instance.
+4. Scroll down to the SSH area of the page. Choose SSH key that you created earlier in ***Generate SSH Keys*** Lab. Press the **Create** button to create your instance.
 
     Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute and the instance state will change from provisioning to running.
 
@@ -41,7 +41,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Create step 3](images/Create3.png " ")
 
-## STEP 2: Connect to the instance and install Apache HTTP Server
+## **STEP 2**: Connect to the instance and install Apache HTTP Server
 
 1. To connect to the instance, you can use `Terminal` if you are using MAC or `Gitbash` if you are using Windows. On your terminal or gitbash enter the following command:
 
@@ -59,7 +59,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 2. For this lab, we are going to install an Apache HTTP Webserver and try to connect to it over the public Internet. SSH into the Linux instance and run following commands:
 
-    **Note** *Apache HTTP Server is an open-source web server developed by the Apache Software Foundation. The Apache server hosts web content, and responds to requests for this content from web browsers such as Chrome or Firefox.*
+    *Note: Apache HTTP Server is an open-source web server developed by the Apache Software Foundation. The Apache server hosts web content, and responds to requests for this content from web browsers such as Chrome or Firefox.*
 
     - Install Apache http
 
@@ -137,6 +137,7 @@ If you are unable to see the webserver on your browser, possible scenarios inclu
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Tom McGinn, Database Product Management
+- **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Tom McGinn, July 2020
 
 ## See an issue?
