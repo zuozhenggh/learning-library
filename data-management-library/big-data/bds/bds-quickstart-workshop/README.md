@@ -12,7 +12,7 @@ The labs in this workshop walk you through all the steps to get started using Or
 <!-- Add local links to the content.md files in your project -->
 Alternatively, you can follow the labs on this repo:
 
-- [Introduction to Oracle Big Data Service](./bds-quickstart-Workshop/bds-quickstart-workshop/intro.md)
+- [Introduction to Oracle Big Data Service](./bds-quickstart-workshop/bds-quickstart-workshop/intro.md)
 - [Setup the BDS Environment](./bds-getting-started/bds-getting-started.md)
 - [Create a BDS Hadoop Cluster](./bds-create-cluster/bds-create-cluster.md)
 - [Add Oracle Cloud SQL to the Cluster](./bds-add-cloud-sql/bds-add-cloud-sql.md)
