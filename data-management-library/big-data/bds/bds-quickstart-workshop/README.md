@@ -14,7 +14,6 @@ Alternatively, you can follow the labs on this repo:
 
 - [Introduction to Oracle Big Data Service](../bds-quickstart-workshop/intro.md)
 - [Setup the BDS Environment](../bds-getting-started/bds-getting-started.md)
-- [Setup the BDS Environment](../bds-getting-started/bds-getting-started.md)
 - [Create a BDS Hadoop Cluster](../bds-create-cluster/bds-create-cluster.md)
 - [Add Oracle Cloud SQL to the Cluster](../bds-add-cloud-sql/bds-add-cloud-sql.md)
 - [Access a BDS Node Using a Public IP Address](../bds-access-utility-node/bds-access-utility-node.md)
