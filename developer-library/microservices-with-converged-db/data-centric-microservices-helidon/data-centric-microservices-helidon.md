@@ -134,7 +134,6 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
    The order should have been successfully placed, which is demonstrated with the order status showing success.
 
-## Conclusion
 
 Although this might look as a basic transactional mechanic, but the difference
 in the microservices environment is that it’s not using a two-phase XA commit,
@@ -290,6 +289,7 @@ next lab.
 
    ![demo-erd.png](images/jaegerui.png " ")
 
+## Conclusion
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
