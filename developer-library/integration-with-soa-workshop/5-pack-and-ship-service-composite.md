@@ -5,7 +5,9 @@ Once the order has been shipped, an email is sent to the customer confirming the
 This chapter will build the pack and ship service, including the email notification.
 
 ### **Primary task**: Build the pack and ship service
-**Details**
+The pack and ship service is defined with a REST interface and accepts a Shipping resource (part of the canonical order message). It initiates the packing and shipping of one order and notifies the customer that the order has shipped. It also updates the order status in the database to Shipped.
+
+### Details: ###
 
 1. Create a new SOA project PackAndShipService with an empty composite in the application e2e-1201-composites.
 2. Define a REST interface for the Packing Service Project
