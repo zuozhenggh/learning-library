@@ -117,6 +117,8 @@ Now that you have a network for your compute instance, it's time to create the c
 
     **AD** - Choose availability domain 1 (or choose the AD that matches the subnet you chose)
 
+    **INSTANCE_SHAPE** - VM.Standard.E2.2
+
     **SSH_PUBLIC_KEY**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
 
     *Accept all other defaults*
