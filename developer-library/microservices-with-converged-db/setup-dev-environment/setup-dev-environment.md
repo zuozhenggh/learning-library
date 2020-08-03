@@ -244,7 +244,7 @@ Autonomous Database page provide the following basic information and click **Cre
     -   Workload type: `Transaction Processing`
     -   Deployment type: `Shared Infrastructure`
     -   Leave the defaults for version, OCPU count and Storage
-    -   Leave Auto scaling on
+    -   Auto scaling: `off`
     -   Provide `Welcome12345` as admin password.
     -   Leave the defaults for network access, which is “Allow secure access from
         everywhere”
@@ -270,7 +270,7 @@ information and click **Create Autonomous Database**:
     -   Workload type: `Transaction Processing`
     -   Deployment type: `Shared Infrastructure`
     -   Leave the defaults for version, OCPU count and Storage
-    -   Leave Auto scaling on
+    -   Auto scaling: `off`
     -   Provide `Welcome12345` as admin password.
     -   Leave the defaults for network access, which is “Allow secure access from
         everywhere”
@@ -280,7 +280,7 @@ information and click **Create Autonomous Database**:
 
 6. Once both databases are provisioned you should see the state changed to
 Available. Click on each of the ATP names in order to go to their pages and copy
-their OCIDs.
+their OCIDs into the msdataworkshop.properties file.
 
   ![](images/41-copy-atp-ocids.png " ")
 

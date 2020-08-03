@@ -31,7 +31,7 @@ You will also clone a GitHub repository.
 
   ![](images/graalvmversion.png " ")
   
-  Note the graalvm install location for later.
+  Note the graalvm install location in msdataworkshop.properties.
 
 ## **STEP 2**: Create the cluster namespace
 
@@ -79,7 +79,7 @@ In order to divide and isolate cluster resources, you will create a cluster
    
    The jaeger-query is the load balancer address for visualizing the Jaeger UI 
    
-   Note the jaeger-query for later.
+   Note the jaeger-query host:port in msdataworkshop.properties.
 
 ## **STEP 3**: Build the Microservices image from the GitHub repo
 
@@ -97,7 +97,7 @@ In order to divide and isolate cluster resources, you will create a cluster
     <copy>unzip master.zip</copy>
     ```
    
-3.  Set the value for MSDATAWORKSHOP_LOCATION and MSDATAWORKSHOPPROPERTIES_LOCATION in the shell
+3.  Set the value for MSDATAWORKSHOP_LOCATION and source msdataworkshop.properties for the shell
 
        Open `.bashrc` file .
    
@@ -111,7 +111,7 @@ In order to divide and isolate cluster resources, you will create a cluster
        and insert the following two lines.
        ```
        <copy>export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
-             export MSDATAWORKSHOPPROPERTIES_LOCATION=~/msdataworkshop.properties</copy>
+             source ~/msdataworkshop.properties</copy>
        ```
    
      ![](images/bashrc.png " ")
