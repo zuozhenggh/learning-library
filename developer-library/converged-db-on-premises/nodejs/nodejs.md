@@ -4,6 +4,7 @@
 
 This lab walks you through the steps to start the Docker as well as Node.js Retail application. You can connect to an Node.js running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper.
 
+Estimated Lab Time: 20 Minutes
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
@@ -48,7 +49,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
 1.  The script (env\_setup\_script.sh) which was run in Lab-4 has started the application. Also at the end of the script. you      will be presented with two URLs.
 
-![](./images/appscript4a.png " ")
+    ![](./images/appscript4a.png " ")
 
 2. Open up a web browser and visit the Application URL indicated in your terminal. Make sure to substitute the ip address of your server for the &lt;PUBLIC-IP&gt;:   
 http://&lt;PUBLIC-IP&gt;:3000/
@@ -56,7 +57,7 @@ http://&lt;PUBLIC-IP&gt;:3000/
 3. Open up a web browser and visit the Application API indicated in your terminal. Make sure to substitute the ip address of your server for the &lt;PUBLIC-IP&gt;:   
 http://&lt;PUBLIC-IP&gt;:3001/
 
-![](./images/application_home_pageupdated.png " ")
+    ![](./images/application_home_pageupdated.png " ")
 
 ## Step 2: Download Postman
 
@@ -101,53 +102,53 @@ http://&lt;PUBLIC-IP&gt;:3001/
 1. Open a new tab
 
 2. To get product details you can use the get method. Fill out the form using the following information.  
-- From the Method drop down in the center select - GET  
-- To get list of all the product details enter the URL: - http://&lt;PUBLIC-IP&gt;:3001/products  
-- To get the specific product details by using PID enter URL: - http://&lt;PUBLIC-IP&gt;:3001/products/31  
-- Click on the **Send** button, Postman return the HTTP 200 Ok which is a successful GET.
+    - From the Method drop down in the center select - GET  
+    - To get list of all the product details enter the URL: - http://&lt;PUBLIC-IP&gt;:3001/products  
+    - To get the specific product details by using PID enter URL: - http://&lt;PUBLIC-IP&gt;:3001/products/31  
+    - Click on the **Send** button, Postman return the HTTP 200 Ok which is a successful GET.
 
-![](./images/postman10a.png " ")
+    ![](./images/postman10a.png " ")
 
 3. Open the browser and verify the above using link- http://&lt;PUBLIC-IP&gt;:3001/products/31
 
-![](./images/nodejs-postman5a.png " ")
+    ![](./images/nodejs-postman5a.png " ")
 
 ## Step 4: Using HTTP POST Method
 
 
 1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL http://&lt;PUBLIC-IP&gt;:3001/products/13.
 
-  ![](./images/postman_pid_13_check.png " ")
+    ![](./images/postman_pid_13_check.png " ")
 
 2. We are going to update the price from $10 to $12 for the product PID=13. We do this by issuing a POST and giving it the new {"Key": "Value"} pair in our case our Key is price and the new Value is 12.
 
 3. In the center of the screen from the drop down select **POST** Method and enter the information below.
 
--Method: - POST  
-- URL: - http://&lt;PUBLIC-IP&gt;:3001/updateProduct/13  
-- Click on Body and select raw and then in the drop down choose JSON
-- In the data portion of the Body insert the JSON data below
-- Click on the Send button, Postman return the HTTP 200 OK after successfully updating the product price.
-````
-  <copy>
-	{"price": "12"}
-  </copy>
-````
+    - Method: - POST  
+    - URL: - http://&lt;PUBLIC-IP&gt;:3001/updateProduct/13  
+    - Click on Body and select raw and then in the drop down choose JSON
+    - In the data portion of the Body insert the JSON data below
+    - Click on the Send button, Postman return the HTTP 200 OK after successfully updating the product price.
+    ````
+    <copy>
+	   {"price": "12"}
+    </copy>
+    ````
 
-![](./images/postman12a.png " ")
+    ![](./images/postman12a.png " ")
 
 4. Verify product details by using HTTP GET method. Select the GET method, enter the URL http://&lt;PUBLIC-IP&gt;:3001/products/13 and click on Send. Notice the data in the body section and price is updated.  
 
-![](./images/postman_after_update.png " ")
+    ![](./images/postman_after_update.png " ")
 
 ## Want to learn more
 
-   - [Node-js](https://nodejs.org/en/)
-   - [Node-js for Oracle Linux](https://yum.oracle.com/oracle-linux-nodejs.html)  
-   - [Node-js Driver](https://oracle.github.io/node-oracledb/)
-   - [Oracle Instant Client](https://www.oracle.com/in/database/technologies/instant-client/downloads.html)
-   - [Docker](https://www.docker.com/)
-   - [Postman](https://www.postman.com/)
+    - [Node-js](https://nodejs.org/en/)
+    - [Node-js for Oracle Linux](https://yum.oracle.com/oracle-linux-nodejs.html)  
+    - [Node-js Driver](https://oracle.github.io/node-oracledb/)
+    - [Oracle Instant Client](https://www.oracle.com/in/database/technologies/instant-client/downloads.html)
+    - [Docker](https://www.docker.com/)
+    - [Postman](https://www.postman.com/)
 
 
 ## Acknowledgements
