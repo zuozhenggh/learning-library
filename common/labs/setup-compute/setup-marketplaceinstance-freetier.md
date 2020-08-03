@@ -1,12 +1,12 @@
-# Setup Oracle Database 19c Compute Image
+# Setup LiveLabs Compute Image
 
 ## Introduction
-This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running a pre-configured Compute  install using Oracle Resource Manager.  
+This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running a pre-configured Compute install using Oracle Resource Manager.  
 
 Estimated Lab Time:  30 minutes
 
 ### About Terraform and Oracle Cloud Resource Manager
-Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build the compute component.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Database 19c.
+Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build the compute component.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  
 
 Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, preview the video below.
 
@@ -14,7 +14,7 @@ Resource Manager is an Oracle Cloud Infrastructure service that allows you to au
 
 ### About Oracle Cloud Marketplace
 
-The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Database 19c marketplace image.
+The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying a solution created for LiveLabs.
 
 [Link to Marketplace](https://www.oracle.com/cloud/marketplace/)
 
@@ -29,6 +29,7 @@ In this lab, you'll:
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - Lab:  Generate SSH Keys
+- Image OCID (Oracle Cloud ID) and Instance Shape from the Introduction
 
 ## **STEP 1**: Setup VCN Stack
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
@@ -76,10 +77,10 @@ Now that your stack has been created, you will run an *apply* job to create the 
    
 ## **STEP 3**: Setup Compute Stack 
 
-Now that you have a network for your compute instance, it's time to create the compute instance running the 19c database.  
+Now that you have a network for your compute instance, it's time to create the compute instanc.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [db19c-compute-livelabs-v2.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_CvkOA6FEQhZoE6_Z4B5dEpnzGlQuWJVcC_lBJBR4YU/n/c4u03/b/labfiles/o/db19c-compute-livelabs-v2.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
+    - [market-compute-v1.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_CvkOA6FEQhZoE6_Z4B5dEpnzGlQuWJVcC_lBJBR4YU/n/c4u03/b/labfiles/o/db19c-compute-livelabs-v2.zip) - Packaged terraform instance creation script for creating instance
 
 2.  Save in your downloads folder.
 
@@ -91,7 +92,7 @@ Now that you have a network for your compute instance, it's time to create the c
 
     ![](./images/db19c-freetier-step3-1.png " ")
 
-4.  Click the **Browse** link and select the zip file (db19c-compute-livelabs.zip) that you downloaded. Click **Open**.
+4.  Click the **Browse** link and select the zip file (market-compute-v1.zip) that you downloaded. Click **Open**.
 
     ![](./images/db19c-freetier-step3-2.png " ")
 
@@ -107,7 +108,7 @@ Now that you have a network for your compute instance, it's time to create the c
 
 5.  Now, configure your instance.
 
-    ![](./images/db19c-freetier-step3-5.png " ")
+    ![](./images/compute-mkt-step5.png " ")
 
     Enter the following information:
 
@@ -117,7 +118,9 @@ Now that you have a network for your compute instance, it's time to create the c
 
     **AD** - Choose availability domain 1 (or choose the AD that matches the subnet you chose)
 
-    **INSTANCE_SHAPE** - VM.Standard.E2.2
+    **IMAGE_OCI_ID** - Enter the instance oci id from the workshop introduction
+
+    **INSTANCE_SHAPE** - Enter the instance shape from your workshop introduction
 
     **SSH_PUBLIC_KEY**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
 
@@ -222,55 +225,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 8. Click Open to begin your session with the instance.
 
-## **STEP 6**: Verify the ORCL database is up
-
-1.  From your connected session of choice **tail** the **dbsingle.log** file.  This file configures the database.
-    ````
-    <copy>
-    tail -f /u01/ocidb/buildsingle1.log
-    </copy>
-    ````
-    ![](./images/tailOfBuildDBInstanceLog.png " ")
-
-2.  When you see the following message, the database setup is complete - *Completed successfully in XXXX seconds* (this may take up to 30 minutes).  However certain labs may proceed without the entire database setup being finished.
-
-    ![](./images/tailOfBuildDBInstanceLog_finished.png " ")
-
-3. Run the following command to verify the database with the SID **ORCL** is up and running
-
-    ````
-    <copy>
-    ps -ef | grep ORCL
-    </copy>
-    ````
-
-    ![](./images/pseforcl.png " ")
-
-
-4. Verify the listener is running
-    ````
-    <copy>
-    ps -ef | grep tns
-    </copy>
-    ````
-
-    ![](./images/pseftns.png " ")
-
-5.  Connect to the Database using SQL*Plus as the **oracle** user.
-
-    ````
-    <copy>
-    sudo su - oracle
-    sqlplus system/Ora_DB4U@localhost:1521/orclpdb
-    exit
-    </copy>
-    ````
-
-    ![](./images/sqlplus_login_orclpdb.png " ")
-
-Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
-
-You may now proceed to the next lab.  
+You may now proceed to the next lab.
 
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management
