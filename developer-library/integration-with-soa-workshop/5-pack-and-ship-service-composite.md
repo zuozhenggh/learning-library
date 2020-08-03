@@ -5,7 +5,16 @@ Once the order has been shipped, an email is sent to the customer confirming the
 This chapter will build the pack and ship service, including the email notification.
 
 
-### **Details ** ###
+### **Details**
+
+1. Create a new SOA project PackAndShipService with an empty composite in the application e2e-1201-composites.
+2. Define a REST interface for the Packing Service Project
+3. Create a BPEL process for the packing
+4. Test the REST service within JDevloper 12c
+5. Update th order status in the database, embedded Java DB
+6. Add a composite sesor
+7. Setup an email notification
+   
 Please start from <ins> **chapter 5, page 191 to 253** in the tutorial document</ins>.
 
 The Pack and ship composite in JDeveloper would look like the following:
@@ -20,9 +29,9 @@ This completes Module 5. You've successfully:
 1. Created a new project PackAndShipService
 2. Created a SOA REST inbound interface using Shipping as a resource
 3. Built a SOA-BPEL (as process flow) to
-* set the status of the order shipped
-* update the status of the order
-* send an email to the customer that the order has been shipped
+   * set the status of the order shipped
+   * update the status of the order
+   * send an email to the customer that the order has been shipped
 4. Add a composite sensor fo the ShippingProvider
 5. Tested the service in JDeveloper
 6. Inspect the process flow instance being tracked in the enterprise manager
