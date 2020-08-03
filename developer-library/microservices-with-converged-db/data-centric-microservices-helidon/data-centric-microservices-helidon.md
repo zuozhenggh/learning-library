@@ -130,7 +130,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
    ![](images/placeorderpending.png " ")
 
-   ![](images/showorderfailed.png " ")
+   ![](images/showordersuccess.png " ")
 
    The order should have been successfully placed, which is demonstrated with the order status showing success.
 
@@ -260,32 +260,14 @@ next lab.
 
 
 ## **STEP 4**: Verify tracing
-
-1. If not previously done, install Jaeger (or Zipkin), notice the services it installs, and restart the Order Service
-
-   ![demo-erd.png](images/jaegerinstall.png " ")
    
-   Issue the `services` command and notice the services it installs.  
-   
-   ![demo-erd.png](images/jaegerservice.png " ")
-   
-   The jaeger-collector is referenced in $MSDATAWORKSHOP_LOCATION/order-helidon/target/classes/META-INF/microprofile-config.properties
-   
-   ![demo-erd.png](images/tracingprops.png " ")
-   
-   and the jaeger-query is the load balancer address for visualizing the Jaeger UI 
-   
-   If any changes were made to the order service `/.build.sh` it again.
-   
-   Restart the order microservice by issuing `deletepod order`
-   
-2. Notice @Traced annotations and calls to set tags, baggage, etc. on placeOrder method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
+1. Notice @Traced annotations and calls to set tags, baggage, etc. on placeOrder method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
    ![demo-erd.png](images/ordertracingsrc.png " ")
 
-3. Place an order as done in Step 1
+2. Place an order as done in Step 1
 
-4. Open the Jaeger UI (gain this is the jaeger-query service mentioned above) a view various traces including the placeOrder trace.
+3. Click **Tracing** to open the Jaeger UI and view various traces including the placeOrder trace.
 
    ![demo-erd.png](images/jaegerui.png " ")
 

@@ -29,8 +29,9 @@ You will also clone a GitHub repository.
     <copy>~/graalvm-ce-java11-20.1.0/bin/java -version</copy>
     ```
 
-
   ![](images/graalvmversion.png " ")
+  
+  Note the graalvm install location for later.
 
 ## **STEP 2**: Create the cluster namespace
 
@@ -53,6 +54,32 @@ In order to divide and isolate cluster resources, you will create a cluster
 
   You have successfully created the `msdataworkshop` namespace which is used for
   deploying the application code.
+  
+## **STEP 3**: Install Jaeger
+
+1. Install Jaeger and note the services it installs
+
+    kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml -n msdataworkshop
+
+     ```
+        <copy>kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml -n msdataworkshop</copy>
+     ```
+
+   ![demo-erd.png](images/jaegerinstall.png " ")
+   
+2.  Issue the `services` command and notice the services it installs.  
+   
+   ![demo-erd.png](images/jaegerservice.png " ")
+   
+3.  The jaeger-collector is referenced in $MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties and $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties 
+   
+   ![demo-erd.png](images/tracingprops.png " ")
+   
+   Insure these values match.
+   
+   The jaeger-query is the load balancer address for visualizing the Jaeger UI 
+   
+   Note the jaeger-query for later.
 
 ## **STEP 3**: Build the Microservices image from the GitHub repo
 
@@ -69,8 +96,37 @@ In order to divide and isolate cluster resources, you will create a cluster
     ```
     <copy>unzip master.zip</copy>
     ```
+   
+3.  Set the value for MSDATAWORKSHOP_LOCATION and MSDATAWORKSHOPPROPERTIES_LOCATION in the shell
 
-3.  You need to compile, test and package the Helidon front-end
+       Open `.bashrc` file .
+   
+       ```
+       <copy>nano ~/.bashrc</copy>
+       ```
+       ![](images/36b9360ef7998ffe686346031227258f.png " ")
+   
+     ![](images/86828131170ee9c9fdb11fe1641ef34b.png " ")
+     
+       and insert the following two lines.
+       ```
+       <copy>export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
+             export MSDATAWORKSHOPPROPERTIES_LOCATION=~/msdataworkshop.properties</copy>
+       ```
+   
+     ![](images/bashrc.png " ")
+   
+     Close nano with the commands `CTRL+X`, `SHIFT+Y`, and `ENTER`.
+   
+4. Source the edited `.bashrc` file with the following command.
+   
+       ```
+       <copy>source ~/.bashrc</copy>
+       ```
+   
+     ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
+
+5.  You need to compile, test and package the Helidon front-end
     application code into a `.jar` file using maven. The maven package is already installed in the
     Cloud Shell. Inside Cloud Shell go to the frontend helidon microservice
     folder.
@@ -79,7 +135,7 @@ In order to divide and isolate cluster resources, you will create a cluster
     <copy>cd msdataworkshop-master/frontend-helidon</copy>
     ```
 
-4.  Run `maven` to build the package using the following command. Since this is
+6.  Run `maven` to build the package using the following command. Since this is
     the first time maven is executed, nothing is cached, thus it will first
     download all the necessary libraries and bundles.
 
@@ -91,7 +147,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
   ![](images/2826286b95e74bd51237859bd7d3d891.png " ")
 
-5. Execute the following command to investigate the target folder.
+7. Execute the following command to investigate the target folder.
 
     ```
     <copy>ls -al target/</copy>
@@ -125,54 +181,6 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
-3.  For convenience, let’s store some environment variables . 
-    
-    Make a copy of the $MSDATAWORKSHOP_LOCATION/msdataworkshop.properties file 
-    ```
-    <copy>cp $MSDATAWORKSHOP_LOCATION/msdataworkshop.properties $MSDATAWORKSHOP_LOCATION/mymsdataworkshop.properties</copy>
-    ```
-    
-    Open the copied file with `nano` editor. Alternatively, you can use the `vi` editor if you are familiar with `vi`.
-
-    ```
-    <copy>nano $MSDATAWORKSHOP_LOCATION/mymsdataworkshop.properties</copy>
-    ```
-    
-    Provide values for the properties in the file and save.
-
-    `REGION-ID` and `OBJECT-STORAGE-NAMESPACE` are the same as in the previous step, and `REPO-NAME` is the Repository full name you created in the OCIR Registry (`firstname.lastname/msdataworkshop`). You can use `Ctrl+SHIFT+V` to paste text into nano.
-
-
-  ![](images/mymsdataworkshopproperties.png " ")
-4. Refer to this properties file from `.bashrc` file:
-
-
-    Open `bashrc` file .
-
-    ```
-    <copy>nano ~/.bashrc</copy>
-    ```
-    ![](images/36b9360ef7998ffe686346031227258f.png " ")
-
-  ![](images/86828131170ee9c9fdb11fe1641ef34b.png " ")
-  
-    and insert the following two lines.
-    ```
-    <copy>export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
-          source $MSDATAWORKSHOP_LOCATION/mymsdataworkshop.properties</copy>
-    ```
-
-  ![](images/bashrc.png " ")
-
-  Close nano with the commands `CTRL+X`, `SHIFT+Y`, and `ENTER`.
-
-5. Source the newly created `.bashrc` file with the following command.
-
-    ```
-    <copy>source ~/.bashrc</copy>
-    ```
-
-  ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
 ## **STEP 5**: Build the Docker image
 
