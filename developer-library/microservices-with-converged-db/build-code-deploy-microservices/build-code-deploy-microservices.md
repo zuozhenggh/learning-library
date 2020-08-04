@@ -17,23 +17,7 @@ You will also clone a GitHub repository.
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * Setup the OKE cluster and the ATP databases
 
-## **STEP 1**: Install GraalVM
-
-    Run install script in root directory ./installGraalVM.sh 
-    ```
-    <copy>./installGraalVM.sh </copy>
-    ```
-
-    Verify install by running ~/graalvm-ce-java11-20.1.0/bin/java -version
-    ```
-    <copy>~/graalvm-ce-java11-20.1.0/bin/java -version</copy>
-    ```
-
-  ![](images/graalvmversion.png " ")
-  
-  Note the graalvm install location in msdataworkshop.properties.
-
-## **STEP 2**: Create the cluster namespace
+## **STEP 1**: Create the cluster namespace
 
 In order to divide and isolate cluster resources, you will create a cluster
     namespace which will host all related resources to this application, such as
@@ -55,33 +39,7 @@ In order to divide and isolate cluster resources, you will create a cluster
   You have successfully created the `msdataworkshop` namespace which is used for
   deploying the application code.
   
-## **STEP 3**: Install Jaeger
-
-1. Install Jaeger and note the services it installs
-
-    kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml -n msdataworkshop
-
-     ```
-        <copy>kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml -n msdataworkshop</copy>
-     ```
-
-   ![demo-erd.png](images/jaegerinstall.png " ")
-   
-2.  Issue the `services` command and notice the services it installs.  
-   
-   ![demo-erd.png](images/jaegerservice.png " ")
-   
-3.  The jaeger-collector is referenced in $MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties and $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties 
-   
-   ![demo-erd.png](images/tracingprops.png " ")
-   
-   Insure these values match.
-   
-   The jaeger-query is the load balancer address for visualizing the Jaeger UI 
-   
-   Note the jaeger-query host:port in msdataworkshop.properties.
-
-## **STEP 3**: Build the Microservices image from the GitHub repo
+## **STEP 2**: Download workshop source code, install GraalVM, and install Jaeger
 
 1. To work with application code, you need to download a GitHub repository using
     the following command. The Cloud Shell already has the `wget` command
@@ -97,7 +55,49 @@ In order to divide and isolate cluster resources, you will create a cluster
     <copy>unzip master.zip</copy>
     ```
    
-3.  Set the value for MSDATAWORKSHOP_LOCATION and source msdataworkshop.properties for the shell
+3. Install GraalVM
+
+    Run install script in root directory ./installGraalVM.sh 
+    ```
+    <copy>./installGraalVM.sh </copy>
+    ```
+
+    Verify install by running ~/graalvm-ce-java11-20.1.0/bin/java -version
+    ```
+    <copy>~/graalvm-ce-java11-20.1.0/bin/java -version</copy>
+    ```
+
+  ![](images/graalvmversion.png " ")
+  
+  Note the graalvm install location in msdataworkshop.properties.
+  
+4. Install Jaeger and note the services it installs
+   
+     ```
+        <copy>kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml -n msdataworkshop</copy>
+     ```
+
+   ![demo-erd.png](images/jaegerinstall.png " ")
+   
+5.  Issue the `services` command and notice the services it installs.  The jaeger-query is a loadbalancer exposing an external-ip and runs on port 80.
+   
+   ![demo-erd.png](images/jaegerservice.png " ")
+   
+6.  The jaeger-collector is referenced in $MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties and $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties 
+   
+   ![demo-erd.png](images/tracingprops.png " ")
+   
+   Insure these values match.
+   
+   The jaeger-query is the load balancer address for visualizing the Jaeger UI 
+   
+   Note the JAEGER_QUERY_ADDRESS external-ip:port in msdataworkshop.properties.
+
+
+
+## **STEP 2**: Source msdataworkshop.properties 
+
+1.  Set the value for MSDATAWORKSHOP_LOCATION and source msdataworkshop.properties for the shell
 
        Open `.bashrc` file .
    
@@ -118,7 +118,7 @@ In order to divide and isolate cluster resources, you will create a cluster
    
      Close nano with the commands `CTRL+X`, `SHIFT+Y`, and `ENTER`.
    
-4. Source the edited `.bashrc` file with the following command.
+2. Source the edited `.bashrc` file with the following command.
    
        ```
        <copy>source ~/.bashrc</copy>
@@ -126,7 +126,10 @@ In order to divide and isolate cluster resources, you will create a cluster
    
      ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
-5.  You need to compile, test and package the Helidon front-end
+
+## **STEP 4**: Deploy and access Frontend microservice
+
+1.  You need to compile, test and package the Helidon front-end
     application code into a `.jar` file using maven. The maven package is already installed in the
     Cloud Shell. Inside Cloud Shell go to the frontend helidon microservice
     folder.
@@ -135,7 +138,7 @@ In order to divide and isolate cluster resources, you will create a cluster
     <copy>cd msdataworkshop-master/frontend-helidon</copy>
     ```
 
-6.  Run `maven` to build the package using the following command. Since this is
+2.  Run `maven` to build the package using the following command. Since this is
     the first time maven is executed, nothing is cached, thus it will first
     download all the necessary libraries and bundles.
 
@@ -147,7 +150,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
   ![](images/2826286b95e74bd51237859bd7d3d891.png " ")
 
-7. Execute the following command to investigate the target folder.
+3. Execute the following command to investigate the target folder.
 
     ```
     <copy>ls -al target/</copy>
@@ -155,7 +158,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
   ![](images/a88b7e437c7a46e3b9878adb62942107.png " ")
 
-## **STEP 4**: Push image to OCI Registry, deploy and access microservices
+## **STEP 5**: Push image to OCI Registry, deploy and access microservices
 
 After you have successfully compiled the application code, you are ready to push it as a docker image into the OCI Registry. Once the image resides in the OCI registry, it can be used for deploying into the cluster. You are going to log into OCIR through the Cloud Shell using the following command.
 
@@ -182,7 +185,7 @@ After you have successfully compiled the application code, you are ready to push
   ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
 
-## **STEP 5**: Build the Docker image
+## **STEP 6**: Build the Docker image
 
 1.  You are ready to build a docker image of the front-end helidon application.
     Change directory into frontend helidon microservice folder:
