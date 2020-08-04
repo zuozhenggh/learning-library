@@ -54,8 +54,8 @@ Use these links to get more information about ODI Web Studio and Oracle Autonomo
 
 ## Acknowledgements
 
- - **Author** - Rick Green, Principal Developer, Database User Assistance
- - **Technical Contributors** - Mike Matthews, Jayant Mahto
- - **Last Updated By/Date** - Rick Green, June 25 2020
+ - **Author** - Mike Matthews, Senior Director, Data Quality Product Management
+ - **Adapted for Cloud by** - Rick Green, Principal Developer, Database User Assistance
+ - **Last Updated By/Date** - Rick Green, July 2020
 
  See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

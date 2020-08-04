@@ -58,7 +58,7 @@ This lab assumes you have already completed the previous labs in the Lab Content
 
     ![](./images/odi-instance-settings.jpg " ")  
 
-7. Scroll down to **New Metadata Repository** and specify:
+7. Scroll down to **New ODI Metadata Repository** and specify:
 
     **Autonomous Database Instance**: Select the ADW instance you created previously and specify the ADMIN password you created.
     **Note**: If your ADW instance does not appear, check that in the previous lab on permissions, you have enabled the permissions to inspect the tenancy for autonomous databases.
@@ -75,15 +75,11 @@ This lab assumes you have already completed the previous labs in the Lab Content
 
 9. The Stack will get created. It will take approximately 5 minutes for the ODI instance to create.
 
-    ![](./images/wait-for-odi-instance-to-create.jpg " ")
+    ![](./images/wait-for-odi-instance-to-create.png " ")
 
-10. You can check the progress by scrolling down to the Logs section:
+10. You can check the progress by scrolling down to the Logs section. The status will change from **IN PROGRESS** to **SUCCEEDED**. Your instance will have your initials as a Prefix (provided you added them as instructed).
 
     ![](./images/check-log-for-progress.png " ")
-
-    Your instance will have your initials as a Prefix (provided you added them as instructed).
-
-    ![](./images/odi_instance_create_2.png " ")
 
 ## STEP 2: Test the Environment
 
