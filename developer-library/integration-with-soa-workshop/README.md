@@ -1,4 +1,4 @@
-# Integration with Oracle SOA Hands-On Lab
+# Build Integration with Oracle SOA
 
 ## Building Application connectivity and Service orchestration with Oracle SOA Suite
 
