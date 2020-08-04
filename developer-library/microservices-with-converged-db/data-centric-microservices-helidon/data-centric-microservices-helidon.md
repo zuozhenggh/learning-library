@@ -19,7 +19,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
 
 
-## **STEP 1**: Build and deploy GrubDash store services
+## **STEP 1**: Deploy GrubDash store services
 
 1. As you have successfully set up the databases, you can now test the
     “GrubDash” Food Order application. You will interact with several
@@ -38,8 +38,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
    ![orderinventoryapp-microservices.png](images/44a8fd16bc5055d852ecde8347244dd6.png " ")
 
-2. To deploy the order Helidon service, open the Cloud Shell and go to the
-    order folder, using the following command.
+2. Open the Cloud Shell and go to the order folder, using the following command.
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon</copy>
@@ -47,15 +46,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
    ![](images/38c28676009bd795b82d21e8ba640224.png " ")
 
-3. Build the order Helidon image, using the following command
-
-    ```
-    <copy>./build.sh</copy>
-    ```
-
-   ![](images/9c1bb056869004a75b9dc7ad12844d00.png " ")
-
-4. Once you’ve successfully built the docker image, go ahead and deploy it.
+3. Deploy it.
 
     ```
     <copy>./deploy.sh</copy>
@@ -63,12 +54,12 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
    ![](images/fa8d34335bbf7bd8b98a2f210580135d.png " ")
 
-5. Go ahead and execute the same steps for building and deploying the inventory
+4. Go ahead and execute the same steps for deploying the inventory
     Helidon service. We can actually speed this process by running all the above
     commands sequentially, using the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon ; ./build.sh ; ./deploy.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon ; ./deploy.sh</copy>
     ```
 
    ![](images/2ee20f868b1d740d8ce7d3a7ec37fc03.png " ")
@@ -77,16 +68,16 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
    ![](images/d6bf26644dfc30c29ef27d64d4c5c5c9.png " ")
 
-6. Use the same method to build and deploy the supplier Helidon service. Use
+5. Use the same method to deploy the supplier Helidon service. Use
     the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/supplier-helidon-se ; ./build.sh ; ./deploy.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/supplier-helidon-se ; ./deploy.sh</copy>
     ```
 
    ![](images/3e833f33e529bdd714c5e6b94b6dfb94.png " ")
 
-7. You can check that all images have been successfully deployed in pods by executing the following command.
+6. You can check that all images have been successfully deployed in pods by executing the following command.
 
     ```
     <copy>pods</copy>
@@ -94,7 +85,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
    ![](images/5fad32d4c759a78653a31f68cffedfac.png " ")
 
-8. The services are ready, and you can proceed to test the application
+7. The services are ready, and you can proceed to test the application
     mechanisms. 
     
     

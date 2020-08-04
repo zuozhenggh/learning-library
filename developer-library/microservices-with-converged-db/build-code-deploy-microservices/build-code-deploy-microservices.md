@@ -46,7 +46,7 @@ In order to divide and isolate cluster resources, you will create a cluster
     installed:
 
     ```
-    <copy>https://objectstorage.us-phoenix-1.oraclecloud.com/p/noJ6VP4zHpWJYChnTkhX0Yvjkz7e4BcCJzeWyAv4DVo/n/stevengreenberginc/b/msdataworkshop/o/master.zip</copy>
+    <copy>https://objectstorage.us-phoenix-1.oraclecloud.com/p/uMZ6J94ZgyOB70YK1wz8teqRgp3x_Yt_pXO2d_w0NwA/n/stevengreenberginc/b/msdataworkshop/o/master.zip</copy>
     ```
 
 2. Unzip the file you downloaded:
@@ -69,7 +69,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
   ![](images/graalvmversion.png " ")
   
-  Note the graalvm install location in msdataworkshop.properties.
+  Note the graalvm install location in msdataworkshop.properties and change it if necessary.
   
 4. Install Jaeger and note the services it installs
    
@@ -95,7 +95,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
 
 
-## **STEP 2**: Source msdataworkshop.properties 
+## **STEP 3**: Source msdataworkshop.properties 
 
 1.  Set the value for MSDATAWORKSHOP_LOCATION and source msdataworkshop.properties for the shell
 
