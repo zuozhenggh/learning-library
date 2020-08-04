@@ -222,54 +222,10 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 8. Click Open to begin your session with the instance.
 
 
-
-## Step 3b: Download the Setup Scripts
-
-1.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
-
-    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
-
-    ````
-    cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
-    unzip multiscripts.zip; chmod +x *.sh
-    /home/opc/setupenv.sh
-    ````
-
-## Step 3c: Run the DB19c Setup Scripts
-If this is a new compute instance, run the following script to configure the 19c database.  Copy the following commands into your terminal.  This script runs in the background so you should be able to exit out while it's running, it takes approximately 25 minutes to run.  
-
-Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
-
-1. Run the command below to configure the database.
-    ````
-    nohup /home/opc/setupdb.sh &> setupdb.out&
-    ````
-2.  To check the status of the script above run the command below.  This script takes about 30 minutes to complete.  You can also use the unix **jobs** command to see if the script is still running.
-
-    ````
-    tail -f /home/opc/setupdb.out
-    ````
-## Step 3d: Run the Multitenant Setup Scripts
-The setupcdb.sh takes 60 minutes to run and is also setup to run in the background.
-
-1.  Once the database software has been configured, run the script to create the container databases and pluggable databases needed for the Multitenant lab.
-
-     ````
-    nohup /home/opc/setupcontainers.sh &> setupcontainers.out&
-    ````
-
-2.   To check on the progress of this script, enter the command below.  This script takes about 60 minutes to complete.  Note:  Ignore the [WARNING] [DBT-06208] that occur in the 2nd script.
-
-    ````
-    tail -f /home/opc/setupcontainers.out
-    ````
-
-Congratulations!  Now you have the environment to run the Multitenant labs.   
-
 ## Acknowledgements
 
-- **Author** - Kay Malcolm, Director, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+- **Author** - Troy Anthony, DB Product Management
+- **Vagrant architecture** - Ruggero Citon, RAC Pack MAA, Cloud Innovation and Solution Engineering Team
+- **Last Updated By/Date** - Troy Anthony, DB Product Management, August 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
