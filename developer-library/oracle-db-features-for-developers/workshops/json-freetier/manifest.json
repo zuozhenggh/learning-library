@@ -47,6 +47,12 @@
             "description": "JSON Documents",
             "publisheddate": "4/05/2020",
             "filename": "../../json/json-advanced.md"
+        },
+        {
+            "title": "Appendix: DB19c Compute Setup - First Time",
+            "description": "JSON Documents",
+            "publisheddate": "4/05/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier-manual.md"
         }
     ]
 }

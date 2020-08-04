@@ -76,7 +76,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
    
 ## **STEP 3**: Setup Compute Stack 
 
-Now that you have a network for your compute instance, it's time to create the compute instance running the 19c database.  
+Now that you have a network for your compute instance, it's time to create the compute instance running the 19c database.  If this is the first time you have created a compute instance running the 19c database, you must create it manually to accept the terms and conditions.  If you've created one before in your tenancy, please proceed.  Otherwise, please proceed to the appendix.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
     - [db19c-compute-livelabs-v2.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_CvkOA6FEQhZoE6_Z4B5dEpnzGlQuWJVcC_lBJBR4YU/n/c4u03/b/labfiles/o/db19c-compute-livelabs-v2.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
