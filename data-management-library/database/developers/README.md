@@ -3,15 +3,8 @@
 
 Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Oracle offers choice, portability and interoperability with other technologies, including open source and third-party components. Developers can build with the latest technologies, such as AI/ML, autonomous databases, Gen 2 cloud infrastructure, Kubernetes, serverless, blockchain, digital assistants, and more.
 
-
 ## Workshops
-Click on one of our workshops below to access the content.
-
-- [New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)  
-- [Building Microservices with Oracle's Converged Database](https://oracle.github.io/learning-library/developer-library/microservices-with-converged-db)
-- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier) 
-- [Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier) 
-- [Containerized Development on the Oracle Database](https://oracle.github.io/learning-library/data-management-library/database/docker/db-on-docker/freetier) 
+Click [here](http://bit.ly/golivelabs) to get started.
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
