@@ -1,14 +1,14 @@
 {
     "tutorials": [
-        {         
+        {
             "title": "Introduction and Overview",
-            "description": "Introduction to Multitenant Workshop",
+            "description": "Introduction to RAC Workshop",
             "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
+            "publisheddate": "08/01/2020",
             "contentid": "12nnnn",
             "filename": "../intro/intro.md"
         },
-        {         
+        {
             "title": "Lab 1: Login to Oracle Cloud",
             "description": "Login to Oracle Cloud",
             "partnumber": "Ennnnn_01",
@@ -16,7 +16,7 @@
             "contentid": "12nnnn",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
-        {         
+        {
             "title": "Lab 2: Generate SSH Key",
             "description": "Generate SSH Key",
             "partnumber": "Ennnnn_01",
@@ -24,27 +24,27 @@
             "contentid": "12nnnn",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
-        {            
-            "title": "Lab 3: Environment Setup",
-            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+        {
+            "title": "Lab 3a: Environment Setup 1",
+            "description": "Setup RAC environment using VirtualBox (Laptop install)",
             "publisheddate": "3/24/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-livelabs.md"
+            "filename": "../setup/livelabs-setup.md"
         },
-        {         
-            "title": "Lab 4: Multitenant Basics",
-            "description": "Clone, Plug and Drop Pluggable Databases",
+        {
+            "title": "Lab 3b: Environment Setup 2",
+            "description": "Setup RAC environment using libvirt (OCI install)",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../clone-plug-drop/clone-plug-drop.md"
+            "filename": "./../setup/livelabs-virt-setup.md"
         },
-        {         
-            "title": "Lab 5: Application Containers",
-            "description": "Using Application Containers with Multitenant",
+        {
+            "title": "Lab 3c: Setup RAC environment using OCI DB System (OCI install)",
+            "description": "Setup RAC environment in Oracle Cloud",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "./../app-containers/app-containers.md"
+            "filename": "./../setup/livelabs-rac-oci.md"
         }
     ]
 }
