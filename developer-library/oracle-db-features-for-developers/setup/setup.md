@@ -31,7 +31,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 
     ![](./images/step1.1-setupscript2.png " " )
 
-2.  Install the Sample Schemas.
+2.  Install the Sample Schemas.  If prompted for the sid, enter **ORCL**.
 
     ````
     <copy>

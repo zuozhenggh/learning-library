@@ -1,9 +1,9 @@
-# Setup Oracle Database 19c Compute Image
+# Setup Oracle Database 19c Compute
 
 ## Introduction
-This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running a pre-configured Compute  install using Oracle Resource Manager.  
+This lab will show you how to setup a compute instance running a pre-configured Compute and the corresponding Virtual Cloud Network (VCN).
 
-Estimated Lab Time:  30 minutes
+Estimated Lab Time:  25 minutes
 
 ### About Terraform and Oracle Cloud Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build the compute component.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Database 19c.
@@ -20,136 +20,61 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 
 ### Objectives
 In this lab, you'll:
-* Setup a VCN (Virtual Compute Network) using Resource Manager
-* Setup a compute instance running the DB19c 
+* Use Resource Manager to quickly setup a compute instance and VCN
 * Login to your compute instance
+* Confirm your Oracle Database 19c is up and running
 
 ### Prerequisites
 
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
-- Lab:  Generate SSH Keys
+- SSH Keys
 
-## **STEP 1**: Setup VCN Stack
+## **STEP 1**: Setup Stack
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
-1.  Login to your Oracle Cloud account
-2.  Click the **Create a Stack** tile on the homepage.  You may also get to Resource Manager by clicking on the Hamburger **Menu** -> **Solutions and Platform** -> **Resource Manager**
-![Create a stack](images/db19c-freetier-step1.png " ")
-3.  In the Browse Solutions window, select **Default VCN**.
-    ![Image alt text](images/db19c-freetier-step1-2.png " ")
-
-4. Click the **Select Solution** button.
-   ![Image alt text](images/db19c-freetier-step1-3.png " ")
-5.  Enter the name for your VCN:  **livelabsvcn**.  Click **next**.
-   ![Image alt text](images/db19c-freetier-step1-4.png " ")
-6. Inspect and then accept all default values in the Configure Variables screen and click **Next**. 
-   ![Image alt text](images/db19c-freetier-step1-5.png " ")
-7.  Review your selections and click **Next**
-   ![Image alt text](images/db19c-freetier-step1-6.png " ")
-
-## **STEP 2**: Run VCN Stack Apply Job
-Now that your stack has been created, you will run an *apply* job to create the actual VCN
-1. Click on **Terraform Actions** to expose the drop down menu
-![Image alt text](images/db19c-freetier-step1-7.png " ")
-2. Select **Apply**
-![Image alt text](images/db19c-freetier-step1-8.png " ")
-3. Insepct the apply job, accept all defaults and click **Apply**
-![Image alt text](images/db19c-freetier-step1-9.png " ")
-4. The VCN will immediately begin creation.
-![Image alt text](images/db19c-freetier-step1-10.png " ")
-5. Once the apply job is complete, inspect the results.  
-![Image alt text](images/db19c-freetier-step1-11.png " ")
-6. Scroll down the log.  You will notice that 6 objects were created:  A VCN, subnet, internet gateway, default security list, route table and dhcp options, each with their own Oracle Cloud ID (ocid).  We will focus on the subnet.  You will need this subnet information to create your compute instance
-![Image alt text](images/db19c-freetier-step1-12.png " ")
-7. Copy the first subnet id to a notepad and save for the next step.  If you would like to further inspect the VCN, complete #s 8-12.  Otherwise skip to the next section.
-![Image alt text](images/db19c-freetier-step1-13.png " ")
-8.  Click on the hamburger menu in the upper left corner of your browser.  Select **Networking**->**Virtual Cloud Networks**. ![Image alt text](images/db19c-freetier-step1-14.png " ")
-9.  The VCN you created should be listed.  Click on the VCN you just created.
-![Image alt text](images/db19c-freetier-step1-15.png " ")  
-10.  On the VCN homepage notice the 3 subnets that were created.  Each subnet is tied to an Availability Domain.  Click on the first subnet that matches AD-1.
-![Image alt text](images/db19c-freetier-step1-16.png " ")  
-11.  Inspect the subnet homepage, find the OCID (Oracle Cloud ID).  Click **Copy**
-![Image alt text](images/db19c-freetier-step1-17.png " ")  
-12. Copy the subnet ID to a notepad.
-![Image alt text](images/db19c-freetier-step1-18.png " ")        
-   
-## **STEP 3**: Setup Compute Stack 
-
-Now that you have a network for your compute instance, it's time to create the compute instance running the 19c database.  If this is the first time you have created a compute instance running the 19c database, you must create it manually to accept the terms and conditions.  If you've created one before in your tenancy, please proceed.  Otherwise, please proceed to the appendix.
-
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [db19c-compute-livelabs-v2.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_CvkOA6FEQhZoE6_Z4B5dEpnzGlQuWJVcC_lBJBR4YU/n/c4u03/b/labfiles/o/db19c-compute-livelabs-v2.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
+    - [workshop_v2.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/aUFtqKFdyNXDRXcNFSln8DxqfmJLCRwn_ClZhjvFdb8/n/c4u03/b/labfiles/o/workshop_v2.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 
 2.  Save in your downloads folder.
+3.  Login to your Oracle Cloud account
+4.  Click the **Create a Stack** tile on the homepage.  You may also get to Resource Manager by clicking on the Hamburger **Menu** -> **Solutions and Platform** -> **Resource Manager**.
+   ![Create a stack](images/db19c-freetier-step1.png " ")
 
-3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Select **Resource Manager > Stacks**.  
+5.  Click the **Browse** link and select the zip file (workshop_v2.zip) that you downloaded. Click **Open**.
+   ![](./images/db19c-freetier-step3-2.png " ")
 
-    ![](./images/cloud-homepage.png " ")
+6. Enter the name of your choice.  We suggest livelabs19c.  Click **Next**
+   ![Create a stack](images/workshop-001.png " ")
+7. Accept the region and select your compartment.  Select an **availabilty domain** from the drop down.
+   ![Create a stack](images/workshop-002.png " ")
+8. Paste the SSH key you created in the previous lab.
+   ![Create a stack](images/workshop-003.png " ")
+9. Scroll down and select the **VMStandard.E2.4**.  *Note: Make sure you select the 2.4 version.  It has enough memory to run the database 19c binaries*
+    ![Create a stack](images/workshop-004.png " ")
+10. Accept the network and click **Next**.
+    ![Create a stack](images/workshop-005.png " ")
+11. Review the details and click **Next**.
+    ![Create a stack](images/workshop-006.png " ")
 
-    ![](./images/resource.png " ")
+## **STEP 2**: Run Stack Apply Job
 
-    ![](./images/db19c-freetier-step3-1.png " ")
+1. Click the **Terraform Actions** drop down.
+    ![Create a stack](images/workshop-007.png " ")
+2. Choose **Apply**
+    ![Create a stack](images/workshop-008.png " ")
+3. Resource Manager will begin creating the components needed for this workshop.
+    ![Create a stack](images/workshop-009.png " ")
+4. Inspect the log, you will notice that 8 resources were created including the compute instance.
+   ![Create a stack](images/workshop-010.png " ")
 
-4.  Click the **Browse** link and select the zip file (db19c-compute-livelabs.zip) that you downloaded. Click **Open**.
+## **STEP 3**: Gather compute instance details
+1. Go to the hamburger menu (in the top left corner) and click **Compute** -> **Instances**
+   ![Create a stack](images/workshop-011.png " ")
+2. Look for the instance you just created and jot down the public IP address.
+   ![Create a stack](images/workshop-012.png " ")
 
-    ![](./images/db19c-freetier-step3-2.png " ")
-
-    ![](./images/db19c-freetier-step3-4.png " ")
-
-    Enter the following information:
-
-    - **Name**:  Enter a name  (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
-
-    - **Description**:  Same as above or leave blank
-
-    Click **Next**
-
-5.  Now, configure your instance.
-
-    ![](./images/db19c-freetier-step3-5.png " ")
-
-    Enter the following information:
-
-    **PUBLIC_SUBNET_ID** - Paste the subnet ocid you saved in your notepad here.
-
-    **DISPLAY_NAME** - Enter a display name. This will be the display name for the compute instance you create.  
-
-    **AD** - Choose availability domain 1 (or choose the AD that matches the subnet you chose)
-
-    **INSTANCE_SHAPE** - VM.Standard.E2.2
-
-    **SSH_PUBLIC_KEY**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
-
-    *Accept all other defaults*
-
-    Click **Next**.
-
-6. After confirming the stack information and the variables are correct, click **Create**.
-
-    ![](./images/db19c-freetier-step3-6.png " ")
-
-7.  Your stack has now been created!  You will now run the apply process in Resource Manager to create your DB19c instance.
-
-    ![](./images/db19c-freetier-step3-7.png " ")
-
-## **STEP 4**: Run Compute Stack Apply Job
-
-1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your  instance that comes pre-installed Oracle 19c.
-    ![](./images/db19c-freetier-step3-8.png " ")
-
-2.  Accept all defaults and click **Apply**
-    ![](./images/db19c-freetier-step3-9.png " ")
-
-    ![](./images/db19c-freetier-step3-10.png " ")
-
-3.  Once this job succeeds, you will get an apply complete notification from Terraform.   Time to login to your instance to finish the configuration.
-
-    ![](./images/db19c-freetier-step3-11.png " ")
-
-    ![](./images/applyresults2.png " ")
-
-## **STEP 5**: Connect to your instance
+## **STEP 4**: Connect to your instance
 
 There are multiple ways to connect to your cloud instance.  Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
 
@@ -163,7 +88,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
     ![](./images/cloudshell.png " ")
 
-2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+2.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP addresss for your instance.
 
     ![](./images/db19c-freetier-step5-1.png " ")
@@ -173,11 +98,12 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     ````
 
     *Note: The angle brackets <> should not appear in your code.*
+    ![Create a stack](images/workshop-013.png " ")      
 5.  When prompted, answer **yes** to continue connecting.
-6.  Continue to STEP 5 on the left hand menu.
+6.  Continue to the *next Step* on the left hand menu.
 
 ### MAC or Windows CYGWIN Emulator
-1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+1.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
 2.  On the instance homepage, find the Public IP addresss for your instance.
 
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
@@ -191,7 +117,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
     *Note: The angle brackets <> should not appear in your code.*
 
-4.  After successfully logging in, proceed to STEP 5.
+4.  After successfully logging in, proceed to the *next Step* on the left hand menu.
 
 ### Windows using Putty
 
@@ -222,19 +148,18 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 8. Click Open to begin your session with the instance.
 
-## **STEP 6**: Verify the ORCL database is up
+## **STEP 5**: Verify the ORCL database is up
 
-1.  From your connected session of choice **tail** the **dbsingle.log** file.  This file configures the database.
+Once you deploy your compute instance, t
+1.  From your connected session of choice **tail** the last 10 lines of the **dbsingle.log** file.  This file configures the database.  
     ````
     <copy>
-    tail -f /u01/ocidb/buildsingle1.log
+    tail -10 /u01/ocidb/buildsingle1.log
     </copy>
     ````
-    ![](./images/tailOfBuildDBInstanceLog.png " ")
+    ![](./images/workshop-014.png " ")
 
-2.  When you see the following message, the database setup is complete - *Completed successfully in XXXX seconds* (this may take up to 30 minutes).  However certain labs may proceed without the entire database setup being finished.
-
-    ![](./images/tailOfBuildDBInstanceLog_finished.png " ")
+2.  After *approximately 20 minutes*, you will see a notice that says the database setup is complete.
 
 3. Run the following command to verify the database with the SID **ORCL** is up and running
 
@@ -243,9 +168,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     ps -ef | grep ORCL
     </copy>
     ````
-
     ![](./images/pseforcl.png " ")
-
 
 4. Verify the listener is running
     ````
@@ -270,11 +193,11 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
-You may now proceed to the next lab.  
+You may now *proceed to the next lab*.  
 
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management
-- **Contributors** - Anoosha Pilli, Sanjay Narvekar, David Start, Arabella Yao
+- **Contributors** - Sanjay Narvekar, Troy Anthony, Anoosha Pilli, Arabella Yao
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 
 ## See an issue?
