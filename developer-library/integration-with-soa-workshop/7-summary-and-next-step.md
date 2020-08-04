@@ -4,8 +4,8 @@ During this live lab tutorial, you have learned, gained hands-on understanding a
 
 Salient points about Oracle SOA. It is a platform to address application **integration**, for both cloud SaaS and on-premise. Oracle SOA can be deployed on customer's datacenter, OCI or any Cloud:
 
-1. Companies can develop applications without replacing existing applications.
-2. SOA allows reusing the service of an existing system, alternately building the new system. It also allow to REST API-enabled existing system or SOA business service.
+1. Companies can develop applications without replacing existing enterprise applications or system of record.
+2. SOA allows reusing the service of an existing system, alternately building new services from existing applications or system of record. It can provide REST API-enabled from existing system or enterprise business service.
 3. It offers reliable applications in which you can test and debug the independent services as compared to a large set of huge lines of code.
 
 SOA complement Microservices architecture by 
