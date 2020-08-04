@@ -199,14 +199,11 @@ balancers. Click **Launch Workflow**.
 
   ![](images/29-create-oke-wizard.png " ")
 
-4. Change the name of the cluster to `msdataworkshopcluster`, set the kubernetes version to **v1.15.7**, and accept all the other
+4. Change the name of the cluster to `msdataworkshopcluster` , accept all the other
 defaults, and click **Next** to review the cluster settings.
 
-  *The default kubernetes version is v1.16.8. If you do not change the version to v1.15.7 you may encounter errors that prevent the completion of this workshop.*
 
-  ![](images/30-create-oke-wizard2.png " ")
-
-5. The defaults will create 3 worker nodes in a private subnet with a `VM.Standard2.1` shape. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
+5. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
 
   ![](images/31-create-oke-wizard3.png " ")
 
@@ -276,7 +273,7 @@ information and click **Create Autonomous Database**:
         everywhere”
     -   License type: `License included`
 
-  ![](images/40-create-second-atp2.png " ")
+  ![](images/40-create-second-atp.png " ")
 
 6. Once both databases are provisioned you should see the state changed to
 Available. Click on each of the ATP names in order to go to their pages and copy
