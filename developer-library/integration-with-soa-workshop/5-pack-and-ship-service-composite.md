@@ -17,7 +17,8 @@ For this module, the pack and ship service is defined with a REST interface and 
 6. Add a composite sesor
 7. Setup an email notification
 
-### Details:
+### **Details:**
+
 - Ensure JDeveloper 12c is up and running
 - The integrated server in JDeveloper 12c up and running with module 3 lab is completed.
 - Should module 3 is not yet completed, please find its solution from page 191 in the SOAsuite 12c tutorial.
