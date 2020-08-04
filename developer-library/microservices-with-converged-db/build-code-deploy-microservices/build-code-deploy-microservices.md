@@ -46,7 +46,7 @@ In order to divide and isolate cluster resources, you will create a cluster
     installed:
 
     ```
-    <copy>wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/jytwfHgaaJV-BLPmMISfqMBjPWm63-Lp5qQD18cVl9s/n/stevengreenberginc/b/msdataworkshop/o/master.zip</copy>
+    <copy>https://objectstorage.us-phoenix-1.oraclecloud.com/p/noJ6VP4zHpWJYChnTkhX0Yvjkz7e4BcCJzeWyAv4DVo/n/stevengreenberginc/b/msdataworkshop/o/master.zip</copy>
     ```
 
 2. Unzip the file you downloaded:
