@@ -1,7 +1,7 @@
 # Scaling The Application
 ## Introduction
 
-This lab will show how the application can be scaled at the microservice and database level to maintain optimal performance.
+This lab will show how the application can be scaled at the application and database tiers to maintain optimal performance.
 
 ![](images/veggie-dash-app-arch.png " ")
 
