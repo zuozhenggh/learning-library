@@ -8,10 +8,9 @@ Estimated Lab Time: 20 Minutes
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-- Lab 1: Login to Oracle Cloud
-- Lab 2: Generate SSH Key
-- Lab 3: Create Compute Instance
-- Lab 4: Environment Setup
+- Lab: Generate SSH Key
+- Lab: Setup Compute Instance
+- Lab: Start Database and Application
 
 ### About Oracle Node.js
 
