@@ -1,13 +1,13 @@
 # Sample Schema Setup
 
 ## **Introduction**
-This lab will show you how to setup your environment using Oracle Resource Manager.
+This lab will show you how to setup your database schemas for the subsequent labs.
 
 ## **Step 1**: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
-By completing the instruction below the sample schemas **SH**, **OE**, and **HR** will be installed. These schemas are used in Oracle documentation to show SQL language concepts and other database features. The schemas themselves are documented in Oracle Database Sample Schemas [Oracle Database Sample Schemas](https://www.oracle.com/pls/topic/lookup?ctx=dblatest&id=COMSC).
+By completing the instructions below the sample schemas **SH**, **OE**, and **HR** will be installed. These schemas are used in Oracle documentation to show SQL language concepts and other database features. The schemas themselves are documented in Oracle Database Sample Schemas [Oracle Database Sample Schemas](https://www.oracle.com/pls/topic/lookup?ctx=dblatest&id=COMSC).
 
 1.  Copy the following commands into your terminal. These commands download the files needed to run the lab.
 
