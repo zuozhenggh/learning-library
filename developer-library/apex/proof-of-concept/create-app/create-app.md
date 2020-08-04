@@ -69,7 +69,7 @@ In this lab you will build an interactive application on the data structures you
     ![](images/show-team-members.png " ")
 
 ## **Summary**
-This completes Lab 2. You now know how to utilize the Create Application wizard directly from SQL Scripts to create the first cut of your application. [Click here to navigate to Lab 3](?lab=lab-3-regenerating-application).
+You now know how to utilize the Create Application wizard directly from SQL Scripts to create the first cut of your application. 
 
 ## **Acknowledgments**
 
