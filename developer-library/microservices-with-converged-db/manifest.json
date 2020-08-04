@@ -25,8 +25,8 @@
         "filename": "./data-centric-microservices-helidon/data-centric-microservices-helidon.md"
       },
       {
-        "title": "Lab 5: Scaling Application Platform",
-        "filename": "./scale-app-platform/scale-app-platform.md"
+        "title": "Lab 5: Scaling The Application",
+        "filename": "./scaling/scaling.md"
       },
       {
         "title": "Lab 6: Polyglot Microservices",

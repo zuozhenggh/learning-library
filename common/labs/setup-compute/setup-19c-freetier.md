@@ -6,7 +6,7 @@ This lab will show you how to setup a Oracle Cloud network (VCN) and a compute i
 Estimated Lab Time:  30 minutes
 
 ### About Terraform and Oracle Cloud Resource Manager
-Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Database 19c.
+Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build the compute component.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Database 19c.
 
 Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, preview the video below.
 
@@ -79,7 +79,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 Now that you have a network for your compute instance, it's time to create the compute instance running the 19c database.  
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [db19c-compute-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xbuVfRwRZRhZCiGrsFOa3l_3mW3wyk3ZNl4pm7GzCak/n/c4u03/b/labfiles/o/db19c-compute-livelabs-v1.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
+    - [db19c-compute-livelabs-v2.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_CvkOA6FEQhZoE6_Z4B5dEpnzGlQuWJVcC_lBJBR4YU/n/c4u03/b/labfiles/o/db19c-compute-livelabs-v2.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 
 2.  Save in your downloads folder.
 
@@ -116,6 +116,8 @@ Now that you have a network for your compute instance, it's time to create the c
     **DISPLAY_NAME** - Enter a display name. This will be the display name for the compute instance you create.  
 
     **AD** - Choose availability domain 1 (or choose the AD that matches the subnet you chose)
+
+    **INSTANCE_SHAPE** - VM.Standard.E2.2
 
     **SSH_PUBLIC_KEY**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
 
@@ -273,7 +275,7 @@ You may now proceed to the next lab.
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management
 - **Contributors** - Anoosha Pilli, Sanjay Narvekar, David Start, Arabella Yao
-- **Last Updated By/Date** - Kay Malcolm, July 2020
+- **Last Updated By/Date** - Kay Malcolm, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

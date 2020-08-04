@@ -4,13 +4,11 @@
 
 This lab walks you through the steps to get started with setting up and connecting to a Linux compute instance on Oracle Cloud. You will also learn how to copy and deploy Graph Server and ADB Wallet on your compute instance.
 
-### What Do You Need? 
+### What Do You Need?
 * Register cloud account
 * Create SSH Keys
-  
-*Note 1: This is based on Practice 2 of the [OCI Lab L100](https://oracle.github.io/learning-library/oci-library/L100-LAB/Compute_Services/Compute_HOL.html#practice-2-creating-a-web-server-on-a-compute-instance) for setting up a web server on a compute instance.*
 
-*Note 2: Some of the UIs may look a little different from the screenshots in the instructions.*
+*Note 1: Some of the UIs may look a little different from the screenshots in the instructions.*
 
 ## STEP 1: Create a Free Tier Virtual Machine
 
@@ -36,7 +34,7 @@ An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the
 
     ***NOTE:*** *You need a public IP address so that you can SSH into the running instance later in this lab.*
 
-4. Scroll down to the SSH area of the page. Choose the SSH key that you created earlier in this workshop. If you cannot find your SSH Key in the browse window using the **Choose SSH Key Files** option, and are sure you have generated your SSH Key, you can use the **Paste SSH Keys** option instead.  Press the **Create** button to create your instance. 
+4. Scroll down to the SSH area of the page. Choose the SSH key that you created earlier in this workshop. If you cannot find your SSH Key in the browse window using the **Choose SSH Key Files** option, and are sure you have generated your SSH Key, you can use the **Paste SSH Keys** option instead.  Press the **Create** button to create your instance.
 
     ![](../images/paste_ssh_keys.png " ")
 
@@ -52,13 +50,13 @@ An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the
     *Note: For Oracle Linux VMs, the default username is **opc***
 
     If your SSH Keys are kept under `HOME/.ssh/` directory, run:
-    ```shell
+    ```
     <copy>ssh opc@</copy>&lt;public_ip_address>
     ```
 
     If you have a different path for your SSH key, enter the following:
 
-    ```shell
+    ```
     <copy>ssh -i &lt;path_to_private_ssh_key> opc@&lt;public_ip_address></copy>
     ```
 
@@ -96,22 +94,22 @@ An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the
 
 ## STEP 2: Configure your Compute Instance, Download ADB Wallet
 
-The [Property Graph Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/property-graph-overview-spgdg.html#GUID-FF149F69-574D-43B8-B888-4CCD019DAE56) describes the installation and configuration process in greater detail. 
+The [Property Graph Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/property-graph-overview-spgdg.html#GUID-FF149F69-574D-43B8-B888-4CCD019DAE56) describes the installation and configuration process in greater detail.
 
 The steps are as follows:
-- Create a user (e.g. `oracle`). Set a passwd for that user.
-- Create a group named `oraclegraph`.
-- Add the user to the group.
-- Install JDK8 and JDK11.
-- Set the java executable to the one in JDK8.
-- Copy the Graph Server and Client 20.2 rpm into the compute instance.
-- Install the Graph Server and Client.
-- Check if `numactl` is installed. If not install it too.
-- Open the firewall for port 7007.
-- Copy the ADB wallet zip file into the compute.
-- Move it to the `oracle` user's home directory and change the file owner and group.
-- Switch to the `oracle` user. Add `JAVA_HOME` and `JAVA11_HOME` to the bash_profile
-- Create the `wallets` directory. Unzip the ADB wallet into that directory.
+  - Create a user (e.g. `oracle`). Set a passwd for that user.
+  - Create a group named `oraclegraph`.
+  - Add the user to the group.
+  - Install JDK8 and JDK11.
+  - Set the java executable to the one in JDK8.
+  - Copy the Graph Server and Client 20.2 rpm into the compute instance.
+  - Install the Graph Server and Client.
+  - Check if `numactl` is installed. If not install it too.
+  - Open the firewall for port 7007.
+  - Copy the ADB wallet zip file into the compute.
+  - Move it to the `oracle` user's home directory and change the file owner and group.
+  - Switch to the `oracle` user. Add `JAVA_HOME` and `JAVA11_HOME` to the bash_profile
+  - Create the `wallets` directory. Unzip the ADB wallet into that directory.
 
 1. SSH into the compute instance using the private key you created earlier. First navigate to the folder where you created your SSH Keys. And connect using:
 
@@ -119,7 +117,7 @@ The steps are as follows:
     <copy>ssh -i &lt;private_key> opc@&lt;public_ip_for_compute></copy>
     ```
     *Note: You should not include the angle brackets <> in you code.*
-  
+
 2. Create the user, set a password, create the group, add user to group. *Note: You should include at least one digit in your password.*
 
     ```
@@ -189,7 +187,7 @@ The steps are as follows:
 
     In Database Connection window, select **Instance Wallet** as your Wallet Type, click **Download Wallet**.
     ![](../images/wallet_type.png " ")
-    
+
     In the Download Wallet dialog, enter a wallet password in the Password field and confirm the password in the Confirm Password field.
     The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character. This password protects the downloaded Client Credentials wallet.
 
@@ -222,7 +220,7 @@ Choose the environment where you created your SSH Key.
 4. Create a Pre-Authenticated Request (PAR) for ADB Wallet. In the bucket, find the file and click on the ellipses to the right. Click **Create Pre-Authenticated Request**. Determine how long you want the PAR - generally, one year. Accept other defaults. Click **Create Pre-Authenticated Request**.
 
     ![](../../images/create_PAR.png " ")    
-    
+
     ![](../../images/create_PAR_dialog.png " ")
 
 5. In Pre-Authenticated Request Details page, copy the **Pre-Authenticated Request URL** and save it on your local computer. You don't need to download or create PAR url for the Graph Server rpm file - that is already done for you.
@@ -297,7 +295,7 @@ Choose the environment where you created your SSH Key.
 
     You can use `alternatives` or some other means to set the `jar` executable (to the one in JDK8) if you wish.
 
-2. Move the ADB wallet to the `oracle` user. Modify the commands as appropriate for your environment and execute them as `opc`. 
+2. Move the ADB wallet to the `oracle` user. Modify the commands as appropriate for your environment and execute them as `opc`.
 
     ```
     <copy>sudo chown oracle &lt;ADB_Wallet>.zip</copy>
@@ -353,7 +351,7 @@ Choose the environment where you created your SSH Key.
 
     Hit **i** to enter insert mode.
     ```
-    ## Add these lines in oracle's bash_profile 
+    ## Add these lines in oracle's bash_profile
     JAVA_HOME=/usr/java/jdk1.8.0_251-amd64
     JAVA11_HOME=/usr/java/jdk-11.0.5
 
@@ -374,7 +372,7 @@ Choose the environment where you created your SSH Key.
 
     ```
     ## you will see something similar to
-    atpfinance_high = 
+    atpfinance_high =
         (description=
             (address=
                 (https_proxy=proxyhostname)(https_proxy_port=80)(protocol=tcps)(port=1522)
@@ -403,10 +401,8 @@ Choose the environment where you created your SSH Key.
 ## Acknowledgements ##
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
-
 * **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
-
 * **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
 ## See an issue?

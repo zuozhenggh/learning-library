@@ -149,7 +149,7 @@ This lab walks you through the steps on how you can use the Oracle Analytics Clo
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
+- **Contributors** - Kamryn Vinson, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Jeffrey Malcolm, QA Specialist, July 2020
 
 ## See an issue?

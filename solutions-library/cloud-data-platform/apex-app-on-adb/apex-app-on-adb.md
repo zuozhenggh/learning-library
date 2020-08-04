@@ -38,7 +38,7 @@ Watch this video to learn more about Autonomous Database.
 
     ![](./images/infrastructuredash.png " ")
 
-2. Once you are logged in, you are taken to the OCI Console. Click **Create a data warehouse**
+2. Once you are logged in, you are taken to the OCI Console. Click **Create an ADW Database**
 
     ![](./images/Part_1_Step_2_1.png " ")
 
@@ -60,7 +60,7 @@ Watch this video to learn more about Autonomous Database.
 
 8. For this lab, we will select **License Included** for the license type. If your organization owns Oracle Database licenses already, you may bring those license to your cloud service.
 
-9. Make sure everything is filled out correctly, then proceed to click on **Create Autonomous Data Warehouse**.
+9. Make sure everything is filled out correctly, then proceed to click on **Create Autonomous Database**.
 
     ![](./images/adw3img.png " ")
 
@@ -166,7 +166,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/Part_2_Step_6_5.png " ")
 
-7. A preview will pop up where you can view some details about the data you are loading. Proceed by entering in a **Table Name**. For this lab, use **TRANSACTION_HISTORY** for the table name. The Error Table Name will be constructed automatically.  For primary keys, leave the **Identity Column** option selected.
+7. A preview will pop up where you can view some details about the data you are loading. Proceed by entering in a **Table Name**. For this lab, use **TRANSACTION_HISTORY** for the table name. For primary keys, leave the **Identity Column** option selected.
 
     ![](./images/Part_2_Step_6_6.png " ")
 
@@ -204,7 +204,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/Part_2_Step_6_21.png " ")
 
-You have now changed the data type for the Date of Sale column from a Date to a Timestamp.  When the data was loaded into APEX, this column was automatically configured as a Date data type, only including the calendar date of the sale.  When we switch this column to a Timestamp data type, we not only get the calendar date of the sale, but also the time of day that the same occurred. This will come into play when we run our Machine Learning models in Lab 200.
+You have now changed the data type for the Date of Sale column from a Date to a Timestamp.  When the data was loaded into APEX, this column was automatically configured as a Date data type, only including the calendar date of the sale.  When we switch this column to a Timestamp data type, we not only get the calendar date of the sale, but also the time of day that the sale occurred. This will come into play when we run our Machine Learning models in Lab 200.
 
 
 ### **STEP 5**: Create an App in APEX
@@ -272,8 +272,8 @@ Please proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
-- **Last Updated By/Date** - Jeffrey Malcolm, QA Specialist, July 2020
+- **Contributors** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
+- **Last Updated By/Date** - Kamryn Vinson, QA Specialist, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

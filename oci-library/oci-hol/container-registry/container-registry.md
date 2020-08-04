@@ -42,7 +42,9 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console and create VCN Auth token and Docker Registry
+7. Completed *Prerequisites* and *Lab 1* in the Contents menu on the right
+
+## **Step 1**: Sign in to OCI Console and create VCN Auth token and Docker Registry
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -57,7 +59,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**
+3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**
 
 4. Fill out the dialog box:
 
@@ -76,7 +78,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
              
-    *We will now create an Auth Token. This token will be used to login to connect to OCI Docker registry from the Docker computeinstance that will be created later one*
+    *We will now create an Auth Token. This token will be used to login to connect to OCI Docker registry from the Docker computeinstance that will be created later on*
 
 8. In OCI console Click the user icon (top right)  then **User settings**. Under Resrouces Click **Auth Token**, then **Generate Token**. In pop up window provide a description then Click **Generate Token**
 
@@ -92,7 +94,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
      ![](./../container-registry/images/OCIR_HOL0033.PNG " ")
  
-11. Click **Create Repository**. Provide Repository name (all Lowercase), Check **Public** for **Acess**, Click **Submit**
+11. Click **Create Repository**. Provide Repository name (all Lowercase), Check **Public** for **Acess**, Click **Create Repository**
 
 12.  Once created, verify there are no existing images in the repository (as shown in OCI console)
 
@@ -100,69 +102,11 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
 *We now have a Docker registry and Auth token (to validate login to the registry). Next we will create a Public/Private key pair and then compute instance to test pushing and pulling images from the registry.*
 
-## Step 2: Create compute instance install Docker and push images to registry
+## **Step 2**: Create compute instance install Docker and push images to registry
 
-1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
+1. Go to your OCI console (homepage). From OCI servies menu, under **Compute**, click **Instances**.
 
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL006.PNG " ")
-
-2. Enter command 
-    
-    ```
-    <copy>
-    ssh-keygen
-    </copy>
-    ```
-    **HINT:** You can swap between OCI window, 
-    git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon 
-
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL007.PNG " ")
-
-3. Press Enter When asked for 'Enter File in which to save the key', 'Created Directory, 'Enter passphrase', and 'Enter Passphrase again.
-
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL008.PNG " ")
-
-4. You should now have the Public and Private keys:
-
-    /C/Users/ PhotonUser/.ssh/id\_rsa (Private Key)
-
-    /C/Users/PhotonUser/.ssh/id\_rsa.pub (Public Key)
-
-    **NOTE:** id\_rsa.pub will be used to create 
-    Compute instance and id\_rsa to connect via SSH into compute instance.
-
-    **HINT:** Enter command 
-    ```
-    <copy>
-    cd /C/Users/PhotonUser/.ssh (No Spaces) 
-    </copy>
-    ```
-    and then 
-    ```
-    <copy>
-    ls 
-    </copy>
-    ```
-    to verify the two files exist. 
-
-5. In git-bash Enter command  
-
-    ```
-    <copy>
-    cat /C/Users/PhotonUser/.ssh/id_rsa.pub
-    </copy>
-    ```
-    , highlight the key and copy 
-
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL009.PNG " ")
-
-6. Click the apps icon, launch notepad and paste the key in Notepad (as backup)
-
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0010.PNG " ")
-
-7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute**.
-
-8. Click **Create Instance**. Fill out the dialog box:
+2. Click **Create Instance**. Fill out the dialog box:
 
       - **Name your instance**: Enter a name 
       - **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
@@ -183,37 +127,36 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
       - **Boot Volume:** Leave the default
       - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
-9. Click **Create**
+3. Click **Create**
 
     **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD.
 
      ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
 
-10. Wait for Instance to be in **Running** state. In git-bash Enter Command:
+4.  Wait for Instance to be in **Running** state. In your Terminal, go to the folder where you created your SSH key:
     
     ```
-    <copy>
-    cd /C/Users/PhotonUser/.ssh
-    </copy>
+    <copy>cd .ssh</copy>
     ```
 
-11. Enter **ls** and verify id\_rsa file exists
+5.  Enter **ls** and verify your SSH key file exists
 
-12. Enter command 
+6.  Enter command
     ```
-    <copy>
-    bash
-    ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
-    </copy>
+    <copy>bash</copy>
+    ```
+
+    ```
+    <copy>ssh -i &lt;sshkeyname> opc@&lt;PUBLIC_IP_OF_COMPUTE></copy>
     ```
 
     **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste ssh command
 
-13. Enter 'Yes' when prompted for security message
+7.  Enter 'Yes' when prompted for security message
 
      ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
  
-14. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt. Nex install Dcoker, Enter command:
+8.  Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt. Next install Docker, Enter command:
 
     ```
     <copy>
@@ -223,15 +166,15 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
      ![](./../container-registry/images/OCIR_HOL0035.PNG " ")
 
-15. Enter command:
+9.  Enter command:
     
     ```
     <copy>
-    sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo*
+    sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
     </copy>
     ```
 
-16. Enter command:
+10. Enter command:
 
     ```
     <copy>
@@ -240,7 +183,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
     ```
     (Wait for ‘Complete’message)
 
-17. Enter command:
+11. Enter command:
    
     ```
     <copy>
@@ -248,7 +191,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
     </copy>
     ```
 
-18. Enter command:
+12. Enter command:
     
     ```
     <copy>
@@ -256,7 +199,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
     </copy>
     ```
 
-19. Enter command: (To add user opc to Docker)
+13. Enter command: (To add user opc to Docker)
     
     ```
     <copy>
@@ -264,7 +207,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
     </copy>
     ```  
 
-20. Docker is installed and user opc enabled to use Docker. Enter Command 
+14. Docker is installed and user opc enabled to use Docker. Enter Command 
     
     ```
     <copy>
@@ -276,7 +219,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
      ![](./../container-registry/images/OCIR_HOL0036.PNG " ")
 
-21. We will now pull a example image from Docker registry  to the compute instance. Enter Command:
+15. We will now pull a example image from Docker registry  to the compute instance. Enter Command:
 
     ```
     <copy>
@@ -293,7 +236,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
      ![](./../container-registry/images/OCIR_HOL0037.PNG " ")
 
-22. Now we will push this image to Docker registry created in OCI. First login to Registry in OCI. Enter command:
+16. Now we will push this image to Docker registry created in OCI. First login to Registry in OCI. Enter command:
 
     ```
     <copy>
@@ -306,16 +249,16 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
     **HINT:** Your region is shown on top right corner of OCI console window
 
-23. Provide the information:
+17. Provide the information:
 
     - Username:  Enter it in format Tenancy Name/User name (for example: TS-SPL-55/john_doe)
     - Password: Paste the Auth key saved earlier (Characters wont be visible)
 
      ![](./../container-registry/images/OCIR_HOL0038.PNG " ")
 
-24. Verify Login Succeeded message is displayed.
+18. Verify Login Succeeded message is displayed.
 
-25. Next we will tag the image that we pulled from the web. Enter command:
+19. Next we will tag the image that we pulled from the web. Enter command:
 
     ```
     <copy>
@@ -331,7 +274,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
     </copy>
     ```
 
-26. Verify the tag was created, Enter command:
+20. Verify the tag was created, Enter command:
 
     ```
     <copy>
@@ -351,7 +294,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
      ![](./../container-registry/images/OCIR_HOL0039.PNG " ")
 
-27. We will now push the image to docker registry in OCI. Enter command: 
+21. We will now push the image to docker registry in OCI. Enter command: 
 
     ```
     <copy>
@@ -369,11 +312,11 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
     ```
      ![](./../container-registry/images/OCIR_HOL0040.PNG " ")
 
-28. Switch to OCI window and navigate to your registry. Newly pushed image should be visible.
+22. Switch to OCI window and navigate to your registry. Newly pushed image should be visible.
 
     **HINT:** Refresh the browser window if image is not displayed
 
-29. Switch to compute instance ssh window. Enter command:
+23. Switch to compute instance ssh window. Enter command:
     
     ```
     <copy>
@@ -382,7 +325,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
     </copy>  
     ```
 
-30. Verify the pull command was successful
+24. Verify the pull command was successful
 
      ![](./../container-registry/images/OCIR_HOL0041.PNG " ")
 
@@ -396,7 +339,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
 2. If your Compute instance is not displayed, From OCI services menu Click Instances under Compute
 
-3. Locate first compute instance, Click Action icon and then **Terminat** 
+3. Locate first compute instance, Click Action icon and then **Terminate** 
 
      ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
 
@@ -408,7 +351,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 5. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
 appear.
 
-6. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
+6. Locate your VCN , Click Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted
 
      ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
 
@@ -422,7 +365,8 @@ appear.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, June 2020
+- **Contributors** - Kamryn Vinson, QA Specialist
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

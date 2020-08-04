@@ -15,7 +15,7 @@ This 25-minute lab will show you how to setup the Oracle Cloud Infrastructure Co
 ## **STEP 1**: Create the basic OCI resources
 You'll need to keep track of important information about the tenancy, such as resource IDs, Tenancy OCID, Region name and user OCID.
 
-1. Download and save <a href="files/ConvergedDBWorksheet.txt" target="\_blank">ConvergedDBWorksheet.txt</a> to store and keep track of the data you'll need in later labs. Open this file in a text editor.
+1. Download and save <a href="files/msdataworkshop.properties" target="\_blank">msdataworkshop.properties</a> to store and keep track of the data you'll need in later labs. Open this file in a text editor.
 
 2. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Choose **Administration > Tenancy Details**.
 
@@ -244,13 +244,13 @@ Autonomous Database page provide the following basic information and click **Cre
     -   Workload type: `Transaction Processing`
     -   Deployment type: `Shared Infrastructure`
     -   Leave the defaults for version, OCPU count and Storage
-    -   Leave Auto scaling on
-    -   Provide the admin password - *Note: do not use special characters in the password, instead use integers and upper and lower case characters.*
+    -   Auto scaling: `off`
+    -   Provide `Welcome12345` as admin password.
     -   Leave the defaults for network access, which is “Allow secure access from
         everywhere”
     -   License type: `License included`
 
-  ![](images/37-create-atp2.png " ")
+  ![](images/37-create-atp3.png " ")
 
 4. It will take a couple of minutes for the database to be provisioned, in the
 meantime you can proceed to create the second ATP instance. Click the Autonomous
@@ -270,8 +270,8 @@ information and click **Create Autonomous Database**:
     -   Workload type: `Transaction Processing`
     -   Deployment type: `Shared Infrastructure`
     -   Leave the defaults for version, OCPU count and Storage
-    -   Leave Auto scaling on
-    -   Provide the admin password
+    -   Auto scaling: `off`
+    -   Provide `Welcome12345` as admin password.
     -   Leave the defaults for network access, which is “Allow secure access from
         everywhere”
     -   License type: `License included`
@@ -280,7 +280,7 @@ information and click **Create Autonomous Database**:
 
 6. Once both databases are provisioned you should see the state changed to
 Available. Click on each of the ATP names in order to go to their pages and copy
-their OCIDs.
+their OCIDs into the msdataworkshop.properties file.
 
   ![](images/41-copy-atp-ocids.png " ")
 
