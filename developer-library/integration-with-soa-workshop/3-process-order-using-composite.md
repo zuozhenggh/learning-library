@@ -15,10 +15,11 @@ At the end of this module, your solution will look similar to the following proc
 
 # High Level Steps
 
-1. Open e2e-1201-servicebus application and import Pipeline template resources (new feature!).
-2. Configure ProcessOrder Business Service.
-3. Configure Pipeline and Proxy using Pipeline template.
-4. Test your application end-to-end.
+1. In part 1, Open e2e-1201-servicebus application and import Pipeline template resources (new feature!).
+2. In part 2,
+   * Configure ProcessOrder Business Service.
+   * Configure Pipeline and Proxy using Pipeline template.
+   * Test your application end-to-end.
 
 
 ### **Part 1**: Build process order Composite
@@ -31,7 +32,8 @@ You will now create another SOA application that will accept new purchase orders
 
     ![](images/3/ProcessOrderComposite.png)
 
-To complete part 1, the details start <ins>**Chapter 3, page 80 to 116** of the tutorial </ins>
+### Details: ###
+To complete part 1, please start <ins>**Chapter 3, page 80 to 116** of the SOAsuite 12c tutorial.pdf </ins>
 
 ### **Part 2**: Register process order on Service Bus 
 As you have completed and tested the Process Order composite, you will register it on Service Bus to make it available for external consumers. 
@@ -42,7 +44,8 @@ As you have completed and tested the Process Order composite, you will register 
 
     ![](images/3/ProxyService.png)
 
-To complete part 2, please start on <ins> **chapter 3, page 117 to 137** </ins> in the SOA suite Tutorial.pdf document
+### Details: ###
+To complete part 2, please review on <ins> **chapter 3, page 117 to 137** </ins> of the SOAsuite tutorial document
 
 ### **Summary**
 In module 3, you've accomplished:

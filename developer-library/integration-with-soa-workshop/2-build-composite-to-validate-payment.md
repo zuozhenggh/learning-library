@@ -42,6 +42,7 @@ The business has indicated a new credit card fraud detection system must be put 
 
     ![](images/2/deployment.png)
 
+### Details: ###
 To complete Part 1, please go to Chapter 2, from <ins>**page 11 to 53** in the  SOASuite12c_Tutorial.pdf</ins> document.
 
 The tutorial pdf document can be found on the desktop of your OCI Linux instance.
@@ -55,7 +56,7 @@ In part 1, you have completed the validatePayment process composite, you will re
 
 Service Bus will protect consumers of the validatePayment composite from routine changes such as deployment location and implementation updates. Service Bus will help scale the service to handle higher volume of requests and provide resiliency for the service if it needs to be taken down for routine maintenance.
 
-Please follow the construction details from <ins>**page 54 to 77**, in the SOA suite tutorial</ins>.
+
 
 **High-Level Steps:**
 
@@ -87,8 +88,11 @@ Please follow the construction details from <ins>**page 54 to 77**, in the SOA s
    
     ![](images/2/ServiceBusProxyTesting.png)
 
+### Details: ###
+Please follow the construction details from <ins>**page 54 to 77**, in the SOAsuite 12c tutorial</ins>.
 
-Congratulations you have just completed your first SOA Suite 12c composite! in Part 1 and 2 for developing validate payment using SOA Composite approach.
+
+
 
 [Click here to navigate to the next Module 3](3-process-order-using-composite.md)
 

@@ -17,6 +17,7 @@ and shipping state.
 6. The Order is sent to the packing service via SOA REST outbound.
 7. The coherence adapter puts the shipping provider into the cache, so that it can be retrieved from the cache instead of the database. Step 7 is optional as it requires Coherence to be installed on the weblogic server.
 
+### Details: ###
 Please follow, the details as outlined in **Chapter 6, starting page 254** in the tutorial. 
 
 When it’s completed, your overall fullfillOrder project will look similar to composite apps composed of orchestrated business services

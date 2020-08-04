@@ -4,9 +4,10 @@ In this module, you will build the first part of the order fulfillment service. 
 Once the order has been shipped, an email is sent to the customer confirming the shipping provider and the order status is updated to Shipped.
 This chapter will build the pack and ship service, including the email notification.
 
-### **Primary task**: Build the pack and ship service
-The pack and ship service is defined with a REST interface and accepts a Shipping resource (part of the canonical order message). It initiates the packing and shipping of one order and notifies the customer that the order has shipped. It also updates the order status in the database to Shipped.
-### Details: ###
+### **Objective**: Build the pack and ship service
+For this module, the pack and ship service is defined with a REST interface and accepts a Shipping resource (part of the canonical order message). It initiates the packing and shipping of one order and notifies the customer that the order has shipped. It also updates the order status in the database to Shipped.
+
+### **High level steps
 
 1. Create a new SOA project PackAndShipService with an empty composite in the application e2e-1201-composites.
 2. Define a REST interface for the Packing Service Project
@@ -15,7 +16,8 @@ The pack and ship service is defined with a REST interface and accepts a Shippin
 5. Update th order status in the database, embedded Java DB
 6. Add a composite sesor
 7. Setup an email notification
-   
+
+### Details: ###   
 Please start from <ins> **chapter 5, page 191 to 253** in the tutorial document</ins>.
 
 The Pack and ship composite in JDeveloper would look like the following:
