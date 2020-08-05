@@ -12,8 +12,7 @@ PLEASE DO NOT EXPORT OR DELETE THE EM CUSTOM IMAGE - IT WILL REMOVE IT FOR EVERY
 -  Google Chrome
 
 ## Enterprise Manager Workshops
-Find the Setup, FAQ and Workshop documents at:
-[Enterprise Manager Workshops](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/)
+1. [Enterprise Manager Workshops](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/)
 
 ## Oracle Management Cloud Workshops
 1. [Proactive Database Performance Management with IT Analytics](management_cloud/pro_dbperf_ita.md)
