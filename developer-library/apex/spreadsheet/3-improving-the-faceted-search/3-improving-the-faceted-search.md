@@ -59,7 +59,7 @@ Reviewing the facets, you will notice that Status is down the page and you can c
 
 ## **Summary**
 
-This completes Lab 2. You now know how to enhance a faceted search page and have been introduced to Page Designer. [Click here to navigate to Lab 3](?lab=lab-3-improve-report-form)
+You now know how to enhance a faceted search page and have been introduced to Page Designer. 
 
 ## **Acknowledgements**
 

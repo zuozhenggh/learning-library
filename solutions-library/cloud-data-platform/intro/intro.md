@@ -39,6 +39,7 @@ Please proceed to the next lab (right pane).
 
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
+- **Contributors** - LiveLabs QA Team (Jeffrey Malcolm, QA Specialist, Kamryn Vinson, QA Specialist, Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Jess Rein, Cloud Engineer, June 2020
 
 
