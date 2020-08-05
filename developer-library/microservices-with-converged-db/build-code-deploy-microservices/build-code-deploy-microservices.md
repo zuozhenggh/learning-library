@@ -42,20 +42,13 @@ In order to divide and isolate cluster resources, you will create a cluster
 ## **STEP 2**: Download workshop source code, install GraalVM, and install Jaeger
 
 1. To work with application code, you need to download a GitHub repository using
-    the following command. The Cloud Shell already has the `wget` command
-    installed:
+    the following curl and unzip command. The workshop assumes this is done from the user's root directory.
 
     ```
-    <copy>wget https://tinyurl.com/y3pqypkc</copy>
-    ```
-
-2. Unzip the file you downloaded:
-
-    ```
-    <copy>unzip master.zip</copy>
+    <copy>curl -sL https://tinyurl.com/y3pqypkc --output master.zip ; unzip master.zip ; rm master.zip</copy>
     ```
    
-3. Install GraalVM
+2. Install GraalVM
   
     Run the install script from your user root directory ./msdataworkshop-master/installGraalVM.sh 
     ```
@@ -71,7 +64,7 @@ In order to divide and isolate cluster resources, you will create a cluster
   
   Note the graalvm install location in msdataworkshop.properties and change it if necessary.
   
-4. Install Jaeger and note the services it installs
+3. Install Jaeger and note the services it installs
    
      ```
         <copy>kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml -n msdataworkshop</copy>
@@ -79,11 +72,11 @@ In order to divide and isolate cluster resources, you will create a cluster
 
    ![demo-erd.png](images/jaegerinstall.png " ")
    
-5.  Issue the `kubectl get services --all-namespaces` command and notice the services it installs.  The jaeger-query is a loadbalancer exposing an external-ip and runs on port 80.
+4.  Issue the `kubectl get services --all-namespaces` command and notice the services it installs.  The jaeger-query is a loadbalancer exposing an external-ip and runs on port 80.
    
    ![demo-erd.png](images/jaegerservice.png " ")
    
-6.  The jaeger-collector is referenced in $MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties and $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties 
+5.  The jaeger-collector is referenced in $MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties and $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties 
    
    ![demo-erd.png](images/tracingprops.png " ")
    
