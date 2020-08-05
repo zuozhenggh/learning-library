@@ -16,16 +16,17 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 [Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
 
 ### Objectives
--   Setup a network and compute instance using the  Marketplace image specified in the Introduction
+-   Setup compute instance using the  Marketplace image specified in the Introduction and optionally a virtual cloud network if no existing VCN meets the requirements
 -   Use Terraform and Resource Manager to complete the setup
 
 ### Prerequisites
-This lab assumes you have already completed the following labs:
-* [Lab 1: Login to Oracle Cloud](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-1-login-oracle-cloud)
-* [Lab 2: Generate SSH Key](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-2-generate-ssh-key)
+This lab assumes you have already completed or review the following:
+* [Access to Oracle Free Tier or Paid Cloud account](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=prerequisites)
+* [Generated SSH Keys](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=lab-2-generate-ssh-key)
 
 ## Step 1: Login and Create Stack using Resource Manager
 
+### Option #1 - Stack creates Innstance(s) and self-contained VCN
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
     - [emcc-mkplc-v3-flex-shape.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xAlfRIvOLUs4-8CghEQ982ySwiEMYOKtbFWD6ptNdsA/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-flex-shape.zip) - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
@@ -56,15 +57,18 @@ Enter the following information:
 
   ![](./images/em-create-stack-2.png " ")
 
-Enter the following information:
+Enter or select the following:
 
 **(1) Instance Count:** Keep the default to **1** to create only one instance.
 
-**(2) Instance OCPUS:** Keep the default to **3** to provision ***VM.Standard.E3.Flex*** shape with 3 OCPU's.
+**(2) Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
 
 **(3) Select Availability Domain:** Select an availability domain from the dropdown list.
 
 **(4) SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
+
+**(5) Use Existing VCN?:** Keep the default by keeping unchecked to create a new VCN.
+
 
 6. Review and click **Create**.
 
@@ -75,6 +79,94 @@ Enter the following information:
 7. Your stack has now been created!  
 
   ![](./images/em-stack-details.png " ")
+
+### Option #2 - Stack creates Instance(s) and uses existing VCN
+
+  1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
+      - [emcc-mkplc-v3-flex-shape.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Xe5QlJ6GfnEXNxkLAOCLNtoaFEyBN-TsB7kt0N4oMIA/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-flex-shape.zip) - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
+
+  2.  Save in your downloads folder.
+
+  3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
+
+    ![](./images/em-oci-landing.png " ")
+
+    ![](./images/em-nav-to-orm.png " ")
+
+    ![](./images/em-create-stack.png " ")
+
+  4.  Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-v3-flex-shape.zip) that you downloaded. Click **Select**.
+
+    ![](./images/em-create-stack-1.png " ")
+
+  Enter the following information:
+
+  - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
+
+  - **Description**:  Same as above
+
+  - **Create in compartment**:  Select the correct compartment if not already selected
+
+
+  5.  Click **Next**.
+
+    ![](./images/em-create-stack-2b.png " ")
+
+Enter or select the following:
+
+  **(1) Instance Count:** Keep the default to **1** to create only one instance.
+
+  **(2) Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
+
+  **(3) Select Availability Domain:** Select an availability domain from the dropdown list.
+
+  **(4) SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
+
+  **(5) Use Existing VCN?:** Check to select.
+
+  ![](./images/em-create-stack-2c.png " ")
+
+  **(6) Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
+
+  ![](./images/em-create-stack-2d.png " ")
+
+  **(7) Select Public Subnet:** Select existing public subnet from above VCN.
+
+  6. Review and click **Create**.
+
+  *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
+
+    ![](./images/em-create-stack-3b.png " ")
+
+  7. Your stack has now been created!  
+
+    ![](./images/em-stack-details-b.png " ")
+
+  *Note: For an existing VCN to be used successfully, it must at the minimum contain the following:*
+  - Regional public subnet
+  - Internet gateway
+  - Route table via internet gateway
+  - Security list with following:
+    - egress rules:
+      - TCP, All/All, 0.0.0.0/0 (more restrictions to limit access to select segment OK as well)
+    - Ingress rules:
+      - IMCP, "3,4", 0.0.0.0/0 (more restrictions to limit access to select segment OK as well)
+      - TCP, All/9851, 0.0.0.0/0 (more restrictions to limit access to select segment OK as well)
+      - TCP, All/7803, 0.0.0.0/0 (more restrictions to limit access to select segment OK as well)
+      - TCP, All/22, 0.0.0.0/0 (more restrictions to limit access to select segment OK as well)
+      - TCP, All Protocols, 10.0.0.0/16
+
+  ![](./images/em-vcn-details-1.png " ")
+
+  ![](./images/em-vcn-details-2.png " ")
+
+  ![](./images/em-vcn-details-ingress.png " ")
+
+  ![](./images/em-vcn-details-egress.png " ")
+
+  ![](./images/em-vcn-details-internet-gw.png " ")
+
+  ![](./images/em-vcn-details-route-table.png " ")
 
 ## Step 2: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. You may skip to Step 3.
@@ -91,10 +183,12 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
   ![](./images/em-stack-plan-results-3.png " ")
 
+  ![](./images/em-stack-plan-results-4.png " ")
+
 ## Step 3: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
 
-1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your network, instance and install Oracle 19c.
+1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and instance(s) containing a pre-configured Enterprise Manager 13c with running database targets.
 
   ![](./images/em-stack-details-post-plan.png " ")
 
@@ -102,13 +196,13 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
   ![](./images/em-stack-apply-2.png " ")
 
-2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 7 resources have been added.  Congratulations, your environment is created!  Time to login to your instance to finish the configuration.
+2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added.  Congratulations, your environment is created!  Time to login to your instance to finish the configuration.
 
-  ![](./images/em-stack-plan-results-1.png " ")
+  ![](./images/em-stack-apply-results-1.png " ")
 
-  ![](./images/em-stack-plan-results-2.png " ")
+  ![](./images/em-stack-apply-results-2.png " ")
 
-  ![](./images/em-stack-plan-results-3.png " ")
+  ![](./images/em-stack-apply-results-3.png " ")
 
 ## Step 4: Connect to your instance
 
@@ -205,7 +299,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Kay Malcolm, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, July 2020
+- **Authors/Contributors** - Rene Fontcha, Kay Malcolm
+- **Last Updated By/Date** - Rene Fontcha, August 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request.
