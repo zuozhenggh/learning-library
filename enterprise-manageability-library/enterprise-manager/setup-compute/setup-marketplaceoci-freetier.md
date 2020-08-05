@@ -48,6 +48,7 @@ Enter the following information:
   - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
   - **Description**:  Same as above
   - **Create in compartment**:  Select the correct compartment if not already selected
+*Note: If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
 
 5.  Click **Next**.
 
@@ -59,6 +60,7 @@ Enter or select the following:
   - **(3) Select Availability Domain:** Select an availability domain from the dropdown list.
   - **(4) SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
   - **(5) Use Existing VCN?:** Keep the default by keeping unchecked to create a new VCN.
+
 
 6. Review and click **Create**.
 
@@ -72,11 +74,11 @@ Enter or select the following:
 
 ### *Option #2 - Stack creates Instance(s) and uses existing VCN*
 
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
+1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
   - [emcc-mkplc-v3-flex-shape.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Xe5QlJ6GfnEXNxkLAOCLNtoaFEyBN-TsB7kt0N4oMIA/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-flex-shape.zip) - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
-2.  Save in your downloads folder.
-3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
+2. Save in your downloads folder.
+3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
 
 ![](./images/em-oci-landing.png " ")
 
@@ -84,7 +86,7 @@ Enter or select the following:
 
 ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-v3-flex-shape.zip) that you downloaded. Click **Select**.
+4. Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-v3-flex-shape.zip) that you downloaded. Click **Select**.
 
 ![](./images/em-create-stack-1.png " ")
 
@@ -92,8 +94,9 @@ Enter the following information:
   - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
   - **Description**:  Same as above
   - **Create in compartment**:  Select the correct compartment if not already selected
+*Note: If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
 
-5.  Click **Next**.
+5. Click **Next**.
 
 ![](./images/em-create-stack-2b.png " ")
 
@@ -111,6 +114,8 @@ Enter or select the following:
 ![](./images/em-create-stack-2d.png " ")
 
   - **(7) Select Public Subnet:** Select existing public subnet from above VCN.
+
+*Note: For an existing VCN Option to be used successful, review the details at the bottom of this section*
 
 6. Review and click **Create**.
 
