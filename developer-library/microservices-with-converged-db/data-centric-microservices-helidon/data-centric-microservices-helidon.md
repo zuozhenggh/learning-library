@@ -5,7 +5,6 @@
 This lab will show you how to deploy and run data-centric microservices highlighting use of different data types, data and transaction patterns, and various Helidon MP features.
 The lab will then show you metrics, health checks and probes, and tracing that have been enabled via Helidon annotations and configuration.
 
-![](images/veggie-dash-app-arch.png " ")
 
 ### Objectives
 -   Create and bind OCI Service Broker to existing ATP instance
@@ -33,10 +32,16 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
     The Food Order application consists of a mock Mobile App (Frontend Helidon
     microservice) that places and shows orders via REST calls to the order-helidon
-    microservice. Managing inventory is done with calls over gRPC to the
-    supplier-helidon microservice, as shown in the below architecture diagram.
+    microservice. Managing inventory is done with calls to the
+    supplier-helidon microservice.  
+    When an order is placed, the order service inserts the order in JSON format and in the same local transaction sends an `orderplaced` message using AQ JMS.
+    The inventory service dequeus this message, validates and adjusts inventory, and enqueues a message stating the inventory location for the item ordered or an `inventorydoesnotexist` status if there is insufficient inventory.
+    This dequeue, database operation, and enqueue are done within the same local transaction.
+    Finally, the order service dequeues the inventory status message for the order and returns the resultant order success or failure to the frontend service. 
+      
+    This is shown in the below architecture diagram.
 
-   ![orderinventoryapp-microservices.png](images/44a8fd16bc5055d852ecde8347244dd6.png " ")
+   ![](images/grubdash-app-arch.png " ")
 
 2. Open the Cloud Shell and go to the order folder, using the following command.
 
@@ -258,15 +263,22 @@ next lab.
 
 ## **STEP 5**: Verify tracing
    
-1. Notice @Traced annotations and calls to set tags, baggage, etc. on placeOrder method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
+1. Notice @Traced annotations on `placeOrder` method of $MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/java/io/helidon/data/examples/FrontEndResource.java and `placeOrder` method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
+   Also notice the additional calls to set tags, baggage, etc. in this `OrderResource.placeOrder` method.
 
    ![demo-erd.png](images/ordertracingsrc.png " ")
 
-2. Place an order as done in Step 1
+2. Place an order if not already done in Step 1
 
-3. Click **Tracing** to open the Jaeger UI and view various traces including the placeOrder trace.
+3. Click **Tracing** to open the Jaeger UI, select `frontend.msdataworkshowp` from the `Service` dropdown menu and click `Find Traces` button.
 
-   ![demo-erd.png](images/jaegerui.png " ")
+   ![demo-erd.png](images/jaegertrace.png " ")
+   
+   Select a trace with a large number of spans and drill down on the various spans of the trace and associated information. In this case we see placeOrder order, saga, etc. information in logs, tags, and baggage.
+   
+   
+   ![demo-erd.png](images/jaegertracedetail.png " ")
+   
 
 ## Conclusion
 

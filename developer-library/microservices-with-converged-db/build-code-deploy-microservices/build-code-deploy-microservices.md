@@ -46,7 +46,7 @@ In order to divide and isolate cluster resources, you will create a cluster
     installed:
 
     ```
-    <copy>https://objectstorage.us-phoenix-1.oraclecloud.com/p/uMZ6J94ZgyOB70YK1wz8teqRgp3x_Yt_pXO2d_w0NwA/n/stevengreenberginc/b/msdataworkshop/o/master.zip</copy>
+    <copy>wget https://tinyurl.com/y3pqypkc</copy>
     ```
 
 2. Unzip the file you downloaded:
@@ -79,7 +79,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
    ![demo-erd.png](images/jaegerinstall.png " ")
    
-5.  Issue the `services` command and notice the services it installs.  The jaeger-query is a loadbalancer exposing an external-ip and runs on port 80.
+5.  Issue the `kubectl get services --all-namespaces` command and notice the services it installs.  The jaeger-query is a loadbalancer exposing an external-ip and runs on port 80.
    
    ![demo-erd.png](images/jaegerservice.png " ")
    
@@ -88,7 +88,7 @@ In order to divide and isolate cluster resources, you will create a cluster
    ![demo-erd.png](images/tracingprops.png " ")
    
    Insure these values match.
-   
+   wget
    The jaeger-query is the load balancer address for visualizing the Jaeger UI 
    
    Note the JAEGER_QUERY_ADDRESS external-ip:port in msdataworkshop.properties.
@@ -126,6 +126,8 @@ In order to divide and isolate cluster resources, you will create a cluster
    
      ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
+    This will set the properties needed to deploy and run the workshop and will also provide convenient shortcut commands.
+    The kubernetes resources created by the workshop and commands can be viewed by issuing the `msdataworkshop` command.
 
 ## **STEP 4**: Deploy and access Frontend microservice
 
