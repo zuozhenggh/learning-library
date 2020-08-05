@@ -16,6 +16,7 @@ This 25-minute lab will show you how to setup the Oracle Cloud Infrastructure Co
 You'll need to keep track of important information about the tenancy, such as resource IDs, Tenancy OCID, Region name and user OCID.
 
 1. Download and save <a href="files/msdataworkshop.properties" target="\_blank">msdataworkshop.properties</a> to store and keep track of the data you'll need in later labs. Open this file in a text editor.
+   You will later save this file in Cloud Shell and source it for the workshop.
 
 2. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Choose **Administration > Tenancy Details**.
 
