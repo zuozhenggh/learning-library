@@ -1,9 +1,9 @@
-# Review Polyglot Code
+# Polyglot Microservices
 ## Introduction
 
 This lab will show you how to switch the Inventory microservice to a Python, Node.js or Java Helidon SE implementation while retaining the same application functionality.
 
-![](images/veggie-dash-app-arch.png " ")
+![](images/architecture.png " ")
 
 ### Objectives
 -   Undeploy the existing Java Helidon MP Inventory microservice

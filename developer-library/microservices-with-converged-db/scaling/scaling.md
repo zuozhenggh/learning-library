@@ -3,7 +3,7 @@
 
 This lab will show how the application can be scaled at the application and database tiers to maintain optimal performance.
 
-![](images/veggie-dash-app-arch.png " ")
+![](images/architecture.png " ")
 
 ### Objectives
 -   Install the k6 load testing tool
