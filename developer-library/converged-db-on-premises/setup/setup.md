@@ -12,9 +12,8 @@ Estimated time: 10 Minutes
 
 ### Prerequisites
 
-- Lab 1: Login to Oracle Cloud
-- Lab 2: Generate SSH Key
-- Lab 3: Create Compute Instance
+- Lab: Generate SSH Key
+- Lab: Setup Compute Instance
 
 ## STEP 1: Start the Database and the Listener
 
@@ -27,7 +26,7 @@ Estimated time: 10 Minutes
    ![](./images/public_ip.png " ")
 
 
-3. In Oracle CloudShell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user.  
+3. In Oracle Cloud Shell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user.  
 
       ````
       ssh -i <<sshkeylocation>> opc@<<your address>>

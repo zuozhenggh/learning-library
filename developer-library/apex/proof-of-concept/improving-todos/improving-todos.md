@@ -183,7 +183,7 @@ This same LOV is used on the Links form page so we can reuse it there as well.
 
 ## **Summary**
 
-This completes Lab 5. You now know how to enhance report and list of value queries to display related details. [Click here to navigate to Lab 6](?lab=lab-6-improving-links)
+You now know how to enhance report and list of value queries to display related details. [
 
 ## **Acknowledgments**
 
