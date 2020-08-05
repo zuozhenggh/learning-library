@@ -48,6 +48,7 @@ Enter the following information:
   - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
   - **Description**:  Same as above
   - **Create in compartment**:  Select the correct compartment if not already selected
+
 *Note: If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
 
 5.  Click **Next**.
@@ -94,6 +95,7 @@ Enter the following information:
   - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
   - **Description**:  Same as above
   - **Create in compartment**:  Select the correct compartment if not already selected
+
 *Note: If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
 
 5. Click **Next**.
