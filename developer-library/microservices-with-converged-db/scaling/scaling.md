@@ -14,7 +14,7 @@ This lab will show how the application can be scaled at the microservice and dat
 
 ### What Do You Need?
 
-This lab assuemes that you have already completed labs 1 through 4.
+This lab assumes that you have already completed labs 1 through 4.
 
 ## **STEP 1**: Setup: Install the k6 load testing tool and start and external load balancer for the Order service
 
