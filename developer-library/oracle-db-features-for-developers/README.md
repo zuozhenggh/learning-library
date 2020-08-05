@@ -1,17 +1,6 @@
 # Oracle Database 19c for Developers
 
-
 Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Oracle offers choice, portability and interoperability with other technologies, including open source and third-party components. Developers can build with the latest technologies, such as AI/ML, autonomous databases, Gen 2 cloud infrastructure, Kubernetes, serverless, blockchain, digital assistants, and more.
-
-Click on one of our workshops below to access the content.
-
-## Workshops
-
-- [Database Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/)
-- [Hybrid Partitioning](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/hybridpart-freetier)
-- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier)
-- [Automatic Indexing](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/autoindex-freetier)
-- [Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier)
 
 
 ## Get an Oracle Cloud Trial Account for Free!

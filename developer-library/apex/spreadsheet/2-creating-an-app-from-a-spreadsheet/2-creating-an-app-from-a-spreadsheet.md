@@ -82,7 +82,7 @@ The Data Load wizard has created a new table and populated that table with the r
 
 ## **Summary**
 
-This completes Lab 1. You now know how to create an application from a spreadsheet by either dragging and dropping a file or loading sample data for training purposes. [Click here to navigate to Lab 2](?lab=lab-2-improve-faceted-search)
+You now know how to create an application from a spreadsheet by either dragging and dropping a file or loading sample data for training purposes. 
 
 ## **Acknowledgements**
 

@@ -11,10 +11,9 @@ Estimated Lab Time: 30 Minutes
 **What Do You Need?**
 
 This lab assumes you have completed the following labs:
-- Lab 1:  Login to Oracle Cloud
-- Lab 2:  Generate SSH Key
-- Lab 3:  Create Compute instance
-- Lab 4:  Environment setup
+- Lab: Generate SSH Key
+- Lab: Setup Compute Instance
+- Lab: Start Database and Application
 
 ### Overview of Oracle Graph
 

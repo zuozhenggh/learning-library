@@ -9,11 +9,10 @@ Estimated Lab Time: 20 Minutes
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-- Lab 1:  Login to Oracle Cloud
-- Lab 2:  Generate SSH Key
-- Lab 3:  Create Compute instance
-- Lab 4:  Environment setup
-- Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
+- Lab: Generate SSH Key
+- Lab: Setup Compute Instance
+- Lab: Start Database and Application
+*Note:  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.*
 
 ### About Oracle JSON
 
