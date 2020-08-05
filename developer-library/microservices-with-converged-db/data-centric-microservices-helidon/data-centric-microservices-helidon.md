@@ -28,7 +28,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
     Helidon services. The Food Order application consists of the following
     tables shown in the ER diagram
 
-   ![demo-erd.png](images/a0f7c519ae73acfed3a5e47dfc74b324.png " ")
+   ![](images/a0f7c519ae73acfed3a5e47dfc74b324.png " ")
 
     The Food Order application consists of a mock Mobile App (Frontend Helidon
     microservice) that places and shows orders via REST calls to the order-helidon
@@ -208,16 +208,16 @@ next lab.
 
 1. Notice @Timed and @Counted annotations on placeOrder method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
-   ![demo-erd.png](images/OrderResourceAnnotations.png " ")
+   ![](images/OrderResourceAnnotations.png " ")
 
 
 2. Click **Tracing, Metrics, Health**
 
-   ![demo-erd.png](images/tracingmetricshealth-blankpage.png " ")
+   ![](images/tracingmetricshealth-blankpage.png " ")
    
 2. Click **Metrics** and notice the long string of metrics (including those from placeOrder timed and counted) in prometheus format.
 
-   ![demo-erd.png](images/metrics.png " ")
+   ![](images/metrics.png " ")
 
 
 ## **STEP 4**: Verify health
@@ -228,7 +228,7 @@ next lab.
        requests or not). In this STEP you will see how the probes pick up the
        health that the Helidon microservice advertises. Click **Tracing, Metrics, Health** and click **Show Health: Liveness**
 
-   ![demo-erd.png](images/healthliveliness.png " ")
+   ![](images/healthliveliness.png " ")
    
 2. Notice health check class at `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderServiceLivenessHealthCheck.java` and how the liveness method is being calculated.
      
@@ -239,25 +239,25 @@ next lab.
                                                                                                            GET to check the /health/live and /health/ready addresses every 3 seconds, to
                                                                                                            see the liveness and readiness of the service.
 
-   ![demo-erd.png](images/livenessprobeinyaml.png " ")
+   ![](images/livenessprobeinyaml.png " ")
 
 4. In order to observe how OKE will manage the pods, the microservice has been
        created with the possibility to set up the liveliness to “false”. Click **Get Last Container Start Time** and note the time the container started.
 
-   ![demo-erd.png](images/lastcontainerstarttime1.png " ")
+   ![](images/lastcontainerstarttime1.png " ")
 
 5. Click **Set Liveness to False** . This will cause the Helidon Health Check to report false for liveness which will result in OKE restarting the pod/microservice
 
-   ![demo-erd.png](images/lastcontainerstarttime1.png " ")
+   ![](images/lastcontainerstarttime1.png " ")
 
 6. Click **Get Last Container Start Time**.
    It will take a minute or two for the probe to notice the failed state and conduct the restart and as it does you may see a connection refused exception.
 
-   ![demo-erd.png](images/connectionrefused.png " ")
+   ![](images/connectionrefused.png " ")
 
    Eventually you will see the container restart and note the new/later container startup time reflecting that the pod was restarted.
     
-   ![demo-erd.png](images/lastcontainerstartuptime2.png " ")
+   ![](images/lastcontainerstartuptime2.png " ")
 
 
 
@@ -266,18 +266,18 @@ next lab.
 1. Notice @Traced annotations on `placeOrder` method of $MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/java/io/helidon/data/examples/FrontEndResource.java and `placeOrder` method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
    Also notice the additional calls to set tags, baggage, etc. in this `OrderResource.placeOrder` method.
 
-   ![demo-erd.png](images/ordertracingsrc.png " ")
+   ![](images/ordertracingsrc.png " ")
 
 2. Place an order if not already done in Step 1
 
 3. Click **Tracing** to open the Jaeger UI, select `frontend.msdataworkshowp` from the `Service` dropdown menu and click `Find Traces` button.
 
-   ![demo-erd.png](images/jaegertrace.png " ")
+   ![](images/jaegertrace.png " ")
    
    Select a trace with a large number of spans and drill down on the various spans of the trace and associated information. In this case we see placeOrder order, saga, etc. information in logs, tags, and baggage.
    
    
-   ![demo-erd.png](images/jaegertracedetail.png " ")
+   ![](images/jaegertracedetail.png " ")
    
 
 ## Conclusion

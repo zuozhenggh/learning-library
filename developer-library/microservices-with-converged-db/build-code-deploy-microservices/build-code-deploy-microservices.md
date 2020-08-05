@@ -56,10 +56,10 @@ In order to divide and isolate cluster resources, you will create a cluster
     ```
    
 3. Install GraalVM
-
-    Run install script in root directory ./installGraalVM.sh 
+  
+    Run the install script from your user root directory ./msdataworkshop-master/installGraalVM.sh 
     ```
-    <copy>./installGraalVM.sh </copy>
+    <copy>./msdataworkshop-master/installGraalVM.sh</copy>
     ```
 
     Verify install by running ~/graalvm-ce-java11-20.1.0/bin/java -version
