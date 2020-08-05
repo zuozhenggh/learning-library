@@ -176,7 +176,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 ![](./images/em-stack-apply-2.png " ")
 
-2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added.  Congratulations, your environment is created!  Time to login to your instance to finish the configuration.
+2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added (3 only if using an existing VCN).  Congratulations, your environment is created!  Time to login to your instance and validate before getting started on labs.
 
 ![](./images/em-stack-apply-results-0.png " ")
 
