@@ -59,9 +59,13 @@ Enter or select the following:
   - **(1) Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
   - **(2) Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
   - **(3) Select Availability Domain:** Select an availability domain from the dropdown list.
-  - **(4) SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
+  - **(4) SSH Public Key**:  Paste the public key you created in the earlier lab
+
+*Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+
   - **(5) Use Existing VCN?:** Keep the default by keeping unchecked to create a new VCN.
 
+Next step.
 
 6. Review and click **Create**.
 
@@ -106,7 +110,10 @@ Enter or select the following:
   - **(1) Instance Count:** Keep the default to **1** to create only one instance.
   - **(2) Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
   - **(3) Select Availability Domain:** Select an availability domain from the dropdown list.
-  - **(4) SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
+  - **(4) SSH Public Key**:  Paste the public key you created in the earlier lab
+
+*Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+
   - **(5) Use Existing VCN?:** Check to select.
 
 ![](./images/em-create-stack-2c.png " ")
