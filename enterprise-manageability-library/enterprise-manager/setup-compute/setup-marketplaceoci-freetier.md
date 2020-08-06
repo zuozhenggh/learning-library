@@ -20,7 +20,7 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 -   Use Terraform and Resource Manager to complete the setup
 
 ### Prerequisites
-This lab assumes you have already completed or review the following:
+This lab assumes you have already completed or reviewed the following:
 * [Access to Oracle Free Tier or Paid Cloud account](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=prerequisites)
 * [Generated SSH Keys](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=lab-2-generate-ssh-key)
 
@@ -68,8 +68,6 @@ Enter or select the following:
 Next step.
 
 6. Review and click **Create**.
-
-*Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 
 ![](./images/em-create-stack-3.png " ")
 
@@ -127,8 +125,6 @@ Enter or select the following:
 *Note: For an existing VCN Option to be used successful, review the details at the bottom of this section*
 
 6. Review and click **Create**.
-
-*Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 
 ![](./images/em-create-stack-3b.png " ")
 
@@ -234,7 +230,6 @@ ssh  opc@<Your Compute Instance Public IP Address>
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 2.  On the instance homepage, find the Public IP address for your instance.
-
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
 ````
@@ -249,14 +244,12 @@ ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
 
 1.  Download and install PuTTY. [http://www.putty.org](http://www.putty.org)
-
 2.  Run the PuTTY program. On your computer, go to **All Programs > PuTTY > PuTTY**
-
 3.  Select or enter the following information:
-  - Category: _Session_
-  - IP address: _Your service instance’s public IP address_
-  - Port: _22_
-  - Connection type: _SSH_
+    - Category: _Session_
+    - IP address: _Your service instance’s public IP address_
+    - Port: _22_
+    - Connection type: _SSH_
 
 ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
@@ -271,18 +264,14 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 #### **Adding Your Private Key**
 
 1.  In the category section, **Click** Auth.
-
-2.  **Click** browse and find the private key file that matches your VM’s public
-  key. This private key should have a .ppk extension for PuTTy to work.
+2.  **Click** browse and find the private key file that matches your VM’s public key. This private key should have a .ppk extension for PuTTy to work.
 
 ![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
 
 To save all your settings:
 
 1.  In the category section, **Click** session.
-
-2.  In the saved sessions section, name your session, for example ( EM13C-ABC )
-  and **Click** Save.
+2.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
 You may now proceed to the next lab.  
 
