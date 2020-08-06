@@ -42,24 +42,17 @@ In order to divide and isolate cluster resources, you will create a cluster
 ## **STEP 2**: Download workshop source code, install GraalVM, and install Jaeger
 
 1. To work with application code, you need to download a GitHub repository using
-    the following command. The Cloud Shell already has the `wget` command
-    installed:
+    the following curl and unzip command. The workshop assumes this is done from the user's root directory.
 
     ```
-    <copy>https://objectstorage.us-phoenix-1.oraclecloud.com/p/uMZ6J94ZgyOB70YK1wz8teqRgp3x_Yt_pXO2d_w0NwA/n/stevengreenberginc/b/msdataworkshop/o/master.zip</copy>
-    ```
-
-2. Unzip the file you downloaded:
-
-    ```
-    <copy>unzip master.zip</copy>
+    <copy>curl -sL https://tinyurl.com/y3pqypkc --output master.zip ; unzip master.zip ; rm master.zip</copy>
     ```
    
-3. Install GraalVM
-
-    Run install script in root directory ./installGraalVM.sh 
+2. Install GraalVM
+  
+    Run the install script from your user root directory ./msdataworkshop-master/installGraalVM.sh 
     ```
-    <copy>./installGraalVM.sh </copy>
+    <copy>./msdataworkshop-master/installGraalVM.sh</copy>
     ```
 
     Verify install by running ~/graalvm-ce-java11-20.1.0/bin/java -version
@@ -71,24 +64,24 @@ In order to divide and isolate cluster resources, you will create a cluster
   
   Note the graalvm install location in msdataworkshop.properties and change it if necessary.
   
-4. Install Jaeger and note the services it installs
+3. Install Jaeger and note the services it installs
    
      ```
-        <copy>kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml -n msdataworkshop</copy>
+        <copy>kubectl create -f https://tinyurl.com/yxn83h3q -n msdataworkshop</copy>
      ```
 
    ![demo-erd.png](images/jaegerinstall.png " ")
    
-5.  Issue the `services` command and notice the services it installs.  The jaeger-query is a loadbalancer exposing an external-ip and runs on port 80.
+4.  Issue the `kubectl get services --all-namespaces` command and notice the services it installs.  The jaeger-query is a loadbalancer exposing an external-ip and runs on port 80.
    
    ![demo-erd.png](images/jaegerservice.png " ")
    
-6.  The jaeger-collector is referenced in $MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties and $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties 
+5.  The jaeger-collector is referenced in $MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties and $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties 
    
    ![demo-erd.png](images/tracingprops.png " ")
    
    Insure these values match.
-   
+   wget
    The jaeger-query is the load balancer address for visualizing the Jaeger UI 
    
    Note the JAEGER_QUERY_ADDRESS external-ip:port in msdataworkshop.properties.
@@ -126,12 +119,14 @@ In order to divide and isolate cluster resources, you will create a cluster
    
      ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
+    This will set the properties needed to deploy and run the workshop and will also provide convenient shortcut commands.
+    The kubernetes resources created by the workshop and commands can be viewed by issuing the `msdataworkshop` command.
 
 ## **STEP 4**: Deploy and access Frontend microservice
 
 1.  You need to compile, test and package the Helidon front-end
     application code into a `.jar` file using maven. The maven package is already installed in the
-    Cloud Shell. Inside Cloud Shell go to the frontend helidon microservice
+    Cloud Shell. Inside Cloud Shell go to the frontend Helidon microservice
     folder.
 
     ```
@@ -187,8 +182,8 @@ After you have successfully compiled the application code, you are ready to push
 
 ## **STEP 6**: Build the Docker image
 
-1.  You are ready to build a docker image of the front-end helidon application.
-    Change directory into frontend helidon microservice folder:
+1.  You are ready to build a docker image of the front-end Helidon application.
+    Change directory into frontend Helidon microservice folder:
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
