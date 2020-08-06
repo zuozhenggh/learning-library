@@ -349,7 +349,7 @@ Fill out the dialog box:
 
     *Spawn 4 workers spinning on sqrt() with a timeout of 350 seconds.*
 
-10. Switch back to OCI console and navigate to Instance Pool Dsetails page. Click your instance name and scroll down to **Metric** screen, you should see CPU spiking up after a minute or so.
+10. Switch back to OCI console and navigate to Instance Pool Details page. Click your instance name and scroll down to **Metric** screen, you should see CPU spiking up after a minute or so.
     ![](./images/Auto_Scaling_009.PNG " ")
 
 11. Navigate to your Instance Pool details page. In about 3-4 minutes (time configured when we created auto scale configuration), status of Pool should change to **Scaling** and a second compute instance should launch.
