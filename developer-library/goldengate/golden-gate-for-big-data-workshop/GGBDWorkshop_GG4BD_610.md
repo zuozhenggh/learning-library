@@ -17,6 +17,12 @@ Approximately 60 minutes
 
 ## Before You Begin
 For the Lab terminal session:
+su - ggadmin
+
+If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
+The following Lab Menu will be displayed, select R to reset the lab environment, then select 6 (this step may take a couple of minutes).
+
+Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 ![](images/600/Lab6Menu.png)
 
@@ -68,7 +74,6 @@ Now create the Kafka replicat process:
 
 Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
-
 ![](images/600/image6xx_1.png)
 
 Now that GG processes have been created and the Kafka Broker has been started, let’s start the GG replicat for Kafka. Go back to the GG Home for Hadoop ggsci session:
@@ -79,13 +84,10 @@ Now go back to the previous session, where you ran ‘showtopics’; we’ll loa
 
 ![](images/600/image6xx_1.png)
 
-![](images/600/image6xx_1.png)
-
-ctrl-c	-- to get the prompt back
+Also take a look at the Kafka schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
 
 ![](images/600/image6xx_1.png)
 
-![](images/600/image6xx_1.png)
 
 Next we’ll apply more DML to the source, then we’ll consume the emp topic, and see the additional data get appended to the topic. Run this from another session, since the consumetopic command runs in the foreground, and outputs the results. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 

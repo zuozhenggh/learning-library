@@ -7,8 +7,6 @@
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
 process ‘rhbase’ will read the remote trail files, create the HBase tables and write the data to those tables.
 
-
-
 ### Objectives
 - GoldenGate replication from **MySQL to HBase**
 
@@ -21,16 +19,13 @@ Approximately 60 minutes
 ## Before You Begin
 For the Lab terminal session:
 
-![](images/500/Lab5Menu.png)
-
+su - ggadmin
 -------
-
-### STEP 1: Setting up the Environment For Connection to OCI Cloud.
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
 The following Lab Menu will be displayed, select R to reset the lab environment, then select 5.
-Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
+Review the overview notes on the following screen, then select Q to quit. 
 
 ![](images/500/image501_1.png)
 
@@ -52,7 +47,7 @@ In the first session, go to the GG Home for MySQL, and start the manager process
 
 ![](images/500/image5xx_1.png)
 
-In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
+In a second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
 ![](images/500/image5xx_1.png)
 
@@ -85,13 +80,14 @@ Starting with GG version 12.2.0.1.1, GG automatically creates the HBase tables. 
 
 ![](images/500/image5xx_1.png)
 
-![](images/500/image5xx_1.png)
 
 Let’s confirm that GG replicated the data that it captured. In a GG Home for Hadoop session:
 
 ![](images/500/image5xx_1.png)
 ![](images/500/image5xx_1.png)
 
+In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
+‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhbase’ read the remote trail files, created the HBase tables and wrote the data to those tables.
 
 ## Optional only if VNC is available
 
@@ -108,8 +104,7 @@ The results are shown:
 
 ![](images/500/image5xx_1.png)
 
-In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
-‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhbase’ read the remote trail files, created the HBase tables and wrote the data to those tables.
+
 
 End of Lab 5.
 

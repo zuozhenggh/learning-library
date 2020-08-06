@@ -7,12 +7,9 @@ Please refer to the ‘Integrating Oracle GoldenGate for Big Data’ doc for a c
 HDFS/Hive Properties
 
 ![](images/800/image8xx_0.png)
+![](images/800/image8xx_0.png)
+![](images/800/image8xx_0.png)
 
-![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
 
 Kafka Properties
 
@@ -20,8 +17,7 @@ Kafka Properties
 ![](images/800/image8xx_0.png)
 ![](images/800/image8xx_0.png)
 ![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
+
 
 # Appendix B – Command Reference List
 
@@ -30,14 +26,14 @@ Aliases have been created for this workshop, so that you can focus on GG functio
 
 ![](images/800/image8xx_0.png)
 ![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
+
 
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott, Zia Khan
- - ** Contributors ** - Brian Elliott, Zia Khan
+ - ** Authors ** - Brian Elliott
+ - ** Contributors ** - Brian Elliott
  - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott, Zia Khan
+ - ** Last Updated By ** - Brian Elliott
  - ** Expiration Date ** – July 2021
 

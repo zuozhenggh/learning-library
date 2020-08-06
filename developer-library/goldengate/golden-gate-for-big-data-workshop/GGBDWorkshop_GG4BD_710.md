@@ -11,7 +11,6 @@ In this lab we will load data in MySQL database ‘ggsource’, GG extract proce
 process ‘rcass’ will read the remote trail files, create the Cassandra tables and write the data to those tables.
 
 
-
 ### Objectives
 - GoldenGate replication from **MySQL to Cassandra**
 
@@ -31,6 +30,7 @@ If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘
 The following Lab Menu will be displayed, select R to reset the lab environment, then select 7.
 Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
+![](images/700/Lab7Menu.png)
 
 The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
@@ -72,6 +72,9 @@ In the GG for Hadoop session, you’ll need to modify the Cassandra properties b
 ![](images/700/image7xx_1.png)
 
 Now create and start the Cassandra replicat process:
+
+
+![](images/700/image7xx_1.png)
 
 Now that GG processes have been created and started on both the source and target, we need to create the Cassandra Keyspace before loading data. A Cassandra Keyspace is equivalent to a database or schema in relational databases. This step can be done at anytime, and is not dependant on GG.
 

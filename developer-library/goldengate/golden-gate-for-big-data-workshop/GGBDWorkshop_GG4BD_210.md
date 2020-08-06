@@ -45,7 +45,6 @@ The above step will copy the GoldenGate configuration files to the GG Home direc
 
 Go to the GG Home for MySQL. You can either cd to the directory, or call the alias ggmysql:
 
-Go to the GG Home for MySQL. You can either cd to the directory, or call the alias ggmysql:
 
 ![](images/200/image2xx_1.png)
 ![](images/200/image2xx_1.png)
