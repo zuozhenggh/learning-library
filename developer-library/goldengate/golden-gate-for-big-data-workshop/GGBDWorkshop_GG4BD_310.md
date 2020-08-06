@@ -52,16 +52,16 @@ First we will start the GG manager process on both the source and target. Start 
 
 In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
-![](images/ALL/B3.png)
+![](images/300/B3.png)
 
 In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
-![](images/ALL/B4.png)
+![](images/300/B4.png)
 
 In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
-![](images/ALL/B5.png)
-![](images/ALL/B6.png)
+![](images/300/B5.png)
+![](images/300/B6.png)
 
 
 
