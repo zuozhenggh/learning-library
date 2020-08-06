@@ -1,5 +1,5 @@
 # Lab 2 -  MySQL  -> MySQL unidirectional replication
-updated Aug 6, 2020
+Aug 6, 2020
 
 Lab Architecture
 

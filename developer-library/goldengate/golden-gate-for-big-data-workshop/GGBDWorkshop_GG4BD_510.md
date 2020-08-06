@@ -1,4 +1,5 @@
 # Lab 5 -   MySQL --> HBase
+Aug 6, 2020
 
 Lab Architecture
 
