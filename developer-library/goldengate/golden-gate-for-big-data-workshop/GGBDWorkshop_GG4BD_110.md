@@ -1,5 +1,5 @@
 # Lab 1 -  Installation of Golden Gate for BigData Workshop: 
-July 27th 2020
+August 6th 2020
 
 ![](images/100/image110_1.png)
 
@@ -14,9 +14,9 @@ Introduction
   Oracle GoldenGate for Big Data Workshop Architecture 
   Setup the QuickStart VM for GoldenGate for Big Data Workshop
 
- Lab 1 – Install GoldenGate binaries for Big Data 
+Lab 1 – Install GoldenGate binaries for Big Data 
 
- Optional step (Do not select Auto-install if you already installed GG manually) 
+Optional step (Do not select Auto-install if you already installed GG manually) 
  
 Lab 2 – MySQL ->  MySQL unidirectional replication
   
@@ -69,13 +69,17 @@ This workshop is only for learning and testing purposes. None of the files from 
 ### Time to Complete
 Approximately 30 min
 
-### What Do You Need?
+### What Do you need next
+- [GoldenGate Big Data](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
+
+### STEP 1: Access GGBD Cloud Image or Cloud Machine via putty
+
+          Will update with Live Labs connectivity
 
 ### STEP 1: Access GGBD Image 
 
           Will update with Live Labs connectivity
-
 
 
 ### Lab1
@@ -90,7 +94,7 @@ PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS (not root)
 
 su – ggadmin
 
-Password = oracle 
+Password = Data1Integration! or oracle
 
 
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
@@ -101,7 +105,7 @@ To install GoldenGate, you will extract the GG binaries tar file – this file h
 
 Follow these instructions to install GoldenGate for Big Data
 
-cd /opt/software
+cd /u01/gg4hadoop
 
  tar -xvf /u01/gg_binaries/gg4hadoop123010/ggs_Adapters_Linux_x64.tar 
 
