@@ -1,3 +1,10 @@
+/*
+Author: Ashwin Agarwal
+Contributors: Tom McGinn, Suresh Mohan
+Last updated: 29-Jul-2020
+Version: 20.1.1
+*/
+
 html {
     box-sizing: border-box;
 }
@@ -819,7 +826,7 @@ blockquote {
 #toc.scroll {
     position: fixed;
     height: 100%;
-    top: 0;
+    top: 70px; // set to 70px when header is fixed. Otherwise 0.
     margin-top: 0;
     width: 100%;
     overflow-y: auto;

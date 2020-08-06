@@ -34,6 +34,34 @@ In this lab, you'll:
 
 *This is the "fold" - below items are collapsed by default*
 
+## STEP 1: **TEST**: Create Your Free Trial Account - Pass in a marketing code appended to the free trial link
+
+This test demonstrates that the appended marketing code is passed to other labs.
+
+In this section, you'll fill out the registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup) to receive your Oracle Free Trial with $300 in credits.
+
+1.  Click on the "Start for free" button and enter the appropriate information to create your account.
+    * Enter the same **email address** you used to register for Oracle Open World / Oracle Code One. A popup should appear recognizing your email. If not, the registration form will ask for additional information later.
+    * Select your **country/territory**.
+    * Click **Next**.
+
+    ![](images/signup-for-freetier.png " ")
+
+2.  Enter a few details for your new Oracle Cloud account.
+    * You can choose almost anything for your Cloud Account Name. Remember what you wrote. You'll need this name later to sign in.
+    * Click **Enter Password**.
+
+3.  If your email wasn't recognized or you're using a different email address, you'll need to provide additional information.
+    * Provide a mobile number and click **Next: Verify Mobile Number**. In a few seconds, you should receive a verification code through SMS-text. Enter this code in the appropriate field and click **Verify**.
+    * Click **Add Credit Card Details**. You will NOT be charged unless you elect to upgrade the account later. Enter the billing information, card details, and click **Finish**.
+
+4. Validate your address.
+
+5. Enter a password. Remember this password so you can sign in to the Cloud later.
+
+6. Click **Review Terms and Conditions**. Read and agree to the Terms & Conditions by checking the box and click **Complete Sign-Up**.
+
+7. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign in page. You'll also receive a confirmation email containing sign in information.
 ## **STEP 1**: title
 
 Step 1 opening paragraph.
