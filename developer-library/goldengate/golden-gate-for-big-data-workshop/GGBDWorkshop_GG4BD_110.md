@@ -73,10 +73,6 @@ Approximately 30 min
 - [GoldenGate Big Data](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 
-### STEP 1: Access GGBD Cloud Image or Cloud Machine via putty
-
-          Will update with Live Labs connectivity
-
 ### STEP 1: Access GGBD Image 
 
           Will update with Live Labs connectivity

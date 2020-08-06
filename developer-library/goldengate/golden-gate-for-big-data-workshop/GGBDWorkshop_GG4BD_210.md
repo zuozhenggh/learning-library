@@ -1,5 +1,5 @@
 # Lab 2 -  MySQL  -> MySQL unidirectional replication
-updated July 69, 2020
+updated Aug 6, 2020
 
 ![](images/200/image200_1.png)
 
@@ -29,11 +29,11 @@ Your will need:
 User and Password
 
 User ID: ggadmin
-Password: oracle
+Password: Data1Integration! or oracle
 
 If already at a Unix prompt, you can access the Lab Menu by typing
 su – ggadmin
-Password = oracle
+Password = Data1Integration! or oracle
 Execute the alias ‘labmenu’
 
 The following Lab Menu will be displayed:
@@ -90,10 +90,10 @@ End of Lab 2.
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott, Zia Khan
- - ** Contributors ** - Brian Elliott, Zia Khan
+ - ** Authors ** - Brian Elliott
+ - ** Contributors ** - Brian Elliott
  - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott, Zia Khan
+ - ** Last Updated By ** - Brian Elliott
  - ** Expiration Date ** – July 2021
 
 

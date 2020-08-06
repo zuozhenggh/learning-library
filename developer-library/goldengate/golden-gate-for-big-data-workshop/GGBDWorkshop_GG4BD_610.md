@@ -35,7 +35,7 @@ For the Lab terminal session:
 5)	view /u01/gg4hadoop123010/dirprm/rkafka.properties
 6)	view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
 
-First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
+First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
 
 In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
@@ -110,8 +110,8 @@ End of Lab 6.
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott, Zia Khan
- - ** Contributors ** - Brian Elliott, Zia Khan
+ - ** Authors ** - Brian Elliott
+ - ** Contributors ** - Brian Elliott
  - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott, Zia Khan
+ - ** Last Updated By ** - Brian Elliott
  - ** Expiration Date ** – July 2021

@@ -29,7 +29,7 @@ For the Lab terminal session:
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
-The following Lab Menu will be displayed, select R to reset the lab environment, then select 5 (this step may take a couple of minutes, or longer if you have allocated less than 8GB to the VM).
+The following Lab Menu will be displayed, select R to reset the lab environment, then select 5.
 Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 ![](images/500/image501_1.png)
@@ -45,7 +45,7 @@ The above step will copy the GoldenGate configuration files to the GG Home direc
 4)	view /u01/gg4hadoop123010/dirprm/rhbase.prm
 5)	view /u01/gg4hadoop123010/dirprm/rhbase.properties
 
-First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
+First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
 
 In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
@@ -92,6 +92,9 @@ Let’s confirm that GG replicated the data that it captured. In a GG Home for H
 ![](images/500/image5xx_1.png)
 ![](images/500/image5xx_1.png)
 
+
+## Optional only if VNC is available
+
 You can also see the HBase data created by GG from Hue:
 
 Open a Browser window> http://127.0.0.1:8888/ Login to Hue: cloudera/cloudera
@@ -112,8 +115,8 @@ End of Lab 5.
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott, Zia Khan
- - ** Contributors ** - Brian Elliott, Zia Khan
+ - ** Authors ** - Brian Elliott
+ - ** Contributors ** - Brian Elliott
  - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott, Zia Khan
+ - ** Last Updated By ** - Brian Elliott
  - ** Expiration Date ** – July 2021

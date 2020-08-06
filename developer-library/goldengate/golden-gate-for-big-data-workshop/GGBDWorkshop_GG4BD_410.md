@@ -26,7 +26,7 @@ For the Lab terminal session:
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
-The following Lab Menu will be displayed, select R to reset the lab environment, then select 4 (this step may take a couple of minutes, or longer if you have allocated less than 8GB to the VM).
+The following Lab Menu will be displayed, select R to reset the lab environment.
 Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 ```
@@ -89,6 +89,9 @@ There should be several .avro files in the data directory, and 3 .avsc files in 
 
 Also take a look at the Avro schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
 
+
+## Optional Only if VNC is available
+
 You can also see the Hive data created by GG from Hue:
 
 Open a Browser window> http://127.0.0.1:8888/ Login to Hue: cloudera/cloudera
@@ -121,9 +124,9 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott, Zia Khan
- - ** Contributors ** - Brian Elliott, Zia Khan
+ - ** Authors ** - Brian Elliott
+ - ** Contributors ** - Brian Elliott
  - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott, Zia Khan
+ - ** Last Updated By ** - Brian Elliott
  - ** Expiration Date ** – July 2021
 

@@ -28,7 +28,7 @@ For the Lab terminal session:
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
-The following Lab Menu will be displayed, select R to reset the lab environment, then select 7 (this step may take a couple of minutes, or longer if you have allocated less than 8GB to the VM).
+The following Lab Menu will be displayed, select R to reset the lab environment, then select 7.
 Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 
@@ -43,7 +43,7 @@ The above step will copy the GoldenGate configuration files to the GG Home direc
 4)	view /u01/gg4hadoop123010/dirprm/rcass.prm
 5)	view /u01/gg4hadoop123010/dirprm/rcass.properties
 
-First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
+First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
 
 First, let’s start the Cassandra database server. Open a new ssh session, run the alias as shown below and leave this running until you are done with this lab.
@@ -122,10 +122,10 @@ End of Lab 7.
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott, Zia Khan
- - ** Contributors ** - Brian Elliott, Zia Khan
+ - ** Authors ** - Brian Elliott
+ - ** Contributors ** - Brian Elliott
  - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott, Zia Khan
+ - ** Last Updated By ** - Brian Elliott
  - ** Expiration Date ** – July 2021
   
 Congrats! You have completed the GoldenGate for Big Data Workshop!! 

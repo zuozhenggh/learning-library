@@ -1,5 +1,5 @@
 # Lab 3 -  MySQL --> HDFS (delimited text format)
-(Hadoop, Hive, Pig, Spark, Oracle R)
+(Hadoop, Hive, Pig, Spark)
 
 ![](images/300/image300_1.png)
 
@@ -13,7 +13,7 @@ process ‘rhdfs’ will read the remote trail files, and write the data to the 
 
 For the Lab:
 User ID: ggadmin
-Password: oracle
+Password: Data1Integration! or oracle
 
 ### Time to Complete
 Approximately 30 minutes
@@ -27,7 +27,8 @@ For the Lab terminal session:
 
 ![](images/300/Lab3Menu.png)
 
-The following Lab Menu will be displayed, select R to reset the lab environment, then select 3 (this step may take a couple of minutes, or longer if you have allocated less than 8GB to the VM).
+The following Lab Menu will be displayed, select R to reset the lab environment, then select 3.
+
 Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 is already done in the env script for this workshop)
@@ -97,6 +98,9 @@ In Hadoop ggsci session window:
 
 ![](images/300/image3xx_1.png)
 
+
+## Optional Only if VNC is available
+
 The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 You can also see the files created by GG from Hue: http://127.0.0.1:8888/
 Login to Hue: cloudera/cloudera
@@ -112,8 +116,8 @@ End of Lab 3.
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott, Zia Khan
- - ** Contributors ** - Brian Elliott, Zia Khan
+ - ** Authors ** - Brian Elliott
+ - ** Contributors ** - Brian Elliott
  - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott, Zia Khan
+ - ** Last Updated By ** - Brian Elliott
  - ** Expiration Date ** – July 2021
