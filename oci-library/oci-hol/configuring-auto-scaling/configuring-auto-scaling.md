@@ -313,12 +313,12 @@ Fill out the dialog box:
 
 ## Step 4: Test the setup
 
-1. Wait until your Instance Pool change from *Scaling* to *Running* state. Under **Compute**, click **Instance Pools**, and then your pool name. You should see a Compute instance created. Click the Compute Instance name.
+1. Wait until your Instance Pool change from *Scaling* to *Running* state. Under **Compute**, click **Instance Pools**, and then your pool name. Click **Created Instances**, you should see a compute instance created. Click the Compute Instance name.
     ![](./images/Auto_Scaling_007.PNG " ")
 
 2. Note down the Public and Private IP of compute instance from the details page (Under **Primary VNIC Information** section). 
 
-3. Open a web browser and enter load balancer's public IP address. You should see the message: `Web Server IP: <instance private IP>`
+3. Open a web browser and enter instance's public IP address. You should see the message: `Web Server IP: <instance private IP>`
 
 4. Switch to git bash window, if the ssh session to compute instance is still open then exit out of the session (quit command). 
 
@@ -349,7 +349,7 @@ Fill out the dialog box:
 
     *Spawn 4 workers spinning on sqrt() with a timeout of 350 seconds.*
 
-10. Switch back to OCI console and navigate to Instance pool details page. Click your instance name and scroll down to **Metric** screen, you should see CPU spiking up after a minute or so.
+10. Switch back to OCI console and navigate to Instance Pool Dsetails page. Click your instance name and scroll down to **Metric** screen, you should see CPU spiking up after a minute or so.
     ![](./images/Auto_Scaling_009.PNG " ")
 
 11. Navigate to your Instance Pool details page. In about 3-4 minutes (time configured when we created auto scale configuration), status of Pool should change to **Scaling** and a second compute instance should launch.
