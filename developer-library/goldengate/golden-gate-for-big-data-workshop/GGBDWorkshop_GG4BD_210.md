@@ -16,22 +16,16 @@ capture the changes from MySQL’s binary logs and write them to the local trail
 ‘pmpmysql’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘repmysql’ will read the remote trail files, and apply the changes to the MySQL database ‘ggtarget’
 
 
-
-### Objectives
-  
-
 ### Time to Complete
 Approximately 30 minutes
-
-### What Do You Need?
-Your will need:
 
 User and Password
 
 User ID: ggadmin
 Password: Data1Integration! or oracle
 
-If already at a Unix prompt, you can access the Lab Menu by typing
+If already at a Unix prompt, you can access the Lab Menu by typing:
+
 su – ggadmin
 Password = Data1Integration! or oracle
 Execute the alias ‘labmenu’
@@ -51,10 +45,9 @@ The above step will copy the GoldenGate configuration files to the GG Home direc
 
 Go to the GG Home for MySQL. You can either cd to the directory, or call the alias ggmysql:
 
-![](images/200/image2xx_1.png)
-
 Go to the GG Home for MySQL. You can either cd to the directory, or call the alias ggmysql:
 
+![](images/200/image2xx_1.png)
 ![](images/200/image2xx_1.png)
 
 Login to ggsci (GG command line interface), to create and start the GG extract, pump and replicat
@@ -72,7 +65,6 @@ Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt)
 
 At this point GoldenGate should have replicated all the data from database ggsource to database
 ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed:
-
 
 ![](images/200/image2xx_1.png)
 
