@@ -1,5 +1,5 @@
 # Lab 4 -  MySQL --> Hive (Avro format)
-Aug 6, 2020
+
 
 Lab Architecture
 

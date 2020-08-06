@@ -1,5 +1,5 @@
 # Lab 6 -  MySQL --> Kafka (Json format)
-Aug 6, 2020
+
 
 Lab Architecture
 

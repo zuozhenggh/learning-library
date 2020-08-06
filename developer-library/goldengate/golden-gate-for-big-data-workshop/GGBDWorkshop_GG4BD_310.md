@@ -1,5 +1,5 @@
 # Lab 3 -  MySQL --> HDFS (delimited text format)
-Aug 6, 2020
+
 
 Lab Architecture
 
