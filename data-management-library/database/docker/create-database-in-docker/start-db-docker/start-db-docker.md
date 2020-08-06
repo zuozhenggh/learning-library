@@ -22,7 +22,7 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
 1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys and connect using the public IP address of your compute instance:
 
     ```
-    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    $ <copy>ssh -i ./myOracleCloudKey opc@&lt;your IP address&gt;</copy>
     Enter passphrase for key './myOracleCloudKey':
     [opc@oraclelinux77 ~]$
     ```
@@ -148,4 +148,4 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
 * **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
