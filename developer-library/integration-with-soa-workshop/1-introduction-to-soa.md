@@ -49,76 +49,41 @@ To gain access to free tier compute resource, follow these steps:
 
     ![](images/1/enter-user-name-and-password.png)
 
-5. From within your Oracle Cloud environment, you will create an instance of the Autonomous Transaction Processing database service.
+5. From within your Oracle Cloud environment, you can create an instance of Oracle SOA suite.
 
-    From the Cloud Dashboard, select the navigation menu icon in the upper left-hand corner and then select **Autonomous Transaction Processing**.
+    From the Cloud Dashboard, select the navigation menu icon in the upper left-hand corner and then select **Marketplace -> Applications**.
 
-    ![](images/1/select-atp-in-nav-menu.png)
+    ![](images/1/click-marketplace.png)
 
-6. Click **Create Autonomous Database**.
+6. Click **Search for SOA**.
 
-    ![](images/1/click-create-autonomous-database.png)
+    ![](images/1/choose-soa-options.png)
 
-7. Select the **Always Free** option, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.
+7. Select the **appropriate** option, enter **based on license type or subscription** that you may already have
 
-    ![](images/1/atp-settings-1.png)
-    ![](images/1/atp-settings-2.png)
-    ![](images/1/atp-settings-3.png)
+  - SOA suite BYOL
+  - SOA suite with B2B EDI platform
+  - SOA suite with OCI as consumption
 
-8. After clicking **Create Autonomous Database**, you will be redirected to the Autonomous Database Details page for the new instance. 
+8. After clicking **SOA suite BYOL**, you will be redirected to the SOA Details page for provisioning new instance. 
 
     Continue when the status changes from:
 
-    ![](images/1/status-provisioning.png)
-    
-    to:
-
-    ![](images/1/status-available.png)
-
+    ![](images/1/click-soa-byol-compartment.png)
 
     
-### **Option 2**: apex.oracle.com
-Signing up for apex.oracle.com is simply a matter of providing details on the workspace you wish to create and then waiting for the approval email.
+### **Option 2** Download Oracle SOA from www.oracle.com
+Here is the specific link https://www.oracle.com/cloud/integration/soa-cloud-service/
 
-1. Go to https://apex.oracle.com
-2. Click **Get Started for Free**
+    For cost-related estimation
 
-    ![](images/1/get-started.png)
 
-3. Scroll down until you see details for apex.oracle.com.  Click **Request a Free Workspace**
-
-    ![](images/1/request-workspace.png)
-
-3. On the Request a Workspace dialog, enter your Identification details – First Name, Last Name, Email, Workspace  
-   *{Note: For workspace enter a unique name,
-such as first initial and last name}*
-
-    Click **Next**.
-    
-    ![](images/1/request-a-workspace.png)
-
-3. Complete the remaining wizard steps.
-
-4. Check your email. You should get an email from oracle- application-express_ww@oracle.com
-within a few minutes.  
-   *{Note: If you don’t get an email go
-back to Step 3 and make sure to enter
-your email correctly}*
-
-    Within the email body, click **Create Workspace**
-
-    ![](images/1/create-aoc-workspace.png)
-
-3. Click **Continue to Sign In Screen**.
-4. Enter your password, and click **Apply Changes**.
-5. You should now be in the APEX Builder.
-
-    ![](images/1/apex-builder.png)
+   go to (https://www.oracle.com/cloud/integration/soa-cloud-service/pricing.html)
 
 
 ### **Summary**
 
-This completes the lab setup. At this point, you know how ...........  to start building amazing apps, fast.
+This completes the lab introduction. At this point, you know how ...........  to start building amazing enterprise-grade integration, fast.
 
 Go to Module 2 of this lab by clicking the navigation menu icon, in the upper-left corner of the header.
 
