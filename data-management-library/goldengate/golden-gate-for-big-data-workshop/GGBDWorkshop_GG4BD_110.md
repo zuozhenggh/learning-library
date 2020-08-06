@@ -1,5 +1,5 @@
 # Lab 1 -  Installation of Golden Gate for BigData Workshop: 
-July 14, 2020
+Aug 6, 2020
 
 ![](images/100/image110_1.png)
 
@@ -14,36 +14,21 @@ Introduction
   Oracle GoldenGate for Big Data Workshop Architecture 
   Setup the QuickStart VM for GoldenGate for Big Data Workshop
 
- Lab 1 – Install GoldenGate binaries for Big Data 
+Lab 1 – Install GoldenGate binaries for Big Data 
 
-**Lab Architecture **
-
- Optional step (Do not select Auto-install if you already installed GG manually) 
+Optional step (Do not select Auto-install if you already installed GG manually) 
  
 Lab 2 – MySQL ->  MySQL unidirectional replication
-
-Lab Architecture 
   
 Lab 3 – MySQL --> HDFS (delimited text format) 
 
-Lab Architecture 
-
 Lab 4 – MySQL --> Hive (Avro format) 
-
-Lab Architecture 
 
 Lab 5 – MySQL --> HBase 38 
 
-Lab Architecture 
-
 Lab 6 – MySQL --> Kafka (Json format) 
 
-Lab Architecture 
-
 Lab 7 – MySQL --> Cassandra 
-
-**Lab Architecture **
-
 
 Appendix A – Handler Configuration Properties 
 
@@ -84,7 +69,8 @@ This workshop is only for learning and testing purposes. None of the files from 
 ### Time to Complete
 Approximately 30 min
 
-### What Do You Need?
+### What Do you need next
+- [GoldenGate Big Data](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 
 ### STEP 1: Access GGBD Image 
@@ -92,23 +78,22 @@ Approximately 30 min
           Will update with Live Labs connectivity
 
 
-
 ### Lab1
 
 Lab 1 – Install GoldenGate binaries for Big Data
 
-In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
-Login to the VM using VNC on your laptop, or the ‘terminal’ tool in the QuickStart VNC GUI: Host: localhost
-Port:5901
 
 PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS (not root)
 
 su – ggadmin
 
-Password = oracle 
+Password = Data1Integration! or oracle
 
+In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
+
+![](images/ALL/LabMenu_Opt1.png)
 
 The following Lab Menu will be displayed, select 1. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 FYI: LD_LIBRARY_PATH needs to be set for GG, and Java version needs to be version 1.8 or higher. (This is already done in the env script for this workshop)
@@ -116,35 +101,15 @@ To install GoldenGate, you will extract the GG binaries tar file – this file h
 
 Follow these instructions to install GoldenGate for Big Data
 
-cd /opt/software
-
- tar -xvf /u01/gg_binaries/gg4hadoop123010/ggs_Adapters_Linux_x64.tar 
-
-
-Oracle GoldenGate Command Interpreter
-
- ./ggsci
-
-Now in
-
-GGSCI  - (ggadmin@localhost) 
-1> create subdirs
-
-Creating subdirectories under current directory /u01/gg4hadoop123010
-
-Parameter files	/u01/gg4hadoop123010/dirprm: created
-Report files	/u01/gg4hadoop123010/dirrpt: created
-Checkpoint files	/u01/gg4hadoop123010/dirchk: created Process status files	/u01/gg4hadoop123010/dirpcs: created SQL script files	/u01/gg4hadoop123010/dirsql: created Database definitions files /u01/gg4hadoop123010/dirdef: created Extract data files	/u01/gg4hadoop123010/dirdat: created Temporary files	/u01/gg4hadoop123010/dirtmp: created Credential store files /u01/gg4hadoop123010/dircrd: created Masterkey wallet files     /u01/gg4hadoop123010/dirwlt: created Dump files	/u01/gg4hadoop123010/dirdmp: created
-
-GGSCI 2> exit 
-
-
+![](images/ALL/A_Adapter_Tar.png)
 
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
- 
+
 ## Optional step (Do not select Auto-install if you already installed GG manually)
 
 If you would like to auto-install GoldenGate for Big Data, you can select this option. To access the Lab Menu, type the alias ‘labmenu’, then select I.
+
+Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
 
 You have completed lab 1! Great Job!
