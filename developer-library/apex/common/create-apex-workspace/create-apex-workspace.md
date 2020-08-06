@@ -4,8 +4,6 @@
 
 Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. To start, you will need to decide which Oracle Database you are going to use for the workshop, and then create an APEX workspace in that database.
 
-If you already have an APEX 20.1 Workspace provisioned, you can skip this lab and go straight to Lab 2 by clicking the navigation menu icon, in the upper-right corner of the header.
-
 Estimated Time: 5 minutes
 
 ### What is an APEX Workspace?
@@ -29,11 +27,12 @@ In this step, you will create an *Autonomous Transaction Processing* database an
     ![](images/click-create-autonomous-database.png " ")
 
 3. Select your compartment. *If you are using a LiveLabs environment, be sure to select the compartment provided by the environment*. Leave Always Free unchecked, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.  
-*NOTE:  If you get an error stating "Authorization failed or requested resource not found", go back to your compartment and make sure you did NOT choose the root compartment.  Choose the compartment you were assigned*
 
     ![](images/atp-settings-1.png " ")
     ![](images/atp-settings-2-notaf.png " ")
     ![](images/atp-settings-3.png " ")
+
+    *LiveLabs ONLY - NOTE:  If you get an error stating "Authorization failed or requested resource not found", go back to your compartment and make sure you did NOT choose the root compartment.  Choose the compartment you were assigned*
 
 4. After clicking **Create Autonomous Database**, you will be redirected to the Autonomous Database Details page for the new instance.
 
