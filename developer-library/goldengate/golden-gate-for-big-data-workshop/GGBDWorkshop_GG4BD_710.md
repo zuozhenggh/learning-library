@@ -1,5 +1,5 @@
 # Lab 7 -  MySQL --> Cassandra
-
+Aug 6, 2020
 
 Lab Architecture
 
