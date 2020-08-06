@@ -2,6 +2,9 @@
     "folders": [
         {
             "path": "."
+        },
+        {
+            "path": "../../../data-management-library/goldengate/golden-gate-for-big-data-workshop/images"
         }
     ]
 }
