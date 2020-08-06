@@ -277,7 +277,7 @@ END;
 
   ![](images/044.png " ")
 
-13. Note the tables that are now imported into user **alpha** on the left.  Final step is to insert spatial metadata into the **user\_sco\_geom\_metadata** view.  Enter the following.
+13. Note the tables that are now imported into user **alpha** on the left.  Final step is to insert spatial metadata into the **user\_sco\_geom\_metadata** view.  Enter the following.  **If you receive a message or error indicating the rows already exist ignore this and move on**.
   ```
   <copy>insert into user_sdo_geom_metadata select * from sdo_geom_metadata;</copy>
   ```
