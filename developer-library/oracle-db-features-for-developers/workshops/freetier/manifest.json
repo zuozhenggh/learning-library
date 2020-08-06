@@ -24,37 +24,37 @@
             "title": "Lab 3: Sample Schema Setup",
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
             "publisheddate": "3/24/2020",
-            "filename": "../setup/setup.md"
+            "filename": "../../setup/setup.md"
         },
         {
             "title": "Lab 4: Automatic Indexing",
             "description": "Automatic Indexing",
             "publisheddate": "4/05/2020",
-            "filename": "../automatic-indexing/automatic-indexing.md"
+            "filename": "../../automatic-indexing/automatic-indexing.md"
         },
 		{
             "title": "Lab 5: Hybrid Partitioning",
             "description": "Hybrid Partition Tables",
             "publisheddate": "4/05/2020",
-            "filename": "../partitioning/partitioning.md"
+            "filename": "../../partitioning/partitioning.md"
         },
 		{
             "title": "Lab 6: JSON in the Oracle DB",
             "description": "JSON Documents",
             "publisheddate": "4/05/2020",
-            "filename": "../json/json.md"
+            "filename": "../../json/json.md"
         },
         {
             "title": "Lab 7: JSON in the Oracle DB - Advanced",
             "description": "JSON Documents",
             "publisheddate": "4/05/2020",
-            "filename": "../json/json-advanced.md"
+            "filename": "../../json/json-advanced.md"
         },
 		{
             "title": "Lab 8: Python Programming",
             "description": "Python Programming",
             "publisheddate": "4/05/2020",
-            "filename": "../python/python.md"
+            "filename": "../../python/python.md"
         }
     ]
 }
