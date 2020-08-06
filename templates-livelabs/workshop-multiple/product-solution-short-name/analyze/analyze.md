@@ -4,7 +4,7 @@
 
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
-Estimated Lab Time: &lt;n&gt; minutes
+Estimated Lab Time: n minutes
 
 ### About Product/Technology
 Enter background information here..
@@ -45,7 +45,7 @@ Step 1 opening paragraph.
 
 3. Ordered list item 3 with the same image but no link to the text description below.
 
-    ![Image alt text](images/sample1.png " ")
+    ![Image alt text](images/sample1.png)
 
 4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
 
@@ -76,15 +76,13 @@ Step 1 opening paragraph.
     Adding code examples
 	Indentation is important for the code example to appear inside the step
     Multiple lines of code
-	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
+	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
     ```
 
 4. Code examples that include variables
 
-  To include `<` and `>` in your code fragments, use ``&lt;`` and ``&gt;`` to escape the characters in the code block:
-
 	```
-  <copy>ssh -i &lt;ssh-key-file&gt;</copy>
+  <copy>ssh -i <ssh-key-file></copy>
   ```
 
 *At the conclusion of the lab add this statement:*

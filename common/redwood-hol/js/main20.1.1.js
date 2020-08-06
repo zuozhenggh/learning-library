@@ -1,8 +1,8 @@
 /*
 Author: Ashwin Agarwal
 Contributors: Tom McGinn, Suresh Mohan
-Last updated: 29-Jul-2020
-Version: 20.1.3
+Last updated: 28-May-2020
+Version: 20.1.1
 */
 
 "use strict";
@@ -10,7 +10,7 @@ var showdown = "https://oracle.github.io/learning-library/common/redwood-hol/js/
 const manifestFileName = "manifest.json";
 const expandText = "Expand All Steps";
 const collapseText = "Collapse All Steps";
-const anchorOffset = 70; //if header is fixed, it should be 70. Otherwise, 0.
+const anchorOffset = 70; //if header is fixed, it should be 70
 const copyButtonText = "Copy";
 const queryParam = "?lab=";
 
@@ -22,9 +22,6 @@ $(document).ready(function () {
         }),
         $.getJSON(manifestFileName, function (manifestFile) {
             manifestFileContent = manifestFile; //reading the manifest file and storing content in manifestFileContent variable
-            if (manifestFileContent.workshoptitle !== undefined) {   // if manifest file contains a field for workshop title
-              document.getElementsByClassName("hol-Header-logo")[0].innerText = manifestFileContent.workshoptitle;    // set title in the HTML output (DBDOC-2392)
-            }
             console.log("Manifest file loaded!");
         }).fail(function () {
             alert("manifest.json file was not loaded. The manifest file should be co-located with the index.html file. If the file is co-located, check that the json format of the file is correct.");
@@ -32,17 +29,11 @@ $(document).ready(function () {
     ).done(function () {
         let selectedTutorial = setupRightNav(manifestFileContent); //populate side navigation based on content in the manifestFile
         let articleElement = document.createElement('article'); //creating an article that would contain MD to HTML converted content
-
         $.get(selectedTutorial.filename, function (markdownContent) { //reading MD file in the manifest and storing content in markdownContent variable
             //The setupAnalytics function is commented out as we are not using Google Analytics
             //setupAnalytics(); //enabling analytics
             console.log(selectedTutorial.filename + " loaded!");
-
-            markdownContent = singlesource(markdownContent, selectedTutorial.type);   // implement show/hide feature based on the if tag (DBDOC-2430)
-            markdownContent = convertBracketInsideCopyCode(markdownContent); // converts <> tags inside copy tag to &lt; and &gt; (DBDOC-2404)
             $(articleElement).html(new showdown.Converter({ tables: true }).makeHtml(markdownContent)); //converting markdownContent to HTML by using showndown plugin
-
-            articleElement = removeIfTag(articleElement); // remove all if tag because it is no longer needed (DBDOC-2430)
             articleElement = renderVideos(articleElement); //adds iframe to videos
             articleElement = addPathToImageSrc(articleElement, selectedTutorial.filename); //adding the path for the image based on the filename in manifest
             articleElement = updateH1Title(articleElement); //adding the h1 title in the Tutorial before the container div and removing it from the articleElement
@@ -188,17 +179,16 @@ function wrapSectionTag(articleElement) {
 The figcaption is in the format Description of illustration [filename].
 The image description files must be added inside the files folder in the same location as the MD file.*/
 function wrapImgWithFigure(articleElement) {
-    // $(articleElement).find("img").each(function () {
-    $(articleElement).find("img").on('load', function() {
-      if ($(this)[0].width > 100 || $(this)[0].height > 100 || $(this).attr("title") !== undefined) { // only images with title or width or height > 100 get wrapped (DBDOC-2397)
-          $(this).wrap("<figure></figure>"); //wrapping image tags with figure tags
-          if ($.trim($(this).attr("title"))) {
-              let imgFileNameWithoutExtn = $(this).attr("src").split("/").pop().split('.').shift(); //extracting the image filename without extension
-              $(this).parent().append('<figcaption><a href="files/' + imgFileNameWithoutExtn + '.txt">Description of illustration [' + imgFileNameWithoutExtn + ']</figcaption>');
-          } else {
-              $(this).removeAttr('title');
-          }
-      }
+    $(articleElement).find("img").each(function () {
+        if ($(this).attr("title") !== undefined) { //only images with titles are wrapped with figure tags
+            $(this).wrap("<figure></figure>"); //wrapping image tags with figure tags
+            if ($.trim($(this).attr("title"))) {
+                let imgFileNameWithoutExtn = $(this).attr("src").split("/").pop().split('.').shift(); //extracting the image filename without extension
+                $(this).parent().append('<figcaption><a href="files/' + imgFileNameWithoutExtn + '.txt">Description of illustration [' + imgFileNameWithoutExtn + ']</figcaption>');
+            } else {
+                $(this).removeAttr('title');
+            }
+        }
     });
     return articleElement;
 }
@@ -286,7 +276,7 @@ function setupLeftNav() {
         }
     });
     $(window).scroll(function () {
-        if ($(this).scrollTop() + anchorOffset > $("article").offset().top) {
+        if ($(this).scrollTop() > $("article").offset().top) {
             $('#toc').addClass("scroll");
             if (($(window).scrollTop() + $(window).height()) > $('footer').position().top) //if footer is seen
                 $('#toc').height($('footer').position().top - $(window).scrollTop());
@@ -390,9 +380,7 @@ function allowCodeCopy(articleElement) {
         }
     });
     $(articleElement).find('.copy-button').click(function () {
-        let copyText = $(this).next().find('.copy-code').map(function() {
-          return $(this).text().trim();
-        }).get().join('\n');
+        let copyText = $(this).next().find('.copy-code').text().trim();
         let dummy = $('<textarea>').val(copyText).appendTo(this).select();
         document.execCommand('copy');
         $(dummy).remove();
@@ -408,43 +396,4 @@ function renderVideos(articleElement) {
         $(this).remove();
     });
     return articleElement;
-}
-/* remove all if tags (along with content) that are not of type specified in the manifest file */
-function singlesource(markdownContent, type) {
-  let ifTagRegExp = new RegExp(/<\s*if type="([^>]*)">[\s\S|\n]*?<\/\s*if>/gm);
-  if ($.type(type) !== 'array')
-    type = Array(type);
-
-  let matches;
-  do {
-    matches = ifTagRegExp.exec(markdownContent);
-    if (matches && $.inArray(matches[1], type) === -1)
-      markdownContent = markdownContent.replace(matches[0], '');
-  } while (matches);
-
-  return markdownContent;
-}
-/* remove all if tags */
-function removeIfTag(articleElement) {
-  $(articleElement).find('if').each(function() {
-    $(this).contents().unwrap();
-  });
-  $(articleElement).find('if').remove();
-  return articleElement;
-}
-/* converts < > symbols inside the copy tag to &lt; and &gt; */
-function convertBracketInsideCopyCode(markdownContent) {
-  let copyRegExp = new RegExp(/<\s*copy>([\s\S|\n]*?)<\/\s*copy>/gm);
-  let matches, replaceText;
-  do {
-    matches = copyRegExp.exec(markdownContent);
-    if (matches) {
-      replaceText = matches[1].trim();
-      replaceText = replaceText.replace(/</g, '&lt;');
-      replaceText = replaceText.replace(/>/g, '&gt;');
-
-      markdownContent = markdownContent.replace(matches[1], replaceText);
-    }
-  } while(matches);
-  return markdownContent;
 }

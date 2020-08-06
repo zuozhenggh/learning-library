@@ -1,3 +1,10 @@
+/*
+Author: Ashwin Agarwal
+Contributors: Tom McGinn, Suresh Mohan
+Last updated: 26-Mar-2020
+Version: 20.1.0
+*/
+
 html {
     box-sizing: border-box;
 }
@@ -60,11 +67,11 @@ a:active {
 
 
 /* Header */
-
 .hol-Header {
     background-color: #403C38;
     color: #fcfbfa;
-    position: absolute;
+    /* Suresh M - fixed header location at the top - March 26, 2020 */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -311,7 +318,7 @@ a:active {
     clear: both;
     border-top: 1px solid rgba(0, 0, 0, .1);
     text-align: center;
-    padding: 36px;
+    /*padding: 36px;*/
 }
 
 #footer-banner {
@@ -349,6 +356,8 @@ a:active {
     padding:0;
     backround-repeat: no-repeat;
 }
+
+
 
 .footer-links {
     justify-content: flex-end;
@@ -412,6 +421,8 @@ ul.footer-links li a {
     display:none;
     }
 
+
+
 @media (min-width:0px) and (max-width:770px) {
     .footer-links {
         display: flex;
@@ -451,6 +462,7 @@ ul.footer-links li a {
         height:0;
     }
 }
+
 
 /* Top Link */
 
