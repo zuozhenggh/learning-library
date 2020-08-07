@@ -1,9 +1,16 @@
+/*
+Author: Ashwin Agarwal
+Contributors: Tom McGinn, Suresh Mohan
+Last updated: 28-May-2020
+Version: 20.1.1
+*/
+
 "use strict";
 var showdown = "https://oracle.github.io/learning-library/common/redwood-hol/js/showdown.min.js";
 const manifestFileName = "manifest.json";
 const expandText = "Expand All Steps";
 const collapseText = "Collapse All Steps";
-const anchorOffset = 0; //if header is fixed, it should be 70
+const anchorOffset = 70; //if header is fixed, it should be 70
 const copyButtonText = "Copy";
 const queryParam = "?lab=";
 

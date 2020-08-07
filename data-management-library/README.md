@@ -2,35 +2,11 @@
 
 The Oracle Data Management Github is the central location for workshops related to all things Autonomous Database (ADB), Database, Big Data, Data Integration, Machine Learning, Security and more.  Across multiple deployment options:  on-premises and in the cloud.  
 
-- [Autonomous Database](./autonomous-database) 
-- [Database and Database 19c](./database) 
-- [Oracle Machine Learning](./oracle-machine-learning) 
-- [Security](./security) 
-
-# Autonomous Database (ADB) Github
-[![](./images/adbgithub.png)](./autonomous-database) 
-- Autonomous Database - Dedicated Infrastructure
-- Autonomous Database - Shared Infrastructure
-
-# Database Github
-[![](./images/dbgithub.png)](./database) 
-- 19c
-- In-Memory
-- Multitenant
-- Docker
-- Developer New Features for 19c
-- DBs on OCI VMs
-- Database on Docker
-- JSON
-  
-# Oracle Machine Learning (OML) Github
-[![](./images/omlgithub.png)](./oracle-machine-learning) 
-- OML on ADB
-  
-# Security Github
-[![](./images/secgithub.png)](./security) 
-
-- Data Safe
+## Autonomous Database (ADB) 
+- [Analyzing your Data with ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
+- [Autonomous Database Quick Start](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=582)
+- [Machine Learning on ADB](ps://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=560)  
+- [Building an Application from a Spreadsheet on ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631) 
 
 ## Certifications ##
 
@@ -39,8 +15,8 @@ The Oracle Data Management Github is the central location for workshops related 
 ## Videos
 - [Oracle Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
-## Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.  Make sure to include the name of the workshop when submitting.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 -- Oracle Database Product Management
 

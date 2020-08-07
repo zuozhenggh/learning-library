@@ -15,12 +15,73 @@ You will also clone a GitHub repository.
 ### What Do You Need?
 
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
-* Setup the OKE cluster and the ATP databases
+* The OKE cluster and the ATP databases that you created in Lab 1
+* Your updated `msdataworkshop.properties` file.
 
-## **STEP 1**: Create the cluster namespace
+## **STEP 1**: Copy your msdataworkshop.properties to your root directory
+In Lab 1 you downloaded a copy of the `msdataworkshop.properties` file and you updated it with all of the information generated while setting up OCI, OKE, and ATP. Now you will create an empty properties file and copy the contents of your local file to your root directory (`~/`).  
+
+1. Create an empty msdataworkshop.roperties file in your root directory.
+
+  ```
+  <copy>cd ~ ; touch msdataworkshop.properties</copy>
+
+  ```
+2. Open the msdataworkshop.properties file that you just created in root:
+
+  ```
+  <copy>vi msdataworkshop.properties</copy>
+
+  ```
+
+3. Go to your text editor and copy the contents of your local msdataworkshop.properties file. Be sure to select all content from the file.
+
+4. In vi, use the Insert key at the beginning of the file and then paste the content into the empty properties file. Make sure that you copied everything.
+
+5. Close vi and save your changes with the commands `:x` and `ENTER`.
+
+## **STEP 2**: Download workshop source code
+To work with application code, you need to download a GitHub repository using
+    the following curl and unzip command. The workshop assumes this is done from your root directory.
+
+  ```
+ <copy>cd ~ ; curl -sL https://tinyurl.com/y3pqypkc --output master.zip ; unzip master.zip ; rm master.zip</copy>
+   ```
+
+  You should now see **msdataworkshop-master** in your root directory.
+
+## **STEP 3**: Source the msdataworkshop.properties
+1.  Set the value for `MSDATAWORKSHOP_LOCATION` and source the `msdataworkshop.properties` for the shell.
+
+       Use the following command to update the ./bashrc file for the shell.
+
+       ```
+      <copy>echo 'export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master' >> ~/.bashrc ; echo 'source ~/msdataworkshop.properties' >> ~/.bashrc</copy>
+      ```
+
+    The ~/.bashrc should now contain these two new lines.  Verify using `cat`
+
+       ```
+      <copy>cat ~/.bashrc</copy>
+      ```
+
+   ![](images/bashrc.png " ")
+
+
+
+2. Source the edited `.bashrc` file with the following command.
+      ```
+      <copy>source ~/.bashrc</copy>
+      ```
+      ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
+
+  This will set the properties needed to deploy and run the workshop and will also provide convenient shortcut commands.
+    The kubernetes resources created by the workshop and commands can be viewed by issuing the `msdataworkshop` command.
+
+## **STEP 4**: Create the cluster namespace
 
 In order to divide and isolate cluster resources, you will create a cluster
-    namespace which will host all related resources to this application, such as
+    namespace which will host all resources related to this application, such as
     pods and services.
 
 1. Log in to the Cloud Console and open the Cloud Shell by
@@ -39,32 +100,72 @@ In order to divide and isolate cluster resources, you will create a cluster
   You have successfully created the `msdataworkshop` namespace which is used for
   deploying the application code.
 
-## **STEP 2**: Build the Microservices image from the GitHub repo
+## **STEP 5**: Install GraalVM and Jaeger
 
-1. To work with application code, you need to download GitHub repository using
-    the following command. The Cloud Shell already has the `wget` command
-    installed:
+1. Install GraalVM
 
+    Run the installGraalVM.sh script from your root directory.
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/S0A1BNckU3xKNW-XIQVgJ76ESgAtRIZ2sT47AOrBdjc/n/c4u03/b/labfiles/o/msdataworkshop-master.zip</copy>
-    ```
-
-2. Unzip the file you downloaded:
-
-    ```
-    <copy>unzip msdataworkshop-master.zip</copy>
+    <copy>./msdataworkshop-master/installGraalVM.sh</copy>
     ```
 
-3.  You need to compile, test and package into a .jar file the Helidon front-end
-    application code using maven. The maven package is already installed in the
-    Cloud Shell. Inside Cloud Shell go to the frontend helidon microservice
+    Verify install by running ~/graalvm-ce-java11-20.1.0/bin/java -version
+
+    ```
+    <copy>~/graalvm-ce-java11-20.1.0/bin/java -version</copy>
+    ```
+
+  ![](images/graalvmversion.png " ")
+
+  Verify that the graalvm install location in your `msdataworkshop.properties` file is correct.  Change it if necessary.
+
+2. Install Jaeger and note the services it creates.
+
+     ```
+    <copy>kubectl create -f https://tinyurl.com/yxn83h3q -n msdataworkshop</copy>
+     ```
+
+   ![demo-erd.png](images/jaegerinstall.png " ")
+
+4.  Issue the `kubectl get services --all-namespaces` command and notice the services it installs.  The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. If your jaeger-query state is pending, and you do not see the External-IP address, you may need to execute this command again.
+
+   ```
+
+   <copy>kubectl get services --all-namespaces</copy>
+
+   ```
+
+   ![demo-erd.png](images/jaegerservice.png " ")
+
+   The jaeger-query IP address highlighted above is the load balancer address that will be used for visualizing the Jaeger UI later in the workshop.
+
+   Add the jaeger-query EXTERNAL-IP:port to your `msdataworkshop.properties` file (as the JAEGER_QUERY_ADDRESS).
+
+5.  The jaeger-collector service (shown just above the jaeger-query service in the image above) is referenced in two files:
+
+  - $MSDATAWORKSHOP_LOCATION/**frontend-helidon**/src/main/resources/META-INF/microprofile-config.properties
+
+ - $MSDATAWORKSHOP_LOCATION/**order-helidon**/src/main/resources/META-INF/microprofile-config.properties
+
+ Open each file and verify that `tracing.host=jaeger-collector.msdataworkshop` and `tracing.port=14268`.
+
+   ![demo-erd.png](images/tracingprops.png " ")
+
+
+
+
+## **STEP 6**: Deploy and access Frontend microservice
+
+1.  You need to compile, test and package the Helidon front-end
+    application code into a `.jar` file using maven. The maven package is already installed in the
+    Cloud Shell. Inside Cloud Shell go to the frontend Helidon microservice
     folder.
 
     ```
     <copy>cd msdataworkshop-master/frontend-helidon</copy>
     ```
 
-4.  Run `maven` to build the package using the following command. Since this is
+2.  Run `maven` to build the package using the following command. Since this is
     the first time maven is executed, nothing is cached, thus it will first
     download all the necessary libraries and bundles.
 
@@ -76,7 +177,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
   ![](images/2826286b95e74bd51237859bd7d3d891.png " ")
 
-5. Execute the following command to investigate the target folder.
+3. Execute the following command to investigate the target folder.
 
     ```
     <copy>ls -al target/</copy>
@@ -84,21 +185,21 @@ In order to divide and isolate cluster resources, you will create a cluster
 
   ![](images/a88b7e437c7a46e3b9878adb62942107.png " ")
 
-## **STEP 3**: Push image to OCI Registry, deploy and access microservices
+## **STEP 7**: Push image to OCI Registry, deploy and access microservices
 
 After you have successfully compiled the application code, you are ready to push it as a docker image into the OCI Registry. Once the image resides in the OCI registry, it can be used for deploying into the cluster. You are going to log into OCIR through the Cloud Shell using the following command.
 
-1.  You will need the following parameters which you have already noted down in the previous Labs.
+1.  You will need the following parameters which you have already added to your `msdataworkshop.properties` file:
 
-    - `<region-key>` - is the Region identifier
-    - `<tenancy-namespace>` - is Object Storage namespace
-    - `<username>` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname`
+    - `REGION-ID` - is the Region identifier
+    - `OBJECT-STORAGE-NAMESPACE` - is Object Storage namespace
+    - `USERNAME` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something`
 
     ```
-    docker login <region-key>.ocir.io -u <tenancy-namespace>/<username>
+   <copy>docker login REGION-ID.ocir.io -u OBJECT-STORAGE-NAMESPACE/USERNAME<copy>
     ```
 
-    *When prompted for password use the Auth token you generated.*
+    *When prompted for password use the Auth token (msdataworkshoptoken) you generated.*
 
   ![](images/1bcf17e7001e44e1e7e583e61618acbf.png " ")
 
@@ -110,41 +211,11 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
-3.  For convenience, let’s store some environment variables into the `.bashrc` file. Open `bashrc` file with `vi` editor
 
-    ```
-    <copy>vi ~/.bashrc</copy>
-    ```
+## **STEP 8**: Build the Docker image
 
-  ![](images/36b9360ef7998ffe686346031227258f.png " ")
-
-4. Append the following lines at the end of the file:
-
-    ```
-    export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
-    source $MSDATAWORKSHOP_LOCATION/shortcutaliases
-    export PATH=$PATH:$MSDATAWORKSHOP_LOCATION/utils/
-    export DOCKER_REGISTRY="<region-key>.ocir.io/<tenancy-namespace>/<repo-name>"
-    ```
-
-  Where `<region-key>` and `<tenancy-namespace>` are the same as in the previous step, and `<repo-name>` is the Repository full name when creating an OCIR repository.
-
-  ![](images/86828131170ee9c9fdb11fe1641ef34b.png " ")
-
-  ![](images/05cb8e8493d83f0db1e36ca85ac84b40.png " ")
-
-5. Source the newly created bashrc file with the following command.
-
-    ```
-    <copy>source ~/.bashrc</copy>
-    ```
-
-  ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
-
-## **STEP 4**: Build the Docker image
-
-1.  You are ready to build a docker image of the front-end helidon application.
-    Change directory into frontend helidon microservice folder:
+1.  You are ready to build a docker image of the frontend Helidon application.
+    Change directory into frontend-helidon folder:
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
@@ -169,7 +240,7 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
 
-4. You should see the newly created image in the list. Click the repository with the new image.
+4. You should see the newly created image in the list. If you don't see it, click the refresh icon in the upper right corner of the Create Repository pane. Click the repository with the new image.
 
   ![](images/b4a27ed98282369ffa60e48e6cea591b.png " ")
 
@@ -203,7 +274,7 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
-8. Check that the load balancer service is running, and note the external IP
+8. Check that the load balancer service is running, and write down the external IP
     address and port.
 
     ```
@@ -219,7 +290,7 @@ After you have successfully compiled the application code, you are ready to push
 9. You are ready to access the frontend page. Open a new browser tab and access
     the external page `http://<external-IP>:8080`:
 
-  ![](images/0335beb6b95e66bef6b3a5154833094f.png " ")
+  ![](images/frontendhome.png " ")
 
 10. Run the remaining build script to build and push the rest of the
     microservices images into the repository
@@ -239,15 +310,17 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
 
-12. Mark all the images as public, as you did previously for the frontend image:
+12. Mark all the images as public (**Actions** > **Change to Public**), just as you did previously for the frontend image:
 
   ![](images/71310f61e92f7c1167f2016bb17d67b0.png " ")
 
 You may now proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Consulting Member of Technical Staff
+* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Last Updated By/Date** - Tom McGinn, April 2020
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+* **Last Updated By/Date** - Tom McGinn, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

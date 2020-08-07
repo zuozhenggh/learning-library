@@ -1,29 +1,35 @@
 # Setup OCI, OKE, ATP and Cloud shell
 ## Introduction
 
-This 25-minute lab will show you how to setup the Oracle Cloud Infrastructure Container Engine for Kubernetes for creating and deploying a front-end helidon application which accesses in the backend the Oracle Autonomous Database.
+This 25-minute lab will show you how to setup the Oracle Cloud Infrastructure Container Engine for Kubernetes for creating and deploying a front-end Helidon application which accesses in the backend the Oracle Autonomous Database.
 
 ### Objectives
 
-* Setup the OKE cluster
-* Setup the ATP databases
+* Collect important information that you will use throughout this workshop
+* Set up the OKE cluster
+* Set up the ATP databases
 
 ### What Do You Need?
 
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 
-## **STEP 1**: Create the basic OCI resources
-You'll need to keep track of important information about the tenancy, such as resource IDs, Tenancy OCID, Region name and user OCID. We recommend you open a text editor on your PC to keep track of this data.
+ You will not be able to complete this workshop with the 'free always' account. Make sure that you select the free trial account with credits.
 
-1. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Choose **Administration > Tenancy Details**.
+## **STEP 1**: Create the basic OCI resources
+You'll need to keep track of important information about the tenancy, such as resource IDs, Tenancy OCID, Region name, Object Storage Namespace and user OCID.
+
+1. Download and save <a href="files/msdataworkshop.properties" target="\_blank">msdataworkshop.properties</a> to store and keep track of the data you'll need in later labs. Open this file in a text editor.
+   You will later copy this information to your root directory using Cloud Shell and source it for the workshop.
+
+2. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Choose **Administration > Tenancy Details**.
 
   ![](images/1-tenancy-details.png " ")
 
-2. The Tenancy Details page shows information about your cloud account. Note the Tenancy OCID by clicking on the **Copy** link next to it. Also note the Object Storage Namespace.
+3. The Tenancy Details page shows information about your cloud account. Add the Tenancy OCID to your `msdataworkshop.properties` file by clicking on the **Copy** link next to it. Also add the Object Storage Namespace - you will need this when logging into Docker.
 
   ![](images/2-copy-ocid.png " ")
 
-3. To get the Region name, open up the hamburger menu in the top-left corner of the Console and choose **Administration > Region Management**. Note down the region identifier.
+4. To get the Region name, open up the hamburger menu in the top-left corner of the Console and choose **Administration > Region Management**. Add the region identifier to your `msdataworkshop.properties` file.
 
   ![](images/3-admin-region-mgmt.png " ")
 
@@ -31,11 +37,11 @@ You'll need to keep track of important information about the tenancy, such as re
 
   ![](images/4-example-region-id.png " ")
 
-4. To get the User OCID, open up the User icon in the top-right corner of the Console, and click your user name.
+5. To get the User OCID, open up the User icon in the top-right corner of the Console, and click your user name. If your user is federated, it will be prefixed with `oracleidentitycloudservice/`.
 
   ![](images/5-get-user-ocid.png " ")
 
-5. On the next page, note down the OCID by clicking on the **Copy** link next to it.
+6. On the next page, copy and paste the User OCID to your `msdataworkshop.properties` file by clicking on the **Copy** link next to it.
 
   ![](images/6-example-user-ocid.png " ")
 
@@ -63,7 +69,7 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
   ![](images/8A-create-oci-dir.png " ")
 
-4. Generate a private key with the following command. Choose a private key name you can remember. When prompted, enter a passphrase to encrypt the private key file. Be sure to make a note of the passphrase you enter, as you will need it later. When prompted again, re-enter the passphrase to confirm it.
+4. Generate a private key with the following command. Choose a private key name you can remember. When prompted, enter a passphrase to encrypt the private key file. Be sure you add this passphrase to your `msdataworkshop.properties` file, as you will need it later. When prompted again, re-enter the passphrase to confirm it.
 
     ```
     <copy>openssl genrsa -out ~/.oci/user1_api_key_private.pem -aes128 2048</copy>
@@ -71,7 +77,7 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
   ![](images/8B-gen-private-key.png " ")
 
-5. Confirm that the private key file has been created in the directory you specified using the following command.
+5. Confirm that the private key file has been created in the directory you specified using the following command. Note the complete path to the private key because you will need it later.
 
     ```
     <copy>ls -l ~/.oci/user1_api_key_private.pem</copy>
@@ -103,7 +109,7 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
   ![](images/9-confim-public-key.png " ")
 
-9. Copy in your clipboard the content of the public key file you just created by opening the file, selecting the entire content and right-click to copy.
+9. Copy the content of the public key file you just created to your clipboard by opening the file, selecting the entire content and right-click to copy.
 
     ```
     <copy>cat ~/.oci/user1_api_key_public.pem</copy>
@@ -119,7 +125,7 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
   ![](images/12-upload-key.png " ")
 
-12. Paste the public key's value into the window and click **Add**. The key is uploaded, and its fingerprint is displayed. Note the fingerprint value, you'll use the fingerprint later.
+12. Paste the public key's value into the window and click **Add**. The key is uploaded, and its fingerprint is displayed. Add the fingerprint value to your `msdataworkshop.properties` file, you'll use the fingerprint later.
 
   ![](images/13-upload-key2.png " ")
 
@@ -133,7 +139,7 @@ You will now create a compartment which would hold the resources used by OKE and
 
   ![](images/15-identity-compartments.png " ")
 
-2. Click **Create Compartment** with the following parameters:
+2. Click **Create Compartment** with the following parameters and click **Create Compartment**:
     - Compartment name: `msdataworkshop`
     - Description: `MS workshop compartment`
 
@@ -141,7 +147,7 @@ You will now create a compartment which would hold the resources used by OKE and
 
   ![](images/17-create-compartment2.png " ")
 
-3. Once the compartment is created, click on the name of the compartment and note of the compartment name and OCID.
+3. Once the compartment is created, click on the name of the compartment and add the compartment name and OCID to your `msdataworkshop.properties` file. This is the `OCI_COMPARTMENT_ID` property in your file.
 
   ![](images/19-compartment-name-ocid.png " ")
 
@@ -154,11 +160,11 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   ![](images/21-dev-services-registry.png " ")
 
-2. Click **Create Repository** and specify the following details for your new repository.
-    - Repository Name: `<user-name>/msdataworkshop`
+2. Click **Create Repository** , specify the following details for your new repository, and click **Create Repository**.
+    - Repository Name: `<firstname.lastname>/msdataworkshop`
 	  - Access: `Public`
 
-  You can only make the new repository public if you belong to the tenancy's Administrators group or have been granted the REPOSITORY_MANAGE permission. If you make the new repository public, any user with internet access and knowledge of the appropriate URL will be able to pull images from the repository. If you make the repository private, you (along with users belonging to the tenancy's Administrators group) will be able to perform any operation on the repository.
+  Make sure that access is marked as `public`.  Add the repository name to your `msdataworkshop.properties` file.
 
   ![](images/22-create-repo.png " ")
 
@@ -172,7 +178,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   ![](images/24-gen-auth-token.png " ")
 
-5. In the description type `msdataworkshoptoken` and click **Generate Token**. Once the token has been generated, it is important to note down the token, as it will not be shown again.
+5. In the description type `msdataworkshoptoken` and click **Generate Token**. Once the token has been generated, it is important that you add the token to your `msdataworkshop.properties` file as it will not be shown again.
 
   ![](images/25-gen-auth-token2.png " ")
 
@@ -197,12 +203,11 @@ balancers. Click **Launch Workflow**.
 
   ![](images/29-create-oke-wizard.png " ")
 
-4. Change the name of the cluster to `msdataworkshopcluster`, accept all the other
+4. Change the name of the cluster to `msdataworkshopcluster` , accept all the other
 defaults, and click **Next** to review the cluster settings.
 
-  ![](images/30-create-oke-wizard2.png " ")
 
-5. The defaults will create 3 worker nodes in a private subnet with a `VM.Standard2.1` shape and install the latest Kubernetes version on the master nodes. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
+5. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
 
   ![](images/31-create-oke-wizard3.png " ")
 
@@ -212,8 +217,7 @@ defaults, and click **Next** to review the cluster settings.
 
 7. Once launched it should usually take around 5-10 minutes for the cluster to be
 fully provisioned and the Cluster Status should show Active. Go to the
-`msdataworkshopcluster` page and check that the Cluster Status shows Active, and
-note down the Cluster ID.
+`msdataworkshopcluster` page and check that the Cluster Status shows Active. Add the Cluster ID to your `msdataworkshop.properties` file.
 
   ![](images/33-click-cluster-name.png " ")
 
@@ -238,15 +242,15 @@ Autonomous Database page provide the following basic information and click **Cre
     -   Display name: `Order DB`
     -   Database name: `orderdb`
     -   Workload type: `Transaction Processing`
-    -   Deployment type: `Share Infrastructure`
+    -   Deployment type: `Shared Infrastructure`
     -   Leave the defaults for version, OCPU count and Storage
-    -   Leave Auto scaling on
-    -   Provide the admin password
+    -   Auto scaling: `off`
+    -   Provide `Welcome12345` as admin password.
     -   Leave the defaults for network access, which is “Allow secure access from
         everywhere”
     -   License type: `License included`
 
-  ![](images/37-create-atp2.png " ")
+  ![](images/37-create-atp3.png " ")
 
 4. It will take a couple of minutes for the database to be provisioned, in the
 meantime you can proceed to create the second ATP instance. Click the Autonomous
@@ -264,19 +268,19 @@ information and click **Create Autonomous Database**:
     -   Display name: `Inventory DB`
     -   Database name: `inventorydb`
     -   Workload type: `Transaction Processing`
-    -   Deployment type: `Share Infrastructure`
+    -   Deployment type: `Shared Infrastructure`
     -   Leave the defaults for version, OCPU count and Storage
-    -   Leave Auto scaling on
-    -   Provide the admin password
+    -   Auto scaling: `off`
+    -   Provide `Welcome12345` as admin password.
     -   Leave the defaults for network access, which is “Allow secure access from
         everywhere”
     -   License type: `License included`
 
-  ![](images/40-create-second-atp2.png " ")
+  ![](images/40-create-second-atp.png " ")
 
 6. Once both databases are provisioned you should see the state changed to
 Available. Click on each of the ATP names in order to go to their pages and copy
-their OCIDs.
+their OCIDs to your `msdataworkshop.properties` file.
 
   ![](images/41-copy-atp-ocids.png " ")
 
@@ -320,11 +324,15 @@ and running.
 
     ![](images/48-verify-oke.png " ")
 
+    *Note: You may have to execute the command a couple times to see all the pods.*
+
 You may proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Consulting Member of Technical Staff
+* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Last Updated By/Date** - Tom McGinn, April 2020
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+* **Last Updated By/Date** - Tom McGinn, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

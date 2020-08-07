@@ -19,7 +19,7 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
 - docker attach – Attaches to a running container
 - docker commit – Creates a new image from a container’s changes
 
-### Lab Prerequisites?
+### Prerequisites?
 
 * Chrome Browser (preferred)
 * Install JSON Extension on Chrome Browser [click here](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en)
@@ -34,7 +34,7 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
 1. Using the terminal of your choice (we recommend the Oracle Cloud Shell) login to the instance you created using secure shell (ssh)
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
 2. You will use yum (a package management tool for Linux) to install the Docker engine, enable it to start on re-boot, grant docker privledges to the opc user and finally install GIT.  When prompted, press *Y* to download.  All of these steps will be performed as the root user.
@@ -197,6 +197,7 @@ You may now proceed to the next lab.
 * **Author** - Oracle NATD Solution Engineering
 * **Last Updated By/Date** - Kay, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
 
 

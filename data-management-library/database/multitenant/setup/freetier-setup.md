@@ -93,7 +93,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 1.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/ssh-first-time.png " ") 
 
@@ -104,7 +104,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 1.  Open up putty and create a new connection.
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/ssh-first-time.png " ") 
 
@@ -177,4 +177,5 @@ Congratulations!  Now you have the environment to run the Multitenant labs.
 - **Author** - Kay Malcolm, Director, DB Product Management
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

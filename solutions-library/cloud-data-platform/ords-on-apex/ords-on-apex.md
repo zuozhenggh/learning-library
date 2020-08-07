@@ -9,6 +9,11 @@
 
 This lab walks you through the steps to enabling Oracle Restful Data Services (ORDS) with APEX in order to call and create APIs.
 
+
+*In addition to the workshop*, feel free to watch the walkthrough companion video:
+[](youtube:Zq0qEgF0bMU)
+
+
 ### Objectives
 -   Learn how to enable Oracle Restful Data Services (ORDS) with APEX
 -   Learn how to import SQL queries as APIs in APEX
@@ -56,7 +61,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/8.png " ")
 
-2. You will download a data file from this workshop for your APIs. You can download it by clicking on the following text link: [Download ORDS-REST-DEMO.sql here](./files/ORDS-REST-DEMO.sql). Then, return back to your browser window.
+2. You will download a data file from this workshop for your APIs. You can download it by clicking on the following text link: [Download ORDS-REST-DEMO.sql here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/kKVRLnqKZkJCLhySyrSngqQ_5riJ8pGGmbepcgy0c8w/n/c4u03/b/solutions-library/o/ORDS-REST-DEMO.sql). Then, return back to your browser window.
 
 3. Click on **Choose File** and select **ORDS-REST-DEMO.sql**, the file you just downloaded for this workshop.
 
@@ -96,7 +101,9 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 7. Change the **Source Type** to **Query**.
 
 8. Then, input the following into the Source box:
-> select * from OOW\_DEMO\_REGIONS
+```
+<copy>select * from OOW_DEMO_REGIONS</copy>
+```
 
 9. Finish by clicking on **Create Handler**.
 
@@ -131,8 +138,16 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
     ![](./images/17v1.png " ")
 
 2. Next, do the same with the following 2 APIs, copying each **Full URL** and pasting each into that same separate notes file.  Be sure to label which URL is which so that you do not confuse them later.
-> product/inventoryForecastingAPI/{store\_add\}
-> product/trendingProductAPI/{store\_add\}
+```
+<copy>
+product/inventoryForecastingAPI/{store_add}
+</copy>
+```
+```
+<copy>
+product/trendingProductAPI/{store_add}
+</copy>
+```
 
    ![](./images/17v2.png " ")
 
@@ -140,7 +155,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
 ### **STEP 2**: Add API URLs to Web Page Code
 
-1. You will download a data file from this workshop for your web page. You can download it by clicking on the following text link: [Download WebPage.zip here](./files/WebPage.zip).
+1. You will download a data file from this workshop for your web page. You can download it by clicking on the following text link: [Download WebPage.zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SM0gd1zQgGI-O7fL3k3fUTP2zjsH7L6AEjc0WS_ckDk/n/c4u03/b/solutions-library/o/WebPage.zip).
 
 2. Then, go to your Downloads folder and unzip the .zip file.
 
@@ -168,7 +183,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/22new.png " ")
 
-5. Once you select a store from the dropdown, you can click the **See Store Details** button to see the product details for the selected store.
+5. Once you select a store from the dropdown, you can click the **View Store Details** button to see the product details for the selected store.
 
     ![](./images/23new.png " ")
 
@@ -182,8 +197,10 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
 ## Acknowledgements
 
-- **Author** - NATD Solution Engineering - Austin Hub (Jess Rein, Philip Pavlov)
-- **Last Updated By/Date** - Jess Rein, Solutions Engineer, March 2020
+- **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
+- **Contributor** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
+- **Last Updated By/Date** - Kamryn Vinson, QA Specialist, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
 

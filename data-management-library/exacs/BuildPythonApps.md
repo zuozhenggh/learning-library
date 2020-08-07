@@ -7,8 +7,8 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 
 **In this lab we will configure and deploy a python application in a developer client VM and connect it to an Exadata Cloud Service database.**
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Objectives
 
 As an application developer,
@@ -65,10 +65,10 @@ In your developer client ssh session,
 
 Lets download a sample python application for the purpose of this lab,
 
-```
-<copy>wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/pythonApp/EXACSpython.zip?raw=true</copy>
-```
 
+```
+<copy>wget -O EXACSPython.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/qvAWQt4VJBTU25lXtqKk3MzmRZ4vE-XJli9g0MhgWfQ/n/orasenatdpltintegration02/b/ExaCSScripts/o/EXACSPython.zip</copy>
+```
 - Unzip the application 
 
 ```

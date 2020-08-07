@@ -22,8 +22,8 @@
 
 [Step 8:  Install and configure Terraform](#practice-8-install-and-configure-terraform)
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Overview
 
 The lab exercises are designed to complement your training, reinforcing the key concepts by applying and demonstrating what you learned in the presentation sessions. This lab book is comprised of individual exercises. These exercises allow you to get first hands-on exposure working with the Oracle Cloud Infrastructure (OCI) using a demo environment, where you will see how key features and functionality are deployed in the software. Using what you learn in the presentations and individual exercises working with the software, you will collaborate as a team in developing and delivering practice presentations.
@@ -83,22 +83,22 @@ Your public key has been saved in /c/Users/username/.ssh/id\_rsa.pub.
 
 2) Enter your tenant name: <Tenant> and click **Continue**
 
-  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/L100-Workshop/Identity_Access_Management/img/image001.png">
+  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image001.png">
 
 3) Oracle Cloud Infrastructure is integrated with Identity Cloud Services, you will see a screen validating your Identity Provider. You can just click **Continue**.
 
-  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/L100-Workshop/Identity_Access_Management/img/image002.png">
+  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image002.png">
 
  4) Enter your user name and password
 
  - **Username:** cloud.admin
  - **Password:** _instructor will provide password_
  
-<img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/L100-Workshop/Identity_Access_Management/img/image003.png">
+<img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image003new.png">
 
 When you sign in to the Console, the home page is displayed.
 
- <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/L100-Workshop/Identity_Access_Management/img/image004.png">
+ <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image004.png">
 
 The home page gives you quick links to the documentation and to Oracle Support.
 
@@ -145,7 +145,7 @@ A Virtual Cloud Network (VCN) is a virtual version of a traditional network incl
 
 3) Select a compartment on the left that you have permission to work in.
 
-<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image004.png">
+<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Virtual_Cloud_Network/media/image001.png">
 
 4) Click **Create Virtual Cloud Network** and enter the following details:
 
@@ -154,7 +154,7 @@ A Virtual Cloud Network (VCN) is a virtual version of a traditional network incl
 
 > **Note:** Enter a friendly name for the cloud network. It doesn't have  to be unique, and it cannot be changed later in the Console (but you can change it with the API).
 
-<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image005.png">
+<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Virtual_Cloud_Network/media/image002.png">
 
 5) Select **Create Virtual Cloud Network plus related resources**. The dialog box expands to list the items that will be created with your cloud network.
 
@@ -164,7 +164,7 @@ A Virtual Cloud Network (VCN) is a virtual version of a traditional network incl
 
 A confirmation page displays the details of the cloud network that you just created.
 
-<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image006.png">
+<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Virtual_Cloud_Network/media/image003.png">
 
 
  The Virtual Cloud Network above has the following resources and characteristics:
@@ -197,17 +197,16 @@ Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts,
    - **VCN Name**: VCN you created in Step 3
    - **Subnet**: Any subnet among the three ADs
 
-<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image007.png">
+<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Compute_Services/media/Create1.png">
 
-<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image008.png">
+<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Compute_Services/media/Create2.png">
 
-<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image009.png">
 
 Launching an instance is simple and intuitive with few options to select. Provisioning of the compute instance will complete in less than a minute and the instance state will change from provisioning to running.
 
 3) Once the instance state changes to Running, you can SSH to the Public IP address of the instance.
     
-<img width="800" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image010.png">
+<img width="800" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/luna-labs/oci-compute/media/image017.png">
 
 4) To connect to the instance, you can use ‘Terminal’ if you are using MAC or Gitbash if you are using Windows.
 

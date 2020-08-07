@@ -10,8 +10,8 @@ In this lab you will practice the following:
 * [Add database](#add-database)
 * [Delete database](#delete-database)
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Create database
 
 In this exercise, you will be creating a database using the following Terraform code template.
@@ -201,3 +201,7 @@ Once you have the basic terraform config is setup, add database can be easily ac
 
 Similar to adding database, you can update the config by reduce the count of database or deleting the file all together, then run plan and apply to delete the database that you don't want.
 **Note**: most companies will want to take great care in delete database as data/information is the bread and butter of their business thus you will likely need to go through some formal process/workflow such as the GitHub workflow above.
+
+## References ##
+
+- [OCI Terraform Reference Manual](https://www.terraform.io/docs/providers/oci/index.html)

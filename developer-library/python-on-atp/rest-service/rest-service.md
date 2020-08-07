@@ -56,15 +56,15 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
 
   ![](images/0-1.png " ")
 
-2. In the search bar type **visual or VsCode** and you should see **Visual Studio Code / VsCode - OSS** in results. **Note: VsCode - OSS same as Visual Studio Code**
+2. In the search bar type **VsCode** and you should see **VsCode - OSS** in results. **Note: VsCode - OSS same as Visual Studio Code**
 
   ![](images/0-2.png " ")
 
-3. **Right Click** on Visual Studio Code / VsCode - OSS icon and then click on **Favorites**. 
+3. **Right Click** on VsCode - OSS icon and then click on **Favorites**. 
 
   ![](images/0-3.png " ")
 
-4. Now that Visual Studio Code is added to favorites. Open the terminal,click on **Applications**, select **Favorites** and then click on **Visual Studio / VsCode - OSS**.
+4. Now that VsCode is added to favorites. Open the terminal,click on **Applications**, select **Favorites** and then click on **VsCode - OSS**.
 
   ![](images/1-1.png " ")
 
@@ -210,4 +210,5 @@ Please proceed to the next lab.
 - **Last Updated By/Date** - Kay Malcolm, April 2020
 - **Workshop Expiration Date** - April 31, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

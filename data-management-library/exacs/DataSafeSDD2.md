@@ -1,9 +1,14 @@
 # Verify a Sensitive Data Model with Oracle Data Safe
 
 ## Introduction
-Using Oracle Data Safe, verify a sensitive data model by using the verification option in the Library and verify a sensitive data model by using the Data Discovery wizard.
+Using Oracle Data Safe, verify a sensitive data model by using the verification option in the Library and by using the Data Discovery wizard.
 
-To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+
+Watch the video below for an overview on how to verify sensitive Data Model with Oracle Data Safe
+
+<div style="max-width:768px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2171811/sp/217181100/embedIframeJs/uiconf_id/35965902/partner_id/2171811?iframeembed=true&playerId=kaltura_player&entry_id=1_i4slvplf&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_ye07oxoy" width="768" height="432" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
 
 ## Objectives
 In this lab, you learn how to do the following:
@@ -32,9 +37,9 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
 ```
-<copy>ALTER SESSION SET CONTAINER=PDB1;</copy>
+<copy>ALTER SESSION SET CONTAINER=YOUR_PDB_NAME</copy>
 ```
-- On the SQL Worksheet, run the following command to add an `AGE` column to the `EMPLOYEES` table. You can expand the EMPLOYEES table in the Navigator to the left to see the current columns.
+- On the SQL Worksheet, run the following command to add an `AGE` column to the `EMPLOYEES` table.
 
 ```
 <copy>ALTER TABLE HCM1.EMPLOYEES ADD AGE NUMBER;</copy>
@@ -122,10 +127,13 @@ Your sensitive data model is updated to include the `AGE` column.
 ```
 <copy>EXEC DBMS_STATS.GATHER_SCHEMA_STATS('HCM1');</copy>
 ```
-- To verify that the `EMPLOYEES` table no longer has an `AGE` column, on the **Navigator** tab, select the `HCM1` schema from the first drop-down menu.
-- From the second drop-down menu, ensure that **Tables** is selected.
-- Expand the `EMPLOYEES` table.
-- Notice that the `AGE` column is gone.
+- To verify that the `EMPLOYEES` table no longer has an `AGE` column, run the following script:
+
+```
+<copy>SELECT AGE FROM HCM1.EMPLOYEES;</copy>
+```
+
+- Notice that the `AGE` column is gone and you receive an "Invalid Identifier" message when you run the command.
 - If the AGE column is still there, click the **Refresh** button to refresh the table.
 
 
@@ -168,7 +176,7 @@ You can manually update your sensitive data model while continuing to work in th
 
 ![](./images/dbsec/datasafe/discovery/age-search.png " ")
 - In the list of sensitive columns, deselect `HCM1.EMPLOYEES.AGE`.
--Your sensitive data model is now updated and accurate.
+- Your sensitive data model is now updated and accurate.
 - Click **Save** then **Exit**.
 
 ### All Done!
