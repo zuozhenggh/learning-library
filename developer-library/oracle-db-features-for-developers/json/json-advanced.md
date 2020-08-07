@@ -21,7 +21,7 @@ This lab assumes you have completed the following labs:
 
 For this lab we will use the *Order Entry (OE)* sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the *OE* schema installed.
 
-## **Step 1**: Connect to the environent
+## **Step 1**: Connect to the environment
 
 If you have logged out of the Cloud Shell, perform the commands below.
 
