@@ -70,8 +70,10 @@ Conclusion of section 2 here.
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - Richard Exley
-* **Documentation** - Lisa Jamen, User Assistance Developer, Oracle Microservices Platform, Helidon
+* **Author** - <Name, Title, Group>
+* **Adapted for Cloud by** -  <Name, Group> -- optional
+* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

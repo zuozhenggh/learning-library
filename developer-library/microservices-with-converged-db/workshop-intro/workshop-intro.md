@@ -24,7 +24,6 @@ Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Ora
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Documentation** - Lisa Jamen, User Assistance Developer, Oracle Microservices Platform, Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
