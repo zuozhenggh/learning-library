@@ -67,7 +67,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 3. Install Jaeger and note the services it installs
    
      ```
-        <copy>kubectl create -f https://tinyurl.com/yxn83h3q -n msdataworkshop</copy>
+        <copy>kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml -n msdataworkshop</copy>
      ```
 
    ![demo-erd.png](images/jaegerinstall.png " ")
@@ -126,7 +126,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
 1.  You need to compile, test and package the Helidon front-end
     application code into a `.jar` file using maven. The maven package is already installed in the
-    Cloud Shell. Inside Cloud Shell go to the frontend Helidon microservice
+    Cloud Shell. Inside Cloud Shell go to the frontend helidon microservice
     folder.
 
     ```
@@ -182,8 +182,8 @@ After you have successfully compiled the application code, you are ready to push
 
 ## **STEP 6**: Build the Docker image
 
-1.  You are ready to build a docker image of the front-end Helidon application.
-    Change directory into frontend Helidon microservice folder:
+1.  You are ready to build a docker image of the front-end helidon application.
+    Change directory into frontend helidon microservice folder:
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
