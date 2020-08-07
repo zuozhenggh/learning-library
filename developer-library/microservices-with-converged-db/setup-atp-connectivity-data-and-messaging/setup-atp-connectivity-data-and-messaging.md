@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab will show you how to create kubernetes secrets for the two existing Autonomous Transaction Processing
-databases. This way we will be able to connect the OKE Helidon microservices to
+This lab will show you how to create kubernetes secrets for the two existing Autonomous Transaction Processing (ATP)
+databases. Secrets will allow us to connect the OKE Helidon microservices to
 the ATP instances.
 
 ### Objectives
 -   Create secrets to connect to existing ATP instances
--   Setup data and Oracle Advanced Queuing in existing ATP instances
+-   Set up data and Oracle Advanced Queuing in existing ATP instances
 
 ### What Do You Need?
 
@@ -19,38 +19,36 @@ the ATP instances.
 ## **STEP 1**: Create Secrets To Connect To ATP PDBs
 You will run a script that will download the connection information (wallet, tnsnames.ora, etc.) and then create kubernetes secrets from the information that will be used to connect to the ATP instrances provisioned earlier.
 
-1.  Verify values are set in the copy of $MSDATAWORKSHOP_LOCATION/msdataworkshop.properties created previously
+1.  Verify values are set in the 'msdataworkshop.properties' file you created.
 
-2.  cd into atp-secrets-setup dir.
+2.  Change directory into atp-secrets-setup.
 
     ```
         <copy>cd $MSDATAWORKSHOP_LOCATION/atp-secrets-setup</copy>
-    ``` 
+    ```
 
-3.  execute createAll.sh and notice output creating secrets.
+3.  Execute createAll.sh and notice output creating secrets.
 
     ```
         <copy>./createAll.sh</copy>
-    ``` 
+    ```
 
   ![](images/createAll.png " ")
 
-4.  execute msdataworkshop and notice secrets for order and inventory database and users.
-
+4.  Execute `msdataworkshop` and notice secrets for order and inventory database and users.
     ```
-        <copy>msdataworkshop</copy>
-        ``` 
+    <copy>msdataworkshop</copy>
+    ```
 
   ![](images/createAll.png " ")
 
-  If there is an issue, execute deleteAll.sh to delete all secrets in workshop namespace
-
+  If there is an issue, execute `deleteAll.sh` to delete all secrets in workshop namespace
     ```
-        <copy>./deleteAll.sh</copy>
-        ``` 
+    <copy>./deleteAll.sh</copy>
+    ```
 
   ![](images/deleteAll.png " ")
-  
+
 
 ## **STEP 2**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
 You will verify the connectivity from the frontend Helidon microservice to the atp admin microservice connecting to the ATP PDBs.
@@ -116,7 +114,7 @@ You will verify the connectivity from the frontend Helidon microservice to the a
 
   ![](images/33ed0b2b6316c6cdbbb2939947759119.png " ")
 
-7.  Use the URL `http://<external-IP>:8080` to open the frontend webpage.
+7.  Use the frontend LoadBalancer URL `http://<external-IP>:8080` to open the frontend webpage. If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
 
   ![](images/testdatasourcescreen.png " ")
 
@@ -155,7 +153,7 @@ You will verify the connectivity from the frontend Helidon microservice to the a
 
     If **Setup Tables Queues and Propagation** was executed, you need to run
     **Unschedule Propagation** first.]
-    
+
     Afterwards, click **Delete Users**.
 
 

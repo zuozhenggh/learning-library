@@ -46,7 +46,7 @@ You have successfully created an APEX workspace where you can begin creating app
 
 In this step, you will create a new APEX app based on a file that contains a small sample of the type of data that the microservices would collect.
 
-1.  Click the following link to download an Excel file: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/naln4K9wHitqILEbK8mPVK6TDzHjsTpM17RNln4JHVU/n/c4u03/b/developer-library/o/order-items-data.xlsx">order-items-data.xlsx</a>. That's the data you will build an app on in this lab.
+1.  Click the following link to download an Excel file: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/naln4K9wHitqILEbK8mPVK6TDzHjsTpM17RNln4JHVU/n/c4u03/b/developer-library/o/order-items-data.xlsx">order-items-data.xlsx</a>. This is the data we will use to build the application in this lab.
 
 2. Return to your APEX workspace and click the down arrow in the **SQL Workshop** tab, then select **SQL Commands**.
 
@@ -57,17 +57,17 @@ In this step, you will create a new APEX app based on a file that contains a sma
     ```
     <copy>
     create table order_items (
-        id                      number, 
-        order_id                number, 
-        item_id                 number, 
-        item_name               varchar2(255), 
-        item_price              number(6,2), 
-        item_count              number, 
-        delivery_zip            varchar2(10), 
-        order_received_time     date, 
-        actual_pickup_time      date, 
-        actual_delivery_time    date, 
-        promised_time           date, 
+        id                      number,
+        order_id                number,
+        item_id                 number,
+        item_name               varchar2(255),
+        item_price              number(6,2),
+        item_count              number,
+        delivery_zip            varchar2(10),
+        order_received_time     date,
+        actual_pickup_time      date,
+        actual_delivery_time    date,
+        promised_time           date,
         constraint myorders_pk primary key (id)
     );
     </copy>
@@ -92,12 +92,12 @@ In this step, you will create a new APEX app based on a file that contains a sma
 7.  Drag and drop the Excel file into the file drop zone.
 
     ![](images/drag-and-drop-file.png)
-  
-    APEX will automatically upload and parse the document. When finished, you should see the following screen. 
+
+    APEX will automatically upload and parse the document. When finished, you should see the following screen.
 
     ![](images/post-file-upload-and-parse.png)
 
-8.  Set **Load To** to **Existing Table** and use the **Table** selector to select the **ORDER_ITEMS** table. 
+8.  Set **Load To** to **Existing Table** and use the **Table** selector to select the **ORDER_ITEMS** table.
 
     ![](images/select-order-items-table.png)
 
