@@ -53,31 +53,31 @@ Go to the GG Home for MySQL. You can either cd to the directory, or call the ali
 
 Go to the GG Home for MySQL. You can either cd to the directory, or call the alias ggmysql:
 
-![](images/A_2.png)
-![](images/A3.png)
+![](images/ALL/A_2.png)
+![](images/ALL/A3.png)
 
 Login to ggsci (GG command line interface), to create and start the GG extract, pump and replicat
 processes:
 
-![](images/A4.png)
+![](images/ALL/A4.png)
 
 Now that the GoldenGate extract, pump and replicat processes are running, next you’ll run a script to load data into the ggsource MySQL database.
 
 Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.)
 
-![](images/A5.png)
+![](images/ALL/A5.png)
 
-![](images/A6.png)
+![](images/ALL/A6.png)
 
 At this point GoldenGate should have replicated all the data from database ggsource to database
 ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed:
 
-![](images/A7.png)
+![](images/ALL/A7.png)
 
 The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 
-![](images/A8.png)
-![](images/A9.png)
+![](images/ALL/A8.png)
+![](images/ALL/A9.png)
 
 ![](images/200/image2xx_1.png)
 

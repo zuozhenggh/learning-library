@@ -52,16 +52,16 @@ First we will start the GG manager process on both the source and target. Start 
 
 In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
-![](images/B3.png)
+![](images/ALL/B3.png)
 
 In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
-![](images/B4.png)
+![](images/ALL/B4.png)
 
 In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
-![](images/B5.png)
-![](images/B6.png)
+![](images/ALL/B5.png)
+![](images/ALL/B6.png)
 
 
 
@@ -69,23 +69,23 @@ Now that the source side is setup, let’s configure GG on the target side (HDFS
 
 In the GG for Hadoop session, you’ll need to modify the HDFS properties by removing the ‘---‘ from the highlighted values:
 
-![](images/B7.png)
+![](images/ALL/B7.png)
 
 
 Now create and start the HDFS replicat process:
 
-![](images/B8.png)
+![](images/ALL/B8.png)
 
 ADD REPLICAT RUNNING B9
-![](images/B9.png)
+![](images/ALL/B9.png)
 
 Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the HDFS directory – it should be empty. Then we’ll load some data on the MySQL database
 ‘ggsource’ and GG will extract and write it to the HDFS target. GG will create a subdirectory for each table in the base directory /user/ggtarget.
 
 Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
-![](images/B10.png)
-![](images/B11.png)
+![](images/ALL/B10.png)
+![](images/ALL/B11.png)
 
 
 In summary, we loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
@@ -96,15 +96,15 @@ Let’s confirm that GG replicated the data that it captured. Go back to the MyS
 
 In MySQL ggsci session window:
 
-![](images/B12.png)
+![](images/ALL/B12.png)
 
-![](images/B13.png)
+![](images/ALL/B13.png)
 
 In Hadoop ggsci session window:
 
-![](images/B14.png)
+![](images/ALL/B14.png)
 
-![](images/B15.png)
+![](images/ALL/B15.png)
 
 
 ## Optional Only if VNC is available
