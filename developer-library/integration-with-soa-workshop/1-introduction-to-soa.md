@@ -57,7 +57,7 @@ To gain access to free tier compute resource, follow these steps:
 
 6. Click **Search for SOA**.
 
-    ![](images/1/choose-soa-options.png)
+    ![](images/1/choose-soa-cloud-options.png)
 
 7. Select the **appropriate** option, enter **based on license type or subscription** that you may already have
 
