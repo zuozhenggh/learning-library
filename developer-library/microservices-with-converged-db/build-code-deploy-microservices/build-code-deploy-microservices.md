@@ -92,20 +92,24 @@ In order to divide and isolate cluster resources, you will create a cluster
 
 1.  Set the value for MSDATAWORKSHOP_LOCATION and source msdataworkshop.properties for the shell
 
-       Use the following command to update the ./bashrc file for the shell.
+       Open `.bashrc` file .
    
        ```
-       <copy>echo 'export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master' >> ~/.bashrc ; echo 'source ~/msdataworkshop.properties' >> ~/.bashrc</copy>
+       <copy>nano ~/.bashrc</copy>
        ```
+       ![](images/36b9360ef7998ffe686346031227258f.png " ")
+   
+     ![](images/86828131170ee9c9fdb11fe1641ef34b.png " ")
      
-       The ~/.bashrc should now contains these two new lines.  Verify using `cat`
-       
+       and insert the following two lines.
        ```
-       <copy>cat ~/.bashrc</copy>
+       <copy>export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
+             source ~/msdataworkshop.properties</copy>
        ```
    
      ![](images/bashrc.png " ")
    
+     Close nano with the commands `CTRL+X`, `SHIFT+Y`, and `ENTER`.
    
 2. Source the edited `.bashrc` file with the following command.
    
