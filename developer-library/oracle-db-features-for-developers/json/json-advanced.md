@@ -226,14 +226,14 @@ We will use the **castles** example to illustrate the JSON Data Guide
 1. We want to get the dataguide for this JSON data
 
     ````
-    select get_castles('ES', 60, 'A') castles_document from dual;
+    <copy>select get_castles('ES', 60, 'A') castles_document from dual;</copy>
     ````
 2. Create a table without the **IS JSON** check constraint
     ````
     <copy>
     create table castles (castle_info clob);
     </copy>
-    `````
+    ````
 
 3. Insert the JSON data into this new table   
 
@@ -247,7 +247,7 @@ We will use the **castles** example to illustrate the JSON Data Guide
 4. We can use the **IS JSON** function to check that the CLOB value is JSON. With IS JSON we can filter text values that are syntactically correct JSON
 
     ````
-    select 1 from castles where castle_info IS JSON;
+    <copy>select 1 from castles where castle_info IS JSON;</copy>
     ````
 5. Calculate the JSON Dataguide for the castle info. The JSON Dataguide is a schema document listing all field names, their object heirarchy and the data type. We use the **dbms_json.pretty** to pretty\-print the data guide to improve readability.
 
@@ -320,7 +320,8 @@ We will use the **castles** example to illustrate the JSON Data Guide
     END;
     /
     </copy>
-    ````     
+    ````
+
 7. Examine the new view
     ````
     <copy>
@@ -332,7 +333,9 @@ We will use the **castles** example to illustrate the JSON Data Guide
     order by "name";
     </copy>
     ````
+
 8. The view is an auto-created JSON_TABLE expression
+
     ````
     <copy>
     select dbms_metadata.get_ddl('VIEW', 'CASTLE_VIEW') from dual;
