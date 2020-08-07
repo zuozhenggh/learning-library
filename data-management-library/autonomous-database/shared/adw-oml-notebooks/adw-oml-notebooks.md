@@ -25,7 +25,7 @@ In this lab, you will use the Oracle Machine Learning (OML) SQL notebook applica
 -   Learn how to share notebooks
 -   Learn how to create and run SQL scripts
 
-### Lab Prerequisites
+### Prerequisites
 
 -   This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 

@@ -24,7 +24,7 @@ For external partitions of ORACLE\_LOADER and ORACLE\_DATAPUMP access driver typ
    - WRITE privileges on directories with logging and bad files
    - EXECUTE privileges on directories with pre-processor programs
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud

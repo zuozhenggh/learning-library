@@ -103,6 +103,7 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Tom McGinn, Database Product Management
+- **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Tom McGinn, July 2020
 
 ## See an issue?

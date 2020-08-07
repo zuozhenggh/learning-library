@@ -12,7 +12,7 @@ Estimated time: 60 - 120 min
 
 * Learn how to adapt parameters and code in project to fit with OKE deployment in OCI tenancy.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial

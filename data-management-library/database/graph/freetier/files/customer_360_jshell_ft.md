@@ -9,13 +9,13 @@
   This lab assumes you have successfully completed the previous Labs (Lab 1 through Lab 7).
 
 
-## STEP 0: Start Graph Server and Client Shell
+## STEP 1: Start Graph Server and Client Shell
 
 Skip the following if you completed the Create Graph Lab, and the Graph Server and client are up:
-   
+
 1. Open an SSH connection to the compute instance, Graph Server.
   `su` to the `oracle` user (or whichever user deployed the Graph Server and client shell and was added to the oraclegraph group in Lab 4, Step 4).
-  
+
   Check that  the line  
   ` "enable_tls": true,`  
   in `/etc/oracle/graph/server.conf` is set to false, i.e. it is  
@@ -29,7 +29,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
   *Note: Do not exit this shell since the graph server process runs in the foreground.*
 
   Proceed after the Graph Server has started and you see the notification `INFO: Starting ProtocolHandler ["http-nio-7007"]`
-  
+
 3. Open a new SSH connection, if necessary, to the compute instance. `su` to the `oracle` user (or whichever user deployed the Graph Server and client shell and was added to the oraclegraph group in Lab 4, Step 4).  
 
 4. Start the JShell in the Graph Server. Run command:
@@ -53,9 +53,9 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
   *Note: If you have any questions in this Step, check Lab 7, Step 2, Step 3, for more information.*
 
 
-## STEP 1: Load Graph into Memory
+## STEP 2: Load Graph into Memory
 
-1. Check to see which graphs have been loaded into the graph server. 
+1. Check to see which graphs have been loaded into the graph server.
 
     ```
     opg-jshell> <copy>session.getGraphs();</copy>
@@ -74,7 +74,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 
   The necessary steps are:
      - Set up the Java Database Connectivity (JDBC) connection. *Modify the URL for your instance*
-  
+
      For `{db_service}`, use database service name (e.g. atpfinance_high) from the tnsnames file in the ADB Wallet you downloaded when setting up your ADB instance.  
      For `{wallet_location}`, specify the directory (e.g. /home/oracle/wallets) where you unzipped the downlaoded wallet in the compute instance.
 
@@ -138,7 +138,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 
   Now we can query this graph and run some analyses on it.
 
-## STEP 2: Pattern Matching
+## STEP 3: Pattern Matching
 
   PGQL Query is convenient for detecting specific patterns.
 
@@ -163,7 +163,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     $8 ==> PgqlResultSetImpl[graph=Customer_360,numResults=1]
     ```
 
-## STEP 3: Detection of Cycles
+## STEP 4: Detection of Cycles
 
   Next we use PGQL to find a series of transfers that start and end at the same account, such as A to B to A, or A to B to C to A.
 
@@ -193,7 +193,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     ```
     opg-jshell> <copy>graph.queryPgql(
     "  SELECT a1.ACCOUNT_NO, t1.AMOUNT, a2.ACCOUNT_NO, t2.AMOUNT " +
-    "       , a3.ACCOUNT_NO, t3.AMOUNT " + 
+    "       , a3.ACCOUNT_NO, t3.AMOUNT " +
     "  MATCH (a1)-[t1:TRANSFER]->(a2)-[t2:TRANSFER]->(a3)-[t3:TRANSFER]->(a1) " +
     "  WHERE t1.DATE < t2.DATE " +
     "    AND t2.DATE < t3.DATE "
@@ -211,7 +211,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
   ![](../../customer_360_analysis/images/detection2.jpg)
 
 
-## STEP 4: Influential Accounts
+## STEP 5: Influential Accounts
 
   1. Filter customers from the graph. (cf. [Filter Expressions](https://docs.oracle.com/cd/E56133_01/latest/prog-guides/filter.html))
 
@@ -232,7 +232,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     ```
     opg-jshell> <copy>sg.queryPgql(
     " SELECT a.ACCOUNT_NO, a.PAGERANK " +
-    " MATCH (a) " + 
+    " MATCH (a) " +
     " ORDER BY a.PAGERANK DESC "
     ).print();
     </copy>
@@ -250,7 +250,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     $13 ==> PgqlResultSetImpl[graph=sub-graph_4,numResults=6]
     ```
 
-## STEP 5: Community Detection
+## STEP 6: Community Detection
 
   Let's find which subsets of accounts form communities. That is, there are more transfers among accounts in the same subset than there are between those and accounts in another subset. We'll use the built-in weakly / strongly connected components algorithm.
 
@@ -284,7 +284,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     +------------------+
     $16 ==> PgqlResultSetImpl[graph=sub-graph_6,numResults=1]
     ```
-    
+
     In this case, all six accounts form one partition by the WCC algorithm.
 
   3. Run a strongly connected components algorithm, SCC Kosaraju, instead.
@@ -340,7 +340,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
   In this case, account `xxx-yyy-201` (John's account), `xxx-yyy-202`, `xxx-yyy-203`, and `xxx-yyy-204` form one partition, account `xxx-zzz-211` is a parition, and account `xxx-zzz-212` is a partition, by the SCC Kosaraju algorithm.
 
 
-## STEP 6: Recommendation
+## STEP 7: Recommendation
 
   Lastly let's use Personalized PageRank to find stores that John may purchase, from the information of what stores people (connected to John) made purchases from. While PageRank measures relative importance of each vertex within the graph, Personalized PageRank measures its relative importance *with regards to a specific vertex you define*.
 
@@ -356,7 +356,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     opg-jshell> <copy>var cs = sg.&lt;Long&gt;createChangeSet();</copy>
     cs ==> Graph change set for graph sub-graph_10 with added vertices: 0, modified vertices: 0, removed vertices: 0, added edges: 0, modified edges: 0, removed edges: 0
     ```
-  
+
     ```
     opg-jshell> <copy>var rs = sg.queryPgql("SELECT id(a), id(x) MATCH (a)-[]->(x)");</copy>
     rs ==> PgqlResultSetImpl[graph=sub-graph_10,numResults=11]
@@ -455,7 +455,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 
     In this case, John is more likely to purchase from Asia Books and Kindle Store.
 
-## STEP 7: Publish the Graph for use with the visualization component
+## STEP 8: Publish the Graph for use with the visualization component
 
   1. Run the following to publish the graph while still in the JShell.
    Publish the customer_360 graph, so that other sessions , e.g. the GraphViz webapp can use it
@@ -468,9 +468,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 ## Acknowledgements ##
 
 * **Author** -  Jayant Sharma, Product Manager, Spatial and Graph  
-
 * **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka). And lots from Jenny Tsai. Thank you.
-
 * **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
 ## See an issue?

@@ -17,7 +17,7 @@ We offer two types of Cloud Accounts:
 - Learn how to login to your Oracle Cloud Account
   
 
-### Lab Prerequisites
+### Prerequisites
 - Cloud Account Name - The name of your tenancy (supplied by the administrator or in your Oracle Cloud welcome email)
 - Username
 - Password

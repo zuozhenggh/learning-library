@@ -56,15 +56,15 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
 
   ![](images/0-1.png " ")
 
-2. In the search bar type **visual or VsCode** and you should see **Visual Studio Code / VsCode - OSS** in results. **Note: VsCode - OSS same as Visual Studio Code**
+2. In the search bar type **VsCode** and you should see **VsCode - OSS** in results. **Note: VsCode - OSS same as Visual Studio Code**
 
   ![](images/0-2.png " ")
 
-3. **Right Click** on Visual Studio Code / VsCode - OSS icon and then click on **Favorites**. 
+3. **Right Click** on VsCode - OSS icon and then click on **Favorites**. 
 
   ![](images/0-3.png " ")
 
-4. Now that Visual Studio Code is added to favorites. Open the terminal,click on **Applications**, select **Favorites** and then click on **Visual Studio / VsCode - OSS**.
+4. Now that VsCode is added to favorites. Open the terminal,click on **Applications**, select **Favorites** and then click on **VsCode - OSS**.
 
   ![](images/1-1.png " ")
 

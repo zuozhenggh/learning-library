@@ -7,7 +7,7 @@
 -   Learn how to enable In-Memory on the Oracle Database
 -   Perform various queries on the In-Memory Column Store
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud

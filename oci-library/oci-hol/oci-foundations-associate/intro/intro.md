@@ -3,7 +3,7 @@
 
 The labs in this workshop provide some of the foundational skills and knowledge you'll need to attempt the [Oracle Cloud Infrastructure Foundations Certification](https://www.oracle.com/cloud/iaas/training/foundations.html) offered by Oracle University.
 
-The Oracle Cloud Infrastructure Foundations Certification provides candidates with foundational knowledge of core cloud computing concepts and an understanding of those services in Oracle Cloud Infrastructure. The certification is intended for candidates with technical and nontechnical backgrounds who want to validate their understanding of Oracle Cloud infrastructure.
+The Oracle Cloud Infrastructure Foundations Certification provides candidates with foundational knowledge of core cloud computing concepts and an understanding of those services in Oracle Cloud Infrastructure. The certification is intended for candidates with technical and non-technical backgrounds who want to validate their understanding of Oracle Cloud infrastructure.
 
 The labs featured on this page cover various solutions, skill levels, and categories based on Oracle Cloud Infrastructure (OCI).
 
@@ -23,6 +23,7 @@ Click on the next lab in this workshop to get started.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Tom McGinn, Database Product Management
+- **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Tom McGinn, July 2020
 
 ## See an issue?

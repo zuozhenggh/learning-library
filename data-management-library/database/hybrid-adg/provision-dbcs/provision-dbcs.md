@@ -2,7 +2,7 @@
 
 In this lab you will provision a Database system on OCI to act as the standby database in the cloud. You will create a different VCN in different region from the on-premise database, and provision a DBCS in that VCN. 
 
-## Lab Prerequisites
+## Prerequisites
 
 This lab assumes you have already completed the following labs:
 

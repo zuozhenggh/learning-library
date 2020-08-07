@@ -38,33 +38,102 @@ In order to divide and isolate cluster resources, you will create a cluster
 
   You have successfully created the `msdataworkshop` namespace which is used for
   deploying the application code.
-
-## **STEP 2**: Build the Microservices image from the GitHub repo
+  
+## **STEP 2**: Download workshop source code, install GraalVM, and install Jaeger
 
 1. To work with application code, you need to download a GitHub repository using
-    the following command. The Cloud Shell already has the `wget` command
-    installed:
+    the following curl and unzip command. The workshop assumes this is done from the user's root directory.
 
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZaegTuNX8_vVPyP6QF1W6LaMXdziREUN1U_8JUEU9Zw/n/c4u03/b/data-management-library-files/o/msdataworkshop-master.zip</copy>
+    <copy>curl -sL https://tinyurl.com/y3pqypkc --output master.zip ; unzip master.zip ; rm master.zip</copy>
+    ```
+   
+2. Install GraalVM
+  
+    Run the install script from your user root directory ./msdataworkshop-master/installGraalVM.sh 
+    ```
+    <copy>./msdataworkshop-master/installGraalVM.sh</copy>
     ```
 
-2. Unzip the file you downloaded:
-
+    Verify install by running ~/graalvm-ce-java11-20.1.0/bin/java -version
     ```
-    <copy>unzip msdataworkshop-master.zip</copy>
+    <copy>~/graalvm-ce-java11-20.1.0/bin/java -version</copy>
     ```
 
-3.  You need to compile, test and package the Helidon front-end
+  ![](images/graalvmversion.png " ")
+  
+  Note the graalvm install location in msdataworkshop.properties and change it if necessary.
+  
+3. Install Jaeger and note the services it installs
+   
+     ```
+        <copy>kubectl create -f https://tinyurl.com/yxn83h3q -n msdataworkshop</copy>
+     ```
+
+   ![demo-erd.png](images/jaegerinstall.png " ")
+   
+4.  Issue the `kubectl get services --all-namespaces` command and notice the services it installs.  The jaeger-query is a loadbalancer exposing an external-ip and runs on port 80.
+   
+   ![demo-erd.png](images/jaegerservice.png " ")
+   
+5.  The jaeger-collector is referenced in $MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties and $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties 
+   
+   ![demo-erd.png](images/tracingprops.png " ")
+   
+   Insure these values match.
+   wget
+   The jaeger-query is the load balancer address for visualizing the Jaeger UI 
+   
+   Note the JAEGER_QUERY_ADDRESS external-ip:port in msdataworkshop.properties.
+
+
+
+## **STEP 3**: Source msdataworkshop.properties 
+
+1.  Set the value for MSDATAWORKSHOP_LOCATION and source msdataworkshop.properties for the shell
+
+       Open `.bashrc` file .
+   
+       ```
+       <copy>nano ~/.bashrc</copy>
+       ```
+       ![](images/36b9360ef7998ffe686346031227258f.png " ")
+   
+     ![](images/86828131170ee9c9fdb11fe1641ef34b.png " ")
+     
+       and insert the following two lines.
+       ```
+       <copy>export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
+             source ~/msdataworkshop.properties</copy>
+       ```
+   
+     ![](images/bashrc.png " ")
+   
+     Close nano with the commands `CTRL+X`, `SHIFT+Y`, and `ENTER`.
+   
+2. Source the edited `.bashrc` file with the following command.
+   
+       ```
+       <copy>source ~/.bashrc</copy>
+       ```
+   
+     ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
+
+    This will set the properties needed to deploy and run the workshop and will also provide convenient shortcut commands.
+    The kubernetes resources created by the workshop and commands can be viewed by issuing the `msdataworkshop` command.
+
+## **STEP 4**: Deploy and access Frontend microservice
+
+1.  You need to compile, test and package the Helidon front-end
     application code into a `.jar` file using maven. The maven package is already installed in the
-    Cloud Shell. Inside Cloud Shell go to the frontend helidon microservice
+    Cloud Shell. Inside Cloud Shell go to the frontend Helidon microservice
     folder.
 
     ```
     <copy>cd msdataworkshop-master/frontend-helidon</copy>
     ```
 
-4.  Run `maven` to build the package using the following command. Since this is
+2.  Run `maven` to build the package using the following command. Since this is
     the first time maven is executed, nothing is cached, thus it will first
     download all the necessary libraries and bundles.
 
@@ -76,7 +145,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
   ![](images/2826286b95e74bd51237859bd7d3d891.png " ")
 
-5. Execute the following command to investigate the target folder.
+3. Execute the following command to investigate the target folder.
 
     ```
     <copy>ls -al target/</copy>
@@ -84,7 +153,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
   ![](images/a88b7e437c7a46e3b9878adb62942107.png " ")
 
-## **STEP 3**: Push image to OCI Registry, deploy and access microservices
+## **STEP 5**: Push image to OCI Registry, deploy and access microservices
 
 After you have successfully compiled the application code, you are ready to push it as a docker image into the OCI Registry. Once the image resides in the OCI registry, it can be used for deploying into the cluster. You are going to log into OCIR through the Cloud Shell using the following command.
 
@@ -110,43 +179,11 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
-3.  For convenience, let’s store some environment variables into the `.bashrc` file. Open `bashrc` file with `nano` editor. Alternatively, you can use the `vi` editor if you are familiar with `vi`.
 
-    ```
-    <copy>nano ~/.bashrc</copy>
-    ```
+## **STEP 6**: Build the Docker image
 
-  ![](images/36b9360ef7998ffe686346031227258f.png " ")
-
-4. Append the following lines at the end of the file:
-
-    ```
-    <copy>export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
-    source $MSDATAWORKSHOP_LOCATION/shortcutaliases
-    export PATH=$PATH:$MSDATAWORKSHOP_LOCATION/utils/
-    export DOCKER_REGISTRY="REGION-ID.ocir.io/OBJECT-STORAGE-NAMESPACE/REPO-NAME"</copy>
-    ```
-
-  Where `REGION-ID` and `OBJECT-STORAGE-NAMESPACE` are the same as in the previous step, and `REPO-NAME` is the Repository full name you created in the OCIR Registry (`firstname.lastname/msdataworkshop`). You can use `Ctrl+SHIFT+V` to paste text into nano.
-
-  ![](images/86828131170ee9c9fdb11fe1641ef34b.png " ")
-
-  ![](images/05cb8e8493d83f0db1e36ca85ac84b40.png " ")
-
-  Close nano with the commands `CTRL+X`, `SHIFT+Y`, and `ENTER`.
-
-5. Source the newly created `.bashrc` file with the following command.
-
-    ```
-    <copy>source ~/.bashrc</copy>
-    ```
-
-  ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
-
-## **STEP 4**: Build the Docker image
-
-1.  You are ready to build a docker image of the front-end helidon application.
-    Change directory into frontend helidon microservice folder:
+1.  You are ready to build a docker image of the front-end Helidon application.
+    Change directory into frontend Helidon microservice folder:
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
@@ -221,7 +258,7 @@ After you have successfully compiled the application code, you are ready to push
 9. You are ready to access the frontend page. Open a new browser tab and access
     the external page `http://<external-IP>:8080`:
 
-  ![](images/0335beb6b95e66bef6b3a5154833094f.png " ")
+  ![](images/frontendhome.png " ")
 
 10. Run the remaining build script to build and push the rest of the
     microservices images into the repository
@@ -248,7 +285,7 @@ After you have successfully compiled the application code, you are ready to push
 You may now proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Consulting Member of Technical Staff
+* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020

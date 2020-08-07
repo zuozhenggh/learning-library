@@ -30,7 +30,7 @@ In this lab, you will:
     - Log in with ml_user and import the ml model.
     - Create a virtual column on the table that applies the model to rows in the table.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 - Login to Oracle Cloud/Sign Up for Free Tier Account

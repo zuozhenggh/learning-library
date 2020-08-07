@@ -75,11 +75,11 @@ In this lab we will verify notifications when a compute instance is launched and
 
 7. Subscription details screen will be displayed with subscription status showig **Pending**.
 
-8. Check the email account you specifed and click the verification link for this subscription. Switch back to OCI console window and verify the subscription status chanegd to **Active**.
+8. Check the email account you specifed and click the verification link for this subscription. Switch back to OCI console window and verify the subscription status chanegd to **Active**. You may need to refresh your browser.
 
-9. You are now subsribed to a Notification topic. Next we will configure Events that will publish messages to this Notification topic.
+9. You are now subscribed to a Notification topic. Next we will configure Events that will publish messages to this Notification topic.
 
-10. From OCI Services menu,Click **Event Service** under **Application Integration**.
+10. From OCI Services menu, under **Application Integration**, click **Events Service**.
 
 11. Click **Create Rule**, Fill out the dialog box:
 
@@ -107,11 +107,11 @@ We have now configured Notification service and tied events to it with a specifi
 
 ## Step 2: Create VCN 
 
-1. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**.
+1. From the OCI Services menu, under **Networking**, click **Virtual Cloud Networks**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and click **Start VCN Wizard**.
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list.
 
-2. Click **VCN with Internet Connectivity** and click **Start Workflow**.
+2. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
 
 3. Fill out the dialog box:
 
@@ -175,11 +175,11 @@ We have now configured Notification service and tied events to it with a specifi
 
 2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**.
 
-3. Locate first compute instance, Click Action icon and then **Terminat**.
+3. Locate first compute instance, Click Action icon and then **Terminate**.
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
 
-4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate.
+4. Make sure Permanently delete the attached Boot Volume is checked, Click **Terminate Instance**. Wait for instance to fully Terminate.
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0017.PNG " ")
 
@@ -189,15 +189,15 @@ We have now configured Notification service and tied events to it with a specifi
 
 7. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will appear.
 
-7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
+7. Locate your VCN , Click Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
 
-8. From OCI Services menu,Click **Notifications** under **Application Integration**. Click your Topic name.
+8. From OCI Services menu, under **Application Integration**, click **Notifications**. Click your Topic name.
 
 9. Click **Delete**.
 
-10. From OCI Services menu,Click **Event Service** under **Application Integration**.
+10. From OCI Services menu, under **Application Integration**, click **Event Service**.
 
 11. Click your Rule name and Click **Delete**. In the dialog box type **DELETE** and click **Delete**.
  
@@ -206,6 +206,7 @@ We have now configured Notification service and tied events to it with a specifi
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
+- **Contributors** - Kamryn Vinson, QA Engineer Lead Intern, Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
 ## See an issue?
