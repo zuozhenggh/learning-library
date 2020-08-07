@@ -2,7 +2,7 @@
 
 During this live lab tutorial, you have learned, gained hands-on understanding and built integration with Service orientated approach principle where application and component provide services to other components via well defined communucation protocol over a network. SOA makes it easier for software components over various networks to work with each other. It provides intelligent and flexible framework for apps and process connectivity, across on-premise and cloud.
 
-Salient points about Oracle SOA. It is a platform to address application **integration**, for both cloud SaaS and on-premise. Oracle SOA can be deployed on customer's datacenter, OCI or any Cloud:
+Salient points about Oracle SOA. It is a platform to address application **integration**, for both cloud SaaS and on-premise. Oracle SOA can be deployed on customer's datacenter, OCI or your choice of IaaS, Cloud provider:
 
 1. Companies can develop applications without replacing existing enterprise applications or system of record.
 2. SOA allows reusing the service of an existing system, alternately building new services from existing applications or system of record. It can provide REST API-enabled from existing system or enterprise business service.

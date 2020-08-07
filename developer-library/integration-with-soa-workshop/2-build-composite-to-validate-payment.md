@@ -57,7 +57,6 @@ In part 1, you have completed the validatePayment process composite, you will re
 Service Bus will protect consumers of the validatePayment composite from routine changes such as deployment location and implementation updates. Service Bus will help scale the service to handle higher volume of requests and provide resiliency for the service if it needs to be taken down for routine maintenance.
 
 
-
 **High-Level Steps:**
 
 1.  Create a new Service Bus application and new project **ValidatePayment.**. 
@@ -89,19 +88,15 @@ Service Bus will protect consumers of the validatePayment composite from routine
     ![](images/2/ServiceBusProxyTesting.png)
 
 ### Details: ###
+In  module 2, 
+- You would create the Proxy and Pipeline to invoke the ValidateBS Business Service using the Service Bus.
+- A routing action is automatically configured for you in the Pipeline.
+- You would deploy the validate payment service and used test console inside the JDeveloper 12c 
+  
 Please follow the construction details from <ins>**page 54 to 77**, in the SOAsuite 12c tutorial</ins>.
-
-
-
-
-[Click here to navigate to the next Module 3](3-process-order-using-composite.md)
 
 ### **Summary**
 
-In the second part of module 2, 
-
-- You've created the Proxy and Pipeline to invoke the ValidateBS Business Service using the Service Bus.
-- A routing action is automatically configured for you in the Pipeline.
-- You've also deployed the validate payment service and used test console inside the JDeveloper 12c 
-
 Congratulations you completed your first SOA Suite 12c composite! in Part 1 and 2 for developing validate payment using SOA Composite approach.
+
+[Click here to navigate to the next Module 3](3-process-order-using-composite.md)
