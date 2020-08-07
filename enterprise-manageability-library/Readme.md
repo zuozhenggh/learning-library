@@ -9,20 +9,13 @@ PLEASE DO NOT EXPORT OR DELETE THE EM CUSTOM IMAGE - IT WILL REMOVE IT FOR EVERY
 ## General Oracle Cloud Workshop Prerequisites
 -  Cloud Account or Free Tier Account
 -  Putty (Windows users)
--  Google Chrome 
+-  Google Chrome
 
-## Enterprise Manager Workshops 
-Find the Setup, FAQ and Workshop documents at:
-[Enterprise Manager Workshops](https://github.com/oracle/learning-library/tree/master/enterprise-manageability-library/enterprise_manager)
-1. [Lifecycle Management for PDBs](enterprise_manager/em_db_lifecycle_automation.md)
-2. [Find, Fix, and Validate](enterprise_manager/em_find_fix_validate.md)
+## Enterprise Manager Workshops
+1. [Enterprise Manager Workshops](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/)
 
-## Oracle Management Cloud Workshops 
-3. [Proactive Database Performance Management with IT Analytics](management_cloud/pro_dbperf_ita.md)
-4. [Log Analytics for Database Troubleshooting and Root-Cause Analysis](management_cloud/log_analytics_of_databases.md)
-5. [Manage Oracle E-Business Suite Infrastructure](management_cloud/omcebs.md)
-6. [Unified Application Infrastructure Visability, Diagnostics Capacity](management_cloud/omcunified.md)
-
-
-
-
+## Oracle Management Cloud Workshops
+1. [Proactive Database Performance Management with IT Analytics](management_cloud/pro_dbperf_ita.md)
+2. [Log Analytics for Database Troubleshooting and Root-Cause Analysis](management_cloud/log_analytics_of_databases.md)
+3. [Manage Oracle E-Business Suite Infrastructure](management_cloud/omcebs.md)
+4. [Unified Application Infrastructure Visibility, Diagnostics Capacity](management_cloud/omcunified.md)

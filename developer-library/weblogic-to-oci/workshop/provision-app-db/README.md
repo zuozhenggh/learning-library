@@ -115,7 +115,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
   <img src="./images/provision-db-16-storage.png" width="70%">
 
 - **Upload** the **SSH public key** created earlier, and if you have another, upload it as well for safety.
-  The key created in the container can be found in the folder `./weblogic-to-oci/ssh`
+  The key created in the container can be found in the folder `./weblogic-to-oci/ssh`. If using the marketplace image, just use the **Paste SSH Keys** and get the key with `cat ~/.ssh/id_rsa.pub` for the key inside the 'on-premises' environment. Also add you local computer key for safety by clicking **add another public key** and using the same command on your local machine.
 
   <img src="./images/provision-db-17-ssh.png" width="70%">
 

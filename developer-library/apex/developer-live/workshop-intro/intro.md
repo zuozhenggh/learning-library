@@ -58,6 +58,85 @@ Total estimated time: 55 minutes
 
 If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top of the page.
 
+### Create Your APEX Workspace 
+
+
+1. Log into your Oracle Cloud account.        
+    From any browser go to [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in).
+
+    Enter your **Cloud Account Name** in the input field and click the **Next** button.
+
+    ![](images/enter-oracle-cloud-account-name.png " ")
+
+2. Enter your **User Name** and **Password** in the input fields, and click **Sign In**.
+
+    ![](images/enter-user-name-and-password.png " ")
+
+3. From within your Oracle Cloud environment, you will create an instance of the Autonomous Transaction Processing database service.
+
+    From the Cloud Dashboard, select the navigation menu icon in the upper left-hand corner and then select **Autonomous Transaction Processing**.
+
+    ![](images/select-atp-in-nav-menu.png " ")
+
+4. Click **Create Autonomous Database**.
+
+    ![](images/click-create-autonomous-database.png " ")
+
+5. Select the **Always Free** option, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.
+
+    ![](images/atp-settings-1.png " ")
+    ![](images/atp-settings-2.png " ")
+    ![](images/atp-settings-3.png " ")
+
+6. After clicking **Create Autonomous Database**, you will be redirected to the Autonomous Database Details page for the new instance.
+
+    Continue when the status changes from:
+
+    ![](images/status-provisioning.png " ")
+
+    to:
+
+    ![](images/status-available.png " ")
+
+7. Within your new database, APEX is not yet configured. Therefore, when you first access APEX, you will need to log in as an APEX Instance Administrator to create a workspace.
+
+    Click the **Tools** tab.
+    Click **Open APEX**.
+
+    ![](images/click-apex.png " ")
+
+    *Note: Always Free Autonomous Database will be stopped after being inactive for 7 days. If that happens, you need to click **More Actions** and then **Start** to start your Autonomous Database, and then **Open APEX**.*
+
+8. Enter the password for the Administration Services and click **Sign In to Administration**.     
+    The password is the same as the one entered for the ADMIN user when creating the ATP instance: **```SecretPassw0rd```**
+
+    ![](images/log-in-as-admin.png " ")
+
+9. Click **Create Workspace**.
+
+    ![](images/welcome-create-workspace.png " ")
+
+10. In the Create Workspace dialog, enter the following:
+
+    | Property | Value |
+    | --- | --- |
+    | Database User | DEMO |
+    | Password | **`SecretPassw0rd`** |
+    | Workspace Name | DEMO |
+
+    Click **Create Workspace**.
+
+    ![](images/create-workspace.png " ")
+
+11. In the APEX Instance Administration page, click the **DEMO** link in the success message.         
+    *Note: This will log you out of APEX Administration so that you can log into your new workspace.*
+
+    ![](images/log-out-from-admin.png " ")
+
+12. On the APEX Workspace log in page, enter **``SecretPassw0rd``** for the password, check the **Remember workspace and username** checkbox, and then click **Sign In**.
+
+    ![](images/log-in-to-workspace.png " ")
+
 ## Downloads
 
 - [Click here](../../spreadsheet/0-workshop-intro-and-setup/files/spreadsheet-app.sql) to download the completed application for workshop 1.
@@ -77,7 +156,7 @@ You may proceed to the next lab.
 
 - **Author** - Salim Hlayel, APEX Product Management
 - **Contributors** - Arabella Yao, Dylan McLeod, Jaden McElvey, LiveLabs QA
-- **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+- **Last Updated By/Date** - Tammy Bednar, Product Management, Aug 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

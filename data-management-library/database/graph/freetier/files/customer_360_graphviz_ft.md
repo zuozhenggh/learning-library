@@ -11,7 +11,7 @@ This lab assumes you have successfully completed Lab 8 and published the graph. 
 
 We will use the Graph Visualization component to explore the graph and run some PGQL queries.
 
-## STEP 0: Setup
+## STEP 1: Setup
 
 1. Open the Graph Viz at `http://<public_ip_for_free_tier_compute>:7007/ui`. Replace `<public_ip_for_free_tier_compute>` with the one for your Graph Server compute instance.
 
@@ -21,13 +21,13 @@ We will use the Graph Visualization component to explore the graph and run some 
 ### Troubleshooting
 If you have a `Page Not Found` error, the graph you published at Lab 8 may expire. You can try to redo Lab 8 (only Step 0, 1, and 7) to publish the graph.
 
-## STEP 1: Modify query
+## STEP 2: Modify query
 1. Modify the query to get the first 50 rows, i.e. change LIMIT 10 to LIMIT 50, and click Run.
 
     You should see a graph similar to the screenshot below.  
     ![Customer 360 graph](../images/ADB_GViz_Show50Elements.png " ")
 
-## STEP 2: Add highlights
+## STEP 3: Add highlights
 Now let's add some labels and other visual context. These are known as highlights.  
 *Note: If you did the Lab: Setup with Docker and cloned the `oracle-pg` repo, then the required `highlights.json` file is in the `customer_360` folder.
 If however you are doing the Setup Graph with Free Tier Lab by itself, then left-click on <a href="highlights.json" download="highlights.json" target="\_blank">this link</a> to download it.*
@@ -38,17 +38,17 @@ If however you are doing the Setup Graph with Free Tier Lab by itself, then left
     The graph should now look like  
     ![Customer 360 graph with highlights](../../customer_360_analysis/images/GraphVizWithHighlights.png " ")
 
-    
 
-## STEP 3: Pattern matching with PGQL
-1. Next let's run a few PGQL queries. 
+
+## STEP 4: Pattern matching with PGQL
+1. Next let's run a few PGQL queries.
 
     The [pgql-lang.org](http://pgql-lang.org) site and [Specification](http://pgql-lang.org/spec/1.2) are the best references for details and examples. For the purposes of this lab, however, here are minimal basics.
 
     The general structure of a PGQL query is
     ```
     SELECT <select list>
-    FROM <graph_name> 
+    FROM <graph_name>
     MATCH <graph_pattern>
     WHERE <condition>
     ```
@@ -65,7 +65,7 @@ If however you are doing the Setup Graph with Free Tier Lab by itself, then left
     The PGQL query for this is:
     ```
     <copy>
-    SELECT * 
+    SELECT *
     MATCH (FromAcct)-[TransferOut:TRANSFER]->(ToAcct1), (ToAcct2)-[TransferIn:TRANSFER]->(FromAcct)
     WHERE TransferOut.DATE = TransferIn.DATE and TransferOut.AMOUNT > 500 and TransferIn.AMOUNT > 500
     </copy>
@@ -84,9 +84,9 @@ Click Run.
     The PGQL query for this is:
     ```
     <copy>
-    SELECT * 
+    SELECT *
     MATCH (FromAcct)-[TransferOut:TRANSFER]->(ToAcct)-[TransferIn:TRANSFER]->(FromAcct)
-    WHERE TransferOut.DATE < TransferIn.DATE 
+    WHERE TransferOut.DATE < TransferIn.DATE
     </copy>
     ```
 
@@ -96,7 +96,7 @@ Click Run.
 
     ![Transfer A to B to A](../images/ADB-GViz_ABA_Transfer.png " ")
 
-6. Let's add one more account to that query to find a circular transfer pattern between 3 accounts. 
+6. Let's add one more account to that query to find a circular transfer pattern between 3 accounts.
 
     The PGQL query becomes:
     ```
@@ -113,13 +113,10 @@ Click Run.
 
     ![Circular transfer A to B to C to A](../images/ADB_GViz_ABCA_Transfer.png " ")
 
-
 ## Acknowledgements ##
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
-
 * **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka). And lots from Jenny Tsai. Thank you.
-
 * **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
 ## See an issue?

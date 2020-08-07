@@ -1,4 +1,5 @@
 {
+    "workshoptitle": "ENTER THE NAME OF THE WORKSHOP IN THE MANIFEST.JSON FILE",
     "tutorials": [
         {
             "title": "Enter lab title here",

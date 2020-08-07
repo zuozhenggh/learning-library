@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you that how to start database instance and listener from putty window,also this covers how to setup vncserver and sqldeveloper etc.
+This lab will show you how to start a database instance and listener from a Putty window. You will also setup vncserver and SQLDeveloper.
 
 Estimated time: 10 Minutes
 
@@ -12,11 +12,10 @@ Estimated time: 10 Minutes
 
 ### Prerequisites
 
-- Lab 1: Login to Oracle Cloud
-- Lab 2: Generate SSH Key
-- Lab 3: Create Compute Instance
+- Lab: Generate SSH Key
+- Lab: Setup Compute Instance
 
-## Step 1: Start the Database and the Listener
+## STEP 1: Start the Database and the Listener
 
 1. Click the Hamburger Menu in the top left corner. Then hover over Compute > Instances. Find the instance you created in the previous lab.
 
@@ -27,7 +26,7 @@ Estimated time: 10 Minutes
    ![](./images/public_ip.png " ")
 
 
-3. In Oracle CloudShell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user.  
+3. In Oracle Cloud Shell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user.  
 
       ````
       ssh -i <<sshkeylocation>> opc@<<your address>>
@@ -38,9 +37,7 @@ Estimated time: 10 Minutes
 
 4. Switch to the oracle user
       ````
-      <copy>
-      sudo su - oracle
-      </copy>
+      <copy>sudo su - oracle</copy>
       ````
 
    ![](./images/env1.png " ")
@@ -48,14 +45,12 @@ Estimated time: 10 Minutes
 5.  Run the script env\_setup\_script.sh, this will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run.
 
 
-````
-<copy>
-cd /u01/script
-./env_setup_script.sh
-</copy>
-````
+      ````
+      <copy>cd /u01/script
+      ./env_setup_script.sh</copy>
+      ````
 
-## Step 2: Download SQL Developer
+## STEP 2: Download SQL Developer
 
 Certain workshops require SQL Developer.  To setup SQL Developer, follow the steps below.
 
@@ -65,27 +60,23 @@ Certain workshops require SQL Developer.  To setup SQL Developer, follow the ste
 
       ![](./images/start-sql-developer.png " ")
 
-## Step 3:  Test a connection
+## STEP 3:  Test a connection
 
 1.  In the connections page click the green plus to create a new connection
 
 2.  Enter the following connection information to test your connection:
-````
-Name: CDB
-Username: system
-Password: Oracle_4U
-Hostname: <instance_publicIP>
-Port: 1521
-SID: convergedcdb
-````
+      - **Name**: CDB
+      - **Username**: system
+      - **Password**: Oracle_4U
+      - **Hostname**: <instance_publicIP>
+      - **Port**: 1521
+      - **SID**: convergedcdb
 
-![](./images/sql_developer_connection.png " ")
+    ![](./images/sql_developer_connection.png " ")
 
 3.  Once your connection is successful in the SQL Developer panel execute the query below
       ````
-      <copy>
-      select name, open_mode from v$database;
-      </copy>
+      <copy>select name, open_mode from v$database;</copy>
       ````
 
       ![](./images/vdatabase.png " ")
