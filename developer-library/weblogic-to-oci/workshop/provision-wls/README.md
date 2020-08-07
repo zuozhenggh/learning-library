@@ -36,7 +36,7 @@ This 30 mins lab walks you through provisioning the WebLogic Infrastructure by l
 
 - **Select** a **Shape**.
 
-   In a real world situation, choose a shape appropriate to handle the load of a single managed server. Since we're using a trial account, choose the **VM.Standard.1** shape or a shape that is available in your tenancy.
+   In a real world situation, choose a shape appropriate to handle the load of a single managed server. Since we're using a trial account, choose the **VM.Standard.E2.1** shape or a shape that is available in your tenancy.
 
   <img src="./images/provision-7-shape.png" width="70%">
 
@@ -114,11 +114,15 @@ This 30 mins lab walks you through provisioning the WebLogic Infrastructure by l
 
 - **Check** the **Provision Load Balancer** checkbox and keep the defaults
 
-  <img src="./images/provision-20-lb.png" width="70%">
+  <img src="./images/provision-20-lb2.png" width="70%">
 
 - Keep IDCS **unchecked**
 
   <img src="./images/provision-21-idcs.png" width="70%">
+
+- Keep Policies **checked**
+
+  <img src="./images/provision-22-policies.png" width="70%">
 
 - Make sure **Provision with JRF** is **not** selected
 
@@ -152,6 +156,8 @@ Once the stack is provisioned, you can find the information regarding the URL an
 - Make a note of the **Load Balancer IP** for later use.
 
 You can copy/paste the **WebLogic Admin Console URL** in your browser and explore the provisioned WebLogic domain. You should find that there are no applications in **deployments** and no data sources in the **service->datasources** menu
+
+While the WebLogic instances are provisioning, it's possible to move forward with the Application Database provisioning as soon as the VCN is provisioned.
 
 
 ## Acknowledgements
