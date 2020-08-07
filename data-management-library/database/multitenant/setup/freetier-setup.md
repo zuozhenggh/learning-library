@@ -93,7 +93,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 1.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/ssh-first-time.png " ") 
 
@@ -104,7 +104,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 1.  Open up putty and create a new connection.
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/ssh-first-time.png " ") 
 
