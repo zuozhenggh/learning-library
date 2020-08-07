@@ -21,17 +21,17 @@ This lab assumes you have completed the following labs:
 
 For this lab we will use the *Order Entry (OE)* sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the *OE* schema installed.
 
-## **Step 1**: Performance Considerations when Querying JSON Documents
+## **Step 1**: Connect to the environent
 
-Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle database, using standard functions and procedures.
+If you have logged out of the Cloud Shell, perform the commands below.
 
-0.  Login to the instance using Oracle Cloud Shell and ssh
+1.  Login to the instance using Oracle Cloud Shell and ssh
 
     ````
     ssh -i yourkeyname opc@<Your Compute Instance Public IP Address>
     ````
 
-1.  Connect to the **ORCLPDB** pluggable database, as SYSDBA using SQL\*Plus.
+2.  Connect to the **ORCLPDB** pluggable database, as SYSDBA using SQL\*Plus.
 
     ````
     <copy>
@@ -39,55 +39,12 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA
     </copy>
     ````
-    Once connected to SQL\*Plus
+    Once connected to SQL\*Plus, connect to the OE user.
     ````
     <copy>
     connect oe/Ora_DB4U@localhost:1521/orclpdb
     </copy>
     ````
-2.  There are performance considerations, for example when using regular expressions on strings, as in this example.
-
-    ````
-    <copy>
-    set timing on
-    </copy>
-    ````
-
-    ````
-    <copy>
-    WITH DATA AS
-        (SELECT substr(j.doc.geonames.geonameId, 2, length(j.doc.geonames.geonameId)-2) as GEONAMES
-        FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%')
-      SELECT trim(regexp_substr(geonames, '[^,]+', 1, LEVEL)) geonames
-      FROM DATA
-      CONNECT BY instr(geonames, ',', 1, LEVEL - 1) > 0;
-    </copy>
-    ````
-
-    ![](./images/p_jsonDoc_8.png " ")
-
-    Take a note of the execution time, and compare it with the following code, that returns the same result, but faster.
-
-    ````
-    <copy>
-    WITH ids ( GEONAMES, start_pos, end_pos ) AS
-      ( SELECT GEONAMES, 1, INSTR( GEONAMES, ',' ) FROM
-    (SELECT substr(j.doc.geonames.geonameId, 2, length(j.doc.geonames.geonameId)-2) as GEONAMES FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%')
-      UNION ALL
-      SELECT GEONAMES,
-        end_pos + 1,
-        INSTR( GEONAMES, ',', end_pos + 1 )
-      FROM ids
-      WHERE end_pos > 0
-      )
-    SELECT SUBSTR( GEONAMES, start_pos, DECODE( end_pos, 0, LENGTH( GEONAMES ) + 1, end_pos ) - start_pos ) AS geonameId
-    FROM ids;
-    </copy>
-    ````
-
-    ![](./images/step1.2-compareresult.png " " )
-
-    The execution time difference is insignificant (00:00:00.02 compared to 00:00:00.00), however, for millions of rows it may have to be considered. The point is coding with JSON objects is a matter of choice, and always there will be multiple options for reaching the same result, and we need to choose the most optimal one.
 
 ## **Step 2**: Retrieve Sub-Regions Information In JSON Format
 
@@ -125,7 +82,7 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
 
 2.  Query the regions and sub-regions stored in these 19 documents, retrieving them as relational data.
 
-The **JSON\_TABLE** function, introduced with Oracle Database Release 12.1, enables the creation of an inline relational view of JSON content. The JSON_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of the JSON document. The **NESTED** clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
+  The **JSON\_TABLE** function, introduced with Oracle Database Release 12.1, enables the creation of an inline relational view of JSON content. The JSON_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of the JSON document. The **NESTED** clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
 
     ````
     <copy>
@@ -1085,8 +1042,8 @@ This lab is now complete.
 ## **Acknowledgements**
 
 - **Author** - Valentin Leonard Tabacaru
-- **Contributors** - Anoosha Pilli, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
-- **Last Updated By/Date** - Troy Anthony, DB Product Management, August 2020
+- **Contributors** - Anoosha Pilli & Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
+- **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
