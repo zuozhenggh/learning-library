@@ -82,4 +82,4 @@ For cost-related estimation
 
 This completes the lab introduction. At this point, you know how ...........  to start building amazing enterprise-grade integration, fast. Go to Module 2 of this lab by clicking the navigation menu icon, in the upper-left corner of the header.
 
- [Otherwise, click here to navigate to Module 2](2-Build-composite-to-validate-payment.md)
+ [Otherwise, click here to navigate to Module 2](2-build-composite-to-validate-payment.md)
