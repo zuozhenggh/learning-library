@@ -33,13 +33,14 @@ Grant Required Privileges to the OE user.
 0.  Login to the instance using ssh.  We recommend using the Oracle Cloud Shell.
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i yourkeyname opc@<Your Compute Instance Public IP Address>
     ````
 
 1.  Connect to the **ORCLPDB** pluggable database, as SYSDBA.
 
     ````
     <copy>
+    sudo su - oracle
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA
     </copy>
     ````
@@ -79,10 +80,17 @@ Grant Required Privileges to the OE user.
 
     ![](./images/p_addACL.png " ")
 
-4.  Ensure the execution is successful.  SQL*Plus Formatting is suggested.
+4.  Ensure the execution is successful.  SQL\*Plus Formatting is suggested.
 
-5.  Close the SYSDBA connection and connect as the **OE** user to pluggable database ORCLPDB. From this point, all tasks on the database side will be performed using the **OE** user. For SQL*Plus, it is also useful to format the output. Feel free to use your own formatting, or just run these formatting commands every time you connect.
+5.  Close the SYSDBA connection and connect as the **OE** user to pluggable database ORCLPDB. From this point, all tasks on the database side will be performed using the **OE** user. For SQL\*Plus, it is also useful to format the output. Feel free to use your own formatting, or just run these formatting commands every time you connect.
 
+    If you have exited from SQL\*Plus, reconnect as the **OE** user (as the **oracle** os-user, not opc)
+    ````
+    <copy>
+    sqlplus oe/Ora_DB4U@localhost:1521/orclpdb
+    </copy>
+    ````
+    or, if still connected to SQL\*Plus connect as the **OE** user
     ````
     <copy>
     conn oe/Ora_DB4U@localhost:1521/orclpdb
@@ -389,7 +397,7 @@ Note: Remember to replace ***GeoNames_username***.
 
     ![](./images/step6.10-newjsondoc.png " ")
 
-11. The SQL/JSON function *JSON\_TABLE* creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. You can query the result returned by the function as a virtual relational table using SQL. The main purpose of *JSON\_TABLE* is to create a row of relational data for each object inside a JSON array and output JSON values from within that object as individual SQL column values. Nested clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
+11. The SQL/JSON function *JSON\_TABLE* creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. You can query the result returned by the function as a virtual relational table using SQL. The main purpose of *JSON\_TABLE* is to create a row of relational data for each object inside a JSON array and output JSON values from within that object as individual SQL column values. The **NESTED** clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
 
     ````
     <copy>
@@ -443,7 +451,7 @@ Please proceed to the next lab.
 
 - **Author** - Valentin Leonard Tabacaru
 - **Contributors** - Anoosha Pilli, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
+- **Last Updated By/Date** - Troy Anthony, DB Product Management, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
