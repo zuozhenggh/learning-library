@@ -64,7 +64,7 @@ From a linux or MacOS instance you can use:
 ```bash
 <copy>
 cd ~/
-wget https://github.com/oracle/learning-library/raw/master/developer-library/weblogic-to-oci/workshop/weblogic-to-oci.zip
+wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip
 </copy>
 ```
 
