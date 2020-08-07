@@ -238,7 +238,7 @@ ssh  opc@<Your Compute Instance Public IP Address>
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
 ````
-ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
 ````
 ![](./images/em-mac-linux-ssh-login.png " ")
 
