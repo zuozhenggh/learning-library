@@ -60,7 +60,6 @@ To gain access to free tier compute resource, follow these steps:
     ![](images/1/choose-soa-cloud-options.png)
 
 7. Select the **appropriate** option, enter **based on license type or subscription** that you may already have
-
   - SOA suite BYOL
   - SOA suite with B2B EDI platform
   - SOA suite with OCI as consumption
@@ -75,16 +74,12 @@ To gain access to free tier compute resource, follow these steps:
 ### **Option 2** Download Oracle SOA from www.oracle.com
 Here is the specific link https://www.oracle.com/cloud/integration/soa-cloud-service/
 
-    For cost-related estimation
-
-
+For cost-related estimation
    go to (https://www.oracle.com/cloud/integration/soa-cloud-service/pricing.html)
 
 
 ### **Summary**
 
-This completes the lab introduction. At this point, you know how ...........  to start building amazing enterprise-grade integration, fast.
+This completes the lab introduction. At this point, you know how ...........  to start building amazing enterprise-grade integration, fast. Go to Module 2 of this lab by clicking the navigation menu icon, in the upper-left corner of the header.
 
-Go to Module 2 of this lab by clicking the navigation menu icon, in the upper-left corner of the header.
-
- [Click here to navigate to Module 2](2-Build-composite-to-validate-payment.md)
+ [Otherwise, click here to navigate to Module 2](2-Build-composite-to-validate-payment.md)
