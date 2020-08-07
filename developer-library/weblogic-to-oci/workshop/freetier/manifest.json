@@ -55,7 +55,12 @@
             "filename": "../migrate-wls-wdt/README.md"
         },
         {
-            "title": "Lab 8: Tear down the environment",
+            "title": "Lab 8 Option: Scale the WebLogic domain",
+            "publisheddate": "07/30/2020",
+            "filename": "../scale-wls/README.md"
+        },
+        {
+            "title": "Lab 9: Tear down the environment",
             "publisheddate": "07/30/2020",
             "filename": "../tear-down/README.md"
         }
