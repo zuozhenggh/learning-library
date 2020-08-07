@@ -6,11 +6,13 @@ The Oracle Learning Library is a place to explore Oracle's products and services
 ### How do I get started? ###
 First, you need an Oracle Cloud account.  Sign up [here](https://oracle.com/free) to create a Free Tier account. Start with one of our featured workshops below.
 
-## July's Featured Workshops
+## August Featured Workshops
+- [Databse 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
+- [Multitenant Fundamentals](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=573)
+- [Building an Application from a Spreadsheet](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631) 
 - [Analyzing your Data with ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 - [Autonomous Database Quick Start](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=582)
 - [Machine Learning on ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=560)  
-- [Building an Application from a Spreadsheet](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631) 
 
 Workshops are being added daily, please visit frequently for new content.
 
