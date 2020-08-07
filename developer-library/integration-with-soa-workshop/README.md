@@ -52,6 +52,8 @@ To return to this page from anywhere within the lab click either Oracle Hands on
 
 Click the navigation menu icon, in the upper-left corner of the header, to see a list of modules in this lab. Click any of the list entries to navigate directly to that module.
 
+When you're ready to proceed to module 1, please [click here to navigate to Module 1](1-introduction-to-soa.md)
+
 ![](images/0/new-lab-menu.png)
 
 ## Downloads
