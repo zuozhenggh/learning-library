@@ -157,6 +157,7 @@ From the Stack Details page, we can completely manage the stack's configuration 
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
+- **Contributors** - Kamryn Vinson, QA Engineer Lead Intern | Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
 ## See an issue?
