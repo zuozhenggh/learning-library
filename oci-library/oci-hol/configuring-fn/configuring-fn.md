@@ -1,17 +1,19 @@
 # Configuring and using Functions in OCI
 
 ## Introduction
-Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-Service platform, built on enterprise-grade Oracle Cloud Infrastructure and powered by the Fn Project open source engine. Use Oracle Functions (sometimes abbreviated to just Functions) when you want to focus on writing code to meet business needs. You don't have to worry about the underlying infrastructure, because Oracle Functions will ensure your app is highly-available, scalable, secure, and monitored. With Oracle Functions, you can deploy your code, call it directly or trigger it in response to events, and get billed only for the resources consumed during the execution.
+Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-Service platform, built on enterprise-grade Oracle Cloud Infrastructure and powered by the Fn Project open source engine. Use Oracle Functions (sometimes abbreviated to just Functions) when you want to focus on writing code to meet business needs. You don't have to worry about the underlying infrastructure because Oracle Functions will ensure your app is highly-available, scalable, secure, and monitored. With Oracle Functions, you can deploy your code, call it directly or trigger it in response to events, and get billed only for the resources consumed during the execution.
 
 **Some Key points:**
 
-*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80% and split you screen*
+*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%*
 
-- All screenshots are examples ONLY.
+- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
 
-- Do NOT use compartment name and other data from screenshots. Only use data (including compartment name) provided in the content section of the lab
+- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
 
-- Mac OS Users should use command+C / command+V to copy and paste inside the OCI Console
+- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
+
+- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
 
 - Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
 
@@ -23,7 +25,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
     **Compartment Name (Provided Later)**
 
-    *Note: OCI UI is being updated thus some screenshots in the instructions might be different than actual UI*
+    **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
 ### Pre-Requisites
 
@@ -37,9 +39,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-6. Completed *Generate SSH Keys* Lab in the Contents menu on the right
-
-## **Step 1**: Sign in to OCI Console and create a VCN
+## Step 1: Sign in to OCI Console and create a VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -50,11 +50,11 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
     ![](./../grafana/images/Grafana_015.PNG " ")
 
-2. From the OCI Services menu, Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from the drop down menu on the left part of the screen under Networking and Click **Start VCN Wizard**.
+2. From the OCI Services menu, Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**.
     
     *NOTE: Ensure the correct Compartment is selected under COMPARTMENT list*
 
-3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**.
 
 4. Fill out the dialog box:
       - **VCN NAME**: Provide a name
@@ -72,58 +72,114 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
               
-## **Step 2**: Create compute instance
+## Step 2: Create ssh keys and compute instance
 
-1. Switch to the OCI console. From OCI services menu, under **Compute**, click **Instances**.
-    Click **Create Instance**. Fill out the dialog box:
-      - **Name your instance**: Enter a name 
-      - **Choose an operating system or image source**: Click **Change Image Source**. In the new window, Click **Oracle Images** Choose **Oracle Cloud Developer Image**. Scroll down, Accept the Agreement and Click **Select Image**
-      - **Availability Domain**: Select availability domain
-      - **Instance Type**: Select Virtual Machine 
-      - **Instance Shape**: Select VM shape 
+1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL006.PNG " ")
 
-      **Under Configure Networking**
-      - **Virtual cloud network compartment**: Select your compartment
-      - **Virtual cloud network**: Choose the VCN 
-      - **Subnet Compartment:** Choose your compartment. 
-      - **Subnet:** Choose the Public Subnet under **Public Subnets** 
-      - **Use network security groups to control traffic** : Leave un-checked
-      - **Assign a public IP address**: Check this option
+2. Enter command 
+    ```
+    <copy>
+    ssh-keygen
+    </copy>
+    ```
+    **HINT:** You can swap between OCI window, 
+    git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon. 
+        ![](./../oci-quick-start/images/RESERVEDIP_HOL007.PNG " ")
 
-       ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+3. Press Enter When asked for 'Enter File in which to save the key', 'Created Directory, 'Enter passphrase', and 'Enter Passphrase again.
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL008.PNG " ")
 
-       - **Boot Volume:** Leave the default
-       - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
+4. You should now have the Public and Private keys:
 
-2. Click **Create**.
+    /C/Users/ PhotonUser/.ssh/id_rsa (Private Key)
+
+    /C/Users/PhotonUser/.ssh/id_rsa.pub (Public Key)
+
+    **NOTE:** id\_rsa.pub will be used to create 
+    Compute instance and id\_rsa to connect via SSH into compute instance.
+
+    **HINT:** Enter command 
+    ```
+    <copy>
+    cd /C/Users/PhotonUser/.ssh (No Spaces) 
+    </copy>
+    ```
+
+    and then 
+
+    ```
+    <copy>
+    ls 
+    </copy>
+    ```
+    to verify the two files exist. 
+
+5. In git-bash Enter command  
+    ```
+    <copy>
+    cat /C/Users/PhotonUser/.ssh/id_rsa.pub
+    </copy>
+    ```
+
+    , highlight the key and copy 
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL009.PNG " ")
+
+1. Click the apps icon, launch notepad and paste the key in Notepad (as backup)
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL0010.PNG " ")
+
+    Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**.
+
+7. Click **Create Instance**. Fill out the dialog box:
+   - **Name your instance**: Enter a name 
+   - **Choose an operating system or image source**: Click **Change Image Source**. In the new window, Click **Oracle Images** Choose **Oracle Cloud Developer Image**. Scroll down, Accept the Agreement and Click **Select Image**
+   - **Availability Domain**: Select availability domain
+   - **Instance Type**: Select Virtual Machine 
+   - **Instance Shape**: Select VM shape 
+
+   **Under Configure Networking**
+   - **Virtual cloud network compartment**: Select your compartment
+   - **Virtual cloud network**: Choose the VCN 
+   - **Subnet Compartment:** Choose your compartment. 
+   - **Subnet:** Choose the Public Subnet under **Public Subnets** 
+   - **Use network security groups to control traffic** : Leave un-checked
+   - **Assign a public IP address**: Check this option
+
+    ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+
+    - **Boot Volume:** Leave the default
+    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
+
+8. Click **Create**.
    
     *NOTE: If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD*
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
 
-3.  Wait for Instance to be in **Running** state. In Cloud Shell Terminal, enter command:
-   
+9.  Wait for Instance to be in **Running** state. In git-bash Enter Command:
     ```
-    <copy>cd .ssh</copy>
+    <copy>
+    cd /C/Users/PhotonUser/.ssh
+    </copy>
     ```
-4.  Enter **ls** and verify your SSH Key file exists.
+10. Enter **ls** and verify id_rsa file exists.
 
-5.  Enter command:
+11. Enter command:
     ```
-    <copy>bash</copy>
-    ```
-    ```
-    <copy>ssh -i <sshkeyname> opc@<PUBLIC_IP_OF_COMPUTE></copy>
+    <copy>
+    bash
+    ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
+    </copy>
     ```
 
     **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command.
 
-6.  Enter 'yes' when prompted for security message.
+12. Enter 'Yes' when prompted for security message.
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
  
-7.  Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt.
+13. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt.
 
-## **Step 3**: Configure and invoke Function
+## Step 3: Configure and invoke Function
 
 1. Check oci CLI installed version, Enter command:
     ```
@@ -176,7 +232,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
     **Do not close the window without saving the token as it can not be retrieved later**.
 
-10. Next install Docker, Enter command:
+10. Nex install Dcoker, Enter command:
     ```
     <copy>
     sudo yum install -y yum-utils device-mapper-persistent-data lvm2
@@ -244,7 +300,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
     ```
     <copy>
-    docker run hello-world
+    $ docker run hello-world
     </copy>
     ```
     To launch the standard hello-world Docker image as a container
@@ -281,9 +337,9 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
     </copy>
     ```
 
-20. Switch to OCI Console. From OCI Services Menu, Click **Compartments** under **Identity**. 
+20. Switch to OCI Cosole. From OCI Services Meneu, Click **Compartments** under **Identity**. 
 
-21. Locate your compartment and click the name. Copy the OCID of the compartment just as was done for User and Tenancy. Also note down your region name.
+21. Locate your compartment and click the name. Copy the OCID of the compartment just as was done for User and Tenancy. Also note down youe region name
 
 22. Switch back to ssh session to compute instance. Configure the new context with the OCID of the compartment you want to own deployed functions. Enter Command;
 
@@ -333,24 +389,24 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 26. Next we will login to OCI Registry and ensure we have access. Enter command:
     
-    ```
-    <copy>bash</copy>
-    ```
-    ```
-    <copy>docker login <region-code>.ocir.io</copy>
-    ```
-    *For example: docker login iad.ocir.io*
+        ```
+        <copy>
+        bash
+        docker login <region-code>.ocir.io
+        </copy>
+        ```
+        *For example: docker login iad.ocir.io*
 
 27. When prompted, enter your user name in the format:
 
-    *&lt;tenancy-namespace>/&lt;username>*
+    *tenancy-namespace>/<username>*
 
     For example: ansh81vru1zp/jdoe@acme.com
  
 28. When prompted for a password, enter the auth token generated ealier.
     ![](./../configuring-fn/images/Fn_001.PNG " ")
 
-29. Next we will create our fist applicaiton. Login to OCI console. Under OCI services menu, click  **Solutions and Platform**, click **Developer Services** and then **Functions**.
+29. Next we will create our fist applicaiton. Login to OCI console. Under OCI serverices menu, click  **Solutions and Platform**, click **Developer Services** and then **Functions**.
 
 30. Click **Create Application** and fill out the dialog box:
 
@@ -363,7 +419,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 31. Next we will create our first function. In the ssh session to compute instance, Enter command;
 
-    *NOTE: 'FUNCTION_NAME' below shoudl be what you created in above step*
+    **NOTE: 'FUNCTION_NAME' below shoudl be what you created in above step*
 
     ```
     <copy>
@@ -410,13 +466,13 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 Congratulations! You've just created, deployed, and invoked your first function using Oracle Functions!
 
-## **Step 4**: Delete the resources
+## Step 4: Delete the resources
 
 1. Switch to  OCI console window.
 
 2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**.
 
-3. Locate first compute instance, Click Action icon and then **Terminate**.
+3. Locate first compute instance, Click Action icon and then **Terminat**.
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
 
 4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate.
@@ -427,7 +483,7 @@ Congratulations! You've just created, deployed, and invoked your first function 
 6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
 appear.
 
-7. Locate your VCN , Click Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is Terminated.
+7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is 
 8. Navigate to **Functions** under **Developer Servies**. Click the action icon and Click **Delete**.
     ![](./../configuring-fn/images/Fn_002.PNG " ")
 
@@ -436,7 +492,6 @@ appear.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Contributors** - Kamryn Vinson, QA Engineer Lead Intern | Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Yaisah Granillo, May 2020
 
 ## See an issue?
