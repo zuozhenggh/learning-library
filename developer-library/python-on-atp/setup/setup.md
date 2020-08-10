@@ -232,7 +232,7 @@ begin
     dbms_datapump.set_parameter(handle => h1, name => 'KEEP_MASTER', value => 1); 
     dbms_datapump.metadata_filter(handle => h1, name => 'SCHEMA_EXPR', value => 'IN(''ALPHA'')'); 
 -----------------------------------------------------
-    dbms_datapump.add_file(handle => h1, filename => '&lt;object storage file location&gt;', directory => 'PY4DEV_TOKEN', filetype => 5);
+    dbms_datapump.add_file(handle => h1, filename => '<object storage file location>', directory => 'PY4DEV_TOKEN', filetype => 5);
 -----------------------------------------------------
     dbms_datapump.set_parameter(handle => h1, name => 'INCLUDE_METADATA', value => 1); 
     dbms_datapump.set_parameter(handle => h1, name => 'DATA_ACCESS_METHOD', value => 'AUTOMATIC'); 
