@@ -56,14 +56,18 @@ Enter the following information:
 ![](./images/em-create-stack-2.png " ")
 
 Enter or select the following:
-  - **(1) Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
-  - **(2) Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
-  - **(3) Select Availability Domain:** Select an availability domain from the dropdown list.
-  - **(4) SSH Public Key**:  Paste the public key you created in the earlier lab
+  - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
+  - **Select Availability Domain:** Select an availability domain from the dropdown list.
+  - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
-*Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+  *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 
-  - **(5) Use Existing VCN?:** Keep the default by keeping unchecked to create a new VCN.
+  - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard2.4***) or select the desired shape from the dropdown menu.
+  - **Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
+
+*Note: Instance OCPUS only applies to Flex Shapes and won't be displayed if you elect to use shapes of fixed OCPUs types*
+
+  - **Use Existing VCN?:** Keep the default by leaving unchecked to create a new VCN.
 
 Next step.
 
@@ -105,22 +109,26 @@ Enter the following information:
 ![](./images/em-create-stack-2b.png " ")
 
 Enter or select the following:
-  - **(1) Instance Count:** Keep the default to **1** to create only one instance.
-  - **(2) Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
-  - **(3) Select Availability Domain:** Select an availability domain from the dropdown list.
-  - **(4) SSH Public Key**:  Paste the public key you created in the earlier lab
+  - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
+  - **Select Availability Domain:** Select an availability domain from the dropdown list.
+  - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
-*Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+  *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 
-  - **(5) Use Existing VCN?:** Check to select.
+  - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard2.4***) or select the desired shape from the dropdown menu.
+  - **Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
+
+*Note: Instance OCPUS only applies to Flex Shapes and won't be displayed if you elect to use shapes of fixed OCPUs types*
+
+  - **Use Existing VCN?:** Check to select.
 
 ![](./images/em-create-stack-2c.png " ")
 
-  - **(6) Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
+  - **Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
 
 ![](./images/em-create-stack-2d.png " ")
 
-  - **(7) Select Public Subnet:** Select existing public subnet from above VCN.
+  - **Select Public Subnet:** Select existing public subnet from above VCN.
 
 *Note: For an existing VCN Option to be used successful, review the details at the bottom of this section*
 
