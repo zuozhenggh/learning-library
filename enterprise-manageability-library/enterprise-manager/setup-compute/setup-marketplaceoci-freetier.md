@@ -29,7 +29,8 @@ This lab assumes you have already completed or reviewed the following:
 ### *Option #1 - Stack creates Instance(s) and self-contained VCN*
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-    - [emcc-mkplc-v3-flex-shape.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xAlfRIvOLUs4-8CghEQ982ySwiEMYOKtbFWD6ptNdsA/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-flex-shape.zip) - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
+    - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/NaRiEVnQNNg12_zCvjmjXEMiNrYIcDp0aKQHYU-dz7M/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+    - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2.  Save in your downloads folder.
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
@@ -40,7 +41,7 @@ This lab assumes you have already completed or reviewed the following:
 
 ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-v3-flex-shape.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
 
 ![](./images/em-create-stack-1.png " ")
 
@@ -82,7 +83,8 @@ Next step.
 ### *Option #2 - Stack creates Instance(s) and uses existing VCN*
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-  - [emcc-mkplc-v3-flex-shape.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Xe5QlJ6GfnEXNxkLAOCLNtoaFEyBN-TsB7kt0N4oMIA/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-flex-shape.zip) - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
+  - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/NaRiEVnQNNg12_zCvjmjXEMiNrYIcDp0aKQHYU-dz7M/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+  - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2. Save in your downloads folder.
 3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
@@ -93,7 +95,7 @@ Next step.
 
 ![](./images/em-create-stack.png " ")
 
-4. Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-v3-flex-shape.zip) that you downloaded. Click **Select**.
+4. Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
 
 ![](./images/em-create-stack-1.png " ")
 
