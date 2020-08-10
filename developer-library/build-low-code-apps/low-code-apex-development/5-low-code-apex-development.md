@@ -13,9 +13,7 @@
 In this lab you will create a new APEX workspace and appliction using a file upload, and then reference the Product Catalog REST Endpoint in your APEX application.  When finished, you will leverage DevCS to clone the APEX application.
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-<a href="https://www.youtube.com/watch?v=RWjzYN3PpdM&list=PLPIzp-E1msraRRNlTFHGfbQ0oOQCNEcin&index=6" target="_blank">
-<img src="./images/lab5video.png" width="250" height="150">
-</a>
+[](youtube:RWjzYN3PpdM)
 
 ## **STEP 1:** Log into your OCI Tenancy
 

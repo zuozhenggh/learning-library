@@ -11,9 +11,7 @@
 In this lab you will use Oracle Visual Builder which is a cloud-based software development Platform as a Service (PaaS) and a hosted environment for your application development infrastructure. It provides an open-source standards-based solution to develop, collaborate on, and deploy applications within Oracle Cloud. You will build on the previous labs using the REST points exposed by the AlphaOffice application to OKE in Lab 300.
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-<a href="https://www.youtube.com/watch?v=X-B180moN-k&list=PLPIzp-E1msraRRNlTFHGfbQ0oOQCNEcin&index=5" target="_blank">
-<img src="./images/lab4video.png" width="250" height="150">
-</a>
+[](youtube:X-B180moN-k)
 
 ### Required Artifacts
 
