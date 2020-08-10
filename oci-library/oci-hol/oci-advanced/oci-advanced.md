@@ -28,7 +28,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 

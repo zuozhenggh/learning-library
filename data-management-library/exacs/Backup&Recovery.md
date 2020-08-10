@@ -37,7 +37,7 @@ As a database user or DBA,
 
 You can use Console to enable automatic incremental backups, create full backups on demand, and view a list of managed backups for a database. The Console also allows you to delete full backups.
 
-**Pre-requisites**
+**Prerequisites**
 
 - Service gateway:
 
@@ -144,7 +144,7 @@ As mentioned above in Backup using Console,
 
 You can use Exadata's backup utility, bkup\_api, to back up databases on an Exadata DB system to an existing bucket in the Oracle Cloud Infrastructure Object Storage service and to the local disk Fast Recovery Area.
 
-**Pre-requisites**
+**Prerequisites**
 
 - Static Route:
 

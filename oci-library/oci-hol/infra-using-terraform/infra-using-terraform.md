@@ -28,7 +28,7 @@ Terraform is Infrastructure as Code tool for building and managing infrastructur
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 

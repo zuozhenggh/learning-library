@@ -28,7 +28,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment). 
 

@@ -14,7 +14,7 @@ Autoscaling relies on performance metrics that are collected by the Monitoring s
 
 A cooldown period between autoscaling events lets the system stabilize at the updated level. The cooldown period starts when the instance pool reaches a steady state. Autoscaling continues to evaluate performance metrics during the cooldown period. When the cooldown period ends, autoscaling adjusts the instance pool's size again if needed.
 
-### Pre-Requisites
+### Prerequisites
 
 1. Have completed *Prerequisites* in the Contents menu on the right
 

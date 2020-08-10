@@ -150,7 +150,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 ## **STEP 5**: Verify the ORCL database is up
 
-Once you deploy your compute instance, t
+Once you deploy your compute instance, tail the log to determine when the database has been configured and is available for use.
 1.  From your connected session of choice **tail** the last 10 lines of the **dbsingle.log** file.  This file configures the database.  
     ````
     <copy>
