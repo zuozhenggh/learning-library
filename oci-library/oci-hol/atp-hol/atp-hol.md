@@ -34,7 +34,7 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 

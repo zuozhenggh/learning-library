@@ -35,7 +35,7 @@ In this lab we will deploy Redis in Master-Slave mode (similar to below) though 
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
    

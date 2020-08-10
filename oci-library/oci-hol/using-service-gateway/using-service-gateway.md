@@ -35,7 +35,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
    
