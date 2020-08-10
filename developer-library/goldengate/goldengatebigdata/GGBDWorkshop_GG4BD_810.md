@@ -6,17 +6,17 @@ Please refer to the ‘Integrating Oracle GoldenGate for Big Data’ doc for a c
 
 HDFS/Hive Properties
 
-![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
+![](images/all/aa2.png)
 
+
+![](images/all/aa3.png)
 
 Kafka Properties
 
-![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
+![](images/all/aa4.png)
+![](images/all/aa5.png)
+![](images/all/aa6.png)
+![](images/all/aa7.png)
 
 
 # Appendix B – Command Reference List
@@ -24,8 +24,8 @@ Kafka Properties
 
 Aliases have been created for this workshop, so that you can focus on GG functionality. These aliases will make it simple to look at files in HDFS, select data from Hive, HBase, Cassandra or consume a Kafka topic.
 
-![](images/800/image8xx_0.png)
-![](images/800/image8xx_0.png)
+![](images/all/bb1.png)
+![](images/all/bb2.png)
 
 
 

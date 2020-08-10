@@ -35,7 +35,7 @@ Select Option 2
 ## Lab 2
 
 
-![](images/ALL/A_LabMenu2.png)
+![](images/all/a_labmenu2.png)
 
 
 (If you are just starting the Labs, you don’t need to reset the environment).
@@ -53,33 +53,32 @@ Go to the GG Home for MySQL. You can either cd to the directory, or call the ali
 
 Go to the GG Home for MySQL. You can either cd to the directory, or call the alias ggmysql:
 
-![](images/ALL/A_2.png)
-![](images/ALL/A3.png)
+![](images/all/a_2.png)
+![](images/all/a3.png)
 
 Login to ggsci (GG command line interface), to create and start the GG extract, pump and replicat
 processes:
 
-![](images/ALL/A4.png)
+![](images/all/a4.png)
 
 Now that the GoldenGate extract, pump and replicat processes are running, next you’ll run a script to load data into the ggsource MySQL database.
 
 Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.)
 
-![](images/ALL/A5.png)
+![](images/all/a5.png)
 
-![](images/ALL/A6.png)
+![](images/all/a6.png)
 
 At this point GoldenGate should have replicated all the data from database ggsource to database
 ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed:
 
-![](images/ALL/A7.png)
+![](images/all/a7.png)
 
 The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 
-![](images/ALL/A8.png)
-![](images/ALL/A9.png)
+![](images/all/a8.png)
+![](images/all/a9.png)
 
-![](images/200/image2xx_1.png)
 
 In summary, we loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local GG trail file. The pump process
 ‘pmpmysql’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘repmysql’ read the remote trail files, and applied the changes to the MySQL database ‘ggtarget’.

@@ -27,7 +27,7 @@ If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘
 ## Before You Begin
 For the Lab terminal session:
 
-![](images/300/Lab3Menu.png)
+![](images/300/lab3menu.png)
 
 The following Lab Menu will be displayed, 
 
@@ -52,16 +52,16 @@ First we will start the GG manager process on both the source and target. Start 
 
 In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
-![](images/ALL/B3.png)
+![](images/all/b3.png)
 
 In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
-![](images/ALL/B4.png)
+![](images/all/b4.png)
 
 In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
-![](images/ALL/B5.png)
-![](images/ALL/B6.png)
+![](images/all/b5.png)
+![](images/all/b6.png)
 
 
 
@@ -69,12 +69,12 @@ Now that the source side is setup, let’s configure GG on the target side (HDFS
 
 In the GG for Hadoop session, you’ll need to modify the HDFS properties by removing the ‘---‘ from the highlighted values:
 
-![](images/ALL/B7.png)
+![](images/all/b7.png)
 
 
 Now create and start the HDFS replicat process:
 
-![](images/ALL/B8.png)
+![](images/all/b8.png)
 
 ADD REPLICAT RUNNING B9
 ![](images/ALL/B9.png)
@@ -84,8 +84,8 @@ Now that GG processes have been created and started on both the source and targe
 
 Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
-![](images/ALL/B10.png)
-![](images/ALL/B11.png)
+![](images/all/b10.png)
+![](images/all/b11.png)
 
 
 In summary, we loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
@@ -96,15 +96,15 @@ Let’s confirm that GG replicated the data that it captured. Go back to the MyS
 
 In MySQL ggsci session window:
 
-![](images/ALL/B12.png)
+![](images/all/b12.png)
 
-![](images/ALL/B13.png)
+![](images/all/b13.png)
 
 In Hadoop ggsci session window:
 
-![](images/ALL/B14.png)
+![](images/all/b14.png)
 
-![](images/ALL/B15.png)
+![](images/all/b15.png)
 
 
 ## Optional Only if VNC is available
@@ -114,11 +114,6 @@ You can also see the files created by GG from Hue: http://127.0.0.1:8888/
 Login to Hue: cloudera/cloudera
 Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hdfs…
 
-![](images/300/image3xx_1.png)
-
-![](images/300/image3xx_1.png)
-
-![](images/300/image3xx_1.png)
 
 End of Lab 3.
 
