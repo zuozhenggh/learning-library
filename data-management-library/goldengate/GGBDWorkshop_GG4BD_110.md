@@ -93,7 +93,7 @@ In this lab we will install GoldenGate for Big Data in the GG Target Home. Follo
 
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
-![](images/All/LabMenu_Opt1.png)
+![](images/All/LabMenu_Opt1.PNG)
 
 The following Lab Menu will be displayed, select 1. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 FYI: LD_LIBRARY_PATH needs to be set for GG, and Java version needs to be version 1.8 or higher. (This is already done in the env script for this workshop)
