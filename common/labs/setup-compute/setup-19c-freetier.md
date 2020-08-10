@@ -109,7 +109,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/cloudshellssh.png " ")
 
@@ -124,7 +124,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 1.  Open up putty and create a new connection.
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/ssh-first-time.png " ")
 

@@ -47,6 +47,7 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
       - **Name:** HA Load Balanced Simple Web App
       - **Description:** Provisions a primary load balancer and a failover load balancer into public subnets distributing load across 2 compute instances hosting a simple web app each in different private subnets.
       - **Create in Compartment:** OCI-ORM
+      - **Terraform Version:** Select 0.11.x  
     
     ![](./../resource-manager/images/CreateStack01.png " ")
     
@@ -156,6 +157,7 @@ From the Stack Details page, we can completely manage the stack's configuration 
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
+- **Contributors** - Kamryn Vinson, QA Engineer Lead Intern | Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
 ## See an issue?

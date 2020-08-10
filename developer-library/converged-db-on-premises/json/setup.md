@@ -80,7 +80,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 1. Open up putty and connect to your instance. 
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/sshconnect.png " ")
 

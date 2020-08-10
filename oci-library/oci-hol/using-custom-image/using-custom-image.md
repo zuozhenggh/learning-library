@@ -6,17 +6,15 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
 **Some Key points:**
 
-*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%*
+*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80% and split your screen*
 
-- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
+- All screenshots are examples ONLY
 
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+- Do NOT use compartment name and other data from screenshots. Only use data (including compartment name) provided in the content section of the lab
 
-- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
+- MacOS Users should use command+C / command+V to copy and paste inside the OCI Console
 
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy
 
     **Cloud Tenant Name**
 
@@ -26,9 +24,9 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
     **Compartment Name (Provided Later)**
 
-    **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
+    *Note: OCI UI is being updated, thus some screenshots in the instructions might be different than actual UI*
 
-### Pre Requisites
+### Pre-Requisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
    
@@ -42,7 +40,9 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console and create VCN
+7. Completed *Generate SSH Keys* Lab in the Contents menu on the right
+
+## **Step 1**: Sign in to OCI Console and create VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -52,11 +52,11 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
     ![](./../grafana/images/Grafana_015.PNG " ")
 
-2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**.
+2. From the OCI Services menu, Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from the drop down menu on the left part of the screen under Networking and Click **Start VCN Wizard**.
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**.
+3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
 
 4. Fill out the dialog box:
 
@@ -69,74 +69,17 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
 5. Verify all the information and  Click **Create**.
 
-6. This will create a VCN with followig components.
+6. This will create a VCN with the following components.
 
     *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
 
-## Step 2: Create ssh keys and compute instance
+## **Step 2**: Create compute instance
 
-1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL006.PNG " ")
+1. Go to the OCI console. From OCI services menu, under **Compute**, click **Instances**.
 
-2. Enter command 
-    
-    ```
-    <copy>
-    ssh-keygen
-    </copy>
-    ```
-    **HINT:** You can swap between OCI window, 
-    git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon.
-
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL007.PNG " ")
-
-3. Press Enter When asked for 'Enter File in which to save the key', 'Created Directory, 'Enter passphrase', and 'Enter Passphrase again.
-   
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL008.PNG " ")
-
-
-4. You should now have the Public and Private keys:
-
-    /C/Users/ PhotonUser/.ssh/id\_rsa (Private Key)
-
-    /C/Users/PhotonUser/.ssh/id\_rsa.pub (Public Key)
-
-    **NOTE:** id\_rsa.pub will be used to create 
-    Compute instance and id\_rsa to connect via SSH into compute instance.
-
-    **HINT:** Enter command 
-    ```
-    <copy>
-    cd /C/Users/PhotonUser/.ssh (No Spaces) 
-    </copy>
-    ```
-    and then 
-    ```
-    <copy>
-    ls 
-    </copy>
-    ```
-    to verify the two files exist. 
-
-5. In git-bash Enter command  
-    ```
-    <copy>
-    cat /C/Users/PhotonUser/.ssh/id_rsa.pub
-    </copy>
-    ```
-    , highlight the key and copy 
-
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL009.PNG " ")
-
-6. Click the apps icon, launch notepad and paste the key in Notepad (as backup).
-
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0010.PNG " ")
-
-7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**.
-
-8. Click **Create Instance**. Fill out the dialog box:
+2. Click **Create Instance**. Fill out the dialog box:
      
       - **Name your instance**: Enter a name 
       - **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
@@ -157,38 +100,36 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
       - **Boot Volume:** Leave the default
       - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
-9. Click **Create**.
+3. Click **Create**.
 
    **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD
 
      ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
 
-10. Wait for Instance to be in **Running** state. In git-bash Enter Command:
+4.  Wait for Instance to be in **Running** state. In Cloud Shell Terminal, enter:
     
     ```
-    <copy>
-    cd /C/Users/PhotonUser/.ssh
-    </copy>
+    <copy>cd .ssh</copy>
     ```
-11. Enter **ls** and verify id\_rsa file exists.
+5.  Enter **ls** and verify your SSH key file exists.
 
-12. Enter command 
+6.  Enter command 
     ```
-    <copy>
-    bash
-    ssh -i id_rsa opc@`<PUBLIC_IP_OF_COMPUTE>`
-    </copy>
+    <copy>bash</copy>
+    ```
+    ```
+    <copy>ssh -i <sshkeyname> opc@<PUBLIC_IP_OF_COMPUTE></copy>
     ```
 
     **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste ssh command.
 
-13. Enter 'Yes' when prompted for security message.
+7.  Enter 'yes' when prompted for security message.
 
      ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
  
-14. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
+8.  Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
-## Step 3: Install httpd on compute instance and create custom image
+## **Step 3**: Install httpd on compute instance and create custom image
 
 1. Switch to ssh session to compute install. Install httpd server, Enter Command:
     ```
@@ -234,7 +175,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 11. ssh to compute instance as before and Enter command:
     ```
     <copy>
-    sudo service httpd start.
+    sudo service httpd start
     </copy>
     ```
 
@@ -245,7 +186,7 @@ You have successfully created a custom image with httpd already installed and us
 A compute instance can have a lot more applications installed and this custom image feature facilitates launching new compute instances with these applications pre-installed.
 
 
-## Step 4: Delete the resources
+## **Step 4**: Delete the resources
 
 1. Switch to  OCI console window.
 
@@ -259,11 +200,11 @@ A compute instance can have a lot more applications installed and this custom im
 
 5. Repeat the step to delete second compute instance.
 
-6. From OCI Servies Menu Click **Compute** then **Custom Images**. Locate the custom image you created. Click the Action icon and then **Terminate**.
+6. From OCI Servies Menu Click **Compute** then **Custom Images**. Locate the custom image you created. Click the Action icon and then **Delete**.
 
 7. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will appear.
 
-8. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
+8. Locate your VCN , Click Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
      ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
 
 
@@ -272,6 +213,7 @@ A compute instance can have a lot more applications installed and this custom im
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
+- **Contributors** - Kamryn Vinson, QA Engineer Lead Intern | Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
 ## See an issue?

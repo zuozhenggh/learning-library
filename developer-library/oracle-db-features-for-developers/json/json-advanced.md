@@ -21,67 +21,30 @@ This lab assumes you have completed the following labs:
 
 For this lab we will use the *Order Entry (OE)* sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the *OE* schema installed.
 
-## **Step 1**: Performance Considerations when Querying JSON Documents
+## **Step 1**: Connect to the environment
 
-Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle database, using standard functions and procedures.
+If you have logged out of the Cloud Shell, perform the commands below.
 
-0.  Login to the instance using Oracle Cloud Shell and ssh
+1.  Login to the instance using Oracle Cloud Shell and ssh
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i yourkeyname opc@<Your Compute Instance Public IP Address>
     ````
 
-1.  Connect to the **ORCLPDB** pluggable database, as SYSDBA.
+2.  Connect to the **ORCLPDB** pluggable database, as SYSDBA using SQL\*Plus.
 
     ````
     <copy>
+    sudo su - oracle
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA
     </copy>
     ````
-
-2.  There are performance considerations, for example when using regular expressions on strings, as in this example.
-
+    Once connected to SQL\*Plus, connect to the OE user.
     ````
     <copy>
-    set timing on
+    connect oe/Ora_DB4U@localhost:1521/orclpdb
     </copy>
     ````
-
-    ````
-    <copy>
-    WITH DATA AS
-        (SELECT substr(j.doc.geonames.geonameId, 2, length(j.doc.geonames.geonameId)-2) as GEONAMES
-        FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%')
-      SELECT trim(regexp_substr(geonames, '[^,]+', 1, LEVEL)) geonames
-      FROM DATA
-      CONNECT BY instr(geonames, ',', 1, LEVEL - 1) > 0;
-    </copy>
-    ````
-
-    ![](./images/p_jsonDoc_8.png " ")
-
-    Take a note of the execution time, and compare it with the following code, that returns the same result, but faster.
-
-    ````
-    <copy>
-    WITH ids ( GEONAMES, start_pos, end_pos ) AS
-      ( SELECT GEONAMES, 1, INSTR( GEONAMES, ',' ) FROM
-    (SELECT substr(j.doc.geonames.geonameId, 2, length(j.doc.geonames.geonameId)-2) as GEONAMES FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%')
-      UNION ALL
-      SELECT GEONAMES,
-        end_pos + 1,
-        INSTR( GEONAMES, ',', end_pos + 1 )
-      FROM ids
-      WHERE end_pos > 0
-      )
-    SELECT SUBSTR( GEONAMES, start_pos, DECODE( end_pos, 0, LENGTH( GEONAMES ) + 1, end_pos ) - start_pos ) AS geonameId
-    FROM ids;
-    </copy>
-    ````
-
-    ![](./images/step1.2-compareresult.png " " )
-
-    The execution time difference is insignificant (00:00:00.02 compared to 00:00:00.00), however, for millions of transactions it may have to be considered. The point is coding with JSON objects is a matter of choice, and always there will be multiple options for reaching the same result, and we need to choose the most optimal one.
 
 ## **Step 2**: Retrieve Sub-Regions Information In JSON Format
 
@@ -118,6 +81,8 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
     ![](./images/step2.1-jsondocintable.png " " )
 
 2.  Query the regions and sub-regions stored in these 19 documents, retrieving them as relational data.
+
+  The **JSON\_TABLE** function, introduced with Oracle Database Release 12.1, enables the creation of an inline relational view of JSON content. The JSON_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of the JSON document. The **NESTED** clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
 
     ````
     <copy>
@@ -244,7 +209,140 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
 
     This query should return 269 rows.
 
-## **Step 4**: Syntax simplifications querying JSON Data
+## **Step 4**: JSON_DATAGUIDE - discover information about the structure and content of JSON documents
+
+The following shows the **JSON_DATAGUIDE**, a function that analyzes one or more JSON values and provides a schema - a structural summary of the data, the field names, how they are nested and their data type.
+
+JSON data-guide information can be saved persistently as part of the JSON search index infrastructure, and this information is updated automatically as new JSON content is added. This is the case by default, when you create a JSON search index: data-guide information is part of the index infrastructure.
+
+You can use a data guide:
+
+ * As a basis for developing applications that involve data mining, business intelligence, or other analysis of JSON documents.
+ * As a basis for providing user assistance about requested JSON information, including search.
+ * To check or manipulate new JSON documents before adding them to a document set (for example: validate, type-check, or exclude certain fields).
+
+We will use the **castles** example to illustrate the JSON Data Guide
+
+1. We want to get the dataguide for this JSON data
+
+    ````
+    <copy>select get_castles('ES', 60, 'A') castles_document from dual;</copy>
+    ````
+2. Create a table without the **IS JSON** check constraint
+    ````
+    <copy>
+    create table castles (castle_info clob);
+    </copy>
+    ````
+
+3. Insert the JSON data into this new table   
+
+    ````
+    <copy>
+    insert into castles
+      select get_castles('ES', 60, 'A') castles_document from dual;
+    commit;
+    </copy>
+    ````
+4. We can use the **IS JSON** function to check that the CLOB value is JSON. With IS JSON we can filter text values that are syntactically correct JSON
+
+    ````
+    <copy>select 1 from castles where castle_info IS JSON;</copy>
+    ````
+5. Calculate the JSON Dataguide for the castle info. The JSON Dataguide is a schema document listing all field names, their object heirarchy and the data type. We use the **dbms_json.pretty** to pretty\-print the data guide to improve readability.
+
+    ````
+    <copy>
+    select json_dataguide(get_castles('ES', 60, 'A'), dbms_json.FORMAT_HIERARCHICAL, dbms_json.pretty ) castles_schema from dual;
+    </copy>
+    ````
+
+6. Create a view using a SUBSET of this schema
+
+    ````
+    <copy>
+    DECLARE
+     dg clob;
+    BEGIN
+       dg := '{
+	       "type": "object",
+	       "properties": {
+		        "geonames": {
+			          "type": "array",
+			          "o:length": 16384,
+			          "o:preferred_column_name": "geonames",
+			      "items": {
+				         "properties": {
+					           "lat": {
+						            "type": "string",
+						            "o:length": 8,
+						            "o:preferred_column_name": "lat"
+                     },
+					           "lng": {
+                        "type": "string",
+                         "o:length": 8,
+                         "o:preferred_column_name": "lng"
+                     },
+                     "name": {
+                        "type": "string",
+                        "o:length": 32,
+                        "o:preferred_column_name": "name"
+                     },
+					              "timezone": {
+                          "type": "object",
+						              "o:length": 64,
+						              "o:preferred_column_name": "timezone",
+                          "properties": {
+                              "dstOffset": {
+								                  "type": "number",
+                                  "o:length": 1,
+                                  "o:preferred_column_name": "dstOffset"
+							                 },
+							                 "gmtOffset": {
+                                   "type": "number",
+								                   "o:length": 1,
+								                   "o:preferred_column_name": "gmtOffset"
+							                  }
+                          }
+					           },
+					           "countryName": {
+					              "type": "string",
+						            "o:length": 8,
+						            "o:preferred_column_name": "countryName"
+					          }
+		  		       }
+			       }
+		      }
+	     }
+    }
+    ';
+    dbms_json.create_view('castle_view', 'castles', 'castle_info', dg);
+    END;
+    /
+    </copy>
+    ````
+
+7. Examine the new view
+    ````
+    <copy>
+    desc castle_view;
+
+    select count(1) from castle_view;
+
+    select "name", "lat", "lng" from castle_view
+    order by "name";
+    </copy>
+    ````
+
+8. The view is an auto-created JSON_TABLE expression
+
+    ````
+    <copy>
+    select dbms_metadata.get_ddl('VIEW', 'CASTLE_VIEW') from dual;
+    </copy>
+    ````
+
+## **Step 5**: Syntax simplifications querying JSON Data
 
 In Oracle Database 19c, there were some improvements in the simplicity of querying JSON documents using SQL. Other improvements were made as well in generating JSON documents on the fly from relational data.
 
@@ -297,7 +395,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
     ![](./images/step5.1-jsonarg.png " " )
 
-2.  Another improvement was made in generating JSON documents in 19c using wildcard. The argument in this case can be the table name or alias, or a view name, followed by a dot and an asterisk wildcard (.*), or just an asterisk wildcard like in the following example.
+2.  Another improvement was made in generating JSON documents in 19c using wildcard. The argument in this case can be the table name or alias, or a view name, followed by a dot and an asterisk wildcard (.\*), or just an asterisk wildcard like in the following example.
 
     ````
     <copy>
@@ -372,7 +470,7 @@ In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows
     </copy>
     ````
 
-In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias.
+In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (\*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias.
 
 ## **Step 7**: Updating a JSON Document
 
@@ -579,7 +677,7 @@ As a performance enhancement in Oracle 19c, if you create a refresh-on-statement
           jt.fcode, convert(jt.toponymName,'WE8ISO8859P1','AL32UTF8') Title,
           convert(jt.name,'WE8ISO8859P1','AL32UTF8') Name FROM MYJSON j,
     JSON_TABLE(DOC, '$' COLUMNS
-    (NESTED PATH '$.geonames[*]'
+    (NESTED PATH '$.geonames[\*]'
       COLUMNS (countryName VARCHAR2(80) PATH '$.countryName' ERROR ON ERROR NULL ON EMPTY,
               adminName1 VARCHAR2(80) PATH '$.adminName1' ERROR ON ERROR NULL ON EMPTY,
               adminName2 VARCHAR2(80) PATH '$.adminName2' ERROR ON ERROR NULL ON EMPTY,
@@ -947,8 +1045,8 @@ This lab is now complete.
 ## **Acknowledgements**
 
 - **Author** - Valentin Leonard Tabacaru
-- **Contributors** - Anoosha Pilli, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
+- **Contributors** - Anoosha Pilli & Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
+- **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
