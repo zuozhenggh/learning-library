@@ -31,7 +31,7 @@ To complete this lab, you will have needed to do the following:
 
 ## Overview
 
-1. Setting Up Policies/Pre-requisites
+1. Setting Up Policies/Prerequisites
 2. Provision Marketplace Image
 3. Logging into the Image
 4. Set up credentials in Enterprise Manager

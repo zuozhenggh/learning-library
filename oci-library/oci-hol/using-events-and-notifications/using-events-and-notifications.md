@@ -31,7 +31,7 @@ In this lab we will verify notifications when a compute instance is launched and
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 

@@ -16,7 +16,7 @@ We will do the following:
 * Enable the policy and apply audit settings to one or more users
 * View the generated audit records
 
-### Pre-Requisites
+### Prerequisites
 
 * The lab requires an Oracle Public Cloud account with Autonomous Transaction Processing Cloud Service.
 
