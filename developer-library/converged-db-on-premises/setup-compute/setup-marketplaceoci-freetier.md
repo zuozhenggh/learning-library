@@ -1,7 +1,7 @@
 # Environment Setup on FreeTier or Existing Cloud Account
 
 ## Introduction
-This lab will show you how to setup an Oracle Cloud Network (VCN) and a compute instance running Oracle Linux 7 and preloaded with Enterprise Manager 13c and monitored database targets, using Oracle Resource Manager and Terraform.  
+This lab will show you how to setup an Oracle Cloud Network (VCN) and a compute instance running Oracle Linux 7 and preloaded with resources needed to perform Converged DB workshop. It relies on Oracle Resource Manager (ORM) and Terraform for end-to-end provisioning.  
 
 ### About Terraform and Oracle Cloud Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
@@ -29,8 +29,8 @@ This lab assumes you have already completed or reviewed the following:
 ### *Option #1 - Stack creates Instance(s) and self-contained VCN*
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-    - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/NaRiEVnQNNg12_zCvjmjXEMiNrYIcDp0aKQHYU-dz7M/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
-    - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
+  - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uZPsGTFvwVSVjMn9JtlhRw5tk8zIiYfIz8iTql-I6eI/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
+  - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2.  Save in your downloads folder.
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
@@ -41,7 +41,7 @@ This lab assumes you have already completed or reviewed the following:
 
 ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, Click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
 ![](./images/em-create-stack-1.png " ")
 
@@ -83,7 +83,7 @@ Next step.
 ### *Option #2 - Stack creates Instance(s) and uses existing VCN*
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-  - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/NaRiEVnQNNg12_zCvjmjXEMiNrYIcDp0aKQHYU-dz7M/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+  - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uZPsGTFvwVSVjMn9JtlhRw5tk8zIiYfIz8iTql-I6eI/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
   - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2. Save in your downloads folder.
@@ -95,7 +95,7 @@ Next step.
 
 ![](./images/em-create-stack.png " ")
 
-4. Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
+4. Select **My Configuration**, Click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
 ![](./images/em-create-stack-1.png " ")
 
