@@ -22,6 +22,12 @@ To deploy these services, you will use Terraform, a tool for building, changing,
 
 You have already applied for and received your Oracle Cloud Free Tier Account.
 
+*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
+<a href="https://www.youtube.com/watch?v=wIoLDX7iWXo&list=PLPIzp-E1msraRRNlTFHGfbQ0oOQCNEcin&index=2&t=0s" target="_blank">
+<img src="./images/video.png" width="250" height="150">
+</a>
+
+
 ## **STEP 1:** Log into OCI Tenancy
 
    Log in to your OCI dashboard and retrieve information required to create resources.
