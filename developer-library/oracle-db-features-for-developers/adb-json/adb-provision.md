@@ -1,10 +1,10 @@
-# Provisioning Autonomous Database (ADW and ATP)
+# Provisioning Autonomous Database (ADW, ATP and JSON)
 
 ## **Introduction**
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. You will provision a new ATP instance and connect to the database using Oracle SQL Developer Web.
+This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW], Autonomous Transaction Processing [ATP] and Autonomous JSON Database [AJD]) on Oracle Cloud. Here, you will provision a new ATP instance and connect to the database using Oracle SQL Developer Web.
 
-*Note: While this lab uses ATP, the steps are identical for creating and connecting to an ADW database.*
+*Note: While this lab uses ATP, the steps are identical for creating and connecting to an ADW or AJD database.*
 
 Estimated time: 5 minutes
 
@@ -14,16 +14,8 @@ Estimated time: 5 minutes
 - Learn how to connect to Autonomous Database with SQL Developer Web via the console
 
 ### Prerequisites
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have completed the **Prerequisites** lab seen in the Contents menu on the right.  In this lab, you will provision an ADB database instance using the cloud console.
+- This lab assumes you have completed the **Prerequisites** lab seen in the Contents menu on the right. The lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 
-### Video Preview
-
-Watch a video demonstration of provisioning a new Autonomous Transaction Processing:
-
-[](youtube:Q6hxMaAPghI)
-
-*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
 
 ## **STEP 1**: Choosing ADW or ATP from the Services Menu
 
@@ -38,7 +30,7 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     ![](images/LabGuide1-39fb4a5b.png " ")
 
-4. If you already have a list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
+4. If you already have a list of databases, you can filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
 
     ![](./images/Compartment.png " ")
 
@@ -55,8 +47,10 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 2. This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 3. Provide basic information for the autonomous database:
 
-    - __Choose a compartment__ - Select a compartment for the database from the drop-down list. For this lab, you may use your **root** compartment. <br>
+    - __Choose a compartment__ - Select a compartment for the database from the drop-down list. For this lab, you may use your **root** compartment. Learn more about compartments [here](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/choosingcompartments.htm) <br>
+
     *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
+
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __JSONLab__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __JSONLab__.
 
@@ -148,11 +142,17 @@ Copy and run this dummy query in your worksheet to see that you are now connecte
 
 ![](./images/dummyquery.png " ")
 
+You may now proceed to the following lab.
 
-## Summary
+
+## Learn more
 In this lab you created an Autonomous Database and connected to it using SQL Developer Web.
 
-You may proceed to the following lab.
+Watch this video demonstration to learn more about Autonomous Database.
+
+[](youtube:Q6hxMaAPghI)
+
+*Note: Interfaces in this video may look different from the updated interfaces you may see.*
 
 ## Want to Learn More?
 

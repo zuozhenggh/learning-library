@@ -2,7 +2,9 @@
 
 ## **Introduction**
 
-This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
+This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  
+
+Estimated time: This lab takes approximately 30 minutes.
 
 ### About JSON in the Oracle Database
 

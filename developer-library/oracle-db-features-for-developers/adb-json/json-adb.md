@@ -2,15 +2,13 @@
 
 ## **Introduction**
 
-This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
+This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  
+
+Estimated time: This lab takes approximately 20 minutes.
 
 ### About JSON in the Oracle Database
 
 **JavaScript Object Notation (JSON)** is defined in standards ECMA-404 (JSON Data Interchange Format) and ECMA-262 (ECMAScript Language Specification, third edition). The JavaScript dialect of ECMAScript is a general programming language used widely in web browsers and web servers.  **Oracle Database** supports **JavaScript Object Notation (JSON)** data natively with relational database features, including transactions, indexing, declarative querying, and views.
-
-Watch this video to learn more about JSON in the Oracle Database.
-
-[](youtube:OXxA6SFqlJ4)
 
 *Schemaless* development based on persisting application data in the form of JSON documents lets you quickly react to changing application requirements. You can change and redeploy your application without needing to change the storage schemas it uses. SQL and relational databases provide flexible support for complex data analysis and reporting, as well as rock-solid data protection and access control. This is typically not the case for NoSQL databases, which have often been associated with schemaless development with JSON in the past. Oracle Database provides all of the benefits of SQL and relational databases to JSON data, which you store and manipulate in the same ways and with the same confidence as any other type of database data.
 
@@ -165,7 +163,7 @@ end;
 ![](./images/jsonserialize.png " ")
 
 
-## **Step 5**:  Single Dot Notation
+## **Step 5**:  Simple Dot Notation
 
 Oracle database SQL engine allows you to use a **simple-dot-notation (SDN)** syntax on your JSON data. With other words, you can write SQL queries that contain something like *TABLE\_Alias.JSON\_Column.JSON\_Property.JSON\_Property* which comes quite handy as the region attribute is an attribute of the nested object location within the JSON document. Remember, JSDN syntax is case sensitive.
 
@@ -366,6 +364,13 @@ Note: Remember to replace ***&YourGeoNameUsername*** with the username of your a
     The SDN syntax returns an *array*, not a relational view of JSON data in one column.
 
 You may proceed to the following lab.
+
+## Learn More
+
+Watch this video to learn more about JSON in the Oracle Database.
+
+[](youtube:OXxA6SFqlJ4)
+
 
 ## **Acknowledgements**
 
