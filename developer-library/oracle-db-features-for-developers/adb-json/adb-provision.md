@@ -1,4 +1,4 @@
-# Provisioning Autonomous Database (ADW, ATP and JSON)
+# Provisioning Autonomous Database (ADW, ATP and AJD)
 
 ## **Introduction**
 

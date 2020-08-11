@@ -16,13 +16,13 @@
         "filename": "../../adb-json/adb-provision.md"
       },
       {
-        "title": "Lab 2: JSON in the Autonomous DB",
+        "title": "Lab 2: JSON in the Autonomous Database",
         "description": "JSON Documents",
         "publisheddate": "4/05/2020",
         "filename": "../../adb-json/json-adb.md"
       },
       {
-        "title": "Lab 3: Advanced JSON in the Autonomous DB",
+        "title": "Lab 3: Advanced JSON in the Autonomous Database",
         "description": "JSON Documents",
         "publisheddate": "4/05/2020",
         "filename": "../../adb-json/json-adb-advanced.md"

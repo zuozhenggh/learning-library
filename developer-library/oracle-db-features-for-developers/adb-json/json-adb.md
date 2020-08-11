@@ -1,4 +1,4 @@
-# Oracle Database 19c JSON Documents
+# JSON in Autonomous Database
 
 ## **Introduction**
 

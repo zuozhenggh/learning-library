@@ -1,4 +1,4 @@
-# Advanced JSON on Oracle Database 19c
+# Advanced JSON in Autonomous Database
 
 ## **Introduction**
 
@@ -547,8 +547,18 @@ You can use *JSON_MERGEPATCH* in a SELECT list to modify the selected documents.
 
     ````
     <copy>
-    SELECT json_mergepatch(j.doc, '{"geonames": [' || json_mergepatch(j.doc.geonames[0], '{"capital":"Toledo", "countryName" : "Medieval Spain"}') || ']}' RETURNING CLOB PRETTY) Medieval
-      FROM myjson j where j.doc.geonames.geonameId = '2510769';
+    SELECT json_mergepatch(j.doc,
+      json_object('geonames' value 
+        json_array(
+           json_mergepatch(
+              j.doc.geonames[0],
+             '{"capital":"Toledo", "countryName" : "Medieval Spain"}'
+           )
+        )
+      )
+      RETURNING CLOB PRETTY
+    ) Medieval
+    FROM myjson j where j.doc.geonames.geonameId = '2510769';
     </copy>
     ````
 
