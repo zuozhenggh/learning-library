@@ -20,7 +20,7 @@ This lab assumes you have:
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-      - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uZPsGTFvwVSVjMn9JtlhRw5tk8zIiYfIz8iTql-I6eI/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
+      - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JDthT7cJjsS1F07KPU77rKEtzdnykXfeMujFVqp0fbo/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 3.  Login to Oracle Cloud
@@ -268,7 +268,7 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 
 [Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
 
-## Appendix:  Updating an Existing VCN
+## Appendix:  Adding Security Rules to an Existing VCN
 This workshop requires a certain number of ports to be available.
 
 1.  Go to Networking -> Virtual Cloud Networks
@@ -278,8 +278,8 @@ This workshop requires a certain number of ports to be available.
 5.  Click Add Ingress Rule button
 6.  Enter the following:  
     - Source CIDR: 0.0.0.0/0
-    -Destination Port Range: 
-7.  Click Add Ingress Rules
+    - Destination Port Range: 3000, 3001, 3003, 1521, 7007, 9090, 22 
+7.  Click the Add Ingress Rules button
 
 
 ## Appendix: Troubleshooting Tips
