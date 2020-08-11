@@ -191,8 +191,7 @@ Perform the following steps to create your first RESTful Service
 ![](./images/ordsl15.png " ") 
 
 16. **The RESTful Services Wizard** appears which will assist you to define a resource module and a resource template. Enter the following values in the wizard and click **Next**.
-
-  ````
+````
   <copy>
 
 Module Name: cnvg 	
@@ -200,14 +199,15 @@ URI Prefix: cnvg/
 Publish- Make this RESful Service available for use: (check) 
 Pagination Size : 25 
 Origins Allowed: (leave blank)
-
-   
-    </copy>
+  
+      </copy>
  ````
 
 ![](./images/ordsl16.png " ") 
-
-17. The RESTful Services Wizard - Step 2 of 3 displays the Resource Template attributes. Enter the following values in the wizard.
+ 
+ 
+ 
+17.  The RESTful Services Wizard - Step 2 of 3 displays the Resource Template attributes. Enter the following values in the wizard.
  
  ````
     <copy>
@@ -223,7 +223,7 @@ ETag : Secure Hash
 
 The resource template groups the resource handlers that consist of the HTTP operation method: GET, DELETE, POST and PUT. Only one resource handler per HTTP operation method type is allowed. For example, you cannot have two HTTP GET resource handlers for the same resource template. But you can have one GET and one PUT resource handlers.
 
-18. The RESTful Services Wizard - Step 3 of 3 displays the RESTful Summary. Review the summary and click Finish to create your resource module and resource template.
+18.  The RESTful Services Wizard - Step 3 of 3 displays the RESTful Summary. Review the summary and click Finish to create your resource module and resource template.
   
 ![](./images/ordsl18.png " ") 
 
@@ -342,7 +342,7 @@ http://&lt;Instance_ip_address&gt;:9090/ords/jxlpdb/appjson/cnvg/cnvg/
 ![](./images/ordsl35.png " ")
 
 
-## Step-4: Insert data into JSON table using POST method
+**Insert data into JSON table using POST method**
 
 Perform the following steps to create a RESTful Service which inserts the  information into table purchase_order  using the HTTP Method POST.
 
@@ -350,12 +350,12 @@ Perform the following steps to create a RESTful Service which inserts the  infor
 
 ![](./images/ordsl36.png " ")
 
-37. In the Mime Types, click the **+** icon to add a row to the Mime Types. Enter **application/json** and click **Apply**.
+36. In the Mime Types, click the **+** icon to add a row to the Mime Types. Enter **application/json** and click **Apply**.
 
 ![](./images/ordsl37.png " ")
 
  
-38. In the RESTful Services navigator, the resource template cnvg/ contains the resource handler POST.
+37. In the RESTful Services navigator, the resource template cnvg/ contains the resource handler POST.
 The resource handler editor POST cnvg/ is displayed on the right-side. Enter the following PL/SQL code in the SQL Worksheet tab. Save the code in the POST handler.
 ````
        <copy>
@@ -369,17 +369,18 @@ END;
 
 ![](./images/ordsl38.png " ")
 
-39.	Test the Restful Service. Provide following values in the Postman.
+38.	Test the Restful Service. Provide following values in the Postman.
 Enter
 ````
-<copy>
-http://&lt;Instance_ip_address&gt;:9090/ords/jxlpdb/appjson/cnvg/cnvg/  
-</copy>
+ 
+     <copy>  http://&lt;Instance_ip_address&gt;:9090/ords/jxlpdb/appjson/cnvg/cnvg/  
+
+    </copy>
 ````
 for URL, and select POST for HTTP Method. For the **body** select **raw** and **JSON** from dropdown, enter below PO document in the body section Then, click Send icon located next to the URL field on the top right side.
 
 ````
-<copy>
+    <copy>
 {"PONumber"             : 10020,
       "Reference"            : "SBELL-20141017",
       "Requestor"            : "Sarah Bell",
@@ -409,38 +410,42 @@ for URL, and select POST for HTTP Method. For the **body** select **raw** and **
                                "UPCCode"     : 75993851120},
                                  "Quantity"   : 5.0}
                                 ]}
-</copy>
+                                
+                                
+    </copy>
 ````
 
 Once we get the Status:200 OK, POST is successfully done.
 
 ![](./images/ordsl39.png " ")
 
-40. Open the browser and test the following URL in the address bar: 
+39. Open the browser and test the following URL in the address bar: 
 
 ````
-<copy>
+   
+     <copy>
 http://&lt;Instance_ip_address&gt;:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
-</copy>
+
+    </copy>
 ````
 
 ![](./images/ordsl40.png " ")
 
-## Step-5: Update data in JSON table using PUT method.
+** Update data in JSON table using PUT method.**
 
-41. Right click on template  **cnvg/:id** then select **Add handler** and select **PUT**.
+40. Right click on template  **cnvg/:id** then select **Add handler** and select **PUT**.
 
 ![](./images/ordsl41.png " ")
 
-42. In the Mime Types, click the **+** icon to add a row to the Mime Types. Enter **application/json** and click **Apply**.
+41. In the Mime Types, click the **+** icon to add a row to the Mime Types. Enter **application/json** and click **Apply**.
 
 ![](./images/ordsl42.png " ")
 
-43.  In the RESTful Services navigator, the resource template cnvg/:id contains the resource handler PUT.
+42.  In the RESTful Services navigator, the resource template cnvg/:id contains the resource handler PUT.
 The resource handler editor POST cnvg/:id is displayed on the right-side. Enter the following PL/SQL code in the SQL Worksheet tab. Save the code in the PUT handler.
 
 ````
-<copy>
+     <copy>
 BEGIN
 update purchase_order j
 set    PO_DOCUMENT = json_mergepatch ( 
@@ -450,12 +455,13 @@ set    PO_DOCUMENT = json_mergepatch (
 where  j.po_document.PONumber=:id;
      commit;
 END;
-</copy>
+     
+     </copy>
 ````
 
 ![](./images/ordsl43.png " ")
 
-44.	Test the Restful Service. Provide following values in the Postman.
+43.	Test the Restful Service. Provide following values in the Postman.
 
 Enter
 ````
@@ -473,40 +479,43 @@ Once we get the Status:200 OK, PUT is successfully done.
 
 ![](./images/ordsl44.png " ")
 
-45.	Open the browser and test the following URL in the address bar. Check the requester name , it is changed to dummy_user.
+44.	Open the browser and test the following URL in the address bar. Check the requester name , it is changed to dummy_user.
 
 ````
-<copy>
+ 
+     <copy>
 http://&lt;Instance_ip_address&gt:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
-</copy>
+    
+     </copy>
 ````
 
 ![](./images/ordsl45.png " ")
 
-## Step-6: Delete data in JSON table using DELETE method.
+**Delete data in JSON table using DELETE method.**
 
-46.  In the RESTful Services navigator, right-click **cnvg/:id,** select **Add Handler** and then select **DELETE**.
+45.  In the RESTful Services navigator, right-click **cnvg/:id,** select **Add Handler** and then select **DELETE**.
 
 ![](./images/ordsl46.png " ")
 
-47. Click **Apply**.
+46. Click **Apply**.
    
 ![](./images/ordsl47.png " ")
 
-48. The resource handler editor DELETE cnvg/:id is displayed on the right-side. Enter the following PL/SQL code in the SQL Worksheet tab and save it.
+47. The resource handler editor DELETE cnvg/:id is displayed on the right-side. Enter the following PL/SQL code in the SQL Worksheet tab and save it.
 
 ````
-<copy>
+    <copy>
 BEGIN
 delete from purchase_order j
 where  j.po_document.PONumber=:id;
      commit;
 END;
-</copy>
+      
+      </copy>
 ````
 ![](./images/ordsl48.png " ")
 
-49. Test the Restful Service. Provide following values in the Postman.
+48. Test the Restful Service. Provide following values in the Postman.
 
 Enter
 ````
@@ -520,12 +529,13 @@ Once we get the Status:200 OK, DELETE is successfully done.
 
 ![](./images/ordsl49.png " ")
 
-50.	Open the browser and test the following URL in the address bar. Check for the PONumber 10020 and its deleted.
+49.	Open the browser and test the following URL in the address bar. Check for the PONumber 10020 and its deleted.
 
 ````
-<copy>
+      <copy>
 http://&lt;Instance_ip_address&gt:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
-</copy>
+    
+    </copy>
 ````
 ![](./images/ordsl50.png " ")
    
