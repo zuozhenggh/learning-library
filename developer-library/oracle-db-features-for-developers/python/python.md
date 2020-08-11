@@ -34,7 +34,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 1.  Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the *opc* user.
 
     ````
-    ssh -i your key name opc@your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
 2.  Check if python3 has been installed by running the command.
