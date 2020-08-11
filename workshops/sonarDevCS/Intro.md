@@ -9,7 +9,7 @@ Welcome to the Automated Code Inspection workshop. This workshop will walk you t
 Watch Overview Video
  </a>
 
-### Step 1: Acquire an Oracle Cloud Trial
+### **Step 1:** Acquire an Oracle Cloud Trial
 
 - Bookmark this page for future reference.
 
@@ -19,7 +19,7 @@ Watch Overview Video
 
     ![](images/common/1.png)
 
-### Step 2: Navigate to Lab 050
+### **Step 2:** Navigate to Lab 050
 
 - You can see a list of Lab Guides by clicking on the Menu Icon in the upper left corner of the browser window.
 

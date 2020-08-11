@@ -24,7 +24,7 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
 + **Lab 4: Access a BDS Node Using a Public IP Address**
 
-## STEP 1: Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
+## **Step 1:** Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
 
 In this step, you will add ingress security rules to the default security list in your cluster's VCN. This will allow access from anywhere on the internet to Cloudera Manager on port **`7183`** and Hue on port **`8888`**.
 
@@ -81,7 +81,7 @@ In this step, you will add ingress security rules to the default security list i
 
   ![](./images/ingress-rules-added.png " ")
 
-## STEP 2: Use Cloudera Manager to Access the Cluster
+## **Step 2:** Use Cloudera Manager to Access the Cluster
 
 In this step, you will use CM to access the cluster. In an HA-cluster, CM runs on the first utility node, **`traininun0`**. You will use the reserved public IP address that is associated with **`traininun0`** that you created in step 2 of **Lab 4, Access a BDS Node Using a Public IP Address**.
 
@@ -142,7 +142,7 @@ In this step, you will use CM to access the cluster. In an HA-cluster, CM runs o
 
     ![](./images/logout-cm.png " ")
 
-## STEP 3: Use Hue to Access the Cluster
+## **Step 3:** Use Hue to Access the Cluster
 
 In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun1`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 

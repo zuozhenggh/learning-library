@@ -24,7 +24,7 @@ This lab assumes you have already completed or reviewed the following:
 * [Access to Oracle Free Tier or Paid Cloud account](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=prerequisites)
 * [Generated SSH Keys](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=lab-2-generate-ssh-key)
 
-## Step 1: Login and Create Stack using Resource Manager
+## **Step 1:** Login and Create Stack using Resource Manager
 
 ### *Option #1 - Stack creates Instance(s) and self-contained VCN*
 
@@ -168,7 +168,7 @@ Enter or select the following:
 
 ![](./images/em-vcn-details-route-table.png " ")
 
-## Step 2: Terraform Plan (OPTIONAL)
+## **Step 2:** Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. You may skip to Step 3.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
@@ -185,7 +185,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 ![](./images/em-stack-plan-results-4.png " ")
 
-## Step 3: Terraform Apply
+## **Step 3:** Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and instance(s) containing a pre-configured Enterprise Manager 13c with running database targets.
@@ -206,7 +206,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 ![](./images/em-stack-apply-results-3.png " ")
 
-## Step 4: Connect to your instance
+## **Step 4:** Connect to your instance
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
   - *NOTE 1:  If you are using your laptop to connect your corporate VPN may prevent you from logging in.*
