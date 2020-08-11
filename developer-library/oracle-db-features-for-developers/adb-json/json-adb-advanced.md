@@ -311,7 +311,7 @@ You can use a data guide:
         </copy>
 
 
-        ![](./images/step3.1-retrieveinfo.png " " )
+      ![](./images/step3.1-retrieveinfo.png " " )
 
   2.  Test get_castles function, using as input *Valencia* region (adminCode1 : 60), and *Provincia de Alicante* sub-region (adminCode2: A).
 

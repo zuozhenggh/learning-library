@@ -95,8 +95,8 @@ This lab covers the use of database languages and features to work with JSON dat
     UTL_HTTP.read_text(t_http_resp, t_response_text);
     UTL_HTTP.end_response(t_http_resp);
     DBMS_OUTPUT.put_line(t_response_text);
-end;
-/
+    end;
+    /
     </copy>
     ````
 
