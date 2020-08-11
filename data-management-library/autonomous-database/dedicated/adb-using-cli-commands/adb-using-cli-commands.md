@@ -29,7 +29,7 @@ As a developer, DBA or DevOps user,
     - To deploy a dev client compute image, refer to [Lab 5](?lab=lab-5-configuring-development-system).
 
 
-## STEP 1: Connect to development client instance and verify OCI CLI version
+## **Step 1:** Connect to development client instance and verify OCI CLI version
 
 - To ensure OCI-CLI installed is the correct version needed for ATP-Dedicated database, lets ssh into the dev client host and check version.
     
@@ -43,7 +43,7 @@ As a developer, DBA or DevOps user,
 
 
 
-## STEP 2: Configure OCI CLI
+## **Step 2:** Configure OCI CLI
 
 - This step describes the required configuration for the CLI and includes optional configurations that enable you to extend CLI functionality. 
 
@@ -80,7 +80,7 @@ As a developer, DBA or DevOps user,
     - *Enter a name for your key [oci_api_key]*: Press Return key
     - *Enter a passphrase for your private key (empty for no passphrase)*: Press Return key
     
-## STEP 3: Add public key to Oracle Cloud Infrastructure
+## **Step 3:** Add public key to Oracle Cloud Infrastructure
 
 - Now that you have a private / public key combo, you must add it to OCI Console:
 
@@ -116,7 +116,7 @@ As a developer, DBA or DevOps user,
 
     ![](./images/OCISetupAutocomplete.png " ")
 
-## STEP 4: Interacting with Oracle Autonomous Database
+## **Step 4:** Interacting with Oracle Autonomous Database
 
 - Now that you have setup OCI CLI, let us now look at examples of using Autonomous Transaction Processing Database. 
 
@@ -144,6 +144,7 @@ You are expected to see the following output in the command line interface.
     ![](./images/GetDBOutput1.png " ")
     ![](./images/GetDBOutput2.png " ")
 
+**Note** the compartment-id OCIDs are provided in the json output above. Make a note of the compartment-id OCID assigned to you as you need it in the following example to list databases in a compartment.
 
 ### *Listing Databases*
 
@@ -290,6 +291,7 @@ These are a handful of examples on using the OCI CLI REST interface to work with
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

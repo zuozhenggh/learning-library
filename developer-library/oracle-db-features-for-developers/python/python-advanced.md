@@ -26,7 +26,7 @@ In the previous lab you have seen how easy it is to use Python against the Oracl
 
 -   Learn how to use Python with Spatial Data in the Oracle Database
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
@@ -36,7 +36,7 @@ This lab assumes you have completed the following labs:
 * Lab: Python Programming
 
 
-## Step 1: Download HERE archive world sample data
+## **Step 1:** Download HERE archive world sample data
 
 We need to download the HERE (Formerly NAVTEQ) archive, a sample geographical dataset available from the Oracle Technology Network website: http://www.oracle.com/technetwork/middleware/mapviewer/downloads/navteq-lic-168395.html. Download the World Sample Data Bundle.
 **Note:** The World Sample Data Bundle (world_sample_q114.zip) is 1.5 GB.
@@ -79,7 +79,7 @@ GRANT READ, WRITE ON DIRECTORY world_dumpfile_dir TO world_sample;
 
 **Note:** If the world sample zip file creates a different directory name than *world_sample_q114*, please modify the CREATE DIRECTORY statement above
 
-## Step 2: Edit the two SQL files and run load_sample_data.sql from SQL*Plus:
+## **Step 2:** Edit the two SQL files and run load_sample_data.sql from SQL*Plus:
 
 1. The SQL files *cln_sample_data.sql* and *load_sample_data.sql* need to be edited:
 
@@ -143,7 +143,7 @@ SQL>> @load_sample_data
 There are 3745011 rows inserted in to the table NTC_MAP_WATER_AREA table.
 
 
-## Step 3: Points in a Polygon
+## **Step 3:** Points in a Polygon
 
 Two-dimensional points are elements composed of two ordinates, X and Y, often corresponding to longitude and latitude. Line strings are composed of one or more pairs of points that define line segments. Polygons are composed of connected line strings that form a closed ring, and the area of the polygon is implied. For example, a point might represent a building location, a line string might represent a road or flight path, and a polygon might represent a state, city, zoning district, or city block.
 ![](./images/geom_type.gif)
@@ -184,7 +184,7 @@ con.close()
 ````   
 ![](p_worldSample-PointsInPolygon.png)
 
-## Step 4: Finding Nearest Neighbours
+## **Step 4:** Finding Nearest Neighbours
 
 Find the 5 nearest major cities to the The Chocolate Lily Bed and Breakfast (latitude -36.93, longitude 144.34)
 
@@ -213,7 +213,7 @@ con.close()
 ![](p_worldSample-NearestNeighbour.png)
 
 
-## Step 5: Display Points on a Map with PYTHON
+## **Step 5:** Display Points on a Map with PYTHON
 
 Python allows for displaying geo-coordinates on a map. To illustrate this capability, we will use the Python’s Basemap library and the list of points generated in the Points in Polygon exercise completed in Step 2.
 
@@ -391,7 +391,7 @@ cur.close()
 con.close()
 </copy>
 ````
-## Step 6: Load JSON data into a table using PYTHON
+## **Step 6:** Load JSON data into a table using PYTHON
 It is likely that rather than writing one JSON row at a time to the database, you will want to load many JSON records at once. In this example we will leverage Oracle External Tables functionality to do this.
 
 In the following section we will create a new JSON external table that points to a JSON document and query the records from Python’s shell.
@@ -487,4 +487,5 @@ An additional lab on using Python with Spatial data is also available elsewhere 
 - **Author** - Troy Anthony
 - **Last Updated By/Date** - Troy Anthony, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -5,7 +5,7 @@
 
 This lab will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result.
 
-GraphViz should be accessible at host:7007/ui
+GraphViz should be accessible at http://<\instance\_ip\_address>:7007/ui
 
 The principal points of entry for the GraphViz application are the query editor and the graph lists.
 When you start GraphViz, the graph list will be populated with the graphs loaded in the graph server. To run queries against a graph, select that graph. The query lets you write PGQL queries that can be visualized. (PGQL is the SQL-like query language supported by GraphViz.)
@@ -18,13 +18,8 @@ This lab assumes you have completed the following labs:
 - Lab 2:  Generate SSH Key
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
-- Note :  Below steps are pre-configured in the image.
-- The Oracle Graph Server and Graph Client must be installed.
-- Max string size parameter should be set to extended.
-- AL16UTF16 (instead of UTF8) must be specified as the NLS NCHAR CHARACTERSET.
-- AL32UTF8 (UTF8) should be the default character set, but AL16UTF16 must be the NLS NCHAR CHARACTERSET.
   
-## Step 1: Visualize the Graph
+## **Step 1:** Visualize the Graph
 
 **Scenario 1 : What products did customer 202 buy from which store(s)?**
 
@@ -177,7 +172,7 @@ where product.PRODUCT_ID=44;
 ![](./images/IMGG37.PNG)
 
 
-## Step 2: Deleting the Graph
+## **Step 2:** Deleting the Graph
 
 Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the following statements to delete the in-memory graph 
 
@@ -194,5 +189,5 @@ graph.destroy();
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

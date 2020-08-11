@@ -15,13 +15,10 @@ This lab assumes you have completed the following labs:
 - Lab 2:  Generate SSH Key
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
-- Note :  Below steps are pre-configured in the image.
-- The Oracle Graph Server and Graph Client must be installed.
-- Max string size parameter should be set to extended.
-- AL16UTF16 (instead of UTF8) must be specified as the NLS NCHAR CHARACTERSET.
-- AL32UTF8 (UTF8) should be the default character set, but AL16UTF16 must be the NLS NCHAR CHARACTERSET.
 
-## Step 1: Loading the Graph into memory
+## **Step 1:** Loading the Graph into memory
+
+Run the below command in jshell prompt.
 
 ````
 <copy>
@@ -65,6 +62,8 @@ Load the graph. This can take 10-15 minutes or more depending on network bandwid
 var graph = session.readGraphWithProperties(pgxConfig.get()) ;
 </copy>
 ````
+
+## Step-2: Examples about customers and their orders after the graph is loaded into memory
 
 Run similar PGQL queries against the in-memory graph 
 
@@ -131,7 +130,7 @@ It is required to have the graph loaded into memory and published before visuali
 
 So, our graph is loaded into the memory, let’s publish it 
 
-**Publish the oe sample graph**
+## **Step 3:** Publish the graph
 
 ````
 <copy>
@@ -148,8 +147,8 @@ graph.publish(VertexProperty.ALL, EdgeProperty.ALL) ;
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 
 

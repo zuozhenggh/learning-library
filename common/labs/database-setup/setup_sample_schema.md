@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to install a portion of the Sample Schemas in your database.
 
-## Step 1: Install Sample Data
+## **Step 1:** Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
@@ -59,4 +59,5 @@ The above copyright notice and this permission notice shall be included in all c
 - **Author** - Troy Anthony, DB Product Management
 - **Last Updated By/Date** - Troy Anthony, May 21 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

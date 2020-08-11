@@ -1,28 +1,44 @@
 # Enable In-Memory
 
 ## Introduction
+Watch the video below to get an explanation of enabling the In-Memory column store.
+
+[](youtube:dZ9cnIL6KKw)
 
 ### Objectives
 
 -   Learn how to enable In-Memory on the Oracle Database
 -   Explore various views to monitor In-Memory
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
 * Lab: Generate SSH Key
-* Lab: Setup
+* Lab: Environment Setup
 
-### Lab Preview
+## Step 0: Download the Lab Files
 
-Watch the video below to get an explanation of enabling the In-Memory column store.
-
-[](youtube:dZ9cnIL6KKw)
+1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the compute instance you created in the previous lab.
 
 
-## Step 1: Run the In-Memory Setup Scripts
+2.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
+
+    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+
+    ````
+    <copy>
+    cd /home/opc/
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
+    unzip multiscripts.zip; chmod +x *.sh
+    /home/opc/setupenv.sh
+    </copy>
+    ````
+
+## **Step 1:** Run the In-Memory Setup Scripts
 1.  Run this command to setup the schema, SSB, you will use for this lab.   This script takes about 15 minutes to complete.   It downloads the ssb.dmp file and then imports it.
+
+
     ````
     <copy>
     cd /home/opc/
@@ -42,7 +58,7 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     ````
     ![](./images/inmemcomplete.png " ") 
 
-## Step 2: Logging In and Enabling In-Memory
+## **Step 2:** Logging In and Enabling In-Memory
 
 1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
 
@@ -99,7 +115,7 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     ````
      ![](images/step1num4.png) 
 
-## Step 3: Enabling In-Memory
+## **Step 3:** Enabling In-Memory
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account. 
 
@@ -236,6 +252,7 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager, Oracle Database In-Memory
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

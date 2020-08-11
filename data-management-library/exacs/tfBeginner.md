@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Step 1: Generate SSH Keys](#practice-1-generate-ssh-keys)
 
@@ -22,21 +22,21 @@
 
 [Step 8:  Install and configure Terraform](#practice-8-install-and-configure-terraform)
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Overview
 
 The lab exercises are designed to complement your training, reinforcing the key concepts by applying and demonstrating what you learned in the presentation sessions. This lab book is comprised of individual exercises. These exercises allow you to get first hands-on exposure working with the Oracle Cloud Infrastructure (OCI) using a demo environment, where you will see how key features and functionality are deployed in the software. Using what you learn in the presentations and individual exercises working with the software, you will collaborate as a team in developing and delivering practice presentations.
 
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - Region and compartment with limits for a few small instances (1.1 or 2.1 is sufficient)
 - A VCN created with at least one subnet, internet gateway, default route to internet gateway and security groups allowing at least port 22/SSH in.
 - Ability to SSH into compute instances
 
-## Step 1: Generate SSH Keys
+## **Step 1:** Generate SSH Keys
 
 Generate SSH keys to be used later while launching an instance.
 
@@ -77,32 +77,32 @@ Your public key has been saved in /c/Users/username/.ssh/id\_rsa.pub.
 ```
 > **Note**: In Git-Bash, C:\\Users\\username\\ is shown as /c/Users/username/
 
-## Step 2: Signing in OCI Console
+## **Step 2:** Signing in OCI Console
 
 1) Open a supported browser and go to the Console URL. For example, [https://console.us-ashburn-1.oraclecloud.com](https://console.us-ashburn-1.oraclecloud.com).
 
 2) Enter your tenant name: <Tenant> and click **Continue**
 
-  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/L100-Workshop/Identity_Access_Management/img/image001.png">
+  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image001.png">
 
 3) Oracle Cloud Infrastructure is integrated with Identity Cloud Services, you will see a screen validating your Identity Provider. You can just click **Continue**.
 
-  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/L100-Workshop/Identity_Access_Management/img/image002.png">
+  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image002.png">
 
  4) Enter your user name and password
 
  - **Username:** cloud.admin
  - **Password:** _instructor will provide password_
  
-<img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/L100-Workshop/Identity_Access_Management/img/image003.png">
+<img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image003new.png">
 
 When you sign in to the Console, the home page is displayed.
 
- <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/L100-Workshop/Identity_Access_Management/img/image004.png">
+ <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image004.png">
 
 The home page gives you quick links to the documentation and to Oracle Support.
 
-## Step 3: Collect the Required OCIDs for Terraform
+## **Step 3:** Collect the Required OCIDs for Terraform
 In order to automate with terraform we need to collect a few OCIDs in advance. One thing to note that along with a Tenant/Cloud Tenant, username and password you also received a Compartment Id. Compartments are sub-areas or sub-domains within a tenancy to which you have been delegated full control. In the next few steps we will be collecting the Tenancy OCID, the Compartment OCID and the User OCID.
 
 1) After login go to **Menu** > **Administration** > **Tenancy Details**. Take a note of the Tenancy OCID information. Save on your notepad. 
@@ -121,7 +121,7 @@ In order to automate with terraform we need to collect a few OCIDs in advance. O
 
 <img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/DevOps/Terraform/img/image004.png">
 
-## Step 4: Create a Virtual Cloud Network
+## **Step 4:** Create a Virtual Cloud Network
 A Virtual Cloud Network (VCN) is a virtual version of a traditional network including subnets, route tables, and gateways on which your compute instances run. Customers can bring their network topology to the cloud with VCN. Creating a VCN involves a few key aspects such as:
 
  - Allocate a private IP block for the cloud (CIDR range for the VCN).
@@ -145,7 +145,7 @@ A Virtual Cloud Network (VCN) is a virtual version of a traditional network incl
 
 3) Select a compartment on the left that you have permission to work in.
 
-<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image004.png">
+<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Virtual_Cloud_Network/media/image001.png">
 
 4) Click **Create Virtual Cloud Network** and enter the following details:
 
@@ -154,7 +154,7 @@ A Virtual Cloud Network (VCN) is a virtual version of a traditional network incl
 
 > **Note:** Enter a friendly name for the cloud network. It doesn't have  to be unique, and it cannot be changed later in the Console (but you can change it with the API).
 
-<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image005.png">
+<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Virtual_Cloud_Network/media/image002.png">
 
 5) Select **Create Virtual Cloud Network plus related resources**. The dialog box expands to list the items that will be created with your cloud network.
 
@@ -164,7 +164,7 @@ A Virtual Cloud Network (VCN) is a virtual version of a traditional network incl
 
 A confirmation page displays the details of the cloud network that you just created.
 
-<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image006.png">
+<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Virtual_Cloud_Network/media/image003.png">
 
 
  The Virtual Cloud Network above has the following resources and characteristics:
@@ -176,7 +176,7 @@ A confirmation page displays the details of the cloud network that you just crea
   - A public subnet in each Availability Domain
   - The VCN will automatically use the Internet and VCN Resolver for DNS
 
-## Step 5: Creating a Terraform Instance
+## **Step 5:** Creating a Terraform Instance
 
 Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts, known as  instances. You can launch instances as needed to meet your compute and application requirements. After you launch an instance, you can access it securely from your computer, restart it, attach and detach volumes, and terminate it when you're done with it. Any changes made to the instance's local drives are lost when you terminate it. Any saved changes to volumes attached to the instance are retained.
 
@@ -197,17 +197,16 @@ Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts,
    - **VCN Name**: VCN you created in Step 3
    - **Subnet**: Any subnet among the three ADs
 
-<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image007.png">
+<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Compute_Services/media/Create1.png">
 
-<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image008.png">
+<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Compute_Services/media/Create2.png">
 
-<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image009.png">
 
 Launching an instance is simple and intuitive with few options to select. Provisioning of the compute instance will complete in less than a minute and the instance state will change from provisioning to running.
 
 3) Once the instance state changes to Running, you can SSH to the Public IP address of the instance.
     
-<img width="800" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/oci/Class-Of-HOL-02/media/image010.png">
+<img width="800" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/luna-labs/oci-compute/media/image017.png">
 
 4) To connect to the instance, you can use ‘Terminal’ if you are using MAC or Gitbash if you are using Windows.
 
@@ -216,7 +215,7 @@ Launching an instance is simple and intuitive with few options to select. Provis
 <copy>ssh -i /path/privateKey opc@PublicIP_Address</copy>
 ```
 
-## Step 6: Generate an API Signing Key
+## **Step 6:** Generate an API Signing Key
 
 You can use the following [OpenSSL](http://www.openssl.org/) commands to generate the key pair in the required PEM format:
 
@@ -249,7 +248,7 @@ You can use the following [OpenSSL](http://www.openssl.org/) commands to generat
 **Note: Copy the output of the step 5 and 6 and save to your notepad**
 
 
-## Step 7:  Upload the Public Key to api user
+## **Step 7:**  Upload the Public Key to api user
 
 You can upload the PEM public key in the Console, located at [https://console.us-ashburn-1.oraclecloud.com](https://console.us-phoenix-1.oraclecloud.com/). 
 
@@ -262,7 +261,7 @@ You can upload the PEM public key in the Console, located at [https://console.us
 **Note**: The key's fingerprint is displayed (for example, 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef). It must match the fingerprinted generated on step 6 from Practice-6
 
 
-## Step 8: Install and configure Terraform
+## **Step 8:** Install and configure Terraform
 
 Oracle Cloud Infrastructure (OCI) platform can run both Oracle workloads and cloud native applications. In this hands-on lab the process of getting Terraform installed will be covered along with configuring the OCI Terraform plugin and performing some live test runs with Terraform using sample scripts.
 

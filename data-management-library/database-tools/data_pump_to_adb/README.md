@@ -15,7 +15,7 @@ Visit the website <a href="https://www.oracle.com/database/technologies/cloud-mi
 
 -   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-### Lab Prerequisites
+### Prerequisites
 This lab assumes you have completed the following labs:
 * Lab: [Login to Oracle Cloud]()
 * Lab: [Provision an Autonomous Database]()
@@ -54,11 +54,11 @@ In this lab you will use the SQL Developer tool, connect to your source database
 ## Create an Autonomous Database
 
 ## Main Labs
-## Step 1 Connect to your source database using SQL Developer
+## **Step 1:**Connect to your source database using SQL Developer
 
-## Step 2 Use Data Pump to extract a schema from your source
+## **Step 2:**Use Data Pump to extract a schema from your source
 
-## Step 3 Use SQL Developer to import the schema in to the Oracle Autonmous Database
+## **Step 3:**Use SQL Developer to import the schema in to the Oracle Autonmous Database
 
 ## Conclusion
  In this Lab, you used SQL Developer and Data Pump to migrate a database to the Oracle Autonomous Database.
@@ -68,4 +68,5 @@ In this lab you will use the SQL Developer tool, connect to your source database
  - **Author** - Troy Anthony, May 2020
  - **Last Updated By/Date** - Troy Anthony, May 20 2020
 
- See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+ ## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

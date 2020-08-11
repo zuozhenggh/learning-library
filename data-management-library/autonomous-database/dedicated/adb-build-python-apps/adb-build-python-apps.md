@@ -23,7 +23,7 @@ As an application developer,
    - A network that provides connectivity between the application and database subnets. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
 
-## STEP 1: Instances Setup
+## **Step 1:** Instances Setup
 
 - Login to your Oracle Cloud Infrastructure account and select *Compute* —> *Instances* from top left menu.
     ![](./images/Compute1.png " ")
@@ -51,7 +51,7 @@ As an application developer,
 
 - Other common Windows SSH clients you can install locally is PuTTY. Click [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) to follow the steps to connect to linux host machine from you windows using PuTTY.
 
-## STEP 2: Download sample python application
+## **Step 2:** Download sample python application
 
 - In your developer client ssh session,
 
@@ -65,7 +65,7 @@ As an application developer,
 
     ```
     <copy>
-    wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/700/ATPDpython.zip?raw=true
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/DhTOXBBDCJI5b-lStlkobmgro1fVMUgj8yZ3NArH_t4/n/atpdpreview11/b/adb-build-python-apps/o/ATPDpython.zip
     </copy>
     ```
 
@@ -78,7 +78,7 @@ As an application developer,
     ```
 
 
-## STEP 3: Transfer database wallet to developer client
+## **Step 3:** Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select *Autonomous Transaction Processing* from menu.
     ![](./images/atpd1.png " ")
@@ -109,7 +109,7 @@ As an application developer,
     ![](./images/atpd5.png " ")
 
 
-## STEP 4: Run your python application
+## **Step 4:** Run your python application
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folder.
 
@@ -176,6 +176,7 @@ Now that you have successfully SCP'd the encryption to your client machine, let'
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
