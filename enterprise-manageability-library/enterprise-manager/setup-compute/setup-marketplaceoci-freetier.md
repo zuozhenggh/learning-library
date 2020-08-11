@@ -20,7 +20,7 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 -   Use Terraform and Resource Manager to complete the setup
 
 ### Prerequisites
-This lab assumes you have already completed or review the following:
+This lab assumes you have already completed or reviewed the following:
 * [Access to Oracle Free Tier or Paid Cloud account](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=prerequisites)
 * [Generated SSH Keys](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=lab-2-generate-ssh-key)
 
@@ -29,7 +29,8 @@ This lab assumes you have already completed or review the following:
 ### *Option #1 - Stack creates Instance(s) and self-contained VCN*
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-    - [emcc-mkplc-v3-flex-shape.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xAlfRIvOLUs4-8CghEQ982ySwiEMYOKtbFWD6ptNdsA/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-flex-shape.zip) - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
+    - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/NaRiEVnQNNg12_zCvjmjXEMiNrYIcDp0aKQHYU-dz7M/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+    - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2.  Save in your downloads folder.
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
@@ -40,7 +41,7 @@ This lab assumes you have already completed or review the following:
 
 ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-v3-flex-shape.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
 
 ![](./images/em-create-stack-1.png " ")
 
@@ -56,20 +57,22 @@ Enter the following information:
 ![](./images/em-create-stack-2.png " ")
 
 Enter or select the following:
-  - **(1) Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
-  - **(2) Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
-  - **(3) Select Availability Domain:** Select an availability domain from the dropdown list.
-  - **(4) SSH Public Key**:  Paste the public key you created in the earlier lab
+  - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
+  - **Select Availability Domain:** Select an availability domain from the dropdown list.
+  - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
-*Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+  *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 
-  - **(5) Use Existing VCN?:** Keep the default by keeping unchecked to create a new VCN.
+  - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard2.4***) or select the desired shape from the dropdown menu.
+  - **Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
+
+*Note: Instance OCPUS only applies to Flex Shapes and won't be displayed if you elect to use shapes of fixed OCPUs types*
+
+  - **Use Existing VCN?:** Keep the default by leaving unchecked to create a new VCN.
 
 Next step.
 
 6. Review and click **Create**.
-
-*Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 
 ![](./images/em-create-stack-3.png " ")
 
@@ -80,7 +83,8 @@ Next step.
 ### *Option #2 - Stack creates Instance(s) and uses existing VCN*
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-  - [emcc-mkplc-v3-flex-shape.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Xe5QlJ6GfnEXNxkLAOCLNtoaFEyBN-TsB7kt0N4oMIA/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-flex-shape.zip) - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
+  - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/NaRiEVnQNNg12_zCvjmjXEMiNrYIcDp0aKQHYU-dz7M/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+  - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2. Save in your downloads folder.
 3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
@@ -91,7 +95,7 @@ Next step.
 
 ![](./images/em-create-stack.png " ")
 
-4. Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-v3-flex-shape.zip) that you downloaded. Click **Select**.
+4. Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
 
 ![](./images/em-create-stack-1.png " ")
 
@@ -107,28 +111,30 @@ Enter the following information:
 ![](./images/em-create-stack-2b.png " ")
 
 Enter or select the following:
-  - **(1) Instance Count:** Keep the default to **1** to create only one instance.
-  - **(2) Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
-  - **(3) Select Availability Domain:** Select an availability domain from the dropdown list.
-  - **(4) SSH Public Key**:  Paste the public key you created in the earlier lab
+  - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
+  - **Select Availability Domain:** Select an availability domain from the dropdown list.
+  - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
-*Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+  *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 
-  - **(5) Use Existing VCN?:** Check to select.
+  - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard2.4***) or select the desired shape from the dropdown menu.
+  - **Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
+
+*Note: Instance OCPUS only applies to Flex Shapes and won't be displayed if you elect to use shapes of fixed OCPUs types*
+
+  - **Use Existing VCN?:** Check to select.
 
 ![](./images/em-create-stack-2c.png " ")
 
-  - **(6) Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
+  - **Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
 
 ![](./images/em-create-stack-2d.png " ")
 
-  - **(7) Select Public Subnet:** Select existing public subnet from above VCN.
+  - **Select Public Subnet:** Select existing public subnet from above VCN.
 
 *Note: For an existing VCN Option to be used successful, review the details at the bottom of this section*
 
 6. Review and click **Create**.
-
-*Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 
 ![](./images/em-create-stack-3b.png " ")
 
@@ -234,7 +240,6 @@ ssh  opc@<Your Compute Instance Public IP Address>
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 2.  On the instance homepage, find the Public IP address for your instance.
-
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
 ````
@@ -249,14 +254,12 @@ ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
 
 1.  Download and install PuTTY. [http://www.putty.org](http://www.putty.org)
-
 2.  Run the PuTTY program. On your computer, go to **All Programs > PuTTY > PuTTY**
-
 3.  Select or enter the following information:
-  - Category: _Session_
-  - IP address: _Your service instance’s public IP address_
-  - Port: _22_
-  - Connection type: _SSH_
+    - Category: _Session_
+    - IP address: _Your service instance’s public IP address_
+    - Port: _22_
+    - Connection type: _SSH_
 
 ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
@@ -271,18 +274,14 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 #### **Adding Your Private Key**
 
 1.  In the category section, **Click** Auth.
-
-2.  **Click** browse and find the private key file that matches your VM’s public
-  key. This private key should have a .ppk extension for PuTTy to work.
+2.  **Click** browse and find the private key file that matches your VM’s public key. This private key should have a .ppk extension for PuTTy to work.
 
 ![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
 
 To save all your settings:
 
 1.  In the category section, **Click** session.
-
-2.  In the saved sessions section, name your session, for example ( EM13C-ABC )
-  and **Click** Save.
+2.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
 You may now proceed to the next lab.  
 
