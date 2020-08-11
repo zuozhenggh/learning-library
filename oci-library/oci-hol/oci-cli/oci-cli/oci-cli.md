@@ -8,7 +8,7 @@ This lab will walk you through installation and configuration of the CLI, along 
 
 *Note: We recommend using Chrome or Edge as the broswer.*
 
-### Pre-Requisites
+### Prerequisites
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
 3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)

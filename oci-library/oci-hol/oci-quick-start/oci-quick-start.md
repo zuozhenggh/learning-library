@@ -11,7 +11,7 @@ We will then create a second compute instance using the boot volume of the first
 - Use Boot volume of compute instance
 - Move additional storage with applicatons/tools installed between compute instances.
 
-### Pre-Requisites
+### Prerequisites
 Lab 1: Login to Oracle Cloud  
 Lab 2: Create SSH Keys - Cloud Shell
 
@@ -22,7 +22,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Create VCN
+## **Step 1:** Create VCN
 
 1. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking  
 ![](./../oci-quick-start/images/QuickStart_S1P1.PNG " ")
@@ -70,7 +70,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 
     Then, Click **Add Ingress Rules** at the bottom.
      ![](./../oci-quick-start/images/QuickStart_S1P10.PNG " ")
-## Step 2: Compute instance.
+## **Step 2:** Compute instance.
 1. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**.
       ![](./../oci-quick-start/images/QuickStart_S2P1.PNG " ")
 2. On the left sidebar, select the **Compartment** in which you placed your VCN under **List Scope**. The, Click **Create Instance**. 
@@ -133,7 +133,7 @@ Lab 2: Create SSH Keys - Cloud Shell
   
   Ex: [opc@quickstart_instance ~]
 
-## Step 3: Compute and attach block volume to compute instance.
+## **Step 3:** Compute and attach block volume to compute instance.
 
 1. From OCI services menu Click **Block Volumes** under **Block Storage**, then Click **Create Block Volume**.
 ![](./../oci-quick-start/images/QuickStart_S2P11.PNG " ")
@@ -179,7 +179,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 8. Verify Block volume is attached on compute instance details page (Refresh the screen if needed).
     ![](./../oci-quick-start/images/QuickStart_S3P8.PNG " ")
 
-## Step 4: Install httpd on compute instance and an app on block volume.
+## **Step 4:** Install httpd on compute instance and an app on block volume.
 
 
 1. Switch to ssh session to compute install. Install httpd server, Enter Command:
@@ -384,7 +384,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 
 We have initialized httpd.conf file. Next we will create a second compute instance using the boot volume of the first compute instance and attach Block Volume to it
 
-## Step 5 (OPTIONAL): Detach the block volume and launch second compute instance using boot volume and attach Block Volume
+## **Step 5:**(OPTIONAL): Detach the block volume and launch second compute instance using boot volume and attach Block Volume
 
 In this section we will detach the block volume, Stop the compute instance, use its boot volume to launch a second compute instance and delete the second compute instance.
 
@@ -455,7 +455,7 @@ In this section we will detach the block volume, Stop the compute instance, use 
 
 We have now successfully launched a compute instance using another instance's boot volume and re-attached a block volume that was attached to another instance. The block volume preserved all the data on it during this process. Moreover the compute instance launched using the boot volume had httpd server and fire wall configuration already present.
 
-## Step 6: Delete the resources
+## **Step 6:** Delete the resources
 
 1. Switch to  OCI console window.
 

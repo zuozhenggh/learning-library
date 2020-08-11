@@ -7,7 +7,7 @@ Congratulations! You've come so far and completed the workshop, and you might wo
 Note:
 You should not keep the instances deployed on OCI as part of this workshop running once your are done, or use in any way for actual workloads: since the DB and WebLogic credentials are publically available it would be a security issue.
 
-## Step 1: Cleaning up the 'on-premises' environment
+## **Step 1:** Cleaning up the 'on-premises' environment
 
 ### If you used Docker
 
@@ -47,7 +47,7 @@ docker-compose rm
 
   <img src="./images/delete-stack.png"  width="50%">
 
-## Step 2: Tear down the WebLogic environment
+## **Step 2:** Tear down the WebLogic environment
 
 - Go to the Resources Manager
 
@@ -63,7 +63,7 @@ docker-compose rm
 
   <img src="./images/delete-stack.png"  width="50%">
 
-## Step 3: Tear down the database instance
+## **Step 3:** Tear down the database instance
 
 - Go to the Bare Metal, VM and Exadata Menu
 

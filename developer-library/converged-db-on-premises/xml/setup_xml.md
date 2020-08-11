@@ -39,7 +39,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 ### Want to learn more
 - [XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 
-## Step 1: Connect to the Pluggable Database (PDB)
+## **Step 1:** Connect to the Pluggable Database (PDB)
 
 1. As oracle user navigate to below path- 
 
@@ -71,7 +71,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     </copy>
     ````
 
-## Step 2: Connect to SQL Developer
+## **Step 2:** Connect to SQL Developer
 
 1. Make a connection to sqldeveloper. Use the details as below and click on connect.
 

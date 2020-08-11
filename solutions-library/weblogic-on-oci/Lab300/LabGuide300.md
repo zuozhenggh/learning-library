@@ -4,7 +4,7 @@ See Requirements to get the code and the required Docker images.
 
 ## Introduction: This 30 mins lab walks you through provisioning the WebLogic Infrastructure by leveraging the OCI Marketplace image. 
 
-## Step 1: Provision the stack through the Marketplace
+## **Step 1:** Provision the stack through the Marketplace
 
 - Go to **Solutions and Platforms** 
 
@@ -141,7 +141,7 @@ See Requirements to get the code and the required Docker images.
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu. 
 
-## Step 2: Gather the necessary WebLogic stack information
+## **Step 2:** Gather the necessary WebLogic stack information
 
   <img src="./images/provision-27.png" width="100%">
 

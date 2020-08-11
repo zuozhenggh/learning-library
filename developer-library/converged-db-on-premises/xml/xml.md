@@ -37,7 +37,7 @@ Oracle XML DB also supports the SQL/XML standard, which allows SQL-centric devel
 
 Oracle XML DB allows an organization to manage XML content in the same way that ii manages traditional relational data. This allows organizations to save costs and improve return on investment by using a single platform to manage and secure all of their mission critical data. Oracle XML DB was first released with Oracle 9iR2, and it has been enhanced in each subsequent major release of the database.
 
-## STEP 1: Connect to the Pluggable Database (PDB)
+## **Step 1:** Connect to the Pluggable Database (PDB)
 
 1. Open a terminal window and sudo to the user **oracle**
     ````
@@ -74,7 +74,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     </copy>
     ````
 
-## STEP 2: Connect to SQL Developer
+## **Step 2:** Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -88,7 +88,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
     ![](./images/xml_sql_developer.png " ")
 
-## STEP 3: XML Query
+## **Step 3:** XML Query
 
 1. Getting the number of XML documents.
     ````
@@ -135,7 +135,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
     ![](./images/xml_step3_search.png " ")
 
-## STEP 4: Insert XML record.
+## **Step 4:** Insert XML record.
 
 1. Let's take a count of the rows we have currently and then do a insert.
 
@@ -188,7 +188,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     ````
     ![](./images/xml_s4_p3.png " ")
 
-## STEP 5: Update XML table
+## **Step 5:** Update XML table
 
 1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
   The script is called as **update.sql**. You can run this connecting to the SQL prompt.
@@ -234,7 +234,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     ````
     ![](./images/xml_s5_p2.png " ")
 
-## STEP 6: Example Queries
+## **Step 6:** Example Queries
 
 1. Get the list of the customer and their purchased information from a geo graphical location.  
     **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.

@@ -5,7 +5,7 @@ In previous labs we've shown how to load, index and search our JSON data in the 
 
 Estimated time: 20 minutes.
 
-## Step 1: Create an APEX workspace
+## **Step 1:** Create an APEX workspace
 
 All our data is now loaded, and we can proceed to creating indexes.  The main index we’ll be using is a “json search index” on the REVIEWS table. This is a JSON full-text index which indexes ALL of the JSON in the table, and allows for word-based searching on textual fields.
 
@@ -35,7 +35,7 @@ All our data is now loaded, and we can proceed to creating indexes.  The main in
 
     ![](./images/apex5.png)
 
-## Step 2: Create a RESTful module, template and handler
+## **Step 2:** Create a RESTful module, template and handler
 
 1. RESTful Services - Create a module
    
