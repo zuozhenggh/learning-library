@@ -28,7 +28,7 @@ You will use various Docker commands to setup, run and connect into containers. 
 0. Login to the instance using ssh
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
 1.  Verify your docker version

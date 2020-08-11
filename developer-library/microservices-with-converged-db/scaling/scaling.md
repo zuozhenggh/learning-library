@@ -49,7 +49,7 @@ This lab assumes that you have already completed labs 1 through 4.
 ## **STEP 2**: Load Test and Scale the Application Tier
 
 1. Execute a test with 30 virtual users by executing the following command.
- 
+
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 30</copy>
     ```
@@ -59,7 +59,7 @@ This lab assumes that you have already completed labs 1 through 4.
 ![](images/30vus1replica.png " ")
 
 2. Execute a test with 60 virtual users by executing the following command.
- 
+
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 60</copy>
     ```
@@ -69,13 +69,13 @@ This lab assumes that you have already completed labs 1 through 4.
 ![](images/60vus1replica.png " ")
 
 3. Scale to 2 service replicas.
- 
+
     ```
     <copy>kubectl scale deployment.apps/order-helidon --replicas=2 -n msdataworkshop</copy>
     ```
- 
+
    List the running pods.
- 
+
     ```
     <copy>pods</copy>
     ```
@@ -84,8 +84,8 @@ This lab assumes that you have already completed labs 1 through 4.
 
 ![](images/2replicas.png " ")
 
-4. Reexecute the test with 60 virtual users by executing the following command.
- 
+4. Execute the test again with 60 virtual users by executing the following command.
+
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 60</copy>
     ```
@@ -94,8 +94,8 @@ This lab assumes that you have already completed labs 1 through 4.
 
 ![](images/60vus2replica.png " ")
 
-5. Execute a test with 90 virtual users by executing the following command.
- 
+5. Execute a final test with 90 virtual users by executing the following command.
+
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 90</copy>
     ```
@@ -105,13 +105,13 @@ This lab assumes that you have already completed labs 1 through 4.
 ![](images/90vus2replica.png " ")
 
 6. Scale to 3 Replicas.
- 
+
     ```
     <copy>kubectl scale deployment.apps/order-helidon --replicas=3 -n msdataworkshop</copy>
     ```
- 
+
    List the running pods.
- 
+
     ```
     <copy>pods</copy>
     ```
@@ -152,9 +152,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
 ![](images/90vus3replica2dbocpu.png " ")
 
-## Conclusion
 
-Application and Database tiers can be scaled to maintain application performance and throughput during periods of increased loads.
 
 ## Acknowledgements
 * **Authors** - Richard Exley, Maximum Avaiability Architecture; Curtis Dinkel, Maximum Avaiability Architecture; Rena Granat, Maximum Avaiability Architecture;

@@ -37,7 +37,7 @@ This lab assumes you have completed the following labs:
 0.  Login to the instance using Oracle Cloud Shell and ssh.
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
 1.  This lab uses the Sales History sample schema (SH). Create two new folders on disk (using the *opc* user). These folders will be used later as a location for some external partitions.

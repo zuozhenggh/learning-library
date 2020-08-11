@@ -8,7 +8,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
 ### Objectives
 -   Create and bind OCI Service Broker to existing ATP instance
--   Setup Oracle Advanced Queuing in existing ATP instances
+-   Set up Oracle Advanced Queuing in existing ATP instances
 
 ### What Do You Need?
 
@@ -37,8 +37,8 @@ The lab will then show you metrics, health checks and probes, and tracing that h
     When an order is placed, the order service inserts the order in JSON format and in the same local transaction sends an `orderplaced` message using AQ JMS.
     The inventory service dequeus this message, validates and adjusts inventory, and enqueues a message stating the inventory location for the item ordered or an `inventorydoesnotexist` status if there is insufficient inventory.
     This dequeue, database operation, and enqueue are done within the same local transaction.
-    Finally, the order service dequeues the inventory status message for the order and returns the resultant order success or failure to the frontend service. 
-      
+    Finally, the order service dequeues the inventory status message for the order and returns the resultant order success or failure to the frontend service.
+
     This is shown in the below architecture diagram.
 
    ![](images/grubdash-app-arch.png " ")
@@ -91,10 +91,10 @@ The lab will then show you metrics, health checks and probes, and tracing that h
    ![](images/5fad32d4c759a78653a31f68cffedfac.png " ")
 
 7. The services are ready, and you can proceed to test the application
-    mechanisms. 
-    
-    
-    
+    mechanisms.
+
+
+
 ## **STEP 2**: Verify order and inventory activity of GrubDash store
 
 1.   Open the frontend microservices home page.
@@ -122,12 +122,12 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
    This is expected, because the inventory count for sushi was 0.
 
-7. Click **Add Inventory** to add the sushi in the inventory. You
+7. Increase the order ID by 1 (67) and then click **Add Inventory** to add the sushi in the inventory. You
     should see the outcome being an incremental increase by 1.
 
    ![](images/sushicount1.png " ")
 
-8. Go ahead and place another order by clicking **Place Order**, and then click
+8. Go ahead and place another order by increasing the order ID by 1 and then clicking **Place Order**. Next click
     **Show Order** to check the order status.
 
    ![](images/placeorderpending.png " ")
@@ -214,7 +214,7 @@ next lab.
 2. Click **Tracing, Metrics, Health**
 
    ![](images/tracingmetricshealth-blankpage.png " ")
-   
+
 2. Click **Metrics** and notice the long string of metrics (including those from placeOrder timed and counted) in prometheus format.
 
    ![](images/metrics.png " ")
@@ -229,11 +229,11 @@ next lab.
        health that the Helidon microservice advertises. Click **Tracing, Metrics, Health** and click **Show Health: Liveness**
 
    ![](images/healthliveliness.png " ")
-   
+
 2. Notice health check class at `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderServiceLivenessHealthCheck.java` and how the liveness method is being calculated.
-     
+
       ![](images/c6b4bf43b0ed4b9b4e67618b31560041.png " ")
-   
+
 3. Notice liveness probe specified in $MSDATAWORKSHOP_LOCATION/order-helidon/order-helidon-deployment.yaml The `livenessProbe` can be set up with different criteria, such as reading from a
                                                                                                            file or an HTTP GET request. In this example the OKE health probe will use HTTP
                                                                                                            GET to check the /health/live and /health/ready addresses every 3 seconds, to
@@ -256,13 +256,13 @@ next lab.
    ![](images/connectionrefused.png " ")
 
    Eventually you will see the container restart and note the new/later container startup time reflecting that the pod was restarted.
-    
+
    ![](images/lastcontainerstartuptime2.png " ")
 
 
 
 ## **STEP 5**: Verify tracing
-   
+
 1. Notice @Traced annotations on `placeOrder` method of $MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/java/io/helidon/data/examples/FrontEndResource.java and `placeOrder` method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
    Also notice the additional calls to set tags, baggage, etc. in this `OrderResource.placeOrder` method.
 
@@ -273,14 +273,13 @@ next lab.
 3. Click **Tracing** to open the Jaeger UI, select `frontend.msdataworkshowp` from the `Service` dropdown menu and click `Find Traces` button.
 
    ![](images/jaegertrace.png " ")
-   
-   Select a trace with a large number of spans and drill down on the various spans of the trace and associated information. In this case we see placeOrder order, saga, etc. information in logs, tags, and baggage.
-   
-   
-   ![](images/jaegertracedetail.png " ")
-   
 
-## Conclusion
+   Select a trace with a large number of spans and drill down on the various spans of the trace and associated information. In this case we see placeOrder order, saga, etc. information in logs, tags, and baggage.
+
+
+   ![](images/jaegertracedetail.png " ")
+
+
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
