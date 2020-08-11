@@ -39,26 +39,38 @@ Automatic indexing improves database performance by managing indexes automatical
 
 This Lab will use the Sales History (SH) sample schema.
 
-0.  Login to the instance using ssh.
+1.  If you aren't already logged in, login to the instance using ssh. 
 
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-1.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
-
+2.  Switch to the oracle user
     ````
     <copy>
     sudo su - oracle
+    </copy>
+    ORACLE_SID = [ORCL] ? ORCL
+    The Oracle base remains unchanged with value /u01/app/oracle
+    ````
+3.  Set your oracle environment.  When prompted enter **[ORCL]**
+    ````
+    <copy>
     . oraenv
-    [ORCL]
+    </copy>
+    ````
+
+4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
+
+    ````
+    <copy>
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA
     </copy>
     ````
 
     ![](./images/step1.1-connect.png " ")
 
-2.  List all existing indexes in the **SH** schema.
+5.  List all existing indexes in the **SH** schema.
 
     ````
     <copy>
@@ -75,7 +87,7 @@ This Lab will use the Sales History (SH) sample schema.
 
     ![](images/ai_indexes.png " ")
 
-3.  For the purpose of this exercise, we will drop all existing secondary indexes. NOTE: DO NOT DO THIS ON ANY PRODUCTION SYSTEM.
+6.  For the purpose of this exercise, we will drop all existing secondary indexes. *NOTE: DO NOT DO THIS ON ANY PRODUCTION SYSTEM.*
 
     ````
     <copy>
@@ -101,7 +113,7 @@ This Lab will use the Sales History (SH) sample schema.
 
     ![](./images/step1.3-dropindexes.png " " )
 
-4.  Gather **SH** schema statistics.
+7.  Gather **SH** schema statistics.
 
     ````
     <copy>
