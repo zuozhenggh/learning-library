@@ -38,17 +38,11 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     ![](images/LabGuide1-39fb4a5b.png " ")
 
-4. Use the __List Scope__ drop-down menu to select a compartment.
-
-    ![](images/livelabs-compartment.png " ")
-
-   *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
-
-5. If you already have a list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
+4. If you already have a list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
 
     ![](./images/Compartment.png " ")
 
-6. You can see your current default **region** in the top, right hand corner of the page. If you have been instructed to use a different region then the default one, please select it now.
+5. You can see your current default **region** in the top, right hand corner of the page. If you have been instructed to use a different region then the default one, please select it now.
 
     ![](./images/Region.png " ")
 
@@ -61,7 +55,8 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 2. This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 3. Provide basic information for the autonomous database:
 
-    - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
+    - __Choose a compartment__ - Select a compartment for the database from the drop-down list. For this lab, you may use your **root** compartment. <br>
+    *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __JSONLab__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __JSONLab__.
 
@@ -70,7 +65,8 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 4. Choose a workload type. Select the workload type for your database from the choices:
 
     - __Transaction Processing__ - For this lab, choose __Transaction Processing__ as the workload type.
-    -  __Data Warehouse__ - Alternatively, you could have chosen Data Warehouse as the workload type.
+    - __Data Warehouse__ - Alternatively, you could have chosen Data Warehouse as the workload type.
+    - __JSON__ - Alternatively, you could have chosen JSON as the workload type.
 
     ![](./images/Picture100-26b.png " ")
 
@@ -83,14 +79,14 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
 6. Configure the database:
 
-    - __Always Free__ - If your Cloud Account is an Always Free account, you may select this option to create an always free autonomous database. An always free database limits the options below and comes with 1 CPU and 20 GB of storage.
+    - __Always Free__ - For this lab you may select this option to create an always free autonomous database. An always free database limits the options below and comes with 1 CPU and 20 GB of storage.
     - __Choose database version__ - Select a database version 19c from the available versions.
-    - __OCPU count__ - Number of CPUs for your service. For this lab, specify __2 CPUs__. Or, if you choose an Always Free database, it comes with 1 CPU.
+    - __OCPU count__ - Number of CPUs for your service. If you chose an Always Free database, it automatically comes with 1 CPU. If not, for this lab, specify __1 CPU__.
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage. If you choose an Always Free database, it comes with 20 GB of storage.
     - __Auto Scaling__ - You may keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand. This is not an option in an always free database.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do **not** select it.
 
-    *Note: You cannot scale up/down an Always Free autonomous database. You may only create one always free ATP and ADW database each, per tenancy*
+    *Note:* You cannot scale up/down an Always Free autonomous database. You may only create one always free ATP and ADW database each, per tenancy
 
     ![](./images/AlwaysFree.png " ")
 

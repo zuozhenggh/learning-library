@@ -27,13 +27,20 @@ For this lab we will use the **ADMIN** user schema that is provided when you pro
 ## **Step 1**:  Register for Geonames
 
 For the purpose of this exercise we will use a web service, that returns information in JSON format, provided by GeoNames - [geonames.org](http://www.geonames.org/). GeoNames is licensed under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/). You are free to:
-
-- Share — copy and redistribute the material in any medium or format;
+- Share — copy and redistribute the material in any medium or format.
 - Adapt — remix, transform, and build upon the material for any purpose, even commercially.
 
-1.  Click '**login**' link on the upper right corner of GeoNames website, and create a new account. **Note:** When you create your GeoNames account you will receive an email to activate the account (check spam folder).
+1.  Click '**login**' link on the upper right corner of GeoNames website and **create a new account**.
 
-2.  Enable the account for web services on the account page [GeoNames Account Page](http://www.geonames.org/manageaccount).
+**Note:** When you create your GeoNames account you will receive an **email to activate the account** (check spam folder).
+
+  ![](./images/geonameslogin.png " ")
+
+2.  **Enable** the account for **web services** on the account page [GeoNames Account Page](http://www.geonames.org/manageaccount).
+3.
+    ![](./images/geoNames1.png " " )
+
+    ![](./images/geoNames2.png " " )
 
 ## **Step 2**: Connect to ADB with SQL Developer Web
 

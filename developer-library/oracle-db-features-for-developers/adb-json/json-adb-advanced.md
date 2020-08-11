@@ -57,7 +57,7 @@ For this lab we will use the *Sales Histroy (SH)* sample schema that is provided
     </copy>
     ````
 
-    ![](./images/step2.1-jsondocintable.png " " )
+    ![](./images/subregions.png " " )
 
 2.  Query the regions and sub-regions stored in these 19 documents, retrieving them as relational data.
 
@@ -82,7 +82,7 @@ For this lab we will use the *Sales Histroy (SH)* sample schema that is provided
     </copy>
     ````
 
-    ![](./images/p_jsonDoc_9.png " ")
+    ![](./images/step2.1-jsondocintable.png " ")
 
     Now we have the entire geographic division.
 
@@ -112,7 +112,7 @@ For this lab we will use the *Sales Histroy (SH)* sample schema that is provided
       create table allGeos as
       select jt.geo
       from MYJSON,
-      JSON_TABLE(DOC, '$.geonames[\*]' COLUMNS
+      JSON_TABLE(DOC, '$.geonames[*]' COLUMNS
         (geo VARCHAR2(4000) FORMAT JSON PATH '$' )) AS jt;
       </copy>
       ````
@@ -198,7 +198,9 @@ For this lab we will use the *Sales Histroy (SH)* sample schema that is provided
       ![](./images/Jsonsearchindex.png " ")
 
 
-9. The explain plan shows the [DOMAIN INDEX](https://docs.oracle.com/cd/B28359_01/appdev.111/b28425/dom_idx.htm) 'geo\_search\_idx' being used for queries without a function-based index. If present, a function-based index will be preferred.
+    9. The **explain plan** shows the [DOMAIN INDEX](https://docs.oracle.com/cd/B28359_01/appdev.111/b28425/dom_idx.htm) 'geo\_search\_idx' being used for queries without a function-based index. If present, a function-based index will be preferred.
+
+    *Note:* To see the query plan, use the **Explain Plan** button as highlighted in the screenshots
 
       ````
       <copy>
@@ -578,9 +580,10 @@ You can use *JSON_MERGEPATCH* in a SELECT list to modify the selected documents.
 
     In this case, we insert a new document.
 
-### Updating A JSON Column Using JSON Merge Patch
+### Updating a specific element in a JSON Column using JSON Merge Patch
 
-8.  You can use *JSON_MERGEPATCH* in an UPDATE statement, to update the documents in a JSON column. We will use the very first JSON document in our table, the one about that Oracle Workshop.
+8. We will use the very first JSON document in our table, the one about the Oracle Workshop. This is a simple JSON document, with three fields. The third field is also a collection with three fields.
+
 
     ````
     <copy>
@@ -590,19 +593,24 @@ You can use *JSON_MERGEPATCH* in a SELECT list to modify the selected documents.
 
     ![](./images/p_updateJsonDoc_7.png " ")
 
-    This is a simple JSON document, with three fields. The third field is also a collection with three fields.
 
-### Update Specific Element In A JSON Document
 
-9.  We can update the second field, using the plain UPDATE statement and *JSON_MERGEPATCH* function. When running the same SELECT statement, we notice that the document is not pretty-printed any more.
+9.  We can update the JSON document's second field, using the plain UPDATE statement and *JSON_MERGEPATCH* function.
+
+    Remember to commit changes if you want to keep them in the database.
 
     ````
     <copy>
     update MYJSON set DOC = json_mergepatch(DOC, '{"audienceType": "Developers and DBAs"}') where ID = 1;
+    commit;
     </copy>
     ````
 
     ![](./images/step7.9-updatefield.png " " )
+
+    Updating JSON documents inside the Oracle Database is that simple!
+
+10. When running the same SELECT statement, we notice that the document is not pretty-printed any more.
 
     ````
     <copy>
@@ -612,33 +620,21 @@ You can use *JSON_MERGEPATCH* in a SELECT list to modify the selected documents.
 
     ![](./images/p_updateJsonDoc_8.png " ")
 
-10.  You can add the *PRETTY* clause to the UPDATE statement, and have more clarity when returning the document from our table.
+11. You can use JSON_SERIALIZE to **pretty** print the JSON data, this makes it easier to read. You may also store the JSON in pretty printed format but this will take up more space.
+
+    This one is much more legible.
 
     ````
     <copy>
-    update MYJSON set DOC = json_mergepatch(DOC, '{"audienceType": "Developers and DBAs"}' RETURNING CLOB PRETTY) where ID = 1;
+    select JSON_Serialize(DOC pretty) from MYJSON where ID = 1;
     </copy>
     ````
 
-    ![](./images/step7.10-prettyupdatefield.png " " )
+    ![](./images/prettyprintmerge.png " ")
 
-    ````
-    <copy>
-    select DOC from MYJSON where ID = 1;
-    </copy>
-    ````
 
-    ![](./images/p_updateJsonDoc_9.png " ")
 
-    This one looks much nicer. Remember to commit changes if you want to keep them in the database.
 
-    ````
-    <copy>
-    commit;
-    </copy>
-    ````
-
-    Updating JSON documents inside the Oracle Database is that simple.
 
 ## **Step 8**: JSON Materialized View Support
 
@@ -719,6 +715,7 @@ Significant performance gains can often be achieved using query rewrite and mate
 
 4.  View the plan for this query under the **Explain Plan** tab of the output. We can see the dot notation calls get rewritten as a *JSON\_TABLE* call, because we can see the *JSONTABLE EVALUATION* step in the plan (6), and we can see the data has been returned from the *JSON\_CASTLES\_MV* materialized view (4).
 
+    *Note:* To see the query plan, use the **Explain Plan** button as highlighted in the screenshots
 
     ![](./images/ExplainPlanRewrittenPerformanceQuery.png " ")
 
