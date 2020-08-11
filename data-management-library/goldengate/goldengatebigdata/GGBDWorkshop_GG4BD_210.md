@@ -24,8 +24,6 @@ User and Password
 User ID: ggadmin
 Password:  oracle
 
-If already at a Unix prompt, you can access the Lab Menu by typing:
-
 '>su – ggadmin
 Password = oracle
 

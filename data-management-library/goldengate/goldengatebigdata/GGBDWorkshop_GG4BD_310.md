@@ -82,7 +82,7 @@ Now create and start the HDFS replicat process:
 
 ![](images/all/b8.png)
 
-ADD REPLICAT RUNNING B9
+ADD REPLICAT RUNNING 
 ![](images/ALL/B9.png)
 
 Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the HDFS directory – it should be empty. Then we’ll load some data on the MySQL database
@@ -113,7 +113,7 @@ In Hadoop ggsci session window:
 ![](images/all/b15.png)
 
 
-## Optional Only if VNC is available
+## Optional: Only if VNC is available
 
 The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 You can also see the files created by GG from Hue: http://127.0.0.1:8888/

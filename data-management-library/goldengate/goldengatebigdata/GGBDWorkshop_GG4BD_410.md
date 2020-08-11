@@ -119,7 +119,7 @@ Let’s confirm that GG replicated the data that it captured. In a GG Home for H
 
 # End of Lab 4.
 
-## Optional Only if VNC is available
+## Optional: Only if VNC is available
 
 You can also see the Hive data created by GG from Hue:
 

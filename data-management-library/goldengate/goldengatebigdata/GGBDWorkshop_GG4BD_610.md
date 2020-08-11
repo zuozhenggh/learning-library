@@ -33,9 +33,11 @@ If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘
 The following Lab Menu will be displayed, 
 select R to reset the lab environment, then select 6 (this step may take a couple of minutes).
 
+![](images/all/e_labmenu6.png)
+
 Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
-![](images/ALL/e_labmenu6.png)
+
 
 ------
 

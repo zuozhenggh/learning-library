@@ -28,14 +28,13 @@ User and Password:
 User ID: ggadmin
 Password:  oracle
 
-![](images/700/lab7menu.png)
-
-
 ### STEP 1: Setting up the Environment For Connection to Cassandra using Goldengate.
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
-The following Lab Menu will be displayed, 
+The following Lab Menu will be displayed
+
+![](images/700/lab7menu.png)
 
 select R to reset the lab environment, then select 7.
 Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
