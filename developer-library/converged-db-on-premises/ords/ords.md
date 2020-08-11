@@ -431,7 +431,7 @@ http://&lt;Instance_ip_address&gt;:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
 
 ![](./images/ordsl40.png " ")
 
-** Update data in JSON table using PUT method.**
+**Update data in JSON table using PUT method.**
 
 40. Right click on template  **cnvg/:id** then select **Add handler** and select **PUT**.
 

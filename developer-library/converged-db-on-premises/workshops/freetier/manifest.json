@@ -54,6 +54,11 @@
             "title": "Lab 9: Cross Data Types",
             "description": "Labs that leverage data types across schemas",
             "filename": "../../crossdatatype/crossdatatype.md"
+        },
+        {
+            "title": "Lab 10: ords",
+            "description": "Labs that leverage data types across schemas",
+            "filename": "../../ords/ords.md"
         }
 
 
