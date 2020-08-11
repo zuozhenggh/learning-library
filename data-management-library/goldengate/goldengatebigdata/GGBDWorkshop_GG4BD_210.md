@@ -28,7 +28,8 @@ If already at a Unix prompt, you can access the Lab Menu by typing:
 
 '>su – ggadmin
 Password = oracle
-Execute the alias ‘labmenu’
+
+or Execute the alias ‘labmenu’
 
 The following Lab Menu will be displayed:
 Select Option 2

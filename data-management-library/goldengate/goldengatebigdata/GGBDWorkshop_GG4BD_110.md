@@ -97,6 +97,8 @@ Signon as ggadmin
 >su - ggadmin
 password = oracle
 
+or
+
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
 ![](images/all/labmenu_opt1.png)
