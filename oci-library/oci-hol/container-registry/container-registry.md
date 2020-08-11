@@ -333,7 +333,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
 *We now have a working Docker registry and can successfully push and pull images to/from it.*
 
-## Step 3: Delete the resources
+## **Step 3:** Delete the resources
 
 1. Switch to  OCI console window
 

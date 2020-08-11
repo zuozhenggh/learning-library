@@ -15,7 +15,7 @@ Estimated time: 10 Minutes
 - Lab: Generate SSH Key
 - Lab: Setup Compute Instance
 
-## STEP 1: Start the Database and the Listener
+## **Step 1:** Start the Database and the Listener
 
 1. Click the Hamburger Menu in the top left corner. Then hover over Compute > Instances. Find the instance you created in the previous lab.
 
@@ -50,7 +50,7 @@ Estimated time: 10 Minutes
       ./env_setup_script.sh</copy>
       ````
 
-## STEP 2: Download SQL Developer
+## **Step 2:** Download SQL Developer
 
 Certain workshops require SQL Developer.  To setup SQL Developer, follow the steps below.
 
@@ -60,7 +60,7 @@ Certain workshops require SQL Developer.  To setup SQL Developer, follow the ste
 
       ![](./images/start-sql-developer.png " ")
 
-## STEP 3:  Test a connection
+## **Step 3:**  Test a connection
 
 1.  In the connections page click the green plus to create a new connection
 

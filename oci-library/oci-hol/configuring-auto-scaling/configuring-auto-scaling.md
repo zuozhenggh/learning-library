@@ -54,7 +54,7 @@ A cooldown period between autoscaling events lets the system stabilize at the up
 
 *Note: OCI user interface is being updated, thus some screenshots in the instructions may be different than the actual UI*
 
-## Step 1: Create VCN
+## **Step 1:** Create VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -89,7 +89,7 @@ A cooldown period between autoscaling events lets the system stabilize at the up
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
              
-## Step 2: Create Load Balancer and Update Security List
+## **Step 2:** Create Load Balancer and Update Security List
 
 *When you create a load balancer, you choose its shape (size) and specify subnets from different Availability Domains. This ensures that the load balancer is highly available.*
 
@@ -158,7 +158,7 @@ Enter the following ingress rule:
 
 9. Click **Add Ingress Rules**.
 
-## Step 3: Configure instance pool and auto scaling
+## **Step 3:** Configure instance pool and auto scaling
 
 1. Go to the OCI console. From OCI services menu, under **Compute**, click **Instances**.
 
@@ -311,7 +311,7 @@ Fill out the dialog box:
 
     *Original image can be deleted as it's not part of the pool.*
 
-## Step 4: Test the setup
+## **Step 4:** Test the setup
 
 1. Wait until your Instance Pool change from *Scaling* to *Running* state. Under **Compute**, click **Instance Pools**, and then your pool name. Click **Created Instances**, you should see a compute instance created. Click the Compute Instance name.
     ![](./images/Auto_Scaling_007.PNG " ")
@@ -367,7 +367,7 @@ Fill out the dialog box:
 
     *This is because our criteria of CPU utilization < 5 is met.*
 
-## Step 5: Delete the resources
+## **Step 5:** Delete the resources
 
 1. Switch to  OCI console window.
 

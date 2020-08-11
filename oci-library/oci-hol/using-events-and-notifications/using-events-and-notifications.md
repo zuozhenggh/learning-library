@@ -43,7 +43,7 @@ In this lab we will verify notifications when a compute instance is launched and
 
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console and configure Notification and Event
+## **Step 1:** Sign in to OCI Console and configure Notification and Event
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -105,7 +105,7 @@ In this lab we will verify notifications when a compute instance is launched and
 
 We have now configured Notification service and tied events to it with a specific compartment. When a new compute instance is launched or terminated an email notification will be sent to the email address specified.
 
-## Step 2: Create VCN 
+## **Step 2:** Create VCN 
 
 1. From the OCI Services menu, under **Networking**, click **Virtual Cloud Networks**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and click **Start VCN Wizard**.
 
@@ -131,7 +131,7 @@ We have now configured Notification service and tied events to it with a specifi
 6. Click **View Virtual Cloud Network** to display your VCN details.
 
               
-## Step 3: Create compute instance and verify notification
+## **Step 3:** Create compute instance and verify notification
 
 1. From OCI services menu, Click **Instances** under **Compute**. 
 
@@ -169,7 +169,7 @@ We have now configured Notification service and tied events to it with a specifi
 6. Switch to your email account and verify an event indicating compute instance create was received.
 
 
-## Step 4: Delete the resources
+## **Step 4:** Delete the resources
 
 1. Switch to  OCI console window.
 

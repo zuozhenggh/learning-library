@@ -16,7 +16,7 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
     -  Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
 -  Basic concepts of Terraform
 
-## Step 1: Configuring IAM to control user access in Resource Manager
+## **Step 1:** Configuring IAM to control user access in Resource Manager
 
 **Note:** You can skip the steps below if you are using an user with admin privileges. If this were a real production system, it's both more secure and practical to create additional groups with more granular permissions. For example, it is likely we'd need to create a development team group that can only use predefined stacks and run jobs against it (use-orm-stack and use-orm-job, respectively). 
 [Check Best Practices for IAM](https://docs.cloud.oracle.com/iaas/Content/Security/Concepts/security_features.htm#IdentityandAccessManagementIAMService).
@@ -33,7 +33,7 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
       - Click **Create**.
      
 
-## Step 2: Create Resource Manager Stack
+## **Step 2:** Create Resource Manager Stack
 
  A Stack represents definitions for a collection of OCI resources within a specific compartment. With this in mind, we're going to configure a new stack in the OCI-ORM compartment in the us-phoenix-1 region and name it "HA Load Balanced Simple Web App". As the stack's name suggests, its configuration files define the load balancing, networking, and compute resources to deploy the target architecture plus an HTTP server. 
 
@@ -89,7 +89,7 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
    
     ![](./../resource-manager/images/image002.png " ")
 
-## Step 3: Execute Jobs: Plan, Apply, Destroy
+## **Step 3:** Execute Jobs: Plan, Apply, Destroy
 
 Jobs perform actions against the Terraform configuration files associated with a stack. You can perform 3 actions and they are plan, apply and destroy. Since Terraform command execution is not atomic, it is crucial to prevent any race conditions or state corruption from occurring due to parallel execution. To prevent this from happening, the Resource Manager ensures only one job can run against a stack at a given time against a single state file.
 

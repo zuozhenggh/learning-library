@@ -28,7 +28,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 4. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Create a Virtual Cloud Network
+## **Step 1:** Create a Virtual Cloud Network
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
@@ -54,7 +54,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 6. Click **View Virtual Cloud Network** to display your VCN details.
               
               
-## Step 2: Create two compute instances and install web server
+## **Step 2:** Create two compute instances and install web server
 
 1. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**.
 
@@ -217,7 +217,7 @@ We now have two Compute instances with Web servers installed and a basis index.h
 
 Load balancers should always reside in different subnets than your application instances. This allows you to keep your application instances secured in private subnets, while allowing public Internet traffic to the load balancers in the public subnets.
 
-## Step 3: Create Security List Route table and additional subnet
+## **Step 3:** Create Security List Route table and additional subnet
 
 In this section we will create a new security list. This security list will be used by the load balancer (that will be created later on). This will ensure all traffic to the two web servers is routed properly.
 
@@ -282,7 +282,7 @@ In this section we will create a new security list. This security list will be u
      ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_004.PNG " ")
 
 
-## Step 4: Create Load Balancer and update Security List
+## **Step 4:** Create Load Balancer and update Security List
 
 When you create a load balancer, you choose its shape (size) and you specify subnet (created earlier) from different Availability Domains. This ensures that the load balancer is highly available and is only active in one subnet at a time.
 
@@ -386,7 +386,7 @@ We will now test the Load Balancer functionality (load balance using round robin
 
 **Note:** Be sure to take note of the "Health" field in the Networking > Load Balancers dashboard. If the health is "Critical," the load balancer may not work as intended, and the best course of action may be to create a new one. This is likely the result of something being mis-configured, and it should only happen rarely.
 
-## Step 5: Verify High Availability of HTTP Servers
+## **Step 5:** Verify High Availability of HTTP Servers
 
 In this section we will access the two Web servers configured earlier using Load Balancer’s Public IP address and demonstrate Load Balancer’s ability to route traffic on round robin basis(Per the Policy Configured). In case one of the web server becomes un-available the web content will be available via the second server (High Availability)
 

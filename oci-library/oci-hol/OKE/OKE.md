@@ -31,7 +31,7 @@ Estimated time: 1 hour
 
 - Recommended Browser - Chrome 
 
-## Step 1: Create Kubernetes Cluster
+## **Step 1:** Create Kubernetes Cluster
 
 1. From OCI Services menu, Click **Container Clusters (OKE)** under Developer Services.
 
@@ -59,7 +59,7 @@ Estimated time: 1 hour
     ![](./../OKE/images/OKE_015.PNG " ")
 
 
-## Step 2: Check OCI CLI in Cloud Shell
+## **Step 2:** Check OCI CLI in Cloud Shell
 
 OCI Command Line comes preinstalled in Oracle Cloud Shell.
 
@@ -73,7 +73,7 @@ OCI Command Line comes preinstalled in Oracle Cloud Shell.
     to check OCI CLI version which should be 2.5.x or higher.
 
 
-## Step 3: Install Kubectl
+## **Step 3:** Install Kubectl
 
 In this section we will install kubectl. You can use the Kubernetes command line tool kubectl to perform operations on a cluster you've created with Container Engine for Kubernetes.
 
@@ -107,7 +107,7 @@ In this section we will install kubectl. You can use the Kubernetes command line
     ```
     and verify kubectl.exe file exists.
 
-## Step 4: Download get-kubeconfig.sh file and Initialize your environment
+## **Step 4:** Download get-kubeconfig.sh file and Initialize your environment
 
 1. Switch to OCI console window and navigate to your cluster. In Cluster detail window, scroll down and click **Quick Start**, under **Resources**. 
 Follow the steps under the **Quick Start** Section.
@@ -117,7 +117,7 @@ Follow the steps under the **Quick Start** Section.
 
     ![](./../OKE/images/OKE_006.PNG " ")
 
-## Step 5: Deploying a Sample Nginx App on Cluster Using kubectl
+## **Step 5:** Deploying a Sample Nginx App on Cluster Using kubectl
 
 1. In git bash window, change Directory to $HOME/.kube, Enter Command:
     ```
