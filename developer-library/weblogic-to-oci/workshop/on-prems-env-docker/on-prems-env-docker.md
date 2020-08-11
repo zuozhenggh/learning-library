@@ -16,6 +16,8 @@ At the end of this lab, you will have a local environment running with an Oracle
 - Docker installed locally to run the 'on-prems' environment.</br>
   Get Docker here: <a href="https://docs.docker.com/get-docker/" target="_blank">https://docs.docker.com/get-docker/</a>
 
+  ***Note: You need at least 2 CPUs and 4Gb of memory assigned to Docker to run this template.***
+
 - Docker-compose installed (on Linux it needs to be installed separately, but it is installed automatically on Mac OS and Windows)</br>
   <a href="https://docs.docker.com/compose/install/" target="_blank">https://docs.docker.com/compose/install/</a>
 
@@ -55,7 +57,7 @@ sudo su - oracle
 </copy>
 ```
 
-**Download the source code required for this lab from** <a href="./weblogic-to-oci.zip" target="_blank">here</a></br>
+**Download the source code required for this lab from** <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip" target="_blank">here</a></br>
 or at <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip" target="_blank">https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip</a>
 
 
