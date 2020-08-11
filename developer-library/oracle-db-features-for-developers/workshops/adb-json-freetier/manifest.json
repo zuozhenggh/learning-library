@@ -1,7 +1,7 @@
 {
     "tutorials": [
       {
-       "title": "Prerequisites: Sign in to Oracle Cloud",
+       "title": "Prerequisites",
        "description": "Get a Free Trial",
        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
       },

@@ -38,7 +38,7 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     ![](images/LabGuide1-39fb4a5b.png " ")
 
-4. Use the __List Scope__ drop-down menu to select a compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment.
+4. Use the __List Scope__ drop-down menu to select a compartment.
 
     ![](images/livelabs-compartment.png " ")
 
@@ -48,7 +48,7 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     ![](./images/Compartment.png " ")
 
-6. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page. You can go ahead and select a different available region such as **Phoenix** or **Toronto**.
+6. You can see your current default **region** in the top, right hand corner of the page. If you have been instructed to use a different region then the default one, please select it now.
 
     ![](./images/Region.png " ")
 
@@ -153,7 +153,10 @@ Copy and run this dummy query in your worksheet to see that you are now connecte
 ![](./images/dummyquery.png " ")
 
 
-Let's *proceed to the next lab*.
+## Summary
+In this lab you created an Autonomous Database and connected to it using SQL Developer Web.
+
+You may proceed to the following lab.
 
 ## Want to Learn More?
 

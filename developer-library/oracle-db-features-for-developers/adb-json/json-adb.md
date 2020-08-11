@@ -17,7 +17,7 @@ Watch this video to learn more about JSON in the Oracle Database.
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Prerequisites: Sign in to Oracle Cloud
+* Prerequisites
 * Lab: Provision and connect to Autonomous Database
 
 ### Lab User Scehma
@@ -41,6 +41,15 @@ For the purpose of this exercise we will use a web service, that returns informa
 
     ![](./images/ClearSDW.png " " )
 
+
+## **Step 3**: Generate JSON Data
+
+Let us generate some JSON data into the database by retrieving sample documents from a web service. Oracle Database supports *JavaScript Object Notation (JSON)* data natively with relational database features, including transactions, indexing, declarative querying, and views.
+
+This lab covers the use of database languages and features to work with JSON data that is stored in Oracle Database. In particular, it covers how to use SQL and PL/SQL with JSON data.
+
+1.  Make sure you have activated your GeoNames account before continuing with this lab.
+
 2.  Create Network Access Control List as our database needs to connect to a web service, and retrieve information over HTTPS, and this requires an *Access Control List (ACL)*. This ACL can be created by a user with SYSDBA privileges, **ADMIN** in this case, from your Autonomous Database by executing the following procedure.
 
     ````
@@ -56,19 +65,11 @@ For the purpose of this exercise we will use a web service, that returns informa
     </copy>
     ````
 
-    ![](./images/p_addACL.png " ")
+    ![](./images/appendhostACE.png " ")
 
  Ensure the execution is successful.
 
-## **Step 3**: Generate JSON Data
-
-Let us generate some JSON data into the database by retrieving sample documents from a web service. Oracle Database supports *JavaScript Object Notation (JSON)* data natively with relational database features, including transactions, indexing, declarative querying, and views.
-
-This lab covers the use of database languages and features to work with JSON data that is stored in Oracle Database. In particular, it covers how to use SQL and PL/SQL with JSON data.
-
-1.  Make sure you have activated your GeoNames account before continuing with this lab.
-
-2.  Test access to the external web service – in this case countryInfo web service from GeoNames. Copy and run the following script in your SQL Developer Web worksheet. The URL_HTTP package in Autonomous Database supports only HTTPS requests with an SSL wallet for added security.
+3.  Test access to the external web service – in this case countryInfo web service from GeoNames. Copy and run the following script in your SQL Developer Web worksheet. The URL_HTTP package in Autonomous Database supports only HTTPS requests with an SSL wallet for added security.
 
     Note: Remember to replace ***&YourGeoNameUsername*** with the username of your account on GeoNames, or fill in your username in the popup dialog.
 
@@ -138,13 +139,24 @@ end;
 
     ````
     <copy>
-    set pages 9999
-    set long 90000
     SELECT j.doc FROM MYJSON j;
     </copy>
     ````
 
     ![](./images/TestJSONQuery.png " ")
+
+
+ 4.  You can use the JSON_SERIALIZE function to pretty print the JSON output. This makes it easier to read.
+
+*Note:* Notice the difference in output between when you click **Run Statement** versus when you click **Run Script** on this highlighted query. Run Statement gives you a result in sortable, expandable table, whereas Run Script gives you the output in plain text, as in the screenshot below.
+
+     <copy>
+     SELECT JSON_Serialize(j.doc pretty) FROM MYJSON j;
+     </copy>
+
+
+![](./images/jsonserialize.png " ")
+
 
 ## **Step 5**:  Single Dot Notation
 
@@ -175,7 +187,7 @@ The objective for our lab is to retrieve information about castles in Europe, an
 
 Note: Remember to replace ***&YourGeoNameUsername*** with the username of your account on GeoNames, or fill in your username in the popup dialog.
 
-    ````
+
     <copy>
     create or replace function get_country_info (countryCode in VARCHAR2) return clob
       is
@@ -194,7 +206,9 @@ Note: Remember to replace ***&YourGeoNameUsername*** with the username of your a
       end;
     /
     </copy>
-    ````
+
+
+   ![](./images/getcountryinfo.png " ")
 
 2.  The input of the function we just created is the ISO code of a country. Run this query to get information about Spain, for example. You may click or hover over the pencil icon in the row of your table to see the complete JSON.
 
@@ -301,7 +315,9 @@ Note: Remember to replace ***&YourGeoNameUsername*** with the username of your a
 
     ![](./images/step6.10-newjsondoc.png " ")
 
-10. The SQL/JSON function *JSON\_TABLE* creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. You can query the result returned by the function as a virtual relational table using SQL. The main purpose of *JSON\_TABLE* is to create a row of relational data for each object inside a JSON array and output JSON values from within that object as individual SQL column values. The **NESTED** clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
+10. The SQL/JSON function *JSON\_TABLE* creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. You can query the result returned by the function as a virtual relational table using SQL. The main purpose of *JSON\_TABLE* is to create a row of relational data for each object inside a JSON array and output JSON values from within that object as individual SQL column values.
+
+  The **NESTED** clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
 
     ````
     <copy>
@@ -342,7 +358,7 @@ Note: Remember to replace ***&YourGeoNameUsername*** with the username of your a
 
     The SDN syntax returns an *array*, not a relational view of JSON data in one column.
 
-Please proceed to the next lab.
+You may proceed to the following lab.
 
 ## **Acknowledgements**
 
