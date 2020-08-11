@@ -18,10 +18,11 @@ capture the changes from MySQL’s binary logs and write them to the local trail
 ### Time to Complete
 Approximately 30 minutes
 
-User and Password
+If at a terminal session:
 
+User and Password
 User ID: ggadmin
-Password: Data1Integration! or oracle
+Password:  oracle
 
 If already at a Unix prompt, you can access the Lab Menu by typing:
 

@@ -20,8 +20,14 @@ Approximately 60 minutes
 ## Before You Begin
 For the Lab terminal session:
 
-su - ggadmin
--------
+If at a terminal session:
+
+User and Password:
+
+User ID: ggadmin
+Password:  oracle
+
+or
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 

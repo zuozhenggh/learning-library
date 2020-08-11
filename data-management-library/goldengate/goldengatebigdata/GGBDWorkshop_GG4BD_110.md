@@ -91,6 +91,15 @@ Password = Data1Integration! or oracle
 
 In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
+Open a Terminal Session from the desktop
+
+![](images/all/terminal2.png)
+
+Signon as ggadmin
+
+>su - ggadmin
+password = oracle
+
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
 ![](images/all/labmenu_opt1.png)

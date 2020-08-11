@@ -15,8 +15,12 @@ process ‘rhdfs’ will read the remote trail files, and write the data to the 
 
 For the Lab:
 
+If at a terminal session:
+
+User and Password:
+
 User ID: ggadmin
-Password: Data1Integration! or oracle
+Password:  oracle
 
 ### Time to Complete
 Approximately 30 minutes

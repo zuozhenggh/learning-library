@@ -7,8 +7,12 @@ Lab Architecture
 
 ## Before You Begin
 
-su - ggadmin
-password: Data1Integration1 or oracle
+If at a terminal session:
+
+User and Password:
+
+User ID: ggadmin
+Password:  oracle
 
 ### Introduction
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat

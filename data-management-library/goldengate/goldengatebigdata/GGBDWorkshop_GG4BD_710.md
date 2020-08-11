@@ -18,9 +18,13 @@ process ‘rcass’ will read the remote trail files, create the Cassandra table
 Approximately 60 minutes
 
 ## Before You Begin
-For the Lab terminal session:
 
-su - ggadmin/oracle
+If at a terminal session:
+
+User and Password:
+
+User ID: ggadmin
+Password:  oracle
 
 ![](images/700/lab7menu.png)
 

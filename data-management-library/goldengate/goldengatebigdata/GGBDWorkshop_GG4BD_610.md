@@ -20,8 +20,12 @@ Approximately 60 minutes
 ## Before You Begin
 For the Lab terminal session:
 
-su - ggadmin
-password: Data1Integration! or oracle
+If at a terminal session:
+
+User and Password:
+
+User ID: ggadmin
+Password:  oracle
 
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 The following Lab Menu will be displayed, 
