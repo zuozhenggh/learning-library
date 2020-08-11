@@ -22,11 +22,11 @@ Estimated time: 5 minutes
 1. Login to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
-    __Note:__ You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
+    __Note:__ You can also directly access your Autonomous Databases through the __Quick Actions__ section of the dashboard.
 
     ![](./images/Picture100-36.png " ")
 
-3. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Transaction Processing database, so click **Autonomous Transaction Processing**.
+3. The following steps apply similarly to Autonomous Data Warehouse, Autonomous Transaction Processing or Autonomous JSON Database. This lab shows provisioning of an Autonomous Transaction Processing database, so click **Autonomous Transaction Processing**.
 
     ![](images/LabGuide1-39fb4a5b.png " ")
 
@@ -111,7 +111,7 @@ Estimated time: 5 minutes
 
     ![](./images/Picture100-27.png " ")
 
-11.  You will be taken to your database OCI console and your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count and storage size.
+11.  You will be taken to your database OCI console and your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Transaction Processing database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count and storage size.
 
     ![](./images/AlwaysFreeProvisioning.png " ")
 
@@ -142,21 +142,19 @@ Copy and run this dummy query in your worksheet to see that you are now connecte
 
 ![](./images/dummyquery.png " ")
 
-You may now proceed to the following lab.
 
+## Want to Learn More?
 
-## Learn more
-In this lab you created an Autonomous Database and connected to it using SQL Developer Web.
+Click [here](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Database.
 
-Watch this video demonstration to learn more about Autonomous Database.
+You can also watch this video demonstration to learn more about Autonomous Database.
 
 [](youtube:Q6hxMaAPghI)
 
 *Note: Interfaces in this video may look different from the updated interfaces you may see.*
 
-## Want to Learn More?
+You may now proceed to the following lab.
 
-Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Data Warehouse.
 
 ## **Acknowledgements**
 

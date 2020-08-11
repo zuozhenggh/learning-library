@@ -729,8 +729,8 @@ This workshop is now complete.
 
 ## **Acknowledgements**
 
-- **Author** - Beda Hammerschmidt, Architect
-- **Contributors** - Nilay Panchal, Anoosha Pilli & Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern
+- **Author** - Valentin Leonard Tabacaru, Product Management
+- **Contributors** - Beda Hammerschmidt (Architect), Nilay Panchal, Anoosha Pilli & Troy Anthony (Product Management), Dylan McLeod (LiveLabs QA Intern)
 - **Last Updated By/Date** - Nilay Panchal, DB Product Management, August 2020
 
 ## See an issue?
