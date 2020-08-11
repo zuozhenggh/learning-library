@@ -85,9 +85,6 @@ Lab 1 – Install GoldenGate binaries for Big Data
 
 PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS (not root)
 
-su – ggadmin
-
-Password = Data1Integration! or oracle
 
 In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
