@@ -19,7 +19,7 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 [Link to Marketplace](https://www.oracle.com/cloud/marketplace/)
 
 ### Objectives
-In this lab, you'll:
+In this lab, you will:
 * Setup a VCN (Virtual Compute Network) using Resource Manager
 * Setup a compute instance
 * Login to your compute instance

@@ -9,7 +9,7 @@ Estimated Lab Time:  25 minutes
 For more information about Terraform and Resource Manager, please see the appendix below.
 
 ### Objectives
-In this lab, you'll:
+In this lab, you will:
 * Use Resource Manager to quickly setup a compute instance and VCN
 * Login to your compute instance
 * Confirm your Oracle Database 19c is up and running

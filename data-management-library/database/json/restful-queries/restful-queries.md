@@ -71,7 +71,7 @@ All our data is now loaded, and we can proceed to creating indexes.  The main in
 
     Since we're running a simple query, a GET handler is all we need (we don't need to POST any data). So leave the Method as GET and the source type as "Collection Query". Collection Query means APEX will handle all the assembly of output into the JSON necessary for a REST call return value.
 
-    Here's the query we ran earlier in SQL Developer Web. Copy the query into the "Source" box, and click "Create Handler". DO NOT include a semi-colon at the end of the SQL (you'll get an obscure "missing right parentheses" error at the next step if you do).
+    Here's the query we ran earlier in SQL Developer Web. Copy the query into the "Source" box, and click "Create Handler". DO NOT include a semi-colon at the end of the SQL (you will get an obscure "missing right parentheses" error at the next step if you do).
 
     ```
     <copy>
@@ -94,7 +94,7 @@ All our data is now loaded, and we can proceed to creating indexes.  The main in
 
     ![](./images/template3.png)
 
-    Click on the two squares to copy the URL, and paste it into a new tab in a web browser.  If everything is right, you'll see JSON on your screen. Some browsers will display it as an unformatted block of JSON, others (including Firefox) will display it laid out and formatted nicely.
+    Click on the two squares to copy the URL, and paste it into a new tab in a web browser.  If everything is right, you will see JSON on your screen. Some browsers will display it as an unformatted block of JSON, others (including Firefox) will display it laid out and formatted nicely.
 
     ![](./images/rest-output1.png)
 
@@ -116,7 +116,7 @@ All our data is now loaded, and we can proceed to creating indexes.  The main in
 
     5. RESTful Queries - A PL/SQL example
    
-    By default the REST call returns the first 25 records. If you scroll down you'll see that it lists "hasMore" : "true" towards the end.  So it tells us that there are more than 25 hits, but not how many hits there are in total.  That's because a simple SQL query can't provide that information.  However, for Oracle Text or JSON search queries, we can get the total count by calling a PL/SQL function CTX_QUERY.COUNT_HITS (this is much faster than doing a separate SELECT COUNT(*) query, which has to actually fetch all the hits to count them). If we're doing PL/SQL we could also get a "snippet" - a fragment of the text with search terms highlighted.
+    By default the REST call returns the first 25 records. If you scroll down you will see that it lists "hasMore" : "true" towards the end.  So it tells us that there are more than 25 hits, but not how many hits there are in total.  That's because a simple SQL query can't provide that information.  However, for Oracle Text or JSON search queries, we can get the total count by calling a PL/SQL function CTX_QUERY.COUNT_HITS (this is much faster than doing a separate SELECT COUNT(*) query, which has to actually fetch all the hits to count them). If we're doing PL/SQL we could also get a "snippet" - a fragment of the text with search terms highlighted.
 
     Let's go back to the "yelp" module in APEX and create a new template. We'll call this one "plsqlquery". Within the template, create a new Handler. This time, leave the Method as GET but set the Source Type to PL/SQL.
 

@@ -501,7 +501,7 @@ appear.
 
 1. Click Action icon for the Block Volume, then **ISCSI Commands & Information**.
 
-   *NOTE: The iSCSI Commands and Information dialog box displays specific identifying information about your volume and the iSCSI commands you'll need. The commands are ready to use with the appropriate information included. You can copy and paste the commands into your instance once you login.*
+   *NOTE: The iSCSI Commands and Information dialog box displays specific identifying information about your volume and the iSCSI commands you will need. The commands are ready to use with the appropriate information included. You can copy and paste the commands into your instance once you login.*
 
      ![](./../oci-quick-start/images/Customer_Lab_017.PNG " ")
 

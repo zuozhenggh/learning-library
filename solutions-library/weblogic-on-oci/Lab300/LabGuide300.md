@@ -42,7 +42,7 @@ See Requirements to get the code and the required Docker images.
 
 - **SSH key**
 
-   To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer. Since the various commands will be ran from inside the docker containers, you'll need to provide the key generated in the container.
+   To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer. Since the various commands will be ran from inside the docker containers, you will need to provide the key generated in the container.
 
   <img src="./images/provision-8-sshkey.png" width="70%">
 

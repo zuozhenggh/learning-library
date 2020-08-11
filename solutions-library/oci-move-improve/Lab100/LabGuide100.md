@@ -203,7 +203,7 @@ sudo chmod 644 /var/www/html/catalog/admin/includes/configure.php
 ```
 
 ### **Step 4:** Configure osCommerce for End User Use
-Type localhost/catalog/admin in the address bar of the firefox browser you had open earlier. You'll need to log in with the admin username and password that you entered when setting up your osCommerce Online Store Settings. After logging in you'll be redirected to a page that looks similar to the second photo below.
+Type localhost/catalog/admin in the address bar of the firefox browser you had open earlier. You'll need to log in with the admin username and password that you entered when setting up your osCommerce Online Store Settings. After logging in you will be redirected to a page that looks similar to the second photo below.
 ![](./images/13.png "")
 ![](./images/14.png "")
 
@@ -463,7 +463,7 @@ sudo service vncserver start
 
 **Connect to your VNC Desktop**
 
-To test your VNC server, you'll need to use a client that supports VNC connections over SSH tunnels. If you are using Windows, you could use TightVNC, RealVNC, or UltraVNC. Mac OS X users can use the built-in Screen Sharing, or can use a cross-platform apps like RealVNC, or VNCViewer. For this lab, we chose to use VNCViewer.
+To test your VNC server, you will need to use a client that supports VNC connections over SSH tunnels. If you are using Windows, you could use TightVNC, RealVNC, or UltraVNC. Mac OS X users can use the built-in Screen Sharing, or can use a cross-platform apps like RealVNC, or VNCViewer. For this lab, we chose to use VNCViewer.
 
 First, we need to create an SSH connection on your local computer that securely forwards to the localhost connection for VNC. Open a new terminal window and input this command:
 

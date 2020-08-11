@@ -18,7 +18,7 @@ This 25-minute lab will show you how to setup the Oracle Cloud Infrastructure Co
 ## **STEP 1**: Download and save the msdataworkshop.properties file
 You'll need to keep track of important information about the tenancy, such as resource IDs, Tenancy OCID, Region name, Object Storage Namespace and user OCID.
 
-1.  Download and save <a href="files/msdataworkshop.properties" target="\_blank">msdataworkshop.properties</a> to store and keep track of the data you'll need in later labs.
+1.  Download and save <a href="files/msdataworkshop.properties" target="\_blank">msdataworkshop.properties</a> to store and keep track of the data you will need in later labs.
 2. Open this file in a text editor. You will update it throughout this lab.
 
    You will later copy this information to your root directory using Cloud Shell and source it for the workshop.
@@ -132,7 +132,7 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
   ![](images/12-upload-key.png " ")
 
-12. Paste the public key's value into the window and click **Add**. The key is uploaded, and its fingerprint is displayed. Add the fingerprint value to your `msdataworkshop.properties` file, you'll use the fingerprint later.
+12. Paste the public key's value into the window and click **Add**. The key is uploaded, and its fingerprint is displayed. Add the fingerprint value to your `msdataworkshop.properties` file, you will use the fingerprint later.
 
   ![](images/13-upload-key2.png " ")
 

@@ -36,7 +36,7 @@ This 15-minute lab walks you through creating an application based on existing t
 
 
 ## **Step 2:** Create a Workspace for a New User ##
-If this is your first time entering APEX, you'll need to create a workspace. Otherwise, skip to the next section.
+If this is your first time entering APEX, you will need to create a workspace. Otherwise, skip to the next section.
 
 1. Click the **Create Workspace** button.
 2. Identify a user for the new workspace. Remember this information so you can log in later:

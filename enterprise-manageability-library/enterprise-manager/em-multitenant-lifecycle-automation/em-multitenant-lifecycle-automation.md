@@ -286,7 +286,7 @@ With the Self-Service Portal, cloud users can request an  Pluggable Database thr
 
 1.  Login into Enterprise Manager as a Self-Service User. Self-Service User credentials are: **cyrus/welcome1**
 
-2.  By default, you'll see the Database Cloud Self Service Portal landing page as shown below.
+2.  By default, you will see the Database Cloud Self Service Portal landing page as shown below.
 
   ![](images/2d9dd5550b4774b590ccb4b1815ac70d.jpg " ")
 
