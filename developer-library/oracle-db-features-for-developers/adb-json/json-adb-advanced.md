@@ -221,9 +221,7 @@ You can use a data guide:
  * As a basis for providing user assistance about requested JSON information, including search.
  * To check or manipulate new JSON documents before adding them to a document set (for example: validate, type-check, or exclude certain fields).
 
-We will use the **castles** example to illustrate the JSON Data Guide
-
-1. We want to get the dataguide for this JSON data. This function scans the entire data and returns a summary consisting of the field names, data type and structure (object or array) – a JSON Schema.
+1. So far, we have worked with the JSON data without having a full understanding of all it's field names, data type and hierarchy. This is common when you work with JSON, as JSON generally has no schema defining it (unlike XML). To get some understanding of the data, lets run the JSON_Dataguide. This function scans the entire data and returns a summary consisting of the field names, data type and structure (object or array) – a JSON Schema.
 
     ````
     <copy>
@@ -469,7 +467,7 @@ You can now update a JSON document declaratively using the new SQL function **JS
 
 ### Updating Selected JSON Documents On The Fly
 
-You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents. The modified documents can be returned or processed further.
+You can use *JSON_MERGEPATCH* in a SELECT list to modify the selected documents. The modified documents can be returned or processed further.
 
 ### Retrieve A Specific Value From JSON Document
 
