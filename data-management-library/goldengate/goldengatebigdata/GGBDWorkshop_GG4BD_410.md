@@ -9,6 +9,8 @@ Lab Architecture
 
 If at a terminal session:
 
+'>su - ggadmin
+
 User and Password:
 
 User ID: ggadmin

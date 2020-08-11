@@ -22,6 +22,8 @@ For the Lab terminal session:
 
 If at a terminal session:
 
+'> su - ggadmin
+
 User and Password:
 
 User ID: ggadmin
