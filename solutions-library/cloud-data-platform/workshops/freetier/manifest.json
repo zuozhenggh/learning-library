@@ -38,6 +38,16 @@
             "title": "Lab 6: Oracle Digital Assistant (ODA) with APEX APIs",
             "publisheddate": "02/24/2020",
             "filename": "../../oda-with-apex-api/oda-with-apex-api.md"
+        },
+	{
+            "title": "Lab 7: Oracle Data Safe",
+            "publisheddate": "02/24/2020",
+            "filename": "../../data-safe/data-safe.md"
+        },
+	{
+            "title": "Lab 8: Using Oracle Management Cloud (OMC) to Monitor ADW",
+            "publisheddate": "02/24/2020",
+            "filename": "../../omc-adw/omc-adw.md"
         }
      ]
 }
