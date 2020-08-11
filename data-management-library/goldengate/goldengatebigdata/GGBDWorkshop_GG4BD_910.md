@@ -22,11 +22,9 @@ Your will need:
 1. We already have a trail file created in the GGBD home. We will be using the same trail file to replicate .
 
 
-![](images/1100/image9xx_1.png)
+Example:
 
-Please refer to Lab 400 for more information.
-
-2. In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
+1. In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
 
         We already have the jdbc drive downloaded ojdbc8-full.tar.gz in the location /home/oracle/Downloads 
 ```
@@ -140,11 +138,6 @@ select 'dept_emp        table -> '|| count(1) from employees.dept_emp UNION ALL
 select 'titles          table -> '|| count(1) from employees.titles UNION ALL
 select 'salaries        table -> '|| count(1) from employees.salaries;
 ```
-
-
-![](images/1100/image9xx_1.png)
-
-You have completed lab 8! Great Job!
 
 ## Acknowledgements
 
