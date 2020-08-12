@@ -148,6 +148,8 @@ Once you deploy your compute instance, tail the log to determine when the databa
 
 2.  After *approximately 20 minutes*, you will see a notice that says the database setup is complete.  Please see troubleshooting tips if you have issues here.
 
+    ![](./images/build-complete.png " ")
+
 3. Run the following command to verify the database with the SID **ORCL** is up and running
 
     ````
@@ -172,6 +174,9 @@ Once you deploy your compute instance, tail the log to determine when the databa
     sudo su - oracle
     </copy>
     ````
+
+    ![](./images/sudo-oracle.png " ")
+
 6.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
     ````
     <copy>
@@ -179,17 +184,31 @@ Once you deploy your compute instance, tail the log to determine when the databa
     </copy>
     ORCL
     ````
+    ![](./images/oraenv.png " ")
+
 7.  Login using SQL*Plus as the **oracle** user.  
 
     ````
     <copy>
     sqlplus system/Ora_DB4U@localhost:1521/orclpdb
-    exit
+    </copy>
+    ````
+    ![](./images/sqlplus.png " ")
+
+7.  Exit the sqlplus session and switch back to the opc user.  Verify that you are now the opc user.
+
+    ```` 
+    SQL> <copy>exit
     </copy>
     ````
 
-    ![](./images/sqlplus_login_orclpdb.png " ")
-
+    ```` 
+    [oracle@server ~]$ <copy>exit
+    whoami
+    </copy>
+    ````
+    ![](./images/whoami.png " ")
+    
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
 You may now *proceed to the next lab*.  
