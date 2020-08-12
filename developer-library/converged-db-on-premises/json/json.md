@@ -12,7 +12,9 @@ This lab assumes you have completed the following labs:
 - Lab: Generate SSH Key
 - Lab: Setup Compute Instance
 - Lab: Start Database and Application
-*Note:  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.*
+- Note :  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user.
+
+  
 
 ### About Oracle JSON
 
@@ -73,9 +75,10 @@ The first thing to realize about JSON is that it remains a simple text format, w
     ````
 
 5. Open sqlplus as the user appjson
+   
     ````
     <copy>
-    sqlplus appjson/Oracle_4U@JXLPDB
+       sqlplus appjson/Oracle_4U@JXLPDB
     </copy>
     ````
 
@@ -140,6 +143,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
     ````
 
 4. The following statement copies the JSON documents from the dump file into the PURCHASE\_ORDER table.
+   
     ````
     <copy>insert into PURCHASE_ORDER
     select SYS_GUID(), SYSTIMESTAMP, JSON_DOCUMENT

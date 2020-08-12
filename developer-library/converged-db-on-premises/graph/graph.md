@@ -127,6 +127,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
     ![](./images/IMGG4.PNG)
 
 3. Make a JDBC connection to the database, run the below at the jshell prompt.
+   
     ````
     <copy>
     /open /u01/script/graph_startup/03_graphload.jsh
@@ -154,7 +155,8 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 2. We used a property graph query language [PGQL](http://pgql-lang.org) DDL to define and populate the graph.  The statement is as follows:
 
     ````
-    <copy>CREATE PROPERTY GRAPH OE_SAMPLE_GRAPH
+    <copy> 
+    CREATE PROPERTY GRAPH OE_SAMPLE_GRAPH
     VERTEX TABLES (
     customers KEY (CUSTOMER_ID) LABEL CUSTOMERS
     PROPERTIES(CUSTOMER_ID, EMAIL_ADDRESS, FULL_NAME),
@@ -205,6 +207,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
     ````
     <copy>
     pgql.prepareStatement(Files.readString(Paths.get("/u01/graph/CreatePropertyGraph.sql"))).execute();
+
     </copy>
     ````
 
