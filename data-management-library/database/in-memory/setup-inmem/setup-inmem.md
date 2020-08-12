@@ -1,6 +1,9 @@
 # Enable In-Memory
 
 ## Introduction
+Watch the video below to get an explanation of enabling the In-Memory column store.
+
+[](youtube:dZ9cnIL6KKw)
 
 ### Objectives
 
@@ -13,13 +16,6 @@ This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
 * Lab: Generate SSH Key
 * Lab: Environment Setup
-
-### Lab Preview
-
-Watch the video below to get an explanation of enabling the In-Memory column store.
-
-[](youtube:dZ9cnIL6KKw)
-
 
 ## Step 0: Download the Lab Files
 
@@ -38,9 +34,8 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     /home/opc/setupenv.sh
     </copy>
     ````
-    ![](./images/step5.png " ")  
 
-## Step 1: Run the In-Memory Setup Scripts
+## **Step 1:** Run the In-Memory Setup Scripts
 1.  Run this command to setup the schema, SSB, you will use for this lab.   This script takes about 15 minutes to complete.   It downloads the ssb.dmp file and then imports it.
 
 
@@ -63,7 +58,7 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     ````
     ![](./images/inmemcomplete.png " ") 
 
-## Step 2: Logging In and Enabling In-Memory
+## **Step 2:** Logging In and Enabling In-Memory
 
 1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
 
@@ -120,7 +115,7 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     ````
      ![](images/step1num4.png) 
 
-## Step 3: Enabling In-Memory
+## **Step 3:** Enabling In-Memory
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account. 
 

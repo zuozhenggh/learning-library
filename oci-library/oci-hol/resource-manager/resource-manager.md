@@ -6,7 +6,7 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
 
 **Note:** *Some of the UIs might look a little different than the screen shots included in the instructions, but you can still use the instructions to complete the hands-on labs.*
 
-### Pre-Requisites
+### Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) 
   
@@ -16,7 +16,7 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
     -  Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
 -  Basic concepts of Terraform
 
-## Step 1: Configuring IAM to control user access in Resource Manager
+## **Step 1:** Configuring IAM to control user access in Resource Manager
 
 **Note:** You can skip the steps below if you are using an user with admin privileges. If this were a real production system, it's both more secure and practical to create additional groups with more granular permissions. For example, it is likely we'd need to create a development team group that can only use predefined stacks and run jobs against it (use-orm-stack and use-orm-job, respectively). 
 [Check Best Practices for IAM](https://docs.cloud.oracle.com/iaas/Content/Security/Concepts/security_features.htm#IdentityandAccessManagementIAMService).
@@ -33,7 +33,7 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
       - Click **Create**.
      
 
-## Step 2: Create Resource Manager Stack
+## **Step 2:** Create Resource Manager Stack
 
  A Stack represents definitions for a collection of OCI resources within a specific compartment. With this in mind, we're going to configure a new stack in the OCI-ORM compartment in the us-phoenix-1 region and name it "HA Load Balanced Simple Web App". As the stack's name suggests, its configuration files define the load balancing, networking, and compute resources to deploy the target architecture plus an HTTP server. 
 
@@ -47,6 +47,7 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
       - **Name:** HA Load Balanced Simple Web App
       - **Description:** Provisions a primary load balancer and a failover load balancer into public subnets distributing load across 2 compute instances hosting a simple web app each in different private subnets.
       - **Create in Compartment:** OCI-ORM
+      - **Terraform Version:** Select 0.11.x  
     
     ![](./../resource-manager/images/CreateStack01.png " ")
     
@@ -88,7 +89,7 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
    
     ![](./../resource-manager/images/image002.png " ")
 
-## Step 3: Execute Jobs: Plan, Apply, Destroy
+## **Step 3:** Execute Jobs: Plan, Apply, Destroy
 
 Jobs perform actions against the Terraform configuration files associated with a stack. You can perform 3 actions and they are plan, apply and destroy. Since Terraform command execution is not atomic, it is crucial to prevent any race conditions or state corruption from occurring due to parallel execution. To prevent this from happening, the Resource Manager ensures only one job can run against a stack at a given time against a single state file.
 
@@ -156,6 +157,7 @@ From the Stack Details page, we can completely manage the stack's configuration 
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
+- **Contributors** - Kamryn Vinson, QA Engineer Lead Intern | Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
 ## See an issue?

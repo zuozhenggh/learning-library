@@ -34,7 +34,7 @@ In this lab, you'll:
 
 *This is the "fold" - below items are collapsed by default*
 
-## STEP 1: **TEST**: Create Your Free Trial Account - Pass in a marketing code appended to the free trial link
+## **Step 1:** **TEST**: Create Your Free Trial Account - Pass in a marketing code appended to the free trial link
 
 This test demonstrates that the appended marketing code is passed to other labs.
 

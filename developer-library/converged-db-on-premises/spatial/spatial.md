@@ -42,7 +42,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
 
 
 
-## STEP 1: Connect to the Pluggable Database (PDB)
+## **Step 1:** Connect to the Pluggable Database (PDB)
 1. Open a terminal window and sudo to the user **oracle**
 
     ````
@@ -72,7 +72,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
     </copy>
     ````
 
-## STEP 2: Connect to SQL Developer
+## **Step 2:** Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -87,7 +87,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
     ![](./images/spatial_sql_developer.png " ")
 
 
-## STEP 3: Example Queries
+## **Step 3:** Example Queries
 
 Note: See [Reference: Setting Up Spatial](#Reference:SettingUpSpatial) to see the SQL executed in advance.
 

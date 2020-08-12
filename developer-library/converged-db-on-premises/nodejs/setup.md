@@ -50,7 +50,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
 
 
-## Step 1:  Verify Application 
+## **Step 1:**  Verify Application 
 
 1.  The script (env_setup_script.sh) which was run in Lab-4 has started the application. Also at the end of the script. you      will be presented with two URLs. 
 
