@@ -68,6 +68,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     ````
 
 5. Open SQLPlus as the user appjson
+   
     ````
     <copy>
     sqlplus appxml/Oracle_4U@JXLPDB

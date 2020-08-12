@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to start a database instance and listener from a Putty window. You will also setup vncserver and SQLDeveloper.
+This lab will show you how to start a database instance and listener from a Putty window. You will also setup SQLDeveloper.
 
 Estimated time: 10 Minutes
 
