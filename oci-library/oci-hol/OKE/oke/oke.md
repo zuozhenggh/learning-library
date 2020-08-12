@@ -18,7 +18,6 @@ Watch the video below for a demo of OKE on OCI
 
 [](youtube:iKs3-4jPxbk)
 
-
 Estimated time: 1 hour
 
 ### Objectives
@@ -29,8 +28,6 @@ Estimated time: 1 hour
 - Lab 1: Login to Oracle Cloud
 - Lab 2: Create SSH Keys - Cloud Shell
 
-- Recommended Browser - Chrome 
-
 ## **Step 1:** Create Kubernetes Cluster
 
 1. From OCI Services menu, Click **Container Clusters (OKE)** under Developer Services.
@@ -38,17 +35,17 @@ Estimated time: 1 hour
     **No need to create any policies for OKE, all the policies are pre-configured**
         ![](./../OKE/images/OKE_S1P1.PNG " ")
 
-2. Under **List Scope**, select the compartment in which you would like to create a cluster. 
+2. Under **List Scope**, select the compartment in which you would like to create a cluster.
         ![](./../OKE/images/OKE_S1P2.PNG " ")
 
-3. Click **Create Cluster**. Choose **Quick Create** and click **Launch Workflow**. 
+3. Click **Create Cluster**. Choose **Quick Create** and click **Launch Workflow**.
 
 4. Fill out the dialog box:
 
       - NAME: Provide a name (oke-cluster in this example)
       - COMPARTMENT: Choose your compartment
       - CHOOSE VISIBILITY TYPE: Public
-      - SHAPE: Choose a VM shape 
+      - SHAPE: Choose a VM shape
       - NUMBER OF NODES: 1
       - KUBERNETES DASHBOARD ENABLED: Make sure flag is checked
 
@@ -64,7 +61,7 @@ Estimated time: 1 hour
 OCI Command Line comes preinstalled in Oracle Cloud Shell.
 
 1.  Check the installed version of OCI CLI.  Start up the Oracle Cloud Shell if it's not already running.
-   
+
     ```
     <copy>
     oci -v
@@ -78,7 +75,7 @@ OCI Command Line comes preinstalled in Oracle Cloud Shell.
 In this section we will install kubectl. You can use the Kubernetes command line tool kubectl to perform operations on a cluster you've created with Container Engine for Kubernetes.
 
 1. Switch to git-bash window, Enter commands:
-  
+
     ```
     <copy>
     mkdir -p $HOME/.kube
@@ -98,8 +95,8 @@ In this section we will install kubectl. You can use the Kubernetes command line
 
     ![](./../OKE/images/OKE_004.PNG " ")
 
-2.  Wait for download to complete. Enter command 
-    
+2.  Wait for download to complete. Enter command
+
     ```
     <copy>
     ls
@@ -109,7 +106,7 @@ In this section we will install kubectl. You can use the Kubernetes command line
 
 ## **Step 4:** Download get-kubeconfig.sh file and Initialize your environment
 
-1. Switch to OCI console window and navigate to your cluster. In Cluster detail window, scroll down and click **Quick Start**, under **Resources**. 
+1. Switch to OCI console window and navigate to your cluster. In Cluster detail window, scroll down and click **Quick Start**, under **Resources**.
 Follow the steps under the **Quick Start** Section.
     ![](./../OKE/images/OKE_S4P1.PNG " ")
 
@@ -128,13 +125,13 @@ Follow the steps under the **Quick Start** Section.
 
 2. Create nginx deployment with three replicas,  Enter Command:
     ```
-    <copy> 
+    <copy>
     kubectl run nginx  --image=nginx --port=80 --replicas=3
     </copy>
     ```
 
 3. Get Deployment data, Enter Command:
-    ``` 
+    ```
     <copy>
     kubectl get deployments
     </copy>
@@ -158,7 +155,7 @@ Follow the steps under the **Quick Start** Section.
     </copy>
     ```
 
-6. Switch to OCI console window. From OCI Services menu Click **Load Balancers** under Networking. A new OCI LB should be getting  provisioned (This is due to the command above). 
+6. Switch to OCI console window. From OCI Services menu Click **Load Balancers** under Networking. A new OCI LB should be getting  provisioned (This is due to the command above).
 
     ![](./../OKE/images/OKE_S5P6.PNG " ")
 
@@ -175,8 +172,8 @@ Follow the steps under the **Quick Start** Section.
 
 ### Delete Kubernetes nodes
 
-1. In git-bash window Enter command: 
-    
+1. In git-bash window Enter command:
+
     ```
     <copy>
     kubectl delete service nginx
@@ -213,7 +210,7 @@ Follow the steps under the **Quick Start** Section.
 1. To navigate to user settings, Click the **Profile** icon in the top right corner of the window. Then, select User Settings.
     ![](./../OKE/images/OKE_S6API1.PNG " ")
 
-2. Scroll down to select **API Keys** under the **Resources** section. 
+2. Scroll down to select **API Keys** under the **Resources** section.
 
 3. Click on Action icon and Click **Delete** to delete the API key.
 
@@ -229,4 +226,4 @@ Follow the steps under the **Quick Start** Section.
 - **Last Updated By/Date** - Isa Kessinger, July 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
