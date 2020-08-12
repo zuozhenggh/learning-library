@@ -26,21 +26,23 @@ This lab assumes you have already completed Labs 1 through 4.
 
 ## **STEP 2**: Deploy an alternate implementation of the Inventory Microservice
 
-In this step you can choose between three different implementations of the Inventory Microservice - 1. Java Helidon SE, 2. Python, or 3. Node.js
+In this step you can choose between three different implementations of the Inventory Microservice: (1) Java Helidon SE, (2) Python, or (3) Node.js
 
-1. Java Helidon SE: To deploy the service.
+1. Select one of the alternate implementations and deploy the service for the selected implementation.
+
+   If you selected Java Helidon SE, deploy this service:
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon-se; ./deploy.sh</copy>
     ```
 
-2. Python: To deploy the service.
+   If you selected Python, deploy this service:
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-python; ./deploy.sh</copy>
     ```
 
-3. Node.js: To deploy the service.
+   If you selected Node.js, deploy this service:
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-nodejs; ./deploy.sh</copy>
@@ -53,6 +55,7 @@ In this step you can choose between three different implementations of the Inven
 ## Acknowledgements
 * **Authors** - Richard Exley, Maximum Avaiability Architecture; Curtis Dinkel, Maximum Avaiability Architecture; Rena Granat, Maximum Avaiability Architecture;
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 

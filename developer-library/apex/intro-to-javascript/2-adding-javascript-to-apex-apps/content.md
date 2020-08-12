@@ -150,11 +150,11 @@ In this step, you will use these features in the Dynamic Action you created in t
 
     ![](images/fire-on-init-2.png)
 
-12. Save your changes and re-open the form page. Everything should work exactly as before. Hopefully you'll agree that the declarative options are much simpler than using the JavaScript hooks. However, when you need the flexibility they provide, you'll be glad the hooks are there!
+12. Save your changes and re-open the form page. Everything should work exactly as before. Hopefully you will agree that the declarative options are much simpler than using the JavaScript hooks. However, when you need the flexibility they provide, you will be glad the hooks are there!
 
 ## **Step 3:** Using Page and Component level attributes
 
-In addition to Dynamic Actions, there are various attributes at the page and component level that are made for JavaScript. In this step, you'll learn where those attributes are and how they are used.
+In addition to Dynamic Actions, there are various attributes at the page and component level that are made for JavaScript. In this step, you will learn where those attributes are and how they are used.
 
 1.  Return to the Page Designer for page 1, the home page, and select the root element in the tree under the rendering tab.
 
@@ -186,7 +186,7 @@ In addition to Dynamic Actions, there are various attributes at the page and com
 
     ![](images/javascript-page-properties.png)
 
-3.  Save your changes and run the home page with the browser console open. You should see a message when the `doWork` function is invoked. While this simple example doesn't do anything functional, you'll learn more about the types of things you can do in the next lab.
+3.  Save your changes and run the home page with the browser console open. You should see a message when the `doWork` function is invoked. While this simple example doesn't do anything functional, you will learn more about the types of things you can do in the next lab.
 
     ![](images/console-open.png)
 
@@ -223,7 +223,7 @@ In addition to Dynamic Actions, there are various attributes at the page and com
 
 ## **Step 4:** Using Static Files
 
-In the last step, you added JavaScript code directly to page and component level attributes. For performance and reusability reasons, it can be beneficial to move JavaScript code to Static Files instead. While you don't have enough JavaScript code in the Sample Database Application to realize those benefits, in this step, you'll move the code added previously to Static Files to see how it's done.
+In the last step, you added JavaScript code directly to page and component level attributes. For performance and reusability reasons, it can be beneficial to move JavaScript code to Static Files instead. While you don't have enough JavaScript code in the Sample Database Application to realize those benefits, in this step, you will move the code added previously to Static Files to see how it's done.
 
 1.  The following code contains the `doWork` function that's being invoked on the home page and the function that's styling the colors of the Sales by Category chart. The only change to the second function is that it now has a name (it was an anonymous function before).
 

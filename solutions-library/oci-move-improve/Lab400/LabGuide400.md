@@ -291,7 +291,7 @@ Don't worry if your graphs look boring or uneventful now. The agent has only jus
 
 This is a great tool to use to create custom, useful dashboards to help provide you with a quick overview of the health of your application.
 
-Let's now go ahead and save this by clicking the save button at the top of the screen. Be sure to give it a name you'll be able to remember.
+Let's now go ahead and save this by clicking the save button at the top of the screen. Be sure to give it a name you will be able to remember.
 
 Navigate over to the Dashboards page from the menu on the left hand side of your screen.
 

@@ -236,7 +236,7 @@ You can use the following [OpenSSL](http://www.openssl.org/) commands to generat
 ```
 <copy>openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem</copy>
 ```
-5) Copy the contents of the public key to your notepad (you'll need to paste the value into the Console later):
+5) Copy the contents of the public key to your notepad (you will need to paste the value into the Console later):
 ```
 <copy>cat ~/.oci/oci_api_key_public.pem</copy>
 ```

@@ -34,7 +34,7 @@ You'll perform your queries on the Star Schema Benchmark (SSB) sample data. This
 
 
 ## **Step 2:** Run a Simple Query ##
-In the next steps, you'll run a few queries in SQL Developer Web on the SSB sample data. You'll measure the effects in Performance Hub.
+In the next steps, you will run a few queries in SQL Developer Web on the SSB sample data. You'll measure the effects in Performance Hub.
 
 1. Click the **Performance Hub** button. It may take a few seconds for Performance Hub to draw open for the first time.
 2. You'll notice three areas as Performance Hub opens. They all appear as clean slates the first time you open Performance Hub.
@@ -125,7 +125,7 @@ order by d_year, p_brand1;
 
     [Description of the illustration RemoveFilter.png](files/RemoveFilter.txt)
 
-8. Scroll down to the **SQL ID** area. Here you'll find a listing of individual queries.
+8. Scroll down to the **SQL ID** area. Here you will find a listing of individual queries.
 9. Click on your query. 
 
     ![](img/SQL_ID.png " ")
@@ -140,7 +140,7 @@ order by d_year, p_brand1;
 
     [Description of the illustration SQL_Details.png](files/SQL_Details.txt)
 
-13. Scroll down. As you scroll, you'll notice statistics for your query indicating where time and resources are spent.
+13. Scroll down. As you scroll, you will notice statistics for your query indicating where time and resources are spent.
 
     ![](img/Statistics.png " ")
 

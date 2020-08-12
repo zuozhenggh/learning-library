@@ -44,7 +44,7 @@ This 30 mins lab walks you through provisioning the WebLogic Infrastructure by l
 
 - **SSH key**
 
-   To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer. Since the various commands will be ran from inside the 'on-premises' environment (either the workshop compute instance or the local docker containers), you'll need to provide the key generated in the 'on-premises' environment.
+   To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer. Since the various commands will be ran from inside the 'on-premises' environment (either the workshop compute instance or the local docker containers), you will need to provide the key generated in the 'on-premises' environment.
 
   <img src="./images/provision-8-sshkey.png" width="70%">
 
