@@ -27,7 +27,7 @@ This lab assumes you have completed the following labs:
 * Lab: Environment Setup
 * Lab: Sample Schema Setup
 
-## Step 1: The Beginning
+## **Step 1:** The Beginning
 
 Lab under construction. Please come back soon!
 

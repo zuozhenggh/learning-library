@@ -6,13 +6,13 @@ In this lab we will use pre-configured terraform scripts to deploy VCN, Compute 
 Estimated Time: 30-45 minutes
 
 **Some Key points:**
-- We recommend using Chrome or Edge as the broswer.
+- We recommend using Chrome or Edge as the browser.
 - You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
 
-### Pre-Requisites
+### Prerequisites
 
-- Lab 1: Login to Oracle Cloud
-- Lab 2: Create SSH Keys - Cloud Shell
+- Prerequisites
+- Lab 1: Generate SSH Keys - Cloud Shell
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
@@ -384,7 +384,7 @@ Estimated Time: 30-45 minutes
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+- **Contributors** - Oracle LiveLabs (Jaden McElvey, Technical Lead, Kamryn Vinson, QA Engineer Lead Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
 ## See an issue?

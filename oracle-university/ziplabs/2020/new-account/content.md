@@ -13,7 +13,7 @@ These labs mostly focus on Autonomous Data Warehouse and Autonomous Transaction 
 * Ability to receive SMS text verification (only if your email isn't recognized)
 
 
-## STEP 1: Create Your Account ##
+## **Step 1:** Create Your Account ##
 In this section, you'll fill out the registration form at [oracle.com/oow19freetier](https://oracle.com/oow19freetier).
 
 1. Enter the appropriate information to create your account. 
@@ -37,7 +37,7 @@ In this section, you'll fill out the registration form at [oracle.com/oow19freet
     [Description of the illustration FirstSignIn.png](files/firstSignIn.txt)
 
 
-## STEP 2: Sign in to Your Account ##
+## **Step 2:** Sign in to Your Account ##
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com).

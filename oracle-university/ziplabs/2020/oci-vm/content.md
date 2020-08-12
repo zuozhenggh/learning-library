@@ -14,7 +14,7 @@ Before you can launch an instance, you need to have a VCN to launch it into. In 
 * An SSH key (provided)
 
 
-## STEP 1: Create a Virtual Cloud Network ##
+## **Step 1:** Create a Virtual Cloud Network ##
 1. Sign in to the Oracle Cloud.
 2. Click the menu icon to expand the menu on the left edge of the screen.
 3. Select **Networking**.
@@ -43,7 +43,7 @@ Before you can launch an instance, you need to have a VCN to launch it into. In 
      * Notice its state is `Available`.
 
 
-## STEP 2: Create a Virtual Machine Instance ##
+## **Step 2:** Create a Virtual Machine Instance ##
 1. Click the OCI menu icon to expand the menu on the left edge of the screen.
 2. Select **Compute**.
 3. Click **Instances**.

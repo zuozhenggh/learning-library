@@ -20,7 +20,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
    **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 
@@ -32,7 +32,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console
+## **Step 1:** Sign in to OCI Console
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -57,7 +57,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 4. Click in the tool or field where you want to paste and press Ctrl-V again.
 
-## Step 2: Download the Notebook from Object Storage
+## **Step 2:** Download the Notebook from Object Storage
 
 1. Find the data file in Object Storage. Select **Object Storage** from the menu, then choose **Object Storage** from pull right menu.
 
@@ -73,7 +73,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 6. Note the location where the file was downloaded.
 
-## Step 3: Import the Machine Learning Notebook
+## **Step 3:** Import the Machine Learning Notebook
 
 Next, you'll import a Zeppelin Notebook into the Oracle Machine Learning instance associated with your Autonomous Data Warehouse instance.
 
@@ -123,7 +123,7 @@ Next, you'll import a Zeppelin Notebook into the Oracle Machine Learning instanc
 
 13. Select the file and click **Open**.
 
-## Step 4: Run the Notebook
+## **Step 4:** Run the Notebook
 
 1. Click the notebook name to run it.
 
@@ -153,7 +153,7 @@ Next, you'll import a Zeppelin Notebook into the Oracle Machine Learning instanc
 
 8. When you have completed the Notebook, you can explore other example Notebooks by clicking **Home** from the menu, and then **Examples**.
 
-## Step 5: Delete the resources
+## **Step 5:** Delete the resources
 
 **Delete Auth Token and Autonomous Data Warehouse**
 

@@ -26,7 +26,7 @@ In this lab, we will create a compute instance, download a script to configure s
 
     *Note: OCI UI is being updated thus some screenshots in the instructions might be different than actual UI*
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 
