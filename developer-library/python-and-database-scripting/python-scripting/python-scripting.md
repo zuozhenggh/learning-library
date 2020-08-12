@@ -2190,7 +2190,7 @@ Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be ins
 
 ## Conclusion
 
-In this Lab, you had an opportunity to try out connecting Python to the Oracle Database.
+In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
 * Create connections
 * Use cx\_Oracle connection pooling and Database Resident Connection Pooling

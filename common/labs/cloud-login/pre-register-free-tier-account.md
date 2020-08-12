@@ -1,6 +1,6 @@
 # Prerequisites
 
-## **Introduction**
+## Introduction
 
 Before you get started, you will need an Oracle Cloud account. This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.
 
