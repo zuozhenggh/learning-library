@@ -15,7 +15,7 @@ This lab assumes you have already completed Labs 1 through 4.
 
 ## **STEP 1**: Undeploy the Java Helidon MP Inventory Microservice
 
-1. To undeploy the Inventory Helidon service, open the Cloud Shell and go to the
+1. To undeploy the Inventory Helidon MP service, open the Cloud Shell and go to the
     inventory-helidon folder, using the following command.
 
     ```
@@ -28,7 +28,7 @@ This lab assumes you have already completed Labs 1 through 4.
 
 In this step you can choose between three different implementations of the Inventory Microservice: (1) Java Helidon SE, (2) Python, or (3) Node.js
 
-1. Select one of the alternate implementations and deploy the service for the selected implementation.
+1. Select one of the alternate implementations and deploy the service for the selected implementation.  
 
    If you selected Java Helidon SE, deploy this service:
 
@@ -50,7 +50,15 @@ In this step you can choose between three different implementations of the Inven
 
 ## **STEP 3**: Verify Application Functionality
 
-1. Repeat Lab 4 Step 2 to verify the order and inventory functionality of the GrubDash store.
+1. Repeat Lab 4 Step 2 to verify the order and inventory functionality of the GrubDash store remains the same using new order ID's, for example 166 and 167.
+
+## **STEP 4**: Re-deploy the Java Helidon MP Inventory Microservice
+
+1. To undeploy any other inventory services and then deploy the Inventory Helidon MP service, issue the following command.
+
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon-se; ./undeploy.sh; cd $MSDATAWORKSHOP_LOCATION/inventory-python; ./undeploy.sh; cd $MSDATAWORKSHOP_LOCATION/inventory-nodejs; ./undeploy.sh; cd $MSDATAWORKSHOP_LOCATION/inventory-helidon ; ./deploy.sh</copy>
+    ```
 
 ## Acknowledgements
 * **Authors** - Richard Exley, Maximum Avaiability Architecture; Curtis Dinkel, Maximum Avaiability Architecture; Rena Granat, Maximum Avaiability Architecture;
