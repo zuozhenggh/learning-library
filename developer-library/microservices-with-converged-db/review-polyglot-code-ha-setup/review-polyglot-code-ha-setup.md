@@ -48,7 +48,7 @@ In this step you can choose between three different implementations of the Inven
     <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-nodejs; ./deploy.sh</copy>
     ```
 
-## **STEP 3**: Verify Application Functionality
+## **STEP 3**: Verify application functionality
 
 1. Repeat Lab 4 Step 2 to verify the order and inventory functionality of the GrubDash store remains the same using new order ID's, for example 166 and 167.
 

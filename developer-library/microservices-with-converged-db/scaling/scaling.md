@@ -48,7 +48,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
 ## **STEP 2**: Load test and scale the application tier
 
-1.  Execute a test with 15 virtual users by executing the following command.
+1.  Execute a test with 20 virtual users by executing the following command.
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 20</copy>
@@ -58,7 +58,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
     ![](images/20vus1replica.png " ")
 
-2. Execute a test with 30 virtual users by executing the following command.
+2. Execute a test with 40 virtual users by executing the following command.
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 40</copy>
@@ -130,7 +130,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
    ![](images/60vus3replica1dbocpu.png " ")
 
-## **STEP 3**: Load Test and Scale the Database Tier
+## **STEP 3**: Load test and scale the database tier
 
 1. To scale the Order DB ATP database to 2 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 
@@ -156,7 +156,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
    ![](images/60vus3replica2dbocpu.png " ")
 
-## **STEP 4**: Scale down the Application and Database Tiers
+## **STEP 4**: Scale down the application and database tiers
 
 1. To scale the Order DB ATP database down to 1 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 
