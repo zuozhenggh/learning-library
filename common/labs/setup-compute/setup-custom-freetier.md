@@ -268,7 +268,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
-You may now proceed to the next lab.  
+You may now *proceed to the next lab*. 
 
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management
