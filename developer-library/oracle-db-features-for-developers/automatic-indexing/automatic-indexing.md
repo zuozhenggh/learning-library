@@ -1,6 +1,11 @@
 # Automatic Indexing
 
-## **Introduction**
+## Introduction
+In this lab you will explore the various features and benefits of Oracle's Automatic Indexing feature added in Oracle Database 19c.
+
+Estimated Lab Time: 20 minutes
+
+## About Automatic Indexing
 
 The automatic indexing feature automates index management tasks based on changes in the application workload. This feature improves database performance by managing indexes automatically in an Oracle database.
 
@@ -39,7 +44,7 @@ Automatic indexing improves database performance by managing indexes automatical
 
 This Lab will use the Sales History (SH) sample schema.
 
-1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in, skip to Step 4.
+1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
@@ -51,6 +56,8 @@ This Lab will use the Sales History (SH) sample schema.
     sudo su - oracle
     </copy>
     ````
+    ![](./images/sudo-oracle.png " ")
+
 3.  Set your oracle environment.  When prompted enter **[ORCL]**
     ````
     <copy>
@@ -59,6 +66,7 @@ This Lab will use the Sales History (SH) sample schema.
     ORACLE_SID = [ORCL] ? ORCL
     The Oracle base remains unchanged with value /u01/app/oracle
     ````
+    ![](./images/oraenv.png " ")
 
 4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
 
@@ -68,7 +76,7 @@ This Lab will use the Sales History (SH) sample schema.
     </copy>
     ````
 
-    ![](./images/step1.1-connect.png " ")
+    ![](./images/sqlplus.png " ")
 
 5.  List all existing indexes in the **SH** schema.
 
@@ -262,7 +270,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 ## **Step 4**: Run a workload
 
 Automatic indexing can work with data for OLTP applications, which use large data sets and run millions of SQL statements a day, as well as with data for data warehousing applications.
-In this Lab, we don’t have any application running on our database, so we will generate a synthetic workload manually.
+In this lab, we don’t have any application running on our database, so we will generate a synthetic workload manually.
 
 1. Create a **DUMMY** table.
 
@@ -807,7 +815,7 @@ In this section, you will look at how Automatic Indexing has worked to improve t
 
 ## Conclusion
 
-In this Lab, you had an opportunity to examine the Automatic Indexing capabilities of Oracle Database 19c.
+In this lab, you had an opportunity to examine the Automatic Indexing capabilities of Oracle Database 19c.
 
 ## **Acknowledgements**
 
