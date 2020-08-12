@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab is setup into multiple steps. In the first step you will setup the environment for JSON lab. In this lab, you'll connect using Oracle SQL Developer. The second step has already been completed but has been included for reference. This step creates the schema. The third step walks you through the steps of inserting and updating JSON data. We can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function json\_mergepatch to update specific portions of a JSON document. The final section of this lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
+This lab is setup into multiple steps. In the first step you will setup the environment for JSON lab. In this lab, you will connect using Oracle SQL Developer. The second step has already been completed but has been included for reference. This step creates the schema. The third step walks you through the steps of inserting and updating JSON data. We can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function json\_mergepatch to update specific portions of a JSON document. The final section of this lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
 
 Estimated Lab Time: 20 Minutes
 
@@ -44,7 +44,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
 ![](./images/json_intro.png " ")
 
-## STEP 1: Connect to the Pluggable Database (PDB)
+## **Step 1:** Connect to the Pluggable Database (PDB)
 
 1. Open a terminal window and sudo to the user **oracle**
     ````
@@ -82,7 +82,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
     </copy>
     ````
 
-## STEP 2: Connect to SQL Developer
+## **Step 2:** Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
       - **Name**: JSON
@@ -95,7 +95,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
     ![](./images/sql_developer_json.png " ")
 
-## STEP 3: Loading JSON Documents into the database  
+## **Step 3:** Loading JSON Documents into the database  
 
 **Only for Step 3 the SQL statements have already been run. The SQL has been provided as reference.**
 
@@ -154,7 +154,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
     /
     ````
 
-## STEP 4: Insert a record.
+## **Step 4:** Insert a record.
 
 1. Take a count of the rows in the JSON table
     ````
@@ -216,7 +216,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
     ![](./images/json.png " ")
 
-## STEP 5: Update a Table.
+## **Step 5:** Update a Table.
 1. We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
 
 2. Copy the following update statement and substitute the ID you saved from the previous step in where it says ID\_copied\_from\_previous\_step. Run the statement.
@@ -237,7 +237,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
     ![](./images/json_lab7_6.png " ")
 
-## STEP 6: Example Queries
+## **Step 6:** Example Queries
 1. Let's look at customers who ordered products from a specific location. The Oracle database allows a simple ‘dotted’ notation to be used to perform a limited set of operations on columns containing JSON. In order to use the dotted notation, a table alias must be assigned to the table in the FROM clause, and any reference to the JSON column must be prefixed with the assigned alias. All data is returned as VARCHAR2(4000).
 
     ````

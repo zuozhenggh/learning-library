@@ -26,7 +26,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
     *Note: OCI UI is being updated, thus some screenshots in the instructions might be different than actual UI*
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
    
