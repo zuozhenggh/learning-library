@@ -132,7 +132,7 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
   ![](images/12-upload-key.png " ")
 
-12. Paste the public key's value into the window and click **Add**. The key is uploaded, and its fingerprint is displayed. Add the fingerprint value to your `msdataworkshop.properties` file, you will use the fingerprint later.
+12. Paste the public key's value into the window and click **Add**. The key is uploaded, and its fingerprint is displayed.
 
   ![](images/13-upload-key2.png " ")
 
@@ -282,7 +282,7 @@ information and click **Create Autonomous Database**:
         everywhere”
     -   License type: `License included`
 
-  ![](images/40-create-second-atp.png " ")
+  ![](images/40-create-second-atp2.png " ")
 
 6. Once both databases are provisioned you should see the state changed to
 Available. Click on each of the ATP names in order to go to their pages and copy
@@ -335,11 +335,13 @@ and running.
 You may proceed to the next lab.
 
 ## Acknowledgements
+
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
-* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
+
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -19,22 +19,22 @@ You will also clone a GitHub repository.
 * Your updated `msdataworkshop.properties` file.
 
 ## **STEP 1**: Copy your msdataworkshop.properties to your root directory
-In Lab 1 you downloaded a copy of the `msdataworkshop.properties` file and you updated it with all of the information generated while setting up OCI, OKE, and ATP. Now you will use your Cloud Shell to copy the contents of your local file into a msdataworkshop.properties file that you will create in your root directory (~/) so that this information can be used within the Cloud Shell in subsequent steps.  
+In Lab 1 you downloaded a copy of the `msdataworkshop.properties` file and you updated it with all of the information generated while setting up OCI, OKE, and ATP. Now you will use your Cloud Shell to copy the contents of your local file into a `msdataworkshop.properties` file that you will create in your root directory (~/) so that this information can be used within the Cloud Shell in subsequent steps.  
 
-1. Create an empty msdataworkshop.properties file in your root directory.
+1. Create an empty `msdataworkshop.properties` file in your root directory.
 
   ```
   <copy>cd ~ ; touch msdataworkshop.properties</copy>
 
   ```
-2. Open the msdataworkshop.properties file that you just created in root:
+2. Open the `msdataworkshop.properties` file that you just created in root:
 
   ```
   <copy>vi msdataworkshop.properties</copy>
 
   ```
 
-3. Go to your text editor and copy the contents of your local msdataworkshop.properties file. Be sure to select all content from the file.
+3. Go to your text editor and copy the contents of your local `msdataworkshop.properties file`. Be sure to select all content from the file.
 
 4. In vi, use the Insert key at the beginning of the file and then paste the content into the empty properties file. Make sure that you copied everything.
 
@@ -130,21 +130,19 @@ In order to divide and isolate cluster resources, you will create a cluster
 3.  Issue the `kubectl get services --all-namespaces` command and notice the services it installs.  
 The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. If your jaeger-query state is pending, and you do not see the External-IP address, you may need to execute this command again.
 
-   ```
-   <copy>kubectl get services --all-namespaces</copy>
+     ```
+     <copy>kubectl get services --all-namespaces</copy>
+     ```
 
-   ```
-
-      ![demo-erd.png](images/jaegerservice.png " ")
+    ![](images/jaegerservice.png " ")
 
 
- 4. Add the jaeger-query EXTERNAL-IP:port to your `msdataworkshop.properties` file.
+ 4. Add the jaeger-query EXTERNAL-IP:PORT to your `msdataworkshop.properties` file.
 
      Use your Cloud Shell and repeat the process from STEP 1 to modify the `msdataworkshop.properties` file in your root directory.
 
      ```
      <copy>vi msdataworkshop.properties</copy>
-
      ```
 
      ![](images/jaeger_address_prop.png)
@@ -168,9 +166,9 @@ The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. 
 
 6.  Verify that the jaeger-collector service `tracing.host` and `tracing.port` are the same in the `microprofile-config.properties` files. The jaeger-collector service is referenced in two files:
 
-  - `$MSDATAWORKSHOP_LOCATION'/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties`
+   - `$MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties`
 
- - `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties`
+   - `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties`
 
     Open each file and verify that **tracing.host**=`jaeger-collector.msdataworkshop` and **tracing.port**=`14268`.
 
@@ -343,7 +341,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
-* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
