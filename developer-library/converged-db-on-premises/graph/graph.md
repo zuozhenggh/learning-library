@@ -140,14 +140,12 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
 1. We have created the views for the use of orders and order_items as multiple edge tables using below commands.
     ````
-    <copy>
     Create or replace view co_edge as select * from orders;
     Create or replace view oc_edge as select * from orders;
     Create or replace view os_edge as select * from orders;
     Create or replace view so_edge as select * from orders;
     Create or replace view op_edge as select * from order_items;
     Create or replace view po_edge as select * from order_items;
-    </copy>
     ````
 
     ![](./images/IMGG6.PNG)
@@ -155,7 +153,6 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 2. We used a property graph query language [PGQL](http://pgql-lang.org) DDL to define and populate the graph.  The statement is as follows:
 
     ````
-    <copy> 
     CREATE PROPERTY GRAPH OE_SAMPLE_GRAPH
     VERTEX TABLES (
     customers KEY (CUSTOMER_ID) LABEL CUSTOMERS
@@ -200,15 +197,12 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
       LABEL PRODUCT_IN_ORDER
       PROPERTIES (LINE_ITEM_ID)
       )
-      </copy>
     ````
 3. The above PQGL query is saved as sql file (CreatePropertyGraph.sql) and stored in path /u01/graph and is run at jshell prompt.
 
     ````
-    <copy>
     pgql.prepareStatement(Files.readString(Paths.get("/u01/graph/CreatePropertyGraph.sql"))).execute();
 
-    </copy>
     ````
 
 4. The Graph Server kit includes the necessary components (a server application and JShell client) that will execute the above CREATE PROPERTY GRAPH statement and create the graph representation.
@@ -224,9 +218,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 5. Create a convenience function which prepares, executes, and prints the result of a PGQL statement
 
     ````
-    <copy>
     Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
-    </copy>
     ````
 
 ## STEP 3: Querying graph using PGQL
