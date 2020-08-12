@@ -29,44 +29,45 @@ docker-compose rm
 
 ### If you used the Workshop image from the marketplace
 
-- Go to **Resources Manager**
+- 1.1. Go to **Resources Manager**
 
-- Select the **compartment** where you deployed the stack originally
+- 1.2. Select the **compartment** where you deployed the stack originally
 
-- Click the stack name for the **Workshop on-premises environment**
+- 1.3. Click the stack name for the **Workshop on-premises environment**
 
   <img src="./images/stack.png"  width="50%">
 
-- In **Terraform Actions**, click **Destroy**
+- 1.4. In **Terraform Actions**, click **Destroy**
 
   <img src="./images/tf-destroy.png"  width="50%">
 
-- Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
+- 1.5. Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
 
-- Click **Delete Stack**
+- 1.6. Click **Delete Stack**
 
   <img src="./images/delete-stack.png"  width="50%">
 
-## Step 2: Tear down the WebLogic environment
+## Step 2: Tear down the database instance
 
-- Go to the Resources Manager
+- 2.1. Go to the Bare Metal, VM and Exadata Menu
 
-- Click the stack name for the **WebLogic Server deployment**
+- 2.2. Click the **Database System** to terminate
 
-- In **Terraform Actions**, click **Destroy**
+- 2.3. Click **Terminate**
+
+## Step 3: Tear down the WebLogic environment
+
+- 3.1. Go to the Resources Manager
+
+- 3.2. Click the stack name for the **WebLogic Server deployment**
+
+- 3.3. In **Terraform Actions**, click **Destroy**
 
   <img src="./images/tf-destroy.png"  width="50%">
 
-- Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
+- 3.4. Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
 
-- Click **Delete Stack**
+- 3.5. Click **Delete Stack**
 
   <img src="./images/delete-stack.png"  width="50%">
 
-## Step 3: Tear down the database instance
-
-- Go to the Bare Metal, VM and Exadata Menu
-
-- Click the **Database System** to terminate
-
-- Click **Terminate**
