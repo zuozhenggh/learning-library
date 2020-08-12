@@ -39,7 +39,7 @@ Automatic indexing improves database performance by managing indexes automatical
 
 This Lab will use the Sales History (SH) sample schema.
 
-1.  If you aren't already logged in, login to the instance using ssh. 
+1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in, skip to Step 4.
 
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
@@ -50,14 +50,14 @@ This Lab will use the Sales History (SH) sample schema.
     <copy>
     sudo su - oracle
     </copy>
-    ORACLE_SID = [ORCL] ? ORCL
-    The Oracle base remains unchanged with value /u01/app/oracle
     ````
 3.  Set your oracle environment.  When prompted enter **[ORCL]**
     ````
     <copy>
     . oraenv
     </copy>
+    ORACLE_SID = [ORCL] ? ORCL
+    The Oracle base remains unchanged with value /u01/app/oracle
     ````
 
 4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
