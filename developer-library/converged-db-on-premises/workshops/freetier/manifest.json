@@ -17,7 +17,7 @@
         {
             "title": "Lab 2: Setup Compute Instance",
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
-            "filename": "../../setup-marketplaceoci-freetier.md"
+            "filename": "../../setup-compute/setup-compute.md"
         },
         {
             "title": "Lab 3: Start Database and Application",

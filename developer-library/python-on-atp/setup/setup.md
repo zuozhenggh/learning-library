@@ -16,7 +16,7 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
 *We recommend that you create a notes page to write down all of the credentials you will need.*
 
-## STEP 1: Prepare Terraform
+## **Step 1:** Prepare Terraform
 
 1. Login to the Oracle Cloud
 
@@ -30,7 +30,7 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
   ![](images/005.png " ")
 
-## STEP 2: Prepare your terraform script for execution
+## **Step 2:** Prepare your terraform script for execution
 
 This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
@@ -55,7 +55,7 @@ This will create your cloud resources (VCN, Compute Image, Autonomous Transactio
 
   ![](images/009.png " ")
 
-## STEP 3: Create a Resource Manager Stack
+## **Step 3:** Create a Resource Manager Stack
 
 Terraform provides a reusable process for creating infrastructure.  In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects.
 
@@ -87,7 +87,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/015.png " ")
 
-## STEP 4: Create OCI Resources in Resource Manager
+## **Step 4:** Create OCI Resources in Resource Manager
 
 1. Now inside of the resource manager, hover over **Terraform Actions** and click on **Plan**.
 
@@ -111,7 +111,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/020.png " ")
 
-## STEP 5: Prepare to Load Data
+## **Step 5:** Prepare to Load Data
 
 1. Generate an Auth Token.  Navigate to **Identity** > **Users**.  
 
@@ -161,7 +161,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/032.png " ")
 
-## STEP 6: Log into SQL Developer and Load Data into userid Alpha.
+## **Step 6:** Log into SQL Developer and Load Data into userid Alpha.
 
 1. Click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Database** section, select **Autonomous Transaction Processing**.
 
@@ -195,7 +195,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/039.png " ")
 
-8. Create credential.  This is used by the ATP database to access the dmp file in Object Storage.  This is your cloud account userid and your token password (created in a previous step).
+8. Create credential.  This is used by the ATP database to access the dmp file in Object Storage.  This is your cloud account userid and your token password (created in a previous step).  If your account is federated enter the full name including the identity provider.
   ```
   <copy>BEGIN
     DBMS_CLOUD.CREATE_CREDENTIAL(
@@ -289,7 +289,7 @@ END;
 
   ![](images/045.png " ")
 
-## STEP 7: Connect to your Marketplace Developer Image
+## **Step 7:** Connect to your Marketplace Developer Image
 
 For more information about the Marketplace Developer Image [click here](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984).
 

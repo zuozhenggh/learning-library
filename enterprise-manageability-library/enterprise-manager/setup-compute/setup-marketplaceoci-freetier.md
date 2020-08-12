@@ -24,7 +24,7 @@ This lab assumes you have already completed or reviewed the following:
 * [Access to Oracle Free Tier or Paid Cloud account](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=prerequisites)
 * [Generated SSH Keys](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=lab-2-generate-ssh-key)
 
-## Step 1: Login and Create Stack using Resource Manager
+## **Step 1:** Login and Create Stack using Resource Manager
 
 ### *Option #1 - Stack creates Instance(s) and self-contained VCN*
 
@@ -83,7 +83,7 @@ Next step.
 ### *Option #2 - Stack creates Instance(s) and uses existing VCN*
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-  - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/NaRiEVnQNNg12_zCvjmjXEMiNrYIcDp0aKQHYU-dz7M/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+  - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9pLAit-dYlCGrpnHDDXoXGbfrYsiH7AsyJPLjBRrH48/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
   - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2. Save in your downloads folder.
@@ -168,7 +168,7 @@ Enter or select the following:
 
 ![](./images/em-vcn-details-route-table.png " ")
 
-## Step 2: Terraform Plan (OPTIONAL)
+## **Step 2:** Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. You may skip to Step 3.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
@@ -185,7 +185,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 ![](./images/em-stack-plan-results-4.png " ")
 
-## Step 3: Terraform Apply
+## **Step 3:** Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and instance(s) containing a pre-configured Enterprise Manager 13c with running database targets.
@@ -206,7 +206,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 ![](./images/em-stack-apply-results-3.png " ")
 
-## Step 4: Connect to your instance
+## **Step 4:** Connect to your instance
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
   - *NOTE 1:  If you are using your laptop to connect your corporate VPN may prevent you from logging in.*
@@ -283,11 +283,12 @@ To save all your settings:
 1.  In the category section, **Click** session.
 2.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-You may now proceed to the next lab.  
+You may now *proceed to the next lab*. 
 
 ## Acknowledgements
 
 - **Authors/Contributors** - Rene Fontcha, Kay Malcolm
 - **Last Updated By/Date** - Rene Fontcha, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

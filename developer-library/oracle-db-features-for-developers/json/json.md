@@ -30,7 +30,7 @@ For this lab we will use the *Order Entry (OE)* sample schema that is provided w
 
 Grant Required Privileges to the OE user.
 
-1.  Login to the instance using ssh.  We recommend using the Oracle Cloud Shell.
+1.  If you aren't already logged in, login to the instance using ssh.  We recommend using the Oracle Cloud Shell.
 
     ````
     ssh -i yourkeyname opc@<Your Compute Instance Public IP Address>
