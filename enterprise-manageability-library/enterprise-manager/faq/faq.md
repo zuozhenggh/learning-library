@@ -39,9 +39,9 @@ You cannot login or su to root but should you need to execute a command as root,
 <copy>sudo su cat /var/log/messages|more</copy>
 ````
 ​
-## **3. How to Locate Emcli on Your Instance**
+## **3. How to Locate emcli on Your Instance**
 ​
-Upon successful login via sudo as "oracle", environment variables are set and emcli is present in your path. emcli utility is located at */u01/app/em13c/middleware/bin/emcli*
+Upon successful login via sudo as "oracle", environment variables are set and emcli is present in your path. The emcli utility is located at */u01/app/em13c/middleware/bin/emcli*
 ​
 ## **4. Oracle Management Server (OMS) / WebTier is Down**
 ​
