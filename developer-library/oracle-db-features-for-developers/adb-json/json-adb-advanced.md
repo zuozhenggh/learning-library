@@ -543,58 +543,9 @@ You can use *JSON_MERGEPATCH* in a SELECT list to modify the selected documents.
 
     ![](./images/p_updateJsonDoc_4.png " ")
 
-5.  Change two attributes in that JSON document. Remember, the return value for a dot-notation query is always a string, and we can work with strings. For example we can add the first part of it, before element geonames[0], and the last part, to convert this single element back into an array, and print the resulted array in a pretty format.
-
-    ````
-    <copy>
-    SELECT json_mergepatch(j.doc,
-      json_object('geonames' value 
-        json_array(
-           json_mergepatch(
-              j.doc.geonames[0],
-             '{"capital":"Toledo", "countryName" : "Medieval Spain"}'
-           )
-        )
-      )
-      RETURNING CLOB PRETTY
-    ) Medieval
-    FROM myjson j where j.doc.geonames.geonameId = '2510769';
-    </copy>
-    ````
-
-    ![](./images/p_updateJsonDoc_5.png " ")
-
-6.  Further, we can add the altered element with the updated values, as an additional JSON document, to the first element with the original value. For example, we can keep our original array elements, and add new ones with new values.
-
-    ````
-    <copy>
-    SELECT json_mergepatch(j.doc, '{"geonames": [' || j.doc.geonames[0] || ',' || json_mergepatch(j.doc.geonames[0], '{"capital":"Toledo", "countryName" : "Medieval Spain"}') || ']}' RETURNING CLOB PRETTY) Medieval
-      FROM myjson j where j.doc.geonames.geonameId = '2510769';
-    </copy>
-    ````
-
-    ![](./images/p_updateJsonDoc_6.png " ")
-
-    In the end, everything is possible, there are no restrictions.
-
-### Update JSON Document Using Selected Current Value
-
-7.  In the same way, we can use the altered array with *JSON_MERGEPATCH* function to insert, or update, a JSON document stored inside the database.
-
-    ````
-    <copy>
-    INSERT INTO MYJSON (doc) SELECT json_mergepatch(j.doc, '{"geonames": [' || j.doc.geonames[0] || ',' || json_mergepatch(j.doc.geonames[0], '{"capital":"Toledo", "countryName" : "Medieval Spain"}') || ']}' RETURNING CLOB PRETTY) Medieval
-      FROM myjson j where j.doc.geonames.geonameId = '2510769';
-    </copy>
-    ````
-
-    ![](./images/step7.7-insertnewdoc.png " " )
-
-    In this case, we insert a new document.
-
 ### Updating a specific element in a JSON Column using JSON Merge Patch
 
-8. We will use the very first JSON document in our table, the one about the Oracle Workshop. This is a simple JSON document, with three fields. The third field is also a collection with three fields.
+5. We will use the very first JSON document in our table, the one about the Oracle Workshop. This is a simple JSON document, with three fields. The third field is also a collection with three fields.
 
 
     ````
@@ -607,7 +558,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list to modify the selected documents.
 
 
 
-9.  We can update the JSON document's second field, using the plain UPDATE statement and *JSON_MERGEPATCH* function.
+6.  We can update the JSON document's second field, using the plain UPDATE statement and *JSON_MERGEPATCH* function.
 
     Remember to commit changes if you want to keep them in the database.
 
@@ -622,7 +573,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list to modify the selected documents.
 
     Updating JSON documents inside the Oracle Database is that simple!
 
-10. When running the same SELECT statement, we notice that the document is not pretty-printed any more.
+7. When running the same SELECT statement, we notice that the document is not pretty-printed any more.
 
     ````
     <copy>
@@ -632,7 +583,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list to modify the selected documents.
 
     ![](./images/p_updateJsonDoc_8.png " ")
 
-11. You can use JSON_SERIALIZE to **pretty** print the JSON data, this makes it easier to read. You may also store the JSON in pretty printed format but this will take up more space.
+8. You can use JSON_SERIALIZE to **pretty** print the JSON data, this makes it easier to read. You may also store the JSON in pretty printed format but this will take up more space.
 
     This one is much more legible.
 
