@@ -83,7 +83,7 @@ Next step.
 ### *Option #2 - Stack creates Instance(s) and uses existing VCN*
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-  - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/NaRiEVnQNNg12_zCvjmjXEMiNrYIcDp0aKQHYU-dz7M/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+  - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9pLAit-dYlCGrpnHDDXoXGbfrYsiH7AsyJPLjBRrH48/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
   - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2. Save in your downloads folder.

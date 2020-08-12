@@ -18,7 +18,7 @@ This 25-minute lab will show you how to setup the Oracle Cloud Infrastructure Co
 ## **STEP 1**: Download and save the msdataworkshop.properties file
 You'll need to keep track of important information about the tenancy, such as resource IDs, Tenancy OCID, Region name, Object Storage Namespace and user OCID.
 
-1.  Download and save <a href="files/msdataworkshop.properties" target="\_blank">msdataworkshop.properties</a> to store and keep track of the data you'll need in later labs.
+1.  Download and save <a href="files/msdataworkshop.properties" target="\_blank">msdataworkshop.properties</a> to store and keep track of the data you will need in later labs.
 2. Open this file in a text editor. You will update it throughout this lab.
 
    You will later copy this information to your root directory using Cloud Shell and source it for the workshop.

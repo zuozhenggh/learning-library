@@ -11,18 +11,16 @@ For more information about Terraform and Resource Manager, please see the append
 -   Connect to compute instance
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-
-This lab requires the following:
-- Oracle Cloud Free Trial or Paid account
+This lab assumes you have:
+- An Oracle Free Tier or Paid Cloud account
+- SSH Keys
   
 ## **Step 1A**: Create Stack:  Compute + Networking
 
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-      - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uZPsGTFvwVSVjMn9JtlhRw5tk8zIiYfIz8iTql-I6eI/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
+      - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JDthT7cJjsS1F07KPU77rKEtzdnykXfeMujFVqp0fbo/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 3.  Login to Oracle Cloud
@@ -270,9 +268,19 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 
 [Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
 
-## Appendix:  Updating an Existing VCN
+## Appendix:  Adding Security Rules to an Existing VCN
+This workshop requires a certain number of ports to be available.
 
-Coming soon
+1.  Go to Networking -> Virtual Cloud Networks
+2.  Choose your network
+3.  Under Resources, select Security Lists
+4.  Click on Default Security Lists under the Create Security List button
+5.  Click Add Ingress Rule button
+6.  Enter the following:  
+    - Source CIDR: 0.0.0.0/0
+    - Destination Port Range: 3000, 3001, 3003, 1521, 7007, 9090, 22 
+7.  Click the Add Ingress Rules button
+
 
 ## Appendix: Troubleshooting Tips
 
@@ -292,16 +300,69 @@ When creating a stack and using an existing VCN, the availability domain and the
 1.  Click on **Stack**-> **Edit Stack** -> **Configure Variables**.
 2.  Scroll down to the network definition.
 3.  Make sure the Availability Domain number matches the subnet number.  E.g. If you choose AD-1, you must also choose subnet #1.
-
-### Issue 2: Limits Exceeded
-![](images/no-quota.png  " ")
+4.  Click **Next**
+5.  Click **Save Changes**
+6.  Click **Terraform Actions** -> **Apply**
 
 ### Issue 2: Invalid public key
 ![](images/invalid-ssh-key.png  " ")
 
-### Issue 2: Flex Shape Not Found
+#### Issue #2 Description
+When creating your SSH Key, if the key is invalid the compute instance stack creation will throw an error.
 
+#### Tips for fixing for Issue #2
+- Go back to the instructions and ensure you create and **copy/paste** your key into the stack correctly. 
+- Copying keys from Cloud Shell may put the key string on two lines.  Make sure you remove the hard return and ensure the key is all one line.
+- Ensure you pasted the *.pub file into the window.
+1.  Click on **Stack**-> **Edit Stack** -> **Configure Variables**.
+2.  Repaste the correctly formatted key
+3.  Click **Next**
+4.  Click **Save Changes**
+5.  Click **Terraform Actions** -> **Apply**
+
+### Issue 3: Flex Shape Not Found
 ![](images/flex-shape-error.png  " ")
+
+#### Issue #3 Description
+When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy. 
+
+#### Fix for Issue #3
+If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
+1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
+2. Select **Compute**
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+4. Look for Standard.E2, Standard.E3.Flex and Standard2
+4.  Click on the hamburger menu -> **Resource Manager** -> **Stacks**
+5.  Click on the stack you created previously
+6.  Click **Edit Stack** -> **Configure Variables**.
+7.  Scroll down to Options
+8.  Change the shape based on the availability you have in your system
+9.  Click **Next**
+10. Click **Save Changes**
+11. Click **Terraform Actions** -> **Apply**
+
+### Issue 4: Limits Exceeded
+![](images/no-quota.png  " ")
+
+#### Issue #4 Description
+When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy. 
+
+#### Fix for Issue #4
+If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
+
+1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
+2. Select **Compute**
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+4. Look for Standard.E2, Standard.E3.Flex and Standard2
+5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
+6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**
+7.  Click on the stack you created previously
+8.  Click **Edit Stack** -> **Configure Variables**.
+9.  Scroll down to Options
+10. Change the shape based on the availability you have in your system
+11. Click **Next**
+12. Click **Save Changes**
+13. Click **Terraform Actions** -> **Apply**
 
 ## Acknowledgements
 
