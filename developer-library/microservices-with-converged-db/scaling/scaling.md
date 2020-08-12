@@ -1,4 +1,4 @@
-# Scaling The Application
+# Scaling the Application
 ## Introduction
 
 This lab will show how the application can be scaled at the application and database tiers to maintain optimal performance.
