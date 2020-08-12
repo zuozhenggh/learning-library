@@ -66,6 +66,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
     ````
 
 4. Open SQLPlus as the user appjson
+   
     ````
     <copy>
     sqlplus appspat/Oracle_4U@SGRPDB
