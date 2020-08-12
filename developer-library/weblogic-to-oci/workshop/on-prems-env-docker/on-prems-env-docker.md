@@ -30,7 +30,7 @@ At the end of this lab, you will have a local environment running with an Oracle
 
 On Linux, install Docker and docker-compose as root and then switch to the `oracle` user.
 
-## Step 1: Get the code
+## **Step 1:** Get the code
 
 On Linux, if you don't have a `oracle` user, create it an add it to a `oracle` group with:
 
@@ -145,7 +145,7 @@ This repository makes use of Oracle docker images which are licensed and need to
     ``` -->
 
 
-## Step 3: Start the local environment
+## **Step 2:** Start the local environment
 
 To startup the local environment stack that will simulate our 'on-premises' environment, make sure you are using the `oracle` user and run:
 ```
@@ -174,7 +174,7 @@ docker exec -it --user=root weblogic-to-oci_oracledb_1 /bin/chown 54321:54321 ~/
 ```
 
 
-## Step 4:  Check the local environment is up and running
+## **Step 4:**  Check the local environment is up and running
 
 **It may take several minutes for the domain to be up and running**, because the weblogic container waits for the database to be ready, and the schemas to be created. Be patient.
 
@@ -221,7 +221,7 @@ It shows statistics of riders of the Tour de France stored in the database, and 
 
 <img src="./images/localhost-simpledb-app.png" width="100%">
 
-## Step 5: Create a SSH key
+## **Step 5:** Create a SSH key
 
 We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources. 
 

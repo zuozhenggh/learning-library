@@ -4,7 +4,7 @@
 
 In this lab we will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure from the Marketplace.
 
-## Step 1: Create a **Vault**
+## **Step 1:** Create a **Vault**
 
 - 1.1. Go to **Security -> Vault**
 
@@ -20,7 +20,7 @@ In this lab we will prepare the OCI environment to provision WebLogic Server for
 
    <img src="./images/prereq-vault3.png" width="80%">
 
-## Step 2: Create a **Key** in the vault
+## **Step 2:** Create a **Key** in the vault
 
 - 2.1. Once the vault is provisioned, click the vault
 
@@ -34,7 +34,7 @@ In this lab we will prepare the OCI environment to provision WebLogic Server for
 
    <img src="./images/prereq-key2.png" width="80%">
 
-## Step 3: Create a **Secret** for the WebLogic admin password
+## **Step 3:** Create a **Secret** for the WebLogic admin password
 
 - 3.1. Once the key is provisioned, click **Secrets**
 

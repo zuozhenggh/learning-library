@@ -5,7 +5,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 
 **PLEASE READ:**  *If you already have access to a running compute instance (running the DB19c Image) configured, go directly to Step 3b run it, skip Step 3c, then run Step 3d.*
 
-## Step 1: Login and Create Stack using Resource Manager
+## **Step 1:** Login and Create Stack using Resource Manager
 You will be using Terraform to create your database environment.
 
 1.  Click on the link below to download the zip file you need to build your enviornment.  
@@ -60,7 +60,7 @@ You will be using Terraform to create your database environment.
 
 
 
-## Step 2: Terraform Plan and Apply
+## **Step 2:** Terraform Plan and Apply
 When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
 
 1.  [OPTIONAL]Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
@@ -93,7 +93,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 1.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/ssh-first-time.png " ") 
 
@@ -104,7 +104,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 1.  Open up putty and create a new connection.
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/ssh-first-time.png " ") 
 

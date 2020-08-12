@@ -8,7 +8,7 @@ Before we can provision the Application Database, we need to provision a **priva
 - port 1521 for the database, 
 - port 22 for SSH.
 
-## Step 1: Create a Security List for the database subnet
+## **Step 1:** Create a Security List for the database subnet
 
 In this section we will create a Security List for the WebLogic subnet to be able to reach the Database subnet on port 1521 (the Oracle Database default port)
 
@@ -46,7 +46,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
   <img src="./images/provision-db-6-ingress22.png" width="70%">
 
-## Step 2: Create the database subnet
+## **Step 2:** Create the database subnet
 
 - 2.1. Click **Subnets** on the left-side menu
 
@@ -84,7 +84,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
   <img src="./images/provision-db-9-subnet7.png" width="70%">
 
-## Step 3: Provision the Database System
+## **Step 3:** Provision the Database System
 
 - 3.1. Go to **Database -> Bare Metal, VM and Exadata**
 
@@ -154,7 +154,7 @@ This will take 20 to 40 minutes to provision.
 
   <img src="./images/provision-db-25.png" width="100%">
 
-## Step 4: Gather the OCI database information
+## **Step 4:** Gather the OCI database information
 
 Once the database system is provisioned
 

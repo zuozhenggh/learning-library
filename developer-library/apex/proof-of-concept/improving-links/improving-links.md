@@ -156,7 +156,7 @@ If you review the Links form page, by clicking an edit icon on the report, you w
 
 ## **Summary**
 
-This completes Lab 6 and the workshop. You now know how to change a URL value to be a link to a separate browser tab or window.
+You now know how to change a URL value to be a link to a separate browser tab or window.
 
 ## **Learn More** - *Useful Links*
 

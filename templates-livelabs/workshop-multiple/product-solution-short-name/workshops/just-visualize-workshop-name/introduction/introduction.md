@@ -4,12 +4,12 @@
 
 This introduction is for a "child" workshop. It is a subset of the "parent" workshop, and only covers a portion of the "parent" workshop. In this case, just enough to get customers to the Visualize lab.
 
-Estimated Lab Time: &lt;n&gt; minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
+Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
 
 ### About Product/Technology
 Enter background information here....
 
-*You may add an option video, using this format: [](youtube:&lt;YouTube video id&gt;)*
+*You may add an option video, using this format: [](youtube:YouTube video id)*
 
   [](youtube:zNKxJjkq0Pw)
 
@@ -17,7 +17,7 @@ Enter background information here....
 
 *List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:*
 
-In this lab, you'll:
+In this lab, you will:
 * Provision
 * Setup
 * Data Load
@@ -50,7 +50,7 @@ Step 1 opening paragraph.
 
 3. Ordered list item 3 with the same image but no link to the text description below.
 
-    ![Image alt text](images/sample1.png " ")
+    ![Image alt text](images/sample1.png)
 
 4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
 
@@ -81,15 +81,13 @@ Step 1 opening paragraph.
     Adding code examples
   	Indentation is important for the code example to appear inside the step
     Multiple lines of code
-  	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
+  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
     ```
 
 4. Code examples that include variables
 
-  To include `<` and `>` in your code fragments, use ``&lt;`` and ``&gt;`` to escape the characters in the code block:
-
 	```
-  <copy>ssh -i &lt;ssh-key-file&gt;</copy>
+  <copy>ssh -i <ssh-key-file></copy>
   ```
 
 *At the conclusion of the lab add this statement:*

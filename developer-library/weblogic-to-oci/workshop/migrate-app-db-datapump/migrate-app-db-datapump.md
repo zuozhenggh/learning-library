@@ -6,7 +6,7 @@ DataPump will be used to migrate the database from on-premises to OCI.
 
 DataPump export function creates a DDL + data dump of the user schema, which is then transfered over to the target database where the DataPump import function is used to create the schema and import the data.
 
-## Step 1: Get a shell inside the database instance:
+## **Step 1:** Get a shell inside the database instance:
 
 If you used the Docker environment, use this command to get inside the DB container:
 ```
@@ -26,7 +26,7 @@ then
 sudo su - oracle
 ```
 
-## Step 2: Get into the `datapump` folder
+## **Step 2:** Get into the `datapump` folder
 
 Get into the `/datapump` folder with:
 ```
@@ -35,7 +35,7 @@ cd ~/datapump
 </copy>
 ```
 
-## Step 3: `datapump_export.sh` script
+## **Step 3:** `datapump_export.sh` script
 
 The script itself is commented to explain what it does.
 
@@ -62,7 +62,7 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
 ```
 </details>
 
-## Step 4: run the `datapump_export.sh` script
+## **Step 4:** run the `datapump_export.sh` script
 
 ```
 <copy>
@@ -75,7 +75,7 @@ The output will look like
   <img src="./images/migrate-db-1.png" width="100%">
 
 
-## Step 5: `datapump_import.sh` script
+## **Step 5:** `datapump_import.sh` script
 
 Once the schema and data was exported, we'll import it into the OCI DBaaS database.
 
@@ -131,7 +131,7 @@ echo "Done!"
 ```
 </details>
 
-## Step 6: Edit the script
+## **Step 6:** Edit the script
 
   - 6.1. Enter the `BASTION_IP`
 
@@ -142,7 +142,7 @@ echo "Done!"
 
   - 6.3. Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. If you followed the name conventions, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com` if you followed the defaults in this lab.
 
-## Step 7: run the `datapump_import.sh` script
+## **Step 7:** run the `datapump_import.sh` script
 
 ```bash
 <copy>

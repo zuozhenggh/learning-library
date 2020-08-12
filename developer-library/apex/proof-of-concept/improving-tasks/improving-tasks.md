@@ -186,7 +186,7 @@ If you review the Milestones select list you will notice that all milestones are
 
 ## **Summary**
 
-This completes Lab 4. You now know how to utilize different types of list of values, to display additional columns, and also how to define a Cascading-LOV. [Click here to navigate to lab 5](?lab=lab-5-improving-dos)
+You now know how to utilize different types of list of values, to display additional columns, and also how to define a Cascading-LOV. 
 
 ## **Acknowledgments**
 

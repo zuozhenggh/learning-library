@@ -1,4 +1,4 @@
-# NAT gateway
+# Configuring NAT Gateway for Private Compute Instance
 
 ## Introduction
 
@@ -12,55 +12,19 @@ NAT gateway,  addresses these challenges and provides Oracle Cloud Infrastructur
 Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that can be reliably added to security whitelists.
 
 
-**Some Key points:**
-
-*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%.*
-
-- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
-
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
+## **Step 1:** Sign in to OCI Console and create VCN
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
-
-### Pre-Requisites
-
-1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
-   
-2. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-
-3. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-
-4. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-
-5. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-
-6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
-
-
-## Step 1: Sign in to OCI Console and create VCN
-
-* **Tenant Name:** {{Cloud Tenant}}
-* **User Name:** {{User Name}}
-* **Password:** {{Password}}
-* **Compartment:**{{Compartment}}
-
-
-**Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
-
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
 
     ![](./../grafana/images/Grafana_015.PNG " ")
 
-2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**.
+2. From the OCI Services menu, click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**.
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**.
+3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
 
 4. Fill out the dialog box:
 
@@ -73,81 +37,29 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 5. Verify all the information and  Click **Create**.
 
-6. This will create a VCN with followig components.
+6. This will create a VCN with following components.
 
     *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
-              
-## Step 2: Create ssh keys compute instance
 
-1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL006.PNG " ")
+## **Step 2:** Create and connect to compute instance
 
-2. Enter command 
-    ```
-    <copy>
-    ssh-keygen
-    </copy>
-    ```
-    **HINT:** You can swap between OCI window, git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon. 
+1. Got to your OCI console. From OCI services menu, under **Compute**, click **Instances**.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL007.PNG " ")
+2. Click **Create Instance**. Fill out the dialog box:
 
-3. Press Enter When asked for 'Enter File in which to save the key', 'Created Directory, 'Enter passphrase', and 'Enter Passphrase again.
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL008.PNG " ")
-
-4. You should now have the Public and Private keys:
-
-    /C/Users/ PhotonUser/.ssh/id\_rsa (Private Key)
-
-    /C/Users/PhotonUser/.ssh/id\_rsa.pub (Public Key)
-
-    **NOTE:** id\_rsa.pub will be used to create 
-    Compute instance and id\_rsa to connect via SSH into compute instance.
-
-    **HINT:** Enter command 
-    ```
-    <copy>
-    cd /C/Users/PhotonUser/.ssh (No Spaces) 
-    </copy>
-    ```
-    and then 
-    ```
-    <copy>
-    ls 
-    </copy>
-    ```
-    to verify the two files exist. 
-
-5. In git-bash Enter command  
-    ```
-    <copy>
-    cat /C/Users/PhotonUser/.ssh/id_rsa.pub
-    </copy>
-    ```
-    , highlight the key and copy 
-
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL009.PNG " ")
-
-6. Click the apps icon, launch notepad and paste the key in Notepad (as backup).
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0010.PNG " ")
-
-7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**. 
-
-8. Click **Create Instance**. Fill out the dialog box:
-
-      - **Name your instance**: Enter a name 
-      - **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+      - **Name your instance**: Enter a name
+      - **Choose an operating system or image source**: For the image, we recommend using the Latest *Oracle Linux* available.
       - **Availability Domain**: Select availability domain
-      - **Instance Type**: Select Virtual Machine 
-      - **Instance Shape**: Select VM shape 
+      - **Instance Type**: Select Virtual Machine
+      - **Instance Shape**: Select VM shape
 
       **Under Configure Networking**
       - **Virtual cloud network compartment**: Select your compartment
-      - **Virtual cloud network**: Choose the VCN 
-      - **Subnet Compartment:** Choose your compartment. 
-      - **Subnet:** Choose the Public Subnet under **Public Subnets** 
+      - **Virtual cloud network**: Choose the VCN
+      - **Subnet Compartment:** Choose your compartment.
+      - **Subnet:** Choose the Public Subnet under **Public Subnets**
       - **Use network security groups to control traffic** : Leave un-checked
       - **Assign a public IP address**: Check this option
 
@@ -156,44 +68,43 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
       - **Boot Volume:** Leave the default
       - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
-9. Click **Create**.
+3. Click **Create**.
 
     **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
 
-10. Wait for Instance to be in **Running** state. In git-bash Enter Command:
-   
-    ```
-    <copy>
-    cd /C/Users/PhotonUser/.ssh
-    </copy>
-    ```
-11. Enter **ls** and verify id\_rsa file exists.
+4.  Wait for Instance to be in **Running** state. In Cloud shell Terminal, enter command:
 
-12. Enter command 
     ```
-    <copy>
-    bash
-    ssh -i id_rsa opc@PUBLIC_IP_OF_COMPUTE
-    </copy>
+    <copy>cd .ssh</copy>
     ```
-    **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste ssh command.
 
+5.  Enter **ls** and verify you SSH key file exists.
 
-13. Enter 'Yes' when prompted for security message.
+6.  Enter command:
+    ```
+    <copy>bash</copy>
+    ```
+
+    ```
+    <copy>ssh -i id_rsa opc@PUBLIC_IP_OF_COMPUTE</copy>
+    ```
+    **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste SSH command.
+
+7.  Enter 'yes' when prompted for security message.
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
- 
-14. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
-## Step 3: Configure NAT gateway
+8.  Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
+
+## **Step 3:** Configure NAT gateway
 
 **We will now create a route table in the VCN.**
 
-1. Switch to OCI console. From OCI services menu Click **Virtual Cloud Networks** under Networking. Locate your VCN and Click the VCN name to display VCN details. 
+1. Switch to OCI console. From OCI services menu, click **Virtual Cloud Networks** under **Networking**. Locate your VCN and click the VCN name to display VCN details.
 
-2. Click **NAT Gateways**. 
+2. Click **NAT Gateways**.
 
 3. Click **Route Tables**, then **Create Route Table**. Fill out the dialog box:
 
@@ -204,77 +115,67 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
     **Click +Additional Route Rules**
 
 
-    - Target Type: Select **NAT Gateway** 
-    - Destination CIDR Block: Enter 0.0.0.0/0 
-    - Compartment:  Make sure the correct Compartment is selected: 
-    - Target NAT Gateway: Select the NATGateway for your VCN. 
+    - Target Type: Select **NAT Gateway**
+    - Destination CIDR Block: Enter 0.0.0.0/0
+    - Compartment:  Make sure the correct Compartment is selected:
+    - Target NAT Gateway: Select the NAT Gateway for your VCN.
 
 4. Click **Create Route Table**.
 
     ![](./../nat-gateway/images/NAT_002.PNG " ")
 
-5. Click your VCN name to display the VCN details.Click **Create Subnet**. Fill out the dialog box:
+5. Click your VCN name to display the VCN details. Click **Create Subnet**. Fill out the dialog box:
 
-      - Name: Enter a name 
+      - Name: Enter a name
       - Subnet Type: Regional
-      - CIDR Block: Provide a CIDR (e.g 10.0.5.0/24).
+      - CIDR Block: Provide a CIDR (e.g. 10.0.5.0/24).
       - Route Table: Choose the Route table created earlier
 
-      **NOTE:** Do not choose the 'Default route table'. This is being done so all routing for compute instances in this subnet are via the NAT gateway. 
+      **NOTE:** Do not choose the 'Default route table'. This is being done so all routing for compute instances in this subnet are via the NAT gateway.
 
-      - Subnet access:Private Subnet.
+      - Subnet access: Private Subnet.
       - DHCP Options: Select the default.
       - Security Lists: Select the Security List you created earlier.
 
 6. Leave all other options as default, Click **Create Subnet**.
 
-    ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_004.PNG " ")
+    ![](./images/create_subnet.png " ")
 
-7. Switch to Git bash session with ssh to compute instance Generate ssh key pair, Enter command:
-
-    ```
-    <copy>
-    ssh-keygen 
-    </copy>
-    ```
-8. Press Enter When asked for ‘Enter File in which to save the key’, ‘Created Directory, ‘Enter passphrase’, and ‘Enter Passphrase  again.
-
-9. Enter command 
-    ```
-    <copy>
-    cd ~/.ssh
-    </copy>
-    ```
-    and then 
-    ```
-    <copy>
-    ls
-    </copy>
-    ``` 
-    You should have the Public and Private keys:
-    /home/opc/.ssh/id\_rsa (Private Key)
-    /home/opc/.ssh/id\_rsa.pub (Public Key)
-
-10. Enter command 
+7. Go to your Cloud shell Terminal. Generate ssh key pair, enter command:
 
     ```
-    <copy>
-    cat ~/.ssh/id_rsa.pub
-    </copy>
-    ``` 
+    <copy>ssh-keygen</copy>
+    ```
+8. Press Enter When asked for ‘Enter File in which to save the key’, ‘Created Directory, ‘Enter passphrase’, and ‘Enter Passphrase'  again.
+
+9. Enter command:
+    ```
+    <copy>cd ~/.ssh</copy>
+    ```
+    and then
+    ```
+    <copy>ls</copy>
+    ```
+    You should have the Private and Public keys: /home/opc/.ssh/&lt;sshkeyname> (Private Key) and /home/opc/.ssh/&lt;sshkeyname>.pub (Public Key)
+
+10. Enter command:
+
+    ```
+    <copy>cat ~/.ssh/id_rsa.pub</copy>
+    ```
 
     copy and paste the public key content to Notepad. We will use this public key to launch a compute instance in private subnet of the VCN.
 
-11. Switch to OCI console window and launch a second compute instance as done previously. **Ensure the subnet chosen is the private subnet that we created previously**.
+11. Switch to OCI console window and launch a second compute instance as done previously (Step 2, Section 2). **Ensure the subnet chosen is the private subnet that we created previously**.
 
-12. Once the Instance is running, Note down private IP address of the instance from instance detail page (by Clicking Instance name). 
+12. Once the Instance is running, Note down private IP address of the instance from instance detail page (by Clicking Instance name).
 
 13. Switch to git-bash window with ssh session to Public compute instance (first compute instance created earlier). Enter command:
     ```
     <copy>
     cd ~/.ssh
     </copy>
-    ``` 
+    ```
     then
     ```
     <copy>
@@ -294,7 +195,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 15. In the private compute instance Enter command:
     ```
     <copy>
-    ping 8.8.8.8 
+    ping 8.8.8.8
     </copy>
     ```
     and verify there is internet connectivity.
@@ -303,21 +204,21 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 16. Switch to OCI console window. In your VCN's detail page, Click **NAT Gateways**.
 
-17. Hover over the Action icon  and choose Block Traffic. 
+17. Hover over the Action icon  and choose Block Traffic.
 
-18. Switch back to ssh session to the private compute instance and Enter command ping 8.8.8.8 (if not already running). Verify there is no repsonse.
+18. Switch back to ssh session to the private compute instance and Enter command ping 8.8.8.8 (if not already running). Verify there is no response.
 
     ![](./../nat-gateway/images/NAT_003.PNG " ")
 
 19. Switch back to OCI console window and using above step, this time choose Allow Traffic. Switch back to ssh session and verify ping response is received.
-       
-## Step 4: Delete the resources
+
+## **Step 4:** Delete the resources
 
 1. Switch to  OCI console window.
 
 2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**.
 
-3. Locate compute instance, Click Action icon and then **Terminate**. 
+3. Locate compute instance, Click Action icon and then **Terminate**.
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
 
@@ -327,10 +228,10 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 5. Repeat the steps to delete the second compute instance.
 
-6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
+6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will
 appear.
 
-7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
+7. Locate your VCN, Click Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
 
@@ -339,7 +240,8 @@ appear.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, June 2020
+- **Contributors** - Kamryn Vinson, QA Intern
+- **Last Updated By/Date** - Tom McGinn, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

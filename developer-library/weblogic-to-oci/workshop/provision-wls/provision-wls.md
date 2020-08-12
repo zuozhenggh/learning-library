@@ -6,7 +6,7 @@ See Requirements to get the code and the required Docker images.
 
 This 30 mins lab walks you through provisioning the WebLogic Infrastructure by leveraging the OCI Marketplace image. 
 
-## Step 1: Provision the stack through the Marketplace
+## **Step 1:** Provision the stack through the Marketplace
 
 - 1.1. Go to **Solutions and Platforms** 
 
@@ -44,7 +44,7 @@ This 30 mins lab walks you through provisioning the WebLogic Infrastructure by l
 
 - 1.7. **SSH key**
 
-   To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer. Since the various commands will be ran from inside the 'on-premises' environment (either the workshop compute instance or the local docker containers), you'll need to provide the key generated in the 'on-premises' environment.
+   To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer. Since the various commands will be ran from inside the 'on-premises' environment (either the workshop compute instance or the local docker containers), you will need to provide the key generated in the 'on-premises' environment.
 
   <img src="./images/provision-8-sshkey.png" width="70%">
 
@@ -147,7 +147,7 @@ This 30 mins lab walks you through provisioning the WebLogic Infrastructure by l
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu. 
 
-## Step 2: Gather the necessary WebLogic stack information
+## **Step 2:** Gather the necessary WebLogic stack information
 
   <img src="./images/provision-27.png" width="100%">
 

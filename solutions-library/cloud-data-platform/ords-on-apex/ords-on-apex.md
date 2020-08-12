@@ -183,7 +183,7 @@ product/trendingProductAPI/{store_add}
 
     ![](./images/22new.png " ")
 
-5. Once you select a store from the dropdown, you can click the **See Store Details** button to see the product details for the selected store.
+5. Once you select a store from the dropdown, you can click the **View Store Details** button to see the product details for the selected store.
 
     ![](./images/23new.png " ")
 
@@ -198,8 +198,8 @@ product/trendingProductAPI/{store_add}
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Contributor** - Jeffrey Malcolm, QA Specialist
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
+- **Contributor** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
+- **Last Updated By/Date** - Kamryn Vinson, QA Specialist, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

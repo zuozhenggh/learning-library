@@ -13,7 +13,7 @@ Enter background information here..
 
 *List objectives for the lab - if this is the intro lab, list objectives for the workshop*
 
-In this lab, you'll:
+In this lab, you will:
 * Objective 1
 * Objective 2
 * Objective 3
@@ -76,15 +76,13 @@ Step 1 opening paragraph.
     Adding code examples
   	Indentation is important for the code example to appear inside the step
     Multiple lines of code
-  	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
+  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
     ```
 
 4. Code examples that include variables
 
-  To include `<` and `>` in your code fragments, use ``&lt;`` and ``&gt;`` to escape the characters in the code block:
-
 	```
-  <copy>ssh -i &lt;ssh-key-file&gt;</copy>
+  <copy>ssh -i <ssh-key-file></copy>
   ```
 
 *At the conclusion of the lab add this statement:*

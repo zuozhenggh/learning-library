@@ -4,23 +4,21 @@
 
 The Oracle Cloud Infrastructure Audit service automatically records calls to all supported Oracle Cloud Infrastructure public application programming interface (API) endpoints as log events. Currently, all services support logging by Audit. Object Storage service supports logging for bucket-related events, but not for object-related events. Log events recorded by the Audit service include API calls made by the Oracle Cloud Infrastructure Console, Command Line Interface (CLI), Software Development Kits (SDK), your own custom clients, or other Oracle Cloud Infrastructure services
 
-Each log event includes a header ID, target resource(s), time stamp of the recorded event, request parameters, and response parameters. You can view events logged by the Auditservice by using the Console,API, or the Java SDK. You can view events, copy the details of individual events, as well as analyze events or store them separately. Data from events can be used to perform diagnostics, track resource usage, monitor compliance, and collect security-related events.
+Each log event includes a header ID, target resource(s), time stamp of the recorded event, request parameters, and response parameters. You can view events logged by the Auditservice by using the Console, API, or the Java SDK. You can view events, copy the details of individual events, as well as analyze events or store them separately. Data from events can be used to perform diagnostics, track resource usage, monitor compliance, and collect security-related events.
 
 The purpose of this lab is to give you an overview of the Audit Service and an example scenario to help you understand how the service works.
 
 **Some Key points:**
 
-*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%*
+*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80% and split your screen*
 
-- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
+- All screenshots are examples ONLY
 
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+- Do NOT use compartment name and other data from screenshots. Only use data (including compartment name) provided in the content section of the lab
 
-- Do NOT use compartment name and other data from screen shots. Only use  data(including compartment name) provided in the content section of the lab
+- Mac OS Users should use command+C / command+V to copy and paste inside the OCI Console
 
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy
 
     **Cloud Tenant Name**
 
@@ -30,13 +28,13 @@ The purpose of this lab is to give you an overview of the Audit Service and an e
 
     **Compartment Name (Provided Later)**
 
-    **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
+    *Note: OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.*
 
-### Pre-Requisites
+### Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
-## Step 1: Sign in to OCI Console and Create Object Storage Bucket
+## **Step 1**: Sign in to OCI Console and Create Object Storage Bucket
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -47,7 +45,7 @@ The purpose of this lab is to give you an overview of the Audit Service and an e
 
 2. Once signed in select the compartment assigned to you from drop down menu on left part of the screen.
 
-3. From the OCI Services menu,click **Object Storage** then **Create Bucket**.
+3. From the OCI Services menu, click **Object Storage** then **Create Bucket**.
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list.
 
@@ -58,7 +56,7 @@ The purpose of this lab is to give you an overview of the Audit Service and an e
 
 5. Click **Create Bucket**.
 
-## Step 2: Upload Object and Check Audit logs
+## **Step 2**: Upload Object and Check Audit logs
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
     ![](./../audit-service/images/AUDIT004.PNG " ")
@@ -105,6 +103,7 @@ You have utilized OCI’s Audit service to extract events specific to Storage bu
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
+- **Contributors** - Kamryn Vinson, QA Engineer Lead Intern | Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
 ## See an issue?
