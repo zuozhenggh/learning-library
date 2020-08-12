@@ -41,5 +41,11 @@
       "publisheddate": "7/16/2020",
       "filename": "./../em-configuration-compliance-management/em-configuration-compliance-management.md"
     }
+    },
+    {
+      "title": "Appendix: Frequently Asked Questions (FAQ)",
+      "description": "Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs",
+      "filename": "./../faq.md"
+    }
   ]
 }

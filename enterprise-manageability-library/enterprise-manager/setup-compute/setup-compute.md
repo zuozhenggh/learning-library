@@ -1,35 +1,25 @@
 # Environment Setup on FreeTier or Existing Cloud Account
 
 ## Introduction
-This lab will show you how to setup an Oracle Cloud Network (VCN) and a compute instance running Oracle Linux 7 and preloaded with Enterprise Manager 13c and monitored database targets, using Oracle Resource Manager and Terraform.  
+This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a compute instance running Enterprise Manager 13c with monitored database targets and a Virtual Cloud Network (VCN).
 
 ### About Terraform and Oracle Cloud Resource Manager
-Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
-
-Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
-
-[](youtube:udJdVCz5HYs)
-
-### Oracle Cloud Marketplace
-The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Enterprise Manager 13c Workshop marketplace image.
-
-[Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
+For more information about Terraform and Resource Manager, please see the appendix below.
 
 ### Objectives
--   Setup compute instance using the  Marketplace image specified in the Introduction and optionally a virtual cloud network if no existing VCN meets the requirements
--   Use Terraform and Resource Manager to complete the setup
+-   Create Compute + Networking Resource Manager Stack
+-   Connect to compute instance
 
 ### Prerequisites
-This lab assumes you have already completed or reviewed the following:
-* [Access to Oracle Free Tier or Paid Cloud account](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=prerequisites)
-* [Generated SSH Keys](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=lab-2-generate-ssh-key)
+This lab assumes you have:
+- An Oracle Free Tier or Paid Cloud account
+- SSH Keys
 
-## **Step 1:** Login and Create Stack using Resource Manager
-
-### *Option #1 - Stack creates Instance(s) and self-contained VCN*
+## **Step 1A**: Create Stack:  Compute + Networking
+If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-    - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/NaRiEVnQNNg12_zCvjmjXEMiNrYIcDp0aKQHYU-dz7M/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+    - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9pLAit-dYlCGrpnHDDXoXGbfrYsiH7AsyJPLjBRrH48/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
     - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2.  Save in your downloads folder.
@@ -63,7 +53,7 @@ Enter or select the following:
 
   *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 
-  - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard2.4***) or select the desired shape from the dropdown menu.
+  - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard.E2.4***) or select the desired shape from the dropdown menu.
   - **Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
 
 *Note: Instance OCPUS only applies to Flex Shapes and won't be displayed if you elect to use shapes of fixed OCPUs types*
@@ -80,7 +70,11 @@ Next step.
 
 ![](./images/em-stack-details.png " ")
 
-### *Option #2 - Stack creates Instance(s) and uses existing VCN*
+You may now proceed to Step 2 (skip Step 1B).
+
+## **Step 1B**: Create Stack:  Compute only
+If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
+- Egress rules for the following ports:  9851, 7803, 22          
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
   - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9pLAit-dYlCGrpnHDDXoXGbfrYsiH7AsyJPLjBRrH48/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
@@ -117,7 +111,7 @@ Enter or select the following:
 
   *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 
-  - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard2.4***) or select the desired shape from the dropdown menu.
+  - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard.E2.4***) or select the desired shape from the dropdown menu.
   - **Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
 
 *Note: Instance OCPUS only applies to Flex Shapes and won't be displayed if you elect to use shapes of fixed OCPUs types*
@@ -141,32 +135,6 @@ Enter or select the following:
 7. Your stack has now been created!  
 
 ![](./images/em-stack-details-b.png " ")
-
-*Note: For an existing VCN to be used successfully, it must at the minimum contain the following:*
-  - Regional public subnet
-  - Internet gateway
-  - Route table via internet gateway
-  - Security list with following:
-    - egress rules:
-        - TCP, All/All, 0.0.0.0/0 (more restrictions to limit access to select segment OK as well)
-    - Ingress rules:
-        - IMCP, "3,4", 0.0.0.0/0 (more restrictions to limit access to select segment OK as well)
-        - TCP, All/9851, 0.0.0.0/0 (more restrictions to limit access to select segment OK as well)
-        - TCP, All/7803, 0.0.0.0/0 (more restrictions to limit access to select segment OK as well)
-        - TCP, All/22, 0.0.0.0/0 (more restrictions to limit access to select segment OK as well)
-        - TCP, All Protocols, 10.0.0.0/16
-
-![](./images/em-vcn-details-1.png " ")
-
-![](./images/em-vcn-details-2.png " ")
-
-![](./images/em-vcn-details-ingress.png " ")
-
-![](./images/em-vcn-details-egress.png " ")
-
-![](./images/em-vcn-details-internet-gw.png " ")
-
-![](./images/em-vcn-details-route-table.png " ")
 
 ## **Step 2:** Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. You may skip to Step 3.
@@ -283,12 +251,120 @@ To save all your settings:
 1.  In the category section, **Click** session.
 2.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-You may now *proceed to the next lab*. 
+You may now *proceed to the next lab*.
+
+## Appendix:  Teraform and Resource Manager
+Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
+
+Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
+
+[](youtube:udJdVCz5HYs)
+
+### Oracle Cloud Marketplace
+The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Enterprise Manager 13c Workshop marketplace image.
+
+[Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
+
+## Appendix:  Adding Security Rules to an Existing VCN
+This workshop requires a certain number of ports to be available.
+
+1.  Go to Networking -> Virtual Cloud Networks
+2.  Choose your network
+3.  Under Resources, select Security Lists
+4.  Click on Default Security Lists under the Create Security List button
+5.  Click Add Ingress Rule button
+6.  Enter the following:  
+    - Source CIDR: 0.0.0.0/0
+    - Destination Port Range: 9851, 7803, 22
+7.  Click the Add Ingress Rules button
+
+## Appendix: Troubleshooting Tips
+
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
+- Availability Domain Mismatch
+- Limits Exceeded
+- Invalid public key
+- Flex Shape Not Found
+
+### Issue 1: Availability Domain Mismatch
+![](images/error-ad-mismatch.png  " ")
+
+#### Issue #1 Description
+When creating a stack and using an existing VCN, the availability domain and the subnet must match otherwise the stack errors.  
+
+#### Fix for Issue #1
+1.  Click on **Stack**-> **Edit Stack** -> **Configure Variables**.
+2.  Scroll down to the network definition.
+3.  Make sure the Availability Domain number matches the subnet number.  E.g. If you choose AD-1, you must also choose subnet #1.
+4.  Click **Next**
+5.  Click **Save Changes**
+6.  Click **Terraform Actions** -> **Apply**
+
+### Issue 2: Invalid public key
+![](images/invalid-ssh-key.png  " ")
+
+#### Issue #2 Description
+When creating your SSH Key, if the key is invalid the compute instance stack creation will throw an error.
+
+#### Tips for fixing for Issue #2
+- Go back to the instructions and ensure you create and **copy/paste** your key into the stack correctly.
+- Copying keys from Cloud Shell may put the key string on two lines.  Make sure you remove the hard return and ensure the key is all one line.
+- Ensure you pasted the *.pub file into the window.
+1.  Click on **Stack**-> **Edit Stack** -> **Configure Variables**.
+2.  Repaste the correctly formatted key
+3.  Click **Next**
+4.  Click **Save Changes**
+5.  Click **Terraform Actions** -> **Apply**
+
+### Issue 3: Flex Shape Not Found
+![](images/flex-shape-error.png  " ")
+
+#### Issue #3 Description
+When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy.
+
+#### Fix for Issue #3
+If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
+1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
+2. Select **Compute**
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+4. Look for Standard.E2, Standard.E3.Flex and Standard2
+4.  Click on the hamburger menu -> **Resource Manager** -> **Stacks**
+5.  Click on the stack you created previously
+6.  Click **Edit Stack** -> **Configure Variables**.
+7.  Scroll down to Options
+8.  Change the shape based on the availability you have in your system
+9.  Click **Next**
+10. Click **Save Changes**
+11. Click **Terraform Actions** -> **Apply**
+
+### Issue 4: Limits Exceeded
+![](images/no-quota.png  " ")
+
+#### Issue #4 Description
+When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy.
+
+#### Fix for Issue #4
+If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
+
+1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
+2. Select **Compute**
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+4. Look for Standard.E2, Standard.E3.Flex and Standard2
+5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
+6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**
+7.  Click on the stack you created previously
+8.  Click **Edit Stack** -> **Configure Variables**.
+9.  Scroll down to Options
+10. Change the shape based on the availability you have in your system
+11. Click **Next**
+12. Click **Save Changes**
+13. Click **Terraform Actions** -> **Apply**
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Rene Fontcha, Kay Malcolm
-- **Last Updated By/Date** - Rene Fontcha, August 2020
+* **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
+* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
+* **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

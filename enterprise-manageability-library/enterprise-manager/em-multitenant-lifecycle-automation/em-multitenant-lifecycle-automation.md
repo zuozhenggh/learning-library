@@ -25,7 +25,7 @@ The estimated time to complete all the Step activities is approximately 60 minut
 
 Prior to starting, you will need:
 - EM Instance Public IP address
-- OMS Console URL: http://\{EM Instance Public IP\}:7803/em
+- OMS Console URL: ``https://<Replace with your EM13c VM Instance Public IP>:7803/em``
 - OMS super-user Credentials:
     - Username: **sysman**
     - password: **welcome1**
