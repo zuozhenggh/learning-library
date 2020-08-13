@@ -19,7 +19,7 @@
       "title": "Environment Setup",
       "description": "Setup compute instance running EM 13.3 with pre-configured database targets using Terraform script and Resource Manager",
       "publisheddate": "7/16/2020",
-      "filename": "./../setup-compute/setup-marketplaceoci-freetier.md"
+      "filename": "./../setup-compute/setup-compute.md"
     },
     {
       "title": "Lab 1: Multitenant Database Lifecycle Management",
@@ -28,7 +28,7 @@
       "filename": "./../em-multitenant-lifecycle-automation/em-multitenant-lifecycle-automation.md"
     },
     {
-      "title": "Lab 2: Database Performance Management: Find, Fix, Validate",
+      "title": "Lab 2: Database Performance Management: Find-Fix-Validate",
       "description": "The objective is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud",
       "publisheddate": "7/16/2020",
       "filename": "./../em-find-fix-validate/em-find-fix-validate.md"
@@ -50,6 +50,12 @@
       "description": "This lab provides an overview of Configuration and Compliance Management features in . It is intended solely to help you assess the business benefits of upgrading to and to plan your I.T. projects",
       "publisheddate": "7/16/2020",
       "filename": "./../em-configuration-compliance-management/em-configuration-compliance-management.md"
+    },
+    {
+      "title": "Appendix: Frequently Asked Questions (FAQ)",
+      "description": "Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs",
+      "publisheddate": "8/12/2020",
+      "filename": "./../faq/faq.md"
     }
   ]
 }
