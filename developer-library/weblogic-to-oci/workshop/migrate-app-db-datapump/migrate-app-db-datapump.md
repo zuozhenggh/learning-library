@@ -26,8 +26,6 @@ then
 sudo su - oracle
 ```
 
-
-
 ## **Step 2:** Get into the `datapump` folder
 
 Get into the `/datapump` folder with:
@@ -135,14 +133,14 @@ echo "Done!"
 
 ## **Step 6:** Edit the script
 
-   - Enter the `BASTION_IP`
+  - 6.1. Enter the `BASTION_IP`
 
      The `BASTION_IP` is the **public IP** of the WebLogic Admin Server that can be found in the output of the job that deployed the stack seen in Lab step 4
 
-  - Enter the `TARGET_DB_HOST` **private IP address**
+  - 6.2. Enter the `TARGET_DB_HOST` **private IP address**
     This IP address was gathered from the Database System details in Lab step 5
 
-  - Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. If you followed the name conventions, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com` if you followed the defaults in this lab.
+  - 6.3. Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. If you followed the name conventions, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com` if you followed the defaults in this lab.
 
 ## **Step 7:** run the `datapump_import.sh` script
 
