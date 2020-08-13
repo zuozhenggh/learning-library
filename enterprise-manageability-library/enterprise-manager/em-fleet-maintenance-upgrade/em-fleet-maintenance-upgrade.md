@@ -30,7 +30,7 @@ The estimated time to complete the workshop is 75 minutes as further detailed be
 Prior to starting, you will need:
 - EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: ``https://<Replace with your EM13c VM Instance Public IP>:7803/em``
+- OMS Console URL: *``https://<Replace with your EM13c VM Instance Public IP>:7803/em``*. e.g *http://158.101.124.208:7803/em*
 - OMS super-user Credentials:
     - Username: **sysman**
     - password: **welcome1**
