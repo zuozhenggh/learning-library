@@ -1,15 +1,14 @@
-# Migrate WebLogic to Oracle Cloud Infrastructure
-
 ## Introduction
+### About this Workshop
 
-This lab is part of Oracle Cloud Infrastructure's Move & Improve workshop series. This lab will walk you through the process of migrating an existing on-premises WebLogic domain to WebLogic for Oracle Cloud Infrastructure. The WebLogic domain contains a couple Java applications and a datasource that we'll migrate without having to modify the underlying configuration. 
+This workshop is part of Oracle Cloud Infrastructure's Move & Improve workshop series. This workshop will walk you through the process of migrating an existing on-premises WebLogic domain to WebLogic for Oracle Cloud Infrastructure. The WebLogic domain contains a couple Java applications and a datasource that we'll migrate without having to modify the underlying configuration. 
 
 Attached below is a sample architecture of the final solution:
 ![](./images/Architecture.png)
 
-**The entire process may take 3 hours to complete, including provisioning time.**
+Estimated Workshop Time:  3 hours
 
-## Objective
+### Objectives
 
 Perform the end-to-end migration of a local WebLogic domain to Oracle Cloud Infrastructure using provisioning with the OCI Marketplace.
 
@@ -23,10 +22,8 @@ Perform the end-to-end migration of a local WebLogic domain to Oracle Cloud Infr
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, July 30 2020
+ - **Last Updated By/Date** - Kay Malcolm, August 2020
+
 
 ## See an issue?
-
-Please submit feedback using this <a href="https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1" target="_blank">form</a>. 
-
-Please include the <em>workshop name</em>, <em>lab</em> and <em>step</em> in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the <em>Feedback Comments</em> section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
