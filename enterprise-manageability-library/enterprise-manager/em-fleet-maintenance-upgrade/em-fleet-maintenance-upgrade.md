@@ -1,7 +1,11 @@
 # Automated Database Upgrade at Scale with Fleet Maintenance
 ## Introduction
 
-### Objectives
+In this lab you will upgrade your Oracle Database Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance.
+
+Estimated Lab Time: 75 minutes
+
+### About Fleet Maintenance
 
 Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby.
 
@@ -12,29 +16,28 @@ Benefits with Fleet Maintenance:
 - Ability to schedule/retry/suspend/resume.
 - Database patching across different infrastructure including engineered systems like Exadata
 
-  ![](images/em-fleet-maintenance-overview-1.png " ")
+  ![](images/em-fleet-maintenance-overview-1.png " "
 
-### Background
-The estimated time to complete the workshop is 75 minutes as further detailed below.
+### Prerequisites
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Environment Setup
+- EM Instance Public IP address
+- SSH Private Key to access the host via SSH
+- OMS Console URL: *``https://<Replace with your EM13c VM Instance Public IP>:7803/em``*.
+    - e.g: *https://111.111.111.111:7803/em*  
+- OMS super-user Credentials:
+      - Username: **sysman**
+      - password: **welcome1**
+  
+### Lab Timing (Estimated)
 
 | Step No. | Feature                                                   | Approx. Time | Details                                                                                                              | Value Proposition |
 |----------------------|-----------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                            | 10 minutes  | Analyze the database estate using Software Standardization.                                                          |                   |
 | 2                    | Oracle Database Upgrade with Fleet Maintenance | 1hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
 
-### Prerequisites
-- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have completed the **Prerequisites** and reviewed all items shown in the Contents menu on the right up to **Lab 1**.  
-- This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
-
-Prior to starting, you will need:
-- EM Instance Public IP address
-- SSH Private Key to access the host via SSH
-- OMS Console URL: *``https://<Replace with your EM13c VM Instance Public IP>:7803/em``*.
-    - e.g: *https://111.111.111.111:7803/em*
-- OMS super-user Credentials:
-    - Username: **sysman**
-    - password: **welcome1**
 
 #### Login to Host using SSH Key based authentication
 Refer to [Environment Setup](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
@@ -50,7 +53,7 @@ Log into your Enterprise Manager VM using the Public IP of your EM instance and 
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-## Step 0: Running your lab
+## **Step 0**: Running your lab
 
 1. Update the Named Credentials with your SSH Key
 
@@ -531,7 +534,7 @@ exit</copy>
 
 ### Summary
 
-This completes Step 2. In this section, you learned how to perform the following:
+This completes this lab. In this lab, you learned how to perform the following:
 
   - Create Oracle Database Software Gold Image
   - Subscribe Database to Gold Image
@@ -556,6 +559,7 @@ Thank you!
 ## Acknowledgements
 * **Author** - Shefali Bhargava, Oracle Enterprise Manager Product Management
 * **Adapted for Cloud by** -  Rene Fontcha, Oracle Enterprise Manager Sales Engineering
-* **Last Updated By/Date** - Rene Fontcha, July 2020
+* **Last Updated By/Date** - Kay Malcolm, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

@@ -11,19 +11,15 @@ Join Oracle's ***Wim Coekaerts***, *senior vice president of software developmen
 The EM Workshop is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
 - The EM Workshop VM comes preinstalled with Enterprise Manager 13.3 and Oracle Database targets - 18.3, 18.8 and 19.7
 - Easy and quick to deploy - Everything starts automatically in under 20 minutes
-- The EM Workshop comes with step-by-step instructions that walks the user through multiple use cases for the areas summarized below and further detailed for each lab listed on the right:
+- The EM Workshop comes with step-by-step instructions that walks the user through multiple use cases for the areas summarized below and further detailed for each lab (4-8) listed on the right:
 
-### 1. Oracle Database Lifecycle Management including configuration and compliance, provisioning, patching and upgrades
+###  Oracle Database Lifecycle Management including configuration and compliance, provisioning, patching and upgrades
 - Database Lifecycle Management Pack
 - Cloud Management Pack for Oracle Database
 
-### 2. Oracle Database Performance Management including overall DB performance, SQL analysis, real-time operation monitoring, and tuning
-- Oracle Diagnostics Pack for Oracle Database
-- Tuning Pack for Oracle Database
-- Real Application Testing
+## Additional Workshop Supported Use Cases
 
-## Workshop Supported Use Cases
-
+For additional use cases, visit [LiveLabs](http://bit.ly/golivelabs).
 ### 1. Database Fleet Maintenance
 * Detect Configuration Pollution
 * Patch a Database target using a Gold Image
