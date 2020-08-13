@@ -26,7 +26,8 @@ The estimated time to complete all the lab activities is approximately 60 minute
 Prior to starting, you will need:
 - EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: *``https://<Replace with your EM13c VM Instance Public IP>:7803/em``*. e.g *http://158.101.124.208:7803/em*
+- OMS Console URL: *``https://<Replace with your EM13c VM Instance Public IP>:7803/em``*.
+    - e.g: *https://111.111.111.111:7803/em*
 - OMS super-user Credentials:
     - Username: **sysman**
     - password: **welcome1**
