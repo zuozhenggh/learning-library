@@ -16,7 +16,7 @@ Benefits with Fleet Maintenance:
 - Ability to schedule/retry/suspend/resume.
 - Database patching across different infrastructure including engineered systems like Exadata
 
-  ![](images/em-fleet-maintenance-overview-1.png " "
+  ![](images/em-fleet-maintenance-overview-1.png " ")
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -30,7 +30,7 @@ Benefits with Fleet Maintenance:
 - OMS super-user Credentials:
       - Username: **sysman**
       - password: **welcome1**
-  
+
 ### Lab Timing (Estimated)
 
 | Step No. | Feature                                                   | Approx. Time | Details                                                                                                              | Value Proposition |
@@ -533,9 +533,7 @@ exit</copy>
   ![](images/7626fd3264e4a514fde576ecd9369456.png " ")
 
 ### Summary
-
 This completes this lab. In this lab, you learned how to perform the following:
-
   - Create Oracle Database Software Gold Image
   - Subscribe Database to Gold Image
   - Deploy Gold Image to Database Host
@@ -549,7 +547,6 @@ This completes this lab. In this lab, you learned how to perform the following:
 Thank you!
 
 ## Want to Learn More?
-
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
   - [Oracle Enterprise Manager Fleet Maintenance](https://www.oracle.com/manageability/enterprise-manager/technologies/fleet-maintenance.html)
   - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
@@ -557,9 +554,12 @@ Thank you!
   - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
 
 ## Acknowledgements
-* **Author** - Shefali Bhargava, Oracle Enterprise Manager Product Management
-* **Adapted for Cloud by** -  Rene Fontcha, Oracle Enterprise Manager Sales Engineering
-* **Last Updated By/Date** - Kay Malcolm, August 2020
+- **Author** - Shefali Bhargava, Oracle Enterprise Manager Product Management
+* **Adapted for Cloud by** -  Rene Fontcha, Master Principal Platform Specialist, NA Technology
+- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Refer to the FAQ at the bottom of the right-hand menu. While you cannot use the normal Oracle Support channel to raise a ticket for getting technical support, the vibrant [Enterprise Manager Community Forum](https://community.oracle.com/community/groundbreakers/enterprise_manager) stands to help.
+
+## Have a feedback?
+We would love to hear from you. Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

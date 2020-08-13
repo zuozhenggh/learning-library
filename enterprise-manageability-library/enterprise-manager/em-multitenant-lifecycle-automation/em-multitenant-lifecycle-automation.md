@@ -7,7 +7,7 @@ Estimated Lab Time: 60 minutes
 
 ### Objectives
 
-The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database. 
+The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database.
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -462,7 +462,6 @@ A Pluggable Database Pool consists of a set of Container Databases on which PDBs
   ![](images/532db10bbaab85fcdd83f245bd317a6b.jpg " ")
 
 ### Service Templates
-
 1. On the EM Console, go to **Setup**, then **Cloud**, then **Database**. Select Pluggable Database from the drop-down menu. And then click on **Service Templates from you left menu.**
 
   ![](images/47baba2a1e7567bfb0b5f89429a7831d.jpg " ")
@@ -479,16 +478,18 @@ There are two service templates pertaining to Pluggable Database
 That concludes this lab.
 
 ## Want to Learn More?
-
 - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
 - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
 - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
 - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
 
 ## Acknowledgements
-* **Author** - Pankaj Chandiramani, Oracle Enterprise Manager Product Management
-* **Adapted for Cloud by** -  Rene Fontcha, Oracle Enterprise Manager Sales Engineering
-* **Last Updated By/Date** - Kay Malcolm, August 2020
+- **Author** - Pankaj Chandiramani, Oracle Enterprise Manager Product Management
+* **Adapted for Cloud by** -  Rene Fontcha, Master Principal Platform Specialist, NA Technology
+- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Refer to the FAQ at the bottom of the right-hand menu. While you cannot use the normal Oracle Support channel to raise a ticket for getting technical support, the vibrant [Enterprise Manager Community Forum](https://community.oracle.com/community/groundbreakers/enterprise_manager) stands to help.
+
+## Have a feedback?
+We would love to hear from you. Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
