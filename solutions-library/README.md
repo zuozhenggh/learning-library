@@ -1,3 +1,5 @@
+[![](../common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
+
 # Oracle Solutions Learning Library
 
 Welcome! 
