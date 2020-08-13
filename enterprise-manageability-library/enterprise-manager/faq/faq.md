@@ -1,11 +1,9 @@
-
 # Frequently Asked Questions (FAQ)
 ​
 ## Introduction
 The following are Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs.
 
 ## **Contents**
-​
 1. How to Check Status of Oracle Management Service, Other Services and Agent
 2. How to be root on the workshop instance
 3. How to Locate EMCLI on Your Instance
@@ -23,7 +21,6 @@ The following are Frequently Asked Questions (FAQ) you may refer to when trouble
 15. Additional information on Oracle Cloud Infrastructure Setup
 ​
 ### **1. How to Check Status of Oracle Management Service, Other Services and Agent**
-​
 Sudo to user oracle; As user *oracle* run the emctl status commands as shown:
 ​
 ````
@@ -32,7 +29,6 @@ emctl status agent</copy>
 ````
 
 ### **2. How to be root on the workshop instance**
-​
 You cannot login or su to root but should you need to execute a command as root, then run *sudo su command* as user *opc*. For example:
 ​
 ````
@@ -40,11 +36,9 @@ You cannot login or su to root but should you need to execute a command as root,
 ````
 ​
 ### **3. How to Locate emcli on Your Instance**
-​
 Upon successful login via sudo as "oracle", environment variables are set and emcli is present in your path. The emcli utility is located at */u01/app/em13c/middleware/bin/emcli*
 ​
 ### **4. Oracle Management Server (OMS) / WebTier is Down**
-​
 Restart the OMS as user *oracle*. Run *sudo su - oracle* first if you're not already connected as "oracle", then run:
 ​
 ````
@@ -58,11 +52,9 @@ or
 ````
 ​
 ### **5. Unable to Connect to Oracle Management Server (OMS)  Website**
-​
 Make sure you are on a public network or Oracle Cloud Network Access VPN. Verify services are up and running as shown in line item 1 above. Restart services as shown in line item 3 as needed.
 ​
 ### **6. Restart an Agent Not Responding**
-​
 Restart the agent as user *oracle*. Run *sudo su - oracle* first if you're not already connected as "oracle", then run:
 ​
 ````
@@ -70,16 +62,14 @@ Restart the agent as user *oracle*. Run *sudo su - oracle* first if you're not a
 ````
 ​
 ### **7. How to Stop all Enterprise Manager (EM) Services Before Stopping an OCI instance** ##
-​
-Before stopping an OCI instance, stop all EM services for a clean shutdown as user *oracle*. Run *sudo su - oracle* first if you're not already connected as "oracle", then run:
+​Before stopping an OCI instance, stop all EM services for a clean shutdown as user *oracle*. Run *sudo su - oracle* first if you're not already connected as "oracle", then run:
 ​
 ````
 <copy>. ./home/oracle/stop_all.sh</copy>
 ````
 ​
 ### **8. Steps To Setup VCN for FastConnect**
-​
-If (and only if) you are using a private subnet/FastConnect with your VCN**, there are a few additional steps required to create the Service gateway, define the routing rule and egress rules.
+​If (and only if) you are using a private subnet/FastConnect with your VCN**, there are a few additional steps required to create the Service gateway, define the routing rule and egress rules.
 ​
 1.  Create the Service Gateway and “All \<RegionCode\> Services in Oracle Services Network”, where \<regioncode\> refers to the OCI region of your EM compartment.
 ​
@@ -94,8 +84,7 @@ If (and only if) you are using a private subnet/FastConnect with your VCN**, the
 ![](images/71d59dba104594e75e69b7e78615a796.png " ")
 ​
 ### **9. Licensing Terms for the Enterprise Manager Marketplace Instance**
-​
-This workshop environment is solely intended for non-production use to specifically explore the use cases outlined in the workshop instructions as posted in the Oracle Licensing Library.  All licensed Oracle Enterprise Manager, Oracle Linux and Oracle Database products included in the workshop environment may only be used expressly for workshop purposes and for the duration of the workshop, and furthermore, licensed Enterprise Manager Packs may only be used against the target environments that are included in the base workshop image, for the duration of the workshop.
+​This workshop environment is solely intended for non-production use to specifically explore the use cases outlined in the workshop instructions as posted in the Oracle Licensing Library.  All licensed Oracle Enterprise Manager, Oracle Linux and Oracle Database products included in the workshop environment may only be used expressly for workshop purposes and for the duration of the workshop, and furthermore, licensed Enterprise Manager Packs may only be used against the target environments that are included in the base workshop image, for the duration of the workshop.
 ​
 In order to use the functionality, the following Licensed Packs have been enabled in the Enterprise Manager workshop image:
 ​
@@ -109,16 +98,13 @@ For Database Performance Management On-premises
 -	Real Application Testing
 ​
 ### **10. How to Reset user *oracle* password or if Named Credentials for user oracle is not working**
-​
-Reset the password for user *oracle*. As user *opc*, run the following
+​Reset the password for user *oracle*. As user *opc*, run the following
 
 ````
 <copy>sudo su password oracle</copy>
 ````
 
-If *oracle* OS user password is updated, the Named Credential for *ORACLE* and also *ORACLE_HOST* needs to be updated. This can be done on the command line as user *oracle*
-
-Run *sudo su - oracle* first if you're not already connected as "oracle", then run:
+If *oracle* OS user password is updated, the Named Credential for *ORACLE* and also *ORACLE_HOST* needs to be updated. This can be done on the command line as user *oracle*. Run *sudo su - oracle* first if you're not already connected as "oracle", then run:
 
 ````
 <copy>emcli login -username=sysman -password=\<sysman_password\>
@@ -136,19 +122,16 @@ The Named Credential can also be updated via Enterprise Manager UI. On the EM Co
 ![](images/2e38a554bdbc3a68ce7cbfd84a6a3588.png " ")
 
 ### **11. Unable to connect to Enterprise Manager Console**
-​
-Make sure you are on a public network and not connected to a restricted corporate intranet or corporate wifi. Also ensure all web services are up and running by logging into your instance via SSH as indicated in this guide.
+​Make sure you are on a public network and not connected to a restricted corporate intranet or corporate wifi. Also ensure all web services are up and running by logging into your instance via SSH as indicated in this guide.
 ​
 ### **12. Unable to Select Shape for Creating an instance**
-​
-If you are seeing an Authorization Error while trying to Select Shape to Create an Instance:
+​If you are seeing an Authorization Error while trying to Select Shape to Create an Instance:
 1. From the Hamburger Menu on the Top Left of the Oracle Cloud Home Page, Go to Compute->Instances
 2. Select the Compartment available to you in the Left Compartment Menu (not root)
 3. Now that the compartment is set-up for new user, re-do the steps to create the Enterprise Manager Workshop from the Listing Link
 ​
 ### **13. While trying to launch the EM instance: Unable to accept Terms of Use.**
-​
-Make sure your email has been verified. Log out and Log back in and restart from the listing link. Also, verify you are using the same region and compartment that was assigned to you.
+​Make sure your email has been verified. Log out and Log back in and restart from the listing link. Also, verify you are using the same region and compartment that was assigned to you.
 ​
 ### **14. Additional information on Oracle Cloud Infrastructure Pricing**
 <https://www.oracle.com/cloud/pricing.html>
