@@ -75,7 +75,7 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 
 7. File should be visible under Objects. Click Action icon and click **Create Pre-Authenticated Request**. This will create a web link that can be used to access the object without requiring any additional authentication.
 
-  ![](images/PreAuth1.PNG " ")
+  ![](images/PreAuth1.png " ")
 
 8. Fill out the dialog box:
 
@@ -91,7 +91,7 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 10. Click **Copy** to copy the link
 
   **NOTE:** The link must be copied and saved once the window is closed the link can not be retrieved again.
-  ![](images/PreAuth2.PNG " ")
+  ![](images/PreAuth2.png " ")
 
 11. Click **Close**
 
