@@ -79,7 +79,7 @@ For Database Performance Management On-premises
 ````
 <copy>sudo su password oracle</copy>
 ````
-If *oracle* OS user password is updated, the Named Credential for *ORACLE* and also *ORACLE_HOST* needs to be updated. This can be done on the command line as user *oracle*. Run *sudo su - oracle* first if you're not already connected as "oracle", then run:
+If *oracle* OS user password is updated, the Named Credential for *ORACLE* and also *ORACLE_HOST* needs to be updated. This can be done on the command line as user *oracle*. Run *sudo su - oracle* first if you're not already connected as *oracle*, then run:
 ````
 <copy>emcli login -username=sysman -password=\<sysman_password\>
 emcli modify_named_credential -cred_name=oracle -attributes="HostPassword:\<oracle_password\>"
