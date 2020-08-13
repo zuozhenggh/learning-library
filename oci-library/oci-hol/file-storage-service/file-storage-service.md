@@ -1,6 +1,6 @@
 # File System Storage Service
 
-## **Introduction**
+## Introduction
 
 Welcome to the Cloud Storage (File System Storage) self-paced lab from Oracle!
 

@@ -19,22 +19,22 @@ You will also clone a GitHub repository.
 * Your updated `msdataworkshop.properties` file.
 
 ## **STEP 1**: Copy your msdataworkshop.properties to your root directory
-In Lab 1 you downloaded a copy of the `msdataworkshop.properties` file and you updated it with all of the information generated while setting up OCI, OKE, and ATP. Now you will use your Cloud Shell to copy the contents of your local file into a msdataworkshop.properties file that you will create in your root directory (~/) so that this information can be used within the Cloud Shell in subsequent steps.  
+In Lab 1 you downloaded a copy of the `msdataworkshop.properties` file and you updated it with all of the information generated while setting up OCI, OKE, and ATP. Now you will use your Cloud Shell to copy the contents of your local file into a `msdataworkshop.properties` file that you will create in your root directory (~/) so that this information can be used within the Cloud Shell in subsequent steps.  
 
-1. Create an empty msdataworkshop.properties file in your root directory.
+1. Create an empty `msdataworkshop.properties` file in your root directory.
 
   ```
   <copy>cd ~ ; touch msdataworkshop.properties</copy>
 
   ```
-2. Open the msdataworkshop.properties file that you just created in root:
+2. Open the `msdataworkshop.properties` file that you just created in root:
 
   ```
   <copy>vi msdataworkshop.properties</copy>
 
   ```
 
-3. Go to your text editor and copy the contents of your local msdataworkshop.properties file. Be sure to select all content from the file.
+3. Go to your text editor and copy the contents of your local `msdataworkshop.properties` file. Be sure to select all content from the file.
 
 4. In vi, use the Insert key at the beginning of the file and then paste the content into the empty properties file. Make sure that you copied everything.
 
@@ -45,8 +45,8 @@ To work with application code, you need to download a GitHub repository using
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
   ```
- <copy>cd ~ ; curl -sL https://tinyurl.com/y5rrqh37 --output master.zip ; unzip master.zip ; rm master.zip</copy>
-   ```
+ <copy>cd ~ ; curl -sL https://tinyurl.com/y4wyehcw --output master.zip ; unzip master.zip ; rm master.zip</copy>
+  ```
 
   You should now see **msdataworkshop-master** in your root directory.
 
@@ -130,26 +130,24 @@ In order to divide and isolate cluster resources, you will create a cluster
 3.  Issue the `kubectl get services --all-namespaces` command and notice the services it installs.  
 The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. If your jaeger-query state is pending, and you do not see the External-IP address, you may need to execute this command again.
 
-   ```
-   <copy>kubectl get services --all-namespaces</copy>
+     ```
+     <copy>kubectl get services --all-namespaces</copy>
+     ```
 
-   ```
-
-      ![demo-erd.png](images/jaegerservice.png " ")
+    ![](images/jaegerservice.png " ")
 
 
- 4. Add the jaeger-query EXTERNAL-IP:port to your `msdataworkshop.properties` file.
+ 4. Add the jaeger-query EXTERNAL-IP:PORT to your `msdataworkshop.properties` file.
 
      Use your Cloud Shell and repeat the process from STEP 1 to modify the `msdataworkshop.properties` file in your root directory.
 
      ```
      <copy>vi msdataworkshop.properties</copy>
-
      ```
 
      ![](images/jaeger_address_prop.png)
 
-     *Make sure that you add the jaeger-query EXTERNAL-IP address and NOT the CLUSTER-IP.*
+     *Make sure that you add the jaeger-query EXTERNAL-IP address and NOT the CLUSTER-IP and that you prefix with `http://`.*
 
      Complete the insert, save your changes, and close vi with the commands `ESC` and `:x` and `ENTER`
 
@@ -168,9 +166,9 @@ The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. 
 
 6.  Verify that the jaeger-collector service `tracing.host` and `tracing.port` are the same in the `microprofile-config.properties` files. The jaeger-collector service is referenced in two files:
 
-  - `$MSDATAWORKSHOP_LOCATION'/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties`
+   - `$MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties`
 
- - `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties`
+   - `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties`
 
     Open each file and verify that **tracing.host**=`jaeger-collector.msdataworkshop` and **tracing.port**=`14268`.
 
@@ -187,7 +185,7 @@ The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. 
     folder.
 
     ```
-    <copy>$MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
     ```
 
 2.  Run `maven` to build the package using the following command. Since this is
@@ -343,10 +341,11 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
-* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+
