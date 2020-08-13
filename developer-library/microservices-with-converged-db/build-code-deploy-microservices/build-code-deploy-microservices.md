@@ -34,7 +34,7 @@ In Lab 1 you downloaded a copy of the `msdataworkshop.properties` file and you u
 
   ```
 
-3. Go to your text editor and copy the contents of your local `msdataworkshop.properties file`. Be sure to select all content from the file.
+3. Go to your text editor and copy the contents of your local `msdataworkshop.properties` file. Be sure to select all content from the file.
 
 4. In vi, use the Insert key at the beginning of the file and then paste the content into the empty properties file. Make sure that you copied everything.
 
@@ -45,7 +45,7 @@ To work with application code, you need to download a GitHub repository using
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
   ```
- <copy>cd ~ ; curl -sL https://tinyurl.com/y5rrqh37 --output master.zip ; unzip master.zip ; rm master.zip</copy>
+ <copy>cd ~ ; curl -sL https://tinyurl.com/yyzwwdpn --output master.zip ; unzip master.zip ; rm master.zip</copy>
    ```
 
   You should now see **msdataworkshop-master** in your root directory.
@@ -348,3 +348,4 @@ You may now proceed to the next lab.
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+
