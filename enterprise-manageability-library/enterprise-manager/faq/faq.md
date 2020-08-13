@@ -52,8 +52,8 @@ Restart the agent as user *oracle*. Run *sudo su - oracle* first if you're not a
 <copy>. ./home/oracle/stop_all.sh</copy>
 ````
 ### **8. Steps To Setup VCN for FastConnect**
-​If (and only if) you are using a private subnet/FastConnect with your VCN**, there are a few additional steps required to create the Service gateway, define the routing rule and egress rules.
-1.  Create the Service Gateway and “All \<RegionCode\> Services in Oracle Services Network”, where \<regioncode\> refers to the OCI region of your EM compartment.
+​If (and only if) you are using a private subnet/FastConnect with your **VCN**, there are a few additional steps required to create the Service gateway, define the routing rule and egress rules.
+1.  Create the Service Gateway and ``“All <RegionCode> Services in Oracle Services Network”, where <regioncode> `` refers to the OCI region of your EM compartment.
 ​
 ![](images/7a85046304e54181a1977a436d95ecf8.png " ")
 2.  Add a new Route Rule for the Service Gateway you just created.
