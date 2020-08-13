@@ -9,7 +9,7 @@ Estimated Lab Time:  25 minutes
 For more information about Terraform and Resource Manager, please see the appendix below.
 
 ### Objectives
-In this lab, you'll:
+In this lab, you will:
 * Use Resource Manager to quickly setup a compute instance and VCN
 * Login to your compute instance
 * Confirm your Oracle Database 19c is up and running
@@ -24,16 +24,13 @@ This lab assumes you have:
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [workshop_v2.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/aUFtqKFdyNXDRXcNFSln8DxqfmJLCRwn_ClZhjvFdb8/n/c4u03/b/labfiles/o/workshop_v2.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
-
+    - [livelabs-db19ccompute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/R_vJuMUIrsFofKYcTuJOsDiXl2xdSjHNQU7yjQPtnh4/n/c4u03/b/labfiles/o/livelabs-db19ccompute-0812.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 2.  Save in your downloads folder.
 3.  Login to your Oracle Cloud account.
 4.  Click the **Create a Stack** tile on the homepage.  You may also get to Resource Manager by clicking on the Hamburger **Menu** -> **Solutions and Platform** -> **Resource Manager**.
    ![Create a stack](images/db19c-freetier-step1.png " ")
-
-5.  Click the **Browse** link and select the zip file (workshop_v2.zip) that you downloaded. Click **Open**.
+5.  Click the **Browse** link and select the zip file (livelabs-db19ccompute-0812.zip) that you downloaded. Click **Open**.
    ![](./images/db19c-freetier-step3-2.png " ")
-
 6. Enter the name of your choice.  We suggest livelabs19c.  Click **Next**.
    ![Create a stack](images/workshop-001.png " ")
 7. Accept the region and select your compartment.  Select an **availabilty domain** from the drop down.
@@ -57,6 +54,8 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
     ![Create a stack](images/workshop-009.png " ")
 4. Inspect the log, you will notice that 8 resources were created including the compute instance.
    ![Create a stack](images/workshop-010.png " ")
+
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
 ## **STEP 3**: Gather compute instance details
 1. Go to the hamburger menu (in the top left corner) and click **Compute** -> **Instances**
@@ -92,6 +91,8 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 5.  When prompted, answer **yes** to continue connecting.
 6.  Continue to the *next Step* on the left hand menu.
 
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
 2.  On the instance homepage, find the Public IP addresss for your instance.
@@ -108,6 +109,8 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     *Note: The angle brackets <> should not appear in your code.*
 
 4.  After successfully logging in, proceed to the *next Step* on the left hand menu.
+
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
 ### Windows using Putty
 
@@ -138,6 +141,8 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 8. Click Open to begin your session with the instance.
 
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+
 ## **STEP 5**: Verify the ORCL database is up
 
 Once you deploy your compute instance, tail the log to determine when the database has been configured and is available for use.
@@ -150,6 +155,9 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ![](./images/workshop-014.png " ")
 
 2.  After *approximately 20 minutes*, you will see a notice that says the database setup is complete.  Please see troubleshooting tips if you have issues here.
+
+    ![](./images/build-complete.png " ")
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
 3. Run the following command to verify the database with the SID **ORCL** is up and running
 
@@ -169,18 +177,48 @@ Once you deploy your compute instance, tail the log to determine when the databa
 
     ![](./images/pseftns.png " ")
 
-5.  Connect to the Database using SQL*Plus as the **oracle** user.
-
-    ````
+5. Switch to the oracle user.
+      ````
     <copy>
     sudo su - oracle
-    sqlplus system/Ora_DB4U@localhost:1521/orclpdb
-    exit
     </copy>
     ````
 
-    ![](./images/sqlplus_login_orclpdb.png " ")
+    ![](./images/sudo-oracle.png " ")
 
+6.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
+    ````
+    <copy>
+    . oraenv
+    </copy>
+    ORCL
+    ````
+    ![](./images/oraenv.png " ")
+
+7.  Login using SQL*Plus as the **oracle** user.  
+
+    ````
+    <copy>
+    sqlplus system/Ora_DB4U@localhost:1521/orclpdb
+    </copy>
+    ````
+    ![](./images/sqlplus.png " ")
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+
+7.  Exit the sqlplus session and switch back to the opc user.  Verify that you are now the opc user.
+
+    ```` 
+    SQL> <copy>exit
+    </copy>
+    ````
+
+    ```` 
+    [oracle@server ~]$ <copy>exit
+    whoami
+    </copy>
+    ````
+    ![](./images/whoami.png " ")
+    
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
 You may now *proceed to the next lab*.  
@@ -200,25 +238,25 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 ## Appendix: Troubleshooting Tips
 
 If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
-- Availability Domain Mismatch
-- Limits Exceeded
-- Invalid public key
-- Database Creation stuck at 3x %
-- Can't login to instance
-  
-### Issue 1: Availability Domain Mismatch
-![](images/error-ad-mismatch.png  " ")
+1. Can't login to instance
+2. Invalid public key
+3. Limits Exceeded
+4. Database Creation stuck at 3x %
+5. Apply job is stuck in provisioning state
 
-#### Issue #1 Description
-When creating a stack and using an existing VCN, the availability domain and the subnet must match otherwise the stack errors.  
+### Issue 1: Can't login to instance
+Participant is unable to login to instance
 
-#### Fix for Issue #1
-1.  Click on **Stack**-> **Edit Stack** -> **Configure Variables**.
-2.  Scroll down to the network definition.
-3.  Make sure the Availability Domain number matches the subnet number.  E.g. If you choose AD-1, you must also choose subnet #1.
-4.  Click **Next**
-5.  Click **Save Changes**
-6.  Click **Terraform Actions** -> **Apply**
+#### Tips for fixing Issue #1
+There may be several reasons why you can't login to the instance.  Here are some common ones we've seen from workshop participants
+- Incorrectly formatted ssh key (see above for fix)
+- User chose to login from MAC Terminal, Putty, etc and the instance is being blocked by company VPN (shut down VPNs and try to access or use Cloud Shell)
+- Incorrect name supplied for ssh key (Do not use sshkeyname, use the key name you provided)
+- @ placed before opc user (Remove @ sign and login using the format above)
+- Make sure you are the oracle user (type the command *whoami* to check, if not type *sudo su - oracle* to switch to the oracle user)
+- Make sure the instance is running (type the command *ps -ef | grep oracle* to see if the oracle processes are running)
+- Not enough memory for instance (see Issue #4)
+
 
 ### Issue 2: Invalid public key
 ![](images/invalid-ssh-key.png  " ")
@@ -245,6 +283,8 @@ When creating a stack your ability to create an instance is based on the capacit
 #### Fix for Issue #3
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
 
+*Please ensure that you are NOT running this in the **Always Free** Tier. This workshop does not run on the Always Free tier, you must have available cloud credits.  Go to **Governance** -> **Limits, Quotas and Usage,** select **compute**, ensure that you have **more than** the micro tier available.  If you have only 2 micro computes, your account has transitioned to an Always Free.  This means that the promotional period of 30 days has expired or you have run out of credits, this workshop will NOT run.*
+
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
 3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
@@ -259,26 +299,22 @@ If you have other compute instances you are not using, you can go to those insta
 12. Click **Save Changes**
 13. Click **Terraform Actions** -> **Apply**
 
-### Issue 4: Availability Domain Mismatch
+### Issue 4: Database Creation stuck at 3x%
 When tailing the log, the database creation seems stuck.
 
 #### Issue #4 Description
 Database creation requires at least 30GB of memory.  
 
 #### Fix for Issue #4
-1.  Click on Compute -> Instance and verify that your instance created was VMStandard.E2.4 and higher.  If you chose 2.2, recreate your instance.  The instance has run out of memory and won't be able to create
+1.  Click on Compute -> Instance and verify that your instance created was VMStandard.E2.4 and higher.  If you chose 2.2 or a smaller shape, the instance creation will fail, you will need to rerun your stack and recreate your instance.  The instance has run out of memory and won't be able to create
 2.  A known issue has been identified that the create script may take longer, if it has been over 2 hours, please submit an issue.
-
-### Issue 5: Can't login to instance
-Participant is unable to login to instance
-
-#### Tips for fixing Issue #4
-There may be several reasons why you can't login to the instance.  Here are some common ones we've seen from workshop participants
-- Incorrectly formatted ssh key (see above for fix)
-- User chose to login from MAC Terminal, Putty, etc and the instance is being blocked by company VPN (shut down VPNs and try to access or use Cloud Shell)
-- Incorrect name supplied for ssh key (Do not use sshkeyname, use the key name you provided)
-- @ placed before opc user (Remove @ sign and login using the format above)
   
+### Issue 5: Apply job is stuck in provisioning state
+When the apply job is running certain browsers may not reflect the correct state
+
+#### Fix for Issue #5
+Reload your browser
+
 
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management

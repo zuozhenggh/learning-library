@@ -199,11 +199,10 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 2.  If you didn't jot down your comput instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP address for your instance.
 4.  Enter the command below to login to your instance.    
-  ````
-  ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-  ````
-
-  ![](./images/em-cloudshell-ssh.png " ")
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
+    ![](./images/em-cloudshell-ssh.png " ")
 
 5.  When prompted, answer **yes** to continue connecting.
 6.  Continue to Step 5 on the left hand menu.
@@ -213,10 +212,10 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 2.  On the instance homepage, find the Public IP address for your instance.
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
-  ````
-  ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-  ````
-  ![](./images/em-mac-linux-ssh-login.png " ")
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
+    ![](./images/em-mac-linux-ssh-login.png " ")
 
 4.  After successfully logging in, you may *proceed to the next lab*
 
@@ -346,6 +345,8 @@ If you have other compute instances you are not using, you can go to those insta
 
 #### Issue #4 Description
 When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy. 
+
+*Please ensure that you are NOT running this in the **Always Free** Tier. This workshop does not run on the Always Free tier, you must have available cloud credits.  Go to **Governance** -> **Limits, Quotas and Usage,** select **compute**, ensure that you have **more than** the micro tier available.  If you have only 2 micro computes, your account has transitioned to an Always Free.  This means that the promotional period of 30 days has expired or you have run out of credits, this workshop will NOT run.*
 
 #### Fix for Issue #4
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.

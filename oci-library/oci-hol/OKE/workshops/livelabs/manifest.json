@@ -14,7 +14,7 @@
         },
         {
             "title": "Lab 2: Deploy OKE Cluster",
-            "filename": "../../OKE.md"
+            "filename": "../../oke/oke.md"
         }
     ]
 }

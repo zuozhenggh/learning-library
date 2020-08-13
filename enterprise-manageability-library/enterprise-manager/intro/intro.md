@@ -1,17 +1,17 @@
-# Oracle Enterprise Manager Workshop Introduction and Overview
+# Introduction
 
-## Introduction to Oracle Enterprise Manager
+## About Oracle Enterprise Manager
 Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems
 
 Join Oracle's ***Wim Coekaerts***, *senior vice president of software development*, as he describes key innovations delivered in Oracle Enterprise Manager to help customers easily migrate their databases to the cloud and simplify management of hybrid IT environments
 
 [](youtube:MZJQx6MuHA0)
 
-## Enterprise Manager Workshop Description
+## Workshop Description
 The EM Workshop is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
 - The EM Workshop VM comes preinstalled with Enterprise Manager 13.3 and Oracle Database targets - 18.3, 18.8 and 19.7
 - Easy and quick to deploy - Everything starts automatically in under 20 minutes
-- The EM Workshop comes with step-by-step instructions that walks the user through multiple use cases for the areas summarized below and further detailed for each lab (4-8) listed on the right:
+- The EM Workshop comes with step-by-step instructions that walks the user through multiple use cases for the areas summarized below and further detailed for each lab listed on the right:
 
 ### 1. Oracle Database Lifecycle Management including configuration and compliance, provisioning, patching and upgrades
 - Database Lifecycle Management Pack
@@ -32,6 +32,7 @@ The EM Workshop is a fully functional Oracle Enterprise Manager environment conf
 * Upgrade Oracle DB Software at scale with minimal downtime
     - All Pluggable Databases in that Container Database will automatically get upgraded
     - Rollback and cleanup
+  
 ### 2. Database Lifecycle Automation
 - Provision a new PDB and use Post Scripts for customization
 - Unplug a PDB
@@ -73,6 +74,7 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 ## Acknowledgements
 
 - **Authors/Contributors** - Dave Le Roy, Rene Fontcha, Pankaj Chandiramani, Shefali Bhargava, Björn Bolltoft, Harish Niddagatta
-- **Last Updated By/Date** - Rene Fontcha, July 2020
+- **Last Updated By/Date** - Kay Malcolm, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

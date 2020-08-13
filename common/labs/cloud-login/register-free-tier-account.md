@@ -30,7 +30,7 @@ In this section, you will fill out the registration form at [oracle.com/cloud/fr
     * You can choose almost anything for your Cloud Account Name. Remember what you wrote. You'll need this name later to sign in.
     * Click **Enter Password**.
 
-3.  If your email wasn't recognized or you're using a different email address, you'll need to provide additional information.
+3.  If your email wasn't recognized or you're using a different email address, you will need to provide additional information.
     * Provide a mobile number and click **Next: Verify Mobile Number**. In a few seconds, you should receive a verification code through SMS-text. Enter this code in the appropriate field and click **Verify**.
     * Click **Add Credit Card Details**. You will NOT be charged unless you elect to upgrade the account later. Enter the billing information, card details, and click **Finish**.
 

@@ -13,7 +13,7 @@ Resource Manager is an Oracle Cloud Infrastructure service that allows you to au
 [](youtube:udJdVCz5HYs)
 
 ### Objectives
-In this lab, you'll:
+In this lab, you will:
 * Setup a VCN (Virtual Compute Network) using Resource Manager
 * Setup a compute instance using Resource Manager
 * Login to your compute instance
