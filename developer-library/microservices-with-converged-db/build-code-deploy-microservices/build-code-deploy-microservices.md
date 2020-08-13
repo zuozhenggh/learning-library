@@ -45,7 +45,11 @@ To work with application code, you need to download a GitHub repository using
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
   ```
+<<<<<<< HEAD
  <copy>cd ~ ; curl -sL https://tinyurl.com/yyzwwdpn --output master.zip ; unzip master.zip ; rm master.zip</copy>
+=======
+ <copy>cd ~ ; curl -sL https://tinyurl.com/y4wyehcw --output master.zip ; unzip master.zip ; rm master.zip</copy>
+>>>>>>> upstream/master
    ```
 
   You should now see **msdataworkshop-master** in your root directory.
