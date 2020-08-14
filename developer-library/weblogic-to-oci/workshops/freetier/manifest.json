@@ -11,17 +11,17 @@
             "filename": "../../intro/intro.md"
         },
         {
-            "title": "Lab 1: Choose a Path",
+            "title": "Lab 1: Setup an on-premises environment",
             "publisheddate": "07/30/2020",
             "filename": "../../on-prems-env/on-prems-env.md"
         },
         {
-            "title": "Lab 2 Option A: OCI Marketplace stack",
+            "title": "Lab 2 Option A: Setup an on-premises environment with the Workshop Marketplace stack",
             "publisheddate": "07/30/2020",
             "filename": "../../on-prems-env-mp/on-prems-env-mp.md"
         },
         {
-            "title": "Lab 2 Option B: Docker",
+            "title": "Lab 2 Option B: Setup a local (on-premises) environment with Docker",
             "publisheddate": "07/30/2020",
             "filename": "../../on-prems-env-docker/on-prems-env-docker.md"
         },
