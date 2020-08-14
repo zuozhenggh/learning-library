@@ -7,8 +7,8 @@
      },
     {
       "title": "Introduction",
-      "description": "Introduction to Multitenant Database Lifecycle Management Workshop",
-      "filename": "./../../intro/intro-lifecycle.md"
+      "description": "Introduction to Database Performance Management Workshop",
+      "filename": "./../../intro/intro-find-fix-validate.md"
     },
     {
       "title": "Lab 1: Generate SSH Keys",
@@ -22,10 +22,10 @@
       "filename": "./../../setup-compute/setup-compute.md"
     },
     {
-      "title": "Lab 3: Multitenant Database Lifecycle Management",
-      "description": "The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database",
+      "title": "Lab 3: Database Performance Management: Find-Fix-Validate",
+      "description": "The objective is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud",
       "publisheddate": "7/16/2020",
-      "filename": "./../../em-multitenant-lifecycle-automation/em-multitenant-lifecycle-automation.md"
+      "filename": "./../../em-find-fix-validate/em-find-fix-validate.md"
     },
     {
       "title": "Appendix: Frequently Asked Questions (FAQ)",

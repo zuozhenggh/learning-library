@@ -8,17 +8,25 @@ Join Oracle's ***Wim Coekaerts***, *senior vice president of software developmen
 [](youtube:MZJQx6MuHA0)
 
 ## Workshop Description
-The Database Lifecycle Automation is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
+The Automated Database Upgrade at Scale with Fleet Maintenance is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
 - This Workshop VM comes preinstalled with Enterprise Manager 13.3 and Oracle Database targets - 18.3, 18.8 and 19.7
 - It's easy and quick to deploy with everything starting automatically in under 20 minutes
 
 ### Applicable Enterprise Manager Management Packs
-Labs under this workshop are covered by the following Management Packs.
+Labs under this workshop are covered by the following Management Pack.
 - Database Lifecycle Management Pack
-- Cloud Management Pack for Oracle Database
 
 ###  Content
-Oracle Database Lifecycle and Cloud Management including configuration and compliance, provisioning, patching and upgrades:
+Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching and upgrade of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby. The following are covered in this workshop:
+* Detect Configuration Pollution
+* Upgrade Oracle DB Software at scale with minimal downtime
+    - All Pluggable Databases in that Container Database will automatically get upgraded
+    - Cleanup
+
+## Additional Workshop Supported Use Cases
+
+For additional Enterprise Manager use cases, see below and visit [LiveLabs](http://bit.ly/golivelabs) for the details.
+### 1. Database Lifecycle Automation
 -	Create a Pluggable Database (PDB)
 -	Un-plug/Plug an existing Pluggable Database
 -	Clone an existing Pluggable Database
@@ -26,26 +34,20 @@ Oracle Database Lifecycle and Cloud Management including configuration and compl
 -	Self- service to request a PDB using PDBaaS
 -	Administrative Setup for PDBaaS (Private Cloud)- Review only
 
-## Additional Workshop Supported Use Cases
-
-For additional Enterprise Manager use cases, see below and visit [LiveLabs](http://bit.ly/golivelabs) for the details.
-### 1. Find, Fix, Validate
+### 2. Find, Fix, Validate
 - View unified Database Performance via Performance Hub
 - Use Real-time Database Operations Monitoring to view long running database tasks
 - Identify Top SQL in a PDB and tune it using SQL Tuning Advisor
 - Use SQL Performance Analyzer Optimizer to gather statistics for validation
 - Use Database Workload Replay to run real workload against your changes for additional validation
 
-### 2. Database Fleet Maintenance
+### 3. Database Fleet Maintenance
 * Detect Configuration Pollution
 * Patch a Database target using a Gold Image
     - All Pluggable Databases in that Container Database will automatically get patched
     - Rollback and Cleanup
-* Upgrade Oracle DB Software at scale with minimal downtime
-    - All Pluggable Databases in that Container Database will automatically get upgraded
-    - Rollback and cleanup
 
-### 3. Compliance and Drift Management
+### 4. Compliance and Drift Management
 - Analyze, Increase standardization, reduce number of different configuration sets
 - Execute a one-time comparison to compare the latest reference configuration to one or more targets to determine the configuration differences
 - Continuous drift monitoring of multiple targets against a reference target for initialization parameters using customized configuration monitoring template

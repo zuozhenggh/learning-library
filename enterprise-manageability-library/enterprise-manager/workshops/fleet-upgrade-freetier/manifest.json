@@ -7,8 +7,8 @@
      },
     {
       "title": "Introduction",
-      "description": "Introduction to Multitenant Database Lifecycle Management Workshop",
-      "filename": "./../../intro/intro-lifecycle.md"
+      "description": "Introduction to Automated Database Upgrade at Scale with Fleet Maintenance Workshop",
+      "filename": "./../../intro/intro-fleet-upgrade.md"
     },
     {
       "title": "Lab 1: Generate SSH Keys",
@@ -22,10 +22,10 @@
       "filename": "./../../setup-compute/setup-compute.md"
     },
     {
-      "title": "Lab 3: Multitenant Database Lifecycle Management",
-      "description": "The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database",
+      "title": "Lab 3: Automated Database Upgrade at Scale with Fleet Maintenance",
+      "description": "This lab walks you through the steps needed with Fleet Maintenance to automate upgrade of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby",
       "publisheddate": "7/16/2020",
-      "filename": "./../../em-multitenant-lifecycle-automation/em-multitenant-lifecycle-automation.md"
+      "filename": "./../../em-fleet-maintenance-upgrade/em-fleet-maintenance-upgrade.md"
     },
     {
       "title": "Appendix: Frequently Asked Questions (FAQ)",

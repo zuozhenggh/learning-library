@@ -24,35 +24,35 @@ The EM Workshop is a fully functional Oracle Enterprise Manager environment conf
 
 ## Workshop Supported Use Cases
 
-### 1. Database Fleet Maintenance
+### 1. Database Lifecycle Automation
+-	Create a Pluggable Database (PDB)
+-	Un-plug/Plug an existing Pluggable Database
+-	Clone an existing Pluggable Database
+-	Run Compliance Management for Pluggable Database
+-	Self- service to request a PDB using PDBaaS
+-	Administrative Setup for PDBaaS (Private Cloud)- Review only
+
+### 2. Find, Fix, Validate
+- View unified Database Performance via Performance Hub
+- Use Real-time Database Operations Monitoring to view long running database tasks
+- Identify Top SQL in a PDB and tune it using SQL Tuning Advisor
+- Use SQL Performance Analyzer Optimizer to gather statistics for validation
+- Use Database Workload Replay to run real workload against your changes for additional validation
+
+### 3. Database Fleet Maintenance
 * Detect Configuration Pollution
 * Patch a Database target using a Gold Image
     - All Pluggable Databases in that Container Database will automatically get patched
     - Rollback and Cleanup
 * Upgrade Oracle DB Software at scale with minimal downtime
     - All Pluggable Databases in that Container Database will automatically get upgraded
-    - Rollback and cleanup
-  
-### 2. Database Lifecycle Automation
-- Provision a new PDB and use Post Scripts for customization
-- Unplug a PDB
-- Plug a PDB into existing CDB
-- Clone multiple PDB’s
-- Compliance on PDB’s including remediation  
-- Use Self- service to request a PDB using PDBaaS (Private Cloud)
+    - Cleanup
 
-### 3. Compliance and Drift Management
+### 4. Compliance and Drift Management
 - Analyze, Increase standardization, reduce number of different configuration sets
 - Execute a one-time comparison to compare the latest reference configuration to one or more targets to determine the configuration differences
 - Continuous drift monitoring of multiple targets against a reference target for initialization parameters using customized configuration monitoring template
 - Run a review aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets
-
-### 4. Find, Fix, Validate
-- View unified Database Performance via Performance Hub
-- Use Real-time Database Operations Monitoring to view long running database tasks
-- Identify Top SQL in a PDB and tune it using SQL Tuning Advisor
-- Use SQL Performance Analyzer Optimizer to gather statistics for validation
-- Use Database Workload Replay to run real workload against your changes for additional validation
 
 ## More Information on Oracle Enterprise Manager
 
@@ -72,9 +72,12 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 - [oracle.com/enterprisemanager](https://www.oracle.com/enterprise-manager/)
 
 ## Acknowledgements
-
-- **Authors/Contributors** - Dave Le Roy, Rene Fontcha, Pankaj Chandiramani, Shefali Bhargava, Björn Bolltoft, Harish Niddagatta
-- **Last Updated By/Date** - Kay Malcolm, August 2020
+- **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
+- **Contributors** - Dave Le Roy, Pankaj Chandiramani, Shefali Bhargava - Enterprise Manager Product Management
+- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Refer to the FAQ at the bottom of the right-hand menu. While you cannot use the normal Oracle Support channel to raise a ticket for getting technical support, the vibrant [Enterprise Manager Community Forum](https://community.oracle.com/community/groundbreakers/enterprise_manager) stands to help.
+
+## Have a feedback?
+We would love to hear from you. Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

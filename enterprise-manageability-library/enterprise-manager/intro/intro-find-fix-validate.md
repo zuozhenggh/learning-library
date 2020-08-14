@@ -8,33 +8,34 @@ Join Oracle's ***Wim Coekaerts***, *senior vice president of software developmen
 [](youtube:MZJQx6MuHA0)
 
 ## Workshop Description
-The Database Lifecycle Automation is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
+The Database Performance Management is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
 - This Workshop VM comes preinstalled with Enterprise Manager 13.3 and Oracle Database targets - 18.3, 18.8 and 19.7
 - It's easy and quick to deploy with everything starting automatically in under 20 minutes
 
 ### Applicable Enterprise Manager Management Packs
-Labs under this workshop are covered by the following Management Packs.
-- Database Lifecycle Management Pack
-- Cloud Management Pack for Oracle Database
+Labs under this workshop are covered by the following Management Pack.
+- Oracle Diagnostics Pack for Oracle Database
+- Tuning Pack for Oracle Database
+- Real Application Testing
 
-###  Content
-Oracle Database Lifecycle and Cloud Management including configuration and compliance, provisioning, patching and upgrades:
+### Content
+Oracle Database Performance Management including overall DB performance, SQL analysis, real-time operation monitoring, and tuning. The following are covered in this workshop:
+- View unified Database Performance via Performance Hub
+- Use Real-time Database Operations Monitoring to view long running database tasks
+- Identify Top SQL in a PDB and tune it using SQL Tuning Advisor
+- Use SQL Performance Analyzer Optimizer to gather statistics for validation
+- Use Database Workload Replay to run real workload against your changes for additional validation
+
+## Additional Workshop Supported Use Cases
+
+For additional Enterprise Manager use cases, see below and visit [LiveLabs](http://bit.ly/golivelabs) for the details.
+### 1. Database Lifecycle Automation
 -	Create a Pluggable Database (PDB)
 -	Un-plug/Plug an existing Pluggable Database
 -	Clone an existing Pluggable Database
 -	Run Compliance Management for Pluggable Database
 -	Self- service to request a PDB using PDBaaS
 -	Administrative Setup for PDBaaS (Private Cloud)- Review only
-
-## Additional Workshop Supported Use Cases
-
-For additional Enterprise Manager use cases, see below and visit [LiveLabs](http://bit.ly/golivelabs) for the details.
-### 1. Find, Fix, Validate
-- View unified Database Performance via Performance Hub
-- Use Real-time Database Operations Monitoring to view long running database tasks
-- Identify Top SQL in a PDB and tune it using SQL Tuning Advisor
-- Use SQL Performance Analyzer Optimizer to gather statistics for validation
-- Use Database Workload Replay to run real workload against your changes for additional validation
 
 ### 2. Database Fleet Maintenance
 * Detect Configuration Pollution
@@ -43,7 +44,7 @@ For additional Enterprise Manager use cases, see below and visit [LiveLabs](http
     - Rollback and Cleanup
 * Upgrade Oracle DB Software at scale with minimal downtime
     - All Pluggable Databases in that Container Database will automatically get upgraded
-    - Rollback and cleanup
+    - Cleanup
 
 ### 3. Compliance and Drift Management
 - Analyze, Increase standardization, reduce number of different configuration sets
@@ -69,7 +70,7 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 
 ## Acknowledgements
 - **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
-- **Contributors** - Dave Le Roy, Pankaj Chandiramani, Shefali Bhargava - Enterprise Manager Product Management
+- **Contributors** - Dave Le Roy, Björn Bolltoft - Enterprise Manager Product Management
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
