@@ -4,7 +4,8 @@ Welcome to the workshop on Oracle's Cloud Data Platform.
 
 To execute this workshop, click on the link below.
 
-[![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/solutions-library/cloud-data-platform/freetier/index.html)
+## Workshops
+Click [here](http://bit.ly/golivelabs) to access this workshop on LiveLabs.
 
 ### Workshop Highlights
 - Provision an Autonomous Data Warehouse (ADW) Instance
@@ -12,8 +13,6 @@ To execute this workshop, click on the link below.
 - Create Machine Learning Models within the Autonomous Data Warehouse (ADW) Instance by using the Oracle Machine Learning Tool (OML)
 - Visualize Data and Prediction Models in Oracle Analytics Cloud (OAC)
 - Bonus: Integrate a 3rd Party Web App and Oracle Digital Assistant (ODA) Chatbot
-
-- [Converged-database](https://github.com/laxmi-oss/converged-database/freetier/index.html) 
 
 ### Workshop Overview
 
@@ -37,5 +36,5 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
 
 Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

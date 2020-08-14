@@ -28,7 +28,7 @@ In this lab, we are going to modify a skill that can be used for interactions wi
 
 * Learn how to modify a skill in Oracle Digital Assistant.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial
@@ -42,7 +42,7 @@ This lab assumes you have completed the following labs:
 
 ## **Step 1**: Clone a Skill
 
-In this lab, we're starting from an existing one. So, the first thing you'll do is clone an existing skill.
+In this lab, we're starting from an existing one. So, the first thing you will do is clone an existing skill.
 
 1. With the Oracle Digital Assistant UI open in your browser, click ![main menu icon](./images/image173.png) to open the side menu.
 
@@ -257,4 +257,5 @@ This concludes the workshop.
 * **Authors** -  Iván Postigo, Jesus Guerra, Carlos Olivares - Oracle Spain SE Team
 * **Last Updated By/Date** - Tom McGinn, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. Please include the workshop name and lab in your request.

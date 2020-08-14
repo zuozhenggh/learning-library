@@ -16,7 +16,7 @@ We will do the following:
 * Enable the policy and apply audit settings to one or more users
 * View the generated audit records
 
-### Pre-Requisites
+### Prerequisites
 
 * The lab requires an Oracle Public Cloud account with Autonomous Transaction Processing Cloud Service.
 
@@ -29,7 +29,7 @@ We will do the following:
 * Overall auditing performance is greatly improved. By default, the audit records are automatically written to an internal relational table.
 * You can create named audit policies that enable you to audit the supported components. Furthermore, you can build conditions and exclusions into your policies.
 
-## Step 1: Sign in to OCI Console
+## **Step 1:** Sign in to OCI Console
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -50,7 +50,7 @@ We will do the following:
 
 5. Select the database that is named above from the list of databases displayed.
 
-## Step 2: Start using SQL Developer Web
+## **Step 2:** Start using SQL Developer Web
 
 1. Click the Service Console tab.
 
@@ -92,7 +92,7 @@ We will do the following:
       
       ![](./../auditing-in-autonomous-database/images/Query_not_redacted.png " ")
  
-## Step 3: Audit Data
+## **Step 3:** Audit Data
 
 1. The table TEST.CUSTOMERS holds columns whose data is sensitive. You want to audit the UPDATE actions on the table. 
 
@@ -202,4 +202,5 @@ We will do the following:
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

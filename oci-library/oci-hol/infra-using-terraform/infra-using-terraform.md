@@ -28,7 +28,7 @@ Terraform is Infrastructure as Code tool for building and managing infrastructur
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 
@@ -40,7 +40,7 @@ Terraform is Infrastructure as Code tool for building and managing infrastructur
 
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console and create a VCN
+## **Step 1:** Sign in to OCI Console and create a VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -75,7 +75,7 @@ Terraform is Infrastructure as Code tool for building and managing infrastructur
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
               
-## Step 2: Create ssh keys and compute instance
+## **Step 2:** Create ssh keys and compute instance
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
@@ -193,7 +193,7 @@ Terraform is Infrastructure as Code tool for building and managing infrastructur
  
 14. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
-## Step 3: Configure OCI CLI Install Terraform Upload API keys and verify functionality
+## **Step 3:** Configure OCI CLI Install Terraform Upload API keys and verify functionality
 
 1. Check oci CLI installed version, Enter command:
 
@@ -380,7 +380,7 @@ Terraform is Infrastructure as Code tool for building and managing infrastructur
 
 You can switch to OCI console and observe deletion of VCN, Compute instance, Block Volume.
 
-## Step 4: Delete the resources
+## **Step 4:** Delete the resources
 
 1. Switch to  OCI console window.
 
@@ -409,4 +409,5 @@ You can switch to OCI console and observe deletion of VCN, Compute instance, Blo
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

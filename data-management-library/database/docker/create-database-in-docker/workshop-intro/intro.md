@@ -1,7 +1,10 @@
-# Create an Oracle Database in a Docker Container on Oracle Cloud
-## Introduction to the Workshop
+# Introduction
 
-Welcome to the Oracle Database Docker Workshop. Using Docker build files for Oracle Database provided on GitHub, you can containerize an application - in this case, an instance of Oracle Database. This workshop will walk you through the following tasks:
+## Create an Oracle Database in a Docker Container on Oracle Cloud
+
+Welcome to the Oracle Database Docker Workshop. Using Docker build files for Oracle Database provided on GitHub, you can containerize an application - in this case, an instance of Oracle Database.
+
+### Objectives
 
 - Sign up for an Oracle Free Trial account and sign in to your account
 - Create a set of SSH keys
@@ -14,7 +17,7 @@ Welcome to the Oracle Database Docker Workshop. Using Docker build files for Ora
 - Connect to the Database in the container
 - Manage your Docker container
 
-Each of the labs is 5 -10 minutes in length, so you'll be up and running in no time.
+Each of the labs is 5 -10 minutes in length, so you will be up and running in no time.
 
 *Note 1: You will need a Free Trial or an existing Oracle Cloud account for this workshop (Not all services in this workshop are Always Free services)*
 

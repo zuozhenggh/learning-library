@@ -15,8 +15,8 @@ horizontal pod scaling and configure tracing with Jaeger.
 ### Prerequisite
 This lab assumes you have already completed the following labs:
 - Register for Free Tier
-- Setup OCI, OKE, ATP and Cloud shell
-- Setup Service broker and Messaging
+- Set up OCI, OKE, ATP and Cloud shell
+- Set up Service broker and Messaging
 
 ## **STEP 1**: Measure health and readiness of microservices
 
@@ -46,16 +46,15 @@ This lab assumes you have already completed the following labs:
 
    ![](images/7aa75ac4256999f7915e563ac2049af5.png " ")
 
-3. Click the **ordersetlivenesstofalse** button, which would trigger the
+3. Click the **ordersetlivenesstofalse** button, which will trigger the
     container to advertise that the service is not alive.
 
    ![](images/10023aaaf4468944fbd9b88041166abc.png " ")
 
 4. The OKE health probes check the advertised health metrics and if they are
     not healthy for a certain period, the infrastructure will reboot the pod.
-    While the service is being restarted, lets check under the hood what makes
-    the mechanism work. The Order Helidon pom file is located in
-    `$MSDATAWORKSHOP_LOCATION/order-helidon/pom.xml`. Observe the helidon health
+    While the service is being restarted, lets see how the  mechanism works. The Order Helidon pom file is located in
+    `$MSDATAWORKSHOP_LOCATION/order-helidon/pom.xml`. Observe the Helidon health
     dependencies.
 
    ![](images/2e4d0c6b95330e009c5ee6e6bc143918.png " ")
@@ -82,7 +81,7 @@ see the liveness and readiness of the service.
 
 7. Go back to the frontend microservice front page and check the age of the
     container by clicking the **lastContainerStartTime** button. The time
-    should’ve changed, reflecting that the pod was restarted.
+    had now changed, reflecting that the pod was restarted.
 
    ![](images/bb361bd61e7817c61fb5356637bb7bfa.png " ")
 
@@ -99,7 +98,7 @@ Horizontal scaling is an important aspect for microservices architecture
     <copy>cd $MSDATAWORKSHOP_LOCATION ; ./installMetricsServer.sh</copy>
     ```
 
-1. Open the Cloud Shell and run the following command to deploy a simple Linux
+2. Open the Cloud Shell and run the following command to deploy a simple Linux
     pod.
 
     ```
@@ -110,7 +109,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    *Notice that the pod has request and limit CPU resource attributes.*
 
-2. Check that the pod is running using the below command.
+3. Check that the pod is running using the below command.
 
     ```
     <copy>pods | grep linux</copy>
@@ -118,7 +117,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/e97786d4e8475b430c6cd66949c8a5a3.png " ")
 
-3. Create a horizontal pod autoscaler for this container. Notice that this HPA
+4. Create a horizontal pod autoscaler for this container. Notice that this HPA
     will get triggered once CPU threshold exceeds 50%. Also the minimum number
     of pods is set to 1, while the maximum is 10.
 
@@ -128,7 +127,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/fe370c12f8de0f64e8425ff0a9b0d5c5.png " ")
 
-4. Run the below command to get additional information about the HPA deployment
+5. Run the below command to get additional information about the HPA deployment
     and CPU utilization of the pod.
 
     ```
@@ -137,7 +136,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/31c3a877bc6cc5ee6e28337a3e88ce6e.png " ")
 
-5. Enter the pod, execute a command to stress the CPU.
+6. Enter the pod, execute a command to stress the CPU.
 
     ```
     <copy>podshell linux</copy>
@@ -151,7 +150,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/22b8ac3195bac2f9f61bc91a9f4a7c47.png " ")
 
-6. Use the `exit` command to leave the linux pod.
+7. Use the `exit` command to leave the linux pod.
 
     ```
     <copy>exit</copy>
@@ -159,7 +158,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/e4d252c59984f38a7ef73ec7b1b46804.png " ")
 
-7. Execute the commands below to get additional information about the HPA and linux pods.
+8. Execute the commands below to get additional information about the HPA and linux pods.
 
     ```
     <copy>hpa ; toppod linux ; k get deployment oraclelinux77-hpa-demo -n msdataworkshop ; pods | grep linux ;echo ----------------</copy>
@@ -169,7 +168,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/96f267ff0337bc4f2a14b368d0d23a4e.png " ")
 
-8. You can now delete the linux pods and HPA using the commands:
+9. You can now delete the linux pods and HPA using the commands:
 
     ```
     <copy>k delete deployment oraclelinux77-hpa-demo -n msdataworkshop</copy>
@@ -186,9 +185,10 @@ Horizontal scaling is an important aspect for microservices architecture
    This was a basic demonstration of horizontal autoscaling with microservices. It’s important to note that with the implementation of horizontal scaling the design of the application changes, as it needs to be able to handle the addition of replicas.
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Consulting Member of Technical Staff
+* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

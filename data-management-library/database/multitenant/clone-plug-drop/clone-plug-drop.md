@@ -1,4 +1,4 @@
-# Multitenant Basics
+# Clone, Plug and Drop
 
 ## Introduction
 In this lab you will perform many multitenant basic tasks.  You will create a pluggable database (PDB), make a copy of this pluggable database, or clone it, explore the concepts of "plugging" and "unplugging" a PDB and finally drop it.  You will then explore the concepts of cloning unplugged databases and databases that are hot or active.
@@ -7,6 +7,11 @@ Estimated time: 2 - 3 hours
 
 [](youtube:kzTQGs75IjA)
 
+### Prerequisites
+
+* An Oracle Cloud Free Tier, LiveLabs or Paid account
+* Oracle Cloud Compute instance running Database 19c
+* SSH Keys
 
 ## Step 0: Run the Multitenant Setup Scripts
 
@@ -72,10 +77,10 @@ The next steps will download the files needed for the rest of the workshop and c
 
 *Note: Some commands throughout the rest of this lab may take 10-60 seconds to complete.*  
 
-## Step 1: Login and Create PDB
+## **Step 1:** Login and Create PDB
 This section looks at how to login and create a new PDB.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Create a pluggable database **PDB2** in the container database **CDB1**
 
 1. All scripts for this lab are stored in the labs/multitenant folder and are run as the oracle user. Let's navigate to the path now.
@@ -241,10 +246,10 @@ The tasks you will accomplish in this lab are:
 
     ![](./images/step1.9-containers.png " ")
 
-## Step 2: Clone a PDB
+## **Step 2:** Clone a PDB
 This section looks at how to clone a PDB.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Clone a pluggable database **PDB2** into **PDB3**
 
 1. Connect to **CDB1**.
@@ -320,10 +325,10 @@ The tasks you will accomplish in this lab are:
 
    ![](./images/pdb3mytab.png " ")
 
-## Step 3: Unplug a PDB
+## **Step 3:** Unplug a PDB
 This section looks at how to unplug a PDB.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Unplug **PDB3** from **CDB1**
 
 1. Connect to **CDB1**.
@@ -414,10 +419,10 @@ The tasks you will accomplish in this lab are:
 
     ![](./images/xmlfile.png " ")
 
-## Step 4: Plug in a PDB
+## **Step 4:** Plug in a PDB
 This section looks at how to plug in a PDB.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Plug **PDB3** into **CDB2**
 
 1. Connect to **CDB2**.
@@ -543,10 +548,10 @@ The tasks you will accomplish in this lab are:
 
     ![](./images/pdb3mytab2.png " ")
 
-## Step 5: Drop a PDB
+## **Step 5:** Drop a PDB
 This section looks at how to drop a pluggable database.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Drop **PDB3** from **CDB2**
 
 1. Connect to **CDB2**.
@@ -580,10 +585,10 @@ The tasks you will accomplish in this lab are:
     ![](./images/droppdb.png " ")
 
 
-## Step 6: Clone an Unplugged PDB
+## **Step 6:** Clone an Unplugged PDB
 This section looks at how to create a gold copy of a PDB and clone it into another container.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Create a gold copy of **PDB2** in **CDB1** as **GOLDPDB**
 - Clone **GOLDPDB** into **COPYPDB1** and **COPYPDB2** in **CDB2**
 
@@ -754,10 +759,10 @@ The tasks you will accomplish in this lab are:
 
     ![](./images/step6.12-guid.png " ")
 
-## Step 7: PDB Hot Clones
+## **Step 7:** PDB Hot Clones
 This section looks at how to hot clone a pluggable database.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Create a pluggable database **OE** in the container database **CDB1**
 - Create a load against the pluggable database **OE**
 - Create a hot clone **OE_DEV** in the container database **CDB2** from the pluggable database **OE**
@@ -901,12 +906,12 @@ The tasks you will accomplish in this lab are:
 
 You can see that the clone of the pluggable database worked without having to stop the load on the source database. In the next step, you will look at how to refresh a clone.
 
-## Step 8: PDB Refresh
+## **Step 8:** PDB Refresh
 This section looks at how to hot clone a pluggable database, open it for read only and then refresh the database.
 
 [](youtube:L9l7v6dH-e8)
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Leverage the **OE** pluggable database from the previous step with the load still running against it.
 - Create a hot clone **OE_REFRESH**` in the container database **CDB2** from the pluggable database **OE**
 - Refresh the **OE_REFRESH**` pluggable database.
@@ -999,11 +1004,11 @@ The tasks you will accomplish in this lab are:
 
 7. Leave the **OE** pluggable database open with the load running against it for the rest of this lab.
 
-## Step 9: PDB Relocation
+## **Step 9:** PDB Relocation
 
 This section looks at how to relocate a pluggable database from one container database to another. One important note, either both container databases need to be using the same listener in order for sessions to keep connecting or local and remote listeners need to be setup correctly. For this lab we will change **CDB2** to use the same listener as **CDB1**.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Change **CDB2** to use the same listener as **CDB1**
 - Relocate the pluggable database **OE** from **CDB1** to **CDB2** with the load still running
 - Once **OE** is open the load should continue working.
@@ -1116,4 +1121,5 @@ You may now proceed to the next lab.
 - **Contributors** -  David Start, Anoosha Pilli, Brian McGraw, Quintin Hill
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, DB Product Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -1,4 +1,4 @@
-# Login to Oracle Cloud - LiveLabs #
+# Login to Oracle Cloud#
 
 ## Introduction
 
@@ -17,7 +17,7 @@ The following lab requires an Oracle Cloud account from the LiveLabs Platform.
 - If the account name supplied to you begins with **user** or **ssuser**, proceed to **Option 1**.
 - If the account name supplied to you is your **Oracle email address**,  proceed to **Option 2**.
 
-## Option 1:  Login to Oracle Cloud - ssusersxx and userxx
+## **Option 1**:  Login to Oracle Cloud - ssusersxx and userxx
 
 If the account name supplied to you begins with **user** or **ssuser**, please proceed. Otherwise, proceed to Option 2.
 
@@ -41,7 +41,7 @@ If the account name supplied to you begins with **user** or **ssuser**, please p
 
 Once you have set your region to the assigned value, *proceed to the next lab*.
 
-## Option 2:  Login to Oracle Cloud - Oracle Emails
+## **Option 2**:  Login to Oracle Cloud - Oracle Emails
 
 After you sign up on the platform, you’ll get two emails. Check your spam and junk folders. You should expect the following emails:
 - *Email 1: Verify Email Request* - this contains the URL to verify that your email is a valid one for this tenancy.
@@ -73,8 +73,9 @@ After you sign up on the platform, you’ll get two emails. Check your spam and 
 
 You may now *proceed to the next lab*.
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Mgmt, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

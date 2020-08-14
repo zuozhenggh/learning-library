@@ -26,15 +26,15 @@ In this lab, you will:
 - Review the application to see how you can make predictions on the fly.
 - Expose your ml model as a REST endpoint so any application can use it.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
-- Register for Free Tier Account
+- Login to Oracle Cloud/Sign Up for Free Tier Account
 - Connect and Provision ADB
 - Create a Machine Learning Model
 - Migrate ML Model to ATP
 
-## Step 1: Prepare data for the lab in ATP
+## **Step 1:** Prepare data for the lab in ATP
 
 1.  If you are already logged in as **ml_user** in SQL Developer Web, proceed to load the data.
 
@@ -137,7 +137,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/007.png  " ")
 
-## Step 2: Import the APEX Application
+## **Step 2:** Import the APEX Application
 
 1.  To navigate to the ATP APEX application, switch to the ATP service console in browser. Select **Development** and then select **Oracle APEX**.
 
@@ -211,7 +211,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/030.png  " ")
 
-## Step 3: Run the application and review on-the-fly prediction/scoring
+## **Step 3:** Run the application and review on-the-fly prediction/scoring
 
 1.  Select Customer Walk-in from the menu. Select **Lastname**, and then **Customer Id**. Note that the credit score prediction and the probability of that estimate calculations are done as data is queried.
 
@@ -271,7 +271,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/045.png  " ")
 
-## Step 4: Expose the ml model as a REST end point so any application can call it
+## **Step 4:** Expose the ml model as a REST end point so any application can call it
 
 1.  Select the **Home** button from the menu at the bottom of the screen. (Note: If you do not see the menu bar at the bottom of the page, switch to Oracle APEX tab which was opened earlier in the browser.)
 
@@ -330,5 +330,7 @@ This concludes this lab and this workshop.
 
 - **Author** - Derrick Cameron
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
+- **Contributors** - Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

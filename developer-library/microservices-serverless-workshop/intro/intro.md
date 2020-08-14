@@ -1,5 +1,5 @@
 # Microservices/Serverless Workshop (Gigi's Pizza)
-## **Introduction**
+## Introduction
 
 This Hands-on Lab (HOL) is based on a Demo developed by the WeDo Team as part of an innovation initiative to approach Oracle Cloud Solutions by providing practical examples that can be “touched” and easily understood.
 
@@ -29,4 +29,5 @@ Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Ora
 * **Contributors** - Jaden McElvey, Technical Intern Lead - Oracle LiveLabs 
 * **Last Updated By/Date** - Tom McGinn, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. Please include the workshop name and lab in your request.
