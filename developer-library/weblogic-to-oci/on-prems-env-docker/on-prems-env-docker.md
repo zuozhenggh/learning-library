@@ -2,93 +2,87 @@
 
 ## Introduction: 
 
-This 30 mins lab walks you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine. 
+This lab walks you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine. 
 
-Note: This is an alternative to Lab 2a: Setup an 'on-premises' environment using the workshop marketplace stack. You only need to setup your 'on-premises' environment using one or the other.
+*Note: If you completed Lab 2A, skip immediately to Lab 3.*
+
 We recommend deploying the simulated 'on-premises' environment using the workshop image as it is simpler, however if you prefer to simulate an environment on your local machine, please use this lab.
 
 At the end of this lab, you will have a local environment running with an Oracle 12c Database and WebLogic Server 12c with a domain containing 2 applications and a datasource.
 
-## Requirements
+Estimated Lab Time:  30 minutes
 
-### 1) Software, credentials and accounts
+### Prerequisites
 
-- Docker installed locally to run the 'on-prems' environment.</br>
-  Get Docker here: <a href="https://docs.docker.com/get-docker/" target="_blank">https://docs.docker.com/get-docker/</a>
-
+1. Completed Lab: Choose a Path
+1. Free Tier, Paid or LiveLabs Oracle Cloud account
+1. **Docker installed locally** to run the 'on-prems' environment.  Get Docker [here](https://docs.docker.com/get-docker/)
   ***Note: You need at least 3 CPUs and 6Gb of memory assigned to Docker to run this template.***
-
-- Docker-compose installed (on Linux it needs to be installed separately, but it is installed automatically on Mac OS and Windows)</br>
-  <a href="https://docs.docker.com/compose/install/" target="_blank">https://docs.docker.com/compose/install/</a>
-
-- Docker Hub Account, to download necessary Docker images</br>
-  Sign up here: <a href="https://hub.docker.com/signup" target="_blank">https://hub.docker.com/signup</a>
-
-- Oracle Cloud Infrastructure account, with proper credentials to create resources</br>
-  <a href="https://www.oracle.com/cloud/free/" target="_blank">https://www.oracle.com/cloud/free/</a>
-
+1. **Docker-compose installed** (on Linux it needs to be installed separately, but it is installed automatically on Mac OS and Windows).  Click [here](https://docs.docker.com/compose/install/) to install.
+1. **Docker Hub Account**, to download necessary Docker images. Sign up [here](https://hub.docker.com/signup).
 
 On Linux, install Docker and docker-compose as root and then switch to the `oracle` user.
 
 ## **Step 1:** Get the code
 
-On Linux, if you don't have a `oracle` user, create it an add it to a `oracle` group with:
+### Linux/Mac OSX Configuration
+*EMMANUEL, PLEASE ADD INSTRUCTIONS TO CREATE ORACLE USER
+1. If you don't have a `oracle` user, create it and add it to a `oracle` group using the command below.
+  ```
+  <copy>
+  groupadd oracle
+  useradd -g oracle oracle
+  </copy>
+  ```
 
-```bash
-<copy>
-groupadd oracle
-useradd -g oracle oracle
-</copy>
+2. Make sure you added the `oracle` user to the `docker` group with
+
+  ```
+  <copy>
+  sudo usermod -aG docker oracle
+  </copy>
+  ```
+
+3. Switch to the `oracle` user with 
+
+  ```
+  <copy>
+  sudo su - oracle
+  </copy>
+  ```
+4. Download code needed for the workshop
+
 ```
-
-On Linux, also make sure you added the `oracle` user to the `docker` group with
-
-```bash
-<copy>
-sudo usermod -aG docker oracle
-</copy>
-```
-
-On linux, switch to the `oracle` user with 
-
-```bash
-<copy>
-sudo su - oracle
-</copy>
-```
-
-**Download the source code required for this lab from** <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip" target="_blank">here</a></br>
-or at <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip" target="_blank">https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip</a>
-
-
-From a linux or MacOS instance you can use:
-
-```bash
 <copy>
 cd ~/
 wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip
 </copy>
 ```
-
-and then unzip the files with:
-```bash
+5. Unzip the files with:
+```
 <copy>
 unzip weblogic-to-oci.zip
 </copy>
 ```
 
+## Windows
+
+1.  Download the source code for this workshop. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip) 
+2.  Extract the zip file 
+
+
 ## Step 2: Fetch the private docker images:
 
 This repository makes use of Oracle docker images which are licensed and need to be pulled after acknowledging the terms of the license.
 
-- 2.1. Sign in to Docker Hub and go to the Weblogic image area at:</br>
+- 2.1. Sign in to Docker Hub and go to the Weblogic image area at:
   <a href="https://hub.docker.com/_/oracle-weblogic-server-12c" target="_blank">https://hub.docker.com/_/oracle-weblogic-server-12c</a>
   
   - Click **Proceed to Checkout**
     then fill in your information, accept the terms of license, and click **Get Content**.
 
 
-- 2.2. Go to the **Oracle Database** page and accept the license terms at:</br>
+- 2.2. Go to the **Oracle Database** page and accept the license terms at:
   <a href="https://hub.docker.com/_/oracle-database-enterprise-edition" target="_blank">https://hub.docker.com/_/oracle-database-enterprise-edition</a>
 
   - 2.2.a. Click **Proceed to Checkout**
@@ -96,13 +90,13 @@ This repository makes use of Oracle docker images which are licensed and need to
 
   <!-- - Then fetch the image:
 
-    ```bash
+    ```
     <copy>
     docker pull store/oracle/database/enterprise:12.2.0.1
     </copy>
     ```  -->
 
-- 2.3. Go to the **Instant Client** page and accept the license terms for the SQL Plus client at:</br>
+- 2.3. Go to the **Instant Client** page and accept the license terms for the SQL Plus client at:
   <a href="https://hub.docker.com/_/oracle-instant-client" target="_blank">https://hub.docker.com/_/oracle-instant-client</a>
 
   - 2.3.a Click **Proceed to Checkout**
@@ -110,7 +104,7 @@ This repository makes use of Oracle docker images which are licensed and need to
 
   <!-- - Then fetch the image:
 
-    ```bash
+    ```
     <copy>
     docker pull store/oracle/database-instantclient:12.2.0.1
     </copy>
@@ -119,7 +113,7 @@ This repository makes use of Oracle docker images which are licensed and need to
 
   - 2.4. Login to docker from the place where you want to fetch the image if necessary with the following command, providing your docker-hub username and password:
 
-    ```bash
+    ```
     <copy>
     docker login
     </copy>
@@ -127,18 +121,18 @@ This repository makes use of Oracle docker images which are licensed and need to
 
   <!-- - Then fetch the image: 
 
-    ```bash
+    ```
     <copy>
     docker pull store/oracle/weblogic:12.2.1.4
     </copy>
     ``` -->
 
-<!-- - Sign in to the **Oracle Container Registry** and accept the license terms for the Database image at:</br>
+<!-- - Sign in to the **Oracle Container Registry** and accept the license terms for the Database image at:
   <a href="https://container-registry.oracle.com/pls/apex/f?p=113:4:102331870967997::NO:::" target="_blank">https://container-registry.oracle.com/pls/apex/f?p=113:4:102331870967997::NO:::</a> -->
 
   <!-- - Login to the docker container-registry.oracle.com registry from the machine where you want to fetch the image with your oracle credentials:
 
-    ```bash
+    ```
     <copy>
     docker login container-registry.oracle.com
     </copy>
@@ -167,7 +161,7 @@ Go to the appropriate registry and image page, and go through the acknowledgemen
 
 On linux or Windows, Docker permission may be cause issues so run:
 
-```bash
+```
 <copy>
 docker exec -it --user=root weblogic-to-oci_oracledb_1 /bin/chown 54321:54321 ~/.ssh
 </copy>
@@ -198,13 +192,13 @@ If you see a container called `weblogic-to-oci_oracledbinit`, this means the ini
 
 To troubleshoot problems in the setup, check the logs in the docker containers with:
 
-```bash
+```
 <copy>
 docker logs -t weblogic-to-oci_wls_admin_1
 </copy>
 ```
 or
-```bash
+```
 <copy>
 docker logs -t weblogic-to-oci_oracledb_1
 </copy>
@@ -231,15 +225,15 @@ We'll create a SSH key pair in this folder
 
 - 5.1. Get inside the Oracle Database container:
 
-```bash
+```
 <copy>
-docker exec -it weblogic-to-oci_oracledb_1 /bin/bash
+docker exec -it weblogic-to-oci_oracledb_1 /bin/
 </copy>
 ```
 
 - 5.2. Create the SSH keypair
 
-```bash
+```
 <copy>
 ssh-keygen
 </copy>
@@ -258,14 +252,13 @@ and just hit `Enter` (default) for all the prompts
 
 **Note:** If you're using a firewall and your instance is not local, make sure the ports for WebLogic (7001-7005) are open to be able to test the environment.
 
+You may now *proceed to the next lab.*
 
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, July 30 2020
+ - **Last Updated By/Date** - Kay Malcolm, August 2020
+
 
 ## See an issue?
-
-Please submit feedback using this <a href="https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1" target="_blank">form</a>. 
-
-Please include the <em>workshop name</em>, <em>lab</em> and <em>step</em> in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the <em>Feedback Comments</em> section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
