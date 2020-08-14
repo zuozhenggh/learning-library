@@ -7,7 +7,7 @@ Also later in the steps you will perform activities like retrieving data, insert
 
 Estimated Lab Time: 30 Minutes
 
-### Prerequisites
+### **Prerequisites**
 
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud
@@ -15,7 +15,7 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
 
-### About Oracle ORDS
+### **About Oracle ORDS**
 
 ORDS is middle tier JAVA application that allows you to access your Oracle Database resources via REST. Use standard HTTP calls (GET|POST|PUT|DELETE|HEAD) via URIs that ORDS makes available (/ords/database123/user3/module5/something/)
 
@@ -30,7 +30,7 @@ Oracle REST Data Services (ORDS) is bundled with SQL Developer. You can use SQL 
 
 As part of this lab , ORDS is pre-installed and ready for use.
 
-About RESTful Services 
+**About RESTful Services**
 
 Representational State Transfer (REST) is a style of software architecture for distributed hypermedia systems such as the World Wide Web. A service is described as RESTful when it conforms to the tenets of REST.  RESTful Service has the following characteristics: 
 
@@ -585,6 +585,7 @@ Refer **"Define Resource Module, Resource Template" section from Step 2** to cre
     :id AS   "PONumber" )
     </copy>
     ````
+
     ![](./images/ords_lab2_3.png " ")
 
     
@@ -665,7 +666,9 @@ Refer **"Define Resource Module, Resource Template" section from Step 2** to cre
 
 29. Test the Restful Service. Provide following values in the Postman.
   Enter **http://&lt;Instance\_ip\_address&gt;:9090/ords/jxlpdb/appxml/cnvg/cnvg/** for URL, and select POST for HTTP Method. For the **body** select **raw** and XML from dropdown, enter below PO document in the body section Then, click **Send** icon located next to the URL field on the top right side.
-        
+       
+        ....
+        <copy>
         <PurchaseOrder>
         <PONumber>10020</PONumber>
         <Reference>MSD-20200505</Reference>
@@ -715,7 +718,9 @@ Refer **"Define Resource Module, Resource Template" section from Step 2** to cre
         </LineItems>
         <Special_Instructions>COD</Special_Instructions>
         </PurchaseOrder>
-
+        
+        </copy>    
+        ....
   Once we get the Status:200 OK, POST is successfully done.
     
       ![](./images/ordslab2.28.png " ")
@@ -919,10 +924,8 @@ Refer **"Define Resource Module, Resource Template" section from Step 2** to cre
 
 19. Open the browser and test the following URL in the address bar:
    
-     ````
-    <copy>
+    ````
     http://&lt;Instance_ip_address&gt;:9090/ords/sgrpdb/appspat/cnvg/cnvg/2
-    </copy>
     ````
     ![](./images/ordslab3.18.png " ")
 
@@ -955,9 +958,7 @@ Refer **"Define Resource Module, Resource Template" section from Step 2** to cre
 25. Open the browser and test the following URL in the address bar:  
     
     ````
-    <copy>
     http://&lt;Instance_ip_address&gt;:9090/ords/sgrpdb/appspat/cnvg/cnvg/
-    </copy>
     ````
  
     ![](./images/ordslab3.24.png " ")
@@ -1074,9 +1075,7 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
 35. Open the browser and test the following URL in the address bar. Check the warehouse name , it is changed to “put\_new\_warehouse"
     
     ````
-    <copy>
     http://&lt;Instance_ip_address&gt;:9090/ords/sgrpdb/appspat/cnvg/cnvg/5 
-    </copy>
     ````
     ![](./images/ordslab3.34.png " ")
 
@@ -1115,9 +1114,7 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
 40. Open the browser and test the following URL in the address bar. Check for the warehouse with id 5 and its deleted.
     
     ````
-    <copy>
-    http://&lt;Instance_ip_address&gt;:9090/ords/sgrpdb/appspat/cnvg/cnvg/5
-    </copy>
+    http://Instance_ip_address:9090/ords/sgrpdb/appspat/cnvg/cnvg/5
     ````
     ![](./images/ordslab3.39.png " ")
 
