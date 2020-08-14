@@ -7,7 +7,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 ## **Step 1**: Sign in to OCI Console and create VCN
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
-    ![](./../grafana/images/Grafana_015.PNG " ")
+    ![](./../using-custom-image/images/Custom_Image_005.PNG " ")
 
 2. From the OCI Services menu, Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from the drop down menu on the left part of the screen under Networking and Click **Start VCN Wizard**.
 
@@ -23,6 +23,8 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
       - **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
       - **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
       - Click **Next**
+
+    ![](./../using-custom-image/images/Custom_Image_006.PNG " ")
 
 5. Verify all the information and  Click **Create**.
 
@@ -44,24 +46,27 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
       - **Instance Type**: Select Virtual Machine
       - **Instance Shape**: Select VM shape
 
-      **Under Configure Networking**
+    ![](./../using-custom-image/images/Custom_Image_007.PNG " ")
+
+    **Under Configure Networking**
       - **Virtual cloud network compartment**: Select your compartment
-      - **Virtual cloud network**: Choose the VCN
+      - **Virtual cloud network**: Choose the VCN you created in Step 1
       - **Subnet Compartment:** Choose your compartment.
       - **Subnet:** Choose the Public Subnet under **Public Subnets**
       - **Use network security groups to control traffic** : Leave un-checked
       - **Assign a public IP address**: Check this option
 
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+     ![](./../using-custom-image/images/Custom_Image_008.PNG " ")
 
       - **Boot Volume:** Leave the default
-      - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
+      - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved in Lab 1.
 
 3. Click **Create**.
 
    **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD
 
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+     ![](./../using-custom-image/images/Custom_Image_009.PNG " ")
+
 
 4.  Wait for Instance to be in **Running** state. In Cloud Shell Terminal, enter:
 
@@ -82,7 +87,8 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
 7.  Enter 'yes' when prompted for security message.
 
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
+     ![](./../using-custom-image/images/Custom_Image_0010.PNG " ")
+     ![](./../using-custom-image/images/Custom_Image_0011.PNG " ")
 
 8.  Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
@@ -129,12 +135,17 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
 10. Fill out the dialog box and Click **Create**. Once the instance is in running state note down it's Public IP address.
 
-11. ssh to compute instance as before and Enter command:
-    ```
+11. ssh to compute instance as we did in Step 2.
+
+     ![](./../using-custom-image/images/Custom_Image_0012.PNG " ")
+
+Enter command:
+
+    
     <copy>
     sudo service httpd start
     </copy>
-    ```
+    
 
 12. This will start httpd service, Check the status of httpd service as before.
 
@@ -147,22 +158,25 @@ A compute instance can have a lot more applications installed and this custom im
 
 1. Switch to  OCI console window.
 
-2. If your Compute instance is not displayed, From OCI services menu Click Instances under Compute.
+2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**.
 
 3. Locate first compute instance, Click Action icon and then **Terminate**.
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
+     ![](./../using-custom-image/images/Custom_Image_0013.PNG " ")
 
-4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate.
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0017.PNG " ")
+4. Make sure Permanently delete the attached Boot Volume is checked, Click **Terminate Instance**. Wait for instance to fully Terminate.
+     ![](./../using-custom-image/images/Custom_Image_0014.PNG " ")
 
 5. Repeat the step to delete second compute instance.
 
-6. From OCI Servies Menu Click **Compute** then **Custom Images**. Locate the custom image you created. Click the Action icon and then **Delete**.
+6. From OCI Services Menu Click **Compute** then **Custom Images**. Locate the custom image you created. Click the Action icon and then **Delete**.
 
 7. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will appear.
 
-8. Locate your VCN , Click Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
+8. Click on your VCN , then click **Terminate**. 
+
+     ![](./../using-custom-image/images/Custom_Image_0015.PNG " ")
+
+   Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
 
 
 ## Acknowledgements
@@ -170,8 +184,8 @@ A compute instance can have a lot more applications installed and this custom im
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Contributors** - Kamryn Vinson, QA Engineer Lead Intern | Arabella Yao, Product Manager Intern, DB Product Management
-- **Last Updated By/Date** - Tom McGinn, August 2020
+- **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
+- **Last Updated By/Date** - Kamryn Vinson, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
