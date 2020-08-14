@@ -112,8 +112,8 @@ For more information about auto scaling, see the documentation [Use Auto Scaling
 
 ## **Acknowledgements**
 
-- **Author** - Rick Green, Principal Developer, Database User Assistance
-- **Technical Contributors** - Keith Laker and Nilay Panchal, ADB Product Management
+- **Authors** - Keith Laker and Nilay Panchal, ADB Product Management
+- **Adapted for Cloud by** - Rick Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Rick Green, July 2020
 
 ## See an issue?
