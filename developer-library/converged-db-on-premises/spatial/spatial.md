@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps of setting up the environment for Spatial lab. You can connect Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQL Developer.
+This lab walks you through the steps of setting up the environment for Spatial lab. You can connect Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
 
 Estimated Lab Time: 30 Minutes
 
@@ -66,6 +66,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
     ````
 
 4. Open SQLPlus as the user appjson
+   
     ````
     <copy>
     sqlplus appspat/Oracle_4U@SGRPDB

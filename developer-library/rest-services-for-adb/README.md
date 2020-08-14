@@ -44,7 +44,7 @@ In this lab you will use the SQL Developer Web browser-based tool, connect to yo
 ## **Step 4:**Register an OAUTH Client application
 
 ## Conclusion
- In this Lab, you had an opportunity to get an introduction to REST services.
+ In this lab, you had an opportunity to get an introduction to REST services.
 
 ## Acknowledgements
 

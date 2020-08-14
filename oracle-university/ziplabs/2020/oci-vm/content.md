@@ -1,7 +1,7 @@
 # Create a Virtual Machine Instance Using Oracle Cloud Infrastructure Compute #
 
 ## Before You Begin ##
-This 20-minute tutorial shows you how to create a Virtual Machine (VM) instance using Oracle Cloud Infrastructure (OCI) Compute Service. Before you can create a VM, you'll create a Virual Cloud Network (VCN).
+This 20-minute tutorial shows you how to create a Virtual Machine (VM) instance using Oracle Cloud Infrastructure (OCI) Compute Service. Before you can create a VM, you will create a Virual Cloud Network (VCN).
 
 ### Background ###
 Oracle Cloud Infrastructure Compute Service lets you create Virtual Machine instances on which you can run your mission-critical applications with high availability.

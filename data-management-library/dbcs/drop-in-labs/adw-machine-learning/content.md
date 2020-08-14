@@ -115,7 +115,7 @@ Oracle Machine Learning SQL notebooks provide easy access to Oracle's paralleliz
 
     [Description of the illustration RunParagraph.png](files/RunParagraph.txt)
 
-7. Observe the results. If the Zip Lab event has quizzes, you'll need this output to answer a quiz question.
+7. Observe the results. If the Zip Lab event has quizzes, you will need this output to answer a quiz question.
 
     ![](img/SQLOutput.png " ")
 
@@ -186,7 +186,7 @@ The SQL Scratchpad we're using is simply a default type notebook with a system g
 
     [Description of the illustration Notebooks.png](files/Notebooks.txt)
 
-7. Close the excess tabs. You've opened quite a few tabs finishing this lab. Close the last three browser tabs for the Cloud. For the next labs, the only tab you'll need is for the ADW instance's details page.
+7. Close the excess tabs. You've opened quite a few tabs finishing this lab. Close the last three browser tabs for the Cloud. For the next labs, the only tab you will need is for the ADW instance's details page.
 
     ![](img/adw_instance.png " ")
 
