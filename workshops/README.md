@@ -1,5 +1,4 @@
-![](../common/images/livelabs-banner-formarketplace.png)
-
+[![](../common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
 
 # Oracle North America Workshops
 

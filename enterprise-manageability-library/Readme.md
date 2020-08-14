@@ -1,18 +1,12 @@
-![](img/rdwd-entcloudmang.png)  
+[![](../common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
 
 # Welcome to Oracle Enterprise and Cloud Manageability Workshops
 
-These workshops are designed so each section can be done independently. Please look for the order of execution recommended by your instructor when attending a roadshow workshop. Note: there are a number of assumptions associated and documented for these workshops. Please pay attention to those.
-
-PLEASE DO NOT EXPORT OR DELETE THE EM CUSTOM IMAGE - IT WILL REMOVE IT FOR EVERYONE
-
-## General Oracle Cloud Workshop Prerequisites
--  Cloud Account or Free Tier Account
--  Putty (Windows users)
--  Google Chrome
-
 ## Enterprise Manager Workshops
-1. [Enterprise Manager Workshops](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/)
+Execute EM workshops in [LiveLabs](http://bit.ly/golivelabs)!  Click to begin!
+
+- [Enterprise Manager Fundamentals](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=574)
+- [Multitenant Lifecycle Management - 60 min](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=656)
 
 ## Oracle Management Cloud Workshops
 1. [Proactive Database Performance Management with IT Analytics](management_cloud/pro_dbperf_ita.md)
