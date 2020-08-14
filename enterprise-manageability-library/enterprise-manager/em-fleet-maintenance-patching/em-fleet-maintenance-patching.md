@@ -3,7 +3,7 @@
 
 In this lab you will explore end-to-end automated patching and upgrades of the Oracle Database using Enterprise Manager.
 
-Estimated Lab Time: 75 minutes
+*Estimated Lab Time*: 60 minutes
 
 ### About Database Fleet Maintenance
 
@@ -25,12 +25,20 @@ Benefits with Fleet Maintenance:
     - Lab: Environment Setup
 - EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: *``https://<Replace with your EM13c VM Instance Public IP>:7803/em``*.
+- OMS Console URL: *https://``<Replace with your EM13c VM Instance Public IP>``:7803/em*.
     - e.g: *https://111.111.111.111:7803/em*  
 - OMS super-user Credentials:
       - Username: **sysman**
       - password: **welcome1**
-Note: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
+
+*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
+
+### Video Preview
+Watch a preview of database patching using Oracle Enterprise Manager Fleet Maintenance:
+
+[](youtube:JlspEvqebHE)
+
+*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
 
 ### Lab Timing (Estimated)
 
@@ -39,10 +47,9 @@ Note: This lab environment is setup with Enterprise Manager Cloud Control Releas
 | 1                    | Detect Configuration Pollution                             | 10 minutes  | Analyze the database estate using Software Standardization.                                                                                                                |                   |
 | 2                    | Oracle Database Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
 
-
-
-#### Login to Host using SSH Key based authentication
-Refer to [Environment Setup](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+## **Step 0:** Running your Workload
+### Login to Host using SSH Key based authentication
+Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
@@ -50,19 +57,10 @@ Refer to [Environment Setup](https://oracle.github.io/learning-library/enterpris
   <copy>sudo su - oracle</copy>
   ````
 
-#### Login to OMS Console
+### Login to OMS Console
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
-
-### Video Preview
-Watch a video demonstration how database patching using Oracle Enterprise Manager Fleet Maintenance:
-
-[](youtube:JlspEvqebHE)
-
-*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
-
-## Step 0: Running your lab
 
 1. Update the Named Credentials with your SSH Key
 
@@ -562,9 +560,11 @@ Thank you!
   - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
 
 ## Acknowledgements
-- **Author** - Shefali Bhargava, Oracle Enterprise Manager Product Management
-* **Adapted for Cloud by** -  Rene Fontcha, Master Principal Platform Specialist, NA Technology
-- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
+  - **Authors**
+      - Rene Fontcha, Master Principal Platform Specialist, NA Technology
+      - Shefali Bhargava, Oracle Enterprise Manager Product Management
+  - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Platform Specialist, NA Technology
+  - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
 Refer to the FAQ at the bottom of the right-hand menu. While you cannot use the normal Oracle Support channel to raise a ticket for getting technical support, the vibrant [Enterprise Manager Community Forum](https://community.oracle.com/community/groundbreakers/enterprise_manager) stands to help.

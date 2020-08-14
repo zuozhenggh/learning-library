@@ -15,6 +15,13 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
 - SSH Keys
 
+### Video Preview
+Watch the end-to-end demonstration:
+
+[](youtube:ghbSbMElPFc)
+
+*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
+
 ## **Step 1A**: Create Stack:  Compute + Networking
 If you already have a VCN setup, proceed to *Step 1B*.
 
