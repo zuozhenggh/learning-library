@@ -63,8 +63,3 @@ If we were migrating a JRF domain (which is not the case here), the Virtual Clou
  - **Author** - Emmanuel Leroy, May 2020
  - **Last Updated By/Date** - Emmanuel Leroy, July 30 2020
 
-## See an issue?
-
-Please submit feedback using this <a href="https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1" target="_blank">form</a>. 
-
-Please include the <em>workshop name</em>, <em>lab</em> and <em>step</em> in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the <em>Feedback Comments</em> section.    Please include the workshop name and lab in your request.
