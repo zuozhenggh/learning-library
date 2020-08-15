@@ -221,7 +221,6 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
     ```
     <copy>
-    bash
     cd ~/.ssh/
     </copy>
     ```
@@ -231,7 +230,6 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 3. Enter command
     ```
     <copy>
-    bash
     ssh -i <sshkeyname> opc@PUBLIC_IP_OF_FIRST_COMPUTE
     </copy>
     ```
@@ -250,7 +248,6 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
     ```
     <copy>
-    bash
     ping <PRIVATE_IP_OF_SECOND_COMPUTE_INSTANCE>
     </copy>
     ```
