@@ -39,7 +39,7 @@ To work with application code, you need to download a GitHub repository using
   ```
   
 
-## **STEP 3**: Create an OKE Cluster
+## **STEP 3**: Create an OCI Compartment and an OKE Cluster in that Compartment.
 
 1. Open up the hamburger in the top-left corner of the Console and select **Identity > Compartments**.
 
