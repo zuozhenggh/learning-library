@@ -4,70 +4,87 @@
 
 Congratulations! You've come so far and completed the workshop, and you might wonder how to clean up resources.
 
-Note:
-You should not keep the instances deployed on OCI as part of this workshop running once your are done, or use in any way for actual workloads: since the DB and WebLogic credentials are publically available it would be a security issue.
+Estimated Lab Time: 15min
+
+*You should not keep the instances deployed on OCI as part of this workshop running once your are done, or use in any way for actual workloads: since the DB and WebLogic credentials are publically available it would be a security issue.*
 
 ## **STEP 1:** Cleaning up the 'on-premises' environment
 
 ### If you used Docker
 
-To stop the services:
+1. stop the services:
 
-<copy>
-```bash
-docker-compose stop
-```
-</copy>
+    ```
+    <copy>
+    bash
+    docker-compose stop
+    </copy>
+    ```
 
-to remove the containers, run:
+2. Remove the containers, run:
 
-<copy>
-```bash
-docker-compose rm
-```
-</copy>
+    ```bash
+    <copy>
+    docker-compose rm
+    </copy>
+    ```
 
 ### If you used the Workshop image from the marketplace
 
-- 1.1. Go to **Resources Manager**
+1. Go to **Resources Manager**
 
-- 1.2. Select the **compartment** where you deployed the stack originally
+2. Select the **compartment** where you deployed the stack originally
 
-- 1.3. Click the stack name for the **Workshop on-premises environment**
+3. Click the stack name for the **Workshop on-premises environment**
 
   <img src="./images/stack.png"  width="50%">
 
-- 1.4. In **Terraform Actions**, click **Destroy**
+4. In **Terraform Actions**, click **Destroy**
 
   <img src="./images/tf-destroy.png"  width="50%">
 
-- 1.5. Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
+5. Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
 
-- 1.6. Click **Delete Stack**
+6. Click **Delete Stack**
 
   <img src="./images/delete-stack.png"  width="50%">
 
-## **STEP 2:** Tear down the WebLogic environment
+## **STEP 2:** Tear down the Application Database on OCI
 
-- 2.1. Go to the Bare Metal, VM and Exadata Menu
+1. Go to the **Bare Metal, VM and Exadata Menu**
 
-- 2.2. Click the **Database System** to terminate
+2. Click the **Database System** to terminate
 
-- 2.3. Click **Terminate**
+3. Click **More Actions** and **Terminate**
+    You'll be prompted for the name of the DB system to terminate.
+
+    This will take several minutes.
+
+4. Go to **Networking -> Virtual Cloud Networks** 
+
+5. Select the nonjrf_wls VCN
+
+6. Select the private subnet that was created manually `nonjrf_db_subnet`
+
+7. Click **Terminate** 
+
+    Note you won't be able to proceed until the DB System itself has been terminated.
 
 ## **STEP 3:** Tear down the WebLogic environment
 
-- 3.1. Go to the Resources Manager
+*You need to terminate the DB subnet before you can tear down the WebLogic deployment as Resource Manager will not be able to clean up the VCN until the DB subnet is removed.
 
-- 3.2. Click the stack name for the **WebLogic Server deployment**
+1. Go to the **Resources Manager**
 
-- 3.3. In **Terraform Actions**, click **Destroy**
+2. Click the stack name for the **WebLogic Server deployment**
+
+3. In **Terraform Actions**, click **Destroy**
 
   <img src="./images/tf-destroy.png"  width="50%">
 
-- 3.4. Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
+4. Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
 
-- 3.5. Click **Delete Stack**
+5. Click **Delete Stack**
 
   <img src="./images/delete-stack.png"  width="50%">
 

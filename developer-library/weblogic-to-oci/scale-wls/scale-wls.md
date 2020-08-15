@@ -9,6 +9,8 @@ There are 2 ways to scale a domain:
 - Change the shape of the WebLogic Server VM to increase or reduce OCPU counts or memory
 - Add or remove node by editing the Resource Manager stack
 
+Estimated Lab Time: 20min
+
 ### Objectives
 
 In this lab, you will:
@@ -51,6 +53,8 @@ For this lab you need:
 The new job will update the number of nodes, reverting any manual shape change to the originally provisioned shape. Servers will be restarted and new nodes will join the cluster if there was one defined, unless the **Do not update domain** was checked.
 
 The load balancer is also updated to take new nodes into account.
+
+7. Go check the Admin Console under **Environment -> Servers** to verify an server was added
 
 ## **STEP 2:** Scaling a node by changing shape
 
