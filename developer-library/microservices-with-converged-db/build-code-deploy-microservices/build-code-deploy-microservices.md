@@ -56,7 +56,7 @@ To work with application code, you need to download a GitHub repository using
        Use the following command to update the ./bashrc file for the shell.
 
        ```
-      <copy>echo 'export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master' >> ~/.bashrc ; echo 'source ~/msdataworkshop.properties' >> ~/.bashrc</copy>
+      <copy>echo 'export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master' >> ~/.bashrc ; echo 'source $MSDATAWORKSHOP_LOCATION/msdataworkshop.properties' >> ~/.bashrc</copy>
       ```
 
     The ~/.bashrc should now contain these two new lines.  Verify using `cat`
@@ -64,7 +64,7 @@ To work with application code, you need to download a GitHub repository using
        ```
       <copy>cat ~/.bashrc</copy>
       ```
-
+TODO picture is now inacurate
    ![](images/bashrc.png " ")
 
 
@@ -78,29 +78,7 @@ To work with application code, you need to download a GitHub repository using
   This will set the properties needed to deploy and run the workshop and will also provide convenient shortcut commands.
     The kubernetes resources created by the workshop and commands can be viewed by issuing the `msdataworkshop` command.
 
-## **STEP 4**: Create the cluster namespace
-
-In order to divide and isolate cluster resources, you will create a cluster
-    namespace which will host all resources related to this application, such as
-    pods and services.
-
-1. Log in to the Cloud Console and open the Cloud Shell by
-    clicking the Cloud Shell icon in the top-right corner of the Console.
-
-  ![](images/7feb61fbebb010b7acada8a1e8b5a742.png " ")
-
-2. Create the `msdataworkshop` namespace using the following command:
-
-    ```
-    <copy>kubectl create ns msdataworkshop</copy>
-    ```
-
-  ![](images/0b897b3ec674bba2f8042287514cd9d5.png " ")
-
-  You have successfully created the `msdataworkshop` namespace which is used for
-  deploying the application code.
-
-## **STEP 5**: Install GraalVM and Jaeger
+## **STEP 4**: Install GraalVM and Jaeger
 
 1. Install GraalVM
 
@@ -162,8 +140,6 @@ The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. 
 
 
 
-
-
 6.  Verify that the jaeger-collector service `tracing.host` and `tracing.port` are the same in the `microprofile-config.properties` files. The jaeger-collector service is referenced in two files:
 
    - `$MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties`
@@ -177,7 +153,7 @@ The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. 
 
 
 
-## **STEP 6**: Deploy and access Frontend microservice
+## **STEP 5**: Deploy and access Frontend microservice
 
 1.  You need to compile, test and package the Helidon front-end
     application code into a `.jar` file using maven. The maven package is already installed in the
@@ -208,34 +184,9 @@ The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. 
 
   ![](images/a88b7e437c7a46e3b9878adb62942107.png " ")
 
-## **STEP 7**: Push image to OCI Registry, deploy and access microservices
-
-After you have successfully compiled the application code, you are ready to push it as a docker image into the OCI Registry. Once the image resides in the OCI registry, it can be used for deploying into the cluster. You are going to log into OCIR through the Cloud Shell using the following command.
-
-1.  You will need the following parameters which you have already added to your `msdataworkshop.properties` file:
-
-    - `REGION-ID` - is the Region identifier
-    - `OBJECT-STORAGE-NAMESPACE` - is your Object Storage namespace
-    - `USERNAME` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something`
-
-    ```
-  <copy>docker login REGION-ID.ocir.io -u OBJECT-STORAGE-NAMESPACE/USERNAME</copy>
-    ```
-
-    *When prompted for password use the Auth token (msdataworkshoptoken) you generated.*
-
-  ![](images/1bcf17e7001e44e1e7e583e61618acbf.png " ")
-
-2.  Once successfully logged into Container Registry, we can list the existing docker images. Since this is the first time logging into Registry, no images will be shown.
-
-    ```
-    <copy>docker images </copy>
-    ```
-
-  ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
 
-## **STEP 8**: Build the Docker image
+## **STEP 6**: Build and Push the Docker image
 
 1.  You are ready to build a docker image of the frontend Helidon application.
     Change directory into frontend-helidon folder:
