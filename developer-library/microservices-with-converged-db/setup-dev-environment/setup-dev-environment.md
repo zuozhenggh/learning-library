@@ -71,7 +71,7 @@ To work with application code, you need to download a GitHub repository using
 
   Will will verify cluster creation and create a kube config in order to access it in a later step.
   
-## **STEP 4**: Setup ATP databases
+## **STEP 4**: Create ATP databases
 
 1. run ./createATPPDBs.sh
    
@@ -84,7 +84,7 @@ To work with application code, you need to download a GitHub repository using
    OCIDs for the PDBs are stored and will be used later to create kubernetes secrets that microservices will use to access them.
 
 
-## **STEP 5**: Create an Oracle Cloud Infrastructure Registry and Auth key in the OCI Console and Docker Login to it from Cloud Shell
+## **STEP 5**: Create an OCI Registry and Auth key and login to it from Cloud Shell
 You are now going to create an Oracle Cloud Infrastructure Registry and an Auth key. Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development to production workflow by storing, sharing, and managing development artifacts such as Docker images.
 
 1. Open up the hamburger button in the top-left corner of the console and go to **Developer Services > Container Registry**.
