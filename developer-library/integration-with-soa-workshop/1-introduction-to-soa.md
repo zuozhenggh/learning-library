@@ -1,4 +1,4 @@
-# Module 1: Introduction to Oracle SOA suite
+# Introduction to Oracle SOA suite
 
 Oracle SOA suite is is a comprehensive, standards-based software suite to build, deploy and manage integration following the concepts of service-oriented architecture(SOA). The components of the suite benefit from consistent tooling, a single deployment and management model, end-to-end security and unified metadata management you can skip this module and go straight to Module 2 by clicking the navigation menu icon, in the upper-left corner of the header.
 
