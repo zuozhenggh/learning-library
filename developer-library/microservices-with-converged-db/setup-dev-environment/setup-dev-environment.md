@@ -38,8 +38,14 @@ To work with application code, you need to download a GitHub repository using
  <copy>cd ~ ; curl -sL https://tinyurl.com/y4wyehcw --output master.zip ; unzip master.zip ; rm master.zip</copy>
   ```
   
+## **STEP 3**: Install GraalVM and Jaeger
+Run ./installGraalVMAndJaeger.sh
 
-## **STEP 3**: Create an OCI Compartment and an OKE Cluster in that Compartment.
+  ```
+ <copy>./installGraalVMAndJaeger.sh</copy>
+  ```
+
+## **STEP 4**: Create an OCI Compartment and an OKE Cluster in that Compartment.
 
 1. Open up the hamburger in the top-left corner of the Console and select **Identity > Compartments**.
 
@@ -73,7 +79,7 @@ To work with application code, you need to download a GitHub repository using
   
   Will will verify cluster creation and create a kube config in order to access it in a later step.
   
-## **STEP 4**: Create ATP databases
+## **STEP 5**: Create ATP databases
 
 1. run ./createATPPDBs.sh
    
@@ -88,14 +94,14 @@ To work with application code, you need to download a GitHub repository using
    OCIDs for the PDBs are stored and will be used later to create kubernetes secrets that microservices will use to access them.
 
 
-## **STEP 5**: Create an OCI Registry and Auth key and login to it from Cloud Shell
+## **STEP 6**: Create an OCI Registry and Auth key and login to it from Cloud Shell
 You are now going to create an Oracle Cloud Infrastructure Registry and an Auth key. Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development to production workflow by storing, sharing, and managing development artifacts such as Docker images.
 
 1. Open up the hamburger button in the top-left corner of the console and go to **Developer Services > Container Registry**.
 
   ![](images/21-dev-services-registry.png " ")
 
-2. Click **Create Repository** , specify the following details for your new repository, and click **Create Repository**.
+2. Take note of the namespace (for example `axkcsk2aiatb` show in the following image).  Click **Create Repository** , specify the following details for your new repository, and click **Create Repository**.
     - Repository Name: `<firstname.lastname>/msdataworkshop`
 	- Access: `Public`
 
@@ -105,8 +111,8 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   ![](images/22-create-repo2.png " ")
   
-  Go to shell and run `./setObjectStoreNamespace.sh` with this value
-  For example `./setObjectStoreNamespace.sh msdataworkshop.user1/msdataworkshop`
+  Go to cloud shell and run `./addOCIRInfo.sh` with the namespace and repository name as arguments.
+  For example `./addOCIRInfo.sh axkcsk2aiatb msdataworkshop.user1/msdataworkshop`
 
 3. You will now create the Auth key by going back to the User Settings page. Click the Profile icon in the top-right corner of the Console and select **User Settings**.
 
@@ -142,8 +148,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
   ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
 
-
-## **STEP 6**: Access OKE from the Cloud Shell
+## **STEP 7**: Access OKE from the Cloud Shell
 
 1. run ./verifyOKEAndCreateKubeConfig.sh
 
