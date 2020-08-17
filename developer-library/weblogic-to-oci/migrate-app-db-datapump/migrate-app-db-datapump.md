@@ -1,45 +1,80 @@
 # Migrating the Application Database
 
-## Introduction: 
+## Introduction
 
-DataPump will be used to migrate the database from on-premises to OCI.
+This lab walks you through the steps to migrate the 'on-premises' application database to the database provisioned on OCI using Datapump.
 
-DataPump export function creates a DDL + data dump of the user schema, which is then transfered over to the target database where the DataPump import function is used to create the schema and import the data.
+Estimated Lab Time: 10 min
 
-## **Step 1:** Get a shell inside the database instance:
+### About Product/Technology
 
-If you used the Docker environment, use this command to get inside the DB container:
-```
-<copy>
-docker exec -it weblogic-to-oci_oracledb_1 /bin/bash
-</copy>
-```
-Note: you should already be inside the DB container from the SSH key creation step, so you can skip the above step unless you exited the container
+- DataPump is a tool that is part of the oracle Database set of utilities.
+- DataPump export function creates a DDL + data dump of the user schema.
+- DataPump import function imports the data into the database.
 
-If you used the Workshop compute image, you should already be logged into the instance and switched to the `oracle` user. If not use:
+In this workshop we will be using wrapper scripts to export, move the data to the destination and import to complete a full migration.
 
-```bash
-ssh opc@<public-ip>
-```
-then 
-```bash
-sudo su - oracle
-```
+### Objectives
 
-## **Step 2:** Get into the `datapump` folder
+In this lab you will:
 
-Get into the `/datapump` folder with:
-```
-<copy>
-cd ~/datapump
-</copy>
-```
+- Get shell access to the 'on-premises' database
+- Use a datapump script to export the database schema to migrate
+- Edit the datapump import script with the information collected in the DB provisioning lab
+- Run a datapump import script to migrate the database schema to OCI
 
-## **Step 3:** `datapump_export.sh` script
+### Prerequisites
 
-The script itself is commented to explain what it does.
+To run this lab you need:
 
-It sets up the directory to backup to, and uses datapump `expdp` export command to dump the `RIDERS` schema, which is the schema the application depends on.
+- To have provisioned the on-premises demo environment that includes the source database to migrate
+- To have provisioned the target database on OCI
+- To have gathered information about the passthrough-server to the DB, and the DB node IP and domain name which is part of the connection string.
+
+## **STEP 1:** Get a shell inside the 'on-premises' database instance
+
+### If you used the Docker environment:
+
+1. You should already be inside the DB container from the SSH key creation step. If not, use: 
+
+      ```
+      <copy>
+      docker exec -it weblogic-to-oci_oracledb_1 /bin/bash
+      </copy>
+      ```
+
+2. Get into the `/datapump` folder:
+
+      ```
+      <copy>
+      cd ~/datapump
+      </copy>
+      ```
+
+
+### If you used the Workshop image:
+
+1. You should already be logged into the instance and switched to the `oracle` user. If not use:
+
+      ```bash
+      ssh opc@<public-ip>
+      ```
+      then 
+      ```bash
+      sudo su - oracle
+      ```
+
+2. Get into the `/datapump` folder:
+
+      ```
+      <copy>
+      cd ~/datapump
+      </copy>
+      ```
+
+      The script itself is commented to explain what it does.
+
+      It sets up the directory to backup to, and uses datapump `expdp` export command to dump the `RIDERS` schema, which is the schema the application depends on.
 
 <details><summary>View the <code>datapump_export.sh</code> script</summary>
 
@@ -62,20 +97,23 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
 ```
 </details>
 
-## **Step 4:** run the `datapump_export.sh` script
+## **STEP 3:** Export the Source Database
 
-```
-<copy>
-./datapump_export.sh
-</copy>
-```
+1. Run the `datapump_export.sh` script:
 
-The output will look like
+      ```
+      <copy>
+      ./datapump_export.sh
+      </copy>
+      ```
 
-  <img src="./images/migrate-db-1.png" width="100%">
+      The output will look like
+        [](./images/migrate-db-1.png)
+        <img src="./images/migrate-db-1.png" width="100%">
 
 
-## **Step 5:** `datapump_import.sh` script
+
+## **STEP 2:** Edit the `datapump_import.sh` script
 
 Once the schema and data was exported, we'll import it into the OCI DBaaS database.
 
@@ -131,44 +169,63 @@ echo "Done!"
 ```
 </details>
 
-## **Step 6:** Edit the script
+1. Open the script in an editor. We'll use the popular `nano` editor:
 
-  - 6.1. Enter the `BASTION_IP`
+      ```
+      <copy>
+      nano datapump_import.sh
+      </copy>
+      ```
 
-     The `BASTION_IP` is the **public IP** of the WebLogic Admin Server that can be found in the output of the job that deployed the stack seen in Lab step 4
+2. Enter the `BASTION_IP`
 
-  - 6.2. Enter the `TARGET_DB_HOST` **private IP address**
-    This IP address was gathered from the Database System details in Lab step 5
+     The `BASTION_IP` is the **public IP** of the WebLogic Admin Server that can be found in the output of the job that deployed the WebLogic stack, as part of the WebLogic Admin Server console URL.
 
-  - 6.3. Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. If you followed the name conventions, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com` if you followed the defaults in this lab.
+     Find it in **Resource Manager -> Stack -> stack details -> job details -> Outputs**
 
-## **Step 7:** run the `datapump_import.sh` script
+       <img src="./images/migrate-db-2.png" width="100%">
 
-```bash
-<copy>
-./datapump_import.sh
-</copy>
-```
 
-The import script runs in 4 phases: 
+3. Enter the `TARGET_DB_HOST` **private IP address**
+ 
+     This IP address was gathered from the Database System details, under **Database System -> details -> Nodes**
 
-1) It copies the files over to the OCI DB node, 
+       <img src="./images/provision-db-26-nodeip.png" width="100%">
 
-2) then runs the `impdp` import command once. You may notice this 1st try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace. 
 
-3) the script then edits the `RIDERS` user tablespace quota
+4. Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. 
 
-4) and re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
+      If you followed the name conventions, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com` if you followed the defaults in this lab.
+
+      <img src="./images/provision-db-27-connection2.png" width="70%">
+
+
+## **STEP 4:** Import the data into the target database on OCI
+
+1. Run the `datapump_import.sh` script you edited at the previous step
+
+      ```bash
+      <copy>
+      ./datapump_import.sh
+      </copy>
+      ```
+
+2. You will be prompted to continue connection twice. Type `yes` each time to proceed.
+
+The import script runs in 4 phases:
+
+- It copies the files over to the OCI DB node
+- then runs the `impdp` import command once. 
+You may notice this 1st try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace. 
+- the script then edits the `RIDERS` user tablespace quota
+- and re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
 
 The database is now migrated to OCI.
 
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, July 30 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## See an issue?
-
-Please submit feedback using this <a href="https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1" target="_blank">form</a>. 
-
-Please include the <em>workshop name</em>, <em>lab</em> and <em>step</em> in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the <em>Feedback Comments</em> section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
