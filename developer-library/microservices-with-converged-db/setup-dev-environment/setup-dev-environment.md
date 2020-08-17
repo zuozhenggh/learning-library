@@ -179,11 +179,11 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
   ![](images/verifyOKEOutput.png " ")
 
 
-## **STEP 7**: Install GraalVM and Jaeger
-Run the `installGraalVMAndJaeger.sh` script to install both GraalVM and Jaeger.
+## **STEP 7**: Install GraalVM, Jaeger, and Frontend Loadbalancer
+Run the `installGraalVMJaegerAndFrontendLB.sh` script to install both GraalVM and Jaeger.
 
   ```
- <copy>./installGraalVMAndJaeger.sh</copy>
+ <copy>./installGraalVMJaegerAndFrontendLB.sh</copy>
   ```
 
 You may now proceed to the next lab.
