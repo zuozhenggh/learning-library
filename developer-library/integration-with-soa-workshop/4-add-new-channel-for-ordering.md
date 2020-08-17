@@ -78,4 +78,5 @@ This completes Module 4. You've successfully
 - You've also added new Proxy to handle incoming orders by file and translate common- delimited format with nXSD.
 - Worked with data/object schema builder
 
-[Click here to navigate to Module 5](5-pack-and-ship-service-composite.md)
+You may proceed to the next lab.
+<!-- [Click here to navigate to Module 5](5-pack-and-ship-service-composite.md) -->

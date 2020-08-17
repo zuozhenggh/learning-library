@@ -12,28 +12,28 @@
             "filename": "./1-introduction-to-soa.md"
         },
         {
-            "title": "Lab2: Build SOA composite to validate payment",
+            "title": "Build SOA composite to validate payment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "./2-build-composite-to-validate-payment.md"
         },
         {
-            "title": "Lab 3: Process Order develop in composite app",
+            "title": "Processing order composite app",
             "filename": "./3-process-order-using-composite.md"
         },
         {
-            "title": "Lab 4: Add new channel for ordering system",
+            "title": "Adding new channel for ordering system",
             "filename": "./4-add-new-channel-for-ordering.md"
         },
         {
-            "title": "Lab 5: Packing and shipping",
+            "title": "Packing and shipping",
             "filename": "./5-pack-and-ship-service-composite.md"
         },
         {
-            "title": "Lab 6: Order Fullfilment",
+            "title": "Order Fullfilment",
             "filename": "./6-order-fullfilment.md"
         },
         {
-            "title": "Lab 7: Summary and next step",
+            "title": "Summary and next step",
             "filename": "./7-summary-and-next-step.md"
         }
     ]

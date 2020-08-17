@@ -24,8 +24,7 @@ This completes Module 7 and the exercises lab. In your JDeveloper, you would see
 
 ### **Learn More** - *Useful Links*
 
-- Understanding Oracle SOA Suite  https://docs.oracle.com/en/middleware/soa-suite/soa/12.2.1.3/concepts/overview.html#GUID-95A68E45-922B-4361-9B48-8372F49BCD1A
+- <a href="https://docs.oracle.com/en/middleware/soa-suite/soa/12.2.1.3/concepts/overview.html#GUID-95A68E45-922B-4361-9B48-8372F49BCD1A"> Understanding Oracle SOA Suite </a>
   
-- Tutorials  https://apex.oracle.com/en/learn/tutorials
-- Community  http://apex.oracle.com/community
-- External Site + Slack  http://apex.world
+- <a href="https://apex.oracle.com/en/learn/tutorials"> Tutorials </a>
+- <a href="http://apex.oracle.com/community"> Community </a>

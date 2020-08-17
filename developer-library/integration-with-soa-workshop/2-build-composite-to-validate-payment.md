@@ -99,4 +99,5 @@ Please follow the construction details from <ins>**page 54 to 77**, in the SOAsu
 
 Congratulations you completed your first SOA Suite 12c composite! in Part 1 and 2 for developing validate payment using SOA Composite approach.
 
-[Click here to navigate to the next Module 3](3-process-order-using-composite.md)
+You may proceed to the next lab.
+<!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->

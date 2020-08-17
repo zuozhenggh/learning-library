@@ -72,14 +72,12 @@ To gain access to free tier compute resource, follow these steps:
 
     
 ### **Option 2** Download Oracle SOA from www.oracle.com
-Here is the specific link https://www.oracle.com/cloud/integration/soa-cloud-service/
+Here is the specific link <a href="https://www.oracle.com/cloud/integration/soa-cloud-service/"> SOA Cloud</a>
 
 For cost-related estimation
-   go to (https://www.oracle.com/cloud/integration/soa-cloud-service/pricing.html)
+   go to <a href="https://www.oracle.com/cloud/integration/soa-cloud-service/pricing.html"> SOA Cloud Values</a>
 
 
 ### **Summary**
 
-This completes the lab introduction. At this point, you know how ...........  to start building amazing enterprise-grade integration, fast. Go to Module 2 of this lab by clicking the navigation menu icon, in the upper-left corner of the header.
-
- [Otherwise, click here to navigate to Module 2](2-build-composite-to-validate-payment.md)
+This completes the lab introduction. At this point, you're ready to start building amazing enterprise-grade integration, rapidly. You may proceed to the lab: **Build SOA composite to validate payment lab** by clicking the navigation menu icon, in the upper-right corner of the header.

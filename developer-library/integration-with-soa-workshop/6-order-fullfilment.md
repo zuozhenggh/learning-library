@@ -20,21 +20,22 @@ and shipping state.
 ### Details: ###
 Please follow, the details as outlined in **Chapter 6, starting page 254** in the tutorial. 
 
-When it’s completed, your overall fullfillOrder project will look similar to composite apps composed of orchestrated business services
+When it’s completed, your overall fullfillment order project will look similar to composite apps composed of orchestrated business services
 
 ![](images/6/OrderFullfillment.png)
     
         
 ### **Summary**
 
-This completes Module 6. You now know how to enhance how to deploy a project for SOA composites and Service Bus, how to debug and different ways to test within JDeveloper and Enterprise Manager Fusion Middleware Control. 
+This completes Order fullfilment lab. You now know how to enhance, how to deploy a project for SOA composites and Service Bus, how to debug and different ways to test within JDeveloper and Enterprise Manager Fusion Middleware Control. 
 
-[Click here to navigate to Module 7](7-summary-and-next-step.md) 
+You may proceed to the next lab.
+
+<!-- [Click here to navigate to Module 7](7-summary-and-next-step.md) -->
 
 ### **Learn More - useful Links** ###
-
-- SOA suite on Marketplace  https://cloudmarketplace.oracle.com/marketplace/en_US/listing/70268091
-- Community  https://cloudcustomerconnect.oracle.com/
-- Integration https://www.oracle.com/middleware/technologies/soasuite.html
+- SOA suite on  <a href="https://cloudmarketplace.oracle.com/marketplace/en_US/listing/70268091"> Marketplace  </a>
+- <a href="https://cloudcustomerconnect.oracle.com/"> Community </a>
+- <a href="https://www.oracle.com/middleware/technologies/soasuite.html"> Integration</a>
 
 

@@ -44,13 +44,12 @@ This completes Module 5. You've successfully:
 5. Tested the service in JDeveloper
 6. Inspect the process flow instance being tracked in the enterprise manager
 
+ The next module will build the fulfillment order service, which identifies the shipping provider and calls the pack and ship service. You may proceed to the next module.
 
- The next module will build the fulfillment order service, which identifies the shipping provider and calls the pack and ship service.
-
-[Click here to navigate to Module 6](6-order-fullfilment.md)
+<!--[Click here to navigate to Module 6](6-order-fullfilment.md) -->
 
 ### **Learn More - useful Links** ###
 
-- SOA suite on Marketplace  https://cloudmarketplace.oracle.com/marketplace/en_US/listing/70268091
-- Community  https://cloudcustomerconnect.oracle.com/
-- Integration https://www.oracle.com/middleware/technologies/soasuite.html
+- SOA suite on  <a href="https://cloudmarketplace.oracle.com/marketplace/en_US/listing/70268091"> Marketplace  </a>
+- <a href="https://cloudcustomerconnect.oracle.com/"> Community </a>
+- <a href="https://www.oracle.com/middleware/technologies/soasuite.html"> Integration</a>

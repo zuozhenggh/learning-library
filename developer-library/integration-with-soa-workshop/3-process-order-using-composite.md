@@ -54,4 +54,6 @@ In module 3, you've accomplished:
 - Provided API for backend service from a service bus. This is exposed using Proxy Service within a Service Bus.
   
 
-This completes Module 3.  [Click here to navigate to Module 4](4-add-new-channel-for-ordering.md)
+This completes Process order composite application. You may proceed to the next lab.
+
+ <!-- [Click here to navigate to Module 4](4-add-new-channel-for-ordering.md) -->
