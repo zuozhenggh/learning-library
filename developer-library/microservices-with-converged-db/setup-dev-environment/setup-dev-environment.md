@@ -28,7 +28,7 @@ Cloud Shell is a small virtual machine running a Bash shell which you access thr
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
   ```
- <copy>cd ~ ; curl -sL https://objectstorage.us-phoenix-1.oraclecloud.com/p/2dxESKbTDDXLVFBE1z8grNdlBqtGq5oMBhX96wGjNaI/n/stevengreenberginc/b/msdataworkshop/o/master.zip --output master.zip ; unzip master.zip ; rm master.zip</copy>
+ <copy>cd ~ ; curl -sL https://tinyurl.com/y3fzk5sn --output master.zip ; unzip master.zip ; rm master.zip</copy>
   ```
 
   You should now see `msdataworkshop-master` in your root directory.
