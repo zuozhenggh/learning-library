@@ -81,3 +81,12 @@ For cost-related estimation
 ### **Summary**
 
 This completes the lab introduction. At this point, you're ready to start building amazing enterprise-grade integration, rapidly. You may proceed to the lab: **Build SOA composite to validate payment lab** by clicking the navigation menu icon, in the upper-right corner of the header.
+
+## Acknowledgements
+* **Author** - <Name, Title, Group>
+* **Adapted for Cloud by** -  <Name, Group> -- optional
+* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
