@@ -50,7 +50,30 @@ You will also clone a GitHub repository.
 
 
 
-## **STEP 2**: Build and Push the Docker image and access the FrontEnd UI microservice
+## **STEP 2**: Set values for workshop in the environment
+
+1. run ./setJaegerAddress.sh and verify successful outcome. It may be necessary to run this script multiple times if the Jaeger load balancer has not been provisioned yet.
+
+   ```
+   <copy>./setJaegerAddress.sh</copy>
+   ```
+  
+
+2. run ./addAndSourcePropertiesInBashrc.sh
+
+   ```
+   <copy>./addAndSourcePropertiesInBashrc.sh</copy>
+   ```
+  
+3. Source the edited `.bashrc` file with the following command.
+      
+   ```
+      <copy>source ~/.bashrc</copy>
+   ```
+      ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
+
+
+## **STEP 3**: Build and Push the Docker image and access the FrontEnd UI microservice
 
 1.  You are ready to build a docker image of the frontend Helidon application.
     Change directory into frontend-helidon folder:

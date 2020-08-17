@@ -28,20 +28,13 @@ To work with application code, you need to download a GitHub repository using
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
   ```
- <copy>cd ~ ; curl -sL https://tinyurl.com/yxg9qjvb --output master.zip ; unzip master.zip ; rm master.zip</copy>
+ <copy>cd ~ ; curl -sL https://objectstorage.us-phoenix-1.oraclecloud.com/p/2dxESKbTDDXLVFBE1z8grNdlBqtGq5oMBhX96wGjNaI/n/stevengreenberginc/b/msdataworkshop/o/master.zip --output master.zip ; unzip master.zip ; rm master.zip</copy>
   ```
 
   You should now see **msdataworkshop-master** in your root directory.
   cd into this directory
-  
-## **STEP 3**: Install GraalVM and Jaeger
-Run ./installGraalVMAndJaeger.sh
 
-  ```
- <copy>./installGraalVMAndJaeger.sh</copy>
-  ```
-
-## **STEP 4**: Create an OCI Compartment and an OKE Cluster in that Compartment.
+## **STEP 3**: Create an OCI Compartment and an OKE Cluster in that Compartment.
 
 1. Open up the hamburger in the top-left corner of the Console and select **Identity > Compartments**.
 
@@ -75,7 +68,7 @@ Run ./installGraalVMAndJaeger.sh
   
   Will will verify cluster creation and create a kube config in order to access it in a later step.
   
-## **STEP 5**: Create ATP databases
+## **STEP 4**: Create ATP databases
 
 1. run ./createATPPDBs.sh
    
@@ -90,7 +83,7 @@ Run ./installGraalVMAndJaeger.sh
    OCIDs for the PDBs are stored and will be used later to create kubernetes secrets that microservices will use to access them.
 
 
-## **STEP 6**: Create an OCI Registry and Auth key and login to it from Cloud Shell
+## **STEP 5**: Create an OCI Registry and Auth key and login to it from Cloud Shell
 You are now going to create an Oracle Cloud Infrastructure Registry and an Auth key. Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development to production workflow by storing, sharing, and managing development artifacts such as Docker images.
 
 1. Open up the hamburger button in the top-left corner of the console and go to **Developer Services > Container Registry**.
@@ -126,10 +119,10 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   ![](images/26-save-auth-token.png " ")
 
-  Go to shell and run `./dockerlogin.sh` with USERNAME and copied token value.
+  Go to shell and run `./dockerlogin.sh` with USERNAME and copied token value. Enclose the auth token value argument in quotes. 
   `USERNAME` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something`
 
-  For example `./dockerLogin.sh foo@bar.com 8nO[BKNU5iwasdf2xeefU;yl`
+  For example `./dockerLogin.sh foo@bar.com "8nO[BKNU5iwasdf2xeefU;yl"`
 
   ![](images/1bcf17e7001e44e1e7e583e61618acbf.png " ")
 
@@ -142,7 +135,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
   ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
 
-## **STEP 7**: Access OKE from the Cloud Shell
+## **STEP 6**: Access OKE from the Cloud Shell
 
 1. run ./verifyOKEAndCreateKubeConfig.sh
 
@@ -155,22 +148,13 @@ Notice kube config is create for the cluster created earlier and the `msdatawork
 
   ![](images/verifyOKEOutput.png " ")
   
-
-
-## **STEP 8**: Set values for workshop in the environment
-
-1. run ./addAndSourcePropertiesInBashrc.sh
-
-   ```
-   <copy>./addAndSourcePropertiesInBashrc.sh</copy>
-   ```
   
-2. Source the edited `.bashrc` file with the following command.
-      
-   ```
-      <copy>source ~/.bashrc</copy>
-   ```
-      ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
+## **STEP 7**: Install GraalVM and Jaeger
+Run ./installGraalVMAndJaeger.sh
+
+  ```
+ <copy>./installGraalVMAndJaeger.sh</copy>
+  ```
 
   This will set the properties needed to deploy and run the workshop and will also provide convenient shortcut commands.
     The kubernetes resources created by the workshop and commands can be viewed by issuing the `msdataworkshop` command.
