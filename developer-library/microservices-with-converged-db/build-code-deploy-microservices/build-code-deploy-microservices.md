@@ -50,7 +50,7 @@ You will also clone a GitHub repository.
 
 
 
-## **STEP 2**: Build and Push the Docker image
+## **STEP 2**: Build and Push the Docker image and access the FrontEnd UI microservice
 
 1.  You are ready to build a docker image of the frontend Helidon application.
     Change directory into frontend-helidon folder:
