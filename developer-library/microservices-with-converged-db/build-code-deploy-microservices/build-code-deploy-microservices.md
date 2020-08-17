@@ -17,42 +17,48 @@ You will also clone a GitHub repository.
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * The OKE cluster and the ATP databases that you created in Lab 1
 
-## **STEP 1**: Build frontend Helidon microservice
 
-1.  You need to compile, test and package the Helidon frontend
-    application code into a `.jar` file using maven. The maven package is already installed in the
-    Cloud Shell.
+## **STEP 1**: Set values for workshop in the environment
 
-    Inside Cloud Shell go to the frontend Helidon microservice
-    folder.
+1. Run `./addAndSourcePropertiesInBashrc.sh`
 
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
-    ```
+   ```
+   <copy>./addAndSourcePropertiesInBashrc.sh</copy>
+   ```
 
-2.  Run `maven` to build the package using the following command. Since this is
-    the first time maven is executed, nothing is cached, thus it will first
-    download all the necessary libraries and bundles.
+2. Source the `.bashrc` file with the following command.
 
-    ```
-    <copy>mvn clean install</copy>
-    ```
+   ```
+      <copy>source ~/.bashrc</copy>
+   ```
+      ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
-  The build should be completed in 1-2 minutes, and a target folder with the related Java files is created.
 
-  ![](images/2826286b95e74bd51237859bd7d3d891.png " ")
+## **STEP 2**: Build and push the Docker images
 
-3. Execute the following command to investigate the target folder.
+1. Run the `build.sh` script to build and push the
+    microservices images into the repository
 
     ```
-    <copy>ls -al target/</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION ; ./build.sh</copy>
     ```
 
-  ![](images/a88b7e437c7a46e3b9878adb62942107.png " ")
+  ![](images/70e6b9bab9f2e247e950e50745de802d.png " ")
 
+  In a couple of minutes, you should have successfully built and pushed all the images into the OCIR repository.
 
+  ![](images/bdd2f05cfc0d1aac84b09dbe5b48993a.png " ")
 
-## **STEP 2**: Set values for workshop in the environment
+2.  Go to the Console, click the hamburger menu in the top-left corner and open
+    **Developer Services > Container Registry**.
+
+  ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
+
+3. Mark all the images as public (**Actions** > **Change to Public**):
+
+  ![](images/71310f61e92f7c1167f2016bb17d67b0.png " ")
+
+## **STEP 3**: Build deploy and access FrontEnd UI microservice
 
 1. Run `./setJaegerAddress.sh` and verify successful outcome.
 
@@ -62,25 +68,14 @@ You will also clone a GitHub repository.
    <copy>./setJaegerAddress.sh</copy>
    ```
 
-
-2. Run `./addAndSourcePropertiesInBashrc.sh`
-
-   ```
-   <copy>./addAndSourcePropertiesInBashrc.sh</copy>
-   ```
-
-3. Source the edited `.bashrc` file with the following command.
+2. Source the `.bashrc` file with the following command.
 
    ```
       <copy>source ~/.bashrc</copy>
    ```
       ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
-
-## **STEP 3**: Build and push the Docker image and access the frontEnd UI microservice
-
-1.  You are ready to build a docker image of the frontend Helidon application.
-    Change directory into `/frontend-helidon` folder:
+3.  Change directory into `/frontend-helidon` folder:
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
@@ -88,7 +83,7 @@ You will also clone a GitHub repository.
 
   ![](images/418a175c8093375d4264d6cd5897ead9.png " ")
 
-2.  Run the build script which will build the frontend-helidon application, store it in a docker image and push it to Oracle Registry
+4.  Run the build script which will build the frontend-helidon application, store it in a docker image and push it to Oracle Registry
 
     ```
     <copy>./build.sh</copy>
@@ -100,24 +95,8 @@ You will also clone a GitHub repository.
 
   ![](images/cb413dce71ae945decf19e468a94a89e.png " ")
 
-3.  Go to the Console, click the hamburger menu in the top-left corner and open
-    **Developer Services > Container Registry**.
 
-  ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
-
-4. You should see the newly created image in the list. If you don't see it, click the refresh icon in the upper right corner of the Create Repository pane. Click the repository with the new image.
-
-  ![](images/b4a27ed98282369ffa60e48e6cea591b.png " ")
-
-5.  To simplify the usage of this image - and to avoid the need to do `docker login` in
-    the deployment yaml file or git CI/CD - we will change the image from Private
-    to Public, by clicking **Actions > Change to Public**.
-
-  ![](images/3df6ee1cf8469d3277b107b4aca6efab.png " ")
-
-  ![](images/62015eda55591496a1becfe11063fac5.png " ")
-
-6.  Go back to the Cloud Shell and run the deploy script from the same directory
+5.  Run the deploy script from the same directory
     as build. This will create a new pod and service for this image in the OKE
     cluster `msdataworkshop` namespace:
 
@@ -157,29 +136,7 @@ You will also clone a GitHub repository.
   `http://<external-IP>:8080`
 
   ![](images/frontendhome.png " ")
-
-10. Run the `build.sh` script to build and push the rest of the
-    microservices images into the repository
-
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION ; ./build.sh</copy>
-    ```
-
-  ![](images/70e6b9bab9f2e247e950e50745de802d.png " ")
-
-  In a couple of minutes, you should have successfully built and pushed all the images into the OCIR repository.
-
-  ![](images/bdd2f05cfc0d1aac84b09dbe5b48993a.png " ")
-
-11.  Go to the Console, click the hamburger menu in the top-left corner and open
-    **Developer Services > Container Registry**.
-
-  ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
-
-12. Mark all the images as public (**Actions** > **Change to Public**), just as you did previously for the frontend image:
-
-  ![](images/71310f61e92f7c1167f2016bb17d67b0.png " ")
-
+  
 You may now proceed to the next lab.
 
 ## Acknowledgements
