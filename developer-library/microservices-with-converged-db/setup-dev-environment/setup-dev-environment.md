@@ -158,6 +158,24 @@ Notice kube config is create for the cluster created earlier and the `msdatawork
   ![](images/verifyOKEOutput.png " ")
   
 
+
+## **STEP 8**: Set values for workshop in the environment
+
+1. run ./addAndSourcePropertiesInBashrc.sh
+
+   ```
+   <copy>./addAndSourcePropertiesInBashrc.sh</copy>
+    ```
+  
+2. Source the edited `.bashrc` file with the following command.
+      
+   ```
+      <copy>source ~/.bashrc</copy>
+   ```
+      ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
+
+  This will set the properties needed to deploy and run the workshop and will also provide convenient shortcut commands.
+    The kubernetes resources created by the workshop and commands can be viewed by issuing the `msdataworkshop` command.
 You may proceed to the next lab.
 
 ## Acknowledgements
