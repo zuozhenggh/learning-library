@@ -2,7 +2,7 @@
 ## Introduction
 The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator.
 
-Estimated Lab Time: 60 minutes
+*Estimated Lab Time*: 60 minutes
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -11,16 +11,15 @@ Estimated Lab Time: 60 minutes
     - Lab: Environment Setup
 - EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: *``https://<Replace with your EM13c VM Instance Public IP>:7803/em``*.
+- OMS Console URL: *https://``<Replace with your EM13c VM Instance Public IP>``:7803/em*.
     - e.g: *https://111.111.111.111:7803/em*  
 - OMS super-user Credentials:
       - Username: **sysman**
       - password: **welcome1**
-Note: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository.
 
+*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository.
 
 ### Lab Timing (Estimated)
-
 
 | Step No.                                      | Feature                                                                 | Approx. Time | Details                                                                                                                                                                                    | Value proposition                                                                                                   |
 |-----------------------------------------------------------|-------------------------------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
@@ -29,8 +28,9 @@ Note: This lab environment is setup with Enterprise Manager Cloud Control Releas
 | 3                                                         | Database configuration drift management                                 | 20 minutes   | Compare latest or saved target configuration to one or more targets.                                                                                                                       | Monitor databases in your organization for any configuration drift, remediate to align with reference configuration |
 | 4                                                         | Database and host security compliance using custom compliance framework | 20 minutes   | Aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets                                                                                      | Monitor security compliance for heterogenous targets from one customized dashboard.                                 |
 
+## **Step 0:** Running your Workload
 
-#### Login to OMS Console
+### Login to OMS Console
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
@@ -542,7 +542,7 @@ Thank You!
 
 ## Acknowledgements
 - **Author** - Harish Niddagatta, Oracle Enterprise Manager Product Management
-* **Adapted for Cloud by** -  Rene Fontcha, Master Principal Platform Specialist, NA Technology
+- **Adapted for Cloud by** -  Rene Fontcha, Master Principal Platform Specialist, NA Technology
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
