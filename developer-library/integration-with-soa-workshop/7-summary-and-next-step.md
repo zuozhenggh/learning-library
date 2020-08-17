@@ -2,6 +2,7 @@
 
 During this live lab tutorial, you have learned, gained hands-on understanding and built integration with Service orientated approach principle where application and component provide services to other components via well defined communucation protocol over a network. SOA makes it easier for software components over various networks to work with each other. It provides intelligent and flexible framework for apps and process connectivity, across on-premise and cloud.
 
+## Review ##
 Salient points about Oracle SOA. It is a platform to address application **integration**, for both cloud SaaS and on-premise. Oracle SOA can be deployed on customer's datacenter, OCI or your choice of IaaS, Cloud provider:
 
 1. Companies can develop applications without replacing existing enterprise applications or system of record.
@@ -22,7 +23,7 @@ This completes Module 7 and the exercises lab. In your JDeveloper, you would see
 
 ![](images/7/SummaryServices.png)
 
-### **Learn More** - *Useful Links*
+### **Learn More - Useful Links** ###
 
 - <a href="https://docs.oracle.com/en/middleware/soa-suite/soa/12.2.1.3/concepts/overview.html#GUID-95A68E45-922B-4361-9B48-8372F49BCD1A"> Understanding Oracle SOA Suite </a>
   

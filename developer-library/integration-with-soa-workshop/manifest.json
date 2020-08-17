@@ -7,29 +7,29 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Introduction to Service architecture",
+            "title": "1-Introduction to Service architecture",
             "description": "Service Orientated architecture.",
             "filename": "./1-introduction-to-soa.md"
         },
         {
-            "title": "Build SOA composite to validate payment",
+            "title": "2-Build SOA composite to validate payment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "./2-build-composite-to-validate-payment.md"
         },
         {
-            "title": "Processing order composite app",
+            "title": "3-Processing order using SOA composite",
             "filename": "./3-process-order-using-composite.md"
         },
         {
-            "title": "Adding new channel for ordering system",
+            "title": "4-Adding new channel for ordering in SOA composite",
             "filename": "./4-add-new-channel-for-ordering.md"
         },
         {
-            "title": "Packing and shipping",
+            "title": "5-Packing and shipping composite application",
             "filename": "./5-pack-and-ship-service-composite.md"
         },
         {
-            "title": "Order Fullfilment",
+            "title": "6-Order Fullfilment of SOA composite",
             "filename": "./6-order-fullfilment.md"
         },
         {

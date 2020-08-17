@@ -3,8 +3,9 @@
 After you completed previous modules, the core order system is built, you will extend and add a new interface so that existing systems may place orders without impacting an existing application. Service Bus can provide intelligent routing to respective business services, protocol and data enrichment to minimize any disruption to the backend business logic of Process Order.
 In this chapter, you will add new File order channel for your ProcessOrder leveraging the work done in previous chapters. You will add new Proxy to handled incoming orders by file and translate common- delimited format with nXSD.
 
+## High level steps ##
+
 ### **Part 1**: Add file adapter proxy and connectivity to pipeline
-**High level steps** 
 
 1. Configure a File Adapter Proxy with nXSD translation.
 2. Wire to the existing Process Order Pipeline and Business Service.

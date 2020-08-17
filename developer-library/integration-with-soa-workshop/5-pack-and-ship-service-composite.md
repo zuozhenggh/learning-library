@@ -4,10 +4,10 @@ In this module, you will build the first part of the order fulfillment service. 
 Once the order has been shipped, an email is sent to the customer confirming the shipping provider and the order status is updated to Shipped.
 This chapter will build the pack and ship service, including the email notification.
 
+## High level steps ##
+
 ### **Objective**: Build the pack-and-ship service
 For this module, the pack and ship service is defined with a REST interface and accepts a Shipping resource (part of the canonical order message). It initiates the packing and shipping of one order and notifies the customer that the order has shipped. It also updates the order status in the database to Shipped.
-
-**High level steps**
 
 1. Create a new SOA project PackAndShipService with an empty composite in the application e2e-1201-composites.
 2. Define a REST interface for the Packing Service Project
@@ -48,7 +48,7 @@ This completes Module 5. You've successfully:
 
 <!--[Click here to navigate to Module 6](6-order-fullfilment.md) -->
 
-### **Learn More - useful Links** ###
+### **Learn More - Useful Links** ###
 
 - SOA suite on  <a href="https://cloudmarketplace.oracle.com/marketplace/en_US/listing/70268091"> Marketplace  </a>
 - <a href="https://cloudcustomerconnect.oracle.com/"> Community </a>

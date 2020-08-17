@@ -2,11 +2,9 @@
 
 In this module, you will build the second part of the order fulfillment service, the FulfillOrder composite. The composite listens to orders being processed, select a Shipping Provider and then invoke the PackAndShip service that was built in the previous chapter.
 
-### **Objective**
-In this module, you will build the order fulfillment service.
 The service is triggered when an order is updated as “ReadyForShip” in the database. It then locates the shipping speed in the order message, determines the shipping method based on shipping speed and shipping state, reads the preferred shipping provider from the database or cache, and calls the pack and ship REST service.
 
-### **High level steps**
+## High level steps ##
 
 1. Create a new SOA project called FulfillOrder from a project template.
 2. The DB adapter polls the order table for orders that are ready for shipment. (This will be used later for the ESS use case where we activate this adapter only at certain times of the day.).
@@ -33,7 +31,7 @@ You may proceed to the next lab.
 
 <!-- [Click here to navigate to Module 7](7-summary-and-next-step.md) -->
 
-### **Learn More - useful Links** ###
+### **Learn More - Useful Links** ###
 - SOA suite on  <a href="https://cloudmarketplace.oracle.com/marketplace/en_US/listing/70268091"> Marketplace  </a>
 - <a href="https://cloudcustomerconnect.oracle.com/"> Community </a>
 - <a href="https://www.oracle.com/middleware/technologies/soasuite.html"> Integration</a>
