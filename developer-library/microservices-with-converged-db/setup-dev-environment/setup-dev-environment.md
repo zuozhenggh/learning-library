@@ -163,7 +163,7 @@ Notice kube config is create for the cluster created earlier and the `msdatawork
 
    ```
    <copy>./addAndSourcePropertiesInBashrc.sh</copy>
-    ```
+   ```
   
 2. Source the edited `.bashrc` file with the following command.
       
