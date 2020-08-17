@@ -1,7 +1,7 @@
 # Setup OCI, OKE, ATP and Cloud shell
 ## Introduction
 
-This 25-minute lab will show you how to setup the Oracle Cloud Infrastructure Container Engine for Kubernetes for creating and deploying a front-end Helidon application which accesses in the backend the Oracle Autonomous Database.
+This 25-minute lab will show you how to set up the Oracle Cloud Infrastructure (OCI) Container Engine for Kubernetes (OKE) for creating and deploying a front-end Helidon application which accesses the backend Oracle Autonomous Database (ATP).
 
 ### Objectives
 
@@ -11,32 +11,37 @@ This 25-minute lab will show you how to setup the Oracle Cloud Infrastructure Co
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+* An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 
- You will not be able to complete this workshop with the 'free always' account. Make sure that you select the free trial account with credits.
+ You will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
 
-## **STEP 1**: Enter Cloud Shell
+## **STEP 1**: Launch the Cloud Shell
 
-Cloud Shell is a small virtual machine running a Bash shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated OCI CLI, set to the Console tenancy home page region, as well as up-to-date tools and utilities.
+Cloud Shell is a small virtual machine running a Bash shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated CLI which is set to the OCI Console tenancy home page region. It also provides up-to-date tools and utilities.
 
 1.	Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/7-open-cloud-shell.png " ")
 
 ## **STEP 2**: Download workshop source code
-To work with application code, you need to download a GitHub repository using
+1. To work with application code, you need to download a GitHub repository using
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
   ```
  <copy>cd ~ ; curl -sL https://objectstorage.us-phoenix-1.oraclecloud.com/p/2dxESKbTDDXLVFBE1z8grNdlBqtGq5oMBhX96wGjNaI/n/stevengreenberginc/b/msdataworkshop/o/master.zip --output master.zip ; unzip master.zip ; rm master.zip</copy>
   ```
 
-  You should now see **msdataworkshop-master** in your root directory.
-  cd into this directory
+  You should now see `msdataworkshop-master` in your root directory.
 
-## **STEP 3**: Create an OCI Compartment and an OKE Cluster in that Compartment.
+2. Change directory into the msdataworkshop-master directory:
 
-1. Open up the hamburger in the top-left corner of the Console and select **Identity > Compartments**.
+    ```
+   <copy>cd msdataworkshop-master</copy>
+    ```
+
+## **STEP 3**: Create an OCI compartment and an OKE cluster in that compartment
+
+1. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Compartments**.
 
   ![](images/15-identity-compartments.png " ")
 
@@ -48,7 +53,7 @@ To work with application code, you need to download a GitHub repository using
 
   ![](images/17-create-compartment2.png " ")
 
-3. Once the compartment is created, click on the name of the compartment and then click on '`copy` to copy the OCID.
+3. Once the compartment is created, click the name of the compartment and then click **Copy** to copy the OCID.
 
   ![](images/19-compartment-name-ocid.png " ")
 
@@ -56,85 +61,76 @@ To work with application code, you need to download a GitHub repository using
 
 4. Go back into your cloud shell and verify you are in the `~/msdataworkshop-master` directory.
 
-5. Issue the following command providing the compartment ocid you just created and copied as an argument.
+5.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left
+        corner of the Console and go to **Developer Services > Kubernetes Clusters**.
 
-  ```
- <copy>./setCompartmentId.sh </copy>
-  ```
-  
-  For example `./setCompartmentId.sh ocid1.compartment.oc1..aaaaaaaaxbyourcompartmentocidhere`
+      ![](images/27-dev-services-oke.png " ")
 
-6.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left
-    corner of the Console and go to **Developer Services > Kubernetes Clusters**.
+6. Make sure you are in the newly created compartment and click **Create Cluster**.
 
-  ![](images/27-dev-services-oke.png " ")
+      ![](images/28-create-oke.png " ")
 
-7. Make sure you are in the newly created compartment and click **Create Cluster**.
+7. Choose **Quick Create** as it will create the new cluster along with the new network
+    resources such as Virtual Cloud Network (VCN), Internet Gateway (IG), NAT
+    Gateway (NAT), Regional Subnet for worker nodes, and a Regional Subnet for load
+    balancers. Click **Launch Workflow**.
 
-  ![](images/28-create-oke.png " ")
+      ![](images/29-create-oke-wizard.png " ")
 
-8. Choose **Quick Create** as it will create the new cluster along with the new network
-resources such as Virtual Cloud Network (VCN), Internet Gateway (IG), NAT
-Gateway (NAT), Regional Subnet for worker nodes, and a Regional Subnet for load
-balancers. Click **Launch Workflow**.
-
-  ![](images/29-create-oke-wizard.png " ")
-
-9. Change the name of the cluster to `msdataworkshopcluster` , accept all the other
-defaults, and click **Next** to review the cluster settings.
+8. Change the name of the cluster to `msdataworkshopcluster` , accept all the other
+    defaults, and click **Next** to review the cluster settings.
 
 
-10. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
+9. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
 
-  ![](images/31-create-oke-wizard3.png " ")
+      ![](images/31-create-oke-wizard3.png " ")
 
-11. Close the creation window.
+10. Close the creation window.
 
-  ![](images/32-close-cluster-create.png " ")
+      ![](images/32-close-cluster-create.png " ")
 
-12. Once launched it should usually take around 5-10 minutes for the cluster to be
-fully provisioned and the Cluster Status should show Active. 
+11. Once launched it should usually take around 5-10 minutes for the cluster to be
+    fully provisioned and the Cluster Status should show Active.
 
-  ![](images/33-click-cluster-name.png " ")
+      ![](images/33-click-cluster-name.png " ")
 
-  ![](images/34-copy-cluster-id.png " ")
+      ![](images/34-copy-cluster-id.png " ")
 
-  
-  There is no need to wait for the cluster to be fully provisioned at this point as we will verify cluster creation and create a kube config in order to access it in a later step.
-  
+    _There is no need to wait for the cluster to be fully provisioned at this point as we will verify cluster creation and create a kube config in order to access it in a later step._
+
 ## **STEP 4**: Create ATP databases
 
-1. run ./createATPPDBs.sh
-   
+1. Run the `createATPPDBs.sh` script.
+
     ```
     <copy>./createATPPDBs.sh</copy>
      ```
-     
+
    Notice creation of the ORDERDB and INVENTORYDB PDBs.
-    
-  ![](images/createATPPDBoutput.png " ")
-  
-   OCIDs for the PDBs are stored and will be used later to create kubernetes secrets that microservices will use to access them.
+
+   ![](images/createATPPDBoutput.png " ")
+
+   _OCIDs for the PDBs are stored and will be used later to create kubernetes secrets that microservices will use to access them._
 
 
 ## **STEP 5**: Create an OCI Registry and Auth key and login to it from Cloud Shell
-You are now going to create an Oracle Cloud Infrastructure Registry and an Auth key. Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development to production workflow by storing, sharing, and managing development artifacts such as Docker images.
+You are now going to create an Oracle Cloud Infrastructure Registry and an Auth key. Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development-to-production workflow by storing, sharing, and managing development artifacts such as Docker images.
 
-1. Open up the hamburger button in the top-left corner of the console and go to **Developer Services > Container Registry**.
+1. Open up the hamburger menu in the top-left corner of the console and go to **Developer Services > Container Registry**.
 
   ![](images/21-dev-services-registry.png " ")
 
-2. Take note of the namespace (for example `axkcsk2aiatb` show in the following image).  Click **Create Repository** , specify the following details for your new repository, and click **Create Repository**.
+2. Take note of the namespace (for example, `axkcsk2aiatb` shown in the image below).  Click **Create Repository** , specify the following details for your new repository, and click **Create Repository**.
     - Repository Name: `<firstname.lastname>/msdataworkshop`
 	- Access: `Public`
 
-  Make sure that access is marked as `public`.  
+  Make sure that access is marked as `Public`.  
 
   ![](images/22-create-repo.png " ")
 
   ![](images/22-create-repo2.png " ")
-  
-  Go to cloud shell and run `./addOCIRInfo.sh` with the namespace and repository name as arguments.
+
+  Go to Cloud Shell and run `./addOCIRInfo.sh` with the namespace and repository name as arguments.
   For example `./addOCIRInfo.sh axkcsk2aiatb msdataworkshop.user1/msdataworkshop`
 
 3. You will now create the Auth key by going back to the User Settings page. Click the Profile icon in the top-right corner of the Console and select **User Settings**.
@@ -145,54 +141,52 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   ![](images/24-gen-auth-token.png " ")
 
-5. In the description type `msdataworkshoptoken` and click **Generate Token**. 
+5. In the description type `msdataworkshoptoken` and click **Generate Token**.
 
   ![](images/25-gen-auth-token2.png " ")
-  
-  Copy the token value.
+
+6. Copy the token value.
 
   ![](images/26-save-auth-token.png " ")
 
-  Go to shell and run `./dockerlogin.sh` with USERNAME and copied token value. Enclose the auth token value argument in quotes. 
-  `USERNAME` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something`
+7. Go to Cloud Shell and run `./dockerlogin.sh USERNAME "Auth Token"` where `USERNAME` and `Auth token` values are set as arguments.
 
-  For example `./dockerLogin.sh foo@bar.com "8nO[BKNU5iwasdf2xeefU;yl"`
+  * `USERNAME` - is the username used to log in (typically your email address). If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something.com`
+  * `Auth Token` - Paste the generated Auth Token and enclose the value in quotes.
 
-  ![](images/1bcf17e7001e44e1e7e583e61618acbf.png " ")
+  For example `./dockerLogin.sh user.foo@bar.com "8nO[BKNU5iwasdf2xeefU;yl"`
 
-2.  Once successfully logged into Container Registry, we can list the existing docker images. Since this is the first time logging into Registry, no images will be shown.
+
+8.  Once successfully logged into Container Registry, we can list the existing docker images. Since this is the first time logging into Registry, no images will be shown.
 
     ```
     <copy>docker images </copy>
     ```
 
-  ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
+    ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
 
 ## **STEP 6**: Access OKE from the Cloud Shell
 
-1. run ./verifyOKEAndCreateKubeConfig.sh
+1. run `./verifyOKEAndCreateKubeConfig.sh`
 
  ```
  <copy>./verifyOKEAndCreateKubeConfig.sh</copy>
   ```
-  
-Notice kube config is create for the cluster created earlier and the `msdataworkshop` namespace is also created.
 
+ 2. Notice `/.kube/config` is created for the cluster and the `msdataworkshop` namespace is also created.
 
   ![](images/verifyOKEOutput.png " ")
-  
-  
+
+
 ## **STEP 7**: Install GraalVM and Jaeger
-Run ./installGraalVMAndJaeger.sh
+Run the `installGraalVMAndJaeger.sh` script to install both GraalVM and Jaeger.
 
   ```
  <copy>./installGraalVMAndJaeger.sh</copy>
   ```
 
-  This will set the properties needed to deploy and run the workshop and will also provide convenient shortcut commands.
-    The kubernetes resources created by the workshop and commands can be viewed by issuing the `msdataworkshop` command.
-You may proceed to the next lab.
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

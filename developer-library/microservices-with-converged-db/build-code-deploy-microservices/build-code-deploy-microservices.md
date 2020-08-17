@@ -17,11 +17,13 @@ You will also clone a GitHub repository.
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * The OKE cluster and the ATP databases that you created in Lab 1
 
-## **STEP 1**: Build Frontend microservice
+## **STEP 1**: Build frontend Helidon microservice
 
-1.  You need to compile, test and package the Helidon front-end
+1.  You need to compile, test and package the Helidon frontend
     application code into a `.jar` file using maven. The maven package is already installed in the
-    Cloud Shell. Inside Cloud Shell go to the frontend Helidon microservice
+    Cloud Shell.
+
+    Inside Cloud Shell go to the frontend Helidon microservice
     folder.
 
     ```
@@ -52,31 +54,33 @@ You will also clone a GitHub repository.
 
 ## **STEP 2**: Set values for workshop in the environment
 
-1. run ./setJaegerAddress.sh and verify successful outcome. It may be necessary to run this script multiple times if the Jaeger load balancer has not been provisioned yet.
+1. Run `./setJaegerAddress.sh` and verify successful outcome.
+
+ It may be necessary to run this script multiple times if the Jaeger load balancer has not been provisioned yet.
 
    ```
    <copy>./setJaegerAddress.sh</copy>
    ```
-  
 
-2. run ./addAndSourcePropertiesInBashrc.sh
+
+2. Run `./addAndSourcePropertiesInBashrc.sh`
 
    ```
    <copy>./addAndSourcePropertiesInBashrc.sh</copy>
    ```
-  
+
 3. Source the edited `.bashrc` file with the following command.
-      
+
    ```
       <copy>source ~/.bashrc</copy>
    ```
       ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
 
-## **STEP 3**: Build and Push the Docker image and access the FrontEnd UI microservice
+## **STEP 3**: Build and push the Docker image and access the frontEnd UI microservice
 
 1.  You are ready to build a docker image of the frontend Helidon application.
-    Change directory into frontend-helidon folder:
+    Change directory into `/frontend-helidon` folder:
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
@@ -105,8 +109,8 @@ You will also clone a GitHub repository.
 
   ![](images/b4a27ed98282369ffa60e48e6cea591b.png " ")
 
-5.  To simplify the usage of this image and avoid the need to do `docker login` in
-    the deployment yaml file or git CI/CD, we will change the image from Private
+5.  To simplify the usage of this image - and to avoid the need to do `docker login` in
+    the deployment yaml file or git CI/CD - we will change the image from Private
     to Public, by clicking **Actions > Change to Public**.
 
   ![](images/3df6ee1cf8469d3277b107b4aca6efab.png " ")
@@ -148,12 +152,13 @@ You will also clone a GitHub repository.
 
   ![](images/72c888319c294bed63ad9db029b68c5e.png " ")
 
-9. You are ready to access the frontend page. Open a new browser tab and access
-    the external page `http://<external-IP>:8080`:
+9. You are ready to access the frontend page. Open a new browser tab and enter the external IP and port URL:
+
+  `http://<external-IP>:8080`
 
   ![](images/frontendhome.png " ")
 
-10. Run the remaining build script to build and push the rest of the
+10. Run the `build.sh` script to build and push the rest of the
     microservices images into the repository
 
     ```
@@ -186,4 +191,3 @@ You may now proceed to the next lab.
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
-
