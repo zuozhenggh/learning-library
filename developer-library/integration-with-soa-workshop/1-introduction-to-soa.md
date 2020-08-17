@@ -15,19 +15,16 @@ SOA Suite functional architecture
 Critical business services, such as customer, financial, ordering information, and others that were previously accessible only in packaged application user interfaces can now be rapidly repurpose for digital-enabled channel such as: smart phone and tablets.
 
 ## How to Run the Labs
-You can run exercises in this lab as per instruction provided during live session 
+You can run exercises in this lab as per instruction provided during live session led by an instructor. For participating these labs, you've been granted access to an OCI compute resource via invitation email. Please check your inbox email to find details regarding access to your respective compute resource.
 
-Below are steps on how to sign-up for either an Oracle cloud service o. The always free Oracle Compute on OCI is ideal for learning about the Oracle Cloud Infrastructure. This service can readily be upgraded to a paid service as necessary. 
+<!--Below are steps on how to sign-up for either an Oracle cloud service o. The always free Oracle Compute on OCI is ideal for learning about the Oracle Cloud Infrastructure. This service can readily be upgraded to a paid service as necessary. 
 
 Detail can be found on https://docs.cloud.oracle.com/en-us/iaas/Content/FreeTier/resourceref.htm 
+-->
 
-For conducting these labs you've been granted access to an OCI compute resource.
 
-Click one of the options below to proceed.
-
-### **Option 1**: Oracle SOA on Marketplace
-
-In this part, you are assigned an Oracle OCI resource. Please check your inbox email to find details regarding access to your respective compute resource.
+To access SOA suite details, you can proceed with one of the options below:
+### **Option 1**: To access Oracle SOA on Marketplace
 
 
 To gain access to free tier compute resource, follow these steps:
@@ -71,8 +68,8 @@ To gain access to free tier compute resource, follow these steps:
     ![](images/1/click-soa-byol-compartment.png)
 
     
-### **Option 2** Download Oracle SOA from www.oracle.com
-Here is the specific link <a href="https://www.oracle.com/cloud/integration/soa-cloud-service/"> SOA Cloud</a>
+### **Option 2** To find more about Oracle SOA and its components
+Here is the link <a href="https://www.oracle.com/cloud/integration/soa-cloud-service/"> SOA Suite</a>
 
 For cost-related estimation
    go to <a href="https://www.oracle.com/cloud/integration/soa-cloud-service/pricing.html"> SOA Cloud Values</a>
