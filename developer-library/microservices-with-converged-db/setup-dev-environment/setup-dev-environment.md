@@ -59,14 +59,48 @@ To work with application code, you need to download a GitHub repository using
 5. Issue the following command providing the compartment ocid you just created and copied as an argument.
 
   ```
- <copy>./createOKECluster.sh </copy>
+ <copy>./setCompartmentId.sh </copy>
   ```
   
-  For example `./createOKECluster.sh ocid1.compartment.oc1..aaaaaaaaxbyourcompartmentocidhere`
+  For example `./setCompartmentId.sh ocid1.compartment.oc1..aaaaaaaaxbyourcompartmentocidhere`
 
-  ![](images/createOKEOutput.png " ")
+6.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left
+    corner of the Console and go to **Developer Services > Kubernetes Clusters**.
+
+  ![](images/27-dev-services-oke.png " ")
+
+7. Make sure you are in the newly created compartment and click **Create Cluster**.
+
+  ![](images/28-create-oke.png " ")
+
+8. Choose **Quick Create** as it will create the new cluster along with the new network
+resources such as Virtual Cloud Network (VCN), Internet Gateway (IG), NAT
+Gateway (NAT), Regional Subnet for worker nodes, and a Regional Subnet for load
+balancers. Click **Launch Workflow**.
+
+  ![](images/29-create-oke-wizard.png " ")
+
+9. Change the name of the cluster to `msdataworkshopcluster` , accept all the other
+defaults, and click **Next** to review the cluster settings.
+
+
+10. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
+
+  ![](images/31-create-oke-wizard3.png " ")
+
+11. Close the creation window.
+
+  ![](images/32-close-cluster-create.png " ")
+
+12. Once launched it should usually take around 5-10 minutes for the cluster to be
+fully provisioned and the Cluster Status should show Active. 
+
+  ![](images/33-click-cluster-name.png " ")
+
+  ![](images/34-copy-cluster-id.png " ")
+
   
-  Will will verify cluster creation and create a kube config in order to access it in a later step.
+  There is no need to wait for the cluster to be fully provisioned at this point as we will verify cluster creation and create a kube config in order to access it in a later step.
   
 ## **STEP 4**: Create ATP databases
 
