@@ -69,6 +69,8 @@ To work with application code, you need to download a GitHub repository using
   
   For example `./createOKECluster.sh ocid1.compartment.oc1..aaaaaaaaxbyourcompartmentocidhere`
 
+  ![](images/createOKEOutput.png " ")
+  
   Will will verify cluster creation and create a kube config in order to access it in a later step.
   
 ## **STEP 4**: Create ATP databases
@@ -81,6 +83,8 @@ To work with application code, you need to download a GitHub repository using
      
    Notice creation of the ORDERDB and INVENTORYDB PDBs.
     
+  ![](images/createATPPDBoutput.png " ")
+  
    OCIDs for the PDBs are stored and will be used later to create kubernetes secrets that microservices will use to access them.
 
 
@@ -150,6 +154,8 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 Notice kube config is create for the cluster created earlier and the `msdataworkshop` namespace is also created.
 
 
+  ![](images/verifyOKEOutput.png " ")
+  
 
 You may proceed to the next lab.
 
