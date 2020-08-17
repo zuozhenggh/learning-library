@@ -129,9 +129,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
   Go to shell and run `./dockerlogin.sh` with USERNAME and copied token value.
   `USERNAME` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something`
 
-  For example `./dockerlogin.sh `
-
-    *When prompted for password use the Auth token (msdataworkshoptoken) you generated. (eg }cYourAuthTokenM2AjE )
+  For example `./dockerLogin.sh foo@bar.com 8nO[BKNU5iwasdf2xeefU;yl`
 
   ![](images/1bcf17e7001e44e1e7e583e61618acbf.png " ")
 
