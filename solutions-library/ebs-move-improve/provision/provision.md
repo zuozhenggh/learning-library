@@ -20,7 +20,7 @@ In this 45 mins lab, we will use the One-Click Provisioning feature of Oracle E-
 
  c) EBS Version: 12.2.9
 
- d) DB Version: 12.1.0.2
+ d) DB Version: 19.0.0.0
 
 3. Click Submit
 
