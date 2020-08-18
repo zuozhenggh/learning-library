@@ -14,7 +14,7 @@ For more information about Terraform and Resource Manager, please see the append
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
-  
+
 ## **Step 1A**: Create Stack:  Compute + Networking
 
 If you already have a VCN setup, proceed to *Step 1B*.
@@ -37,7 +37,7 @@ If you already have a VCN setup, proceed to *Step 1B*.
   ![](./images/em-create-stack-1.png " ")
 
 5. Enter the following information:
-   
+
       - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
       - **Description**:  Same as above
       - **Create in compartment**:  Select the correct compartment if not already selected
@@ -55,11 +55,15 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
     *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 8. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
-    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Leave unchecked (unless you plan on using a Flex shape)
-    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
+    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
+    - **Instance Shape:** Keep the default as provided Select ***VM.Standard.E3.Flex*** (Only option for Flex shapes)
+    - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
+
+9. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
+- **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
+- **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
+
   ![](./images/standardshape.png " ")
-9. If you choose to use flex shapes, follow the instructions below.  Otherwise skip to the next step.
-    - **Instance OCPUS:** Accept the default (**4**) This will provision the ***VM.Standard.E3.Flex*** shape with 4 OCPUs and 64GB of memory.
 
 10. For this section we will provision a new VCN with all the appropriate ingress and egress rules needed to run this workshop.  If you already have a VCN, make sure it has all of the correct ingress and egress rules and skip to the next section.
      - **Use Existing VCN?:** Accept the default by leaving this unchecked. This will create a **new VCN**.
@@ -277,7 +281,7 @@ This workshop requires a certain number of ports to be available.
 5.  Click Add Ingress Rule button
 6.  Enter the following:  
     - Source CIDR: 0.0.0.0/0
-    - Destination Port Range: 3000, 3001, 3003, 1521, 7007, 9090, 22 
+    - Destination Port Range: 3000, 3001, 3003, 1521, 7007, 9090, 22
 7.  Click the Add Ingress Rules button
 
 
@@ -288,7 +292,7 @@ If you encountered any issues during the lab, follow the steps below to resolve 
 - Limits Exceeded
 - Invalid public key
 - Flex Shape Not Found
-  
+
 ### Issue 1: Availability Domain Mismatch
 ![](images/error-ad-mismatch.png  " ")
 
@@ -310,7 +314,7 @@ When creating a stack and using an existing VCN, the availability domain and the
 When creating your SSH Key, if the key is invalid the compute instance stack creation will throw an error.
 
 #### Tips for fixing for Issue #2
-- Go back to the instructions and ensure you create and **copy/paste** your key into the stack correctly. 
+- Go back to the instructions and ensure you create and **copy/paste** your key into the stack correctly.
 - Copying keys from Cloud Shell may put the key string on two lines.  Make sure you remove the hard return and ensure the key is all one line.
 - Ensure you pasted the *.pub file into the window.
 1.  Click on **Stack**-> **Edit Stack** -> **Configure Variables**.
@@ -323,7 +327,7 @@ When creating your SSH Key, if the key is invalid the compute instance stack cre
 ![](images/flex-shape-error.png  " ")
 
 #### Issue #3 Description
-When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy. 
+When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy.
 
 #### Fix for Issue #3
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
@@ -344,7 +348,7 @@ If you have other compute instances you are not using, you can go to those insta
 ![](images/no-quota.png  " ")
 
 #### Issue #4 Description
-When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy. 
+When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy.
 
 *Please ensure that you are NOT running this in the **Always Free** Tier. This workshop does not run on the Always Free tier, you must have available cloud credits.  Go to **Governance** -> **Limits, Quotas and Usage,** select **compute**, ensure that you have **more than** the micro tier available.  If you have only 2 micro computes, your account has transitioned to an Always Free.  This means that the promotional period of 30 days has expired or you have run out of credits, this workshop will NOT run.*
 
@@ -367,7 +371,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 ## Acknowledgements
 
-* **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
+* **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
