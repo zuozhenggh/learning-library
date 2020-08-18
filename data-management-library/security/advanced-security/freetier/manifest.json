@@ -1,0 +1,95 @@
+{
+    "tutorials": [
+        {
+            "title": "Oracle Advanced Security Overview",
+            "description":"Understand what Advanced Security is and what it can do",
+            "publisheddate": "06/30/2020",
+            "filename":"../intro/intro.md"
+        },
+        {
+            "title": "Getting Connected",
+            "description":"How to get connected to the workshop environment",
+            "publisheddate": "06/30/2020",
+            "filename":"../intro/get-connected.md"
+        },
+        {
+            "title": "Data Redaction Overview",
+            "description":"This lab will walk you through how to enable Database Vault for the workshop image",
+            "publisheddate": "06/30/2020",
+            "filename":"../data-redaction/intro.md"
+        },
+        {
+            "title": "Data Redaction : Lab 1 (Redact EMPLOYEESEARCH DATA) ",
+            "description":"This lab will walk you through how to enable Database Vault for the workshop image",
+            "publisheddate": "06/30/2020",
+            "filename":"../data-redaction/redact.md"
+        },
+        
+        {
+            "title": "Transparent Data Redaction Overview",
+            "description":"In this lab you will create a realm to protect sensitve data in an application schema",
+            "publisheddate": "06/30/2020",
+            "filename":"../tde/intro.md"
+        },
+        {
+            "title": "TDE : Lab 1 (Allow DB Restore)",
+            "description":"In this lab you will configure Database Vault to verify a users session factors before allowing access to sensitive data",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/allowdbrestore.md"
+        },
+        {
+            "title": "TDE : Lab2 (Create Auto-login Wallet)",
+            "description":"In this lab you will learn how to use simulation mode to test you Database Vault policies ",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/createautologin.md"
+        },
+        {
+            "title": "TDE : Lab3 (Create Master Key)",
+            "description":"Learn how to leverage the Operations Control feature of Database Vault to protect pluggable databases from container admins",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/createmasterkey.md"
+        },
+        {
+            "title": "TDE : Lab4 (Allow DB Restore)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/allowdbrestore.md"
+        },
+        {
+            "title": "TDE : Lab5 (Create Keystore)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/createkeystore.md"
+        },
+        {
+            "title": "TDE : Lab6 (Encrypt Existing Tablespace)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/encryptexistingtablespace.md"
+        },
+        {
+            "title": "TDE : Lab7 (Encrypt New Tablespace)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/encrypttablespace.md"
+        },
+        {
+            "title": "TDE : Lab8 (Re-Key Master Key)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/rekeymasterkey.md"
+        },
+        {
+            "title": "TDE : Lab9 (Restore Before TDE)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/restorebeforetde.md"
+        },
+        {
+            "title": "TDE : Lab10 (View Keystore)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/viewkeystore.md"
+        }
+    ]
+}
