@@ -28,12 +28,9 @@ You will also clone a GitHub repository.
 
 2. Source the `.bashrc` file with the following command.
 
-   ```
+  ```
   <copy>source ~/.bashrc</copy>
-   ```
-
-  ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
-
+  ```
 
 ## **STEP 2**: Build and push the Docker images
 
