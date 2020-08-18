@@ -77,7 +77,7 @@ Cloud Shell is a small virtual machine running a Bash shell which you access thr
 
       ![](images/29-create-oke-wizard.png " ")
 
-8. Change the name of the cluster to `msdataworkshopcluster` , accept all the other
+8. Change the name of the cluster to `msdataworkshopcluster`, accept all the other
     defaults, and click **Next** to review the cluster settings.
 
 

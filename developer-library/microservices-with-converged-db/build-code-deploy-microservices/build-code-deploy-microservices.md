@@ -29,9 +29,10 @@ You will also clone a GitHub repository.
 2. Source the `.bashrc` file with the following command.
 
    ```
-      <copy>source ~/.bashrc</copy>
+  <copy>source ~/.bashrc</copy>
    ```
-      ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
+
+  ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
 
 ## **STEP 2**: Build and push the Docker images
@@ -104,7 +105,7 @@ You will also clone a GitHub repository.
     <copy>./deploy.sh</copy>
     ```
 
-  ![](images/5b817258e6f0f7b55d4ab3f6327a1779.png " ")
+   ![](images/5b817258e6f0f7b55d4ab3f6327a1779.png " ")
 
 7.  Once successfully created, check that the frontend pod is running:
 
@@ -133,10 +134,10 @@ You will also clone a GitHub repository.
 
 9. You are ready to access the frontend page. Open a new browser tab and enter the external IP and port URL:
 
-  `http://<external-IP>:8080`
+  `http://<EXTERNAL-IP>:8080`
 
   ![](images/frontendhome.png " ")
-  
+
 You may now proceed to the next lab.
 
 ## Acknowledgements
