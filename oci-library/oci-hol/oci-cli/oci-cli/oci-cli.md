@@ -170,24 +170,42 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-17. Launch a compute instance with the following command. We previously created a regional subnet because our command did not include a specific availability domain. For compute instances, we must specify an availability domain and subnet.
+17. To determine what shapes are available in your tenancy, use this command:
+
+    ```
+    <copy>
+    oci compute shape list -c $COMPARTMENT_ID
+    </copy>
+    ```
+
+18. Choose a shape from the output, for example, "VM.Standard2.1":
+
+    ![](images/select-shape.png)
+
+19. Save the shape as a variable:
+
+    ```
+    SHAPE="<shape>"
+    ```
+
+20. Launch a compute instance with the following command.  We previously created a regional subnet because our command did not include a specific availability domain. For compute instances, we must specify an availability domain and subnet.
 
     You will need the following pieces of information:
 
     - Availability domain name
     - Subnet OCID
-    - Valid compute shape (i.e. VM.Standard.E2.1)
+    - Valid compute shape (i.e. VM.Standard2.1)
     - Your public SSH key
 
     ```
     <copy>
-    oci compute instance launch --availability-domain $AD_NAME --display-name demo-instance --image-id $IMAGE_ID --subnet-id $SUBNET_OCID --shape VM.Standard.E2.1 --compartment-id $COMPARTMENT_ID --assign-public-ip true --ssh-authorized-keys-file $SSH_KEY_FILE
+    oci compute instance launch --availability-domain $AD_NAME --display-name demo-instance --image-id $IMAGE_ID --subnet-id $SUBNET_OCID --shape $SHAPE --compartment-id $COMPARTMENT_ID --assign-public-ip true --ssh-authorized-keys-file $SSH_KEY_FILE
     </copy>
     ```
 
     Capture the ``id:`` of the compute instance launch output.
 
-18. Check the status of the instances
+21. Check the status of the instances
 
     ```
     <copy>
@@ -195,7 +213,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-19. Rerun the command every 30-60 seconds until the lifecycle-state is ``RUNNING``
+22. Rerun the command every 30-60 seconds until the lifecycle-state is ``RUNNING``
 
 ## **STEP 2**: Delete the resources
 
