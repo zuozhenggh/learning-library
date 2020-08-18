@@ -195,12 +195,12 @@ In this step we will perform some data prepartion steps to make data set ready f
 ## Step 3: Build Visualizations ##
 Now let’s analyze the data to get some insights.  
 
-### Step 3.1: Tile Visualization and Custom Calculation
+1. **Tile** Visualization   
 To summarize some of the key numeric metrics, for example revenue we can use “Tile” visualization.    
-1. Select the “Revenue”and Pick “Performance Tiles” for visualization as below.
+   Select the “Revenue”and Pick “Performance Tiles” for visualization as below.
     ![](./images/oascdb35.png " ")
 
-2.  Now do some required changes using Left Bottom "properties" section.  
+   Now do some required changes using Left Bottom "properties" section.  
     For example :  background color, abbreviation, etc  
     Abbreviation:
     ![](./images/oascdb36.png " ")
@@ -208,15 +208,7 @@ To summarize some of the key numeric metrics, for example revenue we can use “
     Background color:
     ![](./images/oascdb37.png " ")
 
-3. In OAS, we can also do some calculations of KPI as per business requirement.     
-    We will calculate “Profit” as below:  
-    Right click on My calculation, then click on “Add Calculation” 
-    ![](./images/oascdb38.png " ")
-
-    Put this calculation to claculate profit:  **Profit = Revenue- Operating Expenses**
-    ![](./images/oascdb39.png " ")
-
-4. Build Tile Visualization for below KPIs  as we did for "revenue":  
+   Build Tile Visualization for below KPIs  as we did for "revenue":  
     - Net Income
     - Operating Expenses
     - Payables
@@ -225,84 +217,103 @@ To summarize some of the key numeric metrics, for example revenue we can use “
     Dashboard should be like below:
     ![](./images/oascdb40.png " ")
 
-### Step 3.2: Map visualization 
-1. Select Revenue and Region and pick “Map” as visualization.
+2. Custom Calculation  
+    In OAS, we can also do some calculations of KPI as per business requirement.     
+    We will calculate “Profit” as below:  
+    Right click on My calculation, then click on “Add Calculation” 
+    ![](./images/oascdb38.png " ")
+
+    Put this calculation to claculate profit:  **Profit = Revenue- Operating Expenses**
+    ![](./images/oascdb39.png " ")
+
+3. **Map** visualization   
+   Select Revenue and Region and pick “Map” as visualization.
     ![](./images/oascdb41.png " ")
 
-2.  Verify Below:
+   Verify Below:
     ![](./images/oascdb42.png " ")
 
-3. We can also select desired and relevant map layers via properties(Left Bottom).
+   We can also select desired and relevant map layers via properties(Left Bottom).
     ![](./images/oascdb43.png " ")
 
-### Step 3.3: Combo Graph (combination of line, bar, area, etc)  
-1. Comparing Revenue, Operating Expenses and Net Income quarterly.    
+4. Combo Graph (combination of line, bar, area, etc)    
+   Comparing Revenue, Operating Expenses and Net Income quarterly.    
     Select Revenue, Operation Expenses, Net Income and Quarter. Pick Combo as Visualization.  
     ![](./images/oascdb44.png " ")
 
-2. Let’s change graph type of Revenue Line.
+   Let’s change graph type of Revenue Line.
     ![](./images/oascdb45.png " ")
 
-3. We can change properties of graph as below, for example color assignments, graph type for each   KPI, title etc
+   We can change properties of graph as below, for example color assignments, graph type for each   KPI, title etc
     ![](./images/oascdb46.png " ")
 
-4. We can change the color as below.
+   We can change the color as below.
     ![](./images/oascdb47.png " ")
 
-5. Rename the map visualization to  "Revenue by Graph".
+   Rename the map visualization to  "Revenue by Graph".
     ![](./images/oascdb48.png " ")
 
-6. Similarly rename the combo graph.
+   Similarly rename the combo graph.
 
-### Step 3.4 Rename Canvas
-Rename individual Canvas: Financials Overview.
+5. Rename Canvas    
+   Rename individual Canvas: Financials Overview.
     ![](./images/oascdb49.png " ")
 
-### Step 3.5 Analyzing Expenses  
-We will repeat “Tile” Visualization for Operating Expenses and Previous Year Operating Expenses.
+6. Analyzing Expenses    
+    Select (+) symbol on the bottom to add another canvas, in this canvas we will add visulizations analysing expenses.  
+    ![](./images/oascdb69.png " ")
+
+    We will repeat “Tile” Visualization for **Operating Expenses** and **Previous Year Operating Expenses**.
     ![](./images/oascdb50.png " ")
 
-Result should look like below
+    Result should look like below
     ![](./images/oascdb51.png " ")
 
-### Step 3.6 “Sankey” graph Visualization  
-We will see quartery expenses by account groups.    
-Select  Operating Expenses, Quartr and Account Group. Pick Sanky graph: 
+7. **Sankey** graph Visualization    
+   We will see quartery expenses by account groups.    
+   Select  Operating Expenses, Quartr and Account Group. Pick Sanky graph: 
     ![](./images/oascdb52.png " ")
 
-### Step 3.7 Stacked Bar   
-We will analyze region wise expenses quarterly .  
-Select Operating Expenses, Previous Year Expenses and Quarter. Pick Stacked Bar.  
+8. **Stacked Bar** visualization     
+   We will analyze region wise expenses quarterly .  
+   Select Operating Expenses, Previous Year Expenses and Quarter. Pick Stacked Bar.  
     ![](./images/oascdb53.png " ")
 
-### Step 3.8 Treemap  
-We will analze Expenses by Cost Centre.    
-Select Operating Expenses, Cost Center.  Pick Tree map  
+9. **Treemap** visualization      
+   We will analze Expenses by Cost Centre.    
+   Select Operating Expenses, Cost Center.  Pick Tree map  
     ![](./images/oascdb54.png " ")
 
-### Step 3.9 Rename the reports and canvases
-Rename individual visualizations and canvases.
+10. Rename canvas "Expenses" as in point 5.  
+    Rename individual visualizations and canvases.
 
-### Step 3.10 More KPIs Analysis 
-Please refer to previous steps for selecting the required fields and visualization type.   
-1. Combo graph for comparing Payables and Receivables by month.
+11. More KPIs Analysis   
+    Select (+) symbol on the bottom to add another canvas, in this canvas we will add some more visulizations.  
+    ![](./images/oascdb70.png " ")
+
+    Please refer to previous steps for selecting the required fields and visualization type.   
+    
+   Combo graph for comparing Payables and Receivables by month.
    ![](./images/oascdb56.png " ")
 
-2. Simple Bar Graph
+   Simple Bar Graph:  
    Analyze current and previous year payables quarterly.
     ![](./images/oascdb57.png " ")
 
-3. Analyze current and previous year receivables quarterly.
+   Analyze current and previous year receivables quarterly.
     ![](./images/oascdb58.png " ")
 
-### Step 3.11 Let’s see Pivot table visual  
-Analyzing KPIs by Cost Centre.  
-Select Revenue, Operating Expenses, Net Income and Cost Center. Pick Pivot table. Change properties as shown below.
+   Rename canvas "More Visuals" as in point 5. 
+
+12. Let’s see **Pivot table** visual    
+    Analyzing KPIs by Cost Centre.  
+    Select Revenue, Operating Expenses, Net Income and Cost Center. Pick Pivot table. Change properties as shown below.
     ![](./images/oascdb59.png " ")
 
 ## Step 4: Data Action for drill down to detail report 
 
-1. First we will build on tabular report with all the required columns (as shown below).  
+1.   Select (+) symbol on the bottom to add another canvas(refer to point 11), in this canvas we will build the tabular rport.  
+    select all the required columns (as shown below) and pick table as visualization.
     ![](./images/oascdb60.png " ")
 
 2. Now click on Data Actions (Right up).
@@ -339,11 +350,11 @@ With this lab, you have learned OAS self-service analytics with capabilities inc
 
 
 ## Acknowledgements
+
 - **Authors** - Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
 - **Team** - North America Analytics Specialists
-- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
-- **Expiration Date** - June 2021
+- **Last Updated By** - Vishwanath Venkatachalaiah
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
