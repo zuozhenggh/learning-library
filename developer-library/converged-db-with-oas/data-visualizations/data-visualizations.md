@@ -62,74 +62,74 @@ Below data objects with data present in Converged Database. And since OAS recogn
   
   In this step, we will merge the data from different data sources (json, xml and relational) utilizing **Data Flow** functionlaity of OAS.
 
-### Step 1.1: Add **FINANCIALS\_JSON\_UK\_VIEW**  data set ###
-1. Select "Create" and click on "data flow".
+1. Add **FINANCIALS\_JSON\_UK\_VIEW**  data set   
+   On the home screen, select "Create" and click on "data flow".
        ![](./images/oascdb5.png " ")
 
-2. Click on "create dataset".
+   Click on "create dataset".
        ![](./images/oascdb6.png " ")
 
-3. Select  the database connection.
+   Select  the database connection.
        ![](./images/oascdb7.png " ")
 
-4. Select the schema.
+   Select the schema.
        ![](./images/oascdb65.4.png " ")
 
-5. Now select the view **FINANCIALS\_JSON\_UK\_VIEW**, where we have JSON data from UK.
+   Now select the view **FINANCIALS\_JSON\_UK\_VIEW**, where we have JSON data from UK.
        ![](./images/oascdb9.png " ")
 
-6. Click on "Add Columns".
+   Click on "Add Columns".
        ![](./images/oascdb10.png " ")
 
-7. Click on "Add".  Verify dataset name.
+   Click on "Add".  Verify dataset name.
        ![](./images/oascdb11.png " ")
 
 
 
-### Step1.2: Add **FINANCIALS\_XML\_GERMANY_VIEW**  data set ###
+2. Add **FINANCIALS\_XML\_GERMANY_VIEW**  data set 
 
-1. Click on “+” symbol and then “Add Data".
+   Click on “+” symbol and then “Add Data".
     ![](./images/oascdb12.png " ")
 
-2. Click on "Create data set" and then "Add".
+   Click on "Create data set" and then "Add".
     ![](./images/oascdb13.png " ")
 
-3. Now add data **FINANCIALS\_XML\_GERMANY_VIEW** similarly as we did for **FINANCIALS\_JSON\_UK\_VIEW**.
+   Now add data **FINANCIALS\_XML\_GERMANY_VIEW** similarly as we did for **FINANCIALS\_JSON\_UK\_VIEW**.
 
-4. After adding **FINANCIALS\_XML\_GERMANY_VIEW**, Remove the “Join” step(click on ‘X’ mark).
+   After adding **FINANCIALS\_XML\_GERMANY_VIEW**, Remove the “Join” step(click on ‘X’ mark).
     ![](./images/oascdb14.png " ")
 
-5. Now add “Union Rows” step. 
+   Now add “Union Rows” step. 
     ![](./images/oascdb15.png " ")
 
-6. Click on to “circle” as shown below to complete compete merging of **FINANCIALS\_JSON\_UK\_VIEW**  and **FINANCIALS\_XML\_GERMANY\_VIEW**.
+   Click on to “circle” as shown below to complete compete merging of **FINANCIALS\_JSON\_UK\_VIEW**  and **FINANCIALS\_XML\_GERMANY\_VIEW**.
     ![](./images/oascdb16.png " ")
 
-7. Notice below:
+   Notice below:
     ![](./images/oascdb17.png " ")
 
-### Step1.3: Add and merge **FINANCIALS\_XML\_FRANCE\_VIEW**  data set ###
+3. Add and merge **FINANCIALS\_XML\_FRANCE\_VIEW**  data set 
    Repeat the similar process like we did for adding **FINANCIALS\_XML\_GERMANY\_VIEW**   
    Final result will be:  
         ![](./images/oascdb18.png " ")
 
-### Step1.4: Add and merge **FINANCIALS\_REL\_ITALY** and **FINANCIALS\_REL\_SPAIN**   
+4. Add and merge **FINANCIALS\_REL\_ITALY** and **FINANCIALS\_REL\_SPAIN**   
    Repeat the similar process like we did for adding "FINANCIALS\_XML\_GERMANY_VIEW"  
    Final Result will be.
         ![](./images/oascdb19.png " ")
 
-### Step1.5: Save and run data flow ###
- 1. Save the complete data set: Click on “Save Data” step
+5. Save and run data flow 
+   Save the complete data set: Click on “Save Data” step
     ![](./images/oascdb20.png " ")
 
     Now we have completed merging.  
     Name the data set **Financials Complete Data set**.
     ![](./images/oascdb21.png " ")
 
- 2. Save the data Flow.
+   Save the data Flow.
     ![](./images/oascdb22.png " ")
 
- 3. Run the data flow to build complete data set ###
+6.  Run the data flow to build complete data set
     ![](./images/oascdb23.png " ")
     ![](./images/oascdb24.png " ")
 
@@ -334,14 +334,16 @@ Select Revenue, Operating Expenses, Net Income and Cost Center. Pick Pivot table
 2. The result canvas will look like below, and we can select filter values as required
     ![](./images/oascdb66.png " ")
 
+
 With this lab, you have learned OAS self-service analytics with capabilities including data loading, data preparation, data mashups, designing canvas, different types of visualization graphs in simple easy to use interface.
 
-## Acknowledgements
 
+## Acknowledgements
 - **Authors** - Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
 - **Team** - North America Analytics Specialists
-- **Last Updated By** - Vishwanath Venkatachalaiah
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+**Issues-**
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
