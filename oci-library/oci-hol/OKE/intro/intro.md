@@ -1,6 +1,8 @@
 # Introduction
 
-Get hands-on learning with training labs about Oracle cloud solutions. The workshops featured cover various solutions, skill levels, and categories based on Oracle Cloud Infrastructure (OCI).   
+Get hands-on learning with training labs about Oracle cloud solutions. The workshops featured cover various solutions, skill levels, and categories based on Oracle Cloud Infrastructure (OCI).
+
+Estimated time: 60 minutes
 
 ## Oracle Container Engine for Kubernetes (OKE)
 

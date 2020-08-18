@@ -166,7 +166,7 @@ throughput test as it may impact your ability to perform labs later
 
 
 ### HOL Activity - Oracle Cloud My Services Dashboard
-16. Finally, go ahead and select the **Go to My Dashboard** button from the upper right of the FAQs page and you'll see the     Oracle Cloud My Services Dashboard of services available to this tenancy. The individual services tiles can be used as the starting point for other Hands-on-Labs courses.
+16. Finally, go ahead and select the **Go to My Dashboard** button from the upper right of the FAQs page and you will see the     Oracle Cloud My Services Dashboard of services available to this tenancy. The individual services tiles can be used as the starting point for other Hands-on-Labs courses.
 
 ![](media/771677f37f566d187ec6686095018421.png)
 *<p align="center">Figure 17: Oracle Cloud Services Dashboard</p>*

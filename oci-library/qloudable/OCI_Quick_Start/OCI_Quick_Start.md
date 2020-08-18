@@ -475,7 +475,7 @@ appear.
 
 1. Click Action icon for the Block Volume, then **ISCSI Commands & Information**
 
-**NOTE:** The iSCSI Commands and Information dialog box displays specific identifying information about your volume and the iSCSI commands you'll need. The commands are ready to use with the appropriate information included. You can copy and paste the commands into your instance once you login.
+**NOTE:** The iSCSI Commands and Information dialog box displays specific identifying information about your volume and the iSCSI commands you will need. The commands are ready to use with the appropriate information included. You can copy and paste the commands into your instance once you login.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_017.PNG" alt="image-alt-text">
 

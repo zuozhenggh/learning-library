@@ -1,7 +1,7 @@
 
 # Introduction
 
-The labs in this workshop cover an introduction to Oracle Cloud Infrastructure (OCI) Core Services, including virtual cloud networks (VCN), compute and storage services. These labs also provide some of the foundational skills and knowledge you'll need to attempt the [Oracle Cloud Infrastructure Foundations Certification](https://www.oracle.com/cloud/iaas/training/foundations.html) offered by Oracle University.
+The labs in this workshop cover an introduction to Oracle Cloud Infrastructure (OCI) Core Services, including virtual cloud networks (VCN), compute and storage services. These labs also provide some of the foundational skills and knowledge you will need to attempt the [Oracle Cloud Infrastructure Foundations Certification](https://www.oracle.com/cloud/iaas/training/foundations.html) offered by Oracle University.
 
 The Oracle Cloud Infrastructure Foundations Certification provides candidates with foundational knowledge of core cloud computing concepts and an understanding of those services in Oracle Cloud Infrastructure. The certification is intended for candidates with technical and non-technical backgrounds who want to validate their understanding of Oracle Cloud infrastructure.
 

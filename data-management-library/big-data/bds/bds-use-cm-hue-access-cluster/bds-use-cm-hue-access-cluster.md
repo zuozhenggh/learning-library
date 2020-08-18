@@ -8,13 +8,13 @@ In the previous lab, you made the two utility nodes in your HA-cluster accessibl
 
 All services are only available on certain ports. For example, in an HA-cluster such as **`training-cluster`**, Cloudera Manager (CM) runs on the first utility node, **`traininun0`**, and Hue runs on the second utility node, **`traininun1`**. Before you can access CM and Hue on the utility nodes using a Web browser, you must also open the ports that are associated with both services. You do this by defining an ingress rule on the public subnet to a security list for each service. Security lists act as virtual firewalls for your Compute instances and other kinds of resources with ingress and egress rules that specify the types of traffic allowed in and out of the cluster. Ingress security rules expose HTTP and HTTPS routes from outside the cluster to services within the cluster.
 
-In this lab, you'll learn how to access CM and Hue directly in a web browser.
+In this lab, you will learn how to access CM and Hue directly in a web browser.
 
 
 ### Objectives
 
-* Learn how to use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.
-* Learn how to add ingress rules to the default security rule that enables you to access both CM and Hue.
+* Use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.
+* Add ingress rules to the default security rule that enables you to access both CM and Hue.
 
 ### What Do You Need?
 

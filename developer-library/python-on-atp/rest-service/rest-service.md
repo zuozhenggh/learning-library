@@ -86,12 +86,12 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
 
 9. First we need to intall pip in the image. Type/Copy the following command in the terminal. 
   ```
-  <copy>sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py<copy/>
+  <copy>sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py</copy>
   ```
 
   ![](images/5-1.png " ")
 
-10. Next type the following command: 
+10. Next type the following command. 
   ```
   <copy>sudo python get-pip.py</copy>
   ```
@@ -128,7 +128,7 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
 
 ## **Step 3:** Run python web service
 
-1. Leave the terminal open. Click on **config.py** file from the left pane and change the password in the file with your Autonomous Transaction Processing Database password.
+1. Leave the terminal open. Click on **config.py** file from the left pane and change the password in the file with your Autonomous Transaction Processing Database password and save the file.
 
   ![](images/9.png " ")
 
@@ -173,7 +173,7 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
 
 ## **Step 5:** Create and view customer info
 
-1. Open the browser and go to localhost:3000 to see the website.Put the customer ID in the search bar. Here for example we entered 1 and then click on **search**.
+1. Open the browser and go to localhost:3000 to see the website.  Put the customer ID in the search bar. Here for example we entered 1 and then click on **search**.
 
   ![](images/14.png " ")
 
@@ -189,7 +189,7 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
     
   ![](images/17.png " ")
 
-5. Click on **Create customer** tab on top, and fill the form.
+5. Click on **Create customer** tab on top, and fill the form.  Note the postal code must be a five digit number (designed for US).
 
   ![](images/18.png " ")
   

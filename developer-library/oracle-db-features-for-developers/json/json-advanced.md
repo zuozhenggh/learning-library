@@ -1,8 +1,10 @@
 # Advanced JSON on Oracle Database 19c
 
-## **Introduction**
+## Introduction
 
-This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
+This lab will explore advanced concepts around JSON data and how you can use SQL and PL/SQL against JSON data stored in Oracle Database 19c.  
+
+Estimated Lab Time:  30 minutes
 
 ### About JSON in the Oracle Database
 
@@ -25,21 +27,41 @@ For this lab we will use the *Order Entry (OE)* sample schema that is provided w
 
 If you have logged out of the Cloud Shell, perform the commands below.
 
-1.  Login to the instance using Oracle Cloud Shell and ssh
+1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
-    ssh -i yourkeyname opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-2.  Connect to the **ORCLPDB** pluggable database, as SYSDBA using SQL\*Plus.
-
+2.  Switch to the oracle user
     ````
     <copy>
     sudo su - oracle
+    </copy>
+    ````
+    ![](./images/sudo-oracle.png " ")
+
+3.  Set your oracle environment.  When prompted enter **[ORCL]**
+    ````
+    <copy>
+    . oraenv
+    </copy>
+    ORACLE_SID = [ORCL] ? ORCL
+    The Oracle base remains unchanged with value /u01/app/oracle
+    ````
+    ![](./images/oraenv.png " ")
+
+4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
+
+    ````
+    <copy>
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA
     </copy>
     ````
-    Once connected to SQL\*Plus, connect to the OE user.
+
+    ![](./images/sqlplus.png " ")
+
+5.  Once connected to SQL\*Plus, connect to the OE user.
     ````
     <copy>
     connect oe/Ora_DB4U@localhost:1521/orclpdb
@@ -383,7 +405,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
     This requires more time and code to be written.
 
-## **Step 5**: JSON Query Improvements In Oracle 19C
+## **Step 6**: JSON Query Improvements In Oracle 19C
 
 1.  In Oracle 19c, function *JSON\_OBJECT* can generate JSON objects receiving as argument just a relational column name, possibly preceded by a table name or alias, or a view name followed by a dot. For example *TABLE.COLUMN*, or just *COLUMN*.
 
@@ -407,7 +429,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
 In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows what is allowed for column names and wildcards in a SQL SELECT query.
 
-## **Step 6**: Using Custom Types And Wildcard
+## **Step 7**: Using Custom Types And Wildcard
 
 1.  There are some cases, exceptions, where wildcards are not accepted for tables with columns of certain custom data types, like our table **CUSTOMERS**, for example.
 
@@ -472,7 +494,7 @@ In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows
 
 In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (\*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias.
 
-## **Step 7**: Updating a JSON Document
+## **Step 8**: Updating a JSON Document
 
 You can now update a JSON document declaratively using the new SQL function **JSON_MERGEPATCH**. You can apply one or more changes to multiple documents by using a single statement. This feature improves the flexibility of JSON update operations.
 
@@ -651,7 +673,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
 
     Updating JSON documents inside the Oracle Database is that simple.
 
-## **Step 8**: JSON Materialized View Support
+## **Step 9**: JSON Materialized View Support
 
 Materialized views query rewriting has been enhanced so that queries with *JSON\_EXISTS*, *JSON\_VALUE* and other functions can utilize a materialized view created over a query that contains a *JSON\_TABLE* function.
 
@@ -677,7 +699,7 @@ As a performance enhancement in Oracle 19c, if you create a refresh-on-statement
           jt.fcode, convert(jt.toponymName,'WE8ISO8859P1','AL32UTF8') Title,
           convert(jt.name,'WE8ISO8859P1','AL32UTF8') Name FROM MYJSON j,
     JSON_TABLE(DOC, '$' COLUMNS
-    (NESTED PATH '$.geonames[\*]'
+    (NESTED PATH '$.geonames[*]'
       COLUMNS (countryName VARCHAR2(80) PATH '$.countryName' ERROR ON ERROR NULL ON EMPTY,
               adminName1 VARCHAR2(80) PATH '$.adminName1' ERROR ON ERROR NULL ON EMPTY,
               adminName2 VARCHAR2(80) PATH '$.adminName2' ERROR ON ERROR NULL ON EMPTY,
@@ -797,7 +819,7 @@ Significant performance gains can often be achieved using query rewrite and mate
 
     If the query is too simple, there may not be a query rewrite, in this case it will not be eligible to be rewritten to use the materialized view.
 
-## **Step 9**: JSON-Object Mapping
+## **Step 10**: JSON-Object Mapping
 
 This feature enables the mapping of JSON data to and from user-defined SQL object types and collections. You can convert JSON data into an instance of a SQL object type using SQL/JSON function *JSON\_VALUE*. In the opposite direction, you can generate JSON data from an instance of a SQL object type using SQL/JSON function *JSON\_OBJECT* or *JSON\_ARRAY*.
 
@@ -1045,7 +1067,7 @@ This lab is now complete.
 ## **Acknowledgements**
 
 - **Author** - Valentin Leonard Tabacaru
-- **Contributors** - Anoosha Pilli & Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
+- **Contributors** - Anoosha Pilli, Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern
 - **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
 
 ## See an issue?

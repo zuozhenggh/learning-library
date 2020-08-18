@@ -195,7 +195,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/039.png " ")
 
-8. Create credential.  This is used by the ATP database to access the dmp file in Object Storage.  This is your cloud account userid and your token password (created in a previous step).
+8. Create credential.  This is used by the ATP database to access the dmp file in Object Storage.  This is your cloud account userid and your token password (created in a previous step).  If your account is federated enter the full name including the identity provider.
   ```
   <copy>BEGIN
     DBMS_CLOUD.CREATE_CREDENTIAL(
