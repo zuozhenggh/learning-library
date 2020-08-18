@@ -1,4 +1,4 @@
-# Environment Setup on FreeTier or Existing Cloud Account
+# Environment Setup
 
 ## Introduction
 This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a compute instance running Enterprise Manager 13c with monitored database targets and a Virtual Cloud Network (VCN).
@@ -12,8 +12,15 @@ For more information about Terraform and Resource Manager, please see the append
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account
+- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
 - SSH Keys
+
+### Video Preview
+Watch the end-to-end demonstration:
+
+[](youtube:ghbSbMElPFc)
+
+*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
 
 ## **Step 1A**: Create Stack:  Compute + Networking
 If you already have a VCN setup, proceed to *Step 1B*.
@@ -25,15 +32,15 @@ If you already have a VCN setup, proceed to *Step 1B*.
 2.  Save in your downloads folder.
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
 
-![](./images/em-oci-landing.png " ")
+  ![](./images/em-oci-landing.png " ")
 
-![](./images/em-nav-to-orm.png " ")
+  ![](./images/em-nav-to-orm.png " ")
 
-![](./images/em-create-stack.png " ")
+  ![](./images/em-create-stack.png " ")
 
 4.  Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
 
-![](./images/em-create-stack-1.png " ")
+  ![](./images/em-create-stack-1.png " ")
 
 Enter the following information:
   - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
@@ -44,7 +51,7 @@ Enter the following information:
 
 5.  Click **Next**.
 
-![](./images/em-create-stack-2.png " ")
+  ![](./images/em-create-stack-2.png " ")
 
 Enter or select the following:
   - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
@@ -60,15 +67,15 @@ Enter or select the following:
 
   - **Use Existing VCN?:** Keep the default by leaving unchecked to create a new VCN.
 
-Next step.
+  - Click **Next step**.
 
 6. Review and click **Create**.
 
-![](./images/em-create-stack-3.png " ")
+  ![](./images/em-create-stack-3.png " ")
 
 7. Your stack has now been created!  
 
-![](./images/em-stack-details.png " ")
+  ![](./images/em-stack-details.png " ")
 
 You may now proceed to Step 2 (skip Step 1B).
 
@@ -83,15 +90,15 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 2. Save in your downloads folder.
 3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
 
-![](./images/em-oci-landing.png " ")
+  ![](./images/em-oci-landing.png " ")
 
-![](./images/em-nav-to-orm.png " ")
+  ![](./images/em-nav-to-orm.png " ")
 
-![](./images/em-create-stack.png " ")
+  ![](./images/em-create-stack.png " ")
 
 4. Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
 
-![](./images/em-create-stack-1.png " ")
+  ![](./images/em-create-stack-1.png " ")
 
 Enter the following information:
   - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
@@ -102,7 +109,7 @@ Enter the following information:
 
 5. Click **Next**.
 
-![](./images/em-create-stack-2b.png " ")
+    ![](./images/em-create-stack-2b.png " ")
 
 Enter or select the following:
   - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
@@ -118,11 +125,11 @@ Enter or select the following:
 
   - **Use Existing VCN?:** Check to select.
 
-![](./images/em-create-stack-2c.png " ")
+    ![](./images/em-create-stack-2c.png " ")
 
   - **Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
 
-![](./images/em-create-stack-2d.png " ")
+    ![](./images/em-create-stack-2d.png " ")
 
   - **Select Public Subnet:** Select existing public subnet from above VCN.
 
@@ -130,49 +137,49 @@ Enter or select the following:
 
 6. Review and click **Create**.
 
-![](./images/em-create-stack-3b.png " ")
+    ![](./images/em-create-stack-3b.png " ")
 
 7. Your stack has now been created!  
 
-![](./images/em-stack-details-b.png " ")
+    ![](./images/em-stack-details-b.png " ")
 
 ## **Step 2:** Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. You may skip to Step 3.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
 
-![](./images/em-stack-plan-1.png " ")
+    ![](./images/em-stack-plan-1.png " ")
 
-![](./images/em-stack-plan-2.png " ")
+    ![](./images/em-stack-plan-2.png " ")
 
-![](./images/em-stack-plan-results-1.png " ")
+    ![](./images/em-stack-plan-results-1.png " ")
 
-![](./images/em-stack-plan-results-2.png " ")
+    ![](./images/em-stack-plan-results-2.png " ")
 
-![](./images/em-stack-plan-results-3.png " ")
+    ![](./images/em-stack-plan-results-3.png " ")
 
-![](./images/em-stack-plan-results-4.png " ")
+    ![](./images/em-stack-plan-results-4.png " ")
 
 ## **Step 3:** Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and instance(s) containing a pre-configured Enterprise Manager 13c with running database targets.
 
-![](./images/em-stack-details-post-plan.png " ")
+    ![](./images/em-stack-details-post-plan.png " ")
 
-![](./images/em-stack-apply-1.png " ")
+    ![](./images/em-stack-apply-1.png " ")
 
-![](./images/em-stack-apply-2.png " ")
+    ![](./images/em-stack-apply-2.png " ")
 
 2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added (3 only if using an existing VCN).  Congratulations, your environment is created!  Time to login to your instance and validate before getting started on labs.
 
-![](./images/em-stack-apply-results-0.png " ")
+    ![](./images/em-stack-apply-results-0.png " ")
 
-![](./images/em-stack-apply-results-1.png " ")
+    ![](./images/em-stack-apply-results-1.png " ")
 
-![](./images/em-stack-apply-results-2.png " ")
+    ![](./images/em-stack-apply-results-2.png " ")
 
-![](./images/em-stack-apply-results-3.png " ")
+    ![](./images/em-stack-apply-results-3.png " ")
 
 ## **Step 4:** Connect to your instance
 
@@ -185,16 +192,16 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
 
-![](./images/em-cloudshell.png " ")
+    ![](./images/em-cloudshell.png " ")
 
 2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP address for your instance.
 4.  Enter the command below to login to your instance.    
-````
-ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-````
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
 
-![](./images/em-cloudshell-ssh.png " ")
+    ![](./images/em-cloudshell-ssh.png " ")
 
 If you used the default RSA key name of **id_rsa** then use the following to connect as there's no need to explicitly specify the key.
 
@@ -210,10 +217,10 @@ ssh  opc@<Your Compute Instance Public IP Address>
 2.  On the instance homepage, find the Public IP address for your instance.
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
-````
-ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-````
-![](./images/em-mac-linux-ssh-login.png " ")
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
+    ![](./images/em-mac-linux-ssh-login.png " ")
 
 4.  After successfully logging in, proceed to Step 5.
 
@@ -229,7 +236,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
     - Port: _22_
     - Connection type: _SSH_
 
-![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
+    ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
 #### **Configuring Automatic Login**
 
@@ -237,14 +244,14 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
 2.  Enter your auto-login username. Enter **opc**.
 
-![](images/36164be0029033be6d65f883bbf31713.jpg " ")
+    ![](images/36164be0029033be6d65f883bbf31713.jpg " ")
 
 #### **Adding Your Private Key**
 
 1.  In the category section, **Click** Auth.
 2.  **Click** browse and find the private key file that matches your VM’s public key. This private key should have a .ppk extension for PuTTy to work.
 
-![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
+    ![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
 
 To save all your settings:
 
@@ -361,10 +368,9 @@ If you have other compute instances you are not using, you can go to those insta
 13. Click **Terraform Actions** -> **Apply**
 
 ## Acknowledgements
-
-* **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
-* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
+- **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
+- **Contributors** - Kay Malcolm, Product Manager, Database Product Management
+- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
