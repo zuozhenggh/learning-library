@@ -37,16 +37,19 @@ For additional Enterprise Manager use cases, see below and visit [LiveLabs](http
 -	Self- service to request a PDB using PDBaaS
 -	Administrative Setup for PDBaaS (Private Cloud)- Review only
 
-### 2. Database Fleet Maintenance
+### 2. Database Fleet Maintenance - Patching
 * Detect Configuration Pollution
 * Patch a Database target using a Gold Image
     - All Pluggable Databases in that Container Database will automatically get patched
     - Rollback and Cleanup
+
+### 3. Database Fleet Maintenance - Upgrade
+* Detect Configuration Pollution
 * Upgrade Oracle DB Software at scale with minimal downtime
     - All Pluggable Databases in that Container Database will automatically get upgraded
     - Cleanup
 
-### 3. Compliance and Drift Management
+### 4. Compliance and Drift Management
 - Analyze, Increase standardization, reduce number of different configuration sets
 - Execute a one-time comparison to compare the latest reference configuration to one or more targets to determine the configuration differences
 - Continuous drift monitoring of multiple targets against a reference target for initialization parameters using customized configuration monitoring template
@@ -74,7 +77,4 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
-Refer to the FAQ at the bottom of the right-hand menu. While you cannot use the normal Oracle Support channel to raise a ticket for getting technical support, the vibrant [Enterprise Manager Community Forum](https://community.oracle.com/community/groundbreakers/enterprise_manager) stands to help.
-
-## Have a feedback?
-We would love to hear from you. Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
