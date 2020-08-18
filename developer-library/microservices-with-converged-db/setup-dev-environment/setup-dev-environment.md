@@ -27,7 +27,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 1. To work with application code, you need to download a GitHub repository using
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
-    ```
+   ```
    <copy>cd ~ ; curl -sL https://tinyurl.com/yyvf9bpk --output master.zip ; unzip master.zip ; rm master.zip</copy>
    ```
 
@@ -36,9 +36,9 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 2. Change directory into the msdataworkshop-master directory:
 
-    ```
+   ```
    <copy>cd msdataworkshop-master</copy>
-    ```
+   ```
 
 ## **STEP 3**: Create an OCI compartment and an OKE cluster in that compartment
 
@@ -111,7 +111,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
     ```
     <copy>./createATPPDBs.sh</copy>
-     ```
+    ```
    Notice creation of the ORDERDB and INVENTORYDB PDBs.
 
 
@@ -184,7 +184,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
  ```
  <copy>./verifyOKEAndCreateKubeConfig.sh</copy>
-  ```
+ ```
 
 2. Notice `/.kube/config` is created for the cluster and the `msdataworkshop` namespace is also created.
 
@@ -194,9 +194,9 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 ## **STEP 7**: Install GraalVM, Jaeger, and Frontend Loadbalancer
 Run the `installGraalVMJaegerAndFrontendLB.sh` script to install both GraalVM and Jaeger.
 
-  ```
+ ```
  <copy>./installGraalVMJaegerAndFrontendLB.sh</copy>
-  ```
+ ```
 
 You may now proceed to the next lab.
 
