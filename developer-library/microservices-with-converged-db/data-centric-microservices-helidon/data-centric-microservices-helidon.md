@@ -63,7 +63,9 @@ The lab will then show you metrics, health checks and probes, and tracing that h
     Helidon service, using the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon ; ./deploy.sh</copy>
+
+    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon  ; ./deploy.sh</copy>
+
     ```
 
    ![](images/2ee20f868b1d740d8ce7d3a7ec37fc03.png " ")
