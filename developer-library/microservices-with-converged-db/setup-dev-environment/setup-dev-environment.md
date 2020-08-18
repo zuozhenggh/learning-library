@@ -29,7 +29,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
     ```
    <copy>cd ~ ; curl -sL https://tinyurl.com/yyvf9bpk --output master.zip ; unzip master.zip ; rm master.zip</copy>
-   ```
+    ```
 
   You should now see `msdataworkshop-master` in your root directory
 
