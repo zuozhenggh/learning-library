@@ -19,7 +19,7 @@ This 25-minute lab will show you how to set up the Oracle Cloud Infrastructure (
 
 Cloud Shell is a small virtual machine running a Bash shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated CLI which is set to the OCI Console tenancy home page region. It also provides up-to-date tools and utilities.
 
-1.	Click the Cloud Shell icon in the top-right corner of the Console.
+Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/7-open-cloud-shell.png " ")
 
@@ -27,11 +27,12 @@ Cloud Shell is a small virtual machine running a Bash shell which you access thr
 1. To work with application code, you need to download a GitHub repository using
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
-  ```
- <copy>cd ~ ; curl -sL https://tinyurl.com/y3fzk5sn --output master.zip ; unzip master.zip ; rm master.zip</copy>
-  ```
+    ```
+   <copy>cd ~ ; curl -sL https://tinyurl.com/y3fzk5sn --output master.zip ; unzip master.zip ; rm master.zip</copy>
+   ```
 
-  You should now see `msdataworkshop-master` in your root directory.
+  You should now see `msdataworkshop-master` in your root directory
+
 
 2. Change directory into the msdataworkshop-master directory:
 
@@ -43,23 +44,29 @@ Cloud Shell is a small virtual machine running a Bash shell which you access thr
 
 1. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Compartments**.
 
-  ![](images/15-identity-compartments.png " ")
+   ![](images/15-identity-compartments.png " ")
 
 2. Click **Create Compartment** with the following parameters and click **Create Compartment**:
     - Compartment name: `msdataworkshop`
     - Description: `MS workshop compartment`
 
-  ![](images/16-create-compartment.png " ")
+    ![](images/16-create-compartment.png " ")
 
-  ![](images/17-create-compartment2.png " ")
+    ![](images/17-create-compartment2.png " ")
 
 3. Once the compartment is created, click the name of the compartment and then click **Copy** to copy the OCID.
 
-  ![](images/19-compartment-name-ocid.png " ")
+    ![](images/19-compartment-name-ocid.png " ")
 
-  ![](images/20-compartment-ocid.png " ")
+    ![](images/20-compartment-ocid.png " ")
 
 4. Go back into your cloud shell and verify you are in the `~/msdataworkshop-master` directory.
+
+5. Run `./setCompartmentId.sh <COMPARTMENT_OCID> <REGION_ID>` where your `<COMPARTMENT_OCID>` and `<REGION_ID>` values are set as arguments.
+
+  For example:
+
+   `./setCompartmentId.sh ocid1.compartment.oc1..aaaaaaaaxbvaatfz6yourcomparmentidhere5dnzgcbivfwvsho77myfnqq us-ashburn-1`
 
 5.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left
         corner of the Console and go to **Developer Services > Kubernetes Clusters**.
@@ -100,13 +107,13 @@ Cloud Shell is a small virtual machine running a Bash shell which you access thr
 
 ## **STEP 4**: Create ATP databases
 
-1. Run the `createATPPDBs.sh` script.
+  Run the `createATPPDBs.sh` script.
 
     ```
     <copy>./createATPPDBs.sh</copy>
      ```
-
    Notice creation of the ORDERDB and INVENTORYDB PDBs.
+
 
    ![](images/createATPPDBoutput.png " ")
 
@@ -130,10 +137,15 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   ![](images/22-create-repo2.png " ")
 
-  Go to Cloud Shell and run `./addOCIRInfo.sh` with the namespace and repository name as arguments.
+  Go to Cloud Shell and run `./addOCIRInfo.sh` with the namespace and repository name as arguments
+
+  ```
+  <copy>./addOCIRInfo.sh <namespace> <repository_name></copy>
+  ```
+
   For example `./addOCIRInfo.sh axkcsk2aiatb msdataworkshop.user1/msdataworkshop`
 
-3. You will now create the Auth key by going back to the User Settings page. Click the Profile icon in the top-right corner of the Console and select **User Settings**.
+3. You will now create the Auth token by going back to the User Settings page. Click the Profile icon in the top-right corner of the Console and select **User Settings**.
 
   ![](images/23-user-settings.png " ")
 
@@ -149,10 +161,10 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   ![](images/26-save-auth-token.png " ")
 
-7. Go to Cloud Shell and run `./dockerlogin.sh USERNAME "Auth Token"` where `USERNAME` and `Auth token` values are set as arguments.
+7. Go to Cloud Shell and run `./dockerLogin.sh <USERNAME> "<AUTH_TOKEN>"` where `<USERNAME>` and `"<AUTH_TOKEN>"` values are set as arguments.
 
-  * `USERNAME` - is the username used to log in (typically your email address). If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something.com`
-  * `Auth Token` - Paste the generated Auth Token and enclose the value in quotes.
+  * `<USERNAME>` - is the username used to log in (typically your email address). If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something.com`
+  * `"<AUTH_TOKEN>"` - paste the generated token value and enclose the value in quotes.
 
   For example `./dockerLogin.sh user.foo@bar.com "8nO[BKNU5iwasdf2xeefU;yl"`
 
@@ -168,13 +180,13 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
 ## **STEP 6**: Access OKE from the Cloud Shell
 
-1. run `./verifyOKEAndCreateKubeConfig.sh`
+1. Run `./verifyOKEAndCreateKubeConfig.sh`
 
  ```
  <copy>./verifyOKEAndCreateKubeConfig.sh</copy>
   ```
 
- 2. Notice `/.kube/config` is created for the cluster and the `msdataworkshop` namespace is also created.
+2. Notice `/.kube/config` is created for the cluster and the `msdataworkshop` namespace is also created.
 
   ![](images/verifyOKEOutput.png " ")
 

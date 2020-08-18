@@ -79,11 +79,10 @@ You will also clone a GitHub repository.
 3.  Change directory into `/frontend-helidon` folder:
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
+    <copy>cd ~/msdataworkshop-master/frontend-helidon</copy>
     ```
 
-  ![](images/418a175c8093375d4264d6cd5897ead9.png " ")
-
+   
 4.  Run the build script which will build the frontend-helidon application, store it in a docker image and push it to Oracle Registry
 
     ```
