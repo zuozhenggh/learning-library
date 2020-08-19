@@ -116,7 +116,7 @@ You will also clone a GitHub repository.
   ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
 8. Check that the load balancer service is running, and write down the external IP
-    address and port.
+    address and port. 
 
     ```
     <copy>kubectl get services --all-namespaces</copy>
