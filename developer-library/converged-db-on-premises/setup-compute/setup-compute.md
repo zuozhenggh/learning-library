@@ -60,21 +60,21 @@ If you already have a VCN setup, proceed to *Step 1B*.
     - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
 
 9. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
-- **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-- **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
+   - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
+   - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
 
   ![](./images/standardshape.png " ")
 
 10. For this section we will provision a new VCN with all the appropriate ingress and egress rules needed to run this workshop.  If you already have a VCN, make sure it has all of the correct ingress and egress rules and skip to the next section.
-     - **Use Existing VCN?:** Accept the default by leaving this unchecked. This will create a **new VCN**.
+    - **Use Existing VCN?:** Accept the default by leaving this unchecked. This will create a **new VCN**.
 
-9. Click **Next**.
+11. Click **Next**.
 
-10. Review and click **Create**.
+12. Review and click **Create**.
 
   ![](./images/em-create-stack-3.png " ")
 
-7. Your stack has now been created!  
+13. Your stack has now been created!  
 
   ![](./images/em-stack-details.png " ")
 
@@ -116,30 +116,30 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
   ![](./images/em-create-stack-2b.png " ")
 
   Enter or select the following:
-   - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
-   - **Select Availability Domain:** Select an availability domain from the dropdown list.
-   - **SSH Public Key**:  Paste the public key you created in the earlier lab
+    - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
+    - **Select Availability Domain:** Select an availability domain from the dropdown list.
+    - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
   ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 
-   - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
-   - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
-   - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
-   - **Use Existing VCN?:** Check to select.
+    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
+    - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
+    - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
+    - **Use Existing VCN?:** Check to select.
 
   ![](./images/em-create-stack-2c.png " ")
 
-   - **Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
+    - **Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
 
   ![](./images/em-create-stack-2d.png " ")
 
-   - **Select Public Subnet:** Select existing public subnet from above VCN.
+    - **Select Public Subnet:** Select existing public subnet from above VCN.
 
    ***Note:*** *For an existing VCN Option to be used successful, review the details at the bottom of this section*
 
 6. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
-   - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-   - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
+    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
+    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
 
   ![](./images/standardshape-2.png " ")
 
