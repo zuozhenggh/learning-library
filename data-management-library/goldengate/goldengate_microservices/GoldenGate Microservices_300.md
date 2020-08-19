@@ -1,6 +1,6 @@
-![](images/300/Lab300_image1.PNG)
+## Lab 3
 
-Update February 01, 2020
+Update August 19, 2020
 
 ## Creating Credentials in GoldenGate Microservices Architecture
 ## Introduction

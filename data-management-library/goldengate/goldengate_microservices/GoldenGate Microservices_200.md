@@ -1,8 +1,11 @@
-![](images/200/Lab200_image100.PNG)
+## Lab 2
 
-Update January 02, 2019
+Update August 19, 2020
 
 ## Configuring ServiceManager , Atlanta and SanFran Deployments
+
+# Note - Already Completed
+
 ## Introduction
 
 This lab walks you through configuring ServiceManager, Atlanta and SanFran deployments using **Goldengate 19.1 MicroServices** web interface and the **Oracle GoldenGate Configuration Assistant (OGGCA)** silent install scripts in a Cloud environment.
@@ -12,10 +15,6 @@ This lab walks you through configuring ServiceManager, Atlanta and SanFran deplo
 -	Configure the initial ServiceManager and then the Atlanta and SanFran Deployments 
 -	Connect to the Admin Service through a web browser and confirm that the deployments succeeded and that the ServiceManager and core GoldenGate services are running.
 
-## Required Artifacts
-
--   VNC Client for the initial install and deployment. (Refer to Lab 100, for more information on using TightVNC connection)
--	Browser to check the deployment.
 
 ### **STEP 1**: Open up a terminal window and create the ServiceManager and Source(Atlanta) Deployment
 

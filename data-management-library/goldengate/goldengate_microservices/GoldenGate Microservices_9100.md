@@ -1,7 +1,7 @@
+## Lab 9100 - Informational
 
-![](images/9100/Lab9100_image100.PNG)
 
-Update March 28, 2019
+Update August 19, 2020
 
 ## Replicating into Oracle Autonomous Data Warehouse(ADWC) with Heterogeneous database
 ## Introduction

@@ -1,48 +1,43 @@
-![](images/100/Lab100_image100.PNG)
+## Lab 1
 
-Updated June 25, 2020
+Updated Aug 19, 2020
 
 #### Introduction
 
 This is the first of a series of labs to introduce you to the capabilities of GoldenGate Microservices for Oracle Database.   It is a significant release that changes the underlying architecture of GoldenGate to enable it to be administered, monitored, managed and configured through a series of common services.   Each service supports a standard web-based user interface, REST (Representational State Transfer) APIs and a command line client, that allow all configuration to be done remotely in an agile manner. 
 
-In this first lab you will walk through the process of installing this new version of GoldenGate and configuring a deployment for the target environment.
+In this first lab you will walk through the process of installing this new version of GoldenGate and configuring a deployment for the target environment. (Already completed prior to Lab)
 
 ## Objectives
 
 -	Install the GoldenGate Microservces for Oracle edition for the target environment using the Oracle Universal Installer (OUI) tool
 
-## Required Artifacts
-
--   SSH keys for source and target servers
 
 
-### **STEP 1**: Access Cloud Server via Putty
+### **STEP 1**: Access LiveLabs via Guacamole
 
-For this lab, Source and Target will have Oracle GoldenGate 19c and the Oracle Database 19c . All user interactions will be through a browser (Firefox or Chrome) and Putty that is installed on your laptop, which was a prerequisite for this workshop. 
+For this lab, Source and Target will have Oracle GoldenGate 19c and the Oracle Database 19c . All user interactions will be through a browser (Firefox or Chrome)
 
-**Your instructor will provide the SSH and IP address for Oracle Cloud Server**
+**Note: Installation is already completed **
 
-In this step you will use VNC client to connect with Source Server, to get started with the installation of Oracle GoldenGate Mircoservices Architecture.
 
--	Log in to the oracle Source Server, using TigerVNC.
--	In the VNC server field, enter the hostname assigned to you by the hands-on lab staff and port 5901 e.g. {hostname or IP}:5901 , then press Connect.
 
-![](images/100/vnc_1.jpg)
+-	Log in to the oracle Source Server, 
+
+
 
 -	Sign on with the following password: oracle
 
-![](images/100/vnc_2.jpg)
+
 
 -	Once the VNC client has connected, you should see a console that looks similar to this:
 
-![](images/100/vnc3.jpg)
+
 
 -	On the desktop, right-click and select “Open Terminal”.
 
-![](images/100/vnc1.jpg)
 
-### **STEP 2**: From the same terminal window, install the GoldenGate Microservices Edition
+### **STEP 1**: From the same terminal window, install the GoldenGate Microservices Edition
 
 In this step you will install **the GoldenGate Microservices edition package** in new **"GoldenGate Home"** directory.
 
