@@ -56,7 +56,7 @@ Estimated Time: 30-45 minutes
     * Service gateway (SG)
 
 6. Click **View Virtual Cloud Network** to display your VCN details.
-              
+
     ![](images/HAApplication_006.png " ")
 
     ![](images/Terraform_012.png " ")
@@ -94,8 +94,8 @@ Estimated Time: 30-45 minutes
     ![](images/Terraform_014.png " ")
 
     - **Boot Volume:** Leave the default
-    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier. 
-    
+    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier.
+
     *Ensure when you are pasting that you paste one line*
 
     ![](images/HAApplication_012.png " ")
@@ -122,7 +122,7 @@ Estimated Time: 30-45 minutes
 7.  To ssh into the compute instance enter the following command replacing SSH-KEY-NAME with the name of your ssh key and replacing PUBLIC-IP-OF-COMPUTE1 with the IP address of the compute instance you created.
 
     *Note: Your SSH-KEY-NAME name should NOT end in .pub*
-            
+
     ```
     <copy>
     ssh -i SSH-KEY-NAME opc@PUBLIC-IP-OF-COMPUTE-1
@@ -135,7 +135,7 @@ Estimated Time: 30-45 minutes
 8.  Enter 'Yes' when prompted for security message.
 
     ![](images/Terraform_016.png " ")
- 
+
 9. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
     ![](images/Terraform_017.png " ")
@@ -208,7 +208,7 @@ Estimated Time: 30-45 minutes
 
     ```
     <copy>
-    sudo curl https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-hol/infra-using-terraform/tf_setup.sh -o tf_setup.sh
+    sudo curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/biiTfGyz5f3atH8iqX3hX-mLrwyVygwD366yVWZun3Y/n/c4u03/b/oci-library/o/tf_setup.sh -o tf_setup.sh
     </copy>
     ```
 
@@ -294,11 +294,11 @@ Estimated Time: 30-45 minutes
     </copy>
     ```
 
-    Enter the following command. 
+    Enter the following command.
 
     ```
     <copy>
-    sudo curl https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-hol/infra-using-terraform/compute.tf -o compute.tf
+    sudo curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/I4me2s0NE9z_kJprisLSUFyyekXXSGldT1wGFPQIiok/n/c4u03/b/oci-library/o/compute.tf -o compute.tf
     </copy>
     ```
 
@@ -385,4 +385,4 @@ Estimated Time: 30-45 minutes
 - **Last Updated By/Date** - Kamryn Vinson, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
