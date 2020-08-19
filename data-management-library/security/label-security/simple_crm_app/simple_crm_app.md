@@ -1,6 +1,6 @@
 ![](../../../images/banner_OLS.PNG)
 
-# [Lab] Simple CRM Application
+# Simple CRM Application
 
 ## Scope
 The objective of this lab is to provide guidance on how Oracle Label Security could be used to help tracking consent and enforce restriction of processing under the General Data Protection Regulation requirements. Different OLS strategies could be taken to achieve similar functionality. The details provided here are merely to serve as an example.<br><br>
