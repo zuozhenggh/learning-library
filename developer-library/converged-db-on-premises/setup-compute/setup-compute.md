@@ -60,8 +60,9 @@ If you already have a VCN setup, proceed to *Step 1B*.
     - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
 
 10. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
-   - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-   - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
+
+    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
+    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
 
   ![](./images/standardshape.png " ")
 
