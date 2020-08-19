@@ -561,10 +561,10 @@ Thank you!
 
 ## Acknowledgements
   - **Authors**
-      - Rene Fontcha, Master Principal Platform Specialist, NA Technology
+      - Rene Fontcha, Master Principal Solutions Architect, NA Technology
       - Shefali Bhargava, Oracle Enterprise Manager Product Management
-  - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Platform Specialist, NA Technology
+  - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
   - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
