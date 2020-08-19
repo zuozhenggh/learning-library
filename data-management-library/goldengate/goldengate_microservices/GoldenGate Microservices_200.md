@@ -4,7 +4,6 @@ Update August 19, 2020
 
 ## Configuring ServiceManager , Atlanta and SanFran Deployments
 
-# Note - Already Completed
 
 ## Introduction
 
