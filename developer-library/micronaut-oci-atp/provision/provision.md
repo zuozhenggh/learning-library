@@ -40,29 +40,21 @@ In this lab you will:
 
    ![Stack Configuration - Step 2](images/stack_info_2.png)
 
-6. Within the "Configurable Variables" step under "Required Configuration" accept the default configuration:
+6. Under "Required Configuration" add the SSH key that you created in Lab 2. You can do so by dragging and dropping the public key file (the file that ends with `.pub`) or by choosing `PASTE SSH KEYS` then copying and pasting the contents of the public key file.
+                                                                             
+    For example running the following command from a terminal window will copy the contents of your public key into the clipboard which can then be pasted:
+    
+    ```
+    cat ~/.ssh/id_oci.pub | pbcopy
+    ```
 
-   ![Stack Configuration - Step 3](images/stack_var_1.png)
+   ![Stack Configuration - Step 3](images/choose_ssh_key.png)
 
-7. Under "Optional Configuration" accept the default configuration making sure that "INSTANCE SHAPE" is set to "VM.Standard.E2.1.Micro":
+7. Under "Optional Configuration" make sure that "INSTANCE SHAPE" is set to "VM.Standard.E2.1.Micro":
 
-   ![Stack Configuration - Step 4](images/stack_var_2.png)
+   ![Stack Configuration - Step 4](images/choose_shape.png)
 
-8. Upload your public SSH key that was created in the first step. You can do so by dragging and dropping the public key file (the file that ends with `.pub`) or by choosing `PASTE SSH KEYS` then copying and pasting the contents of the public key file.
-
-   For example running the following command from a terminal window will copy the contents of your public key into the clipboard which can then be pasted:
-
-   ```
-   cat ~/.ssh/id_oci.pub | pbcopy
-   ```
-
-   ![Upload SSH Public Key](images/stack_var_3.png)
-
-9. On the next page accept the defaults and click 'Next'. 
-
-   ![Review and Create Stack](images/stack_var_4.png)
-
-10. Finally review and create your stack.
+8. Finally review and create your stack.
 
    ![Review and Create Stack](images/review_stack.png)
 

@@ -40,31 +40,31 @@ To connect locally you need download and configure the ATP Wallet locally.
 
 1. In the OCI Console, click on the burger menu and select 'Autonomous Transaction Processing' under 'Oracle Database'.
 
-![ATP menu](images/atp-menu.png)
+    ![ATP menu](images/atp-menu.png)
 
 2. Make sure you are in the `mn-oci-hol` compartment:
 
-![Choose compartment](images/choose-compartment.png)
+    ![Choose compartment](images/choose-compartment.png)
 
 3. Find the newly created instance and click on it. 
 
-![ATP instance](images/atp-instance-list.png)
+    ![ATP instance](images/atp-instance-list.png)
 
 4. In the instance details, click on 'DB Connection'.
 
-![DB Connection](images/db-connection-btn.png)
+    ![DB Connection](images/db-connection-btn.png)
 
 5. In the 'Database Connection' dialog, select 'Instance Wallet' and click 'Download Wallet'.
 
-![Wallet dialog](images/wallet-dialog.png)
+    ![Wallet dialog](images/wallet-dialog.png)
 
 6. Enter (and confirm) the `atp_wallet_password` from the Terraform output you obtained in the previous lab and click 'Download'.
 
-![Wallet password](images/wallet-password.png)
+    ![Wallet password](images/wallet-password.png)
 
 7. After the wallet zip has been downloaded, unzip it and move it to `/tmp/wallet`.
 
-![Wallet dir](images/tmp-wallet-dir.png)
+    ![Wallet dir](images/tmp-wallet-dir.png)
 
 
 ## **STEP 3**: Create a new Micronaut application 
