@@ -71,7 +71,8 @@ You will also clone a GitHub repository.
    ```
       <copy>source ~/.bashrc</copy>
    ```
-      ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
+      
+  ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
 3.  Change directory into `/frontend-helidon` folder:
 
