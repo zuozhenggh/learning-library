@@ -14,57 +14,12 @@ Autoscaling relies on performance metrics that are collected by the Monitoring s
 
 A cooldown period between autoscaling events lets the system stabilize at the updated level. The cooldown period starts when the instance pool reaches a steady state. Autoscaling continues to evaluate performance metrics during the cooldown period. When the cooldown period ends, autoscaling adjusts the instance pool's size again if needed.
 
-### Prerequisites
-
-1. Have completed *Prerequisites* in the Contents menu on the right
-
-2. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-
-3. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-
-4. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-
-5. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-
-6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
-
-7. [Familiarity with Load Balancer concepts](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm)
-
-
-### Some Key points:
-
-*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%.*
-
-
-- All screenshots are examples ONLY.
-
-- Do NOT use compartment name and other data from screenshots. Only use data (including compartment name) provided in the content section of the lab
-
-- MacOS Users should use command+C / command+V to copy and paste inside the OCI Console
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-    **Cloud Tenant Name**
-
-    **User Name**
-
-    **Password**
-
-    **Compartment Name (Provided Later)**
-
 *Note: OCI user interface is being updated, thus some screenshots in the instructions may be different than the actual UI*
 
-## **Step 1:** Create VCN
-
-* **Tenant Name:** {{Cloud Tenant}}
-* **User Name:** {{User Name}}
-* **Password:** {{Password}}
-* **Compartment:**{{Compartment}}
-
-*Note: OCI user interface is being updated, thus some screenshots in the instructions may be different than the actual UI*
+## **STEP 1:** Create VCN
 
 1. Sign in using your tenant name, user name, and password. Use the login option under **Oracle Cloud Infrastructure**.
-    ![](./../Grafana/images/Grafana_015.PNG " ")
+    ![](images/Grafana_015.PNG " ")
 
 2. From the OCI Services menu, under **Networking**, click **Virtual Cloud Networks**. Select the compartment assigned to you from drop down menu on left part of the screen. Click **Start VCN Wizard**.
 
@@ -84,12 +39,12 @@ A cooldown period between autoscaling events lets the system stabilize at the up
 5. Verify all the information and  Click **Create**.
 
 6. This will create a VCN with the following components:
-   
+
     *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
-             
-## **Step 2:** Create Load Balancer and Update Security List
+
+## **STEP 2:** Create Load Balancer and Update Security List
 
 *When you create a load balancer, you choose its shape (size) and specify subnets from different Availability Domains. This ensures that the load balancer is highly available.*
 
@@ -108,24 +63,24 @@ A cooldown period between autoscaling events lets the system stabilize at the up
     - **VIRTUAL CLOUD NETWORK**: Choose your Virtual Cloud Network
     - **SUBNET**: Choose the **Public Subnet**
 
-    ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_006.PNG " ")
+    ![](images/OCI_Fundamentals_006.PNG " ")
 
     Click **Next**.
 
     **Under Choose Backends:**
 
     - **SPECIFY A LOAD BALANCING POLICY**: Weighted Round Robin
-    - **Add Backends**: Don't add any backend. This will be managed by the instance pool. 
-
-    ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_007.PNG " ")
+    - **Add Backends**: Don't add any backend. This will be managed by the instance pool.
 
     **Under SPECIFY HEALTH CHECK POLICY**
 
     - **PROTOCOL**: HTTP
-    - **Port**: 80 
+    - **Port**: 80
     - **URL PATH (URI)**: /
 
         *Leave other options as default*
+
+    ![](images/OCI_Fundamentals_007.PNG " ")
 
         Click **Next**.
 
@@ -135,6 +90,8 @@ A cooldown period between autoscaling events lets the system stabilize at the up
     - **SPECIFY THE PORT YOUR LISTENER MONITORS FOR INGRESS TRAFFIC**: 80
 
         *Leave other options as default*
+
+    ![](images/OCI_Fundamentals_008.PNG " ")
 
 3. Click **Submit** .
 
@@ -146,45 +103,66 @@ A cooldown period between autoscaling events lets the system stabilize at the up
 
 7. Click **Security Lists**, and locate the Default Security List.
 
-8. Click **Default Security List for Your_VCN**, click **Add Ingress Rules**.
+8. Click **Default Security List for Your\_VCN**, click **Add Ingress Rules**.
 Enter the following ingress rule:
 
-      -  Ensure to leave STATELESS flag un-checked
+      - Ensure to leave STATELESS flag un-checked
       - Source Type: CIDR
       - Source CIDR: Enter 0.0.0.0/0
       - IP Protocol: Select TCP
       - Source Port Range: All
       - Destination Port Range: Enter 80 (the listener port)
 
+  ![](images/add-ingress-rule.png)
+
 9. Click **Add Ingress Rules**.
 
-## **Step 3:** Configure instance pool and auto scaling
+## **STEP 3:** Configure instance pool and auto scaling
 
 1. Go to the OCI console. From OCI services menu, under **Compute**, click **Instances**.
 
 2. Click **Create Instance**. Fill out the dialog box:
 
       - **Name your instance**: Enter a name
+      - **Create in Compartment**: Choose the same compartment you used to create the VCN
       - **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
-      - **Availability Domain**: Select availability domain
+
+3. Click **Show Shape, Network and Storage Options**:
+
+      - **Availability Domain**: Select an availability domain (the default AD 1 is fine)
+      - **Shape**: Click Change Shape
+
+      ![](images/create-compute-1.png)
+
+4. In the **Browse All Shapes** dialog:
+
       - **Instance Type**: Select Virtual Machine
-      - **Instance Shape**: Select VM shape
+      - **Shape Series**: Intel Lake
+      - **Instance Shape**: Select VM.Standard2.1
 
+      Click **Select Shape**.
 
-      ***Under Configure Networking***
+      ![](images/create-compute-2.png)
+
+5. Under Configure Networking:
+
       - **Virtual cloud network compartment**: Select your compartment
-      - **Virtual cloud network**: Choose the VCN
+      - **Virtual cloud network**: Choose the VCN you created in Step 1
       - **Subnet Compartment:** Choose your compartment.
       - **Subnet:** Choose the Public Subnet under **Public Subnets**
       - **Use network security groups to control traffic** : Leave un-checked
       - **Assign a public IP address**: Check this option
 
-      ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+      ![](images/create-compute-3.png)
 
-      - **Boot Volume:** Leave the default
-      - **Add SSH Keys:** Choose **Paste SSH Keys** and paste the Public Key saved earlier.
+6. Boot Volume and Add SSH Keys     
 
-3. Click  **Show Advanced Options**.
+      - **Boot Volume:** Leave the default, uncheck values
+      - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved in Lab 1.
+
+      ![](images/create-compute-4.png)
+
+7. Click  **Show Advanced Options**.
 
     ***Under Management***
 
@@ -207,15 +185,13 @@ Enter the following ingress rule:
 
     ![](./images/Auto_Scaling_013.PNG " ")
 
-4.  Click **Create**.
+8.  Click **Create**.
 
     *NOTE: If 'Service limit' error is displayed, choose a different shape, such as VM.Standard.E2.2 OR VM.Standard2.2 OR choose a different AD.*
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+9.  Wait for Instance to be in **Running** state. You can scroll down to *Work Requests* to check the process of provisioning.
 
-5.  Wait for Instance to be in **Running** state. You can scroll down to *Work Requests* to check the process of provisioning.
-
-6.  Click Instance name. Click **More Actions**, then select **Create Instance Configuration**.  
+10.  Click Instance name. Click **More Actions**, then select **Create Instance Configuration**.  
 Fill out the dialog box:
 
     ![](./images/Auto_Scaling_001.PNG " ")
@@ -224,121 +200,118 @@ Fill out the dialog box:
 
     **INSTANCE CONFIGURATION NAME** : Provide a name
 
-7.  Click **Create Instance Configuration**.
+11.  Click **Create Instance Configuration**.
 
-8.  In the Instance Configuration page, Click **Create Instance Pool**.
+12.  In the Instance Configuration page, Click **Create Instance Pool**.
 
     ![](./images/Auto_Scaling_002.PNG " ")
 
-9.   A new dialog box will appear. This is used to create initial configuration of the instance pool, such as how many compute instance to create initially, VCN, and Availability domain the instance pool should be created in. Fill out the dialog box:
+13.   A new dialog box will appear. This is used to create initial configuration of the instance pool, such as how many compute instance to create initially, VCN, and Availability domain the instance pool should be created in. Fill out the dialog box:
 
     - **CREATE IN COMPARTMENT**: Choose your compartment
     - **INSTANCE POOL NAME**: Provide a suitable name
-    - **NUMBER OF INSTANCES**: 0 
+    - **NUMBER OF INSTANCES**: 0
 
     (This is the number of computes that should be launched when the pool is created. We will start with no compute)
 
-    - **INSTANCE CONFIGURATION COMPARTMENT** : Provide your compartment
+    ![](images/create-instance-pool-1.png)
 
-    (This is the compartment where instance configuration will be placed and can only be used in this specific compartment)
+    Click **Next**.
 
-    - **INSTANCE CONFIGURATION**: Choose the instance configuration created earlier
-
-    (Any computes launched in this pool will inherit shape, image and ssh keys of the compute whose instance configuration we are using)
-
-    - **ATTACH A LOAD BALANCER**: Select this option.
-
-    - **LOAD BALANCER COMPARTMENT**: Choose your compartment
-
-    - **LOAD BALANCER**: Choose the Load Balancer created earlier
-
-    - **BACKEND SET**: Choose the first backend set
-
-    - **PORT**: 80
-
-    - **VNIC**: Leave the default
+14. On the **Configure Pool Placement** page:
 
     - **AVAILABILITY DOMAIN**: Choose the AD where you want to place instances (you can choose the **AD 1** if in Multi AD region)
     - **VIRTUAL CLOUD NETWORK COMPARTMENT**: Choose VCN's compartment
     - **VIRTUAL CLOUD NETWORK**: Choose your VCN
     - **SUBNET COMPARTMENT**: Choose your compartment
-
     - **SUBNET**: Choose the Public Subnet  
+    - **ATTACH A LOAD BALANCER**: Select this option.
+    - **LOAD BALANCER COMPARTMENT**: Choose your compartment
+    - **LOAD BALANCER**: Choose the Load Balancer created earlier
+    - **BACKEND SET**: Choose the first backend set
+    - **PORT**: 80
+    - **VNIC**: Leave the default
 
-    *NOTE: Below step of adding second AD only applies if you are working in Multi AD Region. This step should be skipped for Single AD Region.*
+    ![](images/create-instance-pool-2.png)
 
-10. Click **+ Another Availability Domain** and select a different availability domain for the instance pool. Then, specify the VCN details for the second availability domain.
+15. Click **Next** and then **Create**. Wait for Instance Pool to be in **RUNNING** state (turns green).
 
-    - We configured instances to be deployed in two different Avaialability domain, though they can be deployed in the same Availability domain as long as service limits allow it.
-
-    - For this lab use two different availability domains.
-
-    ![](./images/Auto_Scaling_003.PNG " ")
-
-    ![](./images/Auto_Scaling_003-1.PNG " ")
-
-11. Click **Next** and then **Create**. Wait for Instance Pool to be in **RUNNING** state (turns green).
-
-12. From the Instance Pool Details page, click **More Actions** and choose **Create Autoscaling Configuration**.
+16. From the Instance Pool Details page, click **More Actions** and choose **Create Autoscaling Configuration**.
     ![](./images/Auto_Scaling_004.PNG " ")
 
-13. Fill out the dialog box:
+17. On the **Add Basic Details** page:
 
     - **COMPARTMENT**: Choose your compartment
     - **AUTOSCALING CONFIGURATION NAME** : Provide a name
     - **INSTANCE POOL** : This should show your instance pool name created earlier
-    - **COOLDOWN IN SECONDS** : 300 (This is he minimum period of time between scaling actions.)
+
+    *Note: If the instance pool name is blank, try refreshing the browser and trying again.*
+
+    ![](images/autoscale-config-1.png)
+
+    Click **Next**.
+
+18. On the **Configure Autoscaling Policy** page:
+
+    - Make sure that **Metric-based Autoscaling** is selected.
     - **AUTOSCALING POLICY NAME** : Provide a name
+    - **COOLDOWN IN SECONDS** : 300 (This is he minimum period of time between scaling actions.)
     - **PERFORMANCE METRIC** : CPU utilization (This is the Metric to use for triggering scaling actions.)
-    - **MINIMUM NUMBER OF INSTANCES** : 1 (this is the minimum number of instances that the pool will always have)
-    - **MAXIMUM NUMBER OF INSTANCES** : 2 (this is the maximum number of instances that the pool will always have)
-    - **INITIAL NUMBER OF INSTANCES** : 1 (this is how many instances will be created in the instance pool initially)
     - **SCALE-OUT OPERATOR** : Greater than (>)
     - **THRESHOLD PERCENTAGE** : 10
     - **NUMBER OF INSTANCES TO ADD** : 1
     - **SCALE-IN OPERATOR** : Less than (<)
     - **THRESHOLD PERCENTAGE** : 5
     - **NUMBER OF INSTANCES TO REMOVE**  : 1
+    - **MINIMUM NUMBER OF INSTANCES** : 1 (this is the minimum number of instances that the pool will always have)
+    - **MAXIMUM NUMBER OF INSTANCES** : 2 (this is the maximum number of instances that the pool will always have)
+    - **INITIAL NUMBER OF INSTANCES** : 1 (this is how many instances will be created in the instance pool initially)
 
-    *Leave other fields as is.*
+    ![](images/autoscale-config-2.png)
 
-14. Click **Next** and then **Create**.
-    ![](./images/Auto_Scaling_005.PNG " ")
+    Click **Next**.
 
-    ![](./images/Auto_Scaling_006.PNG " ")
+19. Click **Create**.
 
     We have now created an autoscaling policy that will start with creating 1 compute instance in the designated pool. Once the CPU utilization is determined to be above 10% for at least 300 seconds, another compute instance will be launched automatically. Once the CPU utilization is determined to be less than 5% for 300 seconds, one compute instance will be removed. At all times, there will be at least 1 compute instance in the pool.
 
-    *Original image can be deleted as it's not part of the pool.*
+    ![](images/autoscale-config-3.png)
 
 ## **Step 4:** Test the setup
 
 1. Wait until your Instance Pool change from *Scaling* to *Running* state. Under **Compute**, click **Instance Pools**, and then your pool name. Click **Created Instances**, you should see a compute instance created. Click the Compute Instance name.
     ![](./images/Auto_Scaling_007.PNG " ")
 
-2. Note down the Public and Private IP of compute instance from the details page (Under **Primary VNIC Information** section). 
+2. Note down the Public and Private IP of compute instance from the details page (Under **Primary VNIC Information** section).
 
 3. Open a web browser and enter instance's public IP address. You should see the message: `Web Server IP: <instance private IP>`
 
-4. Switch to git bash window, if the ssh session to compute instance is still open then exit out of the session (quit command). 
+4. In the Cloud shell, switch to the .ssh directory:
 
-5. Ensure you are in /C/Users/PhotonUser/.ssh directory.
+    ```
+    <copy>cd ~/.ssh</copy>
+    ```
 
-6. Enter **ls** and verify id_rsa file exists.
+6. Enter **ls** and find your private key:
 
-7. Enter command: 
+    ```
+    <copy>ls</copy>
+    ```
+
+    ![](images/cloud-shell.png)
+
+7. Enter command:
     ```
     <copy>
-    bash
-    ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
+    ssh -i <private_key> opc@<PUBLIC_IP_OF_COMPUTE>
     </copy>
     ```
 
     **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command
 
 8. Enter 'Yes' when prompted for security message
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
- 
+    ![](images/RESERVEDIP_HOL0014.PNG " ")
+
 9. Now start CPU stress, Enter command:
 
     ```
@@ -357,13 +330,13 @@ Fill out the dialog box:
 
     *This is since our criteria of CPU utilization > 10 was met.*
 
-12. When the second instance is up and running and the instance pool status is  'Running', switch to the web browser and refresh the page multiple times and observe the load balancer balancing traffic between the two web servers.
+12. When the second instance is up and running and the instance pool status is 'Running', switch to the web browser and refresh the page multiple times and observe the load balancer balancing traffic between the two web servers.
 
-13. Switch back to git bash window and if the stress tool is still running, Prees Ctrl + C to stop the script.
+13. Switch back to git bash window and if the stress tool is still running, click Ctrl + C to stop the script.
 
 14. Switch back to OCI console window and navigate to your compute instance details page. Verify CPU utilization goes down after a minute.
 
-15. Navigate to Instanse pool details page and after 3-4 minute Instance pool status will change to **Scaling** . Additional compute instance will be deleted. 
+15. Navigate to Instance pool details page and after 3-4 minute Instance pool status will change to **Scaling** . Additional compute instance will be deleted.
 
     *This is because our criteria of CPU utilization < 5 is met.*
 
@@ -374,10 +347,10 @@ Fill out the dialog box:
 2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**.
 
 3. Locate first compute instance, Click Action icon and then **Terminate**.
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
+    ![](images/RESERVEDIP_HOL0016.PNG " ")
 
 4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate.
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0017.PNG " ")
+    ![](images/RESERVEDIP_HOL0017.PNG " ")
 
 5. In OCI console window from Instance Pool Details page, Click **Terminate** under **Action**. Provide Instance Pool name in the pop up dialog box and Click **Terminate**. This will delete the pool along with the compute instance and auto scale configuration.
     ![](./images/Auto_Scaling_011.PNG " ")
@@ -385,12 +358,12 @@ Fill out the dialog box:
 6. Navigate to **Instance Configurations** Under **Compute**. For your Instance Configuration, Click **Delete** under the three Vertical dots.
     ![](./images/Auto_Scaling_012.PNG " ")
 
-7. Navigate to **AutoScaling Configurations** Under **Compute**. For your Instance Configuration, Click **Delete**.
+7. Navigate to **AutoScaling Configurations** Under **Compute**. For your Instance Configuration, click **Delete**.
 
-8. From OCI services menu Click **Load Balancers** under Networking, locate your Load Balancer and Click Terminate under the three Vertical dots.
+8. From OCI services menu Click **Load Balancers** under Networking, locate your Load Balancer and click **Terminate** under the three Vertical dots.
 
-9. From OCI services menu Click **Virtual Cloud Networks** under Networking, Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
+9. From OCI services menu Click **Virtual Cloud Networks** under Networking, Locate your VCN , click the Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
+    ![](images/RESERVEDIP_HOL0018.PNG " ")
 
 
 ## Acknowledgements
@@ -398,7 +371,7 @@ Fill out the dialog box:
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, May 2020
+- **Last Updated By/Date** - Tom McGinn, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
