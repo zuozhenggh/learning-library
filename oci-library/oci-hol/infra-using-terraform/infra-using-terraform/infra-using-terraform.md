@@ -3,7 +3,19 @@
 ## Introduction
 In this lab we will use pre-configured terraform scripts to deploy VCN, Compute Instance, Block storage and attach the block storage to compute instance without using OCI console. We will then delete all these infrastructure resources.
 
-Estimated Time: 45 minutes
+Estimated Time: 30-45 minutes
+
+**Key points:**
+- We recommend using Chrome or Edge as the browser.
+- You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
+
+### Pre-Requisites
+
+1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
+2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
+4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 ## **Step 1**: Create a Virtual Cloud Network
 
@@ -44,7 +56,7 @@ Estimated Time: 45 minutes
     * Service gateway (SG)
 
 6. Click **View Virtual Cloud Network** to display your VCN details.
-
+              
     ![](images/HAApplication_006.png " ")
 
     ![](images/Terraform_012.png " ")
@@ -82,8 +94,8 @@ Estimated Time: 45 minutes
     ![](images/Terraform_014.png " ")
 
     - **Boot Volume:** Leave the default
-    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier.
-
+    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier. 
+    
     *Ensure when you are pasting that you paste one line*
 
     ![](images/HAApplication_012.png " ")
@@ -110,7 +122,7 @@ Estimated Time: 45 minutes
 7.  To ssh into the compute instance enter the following command replacing SSH-KEY-NAME with the name of your ssh key and replacing PUBLIC-IP-OF-COMPUTE1 with the IP address of the compute instance you created.
 
     *Note: Your SSH-KEY-NAME name should NOT end in .pub*
-
+            
     ```
     <copy>
     ssh -i SSH-KEY-NAME opc@PUBLIC-IP-OF-COMPUTE-1
@@ -123,7 +135,7 @@ Estimated Time: 45 minutes
 8.  Enter 'Yes' when prompted for security message.
 
     ![](images/Terraform_016.png " ")
-
+ 
 9. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
     ![](images/Terraform_017.png " ")
@@ -282,7 +294,7 @@ Estimated Time: 45 minutes
     </copy>
     ```
 
-    Enter the following command.
+    Enter the following command. 
 
     ```
     <copy>
@@ -369,8 +381,8 @@ Estimated Time: 45 minutes
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Contributors** - Oracle LiveLabs (Jaden McElvey, Technical Lead, Kamryn Vinson, QA Engineer Lead Intern, Arabella Yao, Product Manager Intern, DB Product Management)
-- **Last Updated By/Date** - Yaisah Granillo, June 2020
+- **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+- **Last Updated By/Date** - Kamryn Vinson, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
