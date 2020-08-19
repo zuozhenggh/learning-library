@@ -1,6 +1,6 @@
-![](images/Reset/Reset_image1.png)
+# Lab - reset
 
-Update January 22, 2019
+Update August 19 2020
 
 ## GoldenGate Micro Services : Reset Lab
 

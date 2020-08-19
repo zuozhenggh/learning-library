@@ -1,4 +1,4 @@
-# Lab - 900
+# Lab - 9
  
 In this step you will run script to create a uni-directional replication from *ATLANTA to SANFRAN deployments via pre- configured script.
 
