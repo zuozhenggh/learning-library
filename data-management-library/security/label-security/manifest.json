@@ -2,14 +2,36 @@
     "workshoptitle": "Oracle Label Security",
     "tutorials": [
         {
+            "title": "Prerequisites",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description":"Understand what Label Security is and what it can do",
+            "publisheddate": "06/30/2020",
+            "filename":"intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 2: Getting Connected to the lab environment",
+            "description":"How to get connected to the workshop environment",
+            "publisheddate": "06/30/2020",
+            "filename":"intro/get-connected.md"
+        },
+        {
             "title": "Simple CRM App",
             "description": "In this lab you will learn how to leverage OLS to track consent and force restriction for GDPR",
-            "filename": "./Simple_CRM_App/README.md"
+            "filename": "simple_crm_app/simple_crm_app.md"
         },
         {
             "title": "Protect HR Application",
             "description": "This lab walks you through the steps to protect a simple HR application",
-            "filename": "./Protect_Glassfish_App/README.md"
+            "filename": "protect_glassfish_app/protect_glassfish_app.md"
         }
     ]
 }
