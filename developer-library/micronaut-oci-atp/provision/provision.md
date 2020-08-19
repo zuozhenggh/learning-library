@@ -105,8 +105,6 @@ You will need the values of these variables in the next step to configure your d
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
 * [Oracle Cloud Resource Manager](https://docs.cloud.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm)
 * [Oracle Cloud Autonomous Database](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm)
 
