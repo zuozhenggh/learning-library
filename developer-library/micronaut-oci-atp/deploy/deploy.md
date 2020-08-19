@@ -6,6 +6,14 @@ This lab takes you through deploying the Micronaut application to an OCI VM.
 
 Estimated Lab Time: &lt;15&gt; minutes
 
+### Objectives
+
+In this lab you will:
+
+* Build your application distribution
+* Upload the application distribution and wallet to an OCI VM
+* Run your application on the OCI VM
+
 ## Deploy Micronaut Application to OCI
 
 ### Deploy (From Local To VM)
