@@ -74,9 +74,9 @@ The final step to configure the Micronaut application to work with Autonomous Da
          dialect: ORACLE
    ```
 
-The password is set to resolve an environment variable called `MICRONAUT_OCI_DEMO_PASSWORD`. You should configure this environment variable to the output value `atp_wallet_password` produced by the Terraform script in the previous section. For example:
+The password is set to resolve an environment variable called `MICRONAUT_OCI_DEMO_PASSWORD`. You should configure this environment variable to the output value `atp_schema_password` produced by the Terraform script in the previous section. For example:
 
 
    ```bash
-   export MICRONAUT_OCI_DEMO_PASSWORD=[Your atp_wallet_password]
+   export MICRONAUT_OCI_DEMO_PASSWORD=[Your atp_schema_password]
    ```
