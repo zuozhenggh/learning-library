@@ -1,4 +1,4 @@
-# Lab 7: Getting Started with Oracle Data Safe
+# Lab 8: Getting Started with Oracle Data Safe
 
 ## Introduction
 Data Safe is a unified control center for your Oracle Databases which helps you understand the sensitivity of your data, evaluate risks to data, mask sensitive data, implement and monitor security controls, assess user security, monitor user activity, and address data security compliance requirements. Whether you’re using Oracle Autonomous Database or Oracle Database Cloud Service (Exadata, Virtual Machine, or Bare Metal), Data Safe delivers essential data security capabilities as a service on Oracle Cloud Infrastructure.

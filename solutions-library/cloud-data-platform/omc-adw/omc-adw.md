@@ -1,4 +1,4 @@
-#  Lab 8: Using Oracle Management Cloud (OMC) to Monitor ADW
+#  Lab 9: Using Oracle Management Cloud (OMC) to Monitor ADW
 
 ## Introduction
 
