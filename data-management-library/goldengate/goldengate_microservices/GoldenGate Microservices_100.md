@@ -12,7 +12,8 @@ In this first lab you will walk through the process of installing this new versi
 
 -	Install the GoldenGate Microservces for Oracle edition for the target environment using the Oracle Universal Installer (OUI) tool
 
-
+## Want to learn more:
+" https://www.oracle.com/middleware/data-integration/goldengate/ "
 
 ### **STEP 1**: Access LiveLabs via Guacamole
 
@@ -41,7 +42,7 @@ For this lab, Source and Target will have Oracle GoldenGate 19c and the Oracle D
 
 In this step you will install **the GoldenGate Microservices edition package** in new **"GoldenGate Home"** directory.
 
--	From the terminal screen change to the **/u01/software/gg/ggma** directory and unzip the **GoldenGate Microservices software package**:
+-	From the terminal screen change to the **/opt/software/gg/ggma** directory and unzip the **GoldenGate Microservices software package**:
  
 		[oracle@ggma ~] cd /u01/software/gg/ggma
 		[oracle@ggma ggma]$ ll
