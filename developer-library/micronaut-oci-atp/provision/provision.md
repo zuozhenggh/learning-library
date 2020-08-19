@@ -1,107 +1,121 @@
-# Provision an Instance
+# Provision Oracle Cloud Instances
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab you are going to provision the Oracle Cloud instances needed to run a Micronaut application with Autonomous Database.
 
-Estimated Lab Time: &lt;n&gt; minutes
-
-### About Product/Technology
-Enter background information here..
+Estimated Lab Time: &lt;30&gt; minutes
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+In this lab you will:
 
-In this lab, you'll:
-* Objective 1
-* Objective 2
-* Objective 3
+* Download a Terraform script to setup an Oracle Cloud VM and Autonmous Database instance
+* Create and Apply a Oracle Cloud Stack via Terraform
+* Obtain the necessary configuration to run a Micronaut application locally and communicate with Autonomous Database
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+* An Oracle Cloud Account
 
-* Item no 1
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+## **STEP 1**: Create a new Stack
 
-*This is the "fold" - below items are collapsed by default*
+1. Create Infrastructure by downloading the Terraform configuration for this lab (stack.zip) from:
 
-## **STEP 1**: title
+   https://github.com/recursivecodes/micronaut-data-jdbc-graal-atp/releases/latest/download/stack.zip
 
-Step 1 opening paragraph.
+2. In the Oracle Cloud Console go to the "Solutions and Platforms" -> "Resource Manager" -> "Stacks".
 
-1. Sub step 1
+   ![Resource Manager Stacks Link](images/resource_manager_link.png)
 
-  To create a link to local file you want the reader to download, use this format:
+3. Click 'Create Stack' to create a new stack:
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+   ![Create Stack button](images/create_stack_btn.png)
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+4. Choose 'My Configuration', and upload the Terraform configuration zip either by browsing to the location locally where the zip exists or dragging and dropping the ZIP into the "Stack Configuration" pane:
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+   ![Stack Configuration - Step 1](images/stack_info_1.png)
 
-    ![Image alt text](images/sample1.png "Image title")
+5. You can optionally enter a name and description of the stack then then choose the compartment for the Stack, then click 'Next':
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+   ![Stack Configuration - Step 2](images/stack_info_2.png)
 
-    ![Image alt text](images/sample1.png " ")
+6. Within the "Configurable Variables" step under "Required Configuration" accept the default configuration:
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+   ![Stack Configuration - Step 3](images/stack_var_1.png)
 
-5. One example with bold **text**.
+7. Under "Optional Configuration" accept the default configuration making sure that "INSTANCE SHAPE" is set to "VM.Standard.E2.1.Micro":
 
-   If you add another paragraph, add 3 spaces before the line.
+   ![Stack Configuration - Step 4](images/stack_var_2.png)
 
-## **STEP 2:** title
+8. Upload your public SSH key that was created in the first step. You can do so by dragging and dropping the public key file (the file that ends with `.pub`) or by choosing `PASTE SSH KEYS` then copying and pasting the contents of the public key file.
 
-1. Sub step 1
+   For example running the following command from a terminal window will copy the contents of your public key into the clipboard which can then be pasted:
 
-  Use tables sparingly:
+   ```
+   cat ~/.ssh/id_oci.pub | pbcopy
+   ```
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+   ![Upload SSH Public Key](images/stack_var_3.png)
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+9. On the next page accept the defaults and click 'Next'. 
 
-    - List item 1
-    - List item 2
+   ![Review and Create Stack](images/stack_var_4.png)
 
-3. Code examples
+10. Finally review and create your stack.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
-    ```
+   ![Review and Create Stack](images/review_stack.png)
 
-4. Code examples that include variables
+##  **STEP 2**: Apply the Terraform Plan
 
-  To include `<` and `>` in your code fragments, use ``&lt;`` and ``&gt;`` to escape the characters in the code block:
+1. On the Stack Details page, click 'Terraform Actions' and select 'Plan'.
 
-	```
-  <copy>ssh -i &lt;ssh-key-file&gt;</copy>
-  ```
+   ![Terraform Plan](images/stack_plan.png)
 
-*At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
+2. Review the plan output and ensure no failures occurred.
+
+   ![Review Terraform Plan Log](images/plan_log.png)
+
+3. On the Stack Details page, Click 'Terraform Actions' and select 'Apply'.
+
+   ![Applying the Stack](images/stack_apply.png)
+
+4. Choose the plan you just created, then click 'Apply'.
+
+   ![Applying the Stack](images/stack_apply_2.png)
+
+
+##  **STEP 3**: Capture Application Configuration Variables
+
+1. Monitor the logs and ensure the Stack plan has been successfully applied then review the plan output variables by clicking "Outputs" on the left hand side of the Job Details panel:
+
+   ![Apply Job Outputs](images/tf_output.png)
+
+2. Collect the following values from the output:
+
+   * `compartment_ocid` - This is the compartment OCID used to identify the compartment where the database is setup
+   * `tns_name` - This is the TNS name of the Autonomous Database instance
+   * `atp_admin_password` - This is the adminstrative password of the Autonmous Database Instance
+   * `atp_schema_password` - This is the schema password of the Autonmous Database Instance
+   * `atp_wallet_password` - This is the wallet password of the Autonmous Database Instance
+   * `atp_db_ocid` - This is the unique OCID of the Autonmous Database Instance
+   * `region` - This is the region where the instance is running
+
+You will need the values of these variables in the next step to configure your database. However, if you forget to take note of them you can retrieve them later by going to the Oracle Cloud Console and going to "Resource Manager" -> "Stacks" then click the name of your Stack then under "Jobs" select the "apply-" job that ran and under "Resources" on the left you can navigate to "Outputs" where you will find the variables again.
 
 ## Learn More
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle Cloud Resource Manager](https://docs.cloud.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm)
+* [Oracle Cloud Autonomous Database](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm)
 
-## Acknowledgements
+<!-- ## Acknowledgements
+
 * **Author** - <Name, Title, Group>
 * **Adapted for Cloud by** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. -->
