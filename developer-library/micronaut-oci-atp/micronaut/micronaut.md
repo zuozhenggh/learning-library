@@ -12,5 +12,6 @@ Estimated Lab Time: &lt;n&gt; minutes
 
    ```shell script
    # run on local machine
-   ./gradlew -DMICRONAUT_OCI_DEMO_PASSWORD [your generated password] run
+   export MICRONAUT_OCI_DEMO_PASSWORD=[your generated password]
+   ./gradlew run
    ```

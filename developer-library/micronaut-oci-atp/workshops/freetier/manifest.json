@@ -7,7 +7,7 @@
         },
         {
             "title": "Introduction",
-            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "description": "Introduction to building Micronaut applications with Autonomous database.",
             "filename": "../../introduction/introduction.md"
         },
         {
@@ -36,15 +36,15 @@
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 5: Build the Micronaut app",
+            "title": "Lab 5: Build the Micronaut Application",
             "filename": "../../micronaut/micronaut.md"
         },
         {
-            "title": "Lab 5: Deploy the Micronaut app",
+            "title": "Lab 6: Deploy the Micronaut Application",
             "filename": "../../deploy/deploy.md"
         },
         {
-            "title": "Lab 6: Terminate and Destroy the resources",
+            "title": "Lab 7: Terminate and Destroy the OCI Resources",
             "filename": "../../destroy/destroy.md"
         }
     ]
