@@ -14,7 +14,7 @@ that utilize very little memory and resources thanks to its reflection free natu
 
 Micronaut also includes a persistence framework called Micronaut Data that precomputes your SQL queries at compilation name making it a great fit for working with Autonmous Database.
 
-  [Video](youtube:zNKxJjkq0Pw)
+  <!-- [Video](youtube:zNKxJjkq0Pw) -->
 
 ### Objectives
 
@@ -30,7 +30,6 @@ and Oracle Cloud to connected to an Oracle Database.
 ### Prerequisites
 
 * Internet Browser
-* [Git](https://git-scm.com/) installed
 * [Micronaut](https://micronaut.io/download.html)
-* JDK 8 or above installed
+* JDK 11 or above installed
 * An IDE such as [VS Code](https://code.visualstudio.com/) or [IntelliJ](https://www.jetbrains.com/idea/download/#section=mac)

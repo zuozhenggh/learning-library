@@ -66,7 +66,7 @@ The final step to configure the Micronaut application to work with Autonomous Da
    ```yaml
    datasources:
       default:
-         url: jdbc:oracle:thin:@mnociatp_high?TNS_ADMIN=/tmp/wallet
+         url: jdbc:oracle:thin:@mnociatp_high
          driverClassName: oracle.jdbc.OracleDriver
          username: mnocidemo
          password: ${MICRONAUT_OCI_DEMO_PASSWORD}
@@ -79,4 +79,5 @@ The password is set to resolve an environment variable called `MICRONAUT_OCI_DEM
 
    ```bash
    export MICRONAUT_OCI_DEMO_PASSWORD=[Your atp_wallet_password]
+   export TNS_ADMIN=[Your absolute path to wallet]
    ```
