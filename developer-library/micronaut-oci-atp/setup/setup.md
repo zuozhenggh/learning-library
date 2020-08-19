@@ -4,7 +4,7 @@
 
 In this lab you are going to get setup to develop a Micronaut application locally that communicates with an Autonomous Datatabase instance.
 
-Estimated Lab Time: &lt;10&gt; minutes
+Estimated Lab Time: &lt;15&gt; minutes
 
 ### Objectives
 
@@ -12,7 +12,8 @@ In this lab you will:
 
 * Create the Necessary Database schema
 * Download the Wallet for Autonomous Database access
-* Create and configure a Micronaut application
+* Create a new Micronaut application
+* Configure the Micronaut application to connect to Autonomous database
 
 ## **STEP 1**: Create DB Schema
 
