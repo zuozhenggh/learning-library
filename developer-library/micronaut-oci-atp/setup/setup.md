@@ -42,7 +42,7 @@ To connect locally you need download and configure the ATP Wallet locally.
 
 ![ATP menu](images/atp-menu.png)
 
-2. Make sure you are in the `mn-oci-hol`) compartment:
+2. Make sure you are in the `mn-oci-hol` compartment:
 
 ![Choose compartment](images/choose-compartment.png)
 
@@ -58,7 +58,7 @@ To connect locally you need download and configure the ATP Wallet locally.
 
 ![Wallet dialog](images/wallet-dialog.png)
 
-6. Enter (and confirm) the `atp_wallet_password` from the Terraform output and click 'Download'.
+6. Enter (and confirm) the `atp_wallet_password` from the Terraform output you obtained in the previous lab and click 'Download'.
 
 ![Wallet password](images/wallet-password.png)
 
@@ -97,15 +97,18 @@ The final step to configure the Micronaut application to work with Autonomous Da
          url: jdbc:oracle:thin:@mnociatp_high
          driverClassName: oracle.jdbc.OracleDriver
          username: mnocidemo
-         password: ${MICRONAUT_OCI_DEMO_PASSWORD}
+         password: ''
          schema-generate: CREATE_DROP
          dialect: ORACLE
    ```
 
-The password is set to resolve an environment variable called `MICRONAUT_OCI_DEMO_PASSWORD`. You should configure this environment variable to the output value `atp_schema_password` produced by the Terraform script in the previous section. For example:
+The configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section. 
 
+In addition you should also set an environment variable called `TNS_ADMIN` to the location of your wallet created in Step 2.
+
+For example:
 
    ```bash
    export TNS_ADMIN=[Your absolute path to wallet]
-   export MICRONAUT_OCI_DEMO_PASSWORD=[Your atp_schema_password]
+   export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
    ```
