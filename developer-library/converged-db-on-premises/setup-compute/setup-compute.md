@@ -43,7 +43,6 @@ If you already have a VCN setup, proceed to *Step 1B*.
       - **Create in compartment**:  Select the correct compartment if not already selected
 
      ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
-
 7.  Click **Next**.
 
   ![](./images/em-create-stack-2.png " ")
@@ -58,9 +57,7 @@ If you already have a VCN setup, proceed to *Step 1B*.
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
     - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
     - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
-
 10. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
-
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
     - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
 
