@@ -17,10 +17,10 @@ This 2-hour lab walks you through the steps to use Micronaut, Micronaut Data
 and GraalVM native image to connected to an Oracle Database.
 
 1. Create an Oracle Cloud account
-1. Create an Autonomous Transaction Processing (ATP) Database
-1. Create an Oracle Compute instance and setup/configure
-1. Build an app with Micronaut, Micronaut Data and GraalVM
-1. Run your app in the cloud
+2. Create an Autonomous Transaction Processing (ATP) Database
+3. Create an Oracle Compute instance and setup/configure
+4. Build an app with Micronaut, Micronaut Data and GraalVM
+5. Run your app in the cloud
 
 ### Prerequisites
 
