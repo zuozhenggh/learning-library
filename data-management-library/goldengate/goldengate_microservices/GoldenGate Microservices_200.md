@@ -180,4 +180,13 @@ In this step you will configure the Target (SanFran) deployment.
 
 You have completed lab 200!   **Great Job!**
 
+## Acknowledgements
+
+ - ** Authors ** - Brian Elliott, Zia Khan
+ - ** Contributors ** - Brian Elliott, Zia Khan
+ - ** Team ** - Data Integration Team
+ - ** Last Updated By ** - Brian Elliott, Zia Khan
+ - ** Expiration Date ** – July 2021
+
+
 <a href="https://oraclecps.github.io/GGMicroservices/index.html" target="_blank">Click here to return</a>
