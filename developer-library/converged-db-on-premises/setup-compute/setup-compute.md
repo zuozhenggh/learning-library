@@ -42,21 +42,21 @@ If you already have a VCN setup, proceed to *Step 1B*.
       - **Description**:  Same as above
       - **Create in compartment**:  Select the correct compartment if not already selected
 
-     *Note: If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
+     ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
 
 6.  Click **Next**.
 
   ![](./images/em-create-stack-2.png " ")
 
 7. Enter or select the following:
-    - **Instance Count:** Accept the default
+    - **Instance Count:** Accept the default, **1**, unless you intend to create more for a team for instance
     - **Select Availability Domain:** Select an availability domain from the dropdown list.
     - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
-    *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+    ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 8. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
-    - **Instance Shape:** Keep the default as provided Select ***VM.Standard.E3.Flex*** (Only option for Flex shapes)
+    - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
     - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
 
 9. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
@@ -84,7 +84,9 @@ You may now proceed to Step 2 (skip Step 1B).
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
 - Egress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
 
-If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  *Note:  We recommend using our stack to create to reduce the potential for error.*
+If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  
+
+***Note:*** *We recommend using our stack to create to reduce the potential for error.*
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
      - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uZPsGTFvwVSVjMn9JtlhRw5tk8zIiYfIz8iTql-I6eI/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
@@ -107,41 +109,45 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
     - **Description**:  Same as above
     - **Create in compartment**:  Select the correct compartment if not already selected
 
-  *Note: If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
+  ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
 
 5. Click **Next**.
 
   ![](./images/em-create-stack-2b.png " ")
 
-    Enter or select the following:
-      - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
-      - **Select Availability Domain:** Select an availability domain from the dropdown list.
-      - **SSH Public Key**:  Paste the public key you created in the earlier lab
+  Enter or select the following:
+   - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
+   - **Select Availability Domain:** Select an availability domain from the dropdown list.
+   - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
-    *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+  ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 
-     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard2.4***) or select the desired shape from the dropdown menu.
-     - **Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
+   - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
+   - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
+   - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
+   - **Use Existing VCN?:** Check to select.
 
-     *Note: Instance OCPUS only applies to Flex Shapes and won't be displayed if you elect to use shapes of fixed OCPUs types*
+  ![](./images/em-create-stack-2c.png " ")
 
-     - **Use Existing VCN?:** Check to select.
+   - **Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
 
-     ![](./images/em-create-stack-2c.png " ")
+  ![](./images/em-create-stack-2d.png " ")
 
-     - **Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
+   - **Select Public Subnet:** Select existing public subnet from above VCN.
 
-     ![](./images/em-create-stack-2d.png " ")
+   ***Note:*** *For an existing VCN Option to be used successful, review the details at the bottom of this section*
 
-     - **Select Public Subnet:** Select existing public subnet from above VCN.
+6. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
+   - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
+   - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
 
-     *Note: For an existing VCN Option to be used successful, review the details at the bottom of this section*
+  ![](./images/standardshape-2.png " ")
 
-6. Review and click **Create**.
+7. Review and click **Create**.
 
   ![](./images/em-create-stack-3b.png " ")
 
-7. Your stack has now been created!  
+8. Your stack has now been created!  
 
   ![](./images/em-stack-details-b.png " ")
 
@@ -173,7 +179,9 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
   ![](./images/em-stack-apply-2.png " ")
 
-2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added (3 only if using an existing VCN).  *If you encounter any issues running the terraform stack, visit the Appendix: Troubleshooting Tips section below.*
+2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added (3 only if using an existing VCN).  
+
+***Note:*** *If you encounter any issues running the terraform stack, visit the Appendix: Troubleshooting Tips section below.*
 
   ![](./images/em-stack-apply-results-0.png " ")
 
@@ -192,11 +200,13 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 ## **Step 4**: Connect to your instance
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
-  - *NOTE 1:  If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
+***Note:*** *If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
 
 ### Oracle Cloud Shell
 
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
+1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  
+
+***Note:*** *Make sure you are in the region you were assigned*
 
   ![](./images/em-cloudshell.png " ")
 
