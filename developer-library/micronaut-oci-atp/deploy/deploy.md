@@ -1,13 +1,12 @@
-# Load Data into an Instance
+# Deployment
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab takes you through deploying the Micronaut application to an OCI VM.
 
-Estimated Lab Time: &lt;n&gt; minutes
+Estimated Lab Time: &lt;15&gt; minutes
 
 ## Deploy Micronaut Application to OCI
-
 
 ### Deploy (From Local To VM)
 
