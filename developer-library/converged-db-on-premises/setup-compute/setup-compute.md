@@ -32,11 +32,11 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
+5.  Select **My Configuration**, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 
-5. Enter the following information:
+6. Enter the following information:
 
       - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
       - **Description**:  Same as above
@@ -44,37 +44,36 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
      ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
 
-6.  Click **Next**.
+7.  Click **Next**.
 
   ![](./images/em-create-stack-2.png " ")
 
-7. Enter or select the following:
+8. Enter or select the following:
     - **Instance Count:** Accept the default, **1**, unless you intend to create more for a team for instance
     - **Select Availability Domain:** Select an availability domain from the dropdown list.
     - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
     ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
-8. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
+9. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
     - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
     - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
 
-9. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
+10. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
 
   ![](./images/standardshape.png " ")
 
-10. For this section we will provision a new VCN with all the appropriate ingress and egress rules needed to run this workshop.  If you already have a VCN, make sure it has all of the correct ingress and egress rules and skip to the next section.
+11. For this section we will provision a new VCN with all the appropriate ingress and egress rules needed to run this workshop.  If you already have a VCN, make sure it has all of the correct ingress and egress rules and skip to the next section.
     - **Use Existing VCN?:** Accept the default by leaving this unchecked. This will create a **new VCN**.
 
-11. Click **Next**.
-
-12. Review and click **Create**.
+12. Click **Next**.
+13. Review and click **Create**.
 
   ![](./images/em-create-stack-3.png " ")
 
-13. Your stack has now been created!  
+14. Your stack has now been created!  
 
   ![](./images/em-stack-details.png " ")
 
