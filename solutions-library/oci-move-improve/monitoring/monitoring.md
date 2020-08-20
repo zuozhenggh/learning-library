@@ -1,4 +1,4 @@
-# Lab 400: Monitoring your Application with Oracle Management Cloud
+# Monitoring your Application with Oracle Management Cloud
 
 ## Introduction
 This lab will walk you through the process on how to install an agent onto an existing application on the cloud. First, you will download the agent, then move it to your virtual machine with the app from Lab 100, and unzip it. After we confirm the agent is monitoring the application, we will then utilize entity discovery to better monitor the MySQL database in the environment.

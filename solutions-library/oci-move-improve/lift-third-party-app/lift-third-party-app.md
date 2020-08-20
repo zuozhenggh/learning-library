@@ -1,102 +1,98 @@
-# Lab 100: Lifting A Third Party Application to the Cloud
+# Lifting a Third Party Application to the Cloud
 
 ## Introduction
-This lab walks you through the steps to capture an image of an existing, on-prem third party application. First you will capture a .ova file of the application and convert it to a cloud compatible .vmdk file. From there you will import the .vmdk to Object Storage and then create a cloud-native server that will use the file as a custom image. For a technical overview of this portion of the lab see the following videos:<br>
-[Video 1](https://video.oracle.com/detail/video/6164374092001/lab-100-uploading-a-vmdk-to-oci?autoStart=true&q=ocimoveimprove)<br>
-[Video 2](https://video.oracle.com/detail/video/6164371967001/lab-100-creating-a-custom-image?autoStart=true&q=ocimoveimprove)<br>
-[Video 3](https://video.oracle.com/detail/video/6164386994001/lab-100-provisioning-a-vm-with-a-custom-image?autoStart=true&q=ocimoveimprove)<br>
-[Video 4](https://video.oracle.com/detail/video/6164388506001/lab-100-accessing-the-cloud-native-application-instance?autoStart=true&q=ocimoveimprove)<br>
+This lab walks you through the steps to capture an image of an existing, on-prem third party application. First you will capture a .ova file of the application and convert it to a cloud compatible .vmdk file. From there you will import the .vmdk to Object Storage and then create a cloud-native server that will use the file as a custom image. For a technical overview of this portion of the lab see the following videos:
+[Video 1](https://video.oracle.com/detail/video/6164374092001/lab-100-uploading-a-vmdk-to-oci?autoStart=true&q=ocimoveimprove)
+[Video 2](https://video.oracle.com/detail/video/6164371967001/lab-100-creating-a-custom-image?autoStart=true&q=ocimoveimprove)
+[Video 3](https://video.oracle.com/detail/video/6164386994001/lab-100-provisioning-a-vm-with-a-custom-image?autoStart=true&q=ocimoveimprove)
+[Video 4](https://video.oracle.com/detail/video/6164388506001/lab-100-accessing-the-cloud-native-application-instance?autoStart=true&q=ocimoveimprove)
+
+Estimated Lab Time:  3 hours
 
 ### Objectives
-* Learn how to create a cloud-compatible VMDK file
-* Learn how to leverage Object Storage
-* Learn how to provision cloud infrastructure (networking, routing, compute)
-* Learn how to deploy cloud-native servers
+* Create a cloud-compatible VMDK file
+* Leverage Object Storage
+* Provision cloud infrastructure (networking, routing, compute)
+* Deploy cloud-native servers
 
-### Required Artifacts
-* The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+### Prerequisites 
+* An Oracle Paid or LiveLabs Cloud account.
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * Preinstalled Ubuntu Virtual Image (Will be provided to you during workshop from OraDocs repository)
 * VNC Viewer
 
-Estimated time to complete this lab is three hours.
-
-### Additional Resources
-* To learn about provisioning Networks and Network Security check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
-* To learn about Object Storage in the cloud please see the following [link](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
-* Oracle VirtualBox [link](https://www.oracle.com/virtualization/virtualbox/)
-
-## Administrative Note
+### Administrative Note
 Part 1 of Lab100 is optional. This section outlines how to configure an On-Premises e-Commerce application and capture a snapshot of it in the form of a .ova file which is converted to a cloud-compatible VMDK. Should you wish to skip this part of the lab and proceed directly to Part 2, download the VMDK file contained [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JPnFpTHgLX9vNwc6KtkXIkXAFFM65sOHfzooM8AJfDk/n/orasenatdecanational01/b/osCommerceTest/o/osCommerceDemo-disk001.vmdk). The VMDK is a large file (~2GB) and may take a significant time to download depending on your network speed.
 
-## Part 1. Capturing a Snapshot of Third Party OS Commerce Application
+## **Step 1:** Download VirtualBox and Import Ubuntu Instance
+1. If you do not have it on your local machine, make sure to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). VirtualBox is a free, open-source software that allows users to run multiple operating systems on a single machine and switch between OS Instances. Additionally, download the [osCommerceDemo.ova file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/P2EwRTj2PxXxG52U8XrFCeLZsb_P9wha2RDef5bYz9E/n/orasenatdecanational01/b/OsCommerce_ova_file/o/osCommerceDemo.ova). Please reach out to your lab facilitator should you have any issues downloading the .ova file.
 
+    ![](./images/1.png "")
 
-### **Step 1:** Download VirtualBox and Import Ubuntu Instance
-If you do not have it on your local machine, make sure to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). VirtualBox is a free, open-source software that allows users to run multiple operating systems on a single machine and switch between OS Instances. Additionally, download the [osCommerceDemo.ova file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/P2EwRTj2PxXxG52U8XrFCeLZsb_P9wha2RDef5bYz9E/n/orasenatdecanational01/b/OsCommerce_ova_file/o/osCommerceDemo.ova). Please reach out to your lab facilitator should you have any issues downloading the .ova file.
+2. Open Virtualbox and click File > Import Applicance. Select the .ova file downloaded earlier.
 
-![](./images/1.png "")
+    ![](./images/2.png "")
 
-Open Virtualbox and click File > Import Applicance. Select the .ova file downloaded earlier.
+3. Double check that your settings match the screenshot below. Once confirmed, click the import button. This process should take approximately 5 minutes.
 
-![](./images/2.png "")
+    ![](./images/3.png "")
 
-Double check that your settings match the screenshot below. Once confirmed, click the import button. This process should take approximately 5 minutes.
+4. Once complete, you will see the osCommerceDemo virtual box listed. Hit the Green Start Arrow and you will be prompted with a login screen with username *oscommerce*. the Default password is *oscommerce*. Once logged in you may or may not be prompted to update to Ubuntu 16.04.6. Click on “Don’t Upgrade”. You have now successfully imported Ubuntu to VirtualBox that we will now use to initialize our osCommerce application.
 
-![](./images/3.png "")
+    ![](./images/4.png "")
 
-Once complete, you will see the osCommerceDemo virtual box listed. Hit the Green Start Arrow and you will be prompted with a login screen with username *oscommerce*. the Default password is *oscommerce*. Once logged in you may or may not be prompted to update to Ubuntu 16.04.6. Click on “Don’t Upgrade”. You have now successfully imported Ubuntu to VirtualBox that we will now use to initialize our osCommerce application.
+5. If you you would like to increase the desktop view of the VirtualBox, click on the Gear icon on the top right of the Ubuntu instance. When the System Settings window opens, click on Displays. From here click on your preferred resolution and click apply. The resolution will then change. Click on “Keep This Configuration” to save changes. This will give you more screen space in case the default 800x600 (4:3) resolution was too small.
 
-![](./images/4.png "")
+    ![](./images/5.png "")
 
-If you you would like to increase the desktop view of the VirtualBox, click on the Gear icon on the top right of the Ubuntu instance. When the System Settings window opens, click on Displays. From here click on your preferred resolution and click apply. The resolution will then change. Click on “Keep This Configuration” to save changes. This will give you more screen space in case the default 800x600 (4:3) resolution was too small.
+    ![](./images/6.png "")
 
-![](./images/5.png "")
+## **Step 2:** LAMP Stack Prereqs
 
-![](./images/6.png "")
+The LAMP stack stands for Linux, Apache, MySQL, PHP and SSH. In this section we will verify your internet connection.
+1. Before installing any of the packages on the Ubuntu image on VirtualBox, make sure that you are connected to the public internet. Shut down the virtual machine, then disable/turn off any VPN applications/programs, then start up the Ubuntu Virtual machine. This will allow the Ubuntu Virtual Machine to download and install Linux packages.
 
-### **Step 2:** Install and Setup LAMP (Linux, Apache, MySQL, PHP) & SSH
-**Verify Internet Connection**
+## **Step 3:** Install MySQL5
 
-Before installing any of the packages on the Ubuntu image on VirtualBox, make sure that you are connected to the public internet. Shut down the virtual machine, then disable/turn off any VPN applications/programs, then start up the Ubuntu Virtual machine. This will allow the Ubuntu Virtual Machine to download and install Linux packages.
+1. Run this terminal(ctrl+atl+T) command to install MySQL:
+    ```
+    <copy>
+    sudo apt-get install mysql-server mysql-client
+    </copy>
+    ```
 
-**Install MySQL5**
+2. You will be asked to provide a password for the MySQL “root” user – this password is valid for the user root@localhost as well as root@server1.example.com, so we don't have to specify a MySQL root password manually later on. NOTE: Write this password down. You will need it for multiple parts of the lab going forward.
 
-Run this terminal(ctrl+atl+T) command to install MySQL:
-```
-sudo apt-get install mysql-server mysql-client
-```
+3. Run this command to complete the installation:
+    ```
+    <copy>
+    mysql_secure_installation
+    </copy>
+    ```
 
-You will be asked to provide a password for the MySQL “root” user – this password is valid for the user root@localhost as well as root@server1.example.com, so we don't have to specify a MySQL root password manually later on. NOTE: Write this password down. You will need it for multiple parts of the lab going forward.
+4. After running the command you will also be asked to answer prompts within the terminal window. Enter the following below where the password is the one you just set:
+    ```
+    Enter current password for root (enter for none): Type Root Password
 
-Run this command to complete the installation:
-```
-mysql_secure_installation
-```
+    Change The Root Password? **N**
 
-After running the command you will also be asked to answer prompts within the terminal window. Enter the following below where the password is the one you just set:
-```
-Enter current password for root (enter for none): Type Root Password
+    Remove Anonymous Users? **Y**
 
-Change The Root Password? N
+    Disallow Root Login Remotely? **Y**
 
-Remove Anonymous Users? Y
+    Remove test database and access to it? **Y**
 
-Disallow Root Login Remotely? Y
+    Reload Privilege Tables now? **Y**
+    ```
 
-Remove test database and access to it? Y
+## **Step 3:** Install Apache2
 
-Reload Privilege Tables now? Y
-```
-
-**Install Apache2**
-
-Run this command within the terminal on the VirtualBox environment:
-```
-sudo apt-get install apache2
-```
-If you direct your browser to localhost you will see the Apache2 placeholder page.
-![](./images/7.png "")
+1. Run this command within the terminal on the VirtualBox environment:
+    ```
+    sudo apt-get install apache2
+    ```
+2. If you direct your browser to localhost you will see the Apache2 placeholder page.
+    ![](./images/7.png " ")
 
 **Install PHP5**
 
@@ -505,12 +501,28 @@ sudo apt install lynx
 lynx localhost/catalog/index.php
 ```
 
-![](./images/46.png "")
+    ![](./images/46.png "")
 
-![](./images/47.png "")
+    ![](./images/47.png "")
 
-**Confirm Customized OsCommerce App is Running**
+## **Step 11:** Confirm Customized OsCommerce App is Running
 
-Open Firefox and enter in “localhost/catalog/index.php”. If you see a similar window as shown in the photo below, you have successfully completed this lab!
+1. Open Firefox and enter in “localhost/catalog/index.php”. 
+2. If you see a similar window as shown in the photo below, you have successfully completed this lab!
+    ![](./images/48.png "")
 
-![](./images/48.png "")
+You may now **proceed to the next lab**.
+
+## Learn More
+* To learn about provisioning Networks and Network Security check out this [link](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
+* To learn about Object Storage in the cloud please see the following [link](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
+* Oracle VirtualBox [link](https://www.oracle.com/virtualization/virtualbox/)
+
+## Acknowledgements
+* **Author** - <Name, Title, Group>
+* **Adapted for Cloud by** -  <Name, Group> -- optional
+* **Last Updated By/Date** - Kay Malcolm, August 2020
+
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
