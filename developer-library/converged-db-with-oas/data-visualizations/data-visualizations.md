@@ -39,7 +39,7 @@ This lab assumes you have completed the following labs:
 The end result should look like below:
 ![](./images/oascdb1.png " ")
 
-### Prerequisites ###
+### Prerequisites  ###
 Below data objects with data present in Converged Database. And since OAS recognizes data in relational format , views have been created on the base tables of JSON and XML type.  
  
 
