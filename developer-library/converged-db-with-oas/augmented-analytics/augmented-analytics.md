@@ -18,7 +18,7 @@ In this lab you will learn on two key features in OAS Augmented Analytics; “Ex
 **Forecast:** Oracle Analytics Server offers a user-friendly method to leverage advanced analytics functions on a chart with a single mouse click. Having advanced analytical functions like forecast provides a strong capability to business users who want to have better insights into their data. 
 
 ### Prerequisites ###
-This lab assumes you have completed the following labs:  
+This lab assumes you have completed the following labs;  
 - Lab 1: Login to Oracle Cloud  
 - Lab 2: Generate SSH Key  
 - Lab 3: Create Compute Instance  
