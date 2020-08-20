@@ -41,7 +41,7 @@ Before starting this lab, please make sure to record your trial user name and pa
 
         ii. Last Name: Enter Administrator
 
-        iii. User Name: Enter ebscm.admin
+        iii. User Name: Enter ebscm.admin@example.com
 
         iv. Email: Use the same email addressed you used when registering.
 
@@ -139,7 +139,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
         i. Click Add.
 
-        ii. Select Identity Domain Administrator and Me in the pop-up window.
+        ii. Select Authenticator Client and Me in the pop-up window.
 
         iii. Click Add again.
 

@@ -16,7 +16,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-    This will list all availability domains in the current region.  Make note of one of the availability domain names.  It should look something like this `nESu:US-ASHBURN-AD-1`.  You will use this in a future step.
+    This will list all availability domains in the current region.  Make note of one of the availability domain names. It should look something like this `nESu:US-ASHBURN-AD-1`. You will use this in a future step.
 
     ![](images/CLI_008.png " ")
 
@@ -28,7 +28,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-3. Return to the OCI Console and navigate to Identity -> Compartments.  Copy the OCID of the assigned compartment.
+3. Return to the OCI Console and navigate to Identity -> Compartments. Copy the OCID of the assigned compartment.
 
     ![](images/CLI_009.png " ")
 
@@ -42,7 +42,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-5. Create a new virtual cloud network with a unique CIDR block.  You will need the OCID of your compartment.
+5. Create a new virtual cloud network with a unique CIDR block. You will need the OCID of your compartment.
 
     ```
     <copy>
@@ -110,7 +110,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-12. Create an Internet Gateway.  You will need the OCID of your VCN and Compartment.
+12. Create an Internet Gateway. You will need the OCID of your VCN and Compartment.
 
     ```
     <copy>
@@ -128,7 +128,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-14. Next, we will update the default route table with a route to the internet gateway.  First, you will need to locate the OCID of the default route table.
+14. Next, we will update the default route table with a route to the internet gateway. First, you will need to locate the OCID of the default route table.
 
     ```
     <copy>
@@ -148,7 +148,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
 
     ![](images/CLI_017.png " ")
 
-    *Note: When updating route tables or security lists you cannot insert a single rule.  You must ``update`` with the entire set of rules.  The prompt shown in the screenshot above illustrates this point.*
+    *Note: When updating route tables or security lists you cannot insert a single rule. You must ``update`` with the entire set of rules. The prompt shown in the screenshot above illustrates this point.*
 
     *Note: Use QUERY to find Oracle Linux Image ID, then launch a compute instance.*
 
@@ -170,24 +170,42 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-17. Launch a compute instance with the following command.  We previously created a regional subnet because our command did not include a specific availability domain. For compute instances, we must specify an availability domain and subnet.
+17. To determine what shapes are available in your tenancy, use this command:
+
+    ```
+    <copy>
+    oci compute shape list -c $COMPARTMENT_ID
+    </copy>
+    ```
+
+18. Choose a shape from the output, for example, "VM.Standard2.1":
+
+    ![](images/select-shape.png)
+
+19. Save the shape as a variable:
+
+    ```
+    SHAPE="<shape>"
+    ```
+
+20. Launch a compute instance with the following command.  We previously created a regional subnet because our command did not include a specific availability domain. For compute instances, we must specify an availability domain and subnet.
 
     You will need the following pieces of information:
 
     - Availability domain name
     - Subnet OCID
-    - Valid compute shape (i.e. VM.Standard.E2.1)
+    - Valid compute shape (i.e. VM.Standard2.1)
     - Your public SSH key
 
     ```
     <copy>
-    oci compute instance launch --availability-domain $AD_NAME --display-name demo-instance --image-id $IMAGE_ID --subnet-id $SUBNET_OCID --shape VM.Standard.E2.1 --compartment-id $COMPARTMENT_ID --assign-public-ip true --ssh-authorized-keys-file $SSH_KEY_FILE
+    oci compute instance launch --availability-domain $AD_NAME --display-name demo-instance --image-id $IMAGE_ID --subnet-id $SUBNET_OCID --shape $SHAPE --compartment-id $COMPARTMENT_ID --assign-public-ip true --ssh-authorized-keys-file $SSH_KEY_FILE
     </copy>
     ```
 
     Capture the ``id:`` of the compute instance launch output.
 
-18. Check the status of the instances
+21. Check the status of the instances
 
     ```
     <copy>
@@ -195,7 +213,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-19. Rerun the command every 30-60 seconds until the lifecycle-state is ``RUNNING``
+22. Rerun the command every 30-60 seconds until the lifecycle-state is ``RUNNING``
 
 ## **STEP 2**: Delete the resources
 
