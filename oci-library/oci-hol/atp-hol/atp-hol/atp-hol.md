@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab, you will dynamically scale the number of OCPU resources available to a an Autonomous Transaction Processing (ATP) instance. Use an open source load generator, Swing Bench, you will see how ATP dynamically scales up as a result of manually adding additional OCPU resources.
+In this lab, you will dynamically scale the number of OCPU resources available to a an Autonomous Transaction Processing (ATP) instance. Use an open source load generator, Swingbench, you will see how ATP dynamically scales up as a result of manually adding additional OCPU resources.
 
-## **STEP 1:** Install Swing bench on your local PC (shell)
+## **STEP 1:** Install Swingbench on your local PC (shell)
 
 1. Open a shell on your local PC, for example Git Bash.
 
@@ -18,9 +18,9 @@ In this lab, you will dynamically scale the number of OCPU resources available t
 
     If you don't have Java Runtime version 8 or later, please download and install Java first.
 
-3. Download the latest version of Swing Bench from [here](https://www.dominicgiles.com/swingbench/swingbenchlatest.zip).
+3. Download the latest version of Swingbench from [here](https://www.dominicgiles.com/swingbench/swingbenchlatest.zip).
 
-4. Unzip Swing Bench in the local folder:
+4. Unzip Swingbench in the local folder:
 
     ```
     <copy>
@@ -30,7 +30,7 @@ In this lab, you will dynamically scale the number of OCPU resources available t
 
      ![](images/unzip-swingbench.png)
 
-## **STEP 2:** Create ATP instance in OCI and Configure Swing Bench on Compute instance to generate load traffic
+## **STEP 2:** Create ATP instance in OCI and Configure Swingbench on Compute instance to generate load traffic
 
 *In this section we will create a ATP instance in OCI. We will initially create this instance with only 1 OCPU and scale it after generating load test from the compute instance created earlier*
 
