@@ -420,6 +420,19 @@ To run the application locally and test against the Autonomous Database that was
 
 Note that the `-t` argument is optional and activates continuous build such that if you make changes to your application it will be automatically restarted.
 
+You can now access http://localhost:8080/pets for the `/pet` endpoint and http://localhost:8080/owners for the `/owners` endpoint. For example:
+
+```bash
+curl -i http://localhost:8080/pets
+HTTP/1.1 200 OK
+Date: Thu, 20 Aug 2020 15:12:47 GMT
+Content-Type: application/json
+content-length: 55
+connection: keep-alive
+
+[{"name":"Dino"},{"name":"Baby Puss"},{"name":"Hoppy"}]
+```
+
 ## Learn More
 
 * [Micronaut Documentation](https://micronaut.io/documentation.html)
