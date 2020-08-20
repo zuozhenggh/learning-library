@@ -1,4 +1,4 @@
-# Lab 8: Getting Started with Oracle Data Safe
+# Getting Started with Oracle Data Safe
 
 ## Introduction
 Data Safe is a unified control center for your Oracle Databases which helps you understand the sensitivity of your data, evaluate risks to data, mask sensitive data, implement and monitor security controls, assess user security, monitor user activity, and address data security compliance requirements. Whether you’re using Oracle Autonomous Database or Oracle Database Cloud Service (Exadata, Virtual Machine, or Bare Metal), Data Safe delivers essential data security capabilities as a service on Oracle Cloud Infrastructure.
@@ -24,9 +24,9 @@ This lab walks you through the steps to get started using Oracle Data Safe on Or
 -   To learn more about Oracle Autonomous Data Warehouse (ADW), feel free to watch the following video by clicking on this link: [ADW - How it Works](https://www.youtube.com/watch?v=f4BurlkdEQM)
 -   To learn more about Oracle Application Express (Data Safe), feel free to explore the capabilities by clicking on this link: [Data Safe](https://docs.cloud.oracle.com/en-us/iaas/data-safe/index.html)
 
-## Part 0. Enable Data Safe for your Tenancy
+## **Step 0:** Enable Data Safe for your Tenancy
 - Oracle Data Safe administrators can enable Oracle Data Safe in a region of their tenancy. Be aware that it is not possible to disable Oracle Data Safe after it's enabled.
-### Step 1: 
+
 1. To enable Oracle Data Safe, you must belong to one of the following groups in Oracle Cloud Infrastructure Identity and Access Management (IAM):
 2. Your tenancy's **Administrators group**. This group has permission on all resources in your tenancy.<!--<br/>--> 
 **NOTE:** A group in your tenancy that has the **manage** permission for Oracle Data Safe and can **inspect** groups in the tenancy.<!--<br/>--> 
@@ -45,19 +45,18 @@ Make a group an Oracle Data Safe administrators group for a particular region in
 
 For more information please see [Data Safe Documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/enable-oracle-data-safe.html#GUID-409260CE-2D7B-4029-B7CA-2EDD6E961CEB)
 
-### Step 2: 
+
 - Both native and federated users in Oracle Cloud Infrastructure can enable Oracle Data Safe.
-1. Ensure that you have the required permissions for enabling Oracle Data Safe.
-2. Sign in to the Oracle Cloud Infrastructure Console. <!-- Add login images-->
-3. At the top of the page, select the region in which you want to enable Oracle Data Safe.
-4. From the navigation menu, select **Data Safe**.
-5. Click **Enable Data Safe**.
-6. Collapse
+
+7. Ensure that you have the required permissions for enabling Oracle Data Safe.
+8. Sign in to the Oracle Cloud Infrastructure Console. <!-- Add login images-->
+9. At the top of the page, select the region in which you want to enable Oracle Data Safe.
+10. From the navigation menu, select **Data Safe**.
+11. Click **Enable Data Safe**.
+12. Collapse
 
 
-## Part 1. Registering a Target Database
-
-### Step  1:
+## **Step 1:** Registering a Target Database
 
 - You can register an Autonomous Database from its Console in Oracle Cloud Infrastructure Console. From this Console, you can also access the Oracle Data Safe Console.
 
@@ -77,7 +76,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 ![](./images/1.4.png " ")
 
 
-### Step 2:
+## **Step 2:**
 - The roles that you grant to this account determine the Oracle Data Safe features that you can use with your Autonomous Database. These particular roles allow you to assess users and security configurations on your Autonomous Database and start audit trail collection immediately after you register the database.
 
 - The following table describes the available roles for Autonomous Databases [here](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/register-autonomous-databases-that-have-public-ip-addresses.html#GUID-1026A408-2D57-420C-927B-588948C2A89C).
@@ -104,10 +103,9 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 2. Login as **HCM1** user, use the script [here](https://objectstorage.us-phoenix-1.oraclecloud.com/n/orasenatdecaretlhealth01/b/Workshop/o/TableScript.sql) to add new tables to the HCM1 schema.
 
 
-## Part 2. Assess Database Configurations with Oracle Data Safe
+## **Step 3:** Assess Database Configurations with Oracle Data Safe
 -	Using Oracle Data Safe you can assess the security of a database by using the Security Assessment feature and fix issues.
 
-### Step 1: 
 1. In the Oracle Data Safe Console (refer to Part 1 step 2 on how to log in), generate a Comprehensive Assessment report
 2. Navigate to the Oracle Data Safe Console
 3. Click the **Home** tab and then **Security Assessment**.
@@ -138,7 +136,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 ![](./images/2.1.9.png " ")<!--<br/>-->
 
 
-### Step 2: 
+## **Step 4:** 
 1.	At the top of the report, click **Evaluate** to filter the report to show only the Evaluate findings.
 <!-- Image 7--> 
 ![](./images/2.2.1.png " ")<!--<br/>-->
@@ -148,10 +146,9 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 ![](./images/2.2.2.png " ")<!--<br/>-->
 
 
-## Part 3. Assess Users with Oracle Data Safe
+## **Step 5:** Assess Users with Oracle Data Safe
 - Using Oracle Data Safe, assess user security in your target database by using the User Assessment feature and fix issues.
 
-### Step 1:
 1. In the Oracle Data Safe Console, click the **Home** tab, and then click **User Assessment**. The User Assessment page is displayed.
 <!-- Image 3.1-->
 ![](./images/3.1.1.png " ")<!--<br/>-->
@@ -169,7 +166,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 ![](./images/3.2.2.png " ")<!--<br/>-->
 
 
-### Step 2:
+## **Step 6:**
 1. Click the + sign to view the list of columns that you can display in the table. Add and remove columns as you wish, then click Apply.
 <!-- Image 3.6-->
 ![](./images/3.3.1.png " ")<!--<br/>-->
@@ -188,9 +185,8 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 5.	On the left, click the question mark next to **Risk**. Here you can review the factors that designate a user as Critical, High, Medium, or Low risk.<!--br/-->
 6.	Close the User Details dialog box.<!--<br/>-->
 
-## Part 4. Discover Sensitive Data with Oracle Data Safe
+## **Step 7:** Discover Sensitive Data with Oracle Data Safe
 
-### Step 1: 
 1. Navigate to the Oracle Data Safe Service Console
 2. To access the **Data Discovery** wizard, click the **Home** tab, and then click **Data Discovery**.
 <!-- Image 4.1-->
@@ -223,7 +219,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 <!-- Image 4.6-->
 11. The job will take a few minutes to complete. If the job is successful, the **Detail** column states Data discovery job finished successfully, and you can click **Continue**. Otherwise, you need to click **Back** or **Exit** and investigate the issue.
 
-### Step 2:
+## **Step 8:**
 - On the **Non-Dictionary Referential Relationships** page, you are presented with a list of potential non-dictionary (application level) referential relationships that Data Discovery found by using column name patterns and column data patterns. Do the following:
 1. To view all of the columns, move the **Expand All** slider to the right. Data Discovery found some potentially sensitive columns (non-dictionary referential relationships) in the **PU_PETE schema**.<!--<br/>-->
 <!-- Image 4.7-->
@@ -246,7 +242,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 <!--**think if images should go here**-->
 ![](./images/4.2.4.png " ")<!--<br/>-->
 
-### Step 3:
+## **Step 9:**
 - Suppose that you're missing some sensitive columns in your sensitive data model. While working in the Data Discovery wizard, you can backtrack to reconfigure and rerun the data discovery job. You can repeat the process as many times as you need until you feel that your sensitive data model is accurate. Try the following:
 
 1. Click **Back** 
@@ -265,7 +261,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 <!-- Image 4.12-->
 ![](./images/4.4.1.png " ")<!--<br/>-->
 
-### Step 4: 
+## **Step 10:**
 1. Click the **Library**  tab and click **Data Discovery.** and go to **Sensitive Data Models**.
 2. For each sensitive data model, you can view information about when your sensitive data model was created, when it was last updated, and who owns it.
 - If you need to remove your sensitive data model from the Library, you can select the check box for it, and click **Delete**. 
@@ -274,10 +270,9 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 3. 	You can also **Download** the Sensitive Data Model. Open the file, and review the XML code. (Save the file to your desktop as **SDM1.xml**).
 ![](./images/4.6.1.png " ")<!--<br/>-->
 
-## Part 5. Verify Sensitive Data Model with Oracle Data Safe
+## **Step 11:** Verify Sensitive Data Model with Oracle Data Safe
 - Using Oracle Data Safe, verify a sensitive data model by using the verification option in the Library and by using the Data Discovery wizard.
-
-### Step 1: 
+ 
 1. Open SQL Developer
 2. On the SQL Worksheet, run the following command to add an AGE column to the EMPLOYEES table.
 	`ALTER TABLE EMPLOYEES` 
@@ -286,7 +281,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 <!--image--> 
 ![](./images/5.1.1.png " ")
 
-### Step 2: 
+## **Step 12:** 
 1. Navigate to the Oracle Data Safe Service Console
 2. In the Oracle Data Safe Console, click the **Library** tab, and then click **Sensitive Data Models**.
 ![](./images/5.2.1.png " ")<!--<br/>-->
@@ -301,7 +296,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 6. On the **Data Model Verification Result** page, notice that there are no differences to report. The verification job did not find the new sensitive column, AGE. Click **Continue**.<!--<br/>-->
 **NOTE** The verification feature checks whether the sensitive columns in the sensitive data model are present in the target database. If there are some present in the sensitive data model, but missing in the target database, it reports them. In addition, it reports new referential relationships for the columns already present in the sensitive data model. It does not, however, discover ALL the relationships.
 
-### Step 3: 
+## **Step 13:** 
 1. On the **Sensitive Data Model: SDM1** page, click **Add**. The **Add Sensitive Columns** dialog box is displayed.
 <!-- Image-->
 ![](./images/5.3.1.png " ")<!--<br/>-->
@@ -318,7 +313,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 ![](./images/5.3.5.png " ")<!--<br/>-->
 6. Click **Save and Continue** and then **Exit**.
 
-### Step 4: 
+## **Step 14:** 
 1. Return to SQL Developer.
 2. On the SQL Worksheet, run the following commands to drop the HCM1.EMPLOYEES.AGE column.
 	`ALTER TABLE EMPLOYEES`
@@ -332,7 +327,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 ![](./images/5.4.2.png " ")<!--<br/>-->
 5. If the AGE column is still there, click the **Refresh** button to refresh the table. 
 
-### Step 5: 
+## **Step 15:**
 <!-- optional-->
 1. Return to Oracle Data Safe.
 2. Click the **Home** tab, and then click **Data Discovery**.
@@ -354,7 +349,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 <!-- Image--> 
 ![](./images/5.5.7.png " ")<!--<br/>-->
 
-### Step 6: 
+## **Step 16:** 
 - You can manually update your sensitive data model while continuing to work in the Data Discovery wizard. In which case, you simply deselect your sensitive column and save your sensitive data model. This part, however, shows you another way to do it from the Library.
 
 1. Click **Exit** to exit the Data Discovery wizard.
@@ -367,10 +362,9 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 6. Your sensitive data model is now updated and accurate.
 7. Click **Save** then **Exit**.
 
-## Part 6. Update a Sensitive Data Model with Oracle Data Safe
+## **Step 17:** Update a Sensitive Data Model with Oracle Data Safe
 - Using Oracle Data Safe, perform an incremental update to a sensitive data model by using the Data Discovery wizard.
 
-### Step 1: 
 1. Open SQL Developer
 2. On the SQL Worksheet, run the following commands to add an AGE column to the EMPLOYEES table.
 	`ALTER TABLE HCM1.EMPLOYEES ADD AGE NUMBER;`
@@ -380,7 +374,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 3. AGE is added to the bottom of the list in the EMPLOYEES table.
 ![](./images/6.1.2.png " ")<!--<br/>-->
 
-### Step 2:
+## **Step 18:**
 1. Navigate to the Oracle Data Safe Service Console
 2. In the Oracle Data Safe Console, click **Data Discovery**. The Select Target for Data Discovery page is displayed.<!--br/-->
 <!-- Image--> 
@@ -408,9 +402,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 8. You can toggle the view back and forth between displaying all of the sensitive columns or just the newly discovered ones.<!--<br/>-->
 9. Click **Exit**.<!--<br/>-->
 
-## Part 7. Create a Sensitive Type and Sensitive Category with Oracle Data Safe
-
-### Step 1: 
+## **Step 19:** Create a Sensitive Type and Sensitive Category with Oracle Data Safe
 
 1. In the Oracle Data Safe Console, click the **Library** tab, and then click **Sensitive Types**. On this page you can view predefined sensitive types and manage your own sensitive types.
 <!-- Image--> 
@@ -432,7 +424,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 7. Clear the search field, and then press **Enter** to restore the list.<!--<br/>-->
 8. Keep this page open because you return to it later in the lab.<!--<br/>-->
 
-### **Step 2:** 
+## **Step 20:** 
 1. Open SQL Developer
 2. Run the following script:
 `SELECT * FROM HCM1.DEPARTMENTS;` <!-- Need to update this to code snippet md-->
@@ -441,7 +433,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 ![](./images/7.2.1.png " ")<!--<br/>-->
 
 
-### **Step 3:** 
+## **Step 21:** 
 1. Return to the **Sensitive Types** page in the Oracle Data Safe Console. Click **Add**<!--<br/>-->
  The **Create Sensitive Type** dialog box is displayed. - From the **Create Like** drop-down list, select **Employee ID Number**. <!--<br/>-->
     **NOTE:** It will autofill to a different Sensitive Type, so adjust accordingly.
@@ -468,16 +460,15 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 3. Move the **Hide Oracle Predefined** slider to the right to view your custom sensitive type in the list.
 **All Done!**
 
-## Part 8. Mask Sensitive Data with Oracle Data Safe
+## **Step 22:** Mask Sensitive Data with Oracle Data Safe
 
-### Step 1:
 1. Open SQL Developer and login as **HCM1** user.
 2. Run the following script:
 `SELECT * FROM SUPPLEMENTAL_DATA;`
 3. Notice that you are seeing Payment Account Number, this sensitive data was discovered in **Data Discovery**. View the Account number for TAXPAYER_ID 173-14-3494.<!--<br/>-->
 ![](./images/8.1.1.png " ")<!--<br/>-->
 
-### Step 2: 
+## **Step 23:** 
 1. Open up Data Safe Console, click **HOME** then click **Data Discovery**.<!--<br/>-->
 ![](./images/8.2.1.png " ")<!--<br/>-->
 2. Select Target and click **Continue**
@@ -506,7 +497,7 @@ For more information please see [Data Safe Documentation](https://docs.oracle.co
 
 **NOTE:** Run the following script in SQL developer if you face an error saying "Oracle Data Safe service account on your Autonomous Database does not have sufficient privileges. Grant DS$DATA_MASKING_ROLE by running the GRANT_ROLE procedure in DS_TARGET_UTIL PL/SQL package" `EXECUTE DS_TARGET_UTIL.GRANT_ROLE('DS$DATA_MASKING_ROLE');`<!--<br/>--> 
 
-### Step 3: 
+## **Step 24:** 
 1. Open SQL Developer
 2. Run the following script:
 `SELECT * FROM SUPPLEMENTAL_DATA;`

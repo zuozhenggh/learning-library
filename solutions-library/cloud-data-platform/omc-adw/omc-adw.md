@@ -1,4 +1,4 @@
-#  Lab 9: Using Oracle Management Cloud (OMC) to Monitor ADW
+#  Using Oracle Management Cloud (OMC) to Monitor ADW
 
 ## Introduction
 
@@ -22,7 +22,7 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
 -   To learn more about monitoring Autonomous Databases in Oracle Management cloud, refer to this link: [Using Oracle Database Management for Autonomous Databases](https://docs.oracle.com/en/cloud/paas/management-cloud/mcdbm/introduction-oracle-database-management.html)
 
 
-## Part 0. Provision a Management Cloud Instance
+## **Step 0:** Provision a Management Cloud Instance
 
 1. Inside of the OCI (Oracle Cloud Infrastructure) Console, click on the top left menu icon.
 
@@ -50,9 +50,7 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
 
     ![](./images/omc7.png " ")
 
-## Part 1. Set Up ADW Monitoring in OMC
-
-### **STEP 1**: Gather the Following Information Using the OCI Console
+## **STEP 1**: Gather the Following Information Using the OCI Console
 
 1. First you will need to capture your **Tenancy OCID**.  To do so, click on the **profile icon** on the top right of your Oracle Cloud Infrastructure (OCI) console and select your **tenancy name**.
 
@@ -100,7 +98,7 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
 
     ![](./images/omc18.png " ")
 
-### **STEP 2**: Create the Discovery Profile in OMC
+## **STEP 2**: Create the Discovery Profile in OMC
 
 1. In the OCI Console, click on the top left menu icon, then navigate to **Platform Services**, then select **Management Cloud**.
 
@@ -129,7 +127,7 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
     ![](./images/omc24.png " ")
     
 
-### **STEP 3**: Validate Databases
+## **STEP 3**: Validate Databases
 
 1. Click on the **Oracle** logo on the top left of your screen to navigate back to OMC's main console.
 
@@ -149,11 +147,7 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
 
     ![](./images/omc31.png " ")
 
-
-
-## Part 2. Monitor your ADW in OMC
-
-### **STEP 1**: Oracle Database Suite
+## **STEP 4**: Oracle Database Suite
 
 1. Click on the **Oracle** logo on the top left of your screen to navigate back to OMC's main console.
 
@@ -181,7 +175,7 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
     
     ![](./images/omc35.png " ")
 
-### **STEP 2**: Infrastructure Monitoring
+## **STEP 5**: Infrastructure Monitoring
 
 1. On the left navigation menu, click on the **back** button until you can select **Monitoring**.
 

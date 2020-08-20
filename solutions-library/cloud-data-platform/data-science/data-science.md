@@ -1,4 +1,4 @@
-#  Lab 7: Using Oracle Cloud Infrastructure Data Science Platform for Fraud Prediction
+#  Using Oracle Cloud Infrastructure Data Science Platform for Fraud Prediction
 
 ## Introduction
 
@@ -23,9 +23,7 @@ Oracle Cloud Infrastructure (OCI) Data Science platform allows you to leverage d
 -   To learn more about OCI Data Science, feel free to explore the capabilities by clicking on this link: [Oracle Data Science Documentation](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/data-science.html)
 
 
-## Part 0. Set-up an OCI Data Science Instance
-
-### **STEP 1**: Create the necessary networking components
+## **STEP 1**: Create the necessary networking components
 
 1. Inside of the OCI Console, click on the top left menu **hamburger icon**. Then, in the side menu, navigate to **Networking**, then select **Virtual Cloud Networks**.  
 
@@ -45,7 +43,7 @@ Oracle Cloud Infrastructure (OCI) Data Science platform allows you to leverage d
 
 5. The next screen shows a summary of what will be done. Click the **Create** button, and all of these networking components will be created. In just a few moments, an entire Cloud networking infrastructure will be setup for use. Now you are done with creating the necessary networking components.
 
-### **STEP 2**: Create a Data Science Platform Project and Notebook Session
+## **STEP 2**: Create a Data Science Platform Project and Notebook Session
 
 1. Inside of the OCI Console, click on the top left menu **hamburger icon**. Then, in the side menu, navigate to **Data Science**, then select **Projects**.  
 
@@ -73,9 +71,7 @@ Oracle Cloud Infrastructure (OCI) Data Science platform allows you to leverage d
 
 7. Now you have successfully created a Data Science platform project and notebook session, which is integrated with your VCN and Compute instance for all the networking and computation needs of your data science work.
 
-## Part 1. Use OCI Data Science to Run Data Science Notebooks 
-
-### **STEP 1**: Navigate to the OCI Data Science Notebook Session Interface
+## **STEP 3**: Navigate to the OCI Data Science Notebook Session Interface
 
 1. After a few moments, the **notebook session** should be created. You may have to wait a few minutes and refresh the page to see it. To access it, click on **Open**.
 
@@ -111,7 +107,7 @@ Oracle Cloud Infrastructure (OCI) Data Science platform allows you to leverage d
 
 11. Bonus: if you have an existing Oracle Autonomous Data Warehouse (ADW) or want to spin one up, feel free to check out the bonus module (module 4) in the sample notebook you imported earlier and configure it with your ADW details.
 
-### **STEP 2**: Bonus: Explore Model Catalog- a Repository for All the Models you Create
+## **STEP 4**: Bonus: Explore Model Catalog- a Repository for All the Models you Create
 
 1. With the model that you created in the previous step inside of the notebook, they can also stored in OCI's Model Catalog. This is a repository for your models which can be accessed in a variety of ways. Let's look at how we can do that by exploring an OCI DS included example notebook. Learn more by clicking on **File** and then on **New Launcher**. Then, click on **Notebook Examples**.
 
@@ -125,9 +121,7 @@ Oracle Cloud Infrastructure (OCI) Data Science platform allows you to leverage d
 
 ![](./images/19.png " ")
 
-## Part 2. Bonus: Deploy a Model to Oracle Functions with Oracle Cloud Shell
-
-### **STEP 1**: Set up Oracle Cloud Shell and Oracle Functions
+## **STEP 5**: (Bonus) Set up Oracle Cloud Shell and Oracle Functions
 
 1. Let's try to deploy our newly created machine learning model using Oracle Functions. This allows us to use a lightweight method, that can be used outside of OCI Data Science, to test payloads for whether or not they are fraud.
 
