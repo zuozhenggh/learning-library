@@ -1,75 +1,29 @@
-# Workshop with a single set of labs
+# Building Java Cloud Native Applications with Micronaut and OCI
 
-## Instructions
+Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Micronaut is an innovate new framework that precomputes your framework infrastructure at compilation time. 
+This workshop will take you through combining Micronaut and Oracle Cloud with Autonomous Database to build an efficient and lean Microservice application.
 
-1. Open the workshop-single-sets template in Atom or Visual Studio Code using workshop-single
-2. Start atom-live-server (Atom) or live-server (Visual Studio Code)
-3. Look at workshop-single/product-solution-short-name/workshops//freetier
+## Get an Oracle Cloud Trial Account for Free!
 
-## Folder Structure
+If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
+- $300 of free credits good for up to 3500 hours of Oracle Cloud usage
+- Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
+- Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
 
-In this example, the goal is to create several "children" workshops from one longer "parent" workshop. The children are made up of parts from the parent.
-
-workshop-single/
-    product-solution-short-name/
-
-        -- individual labs
-
-        provision/
-        setup/
-        dataload/
-        query/
-        analyze/
-        visualize
-        introduction/
-          introduction.md       -- description of the everything workshop
-
-    workshops/
-       freetier/                -- freetier version of the workshop
-        index.html
-        manifest.json
-       livelabs/                -- livelabs version of the workshop
-        index.html
-        manifest.json
+Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
 
 
-### FreeTier vs LiveLabs
+## Product Pages
+- [Micronaut](https://micronaut.io/)
+- [Oracle Cloud Infrastructure](https://www.oracle.com/cloud/)
+- [Oracle Autonomous Database](https://www.oracle.com/autonomous-database/)
+- [Oracle Cloud Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/home.htm)
 
-* "FreeTier" - includes Free Trials, Paid Accounts and for some workshops, Always Free accounts.
-* "LiveLabs" - these are workshops that use Oracle provided tenancies
+## Documentation
+- [Micronaut Documentation](https://micronaut.io/documentation.html)
+- [Micronaut Data Documentation](https://micronaut-projects.github.io/micronaut-data/latest/guide/index.html)
+- [Oracle Autonomous Database](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm)
 
-### The product-workshop-name
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
-The workshop includes all 6 of the individual labs in a single sequence.
-
-The folder structure includes a Introduction "lab" that describes the workshop as a complete set of 6 labs. Note: you may not need to have a different introduction for each of the parent and child versions of the workshops, this is illustrative only.
-
-Look at the product-name-workshop/freetier folder and look at the manifest.json file to see the structure.
-
-The Prerequisite "lab" is the first lab in a common folder three levels up:
-
-  ```
-  "filename": "../../../common/prerequisite-freetier/prerequisite-freetier.md"
-  ```
-
-Labs that are common across all workshops are linked using an absolute path, for example:
-
-```
-"filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-```
-
-The labs are located three levels up, for example:
-
-  ```
-  "filename": "../../../provision/provision.md"
-  ```
-
-### For example
-
-This [APEX Workshop](https://oracle.github.io/learning-library/developer-library/apex/spreadsheet/workshops/freetier/) is a good example a workshop with a single set of labs: [https://github.com/oracle/learning-library/tree/master/developer-library/apex/spreadsheet](https://github.com/oracle/learning-library/tree/master/developer-library/apex/spreadsheet).
-
-
-### More information
-
-* [Creating the Structure of Markdown Labs](https://confluence.oraclecorp.com/confluence/display/DCS/Creating+the+Structure+of+Markdown+Labs)
-* [See an working example on GitHub](https://github.com/oracle/learning-library/tree/master/data-management-library/autonomous-database/shared)
