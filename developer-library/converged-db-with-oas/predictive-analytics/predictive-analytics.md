@@ -22,7 +22,7 @@ In this lab we are going to use “binary classification”. Binary classificati
 We will also use visualizations on the predicted data for a better decision process.
 
 
-### Pre-requisites ###
+### Prerequisites ###
 
 This lab assumes you have completed the following labs:  
 - Lab 1: Login to Oracle Cloud  
