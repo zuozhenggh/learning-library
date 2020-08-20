@@ -8,6 +8,8 @@ It covers the full cycle of ML processes, allows direct uptake of any custom alg
 
 ![](./images/predictiveanalytics.png " ")
 
+Estimated Lab Time: 30 Mintues.
+
 ### Objectives ###
 
 In this Lab, we are going to focus on how to predict attrition using binary classification algorithms and show how to use those inbuilt algorithms for addressing a real-life, common question for any organization.  
@@ -26,10 +28,11 @@ This lab assumes you have completed the following labs:
 - Lab 1: Login to Oracle Cloud  
 - Lab 2: Generate SSH Key  
 - Lab 3: Create Compute Instance  
-- Lab 4: Environment Setup   
+- Lab 4: Environment Setup
+- Lab 5: Data Visualization  
 
 Also , this lab assumes you have a connection created to the Converged DB from OAS. 
-Refer to  Step 1 of [OAS Lab5 : Data Visualization](?lab=oas-lab-5-data-visualization)
+Refer to  Step 3 of [Lab 4 : Environment Setup](?lab=oas-lab-5-data-visualization)
 
 Below data objects are available in Converged Database.  
 
@@ -39,7 +42,7 @@ Below data objects are available in Converged Database.
 | HR\_ATTRITION\_PREDICT | Table | Relational | Data used to test the model we create |
 
 
-## Step 1 :Create Dataset
+## Step 1: Create Dataset
 
 In this step, we will use the database connection created in **OAS Lab 5 : Data Visualization** and create a dataset to work on.
 
@@ -60,7 +63,7 @@ In this step, we will use the database connection created in **OAS Lab 5 : Data 
 7. Finally click on “Add” to add the data set.
 ![](./images/paoas1.5.png " ")
 
-## Step 2 :Create Dataflow - ML Model
+## Step 2: Create Dataflow - ML Model
 
 In this step , we will build a Machine learning model using OAS Dataflow capabilities to train our data on.
 

@@ -15,7 +15,7 @@ Oracle converged database has native support for all modern data types as JSON, 
 
 [](youtube:9d76-LhgMQs)
 
-
+Estimated Lab Time: 40 Mintues.
 
 ### Objectives ###
 
@@ -39,7 +39,7 @@ This lab assumes you have completed the following labs:
 The end result should look like below:
 ![](./images/oascdb1.png " ")
 
-### Pre-requisites and Data Description ###
+### Prerequisites ###
 Below data objects with data present in Converged Database. And since OAS recognizes data in relational format , views have been created on the base tables of JSON and XML type.  
  
 
