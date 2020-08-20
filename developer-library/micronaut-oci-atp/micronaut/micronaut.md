@@ -13,6 +13,7 @@ In this lab you will:
 * Create Micronaut Data entities that map Oracle Database tables
 * Define Micronaut Data repositories to implement queries
 * Expose Micronaut Controllers as REST endpoints
+* Populate Data on Application Startup
 * Write tests for the Micronaut application
 * Run the Micronaut application locally
 
@@ -321,13 +322,103 @@ class PetController {
 
 This time the `PetRepository` is injected to expose a list of pets and pets by name.
 
-## **STEP 4**: Write Integration Tests for the Micronaut Application
+## **STEP 4**: Populate Data on Application Startup
 
-TODO
+The next step is to populate some application data on startup. To do this you can use Micronaut application events.
 
-## **STEP 5**: Run the Micronaut application locally
+Modify your `src/main/java/example/atp/Application.java` class to look like the following:
 
-TODO
+```java
+package example.atp;
+
+import example.atp.domain.Owner;
+import example.atp.domain.Pet;
+import example.atp.repositories.OwnerRepository;
+import example.atp.repositories.PetRepository;
+import io.micronaut.context.event.StartupEvent;
+import io.micronaut.runtime.Micronaut;
+import io.micronaut.runtime.event.annotation.EventListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.inject.Singleton;
+import java.util.Arrays;
+
+@Singleton
+public class Application {
+    private final OwnerRepository ownerRepository;
+    private final PetRepository petRepository;
+
+    Application(OwnerRepository ownerRepository, PetRepository petRepository) {
+        this.ownerRepository = ownerRepository;
+        this.petRepository = petRepository;
+    }
+
+    public static void main(String[] args) {
+        System.setProperty("oracle.jdbc.fanEnabled", "false");
+        Micronaut.run(Application.class);
+    }
+
+    @EventListener
+    void init(StartupEvent event) {
+        Owner fred = new Owner("Fred");
+        fred.setAge(45);
+        Owner barney = new Owner("Barney");
+        barney.setAge(40);
+        ownerRepository.saveAll(Arrays.asList(fred, barney));
+
+        Pet dino = new Pet("Dino", fred);
+        Pet bp = new Pet("Baby Puss", fred);
+        bp.setType(Pet.PetType.CAT);
+        Pet hoppy = new Pet("Hoppy", barney);
+
+        petRepository.saveAll(Arrays.asList(dino, bp, hoppy));
+    }
+}
+```
+
+Note that the constructor is modified to dependency inject the repository definitions so data can be persisted.
+
+Notice in the `main` method JDBC support for FAN events is disabled as they note necessary for this application:
+
+```java
+System.setProperty("oracle.jdbc.fanEnabled", "false");
+```
+
+Finally the `init` method is annotated with `@EventListener` with an argument to receive a `StartupEvent`. This event is called 
+once the application is up and running and can be used to persist data when your application is ready to do so.
+
+The rest of the example demonstrates saving a few entities.
+
+If you wish to monitor the SQL queries that Micronaut Data performs you can open up `src/main/resources/logback.xml` and add the following line to enable SQL loggin:
+
+```xml
+<logger name="io.micronaut.data.query" level="debug" />
+```
+
+## **STEP 5**: Write Integration Tests for the Micronaut Application
+
+The application will already have been setup with a single tests the application can startup successfully. This test is configured to use [Testcontainers](https://www.testcontainers.org/) and an Oracle Express image.
+
+Note that the test requires a working Docker installation and will take a little while to download the Oracle Express image on first execution.
+
+You can execute your tests with:
+
+```bash
+./gradlew test
+```
+
+## **STEP 6**: Run the Micronaut application locally
+
+To run the application locally and test against the Autonomous Database that was setup in the previous labs. Make sure you have set the `TNS_ADMIN` environment variable to the location of you Wallet directory and set `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous lab and then execute `./gradlew run -t`
+
+```bash
+   export TNS_ADMIN=[Your absolute path to wallet]
+   export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
+   ./gradlew run -t
+   ```
+
+Note that the `-t` argument is optional and activates continuous build such that if you make changes to your application it will be automatically restarted.
 
 ## Learn More
 
