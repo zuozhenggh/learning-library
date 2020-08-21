@@ -68,7 +68,7 @@ To connect locally you need download and configure the ATP Wallet locally.
  unzip /path/to/Wallet_mnociatp.zip -d /tmp/wallet
  ```
 
-   Once downoaded your wallet directory should contain the following files:
+   Once downloaded your wallet directory should contain the following files:
    
    ![Wallet dir](images/tmp-wallet-dir.png)
 
