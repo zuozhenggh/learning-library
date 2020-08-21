@@ -4,6 +4,8 @@
 
 In this lab you will build a Micronaut application locally that connects to Oracle Autonomous Database.
 
+Note: If at any point you have trouble completing the Lab the complete working example Micronaut application can be checked out from [Github](https://github.com/graemerocher/micronaut-hol-example).
+
 Estimated Lab Time: &lt;40&gt; minutes
 
 ### Objectives

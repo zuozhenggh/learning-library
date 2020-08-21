@@ -4,7 +4,7 @@
 
 In this lab you are going to get setup to develop a Micronaut application locally that communicates with an Autonomous Datatabase instance.
 
-Estimated Lab Time: &lt;15&gt; minutes
+Estimated Lab Time: &lt;10&gt; minutes
 
 ### Objectives
 

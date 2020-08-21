@@ -4,7 +4,7 @@
 
 In this lab you are going to provision the Oracle Cloud instances needed to run a Micronaut application with Autonomous Database.
 
-Estimated Lab Time: &lt;30&gt; minutes
+Estimated Lab Time: &lt;10&gt; minutes
 
 ### Objectives
 
