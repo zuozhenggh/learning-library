@@ -381,7 +381,7 @@ public class Application {
 
 Note that the constructor is modified to dependency inject the repository definitions so data can be persisted.
 
-Notice in the `main` method JDBC support for FAN events is disabled as they note necessary for this application:
+Notice in the `main` method JDBC support for FAN events is disabled as they are not necessary for this application:
 
 ```java
 System.setProperty("oracle.jdbc.fanEnabled", "false");
@@ -402,7 +402,7 @@ If you wish to monitor the SQL queries that Micronaut Data performs you can open
 
 The application will already have been setup with a single tests the application can startup successfully. This test is configured to use [Testcontainers](https://www.testcontainers.org/) and an Oracle Express image.
 
-Note that the test requires a working Docker installation and will take a little while to download the Oracle Express image on first execution.
+Note that the test requires a working Docker installation and will take more than 10 minutes to download the Oracle Express image on first execution.
 
 You can execute your tests with:
 
