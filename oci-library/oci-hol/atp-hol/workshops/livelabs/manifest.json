@@ -12,7 +12,8 @@
         },
         {
             "title": "Lab 2: Configuring Dynamic CPU Scaling in Autonomous Transaction Processing Service",
-            "filename": "./../../atp-hol/atp-hol.md"
+            "filename": "./../../atp-hol/atp-hol.md",
+            "type": "livelabs"
         }
     ]
 }
