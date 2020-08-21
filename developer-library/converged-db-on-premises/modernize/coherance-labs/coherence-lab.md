@@ -1,5 +1,5 @@
 
-# Coherence Lab 
+# Coherence Lab
 
 ## Introduction
 
