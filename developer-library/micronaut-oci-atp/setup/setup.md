@@ -24,7 +24,7 @@ In this lab you will:
 2. From Cloud Shell, download the script and run it:
 
 ```bash
-wget -O setup.sh https://github.com/recursivecodes/micronaut-data-jdbc-graal-atp/releases/latest/download/setup.sh
+wget -O setup.sh https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/setup.sh
 chmod +x setup.sh
 ./setup.sh
 

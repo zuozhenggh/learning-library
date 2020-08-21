@@ -22,7 +22,7 @@ In this lab you will:
 
 1. Create Infrastructure by downloading the Terraform configuration for this lab (stack.zip) from:
 
-   https://github.com/recursivecodes/micronaut-data-jdbc-graal-atp/releases/latest/download/stack.zip
+   https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/stack.zip
 
 2. In the Oracle Cloud Console go to the "Solutions and Platforms" -> "Resource Manager" -> "Stacks".
 
