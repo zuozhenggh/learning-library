@@ -1,6 +1,5 @@
-# Coherence Lab
 
-## Introduction
+## Coherence Lab
 
 This lab walks you through the steps for running different Coherence Labs
 
