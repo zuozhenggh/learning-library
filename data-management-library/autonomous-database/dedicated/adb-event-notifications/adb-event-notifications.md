@@ -13,7 +13,7 @@ As an database developer or adminstrator,
 ### Required Artifacts
 - An Oracle Cloud Infrastructure account with priviledges to provision an autonomous database and create ONS topics and events.
 
-## STEP 1: Setup email / SMS notification on ADB provisioning events
+## **Step 1:** Setup email / SMS notification on ADB provisioning events
 
 - Lets start by setting up a simple email / SMS notification when autonomous database instances are provisioned in the users compartment.
 
@@ -60,4 +60,5 @@ As an database developer or adminstrator,
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

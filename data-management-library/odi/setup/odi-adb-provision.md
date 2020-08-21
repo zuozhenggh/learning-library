@@ -14,7 +14,7 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have already completed the [Log in to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) lab seen in the menu on the right.  In this lab you will be provisioning an ADW database instance using the cloud console.
 
@@ -122,7 +122,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
 Please proceed to the next lab.
 
-## Step 3: Populating ADW Database with Seed Data
+## **Step 3:** Populating ADW Database with Seed Data
 
 1. Ensure your ADW instance is available:
   ![](./images/adw-available.png " ")
@@ -165,4 +165,5 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Last Updated By/Date** - Troy Anthony, July 2020
 - **Contributors** - Jeffrey Malcolm Jr, Arabella Yao, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

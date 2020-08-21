@@ -10,8 +10,8 @@
 This lab walks you through the steps on how you can use the Oracle Analytics Cloud to visualize entities from a database such as the results of the model created in OML.
 
 
-*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-[![Lab 500 Walkthrough Video](./images/lab500tn.png " ")](https://www.youtube.com/watch?v=wlSVlFv1R2A "Lab 500 Walkthrough Video - Click to Watch!")
+*In addition to the workshop*, feel free to watch the walkthrough companion video:
+[](youtube:wlSVlFv1R2A)
 
 
 ### Objectives
@@ -26,9 +26,7 @@ This lab walks you through the steps on how you can use the Oracle Analytics Clo
 -   To learn more about Oracle Analytics Cloud (OAC), feel free to explore the capabilities by clicking on this link: [OAC Overview](https://www.oracle.com/business-analytics/analytics-cloud.html)
 
 
-## Part 1. Visualize results in OAC
-
-### **STEP 1**: Create a Project
+## **STEP 1**: Create a Project
 
 1. From Oracle Analytics Cloud, click on the hamburger menu icon and click on **Data**. 
 
@@ -39,7 +37,7 @@ This lab walks you through the steps on how you can use the Oracle Analytics Clo
     ![](./images/1.png " ")
 
 
-### **STEP 2**: Create a Visualization
+## **STEP 2**: Create a Visualization
 
 1. If you don't see all the columns, expand **Master_Table** on the left with the **small arrow** in order to see all the columns in the data set.
 
@@ -149,6 +147,8 @@ This lab walks you through the steps on how you can use the Oracle Analytics Clo
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Last Updated By/Date** - Jess Rein, Cloud Engineer, June 2020
+- **Contributors** - Kamryn Vinson, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
+- **Last Updated By/Date** - Jeffrey Malcolm, QA Specialist, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

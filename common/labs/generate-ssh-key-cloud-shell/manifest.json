@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Create SSH Keys and Login to Oracle Cloud",
     "tutorials": [
         {
             "title": "Lab: Generate SSH Key Using Oracle Cloud Shell",

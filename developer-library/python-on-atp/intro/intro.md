@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to the Python Development with Autonomous Transaction Processing Workshop. This workshop will introduce you to the most rapid and advanced full-stack development environment available today.
+Welcome to the Developing Python Apps using Oracle Autonomous Transaction Processing Workshop. This workshop will build three cloud-based microservice database applications using Python and the ATP database.
 
 ## Workshop Overview
 
@@ -20,4 +20,5 @@ Please proceed to the next lab.
 - **Last Updated By/Date** - Kay Malcolm, April 2020
 - **Workshop Expiration Date** - April 31, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

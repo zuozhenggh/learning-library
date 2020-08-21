@@ -8,7 +8,7 @@
 
 -   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-### Lab Prerequisites
+### Prerequisites
 This lab assumes you have completed the following labs:
 [Login to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) and [Provision ADB] (?lab=lab-2-provision-adb)
 * Lab: [Login to Oracle Cloud](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-1-login-oracle-cloud)
@@ -30,7 +30,7 @@ At least one Credential defined to your Oracle Object Store ‘bucket’
 
 In this lab you will use the SQL Developer tool, connect to your source database and use Data Pump to create an export of your schema. SQL Developer can then import that data directly in to the Autonomous Database via the Oracle Object Store.
 
-## Step 1 Create a BUCKET in the Oracle Object Store
+## **Step 1:**Create a BUCKET in the Oracle Object Store
 1. Open the Oracle Cloud console and log in as your registered user
 2. From the hamburger menu on the left select "Object Storage"
 ![](../../images/create_object_storage_1.png)
@@ -52,7 +52,7 @@ OCID: ocid1.bucket.oc1.ap-myRegion-1.aaaaVeryLongStringOfCharactersmi5a
 ````
 7. Store this information in a Notepad as you will need it during the export of your data
 
-## Step 2 Generate an AUTH token
+## **Step 2:**Generate an AUTH token
 Before you can push and pull files to and from Oracle Cloud Infrastructure Registry, you must already have an Oracle Cloud Infrastructure username and an auth token. To generate an AUTH token follow these steps
 1. From the top right hand of the console window, select the *Profile* icon and click on your username
 ![](../../images/create_auth_token_profile_1.png)
@@ -73,7 +73,7 @@ Before you can push and pull files to and from Oracle Cloud Infrastructure Regis
 ````
 Auth token: )Abc123doremiU&Me:3.ixj0.
 ````
-## Step 3 Connect to ADB instance and create a credential
+## **Step 3:**Connect to ADB instance and create a credential
 1. Start SQLDeveloper on your Compute instance
 Use the pull down menu to select SQL Developer (Applications -> Programming)
 ![](../../images/SQLDeveloper_start_menu.png)
@@ -103,7 +103,7 @@ Service: atplab_high (dbname_high)
 
 5.
 
-## Step 1 Connect SQL Developer to your local Instance
+## **Step 1:**Connect SQL Developer to your local Instance
 1. Start SQLDeveloper on your Compute Instance
 Use the pull down menu to select SQL Developer (Applications -> Programming)
 ![](../../images/SQLDeveloper_start_menu.png)
@@ -124,7 +124,7 @@ or open a Terminal and enter:
 4. Add the SYSTEM connection to the DBA view - Enter the password when prompted
 ![](../../images/SQLDeveloper_DBA_system.png)
 
-## Step 2 Extract data from your local database
+## **Step 2:**Extract data from your local database
 1. Open the Data Pump Wizard
 From the DBA views, select your SYSTEM connection, open Data Pump, select Export Jobs, then Actions and finally Data Pump Export Wizard
 ![](../../images/SQLDeveloper_data_pump_2.png)
@@ -175,7 +175,7 @@ ls -al ./admin/ORCL/dpdump/A24A0F23F87C284FE0537F00000AFF5C/EXPDAT01-05_51_33.DM
 -rw-r-----. 1 oracle dba 9650176 May 29 05:53 ./admin/ORCL/dpdump/A24A0F23F87C284FE0537F00000AFF5C/EXPDAT01-05_51_33.DMP
 ````
 
-## Step 3 Create a BUCKET in the Oracle Object Store
+## **Step 3:**Create a BUCKET in the Oracle Object Store
 
 
 ## Acknowledgements
@@ -183,4 +183,5 @@ ls -al ./admin/ORCL/dpdump/A24A0F23F87C284FE0537F00000AFF5C/EXPDAT01-05_51_33.DM
  - **Author** - Troy Anthony, Jeff Smith May 2020
  - **Last Updated By/Date** - Troy Anthony, May 28 2020
 
- See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+ ## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -12,7 +12,7 @@ Now, the tables are created and populated with data. Let's create a graph repres
 - Use PGQL Data Definition Language (DDL) (e.g. CREATE PROPERTY GRAPH) to instantiate a graph
 
 
-## STEP 1: Modify the graph server config file
+## **Step 1:** Modify the graph server config file
 
 1. SSH into the compute instance where you installed the graph server.
     First navigate to the folder where you created your SSH Keys. And connect using:
@@ -42,7 +42,7 @@ Now, the tables are created and populated with data. Let's create a graph repres
 
     ![](../images/change_tls.png " ")
 
-## STEP 2: Start the graph server
+## **Step 2:** Start the graph server
 
 1. Check that JAVA\_HOME and JAVA11\_HOME env variables are set and correct. That is, JAVA\_HOME points to JDK1.8 and Java11\_HOME to jdk1.11.
     Using command:
@@ -70,7 +70,7 @@ Now, the tables are created and populated with data. Let's create a graph repres
     You will see the following log output once the server is up and running. It may take a minute for this log output to show up.
     >INFO: Starting ProtocolHandler ["http-nio-7007"]
 
-## STEP 3: Start a client shell
+## **Step 3:** Start a client shell
 
 1. Once the graph server is up and running, open a new SSH connection to the same compute instance.  
 
@@ -95,7 +95,7 @@ Now, the tables are created and populated with data. Let's create a graph repres
     ```
     ![](../images/connect_shell_to_server.png)
 
-## STEP 4: Create the graph
+## **Step 4:** Create the graph
 
 Enter the following sets of commands once the JShell has started and is ready.
 
@@ -204,7 +204,7 @@ Enter the following sets of commands once the JShell has started and is ready.
 
     ![](../images/create_graph_2.png  " ")
 
-## STEP 5: Check the newly created graph
+## **Step 5:** Check the newly created graph
 
 Check that the graph was created. Copy, paste, and run the following statements in the JShell.
 
@@ -253,4 +253,5 @@ Check that the graph was created. Copy, paste, and run the following statements 
 
 - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

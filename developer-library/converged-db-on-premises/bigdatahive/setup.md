@@ -20,7 +20,7 @@ To enable Oracle Big Data SQL to query Hive data, you must first define an Oracl
 The external table provides a level of abstraction. The underlying partitions or file type may change, but the Oracle external table definition can remain the same. It automatically picks up these changes when you query the table.
 As part of an external table definition, you specify the table columns and their data types as well as a pointer to the source table in Hive. The rest of the metadata is derived at query execution time, including the data location, the file type and partitioning information.
 
-## Step 1: Enter a title
+## **Step 1:** Enter a title
 
 1. Use Retail 
    
@@ -108,7 +108,7 @@ As part of an external table definition, you specify the table columns and their
     ![](./images/IMG2.PNG " ")
 
 
-## Step 2: Using ORACLE_HIVE driver
+## **Step 2:** Using ORACLE_HIVE driver
 
 The ACCESS PARAMETERS clause provides information that the access driver needs to load the data correctly into the external table.
 
@@ -237,5 +237,5 @@ This is the end of the lab.
 - **Authors/Contributors** - Enter author  name
 - **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, May 2020
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

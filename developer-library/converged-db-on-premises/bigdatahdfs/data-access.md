@@ -4,7 +4,7 @@
 Want to load the data into Oracle?  Perform some simple ETL  (Kay - need to add some more detail here)
 
 
-## Step 1:  Create Purchase Order Table
+## **Step 1:**  Create Purchase Order Table
 1. Connect to **database**
     ````
     <copy>
@@ -52,7 +52,7 @@ Want to load the data into Oracle?  Perform some simple ETL  (Kay - need to add 
     ![](./images/IMG11.PNG)    
 
 
-## Step 2:  Products with mode of purchase is COD
+## **Step 2:**  Products with mode of purchase is COD
 
 1. Connect to **Database**
     ````
@@ -69,7 +69,7 @@ Want to load the data into Oracle?  Perform some simple ETL  (Kay - need to add 
     ![](./images/IMG12.PNG)
 
 
-## Step 3:  Products ordered from a specific GEO location
+## **Step 3:**  Products ordered from a specific GEO location
 
 
 1. Connect to **Database**
@@ -90,7 +90,7 @@ Want to load the data into Oracle?  Perform some simple ETL  (Kay - need to add 
 ![](./images/IMG13.PNG)
 
 
-## Step 4:  Customer purchase history details
+## **Step 4:**  Customer purchase history details
 
 1. Connect to **Database**
   ````
@@ -115,8 +115,8 @@ This lab is now complete.
 - **Authors/Contributors** - Brian Hengen, Balasubramanian Ramamoorthy, Arvind Bhope
 - **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, May 2020
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 
 
