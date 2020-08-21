@@ -1,4 +1,3 @@
-
 # Coherence Lab
 
 ## Introduction
