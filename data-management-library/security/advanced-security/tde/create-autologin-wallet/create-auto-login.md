@@ -2,54 +2,69 @@
 
 ## Create Autologin Wallet
 
+---
+
 This step is recommended so the DBAs do not have to manually open the wallet each time the database is restarted. This is very helpful in RAC, Data Guard, or Golden Gate environments.
 
 
-- Open a SSH session on your DBSec-Lab VM as Oracle User
+Open a SSH session on your DBSec-Lab VM as Oracle User
 
-        sudo su - oracle
+````
+<copy>sudo su - oracle</copy>
+````
 
-- Go to the scripts directory
+Go to the scripts directory
 
-    	cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Autologin_Wallet
+````
+<copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Autologin_Wallet</copy>
+````
 	
-- Then run the script to view the wallet on the operating system.<br>
+Then run the script to view the wallet on the operating system.<br>
+
 Notice there is no `cwallet.sso`, there will be when we create the auto login wallet.
 
-        ./01_view_wallet_on_os.sh
+````        
+<copy>./01_view_wallet_on_os.sh</copy>
+````
     
-    ![](./images/TDE_010.PNG)
+   ![](../images/TDE_010.PNG)
 
-- You can view what the wallet looks like in the database
+You can view what the wallet looks like in the database
 
-        ./02_view_wallet_in_db.sh
+````
+<copy>./02_view_wallet_in_db.sh</copy>
+````    
     
-    ![](./images/TDE_011.PNG)
+   ![](../images/TDE_011.PNG)
 
-- Now, create the autologin wallet
+Now, create the autologin wallet
 
-        ./03_create_autologin_wallet.sh
-    
-    ![](./images/TDE_012.PNG)
+````
+<copy>./03_create_autologin_wallet.sh</copy>
+````
 
-- Run the same queries... You should now see the `cwallet.sso` file:
-    
-        ./04_view_wallet_on_os.sh
-    
-    ![](./images/TDE_013.PNG)
+    ![](../images/TDE_012.PNG)
 
-    ---
-    **Note:** Now you should see the *.sso file
+Run the same queries... You should now see the `cwallet.sso` file:
 
-    ---
+````
+<copy>./04_view_wallet_on_os.sh</copy>
+````    
+ 
+   ![](../images/TDE_013.PNG)
 
-- And no changes to the wallet in the database
 
-        ./05_view_wallet_in_db.sh
+**Note:** Now you should see the *.sso file
 
-    ![](./images/TDE_014.PNG)
+And no changes to the wallet in the database
 
-- Now your Autologin is created!
+````
+<copy>./05_view_wallet_in_db.sh</copy>
+````
+
+   ![](../images/TDE_014.PNG)
+
+Now your Autologin is created!
 
 ---
 Move up one [directory](../README.md)

@@ -1,37 +1,48 @@
 ![](../../../../images/banner_ASO.PNG)
 
-# [Lab] TDE - Encrypt Existing Tablespace
+## TDE - Encrypt Existing Tablespace
 
 The easiest way to get started is to encrypt the `EMPLOYEESEARCH_DATA` tablespace.
 
-- Open a SSH session on your DBSec-Lab VM as Oracle User
+Open a SSH session on your DBSec-Lab VM as Oracle User
 
-        sudo su - oracle
+````
+<copy>sudo su - oracle</copy>
+````
 
-- Go to the scripts directory
+Go to the scripts directory
 
-        cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Encrypt_Existing_Tablespace
+````
+<copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Encrypt_Existing_Tablespace</copy>
+````
 
-- First, use the Linux command, strings, to view the data in the data file.<br>
+First, use the Linux command, strings, to view the data in the data file.<br>
+
 This is an operating system command that bypasses the database to view the data. This is called a 'side-channel attack' because the database is unaware of it.
 
-        ./01_Search_Strings_Plain_Text.sh  
+````
+<copy>./01_Search_Strings_Plain_Text.sh</copy>
+````
 
-    ![](../images/TDE_015.PNG)
+   ![](../images/TDE_015.PNG)
 
-- Second, encrypt the data by encrypting the entire tablespace:
+Second, encrypt the data by encrypting the entire tablespace:
 
-        ./02_Encrypt_Tablespace.sh
+````
+<copy>./02_Encrypt_Tablespace.sh</copy>
+````
 
-    ![](../images/TDE_016.PNG)
+   ![](../images/TDE_016.PNG)
 
-- And finally, try the side-channel attack again
+And finally, try the side-channel attack again
 
-        ./03_Search_Strings_Encrypted.sh
+````
+<copy>./03_Search_Strings_Encrypted.sh</copy>
+````
 
-    ![](../images/TDE_017.PNG)
+   ![](../images/TDE_017.PNG)
 
-- You will see that all of the data is now encrypted!
+You will see that all of the data is now encrypted!
 
 ---
 **Note:** This lab has been executed against the pluggable database, PDB1.<br>

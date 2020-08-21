@@ -1,39 +1,53 @@
 ![](../../../../images/banner_ASO.PNG)
 
-# [Lab] TDE - Restore Before TDE
+## TDE - Restore Before TDE
 
 Only if you have followed the steps in [Allow_DB_Restore](../Allow_DB_Restore/README.md) you can run the following steps to restore this DB to it's state before implementing TDE.
 
 
-- Open a SSH session on your DBSec-Lab VM as Oracle User
+Open a SSH session on your DBSec-Lab VM as Oracle User
 
-        sudo su - oracle
+````
+<copy>sudo su - oracle</copy>
+````
 
-- Go to the scripts directory
+Go to the scripts directory
 
-        cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Restore_Before_TDE
-    
-- First, execute this script to restore the pfile
+````
+<copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Restore_Before_TDE</copy>
+````
 
-        ./01_restore_init_parameters.sh
+First, execute this script to restore the pfile
 
-- Second, restore the database (this may take some time)
+````
+<copy>./01_restore_init_parameters.sh</copy>
+````
 
-        ./02_restore_db.sh
+Second, restore the database (this may take some time)
 
-- Third, delete the associated wallet files
+````
+<copy>./02_restore_db.sh</copy>
+````
 
-        ./03_delete_wallet_files.sh
+Third, delete the associated wallet files
 
-- Finally, start the container and pluggable databases
+````
+<copy>./03_delete_wallet_files.sh</copy>
+````
 
-        ./04_start_db.sh
+Finally, start the container and pluggable databases
 
-- This should have restored your database to it's pre-TDE state
+````
+<copy>./04_start_db.sh</copy>
+````
 
-- Verify the initialization parameters don't say anything about TDE
+This should have restored your database to it's pre-TDE state
 
-        ./05_check_init_params.sh
+Verify the initialization parameters don't say anything about TDE
+
+````
+<copy>./05_check_init_params.sh</copy>
+````
 
 ---
 Move up one [directory](../README.md)

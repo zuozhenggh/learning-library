@@ -4,7 +4,7 @@
 
 Hard-coded within the Oracle Database core product, two features comprise this option:
 
-![](../images/ASO_Features.PNG)
+![](./images/ASO_Features.PNG)
 
 Enables you to encrypt data so that only an authorized recipient can read it.
 
@@ -16,7 +16,7 @@ Oracle Database uses authentication, authorization, and auditing mechanisms to s
     
 You can configure Oracle Key Vault as part of the TDE implementation. This enables you to centrally manage TDE keystores (called TDE wallets in Oracle Key Vault) in your enterprise. For example, you can upload a software keystore to Oracle Key Vault and then make the contents of this keystore available to other TDE-enabled databases.
 
-![](../images/ASO_Concept_TDE.PNG)
+![](./images/ASO_Concept_TDE.PNG)
 
 **Benefits of Using Transparent Data Encryption**
 
@@ -63,7 +63,7 @@ This option enables you to test the internal operation of your redaction policie
 
 Data Redaction performs the redaction at runtime, that is, the moment that the user tries to view the data. This functionality is ideally suited for dynamic production systems in which data constantly changes. While the data is being redacted, Oracle Database is able to process all of the data normally and to preserve the back-end referential integrity constraints. Data redaction can help you to comply with industry regulations such as Payment Card Industry Data Security Standard (PCI DSS) and the Sarbanes-Oxley Act.
 
-![](../images/ASO_Concept_DR.PNG)
+![](./images/ASO_Concept_DR.PNG)
 
 **Benefits of Using Oracle Data Redaction**
 

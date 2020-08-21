@@ -6,21 +6,27 @@ To restore your database to a pre-TDE point in time, this lab will enable archiv
 Hence, this requires stopping the database, creating a tape archive file (tar) and restarting it.
 <br><br>
 
-- Open a SSH session on your DBSec-Lab VM as Oracle User
+Open a SSH session on your DBSec-Lab VM as Oracle User
 
-        sudo su - oracle
+````
+<copy>sudo su - oracle</copy>
+````
 
-- Go to the scripts directory
+Go to the scripts directory
 
-        cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Allow_DB_Restore
+````
+<copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Allow_DB_Restore</copy>
+````
     
-- Run the backup command:
+Run the backup command:
 
-        ./01_backup_db.sh
+````
+<copy>./01_backup_db.sh</copy>
+````
 
-     ![](./images/TDE_001.PNG)
+   ![](../images/TDE_001.PNG)
 
-- Once it has completed, it will automatically restart the container and pluggable databases
+Once it has completed, it will automatically restart the container and pluggable databases
 
 ---
 **Note:** If you have executed this script before and there is an existing backup file, the script will not complete. You must manually manage the existing backup (delete or move) before running this script again.

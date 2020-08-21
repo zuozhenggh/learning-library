@@ -5,34 +5,46 @@
 You must create a master key for the container database before continuing.<br>
 Each pluggable database must have their own master key as well (except for PDB$SEED).<br><br>
 
-- Open a SSH session on your DBSec-Lab VM as Oracle User
+Open a SSH session on your DBSec-Lab VM as Oracle User
 
-        sudo su - oracle
+````
+<copy>sudo su - oracle</copy>
+````
 
-- Go to the scripts directory
+Go to the scripts directory
 
-        cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Master_Key
+````
+<copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Master_Key</copy>
+````
 
-- To create the container database TDE master key, run the following command
+To create the container database TDE master key, run the following command
 
-       ./01_create_cdb_mkey.sh
+````
+<copy>./01_create_cdb_mkey.sh</copy>
+````
 
-    ![](./images/TDE_005.PNG)
+   ![](../images/TDE_005.PNG)
 
-- To create a master key for the pluggable database, PDB1, run the following command:
+To create a master key for the pluggable database, PDB1, run the following command:
 
-      ./02_create_pdb_mkey.sh pdb1
+````
+<copy>./02_create_pdb_mkey.sh pdb1</copy>
+````
 
-    ![](./images/TDE_006.PNG)
+   ![](../images/TDE_006.PNG)
 
-- If you want, you can do the same for PDB2.<br>
+
+If you want, you can do the same for PDB2.<br>
+
 This is not a requirement though. It might be helpful to show some databases with TDE and some without.
 
-        ./02_create_pdb_mkey.sh pdb2
+````
+<copy>./02_create_pdb_mkey.sh pdb2</copy>
+````
 
-    ![](./images/TDE_007.PNG)
+   ![](../images/TDE_007.PNG)
 
-- Now, you have a master key and you can begin encrypting tablespaces or column!
+Now, you have a master key and you can begin encrypting tablespaces or column!
 
 ---
 Move up one [directory](../README.md)
