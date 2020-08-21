@@ -68,9 +68,9 @@ To connect locally you need download and configure the ATP Wallet locally.
  unzip /path/to/Wallet_mnociatp.zip -d /tmp/wallet
  ```
 
- Once downoaded your wallet directory should contain the following files:
-
-    ![Wallet dir](images/tmp-wallet-dir.png)
+   Once downoaded your wallet directory should contain the following files:
+   
+   ![Wallet dir](images/tmp-wallet-dir.png)
 
 
 ## **STEP 3**: Create a new Micronaut application 
