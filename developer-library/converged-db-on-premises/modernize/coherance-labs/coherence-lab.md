@@ -19,7 +19,7 @@ This lab assumes you have completed the following labs:
 ## Lab Description
 
   These Coherence Labs are exercises to visuslaize the different features of Coherence as a distributed in-memory data-grid.
-
+    
 ## Prerequisites for Java
  
 # COHERENCE_HOME	 
@@ -49,46 +49,96 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
     The data file used for the contacts LoaderExample: contacts.csv.
  
 ## Execute the run script for each Lab
+
+## Verify Environment
+
+    Open Two Terminal windows and verify ENVIRONMENT in each as below
+    Please verify the JAVA_HOME from a terminal window
+
+    Type: echo $JAVA_HOME
+
+    Verify COHERENCE_HOME
+
+    Type:  echo $COHERENCE_HOME
+
+    Change Directory to Java Samples in both Terminal Windows
+
+    Type:  cd $COHERENCE_HOME/examples/java
+
+    Build all the java Labs as needed
+    Execute the build script with the name of the example collection:
+
+        bin/build contacts
+
+        bin/build security
+
+        bin/build events
+
+        bin/build java8
+
+        bin/build async
+
+
+    Now Run all the Labs from this folder $COHERENCE_HOME/examples/java
+    in both Terminal Windows
+
+    cd $COHERENCE_HOME/examples/java
+    
 ## Lab 1: Contacts 
-1.	Start one or more cache servers: bin/run-cache-server. 
+
+
+1.	Start one or more cache servers in First Terminal window : bin/run-cache-server. 
 
     Each execution starts a cache server cluster node. 
 
     To add additional nodes, execute the command in a new command shell.
 
-2.	In a new command shell, run with the name of the example: bin/run contacts. The Driver.main method runs through the features of the example with output going to the command window (stdout).
+2.	In the second Terminal window, run with the name of the example: bin/run contacts. The Driver.main method runs through the features of the example with output going to the command window (stdout).
+
+
+    ![](./images/contact_output.png " ")  
+
 
 ## Lab 2: Security
 The security example requires Coherence*Extend, which uses a proxy.
-1.	Start one or more cache servers: bin/run-cache-server security. 
+1.	Start one or more cache servers First Terminal window: bin/run-cache-server security. 
 
     The cache server also runs a proxy service which allows connections from Coherence*Extend clients.
-2.	In a new command shell, run with the name of the example: bin/run security. 
+2.	In the second Terminal window, run with the name of the example: bin/run security. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout).
+
+    ![](./images/security_output.png " ")  
+
 
 ## Lab 3:  Live events 
-1.	Start one or more cache servers: bin/run-cache-server events. 
+1.	Start one or more cache servers First Terminal window: bin/run-cache-server events. 
 
     Each execution starts a cache server cluster node. To add additional nodes, execute the command in a new command shell.
-2.	In a new command shell, run with the name of the example: bin/run events. 
+2.	In the second Terminal window, run with the name of the example: bin/run events. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout).
 
+    ![](./images/events_output.png " ") 
+
+
 ## Lab 4: Java 8 features 
-1.	Start a cache server: bin/run-cache-server.
-2.	In a new command shell, run with the name of the example: bin/run java8. 
+1.	Start a cache server First Terminal window: bin/run-cache-server.
+2.	In the second Terminal window, run with the name of the example: bin/run java8. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/java8.
 
+    ![](./images/java8_output.png " ") 
+
 
 ## Lab 5: Asynchronous features 
-1.	Start a cache server: bin/run-cache-server.
-2.	In a new command shell, run with the name of the example: bin/run async. 
+1.	Start a cache server First Terminal window: bin/run-cache-server.
+2.	In the second Terminal window, run with the name of the example: bin/run async. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/async.
 
 
+    ![](./images/async_output.png " ") 
 
 
 
@@ -97,7 +147,7 @@ The security example requires Coherence*Extend, which uses a proxy.
 ## Acknowledgements
 
 - **Authors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR
-- **Contributors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR
+- **Contributors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR, Laxmi Amarappanavar
 - **Team** - North America SE Specialists.
 - **Last Updated By** -  
 - **Expiration Date** -    

@@ -69,12 +69,12 @@ This lab is designed for people with no prior experience with Kubernetes, Docker
 
 -	The terminal shows stdout logs for starting the AdminServer of Wait till the firefox browser automatically launch the index.jsp 
 -	On the top right corner click on “Start the Administration Console” button
- 
+	 ![](./images/adminconsole.png " ")  
 -	Open the Weblogic Admin Console and login with credentials
 username: weblogic
 password: Oracle123!
 -	On the left hand side Menu under “Domain Structure” click on “Deployments”. Observe that the bestbank2020 application has been already deployed and available to access.
- 
+	 ![](./images/deployments.png " ")  
 -	In the firefox open a new Tab and access the bank application UI with URL http://localhost:7101/bestbank2020
 -	The existence of base version of the sample bestbank application is confirmed.
 -	Change directory to /u01/middleware_demo/wls-helidon
@@ -334,8 +334,11 @@ This is because the microservice is not yet started !!!
 
 		java -jar helidon-creditscore-se.jar &
  
+![](./images/startmicroservice.png " ")  
+
 		In the browser, check if the CreditScore Microservice application is running by checking the health check url http://localhost:8080/creditscore/healthcheck
  
+![](./images/microservicerunning.png " ")  
 
 		Open the browser and access the new bank application using the URL http://localhost:7101/bestbank2020_01 or refresh the existing browser window with the above URL, 
 
@@ -343,7 +346,7 @@ This is because the microservice is not yet started !!!
 
 		A pop-up window with CreditScore information of the user is seen.  
 
- 
+![](./images/creditscore.png " ")  
 
 
 
@@ -353,7 +356,7 @@ This is because the microservice is not yet started !!!
 ## Acknowledgements
 
 - **Authors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR
-- **Contributors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR
+- **Contributors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR, Laxmi Amarappanavar
 - **Team** - North America SE Specialists.
 - **Last Updated By** -  
 - **Expiration Date** -    
