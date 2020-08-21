@@ -9,7 +9,7 @@
             "title": "Introduction",
             "description":"Understand what Advanced Security is and what it can do",
             "publisheddate": "06/30/2020",
-            "filename":"../intro/intro.md"
+            "filename":"../introduction/introduction.md"
         },
         {
             "title": "Lab 1: Generate SSH Keys",
@@ -20,61 +20,61 @@
             "title": "Lab 2: Getting Connected to the lab environment",
             "description":"How to get connected to the workshop environment",
             "publisheddate": "06/30/2020",
-            "filename":"../intro/get-connected.md"
+            "filename":"../get-connected/get-connected.md"
         },
         {
             "title": "Lab 3: TDE - Allow DB Restore",
             "description":"Create a restore point which will enable you to repeat all the labs if desired",
             "publisheddate": "07/01/2020",
-            "filename":"../tde/allowdbrestore.md"
+            "filename":"../tde/allow-db-restore/allow-db-restore.md"
         },
         {
             "title": "Lab 4: TDE - Create Keystore",
             "description":"In this lab you can see how to disable Database Vault.",
             "publisheddate": "07/01/2020",
-            "filename":"../tde/createkeystore.md"
+            "filename":"../tde/create-external-keystore/create-external-keystore.md"
         },
         {
             "title": "Lab 5: TDE - Create Master Key",
             "description":"Create the initial TDE master key",
             "publisheddate": "07/01/2020",
-            "filename":"../tde/createmasterkey.md"
+            "filename":"../tde/create-master-key/create-master-key.md"
         },
         {
             "title": "Lab 6: TDE - Create Auto-login Wallet",
             "description":"Create an auto-login wallet so you dont have to manually open the wallet on DB restart",
             "publisheddate": "07/01/2020",
-            "filename":"../tde/createautologin.md"
+            "filename":"../tde/create-autologin-wallet/create-auto-login.md"
         },
         {
             "title": "Lab 7: TDE - Encrypt Existing Tablespace",
             "description":"In this lab you can see how to disable Database Vault.",
             "publisheddate": "07/01/2020",
-            "filename":"../tde/encryptexistingtablespace.md"
+            "filename":"../tde/create-existing-tablespace/encrypt-existing-tablespace.md"
         },
         {
             "title": "Lab 8: TDE - Encrypt New Tablespace",
             "description":"In this lab you can see how to disable Database Vault.",
             "publisheddate": "07/01/2020",
-            "filename":"../tde/encrypttablespace.md"
+            "filename":"../tde/encrypt-all-new-tablespaces/encrypt-all-new-tablespaces.md"
         },
         {
             "title": "Lab 9: TDE - Re-Key Master Key",
             "description":"In this lab you can see how to disable Database Vault.",
             "publisheddate": "07/01/2020",
-            "filename":"../tde/rekeymasterkey.md"
+            "filename":"../tde/rekey-master-key/rekey-master-key.md"
         },
         {
             "title": "Lab 10: TDE - View Keystore",
             "description":"In this lab you can see how to disable Database Vault.",
             "publisheddate": "07/01/2020",
-            "filename":"../tde/viewkeystore.md"
+            "filename":"../tde/view-software-keystore/view-software-keystore.md"
         },
         {
             "title": "Lab 11: TDE - Restore Before TDE (Optional)",
             "description":"In this lab you can see how to disable Database Vault.",
             "publisheddate": "07/01/2020",
-            "filename":"../tde/restorebeforetde.md"
+            "filename":"../tde/restore=before-tde/restore-before-tde.md"
         },
         {
             "title": "Lab 12: Data Redaction - Redact EMPLOYEESEARCH DATA",
