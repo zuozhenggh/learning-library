@@ -21,9 +21,12 @@ This lab assumes you have completed the following labs:
     
 ## Prerequisites for Java
  
-# Verify COHERENCE_HOME	 
+  Verify COHERENCE_HOME
+
   Make sure that the $COHERENCE_HOME environment variable points to the location of the unpacked Coherence directory.
-# Verify JAVA_HOME	
+
+  Verify JAVA_HOME
+  	
   Make sure that the $JAVA_HOME environment variable points to the location of a supported JDK before building the examples.
  
 ## Directory Structure for Java
