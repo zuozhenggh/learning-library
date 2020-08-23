@@ -88,7 +88,9 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 
     Each execution starts a cache server cluster node. 
 
-    To add additional nodes, execute the command in a new command shell.
+    Wait for the Cache Server to start in a few seconds
+
+    ![](./images/run_cache_server_output.png " ") 
 
 2.	In the second Terminal window, run with the name of the example: bin/run contacts. The Driver.main method runs through the features of the example with output going to the command window (stdout).
 
@@ -101,6 +103,11 @@ The security example requires Coherence*Extend, which uses a proxy.
 1.	Start one or more cache servers First Terminal window: bin/run-cache-server security. 
 
     The cache server also runs a proxy service which allows connections from Coherence*Extend clients.
+
+    Wait for the Cache Server to start in a few seconds
+
+     ![](./images/run_cache_server_output.png " ") 
+
 2.	In the second Terminal window, run with the name of the example: bin/run security. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout).
@@ -111,7 +118,12 @@ The security example requires Coherence*Extend, which uses a proxy.
 ## Lab 3:  Live events 
 1.	Start one or more cache servers First Terminal window: bin/run-cache-server events. 
 
-    Each execution starts a cache server cluster node. To add additional nodes, execute the command in a new command shell.
+    Each execution starts a cache server cluster node. 
+    
+    Wait for the Cache Server to start in a few seconds
+
+     ![](./images/run_cache_server_output.png " ")
+
 2.	In the second Terminal window, run with the name of the example: bin/run events. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout).
@@ -121,6 +133,11 @@ The security example requires Coherence*Extend, which uses a proxy.
 
 ## Lab 4: Java 8 features 
 1.	Start a cache server First Terminal window: bin/run-cache-server.
+
+    Wait for the Cache Server to start in a few seconds
+
+     ![](./images/run_cache_server_output.png " ") 
+
 2.	In the second Terminal window, run with the name of the example: bin/run java8. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/java8.
@@ -130,6 +147,11 @@ The security example requires Coherence*Extend, which uses a proxy.
 
 ## Lab 5: Asynchronous features 
 1.	Start a cache server First Terminal window: bin/run-cache-server.
+
+    Wait for the Cache Server to start in a few seconds
+
+     ![](./images/run_cache_server_output.png " ") 
+
 2.	In the second Terminal window, run with the name of the example: bin/run async. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/async.
