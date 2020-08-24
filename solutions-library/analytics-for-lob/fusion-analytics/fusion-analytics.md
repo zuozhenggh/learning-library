@@ -27,9 +27,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 ### Extra Resources
 -   To learn more about Oracle Fusion ERP Analytics, feel free to explore the capabilities by clicking on this link: [Oracle Fusion ERP Analytics Getting Started Documentation](https://docs.oracle.com/en/cloud/saas/analytics/fawag/get-started-oracle-analytics-applications.html#GUID-66FF30CB-C4C4-4184-9223-DE5AE3E83C80)
 
-## Part 1. Explore the Interface and Pre-Built Content: KPI Cards, Decks, Alerts, and Analysis
-
-### **Step 1:** 
+## **Step 1:** 
 
 1. **Note**: when going through this lab, your visualizations may looks slightly different from what is seen in the lab guide. This is okay- the data on the backend instance is updated regularly so the visualizations may look differently for you.
 
@@ -37,7 +35,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/1.png " ")
 
-### **Step 2:** 
+## **Step 2:** 
 
 1. We start at the homepage, where contains KPIs and Decks that you have marked as favorites. Since this is the first time you have logged in, the screen will be blank. Let’s explore how to navigate within the application.
 
@@ -53,7 +51,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2b.png " ")
 
-### **Step 3:** 
+## **Step 3:** 
 
 1. Now, take a moment to review a few of the pre-built decks. From left to right, click on the following:
     1. **Profit and Loss**
@@ -65,7 +63,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/3.png " ")
 
-### **Step 4:** 
+## **Step 4:** 
 
 1. From the **Financial Ratios** deck, click the **filter icon** on the top right.
 
@@ -75,7 +73,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4.png " ")
 
-### **Step 5:** 
+## **Step 5:** 
 
 1. Click on **My P&L** – a custom deck that we have created and shared with you. Every user can easily create their own custom decks with the top KPIs they want to monitor.
 
@@ -88,7 +86,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/5.png " ")
 
-### **Step 6:** 
+## **Step 6:** 
 
 1. On this deck, we notice that although Revenue is above target, Operating Expenses are trending up.
 
@@ -100,7 +98,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/6.png " ")
 
-### **Step 7:** 
+## **Step 7:** 
 
 1. This pre-built analysis provides additional visualizations to highlight and accelerate further analysis.
 
@@ -113,7 +111,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/7.png " ")
 
-### **Step 8:** 
+## **Step 8:** 
 
 1. We’re now back on the My P&L deck, which was shared with you with “view only” access. We want to dig deeper into payroll cost, so we’ll create a new custom deck that we can customize to meet our needs:
 
@@ -123,7 +121,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/8.png " ")
 
-### **Step 9:** 
+## **Step 9:** 
 
 1. Name your deck **Payroll Deck ~InsertYourInitialsHere~** 
 
@@ -131,7 +129,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/9.png " ")
 
-### **Step 10:** 
+## **Step 10:** 
 
 1. First, let’s add the **Payroll Cost KPI** to this new deck.
 
@@ -139,7 +137,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/10.png " ")
 
-### **Step 11:** 
+## **Step 11:** 
 
 1. **Scroll** through the KPI library so you can see all of the out of the box KPIs.
 
@@ -155,7 +153,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/11b.png " ")
 
-### **Step 12:** 
+## **Step 12:** 
 
 1. Note that by default, this KPI is configured as follows:
     1. Target: compares against the payroll cost budget.
@@ -177,7 +175,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/12c.png " ")
 
-### **Step 13:** 
+## **Step 13:** 
 
 1. We can also customize the visualization itself in this KPI Card.
 
@@ -197,13 +195,13 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/13c.png " ")
 
-### **Step 14:** 
+## **Step 14:** 
 
 1. Observe how we now see actuals (blue bar) trending over budget (green line).
 
 ![](./images/14.png " ")
 
-### **Step 15:** 
+## **Step 15:** 
 
 1. Now, click the **Status and Notifications** tab. The colored line (in this case, red) at the top of the KPI Card is an alert. The default rule is that Payroll Cost >110% is set to red (“Critical”).
 
@@ -213,7 +211,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/15new.png " ")
 
-### **Step 16:** 
+## **Step 16:** 
 
 1. The KPI is now added to the deck. Payroll Cost is trending up plus over budgets. And the alert bar is showing up as yellow (“Warning”).
 
@@ -223,7 +221,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/16.png " ")
 
-### **Step 17:** 
+## **Step 17:** 
 
 1. KPI Cards are designed to enable fast, immediate collaboration.
 
@@ -239,7 +237,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/17b.png " ")
 
-### **Step 18:** 
+## **Step 18:** 
 
 1. Let's continue with our collaboration example. 
 
@@ -249,7 +247,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/18.png " ")
 
-### **Step 19:** 
+## **Step 19:** 
 
 1. Now let’s fast forward. Our business analyst, Lizzy, has completed additional analysis on this issue. She can easily share it back with us by attaching it right to the KPI. Let’s take a look at her analysis.
 
@@ -257,7 +255,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/19.png " ")
 
-### **Step 20:** 
+## **Step 20:** 
 
 1. Our financial analyst created a detailed analysis based on both financial as well as HR workforce attrition data.
 
@@ -269,7 +267,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/20.png " ")
 
-### **Step 21:** 
+## **Step 21:** 
 
 1. Let's return to the home page. 
 
@@ -281,7 +279,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/21b.png " ")
 
-### **Step 22:**
+## **Step 22:**
 
 1. Congratulations on completing this section! Please delete the deck with the cards you have made, which you named **Payroll Deck ~InsertYourInitialsHere~**, during this workshop by clicking on the decks' **menu bar** and selecting **Delete** for the Deck
 
@@ -296,15 +294,13 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
     4. Observed how an analyst can easily bring additional data sets – like HR data – into the platform to perform cross- functional analysis.
 
 
-## Part 2. Custom Analysis on Pre-Built Profitability Subject Area
+## **Step 23:** Custom Analysis on Pre-Built Profitability Subject Area
 
-1. Oracle Fusion ERP Analytics is designed to provide finance teams with the best of both worlds – fast, accurate, access to the latest data from your system of record, along with easy self-service analysis and customization.
+-    Oracle Fusion ERP Analytics is designed to provide finance teams with the best of both worlds – fast, accurate, access to the latest data from your system of record, along with easy self-service analysis and customization.
 
-2. Let's do some more exploration. Here we will introduce you to the out of the box GL profitability analysis and subject area and show you how to customize and extend to create new analysis and reports.
+-    Let's do some more exploration. Here we will introduce you to the out of the box GL profitability analysis and subject area and show you how to customize and extend to create new analysis and reports.
 
-3. **Note**: when going through this lab, your visualizations may looks slightly different from what is seen in the lab guide. This is okay- the data on the backend instance is updated regularly so the visualizations may look differently for you.
-
-### **Step 1:** 
+-   **Note**: when going through this lab, your visualizations may looks slightly different from what is seen in the lab guide. This is okay- the data on the backend instance is updated regularly so the visualizations may look differently for you.
 
 1. Starting from the **My P&L** deck, we’re going to drill into the out of the box Net Income Analysis.
 
@@ -316,7 +312,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-1b.png " ")
 
-### **Step 2:** 
+## **Step 24:** 
 
 1. Observe the following: 
     1. Net Income for the current quarter in a waterfall viz
@@ -328,7 +324,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-2.png " ")
 
-### **Step 3:** 
+## **Step 25:** 
 1. First, begin by clicking on the **small down arrow icon** of the canvas and then **Duplicate Canvas**
 
 ![](./images/part2-1.png " ")
@@ -348,7 +344,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-3.png " ")
 
-### **Step 4:** 
+## **Step 26:** 
 
 1. Now we’ll build a few visualizations with the pre-built data in this subject area.
 
@@ -393,7 +389,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-4c.png " ")
 
-### **Step 5:** 
+## **Step 27:** 
 
 1. We’ll create a second visualization by duplicating this pivot table.
 
@@ -405,7 +401,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-5.png " ")
 
-### **Step 6:** 
+## **Step 28:** 
 
 1. Select the right pivot table visualization if not selected already
 
@@ -415,14 +411,14 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-6.png " ")
 
-### **Step 7:** 
+## **Step 29:** 
 
 1. Your new “Area” visualization will now look like this. You can see that the combination of the table and the visualization helps tell the story more clearly.
 2. **Note**: If your new visualization looks different from what is shown, double-check the fields on the grammar pane and adjust it as necessary.
 
 ![](./images/2-7.png " ")
 
-### **Step 8:** 
+## **Step 30:** 
 
 1. We’ll now further customize this visualization by adding data labels.
 
@@ -437,7 +433,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-8.png " ")
 
-### **Step 9:** 
+## **Step 31:** 
 
 1. Now your visualization is much more readable with the data values. Let’s create another visualization.
 
@@ -449,7 +445,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-9.png " ")
 
-### **Step 10:** 
+## **Step 32:** 
 
 1. Let's reorganize the visualizations on the canvas.
 
@@ -457,7 +453,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-10.png " ")
 
-### **Step 11:** 
+## **Step 33:** 
 
 1. Select the visualization you just dragged to the top (the visualization will be outlined in blue when it is selected).
 
@@ -465,7 +461,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-11.png " ")
 
-### **Step 12:** 
+## **Step 34:** 
 
 1. Let's change the visualization type.
 
@@ -475,7 +471,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-12.png " ")
 
-### **Step 13:** 
+## **Step 35:** 
 
 1. Scroll up the Data pane. 
 
@@ -485,13 +481,13 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-13.png " ")
 
-### **Step 14:** 
+## **Step 36:** 
 
 1. The visualization now compares net income by regional segments across fiscal years.
 
 ![](./images/2-14.png " ")
 
-### **Step 15:** 
+## **Step 37:** 
 
 1. We’ll next create a text narrative description of the area visualization. First let’s duplicate the area visualization. 
 
@@ -503,7 +499,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-15.png " ")
 
-### **Step 16:** 
+## **Step 38:** 
 
 1. Select the new duplicate Area visualization if not selected already
 
@@ -513,18 +509,16 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/2-16.png " ")
 
-### **Step 17:** 
+## **Step 39:** 
 
 1. A generated narrative describing the Area visualization will appear on the left.
 
 ![](./images/2-17.png " ")
 
 
-## Part 3. Explore Balance Sheet Subject Area and Create Trial Balance
+## **Step 40:** Explore Balance Sheet Subject Area and Create Trial Balance
 
-1. **Note**: when going through this lab, your visualizations may looks slightly different from what is seen in the lab guide. This is okay- the data on the backend instance is updated regularly so the visualizations may look differently for you.
-
-### **Step 1:** 
+-    **Note**: when going through this lab, your visualizations may looks slightly different from what is seen in the lab guide. This is okay- the data on the backend instance is updated regularly so the visualizations may look differently for you.
 
 1. At the bottom of your screen, click the **+** icon to create a new canvas.
 
@@ -544,7 +538,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/3-2.png " ")
 
-### **Step 3:** 
+## **Step 41:** 
 
 1. In the data pane, click the **Facts – Ledger Currency** folder to open it.
 
@@ -563,7 +557,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/3-3.png " ")
 
-### **Step 4:** 
+## **Step 42:** 
 
 1. Your pivot table will appear on the canvas. Let’s continue to build this pivot table.
 
@@ -573,7 +567,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/3-4.png " ")
 
-### **Step 5:** 
+## **Step 43:** 
 
 1. Click **Natural Account Hierarchy** folder to open it.
 
@@ -585,13 +579,13 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/3-5b.png " ")
 
-### **Step 6:** 
+## **Step 44:** 
 
 1. Let's take a month to digest the table. Your trial balance report should look similarly to the image below.
 
 ![](./images/3-6.png " ")
 
-### **Step 7:**
+## **Step 45:**
 
 1. Nice work on making these canvases and visualizations! Please go ahead and delete the canvases with your initials at this time by clicking on the canvas **down arrow icon** and selecting **Delete Canvas**. There should be three canvases you need to delete, **Overview ~InsertYourInitialsHere~**, **Fiscal ~InsertYourInitialsHere~**, and **Financial ~InsertYourInitialsHere~**
 
@@ -600,11 +594,9 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 2. When exiting the project, make sure you don't save any changes made during the workshop by clicking on **Don't Save** when any **Save Changes?** text boxes pop up.
 
 
-## Part 4. Explore Account Payables Project and Create New Reports
+## **Step 46:** Explore Account Payables Project and Create New Reports
 
-1. **Note**: when going through this lab, your visualizations may looks slightly different from what is seen in the lab guide. This is okay- the data on the backend instance is updated regularly so the visualizations may look differently for you.
-
-### **Step 1:** 
+-    **Note**: when going through this lab, your visualizations may looks slightly different from what is seen in the lab guide. This is okay- the data on the backend instance is updated regularly so the visualizations may look differently for you.
 
 1. Let’s navigate to the Home page
 
@@ -614,7 +606,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-1.png " ")
 
-### **Step 2:** 
+## **Step 47:** 
 
 1. Below the Get Started banner, you will see shortcuts to pre-built analyses. 
 
@@ -624,13 +616,13 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-2.png " ")
 
-### **Step 3:** 
+## **Step 48:** 
 
 1. Click **AP Analysis Lab**
 
 ![](./images/4-3.png " ")
 
-### **Step 4:** 
+## **Step 49:** 
 
 1. This project contains analyses across two subject areas, AP Invoices and AP Balances. Visualizations include:
     1. AP Balances quarterly trend.
@@ -645,7 +637,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/part2-2.png " ")
 
-### **Step 5:** 
+## **Step 50:** 
 
 1. In the data pane:, click **Financials – AP Balances** to collapse it.
 
@@ -661,7 +653,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 ![](./images/4-5.png " ")
 
 
-### **Step 6:** 
+## **Step 51:** 
 
 1. Your visualization should look like the following bar chart: Invoice Amount by Payment Terms. 
 2. Let’s refine by supplier.
@@ -672,7 +664,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-6.png " ")
 
-### **Step 7:** 
+## **Step 52:** 
 
 1. In the grammar pane, click **Auto Visualization (Bar)**
 
@@ -680,7 +672,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-7.png " ")
 
-### **Step 8:** 
+## **Step 53:** 
 
 1. We’ll now zero in on our top ten suppliers.
 
@@ -688,7 +680,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-8.png " ")
 
-### **Step 9:** 
+## **Step 54:** 
 
 1. Disregard the pop-up window, and instead, at the bottom of the grammar pane, in Filters, click **Invoice Amount**
 
@@ -700,7 +692,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-9b.png " ")
 
-### **Step 10:** 
+## **Step 55:** 
 
 1. A popup window will appear with a default set to 10, which we will accept.
 
@@ -710,14 +702,14 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-10.png " ")
 
-### **Step 11:** 
+## **Step 56:** 
 
 1. Let’s create another visualization. But this time, we’ll try out one of the shortcut features – directly searching for attributes and metrics that we are already familiar with.
 2. In the data pane, click the **magnifying glass icon**
 
 ![](./images/4-11.png " ")
 
-### **Step 12:** 
+## **Step 57:** 
 
 1. In the search box, type **Invoices Amount**
 2. **Note**: if the data pane search feature is not getting any results, this may be a bug. Please, for the remainder of the workshop, do not use the data pane search feature, and instead go ahead and access the data manually as you have done earlier in the lab by going through the data pane on the left.
@@ -739,7 +731,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-12d.png " ")
 
-### **Step 13:** 
+## **Step 58:** 
 
 1. Your visualizations will look similarly to the images below. We’ll now make a series of tweaks to make them easier to read.
 
@@ -749,7 +741,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-13new.png " ")
 
-### **Step 14:** 
+## **Step 59:** 
 
 1. In the grammar pane, in the Color section, click on **# Invoices Count**
 
@@ -767,7 +759,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-15.png " ")
 
-### **Step 16:** 
+## **Step 60:** 
 
 1. In the grammar pane, right click **# Invoices Count**
 
@@ -775,7 +767,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-16.png " ")
 
-### **Step 17:** 
+## **Step 61:** 
 
 1. Now we see the invoice transaction trend by quarterly. Let’s click to add a statistical forecast.
 
@@ -787,13 +779,13 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 ![](./images/4-17.png " ")
 
-### **Step 18:** 
+## **Step 62:** 
 
 1. Your visualization should look like the following, displaying a new three quarter forecast.
 
 ![](./images/4-18.png " ")
 
-### **Step 19:**
+## **Step 63:**
 
 1. Nice work on making these canvases and visualizations! Please go ahead and delete the canvases with your initials at this time by clicking on the canvas **down arrow icon** and selecting **Delete Canvas**. There should be one canvas  you need to delete in this project, **Analysis ~InsertYourInitialsHere~**
 

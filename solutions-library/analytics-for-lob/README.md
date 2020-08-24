@@ -1,6 +1,4 @@
-# Oracle Analytics for LOB
-
-Welcome to the workshop on Oracle Analytics for LOB.
+# Welcome to the Oracle Analytics for LOB Hands-on Lab!
 
 To execute this workshop, click on the link below.
 
