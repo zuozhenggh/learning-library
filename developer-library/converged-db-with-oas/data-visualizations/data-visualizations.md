@@ -11,10 +11,6 @@ It provides several interactive visuals to sow the story in your data for exampl
 
 [](youtube:yOYemBtdpnQ)
 
-Oracle converged database has native support for all modern data types as JSON, XML, and Relational, Spatial etc. By integrating new data types, workloads, and paradigms as features within a converged database, you can support mixed workloads and data types in a much simpler way. You don't need to manage and maintain multiple systems or worry about having to provide unified security across them.
-
-[](youtube:9d76-LhgMQs)
-
 Estimated Lab Time: 40 Mintues.
 
 ### Objectives ###
@@ -72,7 +68,7 @@ Below data objects with data present in Converged Database. And since OAS recogn
    Select  the database connection.
        ![](./images/oascdb7.png " ")
 
-   Select the schema.
+   Select the schema **OASLABS**.
        ![](./images/oascdb65.4.png " ")
 
    Now select the view **FINANCIALS\_JSON\_UK\_VIEW**, where we have JSON data from UK.
