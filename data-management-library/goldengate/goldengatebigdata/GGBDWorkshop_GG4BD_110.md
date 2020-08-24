@@ -78,7 +78,7 @@ Approximately 30 min
 ### What Do you need next
 - [GoldenGate Big Data](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
-## Lab1
+## Steps
 
 Lab 1 – Install GoldenGate binaries for Big Data
 

@@ -1,4 +1,4 @@
-# Lab 6 -  MySQL --> Kafka (Json format)
+# Lab 6 -  MySQL --> Kafka (Json format
 
 ### Introduction
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
@@ -16,6 +16,8 @@ Approximately 30 minutes
 
 ## Before You Begin
 For the Lab terminal session:
+
+## Steps
 
 If at a terminal session:
 
@@ -121,3 +123,9 @@ End of Lab 6.
   * Contributors ** - Brian Elliott
   * Team ** - Data Integration Team
   * Last Updated By/Date ** - Brian Elliott, August 2020
+
+## See an issue?
+
+Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
+  
+  We review it regularly.

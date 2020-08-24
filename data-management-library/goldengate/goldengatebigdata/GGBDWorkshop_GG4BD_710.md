@@ -23,7 +23,9 @@ su - ggadmin
 User ID: ggadmin
 Password:  oracle
 
-### STEP 1: Setting up the Environment For Connection to Cassandra using Goldengate.
+## Steps
+
+ Setting up the Environment For Connection to Cassandra using Goldengate.
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
@@ -123,7 +125,10 @@ End of Lab 7.
   * Team ** - Data Integration Team
   * Last Updated By/Date ** - Brian Elliott, August 2020
 
-  
+  ## See an issue?
+
+Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
+
 # Congrats! You have completed the GoldenGate for Big Data Workshop!! 
 
 

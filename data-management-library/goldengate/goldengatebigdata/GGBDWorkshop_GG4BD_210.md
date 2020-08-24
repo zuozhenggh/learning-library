@@ -1,11 +1,14 @@
-# Lab 2 -  MySQL  -> MySQL unidirectional replication
+#  Lab 2 -  MySQL  -> MySQL unidirectional replication
 
-### Introduction
+## Introduction
 
 This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 In this lab we will load data in MySQL database ‘ggsource’. The GG extract process ‘extmysql’ will
 capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process
 ‘pmpmysql’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘repmysql’ will read the remote trail files, and apply the changes to the MySQL database ‘ggtarget’
+
+### Objectives
+Replication from relational source to a relational target using GoldenGate
 
 Lab Architecture
 
@@ -28,7 +31,7 @@ or Execute the alias ‘labmenu’
 The following Lab Menu will be displayed:
 Select Option 2
 
-## Lab 2
+## Steps
 
 
 ![](images/all/a_labmenu2.png)
@@ -89,5 +92,9 @@ End of Lab 2.
   * Team ** - Data Integration Team
   * Last Updated By/Data ** - Brian Elliott, Augsut 2020
 
+## See an issue?
 
+Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
+  
+  We review it regularly.
 

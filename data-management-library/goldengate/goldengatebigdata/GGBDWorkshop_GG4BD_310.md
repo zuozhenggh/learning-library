@@ -9,6 +9,7 @@ Lab Architecture
 
 Time to Complete -
 Approximately 30 minutes
+
 ### Objectives
 - GoldenGate replication from **MySQL to HDFS**
 
@@ -52,6 +53,8 @@ The above step will copy the GoldenGate configuration files to the GG Home direc
    create_hdfs_replicat.oby 
 4) view /u01/gg4hadoop123010/dirprm/rhdfs.prm
 5) view /u01/gg4hadoop123010/dirprm/rhdfs.properties
+
+## Steps
 
 First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
@@ -129,3 +132,8 @@ End of Lab 3.
   * Team ** - Data Integration Team
   * Last Updated By/Date ** - Brian Elliott, August 2020
   
+  ## See an issue?
+
+Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
+  
+  We review it regularly.

@@ -29,7 +29,9 @@ If at a terminal session:
 User ID: ggadmin
 Password:  oracle
 
-### STEP 1: Setting up the Environment For MySQL.
+## Steps: 
+
+Setting up the Environment For MySQL.
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
@@ -129,4 +131,8 @@ Open a Browser window> http://127.0.0.1:8888/ Login to Hue: cloudera/cloudera
   * Team ** - Data Integration Team
   * Last Updated By/Date ** - Brian Elliott, August 2020
 
+## See an issue?
 
+Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
+  
+  We review it regularly.

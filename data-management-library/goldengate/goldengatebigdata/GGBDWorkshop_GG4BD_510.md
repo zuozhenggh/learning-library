@@ -17,6 +17,8 @@ Approximately 30 minutes
 ## Before You Begin
 For the Lab terminal session:
 
+## Steps
+
 If at a terminal session:
 
 su - ggadmin
@@ -111,3 +113,8 @@ Open a Browser window> http://127.0.0.1:8888/ Login to Hue: cloudera/cloudera
   * Team ** - Data Integration Team
   * Last Updated By/Date ** - Brian Elliott, August 2020
  
+ ## See an issue?
+
+Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
+  
+  We review it regularly.
