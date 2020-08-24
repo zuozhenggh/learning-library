@@ -31,9 +31,9 @@ Aliases have been created for this workshop, so that you can focus on GG functio
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott
- - ** Contributors ** - Brian Elliott
- - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott
- - ** Expiration Date ** – July 2021
+  * Authors ** - Brian Elliott
+  * Contributors ** - Brian Elliott
+  * Team ** - Data Integration Team
+  * Last Updated By/Date ** - Brian Elliott, August 2020
+ 
 

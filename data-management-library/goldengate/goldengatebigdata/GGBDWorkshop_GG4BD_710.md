@@ -1,21 +1,18 @@
 # Lab 7 -  MySQL --> Cassandra
-Aug 6, 2020
-
-Lab Architecture
-
-![](images/700/image701_1.png)
-
 
 ### Introduction
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
 process ‘rcass’ will read the remote trail files, create the Cassandra tables and write the data to those tables.
 
+Lab Architecture
+
+![](images/700/image701_1.png)
+
+Time to Complete -
+Approximately 30 minutes
 
 ### Objectives
 - GoldenGate replication from **MySQL to Cassandra**
-
-### Time to Complete
-Approximately 60 minutes
 
 ## Before You Begin
 
@@ -54,9 +51,7 @@ The above step will copy the GoldenGate configuration files to the GG Home direc
 
 First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-
 First, let’s start the Cassandra database server. Open a new ssh session, run the alias as shown below and leave this running until you are done with this lab.
-
 
 ![](images/all/f2.png)
 
@@ -89,7 +84,6 @@ NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop t
 
 ![](images/all/f9.png)
 
-
 Let’s check to see if any tables exist in the ggtarget2cass Cassandra keyspace. The expected result is an error “unconfigured table …” – since the tables have not been created by GG yet. That will be done when GG encounters the first transaction for a new table.
 
 ![](images/all/f10.png)
@@ -104,8 +98,6 @@ Starting with GG version 12.3.0.1.0, GG automatically creates the Cassandra tabl
 
 ![](images/all/f12.png)
 ![](images/all/f13.png)
-
-
 
 Now we’ll apply some changes to the source database
 
@@ -128,11 +120,11 @@ End of Lab 7.
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott
- - ** Contributors ** - Brian Elliott
- - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott
- - ** Expiration Date ** – July 2021
+  * Authors ** - Brian Elliott
+  * Contributors ** - Brian Elliott
+  * Team ** - Data Integration Team
+  * Last Updated By/Date ** - Brian Elliott, August 2020
+
   
 # Congrats! You have completed the GoldenGate for Big Data Workshop!! 
 

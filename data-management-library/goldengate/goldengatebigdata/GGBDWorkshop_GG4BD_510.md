@@ -1,21 +1,18 @@
 # Lab 5 -   MySQL --> HBase
-Aug 6, 2020
-
-Lab Architecture
-
-![](images/500/image501_1.png)
-
 
 ### Introduction
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
 process ‘rhbase’ will read the remote trail files, create the HBase tables and write the data to those tables.
 
+Lab Architecture
+
+![](images/500/image501_1.png)
+
+Time to Complete -
+Approximately 30 minutes
+
 ### Objectives
 - GoldenGate replication from **MySQL to HBase**
-
-### Time to Complete
-Approximately 60 minutes
-
 
 ## Before You Begin
 For the Lab terminal session:
@@ -111,8 +108,8 @@ Open a Browser window> http://127.0.0.1:8888/ Login to Hue: cloudera/cloudera
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott
- - ** Contributors ** - Brian Elliott
- - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott
- - ** Expiration Date ** – July 2021
+  * Authors ** - Brian Elliott
+  * Contributors ** - Brian Elliott
+  * Team ** - Data Integration Team
+  * Last Updated By/Date ** - Brian Elliott, August 2020
+ 

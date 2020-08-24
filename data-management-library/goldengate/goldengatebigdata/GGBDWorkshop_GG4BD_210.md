@@ -1,10 +1,4 @@
 # Lab 2 -  MySQL  -> MySQL unidirectional replication
-Aug 6, 2020
-
-Lab Architecture
-
-![](images/200/image200_1.png)
-
 
 
 ### Introduction
@@ -14,8 +8,11 @@ In this lab we will load data in MySQL database ‘ggsource’. The GG extract p
 capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process
 ‘pmpmysql’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘repmysql’ will read the remote trail files, and apply the changes to the MySQL database ‘ggtarget’
 
+Lab Architecture
 
-### Time to Complete
+![](images/200/image200_1.png)
+
+Time to Complete -
 Approximately 30 minutes
 
 If at a terminal session:
@@ -88,10 +85,10 @@ End of Lab 2.
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott
- - ** Contributors ** - Brian Elliott
- - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott
- - ** Expiration Date ** – July 2021
+  * Authors ** - Brian Elliott
+  * Contributors ** - Brian Elliott
+  * Team ** - Data Integration Team
+  * Last Updated By/Data ** - Brian Elliott, Augsut 2020
+
 
 

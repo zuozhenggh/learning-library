@@ -1,15 +1,8 @@
 # Lab 1 -  Installation of Golden Gate for BigData Workshop: 
 
 
-![](images/100/image110_1.png)
+## Introduction
 
-## Want to learn more:
-" https://www.oracle.com/middleware/data-integration/goldengate/big-data/ "
-
-### Introduction
-Contents
-
-Introduction
  Disclaimer
   Oracle GoldenGate for Big Data Workshop Architecture 
   Setup the QuickStart VM for GoldenGate for Big Data Workshop
@@ -30,9 +23,14 @@ Lab 6 – MySQL --> Kafka (Json format)
 
 Lab 7 – MySQL --> Cassandra 
 
-Appendix A – Handler Configuration Properties 
+Below is an architectural diagram of our labs
 
-Appendix B – Command Reference List
+![](images/100/image110_1.png)
+
+Estimated Lab Time: Approximately 30 min
+
+## Want to learn more:
+" https://www.oracle.com/middleware/data-integration/goldengate/big-data/ "
 
 ### Objectives
 
@@ -62,29 +60,30 @@ Oracle GoldenGate for Big Data’s real-time data streaming platform also allows
 Oracle GoldenGate for Big Data offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data
 integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making.
 
+### Prerequisites
+
+Oracle GoldenGate for Big Data requires a basic understanding of Big Data Concepts.
+
+## Appendix - Big Data and Goldengate command references
+
+Appendix A – Handler Configuration Properties 
+
+Appendix B – Command Reference List
+
 ### Disclaimer
 
 This workshop is only for learning and testing purposes. None of the files from the labs should be used in a production environment. 
 
-### Time to Complete
 Approximately 30 min
 
 ### What Do you need next
 - [GoldenGate Big Data](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
-
-### STEP 1: Access GGBD Image 
-
-          Will update with Live Labs connectivity
-
-
-### Lab1
+## Lab1
 
 Lab 1 – Install GoldenGate binaries for Big Data
 
-
 PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS (not root)
-
 
 In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
@@ -124,13 +123,13 @@ You have completed lab 1! Great Job!
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott
- - ** Contributors ** - Brian Elliott
- - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott
- - ** Expiration Date ** – July 2021
+  * Authors ** - Brian Elliott, Data Integration
+  * Contributors ** - Brian Elliott
+  * Team ** - Data Integration Team
+  * Last Updated By/Date ** - Brian Elliott, August 2020
 
-Please submit an issue on our issues page:
-[issues](https://github.com/oracle/learning-library/issues) 
+## See an issue?
 
- We review it regularly.
+Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
+  
+  We review it regularly.

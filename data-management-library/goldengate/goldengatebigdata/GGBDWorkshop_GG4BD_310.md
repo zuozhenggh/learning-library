@@ -1,15 +1,17 @@
 # Lab 3 -  MySQL --> HDFS (delimited text format)
-Aug 6, 2020
 
-Lab Architecture
-
-![](images/300/image300_1.png)
 
 ## Introduction
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
 process ‘rhdfs’ will read the remote trail files, and write the data to the HDFS target directory
 /user/ggtarget/hdfs/
 
+Lab Architecture
+
+![](images/300/image300_1.png)
+
+Time to Complete -
+Approximately 30 minutes
 ### Objectives
 - GoldenGate replication from **MySQL to HDFS**
 
@@ -125,8 +127,8 @@ End of Lab 3.
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott
- - ** Contributors ** - Brian Elliott
- - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott
- - ** Expiration Date ** – July 2021
+  * Authors ** - Brian Elliott
+  * Contributors ** - Brian Elliott
+  * Team ** - Data Integration Team
+  * Last Updated By/Date ** - Brian Elliott, August 2020
+  
