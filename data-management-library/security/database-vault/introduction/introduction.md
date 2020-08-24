@@ -1,4 +1,4 @@
-﻿![](../../images/banner_DV.PNG)
+﻿# Database Vault
 
 Oracle Database Vault provides controls to prevent unauthorized privileged users from accessing sensitive data and to prevent unauthorized database changes.
 The Oracle Database Vault security controls protect application data from unauthorized access, and comply with privacy and regulatory requirements.
