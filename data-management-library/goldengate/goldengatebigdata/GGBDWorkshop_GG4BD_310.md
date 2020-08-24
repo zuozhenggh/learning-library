@@ -1,9 +1,7 @@
 # Lab 3 -  MySQL --> HDFS (delimited text format)
 
 ## Introduction
-In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
-process ‘rhdfs’ will read the remote trail files, and write the data to the HDFS target directory
-/user/ggtarget/hdfs/
+This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 
 Lab Architecture
 
