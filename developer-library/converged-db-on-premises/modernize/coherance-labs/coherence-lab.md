@@ -87,6 +87,7 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
     
 ## Lab 1: Contacts 
 
+This Lab shows the most basic data access features of Coherence including getting, putting and removing data from a provided contacts.csv file.
 
 1.	Start one or more cache servers in First Terminal window : bin/run-cache-server. 
 
@@ -103,6 +104,9 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 
 
 ## Lab 2: Security
+
+The Coherence security Lab set gets a cache reference that requires a password an attempts cache and invocation service operations that require different roles.
+
 The security example requires Coherence*Extend, which uses a proxy.
 1.	Start one or more cache servers First Terminal window: bin/run-cache-server security. 
 
@@ -120,6 +124,9 @@ The security example requires Coherence*Extend, which uses a proxy.
 
 
 ## Lab 3:  Live events 
+
+The Live events Lab illustrates: how to measure the elapsed time between pre- and post-events which are inserted into a results cache; the semantics of throwing exceptions in pre- and post-commit events, and how partition redistribution events can be logged.
+
 1.	Start one or more cache servers First Terminal window: bin/run-cache-server events. 
 
     Each execution starts a cache server cluster node. 
@@ -136,6 +143,9 @@ The security example requires Coherence*Extend, which uses a proxy.
 
 
 ## Lab 4: Java 8 features 
+
+The Coherence Java 8 features Lab illustrates: how to use the Java streams when querying and processing cache entries; how Lambda features can be used to simplify common Coherence tasks and how to query and process cache entries 
+
 1.	Start a cache server First Terminal window: bin/run-cache-server.
 
     Wait for the Cache Server to start in a few seconds
@@ -150,6 +160,9 @@ The security example requires Coherence*Extend, which uses a proxy.
 
 
 ## Lab 5: Asynchronous features 
+
+The Coherence asynchronous features lab illustrates: how to asynchronously get and put data in a cache; how to asynchronously process cache entries; how to asynchronously aggregate cache entries.
+
 1.	Start a cache server First Terminal window: bin/run-cache-server.
 
     Wait for the Cache Server to start in a few seconds
