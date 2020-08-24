@@ -45,20 +45,24 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 - resource	
     The data file used for the contacts LoaderExample: contacts.csv.
  
-## Execute the run script for each Lab
+ 
 
 ## Verify Environment
 
     Open Two Terminal windows and verify ENVIRONMENT in each as below
     Please verify the JAVA_HOME from a terminal window
 
-    Type: echo $JAVA_HOME
+        Type: export JAVA_HOME="/u01/oas/javaln/jdk1.8.0_261"
+        Type: export PATH=$JAVA_HOME/bin:$PATH
+        Type: echo $JAVA_HOME
 
-    Verify COHERENCE_HOME
+        Verify COHERENCE_HOME
 
-    Type:  echo $COHERENCE_HOME
+        Type:  echo $COHERENCE_HOME
 
-    Change Directory to Java Samples in both Terminal Windows
+![](./images/set_env.png " ") 
+
+    Change Directory to Java Samples in both Terminal Windows ((/u01/middleware/14c/coherence/examples/java)
 
     Type:  cd $COHERENCE_HOME/examples/java
 
@@ -76,7 +80,7 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
         bin/build async
 
 
-    Now Run all the Labs from this folder $COHERENCE_HOME/examples/java
+    Now Run all the Labs below from this folder $COHERENCE_HOME/examples/java
     in both Terminal Windows
 
     cd $COHERENCE_HOME/examples/java
@@ -90,12 +94,12 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 
     Wait for the Cache Server to start in a few seconds
 
-    ![](./images/run_cache_server_output.png " ") 
+    ![](./images/run_cache_server.png " ") 
 
 2.	In the second Terminal window, run with the name of the example: bin/run contacts. The Driver.main method runs through the features of the example with output going to the command window (stdout).
 
 
-    ![](./images/contact_output.png " ")  
+    ![](./images/run_contacts.png " ")  
 
 
 ## Lab 2: Security
@@ -106,13 +110,13 @@ The security example requires Coherence*Extend, which uses a proxy.
 
     Wait for the Cache Server to start in a few seconds
 
-     ![](./images/run_cache_server_output.png " ") 
+     ![](./images/run_cache_server.png " ") 
 
 2.	In the second Terminal window, run with the name of the example: bin/run security. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout).
 
-    ![](./images/security_output.png " ")  
+    ![](./images/run_security.png " ")  
 
 
 ## Lab 3:  Live events 
@@ -122,13 +126,13 @@ The security example requires Coherence*Extend, which uses a proxy.
     
     Wait for the Cache Server to start in a few seconds
 
-     ![](./images/run_cache_server_output.png " ")
+     ![](./images/run_cache_server.png " ")
 
 2.	In the second Terminal window, run with the name of the example: bin/run events. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout).
 
-    ![](./images/events_output.png " ") 
+    ![](./images/run_events.png " ") 
 
 
 ## Lab 4: Java 8 features 
@@ -136,13 +140,13 @@ The security example requires Coherence*Extend, which uses a proxy.
 
     Wait for the Cache Server to start in a few seconds
 
-     ![](./images/run_cache_server_output.png " ") 
+     ![](./images/run_cache_server.png " ") 
 
 2.	In the second Terminal window, run with the name of the example: bin/run java8. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/java8.
 
-    ![](./images/java8_output.png " ") 
+    ![](./images/run_java8.png " ") 
 
 
 ## Lab 5: Asynchronous features 
@@ -150,14 +154,14 @@ The security example requires Coherence*Extend, which uses a proxy.
 
     Wait for the Cache Server to start in a few seconds
 
-     ![](./images/run_cache_server_output.png " ") 
+     ![](./images/run_cache_server.png " ") 
 
 2.	In the second Terminal window, run with the name of the example: bin/run async. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/async.
 
 
-    ![](./images/async_output.png " ") 
+    ![](./images/run_async.png " ") 
 
 
 
