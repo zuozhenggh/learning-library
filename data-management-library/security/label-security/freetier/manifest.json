@@ -24,12 +24,12 @@
             "filename":"../get-connected/get-connected.md"
         },
         {
-            "title": "Simple CRM App",
+            "title": "Lab 3: Simple CRM App",
             "description": "In this lab you will learn how to leverage OLS to track consent and force restriction for GDPR",
             "filename": "../simple-crm-app/simple-crm-app.md"
         },
         {
-            "title": "Protect HR Application",
+            "title": "Lab 4: Protect HR Application",
             "description": "This lab walks you through the steps to protect a simple HR application",
             "filename": "../protect-glassfish-app/protect-glassfish-app.md"
         }
