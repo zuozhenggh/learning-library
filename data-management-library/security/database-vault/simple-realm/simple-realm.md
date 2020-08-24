@@ -73,8 +73,3 @@ When you have completed this lab, you can drop the Realm
 ````
 <copy>./06_drop_realm.sh</copy>
 ````
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

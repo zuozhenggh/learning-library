@@ -39,8 +39,3 @@ View the keystore data in the database
 ````
 
    ![](../images/TDE_009.PNG)
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

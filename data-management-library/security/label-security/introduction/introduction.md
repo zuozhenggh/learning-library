@@ -1,8 +1,8 @@
-![](../../images/banner_OLS.PNG)
+# Label Security
 
 Oracle Label Security controls the display of individual table rows using labels that are assigned to specific individual table rows and application users.
 
-![](images/OLS_Concept.PNG)
+![](../images/OLS_Concept.PNG)
 
 Oracle Label Security works by comparing the row label with a user's label authorizations to enable you to easily restrict sensitive information to only authorized users. This way, users with different authorization levels (for example, managers and sales representatives) can have access to specific rows of data in a table. You can apply Oracle Label Security policies to one or more application tables. The design of Oracle Label Security is similar to Oracle Virtual Private Database (VPD). However, unlike VPD, Oracle Label Security provides the access mediation functions, data dictionary tables, and policy-based architecture out of the box, eliminating customized coding and providing a consistent label based access control model that can be used by multiple applications.
 
@@ -39,26 +39,18 @@ Oracle Label Security provides several benefits for controlling row level manage
 - It integrates with Oracle Database Vault and Oracle Advanced Security Data Redaction, enabling security clearances to be use in both Database Vault command rules and Data Redaction policy definitions.
 
 ---
-![](../../images/banner_Docs.PNG)
 
 - [Oracle Label Security 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/olsag/introduction-to-oracle-label-security.html#GUID-C20C62AE-2A30-45F9-AEEA-52A0D3286FBA)
 
 ---
-![](../../images/banner_Video.PNG)
-
-&nbsp; Watch Label Security presentation on OTube (**Internal only**):
-- [Second Thursday: Label Security](https://otube.oracle.com/media/Second+Thursday+April+2020+-+Label+Security/1_t9pfyi6d) *(April 2020)*
-
----
-![](../../images/banner_Labs.PNG)
 
 Version tested in this lab: `Oracle DB 19.5`
 
 For these labs, you will need **Glassfish App**
 
-- [Simple CRM Application](Simple_CRM_App/README.md)
+- [Simple CRM Application](../simple-crm-app/simple-crm-app.md)
 
-- [Protect Glassfish Application](Protect_Glassfish_App/README.md)
+- [Protect Glassfish Application](../protect-glassfish-app/protect-glassfish-app.md)
 
 ---
 

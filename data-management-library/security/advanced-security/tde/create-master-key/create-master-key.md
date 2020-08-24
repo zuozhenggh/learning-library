@@ -45,8 +45,3 @@ This is not a requirement though. It might be helpful to show some databases wit
    ![](../images/TDE_007.PNG)
 
 Now, you have a master key and you can begin encrypting tablespaces or column!
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

@@ -98,8 +98,3 @@ Once you have successfully completed the lab, you can delete the Command Rule, R
 ````
 
    ![](../images/DV_026.PNG)
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

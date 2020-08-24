@@ -73,8 +73,3 @@ Before moving to the next lab, we will remove the command rule and clean out the
 
 ````
 <copy>./07_drop_command_rule.sh</copy>
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

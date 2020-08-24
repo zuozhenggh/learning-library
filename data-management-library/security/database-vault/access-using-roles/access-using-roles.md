@@ -57,8 +57,3 @@ Once you have successfully completed the lab, you can delete the Command Rule, R
 ````
 
 You have completed the Database Vault lab on Trusted Application Path. 
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

@@ -44,8 +44,3 @@ The tablespace `TEST` will be created without specifying the encryption paramete
    ![](../images/TDE_020.PNG)
 
 Now, your new Tablespaces will be encrypted by default!
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

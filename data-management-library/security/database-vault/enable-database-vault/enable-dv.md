@@ -40,8 +40,3 @@ Now you will see a status like this:
     
 Now, Database Vault is enabled in the container database as well as `PDB1`!<br>
 <br>&nbsp;
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

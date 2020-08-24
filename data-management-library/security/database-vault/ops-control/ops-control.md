@@ -78,8 +78,3 @@ When you are have completed this lab, disable Ops Control
 ````
         
    ![](../images/DV_009.PNG)
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

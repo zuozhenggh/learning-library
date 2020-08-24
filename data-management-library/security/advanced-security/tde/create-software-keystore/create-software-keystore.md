@@ -48,8 +48,3 @@ You will see the status result goes from `NOT_AVAILABLE` to `OPEN_NO_MASTER_KEY`
    ![](../images/TDE_004.PNG)
     
 Now, your wallet has been created
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

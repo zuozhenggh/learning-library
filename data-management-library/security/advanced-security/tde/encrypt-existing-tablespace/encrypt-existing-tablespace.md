@@ -47,8 +47,3 @@ You will see that all of the data is now encrypted!
 ---
 **Note:** This lab has been executed against the pluggable database, PDB1.<br>
 You can repeat this, manually, or by using Enterprise Manager, for PDB2 if you want more practice.
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

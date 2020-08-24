@@ -48,8 +48,3 @@ Verify the initialization parameters don't say anything about TDE
 ````
 <copy>./05_check_init_params.sh</copy>
 ````
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

@@ -65,8 +65,3 @@ And no changes to the wallet in the database
    ![](../images/TDE_014.PNG)
 
 Now your Autologin is created!
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

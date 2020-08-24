@@ -30,8 +30,3 @@ Once it has completed, it will automatically restart the container and pluggable
 
 ---
 **Note:** If you have executed this script before and there is an existing backup file, the script will not complete. You must manually manage the existing backup (delete or move) before running this script again.
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)

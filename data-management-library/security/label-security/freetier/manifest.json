@@ -10,7 +10,7 @@
             "title": "Introduction",
             "description":"Understand what Label Security is and what it can do",
             "publisheddate": "06/30/2020",
-            "filename":"intro/intro.md"
+            "filename":"../introduction/introduction.md"
         },
         {
             "title": "Lab 1: Generate SSH Keys",
@@ -21,17 +21,17 @@
             "title": "Lab 2: Getting Connected to the lab environment",
             "description":"How to get connected to the workshop environment",
             "publisheddate": "06/30/2020",
-            "filename":"intro/get-connected.md"
+            "filename":"../get-connected/get-connected.md"
         },
         {
             "title": "Simple CRM App",
             "description": "In this lab you will learn how to leverage OLS to track consent and force restriction for GDPR",
-            "filename": "simple_crm_app/simple_crm_app.md"
+            "filename": "../simple-crm-app/simple-crm-app.md"
         },
         {
             "title": "Protect HR Application",
             "description": "This lab walks you through the steps to protect a simple HR application",
-            "filename": "protect_glassfish_app/protect_glassfish_app.md"
+            "filename": "../protect-glassfish-app/protect-glassfish-app.md"
         }
     ]
 }

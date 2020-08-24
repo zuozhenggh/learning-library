@@ -57,7 +57,3 @@ For these labs, you can also use **Enterprise Manager**, **Glassfish** or **SQL 
 - [How to use Operations Control to protect pluggable databases](dir-ops-control/ops-control.md)
 
 - When you are finished, you can [disable Database Vault](dir-disable-database-vault/disable-database-vault.md) and run through the labs again to see just how much is possible without effective controls
-
----
-
-Click to return [home](/README.md)

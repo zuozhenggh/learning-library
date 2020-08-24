@@ -32,9 +32,3 @@ If you want, you can do the same for PDB2.  This is not a requirement though. It
 ````
     
 Now that you have a master key, you can begin encrypting tablespaces or column. 
-
-
----
-Move up one [directory](../README.md)
-
-Click to return [home](/README.md)
