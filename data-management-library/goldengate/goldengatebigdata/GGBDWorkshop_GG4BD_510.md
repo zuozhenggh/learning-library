@@ -19,9 +19,7 @@ For the Lab terminal session:
 
 If at a terminal session:
 
-'>su - ggadmin
-
-User and Password:
+su - ggadmin
 
 User ID: ggadmin
 Password:  oracle

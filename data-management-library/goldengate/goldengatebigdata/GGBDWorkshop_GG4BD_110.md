@@ -1,6 +1,5 @@
 # Lab 1 -  Installation of Golden Gate for BigData Workshop: 
 
-
 ## Introduction
 
  Disclaimer

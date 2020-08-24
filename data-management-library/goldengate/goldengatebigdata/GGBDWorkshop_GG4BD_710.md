@@ -18,9 +18,7 @@ Approximately 30 minutes
 
 If at a terminal session:
 
-'>su - ggadmin
-
-User and Password:
+su - ggadmin
 
 User ID: ggadmin
 Password:  oracle

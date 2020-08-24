@@ -1,6 +1,5 @@
 # Lab 2 -  MySQL  -> MySQL unidirectional replication
 
-
 ### Introduction
 
 This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.

@@ -8,7 +8,6 @@ HDFS/Hive Properties
 
 ![](images/all/aa2.png)
 
-
 ![](images/all/aa3.png)
 
 Kafka Properties
@@ -18,7 +17,6 @@ Kafka Properties
 ![](images/all/aa6.png)
 ![](images/all/aa7.png)
 
-
 # Appendix B – Command Reference List
 
 
@@ -26,8 +24,6 @@ Aliases have been created for this workshop, so that you can focus on GG functio
 
 ![](images/all/bb1.png)
 ![](images/all/bb2.png)
-
-
 
 ## Acknowledgements
 

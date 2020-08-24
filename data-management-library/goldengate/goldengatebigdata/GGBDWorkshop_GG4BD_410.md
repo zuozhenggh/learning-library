@@ -1,16 +1,5 @@
 # Lab 4 -  MySQL --> Hive (Avro format)
 
-## Before You Begin
-
-If at a terminal session:
-
-'>su - ggadmin
-
-User and Password:
-
-User ID: ggadmin
-Password:  oracle
-
 ### Introduction
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
 process ‘rhive’ will read the trail file, create the Hive tables, write the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and /user/ggtarget/hive/schema/*
@@ -32,6 +21,13 @@ For the Lab terminal session:
 use ggadmin/oracle to log into your new Lab4
 
 ------
+
+## Before You Begin
+
+If at a terminal session:
+
+User ID: ggadmin
+Password:  oracle
 
 ### STEP 1: Setting up the Environment For MySQL.
     

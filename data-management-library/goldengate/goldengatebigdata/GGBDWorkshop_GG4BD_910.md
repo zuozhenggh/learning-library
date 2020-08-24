@@ -1,16 +1,14 @@
-
 # Optional:Lab 9: MySQL to Oracle (using jdbc)
 
 ## Before You Begin
 
 ### Introduction
-In this lab we will use goldengate for bigdata Java Database Connectivity (JDBC) Handler to replicate source transactional data to a target or database.
+In this lab is a read-only example on how we use goldengate for bigdata Java Database Connectivity (JDBC) Handler to replicate source transactional data to a target or database.
 
 ### Objectives
 - Replicate from **MySQL to Oracle using jdbc**
 
-### Time to Complete
-Approximately 30 minutes
+Time to Complete - Approximately 30 minutes
 
 ### What Do You Need?
 Your will need:
@@ -20,7 +18,6 @@ Your will need:
 ### STEP 1: Setting up the Environment For Connection 
 
 1. We already have a trail file created in the GGBD home. We will be using the same trail file to replicate .
-
 
 Example:
 
@@ -83,8 +80,7 @@ GGSCI (gg4bd-target01) 8> exit
 [oracle@gg4bd-target01 ggbd_home1]$ cd dirprm
 [oracle@gg4bd-target01 dirprm]$ vi jdbc_oracle_with_mdp.props
 ```
-
-Below are the parametrs we will be using.
+Below are the parameters we will be using.
 ```
 gg.handlerlist=jdbcwriter
 gg.handler.jdbcwriter.type=jdbc
@@ -102,7 +98,6 @@ gg.mdp.DriverClassName=oracle.jdbc.driver.OracleDriver
 gg.mdp.UserName=employees
 gg.mdp.Password=employees
 
-
 goldengate.userexit.writers=javawriter
 javawriter.stats.display=TRUE
 javawriter.stats.full=TRUE
@@ -111,9 +106,7 @@ gg.log.level=INFO
 gg.report.time=30sec
 javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
 ```
-
-5. Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
-
+Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
 
 ![](images/1100/image9xx_1.png)
 
@@ -141,9 +134,9 @@ select 'salaries        table -> '|| count(1) from employees.salaries;
 
 ## Acknowledgements
 
- - ** Authors ** - Brian Elliott, Zia Khan
- - ** Contributors ** - Brian Elliott, Zia Khan
- - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott, Zia Khan
- - ** Expiration Date ** – July 2021
+  * Authors ** - Brian Elliott, Zia Khan
+  * Contributors ** - Brian Elliott, Zia Khan
+  * Team ** - Data Integration Team
+  * Last Updated By ** - Brian Elliott, Zia Khan
+ 
 
