@@ -8,6 +8,8 @@ With Object Storage, you can safely and securely store or retrieve data directly
 
 Object Storage is a regional service and is not tied to any specific compute instance. You can access data from anywhere inside or outside the context of the Oracle Cloud Infrastructure
 
+Estimated Lab Time: 15 minutes
+
 **Object storage offers 2 tiers:**
 
 1- Use Standard for data to which you need fast, immediate, and frequent access. Data accessibility and performance justifies a higher price point to store data in the Object Storage
@@ -25,12 +27,13 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 
 1. Sign in using your tenant name, user name and password.
 
-2. Once signed in select the compartment assigned to you from drop down menu on left part of the screen
-
-3. From the OCI Services menu, click **Object Storage** then **Create Bucket**
-
-  **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+2. From the OCI Services menu, click **Object Storage**.
   ![](images/OBJECT-STORAGE001.PNG " ")
+
+3. Click **Create Bucket**.
+  ![](images/OBJECT-STORAGE012.PNG " ")
+  **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+  
 
 4. Fill out the dialog box:
 
@@ -38,7 +41,7 @@ The purpose of this lab is to give you an overview of the Object Service and an 
     - Storage Tier: STANDARD
 
 5.  Click **Create Bucket**
-  ![](images/OBJECT-STORAGE002.PNG " ")
+  ![](images/OBJECT-STORAGE013.PNG " ")
 
 ## **STEP 2**: Upload Object and create pre authenticated link
 
@@ -65,6 +68,7 @@ The purpose of this lab is to give you an overview of the Object Service and an 
   This should create a file by the name "samplefile" in the current folder
 
 3. Switch to OCI window and click the Bucket Name.
+  ![](images/OBJECT-STORAGE014.PNG " ")
 
 4. Bucket detail window should be visible. Click **Upload**
   ![](images/OBJECT-STORAGE007.PNG " ")
@@ -81,7 +85,7 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 
     - NAME: Use an easy to remember name.
     - PRE AUTHENTICATION REQUEST TARGET: OBJECT
-    - ACCESS TYPE: PERMIT READS ON THE OBJECT
+    - ACCESS TYPE: PERMIT READ ON THE OBJECT
     - EXPIRATION DATE/TIME: Specify link expiration date
 
 9. Click **Create Pre-Authenticated Request**
@@ -110,8 +114,8 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Tom McGinn, Database Product Management
-- **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
-- **Last Updated By/Date** - Tom McGinn, July 2020
+- **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
+- **Last Updated By/Date** - Kamryn Vinson, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
