@@ -338,11 +338,9 @@ To summarize some of the key numeric metrics, for example revenue we can use “
 1. Click (+) symbol on the top section as circle in the below screenshot and select the fields required, here we have selected Year, Month, Account Group.
     ![](./images/oascdb65.png " ")
 
-2. The result canvas will look like below.
+2. The result canvas will look like below, and we can select filter values as required
     ![](./images/oascdb66.png " ")
 
-3. We can select the filter attribute values as required. Here we have selected **Year=2015, Account Group= Non-contingeg=nt Salaroies and Supplies and Month = Apr-15,Aug-15,Jan-15 and May-15**.
-   ![](./images/oascdb66.1.png " ")
 
 With this lab, you have learned OAS self-service analytics with capabilities including data loading, data preparation, data mashups, designing canvas, different types of visualization graphs in simple easy to use interface.
 
