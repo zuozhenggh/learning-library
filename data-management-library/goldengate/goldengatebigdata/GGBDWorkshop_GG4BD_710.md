@@ -36,7 +36,6 @@ The following Lab Menu will be displayed
 select R to reset the lab environment, then select 7.
 Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
-![](images/700/Lab7Menu.png)
 
 The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 

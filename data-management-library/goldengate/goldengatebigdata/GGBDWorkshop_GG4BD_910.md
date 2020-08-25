@@ -110,8 +110,6 @@ javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./
 ```
 Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
 
-![](images/1100/image9xx_1.png)
-
 And we can goto the database and see the record count as well. For that log in to GG4BD_Source01 (129.213.97.81)
 
 ```
@@ -136,9 +134,9 @@ select 'salaries        table -> '|| count(1) from employees.salaries;
 
 ## Acknowledgements
 
-  * Authors ** - Brian Elliott, Zia Khan
-  * Contributors ** - Brian Elliott, Zia Khan
+  * Authors ** - Brian Elliott
+  * Contributors ** - Brian Elliott
   * Team ** - Data Integration Team
-  * Last Updated By ** - Brian Elliott, Zia Khan
+  * Last Updated By/Date ** - Brian Elliott, August 2020
  
 
