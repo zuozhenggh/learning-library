@@ -12,25 +12,25 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
     ![](images/Grafana_015.PNG " ")
 
-2. From the OCI Services menu, click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**.
+2. From the OCI Services menu, click **Networking** -> **Virtual Cloud Networks**. Select the compartment assigned to you from drop down menu on left side of the screen and click **Create VCN**.
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list.
 
 3. Fill out the dialog box:
 
-      - **VCN NAME**: Provide a name
+      - **NAME**: Provide a VCN name
       - **COMPARTMENT**: Ensure your compartment is selected
-      - **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
+      - **CIDR BLOCK**: Enter 10.0.0.0/16
 
-4. Click **Create Virtual Cloud Network**.
+4. Click **Create VCN**.
 
 5. Virtual Cloud Network will be created and VCN name will appear on OCI Console. Scroll down to find your VCN if multiple VCN exist, and Click your VCN name.
 
-6. In VCN details page,  Click **Internet Gateways** under Resources, and Click **Create Internet Gateway**. Fill out the dialog box. Click **Create Internet Gateway** (ensure correct compartment is selected).
+6. In VCN details page, click **Internet Gateways** under Resources, and Click **Create Internet Gateway**. Fill out the dialog box. Click **Create Internet Gateway** (ensure correct compartment is selected).
 
     ![](images/OCI_Advanced_002.PNG " ")
 
-7. Click **Route tables**, and Click **Default Route Table for `<VCN_NAME>`**.
+7. Click **Route tables**, and click on **Default Route Table for `<VCN_NAME>`**.
 
     ![](images/OCI_Advanced_003.PNG " ")
 
@@ -38,20 +38,19 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
       - **Target Type**: Internet Gateway
       - **Destination CIDR Block**: 0.0.0.0/0
-      - **Compartment**: Your Compartment.
       - **Target Internet Gateway**: Select the Internet Gateway created previously.
 
 9. Click **Add Route Rules**.
 
-10. Click **VCN** and then **Subnets** then **Create Subnet**. Fill out the dialog box:
+10. Click on your VCN and then **Subnets** then **Create Subnet**. Fill out the dialog box:
 
-    - **Name**: Enter a name (for example Management Peering subnet).
+    - **Name**: Enter a name (for example subnet01).
     - **Subnet Type**: Regional
     - **CIDR Block**: Enter 10.0.0.0/24
-    - **Route Table**: Default Route Table.
-    - **Subnet access**: Public Subnet.
-    - **DHCP Options**: Select the default.
-    - **Security Lists**: Default Security List
+    - **Route Table**: Select Default Route Table
+    - **Subnet access**: Public Subnet
+    - **DHCP Options**: Select Default DHCP Options
+    - **Security Lists**: Select Default Security List
 
 11. Leave all other options as default, Click **Create Subnet**.
 
@@ -59,16 +58,16 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
 12. Once the Subnet is in the ‘Available’ state, Click **Local Peering Gateways**, then **Create Local Peering Gateway** (local peering gateway  is a component on a VCN for routing traffic to a locally peered VCN). Fill out the dialog box:
 
-    - **NAME**: Provide a Name
+    - **NAME**: Provide a name like lpg01
     - **CREATE IN COMPARTMENT**: Select your compartment
 
 13. Click **Create Local Peering Gateway**.
 
     ![](images/OCI_Advanced_004.PNG " ")
 
-14. Create a second VCN using steps above use CIDR block:
+14. Create a second VCN using steps above but this time use a non-overlapping CIDR block:
 
-    -**CIDR BLOCK**: 10.10.0.0/16
+    -**CIDR BLOCK**: 172.16.0.0/16
 
 15. Add Internet Gateway for Second VCN.
 
@@ -76,7 +75,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
     - **Name**: Enter a name (for example Marketing Peering subnet)
     - **Subnet Type**: Regional
-    - **CIDR Block**: Enter 10.10.0.0/24
+    - **CIDR Block**: Enter 172.16.0.0/24
     - **Route Table**: Default Route Table.
     - **Subnet access**: Public Subnet.
     - **DHCP Options**: Select the default.
@@ -93,7 +92,6 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
     - **Target Type**: Internet Gateway
     - **Destination CIDR Block**: 0.0.0.0/0
-    - **Compartment**: Select Your Compartment
     - **Target Internet Gateway**: Select second VCN's internet gateway
 
 19. Leave all other options as default, Click **Create Route Table**.
@@ -103,67 +101,57 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
     - **NAME**: Provide a Name
     - **CREATE IN COMPARTMENT**: Select your compartment
 
-**WE have created two VCN with internet gateway for internet traffic, added default rule in the route table, created subnet and added two local peering gateways(one for each VCN). For VCN peering each VCN must have a local peering gateway.**
+**We have created two VCN with internet gateway for internet traffic, added default rule in the route table, created subnet and added two local peering gateways(one for each VCN). For VCN peering each VCN must have a local peering gateway.**
 
 ## **Step 2:** Create two compute instances and configure routing
 
-1. From OCI services menu, Click **Instances** under **Compute**.
+1. From OCI services menu, Click **Compute** -> **Instances**.
 
 2. Click **Create Instance**. Fill out the dialog box:
 
     **This is the first compute instance and ensure to create in the first VCN**.
 
     - **Name your instance**: Enter a name
-    - **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+    - **Image or operating system**: For the image, we recommend using the Latest Oracle Linux available.
     - **Availability Domain**: Select availability domain
-    - **Instance Type**: Select Virtual Machine
-    - **Instance Shape**: Select VM shape
+    - **Shape**: Use the default shape selected
 
     **Under Configure Networking**
     - **Virtual cloud network compartment**: Select your compartment
-    - **Virtual cloud network**: Choose the VCN
+    - **Virtual cloud network**: Choose the first VCN
     - **Subnet Compartment:** Choose your compartment.
     - **Subnet:** Choose the Public Subnet under **Public Subnets**
     - **Use network security groups to control traffic** : Leave un-checked
     - **Assign a public IP address**: Check this option
-
-    ![](images/RESERVEDIP_HOL0011.PNG " ")
-
     - **Boot Volume:** Leave the default
-    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
+    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key created under Cloud Shell.
 
 3. Click **Create**.
 
-    **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD.
-
-    ![](images/RESERVEDIP_HOL0011.PNG " ")
+    **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1 or choose a different AD.
 
 4. Repeat the steps to create a second compute instance in the **Second VCN**.
 
     - **Name your instance**: Enter a name
-    - **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+    - **Image or operating system**: For the image, we recommend using the Latest Oracle Linux available.
     - **Availability Domain**: Select availability domain
-    - **Instance Type**: Select Virtual Machine
-    - **Instance Shape**: Select VM shape
+    - **Shape**: Use the default shape selected
 
     **Under Configure Networking**
     - **Virtual cloud network compartment**: Select your compartment
-    - **Virtual cloud network**: Choose the VCN
+    - **Virtual cloud network**: Choose the second VCN
     - **Subnet Compartment:** Choose your compartment.
     - **Subnet:** Choose the Public Subnet under **Public Subnets**
     - **Use network security groups to control traffic** : Leave un-checked
     - **Assign a public IP address**: Check this option
-
-    ![](images/RESERVEDIP_HOL0011.PNG " ")
-
     - **Boot Volume:** Leave the default
-    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
+    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key created under Cloud Shell.
 
 5. Click **Create**.
 
 6. Once the instances are in running state, note down the public and private IP addresses of the two compute instances.
 
-7. Configure **First local peering gateway**. Click **Local Peering gateway** in your VCN details page. Hover over the action icon (3 vertical dots) and Click **Establish Peering Connection**.
+7. Configure **First local peering gateway**. Click **Local Peering gateway** in your first VCN details page. Hover over the action icon (3 vertical dots) and Click **Establish Peering Connection**.
 
     ![](images/OCI_Advanced_005.PNG " ")
 
@@ -186,7 +174,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 11. Click **Add route rule** and add the following rule
 
     - Target Type: Select **Local Peering gateway**
-    - Destination CIDR Block: Enter 10.10.0.0/24
+    - Destination CIDR Block: Enter 172.16.0.0/24
     - Compartment:  Make sure the correct Compartment is selected:
     - TARGET LOCAL PEERING GATEWAY: Select the Local peering Gateway of First VCN
 
@@ -198,7 +186,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
 14. Enter the following ingress rule; Ensure to leave STATELESS flag un-checked
 
-    - Source CIDR: 10.10.0.0/24
+    - Source CIDR: 172.16.0.0/24
     - IP Protocol: Select ICMP.
     - Source Port Range: All
     - Destination Port Range: All
@@ -229,21 +217,20 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
 ## **Step 3:** ssh to compute instance and test VCN peering
 
-1. In git bash window, Enter command:
+1. Using Cloud Shell, enter the following command:
 
     ```
     <copy>
-    cd /C/Users/PhotonUser/.ssh
+    cd ~/.ssh/
     </copy>
     ```
 
-2. Enter **ls** and verify id\_rsa file exists.
+2. Enter **ls** and verify that your ssh file exists.
 
 3. Enter command
     ```
     <copy>
-    bash
-    ssh -i id_rsa opc@PUBLIC_IP_OF_COMPUTE
+    ssh -i <sshkeyname> opc@PUBLIC_IP_OF_FIRST_COMPUTE
     </copy>
     ```
 
@@ -253,17 +240,14 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
     **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command.
 
-1. Enter 'Yes' when prompted for security message.
+4. Enter 'Yes' when prompted for security message.
 
-    ![](images/RESERVEDIP_HOL0014.PNG " ")
+5. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
-2. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
-
-3. Enter command:
+6. Enter command:
 
     ```
     <copy>
-    bash
     ping <PRIVATE_IP_OF_SECOND_COMPUTE_INSTANCE>
     </copy>
     ```
@@ -303,7 +287,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 ## Acknowledgements
 *Congratulations! You have successfully completed the lab.*
 
-- **Author** - Flavio Pereira, Larry Beausoleil
+- **Author** - Umair Siddiqui, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 

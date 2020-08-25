@@ -3,11 +3,11 @@
 
 In this workshop you will explore how Database organizations can begin their Cloud journey with Multitenant Database by requesting a Pluggable Database (PDB) for testing purposes and perform other Lifecycle Operations like Clone, Unplug etc. You will also focus on setting up Private Cloud for PDBs and highlighting the ease of Provisioning, Resizing and even Deleting a PDB using a Self-Service option.
 
-Estimated Lab Time: 60 minutes
+*Estimated Lab Time*: 60 minutes
 
 ### Objectives
 
-The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database. 
+The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database.
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -15,13 +15,13 @@ The objective of this workshop is to highlight the Oracle Enterprise Manager Clo
     - Lab: Generate SSH Keys
     - Lab: Environment Setup
 - EM Instance Public IP address
-- OMS Console URL: *``https://<Replace with your EM13c VM Instance Public IP>:7803/em``*.
+- OMS Console URL: *https://``<Replace with your EM13c VM Instance Public IP>``:7803/em*.
     - e.g: *https://111.111.111.111:7803/em*  
 - OMS super-user Credentials:
       - Username: **sysman**
       - password: **welcome1**
-Note: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
+*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
 ### Lab Timing (Estimated)
 
@@ -33,7 +33,6 @@ Note: This lab environment is setup with Enterprise Manager Cloud Control Releas
 | 4    | Compliance Management for Pluggable Database                                                         | 10min                     | Apply a compliance standard on PDB and use corrective action to fix the violation                                                                                                | Make sure PDBs comply with compliance standards and fix them with a click of a button if there is any anomaly.                                                                                                                         |
 | 5    | Self- service to request a PDB using PDBaaS            | 10min                     | Request PDB pluggable database using Service Catalog. (Private Cloud) Resize the PDB and then Delete the PDB while preserving the contents.                                                      | Review self-service option to provision PDB, which only requires minimal inputs.                                                                                                                                                        |
 | 6    | Administrative Setup for PDBaaS (Private Cloud)- Review only               | 10min                     | An overview of the administrative setup involved for PDBaaS (Private Cloud) which includes setting up a PaaS Infrastructure Zone, Pluggable Database Pool, Data Sources, Service Template, etc. | Setup private cloud using Enterprise Manager where admin can define resources and EM’s placement algorithm and make sure that resources are utilized to their best. It is complimented by metering, and show back/chargeback capabilities. |
-
 
 ## **Step 1:** Create Pluggable Database (PDB)
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above
@@ -462,7 +461,6 @@ A Pluggable Database Pool consists of a set of Container Databases on which PDBs
   ![](images/532db10bbaab85fcdd83f245bd317a6b.jpg " ")
 
 ### Service Templates
-
 1. On the EM Console, go to **Setup**, then **Cloud**, then **Database**. Select Pluggable Database from the drop-down menu. And then click on **Service Templates from you left menu.**
 
   ![](images/47baba2a1e7567bfb0b5f89429a7831d.jpg " ")
@@ -479,16 +477,18 @@ There are two service templates pertaining to Pluggable Database
 That concludes this lab.
 
 ## Want to Learn More?
-
 - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
 - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
 - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
 - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
 
 ## Acknowledgements
-* **Author** - Pankaj Chandiramani, Oracle Enterprise Manager Product Management
-* **Adapted for Cloud by** -  Rene Fontcha, Oracle Enterprise Manager Sales Engineering
-* **Last Updated By/Date** - Kay Malcolm, August 2020
+- **Author** - Pankaj Chandiramani, Oracle Enterprise Manager Product Management
+- **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
+- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Refer to the FAQ at the bottom of the right-hand menu. While you cannot use the normal Oracle Support channel to raise a ticket for getting technical support, the vibrant [Enterprise Manager Community Forum](https://community.oracle.com/community/groundbreakers/enterprise_manager) stands to help.
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

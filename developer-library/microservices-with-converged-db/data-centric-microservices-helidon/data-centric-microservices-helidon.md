@@ -60,11 +60,12 @@ The lab will then show you metrics, health checks and probes, and tracing that h
    ![](images/fa8d34335bbf7bd8b98a2f210580135d.png " ")
 
 4. Go ahead and execute the same steps for deploying the inventory
-    Helidon service. We can actually speed this process by running the build and deploy
-    commands sequentially, using the following command.
+    Helidon service, using the following command.
 
     ```
+
     <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon  ; ./deploy.sh</copy>
+
     ```
 
    ![](images/2ee20f868b1d740d8ce7d3a7ec37fc03.png " ")
@@ -73,7 +74,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
    ![](images/d6bf26644dfc30c29ef27d64d4c5c5c9.png " ")
 
-5. Use the same method to build and deploy the supplier Helidon service. Use
+5. Use the same method to deploy the supplier Helidon service. Use
     the following command.
 
     ```

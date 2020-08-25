@@ -3,7 +3,7 @@
 
 In this lab you will upgrade your Oracle Database Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance.
 
-Estimated Lab Time: 75 minutes
+*Estimated Lab Time*: 75 minutes
 
 ### About Fleet Maintenance
 
@@ -16,7 +16,7 @@ Benefits with Fleet Maintenance:
 - Ability to schedule/retry/suspend/resume.
 - Database patching across different infrastructure including engineered systems like Exadata
 
-  ![](images/em-fleet-maintenance-overview-1.png " "
+  ![](images/em-fleet-maintenance-overview-1.png " ")
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -25,12 +25,14 @@ Benefits with Fleet Maintenance:
     - Lab: Environment Setup
 - EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: *``https://<Replace with your EM13c VM Instance Public IP>:7803/em``*.
+- OMS Console URL: *https://``<Replace with your EM13c VM Instance Public IP>``:7803/em*.
     - e.g: *https://111.111.111.111:7803/em*  
 - OMS super-user Credentials:
       - Username: **sysman**
       - password: **welcome1**
-  
+
+*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
+
 ### Lab Timing (Estimated)
 
 | Step No. | Feature                                                   | Approx. Time | Details                                                                                                              | Value Proposition |
@@ -38,9 +40,9 @@ Benefits with Fleet Maintenance:
 | 1                    | Detect Configuration Pollution                            | 10 minutes  | Analyze the database estate using Software Standardization.                                                          |                   |
 | 2                    | Oracle Database Upgrade with Fleet Maintenance | 1hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
 
-
-#### Login to Host using SSH Key based authentication
-Refer to [Environment Setup](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+## **Step 0**: Running your lab
+### Login to Host using SSH Key based authentication
+Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
@@ -48,12 +50,10 @@ Refer to [Environment Setup](https://oracle.github.io/learning-library/enterpris
   <copy>sudo su - oracle</copy>
   ````
 
-#### Login to OMS Console
+### Login to OMS Console
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
-
-## **Step 0**: Running your lab
 
 1. Update the Named Credentials with your SSH Key
 
@@ -91,7 +91,7 @@ In the interest of simplifying the setup and save time, the following steps were
   - Subscription of “finance.subnet.vcn.oraclevcn.com” Database to above image
   - Patching of “finance.subnet.vcn.oraclevcn.com” Database from 18.8 to 18.10 using Fleet Maintenance
 
-We recommend that you read through each of the steps, review the emcli command, its verbs and deployment procedures to get an understanding of what it takes to do it from scratch. For a full end-to-end hands-on execution of “patching” lab, we highly recommend [Lab 3 -Automated Database Patching at Scale with Fleet Maintenance](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-3-automated-database-patching-at-scale)
+We recommend that you read through each of the steps, review the emcli command, its verbs and deployment procedures to get an understanding of what it takes to do it from scratch. For a full end-to-end hands-on execution of “patching” lab, we highly recommend the *Automated Database Patching at Scale with Fleet Maintenance* Lab.
 
 To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at /home/oracle/fleet
 
@@ -533,9 +533,7 @@ exit</copy>
   ![](images/7626fd3264e4a514fde576ecd9369456.png " ")
 
 ### Summary
-
 This completes this lab. In this lab, you learned how to perform the following:
-
   - Create Oracle Database Software Gold Image
   - Subscribe Database to Gold Image
   - Deploy Gold Image to Database Host
@@ -549,7 +547,6 @@ This completes this lab. In this lab, you learned how to perform the following:
 Thank you!
 
 ## Want to Learn More?
-
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
   - [Oracle Enterprise Manager Fleet Maintenance](https://www.oracle.com/manageability/enterprise-manager/technologies/fleet-maintenance.html)
   - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
@@ -557,9 +554,11 @@ Thank you!
   - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
 
 ## Acknowledgements
-* **Author** - Shefali Bhargava, Oracle Enterprise Manager Product Management
-* **Adapted for Cloud by** -  Rene Fontcha, Oracle Enterprise Manager Sales Engineering
-* **Last Updated By/Date** - Kay Malcolm, August 2020
+  - **Authors**
+      - Rene Fontcha, Master Principal Solutions Architect, NA Technology
+      - Shefali Bhargava, Oracle Enterprise Manager Product Management
+  - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
+  - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
