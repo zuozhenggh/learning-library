@@ -85,11 +85,10 @@ The following table describes the directories and files that were copied to the 
 Table S-1
 | Name          | Description       | 
 | ------------- |:-------------:|
-| /documents/EBS-HOL-Workbook-January-2020.pdf     | A digital copy of this workbook, Introduction to Oracle E-Business Suite Cloud Manager Hands-On Lab. |
+| /Documents/EBS-HOL-Workbook-June-2020.pdf     | A digital copy of this workbook, Introduction to Oracle E-Business Suite Cloud Manager Hands-On Lab. |
 | /documents/Key-Data.txt      | The document used to capture key data items needed throughout the lab.     |
-| /artifacts/oci-api-keys      | Keys used to authenticate API calls to Oracle Cloud Infrastructure.
+| /artifacts/terraform/Deploy-And-Configure-EBS-CM.zip    | Set of Terraform scripts which automate the creation of the infrastructure required to deploy Oracle E-Business Suite Cloud Manager. |
 | /artifacts/ssh-keys    | Keys used to establish an SSH session with Oracle E-Business Suite Cloud Manager Compute instance. |
-| /artifacts/terraform     | Set of Terraform scripts which automate the creation of the infrastructure required to deploy Oracle E-Business Suite Cloud Manager.|
 
 ## Terminology
 
@@ -124,7 +123,7 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
 The following figure (W-1) outlines the workshop architecture.
 Figure W-1: Workshop Architecture
 
-![](./images/1.png "")
+![](./images/1.png " ")
 
 This workshop uses the following components:
 
@@ -151,7 +150,7 @@ This workshop uses the following components:
 The following figure (W-2) describes the exercises that you will perform in this workshop.
 Figure W-2: Storyboard
 
-![](./images/2.png "")
+![](./images/2.png " ")
 
 ## Accounts for Hands-On Lab Exercises
 
