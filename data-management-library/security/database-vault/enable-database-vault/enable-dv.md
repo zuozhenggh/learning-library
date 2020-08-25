@@ -1,6 +1,5 @@
-﻿![](../../../images/banner_DV.PNG)
-
-## Enabling DB Vault
+﻿
+# Enabling DB Vault
 
 Enable Database Vault in the container and `PDB1` pluggable database.
 
