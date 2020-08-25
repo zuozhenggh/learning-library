@@ -65,7 +65,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](images/copy-publickey-cloudshell.png " ")
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Option 2:  MacOS
 
@@ -104,7 +104,7 @@ You may now *proceed to the next lab*.
 
 [Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Option 3:  Windows 10
 
@@ -157,7 +157,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     * [Click here for more details on PowerShell for Windows](https://docs.microsoft.com/en-us/powershell/)
     * [Click here for more details on OpenSSH Key Management for Windows](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Option 4a: Prior Windows Versions - Git for Windows
 
@@ -209,7 +209,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     *Note: If you've already installed Git for Windows, don't bother with PuTTY. It's your choice which utility to use for key generation and terminal access.*
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Option 4b: Windows Versions - PuTTY
 
@@ -297,7 +297,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     [For more information on using PuTTY](https://the.earth.li/~sgtatham/putty/0.73/htmldoc/)
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Option 5: SSH Keys for Linux
 
@@ -341,7 +341,7 @@ You may now *proceed to the next lab*.
 
     In case you're interested, click [here](https://www.ssh.com/ssh/key) for more details on SSH, a short tutorial on initiating a connection from a Linux instance with the SSH keys we just created.
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
