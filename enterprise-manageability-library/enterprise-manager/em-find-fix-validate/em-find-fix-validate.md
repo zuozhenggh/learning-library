@@ -1,13 +1,25 @@
 # Database Performance Management: Find, Fix, Validate
 ## Introduction
+The objective of this lab is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud Control 13c
 
-### Objectives
+*Estimated Lab Time*: 55 minutes
 
-The objective of this lab is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud
+### Prerequisites
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Environment Setup
+- EM Instance Public IP address
+- SSH Private Key to access the host via SSH
+- OMS Console URL: *https://``<Replace with your EM13c VM Instance Public IP>``:7803/em*.
+    - e.g: *https://111.111.111.111:7803/em*  
+- OMS super-user Credentials:
+      - Username: **sysman**
+      - password: **welcome1**
 
-### Background
+*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-The estimated time to complete all the lab activities is approximately 60 minutes as further detailed below.
+### Lab Timing (Estimated)
 
 | **Step No.** | **Feature**                                   | **Approx. Time** | **Details**                                                                                                                                                                                                                    | **Value proposition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |--------|-----------------------------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -17,22 +29,9 @@ The estimated time to complete all the lab activities is approximately 60 minute
 | **4**  | SQL Performance Analyzer Optimizer Statistics | 10 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c with Oracle Database 18c. | SQL Performance Analyzer gathers Oracle Database Optimizer statistics for validation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **5**  | Database Workload Replay                      | 10 minutes       | The objective of this activity is to is to demonstrate and use the Database Replay functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c and Oracle Database 18c.                | **Scenario:** You've been asked to add three new indexes for an application, but before adding, you want proof that database performance is improved. Use of SQL Performance Analyzer (SPA) isn't enough because there is also the cost of maintaining the indexes. Replay will be performed against the **Sales** Container Database and changes need to be performed in the OLTP Container against the **DWH\_TEST** schema. The database version is 18c so the capture and replay are performed using a CDB. |
 
-### Prerequisites
-
-- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have completed the **Prerequisites** and reviewed all items shown in the Contents menu on the right up to **Lab 1**.  
-- This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
-
-Prior to starting, you will need:
-- EM Instance Public IP address
-- SSH Private Key to access the host via SSH
-- OMS Console URL: http://\{EM Instance Public IP\}:7803/em
-- OMS super-user Credentials:
-    - Username: **sysman**
-    - password: **welcome1**
-
-#### Login to Host using SSH Key based authentication
-Refer to [Environment Setup](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+## **Step 0:** Running your Workload
+### Login to Host using SSH Key based authentication
+Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
@@ -40,14 +39,12 @@ Refer to [Environment Setup](https://oracle.github.io/learning-library/enterpris
   <copy>sudo su - oracle</copy>
   ````
 
-#### Login to OMS Console
+### Login to OMS Console
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-## Step 0: Running your Workload
-
-### Option 1: Using EM Console
+### Prepare database - Option 1: Using EM Console
 1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
 2. From the upper left, navigate from **Enterprise** to **Job** to then **Library**
@@ -66,7 +63,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/emjobcom.png " ")
 
-### Option 2: Using SSH terminal from the VM host
+### Prepare database - Option 2: Using SSH terminal from the VM host
 
 - Login as user "opc",
 - Sudo over to user "oracle"
@@ -83,7 +80,7 @@ source SALESENV
 
   ![](images/emopt2start.jpg " ")
 
-## Step 1: Performance Hub
+## **Step 1:** Performance Hub
 
 1.  Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -149,7 +146,7 @@ Wait class isn’t the only dimension you can drill into the performance issue b
 
 16. **Click** on “Save” button on top right corner of the page. This will help you to save this monitored execution in “.html” format, which you can use it to share or to diagnose offline.
 
-## Step 2: Real-Time Database Operations Monitoring
+## **Step 2:** Real-Time Database Operations Monitoring
 
 - Login as user "opc",
 - Sudo over to user "oracle"
@@ -189,7 +186,7 @@ Note: You may need to scroll down or select “Database operations” from the t
 
   ![](images/1a32fbdd89e519c2b8401e7dd0626890.jpg " ")
 
-## Step 3: Tuning a SQL in a PDB
+## **Step 3:** Tuning a SQL in a PDB
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -251,7 +248,7 @@ Note: You may need to scroll down or select “Database operations” from the t
 
 This concludes the Database Performance Management lab activity. You can now move on to Real Application Testing lab activity.
 
-## Step 4: SQL Performance Analyzer Optimizer Statistics
+## **Step 4:** SQL Performance Analyzer Optimizer Statistics
 
 In this activity we need to configure the database to set up optimizer statistics to be stale. So the first step is to create and submit a job that will configure the statistics to be stale.
 
@@ -363,7 +360,7 @@ You have now learned how to work with SPA. As you can see there are Guided Workf
 
 Details about newly published statistics can be found if you navigate **Schema** , to **Database Object** , to **Tables** , and Select tables for schema ‘STAT1’
 
-## Step 5: Database Workload Replay
+## **Step 5:** Database Workload Replay
 
 1. Create a Replay Task
 You need to open two SSH sessions to your dedicated VM host as user "opc" using the provided SSH key.  
@@ -587,8 +584,9 @@ Thank You!
   - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
 
 ## Acknowledgements
-* **Author** - Björn Bolltoft, Oracle Enterprise Manager Product Management
-* **Adapted for Cloud by** -  Rene Fontcha, Oracle Enterprise Manager Sales Engineering
-* **Last Updated By/Date** - Rene Fontcha, July 2020
+- **Author** - Björn Bolltoft, Oracle Enterprise Manager Product Management
+- **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
+- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

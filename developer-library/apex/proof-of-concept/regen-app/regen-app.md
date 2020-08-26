@@ -105,7 +105,7 @@ Now that you have the original pages reloaded, it is simply a matter of removing
     *{Note: Records can be inserted, updated, and deleted directly within the Interactive Grid. The wizard generated a list of values for Projects, the Due Date utilizes a pop-up calendar, and the other two fields use text areas to maintain the data directly on the page.}*
 
 ## **Summary**
-This completes Lab 3. You now know how to utilize the blueprint to load a previous application definition into the Create Application wizard. [Click here to navigate to Lab 4](?lab=lab-4-improving-tasks)
+You now know how to utilize the blueprint to load a previous application definition into the Create Application wizard.
 
 ## **Acknowledgments**
 

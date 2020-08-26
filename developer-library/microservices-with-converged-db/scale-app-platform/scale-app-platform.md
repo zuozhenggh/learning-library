@@ -15,8 +15,8 @@ horizontal pod scaling and configure tracing with Jaeger.
 ### Prerequisite
 This lab assumes you have already completed the following labs:
 - Register for Free Tier
-- Setup OCI, OKE, ATP and Cloud shell
-- Setup Service broker and Messaging
+- Set up OCI, OKE, ATP and Cloud shell
+- Set up Service broker and Messaging
 
 ## **STEP 1**: Measure health and readiness of microservices
 
@@ -46,16 +46,15 @@ This lab assumes you have already completed the following labs:
 
    ![](images/7aa75ac4256999f7915e563ac2049af5.png " ")
 
-3. Click the **ordersetlivenesstofalse** button, which would trigger the
+3. Click the **ordersetlivenesstofalse** button, which will trigger the
     container to advertise that the service is not alive.
 
    ![](images/10023aaaf4468944fbd9b88041166abc.png " ")
 
 4. The OKE health probes check the advertised health metrics and if they are
     not healthy for a certain period, the infrastructure will reboot the pod.
-    While the service is being restarted, lets check under the hood what makes
-    the mechanism work. The Order Helidon pom file is located in
-    `$MSDATAWORKSHOP_LOCATION/order-helidon/pom.xml`. Observe the helidon health
+    While the service is being restarted, lets see how the  mechanism works. The Order Helidon pom file is located in
+    `$MSDATAWORKSHOP_LOCATION/order-helidon/pom.xml`. Observe the Helidon health
     dependencies.
 
    ![](images/2e4d0c6b95330e009c5ee6e6bc143918.png " ")
@@ -82,7 +81,7 @@ see the liveness and readiness of the service.
 
 7. Go back to the frontend microservice front page and check the age of the
     container by clicking the **lastContainerStartTime** button. The time
-    should’ve changed, reflecting that the pod was restarted.
+    had now changed, reflecting that the pod was restarted.
 
    ![](images/bb361bd61e7817c61fb5356637bb7bfa.png " ")
 

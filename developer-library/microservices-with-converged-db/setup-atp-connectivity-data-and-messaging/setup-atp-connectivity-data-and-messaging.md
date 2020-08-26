@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab will show you how to create kubernetes secrets for the two existing Autonomous Transaction Processing
-databases. This way we will be able to connect the OKE Helidon microservices to
+This lab will show you how to create kubernetes secrets for the two existing Autonomous Transaction Processing (ATP)
+databases. Secrets will allow us to connect the OKE Helidon microservices to
 the ATP instances.
 
 ### Objectives
 -   Create secrets to connect to existing ATP instances
--   Setup data and Oracle Advanced Queuing in existing ATP instances
+-   Set up data and Oracle Advanced Queuing in existing ATP instances
 
 ### What Do You Need?
 
@@ -17,40 +17,35 @@ the ATP instances.
 * Microservices code from GitHub (or zip) built and deployed
 
 ## **STEP 1**: Create Secrets To Connect To ATP PDBs
-You will run a script that will download the connection information (wallet, tnsnames.ora, etc.) and then create kubernetes secrets from the information that will be used to connect to the ATP instrances provisioned earlier.
+You will run a script that will download the connection information (wallet, tnsnames.ora, etc.) and then create kubernetes secrets from the information that will be used to connect to the ATP instances provisioned earlier.
 
-1.  Verify values are set in the copy of $MSDATAWORKSHOP_LOCATION/msdataworkshop.properties created previously
-
-2.  cd into atp-secrets-setup dir.
+1.  Change directory into atp-secrets-setup.
 
     ```
-        <copy>cd $MSDATAWORKSHOP_LOCATION/atp-secrets-setup</copy>
-        ``` 
+    <copy>cd $MSDATAWORKSHOP_LOCATION/atp-secrets-setup</copy>
+    ```
 
-3.  execute createAll.sh and notice output creating secrets.
+2.  Run `createAll.sh` and notice output creating secrets.
 
     ```
-        <copy>./createAll.sh</copy>
-        ``` 
+    <copy>./createAll.sh</copy>
+    ```
 
   ![](images/createAll.png " ")
 
-4.  execute msdataworkshop and notice secrets for order and inventory database and users.
-
+3.  Execute `msdataworkshop` and notice secrets for order and inventory database and users.
     ```
-        <copy>msdataworkshop</copy>
-        ``` 
-
-  ![](images/createAll.png " ")
-
-  If there is an issue, execute deleteAll.sh to delete all secrets in workshop namespace
-
+    <copy>msdataworkshop</copy>
     ```
-        <copy>./deleteAll.sh</copy>
-        ``` 
+    ![](images/msdataworkshop_secrets.png " ")
+
+    If there is an issue, execute `deleteAll.sh` to delete all secrets in workshop namespace
+    ```
+    <copy>./deleteAll.sh</copy>
+    ```
 
   ![](images/deleteAll.png " ")
-  
+
 
 ## **STEP 2**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
 You will verify the connectivity from the frontend Helidon microservice to the atp admin microservice connecting to the ATP PDBs.
@@ -58,7 +53,7 @@ You will verify the connectivity from the frontend Helidon microservice to the a
 1.  First, let’s analyze the Kubernetes deployment YAML file: `atpaqadmin-deployment.yaml`.
 
     ```
-    <copy>cat $MSDATAWORKSHOP_LOCATION/atpaqadmin/atpaqadmin-service.yaml</copy>
+    <copy>cat $MSDATAWORKSHOP_LOCATION/atpaqadmin/atpaqadmin-deployment.yaml</copy>
     ```
 
     The volumes are set up and credentials are brought from each of the bindings
@@ -116,7 +111,7 @@ You will verify the connectivity from the frontend Helidon microservice to the a
 
   ![](images/33ed0b2b6316c6cdbbb2939947759119.png " ")
 
-7.  Use the URL `http://<external-IP>:8080` to open the frontend webpage.
+7.  Use the frontend LoadBalancer URL `http://<external-IP>:8080` to open the frontend webpage. If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
 
   ![](images/testdatasourcescreen.png " ")
 
@@ -127,8 +122,9 @@ You will verify the connectivity from the frontend Helidon microservice to the a
   The frontend is calling the `atpaqadmin` service and has successfully established
   connections to both databases `orderpdb` and `inventorypdb`.
 
-9.  Open the frontend microservice home page and click the following buttons in
-    order: **Create Users**, **Create Inventory Table**, **Create Database Links**,
+9.  Open the frontend microservice home page and click **Setup (and Tear Down) Data and Messaging** from the Labs pane.
+
+ Click the following buttons in order: **Create Users**, **Create Inventory Table**, **Create Database Links**,
     **Setup Tables Queues and Propagation**.
 
   ![](images/setupteardownpage.png " ")
@@ -137,7 +133,7 @@ You will verify the connectivity from the frontend Helidon microservice to the a
   to complete, therefore we could open the Cloud Shell and check the logs, as we
   are waiting until all the messages have been received and confirmed.
 
-17. (Optional) While waiting for `Setup Tables Queues and Propagation` to complete, open the Cloud Shell and check the logs using the following command:
+10. (Optional) While waiting for `Setup Tables Queues and Propagation` to complete, open the Cloud Shell and check the logs using the following command:
 
     ```
     <copy>logpod admin</copy>
@@ -146,24 +142,24 @@ You will verify the connectivity from the frontend Helidon microservice to the a
   ![](images/6edf793e660c40736681881d4d59362e.png " ")
 
   We will see testing messages going in both directions between the two ATP
-  instances across the DB link
+  instances across the DB link.
+
+  _If the process gets stuck, use `Ctrl-C` to exit._
 
   ![](images/cf0526b6ef1c3f21bb865947462bdb17.png " ")
 
-18. (Optional) If it is necessary to restart, rerun the process or clean up the
+11. (Optional) If it is necessary to restart, rerun the process or clean up the
     database:
 
     If **Setup Tables Queues and Propagation** was executed, you need to run
-    **Unschedule Propagation** first.]
-    
+    **Unschedule Propagation** first.
+
     Afterwards, click **Delete Users**.
-
-
-## Conclusion
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
-* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
