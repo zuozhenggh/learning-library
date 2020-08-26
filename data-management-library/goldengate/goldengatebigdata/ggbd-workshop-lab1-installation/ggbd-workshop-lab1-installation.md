@@ -78,11 +78,10 @@ In this lab we will install GoldenGate for Big Data in the GG Target Home. Follo
 
 ![](./images/terminal2.png)
 
-2. Change to ggadmin
+2. Change User to ggadmin
 
 '>su – ggadmin
 Password = oracle
-
 
 PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS 
 
@@ -90,15 +89,15 @@ The following Lab Menu will be displayed
 
 Follow these instructions to install GoldenGate for Big Data
 
-1. Install GoldenGate using option 1
+3. Install GoldenGate using option 1
 
 ![](./images/labmenu_opt1.png)
 
 ![](images/all/labmenu_opt1.png)
 
-Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
+4. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
-To install and configure  GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
+5. To install and configure  GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
 
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
@@ -107,7 +106,6 @@ Congratulations, GoldenGate for Big Data is now installed. You can proceed to th
 If you would like to auto-install GoldenGate for Big Data, you can select option "I". To access the Lab Menu, type the alias ‘labmenu’, then select I.
 
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
-
 
 # You have completed lab 1! Great Job!
 
