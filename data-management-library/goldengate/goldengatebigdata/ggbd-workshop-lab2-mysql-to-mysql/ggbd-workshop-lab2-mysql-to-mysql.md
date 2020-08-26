@@ -1,7 +1,6 @@
 #  Lab 2 -  MySQL  -> MySQL unidirectional replication
 
 ## Introduction
-
 This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 In this lab we will load data in MySQL database ‘ggsource’. The GG extract process ‘extmysql’ will
 capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process

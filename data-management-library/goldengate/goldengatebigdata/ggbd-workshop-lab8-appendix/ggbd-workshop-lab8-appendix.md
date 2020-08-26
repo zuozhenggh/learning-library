@@ -29,6 +29,6 @@ Aliases have been created for this workshop, so that you can focus on GG functio
   * Authors ** - Brian Elliott
   * Contributors ** - Brian Elliott
   * Team ** - Data Integration Team
-  * Last Updated By/Date ** - Brian Elliott, August 2020
+  * Last Updated By/Date ** - Brian Elliott,August 2020
  
 

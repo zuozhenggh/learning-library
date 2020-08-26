@@ -12,6 +12,7 @@ Time to Complete -
 Approximately 30 minutes
 
 ### Objectives
+
 - GoldenGate replication from **MySQL to Cassandra**
 
 ## Before You Begin

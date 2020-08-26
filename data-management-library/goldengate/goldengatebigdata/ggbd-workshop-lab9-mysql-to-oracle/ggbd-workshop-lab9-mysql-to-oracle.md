@@ -1,4 +1,4 @@
-# Optional:Lab 9: MySQL to Oracle (using jdbc)
+# Optional: Lab 9: MySQL to Oracle (using jdbc)
 
 ## Before You Begin
 

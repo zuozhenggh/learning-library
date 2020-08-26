@@ -23,7 +23,6 @@ If at a terminal session:
 
 su - ggadmin
 
-
 User ID: ggadmin
 Password:  oracle
 
