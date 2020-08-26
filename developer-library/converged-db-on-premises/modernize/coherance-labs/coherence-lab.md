@@ -50,15 +50,21 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 ## Verify Environment
 
     Open Two Terminal windows and verify ENVIRONMENT in each as below
-    Please verify the JAVA_HOME from a terminal window
 
-        Type: export JAVA_HOME="/u01/oas/javaln/jdk1.8.0_261"
-        Type: export PATH=$JAVA_HOME/bin:$PATH
-        Type: echo $JAVA_HOME
+    Set and Verify the JAVA_HOME for both terminal windows
 
-        Verify COHERENCE_HOME
+        export JAVA_HOME="/u01/oas/javaln/jdk1.8.0_261"
+        export PATH=$JAVA_HOME/bin:$PATH
+        echo $JAVA_HOME
+        
+![](./images/java_home.png " ")
 
-        Type:  echo $COHERENCE_HOME
+    Set and Verify COHERENCE_HOME for both terminal windows
+
+        export COHERENCE_HOME="/u01/middleware/14c/coherence"
+        export PATH=$COHERENCE_HOME/bin:$PATH
+
+        echo $COHERENCE_HOME
 
 ![](./images/set_env.png " ") 
 
