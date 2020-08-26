@@ -40,11 +40,15 @@
             "filename": "../../micronaut/micronaut.md"
         },
         {
-            "title": "Lab 6: Deploy the Micronaut Application",
+            "title": "Lab 6: Helidon Service",
+            "filename": "../../helidon/helidon.md"
+        },
+        {
+            "title": "Lab 7: Deploy the Micronaut Application",
             "filename": "../../deploy/deploy.md"
         },
         {
-            "title": "Lab 7: Terminate and Destroy the OCI Resources",
+            "title": "Lab 8: Terminate and Destroy the OCI Resources",
             "filename": "../../destroy/destroy.md"
         }
     ]
