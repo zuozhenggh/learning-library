@@ -58,7 +58,7 @@ Create a policy that, for the purposes of the labs in this workshop, allows ODI 
 3. Add the following two policy statements:
 
 ### **If You Are Connecting to an Autonomous Database in the Root Compartment (as in this lab)**
-For speed and simplicity, in this workshop's labs you will install an ODI server in the **root** compartment and connect it to an autonomous database that you created in the **root** compartment. Therefore, you can create policy statements that reference **'in tenancy'** (rather than specify some other compartment by name where an autonomous database would have been created).
+For speed and simplicity, in this workshop's labs you will install an ODI server in the **root** compartment and connect it to autonomous databases that you created in the **root** compartment. Therefore, you can create policy statements that reference **'in tenancy'** (rather than specify some other compartment by name where an autonomous database would have been created).
 
     Allow dynamic-group [name of dynamic group] to inspect autonomous-databases in tenancy
 
@@ -85,7 +85,7 @@ For example, if your dynamic group is named **di_group** and your compartment is
 
     Allow dynamic-group di_group to manage autonomous-databases in compartment di where request.operation = ‘GenerateAutonomousDatabaseWallet’
 
-__Note__ - This policy allows OCI ODI servers in a compartment to access autonomous databases in the **same** compartment. If you need your OCI ODI servers to be able to access Autonomous Databases in _other_ compartments, you will need to define appropriate additional policies to enable this, including a policy statement defined at the root level that allows the dynamic group to inspect all compartments in the tenancy, i.e.:
+__Note__ - If your ODI server needs to access Autonomous Databases in compartments _other than_ the compartment where the ODI server is installed, you will need to define appropriate additional policies to enable this, including a policy statement defined at the root level that allows the dynamic group to inspect all compartments in the tenancy, i.e.:
 
     Allow dynamic-group [name of dynamic group] to inspect compartments in tenancy
 

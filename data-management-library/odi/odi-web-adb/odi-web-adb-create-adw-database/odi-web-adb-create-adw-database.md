@@ -59,9 +59,9 @@ This lab assumes you have already completed the logging in and permission-settin
 
     - __Always Free__ - For this lab, do not create an always free autonomous database.
     - __Choose database version__ - Select a database version from the available versions.
-    - __OCPU count__ - Number of CPUs for your service. For this lab, specify __2 CPUs__.
+    - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__.
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.
-    - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
+    - __Auto Scaling__ - Deselect auto scaling. In this workshop's labs, there will not be a need to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do __not__ select it.
 
     ![](./images/configure-the-database.jpg " ")
@@ -74,7 +74,7 @@ This lab assumes you have already completed the logging in and permission-settin
     - The password cannot contain the double quote (") character.
     - The password must be different from the last 4 passwords used.
     - The password must not be the same password that is set less than 24 hours ago.
-    - Re-enter the password to confirm it. **Make a note of this password** so that you can use it to log in later.
+    - Re-enter the password to confirm it. **Be sure to write down this password** so that you can specify it in the next lab where you create the ODI instance.
 
     ![](./images/create-administrator-credentials.jpg " ")
 8. Choose network access:
@@ -118,16 +118,17 @@ This lab assumes you have already completed the logging in and permission-settin
 
     ![](./images/sql-developer-web-opens.jpg " ")
 
-6. Click on the link [User-Seed-SQL.ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/kll-WfYjB2AkMl75NnRtCKQOVedBTZzGuupQL3sXoiM/n/c4u03/b/labfiles/o/ODI_User-Seed-SQL.zip) to download a ZIP file containing:
-  * User_setup.sql
-  * Seed_data.sql   
+6. Click on the link [User-Seed-SQL.ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/kll-WfYjB2AkMl75NnRtCKQOVedBTZzGuupQL3sXoiM/n/c4u03/b/labfiles/o/ODI_User-Seed-SQL.zip) to download a ZIP file containing 2 files:
 
-7. Copy the contents of *User_setup.sql* in to the worksheet:
+    `User_setup.sql`
+
+    `Seed_data.sql`   
+
+7. Copy and paste the contents of *User_setup.sql* into the worksheet. Click the **Run Script** button to create the users *ODI\_DEMO* and *ODI\_STAGING*.     
+
     ![](./images/run-user-setup-sql-in-worksheet.jpg " ")
 
-8. Select all of the text and run it to create the users *ODI\_DEMO* and *ODI\_STAGING*
-
-9. Copy the contents of *Seed_data.sql* in to the worksheet, select the text and run to create tables and populate with seed data:
+8. Copy and paste the contents of *Seed_data.sql* into the worksheet. Click the **Run Script** button to create tables and populate with seed data:
     ![](./images/run-seed-data-sql-in-worksheet.jpg " ")   
 
 ## Want to Learn More?

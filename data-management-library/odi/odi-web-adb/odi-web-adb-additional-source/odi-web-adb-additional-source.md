@@ -127,7 +127,7 @@ This lab assumes you have already completed the previous labs in the Lab Content
 
     ![](./images/seed-data-parameters.png " ")  
 
-11. You now need to download the wallet for this new source database as you will need it later in the lab. Click the **DB Connection** button. Click the **Download Wallet** button. Create a password for the wallet (for example,  **Welcome12345**) and note it down. Click the **Close** button to close the dialog.
+11. You now need to download the wallet for this new source database as you will need it in the next lab of this workshop. Click the **DB Connection** button. Click the **Download Wallet** button. Create a password for the wallet (for example,  **Welcome12345**) and note it down. Also note down the location where you downloaded the wallet. Click the **Close** button to close the dialog.
 
     ![](./images/download-wallet-for-additional-source.png " ")  
 

@@ -31,7 +31,7 @@ This lab assumes you have already completed the previous labs in the Lab Content
 
     Make sure you have chosen the correct **COMPARTMENT** - the root compartment in which you created your ADW database instance.
 
-    Select the version **ODI v12.2.1.4_200618a** which has been verified for this training material.
+    Select the version **ODI Web v12.2.1.4.200618a** which has been verified for this training material.
     **Note:** Please do not pick any other version. This version has been tested for the labs.
 
     Click the checkbox to accept the Terms & Conditions and click **Launch Stack**.
@@ -42,13 +42,13 @@ This lab assumes you have already completed the previous labs in the Lab Content
 
     ![](./images/create-stack-first-screen.jpg " ")    
 
-5. The wizard's **General Settings** section appears. For Networking Options, choose **New networking components will be created**. For ODI Repository Location, choose  **Create a new ODI Repository in an Autonomous Database**, which will create a new ODI repository schema in your ADW database. For Resource Display Name Prefix, use an identifier to help you recognize your stack later, such as 'odiweb-[yourname]'. Target compartment should be the root compartment.
+5. The wizard's **General Settings** section appears. For Networking Options, choose **New networking components will be created**. (**Note**: Normally, aside from this lab environment, the best practice will be to use an existing VCN in a real production environment). For ODI Repository Location, choose  **Create a new ODI Repository in an Autonomous Database**, which will create a new ODI repository schema in your ADW database. For Resource Display Name Prefix, use an identifier to help you recognize your stack later, such as 'odiweb-[yourname]'. Target compartment should be the root compartment.
 
     ![](./images/create-stack-general-settings.jpg " ")  
 
 6. Scroll down to **ODI Instance Settings** and specify:
 
-    **VM Shape**: VM.Standard.2.4
+    **ODI Node Shape**: VM.Standard.2.2
 
     **SSH Public Key**: Click <a href="./files/pubkey.pub" target="\_blank">this link</a> to download and open the **pubkey.pub** public key file and copy/paste its entire content into the SSH Public Key field (it should be only ONE line).
 
@@ -60,8 +60,13 @@ This lab assumes you have already completed the previous labs in the Lab Content
 
 7. Scroll down to **New ODI Metadata Repository** and specify:
 
-    **Autonomous Database Instance**: Select the ADW instance you created previously and specify the ADMIN password you created.
+    **Autonomous Database Instance**: Select the ADW instance you created previously.
+
     **Note**: If your ADW instance does not appear, check that in the previous lab on permissions, you have enabled the permissions to inspect the tenancy for autonomous databases.
+
+    **Autonomous Database Admin Password**: Specify the ADMIN password you created when you created this ADW instance.
+
+    **Note**: Be sure to copy the ADW database ADMIN's password correctly; this field does not auto-check.
 
     **Supervisor Password**: Specify a password for the SUPERVISOR user for the ODI repository, such as 'oracle' and make a note of it - you will use it to log in to ODI Web.
 
@@ -114,6 +119,6 @@ Congratulations!  Now you have the environment to run the ODI labs.
 
 - **Author** - Mike Matthews, Senior Director, Data Quality Product Management
 - **Adapted for Cloud by** - Rick Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Rick Green, July 2020
+- **Last Updated By/Date** - Rick Green, August 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

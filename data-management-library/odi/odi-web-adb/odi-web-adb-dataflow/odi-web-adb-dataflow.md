@@ -57,7 +57,7 @@ This lab assumes you have already completed the previous labs in the Lab Content
 
     ![](./images/select-oracle-connection-type.png " ")
 
-3. Name the connection **ODISOURCE**. Select the option to **Use Credential File**. Upload the wallet zip file.
+3. Name the connection **ODISOURCE**. Select the option to **Use Credential File**. Upload the wallet zip file from the folder where you downloaded it in the previous lab.
 
     ![](./images/create-the-connection.png " ")
 
@@ -67,7 +67,7 @@ This lab assumes you have already completed the previous labs in the Lab Content
 
 ## **STEP 5**: Add a Schema
 
-1. Click the menu to the right of your new ODISOURCE connection and select **Add Schema**.
+1. Click the 3-dot ellipsis menu button to the right of your new ODISOURCE connection and select **Add Schema**.
 
     ![](./images/click-add-schema.png " ")
 
@@ -85,7 +85,7 @@ This lab assumes you have already completed the previous labs in the Lab Content
 
 ## **STEP 6**: Connect to Your Main ADW Instance
 
-1. You now need to complete the connection to your main ADW instance. This should appear on the left hand side under Data Entities when editing a Data Flow, but the user name and password need to be specified. To do this, click the 3-dot ellipsis menu button to the right of the connection and select the **Edit** button.
+1. You now need to complete the connection to your main ADW instance that you created in Lab 3. This should appear on the left hand side under Data Entities when editing a Data Flow, but the user name and password need to be specified. To do this, click the 3-dot ellipsis menu button to the right of the connection and select the **Edit** button. (**Note**: In the list of Data Entities, this database might appear with a name different from the display name you created as *ADW-your initials*)
 
     ![](./images/click-edit-button.png " ")
 
@@ -107,7 +107,7 @@ This lab assumes you have already completed the previous labs in the Lab Content
 
     ![](./images/select-create-collection.png " ")
 
-4. Name the collection **ODI_DEMO**. Tick the boxes to import **Tables** and **Views**. Click **Save**.
+4. Name the collection **ODI_DEMO**. Tick the boxes to import **Tables** and **Views**. Click **Save**. It might take up to a minute for a job to run that collects this metadata from your database. When the job finishes, you can expand the collection and see its tables.
 
     ![](./images/name-and-save-collection.png " ")
 
@@ -116,6 +116,8 @@ This lab assumes you have already completed the previous labs in the Lab Content
 1. Add a source table to the data flow. You now have two database connections set up, and you can use their tables and views in your data flows.
 The first data flow you need to create will take your **source** customer data (SRC\_CUSTOMER) and load it into your **target** TRG\_CUSTOMER table.
 However, you will need to add some transforms to make the data suitable for loading. To start, drag the **SRC_CUSTOMER** table onto the data flow editor.
+
+**Note:** There are 2 steps to drag and drop with this editor. First, left-click a table and release the mouse button. The selected table shows a light blue background after you release the mouse button. Now left-click the table a second time and keep the mouse button depressed while dragging and dropping.
 
     ![](./images/drag-src-customer-onto-data-flow-editor.png " ")
 
@@ -128,6 +130,8 @@ However, you will need to add some transforms to make the data suitable for load
     ![](./images/drag-join-tool-onto-editor.png " ")
 
 4. Then click on each of the source tables in turn, find their connecting arrows, and drag them onto the Join processor to connect them to the Join.
+
+    ![](./images/find-connecting-arrow.png " ")
 
     ![](./images/connect-tables-to-join.png " ")
 
@@ -147,7 +151,7 @@ However, you will need to add some transforms to make the data suitable for load
 
     `SRC_CUSTOMER.AGE between SRC_AGE_GROUP.AGE_MIN and SRC_AGE_GROUP.AGE_MAX`
 
-  Change the Driving Source to **SRC\_CUSTOMER**.
+  Change the Driving Source to **SRC\_CUSTOMER**. Change the Lookup Source to **SRC\_AGE\_GROUP**.
   The options should look as follows. Click the **Save** icon to save the data flow:
 
     ![](./images/configure-the-lookup.png " ")
@@ -170,7 +174,7 @@ However, you will need to add some transforms to make the data suitable for load
 
     ![](./images/click-column-mapping-option.png " ")
 
-4. You now need to add mappings for the rest of the columns. First, drag the slightly differently named **CUSTID** column from the SRC\_CUSTOMER table to the **CUST_ID** column in the target.
+4. You now need to add mappings for the rest of the columns. First, drag the slightly differently named **CUSTID** column from the SRC\_CUSTOMER table to the **CUST_ID** Expression column in the target.
 
     ![](./images/drag-custid-to-cust-id.png " ")
 
@@ -224,7 +228,7 @@ CASE
 
 ## **STEP 10**: Run Your Data Flow to Load Database
 
-1. The data flow is ready to run. Click the **Play** button to run it. Click the **Job Id** in the pop-up message to see the progress of the job.
+1. The data flow is ready to run. Click the **Execute** button to run it. Click the **Job Id** in the pop-up message to see the progress of the job.
 
     ![](./images/run-data-flow.png " ")
 
