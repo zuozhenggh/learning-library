@@ -4,6 +4,8 @@
 
 In this lab we will run a Helidon microservice and connect the Micronaut application to it
 
+Estimated Lab Time: &lt;10&gt; minutes
+
 ### Objectives
 
 In this lab you will:
@@ -23,7 +25,7 @@ https://github.com/tomas-langer/helidon-hol-example.git
 
 Download the native image binary (this is needed for deployment to cloud)
 
-TODO: define link
+https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/helidon-mp-service
 
 Run the native image (if you are using a Linux environment):
 
