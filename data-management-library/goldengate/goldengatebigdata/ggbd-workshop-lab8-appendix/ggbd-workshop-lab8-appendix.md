@@ -22,10 +22,6 @@ Kafka Properties
 Aliases have been created for this workshop, so that you can focus on GG functionality. These aliases will make it simple to look at files in HDFS, select data from Hive, HBase, Cassandra or consume a Kafka topic.
 
 ![](./images/bb1.png)
-<<<<<<< HEAD:data-management-library/goldengate/goldengatebigdata/ggbd-workshop-lab8-appendix/ggbd-workshop-lab8-appendix.md
-=======
-
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa:data-management-library/goldengate/goldengatebigdata/GGBDWorkshop_GG4BD_810.md
 ![](./images/bb2.png)
 
 ## Acknowledgements
