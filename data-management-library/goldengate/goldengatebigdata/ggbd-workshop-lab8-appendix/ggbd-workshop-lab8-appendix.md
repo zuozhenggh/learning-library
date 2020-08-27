@@ -22,6 +22,7 @@ Kafka Properties
 Aliases have been created for this workshop, so that you can focus on GG functionality. These aliases will make it simple to look at files in HDFS, select data from Hive, HBase, Cassandra or consume a Kafka topic.
 
 ![](./images/bb1.png)
+
 ![](./images/bb2.png)
 
 ## Acknowledgements
