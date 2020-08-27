@@ -1,69 +1,59 @@
-# Workshop Introduction and Overview
+# Goldegate for Big Data Hands-On-Lab  #
 
-The labs in this workshop walk you through all the steps to get started using the **Oracle Autonomous Database on Shared Infrastructure (ADB-S)**. You will provision a new ADB instance, load data from the object store and troubleshoot data loads, query external data residing on the object store, manage an ADB instance, scale an ADB instance, and use Oracle Machine Learning notebooks.
+## Workshop Overview ##
 
-With Oracle Autonomous Database we make it quick and easy for you to create a secure, fully managed database service in the Oracle Cloud which allows you to start loading and analyzing your data immediately.
+**GoldenGate for Big Data** Oracle GoldenGate for Big Data offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This hands-on workshop focuses on **GoldenGate Real Time Data Capture** demonstrating 4 scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
 
-## What is an Autonomous Database?
-Oracle Autonomous Data Warehouse and Oracle Autonomous Transaction Processing are built around the market leading Oracle database and come with fully automated data warehouse and transaction processing specific features that deliver outstanding query performance. This environment is delivered as a fully managed cloud service running on optimized high-end Oracle hardware systems.  You don’t need to spend time thinking about how you should store your data, when or how to back it up or how to tune your queries. We take care of everything for you.
+## Workshop Requirements
 
-Watch our short video that explains key features in Oracle's Autonomous Database:
+- Access to Live Labs
+  
+- Access to a laptop or a desktop
+    - To log into Live Labs
 
-[](youtube:c-DUIePFKco)
+## Agenda
 
-Oracle’s Autonomous Database is the perfect quick-start service for fast data loading and sophisticated data reporting and analysis. Oracle manages everything for you so you can focus on your data.
+- **Lab 1 :** Installation Of GoldenGate for Big Data
 
-## Workshop Objectives
-- Get comfortable with Oracle's public cloud services
-- Provision a new Autonomous Database instance on Shared Infrastructure
-- Run sample queries against the sample data sets
-- Load data from the object store
-- Query external data from the object store
-- Scale an ADB instance
-- Create Oracle Machine Learning SQL notebooks
-- Use the in-database DBMS\_PREDICTIVE\_ANALYTICS functionality
+In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
-## Lab Breakdown
-- **Lab 1:** Log in to Oracle Cloud and access the Oracle Autonomous Data Warehouse console.
-- **Lab 2:** Provision your first Autonomous Data Warehouse.
-- **Lab 3:** Explore the provided sample data sets that come with your Autonomous Database.
-- **Lab 4:** Upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
-- **Lab 5:** Query files on the Oracle Cloud Infrastructure Object Storage (OCI) directly without loading them to your database.
-- **Lab 6:** Visualize your data using Oracle Analytics Desktop.
-- **Lab 7:** Use wallets for secure connections to the autonomous database.
-- **Lab 8:** Manage and monitor your autonomous Database.
-- **Lab 9:** Scale up your Oracle Autonomous Database service to have more CPUs.
-- **Lab 10:** Create Oracle Machine Learning SQL notebooks.
-- **Lab 11:** Use the in-database DBMS\_PREDICTIVE\_ANALYTICS functionality.
+- **Lab 2 :** Replication from Relational Database to Relational Database using GoldenGate
 
-**After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
+This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 
-## Workshop Prerequisites
-This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
+- **Lab 3 :** Replication from Relational to HDFS
 
-###Getting Help During This Workshop
-If you have a question during this workshop then use the <a href="https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary" target="\_blank">**Autonomous Data Warehouse Forum**</a> on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Autonomous Data Warehouse.
+This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 
-Are you are completely new to the **Cloud Customer Connect**</a> forums? Visit our <a href="https://cloudcustomerconnect.oracle.com/pages/1f00b02b84" target="\_blank">**Getting Started forum page**</a> to learn how to best leverage community resources.
+- **Lab 4 :** Replication from Relational to Hive
 
-**You are all set; let's begin! Click Lab 1 in the Contents menu on the right.**
+In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
+process ‘rhive’ will read the trail file, create the Hive tables, write the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and /user/ggtarget/hive/schema/*
 
-## Want to Learn More About Autonomous Database?
+- **Lab 5 :** Replication from Relational to HBase
 
-Use these links to get more information about Oracle Autonomous Database:
+In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
+process ‘rhbase’ will read the remote trail files, create the HBase tables and write the data to those tables.
 
-- <a href="https://www.oracle.com/database/autonomous-database.html" target="\_blank">Oracle Autonomous Database website</a>
-- <a href="https://www.oracle.com/database/adw-cloud.html" target="\_blank">Oracle Autonomous Data Warehouse website</a>
-- <a href="https://www.oracle.com/database/atp-cloud.html" target="\_blank">Oracle Autonomous Transaction Processing website</a>
-- <a href="http://www.oracle.com/us/products/database/autonomous-dw-cloud-ipaper-3938921.pdf" target="\_blank">Oracle Autonomous Data Warehouse ipaper</a>
-- <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html" target="\_blank">Oracle Autonomous Data Warehouse Documentation</a>
-- <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/videos.html" target="\_blank">Autonomous Data Warehouse Videos</a>
-- <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/tutorials.html" target="\_blank">Additional Autonomous Data Warehouse Tutorials</a>
+- **Lab 6 :** Replication from Relational to Kafka
 
-## Acknowledgements
+In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
+process ‘rkafka’ will read the remote trail files, act as a producer and write the messages to an auto- created topic for each table in the source database.
 
-- **Author** - Nilay Panchal, ADB Product Management
-- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, April 2020
+- **Lab 7 :** Replication from Relational to Cassandra
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.
+In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
+process ‘rcass’ will read the remote trail files, create the Cassandra tables and write the data to those tables.
+
+## Access the labs
+
+- Use **Lab Contents** menu on your right to access the labs.
+    - If the menu is not displayed, click the menu button ![](./images/menu-button.png) on the top right  make it visible.
+
+Below is an architectural diagram of our labs
+
+![](./images/image110_1.png)
+
+- You may close the menu by clicking ![](./images/menu-close.png "")
+
+- **Author** - Brian Elliott - August 2020
