@@ -94,13 +94,10 @@ Follow these instructions to install GoldenGate for Big Data
 
 ![](./images/labmenu_opt1.png)
 
-![](images/all/labmenu_opt1.png)
-
 Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 To install and configure  GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
 
-Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
 **Optional**  (Do not select Auto-install if you already installed GG manually)
 
