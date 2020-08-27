@@ -1,27 +1,10 @@
 # Lab 1 -  Installation of Golden Gate for BigData Workshop: 
-<<<<<<< HEAD
 
-
-=======
-Aug 6, 2020
-
-<<<<<<< HEAD:developer-library/goldengateforbigdata/golden-gate-for-big-data-workshop/GGBDWorkshop_GG4BD_110.md
-![](images/100/image110_1.png)
-
-## Want to learn more:
-" https://www.oracle.com/middleware/data-integration/goldengate/big-data/ "
-
-=======
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa
 ![](./images/image110_1.png)
 
 ## Want to learn more:
 " https://www.oracle.com/middleware/data-integration/goldengate/big-data/ "
 
-<<<<<<< HEAD
-=======
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa:data-management-library/goldengate/goldengatebigdata/ggbd-workshop-lab1-installation/ggbd-workshop-lab1-installation.md
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa
 ### Introduction
 Contents
 
@@ -84,68 +67,29 @@ integration architectures to big data systems without impacting the performance 
 
 This workshop is only for learning and testing purposes. None of the files from the labs should be used in a production environment. 
 
-<<<<<<< HEAD
 Time to Complete -
-=======
-<<<<<<< HEAD:developer-library/goldengateforbigdata/golden-gate-for-big-data-workshop/GGBDWorkshop_GG4BD_110.md
-### Time to Complete
-=======
-Time to Complete -
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa:data-management-library/goldengate/goldengatebigdata/ggbd-workshop-lab1-installation/ggbd-workshop-lab1-installation.md
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa
 Approximately 30 min
 
 # Steps
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:developer-library/goldengateforbigdata/golden-gate-for-big-data-workshop/GGBDWorkshop_GG4BD_110.md
-
-### STEP 1: Access GGBD Image 
-
-          Will update with Live Labs connectivity
-
-
-### Lab1
-
-Lab 1 – Install GoldenGate binaries for Big Data
-
-
-PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS (not root)
-
-su – ggadmin
-
-Password = Data1Integration! or oracle
-
-In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
-=======
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa
 In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
 1. Open terminal from desktop by double clicking on the icon
 
 ![](./images/terminal2.png)
 
-<<<<<<< HEAD
 2. Change to ggadmin
-=======
-2. Change User to ggadmin
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa
 
 '>su – ggadmin
 Password = oracle
 
-<<<<<<< HEAD
 
-=======
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa
 PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS 
 
 The following Lab Menu will be displayed
 
 Follow these instructions to install GoldenGate for Big Data
 
-<<<<<<< HEAD
 1. Install GoldenGate using option 1
 
 ![](./images/labmenu_opt1.png)
@@ -155,22 +99,6 @@ Follow these instructions to install GoldenGate for Big Data
 Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 To install and configure  GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
-=======
-3. Install GoldenGate using option 1
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa:data-management-library/goldengate/goldengatebigdata/ggbd-workshop-lab1-installation/ggbd-workshop-lab1-installation.md
-
-![](./images/labmenu_opt1.png)
-
-![](images/ALL/LabMenu_Opt1.png)
-
-4. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
-
-<<<<<<< HEAD:developer-library/goldengateforbigdata/golden-gate-for-big-data-workshop/GGBDWorkshop_GG4BD_110.md
-![](images/ALL/A_Adapter_Tar.png)
-=======
-5. To install and configure  GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa:data-management-library/goldengate/goldengatebigdata/ggbd-workshop-lab1-installation/ggbd-workshop-lab1-installation.md
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa
 
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
@@ -180,28 +108,11 @@ If you would like to auto-install GoldenGate for Big Data, you can select option
 
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
-<<<<<<< HEAD
 
-=======
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa
 # You have completed lab 1! Great Job!
 
 ## Acknowledgements
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:developer-library/goldengateforbigdata/golden-gate-for-big-data-workshop/GGBDWorkshop_GG4BD_110.md
- - ** Authors ** - Brian Elliott
- - ** Contributors ** - Brian Elliott
- - ** Team ** - Data Integration Team
- - ** Last Updated By ** - Brian Elliott
- - ** Expiration Date ** – July 2021
-
-Please submit an issue on our issues page:
-[issues](https://github.com/oracle/learning-library/issues) 
-
-=======
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa
   * Authors ** - Brian Elliott
   * Contributors ** - Brian Elliott
   * Team ** - Data Integration Team
@@ -211,8 +122,4 @@ Please submit an issue on our issues page:
 Please submit an issue on our issues page:
 [issues](https://github.com/oracle/learning-library/issues) 
 
-<<<<<<< HEAD
-=======
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa:data-management-library/goldengate/goldengatebigdata/ggbd-workshop-lab1-installation/ggbd-workshop-lab1-installation.md
->>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa
  We review it regularly.
