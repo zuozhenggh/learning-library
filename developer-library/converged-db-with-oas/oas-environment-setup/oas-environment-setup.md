@@ -3,7 +3,7 @@
 ## Introduction ##
 In this lab you will setup both Database and OAS environments by running the script files. 
 
-### Pre-requisites ###
+### Prerequisites ###
 
 This lab assumes you have completed the following labs:  
 - Lab 1: Login to Oracle Cloud  
