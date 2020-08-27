@@ -1,4 +1,6 @@
-# Optional:Lab 9: MySQL to Oracle (using jdbc)
+# Optional: 
+
+## Lab 9: MySQL to Oracle (using jdbc)
 
 ## Before You Begin
 
@@ -11,7 +13,11 @@ In this lab is a read-only example on how we use goldengate for bigdata Java Dat
 Time to Complete - Approximately 30 minutes
 
 ### What Would You Need?
+<<<<<<< HEAD:data-management-library/goldengate/goldengatebigdata/ggbd-workshop-lab9-mysql-to-oracle/ggbd-workshop-lab9-mysql-to-oracle.md
 Your will need:
+=======
+You would need:
+>>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa:data-management-library/goldengate/goldengatebigdata/GGBDWorkshop_GG4BD_910.md
 - Goldengate for Bigdata
 - Oracle JDBC Java Driver
 
@@ -23,7 +29,7 @@ Your will need:
 
 Example:
 
-1. In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
+2. In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
 
         We already have the jdbc drive downloaded ojdbc8-full.tar.gz in the location /home/oracle/Downloads 
 ```
@@ -53,7 +59,7 @@ GGSCI (gg4bd-target01) 5> edit param rjdbc
 Add the below parameters in the parameter file :
 
 ```
-REPLICAT rjdbc
+ REPLICAT rjdbc
 ----------------------------------------------------------------------------------------
 -- Trail file for this example is located in "AdapterExamples/trail" directory
 -- Command to add REPLICAT
@@ -108,9 +114,15 @@ gg.log.level=INFO
 gg.report.time=30sec
 javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
 ```
+<<<<<<< HEAD:data-management-library/goldengate/goldengatebigdata/ggbd-workshop-lab9-mysql-to-oracle/ggbd-workshop-lab9-mysql-to-oracle.md
 Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
 
 And we can goto the database and see the record count as well. For that log in to GG4BD_Source01 (129.213.97.81)
+=======
+5. Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
+
+6. And we can goto the database and see the record count as well. For that log in to GG4BD_Source01 (129.213.97.81)
+>>>>>>> effbed5588b422109a348be92b8f51cbcddbeefa:data-management-library/goldengate/goldengatebigdata/GGBDWorkshop_GG4BD_910.md
 
 ```
 [opc@gg4dbd-source01 ~]$ sudo su - oracle
@@ -121,7 +133,7 @@ The Oracle base remains unchanged with value /u01/app/oracle
 [oracle@gg4dbd-source01 ~]$ sqlplus employees/employees@pdb1
 ```
 
-Now run the below script to get the tables counts
+7. Now run the below script to get the tables counts
 
 ```
 select 'employees       table -> '|| count(1) as Target from employees.employees UNION ALL
