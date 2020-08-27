@@ -1,4 +1,5 @@
 # Optional: 
+
 ## Lab 9: MySQL to Oracle (using jdbc)
 
 ## Before You Begin
@@ -76,7 +77,7 @@ MAP employees.titles,       TARGET EMPLOYEES.TITLES,      KEYCOLS(EMP_NO,TITLE,F
 MAP employees.salaries,     TARGET EMPLOYEES.SALARIES,    KEYCOLS(EMP_NO,FROM_DATE);
 ```
 
-5. Now edit the dirprm/jdbc_oracle_with_mdp.props file with the below parameters. You can use sample property files found in $GGBD_HOME/AdapterExamples/big-data/jdbc.
+4. Now edit the dirprm/jdbc_oracle_with_mdp.props file with the below parameters. You can use sample property files found in $GGBD_HOME/AdapterExamples/big-data/jdbc.
 
 ```
 GGSCI (gg4bd-target01) 8> exit
@@ -109,9 +110,9 @@ gg.log.level=INFO
 gg.report.time=30sec
 javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
 ```
-6. Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
+5. Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
 
-7. And we can goto the database and see the record count as well. For that log in to GG4BD_Source01 (129.213.97.81)
+6. And we can goto the database and see the record count as well. For that log in to GG4BD_Source01 (129.213.97.81)
 
 ```
 [opc@gg4dbd-source01 ~]$ sudo su - oracle
@@ -122,7 +123,7 @@ The Oracle base remains unchanged with value /u01/app/oracle
 [oracle@gg4dbd-source01 ~]$ sqlplus employees/employees@pdb1
 ```
 
-8. Now run the below script to get the tables counts
+7. Now run the below script to get the tables counts
 
 ```
 select 'employees       table -> '|| count(1) as Target from employees.employees UNION ALL
