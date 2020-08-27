@@ -45,7 +45,7 @@ Upon fulfillment processing and orders being sent to the packaging department, a
 
 ***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
 
-## Navigating in the Lab
+## Navigating the SOA-integration Lab
 To return to this page from anywhere within the lab click either Oracle Hands on Labs, or Home in the header.
 
 ![](images/0/new-lab-header.png)

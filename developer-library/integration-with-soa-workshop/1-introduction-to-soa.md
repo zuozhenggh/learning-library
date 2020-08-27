@@ -5,7 +5,7 @@ Oracle SOA suite is is a comprehensive, standards-based software suite to build,
 ## What is SOA - Service Orientated Architecture?
 SOA is is a style of software design where services are provided to the other components by application components, through a communication protocol over a network. A SOA service is a discrete unit of functionality that can be accessed remotely and acted upon and updated independently, such as retrieving a credit card statement online. SOA is also intended to be independent of vendors, products and technologies
 
-## Concepts Oracle SOA
+## About Oracle SOA platform
 Oracle SOA Suite provides easy-to-use, reusable, and unified application development tooling and life cycle management support to further reduce development and maintenance costs and complexity. Businesses can improve efficiency and agility through rules-driven, process connectivity and automation with Oracle SOA Suite.
 
 SOA Suite functional architecture
@@ -68,7 +68,7 @@ To gain access to free tier compute resource, follow these steps:
     ![](images/1/click-soa-byol-compartment.png)
 
     
-### **Option 2** To find more about Oracle SOA and its components
+### **Option 2** Details on Oracle SOA and its components
 Here is the link <a href="https://www.oracle.com/cloud/integration/soa-cloud-service/"> SOA Suite</a>
 
 For cost-related estimation

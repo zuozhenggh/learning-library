@@ -2,34 +2,39 @@
     "workshoptitle": "Introduction to SOA Workshop",
     "tutorials": [
         {
-            "title": "Prerequisites",
+            "title": "Free Trial Prerequisites",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "1-Introduction to Service architecture",
+            "title": "SOA LiveLab Details",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+             "filename": "./README.md"
+        },
+        {
+            "title": "Introduction to SOA- Service Oriented Architecture",
             "description": "Service Orientated architecture.",
             "filename": "./1-introduction-to-soa.md"
         },
         {
-            "title": "2-Build SOA composite to validate payment",
+            "title": "Build SOA composite to validate payment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "./2-build-composite-to-validate-payment.md"
         },
         {
-            "title": "3-Processing order using SOA composite",
+            "title": "Processing order using SOA composite",
             "filename": "./3-process-order-using-composite.md"
         },
         {
-            "title": "4-Adding new channel for ordering in SOA composite",
+            "title": "Adding new channel for ordering in SOA composite",
             "filename": "./4-add-new-channel-for-ordering.md"
         },
         {
-            "title": "5-Packing and shipping composite application",
+            "title": "Packing and shipping composite application",
             "filename": "./5-pack-and-ship-service-composite.md"
         },
         {
-            "title": "6-Order Fullfilment of SOA composite",
+            "title": "Order Fullfilment of SOA composite",
             "filename": "./6-order-fullfilment.md"
         },
         {

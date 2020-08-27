@@ -1,5 +1,6 @@
 # Module 7: Summary and next step
 
+## Introduction
 During this live lab tutorial, you have learned, gained hands-on understanding and built integration with Service orientated approach principle where application and component provide services to other components via well defined communucation protocol over a network. SOA makes it easier for software components over various networks to work with each other. It provides intelligent and flexible framework for apps and process connectivity, across on-premise and cloud.
 
 ## Review ##
@@ -17,9 +18,9 @@ SOA complement Microservices architecture by
 5. Communicate through an API layer.
 
 
-### **Summary**
+## **Summary**
 
-This completes Module 7 and the exercises lab. In your JDeveloper, you would see the following composite apps
+This completes an end to end modernization order processing that provide better visibility tracking orders through credit approvals, fulfillment, shipment and delivery. In your JDeveloper, you would see the following composite apps
 
 ![](images/7/SummaryServices.png)
 

@@ -1,12 +1,13 @@
 # Module 5: Pack and ship composite
 
+## Introduction
 In this module, you will build the first part of the order fulfillment service. After the order has been successfully processed, it needs to be packed and shipped. Avitek, as fictitious company, has a number of preferred shipping providers, each of them assigned to a specific shipping method. This method is calculated based on the shipping speed the customer chose when placing the order and the shipping state (in address).
 Once the order has been shipped, an email is sent to the customer confirming the shipping provider and the order status is updated to Shipped.
 This chapter will build the pack and ship service, including the email notification.
 
 ## High level steps ##
 
-### **Objective**: Build the pack-and-ship service
+## **Objective**: Build the pack-and-ship service
 For this module, the pack and ship service is defined with a REST interface and accepts a Shipping resource (part of the canonical order message). It initiates the packing and shipping of one order and notifies the customer that the order has shipped. It also updates the order status in the database to Shipped.
 
 1. Create a new SOA project PackAndShipService with an empty composite in the application e2e-1201-composites.
@@ -30,7 +31,7 @@ The Pack and ship composite in JDeveloper would look as the following:
 ![](images/5/PackShipService.png)
 
 
-### **Summary**
+## **Summary**
 
 This completes Module 5. You've successfully:
 

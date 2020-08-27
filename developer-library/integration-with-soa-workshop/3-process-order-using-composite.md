@@ -1,6 +1,7 @@
 # Module 3: Process Order Using composite
 
-In this module, starting page 78 on the SOA suite tutorial, you will build the basis of the new order processing system for Avitek, referred to as ProcessOrder.
+## Introduction
+From page 78 on the SOA suite tutorial, you will build the basis of the new order processing system for Avitek, referred to as ProcessOrder.
 Recall a few of the business requirements for Avitek ‘s new order processing system:
 1. Many different types of clients will access it over different protocols and data formats, including mobile devices.
 2. With a mobile app launch in progress, next year at the latest, the new order processing system must support access via RESTful API.
@@ -13,16 +14,16 @@ At the end of this module, your solution will look similar to the following proc
 
 ![](images/3/Module3-SOA.png)
 
-## High Level Steps ##
+## High Level Steps
 
-1. In part 1, Open e2e-1201-servicebus application and import Pipeline template resources (new feature!).
-2. In part 2
+1. In Step 1, Open e2e-1201-servicebus application and import Pipeline template resources (new feature!).
+2. In Step 2
    * Configure ProcessOrder Business Service.
    * Configure Pipeline and Proxy using Pipeline template.
    * Test your application end-to-end.
 
 
-### **Part 1**: Build process order Composite
+## **STEP 1**: Build process order Composite
 You will now create another SOA application that will accept new purchase orders, approve them and forward them to the fulfillment system. You will use a project template 
 
 1. To implement the basic order processing scenario
@@ -35,7 +36,7 @@ You will now create another SOA application that will accept new purchase orders
 ### Details: ###
 To complete part 1, please start <ins>**Chapter 3, page 80 to 116** of the SOAsuite 12c tutorial.pdf </ins>
 
-### **Part 2**: Register process order on Service Bus 
+## **STEP 2**: Register process order on Service Bus 
 As you have completed and tested the Process Order composite, you will register it on Service Bus to make it available for external consumers. 
 1. Service Bus will allow the Process Order composite to be made available over different protocols and data formats without disruption to the core business logic in the composite
 2. Service Bus will also validate the Order data and report for auditing. For now, you will just create an HTTP / SOAP Proxy and Pipeline for Process Order. 
@@ -47,7 +48,7 @@ As you have completed and tested the Process Order composite, you will register 
 ### Details: ###
 To complete part 2, please review on <ins> **chapter 3, page 117 to 137** </ins> of the SOAsuite tutorial document
 
-### **Summary**
+## **Summary**
 In module 3, you've accomplished:
 - Created Service Bus pipeline from an existing template.
 - Providing Data validation, Routing and manage exception inside the pipeline

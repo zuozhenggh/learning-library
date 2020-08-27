@@ -1,17 +1,16 @@
 # Module 2: Build Payment validation Composite
 
+## Introduction
 In this module, you will build your first Oracle SOA Suite 12c composite to validate a credit card payment.
 In this composite, credit card payments will be validated and the payment status will be returned. If the payment is denied, the order will not be processed.
 
-
-## Introduction ##
 Avitek, a fictitious company, has embarked upon a modernization project to align with business goals of improving customer satisfaction. A key area of improvement will be streamlining the order process to provide better visibility tracking orders through credit approvals, fulfillment, shipment and delivery.
 
 One of **the issue in the current application is that credit card payments are often denied for various, sometimes minor reasons, such as expiration date, etc. Since the process to correct these issues varies across Avitek’s order entry systems, on-premise or new adopted Cloud SaaS application there is no consistent follow-up and resolution with customers. Orders may end up lost or delayed in the system leading to customer dissatisfaction**.
 
 The business has indicated a new credit card fraud detection system must be put in place before year’s end to thwart credit card abuses. A consistent fraud mechanism will require the credit validation process to be consolidated across all order entry systems.
 
-### **Part 1**: Build the payment validation process flow
+## **STEP 1**: Build the payment validation process flow
 
 **High-Level Steps:**
  
@@ -50,7 +49,7 @@ The tutorial pdf document can be found on the desktop of your OCI Linux instance
 ![](images/2/soa-tutorialpdf.png)
 
 
-### **Part 2**: Register the composite on SOA Service Bus
+## **STEP 2**: Register the composite on SOA Service Bus
 
 In part 1, you have completed the validatePayment process composite, you will register this process composite on Service Bus.
 
@@ -95,7 +94,7 @@ In  module 2,
   
 Please follow the construction details from <ins>**page 54 to 77**, in the SOAsuite 12c tutorial</ins>.
 
-### **Summary**
+## **Summary**
 
 Congratulations you completed your first SOA Suite 12c composite! in Part 1 and 2 for developing validate payment using SOA Composite approach.
 

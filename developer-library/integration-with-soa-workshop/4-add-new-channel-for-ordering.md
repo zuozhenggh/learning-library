@@ -1,11 +1,12 @@
 # Module 4: Add new channel for an order system
 
+## Introduction
 After you completed previous modules, the core order system is built, you will extend and add a new interface so that existing systems may place orders without impacting an existing application. Service Bus can provide intelligent routing to respective business services, protocol and data enrichment to minimize any disruption to the backend business logic of Process Order.
 In this chapter, you will add new File order channel for your ProcessOrder leveraging the work done in previous chapters. You will add new Proxy to handled incoming orders by file and translate common- delimited format with nXSD.
 
 ## High level steps ##
 
-### **Part 1**: Add file adapter proxy and connectivity to pipeline
+## **STEP 1**: Add file adapter proxy and connectivity to pipeline
 
 1. Configure a File Adapter Proxy with nXSD translation.
 2. Wire to the existing Process Order Pipeline and Business Service.
@@ -18,7 +19,7 @@ In this chapter, you will add new File order channel for your ProcessOrder lever
 ### Details: ###
 Please start in <ins> **chapter 4 page 139 to 153**, the tutorial document</ins>.
 
-### **Part 2**: Review Service Bus in Enterprise Manager
+## **STEP 2**: Review Service Bus in Enterprise Manager
 
 Let’s take a look at the Service Bus monitoring in Enterprise Manager 12c. In earlier release, Service Bus packaged its own monitoring console along with the Design Console. The monitoring console has been consolidated with the rest of SOA Suite. Now all of SOA Suite components can be management by administrators from one unified Enterprise Manager Console.
 
@@ -44,7 +45,7 @@ Let’s take a look at the Service Bus monitoring in Enterprise Manager 12c. In 
 ### Details: ###
 Please start in <ins> **chapter 4 page 154 to 162** in the tutorial document</ins>.
 
-### **Part 3**: Service Bus debugging tool inside Enterprise Manager
+## **STEP 3**: Service Bus debugging tool inside Enterprise Manager
 
 Service Bus root-cause analysis framework has been brought into IDE, JDeveloper. This lab is a simple one and should not take you long.
 
@@ -60,7 +61,7 @@ Service Bus root-cause analysis framework has been brought into IDE, JDeveloper.
 ### Details: ###
 Step by step details in <ins> **chapter 4, page 163 to 166** in the tutorial</ins>
 
-### **Part 4**: Build the nXSD translation as data enrichment and mapping
+## **STEP 4**: Build the nXSD translation as data enrichment and mapping
 
 **High level steps**
 
@@ -72,7 +73,7 @@ Step by step details in <ins> **chapter 4, page 163 to 166** in the tutorial</in
 Please start in <ins> **chapter 4, page 167 to 190** in the tutorial document</ins>.
 
 
-### **Summary**
+## **Summary**
 
 This completes Module 4. You've successfully 
 - Added new File order channel in the ProcessOrder app leveraging the work done in previous chapters. 

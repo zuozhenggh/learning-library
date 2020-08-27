@@ -1,8 +1,10 @@
 # Module 6: Order Fullfilment
 
+## Introduction
 In this module, you will build the second part of the order fulfillment service, the FulfillOrder composite. The composite listens to orders being processed, select a Shipping Provider and then invoke the PackAndShip service that was built in the previous chapter.
 
-The service is triggered when an order is updated as “ReadyForShip” in the database. It then locates the shipping speed in the order message, determines the shipping method based on shipping speed and shipping state, reads the preferred shipping provider from the database or cache, and calls the pack and ship REST service.
+## **Objective**
+Build a composite service, triggered when an order is updated as “ReadyForShip” in the database. It then locates the shipping speed in the order message, determines the shipping method based on shipping speed and shipping state, reads the preferred shipping provider from the database or cache, and calls the pack and ship REST service.
 
 ## High level steps ##
 
@@ -23,7 +25,7 @@ When it’s completed, your overall fullfillment order project will look similar
 ![](images/6/OrderFullfillment.png)
     
         
-### **Summary**
+## **Summary**
 
 This completes Order fullfilment lab. You now know how to enhance, how to deploy a project for SOA composites and Service Bus, how to debug and different ways to test within JDeveloper and Enterprise Manager Fusion Middleware Control. 
 
