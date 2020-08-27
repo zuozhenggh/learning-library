@@ -10,8 +10,8 @@ In this lab you will practice the following:
 * [Add database](#add-database)
 * [Delete database](#delete-database)
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Create database
 
 In this exercise, you will be creating a database using the following Terraform code template.
@@ -133,7 +133,7 @@ $ git commit -m "This is to commit changes made by ${myInitial}"
 
 Once you are happy with your work. You will **push** the commit in your branch to your new GitHub repo. This allows other people to see the changes you've made. If they're approved by the repository's owner, the changes can then be merged into the master branch.
 
-To push changes onto a new branch on GitHub, you'll want to run **[git push](http://git-scm.com/docs/git-push) origin yourbranchname**. GitHub will automatically create the branch for you on the remote repository:
+To push changes onto a new branch on GitHub, you will want to run **[git push](http://git-scm.com/docs/git-push) origin yourbranchname**. GitHub will automatically create the branch for you on the remote repository:
 
 ````
 <copy>git push origin ${myInitial}Branch1</copy>

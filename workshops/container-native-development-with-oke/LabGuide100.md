@@ -10,8 +10,8 @@ You will take on 2 personas during the workshop. The **Lead Developer Persona**
 
 During this lab, you will take on the **Lead Developer Persona** and work on containerizing your existing Java application. You will set up Wercker to monitor your application's source code repository for commits and automatically trigger a build, test, and package pipeline, which will result in a Docker image of your application that is ready to be deployed.
 
-**_To log issues_**, click here to go to the [GitHub oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
-
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ### Objectives
 
 **Containerize Your Java Application and Automate Building and Packaging**
@@ -266,7 +266,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
   ![](images/100/30.png)
 
-- Once the workflow finishes, you'll see that the `build` pipeline was successfully completed, but that the `push-release` pipeline ended in an error. This is what we expected. In fact, if you click on the **push-release** pipeline that failed, you will see the `Anonymous users are only allowed read access on public repos` error message, indicating our lack of an authentication token. Let's move on to the next lab so we can log in to OCI, set up our Kubernetes infrastructure, and generate that token.
+- Once the workflow finishes, you will see that the `build` pipeline was successfully completed, but that the `push-release` pipeline ended in an error. This is what we expected. In fact, if you click on the **push-release** pipeline that failed, you will see the `Anonymous users are only allowed read access on public repos` error message, indicating our lack of an authentication token. Let's move on to the next lab so we can log in to OCI, set up our Kubernetes infrastructure, and generate that token.
 
   ![](images/100/LabGuide100-a6bd0f55.png)
 

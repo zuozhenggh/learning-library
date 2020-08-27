@@ -6,7 +6,8 @@ Data Pump Import lets you import data from Data Pump files. You can save your da
 
 This lab walks you through the steps to migrate a sample application schema using Data Pump Import into your Exadata Cloud Service Database.
 
-To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 ## Objectives
 
@@ -18,14 +19,14 @@ As a database admin or user,
 
 
 ## Required Artifacts
-- An Oracle Cloud Infrastructure account with privileges to create object storage buckets and dedicated autonomous databases.
+- An Oracle Cloud Infrastructure account with privileges to create object storage buckets and Exadata cloud service databases.
 - Access to a pre-provisioned Exadata cloud service database. Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud)
 - A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 4](?lab=lab-4-configure-development-system-for-use)
 - Access to an exadata instance to copy the dump file into
 
 ## Steps
 
-### STEP 1: Download a sample data pump export file from Oracle Learning Library github repository
+### **Step 1:** Download a sample data pump export file from Oracle Learning Library github repository
 
 - Log into your bastion server
 
@@ -66,7 +67,7 @@ wget -O user_XX.dmp https://objectstorage.us-ashburn-1.oraclecloud.com/p/LdwVJ20
 ![wget_dump_details](./images/HOL-DataPump/wget_dump_details.png " ")
 ![dump_complete](./images/HOL-DataPump/dump_complete.png " ")
 
-### STEP 2: Setup environment to import data to Exadata Cloud Service Database 
+### **Step 2:** Setup environment to import data to Exadata Cloud Service Database 
 - Log into your database from your bastion server and execute following command
 
 ```
@@ -112,7 +113,7 @@ scp -i /path/to/identity/file /path/to/user_xx.dmp oracle@Exadata_private_ip:/pa
 </copy>
 ```
 
-### STEP 3: Perform Data Import
+### **Step 3:** Perform Data Import
 - Log into the exadata cloud service DB server 
 
 ```

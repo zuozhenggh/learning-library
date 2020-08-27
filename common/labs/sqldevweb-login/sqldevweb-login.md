@@ -6,7 +6,9 @@ Oracle SQL Developer Web runs in Oracle REST Data Services and access to it is p
 
 In Oracle Autonomous Database databases, the ADMIN user is pre-enabled for SQL Developer Web.
 
-## Step 1 Connect to your Autonomous Database using SQL Developer Web
+Estimated time: 5 minutes
+
+## **STEP 1**: Connect to your Autonomous Database using SQL Developer Web
 
 1. From the ADB Details page, select the Tools tab
 ![](./images/ADB-details-1.png)
@@ -23,10 +25,11 @@ In Oracle Autonomous Database databases, the ADMIN user is pre-enabled for SQL D
 ## Conclusion
  You are now connected to your Autonomous Database using SQL Developer Web.
 
-## Acknowledgements
+## **Acknowledgements**
 
- - **Author** - Troy Anthony, May 2020
- - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+ - **Author** - Troy Anthony, Database Product Management, May 2020
+ - **Contributors** - Oracle LiveLabs QA Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Ayden Smith, Intern)
  - **Last Updated By/Date** - Troy Anthony, May 20 2020
 
-  See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+  ## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

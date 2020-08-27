@@ -28,7 +28,7 @@ Faster software development has become a competitive advantage for companies. Th
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
    
@@ -43,7 +43,7 @@ Faster software development has become a competitive advantage for companies. Th
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 
-## Step 1: Sign in to OCI Console and create VCN
+## **Step 1:** Sign in to OCI Console and create VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -248,7 +248,7 @@ Faster software development has become a competitive advantage for companies. Th
 
     Copy and save the content of the file. 
 
-## Step 3: Install Jenkins, Configure Jenkins Master instance and create Jenkins Slave instance
+## **Step 3:** Install Jenkins, Configure Jenkins Master instance and create Jenkins Slave instance
 
 1. Swtich to git bash widnow with ssh session to the compute instance, Enter commands: (Install Jenkins).
 
@@ -468,7 +468,7 @@ Faster software development has become a competitive advantage for companies. Th
 
 ***We have now successfully deployed Jenkins master and slave nodes on OCI.*** 
 
-## Step 4: Delete the resources
+## **Step 4:** Delete the resources
 
 **NOTE:**  As a practice user will need to figure out any errors encountered during deletion of resources.
 
@@ -499,4 +499,5 @@ Faster software development has become a competitive advantage for companies. Th
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
