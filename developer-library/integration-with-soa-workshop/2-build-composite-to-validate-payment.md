@@ -42,9 +42,9 @@ The business has indicated a new credit card fraud detection system must be put 
     ![](images/2/deployment.png)
 
 ### Details: ###
-To complete Part 1, please go to Chapter 2, from <ins>**page 11 to 53** in the  SOASuite12c_Tutorial.pdf</ins> document.
+To start, please go to Chapter 2, from <ins>**page 11 to 53** in the  SOASuite12c_Tutorial.pdf</ins> document.
 
-The tutorial pdf document can be found on the desktop of your OCI Linux instance.
+The lab tutorial pdf document can be found on the desktop of your OCI Linux instance.
 
 ![](images/2/soa-tutorialpdf.png)
 

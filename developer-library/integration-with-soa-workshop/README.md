@@ -1,6 +1,6 @@
 # Build Integration with Oracle SOA
 
-## Building Application connectivity and Service orchestration with Oracle SOA Suite
+## Building application connectivity and service orchestration using SOA Suite
 
 ## Overview
 
@@ -56,16 +56,19 @@ When you're ready to proceed to module 1, please [click here to navigate to Modu
 
 ![](images/0/new-lab-menu.png)
 
-## Downloads
+During the live lab, the tutorial pdf document can be found on the desktop of your OCI Linux instance.
 
-[Click here](https://www.oracle.com/middleware/technologies/soasuite/12c-samples-tutorials-downloads.html) to download a complete entire tutorial applications. 
+![](images/2/soa-tutorialpdf.png)
+
+
+[Click here](https://www.oracle.com/middleware/technologies/soasuite/12c-samples-tutorials-downloads.html) to download SOA suite tutorial. 
 
 ## Learn More - Useful Links
 
-- SOA on Marketplace   https://cloudmarketplace.oracle.com/marketplace/en_US/listing/74792101
-- SOA suite   https://www.oracle.com/middleware/technologies/soasuite.html
-- Tutorials   https://www.oracle.com/middleware/technologies/soasuite-learmore.html and
--- https://docs.oracle.com/middleware/12211/soasuite/develop/SOASE.pdf
-- Community   https://apex.oracle.com/community
+- SOA on   <a href= https://cloudmarketplace.oracle.com/marketplace/en_US/listing/74792101> Marketplace </a>
+-   <a href= https://www.oracle.com/middleware/technologies/soasuite.html> SOA suite </a>
+-   <a href= https://www.oracle.com/middleware/technologies/soasuite-learmore.html> Tutorials </a> 
+-  <a href= https://docs.oracle.com/middleware/12211/soasuite/develop/SOASE.pdf> SOA Developer </a> 
+- <a href= https://apex.oracle.com/community> Community </a>
 - External Site + Slack   https://www.oracle.com/technetwork/middleware/weblogic/learnmore/reducing-middleware-costs-2327571.pdf
 

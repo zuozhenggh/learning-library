@@ -1,7 +1,7 @@
 # Module 4: Add new channel for an order system
 
 ## Introduction
-After you completed previous modules, the core order system is built, you will extend and add a new interface so that existing systems may place orders without impacting an existing application. Service Bus can provide intelligent routing to respective business services, protocol and data enrichment to minimize any disruption to the backend business logic of Process Order.
+After you completed process order using SOA composite app, the core order system is built. You now will extend and add a new interface so that existing systems may place orders without impacting an existing application. Service Bus can provide intelligent routing to respective business services, protocol and data enrichment to minimize any disruption to the backend business logic of Process Order.
 In this chapter, you will add new File order channel for your ProcessOrder leveraging the work done in previous chapters. You will add new Proxy to handled incoming orders by file and translate common- delimited format with nXSD.
 
 ## High level steps ##
