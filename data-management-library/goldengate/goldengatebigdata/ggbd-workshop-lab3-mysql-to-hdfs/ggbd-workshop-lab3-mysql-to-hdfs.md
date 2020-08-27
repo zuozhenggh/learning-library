@@ -25,9 +25,8 @@ Password:  oracle
 
 Time to Complete - Approximately 30 minutes
 
-## STEPS
 
-1. If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
+ If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
 ## Before You Begin
 For the Lab terminal session:
@@ -36,23 +35,28 @@ For the Lab terminal session:
 
 The following Lab Menu will be displayed, 
 
-# Steps
+
+## STEPS
 
 1. select R to reset the lab environment, then select 3 to begin Lab3.
 
 2. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 
-4. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. 
+3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. 
 
 view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby 
+
 view these files, same as in previous lab:
     /u01/gg4mysql/dirprm/mgr.prm 
     /u01/gg4mysql/dirprm/extmysql.prm 
     /u01/gg4mysql/dirprm/pmpmysql.prm
+
 view /u01/gg4hadoop123010/dirprm/
    create_hdfs_replicat.oby 
+
 view /u01/gg4hadoop123010/dirprm/rhdfs.prm
+
 view /u01/gg4hadoop123010/dirprm/rhdfs.properties
 
 5.  First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.

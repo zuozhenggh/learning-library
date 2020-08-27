@@ -70,7 +70,7 @@ This workshop is only for learning and testing purposes. None of the files from 
 Time to Complete -
 Approximately 30 min
 
-# Steps
+## Steps
 
 In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
@@ -109,9 +109,6 @@ If you would like to auto-install GoldenGate for Big Data, you can select option
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
 **You have completed Lab 1!**
-
-
-# You have completed lab 1! Great Job!
 
 ## Acknowledgements
 
