@@ -9,9 +9,11 @@ You can quickly upload data from a variety of sources (for example, spreadsheets
 
 It provides several interactive visuals to sow the story in your data for example, trend lines, bar, Sankey graph, maps, etc.
 
+Estimated Lab Time: 40 Mintues.
+
 [](youtube:yOYemBtdpnQ)
 
-Estimated Lab Time: 40 Mintues.
+
 
 ### Objectives ###
 
@@ -36,7 +38,7 @@ The end result should look like below:
 ![](./images/oascdb1.png " ")
 
 ### Prerequisites  ###
-Below data objects with data present in Converged Database. And since OAS recognizes data in relational format , views have been created on the base tables of JSON and XML type.  
+The below pre-loaded data objects are present in Converged Database. And since, OAS recognizes data in relational format, views have been created on the base tables of JSON and XML type.  
  
 
 | ObjectName  | ObjectType  | DataType  | Description  |
@@ -132,7 +134,7 @@ Below data objects with data present in Converged Database. And since OAS recogn
 ## Step 2: Data Preparation ##
 In this step we will perform some data prepartion steps to make data set ready for visualizatuion.
 
-1. Complete data set is created in previous step. Now on the left hand side, and click on "data".
+1. Complete data set is created in previous step. Now on the left hand side, click on "data".
     ![](./images/oascdb25.png " ")
 
 2. Select the dataset **Financials Complete Data set** created in previous step.

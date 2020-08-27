@@ -6,13 +6,13 @@ Oracle Analytics Server offers extended Machine Learning design capabilities. Yo
 
 It covers the full cycle of ML processes, allows direct uptake of any custom algorithm scripts, addressing the need of both traditional data scientists, citizen data scientists, and data analysts.  Oracle Analytics includes algorithms to help you train predictive models for various purposes. Examples of algorithms are classification and regression trees (CART), logistic regression, and k-means.
 
-![](./images/predictiveanalytics.png " ")
-
 Estimated Lab Time: 30 Mintues.
+
+![](./images/predictiveanalytics.png " ")
 
 ### Objectives ###
 
-In this Lab, we are going to focus on how to predict attrition using binary classification algorithms and show how to use those inbuilt algorithms for addressing a real-life, common question for any organization.  
+In this Lab, we are going to focus on how to predict attrition using binary classification algorithm and show how to use in-built algorithms for addressing a real-life, common question for any organization.  
 
 In this case: how can we identify the employees that are likely to quit the organisation? 
 Knowing who might be at risk of leaving may even alert HR to retain the best talent.  
@@ -20,7 +20,6 @@ Knowing who might be at risk of leaving may even alert HR to retain the best tal
 In this lab we are going to use “binary classification”. Binary classification is a technique of classifying records/elements of a given dataset into two groups on the basis of classification rules. For example: Employee Attrition Prediction whether the employee is going to quit or not. “Yes” and “No” are two different groups for employee'
 
 We will also use visualizations on the predicted data for a better decision process.
-
 
 ### Prerequisites  ###
 
@@ -31,10 +30,7 @@ This lab assumes you have completed the following labs:
 - Lab 4: Environment Setup
 - Lab 5: Data Visualization  
 
-Also , this lab assumes you have a connection created to the Converged DB from OAS. 
-Refer to  Step 3 of [Lab 4 : Environment Setup](?lab=oas-lab-5-data-visualization)
-
-Below data objects are available in Converged Database.  
+The below pre-loaded data objects are available in Converged Database. 
 
 | ObjectName  | ObjectType  | DataType  | Description  |
 | ------------- | ------------- | ------------- |
@@ -46,7 +42,7 @@ Below data objects are available in Converged Database.
 
 In this step, we will use the database connection created in **OAS Lab 5 : Data Visualization** and create a dataset to work on.
 
-1. In the Home page ,click on create button and select Dataset.
+1. In the Home page, click on create button and select Dataset.
 ![](./images/paoas1.0.png " ")
 2. Select the connection "ConvergedDB_Retail".
 ![](./images/paoas1.1.png " ")
@@ -58,8 +54,8 @@ In this step, we will use the database connection created in **OAS Lab 5 : Data 
 ![](./images/paoas1.4.png " ")
 6. Perform required measure to attribute changes and add data set.  
   For Example,  
-  (select “Age” and change  to Attribute in bottom left corner)  
-  (select “EmployeeID” and change  to Attribute in bottom left corner)
+  (select “Age” and change to Attribute in bottom left corner)  
+  (select “EmployeeID” and change to Attribute in bottom left corner)
 7. Finally click on “Add” to add the data set.
 ![](./images/paoas1.5.png " ")
 
