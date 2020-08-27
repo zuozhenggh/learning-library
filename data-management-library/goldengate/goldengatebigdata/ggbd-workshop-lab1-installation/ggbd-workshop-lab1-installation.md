@@ -90,7 +90,7 @@ The following Lab Menu will be displayed
 
 Follow these instructions to install GoldenGate for Big Data
 
-1. Install GoldenGate using option 1
+3. Install GoldenGate using option 1
 
 ![](./images/labmenu_opt1.png)
 
