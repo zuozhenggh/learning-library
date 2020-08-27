@@ -97,5 +97,4 @@ End of Lab 2.
 
 Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
   
-  We review it regularly.
 

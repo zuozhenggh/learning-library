@@ -19,96 +19,93 @@ For the Lab terminal session:
 
 ## Steps
 
-If at a terminal session:
+1. If at a terminal session:
 
 su - ggadmin
-
 
 User ID: ggadmin
 Password:  oracle
 
-If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
+2. If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 The following Lab Menu will be displayed, 
 select R to reset the lab environment, then select 6 (this step may take a couple of minutes).
 
 ![](./images/lab6menu.png)
 
-Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
-
+3. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos
 ------
 
 ##  Configuration
    The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
-1)	view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
-2)	Optionally view these files, same as in previous lab:
+view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
+view these files, same as in previous lab:
 /u01/gg4mysql/dirprm/mgr.prm
 /u01/gg4mysql/dirprm/extmysql.prm
 /u01/gg4mysql/dirprm/pmpmysql.prm
-3)	view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby
-4)	view /u01/gg4hadoop123010/dirprm/rkafka.prm
-5)	view /u01/gg4hadoop123010/dirprm/rkafka.properties
-6)	view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
+view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby
+view /u01/gg4hadoop123010/dirprm/rkafka.prm
+view /u01/gg4hadoop123010/dirprm/rkafka.properties
+view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
 
-First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
+4. First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
+5. In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
 ![](./images/e2.png)
 
-In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
+6. In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
 ![](./images/e3.png)
 
-In the GG for MySQL ggsci session, we will create and start the GG extract process:
+7. In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
 ![](./images/e4.png)
 ![](./images/e5.png)
 
-Now that the source side is setup, let’s configure GG on the target side (Kafka).
+8. Now that the source side is setup, let’s configure GG on the target side (Kafka).
 
-In the GG for Hadoop session, you’ll need to modify the Kafka properties by removing the ‘---‘ from the highlighted values:
+9. In the GG for Hadoop session, you’ll need to modify the Kafka properties by removing the ‘---‘ from the highlighted values:
 
 ![](./images/e6.png)
 
-Now create the Kafka replicat process:
+10. Now create the Kafka replicat process:
 
 ![](./images/e7.png)
 
-****Before we start the GG Kafka replicat process, we need to start the Kafka Broker. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+## ****Before we start the GG Kafka replicat process, we need to start the Kafka Broker. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
 ![](./images/e8.png)
 
-Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+11. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
 ![](./images/e9.png)
 
-Now that GG processes have been created and the Kafka Broker has been started, let’s start the GG replicat for Kafka. Go back to the GG Home for Hadoop ggsci session:
+12. Now that GG processes have been created and the Kafka Broker has been started, let’s start the GG replicat for Kafka. Go back to the GG Home for Hadoop ggsci session:
 
 ![](./images/e10.png)
 
-Now go back to the previous session, where you ran ‘showtopics’; we’ll load some data on the MySQL database ‘ggsource’ and GG will extract and write it to the Kafka topics.
+13. Now go back to the previous session, where you ran ‘showtopics’; we’ll load some data on the MySQL database ‘ggsource’ and GG will extract and write it to the Kafka topics.
 
 ![](./images/E11.png)
 
-Also take a look at the Kafka schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
+14. Also take a look at the Kafka schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
 
 ![](./images/e12.png)
 
-Next we’ll apply more DML to the source, then we’ll consume the emp topic, and see the additional data get appended to the topic. Run this from another session, since the consumetopic command runs in the foreground, and outputs the results. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
-
+15. Next we’ll apply more DML to the source, then we’ll consume the emp topic, and see the additional data get appended to the topic. Run this from another session, since the consumetopic command runs in the foreground, and outputs the results. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
 ![](./images/e13.png)
 
-Now go back to the previous session, and run the DML script:
+16. Now go back to the previous session, and run the DML script:
 
 ![](./images/e14.png)
 
-Now go back to the session running ‘consumetopic gg2kafka_json.emp’, you should see the new messages written to the emp topics. Scroll up to see "op_type":"U" or "D". For Updates, GG will write the before and after image of the operation
+17. Now go back to the session running ‘consumetopic gg2kafka_json.emp’, you should see the new messages written to the emp topics. Scroll up to see "op_type":"U" or "D". For Updates, GG will write the before and after image of the operation
 
 ![](./images/e15.png)
 
-Let’s confirm that GG replicated the data that it captured. In the GG for Hadoop home
+18. Let’s confirm that GG replicated the data that it captured. In the GG for Hadoop home
 
 ![](./images/e16.png)
 
