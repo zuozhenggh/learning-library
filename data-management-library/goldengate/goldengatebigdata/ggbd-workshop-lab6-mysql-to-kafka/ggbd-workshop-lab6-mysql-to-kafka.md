@@ -21,7 +21,7 @@ For the Lab terminal session:
 
 1. If at a terminal session:
 
-su - ggadmin
+  su - ggadmin
 
 User ID: ggadmin
 Password:  oracle
@@ -41,15 +41,15 @@ select R to reset the lab environment, then select 6 (this step may take a coupl
    
    The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
-A) view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
-B) Optionally view these files, same as in previous lab:
+view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
+view these files, same as in previous lab:
 /u01/gg4mysql/dirprm/mgr.prm
 /u01/gg4mysql/dirprm/extmysql.prm
 /u01/gg4mysql/dirprm/pmpmysql.prm
-C) view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby
-D) view /u01/gg4hadoop123010/dirprm/rkafka.prm
-E) view /u01/gg4hadoop123010/dirprm/rkafka.properties
-F)view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
+view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby
+view /u01/gg4hadoop123010/dirprm/rkafka.prm
+view /u01/gg4hadoop123010/dirprm/rkafka.properties
+view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
 
 4. First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 

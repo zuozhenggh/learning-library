@@ -44,19 +44,19 @@ The following Lab Menu will be displayed,
 
 5. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. 
 
-1) view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby 
-2) Optionally view these files, same as in previous lab:
+   view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby 
+   view these files, same as in previous lab:
     /u01/gg4mysql/dirprm/mgr.prm 
     /u01/gg4mysql/dirprm/extmysql.prm 
     /u01/gg4mysql/dirprm/pmpmysql.prm
-3) view /u01/gg4hadoop123010/dirprm/
+   view /u01/gg4hadoop123010/dirprm/
    create_hdfs_replicat.oby 
-4) view /u01/gg4hadoop123010/dirprm/rhdfs.prm
-5) view /u01/gg4hadoop123010/dirprm/rhdfs.properties
+   view /u01/gg4hadoop123010/dirprm/rhdfs.prm
+   view /u01/gg4hadoop123010/dirprm/rhdfs.properties
 
-6. First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
+6.  First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-7. In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
+7.  In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
 ![](images/b3.png)
 

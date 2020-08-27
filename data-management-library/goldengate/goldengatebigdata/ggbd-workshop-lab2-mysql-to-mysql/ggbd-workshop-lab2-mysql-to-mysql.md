@@ -49,29 +49,27 @@ view /u01/gg4mysql/dirprm/repmysql.prm
 
 5. Go to the GG Home for MySQL. You can either cd to the directory, or call the alias ggmysql:
 
-6. Go to the GG Home for MySQL. You can either cd to the directory, or call the alias ggmysql:
-
   ![](./images/a_2.png)
   ![](./images/a3.png)
 
-7. Login to ggsci (GG command line interface), to create and start the GG extract, pump and replicat
+6. Login to ggsci (GG command line interface), to create and start the GG extract, pump and replicat
 processes:
 
   ![](./images/a4.png)
 
-8. Now that the GoldenGate extract, pump and replicat processes are running, next you’ll run a script to load data into the ggsource MySQL database.
+7. Now that the GoldenGate extract, pump and replicat processes are running, next you’ll run a script to load data into the ggsource MySQL database.
 
-9. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.)
+8. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.)
 
    ![](./images/a5.png)
    ![](./images/a6.png)
 
-10. At this point GoldenGate should have replicated all the data from database ggsource to database
+9. At this point GoldenGate should have replicated all the data from database ggsource to database
 ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed:
 
     ![](./images/a7.png)
 
-11. The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
+10. The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 
   ![](./images/a8.png)
   ![](./images/a9.png)
