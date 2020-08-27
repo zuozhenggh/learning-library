@@ -25,31 +25,29 @@ su - ggadmin
 
 User ID: ggadmin
 Password:  oracle
+
 or
+    
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
 2. The following Lab Menu will be displayed, 
 select R to reset the lab environment, then select 5.
-
-3. Review the overview notes on the following screen, then select Q to quit. 
+Review the overview notes on the following screen, then select Q to quit. 
 
 ![](./images/d_labmenu5.png)
 
-The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. 
+3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
-A) view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
-
-B) Optionally view these files, same as in previous lab:
-    /u01/gg4mysql/dirprm/mgr.prm
-    /u01/gg4mysql/dirprm/extmysql.prm
-    /u01/gg4mysql/dirprm/pmpmysql.prm
-
-C) view /u01/gg4hadoop123010/dirprm/create_hbase_replicat.oby
-4)	view /u01/gg4hadoop123010/dirprm/rhbase.prm
-5)	view /u01/gg4hadoop123010/dirprm/rhbase.properties
+view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
+view these files, same as in previous lab:
+/u01/gg4mysql/dirprm/mgr.prm
+/u01/gg4mysql/dirprm/extmysql.prm
+/u01/gg4mysql/dirprm/pmpmysql.prm
+view /u01/gg4hadoop123010/dirprm/create_hbase_replicat.oby
+view /u01/gg4hadoop123010/dirprm/rhbase.prm
+view /u01/gg4hadoop123010/dirprm/rhbase.properties
 
 4. First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
-
 
 5. In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
@@ -63,7 +61,6 @@ C) view /u01/gg4hadoop123010/dirprm/create_hbase_replicat.oby
 
 ![](./images/d4.png)
 ![](./images/d5.png)
-
 
 8. Now that the source side is setup, let’s configure GG on the target side (HBase).
 
@@ -88,12 +85,10 @@ C) view /u01/gg4hadoop123010/dirprm/create_hbase_replicat.oby
 
 ![](./images/d11.png)
 
-
 14. Let’s confirm that GG replicated the data that it captured. In a GG Home for Hadoop session:
 
 ![](./images/d12.png)
 ![](./images/d13.png)
-
 
 In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhbase’ read the remote trail files, created the HBase tables and wrote the data to those tables.
@@ -105,8 +100,6 @@ In summary, you loaded data in MySQL database ‘ggsource’, GG extract process
 You can also see the HBase data created by GG from Hue:
 
 Open a Browser window> http://127.0.0.1:8888/ Login to Hue: cloudera/cloudera
-
-
 
 ## Acknowledgements
 

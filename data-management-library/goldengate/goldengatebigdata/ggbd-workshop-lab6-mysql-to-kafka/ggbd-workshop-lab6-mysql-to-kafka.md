@@ -21,24 +21,21 @@ For the Lab terminal session:
 
 1. If at a terminal session:
 
-  su - ggadmin
+su - ggadmin
 
 User ID: ggadmin
 Password:  oracle
 
-If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
-
-2. The following Lab Menu will be displayed, 
+2. If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
+The following Lab Menu will be displayed, 
 select R to reset the lab environment, then select 6 (this step may take a couple of minutes).
 
 ![](./images/lab6menu.png)
 
-3. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
-
+3. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos
 ------
 
 ##  Configuration
-   
    The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
 view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby

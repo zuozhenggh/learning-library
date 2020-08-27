@@ -3,7 +3,13 @@
 ## Introduction
 Using Oracle Data Safe, create your own sensitive type and sensitive category.
 
-To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+
+Watch the video below for an overview on how to create a Sensitive Type and Sensitive Category with Oracle Data Safe
+
+<div style="max-width:768px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2171811/sp/217181100/embedIframeJs/uiconf_id/35965902/partner_id/2171811?iframeembed=true&playerId=kaltura_player&entry_id=1_5ijsm5jv&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_yotludfe" width="768" height="432" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
+
 
 ## Objectives
 In this lab, you learn how to do the following:
@@ -22,7 +28,7 @@ Follow these general steps:
 
 ## Steps
 
-### Step 1: Sign in to the Oracle Data Safe Console for your region
+### **Step 1:** Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -37,7 +43,7 @@ Follow these general steps:
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Step 2: Review the predefined sensitive types in the Oracle Data Safe Library
+### **Step 2:** Review the predefined sensitive types in the Oracle Data Safe Library
 
 - In the Oracle Data Safe Console, click the **Library** tab, and then click **Sensitive Types**. The **Sensitive Types** page is displayed. On this page you can view predefined sensitive types and manage your own sensitive types.
 
@@ -69,11 +75,11 @@ The search finds **Department Name**, but nothing for department IDs.
 - Clear the search field, and then press **Enter** to restore the list.
 - Keep this page open because you return to it later in the lab.
 
-### Step 3: Connect to your ExaCS database as the SYS user with SQL Developer
+### **Step 3:** Connect to your ExaCS database as the SYS user with SQL Developer
 
 Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Step 4: In SQL Developer, analyze the HCM1.DEPARTMENTS.DEPARTMENT_ID column in your ExaCS database to help you figure out how to create a sensitive type for it
+### **Step 4:** In SQL Developer, analyze the HCM1.DEPARTMENTS.DEPARTMENT_ID column in your ExaCS database to help you figure out how to create a sensitive type for it
 
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
@@ -87,7 +93,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 ```
 - Notice that the department ID values are 10, 20, 30, up to 270.
 
-### Step 5: In the Oracle Data Safe Console, create a sensitive type and sensitive category
+### **Step 5:** In the Oracle Data Safe Console, create a sensitive type and sensitive category
 
 - Return to the **Sensitive Types** page in the Oracle Data Safe Console.
 - Click **Add**.<br>

@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps of setting up the environment for JSON lab . You can connect an Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper.
+This lab walks you through the steps of setting up the environment for JSON lab . You can connect an Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQLDeveloper.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud
@@ -39,13 +39,13 @@ Oracle’s JSON capabilities are focused on providing full support for schemales
 
 The first thing to realize about JSON is that it remains a simple text format, which is relatively easy to read and inspect with the naked eye. At a syntax level, what starts to set JSON apart from other formats is the characters used to separate data, which are mainly constrained to apostrophes ', brackets ( ), [ ], { }, colons :, and commas ,. This listing illustrates what a JSON payload looks like:
 
-![](./images/json_intro.PNG " ")
+![](./images/json_intro.png " ")
 
 
 ### Want to learn more
 - [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
   
-## Step 1: Connect to your Instance
+## **Step 1:** Connect to your Instance
 ### Oracle Cloud Shell
 1. Open Oracle Cloud Shell by clicking on the Cloud Shell icon in the top right corner. 
 
@@ -80,7 +80,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 1. Open up putty and connect to your instance. 
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/sshconnect.png " ")
 
@@ -102,7 +102,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
 8. Click Open to begin your session with the instance.
 
-## Step 2: Set your Oracle Environment
+## **Step 2:** Set your Oracle Environment
 1. Open the Oracle Cloud Shell by clicking on the icon next to the reigon name. 
 
     ![](./images/oracleshell.png " ")
@@ -145,7 +145,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
     ````
     ![](./images/json3.png " ")
 
-## Step 3: Connect to SqlDeveloper
+## **Step 3:** Connect to SqlDeveloper
 
 1. Download SqlDeveloper for your device.[https://www.oracle.com/tools/downloads/sqldev-downloads.html](https://www.oracle.com/tools/downloads/sqldev-downloads.html). You will also need JDK 11 which can be downloaded here [https://www.oracle.com/java/technologies/javase-jdk11-downloads.html](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 
@@ -164,7 +164,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
     Service name: JXLPDB
     ````
  
-  ![](./images/env_json.PNG " ") 
+  ![](./images/env_json.png " ") 
 
   4. Click Connect
 
@@ -177,7 +177,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-### Issues
-Have an issue?  Submit it on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
       
  

@@ -1,24 +1,21 @@
 # In-Memory Queries
 
 ## Introduction
+Watch a preview video of querying the In-Memory Column Store
+
+[](youtube:U9BmS53KuGs)
 
 ### Objectives
 
 -   Perform various queries on the In-Memory Column Store
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup
+* Lab: Generate SSH Key (FreeTier and Paid accounts)
+* Lab: Environment Setup or Verify Setup
 * Lab: Enabling In-Memory
 
-### Lab Preview
-
-Watch a preview video of querying the In-Memory Column Store
-
-[](youtube:U9BmS53KuGs)
 
 ## Step: Querying the In-Memory Column Store
 
@@ -176,7 +173,9 @@ These significant performance improvements are possible because of Oracle’s un
 
 ## Acknowledgements
 
-- **Author** - Andy Rivenes, Sr. Principal Product Manager, Oracle Database In-Memory
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+- **Author** - Andy Rivenes, Sr. Principal Product Manager,  Database In-Memory
+- **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request.  
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.  

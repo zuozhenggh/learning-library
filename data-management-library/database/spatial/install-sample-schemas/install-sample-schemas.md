@@ -6,7 +6,7 @@
 
 -   Prepare the sample schema for spatial. Starting with Oracle Database 12c Release 2, the latest version of the sample schema scripts are available on GitHub. You can refer the doucment at [https://github.com/oracle/db-sample-schemas](https://github.com/oracle/db-sample-schemas).
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
@@ -14,7 +14,7 @@ This lab assumes you have completed the following labs:
 * Lab: Setup
 
 
-## Step 1: Download Sample Schemas installation Scripts
+## **Step 1:** Download Sample Schemas installation Scripts
 1.  Sudo to **oracle** user. Run this command to download the database sample schemas installation scripts. You will download a zip file named **v19.2.zip**.
     ````
     <copy>
@@ -47,7 +47,7 @@ This lab assumes you have completed the following labs:
     <img src="images/image-20200429133949928.png" alt="image-20200429133949928" style="zoom:42%;" />
 
     
-## Step 2: Install the Sample Schemas
+## **Step 2:** Install the Sample Schemas
 
 1. Before install, let's check the oracle environment
 
@@ -93,4 +93,5 @@ You may now proceed to the next lab.
 - **Author** - Minqiao Wang, DB Product Management, April 2020
 - **Last Updated By/Date** - 
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

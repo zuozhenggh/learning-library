@@ -16,11 +16,11 @@ In this lab, you will create a user (schema), assign privileges to the user, cre
 -   Learn how to query external data by the external tables
 
 
-## Lab Prerequisites
+## Prerequisites
 
 -   This lab requires completion of the prior 4 labs in the Contents menu on the right.
 
-## STEP 1: Create a User
+## **Step 1:** Create a User
 
 1. text
 
@@ -28,7 +28,7 @@ In this lab, you will create a user (schema), assign privileges to the user, cre
 
 3. text
 
-## STEP 2: Assign Privileges
+## **Step 2:** Assign Privileges
 
 1. text
 
@@ -36,7 +36,7 @@ In this lab, you will create a user (schema), assign privileges to the user, cre
 
 3. text
 
-## STEP 3: Create Tables
+## **Step 3:** Create Tables
 
 1. text
 
@@ -44,7 +44,7 @@ In this lab, you will create a user (schema), assign privileges to the user, cre
 
 3. text
 
-## STEP 4: Insert, Modify, and Delete Records
+## **Step 4:** Insert, Modify, and Delete Records
 
 1. text
 
@@ -52,7 +52,7 @@ In this lab, you will create a user (schema), assign privileges to the user, cre
 
 3. text
 
-## STEP 5: Undo and Save Records
+## **Step 5:** Undo and Save Records
 
 1. text
 
@@ -60,7 +60,7 @@ In this lab, you will create a user (schema), assign privileges to the user, cre
 
 3. text
 
-## STEP 6: Remove Tables
+## **Step 6:** Remove Tables
 
 1. text
 
@@ -68,7 +68,7 @@ In this lab, you will create a user (schema), assign privileges to the user, cre
 
 3. text
 
-## STEP 7: Revoke Privileges
+## **Step 7:** Revoke Privileges
 
 1. text
 
@@ -84,4 +84,5 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

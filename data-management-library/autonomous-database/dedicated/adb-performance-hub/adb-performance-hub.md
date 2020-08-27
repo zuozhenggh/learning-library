@@ -18,7 +18,7 @@ As an adminstrator,
 - A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
 - Successful completion of [Lab 5](?lab=lab-5-configuring-development-system) and [Lab 15](?lab=lab-15-build-always-on-applications).
 
-## STEP 1: Log in to the Oracle Cloud Developer image and start the order entry workload
+## **Step 1:** Log in to the Oracle Cloud Developer image and start the order entry workload
 
 To complete this lab it is mandatory that you have a developer client image configured with swingbench, an autonomous dedicated database instance with the wallet uploaded to the dev client. Follow instructions in [Lab 5](?lab=lab-5-configuring-development-system) and [Lab 15](?lab=lab-15-build-always-on-applications).
 
@@ -55,7 +55,7 @@ To complete this lab it is mandatory that you have a developer client image conf
 
 
 
-## STEP 2: Analyzing workloads with Performance Hub
+## **Step 2:** Analyzing workloads with Performance Hub
 
 As you continue to run your swingbench workload, you can analyze the transactions that are running on the database with the cloud based Performance Analyzer. From the main ATP console, select *Performance Hub*.
     ![](./images/scalinginp.jpeg " ")
@@ -95,4 +95,5 @@ The main Performance Hub page should display. This page has 3 sections.
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

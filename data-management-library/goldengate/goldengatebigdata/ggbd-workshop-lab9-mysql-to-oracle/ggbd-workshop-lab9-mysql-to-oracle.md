@@ -1,6 +1,6 @@
 # Optional Lab: 
 
-## Lab 9: MySQL to Oracle (using jdbc)
+**Lab 9:** MySQL to Oracle (using jdbc)
 
 ## Before You Begin
 
@@ -13,7 +13,7 @@ In this lab is a read-only example on how we use goldengate for bigdata Java Dat
 Time to Complete - Approximately 30 minutes
 
 ### What Would You Need?
-You would need:
+Your will need:
 - Goldengate for Bigdata
 - Oracle JDBC Java Driver
 
@@ -25,7 +25,7 @@ You would need:
 
 Example:
 
-2. In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
+1. In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
 
         We already have the jdbc drive downloaded ojdbc8-full.tar.gz in the location /home/oracle/Downloads 
 ```
@@ -55,7 +55,7 @@ GGSCI (gg4bd-target01) 5> edit param rjdbc
 Add the below parameters in the parameter file :
 
 ```
- REPLICAT rjdbc
+REPLICAT rjdbc
 ----------------------------------------------------------------------------------------
 -- Trail file for this example is located in "AdapterExamples/trail" directory
 -- Command to add REPLICAT
@@ -110,9 +110,9 @@ gg.log.level=INFO
 gg.report.time=30sec
 javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
 ```
-5. Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
+Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
 
-6. And we can goto the database and see the record count as well. For that log in to GG4BD_Source01 (129.213.97.81)
+And we can goto the database and see the record count as well. For that log in to GG4BD_Source01 (129.213.97.81)
 
 ```
 [opc@gg4dbd-source01 ~]$ sudo su - oracle
@@ -123,7 +123,7 @@ The Oracle base remains unchanged with value /u01/app/oracle
 [oracle@gg4dbd-source01 ~]$ sqlplus employees/employees@pdb1
 ```
 
-7. Now run the below script to get the tables counts
+Now run the below script to get the tables counts
 
 ```
 select 'employees       table -> '|| count(1) as Target from employees.employees UNION ALL

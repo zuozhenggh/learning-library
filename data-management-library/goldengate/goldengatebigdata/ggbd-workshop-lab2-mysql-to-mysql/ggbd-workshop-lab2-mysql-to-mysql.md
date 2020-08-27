@@ -1,6 +1,7 @@
 #  Lab 2 -  MySQL  -> MySQL unidirectional replication
 
 ## Introduction
+
 This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 In this lab we will load data in MySQL database ‘ggsource’. The GG extract process ‘extmysql’ will
 capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process
@@ -16,9 +17,7 @@ Lab Architecture
 Time to Complete -
 Approximately 30 minutes
 
-## Steps
-
-1. If at a terminal session:
+If at a terminal session:
 
 User and Password
 User ID: ggadmin
@@ -29,17 +28,21 @@ Password = oracle
 
 or Execute the alias ‘labmenu’
 
-2. The following Lab Menu will be displayed:
+The following Lab Menu will be displayed:
 Select Option 2
+
+## Steps
+
 
   ![](./images/a_labmenu2.png)
 
+
 (If you are just starting the Labs, you don’t need to reset the environment).
 
-3. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
+1. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 
-4. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator can review the content of each of these files to explain how GoldenGate is being configured.
+2. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator can review the content of each of these files to explain how GoldenGate is being configured.
 
 view /u01/gg4mysql/dirprm/create_mysql_gg_procs.oby
 view /u01/gg4mysql/dirprm/mgr.prm
@@ -47,29 +50,31 @@ view /u01/gg4mysql/dirprm/extmysql.prm
 view /u01/gg4mysql/dirprm/pmpmysql.prm
 view /u01/gg4mysql/dirprm/repmysql.prm
 
-5. Go to the GG Home for MySQL. You can either cd to the directory, or call the alias ggmysql:
+Go to the GG Home for MySQL. You can either cd to the directory, or call the alias ggmysql:
+
+3. Go to the GG Home for MySQL. You can either cd to the directory, or call the alias ggmysql:
 
   ![](./images/a_2.png)
   ![](./images/a3.png)
 
-6. Login to ggsci (GG command line interface), to create and start the GG extract, pump and replicat
+4. Login to ggsci (GG command line interface), to create and start the GG extract, pump and replicat
 processes:
 
   ![](./images/a4.png)
 
-7. Now that the GoldenGate extract, pump and replicat processes are running, next you’ll run a script to load data into the ggsource MySQL database.
+5. Now that the GoldenGate extract, pump and replicat processes are running, next you’ll run a script to load data into the ggsource MySQL database.
 
-8. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.)
+6. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.)
 
    ![](./images/a5.png)
    ![](./images/a6.png)
 
-9. At this point GoldenGate should have replicated all the data from database ggsource to database
+7. At this point GoldenGate should have replicated all the data from database ggsource to database
 ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed:
 
     ![](./images/a7.png)
 
-10. The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
+8. The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 
   ![](./images/a8.png)
   ![](./images/a9.png)
@@ -92,5 +97,4 @@ End of Lab 2.
 
 Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
   
-  We review it regularly.
 

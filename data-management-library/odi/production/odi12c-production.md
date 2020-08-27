@@ -8,13 +8,13 @@ This chapter includes the following sections:
   * Run the Scenario
   * Follow the Execution of the Scenario
 
-## Step 1: Introduction
+## **Step 1:** Introduction
 The automation of the data integration flows is achieved by sequencing the execution of the different steps (mappings, procedures, and so forth) in a package and by producing a production scenario containing the ready-to-use code for each of these steps.
 Lab *Working with Packages* describes the first part of the automation process: sequencing the execution of the different processes in a Package.
 
 This Lab describes the second part: how to produce a scenario that runs automatically the Load Sales Administration Package in a production environment.
 
-## Step 2: Scenario Creation
+## **Step 2:** Scenario Creation
 To generate the LOAD\_SALES\_ADMINISTRATION scenario that executes the Load Sales Administration Package:
 
 1.  In the Project accordion, expand Sales Administration and then Packages.
@@ -29,7 +29,7 @@ To generate the LOAD\_SALES\_ADMINISTRATION scenario that executes the Load Sale
 
   ![](./images/load_sales_admin.png)
 
-## Step 3 Run the Scenario
+## **Step 3:**Run the Scenario
 Scenarios can be executed in several ways:
   * Executing a Scenario from ODI Studio
   * Executing a Scenario from a Command Line
@@ -50,7 +50,7 @@ To start the LOAD\_SALES\_ADMINISTRATION scenario from Oracle Data Integrator St
 
 4.  The Session Started Information Dialog is displayed. Click **OK**. The scenario is executed.
 
-## Step 4: Follow the Execution of the Scenario
+## **Step 4:** Follow the Execution of the Scenario
 You can review the scenario execution in Operator Navigator, and find the same results as those obtained when the package was executed as described in Lab *Run the Package*.
 It is also possible to review the scenario execution report in Designer Navigator.
 
@@ -64,7 +64,7 @@ To view the execution results of the LOAD\_SALES\_ADMINISTRATION scenario in Des
 
   ![](./images/load_sales_admin_log.png)
 
-## Step 5: Summary
+## **Step 5:** Summary
 This chapter provides information for going further with Oracle Data Integrator. This chapter includes the following sections:
 
 Congratulations! You have now completed an ETL project and learned about the fundamentals of Oracle Data Integrator.
@@ -81,4 +81,5 @@ In this Getting Started guide, you learned how to:
  - **Author** - Jayant Mahto, July 2020
  - **Last Updated By/Date** - Troy Anthony, June 25 2020
 
- See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+ ## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

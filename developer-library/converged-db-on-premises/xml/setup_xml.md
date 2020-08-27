@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps of setting up the environment for XML lab . You can connect Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper.
+This lab walks you through the steps of setting up the environment for XML lab . You can connect Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQLDeveloper.
 
 ### Before You Begin
 
@@ -22,7 +22,7 @@ The basic building block of an XML document is an element, defined by tags. An e
 For example, XML documents can be very simple, such as the following:
 
 
- ![](./images/xml_snap.PNG " ") 
+ ![](./images/xml_snapa.png " ") 
 
 
 ### XML with Oracle Database
@@ -39,16 +39,23 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 ### Want to learn more
 - [XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 
-## Step 1: Connect to the Pluggable Database (PDB)
+## **Step 1:** Connect to the Pluggable Database (PDB)
 
 1. As oracle user navigate to below path- 
 
-````
+  ````
     <copy>
     sudo su - oracle
+    </copy>
+  ````
+
+  ````
+    <copy>
     cd /u01/workshop/xml
-   </copy>
-   ````
+    </copy>
+  ````
+
+  ![](./images/xml_inputa.png " ")
 
  2. Enter instructions.  Choose the ConvergedCDB sid
        
@@ -57,7 +64,6 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     . oraenv
     </copy>
     ````
-  3. 
 
     ````
     <copy>
@@ -65,7 +71,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     </copy>
     ````
 
-## Step 2: Connect to SQL Developer
+## **Step 2:** Connect to SQL Developer
 
 1. Make a connection to sqldeveloper. Use the details as below and click on connect.
 
@@ -78,19 +84,19 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     Service name: JXLPDB
     ````
  
-  ![](./images/env_xml.PNG " ") 
+  ![](./images/env_xmla.png " ") 
 
 You may proceed to the next lab.
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel.
 - **Team** - North America Database Specialists.
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-### Issues
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
       
  

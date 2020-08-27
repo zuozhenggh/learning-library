@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to create an ODI instance from a Marketplace image and configure ODI Studio
 
-## Step 1: Create an ODI instance from OCI Marketplace
+## **Step 1:** Create an ODI instance from OCI Marketplace
 
 1. Login to the OCI Console and choose **Marketplace -> Applications**
 
@@ -45,7 +45,7 @@ Accept the Terms&Conditions and click **Launch Stack**
     Your instance will have your initials as a Prefix (provided you added them as instructed)
     ![](./images/odi_instance_create_2.png " ")
 
-## Step 2: Configure ODI Studio and import training repository
+## **Step 2:** Configure ODI Studio and import training repository
 
 1. From the hamburger menu, open **Compute** -> **Instances**
 
@@ -144,7 +144,7 @@ The import will take approximately 5 minutes
 17. Click **Close** after import completes successfully
     ![](./images/odi_studio_9c.png " ")      
 
-## Step 3: Configure connections
+## **Step 3:** Configure connections
 
 1. Open the **Topology** Tab and expand **Physical Architecture \-\> Technologies \-\> Oracle**
 
@@ -180,7 +180,7 @@ and then select **Save**
 
 Use the same connection parameters as used in Step 5. These are defined as two different data servers but point to the same DB schema for simplicity.
 
-## Step 4: Import the work Repository
+## **Step 4:** Import the work Repository
 
 1. Open the **Designer** tab and select **Import**
 
@@ -199,7 +199,7 @@ The import will take approximately 5 minutes
 
     ![](./images/odi_studio_11c.png " ")
 
-## Step 5: Test the environment
+## **Step 5:** Test the environment
 
 1. Expand **Model** and right-click on **SRC\_AGE\_GROUP** and select **View Date**
 
@@ -216,4 +216,5 @@ Congratulations!  Now you have the environment to run the ODI labs.
 - **Author** - Jayant Mahto, July 2020
 - **Last Updated By/Date** - Troy Anthony, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

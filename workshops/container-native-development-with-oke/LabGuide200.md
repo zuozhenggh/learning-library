@@ -8,8 +8,8 @@ This is the second of several labs that are part of the **Oracle Public Cloud Co
 
 During this lab, you will take on the **DevOps Engineer Persona**. You will provision a Kubernetes cluster and all of the infrastructure that it requires using the OCI console. OCI will provision the Virtual Cloud Network, Load Balancers, Kubernetes Master and Worker instances, and etcd instance required to support your cluster.
 
-**_To log issues_**, click here to go to the [GitHub oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
-
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ### Objectives
 
 **Automate Deployment to Kubernetes**
@@ -111,7 +111,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     ![](images/LabGuide200-6ff14524.png)
     ![](images/200/LabGuide200-k8s-2.png)
     
-    - Starting at the top you'll notice that the cluster will be created in our **Demo** compartment.
+    - Starting at the top you will notice that the cluster will be created in our **Demo** compartment.
     - We can customize the name of this cluster if we want
     - Multiple versions of Kubernetes are available, with the newest version selected by default
     - The default cluster creation mode will automatically create a Virtual Cloud Network for our cluster, including 2 load balancer subnets and 3 subnets for our worker VMs

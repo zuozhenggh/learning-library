@@ -78,10 +78,11 @@ In this lab we will install GoldenGate for Big Data in the GG Target Home. Follo
 
 ![](./images/terminal2.png)
 
-2. Change User to ggadmin
+2. Change to ggadmin
 
 '>su – ggadmin
 Password = oracle
+
 
 PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS 
 
@@ -95,9 +96,9 @@ Follow these instructions to install GoldenGate for Big Data
 
 ![](images/all/labmenu_opt1.png)
 
-4. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
+Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
-5. To install and configure  GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
+To install and configure  GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
 
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
@@ -108,6 +109,9 @@ If you would like to auto-install GoldenGate for Big Data, you can select option
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
 **You have completed Lab 1!**
+
+
+# You have completed lab 1! Great Job!
 
 ## Acknowledgements
 
