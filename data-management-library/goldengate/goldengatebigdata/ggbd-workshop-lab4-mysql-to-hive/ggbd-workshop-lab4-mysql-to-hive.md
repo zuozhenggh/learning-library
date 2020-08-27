@@ -33,14 +33,20 @@ Setting up the Environment For MySQL.
 
 The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
-1)	view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
-2)	Optionally view these files, same as in previous lab:
+view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
+
+view these files, same as in previous lab
 /u01/gg4mysql/dirprm/mgr.prm
+
 /u01/gg4mysql/dirprm/extmysql.prm
+
 /u01/gg4mysql/dirprm/pmpmysql.prm
-3)	view /u01/gg4hadoop123010/dirprm/create_hive_replicat.oby
-4)	view /u01/gg4hadoop123010/dirprm/rhive.prm
-5)	view /u01/gg4hadoop123010/dirprm/rhive.properties
+
+view /u01/gg4hadoop123010/dirprm/create_hive_replicat.oby
+
+view /u01/gg4hadoop123010/dirprm/rhive.prm
+
+view /u01/gg4hadoop123010/dirprm/rhive.properties
 
 3. First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
@@ -98,9 +104,9 @@ You can also see the files that are created in the Hive directory in HDFS:
 ![](./images/c18.png)
 ![](./images/c19.png)
 
-# End of Lab 4.
+**End of Lab 4.**
 
-## Optional: Only if VNC is available
+**Optional:** Only if VNC is available
 
 You can also see the Hive data created by GG from Hue:
 

@@ -1,4 +1,4 @@
-# Lab 1 -  Installation of Golden Gate for BigData Workshop: 
+# Lab 1 -  Installation of Golden Gate for BigData Workshop 
 
 ![](./images/image110_1.png)
 
@@ -101,13 +101,13 @@ Follow these instructions to install GoldenGate for Big Data
 
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
-## Optional step (Do not select Auto-install if you already installed GG manually)
+**Optional**  (Do not select Auto-install if you already installed GG manually)
 
 If you would like to auto-install GoldenGate for Big Data, you can select option "I". To access the Lab Menu, type the alias ‘labmenu’, then select I.
 
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
-# You have completed lab 1! Great Job!
+**You have completed Lab 1!**
 
 ## Acknowledgements
 

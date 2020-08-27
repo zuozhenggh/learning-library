@@ -98,8 +98,9 @@ C) view /u01/gg4hadoop123010/dirprm/create_hbase_replicat.oby
 In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhbase’ read the remote trail files, created the HBase tables and wrote the data to those tables.
 
-# End of Lab 5.
-## Optional: only if VNC is available
+**End of Lab 5**
+
+**Optional:** only if VNC is available
 
 You can also see the HBase data created by GG from Hue:
 
