@@ -11,18 +11,18 @@ Oracle powers deeper insights by embedding machine learning and AI into every as
 
 ### Objectives ###
 
-In this lab you will learn on two key features in OAS Augmented Analytics; “Explain” and “Forecast”.
+In this lab you will learn on two key features in OAS Augmented Analytics:  “Explain” and “Forecast”.
 
 **Explain:** Explain analyzes the selected column within the context of its data set and generates text descriptions about the insights it finds.  Explain creates corresponding visualizations that you can add to your project's canvas.
 
 **Forecast:** Oracle Analytics Server offers a user-friendly method to leverage advanced analytics functions on a chart with a single mouse click. Having advanced analytical functions like forecast provides a strong capability to business users who want to have better insights into their data. 
 
 ### Prerequisites ###
-This lab assumes you have completed the following labs;  
-- Lab : Login to Oracle Cloud  
-- Lab : Generate SSH Key  
-- Lab : Create Compute Instance  
-- Lab : Environment Setup
+This lab assumes you have completed the following labs:
+
+- Lab : Generate SSH Key - Cloud Shell
+- Lab : Setup Compute Instance  
+- Lab : Start Database and OAS
 - Lab : Data Visualization  
 
 
@@ -90,7 +90,7 @@ Let us use forecast feature on the sample financial data.
 
     ![](./images/aa16.png " ")
 
-2. Similarly build a line graph for payables and receivables monthly trend.
+2. Similarly, build a line graph for payables and receivables monthly trend.
 ![](./images/aa17.png " ")
 
 3. Now in the first chart, right-click and select "Add Statistics" and then click on "Forecast".
