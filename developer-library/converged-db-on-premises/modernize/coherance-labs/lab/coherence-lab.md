@@ -49,31 +49,31 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 
 ## Verify Environment
 
-    Open Two Terminal windows and verify ENVIRONMENT in each as below
+Open Two Terminal windows and verify ENVIRONMENT in each as below
 
-    Set and Verify the JAVA_HOME for both terminal windows
+Set and Verify the JAVA_HOME for both terminal windows
 
         export JAVA_HOME="/u01/oas/javaln/jdk1.8.0_261"
         export PATH=$JAVA_HOME/bin:$PATH
         echo $JAVA_HOME
         
-![](../images/java_home.png " ")
+![](../images/java-home.png " ")
 
-    Set and Verify COHERENCE_HOME for both terminal windows
+Set and Verify COHERENCE_HOME for both terminal windows
 
         export COHERENCE_HOME="/u01/middleware/14c/coherence"
         export PATH=$COHERENCE_HOME/bin:$PATH
 
         echo $COHERENCE_HOME
 
-![](../images/set_env.png " ") 
+![](../images/set-env.png " ") 
 
-    Change Directory to Java Samples in both Terminal Windows ((/u01/middleware/14c/coherence/examples/java)
+Change Directory to Java Samples in both Terminal Windows ((/u01/middleware/14c/coherence/examples/java)
 
-    Type:  cd $COHERENCE_HOME/examples/java
+    cd $COHERENCE_HOME/examples/java
 
-    Build all the java Labs as needed
-    Execute the build script with the name of the example collection:
+Build all the java Labs as needed
+Execute the build script with the name of the example collection:
 
         bin/build contacts
 
@@ -86,101 +86,191 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
         bin/build async
 
 
-    Now Run all the Labs below from this folder $COHERENCE_HOME/examples/java
-    in both Terminal Windows
+Now Run all the Labs below from this folder $COHERENCE_HOME/examples/java
+in both Terminal Windows
 
-    cd $COHERENCE_HOME/examples/java
+        cd $COHERENCE_HOME/examples/java
     
 ## Lab 1: Contacts 
 
-This Lab shows the most basic data access features of Coherence including getting, putting and removing data from a provided contacts.csv file.
+### Introduction: This Lab shows the most basic data access features of Coherence including getting, putting and removing data from a provided contacts.csv file.
 
-1.	Start one or more cache servers in First Terminal window : bin/run-cache-server. 
+### Objective: To start a Coherence Cache and then put and get Contacts to/from the Cache.
 
-    Each execution starts a cache server cluster node. 
+### Estimated Time: 5 - 10 mins
 
-    Wait for the Cache Server to start in a few seconds
+### Pre-requisites:  Verify Environment has been Completed.
 
-    ![](../images/run_cache_server.png " ") 
+### Lab Steps:
 
-2.	In the second Terminal window, run with the name of the example: bin/run contacts. The Driver.main method runs through the features of the example with output going to the command window (stdout).
+### Step 1.	Start a cache server 
 
+First Terminal window : 
+    
+        bin/run-cache-server
 
-    ![](../images/run_contacts.png " ")  
+Each execution starts a cache server cluster node. 
 
+Wait for the Cache Server to start in a few seconds
+
+![](../images/run-cache-server.png " ") 
+
+### Step 2.	In the second Terminal window
+
+Second Terminal Window:
+
+Run with the name of the example: 
+
+        bin/run contacts
+
+The Driver.main method runs through the features of the example with output going to the command window (stdout)
+
+![](../images/run-contacts.png " ")  
+
+### Proceed to Next Lab 
 
 ## Lab 2: Security
 
-The Coherence security Lab set gets a cache reference that requires a password an attempts cache and invocation service operations that require different roles.
+### Introduction: This Lab shows the security feature of accessing Cache securely using role and password
 
-The security example requires Coherence*Extend, which uses a proxy.
-1.	Start one or more cache servers First Terminal window: bin/run-cache-server security. 
+### Objective: The Coherence security Lab set gets a cache reference that requires a password an attempts cache and invocation service operations that require different roles.
 
-    The cache server also runs a proxy service which allows connections from Coherence*Extend clients.
+### Estimated Time: 5 - 10 mins
 
-    Wait for the Cache Server to start in a few seconds
+### Pre-requisites:  Verify Environment has been Completed.
 
-     ![](../images/run_cache_server.png " ") 
+### Lab Steps:
 
-2.	In the second Terminal window, run with the name of the example: bin/run security. 
+ 
+### Step 1.	Start a cache server
 
-    The Driver.main method runs through the features of the example with output going to the command window (stdout).
+First Terminal window: 
 
-    ![](../images/run_security.png " ")  
+        bin/run-cache-server security 
 
+The cache server also runs a proxy service which allows connections from Coherence*Extend clients.
+
+Wait for the Cache Server to start in a few seconds
+
+![](../images/run-cache-server.png " ") 
+
+### Step 2.	In the second Terminal window, run with the name of the example: 
+
+Second Terminal window:
+
+        bin/run security
+
+The Driver.main method runs through the features of the example with output going to the command window (stdout)
+
+![](../images/run-security.png " ")  
+
+### Proceed to Next Lab 
 
 ## Lab 3:  Live events 
 
-The Live events Lab illustrates: how to measure the elapsed time between pre- and post-events which are inserted into a results cache; the semantics of throwing exceptions in pre- and post-commit events, and how partition redistribution events can be logged.
+### Introduction: This Lab shows the Events feature of inserting into Cache
 
-1.	Start one or more cache servers First Terminal window: bin/run-cache-server events. 
+### Objective: How to measure the elapsed time between pre- and post-events which are inserted into a results cache; the semantics of throwing exceptions in pre- and post-commit events, and how partition redistribution events can be logged.
 
-    Each execution starts a cache server cluster node. 
+### Estimated Time: 5 - 10 mins
+
+### Pre-requisites:  Verify Environment has been Completed.
+
+### Lab Steps:
+ 
+
+### Step 1.	Start one or more cache servers in First Terminal Window
+
+First Terminal window: 
+
+        bin/run-cache-server events 
+
+Each execution starts a cache server cluster node. 
     
-    Wait for the Cache Server to start in a few seconds
+Wait for the Cache Server to start in a few seconds
 
-     ![](../images/run_cache_server.png " ")
+![](../images/run-cache-server.png " ")
 
-2.	In the second Terminal window, run with the name of the example: bin/run events. 
+### Step 2.	In the second Terminal window, run with the name of the example: 
 
-    The Driver.main method runs through the features of the example with output going to the command window (stdout).
+Second Terminal Window:
 
-    ![](../images/run_events.png " ") 
+        bin/run events
 
+The Driver.main method runs through the features of the example with output going to the command window (stdout).
+
+![](../images/run-events.png " ") 
+
+### Proceed to Next Lab 
 
 ## Lab 4: Java 8 features 
 
-The Coherence Java 8 features Lab illustrates: how to use the Java streams when querying and processing cache entries; how Lambda features can be used to simplify common Coherence tasks and how to query and process cache entries 
+### Introduction: The Coherence Java 8 features Lab illustrates how to use the Java streams when querying and processing cache entries. how Lambda features can be used to simplify common Coherence tasks and how to query and process cache entries 
 
-1.	Start a cache server First Terminal window: bin/run-cache-server.
+### Objective: How Lambda features can be used in a Cache to simplify common Coherence tasks and how to query and process cache entries 
 
-    Wait for the Cache Server to start in a few seconds
+### Estimated Time: 5 - 10 mins
 
-     ![](../images/run_cache_server.png " ") 
+### Pre-requisites:  Verify Environment has been Completed.
 
-2.	In the second Terminal window, run with the name of the example: bin/run java8. 
+### Lab Steps:
 
-    The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/java8.
 
-    ![](../images/run_java8.png " ") 
+### Step 1.	Start a cache server First Terminal window: 
 
+First Terminal Window:
+
+        bin/run-cache-server
+
+Wait for the Cache Server to start in a few seconds
+
+![](../images/run-cache-server.png " ") 
+
+### Step 2.	In the second Terminal window, run with the name of the example: 
+
+Second Terminal Window:
+
+        bin/run java8
+
+The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/java8.
+
+    
+![](../images/run-java8.png " ") 
+
+### Proceed to Next Lab 
 
 ## Lab 5: Asynchronous features 
 
-The Coherence asynchronous features lab illustrates: how to asynchronously get and put data in a cache; how to asynchronously process cache entries; how to asynchronously aggregate cache entries.
+### Introduction: TThe Coherence asynchronous features lab illustrates: how to asynchronously get and put data in a cache
 
-1.	Start a cache server First Terminal window: bin/run-cache-server.
+### Objective: How to asynchronously process cache entries in Coherence and  how to asynchronously aggregate cache entries.
 
-    Wait for the Cache Server to start in a few seconds
+### Estimated Time: 5 - 10 mins
 
-     ![](../images/run_cache_server.png " ") 
+### Pre-requisites:  Verify Environment has been Completed.
 
-2.	In the second Terminal window, run with the name of the example: bin/run async. 
+### Lab Steps:
+ 
+### Step 1.	Start a cache server First Terminal window: 
 
-    The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/async.
+First terminal Window:
+
+        bin/run-cache-server
+
+Wait for the Cache Server to start in a few seconds
+
+![](../images/run-cache-server.png " ") 
+
+### Step 2.	In the second Terminal window, run with the name of the example: 
+
+Second terminal Window:
+
+        bin/run async
+
+The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/async
 
 
-    ![](../images/run_async.png " ") 
+![](../images/run-async.png " ") 
 
 
 
