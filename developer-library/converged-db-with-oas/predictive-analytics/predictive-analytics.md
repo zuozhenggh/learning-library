@@ -24,11 +24,11 @@ We will also use visualizations on the predicted data for a better decision proc
 ### Prerequisites  ###
 
 This lab assumes you have completed the following labs:  
-- Lab 1: Login to Oracle Cloud  
-- Lab 2: Generate SSH Key  
-- Lab 3: Create Compute Instance  
-- Lab 4: Environment Setup
-- Lab 5: Data Visualization  
+- Lab : Login to Oracle Cloud  
+- Lab : Generate SSH Key  
+- Lab : Create Compute Instance  
+- Lab : Environment Setup
+- Lab : Data Visualization  
 
 The below pre-loaded data objects are available in Converged Database. 
 
@@ -40,9 +40,9 @@ The below pre-loaded data objects are available in Converged Database.
 
 ## Step 1: Create Dataset
 
-In this step, we will use the database connection created in **OAS Lab 5 : Data Visualization** and create a dataset to work on.
+In this step, we will use the database connection created in **Lab 5 : Data Visualization** and create a dataset to work on.
 
-1. In the Home page, click on create button and select Dataset.
+1. In the home page, click on create button and select dataset.
 ![](./images/paoas1.0.png " ")
 2. Select the connection "ConvergedDB_Retail".
 ![](./images/paoas1.1.png " ")
@@ -61,11 +61,11 @@ In this step, we will use the database connection created in **OAS Lab 5 : Data 
 
 ## Step 2: Create Dataflow - ML Model
 
-In this step , we will build a Machine learning model using OAS Dataflow capabilities to train our data on.
+In this step, we will build a Machine learning model using OAS Dataflow capabilities to train our dataset.
 
-1. Click on Create and then select Data Flow.
+1. Click on create and then select Data Flow.
 ![](./images/paoas2.1.png " ")
-2. Select the Data set created in the Step 1 of this lab **Create Dataset** and click on Add.
+2. Select the Data set created in the Step 1 **Create Dataset** and click on Add.
 ![](./images/paoas2.2.png " ")
 3. Uncheck the columns(Employee ID) which will not affect the Attrition as part of data cleaning process.
 ![](./images/paoas2.3.png " ") 
@@ -78,7 +78,7 @@ In this step , we will build a Machine learning model using OAS Dataflow capabil
   **Target**: “Attrition”  
   **Positive Class in Target**: “yes”
 ![](./images/paoas2.6.png " ")
-7. Give Appropriate Name and Save the model.
+7. Give appropriate name and save the model.
 ![](./images/paoas2.7.png " ")
 8. Save the Data flow
 ![](./images/paoas2.8.png " ")
@@ -89,7 +89,7 @@ We now have an ML model to test our data.
 
 ## Step 3: Check ML Model Quality
 
-In this step , we will check the parameters which determines the credibility of a model.
+In this step, we will check the parameters which determines the credibility of a model.
 
 1. Go to “Home”, select “Machine Learning” 
 ![](./images/paoas3.1.png " ")
@@ -101,9 +101,9 @@ In this step , we will check the parameters which determines the credibility of 
 
 ## Step 4: Apply Training Model to Predict
 
-In this step, we will apply our already created ML model to the test data.
+In this step, we will apply the previously created ML model to the test data.
 
-1. Create the test dataset , from the already created Database connection **ConvergedDB_Retail**
+1. Create the test dataset, from the previously created database connection **ConvergedDB_Retail**
 ![](./images/paoas4.1.png " ")
 2. Select the OASLABS schema.
 ![](./images/paoas4.2.png " ")
@@ -115,16 +115,16 @@ In this step, we will apply our already created ML model to the test data.
 ![](./images/paoas4.4.png " ")
 5. Click on "Create Project" to create visualizations.
 ![](./images/paoas4.5.png " ")
-6. Click on “+” symbol  and click on Create Scenario , to imply the ML model on the test data.
+6. Click on “+” symbol  and click on Create Scenario , to apply the ML model on the test data.
 ![](./images/paoas4.6.png " ")
-7. Select the ML model created previously in Step 2 of the lab **Create Dataflow - ML model**, click on Add.
+7. Select the ML model created previously in Step 2 **Create Dataflow - ML model**, click on Add.
 ![](./images/paoas4.7.png " ")
 8. We can see that the model has successfully been added to the project.
 ![](./images/paoas4.8.png " ")
-9.  Right Click on Model name and verify the column mapping, do the changes if required.
+9.  Right Click on model name and verify the column mapping, do the changes incase of any mis-mappings.
 ![](./images/paoas4.9.png " ")
 
-Now our Training model is successfully mapped to the ML model.
+Now our training model is successfully mapped to the ML model.
   
 
 ## Step 5: Create Visualizations
@@ -136,7 +136,7 @@ Right click on the column and select Pick visualization.
 ![](./images/paoas5.1.png " ")
 2. Select the "Performance Tile" visualization.
 ![](./images/paoas5.2.png " ")
-3. Now we will analyze on employees based on job staisfaction and work life-balance.  
+3. Now we will analyze on employees based on job satisfaction and work-life nbalance.  
 
 Select Employee count, JobSatisfaction and Worklife balance from the prediction table and pick "Horizontal Stacked" visualization.
 ![](./images/paoas5.3.png " ")
@@ -152,13 +152,13 @@ Select Employee count, JobSatisfaction and Worklife balance from the prediction 
 ![](./images/paoas5.8.png " ")
 9. Now , we will enrich the visualization by adding “Attrition Predict” from the Model as below.  Select Employee Count, Department, Jobrole and Attrition Predict. Pick table as visualization
 ![](./images/paoas5.9.png " ")
-This way we can see how many employees are likeliy to leave by Department and Job Role.
+This way we can see how many employees are likely to leave by Department and Job Role.
 10. Lets add, “Attrition Predict” as a global filter for it to reflect across the whole canvas.  Drag the column to the top.
 ![](./images/paoas5.10.png " ")
-11. When we set "Attrition Predict" to YES , the tool only considers data of employees predicted to quit the company and applies to the analysis we conducted previously as seen below.
+11. When we set "Attrition Predict" to YES , the tool only filters data of employees predicted to quit the company and applies to the analysis we conducted previously as seen below.
 ![](./images/paoas5.11.png " ")
 
-It is vital for a HR Department to identify the factors that keep employees and those which prompt them to leave, this way we can provide related insights as to how many employees are likely to quit and the probable reason behind it , so that Organizations could do more to prevent the loss of valuable people.
+It is vital for a HR Department to identify the factors that keep employees and those which prompt them to leave, this way we can provide related insights as to how many employees are likely to quit and the probable reason behind it, so that Organizations could do more to prevent the loss of valuable resources to the company.
         
 
 ## Acknowledgements
@@ -166,7 +166,7 @@ It is vital for a HR Department to identify the factors that keep employees and 
 - **Authors** - Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
 - **Team** - North America Analytics Specialists
-- **Last Updated By** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
+- **Last Updated By** - Vishwanath Venkatachalaiah
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

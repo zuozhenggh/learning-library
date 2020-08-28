@@ -28,17 +28,17 @@ Then with OAS Data Preparation we will be making data set ready for visualizatio
 After that we will be building compelling visualizations in OAS.
 
 This lab assumes you have completed the following labs:  
-- Lab 1: Login to Oracle Cloud  
-- Lab 2: Generate SSH Key  
-- Lab 3: Create Compute Instance  
-- Lab 4: Environment Setup   
+- Lab : Login to Oracle Cloud  
+- Lab : Generate SSH Key  
+- Lab : Create Compute Instance  
+- Lab : Environment Setup   
 
 
 The end result should look like below:
 ![](./images/oascdb1.png " ")
 
 ### Prerequisites  ###
-The below pre-loaded data objects are present in Converged Database. And since, OAS recognizes data in relational format, views have been created on the base tables of JSON and XML type.  
+Below pre-loaded data objects are available in Converged Database. . And since OAS recognizes data in relational format , views have been created on the base tables of JSON and XML type.  
  
 
 | ObjectName  | ObjectType  | DataType  | Description  |
@@ -134,10 +134,10 @@ The below pre-loaded data objects are present in Converged Database. And since, 
 ## Step 2: Data Preparation ##
 In this step we will perform some data prepartion steps to make data set ready for visualizatuion.
 
-1. Complete data set is created in previous step. Now on the left hand side, click on "data".
+1. Complete data set is created in step1. Now on the left hand side as shown below , click on "data".
     ![](./images/oascdb25.png " ")
 
-2. Select the dataset **Financials Complete Data set** created in previous step.
+2. Select the dataset **Financials Complete Data set** (created in step1).
     ![](./images/oascdb26.png " ")
 
 3. Click on “Prepare” to perform some “Data Preparation” steps.
@@ -191,11 +191,11 @@ In this step we will perform some data prepartion steps to make data set ready f
     ![](./images/oascdb34.png " ")
 
 ## Step 3: Build Visualizations ##
-Now let’s analyze the data to get some insights.  
+Let us analyze the data to get some insights using different kind of visualizaions.  
 
-1. **Tile** Visualization   
-To summarize some of the key numeric metrics, for example revenue we can use “Tile” visualization.    
-   Select the “Revenue”and Pick “Performance Tiles” for visualization as below.
+1. **Performance Tile** Visualization   
+To summarize key metrics, for example revenue we can use “Performance Tile” visualization.    
+   Select  “Revenue” and Pick “Performance Tile” for visualization as below.
     ![](./images/oascdb35.png " ")
 
    Now do some required changes using Left Bottom "properties" section.  
@@ -215,8 +215,8 @@ To summarize some of the key numeric metrics, for example revenue we can use “
     Dashboard should be like below:
     ![](./images/oascdb40.png " ")
 
-2. Custom Calculation  
-    In OAS, we can also do some calculations of KPI as per business requirement.     
+1. **Custom Calculation**  
+    In OAS, we can also do some calculations of Key Performance Metrics as per business requirement.     
     We will calculate “Profit” as below:  
     Right click on My calculation, then click on “Add Calculation” 
     ![](./images/oascdb38.png " ")
@@ -224,17 +224,17 @@ To summarize some of the key numeric metrics, for example revenue we can use “
     Put this calculation to claculate profit:  **Profit = Revenue- Operating Expenses**
     ![](./images/oascdb39.png " ")
 
-3. **Map** visualization   
+2. **Map** visualization   
    Select Revenue and Region and pick “Map” as visualization.
     ![](./images/oascdb41.png " ")
 
    Verify Below:
     ![](./images/oascdb42.png " ")
 
-   We can also select desired and relevant map layers via properties(Left Bottom).
+   We can also select desired and relevant map layers via properties(Bottom Left).
     ![](./images/oascdb43.png " ")
 
-4. Combo Graph (combination of line, bar, area, etc)    
+3. **Combo Graph** (combination of line, bar, area, etc)    
    Comparing Revenue, Operating Expenses and Net Income quarterly.    
     Select Revenue, Operation Expenses, Net Income and Quarter. Pick Combo as Visualization.  
     ![](./images/oascdb44.png " ")
@@ -253,11 +253,11 @@ To summarize some of the key numeric metrics, for example revenue we can use “
 
    Similarly rename the combo graph.
 
-5. Rename Canvas    
+4. Rename Canvas    
    Rename individual Canvas: Financials Overview.
     ![](./images/oascdb49.png " ")
 
-6. Analyzing Expenses    
+5. Analyzing Expenses    
     Select (+) symbol on the bottom to add another canvas, in this canvas we will add visulizations analysing expenses.  
     ![](./images/oascdb69.png " ")
 
@@ -267,34 +267,34 @@ To summarize some of the key numeric metrics, for example revenue we can use “
     Result should look like below
     ![](./images/oascdb51.png " ")
 
-7. **Sankey** graph Visualization    
+6. **Sankey** graph Visualization    
    We will see quartery expenses by account groups.    
    Select  Operating Expenses, Quartr and Account Group. Pick Sanky graph: 
     ![](./images/oascdb52.png " ")
 
-8. **Stacked Bar** visualization     
+7. **Stacked Bar** visualization     
    We will analyze region wise expenses quarterly .  
    Select Operating Expenses, Previous Year Expenses and Quarter. Pick Stacked Bar.  
     ![](./images/oascdb53.png " ")
 
-9. **Treemap** visualization      
+8. **Treemap** visualization      
    We will analze Expenses by Cost Centre.    
    Select Operating Expenses, Cost Center.  Pick Tree map  
     ![](./images/oascdb54.png " ")
 
-10. Rename canvas "Expenses" as in point 5.  
+9.  Rename canvas "Expenses" as in point 5.  
     Rename individual visualizations and canvases.
 
-11. More KPIs Analysis   
+10. More KPIs Analysis   
     Select (+) symbol on the bottom to add another canvas, in this canvas we will add some more visulizations.  
     ![](./images/oascdb70.png " ")
 
     Please refer to previous steps for selecting the required fields and visualization type.   
     
-   Combo graph for comparing Payables and Receivables by month.
+11. **Combo graph** for comparing Payables and Receivables by month(similar to as we did in point 3).
    ![](./images/oascdb56.png " ")
 
-   Simple Bar Graph:  
+12. **Simple Bar Graph**  
    Analyze current and previous year payables quarterly.
     ![](./images/oascdb57.png " ")
 
@@ -303,7 +303,7 @@ To summarize some of the key numeric metrics, for example revenue we can use “
 
    Rename canvas "More Visuals" as in point 5. 
 
-12. Let’s see **Pivot table** visual    
+13. Let’s see **Pivot table** visual    
     Analyzing KPIs by Cost Centre.  
     Select Revenue, Operating Expenses, Net Income and Cost Center. Pick Pivot table. Change properties as shown below.
     ![](./images/oascdb59.png " ")
@@ -314,7 +314,7 @@ To summarize some of the key numeric metrics, for example revenue we can use “
     select all the required columns (as shown below) and pick table as visualization.
     ![](./images/oascdb60.png " ")
 
-2. Now click on Data Actions (Right up).
+2. Now click on Data Actions (top Right corner).
     ![](./images/oascdb61.png " ")
 
 3. Fill the details as:  
@@ -327,23 +327,23 @@ To summarize some of the key numeric metrics, for example revenue we can use “
     Click OK.
     ![](./images/oascdb62.png " ")
 
-4. Now go to any report, right click and select Detail Report (we have created this in previous step).  
+4. Now go to any report, right click and select Detail Report (created this report  in previous step).  
     ![](./images/oascdb63.png " ")
 
-5. This will drill down to the filtered version of detail report. Filters will be attributes of selected main report.
+5. This will drill down to the filtered version of detail report. Filters will be applied as attributes of selected main report.
     ![](./images/oascdb64.png " ")
 
 
 
 ## Step 5: Adding Filters ##
 
-1. Click (+) symbol on the top section as circle in the below screenshot and select the fields required, here we have selected Year, Month, Account Group.
+1. Click (+) symbol on the top section as circle in the below screenshot and select the fields as required. Here we have selected Year, Month, Account Group.
     ![](./images/oascdb65.png " ")
 
 2. The result canvas will look like below.
     ![](./images/oascdb66.png " ")
 
-3. We can select the filter attribute values as required. Here we have selected **Year=2015, Account Group= Non-contingeg=nt Salaroies and Supplies and Month = Apr-15,Aug-15,Jan-15 and May-15**.
+3. We can select the filter attribute values as required. Here we have selected **Year=2015, Account Group= Non-contingent Salaries and Supplies and Month = Apr-15,Aug-15,Jan-15 and May-15**.
    ![](./images/oascdb66.1.png " ")
 
 With this lab, you have learned OAS self-service analytics with capabilities including data loading, data preparation, data mashups, designing canvas, different types of visualization graphs in simple easy to use interface.
