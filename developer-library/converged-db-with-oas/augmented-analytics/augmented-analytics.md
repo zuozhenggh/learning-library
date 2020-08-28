@@ -105,7 +105,7 @@ Great! Now, you have completed augmented analytics lab and hope you have learnt 
 
 ## Acknowledgements
 
-- **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
+- **Owners** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
 - **Team** - North America Analytics Specialists
 - **Last Updated By** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
