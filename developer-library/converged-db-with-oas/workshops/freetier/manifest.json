@@ -24,7 +24,7 @@
             "filename": "../../setup-compute/setup-compute.md"
         },
         {         
-            "title": "Lab 4: Environment Setup",
+            "title": "Lab 3: Environment Setup",
             "description": "Connect to OAS Instance",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
@@ -32,7 +32,7 @@
             "filename": "../../oas-environment-setup/oas-environment-setup.md"
         },
         {         
-            "title": "Lab 5: Data Visualization",
+            "title": "Lab 4: Data Visualization",
             "description": "OAS Data Visualization",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
@@ -40,7 +40,7 @@
             "filename": "../../data-visualizations/data-visualizations.md"
         },    
         {         
-            "title": "Lab 6: Augmented Analytics",
+            "title": "Lab 5: Augmented Analytics",
             "description": "OAS Augmented Analytics",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
@@ -48,7 +48,7 @@
             "filename": "../../augmented-analytics/augmented-analytics.md"
         },
         {         
-            "title": "Lab 7: Predictive Analytics",
+            "title": "Lab 6: Predictive Analytics",
             "description": "OAS Predictive Analytics",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
