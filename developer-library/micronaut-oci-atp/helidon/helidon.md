@@ -19,22 +19,20 @@ In this lab you will:
 The Helidon MP application is already built and available as a native image
 (ahead of time compilation into native code using GraalVM `native-image`).
 
-Source code of the application is available at:
- 
-https://github.com/tomas-langer/helidon-hol-example.git
+Source code of the application is available on [Github](https://github.com/tomas-langer/helidon-hol-example.git).
 
 Download the native image binary (this is needed for deployment to cloud)
 
-https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/helidon-mp-service
+[https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/helidon-mp-service](https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/helidon-mp-service)
 
 Run the native image (if you are using a Linux environment):
 
 `./helidon-mp-service`
 
 _non Linux environment:_
-  - get the application from github: `git clone https://github.com/tomas-langer/helidon-hol-example.git`
-  - build the application (from application directory): `mvn package`
-  - run the application: `java -jar target/helidon-mp-service.jar`
+  - Get the application from github: `git clone https://github.com/tomas-langer/helidon-hol-example.git`
+  - Build the application (from application directory): `./mvnw package`
+  - Run the application: `java -jar target/helidon-mp-service.jar`
 
 This will open the application on port `8081`
 
@@ -47,16 +45,13 @@ We can verify this application works by exercising the following endpoints:
 
 ## **STEP 2**: Update Micronaut code
 
-We will create a new endpoint for Pet health. This endpoint will use a service that either connects to a remote
+Now it is time to update the Micronaut application to communicate with the Helidon service by defining a new endpoint. This endpoint will use a service that either connects to a remote
 microservice, or if that fails, uses a local fallback.
 
-1. Services needed
+First create a package `example.atp.services`.
 
-Create a package `example.atp.services`.
+Now define a new interface called `PetHealthOperations` that provides the contract for the service:
 
-Create new classes in this package:
-
-`PetHealthOperations` interface to define the contract:
 ```java
 package example.atp.services;
 
@@ -73,7 +68,8 @@ public interface PetHealthOperations {
 }
 ```
 
-`PetHealthFallback` used to fallback to in case the target service is not available
+With the contract in place, the next step is to implement a fallback for the case when the service is unavailable. Define a new class that implements the contract called `PetHealthFallback` which will implement the fallback:
+
 ```java
 package example.atp.services;
 
@@ -92,7 +88,10 @@ public class PetHealthFallback implements PetHealthOperations {
 }
 ```
 
-And finally the `PetHealthService` used to invoke the target service:
+The class uses Micronaut's [Client Fallbacks](https://docs.micronaut.io/latest/guide/index.html#clientFallback) concept and the `@Fallback` annotation to define logic that will be executed if an error occurs calling the actual service.
+
+With the fallback in place, the next step is to implement the actual service. Define a class called `PetHealthService` that is used to invoke the actual service:
+
 ```java
 package example.atp.services;
 
@@ -129,7 +128,14 @@ public class PetHealthService implements PetHealthOperations {
 }
 ```
 
-2. Update the configuration to define service endpoint
+Key aspects of this example include:
+
+* The class is annotated with `@Singleton` and `@Recoverable`, the latter of which is used to define the api that contains the methods that will trigger fallback behaviour.
+* An inner interface called `PetHealthClient` is defined that uses Micronaut's support for [declarative clients HTTP clients](https://docs.micronaut.io/latest/guide/index.html#clientAnnotation). The `@Client` interface is used to specify a named service called `pet-health` which will be used to perform the communication. This client is injected into the constructor of the `PetHealthService` and is used to make the call to the Helidon service.
+
+Micronaut includes comprehensive support for different [service discovery](https://docs.micronaut.io/latest/guide/index.html#serviceDiscovery) strategies. You could configure Micronaut to use a Service Discovery server or discovery services via Kubernetes using the name `pet-health`.
+
+To keep things simple for the moment just define a hard coded URL to the Helidon service:
 
 In `resources/application.yml`, update the `micronaut` section and add the following:
 ```yaml
@@ -139,9 +145,9 @@ micronaut:
       urls: "http://localhost:8081"
 ```
 
-3. Update the controller
+By setting `micronaut.http.services.pet-health.urls`, you can define the endpoints the logical name `pet-health` will invoke when called.
 
-Update the `PetController`:
+Finally, it is time to update the `PetController` controller to invoke the Pet Health service:
 
 ```java
 // a new field
@@ -165,11 +171,11 @@ CompletableFuture<PetHealthOperations.PetHealth> getHealth(String name) {
 
 Now when the Micronaut application is rebuilt and restarted,
 we can test the new endpoint.
- 
+
 For the sake of simplicity, the `Dino` and `Hoppy` pets are vaccinated,
  and the poor `Baby Puss` is not.
- 
-You can now access http://localhost:8080/pets/name/health to find out if a pet is healthy:
+
+You can now access http://localhost:8080/pets/{name}/health to find out if a pet is healthy:
 
 ```bash
 curl -i http://localhost:8080/pets/Dino/health

@@ -20,24 +20,24 @@ In this lab you will:
 
 1. Before deploying, ensure the wallet exists on the VM by running the snippet produced by `setup.sh` that looks similar to:
 
-   ```bash
-   # run on local machine to push to VM
-   scp -i ~/.ssh/id_oci -r /tmp/wallet opc@[VM IP Address]:/tmp/wallet
-   ```
+```bash
+# run on local machine to push to VM
+scp -i ~/.ssh/id_oci -r /tmp/wallet opc@[VM IP Address]:/tmp/wallet
+```
 
 2. Build JAR with:
 
-   ```shell script
-   # run on local machine
-   ./gradlew assemble
-   ```
+```bash
+# run on local machine
+./gradlew assemble
+```
 
 3. Push JAR to VM with the snippet produced by `setup.sh` that looks similar to this:
 
-   ```shell script
-   # run on local machine to push to VM
-   scp -i ~/.ssh/id_oci -r build/libs/example-atp-0.1-all.jar opc@[VM IP Address]:/app/application.jar
-   ```
+```bash
+# run on local machine to push to VM
+scp -i ~/.ssh/id_oci -r build/libs/example-atp-0.1-all.jar opc@[VM IP Address]:/app/application.jar
+```
 
 4. Push Helidon native image to the VM:
 

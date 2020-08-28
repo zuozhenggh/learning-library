@@ -10,7 +10,7 @@ Estimated Lab Time: &lt;10&gt; minutes
 
 In this lab you will:
 
-* Download a Terraform script to setup an Oracle Cloud VM and Autonmous Database instance
+* Download a Terraform script to setup an Oracle Cloud VM and Autonomous Database instance
 * Create and Apply a Oracle Cloud Stack via Terraform
 * Obtain the necessary configuration to run a Micronaut application locally and communicate with Autonomous Database
 
@@ -20,9 +20,9 @@ In this lab you will:
 
 ## **STEP 1**: Create a new Stack
 
-1. Create Infrastructure by downloading the Terraform configuration for this lab (stack.zip) from:
+1. Create Infrastructure by downloading the Terraform configuration: A [stack.zip](https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/stack.zip) file.
 
-   https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/stack.zip
+
 
 2. In the Oracle Cloud Console go to the "Solutions and Platforms" -> "Resource Manager" -> "Stacks".
 
@@ -41,9 +41,9 @@ In this lab you will:
    ![Stack Configuration - Step 2](images/stack_info_2.png)
 
 6. Under "Required Configuration" add the SSH key that you created in Lab 2. You can do so by dragging and dropping the public key file (the file that ends with `.pub`) or by choosing `PASTE SSH KEYS` then copying and pasting the contents of the public key file.
-                                                                             
+
     For example running the following command from a terminal window will copy the contents of your public key into the clipboard which can then be pasted:
-    
+
     ```
     cat ~/.ssh/id_oci.pub | pbcopy
     ```

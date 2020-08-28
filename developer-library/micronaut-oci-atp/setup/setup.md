@@ -46,7 +46,7 @@ To connect locally you need download and configure the ATP Wallet locally.
 
     ![Choose compartment](images/choose-compartment.png)
 
-3. Find the newly created instance and click on it. 
+3. Find the newly created instance and click on it.
 
     ![ATP instance](images/atp-instance-list.png)
 
@@ -69,11 +69,11 @@ To connect locally you need download and configure the ATP Wallet locally.
    ```
 
    Once downloaded your wallet directory should contain the following files:
-   
+
    ![Wallet dir](images/tmp-wallet-dir.png)
 
 
-## **STEP 3**: Create a new Micronaut application 
+## **STEP 3**: Create a new Micronaut application
 
 There are several ways you can get started creating a new Micronaut application. If you have the Micronaut CLI installed you can use the `mn` command to create a new application:
 
@@ -82,7 +82,11 @@ mn create-app example-atp --features oracle,data-jdbc
 cd example-atp
 ```
 
-Which will setup an application that uses the Oracle driver, the Oracle Universal Connection Pool and Micronaut Data JDBC. If you do not have the Micronaut CLI installed 
+Which will setup an application that uses the Oracle driver and Micronaut Data JDBC.
+
+Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool, however you can add `--build maven` if you prefer Maven.
+
+If you do not have the Micronaut CLI installed
 and are running on Linux or OS X you can alternatively `curl` and `unzip`:
 
 ```basb
@@ -91,7 +95,7 @@ unzip example-atp.zip -d example-atp
 cd example-atp
 ```
 
-If none of these options are viable you can also navigate to https://micronaut.io/launch/ in a browser and click the `Features` button and select the `oracle` and `data-jdbc` features then click `Generate` which will produce a zip you can download and unzip.
+If none of these options are viable you can also navigate to [Micronaut Launch](https://micronaut.io/launch/) in a browser and click the `Features` button and select the `oracle` and `data-jdbc` features then click `Generate` which will produce a zip you can download and unzip.
 
 ## **STEP 4**: Configure the Micronaut Application
 
@@ -107,7 +111,9 @@ datasources:
     dialect: ORACLE
    ```
 
-The configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section. 
+To configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section.
+
+It is recommended to never to hard code passwords in configuration so using an environment variable is the preferred approach.
 
 In addition you should also set an environment variable called `TNS_ADMIN` to the location of your wallet created in Step 2.
 
