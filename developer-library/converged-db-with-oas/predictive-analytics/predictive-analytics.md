@@ -40,7 +40,7 @@ The below pre-loaded data objects are available in Converged Database.
 
 ## Step 1: Create Dataset
 
-In this step, we will use the database connection created in **Lab 5 : Data Visualization** and create a dataset to work on.
+In this step, we will use the database connection created in **Lab 4 : Data Visualization** and create a dataset to work on.
 
 1. In the home page, click on create button and select dataset.
 ![](./images/paoas1.0.png " ")
@@ -65,9 +65,9 @@ In this step, we will build a Machine learning model using OAS Dataflow capabili
 
 1. Click on create and then select Data Flow.
 ![](./images/paoas2.1.png " ")
-2. Select the Data set created in the Step 1 **Create Dataset** and click on Add.
+2. Select the Data set created in the **Step 1** and click on Add.
 ![](./images/paoas2.2.png " ")
-3. Uncheck the columns(Employee ID) which will not affect the Attrition as part of data cleaning process.
+3. Uncheck the columns (Employee ID) which will not affect the Attrition as part of data cleaning process.
 ![](./images/paoas2.3.png " ") 
 4. Click on “+” and select “Train Binary Classifier”.  
   We are using “Train Binary Classifier” because the predict values will only be “yes or no”.
@@ -107,7 +107,7 @@ In this step, we will apply the previously created ML model to the test data.
 ![](./images/paoas4.1.png " ")
 2. Select the OASLABS schema.
 ![](./images/paoas4.2.png " ")
-3. Select the HR\_ATTRITION\_PREDICT table , which has our test data.
+3. Select the HR\_ATTRITION\_PREDICT table, which has our test data.
 ![](./images/paoas4.3.png " ")
 4. Add all the rows to the data set and perform required Measure to attribute changes and click on “Add".  
  For Example,  
@@ -115,9 +115,9 @@ In this step, we will apply the previously created ML model to the test data.
 ![](./images/paoas4.4.png " ")
 5. Click on "Create Project" to create visualizations.
 ![](./images/paoas4.5.png " ")
-6. Click on “+” symbol  and click on Create Scenario , to apply the ML model on the test data.
+6. Click on “+” symbol  and click on Create Scenario, to apply the ML model on the test data.
 ![](./images/paoas4.6.png " ")
-7. Select the ML model created previously in Step 2 **Create Dataflow - ML model**, click on Add.
+1. Select the ML model created previously in **Step 2**, click on Add.
 ![](./images/paoas4.7.png " ")
 8. We can see that the model has successfully been added to the project.
 ![](./images/paoas4.8.png " ")
@@ -148,15 +148,15 @@ Select Employee count, JobSatisfaction and Worklife balance from the prediction 
 ![](./images/paoas5.6.png " ")
 7. We can also hide the Employee count label that is being shown on the Pivot. Right click on the graph and select "Hide Value labels".
 ![](./images/paoas5.7.png " ")
-8. We can rearrange the visualizations by simple drag and drop , to make the canvas more appealing.
+8. We can rearrange the visualizations by simple drag and drop, to make the canvas more appealing.
 ![](./images/paoas5.8.png " ")
-9. Now , we will enrich the visualization by adding “Attrition Predict” from the Model as below.  Select Employee Count, Department, Jobrole and Attrition Predict. Pick table as visualization
+9. Now, we will enrich the visualization by adding “Attrition Predict” from the Model as below.  Select Employee Count, Department, Jobrole and Attrition Predict. Pick table as visualization
 ![](./images/paoas5.9.png " ")
 This way we can see how many employees are likely to leave by Department and Job Role.
 10. Lets add, “Attrition Predict” as a global filter for it to reflect across the whole canvas.  Drag the column to the top.
 ![](./images/paoas5.10.png " ")
-11. When we set "Attrition Predict" to YES , the tool only filters data of employees predicted to quit the company and applies to the analysis we conducted previously as seen below.
-![](./images/paoas5.11.png " ")
+11. When we set "Attrition Predict" to YES, the tool only filters data of employees predicted to quit the company and applies to the analysis we conducted previously as seen below.
+![](./images/paoas5.11.PNG " ")
 
 It is vital for a HR Department to identify the factors that keep employees and those which prompt them to leave, this way we can provide related insights as to how many employees are likely to quit and the probable reason behind it, so that Organizations could do more to prevent the loss of valuable resources to the company.
         
