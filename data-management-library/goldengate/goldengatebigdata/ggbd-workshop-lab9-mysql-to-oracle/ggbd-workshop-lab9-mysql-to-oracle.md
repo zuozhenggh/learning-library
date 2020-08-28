@@ -25,7 +25,7 @@ Your will need:
 
 Example:
 
-1. In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
+2. In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
 
         We already have the jdbc drive downloaded ojdbc8-full.tar.gz in the location /home/oracle/Downloads 
 ```
