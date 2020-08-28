@@ -3,12 +3,13 @@
 ## Introduction ##
 In this lab you will start both Database and OAS environments by running the script files. 
 
+Estimated Lab Time: 10 Mintues.
+
 ### Objectives ###
 
 - Start the Oracle Database and Listener
 - Start OAS services
   
-
 ### Prerequisites ###
 
 This lab assumes you have completed the following labs:  
@@ -101,10 +102,10 @@ Now, you are ready to move to further labs.
 
 ## Acknowledgements
 
-- **Authors** - Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
+- **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
 - **Team** - North America Analytics Specialists
-- **Last Updated By** - Vishwanath VenkatachalaiahVishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
+- **Last Updated By** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
