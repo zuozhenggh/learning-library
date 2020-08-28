@@ -60,7 +60,6 @@ Organizations can now modernize their analytics platform by providing easy-to-us
 ## Why Converge Database with OAS ?
 Every actionable insights are drived from data and data is available in variety of formats like, Relational, XML, JSON, Spatial, Graph etc.  Organizations are heavily depending on accurate data and its availability for processing. Hence, many organizations are trying to keep data at its originately or in various source formats.  To take right decision at right time, single truth version of data is required and hence consolidation is the key.  Hence, variety of data needs to be processed using tools to get single version of true data.   Not one solution or tool is sufficient to handle these various fomrats of data. Oracle has come up with one solution which can host or process variety of data of an organization called Converged Database.  Hence, no more looking for many tools for hosting or consolidation of variety data. For stunning data visualization fetching converged database, Oracle Analytics Server is frontline tool.  Let us see how one can create stunning data visualizations to bring up the actionable insights from converged database using Oracle Analytics Server.
 
-
 Oracle Analytics Server has rich collection of data visualizations and capability to connect various data sources.  Converged database has greater advantage of hosting variety of data types. 
 
 ## Acknowledgements
