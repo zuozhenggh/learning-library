@@ -138,7 +138,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 - [GeoRaster Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/geors/index.html)
 
 
-## Step 1:Connect to Graph Server 
+## **Step 1:**Connect to Graph Server 
 
 For connecting to graph server, open a terminal in VNC and execute below steps as oracle user.
 
@@ -148,7 +148,7 @@ For connecting to graph server, open a terminal in VNC and execute below steps a
 </copy>
 ````
 
-## Step 2: Start Graph server
+## **Step 2:** Start Graph server
 ````
 <copy>
 ./start-server
@@ -161,7 +161,7 @@ For connecting to graph server, open a terminal in VNC and execute below steps a
 The PGX server is now ready to accept requests.
 Now that the server is started, will keep this window open and will proceed to start the client now.
 
-## Step 3:Connect to Graph Client
+## **Step 3:**Connect to Graph Client
 
 The Graph Shell uses JShell, which means the shell needs to run on Java 11 or later. In our case the installation is completed, the shell executables can be found in /u01/graph/oracle-graph-client-20.1.0/bin after server installation or <\INSTALL\_DIR>/bin after client installation.
 
@@ -196,6 +196,6 @@ Below screenshot is an example how Connection to a PGX server using Jshell looks
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
   

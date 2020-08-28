@@ -1,7 +1,8 @@
 {
+    "workshoptitle": "Create SSH Keys and Login to Oracle Cloud",
     "tutorials": [
         {
-            "title": "Lab: Generate SSH Key",
+            "title": "Lab: Create SSH Key",
             "description": "Generate SSH Key",
             "filename": "generate-ssh-keys.md"
         },

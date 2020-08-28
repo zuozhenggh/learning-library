@@ -35,7 +35,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
    
@@ -49,7 +49,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console create Object Storage Bucket and VCN
+## **Step 1:** Sign in to OCI Console create Object Storage Bucket and VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -160,7 +160,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     ![](./../using-service-gateway/images/SGW_033.PNG " ")
 
-## Step 2: Create ssh keys, Create two Compute instances with OCI CLI pre installed
+## **Step 2:** Create ssh keys, Create two Compute instances with OCI CLI pre installed
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
@@ -324,7 +324,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     ![](./../deploying-oci-streaming-service/images/Stream_005.PNG " ")
 
-## Step 3: Upload API keys, and verify functionality
+## **Step 3:** Upload API keys, and verify functionality
 
 1. **oci setup config** also generated an API key. We will need to upload this API key into our OCI account for authentication of API calls. Switch to ssh session to compute instance, to display the conent of API key Enter command :
 
@@ -459,5 +459,6 @@ Using Servie Gateway, compute instance was able to access Object stored in Objec
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
 

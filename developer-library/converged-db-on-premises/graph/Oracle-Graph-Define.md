@@ -18,7 +18,7 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
 
-## Step 1: Make a JDBC connection to the database:
+## **Step 1:** Make a JDBC connection to the database:
 At the jshell prompt.
 
 ````
@@ -65,7 +65,7 @@ var pgql = PgqlConnection.getConnection(conn);
 ````
 ![](./images/IMGG5.PNG) 
 
-## Step 2: Create Graph
+## **Step 2:** Create Graph
 
 **Note: Below steps are already completed.**
 
@@ -193,6 +193,6 @@ Consumer<\String> query = q -> { try(var s = pgql.prepareStatement(q)) { s.execu
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
   
