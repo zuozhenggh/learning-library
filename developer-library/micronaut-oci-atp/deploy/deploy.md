@@ -4,7 +4,7 @@
 
 This lab takes you through deploying the Micronaut application to an OCI VM.
 
-Estimated Lab Time: &lt;15&gt; minutes
+Estimated Lab Time: &lt;10&gt; minutes
 
 ### Objectives
 
