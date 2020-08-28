@@ -59,7 +59,7 @@ Check for the success status before moving to OAS login screen.
 
 1. Open web browser (preferabily Chrome) and access the OAS Data Visualization service by the below URL structure.  
 
-      Lab 3 - Create Compute Instance will provide you the instance IP address. ?? (public / private)
+      Lab 2 - will provide your instance public IP. 
 ````
 <copy>
 http://Your-Machine-IP:9502/dv/ui
@@ -67,7 +67,7 @@ http://Your-Machine-IP:9502/dv/ui
 ````
 ![](./images/oas-environment6.png " ")
 
-2. Login with the below credentials;
+1. Login with the below credentials;
 
       Username	: Weblogic
 
