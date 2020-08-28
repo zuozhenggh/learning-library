@@ -3,9 +3,9 @@
 ![](./images/image110_1.png)
 
 ## Want to learn more:
-" https://www.oracle.com/middleware/data-integration/goldengate/big-data/ "
+"https://www.oracle.com/middleware/data-integration/goldengate/big-data/"
 
-### Introduction
+## Introduction
 Contents
 
 Introduction
@@ -74,11 +74,11 @@ Approximately 30 min
 
 In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
-1. Open terminal from desktop by double clicking on the icon
+**Step1:** Open terminal from desktop by double clicking on the icon
 
 ![](./images/terminal2.png)
 
-2. Change to ggadmin
+**Step2:** Change to ggadmin
 
 '>su – ggadmin
 Password = oracle
@@ -90,7 +90,7 @@ The following Lab Menu will be displayed
 
 Follow these instructions to install GoldenGate for Big Data
 
-3. Install GoldenGate using option 1
+**Step3:** Install GoldenGate using option 1
 
 ![](./images/labmenu_opt1.png)
 
@@ -105,7 +105,7 @@ If you would like to auto-install GoldenGate for Big Data, you can select option
 
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
-**You have completed Lab 1! - You may proceed to the next Lab**
+**You have completed Lab 1 - You may proceed to the next Lab**
 
 ## Acknowledgements
 
@@ -115,7 +115,7 @@ Congratulations, GoldenGate for Big Data is now installed. You can proceed to th
   * Last Updated By - Brian Elliott, August 2020
 
 
-Please submit an issue on our issues page:
+## Please submit an issue on our issues page:
 [issues](https://github.com/oracle/learning-library/issues) 
 
  We review it regularly.
