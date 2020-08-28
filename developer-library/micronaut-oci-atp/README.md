@@ -1,6 +1,7 @@
 # Building Java Cloud Native Applications with Micronaut and OCI
 
-Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Micronaut is an innovative new framework that precomputes your framework infrastructure at compilation time. 
+Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Micronaut is an innovative new framework that precomputes your framework infrastructure at compilation time.
+
 This workshop will take you through combining Micronaut and Oracle Cloud with Autonomous Database to build an efficient and lean Microservice application.
 
 ## Get an Oracle Cloud Trial Account for Free!

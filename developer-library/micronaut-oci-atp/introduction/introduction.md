@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop is for Java Developers looking to start building applications with Micronaut and Oracle Cloud with Autonomous Database. The workshop features several labs that walk you through the 
+This workshop is for Java Developers looking to start building applications with Micronaut and Oracle Cloud with Autonomous Database. The workshop features several labs that walk you through the
 steps to get going with Micronaut, Helidon, and Oracle Cloud.
 
 Estimated Lab Time: &lt;120&gt; minutes
@@ -15,9 +15,9 @@ that utilize very little memory and resources thanks to its reflection free natu
 Micronaut also includes a persistence framework called Micronaut Data that precomputes your SQL queries at compilation name making it a great fit for working with Autonmous Database.
 
   <!-- [Video](youtube:zNKxJjkq0Pw) -->
-  
+
 Helidon is an Oracle implementation of MicroProfile specification and is used in this lab as a pre-built service
-to show interaction between heterogeneous microservices. 
+to show interaction between heterogeneous microservices.
 
 More information:
 
@@ -42,6 +42,7 @@ and Oracle Cloud to connected to an Oracle Database.
 ### Prerequisites
 
 * Internet Browser
+* Understanding of the Java programming language
 * [Micronaut](https://micronaut.io/download.html)
 * JDK 11 or above installed
 * An IDE such as [VS Code](https://code.visualstudio.com/) or [IntelliJ](https://www.jetbrains.com/idea/download/#section=mac)
