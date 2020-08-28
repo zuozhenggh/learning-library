@@ -96,7 +96,6 @@ With the fallback in place, the next step is to implement the actual service. De
 package example.atp.services;
 
 import java.util.concurrent.CompletableFuture;
-
 import javax.inject.Singleton;
 
 import io.micronaut.http.annotation.Get;
@@ -114,16 +113,15 @@ public class PetHealthService implements PetHealthOperations {
 
     @Override
     public CompletableFuture<PetHealth> getHealth(String name) {
-        if (petHealthClient.isVaccinated(name)) {
-            return CompletableFuture.completedFuture(PetHealth.GOOD);
-        }
-        return CompletableFuture.completedFuture(PetHealth.REQUIRES_VACCINATION);
+        return petHealthClient.isVaccinated(name).thenApply(isVaccinated ->
+                isVaccinated ? PetHealth.GOOD : PetHealth.REQUIRES_VACCINATION
+        );
     }
 
     @Client(value = "pet-health", path ="/vaccinated")
     public interface PetHealthClient {
         @Get("/{name}")
-        boolean isVaccinated(String name);
+        CompletableFuture<Boolean> isVaccinated(String name);
     }
 }
 ```
