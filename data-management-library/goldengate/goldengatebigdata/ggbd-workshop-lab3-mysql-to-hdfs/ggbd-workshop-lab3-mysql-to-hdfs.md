@@ -113,6 +113,8 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 
 ![](./images/b15.png)
 
+**End of Lab 3 - You may proceed to the next Lab**
+
 **Optional:**  Only if VNC is available
 
 The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.

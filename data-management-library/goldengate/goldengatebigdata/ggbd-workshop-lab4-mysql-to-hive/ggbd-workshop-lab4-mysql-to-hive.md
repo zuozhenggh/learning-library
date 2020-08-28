@@ -103,7 +103,7 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 ![](./images/c18.png)
 ![](./images/c19.png)
 
-**End of Lab 4.**
+**End of Lab 4 - You may proceed to the next Lab**
 
 **Optional:** Only if VNC is available
 

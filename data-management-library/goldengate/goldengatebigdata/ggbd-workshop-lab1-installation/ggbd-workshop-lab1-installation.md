@@ -105,7 +105,7 @@ If you would like to auto-install GoldenGate for Big Data, you can select option
 
 Congratulations, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
-**You have completed Lab 1!**
+**You have completed Lab 1! - You may proceed to the next Lab**
 
 ## Acknowledgements
 
@@ -119,3 +119,4 @@ Please submit an issue on our issues page:
 [issues](https://github.com/oracle/learning-library/issues) 
 
  We review it regularly.
+

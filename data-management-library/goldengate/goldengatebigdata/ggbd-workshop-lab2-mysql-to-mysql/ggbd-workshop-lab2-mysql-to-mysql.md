@@ -84,7 +84,7 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 ‘pmpmysql’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘repmysql’ read the remote trail files, and applied the changes to the MySQL database ‘ggtarget’.
 
 
-End of Lab 2.
+**End of Lab 2 - - You may proceed to the next Lab**
 
 ## Acknowledgements
 

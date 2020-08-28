@@ -120,7 +120,9 @@ NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop t
 In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rcass’ read the remote trail files, created the Cassandra tables and wrote the data to those tables.
 
-End of Lab 7.
+**End of Lab 3**
+
+**Congrats! You have completed the GoldenGate for Big Data Workshop!!**
 
 ## Acknowledgements
 
@@ -133,6 +135,6 @@ End of Lab 7.
 
 Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
 
-**Congrats! You have completed the GoldenGate for Big Data Workshop!!**
+
 
 

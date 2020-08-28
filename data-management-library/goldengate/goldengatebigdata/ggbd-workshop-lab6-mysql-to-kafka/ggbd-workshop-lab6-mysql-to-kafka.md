@@ -120,7 +120,7 @@ view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
 In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rkafka’ read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
 
-**End of Lab 6**
+**End of Lab 6 - You may proceed to the next Lab**
 
 ## Acknowledgements
 
