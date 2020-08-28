@@ -20,8 +20,8 @@ Mainly two components are explored in this workshop along with few features of t
     - Database Connectivity
     - Data set creation
     - Data Visualization
-    - Augmented Analytics - Explain and Forecast features
-    - Predictive Analytics - Machine Learning alogrithm
+    - Augmented Analytics 
+    - Predictive Analytics 
 
 
 ### Prerequisites  ###
@@ -30,7 +30,7 @@ Mainly two components are explored in this workshop along with few features of t
 
 To complete this workshop, you will use a preconfigured OAS images available in Oracle's Cloud Marketplace to build your compute instance.  This image comes pre-installed with all the information you need to create your environment. 
 
-Estimated Workshop Time: 2.5 hours
+Estimated Workshop Time: 3 hours
 
 ## Oracle Analytics Server ##
 
