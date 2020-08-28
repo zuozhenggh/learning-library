@@ -57,7 +57,7 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
         export PATH=$JAVA_HOME/bin:$PATH
         echo $JAVA_HOME
         
-![](./images/java_home.png " ")
+![](../images/java_home.png " ")
 
     Set and Verify COHERENCE_HOME for both terminal windows
 
@@ -66,7 +66,7 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 
         echo $COHERENCE_HOME
 
-![](./images/set_env.png " ") 
+![](../images/set_env.png " ") 
 
     Change Directory to Java Samples in both Terminal Windows ((/u01/middleware/14c/coherence/examples/java)
 
@@ -101,12 +101,12 @@ This Lab shows the most basic data access features of Coherence including gettin
 
     Wait for the Cache Server to start in a few seconds
 
-    ![](./images/run_cache_server.png " ") 
+    ![](../images/run_cache_server.png " ") 
 
 2.	In the second Terminal window, run with the name of the example: bin/run contacts. The Driver.main method runs through the features of the example with output going to the command window (stdout).
 
 
-    ![](./images/run_contacts.png " ")  
+    ![](../images/run_contacts.png " ")  
 
 
 ## Lab 2: Security
@@ -120,13 +120,13 @@ The security example requires Coherence*Extend, which uses a proxy.
 
     Wait for the Cache Server to start in a few seconds
 
-     ![](./images/run_cache_server.png " ") 
+     ![](../images/run_cache_server.png " ") 
 
 2.	In the second Terminal window, run with the name of the example: bin/run security. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout).
 
-    ![](./images/run_security.png " ")  
+    ![](../images/run_security.png " ")  
 
 
 ## Lab 3:  Live events 
@@ -139,13 +139,13 @@ The Live events Lab illustrates: how to measure the elapsed time between pre- an
     
     Wait for the Cache Server to start in a few seconds
 
-     ![](./images/run_cache_server.png " ")
+     ![](../images/run_cache_server.png " ")
 
 2.	In the second Terminal window, run with the name of the example: bin/run events. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout).
 
-    ![](./images/run_events.png " ") 
+    ![](../images/run_events.png " ") 
 
 
 ## Lab 4: Java 8 features 
@@ -156,13 +156,13 @@ The Coherence Java 8 features Lab illustrates: how to use the Java streams when 
 
     Wait for the Cache Server to start in a few seconds
 
-     ![](./images/run_cache_server.png " ") 
+     ![](../images/run_cache_server.png " ") 
 
 2.	In the second Terminal window, run with the name of the example: bin/run java8. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/java8.
 
-    ![](./images/run_java8.png " ") 
+    ![](../images/run_java8.png " ") 
 
 
 ## Lab 5: Asynchronous features 
@@ -173,14 +173,14 @@ The Coherence asynchronous features lab illustrates: how to asynchronously get a
 
     Wait for the Cache Server to start in a few seconds
 
-     ![](./images/run_cache_server.png " ") 
+     ![](../images/run_cache_server.png " ") 
 
 2.	In the second Terminal window, run with the name of the example: bin/run async. 
 
     The Driver.main method runs through the features of the example with output going to the command window (stdout). Inspect the output and refer to the code at src/com/tangosol/examples/async.
 
 
-    ![](./images/run_async.png " ") 
+    ![](../images/run_async.png " ") 
 
 
 

@@ -6,7 +6,7 @@
             "partnumber": "Ennnnn_05",
             "publisheddate": "08/10/2020",
             "contentid": "22nnnn",
-            "filename": "../intro-coherence.md"
+            "filename": "../../intro/intro-coherence.md"
         },
         {   
             "title": "Setup Instructions",
@@ -14,7 +14,7 @@
             "partnumber": "Ennnnn_06",
             "publisheddate": "08/10/2020",
             "contentid": "23nnnn",
-            "filename": "../setup.md"
+            "filename": "../../setup/setup.md"
         },
 
         {   
@@ -23,7 +23,7 @@
         "partnumber": "Ennnnn_07",
         "publisheddate": "08/10/2020",
         "contentid": "24nnnn",
-        "filename": "../coherence-lab.md"
+        "filename": "../../lab/coherence-lab.md"
         }
 
     ]

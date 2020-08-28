@@ -6,7 +6,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "08/10/2020",
             "contentid": "12nnnn",
-            "filename": "../intro-weblogic.md"
+            "filename": "../../intro/intro-weblogic.md"
         },
         {   
             "title": "Setup Instructions",
@@ -14,7 +14,7 @@
             "partnumber": "Ennnnn_02",
             "publisheddate": "08/10/2020",
             "contentid": "13nnnn",
-            "filename": "../setup.md"
+            "filename": "../../setup/setup.md"
         },
 
         {   
@@ -23,7 +23,7 @@
         "partnumber": "Ennnnn_03",
         "publisheddate": "08/10/2020",
         "contentid": "14nnnn",
-        "filename": "../weblogic-lab.md"
+        "filename": "../../lab/weblogic-lab.md"
         }
 
     ]

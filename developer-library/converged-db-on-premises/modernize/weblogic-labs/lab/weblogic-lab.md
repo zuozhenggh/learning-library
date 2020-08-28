@@ -69,21 +69,26 @@ This lab is designed for people with no prior experience with Kubernetes, Docker
 
 -	The terminal shows stdout logs for starting the AdminServer of Wait till the firefox browser automatically launch the index.jsp 
 -	On the top right corner click on “Start the Administration Console” button
-	 ![](./images/adminconsole.png " ")  
--	Open the Weblogic Admin Console and login with credentials
-username: weblogic
-password: Oracle123!
+	 ![](../images/adminconsole.png " ")  
+
+-	Open the Weblogic Admin Console and login with credentials:
+
+		username: weblogic
+		password: Oracle123!
+
 -	On the left hand side Menu under “Domain Structure” click on “Deployments”. Observe that the bestbank2020 application has been already deployed and available to access.
-	 ![](./images/deployments.png " ")  
+
+	 ![](../images/deployments.png " ")  
+
 -	In the firefox open a new Tab and access the bank application UI with URL http://localhost:7101/bestbank2020
 -	The existence of base version of the sample bestbank application is confirmed.
 -	Change directory to /u01/middleware_demo/wls-helidon
 
-cd /u01/middleware_demo/wls-helidon/
+		cd /u01/middleware_demo/wls-helidon/
 
 -	Verify if pom.xml and src/ folder is available under /u01/middleware_demo/wls-helidon
 
-ls -alrt
+		ls -alrt
 
 ## Step 3. Develop new Credit Score function as microservice using Helidon SE and deploy on local JVM
 -	In the same terminal, navigate to:
@@ -95,9 +100,9 @@ ls -alrt
 -	make a directory called “microservice” under /u01/middleware_demo/wls-helidon and navigate to /u01/middleware_demo/wls-helidon/microservice
 
 
-	mkdir microservice
+		mkdir microservice
 
-	cd /u01/middleware_demo/wls-helidon/microservice
+		cd /u01/middleware_demo/wls-helidon/microservice
 
 -	Generate the project sources using Helidon SE Maven archetypes. The result is a simple project that shows the basics of configuring the WebServer and implementing basic routing rule
 
@@ -112,33 +117,36 @@ ls -alrt
 
 -	When the project generation is ready open the Main.java for edit:
 
-gedit helidon-creditscore-se/src/main/java/io/helidon/bestbank/creditscore/Main.java &
+	gedit helidon-creditscore-se/src/main/java/io/helidon/bestbank/creditscore/Main.java &
 
--	Add creditscore route which is basically the context path for the service endpoint. Find the createRouting method (at line 96) and register the new route. The complete createRouting method has to look like the following:
+-	Add creditscore route which is basically the context path for the service endpoint. Find the createRouting method (at line 96) and register the new route. 
+
+-	Add ".register("/creditscore", new CreditscoreService())" as indicated below.
+
+  	The complete createRouting method has to look like the following:
 
 
-private static Routing createRouting(Config config) {
-
-    MetricsSupport metrics = MetricsSupport.create();
-    GreetService greetService = new GreetService(config);
-    HealthSupport health = HealthSupport.builder()
-            .add(HealthChecks.healthChecks())   // Adds a convenient set of checks
-            .build();
-
-    return Routing.builder()
-            .register(JsonSupport.create())
-            .register(health)                   // Health at "/health"
-            .register(metrics)                  // Metrics at "/metrics"
-            .register("/greet", greetService)
-            //THIS IS THE ONLY LINE YOU HAVE TO ADD:
-            .register("/creditscore", new CreditscoreService())
-            //END OF ADDED SECTION
-            .build();
-}
+		96	private static Routing createRouting(Config config) {
+		97    MetricsSupport metrics = MetricsSupport.create();
+		98    GreetService greetService = new GreetService(config);
+		99    HealthSupport health = HealthSupport.builder()
+		100            .add(HealthChecks.healthChecks())   // set of checks
+		101            .build();
+		102
+		103    return Routing.builder()
+		104            .register(JsonSupport.create())
+		105            .register(health)                   // Health at "/health"
+		106            .register(metrics)                  // Metrics at "/metrics"
+		107            .register("/greet", greetService)
+		108            //THIS IS THE ONLY LINE YOU HAVE TO ADD:
+		109            .register("/creditscore", new CreditscoreService())
+		110            //END OF ADDED SECTION
+		111            .build();
+		112		}
 
 -	Now create a new class called CreditscoreService in the same package where the Main.java is located:
 
-gedit helidon-creditscore-se/src/main/java/io/helidon/bestbank/creditscore/CreditscoreService.java &
+		gedit helidon-creditscore-se/src/main/java/io/helidon/bestbank/creditscore/CreditscoreService.java &
 
 -	Copy the code in following file into the newly created CreditscoreService.java in gedit:
  
@@ -334,11 +342,11 @@ This is because the microservice is not yet started !!!
 
 		java -jar helidon-creditscore-se.jar &
  
-![](./images/startmicroservice.png " ")  
+![](../images/startmicroservice.png " ")  
 
 		In the browser, check if the CreditScore Microservice application is running by checking the health check url http://localhost:8080/creditscore/healthcheck
  
-![](./images/microservicerunning.png " ")  
+![](../images/microservicerunning.png " ")  
 
 		Open the browser and access the new bank application using the URL http://localhost:7101/bestbank2020_01 or refresh the existing browser window with the above URL, 
 
@@ -346,7 +354,7 @@ This is because the microservice is not yet started !!!
 
 		A pop-up window with CreditScore information of the user is seen.  
 
-![](./images/creditscore.png " ")  
+![](../images/creditscore.png " ")  
 
 
 
