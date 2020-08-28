@@ -9,15 +9,13 @@ You can quickly upload data from a variety of sources (for example, spreadsheets
 
 It provides several interactive visuals to sow the story in your data for example, trend lines, bar, Sankey graph, maps, etc.
 
-Estimated Lab Time: 40 Mintues.
+Estimated Lab Time: 60 Mintues.
 
 [](youtube:yOYemBtdpnQ)
 
-
-
 ### Objectives ###
 
-In this lab we will be using Oracle Analytics Server self-service capabilities on JSON , XML and Relational data of Converged Database ,  we will be creating compelling project with different types of visuals to show the important insights out of Sample data of a financial company.
+In this lab we will be using Oracle Analytics Server self-service capabilities on JSON, XML and Relational data of Converged Database, we will be creating compelling project with different types of visuals to show the important insights out of Sample data of a financial company.
 
 Here, we have sample financial data, where data from ‘UK’ region is in JSON format, data from “Germany and France”  regions are in XML format and Data from “Italy and Spain” regions are in Relational Format. And this data is stored in Oracle Converged Database.
 
@@ -27,18 +25,18 @@ Then with OAS Data Preparation we will be making data set ready for visualizatio
 
 After that we will be building compelling visualizations in OAS.
 
-This lab assumes you have completed the following labs:  
-- Lab : Login to Oracle Cloud  
-- Lab : Generate SSH Key  
-- Lab : Create Compute Instance  
-- Lab : Environment Setup   
-
-
-The end result should look like below:
+The end project canvas should look like below:
 ![](./images/oascdb1.png " ")
 
 ### Prerequisites  ###
-Below pre-loaded data objects are available in Converged Database. . And since OAS recognizes data in relational format , views have been created on the base tables of JSON and XML type.  
+
+This lab assumes you have completed the following labs:  
+  
+- Lab : Generate SSH Key - Cloud Shell
+- Lab : Setup Compute Instance  
+- Lab : Start Database and OAS
+
+Below pre-loaded data objects are available in Converged Database. Since, OAS recognizes data in relational format, views have been created on the base tables of JSON and XML type.  
  
 
 | ObjectName  | ObjectType  | DataType  | Description  |
@@ -134,7 +132,7 @@ Below pre-loaded data objects are available in Converged Database. . And since O
 ## Step 2: Data Preparation ##
 In this step we will perform some data prepartion steps to make data set ready for visualizatuion.
 
-1. Complete data set is created in step1. Now on the left hand side as shown below , click on "data".
+1. Complete data set is created in step1. Now on the left hand side as shown below, click on "data".
     ![](./images/oascdb25.png " ")
 
 2. Select the dataset **Financials Complete Data set** (created in step1).
@@ -212,7 +210,7 @@ To summarize key metrics, for example revenue we can use “Performance Tile” 
     - Payables
     - Receivables  
   
-    Dashboard should be like below:
+    Canvas should be like below:
     ![](./images/oascdb40.png " ")
 
 1. **Custom Calculation**  
@@ -310,7 +308,7 @@ To summarize key metrics, for example revenue we can use “Performance Tile” 
 
 ## Step 4: Data Action for drill down to detail report 
 
-1.   Select (+) symbol on the bottom to add another canvas(refer to point 11), in this canvas we will build the tabular report.  
+1.   Select (+) symbol on the bottom to add another canvas (refer to point 11), in this canvas we will build the tabular report.  
     select all the required columns (as shown below) and pick table as visualization.
     ![](./images/oascdb60.png " ")
 
@@ -319,18 +317,18 @@ To summarize key metrics, for example revenue we can use “Performance Tile” 
 
 3. Fill the details as:  
     - **Name**:Detail Report  
-    - **Type**: Analytics Link(because we are drilling down in OAS-DV canvas only)  
-    - **Target**: This Project(because wi will be drilling down to the tabular report)  
+    - **Type**: Analytics Link (This will drill down within canvas itself.)  
+    - **Target**: This Project (This will be drilling down to the Detail report)  
     - **Canvas Link**: Detail Report  
     - **Data Values**: All  
 
     Click OK.
     ![](./images/oascdb62.png " ")
 
-4. Now go to any report, right click and select Detail Report (created this report  in previous step).  
+4. Now go to any report, right click and select **Detail Report**.  
     ![](./images/oascdb63.png " ")
 
-5. This will drill down to the filtered version of detail report. Filters will be applied as attributes of selected main report.
+5. This will drill down to the filtered version of the detail report. Filters will be applied as per attributes selected in the main report.
     ![](./images/oascdb64.png " ")
 
 
@@ -343,11 +341,10 @@ To summarize key metrics, for example revenue we can use “Performance Tile” 
 2. The result canvas will look like below.
     ![](./images/oascdb66.png " ")
 
-3. We can select the filter attribute values as required. Here we have selected **Year=2015, Account Group= Non-contingent Salaries and Supplies and Month = Apr-15,Aug-15,Jan-15 and May-15**.
+3. We can select the filter attribute values as required. Here, we have selected **Year=2015, Account Group= Non-contingent Salaries and Supplies and Month = Apr-15,Aug-15,Jan-15 and May-15**.
    ![](./images/oascdb66.1.png " ")
 
-With this lab, you have learned OAS self-service analytics with capabilities including data loading, data preparation, data mashups, designing canvas, different types of visualization graphs in simple easy to use interface.
-
+With this lab, you have learned OAS self-service analytics with capabilities including data loading, data preparation, data mashups, designing canvas, understanding different types of visualization in simple easy to use interface.
 
 ## Acknowledgements
 
