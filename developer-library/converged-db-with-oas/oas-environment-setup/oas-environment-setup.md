@@ -1,18 +1,23 @@
 # OAS Environment Setup #
 
 ## Introduction ##
-In this lab you will setup both Database and OAS environments by running the script files. 
+In this lab you will start both Database and OAS environments by running the script files. 
+
+### Objectives ###
+
+- Start the Oracle Database and Listener
+- Start OAS services
+  
 
 ### Prerequisites ###
 
 This lab assumes you have completed the following labs:  
-- Lab 1: Login to Oracle Cloud  
-- Lab 2: Generate SSH Key  
-- Lab 3: Create Compute Instance  
+- Lab: Generate SSH Key 
+- Lab: Setup Compute Instance  
 
 ## Step 1: Starting Database and OAS services
 
-1. Login to putty and change user to oracle.
+1. Login to putty using the public ip obtained earlier and switch user to oracle.
 `````
 <copy>
 sudo su - oracle
