@@ -19,11 +19,11 @@ In this lab you will learn on two key features in OAS Augmented Analytics; “Ex
 
 ### Prerequisites ###
 This lab assumes you have completed the following labs;  
-- Lab 1: Login to Oracle Cloud  
-- Lab 2: Generate SSH Key  
-- Lab 3: Create Compute Instance  
-- Lab 4: Environment Setup
-- Lab 5: Data Visualization  
+- Lab : Login to Oracle Cloud  
+- Lab : Generate SSH Key  
+- Lab : Create Compute Instance  
+- Lab : Environment Setup
+- Lab : Data Visualization  
 
 
 The below pre-loaded data object is available in Converged Database.  
