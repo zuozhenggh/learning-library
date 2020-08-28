@@ -1,6 +1,6 @@
 # Building Java Cloud Native Applications with Micronaut and OCI
 
-Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Micronaut is an innovate new framework that precomputes your framework infrastructure at compilation time. 
+Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Micronaut is an innovative new framework that precomputes your framework infrastructure at compilation time. 
 This workshop will take you through combining Micronaut and Oracle Cloud with Autonomous Database to build an efficient and lean Microservice application.
 
 ## Get an Oracle Cloud Trial Account for Free!
@@ -26,4 +26,3 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
-
