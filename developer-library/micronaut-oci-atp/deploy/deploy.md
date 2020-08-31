@@ -14,7 +14,7 @@ In this lab you will:
 * Upload the application distribution and wallet to an OCI VM
 * Run your application on the OCI VM
 
-## Step:  Deploy Micronaut Application to OCI
+## **STEP**:  Deploy Micronaut Application to OCI
 
 ### Deploy (From Local To VM)
 

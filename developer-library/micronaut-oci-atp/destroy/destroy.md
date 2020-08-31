@@ -12,7 +12,7 @@ In this lab you will:
 ### Prerequisites
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
   
-## **Step:** Destroying 
+## **STEP:** Destroying 
 
 To clean up all of the OCI resources created by Terraform at the start of this lab navigate perform the following steps:
 
