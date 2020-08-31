@@ -1,12 +1,11 @@
 # Build a Micronaut Application
 
 ## Introduction
-
 In this lab you will build a Micronaut application locally that connects to Oracle Autonomous Database.
 
 Note: If at any point you have trouble completing the Lab the complete working example Micronaut application can be checked out from [Github](https://github.com/graemerocher/micronaut-hol-example).
 
-Estimated Lab Time: &lt;40&gt; minutes
+Estimated Lab Time: 40 minutes
 
 ### Objectives
 
@@ -18,6 +17,10 @@ In this lab you will:
 * Populate Data on Application Startup
 * Write tests for the Micronaut application
 * Run the Micronaut application locally
+
+### Prerequisites
+- An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
+
 
 ## **STEP 1**: Create Micronaut Data entities that map Oracle Database tables
 
@@ -442,6 +445,15 @@ connection: keep-alive
 ```
 
 ## Learn More
-
 * [Micronaut Documentation](https://micronaut.io/documentation.html)
 * [Micronaut Data Documentation](https://micronaut-projects.github.io/micronaut-data/latest/guide/index.html)
+
+You may now *proceed to the next lab*.
+
+## Acknowledgements
+- **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
+- **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
+- **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

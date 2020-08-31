@@ -1,19 +1,20 @@
 # Setup for Local Development
 
 ## Introduction
-
 In this lab you are going to get setup to develop a Micronaut application locally that communicates with an Autonomous Datatabase instance.
 
-Estimated Lab Time: &lt;10&gt; minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
 In this lab you will:
-
 * Create the Necessary Database schema
 * Download the Wallet for Autonomous Database access
 * Create a new Micronaut application
 * Configure the Micronaut application to connect to Autonomous database
+
+### Prerequisites
+- An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
 
 ## **STEP 1**: Create DB Schema
 
@@ -23,13 +24,14 @@ In this lab you will:
 
 2. From Cloud Shell, download the script and run it:
 
-```bash
-wget -O setup.sh https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/setup.sh
-chmod +x setup.sh
-./setup.sh
-
-```
-
+    ```
+    <copy>
+    bash
+    wget -O setup.sh https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/setup.sh
+    chmod +x setup.sh
+    ./setup.sh
+    </copy>
+    ```
 3. Enter the values that you copied from the Terraform output in the previous lab when prompted. The script will produce several snippets of output to be used to build, run and deploy.
 
 ## **STEP 2**: Download and Configure Wallet Locally
@@ -64,11 +66,14 @@ To connect locally you need download and configure the ATP Wallet locally.
 
 7. After the wallet zip has been downloaded, unzip it and move it to `/tmp/wallet`. You can do this with a single command in a terminal window:
 
-   ```bash
-   unzip /path/to/Wallet_mnociatp.zip -d /tmp/wallet
-   ```
+    ```
+    <copy>
+    bash
+    unzip /path/to/Wallet_mnociatp.zip -d /tmp/wallet
+    </copy>
+    ```
 
-   Once downloaded your wallet directory should contain the following files:
+8. Once downloaded your wallet directory should contain the following files:
 
    ![Wallet dir](images/tmp-wallet-dir.png)
 
@@ -123,3 +128,13 @@ For example:
    export TNS_ADMIN=[Your absolute path to wallet]
    export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
    ```
+
+You may now *proceed to the next lab*.
+
+## Acknowledgements
+- **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
+- **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
+- **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
