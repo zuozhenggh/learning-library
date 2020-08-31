@@ -1,12 +1,11 @@
 # Build a Micronaut Application
 
 ## Introduction
-
 In this lab you will build a Micronaut application locally that connects to Oracle Autonomous Database.
 
 Note: If at any point you have trouble completing the Lab the complete working example Micronaut application can be checked out from [Github](https://github.com/graemerocher/micronaut-hol-example).
 
-Estimated Lab Time: &lt;40&gt; minutes
+Estimated Lab Time: 40 minutes
 
 ### Objectives
 
@@ -19,124 +18,128 @@ In this lab you will:
 * Write tests for the Micronaut application
 * Run the Micronaut application locally
 
+### Prerequisites
+- An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
+
+
 ## **STEP 1**: Create Micronaut Data entities that map Oracle Database tables
 
-The first step is to define entity classes that can be used to read data from database tables.
+1. The first step is to define entity classes that can be used to read data from database tables.
 
-Using your favourite IDE create a new class under `src/main/java/example/atp/domain` that looks like the following:
+    Using your favourite IDE create a new class under `src/main/java/example/atp/domain` that looks like the following:
 
-```java
-package example.atp.domain;
+    ```java
+    package example.atp.domain;
 
-import io.micronaut.core.annotation.Creator;
-import io.micronaut.data.annotation.GeneratedValue;
-import io.micronaut.data.annotation.Id;
-import io.micronaut.data.annotation.MappedEntity;
+    import io.micronaut.core.annotation.Creator;
+    import io.micronaut.data.annotation.GeneratedValue;
+    import io.micronaut.data.annotation.Id;
+    import io.micronaut.data.annotation.MappedEntity;
 
 
-@MappedEntity
-public class Owner {
+    @MappedEntity
+    public class Owner {
 
-    @Id
-    @GeneratedValue
-    private Long id;
-    private final String name;
-    private int age;
+        @Id
+        @GeneratedValue
+        private Long id;
+        private final String name;
+        private int age;
 
-    @Creator
-    public Owner(String name) {
-        this.name = name;
+        @Creator
+        public Owner(String name) {
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public Long getId() {
+            return id;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
+        }
     }
+    ```
 
-    public int getAge() {
-        return age;
+2. The `@MappedEntity` annotation is used to indicate that the entity is mapped to a database table. By default this will be a table using the same name as the class (in this case `owner`).
+
+    The columns of the table are represented by each Java property. In the above case an `id` column will be used to represent the primary key and by using `@GeneratedValue` this sets up the mapping to assume the use of an `identity` column in Autonomous Database.
+
+    The `@Creator` annotation is used on the constructor that will be used to instantiate the mapped entity and is also used to express required columns. In this case the `name` column is required and immutable whilst the `age` column is not and can be set independently using the `setAge` setter.
+
+    Now define another entity to model a `pet` table under `src/main/java/example/atp/domain`:
+
+    ```java
+    package example.atp.domain;
+
+    import io.micronaut.core.annotation.Creator;
+    import io.micronaut.data.annotation.AutoPopulated;
+    import io.micronaut.data.annotation.Id;
+    import io.micronaut.data.annotation.MappedEntity;
+    import io.micronaut.data.annotation.Relation;
+
+    import javax.annotation.Nullable;
+    import java.util.UUID;
+
+    @MappedEntity
+    public class Pet {
+
+        @Id
+        @AutoPopulated
+        private UUID id;
+        private String name;
+        @Relation(Relation.Kind.MANY_TO_ONE)
+        private Owner owner;
+        private PetType type = PetType.DOG;
+
+        @Creator
+        public Pet(String name, @Nullable Owner owner) {
+            this.name = name;
+            this.owner = owner;
+        }
+
+        public Owner getOwner() {
+            return owner;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public UUID getId() {
+            return id;
+        }
+
+        public void setId(UUID id) {
+            this.id = id;
+        }
+
+        public PetType getType() {
+            return type;
+        }
+
+        public void setType(PetType type) {
+            this.type = type;
+        }
+
+        public enum PetType {
+            DOG,
+            CAT
+        }
     }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-}
-```
-
-The `@MappedEntity` annotation is used to indicate that the entity is mapped to a database table. By default this will be a table using the same name as the class (in this case `owner`).
-
-The columns of the table are represented by each Java property. In the above case an `id` column will be used to represent the primary key and by using `@GeneratedValue` this sets up the mapping to assume the use of an `identity` column in Autonomous Database.
-
-The `@Creator` annotation is used on the constructor that will be used to instantiate the mapped entity and is also used to express required columns. In this case the `name` column is required and immutable whilst the `age` column is not and can be set independently using the `setAge` setter.
-
-Now define another entity to model a `pet` table under `src/main/java/example/atp/domain`:
-
-```java
-package example.atp.domain;
-
-import io.micronaut.core.annotation.Creator;
-import io.micronaut.data.annotation.AutoPopulated;
-import io.micronaut.data.annotation.Id;
-import io.micronaut.data.annotation.MappedEntity;
-import io.micronaut.data.annotation.Relation;
-
-import javax.annotation.Nullable;
-import java.util.UUID;
-
-@MappedEntity
-public class Pet {
-
-    @Id
-    @AutoPopulated
-    private UUID id;
-    private String name;
-    @Relation(Relation.Kind.MANY_TO_ONE)
-    private Owner owner;
-    private PetType type = PetType.DOG;
-
-    @Creator
-    public Pet(String name, @Nullable Owner owner) {
-        this.name = name;
-        this.owner = owner;
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public PetType getType() {
-        return type;
-    }
-
-    public void setType(PetType type) {
-        this.type = type;
-    }
-
-    public enum PetType {
-        DOG,
-        CAT
-    }
-}
-```
+    ```
 
 With that done it is time move onto defining repository interfaces to implement queries.
 
@@ -442,6 +445,15 @@ connection: keep-alive
 ```
 
 ## Learn More
-
 * [Micronaut Documentation](https://micronaut.io/documentation.html)
 * [Micronaut Data Documentation](https://micronaut-projects.github.io/micronaut-data/latest/guide/index.html)
+
+You may now *proceed to the next lab*.
+
+## Acknowledgements
+- **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
+- **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
+- **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

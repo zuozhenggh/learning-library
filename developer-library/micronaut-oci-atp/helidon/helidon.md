@@ -4,7 +4,7 @@
 
 In this lab we will run a Helidon microservice and connect the Micronaut application to it
 
-Estimated Lab Time: &lt;10&gt; minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -14,6 +14,9 @@ In this lab you will:
 * Update Micronaut controller to invoke the service
 * Run the Micronaut application locally to verify setup
 
+### Prerequisites
+- An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
+  
 ## **STEP 1**: Run Helidon MP microservice
 
 The Helidon MP application is already built and available as a native image
@@ -212,3 +215,12 @@ connection: keep-alive
 
 "UNKNOWN"%
 ```
+You may now *proceed to the next lab*.
+
+## Acknowledgements
+- **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
+- **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
+- **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

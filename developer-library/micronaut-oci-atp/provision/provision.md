@@ -1,10 +1,9 @@
 # Provision Oracle Cloud Instances
 
 ## Introduction
-
 In this lab you are going to provision the Oracle Cloud instances needed to run a Micronaut application with Autonomous Database.
 
-Estimated Lab Time: &lt;10&gt; minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -15,14 +14,11 @@ In this lab you will:
 * Obtain the necessary configuration to run a Micronaut application locally and communicate with Autonomous Database
 
 ### Prerequisites
-
-* An Oracle Cloud Account
+- An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
 
 ## **STEP 1**: Create a new Stack
 
 1. Create Infrastructure by downloading the Terraform configuration: A [stack.zip](https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/stack.zip) file.
-
-
 
 2. In the Oracle Cloud Console go to the "Solutions and Platforms" -> "Resource Manager" -> "Stacks".
 
@@ -85,27 +81,28 @@ In this lab you will:
 
 2. Collect the following values from the output:
 
-   * `compartment_ocid` - This is the compartment OCID used to identify the compartment where the database is setup
-   * `tns_name` - This is the TNS name of the Autonomous Database instance
-   * `atp_admin_password` - This is the adminstrative password of the Autonmous Database Instance
-   * `atp_schema_password` - This is the schema password of the Autonmous Database Instance
-   * `atp_wallet_password` - This is the wallet password of the Autonmous Database Instance
-   * `atp_db_ocid` - This is the unique OCID of the Autonmous Database Instance
-   * `region` - This is the region where the instance is running
+      * `compartment_ocid` - This is the compartment OCID used to identify the compartment where the database is setup
+      * `tns_name` - This is the TNS name of the Autonomous Database instance
+      * `atp_admin_password` - This is the adminstrative password of the Autonmous Database Instance
+      * `atp_schema_password` - This is the schema password of the Autonmous Database Instance
+      * `atp_wallet_password` - This is the wallet password of the Autonmous Database Instance
+      * `atp_db_ocid` - This is the unique OCID of the Autonmous Database Instance
+      * `region` - This is the region where the instance is running
 
-You will need the values of these variables in the next step to configure your database. However, if you forget to take note of them you can retrieve them later by going to the Oracle Cloud Console and going to "Resource Manager" -> "Stacks" then click the name of your Stack then under "Jobs" select the "apply-" job that ran and under "Resources" on the left you can navigate to "Outputs" where you will find the variables again.
+      You will need the values of these variables in the next step to configure your database. However, if you forget to take note of them you can retrieve them later by going to the Oracle Cloud Console and going to "Resource Manager" -> "Stacks" then click the name of your Stack then under "Jobs" select the "apply-" job that ran and under "Resources" on the left you can navigate to "Outputs" where you will find the variables again.
+
+You may now *proceed to the next lab*.
 
 ## Learn More
 
 * [Oracle Cloud Resource Manager](https://docs.cloud.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm)
 * [Oracle Cloud Autonomous Database](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm)
 
-<!-- ## Acknowledgements
-
-* **Author** - <Name, Title, Group>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+## Acknowledgements
+- **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
+- **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
+- **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. -->
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+
