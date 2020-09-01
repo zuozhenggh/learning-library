@@ -1,10 +1,12 @@
-# Introduction
+## TDE - Rekey the Master Key
+
+## Introduction
 
 You must create a master key for the container database before continuing. Each pluggable database must have their own master key as well (except for PDB$SEED). In this lab you will perform a rekey operation for the CDB and pluggable database, `PDB`.
 
 Estimated Lab Time: 10 minutes
 
-## TDE - Rekey the Master Key
+## Steps to complete this lab
 
 Start this lab here:
 

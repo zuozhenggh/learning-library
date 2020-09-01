@@ -1,10 +1,12 @@
-# Introduction
+# TDE - View Software Keystore
+
+## Introduction
 
 To view the software keystore you first need to have a keystore.
 
 Estimated Lab Time: 10 minutes
 
-## TDE - View Software Keystore
+## Steps to complete this lab
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 

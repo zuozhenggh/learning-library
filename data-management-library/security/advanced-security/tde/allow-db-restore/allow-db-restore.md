@@ -1,4 +1,6 @@
-# Introduction
+# TDE - Allow DB Restore
+
+## Introduction
 
 This lab will enable you to roll back the TDE configuration should you wish to repeat the workshop without having to re-provision the entire environment. To restore your database to a pre-TDE point in time, this lab will enable archive redo log mode and set a restore point. Since this database is not in Archive Log mode and doesn't have the Flash Recovery Area enabled, a "Cold Backup" of the database will be created.
 
@@ -6,7 +8,7 @@ Hence, this requires stopping the database, creating a tape archive file (tar) a
 
 Estimated Lab Time: 5 minutes
 
-## TDE - Allow Database Restore
+## Steps to complete this lab
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 

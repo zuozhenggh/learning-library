@@ -1,10 +1,12 @@
-# Introduction
+# TDE - Restore Before TDE
+
+## Introduction
 
 Only if you have followed the steps in [Allow_DB_Restore](../Allow_DB_Restore/README.md) you can run the following steps to restore this DB to it's state before implementing TDE.
 
 Estimated Lab Time: 10 minutes
 
-## TDE - Restore Before TDE
+## Steps to complete this lab
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 

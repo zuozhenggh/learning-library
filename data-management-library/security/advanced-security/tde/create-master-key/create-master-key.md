@@ -1,10 +1,12 @@
-# Introduction
+# TDE - Create Master Key
+
+## Introduction
 
 You must create a master key for the container database before continuing. Each pluggable database must have their own master key as well (except for PDB$SEED). In this lab we will create the master key neccessary for TDE operation.
 
 Estimated Lab Time: 10 minutes
 
-## TDE - Create Master Key
+## Steps to complete this lab
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 

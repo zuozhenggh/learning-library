@@ -1,10 +1,12 @@
-# Introduction
+# TDE - Encrypt Existing Tablespace
+
+## Introduction
 
 This lab is all about getting your existing data encrypted. We will use the sample schema for our workshop environment, all of which is stored in the `EMPLOYEESEARCH_DATA` tablespace.
 
 Estimated Lab Time: 10 minutes
 
-## TDE - Encrypt Existing Tablespace
+## Steps to complete this lab
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 

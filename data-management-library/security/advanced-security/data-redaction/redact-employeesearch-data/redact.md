@@ -1,10 +1,12 @@
-# Introduction
+# Redact EMPLOYEESEARCH Data
+
+## Introduction
 
 In this lab we will redact data from the `EMPLOYEESEARCH_PROD` schema from being seen by applications other than the Glassfish application.
 
 Estimated Lab Time: 20 minutes
 
-## Redact EMPLOYEESEARCH Data
+## Steps to complete this lab
 
 The first thing you will do is view the data in your Glassfish application.  Use your browser and load your browser's public IP into this URL:
 

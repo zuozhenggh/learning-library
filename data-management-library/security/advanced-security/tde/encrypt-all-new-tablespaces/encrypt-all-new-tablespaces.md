@@ -1,10 +1,12 @@
-# Introduction
+## TDE - Encrypt All New Tablespaces
+
+## Introduction
 
 In this lab we will ensure that any new tablespaces that you create in the container or pluggable will be encrypted by default.
 
 Estimated Lab Time: 10 minutes
 
-## TDE - Encrypt All New Tablespaces
+## Steps to complete this lab
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 

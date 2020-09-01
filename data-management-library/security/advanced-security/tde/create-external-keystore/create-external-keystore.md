@@ -1,10 +1,12 @@
-# Introduction
+# TDE - Create Software Keystore
+
+## Introduction
 
 The first thing you must do for Transparent Data Encryption is to create a software keystore. We often refer to this as an Oracle Wallet. This lab will walk you through the process of creating a software keystore.
 
 Estimated Lab Time: 10 minutes
 
-## TDE - Create Software Keystore
+## Steps to complete this lab
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 

@@ -1,10 +1,12 @@
-# Introduction
+# TDE - Create Autologin Wallet
+
+## Introduction
 
 We will now create an auto-login wallet. This step is recommended so the DBAs do not have to manually open the wallet each time the database is restarted. This is very helpful in RAC, Data Guard, or Golden Gate environments.
 
 Estimated Lab Time: 10 minutes
 
-## TDE - Create Autologin Wallet
+## Steps to complete this lab
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 
