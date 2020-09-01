@@ -1,4 +1,4 @@
-# How to get connected to the lab environment # 
+# How to get connected to the lab environment  
 
 ## Connecting from Windows ##
 

@@ -1,6 +1,17 @@
-# Advanced Security Option
+# Introduction
 
-## Transparent Data Encryption
+## About Advanced Security Option
+
+Oracle Advanced Security provides two important preventive controls to protect sensitive data at the source: encryption and redaction. Together, these two controls form the foundation of Oracle's defense-in-depth, multi-layered database security solution.
+
+## Workshop Description
+
+The Advanced Security Workshop will expose the user to the features and functionality available with both Transparent Data Encryption as well as Data Redaction. You will learn how to configure both components and how you can use them to protect data within your Oracle Databases.
+- The Database Security Workshop image is delivered with a pre-configured Oracle 19c Database
+- Easy and quick to deploy - The environment can be started in under 20 minutes
+- The Advanced Security Workshop comes with step-by-step instructions that walks the user through multiple use cases for the areas summarized below and further detailed for each lab listed on the right:
+
+### Transparent Data Encryption
 
 Hard-coded within the Oracle Database core product, two features comprise this option:
 
@@ -33,32 +44,26 @@ You can configure Oracle Key Vault as part of the TDE implementation. This enabl
 - You do not need to modify your applications to handle the encrypted data. The database manages the data encryption and decryption.
 
 - Oracle Database automates TDE master encryption key and keystore management operations. The user or application does not need to manage TDE master encryption keys.
-    
----
-Click here to access to the [Transparent Data Encryption (TDE)](TDE/README.md) labs
 
----
-<br>
-
-## Data Redaction
+### Data Redaction
 
 Enables you to mask (redact) data that is returned from queries issued by applications. We can also talk about Dynamic Data Masking.
 
 You can redact column data by using one of the following methods:
 
-- **Full redaction**<br>
+- **Full redaction**
 You redact all of the contents of the column data. The redacted value that is returned to the querying user depends on the data type of the column. For example, columns of the NUMBER data type are redacted with a zero (0) and character data types are redacted with a blank space.
 
-- **Partial redaction**<br>
+- **Partial redaction**
 You redact a portion of the column data. For example, you can redact most of a Social Security number with asterisks (*), except for the last 4 digits.
 
-- **Regular expressions**<br>
+- **Regular expressions**
 You can use regular expressions in both full and partial redaction. This enables you to redact data based on a search pattern for the data. For example, you can use regular expressions to redact specific phone numbers or email addresses in your data.
 
-- **Random redaction**<br>
+- **Random redaction**
 The redacted data presented to the querying user appears as randomly generated values each time it is displayed, depending on the data type of the column.
 
-- **No redaction**<br>
+- **No redaction**
 This option enables you to test the internal operation of your redaction policies, with no effect on the results of queries against tables with policies defined on them. You can use this option to test the redaction policy definitions before applying them to a production environment.
 
 Data Redaction performs the redaction at runtime, that is, the moment that the user tries to view the data. This functionality is ideally suited for dynamic production systems in which data constantly changes. While the data is being redacted, Oracle Database is able to process all of the data normally and to preserve the back-end referential integrity constraints. Data redaction can help you to comply with industry regulations such as Payment Card Industry Data Security Standard (PCI DSS) and the Sarbanes-Oxley Act.
@@ -75,10 +80,24 @@ Data Redaction performs the redaction at runtime, that is, the moment that the u
 
 - The Data Redaction policies enable you to create a wide variety of function conditions based on SYS_CONTEXT values, which can be used at runtime to decide when the Data Redaction policies will apply to the results of the application user's query.
 
----
-Click here to access to the [Oracle Data Redaction](Data_Redaction/README.md) labs
+## Workshop Supported Use Cases
 
----
-<br>
+### 1. Transparent Data Encryption
+- Create a software based keystore
+- Create a TDE master key
+- Create an auto-login wallet
+- Encrypt existing tablespaces
+- Encrytp new tablespaces
+- Rekey the TDE master key
+- View information regardingt the keystore
 
-Click to return [home](/README.md)
+### 2. Data Redaction
+- Redact data for a sample application
+
+## Acknowledgements
+- **Author** - Gian Sartor, Principal Solution Engineer, Database Security
+- **Contributors** - Hakim Loumi, Database Security PM
+- **Last Updated By/Date** - Gian Sartor, August 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -1,8 +1,10 @@
-![](../../../../images/banner_ASO.PNG)
+# Introduction
+
+This lab is all about getting your existing data encrypted. We will use the sample schema for our workshop environment, all of which is stored in the `EMPLOYEESEARCH_DATA` tablespace.
+
+Estimated Lab Time: 10 minutes
 
 ## TDE - Encrypt Existing Tablespace
-
-The easiest way to get started is to encrypt the `EMPLOYEESEARCH_DATA` tablespace.
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -24,7 +26,7 @@ This is an operating system command that bypasses the database to view the data.
 <copy>./01_Search_Strings_Plain_Text.sh</copy>
 ````
 
-   ![](../images/TDE_015.PNG)
+   ![](./images/tde-015.png)
 
 Second, encrypt the data by encrypting the entire tablespace:
 
@@ -32,7 +34,7 @@ Second, encrypt the data by encrypting the entire tablespace:
 <copy>./02_Encrypt_Tablespace.sh</copy>
 ````
 
-   ![](../images/TDE_016.PNG)
+   ![](./images/tde-016.png)
 
 And finally, try the side-channel attack again
 
@@ -40,10 +42,18 @@ And finally, try the side-channel attack again
 <copy>./03_Search_Strings_Encrypted.sh</copy>
 ````
 
-   ![](../images/TDE_017.PNG)
+   ![](./images/tde-017.png)
 
 You will see that all of the data is now encrypted!
 
 ---
-**Note:** This lab has been executed against the pluggable database, PDB1.<br>
+**Note:** This lab has been executed against the pluggable database, PDB1.
 You can repeat this, manually, or by using Enterprise Manager, for PDB2 if you want more practice.
+
+## Acknowledgements
+- **Author** - Gian Sartor, Principal Solution Engineer, Database Security
+- **Contributors** - Hakim Loumi, Database Security PM
+- **Last Updated By/Date** - Gian Sartor, August 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

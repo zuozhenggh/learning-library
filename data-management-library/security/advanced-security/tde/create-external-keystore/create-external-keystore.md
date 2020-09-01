@@ -1,11 +1,10 @@
-   ![](../../images/banner_ASO.PNG)
+# Introduction
+
+The first thing you must do for Transparent Data Encryption is to create a software keystore. We often refer to this as an Oracle Wallet. This lab will walk you through the process of creating a software keystore.
+
+Estimated Lab Time: 10 minutes
 
 ## TDE - Create Software Keystore
-
-The first thing you must do for Transparent Data Encryption is to create a software keystore.<br>
-We often refer to this as an Oracle Wallet.
-
----
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -25,7 +24,7 @@ Run this script to create the directory on the operating system:
 <copy>./01_create_os_directory.sh</copy>
 ````
 
-   ![](../images/TDE_002.PNG)
+   ![](./images/tde-002.png)
 
 Use the database parameters to manage TDE. This will require a database restart for one of the parameters to take effect.<br>
 
@@ -35,7 +34,7 @@ The script will perform the reboot for you.
 <copy>./02_set_tde_parameters.sh</copy>
 ````
 
-   ![](../images/TDE_003.PNG)
+   ![](./images/tde-003.png)
 
 Create the software keystore (Oracle Wallet) for the container database.<br>
 
@@ -45,6 +44,14 @@ You will see the status result goes from `NOT_AVAILABLE` to `OPEN_NO_MASTER_KEY`
 <copy>./03_create_wallet.sh</copy>
 ````
 
-   [](../images/TDE_004.PNG)
+   [](./images/tde-004.png)
     
 Now, your wallet has been created
+
+## Acknowledgements
+- **Author** - Gian Sartor, Principal Solution Engineer, Database Security
+- **Contributors** - Hakim Loumi, Database Security PM
+- **Last Updated By/Date** - Gian Sartor, August 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

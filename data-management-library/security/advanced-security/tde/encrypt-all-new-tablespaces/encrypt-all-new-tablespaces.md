@@ -1,8 +1,10 @@
-![](../../../../images/banner_ASO.PNG)
+# Introduction
+
+In this lab we will ensure that any new tablespaces that you create in the container or pluggable will be encrypted by default.
+
+Estimated Lab Time: 10 minutes
 
 ## TDE - Encrypt All New Tablespaces
-
-This will ensure that any new tablespace (in the container or pluggable) you create will be encrypted. 
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -22,7 +24,7 @@ First, check the existing initialization parameters
 <copy>./01_Check_Init_Params.sh</copy>
 ````
         
-   ![](../images/TDE_018.PNG)
+   ![](./images/tde-018.png)
 
 
 Next, change the init parameter `encrypt_new_tablespaces` to be `ALWAYS` so all new tablespaces are encrypted.
@@ -31,9 +33,9 @@ Next, change the init parameter `encrypt_new_tablespaces` to be `ALWAYS` so all 
 <copy>./02_Encrypt_All_New_Tablespaces.sh</copy>
 ````
 
-   ![](../images/TDE_019.PNG)
+   ![](./images/tde-019.png)
 
-Finally, create a tablespace to test it.<br>
+Finally, create a tablespace to test it.
 
 The tablespace `TEST` will be created without specifying the encryption parameters (the default encryption is AES128) and will be dropped after
 
@@ -41,6 +43,14 @@ The tablespace `TEST` will be created without specifying the encryption paramete
 <copy>./03_Create_New_Tablespace.sh</copy>
 ````
 
-   ![](../images/TDE_020.PNG)
+   ![](./images/tde-020.png)
 
 Now, your new Tablespaces will be encrypted by default!
+
+## Acknowledgements
+- **Author** - Gian Sartor, Principal Solution Engineer, Database Security
+- **Contributors** - Hakim Loumi, Database Security PM
+- **Last Updated By/Date** - Gian Sartor, August 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

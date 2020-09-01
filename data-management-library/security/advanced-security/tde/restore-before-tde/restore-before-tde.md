@@ -1,9 +1,10 @@
-![](../../../../images/banner_ASO.PNG)
-
-## TDE - Restore Before TDE
+# Introduction
 
 Only if you have followed the steps in [Allow_DB_Restore](../Allow_DB_Restore/README.md) you can run the following steps to restore this DB to it's state before implementing TDE.
 
+Estimated Lab Time: 10 minutes
+
+## TDE - Restore Before TDE
 
 Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -48,3 +49,11 @@ Verify the initialization parameters don't say anything about TDE
 ````
 <copy>./05_check_init_params.sh</copy>
 ````
+
+## Acknowledgements
+- **Author** - Gian Sartor, Principal Solution Engineer, Database Security
+- **Contributors** - Hakim Loumi, Database Security PM
+- **Last Updated By/Date** - Gian Sartor, August 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
