@@ -9,7 +9,7 @@ This lab assumes you have already completed the following labs:
 - Prepare on-premise Database
 - Provision DBCS on OCI
 
-In this Lab, you can use 2 terminal windows, one connected to the on-premise host, the other connected to the cloud host. 
+In this lab, you can use 2 terminal windows, one connected to the on-premise host, the other connected to the cloud host. 
 
 ## **Step 1:** Name Resolution Configure
 

@@ -20,13 +20,13 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
 ## **STEP 1**: Deploy GrubDash store services
 
-1. As you have successfully set up the databases, you can now test the
+1. After you have successfully set up the databases, you can now test the
     “GrubDash” Food Order application. You will interact with several
     different data types, check the event-driven communication, saga, event-sourcing
     and Command Query Responsibility Segregation via order and inventory
     services. Go ahead and deploy the related order, inventory and supplier
     Helidon services. The Food Order application consists of the following
-    tables shown in the ER diagram
+    tables shown in the ER diagram:
 
    ![](images/a0f7c519ae73acfed3a5e47dfc74b324.png " ")
 
@@ -60,11 +60,12 @@ The lab will then show you metrics, health checks and probes, and tracing that h
    ![](images/fa8d34335bbf7bd8b98a2f210580135d.png " ")
 
 4. Go ahead and execute the same steps for deploying the inventory
-    Helidon service. We can actually speed this process by running the build and deploy
-    commands sequentially, using the following command.
+    Helidon service, using the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon ; ./build.sh ; ./deploy.sh</copy>
+
+    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon  ; ./deploy.sh</copy>
+
     ```
 
    ![](images/2ee20f868b1d740d8ce7d3a7ec37fc03.png " ")
@@ -73,11 +74,11 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
    ![](images/d6bf26644dfc30c29ef27d64d4c5c5c9.png " ")
 
-5. Use the same method to build and deploy the supplier Helidon service. Use
+5. Use the same method to deploy the supplier Helidon service. Use
     the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/supplier-helidon-se ; ./build.sh ; ./deploy.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/supplier-helidon-se ; ./deploy.sh</copy>
     ```
 
    ![](images/3e833f33e529bdd714c5e6b94b6dfb94.png " ")
@@ -98,17 +99,19 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 ## **STEP 2**: Verify order and inventory activity of GrubDash store
 
 1.   Open the frontend microservices home page.
-  If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
-  ```
-  <copy>services</copy>
-  ```
+  If you need the URL, execute the `services` shortcut command and note the External-IP:PORT of the msdataworkshop/frontend/LoadBalancer.
+    ```
+    <copy>services</copy>
+    ```
+
+     ![](images/frontend_lb.png " ")
 
 2. Click **Transactional** under **Labs**.
 
    ![](images/transactionalpage-blank.png " ")
 
 3. Check the inventory of a given item such as sushi, by typing `sushi`
-    in the `Item` field and clicking **Get Inventory**. You should see the inventory
+    in the `food` field and clicking **Get Inventory**. You should see the inventory
     count result 0.
 
    ![](images/sushicount0.png " ")
@@ -233,7 +236,7 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
-* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020

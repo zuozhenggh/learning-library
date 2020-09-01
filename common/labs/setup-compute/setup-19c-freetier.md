@@ -55,6 +55,8 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
 4. Inspect the log, you will notice that 8 resources were created including the compute instance.
    ![Create a stack](images/workshop-010.png " ")
 
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+
 ## **STEP 3**: Gather compute instance details
 1. Go to the hamburger menu (in the top left corner) and click **Compute** -> **Instances**
    ![Create a stack](images/workshop-011.png " ")
@@ -89,6 +91,8 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 5.  When prompted, answer **yes** to continue connecting.
 6.  Continue to the *next Step* on the left hand menu.
 
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
 2.  On the instance homepage, find the Public IP addresss for your instance.
@@ -105,6 +109,8 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     *Note: The angle brackets <> should not appear in your code.*
 
 4.  After successfully logging in, proceed to the *next Step* on the left hand menu.
+
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
 ### Windows using Putty
 
@@ -135,6 +141,8 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 8. Click Open to begin your session with the instance.
 
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+
 ## **STEP 5**: Verify the ORCL database is up
 
 Once you deploy your compute instance, tail the log to determine when the database has been configured and is available for use.
@@ -147,6 +155,9 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ![](./images/workshop-014.png " ")
 
 2.  After *approximately 20 minutes*, you will see a notice that says the database setup is complete.  Please see troubleshooting tips if you have issues here.
+
+    ![](./images/build-complete.png " ")
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
 3. Run the following command to verify the database with the SID **ORCL** is up and running
 
@@ -172,6 +183,9 @@ Once you deploy your compute instance, tail the log to determine when the databa
     sudo su - oracle
     </copy>
     ````
+
+    ![](./images/sudo-oracle.png " ")
+
 6.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
     ````
     <copy>
@@ -179,17 +193,32 @@ Once you deploy your compute instance, tail the log to determine when the databa
     </copy>
     ORCL
     ````
+    ![](./images/oraenv.png " ")
+
 7.  Login using SQL*Plus as the **oracle** user.  
 
     ````
     <copy>
     sqlplus system/Ora_DB4U@localhost:1521/orclpdb
-    exit
+    </copy>
+    ````
+    ![](./images/sqlplus.png " ")
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+
+7.  Exit the sqlplus session and switch back to the opc user.  Verify that you are now the opc user.
+
+    ```` 
+    SQL> <copy>exit
     </copy>
     ````
 
-    ![](./images/sqlplus_login_orclpdb.png " ")
-
+    ```` 
+    [oracle@server ~]$ <copy>exit
+    whoami
+    </copy>
+    ````
+    ![](./images/whoami.png " ")
+    
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
 You may now *proceed to the next lab*.  
@@ -209,11 +238,11 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 ## Appendix: Troubleshooting Tips
 
 If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
-- Limits Exceeded
-- Invalid public key
-- Database Creation stuck at 3x %
-- Can't login to instance
-- Apply job is stuck in provisioning state
+1. Can't login to instance
+2. Invalid public key
+3. Limits Exceeded
+4. Database Creation stuck at 3x %
+5. Apply job is stuck in provisioning state
 
 ### Issue 1: Can't login to instance
 Participant is unable to login to instance
@@ -253,6 +282,8 @@ When creating a stack your ability to create an instance is based on the capacit
 
 #### Fix for Issue #3
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
+
+*Please ensure that you are NOT running this in the **Always Free** Tier. This workshop does not run on the Always Free tier, you must have available cloud credits.  Go to **Governance** -> **Limits, Quotas and Usage,** select **compute**, ensure that you have **more than** the micro tier available.  If you have only 2 micro computes, your account has transitioned to an Always Free.  This means that the promotional period of 30 days has expired or you have run out of credits, this workshop will NOT run.*
 
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**

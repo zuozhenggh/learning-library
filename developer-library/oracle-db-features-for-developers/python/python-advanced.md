@@ -38,7 +38,7 @@ This lab assumes you have completed the following labs:
 
 ## **Step 1:** Download HERE archive world sample data
 
-We need to download the HERE (Formerly NAVTEQ) archive, a sample geographical dataset available from the Oracle Technology Network website: http://www.oracle.com/technetwork/middleware/mapviewer/downloads/navteq-lic-168395.html. Download the World Sample Data Bundle.
+You will need to download the HERE (Formerly NAVTEQ) archive, a sample geographical dataset available from the Oracle Technology Network website: http://www.oracle.com/technetwork/middleware/mapviewer/downloads/navteq-lic-168395.html. Download the World Sample Data Bundle.
 **Note:** The World Sample Data Bundle (world_sample_q114.zip) is 1.5 GB.
 
 1. Extract the World Sample Bundle in the directory /home/opc/labs/python
@@ -477,7 +477,7 @@ for row in rv:
 ![](./images/p_pythQuery-14.png)
 ## Conclusion
 
-In this Lab you had an opportunity to try out connecting Python in the Oracle Database.
+In this lab you had an opportunity to try out connecting Python in the Oracle Database.
 The guide shows the Developer how to use the Python Interpreter to interact with the Oracle Database through the Python API. We start by introducing Python and then review its installation requirements and tools required to run the demo. TThe Python API cx_Oracle is an open source Python package that Oracle contributes to. It is used to access an Oracle Database from Python.
 The second part of the guide goes through a number of demo cases available through the Python API, including a simple Hello World application, and retrieving records from the Oracle Database using the cursor technology. There is a module on working with JSON data: loading the records to the database and querying them.
 An additional lab on using Python with Spatial data is also available elsewhere in this module.

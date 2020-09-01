@@ -274,7 +274,7 @@ After an access token has been acquired, the client application must remember th
  if the Authorization header is omitted, then the status *401 Unauthorized* is returned instead.
 
 ## Conclusion
- In this Lab, you had an opportunity to get an introduction to REST services.
+ In this lab, you had an opportunity to get an introduction to REST services.
 
 ## Acknowledgements
 
