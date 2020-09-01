@@ -1,6 +1,6 @@
 # Oracle ORDS 
 
-## Introduction
+## Introduction---My Updates
 
 This lab walks you through the steps of creating RESTful Services for JSON, XML and Spatial data using Oracle REST data services. As part of this lab, ORDS is pre-installed and you will walk through the steps of rest enabling schema and its tables.
 Also later in the steps you will perform activities like retrieving data, inserting data, updating data and deleting data using GET, POST, PUT and DELETE methods respectively
