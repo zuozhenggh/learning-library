@@ -8,27 +8,27 @@ Estimated Lab Time: 10 minutes
 
 ## Steps to complete this lab
 
-Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
 ````
 <copy>sudo su - oracle</copy>
 ````
 
-Go to the scripts directory
+2. Go to the scripts directory
 
 ````
 <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/View_Software_Keystore</copy>
 ````
 
-Once you have a keystore, you can run either of these scripts.
+3. Once you have a keystore, you can run either of these scripts.
 
-You will notice there are multiple copies of the `ewallet.p12` file.
+  You will notice there are multiple copies of the `ewallet.p12` file.
 
-Every time you make a change, including create or rekey, the `ewallet.p12` file is backed up.
+  Every time you make a change, including create or rekey, the `ewallet.p12` file is backed up.
 
-You will also see the contents of the wallet file by using `orapki`
+  You will also see the contents of the wallet file by using `orapki`
 
-View the OS files related to the keystore
+4. View the OS files related to the keystore
 
 ````
 <copy>./01_view_wallet_on_os.sh</copy>
@@ -36,7 +36,8 @@ View the OS files related to the keystore
 
    ![](./images/tde-008.png)
 
-View the keystore data in the database
+5. View the keystore data in the database
+
 ````
 <copy>./02_view_wallet_in_db.sh</copy>
 ````

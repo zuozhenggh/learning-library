@@ -8,19 +8,19 @@ Estimated Lab Time: 10 minutes
 
 ## Steps to complete this lab
 
-Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
 ````
 <copy>sudo su - oracle</copy>
 ````
 
-Go to the scripts directory
+2. Go to the scripts directory
 
 ````
 <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Encrypt_All_New_Tablespaces</copy>
 ````
 
-First, check the existing initialization parameters
+3. First, check the existing initialization parameters
 
 ````
 <copy>./01_Check_Init_Params.sh</copy>
@@ -28,8 +28,7 @@ First, check the existing initialization parameters
         
    ![](./images/tde-018.png)
 
-
-Next, change the init parameter `encrypt_new_tablespaces` to be `ALWAYS` so all new tablespaces are encrypted.
+4. Next, change the init parameter `encrypt_new_tablespaces` to be `ALWAYS` so all new tablespaces are encrypted.
 
 ````
 <copy>./02_Encrypt_All_New_Tablespaces.sh</copy>
@@ -37,9 +36,9 @@ Next, change the init parameter `encrypt_new_tablespaces` to be `ALWAYS` so all 
 
    ![](./images/tde-019.png)
 
-Finally, create a tablespace to test it.
+5. Finally, create a tablespace to test it.
 
-The tablespace `TEST` will be created without specifying the encryption parameters (the default encryption is AES128) and will be dropped after
+  The tablespace `TEST` will be created without specifying the encryption parameters (the default encryption is AES128) and will be dropped after
 
 ````
 <copy>./03_Create_New_Tablespace.sh</copy>

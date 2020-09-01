@@ -8,32 +8,31 @@ Estimated Lab Time: 10 minutes
 
 ## Steps to complete this lab
 
-Start this lab here:
+1. Start this lab here:
 
 ````
 <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Rekey_Master_Key</copy>
 ````
 
-
-To_rekey the container database TDE master key, run the following command:
+2. To_rekey the container database TDE master key, run the following command:
 
 ````
 <copy>./01_rekey_cdb_mkey.sh</copy>
 ````
 
-To rekey a master key for the pluggable database, PDB1, run the following command:
+3. To rekey a master key for the pluggable database, PDB1, run the following command:
 
 ````
 <copy>./02_rekey_pdb_mkey.sh pdb1</copy>
 ```` 
 
-If you want, you can do the same for PDB2.  This is not a requirement though. It might be helpful to show some databases with TDE and some without.
+4. If you want, you can do the same for PDB2.  This is not a requirement though. It might be helpful to show some databases with TDE and some without.
 
 ````
 <copy>./02_rekey_pdb_mkey.sh pdb2</copy>
 ````
     
-Now that you have a master key, you can begin encrypting tablespaces or column. 
+  Now that you have a master key, you can begin encrypting tablespaces or column. 
 
 ## Acknowledgements
 - **Author** - Gian Sartor, Principal Solution Engineer, Database Security

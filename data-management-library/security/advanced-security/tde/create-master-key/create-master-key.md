@@ -8,19 +8,19 @@ Estimated Lab Time: 10 minutes
 
 ## Steps to complete this lab
 
-Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
 ````
 <copy>sudo su - oracle</copy>
 ````
 
-Go to the scripts directory
+2. Go to the scripts directory
 
 ````
 <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Master_Key</copy>
 ````
 
-To create the container database TDE master key, run the following command
+3. To create the container database TDE master key, run the following command
 
 ````
 <copy>./01_create_cdb_mkey.sh</copy>
@@ -28,7 +28,7 @@ To create the container database TDE master key, run the following command
 
    ![](./images/tde-005.png)
 
-To create a master key for the pluggable database, PDB1, run the following command:
+4. To create a master key for the pluggable database, PDB1, run the following command:
 
 ````
 <copy>./02_create_pdb_mkey.sh pdb1</copy>
@@ -37,9 +37,9 @@ To create a master key for the pluggable database, PDB1, run the following comma
    ![](./images/tde-006.png)
 
 
-If you want, you can do the same for PDB2.
+  If you want, you can do the same for PDB2.
 
-This is not a requirement though. It might be helpful to show some databases with TDE and some without.
+  This is not a requirement though. It might be helpful to show some databases with TDE and some without.
 
 ````
 <copy>./02_create_pdb_mkey.sh pdb2</copy>

@@ -8,19 +8,19 @@ Estimated Lab Time: 10 minutes
 
 ## Steps to complete this lab
 
-Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
 ````
 <copy>sudo su - oracle</copy>
 ````
 
-Go to the scripts directory
+2. Go to the scripts directory
 
 ````
 <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Software_Keystore</copy>
 ````
 
-Run this script to create the directory on the operating system:
+3. Run this script to create the directory on the operating system:
 
 ````
 <copy>./01_create_os_directory.sh</copy>
@@ -28,9 +28,9 @@ Run this script to create the directory on the operating system:
 
    ![](./images/tde-002.png)
 
-Use the database parameters to manage TDE. This will require a database restart for one of the parameters to take effect.<br>
+4. Use the database parameters to manage TDE. This will require a database restart for one of the parameters to take effect.
 
-The script will perform the reboot for you. 
+  The script will perform the reboot for you. 
 
 ````
 <copy>./02_set_tde_parameters.sh</copy>
@@ -38,9 +38,9 @@ The script will perform the reboot for you.
 
    ![](./images/tde-003.png)
 
-Create the software keystore (Oracle Wallet) for the container database.<br>
+5. Create the software keystore (Oracle Wallet) for the container database.
 
-You will see the status result goes from `NOT_AVAILABLE` to `OPEN_NO_MASTER_KEY`. 
+  You will see the status result goes from `NOT_AVAILABLE` to `OPEN_NO_MASTER_KEY`. 
 
 ````
 <copy>./03_create_wallet.sh</copy>
@@ -48,7 +48,7 @@ You will see the status result goes from `NOT_AVAILABLE` to `OPEN_NO_MASTER_KEY`
 
    [](./images/tde-004.png)
     
-Now, your wallet has been created
+  Now, your wallet has been created
 
 ## Acknowledgements
 - **Author** - Gian Sartor, Principal Solution Engineer, Database Security

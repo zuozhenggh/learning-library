@@ -8,64 +8,64 @@ Estimated Lab Time: 10 minutes
 
 ## Steps to complete this lab
 
-Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
 ````
 <copy>sudo su - oracle</copy>
 ````
 
-Go to the scripts directory
+2. Go to the scripts directory
 
 ````
 <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Autologin_Wallet</copy>
 ````
 	
-Then run the script to view the wallet on the operating system.
+3. Then run the script to view the wallet on the operating system.
 
-Notice there is no `cwallet.sso`, there will be when we create the auto login wallet.
+  Notice there is no `cwallet.sso`, there will be when we create the auto login wallet.
 
 ````        
 <copy>./01_view_wallet_on_os.sh</copy>
 ````
-    
-   ![](./images/tde-010.png)
 
-You can view what the wallet looks like in the database
+  ![](./images/tde-010.png)
+
+4. You can view what the wallet looks like in the database
 
 ````
 <copy>./02_view_wallet_in_db.sh</copy>
-````    
+````
     
-   ![](./images/tde-011.png)
+  ![](./images/tde-011.png)
 
-Now, create the autologin wallet
+5. Now, create the autologin wallet
 
 ````
 <copy>./03_create_autologin_wallet.sh</copy>
 ````
 
-    ![](./images/tde-012.png)
+  ![](./images/tde-012.png)
 
-Run the same queries... You should now see the `cwallet.sso` file:
+6. Run the same queries... You should now see the `cwallet.sso` file:
 
 ````
 <copy>./04_view_wallet_on_os.sh</copy>
-````    
+````
  
-   ![](./images/tde-013.png)
+  ![](./images/tde-013.png)
 
 
-**Note:** Now you should see the *.sso file
+  **Note:** Now you should see the *.sso file
 
-And no changes to the wallet in the database
+  And no changes to the wallet in the database
 
 ````
 <copy>./05_view_wallet_in_db.sh</copy>
 ````
 
-   ![](./images/tde-014.png)
+  ![](./images/tde-014.png)
 
-Now your Autologin is created!
+  Now your Autologin is created!
 
 ## Acknowledgements
 - **Author** - Gian Sartor, Principal Solution Engineer, Database Security

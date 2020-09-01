@@ -8,19 +8,19 @@ Estimated Lab Time: 10 minutes
 
 ## Steps to complete this lab
 
-Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
 ````
 <copy>sudo su - oracle</copy>
 ````
 
-Go to the scripts directory
+2. Go to the scripts directory
 
 ````
 <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Encrypt_Existing_Tablespace</copy>
 ````
 
-First, use the Linux command, strings, to view the data in the data file.<br>
+3. First, use the Linux command, strings, to view the data in the data file.<br>
 
 This is an operating system command that bypasses the database to view the data. This is called a 'side-channel attack' because the database is unaware of it.
 
@@ -30,7 +30,7 @@ This is an operating system command that bypasses the database to view the data.
 
    ![](./images/tde-015.png)
 
-Second, encrypt the data by encrypting the entire tablespace:
+4. Second, encrypt the data by encrypting the entire tablespace:
 
 ````
 <copy>./02_Encrypt_Tablespace.sh</copy>
@@ -38,7 +38,7 @@ Second, encrypt the data by encrypting the entire tablespace:
 
    ![](./images/tde-016.png)
 
-And finally, try the side-channel attack again
+5. And finally, try the side-channel attack again
 
 ````
 <copy>./03_Search_Strings_Encrypted.sh</copy>
@@ -46,9 +46,8 @@ And finally, try the side-channel attack again
 
    ![](./images/tde-017.png)
 
-You will see that all of the data is now encrypted!
+  You will see that all of the data is now encrypted!
 
----
 **Note:** This lab has been executed against the pluggable database, PDB1.
 You can repeat this, manually, or by using Enterprise Manager, for PDB2 if you want more practice.
 
