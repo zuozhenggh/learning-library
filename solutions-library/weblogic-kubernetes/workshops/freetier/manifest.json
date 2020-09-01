@@ -12,7 +12,7 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI)",
+            "title": "Lab 1: OKE on OCI",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../create-oke/create-oke.md" 
         },
