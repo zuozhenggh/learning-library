@@ -6,6 +6,15 @@ To view the software keystore you first need to have a keystore.
 
 Estimated Lab Time: 10 minutes
 
+### Objectives
+- View the current and previous TDE master keys in the keystore
+
+### Prerequisites
+This lab assumes you have:
+- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
+- SSH Keys
+- Have successfully connected to the workshop machine
+
 ## Steps to complete this lab
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User

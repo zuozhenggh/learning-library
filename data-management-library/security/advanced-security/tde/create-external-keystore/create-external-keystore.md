@@ -6,6 +6,15 @@ The first thing you must do for Transparent Data Encryption is to create a softw
 
 Estimated Lab Time: 10 minutes
 
+### Objectives
+-   Create a file-based software keystore to store the TDE master key
+
+### Prerequisites
+This lab assumes you have:
+- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
+- SSH Keys
+- Have successfully connected to the workshop machine
+
 ## Steps to complete this lab
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User

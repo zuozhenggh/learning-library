@@ -6,6 +6,15 @@ In this lab we will redact data from the `EMPLOYEESEARCH_PROD` schema from being
 
 Estimated Lab Time: 20 minutes
 
+### Objectives
+-   Dynamically redact sensitive data preventing it from being displayed in the application
+
+### Prerequisites
+This lab assumes you have:
+- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
+- SSH Keys
+- Have successfully connected to the workshop machine
+
 ## Steps to complete this lab
 
 1. The first thing you will do is view the data in your Glassfish application.  Use your browser and load your browser's public IP into this URL:

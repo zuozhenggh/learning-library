@@ -6,6 +6,15 @@ In this lab we will ensure that any new tablespaces that you create in the conta
 
 Estimated Lab Time: 10 minutes
 
+### Objectives
+-   Modify the database such that any new tablespaces which are created will be encrypted by default
+
+### Prerequisites
+This lab assumes you have:
+- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
+- SSH Keys
+- Have successfully connected to the workshop machine
+
 ## Steps to complete this lab
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User

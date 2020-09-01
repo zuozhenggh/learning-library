@@ -6,6 +6,15 @@ We will now create an auto-login wallet. This step is recommended so the DBAs do
 
 Estimated Lab Time: 10 minutes
 
+### Objectives
+-   Create an auto-login wallet which will open when the DB starts and needs access to the master key
+
+### Prerequisites
+This lab assumes you have:
+- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
+- SSH Keys
+- Have successfully connected to the workshop machine
+
 ## Steps to complete this lab
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User

@@ -6,6 +6,15 @@ You must create a master key for the container database before continuing. Each 
 
 Estimated Lab Time: 10 minutes
 
+### Objectives
+-  Generate a new master key to protect the encrypted data within the database
+
+### Prerequisites
+This lab assumes you have:
+- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
+- SSH Keys
+- Have successfully connected to the workshop machine
+
 ## Steps to complete this lab
 
 1. Start this lab here:

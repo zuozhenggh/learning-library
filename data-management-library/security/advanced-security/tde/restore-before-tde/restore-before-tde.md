@@ -6,6 +6,16 @@ Only if you have followed the steps in [Allow_DB_Restore](../Allow_DB_Restore/RE
 
 Estimated Lab Time: 10 minutes
 
+### Objectives
+Optional
+- Restore the database to it's pre-TDE state in order to repeat the labs 
+
+### Prerequisites
+This lab assumes you have:
+- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
+- SSH Keys
+- Have successfully connected to the workshop machine
+
 ## Steps to complete this lab
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
