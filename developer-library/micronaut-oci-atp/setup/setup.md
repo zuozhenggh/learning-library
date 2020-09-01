@@ -1,19 +1,20 @@
 # Setup for Local Development
 
 ## Introduction
-
 In this lab you are going to get setup to develop a Micronaut application locally that communicates with an Autonomous Datatabase instance.
 
-Estimated Lab Time: &lt;10&gt; minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
 In this lab you will:
-
 * Create the Necessary Database schema
 * Download the Wallet for Autonomous Database access
 * Create a new Micronaut application
 * Configure the Micronaut application to connect to Autonomous database
+
+### Prerequisites
+- An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
 
 ## **STEP 1**: Create DB Schema
 
@@ -23,13 +24,14 @@ In this lab you will:
 
 2. From Cloud Shell, download the script and run it:
 
-```bash
-wget -O setup.sh https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/setup.sh
-chmod +x setup.sh
-./setup.sh
-
-```
-
+    ```
+    <copy>
+    bash
+    wget -O setup.sh https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/setup.sh
+    chmod +x setup.sh
+    ./setup.sh
+    </copy>
+    ```
 3. Enter the values that you copied from the Terraform output in the previous lab when prompted. The script will produce several snippets of output to be used to build, run and deploy.
 
 ## **STEP 2**: Download and Configure Wallet Locally
@@ -64,54 +66,58 @@ To connect locally you need download and configure the ATP Wallet locally.
 
 7. After the wallet zip has been downloaded, unzip it and move it to `/tmp/wallet`. You can do this with a single command in a terminal window:
 
-   ```bash
-   unzip /path/to/Wallet_mnociatp.zip -d /tmp/wallet
-   ```
+    ```
+    <copy>
+    bash
+    unzip /path/to/Wallet_mnociatp.zip -d /tmp/wallet
+    </copy>
+    ```
 
-   Once downloaded your wallet directory should contain the following files:
+8. Once downloaded your wallet directory should contain the following files:
 
    ![Wallet dir](images/tmp-wallet-dir.png)
 
 
 ## **STEP 3**: Create a new Micronaut application
 
-There are several ways you can get started creating a new Micronaut application. If you have the Micronaut CLI installed you can use the `mn` command to create a new application:
+1. There are several ways you can get started creating a new Micronaut application. If you have the Micronaut CLI installed you can use the `mn` command to create a new application. Which will setup an application that uses the Oracle driver and Micronaut Data JDBC.
 
-```bash
-mn create-app example-atp --features oracle,data-jdbc
-cd example-atp
-```
-
-Which will setup an application that uses the Oracle driver and Micronaut Data JDBC.
+    ```
+    <copy>
+    bash
+    mn create-app example-atp --features oracle,data-jdbc
+    cd example-atp
+    </copy>
+    ```
 
 Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool, however you can add `--build maven` if you prefer Maven.
 
-If you do not have the Micronaut CLI installed
-and are running on Linux or OS X you can alternatively `curl` and `unzip`:
+2. If you do not have the Micronaut CLI installed and are running on Linux or OS X you can alternatively `curl` and `unzip`:
 
-```basb
-curl https://launch.micronaut.io/example-atp.zip\?features\=oracle,data-jdbc -o example-atp.zip
-unzip example-atp.zip -d example-atp
-cd example-atp
-```
+    ```
+    bash
+    curl https://launch.micronaut.io/example-atp.zip\?features\=oracle,data-jdbc -o example-atp.zip
+    unzip example-atp.zip -d example-atp
+    cd example-atp
+    ```
 
-If none of these options are viable you can also navigate to [Micronaut Launch](https://micronaut.io/launch/) in a browser and click the `Features` button and select the `oracle` and `data-jdbc` features then click `Generate` which will produce a zip you can download and unzip.
+3. If none of these options are viable you can also navigate to [Micronaut Launch](https://micronaut.io/launch/) in a browser and click the `Features` button and select the `oracle` and `data-jdbc` features then click `Generate` which will produce a zip you can download and unzip.
 
 ## **STEP 4**: Configure the Micronaut Application
 
-The final step to configure the Micronaut application to work with Autonomous Database is to open the `src/main/resources/application.yml` file and modify the default datasource connection settings as follows:
+1. The final step to configure the Micronaut application to work with Autonomous Database is to open the `src/main/resources/application.yml` file and modify the default datasource connection settings as follows:
 
-   ```yaml
-datasources:
-  default:
+    ```yaml
+    datasources:
+    default:
     url: jdbc:oracle:thin:@mnociatp_high
     driverClassName: oracle.jdbc.OracleDriver
     username: mnocidemo
     schema-generate: CREATE_DROP
     dialect: ORACLE
-   ```
+    ```
 
-To configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section.
+2. To configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section.
 
 It is recommended to never to hard code passwords in configuration so using an environment variable is the preferred approach.
 
@@ -123,3 +129,13 @@ For example:
    export TNS_ADMIN=[Your absolute path to wallet]
    export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
    ```
+
+You may now *proceed to the next lab*.
+
+## Acknowledgements
+- **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
+- **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
+- **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
