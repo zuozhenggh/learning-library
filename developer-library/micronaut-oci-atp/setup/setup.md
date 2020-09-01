@@ -109,12 +109,12 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
 
     ```yaml
     datasources:
-    default:
-    url: jdbc:oracle:thin:@mnociatp_high
-    driverClassName: oracle.jdbc.OracleDriver
-    username: mnocidemo
-    schema-generate: CREATE_DROP
-    dialect: ORACLE
+      default:
+        url: jdbc:oracle:thin:@mnociatp_high
+        driverClassName: oracle.jdbc.OracleDriver
+        username: mnocidemo
+        schema-generate: CREATE_DROP
+        dialect: ORACLE
     ```
 
 2. To configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section.
