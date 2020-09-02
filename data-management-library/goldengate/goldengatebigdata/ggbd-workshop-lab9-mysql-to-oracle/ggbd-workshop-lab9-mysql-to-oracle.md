@@ -10,7 +10,7 @@ In this lab is a read-only example on how we use goldengate for bigdata Java Dat
 ### Objectives
 - Replicate from **MySQL to Oracle using jdbc**
 
-Time to Complete - Approximately 30 minutes
+Time to Complete - Approximately 60 minutes
 
 ### What Would You Need?
 Your will need:

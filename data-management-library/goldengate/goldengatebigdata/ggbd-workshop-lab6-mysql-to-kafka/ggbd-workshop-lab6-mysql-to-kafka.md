@@ -9,7 +9,7 @@ Lab Architecture
 ![](./images/image601_1.png)
 
 Time to Complete -
-Approximately 30 minutes
+Approximately 60 minutes
 
 ### Objectives
 - GoldenGate replication from **MySQL to Kafka **

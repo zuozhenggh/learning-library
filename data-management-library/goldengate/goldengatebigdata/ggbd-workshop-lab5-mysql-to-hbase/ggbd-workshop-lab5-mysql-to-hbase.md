@@ -9,7 +9,7 @@ Lab Architecture
 ![](./images/image501_1.png)
 
 Time to Complete -
-Approximately 30 minutes
+Approximately 60 minutes
 
 ### Objectives
 - GoldenGate replication from **MySQL to HBase**
@@ -99,7 +99,11 @@ In summary, you loaded data in MySQL database ‘ggsource’, GG extract process
 
 You can also see the HBase data created by GG from Hue:
 
-Open a Browser window> http://127.0.0.1:8888/ Login to Hue: cloudera/cloudera
+Open a Browser window>
+
+[HUE - Click here](http://127.0.0.1:8888) 
+
+Login to HUE: cloudera/cloudera
 
 ## Acknowledgements
 

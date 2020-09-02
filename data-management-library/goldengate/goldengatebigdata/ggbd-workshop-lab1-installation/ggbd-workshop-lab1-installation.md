@@ -3,7 +3,8 @@
 ![](./images/image110_1.png)
 
 ## Want to learn more:
-"https://www.oracle.com/middleware/data-integration/goldengate/big-data/"
+
+  [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Introduction
 Contents
@@ -116,7 +117,7 @@ Congratulations, GoldenGate for Big Data is now installed. You can proceed to th
 
 
 ## Please submit an issue on our issues page:
-[issues](https://github.com/oracle/learning-library/issues) 
+[Issues? - Click here](https://github.com/oracle/learning-library/issues) 
 
  We review it regularly.
 

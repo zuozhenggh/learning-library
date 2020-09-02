@@ -23,7 +23,7 @@ User and Password:
 User ID: ggadmin
 Password:  oracle
 
-Time to Complete - Approximately 30 minutes
+Time to Complete - Approximately 60 minutes
 
 
  If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
@@ -117,7 +117,10 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 **Optional:**  Only if VNC is available
 
 The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
-You can also see the files created by GG from Hue: http://127.0.0.1:8888/
+You can also see the files created by GG from Hue:
+
+[HUE - Click here](http://127.0.0.1:8888) 
+
 Login to Hue: cloudera/cloudera
 Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hdfs…
 
@@ -127,3 +130,8 @@ Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hdfs…
   * Contributors ** - Brian Elliott
   * Team ** - Data Integration Team
   * Last Updated By/Date ** - Brian Elliott/August 2020
+
+## See an issue?
+
+Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
+  

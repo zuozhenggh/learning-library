@@ -10,7 +10,7 @@ Lab Architecture
 ![](./images/image401_1.png)
 
 Time to Complete -
-Approximately 30 minutes
+Approximately 60 minutes
 
 ### Objectives
 - GoldenGate replication from **MySQL to Hive**
@@ -109,7 +109,10 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 
 You can also see the Hive data created by GG from Hue:
 
-Open a Browser window> http://127.0.0.1:8888/ Login to Hue: cloudera/cloudera
+Open a Browser window>
+[HUE - Click here](http://127.0.0.1:8888) 
+
+Login to Hue: cloudera/cloudera
 
 1-	Click on Query Editor, Hive
 2-	Pull down on Database selection, and select ggtarget2hive_avro
