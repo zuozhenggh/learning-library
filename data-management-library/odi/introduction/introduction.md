@@ -25,8 +25,7 @@ Key reasons why companies choose Oracle Data Integrator for their data integrati
 -   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
-* Lab: [Login to Oracle Cloud]()
+- Basic knowledge of Oracle Database
 
 ## Acknowledgements
 

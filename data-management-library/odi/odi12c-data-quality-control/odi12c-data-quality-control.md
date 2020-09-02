@@ -28,14 +28,14 @@ Static Control implies the existence of rules that are used to verify the integr
 With Oracle Data Integrator, you can enhance the quality of your data by defining and checking additional constraints, without declaring them directly in your servers. This procedure is called **Static Control** since it allows you to perform checks directly on existing, *static*, data.
 
 **Flow Control**
-The information systems targeted by transformation and integration processes often implement their own declarative rules. The **Flow Control** function is used to verify an application\'s incoming data according to these constraints before loading the data into these targets. The flow control procedure is detailed in the *Mapping* lab.
+The information systems targeted by transformation and integration processes often implement their own declarative rules. The **Flow Control** function is used to verify an application's incoming data according to these constraints before loading the data into these targets. The flow control procedure is detailed in the *Mapping* lab.
 
 **Benefits**
 
 The main advantages of performing data integrity checks are the following:
 
-  * *Increased productivity* by using the target database for its entire life cycle. Business rule violations in the data slow down application programming throughout the target database\'s life-cycle. Cleaning the transferred data can therefore reduce application programming time.
-  * *Validation of the target database\'s model*. The rule violations detected do not always imply insufficient source data integrity. They may reveal a degree of incompleteness in the target model. Migrating the data before an application is rewritten makes it possible to validate a new data model while providing a test database in line with reality.
+  * *Increased productivity* by using the target database for its entire life cycle. Business rule violations in the data slow down application programming throughout the target database's life-cycle. Cleaning the transferred data can therefore reduce application programming time.
+  * *Validation of the target database's model*. The rule violations detected do not always imply insufficient source data integrity. They may reveal a degree of incompleteness in the target model. Migrating the data before an application is rewritten makes it possible to validate a new data model while providing a test database in line with reality.
   * *Improved quality of service* for the end-users. Ensuring data integrity is not always a simple task. Indeed, it requires that any data violating declarative rules must be isolated and recycled. This implies the development of complex programming, in particular when the target database incorporates a mechanism for verifying integrity constraints. In terms of operational constraints, it is most efficient to implement a method for correcting erroneous data (on the source, target, or recycled flows) and then to reuse this method throughout the enterprise.
 
 **SRC\_CUSTOMER Control Example**
