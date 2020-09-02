@@ -57,7 +57,7 @@ In this lab you will:
 
 ##  **STEP 2**: Apply the Terraform Plan
 
-1. On the Stack Details page, click 'Terraform Actions' and select 'Plan'.
+1. On the Stack Details page, click 'Terraform Actions', select 'Plan' and confirm by clicking 'Plan'.
 
    ![Terraform Plan](images/stack_plan.png)
 
