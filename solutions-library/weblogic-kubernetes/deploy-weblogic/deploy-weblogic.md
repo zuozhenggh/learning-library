@@ -78,7 +78,7 @@ Review it in your favorite editor or a [browser](../domain.yaml).
   NAME                                         READY     STATUS              RESTARTS   AGE
   sample-domain1-introspect-domain-job-kcn4n   0/1       ContainerCreating   0          7s
   ```
-3. Periodically check the pods in the domain namespace and soon you will see the servers starting:
+4. Periodically check the pods in the domain namespace and soon you will see the servers starting:
   ```bash
   <copy>kubectl get po -n sample-domain1-ns -o wide</copy>
   ```
@@ -94,31 +94,31 @@ In order to access any application or the Administration Console deployed on Web
 
 As a simple solution, it's best to configure path routing, which will route external traffic through **Traefik** to the domain cluster address or the Administration Server Console.
 
-4. Execute the following Ingress resource definition:
-  ```bash
-  <copy>cat << EOF | kubectl apply -f -
-  apiVersion: extensions/v1beta1
-  kind: Ingress
-  metadata:
-    name: traefik-pathrouting-1
-    namespace: sample-domain1-ns
-    annotations:
-      kubernetes.io/ingress.class: traefik
-  spec:
-    rules:
-    - host:
-      http:
-        paths:
-        - path: /
-          backend:
-            serviceName: sample-domain1-cluster-cluster-1
-            servicePort: 8001
-        - path: /console
-          backend:
-            serviceName: sample-domain1-admin-server
-            servicePort: 7001          
-  EOF</copy>
-  ```
+5. Execute the following Ingress resource definition:
+```bash
+<copy>cat << EOF | kubectl apply -f -
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-pathrouting-1
+  namespace: sample-domain1-ns
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host:
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: sample-domain1-cluster-cluster-1
+          servicePort: 8001
+      - path: /console
+        backend:
+          serviceName: sample-domain1-admin-server
+          servicePort: 7001          
+EOF</copy>
+```
 
 
 Please note the two backends and the namespace, **serviceName**, **servicePort** definitions. The first backend is the domain cluster service to reach the application at the root context path. The second is for the admin console which is a different service.
@@ -127,7 +127,7 @@ Once the Ingress has been created construct the URL of the Administration Consol
 
 `http://EXTERNAL-IP/console`
 
-5. The `EXTERNAL-IP` was determined during the Traefik install. If you forgot to note it, then execute the following command to get the public IP address:
+6. The `EXTERNAL-IP` was determined during the Traefik install. If you forgot to note it, then execute the following command to get the public IP address:
   ```bash
   <copy>kubectl describe svc traefik-operator --namespace traefik | grep Ingress | awk '{print $3}'</copy>
   ```
@@ -136,7 +136,7 @@ Once the Ingress has been created construct the URL of the Administration Consol
   ```
 Construct the Administration Console URL and open it in a browser:
 
-6. Enter the administrative user credentials (weblogic/welcome1) and click **Login**.
+7. Enter the administrative user credentials (weblogic/welcome1) and click **Login**.
 
   ![](images/deploy.domain/weblogic.console.login.png)
 

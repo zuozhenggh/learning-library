@@ -51,8 +51,7 @@ REVISION: 1
 TEST SUITE: None
 ```
 
-NOTES:
-1. Get Traefik's load balancer IP/hostname:
+5. Get Traefik's load balancer IP/hostname:
 
      NOTE: It may take a few minutes for this to become available.
 
@@ -66,10 +65,10 @@ NOTES:
 
         <copy>kubectl describe svc traefik-operator --namespace traefik | grep Ingress | awk '{print $3}'</copy>
 
-2. Configure DNS records corresponding to Kubernetes ingress resources to point to the load balancer IP/hostname found in step 1
+  Configure DNS records corresponding to Kubernetes ingress resources to point to the load balancer IP/hostname found in step 1 (Optional)
 
 
-5. The Traefik installation is basically done. Verify the Traefik (load balancer) services:
+6. The Traefik installation is basically done. Verify the Traefik (load balancer) services:
 ```bash
 <copy>kubectl get service -n traefik</copy>
 ```
@@ -78,7 +77,7 @@ NAME                         TYPE           CLUSTER-IP     EXTERNAL-IP      PORT
 traefik-operator             LoadBalancer   10.96.227.82   158.101.24.114   443:30299/TCP,80:31457/TCP   2m27s
 traefik-operator-dashboard   ClusterIP      10.96.53.132   <none>           80/TCP                       2m27s
 ```
-6. Please note the EXTERNAL-IP of the **traefik-operator** service. This is the public IP address of the load balancer that you will use to access the WebLogic Server Administration Console and the sample application. To print only the public IP address, execute this command:
+7. Please note the EXTERNAL-IP of the **traefik-operator** service. This is the public IP address of the load balancer that you will use to access the WebLogic Server Administration Console and the sample application. To print only the public IP address, execute this command:
 ```bash
 <copy>kubectl describe svc traefik-operator --namespace traefik | grep Ingress | awk '{print $3}'</copy>
 ```
@@ -86,7 +85,7 @@ traefik-operator-dashboard   ClusterIP      10.96.53.132   <none>           80/T
 158.101.24.114
 ```
 
-7. Verify the **helm** charts:
+8. Verify the **helm** charts:
 ```bash
 <copy>helm list -n traefik</copy>
 ```
@@ -94,7 +93,7 @@ traefik-operator-dashboard   ClusterIP      10.96.53.132   <none>           80/T
 NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
 traefik-operator        traefik         1               2020-03-06 20:31:53.069061578 +0000 UTC deployed        traefik-1.86.2  1.7.20  
 ```
-8. You can also access the Traefik dashboard using `curl`. Use the `EXTERNAL-IP` address from the result above:
+9. You can also access the Traefik dashboard using `curl`. Use the `EXTERNAL-IP` address from the result above:
 ```bash
 <copy>curl -H 'host: traefik.example.com' http://EXTERNAL_IP_ADDRESS</copy>
 ```
