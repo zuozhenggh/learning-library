@@ -5,9 +5,10 @@ Here are a few of the properties for the GG HDFS/Hive, Kafka & Cassandra Handler
 
 Please refer to the ‘Integrating Oracle GoldenGate for Big Data’ doc for a complete list: 
 
-**http://docs.oracle.com/goldengate/bd1221/gg-bd/GADBD/GUID-A6C0DEC9-480F-4782-BD2A-54FEDDE2FDD9.htm#GADBD110**
+[Integrating Oracle GoldenGate for Big Data](http://docs.oracle.com/goldengate/bd1221/gg-bd/GADBD/GUID-A6C0DEC9-480F-4782-BD2A-54FEDDE2FDD9.htm#GADBD110*) 
+***
 
-HDFS/Hive Properties
+**HDFS/Hive Properties**
 
 ![](./images/aa2.png)
 ![](./images/aa3.png)
