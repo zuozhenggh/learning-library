@@ -1,6 +1,6 @@
 # Provisioning Autonomous Database (ADW and ATP)
 
-## **Introduction**
+## Introduction
 
 This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. You will provision a new ADW instance and connect to the database using Oracle SQL Developer Web.
 
@@ -12,7 +12,7 @@ Estimated time: 5 minutes
 
 -   Learn how to provision a new Autonomous Database
 
-### Lab Prerequisites
+### Prerequisites
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have completed the **Prerequisites** lab seen in the Contents menu on the right.  In this lab, you will provision an ADB database instance using the cloud console.
 
@@ -47,7 +47,7 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     ![](./images/Compartment.png " ")
 
-6. If you using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page. You can go ahead and select a different available region such as **Phoenix** or **Toronto**.
+6. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page. You can go ahead and select a different available region such as **Phoenix** or **Toronto**.
 
     ![](./images/Region.png " ")
 

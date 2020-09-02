@@ -100,7 +100,7 @@ When you click on a calendar entry then it shows event details. It would be far 
 
 ## **Summary**
 
-This completes Lab 4 and the workshop. You now know how to create an application by uploading a file, enhancing the page using runtime environment and page designer, and also linking pages to enhance the application.
+You now know how to create an application by uploading a file, enhancing the page using runtime environment and page designer, and also linking pages to enhance the application.
 
 ## **Learn More** - *Useful Links*
 
@@ -112,7 +112,7 @@ This completes Lab 4 and the workshop. You now know how to create an application
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
+ - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
 ## See an issue?

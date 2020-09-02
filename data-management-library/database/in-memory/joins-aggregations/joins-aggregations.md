@@ -1,26 +1,23 @@
 # In-Memory Joins and Aggregations
 
 ## Introduction
+Watch the video below to get an overview of joins using Database In-Memory.
+
+[](youtube:y3tQeVGuo6g)
 
 ### Objectives
 
 -   Learn how to enable In-Memory on the Oracle Database
 -   Perform various queries on the In-Memory Column Store
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup
+* Lab: Generate SSH Key (FreeTier and Paid accounts)
+* Lab: Environment Setup or Verify Setup
 * Lab: Enabling In-Memory
 * Lab: Querying the IMC
 
-### Lab Preview
-
-Watch the video below to get an overview of joins using Database In-Memory.
-
-[](youtube:y3tQeVGuo6g)
 
 ## Step: In-Memory Joins and Aggregation
 
@@ -139,7 +136,8 @@ Oracle Database adds In-Memory database functionality to existing databases, and
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager,  Database In-Memory
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, April 2020
+- **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

@@ -8,7 +8,7 @@ You can create applications with Oracle Application Express on Autonomous Transa
 
 Each Autonomous Transaction Processing instance includes a dedicated instance of Oracle Application Express; you can use this instance to create multiple workspaces.
 
-### Lab Prerequisites
+### Prerequisites
 - Sign Up for Free Trial/Login to Oracle Cloud
 
 ## **Step 1:** Create an Autonomous Transaction Processing instance

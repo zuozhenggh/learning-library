@@ -1,6 +1,6 @@
 # Creating Rich Data Visualizations
 
-## **Introduction**
+## Introduction
 
 This lab will walk you through the steps to connect *Oracle Analytics Desktop* (formerly Oracle Data Visualization Desktop) to an Oracle Autonomous Database, either in Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP), and create data visualizations.  Unlimited Oracle Analytics Desktop licenses are included when connecting to an ADW  or ATP data source.  Instructions will be provided to connect your previously created Autonomous Database instance (using sample data loaded into the database) to Oracle Analytics Desktop.  We will demonstrate how you can immediately gain insights and create beautiful data visualizations.
 
@@ -11,7 +11,7 @@ This lab will walk you through the steps to connect *Oracle Analytics Desktop* (
 - Learn how to access and gain insights from data in the Autonomous Database
 
 
-### Lab Prerequisites
+### Prerequisites
 - Obtained an Oracle Cloud account
 - Created a new autonomous database instance in ADW or ATP
 - Installation of Oracle Analytics Desktop (free with Autonomous Data Warehouse). If you already have Oracle Analytics Desktop installed, please check the version. The recommended version is 5.5.0 or greater, to connect to your Oracle Autonomous Database.

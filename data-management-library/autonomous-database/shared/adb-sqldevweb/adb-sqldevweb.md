@@ -1,6 +1,6 @@
 # Connect to ADB with SQL Developer Web and Run Your First Query
 
-## **Introduction**
+## Introduction
 
 In this lab, you will explore the provided sample data sets that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP) instance using SQL Developer Web.
 
@@ -20,7 +20,7 @@ You will run a basic query on the SSB data set which is a 1TB data set with one 
 - Learn about the Star Schema Benchmark (SSB) and Sales History (SH) sample data sets
 - Run a query on an ADW sample dataset
 
-### Lab Prerequisites
+### Prerequisites
 
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud Account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account, or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have completed the **Prerequisites** and **Lab 1** seen in the Contents menu on the right.

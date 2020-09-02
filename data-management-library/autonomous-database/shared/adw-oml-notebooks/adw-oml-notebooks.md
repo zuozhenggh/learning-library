@@ -1,6 +1,6 @@
 # Using Oracle Machine Learning Notebooks
 
-## **Introduction**
+## Introduction
 
 In this lab, you will use the Oracle Machine Learning (OML) SQL notebook application provided with your Autonomous Data Warehouse. This browser-based application provides a web interface to run SQL queries and scripts, which can be grouped together within a notebook. Notebooks can be used to build single reports, collections of reports, and even dashboards. OML provides a simple way to share workbooks and collections of workbooks with other OML users.
 
@@ -25,7 +25,7 @@ In this lab, you will use the Oracle Machine Learning (OML) SQL notebook applica
 -   Learn how to share notebooks
 -   Learn how to create and run SQL scripts
 
-### Lab Prerequisites
+### Prerequisites
 
 -   This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 

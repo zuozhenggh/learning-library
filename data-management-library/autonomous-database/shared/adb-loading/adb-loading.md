@@ -1,7 +1,7 @@
 
 # Loading Data into an Autonomous Database Instance
 
-## **Introduction**
+## Introduction
 
 In this lab, you will upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
 
@@ -34,7 +34,7 @@ This lab shows how to load data from Oracle Cloud Infrastructure Object Storage 
 
 In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it with sample data from your *local file system*. In the remaining steps, you will create several ADW tables and load them with sample data that you stage to an *OCI Object Store*.
 
-### Lab Prerequisites
+### Prerequisites
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 
 - This lab assumes you have completed the **Prerequisites** and **Lab 1** seen in the Contents menu on the right.
@@ -114,7 +114,8 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
   *To learn more about the OCI Object Storage, refer to its <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="\_blank">documentation</a>*
 
-2. You should now be on the **Object Storage** page. Choose any compartment to which you have access. In this example, the **root** compartment is chosen.
+2. You should now be on the **Object Storage** page. Choose any compartment to which you have access.  In this example, the **root** compartment is chosen. For LiveLabs tenancy users, select the compartment that you were assigned in the *Launch Workshop* window. 
+*Note: If you are doing this workshop in the LiveLabs tenancy and you have issues selecting your compartment, go back to your ADB instance create page and select your compartment.  Now go back to Object Storage, you should be able to select your compartment and create your bucket.  This is a known OCI issue that should be resolved shortly*
     ![](images/snap0014298.jpg " ")
 
 3. Click the **Create Bucket** button:

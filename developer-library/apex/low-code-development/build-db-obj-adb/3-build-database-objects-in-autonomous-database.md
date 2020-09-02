@@ -223,7 +223,7 @@ In this step, you will learn how to create an Entity Relationship Diagram (ERD) 
 
 ## **Step 4:** Create a new table and add it to the data model
 
-In this step, you will use SQL Developer Web to create a new table. Then you'll learn how to edit an existing table and add it to the ERD created in the previous step.
+In this step, you will use SQL Developer Web to create a new table. Then you will learn how to edit an existing table and add it to the ERD created in the previous step.
 
 In the original napkin design, there was a table called To Dos. However, the Quick SQL script (used in step 1) did not include this table. Below you will recreate the TO Dos table with a relationship to Team Members, and Tasks.
 
@@ -235,7 +235,7 @@ In the original napkin design, there was a table called To Dos. However, the Qui
 
    ![](images/table-properties.png " ")
 
-3. Select the new column **NEW\_COLUMN_1** and select the checkbox for **PK** to make it the primary key for this new table. Click in the Name filed and enter **ID**. Click in the Data Type select **NUMBER** from the drop down list.
+3. Select the new column **NEW\_COLUMN_1** and select the checkbox for **PK** to make it the primary key for this new table. Click in the Name field and enter **ID**. Click in the Data Type and select **NUMBER** from the drop down list.
 
    ![](images/new-column-1.png " ")
 
@@ -334,11 +334,11 @@ In the original napkin design, there was a table called To Dos. However, the Qui
 
 ## Summary
 
-This completes this workshop. At this point you know how to use Quick SQL to generate database objects using a SQL shorthand. You also know how to use SQL Developer Web to maintain database objects and generate ERDs. Click on **Lab 3: Create and Modify and APEX Application** to create a new APEX application that will utilize the database objects you created.
+This completes this workshop. At this point you know how to use Quick SQL to generate database objects using a SQL shorthand. You also know how to use SQL Developer Web to maintain database objects and generate ERDs. Click on ***Lab 3: Create and Modify an APEX Application*** to create a new APEX application that will utilize the database objects you created.
 
 ## Acknowledgements
-* **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
-* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+* **Author** - Salim Hlayel, Principle Product Manager
+* **Contributors** - Oracle LiveLabs QA Team (Jaden McElvey, Technical Lead, Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
 ## See an issue?

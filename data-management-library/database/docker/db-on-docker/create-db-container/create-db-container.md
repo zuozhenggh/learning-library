@@ -14,7 +14,7 @@ One of the benefits of using Docker is quick and easy provisioning.  Oracle prov
 
 You will use various Docker commands to setup, run and connect into containers. Concepts of Docker volumes, networking and intra-container communication will be used.
 
-### Lab Prerequisites?
+### Prerequisites?
 
 * Create a docker hub [account](http://hub.docker.com)
 * Participant has completed the following labs:
@@ -23,12 +23,12 @@ You will use various Docker commands to setup, run and connect into containers. 
     - Setup Compute Instance
     - Docker Setup
 
-## Step 1: Create an Oracle Database Container
+## **Step 1:** Create an Oracle Database Container
 
 0. Login to the instance using ssh
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
 1.  Verify your docker version
@@ -72,7 +72,7 @@ You will use various Docker commands to setup, run and connect into containers. 
     - --name is the name of the container
     - v maps the directory where you downloaded the setup files to the /dbfiles directory inside the container
 
-## Step 2: Follow the progress of Container creation
+## **Step 2:** Follow the progress of Container creation
 
 5.  To watch the progress type the following command passing the name of the container:  orcl.  This takes time, **please be patient**.
     ````
@@ -87,7 +87,7 @@ You will use various Docker commands to setup, run and connect into containers. 
     ![](images/section5step4b.png " ")
 
 
-## Step 3: Create A Schema in Container Running Oracle Database and Login to EM Express
+## **Step 3:** Create A Schema in Container Running Oracle Database and Login to EM Express
 
 1.  To create the schema we need to "login" to the container.  Type the following:
     ````

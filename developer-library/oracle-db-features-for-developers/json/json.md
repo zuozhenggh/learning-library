@@ -1,8 +1,10 @@
 # Oracle Database 19c JSON Documents
 
-## **Introduction**
+## Introduction
 
-This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
+This lab will explore JSON data and how you can use SQL and PL/SQL against JSON data stored in Oracle Database 19c.  
+
+Estimated Lab Time:  30 minutes
 
 ### About JSON in the Oracle Database
 
@@ -14,7 +16,7 @@ Watch this video to learn more about JSON in the Oracle Database.
 
 *Schemaless* development based on persisting application data in the form of JSON documents lets you quickly react to changing application requirements. You can change and redeploy your application without needing to change the storage schemas it uses. SQL and relational databases provide flexible support for complex data analysis and reporting, as well as rock-solid data protection and access control. This is typically not the case for NoSQL databases, which have often been associated with schemaless development with JSON in the past. Oracle Database provides all of the benefits of SQL and relational databases to JSON data, which you store and manipulate in the same ways and with the same confidence as any other type of database data.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
@@ -24,19 +26,37 @@ This lab assumes you have completed the following labs:
 
 ### Lab User Schema
 
-For this lab we will use the *Order Entry (OE)* sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the *OE* schema installed.
+For this lab we will use the *Order Entry (OE)* sample schema.
 
 ## **Step 1**: Environment Preparation
 
 Grant Required Privileges to the OE user.
 
-0.  Login to the instance using ssh.  We recommend using the Oracle Cloud Shell.
+1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-1.  Connect to the **ORCLPDB** pluggable database, as SYSDBA.
+2.  Switch to the oracle user
+    ````
+    <copy>
+    sudo su - oracle
+    </copy>
+    ````
+    ![](./images/sudo-oracle.png " ")
+
+3.  Set your oracle environment.  When prompted enter **[ORCL]**
+    ````
+    <copy>
+    . oraenv
+    </copy>
+    ORACLE_SID = [ORCL] ? ORCL
+    The Oracle base remains unchanged with value /u01/app/oracle
+    ````
+    ![](./images/oraenv.png " ")
+
+4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
 
     ````
     <copy>
@@ -44,9 +64,9 @@ Grant Required Privileges to the OE user.
     </copy>
     ````
 
-    ![](./images/step1.1-sqllogin.png " " )
+    ![](./images/sqlplus.png " ")
 
-2.  Grant **OE** user some privileges required for the tasks we will execute in this lab.
+3.  Grant **OE** user some privileges required for the tasks we will execute in this lab.
 
     ````
     <copy>
@@ -62,7 +82,7 @@ Grant Required Privileges to the OE user.
 
     *Note: The ALTER SYSTEM privilege is required to flush the Shared Pool in one exercise about performance.*
 
-3.  Create Network Access Control List as our database needs to connect to a web service, and retrieve information over HTTP, and this requires an *Access Control List (ACL)*. This ACL can be created by a user with SYSDBA privileges, SYS in this case, from the Pluggable Database called **ORCLPDB**, by executing the following procedure.
+4.  Create Network Access Control List as our database needs to connect to a web service, and retrieve information over HTTP, and this requires an *Access Control List (ACL)*. This ACL can be created by a user with SYSDBA privileges, SYS in this case, from the Pluggable Database called **ORCLPDB**, by executing the following procedure.
 
     ````
     <copy>
@@ -79,10 +99,17 @@ Grant Required Privileges to the OE user.
 
     ![](./images/p_addACL.png " ")
 
-4.  Ensure the execution is successful.  SQL*Plus Formatting is suggested.
+5.  Ensure the execution is successful.  SQL\*Plus Formatting is suggested.
 
-5.  Close the SYSDBA connection and connect as the **OE** user to pluggable database ORCLPDB. From this point, all tasks on the database side will be performed using the **OE** user. For SQL*Plus, it is also useful to format the output. Feel free to use your own formatting, or just run these formatting commands every time you connect.
+6.  Close the SYSDBA connection and connect as the **OE** user to pluggable database ORCLPDB. From this point, all tasks on the database side will be performed using the **OE** user. For SQL\*Plus, it is also useful to format the output. Feel free to use your own formatting, or just run these formatting commands every time you connect.
 
+    If you have exited from SQL\*Plus, reconnect as the **OE** user (as the **oracle** os-user, not opc)
+    ````
+    <copy>
+    sqlplus oe/Ora_DB4U@localhost:1521/orclpdb
+    </copy>
+    ````
+    or, if still connected to SQL\*Plus connect as the **OE** user
     ````
     <copy>
     conn oe/Ora_DB4U@localhost:1521/orclpdb
@@ -389,7 +416,7 @@ Note: Remember to replace ***GeoNames_username***.
 
     ![](./images/step6.10-newjsondoc.png " ")
 
-11. The SQL/JSON function *JSON\_TABLE* creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. You can query the result returned by the function as a virtual relational table using SQL. The main purpose of *JSON\_TABLE* is to create a row of relational data for each object inside a JSON array and output JSON values from within that object as individual SQL column values. Nested clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
+11. The SQL/JSON function *JSON\_TABLE* creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. You can query the result returned by the function as a virtual relational table using SQL. The main purpose of *JSON\_TABLE* is to create a row of relational data for each object inside a JSON array and output JSON values from within that object as individual SQL column values. The **NESTED** clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
 
     ````
     <copy>
@@ -442,8 +469,8 @@ Please proceed to the next lab.
 ## **Acknowledgements**
 
 - **Author** - Valentin Leonard Tabacaru
-- **Contributors** - Anoosha Pilli, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
+- **Contributors** - Anoosha Pilli & Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
+- **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
