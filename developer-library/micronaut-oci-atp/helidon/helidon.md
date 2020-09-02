@@ -42,7 +42,7 @@ This will open the application on port `8081`
 We can verify this application works by exercising the following endpoints:
 
 - `curl -i http://localhost:8081/vaccinated/Dino` - this is our "business" endpoint and should return `true`
-- `curl -i http://localhost:8080/health` - returns health status (MicroProfile health format)
+- `curl -i http://localhost:8081/health` - returns health status (MicroProfile health format)
 - `curl -H 'Accept: application/json' http://localhost:8081/metrics` - returns metrics (MicroProfile metrics format)
 - `curl -i http://localhost:8081/openapi` - returns OpenAPI yaml service description (MicroProfile OpenAPI specification)
 
