@@ -30,7 +30,11 @@ Download the native image binary (this is needed for deployment to cloud)
 
 Run the native image (if you are using a Linux environment):
 
-`./helidon-mp-service`
+```bash
+wget -O helidon-mp-service https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/helidon-mp-service
+chmod +x helidon-mp-service
+./helidon-mp-service
+```
 
 _non Linux environment:_
   - Get the application from github: `git clone https://github.com/tomas-langer/helidon-hol-example.git`
