@@ -33,9 +33,9 @@ In this lab you will:
 
    ![Stack Configuration - Step 1](images/stack_info_1.png)
 
-5. You can optionally enter a name and description of the stack then then choose the compartment for the Stack, then click 'Next':
+5. You can optionally enter a name and description of the stack (leave the Compartment as the 'root' Compartment), then click 'Next':
 
-   ![Stack Configuration - Step 2](images/stack_info_2.png)
+   ![Stack Configuration - Step 2](images/stack_info_3.png)
 
 6. Under "Required Configuration" add the SSH key that you created in Lab 1. You can do so by dragging and dropping the public key file (the file that ends with `.pub`) or by choosing `PASTE SSH KEYS` then copying and pasting the contents of the public key file.
 
