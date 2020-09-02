@@ -147,7 +147,8 @@ With that done it is time move onto defining repository interfaces to implement 
 
 Micronaut Data supports the notion of defining interfaces that automatically implement SQL queries for you at compilation time using the data repository pattern.
 
-To take advantage of this feature of Micronaut Data define a new repository interface that extends from `CrudRepository` and is annotated with `@JdbcRepository` using the `ORACLE` dialect:
+To take advantage of this feature of Micronaut Data define a new repository interface that extends from `CrudRepository` and is annotated with `@JdbcRepository` using the `ORACLE` dialect
+ under `src/main/java/example/atp/repositories`:
 
 ```java
 package example.atp.repositories;
