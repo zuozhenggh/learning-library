@@ -39,7 +39,10 @@ Review the overview notes on the following screen, then select Q to quit. These 
 **3:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
 view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
+
 view these files, same as in previous lab:
+
+**Source**
 
 /u01/gg4mysql/dirprm/mgr.prm
 
@@ -47,11 +50,13 @@ view these files, same as in previous lab:
 
 /u01/gg4mysql/dirprm/pmpmysql.prm
 
-view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby
+**Target - New** 
 
-view /u01/gg4hadoop123010/dirprm/rcass.prm
+/u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby
 
-view /u01/gg4hadoop123010/dirprm/rcass.properties
+/u01/gg4hadoop123010/dirprm/rcass.prm
+
+/u01/gg4hadoop123010/dirprm/rcass.properties
 
 **4:** First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
@@ -120,7 +125,7 @@ NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop t
 In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rcass’ read the remote trail files, created the Cassandra tables and wrote the data to those tables.
 
-**End of Lab 3**
+**End of Lab 7**
 
 **Congrats! You have completed the GoldenGate for Big Data Workshop!!**
 

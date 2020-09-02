@@ -7,12 +7,6 @@
   [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Introduction
-Contents
-
-Introduction
- Disclaimer
-  Oracle GoldenGate for Big Data Workshop Architecture 
-  Setup the QuickStart VM for GoldenGate for Big Data Workshop
 
 Lab 1 – Install GoldenGate binaries for Big Data 
 
@@ -57,8 +51,6 @@ Oracle GoldenGate for Big Data includes Oracle GoldenGate for Java, which enable
 
 Oracle GoldenGate for Big Data’s real-time data streaming platform also allows customers to keep their big data reservoirs, or big data lakes, up to date with their production systems.
 
-Time to complete - 15 mins
-
 ### Summary
 
 Oracle GoldenGate for Big Data offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data
@@ -69,8 +61,7 @@ integration architectures to big data systems without impacting the performance 
 This workshop is only for learning and testing purposes. None of the files from the labs should be used in a production environment. 
 
 Time to Complete -
-Approximately 30 min
-
+Approximately 30 minutes
 ## Steps
 
 In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
@@ -95,12 +86,10 @@ Follow these instructions to install GoldenGate for Big Data
 
 ![](./images/labmenu_opt1.png)
 
-Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
-
 To install and configure  GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
 
 
-**Optional**  (Do not select Auto-install if you already installed GG manually)
+**Optional**  (Do not select Auto-install (I) if you have already installed GG manually)
 
 If you would like to auto-install GoldenGate for Big Data, you can select option "I". To access the Lab Menu, type the alias ‘labmenu’, then select I.
 

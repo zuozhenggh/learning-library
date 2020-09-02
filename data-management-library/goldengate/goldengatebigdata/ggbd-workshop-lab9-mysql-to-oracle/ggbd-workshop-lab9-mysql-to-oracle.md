@@ -5,7 +5,7 @@
 ## Before You Begin
 
 ### Introduction
-In this lab is a read-only example on how we use goldengate for bigdata Java Database Connectivity (JDBC) Handler to replicate source transactional data to a target or database.
+In this lab is a **read-only** example on how we use goldengate for bigdata Java Database Connectivity (JDBC) Handler to replicate source transactional data to a target or database.
 
 ### Objectives
 - Replicate from **MySQL to Oracle using jdbc**
@@ -110,7 +110,7 @@ gg.log.level=INFO
 gg.report.time=30sec
 javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
 ```
-Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
+Now go to the **ggsci** command prompt and start the replicat. We can see the stats of the replicat
 
 And we can goto the database and see the record count as well. For that log in to GG4BD_Source01 (129.213.97.81)
 

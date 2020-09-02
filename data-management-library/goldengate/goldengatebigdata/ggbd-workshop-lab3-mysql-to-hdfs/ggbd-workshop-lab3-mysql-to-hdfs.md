@@ -38,7 +38,7 @@ The following Lab Menu will be displayed,
 
 ## STEPS
 
-**1:** select R to reset the lab environment, then select 3 to begin Lab3.
+**1:** Select R to reset the lab environment, then select 3 to begin Lab3.
 
 **2:** Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
@@ -46,17 +46,14 @@ The following Lab Menu will be displayed,
 
 view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby 
 
-view these files, same as in previous lab:
+view these files, same as in previous lab
+
     /u01/gg4mysql/dirprm/mgr.prm 
     /u01/gg4mysql/dirprm/extmysql.prm 
     /u01/gg4mysql/dirprm/pmpmysql.prm
-
-view /u01/gg4hadoop123010/dirprm/
-   create_hdfs_replicat.oby 
-
-view /u01/gg4hadoop123010/dirprm/rhdfs.prm
-
-view /u01/gg4hadoop123010/dirprm/rhdfs.properties
+    /u01/gg4hadoop123010/dirprm/create_hdfs_replicat.oby 
+    /u01/gg4hadoop123010/dirprm/rhdfs.prm
+    /u01/gg4hadoop123010/dirprm/rhdfs.properties
 
 **4:** First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
@@ -66,7 +63,7 @@ view /u01/gg4hadoop123010/dirprm/rhdfs.properties
 
 **6:** In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
-![](images/all/b4.png)
+![](./images/b4.png)
 
 **7:** In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
@@ -83,13 +80,14 @@ view /u01/gg4hadoop123010/dirprm/rhdfs.properties
 
 ![](./images/b8.png)
 
-**11:** ADD REPLICAT RUNNING 
-![](./images/B9.png)
+**11:** Replicat (rhdfs) is now running
 
 **12:** Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the HDFS directory – it should be empty. Then we’ll load some data on the MySQL database
 ‘ggsource’ and GG will extract and write it to the HDFS target. GG will create a subdirectory for each table in the base directory /user/ggtarget.
 
-**13:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+**13:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt)
+
+Review and Run the highlighted commands:
 
 ![](./images//b10.png)
 ![](./images/b11.png)

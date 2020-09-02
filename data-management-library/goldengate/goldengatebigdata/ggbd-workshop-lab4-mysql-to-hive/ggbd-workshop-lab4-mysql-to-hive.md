@@ -30,16 +30,17 @@ If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘
 
 ![](./images/lab4menu.png)
 
-**2:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
+**2:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
 
 view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
 
 view these files, same as in previous lab
-/u01/gg4mysql/dirprm/mgr.prm
 
-/u01/gg4mysql/dirprm/extmysql.prm
+view /u01/gg4mysql/dirprm/mgr.prm
 
-/u01/gg4mysql/dirprm/pmpmysql.prm
+view /u01/gg4mysql/dirprm/extmysql.prm
+
+view /u01/gg4mysql/dirprm/pmpmysql.prm
 
 view /u01/gg4hadoop123010/dirprm/create_hive_replicat.oby
 
@@ -77,11 +78,11 @@ the MySQL database ‘ggsource’ and GG will extract and write it to the Hive t
 
 **11:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
+Review and Run the highlighted commands:
+
 ![](./images/c8.png)
 
-**12:** There should be several .avro files in the data directory, and 3 .avsc files in the schema directory. You will notice that a new directory has been created for each table in the data directory.
-
-![](./images/c9.png)
+**12:** There should be several .avro files in the data directory, and 3 .avsc files in the schema directory. A new directory has been created for each table in the data directory.
 
 **13:** Starting with GG version 12.2.0.1.1, GG automatically creates the Hive tables with .avsc schema file. Let’s take a look at the contents of the tables:
 
@@ -96,7 +97,7 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhive’ read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and
 /user/ggtarget/hive/schema
 
-**15:** You can also see the files that are created in the Hive directory in HDFS:
+**15:** There are also files that are created in the Hive directory in HDFS
 
 **16:** Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hive… Take a look at the .avro and the schema .avsc files:
 

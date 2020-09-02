@@ -33,9 +33,7 @@ Select Option 2
 
 ## Steps
 
-
   ![](./images/a_labmenu2.png)
-
 
 (If you are just starting the Labs, you don’t need to reset the environment).
 
@@ -72,7 +70,7 @@ processes:
 **7:** At this point GoldenGate should have replicated all the data from database ggsource to database
 ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed:
 
-    ![](./images/a7.png)
+   ![](./images/a7.png)
 
 **8:** The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 

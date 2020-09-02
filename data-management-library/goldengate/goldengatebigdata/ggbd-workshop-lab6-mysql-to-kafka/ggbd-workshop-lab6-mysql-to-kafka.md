@@ -32,14 +32,16 @@ select R to reset the lab environment, then select 6 (this step may take a coupl
 
 ![](./images/lab6menu.png)
 
-**3:** Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos
+**3:** Review the overview notes on the following screen, then select Q to quit.
 
 ##  Configuration
-   The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
+   The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
 
 view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
 
-view these files, same as in previous lab:
+view these files, same as in previous lab
+
+**Source**
 
 /u01/gg4mysql/dirprm/mgr.prm
 
@@ -47,13 +49,12 @@ view these files, same as in previous lab:
 
 /u01/gg4mysql/dirprm/pmpmysql.prm
 
-view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby
+**Target**
 
-view /u01/gg4hadoop123010/dirprm/rkafka.prm
-
-view /u01/gg4hadoop123010/dirprm/rkafka.properties
-
-view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
+/u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby
+/u01/gg4hadoop123010/dirprm/rkafka.prm
+/u01/gg4hadoop123010/dirprm/rkafka.properties
+/u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
 
 **4:** First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 

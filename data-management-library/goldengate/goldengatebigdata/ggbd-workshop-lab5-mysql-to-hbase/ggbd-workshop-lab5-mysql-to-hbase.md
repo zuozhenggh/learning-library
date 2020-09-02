@@ -39,13 +39,15 @@ Review the overview notes on the following screen, then select Q to quit.
 **3:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
 view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
-view these files, same as in previous lab:
+
+view these files same as in the previous lab
+
 /u01/gg4mysql/dirprm/mgr.prm
 /u01/gg4mysql/dirprm/extmysql.prm
 /u01/gg4mysql/dirprm/pmpmysql.prm
-view /u01/gg4hadoop123010/dirprm/create_hbase_replicat.oby
-view /u01/gg4hadoop123010/dirprm/rhbase.prm
-view /u01/gg4hadoop123010/dirprm/rhbase.properties
+/u01/gg4hadoop123010/dirprm/create_hbase_replicat.oby
+/u01/gg4hadoop123010/dirprm/rhbase.prm
+/u01/gg4hadoop123010/dirprm/rhbase.properties
 
 **4:** First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
@@ -58,6 +60,8 @@ view /u01/gg4hadoop123010/dirprm/rhbase.properties
 ![](./images/d3.png)
 
 **7:** In the GG for MySQL ggsci session, we will create and start the GG extract process:
+
+Review and Run the Highlighted commands
 
 ![](./images/d4.png)
 ![](./images/d5.png)
@@ -75,11 +79,15 @@ view /u01/gg4hadoop123010/dirprm/rhbase.properties
 
 **11:** Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the HBase tables – they should be empty (they don’t even exist yet). We’ll load some data on the MySQL database ‘ggsource’ and GG will extract the data, create the HBase tables, and write the data to the HBase target tables.
 
-**12:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+**12:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt)
+
+Review and Run the Highlighted commands
 
 ![](./images/d9.png)
 
-**13:** Starting with GG version 12.2.0.1.1, GG automatically creates the HBase tables. Let’s take a look at the contents of the tables
+**13:** Note: Starting with GG version 12.2.0.1.1, GG automatically creates the HBase tables. Let’s take a look at the contents of the tables
+
+Review and Run the Highlighted commands
 
 ![](./images/d10.png)
 
