@@ -21,11 +21,11 @@ Your will need:
 
  Setting up the Environment For Connection 
 
-**Step1:** We already have a trail file created in the GGBD home. We will be using the same trail file to replicate .
+**1:** We already have a trail file created in the GGBD home. We will be using the same trail file to replicate .
 
 Example:
 
-**Step2:** In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
+**2:** In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
 
         We already have the jdbc drive downloaded ojdbc8-full.tar.gz in the location /home/oracle/Downloads 
 ```
@@ -43,7 +43,7 @@ total 7532
 [oracle@gg4bd-target01 oracle_jdbc]$ tar -xvzf ojdbc8-full.tar.gz
 ```
     
-**Step3:**  Add the replicat with the below commands by logging into ggsci prompt
+**3:**  Add the replicat with the below commands by logging into ggsci prompt
 
 ```
 GGSCI (gg4bd-target01) 4> add replicat rjdbc, exttrail ./dirdat/eb
@@ -77,7 +77,7 @@ MAP employees.titles,       TARGET EMPLOYEES.TITLES,      KEYCOLS(EMP_NO,TITLE,F
 MAP employees.salaries,     TARGET EMPLOYEES.SALARIES,    KEYCOLS(EMP_NO,FROM_DATE);
 ```
 
-**Step4:**  Now edit the dirprm/jdbc_oracle_with_mdp.props file with the below parameters. You can use sample property files found in $GGBD_HOME/AdapterExamples/big-data/jdbc.
+**4:**  Now edit the dirprm/jdbc_oracle_with_mdp.props file with the below parameters. You can use sample property files found in $GGBD_HOME/AdapterExamples/big-data/jdbc.
 
 ```
 GGSCI (gg4bd-target01) 8> exit

@@ -26,11 +26,11 @@ Setting up the Environment For MySQL.
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
-**Step1:** The following Lab Menu will be displayed, select R to reset the lab environment, then option 4
+**1:** The following Lab Menu will be displayed, select R to reset the lab environment, then option 4
 
 ![](./images/lab4menu.png)
 
-**Step2:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
+**2:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
 view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
 
@@ -47,48 +47,48 @@ view /u01/gg4hadoop123010/dirprm/rhive.prm
 
 view /u01/gg4hadoop123010/dirprm/rhive.properties
 
-**Step3:** First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
+**3:** First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-**Step4:** In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
+**4:** In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
 ![](./images/c2.png)
 
-**Step5:** In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
+**5:** In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
 ![](./images/c3.png)
 
-**Step6:** In the GG for MySQL ggsci session, we will create and start the GG extract process:
+**6:** In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
 ![](./images/c4.png)
 ![](./images/c5.png)
 
-**Step7:** Now that the source side is setup, let’s configure GG on the target side (Hive Avro format).
+**7:** Now that the source side is setup, let’s configure GG on the target side (Hive Avro format).
 
-**Step8:** In the GG for Hadoop session, you’ll need to modify the Hive properties by removing the ‘---‘ from the highlighted values:
+**8:** In the GG for Hadoop session, you’ll need to modify the Hive properties by removing the ‘---‘ from the highlighted values:
 
 ![](./images/c6.png)
 
-**Step9:** Now create and start the Hive replicat process:
+**9:** Now create and start the Hive replicat process:
 
 ![](./images/c7.png)
 
-**Step10:** Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the Hive directories (schema & data) – they should be empty. Then we’ll load some data on
+**10:** Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the Hive directories (schema & data) – they should be empty. Then we’ll load some data on
 the MySQL database ‘ggsource’ and GG will extract and write it to the Hive target. GG will create a subdirectory for each table in the base directory /user/ggtarget/hive/data.
 
-**Step11:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+**11:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
 ![](./images/c8.png)
 
-**Step12:** There should be several .avro files in the data directory, and 3 .avsc files in the schema directory. You will notice that a new directory has been created for each table in the data directory.
+**12:** There should be several .avro files in the data directory, and 3 .avsc files in the schema directory. You will notice that a new directory has been created for each table in the data directory.
 
 ![](./images/c9.png)
 
-**Step13:** Starting with GG version 12.2.0.1.1, GG automatically creates the Hive tables with .avsc schema file. Let’s take a look at the contents of the tables:
+**13:** Starting with GG version 12.2.0.1.1, GG automatically creates the Hive tables with .avsc schema file. Let’s take a look at the contents of the tables:
 
 ![](./images/c10.png)
 ![](./images/c11.png)
 
-**Step14:** Also take a look at the Avro schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
+**14:** Also take a look at the Avro schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
 
 ![](./images/c12.png)
 
@@ -96,9 +96,9 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhive’ read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and
 /user/ggtarget/hive/schema
 
-**Step15:** You can also see the files that are created in the Hive directory in HDFS:
+**15:** You can also see the files that are created in the Hive directory in HDFS:
 
-**Step16:** Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hive… Take a look at the .avro and the schema .avsc files:
+**16:** Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hive… Take a look at the .avro and the schema .avsc files:
 
 ![](./images/c18.png)
 ![](./images/c19.png)

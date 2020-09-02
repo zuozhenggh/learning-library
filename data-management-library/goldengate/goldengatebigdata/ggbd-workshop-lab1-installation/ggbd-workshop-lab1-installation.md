@@ -75,11 +75,11 @@ Approximately 30 min
 
 In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
-**Step1:** Open terminal from desktop by double clicking on the icon
+**1:** Open terminal from desktop by double clicking on the icon
 
 ![](./images/terminal2.png)
 
-**Step2:** Change to ggadmin
+**2:** Change to ggadmin
 
 '>su – ggadmin
 Password = oracle
@@ -91,7 +91,7 @@ The following Lab Menu will be displayed
 
 Follow these instructions to install GoldenGate for Big Data
 
-**Step3:** Install GoldenGate using option 1
+**3:** Install GoldenGate using option 1
 
 ![](./images/labmenu_opt1.png)
 
