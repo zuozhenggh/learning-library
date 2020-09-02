@@ -26,7 +26,6 @@ In this lab you will:
 
     ```
     <copy>
-    bash
     wget -O setup.sh https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/setup.sh
     chmod +x setup.sh
     ./setup.sh
@@ -68,7 +67,6 @@ To connect locally you need download and configure the ATP Wallet locally.
 
     ```
     <copy>
-    bash
     unzip /path/to/Wallet_mnociatp.zip -d /tmp/wallet
     </copy>
     ```
@@ -84,7 +82,6 @@ To connect locally you need download and configure the ATP Wallet locally.
 
     ```
     <copy>
-    bash
     mn create-app example-atp --features oracle,data-jdbc
     cd example-atp
     </copy>
@@ -94,8 +91,7 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
 
 2. If you do not have the Micronaut CLI installed and are running on Linux or OS X you can alternatively `curl` and `unzip`:
 
-    ```
-    bash
+    ```bash
     curl https://launch.micronaut.io/example-atp.zip\?features\=oracle,data-jdbc -o example-atp.zip
     unzip example-atp.zip -d example-atp
     cd example-atp
@@ -109,12 +105,12 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
 
     ```yaml
     datasources:
-    default:
-    url: jdbc:oracle:thin:@mnociatp_high
-    driverClassName: oracle.jdbc.OracleDriver
-    username: mnocidemo
-    schema-generate: CREATE_DROP
-    dialect: ORACLE
+      default:
+        url: jdbc:oracle:thin:@mnociatp_high
+        driverClassName: oracle.jdbc.OracleDriver
+        username: mnocidemo
+        schema-generate: CREATE_DROP
+        dialect: ORACLE
     ```
 
 2. To configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section.

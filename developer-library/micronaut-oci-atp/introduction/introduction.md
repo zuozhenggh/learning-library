@@ -5,7 +5,7 @@ steps to get going with Micronaut, Helidon, and Oracle Cloud.
 
 Estimated Workshop Time: 120 minutes
 
-### About Micronaut
+### About Micronaut and Helidon
 
 Micronaut is an innovative new server side Java technology that precomputes your framework infrastructure at compilation time. Micronaut can be combined with GraalVM Native Image to build native applications
 that utilize very little memory and resources thanks to its reflection free nature.
