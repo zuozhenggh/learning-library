@@ -1,6 +1,6 @@
 # Build Integration with Oracle SOA
 
-## Building application connectivity and service orchestration using SOA Suite
+## Service Connectivity and Orchestration using Oracle SOA
 
 ## Overview
 
@@ -45,7 +45,7 @@ Upon fulfillment processing and orders being sent to the packaging department, a
 
 ***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
 
-## Navigating the SOA-integration Lab
+## Navigating the Lab
 To return to this page from anywhere within the lab click either Oracle Hands on Labs, or Home in the header.
 
 ![](images/0/new-lab-header.png)
