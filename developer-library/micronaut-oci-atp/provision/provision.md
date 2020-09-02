@@ -37,7 +37,7 @@ In this lab you will:
 
    ![Stack Configuration - Step 2](images/stack_info_2.png)
 
-6. Under "Required Configuration" add the SSH key that you created in Lab 2. You can do so by dragging and dropping the public key file (the file that ends with `.pub`) or by choosing `PASTE SSH KEYS` then copying and pasting the contents of the public key file.
+6. Under "Required Configuration" add the SSH key that you created in Lab 1. You can do so by dragging and dropping the public key file (the file that ends with `.pub`) or by choosing `PASTE SSH KEYS` then copying and pasting the contents of the public key file.
 
     Tip: On OS X running the following command from a terminal window will copy the contents of your public key into the clipboard which can then be pasted:
 
