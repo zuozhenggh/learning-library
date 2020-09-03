@@ -35,9 +35,25 @@ create a BPEL process exposing the REST interface, previously created.
 ![](images/5/BPELpackingsvc.png)
 ## **STEP 4**: Test the REST service within JDeveloper 12c
 
-SOA REST services expose WADL files instead of WSDL files to define their interface. 
-## **STEP 5**: Update th order status in the database, embedded Java DB
-## **STEP 6**: Add a composite sesor
+SOA REST services expose WADL files instead of WSDL files to define their interface. In order to be able to test the REST service, you will need to get the WADL location from EM FMWC.
++ Deploy the PackAndShip Service
++ Open EM FMWC: Error! Hyperlink reference not valid., substitute your own host name and port number.
++ Click on the deployed composite PackAndShipService
+
+## **STEP 5**: Update the order status in the database, embedded Java DB
+
+In addition to updating the order status in the shipping message, the order status must be updated in the database.
+Previously, in chapter 3, this is an action that needs to be performed repeatedly. A component template has been prepared. It includes a standalone BPEL subprocess that calls a database adapter to update the order status.
+
+## **STEP 6**: Add a composite sensor
+
+By adding a sensor for the shipping provider to this composite.
+You’ll be able to search for all orders that have been shipped with a specific shipping provider.
++ Open the composite view
++ Right-click on the REST service and choose Configure Sensors
+
+![](images/5/compositeSensor.png)
+
 ## **STEP 7**: Setup an email notification
 
 ### **Details:**
