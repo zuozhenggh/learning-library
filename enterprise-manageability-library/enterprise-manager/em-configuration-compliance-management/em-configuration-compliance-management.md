@@ -15,7 +15,7 @@ The objective of this workshop is to highlight Oracle Enterprise Manager Cloud C
 ````
 <copy>https://<EM Instance Public IP>:7803/em</copy>
 ````
-    - e.g: ``https://111.111.111.111:7803/em``
+    - e.g: *``https://111.111.111.111:7803/em``*
 - OMS super-user Credentials:
     - Username: **sysman**
     - password: **welcome1**
