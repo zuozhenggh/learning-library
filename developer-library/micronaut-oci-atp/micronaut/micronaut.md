@@ -399,7 +399,7 @@ The rest of the example demonstrates saving a few entities using the [saveAll](h
 
 Notice that `javax.transaction.Transactional` is declared on the method which ensures that Micronaut Data wraps the execution of the `init` method in a JDBC transaction that is rolled back if anything goes wrong during the execution of the method.
 
-If you wish to monitor the SQL queries that Micronaut Data performs you can open up `src/main/resources/logback.xml` and add the following line to enable SQL login:
+If you wish to monitor the SQL queries that Micronaut Data performs you can open up `src/main/resources/logback.xml` and add the following line to enable SQL logging:
 
 ```xml
 <logger name="io.micronaut.data.query" level="debug" />
