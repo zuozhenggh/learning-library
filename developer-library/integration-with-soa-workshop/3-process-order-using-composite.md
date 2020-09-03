@@ -1,7 +1,7 @@
 # Module 3: Process Order Using composite
 
 ## Introduction
-From page 78 on the SOA suite tutorial, you will build the basis of the new order processing system for Avitek, referred to as ProcessOrder.
+You will build the basis of the new order processing system for Avitek, referred to as ProcessOrder, starting on page 78 on the SOA suite tutorial.
 Recall a few of the business requirements for Avitek ‘s new order processing system:
 1. Many different types of clients will access it over different protocols and data formats, including mobile devices.
 2. With a mobile app launch in progress, next year at the latest, the new order processing system must support access via RESTful API.

@@ -5,18 +5,25 @@ In this module, you will build the first part of the order fulfillment service. 
 Once the order has been shipped, an email is sent to the customer confirming the shipping provider and the order status is updated to Shipped.
 This chapter will build the pack and ship service, including the email notification.
 
-## High level steps ##
+The pack and ship service is defined with a REST interface and accepts a Shipping resource (part of the canonical order message). It initiates the packing and shipping of one order and notifies the customer that the order has shipped. It also updates the order status in the database to Shipped.
 
-## **Objective**: Build the pack-and-ship service
-For this module, the pack and ship service is defined with a REST interface and accepts a Shipping resource (part of the canonical order message). It initiates the packing and shipping of one order and notifies the customer that the order has shipped. It also updates the order status in the database to Shipped.
 
-1. Create a new SOA project PackAndShipService with an empty composite in the application e2e-1201-composites.
-2. Define a REST interface for the Packing Service Project
-3. Create a BPEL process for the packing
-4. Test the REST service within JDevloper 12c
-5. Update th order status in the database, embedded Java DB
-6. Add a composite sesor
-7. Setup an email notification
+## **STEP 1**: Create a new SOA project PackAndShipService with an empty composite in the application e2e-1201-composites.
+As SOA Suite 12c provides the following REST support:
+- Enable REST support in new or existing services
+- Integrate with external REST APIs
+- Orchestrate a set of RESTful state transitions (RPC/HATEOAS approach)
+- Support for XML, JSON (with automatic translation to and from XML), and URL-encoded GET/POST data
+
++ ![](images/5/soaProject.png)
++ ![](images/5/soa2Project.png)
+  
+## **STEP 2**: Define a REST interface for the Packing Service Project
+## **STEP 3**: Create a BPEL process for the packing
+## **STEP 4**: Test the REST service within JDevloper 12c
+## **STEP 5**: Update th order status in the database, embedded Java DB
+## **STEP 6**: Add a composite sesor
+## **STEP 7**: Setup an email notification
 
 ### **Details:**
 

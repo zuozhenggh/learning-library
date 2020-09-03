@@ -24,12 +24,13 @@ Upon fulfillment processing and orders being sent to the packaging department, a
 
 ## Lab Objectives
 
-* Obtain access to development environment through livelab weorkshop
-* Build your first composite app using JDeveloper-SOA
-* Improve and design service orchestration
-* Link pages
+* Introducing to development tool, JDeveloper 12c on this workshop
+* Build first SOA composite application using JDeveloper-SOA
+* Design an improvement to existing integration with service orchestration
+* Deploy composite application on the embedded SOA/Weblogic in JDeveloper
 
-*{Note: This lab assumes you have accessed to JDeveloper12c environment.}*
+
+*{Note: For this lab, it assumes you have accessed to JDeveloper12c environment.}*
 
 ## Lab Modules
 
