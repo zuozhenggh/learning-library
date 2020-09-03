@@ -52,7 +52,7 @@ You’ll be able to search for all orders that have been shipped with a specific
 + Open the composite view
 + Right-click on the REST service and choose Configure Sensors
 
-![](images/5/compositeSensor.png)
++ ![](images/5/compositeSensor.png)
 
 ## **STEP 7**: Setup an email notification
 
