@@ -8,8 +8,9 @@ This chapter will build the pack and ship service, including the email notificat
 The pack and ship service is defined with a REST interface and accepts a Shipping resource (part of the canonical order message). It initiates the packing and shipping of one order and notifies the customer that the order has shipped. It also updates the order status in the database to Shipped.
 
 
-## **STEP 1**: Create a new SOA project PackAndShipService with an empty composite in the application e2e-1201-composites.
-As SOA Suite 12c provides the following REST support:
+## **STEP 1**: Create a new SOA project PackAndShipService 
+
+Let's start a SOA project in JDeveloper with an empty composite in the application e2e-1201-composites. As SOA Suite 12c provides the following REST support:
 - Enable REST support in new or existing services
 - Integrate with external REST APIs
 - Orchestrate a set of RESTful state transitions (RPC/HATEOAS approach)
@@ -18,7 +19,9 @@ As SOA Suite 12c provides the following REST support:
 + ![](images/5/soaProject.png)
 + 
 + ![](images/5/soa2Project.png)
-  
+
+For detail instructions, from step 1 to 7, please start from <ins> **chapter 5, page 191 to 253** in the tutorial document</ins>. 
+
 ## **STEP 2**: Define a REST interface for the Packing Service Project
 
 The packing service expects a shipping resource that includes all necessary information to pack and ship an order. It will also return a shipping resource with an updated order status. The operation that is going to be defined for this service will be a POST operation.
@@ -95,7 +98,7 @@ This completes Module 5. You've successfully:
 
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - Integration Product Development and NAT Solution Engineering
 * **Adapted for Cloud by** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
