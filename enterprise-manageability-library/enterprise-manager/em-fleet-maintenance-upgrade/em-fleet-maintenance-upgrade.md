@@ -43,9 +43,9 @@ Benefits with Fleet Maintenance:
 ## **Step 0**: Running your lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
+  - Authentication OS User - `opc`
   - Authentication method - *SSH RSA Key*
-  - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
+  - Oracle EM and DB Software OS User – `oracle`. First login as `opc`, then sudo to `oracle`. E.g.
   ````
   <copy>sudo su - oracle</copy>
   ````
@@ -520,9 +520,10 @@ Where:
 * Force Listener registration and confirm that it is now servicing “*finance.subnet.vcn.oraclevcn.com*”
 
 ````
-<copy>sqlplus '/as sysdba'
+<copy>sqlplus '/as sysdba'<<EOF
 alter system register;
-exit</copy>
+EOF
+</copy>
 ````
 * Check status of LISTENER\_1525
 

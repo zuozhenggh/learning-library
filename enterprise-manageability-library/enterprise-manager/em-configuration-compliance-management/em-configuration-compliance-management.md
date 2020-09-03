@@ -11,8 +11,8 @@ The objective of this workshop is to highlight Oracle Enterprise Manager Cloud C
     - Lab: Environment Setup
 - EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: *https://``<Replace with your EM13c VM Instance Public IP>``:7803/em*.
-    - e.g: *https://111.111.111.111:7803/em*  
+- OMS Console URL: ````<copy>https://<EM Instance Public IP>:7803/em</copy>````.
+    - e.g: `https://111.111.111.111:7803/em`
 - OMS super-user Credentials:
       - Username: **sysman**
       - password: **welcome1**

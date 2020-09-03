@@ -25,8 +25,8 @@ Benefits with Fleet Maintenance:
     - Lab: Environment Setup
 - EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: *https://``<Replace with your EM13c VM Instance Public IP>``:7803/em*.
-    - e.g: *https://111.111.111.111:7803/em*  
+- OMS Console URL: ````<copy>https://<EM Instance Public IP>:7803/em</copy>````.
+    - e.g: `https://111.111.111.111:7803/em`
 - OMS super-user Credentials:
       - Username: **sysman**
       - password: **welcome1**
@@ -527,9 +527,10 @@ Where:
 * Force Listener registration and confirm that it is now servicing “***hr.subnet.vcn.oraclevcn.com***”
 
 ````
-<copy>sqlplus '/as sysdba'
+<copy>sqlplus '/as sysdba'<<EOF
 alter system register;
-exit</copy>
+EOF
+</copy>
 ````
 
 * Check status of LISTENER\_1522

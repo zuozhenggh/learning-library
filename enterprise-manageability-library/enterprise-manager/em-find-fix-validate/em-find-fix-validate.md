@@ -11,8 +11,8 @@ The objective of this lab is to become familiar with on-premise and Oracle Cloud
     - Lab: Environment Setup
 - EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: *https://``<Replace with your EM13c VM Instance Public IP>``:7803/em*.
-    - e.g: *https://111.111.111.111:7803/em*  
+- OMS Console URL: ````<copy>https://<EM Instance Public IP>:7803/em</copy>````.
+    - e.g: `https://111.111.111.111:7803/em`
 - OMS super-user Credentials:
       - Username: **sysman**
       - password: **welcome1**
@@ -380,11 +380,11 @@ You need to open two SSH sessions to your dedicated VM host as user "opc" using 
 4. Connect to sales database and create indexes. (indexes are already created, just need to make them visible)
 
 ````
-<copy>sqlplus system/welcome1@oltp
+<copy>sqlplus system/welcome1@oltp <<EOF
 alter index dwh_test.DESIGN_DEPT_TAB2_IDX1 visible;
 alter index dwh_test.DISTRIBUTION_DEPT_TAB2_IDX visible;
 alter index dwh_test.OUTLETS_TAB3_IT_IDX visible;
-exit</copy>
+EOF</copy>
 ````
 
 5. We have already performed the capture and stored it in
@@ -402,14 +402,15 @@ cd RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
 6. Connect to as sysdba and grant become user to system on all containers
 
 ````
-<copy>sqlplus sys/welcome1 as sysdba
-grant become user to system container=all;</copy>
+<copy>sqlplus sys/welcome1 as sysdba <<EOF
+grant become user to system container=all;
+EOF</copy>
 ````
 
 7. Connect to system create a directory object to locate the capture and preprocess the capture
 
 ````
-<copy>connect system/welcome1
+<copy>connect system/welcome1 
 CREATE DIRECTORY DBR_REPLAY AS '/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1';
 exec DBMS_WORKLOAD_REPLAY.PROCESS_CAPTURE (capture_dir => 'DBR_REPLAY');</copy>
 ````
