@@ -68,7 +68,7 @@ In this lab you will:
     ```
     <copy>
     # run on VM to start Micronaut application
-    export MICRONAUT_OCI_DEMO_PASSWORD=[Your atp_wallet_password]
+    export DATASOURCES_DEFAULT_PASSWORD=[Your atp_wallet_password]
     export TNS_ADMIN=/tmp/wallet
     java -jar /app/application.jar
     </copy>
