@@ -16,11 +16,26 @@ As SOA Suite 12c provides the following REST support:
 - Support for XML, JSON (with automatic translation to and from XML), and URL-encoded GET/POST data
 
 + ![](images/5/soaProject.png)
++ 
 + ![](images/5/soa2Project.png)
   
 ## **STEP 2**: Define a REST interface for the Packing Service Project
+
+The packing service expects a shipping resource that includes all necessary information to pack and ship an order. It will also return a shipping resource with an updated order status. The operation that is going to be defined for this service will be a POST operation.
++ ![](images/5/restadapter.png)
++ 
 ## **STEP 3**: Create a BPEL process for the packing
-## **STEP 4**: Test the REST service within JDevloper 12c
+
+create a BPEL process exposing the REST interface, previously created.
+
+ + Name: packAndShipOrder
++ Template: Define Service Later (The interface will be defined when we wire this process to the REST binding, later in the procedure.)
+
+![](images/5/BPELprocess.png)
+![](images/5/BPELpackingsvc.png)
+## **STEP 4**: Test the REST service within JDeveloper 12c
+
+SOA REST services expose WADL files instead of WSDL files to define their interface. 
 ## **STEP 5**: Update th order status in the database, embedded Java DB
 ## **STEP 6**: Add a composite sesor
 ## **STEP 7**: Setup an email notification
