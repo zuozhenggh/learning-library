@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to verify your compute instance has been setup.
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
 
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
@@ -141,12 +141,19 @@ Once you deploy your compute instance, tail the log to determine when the databa
     SQL> <copy>exit
     </copy>
     ````
-2. Type exit again to *switch back to the opc user*.  Verify that you are now the opc user using the whoami command.
-    ```` 
-    [oracle@server ~]$ <copy>exit
+2. Type exit again to *switch back to the opc user*.  
+    ```
+    <copy>
+    exit
+    </copy>
+    ```
+3. Verify that you are now the **opc** user using the *whoami* command.  
+    ```
+    <copy>
     whoami
     </copy>
-    ````
+    ```
+
     ![](./images/whoami.png " ")
     
 You may now *proceed to the next lab*.  
