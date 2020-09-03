@@ -15,8 +15,8 @@ The objective of this workshop is to highlight the Oracle Enterprise Manager Clo
     - Lab: Generate SSH Keys
     - Lab: Environment Setup
 - EM Instance Public IP address
-- OMS Console URL: *https://``<Replace with your EM13c VM Instance Public IP>``:7803/em*.
-    - e.g: *https://111.111.111.111:7803/em*  
+- OMS Console URL: ````<copy>https://<EM Instance Public IP>:7803/em</copy>````.
+    - e.g: `https://111.111.111.111:7803/em`
 - OMS super-user Credentials:
       - Username: **sysman**
       - password: **welcome1**
