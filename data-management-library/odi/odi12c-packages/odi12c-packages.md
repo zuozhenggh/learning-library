@@ -115,7 +115,7 @@ A Package has one entry point, the First Step, but several possible termination 
 
 To define the first step in the Load Sales Administration Package:
 
-**Note:** If you have dragged and dropped the Package components in the order defined above, the Delete Target procedure is already identified as the first step and the first step symbol is displayed on the step\'s icon. If this is the case, define the next steps on success.
+**Note:** If you have dragged and dropped the Package components in the order defined above, the Delete Target procedure is already identified as the first step and the first step symbol is displayed on the step's icon. If this is the case, define the next steps on success.
   1. Select and right-click the *Delete Target* procedure step.
   2.  Select **First Step** from the contextual menu. A small green arrow appears on this step.
 

@@ -215,7 +215,7 @@ In the Physical tab you define how to load the result of the orders and order li
 
 To define the loading strategies:
 
-1.  In the Physical tab of the Mapping Editor, select the source set that corresponds to the loading of the order line\'s filtered aggregate results. In this example, this is the AGGREGATE\_AP access point in the ODI\_DEMO\_TRG\_UNIT.
+1.  In the Physical tab of the Mapping Editor, select the source set that corresponds to the loading of the order line's filtered aggregate results. In this example, this is the AGGREGATE\_AP access point in the ODI\_DEMO\_TRG\_UNIT.
 
 2.  In the Property Inspector, set the LKM to **LKM SQL to SQL (Built-In).GLOBAL** using the LKM Selector list as shown:
 
@@ -237,7 +237,7 @@ To define the integration strategies:
 
 ## **Step 9:** Define the Data Control Strategy
 
-In \"Define the Data Loading Strategies (LKM)\"and \"Define the Data Integration Strategies (IKM)\" you have specified the data flow from the source to the target. You must now define how to check your data (CKM) and the constraints and rules that must be satisfied before integrating the data.
+In "Define the Data Loading Strategies (LKM)"and "Define the Data Integration Strategies (IKM)" you have specified the data flow from the source to the target. You must now define how to check your data (CKM) and the constraints and rules that must be satisfied before integrating the data.
 
 To define the data control strategy:
 

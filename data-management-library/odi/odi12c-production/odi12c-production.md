@@ -35,7 +35,7 @@ Scenarios can be executed in several ways:
   * Executing a Scenario from a Command Line
   * Executing a Scenario from a Web Service.
 
-This Lab describes how to execute a scenario from ODI Studio. See *Executing a Scenario* in the *Oracle Fusion Middleware Developer\'s Guide for Oracle Data Integrator* for more information about how to execute a scenario from a command line and a web service.
+This Lab describes how to execute a scenario from ODI Studio. See *Executing a Scenario* in the *Oracle Fusion Middleware Developer's Guide for Oracle Data Integrator* for more information about how to execute a scenario from a command line and a web service.
 
 **Executing a Scenario from ODI Studio**
 You can start a scenario from Oracle Data Integrator Studio from Designer or Operator Navigator.

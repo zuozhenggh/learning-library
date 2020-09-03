@@ -120,7 +120,7 @@ The source datastores contain data used to load the target datastore. Two types 
 
 ## **Step 5:** Define the Lookup
 
-This section describes how to create a lookup that defines that the customer\'s age must be between the minimum and maximum ages in the file.
+This section describes how to create a lookup that defines that the customer's age must be between the minimum and maximum ages in the file.
 A lookup is a datastore (from a model or the target datastore of a map) - called the *lookup table* - associated to a source datastore - the *driving table* - via a join expression and from which data can be fetched and used in mappings.
 
 Lookup tables are added with the Lookup Component.
@@ -149,7 +149,7 @@ Lookup tables are added with the Lookup Component.
 
   * SRC\_CUSTOMER.AGE between SRC\_AGE\_GROUP.AGE\_MIN and SRC\_AGE\_GROUP.AGE\_MAX
 
-This corresponds to a join between the SRC\_CUSTOMER and the SRC\_AGE\_GROUP datastore and defines that the customer\'s age must between the minimum and maximum ages in the file.
+This corresponds to a join between the SRC\_CUSTOMER and the SRC\_AGE\_GROUP datastore and defines that the customer's age must between the minimum and maximum ages in the file.
 
   ![](./images/modified_expression.png)
 
@@ -204,7 +204,7 @@ To define the expression for the CUST\_ID target column:
 
 **DEAR Mapping Expression**
 
-This transformation rule maps the source datastore\'s DEAR column (numeric) as a string expression (0 \--\>\'MR\', 1 \--\>\'MRS\', 2\--\>\'MS\').
+This transformation rule maps the source datastore's DEAR column (numeric) as a string expression (0 \--\>'MR', 1 \--\>'MRS', 2\--\>'MS').
 
 To define the expression for the DEAR target column:
 
@@ -237,7 +237,7 @@ To define the expression for the CUST\_NAME target column:
 
   ````
   <copy>
-  TRIM(SRC_CUSTOMER.FIRST\_NAME) || ' ' ||
+  TRIM(SRC_CUSTOMER.FIRST_NAME) || ' ' ||
   UPPER(TRIM(SRC_CUSTOMER.LAST_NAME))
   </copy>
   ````
@@ -253,7 +253,7 @@ This mapping expression maps the SRC\_AGE\_GROUP.AGE\_RANGE to the TRG\_CUSTOMER
 
      SRC\_AGE\_GROUP.AGE\_RANGE
 
-**Tip:** Auto-completion functions are available in ODI Studio. In the Expression, type SRC\_ and then press \<CTRL-SPACE\>, a pop-up window displays available fields as shown:
+**Tip:** Auto-completion functions are available in ODI Studio. In the Expression, type SRC\_ and then press <CTRL-SPACE\>, a pop-up window displays available fields as shown:
 
   ![](./images/auto_completion.png)
 
@@ -323,7 +323,7 @@ Finally click on TRG\_CUSTOMER datastore in the Mapping and in the Properties pa
 
 ## **Step 9:** Define the Data Loading Strategies (LKM)
 
-The data loading strategies are defined in the Physical tab of the Mapping Editor. Oracle Data Integrator automatically computes the flow depending on the configuration in the mapping\'s diagram. It proposes default Knowldege Modules (KMs) for the data flow. The Physical tab enables you to view the data flow and select the KMs used to load and integrate data.
+The data loading strategies are defined in the Physical tab of the Mapping Editor. Oracle Data Integrator automatically computes the flow depending on the configuration in the mapping's diagram. It proposes default Knowldege Modules (KMs) for the data flow. The Physical tab enables you to view the data flow and select the KMs used to load and integrate data.
 
 Loading Knowledge Modules (LKM) are used for loading strategies and Integration Knowledge Modules (IKM) are used for integration strategies.
 
@@ -353,7 +353,7 @@ To define the integration strategies:
 
   ![](./images/property_insp_trg_customer.png)
 
-**Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.For more information on importing KMs into your Projects, see *Importing a KM* in the *Oracle Fusion Middleware Developer\'s Guide for Oracle Data Integrator*.
+**Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.For more information on importing KMs into your Projects, see *Importing a KM* in the *Oracle Fusion Middleware Developer's Guide for Oracle Data Integrator*.
 
 ## **Step 11:** Define the Data Control Strategy
 

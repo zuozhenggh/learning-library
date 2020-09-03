@@ -94,7 +94,8 @@ Open the VNC viewer and enter the Public IP Address for your compute Instance
   ls -al
   </copy>
   ````
-    ![](./images/odi_studio_7.png " ")  
+    
+![](./images/odi_studio_7.png " ")  
 
 All files as shown in the screenshot should be present in the directory      
 
