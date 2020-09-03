@@ -21,7 +21,6 @@ In this lab you will:
 1. Before deploying, ensure the wallet exists on the VM by running the snippet produced by `setup.sh` that looks similar to:
 
     ```
-    bash
     # run on local machine to push to VM
     <copy>
     scp -i ~/.ssh/id_oci -r /tmp/wallet opc@[VM IP Address]:/tmp/wallet
@@ -31,7 +30,6 @@ In this lab you will:
 2. Build JAR with:
 
     ```
-    bash
     # run on local machine
     <copy>
     ./gradlew assemble
@@ -41,7 +39,6 @@ In this lab you will:
 3. Push JAR to VM with the snippet produced by *setup.sh* that looks similar to this:
 
     ```
-    bash
     # run on local machine to push to VM
     <copy>
     scp -i ~/.ssh/id_oci -r build/libs/example-atp-0.1-all.jar opc@[VM IP Address]:/app/application.jar
@@ -51,7 +48,6 @@ In this lab you will:
 4. Push Helidon native image to the VM:
 
     ```
-    bash
     # run on local machine to push to VM, from the directory that contains downloaded native image
     <copy>
     scp -i ~/.ssh/id_oci ./helidon-mp-service opc@[VM IP Address]:/app/helidon-mp-service
@@ -61,7 +57,6 @@ In this lab you will:
 5. Run the Helidon application on the VM:
 
     ```
-    bash
     # run on VM to start Helidon application
     <copy>
     ./app/helidon-mp-service
@@ -72,9 +67,8 @@ In this lab you will:
 
     ```
     <copy>
-    bash
     # run on VM to start Micronaut application
-    export DATASOURCES_DEFAULT_PASSWORD=[Your atp_wallet_password]
+    export MICRONAUT_OCI_DEMO_PASSWORD=[Your atp_wallet_password]
     export TNS_ADMIN=/tmp/wallet
     java -jar /app/application.jar
     </copy>
