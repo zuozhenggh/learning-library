@@ -1,6 +1,6 @@
 # Build Integration with Oracle SOA
 
-## Service Connectivity and Orchestration using Oracle SOA
+## Application connectivity and orchestration using Oracle SOA
 
 ## Overview
 
