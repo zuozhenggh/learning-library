@@ -16,8 +16,8 @@ The objective of this workshop is to highlight Oracle Enterprise Manager Cloud C
 - EM13c Host Public IP address
 - OMS Console URL:
 ````
-<copy> https://<EM13c Host Public IP address>:7803/em </copy>
-e.g: https://111.111.111.111:7803/em
+<copy>https://<EM13c Host Public IP address>:7803/em</copy>
+e.g: https://111.888.111.888:7803/em
 ````
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository.
