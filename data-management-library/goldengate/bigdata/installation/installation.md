@@ -37,33 +37,37 @@ Oracle GoldenGate for Big Data’s real-time data streaming platform also allows
 Oracle GoldenGate for Big Data offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data
 integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making.
 
-## Step 1: Install using Option 1
+## **STEP 1**: Logging in to Instance
 
- Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
+*From Kay, Brian, how am I supposed to even get to my instance?  Do i Login to the Cloud?  What is my IP address?    
+
+## **STEP 2**:  Install GoldenGate using Menu
+
+ Follow the steps below to install GoldenGate, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
 1. Open terminal from desktop by double clicking on the icon
 
   ![](./images/terminal2.png)
 
-2.  Change to ggadmin
+2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  *Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS*
+    ```` 
+    <copy>su – ggadmin</copy>
+    Password = oracle
+    ````
 
-'>su – ggadmin
-Password = oracle
+3. The following Lab Menu will be displayed
 
-
-PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS 
-
-The following Lab Menu will be displayed
-
+  ![](./images/labmenu_opt1.png)
 Follow these instructions to install GoldenGate for Big Data
 
-**Step3:** Install GoldenGate using option 1
+## **STEP 3**:Performing the Install
 
-![](./images/labmenu_opt1.png)
+1.  Review the overview notes on the following screen, then select **Q** to quit. 
+      ![](./images/labmenu_opt1.png)
 
-Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
+  These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
-To install and configure  GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
+2. To install and configure GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
 
 
 **Optional**  (Do not select Auto-install if you already installed GG manually)
