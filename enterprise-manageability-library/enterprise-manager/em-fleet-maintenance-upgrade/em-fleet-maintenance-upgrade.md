@@ -23,13 +23,16 @@ Benefits with Fleet Maintenance:
 - You have completed:
     - Lab: Generate SSH Keys
     - Lab: Environment Setup
-- EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: ````<copy>https://<EM Instance Public IP>:7803/em</copy>````.
-    - e.g: `https://111.111.111.111:7803/em`
 - OMS super-user Credentials:
-      - Username: **sysman**
-      - password: **welcome1**
+    - Username: **sysman**
+    - password: **welcome1**
+- EM13c Host Public IP address
+- OMS Console URL:
+````
+<copy>https://<EM13c Host Public IP address>:7803/em</copy>
+e.g: https://111.888.111.888:7803/em
+````
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
