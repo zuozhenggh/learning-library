@@ -1,74 +1,100 @@
-# Lab 6 -  MySQL --> Kafka (Json format)
+# MySQL to Kafka
 
-### Introduction
-In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
-process ‘rkafka’ will read the remote trail files, act as a producer and write the messages to an auto- created topic for each table in the source database.
+## Introduction
+In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rkafka’ will read the remote trail files, act as a producer and write the messages to an auto- created topic for each table in the source database.
 
-Lab Architecture
+Estimated Lab Time:  60 minutes
+
+#### Lab Architecture
 
 ![](./images/image601_1.png)
 
-Time to Complete -
-Approximately 60 minutes
 
 ### Objectives
 - GoldenGate replication from **MySQL to Kafka **
 
-## Before You Begin
-For the Lab terminal session:
+### Prerequisites
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Lab: Installation
+* Lab: MySQL to MySQL
+  
 
-## Steps
 
-**Step1:** If at a terminal session:
+## **STEP 1**: Login to the Terminal
 
-su - ggadmin
+1. Open terminal from desktop by double clicking on the icon
 
-User ID: ggadmin
-Password:  oracle
+  ![](./images/terminal2.png)
 
-**Step2:** If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
-The following Lab Menu will be displayed, 
-select R to reset the lab environment, then select 6 (this step may take a couple of minutes).
+2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  *Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS*
+    ```` 
+    <copy>su – ggadmin</copy>
+    Password = oracle
+    ````
 
-![](./images/lab6menu.png)
+3. Display the Lab Menu by typing the alias **labmenu**. The following lab menu will be displayed.
+      ```` 
+    <copy>
+    labmenu
+    </copy>
+    ````
 
-**Step3:** Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos
+    ![](./images/lab6menu.png)
 
-##  Configuration
-   The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
+4. Select **R** to reset the lab environment
+5. Select **6** (this step may take a couple of minutes)
+6. Review the overview notes on the following screen
+7. Select **Q** to quit. 
 
-view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
+## **STEP 2**:  Review 
+The step above copied the GoldenGate configuration files to the GG Home directories, under ./dirprm. 
+1. Review the content of each of these files to explore how GoldenGate is being configured.
 
-view these files, same as in previous lab:
+    ````
+    <copy>
+    view /u01/gg4mysql/dirprm/mgr.prm
+    view /u01/gg4mysql/dirprm/extmysql.prm
+    view /u01/gg4mysql/dirprm/pmpmysql.prm
+    view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby
+    view /u01/gg4hadoop123010/dirprm/rkafka.prm
+    view /u01/gg4hadoop123010/dirprm/rkafka.properties
+    view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
+    view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
+    </copy>
+    ````
+## **STEP 3**: Configuration
+1.  First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-/u01/gg4mysql/dirprm/mgr.prm
+2. In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
-/u01/gg4mysql/dirprm/extmysql.prm
+  ````
+  <copy>
+  Put the commands here
+  </copy>
+  ````
+*Brian where are the commands??? You have to put the text as well, the image is not enough*
 
-/u01/gg4mysql/dirprm/pmpmysql.prm
+  ![](./images/e2.png)
 
-view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby
+3.  In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
+  ````
+  <copy>
+  Put the commands here
+  </copy>
+  ````
+*Brian where are the commands??? You have to put the text as well, the image is not enough*
+  ![](./images/e3.png)
 
-view /u01/gg4hadoop123010/dirprm/rkafka.prm
+4.  In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
-view /u01/gg4hadoop123010/dirprm/rkafka.properties
-
-view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
-
-**Step4:** First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
-
-**Step5:** In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
-
-![](./images/e2.png)
-
-**Step6:** In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
-
-![](./images/e3.png)
-
-**Step7:** In the GG for MySQL ggsci session, we will create and start the GG extract process:
-
-![](./images/e4.png)
-![](./images/e5.png)
+  ````
+  <copy>
+  Put the commands here
+  </copy>
+  ````
+*Brian where are the commands??? You have to put the text as well, the image is not enough*
+  ![](./images/e4.png)
+  ![](./images/e5.png)
 
 **Step8:** Now that the source side is setup, let’s configure GG on the target side (Kafka).
 
@@ -116,18 +142,22 @@ view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties
 
 ![](./images/e16.png)
 
-In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
-‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rkafka’ read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
 
-**End of Lab 6 - You may proceed to the next Lab**
+
+## Summary
+In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rkafka’ read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
+
+You may now *proceed to the next lab*.
+
+## Learn More
+
+* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
+* **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka
+* **Last Updated By/Date** - Meghana Banka, September 2020
 
-  * Authors ** - Brian Elliott
-  * Contributors ** - Brian Elliott
-  * Team ** - Data Integration Team
-  * Last Updated By/Date ** - Brian Elliott, August 2020
 
 ## See an issue?
-
-Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

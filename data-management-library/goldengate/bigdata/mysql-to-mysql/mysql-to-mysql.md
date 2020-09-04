@@ -74,7 +74,9 @@ Now that the GoldenGate extract, pump and replicat processes are running, next y
 1. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.)
 
   ````
+  <copy>
   Put the commands here
+  </copy>
   ````
 *Brian where are the commands??? You have to put the text as well, the image is not enough*
 

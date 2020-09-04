@@ -1,6 +1,6 @@
 # Installation
 
-## Introdcution 
+## Introduction 
 
 In this lab you will install GoldenGate for Big Data in the GG Target Home.
 
@@ -37,7 +37,7 @@ Oracle GoldenGate for Big Data’s real-time data streaming platform also allows
 Oracle GoldenGate for Big Data offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data
 integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making.
 
-## **STEP 1**: Logging in to Instance
+## **STEP 1**: Login in to Instance
 
 *From Kay, Brian, how am I supposed to even get to my instance?  Do i Login to the Cloud?  What is my IP address?    
 
