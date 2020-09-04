@@ -1,4 +1,4 @@
-# Module 2: Build Payment validation Composite
+# Module 2: Payment validation
 
 ## Introduction
 In this module, you will build your first Oracle SOA Suite 12c composite to validate a credit card payment.
@@ -9,6 +9,10 @@ Avitek, a fictitious company, has embarked upon a modernization project to align
 One of **the issue in the current application is that credit card payments are often denied for various, sometimes minor reasons, such as expiration date, etc. Since the process to correct these issues varies across Avitek’s order entry systems, on-premise or new adopted Cloud SaaS application there is no consistent follow-up and resolution with customers. Orders may end up lost or delayed in the system leading to customer dissatisfaction**.
 
 The business has indicated a new credit card fraud detection system must be put in place before year’s end to thwart credit card abuses. A consistent fraud mechanism will require the credit validation process to be consolidated across all order entry systems.
+
+The solution will look like the following from an architectural perspective:
+
+![](images/2/Paymentvalidation.png)
 
 ## **STEP 1**: Build the payment validation process flow
 

@@ -9,10 +9,10 @@ Recall a few of the business requirements for Avitek ‘s new order processing s
 
 To build new order processing composite application, you will use templates. This is a new feature in SOA Suite 12c that can be used in BPEL. As well as Service Bus application. Here are the steps needed for this module:
 1. Open e2e-1201-servicebus application and import Pipeline template resources (new feature!).
-2. Step 2
-   * Configure ProcessOrder Business Service.
-   * Configure Pipeline and Proxy using Pipeline template.
-   * Test your application end-to-end.
+2. Next steps:
+   - Configure ProcessOrder Business Service.
+   - Configure Pipeline and Proxy using Pipeline template.
+   - Test your application end-to-end.
 
 You will leverage the validatePayment service you built in Chapter 2.
 At the end of this module, your solution will look similar to the following process flow diagram:

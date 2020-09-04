@@ -15,7 +15,7 @@ SOA Suite functional architecture
 Critical business services, such as customer, financial, ordering information, and others that were previously accessible only in packaged application user interfaces can now be rapidly repurpose for digital-enabled channel such as: smart phone and tablets.
 
 ## How to Run the Labs
-You can run exercises in this lab as per instruction provided during live session led by an instructor. For participating these labs, you've been granted access to an OCI compute resource via invitation email. Please check your inbox email to find details regarding access to your respective compute resource.
+You can run exercises in this lab as per instruction provided during live session led by an instructor. For participating these labs, you've been granted access to an OCI compute resource via an email invitation. Please check your inbox email to find details regarding access to your respective compute resource on OCI.
 
 <!--Below are steps on how to sign-up for either an Oracle cloud service o. The always free Oracle Compute on OCI is ideal for learning about the Oracle Cloud Infrastructure. This service can readily be upgraded to a paid service as necessary. 
 
