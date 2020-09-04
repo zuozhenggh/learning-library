@@ -13,7 +13,7 @@ The objective of this workshop is to highlight Oracle Enterprise Manager Cloud C
 - SSH Private Key to access the host via SSH
 - OMS Console URL:
 ````
-<copy>https://<EM13c Host Public IP>:7803/em</copy>
+<copy> https://<EM13c Host Public IP>:7803/em </copy>
 ````
     - e.g: *``https://111.111.111.111:7803/em``*
 - OMS super-user Credentials:
