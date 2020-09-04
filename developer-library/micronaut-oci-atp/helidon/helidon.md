@@ -30,7 +30,7 @@ Download the native image binary (this is needed for deployment to cloud)
 
 Run the native image (if you are using a Linux environment):
 
-```bash
+```
 wget -O helidon-mp-service https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/helidon-mp-service
 chmod +x helidon-mp-service
 ./helidon-mp-service
@@ -135,7 +135,7 @@ public class PetHealthService implements PetHealthOperations {
 
 Key aspects of this example include:
 
-* The class is annotated with `@Singleton` and `@Recoverable`, the latter of which is used to define the api that contains the methods that will trigger fallback behaviour.
+* The class is annotated with `@Singleton` and `@Recoverable`, the latter of which is used to define the api that contains the methods that will trigger fallback behavior.
 * An inner interface called `PetHealthClient` is defined that uses Micronaut's support for [declarative clients HTTP clients](https://docs.micronaut.io/latest/guide/index.html#clientAnnotation). The `@Client` interface is used to specify a named service called `pet-health` which will be used to perform the communication. This client is injected into the constructor of the `PetHealthService` and is used to make the call to the Helidon service.
 
 Micronaut includes comprehensive support for different [service discovery](https://docs.micronaut.io/latest/guide/index.html#serviceDiscovery) strategies. You could configure Micronaut to use a Service Discovery server or discovery services via Kubernetes using the name `pet-health`.
