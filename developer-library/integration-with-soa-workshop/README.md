@@ -1,6 +1,6 @@
 # Build Integration with Oracle SOA
 
-## Application connectivity and orchestration using Oracle SOA
+## Application Connectivity and Orchestration
 
 ## Overview
 
@@ -24,13 +24,13 @@ Upon fulfillment processing and orders being sent to the packaging department, a
 
 ## Lab Objectives
 
-* Introducing to development tool, JDeveloper 12c on this workshop
-* Build first SOA composite application using JDeveloper-SOA
+* Introducing to the SOA development tool, JDeveloper 12c on this workshop
+* Build first SOA composite application using JDeveloper
 * Design an improvement to existing integration with service orchestration
 * Deploy composite application on the embedded SOA/Weblogic in JDeveloper
 
 
-*{Note: For this lab, it assumes you have accessed to JDeveloper12c environment.}*
+*{Note: For this lab, it assumes you have accessed to JDeveloper12c environment, which run on Linux instance on OCI.}*
 
 ## Lab Modules
 

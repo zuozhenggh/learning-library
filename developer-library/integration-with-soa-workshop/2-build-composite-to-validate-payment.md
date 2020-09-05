@@ -16,8 +16,15 @@ The solution will look like the following from an architectural perspective:
 
 ## **STEP 1**: Build the payment validation process flow
 
-**High-Level Steps:**
- 
+The validation process are:
++ The payment information is retrieved from the database, using the credit card number quoted in the order message as the key. If there is no data available with this credit card number, payment is denied.
++ If data for the credit card number is available, the expiry date in the database record is compared to the expiry date listed in the order message. If they are not the same, the payment is also denied.
++ The last check compares if the total order amount is less than the daily limit on the credit card in the database.
++ When all tests are successful, the payment is authorized. Otherwise it’s denied.
++ The implementation of this service uses a BPEL process to retrieve the credit card data from the database and perform the tests outlined above. The service will return either Authorized or Denied as the payment status.
+
+**Validation Payment, development Steps:**
+
 1.  Create a new composite application e2e-1201-composites and SOA project named ValidatePayment
 2.  Use the new SOA Project template to create the ValidatePayment composite.
 
@@ -41,12 +48,16 @@ The solution will look like the following from an architectural perspective:
 
     ![](images/2/sensor.png)
 
-7.  Deploy and test the project. Optional: Use the debugging tool within JDeveloper to explore.
+7.  Deploy and test the project. 
 
     ![](images/2/deployment.png)
 
+8. Optional: Use the debugging tool within JDeveloper to explore.
+   In SOA Suite 12c, there is facility to set breakpoints in the composite editor, BPEL process. You’re able to stop at breakpoints, look at the data, step into, step out and so on. In a BPEL process, you’re also able to change the value of a variable while debugging.
+
+
 ### Details: ###
-To start, please go to Chapter 2, from <ins>**page 11 to 53** in the  SOASuite12c_Tutorial.pdf</ins> document.
+For details of how to instructions, please go to Chapter 2, from <ins>**page 11 to 53** in the  SOASuite12c_Tutorial.pdf</ins> document.
 
 The lab tutorial pdf document can be found on the desktop of your OCI Linux instance.
 
@@ -55,12 +66,12 @@ The lab tutorial pdf document can be found on the desktop of your OCI Linux inst
 
 ## **STEP 2**: Register the composite on SOA Service Bus
 
-In part 1, you have completed the validatePayment process composite, you will register this process composite on Service Bus.
+In previous section, you have completed the validatePayment process composite, you will now register this process composite on Service Bus.
 
 Service Bus will protect consumers of the validatePayment composite from routine changes such as deployment location and implementation updates. Service Bus will help scale the service to handle higher volume of requests and provide resiliency for the service if it needs to be taken down for routine maintenance.
 
 
-**High-Level Steps:**
+**Development Steps:**
 
 1.  Create a new Service Bus application and new project **ValidatePayment.**. 
 
@@ -70,7 +81,7 @@ Service Bus will protect consumers of the validatePayment composite from routine
 [//]: # (images/2/continue-to-create-application-wizard.png)
 
 [//]: # (Remove Steps 2 and 3)
-2. Create folders and import WSDL and XSD resource click **Create App**.
+2. Create folders and import artifacts, WSDL and XSD resource click **Create App**.
 
     ![](images/2/ImportWSDL.png)
     
@@ -91,12 +102,10 @@ Service Bus will protect consumers of the validatePayment composite from routine
     ![](images/2/ServiceBusProxyTesting.png)
 
 ### Details: ###
-In  module 2, 
-- You would create the Proxy and Pipeline to invoke the ValidateBS Business Service using the Service Bus.
-- A routing action is automatically configured for you in the Pipeline.
-- You would deploy the validate payment service and used test console inside the JDeveloper 12c 
   
 Please follow the construction details from <ins>**page 54 to 77**, in the SOAsuite 12c tutorial</ins>.
+
+![](images/2/soa-tutorialpdf.png)
 
 ## **Summary**
 
