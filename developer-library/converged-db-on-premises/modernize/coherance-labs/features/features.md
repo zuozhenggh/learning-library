@@ -58,7 +58,7 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
         
         ![](../images/java-home.png " ")
 
-3. Set and Verify COHERENCE_HOME for both terminal windows
+3. Set and verify COHERENCE_HOME for both terminal windows
 
         export COHERENCE_HOME="/u01/middleware/14c/coherence"
         export PATH=$COHERENCE_HOME/bin:$PATH
