@@ -225,9 +225,9 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 61. Our financial analyst created a detailed analysis based on both financial as well as HR workforce attrition data.
 
-62. Review the analyst’s note: Lizzy observes that overtime pay started to increase in July, which was the same time the Call Center had a spike in attrition. You can see the spike in the lower left visualization.
+62. Review the analyst’s note: Lizzy observes that overtime pay started to increase in July, which was the same time the Call Center had a spike in attrition. You can see the spike in the lower left visualization. Next, you can click on the **Attrition Analysis** to see an additional dashboard.
 
-63. Two additional items stand out:
+63. Two additional items stand out on the Attrition dashboard:
     1. Statistical trending and forecasting capabilities enhance several visualizations, including the projected attrition trend as well as the future impact of overtime.
     2. Observe the Turnover narrative on the right was created using point and click natural language generation capabilities applied to the “Turnover by Department” visualization.
 
@@ -245,7 +245,7 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 67. Congratulations on completing this section! Please delete the deck with the cards you have made, which you named **Payroll Deck ~InsertYourInitialsHere~**, during this workshop by clicking on the decks' **menu bar** and selecting **Delete** for the Deck
 
-68. Additionally, please go back to the console section where you left a **note** in Step 17 for a financial analyst to check out, and **delete** the note similarly.
+68. Additionally, please go back to the console section where you left a **note** in Step 53 for a financial analyst to check out, and **delete** the note similarly.
 
 ![](./images/22new.png " ")
 
