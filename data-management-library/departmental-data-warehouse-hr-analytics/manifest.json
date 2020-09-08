@@ -1,0 +1,19 @@
+{
+  "tutorials": [
+      {
+        "title": "README",
+        "description": "Departmental Data Warehouse - HR Analytics Hands-On Workshop Overview",
+        "filename": "README.md"
+      },
+      {
+        "title": "Lab 1: Provision Resources",
+        "description": "Provisioning the resources for the architecture pattern",
+        "filename": "provision-resources/provision-resources.md" 
+      },
+      {
+        "title": "Lab 2: Run Analytics",
+        "description": "Upload and analyze HR dashboards",
+        "filename": "run-analytics/run-analytics.md"
+      }
+    ]
+}
