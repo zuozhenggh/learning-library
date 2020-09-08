@@ -24,7 +24,7 @@ Lab 2 - Run Analytics - Create Dashboards
 
 - Connect Analytics instance to ADW
 - Run analytics
-- Uploading DVA files
+- Uploading DVA file
 
 ## Acknowledgements
 
