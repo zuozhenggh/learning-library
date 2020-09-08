@@ -1,14 +1,16 @@
 # Migrating the WebLogic domain
 
-# Migrate the WebLogic domain
-
 ## Introduction: 
 
 Migrating a WebLogic domain is equivalent to re-deploying the applications and resources to a new domain and infrastructure.
 
 We'll use WebLogic Deploy Tooling to migrate the domain from on-premises and re-deploy it on OCI.
 
-**WebLogic Deploy Tooling** is an open source tool found on Github at <a href="https://github.com/oracle/weblogic-deploy-tooling" target="_blank">https://github.com/oracle/weblogic-deploy-tooling</a>
+Estimated Lab Time: 15 min
+
+### About Product/Technologies
+
+**WebLogic Deploy Tooling** is an open source tool found on Github at [https://github.com/oracle/weblogic-deploy-tooling](https://github.com/oracle/weblogic-deploy-tooling)
 
 Migration with WebLogic Deploy Tooling (WDT) consists in 3 steps:
 
@@ -18,45 +20,74 @@ Migration with WebLogic Deploy Tooling (WDT) consists in 3 steps:
 
 - Copy the files to the target Admin Server, and **update** the clean domain on OCI with the applications and resources discovered on-premises.
 
-## **Step 1:** Installing WebLogic Deploy Tooling
+### Objectives
 
-### If you were using Docker:
+In this lab, you will:
 
-- 1.1. If you were in the Database container to perform the previous steps of database migration, exit the database container with 
+- Install WebLogic Deploy Tooling on the source WebLogic domain
+- Discover the source domain
+- Edit the source domain model file
+- Edit the source domain property file
+- Update the target domain on OCI
+- Check migration was successful
 
-   ```bash
-   <copy>
-   exit
-   </copy>
-   ```
-   You should be back on your local computer shell prompt
+### Prerequisites
 
-- 1.2. Get into the **WebLogic** docker container with the following command:
+To run this lab, you need to:
 
-  ```bash
-  <copy>
-  docker exec -it weblogic-to-oci_wls_admin_1 /bin/bash
-  </copy>
-  ```
+- Have setup the demo 'on-premises' environment to use as the source domain to migrate
+- Have deployed a WebLogic on OCI domain using the marketplace
+- Have migrated the Application database from the source environment to OCI
 
-### Otherwise
+## **STEP 1:** Installing WebLogic Deploy Tooling
 
-You should already be in the 'on-premises' environment logged in as the `oracle` user, so nothing to do.
+### Using the Docker 'on-premises' environment:
 
-### Then:
+1. If you were in the Database container to perform the previous steps of database migration, exit the database container with 
 
-- 1.3. run the `install_wdt.sh` script
+    ```bash
+    <copy>
+    exit
+    </copy>
+    ```
+    You should be back on your local computer shell prompt
 
-  ```bash
-  <copy>
-  cd ~/wdt
-  ./install_wdt.sh
-  </copy>
-  ```
+2. Get into the **WebLogic** docker container with the following command:
 
-  This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`
+    ```bash
+    <copy>
+    docker exec -it weblogic-to-oci_wls_admin_1 /bin/bash
+    </copy>
+    ```
 
-  <details><summary>View the <code>install_wdt.sh</code> script</summary>
+3. run the `install_wdt.sh` script
+
+    ```bash
+    <copy>
+    cd ~/wdt
+    ./install_wdt.sh
+    </copy>
+    ```
+
+    This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`
+
+### Using the demo Workshop Marketplace image
+
+
+You should already be in the 'on-premises' environment logged in as the `oracle` user.
+
+1. run the `install_wdt.sh` script
+
+    ```bash
+    <copy>
+    cd ~/wdt
+    ./install_wdt.sh
+    </copy>
+    ```
+
+    This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`
+
+<details><summary>View the <code>install_wdt.sh</code> script</summary>
 
   ```bash
   WLSDT_VERSION=1.7.3
@@ -72,7 +103,7 @@ You should already be in the 'on-premises' environment logged in as the `oracle`
   ```
   </details>
 
-## **Step 2:** Discover the on-premises domain
+## **STEP 2:** Discover the on-premises domain
 
 <details><summary>View the <code>discover_domain.sh</code> script</summary>
 
@@ -110,7 +141,7 @@ fi
 
 </details>
 
-The `discover_domain.sh` script wraps the WebLogic Deploy Tooling `discoverDomain` script to generate 3 files:
+The `discover_domain.sh` script wraps the **WebLogic Deploy Tooling** `discoverDomain` script to generate 3 files:
 
 - `source.yaml`: the model file
 - `source.properties`: the variables file
@@ -120,13 +151,13 @@ It also takes care of the manual extraction of applications that may be present 
 
 Applications found under `ORACLE_HOME` will have a path that includes `@@ORACLE_HOME@@` and **will not be included in the archive file**. They need to be extracted manually. The script takes care of this and injects those applications in the `source.zip` file while replacing the path in the `source.yaml` file.
 
-- 2.1. run the `discover_domain.sh` script
+1. run the `discover_domain.sh` script
 
-  ```bash
-  <copy>
-  ./discover_domain.sh
-  </copy>
-  ```
+    ```bash
+    <copy>
+    ./discover_domain.sh
+    </copy>
+    ```
 
 the output should look like:
 
@@ -218,7 +249,7 @@ Extracting those files and updating paths in the model file...
 
 </details>
 
-## **Step 3:** Edit the `source.yaml` file
+## **STEP 3:** Edit the `source.yaml` file
 
 The extracted `source.yaml` file looks like the following
 
@@ -343,141 +374,149 @@ appDeployments:
 
 ```
 
-- 3.1. Edit the `source.yaml` file to remove the entire `domainInfo` section and the `topology` section.
+1. Edit the `source.yaml`
 
-  ```bash
-  <copy>
-  nano source.yaml
-  </copy>
-  ```
+    ```bash
+    <copy>
+    nano source.yaml
+    </copy>
+    ```
 
-  The `domainInfo` includes basic domain infromation which we will not change.
+    The `domainInfo` includes basic domain information which we will not change.
 
-  The `topology` section includes the definition of the managed servers, admin server, machines and clusters. The domain is already provisioned on OCI so this will not change.
+    The `topology` section includes the definition of the managed servers, admin server, machines and clusters. The domain is already provisioned on OCI so this will not change.
 
-  The content now looks like:
+2.  Remove the entire `domainInfo` section and the `topology` section.
 
-  ```yaml
-  resources:
-      JDBCSystemResource:
-          JDBCConnection:
-              Target: cluster
-              JdbcResource:
-                  JDBCConnectionPoolParams:
-                      InitialCapacity: 0
-                      TestTableName: SQL SELECT 1 FROM DUAL
-                  JDBCDataSourceParams:
-                      GlobalTransactionsProtocol: TwoPhaseCommit
-                      JNDIName: jdbc.JDBCConnectionDS
-                  JDBCDriverParams:
-                      URL: 'jdbc:oracle:thin:@//oracledb:1521/PDB.us.oracle.com'
-                      PasswordEncrypted: '@@PROP:JDBC.JDBCConnection.PasswordEncrypted@@'
-                      DriverName: oracle.jdbc.xa.client.OracleXADataSource
-                      Properties:
-                          user:
-                              Value: riders
-  appDeployments:
-      Application:
-          SimpleDB:
-              SourcePath: 'wlsdeploy/applications/SimpleDB.ear'
-              ModuleType: ear
-              StagingMode: stage
-              Target: cluster
-          SimpleHTML:
-              SourcePath: 'wlsdeploy/applications/SimpleHTML.ear'
-              ModuleType: ear
-              StagingMode: stage
-              Target: cluster
+    The content now looks like:
 
-  ```
+    ```yaml
+    resources:
+        JDBCSystemResource:
+            JDBCConnection:
+                Target: cluster
+                JdbcResource:
+                    JDBCConnectionPoolParams:
+                        InitialCapacity: 0
+                        TestTableName: SQL SELECT 1 FROM DUAL
+                    JDBCDataSourceParams:
+                        GlobalTransactionsProtocol: TwoPhaseCommit
+                        JNDIName: jdbc.JDBCConnectionDS
+                    JDBCDriverParams:
+                        URL: 'jdbc:oracle:thin:@//oracledb:1521/PDB.us.oracle.com'
+                        PasswordEncrypted: '@@PROP:JDBC.JDBCConnection.PasswordEncrypted@@'
+                        DriverName: oracle.jdbc.xa.client.OracleXADataSource
+                        Properties:
+                            user:
+                                Value: riders
+    appDeployments:
+        Application:
+            SimpleDB:
+                SourcePath: 'wlsdeploy/applications/SimpleDB.ear'
+                ModuleType: ear
+                StagingMode: stage
+                Target: cluster
+            SimpleHTML:
+                SourcePath: 'wlsdeploy/applications/SimpleHTML.ear'
+                ModuleType: ear
+                StagingMode: stage
+                Target: cluster
 
-- 3.2. Edit each of the 3 `Target` names for `resources` and `appDeployments` from `cluster` (the name of the cluster on-premises) to `nonjrf_cluster` (the name of the cluster on the OCI domain):
+    ```
 
-  * `resources->JDBCSystemResource->JDBCConnection->Target`
-  * `appDeployments->Application->SimpleDB->Target`
-  * `appDeployments->Application->SimpleHTML->Target`
+3. Edit each of the 3 `Target` names for `resources` and `appDeployments` from `cluster` (the name of the cluster on-premises) to `nonjrf_cluster` (the name of the cluster on the OCI domain):
 
-  ```yaml
-  resources:
-      JDBCSystemResource:
-          JDBCConnection:
-              Target: nonjrf_cluster # <---
-              JdbcResource:
-                  JDBCConnectionPoolParams:
-                      InitialCapacity: 0
-                      TestTableName: SQL SELECT 1 FROM DUAL
-                  JDBCDataSourceParams:
-                      GlobalTransactionsProtocol: TwoPhaseCommit
-                      JNDIName: jdbc.JDBCConnectionDS
-                  JDBCDriverParams:
-                      URL: 'jdbc:oracle:thin:@//oracledb:1521/PDB.us.oracle.com'
-                      PasswordEncrypted: '@@PROP:JDBC.JDBCConnection.PasswordEncrypted@@'
-                      DriverName: oracle.jdbc.xa.client.OracleXADataSource
-                      Properties:
-                          user:
-                              Value: riders
-  appDeployments:
-      Application:
-          SimpleDB:
-              SourcePath: 'wlsdeploy/applications/SimpleDB.ear'
-              ModuleType: ear
-              StagingMode: stage
-              Target: nonjrf_cluster # <---
-          SimpleHTML:
-              SourcePath: 'wlsdeploy/applications/SimpleHTML.ear'
-              ModuleType: ear
-              StagingMode: stage
-              Target: nonjrf_cluster # <---
-  ```
+    * `resources->JDBCSystemResource->JDBCConnection->Target`
+    * `appDeployments->Application->SimpleDB->Target`
+    * `appDeployments->Application->SimpleHTML->Target`
 
-  - 3.3. finally, edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to match the JDBC connection string of the database on OCI.
+    The content should look like:
 
-  The new JDBC connection string should be:
-  
-   `jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`
+    ```yaml
+    resources:
+        JDBCSystemResource:
+            JDBCConnection:
+                Target: nonjrf_cluster # <---
+                JdbcResource:
+                    JDBCConnectionPoolParams:
+                        InitialCapacity: 0
+                        TestTableName: SQL SELECT 1 FROM DUAL
+                    JDBCDataSourceParams:
+                        GlobalTransactionsProtocol: TwoPhaseCommit
+                        JNDIName: jdbc.JDBCConnectionDS
+                    JDBCDriverParams:
+                        URL: 'jdbc:oracle:thin:@//oracledb:1521/PDB.us.oracle.com'
+                        PasswordEncrypted: '@@PROP:JDBC.JDBCConnection.PasswordEncrypted@@'
+                        DriverName: oracle.jdbc.xa.client.OracleXADataSource
+                        Properties:
+                            user:
+                                Value: riders
+    appDeployments:
+        Application:
+            SimpleDB:
+                SourcePath: 'wlsdeploy/applications/SimpleDB.ear'
+                ModuleType: ear
+                StagingMode: stage
+                Target: nonjrf_cluster # <---
+            SimpleHTML:
+                SourcePath: 'wlsdeploy/applications/SimpleHTML.ear'
+                ModuleType: ear
+                StagingMode: stage
+                Target: nonjrf_cluster # <---
+    ```
 
-   Which is the connection string gathered in Lab step 5 but making sure the **service** name is changed to `pdb`, the name of the `pdb` where the `RIDERS.RIDERS` table needed by the **SimpleDB** application resides.
+  3. finally, edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to match the JDBC connection string of the database on OCI.
 
-   The resulting `source.yaml` file should be like:
+    The new JDBC connection string should be:
+    
+    ```
+    <copy>
+    jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com
+    </copy>
+    ```
 
-  ```yaml
-  resources:
-      JDBCSystemResource:
-          JDBCConnection:
-              Target: nonjrf_cluster
-              JdbcResource:
-                  JDBCConnectionPoolParams:
-                      InitialCapacity: 0
-                      TestTableName: SQL SELECT 1 FROM DUAL
-                  JDBCDataSourceParams:
-                      GlobalTransactionsProtocol: TwoPhaseCommit
-                      JNDIName: jdbc.JDBCConnectionDS
-                  JDBCDriverParams:
-                      URL: 'jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com'
-                      PasswordEncrypted: '@@PROP:JDBC.JDBCConnection.PasswordEncrypted@@'
-                      DriverName: oracle.jdbc.xa.client.OracleXADataSource
-                      Properties:
-                          user:
-                              Value: riders
-  appDeployments:
-      Application:
-          SimpleDB:
-              SourcePath: 'wlsdeploy/applications/SimpleDB.ear'
-              ModuleType: ear
-              StagingMode: stage
-              Target: nonjrf_cluster
-          SimpleHTML:
-              SourcePath: 'wlsdeploy/applications/SimpleHTML.ear'
-              ModuleType: ear
-              StagingMode: stage
-              Target: nonjrf_cluster
-  ```
+    Which is the connection string gathered earlier but making sure the **service** name is changed to `pdb`. (this is the name of the pdb where the `RIDERS.RIDERS` table resides, as needed by the **SimpleDB** application)
+
+    The resulting `source.yaml` file should be like:
+
+    ```yaml
+    resources:
+        JDBCSystemResource:
+            JDBCConnection:
+                Target: nonjrf_cluster
+                JdbcResource:
+                    JDBCConnectionPoolParams:
+                        InitialCapacity: 0
+                        TestTableName: SQL SELECT 1 FROM DUAL
+                    JDBCDataSourceParams:
+                        GlobalTransactionsProtocol: TwoPhaseCommit
+                        JNDIName: jdbc.JDBCConnectionDS
+                    JDBCDriverParams:
+                        URL: 'jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com'
+                        PasswordEncrypted: '@@PROP:JDBC.JDBCConnection.PasswordEncrypted@@'
+                        DriverName: oracle.jdbc.xa.client.OracleXADataSource
+                        Properties:
+                            user:
+                                Value: riders
+    appDeployments:
+        Application:
+            SimpleDB:
+                SourcePath: 'wlsdeploy/applications/SimpleDB.ear'
+                ModuleType: ear
+                StagingMode: stage
+                Target: nonjrf_cluster
+            SimpleHTML:
+                SourcePath: 'wlsdeploy/applications/SimpleHTML.ear'
+                ModuleType: ear
+                StagingMode: stage
+                Target: nonjrf_cluster
+    ```
 
   **Important Note**: if when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers
 
-- 3.4 Save the `source.yaml` file by typing `CTRL+x` then `y`
+4. Save the `source.yaml` file by typing `CTRL+x` then `y`
 
-## **Step 4:** Edit the `source.properties` file
+## **STEP 4:** Edit the `source.properties` file
 
   ```bash
   <copy>
@@ -495,9 +534,9 @@ appDeployments:
   SecurityConfig.NodeManagerPasswordEncrypted=
   ```
 
-- 4.1. Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`
+1. Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`
 
-- 4.2. Enter the JDBC Connection password for the `RIDERS` user pdb (this is can be found in the `./weblogic-to-oci/weblogic/env` file under `DS_PASSWORD`).
+2. Enter the JDBC Connection password for the `RIDERS` user pdb (this is can be found in the `./weblogic-to-oci/weblogic/env` file under `DS_PASSWORD`).
 
   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
 
@@ -507,9 +546,9 @@ appDeployments:
   JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
   ```
 
-- 4.3. Save the file with `CTRL+x` and `y`
+3. Save the file with `CTRL+x` and `y`
 
-## **Step 5:** Update the WebLogic domain on OCI
+## **STEP 5:** Update the WebLogic domain on OCI
 
 The `update_domain.sh` script updates the target domain.
 
@@ -537,16 +576,25 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
 
 **Note:** the url uses the `t3` protocol which is only accessible through the internal admin server port, which is `9071` on the latest WebLogic Marketplace stack, for older provisioning of the stack, the port may be `7001`
 
-- 5.1. Edit the `update_domain.sh` script to provide the `TARGET_WLS_ADMIN` **WebLogic Admin Server public IP**
+1. Edit the `update_domain.sh` script 
 
   ```bash
   <copy>
   nano update_domain.sh
   </copy>
   ```
-  Edit and then save with `CTRL+x` and `y`
+2. Provide the `TARGET_WLS_ADMIN` 
+    This is the **WebLogic Admin Server public IP** gather previously.
+  
+3. Save the file with `CTRL+x` and `y`
 
-- 5.2. Run the `update_domain.sh` script
+4. Run the `update_domain.sh` script
+
+    ```bash
+    <copy>
+    ./update_domain.sh
+    </copy>
+    ```
 
   You will be prompted to provide the `weblogic admin password` which is `welcome1`
 
@@ -790,16 +838,28 @@ updateDomain.sh completed successfully (exit code = 0)
 
 ### You're done!
 
-## Step 6. Check that the app deployed properly
+## **STEP 6:** Check that the app deployed properly
 
-- 6.1. Go to the WebLogi Admin console at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console
+1. Go to the WebLogic Admin console at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console
 
-- 6.2. Go to `deployments`: you should see the 2 applications deployed, and in the **active** state
+    Note: If you're using Chrome, you might encounter Self-signed certificate issues. We recommend using Firefox to test.
+
+2. In Firefox you will see the self-certificate warning as below:
+
+    <img src="./images/self-cert-warning.png" width="100%">
+
+    Click **Advanced...** and then **Accept the Risk and Continue**
+
+3. Login with the Admin user `weblogic` and password: `welcome1`
+
+4. Go to `deployments`: you should see the 2 applications deployed, and in the **active** state
 
   <img src="./images/oci-deployments.png" width="100%">
 
-- 6.3. Go to the SimpleDB application URL, which is the Load Balancer IP gathered on Lab step 4 with the route `/SimpleDB/` like:
+5. Go to the SimpleDB application URL, which is the Load Balancer IP gathered previously in the **Outputs** of the WebLogic provisioing, with the route `/SimpleDB/` like:
 https://`LOAD_BALANCER_IP`/SimpleDB/
+
+Making sure you use `https` as scheme and the proper case for `/SimpleDB` 
 
   <img src="./images/oci-simpledb-app.png" width="100%">
 
@@ -807,10 +867,7 @@ https://`LOAD_BALANCER_IP`/SimpleDB/
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, July 30 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## See an issue?
-
-Please submit feedback using this <a href="https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1" target="_blank">form</a>. 
-
-Please include the <em>workshop name</em>, <em>lab</em> and <em>step</em> in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the <em>Feedback Comments</em> section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

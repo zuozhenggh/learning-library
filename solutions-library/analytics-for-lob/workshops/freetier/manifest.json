@@ -1,0 +1,54 @@
+{
+  "workshoptitle": "Oracle Analytics for LOB Workshop",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "publisheddate": "03/10/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        }, {
+            "title": "Introduction",
+            "publisheddate": "08/18/2020",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Oracle Fusion ERP Analytics",
+            "publisheddate": "08/18/2020",
+            "filename": "../../fusion-analytics/fusion-analytics.md"
+        },
+        {
+            "title": "Introduction to Essbase",
+            "publisheddate": "09/03/2020",
+            "filename": "../../intro-essbase/intro-essbase.md"
+        },
+        {
+            "title": "Essbase on OCI",
+            "publisheddate": "09/03/2020",
+            "filename": "../../essbase-oci/essbase-oci.md"
+        },
+        {
+            "title": "Essbase Features: Basic",
+            "publisheddate": "09/03/2020",
+            "filename": "../../essbase-basic/essbase-basic.md"
+        },
+        {
+            "title": "Essbase Features: Advanced",
+            "publisheddate": "09/03/2020",
+            "filename": "../../essbase-advanced/essbase-advanced.md"
+        },
+        {
+            "title": "Essbase and ADW",
+            "publisheddate": "09/03/2020",
+            "filename": "../../essbase-adw/essbase-adw.md"
+        },
+        {
+            "title": "Scenario Management",
+            "publisheddate": "09/03/2020",
+            "filename": "../../scenario/scenario.md"
+        },
+        {
+            "title": "Essbase and Data Visualization",
+            "publisheddate": "09/03/2020",
+            "filename": "../../essbase-dv/essbase-dv.md"
+        }
+     ]
+}

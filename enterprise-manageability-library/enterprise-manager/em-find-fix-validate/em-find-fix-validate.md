@@ -2,19 +2,25 @@
 ## Introduction
 The objective of this lab is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud Control 13c
 
+*Estimated Lab Time*: 55 minutes
+
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
     - Lab: Generate SSH Keys
     - Lab: Environment Setup
-- EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: *``https://<Replace with your EM13c VM Instance Public IP>:7803/em``*.
-    - e.g: *https://111.111.111.111:7803/em*  
 - OMS super-user Credentials:
-      - Username: **sysman**
-      - password: **welcome1**
-Note: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
+    - Username: **sysman**
+    - password: **welcome1**
+- EM13c Host Public IP address
+- OMS Console URL:
+````
+<copy>https://<EM13c Host Public IP address>:7803/em</copy>
+e.g: https://111.888.111.888:7803/em
+````
+
+*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
 ### Lab Timing (Estimated)
 
@@ -26,8 +32,9 @@ Note: This lab environment is setup with Enterprise Manager Cloud Control Releas
 | **4**  | SQL Performance Analyzer Optimizer Statistics | 10 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c with Oracle Database 18c. | SQL Performance Analyzer gathers Oracle Database Optimizer statistics for validation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **5**  | Database Workload Replay                      | 10 minutes       | The objective of this activity is to is to demonstrate and use the Database Replay functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c and Oracle Database 18c.                | **Scenario:** You've been asked to add three new indexes for an application, but before adding, you want proof that database performance is improved. Use of SQL Performance Analyzer (SPA) isn't enough because there is also the cost of maintaining the indexes. Replay will be performed against the **Sales** Container Database and changes need to be performed in the OLTP Container against the **DWH\_TEST** schema. The database version is 18c so the capture and replay are performed using a CDB. |
 
-#### Login to Host using SSH Key based authentication
-Refer to [Environment Setup](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise-manager/freetier/?lab=environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+## **Step 0:** Running your Workload
+### Login to Host using SSH Key based authentication
+Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
@@ -35,14 +42,12 @@ Refer to [Environment Setup](https://oracle.github.io/learning-library/enterpris
   <copy>sudo su - oracle</copy>
   ````
 
-#### Login to OMS Console
+### Login to OMS Console
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-## Step 0: Running your Workload
-
-### Option 1: Using EM Console
+### Prepare database - Option 1: Using EM Console
 1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
 2. From the upper left, navigate from **Enterprise** to **Job** to then **Library**
@@ -61,7 +66,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/emjobcom.png " ")
 
-### Option 2: Using SSH terminal from the VM host
+### Prepare database - Option 2: Using SSH terminal from the VM host
 
 - Login as user "opc",
 - Sudo over to user "oracle"
@@ -378,11 +383,11 @@ You need to open two SSH sessions to your dedicated VM host as user "opc" using 
 4. Connect to sales database and create indexes. (indexes are already created, just need to make them visible)
 
 ````
-<copy>sqlplus system/welcome1@oltp
+<copy>sqlplus system/welcome1@oltp <<EOF
 alter index dwh_test.DESIGN_DEPT_TAB2_IDX1 visible;
 alter index dwh_test.DISTRIBUTION_DEPT_TAB2_IDX visible;
 alter index dwh_test.OUTLETS_TAB3_IT_IDX visible;
-exit</copy>
+EOF</copy>
 ````
 
 5. We have already performed the capture and stored it in
@@ -400,8 +405,9 @@ cd RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
 6. Connect to as sysdba and grant become user to system on all containers
 
 ````
-<copy>sqlplus sys/welcome1 as sysdba
-grant become user to system container=all;</copy>
+<copy>sqlplus sys/welcome1 as sysdba <<EOF
+grant become user to system container=all;
+EOF</copy>
 ````
 
 7. Connect to system create a directory object to locate the capture and preprocess the capture
@@ -583,11 +589,8 @@ Thank You!
 
 ## Acknowledgements
 - **Author** - Björn Bolltoft, Oracle Enterprise Manager Product Management
-* **Adapted for Cloud by** -  Rene Fontcha, Master Principal Platform Specialist, NA Technology
+- **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
-Refer to the FAQ at the bottom of the right-hand menu. While you cannot use the normal Oracle Support channel to raise a ticket for getting technical support, the vibrant [Enterprise Manager Community Forum](https://community.oracle.com/community/groundbreakers/enterprise_manager) stands to help.
-
-## Have a feedback?
-We would love to hear from you. Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
