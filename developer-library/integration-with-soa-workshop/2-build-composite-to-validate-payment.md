@@ -57,9 +57,9 @@ The validation process are:
 
 
 ### Details: ###
-For details of how to instructions, please go to Chapter 2, from <ins>**page 11 to 53** in the  SOASuite12c_Tutorial.pdf</ins> document.
+For details of how to instructions, please go to Chapter 2, from <ins>**page 11 to 53**</ins> in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf).
 
-The lab tutorial pdf document can be found on the desktop of your OCI Linux instance.
+The lab tutorial pdf document can also be found on the desktop of your OCI Linux instance.
 
 ![](images/2/soa-tutorialpdf.png)
 
@@ -103,7 +103,7 @@ Service Bus will protect consumers of the validatePayment composite from routine
 
 ### Details: ###
   
-Please follow the construction details from <ins>**page 54 to 77**, in the SOAsuite 12c tutorial</ins>.
+Please follow the construction details from <ins>**page 54 to 77**</ins>, in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf).
 
 ![](images/2/soa-tutorialpdf.png)
 

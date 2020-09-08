@@ -31,7 +31,7 @@ You will now create another SOA application that will accept new purchase orders
     ![](images/3/ProcessOrderComposite.png)
 
 ### Details: ###
-To complete part 1, please start <ins>**Chapter 3, page 80 to 116** of the SOAsuite 12c tutorial.pdf </ins>
+To complete part 1, please start <ins>**Chapter 3, page 80 to 116** </ins> of the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf) 
 
 ## **STEP 2**: Register process order on Service Bus 
 As you have completed and tested the Process Order composite, you will register it on Service Bus to make it available for external consumers. 
@@ -43,7 +43,7 @@ As you have completed and tested the Process Order composite, you will register 
     ![](images/3/ProxyService.png)
 
 ### Details: ###
-To complete part 2, please review on <ins> **chapter 3, page 117 to 137** </ins> of the SOAsuite tutorial document
+To complete part 2, please review on <ins> **chapter 3, page 117 to 137** </ins> of the [SOAsuite tutorial document](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf)
 
 ## **Summary**
 In module 3, you've accomplished:
