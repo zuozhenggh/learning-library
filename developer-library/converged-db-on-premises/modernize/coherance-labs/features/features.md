@@ -1,21 +1,17 @@
-## Coherence Labs
+# Coherence Features
 
-This lab walks you through the steps for running different Coherence Labs
+## Introduction
+These Coherence Labs are exercises to visuslaize the different features of Coherence as a distributed in-memory data-grid.
 
-## Before You Begin
+Estimated Lab Time: n minutes
 
-**What Do You Need?**
-
+### Objectives
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud
 - Lab 2:  Generate SSH Key
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
- 
-
-## Lab Description
-
-  These Coherence Labs are exercises to visuslaize the different features of Coherence as a distributed in-memory data-grid.
+  
     
 ## Prerequisites for Java
  
@@ -47,19 +43,22 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
  
  
 
-## Verify Environment
+## **STEP 1**: Verify Environment
 
-Open Two Terminal windows and verify ENVIRONMENT in each as below
+1. Open Two Terminal windows 
 
-Set and Verify the JAVA_HOME for both terminal windows
-
+2. Set and verify the JAVA_HOME for both terminal windows by typing the commands below
+        ````
+        <copy>
         export JAVA_HOME="/u01/oas/javaln/jdk1.8.0_261"
         export PATH=$JAVA_HOME/bin:$PATH
         echo $JAVA_HOME
+        </copy>
+        ````
         
-![](../images/java-home.png " ")
+        ![](../images/java-home.png " ")
 
-Set and Verify COHERENCE_HOME for both terminal windows
+3. Set and Verify COHERENCE_HOME for both terminal windows
 
         export COHERENCE_HOME="/u01/middleware/14c/coherence"
         export PATH=$COHERENCE_HOME/bin:$PATH
@@ -68,34 +67,35 @@ Set and Verify COHERENCE_HOME for both terminal windows
 
 ![](../images/set-env.png " ") 
 
-Change Directory to Java Samples in both Terminal Windows ((/u01/middleware/14c/coherence/examples/java)
+## **STEP 2**: Build JAVA Labs
+
+1. Change Directory to Java Samples in both Terminal Windows ((/u01/middleware/14c/coherence/examples/java)
 
     cd $COHERENCE_HOME/examples/java
 
-Build all the java Labs as needed
-Execute the build script with the name of the example collection:
-
+2. Build all the java Labs as needed and execute the build script with the name of the example collection:
+        ````
+        <copy>
         bin/build contacts
-
         bin/build security
-
         bin/build events
-
         bin/build java8
-
         bin/build async
+        </copy>
+        ````
 
 
-Now Run all the Labs below from this folder $COHERENCE_HOME/examples/java
-in both Terminal Windows
+3. Now Run the following Labs from the following folder in both Terminal Windows
 
         cd $COHERENCE_HOME/examples/java
     
-## Lab 1: Contacts 
+## **Lab 1: Contacts**
 
-### Introduction: This Lab shows the most basic data access features of Coherence including getting, putting and removing data from a provided contacts.csv file.
+### Introduction
+This Lab shows the most basic data access features of Coherence including getting, putting and removing data from a provided contacts.csv file.
 
-### Objective: To start a Coherence Cache and then put and get Contacts to/from the Cache.
+### Objective: 
+To start a Coherence Cache and then put and get Contacts to/from the Cache.
 
 ### Estimated Time: 5 - 10 mins
 
@@ -103,46 +103,49 @@ in both Terminal Windows
 
 ### Lab Steps:
 
-### Step 1.	Start a cache server 
+## Step 1:
 
-First Terminal window : 
+1. Start a cache server 
+
+2. Type the following command in the first Terminal window 
     
         bin/run-cache-server
 
-Each execution starts a cache server cluster node. 
+3. Wait for the Cache Server to start in a few seconds as each execution starts a cache server cluster node. 
 
-Wait for the Cache Server to start in a few seconds
+        ![](../images/run-cache-server.png " ") 
 
-![](../images/run-cache-server.png " ") 
+## Step 2:      
 
-### Step 2.	In the second Terminal window
+1. Open a second terminal window:
 
-Second Terminal Window:
-
-Run with the name of the example: 
+2. Run the terminal with the name of the example: 
 
         bin/run contacts
 
 The Driver.main method runs through the features of the example with output going to the command window (stdout)
 
-![](../images/run-contacts.png " ")  
+        ![](../images/run-contacts.png " ")  
 
-### Proceed to Next Lab 
+**Proceed to Next Lab**
 
-## Lab 2: Security
+## **Lab 2: Security**
 
-### Introduction: This Lab shows the security feature of accessing Cache securely using role and password
+## Introduction:
+ This Lab shows the security feature of accessing Cache securely using role and password
 
-### Objective: The Coherence security Lab set gets a cache reference that requires a password an attempts cache and invocation service operations that require different roles.
+Estimated Lab Time: 10 minutes
 
-### Estimated Time: 5 - 10 mins
+### Objectives: 
+The Coherence security Lab set receives a cache reference that requires a password an attempts cache and invocation service operations that require different roles.
 
-### Pre-requisites:  Verify Environment has been Completed.
+### Pre-requisites:  
+* Verify that the environment has been Completed.
 
-### Lab Steps:
+## Lab Steps:
 
  
-### Step 1.	Start a cache server
+## Step 1.	Start a cache server
 
 First Terminal window: 
 
@@ -154,7 +157,7 @@ Wait for the Cache Server to start in a few seconds
 
 ![](../images/run-cache-server.png " ") 
 
-### Step 2.	In the second Terminal window, run with the name of the example: 
+## Step 2.	In the second Terminal window, run with the name of the example: 
 
 Second Terminal window:
 

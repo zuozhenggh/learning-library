@@ -1,6 +1,6 @@
-# Workshop Introduction and Overview
+# Introduction and Overview
 
-## Introduction to Oracle Weblogic 
+###  Oracle Weblogic 
 
 Oracle WebLogic Server provides a modern development platform for building applications, a runtime platform for high performance and availability, and rich management tooling for efficient and low cost operations.
 
@@ -8,7 +8,7 @@ The WebLogic Server complete implementation of the Java Platform, Enterprise Edi
 
 In addition to the Java EE implementation, WebLogic Server enables enterprises to deploy mission-critical applications in a robust, secure, highly available, and scalable environment. These features allow enterprises to configure clusters of WebLogic Server instances to distribute load, and provide extra capacity in case of hardware or other failures. New diagnostic tools allow system administrators to monitor and tune the performance of deployed applications and the WebLogic Server environment itself. You can also configure WebLogic Server to monitor and tune application throughput automatically without human intervention. Extensive security features protect access to services, keep enterprise data secure, and prevent malicious attacks.
 
-## Introduction to Oracle Helidon
+###  Oracle Helidon
 
 Helidon SE is a compact toolkit that embraces the latest Java SE features: reactive streams, asynchrous and functional programming, and fluent-style APIs.
 
