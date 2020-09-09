@@ -578,113 +578,111 @@ This workshop is designed to give you a hands-on experience with both the pre-bu
 
 5. Click **Projects and Reports**
 
-6. Click **Modified** and Select **Name**
-
   ![](./images/4-2.png " ")
 
-7. Click **AP Analysis Lab**
+6. In the search bar, input **AP Analysis Lab Demo** and click on the **AP Analysis Lab Demo** project.
 
-  ![](./images/4-3.png " ")
+  ![](./images/step4-project.png " ")
 
-8. This project contains analyses across two subject areas, AP Invoices and AP Balances. Visualizations include:
-    1. AP Balances quarterly trend.
+7. This project contains analyses across two subject areas, AP Invoices and AP Balances. Visualizations include:
+    1. AP Balances with a quarterly trend.
     2. Top 10 suppliers with AP Balances.
-    3. Trailing 12 months for AP invoice transactions.
+    3. Top Invoice Amounts by Payment Terms and Supplier Names.
 
-9. Click the **+ icon** at the bottom of the screen to create a new canvas.
+8. Click the **+ icon** at the bottom of the screen to create a new canvas.
 
-  ![](./images/4-4.png " ")
+  ![](./images/part4-1new2.png " ")
 
-10. Please rename this new canvas to **Analysis ~InsertYourInitialsHere~** by clicking on the **small down arrow icon** of the canvas and then **Rename**
+9. Please rename this new canvas to **Analysis ~InsertYourInitialsHere~** by clicking on the **small down arrow icon** of the canvas and then **Rename**
 
-  ![](./images/part2-2.png " ")
+  ![](./images/part4-1new3.png " ")
 
-11.  Let's download an excel dataset file from this workshop to load into your instance. You can download it by clicking on the following text link: [Download supplier\_risk\_ratings.xlsx here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/vq-e_pds9JCsEbPmtqIxazJWvGepb0qV6vYyCCa2qis/n/orasenatdpltoci01/b/cloud-data-platform-workshop-files/o/supplier_risk_ratings.xlsx). Then, return back to Fusion ERP Analytics in your browser window.
+10.  Let's download an excel dataset file from this workshop to load into your instance. You can download it by clicking on the following text link: [Download supplier\_risk\_ratings.xlsx here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/vq-e_pds9JCsEbPmtqIxazJWvGepb0qV6vYyCCa2qis/n/orasenatdpltoci01/b/cloud-data-platform-workshop-files/o/supplier_risk_ratings.xlsx). Then, return back to Fusion ERP Analytics in your browser window.
 
-12. In the data pane, click on the **+ icon** at the top and then select **Add Data Set** in the popup window.
+11. In the data pane, click on the **+ icon** at the top and then select **Add Data Set** in the popup window.
 
   ![](./images/4-5-2.png " ")
 
-13. Click **Create Data Set** button.
+12. Click **Create Data Set** button.
 
   ![](./images/4-5-3.png " ")
 
-14. Click **Drop data file here or click to browse**.
+13. Click **Drop data file here or click to browse**.
 
   ![](./images/4-5-4.png " ")
 
-15. Select the **supplier\_risk\_ratings.xlsx** excel file you downloaded previously and then click on the **Open** button.
+14. Select the **supplier\_risk\_ratings.xlsx** excel file you downloaded previously and then click on the **Open** button.
 
-16. Observe the following column definitions in the supplier credit ratings file:
+15. Observe the following column definitions in the supplier credit ratings file:
     1. The Credit Risk score measures a business’s past payment performance.  
     2. The Ability to Pay rating helps predict the chance a supplier will become inactive or shut down in the next 12 months.
 
-17. Continue by clicking the **Add** button.
+16. Continue by clicking the **Add** button.
 
   ![](./images/4-6.png " ")
 
-18. Click the **Data Diagram** tab at the bottom of the window.
+17. Click the **Data Diagram** tab at the bottom of the window.
 
   ![](./images/4-7.png " ")
 
-19. The system automatically joins fields with the same name. Click the **blue bubble 1** on the join line to examine how the new spreadsheet is joined to the pre-built subject area data. Observe that it matched on supplier name. If there was no automatic match then you could add the match manually. Proceed by clicking the **OK** button.
+18. The system automatically joins fields with the same name. Click the **blue bubble 1** on the join line to examine how the new spreadsheet is joined to the pre-built subject area data. Observe that it matched on supplier name. If there was no automatic match then you could add the match manually. Proceed by clicking the **OK** button.
 
   ![](./images/4-8-1.png " ")
 
-20. Then, in the upper right of the screen, click the **Visualize** link.
+19. Then, in the upper right of the screen, click the **Visualize** link.
 
   ![](./images/4-8-2.png " ")
 
-21. Let’s create a visualization that uses data from both the subject area and the excel file. In the data pane, click the **Supplier** folder to expand it and then double click on **Supplier Name**.
+20. Let’s create a visualization that uses data from both the subject area and the excel file. In the data pane, confirm that you are in the **Financial - AP Invoices Subject Area** and click the **Supplier** folder to expand it and then double click on **Supplier Name**.
 
   ![](./images/4-9-1.png " ")
 
-22. Now, click on the **Facts – Ledger Currency** folder to expand it and then double click on **Invoice Amount**.
+21. Now, click on the **Facts – Ledger Currency** folder to expand it and then double click on **Invoice Amount**.
 
   ![](./images/4-9-2.png " ")
 
-23. Then, click on the **supplier\_credit\_ratings** folder to expand it and double click on **Credit Risk**.
+22. Then, click on the **supplier\_credit\_ratings** folder to expand it and double click on **Credit Risk**.
 
   ![](./images/4-9-3.png " ")
 
-24. The system automatically creates a scatter chart in which each bubble represents a supplier. A Credit Rating of closer to 10 indicates high risk. Let’s add Ability to Pay into the scatter. In the data pane, double click on **Ability to Pay** from the **supplier\_credit\_ratings** folder. Ability to Pay will then be added to the visualization as the bubble color.
+23. The system automatically creates a scatter chart in which each bubble represents a supplier. A Credit Rating of closer to 10 indicates high risk. Let’s add Ability to Pay into the scatter. In the data pane, double click on **Ability to Pay** from the **supplier\_credit\_ratings** folder. Ability to Pay will then be added to the visualization as the bubble color.
 
   ![](./images/4-10.png " ")
 
-25. Let’s add Invoice count into the scatter. In the data pane, double click on **Invoices Count** from the **Facts – Ledger Currency** folder. Invoices Count is then added to the visualization as the bubble size.
+24. Let’s add Invoice count into the scatter. In the data pane, double click on **Invoices Count** from the **Facts – Ledger Currency** folder. Invoices Count is then added to the visualization as the bubble size.
 
   ![](./images/4-11.png " ")
 
-26. Let’s filter for just the top 10 suppliers. In the grammar pane, click on **# Invoices Amount** and drag it to the **Filters** section. Disregard the popup window.
+25. Let’s filter for just the top 10 suppliers. In the grammar pane, click on **# Invoices Amount** and drag it to the **Filters** section. Disregard the popup window.
 
   ![](./images/4-12-1.png " ")
 
-27. In the **Filters** section of the grammar pane, do the following:
+26. In the **Filters** section of the grammar pane, do the following:
     1. Click on **Invoice Amount** in the filter.
     2. Hover over or click on **Filter Type**.
     3. Select **Top Bottom N**.
 
     ![](./images/4-12-2.png " ")
 
-28. A popup window will appear. The default is 10, which we will accept. Click anywhere on the visualization to close the popup window. Your visualization should look similar to this:
+27. A popup window will appear. The default is 10, which we will accept. Click anywhere on the visualization to close the popup window. Your visualization should look similar to this:
 
   ![](./images/4-13.png " ")
 
-29. Let’s add data labels to the visualization. At the bottom left settings panel, click on the **#** icon to access its menu. Then, click on the **Data Label** option and click on  **Auto**.
+28. Let’s add data labels to the visualization. At the bottom left settings panel, click on the **#** icon to access its menu. Then, click on the **Data Label** option and click on  **Auto**.
 
   ![](./images/4-14.png " ")
 
-30. The visualization helps to identify a supplier that we may introduce some risk, and may require deeper analysis. For now, let's go ahead and save your work.
+29. The visualization helps to identify a supplier that we may introduce some risk, and may require deeper analysis. For now, let's go ahead and save your work.
 
   ![](./images/4-15.png " ")
 
-31. First, click **Save As** at the top. Then, name your project **Net Income Analysis XX** where XX are your initials. Proceed by clicking on the **Save** button. Note: you may see a generating thumbnail message. If you do, click on **Skip** to ignore it.
+30. First, click **Save As** at the top. Then, name your project **Net Income Analysis XX** where XX are your initials. Proceed by clicking on the **Save** button. Note: you may see a generating thumbnail message. If you do, click on **Skip** to ignore it.
 
-32. Nice work on making these canvases and visualizations! Please go ahead and delete the canvases with your initials at this time by clicking on the canvas **down arrow icon** and selecting **Delete Canvas**. There should be one canvas you need to delete in this project, **Analysis ~InsertYourInitialsHere~**. Please do the same for your **Net Income Analysis XX** project.
+31. Nice work on making these canvases and visualizations! Please go ahead and delete the canvases with your initials at this time by clicking on the canvas **down arrow icon** and selecting **Delete Canvas**. There should be one canvas you need to delete in this project, **Analysis ~InsertYourInitialsHere~**. Please do the same for your **Net Income Analysis XX** project.
 
   ![](./images/part2-3.png " ")
 
-33. When exiting the instance, make sure you don't save any changes made during the workshop by clicking on **Don't Save** when any **Save Changes?** text boxes pop up.
+32. When exiting the instance, make sure you don't save any changes made during the workshop by clicking on **Don't Save** when any **Save Changes?** text boxes pop up.
 
 ## Summary
 
