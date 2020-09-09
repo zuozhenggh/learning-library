@@ -80,18 +80,19 @@ In this lab you will:
 
    ![Apply Job Outputs](images/tf_output.png)
 
-2. Collect the following values from the output:
+2. The Terraform stack produces the following values which are available in the 'Outputs' tab:
 
-      * `compartment_ocid` - This is the compartment OCID used to identify the compartment where the database is setup
-      * `tns_name` - This is the TNS name of the Autonomous Database instance
       * `atp_admin_password` - This is the adminstrative password of the Autonmous Database Instance
+      * `atp_db_ocid` - This is the unique OCID of the Autonmous Database Instance
       * `atp_schema_password` - This is the schema password of the Autonmous Database Instance
       * `atp_wallet_password` - This is the wallet password of the Autonmous Database Instance
-      * `atp_db_ocid` - This is the unique OCID of the Autonmous Database Instance
+      * `compartment_ocid` - This is the compartment OCID used to identify the compartment where the database is setup
       * `public_ip` - This is the public IP address from the Oracle Cloud Infrastructure address pool
       * `region` - This is the region where the instance is running
+      * `script_input` - A JSON string containing all of the values needed to create the DB schema in the next lab.
+      * `tns_name` - This is the TNS name of the Autonomous Database instance
 
-      You will need the values of these variables in the next step to configure your database. However, if you forget to take note of them you can retrieve them later by going to the Oracle Cloud Console and going to "Resource Manager" -> "Stacks" then click the name of your Stack then under "Jobs" select the "apply-" job that ran and under "Resources" on the left you can navigate to "Outputs" where you will find the variables again.
+      You will need the value of `script_input` in the next step to configure your database. If you need any of the individual values in future steps, you can retrieve them later by going to the Oracle Cloud Console and going to "Resource Manager" -> "Stacks" then click the name of your Stack then under "Jobs" select the "apply-" job that ran and under "Resources" on the left you can navigate to "Outputs" where you will find the variables again.
 
 You may now *proceed to the next lab*.
 
