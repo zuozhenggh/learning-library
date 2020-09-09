@@ -67,7 +67,7 @@ The Load TRG\_CUSTOMER mapping uses the following data and transformations:
 | PHONE          | SRC\_CUSTOMER.PHONE                   | SRC\_CUSTOMER.PHONE     |
 | AGE            | SRC\_CUSTOMER.AGE                     | SRC\_CUSTOMER.AGE       |
 | AGE\_RANGE     | SRC\_AGE\_GROUP.AGE\_RANGE            | SRC\_AGE\_GROUP.AGE\_RANGE|
-| SALES\_PERS    | Concatenation of SRC\_SALES\_PERSON.FIRST\_NAME and SRC\_SALES\_PERSON.LAST\_NAME in upper case | TRIM(SRC\_SALES\_PERSON.FIRST\_NAME) \|\| ' ' UPPER(TRIM(SRC\_SALES\_PERSON.LAST\_NAME)) |
+| SALES\_PERS    | Concatenation of SRC\_SALES\_PERSON.FIRST\_NAME and SRC\_SALES\_PERSON.LAST\_NAME in upper case | TRIM(SRC\_SALES\_PERSON.FIRST\_NAME) \|\| ' ' \|\| UPPER(TRIM(SRC\_SALES\_PERSON.LAST\_NAME)) |
 | CRE\_DATE      | Today's date                         | SYSDATE                 |
 | UPD\_DATE      | Today's date            | SYSDATE                 |
 
