@@ -13,7 +13,7 @@
     {
       "title": "Lab 1: Verify Setup",
       "description": "Verify compute instance is setup and EM 13.3 with pre-configured database targets are up",
-      "publisheddate": "7/16/2020",
+      "publisheddate": "9/09/2020",
       "filename": "./../../verify-compute/verify-compute.md"
     },
     {
