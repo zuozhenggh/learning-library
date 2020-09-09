@@ -1,26 +1,27 @@
-<!-- Start by renaming this file with the same name as the lab folder, for example, provision-adb.md -->
-# Enter lab title here
-## Introduction
+# Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+## About this Workshop
 
-Estimated Lab Time: n minutes
+This introduction is for a "child" workshop. It is a subset of the "parent" workshop, and only covers a portion of the "parent" workshop. In this case, just the first 4 labs.
+
+Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
 
 ### About Product/Technology
-Enter background information here..
+Enter background information here....
 
-*For the Introduction, you may add an option video, using this format: [](youtube:YouTube video id)*
+*You may add an option video, using this format: [](youtube:YouTube video id)*
 
   [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+*List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Provision
+* Setup
+* Data Load
+* Query
 
 ### Prerequisites
 
