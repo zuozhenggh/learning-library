@@ -4,7 +4,7 @@
 
 In this lab we will run a Helidon microservice and connect the Micronaut application to it
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -16,7 +16,7 @@ In this lab you will:
 
 ### Prerequisites
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
-  
+
 ## **STEP 1**: Run Helidon MP microservice
 
 The Helidon MP application is already built and available as a native image
@@ -31,7 +31,7 @@ Download the native image binary (this is needed for deployment to cloud)
 Run the native image (if you are using a Linux environment):
 
 ```
-wget -O helidon-mp-service https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/helidon-mp-service
+curl https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/helidon-mp-service -o helidon-mp-service
 chmod +x helidon-mp-service
 ./helidon-mp-service
 ```
@@ -55,15 +55,17 @@ We can verify this application works by exercising the following endpoints:
 Now it is time to update the Micronaut application to communicate with the Helidon service by defining a new endpoint. This endpoint will use a service that either connects to a remote
 microservice, or if that fails, uses a local fallback.
 
-First create a package `example.atp.services`.
+First create a package `example.atp.services` by creating a directory `src/main/java/example/atp/services`.
 
-Now define a new interface called `PetHealthOperations` that provides the contract for the service:
+Now define a new interface called `PetHealthOperations` in a file called `PetHealthOperations.java` under `src/main/java/example/atp/services` that provides the contract for the service:
 
 ```java
+<copy>
 package example.atp.services;
 
 import java.util.concurrent.CompletableFuture;
 
+// An interface that defines the contract for REST client operations
 public interface PetHealthOperations {
     CompletableFuture<PetHealth> getHealth(String name);
 
@@ -73,11 +75,13 @@ public interface PetHealthOperations {
         REQUIRES_VACCINATION
     }
 }
+</copy>
 ```
 
-With the contract in place, the next step is to implement a fallback for the case when the service is unavailable. Define a new class that implements the contract called `PetHealthFallback` which will implement the fallback:
+With the contract in place, the next step is to implement a fallback for the case when the service is unavailable. Define a new class that implements the contract called `PetHealthFallback` in a file called `PetHealthFallback.java` under `src/main/java/example/atp/services` which will implement the fallback:
 
 ```java
+<copy>
 package example.atp.services;
 
 import io.micronaut.retry.annotation.Fallback;
@@ -85,6 +89,8 @@ import io.micronaut.retry.annotation.Fallback;
 import javax.inject.Singleton;
 import java.util.concurrent.CompletableFuture;
 
+// A fallback is invoked if a failure occurs
+// The @Fallback annotation is used to designate the class as a fallback.
 @Fallback
 @Singleton
 public class PetHealthFallback implements PetHealthOperations {
@@ -93,13 +99,15 @@ public class PetHealthFallback implements PetHealthOperations {
         return CompletableFuture.completedFuture(PetHealthOperations.PetHealth.UNKNOWN);
     }
 }
+</copy>
 ```
 
 The class uses Micronaut's [Client Fallbacks](https://docs.micronaut.io/latest/guide/index.html#clientFallback) concept and the `@Fallback` annotation to define logic that will be executed if an error occurs calling the actual service.
 
-With the fallback in place, the next step is to implement the actual service. Define a class called `PetHealthService` that is used to invoke the actual service:
+With the fallback in place, the next step is to implement the actual service. Define a class called `PetHealthService` in a file called `PetHealthService.java`  under `src/main/java/example/atp/services` that is used to invoke the actual service:
 
 ```java
+<copy>
 package example.atp.services;
 
 import java.util.concurrent.CompletableFuture;
@@ -109,6 +117,9 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.retry.annotation.Recoverable;
 
+// The @Recoverable annotation is used to indicate
+// that this service can recover from failure and provides
+// the interface that contains the methods that should trigger fallbacks
 @Singleton
 @Recoverable(api = PetHealthOperations.class)
 public class PetHealthService implements PetHealthOperations {
@@ -118,6 +129,8 @@ public class PetHealthService implements PetHealthOperations {
         this.petHealthClient = petHealthClient;
     }
 
+    // The getHealth method uses the client to invoke the Helidon endpoint
+    // and return the result without performing any blocking I/O
     @Override
     public CompletableFuture<PetHealth> getHealth(String name) {
         return petHealthClient.isVaccinated(name).thenApply(isVaccinated ->
@@ -125,12 +138,16 @@ public class PetHealthService implements PetHealthOperations {
         );
     }
 
+    // A declarative HTTP client that will be implemented for you automatically
+    // at compilation time. The value of the @Client annotation indicates the
+    // target service ID.
     @Client(value = "pet-health", path ="/vaccinated")
     public interface PetHealthClient {
         @Get("/{name}")
         CompletableFuture<Boolean> isVaccinated(String name);
     }
 }
+</copy>
 ```
 
 Key aspects of this example include:
@@ -142,12 +159,14 @@ Micronaut includes comprehensive support for different [service discovery](https
 
 To keep things simple for the moment just define a hard coded URL to the Helidon service:
 
-In `resources/application.yml`, update the `micronaut` section and add the following:
+In `src/main/resources/application.yml`, update the `micronaut` section and add the following:
 ```yaml
+<copy>
 micronaut:
   http.services:
     pet-health:
       urls: "http://localhost:8081"
+</copy>
 ```
 
 By setting `micronaut.http.services.pet-health.urls`, you can define the endpoints the logical name `pet-health` will invoke when called.
@@ -155,10 +174,11 @@ By setting `micronaut.http.services.pet-health.urls`, you can define the endpoin
 Finally, it is time to update the `PetController` controller to invoke the Pet Health service:
 
 ```java
+<copy>
 // a new field
 private final PetHealthOperations petHealthOperations;
 
-//updated constructor
+//updated constructor, adding petHealthOperations
 PetController(PetRepository petRepository, PetHealthOperations petHealthOperations) {
     this.petRepository = petRepository;
     this.petHealthOperations = petHealthOperations;
@@ -169,6 +189,7 @@ PetController(PetRepository petRepository, PetHealthOperations petHealthOperatio
 CompletableFuture<PetHealthOperations.PetHealth> getHealth(String name) {
     return petHealthOperations.getHealth(name);
 }
+</copy>
 ```
 
 
