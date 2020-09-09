@@ -86,7 +86,7 @@ An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the
     - **Source Port Range:** All
     - **Destination Port Range:** 7007
     - Click on **Add Ingress Rules** at the bottom.
-    ![Add Ingress Rule](../images/ingress_rule_7007.png " ")
+    ![Add Ingress Rule](..images/ingress_rule_7007.png " ")
 
     *Note 1: If you reconnect at a later date or connect to your company's VPN, your local machine's IP address may change.*
 
@@ -208,24 +208,24 @@ Choose the environment where you created your SSH Key.
 ### Oracle Cloud Shell
 1. If you have not created your Bucket in Oracle Cloud, first create a Bucket. Go to your Cloud Console, click Navigation button. Under **Core Infrastructure**, select **Object Storage**.
 
-    ![](../../images/open_object_storage.png " ")
+    ![](../../../images/open_object_storage.png " ")
 
 2. Click **Create Bucket**. In Create Bucket window, **Bucket Name** is automatically generated, select **Standard** as Storage Tier, you can accept all other defaults. Click **Create Bucket** to finish.
-   ![](../../images/create_bucket.png " ")
+   ![](../../../images/create_bucket.png " ")
 
 3. Click on the Bucket you just created. Click **Upload** to upload the your *ADB Wallet* zip file to your Bucket. Click **Close** when uploading is finished.
 
-    ![](../../images/upload_finish.png " ")
+    ![](../../../images/upload_finish.png " ")
 
 4. Create a Pre-Authenticated Request (PAR) for ADB Wallet. In the bucket, find the file and click on the ellipses to the right. Click **Create Pre-Authenticated Request**. Determine how long you want the PAR - generally, one year. Accept other defaults. Click **Create Pre-Authenticated Request**.
 
-    ![](../../images/create_PAR.png " ")    
+    ![](../../../images/create_PAR.png " ")    
 
-    ![](../../images/create_PAR_dialog.png " ")
+    ![](../../../images/create_PAR_dialog.png " ")
 
 5. In Pre-Authenticated Request Details page, copy the **Pre-Authenticated Request URL** and save it on your local computer. You don't need to download or create PAR url for the Graph Server rpm file - that is already done for you.
 
-    ![](../../images/copy_url.png " ")
+    ![](../../../images/copy_url.png " ")
 
 6. Download the Graph Server and ADB Wallet to your compute instance by using their Pre-Authenticated Request (PAR) URL. Open your Cloud Shell, navigate to the folder where you created the SSH keys, and connect using:
     ```
@@ -247,9 +247,9 @@ Choose the environment where you created your SSH Key.
     <copy>wget &lt;PAR url for your ADB Wallet></copy>
     ```
 
-  ![](../../images/download_rpm.png " ")
+  ![](../../../images/download_rpm.png " ")
 
-  ![](../../images/download_ADB_wallet.png " ")
+  ![]../../../images/download_ADB_wallet.png " ")
 
 
 
@@ -401,7 +401,7 @@ Choose the environment where you created your SSH Key.
 ## Acknowledgements ##
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
-* **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
+* **Contributors** - Albert Godfrind and Ryota Yamanaka.  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
 * **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 

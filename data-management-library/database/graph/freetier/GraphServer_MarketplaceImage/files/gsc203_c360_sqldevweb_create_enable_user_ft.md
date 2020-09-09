@@ -13,22 +13,22 @@ This lab walks you through the steps to get started with SQL Developer Web. You 
 
   Go to your Cloud Console, click **Autonomous Transaction Processing**. Select the ADB instance **ATP Finance Mart** you created in Lab 3.
     
-  ![](../images/select_ATP.png " ")
+  ![](../../GraphServer_ManualSetup/images/select_ATP.png " ")
 
   In Autonomous Database Details page, click **Service Console**. Make sure your brower allow pop-up windows.
 
-  ![](../../images/ADB_console.png " ")
+  ![](../../../../images/ADB_console.png " ")
 
   Choose Development from the list on the left, then click the **SQL Developer Web**.
 
-  ![ADB Console Development Page](../images/ADB_ConsoleDevTab.png " ")
+  ![ADB Console Development Page](../../GraphServer_ManualSetup/images/ADB_ConsoleDevTab.png " ")
 
   Enter `ADMIN` as Username, and the enter the password you set up at Lab 3, Step 2, Section 7.
 
-  ![](../../images/login.png " ")
+  ![](../../../../images/login.png " ")
   Login as the ADMIN user. 
 
-  ![Login as Admin](../images/ADB_SQLDevWebHome.png)
+  ![Login as Admin](../../GraphServer_ManualSetup/images/ADB_SQLDevWebHome.png)
 
 2. Now create the `CUSTOMER_360` user. Enter the following commands into the SQL Worksheet and run it while connected as the Admin user.
 
@@ -40,13 +40,18 @@ This lab walks you through the steps to get started with SQL Developer Web. You 
   TEMPORARY TABLESPACE temp 
   QUOTA UNLIMITED ON data;  
 
-  GRANT connect, resource TO customer_360;
+  CREATE ROLE GRAPH_DEVELOPER;
+  CREATE ROLE GRAPH_ADMINISTRATOR;
+
+  GRANT connect, resource, graph_developer TO customer_360;
   </copy>
   ```
 
-  ![](../images/ADB_SDW_CreateUser_C360.png " ")
+  ![](../../GraphServer_ManualSetup/images/ADB_SDW_CreateUser_C360.png " ")
 
-  *Note: The `IDENTIFIED BY` clause specifies the password (“Welcome1_C360”)*
+  *Notes:* 
+  - *The `IDENTIFIED BY` clause specifies the password (“Welcome1_C360”)*
+  - *Since [20.3 the Graph Server uses database authentication](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/using-inmemory-analyst-oracle-database.html). The user needs at least the graph_developer role.*
 
 
 ## **Step 2:** Enable SQLDevWeb for Customer_360
@@ -72,7 +77,7 @@ This lab walks you through the steps to get started with SQL Developer Web. You 
     </copy>
     ```
 
-  ![Enable SQLDevWeb for Customer_360](../images/ADB_SDW_EnableLoginFor_C360.png " ")
+  ![Enable SQLDevWeb for Customer_360](../../GraphServer_ManualSetup/images/ADB_SDW_EnableLoginFor_C360.png " ")
 
   The URL for SQLDeveloperWeb for the Customer_360 user will have `c360` in place of `admin` in it.   
   Save the URL for the next step.  
@@ -84,7 +89,7 @@ This lab walks you through the steps to get started with SQL Developer Web. You 
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
 
-* **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
+* **Contributors** - Albert Godfrind and Ryota Yamanaka.  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
 
 * **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
