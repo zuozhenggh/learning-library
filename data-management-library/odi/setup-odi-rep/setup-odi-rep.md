@@ -19,7 +19,7 @@ This lab will show you how to create an ODI instance from a Marketplace image an
 Make sure you have chosen the correct **COMPARTMENT**
     ![](./images/odi_config_1.png " ")
     ![](./images/odi_config_2.png " ")    
-Select the version **ODI v12.2.1.4_200618** which has been verified for this training material.
+Select the latest free version (*not BYOL or Web versions*) from the list. If in doubt then check with your instructor for which version to use for this workshop.
 
 Accept the Terms&Conditions and click **Launch Stack**
     ![](./images/odi_config_3.png " ")
@@ -27,13 +27,20 @@ Accept the Terms&Conditions and click **Launch Stack**
 4. Add your initials to the **Name** field so you can easily identify your Instance. Click **Next**
     ![](./images/odi_config_4.png " ")    
 
-5. Choose *Create new networking components* and *Create an embedded ODI repository*. In practice, networking will be created by admin and a new ODI repository may be needed for the first time. Add your initials to the **Resource Display Name Prefix** field
-    ![](./images/odi_config_5.png " ")  
+5. ***IMPORTANT: If your administrator has created a network then use that network rather than creating a new one.***
+
+Select *Create an embedded ODI repository*. Embedded repository uses MySQL DB included in the compute instance. It is much simpler and good enough for the workshop. In practice an external database (autonomous database or DBCS) will be used for the ODI repository. 
+
+Add your initials to the **Resource Display Name Prefix** field so that you can identify your compute instance later.
+    ![](./images/odi_config_5_1.jpg " ")
+
+Scroll down and enter *Network Configuration* info. (*Check with your administrator/instructor for which network to use*)
+    ![](./images/odi_config_5_2.jpg " ")
 
 6. Scroll down to **ODI Instance Settings** and choose the
-  * **VM Shape** (*VM.Standard.2.4*),
+  * **VM Shape** (*Check with your administrator/instructor for which shape to use*),
   * **SSH Key**: Paste the Public Key you created earlier (it should be only ONE line)
-  * **Availability Domain**: Choose a domain based on your last name (A-J -> 1, K - M -> 2, N-Z -> 3)
+  * **Availability Domain**: (*Check with your administrator/instructor for which availibility domain to use*)
   * **VNC Password**: create and remember a password to access your VNC environment (This password will not be accessible again and is required to access the VNC from which to run ODI Studio)
     ![](./images/odi_config_6a.png " ")
 

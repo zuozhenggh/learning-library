@@ -151,7 +151,7 @@ Please proceed to the next lab.
 
 8. Select all of the text and run it to create the users *ODI\_DEMO* and *ODI\_STAGING*
 
-9. Copy the contents of *Seed_data.sql* in to the worksheet, select the text and run to create tables and populate with seed data:
+9. Copy the contents of *Seed_data.sql* in to the worksheet, select the text and run to create tables and populate with seed data. The execution may take few minutes to complete (UI doesn't show any anctivity in the meantime). Check for messages in "Script Output" tab to make sure commit completed after the execution.
     ![](./images/seed-data.png " ")   
 
 ## Want to Learn More?
