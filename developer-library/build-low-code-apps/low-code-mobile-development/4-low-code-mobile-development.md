@@ -6,7 +6,7 @@
 
 In this lab you will use Oracle Visual Builder which is a cloud-based software development Platform as a Service (PaaS) and a hosted environment for your application development infrastructure. It provides an open-source standards-based solution to develop, collaborate on, and deploy applications within Oracle Cloud. You will build on the previous labs using the REST points exposed by the AlphaOffice application to OKE in Lab 300.
 
-Estimated time: 40 minutes
+Estimated time: 45 minutes
 
 ### Objectives
 - Create a Mobile Application.

@@ -2,11 +2,11 @@
 
 ## Before You Begin
 
-#### Introduction
+### Introduction
 
 In this lab you will deploy a Java application using Docker. This will require you to setup Visual Builder Studio configurations of build job and run the job to deploy java REST application container to OKE.
 
-Estimated time: 40 minutes
+Estimated time: 45 minutes
 
 ### Objectives
 - Setup Visual Builder Studio Project and build job configuration
