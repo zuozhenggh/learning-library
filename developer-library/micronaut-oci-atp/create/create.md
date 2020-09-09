@@ -1,4 +1,4 @@
-# Setup for Local Development
+# Create the Micronaut Application
 
 ## Introduction
 
@@ -10,7 +10,7 @@ If at any point you run into trouble completing the steps, the full source code 
     git clone https://github.com/graemerocher/micronaut-hol-example.git
     </copy>
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
