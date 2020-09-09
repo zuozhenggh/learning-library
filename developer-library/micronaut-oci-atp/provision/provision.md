@@ -39,10 +39,10 @@ In this lab you will:
 
 6. Under "Required Configuration" add the SSH key that you created in Lab 1. You can do so by dragging and dropping the public key file (the file that ends with `.pub`) or by choosing `PASTE SSH KEYS` then copying and pasting the contents of the public key file.
 
-    Tip: On OS X running the following command from a terminal window will copy the contents of your public key into the clipboard which can then be pasted:
+    Tip: On Unix systems you can output the contents of the public key file to be copied using the following command:
 
     ```
-    cat ~/.ssh/id_oci.pub | pbcopy
+    cat ~/.ssh/id_rsa.pub
     ```
 
    ![Stack Configuration - Step 3](images/choose_ssh_key.png)
@@ -91,14 +91,14 @@ In this lab you will:
       * `public_ip` - This is the public IP address from the Oracle Cloud Infrastructure address pool
       * `region` - This is the region where the instance is running
 
-      You will need the values of these variables in the next step to configure your database. However, if you forget to take note of them you can retrieve them later by going to the Oracle Cloud Console and going to "Resource Manager" -> "Stacks" 
+      You will need the values of these variables in the next step to configure your database. However, if you forget to take note of them you can retrieve them later by going to the Oracle Cloud Console and going to "Resource Manager" -> "Stacks"
 
       ![Resource Manager Stacks Link](images/resource_manager_link.png)
 
       Click the name of your Stack under "Jobs"
       ![](images/click-stack-name.png)
 
-      Under "Jobs" select the "apply-" job that ran 
+      Under "Jobs" select the "apply-" job that ran
       ![](images/apply-job.png)
 
       Under "Resources" on the left you can navigate to "Outputs" where you will find the variables again.
