@@ -33,11 +33,11 @@ In this lab you will:
 
    ![Stack Configuration - Step 1](images/stack_info_1.png)
 
-5. You can optionally enter a name and description of the stack then then choose the compartment for the Stack, then click 'Next':
+5. You can optionally enter a name and description of the stack (leave the Compartment as the 'root' Compartment), then click 'Next':
 
-   ![Stack Configuration - Step 2](images/stack_info_2.png)
+   ![Stack Configuration - Step 2](images/stack_info_3.png)
 
-6. Under "Required Configuration" add the SSH key that you created in Lab 2. You can do so by dragging and dropping the public key file (the file that ends with `.pub`) or by choosing `PASTE SSH KEYS` then copying and pasting the contents of the public key file.
+6. Under "Required Configuration" add the SSH key that you created in Lab 1. You can do so by dragging and dropping the public key file (the file that ends with `.pub`) or by choosing `PASTE SSH KEYS` then copying and pasting the contents of the public key file.
 
     Tip: On OS X running the following command from a terminal window will copy the contents of your public key into the clipboard which can then be pasted:
 
@@ -57,7 +57,7 @@ In this lab you will:
 
 ##  **STEP 2**: Apply the Terraform Plan
 
-1. On the Stack Details page, click 'Terraform Actions' and select 'Plan'.
+1. On the Stack Details page, click 'Terraform Actions', select 'Plan' and confirm by clicking 'Plan'.
 
    ![Terraform Plan](images/stack_plan.png)
 
