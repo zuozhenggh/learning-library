@@ -1,6 +1,13 @@
 # Kubernetes REST Service Deployment
 
 ## Before You Begin
+
+### Introduction
+
+Thus far on our journey from a monolithic application to microservices, we have created our supporting infrastructure, populated our database, and packaged our Java application as a Docker container and deploy it to our Kubernetes Cluster using Visual Studio. Now we need to verify all REST services that it will be accessible to our customers, as well as be manageable, observable, and scalable -- a Kubernetes cluster.
+
+During this lab, you will verify REST Services deployed in Lab 300 via Kubernetes Dashboard.
+
 ### Objectives
 - Verify Kubernetes Cluster up and running.
 - Find Deployed REST Services URLs.
@@ -8,11 +15,10 @@
 - Test REST services.
 - Simulate Pod failure and REST service recovery.
 
-### Introduction
+### Prerequisites
+- Successful completion of Lab 2
 
-Thus far on our journey from a monolithic application to microservices, we have created our supporting infrastructure, populated our database, and packaged our Java application as a Docker container and deploy it to our Kubernetes Cluster using Visual Studio. Now we need to verify all REST services that it will be accessible to our customers, as well as be manageable, observable, and scalable -- a Kubernetes cluster.
-
-During this lab, you will verify REST Services deployed in Lab 300 via Kubernetes Dashboard.
+Estimated time: 20 minutes
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:FPN_ggM1f3c
 [](youtube:FPN_ggM1f3c)
