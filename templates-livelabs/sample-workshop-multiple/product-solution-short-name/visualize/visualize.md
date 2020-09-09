@@ -1,17 +1,13 @@
-<!-- Start by renaming this file with the same name as the lab folder, for example, provision-adb.md -->
-# Enter lab title here
+# Visualize Your Data
+
 ## Introduction
 
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: &lt;n&gt; minutes
 
 ### About Product/Technology
 Enter background information here..
-
-*For the Introduction, you may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
@@ -49,7 +45,7 @@ Step 1 opening paragraph.
 
 3. Ordered list item 3 with the same image but no link to the text description below.
 
-    ![Image alt text](images/sample1.png)
+    ![Image alt text](images/sample1.png " ")
 
 4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
 

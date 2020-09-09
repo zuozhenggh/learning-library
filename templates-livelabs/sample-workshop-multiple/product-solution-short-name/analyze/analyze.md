@@ -1,5 +1,5 @@
-<!-- Start by renaming this file with the same name as the lab folder, for example, provision-adb.md -->
-# Enter lab title here
+# Analyze Data
+
 ## Introduction
 
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
@@ -8,10 +8,6 @@ Estimated Lab Time: n minutes
 
 ### About Product/Technology
 Enter background information here..
-
-*For the Introduction, you may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
@@ -69,18 +65,18 @@ Step 1 opening paragraph.
   | 2 |Some text or a link | More text |
   | 3 | Some text or a link | More text |
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+2. You can also include bulleted lists - make sure to indent by at three spaces:
 
-    - List item 1
-    - List item 2
+      - List item 1
+      - List item 2
 
 3. Code examples
 
     ```
     Adding code examples
-  	Indentation is important for the code example to appear inside the step
+	Indentation is important for the code example to appear inside the step
     Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
     ```
 
 4. Code examples that include variables
