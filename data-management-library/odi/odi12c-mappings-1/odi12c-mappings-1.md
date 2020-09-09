@@ -1,4 +1,4 @@
-# Work with Mappings - 1
+# Work with Mappings - Part 1
 
 ## Introduction to Working with Mappings
 
