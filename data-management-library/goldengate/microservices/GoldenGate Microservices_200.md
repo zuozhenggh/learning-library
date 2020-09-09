@@ -9,7 +9,6 @@ This lab walks you through configuring ServiceManager, Atlanta and SanFran deplo
 -	Configure the initial ServiceManager and then the Atlanta and SanFran Deployments 
 -	Connect to the Admin Service through a web browser and confirm that the deployments succeeded and that the ServiceManager and core GoldenGate services are running.
 
-
 ## **STEP 1**: Open up a terminal window and create the ServiceManager and Source(Atlanta) Deployment
 
 In this step you will create the initial ServiceManager. ServiceManager is the bootstrap process that can be configured as a daemon process in Unix and windows so that it can start and stop on system startup and shutdown.   
@@ -23,11 +22,11 @@ It is also responsible for starting and stopping the other GoldenGate services a
 
 		cd /u01/gghome/bin
 
--   Then, run the **oggca.sh** script:
+3.  Then, run the **oggca.sh** script:
 
 		[oracle@@ggma bin] ./oggca.sh
 
--	The following screen will appear.   
+4. 	The following screen will appear.   
 
 ![](images/200/Lab002_1.jpg)
 

@@ -4,7 +4,7 @@
 
 In this lab we will run a Helidon microservice and connect the Micronaut application to it
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
