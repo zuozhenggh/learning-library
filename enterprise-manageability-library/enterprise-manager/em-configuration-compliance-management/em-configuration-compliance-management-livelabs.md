@@ -56,7 +56,7 @@ For simplicity keep the local and destination ports identical, unless already us
 
 3. Using the corresponding utility, open a connection to the remote destination by addressing your local computer.  
 
-   - EM13c OMS Console: Launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em)
+    - EM13c OMS Console: Launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em)
 
     ![](./images/em-ssh-forward-console.png " ")
 
@@ -112,7 +112,7 @@ Applications and local/remote ports pair:
 
 8. Using the corresponding utility, open a connection to the remote destination by addressing your local computer.  
 
-   - EM13c OMS Console: Launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em)
+    - EM13c OMS Console: Launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em)
 
     ![](./images/em-ssh-forward-console.png " ")
 
