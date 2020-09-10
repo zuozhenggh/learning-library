@@ -41,7 +41,9 @@ Applications and local/remote ports pair:
 For simplicity keep the local and destination ports identical, unless already used or unavailable on your local computer
 
   ````
-  ssh -i ~/.ssh/<ssh-private-keyname> -L <local-port>:localhost:<remote-port> opc@<destination public IP address>
+  ssh -i ~/.ssh/<ssh-private-file> -L <local-port>:localhost:<remote-port> opc@<destination public IP address>
+  ````
+  ````
   e.g
   <copy>ssh -i .ssh/id_test_mkplc_rsa  -L 7803:localhost:7803 opc@188.111.88.222</copy>
   ````
