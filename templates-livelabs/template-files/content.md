@@ -26,7 +26,7 @@ In this lab, you will:
 
 *Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
-* Item no 1
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
 *This is the "fold" - below items are collapsed by default*
@@ -101,7 +101,7 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
+* **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
 
