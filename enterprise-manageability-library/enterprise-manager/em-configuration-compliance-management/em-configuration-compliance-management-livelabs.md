@@ -39,8 +39,6 @@ Applications and local/remote ports pair:
 1.  Open up a terminal
 2.  As the opc user, establish an SSH session with port forwarding option between the local port and the destination/remote port.
 
-For simplicity keep the local and destination ports identical, unless already used or unavailable on your local computer
-
   ````
   ssh -i ~/.ssh/<ssh-private-file> -L <local-port>:localhost:<remote-port> opc@<destination public IP address>
   ````
@@ -50,12 +48,13 @@ For simplicity keep the local and destination ports identical, unless already us
   <copy>ssh -i .ssh/id_test_mkplc_rsa  -L 7803:localhost:7803 opc@188.111.88.222</copy>
   ````
 
-    ![](./images/em-ssh-forward-term.png " ")
-
 ***Note:***
 
+    - For simplicity keep the local and destination ports identical, unless already used or unavailable on your local computer
     - This SSH session must remain alive throughout your connectivity to above remote port.
     - Steps (1)-(2) must be performed for each remote port needed
+
+    ![](./images/em-ssh-forward-term.png " ")
 
 3. Using the corresponding utility, open a connection to the remote destination by addressing your local computer.  
 
@@ -112,6 +111,7 @@ Applications and local/remote ports pair:
 
 ***Note:***
 
+    - For simplicity keep the local and destination ports identical, unless already used or unavailable on your local computer
     - This SSH session must remain alive throughout your connectivity to above remote port.
     - Steps (1)-(7) must be performed for each remote port needed
 
