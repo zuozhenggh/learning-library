@@ -1,4 +1,4 @@
-# Provisioning Autonomous Database (ADW and ATP)
+# Provision ADB and link to ODI
 
 ## Introduction
 
@@ -6,13 +6,13 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 *Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
 
+Estimated Lab Time:  10 minutes
+
 ### Objectives
 
--   Learn how to provision a new Autonomous Data Warehouse
+* Learn how to provision a new Autonomous Data Warehouse
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-### Required Artifacts
-
-The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
 ### Prerequisites
 
@@ -162,7 +162,7 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Troy Anthony, July 2020
+- **Last Updated By/Date** - Jayant Mahto, July 2020
 - **Contributors** - Jeffrey Malcolm Jr, Arabella Yao, June 2020
 
 ## See an issue?

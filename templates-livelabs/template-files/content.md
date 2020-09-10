@@ -101,7 +101,7 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
+* **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
 
