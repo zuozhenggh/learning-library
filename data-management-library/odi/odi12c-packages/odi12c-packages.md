@@ -1,6 +1,6 @@
-# Oracle Data Integrator 12c: Working with Packages
+# Working with Packages - Part 1
 
-## Working with Packages
+## Introduction
 
 This chapter describes how to work with Packages in Oracle Data Integrator. The *Load Sales Administration* package is used as an example. An introduction to Packages and automating data integration between applications is provided.
 

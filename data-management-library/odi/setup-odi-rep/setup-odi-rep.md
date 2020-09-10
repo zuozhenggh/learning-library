@@ -1,7 +1,11 @@
-# Setup - Create an ODI Instance from Marketplace and configure ODI Studio - FreeTier or Oracle Cloud #
+# Create an ODI Instance
 
 ## Introduction
 This lab will show you how to create an ODI instance from a Marketplace image and configure ODI Studio
+
+### Objecives
+* Create an ODI Instance from Marketplace
+* Configure ODI Studio
 
 ## **Step 1:** Create an ODI instance from OCI Marketplace
 

@@ -18,11 +18,11 @@
    
         },
         {
-            "title": "Lab 2: Provision ADB and link to ODI",
+            "title": "Lab 2: Provision ADB and Link to ODI",
              "filename": "../../odi-adb-provision/odi-adb-provision.md"
         },
         {
-            "title": "Lab 3: Create an ODI instance",
+            "title": "Lab 3: Create an ODI Instance",
             "filename": "../../setup-odi-rep/setup-odi-rep.md"
         },
         {
@@ -30,7 +30,7 @@
              "filename": "../../odi12c-lab/odi12c-lab.md"
         },
         {
-            "title": "Lab 5: Work with Mappings",
+            "title": "Lab 5: Work with Mappings - 1",
             "filename": "../../odi12c-mappings-1/odi12c-mappings-1.md"
         },
         {

@@ -1,4 +1,4 @@
-# Getting Started with Oracle Data Integrator 12c
+# Getting Started
 
 ## Understanding the Environment  
 
