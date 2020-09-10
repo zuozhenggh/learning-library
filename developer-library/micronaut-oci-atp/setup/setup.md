@@ -29,7 +29,11 @@ In this lab you will:
     ./setup.sh
     </copy>
     ```
-3. Enter the values that you copied from the Terraform output in the previous lab when prompted. The script will produce several snippets of output to be used to build, run and deploy.
+3. Enter the value of `script_input` that you copied from the Terraform output in the previous lab when prompted. 
+
+![Setup Script](images/setup_input.png)
+
+The script will produce several snippets of output to be used to build, run and deploy.
 
 ## **STEP 2**: Download and Configure Wallet Locally
 
@@ -41,7 +45,9 @@ To connect locally you need to download and configure the ATP Wallet locally.
 
     ![ATP menu](images/atp-menu.png)
 
-2. Make sure you are in the `mn-oci-hol` compartment:
+2. Make sure you are in the `mn-oci-hol` compartment: 
+
+**Note: if you do not see the `mn-oci-hol` compartment in the dropdown, please refresh the page and try again.**
 
     ![Choose compartment](images/choose-compartment.png)
 

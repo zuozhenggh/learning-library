@@ -23,7 +23,7 @@ In this lab you will:
     ```
     # run on local machine to push to VM
     <copy>
-    scp -i ~/.ssh/id_rsa.pub -r /tmp/wallet opc@[VM IP Address]:/tmp/wallet
+    scp -i ~/.ssh/id_rsa -r /tmp/wallet opc@[VM IP Address]:/tmp/wallet
     </copy>
     ```
 
@@ -43,7 +43,9 @@ In this lab you will:
     ```
     # run on local machine to push to VM
     <copy>
-    scp -i ~/.ssh/id_rsa.pub -r build/libs/example-atp-0.1-all.jar opc@[VM IP Address]:/app/application.jar
+    ssh -i ~/.ssh/id_rsa opc@$[VM IP Address] sudo mkdir /app
+    ssh -i ~/.ssh/id_rsa opc@$[VM IP Address] sudo chown opc /app
+    scp -i ~/.ssh/id_rsa -r build/libs/example-atp-0.1-all.jar opc@[VM IP Address]:/app/application.jar
     </copy>
     ```
 
@@ -54,7 +56,7 @@ In this lab you will:
     ```
     # run on local machine to push to VM, from the directory that contains downloaded native image
     <copy>
-    scp -i ~/.ssh/id_rsa.pub ./helidon-mp-service opc@[VM IP Address]:/app/helidon-mp-service
+    scp -i ~/.ssh/id_rsa ./helidon-mp-service opc@[VM IP Address]:/app/helidon-mp-service
     </copy>
     ```
 
