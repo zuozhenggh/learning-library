@@ -29,9 +29,9 @@ The objective of this workshop is to highlight Oracle Enterprise Manager Cloud C
 ***Note:*** As per security policies all external connections to this workshop instance are to be done over SSH. As a result, proceed as indicated in *Steps 0 (A/B)* to establish an SSH tunnel for each remote port required for this lab.
 
 ## **Step 0 (A):** Running your Workload on MacOS or Windows with Unix/Linux emulators
-The following steps are meant for anyone running this workshop on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, MobaXterm, Exceed, and other similar utilities. If you are on Windows and use *PuTTY* utility as your SSH Client, please skip to the next step.
+The following steps are meant for anyone running this workshop on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, MobaXterm, Exceed, and other similar utilities. If you are on Windows and use *PuTTY* utility as your SSH client, please skip to the next step.
 
-### Application Access
+### **Application Access**
 Applications and local/remote ports pair:
 
     - EM13c OMS Console, (7803/7803)
@@ -65,12 +65,12 @@ For simplicity keep the local and destination ports identical, unless already us
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
+Now you are ready to start the run the workshop. Skip the next step and proceed to *Step 1*
+
 ## **Step 0 (B):** Running your Workload on Windows with PuTTY
-As per security policies all external connections to this workshop instance are to be done over SSH. As a result, proceed as indicated below to establish an SSH tunnel for each remote port required for this lab.
+The following steps are meant for anyone running this workshop on Windows and use *PuTTY* utility as your SSH Client. If you are on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, MobaXterm, Exceed, and other similar utilities, please skip and go back to the prior step.
 
-The following steps are meant for anyone running this workshop on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, Mobaexterm, Exceed, and other similar utilities. If you are on Windows and use *PuTTY* utility as your SSH Client, please skip to the next step.
-
-### Application Access
+### **Application Access**
 Applications and local/remote ports pair:
 
     - EM13c OMS Console, (7803/7803)
@@ -80,13 +80,13 @@ Applications and local/remote ports pair:
     - IP address: _Your service instance’s public IP address_
     - Port: _22_
     - Connection type: _SSH_
-    - Saved Sessions: \<Friendly Name to save your config\>. e.g _SSH-Port-Forwarding-remote-port_
+    - Saved Sessions: "_Friendly Name to save your config_". e.g _SSH-Port-Forwarding-remote-port_
 
     ![](./images/em-ssh-forward-putty-1.png " ")
 
 2. Navigate to "***Connection >> SSH >> Auth >> Tunnels***" and fill in the details as shown below and click **Add**
     - Source Port: Your application port. e.g _7803_
-    - Destination: localhost:\<remote application port\> e.g. _localhost:7803_
+    - Destination: "_localhost:remote application port_" e.g. _localhost:7803_
 
     ![](./images/em-ssh-forward-putty-2.png " ")
 
@@ -122,6 +122,8 @@ Applications and local/remote ports pair:
     ![](./images/em-ssh-forward-console.png " ")
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
+
+Now you are ready to start the run the workshop. Proceed to *Step 1*
 
 ## **Step 1:** Inventory & Usage Details
 
