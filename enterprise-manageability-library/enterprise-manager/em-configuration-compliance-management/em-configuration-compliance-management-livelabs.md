@@ -26,9 +26,9 @@ The objective of this workshop is to highlight Oracle Enterprise Manager Cloud C
 | 3                                                         | Database configuration drift management                                 | 20 minutes   | Compare latest or saved target configuration to one or more targets.                                                                                                                       | Monitor databases in your organization for any configuration drift, remediate to align with reference configuration |
 | 4                                                         | Database and host security compliance using custom compliance framework | 20 minutes   | Aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets                                                                                      | Monitor security compliance for heterogenous targets from one customized dashboard.                                 |
 
-## **Step 0 (A):** Running your Workload on MacOS or Windows with Unix/Linux emulators
-As per security policies all external connections to this workshop instance are to be done over SSH. As a result, proceed as indicated below to establish an SSH tunnel for each remote port required for this lab.
+***Note:*** As per security policies all external connections to this workshop instance are to be done over SSH. As a result, proceed as indicated in *Steps 0 (A/B)* to establish an SSH tunnel for each remote port required for this lab.
 
+## **Step 0 (A):** Running your Workload on MacOS or Windows with Unix/Linux emulators
 The following steps are meant for anyone running this workshop on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, MobaXterm, Exceed, and other similar utilities. If you are on Windows and use *PuTTY* utility as your SSH Client, please skip to the next step.
 
 ### Application Access
@@ -36,12 +36,12 @@ Applications and local/remote ports pair:
     - EM13c OMS Console, (7803/7803)
 
 1.  Open up a terminal
-2.  As the opc user, establish an SSH session with port forwarding option between a local port and the destination port.
+2.  As the opc user, establish an SSH session with port forwarding option between the local port and the destination/remote port.
 
 For simplicity keep the local and destination ports identical, unless already used or unavailable on your local computer
 
   ````
-  ssh -i ~/.ssh/<ssh-private-keyname> -L <local-port>:localhost:<Remote-Port> opc@<Destination Public IP Address>
+  ssh -i ~/.ssh/<ssh-private-keyname> -L <local-port>:localhost:<remote-port> opc@<destination public IP address>
   e.g
   <copy>ssh -i .ssh/id_test_mkplc_rsa  -L 7803:localhost:7803 opc@188.111.88.222</copy>
   ````
@@ -52,13 +52,15 @@ For simplicity keep the local and destination ports identical, unless already us
     - This SSH session must remain alive throughout your connectivity to above remote port.
     - Steps (1)-(2) must be performed for each remote port needed
 
-3. Using the corresponding utility, open a connection to the remote destination by addressing your local computer. e.g. Launch your browser and open a connection to your OMS console  using the URL [https://localhost:7803/em](https://localhost:7803/em)
+3. Using the corresponding utility, open a connection to the remote destination by addressing your local computer.  
+
+   - EM13c OMS Console: Launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em)
 
     ![](./images/em-ssh-forward-console.png " ")
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-## **Step 0 (B):** Running your Workload Windows with PuTTY
+## **Step 0 (B):** Running your Workload on Windows with PuTTY
 As per security policies all external connections to this workshop instance are to be done over SSH. As a result, proceed as indicated below to establish an SSH tunnel for each remote port required for this lab.
 
 The following steps are meant for anyone running this workshop on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, Mobaexterm, Exceed, and other similar utilities. If you are on Windows and use *PuTTY* utility as your SSH Client, please skip to the next step.
@@ -106,12 +108,13 @@ Applications and local/remote ports pair:
     - This SSH session must remain alive throughout your connectivity to above remote port.
     - Steps (1)-(7) must be performed for each remote port needed
 
-8. Using the corresponding utility, open a connection to the remote destination by addressing your local computer. e.g. Launch your browser and open a connection to your OMS console  using the URL [https://localhost:7803/em](https://localhost:7803/em)
+8. Using the corresponding utility, open a connection to the remote destination by addressing your local computer.  
+
+   - EM13c OMS Console: Launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em)
 
     ![](./images/em-ssh-forward-console.png " ")
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
-
 
 ## **Step 1:** Inventory & Usage Details
 
