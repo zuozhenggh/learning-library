@@ -10,11 +10,11 @@ One of **the issue in the current application is that credit card payments are o
 
 The business has indicated a new credit card fraud detection system must be put in place before year’s end to thwart credit card abuses. A consistent fraud mechanism will require the credit validation process to be consolidated across all order entry systems.
 
-The solution will look like the following from an architectural perspective:
+The validate payment solution will look as the following from an architectural perspective:
 
 ![](images/2/Paymentvalidation.png)
 
-## **STEP 1**: Build the payment validation process flow
+## **Construct Payment Validation process flow**
 
 The validation process are:
 + The payment information is retrieved from the database, using the credit card number quoted in the order message as the key. If there is no data available with this credit card number, payment is denied.
@@ -25,51 +25,58 @@ The validation process are:
 
 **Validation Payment, development Steps:**
 
-1.  Create a new composite application e2e-1201-composites and SOA project named ValidatePayment
-2.  Use the new SOA Project template to create the ValidatePayment composite.
+## **STEP 1**:  Create a new SOA composite application 
 
-    ![](images/2/validate-payment-composite.png)
+Let's name the application e2e-1201-composites and the SOA project in JDeveloper called ValidatePayment
+
+## **STEP 2**:  Use a new template to create the ValidatePayment composite.
+
+![](images/2/validate-payment-composite.png)
 
 The SOA templates come in three flavors:
 + Project templates: They include a complete project with all components and resources used and will be used when creating a new project in your SOA application.
 + Component templates: A component with all references resources and components. For example, a BPEL process that calls a business rule or adapter can be packaged as component template.
 + Custom activity templates: A scope in a BPEL process, which may include an invoke/receive from/to a partnerlink, can be packaged as a custom BPEL activity. For example, an assign activity and a call to an adapter. 
   
-3.  Review the various components of the composite.
+## **STEP 3**:  Review the various components of the composite.
 
-    ![](images/2/composite-details.png)
+![](images/2/composite-details.png)
 
     
-4.  Add a database connection to Java DB (it is an embedded database inside JDeveloper 12c. The embedded weblogic requires to be started prior to establishing connection to the embedded database) 
+## **STEP 4**  Add a database connection to Java DB 
 
-    ![](images/2/db-connectivity.png)
+The Java DB is an embedded database inside JDeveloper 12c. The embedded weblogic requires to be started prior to establishing connection to the embedded database) 
+
+![](images/2/db-connectivity.png)
 
 
-5. Import a custom activity template with an XSLT map to determine the payment status (Authorized or Denied), based on the daily limit and the total amount of order.
+## **STEP 5**: Import a custom activity template with an XSLT map 
 
-    ![](images/2/custom-template.png)
+This activity is to determine the payment status (Authorized or Denied), based on the daily limit and the total amount of order.
 
-6.  Add a composite sensor PaymentStatus for the payment status (this is optional step)
+![](images/2/custom-template.png)
 
-    ![](images/2/sensor.png)
+## **STEP 6**: Add a composite sensor PaymentStatus for the payment status
 
-7.  Deploy and test the project. 
+![](images/2/sensor.png)
 
-    ![](images/2/deployment.png)
+## **STEP 7**:  Deploy and test the project. 
 
-8. Optional: Use the debugging tool within JDeveloper to explore.
+![](images/2/deployment.png)
+
+## **STEP 8**: Optional: Use the debugging tool within JDeveloper to explore.
    In SOA Suite 12c, there is facility to set breakpoints in the composite editor, BPEL process. You’re able to stop at breakpoints, look at the data, step into, step out and so on. In a BPEL process, you’re also able to change the value of a variable while debugging.
 
 
 ### Details: ###
-For details of how to instructions, please go to Chapter 2, from <ins>**page 11 to 53**</ins> in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf).
+For more details of how to, please refer to Chapter 2, from <ins>**page 11 to 53**</ins> in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf).
 
 The lab tutorial pdf document can also be found on the desktop of your OCI Linux instance.
 
 ![](images/2/soa-tutorialpdf.png)
 
 
-## **STEP 2**: Register the composite on SOA Service Bus
+## **Register the validate payment composite on SOA Service Bus**
 
 In previous section, you have completed the validatePayment process composite, you will now register this process composite on Service Bus.
 
@@ -78,32 +85,36 @@ Service Bus will protect consumers of the validatePayment composite from routine
 
 **Development Steps:**
 
-1.  Create a new Service Bus application and new project **ValidatePayment.**. 
+## **STEP 10**:  Create a new Service Bus application and new project **ValidatePayment.**. 
 
-    ![](images/2/ServiceBus-JDeveloper.png)
+![](images/2/ServiceBus-JDeveloper.png)
 
 [//]: # (click **Create Application**. )
 [//]: # (images/2/continue-to-create-application-wizard.png)
 
 [//]: # (Remove Steps 2 and 3)
-2. Create folders and import artifacts, WSDL and XSD resource click **Create App**.
+## **STEP 11**: Create folders and import artifacts, WSDL and XSD resource click **Create App**.
 
-    ![](images/2/ImportWSDL.png)
+![](images/2/ImportWSDL.png)
     
-3. Configure a business service for the ValidatePayment composite and review properties.
+## **STEP 12**: Configure a business service for the ValidatePayment composite and review properties.
     
-    ![](images/2/CreateBusinessService.png) 
+![](images/2/CreateBusinessService.png) 
 
-4. Configure proxy and pipeline and wire to the business service, starting page 71 on the tutorial document.
+## **STEP 13**: Configure proxy and pipeline and wire to the business service. 
+
+Please review starting page 71 on the tutorial document.
 
    ![](images/2/ConfigureProxy-and-Pipeline.png)
 
-5. Test and Debug the end-to-end application.
+## **STEP 14**: Test and Debug the end-to-end application.
 
+Review
     ![](images/2/Deploy-and-Test.png)
 
-6.   Test Console
-   
+## **STEP 15**:   Test Console
+
+ Review  
     ![](images/2/ServiceBusProxyTesting.png)
 
 ### Details: ###
@@ -120,7 +131,7 @@ You may proceed to the next lab.
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - <Name, Title, SOA Product Development>
 * **Adapted for Cloud by** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
