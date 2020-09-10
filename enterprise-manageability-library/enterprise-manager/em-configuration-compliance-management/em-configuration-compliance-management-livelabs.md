@@ -26,22 +26,26 @@ The objective of this workshop is to highlight Oracle Enterprise Manager Cloud C
 | 3                                                         | Database configuration drift management                                 | 20 minutes   | Compare latest or saved target configuration to one or more targets.                                                                                                                       | Monitor databases in your organization for any configuration drift, remediate to align with reference configuration |
 | 4                                                         | Database and host security compliance using custom compliance framework | 20 minutes   | Aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets                                                                                      | Monitor security compliance for heterogenous targets from one customized dashboard.                                 |
 
-## **Step 0:** Running your Workload
+## **Step 0 (A):** Running your Workload on MacOS or Windows with Unix/Linux emulators
+As per security policies all external connections to this workshop instance are to be done over SSH. As a result, proceed as indicated below to establish an SSH tunnel for each remote port required for this lab.
 
-### Login to OMS Console
-As per security policies all external connections to this workshop instance are to be done over SSH. As a result, proceed as indicated below to login to your Enterprise Manager VM instance using SSH port forwarding over its Public IP and the super-user credentials as indicated in the pre-Prerequisites section
+The following steps are meant for anyone running this workshop on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, MobaXterm, Exceed, and other similar utilities. If you are on Windows and use *PuTTY* utility as your SSH Client, please skip to the next step.
 
-#### MAC or Windows CYGWIN Emulator
-1.  Open up a terminal (MAC) or cygwin emulator
-2.  As the opc user, establish an SSH session with port forwarding option between a local port and the destination port. e.g. OMS console port.
+### Application Access
+Applications and local/remote ports pair:
+    - EM13c OMS Console, (7803/7803)
+
+1.  Open up a terminal
+2.  As the opc user, establish an SSH session with port forwarding option between a local port and the destination port.
 
 For simplicity keep the local and destination ports identical, unless already used or unavailable on your local computer
 
-    ````
-    ssh -i ~/.ssh/<ssh-private-keyname> -L <local-port>:localhost:<Remote-Port> opc@<Destination Public IP Address>
-    e.g
-    <copy>ssh -i .ssh/id_test_mkplc_rsa  -L 7803:localhost:7803 opc@188.111.88.222</copy>
-    ````
+  ````
+  ssh -i ~/.ssh/<ssh-private-keyname> -L <local-port>:localhost:<Remote-Port> opc@<Destination Public IP Address>
+  e.g
+  <copy>ssh -i .ssh/id_test_mkplc_rsa  -L 7803:localhost:7803 opc@188.111.88.222</copy>
+  ````
+
     ![](./images/em-ssh-forward-term.png " ")
 
 ***Note:***
@@ -54,7 +58,15 @@ For simplicity keep the local and destination ports identical, unless already us
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-#### Using Putty on Windows
+## **Step 0 (B):** Running your Workload Windows with PuTTY
+As per security policies all external connections to this workshop instance are to be done over SSH. As a result, proceed as indicated below to establish an SSH tunnel for each remote port required for this lab.
+
+The following steps are meant for anyone running this workshop on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, Mobaexterm, Exceed, and other similar utilities. If you are on Windows and use *PuTTY* utility as your SSH Client, please skip to the next step.
+
+### Application Access
+Applications and local/remote ports pair:
+    - EM13c OMS Console, (7803/7803)
+
 1. Launch Putty and Select or enter the following information:
     - Category: _Session_
     - IP address: _Your service instance’s public IP address_
