@@ -19,9 +19,9 @@ This lab will show you how to create an ODI instance from a Marketplace image an
 Make sure you have chosen the correct **COMPARTMENT**
     ![](./images/odi_config_1.png " ")
     ![](./images/odi_config_2.png " ")    
-Select the latest free version (*not BYOL or Web versions*) from the list. If in doubt then check with your instructor for which version to use for this workshop.
+    Select the latest free version (*not BYOL or Web versions*) from the list. If in doubt then check with your instructor for which version to use for this workshop.
 
-Accept the Terms&Conditions and click **Launch Stack**
+    Accept the Terms&Conditions and click **Launch Stack**
     ![](./images/odi_config_3.png " ")
 
 4. Add your initials to the **Name** field so you can easily identify your Instance. Click **Next**
@@ -29,24 +29,24 @@ Accept the Terms&Conditions and click **Launch Stack**
 
 5. ***IMPORTANT: If your administrator has created a network then use that network rather than creating a new one.***
 
-Select *Create an embedded ODI repository*. Embedded repository uses MySQL DB included in the compute instance. It is much simpler and good enough for the workshop. In practice an external database (autonomous database or DBCS) will be used for the ODI repository. 
+    Select *Create an embedded ODI repository*. Embedded repository uses MySQL DB included in the compute instance. It is much simpler and good enough for the workshop. In practice an external database (autonomous database or DBCS) will be used for the ODI repository. 
 
-Add your initials to the **Resource Display Name Prefix** field so that you can identify your compute instance later.
+    Add your initials to the **Resource Display Name Prefix** field so that you can identify your compute instance later.
     ![](./images/odi_config_5_1.jpg " ")
 
-Scroll down and enter *Network Configuration* info. (*Check with your administrator/instructor for which network to use*)
+    Scroll down and enter *Network Configuration* info. (*Check with your administrator/instructor for which network to use*)
     ![](./images/odi_config_5_2.jpg " ")
 
 6. Scroll down to **ODI Instance Settings** and choose the
-  * **VM Shape** (*Check with your administrator/instructor for which shape to use*),
-  * **SSH Key**: Paste the Public Key you created earlier (it should be only ONE line)
-  * **Availability Domain**: (*Check with your administrator/instructor for which availibility domain to use*)
-  * **VNC Password**: create and remember a password to access your VNC environment (This password will not be accessible again and is required to access the VNC from which to run ODI Studio)
+    * **VM Shape** (*Check with your administrator/instructor for which shape to use*),
+    * **SSH Key**: Paste the Public Key you created earlier (it should be only ONE line)
+    * **Availability Domain**: (*Check with your administrator/instructor for which availibility domain to use*)
+    * **VNC Password**: create and remember a password to access your VNC environment (This password will not be accessible again and is required to access the VNC from which to run ODI Studio)
     ![](./images/odi_config_6a.png " ")
 
 7. Click **NEXT** and then click **CREATE** in the next page
 
-8. The Stack will get created. Scroll down for the JOB logs:
+8. The Stack will get created and a job should have started to create other resources. If you don't see any job created automatically then go to "Terraform Action" and click "Apply" to start the job. Scroll down for the JOB logs:
     ![](./images/odi_instance_create.png " ")
 
     Your instance will have your initials as a Prefix (provided you added them as instructed)
@@ -160,7 +160,7 @@ The import will take approximately 5 minutes
 
 You will see connections for all available ADW databases. These could be used in a data integration project. For this exercise we will focus on the **DEMO\_SRC\_DB** and **DEMO\_TRG\_DB** which you have imported from the training master repository.
 
-2. Open **DEMO\_SRC\_DB**. You will get an **ERROR** stating *wallet can not be found*. This occurs because the wallet file we are using is stored in a different location to that expected.
+2. Open **DEMO\_SRC\_DB** and test connection. You will get an **ERROR** stating *wallet can not be found*. This occurs because the wallet file we are using is either stored in a different location to that expected or the wallet file is not yet downloaded.
 
 3. Click **OK** to close the error window
 
@@ -209,7 +209,7 @@ The import will take approximately 5 minutes
 
 ## **Step 5:** Test the environment
 
-1. Expand **Model** and right-click on **SRC\_AGE\_GROUP** and select **View Date**
+1. Expand **Model** and right-click on **SRC\_AGE\_GROUP** and select **View Data**
 
     ![](./images/odi_studio_12.png " ")   
 
