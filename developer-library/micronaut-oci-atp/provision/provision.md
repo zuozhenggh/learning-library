@@ -33,16 +33,16 @@ In this lab you will:
 
    ![Stack Configuration - Step 1](images/stack_info_1.png)
 
-5. You can optionally enter a name and description of the stack (leave the Compartment as the 'root' Compartment), then click 'Next':
+5. You can optionally enter a name and description of the stack then then choose the compartment for the Stack, then click 'Next':
 
-   ![Stack Configuration - Step 2](images/stack_info_3.png)
+   ![Stack Configuration - Step 2](images/stack_info_2.png)
 
 6. Under "Required Configuration" add the SSH key that you created in Lab 1. You can do so by dragging and dropping the public key file (the file that ends with `.pub`) or by choosing `PASTE SSH KEYS` then copying and pasting the contents of the public key file.
 
-    Tip: On OS X running the following command from a terminal window will copy the contents of your public key into the clipboard which can then be pasted:
+    Tip: On Unix systems you can output the contents of the public key file to be copied using the following command:
 
     ```
-    cat ~/.ssh/id_oci.pub | pbcopy
+    cat ~/.ssh/id_rsa.pub
     ```
 
    ![Stack Configuration - Step 3](images/choose_ssh_key.png)
@@ -57,7 +57,7 @@ In this lab you will:
 
 ##  **STEP 2**: Apply the Terraform Plan
 
-1. On the Stack Details page, click 'Terraform Actions', select 'Plan' and confirm by clicking 'Plan'.
+1. On the Stack Details page, click 'Terraform Actions' and select 'Plan'.
 
    ![Terraform Plan](images/stack_plan.png)
 
@@ -93,6 +93,17 @@ In this lab you will:
       * `tns_name` - This is the TNS name of the Autonomous Database instance
 
       You will need the value of `script_input` in the next step to configure your database. If you need any of the individual values in future steps, you can retrieve them later by going to the Oracle Cloud Console and going to "Resource Manager" -> "Stacks" then click the name of your Stack then under "Jobs" select the "apply-" job that ran and under "Resources" on the left you can navigate to "Outputs" where you will find the variables again.
+
+      ![Resource Manager Stacks Link](images/resource_manager_link.png)
+
+      Click the name of your Stack under "Jobs"
+      ![](images/click-stack-name.png)
+
+      Under "Jobs" select the "apply-" job that ran
+      ![](images/apply-job.png)
+
+      Under "Resources" on the left you can navigate to "Outputs" where you will find the variables again.
+      ![](images/outputs.png)
 
 You may now *proceed to the next lab*.
 
