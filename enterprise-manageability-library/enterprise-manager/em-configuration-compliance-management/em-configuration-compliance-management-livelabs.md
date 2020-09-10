@@ -33,6 +33,7 @@ The following steps are meant for anyone running this workshop on MacOS, Unix/Li
 
 ### Application Access
 Applications and local/remote ports pair:
+
     - EM13c OMS Console, (7803/7803)
 
 1.  Open up a terminal
@@ -43,6 +44,7 @@ For simplicity keep the local and destination ports identical, unless already us
   ````
   ssh -i ~/.ssh/<ssh-private-file> -L <local-port>:localhost:<remote-port> opc@<destination public IP address>
   ````
+
   ````
   e.g
   <copy>ssh -i .ssh/id_test_mkplc_rsa  -L 7803:localhost:7803 opc@188.111.88.222</copy>
@@ -51,6 +53,7 @@ For simplicity keep the local and destination ports identical, unless already us
     ![](./images/em-ssh-forward-term.png " ")
 
 ***Note:***
+
     - This SSH session must remain alive throughout your connectivity to above remote port.
     - Steps (1)-(2) must be performed for each remote port needed
 
@@ -69,6 +72,7 @@ The following steps are meant for anyone running this workshop on MacOS, Unix/Li
 
 ### Application Access
 Applications and local/remote ports pair:
+
     - EM13c OMS Console, (7803/7803)
 
 1. Launch Putty and Select or enter the following information:
@@ -107,6 +111,7 @@ Applications and local/remote ports pair:
     ![](./images/em-ssh-forward-putty-7.png " ")
 
 ***Note:***
+
     - This SSH session must remain alive throughout your connectivity to above remote port.
     - Steps (1)-(7) must be performed for each remote port needed
 
