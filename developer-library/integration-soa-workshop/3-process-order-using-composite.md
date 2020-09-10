@@ -14,7 +14,7 @@ To build new order processing composite application, you will use templates. Thi
    - Configure Pipeline and Proxy using Pipeline template.
    - Test your application end-to-end.
 
-You will leverage the validatePayment service you built in Chapter 2.
+You will leverage the validatePayment service you built in previous module.
 At the end of this module, your solution will look similar to the following process flow diagram:
 
 ![](images/3/Module3-SOA.png)
@@ -27,9 +27,9 @@ You will now create another SOA application that will accept new purchase orders
 ## **STEP 2**: Add the payment validation service built previously 
 ## **STEP 3**: Update the order status in the database based on the outcome of the payment validation
 ## **STEP 4**: Use an inline BPEL subprocess 
-The order status update will be converted to a BPEL subprocess to make it easily re-usable. Once completed, your composite will look like this:
+The order status update will be converted to a BPEL subprocess to make it easily re-usable. Once completed, your composite will show as the following:
 
-    ![](images/3/ProcessOrderComposite.png)
+![](images/3/ProcessOrderComposite.png)
 
 ## **STEP 5**: Add an Order Number sensor to the Order Process composite app
 
