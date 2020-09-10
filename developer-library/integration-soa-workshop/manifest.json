@@ -13,12 +13,12 @@
             "filename": "./1-introduction-to-soa.md"
         },
         {
-            "title": "Build SOA composite to validate payment",
+            "title": "Develop SOA composite for Validating payment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "./2-build-composite-to-validate-payment.md"
         },
         {
-            "title": "Processing order using SOA composite",
+            "title": "Develop Process Order in SOA composite",
             "filename": "./3-process-order-using-composite.md"
         },
         {

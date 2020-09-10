@@ -20,27 +20,37 @@ At the end of this module, your solution will look similar to the following proc
 ![](images/3/Module3-SOA.png)
 
 
-## **STEP 1**: Build process order Composite
+## **Design Process Order composite**
 You will now create another SOA application that will accept new purchase orders, approve them and forward them to the fulfillment system. You will use a project template 
 
-1. To implement the basic order processing scenario
-2. Add a call to the payment validation service built in chapter 2 and 
-3. Update the order status in the database based on the outcome of the payment validation
-4. The order status update will be converted to a BPEL subprocess to make it easily re-usable. Once completed, your composite will look like this:
+## **STEP 1**: Create a new project Process Order by importing a project template
+## **STEP 2**: Add the payment validation service built previously 
+## **STEP 3**: Update the order status in the database based on the outcome of the payment validation
+## **STEP 4**: Use an inline BPEL subprocess 
+The order status update will be converted to a BPEL subprocess to make it easily re-usable. Once completed, your composite will look like this:
 
     ![](images/3/ProcessOrderComposite.png)
+
+## **STEP 5**: Add an Order Number sensor to the Order Process composite app
 
 ### Details: ###
 To complete part 1, please start <ins>**Chapter 3, page 80 to 116** </ins> of the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf) 
 
-## **STEP 2**: Register process order on Service Bus 
+## **Register Process Order app on Service Bus** 
 As you have completed and tested the Process Order composite, you will register it on Service Bus to make it available for external consumers. 
 1. Service Bus will allow the Process Order composite to be made available over different protocols and data formats without disruption to the core business logic in the composite
 2. Service Bus will also validate the Order data and report for auditing. For now, you will just create an HTTP / SOAP Proxy and Pipeline for Process Order. 
 3. You can also add a File Proxy and Pipeline to allow orders to be processed from existing systems.
 
-
     ![](images/3/ProxyService.png)
+
+## **STEP 6**: Open the existing service bus application and import the template resource
+
+## **STEP 7**: Register Process Order composite as a business service in the Service Bus
+
+## **STEP 8**: Create a service bus pipeline with proxy using a pipeline template
+
+## **STEP 9**: Test end-to-end process - Proxy service, route to Business service
 
 ### Details: ###
 To complete part 2, please review on <ins> **chapter 3, page 117 to 137** </ins> of the [SOAsuite tutorial document](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf)
