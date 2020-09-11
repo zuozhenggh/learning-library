@@ -8,7 +8,7 @@ The objective of this lab is to become familiar with on-premise and Oracle Cloud
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
     - Lab: Verify Setup
-    - Lab: Setup SSH Forwarding
+    - Lab: Setup SSH Tunnel
 - SSH Private Key to access the host via SSH
 - OMS super-user Credentials:
     - Username: **sysman**
