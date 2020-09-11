@@ -19,12 +19,22 @@ The retailer is asking us to use the input data to provide the following output 
 
 * Send data revenue and likely buyers to targets downstream
 
+
+Estimated Lab Time: XX minutes
+
+### About Product/Technology
+Golden Gate Stream Analytics (OSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in OSA you can run analytics on live data in real time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
+
 ### Objectives
 - Understand the Retail Promotions scenario 
 - Create an extensive Pipeline
 - Run analytics on streaming data
 - Apply a Machine Learning model to streaming data
 - Define source and targets for a streaming data
+
+### Prerequisites
+
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 ## Available Resources and definitions
 1. Click on the **Home** page and **Import** the **Retail** example
@@ -291,14 +301,18 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 
 **Congratulations! You have now completed Lab 3. You are now ready to move on to Lab 4.**
 
+## Learn More
+
+* [Oracle Stream Analytics](https://www.oracle.com/middleware/technologies)
+
 ## Acknowledgements
 
 * **Author** - Hadi Javaherian, Solution Engineer
 * **Contributors** - Shrinidhi Kulkarni, Solution Engineer
 * **Last Updated By/Date** - Hadi Javaherian, Septembe 2020
 
-## See an issue?  
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
-Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
 
 
