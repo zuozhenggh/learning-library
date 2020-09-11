@@ -21,66 +21,74 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 
 
 ## GetCustomerDetails Stage
+**New Query**
 ![](./images/orderstreamstage2.png)
 
----
+**Name Query**
 ![](./images/orderstreamstage3.png)
 
----
+**Add a Source**
 ![](./images/getcustomerdetails2.png)
 
----
+**New Stage added**
 ![](./images/getcustomerdetails3.png)
 
----
+**Correlation**
 ![](./images/getcustomerdetails4.png)
 
----
+**Query added**
 ![](./images/getcustomerdetails5.png)
 
 
 ## GetLatLongFromZipCode Stage
 
+**New Lat-Long from Zip stage**
 ![](./images/getlatlongfromzipcode.png)
 
 ## FilterCustomers Stage
 
+**Add new filter customer stage**
 ![](./images/filtercustomers.png)
 
-
+**Select a Pattern**
 ![](./images/geoFilterpattern.png)
 
-
+**Geo Filter Visualization**
 ![](./images/geofiltervisual.png)
 
 ## GetProductDetails Stage
 
+**Add new Product Details Stage**
 ![](./images/getproductdetails.png)
 
-
+**Product Details Stage Added**
 ![](./images/getproductdetails2.png)
 
 
 ## SegmentCustomers Stage
 
+**Use Formula to add Column**
 ![](./images/discountoffered.png)
 
 
+**Rename Column**
+
 ![](./images/newaddedfields.png)
 
-
+**Define Rules**
 ![](./images/goldcustomers.png)
 
 
 ## RealtimeRevenue Stage
 
-
+**Real Time Revenue Visualization**
 ![](./images/revenuebycustomersegment.png)
 
 
+**Add Summary**
 ![](./images/rtrvenuesummaries.png)
 
-
+**Rename Column**
 ![](./images/rtrvenuesummariesrename.png)
 
 
@@ -91,12 +99,14 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 
 ## LikelyBuyersByTypeAndZip Stage
 
+**Group By Likely Buyers**
 ![](./images/likelybuyersbytypeandzip.png)
 
 
+**Likely Buyers Stage added**
 ![](./images/likelybuyersbytypeandzipgroups.png)
 
-
+**Likely Buyers Visualization**
 ![](./images/likelybuyersbytypeandzipvisual.png)
 
 
