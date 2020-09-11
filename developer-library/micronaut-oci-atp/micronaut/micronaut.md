@@ -6,7 +6,7 @@ In this lab you will build a Micronaut application locally that connects to Orac
 If at any point you run into trouble completing the steps, the full source code for the application can be cloned from Github using the following command to checkout the code:
 
     <copy>
-    git clone https://github.com/graemerocher/micronaut-hol-example.git
+    git clone -b lab5 https://github.com/graemerocher/micronaut-hol-example.git
     </copy>
 
 If you were unable to setup the Autonomous Database and necessary cloud resources you can also checkout a version of the code that uses an in-memory database:
