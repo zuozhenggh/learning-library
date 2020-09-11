@@ -23,25 +23,25 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 ## GetCustomerDetails Stage
 ![](./images/orderstreamstage2.png)
 
-
+---
 ![](./images/orderstreamstage3.png)
 
-
+---
 ![](./images/getcustomerdetails2.png)
 
-
+---
 ![](./images/getcustomerdetails3.png)
 
-
+---
 ![](./images/getcustomerdetails4.png)
 
-
+---
 ![](./images/getcustomerdetails5.png)
 
 
 ## GetLatLongFromZipCode Stage
 
-![](./images/getlatlongfromzipCode.png)
+![](./images/getlatlongfromzipcode.png)
 
 ## FilterCustomers Stage
 
