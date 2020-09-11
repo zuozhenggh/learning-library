@@ -1,14 +1,14 @@
 # Workshop Introduction and Overview #
 
 ## Oracle Stream Analytics (OSA) Workshop
-## Introduction
+# Introduction
 
 This Workshop includes several Hands-on labs that is based on replicating transactional data from an Oracle Database to events in Kafka and performing stream analytics on these events. The database contains user location, customer and product data that you can use to create stream analytics pipelines.
 
-### About Product/Technology
+## About Product/Technology
 Golden Gate Stream Analytics is an environment that originally began as a Complex Event Processing engine and evolved to run on top of runtime frameworks with Apache Spark and Apache Kafka.  The tool is designed to ingest a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in OSA you can run analytics on live data in real time using transformation and action functionality of Spark and send the data downstream to any target of your choice.  
 
-### Objectives
+## Objectives
 
 In this workshop you will:
 * Navigate Oracle Stream Analytics UI
@@ -63,12 +63,7 @@ The user will learn how to publish a pipeline, create dashboards and perform Imp
 This is intended to provid the user with screen shots of the lab exercises 
 
 
-## Prerequisites
-* Access to Live Labs from laptop or desktop
-
-* VNC/Remote connection to the lab
-
-## Required Credentials for Oracle Stream Analytics
+### Required Credentials for Oracle Stream Analytics
 
 **MySQL root password:** OSADemo1111!
 
@@ -85,7 +80,7 @@ This is intended to provid the user with screen shots of the lab exercises
 * [Oracle Stream Analytics](https://www.oracle.com/middleware/technologies)
 
 
-### Acknowledgements
+## Acknowledgements
 
 * **Author** - Hadi Javaherian, Solution Engineer
 * **Contributors** - Shrinidhi Kulkarni, Solution Engineer
