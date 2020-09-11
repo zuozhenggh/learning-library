@@ -32,21 +32,21 @@ The objective of this workshop is to highlight Oracle Enterprise Manager Cloud C
 The following steps are meant for anyone running this workshop on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, MobaXterm, Exceed, and other similar utilities. If you are on Windows and use *PuTTY* utility as your SSH client, please skip to the next step.
 
 ### **Application Access**
-Applications and local/remote ports pair:
+Application(s) and local/remote ports pair:
 
     - EM13c OMS Console, (7803/7803)
 
 1.  Open up a terminal
 2.  As the opc user, establish an SSH session with port forwarding option between the local port and the destination/remote port.
 
-  ````
-  ssh -i ~/.ssh/<ssh-private-file> -L <local-port>:localhost:<remote-port> opc@<destination public IP address>
-  ````
+    ````
+    ssh -i ~/.ssh/<ssh-private-file> -L <local-port>:localhost:<remote-port> opc@<destination public IP address>
+    ````
 
-  ````
-  e.g
-  <copy>ssh -i .ssh/id_test_mkplc_rsa  -L 7803:localhost:7803 opc@188.111.88.222</copy>
-  ````
+    ````
+    e.g
+    <copy>ssh -i .ssh/id_test_mkplc_rsa  -L 7803:localhost:7803 opc@188.111.88.222</copy>
+    ````
 
 ***Note:***
 
@@ -54,13 +54,13 @@ Applications and local/remote ports pair:
     - This SSH session must remain alive throughout your connectivity to above remote port.
     - Steps (1)-(2) must be performed for each remote port needed
 
-    ![](./images/em-ssh-forward-term.png " ")
+  ![](./images/em-ssh-forward-term.png " ")
 
 3. Using the corresponding utility, open a connection to the remote destination by addressing your local computer.  
 
-    - EM13c OMS Console: Launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em)
+    - **EM13c OMS Console**: Launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em)
 
-    ![](./images/em-ssh-forward-console.png " ")
+  ![](./images/em-ssh-forward-console.png " ")
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
@@ -70,7 +70,7 @@ Now you are ready to start the run the workshop. Skip the next step and proceed 
 The following steps are meant for anyone running this workshop on Windows and use *PuTTY* utility as your SSH Client. If you are on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, MobaXterm, Exceed, and other similar utilities, please skip and go back to the prior step.
 
 ### **Application Access**
-Applications and local/remote ports pair:
+Application(s) and local/remote ports pair:
 
     - EM13c OMS Console, (7803/7803)
 
@@ -81,33 +81,33 @@ Applications and local/remote ports pair:
     - Connection type: _SSH_
     - Saved Sessions: "_Friendly Name to save your config_". e.g _SSH-Port-Forwarding-remote-port_
 
-    ![](./images/em-ssh-forward-putty-1.png " ")
+  ![](./images/em-ssh-forward-putty-1.png " ")
 
 2. Navigate to "***Connection >> SSH >> Auth >> Tunnels***" and fill in the details as shown below and click **Add**
     - Source Port: Your application port. e.g _7803_
     - Destination: "_localhost:remote application port_" e.g. _localhost:7803_
 
-    ![](./images/em-ssh-forward-putty-2.png " ")
+  ![](./images/em-ssh-forward-putty-2.png " ")
 
 3. Click **Add**
 
-    ![](./images/em-ssh-forward-putty-3.png " ")
+  ![](./images/em-ssh-forward-putty-3.png " ")
 
 4. Navigate to "***Connection >> Data >> Auth >> Tunnels***" and add *opc* as auto-login username  
 
-    ![](./images/em-ssh-forward-putty-4.png " ")
+  ![](./images/em-ssh-forward-putty-4.png " ")
 
 5. Navigate to "***Connection >> SSH >> Auth***", click ***Browse***, and select your Private SSH key in *.ppk* format
 
-    ![](./images/em-ssh-forward-putty-5.png " ")
+  ![](./images/em-ssh-forward-putty-5.png " ")
 
 6. Save your configuration
 
-    ![](./images/em-ssh-forward-putty-6.png " ")
+  ![](./images/em-ssh-forward-putty-6.png " ")
 
 7. Click ***Open*** to start your session
 
-    ![](./images/em-ssh-forward-putty-7.png " ")
+  ![](./images/em-ssh-forward-putty-7.png " ")
 
 ***Note:***
 
@@ -117,9 +117,9 @@ Applications and local/remote ports pair:
 
 8. Using the corresponding utility, open a connection to the remote destination by addressing your local computer.  
 
-    - EM13c OMS Console: Launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em)
+    - **EM13c OMS Console**: Launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em)
 
-    ![](./images/em-ssh-forward-console.png " ")
+  ![](./images/em-ssh-forward-console.png " ")
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
