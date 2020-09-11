@@ -1,7 +1,7 @@
 # Workshop Introduction and Overview #
 
 ## Oracle Stream Analytics (OSA) Workshop
-**Introduction**
+## Introduction
 
 This Workshop includes several Hands-on labs that is based on replicating transactional data from an Oracle Database to events in Kafka and performing stream analytics on these events. The database contains user location, customer and product data that you can use to create stream analytics pipelines.
 
@@ -79,6 +79,11 @@ This is intended to provid the user with screen shots of the lab exercises
 **Spark Username:** sparkadmin
 
 **Spark Password:** Sparkadmin#123
+
+## Learn More
+
+* [Oracle Stream Analytics](https://www.oracle.com/middleware/technologies)
+
 
 ### Acknowledgements
 
