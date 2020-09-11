@@ -116,7 +116,7 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 
 ## LikelyBuyersByTypeAndZip Stage
 
-**Group By Likely Buyers**
+
 
 ![](./images/likelybuyersbytypeandzip.png)
 
