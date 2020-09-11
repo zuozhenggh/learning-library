@@ -21,69 +21,69 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 
 
 ## GetCustomerDetails Stage
-![](./images/orderStreamStage2.png)
+![](./images/orderstreamstage2.png)
 
-![](./images/orderStreamStage3.png)
+![](./images/orderstreamstage3.png)
 
-![](./images/getCustomerDetails2.png)
+![](./images/getcustomerdetails2.png)
 
-![](./images/getCustomerDetails3.png)
+![](./images/getcustomerdetails3.png)
 
-![](./images/getCustomerDetails4.png)
+![](./images/getcustomerdetails4.png)
 
-![](./images/getCustomerDetails5.png)
+![](./images/getcustomerdetails5.png)
 
 
 ## GetLatLongFromZipCode Stage
 
-![](./images/getLatLongFromZipCode.png)
+![](./images/getlatlongfromzipCode.png)
 
 ## FilterCustomers Stage
 
-![](./images/filterCustomers.png)
+![](./images/filtercustomers.png)
 
-![](./images/geoFilterPattern.png)
+![](./images/geoFilterpattern.png)
 
-![](./images/geoFilterVisual.png)
+![](./images/geofiltervisual.png)
 
 ## GetProductDetails Stage
 
-![](./images/getProductDetails.png)
+![](./images/getproductdetails.png)
 
-![](./images/getProductDetails2.png)
+![](./images/getproductdetails2.png)
 
 
 ## SegmentCustomers Stage
 
-![](./images/discountOffered.png)
+![](./images/discountoffered.png)
 
-![](./images/newAddedFields.png)
+![](./images/newaddedfields.png)
 
-![](./images/goldCustomers.png)
+![](./images/goldcustomers.png)
 
 
 ## RealtimeRevenue Stage
 
 
-![](./images/revenuebycustomerSegment.png)
+![](./images/revenuebycustomersegment.png)
 
-![](./images/rtRvenueSummaries.png)
+![](./images/rtrvenuesummaries.png)
 
-![](./images/rtRvenueSummariesRename.png)
+![](./images/rtrvenuesummariesrename.png)
 
 
 ## GetCustomer Stage
 
-![](./images/getCustomer.png)
+![](./images/getcustomer.png)
 
 
 ## LikelyBuyersByTypeAndZip Stage
 
-![](./images/likelyBuyersByTypeAndZip.png)
+![](./images/likelybuyersbytypeandzip.png)
 
-![](./images/likelyBuyersByTypeAndZipGroups.png)
+![](./images/likelybuyersbytypeandzipgroups.png)
 
-![](./images/likelyBuyersByTypeAndZipVisual.png)
+![](./images/likelybuyersbytypeandzipvisual.png)
 
 
 
