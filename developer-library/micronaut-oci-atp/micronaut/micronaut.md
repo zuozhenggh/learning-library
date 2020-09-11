@@ -9,6 +9,13 @@ If at any point you run into trouble completing the steps, the full source code 
     git clone https://github.com/graemerocher/micronaut-hol-example.git
     </copy>
 
+If you were unable to setup the Autonomous Database and necessary cloud resources you can also checkout a version of the code that uses an in-memory database:
+
+    <copy>
+    git clone -b lab5-h2 https://github.com/graemerocher/micronaut-hol-example.git
+    </copy>
+
+
 Estimated Lab Time: 30 minutes
 
 ### Objectives
@@ -203,6 +210,8 @@ public interface OwnerRepository extends CrudRepository<Owner, Long> {
 }
 </copy>
 ```
+
+Note that if you were unable to setup Autonomous database and are using the H2 in-memory database you should use the `H2` dialect instead.
 
 The `CrudRepository` interface takes 2 generic argument types. The first is the type of the entity (in this case `Owner`) and the second is the type if the ID (in this case `Long`).
 
