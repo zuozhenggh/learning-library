@@ -60,7 +60,7 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 
 **Select a Pattern**
 
-![](./images/geoFilterpattern.png)
+![](./images/geofilterpattern.png)
 
 **Geo Filter Visualization**
 
