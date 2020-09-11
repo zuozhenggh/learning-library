@@ -4,11 +4,18 @@
 
 In this lab you are going to get create a Micronaut application locally and configure the application to communicate with an Autonomous Database instance.
 
-If at any point you run into trouble completing the steps, the full source code for the application can be cloned from Github using the following command:
+If at any point you run into trouble completing the steps, the full source code for the application can be cloned from Github using the following command to checkout the code:
 
     <copy>
-    git clone https://github.com/graemerocher/micronaut-hol-example.git
+    git clone -b lab4 https://github.com/graemerocher/micronaut-hol-example.git
     </copy>
+
+If you were unable to setup the Autonomous Database and necessary cloud resources you can also checkout a version of the code that uses an in-memory database:
+
+    <copy>
+    git clone -b lab4-h2 https://github.com/graemerocher/micronaut-hol-example.git
+    </copy>
+
 
 Estimated Lab Time: 10 minutes
 
@@ -61,6 +68,10 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
         driverClassName: oracle.jdbc.OracleDriver
         username: mnocidemo
         dialect: ORACLE
+        data-source-properties:
+          oracle:
+            jdbc:
+              fanEnabled: false        
     </copy>    
     ```
 2. Delete the existing `src/main/resources/application-test.yml` file so that you can run tests against the Autonomous database instance.
@@ -85,6 +96,24 @@ For example:
    export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
    </copy>
    ```
+
+If during the setup process of the Cloud resources you ran into any trouble and were not able to complete prior steps you can use `git` to check out a version of the code that uses an in-memory database instead of Autonomous Database which will allow you to proceed with the following sections of the lab:
+
+  ```
+  <copy>
+  git clone -b lab4-h2 https://github.com/graemerocher/micronaut-hol-example.git example-atp
+  </copy>
+  ```
+
+Or by downloading a ZIP of the code:
+
+  ```
+  <copy>
+  curl https://codeload.github.com/graemerocher/micronaut-hol-example/zip/lab4-h2 -o example-atp.zip
+  unzip example-atp.zip
+  cd micronaut-hol-example-lab4-h2
+  </copy>
+  ```
 
 You may now *proceed to the next lab*.
 
