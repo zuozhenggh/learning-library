@@ -86,6 +86,24 @@ For example:
    </copy>
    ```
 
+If during the setup process of the Cloud resources you ran into any trouble and were not able to complete prior steps you can use `git` to check out a version of the code that uses an in-memory database instead of Autonomous Database which will allow you to proceed with the following sections of the lab:
+
+  ```
+  <copy>
+  git clone -b lab4-h2 https://github.com/graemerocher/micronaut-hol-example.git example-atp
+  </copy>
+  ```
+
+Or by downloading a ZIP of the code:
+
+  ```
+  <copy>
+  curl https://codeload.github.com/graemerocher/micronaut-hol-example/zip/lab4-h2 -o example-atp.zip
+  unzip example-atp.zip
+  cd micronaut-hol-example-lab4-h2
+  </copy>
+  ```
+
 You may now *proceed to the next lab*.
 
 ## Acknowledgements

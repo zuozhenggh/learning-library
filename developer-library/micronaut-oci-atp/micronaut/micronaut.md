@@ -28,7 +28,17 @@ In this lab you will:
 
 ## **STEP 1**: Create Micronaut Data entities that map Oracle Database tables
 
-1. The first step is to define entity classes that can be used to read data from database tables.
+The process in Lab 3 created a Schema using the following SQL statements:
+
+
+    CREATE TABLE "PET" ("ID" VARCHAR(36),"OWNER_ID" NUMBER(19) NOT NULL,"NAME" VARCHAR(255) NOT NULL,"TYPE" VARCHAR(255) NOT NULL);
+    CREATE TABLE "OWNER" ("ID" NUMBER(19) PRIMARY KEY NOT NULL,"AGE" NUMBER(10) NOT NULL,"NAME" VARCHAR(255) NOT NULL);
+    CREATE SEQUENCE "OWNER_SEQ" MINVALUE 1 START WITH 1 NOCACHE NOCYCLE;
+
+
+As you can see a table called `OWNER` and a table called `PET` were created.
+
+1. The first step is to define entity classes that can be used to read data from the database tables.
 
     Using your favorite IDE create a `Owner.java` file under `src/main/java/example/atp/domain` which will represent the `Owner` class and looks like the following:
 
@@ -155,6 +165,10 @@ In this lab you will:
     }
     </copy>
     ```
+
+Note that the `Pet` class uses an automatically populated `UUID` as the primary key to demonstrate differing approaches to ID generation.
+
+A relationship between the `Pet` class and the `Owner` class is also defined using the `@Relation(Relation.Kind.MANY_TO_ONE)` annotation, indicating this is a many-to-one relationship.
 
 With that done it is time move onto defining repository interfaces to implement queries.
 
