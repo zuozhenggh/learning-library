@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to verify your compute instance has been setup.
 
-Estimated Lab Time: 10 minutes
+*Estimated Lab Time*: 10 minutes
 
 ### Objectives
 In this lab, you will:

@@ -7,18 +7,12 @@ The objective of this workshop is to highlight Oracle Enterprise Manager Cloud C
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Environment Setup
+    - Lab: Verify Setup
+    - Lab: Setup SSH Tunnel
 - SSH Private Key to access the host via SSH
 - OMS super-user Credentials:
     - Username: **sysman**
     - password: **welcome1**
-- EM13c Host Public IP address
-- OMS Console URL:
-````
-<copy>https://<EM13c Host Public IP address>:7803/em</copy>
-e.g: https://111.888.111.888:7803/em
-````
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository.
 
@@ -34,7 +28,7 @@ e.g: https://111.888.111.888:7803/em
 ## **Step 0:** Running your Workload
 
 ### Login to OMS Console
-Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
+Using SYSMAN credentials provided above, launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em). This assumes that you have successfully completed *Lab 2 - Setup SSH Tunnel*
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
@@ -546,7 +540,7 @@ Thank You!
 ## Acknowledgements
 - **Author** - Harish Niddagatta, Oracle Enterprise Manager Product Management
 - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
+- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

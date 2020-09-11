@@ -12,18 +12,12 @@ The objective of this workshop is to highlight the Oracle Enterprise Manager Clo
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Environment Setup
+    - Lab: Verify Setup
+    - Lab: Setup SSH Tunnel
 - SSH Private Key to access the host via SSH
 - OMS super-user Credentials:
     - Username: **sysman**
     - password: **welcome1**
-- EM13c Host Public IP address
-- OMS Console URL:
-````
-<copy>https://<EM13c Host Public IP address>:7803/em</copy>
-e.g: https://111.888.111.888:7803/em
-````
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
@@ -41,7 +35,7 @@ e.g: https://111.888.111.888:7803/em
 ## **Step 0:** Running your Workload
 
 ### Login to OMS Console
-Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
+Using SYSMAN credentials provided above, launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em). This assumes that you have successfully completed *Lab 2 - Setup SSH Tunnel*
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
@@ -69,7 +63,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/9be6823423a692b7e1f0e240c10567c9.jpg " ")
 
-7.  In the Source page of the Create Pluggable Database Wizard, in the Source Type section, **select** Create a new PDB . **Select** Named credentials “ORACLE”In the Identification page, **enter** a unique name for the PDB you are creating (your initial\_pdb). **Optionally**, **select** check box to “create multiple DBs” and put **2** as number of copies.
+7.  In the Source page of the Create Pluggable Database Wizard, in the Source Type section, **select** Create a new PDB . **Select** Named credentials “ORACLE” In the Identification page, **enter** a unique name for the PDB you are creating (your initial\_pdb). **Optionally**, **select** check box to “create multiple DBs” and put **2** as number of copies.
 
 8.  In the PDB Administrator section, **enter** the credentials of the admin user account you need to create for administering the PDB. **UserName**: pdbadmin **Password**: welcome1 **Click** Next.
 
@@ -493,7 +487,7 @@ That concludes this lab.
 ## Acknowledgements
 - **Author** - Pankaj Chandiramani, Oracle Enterprise Manager Product Management
 - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
+- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, September 2020
 
 ## See an issue?
 Refer to the FAQ at the bottom of the right-hand menu. While you cannot use the normal Oracle Support channel to raise a ticket for getting technical support, the vibrant [Enterprise Manager Community Forum](https://community.oracle.com/community/groundbreakers/enterprise_manager) stands to help.
