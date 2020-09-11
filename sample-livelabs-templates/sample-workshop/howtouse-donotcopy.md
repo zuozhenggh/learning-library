@@ -10,9 +10,7 @@
 
 In this example, the goal is to create several "children" workshops from one longer "parent" workshop. The children are made up of parts from the parent.
 
-workshop-single/
-    product-solution-short-name/
-
+sample-workshop/
         -- individual labs
 
         provision/
@@ -35,10 +33,10 @@ workshop-single/
 
 ### FreeTier vs LiveLabs
 
-* "FreeTier" - includes Free Trials, Paid Accounts and for some workshops, Always Free accounts.
-* "LiveLabs" - these are workshops that use Oracle provided tenancies
+* "FreeTier" - includes Free Trials, Paid Accounts and for some workshops, Always Free accounts (brown button)
+* "LiveLabs" - these are workshops that use Oracle provided tenancies (green button)
 
-### The product-workshop-name
+### About the Workshop
 
 The workshop includes all 6 of the individual labs in a single sequence.
 

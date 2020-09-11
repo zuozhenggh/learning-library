@@ -1,6 +1,6 @@
-# Work with Mappings - 1
+# Work with Mappings - Part 1
 
-## Introduction to Working with Mappings
+## Introduction
 
 This chapter describes how to work with mappings in Oracle Data Integrator. The demonstration environment includes several example mappings. In this chapter you will learn how to create the following mappings:
 
