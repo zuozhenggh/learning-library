@@ -1,0 +1,88 @@
+
+# Appendix
+
+## Introduction
+This appendix is a sumplementary aid to the labs for OSA Workshop primarily for Lab 3 creating the **RetailPromotions** pipeline.  You can refer to this section of the workshop when performing the labs.  Not every screen shot has been captured in this appendix but you can look at the following image and verify the structure of your pipeline.  In that regard each stage that does have a screen shot has been labeled accordingly.
+
+### Objectives
+- Provide screen shots for the labs
+- Aid the user to reference screen shots while performing the labs
+
+### Instructions
+At each stage of the Lab 3 you can refer back to this appendix to compare your pipeline and screens with the screen shots provided here.  Each stage is marked with the name of the stage so that you can reference it while performing the task for that stage.
+
+
+## GetCustomerDetails Stage
+![](./images/orderStreamStage2.png)
+
+![](./images/orderStreamStage3.png)
+
+![](./images/getCustomerDetails2.png)
+
+![](./images/getCustomerDetails3.png)
+
+![](./images/getCustomerDetails4.png)
+
+![](./images/getCustomerDetails5.png)
+
+
+## GetLatLongFromZipCode Stage
+
+![](./images/getLatLongFromZipCode.png)
+
+## FilterCustomers Stage
+
+![](./images/filterCustomers.png)
+
+![](./images/geoFilterPattern.png)
+
+![](./images/geoFilterVisual.png)
+
+## GetProductDetails Stage
+
+![](./images/getProductDetails.png)
+
+![](./images/getProductDetails2.png)
+
+
+## SegmentCustomers Stage
+
+![](./images/discountOffered.png)
+
+![](./images/newAddedFields.png)
+
+![](./images/goldCustomers.png)
+
+
+## RealtimeRevenue Stage
+
+
+![](./images/revenuebycustomerSegment.png)
+
+![](./images/rtRvenueSummaries.png)
+
+![](./images/rtRvenueSummariesRename.png)
+
+
+## GetCustomer Stage
+
+![](./images/getCustomer.png)
+
+
+## LikelyBuyersByTypeAndZip Stage
+
+![](./images/likelyBuyersByTypeAndZip.png)
+
+![](./images/likelyBuyersByTypeAndZipGroups.png)
+
+![](./images/likelyBuyersByTypeAndZipVisual.png)
+
+
+
+### Acknowledgements
+
+* **Author** - Hadi Javaherian, Solution Engineer
+* **Contributors** - Shrinidhi Kulkarni, Solution Engineer
+* **Last Updated By/Date** - Hadi Javaherian, Septembe 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
