@@ -10,10 +10,17 @@ that are available for that use case.
 
 Estimated Lab Time:  xx minutes
 
+### About Product/Technology
+Golden Gate Stream Analytics (OSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in OSA you can run analytics on live data in real time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
+
 ### Objectives
 - Get familiar with OSA
 - Navigate the tool and get familiar with menu items
 - Learn about the multiple resources that are available in OSA
+
+### Prerequisites
+
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 ## **Step 1:** Log-in
 
@@ -268,12 +275,15 @@ targets. This target should have (about 12 fields).
 
 **Congratulations! You have now completed Lab 1. You are now ready to move on to Lab 2.**
 
+## Learn More
+
+* [Oracle Stream Analytics](https://www.oracle.com/middleware/technologies)
+
 ## Acknowledgements
 
 * **Author** - Hadi Javaherian, Solution Engineer
 * **Contributors** - Shrinidhi Kulkarni, Solution Engineer
 * **Last Updated By/Date** - Hadi Javaherian, Septembe 2020
 
-## See an issue?  
-
-Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
