@@ -5,12 +5,22 @@ In this scenario a management company wants to manage their verding machines whi
 
 The company would like to enrich the data from a data base table that contains each machine's specific location including latitude and longitude, an acceptable inventory level and how much in sales they produce on average.  They would then like to run analytics to alert them about low inventory and any malfunctions so that they could act and send the appropriate maintenance.
 
+Estimated Lab Time: XX minutes
+
+### About Product/Technology
+Golden Gate Stream Analytics (OSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in OSA you can run analytics on live data in real time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
+
+
 ### Objectives
 - Walk thru a sample IOT scenario
 - Learn about multiple resources in OSA and how they are created
 - Understand the basic concepts of streaming with examples
 
 A pipeline is a type of workflow made up of multiple stages such as query stage, a pattern stage, a business rule stage, a query group stage, a custom stage and many more. It is a Spark application where you can implement the business logic for any scenario in this case a vening machine management scenario.
+
+### Prerequisites
+
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 ## **Step 1:** Pipelines
  
@@ -222,13 +232,16 @@ stages in the next lab.
 
 **Congratulations! You have now completed Lab 2. You are now ready to move on to Lab 3.**
 
+## Learn More
+
+* [Oracle Stream Analytics](https://www.oracle.com/middleware/technologies)
+
 ## Acknowledgements
 
 * **Author** - Hadi Javaherian, Solution Engineer
 * **Contributors** - Shrinidhi Kulkarni, Solution Engineer
 * **Last Updated By/Date** - Hadi Javaherian, Septembe 2020
 
-## See an issue?  
-
-Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
