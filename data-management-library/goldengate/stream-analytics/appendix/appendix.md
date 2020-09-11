@@ -23,13 +23,18 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 ## GetCustomerDetails Stage
 ![](./images/orderstreamstage2.png)
 
+
 ![](./images/orderstreamstage3.png)
+
 
 ![](./images/getcustomerdetails2.png)
 
+
 ![](./images/getcustomerdetails3.png)
 
+
 ![](./images/getcustomerdetails4.png)
+
 
 ![](./images/getcustomerdetails5.png)
 
@@ -42,13 +47,16 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 
 ![](./images/filtercustomers.png)
 
+
 ![](./images/geoFilterpattern.png)
+
 
 ![](./images/geofiltervisual.png)
 
 ## GetProductDetails Stage
 
 ![](./images/getproductdetails.png)
+
 
 ![](./images/getproductdetails2.png)
 
@@ -57,7 +65,9 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 
 ![](./images/discountoffered.png)
 
+
 ![](./images/newaddedfields.png)
+
 
 ![](./images/goldcustomers.png)
 
@@ -67,7 +77,9 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 
 ![](./images/revenuebycustomersegment.png)
 
+
 ![](./images/rtrvenuesummaries.png)
+
 
 ![](./images/rtrvenuesummariesrename.png)
 
@@ -81,7 +93,9 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 
 ![](./images/likelybuyersbytypeandzip.png)
 
+
 ![](./images/likelybuyersbytypeandzipgroups.png)
+
 
 ![](./images/likelybuyersbytypeandzipvisual.png)
 
