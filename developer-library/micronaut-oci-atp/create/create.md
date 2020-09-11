@@ -68,6 +68,10 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
         driverClassName: oracle.jdbc.OracleDriver
         username: mnocidemo
         dialect: ORACLE
+        data-source-properties:
+          oracle:
+            jdbc:
+              fanEnabled: false        
     </copy>    
     ```
 2. Delete the existing `src/main/resources/application-test.yml` file so that you can run tests against the Autonomous database instance.
