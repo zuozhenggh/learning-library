@@ -3,7 +3,23 @@
 ## Oracle Stream Analytics (OSA) Workshop
 **Introduction**
 
-Golden Gate Stream Analytics is an environment that originally began as a Complex Event Processing engine and evolved to run on top of runtime frameworks with Apache Spark and Apache Kafka.  The tool is designed to ingest a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in OSA you can run analytics on live data in real time using transformation and action functionality of Spark and send the data downstream to any target of your choice.  This Workshop includes several Hands-on labs that is based on replicating transactional data from an Oracle Database to events in Kafka and performing stream analytics on these events. The database contains user location, customer and product data that you can use to create stream analytics pipelines.
+This Workshop includes several Hands-on labs that is based on replicating transactional data from an Oracle Database to events in Kafka and performing stream analytics on these events. The database contains user location, customer and product data that you can use to create stream analytics pipelines.
+
+### About Product/Technology
+Golden Gate Stream Analytics is an environment that originally began as a Complex Event Processing engine and evolved to run on top of runtime frameworks with Apache Spark and Apache Kafka.  The tool is designed to ingest a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in OSA you can run analytics on live data in real time using transformation and action functionality of Spark and send the data downstream to any target of your choice.  
+
+### Objectives
+
+In this workshop you will:
+* Navigate Oracle Stream Analytics UI
+* Walk-thur. an IOT Use Case
+* Create a pipleine for a Retail Use Case
+* Create dashboards and export artifacts
+
+### Prerequisites
+
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
 
 **Architecture Overview**
 
@@ -70,4 +86,5 @@ This is intended to provid the user with screen shots of the lab exercises
 * **Contributors** - Shrinidhi Kulkarni, Solution Engineer
 * **Last Updated By/Date** - Hadi Javaherian, Septembe 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
