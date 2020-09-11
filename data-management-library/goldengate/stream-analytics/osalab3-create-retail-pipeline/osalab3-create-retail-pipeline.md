@@ -282,7 +282,7 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 5. Select **PersistPrediction** topic from the dropdown and make sure the properties are all mapped properly.
 
 
-## ** Step 12:** LikelyBuyersByTypeAndZip Stage
+## **Step 12:** LikelyBuyersByTypeAndZip Stage
 
     Create a parallel stage to group the likely buyers by type and by zip code.
 
