@@ -18,7 +18,7 @@
     },
     {
       "title": "Lab 2: Setup SSH Tunnel",
-      "description": "Setup SSH port forwarding ",
+      "description": "Setup SSH port forwarding",
       "publisheddate": "9/11/2020",
       "filename": "./../../setup-ssh-forwarding/setup-ssh-forwarding.md"
     },
