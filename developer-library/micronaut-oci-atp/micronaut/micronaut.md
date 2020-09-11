@@ -412,8 +412,7 @@ public class Application {
         this.petRepository = petRepository;
     }
 
-    public static void main(String[] args) {
-        System.setProperty("oracle.jdbc.fanEnabled", "false");
+    public static void main(String[] args) {        
         Micronaut.run(Application.class);
     }
 
@@ -443,12 +442,6 @@ public class Application {
 ```
 
 Note that the constructor is modified to dependency inject the repository definitions so data can be persisted.
-
-Notice in the `main` method JDBC support for OJDBC FAN events is disabled as they are not necessary for this application:
-
-```java
-System.setProperty("oracle.jdbc.fanEnabled", "false");
-```
 
 Finally the `init` method is annotated with `@EventListener` with an argument to receive a `StartupEvent`. This event is called
 once the application is up and running and can be used to persist data when your application is ready to do so.
