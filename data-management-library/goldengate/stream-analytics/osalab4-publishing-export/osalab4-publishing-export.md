@@ -100,6 +100,8 @@ You have learned the import functionality in the beginning of this workshop.  In
 
 **Congratulations! You have now completed Lab 4.**
 
+## Learn More
+
 * [Oracle Stream Analytics](https://www.oracle.com/middleware/technologies)
 
 ## Acknowledgements

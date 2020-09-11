@@ -129,7 +129,7 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 
 ![](./images/likelybuyersbytypeandzipvisual.png)
 
-
+## Learn More
 
 * [Oracle Stream Analytics](https://www.oracle.com/middleware/technologies)
 
