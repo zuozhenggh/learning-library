@@ -1,7 +1,11 @@
 # Create the tables and insert data
 
 ## Introduction
-  In this lab, you are going to log in as user c360. You will learn how to clear previous tables, create new tables, and populate the tables with your data.
+  In this lab, you are going to log in as user `customer_360`. You will learn how to clear previous tables, create new tables, and populate the tables with your data.  
+  You will create 7 tables (customer, account, merchant, owned_by, purchased, transfer, parent_of). The entity-relationship diagram for these tables is shown below.  
+
+  ![ER Diagram of tables](../images/c360_erDiagram.png " ")  
+
 
 ## **Step 1:** Log in to SQLDevWeb as user c360
 1. Open the correct URL for SQlDevWeb for the CUSTOMER_360 user. It is almost the same URL as the one for the Admin user execpt that `admin` in that url is replaced with the schema-alias we provided, i.e. with `c360`.
@@ -17,8 +21,8 @@
   ![Connected as Customer_360](../images/ADB_SDW_ConnectedAsC360.png " ")
 
 ### Troubleshooting
-  If you receive a *Service Unavailable* error, it may be caused by the fact that the user c360 is locked.
-    ![](../IMAGES/troubleshooting_login.png " ")
+  If you receive a *Service Unavailable* error, it may be that the  `customer_360` account is locked.
+    ![](../images/troubleshooting_login.png " ")
 
   You can try the following steps:
    1. Log in as ADMIN, enter and run the command in Worksheet:
@@ -29,12 +33,12 @@
     In Query Result, check the account status of `CUSTOMER_360`. The status should be `OPEN`.
     ![](../images/troubleshoot_query_result.png " ")
 
-    2. If the status is `LOCKED`, enter and run the command to unlock the user:
+    1. If the status is `LOCKED`, enter and run the command to unlock the user:
     ```
     <copy>alter user CUSTOMER_360 account unlock</copy>
     ```
 
-    3. Then, the status should change to `OPEN`. You can check again using command:
+    1. Then, the status should change to `OPEN`. You can check again using command:
     ```
     <copy>select username, account_status from dba_users ;</copy>
     ```
@@ -239,7 +243,7 @@ You may now *proceed to the next lab*
 ## Acknowledgements ##
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
-* **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
+* **Contributors** - Albert Godfrind and Ryota Yamanaka.  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
 * **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 

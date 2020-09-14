@@ -6,54 +6,10 @@
   The combined dataset is then used to perform the following common graph query and analyses: pattern matching, detection of cycles, finding important nodes, community detection, and recommendation.
 
 ### Prerequisites
-  This lab assumes you have successfully completed the previous Labs (Lab 1 through Lab 7).
+  This lab assumes you have successfully completed the previous Labs (Lab 1 through Lab 7) and have the client JShell up and running.
 
 
-## **Step 1:** Start Graph Server and Client Shell
-
-Skip the following if you completed the Create Graph Lab, and the Graph Server and client are up:
-
-1. Open an SSH connection to the compute instance, Graph Server.
-  `su` to the `oracle` user (or whichever user deployed the Graph Server and client shell and was added to the oraclegraph group in Lab 4, Step 4).
-
-  Check that  the line  
-  ` "enable_tls": true,`  
-  in `/etc/oracle/graph/server.conf` is set to false, i.e. it is  
-  ` "enable_tls": false,`  
-
-2. Start the Graph Server.
-
-    ```
-    <copy>/opt/oracle/graph/pgx/bin/start-server</copy>
-    ```
-  *Note: Do not exit this shell since the graph server process runs in the foreground.*
-
-  Proceed after the Graph Server has started and you see the notification `INFO: Starting ProtocolHandler ["http-nio-7007"]`
-
-3. Open a new SSH connection, if necessary, to the compute instance. `su` to the `oracle` user (or whichever user deployed the Graph Server and client shell and was added to the oraclegraph group in Lab 4, Step 4).  
-
-4. Start the JShell in the Graph Server. Run command:
-    ```
-    <copy>/opt/oracle/graph/bin/opg-jshell --base_url http://localhost:7007</copy>
-    ```
-
-  That starts up a shell which connects to the server instance running on the Graph Server.
-  Once it starts up, you should see the following:
-
-    ```
-    For an introduction type: /help intro
-    Oracle Graph Server Shell 20.2.0
-    PGX server version: 20.0.2 type: SM
-    PGX server API version: 3.7.2
-    PGQL version: 1.3
-    Variables instance, session, and analyst ready to use.
-    opg-jshell>
-    ```
-
-  *Note: If you have any questions in this Step, check Lab 7, Step 2, Step 3, for more information.*
-
-
-## **Step 2:** Load Graph into Memory
+## **Step 1:** Load Graph into Memory
 
 1. Check to see which graphs have been loaded into the graph server.
 
@@ -73,6 +29,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     ```
 
   The necessary steps are:
+  ***Note: The following are not needed if you are continuing in the same client shell. If so all the foloowing variables will alreayd exist. If so then skip to Step 4.***
      - Set up the Java Database Connectivity (JDBC) connection. *Modify the URL for your instance*
 
      For `{db_service}`, use database service name (e.g. atpfinance_high) from the tnsnames file in the ADB Wallet you downloaded when setting up your ADB instance.  
@@ -83,7 +40,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 
     ```
     opg-jshell> <copy>var jdbcUrl = "jdbc:oracle:thin:@{db_service}?TNS_ADMIN={unzipped_wallet_location}";</copy>
-    // example output: jdbcUrl ==> "jdbc:oracle:thin:@atpfinance_high?TNS_ADMIN=/home/oracle/wallets"
+    // example output: jdbcUrl ==> "jdbc:oracle:thin:@atpfinance_low?TNS_ADMIN=/home/oraclegraph/wallets"
     ```
     *If you have any questions in JDBC connection, please refer back to Lab 4, Step 4 for more information.*
 
@@ -122,7 +79,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     .addEdgeProperty("SINCE", PropertyType.STRING)
     .addEdgeProperty("DATE", PropertyType.STRING)
     .addEdgeProperty("AMOUNT", PropertyType.DOUBLE)
-    .setLoadVertexLabels(false)
+    .setLoadVertexLabels(true)
     .setLoadEdgeLabel(true)
     .setKeystoreAlias("alias")
     .build(); }
@@ -185,7 +142,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     $9 ==> PgqlResultSetImpl[graph=Customer_360,numResults=1]
     ```
 
-  ![](../../customer_360_analysis/images/detection.jpg)
+  ![](../../../customer_360_analysis/images/detection.jpg)
 
   2. The second query just adds one more transfer to the pattern (list) and could be expressed as:
 
@@ -208,7 +165,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     $10 ==> PgqlResultSetImpl[graph=Customer_360,numResults=1]
     ```
 
-  ![](../../customer_360_analysis/images/detection2.jpg)
+  ![](../../../customer_360_analysis/images/detection2.jpg)
 
 
 ## **Step 5:** Influential Accounts
@@ -335,7 +292,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     $19 ==> PgqlResultSetImpl[graph=sub-graph_6,numResults=3]
     ```
 
-  ![](../../customer_360_analysis/images/community.jpg)
+  ![](../../../customer_360_analysis/images/community.jpg)
 
   In this case, account `xxx-yyy-201` (John's account), `xxx-yyy-202`, `xxx-yyy-203`, and `xxx-yyy-204` form one partition, account `xxx-zzz-211` is a parition, and account `xxx-zzz-212` is a partition, by the SCC Kosaraju algorithm.
 
@@ -392,10 +349,10 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     $25 ==> PgqlResultSetImpl[graph=anonymous_graph_12,numResults=3]
     ```
 
-  ![](../../customer_360_analysis/images/recommendation1.jpg)
+  ![](../../../customer_360_analysis/images/recommendation1.jpg)
 
 
-  ![](../../customer_360_analysis/images/recommendation2.jpg)
+  ![](../../../customer_360_analysis/images/recommendation2.jpg)
 
   3. We will focus on the account no. xxx-yyy-201 (John's account) and run Personalized Page Rank (PPR).
 
@@ -468,7 +425,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 ## Acknowledgements ##
 
 * **Author** -  Jayant Sharma, Product Manager, Spatial and Graph  
-* **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka). And lots from Jenny Tsai. Thank you.
+* **Contributors** - Albert Godfrind and Ryota Yamanaka, and Jenny Tsai.
 * **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
 ## See an issue?

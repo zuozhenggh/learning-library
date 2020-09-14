@@ -6,7 +6,9 @@ Now, the tables are created and populated with data. Let's create a graph repres
 
 ### Steps
 - Modify the graph server configuration to disable Transport Layer Security (TLS) / Secure Sockets Layer (SSL) for this lab
-- Start the graph server
+- Check the JDBC URL and modify if needed
+- Modify a default grant setting for publishing a graph
+- Restart the graph server
 - Start a client (JShell) that connects to the server
 - Setup a Property Graph Query Language (PGQL) connection to the database
 - Use PGQL Data Definition Language (DDL) (e.g. CREATE PROPERTY GRAPH) to instantiate a graph
@@ -20,15 +22,7 @@ Now, the tables are created and populated with data. Let's create a graph repres
     <copy>ssh -i &lt;private_key> opc@&lt;public_ip_for_compute></copy>
     ```
 
-2. Switch to the user account (e.g. `oracle`) that has the database wallet and will run the server and client instances.
-
-    *Note: You must logout and then log back in for the changes in the `oracle` user's `bash_profile` to take effect.*
-
-    ```
-    <copy>su - oracle</copy>
-    ```
-
-3. Then edit the `/etc/oracle/graph/server.conf` file.
+2. Then edit the `/etc/oracle/graph/server.conf` file.
     ```
     <copy>vi /etc/oracle/graph/server.conf</copy>
     ```
@@ -38,73 +32,80 @@ Now, the tables are created and populated with data. Let's create a graph repres
     to  
     ` "enable_tls": false,`  
 
-4. Save the file and exit.
+3. Save the file and exit.
 
-    ![](../images/change_tls.png " ")
+    ![](../../GraphServer_ManualSetup/images/change_tls.png " ")
 
-## **Step 2:** Start the graph server
+4. Edit the Graph Server (PGX) config file.
+   ```
+   <copy>vi /etc/oracle/graph/pgx.conf</copy>
+   ```
+   Modify the line   
+   `"grant": "PGX_SESSION_GET_PUBLISHED_GRAPH"`  
+   to  
+   `"grant": "PGX_SESSION_ADD_PUBLISHED_GRAPH"`  
+   in the entry for `"pgx_role": "GRAPH_DEVELOPER"`.  
 
-1. Check that JAVA\_HOME and JAVA11\_HOME env variables are set and correct. That is, JAVA\_HOME points to JDK1.8 and Java11\_HOME to jdk1.11.
-    Using command:
+   Check the `"jdbc_url"` value in the `"pgx_realm"` entry and update it if necessary.
 
-    ```
-    <copy>vi /home/oracle/.bash_profile</copy>
-    ```
+## **Step 2:** Restart the graph server
 
-    You should see the following in your `.bash_profile`:
-    ```
-    JAVA_HOME=/usr/java/jdk1.8.0_251-amd64
-    JAVA11_HOME=/usr/java/jdk-11.0.5
-
-    export JAVA_HOME
-    export JAVA11_HOME
-    ```
-
-2. Then, as the `oracle` user, start the server using
-    ```
-    <copy>/opt/oracle/graph/pgx/bin/start-server</copy>
-    ```
-
-    *Note: Do not exit this shell since the graph server process runs in the foreground.*
-
-    You will see the following log output once the server is up and running. It may take a minute for this log output to show up.
-    >INFO: Starting ProtocolHandler ["http-nio-7007"]
+1. Starting with version 20.3 the Graph Server is started, stopped, or restarted with systemctl. 
+   Check it's status and restart or start it as follows.
+   ```
+   <copy>
+   systemctl status pgx
+   sudo systemctl restart pgx
+   </copy>
+   ```
 
 ## **Step 3:** Start a client shell
 
-1. Once the graph server is up and running, open a new SSH connection to the same compute instance.  
+1. Once the graph server is up and running start a client shell to access it. This is based on `jshell` and requires JDK 11.  Version 20.3 also has a new authentication mechanism that requires a token to be used in all requests from the client to the graph server.  
+Albert Godfrind has written some utility scripts and Java methods that simplify the process. We will use his graph token shell utility in this workshop.  
+Download the code from his [Git repo](https://github.com/agodfrind/graph-token-shell) (https://github.com/agodfrind/graph-token-shell).  
+Copy it to the compute instance like you copied the ADB Wallet. e.g. on your machine
 
-2. Check that the exploded database wallet is in the compute instance and accessible from the user account which will run the graph client.
+```
+<copy>scp -i private_key ~/Downloads/graph-token-shell.zip opc@public_ip_for_compute:/home/opc</copy>
+```
 
-    Assuming the user is named `oracle` and the wallet is in `/home/oracle/wallets`. Check that the wallet exists and has the right permissions.
+2. Unzip the shell utility you copied above on the compute instance that you ssh'd into.
 
-    ```
-    <copy>su - oracle</copy>
-    ```
-
-    ```
-    <copy>ls -l /home/oracle/wallets</copy>
-    ```
-
-    ![](../images/wallet_exist.png " ")
-
+```
+<copy>unzip graph-token-shell.zip</copy>
+```
 
 3. Then start a client shell instance that connects to the server
     ```
-    <copy>/opt/oracle/graph/bin/opg-jshell --base_url http://localhost:7007</copy>
+    <copy>
+    cd graph-token-shell
+    ./opg-jshell --base_url http://localhost:7007 -u customer_360 -p Welcome1_C360</copy>
     ```
-    ![](../images/connect_shell_to_server.png)
+    You should see the following if the client shell starts up successfully.
+
+    ```
+    For an introduction type: /help intro
+    Oracle Graph Server Shell 20.3.0
+    PGX server version: 20.1.1 type: SM
+    PGX server API version: 3.8.1
+    PGQL version: 1.3
+    Variables instance, session, and analyst ready to use.
+    opg-jshell>
+    ```
 
 ## **Step 4:** Create the graph
 
-Enter the following sets of commands once the JShell has started and is ready.
+The username and password in the step above was just used to get an authentication token for the graph client. It does not set up a database connection. That will be done below in order to create a graph from the database tables.
+
+Enter the following sets of commands in the JShell.
 
 1. First setup the database connection. Enter the following into the JShell.  
    
-    Replace *{db\_tns\_name}* with the appropriate database service name in the tnsnames.ora file of the wallet (e.g. `atpfinance_high`, if you follow the previous labs exactly).
+    Replace *{db\_tns\_name}* with the appropriate database service name in the tnsnames.ora file of the wallet (e.g. `atpfinance_low`, if you follow the previous labs exactly).
     *Please refer back to Lab 4, Step 4, to check the content of `tnsnames.ora` file.*
 
-    Replace *{wallet_location}* with the full path to the directory which has the unzipped wallet (e.g. `/home/oracle/wallets`).
+    Replace *{wallet_location}* with the full path to the directory which has the unzipped wallet (e.g. `/home/oraclegraph/wallets`).
 
     ```
     <copy>var jdbcUrl = "jdbc:oracle:thin:@{db_tns_name}?TNS_ADMIN={wallet_location}";</copy>
@@ -180,7 +181,7 @@ Enter the following sets of commands once the JShell has started and is ready.
     // cpgStmtStr ==> "CREATE PROPERTY GRAPH customer_360     VERTEX TABLES (     customer      PROPERTIES (type, name, age, location, gender, student)    , account      PROPERTIES (type, account_no, balance)  , merchant      PROPERTIES (type, name)  )  EDGE TABLES (    owned_by      SOURCE KEY(from_id) REFERENCES account      DESTINATION KEY(to_id) REFERENCES customer      LABEL owned_by      PROPERTIES (since)  , parent_of      SOURCE KEY(from_id) REFERENCES customer      DESTINATION KEY(to_id) REFERENCES customer      LABEL parent_of  , purchased      SOURCE KEY(from_id) REFERENCES account      DESTINATION KEY(to_id) REFERENCES merchant      LABEL purchased      PROPERTIES (amount)  , transfer      SOURCE KEY(from_id) REFERENCES account      DESTINATION KEY(to_id) REFERENCES account      LABEL transfer      PROPERTIES (amount, date) )"
     ```
 
-    ![](../images/create_graph_1.png " ")
+    ![](../../GraphServer_ManualSetup/images/create_graph_1.png " ")
 
 4. Now execute the PGQL DDL to first DROP any existing graph of the same name before CREATEing it.
 
@@ -202,7 +203,7 @@ Enter the following sets of commands once the JShell has started and is ready.
 
     The create graph process can take 3-4 minutes depending on various factors such as network bandwidth and database load.
 
-    ![](../images/create_graph_2.png  " ")
+    ![](../../GraphServer_ManualSetup/images/create_graph_2.png  " ")
 
 ## **Step 5:** Check the newly created graph
 
@@ -241,14 +242,14 @@ Check that the graph was created. Copy, paste, and run the following statements 
     <copy>query.accept("select count(e), label(e) from customer_360 match ()-[e]->() group by label(e)");</copy>
     ```
 
-    ![](../images/check_graph.png " ")
+    ![](../../GraphServer_ManualSetup/images/check_graph.png " ")
     You may now *proceed to the next lab* (query and analyse the graph in JShell)
 
 ## Acknowledgements
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
 
-* **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
+* **Contributors** - Albert Godfrind and Ryota Yamanaka.  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
 
 - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020

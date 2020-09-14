@@ -33,10 +33,10 @@ Now let's add some labels and other visual context. These are known as highlight
 If however you are doing the Setup Graph with Free Tier Lab by itself, then left-click on <a href="highlights.json" download="highlights.json" target="\_blank">this link</a> to download it.*
 
 1. Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder (i.e. either to `oracle-pg/graphs/customer_360`  or the folder where you just downloaded it) and choose the file named 'highlights.json' and click Open to load that.  
-![Load highlights for graph](../../customer_360_analysis/images/GraphVizLoadHighlights.png " ")
+![Load highlights for graph](../../../customer_360_analysis/images/GraphVizLoadHighlights.png " ")
 
     The graph should now look like  
-    ![Customer 360 graph with highlights](../../customer_360_analysis/images/GraphVizWithHighlights.png " ")
+    ![Customer 360 graph with highlights](../../../customer_360_analysis/images/GraphVizWithHighlights.png " ")
 
 
 
@@ -116,7 +116,7 @@ Click Run.
 ## Acknowledgements ##
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
-* **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka). And lots from Jenny Tsai. Thank you.
+* **Contributors** - Albert Godfrind, Ryota Yamanaka, and Jenny Tsai. 
 * **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
 ## See an issue?

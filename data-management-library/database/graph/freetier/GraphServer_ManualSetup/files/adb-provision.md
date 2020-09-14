@@ -31,7 +31,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
 
     __Note:__ You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
 
-    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-36.png " ")
+    ![](./../../../../../autonomous-database/shared/adb-provision/images/Picture100-36.png " ")
 
 3. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Transaction Processing (ATP) database, so click **Autonomous Transaction Processing**.
 
@@ -47,13 +47,13 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
 
 6. You can see your current default **region** in the top, right hand corner of the page. You can select a different region. If you want to create an Always Free ADB, go ahead and select a region where Always Free Resources are available.
 
-    ![](./../../../../autonomous-database/shared/adb-provision/images/Region.png " ")
+    ![](./../../../../../autonomous-database/shared/adb-provision/images/Region.png " ")
 
 ## **STEP 2**: Creating the ADB instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
-    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-23.png " ")
+    ![](./../../../../../autonomous-database/shared/adb-provision/images/Picture100-23.png " ")
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 3. Provide basic information for the autonomous database:
@@ -74,7 +74,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
     - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     - __Dedicated Infrastructure__ - Alternately, you could have chosen Dedicated Infrastructure as the workload type.
 
-    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-26_deployment_type.png " ")
+    ![](./../../../../../autonomous-database/shared/adb-provision/images/Picture100-26_deployment_type.png " ")
 
 6. Configure the database, select the **Always Free** option:
 
@@ -85,7 +85,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
     - __Auto scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do __not__ select it.
 
-    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-26c.png " ")
+    ![](./../../../../../autonomous-database/shared/adb-provision/images/Picture100-26c.png " ")
 
 7. Create administrator credentials:
 
@@ -97,13 +97,13 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
     - The password must not be the same password that is set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
-    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-26d.png " ")
+    ![](./../../../../../autonomous-database/shared/adb-provision/images/Picture100-26d.png " ")
 8. Choose network access:
     - For this lab, accept the default, "Allow secure access from everywhere".
     - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
     - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID.
 
-    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-26e.png " ")
+    ![](./../../../../../autonomous-database/shared/adb-provision/images/Picture100-26e.png " ")
 
 9. Choose a license type. For this lab, choose __License Included__. The two license types are:
 
@@ -112,12 +112,10 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
 
 10. Click __Create Autonomous Database__.
 
-    ![](./../../../../autonomous-database/shared/adb-provision/images/Picture100-27.png " ")
+    ![](./../../../../../autonomous-database/shared/adb-provision/images/Picture100-27.png " ")
 
 11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Transaction Processing database is ready to use! Have a look at your instance's details here including its Name, Database Version, OCPU Count and Storage size.
-
     ![](../images/ATP_provisioning.png " ")
-
     ![](../images/ATP_available.png " ")
 
 Please *proceed to the next lab*.
