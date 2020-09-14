@@ -198,7 +198,7 @@ Choose the environment where you created your SSH Key.
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
-* **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
+* **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
 * **Last Updated By/Date** - Kamryn Vinson, September 2020
 
 ## See an issue?
