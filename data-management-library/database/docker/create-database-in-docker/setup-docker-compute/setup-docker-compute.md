@@ -161,7 +161,7 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
-* **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
+* **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
 * **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 * **Last Updated By/Date** - Kamryn Vinson, September 2020
 
