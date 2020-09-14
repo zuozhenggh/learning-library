@@ -58,7 +58,7 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
 
 ## **STEP 2**: Configure the Micronaut Application
 
-1. The final step to configure the Micronaut application to work with Autonomous Database is to open the `src/main/resources/application.yml` file and modify the default datasource connection settings as follows:
+1. To configure the Micronaut application to work with Autonomous Database open the `src/main/resources/application.yml` file and modify the default datasource connection settings as follows:
 
     ```yaml
     <copy>
@@ -82,7 +82,25 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
     </copy>
     ```
 
-3. To configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section.
+3. Now open up `build.gradle` in the root of the project and below the `runtimeOnly("com.oracle.database.jdbc:ojdbc8")` dependency and within the `dependencies` block add the following additional dependencies required to connect to Autonomous Database:
+
+    ```
+
+    dependencies {
+       ...  
+       runtimeOnly("com.oracle.database.jdbc:ojdbc8")
+    <copy>       
+       &nbsp;&nbsp;&nbsp;runtimeOnly('com.oracle.database.security:oraclepki:19.7.0.0')
+       runtimeOnly('com.oracle.database.security:osdt_cert:19.7.0.0')
+       runtimeOnly('com.oracle.database.security:osdt_core:19.7.0.0')
+    </copy>
+    }
+    ```
+
+
+4. Finally, to configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section.
+
+
 
 It is recommended to never hard code passwords in configuration so using an environment variable is the preferred approach.
 
