@@ -11,7 +11,6 @@ In this lab, you will:
 * Validate client connection via SSH tunnel
 
 ### Prerequisites
-
 This lab assumes you have:
 - A LiveLabs Cloud account and assigned compartment
 - The IP address and instance name for your compute instance
@@ -97,7 +96,6 @@ The following steps are meant for anyone running this workshop on Windows and us
 Using the corresponding utility indicated in the table above, open a connection to the remote destination by addressing your local computer. While we are using a browser client for this illustration, the same applies to other clients as well. e.g. Using SQL Developer on port 1521 to access the database.  
 
 1. **EM13c OMS Console**
-
 Launch your browser and open a connection to [https://localhost:7803/em](https://localhost:7803/em)
 
   ![](./images/em-ssh-forward-console.png " ")
@@ -105,7 +103,6 @@ Launch your browser and open a connection to [https://localhost:7803/em](https:/
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
 Now you are ready to run the workshop. Proceed to the next *Lab*
-
 
 ## Acknowledgements
 - **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology

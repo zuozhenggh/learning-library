@@ -7,10 +7,14 @@ This lab walks you through the steps of setting up the environment for property 
 *Estimated Lab Time:* 30 Minutes
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
-  - Lab: Generate SSH Key
-  - Lab: Setup Compute Instance
-  - Lab: Start Database and Application
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Verify Compute Instance Setup
+    - Lab: Setup SSH Tunnel
+    - Lab: Start Database and Application
+
+***Note:***  All scripts for this lab are stored in the /u01/workshop/graph folder and are run as the oracle user.
 
 ### Overview of Oracle Graph
 
@@ -29,7 +33,6 @@ Every Oracle Database now includes both property graph and RDF graph data models
 - 50+ Graph algorithms
 - Support for graph visualization
 
-
 Customers use Property Graphs in fraud analytics, vulnerability analysis, recommendation systems, and more.
 
 **RDF Graph database includes:**
@@ -46,7 +49,6 @@ Here is are two videos that talk more about Oracle Graph.
 
 [](youtube:-DYVgYJPbQA)
 [](youtube:zfefKdNfAY4)
-
 
 ### Introduction to Property Graph
 
@@ -74,7 +76,6 @@ The following figure illustrates a very simple property graph with two vertices 
 
 Figure: Simple Property Graph Example
 
-
 **A very brief note on PGQL**
 
 The [pgql-lang.org](pgql-lang.org) site and specification [pgql-land.org/spec/1.2](pgql-land.org/spec/1.2) are the best reference for details and examples. For the purposes of this lab, however, here are minimal basics.
@@ -95,7 +96,25 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
 []  indicates an edge variable
 
+## **Step 0:** Running the Workshop
+### Setup SSH Tunnels.
 
+  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 7007 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+
+  | Description              | Client                 | Local port       | Remote Port     |
+  | :----------------------- | :--------------------- | :--------------- | :-------------- |
+  | Visualize Graph -GraphViz| Browser                | 7007             | 7007            |.
+
+  ***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above port(s) throughout this workshop should be substituted with *localhost*
+
+### Login to Host using SSH Key based authentication
+Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+  - Authentication OS User - “*opc*”
+  - Authentication method - *SSH RSA Key*
+  - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
+  ````
+  <copy>sudo su - oracle</copy>
+  ````
 
 ## **Step 1:** Connect to Graph Server and Client
 
@@ -359,6 +378,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG20.PNG)
 
+
 6. List the 10 customers who had the most product purchases in common with customer 202, see definition of qStr above or just enter qStr in the shell to see its content
 
     ````
@@ -374,7 +394,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
 We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
 
-GraphViz should be accessible at http://&lt;instance\_ip\_address&gt;:7007/ui
+GraphViz should be accessible at http://localhost:7007/ui
 
 The principal points of entry for the GraphViz application are the query editor and the graph lists.
 When you start GraphViz, the graph list will be populated with the graphs loaded in the graph server. To run queries against a graph, select that graph. The query lets you write PGQL queries that can be visualized. (PGQL is the SQL-like query language supported by GraphViz.)
@@ -518,7 +538,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
 
     ![](./images/IMGG37.PNG)
 
-31. Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the following statements to delete the in-memory graph
+31. Once you are done using PGViz at http://localhost:7007/ui and trying some other PGQL queries then execute the following statements to delete the in-memory graph
 
     ````
     <copy>

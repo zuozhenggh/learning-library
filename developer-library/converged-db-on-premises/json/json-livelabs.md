@@ -7,10 +7,12 @@ This lab is setup into multiple steps. In the first step you will setup the envi
 *Estimated Lab Time:* 20 Minutes
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
-- Lab: Start Database and Application
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Verify Compute Instance Setup
+    - Lab: Setup SSH Tunnel
+    - Lab: Start Database and Application
 
 ***Note:***  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
@@ -28,11 +30,11 @@ JSON data can be used in Oracle Databases in similar ways. Unlike relational dat
 
 It's likely we want to send and receive JSON documents to and from and our database, and store them in tables. Oracle Database has a huge amount of functionality that makes this easy.
 
-Oracle database provides a comprehensive implemention of SQL, for both analytics and batch processing. JSON held in the Oracle Database can be directly accessed via SQL, without the need to convert it into an intermediary form. JSON collections can be joined to other JSON collections or to relational tables using standard SQL queries.
+Oracle database provides a comprehensive implementation of SQL, for both analytics and batch processing. JSON held in the Oracle Database can be directly accessed via SQL, without the need to convert it into an intermediary form. JSON collections can be joined to other JSON collections or to relational tables using standard SQL queries.
 
 **Storing and Managing JSON Documents**
 
-JSON documents can be stored usinga VARCHAR2, CLOB, or BLOB column. An IS JSON SQL constraint ensures that the column contains only valid JSON documents, allowing the database to understand that the column is being used as a container for JSON documents.
+JSON documents can be stored using a VARCHAR2, CLOB, or BLOB column. An IS JSON SQL constraint ensures that the column contains only valid JSON documents, allowing the database to understand that the column is being used as a container for JSON documents.
 
 Oracle’s JSON capabilities are focused on providing full support for schemaless development and document-based storage. Developers are free to change the structure of their JSON documents as necessary. With the addition of JSON support, Oracle Database delivers the same degree of flexibility as a NoSQL JSON document store.
 
@@ -42,8 +44,29 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
 ![](./images/json_intro.png " ")
 
-## **Step 1:** Connect to the Pluggable Database (PDB)
+## **Step 0:** Running the Workshop
+### Setup SSH Tunnels.
 
+  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+
+  | Description              | Client                 | Local port       | Remote Port     |
+  | :----------------------- | :--------------------- | :--------------- | :-------------- |
+  | Remote SQL Access        | SQL Developer          | 1521             | 1521            |.
+
+  ***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above ports throughout this workshop should be substituted with *localhost*
+
+### Login to Host using SSH Key based authentication
+  Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
+    ````
+    <copy>sudo su - oracle</copy>
+    ````
+
+  ***Note:*** Any SSH session you established in *Lab 2 - Setup SSH Tunnel* for SSH port forwarding can also be used for any task requiring SSH terminal access.
+
+## **Step 1:** Connect to the Pluggable Database (PDB)
 1. Open a terminal window and sudo to the user **oracle**
     ````
     <copy>
@@ -81,17 +104,15 @@ The first thing to realize about JSON is that it remains a simple text format, w
     ````
 
 ## **Step 2:** Connect to SQL Developer
-
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
       - **Name**: JSON
       - **Username**: appjson
       - **Password**: Oracle_4U
-      - **Hostname**: PUBLIC-IP
+      - **Hostname**: localhost
       - **Port**: 1521
       - **Service name**: JXLPDB
 
-
-    ![](./images/sql_developer_json.png " ")
+  ![](./images/sql_developer_json.png " ")
 
 ## **Step 3:** Loading JSON Documents into the database  
 

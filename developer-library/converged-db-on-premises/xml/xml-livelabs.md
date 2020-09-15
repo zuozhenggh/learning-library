@@ -8,10 +8,12 @@ The ability to perform partial updates on XML documents is very powerful, partic
 *Estimated Lab Time:* 15 Minutes
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
-- Lab: Start Database and Application
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Verify Compute Instance Setup
+    - Lab: Setup SSH Tunnel
+    - Lab: Start Database and Application
 
 ***Note:***  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user.
 
@@ -23,9 +25,7 @@ The basic building block of an XML document is an element, defined by tags. An e
 
 For example, XML documents can be very simple, such as the following:
 
-
- ![](./images/xml_snapa.png " ")
-
+  ![](./images/xml_snapa.png " ")
 
 ### XML with Oracle Database
 
@@ -36,6 +36,28 @@ Oracle XML DB also supports the SQL/XML standard, which allows SQL-centric devel
  [](youtube:lGQvxPCYR2c)
 
 Oracle XML DB allows an organization to manage XML content in the same way that ii manages traditional relational data. This allows organizations to save costs and improve return on investment by using a single platform to manage and secure all of their mission critical data. Oracle XML DB was first released with Oracle 9iR2, and it has been enhanced in each subsequent major release of the database.
+
+## **Step 0:** Running the Workshop
+### Setup SSH Tunnels.
+
+  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+
+  | Description              | Client                 | Local port       | Remote Port     |
+  | :----------------------- | :--------------------- | :--------------- | :-------------- |
+  | Remote SQL Access        | SQL Developer          | 1521             | 1521            |.
+
+  ***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above ports throughout this workshop should be substituted with *localhost*
+
+### Login to Host using SSH Key based authentication
+  Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
+    ````
+    <copy>sudo su - oracle</copy>
+    ````
+
+  ***Note:*** Any SSH session you established in *Lab 2 - Setup SSH Tunnel* for SSH port forwarding can also be used for any task requiring SSH terminal access.
 
 ## **Step 1:** Connect to the Pluggable Database (PDB)
 
@@ -82,12 +104,11 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
       - **Name**: XML
       - **Username**: appxml
       - **Password**: Oracle_4U
-      - **Hostname**: PUBLIC-IP
+      - **Hostname**: localhost
       - **Port**: 1521
       - **Service name**: JXLPDB
 
-
-    ![](./images/xml_sql_developer.png " ")
+  ![](./images/xml_sql_developer.png " ")
 
 ## **Step 3:** XML Query
 
