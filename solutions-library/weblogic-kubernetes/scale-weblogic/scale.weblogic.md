@@ -11,6 +11,8 @@ The operator provides several ways to initiate scaling of WebLogic clusters, inc
 - Using a WLDF policy rule and script action to call the operator's REST scale API.
 - Using a Prometheus alert action to call the operator's REST scale API.
 
+Estimated Lab Time: 10 minutes
+
 ## **STEP 1**: Scaling a WebLogic cluster using domain resource definition
 
 The easiest way to scale a WebLogic cluster in Kubernetes is to simply edit the replicas property within a domain resource.  To retain changes, edit the *domain.yaml* file and apply the changes using `kubectl`. Use your favorite editor to open the *domain.yaml* file.
@@ -62,3 +64,12 @@ It will use a `vi`-like editor.
 Note! Do not use the Console to scale the cluster. The operator controls this operation. Use the operator options to scale your cluster deployed on Kubernetes.
 
 ---
+
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+* **Author** - Maciej Gruszka, Peter Nagy, September 2020
+* **Last Updated By/Date**
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

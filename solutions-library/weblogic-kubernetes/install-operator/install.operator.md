@@ -6,6 +6,8 @@ An operator is an application-specific controller that extends Kubernetes to cre
 
 This lab walks you through the steps to prepare OCI Cloud shell (client) environment and install WebLogic Kubernetes Operator.
 
+Estimated Lab Time: 15 minutes
+
 ## **STEP 1**: Clone the operator repository to a Cloud Shell instance
 First, clone the operator git repository to OCI Cloud Shell.
 ```bash
@@ -107,4 +109,11 @@ NAME                            NAMESPACE                       REVISION        
 sample-weblogic-operator        sample-weblogic-operator-ns     1               2020-09-03 13:48:24.187689635 +0000 UTC deployed        weblogic-operator-3.0.0
 ```
 
-The WebLogic Server Kubernetes Operator has been installed. You can continue with next tutorial module.
+The WebLogic Server Kubernetes Operator has been installed. You may now **proceed to the next lab**.
+
+## Acknowledgements
+* **Author** - Maciej Gruszka, Peter Nagy, September 2020
+* **Last Updated By/Date**
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

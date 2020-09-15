@@ -13,6 +13,8 @@ However, you can create affinity with a `nodeSelector` to constrain a pod to be 
 
 In this lab, you will learn how to assign pods to individual Managed Server instances and or the entire domain to particular node or nodes.
 
+Estimated Lab Time: 15 minutes
+
 ## **STEP 1**: Assign particular servers to specific nodes
 
 Create affinity by assigning particular servers to specific nodes. To assign pods to nodes, you need to label the desired node with a custom tag. Then, define the `nodeSelector` property in the domain resource definition and set the value of the label you applied on the node. Finally, apply the domain configuration changes.
@@ -132,3 +134,10 @@ The output should be similar to the following:
 domain.weblogic.oracle/sample-domain1 configured
 ```
 The pod reallocation/restart will happen based on the scheduler decision.
+
+## Acknowledgements
+* **Author** - Maciej Gruszka, Peter Nagy, September 2020
+* **Last Updated By/Date**
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -6,6 +6,8 @@ This tutorial creates a Docker image with a WebLogic domain inside the image dep
 
 For the purpose of this lab, we created another image that contains a domain and an updated version of the application (green title on the main page). This image is available at `iad.ocir.io/weblogick8s/weblogic-operator-tutorial-store:2.0`.
 
+Estimated Lab Time: 15 minutes
+
 ## **STEP 1**: Upgrade WebLogic container packaged application using domain resource definition
 
 Edit  your domain resource definition (*domain.yaml*) and modify the image location. The modified line with image should appear as follows:
@@ -38,3 +40,12 @@ During the rolling restart, check your web application periodically. If the resp
 `http://EXTERNAL-IP/opdemo/?dsname=testDatasource`
 
 ![](images/010.check.changes.png)
+
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+* **Author** - Maciej Gruszka, Peter Nagy, September 2020
+* **Last Updated By/Date**
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

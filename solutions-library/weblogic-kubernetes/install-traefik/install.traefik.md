@@ -6,6 +6,8 @@ The Oracle WebLogic Server Kubernetes Operator supports three load balancers: Tr
 
 This tutorial demonstrates how to install the [Traefik](https://traefik.io/) Ingress controller to provide load balancing for WebLogic clusters.
 
+Estimated Lab Time: 10 minutes
+
 ## **STEP 1**: Install the Traefik operator with a Helm chart
 
 Change to your operator local Git repository folder.
@@ -80,3 +82,12 @@ The output should be similar to the following:
 NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
 traefik-operator        traefik         1               2020-09-03 13:50:09.199419556 +0000 UTC deployed        traefik-1.87.2  1.7.24
 ```
+
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+* **Author** - Maciej Gruszka, Peter Nagy, September 2020
+* **Last Updated By/Date**
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

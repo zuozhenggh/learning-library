@@ -1,9 +1,9 @@
 {
-    "workshoptitle": "Oracle WebLogic Server Kubernetes Operator Tutorial",
+    "workshoptitle": "Oracle WebLogic Server Kubernetes Operator",
     "tutorials": [
         {
             "title": "Introduction",
-            "filename": "weblogic.operator.tutorial.md"
+            "filename": "../../introduction/introduction.md"
         },
         {
             "title": "Prerequisites",
@@ -12,31 +12,31 @@
         },
         {
             "title": "Lab 1: Set up an Oracle Kubernetes Engine instance on the Oracle Cloud Infrastructure",
-            "filename": "setup-oke/setup.oke.md"
+            "filename": "../../setup-oke/setup.oke.md"
         },
         {
             "title": "Lab 2: Install the WebLogic Server Kubernetes Operator",
-            "filename": "install-operator/install.operator.md"
+            "filename": "../../install-operator/install.operator.md"
         },
         {
             "title": "Lab 3: Install a Traefik software load balancer",
-            "filename": "install-traefik/install.traefik.md"
+            "filename": "../../install-traefik/install.traefik.md"
         },
         {
             "title": "Lab 4: Deploy a WebLogic domain",
-            "filename": "deploy-weblogic/deploy.weblogic.md"
+            "filename": "../../deploy-weblogic/deploy.weblogic.md"
         },
         {
             "title": "Lab 5: Scale a WebLogic cluster",
-            "filename": "scale-weblogic/scale.weblogic.md"
+            "filename": "../../scale-weblogic/scale.weblogic.md"
         },
         {
             "title": "Lab 6 (OPTIONAL): Update a deployed application by a rolling restart of the new image",
-            "filename": "update-application/update.application.md"
+            "filename": "../../update-application/update.application.md"
         },
         {
             "title": "Lab 7 (OPTIONAL): Assign WebLogic pods to nodes (a scenario simulating a cluster spanning 2 data centers)",
-            "filename": "node-selector/node.selector.md"
+            "filename": "../../node-selector/node.selector.md"
         }
     ]
 }
