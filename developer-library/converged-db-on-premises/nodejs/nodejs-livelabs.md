@@ -7,10 +7,12 @@ This lab walks you through the steps to start the Docker and Node.js Retail appl
 *Estimated Lab Time:* 20 Minutes
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
-  - Lab: Generate SSH Key
-  - Lab: Setup Compute Instance
-  - Lab: Start Database and Application
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Verify Compute Instance Setup
+    - Lab: Setup SSH Tunnel
+    - Lab: Start Database and Application
 
 ### About Oracle Node.js
 
@@ -26,7 +28,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
   Node.js uses asynchronous programming!
 -	A common task for a web server can be to open a file on the server and return the content to the client.
--	how Node.js handles a file request:
+-	How Node.js handles a file request:
 	     Sends the task to the computer's file system.
          Ready to handle the next request.
          When the file system has opened and read the file, the server returns the content to the client.
@@ -44,17 +46,28 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
    The official Node.js website has installation instructions for [Node.js](https://yum.oracle.com/oracle-linux-nodejs.html).
 
+## **Step 0:** Running the Workshop
+### Setup SSH Tunnels
+As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 3000 and 3001 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+
+| Description              | Client                 | Local port       | Remote Port     |
+| :----------------------- | :--------------------- | :--------------- | :-------------- |
+| eShop Store              | Browser                | 3000             | 3000            |
+| eShop RestApi            | Postman                | 3001             | 3001            |.
+
+***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above ports throughout this workshop should be substituted with *localhost*
+
 ## **Step 1:**  Verify Application
 
 1.  The script (env\_setup\_script.sh) which you ran started the application. Also at the end of the script. you will be presented with two URLs.
 
     ![](./images/appscript4a.png " ")
 
-2. Open up a web browser and visit the Application URL indicated in your terminal. Make sure to substitute the ip address of your server for the &lt;PUBLIC-IP&gt;:   
-http://&lt;PUBLIC-IP&gt;:3000/
+2. Open up a web browser and visit the Application URL indicated in your terminal. Make sure to substitute the ip address of your server for the localhost:   
+http://localhost:3000/
 
-3. Open up a web browser and visit the Application API indicated in your terminal. Make sure to substitute the ip address of your server for the &lt;PUBLIC-IP&gt;:   
-http://&lt;PUBLIC-IP&gt;:3001/
+3. Open up a web browser and visit the Application API indicated in your terminal. Make sure to substitute the ip address of your server for the localhost:   
+http://localhost:3001/
 
     ![](./images/application_home_pageupdated.png " ")
 
@@ -75,7 +88,7 @@ http://&lt;PUBLIC-IP&gt;:3001/
 
  4. In the center of the screen from the drop down select **POST** Method and enter the information below. See the screenshot for additional details.
 
-    - For the URL Enter: &lt;PUBLIC-IP&gt;:3001/addproduct Make sure to substitute your ip address for the &lt;PUBLIC-IP&gt;.
+    - For the URL Enter: localhost:3001/addproduct Make sure to substitute your ip address for the localhost.
     - Click on Body and select raw and then in the drop down choose JSON
     - In the data portion of the Body insert the JSON data below
       ````
@@ -100,20 +113,20 @@ http://&lt;PUBLIC-IP&gt;:3001/
 
 2. To get product details you can use the get method. Fill out the form using the following information.  
     - From the Method drop down in the center select - GET  
-    - To get list of all the product details enter the URL: - http://&lt;PUBLIC-IP&gt;:3001/products  
-    - To get the specific product details by using PID enter URL: - http://&lt;PUBLIC-IP&gt;:3001/products/31  
+    - To get list of all the product details enter the URL: - http://localhost:3001/products  
+    - To get the specific product details by using PID enter URL: - http://localhost:3001/products/31  
     - Click on the **Send** button, Postman return the HTTP 200 Ok which is a successful GET.
 
     ![](./images/postman10a.png " ")
 
-3. Open the browser and verify the above using link- http://&lt;PUBLIC-IP&gt;:3001/products/31
+3. Open the browser and verify the above using link- http://localhost:3001/products/31
 
     ![](./images/nodejs-postman5a.png " ")
 
 ## **Step 4:** Using HTTP POST Method
 
 
-1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL http://&lt;PUBLIC-IP&gt;:3001/products/13.
+1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL http://localhost:3001/products/13.
 
     ![](./images/postman_pid_13_check.png " ")
 
@@ -122,7 +135,7 @@ http://&lt;PUBLIC-IP&gt;:3001/
 3. In the center of the screen from the drop down select **POST** Method and enter the information below.
 
     - Method: - POST  
-    - URL: - http://&lt;PUBLIC-IP&gt;:3001/updateProduct/13  
+    - URL: - http://localhost:3001/updateProduct/13  
     - Click on Body and select raw and then in the drop down choose JSON
     - In the data portion of the Body insert the JSON data below
     - Click on the Send button, Postman return the HTTP 200 OK after successfully updating the product price.
@@ -132,7 +145,7 @@ http://&lt;PUBLIC-IP&gt;:3001/
 
     ![](./images/postman12a.png " ")
 
-4. Verify product details by using HTTP GET method. Select the GET method, enter the URL http://&lt;PUBLIC-IP&gt;:3001/products/13 and click on Send. Notice the data in the body section and price is updated.  
+4. Verify product details by using HTTP GET method. Select the GET method, enter the URL http://localhost:3001/products/13 and click on Send. Notice the data in the body section and price is updated.  
 
     ![](./images/postman_after_update.png " ")
 

@@ -10,10 +10,12 @@ This lab will show you how to use cross data functions.
 *Estimated Lab Time:* 20 Minutes
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
-- Lab: Start Database and Application
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Verify Compute Instance Setup
+    - Lab: Setup SSH Tunnel
+    - Lab: Start Database and Application
 
 ### About Oracle Cross Datatype
 
@@ -21,9 +23,7 @@ JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON 
 
 The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
 
-
 ## **Step 1:** Connect to the Pluggable Database (PDB)
-
 1. As oracle user set oracle Environment and connect to the PDB.
 
     ````
@@ -45,14 +45,13 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
     ````
 
 ## **Step 2:** Connect to SQL Developer
-
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
 
       - **Name**: CROSSTYPE
       - **Username**: CRSTYPE
       - **Password**: Oracle_4U
-      - **Hostname**: PUBLIC-IP
+      - **Hostname**: localhost
       - **Port**: 1521
       - **Service name**: APPPDB
 

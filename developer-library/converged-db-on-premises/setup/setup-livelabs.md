@@ -1,6 +1,7 @@
 # Environment Setup
 
 ## Introduction
+
 This lab will show you how to start a database instance and listener from a Putty window. You will also setup SQL Developer.
 
 *Estimated time:* 10 Minutes
@@ -10,41 +11,42 @@ This lab will show you how to start a database instance and listener from a Putt
 - Download and Setup SQL Developer Client
 
 ### Prerequisites
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Verify Compute Instance Setup
+    - Lab: Setup SSH Tunnel
 
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
+## **Step 0:** Running the Workshop
+### Setup SSH Tunnels.
+  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
 
-## **Step 1:** Login to ConvergedDB Compute instance
-If you aren't already logged in, follow the steps below to login.  If you are logged in, skip to Step 2.
+  | Description              | Client                 | Local port       | Remote Port     |
+  | :----------------------- | :--------------------- | :--------------- | :-------------- |
+  | Remote SQL Access        | SQL Developer          | 1521             | 1521            |.
 
-1. Click the Hamburger Menu in the top left corner. Then hover over **Compute** > **Instances**. Find the instance you created in the previous lab.
+  ***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above ports throughout this workshop should be substituted with *localhost*
 
-   ![](./images/nav_compute_instance.png " ")
+### Login to Host using SSH Key based authentication
+Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+  - Authentication OS User - “*opc*”
+  - Authentication method - *SSH RSA Key*
+  - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
+  ````
+  <copy>sudo su - oracle</copy>
+  ````
 
-2. Click on your instance and copy your Public IP address to a notepad.
+***Note:*** Any SSH session you established in *Lab 2 - Setup SSH Tunnel* for SSH port forwarding can also be used for any task requiring SSH terminal access.
 
-   ![](./images/public_ip.png " ")
-
-
-3. In Oracle Cloud Shell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user.  
-
-      ````
-      ssh -i <<sshkeylocation>> opc@<<your address>>
-      ````
-
-      - sshkeylocation - Full path of your SSH key
-      - your address - Your Public IP Address
-
-## **Step 2:** Start the Database and the Listener
-4. Switch to the oracle user
+## **Step 1:** Start the Database and the Listener
+1. Switch to the oracle user
       ````
       <copy>sudo su - oracle</copy>
       ````
 
    ![](./images/env1.png " ")
 
-5.  Run the script env\_setup\_script.sh, this will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run.
-
+2.  Run the script env\_setup\_script.sh, this will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run.
 
       ````
       <copy>cd /u01/script
@@ -52,7 +54,7 @@ If you aren't already logged in, follow the steps below to login.  If you are lo
       ````
    ![](./images/setup-script.png " ")
 
-## **Step 3:** Download SQL Developer
+## **Step 2:** Download SQL Developer
 Certain workshops require SQL Developer.  To setup SQL Developer, follow the steps below.
 
 1. Download [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) from the Oracle.com site and install on your local system.
@@ -61,20 +63,20 @@ Certain workshops require SQL Developer.  To setup SQL Developer, follow the ste
 
       ![](./images/start-sql-developer.png " ")
 
-## **Step 4:**  Test a connection
+## **Step 3:**  Test a connection
 1.  In the connections page click the green plus to create a new connection
 
 2.  Enter the following connection information to test your connection:
       - **Name**: CDB
       - **Username**: system
       - **Password**: Oracle_4U
-      - **Hostname**: <instance_publicIP>
+      - **Hostname**: localhost
       - **Port**: 1521
       - **SID**: convergedcdb
 
     ![](./images/sql_developer_connection.png " ")
 
-    *Note: If you cannot login to SQL Developer, check to ensure your VCN has the correct ports opened*
+    *Note: If you cannot login to SQL Developer, check to ensure your SSH tunnel session is still active*
 
 3.  Once your connection is successful in the SQL Developer panel execute the query below
       ````
