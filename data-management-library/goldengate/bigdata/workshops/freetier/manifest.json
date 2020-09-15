@@ -48,12 +48,12 @@
         {
             "title": "Lab 8: Appendix",
             "description": "Lab 8 GGBD Appendix",
-            "filename": "../../lab8-appendix/lab8-appendix.md"
+            "filename": "../../appendix/appendix.md"
         },
         {
             "title": "Lab 9: MySQL to Oracle (Optional)",
             "description": "Lab 9 GGBD mysql-to-oracle",
-            "filename": "../../lab9-mysql-to-oracle/lab9-mysql-to-oracle.md"
+            "filename": "../../mysql-to-oracle/mysql-to-oracle.md"
         }
         
     ]
