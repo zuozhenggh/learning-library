@@ -4,6 +4,8 @@
 
 This lab walks you through the steps how to create managed Kubernetes environment on Oracle Cloud Infrastructure.
 
+Estimated Lab Time: 25 minutes
+
 ### About Product/Technology
 
 Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, scalable, and highly available service that you can use to deploy your container applications to the cloud. Use the Container Engine for Kubernetes (sometimes abbreviated OKE) when your development team wants to reliably build, deploy, and manage cloud-native applications. You specify the compute resources that your applications require, and OKE provisions them on an Oracle Cloud Infrastructure in an existing OCI tenancy.
@@ -117,3 +119,12 @@ If you see the node's information, then the configuration was successful.
 You can always minimize and restore the terminal size at any time using the buttons on the top right corner of the Cloud Shell.
 
 ![](images/120.ocishell.minimize.restore.png)
+
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+* **Author** - Maciej Gruszka, Peter Nagy, September 2020
+* **Last Updated By/Date**
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
