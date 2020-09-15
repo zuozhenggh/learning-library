@@ -2,7 +2,19 @@
 
 ## Introduction
 
-In this lab we will run a Helidon microservice and connect the Micronaut application to it
+In this lab we will run a Helidon microservice and connect the Micronaut application to it.
+
+If at any point you run into trouble completing the steps, the full source code for the application can be cloned from Github using the following command to checkout the code:
+
+    <copy>
+    git clone -b lab6 https://github.com/graemerocher/micronaut-hol-example.git
+    </copy>
+
+If you were unable to setup the Autonomous Database and necessary cloud resources you can also checkout a version of the code that uses an in-memory database:
+
+    <copy>
+    git clone -b lab6-h2 https://github.com/graemerocher/micronaut-hol-example.git
+    </copy>
 
 Estimated Lab Time: 15 minutes
 
@@ -175,6 +187,10 @@ Finally, it is time to update the `PetController` controller to invoke the Pet H
 
 ```java
 <copy>
+// add imports
+import java.util.concurrent.CompletableFuture;
+import example.atp.services.PetHealthOperations;
+
 // a new field
 private final PetHealthOperations petHealthOperations;
 

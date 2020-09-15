@@ -38,10 +38,14 @@ e.g: https://111.888.111.888:7803/em
 | 5    | Self- service to request a PDB using PDBaaS            | 10min                     | Request PDB pluggable database using Service Catalog. (Private Cloud) Resize the PDB and then Delete the PDB while preserving the contents.                                                      | Review self-service option to provision PDB, which only requires minimal inputs.                                                                                                                                                        |
 | 6    | Administrative Setup for PDBaaS (Private Cloud)- Review only               | 10min                     | An overview of the administrative setup involved for PDBaaS (Private Cloud) which includes setting up a PaaS Infrastructure Zone, Pluggable Database Pool, Data Sources, Service Template, etc. | Setup private cloud using Enterprise Manager where admin can define resources and EM’s placement algorithm and make sure that resources are utilized to their best. It is complimented by metering, and show back/chargeback capabilities. |
 
-## **Step 1:** Create Pluggable Database (PDB)
-Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above
+## **Step 0:** Running your Workload
+
+### Login to OMS Console
+Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
+
+## **Step 1:** Create Pluggable Database (PDB)
 
 1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
