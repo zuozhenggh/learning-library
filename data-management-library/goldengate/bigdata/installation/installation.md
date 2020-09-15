@@ -4,9 +4,9 @@
 
 In this lab you will install GoldenGate for Big Data in the GG Target Home.
 
-Estimated Lab Time:  15 minutes
+*Estimated Lab Time*:  15 minutes
 
-![](./images/image110_1.png)
+  ![](./images/image110_1.png" ")
 
 ### About Oracle GoldenGate for Big DAta
 
@@ -47,7 +47,7 @@ integration architectures to big data systems without impacting the performance 
 
 1. Open terminal from desktop by double clicking on the icon
 
-  ![](./images/terminal2.png)
+  ![](./images/terminal2.png" ")
 
 2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  *Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS*
     ```` 
@@ -57,13 +57,13 @@ integration architectures to big data systems without impacting the performance 
 
 3. The following Lab Menu will be displayed
 
-  ![](./images/labmenu_opt1.png)
+  ![](./images/labmenu_opt1.png" ")
 Follow these instructions to install GoldenGate for Big Data
 
 ## **STEP 3**:Performing the Install
 
 1.  Review the overview notes on the following screen, then select **Q** to quit. 
-      ![](./images/labmenu_opt1.png)
+      ![](./images/labmenu_opt1.png" ")
 
   These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
