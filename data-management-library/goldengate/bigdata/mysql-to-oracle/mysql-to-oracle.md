@@ -1,21 +1,20 @@
-# Optional Lab: 
+# Optional Lab: MySQL to Oracle (using jdbc)
 
-**Lab 9:** MySQL to Oracle (using jdbc)
+## Introduction
 
-## Before You Begin
-
-### Introduction
+This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 In this lab is a read-only example on how we use goldengate for bigdata Java Database Connectivity (JDBC) Handler to replicate source transactional data to a target or database.
 
+*Estimated Lab Time*:  60 minutes
+
 ### Objectives
-- Replicate from **MySQL to Oracle using jdbc**
+- Explore replication from **MySQL to Oracle using jdbc**
 
-Time to Complete - Approximately 60 minutes
-
-### What Would You Need?
-Your will need:
-- Goldengate for Bigdata
-- Oracle JDBC Java Driver
+### Prerequisites
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Lab: Installation
+* Goldengate for Bigdata
+* Oracle JDBC Java Driver
 
 ## Steps
 
@@ -27,8 +26,8 @@ Example:
 
 **Step2:** In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
 
-        We already have the jdbc drive downloaded ojdbc8-full.tar.gz in the location /home/oracle/Downloads 
-```
+We already have the jdbc drive downloaded ojdbc8-full.tar.gz in the location /home/oracle/Downloads 
+````
 [opc@gg4bd-target01 ~]$ sudo su - oracle
 Last login: Tue May  7 14:53:22 GMT 2019 on pts/3
 [oracle@gg4bd-target01 ~]$ mkdir -p /u01/app/jars/oracle_jdbc
@@ -41,20 +40,20 @@ total 7532
 -rwxr-xr-x. 1 oracle oracle 7709868 May  7 14:57 ojdbc8-full.tar.gz
 
 [oracle@gg4bd-target01 oracle_jdbc]$ tar -xvzf ojdbc8-full.tar.gz
-```
+````
     
 **Step3:**  Add the replicat with the below commands by logging into ggsci prompt
 
-```
+````
 GGSCI (gg4bd-target01) 4> add replicat rjdbc, exttrail ./dirdat/eb
 REPLICAT added.
 
 GGSCI (gg4bd-target01) 5> edit param rjdbc
-```
+````
 
 Add the below parameters in the parameter file :
 
-```
+````
 REPLICAT rjdbc
 ----------------------------------------------------------------------------------------
 -- Trail file for this example is located in "AdapterExamples/trail" directory
@@ -75,17 +74,17 @@ MAP employees.dept_manager, TARGET EMPLOYEES.DEPT_MANAGER,KEYCOLS(EMP_NO,DEPT_NO
 MAP employees.dept_emp,     TARGET EMPLOYEES.DEPT_EMP,    KEYCOLS(EMP_NO,DEPT_NO);
 MAP employees.titles,       TARGET EMPLOYEES.TITLES,      KEYCOLS(EMP_NO,TITLE,FROM_DATE);
 MAP employees.salaries,     TARGET EMPLOYEES.SALARIES,    KEYCOLS(EMP_NO,FROM_DATE);
-```
+````
 
 **Step4:**  Now edit the dirprm/jdbc_oracle_with_mdp.props file with the below parameters. You can use sample property files found in $GGBD_HOME/AdapterExamples/big-data/jdbc.
 
-```
+````
 GGSCI (gg4bd-target01) 8> exit
 [oracle@gg4bd-target01 ggbd_home1]$ cd dirprm
 [oracle@gg4bd-target01 dirprm]$ vi jdbc_oracle_with_mdp.props
-```
+````
 Below are the parameters we will be using.
-```
+````
 gg.handlerlist=jdbcwriter
 gg.handler.jdbcwriter.type=jdbc
 
@@ -109,36 +108,44 @@ gg.log=log4j
 gg.log.level=INFO
 gg.report.time=30sec
 javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
-```
+````
 Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
 
-And we can goto the database and see the record count as well. For that log in to GG4BD_Source01 (129.213.97.81)
+And we can go to the database and see the record count as well.To do that log in to GG4BD_Source01 (129.213.97.81)
 
-```
+````
 [opc@gg4dbd-source01 ~]$ sudo su - oracle
 Last login: Wed May  8 09:22:55 GMT 2019 on pts/6
 [oracle@gg4dbd-source01 ~]$ . oraenv
 ORACLE_SID = [cdb1] ?
 The Oracle base remains unchanged with value /u01/app/oracle
 [oracle@gg4dbd-source01 ~]$ sqlplus employees/employees@pdb1
-```
+````
 
 Now run the below script to get the tables counts
 
-```
+````
 select 'employees       table -> '|| count(1) as Target from employees.employees UNION ALL
 select 'departments     table -> '|| count(1) from employees.departments UNION ALL
 select 'dept_manager    table -> '|| count(1) from employees.dept_manager UNION ALL
 select 'dept_emp        table -> '|| count(1) from employees.dept_emp UNION ALL
 select 'titles          table -> '|| count(1) from employees.titles UNION ALL
 select 'salaries        table -> '|| count(1) from employees.salaries;
-```
+````
+
+## Learn More
+
+* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
+* **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Meghana Banka, September 2020
 
-  * Authors ** - Brian Elliott
-  * Contributors ** - Brian Elliott
-  * Team ** - Data Integration Team
-  * Last Updated By/Date ** - Brian Elliott, August 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+
+
  
 

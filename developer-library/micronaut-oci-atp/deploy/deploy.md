@@ -74,11 +74,22 @@ In this lab you will:
     ```
     <copy>
     # run on VM to start Micronaut application
-    export MICRONAUT_OCI_DEMO_PASSWORD=[Your atp_wallet_password]
+    export DATASOURCES_DEFAULT_PASSWORD=[Your atp_wallet_password]
     export TNS_ADMIN=/tmp/wallet
     java -jar /app/application.jar
     </copy>
     ```
+
+You can now access `http://[VM IP Address]:8080/pets` for the `/pet` endpoint and `http://[VM IP Address]:8080/owners` for the `/owners` endpoint in a browser or using `curl`:
+
+    curl -i http://[VM IP Address]:8080/pets
+    HTTP/1.1 200 OK
+    Date: Thu, 20 Aug 2020 15:12:47 GMT
+    Content-Type: application/json
+    content-length: 55
+    connection: keep-alive
+
+    [{"name":"Dino"},{"name":"Baby Puss"},{"name":"Hoppy"}]
 
 You may now *proceed to the next lab*.
 

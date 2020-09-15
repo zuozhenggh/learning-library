@@ -10,7 +10,7 @@ In this lab we will load data in MySQL database ‘ggsource’. The GG extract p
 
 #### Lab Architecture
 
-  ![](./images/image200_1.png " ")
+  ![](./images/image200_1.png" ")
 
 ### Objectives
 - Explore replication from relational source to a relational target using GoldenGate

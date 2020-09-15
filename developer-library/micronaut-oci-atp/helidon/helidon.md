@@ -187,6 +187,10 @@ Finally, it is time to update the `PetController` controller to invoke the Pet H
 
 ```java
 <copy>
+// add imports
+import java.util.concurrent.CompletableFuture;
+import example.atp.services.PetHealthOperations;
+
 // a new field
 private final PetHealthOperations petHealthOperations;
 

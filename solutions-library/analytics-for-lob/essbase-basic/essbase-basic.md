@@ -4,7 +4,7 @@
 
 This lab walks you through the major features of Essbase-19c and their functionalities across the platform along with Overview of the Essbase 19c Web interface.
 
-The approximate time to complete the lab is 20 minutes.
+Estimated Lab Time: 20 minutes.
 
 ### Objectives
 
@@ -83,7 +83,7 @@ Essbase.
 
 ## **Step 3:** Create Ad Hoc Grids
 
-    ![](./images/smartview.png "")
+  ![](./images/smartview.png "")
 
 **Smart View Ribbon**
 
@@ -216,7 +216,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 ## **Step 5:** Creating a Cube from Tabular Data in Cube Designer
 
-* This workflow uses two sample tabular data Excel files to demonstrate the concepts of intrinsic and forced-designation headers. See About [Using Tabular Data to Create Cubes](https://docs.oracle.com/en/cloud/paas/analytics-cloud/esugc/using-tabular-data-create-cubes.html)
+This workflow uses two sample tabular data Excel files to demonstrate the concepts of intrinsic and forced-designation headers. See About [Using Tabular Data to Create Cubes](https://docs.oracle.com/en/cloud/paas/analytics-cloud/esugc/using-tabular-data-create-cubes.html)
 
 1.	In Excel, on the ‘Cube Designer’ ribbon, click ‘Catalog’.
 
