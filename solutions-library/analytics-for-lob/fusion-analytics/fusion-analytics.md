@@ -6,7 +6,7 @@ In this lab, you will learn about how a finance team can address analytics quest
 
 This lab is designed to give you a hands-on experience with both the pre-built elements of Oracle Fusion ERP Analytics – with a focus on KPIs and dashboards – as well as the intuitive self-service capabilities delivered by the underlying Oracle Analytics Cloud platform.
 
-The estimated time to complete this lab is 40 minutes.
+Estimated Lab Time: 40 minutes.
 
 
 ### Objectives
@@ -23,11 +23,11 @@ The estimated time to complete this lab is 40 minutes.
 
 ## **Step 1:** Explore the Interface and Pre-Built Content: KPI Cards, Decks, Alerts, and Analysis
 
--    We’ll start our experience with Oracle Fusion ERP Analytics by getting a good understanding of the out-of-the-box KPIs that finance executives and management can use to stay on top of the business.
+We’ll start our experience with Oracle Fusion ERP Analytics by getting a good understanding of the out-of-the-box KPIs that finance executives and management can use to stay on top of the business.
 
--    The product contains a library of 50+ pre-built Key Performance Indicators (KPIs) around profit and loss, balance sheets, financial ratios, receivables, and payables. You will learn to read the KPIs, leverage pre-built Decks or create simple customized decks, set alerts, and perform some additional analysis.
+The product contains a library of 50+ pre-built Key Performance Indicators (KPIs) around profit and loss, balance sheets, financial ratios, receivables, and payables. You will learn to read the KPIs, leverage pre-built Decks or create simple customized decks, set alerts, and perform some additional analysis.
 
--    **Note**: when going through this lab, your visualizations may looks slightly different from what is seen in the lab guide. This is okay- the data on the backend instance is updated regularly so the visualizations may look differently for you.
+**Note**: when going through this lab, your visualizations may looks slightly different from what is seen in the lab guide. This is okay- the data on the backend instance is updated regularly so the visualizations may look differently for you.
 
 1. Enter the credentials you were given and click the **Sign In** button.
 
@@ -198,7 +198,7 @@ The estimated time to complete this lab is 40 minutes.
 
 ## **Step 2:** Create a KPI with the Prebuilt ERP Data Model and External Data
 
--    Next, let's use the Financials-AP Invoice prebuilt subject area to create a KPI for Outstanding Invoice Amounts.  We will be also using an excel file that holds the target value the company set for Outstanding Invoices
+Next, let's use the Financials-AP Invoice prebuilt subject area to create a KPI for Outstanding Invoice Amounts.  We will be also using an excel file that holds the target value the company set for Outstanding Invoices
 
 1. From the browser console, click on the upper left **hamburger menu icon** and then click on **KPIs**.
 
@@ -562,7 +562,7 @@ You may proceed to the next lab.
 
 -   In this lab, you explored Oracle Fusion ERP Analytics. You navigated the Interface and pre-built content through KPI Cards, Decks, Alerts, and Analysis. You also created a KPI with an ERP Data Model and External Data, constructed an Analysis with an ERP Data Model, and blended ERP data with External Data
 
-### Learn More
+## Learn More
 -   To learn more about Oracle Fusion ERP Analytics, feel free to explore the capabilities by clicking on this link: [Oracle Fusion ERP Analytics Getting Started Documentation](https://docs.oracle.com/en/cloud/saas/analytics/fawag/get-started-oracle-analytics-applications.html#GUID-66FF30CB-C4C4-4184-9223-DE5AE3E83C80)
 
 ## Acknowledgements
