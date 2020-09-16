@@ -45,15 +45,19 @@ You will now create a Resource Manager Stack that will perform the following tas
 
 4. In the Create Stack dialog box:
 
+![](./images/terraform_version.png " ")
+
     a. Click the Browse link to upload the Terraform zip file (found at ``Desktop/HOL-EBS/Resource Manager/deploy-configure-EBS-CM.zip``).
 
     b. Enter ``deploy-ebscm-hol-stack`` in the NAME field.
 
     c. Enter a description.
 
-    d. Verify the target compartment (and change if necessary). 
+    d. Choose ``0.11.x`` in the TERRAFORM VERSION field.
+    
+    e. Verify the target compartment (and change if necessary). 
 
-    e. Click **Next**.
+    f. Click **Next**.
 
 ![](./images/4.png " ")
 
