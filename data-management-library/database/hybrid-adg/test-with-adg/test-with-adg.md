@@ -2,13 +2,13 @@
 
 Now we can run some testing with the ADG.
 
-## Lab Prerequisites
+## Prerequisites
 
 This lab assumes you have already completed the following labs:
 
 - Deploy Active Data Guard with LVM or ASM
 
-## Step 1: Test transaction replication
+## **Step 1:** Test transaction replication
 
 1. From on-premise side, create a test user in orclpdb, and grant privileges to the user. You need  to check if the pdb is open.
 
@@ -130,6 +130,22 @@ Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Produ
 Version 19.7.0.0.0
 [oracle@dbstby ~]$ 
 ```
+If the `OPEN_MODE` is **READ ONLY**, you can run the following command in sqlplus as sysdba, then check the `open_mode` again, you can see the `OPEN_MODE` is **READ ONLY WITH APPLY** now.
+```
+SQL> alter database recover managed standby database cancel;
+
+Database altered.
+
+SQL> alter database recover managed standby database using current logfile disconnect;
+
+Database altered.
+
+SQL> select open_mode,database_role from v$database;
+
+OPEN_MODE	     DATABASE_ROLE
+-------------------- ----------------
+READ ONLY WITH APPLY PHYSICAL STANDBY
+```
 
 4. From cloud side, connect as testuser to orclpdb. Check if the test table and record has replicated to the standby.
 
@@ -158,7 +174,7 @@ SQL>
 
 
 
-## Step 2: Test DML Redirection
+## **Step 2:** Test DML Redirection
 
 Starting  with Oracle DB 19c, we can run DML operations on Active Data Guard standby databases. This enables you to occasionally execute DMLs on read-mostly applications on the standby database.
 
@@ -217,7 +233,7 @@ Version 19.7.0.0.0
 
 
 
-## Step 3: Switchover to the Cloud 
+## **Step 3:** Switchover to the Cloud 
 
 At any time, you can manually execute a Data Guard switchover (planned event) or failover (unplanned event). Customers may also choose to automate Data Guard failover by configuring Fast-Start failover. Switchover and failover reverse the roles of the databases in a Data Guard configuration – the standby in the cloud becomes primary and the original on-premise primary becomes a standby database. Refer to Oracle MAA Best Practices for additional information on Data Guard role transitions. 
 
@@ -252,17 +268,6 @@ DGMGRL> validate database ORCL_nrt1d4
     orcl_nrt1d4:  YES            
     Validating static connect identifier for the primary database orcl...
     The static connect identifier allows for a connection to database "orcl".
-
-  Current Log File Groups Configuration:
-    Thread #  Online Redo Log Groups  Standby Redo Log Groups Status       
-              (orcl)                  (orcl_nrt1d4)                        
-    1         3                       2                       Insufficient SRLs
-
-  Future Log File Groups Configuration:
-    Thread #  Online Redo Log Groups  Standby Redo Log Groups Status       
-              (orcl_nrt1d4)           (orcl)                               
-    1         3                       0                       Insufficient SRLs
-    Warning: standby redo logs not configured for thread 1 on orcl
 
 DGMGRL> 
 ```

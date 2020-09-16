@@ -1,4 +1,4 @@
-# Object Practice - Object Storage Service
+# Create an Object Storage Service
 
 ## Introduction
 
@@ -6,152 +6,116 @@ Oracle Cloud Infrastructure Object Storage service is an internet-scale, high-pe
 
 With Object Storage, you can safely and securely store or retrieve data directly from the internet or from within the cloud platform. Object Storage offers multiple management interfaces that let you easily manage storage at scale.
 
-Object Storage is a regional service and is not tied to any specific compute instance. You can access data from anywhere inside or outside the context of the Oracle Cloud Infrastructure.
+Object Storage is a regional service and is not tied to any specific compute instance. You can access data from anywhere inside or outside the context of the Oracle Cloud Infrastructure
 
-**Some Key points:**
+Estimated Lab Time: 15 minutes
 
-*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%.*
+**Object storage offers 2 tiers:**
 
-- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
+1- Use Standard for data to which you need fast, immediate, and frequent access. Data accessibility and performance justifies a higher price point to store data in the Object Storage
 
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+2- Use Archive for data to which you seldom or rarely access, but that must be retained and preserved for long periods of time. The cost efficiency of the Archive Storage tier offsets the long lead time required to access the data
 
-- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
+The purpose of this lab is to give you an overview of the Object Service and an example scenario to help you understand how the service works.
 
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
+### Prerequisites
 
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+- Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
+- We recommend using Chrome or Edge as the browser. Also set your browser zoom to 80%
 
-    **Cloud Tenant Name**
+## **STEP 1**: Sign in to OCI Console and Create Object Storage Bucket
 
-    **User Name**
+1. Sign in using your tenant name, user name and password.
 
-    **Password**
+2. From the OCI Services menu, click **Object Storage**.
+  ![](images/OBJECT-STORAGE001.PNG " ")
 
-    **Compartment Name (Provided Later)**
-
-    **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
-
-### Pre-Requisites
-
-1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
-   
-2. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-
-3. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-
-4. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-
-5. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-
-6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
-
-
-## Step 1: Sign in to OCI Console and Create Object Storage Bucket
-
-* **Tenant Name:** {{Cloud Tenant}}
-* **User Name:** {{User Name}}
-* **Password:** {{Password}}
-* **Compartment:**{{Compartment}}
-
-1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
-    ![](./../grafana/images/Grafana_015.PNG " ")
-
-
-2. From the OCI Services menu,Click **Object Storage** under **Object Storage**.
-    ![](./../object-storage/images/OBJECT-STORAGE001.PNG " ")
-
-3. Ensure compartment assigned to you is selected. Click **Create Bucket**.
-    ![](./../object-storage/images/OBJECT-STORAGE002.PNG " ")
+3. Click **Create Bucket**.
+  ![](images/OBJECT-STORAGE012.PNG " ")
+  **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+  
 
 4. Fill out the dialog box:
 
-    - BUCKET NAME: Provide a name (Test-Bucket in this lab)
-    - Storage Tier: STANDARD 
+    - Bucket Name: Provide a name (Test-Bucket in this lab)
+    - Storage Tier: STANDARD
 
-5.  Click **Create Bucket**.
+5.  Click **Create Bucket**
+  ![](images/OBJECT-STORAGE013.PNG " ")
 
-## Step 2: Upload Object and create pre authenticated link
+## **STEP 2**: Upload Object and create pre authenticated link
 
-1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
+1. **Windows**: Click the Apps icon in the toolbar and select Git-Bash to open a terminal window.
 
-    ![](./../object-storage/images/OBJECT-STORAGE004.PNG " ")
+  ![](images/OBJECT-STORAGE004.PNG " ")
 
-2. Change directory to the Downloads folder Enter command:
+  Change directory to the Downloads folder Enter command:
 
     ```
-    <copy>
-    $ cd /c/Users/PhotonUser/Downloads/
-    </copy>
-    ```
-    ![](./../object-storage/images/OBJECT-STORAGE005.PNG " ")
-
-3. Create a sample file, Enter command:
-    ```
-    <copy>
-    touch samplefile
-    </copy>
+    $ <copy>cd /c/Users/PhotonUser/Downloads/**</copy>
     ```
 
-    This should create a file by the name"samplefile" in the Downloads folder.
+    ![](images/OBJECT-STORAGE005.PNG " ")
 
-4. Switch to OCI window and Click the Bucket Name.
+2. **Mac / Linux**: Open a terminal window and navigate to your home directory.
 
-    **HINT:** You can swap between OCI window and any other application(git-bash etc) by Clicking switch window.
+  Create a sample file, Enter command:
 
-    ![](./../object-storage/images/OBJECT-STORAGE006.PNG " ")
+    ```
+    <copy>touch samplefile</copy>
+    ```
 
-5. Bucket detail window should be visible. Click **Upload Object**.
+  This should create a file by the name "samplefile" in the current folder
 
-    ![](./../object-storage/images/OBJECT-STORAGE007.PNG " ")
+3. Switch to OCI window and click the Bucket Name.
+  ![](images/OBJECT-STORAGE014.PNG " ")
 
-6. Click on Upload Object > Browse > This PC > Downloads. You should see the sample file created earlier.
+4. Bucket detail window should be visible. Click **Upload**
+  ![](images/OBJECT-STORAGE007.PNG " ")
 
-7. Select the file, then Click **Upload Object** in the Dialog box.
+5. Click on *Upload* and then browse to where you created your *samplefile* moments ago.
 
-8. File should be visible under Objects. Click Action icon and Click **Create Pre-Authenticated Request**. This will create a web link that can be used to access the object Without requiring any additional authentication.
+6. Select the file, then click **Upload** in the Dialog box.
 
-    ![](./../object-storage/images/OBJECT-STORAGE008.PNG " ")
+7. File should be visible under Objects. Click Action icon and click **Create Pre-Authenticated Request**. This will create a web link that can be used to access the object without requiring any additional authentication.
 
-9. Fill out the dialog box:
+  ![](images/PreAuth1.png " ")
 
-      - NAME: Use an easy to remember name.
-      - PRE AUTHENTICATION REQUEST TARGET: OBJECT
-      - ACCESS TYPE: PERMIT READS ON THE OBJECT
-      - EXPIRATION DATE/TIME: Specify link expiration date
+8. Fill out the dialog box:
 
-10. Click **Create Pre-Authenticated Request**.
+    - NAME: Use an easy to remember name.
+    - PRE AUTHENTICATION REQUEST TARGET: OBJECT
+    - ACCESS TYPE: PERMIT READ ON THE OBJECT
+    - EXPIRATION DATE/TIME: Specify link expiration date
 
-11. Click Copy Icon to copy the link.
+9. Click **Create Pre-Authenticated Request**
 
-    **NOTE:** The link must be copied and saved once the window is closed the link can not be retrieved again. 
+  ![](images/OBJECT-STORAGE009.PNG " ")
 
-12. Click **Close**.
+10. Click **Copy** to copy the link
 
-    ![](./../object-storage/images/OBJECT-STORAGE010.PNG " ")
+  **NOTE:** The link must be copied and saved once the window is closed the link can not be retrieved again.
+  ![](images/PreAuth2.png " ")
 
-13. Open a new browser window and paste Pre-Authenticated link. 
+11. Click **Close**
 
-14.  An option to download the file will appear.
+12. Open a new browser window and paste Pre-Authenticated link.
+  ![](images/OBJECT-STORAGE011.PNG " ")
 
-    **NOTE:** Do NOT download the file as due to space restrictions it is not allowed for the purpose of this lab.
+13.  An option to download the file will appear.
 
-You have uploaded an object to Object Storage bucket, created a pre-authenticated link and successfully accessed the object. The Pre-Authenticated link can be shared with other users to provide them access to the object. Multiple objects of any size can be uploaded to the bucket and shared across teams/users.
+  **NOTE:** Do NOT download the file as due to space restrictions it is not allowed for the purpose of this lab.
 
-## Step 3: Delete the resources
-
-1. From the Object Storage detail window, Click **Pre-Authenticated Requests**, Click **Delete**, then Click **OK** in Confirm window.
-
-2. From OCI services menu navigate to **OBject Storage**. Click your bucket name. Under **Objects** your file should be visible. Click the Action icon (3 vertical dots) and click **Delete** to delete the object.
-
-3. Once the Object is deleted, click **Delete** to delete the bucket.
-
+  ***You have uploaded an object to Object Storage bucket, created a pre-authenticated link and successfully accessed the object. The Pre-Authenticated link can be shared with
+  other users to provide them access to the object.
+  Multiple objects of any size can be uploaded to the bucket and shared across teams/users.***
 
 ## Acknowledgements
-*Congratulations! You have successfully completed the lab.*
 
 - **Author** - Flavio Pereira, Larry Beausoleil
-- **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, June 2020
+- **Adapted by** -  Tom McGinn, Database Product Management
+- **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
+- **Last Updated By/Date** - Kamryn Vinson, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

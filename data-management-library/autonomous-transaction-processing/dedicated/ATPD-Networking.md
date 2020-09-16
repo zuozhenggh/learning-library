@@ -6,8 +6,8 @@ June 13, 2019
 # Lab 1: Preparing your private network in the Oracle Cloud Infrastructure 
 </td></tr><table>
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Introduction
 
 The Oracle dedicated autonomous database runs on dedicated Exadata hardware in the Oracle Cloud Infrastructure. That means you have your own personal slice of high performance hardware akin to running your own private cloud in a public cloud setting. In this hands-on lab we take a look at some best practices to setting up a secure autonomous data platform. Note that while every organization should implement their own corporate security policies, this guide aims to provide a framework for working with the autonomous data platform in the Oracle Cloud Infrastructure. The two key concepts dealth with here are,
@@ -35,7 +35,7 @@ As an OCI account administrator with network resource privileges,
 
 ## Steps
 
-### STEP 1: Create compartments, groups, users and IAM policies
+### **Step 1:** Create compartments, groups, users and IAM policies
 For separation of duties Oracle recommends a fleet administrator provision the exadata infrastucture and container databases while the database users simply become consumers of these resources and provision their databases on it. 
 
 ​	
@@ -138,7 +138,7 @@ wget --no-check-certificate --content-disposition https://github.com/oracle/lear
 ```
 
 
-### STEP 2: Layout a secure network for the database and application infrastructure
+### **Step 2:** Layout a secure network for the database and application infrastructure
 
 
  Setting up the right network upfront is important since you cannot reverse most aspects of your network without completely destroying and rebuilding it. While your network administrators are  ultimately responsible for choosing the right network topology as per corporate network guidelines, here's a best practice recommendation for setting up a secure network for your database and applications

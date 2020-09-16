@@ -1,18 +1,9 @@
 # Oracle Database 19c for Developers
 
-
 Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Oracle offers choice, portability and interoperability with other technologies, including open source and third-party components. Developers can build with the latest technologies, such as AI/ML, autonomous databases, Gen 2 cloud infrastructure, Kubernetes, serverless, blockchain, digital assistants, and more.
 
-Click on one of our workshops below to access the content.
-
 ## Workshops
-
-- [Database Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/)
-- [Hybrid Partitioning](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/hybridpart-freetier)
-- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier)
-- [Automatic Indexing](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/autoindex-freetier)
-- [Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier)
-
+Click [here](http://bit.ly/golivelabs) to access developer workshops on LiveLabs.
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -37,7 +28,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Oracle Developers Channel](https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g)
 - [Oracle Product Management](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 -- Oracle Database Product Management
