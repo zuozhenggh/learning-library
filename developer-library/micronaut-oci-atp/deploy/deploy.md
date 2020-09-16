@@ -18,6 +18,8 @@ In this lab you will:
 
 ### Deploy (From Local To VM)
 
+Note that steps 4 and 5 are not necessary if you deployed the Helidon native image in the previous Lab to the VM.
+
 1. Before deploying, ensure the wallet exists on the VM by running the snippet produced by `setup.sh` that looks similar to:
 
     ```
@@ -51,7 +53,7 @@ In this lab you will:
 
   Note that it is important that you copy the JAR file that ends with `-all.jar` which represents the runnable JAR file.  
 
-4. Push the Helidon native image to the VM:
+4. Push the Helidon native image to the VM
 
     ```
     # run on local machine to push to VM, from the directory that contains downloaded native image
