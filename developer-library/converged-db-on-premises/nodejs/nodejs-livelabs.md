@@ -48,7 +48,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
 ## **Step 0:** Running the Workshop
 ### Setup SSH Tunnels
-1.  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for port(s) 3000 and 3001 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for port(s) 3000 and 3001 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
 
 | Description              | Client                 | Local port       | Remote Port     |
 | :----------------------- | :--------------------- | :--------------- | :-------------- |
