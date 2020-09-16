@@ -57,7 +57,7 @@ You will now create a Resource Manager Stack that will perform the following tas
 
     f. Click **Next**.
 
-![](./images/4.png " ")
+![](./images/CreateStack.png " ")
 
 5. On the Configure Variables screen, enter the following values:
 
