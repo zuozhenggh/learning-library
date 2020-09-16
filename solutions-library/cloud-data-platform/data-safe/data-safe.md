@@ -318,9 +318,9 @@ Using Oracle Data Safe, assess user security in your target database by using th
 
 	![](./images/4.2.3.png " ")
 
-18. Notice that some of the sensitive columns do not have a check box. These are dependent columns and they have a relationship with their parent column. For example, in the EMPLOYEES table, JOB_ID is listed. It has a relationship defined in the Oracle data dictionary to the JOBS.JOB_ID sensitive column. If you remove a sensitive column that has a referential relationship, both the sensitive column and referential relationship are removed from the sensitive data model. Therefore, if you deselect JOBS.JOB_ID, then EMPLOYEES.JOB_ID is removed too.
+18. Notice that some of the sensitive columns do not have a check box. These are dependent columns and they have a relationship with their parent column. For example, in the EMPLOYEES table, JOB\_ID is listed. It has a relationship defined in the Oracle data dictionary to the JOBS.JOB\_ID sensitive column. If you remove a sensitive column that has a referential relationship, both the sensitive column and referential relationship are removed from the sensitive data model. Therefore, if you deselect JOBS.JOB\_ID, then EMPLOYEES.JOB\_ID is removed too.
 
-19. View the sample data for the HCM1.SUPPLEMENTAL_DATA.LAST_INS_CLAIM column (expand HCM1 at the top, then expand supplemental data, then expand last_ins_claim). The sensitive type is **Healthcare Provider** and the discovered sensitive column is LAST_INS_CLAIM, which has values such as Cavity and Hair Loss. Your value may be different. This column isn't a Healthcare Provider type of column and thus it is a false positive; you can deselect this column. Being able to remove a sensitive column is important when your sensitive data model includes false positives. To be able to recognize false positives, it helps to know your data well.
+19. View the sample data for the HCM1.SUPPLEMENTAL\_DATA.LAST\_INS\_CLAIM column (expand HCM1 at the top, then expand supplemental data, then expand last\_ins\_claim). The sensitive type is **Healthcare Provider** and the discovered sensitive column is LAST\_INS\_CLAIM, which has values such as Cavity and Hair Loss. Your value may be different. This column isn't a Healthcare Provider type of column and thus it is a false positive; you can deselect this column. Being able to remove a sensitive column is important when your sensitive data model includes false positives. To be able to recognize false positives, it helps to know your data well.
 
 	![](./images/4.2.4.png " ")
 
@@ -707,7 +707,7 @@ Using Oracle Data Safe, perform an incremental update to a sensitive data model 
 
 	![](./images/8.2.12.png " ")
 
-17. **NOTE:** Run the following script in SQL developer if you face an error saying "Oracle Data Safe service account on your Autonomous Database does not have sufficient privileges. Grant DS$DATA_MASKING_ROLE by running the GRANT_ROLE procedure in DS_TARGET_UTIL PL/SQL package"
+17. **NOTE:** Run the following script in SQL developer if you face an error saying "Oracle Data Safe service account on your Autonomous Database does not have sufficient privileges. Grant DS$DATA\_MASKING\_ROLE by running the GRANT\_ROLE procedure in DS\_TARGET_UTIL PL/SQL package"
 
 	```
 	<copy> EXECUTE DS_TARGET_UTIL.GRANT_ROLE('DS$DATA_MASKING_ROLE'); </copy>
