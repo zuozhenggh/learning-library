@@ -117,7 +117,7 @@ Figure W-2: Storyboard
 ![](./images/2.png " ")
 
 ## Appendix
-###Terminology
+### Terminology
 
 The following terms are commonly employed in Oracle E-Business Suite cloud operations and used throughout our documentation:
 
