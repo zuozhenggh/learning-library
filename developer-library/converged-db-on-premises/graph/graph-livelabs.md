@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. The rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
+This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. In the rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
 
 *Estimated Lab Time:* 30 Minutes
 
@@ -10,9 +10,9 @@ This lab walks you through the steps of setting up the environment for property 
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Verify Compute Instance Setup
-    - Lab: Setup SSH Tunnel
-    - Lab: Start Database and Application
+    - Lab: **Verify Compute Instance Setup**
+    - Lab: **Setup SSH Tunnel** - using port(s) from this Lab as shown in *Step 0* below
+    - Lab: **Start Database and Application**
 
 ***Note:***  All scripts for this lab are stored in the /u01/workshop/graph folder and are run as the oracle user.
 

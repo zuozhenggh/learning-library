@@ -1,8 +1,11 @@
 # Oracle JSON
 
 ## Introduction
-
-This lab is setup into multiple steps. In the first step you will setup the environment for JSON lab. In this lab, you will connect using Oracle SQL Developer. The second step has already been completed but has been included for reference. This step creates the schema. The third step walks you through the steps of inserting and updating JSON data. We can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function json\_mergepatch to update specific portions of a JSON document. The final section of this lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
+This lab is setup into multiple steps.
+-  In the first step you will setup the environment for JSON lab. In this lab, you will connect using Oracle SQL Developer.
+-  The second step has already been completed but has been included for reference. This step creates the schema.
+-  The third step walks you through the steps of inserting and updating JSON data. We can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function json\_mergepatch to update specific portions of a JSON document.
+-  The final section of this lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
 
 *Estimated Lab Time:* 20 Minutes
 
@@ -10,9 +13,9 @@ This lab is setup into multiple steps. In the first step you will setup the envi
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Verify Compute Instance Setup
-    - Lab: Setup SSH Tunnel
-    - Lab: Start Database and Application
+    - Lab: **Verify Compute Instance Setup**
+    - Lab: **Setup SSH Tunnel** - using port(s) from this Lab as shown in *Step 0* below
+    - Lab: **Start Database and Application**
 
 ***Note:***  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 

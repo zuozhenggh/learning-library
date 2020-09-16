@@ -13,9 +13,9 @@ This lab will show you how to use cross data functions.
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Verify Compute Instance Setup
-    - Lab: Setup SSH Tunnel
-    - Lab: Start Database and Application
+    - Lab: **Verify Compute Instance Setup**
+    - Lab: **Setup SSH Tunnel** - using port(s) from this Lab as shown in *Step 0* below
+    - Lab: **Start Database and Application**
 
 ### About Oracle Cross Datatype
 

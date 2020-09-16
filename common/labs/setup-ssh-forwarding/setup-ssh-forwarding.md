@@ -17,7 +17,7 @@ This lab assumes you have:
 - Successfully logged into your LiveLabs account
 - The valid SSH private key from the key pair used during workshop request
 
-Below is are details of a sample application that will be used for illustrating how to connect using SSH forwarding to access a workshop instance.
+The example below using port 7803 is for illustration only and validation (*Step 2*) will fail unless your instance is running EM13c on that port. Using the actual port(s) and client type from your lab, follow this example to setup SSH tunnel for each application entry.
 
 | Application              | Client                             | Local port | Remote Port|
 |--------------------------|------------------------------------|------------|------------|

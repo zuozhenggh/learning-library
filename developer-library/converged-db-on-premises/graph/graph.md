@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. The rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
+This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. In the rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
 
 *Estimated Lab Time:* 30 Minutes
 

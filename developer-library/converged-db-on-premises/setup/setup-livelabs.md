@@ -14,8 +14,8 @@ This lab will show you how to start a database instance and listener from a Putt
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Verify Compute Instance Setup
-    - Lab: Setup SSH Tunnel
+    - Lab: **Verify Compute Instance Setup**
+    - Lab: **Setup SSH Tunnel** - using port(s) from this Lab as shown in *Step 0* below
 
 ## **Step 0:** Running the Workshop
 ### Setup SSH Tunnels.
