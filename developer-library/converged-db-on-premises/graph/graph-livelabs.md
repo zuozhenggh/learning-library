@@ -20,7 +20,6 @@ This lab walks you through the steps of setting up the environment for property 
 
 Oracle’s converged, multi-model database natively supports graphs and delivers high performance, scalable graph data management, query, and analytics for enterprise applications. State-of-the-art graph features are available along with functionality required for enterprise grade applications: fine-grained security, high availability, easy manageability, and integration with other data in an application.
 
-
 Oracle’s mission is to help people see data in new ways, discover insights, and unlock endless possibilities.  Graph analysis is about understanding relationships and connections in data, and detecting patterns that identify new insights. With Oracle’s Graph offerings developers can use a comprehensive suite of graph query and analytics tools to integrate graphs into applications on enterprise grade data management infrastructure.
 
 **For example,** graph algorithms can identify what individual or item is most connected to others in social networks or business processes.  They can identify communities, anomalies, common patterns, and paths that connect individuals or related transactions.
@@ -379,7 +378,6 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG20.PNG)
 
-
 6. List the 10 customers who had the most product purchases in common with customer 202, see definition of qStr above or just enter qStr in the shell to see its content
 
     ````
@@ -576,7 +574,6 @@ This interactive graph shell dynamically interprets command-line inputs from the
 This graph shell is implemented on top of the Java Shell tool (JShell).
 
 The graph shell automatically connects to a PGX instance (either remote or embedded depending on the --base_url command-line option) and creates a PGX session.
-
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
