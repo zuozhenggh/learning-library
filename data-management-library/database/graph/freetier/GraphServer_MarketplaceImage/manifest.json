@@ -18,11 +18,11 @@
         {
             "title": "Lab 2: Setup ADB Shared Free Tier Instance",
             "description":"Setup an Always Free autonomous database instance",
-            "filename":"./files/adb-provision.md"
+            "filename":"../GraphServer_ManualSetup/files/adb-provision.md"
         },
         {
-            "title": "Lab 3: Deploy the Graph Servre & Client Marketplace image",
-            "description":"Deploy the Graph Servre & Client Marketplace image",
+            "title": "Lab 3: Deploy the Graph Server & Client Marketplace image",
+            "description":"Deploy the Graph Server & Client Marketplace image",
             "filename":"./files/gsc203_deploy_image_ft.md"
         },
         {
@@ -33,7 +33,7 @@
         {
             "title": "Lab 5: Create and populate tables",
             "description":"Create and populate tables with the Customer 360 dataset",
-            "filename":"../GraphServerManualSetup/files/c360_create_tables_ft.md"
+            "filename":"../GraphServer_ManualSetup/files/c360_create_tables_ft.md"
         },
         {
             "title": "Lab 6: Create the graph",
@@ -48,7 +48,7 @@
         {
             "title": "Lab 8: Graph Visualization",
             "description":"Graph Query and Visualization of the Customer 360 data on the Free Tier compute",
-            "filename":"../GraphServerManualSetup/files/customer_360_graphviz_ft.md"
+            "filename":"../GraphServer_ManualSetup/files/customer_360_graphviz_ft.md"
         }
     ]
 }
