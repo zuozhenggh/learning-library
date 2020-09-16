@@ -21,6 +21,11 @@
             "filename": "./../../common/orm-solution-hub-setup.md"
         },
         {
+            "title": "Installing the General Machine Learning Conda",
+            "description": "Configure the notebook session to install the General Machine Learning Conda",
+            "filename": "./../../common/conda-general-machine-learning.md"
+        },
+        {
             "title": "Lab 3: Binary Classification Model",
             "description": "Learn about ADS using a binary classification model",
             "filename": "./../binary-classification-attrition.md"
