@@ -29,7 +29,6 @@ Every Oracle Database now includes both property graph and RDF graph data models
 - 50+ Graph algorithms
 - Support for graph visualization
 
-
 Customers use Property Graphs in fraud analytics, vulnerability analysis, recommendation systems, and more.
 
 **RDF Graph database includes:**
@@ -46,7 +45,6 @@ Here is are two videos that talk more about Oracle Graph.
 
 [](youtube:-DYVgYJPbQA)
 [](youtube:zfefKdNfAY4)
-
 
 ### Introduction to Property Graph
 
@@ -67,13 +65,11 @@ A property graph consists of a set of objects or vertices, and a set of arrows o
 - A text label that describes the relationship between the two vertices
 - A collection of properties
 
-
 The following figure illustrates a very simple property graph with two vertices and one edge. The two vertices have identifiers 1 and 2. Both vertices have properties name and age. The edge is from the outgoing vertex 1 to the incoming vertex 2. The edge has a text label knows and a property type identifying the type of relationship between vertices 1 and 2.
 
 ![](./images/IMGG1.PNG)
 
 Figure: Simple Property Graph Example
-
 
 **A very brief note on PGQL**
 
@@ -553,7 +549,6 @@ This interactive graph shell dynamically interprets command-line inputs from the
 This graph shell is implemented on top of the Java Shell tool (JShell).
 
 The graph shell automatically connects to a PGX instance (either remote or embedded depending on the --base_url command-line option) and creates a PGX session.
-
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
