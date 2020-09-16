@@ -1,7 +1,7 @@
 # Oracle Spatial
 
 ## Introduction
-This lab walks you through the steps of setting up the environment for Spatial lab. You can connect Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
+This lab walks you through the steps of setting up the environment for Spatial lab. You can connect to the Oracle Database instance using any client of your choice. In this lab, you will connect using Oracle SQL Developer.
 
 *Estimated Lab Time:* 30 Minutes
 
@@ -9,9 +9,9 @@ This lab walks you through the steps of setting up the environment for Spatial l
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Verify Compute Instance Setup
-    - Lab: Setup SSH Tunnel
-    - Lab: Start Database and Application
+    - Lab: **Verify Compute Instance Setup**
+    - Lab: **Setup SSH Tunnel** - using port(s) from this Lab as shown in *Step 0* below
+    - Lab: **Start Database and Application**
 
 ***Note:***  All scripts for this lab are stored in the /u01/workshop/spatial folder and are run as the oracle user.
 
@@ -43,24 +43,24 @@ We will be using three tables – CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP.
 Each table stores location using Oracle's native spatial data type, SDO\_GEOMETRY. A location can be stored as a point in an SDO\_GEOMETRY column of a table. The customer's location is associated with longitude and latitude values on the Earth's surface—for example, -63.13631, 52.485426.
 
 ## **Step 0:** Running the Workshop
-### Setup SSH Tunnels.
-
-  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+### Setup SSH Tunnel(s)
+As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for port(s) 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
 
   | Description              | Client                 | Local port       | Remote Port     |
   | :----------------------- | :--------------------- | :--------------- | :-------------- |
   | Remote SQL Access        | SQL Developer          | 1521             | 1521            |.
 
-  ***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above ports throughout this workshop should be substituted with *localhost*
+***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above ports throughout this workshop should be substituted with *localhost*
 
 ### Login to Host using SSH Key based authentication
 Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
-  ````
-  <copy>sudo su - oracle</copy>
-  ````
+
+````
+<copy>sudo su - oracle</copy>
+````
 
 ***Note:*** Any SSH session you established in *Lab 2 - Setup SSH Tunnel* for SSH port forwarding can also be used for any task requiring SSH terminal access.
 

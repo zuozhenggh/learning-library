@@ -51,8 +51,9 @@ In this lab we will load data in MySQL database ‘ggsource’. The GG extract p
     ````
 
 2. Go to the GG Home for MySQL by typing *ggmysql*
+
     ````
-    ggmysql
+    <copy>ggmysql</copy>
     ````
 
 ## **STEP 3**: Start GoldenGate Processes

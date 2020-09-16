@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. The rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
+This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. In the rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
 
 *Estimated Lab Time:* 30 Minutes
 
@@ -10,16 +10,15 @@ This lab walks you through the steps of setting up the environment for property 
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Verify Compute Instance Setup
-    - Lab: Setup SSH Tunnel
-    - Lab: Start Database and Application
+    - Lab: **Verify Compute Instance Setup**
+    - Lab: **Setup SSH Tunnel** - using port(s) from this Lab as shown in *Step 0* below
+    - Lab: **Start Database and Application**
 
 ***Note:***  All scripts for this lab are stored in the /u01/workshop/graph folder and are run as the oracle user.
 
 ### Overview of Oracle Graph
 
 Oracle’s converged, multi-model database natively supports graphs and delivers high performance, scalable graph data management, query, and analytics for enterprise applications. State-of-the-art graph features are available along with functionality required for enterprise grade applications: fine-grained security, high availability, easy manageability, and integration with other data in an application.
-
 
 Oracle’s mission is to help people see data in new ways, discover insights, and unlock endless possibilities.  Graph analysis is about understanding relationships and connections in data, and detecting patterns that identify new insights. With Oracle’s Graph offerings developers can use a comprehensive suite of graph query and analytics tools to integrate graphs into applications on enterprise grade data management infrastructure.
 
@@ -69,7 +68,6 @@ A property graph consists of a set of objects or vertices, and a set of arrows o
 - A text label that describes the relationship between the two vertices
 - A collection of properties
 
-
 The following figure illustrates a very simple property graph with two vertices and one edge. The two vertices have identifiers 1 and 2. Both vertices have properties name and age. The edge is from the outgoing vertex 1 to the incoming vertex 2. The edge has a text label knows and a property type identifying the type of relationship between vertices 1 and 2.
 
 ![](./images/IMGG1.PNG)
@@ -82,39 +80,41 @@ The [pgql-lang.org](pgql-lang.org) site and specification [pgql-land.org/spec/1.
 
 The general structure of a PGQL query is
 
+````
 SELECT (select list) FROM (graph name) MATCH (graph pattern) WHERE (condition)
-
+````
 
 PGQL provides a specific construct known as the MATCH clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints.
-() indicates a vertex variable
 
-  -an undirected edge, as in (source)-(dest)
-
--> an outgoing edge from source to destination
-
-<- an incoming edge from destination to source
-
+````
+()  indicates a vertex variable
+-   an undirected edge, as in (source)-(dest)
+->  an outgoing edge from source to destination
+<-  an incoming edge from destination to source
 []  indicates an edge variable
+````
 
 ## **Step 0:** Running the Workshop
-### Setup SSH Tunnels.
-
-  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 7007 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+### Setup SSH Tunnel(s)
+As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for port(s) 7007 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
 
   | Description              | Client                 | Local port       | Remote Port     |
   | :----------------------- | :--------------------- | :--------------- | :-------------- |
   | Visualize Graph -GraphViz| Browser                | 7007             | 7007            |.
 
-  ***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above port(s) throughout this workshop should be substituted with *localhost*
+***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above ports throughout this workshop should be substituted with *localhost*
 
 ### Login to Host using SSH Key based authentication
 Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
-  ````
-  <copy>sudo su - oracle</copy>
-  ````
+
+````
+<copy>sudo su - oracle</copy>
+````
+
+***Note:*** Any SSH session you established in *Lab 2 - Setup SSH Tunnel* for SSH port forwarding can also be used for any task requiring SSH terminal access.
 
 ## **Step 1:** Connect to Graph Server and Client
 
@@ -378,7 +378,6 @@ Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH c
 
     ![](./images/IMGG20.PNG)
 
-
 6. List the 10 customers who had the most product purchases in common with customer 202, see definition of qStr above or just enter qStr in the shell to see its content
 
     ````
@@ -575,7 +574,6 @@ This interactive graph shell dynamically interprets command-line inputs from the
 This graph shell is implemented on top of the Java Shell tool (JShell).
 
 The graph shell automatically connects to a PGX instance (either remote or embedded depending on the --base_url command-line option) and creates a PGX session.
-
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope

@@ -1,8 +1,11 @@
 # Oracle JSON
 
 ## Introduction
-
-This lab is setup into multiple steps. In the first step you will setup the environment for JSON lab. In this lab, you will connect using Oracle SQL Developer. The second step has already been completed but has been included for reference. This step creates the schema. The third step walks you through the steps of inserting and updating JSON data. We can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function json\_mergepatch to update specific portions of a JSON document. The final section of this lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
+This lab is setup into multiple steps.
+-  In the first step you will setup the environment for JSON lab. In this lab, you will connect using Oracle SQL Developer.
+-  The second step has already been completed but has been included for reference. This step creates the schema.
+-  The third step walks you through the steps of inserting and updating JSON data. We can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function json\_mergepatch to update specific portions of a JSON document.
+-  The final section of this lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
 
 *Estimated Lab Time:* 20 Minutes
 
@@ -10,9 +13,9 @@ This lab is setup into multiple steps. In the first step you will setup the envi
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Verify Compute Instance Setup
-    - Lab: Setup SSH Tunnel
-    - Lab: Start Database and Application
+    - Lab: **Verify Compute Instance Setup**
+    - Lab: **Setup SSH Tunnel** - using port(s) from this Lab as shown in *Step 0* below
+    - Lab: **Start Database and Application**
 
 ***Note:***  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
@@ -45,26 +48,26 @@ The first thing to realize about JSON is that it remains a simple text format, w
 ![](./images/json_intro.png " ")
 
 ## **Step 0:** Running the Workshop
-### Setup SSH Tunnels.
-
-  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+### Setup SSH Tunnel(s)
+As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for port(s) 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
 
   | Description              | Client                 | Local port       | Remote Port     |
   | :----------------------- | :--------------------- | :--------------- | :-------------- |
   | Remote SQL Access        | SQL Developer          | 1521             | 1521            |.
 
-  ***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above ports throughout this workshop should be substituted with *localhost*
+***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above ports throughout this workshop should be substituted with *localhost*
 
 ### Login to Host using SSH Key based authentication
-  Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
-    ````
-    <copy>sudo su - oracle</copy>
-    ````
+Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+  - Authentication OS User - “*opc*”
+  - Authentication method - *SSH RSA Key*
+  - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
 
-  ***Note:*** Any SSH session you established in *Lab 2 - Setup SSH Tunnel* for SSH port forwarding can also be used for any task requiring SSH terminal access.
+````
+<copy>sudo su - oracle</copy>
+````
+
+***Note:*** Any SSH session you established in *Lab 2 - Setup SSH Tunnel* for SSH port forwarding can also be used for any task requiring SSH terminal access.
 
 ## **Step 1:** Connect to the Pluggable Database (PDB)
 1. Open a terminal window and sudo to the user **oracle**

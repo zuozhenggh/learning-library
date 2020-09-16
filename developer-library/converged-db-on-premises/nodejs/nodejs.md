@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to start the Docker and Node.js Retail application. You can connect to an Node.js running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
+This lab walks you through the steps to start the Docker and Node.js Retail application. You will connect to a Node.js running in a Docker container on an Oracle Cloud Compute instance. While you can connect the Oracle Database instance using any client of your choice, in this lab you will connect using Oracle SQL Developer.
 
 *Estimated Lab Time:* 20 Minutes
 

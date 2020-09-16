@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to start the Docker and Node.js Retail application. You can connect to an Node.js running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
+This lab walks you through the steps to start the Docker and Node.js Retail application. You will connect to a Node.js running in a Docker container on an Oracle Cloud Compute instance. While you can connect the Oracle Database instance using any client of your choice, in this lab you will connect using Oracle SQL Developer.
 
 *Estimated Lab Time:* 20 Minutes
 
@@ -10,9 +10,9 @@ This lab walks you through the steps to start the Docker and Node.js Retail appl
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Verify Compute Instance Setup
-    - Lab: Setup SSH Tunnel
-    - Lab: Start Database and Application
+    - Lab: **Verify Compute Instance Setup**
+    - Lab: **Setup SSH Tunnel** - using port(s) from this Lab as shown in *Step 0* below
+    - Lab: **Start Database and Application**
 
 ### About Oracle Node.js
 
@@ -48,7 +48,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
 ## **Step 0:** Running the Workshop
 ### Setup SSH Tunnels
-As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 3000 and 3001 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for port(s) 3000 and 3001 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
 
 | Description              | Client                 | Local port       | Remote Port     |
 | :----------------------- | :--------------------- | :--------------- | :-------------- |
