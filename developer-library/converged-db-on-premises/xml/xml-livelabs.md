@@ -40,7 +40,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 ## **Step 0:** Running the Workshop
 ### Setup SSH Tunnels.
 
-  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for port(s) 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
 
   | Description              | Client                 | Local port       | Remote Port     |
   | :----------------------- | :--------------------- | :--------------- | :-------------- |

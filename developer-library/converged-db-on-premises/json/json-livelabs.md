@@ -46,7 +46,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
 ## **Step 0:** Running the Workshop
 ### Setup SSH Tunnels.
-1.  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+1.  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for port(s) 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
 
   | Description              | Client                 | Local port       | Remote Port     |
   | :----------------------- | :--------------------- | :--------------- | :-------------- |

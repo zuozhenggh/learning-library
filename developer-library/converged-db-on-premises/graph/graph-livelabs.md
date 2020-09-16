@@ -82,19 +82,19 @@ The [pgql-lang.org](pgql-lang.org) site and specification [pgql-land.org/spec/1.
 
 The general structure of a PGQL query is
 
-SELECT (select list) FROM (graph name) MATCH (graph pattern) WHERE (condition)
-
+    ````
+    SELECT (select list) FROM (graph name) MATCH (graph pattern) WHERE (condition)
+    ````
 
 PGQL provides a specific construct known as the MATCH clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints.
-() indicates a vertex variable
 
-  -an undirected edge, as in (source)-(dest)
-
--> an outgoing edge from source to destination
-
-<- an incoming edge from destination to source
-
-[]  indicates an edge variable
+    ````
+    ()  indicates a vertex variable
+    -   an undirected edge, as in (source)-(dest)
+    ->  an outgoing edge from source to destination
+    <-  an incoming edge from destination to source
+    []  indicates an edge variable
+    ````
 
 ## **Step 0:** Running the Workshop
 ### Setup SSH Tunnels.
