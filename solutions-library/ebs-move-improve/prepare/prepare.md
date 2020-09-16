@@ -131,15 +131,13 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     c. **Redirect URL**: ``<Cloud_Manager_URL>/cm/auth/callback``
 
-    See value for <Cloud_Manager_URL> in key-data.txt file.
-
-        i. Example: ```https://myebscm.ebshol.org:443/cm/auth/callback```
+        i. Example: https://myebscm.ebshol.org:443/cm/auth/callback
 
     d. **Logout URL**: Leave this field empty.
 
     e. **Post-Logout Redirect URL**: ``<Cloud_Manager_URL>/cm/ui/index.html?root=login``
 
-        i. Example: ```https://myebscm.ebshol.org:443/cm/ui/index.html?root=login```
+        i. Example: https://myebscm.ebshol.org:443/cm/ui/index.html?root=login
 
     f. Select the **Introspect** option for **Allowed Operations**.
 
