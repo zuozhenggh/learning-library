@@ -1,10 +1,12 @@
-# Setup Compute Instance
+# Verify Compute Instance
 
 ## Introduction
-This lab will show you how to login to your pre-created compute instance running on Oracle Cloud. 
+This lab will show you how to login to your pre-created compute instance running on Oracle Cloud.
+
+*Estimated Lab Time:* 10 Minutes
 
 ### Objectives
--   Connect to your converged db compute instance
+-   Connect to your converged DB compute instance
 
 ### Prerequisites
 This lab assumes you have:
@@ -88,8 +90,8 @@ When creating your SSH Key, if the key is invalid you may not be able to login t
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
+* **Contributors** - Kay Malcolm, Product Manager, Database Product Management, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

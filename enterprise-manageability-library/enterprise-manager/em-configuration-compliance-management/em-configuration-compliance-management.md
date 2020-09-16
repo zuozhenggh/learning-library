@@ -34,7 +34,7 @@ e.g: https://111.888.111.888:7803/em
 ## **Step 0:** Running your Workload
 
 ### Login to OMS Console
-Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
+Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 

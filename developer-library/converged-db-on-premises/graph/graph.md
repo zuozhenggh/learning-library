@@ -4,16 +4,13 @@
 
 This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. The rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
 
-Estimated Lab Time: 30 Minutes
+*Estimated Lab Time:* 30 Minutes
 
-### Before You Begin
-
-**What Do You Need?**
-
+### Prerequisites
 This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
-- Lab: Start Database and Application
+  - Lab: Generate SSH Key
+  - Lab: Setup Compute Instance
+  - Lab: Start Database and Application
 
 ### Overview of Oracle Graph
 
@@ -127,7 +124,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
     ![](./images/IMGG4.PNG)
 
 3. Make a JDBC connection to the database, run the below at the jshell prompt.
-   
+
     ````
     <copy>
     /open /u01/script/graph_startup/03_graphload.jsh
@@ -362,7 +359,6 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG20.PNG)
 
-
 6. List the 10 customers who had the most product purchases in common with customer 202, see definition of qStr above or just enter qStr in the shell to see its content
 
     ````
@@ -563,8 +559,8 @@ The graph shell automatically connects to a PGX instance (either remote or embed
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start
-* **Last Updated By/Date** - David Start, Product Manager, Database Product Management, July 2020
+* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
