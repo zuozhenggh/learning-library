@@ -3,7 +3,7 @@
 ## Introduction
 This lab describes how to run the Load Sales Administration Package in a production environment.
 
-Estimated Lab Time:  x minutes
+Estimated Lab Time:  10 minutes
 
 ### Objectives
   * Introduction
