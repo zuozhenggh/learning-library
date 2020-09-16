@@ -44,8 +44,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
 
 ## **Step 0:** Running the Workshop
 ### Setup SSH Tunnels.
-
-  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
+1.  As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for ports 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
 
   | Description              | Client                 | Local port       | Remote Port     |
   | :----------------------- | :--------------------- | :--------------- | :-------------- |
@@ -54,15 +53,15 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
   ***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above ports throughout this workshop should be substituted with *localhost*
 
 ### Login to Host using SSH Key based authentication
-Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
-  ````
-  <copy>sudo su - oracle</copy>
-  ````
+1.  Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+      - Authentication OS User - “*opc*”
+      - Authentication method - *SSH RSA Key*
+      - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
+    ````
+    <copy>sudo su - oracle</copy>
+    ````
 
-***Note:*** Any SSH session you established in *Lab 2 - Setup SSH Tunnel* for SSH port forwarding can also be used for any task requiring SSH terminal access.
+  ***Note:*** Any SSH session you established in *Lab 2 - Setup SSH Tunnel* for SSH port forwarding can also be used for any task requiring SSH terminal access.
 
 ## **Step 1:** Connect to the Pluggable Database (PDB)
 1. Open a terminal window and sudo to the user **oracle**

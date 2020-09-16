@@ -7,7 +7,7 @@ This lab will show you how to login to your pre-created compute instance running
 
 ### Objectives
 In this lab, you will:
-* Connect to your converged DB compute instance
+* Connect to your compute instance
 
 ### Prerequisites
 
@@ -19,9 +19,12 @@ This lab assumes you have:
 
 ## **STEP 1**: Gather compute instance details
 1. Go to the hamburger menu (in the top left corner) and click ***Compute >> Instances***.
+
    ![Create a stack](images/em-nav-to-compute-instances.png " ")
+
 2. Select the compartment that was assigned.
 3. Look for the instance that was created for you jot down the public IP address.
+
    ![Create a stack](images/em-compute-instances.png " ")
 
 ## **Step 2:** Connect to your instance

@@ -49,10 +49,10 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
   ***Note:*** Once this step is completed, all occurrences of the public IP of the instance when combined with above ports throughout this workshop should be substituted with *localhost*
 
 ### Login to Host using SSH Key based authentication
-  Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
+1.  Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+      - Authentication OS User - “*opc*”
+      - Authentication method - *SSH RSA Key*
+      - Oracle Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
     ````
     <copy>sudo su - oracle</copy>
     ````
