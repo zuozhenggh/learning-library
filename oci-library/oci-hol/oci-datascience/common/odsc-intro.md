@@ -28,6 +28,7 @@ The following concepts and terms will help you to get started with the Data Scie
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
-* **Last Updated By/Date**: John Peach, September 2020
+* **Last Updated By/Date**: 
+    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, September 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

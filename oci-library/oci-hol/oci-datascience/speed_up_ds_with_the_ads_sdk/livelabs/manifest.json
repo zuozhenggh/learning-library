@@ -6,28 +6,43 @@
             "filename": "./../../common/odsc-intro.md"
         },
         {
-            "title": "Accelerated Data Science SDK",
-            "description": "Introduction to the Accelerated Data Science SDK",
-            "filename": "./../../common/ads-intro.md"
-        },
-        {
-            "title": "Lab 1: Sign Up for Free Trial",
-            "description": "Login to Oracle Cloud",
+            "title": "Lab 1: Sign Up for Free Trial Account",
+            "description": "Sign up for and log into the Oracle Cloud",
             "filename": "../../../../../common/labs/cloud-login/register-free-tier-account.md"
         },
         {
             "title": "Lab 2: Configure Data Science Service",
-            "description": "Configure the tenancy to work with the Data Science Service",
+            "description": "Configure the tenancy to work with the Data Science Service.",
             "filename": "./../../common/orm-solution-hub-setup.md"
         },
         {
-            "title": "Installing the General Machine Learning Conda",
-            "description": "Configure the notebook session to install the General Machine Learning Conda",
+            "title": "Lab 3: Create Project",
+            "description": "Create a project to contain the Data Science Notebooks.",
+            "filename": "./../../common/project-setup.md"
+        },
+        {
+            "title": "Lab 4: Create Notebook Session",
+            "description": "Create a Notebook Session and launch it.",
+            "filename": "./../../common/notebook-setup.md"
+        },
+        {
+            "title": "Lab 5: Accelerated Data Science SDK",
+            "description": "Introduction to the Accelerated Data Science SDK.",
+            "filename": "./../../common/ads-intro.md"
+        },
+        {
+            "title": "Lab 6: Installing the General Machine Learning Conda",
+            "description": "Configure the notebook session to install the General Machine Learning conda.",
             "filename": "./../../common/conda-general-machine-learning.md"
         },
         {
-            "title": "Lab 3: Binary Classification Model",
-            "description": "Learn about ADS using a binary classification model",
+            "title": "Lab 7: Binary Classification Model",
+            "description": "Learn about ADS using a binary classification model.",
+            "filename": "./../binary-classification-attrition.md"
+        }
+        {
+            "title": "Lab 8: Shutting Down a Notebook Session",
+            "description": "Deactivate or terminate a notebook session.",
             "filename": "./../binary-classification-attrition.md"
         }
     ]

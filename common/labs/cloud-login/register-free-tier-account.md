@@ -73,7 +73,7 @@ You may now *proceed to the next lab*.
 
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
 - **Last Updated By/Date** 
-    - John Peach, Principal Data Scientist, September 2020
+    - [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
     - Kay Malcolm, Database Product Management, June 2020
 
 ## See an issue?
