@@ -69,7 +69,7 @@ Example of plotting latitude and longitude points on a map
 ```
 earthquake.plot_gis_scatter(lon="longitude", lat="latitude")
 ```
-![earthquake.plot_gis_scatter(lon="longitude", lat="latitude")](../speed_up_ds_with_the_ads_sdk/plot-gis-scatter.png)
+![earthquake.plot_gis_scatter(lon="longitude", lat="latitude")](../speed_up_ds_with_the_ads_sdk/images/plot-gis-scatter.png)
 
 ### Feature Engineering
 
@@ -78,6 +78,7 @@ Leverage ``ADS`` and the [DASK API](https://dask.org/) to transform the content 
 Example of how to apply auto tranformations
 ```
 ds_engineered = ds.auto_transform(fix_imbalance=False)
+```
 
 ### Data Snapshotting for Training Reproducibility
 
@@ -112,7 +113,7 @@ Example of tuning trial results
 ```
 automl.visualize_tuning_trial()
 ```
-![automl.visualize_tuning_trials()](../speed_up_ds_with_the_ads_sdk/automl-hyperparameter-tuning.png)
+![automl.visualize_tuning_trials()](../speed_up_ds_with_the_ads_sdk/images/automl-hyperparameter-tuning.png)
 
 ### Model Evaluations
 
@@ -125,7 +126,7 @@ Example of model evaluations
 evaluator = ADSEvaluator(test, models=[model, my_model, baseline], training_data=train)
 evaluator.show_in_notebook()
 ```
-![evaluator.show_in_notebook()](../speed_up_ds_with_the_ads_sdk/model-evaluation.png)
+![evaluator.show_in_notebook()](../speed_up_ds_with_the_ads_sdk/images/model-evaluation.png)
 
 ### Model Interpretation and Explainability
 
