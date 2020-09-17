@@ -39,7 +39,7 @@
             "title": "Lab 7: Binary Classification Model",
             "description": "Learn about ADS using a binary classification model.",
             "filename": "./../binary-classification-attrition.md"
-        }
+        },
         {
             "title": "Lab 8: Shutting Down a Notebook Session",
             "description": "Deactivate or terminate a notebook session.",
