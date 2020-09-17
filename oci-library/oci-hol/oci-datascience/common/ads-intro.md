@@ -87,7 +87,7 @@ Save and load a copy of any dataset in a binary optimized Parquet format. By sna
 ### Model Training
 
 Example of visualizing a decision tree
-![Decision tree](../speed_up_ds_with_the_ads_sdk/decision-tree.png)
+![Decision tree](../speed_up_ds_with_the_ads_sdk/images/decision-tree.png)
 
 The Oracle AutoML engine, that produces ADSModel models, automates:
 
