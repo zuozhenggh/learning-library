@@ -10,10 +10,8 @@ Remember that we are trying to help Alpha Office predict the credit and payment 
 
 This lab uses a decision tree algorithm which is a classification technique. If these are new to you, here’s a [presentation](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/adbml/o/Machine_Learning_Introduction.pdf) and a short video below that explains machine learning, classification, and decision trees at a high level.
 
-<video controls poster="../create-ml-model/files/Video_Introduction.png">
-    <source src="../create-ml-model/files/Machine_Learning_Introduction.mp4" type="video/mp4">
-</video>
-<br>
+[](youtube:IkOz2rrB7hU)
+
 In this lab, you will use Apache Zeppelin notebooks to do this work. The lab will help you create a new notebook, and also import an existing one with all the code, descriptions, and examples that you need. You will then step through that notebook, examining the code, data, and visualizations and, most importantly, executing each step to populate the database.
 
 Estimated time: 20 - 30 minutes
@@ -24,13 +22,13 @@ Estimated time: 20 - 30 minutes
 - Become familiar with Oracle Machine Learning Algorithms.
 - Create a machine learning model to determine factors that predict good credit.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 - Login to Oracle Cloud/Sign Up for Free Tier Account
 - Connect and Provision ADB
 
-## Step 1: Create ML User
+## **Step 1:** Create ML User
 
 1.  Login to Oracle Cloud, select Autonomous Data Warehouse and navigate to your ADW instance.
 
@@ -60,7 +58,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/011.png  " ")
 
-## Step 2: Create ML Notebook
+## **Step 2:** Create ML Notebook
 
 1.  Select the **home icon** upper right.
 
@@ -92,7 +90,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/019.png  " ")
 
-## Step 3: Add Content to Your ADW Notebook
+## **Step 3:** Add Content to Your ADW Notebook
 
 It is simple to create content in Zeppelin Notebooks, and the following exercise will give you experience in doing so.
 
@@ -223,7 +221,7 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
 
     ![](./images/068.png  " ")
 
-## Step 4: Import ML Notebook
+## **Step 4:** Import ML Notebook
 
 As you have seen adding content to a notebook is simple and fast. However, we have already built out all the steps that are normally followed when exploring data and building a machine learning model. This has been saved to the Credit Score Predictions.json file. We will import this notebook and review it. It is important to note that you *must execute all the steps in this notebook if you wish to continue with lab 3 and 4*. Executing the steps takes only a few minutes.
 
@@ -305,4 +303,5 @@ Please proceed to the next lab.
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
 - **Contributors** - Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -223,7 +223,7 @@ In this step, you will learn how to create an Entity Relationship Diagram (ERD) 
 
 ## **Step 4:** Create a new table and add it to the data model
 
-In this step, you will use SQL Developer Web to create a new table. Then you'll learn how to edit an existing table and add it to the ERD created in the previous step.
+In this step, you will use SQL Developer Web to create a new table. Then you will learn how to edit an existing table and add it to the ERD created in the previous step.
 
 In the original napkin design, there was a table called To Dos. However, the Quick SQL script (used in step 1) did not include this table. Below you will recreate the TO Dos table with a relationship to Team Members, and Tasks.
 
@@ -341,4 +341,5 @@ This completes this lab. At this point you know how to use Quick SQL to generate
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

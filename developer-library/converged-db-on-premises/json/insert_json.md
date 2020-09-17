@@ -6,7 +6,7 @@
 This lab walks you through the steps of inserting and updating json data. We can use standard database APIs to insert or update JSON data. We can work directly with JSON data contained in file-system files by creating an external table that exposes it to the database.
 In this lab we can add a row to our json table using insert query and  we can use Oracle SQL function json_mergepatch to update specific portions of a JSON document.
 
-## Before You Begin
+### Before You Begin
 
 **What Do You Need?**
 
@@ -17,7 +17,7 @@ This lab assumes you have completed the following labs:
 - Lab 4:  Environment setup
 - Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
-## Step 1: Insert a record.
+## **Step 1:** Insert a record.
 
   a. **Take a count of the rows in the json table-**
 
@@ -27,7 +27,7 @@ This lab assumes you have completed the following labs:
     </copy>
   ````
     
-  ![](./images/insert_json.PNG " ")  
+  ![](./images/insert_json.png " ")  
 
  b. Insert a record.
 
@@ -108,11 +108,11 @@ c. **Verify the count after insert.**
 ````
     
     
-  ![](./images/json.PNG " ")
+  ![](./images/json.png " ")
    
   **Note:** Please copy the red highlighted id which we will use in our next section of update query.
 
-## Step 2: Update a Table.
+## **Step 2:** Update a Table.
   We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
    
    **Note:** In the above update query replace the id which we copied in previous step.
@@ -131,7 +131,7 @@ c. **Verify the count after insert.**
     </copy>
     
   ````
- ![](./images/json_lab7_6.PNG " ")
+ ![](./images/json_lab7_6.png " ")
 
 
 
@@ -145,7 +145,7 @@ c. **Verify the count after insert.**
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
       
 

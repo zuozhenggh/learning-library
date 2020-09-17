@@ -27,8 +27,9 @@ Click on one of our workshops below to access the content.
 - [Customer 360 Analysis](https://oracle.github.io/learning-library/data-management-library/database/graph/livelabs/)  
 Note: This assumes you have completed the setup steps and have an environment up and running with Docker. The use case is included in the workshop accessible from the setup link above. 
 
-### Tutorial: Setup a property graph environment in Always Free Tier (ADB and Compute)
-- [Setup with AF Tier](https://oracle.github.io/learning-library/data-management-library/database/graph/freetier/)
+### Tutorial: Setup a property graph environment in Always Free Tier (AF Autonomous Database and Compute)
+- [Setup on AF Tier: Manual deployment](https://oracle.github.io/learning-library/data-management-library/database/graph/freetier/GraphServer_ManualSetup/)
+- [Setup on AF Tier: Deploy OCI Marketplace image](https://oracle.github.io/learning-library/data-management-library/database/graph/freetier/GraphServer_MarketplaceImage)
 
 ## RDF/Semantic Graph Workshops
 
@@ -62,7 +63,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Oracle Spatial and Graph Videos on YouTube](https://www.youtube.com/channel/UCZqBavfLlCuS0il6zNY696w)
 
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 -- Oracle Database Product Management

@@ -1,12 +1,16 @@
 # Start a Docker Container
-## Before You Begin
 
-This lab walks you through the steps to start the Docker container and Oracle Database 19c instance.
+## Introduction
 
-### Background
 A Docker container is a running instance of a Docker image. However, unlike in traditional virtualization with a type 1 or type 2 hypervisor, a Docker container runs on the kernel of the host operating system. Within a Docker container, there is no separate operating system.
 
-### What Do You Need?
+Estimated Lab Time: 10 minutes
+
+### Objectives
+This lab walks you through the steps to start the Docker container and Oracle Database 19c instance.
+
+
+### Prerequisites
 
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * SSH keys
@@ -22,7 +26,7 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
 1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys and connect using the public IP address of your compute instance:
 
     ```
-    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    $ <copy>ssh -i ./myOracleCloudKey opc@&lt;your IP address&gt;</copy>
     Enter passphrase for key './myOracleCloudKey':
     [opc@oraclelinux77 ~]$
     ```
@@ -143,8 +147,10 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
-* **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
-* **Last Updated By/Date** - Tom McGinn, March 2020
+* **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
 * **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
+* **Last Updated By/Date** - Kamryn Vinson, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

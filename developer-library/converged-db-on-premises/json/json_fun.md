@@ -4,7 +4,7 @@
 
 This lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
 
-## Before You Begin
+### Before You Begin
 
 **What Do You Need?**
 
@@ -15,7 +15,7 @@ This lab assumes you have completed the following labs:
 - Lab 4:  Environment setup
 - Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
-## Step 1: Customers who ordered products from specific Geo location   
+## **Step 1:** Customers who ordered products from specific Geo location   
 
    ````
     <copy>
@@ -29,12 +29,12 @@ This lab assumes you have completed the following labs:
       </copy>
    ````
   
-  ![](./images/select_count.PNG " ")
+  ![](./images/select_count.png " ")
     
    **Note:** Oracle database allows a simple ‘dotted’ notation to be used to perform a limited set of operations on columns containing JSON. In order to use the dotted notation, a table alias must be assigned to the table in the FROM clause, and any reference to the JSON column must be prefixed with the assigned alias. All data is returned as VARCHAR2(4000).
 
 
-## Step 2: Find all customers who purchased an items tagged with a specific UPC
+## **Step 2:** Find all customers who purchased an items tagged with a specific UPC
 
   ````
     <copy>
@@ -44,7 +44,7 @@ This lab assumes you have completed the following labs:
     </copy>
    ````
   
-   ![](./images/count_po_document.PNG " ")
+   ![](./images/count_po_document.png " ")
     
    **Note:** The JSON\_EXISTS operator is used in the WHERE clause of a SQL statement. It is used to test whether or not a JSON document contains content that matches the provided JSON path expression.
 
@@ -53,7 +53,7 @@ This lab assumes you have completed the following labs:
    [UPC, short form for  Universal Product Code, is a type of code printed on retail product packaging to aid in identifying a particular item. It consists of two parts – the machine-readable barcode, which is a series of unique black bars, and the unique 12-digit number beneath it.]
 
 
-## Step 3: Find the customers who all are purchased a specific products
+## **Step 3:** Find the customers who all are purchased a specific products
 
   **3a) Based on PONumber**
   ````
@@ -84,7 +84,7 @@ This lab assumes you have completed the following labs:
     </copy>
    ````
   
-   ![](./images/specific_product1.PNG " ")
+   ![](./images/specific_product1.png " ")
 
 
   **3b) Based on the description of the product**
@@ -116,11 +116,11 @@ This lab assumes you have completed the following labs:
      </copy>
   ````
     
- ![](./images/specific_product2.PNG " ")
+ ![](./images/specific_product2.png " ")
     
   **Notes:** The JSON\_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
 
-## Step 4: How Many orders were done by a customer with minimum 7 quantity and unit price minimum 25$ in each order
+## **Step 4:** How Many orders were done by a customer with minimum 7 quantity and unit price minimum 25$ in each order
    For this , we will create two views as below:
     
   ````
@@ -202,15 +202,15 @@ This lab assumes you have completed the following labs:
     </copy>
   ````
   
-  ![](./images/json_fun_view1.PNG " ")
-  ![](./images/json_fun_view2.PNG " ")  
-  ![](./images/lab5_snap3.PNG " ")    
+  ![](./images/json_fun_view1.png " ")
+  ![](./images/json_fun_view2.png " ")  
+  ![](./images/lab5_snap3.png " ")    
     
  
 
    **Notes** The above statements show how, once the relational views have been created, the full power of SQL can now be applied to JSON content, without requiring any knowledge of the structure of the JSON or how to manipulate JSON using SQL.
 
-## Step 5: Customer Purchase History Details 
+## **Step 5:** Customer Purchase History Details 
 **5a) With PRETTY**
     
 
@@ -224,7 +224,7 @@ This lab assumes you have completed the following labs:
     </copy>
   ````
   
-  ![](./images/json_fun_5a.PNG " ")  
+  ![](./images/json_fun_5a.png " ")  
 
 **5b) Without PRETTY**
    
@@ -240,7 +240,7 @@ This lab assumes you have completed the following labs:
     </copy>
   ````
   
-  ![](./images/json_fun_5b.PNG " ")  
+  ![](./images/json_fun_5b.png " ")  
 
     
    **Notes:** JSON\_QUERY finds one or more specified JSON values in JSON data and returns the values in a character string. expr. Use this clause to specify the JSON data to be evaluated. For expr , specify an expression that evaluates to a text literal.
@@ -255,8 +255,8 @@ This lab assumes you have completed the following labs:
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
       
 
       

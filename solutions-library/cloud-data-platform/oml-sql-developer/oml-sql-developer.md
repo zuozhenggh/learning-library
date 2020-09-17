@@ -10,8 +10,8 @@
 This lab walks you through the steps to make an OML user and use SQL Developer as an interface to the ADW instance for granting user privileges. Then you will use OML to run a SQL script to generate machine learning models.
 
 
-*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-[![Lab 200 Walkthrough Video](./images/lab200tn.png " ")](https://www.youtube.com/watch?v=uprqKyeuxik "Lab 200 Walkthrough Video - Click to Watch!")
+*In addition to the workshop*, feel free to watch the walkthrough companion video:
+[](youtube:uprqKyeuxik)
 
 
 ### Objectives
@@ -28,9 +28,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 -   To learn more about SQL Developer Web, feel free to explore the capabilities by clicking on this link: [SQL Developer Web Documentation](https://docs.oracle.com/en/database/oracle/sql-developer-web/18.1/sdweb/sdw-about.html#GUID-AF7601F9-7713-4ECC-8EC9-FB0296002C69)
 
 
-## Part 1. Creating an OML User and Using SQL Developer Web
-
-### **STEP 1**: Creating OML Users
+## **STEP 1**: Creating OML Users
 
 1. Navigate to your ADW instance in the Oracle Cloud console. Then, click the **Service Console** button on your Autonomous Data Warehouse details page.
 
@@ -66,7 +64,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
 9. Now that you have an OML user created, make sure to keep note of the login details. You will use this user later in this workshop.
 
-### **STEP 2**: Access SQL Developer Web and Grant OML user priviliges
+## **STEP 2**: Access SQL Developer Web and Grant OML user priviliges
 
 1. We will use SQL Developer Web, an included cloud service with your ADW instance, to grant the necessary privileges for the OML user **testuser** to run the future prediction model OML script.
 
@@ -89,7 +87,11 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
     ![](./images/sqlw3.png " ")
 
 7. Let's grant this user some privileges. Copy and paste the following SQL query into the **[Worksheet]** section: 
-> GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP ANY TABLE, INSERT ANY TABLE, READ ANY TABLE, SELECT ANY TABLE, UNDER ANY TABLE, UPDATE ANY TABLE TO TESTUSER
+```
+<copy>
+GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP ANY TABLE, INSERT ANY TABLE, READ ANY TABLE, SELECT ANY TABLE, UNDER ANY TABLE, UPDATE ANY TABLE TO TESTUSER
+</copy>
+```
 
 - Note: if you created an OML user with a different name other than **TESTUSER**, make sure to modify the end of the above SQL code with your specific user name appropriately.
 
@@ -101,11 +103,9 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
 9. You have just used SQL developer web in order to grant a new user certain privileges to your Autonomous Database.
 
-## Part 2. Use OML to Run a Machine Learning Script and Generate a Model
+## **STEP 3**: Import an OML script
 
-### **STEP 1**: Import an OML script
-
-1. Navigate to and click on **Oracle ML SQL Notebooks** from the development page of your ADW instance service console.
+1. Navigate to and click on **Oracle Machine Learning Notebooks** from the development page of your ADW instance service console.
 
     ![](./images/18.png " ")
 
@@ -117,7 +117,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
     ![](./images/20.png " ")
 
-4. You will download a dataset file from this workshop to load into OML. You can download it by right clicking on the following text link and selecting **Save link as**. Keep the default options when downloading: [Download ML-Prediction-Models.json here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/oaoaQIJWKEKsh0QaEnJfcJ5A7tak48DxjpeCQBSfSJk/n/c4u03/b/solutions-library/o/ML-Prediction-Models.json). Then, open your browser window again back to the OML page.
+4. You will download a dataset file from this workshop to load into OML. You can download it by right clicking on the following text link and selecting **Save link as**. Keep the default options when downloading: <a href="./files/ML-Prediction-Models.json" download="ML-Prediction-Models.json" target="\_blank"> Download ML-Prediction-Models.json here </a>
 
 5. Click **Import** and select **ML-Prediction-Models.json** that you just downloaded.
 
@@ -127,7 +127,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
     ![](./images/22.png " ")
 
-### **STEP 2**: Run the OML script
+## **STEP 4**: Run the OML script
 1. OML notebooks are structured with Paragraph sections that consist of markdown and SQL code. The paragraphs can be run one by one or all together.
 
 2. In order for the notebook to communicate with the database, an interpreter binding must be set for the database connection. Click on the **Gear** interpreter binding button and click on **adwdemo_low**. This service name will be labeled with your ADW instance name (which we name **adwdemo** by default in this workshop) and then low, medium, or high. To run this script, a low concurrency option is preferred to avoid script errrors.
@@ -150,10 +150,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
 7. You have just ran a prediction model using OML through a SQL script! Let's view some of the data using your APEX app.
 
-
-## Part 3. Use APEX to See the New OML Generated Tables
-
-### **STEP 1**: Access Your APEX App
+## **STEP 5**: Access Your APEX App
 
 1. Navigate to and click on **Oracle APEX** from the development page of your ADW instance service console.
 
@@ -163,7 +160,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
     ![](./images/27.png " ")
 
-### **STEP 2**: Access the New OML Generated Tables
+## **STEP 6**: Access the New OML Generated Tables
 
 3. Click on **SQL Workshop** and then on **Object Browser** to view the tables of your Autonomous Data Warehouse.
 
@@ -180,9 +177,11 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Last Updated By/Date** - Jess Rein, Cloud Engineer, March 2020
+- **Contributors** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
+- **Last Updated By/Date** - Jess Rein, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
 
 
 

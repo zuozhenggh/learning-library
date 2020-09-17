@@ -3,7 +3,7 @@
 ## Lab Introduction
 Enter a brief introduction here
 
-## Step 1: Login to Oracle Database and Create User
+## **Step 1:** Login to Oracle Database and Create User
 
 1. Login to **Database**
   
@@ -73,7 +73,7 @@ Enter a brief introduction here
     </copy>
     ````
 
-## Step 2: Connect to Database and Create Table
+## **Step 2:** Connect to Database and Create Table
 
 Since data in the Hadoop HDFS file system is stored in an undetermined format, SQL queries require some constructs to parse and interpret data for it to be processed in rows and columns. Oracle Big Data SQL leverages available Hadoop constructs to accomplish this, notably InputFormat and SerDe Java classes, optionally through Hive metadata definitions. The Oracle Big Data SQL processing cells on the DataNodes are a layer on top of this generic Hadoop infrastructure. Three key features provided by the cells are Smart Scan, Storage Indexes, and Aggregation Offload.
 
@@ -105,7 +105,7 @@ Oracle Big Data SQL provides external tables with next generation performance ga
 
     ![](./images/IMG15.PNG " ")
 
-## Step 3: Use the Hive Access Driver
+## **Step 3:** Use the Hive Access Driver
 
 ORACLE HDFS enables you to create Oracle external tables directly over files stored in HDFS. This access driver uses Hive syntax to describe a data source, assigning default column names of COL 1, COL 2, and so forth. You do not need to create a Hive table manually as a separate step.
 
@@ -149,8 +149,8 @@ You may now proceed to the next lab.
 - **Authors/Contributors** - Enter author  name
 - **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, May 2020
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 
 

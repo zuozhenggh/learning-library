@@ -11,8 +11,8 @@ Looking at the Dashboard you will see that Chart 4 is based on demo data and sho
 
     ![](images/go-page2.png " ")
 
-    You should now be in *Page Designer*. Page Designer is where you will spend the majority of your time improving your application. 
-    
+    You should now be in *Page Designer*. Page Designer is where you will spend the majority of your time improving your application.
+
     There are three panes within Page Designer. The left pane initially displays the Rendering tree, with a list of page components. The middle pane displays the Layout, a representation of the page, and Gallery (at bottom), from which you can drag and drop new components into the Layout. The right pane is the Property Editor, where you can change attributes for the selected component.
 
 3. Within Page Designer, in the Rendering tree (left pane), _right-click_ **Chart 4** and select **Delete**.
@@ -58,6 +58,7 @@ This completes Lab 5. You now know how to remove and reposition regions. [Click 
 
  - **Author** -  David Peake, Consulting Member of Technical Staff
  - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
- - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Mangement, July 2020
+ - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
