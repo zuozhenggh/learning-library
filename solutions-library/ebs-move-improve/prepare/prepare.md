@@ -111,7 +111,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 9. Select **Confidential Application**. This takes you to the Add Confidential Application page.
 
-    ![](./images/createconfidentialapp.png " ")
+    ![](./images/makeconfidentialapp.png " ")
 
 10. On the Details screen, enter the following:
 
