@@ -6,8 +6,15 @@ In this lab you will build a Micronaut application locally that connects to Orac
 If at any point you run into trouble completing the steps, the full source code for the application can be cloned from Github using the following command to checkout the code:
 
     <copy>
-    git clone https://github.com/graemerocher/micronaut-hol-example.git
+    git clone -b lab5 https://github.com/graemerocher/micronaut-hol-example.git
     </copy>
+
+If you were unable to setup the Autonomous Database and necessary cloud resources you can also checkout a version of the code that uses an in-memory database:
+
+    <copy>
+    git clone -b lab5-h2 https://github.com/graemerocher/micronaut-hol-example.git
+    </copy>
+
 
 Estimated Lab Time: 30 minutes
 
@@ -28,7 +35,17 @@ In this lab you will:
 
 ## **STEP 1**: Create Micronaut Data entities that map Oracle Database tables
 
-1. The first step is to define entity classes that can be used to read data from database tables.
+The process in Lab 3 created a Schema using the following SQL statements:
+
+
+    CREATE TABLE "PET" ("ID" VARCHAR(36),"OWNER_ID" NUMBER(19) NOT NULL,"NAME" VARCHAR(255) NOT NULL,"TYPE" VARCHAR(255) NOT NULL);
+    CREATE TABLE "OWNER" ("ID" NUMBER(19) PRIMARY KEY NOT NULL,"AGE" NUMBER(10) NOT NULL,"NAME" VARCHAR(255) NOT NULL);
+    CREATE SEQUENCE "OWNER_SEQ" MINVALUE 1 START WITH 1 NOCACHE NOCYCLE;
+
+
+As you can see a table called `OWNER` and a table called `PET` were created.
+
+1. The first step is to define entity classes that can be used to read data from the database tables.
 
     Using your favorite IDE create a `Owner.java` file under `src/main/java/example/atp/domain` which will represent the `Owner` class and looks like the following:
 
@@ -156,6 +173,10 @@ In this lab you will:
     </copy>
     ```
 
+Note that the `Pet` class uses an automatically populated `UUID` as the primary key to demonstrate differing approaches to ID generation.
+
+A relationship between the `Pet` class and the `Owner` class is also defined using the `@Relation(Relation.Kind.MANY_TO_ONE)` annotation, indicating this is a many-to-one relationship.
+
 With that done it is time move onto defining repository interfaces to implement queries.
 
 ## **STEP 2**: Define Micronaut Data repositories to implement queries
@@ -189,6 +210,8 @@ public interface OwnerRepository extends CrudRepository<Owner, Long> {
 }
 </copy>
 ```
+
+Note that if you were unable to setup Autonomous database and are using the H2 in-memory database you should use the `H2` dialect instead.
 
 The `CrudRepository` interface takes 2 generic argument types. The first is the type of the entity (in this case `Owner`) and the second is the type if the ID (in this case `Long`).
 
@@ -372,8 +395,6 @@ import example.atp.repositories.PetRepository;
 import io.micronaut.context.event.StartupEvent;
 import io.micronaut.runtime.Micronaut;
 import io.micronaut.runtime.event.annotation.EventListener;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.inject.Singleton;
 import javax.transaction.Transactional;
@@ -389,8 +410,7 @@ public class Application {
         this.petRepository = petRepository;
     }
 
-    public static void main(String[] args) {
-        System.setProperty("oracle.jdbc.fanEnabled", "false");
+    public static void main(String[] args) {        
         Micronaut.run(Application.class);
     }
 
@@ -420,12 +440,6 @@ public class Application {
 ```
 
 Note that the constructor is modified to dependency inject the repository definitions so data can be persisted.
-
-Notice in the `main` method JDBC support for OJDBC FAN events is disabled as they are not necessary for this application:
-
-```java
-System.setProperty("oracle.jdbc.fanEnabled", "false");
-```
 
 Finally the `init` method is annotated with `@EventListener` with an argument to receive a `StartupEvent`. This event is called
 once the application is up and running and can be used to persist data when your application is ready to do so.
