@@ -26,8 +26,8 @@ There is a menu across the top of the screen. For this lab, the most interesting
 
 To open the notebook, that will be used in this lab, have the launcher open. The launcher will be open by default but if it is currently closed it can be opened by clicking on **File** and then click on **New Launcher**. 
 
-1. Click on the *Notebook Examples*. A drop down will appear.
-1. Select **binary_classification_attrition.ipynb**. 
+1. Click on the **Notebook Examples**. A drop down will appear.
+1. Select **binary\_classification\_attrition.ipynb**. 
 1. Click **Load Example**. The notebook will open in a new tab.
 1. Read through the document. When you encounter a chunk of code, click in the cell and press *shift + enter* to execute it. When the cell is running a ``[*]`` will appear in the top left corner of the cell. When it is finished, a number will appear in ``[ ]``, for example ``[1]``.
 1. Execute the cells in order. If you run into problems and want to start over again, click **Kernel** then click  **Restart Kernel and Clear All Outputs...**
