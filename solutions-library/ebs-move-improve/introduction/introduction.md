@@ -73,14 +73,12 @@ Using a Mac Workstation
 
 ## Review and Open Hands-On Lab Files
 The following table describes the directories and files that were copied to the Desktop\HOL-EBS directory on your workstation:
-
+Some of these files are no longer required to complete the lab. 
+The Key-Data.txt file is used to capture key data items that will be referenced throughout. Make sure to update this file consistently with the proper values. This will make sure you do not lose any required variables throughout. 
 Table S-1
 | Name          | Description       | 
 | ------------- |:-------------:|
-| /Documents/EBS-HOL-Workbook-June-2020.pdf     | A digital copy of this workbook, Introduction to Oracle E-Business Suite Cloud Manager Hands-On Lab. |
 | /documents/Key-Data.txt      | The document used to capture key data items needed throughout the lab.     |
-| /artifacts/terraform/Deploy-And-Configure-EBS-CM.zip    | Set of Terraform scripts which automate the creation of the infrastructure required to deploy Oracle E-Business Suite Cloud Manager. |
-| /artifacts/ssh-keys    | Keys used to establish an SSH session with Oracle E-Business Suite Cloud Manager Compute instance. |
 
 ## Workshop Overview
 
@@ -147,7 +145,9 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Santiago Bastidas, Product Management Director, July 2020
+- **Last Updates By/Date** - 
+        Quintin Hill, Cloud Engineering/ Sept 2020
+        Santiago Bastidas, Product Management Director/ July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
