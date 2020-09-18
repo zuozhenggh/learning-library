@@ -71,7 +71,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
         
         ii. Or use an ssh key that you have generated yourself in the past. 
 
-      For more information on ssh keys, visit: [form](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)
+      For more information on ssh keys, visit: [Generating an SSH Key Pair](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)
 
     j. Choose the availability domain that ends in **-1** from the list under **EBS Cloud Manager Availability Domain**.
 
