@@ -21,7 +21,7 @@
             "filename": "./../../common/project-setup.md"
         },
         {
-            "title": "Lab 4: Create a Notebook Session",
+            "title": "Lab 4: Create and Open a Notebook Session",
             "description": "Create a Notebook Session and launch it.",
             "filename": "./../../common/notebook-setup.md"
         },
