@@ -76,7 +76,7 @@ The Load TRG\_SALES mapping uses the following data and transformations:
 This section describes how to create the Load TRG\_SALES mapping. To create the Load TRG\_SALES mapping perform the following procedure:
 
   * Insert a Mapping
-  * Define the Target Datastor
+  * Define the Target Datastore
   * Define the Source Datastores
   * Define Joins between the Source Datastores
   * Define the Order Filter

@@ -62,6 +62,31 @@ We can verify this application works by exercising the following endpoints:
 - `curl -H 'Accept: application/json' http://localhost:8081/metrics` - returns metrics (MicroProfile metrics format)
 - `curl -i http://localhost:8081/openapi` - returns OpenAPI yaml service description (MicroProfile OpenAPI specification)
 
+#### _Alternative: Run the Helidon MP microservice on deployed VM_
+As an alternative, you may run the Helidon MP microservice on the VM that was deployed as part of the Terraform plan.
+
+1. SSH to VM:
+
+    ```
+    <copy>
+    ssh -i ~/.ssh/id_rsa opc@[VM IP Address]
+    </copy>
+    ``` 
+
+2. Run Helidon MP native image on VM:
+
+    ```
+    <copy>
+    curl https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/helidon-mp-service -o /app/helidon-mp-service
+    chmod +x /app/helidon-mp-service
+    ./app/helidon-mp-service
+    </copy>
+    ```
+
+You can now verify the application works by exercising the following endpoints:
+- `curl -i http://[VM IP Address]:8081/vaccinated/Dino` - this is our "business" endpoint and should return `true`
+- `curl -H 'Accept: application/json' http://[VM IP Address]:8081/metrics` - returns metrics (MicroProfile metrics format)
+
 ## **STEP 2**: Update Micronaut code
 
 Now it is time to update the Micronaut application to communicate with the Helidon service by defining a new endpoint. This endpoint will use a service that either connects to a remote
@@ -181,12 +206,26 @@ micronaut:
 </copy>
 ```
 
+Note that if you deployed the Helidon MP microservice in **STEP 1** directly to the OCI VM use the following URL for the pet-health configuration described below.
+```yaml
+<copy>
+micronaut:
+  http.services:
+    pet-health:
+      urls: "http://[VM IP Address]:8081"
+</copy>
+```
+
 By setting `micronaut.http.services.pet-health.urls`, you can define the endpoints the logical name `pet-health` will invoke when called.
 
 Finally, it is time to update the `PetController` controller to invoke the Pet Health service:
 
 ```java
 <copy>
+// add imports
+import java.util.concurrent.CompletableFuture;
+import example.atp.services.PetHealthOperations;
+
 // a new field
 private final PetHealthOperations petHealthOperations;
 
