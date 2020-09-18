@@ -49,7 +49,7 @@ You will now create a Resource Manager Stack that will perform the following tas
 
 5. Review and accept the Terms of Use.
 
-6. Click Launch Instance.
+6. Click Launch Stack.
 
 7. On the Configure Variables screen, enter the following values:
 
