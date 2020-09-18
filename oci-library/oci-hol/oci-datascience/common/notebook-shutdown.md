@@ -1,5 +1,5 @@
 # Shutting Down a Notebook Session
-## Overview
+## Introduction
 
 When a notebook session is in an active state there is a boot volume, block storage and compute attached to it. When the notebook is not being used it is possible to detach the computing resource and thus reduce costs. There are two methods for shutting down a notebook session. If a notebook session is deactivated, the underlying computing resource is shut down and the boot volume and block storage are detached. However, the block storage, which is mounted at ``/home/datascience`` is persisted for later use. The boot volume is not persisted. Deactivated notebooks can be activated again and the block volume will automatically be reattached. During activation, it is possible to change the compute shape, size of the block volume, VCN and subnet.
 
@@ -15,6 +15,7 @@ Before deactivating a notebook session, save all work to the attached block volu
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session. This will open the Projects page.
 1. Click the name of the notebook session. This will open the Notebook Session page.
+1. Click **Deactivate** and the **Deactivate Notebook Session** window will open.
 1. Click **Deactivate**. The status will change to **Updating** followed by **Inactive**.
 
 

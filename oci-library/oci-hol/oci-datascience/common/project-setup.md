@@ -1,6 +1,6 @@
 # Data Science Project Setup
 
-## Overview
+## Introduction
 
 Projects are containers that enable you to organize your work. They contain a collection of notebook sessions and models.
 

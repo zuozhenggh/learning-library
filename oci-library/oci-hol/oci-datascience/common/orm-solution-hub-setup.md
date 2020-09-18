@@ -1,6 +1,6 @@
 # Data Science Service Setup
 
-## Overview
+## Introduction
 
 To use the Data Science service, the tenancy has to be configured to grant permission to users and resources. If your tenancy is not already configured, you will need administrator access to configure it. If you created a free-tier account, your account has administrator access. There are two ways to create configure the tenancy. It can be [manually configured](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/configure-tenancy.htm) or the [Oracle Resource Manager](https://www.oracle.com/cloud/systems-management/resource-manager/). In this lab, the tenancy will be configured using the [Data Science Solution Hub](https://docs.cloud.oracle.com/en-us/iaas/data-science/using/orm-configure-tenancy.htm), which is part of the Oracle Resource Manager. The Oracle Resource Manager provides an interface that assists in creating customized stacks that will configure the tenancy to work with the Data Science service.
 

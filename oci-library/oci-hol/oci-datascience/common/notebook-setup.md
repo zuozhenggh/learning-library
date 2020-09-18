@@ -1,6 +1,6 @@
 # Create a Notebook Session
 
-## Overview
+## Introduction
 
 Data Science notebook sessions are interactive coding environments for building and training models. Notebook sessions provide access to a JupyterLab serverless environment that is managed by the Data Science service. All notebook sessions run in the Data Science service tenancy.
 
