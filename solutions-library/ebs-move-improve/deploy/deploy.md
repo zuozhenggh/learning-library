@@ -17,19 +17,17 @@ Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastruct
 
 ## Step 2. Deploy and Configure Oracle E-Business Suite Cloud Manager
 
-You will now deploy an E-Business Suite Cloud Manager using a Marketplace stack. The stack will do the following:
+You will now deploy an E-Business Suite Cloud Manager using a Marketplace stack. The stack creates the following cloud resources:
 
-* Create the resources required to deploy the Oracle E-Business Suite Cloud Manager. Here is a list of resources which will be created automatically for you:
+    a. A compartment to contain resources required by Oracle E-Business Suite Cloud Manager.
 
-    a. A compartment
+    b. An EBS Cloud Manager Administrators IAM user and group, as well as the policies required to manage the compartment.
 
-    b. The EBS Cloud Manager IAM group, user and policies to allow the group to operation on the above compartment
+    c. Network resources – including a VCN, an internet gateway, subnets, route tables, security lists, and security rules.
 
-    c. Network resources – including a VCN, an internet gateway, subnets, route tables, security lists, and security rules
-    
-* Deploy a Compute Instance for running the Oracle E-Business Suite Cloud Manager
+    d. A Compute instance for running the Oracle E-Business Suite Cloud Manager.
 
-* Configure Oracle E-Business Suite Cloud Manager to work with your OCI Tenancy
+Then, the stack will configure Oracle E-Business Suite Cloud Manager to work with your OCI tenancy and the newly created OCI resources.
 
 1. In the Oracle Cloud Infrastructure console navigation menu, under **Solutions and Platform** select **Marketplace** and then click **Applications**.
 
@@ -65,9 +63,12 @@ You will now deploy an E-Business Suite Cloud Manager using a Marketplace stack.
 
     g. Select ``VM.Standard.E2.2`` for EBS Cloud Manager Shape
 
-    h. Enter a password which matches the criteria: 8 to 30 characters, at least one lower character, one upper case character, one special character from _#$.
+    h. Enter a password which matches the criteria: 8 to 30 characters, at least one lower character, one upper case character, one special character from _#$. Note this password in your Key-Data.txt
 
-    i. Open the file ``Desktop/HOL-EBS/artifacts/ssh-keys/ebs_hol_key.pub`` with a text editor and copy its contents into Public Key
+    i. Add an ssh key
+        i. You can either Open the file ``Desktop/HOL-EBS/artifacts/ssh-keys/ebs_hol_key.pub`` with a text editor and copy its contents into Public Key
+
+        ii. Or use an ssh key that you have generated yourself in the past. For more information on ssh keys, visit: [Generating an SSH Key Pair](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)
 
     j. Choose the availability domain that ends in **-1** from the list under **EBS Cloud Manager Availability Domain**.
 
@@ -143,7 +144,7 @@ Edit the local ``hosts`` file on your laptop and add an entry.
 
    iv. Save the file.
 
-Using the Login URL generated previously, log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials as found in your ``Key-Data.txt`` file.
+Using the Login URL generated previously, log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials for the EBS Cloud Manager account as documented in your ``Key-Data.txt`` file.
 
 ![](./images/14.png " ")
 
@@ -155,7 +156,8 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Santiago Bastidas, Product Management Director, July 2020
+- **Last Updated By/Date** - Quintin Hill, Cloud Engineering/Sept 2020
+  Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

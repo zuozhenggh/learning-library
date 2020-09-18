@@ -24,7 +24,7 @@ In this 45 mins lab, we will use the One-Click Provisioning feature of Oracle E-
 
 3. Click Submit
 
-You can check the status of the activity to provision the environment in the Activities page. The provisioning process will take approximately 20-25 minutes.
+You can check the status of the activity to provision the environment in the Activities page. The provisioning process will take approximately 30-35 minutes.
 
 ## Part 3. Enable and Set Oracle E-Business Suite Account Passwords
 
@@ -84,7 +84,8 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Santiago Bastidas, Product Management Director, July 2020
+- **Last Updated By/Date** - Quintin Hill, Cloud Engineering/Sept 2020
+  Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

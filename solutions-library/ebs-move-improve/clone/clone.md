@@ -10,7 +10,7 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 2. For ebsholenv1, click Action and select Clone. Enter Details (see screenshot and points below)
 ![](./images/1.png " ")
 
-3. Enter the following values for the clone details:
+3. Enter the following values for the clone details (Note these variables in your Key-Data.txt):
 
   a) Environment Name: ebsholenv2
 
@@ -60,7 +60,7 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
     vi. In the hosts file, scroll down to the end of the content. 
 
-    vii. Add the following entry to the very end of the file: ```<ip_address> ebsholenv1.example.com``` 
+    vii. Add the following entry to the very end of the file: ```<ip_address> ebsholenv2.example.com``` 
 
     viii. Save the file. 
 
@@ -70,7 +70,7 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
     ii. Enter the following command: ```sudo vi /etc/hosts``` 
 
-    iii. Go to the last line and add the following entry: ```<ip_address> ebsholenv1.example.com``` 
+    iii. Go to the last line and add the following entry: ```<ip_address> ebsholenv2.example.com``` 
 
     iv. save the file 
 
@@ -85,7 +85,8 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Santiago Bastidas, Product Management Director, July 2020
+- **Last Updated By/Date** - Quintin Hill, Cloud Engineering/Sept2020
+  Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

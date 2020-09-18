@@ -13,7 +13,11 @@ Before starting this lab, please make sure to record your trial user name and pa
 
 2. In the Oracle Cloud Infrastructure console menu, under Governance and Administration, navigate to **Identify > Federation**.
 
-3. Click on the link next to Oracle Identity Cloud Service Console.
+3. Click on OracleIdentityCloudService
+
+4. Click on the link next to **Oracle Identity Cloud Service Console**.
+
+![](./images/idcsconsole.png " ")
 
 4. From the IDCS console, create your Oracle E-Business Suite Cloud Manager group:
 
@@ -105,7 +109,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 9. Select **Confidential Application**. This takes you to the Add Confidential Application page.
 
-![](./images/CreateConfidentialApp.png " ")
+![](./images/createconfidentialapp.png " ")
 
 10. On the Details screen, enter the following:
 
@@ -115,7 +119,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     c. Click **Next**.
 
-![](./images/Name_Description.png " ")
+![](./images/nameanddescription.png " ")
 
 11. On the Client screen:
 
@@ -141,7 +145,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     f. Select the **Introspect** option for **Allowed Operations**.
 
-    ![](./images/ClientConfig_P1.png " ")
+    ![](./images/clientconfigp1.png " ")
 
     g. Under **Grant the client access to Identity Cloud Service Admin APIs**:
 
@@ -151,7 +155,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
         iii. Click Add again.
 
-    ![](./images/ClientConfig_P2.png " ")
+    ![](./images/clientconfigp2.png " ")
 
     h. Click **Next**.
     
@@ -185,7 +189,8 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Santiago Bastidas, Product Management Director, July 2020
+- **Last Updated By/Date** - Quintin Hill, Cloud Engineering/Sept 2020
+  Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
