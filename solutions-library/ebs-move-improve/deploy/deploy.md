@@ -35,7 +35,7 @@ You will now create a Resource Manager Stack that will perform the following tas
 
 ![](./images/findMarketplaceApplication.png " ")
 
-2. Find and click **Oracle E-BUsiness Suite Cloud Manager Stack for Demos**.
+2. Find and click **Oracle E-Business Suite Cloud Manager Stack for Demos**.
 
 3. In the version drop-down list, ensure that the default of ```Oracle-EBS-Cloud-Manager-Stack-for-Demos-<date>``` is selected.\
 
