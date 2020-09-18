@@ -33,15 +33,11 @@ You will now create a Resource Manager Stack that will perform the following tas
 
 1. In the Oracle Cloud Infrastructure console navigation menu, under **Solutions and Platform** select **Marketplace** and then click **Applications**.
 
-![](./images/findMarketPlaceApplication.png " ")
+![](./images/findMarketplaceApplication.png " ")
 
 2. Find and click **Oracle E-BUsiness Suite Cloud Manager Stack for Demos**.
 
-[//]: # (![](./images/2.png " "))
-
-3. In the version drop-down list, ensure that the default of ```Oracle-EBS-Cloud-Manager-Stack-for-Demos-<date>``` is selected.
-
-[//]: # (![](./images/3.png " "))
+3. In the version drop-down list, ensure that the default of ```Oracle-EBS-Cloud-Manager-Stack-for-Demos-<date>``` is selected.\
 
 4. In the Compartment drop-down list, select the parent compartment of the compartment where the Oracle E-Business Suite Cloud Manager Compute instance will be deployed. For example, mycompanytenancy(root).
 
