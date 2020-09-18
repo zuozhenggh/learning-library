@@ -39,9 +39,9 @@ To open the notebook, that will be used in this lab, have the launcher open. The
 
 There are some other notebooks that you may find interesting. They can be accessed by clicking **File** then clicking **New Launcher**. This will open Launcher. Click **Notebook Examples** and select a notebook then click **Load Example**. Some notebooks of interest are:
 
-* **data_visualizations.ipynb**: It provides a comprehensive overview of the data visualization tools in ADS. This includes smart data visualization for columns based on data types and values.
-* **transforming_data.ipynb**: Learn about the ``ADSDatasetFactory`` and how it can clean and transform data.
-* **model_from_other_library.ipynb**: See the capabilities of the ``ADSModel`` class. See how ``ADSModel`` makes the ADS pipeline completely modular and adaptable to 3rd party models.
+* **data\_visualizations.ipynb**: It provides a comprehensive overview of the data visualization tools in ADS. This includes smart data visualization for columns based on data types and values.
+* **transforming\_data.ipynb**: Learn about the ``ADSDatasetFactory`` and how it can clean and transform data.
+* **model\_from\_other\_library.ipynb**: See the capabilities of the ``ADSModel`` class. See how ``ADSModel`` makes the ADS pipeline completely modular and adaptable to 3rd party models.
 
 ## Acknowledgements
 
