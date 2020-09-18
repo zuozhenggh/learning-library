@@ -73,7 +73,7 @@ Below pre-loaded data objects are available in Converged Database. . And since O
    Click on 'Add All' to select all the columns from table.
        ![](./images/oascdb10.png " ")
 
-   Clck on 'Add" and preview the sample records.  Verify dataset name as shown below.
+   Clck on 'Add' and preview the sample records.  Verify dataset name as shown below.
        ![](./images/oascdb11.png " ")
 
 
@@ -375,10 +375,10 @@ With this lab, you have learned OAS self-service analytics with capabilities inc
 
 ## Acknowledgements
 
-- **Authors** - Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
+- **Owners** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
 - **Team** - North America Analytics Specialists
-- **Last Updated By** - Vishwanath Venkatachalaiah
+- **Last Updated By** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
