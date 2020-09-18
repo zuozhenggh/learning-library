@@ -4,9 +4,9 @@
 
 Data Science notebook sessions are interactive coding environments for building and training models. Notebook sessions provide access to a JupyterLab serverless environment that is managed by the Data Science service. All notebook sessions run in the Data Science service tenancy.
 
-A Notebook session is associated with a compute instance, VCN and block storage. There are two block storage drives that are associated with a notebook session. There is a boot volume that is initialized each time the notebook session is activated. Any data on the boot volume is lost when the notebook session is deactivated or terminated. There is an additional block storage that is persisted when a notebook session is deactivated but it is not persisted when a notebook session is terminated. This block volume is mounted in the ``/home/datascience`` directory and it is where the JupyterLab notebooks, data files, installed custom software and other files should be stored.
+A Notebook session is associated with a compute instance, VCN, subnet and block storage. There are two block storage drives that are associated with a notebook session. There is a boot volume that is initialized each time the notebook session is activated. Any data on the boot volume is lost when the notebook session is deactivated or terminated. There is an additional block storage that is persisted when a notebook session is deactivated but it is not persisted when a notebook session is terminated. This block volume is mounted in the ``/home/datascience`` directory and it is where the JupyterLab notebooks, data files, installed custom software and other files should be stored.
 
-When a notebook session is activated or created, the compute instance shape, block storage  and VCN are configured. Thus, these resources can be changed by deactivating a notebook session, then activating the session and changing the configuration. The size of the block storage can only be increased.
+When a notebook session is activated or created, the compute instance shape, block storage, VCN and subnet are configured. Thus, these resources can be changed by deactivating a notebook session, then activating the session and changing the configuration. The size of the block storage can only be increased.
 
 ## Creating a Notebook Session
 
@@ -15,7 +15,7 @@ When a notebook session is activated or created, the compute instance shape, blo
 1. Under **Data and AI**, click **Data Sciences**, and then click **Projects**.
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session.
-1. Click **Create Notebook Session** and a Create Notebook Session window will open.
+1. Click **Create Notebook Session** and a **Create Notebook Session** window will open.
 1. Select the compartment that you want to contain the notebook session.
 1. (Optional, but recommended) Enter a unique name for the notebook session (limit of 255 characters). If you do not provide a name, a name is automatically generated for you. For example, ``datasciencenotebooksession20200108222435``.
 1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications.
@@ -32,7 +32,7 @@ While the notebook session is being created, you can navigate away from the curr
 
 ## Opening a Notebook Session
 
-Once the notebook session has been created the Notebook Session page will show the notebook in an **Active** or **Inactive** state. To open the notebook:
+Once the notebook session has been created the notebook session page will show the notebook in an **Active** or **Inactive** state. To open the notebook:
 
 1. [Login to the Console](https://www.oracle.com/cloud/sign-in.html).
 1. Open the navigation menu.
@@ -43,15 +43,15 @@ Once the notebook session has been created the Notebook Session page will show t
 1. If the notebook is in an **Active** state, 
     1. Click **Open**.
 1. If the notebook is in an **Inactive** state,
-    1. Click **Activate** and this will open the Activate Notebook Session window with the configuration from the last time the notebook session was activated or created.
+    1. Click **Activate** and this will open the **Activate Notebook Session** window with the configuration from the last time the notebook session was activated or created.
     1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications.
     1. Enter the block volume in GB. The size of the block storage can be increased but not decreased. 
     1. Select the VCN compartment that contains the VCN that will be used. 
     1. Select the VCN to use.
     1. Select the subnet compartment that contains the subnet to use.
     1. Select the subnet to use. Generally, a subnet that has public internet access is desired, but not required.
-    1. Click **Activate** and the Notebook Session status will change to **Updating**.
-    1. When the Notebook Session status changes to **Active**, click **Open**
+    1. Click **Activate** and the notebook session status will change to **Updating**.
+    1. When the notebook session status changes to **Active**, click **Open**
 
 ## Acknowledgements
 
