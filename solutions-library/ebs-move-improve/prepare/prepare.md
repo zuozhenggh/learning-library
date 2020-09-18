@@ -107,9 +107,11 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 8. In the top right of the Applications tile, click the icon to Add an Application.
 
+    ![](./images/selectaddapplication.png " ")
+
 9. Select **Confidential Application**. This takes you to the Add Confidential Application page.
 
-![](./images/createconfidentialapp.png " ")
+    ![](./images/createconfidentialapp.png " ")
 
 10. On the Details screen, enter the following:
 
@@ -119,7 +121,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     c. Click **Next**.
 
-![](./images/nameanddescription.png " ")
+    ![](./images/nameanddescription.png " ")
 
 11. On the Client screen:
 
@@ -189,8 +191,10 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Quintin Hill, Cloud Engineering/Sept 2020
-  Santiago Bastidas, Product Management Director/July 2020
+- **Last Updated By/Date** 
+
+- Quintin Hill, Cloud Engineering/Sept 2020 
+- Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

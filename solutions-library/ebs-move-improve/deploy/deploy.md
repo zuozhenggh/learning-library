@@ -66,9 +66,12 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
     h. Enter a password which matches the criteria: 8 to 30 characters, at least one lower character, one upper case character, one special character from _#$. Note this password in your Key-Data.txt
 
     i. Add an ssh key
-        i. You can either Open the file ``Desktop/HOL-EBS/artifacts/ssh-keys/ebs_hol_key.pub`` with a text editor and copy its contents into Public Key
 
-        ii. Or use an ssh key that you have generated yourself in the past. For more information on ssh keys, visit: [Generating an SSH Key Pair](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)
+        i. You can either Open the file ``Desktop/HOL-EBS/artifacts/ssh-keys/ebs_hol_key.pub`` with a text editor and copy its contents into Public Key
+        
+        ii. Or use an ssh key that you have generated yourself in the past. 
+
+      For more information on ssh keys, visit: [form](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)
 
     j. Choose the availability domain that ends in **-1** from the list under **EBS Cloud Manager Availability Domain**.
 
@@ -156,8 +159,10 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Quintin Hill, Cloud Engineering/Sept 2020
-  Santiago Bastidas, Product Management Director/July 2020
+- **Last Updated By/Date** 
+
+- Quintin Hill, Cloud Engineering/Sept 2020
+- Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
