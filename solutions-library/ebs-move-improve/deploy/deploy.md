@@ -37,7 +37,7 @@ You will now create a Resource Manager Stack that will perform the following tas
 
 2. Find and click **Oracle E-Business Suite Cloud Manager Stack for Demos**.
 
-3. In the version drop-down list, ensure that the default of ```Oracle-EBS-Cloud-Manager-Stack-for-Demos-<date>``` is selected.\
+3. In the version drop-down list, ensure that the default of ```Oracle-EBS-Cloud-Manager-Stack-for-Demos-<date>``` is selected.
 
 4. In the Compartment drop-down list, select the parent compartment of the compartment where the Oracle E-Business Suite Cloud Manager Compute instance will be deployed. For example, mycompanytenancy(root).
 
