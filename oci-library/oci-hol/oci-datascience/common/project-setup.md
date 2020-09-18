@@ -20,3 +20,13 @@ You create a Data Science project to organize your notebook sessions and models 
 1. Click **Create**.
 
 This will create a project and open the project page.
+
+## Acknowledgements
+
+* **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
+* **Last Updated By/Date**:
+    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, September 2020
+
+## See an issue?
+
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
