@@ -2,21 +2,21 @@
 
 
 ## Introduction
-In this lab you are going to login to OSA and get familiar with the menu
+In this lab you are going to login to GGSA and get familiar with the menu
 and navigation in the home and catalog pages. You will then create a new
 user and set credentials for that user. You are also going to import an
-example use case for IOT in order to get familiar with various resources
+example use case for IoT in order to get familiar with various resources
 that are available for that use case.
 
-Estimated Lab Time:  xx minutes
+Estimated Lab Time:  25 minutes
 
 ### About Product/Technology
-Golden Gate Stream Analytics (OSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in OSA you can run analytics on live data in real time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
+Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in GGSA you can run analytics on live data in real-time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
 
 ### Objectives
-- Get familiar with OSA
+- Get familiar with GGSA
 - Navigate the tool and get familiar with menu items
-- Learn about the multiple resources that are available in OSA
+- Learn about the multiple resources that are available in GGSA
 
 ### Prerequisites
 
@@ -25,7 +25,7 @@ Golden Gate Stream Analytics (OSA) is a tool designed to consume a stream of dat
 ## **Step 1:** Log-in
 
 
-1. Log-in to the Oracle Stream Analytics using the url:
+1. Log-in to the GoldenGate Stream Analytics using the url:
 
 
     **User Name:** **osaadmin**
@@ -277,7 +277,7 @@ targets. This target should have (about 12 fields).
 
 ## Learn More
 
-* [Oracle Stream Analytics](https://www.oracle.com/middleware/technologies)
+* [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
 
 ## Acknowledgements
 

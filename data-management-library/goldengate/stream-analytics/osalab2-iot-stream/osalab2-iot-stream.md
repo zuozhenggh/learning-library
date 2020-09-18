@@ -1,22 +1,22 @@
-# Lab2: Streaming IOT Data
+# Lab2: Streaming IoT Data
 
 ## Introduction
-In this scenario a management company wants to manage their verding machines which are located all around the world.  The vending machines are each equipped with various sensors that send live data to a central server alerting about any malfunctions such as temperature variations, low inventory and alike.  The input data in this use case comes from a flat file simulating a live data stream that includes Machine ID, Error Code and Description, Inventory, Temperature levels and Light Status.
+In this scenario a management company wants to manage their vending machines which are located all around the world.  The vending machines are each equipped with various sensors that send live data to a central server alerting about any malfunctions such as temperature variations, low inventory and alike.  The input data in this use case comes from a flat-file simulating a live data stream that includes Machine ID, Error Code and Description, Inventory, Temperature levels and Light Status.
 
-The company would like to enrich the data from a data base table that contains each machine's specific location including latitude and longitude, an acceptable inventory level and how much in sales they produce on average.  They would then like to run analytics to alert them about low inventory and any malfunctions so that they could act and send the appropriate maintenance.
+The company would like to enrich the data from a database table that contains each machine's specific location including latitude and longitude, an acceptable inventory level and how much in sales they produce on average.  They would then like to run analytics to alert them about low inventory and any malfunctions so that they could act and send the appropriate maintenance.
 
-Estimated Lab Time: XX minutes
+Estimated Lab Time: 30 minutes
 
 ### About Product/Technology
-Golden Gate Stream Analytics (OSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in OSA you can run analytics on live data in real time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
+Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, Kafka, JMS, REST or even a file system file.  Once the data is in GGSA you can run analytics on live data in real-time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
 
 
 ### Objectives
-- Walk thru a sample IOT scenario
-- Learn about multiple resources in OSA and how they are created
+- Walk thru a sample IoT scenario
+- Learn about multiple resources in GGSA and how they are created
 - Understand the basic concepts of streaming with examples
 
-A pipeline is a type of workflow made up of multiple stages such as query stage, a pattern stage, a business rule stage, a query group stage, a custom stage and many more. It is a Spark application where you can implement the business logic for any scenario in this case a vening machine management scenario.
+A pipeline is a type of workflow made up of multiple stages such as query stage, a pattern stage, a business rule stage, a query group stage, a custom stage and many more. It is a Spark application where you can implement the business logic for any scenario in this case a vending machine management scenario.
 
 ### Prerequisites
 
@@ -53,7 +53,7 @@ stages constitute a Pipeline.  This pipeline is called **VendingMachineManagemen
 1. In the workflow region click on the left most stage **VendingMachineStream** and
 make sure it has been highlighted with color blue.
 
-2. This is the IOT Vending Machine Pipeline made up of 13 separate stages.
+2. This is the IoT Vending Machine Pipeline made up of 13 separate stages.
 Stay on the first stage **VendingMachineStream** with **Live Output** paused and
 understand the fields that are shown in the **Live Output**
 
@@ -234,7 +234,7 @@ stages in the next lab.
 
 ## Learn More
 
-* [Oracle Stream Analytics](https://www.oracle.com/middleware/technologies)
+* [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
 
 ## Acknowledgements
 

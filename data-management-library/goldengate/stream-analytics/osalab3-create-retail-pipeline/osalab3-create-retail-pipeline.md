@@ -20,10 +20,10 @@ The retailer is asking us to use the input data to provide the following output 
 * Send data revenue and likely buyers to targets downstream
 
 
-Estimated Lab Time: XX minutes
+Estimated Lab Time: 70 minutes
 
 ### About Product/Technology
-Golden Gate Stream Analytics (OSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in OSA you can run analytics on live data in real time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
+Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in GGSA you can run analytics on live data in real-time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
 
 ### Objectives
 - Understand the Retail Promotions scenario 
@@ -227,7 +227,7 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 4. Click **Save**
 
 
-    **Scoring** stage allows you to use your own Machine Learning model that you have imported into OSA.  
+    **Scoring** stage allows you to use your own Machine Learning model that you have imported into GGSA.  
 5. Select the ML model **CustomerRedeemModel** that was imported from the dropdown and accept the default **Model Version**. 
 6. Now make sure to map all the **Model Property** to the appropriate **Pipeline Property** if they are not already done for you.
 
@@ -303,7 +303,7 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 
 ## Learn More
 
-* [Oracle Stream Analytics](https://www.oracle.com/middleware/technologies)
+* [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
 
 ## Acknowledgements
 

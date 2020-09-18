@@ -3,10 +3,10 @@
 ## Introduction
 So far, we have been designing the pipelines in **Draft** Mode which means that we could have made changes to any of the stages and see the updates live.  Furthermore, we could have at any time stopped the stream and designing of the pipeline by clicking on the **Done** button in the upper left hand corner of the screen.
 
-Estimated Lab Time: XX minutes
+Estimated Lab Time: 25 minutes
 
 ### About Product/Technology
-Golden Gate Stream Analytics (OSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in OSA you can run analytics on live data in real time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
+Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in GGSA you can run analytics on live data in real-time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
 
 ### Objectives
 - Learn how to Publish a Pipeline
@@ -48,7 +48,7 @@ Golden Gate Stream Analytics (OSA) is a tool designed to consume a stream of dat
     ![](./images/published2.png)
 
 ## **Step 3.** Dashboards
-    A Dashboard is an analytic feature that allows visualization of the pipeline once the data has been analyzed.  You can easily create a dashboard in OSA with a few quick steps.  However, dashboards are not visible until the pipeline they pertain to is in Published state.
+    A Dashboard is an analytic feature that allows visualization of the pipeline once the data has been analyzed.  You can easily create a dashboard in GGSA with a few quick steps.  However, dashboards are not visible until the pipeline they pertain to is in Published state.
 
 1. In the left Nav Bar of the **Catalog** page click on the **Dashboards** and see all the dashboards that have been created.
 
@@ -85,7 +85,7 @@ Golden Gate Stream Analytics (OSA) is a tool designed to consume a stream of dat
 17. You can now **Exit** the dashboard using the **Actions** dropdown.
 
 ## **Step 4:** Import/Export
-You can use export and import to migrate your pipeline and its contents between Oracle Stream Analytics systems, or you can also migrate only select artifacts.  You can import a pipeline developed with the latest version of Oracle Stream Analytics.
+You can use export and import to migrate your pipeline and its contents between GoldenGate Stream Analytics systems, or you can also migrate only select artifacts.  You can import a pipeline developed with the latest version of GoldenGate Stream Analytics.
 You have learned the import functionality in the beginning of this workshop.  In this lab you will export the dashboard that you just create in the last step.
 
 1. Mouse over the **RevenueByCustomerSegementLab3** dashboard
@@ -102,7 +102,7 @@ You have learned the import functionality in the beginning of this workshop.  In
 
 ## Learn More
 
-* [Oracle Stream Analytics](https://www.oracle.com/middleware/technologies)
+* [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
 
 ## Acknowledgements
 
