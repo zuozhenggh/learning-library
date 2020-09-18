@@ -3,7 +3,7 @@
         {
             "title": "Introduction",
             "description": "Introduction to EBS lift and shift",
-            "filename": "./README.md"
+            "filename": "./introduction.introduction.md"
         },
         {
             "title": "Lab 1: Sign Up for Free Trial",
