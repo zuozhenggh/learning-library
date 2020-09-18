@@ -72,9 +72,13 @@ Using a Mac Workstation
     d. Unzip the files. 
 
 ## Review and Open Hands-On Lab Files
+
 The following table describes the directories and files that were copied to the Desktop\HOL-EBS directory on your workstation:
+
 Some of these files are no longer required to complete the lab. 
+
 The Key-Data.txt file is used to capture key data items that will be referenced throughout. Make sure to update this file consistently with the proper values. This will make sure you do not lose any required variables throughout. 
+
 Table S-1
 | Name          | Description       | 
 | ------------- |:-------------:|
