@@ -17,7 +17,7 @@ Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastruct
 
 ## Step 2. Deploy and Configure Oracle E-Business Suite Cloud Manager
 
-You will now create a EBS Cloud Manager Application stack that will perform the following tasks:
+You will now deploy an E-Business Suite Cloud Manager using a Marketplace stack. The stack will do the following:
 
 * Create the resources required to deploy the Oracle E-Business Suite Cloud Manager. Here is a list of resources which will be created automatically for you:
 
