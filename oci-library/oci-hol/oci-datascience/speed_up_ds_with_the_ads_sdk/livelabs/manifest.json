@@ -11,8 +11,8 @@
             "filename": "../../../../../common/labs/cloud-login/register-free-tier-account.md"
         },
         {
-            "title": "Lab 2: Configure Data Science Service",
-            "description": "Configure the tenancy to work with the Data Science Service.",
+            "title": "Lab 2: Configure the Data Science Service",
+            "description": "Configure the tenancy to work with the Data Science service.",
             "filename": "./../../common/orm-solution-hub-setup.md"
         },
         {
