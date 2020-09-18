@@ -31,7 +31,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
 1. In the Oracle Cloud Infrastructure console navigation menu, under **Solutions and Platform** select **Marketplace** and then click **Applications**.
 
-![](./images/findMarketplaceApplication.png " ")
+![](./images/find-marketplace-app.png " ")
 
 2. Find and click **Oracle E-Business Suite Cloud Manager Stack for Demos**.
 
@@ -39,7 +39,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
 4. In the Compartment drop-down list, select the parent compartment of the compartment where the Oracle E-Business Suite Cloud Manager Compute instance will be deployed. For example, mycompanytenancy(root).
 
-![](./images/Compartment&Terms.png " ")
+![](./images/compartment-and-terms.png " ")
 
 5. Review and accept the Terms of Use.
 
