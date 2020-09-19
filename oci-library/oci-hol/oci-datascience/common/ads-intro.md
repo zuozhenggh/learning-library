@@ -42,17 +42,17 @@ Some of the supported formats include:
 * arff
 
 Example of how to open a dataset.
-```
+    ```
     ds = DatasetFactory.open("sample_data.csv", target="Attrition").set_positive_class('Yes')
-```
+    ```
 
 ### Exploratory Data Analysis
 
 The ADS data type discovery supports simple data types like categorical, continuous, ordinal to sophisticated data types. For example, geodata, date time, zip codes, and credit card numbers.
 
-```
+    ```
     ds.target.show_in_notebook()
-```
+    ```
     ![ds.target.show_in_notebook()](../speed_up_ds_with_the_ads_sdk/images/target-show-in-notebook.png)
 
 ### Automatic Data Visualization
@@ -60,15 +60,15 @@ The ADS data type discovery supports simple data types like categorical, continu
 The ``ADSDataset`` object comes with a comprehensive plotting API. It allows you to explore data visually using automatic plotting or create your own custom plots.
 
 Example of a Gaussian heatmap
-```
+    ```
     ds.plot('col01', y='col03').show_in_notebook()
-```
+    ```
     ![ds.plot('col01', y='col03').show_in_notebook()](../speed_up_ds_with_the_ads_sdk/images/plot-show-in-notebook.png)
 
 Example of plotting latitude and longitude points on a map
-```
+    ```
     earthquake.plot_gis_scatter(lon="longitude", lat="latitude")
-```
+    ```
     ![earthquake.plot_gis_scatter(lon="longitude", lat="latitude")](../speed_up_ds_with_the_ads_sdk/images/plot-gis-scatter.png)
 
 ### Feature Engineering
@@ -76,9 +76,9 @@ Example of plotting latitude and longitude points on a map
 Leverage ``ADS`` and the [DASK API](https://dask.org/) to transform the content of an ``ADSDataset`` object with custom data transformations.
 
 Example of how to apply auto tranformations
-```
+    ```
     ds_engineered = ds.auto_transform(fix_imbalance=False)
-```
+    ```
 
 ### Data Snapshotting for Training Reproducibility
 
@@ -99,7 +99,7 @@ The Oracle AutoML engine, that produces ADSModel models, automates:
 Create your own models using any library. If they resemble ``sklearn`` estimators, you can promote them to ``ADSModel`` objects and use them in evaluations, explanations, and model catalog operations. If they do not support the ``sklearn`` behavior, you can wrap them in a Lambda then use them.
 
 Example of creating a set of AutoML models
-```
+    ```
     train, test = ds.train_test_split()
     automl = AutoML(train, provider=ml_engine)
     model, baseline = automl.train(model_list=[
@@ -107,12 +107,12 @@ Example of creating a set of AutoML models
         'LGBMClassifier',
         'XGBClassifier',
         'RandomForestClassifier'])
-```
+    ```
 
 Example of tuning trial results
-```
+    ```
     automl.visualize_tuning_trial()
-```
+    ```
     ![automl.visualize_tuning_trials()](../speed_up_ds_with_the_ads_sdk/images/automl-hyperparameter-tuning.png)
 
 ### Model Evaluations
@@ -122,10 +122,10 @@ Model evaluation generates a comprehensive suite of evaluation metrics and suita
 ADS helps data scientists evaluate ``ADSModel`` instances through the ``ADSEvaluator`` object. This object provides a comprehensive API that covers regression, binary, and multinomial classification use cases.
 
 Example of model evaluations
-```
+    ```
     evaluator = ADSEvaluator(test, models=[model, my_model, baseline], training_data=train)
     evaluator.show_in_notebook()
-```
+    ```
     ![evaluator.show_in_notebook()](../speed_up_ds_with_the_ads_sdk/images/model-evaluation.png)
 
 ### Model Interpretation and Explainability
