@@ -6,7 +6,7 @@ The [Oracle Accelerated Data Science (ADS) SDK](https://docs.cloud.oracle.com/ia
 
 You access ADS when you launch a JupyterLab session from the Data Science service. ADS is pre-configured to access Data Science and other Oracle Cloud Infrastructure resources, such as the models in the Data Science model catalog or files in Oracle Cloud Infrastructure Object Storage.
 
-[](youtube:3giYLy3Qm3k)
+    [](youtube:3giYLy3Qm3k)
 
 ## Main Features
 
@@ -43,7 +43,7 @@ Some of the supported formats include:
 
 Example of how to open a dataset.
 ```
-ds. DatasetFactory.open("sample_data.csv", target="Attrition").set_positive_class('Yes')
+    ds = DatasetFactory.open("sample_data.csv", target="Attrition").set_positive_class('Yes')
 ```
 
 ### Exploratory Data Analysis
@@ -51,9 +51,9 @@ ds. DatasetFactory.open("sample_data.csv", target="Attrition").set_positive_clas
 The ADS data type discovery supports simple data types like categorical, continuous, ordinal to sophisticated data types. For example, geodata, date time, zip codes, and credit card numbers.
 
 ```
-ds.target.show_in_notebook()
+    ds.target.show_in_notebook()
 ```
-![ds.target.show_in_notebook()](../speed_up_ds_with_the_ads_sdk/images/target-show-in-notebook.png)
+    ![ds.target.show_in_notebook()](../speed_up_ds_with_the_ads_sdk/images/target-show-in-notebook.png)
 
 ### Automatic Data Visualization
 
@@ -61,15 +61,15 @@ The ``ADSDataset`` object comes with a comprehensive plotting API. It allows you
 
 Example of a Gaussian heatmap
 ```
-ds.plot('col01', y='col03').show_in_notebook()
+    ds.plot('col01', y='col03').show_in_notebook()
 ```
-![ds.plot('col01', y='col03').show_in_notebook()](../speed_up_ds_with_the_ads_sdk/images/plot-show-in-notebook.png)
+    ![ds.plot('col01', y='col03').show_in_notebook()](../speed_up_ds_with_the_ads_sdk/images/plot-show-in-notebook.png)
 
 Example of plotting latitude and longitude points on a map
 ```
-earthquake.plot_gis_scatter(lon="longitude", lat="latitude")
+    earthquake.plot_gis_scatter(lon="longitude", lat="latitude")
 ```
-![earthquake.plot_gis_scatter(lon="longitude", lat="latitude")](../speed_up_ds_with_the_ads_sdk/images/plot-gis-scatter.png)
+    ![earthquake.plot_gis_scatter(lon="longitude", lat="latitude")](../speed_up_ds_with_the_ads_sdk/images/plot-gis-scatter.png)
 
 ### Feature Engineering
 
@@ -77,7 +77,7 @@ Leverage ``ADS`` and the [DASK API](https://dask.org/) to transform the content 
 
 Example of how to apply auto tranformations
 ```
-ds_engineered = ds.auto_transform(fix_imbalance=False)
+    ds_engineered = ds.auto_transform(fix_imbalance=False)
 ```
 
 ### Data Snapshotting for Training Reproducibility
@@ -87,7 +87,7 @@ Save and load a copy of any dataset in a binary optimized Parquet format. By sna
 ### Model Training
 
 Example of visualizing a decision tree
-![Decision tree](../speed_up_ds_with_the_ads_sdk/images/decision-tree.png)
+    ![Decision tree](../speed_up_ds_with_the_ads_sdk/images/decision-tree.png)
 
 The Oracle AutoML engine, that produces ADSModel models, automates:
 
@@ -100,20 +100,20 @@ Create your own models using any library. If they resemble ``sklearn`` estimator
 
 Example of creating a set of AutoML models
 ```
-train, test = ds.train_test_split()
-automl = AutoML(train, provider=ml_engine)
-model, baseline = automl.train(model_list=[
-    'LogisticRegression',
-    'LGBMClassifier',
-    'XGBClassifier',
-    'RandomForestClassifier'])
+    train, test = ds.train_test_split()
+    automl = AutoML(train, provider=ml_engine)
+    model, baseline = automl.train(model_list=[
+        'LogisticRegression',
+        'LGBMClassifier',
+        'XGBClassifier',
+        'RandomForestClassifier'])
 ```
 
 Example of tuning trial results
 ```
-automl.visualize_tuning_trial()
+    automl.visualize_tuning_trial()
 ```
-![automl.visualize_tuning_trials()](../speed_up_ds_with_the_ads_sdk/images/automl-hyperparameter-tuning.png)
+    ![automl.visualize_tuning_trials()](../speed_up_ds_with_the_ads_sdk/images/automl-hyperparameter-tuning.png)
 
 ### Model Evaluations
 
@@ -123,10 +123,10 @@ ADS helps data scientists evaluate ``ADSModel`` instances through the ``ADSEvalu
 
 Example of model evaluations
 ```
-evaluator = ADSEvaluator(test, models=[model, my_model, baseline], training_data=train)
-evaluator.show_in_notebook()
+    evaluator = ADSEvaluator(test, models=[model, my_model, baseline], training_data=train)
+    evaluator.show_in_notebook()
 ```
-![evaluator.show_in_notebook()](../speed_up_ds_with_the_ads_sdk/images/model-evaluation.png)
+    ![evaluator.show_in_notebook()](../speed_up_ds_with_the_ads_sdk/images/model-evaluation.png)
 
 ### Model Interpretation and Explainability
 
@@ -140,6 +140,7 @@ Oracle provides Machine Learning Explainability (MLX), which is a package that e
 
 You can upload the models that you create with ADS into the Data Science model catalog directly from ADS. You can save all your models, with their provenance information, in the catalog and make them accessible to anybody who needs to use them. Other users can then load the models and use them as an ``ADSModel`` object. You can also use this feature to help put the models into production with [Oracle Functions](https://docs.cloud.oracle.com/iaas/Content/Functions/Concepts/functionsoverview.htm).
 
+You may now *proceed to the next lab*.
 
 ## Acknowledgements
 

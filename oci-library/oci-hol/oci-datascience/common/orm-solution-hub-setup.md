@@ -54,6 +54,8 @@ Configuring a tenancy using Oracle Resource Manager involves creating a solution
 1. Click **Create** to create your stack. This creates the stack but does not create the Data Science resources. The **Stack Details** page will be displayed.
 1. Click **Terraform Actions**, and then click **Apply** to apply the Terraform script and create the Data Science resources. If the stack generates an error, click **Terraform Actions**, and then click **Destroy** to remove the resources that were created. Fix any issues and then repeat this step.
 
+You may now *proceed to the next lab*.
+
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist

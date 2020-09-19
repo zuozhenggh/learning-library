@@ -25,6 +25,8 @@ The following concepts and terms will help you to get started with the Data Scie
 * **Accelerated Data Science SDK**: The Oracle Accelerated Data Science (ADS) SDK is a Python library that is included as part of the Oracle Cloud Infrastructure Data Science service. ADS has many functions and objects that automate or simplify many of the steps in the Data Science workflow, including connecting to data, exploring and visualizing data, training a model with AutoML, evaluating models, and explaining models. In addition, ADS provides a simple interface to access the Data Science service model catalog and other Oracle Cloud Infrastructure services including Object Storage. To familiarize yourself with ADS, see the [Oracle Accelerated Data Science Library documentation](https://docs.cloud.oracle.com/iaas/tools/ads-sdk/latest/index.html).
 * **Model**: Models define a mathematical representation of your data and business processes. The model catalog is a place to store, track, share, and manage models.
 
+You may now *proceed to the next lab*.
+
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist

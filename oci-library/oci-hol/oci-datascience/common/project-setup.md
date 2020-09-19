@@ -21,6 +21,8 @@ You create a Data Science project to organize your notebook sessions and models 
 
 This will create a project and open the project page.
 
+You may now *proceed to the next lab*.
+
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist

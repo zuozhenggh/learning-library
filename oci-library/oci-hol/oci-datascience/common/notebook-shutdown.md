@@ -32,6 +32,8 @@ To keep the file changes in a notebook session’s boot volume and attached bloc
 1. Click **Terminate** and a **Terminate Notebook Session** window will open.
 1. Click **Terminate**. The status will change to **Deleting** followed by **Deleted**.
 
+You may now *proceed to the next lab*.
+
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist

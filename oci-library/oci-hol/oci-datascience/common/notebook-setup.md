@@ -53,6 +53,8 @@ Once the notebook session has been created the notebook session page will show t
     1. Click **Activate** and the notebook session status will change to **Updating**.
     1. When the notebook session status changes to **Active**, click **Open**
 
+You may now *proceed to the next lab*.
+
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
