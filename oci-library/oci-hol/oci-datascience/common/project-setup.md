@@ -4,6 +4,17 @@
 
 Projects are containers that enable you to organize your work. They contain a collection of notebook sessions and models.
 
+*Estimated Lab Time*: 5 minutes
+
+### Objective
+In this lab, you will:
+* Use the Console to create a Data Science Project.
+
+### Prerequisite
+This lab assumes you have:
+* A tenancy that is configured to work with the Data Science service.
+* An account that has permission to create a Data Science Project.
+
 ## Creating a Project
 
 You create a Data Science project to organize your notebook sessions and models within your project.

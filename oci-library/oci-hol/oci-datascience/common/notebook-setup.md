@@ -8,6 +8,19 @@ A Notebook session is associated with a compute instance, VCN, subnet and block 
 
 When a notebook session is activated or created, the compute instance shape, block storage, VCN and subnet are configured. Thus, these resources can be changed by deactivating a notebook session, then activating the session and changing the configuration. The size of the block storage can only be increased.
 
+*Estimated Lab Time*: 15 minutes
+
+### Objectives
+In this lab, you will:
+* Use the Console to create a Data Science notebook session
+* Use the console to open the Data Science notebook session
+
+### Prerequisites
+This lab assumes you have:
+* A tenancy that is configured to work with the Data Science service.
+* A Project, VCN and subnet configured.
+* An account that has permission to create a Data Science notebook session.
+
 ## Creating a Notebook Session
 
 1. [Login to the Console](https://www.oracle.com/cloud/sign-in.html).

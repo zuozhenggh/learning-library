@@ -5,6 +5,18 @@ When a notebook session is in an active state there is a boot volume, block stor
 
 If the notebook session and its block storage are no longer needed, the notebook session can be terminated. Terminating a notebook session will release the underlying compute, boot volume and block storage. Since the boot volume and block storage are not persisted, any data on these volumes will be lost. It is not possible to reactivate a terminated notebook session.
 
+*Estimated Lab Time*: 10 minutes
+
+### Objectives
+In this lab, you will:
+* Learn the different methods of shutting down a notebook session.
+* Understand the differences between deactivating and terminating a notebook session.
+* Become familiar with the steps needed to deactivate and terminate notebook sessions.
+
+### Prerequisites
+This lab assumes you have:
+* An active notebook session that can be deactivated or terminated. However, this is not required.
+
 ## Deactivating Notebook Sessions
 
 Before deactivating a notebook session, save all work to the attached block volume. Any data or files stored on the compute boot volume or held in memory are lost when the notebook session is deactivated. The data and files saved on the block volume, which is mounted at ``/home/datascience`` are maintained while the notebook session is inactive. Access to the block volume is restored when the notebook session is activated.

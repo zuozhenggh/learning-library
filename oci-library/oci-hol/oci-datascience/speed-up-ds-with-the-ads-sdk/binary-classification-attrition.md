@@ -16,6 +16,23 @@ The ``ADSEvaluator`` class will be used to evaluate model performance. Since thi
 
 After the models have been built and evaluated, it is often important to understand what features are important. This lab examines employee attrition data and an important part of this process is to understand the factors that tend to cause employees to resign. The ``ADSExplainer`` class provides information at the global level, which is the general trends in the behavior of the black-box machine learning model. It does this by providing feature importance data and graphs. It also provides Partial Dependence Plots (PDP) and Individual Conditional Expectations (ICE) plots. The Machine Learning Explainability (MLX) features in ``ADS`` also allow the data scientist to examine the local behavior of the machine learning model. That is, given a single prediction, what were the important features used by the model to make the prediction on a specific observation. This can often be quite different than the feature importance on a global scale.
 
+*Estimated Lab Time*: 90 minutes
+
+### Objectives
+In this lab, you will:
+* Learn how to execute cells in JupyterLab and perform other basic operations in a notebook.
+* Learn how to launch a **Notebook Example**.
+* Open a data file using a ``DatasetFactory`` object.
+* Perform an Exploratory Data Analysis
+* Use automatic feature engineering tools to create model features.
+* Use Oracle ``AutoML`` get build and tune a number of binary classification models.
+* Perform model evaluation using the ``ADSEvaluator``.
+* Learn about machine learning explainability (MLX) for global and local model behavior.
+
+### Prerequisites
+This lab assumes that you have:
+* A Data Science notebook session.
+
 ## Working with JupyterLab
 
 Now that JupyterLab is open, it can be seen that the screen is split into two sections. By default, the left side has the file browser open but it can change based on what navigation icons are selected on the far left side of the screen. The right side of the screen contains the workspace. It will have a notebook, terminal, console, launcher, Notebook Examples, etc..

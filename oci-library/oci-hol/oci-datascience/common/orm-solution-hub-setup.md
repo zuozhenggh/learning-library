@@ -10,11 +10,25 @@ By default, a tenancy is not configured to work with the Data Science service. I
 
 You only need to complete the instructions in the **Quick-start Tenancy Configuration** or the **Advanced Configuration of a Tenancy** if the tenancy is not configured to work with the Data Science service. If you are not sure which set of instructions to follow, start with the **Quick-start Tenancy Configuration**.
 
+*Estimated Lab Time:* 30 minutes
+
+### Objectives
+In this lab, you will:
+* Use the Oracle Resource Manager Solution Hub to create a stack
+* Become familiar with the options available to configure a tenancy to work with the Data Science service.
+* Apply a stack to create the policies, groups, dynamic groups, VCN, subnet and other resources need to access the Data Science service.
+* Destroy a stack is the stack fails to be applied.
+
+### Prerequisites
+This lab assumes you have:
+* Logged into the tenancy with an administrator account.
+* An understanding of how the tenancy is configure such that you are able to determine if the quick-start of advanced configuration directions should be followed. 
+
 ## Quick-start Tenancy Configuration
 
 Configuring a tenancy using Oracle Resource Manager involves creating a solution stack, selecting the solution, providing identifying information for the new stack, and updating variables. For most tenancies, the default options will be sufficient. This section outlines the minimal requirements needed for configuring a tenancy to work with the Data Science service. If your tenancy has a more advanced setup then skip this section and follow the instructions in the **Advanced Configuration of a Tenancy** section. For most tenancies, the following instructions will be sufficient but minor changes may be needed. It is possible to change the configuration later.
 
-1. [Login to the Console](https://www.oracle.com/cloud/sign-in.html).
+1. [Login to the Console](https://www.oracle.com/cloud/sign-in.html) with an account with administrator access.
 1. Open the navigation menu. Under **Solutions and Platform**, go to **Resource Manager** and click **Stacks**.
 1. Choose a compartment on the left side of the page.
 1. Click **Create Stack**.
@@ -34,7 +48,7 @@ Follow the instructions in this section if you need a more elaborate configurati
 
 Configuring a tenancy using Oracle Resource Manager involves creating a solution stack, selecting the solution, providing identifying information for the new stack, and updating variables. For most tenancies, the default options will be sufficient. However, for advanced configurations changes may need to be made. It is possible to change the configuration later.
 
-1. [Login to the Console](https://www.oracle.com/cloud/sign-in.html).
+1. [Login to the Console](https://www.oracle.com/cloud/sign-in.html) with an account with administrator access.
 1. Open the navigation menu. Under **Solutions and Platform**, go to **Resource Manager** and click **Stacks**.
 1. Choose a compartment you have permission to work in (on the left side of the page). The page updates to display only the resources in that compartment. If you are not sure which compartment to use, contact an administrator.
 1. Click **Create Stack**.

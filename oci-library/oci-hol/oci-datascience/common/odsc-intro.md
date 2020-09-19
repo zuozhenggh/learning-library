@@ -7,7 +7,7 @@ Oracle Cloud Infrastructure Data Science is a fully managed and serverless platf
 The Data Science Service:
 * Provides data scientists with a collaborative, project-driven workspace.
 * Enables self-service, serverless access to infrastructure for data science workloads.
-* Includes Python-centric tools, libraries, and packages developed by the open source community and the [Oracle Accelerated Data Science Library](https://docs.cloud.oracle.com/iaas/tools/ads-sdk/latest/index.html), which support the end-to-end lifecycle of predictive models:
+* Includes Python-centric tools, libraries, and packages developed by the open source community and the [Oracle Accelerated Data Science Library](https://docs.cloud.oracle.com/iaas/tools/ads-sdk/latest/index.html), which support the end-to-end life cycle of predictive models:
     * Data acquisition, profiling, preparation, and visualization.
     * Feature engineering.
     * Model training (including Oracle AutoML).
@@ -15,6 +15,16 @@ The Data Science Service:
     * Model deployment.
 * Integrates with the rest of the Oracle Cloud Infrastructure stack, including Functions, Data Flow, Autonomous Data Warehouse, and Object Storage.
 * Helps data scientists concentrate on methodology and domain expertise to deliver more models to production.
+
+*Estimated Lab Time*: 5 minutes
+
+### Objectives
+In this lab, you will:
+* Become familiar with concepts and terminology used in the Data Science service.
+
+### Prerequisites
+This lab assumes you have:
+* None.
 
 ## Data Science Service Concepts
 
