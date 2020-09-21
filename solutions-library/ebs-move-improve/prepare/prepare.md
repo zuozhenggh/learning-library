@@ -51,7 +51,7 @@ Before starting this lab, please make sure to record your trial user name and pa
 
         v. Deselect the check box Use email address as the user name.
         
-    ![](./images/2.png " ")
+    ![](./images/user-details.png " ")
     
     d. Click **Next**.
     
