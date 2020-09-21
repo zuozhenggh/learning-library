@@ -56,7 +56,7 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
     v. Find the file ```hosts```. 
 
-      ![](./images/2.png " ")
+    ![](./images/2.png " ")
 
     vi. In the hosts file, scroll down to the end of the content. 
 
@@ -82,12 +82,13 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
   c. On this page, you will log in to Oracle E-Business Suite with the credentials you generated in Lab 4, part 3.
   
-    ![](./images/3.png " ")
+  ![](./images/3.png " ")
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Quintin Hill, Cloud Engineering/Sept2020
-  Santiago Bastidas, Product Management Director/July 2020
+- **Last Updated By/Date** 
+- Quintin Hill, Cloud Engineering/Sept2020
+- Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
