@@ -3,6 +3,17 @@
 ## Introduction
 In this 30 mins lab, we will deploy the Oracle E-Business Suite Cloud Manager Compute instance using an Oracle Cloud Infrastructure Marketplace image and configure Oracle E-Business Suite Cloud Manager.
 
+## Objectives 
+
+* Deploy and Configure Oracle E-Business Suite Cloud Manager
+* Verifying login into Oracle E-Business Suite Cloud Manager
+
+## Prerequisites
+
+* Tenancy Admin User
+* Tenancy Admin Password 
+
+
 ## Step 1. Sign in to the Oracle Cloud Infrastructure Console
 
 Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastructure console.
