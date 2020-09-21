@@ -9,7 +9,7 @@
         {
             "title": "Introduction",
             "description": "Introduction to EBS lift and shift",
-            "filename": "./introduction.introduction.md"
+            "filename": "./introduction/introduction.md"
         },
         {
             "title": "Lab 1: Preparing Your Tenancy for Oracle E-Business Suite",
