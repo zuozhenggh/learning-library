@@ -91,39 +91,145 @@ with their default values:
 
 + Select “ValidatePaymentTemplate”. Click Finish.
 + A new project “ValidatePayment” is created with some predefined components as derived from the template. A canvas displaying three swim lanes: services, components, and references; shown below
+  
 + ![](images/2/validatepymnt14.png)
 
 + On the left hand side, you will see the Application Navigator, which shows all resources included in a SOA project.
 + This Navigator has been reorganized in SOA Suite 12c to make it easier to find all files related to SOA, and also to provide the option to customize the folder structure.
 + You will see a SOA folder under the project root. This is where all SOA related files and folders are stored, such as BPEL processes, schema files, WSDL files.
 + The composite.xml, which defines the structure of the composite, is located directly under the SOA folder. In previous releases, this file was just shown as composite.xml. This became confusing when several composite.xml files from different projects were open at the same time.
-+ In SOA Suite 12c, the project name is displayed in the navigator and in the composite tab label. It is displayed as ValidatePayment here.
-
-+ ![](images/2/validatepymnt15.png)
-
-
-----
-![](images/2/validate-payment-composite.png)
-
 
 
 ## **STEP 3**:  Review the various components of the composite.
 
++ In SOA Suite 12c, the project name is displayed in the navigator and in the composite tab label. It is displayed as ValidatePayment here.
+
++ ![](images/2/validatepymnt15.png)
+
++ The SOA folder has a number of subfolders with default names, which hold common SOA artifacts viz. BPEL, XML schemas, WSDL files, transformation-related files and events.
++ You will see new subfolders created when creating new components.
++ The structure and names of the subfolders can be customized to your liking, as long as all folders are located under SOA.
+
++ The composite diagram is shown here:
+  
+![](images/2/validate-payment-composite.png)
+
++ The External References swim lane contains the getpaymentInformation database adapter.
+
++ The next step will retrieve the payment information from the database, using the credit card number as the key. Based on expiry date, daily limit, and total amount of order, the app calculates whether the payment is authorized or denied. The database adapter will process choices, and provides a service that implements the operation specified. The WSDL file to represent that service is getPaymentInformation.wsdl.
+
++ In the center (components swim lane) is the validatePayment BPEL Process - it is the component that implement the orchestration in the SOA Suite.
+
++ In SOA 12c, This BPEL process will make use of two resource files: ValidatePayment-concrete.wsdl and CanonicalOrder.xsd.
+
++ On the left-side of swim lane, a  validatepaymentprocess_client_ep is the external client web service that input to the BPEL process.
+
+## **STEP 4**:  Add a database connection to Java DB 
+
+The Java DB is an embedded database inside JDeveloper 12c. The embedded weblogic requires to be started prior to establishing connection to the embedded database). Otherwise, Java DB will not be available.
+
+The database adapter getpaymentInformation will connect to the SOA database. In order to do that, it needs a connection which contains all the details needed to connect to the database. The template does not carry the connection information – it leverages the connection(s) configured for the application.
+
++ ![](images/2/validatepymnt16.png)
+
++ In the Create Database Connection dialog, enter the following details: 
++ - Create Connection In: Application Resources
++ - Connection Name: SOA
++ - Connection Type: Java DB (Derby)
+
++ ![](images/2/validatepymnt17.png)
+
++ Server Name (localhost), Port (1527) and Database (soainfra) for the preconfigured Java DB are filled in automatically.
++ Click the Test Connection button and verify that your connection works.
++ You should see “Success!” like in the screenshot below
+
++ ![](images/2/validatepymnt18.png)
+
++ Click OK.
++ Ensure to save all changes by clicking the Save All icon at the top of JDeveloper.
+
++ ![](images/2/validatepymnt19.png)
+
+
++ Now build your project:
++ - Click on Build in the main menu
++ - Select Make ValidatePayment.jpr
+
++ ![](images/2/validatepymnt20.png)
+
++ You will see the build result in the Messages – Log window (at the bottom of JDeveloper)
+
++ If your log looks like this, everything is fine:
+
++ ![](images/2/validatepymnt21.png)
+
+
+
+
++ **Let's review the validate payment BPEL process.** 
++ - Double-click the BPEL process to open the BPEL designer shown here:
 ![](images/2/composite-details.png)
 
++ - The getPaymentInformation partnerlink already in the Partner Links swim lane. It is also connected via the Invoke activity.
     
-## **STEP 4**  Add a database connection to Java DB 
++ The input and output variables for the adapter call are also defined. They are leveraged when the DB adapter is invoked.
++ Invoke activity is used when communicating with services, like adapters and web services.
++ - When defining an invoke activity, you can have the input (and output) variable created automatically. You can review these invoke activity and the variables using the new Property Inspector
++  - If the Property Inspector window is not open, go to Window --> Properties.
++  - If the window is open on the right hand side, you may want to drag and drop it into the middle at the bottom. On the left hand side of the property inspector you will see the same tabs as you would see when opening the activity for editing.
 
-The Java DB is an embedded database inside JDeveloper 12c. The embedded weblogic requires to be started prior to establishing connection to the embedded database) 
+The variable designated for the **input** will contain the data (the credit card number) that will be sent to the service when it is invoked. It is automatically created with the correct type expected by the service. 
 
-![](images/2/db-connectivity.png)
+The name of the variable is a concatenation of the partner link name, the operation and “InputVariable”.
+Similarly inspect the Output Variable by changing to the Output tab.
 
+![](images/2/validatepymnt22.png)
+
+In the BPEL process, just above the invoke activity, is the Assign activity setCreditCardNumber. Use an Assign activity to assign data to a variable. In this case, the credit card number is assigned that was passed into the BPEL process to the getPaymentInformation service.
+
+Double-click on the assign activity, to launch the Assign Editor:
+
+![](images/2/validatepymnt23.png)
+
++ On the left hand side (source), expand the variable Variables > Process > Variables > inputVariable > paymentInfo > ns3:PaymentInfo > ns3:CardNum
++ On the right hand side (target), expand Variables > Process > Variables > getPaymentInformation_getPaymentInformationSelect_InputVariable > getPaymentInformationSelect_inputParameters > ns4:ccnb
++ Note the mapping from ns3:CardNum on the left to ns4:ccnb on the right.
++ This creates a new copy rule, which can be seen at the bottom of the editor.
++ Click OK to return to the BPEL process.
+
+We don’t need an assign activity for the output variable as we will define an XSLT map to determine if the payment is valid, based on the information returned by the database adapter.
+
+Ensure to save everything before you continue.
 
 ## **STEP 5**: Import a custom activity template with an XSLT map 
 
-This activity is to determine the payment status (Authorized or Denied), based on the daily limit and the total amount of order.
+This activity is to determine the payment status (Authorized or Denied), based on the daily limit and the total amount of order. Step 5 is to calculate payment status using an XSLT map (custom activity template)
+
++ an XSLT transformation is provided to determine if the payment is valid, based on the daily limit (retrieved from the database) and the total order amount (authorization amount in the order message, which has been calculated in the process order project by multiplying price and amount of every order item and adding them up).
++ The total amount of the order has to be smaller than the daily limit on the credit card.
+
+The XSLT transformation is provided as a custom activity template.
+
+To use the customer BPEL activity template, the directory should be included in the Tools --> Preferences --> SOA --> Templates. We already mapped the folder in a prior section when project template was used.
++ In your BPEL process, expand the Custom Activity Templates section in the BPEL activity palette.
++ If you don’t see the template, close and reopen the BPEL process.
++ You should see the CalculatePaymentStatusScope template in the list.
 
 ![](images/2/custom-template.png)
+
++ Drag and drop the CalculatePaymentStatusScope template under the getPaymentInformation invoke activity in the validatePaymentProcess BPEL process.
+
+![](images/2/custom-template2.png)
+
++ The template dialog shows you the Name and the Description of the template and all artifacts that are included. You will also see a list of conflicts: The template includes the CanonicalOrder.xsd, getPaymentInformation_table.xsd, and getPaymentInformation.wsdl which are already present in the composite:
+
+![](images/2/custom-template3.png)
+
++ You have the option to skip all conflict files, meaning you keep the ones in the composite, or overwrite all with those in the template. You can also make this decision individually. 
++ In this case we know that the files are identical and will skip all:
+
+![](images/2/custom-template4.png)
+
 
 ## **STEP 6**: Add a composite sensor PaymentStatus for the payment status
 
