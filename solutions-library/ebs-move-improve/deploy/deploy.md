@@ -78,7 +78,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
     i. Add an ssh key
         
-        i. Use an exisiting or generate a new ssh key. 
+        i. Use an existing or generate a new ssh key. 
 
       For more information on ssh keys, visit: [Generating an SSH Key Pair](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)
 
