@@ -1,8 +1,8 @@
 /*
 Author: Ashwin Agarwal
 Contributors: Tom McGinn, Suresh Mohan
-Last updated: 18-Sep-2020
-Version: 20.2.13
+Last updated: 19-Sep-2020
+Version: 20.2.16
 */
 "use strict";
 var showdown = "https://oracle.github.io/learning-library/common/redwood-hol/js/showdown.min.js";
@@ -43,31 +43,38 @@ let main = function() {
             init();
             let selectedTutorial = setupTutorialNav(manifestFileContent); //populate side navigation based on content in the manifestFile
             let articleElement = document.createElement('article'); //creating an article that would contain MD to HTML converted content
-            
+
             loadTutorial(articleElement, selectedTutorial, manifestFileContent, toggleTutorialNav);
             prepareToc(manifestFileContent);
 
             setTimeout(function() {
                 if(location.hash.slice(1))
                     expandSectionBasedOnHash($("li[data-unique='" + location.hash.slice(1) + "']"));
+                $('.selected')[0].scrollIntoView(true);
             }, 1000);
         });
     });
 
     // specifies when to do when window is scrolled
     $(window).scroll(function() {
-        if ($('#contentBox').height() > $('#leftNav-toc').height()) {
+
+        if ($('#contentBox').height() > $('#leftNav-toc').height() || ($('#leftNav-toc').height() + $('header').height() + 1) >= $(window).height()) {
             $('#leftNav-toc').addClass("scroll");
-            if (($(window).scrollTop() + $(window).height()) > $('footer').offset().top) //if footer is seen
+
+            if (($(window).scrollTop() + $(window).height()) > $('footer').offset().top) {//if footer is seen
                 $('#leftNav-toc').css('max-height', $('footer').offset().top - $('#leftNav-toc').offset().top);
+            }
             else
-                $('#leftNav-toc').css('max-height', $(window).height() - $('#leftNav-toc').offset().top + $(window).scrollTop());
+                $('#leftNav-toc').css('max-height', $(window).height() - $('header').height());
+                // $('#leftNav-toc').css('max-height', $(window).height() - $('#leftNav-toc').offset().top + $(window).scrollTop());
+
         } else {
             $('#leftNav-toc').removeClass("scroll");
             $('#leftNav-toc').css('max-height', '');
         }
+
         try {
-            if ((document.querySelector('.selected .active').getBoundingClientRect().y + document.querySelector('.selected .active').clientHeight) > $(window).height())
+            if ((document.querySelector('.selected .active').getBoundingClientRect().y + document.querySelector('.selected .active').clientHeight) > $(window).height() && $('#leftNav-toc').hasClass("scroll"))
                 $('.selected .active')[0].scrollIntoView(false);
         } catch(e) {};
 
@@ -95,7 +102,7 @@ let main = function() {
             $('#mySidenav').hide();
         $('.hol-Header-actions').prependTo('.hol-Header-wrap').show();
         $('<div id="tutorial-title"></div>').appendTo(".hol-Header-logo")[0];
-        
+
         $('#openNav').click(function() {
             let nav_param = getParam(nav_param_name);
             if (!nav_param || nav_param === 'open') {
@@ -139,7 +146,7 @@ let main = function() {
                 articleElement = performQA(articleElement, markdownContent);
             }
         }).done(function() {
-            $("main").html(articleElement); //placing the article element inside the main tag of the Tutorial template  
+            $("main").html(articleElement); //placing the article element inside the main tag of the Tutorial template
             if (getParam("qa") == "true") {
                 dragElement(document.getElementById("qa-report"));
             }
@@ -178,14 +185,14 @@ let main = function() {
                                 location.hash = alphaNumOnly($(this).text());
                                 expandSectionBasedOnHash($(this).find('li').attr('data-unique'));
                             }
-                            else {                
+                            else {
                                 changeTutorial(createShortNameFromTitle($(this).parent().parent().find('span').text()), alphaNumOnly($(this).text()));
                                 // setTimeout(function() {
                                 //     // alert($(this).find('li').attr('data-unique'));
                                 //     expandSectionBasedOnHash($(this).find('li').attr('data-unique'));
                                 // }, 1000);
                             }
-        
+
                         });
                         $(ul).appendTo(div);
                     }
@@ -202,7 +209,7 @@ let main = function() {
             if (anchorItem.length !== 0)
                 $(anchorItem)[0].click();
         }, 1000);
-        
+
 
         $(".hol-Nav-list>li").wrapInner("<div></div>")
         $(".hol-Nav-list>li>div").prepend($(document.createElement('div')).addClass('arrow').text('+'));
@@ -261,7 +268,7 @@ let main = function() {
 
         $(manifestFileContent.tutorials).each(function(i, tutorial) {
             let shortTitle = createShortNameFromTitle(tutorial.title);
-            
+
             $(document.createElement('li')).each(function() {
                 $(this).click(function(e) {
                     if(!$(e.target).hasClass('arrow') && !$(e.target).hasClass('toc-item') && !$(e.target).hasClass('toc-item active')) {
@@ -307,7 +314,7 @@ let main = function() {
             if (getParam(queryParam) === createShortNameFromTitle(manifestFileContent.tutorials[i].title))
                 return manifestFileContent.tutorials[i+position];
         }
-        
+
         //if no title has selected class, selected class is added to the first class
         $('.hol-Nav-list').find('li:eq(0)').addClass("selected");
         return manifestFileContent.tutorials[0+position]; //return the first tutorial is no tutorial is matches
@@ -386,7 +393,7 @@ let main = function() {
                 return markdownContent;
             }
 
-            if (myUrl.indexOf("/") !== 1) {    
+            // if (myUrl.indexOf("/") !== 1) {
                 matches[1] = matches[1].split(' ')[0];
                 if (matches[1].indexOf("http") === -1) {
                     contentToReplace.push({
@@ -394,7 +401,7 @@ let main = function() {
                         "with": '(' + myUrl + matches[1]
                     });
                 }
-            }
+            // }
         } while (matches);
     }
     /* The following function adds the h1 title before the container div. It picks up the h1 value from the MD file. */
@@ -496,6 +503,7 @@ let main = function() {
             .prev().on('click', function(e) {
                 ($(this).text() === expandText) ? expandSection($("#module-content h2:not(:eq(0))"), "show"): collapseSection($("#module-content h2:not(:eq(0))"), "hide");
                 changeButtonState(); //enables the expand all parts and collapse all parts button
+
             });
         //enables the feature that allows expand collapse of sections
         $("#module-content h2:not(:eq(0))").click(function(e) {
@@ -519,9 +527,13 @@ let main = function() {
     /* Expands the section */
     let expandSection = (anchorElement, effect) => {
         if (effect === "show") {
-            $(anchorElement).nextUntil("#module-content h1, #module-content h2").show('fast'); //expand the section incase it is collapsed
+            $(anchorElement).nextUntil("#module-content h1, #module-content h2").show('fast', function() {
+                $(window).scroll();
+            }); //expand the section incase it is collapsed
         } else if (effect === "fade") {
-            $(anchorElement).nextUntil("#module-content h1, #module-content h2").fadeIn('fast');
+            $(anchorElement).nextUntil("#module-content h1, #module-content h2").fadeIn('fast', function() {
+                $(window).scroll();
+            });
         }
         $(anchorElement).addClass("minus");
         $(anchorElement).removeClass("plus");
@@ -529,9 +541,13 @@ let main = function() {
     /* Collapses the section */
     let collapseSection = (anchorElement, effect) => {
         if (effect === "hide") {
-            $(anchorElement).nextUntil("#module-content h1, #module-content h2").hide('fast'); //collapses the section incase it is expanded
+            $(anchorElement).nextUntil("#module-content h1, #module-content h2").hide('fast', function() {
+                $(window).scroll();
+            }); //collapses the section incase it is expanded
         } else if (effect === "fade") {
-            $(anchorElement).nextUntil("#module-content h1, #module-content h2").fadeOut('fast');
+            $(anchorElement).nextUntil("#module-content h1, #module-content h2").fadeOut('fast', function() {
+                $(window).scroll();
+            });
         } else if (effect == "none") {
             $(anchorElement).nextUntil("#module-content h1, #module-content h2").attr('style', 'display:none;');
         }
@@ -671,7 +687,7 @@ let main = function() {
     /* set the query parameter value  */
     let setParam = (url, paramName, paramValue) => {
         let onlyUrl = (url.split('?')[0]).split('#')[0];
-        let params = url.replace(onlyUrl, '').split('#')[0]; 
+        let params = url.replace(onlyUrl, '').split('#')[0];
         let hashAnchors = url.replace(onlyUrl + params, '');
         hashAnchors = "";
 
@@ -702,7 +718,7 @@ let main = function() {
             return "ErrorTitle";
         }
         const removeFromTitle = ["-a-", "-in-", "-of-", "-the-", "-to-", "-an-", "-is-", "-your-", "-you-", "-and-", "-from-", "-with-"];
-        const folderNameRestriction = ["<", ">", ":", "\"", "/", "\\\\", "|", "\\?", "\\*", "&"];
+        const folderNameRestriction = ["<", ">", ":", "\"", "/", "\\\\", "|", "\\?", "\\*", "&", "\\."];
         let shortname = title.toLowerCase().replace(/ /g, '-').trim().substr(0, 50);
         $.each(folderNameRestriction, function(i, value) {
             shortname = shortname.replace(new RegExp(value, 'g'), '');
@@ -745,7 +761,7 @@ let main = function() {
     // QA part of the code
     let performQA = (articleElement, markdownContent) => {
         let error_div = $(document.createElement('div')).attr('id', 'qa-report').html("<div id='qa-reportheader'></div><div id='qa-reportbody'><ol></ol></div>");
-        const livlabs_url = "<a href='https://confluence.oraclecorp.com/confluence/x/ep81Y' target='_blank'>using the LiveLabs template</a>";
+        const more_info = "Please see <a href='https://confluence.oraclecorp.com/confluence/x/ep81Y' target='_blank'>using the LiveLabs template</a> for more information.";
 
         let add_issue = (error_msg) => $(error_div).find('ol').append("<li>" + error_msg + "</li>");
 
@@ -760,9 +776,9 @@ let main = function() {
                 add_issue("Please do not embed HTML in Markdown. There is (are) " + count + " occurrence(s) of HTML in your Markdown.");
         }
 
-        let checkSecondH2Tag = (article) => {        
+        let checkSecondH2Tag = (article) => {
             if ($(article).find('h2:eq(1)').text().substr(0, 4).indexOf("STEP") !== 0)
-                add_issue("The second H2 tag (##) of your Markdown file should be labeled with STEP (in all caps). Please see " + livlabs_url + " for more information.");
+                add_issue("The second H2 tag (##) of your Markdown file should be labeled with STEP (in all caps).");
         }
 
         let checkImages = (article) => {
@@ -782,21 +798,26 @@ let main = function() {
             });
 
             if (count > 0) {
-                add_issue("You have " + count + " code block(s) (```) without a &lt;copy&gt; tag. Please review your Markdown and make the necessary changes. Please see " + livlabs_url + " for more information.")
+                add_issue("You have " + count + " code block(s) (```) without a &lt;copy&gt; tag. Please review your Markdown and make the necessary changes.")
             }
         }
 
         let checkCodeBlockFormat = (markdown) => {
             let count = (markdown.match(/\````/g) || []).length;
             if (count > 0) {
-                add_issue("Your Markdown file has " + count + " instances with 4 (````) codeblocks. This should be changed to 3 (```). Please review your Markdown and make the necessary changes. Please see " + livlabs_url + " for more information.")
+                add_issue("Your Markdown file has " + count + " instances with 4 (````) codeblocks. This should be changed to 3 (```). Please review your Markdown and make the necessary changes.")
             }
         }
 
         let updateCount = (article) => {
             $(error_div).find('#qa-reportheader').text('Total Issues: ' + $(error_div).find('li').length);
-            if(!$(error_div).find('li').length)
-                $(error_div).find('#qa-reportbody').remove();
+            if(!$(error_div).find('li').length) {
+                $(error_div).find('#qa-reportbody').hide();
+            } else {
+                $(error_div).find('#qa-reportbody').show();
+                if($(error_div).find('p').length === 0)
+                    $(error_div).append('<p>' + more_info + '</p>');
+            }
         }
 
         let checkLinkExists = (article) => {
@@ -805,7 +826,21 @@ let main = function() {
                 let url_text = $(this).text();
                 urlExists(url, function(exists) {
                     if(!exists) {
-                        add_issue("This URL is broken: <a href='" + url + "' target='_blank'>" + url_text + "</a>");
+                        add_issue("This URL may be broken: <a href='" + url + "' target='_blank'>" + url_text + "</a>");
+                        updateCount(article);
+                    }
+                });
+            });
+        }
+
+        let checkImageExists = (article) => {
+            $(article).find('img').each(function() {
+                let url = $(this).attr('src');
+                console.log(url);
+                let url_text = $(this).attr('src').split('/')[$(this).attr('src').split('/').length - 1];
+                urlExists(url, function(exists) {
+                    if(!exists) {
+                        add_issue("The link to this image may be broken: <a href='" + url + "' target='_blank'>" + url_text + "</a>");
                         updateCount(article);
                     }
                 });
@@ -831,8 +866,10 @@ let main = function() {
         checkImages(articleElement);
         checkForCopyTag(articleElement);
         checkCodeBlockFormat(markdownContent);
-        if (!window.location.href.indexOf("localhost"))
+        if (!window.location.href.indexOf("localhost")) {
             checkLinkExists(articleElement);
+        }
+        checkImageExists(articleElement);
         updateCount(articleElement);
 
         return $(articleElement).prepend(error_div);
