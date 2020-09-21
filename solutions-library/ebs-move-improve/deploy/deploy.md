@@ -90,7 +90,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
     l. Enter ``0.0.0.0/0`` under EBS Cloud Manager Access CIDR
 
-    m. Enter the values from ``KeyData.txt`` file - **IDCS Client ID**, **IDCS Client Secret** and **IDCS Client Tenant** under the IDCS Details section as shown       in the screen below.
+    m. Enter the values from ``key-data.txt`` file - **IDCS Client ID**, **IDCS Client Secret** and **IDCS Client Tenant** under the IDCS Details section as shown       in the screen below.
 
     ![](./images/7.png " ")
 
