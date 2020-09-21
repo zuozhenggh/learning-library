@@ -63,7 +63,7 @@ You can check the status of the activity to provision the environment in the Act
 
     vi. In the hosts file, scroll down to the end of the content. 
 
-    vii. Add the following entry to the very end of the file: ```<ip_address> ebsholenv1.example.com``` 
+    vii. Add the following entry to the very end of the file: <ip_address> ebsholenv1.example.com
 
     viii. Save the file. 
 
@@ -71,9 +71,9 @@ You can check the status of the activity to provision the environment in the Act
 
     i. Open a Terminal Window. 
 
-    ii. Enter the following command: ``sudo vi /etc/hosts``
+    ii. Enter the following command: sudo vi /etc/hosts
 
-    iii. Go to the last line and add the following entry: ``<ip_address> ebsholenv1.example.com`` 
+    iii. Go to the last line and add the following entry: <ip_address> ebsholenv1.example.com 
 
     iv. Save the file. 
 
