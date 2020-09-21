@@ -35,52 +35,40 @@ You will need the following in order to complete this workshop:
 
 ## Setup Lab Workstation
 
-In this section, you will prepare your workstation with the required files for the hands-on lab exercises. 
-Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/mAWDPAT5jDjg34fUnSHtu-u_ztJ0_D9igCl1Bpoi7_E/n/orasenatdecanational01/b/EBS-Folder/o/EBSHOL-EBS.zip) link to download the files.
+In this section, you will prepare your workstation. In addition the following zip file provides a key-data.txt to store all information that you will need to refer back to. We recommend you use this file to store your variables while going through the lab. 
+
+Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2uyg0q6BR9ZJRMzppgF3_rncnQvUDD0Z2QodaO1ImC0/n/orasenatdpltoci03/b/EBS-HOL-Files/o/ebs-hol.zip) link to download the files.
+
+Additionally there is a terraform configuration included if you would do this lab using resource manager. This lab uses marketplace stack, but if you decide to use resource manager the terraform file is available.
 
 Proceed to the appropriate section, depending on your workstation operating system:
 
 * Using a Windows Workstation
 * Using a Mac Workstation
 
-Using a Windows Workstation
+**Using a Windows Workstation**
 
-1. Create a folder named HOL-EBS on the desktop of your workstation.
+1. From the download link.
 
-2. From the download link
-
-    a. Download the HOL zip file.
+    a. Download the hol zip file.
 
     b. Open Windows Explorer and nagivate to the downloaded zip file. 
         
-    c. Move the zip file to your folder Desktop/HOL-EBS 
+    c. Move the zip file to your folder Desktop 
         
     d. Unzip the files.
 
-Using a Mac Workstation
+**Using a Mac Workstation**
 
-1. Create a folder named HOL-EBS on the desktop of your workstation.
-
-2. From the download link:
-
-   a. Download the HOL zip file.
-
+1. From the download link:
+    
+    a. Download the hol zip file.
+    
     b. Open Finder and nagivate to the downloaded zip file. 
-        
-    c. Move the zip file to your folder Desktop/HOL-EBS 
-        
+    
+    c. Move the zip file to your Desktop
+    
     d. Unzip the files. 
-
-## Review and Open Hands-On Lab Files
-The following table describes the directories and files that were copied to the Desktop\HOL-EBS directory on your workstation:
-
-Table S-1
-| Name          | Description       | 
-| ------------- |:-------------:|
-| /Documents/EBS-HOL-Workbook-June-2020.pdf     | A digital copy of this workbook, Introduction to Oracle E-Business Suite Cloud Manager Hands-On Lab. |
-| /documents/Key-Data.txt      | The document used to capture key data items needed throughout the lab.     |
-| /artifacts/terraform/Deploy-And-Configure-EBS-CM.zip    | Set of Terraform scripts which automate the creation of the infrastructure required to deploy Oracle E-Business Suite Cloud Manager. |
-| /artifacts/ssh-keys    | Keys used to establish an SSH session with Oracle E-Business Suite Cloud Manager Compute instance. |
 
 ## Workshop Overview
 
@@ -108,8 +96,6 @@ This workshop uses the following components:
     o Oracle E-Business Suite environment 2 Compute instance 
         - Cloned from environment 1 
         - Application and database tiers on this Compute instance
-
-• Attendee-provided laptop
 
 The following figure (W-2) describes the exercises that you will perform in this workshop.
 Figure W-2: Storyboard
@@ -147,7 +133,9 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Santiago Bastidas, Product Management Director, July 2020
+- **Last Updated By/Date** 
+- Quintin Hill, Cloud Engineering/Sept 2020
+- Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
