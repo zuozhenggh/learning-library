@@ -75,7 +75,7 @@ Using a Mac Workstation
 The following figure (W-1) outlines the workshop architecture.
 Figure W-1: Workshop Architecture
 
-    ![](./images/1.png " ")
+![](./images/1.png " ")
 
 This workshop uses the following components:
 
