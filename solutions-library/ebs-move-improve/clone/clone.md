@@ -61,15 +61,15 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
     iii. In Notepad, navigate to File > Open. 
 
-    iv. And browse to ```C:\\Windows\System32\drivers\etc.``` 
+    iv. And browse to C:\\Windows\System32\drivers\etc. 
 
-    v. Find the file ```hosts```. 
+    v. Find the file hosts. 
 
   ![](./images/2.png " ")
 
     vi. In the hosts file, scroll down to the end of the content. 
 
-    vii. Add the following entry to the very end of the file: ```<ip_address> ebsholenv2.example.com``` 
+    vii. Add the following entry to the very end of the file: <ip_address> ebsholenv2.example.com
 
     viii. Save the file. 
 
@@ -77,9 +77,9 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
     i. Open a Terminal Window. 
 
-    ii. Enter the following command: ```sudo vi /etc/hosts``` 
+    ii. Enter the following command: sudo vi /etc/hosts 
 
-    iii. Go to the last line and add the following entry: ```<ip_address> ebsholenv2.example.com``` 
+    iii. Go to the last line and add the following entry: <ip_address> ebsholenv2.example.com 
 
     iv. save the file 
 
