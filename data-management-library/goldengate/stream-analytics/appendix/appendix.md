@@ -2,7 +2,7 @@
 # Appendix
 
 ## Introduction
-This appendix is a sumplementary aid to the labs for GGSA Workshop primarily for Lab 3 creating the **RetailPromotions** pipeline.  You can refer to this section of the workshop when performing the labs.  Not every screen shot has been captured in this appendix but you can look at the following image and verify the structure of your pipeline.  In that regard each stage that does have a screen shot has been labeled accordingly.
+This appendix is a supplementary aid to the labs for GGSA Workshop primarily for Lab 3 creating the **RetailPromotions** pipeline.  You can refer to this section of the workshop when performing the labs.  Not every screen shot has been captured in this appendix but you can look at the following image and verify the structure of your pipeline.  In that regard each stage that does have a screen shot has been labeled accordingly.
 
 
 ### About Product/Technology
@@ -137,7 +137,7 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 
 * **Author** - Hadi Javaherian, Solution Engineer
 * **Contributors** - Shrinidhi Kulkarni, Solution Engineer
-* **Last Updated By/Date** - Hadi Javaherian, Septembe 2020
+* **Last Updated By/Date** - Hadi Javaherian, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
