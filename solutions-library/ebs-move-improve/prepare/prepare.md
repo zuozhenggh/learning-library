@@ -144,7 +144,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
         
     c. Save your cloud manager url in your ``key-data.txt`` file as ``Cloud_Manager_URL``
     
-        i. ex: https://myebscm.ebshol.org:443
+        i. Example: https://myebscm.ebshol.org:443
 
     d. **Redirect URL**: ``<Cloud_Manager_URL>/cm/auth/callback``
 
