@@ -1,8 +1,8 @@
 /*
 Author: Ashwin Agarwal
 Contributors: Tom McGinn, Suresh Mohan
-Last updated: 18-Sep-2020
-Version: 20.2.13
+Last updated: 21-Sep-2020
+Version: 20.2.18
 */
 
 
@@ -122,6 +122,20 @@ a:active {
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: auto;
+}
+
+
+#livelabs {
+    content: '';
+    background-image: url(data:image/png;base64,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);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 32px;
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    right: 20px;
 }
 
 
@@ -261,7 +275,8 @@ a:active {
 
 .hol-Nav-list > li {
     margin: 0;
-    padding: 20px;
+    padding: 18px;
+    font-size: 15px;
     padding-left: 36px;
     border-top: 1px solid rgba(0, 0, 0, .1);
 }
@@ -799,7 +814,7 @@ blockquote {
 
 .toc ul {
     padding-left: 0px;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .toc ul:last-of-type {
@@ -983,7 +998,7 @@ pre .copy-button:hover {
     th, td {
         padding: 4px 8px;
     }
-    
+
     .hol-Header-wrap {
         padding-left: 0px;
         padding-right: 0px;
@@ -997,7 +1012,7 @@ pre .copy-button:hover {
     #leftNav-toc.open, #leftNav.open {
         width: 180px;
     }
-  
+
     #contentBox {
         padding-left: 20px;
         padding-right: 20px;
@@ -1028,7 +1043,7 @@ pre .copy-button:hover {
 
 #qa-report {
     z-index: 60;
-    right: 5px; 
+    right: 5px;
     top: 5px;
     position: fixed;
     background: white;
@@ -1038,7 +1053,9 @@ pre .copy-button:hover {
     padding-bottom: 5px;
     font-weight: 500;
     border-radius: 4px;
-    border: 1px solid #AE562C;;
+    border: 1px solid #AE562C;
+    max-height: 99%;
+    overflow: scroll;
 }
 
 #qa-reportheader {
@@ -1052,4 +1069,19 @@ pre .copy-button:hover {
     font-size: 12px;
     margin-bottom: 12px;
     margin-left: -20px;
+}
+
+#qa-report p {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.format-error {
+    border: solid 3px blue;
+    padding: 20px;
+}
+
+.error {
+    border: solid 3px red;
+    padding: 20px;
 }
