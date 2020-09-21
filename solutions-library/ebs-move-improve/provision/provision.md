@@ -52,7 +52,7 @@ You can check the status of the activity to provision the environment in the Act
 
     v. Find the file hosts 
 
-      ![](./images/3.png " ")
+    ![](./images/3.png " ")
 
     vi. In the hosts file, scroll down to the end of the content. 
 
@@ -64,9 +64,9 @@ You can check the status of the activity to provision the environment in the Act
 
     i. Open a Terminal Window. 
 
-    ii. Enter the following command: ```sudo vi /etc/hosts``` 
+    ii. Enter the following command: ``sudo vi /etc/hosts``
 
-    iii. Go to the last line and add the following entry: ```<ip_address> ebsholenv1.example.com``` 
+    iii. Go to the last line and add the following entry: ``<ip_address> ebsholenv1.example.com`` 
 
     iv. Save the file. 
 
@@ -78,14 +78,15 @@ You can check the status of the activity to provision the environment in the Act
 
   c. On this page, you will log in to Oracle E-Business Suite.
 
-    ![](./images/4.png " ")
+  ![](./images/4.png " ")
 
 You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Quintin Hill, Cloud Engineering/Sept 2020
-  Santiago Bastidas, Product Management Director/July 2020
+- **Last Updated By/Date** 
+- Quintin Hill, Cloud Engineering/Sept 2020
+- Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
