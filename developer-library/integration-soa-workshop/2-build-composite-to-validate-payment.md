@@ -230,6 +230,39 @@ To use the customer BPEL activity template, the directory should be included in 
 
 ![](images/2/custom-template4.png)
 
++ Select “Skip All” and click OK.
++ Adding the custom activity template creates a new scope, which includes an XSLT transformation calculatePaymentStatus.xsl.
++ Select the transform activity calculatePaymentStatus, and check out the property inspector window.
++ You will see that the transformation expects two input variables: The output variable of the database adapter, which includes the payment information stored in the database, and the input variable of the BPEL process, which includes the total order amount.
++ The output is the status field in the process output message, which will either be set to “Denied” or “Authorized”.
+
+![](images/2/custom-template5.png)
+
++ If you want to see the definition of the XSLT file, click the edit button at the bottom:
+
+![](images/2/custom-template6.png)
+
++ This opens the mapper file.
++  Click Expand All Child Nodes on Source and Target and click on the little plus sign next to the
+function in the middle.
+
+![](images/2/custom-template7.png)
+
+
+ The XSLT map checks whether
++ - expireDate in order input and DB are the same AND
++ - AuthorizationAmount (= total order price) is smaller than daily limit on credit card
++ Save All and close the XSLT Map.
+
+![](images/2/custom-template8.png)
+
+One more step to get the map to work -- (remember previously an error message?)
+
++ You may have noticed that the transformation activity uses scope variables, not global variables, as source and target. That is the case because all variables used in a template are converted into scope variables.
++ As the BPEL process already includes variables that can be used in this transformation, you will edit the transform activity to use global variables instead of scope variables.
++ Select the transform activity in the BPEL process and in the property inspector, select the first source variable and click the pencil icon to edit:
+
+
 
 ## **STEP 6**: Add a composite sensor PaymentStatus for the payment status
 
