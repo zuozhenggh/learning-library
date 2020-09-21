@@ -141,22 +141,26 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
         ii. Refresh Token
 
         iii. Authorization Code
+        
+    c. Save your cloud manager url in your ``key-data.txt`` file as ``Cloud_Manager_URL``
+    
+        i. ex: https://myebscm.ebshol.org:443
 
-    c. **Redirect URL**: ``<Cloud_Manager_URL>/cm/auth/callback``
+    d. **Redirect URL**: ``<Cloud_Manager_URL>/cm/auth/callback``
 
         i. Example: https://myebscm.ebshol.org:443/cm/auth/callback
 
-    d. **Logout URL**: Leave this field empty.
+    e. **Logout URL**: Leave this field empty.
 
-    e. **Post-Logout Redirect URL**: ``<Cloud_Manager_URL>/cm/ui/index.html?root=login``
+    f. **Post-Logout Redirect URL**: ``<Cloud_Manager_URL>/cm/ui/index.html?root=login``
 
         i. Example: https://myebscm.ebshol.org:443/cm/ui/index.html?root=login
 
-    f. Select the **Introspect** option for **Allowed Operations**.
+    g. Select the **Introspect** option for **Allowed Operations**.
 
     ![](./images/client-configp1.png " ")
 
-    g. Under **Grant the client access to Identity Cloud Service Admin APIs**:
+    h. Under **Grant the client access to Identity Cloud Service Admin APIs**:
 
         i. Click Add.
 
@@ -166,7 +170,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     ![](./images/client-configp2.png " ")
 
-    h. Click **Next**.
+    i. Click **Next**.
     
 12. On the Resources screen, click **Next**.
 
