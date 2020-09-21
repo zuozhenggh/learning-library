@@ -261,7 +261,26 @@ One more step to get the map to work -- (remember previously an error message?)
 + You may have noticed that the transformation activity uses scope variables, not global variables, as source and target. That is the case because all variables used in a template are converted into scope variables.
 + As the BPEL process already includes variables that can be used in this transformation, you will edit the transform activity to use global variables instead of scope variables.
 + Select the transform activity in the BPEL process and in the property inspector, select the first source variable and click the pencil icon to edit:
++ ![](images/2/custom-template9.png)
 
++ Select the browse button next to the Source Variable field.
+
++ ![](images/2/custom-templ10.png)
+
++ Select the global variable getPaymentInformation_getPaymentInformationSelect_OutputVariable in the Variable Chooser.
+
++ ![](images/2/custom-templ11.png)
+
++ Click OK.
++ The Source Part for the variable will be automatically selected.
+
++ ![](images/2/custom-templ12.png)
+
++ Click OK.
++ Repeat the same for the second source variable by replacing it with the process inputVariable.
++ To edit the target variable, click the browse button next to the Target Variable field.
+
++ ![](images/2/template1.png)
 
 
 ## **STEP 6**: Add a composite sensor PaymentStatus for the payment status
@@ -340,8 +359,8 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - <Name, Title, SOA Product Development>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Adapted for Live Lab by** -  <Daniel Tarudji, Solution Engineering> -- optional
+* **Last Updated By/Date** - <Daniel Tarudji, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
 
 ## See an issue?
