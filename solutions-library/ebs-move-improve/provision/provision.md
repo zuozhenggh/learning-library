@@ -3,6 +3,15 @@
 ## Introduction
 In this 45 mins lab, we will use the One-Click Provisioning feature of Oracle E-Business Suite Cloud Manager to provision an Oracle E-Business Suite environment.
 
+## Objectives 
+* Enable and Set Oracle E-Business Suite Account Passwords
+* Configure Local Hosts File and Log in to Oracle E-Business Suite
+
+## Prerequisites
+* Oracle E-Business Suite Cloud Manager application using the Login URL from key data.txt file 
+* Oracle IDCS login credentials
+
+
 ## Part 1. Log in to EBS Cloud Manager
 1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your key-data.txt file.
 2. Log in with your Oracle Identity Cloud Service credentials.
