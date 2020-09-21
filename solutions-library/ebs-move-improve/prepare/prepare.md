@@ -19,7 +19,7 @@ Before starting this lab, please make sure to record your trial user name and pa
 
     ![](./images/idcs-console.png " ")
 
-4. From the IDCS console, create your Oracle E-Business Suite Cloud Manager group:
+5. From the IDCS console, create your Oracle E-Business Suite Cloud Manager group:
 
     a. Click the navigation menu and select **Groups**.
 
@@ -33,7 +33,7 @@ Before starting this lab, please make sure to record your trial user name and pa
 
     d. Click **Finish**.
 
-5. While still in the IDCS console, create your Oracle E-Business Suite Cloud Manager Administrator user:
+6. While still in the IDCS console, create your Oracle E-Business Suite Cloud Manager Administrator user:
 
     a. Click the navigation menu and select **Users**.
 
@@ -51,37 +51,37 @@ Before starting this lab, please make sure to record your trial user name and pa
 
         v. Deselect the check box Use email address as the user name.
         
-        ![](./images/2.png " ")
+    ![](./images/2.png " ")
     
     d. Click **Next**.
     
     e. On the Step 2: Assign User to Groups dialog window, select the check box for the group you just created (``idcs-ebscm-grp``).
     
-        ![](./images/3.png " ")
+    ![](./images/3.png " ")
     
     f. Click **Finish**.
     
-6. From the IDCS console navigation menu, click **Security** to expand the menu. Then click **Administrators**.
+7. From the IDCS console navigation menu, click **Security** to expand the menu. Then click **Administrators**.
 
-7. On the Administrators page:
-
-    ![](./images/4.png "")
+8. On the Administrators page:
     
     a. Expand the **Application Administrators** section.
     
     b. Click **Add**.
 
-8. In the Add Users to the Administrator Role dialog box, select the check box for the EBS Cloud Manager Administrator (``ebscm.admin@example.com``).
+    ![](./images/add-admins.png "")
+
+9. In the Add Users to the Administrator Role dialog box, select the check box for the EBS Cloud Manager Administrator (``ebscm.admin@example.com``).
 
     ![](./images/5.png " ")
 
-9. Click **OK**.
+10. Click **OK**.
 
 ```
 Note: The Cloud Manager administrator will register the app as a confidential application in the next section.
 ```
 
-10. Log out of the IDCS console by clicking on your user avatar icon at the top right of your screen. Then, click **Sign Out**.
+11. Log out of the IDCS console by clicking on your user avatar icon at the top right of your screen. Then, click **Sign Out**.
 
 ### Part 2 - Register Oracle E-Business Suite Cloud Manager as a Confidential Application in IDCS
 
@@ -121,7 +121,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     c. Click **Next**.
 
-        ![](./images/name-and-description.png " ")
+    ![](./images/name-and-description.png " ")
 
 11. On the Client screen:
 
@@ -147,7 +147,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     f. Select the **Introspect** option for **Allowed Operations**.
 
-        ![](./images/client-configp1.png " ")
+    ![](./images/client-configp1.png " ")
 
     g. Under **Grant the client access to Identity Cloud Service Admin APIs**:
 
@@ -157,7 +157,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
         iii. Click Add again.
 
-        ![](./images/client-configp2.png " ")
+    ![](./images/client-configp2.png " ")
 
     h. Click **Next**.
     
@@ -173,8 +173,6 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
         ii. Client Secret
 
-    ![](./images/6.png " ")
-
 16. Click **Close**.
 
 17. Click **Activate** to activate the Confidential Application.
@@ -185,7 +183,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 20. Copy the value displayed for Instance GUID. Record this as ``Client_Tenant`` in the ``key-data.txt``. Your IDCS Client Tenant begins with the characters ``idcs-`` and then is followed by a string of numbers and letters, for example, ``idcs-6572bfeb183b4becad9e649bfa14a488``.
 
-    ![](./images/7.png " ")
+    ![](./images/about.png " ")
 
 You may now proceed to the next lab.
 
