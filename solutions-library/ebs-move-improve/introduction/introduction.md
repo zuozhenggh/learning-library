@@ -46,7 +46,7 @@ Proceed to the appropriate section, depending on your workstation operating syst
 * Using a Windows Workstation
 * Using a Mac Workstation
 
-Using a Windows Workstation
+**Using a Windows Workstation**
 
 1. From the download link.
 
@@ -58,7 +58,7 @@ Using a Windows Workstation
         
     d. Unzip the files.
 
-Using a Mac Workstation
+**Using a Mac Workstation**
 
 1. From the download link:
     
@@ -100,7 +100,7 @@ This workshop uses the following components:
 The following figure (W-2) describes the exercises that you will perform in this workshop.
 Figure W-2: Storyboard
 
-    ![](./images/2.png " ")
+![](./images/2.png " ")
 
 ## Appendix
 ### Terminology
