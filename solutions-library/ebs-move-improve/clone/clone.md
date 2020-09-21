@@ -24,7 +24,7 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
 6. Enter these values for the following Web Entry properties.
 
-  a) rotocol: https
+  a) Protocol: https
 
   b) Domain: example.com
 
