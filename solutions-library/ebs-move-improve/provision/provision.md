@@ -52,7 +52,7 @@ You can check the status of the activity to provision the environment in the Act
 
     v. Find the file hosts 
 
-    ![](./images/3.png " ")
+  ![](./images/3.png " ")
 
     vi. In the hosts file, scroll down to the end of the content. 
 
