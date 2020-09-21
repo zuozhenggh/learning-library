@@ -27,17 +27,86 @@ The validation process are:
 
 ## **STEP 1**:  Create a new SOA composite application 
 
-Let's name the application e2e-1201-composites and the SOA project in JDeveloper called ValidatePayment
+Let's name the application e2e-1201-composites and the SOA project in JDeveloper called ValidatePayment.
 
-## **STEP 2**:  Use a new template to create the ValidatePayment composite.
+To start designing the SOA composites, SOA 12c has a number of new features to improve sharing of common “code” between teams, departments or even from a partner to a customer. Part of that is the new SOA Templates feature. 
 
-![](images/2/validate-payment-composite.png)
+SOA templates can be used as starting points to accelerate the development of SOA applications. These templates will either be the foundation of a project or can be added to an existing project. All changes made after the import point will not be reflected in the original template.
 
 The SOA templates come in three flavors:
 + Project templates: They include a complete project with all components and resources used and will be used when creating a new project in your SOA application.
 + Component templates: A component with all references resources and components. For example, a BPEL process that calls a business rule or adapter can be packaged as component template.
 + Custom activity templates: A scope in a BPEL process, which may include an invoke/receive from/to a partnerlink, can be packaged as a custom BPEL activity. For example, an assign activity and a call to an adapter. 
-  
+
+To make sure of the templates, please follow the steps below:
++ SOA templates that are located in the default directory (e.g. $MW_HOME\jdeveloper\integration\templates) will be recognized automatically. Additional directories can be added.
++ As the templates used for the labs have been unpacked into the ~/e2e-1201- orderprocessing/templates/ folder, we will add this directory to the list of folders that are scanned for templates.
++ In the main JDeveloper menu, please go to Tools --> Preferences.
+
++ ![](images/2/jdev-preferences.png)
+
++ In the Preferences window, go to SOATemplates. (If you do not see ‘SOA’ in the preferences, then you could create a new application, or open an existing one. This will load up SOA libraries, SOA preference will show up).
+
++  ![](images/2/jdev-preferences2.png) 
+
++ Click the ‘+’ button, to add folder.
++ Navigate to ~/e2e-1201-orderprocessing/ templates.
+
++  ![](images/2/soa-preferences1.png)
+
++ Click Select to accept your choice.
+
++  ![](images/2/soa-preferences2.png)
+
++ Click OK to close the Preferences window.
+
+
+## **STEP 2**:  Use a new template to create the ValidatePayment composite.
+
+Create a new SOA application and project. There are various ways and shortcuts to do this, and in this case choose File > New > Application... from the menu.
++ From the Categories tree, click on General > Applications.
++ Select SOA Application from the Items field.
+
++  ![](images/2/soa-app1.png)
++  
++ Click OK.
++ In the subsequent dialog for Create SOA Application, set the following fields, leaving the others
+with their default values:
++ - a. Application Name: e2e-1201-composites
++ - b. Directory of your choice, as shown below
++ ![](images/2/validatepymnt11.png)
+
++ Click Next
+
++ When you create a new application, you are prompted to create a new project. Set the following fields:
++ - a. Project Name: ValidatePayment
++ - b. Keep the default Directory
++ - c. Project Features: SOA Suite
++ ![](images/2/validatepymnt12.png)
+
++ Click Next
++ The next step is to pick a ‘Standard Composite’, or a ‘SOA Template’. Choose ‘SOA Template’.
+
++ ![](images/2/validatepymnt13.png)
+
++ Select “ValidatePaymentTemplate”. Click Finish.
++ A new project “ValidatePayment” is created with some predefined components as derived from the template. A canvas displaying three swim lanes: services, components, and references; shown below
++ ![](images/2/validatepymnt14.png)
+
++ On the left hand side, you will see the Application Navigator, which shows all resources included in a SOA project.
++ This Navigator has been reorganized in SOA Suite 12c to make it easier to find all files related to SOA, and also to provide the option to customize the folder structure.
++ You will see a SOA folder under the project root. This is where all SOA related files and folders are stored, such as BPEL processes, schema files, WSDL files.
++ The composite.xml, which defines the structure of the composite, is located directly under the SOA folder. In previous releases, this file was just shown as composite.xml. This became confusing when several composite.xml files from different projects were open at the same time.
++ In SOA Suite 12c, the project name is displayed in the navigator and in the composite tab label. It is displayed as ValidatePayment here.
+
++ ![](images/2/validatepymnt15.png)
+
+
+----
+![](images/2/validate-payment-composite.png)
+
+
+
 ## **STEP 3**:  Review the various components of the composite.
 
 ![](images/2/composite-details.png)
