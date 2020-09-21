@@ -66,10 +66,8 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
     h. Enter a password which matches the criteria: 8 to 30 characters, at least one lower character, one upper case character, one special character from _#$. Note this password in your key-data.txt
 
     i. Add an ssh key
-
-        i. You can either Open the file ``Desktop/HOL-EBS/artifacts/ssh-keys/ebs_hol_key.pub`` with a text editor and copy its contents into Public Key
         
-        ii. Or use an ssh key that you have generated yourself in the past. 
+        i. Use an exisiting or generate a new ssh key. 
 
       For more information on ssh keys, visit: [Generating an SSH Key Pair](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)
 
@@ -129,7 +127,7 @@ Edit the local ``hosts`` file on your laptop and add an entry.
     
    v. Find the **file hosts**
    
-    ![](./images/13.png " ")
+  ![](./images/13.png " ")
 
    vi. In the hosts file, scroll down to the end of the content.
 
