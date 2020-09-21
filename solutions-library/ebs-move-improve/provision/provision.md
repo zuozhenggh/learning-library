@@ -3,11 +3,20 @@
 ## Introduction
 In this 45 mins lab, we will use the One-Click Provisioning feature of Oracle E-Business Suite Cloud Manager to provision an Oracle E-Business Suite environment.
 
+## Objectives 
+* Enable and Set Oracle E-Business Suite Account Passwords
+* Configure Local Hosts File and Log in to Oracle E-Business Suite
+
+## Prerequisites
+* Oracle E-Business Suite Cloud Manager application using the Login URL from key data.txt file 
+* Oracle IDCS login credentials
+
+
 ## Part 1. Log in to EBS Cloud Manager
-1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your Key-Data.txt file.
+1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your key-data.txt file.
 2. Log in with your Oracle Identity Cloud Service credentials.
 
-![](./images/1.png " ")
+  ![](./images/1.png " ")
 
 ## Part 2. Provision an Environment Using One-Click Provisioning
 1. On the Oracle E-Business Suite Cloud Manager Environments page, click Provision Environment and select One-Click.
@@ -24,7 +33,7 @@ In this 45 mins lab, we will use the One-Click Provisioning feature of Oracle E-
 
 3. Click Submit
 
-You can check the status of the activity to provision the environment in the Activities page. The provisioning process will take approximately 20-25 minutes.
+You can check the status of the activity to provision the environment in the Activities page. The provisioning process will take approximately 30-35 minutes.
 
 ## Part 3. Enable and Set Oracle E-Business Suite Account Passwords
 
@@ -34,9 +43,7 @@ You can check the status of the activity to provision the environment in the Act
 
 1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to Networking > Load Balancers.
 
-2. On the Load Balancers page, you will find a load balancer named ebsholenv1-lbaas. Obtain the public IP address of this load balancer and record this in your Key-Data.txt file.
-
-![](./images/2.png " ")
+2. On the Load Balancers page, you will find a load balancer named ebsholenv1-lbaas. Obtain the public IP address of this load balancer and record this in your key-data.txt file.
 
 3. Edit the local hosts file on your laptop and add an entry.
 
@@ -52,11 +59,11 @@ You can check the status of the activity to provision the environment in the Act
 
     v. Find the file hosts 
 
-    ![](./images/3.png " ")
+  ![](./images/3.png " ")
 
     vi. In the hosts file, scroll down to the end of the content. 
 
-    vii. Add the following entry to the very end of the file: ```<ip_address> ebsholenv1.example.com``` 
+    vii. Add the following entry to the very end of the file: <ip_address> ebsholenv1.example.com
 
     viii. Save the file. 
 
@@ -64,9 +71,9 @@ You can check the status of the activity to provision the environment in the Act
 
     i. Open a Terminal Window. 
 
-    ii. Enter the following command: ```sudo vi /etc/hosts``` 
+    ii. Enter the following command: sudo vi /etc/hosts
 
-    iii. Go to the last line and add the following entry: ```<ip_address> ebsholenv1.example.com``` 
+    iii. Go to the last line and add the following entry: <ip_address> ebsholenv1.example.com 
 
     iv. Save the file. 
 
@@ -84,7 +91,9 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Santiago Bastidas, Product Management Director, July 2020
+- **Last Updated By/Date** 
+- Quintin Hill, Cloud Engineering/Sept 2020
+- Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
