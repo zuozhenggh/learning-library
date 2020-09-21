@@ -64,6 +64,16 @@
             "title": "Lab 11: Auto Scaling",
             "description": "Auto Scaling an Autonomous Database",
             "filename": "./../../adb-auto-scaling/adb-auto-scaling.md"
+        },
+        {
+            "title": "Lab 11: Auto Scaling-John Zimmerman Version",
+            "description": "Auto Scaling an Autonomous Database",
+            "filename": "./../../adb-auto-scaling/adb-auto-scaling -john-zimmerman-version.md"
+        },
+        {
+            "title": "Lab 11: Auto Scaling-John Zimmerman SHORTENED",
+            "description": "Auto Scaling an Autonomous Database",
+            "filename": "./../../adb-auto-scaling/adb-auto-scaling -john-zimmerman-shortened.md"
         }
     ]
 }

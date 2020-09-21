@@ -24,6 +24,7 @@ Auto scaling makes it even easier to simply deploy a data warehouse, then forget
 
 -   Learn the benefits of auto scaling
 -   Learn how to enable and disable auto scaling
+-   Examine the before/after performance improvements of auto scaling
 
 ### Prerequisites
 
