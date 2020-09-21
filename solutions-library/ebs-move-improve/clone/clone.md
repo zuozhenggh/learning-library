@@ -56,7 +56,7 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
     v. Find the file ```hosts```. 
 
-    ![](./images/2.png " ")
+  ![](./images/2.png " ")
 
     vi. In the hosts file, scroll down to the end of the content. 
 
@@ -76,7 +76,7 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
 4. Log in to Oracle E-Business Suite:
 
-  a. In your browser, navigate to the following URL: https://ebsholenv2.example.com /OA_HTML/AppsLocalLogin.jsp 
+  a. In your browser, navigate to the following URL: https://ebsholenv2.example.com/OA_HTML/AppsLocalLogin.jsp 
 
   b. When prompted, accept the warning concerning the certificate coming from an unauthorized certificate authority as we are using a self-signed certificate. (You will change the certificate with your own when executing this procedure outside of this hands-on lab.) 
 
