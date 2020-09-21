@@ -7,7 +7,7 @@ In this 30 mins lab, we will deploy the Oracle E-Business Suite Cloud Manager Co
 
 Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastructure console.
 
-1. Reference your ``Key-Data.txt`` file and locate the tenancy administrator credentials.
+1. Reference your ``key-data.txt`` file and locate the tenancy administrator credentials.
 
 2. Sign in to the Oracle Cloud Infrastructure console using the following:
 
@@ -31,7 +31,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
 1. In the Oracle Cloud Infrastructure console navigation menu, under **Solutions and Platform** select **Marketplace** and then click **Applications**.
 
-![](./images/find-marketplace-app.png " ")
+  ![](./images/find-marketplace-app.png " ")
 
 2. Find and click **Oracle E-Business Suite Cloud Manager Stack for Demos**.
 
@@ -39,7 +39,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
 4. In the Compartment drop-down list, select the parent compartment of the compartment where the Oracle E-Business Suite Cloud Manager Compute instance will be deployed. For example, mycompanytenancy(root).
 
-![](./images/compartment-and-terms.png " ")
+  ![](./images/compartment-and-terms.png " ")
 
 5. Review and accept the Terms of Use.
 
@@ -63,7 +63,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
     g. Select ``VM.Standard.E2.2`` for EBS Cloud Manager Shape
 
-    h. Enter a password which matches the criteria: 8 to 30 characters, at least one lower character, one upper case character, one special character from _#$. Note this password in your Key-Data.txt
+    h. Enter a password which matches the criteria: 8 to 30 characters, at least one lower character, one upper case character, one special character from _#$. Note this password in your key-data.txt
 
     i. Add an ssh key
 
@@ -87,11 +87,11 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
 8. On the Review screen, verify the information and click **Create**.
 
-![](./images/8.png " ")
+  ![](./images/8.png " ")
 
 9. This takes you to the Stack Details page for your newly created stack. On this page, click the Terraform Actions drop-down list and select **Apply**.
 
-![](./images/9.png " ")
+  ![](./images/9.png " ")
 
 10. In the Apply dialog window, leave the default settings as-is and click **Apply**.
 
@@ -99,15 +99,15 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
 11. On the Job Details page, you will see the job status which will cycle through **Accepted, In Progress**, and **Succeeded**.
 
-![](./images/11.png " ")
+  ![](./images/11.png " ")
 
-``After the job succeeds, you will have all the network resources (VCN, load balancer, subnets, and so on) required to deploy the Oracle E-Business Suite Cloud Manager Compute instance.``
+After the job succeeds, you will have all the network resources (VCN, load balancer, subnets, and so on) required to deploy the Oracle E-Business Suite Cloud Manager Compute instance.
 
 12. On the **Application Information** tab you will find the details related to the EBS Cloud Manager instance and Load balancer.
 
 ![](./images/12.png " ")
 
-13. Copy and paste **Private IP, Public IP, Login URL** and **LB Public IP** to your ``Key-Data.txt``. These variables are needed for the remainder of the procedures in this lab.
+13. Copy and paste **Private IP, Public IP, Login URL** and **LB Public IP** to your ``key-data.txt``. These variables are needed for the remainder of the procedures in this lab.
 
 ## Step 3. Log in to Oracle E-Business Suite Cloud Manager
 
@@ -128,8 +128,8 @@ Edit the local ``hosts`` file on your laptop and add an entry.
    iv. Browse to ``C:\\Windows\System32\drivers\etc``
     
    v. Find the **file hosts**
-
-   ![](./images/13.png " ")
+   
+    ![](./images/13.png " ")
 
    vi. In the hosts file, scroll down to the end of the content.
 
@@ -147,13 +147,13 @@ Edit the local ``hosts`` file on your laptop and add an entry.
 
    iv. Save the file.
 
-Using the Login URL generated previously, log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials for the EBS Cloud Manager account as documented in your ``Key-Data.txt`` file.
+Using the Login URL generated previously, log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials for the EBS Cloud Manager account as documented in your ``key-data.txt`` file. 
 
-![](./images/14.png " ")
+  ![](./images/14.png " ")
 
 Once logged in, you are on the **Environments page**.
 
-![](./images/15.png " ")
+  ![](./images/15.png " ")
 
 You may now proceed to the next lab.
 

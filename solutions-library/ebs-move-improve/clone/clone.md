@@ -8,9 +8,9 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 1. Navigate to the Cloud Manager Environments page.
 
 2. For ebsholenv1, click Action and select Clone. Enter Details (see screenshot and points below)
-![](./images/1.png " ")
+  ![](./images/1.png " ")
 
-3. Enter the following values for the clone details (Note these variables in your Key-Data.txt):
+3. Enter the following values for the clone details (Note these variables in your key-data.txt):
 
   a) Environment Name: ebsholenv2
 
@@ -40,7 +40,7 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
 1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to Networking > Load Balancers.
 
-2. On the Load Balancers page, you will find a load balancer named ebsholenv2-lbaas. Obtain the public IP address of this load balancer and record in your ```Key-Data.txt``` file.
+2. On the Load Balancers page, you will find a load balancer named ebsholenv2-lbaas. Obtain the public IP address of this load balancer and record in your ```key-data.txt``` file.
 
 3. Edit the local hosts file on your laptop and add an entry. 
 
@@ -56,7 +56,7 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
 
     v. Find the file ```hosts```. 
 
-    ![](./images/2.png " ")
+      ![](./images/2.png " ")
 
     vi. In the hosts file, scroll down to the end of the content. 
 
@@ -81,7 +81,8 @@ In this 15 mins lab, we will use the Cloning feature of Oracle E-Business Suite 
   b. When prompted, accept the warning concerning the certificate coming from an unauthorized certificate authority as we are using a self-signed certificate. (You will change the certificate with your own when executing this procedure outside of this hands-on lab.) 
 
   c. On this page, you will log in to Oracle E-Business Suite with the credentials you generated in Lab 4, part 3.
-  ![](./images/3.png " ")
+  
+    ![](./images/3.png " ")
 
 ## Acknowledgements
 

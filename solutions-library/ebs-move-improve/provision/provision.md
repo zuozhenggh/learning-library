@@ -4,10 +4,10 @@
 In this 45 mins lab, we will use the One-Click Provisioning feature of Oracle E-Business Suite Cloud Manager to provision an Oracle E-Business Suite environment.
 
 ## Part 1. Log in to EBS Cloud Manager
-1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your Key-Data.txt file.
+1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your key-data.txt file.
 2. Log in with your Oracle Identity Cloud Service credentials.
 
-![](./images/1.png " ")
+  ![](./images/1.png " ")
 
 ## Part 2. Provision an Environment Using One-Click Provisioning
 1. On the Oracle E-Business Suite Cloud Manager Environments page, click Provision Environment and select One-Click.
@@ -34,9 +34,9 @@ You can check the status of the activity to provision the environment in the Act
 
 1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to Networking > Load Balancers.
 
-2. On the Load Balancers page, you will find a load balancer named ebsholenv1-lbaas. Obtain the public IP address of this load balancer and record this in your Key-Data.txt file.
+2. On the Load Balancers page, you will find a load balancer named ebsholenv1-lbaas. Obtain the public IP address of this load balancer and record this in your key-data.txt file.
 
-![](./images/2.png " ")
+  ![](./images/2.png " ")
 
 3. Edit the local hosts file on your laptop and add an entry.
 
@@ -52,7 +52,7 @@ You can check the status of the activity to provision the environment in the Act
 
     v. Find the file hosts 
 
-    ![](./images/3.png " ")
+      ![](./images/3.png " ")
 
     vi. In the hosts file, scroll down to the end of the content. 
 
@@ -78,7 +78,7 @@ You can check the status of the activity to provision the environment in the Act
 
   c. On this page, you will log in to Oracle E-Business Suite.
 
-  ![](./images/4.png " ")
+    ![](./images/4.png " ")
 
 You may now proceed to the next lab.
 

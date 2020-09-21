@@ -3,7 +3,7 @@
 ## Introduction
 In this 30 mins exercise, you will prepare your tenancy for Oracle E-Business Suite. 
 
-Before starting this lab, please make sure to record your trial user name and password to Tenancy\_Admin\_User and Tenancy\_Admin\_Password in your Key-Data.txt file for ease of access.
+Before starting this lab, please make sure to record your trial user name and password to Tenancy\_Admin\_User and Tenancy\_Admin\_Password in your key-data.txt file for ease of access.
 
 ## Step 1. Setup EBS Cloud Manager Authentication with Identity Cloud Service (IDCS)
 
@@ -17,7 +17,7 @@ Before starting this lab, please make sure to record your trial user name and pa
 
 4. Click on the link next to **Oracle Identity Cloud Service Console**.
 
-![](./images/idcs-console.png " ")
+    ![](./images/idcs-console.png " ")
 
 4. From the IDCS console, create your Oracle E-Business Suite Cloud Manager group:
 
@@ -51,13 +51,13 @@ Before starting this lab, please make sure to record your trial user name and pa
 
         v. Deselect the check box Use email address as the user name.
         
-    ![](./images/2.png " ")
+        ![](./images/2.png " ")
     
     d. Click **Next**.
     
     e. On the Step 2: Assign User to Groups dialog window, select the check box for the group you just created (``idcs-ebscm-grp``).
     
-    ![](./images/3.png " ")
+        ![](./images/3.png " ")
     
     f. Click **Finish**.
     
@@ -65,15 +65,15 @@ Before starting this lab, please make sure to record your trial user name and pa
 
 7. On the Administrators page:
 
-   ![](./images/4.png "")
+    ![](./images/4.png "")
     
-   a. Expand the **Application Administrators** section.
+    a. Expand the **Application Administrators** section.
     
-   b. Click **Add**.
+    b. Click **Add**.
 
 8. In the Add Users to the Administrator Role dialog box, select the check box for the EBS Cloud Manager Administrator (``ebscm.admin@example.com``).
 
-![](./images/5.png " ")
+    ![](./images/5.png " ")
 
 9. Click **OK**.
 
@@ -95,7 +95,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 2. Click the yellow **Activate Your Account** button in the email.
 
-3. Enter a new password, confirm, and click Submit. We suggest you reuse the password from ``Key-Data.txt``, field ``Cloud_Manager_Admin_Password``.
+3. Enter a new password, confirm, and click Submit. Document this password in your ``key-data.txt``, field ``Cloud_Manager_Admin_Password``.
 
 4. Click **OK** to continue, which will take you to the IDCS Login screen.
 
@@ -121,7 +121,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     c. Click **Next**.
 
-    ![](./images/name-and-description.png " ")
+        ![](./images/name-and-description.png " ")
 
 11. On the Client screen:
 
@@ -147,7 +147,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     f. Select the **Introspect** option for **Allowed Operations**.
 
-    ![](./images/client-configp1.png " ")
+        ![](./images/client-configp1.png " ")
 
     g. Under **Grant the client access to Identity Cloud Service Admin APIs**:
 
@@ -157,7 +157,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
         iii. Click Add again.
 
-    ![](./images/client-configp2.png " ")
+        ![](./images/client-configp2.png " ")
 
     h. Click **Next**.
     
@@ -167,13 +167,13 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 14. On the Authorization screen, click **Finish**.
 
-15. Make note of the following values in your ``Key-Data.txt`` file (under ``Client_ID`` and ``Client_Secret``, respectively) when they are displayed in a pop-up window:
+15. Make note of the following values in your ``key-data.txt`` file (under ``Client_ID`` and ``Client_Secret``, respectively) when they are displayed in a pop-up window:
 
         i. Client ID
 
         ii. Client Secret
 
-![](./images/6.png " ")
+    ![](./images/6.png " ")
 
 16. Click **Close**.
 
@@ -183,9 +183,9 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 19. Select the **About** option.
 
-20. Copy the value displayed for Instance GUID. Record this as ``Client_Tenant`` in the ``Key-Data.txt``. Your IDCS Client Tenant begins with the characters ``idcs-`` and then is followed by a string of numbers and letters, for example, ``idcs-6572bfeb183b4becad9e649bfa14a488``.
+20. Copy the value displayed for Instance GUID. Record this as ``Client_Tenant`` in the ``key-data.txt``. Your IDCS Client Tenant begins with the characters ``idcs-`` and then is followed by a string of numbers and letters, for example, ``idcs-6572bfeb183b4becad9e649bfa14a488``.
 
-![](./images/7.png " ")
+    ![](./images/7.png " ")
 
 You may now proceed to the next lab.
 

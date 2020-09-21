@@ -35,8 +35,11 @@ You will need the following in order to complete this workshop:
 
 ## Setup Lab Workstation
 
-In this section, you will prepare your workstation with the required files for the hands-on lab exercises. 
-Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/mAWDPAT5jDjg34fUnSHtu-u_ztJ0_D9igCl1Bpoi7_E/n/orasenatdecanational01/b/EBS-Folder/o/EBSHOL-EBS.zip) link to download the files.
+In this section, you will prepare your workstation. In addition the following zip file provides a key-data.txt to store all information that you will need to refer back to. We recommend you use this file to store your variables while going through the lab. 
+
+Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2uyg0q6BR9ZJRMzppgF3_rncnQvUDD0Z2QodaO1ImC0/n/orasenatdpltoci03/b/EBS-HOL-Files/o/ebs-hol.zip) link to download the files.
+
+Additionally there is a terraform configuration included if you would do this lab using resource manager. This lab uses marketplace stack, but if you decide to use resource manager the terraform file is available.
 
 Proceed to the appropriate section, depending on your workstation operating system:
 
@@ -45,51 +48,34 @@ Proceed to the appropriate section, depending on your workstation operating syst
 
 Using a Windows Workstation
 
-1. Create a folder named HOL-EBS on the desktop of your workstation.
+1. From the download link.
 
-2. From the download link
-
-    a. Download the HOL zip file.
+    a. Download the hol zip file.
 
     b. Open Windows Explorer and nagivate to the downloaded zip file. 
         
-    c. Move the zip file to your folder Desktop/HOL-EBS 
+    c. Move the zip file to your folder Desktop 
         
     d. Unzip the files.
 
 Using a Mac Workstation
 
-1. Create a folder named HOL-EBS on the desktop of your workstation.
-
-2. From the download link:
-
-   a. Download the HOL zip file.
-
+1. From the download link:
+    
+    a. Download the hol zip file.
+    
     b. Open Finder and nagivate to the downloaded zip file. 
-        
-    c. Move the zip file to your folder Desktop/HOL-EBS 
-        
+    
+    c. Move the zip file to your Desktop
+    
     d. Unzip the files. 
-
-## Review and Open Hands-On Lab Files
-
-The following table describes the directories and files that were copied to the Desktop\HOL-EBS directory on your workstation:
-
-Some of these files are no longer required to complete the lab. 
-
-The Key-Data.txt file is used to capture key data items that will be referenced throughout. Make sure to update this file consistently with the proper values. This will make sure you do not lose any required variables throughout. 
-
-Table S-1
-| Name          | Description       | 
-| ------------- |:-------------:|
-| /documents/Key-Data.txt      | The document used to capture key data items needed throughout the lab.     |
 
 ## Workshop Overview
 
 The following figure (W-1) outlines the workshop architecture.
 Figure W-1: Workshop Architecture
 
-![](./images/1.png " ")
+    ![](./images/1.png " ")
 
 This workshop uses the following components:
 
@@ -111,12 +97,10 @@ This workshop uses the following components:
         - Cloned from environment 1 
         - Application and database tiers on this Compute instance
 
-• Attendee-provided laptop
-
 The following figure (W-2) describes the exercises that you will perform in this workshop.
 Figure W-2: Storyboard
 
-![](./images/2.png " ")
+    ![](./images/2.png " ")
 
 ## Appendix
 ### Terminology
