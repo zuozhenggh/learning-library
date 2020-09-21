@@ -36,8 +36,6 @@ You can check the status of the activity to provision the environment in the Act
 
 2. On the Load Balancers page, you will find a load balancer named ebsholenv1-lbaas. Obtain the public IP address of this load balancer and record this in your key-data.txt file.
 
-  ![](./images/2.png " ")
-
 3. Edit the local hosts file on your laptop and add an entry.
 
   a. *For Windows Users*
