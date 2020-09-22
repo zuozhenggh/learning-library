@@ -3,7 +3,7 @@
 ## Introduction
 In this exercise, you will prepare your Oracle E-Business Suite environment. This exercise will take approximately 30 minutes to complete. 
 
-## Objective 
+## Objectives 
 * Setup EBS Cloud Manager Authentication with Identity Cloud Service (IDCS)
 * Create the EBS Cloud Manager Administrators group and user in IDCS
 * Register Oracle E-Business Suite Cloud Manager as a Confidential Application in IDCS
