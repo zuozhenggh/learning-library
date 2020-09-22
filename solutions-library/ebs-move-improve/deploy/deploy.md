@@ -1,20 +1,22 @@
 # Oracle E-Business Suite Cloud Manager Deployment and Configuration
 
 ## Introduction
-In this 30 mins lab, we will deploy the Oracle E-Business Suite Cloud Manager Compute instance using an Oracle Cloud Infrastructure Marketplace image and configure Oracle E-Business Suite Cloud Manager.
+In this lab, we will deploy the Oracle E-Business Suite Cloud Manager Compute instance using an Oracle Cloud Infrastructure Marketplace image and configure Oracle E-Business Suite Cloud Manager.
 
-## Objectives 
+Estimated Lab Time: 30 minutes
+
+### Objectives
 
 * Deploy and Configure Oracle E-Business Suite Cloud Manager
 * Verifying login into Oracle E-Business Suite Cloud Manager
 
-## Prerequisites
+### Prerequisites
 
 * Tenancy Admin User
-* Tenancy Admin Password 
+* Tenancy Admin Password
 
 
-## Step 1. Sign in to the Oracle Cloud Infrastructure Console
+## **Step 1:** Sign in to the Oracle Cloud Infrastructure Console
 
 Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastructure console.
 
@@ -22,21 +24,21 @@ Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastruct
 
 2. Sign in to the Oracle Cloud Infrastructure console using the following:
 
-* **User name**: ``Tenancy Admin User``
+    * **User name**: ``Tenancy Admin User``
 
-* **Password**: ``Tenancy Admin Password``
+    * **Password**: ``Tenancy Admin Password``
 
-## Step 2. Deploy and Configure Oracle E-Business Suite Cloud Manager
+## **Step 2:** Deploy and Configure Oracle E-Business Suite Cloud Manager
 
 You will now deploy an E-Business Suite Cloud Manager using a Marketplace stack. The stack creates the following cloud resources:
 
-    a. A compartment to contain resources required by Oracle E-Business Suite Cloud Manager.
+  - A compartment to contain resources required by Oracle E-Business Suite Cloud Manager.
 
-    b. An EBS Cloud Manager Administrators IAM user and group, as well as the policies required to manage the compartment.
+  - An EBS Cloud Manager Administrators IAM user and group, as well as the policies required to manage the compartment.
 
-    c. Network resources – including a VCN, an internet gateway, subnets, route tables, security lists, and security rules.
+  - Network resources – including a VCN, an internet gateway, subnets, route tables, security lists, and security rules.
 
-    d. A Compute instance for running the Oracle E-Business Suite Cloud Manager.
+  - A Compute instance for running the Oracle E-Business Suite Cloud Manager.
 
 Then, the stack will configure Oracle E-Business Suite Cloud Manager to work with your OCI tenancy and the newly created OCI resources.
 
@@ -77,14 +79,14 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
     h. Enter a password which matches the criteria: 8 to 30 characters, at least one lower character, one upper case character, one special character from _#$. Note this password in your key-data.txt
 
     i. Add an ssh key
-        
-        i. Use an existing or generate a new ssh key. 
 
-      For more information on ssh keys, visit: [Generating an SSH Key Pair](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)
+      1. Use an existing or generate a new ssh key.
+
+        For more information on ssh keys, visit: [Generating an SSH Key Pair](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)
 
     j. Choose the availability domain that ends in **-1** from the list under **EBS Cloud Manager Availability Domain**.
 
-    ![](./images/6.png " ")
+      ![](./images/6.png " ")
 
     k. Leave Custom CIDR Ranges unchecked
 
@@ -104,59 +106,59 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
 10. In the Apply dialog window, leave the default settings as-is and click **Apply**.
 
-![](./images/10.png " ")
+  ![](./images/10.png " ")
 
 11. On the Job Details page, you will see the job status which will cycle through **Accepted, In Progress**, and **Succeeded**.
 
   ![](./images/11.png " ")
 
-After the job succeeds, you will have all the network resources (VCN, load balancer, subnets, and so on) required to deploy the Oracle E-Business Suite Cloud Manager Compute instance.
+  After the job succeeds, you will have all the network resources (VCN, load balancer, subnets, and so on) required to deploy the Oracle E-Business Suite Cloud Manager Compute instance.
 
 12. On the **Application Information** tab you will find the details related to the EBS Cloud Manager instance and Load balancer.
 
-![](./images/12.png " ")
+  ![](./images/12.png " ")
 
 13. Copy and paste **Private IP, Public IP, Login URL** and **LB Public IP** to your ``key-data.txt``. These variables are needed for the remainder of the procedures in this lab.
 
-## Step 3. Log in to Oracle E-Business Suite Cloud Manager
+## **Step 3:** Log in to Oracle E-Business Suite Cloud Manager
 
-Before login in to the Oracle E-Business Suite Cloud Manager web application, you need to add the **hostname** in the Login URL to your local computer hosts file. 
+Before login in to the Oracle E-Business Suite Cloud Manager web application, you need to add the **hostname** in the Login URL to your local computer hosts file.
 
 Follow the instructions below to perform this configuration:
 
-Edit the local ``hosts`` file on your laptop and add an entry. 
+Edit the local ``hosts`` file on your laptop and add an entry.
 
-  **a. For Windows users**
+**For Windows users**
 
-   i. Navigate to Notepad in your start menu.
-    
-   ii. Hover over Notepad, right-click, and select the option **Run as Administrator**.
-    
-   iii. In Notepad, navigate to ``File > Open``.
-    
-   iv. Browse to ``C:\\Windows\System32\drivers\etc``
-    
-   v. Find the **file hosts**
-   
-  ![](./images/13.png " ")
+  1. Navigate to Notepad in your start menu.
 
-   vi. In the hosts file, scroll down to the end of the content.
+  2. Hover over Notepad, right-click, and select the option **Run as Administrator**.
 
-   vii. Add the following entry to the very end of the file: ``<Lb Public IP> myebscm.ebshol.org``
+  3. In Notepad, navigate to ``File > Open``.
 
-   viii. Save the file.
+  4. Browse to ``C:\\Windows\System32\drivers\etc``
 
- **b. For Mac users**
+  5. Find the **file hosts**
 
-   i. Open a Terminal Window.
+      ![](./images/13.png " ")
 
-   ii. Enter the following command: ``$ sudo vi /etc/hosts``
+  6. In the hosts file, scroll down to the end of the content.
 
-   iii. Go to the last line and add the following entry: ``<LB Public IP> myebscm.ebshol.org``
+  7. Add the following entry to the very end of the file: ``<Lb Public IP> myebscm.ebshol.org``
 
-   iv. Save the file.
+  8. Save the file.
 
-Using the Login URL generated previously, log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials for the EBS Cloud Manager account as documented in your ``key-data.txt`` file. 
+**For Mac users**
+
+  1. Open a Terminal Window.
+
+  2. Enter the following command: ``$ sudo vi /etc/hosts``
+
+  3. Go to the last line and add the following entry: ``<LB Public IP> myebscm.ebshol.org``
+
+  4. Save the file.
+
+Using the Login URL generated previously, log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials for the EBS Cloud Manager account as documented in your ``key-data.txt`` file.
 
   ![](./images/14.png " ")
 
@@ -168,7 +170,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** 
+- **Last Updated By/Date**
 
 - Quintin Hill, Cloud Engineering/Sept 2020
 - Santiago Bastidas, Product Management Director/July 2020
