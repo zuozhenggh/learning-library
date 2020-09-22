@@ -1,10 +1,10 @@
 {
-  "workshoptitle": "Lift and Shift on-premises E-Business Suite to Oracle Cloud Infrastructure (OCI)",
+  "workshoptitle": "Lift and Shift on-premises EBS to OCI",
     "tutorials": [
         {
             "title": "Prerequisites",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies).",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"        
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Introduction",
