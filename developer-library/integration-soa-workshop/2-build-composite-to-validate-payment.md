@@ -282,22 +282,69 @@ One more step to get the map to work -- (remember previously an error message?)
 
 + ![](images/2/template1.png)
 
++ The Variable Chooser dialog will be displayed. Select the scope variable outputVariable. This variable will include the payment validation status.
++ ![](images/2/template2.png)
 
-## **STEP 6**: Add a composite sensor PaymentStatus for the payment status
++ Click Ok. Now you can delete the scope variables.
+
++ Next, open the Variables window by clicking the Property Structure icon on top of the BPEL process and choosing Variables.
++ 
++ ![](images/2/template3.png)
+
++ Delete the three scope variables by choosing the variables one by one and clicking the red “X” icon:
++ ![](images/2/template4.png)
+
++ Confirm the delete action by clicking ‘Yes’ in the Delete Variables window.
++ ![](images/2/template5.png)
+
++ Repeat for all three scope variables.
++ ![](images/2/template6.png)
++ Close the variables window.
+
++ Save all changes by clicking the Save All icon on top of JDeveloper.
++ ![](images/2/jdev-saveall.png)
+
++ Build your project by choosing Build – Make ValidatePayment.jpr in the JDeveloper main menu.
++ ![](images/2/template7.png)
++ Should errors appear in the Messages - Log window at the bottom, indicating that a variable doesn’t exist, **make sure the transformation uses the three global variables instead of the scope variables you deleted.**
+
++ The expected output is “Successful compilation: 0 errors, 0 warnings”
++ ![](images/2/template8.png)
+
+
+## **STEP 6**:  Deploy and test the composite and its project. 
+The first design iteration is complete and you are now ready to deploy the composite. This deployment will take place on the embedded Weblogic service in JDeveloper.
+
+**IMPORTANT:** The server has to be RUNNING for this deployment to be successful. If your server is down, please bring it back up before attempting deployment.
+
+**To start the integrated Weblogic server in JDeveloper -**
+choose Run – Start Server Instance (IntegratedWebLogicServer) in the main menu
++ ![](images/2/start-weblogic.png)
++ You will see a new tab at the bottom Running: IntegratedWebLogicServer – Log, which shows the server log file
++ ![](images/2/start-wl-log.png)
+
++ Right-click on the project name in the project menu - select Deploy and your project name. Make sure you have the project menu and not the application menu in order to see this option.
++ ![](images/2/deployment.png)
+
+**To Stop the integrated Weblogic server in JDeveloper:**
++ Click on the red Terminate icon on top of your JDeveloper window and choose IntegratedWebLogicServer
++ ![](images/2/stop-weblogic.png)
++ The server is stopped when you see [IntegratedWebLogicServer terminated]
++ ![](images/2/terminated-wl.png)
+
+
+## **STEP 7** - Optional - use the diagnostic tool within JDeveloper
+   In SOA Suite 12c, there is facility to set breakpoints in the composite editor, BPEL process. You’re able to stop at breakpoints, look at the data, step into, step out and so on. In a BPEL process, you’re also able to change the value of a variable while debugging.
+
+For more details of how to, please refer to Chapter 2, from <ins>**page 43 to 52**</ins> in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf)
+
+## **STEP 8**: Optional: Add a composite sensor PaymentStatus application
 
 ![](images/2/sensor.png)
 
-## **STEP 7**:  Deploy and test the project. 
+For more details of how to, please refer to Chapter 2, from <ins>**page 37 to 42**</ins> in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf).
 
-![](images/2/deployment.png)
-
-## **STEP 8**: Optional: Use the debugging tool within JDeveloper to explore.
-   In SOA Suite 12c, there is facility to set breakpoints in the composite editor, BPEL process. You’re able to stop at breakpoints, look at the data, step into, step out and so on. In a BPEL process, you’re also able to change the value of a variable while debugging.
-
-
-### Details: ###
-For more details of how to, please refer to Chapter 2, from <ins>**page 11 to 53**</ins> in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf).
-
+**NOTE:**
 The lab tutorial pdf document can also be found on the desktop of your OCI Linux instance.
 
 ![](images/2/soa-tutorialpdf.png)
