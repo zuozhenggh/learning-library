@@ -30,10 +30,6 @@
         {
             "title": "Lab 5: Executing remediation actions",
             "filename": "./remediation_actions.md"
-        },
-        {
-            "title": "Lab 6: Verifying remediation actions",
-            "filename": "./verfication_remediation_actions.md"
         }
     ]
 }
