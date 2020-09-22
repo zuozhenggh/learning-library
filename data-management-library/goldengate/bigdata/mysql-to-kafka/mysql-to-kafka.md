@@ -7,7 +7,7 @@ Estimated Lab Time:  60 minutes
 
 #### Lab Architecture
 
-![](./images/image601_1.png)
+![](./images/image601_1.png " ")
 
 
 ### Objectives
@@ -17,37 +17,37 @@ Estimated Lab Time:  60 minutes
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Lab: Installation
 * Lab: MySQL to MySQL
-  
+
 
 
 ## **STEP 1**: Login to the Terminal
 
 1. Open terminal from desktop by double clicking on the icon
 
-  ![](./images/terminal2.png)
+  ![](./images/terminal2.png " ")
 
 2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  *Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS*
-    ```` 
+    ````
     <copy>su – ggadmin</copy>
     Password = oracle
     ````
 
 3. Display the Lab Menu by typing the alias **labmenu**. The following lab menu will be displayed.
-      ```` 
+      ````
     <copy>
     labmenu
     </copy>
     ````
 
-    ![](./images/lab6menu.png)
+    ![](./images/lab6menu.png " ")
 
 4. Select **R** to reset the lab environment
 5. Select **6** (this step may take a couple of minutes)
 6. Review the overview notes on the following screen
-7. Select **Q** to quit. 
+7. Select **Q** to quit.
 
-## **STEP 2**:  Review 
-The step above copied the GoldenGate configuration files to the GG Home directories, under ./dirprm. 
+## **STEP 2**:  Review
+The step above copied the GoldenGate configuration files to the GG Home directories, under ./dirprm.
 1. Review the content of each of these files to explore how GoldenGate is being configured.
 
     ````
@@ -74,7 +74,7 @@ The step above copied the GoldenGate configuration files to the GG Home director
   ````
 *Brian where are the commands??? You have to put the text as well, the image is not enough*
 
-  ![](./images/e2.png)
+  ![](./images/e2.png " ")
 
 3.  In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
   ````
@@ -83,7 +83,7 @@ The step above copied the GoldenGate configuration files to the GG Home director
   </copy>
   ````
 *Brian where are the commands??? You have to put the text as well, the image is not enough*
-  ![](./images/e3.png)
+  ![](./images/e3.png " ")
 
 4.  In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
@@ -93,54 +93,54 @@ The step above copied the GoldenGate configuration files to the GG Home director
   </copy>
   ````
 *Brian where are the commands??? You have to put the text as well, the image is not enough*
-  ![](./images/e4.png)
-  ![](./images/e5.png)
+  ![](./images/e4.png " ")
+  ![](./images/e5.png " ")
 
 **Step8:** Now that the source side is setup, let’s configure GG on the target side (Kafka).
 
 **Step9:** In the GG for Hadoop session, you’ll need to modify the Kafka properties by removing the ‘---‘ from the highlighted values:
 
-![](./images/e6.png)
+![](./images/e6.png " ")
 
 **Step10:** Now create the Kafka replicat process:
 
-![](./images/e7.png)
+![](./images/e7.png " ")
 
 **Before we start the GG Kafka replicat process, we need to start the Kafka Broker. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):**
 
-![](./images/e8.png)
+![](./images/e8.png " ")
 
 **Step11:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
-![](./images/e9.png)
+![](./images/e9.png " ")
 
 **Step12:** Now that GG processes have been created and the Kafka Broker has been started, let’s start the GG replicat for Kafka. Go back to the GG Home for Hadoop ggsci session:
 
-![](./images/e10.png)
+![](./images/e10.png " ")
 
 **Step13:** Now go back to the previous session, where you ran ‘showtopics’; we’ll load some data on the MySQL database ‘ggsource’ and GG will extract and write it to the Kafka topics.
 
-![](./images/E11.png)
+![](./images/E11.png " ")
 
 **Step14:** Also take a look at the Kafka schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
 
-![](./images/e12.png)
+![](./images/e12.png " ")
 
 **Step15:** Next we’ll apply more DML to the source, then we’ll consume the emp topic, and see the additional data get appended to the topic. Run this from another session, since the consumetopic command runs in the foreground, and outputs the results. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
-![](./images/e13.png)
+![](./images/e13.png " ")
 
 **Step16:** Now go back to the previous session, and run the DML script:
 
-![](./images/e14.png)
+![](./images/e14.png " ")
 
 **Step17:** Now go back to the session running ‘consumetopic gg2kafka_json.emp’, you should see the new messages written to the emp topics. Scroll up to see "op-type" "U" or "D". For Updates, GG will write the before and after image of the operation
 
-![](./images/e15.png)
+![](./images/e15.png " ")
 
 **Step18:** Let’s confirm that GG replicated the data that it captured. In the GG for Hadoop home
 
-![](./images/e16.png)
+![](./images/e16.png " ")
 
 
 
