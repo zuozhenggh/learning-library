@@ -1,4 +1,4 @@
-# Lab 3: Streaming Retail data
+# Streaming Retail data
 
 ## Introduction
 In this scenario we are working with a retailer who is running promotions in a specific geographic area offering their customers discounts.  They are providing us a few data points from various sources and would like to run analytics on this data and send the results downstream.  The input data includes an order history and customer details, location of the customers, product details, the geographic area where they are running their promotions and a Machine Learning model.
@@ -295,7 +295,7 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 6. Again the column should be renamed to **LikelyBuyersByCustomerType**.  
 7. Now **Add a GroupBy** and select **CustomerType**.
 
-8. Repeat the same steps and **Add a Summmary** with condition **Count_of_RedeemPrediction** but this time rename it to **LikelyBuyersByZipCode**.
+8. Repeat the same steps and **Add a Summary** with condition **Count_of_RedeemPrediction** but this time rename it to **LikelyBuyersByZipCode**.
 
 9. Click on the **Visualizations** tab and create a **Pie** chart for the **LikelyBuyersByCustomerType** and a **Bar** chart for the **LikelyBuyersByZipCode**.
 
@@ -309,7 +309,7 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 
 * **Author** - Hadi Javaherian, Solution Engineer
 * **Contributors** - Shrinidhi Kulkarni, Solution Engineer
-* **Last Updated By/Date** - Hadi Javaherian, Septembe 2020
+* **Last Updated By/Date** - Hadi Javaherian, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
