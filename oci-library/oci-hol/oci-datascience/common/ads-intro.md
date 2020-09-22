@@ -157,7 +157,7 @@ You may now *proceed to the next lab*.
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**: 
-* [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, September 2020
+    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, September 2020
 
 ## See an issue?
 

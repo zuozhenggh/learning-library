@@ -15,7 +15,7 @@ This lab assumes you have:
 * A tenancy that is configured to work with the Data Science service.
 * An account that has permission to create a Data Science Project.
 
-## Creating a Project
+## **Step 1:** Creating a Project
 
 You create a Data Science project to organize your notebook sessions and models within your project.
 

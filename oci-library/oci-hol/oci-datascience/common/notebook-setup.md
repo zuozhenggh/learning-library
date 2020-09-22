@@ -21,7 +21,7 @@ This lab assumes you have:
 * A Project, VCN and subnet configured.
 * An account that has permission to create a Data Science notebook session.
 
-## Creating a Notebook Session
+## **Step 1:** Creating a Notebook Session
 
 1. [Login to the Console](https://www.oracle.com/cloud/sign-in.html).
 1. Open the navigation menu.
@@ -43,7 +43,7 @@ This lab assumes you have:
 
 While the notebook session is being created, you can navigate away from the current page.
 
-## Opening a Notebook Session
+## **Step 2:** :wqOpening a Notebook Session
 
 Once the notebook session has been created the notebook session page will show the notebook in an **Active** or **Inactive** state. To open the notebook:
 
