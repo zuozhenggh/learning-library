@@ -116,7 +116,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
       1. Use an existing or generate a new ssh key. Paste the public key pair.
 
-        For more information on ssh keys, visit: [Generating an SSH Key Pair](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)
+      For more information on ssh keys, visit: [Generating an SSH Key Pair](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html)
 
     j. **EBS Cloud Manager Availability Domain**: Choose the availability domain that ends in **-1** from the list
 
@@ -147,7 +147,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
   After the job succeeds, you will have all the network resources (VCN, load balancer, subnets, and so on) required to deploy the Oracle E-Business Suite Cloud Manager Compute instance.
 
-11. On the **Application Information** tab you will find the details related to the EBS Cloud Manager instance and Load balancer.
+11. On the **Application Information** tab you will find the details related to the EBS Cloud Manager Instance and Load Balancer.
 
   ![](./images/10.png " ")
 
@@ -159,7 +159,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
 ## **Step 3:** Log in to Oracle E-Business Suite Cloud Manager
 
-Before login in to the Oracle E-Business Suite Cloud Manager web application, you need to add the **hostname** in the Login URL to your local computer hosts file.
+Before logging into the Oracle E-Business Suite Cloud Manager web application, you need to add the **hostname** in the Login URL to your local computer hosts file.
 
 Follow the instructions below to perform this configuration:
 
@@ -189,17 +189,19 @@ Edit the local ``hosts`` file on your laptop and add an entry.
 
   1. Open a Terminal Window.
 
-  2. Enter the following command: ``$ sudo vi /etc/hosts``
+  2. Enter the following command: ``$ sudo vi /etc/hosts`` 
+  
+  This will then require your local computer password to edit the file. Enter and you should see a screen similar to the one shown below.
 
   3. Click 'i' to edit the file. 
   
-  4. Go to the last line and add the following entry: ``<lb_public_ip> myebscm.ebshol.org``
+  4. Go to the last line and add the following entry as show below: ``<lb_public_ip> myebscm.ebshol.org``
 
   5. Once you have finished editing the file hit 'esc' and type ':wq' to save and exit.
 
   ![](./images/13.png " ")
 
-Use the Login URL generated and documented to your key-data.txt previously. 
+Type the Login URL generated and documented to your key-data.txt previously into your browser. 
 
 Log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials for the EBS Cloud Manager account as documented in your ``key-data.txt`` file.
 
