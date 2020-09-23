@@ -19,6 +19,7 @@ If you need any help please join the databasehome.slack.com (#microservices) cha
 
 ## Want to Learn More?
 
+* [Watch a video demonstration of this lab](https://tinyurl.com/helidonoracledb-msdataworkshop)
 * [Multitenant Database – Oracle 19c](https://www.oracle.com/database/technologies/multitenant.html)
 * [Oracle Advanced Queuing](https://docs.oracle.com/en/database/oracle/oracle-database/19/adque/aq-introduction.html)
 * [Microservices Architecture with the Oracle Database](https://www.oracle.com/technetwork/database/availability/trn5515-microserviceswithoracle-5187372.pdf)
