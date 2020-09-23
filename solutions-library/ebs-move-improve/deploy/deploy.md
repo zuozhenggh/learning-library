@@ -17,7 +17,7 @@ Estimated Lab Time: 30 minutes
 * Tenancy Admin Password
 * Lab 1 for preparing your tenancy completed with your IDCS information documented in your key-data.txt file. 
 
-  - Cloud Manager_Admin_Username
+  - Cloud_Manager_Admin_Username
   - Cloud_Manager_Admin_Password 
   - Client_Tenant
   - Client_ID 
