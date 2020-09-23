@@ -42,9 +42,9 @@ Estimated Lab Time: 30 minutes
 
     c. In the Add Group dialog box (Step 1: Group Details), supply the following information:
 
-      1. Name: Enter the name idcs-ebscm-grp
+      1. **Name**: Enter the name idcs-ebscm-grp
 
-      2. Description: Enter a description of your choice.
+      2. **Description**: Enter a description of your choice.
 
     ![](./images/add-group-2.png " ")
 
@@ -60,15 +60,15 @@ Estimated Lab Time: 30 minutes
 
     c. In the Add User dialog box (Step 1: Add User Details), supply the following information:
 
-      1. First Name: Enter EBS Cloud Manager
+      1. **First Name**: Enter EBS Cloud Manager
 
-      2. Last Name: Enter Administrator
+      2. **Last Name**: Enter Administrator
 
-      3. User Name: Enter ebscm.admin@example.com
+      3. **User Name**: Enter ebscm.admin@example.com
 
-      4. Deselect the check box Use email address as the user name.
+      4. **Use the email address as the user name**: Deselect the check box
 
-      5. Email: Use the same email addressed you used when registering.
+      5. **Email**: Use the same email addressed you used when registering.
 
     ![](./images/user-details.png " ")
 
@@ -181,7 +181,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
       1. Click Add.
 
-            ![](./images/configure-app-2.png " ")
+        ![](./images/configure-app-2.png " ")
 
       2. Select **Authenticator Client** and **Me** in the pop-up window.
 
@@ -200,9 +200,9 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 14. Make note of the following values in your ``key-data.txt`` file (under ``Client_ID`` and ``Client_Secret``, respectively) when they are displayed in a pop-up window:
 
-    a. Client ID
+    a. **Client ID**
 
-    b. Client Secret
+    b. **Client Secret**
 
     ![](./images/client-id.png " ")
 
