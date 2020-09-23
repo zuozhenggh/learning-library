@@ -193,7 +193,7 @@ Edit the local ``hosts`` file on your laptop and add an entry.
   
   This will then require your local computer password to edit the file. Enter and you should see a screen similar to the one shown below.
 
-  3. Enter 'i' to edit the file. 
+  3. Type 'i' to edit the file. 
   
   4. Go to the last line and add the following entry as show below: ``<lb_public_ip> myebscm.ebshol.org``
 
