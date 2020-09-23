@@ -207,7 +207,7 @@ end;
 
 ## **Step 4**: Run the `test_proc` Procedure Concurrently on Three Worksheets
 
-1. Now run the `test_proc` procedure concurrently on the 3 worksheets you created using the HIGH consumer group. To open multiple SQL Developer Web worksheets, click on the SQL Developer button on the console multiple times. Each time you click it, a separate window/tab will be opened in the browser. Execute the following command in each worksheet. It will run for about 4.5 minutes on a 1 OCPU system.
+1. Now run the `test_proc` procedure concurrently on the 3 worksheets you created using the HIGH consumer group. To open multiple SQL Developer Web worksheets, click on the SQL Developer button on the console multiple times. Each time you click it, a separate window/tab will be opened in the browser. Execute the following command in each worksheet. It will run for about 4.5 minutes on a 1 OCPU system. 
 
 ````
 exec test_proc;
