@@ -181,7 +181,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
       1. Click Add.
 
-        ![](./images/configure-app-2.png " ")
+    ![](./images/configure-app-2.png " ")
 
       2. Select **Authenticator Client** and **Me** in the pop-up window.
 
