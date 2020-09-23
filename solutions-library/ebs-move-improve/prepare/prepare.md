@@ -1,18 +1,20 @@
 # Preparing Your Tenancy for Oracle E-Business Suite
 
 ## Introduction
-In this exercise, you will prepare your Oracle E-Business Suite environment. This exercise will take approximately 30 minutes to complete. 
+In this exercise, you will prepare your Oracle E-Business Suite environment.
 
-## Objectives 
+Estimated Lab Time: 30 minutes
+
+### Objectives
 * Setup EBS Cloud Manager Authentication with Identity Cloud Service (IDCS)
 * Create the EBS Cloud Manager Administrators group and user in IDCS
 * Register Oracle E-Business Suite Cloud Manager as a Confidential Application in IDCS
 
-## Prerequisites
+### Prerequisites
 * Tenancy Admin User
-* Tenancy Admin Password 
+* Tenancy Admin Password
 
-## Step 1. Setup EBS Cloud Manager Authentication with Identity Cloud Service (IDCS)
+## **Step 1:** Setup EBS Cloud Manager Authentication with Identity Cloud Service (IDCS)
 
 ### Part 1 - Create the EBS Cloud Manager Administrators group and user in IDCS
 
@@ -24,7 +26,7 @@ In this exercise, you will prepare your Oracle E-Business Suite environment. Thi
 
 4. Click on the link next to **Oracle Identity Cloud Service Console**.
 
-    ![](./images/idcs-console.png " ")
+  ![](./images/idcs-console.png " ")
 
 5. From the IDCS console, create your Oracle E-Business Suite Cloud Manager group:
 
@@ -33,10 +35,10 @@ In this exercise, you will prepare your Oracle E-Business Suite environment. Thi
     b. Click the **Add** button.
 
     c. In the Add Group dialog box (Step 1: Group Details), supply the following information:
-    
-         i. Name: Enter the name idcs-ebscm-grp
-     
-        ii. Description: Enter a description of your choice.
+
+      1. Name: Enter the name idcs-ebscm-grp
+
+      2. Description: Enter a description of your choice.
 
     d. Click **Finish**.
 
@@ -47,34 +49,34 @@ In this exercise, you will prepare your Oracle E-Business Suite environment. Thi
     b. Click **Add**.
 
     c. In the Add User dialog box (Step 1: Add User Details), supply the following information:
-    
-        i. First Name: Enter EBS Cloud Manager
 
-        ii. Last Name: Enter Administrator
+      1. First Name: Enter EBS Cloud Manager
 
-        iii. User Name: Enter ebscm.admin@example.com
+      2. Last Name: Enter Administrator
 
-        iv. Email: Use the same email addressed you used when registering.
+      3. User Name: Enter ebscm.admin@example.com
 
-        v. Deselect the check box Use email address as the user name.
-        
+      4. Email: Use the same email addressed you used when registering.
+
+      5. Deselect the check box Use email address as the user name.
+
     ![](./images/user-details.png " ")
-    
+
     d. Click **Next**.
-    
+
     e. On the Step 2: Assign User to Groups dialog window, select the check box for the group you just created (``idcs-ebscm-grp``).
-    
-    ![](./images/3.png " ")
-    
+
+      ![](./images/3.png " ")
+
     f. Click **Finish**.
-    
+
 7. From the IDCS console navigation menu, click **Security** to expand the menu. Then click **Administrators**.
 
 8. On the Administrators page:
-    
-    a. Expand the **Application Administrators** section.
-    
-    b. Click **Add**.
+
+  a. Expand the **Application Administrators** section.
+
+  b. Click **Add**.
 
     ![](./images/add-admins.png "")
 
@@ -84,9 +86,9 @@ In this exercise, you will prepare your Oracle E-Business Suite environment. Thi
 
 10. Click **OK**.
 
-```
-Note: The Cloud Manager administrator will register the app as a confidential application in the next section.
-```
+    ```
+    Note: The Cloud Manager administrator will register the app as a confidential application in the next section.
+    ```
 
 11. Log out of the IDCS console by clicking on your user avatar icon at the top right of your screen. Then, click **Sign Out**.
 
@@ -136,42 +138,42 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     b. Under **Allowed Grant Types**, select the following check boxes:
 
-        i. Client Credentials
+      1. Client Credentials
 
-        ii. Refresh Token
+      2. Refresh Token
 
-        iii. Authorization Code
-        
+      3. Authorization Code
+
     c. Save your cloud manager url in your ``key-data.txt`` file as ``Cloud_Manager_URL``
-    
-        i. Example: https://myebscm.ebshol.org:443
+
+        Example: https://myebscm.ebshol.org:443
 
     d. **Redirect URL**: ``<Cloud_Manager_URL>/cm/auth/callback``
 
-        i. Example: https://myebscm.ebshol.org:443/cm/auth/callback
+        Example: https://myebscm.ebshol.org:443/cm/auth/callback
 
     e. **Logout URL**: Leave this field empty.
 
     f. **Post-Logout Redirect URL**: ``<Cloud_Manager_URL>/cm/ui/index.html?root=login``
 
-        i. Example: https://myebscm.ebshol.org:443/cm/ui/index.html?root=login
+        Example: https://myebscm.ebshol.org:443/cm/ui/index.html?root=login
 
     g. Select the **Introspect** option for **Allowed Operations**.
 
-    ![](./images/client-configp1.png " ")
+        ![](./images/client-configp1.png " ")
 
     h. Under **Grant the client access to Identity Cloud Service Admin APIs**:
 
-        i. Click Add.
+      1. Click Add.
 
-        ii. Select Authenticator Client and Me in the pop-up window.
+      2. Select Authenticator Client and Me in the pop-up window.
 
-        iii. Click Add again.
+      3. Click Add again.
 
-    ![](./images/client-configp2.png " ")
+          ![](./images/client-configp2.png " ")
 
     i. Click **Next**.
-    
+
 12. On the Resources screen, click **Next**.
 
 13. On the Web Tier Policy screen, click **Next**.
@@ -180,9 +182,9 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 15. Make note of the following values in your ``key-data.txt`` file (under ``Client_ID`` and ``Client_Secret``, respectively) when they are displayed in a pop-up window:
 
-        i. Client ID
+    a. Client ID
 
-        ii. Client Secret
+    b. Client Secret
 
 16. Click **Close**.
 
@@ -200,10 +202,10 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** 
+- **Last Updated By/Date**
 
-- Quintin Hill, Cloud Engineering/Sept 2020 
+- Quintin Hill, Cloud Engineering/Sept 2020
 - Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
