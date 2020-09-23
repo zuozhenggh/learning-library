@@ -43,7 +43,7 @@ This lab assumes you have:
 
 While the notebook session is being created, you can navigate away from the current page.
 
-## **Step 2:** :wqOpening a Notebook Session
+## **Step 2:** Opening a Notebook Session
 
 Once the notebook session has been created the notebook session page will show the notebook in an **Active** or **Inactive** state. To open the notebook:
 
