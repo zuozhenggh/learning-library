@@ -39,6 +39,17 @@ You can check the status of the activity to provision the environment in the Act
 
 1. SSH to the newly created environment by following the instructions under “Administrator Access” in section “Access Your Oracle E-Business Suite Environment” in the Oracle by Example tutorial: [Performing Post-Provisioning and Post-Cloning Tasks for Oracle E-Business Suite on Oracle Cloud Infrastructure](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html)
 
+2. To log in through the web interface, you must initially set a password of your choice for the SYSADMIN user. After the SYSADMIN user is active with the new password, you can create new users or activate existing locked users. To enable the SYSADMIN user, run the following commands:
+
+``mkdir -p ~/logs
+cd  ~/logs
+sh /u01/install/APPS/scripts/enableSYSADMIN.sh``
+
+When prompted, enter a new password for the SYSADMIN user.
+The SYSADMIN user can now connect to Oracle E-Business Suite through the web interface and create new users or activate existing locked users.
+
+You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html#EnableandSetOracleE-BusinessAccountPasswords(ConditionallyRequired)) for more details.
+
 ## Part 4. Configure Local Hosts File and Log in to Oracle E-Business Suite
 
 1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to Networking > Load Balancers.
