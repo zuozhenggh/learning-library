@@ -44,7 +44,10 @@ You can check the status of the activity to provision the environment in the Act
 
 2. Once logged into your instance switch to oracle user and source your variables via the following command:
         
-       $ sudo su - oracle
+    ```
+    <copy>
+    sudo su - oracle
+    </copy>
         
     a. source for release 12.2
     
@@ -65,7 +68,7 @@ The SYSADMIN user can now connect to Oracle E-Business Suite through the web int
 
 You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html#EnableandSetOracleE-BusinessAccountPasswords(ConditionallyRequired)) for more details.
 
-## Part 4. Configure Local Hosts File and Log in to Oracle E-Business Suite
+## **Step 4:** Configure Local Hosts File and Log in to Oracle E-Business Suite
 
 1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to Networking > Load Balancers.
 
@@ -73,7 +76,7 @@ You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.o
 
 3. Edit the local hosts file on your laptop and add an entry.
 
-    **For Windows Users**
+**For Windows Users**
 
       1. Navigate to Notepad in your start menu.
 
@@ -93,7 +96,7 @@ You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.o
 
       8. Save the file.
 
-    **For Mac Users**
+**For Mac Users**
 
       1. Open a Terminal Window.
 
@@ -117,9 +120,9 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date**
-- Quintin Hill, Cloud Engineering/Sept 2020
-- Santiago Bastidas, Product Management Director/July 2020
+- **Authors:**  Quintin Hill, Cloud Engineering/Sept 2020
+- **Last Updated By/Date:**  Quintin Hill, Cloud Engineering/Sept 2020
+- **Contributors:** Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
