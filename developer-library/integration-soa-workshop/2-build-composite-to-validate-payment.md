@@ -350,56 +350,15 @@ The lab tutorial pdf document can also be found on the desktop of your OCI Linux
 ![](images/2/soa-tutorialpdf.png)
 
 
-## **Register the validate payment composite on SOA Service Bus**
 
-In previous section, you have completed the validatePayment process composite, you will now register this process composite on Service Bus.
-
-Service Bus will protect consumers of the validatePayment composite from routine changes such as deployment location and implementation updates. Service Bus will help scale the service to handle higher volume of requests and provide resiliency for the service if it needs to be taken down for routine maintenance.
-
-
-**Development Steps:**
-
-## **STEP 10**:  Create a new Service Bus application and new project **ValidatePayment.**. 
-
-![](images/2/ServiceBus-JDeveloper.png)
-
-[//]: # (click **Create Application**. )
-[//]: # (images/2/continue-to-create-application-wizard.png)
-
-[//]: # (Remove Steps 2 and 3)
-## **STEP 11**: Create folders and import artifacts, WSDL and XSD resource click **Create App**.
-
-![](images/2/ImportWSDL.png)
-    
-## **STEP 12**: Configure a business service for the ValidatePayment composite and review properties.
-    
-![](images/2/CreateBusinessService.png) 
-
-## **STEP 13**: Configure proxy and pipeline and wire to the business service. 
-
-Please review starting page 71 on the tutorial document.
-
-   ![](images/2/ConfigureProxy-and-Pipeline.png)
-
-## **STEP 14**: Test and Debug the end-to-end application.
-
-Review
-    ![](images/2/Deploy-and-Test.png)
-
-## **STEP 15**:   Test Console
-
- Review  
-    ![](images/2/ServiceBusProxyTesting.png)
-
-### Details: ###
+### Further reading: ###
   
-Please follow the construction details from <ins>**page 54 to 77**</ins>, in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf).
+Similar construction details can be reviewed <ins>**page 54 to 77**</ins>, in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf).
 
-![](images/2/soa-tutorialpdf.png)
 
 ## **Summary**
 
-Congratulations you completed your first SOA Suite 12c composite! in Part 1 and 2 for developing validate payment using SOA Composite approach.
+Congratulations you completed your first SOA Suite 12c composite! for validate payment with orchestration approach.
 
 You may proceed to the next lab.
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->

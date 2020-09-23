@@ -23,11 +23,11 @@
         },
         {
             "title": "Develop Process Order in SOA composite",
-            "filename": "./4-process-order-using-composite.md"
+            "filename": "./5-process-order-using-composite.md"
         },
         {
             "title": "Adding new channel for ordering in SOA composite",
-            "filename": "./5-add-new-channel-for-ordering.md"
+            "filename": "./4-add-new-channel-for-ordering.md"
         },
         {
             "title": "Packing and shipping composite application",
