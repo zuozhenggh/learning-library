@@ -39,8 +39,20 @@ You can check the status of the activity to provision the environment in the Act
 
 1. SSH to the newly created environment by following the instructions under “Administrator Access” in section “Access Your Oracle E-Business Suite Environment” in the Oracle by Example tutorial: [Performing Post-Provisioning and Post-Cloning Tasks for Oracle E-Business Suite on Oracle Cloud Infrastructure](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html)
 
-2. To log in through the web interface, you must initially set a password of your choice for the SYSADMIN user. After the SYSADMIN user is active with the new password, you can create new users or activate existing locked users. To enable the SYSADMIN user, run the following commands:
+2. Once logged into your instance switch to oracle user and source your variables via the following command:
+        
+        sudo su - oracle
+        
+    a. source for release 12.2
+    
+        . /u01/install/APPS/EBSapps.env run 
+        
+    b. source for release 12.1.3
+    
+        . /u01/install/APPS/apps_st/appl/APPS_<CONTEXT_NAME>.env run
 
+3. To log in through the web interface, you must initially set a password of your choice for the SYSADMIN user. After the SYSADMIN user is active with the new password, you can create new users or activate existing locked users. To enable the SYSADMIN user, run the following commands:
+        
         mkdir -p ~/logs
         cd  ~/logs
         sh /u01/install/APPS/scripts/enableSYSADMIN.sh
