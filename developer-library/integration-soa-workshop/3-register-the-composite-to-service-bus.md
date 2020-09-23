@@ -206,7 +206,7 @@ The Pipeline wizard will walk you through the next steps. The title will show yo
 + Click the Save All icon on top left of your screen.
 + 
 
-## **STEP 5**: Test and Run diagnostic of end-to-end application.
+## **STEP 5**: Run diagnostic of the composite application.
 
 To deploy and test end-to-end, ensire the Integrated Server is running.
 
