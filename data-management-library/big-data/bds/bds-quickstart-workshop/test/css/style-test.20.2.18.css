@@ -1,8 +1,8 @@
 /*
 Author: Ashwin Agarwal
 Contributors: Tom McGinn, Suresh Mohan
-Last updated: 23-Sep-2020
-Version: 20.2.20
+Last updated: 21-Sep-2020
+Version: 20.2.18
 */
 
 
@@ -135,7 +135,7 @@ a:active {
     height: 32px;
     display: block;
     position: absolute;
-    right: 20px;    
+    right: 20px;
 }
 
 
@@ -935,64 +935,6 @@ pre .copy-button:hover {
     display: block;
 }
 
-
-#qa-report {
-    z-index: 60;
-    right: 5px; 
-    top: 5px;
-    position: fixed;
-    background: white;
-    width: 300px;
-    padding: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-weight: 500;
-    border-radius: 4px;
-    border: 1px solid #AE562C;
-    max-height: 99%;
-    overflow: scroll;
-}
-
-#qa-reportheader {
-  cursor: move;
-  font-size: 14px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-#qa-report li {
-    font-size: 12px;
-    margin-bottom: 12px;
-    margin-left: -20px;
-}
-
-#qa-report p {
-    font-size: 12px;
-    margin-bottom: 12px; 
-}
-
-#contentBox .format-error {
-    border: solid 3px blue;
-    padding: 10px;
-}
-
-#contentBox .error {
-    border: solid 3px red;
-    padding: 10px;
-}
-
-.major-error {
-    color: red;
-}
-
-.minor-error {
-    color: blue;
-}
-
-#qa-report small {
-    cursor: pointer;
-}
-
 @media (min-width: 1140px) {
     figure>img,
     img,
@@ -1023,20 +965,7 @@ pre .copy-button:hover {
     }
 
     .hol-Nav-list > li {
-        padding: 15px;
-        padding-left: 28px;
-    }
-
-    .toc .toc-item {
-        padding-bottom: 6px;
-    }
-
-    .toc {
-        padding-top: 10px;
-    }
-
-    #qa-report {
-        width: 220px;
+        padding-left: 21px;
     }
 
     p, body, .hol-Header-logo, pre, pre code span.copy-code {
@@ -1058,44 +987,12 @@ pre .copy-button:hover {
 }
 
 @media (max-width: 768px) {
-    #qa-report {
-        display: none
+    p, body, .hol-Header-logo, pre, pre code span.copy-code {
+        font-size: 13px;
     }
 
-    .format-error, .error {
-        padding: initial;
-        border:initial;
-    }
-
-    h1 {
-        font-size: 16px;
-        line-height: 24px;
-        margin-top: 0px;
-        margin-bottom: 12px;
-    }
-
-    p, body, pre, pre code span.copy-code {
-        font-size: 10.5px;
-        margin-bottom: 12px;
-    }
-
-    h2.plus, h2.minus, h2:not(.plus):not(.minus) {
-        font-size: 14px;
-        line-height: 20px;
-        padding-top: 5px;
-        margin-bottom: 10px;
-    }
-
-    h3 {
-        font-size: 12px;
-        line-height: 18px;
-        margin-bottom: 8px;
-    }
-
-    h4, h5, h6 {
-        font-size: 11px;
-        line-height: 14px;
-        margin-bottom: 4px;
+    h2.plus, h2.minus {
+        font-size: 20px;
     }
 
     th, td {
@@ -1103,37 +1000,19 @@ pre .copy-button:hover {
     }
 
     .hol-Header-wrap {
-        margin-left: 2px;
-        margin-right: 8px;
         padding-left: 0px;
         padding-right: 0px;
     }
 
-    .hol-Header-button {
-        min-height: 20px;
-        min-width: 30px;
-        padding: 7px;
-        margin-left: 2px;
-
-    }
-
-    .hol-Header-logo:before {        
+    .hol-Header-wrap {
+        margin-left: 8px;
         margin-right: 8px;
-        background-size: 27px;
-        width: 27px;
-        height: 18px;
-    }
-
-    .hol-Header-logo {
-        padding-left: 0px;
-        font-size: 12px;
-        margin-right: 32px;
     }
 
     #leftNav-toc.open, #leftNav.open {
-        width: 150px;
+        width: 180px;
     }
-  
+
     #contentBox {
         padding-left: 20px;
         padding-right: 20px;
@@ -1149,64 +1028,60 @@ pre .copy-button:hover {
         max-width: 100%;
     }
 
-    .hol-Nav-list {
-        padding-left: 0px;
-    }
-
     .hol-Nav-list > li {
-        padding: 8px;
         padding-left: 21px;
-        font-size: 9.5px;
-    }
-
-    .toc .toc-item {
-        font-size: 9px;
-        padding-bottom: 4px;
-    }
-
-    .toc {
-        padding-top: 4px;
-    }
-
-    .arrow {
-        font-size: 14px;
     }
 
     .toc ul {
         padding-left: 2px;
-        margin-bottom: 2px;
+        margin-bottom: 6px;
     }
-
     #tutorial-title {
         display: contents;
     }
+}
 
-    .hol-ToggleRegions {
-        margin-bottom: 11px;
-        font-size: 11px;
-        line-height: 12px;
-        font-weight: 600;
-        padding: 9px 11px;
-        min-width: auto;        
-    }
+#qa-report {
+    z-index: 60;
+    right: 5px;
+    top: 5px;
+    position: fixed;
+    background: white;
+    width: 300px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 1px solid #AE562C;
+    max-height: 99%;
+    overflow: scroll;
+}
 
-    #livelabs {
-        right: 10px;
-        background-size: 28px;
-        height: 28px;
-        width: 28px;
-    }
+#qa-reportheader {
+  cursor: move;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
-    #tutorial-title {
-        display: none;
-    }
+#qa-report li {
+    font-size: 12px;
+    margin-bottom: 12px;
+    margin-left: -20px;
+}
 
-    pre .copy-button {
-        font-size: 9px;
-        min-width: auto;
-    }
+#qa-report p {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
 
-    .arrow {
-        margin-left: -16px;
-    }
+.format-error {
+    border: solid 3px blue;
+    padding: 20px;
+}
+
+.error {
+    border: solid 3px red;
+    padding: 20px;
 }

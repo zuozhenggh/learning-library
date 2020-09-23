@@ -1,14 +1,14 @@
 /*
 Author: Ashwin Agarwal
 Contributors: Tom McGinn, Suresh Mohan
-Last updated: 23-Sep-2020
-Version: 20.2.20
+Last updated: 19-Sep-2020
+Version: 20.2.16
 */
 "use strict";
 var showdown = "https://oracle.github.io/learning-library/common/redwood-hol/js/showdown.min.js";
 
 let main = function() {
-    let manifestFileName = "manifest.json";
+    const manifestFileName = "manifest.json";
     const expandText = "Expand All Steps";
     const collapseText = "Collapse All Steps";
     const copyButtonText = "Copy";
@@ -26,70 +26,51 @@ let main = function() {
 
     $(document).ready(function() {
         let manifestFileContent;
-        if (getParam("manifest")) {
-            manifestFileName = getParam("manifest");
-        }
         $.when(
             $.getScript(showdown, function() {
                 console.log("Showdown library loaded!");
             }),
-            $.getJSON(manifestFileName, function(manifestFile) {                
-                if (manifestFile.workshoptitle !== undefined) { // if manifest file contains a field for workshop title
-                    document.getElementsByClassName("hol-Header-logo")[0].innerText = manifestFile.workshoptitle; // set title in the HTML output (DBDOC-2392)
+            $.getJSON(manifestFileName, function(manifestFile) {
+                manifest_global = manifestFileContent = manifestFile; //reading the manifest file and storing content in manifestFileContent variable
+                if (manifestFileContent.workshoptitle !== undefined) { // if manifest file contains a field for workshop title
+                    document.getElementsByClassName("hol-Header-logo")[0].innerText = manifestFileContent.workshoptitle; // set title in the HTML output (DBDOC-2392)
                 }
                 console.log("Manifest file loaded!");
-
-
-                if(getParam("manifest")) {
-                    $(manifestFile.tutorials).each(function() {
-                        if($(this)[0].filename.indexOf("http") == -1) {
-                            $(this)[0].filename = manifestFileName.substring(0, manifestFileName.lastIndexOf("/") + 1) + $(this)[0].filename;
-                        }
-                    });
-                }
-
-                // added for include feature: [DBDOC-2434] Include any file inside of Markdown before rendering
-                for (let short_name in manifestFile.include) {                                    
-                    $.get(manifestFile.include[short_name], function(included_file_content) {                        
-                        manifestFile.include[short_name] = included_file_content;
-                    });
-                }                                
-                manifest_global = manifestFileContent = manifestFile; //reading the manifest file and storing content in manifestFileContent variable   
-            }),
-        ).done(function() {            
+            }).fail(function() {
+                // alert("manifest.json file was not loaded. The manifest file should be co-located with the index.html file. If the file is co-located, check that the json format of the file is correct.");
+            })
+        ).done(function() {
             init();
             let selectedTutorial = setupTutorialNav(manifestFileContent); //populate side navigation based on content in the manifestFile
             let articleElement = document.createElement('article'); //creating an article that would contain MD to HTML converted content
-            
+
             loadTutorial(articleElement, selectedTutorial, manifestFileContent, toggleTutorialNav);
             prepareToc(manifestFileContent);
 
             setTimeout(function() {
                 if(location.hash.slice(1))
                     expandSectionBasedOnHash($("li[data-unique='" + location.hash.slice(1) + "']"));
-
-                // if($('#leftNav-toc').hasClass('scroll'))
-                $('.selected')[0].scrollIntoView(true);      
-
+                $('.selected')[0].scrollIntoView(true);
             }, 1000);
         });
     });
 
     // specifies when to do when window is scrolled
     $(window).scroll(function() {
-        // if ($('#contentBox').height() > $('#leftNav-toc').height() || ($('#leftNav-toc').height() + $('header').height()) > $(window).height()) { 
-        if (($('#contentBox').outerHeight() + $('header').outerHeight() + $('footer').outerHeight()) > $(window).outerHeight()) {    
+
+        if ($('#contentBox').height() > $('#leftNav-toc').height() || ($('#leftNav-toc').height() + $('header').height() + 1) >= $(window).height()) {
             $('#leftNav-toc').addClass("scroll");
 
             if (($(window).scrollTop() + $(window).height()) > $('footer').offset().top) {//if footer is seen
                 $('#leftNav-toc').css('max-height', $('footer').offset().top - $('#leftNav-toc').offset().top);
             }
-            else {
+            else
                 $('#leftNav-toc').css('max-height', $(window).height() - $('header').height());
-            }
-        }
-        else {
-            $('#leftNav-toc').removeClass("scroll");            
+                // $('#leftNav-toc').css('max-height', $(window).height() - $('#leftNav-toc').offset().top + $(window).scrollTop());
+
+        } else {
+            $('#leftNav-toc').removeClass("scroll");
+            $('#leftNav-toc').css('max-height', '');
         }
 
         try {
@@ -121,7 +102,7 @@ let main = function() {
             $('#mySidenav').hide();
         $('.hol-Header-actions').prependTo('.hol-Header-wrap').show();
         $('<div id="tutorial-title"></div>').appendTo(".hol-Header-logo")[0];
-        
+
         $('#openNav').click(function() {
             let nav_param = getParam(nav_param_name);
             if (!nav_param || nav_param === 'open') {
@@ -134,18 +115,15 @@ let main = function() {
 
         $('.hol-Footer-topLink').after($(document.createElement('a')).addClass('hol-Footer-rightLink hide'));
         $('.hol-Footer-topLink').before($(document.createElement('a')).addClass('hol-Footer-leftLink hide'));
-        $('#contentBox').css('min-height', $(window).height() - $('header').outerHeight() - $('footer').outerHeight());
     }
     // the main function that loads the tutorial
-    let loadTutorial = (articleElement, selectedTutorial, manifestFileContent, callbackFunc=null) => {        
+    let loadTutorial = (articleElement, selectedTutorial, manifestFileContent, callbackFunc=null) => {
         $.get(selectedTutorial.filename, function(markdownContent) { //reading MD file in the manifest and storing content in markdownContent variable
             console.log(selectedTutorial.filename + " loaded!");
 
             markdownContent = singlesource(markdownContent, selectedTutorial.type); // implement show/hide feature based on the if tag (DBDOC-2430)
-            markdownContent = include(markdownContent, manifestFileContent.include); // added for include feature: [DBDOC-2434] Include any file inside of Markdown before rendering
             markdownContent = convertBracketInsideCopyCode(markdownContent); // converts <> tags inside copy tag to &lt; and &gt; (DBDOC-2404)
             markdownContent = addPathToImageSrc(markdownContent, selectedTutorial.filename); //adding the path for the image based on the filename in manifest
-            markdownContent = addPathToTypeHrefs(markdownContent); // if type is specified in the markdown, then add absolute path for it.
 
             $(articleElement).html(new showdown.Converter({
                 tables: true
@@ -168,43 +146,20 @@ let main = function() {
                 articleElement = performQA(articleElement, markdownContent);
             }
         }).done(function() {
-            $("main").html(articleElement); //placing the article element inside the main tag of the Tutorial template  
-            setTimeout(setupContentNav, 0); //sets up the collapse/expand button and open/close section feature
-
+            $("main").html(articleElement); //placing the article element inside the main tag of the Tutorial template
             if (getParam("qa") == "true") {
                 dragElement(document.getElementById("qa-report"));
-            } else {                
-                collapseSection($("#module-content h2:not(:eq(0))"), "none"); //collapses all sections by default
-            }            
+            }
+            setTimeout(setupContentNav, 0); //sets up the collapse/expand button and open/close section feature
+            collapseSection($("#module-content h2:not(:eq(0))"), "none"); //collapses all sections by default
+            // setupTocNav();
 
             if (callbackFunc)
                 callbackFunc();
 
         }).fail(function() {
-            console.log(selectedTutorial.filename + ' not found! Please check that the file is available in the location provided in the manifest file.');
-        });        
-    }
-
-    // added for include feature: [DBDOC-2434] Include any file inside of Markdown before rendering
-    let include = (markdown, include) => {
-        for (let short_name in include) {
-            markdown = markdown.split("[](include:" + short_name + ")").join(include[short_name]);
-        }
-        return markdown;
-    }
-
-    let addPathToTypeHrefs = (markdown) => {
-        let regex_type = new RegExp(/\[(?:.+?)\]\((&type=(\S*?))\)/g);
-        let matches;
-                
-        do {
-            matches = regex_type.exec(markdown);  
-            if (matches !== null) {
-                markdown = markdown.replace(matches[1], setParam(window.location.href, "type", matches[2]));                    
-            }
-        } while(matches);
-        
-        return markdown;
+            // alert(selectedTutorial.filename + ' not found! Please check that the file is available in the location provided in the manifest file.');
+        });
     }
 
     let prepareToc = (manifestFileContent) => {
@@ -219,7 +174,6 @@ let main = function() {
 
             $.get(tutorial.filename, function(markdownContent) { //reading MD file in the manifest and storing content in markdownContent variable
                 markdownContent = singlesource(markdownContent, tutorial.type);
-                markdownContent = include(markdownContent, manifestFileContent.include);
 
                 do {
                     matches = h2_regex.exec(markdownContent);
@@ -231,10 +185,14 @@ let main = function() {
                                 location.hash = alphaNumOnly($(this).text());
                                 expandSectionBasedOnHash($(this).find('li').attr('data-unique'));
                             }
-                            else {                
-                                changeTutorial(createShortNameFromTitle($(this).parent().parent().find('span').text()), alphaNumOnly($(this).text()));                                
+                            else {
+                                changeTutorial(createShortNameFromTitle($(this).parent().parent().find('span').text()), alphaNumOnly($(this).text()));
+                                // setTimeout(function() {
+                                //     // alert($(this).find('li').attr('data-unique'));
+                                //     expandSectionBasedOnHash($(this).find('li').attr('data-unique'));
+                                // }, 1000);
                             }
-        
+
                         });
                         $(ul).appendTo(div);
                     }
@@ -251,37 +209,51 @@ let main = function() {
             if (anchorItem.length !== 0)
                 $(anchorItem)[0].click();
         }, 1000);
-        
+
 
         $(".hol-Nav-list>li").wrapInner("<div></div>")
         $(".hol-Nav-list>li>div").prepend($(document.createElement('div')).addClass('arrow').text('+'));
 
         $('.hol-Nav-list > li > div .arrow').click(function() {
             if($(this).text() === '-') {
-                $(this).next().next().fadeOut('fast', function() {
-                    $(window).scroll();         
-                });
+                $(this).next().next().fadeOut('fast');
                 $(this).text('+');
             } else {
-                $(this).next().next().fadeIn('fast', function() {
-                    $(window).scroll();
-                });
+                $(this).next().next().fadeIn('fast');
                 $(this).text('-');
             }
+            $(window).scroll();
         });
 
         $('.selected div.arrow').text('-');
         $('.hol-Nav-list > li:not(.selected) .toc').hide();
+
+
+
+
+
+        // /* for accessibility */
+        // $(".hol-Nav-list .selected > div").keydown(function(e) {
+        //     if (e.keyCode === 13 || e.keyCode === 32) { //means enter and space
+        //                 e.preventDefault();
+        //         $(this).click()
+        //     }
+        // });
+        // /* accessibility code ends here */
+
+        // $(window).scroll();
+        // $('#toc').appendTo(".hol-Nav-list .selected");
+        // $('.selected div.arrow').click();
     }
 
     let toggleTutorialNav = () => {
         let nav_param = getParam(nav_param_name);
 
         if (!nav_param || nav_param === 'open') {
-            $('.hol-Nav-list > li:not(.selected)').attr('tabindex', '0');
+            // $('.hol-Nav-list > li:not(.selected)').attr('tabindex', '0');
             $('#leftNav-toc, #leftNav, #contentBox').addClass('open').removeClass('close');
         } else if (nav_param === 'close') {
-            $('.hol-Nav-list > li:not(.selected)').attr('tabindex', '-1');
+            // $('.hol-Nav-list > li:not(.selected)').attr('tabindex', '-1');
             $('#leftNav-toc, #leftNav, #contentBox').addClass('close').removeClass('open');
         }
         setTimeout(function() {
@@ -296,7 +268,7 @@ let main = function() {
 
         $(manifestFileContent.tutorials).each(function(i, tutorial) {
             let shortTitle = createShortNameFromTitle(tutorial.title);
-            
+
             $(document.createElement('li')).each(function() {
                 $(this).click(function(e) {
                     if(!$(e.target).hasClass('arrow') && !$(e.target).hasClass('toc-item') && !$(e.target).hasClass('toc-item active')) {
@@ -342,7 +314,7 @@ let main = function() {
             if (getParam(queryParam) === createShortNameFromTitle(manifestFileContent.tutorials[i].title))
                 return manifestFileContent.tutorials[i+position];
         }
-        
+
         //if no title has selected class, selected class is added to the first class
         $('.hol-Nav-list').find('li:eq(0)').addClass("selected");
         return manifestFileContent.tutorials[0+position]; //return the first tutorial is no tutorial is matches
@@ -377,6 +349,23 @@ let main = function() {
         $(window).scroll();
         $('#toc').appendTo(".hol-Nav-list .selected");
         $('.selected div.arrow').click();
+
+
+
+        // $('.tocify-item').each(function() {
+        //     let itemName = $(this).attr('data-unique');
+        //     if ($(this) !== $('.tocify-item:eq(0)')) { //as the first section is not expandable or collapsible
+        //         $(this).click(function(e) { //if left nav item is clicked, the corresponding section expands
+        //             expandSectionBasedOnHash(itemName);
+        //         });
+        //     }
+        //     if (itemName === location.hash.slice(1)) { //if the hash value matches, it clicks it after some time.
+        //         let click = $(this);
+        //         setTimeout(function() {
+        //             $(click).click();
+        //         }, 1000)
+        //     }
+        // });
     }
 
     /* The following function performs the event that must happen when the lab links in the navigation is clicked */
@@ -393,7 +382,7 @@ let main = function() {
         let contentToReplace = []; // content that needs to be replaced
         let matches;
 
-        myUrl = myUrl.substring(0, myUrl.lastIndexOf('/') + 1); //removing filename from the url
+        myUrl = myUrl.replace(/\/[^\/]+$/, "/"); //removing filename from the url
 
         do {
             matches = imagesRegExp.exec(markdownContent);
@@ -404,7 +393,7 @@ let main = function() {
                 return markdownContent;
             }
 
-            // if (myUrl.indexOf("/") !== 1) {   
+            // if (myUrl.indexOf("/") !== 1) {
                 matches[1] = matches[1].split(' ')[0];
                 if (matches[1].indexOf("http") === -1) {
                     contentToReplace.push({
@@ -474,7 +463,7 @@ let main = function() {
     /*the following function sets target for all HREFs to _blank */
     let addTargetBlank = (articleElement) => {
         $(articleElement).find('a').each(function() {
-            if ($(this).attr('href').indexOf("http") === 0 && $(this).attr('href').indexOf("&type=") == -1) //ignoring # hrefs
+            if ($(this).attr('href').indexOf("http") === 0) //ignoring # hrefs
                 $(this).attr('target', '_blank'); //setting target for ahrefs to _blank
         });
         return articleElement;
@@ -632,17 +621,12 @@ let main = function() {
     let singlesource = (markdownContent, type) => {
         let ifTagRegExp = new RegExp(/<\s*if type="([^>]*)">([\s\S|\n]*?)<\/\s*if>/gm);
         let contentToReplace = []; // content that needs to be replaced
-
-        if (getParam("type") !== false) {
-            type = getParam("type");
-        }
-
         if ($.type(type) !== 'array')
             type = Array(type);
 
         let matches;
         do {
-            matches = ifTagRegExp.exec(markdownContent);            
+            matches = ifTagRegExp.exec(markdownContent);
             if (matches === null) {
                 $(contentToReplace).each(function(index, value) {
                     markdownContent = markdownContent.replace(value.replace, value.with);
@@ -703,7 +687,7 @@ let main = function() {
     /* set the query parameter value  */
     let setParam = (url, paramName, paramValue) => {
         let onlyUrl = (url.split('?')[0]).split('#')[0];
-        let params = url.replace(onlyUrl, '').split('#')[0]; 
+        let params = url.replace(onlyUrl, '').split('#')[0];
         let hashAnchors = url.replace(onlyUrl + params, '');
         hashAnchors = "";
 
@@ -730,7 +714,7 @@ let main = function() {
     /* The following function creates shortname from title */
     let createShortNameFromTitle = (title) => {
         if (!title) {
-            console.log("The title in the manifest file cannot be blank!");
+            // alert("The title in the manifest file cannot be blank!");
             return "ErrorTitle";
         }
         const removeFromTitle = ["-a-", "-in-", "-of-", "-the-", "-to-", "-an-", "-is-", "-your-", "-you-", "-and-", "-from-", "-with-"];
@@ -779,6 +763,90 @@ let main = function() {
         let error_div = $(document.createElement('div')).attr('id', 'qa-report').html("<div id='qa-reportheader'></div><div id='qa-reportbody'><ol></ol></div>");
         const more_info = "Please see <a href='https://confluence.oraclecorp.com/confluence/x/ep81Y' target='_blank'>using the LiveLabs template</a> for more information.";
 
+        let add_issue = (error_msg) => $(error_div).find('ol').append("<li>" + error_msg + "</li>");
+
+        let checkH1 = (article) => {
+            if ($(article).find('h1').length !== 1)
+                add_issue("Only a single title is allowed, please edit your Markdown file and remove or recast other content tagged with a single #.")
+        }
+
+        let checkForHtmlTags = (markdown) => {
+            let count = (markdown.match(new RegExp("<a href=", "g")) || []).length;
+            if (count > 0)
+                add_issue("Please do not embed HTML in Markdown. There is (are) " + count + " occurrence(s) of HTML in your Markdown.");
+        }
+
+        let checkSecondH2Tag = (article) => {
+            if ($(article).find('h2:eq(1)').text().substr(0, 4).indexOf("STEP") !== 0)
+                add_issue("The second H2 tag (##) of your Markdown file should be labeled with STEP (in all caps).");
+        }
+
+        let checkImages = (article) => {
+            $(article).find('img').each(function() {
+                if ($(this).attr('src').split('/')[$(this).attr('src').split('/').length - 2].indexOf("images") !== 0) {
+                    add_issue("Your images must be in an images folder. Please rename the folder and update your Markdown.");
+                    return false; // to break the each loop
+                }
+            });
+        }
+
+        let checkForCopyTag = (article) => {
+            let count = 0;
+            $(article).find('pre > code').each(function() {
+                if($(this).find('.copy-code').length == 0)
+                    count += 1;
+            });
+
+            if (count > 0) {
+                add_issue("You have " + count + " code block(s) (```) without a &lt;copy&gt; tag. Please review your Markdown and make the necessary changes.")
+            }
+        }
+
+        let checkCodeBlockFormat = (markdown) => {
+            let count = (markdown.match(/\````/g) || []).length;
+            if (count > 0) {
+                add_issue("Your Markdown file has " + count + " instances with 4 (````) codeblocks. This should be changed to 3 (```). Please review your Markdown and make the necessary changes.")
+            }
+        }
+
+        let updateCount = (article) => {
+            $(error_div).find('#qa-reportheader').text('Total Issues: ' + $(error_div).find('li').length);
+            if(!$(error_div).find('li').length) {
+                $(error_div).find('#qa-reportbody').hide();
+            } else {
+                $(error_div).find('#qa-reportbody').show();
+                if($(error_div).find('p').length === 0)
+                    $(error_div).append('<p>' + more_info + '</p>');
+            }
+        }
+
+        let checkLinkExists = (article) => {
+            $(article).find('a').each(function() {
+                let url = $(this).attr('href');
+                let url_text = $(this).text();
+                urlExists(url, function(exists) {
+                    if(!exists) {
+                        add_issue("This URL may be broken: <a href='" + url + "' target='_blank'>" + url_text + "</a>");
+                        updateCount(article);
+                    }
+                });
+            });
+        }
+
+        let checkImageExists = (article) => {
+            $(article).find('img').each(function() {
+                let url = $(this).attr('src');
+                console.log(url);
+                let url_text = $(this).attr('src').split('/')[$(this).attr('src').split('/').length - 1];
+                urlExists(url, function(exists) {
+                    if(!exists) {
+                        add_issue("The link to this image may be broken: <a href='" + url + "' target='_blank'>" + url_text + "</a>");
+                        updateCount(article);
+                    }
+                });
+            });
+        }
+
         let urlExists = (url, callback) => {
           $.ajax({
             type: 'HEAD',
@@ -792,159 +860,16 @@ let main = function() {
           });
         }
 
-        let add_issue = (error_msg, error_type = "", follow_id = false) => {            
-            if (follow_id) {                    
-                $(error_div).find('ol').append("<li class=" + error_type + ">" + error_msg + " <small onclick=\"window.scrollTo({top:$('." + follow_id + "').offset().top - ($('header').outerHeight() + 10), behavior: 'smooth'});\">(show)</small></li>");    
-            } else {
-                $(error_div).find('ol').append("<li class=" + error_type + ">" + error_msg + "</li>");    
-            }
-            
-        }
-
-        let checkH1 = (article) => {
-            if ($(article).find('h1').length !== 1) {
-                add_issue("Only a single title is allowed, please edit your Markdown file and remove or recast other content tagged with a single #.", "major-error");
-                $(article).find('h1').addClass('error');
-            }
-        }
-
-        let checkForHtmlTags = (markdown) => {
-            let count = (markdown.match(new RegExp("<a href=", "g")) || []).length;            
-            if (count == 1)
-                add_issue("There is " + count + " occurrence of HTML (for example: &lt;a href=...&gt;) in your Markdown. Please do not embed HTML in Markdown.");
-            else if (count > 1)
-                add_issue("There are " + count + " occurrences of HTML (for example: &lt;a href=...&gt;) in your Markdown. Please do not embed HTML in Markdown.");
-        }
-
-        let checkSecondH2Tag = (article) => {        
-            if ($(article).find('h2:eq(1)').text().substr(0, 4).indexOf("STEP") !== 0) {
-                $(article).find('h2:eq(1)').addClass(getFollowId());
-                add_issue("The second H2 tag (##) of your Markdown file should be labeled with STEP (in all caps).", "", getFollowId());
-            }
-        }
-
-        let checkImages = (article) => {
-            $(article).find('img').each(function() {
-                try {
-                    if ($(this).attr('src').split('/')[$(this).attr('src').split('/').length - 2].indexOf("images") !== 0) {
-                        add_issue("Your images must be in an <strong>images</strong> folder. Please rename the folder and update your Markdown.");
-                        return false; // to break the each loop
-                    }
-                } catch(e) {
-                    add_issue("Your images must be in an <strong>images</strong> folder. Please rename the folder and update your Markdown.");
-                    return false;
-                };
-            });
-        }
-
-        let checkForCopyTag = (article) => {
-            let count = 0;
-            $(article).find('pre > code').each(function() {
-                if($(this).find('.copy-code').length == 0) {
-                    count += 1;
-                    $(this).addClass(getFollowId());
-                    add_issue("You have a code block (```) without a &lt;copy&gt; tag. Please review your Markdown and make the necessary changes.", "", getFollowId());
-                }
-            });            
-        }
-
-        let checkCodeBlockFormat = (markdown) => {
-            let count = (markdown.match(/\````/g) || []).length;
-            if (count == 1) {
-                add_issue("Your Markdown file has " + count + " codeblock with 4 (````). This should be changed to 3 (```). Please review your Markdown and make the necessary changes.")
-            } else if (count > 1) {
-                add_issue("Your Markdown file has " + count + " codeblocks with 4 (````). This should be changed to 3 (```). Please review your Markdown and make the necessary changes.")
-            }
-        }
-
-        let updateCount = (article) => {
-            $(error_div).find('#qa-reportheader').html('Total Issues: ' + $(error_div).find('li').length);
-            if(!$(error_div).find('li').length) {
-                $(error_div).find('#qa-reportbody').hide();
-            } else {
-                $(error_div).find('#qa-reportbody').show();
-                if($(error_div).find('#qa-reportbody p').length === 0)
-                    $(error_div).find('#qa-reportbody').append('<p>' + more_info + '</p>');
-            }
-        }
-
-        let checkLinkExists = (article) => {
-            $(article).find('a').each(function() {
-                let url = $(this).attr('href');
-                let url_text = $(this).text();
-                urlExists(url, function(exists) {
-                    if(!exists) {                                                
-                        $('a[href$="' + url + '"]').addClass('error ' + getFollowId());                        
-                        add_issue("This URL may be broken: <a href='" + url + "' target='_blank'>" + url_text + "</a>", "major-error", getFollowId());
-                        updateCount(article);
-                    }
-                });
-            });
-        }
-
-        let checkImageExists = (article) => {
-            $(article).find('img').each(function() {
-                let url = $(this).attr('src');
-                let url_text = $(this).attr('src').split('/')[$(this).attr('src').split('/').length - 1];
-                urlExists(url, function(exists) {
-                    if(!exists) {                                                                    ;
-                        $('img[src$="' + url + '"]').addClass('error ' + getFollowId());                                                                        
-                        add_issue("The link to image <strong>" + url_text + "</strong> is broken.", "major-error", getFollowId())
-                        updateCount(article);
-                    }
-                });
-            });
-        }
-
-        let checkIfSectionExists = (article, section_name) => {
-            if ($(article).find('div[name="' + alphaNumOnly(section_name) + '"]').length === 0)
-                add_issue("You are missing <strong>" + section_name + "</strong> section.");
-        }
-
-        let checkIndentation = (article) => {            
-            $(article).find('section:not(:first-of-type)').each(function() {  
-                let tag_list = [];
-                if($(this).find('h2').text().toUpperCase().trim().indexOf("STEP") == 0) { 
-                    $(this).children().each(function() {
-                        tag_list.push($(this).prop('tagName'));
-                    });
-                    
-                    if($.inArray("UL", tag_list) !== -1 & $.inArray("OL", tag_list) == -1) {
-                        add_issue("In section <strong>" + $(this).find('h2').text() + "</strong>, your steps are not numbered. Numbered steps should follow your STEP element.", "minor-error");
-                        $(this).find('h2').addClass('format-error');              
-                    }
-
-                    if($.inArray("PRE", tag_list) > $.inArray("OL", tag_list)) {
-                        $(this).children('pre').addClass('format-error ' + getFollowId());
-                        add_issue("Your codeblock is not indented correctly. Add spaces to indent your codeblock.", "minor-error", getFollowId());                                                
-                    }
-                     
-                    $(this).find('img').each(function() {                     
-                        if($(this).parent().parent().prop('tagName').indexOf("LI") == -1 && $(this).parent().parent().prop('tagName').indexOf("OL") == -1 && $(this).parent().parent().prop('tagName').indexOf("UL") == -1) {                                                                        
-                            // $(this).parents('section').children('h2').addClass('format-error');                                                        
-                            $(this).addClass('format-error ' + getFollowId());                        
-                            add_issue("The image <strong>" + $(this).attr('src').split('/')[$(this).attr('src').split('/').length - 1] + "</strong> is not aligned with your text blocks. Add spaces to indent your image.", "minor-error", getFollowId());
-                        }
-                    });                    
-                }
-            });
-        }
-
-        let getFollowId = () => 'error_' + $(error_div).find('li').length;
-
         checkH1(articleElement);
         checkForHtmlTags(markdownContent);
+        checkSecondH2Tag(articleElement);
         checkImages(articleElement);
-        checkCodeBlockFormat(markdownContent);
-        checkSecondH2Tag(articleElement);        
         checkForCopyTag(articleElement);
-        if (!window.location.href.indexOf("localhost") && window.location.href.indexOf("127.0.0.1")) {
+        checkCodeBlockFormat(markdownContent);
+        if (!window.location.href.indexOf("localhost")) {
             checkLinkExists(articleElement);
         }
         checkImageExists(articleElement);
-        checkIfSectionExists(articleElement, "Acknowledgements");
-        checkIfSectionExists(articleElement, "See an issue?");
-        checkIndentation(articleElement);
         updateCount(articleElement);
 
         return $(articleElement).prepend(error_div);
