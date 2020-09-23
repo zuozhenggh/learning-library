@@ -41,9 +41,9 @@ You can check the status of the activity to provision the environment in the Act
 
 2. To log in through the web interface, you must initially set a password of your choice for the SYSADMIN user. After the SYSADMIN user is active with the new password, you can create new users or activate existing locked users. To enable the SYSADMIN user, run the following commands:
 
-``mkdir -p ~/logs
-cd  ~/logs
-sh /u01/install/APPS/scripts/enableSYSADMIN.sh``
+        mkdir -p ~/logs
+        cd  ~/logs
+        sh /u01/install/APPS/scripts/enableSYSADMIN.sh``
 
 When prompted, enter a new password for the SYSADMIN user.
 The SYSADMIN user can now connect to Oracle E-Business Suite through the web interface and create new users or activate existing locked users.
