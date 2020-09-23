@@ -54,7 +54,7 @@ If your organization performs intensive queries mostly for end of week or end of
 
     ![](./images/open-sql-developer-web.jpg)
 
-3. Open and save 4 worksheets: one using the LOW consumer group and three using the HIGH consumer group. In SQL Developer Web worksheets, you choose the consumer group from a drop-down menu in the upper right corner.
+3. Create and save 4 worksheets: one using the LOW consumer group and three using the HIGH consumer group. In SQL Developer Web worksheets, you choose the consumer group from a drop-down menu in the upper right corner.
     - You will use the worksheet with the LOW consumer group in STEP 2, to run the setup and query the test results.
     - You will use the three worksheets with the HIGH consumer group to run the test queries in later steps.
 
@@ -207,13 +207,13 @@ end;
 
 ## **Step 4**: Run the `test_proc` Procedure Concurrently on Three Worksheets
 
-1. Now run the `test_proc` procedure from 3 connections using the HIGH consumer group. It will run for about 4.5 minutes on a 1 OCPU system.
+1. Now run the `test_proc` procedure concurrently on the 3 worksheets you created using the HIGH consumer group. To open multiple SQL Developer Web worksheets, click on the SQL Developer button on the console multiple times. Each time you click it, a separate window/tab will be opened in the browser. Execute the following command in each worksheet. It will run for about 4.5 minutes on a 1 OCPU system.
 
 ````
 exec test_proc;
 ````
 
-2. While the procedures are running, look at the Monitored SQL to see that each of the 3 procedures is running a query 3 times.
+2. While the 3 procedure instances are running concurrently, look at the Monitored SQL to see that each procedure instance is running a query 3 times.
 
     ![](./images/monitored-sql-while-three-procedures-running.png " ")
 
