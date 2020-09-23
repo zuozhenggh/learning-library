@@ -43,7 +43,7 @@ You can check the status of the activity to provision the environment in the Act
 
         mkdir -p ~/logs
         cd  ~/logs
-        sh /u01/install/APPS/scripts/enableSYSADMIN.sh``
+        sh /u01/install/APPS/scripts/enableSYSADMIN.sh
 
 When prompted, enter a new password for the SYSADMIN user.
 The SYSADMIN user can now connect to Oracle E-Business Suite through the web interface and create new users or activate existing locked users.
