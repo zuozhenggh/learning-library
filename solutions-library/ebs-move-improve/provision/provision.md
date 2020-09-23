@@ -41,21 +41,21 @@ You can check the status of the activity to provision the environment in the Act
 
 2. Once logged into your instance switch to oracle user and source your variables via the following command:
         
-        sudo su - oracle
+       $ sudo su - oracle
         
     a. source for release 12.2
     
-        . /u01/install/APPS/EBSapps.env run 
+       $ . /u01/install/APPS/EBSapps.env run 
         
     b. source for release 12.1.3
     
-        . /u01/install/APPS/apps_st/appl/APPS_<CONTEXT_NAME>.env run
+       $ . /u01/install/APPS/apps_st/appl/APPS_<CONTEXT_NAME>.env run
 
 3. To log in through the web interface, you must initially set a password of your choice for the SYSADMIN user. After the SYSADMIN user is active with the new password, you can create new users or activate existing locked users. To enable the SYSADMIN user, run the following commands:
         
-        mkdir -p ~/logs
-        cd  ~/logs
-        sh /u01/install/APPS/scripts/enableSYSADMIN.sh
+       $ mkdir -p ~/logs
+       $ cd  ~/logs
+       $ sh /u01/install/APPS/scripts/enableSYSADMIN.sh
 
 When prompted, enter a new password for the SYSADMIN user.
 The SYSADMIN user can now connect to Oracle E-Business Suite through the web interface and create new users or activate existing locked users.
