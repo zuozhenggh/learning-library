@@ -207,21 +207,25 @@ end;
 
 ## **Step 4**: Run the `test_proc` Procedure Concurrently on Three Worksheets
 
-1. Now run the `test_proc` procedure concurrently on the 3 worksheets you created using the HIGH consumer group. To open multiple SQL Developer Web worksheets, click on the SQL Developer button on the console multiple times. Each time you click it, a separate window/tab will be opened in the browser. Execute the following command in each worksheet. It will run for about 4.5 minutes on a 1 OCPU system. 
+1. Now run the `test_proc` procedure concurrently on the 3 worksheets you created using the HIGH consumer group. To open 3 SQL Developer Web worksheets, go to the OCI console's Details page for your database, open the **Tools** tab and click the **Open SQL Developer Web** button on the console multiple times. Each time you click it, a new SQL Developer Web tab will open in the browser.
+
+    ![](./images/open-multiple-sql-dev-web-worksheets.png " ")
+
+2. Execute the following command in each worksheet. It will run for about 4.5 minutes on a 1 OCPU system.
 
 ````
 exec test_proc;
 ````
 
-2. While the 3 procedure instances are running concurrently, look at the Monitored SQL to see that each procedure instance is running a query 3 times.
+3. While the 3 procedure instances are running concurrently, look at the Monitored SQL to see that each procedure instance is running a query 3 times.
 
     ![](./images/monitored-sql-while-three-procedures-running.png " ")
 
-3. Now look at monitored SQL after the procedures have completed.
+4. Now look at monitored SQL after the procedures have completed.
 
     ![](./images/monitored-sql-after-three-procedures-have-completed.png " ")
 
-4. Run the script to see the rest results.
+5. Run the script to see the rest results.
 
 ```
 <copy>alter session set nls_date_format='DD-MM-YYYY HH24:MI:SS';
@@ -261,7 +265,7 @@ order by 1;
 </copy>
 ```
 
-5. Review the results of running the script:
+6. Review the results of running the script:
 
 ```
 TEST_NO CPU_COUNT SESSIONS QUERIES_FINISHED TEST_DURATION_IN_SECONDS TEST_START_TIME     AVG_QUERY_TIME MAX_CPU_USAGE
@@ -272,11 +276,11 @@ TEST_NO CPU_COUNT SESSIONS QUERIES_FINISHED TEST_DURATION_IN_SECONDS TEST_START_
 ```
 Even though there are 3 queries executing at the same time, the system has limited the CPU usage to ~1 CPU. As a result, the average query time is about 3X as long.
 
-5. Average Active Sessions shows 3 sessions using the high service.
+7. Average Active Sessions shows 3 sessions using the high service.
 
     ![](./images/average-active-sessions-shows-three-sessions.png " ")
 
-6. Switching to view by wait class, you can see that you have the same number of waits on CPU, and more on IO.
+8. Switching to view by wait class, you can see that you have the same number of waits on CPU, and more on IO.
 
     ![](./images/view-by-weight-class-three-sessions.png " ")
 
