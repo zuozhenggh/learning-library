@@ -117,23 +117,122 @@ There are different ways to create artifacts in Service Bus in JDeveloper:
   
 We will use the drag and drop Component Palette to build our first Service Bus project; however, feel free to experiment with other mechanisms.
 
-![](images/2/CreateBusinessService.png) 
++ Drag and drop the http icon from the right Component Palette on to the External References Lane.
+
++ ![](images/2/CreateBizSvc1.png)
+
+A wizard will walk you through the steps of configuring the Business Service. The title bar of the wizard dialog shows the step number.
+
++ Create Business Service 1 of 3
++ - Service Name: ValidateBS
++ - Location : Leave as default
+
++ ![](images/2/createbizsvc2.png)
+
++ Click Next.
+
++ Create Business Service 2 of 3
++ - Select Service Type: WSDL
++ ![](images/2/createbizsvc3.png)
++ Select the Plus icon on the right of the WSDL choice.
++ When the WSDL chooser appears, first, confirm that Application icon on the top is selected and expand Application node Application -> ValidatePayment -> WSDLs.
++ Select ValidatePayment-concrete.wsdl
++ ![](images/2/createbizsvc4.png)
++ Click Ok.
++ ![](images/2/CreateBusinessService.png) 
+
++ Confirm that ValidationPaymentPort is selected in the Port field when you return back to the wizard.
++ Click Next
++ Create Business Service 3 of 3
++ ![](images/2/createbizsvc5.png)
++ Confirm http is selected in the transport field
++ Confirm Endpoint URI* is pointed to the ValidatePayment composite app. It should look similar to:
++  http://localhost:7101/soa- infra/services/default/ValidatePayment/validatepaymentprocess_client_ep
+
++ Click Finish. The canvas would now resemble like:
+
++ ![](images/2/createbizsvc6.png)
+
++ \* To find the composite deployment URI, go to the EM console (http://localhost:7101/em) and navigate to your composite.
++ Click the Test icon on the top right of screen. This will bring up a Web Service test page that lists your deployed endpoint.
++ ![](images/2/createbizsvc7.png)
++ Should you need to update your endpoint URI, you can do this as you review the Business Service properties below in the Transport tab.
+
+Double-click on your new Business Service in the overview and review the settings for your new business service.
+There are settings for General Properties, Performance (Result Caching), Transport details, Policies for Security. 
++ + ![](images/2/createbizsvc8.png)
 
 ## **STEP 4**: Configure proxy and pipeline and wire to the business service. 
 
 Please review starting page 71 on the tutorial document.
 
+Let's create the Proxy and Pipeline to invoke the ValidateBS Business Service. The Proxy will be the interface to the service from external consumers. The Pipeline contains actions that must be performed before invoking the composite. Typical actions are data transform and validation, reporting with error handling; however, for your first Pipeline we will keep it simple.
+
++ Locate the Pipeline icon under Resources on the Component palette. Drag and drop the Pipeline icon from the right onto the middle of the canvas, labeled the “Pipelines/Split Joins” lane.
    ![](images/2/ConfigureProxy-and-Pipeline.png)
 
-## **STEP 5**: Test and Debug the end-to-end application.
+The Pipeline wizard will walk you through the next steps. The title will show you what step you are on.
 
-Review
++ Create Pipeline Service - 1 of 2
++ Service Name: ValidatePP
+
+![](images/2/configproxy1.png)
+
++ Click Next
++ Create Pipeline Service 2 of 2
++ Service Type: Choose WSDL
+
+![](images/2/configproxy2.png)
+
++ Click on the WSDL chooser icon plus sign on the right. NavigatetoApplication->ValidatePayment-> WSDLs directory and then select ValidatePayment-concrete.wsdl.
++ ![](images/2/configproxy3.png)
++ Click Ok.
++ Once back on Create Pipeline Service in 2 of 2:
++ - Ensure the Expose as Proxy Service checkbox is selected. This is the default.
++ - Proxy Name: ValidatePS
++ ![](images/2/configproxy4.png)
+  
++ Click Finish
++ The canvas should now look like the following:
++ 
++  ![](images/2/configproxy5.png)
++ Next, simply wire the Pipeline to invoke the Business Service.
++ Select ValidatePP and drag arrow to ValidateBS.
+
++ ![](images/2/configproxy6.png)
++ The Routing action is automatically configured for you in the Pipeline.
++ you could add some actions to the Pipeline to validate, transform the payload or report for auditing. This can be demonstrated in another section of the workshop.
+
++ Click the Save All icon on top left of your screen.
++ 
+
+## **STEP 5**: Test and Run diagnostic of end-to-end application.
+
+To deploy and test end-to-end, ensire the Integrated Server is running.
+
++ Bring Overview Editor back into focus. You can do this by double-click your project icon, in the Application Navigator or by selecting the ValidatePayment tab on top center.
++ ![](images/2/configproxy7.png)
+
++ This will bring up your overview and refresh the canvas.
++ Right-click on the ValidatePS in the Exposed Services Lane. Select Run.
     ![](images/2/Deploy-and-Test.png)
+
 
 ## **STEP 6**:   Test Console
 
- Review  
-    ![](images/2/ServiceBusProxyTesting.png)
++ The Test Console will activate as one of your windows in JDeveloper on Windows. On Linux, this may start a new browser window outside of JDeveloper. Make this window active by clicking on the title bar.
+
++ ![](images/2/deploytest1.png)
+
++ By default, a sample payload will be generated for you; however, we will test with a specific file.
++ Click the Choose File button. This may show up as a Browse button on Linux.
++ Navigate to ~/e2e-orderprocessing/sample_input/ and select PaymentInfoSample_Authorized.xml
++ Click Open.
++ On the Test console, Click on Execute button
+
++ ![](images/2/testing1.png)
+
+You could also run diagnostic in the Service Application leveraging the Debugger as was done previous module 2.
 
 ### More Details: ###
   
@@ -145,7 +244,7 @@ Please follow the construction details from <ins>**page 54 to 77**</ins>, in the
 
 Congratulations you've completed developing the validate payment service using SOA composite app and register it to Oracle Service Bus.
 
-You may proceed to the next lab.
+You may proceed to the next workshop.
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
 ## Acknowledgements
