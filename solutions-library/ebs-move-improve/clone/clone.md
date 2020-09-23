@@ -13,8 +13,7 @@ Estimated Lab Time: 15 minutes
 * Tenancy Admin User
 * Tenancy Admin Password
 
-
-## **Step 1:** Access the Clone Environment Page
+## **STEP 1:** Access the Clone Environment Page
 
 1. Navigate to the Cloud Manager Environments page.
 
@@ -47,7 +46,7 @@ Estimated Lab Time: 15 minutes
 
 8. You can check the status of the activity to clone the environment in the Activities page. The new environment is listed on the Environments page.
 
-## **Step 2:** Configure Local Host Files for the Cloned Environment and Log in to Oracle E-Business Suite
+## **STEP 2:** Configure Local Host Files for the Cloned Environment and Log in to Oracle E-Business Suite
 
 1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to Networking > Load Balancers.
 

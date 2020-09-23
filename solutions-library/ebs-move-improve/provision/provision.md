@@ -13,15 +13,16 @@ Estimated Lab Time: 45 minutes
 * Oracle E-Business Suite Cloud Manager application using the Login URL from key data.txt file
 * Oracle IDCS login credentials
 
+## **STEP 1:** Log in to EBS Cloud Manager
 
-## **Step 1:** Log in to EBS Cloud Manager
 1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your key-data.txt file.
 
 2. Log in with your Oracle Identity Cloud Service credentials.
 
   ![](./images/1.png " ")
 
-## **Step 2:** Provision an Environment Using One-Click Provisioning
+## **STEP 2:** Provision an Environment Using One-Click Provisioning
+
 1. On the Oracle E-Business Suite Cloud Manager Environments page, click Provision Environment and select One-Click.
 
 2. Enter and select the following details for your new environment.
@@ -38,7 +39,7 @@ Estimated Lab Time: 45 minutes
 
 You can check the status of the activity to provision the environment in the Activities page. The provisioning process will take approximately 30-35 minutes.
 
-## **Step 3:** Enable and Set Oracle E-Business Suite Account Passwords
+## **STEP 3:** Enable and Set Oracle E-Business Suite Account Passwords
 
 1. SSH to the newly created environment by following the instructions under “Administrator Access” in section “Access Your Oracle E-Business Suite Environment” in the Oracle by Example tutorial: [Performing Post-Provisioning and Post-Cloning Tasks for Oracle E-Business Suite on Oracle Cloud Infrastructure](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html)
 
@@ -68,7 +69,7 @@ The SYSADMIN user can now connect to Oracle E-Business Suite through the web int
 
 You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html#EnableandSetOracleE-BusinessAccountPasswords(ConditionallyRequired)) for more details.
 
-## **Step 4:** Configure Local Hosts File and Log in to Oracle E-Business Suite
+## **STEP 4:** Configure Local Hosts File and Log in to Oracle E-Business Suite
 
 1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to Networking > Load Balancers.
 
