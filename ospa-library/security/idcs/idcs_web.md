@@ -3,8 +3,6 @@
 
 ## STEP 1: Register the Sample Web Application with Oracle Identity Cloud Service 
 
-***IMPORTANT: As stated in the Lab Page due to privilege constraints, the steps below have been completed for you. You will be provided with the **client id** and **client secret** at the end of this section.***
-
 The sample web application needs a Client ID and Secret to establish communication with Oracle Identity Cloud Service. You also need to configure API permissions that must be granted to the sample web application. This section explains how to register the sample web application with Oracle Identity Cloud Service.
 
 1. In the Identity Cloud Service console, expand the Navigation Drawer Navigation Drawer, click Applications.

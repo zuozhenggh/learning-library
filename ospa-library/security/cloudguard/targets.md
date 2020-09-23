@@ -2,7 +2,7 @@
 
 ## STEP 1: Managing targets
 
-1.  Login to Cloud Guard using your SSO Credentials. You can use the following URL instead (https://console.us-phoenix-1.oraclecloud.com/cloud-guard/overview) to access the console directly.
+1.  Login to Cloud Guard using your Credentials. You can use the following URL instead (https://console.us-phoenix-1.oraclecloud.com/cloud-guard/overview) to access the console directly.
    
 2.  Select **Targets** and click on **Create New Target**
    
@@ -10,7 +10,7 @@
 
 3. Provide a **Target Name**, a Description, select your Luna Compartment *(Please refer to the previous steps on how to get your compartment information)*, Select the **Configuration Detector Recipe** created in the previous steps, Select the default **Activity Detector Recipe**, and finaly select the **Responder Recipe** created in the previous steps ass well. Click **Create**
 We recommend the following name convention for your responder:
- ***CoSE_Luna_[First Leter of your name and your last name]***
+ ***livelabs_[First Leter of your name and your last name]***
 
     ![](./images/11.png)
 

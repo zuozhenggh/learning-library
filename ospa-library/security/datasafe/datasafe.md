@@ -4,7 +4,7 @@
 
 ## STEP 1: Register databases with Data Safe
 
-1. Use your SSO credentials to login to the OCI console.
+1. Use your credentials to login to the OCI console. *Note: Contact your tenant administrator for further reference on whether you must use standard OCI credentials or SSO.* 
 
 ![](images/luna_credentials_3.png)
 
@@ -17,7 +17,7 @@ Set the compartment to the one that you will use as part of this lab (*Note: We 
 
 	![](images/2.png)
 
-4. Select the database by the **Display Name** of the database you want to register. If no database exists, you can **Create Autonomous Database** or double check the Compartment to make sure you are in the right place for your databases.
+4. Select the database by the **Display Name** of the database you want to register. If no database exists, you can **Create Autonomous Database** or double check the Compartment to make sure you are in the right place for your databases. *Note: You can jump to item 7 if you have a testing database created.*
    
    ![](images/3.png)
 
@@ -63,7 +63,7 @@ Set the compartment to the one that you will use as part of this lab (*Note: We 
 
 ## STEP 2: Database Audit Trail in Data Safe
 
-1. Use your SSO credentials to login to the OCI console.
+1. Use your credentials to login to the OCI console.
 
 ![](images/luna_credentials_3.png)
 
@@ -81,12 +81,12 @@ Set the compartment to the one that you will use as part of this lab (*Note: We 
 
 5. In the **Add trail** window run the following settings. This will allow the audit records to be collected for the target database with the selected retention period.
    
-   * **Trail Type** as Table 
-   * Select the database that you have registered as **Target** 
-   * Check the **UNIFIED_AUDIT_TRAIL** box 
-   * Turn **ON** **Auto Purge Trail** 
-   * Set **Collect Audit Data From** with the starting date you want to go back in time to start collecting data. For this lab purposes select your current date
-   * Click **Register**. 
+      * **Trail Type** as Table 
+      * Select the database that you have registered as **Target** 
+      * Check the **UNIFIED\_AUDIT\_TRAIL** box 
+      * Turn **ON** **Auto Purge Trail** 
+      * Set **Collect Audit Data From** with the starting date you want to go back in time to start collecting data. For this lab purposes select your current date
+      * Click **Register**. 
 
    ![](images/add_trail.png)
 
@@ -144,7 +144,7 @@ There are steps for generating reports for the targets and configuration of the 
     
 10.  Select **View Report**. You will be able to see the High, Medium and Low Risk. 
 
-*NOTE:Since this is ATP there shoud not be too many risks especially not high risks.*
+*NOTE: Since this is ATP there shoud not be too many risks especially not high risks.*
 
 ![](images/report1.png)
 
@@ -165,7 +165,7 @@ Reports can be explored for additional information and baselines should be set t
 
 In this section you will be enabling Data Masking in your data base.
 
-1. Use your SSO credentials to login to the OCI console.
+1. Use your credentials to login to the OCI console.
 
 ![](images/luna_credentials_3.png)
 
@@ -180,7 +180,7 @@ Set your Compartment to **Learners**. You might not see the databases you create
 
 ![](media2/DBTools.png)
 
-6. Run a query to view the permissions of the **DS\$ADMIN**. By default **DS\$ADMIN** has **DS#AUDIT_COLLECTION_ROLE** and **DS\$ASSESSMENT_ROLE** which allows for access for database security assessments and auditing of the databases registered. Again the user is following least privilege so additional roles will need to be granted to perform data discovery and masking.
+6. Run a query to view the permissions of the **DS\$ADMIN**. By default **DS\$ADMIN** has **DS#AUDIT\_COLLECTION\_ROLE** and **DS\$ASSESSMENT\_ROLE** which allows for access for database security assessments and auditing of the databases registered. Again the user is following least privilege so additional roles will need to be granted to perform data discovery and masking.
 ```
 		SELECT * from DBA_ROLE_PRIVS
 		WHERE grantee = 'DS$ADMIN'
@@ -229,11 +229,11 @@ alter user mama_maggy quota unlimited on data;
 
 ![](images/sqlwebdev_create_users.png)
 
-**NOTE:** write down these 2 user account and passwords you just added as you will need them for Activity 6. The user **mama_maggy** will be used in a future lab activity to load data into the database.
+**NOTE:** write down these 2 user account and passwords you just added as you will need them for Activity 6. The user **mama\_maggy** will be used in a future lab activity to load data into the database.
 
 Next to enable SQL Developer Web for this user, there are two additional steps to perform. The first is to enable SQL Developer Web to access their schema. The second is building a URL making it easy for the user to get logged in.
 
-4. To enable the user mama_maggy to log into SQL Developer Web we use the command below. **p_schema** is the user you are enabling and **p_url_mapping_pattern** is an alias you are giving the user to use in the URL for their login in the next step. Click the Clear button (trashcan) to clear the worksheet and then copy and paste the code below. Then click the **Run Script** Button.
+4. To enable the user mama_maggy to log into SQL Developer Web we use the command below. **p\_schema** is the user you are enabling and **p\_url\_mapping_pattern** is an alias you are giving the user to use in the URL for their login in the next step. Click the Clear button (trashcan) to clear the worksheet and then copy and paste the code below. Then click the **Run Script** Button.
 
 ```
 BEGIN
@@ -249,7 +249,7 @@ END;
 ```
 ![](images/sqlwebdev_enable_schema.png)
 
-5. The second step is you have to create a specific URL for that user to use to access the database. If you look at the URL for your SQL Developer Web session it will break down like the one seen below. Make sure to copy your URL and make the change for the p**_url_mapping_pattern** you created in the previous step. We used mamamaggy so you can see that we just substituted mamamaggy for admin, the rest of the URL stays the same.
+5. The second step is you have to create a specific URL for that user to use to access the database. If you look at the URL for your SQL Developer Web session it will break down like the one seen below. Make sure to copy your URL and make the change for the **p\_url\_mapping\_pattern** you created in the previous step. We used mamamaggy so you can see that we just substituted mamamaggy for admin, the rest of the URL stays the same.
 
 ![](images/sqlwebdev_old_url.png)
 ![](images/sqlwebdev_new_url.png)
@@ -341,35 +341,25 @@ select * from dept;
 
 ## STEP 7: Data Discovery
 
-1. Open Firefox once the Luna desktop is fully loaded.
-
-![](images/luna_1.png)
-
-2. Click on the OCI console option.
-
-![](images/luna_credentials.png)
-
-3. Use your SSO credentials to login to the OCI console.
-
-*IMPORTANT: You must log in with your SSO credentials. Luna ephemeral account does not has access to this service running at the tenant level*
+1. Use your  credentials to login to the OCI console.
 
 ![](images/luna_credentials_3.png)
 
-4. Once in your Tenancy from the menu in the upper left corner of the page select Data Safe.
+2. Once in your Tenancy from the menu in the upper left corner of the page select Data Safe.
 
-5. Return to the Data Safe Service Console and Select **Data Discovery**. Select the **Target** for discovery. And then **Continue** This will bring up the senstivite data model for edits and review. 
+3. Return to the Data Safe Service Console and Select **Data Discovery**. Select the **Target** for discovery. And then **Continue** This will bring up the senstivite data model for edits and review. 
 
 ![](media2/datadiscovery.png)
 
-6. We are going to "Create" a model for an example here, but there are choices to "Upload" or use a "Library". Select Set **Show and save sample data** on and **Resource Group** to **Default Resource Group**. Click **Continue**.
+4. We are going to "Create" a model for an example here, but there are choices to "Upload" or use a "Library". Select Set **Show and save sample data** on and **Resource Group** to **Default Resource Group**. Click **Continue**.
 
 ![](media2/datadiscovery2.png)
 
-7. Choose the Schema Name - which we are using the "MAMA_MAGGY" since it contains our test data. Select **Continue**
+5. Choose the Schema Name - which we are using the "MAMA_MAGGY" since it contains our test data. Select **Continue**
 
 ![](media2/datadiscovery3.png)
 
-8. Here you can now select types of data for discovery. Select "All" and then **Continue**
+6. Here you can now select types of data for discovery. Select "All" and then **Continue**
 
 ![](media2/datadiscovery4.png)
 
@@ -377,17 +367,17 @@ select * from dept;
 
 Now the data discovery is complete and we can validate the result of the discovery. 
 
-9. Select **Continue**.
+7. Select **Continue**.
 
 ![](media2/datadiscovery5.png)
 
-10. It shows that we have found Employment Information in 4 columns. Select **All** then the go to the **Report**
+8. It shows that we have found Employment Information in 4 columns. Select **All** then the go to the **Report**
 
 ![](media2/datadiscovery6.png)
 
 ![](media2/datadiscovery7.png)
 
-11. Select **Employement information** and will show the columns and give you an option to mask the data.
+9. Select **Employement information** and will show the columns and give you an option to mask the data.
 
 ![](media2/datadiscovery8.png)
 
@@ -435,7 +425,7 @@ At this point, you have masked data from production that you can share with othe
 
 **Oracle Data Safe** helps you to understand the sensitivity of your data, evaluate risks, mask sensitive data, implement and monitor security controls, assess user security, monitor user activity, and address data security compliance requirements.
 As part of this lab you have registered your autonomous database with Data Safe, audit the data and run assessment to find deviations or non-compliance.
-You have also enabled Data Masking capabilities and successfully used Data Safe in your test environment to mask the data that discovered as employee data.**
+You have also enabled Data Masking capabilities and successfully used Data Safe in your test environment to mask the data that discovered as employee data.
 
 ******
  

@@ -4,7 +4,7 @@
 
 
 
-1. Login back to **Cloud Guard** Console using your SSO credentials. Open the general menu located at the left-hand side of the screen, click on **Security** and select **Cloud Guard**. 
+1. Login back to **Cloud Guard** Console using your credentials. Open the general menu located at the left-hand side of the screen, click on **Security** and select **Cloud Guard**. 
    
     ![](./images/1.png)
 
@@ -21,7 +21,7 @@
     ![](./images/14.png)
 
 5. Let's dig into the issue. Click on **Responder Activity** on the left-hand side of the screen. We can easily identify the issue, the resource and the execution status and type. Click on the problem name **Bucket is Public** link.
-*Note: Due to Cloud Guard is in limited availability the automated response might be disable by the time of delivering this lab.* 
+
 
     ![](./images/15.png)
 
@@ -43,7 +43,7 @@
 
 1. Open the OCI console. Make sure that you are logged into the same reporting region and where you have created the sanctioned resource.
 
-    ![](./images/luna_credentials.png)
+    ![](./images/luna_credentials_2.png)
 
 
 2. Open the general menu located at the left-hand side of the screen, click on **Object Storage** and select **Object Storage**

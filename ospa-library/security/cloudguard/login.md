@@ -2,7 +2,7 @@
 
 ## STEP 1: Login to Cloud Guard
 
-1. Use your SSO credentials to login to the OCI console.
+1. Use your credentials to login to the OCI console. *Note: Contact your tenant administrator for further reference on whether you must use standard OCI credentials or SSO.*
 
 
 ![](./images/luna_credentials_3.png)
