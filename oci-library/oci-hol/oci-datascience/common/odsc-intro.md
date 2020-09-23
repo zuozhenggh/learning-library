@@ -1,6 +1,6 @@
-# Data Science Service
+# Introduction
 
-## Introduction
+## Data Science Service
 
 Oracle Cloud Infrastructure Data Science is a fully managed and serverless platform for data science teams to build, train, and manage machine learning models using Oracle Cloud Infrastructure.
 
