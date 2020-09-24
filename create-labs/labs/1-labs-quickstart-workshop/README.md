@@ -5,20 +5,19 @@ The **Getting Started with Oracle Big Data Service (BDS) workshop** is a series 
 ## Access the Labs Using Our Web Interface
 
 
-**[Click here](https://oracle.github.io/learning-library/data-management-library/big-data/bds/bds-quickstart-workshop)** to use our easy to navigate HTML format.
+**[Click here](https://oracle.github.io/learning-library/data-management-library/create-labs/labs/1-labs-quickstart-workshop)** to use our easy to navigate HTML format. <!-- This URL is not functional -->
 
 
 ## Access the Labs on the Repo
 
 Alternatively, you can follow the individual workshop labs on this repo:
 
-- [Introduction to Oracle Big Data Service](../bds-quickstart-workshop/intro.md)
-- [Setup the BDS Environment](../bds-getting-started/bds-getting-started.md)
-- [Create a BDS Hadoop Cluster](../bds-create-cluster/bds-create-cluster.md)
-- [Add Oracle Cloud SQL to the Cluster](../bds-add-cloud-sql/bds-add-cloud-sql.md)
-- [Access a BDS Node Using a Public IP Address](../bds-access-utility-node/bds-access-utility-node.md)
-- [Use Cloudera Manager and Hue to Access a BDS Cluster](../bds-use-cm-hue-access-cluster/bds-use-cm-hue-access-cluster.md)
-- [Create a Hadoop Administrator User](../bds-create-hadoop-user/bds-create-hadoop-user.md)
+- [Get Started with Git and Set up the Git Environment](../1-labs-quickstart-workshop/intro.md)
+- [Understand the Learning Library Folder](../3-labs-templates-folder-structure/3-labs-templates-folder-structure.md)
+- [Use Atom to Develop Content](../4-labs-use-atom-editor-develop-content/4-labs-use-atom-editor-develop-content.md)
+- [ Merge, Commit, Create Pull Request](../5-labs-github-merge-commit-pullrequest/5-labs-github-merge-commit-pullrequest.md)
+- [Add GitHub Hosted Labs to OHC](../6-labs-add-git-hub-hosted-tutorials-to-ohc/6-labs-add-git-hub-hosted-tutorials-to-ohc.md)
+
 
 
 <!-- Keep this content -->

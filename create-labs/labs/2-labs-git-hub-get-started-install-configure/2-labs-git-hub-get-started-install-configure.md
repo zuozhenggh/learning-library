@@ -1,4 +1,4 @@
-#  Setting Up the GetHub Environment and Installing GitHub Desktop Client
+#  Get Started with Git and Set up the GitHub Environment
 
 ## Introduction
 
