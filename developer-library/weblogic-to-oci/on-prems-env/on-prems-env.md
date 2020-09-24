@@ -39,6 +39,8 @@ B. [Setup the on-premises environment using Docker (30min)](?lab=lab-1-option-b-
 
 *When you are done with the workshop, you should tear down the 'on-premises' environment.*
 
+You may proceed to the next lab.
+
 ### Disclaimer
 
 Note that this is a demo environment pre-packaged with a WebLogic Domain, demo applications and a Database inside a single VM. This is for demo/training purpose only and is not production-ready.

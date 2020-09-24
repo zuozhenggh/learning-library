@@ -536,7 +536,7 @@ appDeployments:
 
 1. Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`
 
-2. Enter the JDBC Connection password for the `RIDERS` user pdb (this is can be found in the `./weblogic-to-oci/weblogic/env` file under `DS_PASSWORD`).
+2. Enter the JDBC Connection password for the `RIDERS` user pdb: `Nge29v2rv#1YtSIS#`
 
   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
 
@@ -863,6 +863,7 @@ Making sure you use `https` as scheme and the proper case for `/SimpleDB`
 
   <img src="./images/oci-simpledb-app.png" width="100%">
 
+You may proceed to the next lab.
 
 ## Acknowledgements
 

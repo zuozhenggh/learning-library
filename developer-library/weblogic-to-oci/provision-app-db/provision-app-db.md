@@ -170,8 +170,6 @@ In this section we will create a Security List for the WebLogic subnet to be abl
     </copy>
     ```
 
-    This is found in the `env` file under `DB_PWD` in the `weblogic-to-oci/weblogic` folder
-
   <img src="./images/provision-db-23-creds.png" width="70%">
 
 16. Keep the default of **Transaction Processing** for **Workload type** and **Backup**, and click **Create DB System**
@@ -183,6 +181,8 @@ This will usually take up to 40 minutes to provision.
   <img src="./images/provision-db-25.png" width="100%">
 
 To save some time, you can proceed to starting the DB migration lab while the DB is provisioning if you wish, however you will need the DB fully provisioned and you will need to gather the DB information before you can finish the migration.
+
+You may proceed to the next lab.
 
 ## Acknowledgements
 

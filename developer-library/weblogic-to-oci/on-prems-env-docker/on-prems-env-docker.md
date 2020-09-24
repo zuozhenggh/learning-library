@@ -274,6 +274,8 @@ We'll create a SSH key pair in this folder
 
 **Note:** If you're using a firewall and your instance is not local, make sure the ports for WebLogic (7001-7005) are open to be able to test the environment.
 
+You may proceed to the next lab.
+
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020

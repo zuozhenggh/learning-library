@@ -222,6 +222,8 @@ You may notice this 1st try imports the schema but fails at importing the data, 
 
 The database is now migrated to OCI.
 
+You may proceed to the next lab.
+
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020

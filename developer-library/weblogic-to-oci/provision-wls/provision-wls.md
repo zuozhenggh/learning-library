@@ -173,6 +173,8 @@ You can copy/paste the **WebLogic Admin Console URL** in your browser and explor
 
 While the WebLogic instances are provisioning, it's possible to move forward with the Application Database provisioning as soon as the VCN is provisioned.
 
+You may proceed to the next lab.
+
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
