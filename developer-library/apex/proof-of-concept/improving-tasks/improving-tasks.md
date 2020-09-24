@@ -12,7 +12,7 @@ Estimated Time: 15 minutes
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account, a LiveLabs account or free trial. 
+- An Oracle Cloud paid account, a LiveLabs account or free trial.
 - An APEX application
 
 ## **Step 1** - Improving the Projects List of Values.
@@ -186,13 +186,13 @@ If you review the Milestones select list you will notice that all milestones are
 
 ## **Summary**
 
-You now know how to utilize different types of list of values, to display additional columns, and also how to define a Cascading-LOV. 
+You now know how to utilize different types of list of values, to display additional columns, and also how to define a Cascading-LOV.
 
 ## **Acknowledgments**
 
-- **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
+- **Author** - Salim Hlayel, Principle Product Manager
 - **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, June 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

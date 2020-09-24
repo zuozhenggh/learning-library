@@ -1,14 +1,20 @@
 # Building, Containerizing Java REST Services
 
 ## Before You Begin
+
+### Introduction
+
+In this lab you will deploy a Java application using Docker. This will require you to setup Visual Builder Studio configurations of build job and run the job to deploy java REST application container to OKE.
+
+Estimated time: 45 minutes
+
 ### Objectives
 - Setup Visual Builder Studio Project and build job configuration
 - Create a Docker image and then deploy java REST application 
 - Deploy Docker container to Oracle Kubernetes Engine
 
-#### Introduction
-
-In this lab you will deploy a Java application using Docker. This will require you to setup Visual Builder Studio configurations of build job and run the job to deploy java REST application container to OKE.
+### Prerequisites
+- Successful completion of Lab 1
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
 [](youtube:uty6BgUWeeA)
@@ -455,4 +461,4 @@ Go to OCI console, and click on cloud shell, once it is ready with your user dir
 - **Workshop Expiration Date** - May 31, 2021
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 

@@ -34,7 +34,9 @@ In this lab, you will create configure identity access manager, create a resourc
 
  Download [HA Load Balanced Simple Web App](https://objectstorage.us-ashburn-1.oraclecloud.com/p/S0GnbQCFMdXaJ9BHVoqJ-h5kTtmkvqBl3IwVLtpPDxA/n/c4u03/b/oci-library/o/orm-lbass-demo.zip) and save to your local machine.
 
-1. Create a Stack by clicking on **Menu** --> **Resource Manager** --> **Stack**.
+1. Create a Stack by clicking on **Menu** --> **Resource Manager** --> **Stacks**.
+
+    ![](./../resource-manager/images/CreateStack00.png " ")
 
 2. Click **Create Stack**.
 
@@ -152,9 +154,9 @@ From the Stack Details page, we can completely manage the stack's configuration 
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Contributors** - Kamryn Vinson, QA Engineer Lead Intern | Arabella Yao, Product Manager Intern, DB Product Management
-- **Last Updated By/Date** - Tom McGinn, August 2020
+- **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
+- **Last Updated By/Date** - Kamryn Vinson, August 2020
 - **Valid through** - August 2021
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

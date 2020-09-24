@@ -10,7 +10,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
        ![](./../grafana/images/Grafana_015.PNG " ")
 
 
-2. From the OCI Services menu, click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**.
+2. From the OCI Services menu, click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from the drop down menu on the left part of the screen under Networking and Click **Start VCN Wizard**.
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
@@ -33,7 +33,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
 
-    *We will now create an Auth Token. This token will be used to login to connect to OCI Docker registry from the Docker computeinstance that will be created later on*
+    *We will now create an Auth Token. This token will be used to login to connect to OCI Docker registry from the Docker compute instance that will be created later on*
 
 8. In OCI console Click the user icon (top right)  then **User settings**. Under Resources Click **Auth Token**, then **Generate Token**. In pop up window provide a description then Click **Generate Token**
 
@@ -41,11 +41,11 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
      ![](./../autonomous-data-warehouse/images/ADW_006.PNG " ")
 
-9.  Click **Copy** and save the token in Notepad.**Do not close the window without saving the token as it can not be retrieved later**
+9.  Click **Copy** and save the token in Notepad. **Do not close the window without saving the token as it can not be retrieved later**
 
-     ![](./../autonomous-data-warehouse/images/ADW_007.PNG " ")
+     ![](./../container-registry/images/AUTHTOKEN.PNG " ")
 
-10. From OCI Services menu, Click **Registry(OCIR)** under **Developer Services**
+10. From OCI Services menu, Click **Container Registry** under **Developer Services**
 
      ![](./../container-registry/images/OCIR_HOL0033.PNG " ")
 
@@ -59,34 +59,36 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
 ## **Step 2**: Create compute instance install Docker and push images to registry
 
-1. Go to your OCI console (homepage). From OCI servies menu, under **Compute**, click **Instances**.
+1. Go to your OCI console (homepage). From OCI services menu, under **Compute**, click **Instances**.
 
 2. Click **Create Instance**. Fill out the dialog box:
 
-      - **Name your instance**: Enter a name
+    - **Name your instance**: Enter a name
       - **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
       - **Availability Domain**: Select availability domain
       - **Instance Type**: Select Virtual Machine
       - **Instance Shape**: Select VM shape
 
-      **Under Configure Networking**
+    ![](./../container-registry/images/CUSTOM_IMAGE_007.PNG " ")
+
+    **Under Configure Networking**
       - **Virtual cloud network compartment**: Select your compartment
-      - **Virtual cloud network**: Choose the VCN
+      - **Virtual cloud network**: Choose the VCN you created in Step 1
       - **Subnet Compartment:** Choose your compartment.
       - **Subnet:** Choose the Public Subnet under **Public Subnets**
       - **Use network security groups to control traffic** : Leave un-checked
       - **Assign a public IP address**: Check this option
 
-        ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+     ![](./../container-registry/images/Custom_Image_008.PNG " ")
 
       - **Boot Volume:** Leave the default
-      - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
+      - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved in Lab 1.
 
-3. Click **Create**
+3. Click **Create**.
 
     **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD.
 
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+     ![](./../container-registry/images/CUSTOM_IMAGE_009.PNG " ")
 
 4.  Wait for Instance to be in **Running** state. In your Terminal, go to the folder where you created your SSH key:
 
@@ -109,7 +111,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
 7.  Enter 'Yes' when prompted for security message
 
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
+     ![](./../container-registry/images/CUSTOM_IMAGE_0010.PNG " ")
 
 8.  Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt. Next install Docker, Enter command:
 
@@ -136,7 +138,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
     sudo yum install docker-ce –y
     </copy>
     ```
-    (Wait for ‘Complete’message)
+    (Wait for ‘Complete’ message)
 
 11. Enter command:
 
@@ -240,11 +242,11 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
     **NOTE:** In below example (version4.0.test) x is 4 and y is 0
 
-        - <image_id> is **3fd9065eaf02**
-        - <Region_Name_Code> is **iad**
-        - <Tenancy_Name> is **us_training**
-        - <docker_registry_name> is **docker-test-image**
-        - <image_name> is **version4.0.test**  
+      - Image\_Id is **3fd9065eaf02**
+      - Region\_Name\_Code is **iad**
+      - Tenancy\_Name is **us\_training**
+      - docker\_registry\_name is **docker-test-image**
+      - Image\_name is **version4.0.test**  
 
      ![](./../container-registry/images/OCIR_HOL0039.PNG " ")
 
@@ -257,10 +259,10 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
     ```
     **NOTE:** In below example:
 
-        - <Region_Name_Code> is **iad**
-        - <Tenancy_Name> is **us_training**
-        - <docker_registry_name> is **docker-test-image**
-        - <image_name> is **version4.0.test**  
+     - Region\_Name\_Code is **iad**
+     - Tenancy\_Name is **us\_training**
+     - docker\_registry\_name is **docker-test-image**
+     - Image\_name is **version4.0.test**  
 
      ![](./../container-registry/images/OCIR_HOL0040.PNG " ")
 
@@ -288,15 +290,15 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
 1. Switch to  OCI console window
 
-2. If your Compute instance is not displayed, From OCI services menu Click Instances under Compute
+2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**.
 
-3. Locate first compute instance, Click Action icon and then **Terminate**
+3. Locate first compute instance, Click Action icon and then **Terminate**.
 
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
+     ![](./../container-registry/images/CUSTOM_IMAGE_0011.PNG " ")
 
 4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate
 
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0017.PNG " ")
+     ![](./../container-registry/images/CUSTOM_IMAGE_0012.PNG " ")
 
 
 5. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will
@@ -304,9 +306,9 @@ appear.
 
 6. Locate your VCN , Click Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted
 
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
+     ![](./../container-registry/images/CUSTOM_IMAGE_0013.PNG " ")
 
-7. Navigate to your registry(**Registry(OCIR)** under **Developer Services**), Click Registry Name, Under **Actions** Click **Delete Repository**  ,Click **Delete** in confirmation window
+7. Navigate to your registry (**Container Registry** under **Developer Services**), Click Registry Name, Under **Actions** Click **Delete Repository**, Click **Delete** in confirmation window.
 
      ![](./../container-registry/images/OCIR_HOL0042.PNG " ")
 
@@ -316,8 +318,7 @@ appear.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Contributors** - Kamryn Vinson, QA Specialist
-- **Last Updated By/Date** - Tom McGinn, August 2020
+- **Last Updated By/Date** - Kamryn Vinson, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

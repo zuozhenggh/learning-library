@@ -34,7 +34,7 @@ handler for both the EMP and DEPT tables. You have already created a Web Source 
     - **Web Source Type:** select **ORACLE REST Data Services**
     - **Name:** enter **REST DEPT Source**
     - **URL Endpoint:** enter the REST URI for the dept.rest handler Similar to https://{cloud\_url}/ords/{your_workspace}/**dept**/hol/
-    
+
     The URL Endpoint is the same URL you entered in Lab 2 Step 3 exept `emp` is replaced with `dept`.
 
     Click **Next**.
@@ -171,7 +171,7 @@ Similarly, the Employees report shows numerical values rather than names.
 
     ![](images/set-mgr-col.png " ")
 
-3. In the Rendering tree (left pane), under Columns, click **DEPTNO**. 
+3. In the Rendering tree (left pane), under Columns, click **DEPTNO**.
 
     In the Property Editor (right pane), enter the following.
 
@@ -206,9 +206,9 @@ This completes Lab 5 and the workshop. You now know how to define List of Values
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
+ - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Jeffrey Malcolm Jr, Intern)
  - **Last Updated By/Date** - Tom McGinn, Database Innovation Architect, Product Management, July 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

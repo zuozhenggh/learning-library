@@ -202,7 +202,7 @@ Note: Remember to replace ***&YourGeoNameUsername*** with the username of your a
       begin   
         UTL_HTTP.SET_WALLET('');
 
-        t_http_req:= utl_http.begin_request('https://secure.geonames.org/countryInfoJSON?formatted=true&' || 'lang=en&' || 'country=ES&' || 'username=&YourGeoUsername&' || 'style=full','GET','HTTP/1.1');
+        t_http_req:= utl_http.begin_request('https://secure.geonames.org/countryInfoJSON?formatted=true&' || 'lang=en&' || 'country=countryCode&' || 'username=&YourGeoUsername&' || 'style=full','GET','HTTP/1.1');
         UTL_HTTP.SET_HEADER(t_http_req, 'User-Agent', 'Mozilla/4.0');
         t_http_resp:= utl_http.get_response(t_http_req);
         UTL_HTTP.read_text(t_http_resp, t_response_text);
@@ -379,4 +379,4 @@ Watch this video to learn more about JSON in the Oracle Database.
 - **Last Updated By/Date** - Nilay Panchal, DB Product Management, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
