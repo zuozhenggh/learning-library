@@ -18,7 +18,7 @@ This lab assumes you have:
 - SSH Keys
 - Have successfully connected to the workshop machine
 
-## Step 1: Enable Database Vault
+## **Step 1**: Enable Database Vault
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -54,7 +54,7 @@ This lab assumes you have:
     
 5. Now, Database Vault is enabled in the container database as well as `PDB1`!
 
-## Step 2: Create a Simple Realm
+## **Step 2**: Create a Simple Realm
 
 1. Open a web browser and launch the Glassfish app by navigating to this URL:
 
@@ -124,7 +124,7 @@ This lab assumes you have:
     <copy>./06_drop_realm.sh</copy>
     ````
 
-## Step 3: Create a Trusted Path / Multi-factor Authorization
+## **Step 3**: Create a Trusted Path / Multi-factor Authorization
 
 1. Open a web browser and launch the Glassfish app by navigating to this URL:
 
@@ -215,7 +215,7 @@ This lab assumes you have:
 
     ![](./images/dv-026.png)
 
-## Step 4: Simulation Mode
+## **Step 4**: Simulation Mode
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -283,7 +283,7 @@ This lab assumes you have:
    <copy>./07_drop_command_rule.sh</copy>
    ````    
 
-## Step 5: Ops Control
+## **Step 5**: Ops Control
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -360,7 +360,7 @@ This lab assumes you have:
 
    ![](./images/dv-009.png)
 
-## Step 6: Disabling Database Vault
+## **Step 6**: Disabling Database Vault
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 

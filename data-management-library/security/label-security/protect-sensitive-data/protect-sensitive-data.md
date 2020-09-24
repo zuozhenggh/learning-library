@@ -21,7 +21,7 @@ This lab assumes you have:
 - Have successfully connected to the workshop machine
 - Have completed all previous labs for Oracle Database Vault
 
-## Step 1: Simple CRM Application
+## **Step 1**: Simple CRM Application
 
 ### Different applications have different purposes:
 
@@ -116,7 +116,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    ![](./images/ols-006.PNG)
 
-## Step 2: Protect Glassfish Application
+## **Step 2**: Protect Glassfish Application
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 

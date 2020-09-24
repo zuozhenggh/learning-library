@@ -19,7 +19,7 @@ This lab assumes you have:
 - SSH Keys
 - Have successfully connected to the workshop machine
 
-## Step 1: Allow DB Restore
+## **Step 1**: Allow DB Restore
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -46,7 +46,7 @@ This lab assumes you have:
 ---
 **Note:** If you have executed this script before and there is an existing backup file, the script will not complete. You must manually manage the existing backup (delete or move) before running this script again.
 
-## Step 2: Create Keystore
+## **Step 2**: Create Keystore
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -88,7 +88,7 @@ This lab assumes you have:
     
 6. Now, your wallet has been created
 
-## Step 3: Create Master Key
+## **Step 3**: Create Master Key
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -129,7 +129,7 @@ This lab assumes you have:
 
 6. Now, you have a master key and you can begin encrypting tablespaces or column!
 
-## Step 4: Create Auto-login Wallet
+## **Step 4**: Create Auto-login Wallet
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -190,7 +190,7 @@ This lab assumes you have:
 
 8. Now your Autologin is created!
 
-## Step 5: Encrypt Existing Tablespace
+## **Step 5**: Encrypt Existing Tablespace
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -230,7 +230,7 @@ This lab assumes you have:
 
 6. You will see that all of the data is now encrypted!
 
-## Step 6: Encyrpt All New Tablespaces
+## **Step 6**: Encyrpt All New Tablespaces
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -271,7 +271,7 @@ This lab assumes you have:
 
 6. Now, your new Tablespaces will be encrypted by default!
 
-## Step 7: Rekey Master Key
+## **Step 7**: Rekey Master Key
 
 1. Start this lab here
 
@@ -299,7 +299,7 @@ This lab assumes you have:
 
 5. Now that you have a master key, you can begin encrypting tablespaces or column. 
 
-## Step 8: View Keystore Details
+## **Step 8**: View Keystore Details
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -334,7 +334,7 @@ This lab assumes you have:
 
    ![](./images/tde-009.png)
 
-## Step 9: Restore Before TDE (Optional)
+## **Step 9**: Restore Before TDE (Optional)
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 

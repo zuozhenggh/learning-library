@@ -17,7 +17,7 @@ This lab assumes you have:
 - SSH Keys
 - Have successfully connected to the workshop machine
 
-## Step 1: Redact EMPLOYEESEARCH Data
+## **Step 1**: Redact EMPLOYEESEARCH Data
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
