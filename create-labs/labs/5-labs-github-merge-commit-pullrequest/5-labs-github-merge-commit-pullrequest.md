@@ -60,7 +60,8 @@ To commit your changes:
 
 4. Click **Push origin** (it should have an upward arrow with a number). This pushes the updated content from your clone into the origin of this clone, that is, your fork.
 
-5.
+![](./images/git-hub-commit-push-origin.png " ")
+
 
 
 ## Acknowledgements
