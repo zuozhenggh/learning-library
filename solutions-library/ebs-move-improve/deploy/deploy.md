@@ -23,8 +23,7 @@ Estimated Lab Time: 30 minutes
     - `Client_ID`
     - `Client_Secret`
 
-
-## **Step 1:** Sign in to the Oracle Cloud Infrastructure Console
+## **STEP 1:** Sign in to the Oracle Cloud Infrastructure Console
 
 Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastructure console.
 
@@ -36,7 +35,7 @@ Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastruct
 
     * **Password**: ``Tenancy Admin Password``
 
-## **Step 2:** Deploy and Configure Oracle E-Business Suite Cloud Manager
+## **STEP 2:** Deploy and Configure Oracle E-Business Suite Cloud Manager
 
 You will now deploy an E-Business Suite Cloud Manager using a Marketplace stack. The stack creates the following cloud resources:
 
@@ -157,7 +156,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
   
 ![](./images/11.png " ")
 
-## **Step 3:** Log in to Oracle E-Business Suite Cloud Manager
+## **STEP 3:** Log in to Oracle E-Business Suite Cloud Manager
 
 Before logging into the Oracle E-Business Suite Cloud Manager web application, you need to add the **hostname** in the Login URL to your local computer hosts file.
 
