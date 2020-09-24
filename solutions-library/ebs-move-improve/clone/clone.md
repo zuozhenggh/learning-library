@@ -12,6 +12,8 @@ Estimated Lab Time: 15 minutes
 ### Prerequisites
 * Tenancy Admin User
 * Tenancy Admin Password
+* Cloud Manager Admin Credentials
+* Labs 1-3 completed
 
 
 ## **Step 1:** Access the Clone Environment Page
@@ -23,27 +25,27 @@ Estimated Lab Time: 15 minutes
 
 3. Enter the following values for the clone details (Note these variables in your key-data.txt):
 
-    a. Environment Name: ebsholenv2
+    a. **Environment Name**: ebsholenv2
 
-    b. Source Apps Password: apps
+    b. **Source Apps Password**: apps
 
-    c. Source WebLogic Server password: welcome1
+    c. **Source WebLogic Server Password**: welcome1
 
-4. Choose Load Balancer as a Service (LBaaS) by selecting the Deploy New Load Balancer check box.
+4. **Web Entry Point**: Select **New Load Balancer (LBaaS)**
 
-5. Then, you must also select a shape in the Load Balancer Shape field. Select 100 mbps
+5. **Load Balancer Shape**: Select 100Mbps
 
 6. Enter these values for the following Web Entry properties.
 
-    a. Protocol: https
+    a. **Protocol**: https
 
-    b. Domain: example.com
+    b. **Hostname**: ebsholenv2
 
-    c. Port: 443
+    c. **Domain**: example.com
+    
+    d. **Port**: 443
 
-    d. Web Access IP/CIDR: 0.0.0.0/0
-
-7. Click Submit.
+7. Click **Submit**
 
 8. You can check the status of the activity to clone the environment in the Activities page. The new environment is listed on the Environments page.
 
@@ -55,35 +57,43 @@ Estimated Lab Time: 15 minutes
 
 3. Edit the local hosts file on your laptop and add an entry.
 
-  **For Windows users**
+**For Windows users**
 
-      1. Navigate to Notepad in your start menu.
+  1. Navigate to Notepad in your start menu.
 
-      2. Hover over Notepad, right-click, and select the option “Run as Administrator.”
+  2. Hover over Notepad, right-click, and select the option **Run as Administrator**.
 
-      3. In Notepad, navigate to File > Open.
+  3. In Notepad, navigate to ``File > Open``.
 
-      4. And browse to C:\\Windows\System32\drivers\etc.
+  4. Browse to ``C:\\Windows\System32\drivers\etc``
 
-      5. Find the file hosts.
+  5. Find the **file hosts**
 
       ![](./images/2.png " ")
 
-      6. In the hosts file, scroll down to the end of the content.
+  6. In the hosts file, scroll down to the end of the content.
 
-      7. Add the following entry to the very end of the file: <ip_address> ebsholenv2.example.com
+  7. Add the following entry to the very end of the file: 
+  ``<ip_address> ebsholenv2.example.com``
 
-      8. Save the file.
+  8. Save the file.
 
-  **For Mac users**
+**For Mac users**
 
-      1. Open a Terminal Window.
+  1. Open a Terminal Window.
 
-      2. Enter the following command: sudo vi /etc/hosts
+  2. Enter the following command: ``$ sudo vi /etc/hosts`` 
+  
+  This will then require your local computer password to edit the file. Enter and you should see a screen similar to the one shown below.
 
-      3. Go to the last line and add the following entry: <ip_address> ebsholenv2.example.com
+  3. Type 'i' to edit the file. 
+  
+  4. Go to the last line and add the following entry as show below: 
+  ``<ip_address> ebsholenv2.example.com``
 
-      4. Save the file
+  5. Once you have finished editing the file hit 'esc' and type ':wq' to save and exit.
+
+  ![](./images/3.png " ")
 
 4. Log in to Oracle E-Business Suite:
 
@@ -91,9 +101,9 @@ Estimated Lab Time: 15 minutes
 
   b. When prompted, accept the warning concerning the certificate coming from an unauthorized certificate authority as we are using a self-signed certificate. (You will change the certificate with your own when executing this procedure outside of this hands-on lab.)
 
-  c. On this page, you will log in to Oracle E-Business Suite with the credentials you generated in Lab 4, part 3.
+  c. On this page, you will log in to Oracle E-Business Suite with the credentials you generated in Lab 3, part 3.
 
-  ![](./images/3.png " ")
+  ![](./images/4.png " ")
 
 ## Acknowledgements
 
