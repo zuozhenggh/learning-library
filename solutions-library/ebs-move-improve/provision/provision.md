@@ -11,13 +11,13 @@ Estimated Lab Time: 45 minutes
 
 ### Prerequisites
 * Oracle E-Business Suite Cloud Manager application using the Login URL from key data.txt file
-* Oracle IDCS login credentials
+* Cloud Manager Admin login credentials saved in your key-data.txt file
 
 
 ## **Step 1:** Log in to EBS Cloud Manager
 1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your key-data.txt file.
 
-2. Log in with your Oracle Identity Cloud Service credentials.
+2. Log in with your Cloud Manager Admin credentials.
 
   ![](./images/1.png " ")
 
@@ -26,15 +26,15 @@ Estimated Lab Time: 45 minutes
 
 2. Enter and select the following details for your new environment.
 
-    a. Environment Name: ebsholenv1
+    a. **Environment Name**: ebsholenv1
 
-    b. Purpose: Vision Demo Install
+    b. **Purpose**: Vision Demo Install
 
-    c. EBS Version: 12.2.9
+    c. **EBS Version**: 12.2.9
 
-    d. DB Version: 19.0.0.0
+    d. **DB Version**: 19.0.0.0
 
-3. Click Submit.
+3. Click **Submit**.
 
 You can check the status of the activity to provision the environment in the Activities page. The provisioning process will take approximately 30-35 minutes.
 
@@ -42,26 +42,31 @@ You can check the status of the activity to provision the environment in the Act
 
 1. SSH to the newly created environment by following the instructions under “Administrator Access” in section “Access Your Oracle E-Business Suite Environment” in the Oracle by Example tutorial: [Performing Post-Provisioning and Post-Cloning Tasks for Oracle E-Business Suite on Oracle Cloud Infrastructure](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html)
 
-2. Once logged into your instance switch to oracle user and source your variables via the following command:
+2. Once logged into your instance switch to oracle user and source your variables for the release you are using via the following commands:
         
-    ```
-    <copy>
-    sudo su - oracle
-    </copy>
+  First:
+
+        $ sudo su - oracle
+
+  Note: You only should run one of the following two commands
         
-    a. source for release 12.2
+      a. Source variables for **release 12.2**
     
-       $ . /u01/install/APPS/EBSapps.env run 
+        $ . /u01/install/APPS/EBSapps.env run 
         
-    b. source for release 12.1.3
+      b. Source variables for **release 12.1.3**
     
-       $ . /u01/install/APPS/apps_st/appl/APPS_<CONTEXT_NAME>.env run
+        $ . /u01/install/APPS/apps_st/appl/APPS_<CONTEXT_NAME>.env run
 
 3. To log in through the web interface, you must initially set a password of your choice for the SYSADMIN user. After the SYSADMIN user is active with the new password, you can create new users or activate existing locked users. To enable the SYSADMIN user, run the following commands:
         
-       $ mkdir -p ~/logs
-       $ cd  ~/logs
-       $ sh /u01/install/APPS/scripts/enableSYSADMIN.sh
+  ```
+    $ mkdir -p ~/logs
+
+    $ cd  ~/logs
+  
+    $ sh /u01/install/APPS/scripts/enableSYSADMIN.sh
+  ```
 
 When prompted, enter a new password for the SYSADMIN user.
 The SYSADMIN user can now connect to Oracle E-Business Suite through the web interface and create new users or activate existing locked users.
@@ -76,35 +81,43 @@ You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.o
 
 3. Edit the local hosts file on your laptop and add an entry.
 
-**For Windows Users**
+**For Windows users**
 
-      1. Navigate to Notepad in your start menu.
+  1. Navigate to Notepad in your start menu.
 
-      2. Hover over Notepad, right-click, and select the option “Run as Administrator.”
+  2. Hover over Notepad, right-click, and select the option **Run as Administrator**.
 
-      3. In Notepad, navigate to File > Open.
+  3. In Notepad, navigate to ``File > Open``.
 
-      4. Browse to C:\\Windows\System32\drivers\etc
+  4. Browse to ``C:\\Windows\System32\drivers\etc``
 
-      5. Find the file hosts
+  5. Find the **file hosts**
 
-          ![](./images/3.png " ")
+      ![](./images/2.png " ")
 
-      6. In the hosts file, scroll down to the end of the content.
+  6. In the hosts file, scroll down to the end of the content.
 
-      7. Add the following entry to the very end of the file: <ip_address> ebsholenv1.example.com
+  7. Add the following entry to the very end of the file: 
+  ``<ip_address> ebsholenv1.example.com``
 
-      8. Save the file.
+  8. Save the file.
 
-**For Mac Users**
+**For Mac users**
 
-      1. Open a Terminal Window.
+  1. Open a Terminal Window.
 
-      2. Enter the following command: sudo vi /etc/hosts
+  2. Enter the following command: ``$ sudo vi /etc/hosts`` 
+  
+  This will then require your local computer password to edit the file. Enter and you should see a screen similar to the one shown below.
 
-      3. Go to the last line and add the following entry: <ip_address> ebsholenv1.example.com
+  3. Type 'i' to edit the file. 
+  
+  4. Go to the last line and add the following entry as show below: 
+  ``<ip_address> ebsholenv1.example.com``
 
-      4. Save the file.
+  5. Once you have finished editing the file hit 'esc' and type ':wq' to save and exit.
+
+  ![](./images/3.png " ")
 
 4. Log in to Oracle E-Business Suite:
 

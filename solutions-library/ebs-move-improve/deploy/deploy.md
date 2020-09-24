@@ -203,7 +203,9 @@ Edit the local ``hosts`` file on your laptop and add an entry.
 
 Type the Login URL generated and documented to your key-data.txt previously into your browser. 
 
-Log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials for the EBS Cloud Manager account as documented in your ``key-data.txt`` file.
+Log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials for the EBS Cloud Manager account as documented in your ``key-data.txt`` file. 
+
+  Note: It may take some additional time for the load balancer to be properly configured. 
 
 Once logged in, you are on the **Environments page**.
 

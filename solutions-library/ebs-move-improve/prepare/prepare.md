@@ -13,6 +13,8 @@ Estimated Lab Time: 30 minutes
 ### Prerequisites
 * Tenancy Admin User
 * Tenancy Admin Password
+* Cloud Manager Admin credentials
+* OCI resource information and other variables saved to key-data.txt file
 
 ## **Step 1:** Setup EBS Cloud Manager Authentication with Identity Cloud Service (IDCS)
 
