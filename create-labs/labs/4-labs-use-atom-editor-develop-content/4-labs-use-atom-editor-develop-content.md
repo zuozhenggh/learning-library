@@ -48,7 +48,7 @@ To view your Workshop and Labs in HTML format:
 ![](./images/use-atom-editor-open-folder.png " ")
 
 
-2. The following example shows the local cloned copy of the learning-library repository for user achepuri. The clone was saved in the following local filesystem path: **C:\Users\achepuri.ORADEV\Documents\GitHub\learning-library\create-labs\labs** folder. The user chose GitHub local folder for the clone's name. The workshop was created in the **\data-management-library\create-labs\labs** folder. The workshop's name (and the folder's name) is 1-labs-quickstart-workshop. This workshop, contains 5 labs as shown in the following screen. To open the workshop in Atom, select the root folder for the workshop, create-labs, and then select **labs** Folder.
+2. The following example shows the local cloned copy of the learning-library repository for user achepuri. The clone was saved in the following local filesystem path: **C:\Users\achepuri.ORADEV\Documents\GitHub\learning-library\create-labs\labs** folder. The user chose **GitHub** folder for the clone's name. The workshop was created in the **\learning-library\create-labs\labs** folder. The workshop's name (and the folder's name) is 1-labs-quickstart-workshop. This workshop, contains 5 labs as shown in the following screen. To open the workshop in Atom, select the root folder for the workshop, create-labs, and then select **labs** Folder.
 
 ![](./images/use-atom-editor-select-folder.png " ")
 

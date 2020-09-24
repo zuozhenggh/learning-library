@@ -62,6 +62,41 @@ To commit your changes:
 
 ![](./images/git-hub-commit-push-origin.png " ")
 
+## **Step 3:** Set Up GitHub Pages for Your Fork to Test Your Content
+
+After you upload the content from your clone to your fork, you can ask your review team members to review this content by providing them with access to your GitHub Pages site URL (or the URL for your forked repository).
+
+The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** to Test Your Content. This feature performs a dynamic conversion of the Markdown files (.md files you have developed using your Atom Editor) to HTML. You can preview your workshop and labs on your forked repository and provide this URL to your reviewers for reviewing them. To upload your final labs and workshop to the master repository (production) also, you will use the **GitHub Pages** feature associated with the master learning-library repository
+
+To identify your GitHub Pages URL and how to enable this feature:
+1. Login to [GitHub Web UI] (http://github.com) using your GitHub account credentials, and then click your fork's link in the **Repositories** section to display your fork.
+
+![](./images/git-hub-stage-git-hub-pages-repositories " ")
+
+2. Click **Settings** to display the **Settings** section.
+
+![](./images/git-hub-stage-git-hub-pages-settings " ")
+
+3. Click **Options** and scroll down to the **GitHub Pages** section.
+
+![](./images/git-hub-stage-git-hub-pages-settings-options " ")
+
+4. If your GitHub Page site is not yet set up, then the **Theme Chooser** label is displayed as a button. To enable GitHub Pages on your fork, click this button. This may take a few hours to complete before your site is enabled.
+
+In the following example, the web site for the fork associated with user achepuri is: https://achepuri.github.io/learning-library where
+  * achepuri is the user's GitHub account username
+  * github.io is the domain's name
+  * learning-library is the repository's name.
+
+![](./images/git-hub-stage-git-hub-pages-settings-theme " ")
+
+Notice that this is the GitHub Pages site is associated with your fork.
+**Note**:  https://achepuri.github.io/learning-library refers to the forked repository and not the master repository (production).  
+
+You can also review and test your workshop and labs on your forked repository from:
+
+http://github.com/*<your-github-account>*/learning-library/tree/master/*<path to your lab>*
+
 
 
 ## Acknowledgements
@@ -70,6 +105,6 @@ To commit your changes:
 
 * **Technical Contributors:**  
 
-* **Last Updated By/Date:**
+* **Last Updated By/Date:** Anuradha Chepuri, September 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
