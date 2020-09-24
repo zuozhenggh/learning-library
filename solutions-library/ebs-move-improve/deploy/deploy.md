@@ -15,13 +15,12 @@ Estimated Lab Time: 30 minutes
 
 * Tenancy Admin User
 * Tenancy Admin Password
-* Lab 1 for preparing your tenancy completed with your IDCS information documented in your key-data.txt file. 
-
-    - `Cloud_Manager_Admin_Username`
-    - `Cloud_Manager_Admin_Password`
-    - `Client_Tenant`
-    - `Client_ID`
-    - `Client_Secret`
+* Lab 1 for preparing your tenancy completed with your IDCS information documented in your key-data.txt file.
+    * `Cloud_Manager_Admin_Username`
+    * `Cloud_Manager_Admin_Password`
+    * `Client_Tenant`
+    * `Client_ID`
+    * `Client_Secret`
 
 ## **STEP 1:** Sign in to the Oracle Cloud Infrastructure Console
 
@@ -32,7 +31,6 @@ Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastruct
 2. Sign in to the Oracle Cloud Infrastructure console using the following:
 
     * **User name**: ``Tenancy Admin User``
-
     * **Password**: ``Tenancy Admin Password``
 
 ## **STEP 2:** Deploy and Configure Oracle E-Business Suite Cloud Manager
@@ -53,15 +51,15 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
   ![](./images/1.png " ")
 
-2. From the Marketplace applications page: 
-  
+2. From the Marketplace applications page:
+
     a. Select **Stack** under Filter > Type
-    
-    b. In the search bar type "E-Business Suite" 
-    
+
+    b. In the search bar type "E-Business Suite"
+
     c. Click the application **Oracle E-Business Suite Cloud Manager Stack for Demos**
 
-  ![](./images/2.png " ")
+    ![](./images/2.png " ")
 
 3. In the version drop-down list, ensure that the default of ```Oracle-EBS-Cloud-Manager-Stack-RM-20.1.1-<date>``` is selected.
 
@@ -74,23 +72,24 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
   ![](./images/3.png " ")
 
 7. On the Stack Information screen, enter the following values:
-    
+
     a. **Name**: (default: Oracle E-Business Suite Cloud Manager Stack for Demos-<date&time>)
 
     b. **Description**: Add a description for the stack
 
     c. The last two variables should be greyed out.
 
-      - **Compartment**: (the one chosen previously)
-      - **Terraform Version**: 0.11.x
-    
+      1. **Compartment**: (the one chosen previously)
+
+      2. **Terraform Version**: 0.11.x
+
     d. Click Next
 
-  ![](./images/4.png " ")
+    ![](./images/4.png " ")
 
 8. On the Configure Variables screen, enter the following values:
 
-    a. **Resource Prefix**: ``ebshol`` 
+    a. **Resource Prefix**: ``ebshol``
 
       - Note: This value must be a unique identifier to your tenancy.
 
@@ -104,7 +103,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
     ![](./images/5.png " ")
 
-    f. **Server Host for EBS Cloud Manager Login URL**: ``myebscm.ebshol.org`` 
+    f. **Server Host for EBS Cloud Manager Login URL**: ``myebscm.ebshol.org``
 
     g. **EBS Cloud Manager Shape**: ``VM.Standard.E2.2``
 
@@ -126,10 +125,13 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
     l. **EBS Cloud Manager Access CIDR**: ``0.0.0.0/0``
 
     m. Enter the values from ``key-data.txt`` file as shown below.
-      - **IDCS Client ID**: `Client_ID`
-      - **IDCS Client Secret**: `Client_Secret`
-      - **IDCS Client Tenant**: `Client_Tenant`
-    
+
+      1. **IDCS Client ID**: `Client_ID`
+
+      2. **IDCS Client Secret**: `Client_Secret`
+
+      3. **IDCS Client Tenant**: `Client_Tenant`
+
     n. Click **Next**
 
     ![](./images/7.png " ")
@@ -138,9 +140,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
   ![](./images/8.png " ")
 
-10. This takes you to the Stack Details page for your newly created stack. You will notice that the job status will cycle through **Accepted, In Progress**, and **Succeeded**. 
-
-  - This will take some time to complete.
+10. This takes you to the Stack Details page for your newly created stack. You will notice that the job status will cycle through **Accepted, In Progress**, and **Succeeded**. This will take some time to complete.
 
   ![](./images/9.png " ")
 
@@ -153,8 +153,8 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 12. This information can also be found at the bottom of your log outputs as shown below:
 
   Copy and paste **Private IP, Public IP, Login URL** and **LB Public IP** to your ``key-data.txt``. These variables are needed for the remainder of the procedures in this lab.
-  
-![](./images/11.png " ")
+
+  ![](./images/11.png " ")
 
 ## **STEP 3:** Log in to Oracle E-Business Suite Cloud Manager
 
@@ -188,23 +188,29 @@ Edit the local ``hosts`` file on your laptop and add an entry.
 
   1. Open a Terminal Window.
 
-  2. Enter the following command: ``$ sudo vi /etc/hosts`` 
-  
+  2. Enter the following command:
+
+    ```
+    <copy>
+    $ sudo vi /etc/hosts
+    </copy>
+    ```
+
   This will then require your local computer password to edit the file. Enter and you should see a screen similar to the one shown below.
 
-  3. Type 'i' to edit the file. 
-  
+  3. Type 'i' to edit the file.
+
   4. Go to the last line and add the following entry as show below: ``<lb_public_ip> myebscm.ebshol.org``
 
   5. Once you have finished editing the file hit 'esc' and type ':wq' to save and exit.
 
   ![](./images/13.png " ")
 
-Type the Login URL generated and documented to your key-data.txt previously into your browser. 
+Type the Login URL generated and documented to your key-data.txt previously into your browser.
 
-Log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials for the EBS Cloud Manager account as documented in your ``key-data.txt`` file. 
+Log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials for the EBS Cloud Manager account as documented in your ``key-data.txt`` file.
 
-  Note: It may take some additional time for the load balancer to be properly configured. 
+Note: It may take some additional time for the load balancer to be properly configured.
 
 Once logged in, you are on the **Environments page**.
 
@@ -214,10 +220,9 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date**
-
-- Quintin Hill, Cloud Engineering/Sept 2020
-- Santiago Bastidas, Product Management Director/July 2020
+* **Author:** Quintin Hill, Cloud Engineering
+* **Contributors:** Santiago Bastidas, Product Management Director
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 

@@ -28,7 +28,7 @@ Estimated Lab Time: 30 minutes
 
 4. Click on the link next to **Oracle Identity Cloud Service Console**.
 
-     ![](./images/idcs-link.png " ")
+    ![](./images/idcs-link.png " ")
 
 5. Login to IDCS with the Tenancy Admin User.
 
@@ -46,7 +46,7 @@ Estimated Lab Time: 30 minutes
 
       2. **Description**: Enter a description of your choice.
 
-    ![](./images/add-group-2.png " ")
+        ![](./images/add-group-2.png " ")
 
     d. Click **Finish**.
 
@@ -70,7 +70,7 @@ Estimated Lab Time: 30 minutes
 
       5. **Email**: Use the same email addressed you used when registering.
 
-    ![](./images/user-details.png " ")
+        ![](./images/user-details.png " ")
 
     d. Click **Next**.
 
@@ -87,7 +87,7 @@ Estimated Lab Time: 30 minutes
     a. Expand the **Application Administrators** section.
     
     b. Click **Add**.
-        ![](./images/add-admins.png "")
+    ![](./images/add-admins.png "")
 
 10. In the Add Users to the Administrator Role dialog box, select the check box for the EBS Cloud Manager Administrator (``ebscm.admin@example.com``).
 
@@ -181,7 +181,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
       1. Click Add.
 
-    ![](./images/configure-app-2.png " ")
+        ![](./images/configure-app-2.png " ")
 
       2. Select **Authenticator Client** and **Me** in the pop-up window.
 
@@ -214,7 +214,7 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 16. Click **Activate** to activate the Confidential Application.
 
-    ![](./images/activate-app.png " ")   
+    ![](./images/activate-app.png " ")
 
 17. Click on the avatar icon on the top right hand side of the screen.
 
@@ -230,10 +230,9 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date**
-
-- Quintin Hill, Cloud Engineering/Sept 2020
-- Santiago Bastidas, Product Management Director/July 2020
+* **Author:** Quintin Hill, Cloud Engineering
+* **Contributors:** Santiago Bastidas, Product Management Director
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
