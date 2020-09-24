@@ -2,10 +2,9 @@
 
 ## Introduction to ORDS
 
-ORDS is middle tier JAVA application that allows you to access your Oracle Database resources via REST. Use standard HTTP calls (GET|POST|PUT|DELETE|HEAD) via URIs that ORDS makes available (/ords/database123/user3/module5/something/)
+ORDS is a Java application that enables developers with SQL and database skills to develop REST APIs for the Oracle Database, the Oracle Database 12c JSON Document store, and the Oracle NoSQL Database. Any application developer can use these APIs from any language environment, without installing and maintaining client drivers, in the same way they access other external services using the most widely used API technology: REST. 
 
-
-ORDS will find and run the appropriate database workload (a query, an anonymous block), and return the output as formatted JSON.
+For more info see this blog post - https://www.oracle.com/tools/technologies/faq-rest-data-services.html
 
 ![](./images/ords1.png " ") 
 

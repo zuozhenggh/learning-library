@@ -17,18 +17,19 @@ This lab assumes you have completed the following labs:
 
 ### **About Oracle ORDS**
 
-ORDS is middle tier JAVA application that allows you to access your Oracle Database resources via REST. Use standard HTTP calls (GET|POST|PUT|DELETE|HEAD) via URIs that ORDS makes available (/ords/database123/user3/module5/something/)
+ORDS is a Java application that enables developers with SQL and database skills to develop REST APIs for the Oracle Database, the Oracle Database 12c JSON Document store, and the Oracle NoSQL Database. Any application developer can use these APIs from any language environment, without installing and maintaining client drivers, in the same way they access other external services using the most widely used API technology: REST. 
 
-
-ORDS will find and run the appropriate database workload (a query, an anonymous block), and return the output as formatted JSON.
-
+For more info see this [blog](https://www.oracle.com/tools/technologies/faq-rest-data-services.html)
+post 
 ![](./images/ords1.png " ") 
 
 **Install ORDS using SQL Developer**
 
 Oracle REST Data Services (ORDS) is bundled with SQL Developer. You can use SQL Developer to install the ORDS version that is bundled in SQL Developer or a standalone version.
 
-As part of this lab , ORDS is pre-installed and ready for use.
+Check this [link](https://docs.oracle.com/cd/E55747_01/appdev.41/e55591/sql-developer-REST.htm#RPTUG46295) on how to install ORDS using sqldeveloper.
+
+As part of this lab , ORDS is pre-installed and ready for use. Check this [link](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/aelig/installing-REST-data-services.html#GUID-B6661F35-3EE3-4CB3-9379-40D0B8E24635) for ORDS installation steps.
 
 **About RESTful Services**
 
@@ -55,18 +56,16 @@ Common terms that are used throughout this lab:
 
 - **Route Patterns**: A simple grammar that defines the particular patterns of URIs that a given Resource Template can handle. For example, the pattern, employees/, will match any URI whose path begins with employees/. 
 
-Example: http://localhost:8888/ords/hr/demo/employees/ 
+    Example: http://localhost:8888/ords/hr/demo/employees/ 
+- **Resource Handler**: Provides the logic required to service a particular HTTP method, for a specific Resource Template. For example the logic of the GET HTTP method for the above Resource Template might be:
 
-- **Resource Handler** : Provides the logic required to service a particular HTTP method, for a specific Resource Template. For example the logic of the GET HTTP method for the above Resource Template might be:
+    select empno, ename, dept from emp where empno = :id
+- **HTTP Operation**: HTTP (HyperText Transport Protocol) defines a number of standard methods that can be performed on resources:
 
-select empno, ename, dept from emp where empno = :id
-
-**HTTP Operation**: HTTP (HyperText Transport Protocol) defines a number of standard methods that can be performed on resources:
-
--	**GET** : Retrieve the resource contents. 
--	**POST** : Store a new resource.
--	**PUT** : Update an existing resource. 
--	**DELETE** : Remove a resource. 
+	1. **GET** : Retrieve the resource contents. 
+	2. **POST** : Store a new resource.
+	3. **PUT** : Update an existing resource. 
+	4. **DELETE** : Remove a resource. 
 
 ## Step-1: Start ORDS in standalone mode
 
