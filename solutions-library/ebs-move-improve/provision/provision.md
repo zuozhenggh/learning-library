@@ -11,7 +11,7 @@ Estimated Lab Time: 45 minutes
 
 ### Prerequisites
 * Oracle E-Business Suite Cloud Manager application using the Login URL from key data.txt file
-* Cloud Manager Admin login credentials saved in your key-data.txt file
+* Cloud Manager Admin login credentials and other variables saved in your key-data.txt file
 
 
 ## **Step 1:** Log in to EBS Cloud Manager

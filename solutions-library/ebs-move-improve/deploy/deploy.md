@@ -17,11 +17,11 @@ Estimated Lab Time: 30 minutes
 * Tenancy Admin Password
 * Lab 1 for preparing your tenancy completed with your IDCS information documented in your key-data.txt file. 
 
-  - Cloud_Manager_Admin_Username
-  - Cloud_Manager_Admin_Password 
-  - Client_Tenant
-  - Client_ID 
-  - Client_Secret
+    - `Cloud_Manager_Admin_Username`
+    - `Cloud_Manager_Admin_Password`
+    - `Client_Tenant`
+    - `Client_ID`
+    - `Client_Secret`
 
 
 ## **Step 1:** Sign in to the Oracle Cloud Infrastructure Console
@@ -110,7 +110,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
     g. **EBS Cloud Manager Shape**: ``VM.Standard.E2.2``
 
     h. **EBS Cloud Manager Admin Password**:
-      - Note: This password should be saved as: Cloud_Manager_Admin_Password in your key-data.txt
+      - Note: This password should be saved as: `Cloud_Manager_Admin_Password` in your key-data.txt
 
     i. **Public Key**:
 
@@ -127,9 +127,9 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
     l. **EBS Cloud Manager Access CIDR**: ``0.0.0.0/0``
 
     m. Enter the values from ``key-data.txt`` file as shown below.
-      - **IDCS Client ID**: Client_ID
-      - **IDCS Client Secret**: Client_Secret
-      - **IDCS Client Tenant**: Client_Tenant
+      - **IDCS Client ID**: `Client_ID`
+      - **IDCS Client Secret**: `Client_Secret`
+      - **IDCS Client Tenant**: `Client_Tenant`
     
     n. Click **Next**
 
