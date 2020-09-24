@@ -69,8 +69,6 @@ The Workshop is displayed along with the labs. The labs contained in this worksh
 
 
 
-
-
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 
 ## Want to Learn More?

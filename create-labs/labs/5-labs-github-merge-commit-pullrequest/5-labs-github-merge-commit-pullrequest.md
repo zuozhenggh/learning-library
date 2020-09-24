@@ -66,7 +66,9 @@ To commit your changes:
 
 After you upload the content from your clone to your fork, you can ask your review team members to review this content by providing them with access to your GitHub Pages site URL (or the URL for your forked repository).
 
-The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** to Test Your Content. This feature performs a dynamic conversion of the Markdown files (.md files you have developed using your Atom Editor) to HTML. You can preview your workshop and labs on your forked repository and provide this URL to your reviewers for reviewing them. To upload your final labs and workshop to the master repository (production) also, you will use the **GitHub Pages** feature associated with the master learning-library repository
+The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** to Test Your Content. This feature performs a dynamic conversion of the Markdown files (.md files you have developed using your Atom Editor) to HTML. You can preview your workshop and labs on your forked repository and provide this URL to your reviewers for reviewing them. To upload your final labs and workshop to the master repository (production) also, you will use the **GitHub Pages** feature associated with the master learning-library repository.
+
+![](./images/git-hub-deploy-completed-content-to-master.png " ")
 
 To identify your GitHub Pages URL and how to enable this feature:
 1. Login to [GitHub Web UI] (http://github.com) using your GitHub account credentials, and then click your fork's link in the **Repositories** section to display your fork.
@@ -97,7 +99,31 @@ You can also review and test your workshop and labs on your forked repository fr
 
 http://github.com/*<your-github-account>*/learning-library/tree/master/*<path to your lab>*
 
+## **Step 4**: Create a Pull Request to Upload Your Content to the Master Repository
+The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production (**upstream/master** repository).
 
+Note that the owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
+
+To create a Pull Request:
+1. In the **GitHub Desktop** client, select **Branch > Create pull request** to display a browser interface.
+
+![](./images/git-hub-branch-pull-request " ")
+
+2. Click **Create pull request** to display an **Open a pull request** page.
+
+![](./images/git-hub-browser-create-pull-request " ")
+
+3. Enter a subject for the pull request, an optional comment, and then click **Create pull request**.
+
+4. A status page is displayed indicating that you have created a pull request along with the request number (#1770 for example), that it is pending review, and that merging is blocked. A merge that is blocked will be performed automatically as soon as it receives one approving review.
+
+5. When your pull request is approved, the page gets updated with information about your commits being approved and merged into the **upstream/master** repository (production).
+
+6. When the pull request is approved and merged into the **upstream/master** repository, two emails are sent to the e-mail account associated with your GitHub account.
+  * The first email notifies you that your pull request was approved (or rejected).
+  * If your pull request was approved, then the second email notifies you that your pull request was merged into the **upstream/master** repository.  
+
+7.Your committed content is now visible to the public on the learning-library (upstream/master or production) repository.
 
 ## Acknowledgements
 

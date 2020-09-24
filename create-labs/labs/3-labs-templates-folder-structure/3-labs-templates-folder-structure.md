@@ -1,7 +1,7 @@
 # Understand the Learning-Library Folder Structure
 
 ## Introduction
-
+This lab describes the prescribed folder structure that we need follow to develop labs and workshops
 ### Objectives
 
 * Understand the Learning Library Folder Structure

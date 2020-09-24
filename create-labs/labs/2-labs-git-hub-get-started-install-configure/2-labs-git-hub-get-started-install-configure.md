@@ -39,6 +39,7 @@ In this step, you will create your GitHub account and add it to Oracle.
 ## **Step 3:** Publicize your Membership
 1. In the top right corner of [GitHub Profile Settings](https://github.com/settings/profile), click your profile photo, then click **Your profile**.
   ![](./images/get-started-profile1.png " ")
+
 2. On the left side of your profile page, under **Personal Settings**, click **Organizations** to display the **Organizations** page and then click the icon for your organization.
   ![](./images/get-started-profile2.png " ")
 3. Under your organization name, click **People**.
