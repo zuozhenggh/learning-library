@@ -62,12 +62,12 @@ In this lab, you will:
 
 You will need the following in order to complete this workshop:
 
-1. A modern browser
-2. A secure remote login (Secure Shell, or SSH) utility
+* A modern browser
+* A secure remote login (Secure Shell, or SSH) utility
         - Such as PuTTY - downloaded from [here](https://www.ssh.com/ssh/putty/download)
-3. A secure copy program
+* A secure copy program
         - Such as WinSCP - downloaded from [here](https://winscp.net/eng/index.php)
-4. Knowledge of basic UNIX commands
+* Knowledge of basic UNIX commands
 
 ## Setup
 
@@ -136,9 +136,9 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
 
 ## Acknowledgements
 
-- **Last Updated By/Date**
-- Quintin Hill, Cloud Engineering/Sept 2020
-- Santiago Bastidas, Product Management Director/July 2020
+* **Author:** Quintin Hill, Cloud Engineering
+* **Contributors:** Santiago Bastidas, Product Management Director
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 

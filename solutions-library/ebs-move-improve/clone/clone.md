@@ -14,8 +14,7 @@ Estimated Lab Time: 15 minutes
 * Tenancy Admin Password
 * Cloud Manager Admin Credentials
 
-
-## **Step 1:** Access the Clone Environment Page
+## **STEP 1:** Access the Clone Environment Page
 
 1. Navigate to the Cloud Manager Environments page.
 
@@ -46,14 +45,14 @@ Estimated Lab Time: 15 minutes
     b. **Hostname**: ebsholenv2
 
     c. **Domain**: example.com
-    
+
     d. **Port**: 443
 
 7. Click **Submit**
 
 8. You can check the status of the activity to clone the environment in the Activities page. The new environment is listed on the Environments page.
 
-## **Step 2:** Configure Local Host Files for the Cloned Environment and Log in to Oracle E-Business Suite
+## **STEP 2:** Configure Local Host Files for the Cloned Environment and Log in to Oracle E-Business Suite
 
 1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to **Networking** > **Load Balancers**.
 
@@ -65,47 +64,53 @@ Estimated Lab Time: 15 minutes
 
 3. Edit the local hosts file on your laptop and add an entry.
 
-**For Windows users**
+  **For Windows users**
 
-  1. Navigate to Notepad in your start menu.
+    1. Navigate to Notepad in your start menu.
 
-  2. Hover over Notepad, right-click, and select the option **Run as Administrator**.
+    2. Hover over Notepad, right-click, and select the option **Run as Administrator**.
 
-  3. In Notepad, navigate to ``File > Open``.
+    3. In Notepad, navigate to ``File > Open``.
 
-  4. Browse to ``C:\\Windows\System32\drivers\etc``
+    4. Browse to ``C:\\Windows\System32\drivers\etc``
 
-  5. Find the **file hosts**
+    5. Find the **file hosts**
 
-      ![](./images/2.png " ")
+        ![](./images/2.png " ")
 
-  6. In the hosts file, scroll down to the end of the content.
+    6. In the hosts file, scroll down to the end of the content.
 
-  7. Add the following entry to the very end of the file: 
-  ``<ip_address> ebsholenv2.example.com``
+    7. Add the following entry to the very end of the file:
+    ``<ip_address> ebsholenv2.example.com``
 
-  8. Save the file.
+    8. Save the file.
 
-**For Mac users**
+  **For Mac users**
 
-  1. Open a Terminal Window.
+    1. Open a Terminal Window.
 
-  2. Enter the following command: ``$ sudo vi /etc/hosts`` 
-  
-  This will then require your local computer password to edit the file. Enter and you should see a screen similar to the one shown below.
+    2. Enter the following command:
 
-  3. Type 'i' to edit the file. 
-  
-  4. Go to the last line and add the following entry as show below: 
-  ``<ip_address> ebsholenv2.example.com``
+        ```
+        <copy>
+        $ sudo vi /etc/hosts
+        </copy>
+        ```
 
-  5. Once you have finished editing the file hit 'esc' and type ':wq' to save and exit.
+      This will then require your local computer password to edit the file. Enter and you should see a screen similar to the one shown below.
 
-  ![](./images/3.png " ")
+    3. Type 'i' to edit the file.
+
+    4. Go to the last line and add the following entry as show below:
+    ``<ip_address> ebsholenv2.example.com``
+
+    5. Once you have finished editing the file hit 'esc' and type ':wq' to save and exit.
+
+        ![](./images/3.png " ")
 
 4. Log in to Oracle E-Business Suite:
 
-  a. In your browser, navigate to the following URL: https://ebsholenv2.example.com/OA_HTML/AppsLocalLogin.jsp
+  a. Click [here](https://ebsholenv2.example.com/OA_HTML/AppsLocalLogin.jsp) to navigate to the URL in your browser.
 
   b. When prompted, accept the warning concerning the certificate coming from an unauthorized certificate authority as we are using a self-signed certificate. (You will change the certificate with your own when executing this procedure outside of this hands-on lab.)
 
@@ -115,10 +120,12 @@ Estimated Lab Time: 15 minutes
 
 ## Acknowledgements
 
-- **Last Updated By/Date** 
-- Quintin Hill, Cloud Engineering/Sept2020
-- William Masdon, Cloud Engineering/Sept 2020
-- Santiago Bastidas, Product Management Director/July 2020
+* **Author:** Quintin Hill, Cloud Engineering
+* **Contributors:** 
+  - Santiago Bastidas, Product Management Director
+  - William Masdon, Cloud Engineering
+  - Mitsu Mehta, Cloud Engineering
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
