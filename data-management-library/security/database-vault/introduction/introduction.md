@@ -1,9 +1,13 @@
-﻿# Database Vault
+﻿# Introduction
 
+### Objectives
+- This aim of this workshop is to introduce the various features and functionality of Oracle Database Vault, and to give the user an opportunity to learn how to configure those features in order to secure their databases.
+
+## About Database Vault
 Oracle Database Vault provides controls to prevent unauthorized privileged users from accessing sensitive data and to prevent unauthorized database changes.
 The Oracle Database Vault security controls protect application data from unauthorized access, and comply with privacy and regulatory requirements.
 
-![](images/DV_Concept.PNG)
+![](./images/dv-concept.png)
 
 You can deploy controls to block privileged account access to application data and control sensitive operations inside the database using trusted path authorization. Through the analysis of privileges and roles, you can increase the security of existing applications by using least privilege best practices. Oracle Database Vault secures existing database environments transparently, eliminating costly and time consuming application changes.
 
@@ -37,23 +41,10 @@ In general, the first step you take is to create a realm composed of the databas
 
 - Works in a Multitenant Environment increasing security for consolidation 
 
----
-![](../../images/banner_Labs.PNG)
+## Acknowledgements
+- **Author** - Hakim Loumi, Database Security PM
+- **Contributors** - Gian Sartor, Principal Solution Engineer, Database Security
+- **Last Updated By/Date** - Gian Sartor, September 2020
 
-Version tested in this lab: `Oracle DB 19.5`
-
-For these labs, you can also use **Enterprise Manager**, **Glassfish** or **SQL Developer** to check DB Vault impacts.
-
-- [Getting connected](dir-getting-connected/get-connected.md)
-
-- **Before** Continuing with the remainder of the labs, you must [Enable Database Vault](dir-enable-database-vault/enable-dv.md)
-
-- [How to create a simple realm to protect sensitive data](dir-simple-realm/simple-realm.md)
-
-- [How to configure multi-factor authorization / trusted path](dir-trusted-app-path/trusted-app-path.md)
-
-- [How to use Simulation Mode to test Database Vault controls](dir-simulation-mode/simulation-mode.md)
-
-- [How to use Operations Control to protect pluggable databases](dir-ops-control/ops-control.md)
-
-- When you are finished, you can [disable Database Vault](dir-disable-database-vault/disable-database-vault.md) and run through the labs again to see just how much is possible without effective controls
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

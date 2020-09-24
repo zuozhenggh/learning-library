@@ -1,8 +1,12 @@
-# Label Security
+# Introduction
 
+### Objectives
+- This aim of this workshop is to introduce the various features and functionality of Oracle Label Security, and to give the user an opportunity to learn how to configure those features in order to secure their databases.
+
+## About Label Security
 Oracle Label Security controls the display of individual table rows using labels that are assigned to specific individual table rows and application users.
 
-![](../images/OLS_Concept.PNG)
+![](./images/ols-concept.png)
 
 Oracle Label Security works by comparing the row label with a user's label authorizations to enable you to easily restrict sensitive information to only authorized users. This way, users with different authorization levels (for example, managers and sales representatives) can have access to specific rows of data in a table. You can apply Oracle Label Security policies to one or more application tables. The design of Oracle Label Security is similar to Oracle Virtual Private Database (VPD). However, unlike VPD, Oracle Label Security provides the access mediation functions, data dictionary tables, and policy-based architecture out of the box, eliminating customized coding and providing a consistent label based access control model that can be used by multiple applications.
 
@@ -24,8 +28,6 @@ These components are as follows:
 
 - **Policy:** A policy is a name associated with these labels, rules, authorizations, and protected tables.
 
-<br>
-
 **Benefits of using Oracle Label Security**
 
 Oracle Label Security provides several benefits for controlling row level management.
@@ -38,20 +40,10 @@ Oracle Label Security provides several benefits for controlling row level manage
 
 - It integrates with Oracle Database Vault and Oracle Advanced Security Data Redaction, enabling security clearances to be use in both Database Vault command rules and Data Redaction policy definitions.
 
----
+## Acknowledgements
+- **Author** - Hakim Loumi, Database Security PM
+- **Contributors** - Gian Sartor, Principal Solution Engineer, Database Security
+- **Last Updated By/Date** - Gian Sartor, September 2020
 
-- [Oracle Label Security 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/olsag/introduction-to-oracle-label-security.html#GUID-C20C62AE-2A30-45F9-AEEA-52A0D3286FBA)
-
----
-
-Version tested in this lab: `Oracle DB 19.5`
-
-For these labs, you will need **Glassfish App**
-
-- [Simple CRM Application](../simple-crm-app/simple-crm-app.md)
-
-- [Protect Glassfish Application](../protect-glassfish-app/protect-glassfish-app.md)
-
----
-
-Click to return [home](/README.md)
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

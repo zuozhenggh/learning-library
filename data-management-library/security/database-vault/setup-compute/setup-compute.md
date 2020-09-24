@@ -1,7 +1,7 @@
-# Environment Setup
+# Setup Compute Instance
 
 ## Introduction
-This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a compute instance running Enterprise Manager 13c with monitored database targets and a Virtual Cloud Network (VCN).
+This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a compute instance running the Converged Database marketplace image and a Virtual Cloud Network (VCN).
 
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
@@ -12,25 +12,19 @@ For more information about Terraform and Resource Manager, please see the append
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
+- An Oracle Free Tier or Paid Cloud account
 - SSH Keys
 
-### Video Preview
-Watch the end-to-end demonstration:
-
-[](youtube:ghbSbMElPFc)
-
-*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
-
 ## **Step 1A**: Create Stack:  Compute + Networking
+
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-    - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9pLAit-dYlCGrpnHDDXoXGbfrYsiH7AsyJPLjBRrH48/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
-    - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
+      - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JDthT7cJjsS1F07KPU77rKEtzdnykXfeMujFVqp0fbo/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
-3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
+3.  Login to Oracle Cloud
+4.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
 
   ![](./images/em-oci-landing.png " ")
 
@@ -38,42 +32,46 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
+5.  Select **My Configuration**, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 
-Enter the following information:
-  - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
-  - **Description**:  Same as above
-  - **Create in compartment**:  Select the correct compartment if not already selected
+6. Enter the following information:
 
-*Note: If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
+      - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
+      - **Description**:  Same as above
+      - **Create in compartment**:  Select the correct compartment if not already selected
 
-5.  Click **Next**.
+     ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
+7.  Click **Next**.
 
   ![](./images/em-create-stack-2.png " ")
 
-Enter or select the following:
-  - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
-  - **Select Availability Domain:** Select an availability domain from the dropdown list.
-  - **SSH Public Key**:  Paste the public key you created in the earlier lab
+8. Enter or select the following:
+    - **Instance Count:** Accept the default, **1**, unless you intend to create more for a team for instance
+    - **Select Availability Domain:** Select an availability domain from the dropdown list.
+    - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
-  *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+    ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+9. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
+    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
+    - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
+    - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
+10. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
+    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
+    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
 
-  - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard.E2.4***) or select the desired shape from the dropdown menu.
-  - **Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
+  ![](./images/standardshape.png " ")
 
-*Note: Instance OCPUS only applies to Flex Shapes and won't be displayed if you elect to use shapes of fixed OCPUs types*
+11. For this section we will provision a new VCN with all the appropriate ingress and egress rules needed to run this workshop.  If you already have a VCN, make sure it has all of the correct ingress and egress rules and skip to the next section.
+    - **Use Existing VCN?:** Accept the default by leaving this unchecked. This will create a **new VCN**.
 
-  - **Use Existing VCN?:** Keep the default by leaving unchecked to create a new VCN.
-
-  - Click **Next step**.
-
-6. Review and click **Create**.
+12. Click **Next**.
+13. Review and click **Create**.
 
   ![](./images/em-create-stack-3.png " ")
 
-7. Your stack has now been created!  
+14. Your stack has now been created!  
 
   ![](./images/em-stack-details.png " ")
 
@@ -81,14 +79,17 @@ You may now proceed to Step 2 (skip Step 1B).
 
 ## **Step 1B**: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
-- Egress rules for the following ports:  9851, 7803, 22          
+- Egress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
+
+If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  
+
+***Note:*** *We recommend using our stack to create to reduce the potential for error.*
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-  - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9pLAit-dYlCGrpnHDDXoXGbfrYsiH7AsyJPLjBRrH48/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
-  - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
+     - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uZPsGTFvwVSVjMn9JtlhRw5tk8zIiYfIz8iTql-I6eI/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
 
 2. Save in your downloads folder.
-3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
+3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Choose **Resource Manager > Stacks**.  
 
   ![](./images/em-oci-landing.png " ")
 
@@ -96,118 +97,123 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
   ![](./images/em-create-stack.png " ")
 
-4. Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
+4. Select **My Configuration**, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 
-Enter the following information:
-  - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
-  - **Description**:  Same as above
-  - **Create in compartment**:  Select the correct compartment if not already selected
+  Enter the following information:
+    - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
+    - **Description**:  Same as above
+    - **Create in compartment**:  Select the correct compartment if not already selected
 
-*Note: If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
+  ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
 
 5. Click **Next**.
 
-    ![](./images/em-create-stack-2b.png " ")
+  ![](./images/em-create-stack-2b.png " ")
 
-Enter or select the following:
-  - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
-  - **Select Availability Domain:** Select an availability domain from the dropdown list.
-  - **SSH Public Key**:  Paste the public key you created in the earlier lab
+  Enter or select the following:
+    - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
+    - **Select Availability Domain:** Select an availability domain from the dropdown list.
+    - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
-  *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+  ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 
-  - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard.E2.4***) or select the desired shape from the dropdown menu.
-  - **Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
+    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
+    - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
+    - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
+    - **Use Existing VCN?:** Check to select.
 
-*Note: Instance OCPUS only applies to Flex Shapes and won't be displayed if you elect to use shapes of fixed OCPUs types*
+  ![](./images/em-create-stack-2c.png " ")
 
-  - **Use Existing VCN?:** Check to select.
+    - **Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
 
-    ![](./images/em-create-stack-2c.png " ")
+  ![](./images/em-create-stack-2d.png " ")
 
-  - **Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
+    - **Select Public Subnet:** Select existing public subnet from above VCN.
 
-    ![](./images/em-create-stack-2d.png " ")
+   ***Note:*** *For an existing VCN Option to be used successful, review the details at the bottom of this section*
 
-  - **Select Public Subnet:** Select existing public subnet from above VCN.
+6. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
+    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
+    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
 
-*Note: For an existing VCN Option to be used successful, review the details at the bottom of this section*
+  ![](./images/standardshape-2.png " ")
 
-6. Review and click **Create**.
+7. Review and click **Create**.
 
-    ![](./images/em-create-stack-3b.png " ")
+  ![](./images/em-create-stack-3b.png " ")
 
-7. Your stack has now been created!  
+8. Your stack has now been created!  
 
-    ![](./images/em-stack-details-b.png " ")
+  ![](./images/em-stack-details-b.png " ")
 
-## **Step 2:** Terraform Plan (OPTIONAL)
-When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. You may skip to Step 3.
+## **Step 2**: Terraform Plan (OPTIONAL)
+When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. This is optional, *you may skip directly to Step 3*.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
 
-    ![](./images/em-stack-plan-1.png " ")
+  ![](./images/em-stack-plan-1.png " ")
 
-    ![](./images/em-stack-plan-2.png " ")
+  ![](./images/em-stack-plan-2.png " ")
 
-    ![](./images/em-stack-plan-results-1.png " ")
+  ![](./images/em-stack-plan-results-1.png " ")
 
-    ![](./images/em-stack-plan-results-2.png " ")
+  ![](./images/em-stack-plan-results-2.png " ")
 
-    ![](./images/em-stack-plan-results-3.png " ")
+  ![](./images/em-stack-plan-results-3.png " ")
 
-    ![](./images/em-stack-plan-results-4.png " ")
+  ![](./images/em-stack-plan-results-4.png " ")
 
-## **Step 3:** Terraform Apply
-When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
+## **Step 3**: Terraform Apply
+When using Resource Manager to deploy an environment, execute a terraform **apply** to actually create the configuration.  Let's do that now.
 
-1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and instance(s) containing a pre-configured Enterprise Manager 13c with running database targets.
+1.  At the top of your page, click on **Stack Details**.  click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and the compute instance.
 
-    ![](./images/em-stack-details-post-plan.png " ")
+  ![](./images/em-stack-details-post-plan.png " ")
 
-    ![](./images/em-stack-apply-1.png " ")
+  ![](./images/em-stack-apply-1.png " ")
 
-    ![](./images/em-stack-apply-2.png " ")
+  ![](./images/em-stack-apply-2.png " ")
 
-2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added (3 only if using an existing VCN).  Congratulations, your environment is created!  Time to login to your instance and validate before getting started on labs.
+2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added (3 only if using an existing VCN).  
 
-    ![](./images/em-stack-apply-results-0.png " ")
+***Note:*** *If you encounter any issues running the terraform stack, visit the Appendix: Troubleshooting Tips section below.*
 
-    ![](./images/em-stack-apply-results-1.png " ")
+  ![](./images/em-stack-apply-results-0.png " ")
 
-    ![](./images/em-stack-apply-results-2.png " ")
+  ![](./images/em-stack-apply-results-1.png " ")
 
-    ![](./images/em-stack-apply-results-3.png " ")
+  ![](./images/em-stack-apply-results-2.png " ")
 
-## **Step 4:** Connect to your instance
+  ![](./images/em-stack-apply-results-3.png " ")
+
+3.  Congratulations, your environment is created!  Click on the Application Information tab to get additional information about what you have just done.
+
+  ![](./images/app-info.png " ")
+
+4.  Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
+
+## **Step 4**: Connect to your instance
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
-  - *NOTE 1:  If you are using your laptop to connect your corporate VPN may prevent you from logging in.*
-  - *NOTE 2: The ssh-daemon is disabled for the up to 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.*
-  - *NOTE 3: It takes about 30 minutes for all Enterprise Manager processes and monitored databases to fully start upon instance creation before you can access the EM console*
+***Note:*** *If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
 
 ### Oracle Cloud Shell
 
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
+1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  
 
-    ![](./images/em-cloudshell.png " ")
+***Note:*** *Make sure you are in the region you were assigned*
 
-2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+  ![](./images/em-cloudshell.png " ")
+
+2.  If you didn't jot down your comput instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP address for your instance.
 4.  Enter the command below to login to your instance.    
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
-
     ![](./images/em-cloudshell-ssh.png " ")
-
-If you used the default RSA key name of **id_rsa** then use the following to connect as there's no need to explicitly specify the key.
-
-````
-ssh  opc@<Your Compute Instance Public IP Address>
-````
 
 5.  When prompted, answer **yes** to continue connecting.
 6.  Continue to Step 5 on the left hand menu.
@@ -222,7 +228,7 @@ ssh  opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/em-mac-linux-ssh-login.png " ")
 
-4.  After successfully logging in, proceed to Step 5.
+4.  After successfully logging in, you may *proceed to the next lab*
 
 ### Windows using Putty
 
@@ -236,7 +242,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
     - Port: _22_
     - Connection type: _SSH_
 
-    ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
+  ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
 #### **Configuring Automatic Login**
 
@@ -244,21 +250,21 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
 2.  Enter your auto-login username. Enter **opc**.
 
-    ![](images/36164be0029033be6d65f883bbf31713.jpg " ")
+  ![](images/36164be0029033be6d65f883bbf31713.jpg " ")
 
 #### **Adding Your Private Key**
 
 1.  In the category section, **Click** Auth.
 2.  **Click** browse and find the private key file that matches your VM’s public key. This private key should have a .ppk extension for PuTTy to work.
 
-    ![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
+  ![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
 
 To save all your settings:
 
-1.  In the category section, **Click** session.
-2.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
+3.  In the category section, **Click** session.
+4.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab*.  
 
 ## Appendix:  Teraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
@@ -282,8 +288,9 @@ This workshop requires a certain number of ports to be available.
 5.  Click Add Ingress Rule button
 6.  Enter the following:  
     - Source CIDR: 0.0.0.0/0
-    - Destination Port Range: 9851, 7803, 22
+    - Destination Port Range: 3000, 3001, 3003, 1521, 7007, 9090, 22
 7.  Click the Add Ingress Rules button
+
 
 ## Appendix: Troubleshooting Tips
 
@@ -350,6 +357,8 @@ If you have other compute instances you are not using, you can go to those insta
 #### Issue #4 Description
 When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy.
 
+*Please ensure that you are NOT running this in the **Always Free** Tier. This workshop does not run on the Always Free tier, you must have available cloud credits.  Go to **Governance** -> **Limits, Quotas and Usage,** select **compute**, ensure that you have **more than** the micro tier available.  If you have only 2 micro computes, your account has transitioned to an Always Free.  This means that the promotional period of 30 days has expired or you have run out of credits, this workshop will NOT run.*
+
 #### Fix for Issue #4
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
 
@@ -368,9 +377,10 @@ If you have other compute instances you are not using, you can go to those insta
 13. Click **Terraform Actions** -> **Apply**
 
 ## Acknowledgements
-- **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
+
+* **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
+* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
+* **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
