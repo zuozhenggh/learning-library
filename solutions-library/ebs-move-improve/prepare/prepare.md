@@ -13,8 +13,6 @@ Estimated Lab Time: 30 minutes
 ### Prerequisites
 * Tenancy Admin User
 * Tenancy Admin Password
-* Cloud Manager Admin credentials
-* OCI resource information and other variables saved to key-data.txt file
 
 ## **Step 1:** Setup EBS Cloud Manager Authentication with Identity Cloud Service (IDCS)
 
@@ -131,6 +129,10 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 7. Select **Admin Console**. This will display the IDCS Administration Console.
 
+    If there is no **Admin Console** option to select, you may already be on the Admin Console. Below is an example of the Admin Console after you login. 
+
+    ![](./images/admin-console-2.png " ")
+
 8. In the top right of the Applications tile, click the icon to Add an Application.
 
     ![](./images/select-add-application.png " ")
@@ -235,6 +237,7 @@ You may now proceed to the next lab.
 - **Last Updated By/Date**
 
 - Quintin Hill, Cloud Engineering/Sept 2020
+- William Masdon, Cloud Engineering/Sept 2020
 - Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?

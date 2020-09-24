@@ -95,13 +95,13 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
       - Note: This value must be a unique identifier to your tenancy.
 
-    b. **Single Compartment Setup**: Make sure is checked
+    b. **Single Compartment Setup**: Make sure it is checked
 
     c. **Parent Compartment**: Select your compartment as the parent compartment for your resources
 
     d. **EBS Cloud Manager Administrator Username**: ``ebscm.admin@example.com``
 
-    e. **Create New REST API key**: Make sure is checked
+    e. **Create New REST API key**: Make sure it is checked
 
     ![](./images/5.png " ")
 
@@ -205,7 +205,11 @@ Type the Login URL generated and documented to your key-data.txt previously into
 
 Log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials for the EBS Cloud Manager account as documented in your ``key-data.txt`` file. 
 
-  Note: It may take some additional time for the load balancer to be properly configured. 
+  Note: It may take some additional time for the load balancer to be properly configured. Sometimes it may take up to 30 minutes or an hour to configure. If you would like to check on the status of the load balancer,  in OCI go to **Networking** > **Load Balancers** and then check the **Overall Heatlh** status. If it is OK, the connection can be established. 
+
+  Note: Your browswer may give you an error when attempting to access the EBS Cloud Manager. If you run into an error using the EBS login URL try using a different browser or an incognito session. 
+
+  ![](./images/14.png " ")
 
 Once logged in, you are on the **Environments page**.
 
@@ -218,6 +222,7 @@ You may now proceed to the next lab.
 - **Last Updated By/Date**
 
 - Quintin Hill, Cloud Engineering/Sept 2020
+- William Masdon, Cloud Engineering/Sept 2020
 - Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?

@@ -10,19 +10,21 @@ Estimated Lab Time: 45 minutes
 * Configure Local Hosts File and Log in to Oracle E-Business Suite
 
 ### Prerequisites
-* Oracle E-Business Suite Cloud Manager application using the Login URL from key data.txt file
-* Cloud Manager Admin login credentials and other variables saved in your key-data.txt file
+* Cloud Manager Admin credentials
+* Cloud Manager Application variables in ``key-data.txt`` file.
 
 
 ## **Step 1:** Log in to EBS Cloud Manager
-1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your key-data.txt file.
+1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your ``key-data.txt`` file.
 
 2. Log in with your Cloud Manager Admin credentials.
 
-  ![](./images/1.png " ")
+  ![](./images/ebscm-login.png " ")
 
 ## **Step 2:** Provision an Environment Using One-Click Provisioning
-1. On the Oracle E-Business Suite Cloud Manager Environments page, click Provision Environment and select One-Click.
+1. On the Oracle E-Business Suite Cloud Manager Environments page, click **Provision Environment** and select **One-Click**.
+
+  ![](./images/oneclick.png " ")
 
 2. Enter and select the following details for your new environment.
 
@@ -34,6 +36,8 @@ Estimated Lab Time: 45 minutes
 
     d. **DB Version**: 19.0.0.0
 
+    ![](./images/oneclick-2.png " ")
+
 3. Click **Submit**.
 
 You can check the status of the activity to provision the environment in the Activities page. The provisioning process will take approximately 30-35 minutes.
@@ -42,21 +46,25 @@ You can check the status of the activity to provision the environment in the Act
 
 1. SSH to the newly created environment by following the instructions under “Administrator Access” in section “Access Your Oracle E-Business Suite Environment” in the Oracle by Example tutorial: [Performing Post-Provisioning and Post-Cloning Tasks for Oracle E-Business Suite on Oracle Cloud Infrastructure](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html)
 
-2. Once logged into your instance switch to oracle user and source your variables for the release you are using via the following commands:
-        
-  First:
+    a. SSH into the Cloud Manager instance from your local machine by using the IP address in the ``key-data.txt`` file and the private key you created during the deployment of the Cloud Manager in OCI. 
+
+        $ ssh -i <filepath_to_private_ssh_key> opc@<cloud_manager_public_ip>
+
+    b. Switch to the Oracle user in the Cloud Manager instance
 
         $ sudo su - oracle
+    
+    c. Connect to the ``ebsholenv1`` by executing the following
 
-  Note: You only should run one of the following two commands
+        $ ssh <ebsholenv1_private_ip>
+
+2. Once logged into your EBS instance as an Oracle user, source your variables for the release you are using via the following commands:
         
-      a. Source variables for **release 12.2**
+      a. Source variables for **release 12.2** 
     
         $ . /u01/install/APPS/EBSapps.env run 
-        
-      b. Source variables for **release 12.1.3**
-    
-        $ . /u01/install/APPS/apps_st/appl/APPS_<CONTEXT_NAME>.env run
+
+      Note: If you are using a different version than 12.2, refer to the documentation in Step 12: [Enable and Set Oracle E-Business Account Passwords (Conditionally Required)](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html).
 
 3. To log in through the web interface, you must initially set a password of your choice for the SYSADMIN user. After the SYSADMIN user is active with the new password, you can create new users or activate existing locked users. To enable the SYSADMIN user, run the following commands:
         
@@ -68,16 +76,22 @@ You can check the status of the activity to provision the environment in the Act
     $ sh /u01/install/APPS/scripts/enableSYSADMIN.sh
   ```
 
-When prompted, enter a new password for the SYSADMIN user.
+When prompted, enter a new password for the SYSADMIN user. Record this password in your ``key-data.txt`` file.
 The SYSADMIN user can now connect to Oracle E-Business Suite through the web interface and create new users or activate existing locked users.
+
+  ![](./images/sysadmin.png " ")
 
 You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html#EnableandSetOracleE-BusinessAccountPasswords(ConditionallyRequired)) for more details.
 
 ## **Step 4:** Configure Local Hosts File and Log in to Oracle E-Business Suite
 
-1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to Networking > Load Balancers.
+1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to **Networking** > **Load Balancers**.
 
-2. On the Load Balancers page, you will find a load balancer named ebsholenv1-lbaas. Obtain the public IP address of this load balancer and record this in your key-data.txt file.
+  ![](./images/lbs.png " ")
+
+2. On the Load Balancers page, you will find a load balancer named **ebsholenv1-lbaas**. Obtain the public IP address of this load balancer and record this in your ``key-data.txt`` file.
+
+  ![](./images/lb-addy.png " ")
 
 3. Edit the local hosts file on your laptop and add an entry.
 
@@ -106,7 +120,9 @@ You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.o
 
   1. Open a Terminal Window.
 
-  2. Enter the following command: ``$ sudo vi /etc/hosts`` 
+  2. Enter the following command: 
+  
+        $ sudo vi /etc/hosts
   
   This will then require your local computer password to edit the file. Enter and you should see a screen similar to the one shown below.
 
@@ -133,9 +149,10 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Authors:**  Quintin Hill, Cloud Engineering/Sept 2020
-- **Last Updated By/Date:**  Quintin Hill, Cloud Engineering/Sept 2020
-- **Contributors:** Santiago Bastidas, Product Management Director/July 2020
+- **Last Updated By/Date** 
+- Quintin Hill, Cloud Engineering/Sept2020
+- William Masdon, Cloud Engineering/Sept 2020
+- Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
