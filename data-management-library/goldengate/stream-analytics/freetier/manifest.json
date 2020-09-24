@@ -7,23 +7,23 @@
         },
         {
             "title": "Lab 1: Login and Navigation",
-            "description": "Lab 1: Login and Navigation",            
-            "filename": "../osalab1-login-navigation/osalab1-login-navigation.md"
+            "description": "Login and Navigation",            
+            "filename": "../ggsa-login-navigation/ggsa-login-navigation.md"
         },
         {
             "title": "Lab 2: Streaming IOT Data",
-            "description": "Lab 2: Streaming IOT Data",            
-            "filename": "../osalab2-iot-stream/osalab2-iot-stream.md"
+            "description": "Streaming IOT Data",            
+            "filename": "../ggsa-iot-stream/ggsa-iot-stream.md"
         },
         {
             "title": "Lab 3: Streaming Retail data",
-            "description": "Lab 3: Streaming Retail data",
-            "filename": "../osalab3-create-retail-pipeline/osalab3-create-retail-pipeline.md"
+            "description": "Streaming Retail data",
+            "filename": "../ggsa-create-retail-pipeline/ggsa-create-retail-pipeline.md"
         },
         {         
             "title": "Lab 4: Publishing Dashboards Import/Export",
-            "description": "Lab 4: Publishing Dashboards Import/Export",            
-            "filename": "../osalab4-publishing-export/osalab4-publishing-export.md"
+            "description": "Publishing Dashboards Import/Export",            
+            "filename": "../ggsa-publishing-export/ggsa-publishing-export.md"
         },
         {         
             "title": "Appendix",

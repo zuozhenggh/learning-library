@@ -1,80 +1,116 @@
 # Provision Your Oracle E-Business Suite Environment
 
 ## Introduction
-In this 45 mins lab, we will use the One-Click Provisioning feature of Oracle E-Business Suite Cloud Manager to provision an Oracle E-Business Suite environment.
+In this lab, we will use the One-Click Provisioning feature of Oracle E-Business Suite Cloud Manager to provision an Oracle E-Business Suite environment.
 
-## Part 1. Log in to EBS Cloud Manager
-1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your Key-Data.txt file.
+Estimated Lab Time: 45 minutes
+
+### Objectives
+* Enable and Set Oracle E-Business Suite Account Passwords
+* Configure Local Hosts File and Log in to Oracle E-Business Suite
+
+### Prerequisites
+* Oracle E-Business Suite Cloud Manager application using the Login URL from key data.txt file
+* Oracle IDCS login credentials
+
+
+## **Step 1:** Log in to EBS Cloud Manager
+1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your key-data.txt file.
+
 2. Log in with your Oracle Identity Cloud Service credentials.
 
-![](./images/1.png " ")
+  ![](./images/1.png " ")
 
-## Part 2. Provision an Environment Using One-Click Provisioning
+## **Step 2:** Provision an Environment Using One-Click Provisioning
 1. On the Oracle E-Business Suite Cloud Manager Environments page, click Provision Environment and select One-Click.
 
 2. Enter and select the following details for your new environment.
 
- a) Environment Name: ebsholenv1
+    a. Environment Name: ebsholenv1
 
- b) Purpose: Vision Demo Install
+    b. Purpose: Vision Demo Install
 
- c) EBS Version: 12.2.9
+    c. EBS Version: 12.2.9
 
- d) DB Version: 19.0.0.0
+    d. DB Version: 19.0.0.0
 
-3. Click Submit
+3. Click Submit.
 
-You can check the status of the activity to provision the environment in the Activities page. The provisioning process will take approximately 20-25 minutes.
+You can check the status of the activity to provision the environment in the Activities page. The provisioning process will take approximately 30-35 minutes.
 
-## Part 3. Enable and Set Oracle E-Business Suite Account Passwords
+## **Step 3:** Enable and Set Oracle E-Business Suite Account Passwords
 
 1. SSH to the newly created environment by following the instructions under “Administrator Access” in section “Access Your Oracle E-Business Suite Environment” in the Oracle by Example tutorial: [Performing Post-Provisioning and Post-Cloning Tasks for Oracle E-Business Suite on Oracle Cloud Infrastructure](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html)
 
-## Part 4. Configure Local Hosts File and Log in to Oracle E-Business Suite
+2. Once logged into your instance switch to oracle user and source your variables via the following command:
+        
+    ```
+    <copy>
+    sudo su - oracle
+    </copy>
+        
+    a. source for release 12.2
+    
+       $ . /u01/install/APPS/EBSapps.env run 
+        
+    b. source for release 12.1.3
+    
+       $ . /u01/install/APPS/apps_st/appl/APPS_<CONTEXT_NAME>.env run
+
+3. To log in through the web interface, you must initially set a password of your choice for the SYSADMIN user. After the SYSADMIN user is active with the new password, you can create new users or activate existing locked users. To enable the SYSADMIN user, run the following commands:
+        
+       $ mkdir -p ~/logs
+       $ cd  ~/logs
+       $ sh /u01/install/APPS/scripts/enableSYSADMIN.sh
+
+When prompted, enter a new password for the SYSADMIN user.
+The SYSADMIN user can now connect to Oracle E-Business Suite through the web interface and create new users or activate existing locked users.
+
+You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html#EnableandSetOracleE-BusinessAccountPasswords(ConditionallyRequired)) for more details.
+
+## **Step 4:** Configure Local Hosts File and Log in to Oracle E-Business Suite
 
 1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to Networking > Load Balancers.
 
-2. On the Load Balancers page, you will find a load balancer named ebsholenv1-lbaas. Obtain the public IP address of this load balancer and record this in your Key-Data.txt file.
-
-![](./images/2.png " ")
+2. On the Load Balancers page, you will find a load balancer named ebsholenv1-lbaas. Obtain the public IP address of this load balancer and record this in your key-data.txt file.
 
 3. Edit the local hosts file on your laptop and add an entry.
 
-  a. *For Windows Users*
+**For Windows Users**
 
-    i. Navigate to Notepad in your start menu. 
+      1. Navigate to Notepad in your start menu.
 
-    ii. Hover over Notepad, right-click, and select the option “Run as Administrator.” 
+      2. Hover over Notepad, right-click, and select the option “Run as Administrator.”
 
-    iii. In Notepad, navigate to File > Open. 
+      3. In Notepad, navigate to File > Open.
 
-    iv. Browse to C:\\Windows\System32\drivers\etc 
+      4. Browse to C:\\Windows\System32\drivers\etc
 
-    v. Find the file hosts 
+      5. Find the file hosts
 
-    ![](./images/3.png " ")
+          ![](./images/3.png " ")
 
-    vi. In the hosts file, scroll down to the end of the content. 
+      6. In the hosts file, scroll down to the end of the content.
 
-    vii. Add the following entry to the very end of the file: ```<ip_address> ebsholenv1.example.com``` 
+      7. Add the following entry to the very end of the file: <ip_address> ebsholenv1.example.com
 
-    viii. Save the file. 
+      8. Save the file.
 
-  b. *For Mac Users* 
+**For Mac Users**
 
-    i. Open a Terminal Window. 
+      1. Open a Terminal Window.
 
-    ii. Enter the following command: ```sudo vi /etc/hosts``` 
+      2. Enter the following command: sudo vi /etc/hosts
 
-    iii. Go to the last line and add the following entry: ```<ip_address> ebsholenv1.example.com``` 
+      3. Go to the last line and add the following entry: <ip_address> ebsholenv1.example.com
 
-    iv. Save the file. 
+      4. Save the file.
 
-4. Log in to Oracle E-Business Suite: 
+4. Log in to Oracle E-Business Suite:
 
-  a. In your browser, navigate to the following URL: ```https://ebsholenv1.example.com/OA_HTML/AppsLocalLogin.jsp``` 
+  a. In your browser, navigate to the following URL: ```https://ebsholenv1.example.com/OA_HTML/AppsLocalLogin.jsp```
 
-  b. When prompted, accept the warning concerning the certificate coming from an unauthorized certificate authority as we are using a self-signed certificate. (You will change the certificate with your own when executing this procedure outside of this hands-on lab.) 
+  b. When prompted, accept the warning concerning the certificate coming from an unauthorized certificate authority as we are using a self-signed certificate. (You will change the certificate with your own when executing this procedure outside of this hands-on lab.)
 
   c. On this page, you will log in to Oracle E-Business Suite.
 
@@ -84,7 +120,9 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Santiago Bastidas, Product Management Director, July 2020
+- **Authors:**  Quintin Hill, Cloud Engineering/Sept 2020
+- **Last Updated By/Date:**  Quintin Hill, Cloud Engineering/Sept 2020
+- **Contributors:** Santiago Bastidas, Product Management Director/July 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
