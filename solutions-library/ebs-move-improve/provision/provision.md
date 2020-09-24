@@ -13,8 +13,6 @@ Estimated Lab Time: 45 minutes
 * Cloud Manager Admin credentials
 * Cloud Manager Application variables in ``key-data.txt`` file.
 
-## **STEP 1:** Log in to EBS Cloud Manager
-
 ## **Step 1:** Log in to EBS Cloud Manager
 1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your ``key-data.txt`` file.
 
@@ -53,17 +51,22 @@ You can check the status of the activity to provision the environment in the Act
 
     b. Switch to the Oracle user in the Cloud Manager instance
 
+        <copy>
         $ sudo su - oracle
+        </copy>
     
     c. Connect to the ``ebsholenv1`` by executing the following
 
+        <copy>
         $ ssh <ebsholenv1_private_ip>
-
+        </copy>
 2. Once logged into your EBS instance as an Oracle user, source your variables for the release you are using via the following commands:
         
       a. Source variables for **release 12.2** 
     
+        <copy>
         $ . /u01/install/APPS/EBSapps.env run 
+        </copy>  
 
       Note: If you are using a different version than 12.2, refer to the documentation in Step 12: [Enable and Set Oracle E-Business Account Passwords (Conditionally Required)](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html).
 
@@ -144,7 +147,7 @@ You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.o
 
 4. Log in to Oracle E-Business Suite:
 
-  a. Click [here](https://ebsholenv1.example.com/OA_HTML/AppsLocalLogin.jsp)to navigate to the URL in your browser.
+  a. Click [here] (https://ebsholenv1.example.com/OA_HTML/AppsLocalLogin.jsp) to navigate to the URL in your browser.
 
   b. When prompted, accept the warning concerning the certificate coming from an unauthorized certificate authority as we are using a self-signed certificate. (You will change the certificate with your own when executing this procedure outside of this hands-on lab.)
 
