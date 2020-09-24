@@ -1,6 +1,6 @@
-# Getting Started with Oracle Data Integrator 12c
+# Getting Started
 
-## **Step 1:** Understanding the Environment  
+## Understanding the Environment  
 
 ### The Example Environment
 The *Demo* project is an example to help you understand how to transform and check the integrity of the data in your information systems.
@@ -19,7 +19,7 @@ The example environment uses the following elements:
 
   * *Sales Administration:* The administration or tracking of sales, hosted in another Oracle database (the *trgdemo* sample). This data warehouse is populated with our transformations.
 
-**The Data Models**
+#### The Data Models
 
 The demonstration environment includes three ODI data models:
   * Orders Application
@@ -99,8 +99,8 @@ During this getting started tutorial, you will learn how to:
 
 Now that you have been introduced to the concepts of the Demo Project and its components, you can move on to *Introduction to using ODI Studio*.
 
-## **Step 2:** Introduction to Using Oracle Data Integrator Studio
-This chapter describes the first steps towards using Oracle Data Integrator Studio.
+## **Step 1:** Introduction to Using Oracle Data Integrator Studio
+This step describes the first steps towards using Oracle Data Integrator Studio.
 
 1.  Using the ODI Studio Navigators
 
@@ -115,7 +115,7 @@ and steps of an ODI integration project:
 The tasks performed in this getting started tutorial take place in *Designer Navigator* (to create and execute your developments) and in *Operator Navigator* (to monitor the execution of your developments). This section only describes the Navigators that are used in this getting started tutorial. See the *Oracle Fusion Middleware Developer's Guide for Oracle Data Integrator* for information about the Topology and Security Navigators.
 
 2. Starting Oracle Data Integrator Studio
-**This section describes how to start Oracle Data Integrator Studio. You can skip to section 3.2 if you have already started ODI Studio.**
+**This section describes how to start Oracle Data Integrator Studio. You can skip to Step 2.2 if you have already started ODI Studio.**
 **Note: In ODI Marketplace instance use the ODI Studio icon in desktop to launch.**
 
 To launch ODI Studio do one of the following:
@@ -132,10 +132,10 @@ The ODI Studio client will continue to load. Click on Connect to Repository then
 
    ![](./images/odi_studio.png)
 
-**When prompted for a wallet password enter *welcome1***
+3. When prompted for a wallet password enter *welcome1*
    ![](./images/odi_password.png)
 
-## **Step 3:** Designer Navigator
+## **Step 2:** Designer Navigator
 
 Designer Navigator is used to manage metadata, to design data integrity checks, and to build transformations.
 The main objects you handle through Designer Navigator are *models* and *projects*.
@@ -165,7 +165,7 @@ Getting Started tutorial:
 The necessary Knowledge Modules (KM) are already imported in the Demo Project:
 In addition, there are many more in Global KM folder.
 
-## **Step 4:** Operator Navigator
+## **Step 3:** Operator Navigator
 Operator Navigator is the management and monitoring tool. It is designed for IT operators and can be used by developers to check code execution and perform debugging operations. Through Operator Navigator, you can manage your development executions in the sessions, as well as the scenarios.
 The Operator Navigator has the following accordions:
 
@@ -177,3 +177,13 @@ The Operator Navigator has the following accordions:
 | Scheduling               | The Scheduling accordian displays the list of physical agents and schedules.  |
 | Load Plans and Scenarios | The Scenarios accordion displays the list of scenarios available. |
 | Solutions                | The Solutions accordion contains the Solutions that have been created when working with version management. |
+
+
+## Acknowledgements
+
+ - **Author** - Jayant Mahto, July 2020
+ - **Contributors** - Troy Anthony
+ - **Last Updated By/Date** - Jayant Mahto, September 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

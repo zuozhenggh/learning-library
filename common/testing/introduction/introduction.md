@@ -29,7 +29,7 @@ In this lab, you will:
 
 *Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
-* Item no 1
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
 *This is the "fold" - below items are collapsed by default*
@@ -139,4 +139,4 @@ You may proceed to the next lab.
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
