@@ -1,4 +1,4 @@
-# Lab 4: Publishing, Dashboards, Import/Export
+# Publishing, Dashboards, Import/Export
 
 ## Introduction
 So far, we have been designing the pipelines in **Draft** Mode which means that we could have made changes to any of the stages and see the updates live.  Furthermore, we could have at any time stopped the stream and designing of the pipeline by clicking on the **Done** button in the upper left hand corner of the screen.
@@ -108,7 +108,7 @@ You have learned the import functionality in the beginning of this workshop.  In
 
 * **Author** - Hadi Javaherian, Solution Engineer
 * **Contributors** - Shrinidhi Kulkarni, Solution Engineer
-* **Last Updated By/Date** - Hadi Javaherian, Septembe 2020
+* **Last Updated By/Date** - Hadi Javaherian, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
