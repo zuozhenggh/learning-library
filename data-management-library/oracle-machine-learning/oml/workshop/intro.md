@@ -2,7 +2,7 @@
 
 The labs in this workshop walk you through all the steps to get started using Oracle Machine Learning.
 
-### What is Oracle Machine Learning Notebooks?
+## What is Oracle Machine Learning Notebooks?
 
 Oracle Machine Learning Notebooks is an Apache Zeppelin-based collaborative web-based interface that provides a development environment to create data mining notebooks where you can perform data exploration and visualizations, data preparation and machine learning.
 Key features of Oracle Machine Learning Notebooks:
