@@ -1,96 +1,61 @@
-# Data Redaction
+## Redact EMPLOYEESEARCH Data
 
-## Introduction
 
-Version tested in this lab: `Oracle DB 19.8`
 
 In this lab we will redact data from the `EMPLOYEESEARCH_PROD` schema from being seen by applications other than the Glassfish application.
 
-Estimated Lab Time: 20 minutes
+The first thing you will do is view the data in your Glassfish application.  Use your browser and load your browser's public IP into this URL:
 
-### Objectives
--   Dynamically redact sensitive data preventing it from being displayed outside the application
+`http://PUBLIC_IP:8080/hr_prod_pdb1`
 
-### Prerequisites
-This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
-- SSH Keys
-- Have successfully connected to the workshop machine
+Sign in as **admin** / **Oracle123**
 
-## **Step 1**: Redact EMPLOYEESEARCH Data
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
+Perform some simple queries in the application and verify you can see Social Identification Number (SIN), Social Security Number (SSN) and National Identification Number (NINO).
 
-   ````
-   <copy>sudo su - oracle</copy>
-   ````
+Now, in the `Redact_EMPLOYEESEARCH_Data` lab directory, run the following script:
 
-2. Go to the scripts directory
+`./01_query_employee_data.sh` 
 
-   ````
-   <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/Data_Redaction/Redact_EMPLOYEESEARCH_Data</copy>
-   ````
+You should see all of the data in an un-redacted format.
 
-3. First, let's view the data before we redact it
+Next, create your redaction policy to redact data for everyone (`1=1`):
 
-   ````
-   <copy>./01_query_employee_data.sh</copy>
-   ````        
- 
-    ![](./images/dr-001.png)
-    
-4. Create a redaction policy for the `DEMO_HR_EMPLOYEES` table to redact data for all queries
+`./02_redact_for_all.sh`
 
-   ````
-   <copy>./02_redact_for_all.sh</copy>
-   ````    
+Run the next script to view the output after applying the redaction policy:
 
-   ![](./images/dr-002.png)
+`./03_query_employee_data.sh`
 
-5. Re-run the query to see the redacted data
+You will see the SIN column no longer displays any data. You have applied a policy using the `function_type => DBMS_REDACT.FULL`.
 
-   ````
-   <copy>./03_query_employee_data.sh</copy>
-   ````
+Use your web browser to verify that the application data is also redacted. We do **not** want to leave it this way so we will redact everything **except** the application.  Do so by running this script:
 
-   ![](./images/dr-003.png)
+`./04_redact_nonapp_queries.sh`
 
-6. Now, modify the redaction policy to only redact non-Glassfish queries
+Now, add additional columns to our redaction policy. These columns include `SSN` and `NINO`.
 
-   ````
-   <copy>./04_redact_nonapp_queries.sh</copy>
-   ````
+`./05_add_redacted_columns.sh`
 
-   ![](./images/dr-004.png)
+Run the query script to view the `DEMO_HR_EMPLOYEES` table data again.
 
-7. Add additional columns to the redaction policy
+`./06_query_employee_data.sh`
 
-   ````
-   <copy>./05_add_redacted_columns.sh</copy>
-   ````
+Use your web browser again to verify that the application data is **not** redacted this time. 
 
-   ![](./images/dr-005.png)
+When you are satisified with the results, you can remove the redaction policy.
 
-8. Run the query to see the redact data again
+`./07_drop_redact_policy.sh`
 
-   ````
-   <copy>./06_query_employee_data.sh</copy>
-   ````
 
-   ![](./images/dr-006.png)
-
-9. When you are finished with the lab, you can drop the redaction policy
-
-   ````
-   <copy>./07_drop_redaction_policy.sh</copy>
-   ````
-    
-   ![](./images/dr-007.png)
 
 ## Acknowledgements
-- **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Principal Solution Engineer, Database Security
-- **Last Updated By/Date** - Gian Sartor, September 2020
+
+- **Authors** - Gian 
+- **Contributors** - Kanika Sharma
+- **Team** - 
+- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
+- **Expiration Date** - June 2021   
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
