@@ -73,15 +73,15 @@ The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** 
 To identify your GitHub Pages URL and how to enable this feature:
 1. Login to [GitHub Web UI] (http://github.com) using your GitHub account credentials, and then click your fork's link in the **Repositories** section to display your fork.
 
-![](./images/git-hub-stage-git-hub-pages-repositories " ")
+![](./images/git-hub-stage-git-hub-pages-repositories.png " ")
 
 2. Click **Settings** to display the **Settings** section.
 
-![](./images/git-hub-stage-git-hub-pages-settings " ")
+![](./images/git-hub-stage-git-hub-pages-settings.png " ")
 
 3. Click **Options** and scroll down to the **GitHub Pages** section.
 
-![](./images/git-hub-stage-git-hub-pages-settings-options " ")
+![](./images/git-hub-stage-git-hub-pages-settings-options.png " ")
 
 4. If your GitHub Page site is not yet set up, then the **Theme Chooser** label is displayed as a button. To enable GitHub Pages on your fork, click this button. This may take a few hours to complete before your site is enabled.
 
@@ -90,7 +90,7 @@ In the following example, the web site for the fork associated with user achepur
   * github.io is the domain's name
   * learning-library is the repository's name.
 
-![](./images/git-hub-stage-git-hub-pages-settings-theme " ")
+![](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
 
 Notice that this is the GitHub Pages site is associated with your fork.
 **Note**:  https://achepuri.github.io/learning-library refers to the forked repository and not the master repository (production).  
@@ -107,11 +107,11 @@ Note that the owners can approve your request, ask for more information if requi
 To create a Pull Request:
 1. In the **GitHub Desktop** client, select **Branch > Create pull request** to display a browser interface.
 
-![](./images/git-hub-branch-pull-request " ")
+![](./images/git-hub-branch-pull-request.png " ")
 
 2. Click **Create pull request** to display an **Open a pull request** page.
 
-![](./images/git-hub-browser-create-pull-request " ")
+![](./images/git-hub-browser-create-pull-request.png " ")
 
 3. Enter a subject for the pull request, an optional comment, and then click **Create pull request**.
 

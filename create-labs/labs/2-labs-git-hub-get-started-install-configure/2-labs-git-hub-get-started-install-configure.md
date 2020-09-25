@@ -32,8 +32,8 @@ In this step, you will create your GitHub account and add it to Oracle.
 ![](./images/download-install-create-account.png " ")
 2.  If this is a new account, use your Oracle email ID to register. Do not create a secondary new account to join GitHub. Ensure that your GitHub account is associated to your @oracle.com email ID.
 3. Go to [GitHub Settings](https://github.com/settings/profile) and configure the following:
-  * Set your Name as it appears in your Aria employee page.
-  * Set a Custom Profile.
+  *   Set your Name as it appears in your Aria employee page.
+  *   Set a Custom Profile.
 4. Set up a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
 
 ## **Step 2:** Requesting Membership to Oracle GitHub Organization (OGHO)
@@ -50,9 +50,11 @@ In this step, you will create your GitHub account and add it to Oracle.
 3. Under your organization name, click **People**.
 4. Locate your username in the list of members. If the list is large, you can search for your username in the search box.
 5. In the menu to the right of your username, choose a new visibility option:
-  * To publicize your membership, choose **Public**.
-  * To hide your membership, choose **Private**.
+  *   To publicize your membership, choose **Public**.
+  *   To hide your membership, choose **Private**.
+
   ![](./images/get-started-profile-public.png " ")
+  
 6. Send an email to [github_info_ww_grp](github_info_ww_grp@oracle.com) that you have made your membership public.
   **Note**: Employees who have not made their membership public will be removed from the organization within 30-days of the initial request to be added.
 Now you are an official member of the main Oracle Organization on GitHub (OGHO).
