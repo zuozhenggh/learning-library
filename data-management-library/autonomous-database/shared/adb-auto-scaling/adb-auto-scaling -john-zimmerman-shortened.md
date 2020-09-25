@@ -48,7 +48,7 @@ If your organization performs intensive queries mostly for end of week or end of
 
     ![](images/disable-auto-scaling.png " ")
 
-2. Go back to the details page for your ADW database. Click the **Tools** tab. In the next screen, click **Open SQL Developer Web**. (Note that you can alternatively use SQL Developer desktop client instead of SQL Developer Web.)
+2. Go back to the details page for your ADW database. Click the **Tools** tab. In the next screen, click **Open SQL Developer Web**. In the log-in dialog, provide the username `admin` and the administrator password you specified when you created the autonomous database. (Note that you can alternatively use SQL Developer desktop client instead of SQL Developer Web.)
 
     ![](./images/click-tools-tab.png " ")
 
@@ -100,7 +100,7 @@ Run a script that will:
 - Create a sequence used for each test number.
 - Create the table used to save the results.
 
-1. Copy and paste the following script into your second worksheet. This worksheet uses the HIGH consumer group.
+1. Copy and paste the following script into your second worksheet. This worksheet uses the HIGH consumer group. Run the script.
 
 ```
 <copy>drop sequence test_run_seq;
@@ -217,7 +217,7 @@ end;
 exec test_proc;
 ````
 
-3. While the 3 procedure instances are running concurrently, look at the Monitored SQL to see that each procedure instance is running a query 3 times.
+3. While the 3 procedure instances are running concurrently, go to the OCI console's details page for your autonomous database and click **Performance Hub**. In Performance Hub, click the **SQL Monitoring** tab, and look at the Monitored SQL to see that each procedure instance is running a query 3 times.
 
     ![](./images/monitored-sql-while-three-procedures-running.png " ")
 
