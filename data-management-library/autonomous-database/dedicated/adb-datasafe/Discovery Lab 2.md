@@ -132,4 +132,13 @@ You can manually update your sensitive data model while continuing to work in th
 - Your sensitive data model is now updated and accurate.
 - Click **Save** then **Exit**.
 
-### All Done!
+## Acknowledgements
+
+*Great Work! You successfully completed the Data Safe Discovery Lab 2*
+
+- **Author** - Jayshree Chatterjee
+- **Last Updated By/Date** - Kris Bhanushali, September 2020
+
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

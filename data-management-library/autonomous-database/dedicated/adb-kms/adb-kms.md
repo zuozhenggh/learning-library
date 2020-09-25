@@ -120,4 +120,6 @@ ADB Key rotation option is under **More Action** drop down button on the databas
 - **Author** - Kris Bhanushali
 - **Last Updated By/Date** -  September 22nd, 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!
