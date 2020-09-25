@@ -632,10 +632,6 @@ td {
     border: 1px solid #D9D4D0;
 }
 
-td ul,li {
-  padding-left: 10px;
-}
-
 em {
     color: #C74634;
 }
@@ -680,24 +676,24 @@ h1 {
     font-size: 28px;  /* JR: reduce from 40px */
     line-height: 48px;
     margin-bottom: 4px;  /* JR: reduce from 16px */
-    margin-top: 0px; /* TM: reduced from 10px to 0px */
+    margin-top: 10px;
     margin-left: -1px;
 }
 
 h2 {
     font-weight: 400;
     font-size: 20px; /* JR: reduce from 24px */
-    line-height: 30px; /* TM: reduce from 40px */
+    line-height: 40px;
     margin-bottom: 10px;  /* JR: reduce from 20px */
     margin-top: 36px;
     margin-left: -11px;
     /* background-color: #FCFBFA; */
     padding-left: 10px;
-    padding-top: 0px; /* TM: reduced from 10px to 0px */
+    padding-top: 10px;
 }
 
 h2:first-of-type {
-    margin-top: -10px; /* TM: reduced from 0 to -10 */
+    margin-top: 0px;
 }
 
 h2:not(.plus):not(.minus) {
@@ -714,21 +710,21 @@ h3 {
 
 h4 {
     font-weight: 700;
-    font-size: 14px; /* TM: reduced from 18px to 14px */
+    font-size: 20px;
     line-height: 28px;
     margin-bottom: 14px;
 }
 
 h5 {
     font-weight: 400;
-    font-size: 14px; /* TM: reduced from 18px to 14px */
+    font-size: 18px;
     line-height: 28px;
     margin-bottom: 14px;
 }
 
 h6 {
     font-weight: 400;
-    font-size: 14px; /* TM: reduced from 18px to 14px */
+    font-size: 16px;
     line-height: 28px;
     margin-bottom: 14px;
 }
@@ -760,7 +756,7 @@ pre {
     margin-top: 20px;
     /*margin-right: .4rem;*/
     /*margin-right: 20%;*/
-    max-width: 80%; /* TM: Increased right margin */
+    max-width: 80%;
     margin-bottom: 25px;
     /* margin-left: 25px; */
     border: solid 2px #dedad6;
@@ -1004,7 +1000,7 @@ pre .copy-button:hover {
     cursor: pointer;
 }
 
-@media (min-width: 1024px) { /* TM: changed from 1140 to small laptop 1024 */
+@media (min-width: 1140px) {
     figure>img,
     img,
     canvas,
@@ -1012,12 +1008,12 @@ pre .copy-button:hover {
     video,
     select,
     textarea {
-        max-width: 75%; /* TM: Increased from 65% */
+        max-width: 80%;
     }
 }
 
 
-@media (max-width: 1024px) { /* TM: changed from 1140 to small laptop 1024 */
+@media (max-width: 1140px) {
     #contentBox {
         padding-left: 24px;
         padding-right: 24px;
@@ -1030,7 +1026,7 @@ pre .copy-button:hover {
     video,
     select,
     textarea {
-        max-width: 75%;
+        max-width: 85%;
     }
 
     .hol-Nav-list > li {
@@ -1068,7 +1064,7 @@ pre .copy-button:hover {
     }
 }
 
-@media (max-width: 768px) {  /* Tablets and iPads */
+@media (max-width: 768px) {
     #qa-report {
         display: none
     }
@@ -1088,11 +1084,6 @@ pre .copy-button:hover {
     p, body, pre, pre code span.copy-code {
         font-size: 10.5px;
         margin-bottom: 12px;
-    }
-
-    ul, li, ol {  /* JR - fix for mobile */
-    	font-size: 10.5px;
-    	padding-left: 10px;
     }
 
     h2.plus, h2.minus, h2:not(.plus):not(.minus) {

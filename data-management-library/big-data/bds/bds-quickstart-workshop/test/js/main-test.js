@@ -417,7 +417,7 @@ let main = function() {
     }
     /* The following function adds the h1 title before the container div. It picks up the h1 value from the MD file. */
     let updateH1Title = (articleElement) => {
-        $('#tutorial-title').text("\t\t>\t\t" + $(articleElement).find('h1').text());
+        $('#tutorial-title').text("\t\t›\t\t" + $(articleElement).find('h1').text());
         // $(articleElement).find('h1').remove(); //Removing h1 from the articleElement as it has been added to the HTML file already
         return articleElement;
     }
