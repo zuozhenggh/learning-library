@@ -15,7 +15,7 @@
         {
             "title": "Develop SOA composite for Validating payment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "./2-build-composite-to-validate-payment.md"
+            "filename": "./2-build-composite-for-validate-payment.md"
         },
         {
             "title": "Register the SOA composite to Oracle Service Bus",
@@ -23,11 +23,11 @@
         },
         {
             "title": "Develop Process Order in SOA composite",
-            "filename": "./5-process-order-using-composite.md"
+            "filename": "./4-process-order-using-composite.md"
         },
         {
             "title": "Adding new channel for ordering in SOA composite",
-            "filename": "./4-add-new-channel-for-ordering.md"
+            "filename": "./5-add-new-channel-for-ordering.md"
         },
         {
             "title": "Packing and shipping composite application",

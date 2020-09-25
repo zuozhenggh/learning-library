@@ -1,4 +1,4 @@
-# Module 3: Process Order Using composite
+# Module 4: Process Order Using composite
 
 ## Introduction
 You will build the basis of the new order processing system for Avitek, referred to as ProcessOrder, starting on page 78 on the SOA suite tutorial.

@@ -1,4 +1,4 @@
-# Module 4: Add new channel for an order system
+# Module 5: Add new channel for an order system
 
 ## Introduction
 After you completed process order using SOA composite app, the core order system is built. You now will extend and add a new interface so that existing systems may place orders without impacting an existing application. Service Bus can provide intelligent routing to respective business services, protocol and data enrichment to minimize any disruption to the backend business logic of Process Order.

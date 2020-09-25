@@ -1,4 +1,4 @@
-# Module 5: Pack and ship composite
+# Module 6: Pack and ship composite
 
 ## Introduction
 In this module, you will build the first part of the order fulfillment service. After the order has been successfully processed, it needs to be packed and shipped. Avitek, as fictitious company, has a number of preferred shipping providers, each of them assigned to a specific shipping method. This method is calculated based on the shipping speed the customer chose when placing the order and the shipping state (in address).

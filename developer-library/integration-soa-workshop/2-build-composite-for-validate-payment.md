@@ -366,8 +366,8 @@ You may proceed to the next lab.
 ## Acknowledgements
 * **Author** - <Name, Title, SOA Product Development>
 * **Adapted for Live Lab by** -  <Daniel Tarudji, Solution Engineering> -- optional
-* **Last Updated By/Date** - <Daniel Tarudji, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
+* **Last Updated By/Date** - <Daniel Tarudji, Solution Engineering, September 2020>
+* **Workshop (or Lab) Expiry Date** - <March 2021> -- optional
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

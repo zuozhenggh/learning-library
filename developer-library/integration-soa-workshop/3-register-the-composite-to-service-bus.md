@@ -1,4 +1,4 @@
-# Module 3: Register the validate payment composite on the Service Bus
+# Module 3: Register Validate payment composite on the Service Bus
 
 ## Introduction
 
@@ -226,7 +226,7 @@ To deploy and test end-to-end, ensire the Integrated Server is running.
 
 + By default, a sample payload will be generated for you; however, we will test with a specific file.
 + Click the Choose File button. This may show up as a Browse button on Linux.
-+ Navigate to ~/e2e-orderprocessing/sample_input/ and select PaymentInfoSample_Authorized.xml
++ Navigate to ~/e2e-orderprocessing/sample\_input/ and select PaymentInfoSample_Authorized.xml
 + Click Open.
 + On the Test console, Click on Execute button
 
@@ -240,18 +240,40 @@ Please follow the construction details from <ins>**page 54 to 77**</ins>, in the
 
 ![](images/2/soa-tutorialpdf.png)
 
+## **STEP 7**:   REST-enabled SOA Composite
+
+### Video Preview
+
+Watch on how to REST-enabled SOA composite, start at 3:25
+
+[](youtube:50i0b8ry-z8)
+
+
 ## **Summary**
 
 Congratulations you've completed developing the validate payment service using SOA composite app and register it to Oracle Service Bus.
 
-You may proceed to the next workshop.
+Salient points about Oracle SOA. It is a platform to address application **integration**, for both cloud SaaS and on-premise. Oracle SOA can be deployed on customer's datacenter, OCI or your choice of IaaS, Cloud provider:
+
+1. Companies can develop applications without replacing existing enterprise applications or system of record.
+2. SOA allows reusing the service of an existing system, alternately building new services from existing applications or system of record. It can provide REST API-enabled from existing system or enterprise business service.
+3. It offers reliable applications in which you can test and debug the independent services as compared to a large set of huge lines of code.
+
+SOA complement Microservices architecture by 
+1. Maximizing service reusability and decoupling 
+2. It can use lightweight protocols like HTTP, REST, or Thrift APIs. 
+3. Quick and easy deployment with docker and Kubernetes
+4. Strong emphasis on DevOps and Continuous Delivery 
+5. Communicate through an API layer.
+   
+You may proceed to the next optional module - build the process order application using soa composite.
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
 ## Acknowledgements
 * **Author** - <Name, Title, SOA Product Development>
 * **Adapted for Live Lab by** -  <Daniel Tarudji, Solution Engineering> -- optional
-* **Last Updated By/Date** - <Daniel Tarudji, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
+* **Last Updated By/Date** - <Daniel Tarudji, Solution Engineering, September 2020>
+* **Workshop (or Lab) Expiry Date** - <March 2021> -- optional
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

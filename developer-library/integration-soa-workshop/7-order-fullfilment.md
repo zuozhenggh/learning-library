@@ -1,4 +1,4 @@
-# Module 6: Order Fullfilment
+# Module 7: Order Fullfilment
 
 ## Introduction
 In this module, you will build the second part of the order fulfillment service, the FulfillOrder composite. The composite listens to orders being processed, select a Shipping Provider and then invoke the PackAndShip service that was built in the previous chapter.
