@@ -14,12 +14,13 @@ You will create a highly scalable application that relies on Oracle Container En
 
 Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Provision a DevCS Instance](?lab=lab-1-setup-oci,-oke,-atp-cloud-shell).
 
+Access a complete walkthrough video of this lab [here](https://tinyurl.com/helidonoracledb-msdataworkshop). 
+
 If you need any help please join the databasehome.slack.com (#microservices) channel.
 
 
 ## Want to Learn More?
 
-* [Watch a video demonstration of this lab](https://tinyurl.com/helidonoracledb-msdataworkshop)
 * [Multitenant Database – Oracle 19c](https://www.oracle.com/database/technologies/multitenant.html)
 * [Oracle Advanced Queuing](https://docs.oracle.com/en/database/oracle/oracle-database/19/adque/aq-introduction.html)
 * [Microservices Architecture with the Oracle Database](https://www.oracle.com/technetwork/database/availability/trn5515-microserviceswithoracle-5187372.pdf)

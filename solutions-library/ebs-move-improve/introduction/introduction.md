@@ -62,18 +62,18 @@ In this lab, you will:
 
 You will need the following in order to complete this workshop:
 
-1. A modern browser
-2. A secure remote login (Secure Shell, or SSH) utility
+* A modern browser
+* A secure remote login (Secure Shell, or SSH) utility
         - Such as PuTTY - downloaded from [here](https://www.ssh.com/ssh/putty/download)
-3. A secure copy program
+* A secure copy program
         - Such as WinSCP - downloaded from [here](https://winscp.net/eng/index.php)
-4. Knowledge of basic UNIX commands
+* Knowledge of basic UNIX commands
 
 ## Setup
 
 In this section, you will prepare your workstation. In addition the following zip file provides a key-data.txt to store all information that you will need to refer back to. We recommend you use this file to store your variables while going through the lab.
 
-Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2uyg0q6BR9ZJRMzppgF3_rncnQvUDD0Z2QodaO1ImC0/n/orasenatdpltoci03/b/EBS-HOL-Files/o/ebs-hol.zip) link to download the files.
+Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RPRU26R15Fc4DN8Q7QzD_Z8B-vXE-OgSnlbJFvCw9GKWr6TgbyXsgyPaSQPcoRh3/n/orasenatdpltoci03/b/EBS-HOL-Files/o/ebs-hol.zip) link to download the files.
 
 Additionally there is a terraform configuration included if you would do this lab using resource manager. This lab uses marketplace stack, but if you decide to use resource manager the terraform file is available.
 
@@ -136,9 +136,9 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
 
 ## Acknowledgements
 
-- **Last Updated By/Date**
-- Quintin Hill, Cloud Engineering/Sept 2020
-- Santiago Bastidas, Product Management Director/July 2020
+* **Author:** Quintin Hill, Cloud Engineering
+* **Contributors:** Santiago Bastidas, Product Management Director
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
