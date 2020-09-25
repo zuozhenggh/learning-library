@@ -18,7 +18,7 @@
             "filename": "./2-build-composite-for-validate-payment.md"
         },
         {
-            "title": "Register the SOA composite to Oracle Service Bus",
+            "title": "Register Validate Payment composite to Oracle Service Bus",
             "filename": "./3-register-the-composite-to-service-bus.md"
         },
         {
@@ -26,15 +26,15 @@
             "filename": "./4-process-order-using-composite.md"
         },
         {
-            "title": "Adding new channel for ordering in SOA composite",
+            "title": "Add digital channel for order processing using composite",
             "filename": "./5-add-new-channel-for-ordering.md"
         },
         {
-            "title": "Packing and shipping composite application",
+            "title": "Pack and ship composite application",
             "filename": "./6-pack-and-ship-service-composite.md"
         },
         {
-            "title": "Order Fullfilment of SOA composite",
+            "title": "Order Fullfilment using composite",
             "filename": "./7-order-fullfilment.md"
         },
         {

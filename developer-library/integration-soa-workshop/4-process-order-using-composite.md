@@ -34,7 +34,7 @@ The order status update will be converted to a BPEL subprocess to make it easily
 ## **STEP 5**: Add an Order Number sensor to the Order Process composite app
 
 ### Details: ###
-To complete part 1, please start <ins>**Chapter 3, page 80 to 116** </ins> of the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf) 
+To complete step 1 to 5, please start <ins>**Chapter 3, page 80 to 116** </ins> of the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf) 
 
 ## **Register Process Order app on Service Bus** 
 As you have completed and tested the Process Order composite, you will register it on Service Bus to make it available for external consumers. 
@@ -46,17 +46,53 @@ As you have completed and tested the Process Order composite, you will register 
 
 ## **STEP 6**: Open the existing service bus application and import the template resource
 
+![](images/3/import-sb-resource0.png)
+
++ Right-click in the Application Navigator window and select Import...
++ 
++ ![](images/3/import-sb-resource1.png)
++ On the import dialog, select Service Bus resources
++ 
++ ![](images/3/import-sb-resource2.png)
+
 ## **STEP 7**: Register Process Order composite as a business service in the Service Bus
+
+As in previous module, you will first register the composite on Service Bus by creating a Business Service. This time, rather than dragging and dropping from the Component Palette, you will create using a menu-based Insert on the External Services lane.
+
++ First, make sure your overview editor is active by double-clicking on the ProcessOrderSB icon on top or in the left-hand Application Navigator. The canvas will be blank.
++ Right click on the External Services lane of the overview editor
+
++ ![](images/3/import-sb-resource3.png)
+
++ Mouse-over Insert Transports and select HTTP.
++ ![](images/3/import-sb-resource4.png)
+  
 
 ## **STEP 8**: Create a service bus pipeline with proxy using a pipeline template
 
+instead of creating the Pipeline for ProcessOrder from scratch, you will leverage a Pipeline Template. The template encapsulates all the repetitive tasks common with building a Pipeline such as routing, data validation, reporting, error handling and alerting under error conditions.
++ First, make sure your overview editor is active by double-clicking on the ProcessOrderSB icon, on top center or in the left-hand Application Navigator.
++ Locate the Pipeline icon on the Component palette and drag onto the middle of your canvas.
+
++ ![](images/3/import-sb-resource5.png)
+
+The Create Pipeline dialog will appear. This is the same dialog as you used to create your Pipeline in Chapter 2; however, this time you will select to Create the Pipeline from a Template.  
+
 ## **STEP 9**: Test end-to-end process - Proxy service, route to Business service
 
++ Click on the ProcessPS service on the left swim lane and select Run
++ ![](images/3/import-sb-resource9.png)
+
++ First, send in a good Order
++ - a. ~/e2e-1201-orderprocessing/sample_input/OrderSample.xml
++ Then send in and invalid order
++ - a. ~/e2e-1201-orderprocessing/sample_input/BadOrderSample.xml
+
 ### Details: ###
-To complete part 2, please review on <ins> **chapter 3, page 117 to 137** </ins> of the [SOAsuite tutorial document](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf)
+To complete step 6 to 7, please review on <ins> **chapter 3, page 117 to 137** </ins> of the [SOAsuite tutorial document](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf)
 
 ## **Summary**
-In module 3, you've accomplished:
+In this module, you've accomplished:
 - Created Service Bus pipeline from an existing template.
 - Providing Data validation, Routing and manage exception inside the pipeline
 - Provided API for backend service from a service bus. This is exposed using Proxy Service within a Service Bus.

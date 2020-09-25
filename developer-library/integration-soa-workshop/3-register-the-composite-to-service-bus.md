@@ -6,8 +6,9 @@ In previous section, the validatePayment process composite have been completed. 
 
 Service Bus will protect consumers of the validatePayment composite from routine changes such as deployment location and implementation updates. Service Bus will help scale the service to handle higher volume of requests and provide resiliency for the service if it needs to be taken down for routine maintenance.
 
-For next step, You will start by first creating a Business Service to register the composite URI (the composite end-point). You will then add a simple Pipeline and Proxy. Pipelines contain actions performed on the Service Bus, typically reporting, data transformation and validation, before invoking the backend service. Consumers of validatePayment service will call the end-point API via the Proxy rather than connecting directly to the composite end-point, allowing more agility and flexibility in managing change.
+![](images/2/servc-bus-0.png)
 
+For next step, You will start by first creating a Business Service to register the composite URI (the composite end-point). You will then add a simple Pipeline and Proxy. Pipelines contain actions performed on the Service Bus, typically reporting, data transformation and validation, before invoking the backend service. Consumers of validatePayment service will call the end-point API via the Proxy rather than connecting directly to the composite end-point, allowing more agility and flexibility in managing change.
 
 ## Development Steps
 
@@ -240,7 +241,7 @@ Please follow the construction details from <ins>**page 54 to 77**</ins>, in the
 
 ![](images/2/soa-tutorialpdf.png)
 
-## **STEP 7**:   REST-enabled SOA Composite
+## **STEP 7**:   REST-enabled the Service Bus proxy end-point
 
 ### Video Preview
 
