@@ -125,6 +125,11 @@ To create a Pull Request:
 
 7.Your committed content is now visible to the public on the learning-library (upstream/master or production) repository.
 
+**This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
+
+## Want to Learn More?
+
+* [Using GItHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
 ## Acknowledgements
 
 * **Author:**  

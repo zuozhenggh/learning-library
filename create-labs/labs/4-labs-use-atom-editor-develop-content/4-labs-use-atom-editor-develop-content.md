@@ -67,18 +67,14 @@ The Workshop is displayed along with the labs. The labs contained in this worksh
 
 5. To stop the atom-live-server, select  **Packages > atom-live-server > Stop folder-path-at-port-#**.
 
-
-
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 
 ## Want to Learn More?
-
-
-
+[Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
 
 ## Acknowledgements
 * **Authors:**
-    * Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate
+
 * **Last Updated By/Date:** Anuradha Chepuri, September 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

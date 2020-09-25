@@ -29,7 +29,7 @@ The following flow chart and diagram show the process that we need to follow to 
 
 
 ## Workshop Objectives
-- Setting Up the GetHub Environment and Installing GitHub Desktop Client
+- Setting Up the GitHub Environment and Installing GitHub Desktop Client
 - Forking Learned-Library Content
 - Cloning your Forked Library
 - Understand the Live Labs Folder Structure
@@ -54,6 +54,7 @@ This workshop requires an Oracle Cloud account. You may use your own cloud accou
 **You are all set to begin the labs! Click Lab 1: Get Started with Git and Set up the GitHub Environment in the Contents menu on the right.**
 
 ## Want to Learn More About Live Labs and Workshops?
+* [Glossary of Terms](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Glossary+of+terms)
 
 Use these links to get more information about Labs and Workshops:
 

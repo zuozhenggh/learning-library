@@ -20,12 +20,17 @@ In this lab, you will learn how to create a GitHub Account and add it to Oracle,
 + **Introduction**
 GitHub is a cloud-based version control system designed for software developers. At the core is Git, a version control system that manages file versions and tracks who made which changes. The Hub is a cloud-based repository that manages storage of the files and provides a folder structure.
 
-## **Step 1:** Getting Your GitHub Account Added to the Oracle Organization
+## **Step 1:** Download and Install the latest version of Git
+1. Install Git for Windows or Git for Mac from the [Git download site] (https://git-scm.com/downloads).
+2. Click the required option under **Downloads** and proceed with the installation.
+
+## **Step 2:** Create Your GitHub Account and Add it to the Oracle Organization
 
 In this step, you will create your GitHub account and add it to Oracle.
 
 1. Create a free GitHub Account here: [GitHub Web UI](https://github.com/) if you don't have one.
-2. Use Your Oracle ID to register. Do not create a secondary new account to join GitHub. Ensure that your GitHub account is associated to your @oracle.com email ID.
+![](./images/download-install-create-account.png " ")
+2.  If this is a new account, use your Oracle email ID to register. Do not create a secondary new account to join GitHub. Ensure that your GitHub account is associated to your @oracle.com email ID.
 3. Go to [GitHub Settings](https://github.com/settings/profile) and configure the following:
   * Set your Name as it appears in your Aria employee page.
   * Set a Custom Profile.
@@ -88,21 +93,16 @@ When you make a clone, you can edit the files in your preferred editor, such as 
 
 ## Want to Learn More?
 
-* [Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/)
-* [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
-* [Security Lists](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/securitylists.htm)
-* [Security Rules](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/securityrules.htm)
-* [Configure Security Rules for the Network](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html)
-* [VCN and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm)
-* [Cloudera Manager](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cloudera_manager.html)
-* [Using Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue_using.html)
+* [Setting Up Environment](https://otube.oracle.com/media/Setting+Up+GitHub/0_93stcjpb)
+* [Download and Install Git for Windows and Mac](https://git-scm.com/download/win)
+* [Using GItHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
 
 ## Acknowledgements
 
 * **Author:**
-    + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
+
 * **Technical Contributor:**
-    + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, August 2020
+
+* **Last Updated By/Date:** Anuradha Chepuri, September 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

@@ -27,7 +27,7 @@ The following describes the components of the above example.
 
 ## Want to Learn More?
 
-* []()
+* [How to Use the GitHub Template](https://otube.oracle.com/media/Use+GitHub+Template/0_780dlc2i)
 
 
 ## Acknowledgements
