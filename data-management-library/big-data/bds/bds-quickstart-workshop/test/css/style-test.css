@@ -641,14 +641,14 @@ em {
 }
 
 p {
-    font-size: 14px; /* JR: reduce from 18px */
+    font-size: 16px; /* JR: reduce from 18px - TM: 16px */
     line-height: 1.5;
     margin: 0;
     margin-bottom: 18px; /* JR: reduce from 28px */
 }
 
 ul {
-    font-size: 14px; /* JR: added */
+    font-size: 15px; /* JR: added */
     margin: 0;
     margin-bottom: 24px;
     padding: 0;
@@ -656,10 +656,10 @@ ul {
 }
 
 li {
-    font-size: 14px; /* JR: added */
+    font-size: 15px; /* JR: added */
     margin: 0;
     margin-bottom: 8px;
-    margin-left: 6px; /* JR: added */
+    /* margin-left: 6px; /* JR: added */
     padding: 0;
 }
 
@@ -679,7 +679,7 @@ h1 {
     font-weight: 900;
     font-size: 28px;  /* JR: reduce from 40px */
     line-height: 48px;
-    margin-bottom: 4px;  /* JR: reduce from 16px */
+    margin-bottom: 10px;  /* JR: reduce from 16px */
     margin-top: 0px; /* TM: reduced from 10px to 0px */
     margin-left: -1px;
 }
@@ -693,7 +693,7 @@ h2 {
     margin-left: -11px;
     /* background-color: #FCFBFA; */
     padding-left: 10px;
-    padding-top: 0px; /* TM: reduced from 10px to 0px */
+    padding-top: 10px;
 }
 
 h2:first-of-type {
