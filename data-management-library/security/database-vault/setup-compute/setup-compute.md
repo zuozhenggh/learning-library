@@ -20,7 +20,7 @@ This lab assumes you have:
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-      - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JDthT7cJjsS1F07KPU77rKEtzdnykXfeMujFVqp0fbo/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
+      - [dbsec-lab-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JDthT7cJjsS1F07KPU77rKEtzdnykXfeMujFVqp0fbo/n/omcinternal/b/workshop-labs-files/o/dbsec-lab-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 3.  Login to Oracle Cloud
@@ -32,7 +32,7 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack.png " ")
 
-5.  Select **My Configuration**, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
+5.  Select **My Configuration**, click the **Browse** link and select the zip file (dbsec-lab-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 
@@ -79,14 +79,14 @@ You may now proceed to Step 2 (skip Step 1B).
 
 ## **Step 1B**: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
-- Egress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
+- Egress rules for the following ports: 22          
 
 If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  
 
 ***Note:*** *We recommend using our stack to create to reduce the potential for error.*
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-     - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uZPsGTFvwVSVjMn9JtlhRw5tk8zIiYfIz8iTql-I6eI/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
+     - [dbsec-lab-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uZPsGTFvwVSVjMn9JtlhRw5tk8zIiYfIz8iTql-I6eI/n/omcinternal/b/workshop-labs-files/o/dbsec-lab-mkplc-freetier.zip)
 
 2. Save in your downloads folder.
 3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Choose **Resource Manager > Stacks**.  
@@ -97,7 +97,7 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 
   ![](./images/em-create-stack.png " ")
 
-4. Select **My Configuration**, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
+4. Select **My Configuration**, click the **Browse** link and select the zip file (dbsec-lab-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 
@@ -207,7 +207,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
   ![](./images/em-cloudshell.png " ")
 
-2.  If you didn't jot down your comput instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP address for your instance.
 4.  Enter the command below to login to your instance.    
     ````
@@ -288,7 +288,7 @@ This workshop requires a certain number of ports to be available.
 5.  Click Add Ingress Rule button
 6.  Enter the following:  
     - Source CIDR: 0.0.0.0/0
-    - Destination Port Range: 3000, 3001, 3003, 1521, 7007, 9090, 22
+    - Destination Port Range: 22
 7.  Click the Add Ingress Rules button
 
 
