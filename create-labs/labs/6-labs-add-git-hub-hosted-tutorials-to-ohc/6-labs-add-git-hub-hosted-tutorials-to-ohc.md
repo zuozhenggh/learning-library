@@ -1,13 +1,16 @@
 # Add GitHub Hosted Labs and Workshops to OHC
 
 ## Introduction
-
-
+You need to add a link from your Oracle Help Center (OHC) page to a lab hosted on an Oracle GitHub repository. This lab details how to use Oracle Learning Library (OLL) administration tools to manage links and how to add a link to an OHC page.
 
 ### Objectives
-
+* Create an OLL content entry for your lab.
+* Create the Target URL for a Lab.
+* Add the content entry link to OHC.
 
 ### What Do You Need?
+* Required OLL privileges
+* Required privileges to add your entry to OHC
 
 This lab assumes that you have successfully completed the following labs in the **Contents** menu on the right:
 + **Lab 1: Get Started with Git and Install GitHub Environment**
@@ -52,8 +55,7 @@ You need to work with your manager or Lead to get this link added to OHC.
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 
 ## Want to Learn More?
-
-
+* [Add GitHub Hosted Tutorials to OHC](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Add+GitHub-Hosted+Tutorials+to+the+Oracle+Help+Center)
 
 ## Acknowledgements
 
