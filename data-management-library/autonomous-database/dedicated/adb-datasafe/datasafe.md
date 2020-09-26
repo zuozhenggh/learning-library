@@ -35,3 +35,6 @@ This workshop comprises various aspects of Data Security. So follow the given se
 - An Oracle Database Service enabled in a region in your tenancy
 - A registered target database in Oracle Data Safe with sample audit data and the password for the SYS user account. 
 - [Enable Oracle Data Safe](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/enable-oracle-data-safe.html#GUID-1293621D-A6C6-448C-AD97-38B90A9473F0)
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

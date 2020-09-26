@@ -253,7 +253,16 @@ Because many of the masking formats use random formulas, your results are probab
   - `BONUS_AMOUNT`: Sample data before masking: `40396`. Sample data after masking: `2500`
 
 
-### All Done!
+## Acknowledgements
+
+*Great Work! You successfully completed the Data Safe Masking Lab 4*
+
+- **Author** - Jayshree Chatterjee
+- **Last Updated By/Date** - Kris Bhanushali, September 2020
+
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!
 
 
 

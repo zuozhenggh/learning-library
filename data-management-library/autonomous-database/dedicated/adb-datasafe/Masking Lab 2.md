@@ -98,7 +98,15 @@ Explore the Jobs page
 - Click a data masking job's ID to view all of its details.
 - Click the **X** button to close the dialog box.
 
-### All Done!
+## Acknowledgements
 
+*Great Work! You successfully completed the Data Safe Masking Lab 2*
+
+- **Author** - Jayshree Chatterjee
+- **Last Updated By/Date** - Kris Bhanushali, September 2020
+
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!
 
 
