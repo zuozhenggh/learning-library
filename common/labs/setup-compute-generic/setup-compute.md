@@ -17,9 +17,6 @@ This lab assumes you have:
 - Performed *Lab: Prepare Setup*
 
 ## **Step 1A**: Create Stack:  Compute + Networking
-
-If you already have a VCN setup, proceed to *Step 1B*.
-
 1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2.  Login to Oracle Cloud
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
