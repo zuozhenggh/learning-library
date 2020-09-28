@@ -1,9 +1,13 @@
-# Module 4: REST API-enabled the composite
+# REST API-enabled - Validate payment composite
 
+## Introduction
+With a mobile app launch in progress, this new validate-payment composite app must support access via RESTful API.
+
+In SOA 12c, SOA composites can use end-to-end JSON. This means that the REST service can receive the REST request and route it to the BPEL engine without translating it to XML. The BPEL component can use the JavaScript action, and also use JavaScript in conditional and iterative constructs, to work on JSON objects directly. The REST reference can receive the REST message from the BPEL engine and route it to an external REST endpoint without translation.
 
 ## **STEP 1**:   REST-enabled the Service Bus proxy end-point
 
-With a mobile app launch in progress, this new validate-payment composite app must support access via RESTful API.
+In the Components swimlane, right-click the left wired connection of validatePaymentProcess, and select Expose as REST.
 
 ### Video Preview
 

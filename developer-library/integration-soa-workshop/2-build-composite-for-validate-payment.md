@@ -1,4 +1,4 @@
-# Module 2: Payment validation
+# Build composite app for Validating payment
 
 ## Introduction
 In this module, you will build your first Oracle SOA Suite 12c composite to validate a credit card payment.

@@ -1,4 +1,4 @@
-# Module 3: Register Validate payment composite on the Service Bus
+# Register the Validate payment on the Service Bus
 
 ## Introduction
 
