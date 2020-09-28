@@ -71,5 +71,5 @@ During the live lab, the tutorial pdf document can be found on the desktop of yo
 -   <a href= https://www.oracle.com/middleware/technologies/soasuite-learmore.html> Tutorials </a> 
 -  <a href= https://docs.oracle.com/middleware/12211/soasuite/develop/SOASE.pdf> SOA Developer </a> 
 - <a href= https://apex.oracle.com/community> Community </a>
-- External Site + Slack   https://www.oracle.com/technetwork/middleware/weblogic/learnmore/reducing-middleware-costs-2327571.pdf
+-  <a href=https://www.oracle.com/technetwork/middleware/weblogic/learnmore/reducing-middleware-costs-2327571.pdf> Oracle Middleware </a>
 

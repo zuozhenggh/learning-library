@@ -45,7 +45,7 @@ To make sure of the templates, please follow the steps below:
 
 + ![](images/2/jdev-preferences.png)
 
-+ In the Preferences window, go to SOATemplates. (If you do not see ‘SOA’ in the preferences, then you could create a new application, or open an existing one. This will load up SOA libraries, SOA preference will show up).
++ In the Preferences window, go to SOA --> Templates. (If you do not see ‘SOA’ in the preferences, then you could create a new application, or open an existing one. This will load up SOA libraries, SOA preference will show up).
 
 +  ![](images/2/jdev-preferences2.png) 
 
