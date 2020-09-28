@@ -1,13 +1,13 @@
 {
     "tutorials": [
       {
-          "title": "Introduction to Oracle Machine Learning (OML)",
-          "description": "Introduction to Oracle Machine Learning",
+          "title": "Introduction to Oracle Machine Learning (OML) Notebooks",
+          "description": "Introduction to Oracle Machine Learning Notebooks",
           "filename": "./intro.md"
       }
       ,
       {
-            "title": "Lab 1: Create Projects and Workspaces in Oracle Machine Learning",
+            "title": "Lab 1: Create Projects and Workspaces in Oracle Machine Learning Notebooks",
             "description": "This lab walks you through the required and optional tasks to setup your Big Data Service environment before you can create clusters.",
             "filename": "./../create-project-workspace/oml_projects.md"
       }
@@ -19,13 +19,13 @@
       }
       ,
       {
-            "title": "Lab 3: Collaborate in Oracle Machine Learning",
+            "title": "Lab 3: Collaborate in Oracle Machine Learning Notebooks",
             "description": "This lab shows you how to add Oracle Cloud SQL to your BDS cluster.",
             "filename": "./../collaborate-use-notebooks/oml_collaborate.md"
       }
       ,
       {
-            "title": "Lab 4: Use the Scratchpad in Oracle Machine Learning",
+            "title": "Lab 4: Use the Scratchpad in Oracle Machine Learning Notebooks",
             "description": "This lab shows you how to map a node's private IP address to a public IP address",
             "filename": "./../use-scratchpad/oml_scratchpad.md"
         }

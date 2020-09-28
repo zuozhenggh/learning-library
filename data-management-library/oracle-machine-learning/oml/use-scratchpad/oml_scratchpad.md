@@ -1,12 +1,12 @@
 # Oracle® Cloud Using the Scratchpad
 ## Before You Begin
 
-This tutorial shows you how to use the Scratchpad in Oracle Machine Learning.
+This lab shows you how to use the Scratchpad in Oracle Machine Learning.
 
-This tutorial takes approximately 10 minutes to complete.
+This lab takes approximately 10 minutes to complete.
 
 ### Background
-The Scratchpad provides you convenient one-click access to a notebook for running SQL statements, PL/SQL scripts, and Python scripts that can be renamed. The Scratchpad is available on the Oracle Machine Learning Notebook Home Page. The Scratchpad is a regular notebook that is prepopulated with three paragraphs - <code>%sql, %script, </code>and <code>%python</code>.
+The Scratchpad provides you convenient one-click access to a notebook for running SQL statements, PL/SQL scripts, and Python scripts that can be renamed. The Scratchpad is available on the Oracle Machine Learning Notebook Home Page. The Scratchpad is a regular notebook that is prepopulated with three paragraphs - `%sql`, `%script`, and `%python`.
 
 After you run your scripts, the Scratchpad is automatically saved as a notebook by the default name Scratchpad in the Notebooks page. You can access it later in the Notebooks page.
 You can run all the paragraphs together or one paragraph at a time.
@@ -21,22 +21,22 @@ You can run all the paragraphs together or one paragraph at a time.
 
 To open and use the scratchpad, click <b>Scratchpad</b> on the Oracle Machine Learning home page under Quick Actions.
 
-  ![developer_homepage.png](images/developer_homepage.png" ")
+  ![developer_homepage.png](images/developer_homepage.png "developer_homepage.png ")
 
   The Scratchpad opens. The Scratchpad has three paragraphs each with the following directives:
 
-  * <code>%sql </code>- Allows you to run SQL statements.
-  * <code>%script</code> - Allows you to run PL/SQL scripts.
-  * <code>%python</code> - Allows you to run Python scripts.
+  * `%sql`- Allows you to run SQL statements.
+  * `%script` - Allows you to run PL/SQL scripts.
+  * `%python` - Allows you to run Python scripts.
 
 To run python script:
 
 1. Go to the paragraph with the <code>%python</code> directive.
 
-   ![scratchpad_py.png](images/scratchpad_py.png" ")
+   ![scratchpad_py.png](images/scratchpad_py.png "scratchpad_py.png")
 
-2. To use OML4Py, you must first import the <code>oml </code>module.
-   <code>oml</code> is the OML4Py module that allows you to manipulate Oracle Database objects such as tables and views, call user-defined Python functions using embedded execution, and use the database machine learning algorithms. To import the <code>oml </code>module, type the following command and click the Run icon. Alternatively, you can press Shift+Enter keys to run the paragraph.
+2. To use OML4Py, you must first import the `oml` module.
+   `oml` is the OML4Py module that allows you to manipulate Oracle Database objects such as tables and views, call user-defined Python functions using embedded execution, and use the database machine learning algorithms. To import the `oml` module, type the following command and click the Run icon. Alternatively, you can press **Shift+Enter** keys to run the paragraph.
 
 
     ```
@@ -70,23 +70,23 @@ To run python script:
 
     ```
 
-       ![scratchpad_python.png](images/scratchpad_python.png" ")
+       ![scratchpad_python.png](images/scratchpad_python.png "scratchpad_python.png")
 
-       In this example, the commands import two python packages to compute and render the data in two histograms for <code>list1</code> and <code>list2. </code>The Python packages are:
+       In this example, the commands import two python packages to compute and render the data in two histograms for `list1` and `list2`. The Python packages are:
 
        * Matplotlib - Python package to render graphs.
        * Numpy - Python package for computations.
 
-5. After you have created and run your scripts in the Scratchpad, the Scratchpad is automatically saved as a notebook by the name default name <code>Scratchpad</code> in
+5. After you have created and run your scripts in the Scratchpad, the Scratchpad is automatically saved as a notebook by the name default name `Scratchpad` in
 the Notebooks page. You can edit the name and save it with a new name by selecting the notebook and clicking **Edit**.
 
 ## Use the Scratchpad to Run SQL Statements
 
 To run SQL statements:
 
-1. Go to the paragraph with the <code>%sql</code> directive.
+1. Go to the paragraph with the `%sql` directive.
 
-   ![scratchpad_sql.png](images/scratchpad_sql.png" ")
+   ![scratchpad_sql.png](images/scratchpad_sql.png "scratchpad_sql.png")
 
 2. Type the following command and click the Run icon. Alternatively, you can pres **Shift+Enter** keys to run the paragraph.
 
@@ -95,21 +95,19 @@ To run SQL statements:
     SELECT * FROM SH.SALES;
 
     ```
+       ![sql_statement.png](images/sql_statement.png "sql_statement.png")
 
-
-       ![sql_statement.png](images/sql_statement.png" ")
-
-    In this example, the SQL statement fetches all of the data about product sales from the table SALES. Here, <code>SH</code> is the schema name, and <code>SALES</code> is the table name. Oracle Machine Learning fetches the relevant data from the database and displays it in a tabular format. </p>
+    In this example, the SQL statement fetches all of the data about product sales from the table SALES. Here, `SH` is the schema name, and `SALES` is the table name. Oracle Machine Learning fetches the relevant data from the database and displays it in a tabular format.
 
 ## Use the Scratchpad to Run PL/SQL Scripts  
 
 To run PL/SQL scripts:
 
-1. Go to the paragraph with the <code>%script</code> directive.
+1. Go to the paragraph with the `%script` directive.
 
-   ![scratchpad_script.png](images/scratchpad_script.png" ")
+   ![scratchpad_script.png](images/scratchpad_script.png "scratchpad_script.png")
 
-2. Enter the following PL/SQL script and click the Run icon. Alternatively, you can press Shift+Enter keys to run the paragraph.
+2. Enter the following PL/SQL script and click the Run icon. Alternatively, you can press **Shift+Enter** keys to run the paragraph.
 
     ```
     CREATE TABLE small_table
@@ -132,14 +130,11 @@ To run PL/SQL scripts:
     ```
     The PL/SQL script successfully creates the table SMALL_TABLE. The PL/SQL script in this example contains two parts:
 
-    * The first part of the script contains the SQL statement <code>CREATE
-        TABLE</code> to create a table named <b>small_table</b>. It defines the table name, table column, data types, and size. In this example, the column names are <code>NAME,
-        ID1, ID2, ID3, ID4,</code> and <code>TEXT.</code></li>
-    * The second part of the script begins with the keyword <code>BEGIN.</code>
-      It inserts 100 rows in to the table small_table.</li>
+    * The first part of the script contains the SQL statement `CREATE TABLE` to create a table named **small_table**. It defines the table name, table column, data types, and size. In this example, the column names are `NAME, ID1, ID2, ID3, ID4`, and `TEXT`.
+    * The second part of the script begins with the keyword `BEGIN`. It inserts 100 rows in to the table small_table.
 
 
-         ![plsql_procedure.png](images/plsql_procedure.png" ")
+         ![plsql_procedure.png](images/plsql_procedure.png "plsql_procedure.png")
 
 ## Acknowledgements
 * **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
