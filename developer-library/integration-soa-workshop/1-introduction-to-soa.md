@@ -3,7 +3,7 @@
 ## What is SOA?
 SOA, Service Orientated Architecture is is a style of an enterprise IT design where services are provided to the other components by application components, through a communication protocol over a network. A SOA service is a discrete unit of functionality that can be accessed remotely and acted upon and updated independently, such as retrieving a credit card statement online. SOA is also intended to be independent of vendors, products and technologies
 
-## Oracle SOA platform
+## Oracle SOA suite
 SOA suite is is a comprehensive, standards-based software suite to build, deploy and manage integration following the concepts of service-oriented architecture(SOA). The components of the suite benefit from consistent tooling, a single deployment and management model, end-to-end security and unified metadata management you can skip this module and go straight to Module 2 by clicking the navigation menu icon, in the upper-left corner of the header.
 
 Oracle SOA Suite provides easy-to-use, reusable, and unified application development tooling and life cycle management support to further reduce development and maintenance costs and complexity. Businesses can improve efficiency and agility through rules-driven, process connectivity and automation with Oracle SOA Suite.
@@ -13,20 +13,15 @@ SOA Suite functional architecture
 >  ![](images/1/soa-architecture.png)
 
 Critical business services, such as customer, financial, ordering information, and others that were previously accessible only in packaged application user interfaces can now be rapidly repurpose for digital-enabled channel such as: smart phone and tablets.
-
-## Prerequisites for the SOA labs
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
   
 <!-- ## How to Run the Labs
 To run this lab as per instruction provided during live session led by an instructor. 
 
-For participating these labs, you've been granted access to a compute resource via an email invitation or an event code. Please check your inbox email to find details regarding access to a compute resource on Oracle Cloud infrastructure (OCI).
+For participating these labs, you've been granted access to a compute resource via an email invitation or an event code. Please check your inbox email to find details regarding access to a compute resource on Oracle Cloud infrastructure (OCI). -->
 
 <!--Below are steps on how to sign-up for either an Oracle cloud service o. The always free Oracle Compute on OCI is ideal for learning about the Oracle Cloud Infrastructure. This service can readily be upgraded to a paid service as necessary. 
 
 Detail can be found on https://docs.cloud.oracle.com/en-us/iaas/Content/FreeTier/resourceref.htm 
--->
 
 
 ## SOA deployment on Cloud or Data Center
@@ -78,11 +73,15 @@ Here is the link <a href="https://www.oracle.com/cloud/integration/soa-cloud-ser
 
 For details about Oracle SOA
    go to <a href="https://www.oracle.com/cloud/integration/soa-cloud-service/pricing.html"> SOA Cloud Values</a>
+-->
 
+## Prerequisites
 
-### **Summary**
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+  
+## **Summary**
 
-This completes the lab introduction. At this point, you're ready to start building amazing enterprise-grade orchestration and integration, rapidly. You may proceed to the lab: **Develop SOA composite for validating payment** by clicking the navigation menu icon, in the upper-right corner of the header.
+At this point, you're ready to start building amazing enterprise-grade orchestration and integration, rapidly. You may proceed to the lab: **Develop SOA composite for validating payment** by clicking the navigation menu icon, in the upper-right corner of the header.
 
 ## Acknowledgements
 * **Author** - <Daniel Tarudji, Solution Engineering - N. America>

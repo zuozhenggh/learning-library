@@ -336,12 +336,18 @@ choose Run – Start Server Instance (IntegratedWebLogicServer) in the main menu
 ## **STEP 7** - Optional - use the diagnostic tool within JDeveloper
    In SOA Suite 12c, there is facility to set breakpoints in the composite editor, BPEL process. You’re able to stop at breakpoints, look at the data, step into, step out and so on. In a BPEL process, you’re also able to change the value of a variable while debugging.
 
+
+Watch on how to use diagnostic tool in JDeveloper
+
+[](youtube:Dw74uW06nWM)
+
 For more details of how to, please refer to Chapter 2, from <ins>**page 43 to 52**</ins> in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf)
 
 ## **STEP 8**: Optional: Add a composite sensor PaymentStatus application
 
-![](images/2/sensor.png)
+* ![](images/2/sensor.png)
 
+<!--
 For more details of how to, please refer to Chapter 2, from <ins>**page 37 to 42**</ins> in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf).
 
 **NOTE:**
@@ -349,12 +355,10 @@ The lab tutorial pdf document can also be found on the desktop of your OCI Linux
 
 ![](images/2/soa-tutorialpdf.png)
 
-
-
 ### Further reading: ###
   
 Similar construction details can be reviewed <ins>**page 54 to 77**</ins>, in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf).
-
+-->
 
 ## **Summary**
 
