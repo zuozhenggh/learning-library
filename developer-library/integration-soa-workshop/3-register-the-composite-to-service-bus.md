@@ -241,33 +241,7 @@ Please follow the construction details from <ins>**page 54 to 77**</ins>, in the
 
 ![](images/2/soa-tutorialpdf.png)
 
-## **STEP 7**:   REST-enabled the Service Bus proxy end-point
 
-### Video Preview
-
-Watch on how to REST-enabled SOA composite, start at 3:25
-
-[](youtube:50i0b8ry-z8)
-
-
-## **Summary**
-
-Congratulations you've completed developing the validate payment service using SOA composite app and register it to Oracle Service Bus.
-
-Salient points about Oracle SOA. It is a platform to address application **integration**, for both cloud SaaS and on-premise. Oracle SOA can be deployed on customer's datacenter, OCI or your choice of IaaS, Cloud provider:
-
-1. Companies can develop applications without replacing existing enterprise applications or system of record.
-2. SOA allows reusing the service of an existing system, alternately building new services from existing applications or system of record. It can provide REST API-enabled from existing system or enterprise business service.
-3. It offers reliable applications in which you can test and debug the independent services as compared to a large set of huge lines of code.
-
-SOA complement Microservices architecture by 
-1. Maximizing service reusability and decoupling 
-2. It can use lightweight protocols like HTTP, REST, or Thrift APIs. 
-3. Quick and easy deployment with docker and Kubernetes
-4. Strong emphasis on DevOps and Continuous Delivery 
-5. Communicate through an API layer.
-   
-You may proceed to the next optional module - build the process order application using soa composite.
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
 ## Acknowledgements

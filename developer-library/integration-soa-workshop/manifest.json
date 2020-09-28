@@ -8,38 +8,22 @@
              "filename": "./README.md"
         },
         {
-            "title": "Introduction to SOA- Service Oriented Architecture",
+            "title": "Introduction to SOA - Service Oriented Architecture",
             "description": "Service Orientated architecture.",
             "filename": "./1-introduction-to-soa.md"
         },
         {
-            "title": "Develop SOA composite for Validating payment",
+            "title": "Develop SOA composite for Validate Payment app",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "./2-build-composite-for-validate-payment.md"
         },
         {
-            "title": "Register Validate Payment composite to Oracle Service Bus",
+            "title": "Register Validate Payment app to Oracle Service Bus",
             "filename": "./3-register-the-composite-to-service-bus.md"
         },
         {
-            "title": "Develop Process Order in SOA composite",
-            "filename": "./4-process-order-using-composite.md"
-        },
-        {
-            "title": "Add digital channel for order processing using composite",
-            "filename": "./5-add-new-channel-for-ordering.md"
-        },
-        {
-            "title": "Pack and ship composite application",
-            "filename": "./6-pack-and-ship-service-composite.md"
-        },
-        {
-            "title": "Order Fullfilment using composite",
-            "filename": "./7-order-fullfilment.md"
-        },
-        {
-            "title": "Summary and next step",
-            "filename": "./8-summary-and-next-step.md"
-        }
+            "title": "REST-api enabled the Validate Payment app",
+            "filename": "./4-rest-api-the-composite.md"
+        } 
     ]
 }

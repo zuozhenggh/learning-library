@@ -1,6 +1,37 @@
-# Module 4: Process Order Using composite
+# Module 4: REST API-enabled the composite
 
-## Introduction
+
+## **STEP 1**:   REST-enabled the Service Bus proxy end-point
+
+With a mobile app launch in progress, this new validate-payment composite app must support access via RESTful API.
+
+### Video Preview
+
+Watch on how to REST-enabled SOA composite, start at 3:25
+
+[](youtube:50i0b8ry-z8)
+
+
+## **Summary**
+
+Congratulations you've completed developing the validate payment service using SOA composite app; register it to Oracle Service Bus. You've also enabled the app so it can be invoked using https protocol, REST api.
+
+Salient points about Oracle SOA. It is a platform to address application **integration**, for both cloud SaaS and on-premise. Oracle SOA can be deployed on customer's datacenter, OCI or your choice of IaaS, Cloud provider:
+
+1. Companies can develop applications without replacing existing enterprise applications or system of record.
+2. SOA allows reusing the service of an existing system, alternately building new services from existing applications or system of record. It can provide REST API-enabled from existing system or enterprise business service.
+3. It offers reliable applications in which you can test and debug the independent services as compared to a large set of huge lines of code.
+
+SOA complement Microservices architecture by 
+1. Maximizing service reusability and decoupling 
+2. It can use lightweight protocols like HTTP, REST, or Thrift APIs. 
+3. Quick and easy deployment with docker and Kubernetes
+4. Strong emphasis on DevOps and Continuous Delivery 
+5. Communicate through an API layer.
+   
+You may proceed to next module in the advance workshop - build the process order application using soa composite.
+
+## Next in the advance workshop
 You will build the basis of the new order processing system for Avitek, referred to as ProcessOrder, starting on page 78 on the SOA suite tutorial.
 Recall a few of the business requirements for Avitek ‘s new order processing system:
 1. Many different types of clients will access it over different protocols and data formats, including mobile devices.

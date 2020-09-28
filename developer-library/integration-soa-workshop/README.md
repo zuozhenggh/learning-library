@@ -34,15 +34,13 @@ Upon fulfillment processing and orders being sent to the packaging department, a
 
 ## Lab Modules
 
-| # | Module | Est. Time |
+| # | Module | Estimate Time |
 | --- | --- | --- |
-| 1 | [Introduction to SOA](1-introduction-to-soa.md) | 10 min |
-| 2 | [Build composite integration to validate payment](2-build-composite-to-validate-payment.md) | 100 min |
-| 3 | [Processing order using composite app](3-process-order-using-composite.md) | 85 min |
-| 4 | [Add new channel for order](4-add-new-channel-for-ordering.md) | 80 min |
-| 5 | [Pack and ship service composite app](5-pack-and-ship-service-composite.md) | 65 min |
-| 6 | [Order fullfilment](6-order-fullfilment.md) | 55 min |
-| 7 | [Summary and next step](7-summary-and-next-step.md) | 10 min |
+| 1 | Introduction to SOA | 10 min |
+| 2 | Build composite integration app for validating payment | 90 min |
+| 3 | Register the composite app to Service Bus | 50 min |
+| 4 | Enabled REST api access for Validate Payment app | 30 min |
+
 
 ***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
 
