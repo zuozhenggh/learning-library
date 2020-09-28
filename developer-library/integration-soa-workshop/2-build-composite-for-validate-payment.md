@@ -364,9 +364,9 @@ You may proceed to the next lab.
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
 ## Acknowledgements
-* **Author** - <Name, Title, SOA Product Development>
-* **Adapted for Live Lab by** -  <Daniel Tarudji, Solution Engineering> -- optional
-* **Last Updated By/Date** - <Daniel Tarudji, Solution Engineering, September 2020>
+* **Author** - <Daniel Tarudji, Solution Engineering - N. America>
+* **Adapted for Cloud by** -  <Name, Group> -- optional
+* **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <March 2021> -- optional
 
 ## See an issue?

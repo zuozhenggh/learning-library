@@ -235,19 +235,19 @@ To deploy and test end-to-end, ensire the Integrated Server is running.
 
 You could also run diagnostic in the Service Application leveraging the Debugger as was done previous module 2.
 
-### More Details: ###
+<!-- ### More Details: ###
   
 Please follow the construction details from <ins>**page 54 to 77**</ins>, in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf).
 
-![](images/2/soa-tutorialpdf.png)
+![](images/2/soa-tutorialpdf.png) -->
 
 
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
 ## Acknowledgements
-* **Author** - <Name, Title, SOA Product Development>
-* **Adapted for Live Lab by** -  <Daniel Tarudji, Solution Engineering> -- optional
-* **Last Updated By/Date** - <Daniel Tarudji, Solution Engineering, September 2020>
+* **Author** - <Name: Daniel Tarudji, Solution Engineering>
+* **Adapted for Cloud by** -  <Name, Group> -- optional
+* **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <March 2021> -- optional
 
 ## See an issue?
