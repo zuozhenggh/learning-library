@@ -13,12 +13,12 @@
             "filename": "./1-introduction-to-soa.md"
         },
         {
-            "title": "Develop SOA for Validate Payment app",
+            "title": "Develop SOA-based app for Validating Payment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "./2-build-composite-for-validate-payment.md"
         },
         {
-            "title": "Register the composite app to Oracle Service Bus",
+            "title": "Register the Validate payment app to Oracle Service Bus",
             "filename": "./3-register-the-composite-to-service-bus.md"
         },
         {
