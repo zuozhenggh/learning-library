@@ -14,11 +14,7 @@ SOA Suite functional architecture
 
 Critical business services, such as customer, financial, ordering information, and others that were previously accessible only in packaged application user interfaces can now be rapidly repurpose for digital-enabled channel such as: smart phone and tablets.
 
-### Prerequisites for the SOA labs
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-  
-<!-- ## How to Run the Labs
+## How to Run the Labs
 To run this lab as per instruction provided during live session led by an instructor. 
 
 For participating these labs, you've been granted access to a compute resource via an email invitation or an event code. Please check your inbox email to find details regarding access to a compute resource on Oracle Cloud infrastructure (OCI).
@@ -29,7 +25,7 @@ Detail can be found on https://docs.cloud.oracle.com/en-us/iaas/Content/FreeTier
 -->
 
 
-For SOA deployment on OCI, you can work with one of the options below:
+To deploy SOA suite, you can proceed with one of the options below:
 ### **Option 1**: To deploy SOA on OCI, use Oracle SOA on Marketplace
 
 
