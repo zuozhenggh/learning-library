@@ -1,7 +1,7 @@
 # Setup Compute Instance
 
 ## Introduction
-This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a compute instance running the Converged Database marketplace image and a Virtual Cloud Network (VCN).
+This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run your workshop.
 
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
@@ -14,17 +14,15 @@ For more information about Terraform and Resource Manager, please see the append
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
+- Performed *Lab: Prepare Setup*
 
 ## **Step 1A**: Create Stack:  Compute + Networking
 
 If you already have a VCN setup, proceed to *Step 1B*.
 
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-      - [dbsec-lab-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JDthT7cJjsS1F07KPU77rKEtzdnykXfeMujFVqp0fbo/n/omcinternal/b/workshop-labs-files/o/dbsec-lab-mkplc-freetier.zip)
-
-2.  Save in your downloads folder.
-3.  Login to Oracle Cloud
-4.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
+1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
+2.  Login to Oracle Cloud
+3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
 
   ![](./images/em-oci-landing.png " ")
 
@@ -32,63 +30,58 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack.png " ")
 
-5.  Select **My Configuration**, click the **Browse** link and select the zip file (dbsec-lab-mkplc-freetier.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, click the **Browse** link and select the zip file (dbsec-lab-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 
-6. Enter the following information:
+5. Enter the following information:
 
       - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
       - **Description**:  Same as above
       - **Create in compartment**:  Select the correct compartment if not already selected
 
      ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
-7.  Click **Next**.
+6.  Click **Next**.
 
   ![](./images/em-create-stack-2.png " ")
 
-8. Enter or select the following:
+7. Enter or select the following:
     - **Instance Count:** Accept the default, **1**, unless you intend to create more for a team for instance
     - **Select Availability Domain:** Select an availability domain from the dropdown list.
     - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
     ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
-9. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
+8. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
     - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
     - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
-10. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
+9. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
     - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
 
   ![](./images/standardshape.png " ")
 
-11. For this section we will provision a new VCN with all the appropriate ingress and egress rules needed to run this workshop.  If you already have a VCN, make sure it has all of the correct ingress and egress rules and skip to the next section.
+10. For this section we will provision a new VCN with all the appropriate ingress and egress rules needed to run this workshop.  If you already have a VCN, make sure it has all of the correct ingress and egress rules and skip to the next section.
     - **Use Existing VCN?:** Accept the default by leaving this unchecked. This will create a **new VCN**.
 
-12. Click **Next**.
-13. Review and click **Create**.
+11. Click **Next**.
+12. Review and click **Create**.
 
   ![](./images/em-create-stack-3.png " ")
 
-14. Your stack has now been created!  
+13. Your stack has now been created!  
 
   ![](./images/em-stack-details.png " ")
 
 You may now proceed to Step 2 (skip Step 1B).
 
 ## **Step 1B**: Create Stack:  Compute only
-If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
-- Egress rules for the following ports: 22          
+If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements. Refer to *Lab: Prepare Setup*       
 
-If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  
+***Note:*** *We recommend letting our stack to create the VCN to reduce the potential for error.*
 
-***Note:*** *We recommend using our stack to create to reduce the potential for error.*
-
-1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-     - [dbsec-lab-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uZPsGTFvwVSVjMn9JtlhRw5tk8zIiYfIz8iTql-I6eI/n/omcinternal/b/workshop-labs-files/o/dbsec-lab-mkplc-freetier.zip)
-
-2. Save in your downloads folder.
+1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
+2.  Login to Oracle Cloud
 3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Choose **Resource Manager > Stacks**.  
 
   ![](./images/em-oci-landing.png " ")
@@ -278,22 +271,7 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 
 [Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
 
-## Appendix:  Adding Security Rules to an Existing VCN
-This workshop requires a certain number of ports to be available.
-
-1.  Go to Networking -> Virtual Cloud Networks
-2.  Choose your network
-3.  Under Resources, select Security Lists
-4.  Click on Default Security Lists under the Create Security List button
-5.  Click Add Ingress Rule button
-6.  Enter the following:  
-    - Source CIDR: 0.0.0.0/0
-    - Destination Port Range: 22
-7.  Click the Add Ingress Rules button
-
-
 ## Appendix: Troubleshooting Tips
-
 If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
 - Availability Domain Mismatch
 - Limits Exceeded
@@ -380,7 +358,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
+* **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
