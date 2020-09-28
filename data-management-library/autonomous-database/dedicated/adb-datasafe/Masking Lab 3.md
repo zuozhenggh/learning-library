@@ -66,4 +66,13 @@ A confirmation message states that you successfully created the masking format.
 
    ![](./images/Img90.png " ")
 
-### All Done!
+## Acknowledgements
+
+*Great Work! You successfully completed the Data Safe Masking Lab 3*
+
+- **Author** - Jayshree Chatterjee
+- **Last Updated By/Date** - Kris Bhanushali, September 2020
+
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

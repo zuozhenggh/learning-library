@@ -13,13 +13,17 @@ Estimated Lab Time: 15 minutes
 * Tenancy Admin User
 * Tenancy Admin Password
 * Cloud Manager Admin Credentials
-* Labs 1-3 completed
 
 ## **STEP 1:** Access the Clone Environment Page
 
 1. Navigate to the Cloud Manager Environments page.
 
-2. For ebsholenv1, click Action and select Clone. Enter Details (see screenshot and points below)
+2. For ebsholenv1, click the stacked lines to the right of the environemtn and select **Clone**. 
+
+  ![](./images/clone.png " ")
+
+  Enter Details (see screenshot and points below)
+
   ![](./images/1.png " ")
 
 3. Enter the following values for the clone details (Note these variables in your key-data.txt):
@@ -50,9 +54,13 @@ Estimated Lab Time: 15 minutes
 
 ## **STEP 2:** Configure Local Host Files for the Cloned Environment and Log in to Oracle E-Business Suite
 
-1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to Networking > Load Balancers.
+1. In the Oracle Cloud Infrastructure console, find the IP address for the Oracle E-Business Suite web entry point by navigating to **Networking** > **Load Balancers**.
+
+![](./images/lbs.png " ")
 
 2. On the Load Balancers page, you will find a load balancer named ebsholenv2-lbaas. Obtain the public IP address of this load balancer and record in your ```key-data.txt``` file.
+
+![](./images/lb2.png " ")
 
 3. Edit the local hosts file on your laptop and add an entry.
 
@@ -113,7 +121,10 @@ Estimated Lab Time: 15 minutes
 ## Acknowledgements
 
 * **Author:** Quintin Hill, Cloud Engineering
-* **Contributors:** Santiago Bastidas, Product Management Director
+* **Contributors:** 
+  - Santiago Bastidas, Product Management Director
+  - William Masdon, Cloud Engineering
+  - Mitsu Mehta, Cloud Engineering
 * **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
 
 ## See an issue?

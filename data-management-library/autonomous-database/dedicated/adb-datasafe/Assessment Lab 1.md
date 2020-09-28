@@ -124,4 +124,13 @@ If you fixed any of the previous risks, then the totals will be lower than in th
 > **Note:**
 Currently, there's no compare functionality in the product so to compare assessment results, you need to view both reports and manually compare
 
-### All Done!
+## Acknowledgements
+
+*Great Work! You successfully completed the Data Safe Assessment Lab 1*
+
+- **Author** - Jayshree Chatterjee
+- **Last Updated By/Date** - Kris Bhanushali, September 2020
+
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!
