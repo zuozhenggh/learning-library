@@ -31,6 +31,8 @@ Lab 2 - Run Analytics - Create Dashboards (45 minutes)
 - Run analytics.
 - Upload DVA file to OAC.
 
+**You are all set. Let us begin!**
+
 ## Acknowledgements
 
  - **Author** - Yash Lamba, Cloud Native Solutions Architect, September 2020
@@ -39,5 +41,3 @@ Lab 2 - Run Analytics - Create Dashboards (45 minutes)
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
-
-**You are all set. Let us begin!**
