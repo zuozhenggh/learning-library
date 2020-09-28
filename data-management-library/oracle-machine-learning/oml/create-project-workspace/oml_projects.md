@@ -125,7 +125,7 @@ To create a workspace:
 
 ## Want to Learn More?
 
-* Click here for documentation on the typical workflow for using Oracle Machine Learning.
+* [Using Oracle Machine Learning](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/omlug/index.html)
 
 ## Acknowledgements
 * **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation

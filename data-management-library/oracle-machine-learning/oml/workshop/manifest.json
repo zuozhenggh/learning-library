@@ -1,8 +1,8 @@
 {
     "tutorials": [
       {
-          "title": "Introduction to Oracle Machine Learning (OML) Notebooks",
-          "description": "Introduction to Oracle Machine Learning Notebooks",
+          "title": "Introduction to Oracle Machine Learning (OML) Notebook",
+          "description": "Introduction to Oracle Machine Learning Notebook",
           "filename": "./intro.md"
       }
       ,
