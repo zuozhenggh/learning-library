@@ -648,7 +648,7 @@ p {
 }
 
 ul {
-    font-size: 15px; /* JR: added */
+    font-size: 16px; /* JR: added */
     margin: 0;
     margin-bottom: 24px;
     padding: 0;
@@ -656,7 +656,7 @@ ul {
 }
 
 li {
-    font-size: 15px; /* JR: added */
+    font-size: 16px; /* JR: added */
     margin: 0;
     margin-bottom: 8px;
     /* margin-left: 6px; /* JR: added */
