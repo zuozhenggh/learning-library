@@ -4,23 +4,11 @@
 
 ## Overview
 
-This lab walks you through in improving an order processing system to accommodate multichannel growth with online business partners. In addition, an aggressive store expansion is planned. Overlapping systems must be consolidated to provide better end-to-end visibility from order to fulfillment.
+This lab demonstrate a business use case by walking through development of validate payment processing for an online ordering system. The application system also need to integrate with a mobile application soon. So, the composite integration app must support access through RESTful APIs.
 
+In a separate, advanced workshop, an order processing system must provide direct integration with the packaging department to ship orders with preferred shipping providers based on the type of shipping service (2 day, 5-7 day shipping, and so on).
 
-The order processing system must be accessible through multiple protocols, data formats, and client types, including mobile devices:
-
-  * Business trends indicate that Company X, let's called it Avitek, must launch a mobile application soon and the new order processing service must support access through RESTful APIs.
-
-  * In addition to the existing online direct store, Avitek plans to launch a service in which orders are received through a different channel (as batch comma-separated value (CSV) files over FTP or EDI via B2B Trading Partner. They must eventually be processed and fulfilled using the same new order provisioning infrastructure.
-
-
-For large orders, a customer's credit history must be checked before sending the order for fulfillment. Otherwise, the order is rejected. Initially, credit is checked by internal departments, but later must be integrated with PayPal. Changing credit providers must not disrupt order processing operations.
-
-The order processing system must provide direct integration with the packaging department to ship orders with preferred shipping providers based on the type of shipping service (2 day, 5-7 day shipping, and so on).
-
-The bulk fulfillment process must run according to a predefined pick-up schedule.
-
-Upon fulfillment processing and orders being sent to the packaging department, a message must be communicated to the customer (either bulk or on-demand).
+The bulk fulfillment process must run according to a predefined pick-up schedule. Upon fulfillment processing and orders being sent to the packaging department, a message must be communicated to the customer (either bulk or on-demand).
 
 ## Lab Objectives
 
@@ -41,26 +29,20 @@ Upon fulfillment processing and orders being sent to the packaging department, a
 | 3 | Register the composite app to Service Bus | 50 min |
 | 4 | Enabled REST api access for Validate Payment app | 30 min |
 
-
-***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
-
 ## Navigating the Lab
-To return to this page from anywhere within the lab click either Oracle Hands on Labs, or Home in the header.
+To return to this page from anywhere within the lab click on the "hamburger-menu" icon on the right-hand side.
 
 ![](images/0/new-lab-header.png)
 
 Click the navigation menu icon, in the upper-left corner of the header, to see a list of modules in this lab. Click any of the list entries to navigate directly to that module.
 
-When you're ready to proceed to module 1, please [click here to navigate to Module 1](1-introduction-to-soa.md)
+When you're ready to proceed, please click the Contents menu on the right-hand.
 
 ![](images/0/new-lab-menu.png)
 
 During the live lab, the tutorial pdf document can be found on the desktop of your OCI Linux instance.
 
 ![](images/2/soa-tutorialpdf.png)
-
-
-[Click here](https://www.oracle.com/middleware/technologies/soasuite/12c-samples-tutorials-downloads.html) to download SOA suite tutorial. 
 
 ## Learn More - Useful Links
 
@@ -71,3 +53,5 @@ During the live lab, the tutorial pdf document can be found on the desktop of yo
 - <a href= https://apex.oracle.com/community> Community </a>
 -  <a href=https://www.oracle.com/technetwork/middleware/weblogic/learnmore/reducing-middleware-costs-2327571.pdf> Oracle Middleware </a>
 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
