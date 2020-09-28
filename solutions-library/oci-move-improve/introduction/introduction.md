@@ -1,7 +1,7 @@
 # OCI Move and Improve Workshop
 
 ## Introduction
-This workshop series is part of *Oracle Cloud Infrastructure's Third Party Move & Improve* workshop. This series will walk you through the process of migrating an existing eCommerce application from an on-prem environment to being natively deployed within the cloud. It will walk you through how to capture a custom image of this app and deploy it on OCI with necessary infrastructure like Networking, Security Lists and route rules. The workshop will also walk you through the process of making the application highly-avaiworkshople in the case of disaster scenarios by leveraging Oracle's DNS services for traffic steering. Finally, the workshop will leverage PaaS services such as Autonomous Data Warehouse (ADW), Oracle Analytics Cloud (OAC), and Oracle Integration Cloud (OIC) in order to show how you can gain even more insight into your application data.
+This workshop series is a part of *Oracle Cloud Infrastructure's Third Party Move & Improve* workshop. This series will walk you through the process of migrating an existing eCommerce application from an on-prem environment to being natively deployed within the cloud. It will walk you through how to capture a custom image of this app and deploy it on OCI with necessary infrastructure like Networking, Security Lists and route rules. The workshop will also walk you through the process of making the application highly-avaiworkshople in the case of disaster scenarios by leveraging Oracle's DNS services for traffic steering. Finally, the workshop will leverage PaaS services such as Autonomous Data Warehouse (ADW), Oracle Analytics Cloud (OAC), and Oracle Integration Cloud (OIC) in order to show how you can gain even more insight into your application data.
 
 For a technical overview of the workshop, watch the following video below.
 [](youtube:KuT6DksQpKc)
@@ -22,7 +22,7 @@ Oracle offers a complete portfolio of products, services, and differentiated cap
 * Pull data from MySQL database into Oracle Autonomous Data Warehouse
 * Perform Analytics with Oracle Analytics Cloud
 
-### Prerequisites 
+### Prerequisites
 * An Oracle Paid or LiveLabs Cloud account.
 * A cloud tenancy where you have the resources avaiworkshople to provision an ADW instance with 2 OCPUs, an OAC instance with 2 OCPUs, and an ODA instance.
 * Oracle Cloud Infrastructure supports the following browsers and versions: Google Chrome 69 or later, Safari 12.1 or later, Firefox 62 or later.
@@ -33,7 +33,7 @@ Oracle offers a complete portfolio of products, services, and differentiated cap
 *Note:* Additionally, as much as possible, do not stray away from the naming conventions used for resources in this worshop. You may run into errors if you do.
 
 ## Acknowledgements
-* **Author** - Akinade Oladipupo, Saurabh Salunkhe, Mitsu Mehta, Ken Keil 
+* **Author** - Akinade Oladipupo, Saurabh Salunkhe, Mitsu Mehta, Ken Keil
 * **Adapted for Cloud by** -  Akinade Oladipupo, Saurabh Salunkhe, Mitsu Mehta, Ken Keil
 * **Last Updated By/Date** - Kay Malcolm, August 2020
 
