@@ -19,7 +19,7 @@ This lab assumes you have:
 - SSH Keys
 - Have successfully connected to the workshop machine
 
-## **Step 1**: Allow DB Restore
+## **STEP 1**: Allow DB Restore
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -32,7 +32,7 @@ This lab assumes you have:
       ````
       <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Allow_DB_Restore</copy>
       ````
-    
+
 3. Run the backup command:
 
       ````
@@ -43,10 +43,9 @@ This lab assumes you have:
 
 4. Once it has completed, it will automatically restart the container and pluggable databases
 
----
 **Note:** If you have executed this script before and there is an existing backup file, the script will not complete. You must manually manage the existing backup (delete or move) before running this script again.
 
-## **Step 2**: Create Keystore
+## **STEP 2**: Create Keystore
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -88,7 +87,7 @@ This lab assumes you have:
     
 6. Now, your wallet has been created
 
-## **Step 3**: Create Master Key
+## **STEP 3**: Create Master Key
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -129,7 +128,7 @@ This lab assumes you have:
 
 6. Now, you have a master key and you can begin encrypting tablespaces or column!
 
-## **Step 4**: Create Auto-login Wallet
+## **STEP 4**: Create Auto-login Wallet
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -190,7 +189,7 @@ This lab assumes you have:
 
 8. Now your Autologin is created!
 
-## **Step 5**: Encrypt Existing Tablespace
+## **STEP 5**: Encrypt Existing Tablespace
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -230,7 +229,7 @@ This lab assumes you have:
 
 6. You will see that all of the data is now encrypted!
 
-## **Step 6**: Encyrpt All New Tablespaces
+## **STEP 6**: Encyrpt All New Tablespaces
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -271,7 +270,7 @@ This lab assumes you have:
 
 6. Now, your new Tablespaces will be encrypted by default!
 
-## **Step 7**: Rekey Master Key
+## **STEP 7**: Rekey Master Key
 
 1. Start this lab here
 
@@ -299,7 +298,7 @@ This lab assumes you have:
 
 5. Now that you have a master key, you can begin encrypting tablespaces or column. 
 
-## **Step 8**: View Keystore Details
+## **STEP 8**: View Keystore Details
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -334,7 +333,7 @@ This lab assumes you have:
 
    ![](./images/tde-009.png)
 
-## **Step 9**: Restore Before TDE (Optional)
+## **STEP 9**: Restore Before TDE (Optional)
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
