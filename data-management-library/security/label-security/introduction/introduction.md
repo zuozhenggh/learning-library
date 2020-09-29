@@ -1,8 +1,5 @@
 # Introduction
 
-### Objectives
-- This aim of this workshop is to introduce the various features and functionality of Oracle Label Security, and to give the user an opportunity to learn how to configure those features in order to secure their databases.
-
 ## About Label Security
 Oracle Label Security controls the display of individual table rows using labels that are assigned to specific individual table rows and application users.
 
@@ -39,6 +36,9 @@ Oracle Label Security provides several benefits for controlling row level manage
 - It provides both APIs and a graphical user interface for defining and storing data classification labels and user label authorizations.
 
 - It integrates with Oracle Database Vault and Oracle Advanced Security Data Redaction, enabling security clearances to be use in both Database Vault command rules and Data Redaction policy definitions.
+
+### Objectives
+- This aim of this workshop is to introduce the various features and functionality of Oracle Label Security, and to give the user an opportunity to learn how to configure those features in order to secure their databases.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
