@@ -3,8 +3,22 @@
 ## Introduction
 
 
-In this 10-minute lab, you will prepare your Oracle Cloud environment to run the rest of the lab.
+In this lab, you will prepare your Oracle Cloud environment to run the rest of the lab.
 
+Estimated Lab Time: 10 minutes
+
+### Objectives
+- Create a Virtual Cloud Network (VCN)
+- Create an OCI Compute Instance
+- Configure the instance or Java development
+
+### Pre-Requisites
+
+1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
+2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
+4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
  
 ## **STEP 1**: Create a Virtual Cloud Network
 
@@ -23,7 +37,7 @@ In this step, you will create a *Virtual Cloud Network (VCN)*, i.e. a software-d
 
     ![](.././images/lab2-2.png " ")
 
-4. Select **VCN with Internet Connectivity** ➡ **Start VCN Wizzard**.
+4. Select **VCN with Internet Connectivity** ➡ **Start VCN Wizard**.
 
 5. Give it a meaningful name, ex. "HOL_VCN", and keep other default values.
 
@@ -113,7 +127,7 @@ The final command should look like :
 
 `ssh -i ~/Downloads/ssh-key-2020-09-xx.key -o IdentityAgent=none opc@158.xxx.xxx.xxx`
 
-💡 Some OS (ex. OSX) might refuse to establish the conncetion, and complain about your private key's permissions being too loose (ex. "WARNING: UNPROTECTED PRIVATE KEY FILE!"). If that's the case, make sure to adjust your private key's permissions so that it can't be read by others:
+💡 Some OS (ex. OSX) might refuse to establish the connection, and complain about your private key's permissions being too loose (ex. "WARNING: UNPROTECTED PRIVATE KEY FILE!"). If that's the case, make sure to adjust your private key's permissions so that it can't be read by others:
 
  `chmod 400 ~/Downloads/ssh-key-2020-xxx.key`
 

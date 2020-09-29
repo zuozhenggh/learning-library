@@ -1,10 +1,13 @@
 # jlink
 
-## Overview
-
-This 5-minute optional lab will show you how *`jlink`* can greatly improve the size of a Java runtime image.
+## Introduction
 
 In a nutshell, `jlink` is a tool that can create custom Java runtime that includes only the modules required by an application. Reducing the numbers of modules will reduce the overall size of that custom Java runtime image, a concern especially important when a Java application runs within a container. `jlink` has been part of the JDK tooling since JDK 9.
+
+Estimated Lab Time: 5 minutes
+
+### Objectives
+- This optional lab will show you how *`jlink`* can greatly improve the size of a Java runtime image.
 
 ## Using `jlink`
 

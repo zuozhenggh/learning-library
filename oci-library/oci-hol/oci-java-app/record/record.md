@@ -2,10 +2,14 @@
 
 ## Introduction
 
-In this 10-minutes lab, you will use *Records*, a Java language feature going through a second preview round in JDK 15.
 
 Records provide a compact syntax for declaring classes which are transparent holders for shallowly immutable data.
 A record can be best thought of as a nominal tuple that enables us to easily and quickly model immutable "plain data" aggregates.
+
+Estimated Lab Time: 10 minutes
+
+### Objectives
+In this lab, you will use *Records*, a Java language feature going through a second preview round in JDK 15.
 
 ## **STEP 1**: A simple Record
 
@@ -291,7 +295,7 @@ If you now test the endpoint, you will get the shorter speaker representation (s
 
 💡 Use `curl` or FireFox to test this, not the Web UI as it needs to updated to cope with the updated JSON payload.
 
-![](./images/lab7-1.png " ")
+![](.././images/lab7-1.png " ")
 
 
 📝 Make sure to update all `SpeakerService.java` methods for the new `SpeakerSummary` record. As an additional exercise, try to create different Records.

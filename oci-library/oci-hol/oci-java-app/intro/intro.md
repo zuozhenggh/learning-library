@@ -19,6 +19,16 @@ You will use Helidon as it is easy, simple, and fast but obviously, all the Java
 
 💡 The left bar is used to navigate within the current exercise. The right bar is used to navigate between exercises. If it is too obtrusive, just hide it temporarily.
 
+Estimated Lab Time: 80 minutes
+
+### Pre-Requisites
+
+1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
+2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
+4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
+
 ## Acknowledgements
 
  - **Author** - [David Delabassee](https://delabassee.com)

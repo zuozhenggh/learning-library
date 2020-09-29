@@ -2,8 +2,6 @@
 
 ## Introduction
 
-In this lab you will create a simple Microservices exposing a REST endpoint using Helidon SE. The goal is to have some initial exposure to Helidon, gain some high-level understandings of Helidon and its development workflow.
-
 *Helidon* is an open-source Java-based collection of libraries that one can use to develop lightweight Microservices, it offers 2 programming models:
 - Helidon MP: MicroProfile APIs declarative, Java EE/Jakarta EE style (JAX-RS, CDI, etc.).
 - Helidon SE: functional style, transparent, no magic (ex. injection).
@@ -14,36 +12,40 @@ For more information, please check [https://helidon.io/](https://helidon.io/).
  
 Estimated Lab Time: 5 minutes
 
+### Objectives
+- Create a simple Microservices exposing a REST endpoint using Helidon SE. 
+- The goal is to have some initial exposure to Helidon, gain some high-level understandings of Helidon and its development workflow.
+
 ## **STEP 1**: Initialize a Helidon project
 
 One can generate the skeleton of a microservice using Helidon Maven archetypes. To simplify things, you will use the Helidon CLI (Command Line Interface), which under the hood uses the same approach, to initialize a simple Helidon project.
 
 Run `helidon init`, and select the suggested options (**SE flavor**, **bare Minimal Helidon SE project**, and other default values).
 
-![](./images/lab3-1.png " ")
+![](.././images/lab3-1.png " ")
 
 Go into the project directory (`cd java-devlive`), and check the newly generated project (`tree -C .`). You should notice it is a Maven project:
 * there is `pom.xml`,
 * sources are located in `src/main/java/com/devlive/`,
 * tests are located in `src/test/java/com/devlive/`, etc.
 
-![](./images/lab3-2.png " ")
+![](.././images/lab3-2.png " ")
 
 ## **STEP 2**: Build and test an Helidon project
 
 You can build the Helidon project using the `mvn package` command in the `java-devlive` directory. 
 
-![](./images/lab3-3.png " ")
+![](.././images/lab3-3.png " ")
 
 💡 The first time, Maven will populate its local cache so this initial build will take longer!
 
 You can now check the project's target directory (`tree -C target`), it contains a lot of files including the dependencies used by the application, and the application itself.
 
-![](./images/lab3-4.png " ")
+![](.././images/lab3-4.png " ")
 
 To run the application, simply use `java -jar target/java-devlive.jar`
 
-![](./images/lab3-5.png " ")
+![](.././images/lab3-5.png " ")
 
 The sample service is now accessible on locally port 8080 and given that you have configured earlier the VCN and the instance firewall to allow incoming traffic on port 8080, it should also be accessible via your instance public IP address. 
 

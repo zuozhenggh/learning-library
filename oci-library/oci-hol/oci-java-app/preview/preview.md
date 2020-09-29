@@ -2,13 +2,14 @@
 
 ## Introduction
 
-
-This  5-minutes lab will give you an introduction the the Java SE *Preview Feature* mechanism.
-
 The Preview Feature mechanism enables to add non-final, fully specified, and implemented features into the Java platform. The goal is to allow developers to use those non-final features, to gather feedback, and to make necessary changes if needed before those features are made final and permanent into the Java platform.
 
 ⚠️ Preview Features should be confused with Experimental Features or with Incubator Modules. For details, please check this [article](https://blogs.oracle.com/javamagazine/the-role-of-previews-in-java-14-java-15-java-16-and-beyond). 
 
+Estimated Lab Time: 5 minutes
+
+### Objectives
+This lab will give you an introduction to the Java SE *Preview Feature* mechanism.
 
 ## Hello Preview 
 
@@ -128,8 +129,8 @@ Java 15 includes several *Preview Features* which will be discussed in upcoming 
 * JEP 375: Pattern Matching for instanceof (Second Preview)
 
 * JEP 384: Records (Second Preview)
- 
- ## Acknowledgements
+
+## Acknowledgements
 
  - **Author** - [David Delabassee](https://delabassee.com)
  - **Last updated By** - Kamryn Vinson, September 2020

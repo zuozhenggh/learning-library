@@ -2,10 +2,12 @@
 
 ## Introduction
 
-
-This 10-minute lab will introduce you to the *Switch Expression* feature, a standard and permanent feature of Java 14. 
-
 The *Switch Expression* augments the traditional Switch Statement to address some of its irregularities and annoyances including the well known 'fall through' problem, the support for multiple constants per case, the ability to enforce exhaustiveness, an improved scoping, etc.
+
+Estimated Lab Time: 10 minutes
+
+### Objectives
+This lab will introduce you to the *Switch Expression* feature, a standard and permanent feature of Java 14.
 
 ## Switch Expressions in more details
 
@@ -121,7 +123,7 @@ The second issue is tied to the "default" case. Given that the `Track.java` enum
 
 The last problem is tied to the fact that this code is quite repetitive and verbose (ex. we assign a different value to the `trackDetail` string in all the branches, we must make to not forget any `break`) and also quite error-prone (ex. you know what it's like to forget a `break`)!
 
-You can solve this by replacing that Switch statement with the Swith Expression below.
+You can solve this by replacing that Switch statement with the Switch Expression below.
 
 ```
 private String getTrackDetail(Speaker speaker) {

@@ -1,9 +1,13 @@
 # Pattern Matching for instanceof
 
-## Overview
+## Introduction
 
-In this 10-minutes lab, you will get some hands-on experience with the *pattern Matching for instanceof* feature previewed in JDK 15. This feature enhances the Java programming language with pattern matching for the instanceof operator. Pattern matching allows common logic in a program, namely the conditional extraction of components from objects, to be expressed more concisely and safely.
+In this lab, you will get some hands-on experience with the *pattern Matching for instanceof* feature previewed in JDK 15. This feature enhances the Java programming language with pattern matching for the instanceof operator. Pattern matching allows common logic in a program, namely the conditional extraction of components from objects, to be expressed more concisely and safely.
 
+Estimated Lab Time: 10 minutes
+
+### Objectives
+- In this lab, you will use the 'pattern matching for instanceof' feature currently previewed in JDK 15 (2nd preview) and slated to be made standard and permanent in JDK 16.
 
 ## Using 'pattern matching for instanceof'
 

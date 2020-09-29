@@ -1,12 +1,17 @@
 # Sealed Classes
 
-## Overview
+## Introduction
 
-In this 10-minutes lab, you will get some hands-on experiences with _Sealed Classes_ (JEP 360), a preview feature of JDK 15. Sealed classes and interfaces restrict which other classes or interfaces may extend or implement them.
+In this lab, you will get some hands-on experiences with _Sealed Classes_ (JEP 360), a preview feature of JDK 15. Sealed classes and interfaces restrict which other classes or interfaces may extend or implement them.
 
 💡 Despite its name, the *Sealed Classes* feature applies to both **classes** and **interfaces**.
 
-## Restricted  Class Hierarchies
+Estimated Lab Time: 10 minutes
+
+### Objectives
+- Explore Sealed Classes
+
+## Restricted Class Hierarchies
 
 In Java, a class hierarchy enables the reuse of code via inheritance: The methods of a superclass can be inherited (and thus reused) by many subclasses. However, the purpose of a class hierarchy is not always to reuse code. Sometimes, its purpose is to model the various possibilities that exist in a domain, such as the kinds of shapes supported by a graphics library or the kinds of loans supported by a financial application. When the class hierarchy is used in this way, restricting the set of subclasses can streamline the modeling, that is what Sealed Classes enable.
 
