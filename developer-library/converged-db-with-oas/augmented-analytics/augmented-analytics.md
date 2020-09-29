@@ -15,7 +15,7 @@ In this lab you will learn on two key features in OAS Augmented Analytics:  “E
 
 **Explain:** Explain analyzes the selected column within the context of its data set and generates text descriptions about the insights it finds.  Explain creates corresponding visualizations that you can add to your project's canvas.
 
-**Forecast:** Oracle Analytics Server offers a user-friendly method to leverage advanced analytics functions on a chart with a single mouse click. Having advanced analytical functions like forecast provides a strong capability to business users who want to have better insights into their data. 
+**Forecast:** Oracle Analytics Server offers a user-friendly method to leverage advanced analytics functions on a chart with a single mouse click. Having advanced analytical functions like, Trendline, Cluster, Outlier and forecast. These functions provide a strong capability to business users who want to have better insights into their data. 
 
 ### Prerequisites ###
 This lab assumes you have completed the following labs:
@@ -54,24 +54,21 @@ The below pre-loaded data object is available in Converged Database.
 
 Let us now learn the Augmented Analytics of OAS using the  **Explain** feature.
 
-1. Select the Revenue column and right-click to select “Explain Revenue”
+1. Select the Revenue column and right-click to select “Explain REVENUE”
 ![](./images/aa8.png " ")
 
-    The result is a profile of the data element you have selected with both visualizations and narrative text to explain the insights for the element that is being analyze.
+    The result is a profile of the data element you have selected with both visualizations and narrative text to explain the insights for the element that is being analyze.  To choose the generated visualization, click "Add Selected" and easily one can begin to use Data Visualizations project editor to drill further. 
     ![](./images/aa9.png " ")
-
-To choose the generated visualization, click "add selected" and easily one can begin to use Data Visualizations project editor to drill further. 
-
-2. Now, select Revenue by Cost Center graph, Revenue by Region Graph, and Revenue by Month graph. Click on Add Selected.
+2.  Now, In Basic Facts about REVENUE, select Revenue by Cost Center graph, Revenue by Region Graph, and Revenue by Month graph. Click on "Add Selected".
 ![](./images/aa10.png " ")
 
 3. After Adding the selected Visulizations, we can change the type of graph as per our choice.
-   Now, let us change bar view to pie:
+   Now, let us change bar to pie chart as shown below:
 ![](./images/aa11.png " ")
 4. Rearrange the columns to get the pie chart as shown below.
 ![](./images/aa12.png " ")
 
-5. Similarly, try another column **Operating Expense** using **Explain** feature and the final canvas should look as shown below.
+5. Similarly, try another column **OPERATINGEXP** using **Explain** feature and the final canvas should look as shown below.
 
     ![](./images/aa14.png " ")
 
@@ -83,10 +80,10 @@ Using Forecast you can predict values for the next _n_ future periods.  Number o
 
 Let us use forecast feature on the sample financial data.
 
-1. Select Reveue, Operating Expenses, Net Income and Month columns.  Pick Line Graph by right click.
+1. Select REVENUE, OPERATINGEXP, NETINCOME and MONTH columns.  Pick Line Graph by right click.
 ![](./images/aa15.png " ")
 
-    Verify as below.
+    Verify the result as below.
 
     ![](./images/aa16.png " ")
 
