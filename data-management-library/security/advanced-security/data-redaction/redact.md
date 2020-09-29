@@ -17,7 +17,7 @@ This lab assumes you have:
 - SSH Keys
 - Have successfully connected to the workshop machine
 
-## **Step 1**: Redact EMPLOYEESEARCH Data
+## **STEP 1**: Redact EMPLOYEESEARCH Data
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -35,15 +35,15 @@ This lab assumes you have:
 
       ````
       <copy>./01_query_employee_data.sh</copy>
-      ````        
-      
+      ````
+
     ![](./images/dr-001.png)
-    
+
 4. Create a redaction policy for the `DEMO_HR_EMPLOYEES` table to redact data for all queries
 
       ````
       <copy>./02_redact_for_all.sh</copy>
-      ````    
+      ````
 
    ![](./images/dr-002.png)
 
@@ -84,7 +84,7 @@ This lab assumes you have:
       ````
       <copy>./07_drop_redaction_policy.sh</copy>
       ````
-    
+
    ![](./images/dr-007.png)
 
 ## Acknowledgements
