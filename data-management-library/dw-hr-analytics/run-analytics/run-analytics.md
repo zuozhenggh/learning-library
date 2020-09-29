@@ -20,9 +20,9 @@ Estimated Lab Time: 45 minutes
     - [HumanResources.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0VqpqURMs3ARIovzyCfR369sv5qqvVxMkmGbag8-wWA/n/oradbclouducm/b/bucket-20200907-1650/o/HumanResource.dva)
     - [hr.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k_O2qXLAvew-YfooziwLpiHgHau_1HQO6438oc20m2LM3WwhH1gGQElUZTs8bBjZ/n/oradbclouducm/b/bucket-20200907-1650/o/hr.sql)
 
-Note: Please download the files above before continuing.
+**Note:** Please download the files above before continuing.
 
-## STEP 1: Installing HR Schema on Autonomous Database
+## **STEP 1:** Installing HR Schema on Autonomous Database
 
 1. Use SQL Developer to connect to your database as the ADMIN user. The steps to do so can be found [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-sql-dev182.html#GUID-14217939-3E8F-4782-BFF2-021199A908FD).
 
@@ -42,7 +42,7 @@ Note: Please download the files above before continuing.
 
     ![](./images/1.png " ")
     
-## STEP 2: Setting up the Human Resource Analytics Project in OAC
+## **STEP 2:** Setting up the Human Resource Analytics Project in OAC
 
 1. Login to your analytics cloud instance. The URL can be found on the page of the instance. Refer to the previous lab for instructions on how to get to your analytics cloud instance.
 
@@ -80,7 +80,7 @@ Note: Please download the files above before continuing.
     ![](./images/10.png " ")
     ![](./images/10a.png " ")
 
-## STEP 3: Uploading a file to the Datawarehouse using OAC
+## **STEP 3:** Uploading a file to the Datawarehouse using OAC
 
 1. Return to the home page. Click on the **Create** button and then select **Data Flow**.
 
@@ -112,7 +112,7 @@ The data flow should run and upon successful execution you should be able to see
 
 ![](./images/18.png " ")
 
-## STEP 4: Using Attrition Data set in the Human Resource project
+## **STEP 4:** Using Attrition Data set in the Human Resource project
 
 1. Open the Human Resource project. From the data panel, click on the 'plus' sign and select **Add Data Set**.
 

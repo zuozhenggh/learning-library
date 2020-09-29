@@ -20,7 +20,7 @@ Provision an Autonomous Datawarehouse instance and an Analytics Cloud instance.
 - Method 2
     - Necessary permissions to provision an analytics instance and an autonomous database.
 
-## METHOD 1: Using a Resource Manager Stack
+## **METHOD 1:** Using a Resource Manager Stack
 
 In order to provision an analytics cloud instance as part of a **Resource Manager** stack, an IDCS access token is required. If you don't have the necessary privileges, then proceed to Method 2.
 
@@ -102,7 +102,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![](./images/1.23.png " ")
 
-**Note**:  If you have followed the steps above the job should succeed without any issues. Keep an eye on the logs to monitor the progress. If the job fails, please fix the issues and proceed.
+**Note:**  If you have followed the steps above the job should succeed without any issues. Keep an eye on the logs to monitor the progress. If the job fails, please fix the issues and proceed.
 
 ![](./images/1.30.png " ")
 
@@ -116,7 +116,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 13. Clicking on the links to the resources should take you to their pages.
 
-**Note**: In case there is no link to get to analytics instance, follow the two steps given below, else proceed to the next lab.
+**Note:** In case there is no link to get to analytics instance, follow the two steps given below, else proceed to the next lab.
 
 14. From the navigation menu, under **Solutions and Platform**, go to **Analytics** and select **Analytics Cloud**.
 
@@ -128,7 +128,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![](./images/1.29.png " ")
 
-## METHOD 2: Independently Provision the Resources
+## **METHOD 2:** Independently Provision the Resources
 
 ### STEP 1: Provision the Autonomous Data Warehouse
 
