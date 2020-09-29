@@ -4,7 +4,7 @@
 
 Oracle powers deeper insights by embedding machine learning and AI into every aspect of the analytics process, making your job easier than ever.  Oracle employ smart data preparation and discovery to enhance your overall experience. Natural language processing (NLP) powers modern, conversational-style analytics.
 
-**Estimated Lab Time:** 30 Mintues.
+_Estimated Lab Time:_ 30 Mintues.
 
 ![](./images/augmentedanalytics.png " ")
 
