@@ -26,10 +26,6 @@
         {
             "title": "Lab 3-2: Run OpenFoam project in Standard VM on OCI",
             "filename": "../../Lab 300/Lab 3-2.md"
-        },
-        {
-            "title": "Lab 3-3: Run OpenFoam project in HPC Cluster using OCI Cluster Network",
-            "filename": "../../Lab 300/Lab 3-3.md"
         }
     ]
 }
