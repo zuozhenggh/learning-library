@@ -39,21 +39,21 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
-   ````
-   <copy>sudo su - oracle</copy>
-   ````
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
 
 2. Go to the scripts directory
 
-   ````
-   <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Simple_CRM_App</copy>
-   ````
+      ````
+      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Simple_CRM_App</copy>
+      ````
 
 3. First, you must setup the Label Security environment
 
-   ````
-   <copy>./01_setup_ols_environment.sh</copy>
-   ````
+      ````
+      <copy>./01_setup_ols_environment.sh</copy>
+      ````
 
    ![](./images/ols-001.PNG)
 
@@ -68,9 +68,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 4. Next, you create the Label Security policy.
    A policy consists of  levels, groups and/or compartments. The only mandatory component of a policy is at least one level.   
 
-   ````
-   <copy>./02_create_ols_policy.sh</copy>
-   ````
+      ````
+      <copy>./02_create_ols_policy.sh</copy>
+      ````
 
    ![](./images/ols-002.PNG)
     
@@ -79,9 +79,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
  5. Then, we must label the data.
     We use the policy we created and apply one level and optionally, one or more compartments and, optionally, one or more groups.
  
-   ````
-   <copy>./03_label_data.sh</copy>
-   ````
+      ````
+      <copy>./03_label_data.sh</copy>
+      ````
         
     
    ![](./images/ols-003.PNG)
@@ -90,9 +90,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 6. Then we will see the label security in action
 
-   ````
-   <copy>./04_label_sec_in_action.sh</copy>
-   ````
+      ````
+      <copy>./04_label_sec_in_action.sh</copy>
+      ````
 
    ![](./images/ols-004.PNG)
 
@@ -100,9 +100,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 7. Now, we change users status to be forgotten
 
-   ````
-   <copy>./05_to_be_forgotten.sh</copy>
-   ````
+      ````
+      <copy>./05_to_be_forgotten.sh</copy>
+      ````
 
    ![](./images/ols-005.PNG)
    
@@ -110,9 +110,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 8. Finally, we can clean up the environment (drops the OLS policy and users)
 
-   ````
-   <copy>./06_clean_env.sh</copy>
-   ````
+      ````
+      <copy>./06_clean_env.sh</copy>
+      ````
 
    ![](./images/ols-006.PNG)
 
@@ -120,31 +120,31 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
-   ````
-   <copy>sudo su - oracle</copy>
-   ````
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
 
 2. Go to the scripts directory
 
-   ````
-   <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Protect_Glassfish_App</copy>
-   ````
+      ````
+      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Protect_Glassfish_App</copy>
+      ````
 
 3. First, starts the infrastructure and makes sure you don't already have the OLS changes deployed to the application
 
-   ````
-   <copy>./00_start_infrastructure.sh</copy>
-   ````
+      ````
+      <copy>./00_start_infrastructure.sh</copy>
+      ````
 
    ![](./images/ols-007.PNG)
 
-   - Press [**Enter**] to close
+   Press [**Enter**] to close
 
 4. Next, setup the OLS environment
 
-   ````
-   <copy>./01_setup_ols_environment.sh</copy>
-   ````
+      ````
+      <copy>./01_setup_ols_environment.sh</copy>
+      ````
 
    ![](./images/ols-008.PNG)
 
@@ -152,9 +152,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 5. Create `EMPLOYEESEARCH_APP`
 
-   ````
-   <copy>./02_configure_employeesearch_app.sh</copy>
-   ````
+      ````
+      <copy>./02_configure_employeesearch_app.sh</copy>
+      ````
 
    ![](./images/ols-009.PNG)
 
@@ -179,12 +179,8 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 10. Go back to your terminal session and apply the OLS policy to the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table
 
-    ````
-    <copy></copy>
-    ````
 		
-
-	![](./images/ols-010.PNG)
+	![](./images/ols-010.png)
 
 	---
 	**Note:** Once an OLS policy is applied to a table, only users with authorized labels, or OLS privileges, can see data.
@@ -193,9 +189,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 	
 11. Now, update `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table to populate the `olslabel` column with the appropriate OLS numeric label
 
-    ````
-    <copy>./04_set_row_labels.sh</copy>
-    ````	
+      ````
+      <copy>./04_set_row_labels.sh</copy>
+      ````	
 
     ![](./images/ols-011.PNG)
 
@@ -203,9 +199,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 12. See what policy output looks like...
 
-    ````
-    <copy>./05_verify_our_policy.sh</copy>
-    ````
+      ````
+      <copy>./05_verify_our_policy.sh</copy>
+      ````
 
     ![](./images/ols-012.PNG)
 
@@ -230,9 +226,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 13. Finally, we make changes to the Glassfish JSP files.
     This script will step you through all of the additions we need to make
 
-    ````
-    <copy>./06_Update_Glassfish_app.sh</copy>
-    ````
+      ````
+      <copy>./06_Update_Glassfish_app.sh</copy>
+      ````
 
     ![](./images/ols-019.PNG)
 	
