@@ -24,7 +24,7 @@
             "filename":"../../setup-compute/setup-compute.md"
         },
         {
-            "title": "Lab 3: Protecting Sensite Data",
+            "title": "Lab 3: Protecting Sensitive Data",
             "description": "In this lab you will learn how to leverage OLS to track consent and force restriction for GDPR",
             "filename": "../../protect-sensitive-data/protect-sensitive-data.md"
         }
