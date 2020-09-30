@@ -21,7 +21,7 @@ This lab assumes you have:
 - Have successfully connected to the workshop machine
 - Have completed all previous labs for Oracle Database Vault
 
-## **Step 1**: Simple CRM Application
+## **STEP 1**: Simple CRM Application
 
 ### Different applications have different purposes:
 
@@ -39,21 +39,21 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
-   ````
-   <copy>sudo su - oracle</copy>
-   ````
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
 
 2. Go to the scripts directory
 
-   ````
-   <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Simple_CRM_App</copy>
-   ````
+      ````
+      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Simple_CRM_App</copy>
+      ````
 
 3. First, you must setup the Label Security environment
 
-   ````
-   <copy>./01_setup_ols_environment.sh</copy>
-   ````
+      ````
+      <copy>./01_setup_ols_environment.sh</copy>
+      ````
 
    ![](./images/ols-001.png " ")
 
@@ -62,15 +62,15 @@ While we provide scripts to execute the whole lab from start to finish in an aut
    For example `more 01_setup_ols_environment.out`
 
    **Note:**
-   - This script creates c##oscar_ols user, creates a table, loads data, creates users that will be used to showcase difference scenarios. It also configures and enables OLS.
-   - This sql script invoke **load_crm_customer_data.sql** script to create the table `CRM_CUSTOMER` in `APPCRM` schema and inserts 389 rows.
+      - This script creates c##oscar_ols user, creates a table, loads data, creates users that will be used to showcase difference scenarios. It also configures and enables OLS.
+      - This sql script invoke **load_crm_customer_data.sql** script to create the table `CRM_CUSTOMER` in `APPCRM` schema and inserts 389 rows.
 
 4. Next, you create the Label Security policy.
-   A policy consists of  levels, groups and/or compartments. The only mandatory component of a policy is at least one level.   
+   A policy consists of  levels, groups and/or compartments. The only mandatory component of a policy is at least one level.
 
-   ````
-   <copy>./02_create_ols_policy.sh</copy>
-   ````
+      ````
+      <copy>./02_create_ols_policy.sh</copy>
+      ````
 
    ![](./images/ols-002.png " ")
 
@@ -90,9 +90,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 6. Then we will see the label security in action
 
-   ````
-   <copy>./04_label_sec_in_action.sh</copy>
-   ````
+      ````
+      <copy>./04_label_sec_in_action.sh</copy>
+      ````
 
    ![](./images/ols-004.png " ")
 
@@ -100,9 +100,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 7. Now, we change users status to be forgotten
 
-   ````
-   <copy>./05_to_be_forgotten.sh</copy>
-   ````
+      ````
+      <copy>./05_to_be_forgotten.sh</copy>
+      ````
 
    ![](./images/ols-005.png " ")
 
@@ -110,51 +110,51 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 8. Finally, we can clean up the environment (drops the OLS policy and users)
 
-   ````
-   <copy>./06_clean_env.sh</copy>
-   ````
+      ````
+      <copy>./06_clean_env.sh</copy>
+      ````
 
    ![](./images/ols-006.png " ")
 
-## **Step 2**: Protect Glassfish Application
+## **STEP 2**: Protect Glassfish Application
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
-   ````
-   <copy>sudo su - oracle</copy>
-   ````
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
 
 2. Go to the scripts directory
 
-   ````
-   <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Protect_Glassfish_App</copy>
-   ````
+      ````
+      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Protect_Glassfish_App</copy>
+      ````
 
 3. First, starts the infrastructure and makes sure you don't already have the OLS changes deployed to the application
 
-   ````
-   <copy>./00_start_infrastructure.sh</copy>
-   ````
+      ````
+      <copy>./00_start_infrastructure.sh</copy>
+      ````
 
    ![](./images/ols-007.png " ")
 
-   - Press [**Enter**] to close
+   Press [**Enter**] to close
 
 4. Next, setup the OLS environment
 
-   ````
-   <copy>./01_setup_ols_environment.sh</copy>
-   ````
+      ````
+      <copy>./01_setup_ols_environment.sh</copy>
+      ````
 
    ![](./images/ols-008.png " ")
 
-   **Note:** This script creates the OLS policy named `OLS_DEMO_HR_APP` as well as the levels (Public, Confidential, Highly Confidential), compartments (HR, FIN, IP, IT) and the OLS groups (GLOBAL, USA, CANADA, EU, GERMAN, LATAM).  This script also generates the data labels that will be used. This allows us to assign the numbers to our `label_tag` we want to have.  
+   **Note:** This script creates the OLS policy named `OLS_DEMO_HR_APP` as well as the levels (Public, Confidential, Highly Confidential), compartments (HR, FIN, IP, IT) and the OLS groups (GLOBAL, USA, CANADA, EU, GERMAN, LATAM).  This script also generates the data labels that will be used. This allows us to assign the numbers to our `label_tag` we want to have.
 
 5. Create `EMPLOYEESEARCH_APP`
 
-   ````
-   <copy>./02_configure_employeesearch_app.sh</copy>
-   ````
+      ````
+      <copy>./02_configure_employeesearch_app.sh</copy>
+      ````
 
    ![](./images/ols-009.png " ")
 
@@ -186,7 +186,6 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 	![](./images/ols-010.png " ")
 
-	---
 	**Note:** Once an OLS policy is applied to a table, only users with authorized labels, or OLS privileges, can see data.
 
 	---
@@ -203,9 +202,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 12. See what policy output looks like...
 
-    ````
-    <copy>./05_verify_our_policy.sh</copy>
-    ````
+      ````
+      <copy>./05_verify_our_policy.sh</copy>
+      ````
 
     ![](./images/ols-012.png " ")
 
@@ -230,9 +229,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 13. Finally, we make changes to the Glassfish JSP files.
     This script will step you through all of the additions we need to make
 
-    ````
-    <copy>./06_Update_Glassfish_app.sh</copy>
-    ````
+      ````
+      <copy>./06_Update_Glassfish_app.sh</copy>
+      ````
 
     ![](./images/ols-019.png " ")
 

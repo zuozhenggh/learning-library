@@ -13,23 +13,26 @@ In this lab we will redact data from the `EMPLOYEESEARCH_PROD` schema from being
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
-- SSH Keys
-- Have successfully connected to the workshop machine
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+- SSH Private Key to access the host via SSH
 
-## **Step 1**: Redact EMPLOYEESEARCH Data
+## **STEP 1**: Redact EMPLOYEESEARCH Data
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
-   ````
-   <copy>sudo su - oracle</copy>
-   ````
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
 
 2. Go to the scripts directory
 
-   ````
-   <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/Data_Redaction/Redact_EMPLOYEESEARCH_Data</copy>
-   ````
+      ````
+      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/Data_Redaction/Redact_EMPLOYEESEARCH_Data</copy>
+      ````
 
 3. First, let's view the data before we redact it
 
@@ -41,41 +44,41 @@ This lab assumes you have:
 
 4. Create a redaction policy for the `DEMO_HR_EMPLOYEES` table to redact data for all queries
 
-   ````
-   <copy>./02_redact_for_all.sh</copy>
-   ````    
+      ````
+      <copy>./02_redact_for_all.sh</copy>
+      ````
 
    ![](./images/dr-002.png " ")
 
 5. Re-run the query to see the redacted data
 
-   ````
-   <copy>./03_query_employee_data.sh</copy>
-   ````
+      ````
+      <copy>./03_query_employee_data.sh</copy>
+      ````
 
    ![](./images/dr-003.png " ")
 
 6. Now, modify the redaction policy to only redact non-Glassfish queries
 
-   ````
-   <copy>./04_redact_nonapp_queries.sh</copy>
-   ````
+      ````
+      <copy>./04_redact_nonapp_queries.sh</copy>
+      ````
 
    ![](./images/dr-004.png " ")
 
 7. Add additional columns to the redaction policy
 
-   ````
-   <copy>./05_add_redacted_columns.sh</copy>
-   ````
+      ````
+      <copy>./05_add_redacted_columns.sh</copy>
+      ````
 
    ![](./images/dr-005.png " ")
 
 8. Run the query to see the redact data again
 
-   ````
-   <copy>./06_query_employee_data.sh</copy>
-   ````
+      ````
+      <copy>./06_query_employee_data.sh</copy>
+      ````
 
    ![](./images/dr-006.png " ")
 

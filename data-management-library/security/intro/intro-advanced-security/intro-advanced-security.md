@@ -1,12 +1,18 @@
-# Advanced Security Option
+# Introduction
 
-## Introduction
+## About this Workshop
+
+This workshop familiarizes the user with the features of Oracle Advanced Security Option, namely, Transparent Data Encryption as well as Data Redaction. Explore how easy it is to encrypt data at rest in an Oracle Database with TDE and how you can leverage Data Redaction to protect against leakage of sensitive data from production databases.
+
+Estimated Workshop Time: 90 minutes
+
+### About Oracle Advanced Security
 
 Hard-coded within the Oracle Database core product, two features comprise this option:
 
 ![](./../images/aso-features.png " ")
 
-### Transparent Data Encryption
+#### Transparent Data Encryption
 
 TDE Enables you to encrypt data so that only an authorized recipient can read it.
 
@@ -30,7 +36,7 @@ You can configure Oracle Key Vault as part of the TDE implementation. This enabl
 - You do not need to modify your applications to handle the encrypted data. The database manages the data encryption and decryption.
 - Oracle Database automates TDE master encryption key and keystore management operations. The user or application does not need to manage TDE master encryption keys.
 
-### Data Redaction
+#### Data Redaction
 
 Data Redaction enables you to mask (redact) data that is returned from queries issued by applications. We can also talk about Dynamic Data Masking.
 
@@ -64,6 +70,20 @@ Data Redaction performs the redaction at runtime, that is, the moment that the u
 - You can create the Data Redaction policies in one central location and easily manage them from there.
 
 - The Data Redaction policies enable you to create a wide variety of function conditions based on SYS_CONTEXT values, which can be used at runtime to decide when the Data Redaction policies will apply to the results of the application user's query.
+
+### Objectives
+
+In this workshop, you will:
+* Generate SSH keys
+* Environment setup
+* Transparent Data Encryption
+* Data Redaction
+
+### Prerequisites
+
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
