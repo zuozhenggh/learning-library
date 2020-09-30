@@ -18,7 +18,7 @@ This lab assumes you have:
 - SSH Keys
 - Have successfully connected to the workshop machine
 
-## **Step 1**: Enable Database Vault
+## **STEP 1**: Enable Database Vault
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -41,7 +41,7 @@ This lab assumes you have:
    ![](./images/dv-001.png)
 
    **Note**: To enable DB Vault, database will be rebooted!
-   
+
 4. Next, enable it on the pluggable database. For now, just enable it on pdb1.
 
       ````
@@ -51,20 +51,20 @@ This lab assumes you have:
    Now you will see a status like this:
 
    ![](./images/dv-002.png)
-    
+
 5. Now, Database Vault is enabled in the container database as well as `PDB1`!
 
-## **Step 2**: Create a Simple Realm
+## **STEP 2**: Create a Simple Realm
 
 1. Open a web browser and launch the Glassfish app by navigating to this URL:
 
-   http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1
-    
+   http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr\_prod\_pdb1
+
 2. Login to the application as `hradmin` / `Oracle123`
 
 3. Click **Search Employee**
 
-4. Click [**Search**] 
+4. Click [**Search**]
 
 5. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -85,8 +85,8 @@ This lab assumes you have:
       ````
 
    ![](./images/dv-003.png)
-    
-8. Now, create the Realm 
+
+8. Now, create the Realm
 
       ````
       <copy>./02_create_realm.sh</copy>
@@ -99,7 +99,7 @@ This lab assumes you have:
       ````
       <copy>./03_add_objects_to_realm.sh</copy>
       ````
-   
+
    ![](./images/dv-005.png)
 
 10. Make sure you have an authorized user in the realm. In this step, we will add `EMPLOYEESEARCH_PROD` as a realm authorized owner.
@@ -114,7 +114,7 @@ This lab assumes you have:
 
     ````
     <copy>./05_query_employee_data.sh</copy>
-    ````   
+    ````
 
     ![](./images/dv-007.png)
 
@@ -124,11 +124,11 @@ This lab assumes you have:
     <copy>./06_drop_realm.sh</copy>
     ````
 
-## **Step 3**: Create a Trusted Path / Multi-factor Authorization
+## **STEP 3**: Create a Trusted Path / Multi-factor Authorization
 
 1. Open a web browser and launch the Glassfish app by navigating to this URL:
 
-   http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1
+   http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr\_prod\_pdb1
 
 2. Login as **hradmin** / **Oracle123**
 
@@ -173,7 +173,7 @@ This lab assumes you have:
    ![](./images/dv-021.png)
 
 10. We use the Database Vault Rule by adding it to a DV Rule Set. You can have one or more rules in the rule set.
-   If you have more than one, you can choose between the rule set evaluating all rules must be true or *any* rule must be true. Think of it like the difference between `IN` and `EXISTS` - `IN` includes all while `EXISTS` stops once it identifies one result matches. 
+   If you have more than one, you can choose between the rule set evaluating all rules must be true or *any* rule must be true. Think of it like the difference between `IN` and `EXISTS` - `IN` includes all while `EXISTS` stops once it identifies one result matches.
 
     ````
     <copy>./04_create_rule_set.sh</copy>
@@ -203,19 +203,19 @@ This lab assumes you have:
 
     ````
     <copy>./07_query_employeesearch.sh</copy>
-    ````  
+    ````
 
     ![](./images/dv-025.png)
-    
+
 15. Once you have successfully completed the lab, you can delete the Command Rule, Rule Set, and Rule from Database Vault
 
     ````
     <copy>./08_delete_trusted_path.sh</copy>
-    ````  
+    ````
 
     ![](./images/dv-026.png)
 
-## **Step 4**: Simulation Mode
+## **STEP 4**: Simulation Mode
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -237,7 +237,7 @@ This lab assumes you have:
 
    ![](./images/dv-008.png)
 
-4. Next, create a command rule that will simulate blocking all connections to the database. This is an easy way for us to identify who is connecting and where they are connecting from.    
+4. Next, create a command rule that will simulate blocking all connections to the database. This is an easy way for us to identify who is connecting and where they are connecting from.
 
       ````
       <copy>./02_command_rule_sim_mode.sh</copy>
@@ -261,7 +261,7 @@ This lab assumes you have:
 
    ![](./images/dv-011.png)
 
-   The log shows all the users who connected and would have been blocked by the rule. It also shows where they connected from and what client they used to connect. 
+   The log shows all the users who connected and would have been blocked by the rule. It also shows where they connected from and what client they used to connect.
 
 7. Run this script to get a list of distinct usernames
 
@@ -278,12 +278,12 @@ This lab assumes you have:
       ````
       <copy>./06_purge_sim_log.sh</copy>
       ````
-      
+
       ````
       <copy>./07_drop_command_rule.sh</copy>
-      ````    
+      ````
 
-## **Step 5**: Ops Control
+## **STEP 5**: Ops Control
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -298,7 +298,7 @@ This lab assumes you have:
       ````
 
 3. Check the status of Database Vault and Operations Control.
-   Note that it is not yet configured. 
+   Note that it is not yet configured.
 
       ````
       <copy>./01_query_dv_status.sh</copy>
@@ -357,7 +357,7 @@ This lab assumes you have:
 
    ![](./images/dv-009.png)
 
-## **Step 6**: Disabling Database Vault
+## **STEP 6**: Disabling Database Vault
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -390,7 +390,7 @@ This lab assumes you have:
    ![](./images/dv-028.png)
 
    **Note**: To disable DB Vault, database will be rebooted!
- 
+
 5. Now, Database Vault is disabled in the container database as well as `PDB1`!
 
 ## Acknowledgements
