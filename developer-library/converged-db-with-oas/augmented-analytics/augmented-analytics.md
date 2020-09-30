@@ -1,6 +1,6 @@
 # Augmented Analytics #
 
-## Introduction
+## Introduction ##
 
 Oracle powers deeper insights by embedding machine learning and AI into every aspect of the analytics process, making your job easier than ever.  Oracle employ smart data preparation and discovery to enhance your overall experience. Natural language processing (NLP) powers modern, conversational-style analytics.
 
@@ -47,7 +47,7 @@ The below pre-loaded data object is available in Converged Database.
 
 ## Step 2: Project creation from data set
 
-1. In the **Data** tab, click on the added data set.  This will open screen for project creation.
+In the **Data** tab, click on the added data set.  This will open screen for project creation.
 ![](./images/aa7.png " ")
 
 ## Step 3: Explain Feature
