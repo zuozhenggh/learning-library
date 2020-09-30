@@ -89,6 +89,8 @@ In this workshop, you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Principal Solution Engineer, Database Security
