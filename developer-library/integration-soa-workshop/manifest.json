@@ -18,7 +18,7 @@
             "filename": "./2-build-composite-for-validate-payment.md"
         },
         {
-            "title": "Lab3: Register the Validate payment to Service Bus",
+            "title": "Lab 3: Register the Validate payment to Service Bus",
             "filename": "./3-register-the-composite-to-service-bus.md"
         },
         {
