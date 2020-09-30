@@ -177,4 +177,13 @@ Your sensitive data model is downloaded to your browser.
 - Save the file to your desktop as **<username> SDM1.xml**, and then close the file.<br>
 In **[Masking Lab - Configure a Variety of Masking Formats with Oracle Data Safe](https://github.com/labmaterial/adbguides-dev/blob/master/adb-datasafe/Masking%20Lab%204.md)**, you import this file-based sensitive data model into the Data Masking wizard.
 
-### All Done!
+## Acknowledgements
+
+*Great Work! You successfully completed the Data Safe Discovery Lab 1*
+
+- **Author** - Jayshree Chatterjee
+- **Last Updated By/Date** - Kris Bhanushali, September 2020
+
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!
