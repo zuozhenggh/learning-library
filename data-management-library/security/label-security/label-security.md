@@ -60,13 +60,16 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    ![](./images/ols-001.png " ")
 
-   For each step, you can review the output of the script that you executed.
+   For each step, you can review the output of the script that you executed. For example
 
-   For example `more 01_setup_ols_environment.out`
+   ````
+   <copy> more 01_setup_ols_environment.out</copy>
+   ````
 
-   **Note:**
-      - This script creates c##oscar_ols user, creates a table, loads data, creates users that will be used to showcase difference scenarios. It also configures and enables OLS.
-      - This sql script invoke **load\_crm\_customer\_data.sql** script to create the table `CRM_CUSTOMER` in `APPCRM` schema and inserts 389 rows.
+  **Note:**
+
+  -  This script creates c##oscar_ols user, creates a table, loads data, creates users that will be used to showcase difference scenarios. It also configures and enables OLS.
+  -  This sql script invoke *`load_crm_customer_data.sql`* script to create the table *`CRM_CUSTOMER`* in *`APPCRM`* schema and inserts 389 rows.
 
 4. Next, you create the Label Security policy.
    A policy consists of  levels, groups and/or compartments. The only mandatory component of a policy is at least one level.
@@ -109,7 +112,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    ![](./images/ols-005.png " ")
 
-   **Note:** This script simulates an app that would process records marked to be forgotten. It creates a stored procedure to show records marked to be Forgotten (labeled FRGT::). It also creates a procedure under an AppPreference app schema that would serve the purpose of forgetting a certain customer. AppPreference can access all data and forget\_me(p\_id) procedure will label a certain customerid row FRGT:: “moving” a record from Consent to Forgotten.
+   **Note:** This script simulates an app that would process records marked to be forgotten. It creates a stored procedure to show records marked to be Forgotten (labeled FRGT::). It also creates a procedure under an AppPreference app schema that would serve the purpose of forgetting a certain customer. AppPreference can access all data and *`forget_me(p_id)`* procedure will label a certain customerid row FRGT:: “moving” a record from Consent to Forgotten.
 
 8. Finally, we can clean up the environment (drops the OLS policy and users)
 
@@ -151,7 +154,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    ![](./images/ols-008.png " ")
 
-   **Note:** This script creates the OLS policy named `OLS_DEMO_HR_APP` as well as the levels (Public, Confidential, Highly Confidential), compartments (HR, FIN, IP, IT) and the OLS groups (GLOBAL, USA, CANADA, EU, GERMAN, LATAM).  This script also generates the data labels that will be used. This allows us to assign the numbers to our `label_tag` we want to have.
+   **Note:** This script creates the OLS policy named *`OLS_DEMO_HR_APP`* as well as the levels (Public, Confidential, Highly Confidential), compartments (HR, FIN, IP, IT) and the OLS groups (GLOBAL, USA, CANADA, EU, GERMAN, LATAM).  This script also generates the data labels that will be used. This allows us to assign the numbers to our *`label_tag`* we want to have.
 
 5. Create `EMPLOYEESEARCH_APP`
 
@@ -161,11 +164,11 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    ![](./images/ols-009.png " ")
 
-   **Note:** This script will create a custom table for the Application User Labels, `EMPLOYEESEARCH_PROD.DEMO_HR_USER_LABELS`, and populate it with all of the rows from `EMPLOYEESEARCH_PROD.DEMO_HR_USERS`.  The script will also create a few additional users we will use in this exercise, such as CAN_CANDY, EU_EVAN, and then grant the appropriate OLS User Labels to all of the Application Users.
+   **Note:** This script will create a custom table for the Application User Labels, *`EMPLOYEESEARCH_PROD.DEMO_HR_USER_LABELS`*, and populate it with all of the rows from *`EMPLOYEESEARCH_PROD.DEMO_HR_USERS`*.  The script will also create a few additional users we will use in this exercise, such as CAN_CANDY, EU_EVAN, and then grant the appropriate OLS User Labels to all of the Application Users.
 
 6. Open a web browser and launch the Glassfish app by navigating to this URL:
 
-   http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr_prod_pdb1
+   *http://&lt;YOUR\_DBSEC-LAB\_VM\_PUBLIC\_IP&gt;:8080/hr\_prod\_pdb1*
 
 7. Login to the application as `can_candy` / `Oracle123`
 
@@ -180,12 +183,11 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    **Note**: You can see all employees data with no geographic restriction
 
-10. Go back to your terminal session and apply the OLS policy to the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table
+10. Go back to your terminal session and apply the OLS policy to the *`EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES`* table
 
     ````
     <copy></copy>
     ````
-
 
 	![](./images/ols-010.png " ")
 
@@ -193,7 +195,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 	---
 
-11. Now, update `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table to populate the `olslabel` column with the appropriate OLS numeric label
+11. Now, update *`EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES`* table to populate the `olslabel` column with the appropriate OLS numeric label
 
     ````
     <copy>./04_set_row_labels.sh</copy>
@@ -213,7 +215,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
     ...and go through the data to demonstrate the different data labels and how they are displayed based on the "application user" that is accessing it:
 
-    - for the DB USer, and schema owner `EMPLOYEESEARCH_PROD`
+    - for the DB USer, and schema owner *`EMPLOYEESEARCH_PROD`*
 
     ![](./images/ols-013.png " ")
 
@@ -242,7 +244,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 14. Go back to your web browser and launch the Glassfish app by navigating to this URL:
 
-    http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr_prod_pdb1
+    *http://&lt;YOUR\_DBSEC-LAB\_VM\_PUBLIC\_IP&gt;:8080/hr\_prod\_pdb1*
 
 15. Login to the application as `can_candy` / `Oracle123`
 
