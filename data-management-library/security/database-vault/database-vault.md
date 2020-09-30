@@ -53,7 +53,7 @@ This lab assumes you have:
 
    Now you will see a status like this:
 
-   ![](../images/DV_002.png " ")
+   ![](../images/dv-002.png " ")
 
 5. Now, Database Vault is enabled in the container database as well as `PDB1`!
 
@@ -61,7 +61,7 @@ This lab assumes you have:
 
 1. Open a web browser and launch the Glassfish app by navigating to this URL:
 
-   http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr_prod_pdb1
+  *http://&lt;YOUR\_DBSEC-LAB\_VM\_PUBLIC\_IP&gt;:8080/hr\_prod\_pdb1*
 
 2. Login to the application as `hradmin` / `Oracle123`
 
@@ -131,7 +131,7 @@ This lab assumes you have:
 
 1. Open a web browser and launch the Glassfish app by navigating to this URL:
 
-   http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr\_prod\_pdb1
+   *http://&lt;YOUR\_DBSEC-LAB\_VM\_PUBLIC\_IP&gt;:8080/hr\_prod\_pdb1*
 
 2. Login as **hradmin** / **Oracle123**
 
