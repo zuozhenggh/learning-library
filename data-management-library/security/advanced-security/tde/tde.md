@@ -379,6 +379,8 @@ This lab assumes you have:
       <copy>./05_check_init_params.sh</copy>
       ````
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Principal Solution Engineer, Database Security
