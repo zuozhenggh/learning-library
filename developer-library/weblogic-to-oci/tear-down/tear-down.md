@@ -8,6 +8,11 @@ Estimated Lab Time: 15min
 
 *You should not keep the instances deployed on OCI as part of this workshop running once your are done, or use in any way for actual workloads: since the DB and WebLogic credentials are publically available it would be a security issue.*
 
+### Objectives
+
+In this lab you will tear down the infrastructure provisioned.
+
+
 ## **STEP 1:** Cleaning up the 'on-premises' environment
 
 ### If you used Docker

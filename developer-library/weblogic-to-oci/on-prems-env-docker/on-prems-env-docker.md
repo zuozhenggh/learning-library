@@ -15,7 +15,7 @@ In this lab you will:
 - Get the Docker environment files
 - Startup the Docker-based 'on-premises' demo environment
 - Check that the environment is running properly
-- Create a SSH key pair to communicate with the OCI services.
+- Create an SSH key pair to communicate with the OCI services.
 
 
 ### Prerequisites
@@ -43,7 +43,7 @@ To run this lab, you will need:
 
 *Make sure you followed the installation instructions to setup Docker as root and:*
 
-1. If you don't have a `oracle` user, create it an add it to a `oracle` group with:
+1. If you don't have an `oracle` user, create it an add it to a `oracle` group with:
 
     ```bash
     <copy>
@@ -98,6 +98,13 @@ You can also download the code [here](https://objectstorage.us-ashburn-1.oraclec
     </copy>
     ```
 
+    If you do not have wget installed, you can download through your browser, or install wget with 
+    ```
+    <copy>
+    brew install wget
+    </copy>
+    ```
+
 2. Unzip the files with:
 
     ```bash
@@ -112,7 +119,7 @@ You can also download the code [here](https://objectstorage.us-ashburn-1.oraclec
 
 1. Download the code [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip)
 
-2. Unzip the file with your prefered tool 
+2. Unzip the file with your preferred tool 
 
 3. Open a terminal and get into the unzipped folder
 
@@ -165,6 +172,7 @@ This repository makes use of Oracle docker images which are licensed and need to
     ```
     <copy>
     cd weblogic-to-oci
+    docker-compose build --no-cache
     docker-compose up -d
     </copy>
     ```
@@ -239,13 +247,13 @@ It shows statistics of riders of the Tour de France stored in the database, and 
 
 ![./images/localhost-simpledb-app.png](./images/localhost-simpledb-app.png)
 
-## **STEP 5:** Create a SSH key
+## **STEP 5:** Create an SSH key
 
-*We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.*
+*We'll need an SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.*
 
 Since we'll be running all our commands from docker containers, a folder has been mounted on the `~/.ssh/` folder inside both containers, so that it is shared and also accessible from the outside.
 
-We'll create a SSH key pair in this folder
+We'll create an SSH key pair in this folder
 
 1. Get inside the Oracle Database container:
 
@@ -255,7 +263,7 @@ We'll create a SSH key pair in this folder
     </copy>
     ```
 
-2. Create the SSH keypair
+2. Create the SSH key pair
 
     ```bash
     <copy>
@@ -268,7 +276,7 @@ We'll create a SSH key pair in this folder
 
     `id_rsa` is the private key, which should never be shared, and will be required to connect to any OCI resource provisioned with the corresponding public key `id_rsa.pub`
 
-    Note this key will be the default SSH key from within either docker container used for the on-premises environment. If you wanted to SSH to the OCI resources from outside the container, you will need to supply the private key as the identity file in the ssh command, with the `-i <path-to-id_rsa>/id_rsa`
+    Note this key will be the default SSH key from within either docker container used for the on-premises environment. If you wanted to SSH to the OCI resources from outside the container, you would need to supply the private key as the identity file in the ssh command, with the `-i <path-to-id_rsa>/id_rsa`
 
 **Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
 

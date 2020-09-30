@@ -12,7 +12,7 @@ Estimated Lab Time: 15 min
 
 **WebLogic Deploy Tooling** is an open source tool found on Github at [https://github.com/oracle/weblogic-deploy-tooling](https://github.com/oracle/weblogic-deploy-tooling)
 
-Migration with WebLogic Deploy Tooling (WDT) consists in 3 steps:
+Migration with WebLogic Deploy Tooling (WDT) consists of 3 steps:
 
 - Discover the source domain, and generate a **model** file of the topology, resources and applications, a **variable** file with required credentials, and an **archive** file with the application binaries.
 

@@ -13,6 +13,8 @@ Both paths provide a pre-packaged 'on-premises' simulated environment which incl
 
 The Marketplace image deployment is simpler and faster, while the Docker environment provides a way to more realistically simulate an 'on-premises' environment as it runs on your local machine. 
 
+Estimated Lab Time: 15 to 30min depending on path chosen.
+
 ### Objectives
 
 In this workshop, you will:

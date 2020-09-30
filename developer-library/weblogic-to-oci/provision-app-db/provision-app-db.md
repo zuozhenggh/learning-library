@@ -22,7 +22,7 @@ Before we can provision the Application Database, we need to provision a **priva
 
 In this section we will create a Security List for the WebLogic subnet to be able to reach the Database subnet on port 1521 (the Oracle Database default port) and SSH port 22.
 
-1. Go to **Networking -> Virtual CLoud Network** in the compartment where WebLogic was provisioned.
+1. Go to **Networking -> Virtual Cloud Network** in the compartment where WebLogic was provisioned.
 
   <img src="./images/provision-db-1.png" width="50%">
 
