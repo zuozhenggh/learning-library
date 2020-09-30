@@ -9,7 +9,7 @@ In this lab we will redact data from the `EMPLOYEESEARCH_PROD` schema from being
 *Estimated Lab Time*: 20 minutes
 
 ### Objectives
--   Dynamically redact sensitive data preventing it from being displayed outside the application
+Dynamically redact sensitive data preventing it from being displayed outside the application
 
 ### Prerequisites
 This lab assumes you have:
@@ -21,7 +21,6 @@ This lab assumes you have:
     - Lab: Environment Setup
 
 ## **STEP 1**: Redact EMPLOYEESEARCH Data
-
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
       ````
