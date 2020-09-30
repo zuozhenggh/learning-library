@@ -14,11 +14,11 @@ In this lab we will redact data from the `EMPLOYEESEARCH_PROD` schema from being
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
     - Lab: Prepare Setup
     - Lab: Environment Setup
-- SSH Private Key to access the host via SSH
 
 ## **STEP 1**: Redact EMPLOYEESEARCH Data
 

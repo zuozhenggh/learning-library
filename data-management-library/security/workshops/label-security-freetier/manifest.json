@@ -29,7 +29,7 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Protecting Sensite Data",
+      "title": "Lab 4: Protecting Sensitive Data (Label Security)",
       "description": "In this lab you will learn how to leverage OLS to track consent and force restriction for GDPR",
       "filename": "../../label-security/label-security.md"
     }

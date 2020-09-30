@@ -4,7 +4,7 @@
 
 This workshop familiarizes the user with the features of Oracle Advanced Security Option, namely, Transparent Data Encryption as well as Data Redaction. Explore how easy it is to encrypt data at rest in an Oracle Database with TDE and how you can leverage Data Redaction to protect against leakage of sensitive data from production databases.
 
-Estimated Workshop Time: 90 minutes
+*Estimated Lab Time*: 90 minutes
 
 ### About Oracle Advanced Security
 

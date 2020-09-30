@@ -16,10 +16,13 @@ The second activity will use the Glassfish HR application and protect it with Or
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
-- SSH Keys
-- Have successfully connected to the workshop machine
-- Have completed all previous labs for Oracle Database Vault
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Oracle Database Vault
 
 ## **STEP 1**: Simple CRM Application
 
@@ -265,8 +268,8 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Principal Solution Engineer, Database Security
-- **Last Updated By/Date** - Gian Sartor, September 2020
+- **Contributors** - Gian Sartor, Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

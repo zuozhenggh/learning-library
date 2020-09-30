@@ -1,4 +1,4 @@
-﻿# Introduction
+# Introduction
 
 ## About Database Vault
 Oracle Database Vault provides controls to prevent unauthorized privileged users from accessing sensitive data and to prevent unauthorized database changes.

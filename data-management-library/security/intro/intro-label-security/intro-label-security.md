@@ -1,15 +1,14 @@
 # Introduction
 
 ## About the Workshop
-
 This aim of this workshop is to introduce the various features and functionality of Oracle Label Security, and to give the user an opportunity to learn how to configure those features in order to secure their databases.
 
-Estimated Lab Time: 45 minutes
+*Estimated Lab Time*: 45 minutes
 
 ### About Label Security
 Oracle Label Security controls the display of individual table rows using labels that are assigned to specific individual table rows and application users.
 
-![](./../images/ols-concept.png)
+![](./../images/ols-concept.png " ")
 
 Oracle Label Security works by comparing the row label with a user's label authorizations to enable you to easily restrict sensitive information to only authorized users. This way, users with different authorization levels (for example, managers and sales representatives) can have access to specific rows of data in a table. You can apply Oracle Label Security policies to one or more application tables. The design of Oracle Label Security is similar to Oracle Virtual Private Database (VPD). However, unlike VPD, Oracle Label Security provides the access mediation functions, data dictionary tables, and policy-based architecture out of the box, eliminating customized coding and providing a consistent label based access control model that can be used by multiple applications.
 
@@ -49,8 +48,8 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Principal Solution Engineer, Database Security
-- **Last Updated By/Date** - Gian Sartor, September 2020
+- **Contributors** - Gian Sartor, Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
