@@ -115,7 +115,7 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
 
 ## **STEP 2:** Edit the `datapump_import.sh` script
 
-Once the schema and data was exported, we'll import it into the OCI DBaaS database.
+Once the schema and data are exported, we'll import it into the OCI DBaaS database.
 
 First, we'll need to edit the `datapump_import.sh` script to target the OCI database.
 
@@ -195,7 +195,7 @@ echo "Done!"
 
 4. Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. 
 
-      If you followed the name conventions, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com` if you followed the defaults in this lab.
+      If you followed the name convention defaults in the lab, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`.
 
       <img src="./images/provision-db-27-connection2.png" width="70%">
 
@@ -221,6 +221,8 @@ You may notice this 1st try imports the schema but fails at importing the data, 
 - and re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
 
 The database is now migrated to OCI.
+
+You may proceed to the next lab.
 
 ## Acknowledgements
 

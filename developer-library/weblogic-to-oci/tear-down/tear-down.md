@@ -8,6 +8,11 @@ Estimated Lab Time: 15min
 
 *You should not keep the instances deployed on OCI as part of this workshop running once your are done, or use in any way for actual workloads: since the DB and WebLogic credentials are publically available it would be a security issue.*
 
+### Objectives
+
+In this lab you will tear down the infrastructure provisioned.
+
+
 ## **STEP 1:** Cleaning up the 'on-premises' environment
 
 ### If you used Docker
@@ -62,11 +67,19 @@ Estimated Lab Time: 15min
 
 4. Go to **Networking -> Virtual Cloud Networks** 
 
-5. Select the nonjrf_wls VCN
+5. Go to the **Private Subnet** `nonjrf_db_subnet`
 
-6. Select the private subnet that was created manually `nonjrf_db_subnet`
+6. Select the `nonjrf-db-security-list` in the list of security lists and click the far-right 3 dots icon to open further options and click *Remove*
 
-7. Click **Terminate** 
+7. Go to **Security Lists**
+
+8. Select the `nonjrf-db-security-list` Security List and click *Terminate*
+
+9. Click **Subnets**
+
+10. Select the private subnet that was created manually `nonjrf_db_subnet`
+
+11s. Click **Terminate** 
 
     Note you won't be able to proceed until the DB System itself has been terminated.
 
