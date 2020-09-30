@@ -90,7 +90,7 @@ Below pre-loaded data objects are available in Converged Database. . And since O
 
 Let's create a dataflow to merge all the different types of datasets created in Step1.
 
-1. On the home screen, select "Create" and click on "data flow".
+1. On the home screen, select "Create" and click on "Data Flow".
     ![](./images/oascdb1.2.png " ")
 
 2. Click on “+” and then “Add Data".
