@@ -41,7 +41,8 @@ sudo su - oracle
 cd /u01/script
 </copy>
 ````
-5. Run the script file to start the services
+5. Run the script file to start the services.
+   
 ````
 <copy>
 ./env_setup_script.sh
@@ -49,13 +50,13 @@ cd /u01/script
 ````
 ![](./images/oas-environment4.png " ")
 
-This script will ensure to start Database, Admin Server and all the services of OAS in 5-6 minutes. Here you can get all the service names and their status in the end of the script.
+This script will ensure to start Database, Admin Server and all the services of OAS in 5-6 minutes. 
 
 ![](./images/oas-environment5.png " ")
 
 Check for the "Finished starting servers" status before proceeding next.
 
-6. Run "status.sh" file to get the status of all the services required for OAS. 
+1. Run "status.sh" file to get the status of all the services required for OAS. 
 
 ````
 <copy>
