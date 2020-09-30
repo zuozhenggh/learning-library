@@ -1,6 +1,6 @@
 # Introduction #
 
-## Oracle Converged Database ##
+## About Oracle's Converged Database ##
 
 A converged database is a database that has native support for all modern data types and the latest development paradigms built into one product.
 
@@ -30,7 +30,7 @@ Mainly two components are explored in this workshop along with few features of t
 
 To complete this workshop, you will use a preconfigured OAS images available in Oracle's Cloud Marketplace to build your compute instance.  This image comes pre-installed with all the information you need to create your environment. 
 
-**Estimated Workshop Time:** 3 hours
+_Estimated Workshop Time:_ 3 hours
 
 ## Oracle Analytics Server ##
 
@@ -52,7 +52,7 @@ Organizations can now modernize their analytics platform by providing easy-to-us
 - Oracle Analytics Answers
 
 **Support:**
-- OAS 5.5 is only supported on Linux operation systems.
+- OAS 5.5 is supported on Linux and Windows operating system.
 - Support for additional operating systems are planned for later releases.
 
 [](youtube:Ml-McI6yBOU)
@@ -64,10 +64,9 @@ Oracle Analytics Server has rich collection of data visualizations and capabilit
 
 ## Acknowledgements
 
-- **Owners** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
+- **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
-- **Team** - North America Analytics Specialists
-- **Last Updated By** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
+- **Last Updated By/Date** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

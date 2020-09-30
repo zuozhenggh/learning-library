@@ -3,7 +3,7 @@
 ## Introduction ##
 In this lab you will start both Database and OAS environments by running the script files. 
 
-Estimated Lab Time: 10 Mintues.
+_Estimated Lab Time_: 10 Mintues.
 
 ### Objectives ###
 
@@ -26,7 +26,7 @@ sudo su - oracle
 ````` 
 ![](./images/oas-environment1.png " ")
 
-2. To set the environment for Database and access the binaries, Enter “ . oraenv “ on command prompt.
+2. To set the environment for Database and access the binaries, Enter " . oraenv " on command prompt.
    
 ![](./images/oas-environment2.png " ")
 
@@ -102,10 +102,9 @@ Now, you are ready to move to further labs.
 
 ## Acknowledgements
 
-- **Owners** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
+- **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
-- **Team** - North America Analytics Specialists
-- **Last Updated By** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
+- **Last Updated By/Date** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
