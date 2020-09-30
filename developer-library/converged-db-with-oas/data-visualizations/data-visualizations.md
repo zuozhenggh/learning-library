@@ -88,7 +88,7 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
    To build a data flow, you add steps. Each step performs a specific function, for example, add data, join tables, merge columns, transform data, save your data. Use the data flow editor to add and configure your steps. Each step is validated when you add or change it. When you"ve configured your data flow, you execute it to produce a data set.
 
 
-Let"s create a dataflow to merge all the different types of datasets created in Step1.
+Let's create a dataflow to merge all the different types of datasets created in Step1.
 
 1. On the home screen, select "Create" and click on "Data Flow".
     ![](./images/oascdb1.2.png " ")
@@ -257,7 +257,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     Select Revenue, Operation Expenses, Net Income and Quarter. Pick Combo as Visualization.  
     ![](./images/oascdb1.21.png " ")
 
-   Let"s change "Line" graph type for Revenue to "Bar"
+   Let's change "Line" graph type for Revenue to "Bar"
     ![](./images/oascdb45.png " ")
 
    We can change properties of graph as below, for example color assignments, graph type for each   KPI, title etc
@@ -321,14 +321,14 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
 
    Rename canvas "More Visuals" as in Step4-point 5. 
 
-13. Let"s see **Pivot Table** visual    
+13. Let's see **Pivot Table** visual    
     Analyzing KPIs by Cost Centre.  
     Select Revenue, Operating Expenses, Net Income and Cost Center. Pick Pivot table. Change properties as shown below.
     ![](./images/oascdb59.png " ")
 
 14. **Custom Calculation**  
     In OAS, we can also do some calculations of Key Performance Metrics as per business requirement.     
-    Let"s calculate "Profit". 
+    Let's calculate "Profit". 
     Drag the scroller down as as shown below. Right click on My calculation, then click on "Add Calculation" 
     ![](./images/oascdb1.22.png " ")
 
