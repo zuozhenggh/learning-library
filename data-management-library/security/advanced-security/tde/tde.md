@@ -1,4 +1,4 @@
-# Transparent Data Encryption
+# Transparent Data Encryption (TDE)
 
 ## Introduction
 
@@ -6,18 +6,21 @@ To restore your database to a pre-TDE point in time, this lab will enable archiv
 
 Hence, this requires stopping the database, creating a tape archive file (tar) and restarting it.
 
-Estimated Lab Time: 45 minutes
+*Estimated Lab Time*: 45 minutes
 
 ### Objectives
 - Take a cold backup of the database to enable db restore if needed
-- Enable Transparent Data Encrytion in the database
-- Encrypt data using Transparent Data Encrytion
+- Enable Transparent Data Encryption in the database
+- Encrypt data using Transparent Data Encryption
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account (Always Free is not supported)
-- SSH Keys
-- Have successfully connected to the workshop machine
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
 
 ## **STEP 1**: Allow DB Restore
 
@@ -29,9 +32,9 @@ This lab assumes you have:
 
 2. Go to the scripts directory
 
-      ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Allow_DB_Restore</copy>
-      ````
+   ````
+   <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Allow_DB_Restore</copy>
+   ````
 
 3. Run the backup command:
 
@@ -39,7 +42,7 @@ This lab assumes you have:
       <copy>./01_backup_db.sh</copy>
       ````
 
-   ![](./images/tde-001.png)
+   ![](./images/tde-001.png " ")
 
 4. Once it has completed, it will automatically restart the container and pluggable databases
 
@@ -65,26 +68,26 @@ This lab assumes you have:
       <copy>./01_create_os_directory.sh</copy>
       ````
 
-   ![](./images/tde-002.png)
+   ![](./images/tde-002.png " ")
 
 4. Use the database parameters to manage TDE. This will require a database restart for one of the parameters to take effect.<
-   The script will perform the reboot for you. 
+   The script will perform the reboot for you.
 
       ````
       <copy>./02_set_tde_parameters.sh</copy>
       ````
 
-   ![](./images/tde-003.png)
+   ![](./images/tde-003.png " ")
 
 5. Create the software keystore (Oracle Wallet) for the container database.
-   You will see the status result goes from `NOT_AVAILABLE` to `OPEN_NO_MASTER_KEY`. 
+   You will see the status result goes from `NOT_AVAILABLE` to `OPEN_NO_MASTER_KEY`.
 
       ````
       <copy>./03_create_wallet.sh</copy>
       ````
 
-   ![](./images/tde-004.png)
-    
+   ![](./images/tde-004.png " ")
+
 6. Now, your wallet has been created
 
 ## **STEP 3**: Create Master Key
@@ -107,7 +110,7 @@ This lab assumes you have:
       <copy>./01_create_cdb_mkey.sh</copy>
       ````
 
-   ![](./images/tde-005.png)
+   ![](./images/tde-005.png " ")
 
 4. To create a master key for the pluggable database, PDB1, run the following command:
 
@@ -115,7 +118,7 @@ This lab assumes you have:
       <copy>./02_create_pdb_mkey.sh pdb1</copy>
       ````
 
-   ![](./images/tde-006.png)
+   ![](./images/tde-006.png " ")
 
 5. If you want, you can do the same for PDB2.
    This is not a requirement though. It might be helpful to show some databases with TDE and some without.
@@ -124,7 +127,7 @@ This lab assumes you have:
       <copy>./02_create_pdb_mkey.sh pdb2</copy>
       ````
 
-   ![](./images/tde-007.png)
+   ![](./images/tde-007.png " ")
 
 6. Now, you have a master key and you can begin encrypting tablespaces or column!
 
@@ -138,10 +141,10 @@ This lab assumes you have:
 
 2. Go to the scripts directory
 
-      ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Autologin_Wallet</copy>
-      ````
-	
+   ````
+   <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Autologin_Wallet</copy>
+   ````
+
 3. Then run the script to view the wallet on the operating system.
    Notice there is no `cwallet.sso`, there will be when we create the auto login wallet.
 
@@ -149,7 +152,7 @@ This lab assumes you have:
       <copy>./01_view_wallet_on_os.sh</copy>
       ````
 
-   ![](./images/tde-010.png)
+   ![](./images/tde-010.png " ")
 
 4. You can view what the wallet looks like in the database
 
@@ -157,15 +160,15 @@ This lab assumes you have:
       <copy>./02_view_wallet_in_db.sh</copy>
       ````
 
-   ![](./images/tde-011.png)
+   ![](./images/tde-011.png " ")
 
 5. Now, create the autologin wallet
 
-      ````
-      <copy>./03_create_autologin_wallet.sh</copy>
-      ````
-   
-   ![](./images/tde-012.png)
+   ````
+   <copy>./03_create_autologin_wallet.sh</copy>
+   ````
+
+   ![](./images/tde-012.png " ")
 
 6. Run the same queries... You should now see the `cwallet.sso` file:
 
@@ -173,11 +176,11 @@ This lab assumes you have:
       <copy>./04_view_wallet_on_os.sh</copy>
       ````   
 
-   ![](./images/tde-013.png)
+   ![](./images/tde-013.png " ")
 
-   
+
    **Note**: Now you should see the *.sso file
-   
+
 
 7. And no changes to the wallet in the database
 
@@ -185,7 +188,7 @@ This lab assumes you have:
       <copy>./05_view_wallet_in_db.sh</copy>
       ````
 
-   ![](./images/tde-014.png)
+   ![](./images/tde-014.png " ")
 
 8. Now your Autologin is created!
 
@@ -209,7 +212,7 @@ This lab assumes you have:
       <copy>./01_Search_Strings_Plain_Text.sh</copy>
       ````
 
-   ![](./images/tde-015.png)
+   ![](./images/tde-015.png " ")
 
 4. Next, encrypt the data by encrypting the entire tablespace:
 
@@ -217,7 +220,7 @@ This lab assumes you have:
       <copy>./02_Encrypt_Tablespace.sh</copy>
       ````
 
-   ![](./images/tde-016.png)
+   ![](./images/tde-016.png " ")
 
 5. And finally, try the side-channel attack again
 
@@ -225,7 +228,7 @@ This lab assumes you have:
       <copy>./03_Search_Strings_Encrypted.sh</copy>
       ````
 
-   ![](./images/tde-017.png)
+   ![](./images/tde-017.png " ")
 
 6. You will see that all of the data is now encrypted!
 
@@ -249,7 +252,7 @@ This lab assumes you have:
       <copy>./01_Check_Init_Params.sh</copy>
       ````
 
-   ![](./images/tde-018.png)
+   ![](./images/tde-018.png " ")
 
 4. Next, change the init parameter `encrypt_new_tablespaces` to be `ALWAYS` so all new tablespaces are encrypted.
 
@@ -257,7 +260,7 @@ This lab assumes you have:
       <copy>./02_Encrypt_All_New_Tablespaces.sh</copy>
       ````
 
-   ![](./images/tde-019.png)
+   ![](./images/tde-019.png " ")
 
 5. Finally, create a tablespace to test it.
    The tablespace `TEST` will be created without specifying the encryption parameters (the default encryption is AES128) and will be dropped after
@@ -266,7 +269,7 @@ This lab assumes you have:
       <copy>./03_Create_New_Tablespace.sh</copy>
       ````
 
-   ![](./images/tde-020.png)
+   ![](./images/tde-020.png " ")
 
 6. Now, your new Tablespaces will be encrypted by default!
 
@@ -296,7 +299,7 @@ This lab assumes you have:
       <copy>./02_rekey_pdb_mkey.sh pdb2</copy>
       ````
 
-5. Now that you have a master key, you can begin encrypting tablespaces or column. 
+5. Now that you have a master key, you can begin encrypting tablespaces or column.
 
 ## **STEP 8**: View Keystore Details
 
@@ -323,7 +326,7 @@ This lab assumes you have:
       <copy>./01_view_wallet_on_os.sh</copy>
       ````
 
-   ![](./images/tde-008.png)
+   ![](./images/tde-008.png " ")
 
    - View the keystore data in the database
 
@@ -331,7 +334,7 @@ This lab assumes you have:
       <copy>./02_view_wallet_in_db.sh</copy>
       ````
 
-   ![](./images/tde-009.png)
+   ![](./images/tde-009.png " ")
 
 ## **STEP 9**: Restore Before TDE (Optional)
 
@@ -383,8 +386,8 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Principal Solution Engineer, Database Security
-- **Last Updated By/Date** - Kamryn Vinson, September 2020
+- **Contributors** - Gian Sartor, Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
