@@ -32,6 +32,23 @@ In this lab, you will:
 * Firefox browser
 * A OCI account with a Compartment setup
 
+If you are not an administrator on your tenancy, you must insure that the following policies have been set for you:
+
+```
+<copy>
+Allow group MyGroup to manage dynamic-groups in tenancy
+Allow group MyGroup to manage policies in tenancy
+Allow group MyGroup to manage volume-family in tenancy
+Allow group MyGroup to manage instance-family in tenancy
+
+Allow group MyGroup to inspect tenancies in tenancy
+Allow group MyGroup to use secret-family in tenancy
+Allow group MyGroup to use tag-namespaces in tenancy
+
+Allow group MyGroup to manage all-resources in compartment MyCompartment
+</copy>
+```
+
 You may proceed to the next lab.
 
 ## Acknowledgements
