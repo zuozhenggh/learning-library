@@ -30,18 +30,18 @@ sudo su - oracle
    
 ![](./images/oas-environment2.png " ")
 
-Enter **convergedcdb** for ORACLE\_SID.
-So that the Oracle_Base will be set.
+3. Enter **convergedcdb** for ORACLE\_SID. So that the Oracle_Base will be set.
+
 ![](./images/oas-environment3.png " ")
 
-3. Go to folder /u01/script
+4. Go to folder /u01/script
 
 ````
 <copy>
 cd /u01/script
 </copy>
 ````
-4. Run the script file to start the services
+5. Run the script file to start the services
 ````
 <copy>
 ./env_setup_script.sh
@@ -53,7 +53,22 @@ This script will ensure to start Database, Admin Server and all the services of 
 
 ![](./images/oas-environment5.png " ")
 
-Check for the success status before moving to OAS login screen.
+Check for the "Finished starting servers" status before proceeding next.
+
+6. Run "status.sh" file to get the status of all the services required for OAS. 
+
+````
+<copy>
+/u01/oas/Oracle/Middleware/Oracle_Home/user_projects/domains/bi/bitools/bin/status.sh
+</copy>
+````
+![](./images/oas-environment6.png " ")
+
+The command shows all the service names and their status.
+
+![](./images/oas-environment7.png " ")
+
+Check for the success status as shown above, before login to OAS screen.
 
 ## Step 2: Login to Oracle Analytics Server
 
@@ -65,7 +80,7 @@ Check for the success status before moving to OAS login screen.
 http://Your-Machine-IP:9502/dv/ui
 </copy>
 ````
-![](./images/oas-environment6.png " ")
+![](./images/oas-environment8.png " ")
 
 1. Login with the below credentials;
 
@@ -77,12 +92,12 @@ http://Your-Machine-IP:9502/dv/ui
 
 1. From Home screen, click on **Create** button and select **Connection**.
 
-![](./images/oas-environment7.png " ")
+![](./images/oas-environment9.png " ")
 
 2. Select **Oracle Database** for connecting to database and provide required connection details.  
 
-![](./images/oas-environment8.png " ")
-![](./images/oas-environment9.png " ")
+![](./images/oas-environment10.png " ")
+![](./images/oas-environment11.png " ")
 
 **Connection Details:**	
 
