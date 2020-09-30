@@ -63,7 +63,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    **Note:**
       - This script creates c##oscar_ols user, creates a table, loads data, creates users that will be used to showcase difference scenarios. It also configures and enables OLS.
-      - This sql script invoke **load_crm_customer_data.sql** script to create the table `CRM_CUSTOMER` in `APPCRM` schema and inserts 389 rows.
+      - This sql script invoke **load\_crm\_customer\_data.sql** script to create the table `CRM_CUSTOMER` in `APPCRM` schema and inserts 389 rows.
 
 4. Next, you create the Label Security policy.
    A policy consists of  levels, groups and/or compartments. The only mandatory component of a policy is at least one level.
@@ -105,7 +105,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    ![](./images/ols-005.PNG)
 
-   **Note:** This script simulates an app that would process records marked to be forgotten. It creates a stored procedure to show records marked to be Forgotten (labeled FRGT::). It also creates a procedure under an AppPreference app schema that would serve the purpose of forgetting a certain customer. AppPreference can access all data and forget_me(p_id) procedure will label a certain customerid row FRGT:: “moving” a record from Consent to Forgotten.
+   **Note:** This script simulates an app that would process records marked to be forgotten. It creates a stored procedure to show records marked to be Forgotten (labeled FRGT::). It also creates a procedure under an AppPreference app schema that would serve the purpose of forgetting a certain customer. AppPreference can access all data and forget\_me(p\_id) procedure will label a certain customerid row FRGT:: “moving” a record from Consent to Forgotten.
 
 8. Finally, we can clean up the environment (drops the OLS policy and users)
 
@@ -161,7 +161,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 6. Open a web browser and launch the Glassfish app by navigating to this URL:
 
-   http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr\_prod\_pdb1
+   http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr\_prod\_pdb1
 
 7. Login to the application as `can_candy` / `Oracle123`
 
@@ -231,12 +231,12 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 14. Go back to your web browser and launch the Glassfish app by navigating to this URL:
 
-    http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr\_prod\_pdb1
+    http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr\_prod\_pdb1
 
 15. Login to the application as `can_candy` / `Oracle123`
 
     - Select "**Search Employees**" and click [**Search**]
-	
+
 	- See the result after enabling OLS policy
 
     ![](./images/ols-021.PNG)
