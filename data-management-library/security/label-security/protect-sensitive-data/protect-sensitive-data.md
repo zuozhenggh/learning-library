@@ -21,7 +21,7 @@ This lab assumes you have:
 - Have successfully connected to the workshop machine
 - Have completed all previous labs for Oracle Database Vault
 
-## **Step 1**: Simple CRM Application
+## **STEP 1**: Simple CRM Application
 
 ### Different applications have different purposes:
 
@@ -39,21 +39,21 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
-   ````
-   <copy>sudo su - oracle</copy>
-   ````
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
 
 2. Go to the scripts directory
 
-   ````
-   <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Simple_CRM_App</copy>
-   ````
+      ````
+      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Simple_CRM_App</copy>
+      ````
 
 3. First, you must setup the Label Security environment
 
-   ````
-   <copy>./01_setup_ols_environment.sh</copy>
-   ````
+      ````
+      <copy>./01_setup_ols_environment.sh</copy>
+      ````
 
    ![](./images/ols-001.PNG)
 
@@ -62,37 +62,36 @@ While we provide scripts to execute the whole lab from start to finish in an aut
    For example `more 01_setup_ols_environment.out`
 
    **Note:**
-   - This script creates c##oscar_ols user, creates a table, loads data, creates users that will be used to showcase difference scenarios. It also configures and enables OLS.
-   - This sql script invoke **load_crm_customer_data.sql** script to create the table `CRM_CUSTOMER` in `APPCRM` schema and inserts 389 rows.
+      - This script creates c##oscar_ols user, creates a table, loads data, creates users that will be used to showcase difference scenarios. It also configures and enables OLS.
+      - This sql script invoke **load\_crm\_customer\_data.sql** script to create the table `CRM_CUSTOMER` in `APPCRM` schema and inserts 389 rows.
 
 4. Next, you create the Label Security policy.
-   A policy consists of  levels, groups and/or compartments. The only mandatory component of a policy is at least one level.   
+   A policy consists of  levels, groups and/or compartments. The only mandatory component of a policy is at least one level.
 
-   ````
-   <copy>./02_create_ols_policy.sh</copy>
-   ````
+      ````
+      <copy>./02_create_ols_policy.sh</copy>
+      ````
 
    ![](./images/ols-002.PNG)
-    
+
    **Note:** This script will create Policy (Levels, Groups, and Labels), set Levels and Groups for Users, and apply the Policy to the `APPCRM.CRM_CUSTOMER` table
 
  5. Then, we must label the data.
     We use the policy we created and apply one level and optionally, one or more compartments and, optionally, one or more groups.
- 
-   ````
-   <copy>./03_label_data.sh</copy>
-   ````
-        
-    
+
+      ````
+      <copy>./03_label_data.sh</copy>
+      ````
+
    ![](./images/ols-003.PNG)
-   
+
    **Note:** This script update data labels to create some diversity of labels that will be used in the scenarios. In real world scenarios would be advisable to create a labeling function that would assign labels based on other existing table data (other columns).
 
 6. Then we will see the label security in action
 
-   ````
-   <copy>./04_label_sec_in_action.sh</copy>
-   ````
+      ````
+      <copy>./04_label_sec_in_action.sh</copy>
+      ````
 
    ![](./images/ols-004.PNG)
 
@@ -100,72 +99,72 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 7. Now, we change users status to be forgotten
 
-   ````
-   <copy>./05_to_be_forgotten.sh</copy>
-   ````
+      ````
+      <copy>./05_to_be_forgotten.sh</copy>
+      ````
 
    ![](./images/ols-005.PNG)
-   
-   **Note:** This script simulates an app that would process records marked to be forgotten. It creates a stored procedure to show records marked to be Forgotten (labeled FRGT::). It also creates a procedure under an AppPreference app schema that would serve the purpose of forgetting a certain customer. AppPreference can access all data and forget_me(p_id) procedure will label a certain customerid row FRGT:: “moving” a record from Consent to Forgotten.
+
+   **Note:** This script simulates an app that would process records marked to be forgotten. It creates a stored procedure to show records marked to be Forgotten (labeled FRGT::). It also creates a procedure under an AppPreference app schema that would serve the purpose of forgetting a certain customer. AppPreference can access all data and forget\_me(p\_id) procedure will label a certain customerid row FRGT:: “moving” a record from Consent to Forgotten.
 
 8. Finally, we can clean up the environment (drops the OLS policy and users)
 
-   ````
-   <copy>./06_clean_env.sh</copy>
-   ````
+      ````
+      <copy>./06_clean_env.sh</copy>
+      ````
 
    ![](./images/ols-006.PNG)
 
-## **Step 2**: Protect Glassfish Application
+## **STEP 2**: Protect Glassfish Application
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
-   ````
-   <copy>sudo su - oracle</copy>
-   ````
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
 
 2. Go to the scripts directory
 
-   ````
-   <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Protect_Glassfish_App</copy>
-   ````
+      ````
+      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Protect_Glassfish_App</copy>
+      ````
 
 3. First, starts the infrastructure and makes sure you don't already have the OLS changes deployed to the application
 
-   ````
-   <copy>./00_start_infrastructure.sh</copy>
-   ````
+      ````
+      <copy>./00_start_infrastructure.sh</copy>
+      ````
 
    ![](./images/ols-007.PNG)
 
-   - Press [**Enter**] to close
+   Press [**Enter**] to close
 
 4. Next, setup the OLS environment
 
-   ````
-   <copy>./01_setup_ols_environment.sh</copy>
-   ````
+      ````
+      <copy>./01_setup_ols_environment.sh</copy>
+      ````
 
    ![](./images/ols-008.PNG)
 
-   **Note:** This script creates the OLS policy named `OLS_DEMO_HR_APP` as well as the levels (Public, Confidential, Highly Confidential), compartments (HR, FIN, IP, IT) and the OLS groups (GLOBAL, USA, CANADA, EU, GERMAN, LATAM).  This script also generates the data labels that will be used. This allows us to assign the numbers to our `label_tag` we want to have.  
+   **Note:** This script creates the OLS policy named `OLS_DEMO_HR_APP` as well as the levels (Public, Confidential, Highly Confidential), compartments (HR, FIN, IP, IT) and the OLS groups (GLOBAL, USA, CANADA, EU, GERMAN, LATAM).  This script also generates the data labels that will be used. This allows us to assign the numbers to our `label_tag` we want to have.
 
 5. Create `EMPLOYEESEARCH_APP`
 
-   ````
-   <copy>./02_configure_employeesearch_app.sh</copy>
-   ````
+      ````
+      <copy>./02_configure_employeesearch_app.sh</copy>
+      ````
 
    ![](./images/ols-009.PNG)
 
-   **Note:** This script will create a custom table for the Application User Labels, `EMPLOYEESEARCH_PROD.DEMO_HR_USER_LABELS`, and populate it with all of the rows from `EMPLOYEESEARCH_PROD.DEMO_HR_USERS`.  The script will also create a few additional users we will use in this exercise, such as CAN_CANDY, EU_EVAN, and then grant the appropriate OLS User Labels to all of the Application Users. 
+   **Note:** This script will create a custom table for the Application User Labels, `EMPLOYEESEARCH_PROD.DEMO_HR_USER_LABELS`, and populate it with all of the rows from `EMPLOYEESEARCH_PROD.DEMO_HR_USERS`.  The script will also create a few additional users we will use in this exercise, such as CAN\_CANDY, EU\_EVAN, and then grant the appropriate OLS User Labels to all of the Application Users.
 
 6. Open a web browser and launch the Glassfish app by navigating to this URL:
 
-   http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1
-    
+   http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr\_prod\_pdb1
+
 7. Login to the application as `can_candy` / `Oracle123`
-	
+
 8. Select "**Search Employees**" and click [**Search**]
    See the result before enabling OLS policy
 
@@ -179,23 +178,15 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 10. Go back to your terminal session and apply the OLS policy to the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table
 
-    ````
-    <copy></copy>
-    ````
-		
+	![](./images/ols-010.png)
 
-	![](./images/ols-010.PNG)
-
-	---
 	**Note:** Once an OLS policy is applied to a table, only users with authorized labels, or OLS privileges, can see data.
 
-	---
-	
 11. Now, update `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table to populate the `olslabel` column with the appropriate OLS numeric label
 
-    ````
-    <copy>./04_set_row_labels.sh</copy>
-    ````	
+      ````
+      <copy>./04_set_row_labels.sh</copy>
+      ````
 
     ![](./images/ols-011.PNG)
 
@@ -203,20 +194,20 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 12. See what policy output looks like...
 
-    ````
-    <copy>./05_verify_our_policy.sh</copy>
-    ````
+      ````
+      <copy>./05_verify_our_policy.sh</copy>
+      ````
 
     ![](./images/ols-012.PNG)
 
     ...and go through the data to demonstrate the different data labels and how they are displayed based on the "application user" that is accessing it:
 
     - for the DB USer, and schema owner `EMPLOYEESEARCH_PROD`
-	
+
     ![](./images/ols-013.PNG)
 
 	- for the App User `HRADMIN`
-	
+
     ![](./images/ols-014.PNG)
 
     - for the App User `EU_EVAN`
@@ -226,26 +217,26 @@ While we provide scripts to execute the whole lab from start to finish in an aut
     - for the App User `CAN_CANDY`
 
     ![](./images/ols-016.PNG)
-	
+
 13. Finally, we make changes to the Glassfish JSP files.
     This script will step you through all of the additions we need to make
 
-    ````
-    <copy>./06_Update_Glassfish_app.sh</copy>
-    ````
+      ````
+      <copy>./06_Update_Glassfish_app.sh</copy>
+      ````
 
     ![](./images/ols-019.PNG)
-	
+
     ![](./images/ols-020.PNG)
 
 14. Go back to your web browser and launch the Glassfish app by navigating to this URL:
 
-    http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1
-    
+    http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr\_prod\_pdb1
+
 15. Login to the application as `can_candy` / `Oracle123`
-	
+
     - Select "**Search Employees**" and click [**Search**]
-	
+
 	- See the result after enabling OLS policy
 
     ![](./images/ols-021.PNG)

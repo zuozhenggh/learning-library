@@ -15,16 +15,16 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
 
-## **Step 1A**: Create Stack:  Compute + Networking
+## **STEP 1A**: Create Stack:  Compute + Networking
 
 If you already have a VCN setup, proceed to *Step 1B*.
 
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment.
       - [dbsec-lab-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JDthT7cJjsS1F07KPU77rKEtzdnykXfeMujFVqp0fbo/n/omcinternal/b/workshop-labs-files/o/dbsec-lab-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 3.  Login to Oracle Cloud
-4.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
+4.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.
 
   ![](./images/em-oci-landing.png " ")
 
@@ -71,25 +71,25 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack-3.png " ")
 
-14. Your stack has now been created!  
+14. Your stack has now been created!
 
   ![](./images/em-stack-details.png " ")
 
 You may now proceed to Step 2 (skip Step 1B).
 
-## **Step 1B**: Create Stack:  Compute only
-If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
-- Egress rules for the following ports: 22          
+## **STEP 1B**: Create Stack:  Compute only
+If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.
+- Egress rules for the following ports: 22
 
-If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  
+If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.
 
 ***Note:*** *We recommend using our stack to create to reduce the potential for error.*
 
-1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
+1. Click on the link below to download the Resource Manager zip file you need to build your environment.
      - [dbsec-lab-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uZPsGTFvwVSVjMn9JtlhRw5tk8zIiYfIz8iTql-I6eI/n/omcinternal/b/workshop-labs-files/o/dbsec-lab-mkplc-freetier.zip)
 
 2. Save in your downloads folder.
-3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Choose **Resource Manager > Stacks**.  
+3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Choose **Resource Manager > Stacks**.
 
   ![](./images/em-oci-landing.png " ")
 
@@ -144,11 +144,11 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 
   ![](./images/em-create-stack-3b.png " ")
 
-8. Your stack has now been created!  
+8. Your stack has now been created!
 
   ![](./images/em-stack-details-b.png " ")
 
-## **Step 2**: Terraform Plan (OPTIONAL)
+## **STEP 2**: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. This is optional, *you may skip directly to Step 3*.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
@@ -165,7 +165,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
   ![](./images/em-stack-plan-results-4.png " ")
 
-## **Step 3**: Terraform Apply
+## **STEP 3**: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **apply** to actually create the configuration.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and the compute instance.
@@ -176,7 +176,7 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
   ![](./images/em-stack-apply-2.png " ")
 
-2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added (3 only if using an existing VCN).  
+2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added (3 only if using an existing VCN).
 
 ***Note:*** *If you encounter any issues running the terraform stack, visit the Appendix: Troubleshooting Tips section below.*
 
@@ -194,14 +194,14 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
 4.  Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
 
-## **Step 4**: Connect to your instance
+## **STEP 4**: Connect to your instance
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
 ***Note:*** *If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
 
 ### Oracle Cloud Shell
 
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  
+1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.
 
 ***Note:*** *Make sure you are in the region you were assigned*
 
@@ -209,7 +209,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP address for your instance.
-4.  Enter the command below to login to your instance.    
+4.  Enter the command below to login to your instance.
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
@@ -264,7 +264,7 @@ To save all your settings:
 3.  In the category section, **Click** session.
 4.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-You may now *proceed to the next lab*.  
+You may now proceed to the next lab.
 
 ## Appendix:  Teraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.

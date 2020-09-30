@@ -1,9 +1,12 @@
 ﻿# Introduction
 
-### Objectives
-- This aim of this workshop is to introduce the various features and functionality of Oracle Database Vault, and to give the user an opportunity to learn how to configure those features in order to secure their databases.
+##  About this Workshop
 
-## About Database Vault
+This aim of this workshop is to introduce the various features and functionality of Oracle Database Vault, and to give the user an opportunity to learn how to configure those features in order to secure their databases.
+
+Estimated Lab Time: 60 minutes
+
+### About Database Vault
 Oracle Database Vault provides controls to prevent unauthorized privileged users from accessing sensitive data and to prevent unauthorized database changes.
 The Oracle Database Vault security controls protect application data from unauthorized access, and comply with privacy and regulatory requirements.
 
@@ -39,7 +42,18 @@ In general, the first step you take is to create a realm composed of the databas
 
 - Addresses Database consolidation and cloud environments concerns to reduce cost and reduce exposure sensitive application data to those without a true need-to-know
 
-- Works in a Multitenant Environment increasing security for consolidation 
+- Works in a Multitenant Environment increasing security for consolidation
+
+### Objectives
+* Generate SSh Keys
+* Environment Setup
+* Database Vault
+
+### Prerequisites
+
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
