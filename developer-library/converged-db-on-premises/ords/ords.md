@@ -25,9 +25,7 @@ post
 
 **Install ORDS using SQL Developer**
 
-Oracle REST Data Services (ORDS) is bundled with SQL Developer. You can use SQL Developer to install the ORDS version that is bundled in SQL Developer or a standalone version.
-
-Check this [link](https://docs.oracle.com/cd/E55747_01/appdev.41/e55591/sql-developer-REST.htm#RPTUG46295) on how to install ORDS using sqldeveloper.
+Oracle REST Data Services (ORDS) is bundled with SQL Developer. You can use [SQL Developer](https://www.oracle.com/database/technologies/appdev/sqldeveloper-landing.html) to install the ORDS version or install ORDS standalone.
 
 As part of this lab , ORDS is pre-installed and ready for use. Check this [link](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/aelig/installing-REST-data-services.html#GUID-B6661F35-3EE3-4CB3-9379-40D0B8E24635) for ORDS installation steps.
 
