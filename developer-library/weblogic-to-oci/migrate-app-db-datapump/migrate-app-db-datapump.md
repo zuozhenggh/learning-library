@@ -195,7 +195,7 @@ echo "Done!"
 
 4. Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. 
 
-      If you followed the name convention defauklts in the lab, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`.
+      If you followed the name convention defaults in the lab, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`.
 
       <img src="./images/provision-db-27-connection2.png" width="70%">
 
