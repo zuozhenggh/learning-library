@@ -2,7 +2,7 @@
 
 ## Introduction ##
 
-With Oracle Analytics Server, we can create visualizations and projects that reveal trends in your company’s data and help you answer questions and discover important insights about your business.
+With Oracle Analytics Server, we can create visualizations and projects that reveal trends in your company"s data and help you answer questions and discover important insights about your business.
 Creating visualizations and projects is easy, and your data analysis work is flexible and exploratory. Oracle Analytics helps you to understand your data from different perspectives and fully explore your data to find correlations, discover patterns, and see trends.
 
 You can quickly upload data from a variety of sources (for example, spreadsheets, CSV files, Fusion Applications, and many databases) to your system and model it in a few easy steps. You can easily blend data sets together, too, so that you can analyze a larger set of data to reveal different patterns and information.
@@ -17,11 +17,11 @@ It provides several interactive visuals to show the story in your data for examp
 
 ### Objectives ###
 
-In this lab we will be using Oracle Analytics Server self-service capabilities on JSON , XML and Relational data of Converged Database ,  we will be creating compelling project with different types of visuals to show the important insights out of Sample data of a financial company.
+In this lab we will be using Oracle Analytics Server self-service capabilities on JSON , XML and Relational data of Converged Database,  we will be creating compelling project with different types of visuals to show the important insights out of Sample data of a financial company.
 
-Here, we have sample financial data, where data from ‘UK’ region is in JSON format, data from “Germany and France”  regions are in XML format and Data from “Italy and Spain” regions are in Relational Format. And this data is stored in Oracle Converged Database.
+Here, we have sample financial data, where data from "UK" region is in JSON format, data from "Germany and France"  regions are in XML format and Data from "Italy and Spain" regions are in Relational Format. And this data is stored in Oracle Converged Database.
 
-Using OAS “Data Flow” capability we will be generating a complete financial data after merging the data from  different geography. 
+Using OAS "Data Flow" capability we will be generating a complete financial data after merging the data from  different geography. 
 
 Then with OAS Data Preparation we will be making data set ready for visualization.
 
@@ -38,15 +38,15 @@ This lab assumes you have completed the following labs:
 - Lab : Create Compute Instance  
 - Lab : Environment Setup  
 
-Below pre-loaded data objects are available in Converged Database. . And since OAS recognizes data in relational format , views have been created on the base tables of JSON and XML type.  
+Below pre-loaded data objects are available in Converged Database. And since OAS recognizes data in relational format , views have been created on the base tables of JSON and XML type.  
  
 
 | ObjectName  | ObjectType  | DataType  | Description  |
 | ------------- | ------------- | ------------- |
-| FINANCIALS\_UK\_JSON | Table | JSON  | data from 'UK' Region in JSON format  |
-| FINANCIALS\_XML\_GERMANY | Table | XML | data from 'Germany' Region in XML format  |
-| FINANCIALS\_XML\_FRANCE | Table | XML | data from 'France' Region ‘in XML format  |
-| FINANCIALS\_REL\_SPAIN\_ITALY | Table | Relational | data from 'Spain' and 'Italy' Region in Relational Format  |
+| FINANCIALS\_UK\_JSON | Table | JSON  | data from "UK" Region in JSON format  |
+| FINANCIALS\_XML\_GERMANY | Table | XML | data from "Germany" Region in XML format  |
+| FINANCIALS\_XML\_FRANCE | Table | XML | data from "France" Region "in XML format  |
+| FINANCIALS\_REL\_SPAIN\_ITALY | Table | Relational | data from "Spain" and "Italy" Region in Relational Format  |
 | FINANCIAL\_JSON\_UK\_VIEW | View | Relational | this view has been created on FINANCIALS\_UK\_JSON table to view data in relational format  |
 | FINANCIALS\_XML\_FRANCE\_GERMANY\_VIEW | View | Relational | this view has been created on FINANCIALS\_XML\_FRANCE  and FINANCIALS\_XML\_GERMANY table to view data in relational format  |
 
@@ -58,7 +58,7 @@ Below pre-loaded data objects are available in Converged Database. . And since O
   In this step, we will create individual data sets of different data types: json, xml and relational.
 
 1. create **FINANCIALS\_JSON\_UK\_VIEW**  data set   
-   On the home screen, select "Create" and click on "Data Set".
+   On the Home screen, select "Create" and click on "Data Set".
        ![](./images/oascdb1.1.png " ")
 
 2. Select  the database connection.
@@ -70,10 +70,10 @@ Below pre-loaded data objects are available in Converged Database. . And since O
 4. Now select the view **FINANCIALS\_JSON\_UK\_VIEW**, where we have JSON data from UK.
        ![](./images/oascdb9.png " ")
 
-5. Click on 'Add All' to select all the columns from table.
+5. Click on "Add All" to select all the columns from table.
        ![](./images/oascdb10.png " ")
 
-6. Clck on 'Add" and preview the sample records.  Verify dataset name as shown below.
+6. Clck on "Add" and preview the sample records.  Verify dataset name as shown below.
        ![](./images/oascdb11.png " ")
 
 
@@ -85,15 +85,15 @@ Below pre-loaded data objects are available in Converged Database. . And since O
 
 ## Step 2: Merge data sets  using Data Flow ##
    **Data Flow :** Data flows enable you to organize and integrate your data to produce a curated data set that your users can analyze.  
-   To build a data flow, you add steps. Each step performs a specific function, for example, add data, join tables, merge columns, transform data, save your data. Use the data flow editor to add and configure your steps. Each step is validated when you add or change it. When you've configured your data flow, you execute it to produce a data set.
+   To build a data flow, you add steps. Each step performs a specific function, for example, add data, join tables, merge columns, transform data, save your data. Use the data flow editor to add and configure your steps. Each step is validated when you add or change it. When you"ve configured your data flow, you execute it to produce a data set.
 
 
-Let's create a dataflow to merge all the different types of datasets created in Step1.
+Let"s create a dataflow to merge all the different types of datasets created in Step1.
 
 1. On the home screen, select "Create" and click on "Data Flow".
     ![](./images/oascdb1.2.png " ")
 
-2. Click on “+” and then “Add Data".
+2. Click on "+" and then "Add Data".
     ![](./images/oascdb1.3.png " ")
 
 3. select **FINANCIALS\_JSON\_UK\_VIEW** data set And click on "Add".
@@ -110,13 +110,13 @@ Let's create a dataflow to merge all the different types of datasets created in 
 
 7. By default join operator will be selected. Since we have to merge different types of datasets, let us replace the "Join" step with "Union Rows" step.
 
-   Remove the “Join” step by clicking on ‘X’ as shown below.
+   Remove the "Join" step by clicking on "X" as shown below.
     ![](./images/oascdb1.8.png " ")
 
-8. Click on "+" and select “Union Rows” step. 
+8. Click on "+" and select "Union Rows" step. 
     ![](./images/oascdb1.9.png " ")
 
-9. Click on to “circle” as shown below to complete compete merging of **FINANCIALS\_JSON\_UK\_VIEW**  and **FINANCIALS\_REL\_SPAIN\_ITALY**.
+9. Click on to "Circle" as shown below to complete compete merging of **FINANCIALS\_JSON\_UK\_VIEW**  and **FINANCIALS\_REL\_SPAIN\_ITALY**.
     ![](./images/oascdb1.10.png " ")
 
 10. Similarly repeat the "Union Rows" step  to merge **FINANCIALS\_XML\_FRANCE\_GERMANY\_VIEW** dataset. 
@@ -130,7 +130,7 @@ Let's create a dataflow to merge all the different types of datasets created in 
    Click on "+" to add a step for saving data. 
     ![](./images/oascdb1.13.png " ")
   
-13. Select “Save Data”.
+13. Select "Save Data".
     ![](./images/oascdb1.14.png " ")
 
 14. Name the data set **Financials Complete Data set**. 
@@ -154,7 +154,7 @@ Let's create a dataflow to merge all the different types of datasets created in 
 ## Step 3: Data Preparation ##
 In this step we will perform some data prepartion steps to make data set ready for visualizatuion.
 
-1. Complete data set is created in step1. Now on Home Screen , click on "data".
+1. Complete data set is created in step1. Now on Home Screen, click on "Data".
     ![](./images/oascdb1.18.png " ")
 
 2. Select the dataset **Financials Complete Data set** (created in step1).
@@ -166,10 +166,10 @@ In this step we will perform some data prepartion steps to make data set ready f
 4. Let us convert year textual values to date format
 by providing relevant formats. 
 
-    Select the “Year” column and  click on "Convert to Date".
+    Select the "Year" column and  click on "Convert to Date".
     ![](./images/oascdb28.png " ")
 
-    Click on “Add Step” and verify the date format.
+    Click on "Add Step" and verify the date format.
     ![](./images/oascdb29.png " ")
 
     Follow the same process of date conversion  for MONTH, QUARTER. 
@@ -179,10 +179,10 @@ by providing relevant formats.
     Convert NETINCOME to number.
     ![](./images/oascdb30.png " ")
 
-    Change NETINCOME to “Measure” as shown below.
+    Change NETINCOME to "Measure" as shown below.
     ![](./images/oascdb31.png " ")
 
-6. Similarly we will convert below fields to “NUMBER” and change them to “Measure”  .
+6. Similarly we will convert below fields to "NUMBER" and change them to "Measure"  .
     - OPERATINGEXPENSES
     - PAYABLES
     - PREVIOUSYEARNETINCOME
@@ -197,31 +197,31 @@ by providing relevant formats.
    Right-Click on OPERATINGEXPENSES and click on "Rename".
     ![](./images/oascdb32.png " ")
 
-    Click on Add step.
+    Click on "Add Step".
     ![](./images/oascdb33.png " ")
 
-8. imilarly rename below fields. 
+8. Similarly rename below fields. 
     - PREVIOUSYEARNETINCOME to PREVIOUS YEAR NETINCOME  
     - PREVIOUSYEAROPERATINGEXPENSES to PREVIOUS YEAR OPERATING EXPENSES  
     - PREVIOUSYEARPAYABLES to PREVIOUS YEAR PAYABLES  
     - PREVIOUSYEARRECEIVABLES to PREVIOUS YEAR RECEIVABLES  
     - PREVIOUSYEARREVENUE to PREVIOUS YEAR REVENUE  
 
-9. Now click on “Apply Script” to complete data preparation steps. And now dataset is ready for visualization.
+9. Now click on "Apply Script" to complete data preparation steps. And now dataset is ready for visualization.
     ![](./images/oascdb34.png " ")
 
 ## Step 4: Build Visualizations ##
 Let us analyze the data to get some insights using different kind of visualizaions.  
 
 1. **Performance Tile**   
-To summarize key metrics like Revenue, we can use  “Performance Tile” visualization.    
-   Select  “Revenue” from data pane(columns of the dataset) and Pick “Performance Tile” for visualization as below.
+To summarize key metrics like Revenue, we can use  "Performance Tile" visualization.    
+   Select  "Revenue" from data pane(columns of the dataset) and Pick "Performance Tile" for visualization as below.
     ![](./images/oascdb35.png " ")
     
    Result will be:
     ![](./images/oascdb35.1.png " ")
 
-   Now do some required changes using Left Bottom "properties" section.  
+   Now do some required changes using Left Bottom "Properties" section.  
     For example :  background color, abbreviation, etc  
     
     After doing changes for Abbreviation:
@@ -257,7 +257,7 @@ To summarize key metrics like Revenue, we can use  “Performance Tile” visual
     Select Revenue, Operation Expenses, Net Income and Quarter. Pick Combo as Visualization.  
     ![](./images/oascdb1.21.png " ")
 
-   Let's change "Line" graph type for Revenue to "Bar"
+   Let"s change "Line" graph type for Revenue to "Bar"
     ![](./images/oascdb45.png " ")
 
    We can change properties of graph as below, for example color assignments, graph type for each   KPI, title etc
@@ -279,7 +279,7 @@ To summarize key metrics like Revenue, we can use  “Performance Tile” visual
     Select (+) symbol on the bottom to add another canvas, in this canvas we will add visulizations analysing expenses.  
     ![](./images/oascdb69.png " ")
 
-    We will repeat “Tile” Visualization for **Operating Expenses** and **Previous Year Operating Expenses**.
+    We will repeat "Tile" Visualization for **Operating Expenses** and **Previous Year Operating Expenses**.
     ![](./images/oascdb50.png " ")
 
     Result should look like below
@@ -321,20 +321,24 @@ To summarize key metrics like Revenue, we can use  “Performance Tile” visual
 
    Rename canvas "More Visuals" as in Step4-point 5. 
 
-13. Let’s see **Pivot Table** visual    
+13. Let"s see **Pivot Table** visual    
     Analyzing KPIs by Cost Centre.  
     Select Revenue, Operating Expenses, Net Income and Cost Center. Pick Pivot table. Change properties as shown below.
     ![](./images/oascdb59.png " ")
 
 14. **Custom Calculation**  
     In OAS, we can also do some calculations of Key Performance Metrics as per business requirement.     
-    Let's calculate "Profit". 
-    Drag the scroller down as as shown below. Right click on My calculation, then click on “Add Calculation” 
+    Let"s calculate "Profit". 
+    Drag the scroller down as as shown below. Right click on My calculation, then click on "Add Calculation" 
     ![](./images/oascdb1.22.png " ")
 
     Enter the profit formula in the expression builder. Then Click on "Validate" and then "Save".  
     **Profit = REVENUE-OPERATING EXPENSES**
     ![](./images/oascdb1.23.png " ")
+
+    Verify the "Profit" column added by expanding "My Calculations" in data pane as shown below. This column can be used to show profit values.
+    ![](./images/oascdb1.23.1.png " ")
+
 
 ## Step 5: Data Action for drill down to detail report 
 
@@ -342,7 +346,7 @@ To summarize key metrics like Revenue, we can use  “Performance Tile” visual
     select all the required columns (as shown below) and pick table as visualization.
     ![](./images/oascdb60.png " ")
 
-2. Now click on hamburger then select Data Actions (top Right corner).
+2. Now click on hamburger then select "Data Actions" (top Right corner).
     ![](./images/oascdb61.png " ")
 
 3. Fill the details as:  
@@ -385,4 +389,4 @@ With this lab, you have learned OAS self-service analytics with capabilities inc
 - **Last Updated By/Date** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don"t see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
