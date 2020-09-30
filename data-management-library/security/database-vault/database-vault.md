@@ -21,7 +21,7 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
-## **Step 1**: Enable Database Vault
+## **STEP 1**: Enable Database Vault
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -57,11 +57,11 @@ This lab assumes you have:
 
 5. Now, Database Vault is enabled in the container database as well as `PDB1`!
 
-## **Step 2**: Create a Simple Realm
+## **STEP 2**: Create a Simple Realm
 
 1. Open a web browser and launch the Glassfish app by navigating to this URL:
 
-   http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1
+   http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr_prod_pdb1
 
 2. Login to the application as `hradmin` / `Oracle123`
 
@@ -117,7 +117,7 @@ This lab assumes you have:
 
     ````
     <copy>./05_query_employee_data.sh</copy>
-    ````   
+    ````
 
     ![](./images/dv-007.png " ")
 
@@ -127,11 +127,11 @@ This lab assumes you have:
     <copy>./06_drop_realm.sh</copy>
     ````
 
-## **Step 3**: Create a Trusted Path / Multi-factor Authorization
+## **STEP 3**: Create a Trusted Path / Multi-factor Authorization
 
 1. Open a web browser and launch the Glassfish app by navigating to this URL:
 
-   http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1
+   http://`<YOUR_DBSEC-LAB_VM_PUBLIC_IP>`:8080/hr\_prod\_pdb1
 
 2. Login as **hradmin** / **Oracle123**
 
@@ -206,7 +206,7 @@ This lab assumes you have:
 
     ````
     <copy>./07_query_employeesearch.sh</copy>
-    ````  
+    ````
 
     ![](./images/dv-025.png " ")
 
@@ -214,11 +214,11 @@ This lab assumes you have:
 
     ````
     <copy>./08_delete_trusted_path.sh</copy>
-    ````  
+    ````
 
     ![](./images/dv-026.png " ")
 
-## **Step 4**: Simulation Mode
+## **STEP 4**: Simulation Mode
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -240,7 +240,7 @@ This lab assumes you have:
 
    ![](./images/dv-008.png " ")
 
-4. Next, create a command rule that will simulate blocking all connections to the database. This is an easy way for us to identify who is connecting and where they are connecting from.    
+4. Next, create a command rule that will simulate blocking all connections to the database. This is an easy way for us to identify who is connecting and where they are connecting from.
 
       ````
       <copy>./02_command_rule_sim_mode.sh</copy>
@@ -284,9 +284,9 @@ This lab assumes you have:
 
       ````
       <copy>./07_drop_command_rule.sh</copy>
-      ````    
+      ````
 
-## **Step 5**: Ops Control
+## **STEP 5**: Ops Control
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -360,7 +360,7 @@ This lab assumes you have:
 
    ![](./images/dv-009.png " ")
 
-## **Step 6**: Disabling Database Vault
+## **STEP 6**: Disabling Database Vault
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
