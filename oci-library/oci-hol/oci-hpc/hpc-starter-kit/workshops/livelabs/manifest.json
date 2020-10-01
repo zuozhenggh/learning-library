@@ -17,19 +17,19 @@
         {
             "title": "Lab 2: Provision HPC Cluster from Oracle MarketPlace Image",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../lab100/lab100.md"
+            "filename": "../../provision/provision.md"
         },
         {
             "title": "Lab 3: Use OCI CLI commands and Terraform to work with HPC",
-            "filename": "../../lab200/lab200.md"
+            "filename": "../../cli-terraform/cli-terraform.md"
         },
         {
             "title": "Lab 4-1: Run OpenFoam projects in HPC cluster",
-            "filename": "../../lab300-1/lab300-1.md"
+            "filename": "../../openfoam-hpc/openfoam-hpc.md"
         },
         {
             "title": "Lab 4-2: Run OpenFoam project in Standard VM on OCI",
-            "filename": "../../lab300-2/lab300-2.md"
+            "filename": "../../openfoam-vm/openfoam-vm.md"
         }
     ]
 }
