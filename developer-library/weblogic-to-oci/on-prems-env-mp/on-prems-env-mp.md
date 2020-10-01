@@ -138,6 +138,8 @@ We'll create a SSH key pair in the default folder
 
 **Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
 
+You may proceed to the next lab.
+
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
