@@ -2,7 +2,7 @@
 
 ## **Introduction**
 
-In this lab, you will learn the benefits of auto-scaling an Oracle autonomous database. This lab uses the existing SSB schema in Autonomous Data Warehouse (ADW). The lab executes a PL/SQL procedure which loops through executing one query twice. You run this procedure from 3 SQL Developer Web worksheet sessions concurrently to see how CPU is utilized with and without auto scaling.
+In this lab, you will learn the benefits of auto-scaling an Oracle Autonomous Database. This lab uses the existing SSB schema in Autonomous Data Warehouse (ADW). The lab executes a PL/SQL procedure which loops through executing one query twice. You run this procedure from 3 SQL Developer Web worksheet sessions concurrently to see how CPU is utilized with and without auto scaling.
 
 ### What is Auto Scaling?
 
