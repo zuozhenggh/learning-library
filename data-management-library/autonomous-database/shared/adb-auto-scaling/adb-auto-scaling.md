@@ -272,9 +272,9 @@ order by 1;
 ```
 TEST_NO CPU_COUNT SESSIONS QUERIES_FINISHED TEST_DURATION_IN_SECONDS AVG_QUERY_TIME MAX_CPU_USAGE
 ------- --------- -------- ---------------- ------------------------ -------------- -------------
-      1         2        3                3                    283.9          267.8         1.006
+      1         2        3                6                    581.5          275.5         0.968
 ```
-Even though there are 3 queries executing at the same time, the system has limited the maximum CPU usage to 1.006 CPUs, not the available 2 CPUs.
+Even though there are 3 queries executing at the same time, the system has limited the maximum CPU usage to 0.968 CPUs, not the available 2 CPUs.
 
 7. Average Active Sessions shows 3 sessions using the high service.
 
