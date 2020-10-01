@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to migrate the 'on-premises' application database to the database provisioned on OCI using Datapump.
 
-Estimated Lab Time: 10 min
+Estimated Lab Time: 10 minutes
 
 ### About Product/Technology
 
@@ -97,7 +97,7 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
 ```
 </details>
 
-## **STEP 3:** Export the Source Database
+## **STEP 2:** Export the Source Database
 
 1. Run the `datapump_export.sh` script:
 
@@ -113,7 +113,7 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
 
 
 
-## **STEP 2:** Edit the `datapump_import.sh` script
+## **STEP 3:** Edit the `datapump_import.sh` script
 
 Once the schema and data are exported, we'll import it into the OCI DBaaS database.
 
@@ -215,8 +215,8 @@ echo "Done!"
 The import script runs in 4 phases:
 
 - It copies the files over to the OCI DB node
-- then runs the `impdp` import command once. 
-You may notice this 1st try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace. 
+- then runs the `impdp` import command once.
+You may notice this 1st try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace.
 - the script then edits the `RIDERS` user tablespace quota
 - and re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
 

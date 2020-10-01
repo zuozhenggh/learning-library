@@ -1,12 +1,12 @@
 # Migrating the WebLogic domain
 
-## Introduction: 
+## Introduction
 
 Migrating a WebLogic domain is equivalent to re-deploying the applications and resources to a new domain and infrastructure.
 
 We'll use WebLogic Deploy Tooling to migrate the domain from on-premises and re-deploy it on OCI.
 
-Estimated Lab Time: 15 min
+Estimated Lab Time: 15 minutes
 
 ### About Product/Technologies
 
@@ -15,9 +15,7 @@ Estimated Lab Time: 15 min
 Migration with WebLogic Deploy Tooling (WDT) consists of 3 steps:
 
 - Discover the source domain, and generate a **model** file of the topology, resources and applications, a **variable** file with required credentials, and an **archive** file with the application binaries.
-
 - Edit the the **model** file and **variable** file to target the new infrastructure on OCI.
-
 - Copy the files to the target Admin Server, and **update** the clean domain on OCI with the applications and resources discovered on-premises.
 
 ### Objectives
@@ -41,9 +39,9 @@ To run this lab, you need to:
 
 ## **STEP 1:** Installing WebLogic Deploy Tooling
 
-### Using the Docker 'on-premises' environment:
+### Using the docker 'on-premises' environment:
 
-1. If you were in the Database container to perform the previous steps of database migration, exit the database container with 
+1. If you were in the Database container to perform the previous steps of database migration, exit the database container with
 
     ```bash
     <copy>
