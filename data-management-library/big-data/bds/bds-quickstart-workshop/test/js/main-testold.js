@@ -1,7 +1,7 @@
 /*
 Author: Ashwin Agarwal
-Contributors: Tom McGinn, Suresh Mohan
-Last updated: 24-Sep-2020
+Contributors: Tom McGinn, Suresh Mohan, Jon Russell
+Last updated: 23-Sep-2020
 Version: 20.2.21
 */
 "use strict";
@@ -417,7 +417,7 @@ let main = function() {
     }
     /* The following function adds the h1 title before the container div. It picks up the h1 value from the MD file. */
     let updateH1Title = (articleElement) => {
-        $('#tutorial-title').text("\t\t›\t\t" + $(articleElement).find('h1').text());
+        $('#tutorial-title').text("\t\t›\t\t\t" + $(articleElement).find('h1').text());
         // $(articleElement).find('h1').remove(); //Removing h1 from the articleElement as it has been added to the HTML file already
         return articleElement;
     }
@@ -734,7 +734,7 @@ let main = function() {
             return "ErrorTitle";
         }
         const removeFromTitle = ["-a-", "-in-", "-of-", "-the-", "-to-", "-an-", "-is-", "-your-", "-you-", "-and-", "-from-", "-with-"];
-        const folderNameRestriction = ["<", ">", ":", "\"", "/", "\\\\", "|", "\\?", "\\*", "&", "\\.", ","];
+        const folderNameRestriction = ["<", ">", ":", "\"", "/", "\\\\", "|", "\\?", "\\*", "&", "\\."];
         let shortname = title.toLowerCase().replace(/ /g, '-').trim().substr(0, 50);
         $.each(folderNameRestriction, function(i, value) {
             shortname = shortname.replace(new RegExp(value, 'g'), '');
