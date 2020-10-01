@@ -45,6 +45,7 @@ Login to your Enterprise Manager console using the OMS URL and the super-user cr
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
+
 1. Update the Named Credentials with your SSH Key
 
 Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
