@@ -12,7 +12,7 @@ Benefits of using HPC CLI include:
 3. Supports Message Passing Interface (MPI) Deployment includes a complete set of software packages for running parallel processing with RDMA, including Mellanox OFED with Open MPI, Intel MPI, and Platform MPI.
 4. Customizable You can execute your own terraform scripts or add to the existing scripts provided with the tool to install your own applications.
 
-**Estimated Lab Time: 1 hour**
+Estimated Lab Time: 60 minutes
 
 ### Objectives
 
@@ -32,9 +32,7 @@ The OCI user account you use in `ocihpc` should have the necessary policies conf
 
 
 
-## **STEP 1: Installing ocihpc**
-
-#### Installing ocihpc on macOS/Linux
+## **STEP 1**: Installing ocihpc on macOS/Linux
 
 1. Download the latest release with the following command and extract it:
     ```sh
@@ -62,7 +60,7 @@ The OCI user account you use in `ocihpc` should have the necessary policies conf
     $ ocihpc version 
     ```
 
-## **STEP 2: Installing ocihpc on Windows**
+## **STEP 2**: Installing ocihpc on Windows
 
 1. Download the latest release from [this link](https://github.com/oracle-quickstart/oci-ocihpc/releases/download/v1.0.0/ocihpc_v1.0.0_windows_x86_64.zip) and extract it.
 
@@ -74,9 +72,8 @@ The OCI user account you use in `ocihpc` should have the necessary policies conf
     $ ocihpc.exe version 
     ```
 
-## **STEP 3: Creating an ssh keypair**
+## **STEP 3**: Creating an ssh keypair on the Command Line
 
-#### Creating an SSH Key Pair on the Command Line
 Please refer to [this link](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm) if you are using windows.
 
 1. Open a shell or terminal for entering the commands.
@@ -101,7 +98,7 @@ Please refer to [this link](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG
 
 
 
-## **STEP 4: Generate an API Signing Key**
+## **STEP 4**: Generate an API Signing Key
 
 Your API requests will be signed with your private key, and Oracle will use the public key to verify the authenticity of the request.
 Please refer to [this link](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Other) if you are using windows.
@@ -127,7 +124,7 @@ Please refer to [this link](https://docs.cloud.oracle.com/en-us/iaas/Content/API
     $ openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem
     ```
 
-## **STEP 5: Add public key to Oracle Cloud Infrastructure**
+## **STEP 5**: Add public key to Oracle Cloud Infrastructure
 
 Now that you have a private / public key combo , you must add it to OCI console under user setting:
 
@@ -145,8 +142,7 @@ Now that you have a private / public key combo , you must add it to OCI console 
 
 
 
-
-## **STEP 6: Configure**
+## **STEP 6**: Configure
 
 This step describes the required configuration for the CLI and includes optional configurations that enable you to extend CLI functionality.
 
@@ -169,13 +165,14 @@ This step describes the required configuration for the CLI and includes optional
   <img src="images/oci_config.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-## **STEP 7: List**
+## **STEP 7**: List
 
 You can get the list of available stacks by running `ocihpc list`.
 
 Example:
 
-    ```sh
+    ```
+    sh
     $ ocihpc list
 
     List of available stacks:
@@ -185,13 +182,13 @@ Example:
     OpenFOAM
     ```
 
-## **STEP 8: Initialize**
+## **STEP 8**: Initialize
 
-Create a folder that you will use as the deployment source.
+1. Create a folder that you will use as the deployment source.
 
 IMPORTANT: Use a different folder per stack. Do not initialize more than one stack in the same folder. Otherwise, the tool will overwrite the previous one.
 
-Change to that folder and run `ocihpc init <stack name>`. `ocihpc` will download the necessary files to that folder.
+2. Change to that folder and run `ocihpc init <stack name>`. `ocihpc` will download the necessary files to that folder.
 
 
     ```
@@ -206,7 +203,7 @@ Change to that folder and run `ocihpc init <stack name>`. `ocihpc` will download
     ```
 **IMPORTANT**: Edit the contents of the /Users/enjli/ocihpc-test/config.json file before running ocihpc deploy command
 
-## **STEP 9: Deploy**
+## **STEP 9**: Deploy
 
 1. Before deploying, you need to change the values in `config.json` file. The variables depend on the stack you deploy. An example `config.json` for Cluster Network would look like this:
 
@@ -264,7 +261,7 @@ Bastion shape should be filled in already - VM.Standard2.1
       ```
 
 
-## **STEP 10: Connect**
+## **STEP 10**: Connect
 
 When deployment is completed, you will see the the bastion/headnode IP that you can connect to:
 
@@ -276,7 +273,7 @@ When deployment is completed, you will see the the bastion/headnode IP that you 
 
 You can also get the connection details by running `ocihpc get ip` command.
 
-## **STEP 11: Manage**
+## **STEP 11**: Manage
 In addition, you can use cli commands to easily manage and keep tracks of your resources:
 
   1. To generate a list of all the stacks deployed in a specific compartment: `oci resource-manager job list -c [OCID OF COMPARTMENT]`
@@ -290,7 +287,7 @@ In addition, you can use cli commands to easily manage and keep tracks of your r
   5. To move a Stack and it's associated Jobs into a different compartment: `oci resource-manager stack change-compartment -c [OCID OF NEW COMPARTMENT] --stack-id [OCID OF THE STACK]`
 
 
-## **STEP 12: Delete**
+## **STEP 12**: Delete
 When you are done with your deployment, you can delete it by changing to the stack folder and running `ocihpc delete --stack <stack name>`.
 
     Example:
@@ -302,21 +299,20 @@ When you are done with your deployment, you can delete it by changing to the sta
     Deleting ClusterNetwork-ocihpc-test-7355 [0min 35sec]
     ...
 
-    Succesfully deleted ClusterNetwork-ocihpc-test-7355
+    Successfully deleted ClusterNetwork-ocihpc-test-7355
     ```
 
-#### All Done! You have successfully deployed your first High Performance Compute Instance using OCI CLI tool.
+All Done! You have successfully deployed your first High Performance Compute Instance using OCI CLI tool.
 
+*You may now proceed to the next lab*
 
-These are detailed information about managing High Performance Compute Instance. For a complete command reference,check out OCI documentation [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/Tasks/managingclusternetworks.htm?Highlight=hpc).
+This is detailed information about managing High Performance Compute Instance. For a complete command reference, check out OCI documentation [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/Tasks/managingclusternetworks.htm?Highlight=hpc).
 
 ## Acknowledgements
 * **Author** - High Performance Compute Team
 * **Contributors** -  Chris Iwicki, Harrison Dvoor, Gloria Lee, Selene Song, Bre Mendonca
-* **Last Updated By/Date** - Harrison Dvoor (9/28/20)
+* **Last Updated By/Date** - Harrison Dvoor, October 2020
 
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
-
-**You may now proceed to the next lab**

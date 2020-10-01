@@ -1,20 +1,36 @@
 # Run OpenFoam project in HPC cluster
 
 ## Introduction 
-Setting up of the HPC hardware and deploying application software on top of it can take a long time and include various complex operations. With this demo all these tasks are automated within a OCI marketplace image and a fully working HPC environment along with OpenFoam simulation software is available right after the provisioning. All that is needed is to execute the workload on the fully functional HPC environment and run the visualisation application like Paraview to render the output.
+Setting up of the HPC hardware and deploying application software on top of it can take a long time and include various complex operations. With this demo all these tasks are automated within a OCI marketplace image and a fully working HPC environment along with OpenFoam simulation software is available right after the provisioning. All that is needed is to execute the workload on the fully functional HPC environment and run the visualization application like Paraview to render the output.
 
-**Estimated Lab Time: 1 hour**
+Estimated Lab Time: 60 minutes
 
-## Reference architecture
+### Reference architecture
 <img src="images/29_Architecture.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
+###  About OpenFoam:
+   Computational Fluid Dynamics (CFD) is the simulation of fluid motion and heat transfer using numerical analysis. CFD software, such as OpenFOAM, can serve as a powerful tool for many engineering industries to improve designs, visualize impact, and detect inefficiencies in a system. However, the computational power required to process a simulation can be very intensive. Super-computers and HPC clusters are often used to execute large and complex models within a reasonable time frame. 
+   In this lab, you will compute and render the aerodynamic model of a motorcycle using an open-source CFD software, OpenFOAM, within an Oracle HPC cluster 
+
+<p>&nbsp;</p>
+
+###  Infrastructure terminology:
+   1. Worker node: HPC compute instances providing the processing power to execute the workload of computational simulations or other engineering workload. In this Demo compute shape BM.HPC2.36 nodes are the worker nodes.
+   2. Head node: Compute instance from where all the computational jobs can be scheduled and submitted to be run on Worker nodes. Many times Head node and Bastion node can be the same machine. For this demo we are provisioning Bastion node.
+   3. GPU node: A specialized compute instance having GPU processors so as to render the output of computational workload. This demo is not provisioning a GPU machine.
+   4. Bastion node: A compute instance with Public IP, acts as entry point to connect to  worker nodes which are generally in Private network. 
+   5. RoCE network: RDMA over Converged Ethernet (RoCE) is a network protocol that allows remote direct memory access (RDMA) over an Ethernet network.
+
+<p>&nbsp;</p>
+
 ### Objectives
-  1. Provision a fully functional HPC enviorment using OCI marketplace image
+  1. Provision a fully functional HPC environment using OCI marketplace image
   2. Deployment of CFD based simulation application named OpenFoam
   3. Execute Openfoam workload 
   4. Render the output using Paraview visualization application.
  
+ <p>&nbsp;</p>
  
 ### Prerequisites
 Before you begin using this lab, make sure to have access to the following:
@@ -27,28 +43,10 @@ Before you begin using this lab, make sure to have access to the following:
 5. Access to marketplace image "CFD Ready Cluster". The version of marketplace image used in this DEMO is (Version: 20200625). 
 
 
-###  What is OpenFoam:
-   Computational Fluid Dynamics (CFD) is the simulation of fluid motion and heat transfer using numerical analysis. CFD software, such as OpenFOAM, can serve as a powerful tool for many engineering industries to improve designs, visualize impact, and detect inefficiencies in a system. However, the computational power required to process a simulation can be very intensive. Super-computers and HPC clusters are often used to execute large and complex models within a reasonable timeframe. 
-   In this lab, you will compute and render the aerodynamic model of a motorcycle using an open-source CFD software, OpenFOAM, within an Oracle HPC cluster 
-
-###  Infrastructure terminology:
-   1. Worker node: HPC compute instances providing the processing power to execute the workload of computational simulations or other engineering workload. In this Demo compute shape BM.HPC2.36 nodes are the worker nodes.
-   2. Head node: Compute instance from where all the computational jobs can be scheduled and submitted to be run on Worker nodes. Many times Head node and Bastion node can be the same machine. For this demo we are provisioning Bastion node.
-   3. GPU node: A specialized compute instance having GPU processors so as to render the output of computational workload. This demo is not provisioning a GPU machine.
-   4. Bastion node: A compute instance with Public IP, acts as entry point to connect to  worker nodes which are generally in Private network. 
-   5. RoCE network: RDMA over Converged Ethernet (RoCE) is a network protocol that allows remote direct memory access (RDMA) over an Ethernet network.
-
-
-
-
-
-## **STEP 1: Launch marketplace image**
+## **STEP 1**: Launch marketplace image
   1. Before user launches the marketplace image, check for the Availability domain where 2 or more HPC nodes with shape BM.HPC2.36 are available. Goto Menu -> Governance -> Limits, Quotas and Usage
 <img src="images/01-Service_Limits.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
-
-
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
   2. Go to Menu -> Marketplace -> Applications
@@ -56,20 +54,17 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
   3. In the searchbox type "cfd"
 <img src="images/03-Search_marketplace.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
   4. Click on the Image, select it and then Click on "Launch Stack" button. Check that you are in the right compartment.
 <img src="images/04-Launch_Stack.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
   5. Once the Stack is Launched, fill in the details to create resources including HPC worker nodes, bastion server, Networking components, VCN server. The stack will also ask for inputs to deploy packages like openMPI and openFoam.
@@ -79,7 +74,6 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
   7. Select the Availability Domain where you have HPC nodes available for provisioning. Provide the ssh public key that will be needed to connect to Bastion server.
@@ -87,11 +81,10 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 
-  8. Select the Availability Domain to provision Bastion server. It can be differnt from the Availability Domain on HPC nodes. Select Bastion host shape of your choice. Enable the checkbox to install VNC server on Bastion server and provide the password that will be needed to make VNC connection later on.
+  8. Select the Availability Domain to provision Bastion server. It can be different from the Availability Domain on HPC nodes. Select Bastion host shape of your choice. Enable the checkbox to install VNC server on Bastion server and provide the password that will be needed to make VNC connection later on.
 <img src="images/07-Create_Stack03.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -100,14 +93,12 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
   10. Under Network options, create a new VCN using the default values passed in the stack. This Demo creates new VCN created via this stack. But there is option to use existing VCN as well.
 <img src="images/09-Create_Stack05.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -116,14 +107,12 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
   12. Click on "INSTALL OPENFOAM" checkbox to install OpenFoam application in this HPC stack.
 <img src="images/11-Create_Stack07.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -132,14 +121,12 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
   14. Verify the progress of installation of the HPC stack 
 <img src="images/13-StackJob.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -149,16 +136,14 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
-## **STEP 2: Validate the setup**
+## **STEP 2**: Validate the setup
 
   1. Click on "Associate Resources" link on the left of the screen to see the infrastructure resources that were provisioned by this stack. Associate resources can be found at Menu -> Resource Manager -> Stacks(click your stack name) -> Jobs (Click on the job name link) -> Associate Resources
 <img src="images/15-Stack_Resources.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -168,7 +153,6 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
 
@@ -177,13 +161,11 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
   4. Verify the shared NFS storage that is mounted on 2 HPC nodes and the bastion server. This NFS storage contains the OpenFoam software which will be used to run the workload.
 <img src="images/18-Bastion_storage.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -192,14 +174,12 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
   6. The below output shows a running VNC server on port 5901. This port will be used to make VNC connection to bastion host.
 <img src="images/20-Bastion_VNCdetails.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -208,17 +188,15 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
   8. Verify the names of the HPC nodes
 <img src="images/22-ListHPCNodes.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
-## **STEP 3: Run simulation workload and Render the output**
+## **STEP 3**: Run simulation workload and Render the output
 
   1. On Bastion server, run the following commands that will be needed to render the output using Paraview package.
 
@@ -230,7 +208,7 @@ Before you begin using this lab, make sure to have access to the following:
       ```
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
+
 
   2. Connect to one of the HPC nodes from bastion server and execute the workload
 
@@ -263,13 +241,12 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
+
 
   3. Once the workload completes successfully, configure VNC client on your machine like this. Provide Public IP of Bastion server and VNC port
 <img src="images/24-VNC_Connection.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -284,7 +261,6 @@ Create tunnel from your laptop/desktop using the following command from terminal
   5. Do not close the above ssh tunnel terminal window. Now initiate VNC session and this time instead of IP address use "localhost" on port 5901, even though this port is not opened in the security list of the subnet.
 <img src="images/28-ssh_Tunnel.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -301,13 +277,11 @@ Create tunnel from your laptop/desktop using the following command from terminal
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
   8. On Left of the window, Under Properties tab, select Mesh Regions to select all the values and then unselect the top values which does not start with motorBike_ prefix. Make sure that all values starting with motorBike_ are selected. Click on the Apply button, some errors will pop up, ignore the error window that pops up to view the rendering of the image in VNC console.
 <img src="images/26-Mesh_Regions.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -316,20 +290,18 @@ Create tunnel from your laptop/desktop using the following command from terminal
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
-#### All Done! This completes the demo for running OpenFoam application on an HPC cluster.
+All Done! This completes the demo for running OpenFoam application on an HPC cluster.
 
-<p>&nbsp;</p>
+*You may now proceed to the next lab*
+
 
 ## Acknowledgements
 * **Author** - High Performance Compute Team
 * **Contributors** -  Chris Iwicki, Harrison Dvoor, Gloria Lee, Selene Song, Bre Mendonca
-* **Last Updated By/Date** - Harrison Dvoor (9/28/20)
+* **Last Updated By/Date** - Harrison Dvoor, October 2020
 
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
-
-**You may now proceed to the next lab**
