@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab is designed to assist in the assessment of the OpenFOAM CFD Software in Oracle Cloud Infrastructure. It automatically downloads and configures OpenFOAM. OpenFOAM is the free, open source CFD software released and developed primarily by OpenCFD Ltd since 2004. It has a large user base across most areas of engineering and science, from both commercial and academic organisations. OpenFOAM has an extensive range of features to solve anything from complex fluid flows involving chemical reactions, turbulence and heat transfer, to acoustics, solid mechanics and electromagnetics.
+This lab is designed to assist in the assessment of the OpenFOAM CFD Software in Oracle Cloud Infrastructure. It automatically downloads and configures OpenFOAM. OpenFOAM is the free, open source CFD software released and developed primarily by OpenCFD Ltd since 2004. It has a large user base across most areas of engineering and science, from both commercial and academic organizations. OpenFOAM has an extensive range of features to solve anything from complex fluid flows involving chemical reactions, turbulence and heat transfer, to acoustics, solid mechanics and electromagnetics.
 
 This lab walks you through install OpenFoam in a basic VM.Standard 2.1 shape, but for an actual deployment a larger shape like BM.HPC2.36 would be appropriate. Some high performance shapes are only available in specific Regions and Availability Domains.
 
@@ -10,7 +10,9 @@ We will create two nodes for this lab, the headnode for the cluster on the publi
 
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
-**Estimated Lab Time: 1 hour**
+Estimated Lab Time: 60 minutes
+
+<p>&nbsp;</p>
 
 ### Objectives
 
@@ -22,12 +24,15 @@ As a developer, data Engineer,
   4. Set up VNC
   5. Install OpenFoam and Paraview 
 
+<p>&nbsp;</p>
 
 ### Prerequisites
 
   1. An Oracle Cloud Infrastructure account with privileges to create an instance VM standard 2.1 or BM.HPC2.36 shape. 
 
-###  Infrastrucutre terminology
+<p>&nbsp;</p>
+
+###  Infrastructure terminology
    - Worker node: HPC compute instances providing the processing power to execute the workload of computational simulations or other engineering workload. In this Demo compute shape BM.HPC2.36 nodes are the worker nodes.
    - Head node: Compute instance from where all the computational jobs can be scheduled and submitted to be run on Worker nodes. Many times Head node and Bastion node can be the same machine. For this demo we are provisioning Bastion node.
    - Bastion node: A compute instance with Public IP, acts as entry point to connect to  worker nodes which are generally in Private network. 
@@ -35,7 +40,7 @@ As a developer, data Engineer,
 
 
 
-## **STEP 1: Provision Oracle Virtual Cloud Network**
+## **STEP 1**: Provision Oracle Virtual Cloud Network
 
 1. Before creating an instance, we need to configure a Virtual Cloud Network. Select the menu on the top left, then select Networking and Virtual Cloud Networks
 <img src="images/vcn.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
@@ -88,7 +93,7 @@ Note: That will create the internet gateway, and it will need to be associated w
 
 
 
-## **STEP 2: Create Cluster Nodes**
+## **STEP 2**: Create Cluster Nodes
 
 We will create two nodes for this lab, the **Headnode** for the cluster on the public subnet, and **a worker compute node** in the private subnet. In order to access the worker nodes, we will first create the headnode, then generate a ssh key on the headnode, and use that public key when creating the worker node.
 
@@ -99,7 +104,7 @@ Note: For this lab we will be utilizing only the basic VM.Standard2.1 shape, but
 
     - Name: i.e. hpc_head
     - Image or operating system:latest version Oracle Linux(default)
-    - Availblity Domain: domain available for VM.Standard 2.1 shapes
+    - Availability Domain: domain available for VM.Standard 2.1 shapes
     - Instance Shape: 
         -   VM.Standard 2.1
         -   any other shapes (BM.HPC2.36 preferred if available)
@@ -132,7 +137,7 @@ Note: For this lab we will be utilizing only the basic VM.Standard2.1 shape, but
    
           - Name: i.e. hpc_worker1
           - Image or operating system:latest version Oracle Linux(default)
-          - Availblity Domain: domain available for VM.Standard 2.1 shapes
+          - Availability Domain: domain available for VM.Standard 2.1 shapes
           - Instance Shape: 
             -   VM.Standard 2.1
             -   any other shapes (BM.HPC2.36 preferred if available)
@@ -147,7 +152,7 @@ Note: For this lab we will be utilizing only the basic VM.Standard2.1 shape, but
             ```
 
 
-## **STEP 3: Setup NAT Gateway**
+## **STEP 3**: Setup NAT Gateway
 
 ** Please note this is for the worker node only ** <br/>
 
@@ -157,7 +162,7 @@ Note: For this lab we will be utilizing only the basic VM.Standard2.1 shape, but
 <img src="images/nat_gateway.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-## **STEP 4: Mounting a drive**
+## **STEP 4**: Mounting a drive
 Note: Only if the node shape has a NVMe attached (BM.HPC2.36 has one, not VM.Standard2.1), HPC machines have local NVMe storage but it is not mounted by default. Skip to Step 5 if using VM.Standard2.1
 
   1. SSH into your headnode and run the below commands
@@ -235,7 +240,7 @@ Note: Only if the node shape has a NVMe attached (BM.HPC2.36 has one, not VM.Sta
 
 
 
-## **STEP 5: Creating a Network File System**
+## **STEP 5**: Creating a Network File System
 
   1. Create Mount Target. On the top left menu, click **File Storage** and **Mount Target**.
 
@@ -265,7 +270,7 @@ Note: Only if the node shape has a NVMe attached (BM.HPC2.36 has one, not VM.Sta
     sudo mount <fss-ip-address>:/<ExportPathName> /mnt/share
     ```
 
-## **STEP 6: Install OpenFOAM**
+## **STEP 6**: Install OpenFOAM
   1. **Connecting all worker nodes** <br/>
    
     Each worker node needs to be able to talk to all the worker nodes. SSH communication works but most applications have issues if all the hosts are not in the known host file. To disable the known host check for nodes with address in the VCN, you can deactivate with the following commands. You may need to modify it slightly if your have different addresses in your subnets. Put the following code block in a shell script and run the script. 
@@ -324,7 +329,7 @@ Note: Only if the node shape has a NVMe attached (BM.HPC2.36 has one, not VM.Sta
         ```
 
 
-## **STEP 7: Run simulation workload and Render the output**
+## **STEP 7**: Run simulation workload and Render the output
 
 1. On Headnode, run the following commands that will be needed to render the output using Paraview package.
 
@@ -347,7 +352,6 @@ Note: Only if the node shape has a NVMe attached (BM.HPC2.36 has one, not VM.Sta
     $ chmod 600 /home/opc/.vnc/passwd
     $ /usr/bin/vncserver
     ```
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 3. Download this zip with the <a href="../scripts/motorbike_RDMA.tgz" target="_blank">scripts</a> in /mnt/share/work in one of worker nodes. Unzip the file using `tar -xf motorbike_RDMA.tgz`
@@ -475,13 +479,11 @@ manualCoeffs
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 8. Once the workload completes successfully, configure VNC client on your machine like this. Provide Public IP of Bastion server and VNC port
 <img src="images/24-VNC_Connection.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -498,7 +500,6 @@ manualCoeffs
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
 12. Start the Paraview application from within the bastion server
@@ -514,13 +515,11 @@ manualCoeffs
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 14. On Left of the window, Under Properties tab, select Mesh Regions to select all the values and then unselect the top values which does not start with motorBike_ prefix. Make sure that all values starting with motorBike_ are selected. Click on the Apply button, some errors will pop up, ignore the error window that pops up to view the rendering of the image in VNC console.
 <img src="images/26-Mesh_Regions.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
@@ -529,23 +528,20 @@ manualCoeffs
 
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
-#### All Done! This completes the demo for running OpenFoam application on a Standard VM on OCI.
+All Done! This completes the demo for running OpenFoam application on a Standard VM on OCI.
 
+*Congratulations! You have successfully completed the workshop*
 
-<p>&nbsp;</p>
 
 These are detailed information about managing High Performance Compute Instance. For a complete command reference,check out OCI documentation [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/Tasks/managingclusternetworks.htm?Highlight=hpc).
 
 ## Acknowledgements
 * **Author** - High Performance Compute Team
 * **Contributors** -  Chris Iwicki, Harrison Dvoor, Gloria Lee, Selene Song, Bre Mendonca
-* **Last Updated By/Date** - Harrison Dvoor (9/28/20)
+* **Last Updated By/Date** - Harrison Dvoor, October 2020
 
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
-
-**You may now proceed to the next lab**
