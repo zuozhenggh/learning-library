@@ -62,9 +62,30 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
 
-  ![](images/5429da7dcd00ecc7da6e779ed699c45e.jpg " ")
+![](images/update_ssh_creds.jpg " ")
 
-2. Fleet Maintenance Login to EMCLI
+2. Setup oracle Named Credentials using Job System
+
+This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
+Navigate to "***Enterprise >> Job >> Library***" and **select** "SETUP ORACLE CREDENTIALS"; **Click** Submit.
+
+![](images/named_creds_job.jpg " ")
+
+
+3.  Click **Submit** again on the Job submission Page
+
+![](images/named_creds_job_submit.jpg " ")
+
+4. The Job will be submitted successfully. **Click** on SETUP ORACLE CREDENTIALS Job link to view the Job
+
+![](images/submitted.jpg " ")
+
+5. The Job should show Status **Succeeded**
+
+![](images/named_creds_job_succeeded.jpg " ")
+
+
+6. Fleet Maintenance Login to EMCLI
 
 Upon login as user “oracle” via sudo from user “opc”, the following are performed automatically for your convenience:
 
@@ -84,7 +105,7 @@ While connected as “oracle” your emcli session may expire at some point due 
 sudo su - oracle</copy>
 ````
 
-3. Steps Completed in Advance
+7. Steps Completed in Advance
 
 In the interest of simplifying the setup and save time, the following steps were completed in advance and covered in this lab:
 
