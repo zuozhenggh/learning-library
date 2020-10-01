@@ -71,6 +71,8 @@ For this lab you will need:
 
 That is all that's needed to get started.
 
+You may proceed to the next lab.
+
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020

@@ -30,6 +30,8 @@ Once the database system is provisioned, under the **Database System -> details*
 
   <img src="./images/provision-db-27-connection2.png" width="70%">
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020

@@ -82,6 +82,8 @@ The load balancer is also updated to take new nodes into account.
 
 You will be prompted to reboot the instance. The WebLogic servers will be restarted on reboot.
 
+You may proceed to the next lab.
+
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020

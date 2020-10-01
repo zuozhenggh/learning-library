@@ -1,3 +1,5 @@
+# Oracle High Performance Compute (HPC) Introductory Labs
+
 ## Introduction
 
 High Performance Computing is changing product development and research enabling customers to solve complex problems faster. This means fewer prototypes, accelerates testing, and decreases time to market. Oracle offers on-demand HPC infrastructure, suitable for any HPC workload, based on the most advanced compute, storage, networking, and software technologies. You get all this at a fraction of the cost of building it yourself and avoid capacity utilization issues.
@@ -26,7 +28,7 @@ Currently, a single BM per compute node is supported. It allows root access for 
 
 ## About this Workshop
 
-Estimated Lab Time: 3 hours
+Estimated Lab Time: 4 hours
 
 Lab 1 deals with setting up the High Performance Compute Instance in the Oracle Cloud Infrastructure.
 
@@ -58,3 +60,6 @@ In this lab, you will:
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+
+
+**You may now proceed to the next lab**
