@@ -18,7 +18,7 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 3: Use Atom Editor to Develop Content**
 + **Lab 4: Merge, Commit, Create Pull Request**
 
-## **Step 1:** Create an Oracle Learning Library Content Entry for the Lab
+## **STEP 1:** Create an Oracle Learning Library Content Entry for the Lab
 Every GitHub-hosted lab that will be accessed from the Oracle Help Center must be registered as a content entry in the Oracle Learning Library (OLL).
 You must have OLL administrator privileges to view and edit content entries in OLL.
 1. Log in to the [OLL Home page] (https://apexapps.oracle.com/pls/apex/f?p=44785:1) using your Oracle SSO credentials.
@@ -32,7 +32,7 @@ You must have OLL administrator privileges to view and edit content entries in O
   ![](./images/content-entry-link.png " ")
   * Type: Select **OBE**. (Older labs were called Oracle By Example or tutorials.)
 
-## **Step 2:** Create the Target URL for a Lab
+## **STEP 2:** Create the Target URL for a Lab
 
 1. Log in to the [OLL Home page] (https://apexapps.oracle.com/pls/apex/f?p=44785:1) using your Oracle SSO credentials.
 2. From your *User ID* drop-down, click **Administration**.
@@ -64,4 +64,6 @@ You need to work with your manager or Lead to get this link added to OHC.
 *
 * **Last Updated By/Date:** Anuradha Chepuri, September 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## See an issue?  
+
+Please open up a request [here](https://github.com/oracle/learning-library/issues).

@@ -20,7 +20,7 @@ As a best practice merge your library everyday or whenever you start your GitHub
 This lab assumes that you have successfully completed **Lab 2: Get Started with Git and Set up the GitHub Environment** in the **Contents** menu on the right.
 
 
-## **Step 1:** Merge Content from Git Before you Start Editing your Content
+## **STEP 1:** Merge Content from Git Before you Start Editing your Content
 To merge content:
 1. Start your **GitHub Desktop** client.
 2. Select **Branch > Merge** into current branch to display the **Merge in Master** window.
@@ -36,7 +36,7 @@ To merge content:
 
 5. When the merge is successfully completed, a "Successfully merged upstream/master into master" message is displayed. To push the new commits from the local clone to the origin remote of the clone (the fork), click **Push origin**.
 
-![](./images/git-hub-merge-push-origin.png " ")
+![](./images/labs-git-hub-merge-push-origin.png " ")
 
 To determine if your clone is up-to-date with upstream/master (production), repeat steps 2 to 4. If both repositories are synchronized, then the following message is displayed:
 "This branch is up to date with upstream/master."
@@ -47,37 +47,37 @@ The **Push Origin** is replaced by **Fetch Origin** after the push origin operat
 
 ![](./images/git-hub-merge-fetch-origin.png " ")
 
-## **Step 2:** Commit your Changes in your Clone
+## **STEP 2:** Commit your Changes in your Clone
 When you create, delete, or modify assets in your clone (local copy), you should commit (save) those changes to your clone, and then push those changes from your clone to your fork. Then these changes get saved to your learning-library repository.
 
 To commit your changes:
 1. Start your **GitHub Desktop** client.
 2. In the **Summary (required)** text box on the left (next to your picture), enter a summary of your changes. You can optionally add a more detailed description of your changes in the **Description** text box.
 
-![](./images/git-hub-commit-to-master.png " ")
+  ![](./images/git-hub-commit-to-master.png " ")
 
 3. Click **Commit to master**. This saves your changes in your local clone. **Fetch Origin** changes to **Push Origin**.
 
 4. Click **Push origin** (it should have an upward arrow with a number). This pushes the updated content from your clone into the origin of this clone, that is, your fork.
 
-![](./images/git-hub-commit-push-origin.png " ")
+  ![](./images/git-hub-commit-push-origin.png " ")
 
-## **Step 3:** Set Up GitHub Pages for Your Fork to Test Your Content
+## **STEP 3:** Set Up GitHub Pages for Your Fork to Test Your Content
 
 After you upload the content from your clone to your fork, you can ask your review team members to review this content by providing them with access to your GitHub Pages site URL (or the URL for your forked repository).
 
 The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** to Test Your Content. This feature performs a dynamic conversion of the Markdown files (.md files you have developed using your Atom Editor) to HTML. You can preview your workshop and labs on your forked repository and provide this URL to your reviewers for reviewing them. To upload your final labs and workshop to the master repository (production) also, you will use the **GitHub Pages** feature associated with the master learning-library repository.
 
-![](./images/git-hub-deploy-completed-content-to-master.png " ")
+  ![](./images/git-hub-deploy-completed-content-to-master.png " ")
 
 To identify your GitHub Pages URL and how to enable this feature:
 1. Login to [GitHub Web UI] (http://github.com) using your GitHub account credentials, and then click your fork's link in the **Repositories** section to display your fork.
 
-![](./images/git-hub-stage-git-hub-pages-repositories.png " ")
+  ![](./images/git-hub-stage-git-hub-pages-repositories.png " ")
 
 2. Click **Settings** to display the **Settings** section.
 
-![](./images/git-hub-stage-git-hub-pages-settings.png " ")
+   ![](./images/git-hub-stage-git-hub-pages-settings.png " ")
 
 3. Click **Options** and scroll down to the **GitHub Pages** section.
 
@@ -90,7 +90,7 @@ In the following example, the web site for the fork associated with user achepur
   * github.io is the domain's name
   * learning-library is the repository's name.
 
-![](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
+    ![](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
 
 Notice that this is the GitHub Pages site is associated with your fork.
 **Note**:  https://achepuri.github.io/learning-library refers to the forked repository and not the master repository (production).  
@@ -99,7 +99,7 @@ You can also review and test your workshop and labs on your forked repository fr
 
 http://github.com/*<your-github-account>*/learning-library/tree/master/*<path to your lab>*
 
-## **Step 4**: Create a Pull Request to Upload Your Content to the Master Repository
+## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production (**upstream/master** repository).
 
 Note that the owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
@@ -107,11 +107,11 @@ Note that the owners can approve your request, ask for more information if requi
 To create a Pull Request:
 1. In the **GitHub Desktop** client, select **Branch > Create pull request** to display a browser interface.
 
-![](./images/git-hub-branch-pull-request.png " ")
+  ![](./images/git-hub-branch-pull-request.png " ")
 
 2. Click **Create pull request** to display an **Open a pull request** page.
 
-![](./images/git-hub-browser-create-pull-request.png " ")
+  ![](./images/git-hub-branch-browser-create-pull-request.png " ")
 
 3. Enter a subject for the pull request, an optional comment, and then click **Create pull request**.
 
@@ -138,4 +138,6 @@ To create a Pull Request:
 
 * **Last Updated By/Date:** Anuradha Chepuri, September 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## See an issue?  
+
+Please open up a request [here](https://github.com/oracle/learning-library/issues).
