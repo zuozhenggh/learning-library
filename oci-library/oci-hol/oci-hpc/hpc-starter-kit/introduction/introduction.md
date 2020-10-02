@@ -1,4 +1,4 @@
-# Oracle High Performance Compute (HPC) Introductory Labs
+# Introduction
 
 ## Introduction
 
@@ -10,7 +10,9 @@ With Oracle Cloud Infrastructure, businesses can run performance intensive HPC w
 
 These hands-on lab guides provide step-by-step directions to setting up and using your High Performance Computing platform in the Oracle Cloud Infrastructure.
 
-## What is High Performance Computing (HPC)
+Estimated Workshop Time: 4 hours
+
+### About High Performance Computing (HPC)
 
 HPC, or supercomputing, is like everyday computing, only more powerful. It is a way of processing huge volumes of data at very high speeds using multiple computers and storage devices as a cohesive fabric. HPC makes it possible to explore and find answers to some of the world’s biggest problems in science, engineering, and business.
 
@@ -18,23 +20,13 @@ A cluster network is a pool of high performance computing (HPC) instances that a
 
 High Performance Computing is offered on Oracle Cloud Infrastructure, within OCI regions.
 
-High Performance Computing Instance available in Oracle MarketPlace Image and BM.HPC2.36 in OCI.
+High Performance Computing Instance available in Oracle Marketplace Image and BM.HPC2.36 in OCI.
 
-High Performance Computing rack in Oracle MarketPlace Image includes HPC cluster nodes, cluster network and NFS share.
+High Performance Computing rack in Oracle Marketplace Image includes HPC cluster nodes, cluster network and NFS share.
 
 The compute nodes are connected via cluster network that provides RDMA based storage access to the compute nodes.
 
 Currently, a single BM per compute node is supported. It allows root access for customers while protecting hardware and network, compute nodes are virtualized using BM.HPC2.36.
-
-## About this Workshop
-
-Estimated Lab Time: 4 hours
-
-Lab 1 deals with setting up the High Performance Compute Instance in the Oracle Cloud Infrastructure.
-
-Lab 2 is geared towards Managing your High Performance Compute Instance using OCI CLI tools.
-
-Lab 3 is designed to assist in the assessment of the OpenFOAM CFD Software in Oracle Cloud Infrastructure.
 
 ### Objectives
 
@@ -52,14 +44,19 @@ In this lab, you will:
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
 
+## About this Workshop
+
+- Lab 1: Setting up the High Performance Compute Instance in the Oracle Cloud Infrastructure.
+
+- Lab 2: Managing your High Performance Compute Instance using OCI CLI tools.
+
+- Lab 3: Designed to assist in the assessment of the OpenFOAM CFD Software in Oracle Cloud Infrastructure.
+
 ## Acknowledgements
 * **Author** - High Performance Compute Team
 * **Contributors** -  Chris Iwicki, Harrison Dvoor, Gloria Lee, Selene Song, Bre Mendonca
-* **Last Updated By/Date** - Harrison Dvoor (9/28/20)
+* **Last Updated By/Date** - Harrison Dvoor, October 2020
 
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
-
-
-**You may now proceed to the next lab**
