@@ -2,23 +2,27 @@
 
 ![Oracle ADW + 0racle OAC](./images/adw_oac_banner.png)
 
+## Introduction
+
 **Oracle Analytics Cloud** provides the industry's most comprehensive cloud analytics in a single unified platform, including everything from
 self-service visualization and powerful inline data preparation to enterprise reporting, advanced analytics, and self-learning analytics
 that deliver proactive insights.
 
 You are going to use an **Oracle Analytics Cloud** instance to give your end users a self-service approach to analysing the data.
 
-In this lab, you will:
+In this workshop, you will:
 
 -   **Create a connection** from Oracle Analytics Cloud to Autonomous Database.
 -   **Prepare** the dataset.
 -   **Create Visualizations** to analyse the data.
 
+Estimated workshop Time 1 hour and 15 minutes.
+
 ## Create the connection from Oracle Analytics Cloud to Autonomous Database
 
 **Oracle Autonomous Database** only accepts secure connections to the database. This requires a *'wallet'* file that contains the SQL\*NET
 configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL\*Plus etc. For this
-lab, you will use this same wallet mechanism to make a connection from OAC to the **Autonomous Database**.
+workshop, you will use this same wallet mechanism to make a connection from OAC to the **Autonomous Database**.
 
 ***Note**: This section assumes you have already created your Oracle Analytics Cloud instance as part of the 'Lab 200 - Provisioning your Oracle Analytics Cloud (OAC)' instance section. If not, please return to the beginning of Lab200 and go through the instance creation.*
 
@@ -192,7 +196,7 @@ An **Oracle Analytics Project** consist of **three main parts** (you can see the
 
 -   **Narrate**: Here is where you create a more presentation-oriented view of the analysis you created. This tab allows you to choose which insights to show and add comments and descriptions. It helps to understand your analysis journey and focus on showing the results.
 
-During this lab, you will use the **Prepare** and **Visualize** tabs mainly.
+During this workshop, you will use the **Prepare** and **Visualize** tabs mainly.
 
 You have already seen the **Prepare** screen on previous steps. The **Visualize** screen is this one:
 
@@ -212,7 +216,7 @@ Main areas to note here are:
 
 -   **Canvas**: Your play area. You can place your visuals here. You can also create more Canvases and copy/move visuals around.
 
-Now that you know a bit your way around in the **Project**, you can continue with the lab.
+Now that you know a bit your way around in the **Project**, you can continue with the workshop.
 
 **Remember** that you just added the new dataset from the **SH&#95;SALES** table.
 
@@ -450,7 +454,9 @@ Congratulations! Well done!
 
 **Contributors**
 - Victor Martin, Principal Cloud Engineer - EMEA Oracle Digital
-- Melanie Ashworth-March, Principal Sales Consultant - EMEA Oracle Solution Center
+- Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 - Andrea Zengin, Autonomous Database Business Development Director - Oracle EMEA
 
 **Last Updated By/Date**
+
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

@@ -1,8 +1,12 @@
 # Get Started: Signing Up for your Oracle Cloud Free Tier Account
 
+## Introduction
+
 ![Oracle Cloud Free Tier Banner](./images/oracle_cloud_free_tier0.png)
 
-During this short lab, we will **Create**, **Sign In** and **Walk Through** the steps of setting up an **Oracle Cloud Free Tier** account.
+During this short workshop, we will **Create**, **Sign In** and **Walk Through** the steps of setting up an **Oracle Cloud Free Tier** account.
+
+Estimated workshop Time 15 minutes.
 
 ## Create Your Free Trial Account
 
@@ -17,7 +21,7 @@ What's included with **Oracle Cloud Free Tier**?
 To learn more about **Oracle Cloud Always Free** and **Free Trial** account check the following link:
 [https://www.oracle.com/cloud/free/#always-free](https://www.oracle.com/cloud/free/#always-free)
 
-As part of your sign up to this lab, you will have been provided a link to **Sign Up** to Oracle Cloud Free Tier. Please make sure you:
+As part of your sign up to this workshop, you will have been provided a link to **Sign Up** to Oracle Cloud Free Tier. Please make sure you:
 
 - Use the **following URL** - [>> Sign Up for Oracle Cloud <<](http://bit.ly/34TzwGf)
 - Use a **personal email** address that you will use during all the workshop process.
@@ -86,7 +90,7 @@ You are now signed in to **Oracle Cloud!**
 
 You have just created an Oracle Cloud Free Tier Account, and then successfully logged into your new account.
 
-Congratulations, you are ready for the next Lab!
+Congratulations, you are ready for the next workshop!
 
 ## **Acknowledgements**
 
@@ -96,7 +100,9 @@ Congratulations, you are ready for the next Lab!
 
 **Contributors**
 - Victor Martin, Principal Cloud Engineer - EMEA Oracle Digital
-- Melanie Ashworth-March, Principal Sales Consultant - EMEA Oracle Solution Center
+- Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 - Andrea Zengin, Autonomous Database Business Development Director - Oracle EMEA
 
 **Last Updated By/Date**
+
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

@@ -1,11 +1,15 @@
 # Next Steps
 
+## Introduction
+In this section you can learn how to upgrade instances to a Paid Model.
+
+Estimated workshop Time 2 minutes.
+
 ## Upgrade Instances to Paid
 
 ![Oracle Cloud Pricing](./images/next_banner.png)
 
-
-I hope you could complete all the labs on this ADW and OAC workshop and you have learned the basic concepts from the technologies that we have used: - **Oracle Autonomous Database** - **Oracle Analytics Cloud**.
+I hope you could complete all the workshops on this ADW and OAC workshop and you have learned the basic concepts from the technologies that we have used: - **Oracle Autonomous Database** - **Oracle Analytics Cloud**.
 
 The technologies that we have covered on this workshop are using **Always Free** and **Free Trial** credits so you don't have to pay for the services that you have used. 
 
@@ -61,7 +65,9 @@ Learn more about [Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/
 
 **Contributors**
 - Victor Martin, Principal Cloud Engineer - EMEA Oracle Digital
-- Melanie Ashworth-March, Principal Sales Consultant - EMEA Oracle Solution Center
+- Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 - Andrea Zengin, Autonomous Database Business Development Director - Oracle EMEA
 
 **Last Updated By/Date**
+
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

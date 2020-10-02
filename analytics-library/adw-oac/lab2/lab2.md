@@ -2,11 +2,17 @@
 
 ![Oracle Analytics Cloud](./images/oac_banner.png)
 
+## Introduction
+
 This section describes the process of deploying **Oracle Analytics Cloud** instances on Oracle Cloud Infrastructure Gen 2, which is the default for newly provisioned accounts in **EMEA** and **US**.
 
 Your Oracle Cloud Free Tier account will use the Oracle Cloud Free Trial **credits** while this instance is provisioned, as Oracle Analytics Cloud is not part of the **Always Free** cloud services.
 
 Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
+
+Estimated workshop Time 15 minutes.
+
+## Create an Oracle Analytics Cloud (OAC) Instance
 
 Return to the Oracle Cloud Infrastructure Console accessing from **Oracle Home Page** (oracle.com) and sign in into your cloud account.
 Click in **View Account** and **Sign in to Cloud**.
@@ -83,7 +89,7 @@ The Analytics instance page will be displayed with a status of ***ACTIVE***.
 
 You just created an Oracle Analytics Cloud Instance.
 
-Congratulations, you are ready for the next Lab!
+Congratulations, you are ready for the next workshop!
 
 ## **Acknowledgements**
 
@@ -93,7 +99,9 @@ Congratulations, you are ready for the next Lab!
 
 **Contributors**
 - Victor Martin, Principal Cloud Engineer - EMEA Oracle Digital
-- Melanie Ashworth-March, Principal Sales Consultant - EMEA Oracle Solution Center
+- Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 - Andrea Zengin, Autonomous Database Business Development Director - Oracle EMEA
 
 **Last Updated By/Date**
+
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
