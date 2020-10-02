@@ -104,4 +104,4 @@ Congratulations, you are ready for the next workshop!
 
 **Last Updated By/Date**
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and workshop in your request.
