@@ -2,7 +2,9 @@
 
 ![Autonomous](./images/adb_banner.png)
 
-This lab walks you through the steps to get started using the **Oracle Autonomous Transaction Processing Database (ATP)** on **Oracle Cloud Infrastructure (OCI)**. You will provision a new database in just few minutes.
+## Introduction
+
+This workshop walks you through the steps to get started using the **Oracle Autonomous Transaction Processing Database (ATP)** on **Oracle Cloud Infrastructure (OCI)**. You will provision a new database in just few minutes.
 
 ### Self-driving
 
@@ -23,6 +25,8 @@ Automate failure detection, failover, and repair.
 Detect and protect from system failures and user errors automatically and provide failover to standby databases with zero data loss.
 
 Perfect for Developers!
+
+Estimated workshop Time 10 minutes.
 
 ## Create a new Autonomous Transaction Processing
 
@@ -79,7 +83,7 @@ Remember: You will have visible the **Always Free** logo next to the name of you
 
 You just created an Autonomous Database with the latest features of Oracle Databases.
 
-Congratulations, you are ready for the next Lab!
+Congratulations, you are ready for the next workshop!
 
 ## **Acknowledgements**
 
@@ -91,3 +95,5 @@ Congratulations, you are ready for the next Lab!
 - Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 
 **Last Updated By/Date**
+
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and workshop in your request.

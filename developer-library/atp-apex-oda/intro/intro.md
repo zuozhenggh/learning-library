@@ -2,9 +2,11 @@
 
 ![Oracle](images/banner.png)
 
-## Conversational Approach to Your Applications
+## Introduction to Conversational Approach to Your Applications
 
 This workshop walks you through the steps to use **Autonomous Database** and **Application Express (APEX)** to store information, offer a **REST API** with **Oracle REST Data Services (ORDS)** and enable you to interact with your customers by keeping a conversation with **Digital Assistant**.
+
+Estimated workshop Time 2 hours.
 
 ## Who Should Do This Workshop
 
@@ -14,7 +16,7 @@ You want to **learn Oracle Digital Assistant**.
 
 You are also interested in exploring modern and quick **APEX** development and build **secure and powerful REST APIs**.
 
-## Requirements
+### Requirements
 
 In order to walk through this workshop you need to develop the integration with **REST API**. You need [Node.js](https://nodejs.org/en/) for that.
 
@@ -38,7 +40,7 @@ That will open the Command Prompt/Terminal so you are ready to go.
 
 [Here you can find a basic guidance of commands that you can use on the terminal.](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
 
-Don't worry all the commands that we will need on the lab are part of the code so you don't need to learn any additional one.
+Don't worry all the commands that we will need on the workshop are part of the code so you don't need to learn any additional one.
 
 ### Node.js Installation
 
@@ -98,3 +100,5 @@ At this point, you are ready to start learning!
 - Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 
 **Last Updated By/Date**
+
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and workshop in your request.

@@ -1,10 +1,15 @@
 # Next Steps
 
+## Introduction
+In this section you can learn how to upgrade instances to a Paid Model.
+
+Estimated workshop Time 2 minutes.
+
 ## Upgrade Instances to Paid
 
 ![Oracle Cloud Pricing](./images/next_banner.png)
 
-I hope you could complete all the labs on this Oracle APEX and Digital Assistant labs and you learn the basic concepts from the technologies that we have use: - **Oracle Autonomous Database** - **Oracle Application Express** - **Oracle Digital Assistant**
+I hope you could complete all the workshops on this Oracle APEX and Digital Assistant workshops and you learn the basic concepts from the technologies that we have use: - **Oracle Autonomous Database** - **Oracle Application Express** - **Oracle Digital Assistant**
 
 The technologies that we have covered on this workshop are using **Always Free** and **Free Trial** credits so you don't have to pay for the services that you have use.
 
@@ -61,3 +66,5 @@ Check [Oracle Tech Exchange](https://fnimphiu.github.io/OracleTechExchange/) con
 - Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 
 **Last Updated By/Date**
+
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

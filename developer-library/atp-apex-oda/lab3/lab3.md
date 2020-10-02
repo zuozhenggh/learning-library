@@ -2,6 +2,8 @@
 
 ![Oracle Digital Assistant](./images/oda.png)
 
+## Introduction
+
 Oracle Digital Assistant is a platform that allows enterprises to create and deploy digital assistants for their users. With Oracle Digital Assistant, you create:
 
 - **Digital assistants**, which are AI-driven interfaces that help users accomplish a variety of tasks in natural language conversations. For each digital assistant, you assemble one or more skills.
@@ -26,6 +28,8 @@ Both intents and entities are common **Natural Language Processing (NLP)** conce
 
 - **Channels**: Digital assistants and skills aren’t apps that you download from an app marketplace, like iTunes. Instead, users access them through messaging platforms or through client messaging apps. Channels, which are platform-specific configurations, allow this access. A single digital assistant or skill can have several channels configured for it so that it can run on different services simultaneously.
 
+Estimated workshop Time 15 minutes.
+
 ## Create a Digital Assistant instance
 
 **Create** a Digital Assistant instance to start working with bots. You can find advance set up steps on the [official documentation](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/order-service-and-provision-instance.html#GUID-7E4F1CE5-FB40-45DF-B0F0-949289F5E184).
@@ -40,7 +44,7 @@ Click on **Create** Digital Assistant Instance button:
 
 You will have the **root compartment** selected, or pick the one you want.
 
-Fill the information as in the next image. Developer edition is perfect for this lab and develop new **Digital Assistant** systems until you want to move to production.
+Fill the information as in the next image. Developer edition is perfect for this workshop and develop new **Digital Assistant** systems until you want to move to production.
 
 Finally click "**Create**" bottom:
 
@@ -77,7 +81,7 @@ Make sure you look around and feel familiar with the menus.
 
 ![ODA Menu](./images/oda_6.png)
 
-Congratulations! You are ready to go to the next Lab!
+Congratulations! You are ready to go to the next workshop!
 
 ## **Acknowledgements**
 
@@ -89,3 +93,5 @@ Congratulations! You are ready to go to the next Lab!
 - Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 
 **Last Updated By/Date**
+
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and workshop in your request.

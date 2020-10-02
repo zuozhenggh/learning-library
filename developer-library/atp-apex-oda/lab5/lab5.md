@@ -1,8 +1,10 @@
 # Lab 5: Create Digital Assistant Skill
 
+## Introduction
+
 **Digital assistants** consist of one or more **skills**, which are individual **chat bots** that are focused on specific types of tasks.
 
-You will create a **skill** that can be used for interactions with a backend service, using the **Custom Component** you built on previous lab.
+You will create a **skill** that can be used for interactions with a backend service, using the **Custom Component** you built on previous workshop.
 
 As part of this process, you will:
 
@@ -18,9 +20,11 @@ Go to **Digital Assistant Dashboard** as we did on **Lab 3**. As a reminder chec
 
 ![ODA Menu Service Console](./images/oda_lab5_2.png)
 
+Estimated workshop Time 45 minutes.
+
 ## Build your first Skill
 
-In this lab, we're starting from scratch. So the first thing you'll do is **create** a new skill.
+In this workshop, we're starting from scratch. So the first thing you'll do is **create** a new skill.
 
 **Click** on `+ New Skill` button to start:
 
@@ -273,3 +277,5 @@ Continue to Next Steps for more information!
 - Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 
 **Last Updated By/Date**
+
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and workshop in your request.

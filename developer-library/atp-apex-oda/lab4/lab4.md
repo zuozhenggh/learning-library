@@ -1,5 +1,7 @@
 # Lab 4: Implement Custom Component
 
+## Introduction
+
 **Oracle Digital Assistant** allows you to build integrations with backend services by creating **Custom Components**.
 
 Custom Components are a bridge between **Skills** on Oracle Digital Assistant and the **Services** where information can be fetched.
@@ -16,11 +18,14 @@ That is exactly what we are going to build.
 
 You can package related **Custom Components** together.
 
+Estimated workshop Time 15 minutes.
+
+
 ## Create a Custom Component to integrate with backend services
 
 Oracle provides **Oracle Bots Node.js SDK**, a free utility that makes custom components development very easy.
 
-> We had explained the installation steps in the Pre-requisites section at the very beginning of this lab.
+> We had explained the installation steps in the Pre-requisites section at the very beginning of this workshop.
 
 Ready to create your **Custom Component** scaffolding.
 
@@ -171,7 +176,7 @@ There will be a new file in your `tasks-cc` folder called `tasks-cc-1.0.0.tgz`.
 
 ![tgz new file](./images/node_tgz_file.png)
 
-Congratulations! You are ready to go to the next Lab!
+Congratulations! You are ready to go to the next workshop!
 
 ## **Acknowledgements**
 
@@ -183,3 +188,5 @@ Congratulations! You are ready to go to the next Lab!
 - Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 
 **Last Updated By/Date**
+
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and workshop in your request.

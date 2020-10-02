@@ -2,6 +2,8 @@
 
 ![APEX](./images/apex.png)
 
+## Introduction
+
 As part of **Autonomous Database** you have **Oracle Application Express (APEX)** available.
 
 APEX is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere.
@@ -12,13 +14,15 @@ Each Autonomous Database instance includes **Oracle REST Data Services (ORDS)** 
 
 ![ORDS](./images/ords.png)
 
-In this lab you will create a `tasks` table, REST enabling it, and make the service available for the Custom Component. Normally, you would REST enable database objects in a remote database schema, and then utilize those REST endpoints to define Web Source modules in an application, where APEX is installed, within the local database, as outlined below.
+In this workshop you will create a `tasks` table, REST enabling it, and make the service available for the Custom Component. Normally, you would REST enable database objects in a remote database schema, and then utilize those REST endpoints to define Web Source modules in an application, where APEX is installed, within the local database, as outlined below.
 
 ![ORDS and APEX](./images/rest_arch.png)
 
+Estimated workshop Time 20 minutes.
+
 ## Create APEX Workspace
 
-In this part of the lab we are creating an APEX workspace. From the Autonomous Database Home page go to **Tools** section and select **Oracle Application Express** area.
+In this part of the workshop we are creating an APEX workspace. From the Autonomous Database Home page go to **Tools** section and select **Oracle Application Express** area.
 
 ![ORDS](./images/apex_workspace1.png)
 
@@ -27,7 +31,7 @@ Login as the Admin user, with the **Admin** password you specified at Autonomous
 
 ![ORDS](./images/apex_workspace2.png)
 
-Create the Lab Workspace on the Welcome to "Oracle Application Express" page, select **Create Workspace**.
+Create the workshop Workspace on the Welcome to "Oracle Application Express" page, select **Create Workspace**.
 
 ![ORDS](./images/apex_workspace3.png)
 
@@ -242,7 +246,7 @@ You should see the items with `id` and `text` and other fields and references in
 
 How many items do you see? You should have as many tasks as you created before in the table.
 
-Congratulations! You are ready to go to the next Lab!
+Congratulations! You are ready to go to the next workshop!
 
 ## **Acknowledgements**
 
@@ -254,3 +258,5 @@ Congratulations! You are ready to go to the next Lab!
 - Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 
 **Last Updated By/Date**
+
+See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and workshop in your request.
