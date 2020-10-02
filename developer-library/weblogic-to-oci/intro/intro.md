@@ -1,13 +1,13 @@
-# Migrate WebLogic to Oracle Cloud Infrastructure
+# Introduction
 
-## Introduction
+## About Workshop
 
-This lab will walk you through the process of migrating an existing 'on-premises' WebLogic domain to WebLogic for Oracle Cloud Infrastructure. The WebLogic domain we'll migrate contains a couple Java applications and a datasource connecting to a database that will be migrated along the WebLogic domain. 
+This lab will walk you through the process of migrating an existing 'on-premises' WebLogic domain to WebLogic for Oracle Cloud Infrastructure. The WebLogic domain we'll migrate contains a couple Java applications and a datasource connecting to a database that will be migrated along the WebLogic domain.
 
 Attached below is a sample architecture of the final solution:
 ![](./images/Architecture.png)
 
-Estimated Lab Time: 80min to 120min depending on the path chosen.
+Estimated Lab Time: 80 to 120 minutes depending on the path chosen.
 
 ### Objectives
 

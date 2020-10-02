@@ -1,10 +1,10 @@
 # Gather Database information
 
-## Introduction: 
+## Introduction
 
 This lab with guide you through getting useful information regarding a Database provisioned on OCI
 
-Estimated Lab Time: 5 min
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 

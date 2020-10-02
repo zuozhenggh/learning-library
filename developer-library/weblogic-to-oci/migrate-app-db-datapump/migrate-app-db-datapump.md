@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to migrate the 'on-premises' application database to the database provisioned on OCI using Datapump.
 
-Estimated Lab Time: 10 min
+Estimated Lab Time: 10 minutes
 
 ### About Product/Technology
 
@@ -165,8 +165,8 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 The import script runs in 4 phases:
 
 - It copies the files over to the OCI DB node
-- then runs the `impdp` import command once. 
-You may notice this 1st try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace. 
+- then runs the `impdp` import command once.
+You may notice this 1st try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace.
 - the script then edits the `RIDERS` user tablespace quota
 - and re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
 
