@@ -87,59 +87,8 @@ You should already be in the 'on-premises' environment logged in as the `oracle`
 
     This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`
 
-<details><summary>View the <code>install_wdt.sh</code> script</summary>
-
-  ```bash
-  WLSDT_VERSION=1.7.3
-  # download the zip archive of the tool from Github
-  curl -LO https://github.com/oracle/weblogic-deploy-tooling/releases/download/weblogic-deploy-tooling-${WLSDT_VERSION}/weblogic-deploy.zip 
-  
-  # unzip and cleanup
-  unzip weblogic-deploy.zip
-  rm weblogic-deploy.zip
-
-  # make the scripts executable
-  chmod +x weblogic-deploy/bin/*.sh
-  ```
-  </details>
 
 ## **STEP 2:** Discover the on-premises domain
-
-<details><summary>View the <code>discover_domain.sh</code> script</summary>
-
-```bash
-# default to JRF domain which filters out JRF libraries and applications
-# If the domain is not JRF, the content would not be present so filterign it out will not make a difference
-DOMAIN_TYPE=JRF
-
-# clean up before starting
-rm source.* || echo "clean startup"
-
-echo "Discovering the source domain..."
-weblogic-deploy/bin/discoverDomain.sh \
-    -oracle_home $MW_HOME \
-    -domain_home $DOMAIN_HOME \
-    -archive_file source.zip \
-    -model_file source.yaml \
-    -variable_file source.properties \
-    -domain_type $DOMAIN_TYPE
-
-# This part insures that applications that are under the ORACLE_HOME are also extracted.
-# by default WDT does not extract applications under the ORACLE_HOME as it is not following current best practices. However in older versions of WLS, this was common.
-
-if [[ "$(cat source.yaml | grep '@@ORACLE_HOME@@' | wc -l)" != "0" ]]; then
-    echo "Some of the application files are located within the ORACLE_HOME and won't be extracted by WDT"
-    echo "Extracting those files and updating paths in the model file..."
-    rm -rf ./wlsdeploy/
-    mkdir -p ./wlsdeploy/applications;
-    cp $(cat source.yaml | grep '@@ORACLE_HOME@@' | sed "s|.*: '@@ORACLE_HOME@@\(.*\)'|${ORACLE_HOME}\1|") ./wlsdeploy/applications/;
-    zip -r source.zip ./wlsdeploy;
-    rm -rf ./wlsdeploy/
-    sed -i "s|@@ORACLE_HOME@@|wlsdeploy\/applications|g;" source.yaml
-fi
-```
-
-</details>
 
 The `discover_domain.sh` script wraps the **WebLogic Deploy Tooling** `discoverDomain` script to generate 3 files:
 
@@ -559,18 +508,6 @@ The `update_domain.sh` script updates the target domain.
 - It runs the `install_wdt.sh` script through SSH
 
 - and finally runs the `update_domain_as_oracle_user.sh` through SSH to update the WebLogic domain on OCI with the edited source files.
-
-`update_domain_as_oracle_user.sh` script:
-```bash
-weblogic-deploy/bin/updateDomain.sh \
--oracle_home $MW_HOME \
--domain_home $DOMAIN_HOME \
--model_file source.yaml \
--variable_file source.properties \
--archive_file source.zip \
--admin_user weblogic \
--admin_url t3://$(hostname -i):9071
-```
 
 The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling** script `updateDomain.sh` online, by providing the `-admin_url` flag.
 
