@@ -20,9 +20,9 @@ A cluster network is a pool of high performance computing (HPC) instances that a
 
 High Performance Computing is offered on Oracle Cloud Infrastructure, within OCI regions.
 
-High Performance Computing Instance available in Oracle MarketPlace Image and BM.HPC2.36 in OCI.
+High Performance Computing Instance available in Oracle Marketplace Image and BM.HPC2.36 in OCI.
 
-High Performance Computing rack in Oracle MarketPlace Image includes HPC cluster nodes, cluster network and NFS share.
+High Performance Computing rack in Oracle Marketplace Image includes HPC cluster nodes, cluster network and NFS share.
 
 The compute nodes are connected via cluster network that provides RDMA based storage access to the compute nodes.
 
