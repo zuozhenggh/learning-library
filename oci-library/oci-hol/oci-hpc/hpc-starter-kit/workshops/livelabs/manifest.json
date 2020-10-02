@@ -15,7 +15,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {
-            "title": "Lab 2: Provision HPC Cluster from Oracle MarketPlace Image",
+            "title": "Lab 2: Provision HPC Cluster from Oracle Marketplace Image",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../provision/provision.md"
         },
