@@ -1,13 +1,13 @@
 # Oracle Label Security (OLS)
 
-## About this Workshop
+## Introduction
 This workshop introduces the various features and functionality of Oracle Label Security (OLS).<br>
 It gives the user an opportunity to learn how to configure those features to secure their sensitive data, to help tracking consent, and to enforce restriction of processing under regulation requirements such as the General Data Protection Regulation.
 
-- Version tested in this lab: `Oracle DB 19.8`
-- Estimated Workshop Time: `30 minutes`
+- Version tested in this lab: *Oracle DB 19.8*
+- Estimated Workshop Time: *30 minutes*
 
-## About the Product
+### About the Product
 - **Overview**<br>
 OLS works by comparing the row label with a user's label authorizations to enable you to easily restrict sensitive information to only authorized users.<br>
 This way, users with different authorization levels (for example, managers and sales representatives) can have access to specific rows of data in a table.<br>
@@ -34,21 +34,23 @@ However, unlike VPD, OLS provides the access mediation functions, data dictionar
     - It provides both APIs and a graphical user interface for defining and storing data classification labels and user label authorizations.
     - It integrates with Oracle Database Vault and Oracle Advanced Security Data Redaction, enabling security clearances to be use in both Database Vault command rules and Data Redaction policy definitions.
 
-- **Learn More**
-    - Tech Doc: [Oracle Label Security 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/olsag/introduction-to-oracle-label-security.html#GUID-C20C62AE-2A30-45F9-AEEA-52A0D3286FBA)
-    - Video: [Understanding Oracle Label Security](https://youtu.be/o4-XpUQWfaM) *(April 2020)*
-
-## Workshop Objectives
-In this lab, you will:
-- Set OLS in a CRM App to help tracking consent
-- Protect HR App data with OLS
-
-## Prerequisites
+### Prerequisites
 This lab assumes you have completed:
    - Lab: Generate SSH Keys
    - Lab: Prepare Setup
    - Lab: Environment Setup
    - Lab: Oracle Database Vault
+
+### Video Preview
+
+- Watch a preview of "*Understanding Oracle Label Security (April 2020)*" [](youtube:o4-XpUQWfaM)
+
+### Lab Timing (estimated)
+
+| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
+|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1                    | Simple CRM Application                             | 10 minutes  |                                                                                                                 |                   |
+| 2                    | Protect Glassfish Application | 20 minutes  |  |                   |
 
 ## **STEP 1**: Simple CRM Application
 
@@ -321,6 +323,9 @@ In case you decide to execute script by script, you can always review the log fi
     ![](./images/ols-023.PNG)
 
 You may proceed to the next lab.
+
+## Want to Learn More?
+Technical Documentation: [Oracle Label Security 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/olsag/introduction-to-oracle-label-security.html#GUID-C20C62AE-2A30-45F9-AEEA-52A0D3286FBA)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM

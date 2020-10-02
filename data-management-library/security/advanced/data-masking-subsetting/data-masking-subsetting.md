@@ -1,13 +1,13 @@
 # Oracle Data Masking and Subsetting (DMS)
 
-## About this Workshop
+## Introduction
 This workshop introduces the various features and functionality of Oracle Data Masking and Subsetting (DMS) pack for Enterprise Manager.<br>
 It gives the user an opportunity to learn how to configure those features in order to secure their sensitive data in a Non-Production environment.
 
-- Version tested in this lab: `Oracle Enterprise Manager 13.4`
-- Estimated Workshop Time: `55 minutes`
+- Version tested in this lab: *Oracle Enterprise Manager 13.4*
+- Estimated Workshop Time: *65 minutes*
 
-## About the Product
+### About the Product
 - **Overview**<br>
     Oracle Data Masking pack for Enterprise Manager, part of Oracle's comprehensive portfolio of database security solutions, helps organizations comply with data privacy and protection mandates such as Sarbanes-Oxley (SOX), Payment Card Industry (PCI) Data Security Standard (DSS), Health Insurance Portability and Accountability Act (HIPAA), EU General Data Protection Regulation (GDPR), and the upcoming California Consumer Privacy Act (CCPA), and numerous laws that restrict the use of actual customer data. With Oracle Data Masking, sensitive information such as credit card or social security numbers can be replaced with realistic values, allowing production data to be safely used for development, testing, or sharing with out-sourced or off-shore partners for other non-production purposes. Oracle Data Masking uses a library of templates and format rules, consistently transforming data in order to maintain referential integrity for applications.
 
@@ -36,29 +36,35 @@ It gives the user an opportunity to learn how to configure those features in ord
     - Preserve data integrity during masking and subsetting and offers many more unique features
     - Integrate with select Oracle testing, security, and integration products.
 
-- **Learn More**
-    - Tech Doc: [Oracle Data Masking & Subsetting Pack 12.2](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dmksb/intro.html#GUID-24B241AF-F77F-46ED-BEAE-3919BF1BBD80)
-    - Video:
-         - [Understanding Oracle Data Masking & Subsetting](https://youtu.be/3zi0Bs_bgEw) *(April 2019)*
-         - [Oracle Data Masking & Subsetting - Advanced Use Cases](https://youtu.be/06EzV-TM4f4) *(June 2019)*
-
-## Workshop Objectives
-
-In this lab, you will:
-- Create an Application Data Model (ADM)
-     - Import schema structure
-     - Drill into the Referential Relationships and see the primary key and foreign key relationships captured
-     - See how Referential Relationships not included in the Data Dictionary (typically those enforced in Application code) can be added manually
-- Identify Sensitive Data
-     - Use Pre-Defined Sensitive Column Types
-     - Create New Sensitive Column Types and Apply Them to Certain Columns
-- Mask Sensitive Data (on the `DEMO_HR_EMPLOYEES` and related tables, with the goal of protecting PII (Personally Identifiable Information) from outside developers who work on their HR Application)
-
-## Prerequisites
+### Prerequisites
 This lab assumes you have completed:
    - Lab: Generate SSH Keys
    - Lab: Prepare Setup
    - Lab: Environment Setup
+
+### Video Preview
+
+- Watch a preview of "*Understanding Oracle Data Masking & Subsetting (April 2019)*" [](youtube:3zi0Bs_bgEw)
+
+- Watch a preview of "*Oracle Data Masking & Subsetting - Advanced Use Cases (June 2019)*" [](youtube:06EzV-TM4f4)
+
+### Lab Timing (estimated)
+
+| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
+|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1                    | Import schema structure                             | 5 minutes  |                                                                                                                 |                   |
+| 2                    | Enhance the meta-model | 5 minutes  |  |                   |
+| 3                    | Use Pre-Defined Sensitive Column Types | 5 minutes  |  |                   |
+| 4                    | Create a new Sensitive Column Type | 5 minutes  |  |                   |
+| 5                    | Create a new Sensitive Column Type using Pre-Defined Templates | 5 minutes  |  |                   |
+| 6                    | Create a new Masking Format | 5 minutes  |  |                   |
+| 7                    | Manually Identify Sensitive Columns | 5 minutes  |  |                   |
+| 8                    | Create Data Masking Definitions | 5 minutes  |  |                   |
+| 9                    | Format Columns Using the Format Library and Masking Primitive | 10 minutes  |  |                   |
+| 10                    | Generate Data Masking Scripts | 5 minutes  |  |                   |
+| 11                    | Execute the Data Masking Script | 5 minutes  |  |                   |
+| 12                    | Compare the Pre-Masked Data vs. the Post-Masked Data | 5 minutes  |  |                   |
+
 
 ## **STEP 1**: Import schema structure
 
@@ -787,6 +793,9 @@ It will become **Masking Job Succeeded**
 8. **Now, your sensitive data has been masked!**
 
 You may now proceed to the next lab.
+
+## Want to Learn More?
+Technical Documentation: [Oracle Data Masking & Subsetting Pack 12.2](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dmksb/intro.html#GUID-24B241AF-F77F-46ED-BEAE-3919BF1BBD80)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM

@@ -1,13 +1,13 @@
 # Oracle Data Redaction
 
-## About this Workshop
+## Introduction
 This workshop introduces the various features and functionality of Data Redaction.<br>
 It gives the user an opportunity to learn how to configure those features in order to protect access to sensitive data by redacting them on-the-fly.
 
-- Version tested in this lab: `Oracle DB 19.8`
-- Estimated Workshop Time: `15 minutes`
+- Version tested in this lab: *Oracle DB 19.8*
+- Estimated Workshop Time: *15 minutes*
 
-## About the Product
+### About the Product
 - **Overview**<br>
     Hard-coded within the Oracle Database core product, this features is part of the **Advanced Security Option (ASO)**
 
@@ -40,19 +40,21 @@ It gives the user an opportunity to learn how to configure those features in ord
     - You can create the Data Redaction policies in one central location and easily manage them from there.
     - The Data Redaction policies enable you to create a wide variety of function conditions based on `SYS_CONTEXT` values, which can be used at runtime to decide when the Data Redaction policies will apply to the results of the application user's query.
 
-- **Learn More**
-    - Tech Doc: [Data Redaction 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/asoag/asopart2.html)
-    - Video: [Understanding Oracle Data Redaction](https://youtu.be/ssy6Hov-MAs) *(July 2020)*
-
-## Workshop Objectives
-
-In this lab, you will dynamically redact sensitive data preventing it from being displayed outside the application.
-
-## Prerequisites
+### Prerequisites
 This lab assumes you have completed:
    - Lab: Generate SSH Keys
    - Lab: Prepare Setup
    - Lab: Environment Setup
+
+### Video Preview
+
+- Watch a preview of "*Understanding Oracle Data Redaction (July 2020)*" [](youtube:ssy6Hov-MAs)
+
+### Lab Timing (estimated)
+
+| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
+|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1                    | Redact EMPLOYEESEARCH Data                             | 15 minutes  |                                                                                                                 |                   |
 
 ## **STEP 1**: Redact EMPLOYEESEARCH Data
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
@@ -124,6 +126,10 @@ This lab assumes you have completed:
    ![](./images/dr-007.png)
 
 You may now proceed to the next lab.
+
+
+## Want to Learn More?
+Technical Documentation: [Data Redaction 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/asoag/asopart2.html)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM

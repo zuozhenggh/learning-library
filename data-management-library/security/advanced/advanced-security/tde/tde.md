@@ -1,13 +1,13 @@
 # Oracle Transparent Data Encryption (TDE)
 
-## About this Workshop
+## Introduction
 This workshop introduces the various features and functionality of Transparent Data Encryption (TDE).<br>
 It gives the user an opportunity to learn how to configure those features in order to encrypt sensitive data.
 
-- Version tested in this lab: `Oracle DB 19.8`
-- Estimated Workshop Time: `40 minutes`
+- Version tested in this lab: *Oracle DB 19.8*
+- Estimated Workshop Time: *40 minutes*
 
-## About the Product
+### About the Product
 - **Overview**<br>
     Hard-coded within the Oracle Database core product, this features is part of the **Advanced Security Option (ASO)**
 
@@ -32,23 +32,31 @@ It gives the user an opportunity to learn how to configure those features in ord
     - You do not need to modify your applications to handle the encrypted data. The database manages the data encryption and decryption.
     - Oracle Database automates TDE master encryption key and keystore management operations. The user or application does not need to manage TDE master encryption keys.
 
-- **Learn More**
-    - Tech Doc: [Transparent Data Encryption (TDE) 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/asoag/asopart1.html)
-    - Video:
-         - [Understanding Oracle Transparent Data Encryption (TDE) - Part1](https://youtu.be/avNWykLpic4) *(January 2020)*
-         - [Understanding Oracle Transparent Data Encryption (TDE) - Part2](https://youtu.be/aUfwG5MIMNU) *(February 2020)*
-
-## Workshop Objectives
-
-In this lab, you will:
-- Create the Keystore and the Master Key
-- Encrypt an existing Tablespace and all new Tablespaces
-
-## Prerequisites
+### Prerequisites
 This lab assumes you have completed:
    - Lab: Generate SSH Keys
    - Lab: Prepare Setup
    - Lab: Environment Setup
+
+### Video Preview
+
+- Watch a preview of "*Understanding Oracle Transparent Data Encryption (TDE) - Part1 (January 2020)*" [](youtube:avNWykLpic4)
+
+- Watch a preview of "*Understanding Oracle Transparent Data Encryption (TDE) - Part2 (February 2020)*" [](youtube:aUfwG5MIMNU)
+
+### Lab Timing (estimated)
+
+| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
+|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1                    | Allow DB Restore                             | 5 minutes  |                                                                                                                 |                   |
+| 2                    | Create Keystore | 5 minutes  |  |                   |
+| 3                    | Create Master Key | 5 minutes  |  |                   |
+| 4                    | Create Auto-login Wallet | 5 minutes  |  |                   |
+| 5                    | Encrypt Existing Tablespace | 5 minutes  |  |                   |
+| 6                    | Encyrpt All New Tablespaces | 5 minutes  |  |                   |
+| 7                    | Rekey Master Key | 5 minutes  |  |                   |
+| 8                    | View Keystore Details | 5 minutes  |  |                   |
+| 9                    | Restore Before TDE (Optional) | 5 minutes  |  |                   |
 
 ## **STEP 1**: Allow DB Restore
 
@@ -386,6 +394,9 @@ This lab assumes you have completed:
 8. Now, your database is restored to the point in time prior to enabling TDE!
 
 You may now proceed to the next lab.
+
+## Want to Learn More?
+Technical Documentation: [Transparent Data Encryption (TDE) 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/asoag/asopart1.html)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM

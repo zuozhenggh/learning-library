@@ -1,13 +1,13 @@
 # Oracle Database Vault (DV)
 
-## About this Workshop
+## Introduction
 This workshop introduces the various features and functionality of Oracle Database Vault (DV).<br>
 It gives the user an opportunity to learn how to configure those features to prevent unauthorized privileged users from accessing sensitive data.
 
-- Version tested in this lab: `Oracle DB 19.8`
-- Estimated Workshop Time: `40 minutes`
+- Version tested in this lab: *Oracle DB 19.8*
+- Estimated Workshop Time: *30 minutes*
 
-## About the Product
+### About the Product
 - **Overview**<br>
 Oracle Database Vault provides controls to prevent unauthorized privileged users from accessing sensitive data and to prevent unauthorized database changes.<br>
 The Oracle Database Vault security controls protect application data from unauthorized access, and comply with privacy and regulatory requirements.
@@ -56,27 +56,30 @@ The Oracle Database Vault security controls protect application data from unauth
     - Addresses Database consolidation and cloud environments concerns to reduce cost and reduce exposure sensitive application data to those without a true need-to-know
     - Works in a Multitenant Environment increasing security for consolidation 
 
-- **Learn More**
-    - Tech Doc: [Oracle Database Vault 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/dvadm/introduction-to-oracle-database-vault.html#GUID-0C8AF1B2-6CE9-4408-BFB3-7B2C7F9E7284)
-    - Video:
-         - [Understanding Oracle Database Vault](https://youtu.be/oVidZw7yWIQ) *(March 2019)*
-         - [Oracle Database Vault - Use Cases (Part1)](https://youtu.be/aW9YQT5IRmA) *(October 2019)*
-         - [Oracle Database Vault - Use Cases (Part2)](https://youtu.be/hh-cX-ubCkY) *(November 2019)*
-
-## Workshop Objectives
-In this lab, you will:
-- Enable Database Vault feature from your DB
-- Create a simple Realm on EMPLOYEESEARCH_PROD Schema
-- Use the Simulation Mode
-- Use the Operations Control feature
-- Create a Trusted Application Path
-- Disable Database Vault
-
-## Prerequisites
+### Prerequisites
 This lab assumes you have completed:
    - Lab: Generate SSH Keys
    - Lab: Prepare Setup
    - Lab: Environment Setup
+
+### Video Preview
+
+- Watch a preview of "*Understanding Oracle Database Vault (March 2019)*" [](youtube:oVidZw7yWIQ)
+
+- Watch a preview of "*Oracle Database Vault - Use Cases (Part1) (October 2019)*" [](youtube:aW9YQT5IRmA)
+
+- Watch a preview of "*Oracle Database Vault - Use Cases (Part2) (November 2019)*" [](youtube:hh-cX-ubCkY)
+
+### Lab Timing (estimated)
+
+| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
+|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1                    | Enable Database Vault                             | 5 minutes  |                                                                                                                 |                   |
+| 2                    | Create a Simple Realm | 5 minutes  |  |                   |
+| 3                    | Create a Trusted Path / Multi-factor Authorization | 5 minutes  |  |                   |
+| 4                    | Simulation Mode | 5 minutes  |  |                   |
+| 5                    | Ops Control | 5 minutes  |  |                   |
+| 6                    | Disabling Database Vault (Optional) | 5 minutes  |  |                   |
 
 ## **STEP 1**: Enable Database Vault
 
@@ -474,6 +477,9 @@ This is an easy way for us to identify who is connecting and where they are conn
 5. Now, Database Vault is disabled in the container database as well as `PDB1`!
 
 You may proceed to the next lab.
+
+## Want to Learn More?
+Technical Documentation: [Oracle Database Vault 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/dvadm/introduction-to-oracle-database-vault.html#GUID-0C8AF1B2-6CE9-4408-BFB3-7B2C7F9E7284)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
