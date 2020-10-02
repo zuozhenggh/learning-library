@@ -95,6 +95,6 @@ At this point, you are ready to start learning!
 - Priscila Iruela, Database Business Development - EMEA Oracle Digital
 
 **Contributors**
-- Melanie Ashworth-March, Principal Sales Consultant - EMEA Oracle Solution Center
+- Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
 
 **Last Updated By/Date**
