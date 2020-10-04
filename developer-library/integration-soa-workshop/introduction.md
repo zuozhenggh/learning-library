@@ -45,7 +45,7 @@ When you're ready to proceed, please click the Contents menu on the right-hand.
 
 ## Learn More
 
-- SOA on   <a href= https://cloudmarketplace.oracle.com/marketplace/en_US/listing/74792101> Marketplace </a>
+- <a href= https://cloudmarketplace.oracle.com/marketplace/en_US/listing/74792101> SOA on Oracle Marketplace </a>
 -   <a href= https://www.oracle.com/middleware/technologies/soasuite.html> SOA suite </a>
 -   <a href= https://www.oracle.com/middleware/technologies/soasuite-learmore.html> Tutorials </a> 
 -  <a href= https://docs.oracle.com/middleware/12211/soasuite/develop/SOASE.pdf> SOA Developer </a> 
