@@ -5,13 +5,15 @@ With a mobile app launch in progress, this new validate-payment composite app mu
 
 In SOA 12c, SOA composites can use end-to-end JSON. This means that the REST service can receive the REST request and route it to the BPEL engine without translating it to XML. The BPEL component can use the JavaScript action, and also use JavaScript in conditional and iterative constructs, to work on JSON objects directly. The REST reference can receive the REST message from the BPEL engine and route it to an external REST endpoint without translation.
 
+Estimated lab time: 1 hour
+
 ## **STEP 1**:   REST-enabled the Service Bus proxy end-point
 
 In the Components swimlane, right-click the left wired connection of validatePaymentProcess, and select Expose as REST.
 
 ### Video Preview
 
-Watch on how to REST-enabled SOA composite, start at 3:25
+Watch this video on how to REST-enabled SOA composite, start at 3:25
 
 [](youtube:50i0b8ry-z8)
 
@@ -59,10 +61,10 @@ At the end of this module, your solution will look similar to the following proc
  <!-- [Click here to navigate to Module 4](4-add-new-channel-for-ordering.md) -->
 
 ## Acknowledgements
-* **Author** - <Daniel Tarudji, Solution Engineering>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <March 2021> -- optional
+* **Author** - Daniel Tarudji, Solution Engineering - N.A Technology
+* **Contributors** -  
+* **Last Updated By/Date** - 
+* **Workshop (or Lab) Expiry Date** - March 2021
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

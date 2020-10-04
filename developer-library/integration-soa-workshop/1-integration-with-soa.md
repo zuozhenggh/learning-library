@@ -1,9 +1,9 @@
-# Introduction to Oracle SOA suite
+# Oracle SOA suite
 
 ## What is SOA?
-SOA, Service Orientated Architecture is is a style of an enterprise IT design where services are provided to the other components by application components, through a communication protocol over a network. A SOA service is a discrete unit of functionality that can be accessed remotely and acted upon and updated independently, such as retrieving a credit card statement online. SOA is also intended to be independent of vendors, products and technologies
+SOA, Service Orientated Architecture. It is a style of an enterprise IT design where services are provided to the other components by application components, through a communication protocol over a network. A SOA service is a discrete unit of functionality that can be accessed remotely and acted upon and updated independently, such as retrieving a credit card statement online. These services are representation of multiple applications that each delivers specific business functions. SOA is also an architectural approach to integration and orchestrating these service. Together, the services perform end to end business flow task. SOA is also intended to be independent of vendors, products and technologies
 
-## Oracle SOA suite
+### About Oracle SOA suite
 SOA suite is is a comprehensive, standards-based software suite to build, deploy and manage integration following the concepts of service-oriented architecture(SOA). The components of the suite benefit from consistent tooling, a single deployment and management model, end-to-end security and unified metadata management you can skip this module and go straight to Module 2 by clicking the navigation menu icon, in the upper-left corner of the header.
 
 Oracle SOA Suite provides easy-to-use, reusable, and unified application development tooling and life cycle management support to further reduce development and maintenance costs and complexity. Businesses can improve efficiency and agility through rules-driven, process connectivity and automation with Oracle SOA Suite.
@@ -13,6 +13,15 @@ SOA Suite functional architecture
 >  ![](images/1/soa-architecture.png)
 
 Critical business services, such as customer, financial, ordering information, and others that were previously accessible only in packaged application user interfaces can now be rapidly repurpose for digital-enabled channel such as: smart phone and tablets.
+
+Estimated lab time: 15 minutes
+
+### Objectives
+
+- Introducing SOA development tool, JDeveloper 12c
+- Build SOA composite application using JDeveloper
+- Design service orchestration using the composite app
+- Deploy the composite application to the embedded Weblogic in JDeveloper
   
 <!-- ## How to Run the Labs
 To run this lab as per instruction provided during live session led by an instructor. 
@@ -84,10 +93,10 @@ For details about Oracle SOA
 At this point, you're ready to start building amazing enterprise-grade orchestration and integration, rapidly. You may proceed to the lab: **Develop SOA composite for validating payment** by clicking the navigation menu icon, in the upper-right corner of the header.
 
 ## Acknowledgements
-* **Author** - <Daniel Tarudji, Solution Engineering - N. America>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
+* **Author** - Daniel Tarudji, Solution Engineering - N. America
+* **Contributors** -  
+* **Last Updated By/Date** - 
+* **Workshop (or Lab) Expiry Date** - March 2021
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

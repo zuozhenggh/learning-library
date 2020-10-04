@@ -10,6 +10,8 @@ Service Bus will protect consumers of the validatePayment composite from routine
 
 For next step, You will start by first creating a Business Service to register the composite URI (the composite end-point). You will then add a simple Pipeline and Proxy. Pipelines contain actions performed on the Service Bus, typically reporting, data transformation and validation, before invoking the backend service. Consumers of validatePayment service will call the end-point API via the Proxy rather than connecting directly to the composite end-point, allowing more agility and flexibility in managing change.
 
+Estimated lab time: 1 hour
+
 ## Development Steps
 
 ## **STEP 1**:  Create a service bus application and new project **Validate Payment**. 
@@ -245,10 +247,10 @@ Please follow the construction details from <ins>**page 54 to 77**</ins>, in the
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
 ## Acknowledgements
-* **Author** - <Name: Daniel Tarudji, Solution Engineering>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <March 2021> -- optional
+* **Author** - Daniel Tarudji, Solution Engineering - N.A Technology
+* **Contributors** -  
+* **Last Updated By/Date** - 
+* **Workshop (or Lab) Expiry Date** - March 2021
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

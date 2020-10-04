@@ -1,4 +1,4 @@
-# Build composite app for Validating payment
+# Develop SOA composite app for validating payment
 
 ## Introduction
 In this module, you will build your first Oracle SOA Suite 12c composite to validate a credit card payment.
@@ -6,7 +6,7 @@ In this composite, credit card payments will be validated and the payment status
 
 Avitek, a fictitious company, has embarked upon a modernization project to align with business goals of improving customer satisfaction. A key area of improvement will be streamlining the order process to provide better visibility tracking orders through credit approvals, fulfillment, shipment and delivery.
 
-One of **the issue in the current application is that credit card payments are often denied for various, sometimes minor reasons, such as expiration date, etc. Since the process to correct these issues varies across Avitek’s order entry systems, on-premise or new adopted Cloud SaaS application there is no consistent follow-up and resolution with customers. Orders may end up lost or delayed in the system leading to customer dissatisfaction**.
+The challenge in the current application is that credit card payments are often denied for various, sometimes minor reasons, such as expiration date, etc. Since the process to correct these issues varies across Avitek’s order entry systems, on-premise or new adopted Cloud SaaS application there is no consistent follow-up and resolution with customers. Orders may end up lost or delayed in the system leading to customer dissatisfaction.
 
 The business has indicated a new credit card fraud detection system must be put in place before year’s end to thwart credit card abuses. A consistent fraud mechanism will require the credit validation process to be consolidated across all order entry systems.
 
@@ -14,7 +14,9 @@ The validate payment solution will look as the following from an architectural p
 
 ![](images/2/Paymentvalidation.png)
 
-## **Construct Payment Validation process flow**
+Estimated lab time: 1.5 hour
+
+### **Construct Payment Validation process flow**
 
 The validation process are:
 + The payment information is retrieved from the database, using the credit card number quoted in the order message as the key. If there is no data available with this credit card number, payment is denied.
@@ -22,6 +24,8 @@ The validation process are:
 + The last check compares if the total order amount is less than the daily limit on the credit card in the database.
 + When all tests are successful, the payment is authorized. Otherwise it’s denied.
 + The implementation of this service uses a BPEL process to retrieve the credit card data from the database and perform the tests outlined above. The service will return either Authorized or Denied as the payment status.
+
+
 
 **Validation Payment, development Steps:**
 
@@ -378,10 +382,10 @@ You may proceed to the next lab.
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
 ## Acknowledgements
-* **Author** - <Daniel Tarudji, Solution Engineering - N. America>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <March 2021> -- optional
+* **Author** - Daniel Tarudji, Solution Engineering - N.A Technology
+* **Contributors** -  
+* **Last Updated By/Date** - 
+* **Workshop (or Lab) Expiry Date** - March 2021
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
