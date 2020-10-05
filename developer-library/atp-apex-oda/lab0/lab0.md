@@ -1,4 +1,4 @@
-# Get Started: Sign Up for your Oracle Cloud Free Tier
+# Prerequisites: Sign Up for your Oracle Cloud Free Tier
 
 ![Oracle Cloud Free Tier Banner](./images/oracle_cloud_free_tier0.png)
 
@@ -6,7 +6,7 @@
 
 During this short workshop, we will **Create**, **Sign In** and **Walk Through** the steps of setting up an **Oracle Cloud Free Tier** account.
 
-Estimated workshop Time 15 minutes.
+Estimated pre-requisites workshop Time 15 minutes.
 
 ## Create Your Free Trial Account
 
@@ -96,13 +96,9 @@ Congratulations, you are ready for the next workshop!
 
 ## **Acknowledgements**
 
-**Author**
-- Victor Martin, Principal Cloud Engineer - EMEA Oracle Digital 
-- Priscila Iruela, Database Business Development - EMEA Oracle Digital
+- **Author** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Priscila Iruela - Database Business Development - EMEA Oracle Digital
+- **Contributors** - Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center
+- **Last Updated By/Date** - 
 
-**Contributors**
-- Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
-
-**Last Updated By/Date**
-
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and workshop in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

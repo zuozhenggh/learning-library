@@ -1,12 +1,12 @@
 {
   "tutorials": [
     {
-      "title": "Introduction",
-      "filename": "intro/intro.md"
+      "title": "Prerequisites - Signing Up for your Oracle Cloud Free Tier Account",
+      "filename": "lab0/lab0.md"
     },
     {
-      "title": "Get Started: Sign Up for your Oracle Cloud Free Tier",
-      "filename": "lab0/lab0.md"
+      "title": "Introduction",
+      "filename": "intro/intro.md"
     },
     {
       "title": "Lab 1: Create Autonomous Database",
