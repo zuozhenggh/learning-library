@@ -1,8 +1,8 @@
 /*
 Author: Ashwin Agarwal
 Contributors: Tom McGinn, Suresh Mohan
-Last updated: 24-Sep-2020
-Version: 20.2.21
+Last updated: 5-Oct-2020
+Version: 20.2.22
 */
 "use strict";
 var showdown = "https://oracle.github.io/learning-library/common/redwood-hol/js/showdown.min.js";
@@ -55,7 +55,7 @@ let main = function() {
                     });
                 }
                 manifest_global = manifestFileContent = manifestFile; //reading the manifest file and storing content in manifestFileContent variable
-            }),
+            })
         ).done(function() {
             init();
             let selectedTutorial = setupTutorialNav(manifestFileContent); //populate side navigation based on content in the manifestFile

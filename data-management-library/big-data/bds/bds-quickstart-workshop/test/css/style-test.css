@@ -1,8 +1,8 @@
 /*
 Author: Ashwin Agarwal
 Contributors: Tom McGinn, Suresh Mohan, Jon Russell
-Last updated: 28-Sep-2020
-Version: 20.2.22
+Last updated: 5-Oct-2020
+Version: 20.2.23
 */
 
 
@@ -833,7 +833,7 @@ blockquote {
     margin-bottom: 2px;
 }
 
-toc li {
+.toc li {
     font-size: 14px;
 }
 
