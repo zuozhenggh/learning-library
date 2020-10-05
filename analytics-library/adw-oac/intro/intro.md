@@ -23,10 +23,6 @@ To run the workshop, you will need an Oracle Free Tier Account, with a provision
 
 Estimated workshop Time 2 hours.
 
-### Pre-requisites
-
-There are no pre-requisite steps for this workshop. All necesary steps are documented in the workshop. 
-
 At this point, you are ready to start learning!
 
 ## **Acknowledgements**

@@ -1,4 +1,4 @@
-# Get Started: Signing Up for your Oracle Cloud Free Tier Account
+# Prerequisites: Signing Up for your Oracle Cloud Free Tier Account
 
 ## Introduction
 
