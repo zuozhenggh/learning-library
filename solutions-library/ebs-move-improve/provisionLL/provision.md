@@ -13,7 +13,7 @@ Estimated Lab Time: 45 minutes
 ### Prerequisites
 * Cloud Manager Instance provisioned
 * Cloud Manager Admin credentials
-* Cloud Manager Application variables in ``key-data.txt`` file. This is found in the .zip file you downloaded in the Introduction. If you have not downloaded this, user this link:
+* Cloud Manager Application variables in ``key-data.txt`` file. This is found in the .zip file you were provided to begin the lab.
 
 ## **Step 1:** Log in to Oracle E-Business Suite Cloud Manager
 
