@@ -16,7 +16,7 @@ This lab assumes you have completed the following labs:
 - Lab: Generate SSH Key 
 - Lab: Setup Compute Instance  
 
-## Step 1: Starting Database and OAS services
+## Step 1: Starting Database And OAS Services
 
 1. Login to putty using the public ip obtained earlier and switch user to oracle.
 `````
@@ -71,7 +71,7 @@ The command shows all the service names and their status.
 
 Check for the success status as shown above, before login to OAS screen.
 
-## Step 2: Login to Oracle Analytics Server
+## Step 2: Login To Oracle Analytics Server
 
 1. Open web browser (preferabily Chrome) and access the OAS Data Visualization service by the below URL structure.  
 
@@ -89,7 +89,7 @@ http://Your-Machine-IP:9502/dv/ui
 
       Password 	: Oracle_4U
 
-## Step 3: Create a connection to database
+## Step 3: Create A Connection To Database
 
 1. From Home screen, click on **Create** button and select **Connection**.
 

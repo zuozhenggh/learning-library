@@ -51,9 +51,7 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
 | FINANCIALS\_XML\_FRANCE\_GERMANY\_VIEW | View | Relational | this view has been created on FINANCIALS\_XML\_FRANCE  and FINANCIALS\_XML\_GERMANY table to view data in relational format  |
 
 
-  
-    
-## Step 1: Create data set ##
+## Step 1: Create Data Set ##
   
   In this step, we will create individual data sets of different data types: json, xml and relational.
 
@@ -83,7 +81,7 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
     - **FINANCIALS\_XML\_FRANCE\_GERMANY\_VIEW**
 
 
-## Step 2: Merge data sets  using Data Flow ##
+## Step 2: Merge Data Sets Using Data Flow ##
    **Data Flow :** Data flows enable you to organize and integrate your data to produce a curated data set that your users can analyze.  
    To build a data flow, you add steps. Each step performs a specific function, for example, add data, join tables, merge columns, transform data, save your data. Use the data flow editor to add and configure your steps. Each step is validated when you add or change it. When you"ve configured your data flow, you execute it to produce a data set.
 
@@ -340,7 +338,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     ![](./images/oascdb1.23.1.png " ")
 
 
-## Step 5: Data Action for drill down to detail report 
+## Step 5: Data Action For Drill Down To Detail Report 
 
 1.   Select (+) symbol on the bottom to add another canvas(refer to Step4-point 11), in this canvas we will build the tabular report.  
     select all the required columns (as shown below) and pick table as visualization.
@@ -381,7 +379,7 @@ Filters are used to make canvas interactable for the users. Users can view desir
 
 With this lab, you have learned OAS self-service analytics with capabilities including data loading, data preparation, data mashups, designing canvas, different types of visualization graphs in simple easy to use interface.
 
-## Want to learn more
+## Want To Learn More
    - [Oracle Analytics Server - Data Visualization](https://docs.oracle.com/en/middleware/bi/analytics-server/visualize-data.html)  
 
 

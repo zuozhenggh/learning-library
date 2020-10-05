@@ -33,7 +33,7 @@ The below pre-loaded data object is available in Converged Database.
 | FINANCIALS\_REL | Table | Relational  | Data used Explain and Forecast features. |
 
 
-## Step 1: Create a data set from database
+## Step 1: Create A Data Set From Database
 
 1. In the home screen, click the humberger to select **Data** and then **Connections** tab. Select the  created connection and browse schema **OASLABS** as shown below.
 ![](./images/aa4.png " ")
@@ -45,7 +45,7 @@ The below pre-loaded data object is available in Converged Database.
 3. Now in Data tab, you can see the added table as a data set.
 ![](./images/aa7.png " ")
 
-## Step 2: Project creation from data set
+## Step 2: Project Creation From Data Set
 
 In the **Data** tab, click on the added data set.  This will open screen for project creation.
 ![](./images/aa7.png " ")
@@ -100,7 +100,7 @@ Let us use forecast feature on the sample financial data.
 
 Great! Now, you have completed augmented analytics lab and hope you have learnt to use Explain and Forecast features of the tool to generate and present insights.
 
-## Want to learn more
+## Want To Learn More
 
    - [What Is Augmented Analytics?](https://blogs.oracle.com/analytics/what-is-augmented-analytics-v2)
 

@@ -157,7 +157,7 @@ This way we can see how many employees are likely to leave by Department and Job
 
 It is vital for a HR Department to identify the factors that keep employees and those which prompt them to leave, this way we can provide related insights as to how many employees are likely to quit and the probable reason behind it , so that Organizations could do more to prevent the loss of valuable resources to the company.
 
-## Want to learn more
+## Want To Learn More
 
   - [A Blog on Forecast](https://blogs.oracle.com/analytics/is-your-forecasting-like-running-with-scissors-feature-friday)
 
