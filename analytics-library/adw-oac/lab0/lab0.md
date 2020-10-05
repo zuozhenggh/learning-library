@@ -6,7 +6,7 @@
 
 During this short workshop, we will **Create**, **Sign In** and **Walk Through** the steps of setting up an **Oracle Cloud Free Tier** account.
 
-Estimated workshop Time 15 minutes.
+Estimated pre-requisites workshop Time 15 minutes.
 
 ## Create Your Free Trial Account
 
