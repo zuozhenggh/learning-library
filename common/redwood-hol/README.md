@@ -23,7 +23,7 @@ The current index.html is located in the `sample-livelabs-templates` folder.
 
 To transition from the existing template look-and-feel to the new one, the following changes are required:
 
-1. Modify your `manifest.json` file:
+1. Modify your `manifest.json` file and add the title of your workshop:
 
     ```
     {
