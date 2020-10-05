@@ -1,11 +1,10 @@
 # Terraform Environment
 
-## Overview
-
-⏱️ _20-minutes_
+## Introduction
 
 In this lab, you will create retrieve the code for the Terraform infrastructure and learn how to configure it to use it with Oracle Cloud Infrastructure.
 
+Estimated Lab Time: 20 minutes
  
 ## Getting the code
 
@@ -55,15 +54,15 @@ You need to edit the new created `terraform.tfvars` file with required informati
 
 We start with the `tenancy_ocid`:
 
-![](images/gui/01.png)  
+![](.././images/gui/01.png)  
 
-![](images/gui/02.png)
+![](.././images/gui/02.png)
 
 ## user_ocid
 
 We also need to provide the `user_ocid`:
 
-![](images/gui/03.png)
+![](.././images/gui/03.png)
 
 ## fingerprint and API Key
 
@@ -81,7 +80,7 @@ private_key_path = "../.oci/oci_api_key.pem"
 
 The fingerprint is shown on OCI's dashboard:
 
-![](images/gui/12.png)
+![](.././images/gui/12.png)
 
 ## region
 
@@ -103,9 +102,9 @@ region = "eu-frankfurt-1"
 
 You certainly not have any sandbox created, but in case you do, you can go down the compartment tree and pick to one you need. Today you only need to choose one:
 
-![](images/gui/05.png)
+![](.././images/gui/05.png)
 
-![](images/gui/06.png)
+![](.././images/gui/06.png)
 
 ## SSH Keys
 
@@ -135,6 +134,14 @@ Finally, you need to specify the Compute Instance's Shape. Of course it depends 
 
 The different shapes can be found on OCI Dashboard:
 
-![](images/gui/09.png)
+![](.././images/gui/09.png)
 
 You can get more info [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm).
+
+## Acknowledgements
+
+- **Author** - [Frédéric Descamps](https://lefred.be)
+- **Last Updated By/Date** - Frédéric Descamps, September 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 

@@ -1,13 +1,12 @@
 # Prepare your Oracle Cloud environment
 
-## Overview
-
-⏱️ _15-minutes_
+## Introduction
 
 In this lab, you will prepare your local machine and your Oracle Cloud API keys to run the rest of the Hands-on Lab.
 
+Estimated Lab Time: 15 minutes
  
-## Create your API Keys
+## **Step 1:** Create your API Keys
 
 In this step, you will create your Oracle Cloud API keys. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two) for more details on API signing keys.
 
@@ -21,7 +20,7 @@ $ openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.
 For Windows users, please use [Git for Windows](https://github.com/git-for-windows/git/releases/latest) that allows you to use bash and other GNU tools.
 
 
-## Create your SSH Keys
+## **Step 2:** Create your SSH Keys
 
 In this step, you will generate your SSH Keys to allow secure connections from your machine to the servers we will create on OCI.
 
@@ -36,18 +35,18 @@ Your public key has been saved in id_rsa_oci.pub
 ```
 
 
-## Deploying the API Public Key
+## **Step 3:** Deploying the API Public Key
 
 
 The API Key you created earlier needs to be linked to your OCI account: 
 
-![](images/gui/10.png)
+![](.././images/gui/10.png)
 
-![](images/gui/11.png)
+![](.././images/gui/11.png)
 
 You need to upload the public key: `oci_api_key_public.pem`
 
-## Installing Terraform
+## **Step 4:** Installing Terraform
 
 Terraform is proposed as a unique binary that you can download [here](https://www.terraform.io/downloads.html).
 
@@ -66,8 +65,14 @@ Terraform v0.13.2
 
 ### For Windows users
 
-![](images/windows/win04.png)
+![](.././images/windows/win04.png)
 
 Congratulations, everything is now correctly set-up! You can proceed to the next lab…
 
+## Acknowledgements
 
+- **Author** - [Frédéric Descamps](https://lefred.be)
+- **Last Updated By/Date** - Frédéric Descamps, September 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
