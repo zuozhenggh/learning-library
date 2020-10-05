@@ -381,6 +381,9 @@ Filters are used to make canvas interactable for the users. Users can view desir
 
 With this lab, you have learned OAS self-service analytics with capabilities including data loading, data preparation, data mashups, designing canvas, different types of visualization graphs in simple easy to use interface.
 
+## Want to learn more
+   - [Oracle Analytics Server - Data Visualization](https://docs.oracle.com/en/middleware/bi/analytics-server/visualize-data.html)  
+
 
 ## Acknowledgements
 
