@@ -25,104 +25,104 @@ Detect and protect from system failures and user errors automatically and provid
 
 Estimated workshop Time 15 minutes.
 
-## Create a new Autonomous Data Warehouse Datatabase
+## **Step 1**: Create a new Autonomous Data Warehouse Datatabase
 
-Click on the hamburger **MENU** link at the upper left corner of the page.
+1. Click on the hamburger **MENU** link at the upper left corner of the page.
 
-This will produce a drop-down menu, where you should select **Autonomous Data Warehouse.**
+    This will produce a drop-down menu, where you should select **Autonomous Data Warehouse.**
 
-![Oracle Cloud Web Console](./images/lab100_1.png)
+    ![Oracle Cloud Web Console](./images/lab100_1.png)
 
-This will take you to the management console page.
+    This will take you to the management console page.
 
-[You can learn more about compartments in this link](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm).
+    [You can learn more about compartments in this link](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm).
 
-To create a new instance, click the blue **Create Autonomous Database** button.
+2. To create a new instance, click the blue **Create Autonomous Database** button.
 
-![Create ADB](./images/lab100_2.png)
+    ![Create ADB](./images/lab100_2.png)
 
-Enter the required information and click the **Create Autonomous Database** button at the bottom of the form. For the purposes of this workshop, use the information below:
+    Enter the required information and click the **Create Autonomous Database** button at the bottom of the form. For the purposes of this workshop, use the information below:
 
->**Compartment:** Verify that a compartment ( &lt;tenancy_name&gt; ) is selected.
+    >**Compartment:** Verify that a compartment ( &lt;tenancy_name&gt; ) is selected.
 
-By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
+    By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
 
-> **Display Name:** Enter the display name for your ADW Instance. For this demo purpose, I have called my database **ADW_OAC**.
->
-> **Database Name:** Enter any database name you choose that fits the requirements for ADW. The database name must consist of letters and numbers only, starting with a letter. The maximum length is 14 characters. You can leave the name provided. That field is not a mandatory one.
->
-> **Workload Type:** Autonomous Data Warehouse
->
-> **Deployment Type:** Shared Infrastructure
->
-> **Always Free:** On
+    > **Display Name:** Enter the display name for your ADW Instance. For this demo purpose, I have called my database **ADW_OAC**.
+    >
+    > **Database Name:** Enter any database name you choose that fits the requirements for ADW. The database name must consist of letters and numbers only, starting with a letter. The maximum length is 14 characters. You can leave the name provided. That field is not a mandatory one.
+    >
+    > **Workload Type:** Autonomous Data Warehouse  
+    >
+    > **Deployment Type:** Shared Infrastructure
+    >
+    > **Always Free:** On
 
-You can select Always Free configuration to start enjoying your Free Autonomous Database. You will have see the Always Free logo next to the name of your database:
+    You can select Always Free configuration to start enjoying your Free Autonomous Database. You will have see the Always Free logo next to the name of your database:
 
-![Always Free Logo](./images/always_free_logo.png)
+    ![Always Free Logo](./images/always_free_logo.png)
 
-[We have selected 'Always Free Tier On'. To learn more about this option check the following link](https://www.oracle.com/uk/cloud/free/#always-free).
+    [We have selected 'Always Free Tier On'. To learn more about this option check the following link](https://www.oracle.com/uk/cloud/free/#always-free).
 
-![ADB Creation Details](./images/lab100_3.png)
+    ![ADB Creation Details](./images/lab100_3.png)
 
-> **Choose Database version:** 19c
->
-> **CPU Count:** 1
->
-> **Storage Capacity (TB):** 0.02
->
-> **CPU Count and Storage Capacity (TB)** are defined by default for the Always Free Tier.
->
-> **Auto scaling:** Off
+    > **Choose Database version:** 19c
+    >
+    > **CPU Count:** 1
+    >
+    > **Storage Capacity (TB):** 0.02
+    >
+    > **CPU Count and Storage Capacity (TB)** are defined by default for the Always Free Tier.
+    >
+    > **Auto scaling:** Off
 
-![ADB Creation Storage](./images/lab100_4.png)
+    ![ADB Creation Storage](./images/lab100_4.png)
 
-Under **Create administration credentials** section:
+3. Under **Create administration credentials** section:
 
-> **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW. A suggested password for this lab is ADWwelcome-1234.
->
-> ***Reminder:** Note your password in a safe location as this cannot be easily reset.*
+    > **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW. A suggested password for this lab is ADWwelcome-1234.
+    >
+    > ***Reminder:** Note your password in a safe location as this cannot be easily reset.*
 
-Under **Choose network access** section:
+    Under **Choose network access** section:
 
-> Select **'Allow secure access from everywhere'**: *On*
->
-> Select **Configure access control rules:** *Off*
+    > Select **'Allow secure access from everywhere'**: *On*
+    >
+    > Select **Configure access control rules:** *Off*
 
-![ADB Creation Password](./images/lab100_5.png)
+    ![ADB Creation Password](./images/lab100_5.png)
 
-Under **Choose a license type** section, choose **License Type: Licence Included**.
+4. Under **Choose a license type** section, choose **License Type: Licence Included**.
 
-When you have completed the required fields, scroll down and click on the blue **Create Autonomous Database** button at the bottom of the form:
+    When you have completed the required fields, scroll down and click on the blue **Create Autonomous Database** button at the bottom of the form:
 
-![ADB Creation](./images/lab100_6.png)
+    ![ADB Creation](./images/lab100_6.png)
 
-The Autonomous Database **Details** page will show information about your new instance. You should notice the various menu buttons that help you manage your new instance -- because the instance is currently being provisioned all the management buttons are greyed out.
+5. The Autonomous Database **Details** page will show information about your new instance. You should notice the various menu buttons that help you manage your new instance -- because the instance is currently being provisioned all the management buttons are greyed out.
 
-![ADB Creation Provisioning](./images/lab100_7.png)
+    ![ADB Creation Provisioning](./images/lab100_7.png)
 
-A summary of your instance status is shown in the large box on the left. In this example, the colour is amber and the status is **Provisioning.**
+6. A summary of your instance status is shown in the large box on the left. In this example, the colour is amber and the status is **Provisioning.**
 
-![ADB Creation Provisioning Amber](./images/lab100_8.png)
+    ![ADB Creation Provisioning Amber](./images/lab100_8.png)
 
-After a short while, the status will change to **Available** and the "ADW" box will change colour to green:
+7. After a short while, the status will change to **Available** and the "ADW" box will change colour to green:
 
-![ADB Creation Provisioning Green](./images/lab100_9.png)
+    ![ADB Creation Provisioning Green](./images/lab100_9.png)
 
-Once the Lifecycle Status is **Available**, additional summary information about your instance is populated, including workload type and other details.
+8. Once the Lifecycle Status is **Available**, additional summary information about your instance is populated, including workload type and other details.
 
-The provisioning process should take **under 5 minutes**.
+    The provisioning process should take **under 5 minutes**.
 
-After having the Autonomous Database instance **created** and **available**, you can get a message window asking you to upgrade from 18c to 19c if you have selected 18c as a database version during the provisioning. You can **upgrade** the database release if you wish after the hands-on session, otherwise the upgrade process can take a **few minutes** and you can miss a few exercises during the session.
+9. After having the Autonomous Database instance **created** and **available**, you can get a message window asking you to upgrade from 18c to 19c if you have selected 18c as a database version during the provisioning. You can **upgrade** the database release if you wish after the hands-on session, otherwise the upgrade process can take a **few minutes** and you can miss a few exercises during the session.
 
-This page is known as the **Autonomous Database Details Page**. It provides you with status information about your database, and its configuration. Get **familiar** with the buttons and tabs on this page.
+    This page is known as the **Autonomous Database Details Page**. It provides you with status information about your database, and its configuration. Get **familiar** with the buttons and tabs on this page.
 
 
-![ADB Creation Details](./images/lab100_adw_ready.png)
+    ![ADB Creation Details](./images/lab100_adw_ready.png)
 
-Remember: You will have visible the Always Free logo next to the name of your database:
+    Remember: You will have visible the Always Free logo next to the name of your database:
 
-![Always Free Logo](./images/always_free_logo.png)
+    ![Always Free Logo](./images/always_free_logo.png)
 
 ## It works
 
@@ -132,15 +132,9 @@ Congratulations, you are ready for the next workshop!
 
 ## **Acknowledgements**
 
-**Author**
-- Priscila Iruela, Database Business Development - EMEA Oracle Digital
-- Juan Antonio Martin Pedro, Analytics Business Development - Oracle EMEA
+- **Author** - Priscila Iruela - Database Business Development - EMEA Oracle Digital, Juan Antonio Martin Pedro - Analytics Business Development - Oracle EMEA
+- **Contributors** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center, Andrea Zengin - Autonomous Database Business Development Director - Oracle EMEA
+- **Last Updated By/Date** -
 
-**Contributors**
-- Victor Martin, Principal Cloud Engineer - EMEA Oracle Digital
-- Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
-- Andrea Zengin, Autonomous Database Business Development Director - Oracle EMEA
-
-**Last Updated By/Date**
-
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and workshop in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -12,78 +12,77 @@ Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
 
 Estimated workshop Time 15 minutes.
 
-## Create an Oracle Analytics Cloud (OAC) Instance
+## **Step 1**: Create an Oracle Analytics Cloud (OAC) Instance
 
 Return to the Oracle Cloud Infrastructure Console accessing from **Oracle Home Page** (oracle.com) and sign in into your cloud account.
 Click in **View Account** and **Sign in to Cloud**.
 
 ![Oracle Console SignIn](./images/lab200_1.png)
 
-Click on the menu icon on the left. Verify that you are signed in as a **Single Sign On** (Federated user) user by selecting the **Profile** icon
+1. Click on the menu icon on the left. Verify that you are signed in as a **Single Sign On** (Federated user) user by selecting the **Profile** icon
 in the top right hand side of your screen. If your username is shown as:
 
-> oracleidentitycloudservice/&lt;your username&gt;
->
-Then you are **connected** as a **Single Sign On** user.
+    > oracleidentitycloudservice/&lt;your username&gt;
+    >
+    Then you are **connected** as a **Single Sign On** user.
 
-![Federated User](./images/lab200_2.png)
+    ![Federated User](./images/lab200_2.png)
 
-If your username is shown as:
+    If your username is shown as:
 
-> &lt;your username&gt;
->
-Then you are **signed in** as an **Oracle Cloud Infrastructure** user.
+    > &lt;your username&gt;
+    >
+    Then you are **signed in** as an **Oracle Cloud Infrastructure** user.
 
-![OCI User](./images/lab200_3.png)
+    ![OCI User](./images/lab200_3.png)
 
-If your user does not contain the identity provider (**oracleidentitycloudprovider**), please logout and select to authenticate
-using **Single Sign On**.
+    If your user does not contain the identity provider (**oracleidentitycloudprovider**), please logout and select to authenticate
+    using **Single Sign On**.
 
-![Oracle Console SignIn](./images/lab200_4.png)
+    ![Oracle Console SignIn](./images/lab200_4.png)
 
-To be capable of using **Oracle Analytics Cloud** we need to be Sign-On as a **Single Sign-On** (SSO) user.
+    To be capable of using **Oracle Analytics Cloud** we need to be Sign-On as a **Single Sign-On** (SSO) user.
 
-[More information about federated users](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/usingscim.htm).
+    [More information about federated users](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/usingscim.htm).
 
-Return to the *Home Console Page* and navigate to **Analytics** under **Solutions and Platform** section and then **Analytics Cloud**.
+2. Return to the *Home Console Page* and navigate to **Analytics** under **Solutions and Platform** section and then **Analytics Cloud**.
 
-![Oracle Analytics Console](./images/lab200_5.png)
+    ![Oracle Analytics Console](./images/lab200_5.png)
 
-***Note**: You must be connected as a **Single Sign On** (**Federated** user) user to a tenancy, which has available cloud credits to see this menu
-item. Local OCI users are not able to do this.*
+    ***Note**: You must be connected as a **Single Sign On** (**Federated** user) user to a tenancy, which has available cloud credits to see this menu item. Local OCI users are not able to do this.*
 
-Select **Create Instance**.
+3. Select **Create Instance**.
 
-Complete the form using the following information:
+    Complete the form using the following information:
 
-> **Compartment**: Select a valid compartment in your tenancy.
->
->**Instance Name**: WORKSHOPADWOAC
->
->**Description**: &lt;optional&gt;
->
->**Feature Set**: Enterprise Analytics (important)
->
->**Capacity**: 1 - Non Production
->
-> **License Type**: "Subscribe to a new Analytics Cloud software > license and the Analytics Cloud." (You will use this service as part
-> of the free Oracle Cloud trial that you requested for this workshop).
+    > **Compartment**: Select a valid compartment in your tenancy.
+    >
+    >**Instance Name**: WORKSHOPADWOAC
+    >
+    >**Description**: &lt;optional&gt;
+    >
+    >**Feature Set**: Enterprise Analytics (important)
+    >
+    >**Capacity**: 1 - Non Production
+    >
+    > **License Type**: "Subscribe to a new Analytics Cloud software > license and the Analytics Cloud." (You will use this service as part
+    > of the free Oracle Cloud trial that you requested for this workshop).
 
-Select **Create**.
+4. Select **Create**.
 
-![OAC Instance Creation](./images/lab200_6.png)
+    ![OAC Instance Creation](./images/lab200_6.png)
 
-On the **Confirmation** screen, select **Create**.
+5. On the **Confirmation** screen, select **Create**.
 
-The Analytics instance page will be displayed with a status of ***CREATING***.
+    The Analytics instance page will be displayed with a status of ***CREATING***.
 
-![OAC Instance Creating](./images/lab200_7.png)
+    ![OAC Instance Creating](./images/lab200_7.png)
 
-***Reminder***: Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
+    ***Reminder***: Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
 
-The Analytics instance page will be displayed with a status of ***ACTIVE***.
+6. The Analytics instance page will be displayed with a status of ***ACTIVE***.
 
-![OAC Instance Active](./images/lab200_8.png)
+    ![OAC Instance Active](./images/lab200_8.png)
 
 ## It works
 
@@ -93,15 +92,9 @@ Congratulations, you are ready for the next workshop!
 
 ## **Acknowledgements**
 
-**Author**
-- Priscila Iruela, Database Business Development - EMEA Oracle Digital
-- Juan Antonio Martin Pedro, Analytics Business Development - Oracle EMEA
+- **Author** - Priscila Iruela - Database Business Development - EMEA Oracle Digital, Juan Antonio Martin Pedro - Analytics Business Development - Oracle EMEA
+- **Contributors** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center, Andrea Zengin - Autonomous Database Business Development Director - Oracle EMEA
+- **Last Updated By/Date** -
 
-**Contributors**
-- Victor Martin, Principal Cloud Engineer - EMEA Oracle Digital
-- Melanie Ashworth-March, Master Principal Sales Consultant - EMEA Oracle Solution Center
-- Andrea Zengin, Autonomous Database Business Development Director - Oracle EMEA
-
-**Last Updated By/Date**
-
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and workshop in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
