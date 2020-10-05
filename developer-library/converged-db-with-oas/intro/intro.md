@@ -62,6 +62,13 @@ Every actionable insights are drived from data and data is available in variety 
 
 Oracle Analytics Server has rich collection of data visualizations and capability to connect various data sources.  Converged database has greater advantage of hosting variety of data types. 
 
+## More Information
+Feel free to share with your colleagues.
+1. Blogs
+   
+    - [Oracle Analytics Blogs](https://blogs.oracle.com/analytics/)
+    - [Forecasting](https://blogs.oracle.com/analytics/is-your-forecasting-like-running-with-scissors-feature-friday)
+
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
