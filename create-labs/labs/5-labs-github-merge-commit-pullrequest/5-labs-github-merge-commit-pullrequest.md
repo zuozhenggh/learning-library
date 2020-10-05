@@ -17,10 +17,12 @@ As a best practice merge your library everyday or whenever you start your GitHub
 * GitHub Desktop client
 
 
-This lab assumes that you have successfully completed **Lab 2: Get Started with Git and Set up the GitHub Environment** in the **Contents** menu on the right.
+This lab assumes that you have successfully completed **Lab 4: Using Atom Editor to Develop Content** in the **Contents** menu on the right.
 
 
 ## **STEP 1:** Merge Content from Git Before you Start Editing your Content
+Everday before you start editing your content, ensure to do a Merge.
+
 To merge content:
 1. Start your **GitHub Desktop** client.
 2. Select **Branch > Merge** into current branch to display the **Merge in Master** window.
