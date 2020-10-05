@@ -64,8 +64,7 @@ Oracle Analytics Server has rich collection of data visualizations and capabilit
 
 ## More Information
 Feel free to share with your colleagues.
-1. Blogs
-   
+1. Blogs   
     - [Oracle Analytics Blogs](https://blogs.oracle.com/analytics/)
     - [Forecasting](https://blogs.oracle.com/analytics/is-your-forecasting-like-running-with-scissors-feature-friday)
 
