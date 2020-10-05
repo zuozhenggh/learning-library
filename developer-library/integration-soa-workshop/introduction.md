@@ -13,8 +13,8 @@ The bulk fulfillment process must run according to a predefined pick-up schedule
 ### Objectives
 
 * Introducing SOA development tool, JDeveloper 12c
-* Build SOA composite application using JDeveloper
-* Design service orchestration using the composite app
+* Design SOA composite application using JDeveloper
+* Develop service orchestration with SOA process automation
 * Deploy the composite application on the embedded Weblogic in JDeveloper
 
 Estimated Workshop Time: 4 Hours
