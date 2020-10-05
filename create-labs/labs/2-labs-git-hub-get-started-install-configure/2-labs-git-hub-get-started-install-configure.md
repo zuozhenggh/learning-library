@@ -32,8 +32,8 @@ In this step, you will create your GitHub account and add it to Oracle.
 ![](./images/git-download-install-create-account.png " ")
 2.  If this is a new account, use your Oracle email ID to register. Do not create a secondary new account to join GitHub. Ensure that your GitHub account is associated to your @oracle.com email ID.
 3. Go to [GitHub Settings](https://github.com/settings/profile) and configure the following:
-  *   Set your Name as it appears in your Aria employee page.
-  *   Set a Custom Profile.
+    *   Set your Name as it appears in your Aria employee page.
+    *   Set a Custom Profile.
 4. Set up a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
 
 ## **STEP 2:** Requesting Membership to Oracle GitHub Organization (OGHO)
@@ -43,16 +43,16 @@ In this step, you will create your GitHub account and add it to Oracle.
 
 ## **STEP 3:** Publicize your Membership
 1. In the top right corner of [GitHub Profile Settings](https://github.com/settings/profile), click your profile photo, then click **Your profile**.
-  ![](./images/get-started-profile1.png " ")
+![](./images/get-started-profile1.png " ")
 
 2. On the left side of your profile page, under **Personal Settings**, click **Organizations** to display the **Organizations** page and then click the icon for your organization.
-  ![](./images/get-started-profile2.png " ")
+![](./images/get-started-profile2.png " ")
 
 3. Under your organization name, click **People**.
 4. Locate your username in the list of members. If the list is large, you can search for your username in the search box.
 5. In the menu to the right of your username, choose a new visibility option:
-  *   To publicize your membership, choose **Public**.
-  *   To hide your membership, choose **Private**.
+    *   To publicize your membership, choose **Public**.
+    *   To hide your membership, choose **Private**.
 
   ![](./images/get-started-profile-public.png " ")
 
@@ -84,7 +84,9 @@ To setup the GitHub Development Environment and install GitHub Desktop
   ![](./images/get-started-git-hub-webUI-fork.png " ")
 
 In the following example, user achepuri is creating a fork based on the learning-library repository.
-  ![](./images/get-started-git-hub-webui-forked-library.png " ")
+
+![](./images/get-started-git-hub-webui-forked-library.png " ")
+
 In the next step, you will clone this forked repository.
 
 ## **STEP 5:** Clone the Forked repository

@@ -68,4 +68,5 @@ Use these links to get more information about Labs and Workshops:
 * Lauran Serhal, Principal UA Developer, Oracle Database
 * **Last Updated By/Date:** Anuradha Chepuri, September 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.
+## See an issue?  
+Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.
