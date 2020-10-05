@@ -815,6 +815,8 @@ blockquote {
     display: none;
 }
 
+/* Table of Contents */
+
 .toc {
     position: relative;
     padding-top: 14px;
@@ -829,6 +831,14 @@ blockquote {
 
 .toc ul:last-of-type {
     margin-bottom: 2px;
+}
+
+toc li {
+    font-size: 14px;
+}
+
+.hol-Nav-list > li {
+    font-size: 14px;
 }
 
 #leftNav-toc {
@@ -904,7 +914,7 @@ blockquote {
     border-left: 3px solid #AE562C;
 }
 
-
+/* Copy and code blocks */
 
 pre code span.copy-code {
     font-weight: 700;
@@ -946,6 +956,7 @@ pre .copy-button:hover {
     display: block;
 }
 
+/* QA report */
 
 #qa-report {
     z-index: 60;

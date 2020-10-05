@@ -771,7 +771,7 @@ let main = function() {
         return articleElement;
     }
 
-    let alphaNumOnly = (text) => text.replace(/[^[A-Za-z0-9:?]+?/g, '');
+    let alphaNumOnly = (text) => text.replace(/[^[A-Za-z0-9:?\(\)]+?/g, '');
 
 
     // QA part of the code
