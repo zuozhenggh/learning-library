@@ -19,7 +19,7 @@ The bulk fulfillment process must run according to a predefined pick-up schedule
 
 Estimated Workshop Time: 4 Hours
 
-*{Note: For this lab, it assumes you have accessed to JDeveloper12c environment, which run on Linux instance on OCI.}*
+*{Note: For this lab, it assumes you have accessed to JDeveloper12c environment, which can be run on Linux instance on OCI.}*
 
 ## Modules
 
