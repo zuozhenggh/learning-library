@@ -28,7 +28,7 @@ Estimated Workshop Time: 4 Hours
 | 1 | Introduction to SOA | 10 min |
 | 2 | Build composite integration app for validating payment | 90 min |
 | 3 | Register the composite app to Service Bus | 60 min |
-| 4 | Enabled REST api access for Validate Payment app | 30 min |
+| 4 | Enabled REST api access for Validate Payment app | 60 min |
 
 <!-- ## Navigating the Lab
 To return to this page from anywhere within the lab click on the "hamburger-menu" icon on the right-hand side.
