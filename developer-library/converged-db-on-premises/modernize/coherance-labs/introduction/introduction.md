@@ -6,9 +6,9 @@ Oracle Coherence is a distributed cache and in-memory data grid solution that is
 
 ### Objectives
 In this workshop, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Learn to setup and Configure Coherence
+* Learn to build the Coherence Tests
+* Execute the steps to test the Coherence Features
 
 ### Prerequisites
 * A Free Tier, Always Free, Paid or Oracle Cloud account
