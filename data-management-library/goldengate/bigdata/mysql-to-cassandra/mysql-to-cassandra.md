@@ -107,7 +107,7 @@ Review the overview notes on the following screen, then select Q to quit. These 
 
   ![](./images/f4.png " ")
 ````
-<copy>cd /u01/gg4hadoop123010</copy>
+<copy>cd /u01/gg4hadoop</copy>
 ````
 ````
 <copy>./ggsci</copy>
@@ -130,7 +130,7 @@ Review the overview notes on the following screen, then select Q to quit. These 
   ![](./images/f5.png " ")
 
 ````
-<copy>cd /u01/gg4hadoop123010</copy>
+<copy>cd /u01/gg4mysql</copy>
 ````
 ````
 <copy>./ggsci</copy>
@@ -142,8 +142,15 @@ Review the overview notes on the following screen, then select Q to quit. These 
 <copy>start mgr</copy>	
 ````
 ````
+<copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
+````
+````
 <copy>info all</copy>	
 ````
+````
+<copy>start *</copy>
+````
+**Starts ALL parameter files**
 ````
 <copy>exit</copy> 
 ````
@@ -199,6 +206,8 @@ Review the overview notes on the following screen, then select Q to quit. These 
 
 **Step12:** Now that GG processes have been created and started on both the source and target, we need to create the Cassandra Keyspace before loading data. A Cassandra Keyspace is equivalent to a database or schema in relational databases. This step can be done at anytime, and is not dependant on GG.
 
+**Open another ssh session**
+
 NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop the Cassandra keyspace – and then recreate with the alias below.
 
   ![](./images/f9.png " ")
@@ -209,7 +218,7 @@ NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop t
 
   ![](./images/f10.png " ")
 ````
-  <copy>createcasskeyspace</copy>
+  <copy>cassselect</copy>
 ````
 **Step14:** We will load some data on the MySQL database ‘ggsource’ and GG will extract the data, create the Cassandra tables, and write the data to the Cassandra target tables.
 

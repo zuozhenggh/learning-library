@@ -194,6 +194,9 @@ Optionally view these files, same as in previous lab:
 <copy>./ggsci</copy>	
 ````
 ````
+<copy>start mgr</copy>
+````
+````
 <copy>info all</copy>
 ````
 ````
@@ -242,7 +245,7 @@ Optionally view these files, same as in previous lab:
 <copy>showtopics</copy>
 ````
 ````
-<copy>consumetopic.gg2kafka_json.dept</copy>
+<copy>consumetopic gg2kafka_json.dept</copy>
 
 ````
 ````
@@ -277,13 +280,13 @@ Optionally view these files, same as in previous lab:
 
 ![](./images/e14.png " ")
 
-````
+```
 <copy>dmlsource</copy>
-````
+```
 
 **Step17:** Now go back to the session running ‘consumetopic gg2kafka_json.emp’, you should see the new messages written to the emp topics. Scroll up to see "op-type" "U" or "D". For Updates, GG will write the before and after image of the operation
 
-![](./images/e15.png " ")
+![](./images/e15.png)
 
 ````
 <copy>consumetopic gg2kafka_json.emp</copy>

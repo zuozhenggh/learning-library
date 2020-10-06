@@ -117,7 +117,9 @@ The following Lab Menu will be displayed,
   ![](./images/b5.png " ")
   ![](./images/b6.png " ")
 
+````
 <copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
+````
 
 ````
 <copy> info all</copy>	
@@ -179,8 +181,12 @@ The following Lab Menu will be displayed,
 <copy>./ggsci</copy>	 
 ````
 ````
-<copy> info all</copy>		
+<copy>info all</copy>		
 ````
+````
+<copy>start mgr</copy>
+````
+
 ````
 <copy> obey ./dirprm/create_hdfs_replicat.oby</copy>	
 ````
