@@ -1,6 +1,6 @@
 #  Get Started with Git and Set up the GitHub Environment
 
-## Introduction
+## INTRODUCTION
 
 GitHub is a cloud-based version control system designed for software developers. At the core is Git, a version control system that manages file versions and tracks who made which changes. The Hub is a cloud-based repository that manages storage of the files and provides a folder structure.
 
@@ -108,8 +108,8 @@ When you make a clone, you can edit the files in your preferred editor, such as 
 
 * **Technical Contributor:**
 
-* **Last Updated By/Date:** Anuradha Chepuri, September 2020
+* **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
 ## See an issue?  
 
-Click [here](https://github.com/oracle/learning-library/issues) to create a request.
+Please open a request [here](https://github.com/oracle/learning-library/issues). Include the workshop name and lab in your request.

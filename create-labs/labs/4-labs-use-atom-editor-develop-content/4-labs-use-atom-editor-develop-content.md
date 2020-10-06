@@ -1,6 +1,6 @@
 # Use Atom Editor to Develop Content and Host on Atom Live Server
 
-## Introduction
+## INTRODUCTION
 
 You need to use your preferred Editor to author and edit your Markdown (.md) content for rendering the Workshop output. Oracle recommended Editor is Atom and the Atom Live Server
 
@@ -15,7 +15,7 @@ This lab suggests alternatives to develop and host your content, and if you are 
 **Note:** Using Atom is recommended for UA Developers. Visual Studio Code is a Microsoft "open source" product. The license agreement is not a standard MIT or General Public License (GPL) agreement and therefore not approved for use at Oracle.
 
 
-## **Step 1:** Install Atom
+## **STEP 1:** Install Atom
 Atom.io is a 3rd party IDE freely available under MIT License.
 To install Atom:
 1. Go to the [Atom](https://github.com/atom/atom/releases/tag/v1.51.0) URL.
@@ -23,7 +23,7 @@ To install Atom:
   ![](./images/use-atom-editor-download.png " ")
 3. From the extracted files, click `atom.exe` to launch Atom.
 
-## **Step 2:** Install the Atom-Live-Server Plugin
+## **STEP 2:** Install the Atom-Live-Server Plugin
 Ensure that you are not on Oracle's network (or VPN) to install packages, including atom-live-server.
 To install the Atom Live Server:
 1. In the Atom Editor, click **Help**, and then select **Welcome Guide**.
@@ -41,7 +41,7 @@ The atom-live-server plugin is added to the **Packages** menu.
 ![](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
 
 
-## **Step 3:** Browse Your Workshop and Labs Using Atom-Live-Server
+## **STEP 3:** Browse Your Workshop and Labs Using Atom-Live-Server
 
 To view your Workshop and Labs in HTML format:
 1. To view your workshop and the labs inside the workshop in HTML format, open the folder that contains the markdown (.md), `index.html`, and `manifest.json` files for the workshop. Click **File > Open Folder** to display the **Open Folder** dialog box.
@@ -69,12 +69,14 @@ The Workshop is displayed along with the labs. The labs contained in this worksh
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 
-## Want to Learn More?
+## WANT TO LEARN MORE?
 [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
 
-## Acknowledgements
+## ACKNOWLEDGEMENTS
 * **Authors:**
+    * Anuradha Chepuri
 
-* **Last Updated By/Date:** Anuradha Chepuri, September 2020
+* **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## SEE AN ISSUE?
+Please open up a request [here](https://github.com/oracle/learning-library/issues).

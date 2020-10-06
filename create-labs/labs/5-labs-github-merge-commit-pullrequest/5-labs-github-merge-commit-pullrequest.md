@@ -135,11 +135,12 @@ To create a Pull Request:
 ## Acknowledgements
 
 * **Author:**  
+    * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
 
 * **Technical Contributors:**  
 
-* **Last Updated By/Date:** Anuradha Chepuri, September 2020
+* **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
 ## See an issue?  
 
-Please open up a request [here](https://github.com/oracle/learning-library/issues).
+Please open a request [here](https://github.com/oracle/learning-library/issues). Include the workshop name and lab in your request.
