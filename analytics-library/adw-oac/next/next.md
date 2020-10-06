@@ -49,8 +49,6 @@ If you have enjoyed the workshop, give me a star on Github: [click here](https:/
 
 ![Github start](./images/gthib_start.png)
 
-Please, help us to improve. [Create an issue](https://github.com/PriscilaIruela/ADW-OAC-HOLs/issues) if you think something is not quite right.
-
 Learn more about [Oracle Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/).
 
 Learn more about [Oracle Autonomous Data Warehouse on Shared Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-intro-adw.html#GUID-4B91499D-7C2B-46D9-8E4D-A6ABF2093414).
