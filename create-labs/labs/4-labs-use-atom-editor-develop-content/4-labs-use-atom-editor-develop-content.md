@@ -78,5 +78,5 @@ The Workshop is displayed along with the labs. The labs contained in this worksh
 
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
-## SEE AN ISSUE?
-Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## See an Issue?
+Please open a request [here](https://github.com/oracle/learning-library/issues). Include the workshop name and lab in your request.

@@ -66,7 +66,7 @@ Use these links to get more information about Labs and Workshops:
   * Aslam Khan, Sr.Manager User Assistance Development, ODI, GoldenGate
 * **Contributors:**
 * Lauran Serhal, Principal UA Developer, Oracle Database
-* **Last Updated By/Date:** Anuradha Chepuri, September 2020
+* **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
 ## See an issue?  
 Please open up a request [here](https://github.com/oracle/learning-library/issues).  Include the workshop name and lab in your request.
