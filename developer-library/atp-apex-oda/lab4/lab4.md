@@ -20,7 +20,6 @@ You can package related **Custom Components** together.
 
 Estimated workshop Time 15 minutes.
 
-
 ## **Step 1**: Create a Custom Component to integrate with backend services
 
 Oracle provides **Oracle Bots Node.js SDK**, a free utility that makes custom components development very easy.
@@ -156,8 +155,8 @@ Ready to create your **Custom Component** scaffolding.
 **Custom Components** can be deployed in different ways:
 
 - **Local Component Container**: single instance deployment as custom component resides in skill bot
-- **Mobile Hub**: multi-channel environment with mobile extras and shared instance deployment.
-- **Node Container**: shared instance but no need for mobile extras.
+- **Mobile Hub**: multi-channel environment with mobile extras and shared instance deployment
+- **Node Container**: shared instance but no need for mobile extras
 
 1. We are going to **install** our custom component **locally** as a **component container**. Very simple, we need to pack our code in a single file that contains everything:
 

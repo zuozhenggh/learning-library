@@ -24,7 +24,7 @@ To learn more about **Oracle Cloud Always Free** and **Free Trial** account chec
 As part of your sign up to this workshop, you will have been provided a link to **Sign Up** to Oracle Cloud Free Tier. Please make sure you:
 
 - Use the **following URL** - [>> Sign Up for Oracle Cloud <<](http://bit.ly/34TzwGf)
-- Use a **personal email** address that you will use during all the workshop process.
+- Use a **personal email** address that you will use during all the workshop process
 
 On the Sign Up page, select your **Country/Territory**, enter your **email address** and click "**Next**".
 
@@ -53,18 +53,15 @@ On that email you will receive a **Cloud Account** and **Username**.
 
 To **Sign In** to your cloud account, use the link and the information that you received on the email address. 
 
-- **Cloud Account** is the same as **Tenancy** 
-that it is required on the **Cloud Infrastructure Sign In Page**.
+- **Cloud Account** is the same as **Tenancy** that it is required on the **Cloud Infrastructure Sign In Page**
 
-- **Username** is the email address that you used for registration.
+- **Username** is the email address that you used for registration
 
-- **Password**, you will be prompted to set a new one, more memorable password.
+- **Password**, you will be prompted to set a new one, more memorable password
 
 After click **Sign in**.
 
-
 ![Sign Up Welcome Console](./images/oracle_cloud_free_tier4_2.png)
-
 
 Otherwise go to [oracle.com](http://cloud.oracle.com).
 
@@ -82,7 +79,7 @@ Enter your **Cloud Account credentials** and click **Sign In**. Your username is
 
 ![Sign Up Details](./images/oracle_cloud_free_tier8.png)
 
-You are now signed in to **Oracle Cloud!**
+You are now signed in to **Oracle Cloud!**.
 
 ![Oracle Cloud Web Console](./images/webconsole.png)
 

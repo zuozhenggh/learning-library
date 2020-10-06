@@ -8,9 +8,9 @@ You will create a **skill** that can be used for interactions with a backend ser
 
 As part of this process, you will:
 
-- **Create** a new skill.
-- **Import** your Custom Component (the `tgz` file you generated with `npm pack`).
-- **Create** two intents: `Greeting` and `ListTasks`.
+- **Create** a new skill
+- **Import** your Custom Component (the `tgz` file you generated with `npm pack`)
+- **Create** two intents: `Greeting` and `ListTasks`
 
 We have to access to **Digital Assistant** section in the **Oracle Cloud Dashboard**.
 
