@@ -1,4 +1,4 @@
-# Lab 1: Create Autonomous Database
+# Create Autonomous Database
 
 ![Autonomous](./images/adb_banner.png)
 
@@ -28,7 +28,7 @@ Perfect for Developers!
 
 Estimated workshop Time 10 minutes.
 
-## **Step 1**: Create a new Autonomous Transaction Processing
+## **STEP 1**: Create a new Autonomous Transaction Processing
 
 1. Go to the **Autonomous Transaction Processing (ATP)** menu:
 

@@ -1,8 +1,8 @@
 {
   "tutorials": [
     {
-      "title": "Prerequisites - Signing Up for your Oracle Cloud Free Tier Account",
-      "filename": "lab0/lab0.md"
+      "title": "Prerequisites",
+      "filename": "../../common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
       "title": "Introduction",
@@ -10,23 +10,23 @@
     },
     {
       "title": "Lab 1: Create Autonomous Database",
-      "filename": "lab1/lab1.md"
+      "filename": "create-atp/create-atp.md"
     },
     {
       "title": "Lab 2: Create APEX workshop and REST API",
-      "filename": "lab2/lab2.md"
+      "filename": "create-apex/create-apex.md"
     },
     {
       "title": "Lab 3: Create Oracle Digital Assistant",
-      "filename": "lab3/lab3.md"
+      "filename": "create-oda/create-oda.md"
     },
     {
       "title": "Lab 4: Implement Custom Component",
-      "filename": "lab4/lab4.md"
+      "filename": "cc/cc.md"
     },
     {
       "title": "Lab 5: Create Digital Assistant Skill",
-      "filename": "lab5/lab5.md"
+      "filename": "skill/skill.md"
     },
     {
       "title": "Next Steps",

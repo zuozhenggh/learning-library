@@ -1,4 +1,4 @@
-# Lab 4: Implement Custom Component
+# Implement Custom Component
 
 ## Introduction
 
@@ -20,7 +20,7 @@ You can package related **Custom Components** together.
 
 Estimated workshop Time 15 minutes.
 
-## **Step 1**: Create a Custom Component to integrate with backend services
+## **STEP 1**: Create a Custom Component to integrate with backend services
 
 Oracle provides **Oracle Bots Node.js SDK**, a free utility that makes custom components development very easy.
 
@@ -150,7 +150,7 @@ Ready to create your **Custom Component** scaffolding.
 
 10. Don't forget the **save** tasks.js file.
 
-## **Step 2**: Deploy the custom component
+## **STEP 2**: Deploy the custom component
 
 **Custom Components** can be deployed in different ways:
 

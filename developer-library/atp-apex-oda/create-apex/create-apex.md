@@ -1,4 +1,4 @@
-# Lab 2: Create Application and REST API
+# Create Application and REST API
 
 ![APEX](./images/apex.png)
 
@@ -20,7 +20,7 @@ In this workshop you will create a `tasks` table, REST enabling it, and make the
 
 Estimated workshop Time 20 minutes.
 
-## **Step 1**: Create APEX Workspace
+## **STEP 1**: Create APEX Workspace
 
 In this part of the workshop we are creating an APEX workspace. From the Autonomous Database Home page go to **Tools** section and select **Oracle Application Express** area.
 
@@ -61,7 +61,7 @@ Login as the Admin user, with the **Admin** password you specified at Autonomous
 
     ![ORDS](./images/apex_workspace8.png)
 
-## **Step 2**: Create a Table with Quick SQL
+## **STEP 2**: Create a Table with Quick SQL
 
 Quick SQL reduces the time and effort required to create SQL tables, triggers, and index structures.
 
@@ -116,7 +116,7 @@ Use Cases:
 
     ![Save SQL Script](./images/apex_quick_sql_run_success.png)
 
-## **Step 3**: Insert rows on the table
+## **STEP 3**: Insert rows on the table
 
 We are going to mock some data to use it later with your Custom Component.
 
@@ -154,7 +154,7 @@ We are going to mock some data to use it later with your Custom Component.
 
     ![Object Browser Data](./images/apex_object_new_rows.png)
 
-## **Step 4**: REST Enabling the Database Object
+## **STEP 4**: REST Enabling the Database Object
 
 In the main menu, select **SQL Workshop**, click **RESTful Services**.
 

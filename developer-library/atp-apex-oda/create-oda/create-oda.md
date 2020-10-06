@@ -1,4 +1,4 @@
-# Lab 3: Create Oracle Digital Assistant
+# Create Oracle Digital Assistant
 
 ![Oracle Digital Assistant](./images/oda.png)
 
@@ -30,7 +30,7 @@ Both intents and entities are common **Natural Language Processing (NLP)** conce
 
 Estimated workshop Time 15 minutes.
 
-## **Step 1**: Create a Digital Assistant instance
+## **STEP 1**: Create a Digital Assistant instance
 
 **Create** a Digital Assistant instance to start working with bots. You can find advance set up steps on the [official documentation](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/order-service-and-provision-instance.html#GUID-7E4F1CE5-FB40-45DF-B0F0-949289F5E184).
 
@@ -71,7 +71,7 @@ Estimated workshop Time 15 minutes.
 
     ![ODA Menu](./images/oda_5.png)
 
-## **Step 2**: Explore your Digital Assistant
+## **STEP 2**: Explore your Digital Assistant
 
 You can always **Watch Videos** on the **Learn** section at the bottom and explore the documentation of Oracle Digital Assistant by following the links on the dashboard.
 
