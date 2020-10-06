@@ -99,7 +99,7 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 
         cd $COHERENCE_HOME/examples/java
     
-## **Step 3**: Test Cache with Contacts get & Put**
+## **STEP 3**: Test Cache with Contacts get & Put**
 This Lab shows the most basic data access features of Coherence including getting, putting and removing data from a provided contacts.csv file.
  
 To start a Coherence Cache and then put and get Contacts to/from the Cache.
@@ -160,7 +160,7 @@ The Driver.main method runs through the features of the example with output goin
 
 ### Proceed to Next Lab 
 
-## **Step 5**:  Test Live events in Cache
+## **STEP 5**:  Test Live events in Cache
 
 This Lab shows the Events feature of inserting into Cache
 
@@ -190,7 +190,7 @@ The Driver.main method runs through the features of the example with output goin
 
 ### Proceed to Next Lab 
 
-## **Step 6**: Test Java 8 features 
+## **STEP 6**: Test Java 8 features 
 
 The Coherence Java 8 features Lab illustrates how to use the Java streams when querying and processing cache entries. how Lambda features can be used to simplify common Coherence tasks and how to query and process cache entries 
 
@@ -219,7 +219,7 @@ The Driver.main method runs through the features of the example with output goin
 
 ### Proceed to Next Lab 
 
-## **Step 7**: Test Asynchronous features 
+## **STEP 7**: Test Asynchronous features 
 
 The Coherence asynchronous features lab illustrates: how to asynchronously get and put data in a cache
 
@@ -248,15 +248,12 @@ The Driver.main method runs through the features of the example with output goin
 
 
 
-
-
 ## Acknowledgements
 
 - **Authors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR
 - **Contributors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR, Laxmi Amarappanavar
 - **Team** - North America SE Specialists.
-- **Last Updated By** -  
-- **Expiration Date** -    
+- **Last Updated By** -  Srinivas Pothukuchi, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
