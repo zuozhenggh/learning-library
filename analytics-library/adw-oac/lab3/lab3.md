@@ -12,9 +12,9 @@ You are going to use an **Oracle Analytics Cloud** instance to give your end use
 
 In this workshop, you will:
 
--   **Create a connection** from Oracle Analytics Cloud to Autonomous Database.
--   **Prepare** the dataset.
--   **Create Visualizations** to analyse the data.
+- **Create a connection** from Oracle Analytics Cloud to Autonomous Database.
+- **Prepare** the dataset.
+- **Create Visualizations** to analyse the data.
 
 Estimated workshop Time 1 hour and 15 minutes.
 
@@ -24,18 +24,18 @@ Estimated workshop Time 1 hour and 15 minutes.
 configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL\*Plus etc. For this
 workshop, you will use this same wallet mechanism to make a connection from OAC to the **Autonomous Database**.
 
-***Note**: This section assumes you have already created your Oracle Analytics Cloud instance as part of the 'Lab 2 - Provisioning your Oracle Analytics Cloud (OAC)' instance section. If not, please return to the beginning of Lab2 and go through the instance creation.*
+> **Note**: This section assumes you have already created your Oracle Analytics Cloud instance as part of the 'Lab 2 - Provisioning your Oracle Analytics Cloud (OAC)' instance section. If not, please return to the beginning of Lab2 and go through the instance creation.
 
 1. ### Download your Autonomous Database wallet
 
     You need first to download the wallet file containing your credentials. There are two types of wallet:
 
-   -   **Instance Wallet**: Wallet for a single database only; this provides a database-specific wallet.
+    - **Instance Wallet**: Wallet for a single database only; this provides a database-specific wallet.
 
-   -   **Regional Wallet**: Wallet for all Autonomous Databases for a given tenant and region (this includes all service instances that a cloud
+    - **Regional Wallet**: Wallet for all Autonomous Databases for a given tenant and region (this includes all service instances that a cloud
     account owns).
 
-    ***Note**: Oracle recommends you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.*
+    > **Note**: Oracle recommends you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.
 
 2. In the **Oracle Console Home** Page, click on the hamburger **MENU** link at the upper left corner of the page and go to the ****Autonomous Data
 Warehouse**** section.
@@ -185,11 +185,11 @@ existing projects.
 
     ![OAC Navigation](./images/lab300_23.png)
 
-   -   **Prepare**: Here is where you configure your data. You get a preview of each dataset on the project. You enrich it by adding columns, hiding or renaming the available ones. You can also define joins between datasets here.
+    - **Prepare**: Here is where you configure your data. You get a preview of each dataset on the project. You enrich it by adding columns, hiding or renaming the available ones. You can also define joins between datasets here.
 
-   -   **Visualize**: Here is where you explore and Analyze the data. You can create several canvases to hold the different visualizations you define.
+    - **Visualize**: Here is where you explore and Analyze the data. You can create several canvases to hold the different visualizations you define.
 
-   -   **Narrate**: Here is where you create a more presentation-oriented view of the analysis you created. This tab allows you to choose which insights to show and add comments and descriptions. It helps to understand your analysis journey and focus on showing the results.
+    - **Narrate**: Here is where you create a more presentation-oriented view of the analysis you created. This tab allows you to choose which insights to show and add comments and descriptions. It helps to understand your analysis journey and focus on showing the results.
 
     During this workshop, you will use the **Prepare** and **Visualize** tabs mainly.
 
@@ -197,16 +197,15 @@ existing projects.
 
     ![OAC - Canvas explanation](./images/lab300_24.png)
 
-
     Main areas to note here are:
 
-   -   **Explorer**: Contains all fields from your datasets to be used in the project.
+    - **Explorer**: Contains all fields from your datasets to be used in the project.
 
-   -   **Properties box**: Allows you to define the properties and parameters of the selected object. If it is a column it will be highlighted in blue (in the screen PROD_ID in the Explorer menu is selected), if it is a graphic from the canvas it will have a thin blue borderline around it.
+    - **Properties box**: Allows you to define the properties and parameters of the selected object. If it is a column it will be highlighted in blue (in the screen PROD_ID in the Explorer menu is selected), if it is a graphic from the canvas it will have a thin blue borderline around it.
 
-   -   **Graph Definition**: Contains definition of the selected Visualization, which fields to use and where (Axis, Filters, Trellis Groups...).
+    - **Graph Definition**: Contains definition of the selected Visualization, which fields to use and where (Axis, Filters, Trellis Groups...).
 
-   -   **Canvas**: Your play area. You can place your visuals here. You can also create more Canvases and copy/move visuals around.
+    - **Canvas**: Your play area. You can place your visuals here. You can also create more Canvases and copy/move visuals around.
 
 2. Now that you know a bit your way around in the **Project**, you can continue with the workshop.
 
@@ -323,7 +322,7 @@ existing projects.
 
     ![Connect Sources - SH-SALES & SH-PRODUCTS ](./images/lab300_47.png)
 
-    **NOTE**: You might see a balloon warning about using **PROD_ID** as a **Measure**. Do not worry about it. It is just a kind reminder that you are using a column that looks like a number only as a join column, but that is exactly what we want to do.
+    > **NOTE**: You might see a balloon warning about using **PROD_ID** as a **Measure**. Do not worry about it. It is just a kind reminder that you are using a column that looks like a number only as a join column, but that is exactly what we want to do.
 
     ![Connect Sources - Measure](./images/lab300_48.png)
 

@@ -49,7 +49,7 @@ in the top right hand side of your screen. If your username is shown as:
 
     ![Oracle Analytics Console](./images/lab200_5.png)
 
-    ***Note**: You must be connected as a **Single Sign On** (**Federated** user) user to a tenancy, which has available cloud credits to see this menu item. Local OCI users are not able to do this.*
+    > **Note**: You must be connected as a **Single Sign On** (**Federated** user) user to a tenancy, which has available cloud credits to see this menu item. Local OCI users are not able to do this.
 
 3. Select **Create Instance**.
 
@@ -86,7 +86,7 @@ in the top right hand side of your screen. If your username is shown as:
 
 ## It works
 
-You just created an Oracle Analytics Cloud Instance.
+You have just created an Oracle Analytics Cloud Instance.
 
 Congratulations, you are ready for the next workshop!
 

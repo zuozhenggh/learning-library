@@ -81,7 +81,7 @@ Estimated workshop Time 15 minutes.
 
     > **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW. A suggested password for this lab is ADWwelcome-1234.
     >
-    > ***Reminder:** Note your password in a safe location as this cannot be easily reset.*
+    > **Reminder:** Note your password in a safe location as this cannot be easily reset.
 
     Under **Choose network access** section:
 
