@@ -27,12 +27,31 @@ In this lab, you will:
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+You require ``terraform`` installed to create a Terraform configuration file for provisioning the Hyperion package on OCI. 
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+#### For Mac Users 
 
-*This is the "fold" - below items are collapsed by default*
+1. To install Terraform, find the appropriate package for your system from this [link](https://www.terraform.io/downloads.html) and download it as a zip archive.
+2. Open a terminal window.
+3. Navigate to the folder where you downloaded the Terraform zip, unzip the package. Terraform runs as a single binary named ``terraform``. Any other files in the package can be safely removed and Terraform will still function.
+
+``For e.g. - cd /Users/mimehta/Downloads
+  unzip terraform_0.13.4_darwin_amd64.zip``
+
+4. Finally, make sure that the terraform binary is available on your ``PATH``. Determine the path location using the following commands -
+
+``cd 
+cat ~/.bash_profile
+``
+5. Make a note of the location of the folder where the PATH is set to. 
+
+``For example - export PATH=/Users/local/bin:$PATH``
+
+8.  We have to move the terraform file to the path recorded in the previous step. Use the following command for it.
+
+``mv /Users/mimehta/Downloads/terraform /Users/mimehta/bin/terraform``
+
+9. Verify if terraform works. Enter `terraform` in your terminal and hit enter.
 
 ## **STEP 1**: title
 
