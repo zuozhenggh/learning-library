@@ -13,6 +13,22 @@ This lab is intended to demonstrate federated Single Sign-on (SSO) with a 3rd pa
 
 Estimated Lab Time: 90 minutes
 
+### Objectives
+
+In this lab, you will:
+* configure Salesforce Application
+*	assign Apps to Group
+*	request Group Access
+*	verify SSO Configuration
+*	configure Provisioning and Synchronization
+
+
+### Prerequisites
+
+* An Oracle Free Tier or Paid Account
+* A Google Account
+* A Salesforce Developer Account
+
 ## **STEP 1**: Configure Salesforce Application
 
 * *Personas*:
@@ -499,7 +515,7 @@ This option will synchronize the existing account details from Salesforce and li
 Every user that has status Confirmed in the Synchronization Status has access to Salesforce in My Apps. Also, the application Salesforce will be visible to all users in My Apps that have status Confirmed.
 ```
 
-
+You may now proceed to the next lab
 
  
 
@@ -509,7 +525,9 @@ Every user that has status Confirmed in the Synchronization Status has access to
 
 
 
-
+## Acknowledgements
+* **Author** - SEHub Security and Manageability Team
+* **Last Updated By/Date** - Lucian Ionescu, Principal Solution Engineer, 15.09.2020
 
 
 

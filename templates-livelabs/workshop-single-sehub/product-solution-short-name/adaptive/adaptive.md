@@ -1,4 +1,4 @@
-# Visualize Your Data
+# Enabling Adaptive MFA in IDCS
 
 ## Introduction
 
@@ -6,6 +6,20 @@ Adaptive Security is an advanced feature that provides strong authentication cap
 When activated, the Adaptive Security feature can analyze a user’s risk profile within Oracle Identity Cloud Service based on their historical behavior, such as too many unsuccessful login attempts, too many unsuccessful MFA attempts, and real-time device context like logins from unknown devices, access from unknown locations, blacklisted IP addresses, and so on.
 
 Estimated Lab Time: 20 minutes
+
+### Objectives
+
+In this lab, you will:
+* enable Risk Provider
+* use Risk as a condition in Sign-On Policy
+* evaluate End User risk
+
+### Prerequisites
+
+* An Oracle Free Tier or Paid Account
+* A Google Account
+* A Salesforce Developer Account
+* Lab 2 was completed
 
 ## **STEP 1**: Enabling Risk Provider
 * *Personas*:
@@ -162,7 +176,9 @@ This workbook is primarily designed to provide the necessary instructions and co
 
 
 
-
+## Acknowledgements
+* **Author** - SEHub Security and Manageability Team
+* **Last Updated By/Date** - Lucian Ionescu, Principal Solution Engineer, 15.09.2020
 
 
 ## See an issue?

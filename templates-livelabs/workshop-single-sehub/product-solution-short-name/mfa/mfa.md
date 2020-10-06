@@ -1,4 +1,4 @@
-# Analyze Data
+# Enabling Conditional MFA in IDCS
 
 ## Introduction
 
@@ -10,6 +10,23 @@ Users are increasingly connected, accessing their accounts and applications from
 
 
 Estimated Lab Time: 20 minutes
+
+### Objectives
+
+In this lab, you will:
+* select MFA factors that you want to enable
+* define a Sign-On Policy for Salesforce
+* sign-in as an end user with MFA
+* block access via policy
+* test the updated policy
+
+
+### Prerequisites
+
+* An Oracle Free Tier or Paid Account
+* A Google Account
+* A Salesforce Developer Account
+* Lab 2 was completed
 
 ## **STEP 1**: Enable MFA Factors
 
@@ -275,6 +292,13 @@ After creating a network perimeter, you can prevent users from signing in to Ora
 3.	You will denied access, given that your request originates in a blacklisted IP.
 
 ![Image](images/L5030.png)
+
+
+You may now proceed to the next lab
+
+## Acknowledgements
+* **Author** - SEHub Security and Manageability Team
+* **Last Updated By/Date** - Lucian Ionescu, Principal Solution Engineer, 15.09.2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -11,6 +11,18 @@ IDCS supports user (also groups) on-boarding from on-premises Active Directory, 
 
 Estimated Lab Time: 90 minutes
 
+### Objectives
+
+In this lab, you will:
+*	create User in UI
+*	import Users with CSV
+*	create users using REST API’s
+
+### Prerequisites
+
+* An Oracle Free Tier or Paid Account
+* Postman native application installed locally
+
 ## **STEP 1**: Create User in UI
 
 * *Personas*:
@@ -270,6 +282,7 @@ This Access Token establishes trust between your application and IDCS.
 
 You can also *modify* and *delete* users and a lot more via REST API. For more information, please check the documentation below.
 
+You may now proceed to the next lab
 
 ##More information##
 
@@ -278,7 +291,9 @@ Tutorial 1: [Oracle Identity Cloud Service: First REST API Call](http://www.orac
 
 Tutorial 2: [Oracle Identity Cloud Service: Managing Users Using REST API Calls](http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/idcs/idcs_rest_users_obe/rest_users.html)
 
-
+## Acknowledgements
+* **Author** - SEHub Security and Manageability Team
+* **Last Updated By/Date** - Lucian Ionescu, Principal Solution Engineer, 15.09.2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

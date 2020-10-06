@@ -27,6 +27,17 @@ Another video – with more detail, but with the older style screens:
 
 Estimated Lab Time: 30 minutes
 
+### Objectives
+
+In this lab, you will:
+*	configure federation in Google
+*	configure federation in IDCS
+*	verify Social Login
+
+### Prerequisites
+
+* An Oracle Free Tier or Paid Account
+* A Google Account
 
 ## **STEP 1**: Configure Google
 
@@ -143,6 +154,12 @@ Now return to *IDCS* and enter the provider parameter values in order to configu
 3. Google redirects to the *My Apps* page of IDCS. The integration of Google as an IdP for IDCS is successfully tested.
 ![Image](images/L3023.png)
 
+
+You may now proceed to the next lab
+
+## Acknowledgements
+* **Author** - SEHub Security and Manageability Team
+* **Last Updated By/Date** - Lucian Ionescu, Principal Solution Engineer, 15.09.2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

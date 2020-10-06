@@ -1,4 +1,4 @@
-# Query Your Data
+# Configure Federation – External Identity Provider (Okta)
 
 ## Introduction
 
@@ -8,6 +8,22 @@ For this exercise, a website can allow users to log in to Oracle Identity Cloud 
 
 
 Estimated Lab Time: 30 minutes
+
+
+### Objectives
+
+In this lab, you will:
+*	configure federation in Okta
+*	configure federation in IDCS
+*	login in to IdP
+
+
+### Prerequisites
+
+* An Oracle Free Tier or Paid Account
+* A Google Account
+* An Okta Integrator Account
+
 
 ## **STEP 1**: Configure Okta
 
@@ -146,6 +162,11 @@ https://<your tenant>.identity.oraclecloud.com/fed/v1/metadata
 
     Note: for federation to work, you need to login with an account that is defined in both IDCS and Okta.
 
+You may now proceed to the next lab
+
+## Acknowledgements
+* **Author** - SEHub Security and Manageability Team
+* **Last Updated By/Date** - Lucian Ionescu, Principal Solution Engineer, 15.09.2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
