@@ -83,11 +83,11 @@ Use Cases:
 
 2. Write on the left panel the following table definition:
 
-    <copy>
+    ```bash
     tasks
         text
-    </copy>
-
+    ```
+    
 3. Click **Generate SQL**.
 
     ![Generate SQL](./images/apex_generate_sql.png)

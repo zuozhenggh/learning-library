@@ -31,123 +31,124 @@ Ready to create your **Custom Component** scaffolding.
 
 1. Open a **terminal** and type:
 
-  ```bash
-  npx @oracle/bots-node-sdk init tasks-cc --component-name tasks
-  ```
+    ```bash
+    npx @oracle/bots-node-sdk init tasks-cc --component-name tasks
+      ```
 
-  Where `tasks-cc` is the name of the custom component module. And `tasks` is the name of our first custom component implementation.
+    Where `tasks-cc` is the name of the custom component module. And `tasks` is the name of our first custom component implementation.
 
 2. The **result** should look like this:
 
-  ```bash
-  ---------------------------------------------------------------------
-  Custom Component package 'tasks-cc' created successfully!
-  ---------------------------------------------------------------------
+    ```bash
+    ---------------------------------------------------------------------
+    Custom Component package 'tasks-cc' created successfully!
+    ---------------------------------------------------------------------
 
-  Usage:
+    Usage:
 
-    cd tasks-cc
-    npm start    Start a dev server with the component package
-  ```
+      cd tasks-cc
+      npm start    Start a dev server with the component package
+    ```
 
-  > NOTE:
-  >
-  > A new folder `tasks-cc` was created with this hierarchy inside:
-  >
-  > ![Custom Component thee](./images/node_tree.png)
-  >
-  > Note you have a `package.json` file and a `components` folder with a file `tasks.js` inside.
+    > NOTE:
+    >
+    > A new folder `tasks-cc` was created with this hierarchy inside:
+    >
+    > ![Custom Component thee](./images/node_tree.png)
+    >
+    > Note you have a `package.json` file and a `components` folder with a file `tasks.js` inside.
 
 3. **Change directory** to `tasks-cc` on the Command Prompt or Terminal:
 
-  ```bash
-  cd tasks-cc
-  ```
+    ```bash
+    cd tasks-cc
+    ```
 
-  This custom component is going to make REST API calls to fetch information from APEX. To do so, we need to install an extra library called [node-fetch](https://www.npmjs.com/package/node-fetch).
+    This custom component is going to make REST API calls to fetch information from APEX. To do so, we need to install an extra library called [node-fetch](https://www.npmjs.com/package/node-fetch).
 
 4. Install the library with the following command:
 
-  ```bash
-  npm install node-fetch
-  ```
+    ```bash
+    npm install node-fetch
+    ```
 
 5. Edit the file `package.json` in `tasks-cc` folder. You can use your favorite text editor. My choice is [Visual Code](https://code.visualstudio.com/) but feel free to use any. Even Notepad for those Windows user that don't want to install anything else.
 
-  ![Location package.json](./images/node_package_json.png)
+    ![Location package.json](./images/node_package_json.png)
 
 6. We have to **change the name** of the package from the generic `my-custom-component` to something more personalized like `tasks-cc`. Check line number 2:
 
-  ![Package name change](./images/package_name_change.png)
+    ![Package name change](./images/package_name_change.png)
 
 7. **Save** the file with the changes.
 
-  Great, we are now ready to **change the code** of our **custom component implementation**.
+    Great, we are now ready to **change the code** of our **custom component implementation**.
 
 8. **Open** the file `tasks.js` with your favorite text editor. You can find this file in the **components folder**.
 
 9. **Edit** the file `tasks.js` and **replace** the whole content with the following code:
 
-  ```javascript
-  "use strict";
+    ```javascript
+    "use strict";
 
-  const fetch = require("node-fetch");
+    const fetch = require("node-fetch");
 
-  const ordsURL = "<URL_copied_from_APEX>";
+    const ordsURL = "<URL_copied_from_APEX>";
 
-  function getTasks(urlRequest, logger, callback) {
+    function getTasks(urlRequest, logger, callback) {
     logger.info(urlRequest);
     fetch(urlRequest)
-      .then((res) => {
+        .then((res) => {
         if (!res.ok) {
-          const errorMessage = `Invalid status ${res.status}`;
-          logger.error(errorMessage);
-          callback(errorMessage);
-          throw new Error(errorMessage);
+            const errorMessage = `Invalid status ${res.status}`;
+            logger.error(errorMessage);
+            callback(errorMessage);
+            throw new Error(errorMessage);
         }
         return res.json();
-      })
-      .then((body) => {
+        })
+        .then((body) => {
         callback(null, body.items);
-      })
-      .catch((err) => {
+        })
+        .catch((err) => {
         logger.error(err.message);
         callback(err.message);
-      });
-  }
+        });
+    }
 
-  module.exports = {
-    metadata: () => ({
-      name: "com.example.tasks",
-      supportedActions: ["success", "failure"],
-    }),
-    invoke: (conversation, done) => {
-      getTasks(ordsURL, conversation.logger(), (err, data) => {
-        if (err) {
-          conversation.transition("failure");
-          done();
-          return;
-        }
-        const tasks = data.map((task) => task.text);
-        conversation.reply(tasks.join("\n")).transition("success");
-        done();
-      });
-    },
-  };
-  ```
+    module.exports = {
+        metadata: () => ({
+            name: "com.example.tasks",
+            supportedActions: ["success", "failure"],
+        }),
+        invoke: (conversation, done) => {
+            getTasks(ordsURL, conversation.logger(), (err, data) => {
+            if (err) {
+                conversation.transition("failure");
+                done();
+                return;
+            }
+            const tasks = data.map((task) => task.text);
+            conversation.reply(tasks.join("\n")).transition("success");
+            done();
+            });
+        },
+    };
+    ```
 
-  **IMPORTANT**:
+    **IMPORTANT**:
 
-  **Remember** to change the `<URL_copied_from_APEX>` with the **URL** copied on **APEX** in **Lab 2**.
+    **Remember** to change the `<URL_copied_from_APEX>` with the **URL** copied on **APEX** in **Lab 2**.
 
-  ![Copy URL from APEX](./images/apex_copy_url.png)
+    ![Copy URL from APEX](./images/apex_copy_url.png)
 
-  It should look like this:
+    It should look like this:
 
-  ```javascript
-  const ordsURL =
-    "https://xxx-yyy.adb.region.oraclecloudapps.com/ords/tasks/oda/tasks/";
-  ```
+    ```javascript
+    const ordsURL =
+        "https://xxx-yyy.adb.region.oraclecloudapps.com/ords/tasks/oda/tasks/";
+    ```
+
 10. Don't forget the **save** tasks.js file.
 
 ## **Step 2**: Deploy the custom component
@@ -160,15 +161,15 @@ Ready to create your **Custom Component** scaffolding.
 
 1. We are going to **install** our custom component **locally** as a **component container**. Very simple, we need to pack our code in a single file that contains everything:
 
-  Package your **Custom Component** by running on your Command Prompt or Terminal:
+    Package your **Custom Component** by running on your Command Prompt or Terminal:
 
-  ```bash
-  npm pack
-  ```
+    ```bash
+    npm pack
+    ```
 
-  The **output** looks like this:
+    The **output** looks like this:
 
-  ![Pack result](./images/node_result.png)
+    ![Pack result](./images/node_result.png)
 
 ## It works
 
