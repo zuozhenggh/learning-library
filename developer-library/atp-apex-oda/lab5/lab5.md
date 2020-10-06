@@ -45,7 +45,7 @@ Import Custom Component is very simple.
     The web form to **upload** the file will **show up**.
     We will fill out all the information of this web form.
 
-2. Select `Upload a component package file (a .tgz file created by running bots-node-sdk pack or npm pack) or drag it here.`
+2. Select **Upload a component package file (a .tgz file created by running bots-node-sdk pack or npm pack) or drag it here**.
 
     ![Create Skill](./images/cc_import_2.png)
 
@@ -57,7 +57,7 @@ Import Custom Component is very simple.
 
     - **Name**: tasks
     - **Description**: Tasks Custom Component
-    - **Embedded Container** is selected by default. Leave it like that.
+    - **Embedded Container**: is selected by default. Leave it like that
 
 5. Finally **Create** the Service.
 
@@ -90,7 +90,7 @@ Let's create a **Greeting Intent**.
 
     - **Conversation Name**: Greeting
     - **Name**: Greeting
-    - **Utterances to Add**: In this field is where you have ti type the different Greetings that you want to include as part of the Intent. Type on this field `hi` and click enter. Wait to be added as part of the intents. Type on the same field `hello` and wait to be added as before.
+    - **Utterances to Add**: In this field is where you have ti type the different Greetings that you want to include as part of the Intent. Type on this field `hi` and click enter. Wait to be added as part of the intents. Type on the same field `hello` and wait to be added as before
 
     The two **Intents** that you added a few seconds ago will be visible in the page. Check the following screenshot to confirm.
 
@@ -104,7 +104,7 @@ Let's create a **Greeting Intent**.
 
     - **Conversation Name**: ListTasks
     - **Name**: ListTasks
-    - **Utterances to Add**: In this field is where you have ti type the different Greetings that you want to include as part of the Intent. Type on this field `list my tasks` and click enter. Wait to be added as part of the intents. Type on the same filed `show me my tasks` and wait to be added as before. And finally type on the same filed `tasks` and wait to be added as before.
+    - **Utterances to Add**: In this field is where you have ti type the different Greetings that you want to include as part of the Intent. Type on this field `list my tasks` and click enter. Wait to be added as part of the intents. Type on the same filed `show me my tasks` and wait to be added as before. And finally type on the same filed `tasks` and wait to be added as before
 
     The three **Intents** that you added a few seconds ago will be visible in the page. Check the following screenshot to confirm.
 

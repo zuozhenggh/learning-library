@@ -86,7 +86,8 @@ Ready to create your **Custom Component** scaffolding.
 
 8. **Open** the file `tasks.js` with your favorite text editor. You can find this file in the **components folder**.
 
-9. **Edit** the file `tasks.js` and **replace** the whole content with the following code:
+9. **Edit** the file `tasks.js` and **replace** the whole content with the following code or download it from <a href="./files/tasks.js" target="\_blank">here</a>. 
+
 
     ```javascript
     "use strict";
