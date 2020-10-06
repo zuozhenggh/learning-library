@@ -102,7 +102,7 @@ This time this function is being used:
 
 Just like the import Function it connects to MySQL using the configuration
 provided. To keep number of different functions low it is prepared to handle
-different *modes*. IT then uses the X DevAPI's `find()` function to search
+different *modes*. It then uses the X DevAPI's `find()` function to search
 for documents showing the people from a given state.
 
 In case of an error the HTTP status code 500 is being used and an error
