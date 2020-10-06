@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab with guide you through provisioning a Application Database
+This lab with guide you through provisioning a Application Database.
 
 Estimated Lab Time: 30-35 min including ~25-30 min provisioning time.
 
@@ -14,7 +14,7 @@ In this lab you will:
 - Create a private subnet for the Application Database
 - Provision the Application Database as a Database VM.
 
-## **STEP 1:** Create a Security List for the database subnet
+## **STEP 1:** Create a security List for the database subnet
 
 Before we can provision the Application Database, we need to provision a **private subnet** for the **Database System** with appropriate **Security Lists** to open up the required ports:
 - port 1521 for the database,
@@ -96,7 +96,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
   <img src="./images/provision-db-9-subnet7.png" width="70%">
 
-## **STEP 3:** Provision the Database System
+## **STEP 3:** Provision the Database system
 
 1. Go to **Database -> Bare Metal, VM and Exadata**
 

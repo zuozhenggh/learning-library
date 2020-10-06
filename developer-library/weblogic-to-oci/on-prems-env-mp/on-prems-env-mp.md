@@ -1,4 +1,4 @@
-# Setup an 'on-premises' environment using the workshop image.
+# Setup an 'On-Premises' Environment Using the Workshop Image.
 
 ## Introduction
 
@@ -23,7 +23,7 @@ For this lab you need:
 
 - A compute instance with 4 OCPUs available to run the image.
 
-## **STEP 1:** Launch the Workshop Marketplace stack
+## **STEP 1:** Launch the workshop marketplace stack
 
 - Navigate to [Workshop Environment Marketplace Stack](https://cloudmarketplace.oracle.com/marketplace/listing/82173888)
 
@@ -55,21 +55,21 @@ For this lab you need:
 
    To output the public key information, use the following command from your local machine:
 
-   ```
-   <copy>
-   cat ~/.ssh/id_rsa.pub
-   </copy>
-   ```
+    ```
+    <copy>
+    cat ~/.ssh/id_rsa.pub
+    </copy>
+    ```
 
    Copy the output of the command (the whole multi-line output) and paste it in the form field for SSH key in the form
 
    the output will look something like this:
 
-   ```bash
-   ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlkF23qLyfimJ9Vp4D9psp7bDOB8JvtY/pfYzFxIA2E4v6or+XhvMW5RDhX9Ba54zQNNDLvwUhStdXKkiMXJtEQJarFn45pGy/lyUQKFJolAdHBrXJsg5XWn4DxCFeQUQe1szVfmwDLAktAS14r5g76h3CcA8Kk/cNVqevxVChyejuuOdtAMoriIC8uKV+535qPs/GMiu0zR9aW4w1VodL5eHnXjqdgp8Fr21dVUVQ6of+s/ws0zlQUwghrNguDUqlggzG2mpLBHExypxCrJYmsb05uYjjqVlC3YCatj4nJTIHKLCFiYVY/b8AFkqwXV9EYlja5bjTmunM847dcR8H oracle@ad753161734c
-   ```
+    ```bash
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlkF23qLyfimJ9Vp4D9psp7bDOB8JvtY/pfYzFxIA2E4v6or+XhvMW5RDhX9Ba54zQNNDLvwUhStdXKkiMXJtEQJarFn45pGy/lyUQKFJolAdHBrXJsg5XWn4DxCFeQUQe1szVfmwDLAktAS14r5g76h3CcA8Kk/cNVqevxVChyejuuOdtAMoriIC8uKV+535qPs/GMiu0zR9aW4w1VodL5eHnXjqdgp8Fr21dVUVQ6of+s/ws0zlQUwghrNguDUqlggzG2mpLBHExypxCrJYmsb05uYjjqVlC3YCatj4nJTIHKLCFiYVY/b8AFkqwXV9EYlja5bjTmunM847dcR8H oracle@ad753161734c
+    ```
 
-   **Note:** Do not use the example above as the key: it is a different public key which is useless without the corresponding private key, and you will not be able to access your resources on OCI)
+  **Note:** Do not use the example above as the key: it is a different public key which is useless without the corresponding private key, and you will not be able to access your resources on OCI)
 
 7. Click **Next** and then **Create**
 
@@ -97,7 +97,7 @@ It shows statistics of riders of the Tour de France stored in the database, and 
 
 You may proceed to next steps while the environment is coming up, but make sure it is up before proceeding to the next lab.
 
-## **STEP 3:** Log in to the 'on-premises' environment
+## **STEP 3:** Log in to the 'On-premises' environment
 
 *Most of the work will be done from the simulated on-premises environment deployed in the compute instance on OCI.*
 
@@ -139,7 +139,7 @@ We'll create a SSH key pair in the default folder
 
     Note this key will be the default SSH key from the instance used for the on-premises environment.
 
-**Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
+    **Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
 
 You may proceed to the next lab.
 

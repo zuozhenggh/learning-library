@@ -1,4 +1,4 @@
-# Migrating the WebLogic domain
+# Migrating the WebLogic Domain
 
 ## Introduction
 
@@ -37,7 +37,7 @@ To run this lab, you need to:
 - Have deployed a WebLogic on OCI domain using the marketplace
 - Have migrated the Application database from the source environment to OCI
 
-## **STEP 1:** Installing WebLogic Deploy Tooling
+## **STEP 1:** Installing WebLogic deploy tooling
 
 ### Using the docker 'on-premises' environment:
 
@@ -69,7 +69,7 @@ To run this lab, you need to:
 
     This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`
 
-### Using the demo Workshop Marketplace image
+### Using the demo workshop marketplace image
 
 
 You should already be in the 'on-premises' environment logged in as the `oracle` user.
@@ -489,9 +489,9 @@ appDeployments:
 
   the resulting file should look like:
 
-  ```yaml
-  JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
-  ```
+    ```yaml
+    JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
+    ```
 
 3. Save the file with `CTRL+x` and `y`
 
@@ -513,11 +513,11 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
 
 1. Edit the `update_domain.sh` script 
 
-  ```bash
-  <copy>
-  nano update_domain.sh
-  </copy>
-  ```
+    ```bash
+    <copy>
+    nano update_domain.sh
+    </copy>
+    ```
 2. Provide the `TARGET_WLS_ADMIN` 
     This is the **WebLogic Admin Server public IP** gather previously.
   
@@ -794,7 +794,7 @@ updateDomain.sh completed successfully (exit code = 0)
 5. Go to the SimpleDB application URL, which is the Load Balancer IP gathered previously in the **Outputs** of the WebLogic provisioing, with the route `/SimpleDB/` like:
 https://`LOAD_BALANCER_IP`/SimpleDB/
 
-Making sure you use `https` as scheme and the proper case for `/SimpleDB` 
+    Making sure you use `https` as scheme and the proper case for `/SimpleDB` 
 
   <img src="./images/oci-simpledb-app.png" width="100%">
 
