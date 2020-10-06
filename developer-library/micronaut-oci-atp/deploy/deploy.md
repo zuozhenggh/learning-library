@@ -18,6 +18,8 @@ In this lab you will:
 
 ### Deploy (From Local To VM)
 
+Note that steps 4 and 5 are not necessary if you deployed the Helidon native image in the previous Lab to the VM.
+
 1. Before deploying, ensure the wallet exists on the VM by running the snippet produced by `setup.sh` that looks similar to:
 
     ```
@@ -80,6 +82,45 @@ In this lab you will:
     </copy>
     ```
 
+### _Alternative: Build and run on VM only_
+If you ran into trouble building or deploying the Microservice applications presented in previous steps, you may use the following instructions to build and deploy them directly to the OCI VM:
+
+
+1. Download and run Helidon MP native image on VM:
+
+    ```
+    <copy>
+    # ssh to VM
+    ssh -i ~/.ssh/id_rsa opc@[VM IP Address]
+      
+    # download and run Helidon native image app 
+    curl https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/helidon-mp-service -o /app/helidon-mp-service
+    chmod +x /app/helidon-mp-service
+    ./app/helidon-mp-service
+    </copy>
+    ```
+
+2. Build and run Micronaut application:
+    ```
+    <copy>
+    # ssh to VM
+    ssh -i ~/.ssh/id_rsa opc@[VM IP Address]
+   
+    # export variables to connect to Oracle Autonomous Database
+    export TNS_ADMIN=[Your absolute path to wallet]
+    export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
+   
+    # checkout micronaut source code
+    git clone -b lab6 https://github.com/graemerocher/micronaut-hol-example.git
+   
+    # run micronaut app
+    cd micronaut-hol-example
+    ./gradlew run -t
+    </copy>
+     ```
+
+## **STEP 2**:  Verify Application
+
 You can now access `http://[VM IP Address]:8080/pets` for the `/pet` endpoint and `http://[VM IP Address]:8080/owners` for the `/owners` endpoint in a browser or using `curl`:
 
     curl -i http://[VM IP Address]:8080/pets
@@ -99,4 +140,4 @@ You may now *proceed to the next lab*.
 - **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

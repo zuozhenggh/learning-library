@@ -6,7 +6,7 @@ Essbase users are familiar with performing data analysis using Smart View for Of
 
 *Note:* The Data Visualization service in Oracle Analytics Cloud provides a direct connection for Essbase
 
-Approximate time to complete this lab is 20 minutes.
+Estimated Lab Time: 20 minutes.
 
 ### Objectives
 
@@ -14,11 +14,11 @@ Approximate time to complete this lab is 20 minutes.
 * Understanding the connection process
 * Creating intuitive dashboards on top of Essbase cubes
 
-### Required Artifacts
+### Prerequisites
 
 This lab will require the following -
 
-  1.	An Oracle public cloud tenancy with OAC-DV & Essbase19c Instances of at least 1 OCPU up & running.
+*	An Oracle public cloud tenancy with OAC-DV & Essbase19c Instances of at least 1 OCPU up & running.
 
 
 ## **Step 1:** Create a Direct Connection in Data Visualizer
@@ -61,15 +61,23 @@ To disable the DEMO SSL certificate verification we need to open port 80 on Essb
 
 4.	Execute the below commands as given below
 
-    ``<copy> sudo firewall-cmd --add-port=80/tcp --zone=public </copy>``
+    ```
+    <copy> sudo firewall-cmd --add-port=80/tcp --zone=public </copy>
+    ```
 
 5. To make this survive restarts of the firewall service:
 
-    ``<copy> sudo firewall-cmd --add-port=80/tcp --zone=public –permanent </copy>``
+    ```
+    <copy> sudo firewall-cmd --add-port=80/tcp --zone=public –permanent </copy>
+    ```
 
-    ``<copy> sudo systemctl restart firewalld </copy>``
+    ```
+    <copy> sudo systemctl restart firewalld </copy>
+    ```
 
-    ``<copy> sudo firewall-cmd --list-all </copy>``
+    ```
+    <copy> sudo firewall-cmd --list-all </copy>
+    ```
 
     ![](./images/image18_7.png "")
 
@@ -122,4 +130,4 @@ After you create Essbase connections, you can use those connections to create da
 * Last Updated By/Date - Jess Rein, Cloud Engineer, Sept 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
