@@ -19,68 +19,67 @@ In this lab, you will:
 
 ### Prerequisites
 
+## Step 1 - Create OCI infrastructure using Terraform Configuration File
 
+1.	Login to OCI
 
-## **STEP 1**: title
+2.	Go to Menu -> Compute
 
-Step 1 opening paragraph.
+3.	Go to Menu -> Resource Manager -> Stacks
 
-1. Sub step 1
+4.	Click on Create Stack
 
-  To create a link to local file you want the reader to download, use this format:
+5.	Browse or drop terraform configuration file created in section 1
+ 
+Provide the name and description. Select a compartment.
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+6.	Click Next
+ 
+Provide a public SSH key. Select the Availability Domain
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+7.	Select an EPM Application
+ 
+In this case we have selected Financial Management
+Select Number of Nodes for an application
+Select Instance Shape, Volume Size and Volume performance.
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+8.	Select the Number of Instance shape Volume Size and Volume performance for the Foundation 
 
-    ![Image alt text](images/sample1.png "Image title")
+9.	Select Create EPM Database
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+Provide the required details
 
-    ![Image alt text](images/sample1.png)
+Select the DB Node, Shape and DB Size. 
+ 
+10.	Select the Web Server Configuration
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+11.	Load Balance Configuration
+ 
+12.	Click Next 
+ 
+Go through the summary of the selection and confirm your selection
+13.	Click on Create
 
-5. One example with bold **text**.
+14.	Click on Terraform Actions -> Plan
+ 
+15.	Click on Plan
+ 
 
-   If you add another paragraph, add 3 spaces before the line.
+Notice that Plan is in progress.
+Once the Plan Succeeded
+ 
+16.	Go back to Stack Details
+ 
+Notice that you plan is listed in succeeded status.
+17.	Click on Terraform Actions -> Apply
+ 
+18.	Click on Apply
 
-## **STEP 2:** title
+Plan will be in Accepted state
 
-1. Sub step 1
+Plan is in progress
 
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-*At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
+19.	Once it completes, Apply state will be succeeded and all the instance will have assigned host, ips , user and password.
 
 ## Learn More
 
