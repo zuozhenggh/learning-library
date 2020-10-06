@@ -1,76 +1,44 @@
-# Lab 2 - Working with file-based graphs
+# Use Case: Customer 360 analysis #
 
-## Introduction
-
-In this lab you will create a graph from files containing customer, account, purchase, and relationship data. You will then run some graph algorithms and queries and visualize the results.
-
-![](images/load_data.jpg)
-
-Estimated time: 15 minutes
-
-### Prerequisites
-
-- The containers with the deployed Graph Server and Client components.
-- Cloned `oracle-pg` repository.
-
-## Step 1 - Check that the containers are up and running
-
-Access Graph Visualization.
-
- - [http://localhost:7007/ui/](http://localhost:7007/ui/)
-
-Access Zeppelin.
-
-- [http://localhost:8080/#/](http://localhost:8080/#/)
-
-If the containers are not up then start or restart them using:
-
-
-```
-$ <copy>cd oracle-pg/docker/ </copy>
-$ <copy>docker-compose start|restart</copy>
-```
-
-## Step 2 - Create the Customer 360 graph
-
-### What the data and graph represent
+## Overview
 This example shows how integrating multiple datasets, using a graph, facilitates additional analytics can lead to new insights. We will use three small datasets for illustrative purposes. The first contains accounts and account  owners. The second is purchases by the people who own those accounts. The third is transactions between these accounts.
 
 The combined dataset is then used to perform the following common graph query and analyses: pattern matching, detection of cycles, finding important nodes, community detection, and recommendation.
 
-### Graph Query and Analysis in Apache Zeppelin 
+**Note:** This lab assumes you have successfully completed Lab 1 [Setup with Docker](https://oracle.github.io/learning-library/data-management-library/database/graph/livelabs/) and have an environment up and running with Zeppelin at [http://localhost:8080](http://localhost:8080/) and the Graph Visualization component at [http://localhost:7007/ui/](http://localhost:7007/ui/).
+
+## Graph Query and Analysis in Apache Zeppelin 
 
 Navigate to the Zeppelin in the browser and click on the "Customer 360" notebook link.
 
-![Zeppelin Home Page](images/ZeppelinHome.png)
+![Zeppelin Home Page](./images/ZeppelinHome.png)
 
 Run through the notebook paragraphs in sequence. 
 
-![Customer 360 Notebook](images/ZepCustomer360NB.png)
+![Customer 360 Notebook](./images/ZepCustomer360NB.png)
 
-## Step 3 - Graph Visualization
+## Graph Visualization
 
 Next we will use the Graph Visualization component to explore the graph and run some PGQL queries.
 Open the Graph Viz at [http://localhost:7007/ui/](http://localhost:7007/ui/)
 
 You should see a screen similar to the screenshot below.  
-![GraphViz on startup](images/GraphVizStartup.png)
+![GraphViz on startup](./images/GraphVizStartup.png)
 
 
 Modify the query to get the first 50 rows, i.e. change LIMIT 10 to LIMIT 50, and click Run.
 
 You should see a graph similar to the screenshot below.  
-![Customer 360 graph](images/GraphVizFirst50.png)
+![Customer 360 graph](./images/GraphVizFirst50.png)
 
 Now let's add some labels and other visual context. These are known as highlights. 
 Click on the Load button under Highlights (on the right side of the screen). Browse to the `customer_360` folder in the repository that you cloned in Lab1. That is, to `oracle-pg/graphs/customer_360` and choose the file named 'highlights.json' and click Open to load that.  
-![Load highlights for graph](images/GraphVizLoadHighlights.png)
+![Load highlights for graph](./images/GraphVizLoadHighlights.png)
 
 The graph should now look like  
-![Customer 360 graph with highlights](images/GraphVizWithHighlights.png)
+![Customer 360 graph with highlights](./images/GraphVizWithHighlights.png)
 
-## Step 4 - Graph queries in PGQL
-
+### Pattern matching with PGQL
 Next let's run a few PGQL queries. 
 
 The [pgql-lang.org](http://pgql-lang.org) site and [specification](http://pgql-land.org/spec/1.2) are the best reference for details and examples. For the purposes of this lab, however, here are minimal basics. 
@@ -106,7 +74,7 @@ Click Run.
 
 The result should look as shown below.
 
-![Same day txns of more than 500](images/GraphVizInOutTxns.png)
+![Same day txns of more than 500](./images/GraphVizInOutTxns.png)
 
 The next query finds patterns of transfers to and from the same two accounts, i.e. from A->B and back B->A.
 
@@ -123,7 +91,7 @@ Click Run.
 
 The result should look as shown below.
 
-![Transfer A to B to A](images/GraphVizABATxn.png)
+![Transfer A to B to A](./images/GraphVizABATxn.png)
 
 Let's add one more account to that query to find a circular transfer pattern between 3 accounts. 
 
@@ -140,9 +108,10 @@ Click Run.
 
 The result should look as shown below.
 
-![Circular transfer A to B to C to A](images/GraphVizABCATxn.png)
+![Circular transfer A to B to C to A](./images/GraphVizABCATxn.png)
 
-## Step 5 - Graph Query and Analysis in JShell
+
+## Graph Query and Analysis in JShell
 
 Start the JShell in the graph-client. Copy and paste the following command to do that.
 ```
@@ -223,7 +192,7 @@ The first query could be expressed as:
 +---------------------------------------------------------------------------------+
 ```
 
-![](images/detection.jpg)
+![](./images/detection.jpg)
 
 The second query just adds one more transfer to the pattern (list) and could be expressed as:
 
@@ -245,7 +214,7 @@ The second query just adds one more transfer to the pattern (list) and could be 
 +-----------------------------------------------------------------------------------+
 ```
 
-![](images/detection2.jpg)
+![](./images/detection2.jpg)
 
 
 ### Influential Accounts
@@ -351,7 +320,7 @@ sg.queryPgql(
 +-------------------------------------------------------+  
 ```
 
-![](images/community.jpg)
+![](./images/community.jpg)
 
 
 ### Recommendation
@@ -396,10 +365,10 @@ sg.queryPgql(
 +---------------------------------------------------+
 ```
 
-![](images/recommendation1.jpg)
+![](./images/recommendation1.jpg)
 
 
-![](images/recommendation2.jpg)
+![](./images/recommendation2.jpg)
 
 We will focus on the account no. xxx-yyy-201 (John's account) and run PPR.
 
@@ -449,8 +418,5 @@ sg.queryPgql(
 
 ## Acknowledgements ##
 
-- **Author** -  Jayant Sharma - Product Manager.
-- **Contributors** - Ryota Yamanaka.
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+- **Author** - Ryota Yamanaka - Product Manager in Asia-Pacific for geospatial and graph technologies  
+With a little help from colleagues (Albert Godfrind and Jayant Sharma).

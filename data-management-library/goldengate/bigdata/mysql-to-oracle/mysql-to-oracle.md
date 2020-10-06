@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
+This **read only** lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 In this lab is a read-only example on how we use goldengate for bigdata Java Database Connectivity (JDBC) Handler to replicate source transactional data to a target or database.
 
 *Estimated Lab Time*:  60 minutes
@@ -140,11 +140,11 @@ select 'salaries        table -> '|| count(1) from employees.salaries;
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Meghana Banka, September 2020
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 
 
  
