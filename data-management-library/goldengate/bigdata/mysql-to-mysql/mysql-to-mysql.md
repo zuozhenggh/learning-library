@@ -52,6 +52,7 @@ Use Public IP allocated from LiveLabs
 ````
 <copy>view /u01/gg4mysql/dirprm/create_mysql_gg_procs.oby</copy>
 ````
+**:q!** to exit out of the view option
 
 ````
 <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
@@ -141,9 +142,7 @@ processes:
 <copy>start repmysql</copy>	
 ````
 
-````
-<copy>start * </copy>
-````
+or **" start * "** to start ALL
 
 ````
 <copy>info all</copy>

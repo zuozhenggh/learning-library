@@ -157,7 +157,7 @@ Review the overview notes on the following screen, then select Q to quit. These 
 
 **Step9:** Now that the source side is setup, let us configure GG on the target side (for Cassandra).
 
-**Step10:** In the GG for Hadoop session, you will need to modify the Cassandra properties by removing the ‘---‘ from the highlighted values:
+**Step10:** In the GG for Hadoop session, you will need to modify the Cassandra properties by **removing the ‘---‘ prefixes** from the highlighted values:
 
   ![](./images/f6.png " ")
   ![](./images/f7.png " ")
@@ -171,6 +171,7 @@ Review the overview notes on the following screen, then select Q to quit. These 
 ````
 <copy>vi rcass.properties</copy>
 ````
+
 ````
 <copy>---cassandra</copy>
 ````
@@ -206,7 +207,7 @@ Review the overview notes on the following screen, then select Q to quit. These 
 
 **Step12:** Now that GG processes have been created and started on both the source and target, we need to create the Cassandra Keyspace before loading data. A Cassandra Keyspace is equivalent to a database or schema in relational databases. This step can be done at anytime, and is not dependant on GG.
 
-**Open another ssh session**
+**Open another ssh session - labmenu - Q to exit**
 
 NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop the Cassandra keyspace – and then recreate with the alias below.
 

@@ -44,6 +44,7 @@ The following Lab Menu will be displayed,
 
 **2:** Review the overview notes on the following screen, then select Q to quit. These online notes have been provided to can cut/paste file names to another session, to avoid typos.
 
+
 **3:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. 
 
 (Is already done in the env script for this workshop)

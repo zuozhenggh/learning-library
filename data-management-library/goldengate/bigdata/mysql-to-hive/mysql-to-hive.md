@@ -279,24 +279,10 @@ Login to Hue: cloudera/cloudera
 
 ![](./images/c22.png " ")
 
-![](./images/c23.png " ")
+**/ user/ ggtarget/ hive/ schema/ ggtarget2hive_avro.dept.avsc**
 
-![](./images/c24.png " ")
+![](./images/c26.png " ")
 
-![](./images/c25.png " ")
-
-
-**15:** Let’s confirm that GG replicated the data that it captured. In a GG Home for Hadoop session:
-
-  ![](./images/c18.png " ")
-  ![](./images/c19.png " ")
-
-````
-  <copy>./ggsci</copy>
-````
-````
-<copy>stats rhive total</copy>
-````
 
 In summary, we loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhive’ read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and
 /user/ggtarget/hive/schema
