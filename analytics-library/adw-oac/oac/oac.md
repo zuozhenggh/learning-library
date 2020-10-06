@@ -1,4 +1,4 @@
-# Lab 3 - Using Oracle Analytics Cloud (OAC)
+# Using Oracle Analytics Cloud (OAC)
 
 ![Oracle ADW + 0racle OAC](./images/adw_oac_banner.png)
 
@@ -18,7 +18,7 @@ In this workshop, you will:
 
 Estimated workshop Time 1 hour and 15 minutes.
 
-## **Step 1**: Create the connection from Oracle Analytics Cloud to Autonomous Database
+## **STEP 1**: Create the connection from Oracle Analytics Cloud to Autonomous Database
 
 **Oracle Autonomous Database** only accepts secure connections to the database. This requires a *'wallet'* file that contains the SQL\*NET
 configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL\*Plus etc. For this
@@ -106,7 +106,7 @@ Warehouse**** section.
 
 10. Select **Save** to save your new connection **information**.
 
-## **Step 2**: Prepare the dataset
+## **STEP 2**: Prepare the dataset
 
 When you create a project, you add one or more **data sets** containing the data that you want to **visualize and explore**. Data sets contain data
 from subject areas, Oracle Applications, databases, or uploaded data files such as spreadsheets. You can also add multiple data sets to your
@@ -166,7 +166,7 @@ existing projects.
 
 8. The **Data Set** was successfully **added**.
 
-## **Step 3**: Create Visualizations using your data sets
+## **STEP 3**: Create Visualizations using your data sets
 
 1. Create a new project by clicking **Create Project**.
 

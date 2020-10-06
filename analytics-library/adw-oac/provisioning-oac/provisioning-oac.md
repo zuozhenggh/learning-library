@@ -1,4 +1,4 @@
-# Lab 2 - Provisioning your Oracle Analytics Cloud (OAC) instance
+# Provisioning your Oracle Analytics Cloud (OAC) instance
 
 ![Oracle Analytics Cloud](./images/oac_banner.png)
 
@@ -12,7 +12,7 @@ Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
 
 Estimated workshop Time 15 minutes.
 
-## **Step 1**: Create an Oracle Analytics Cloud (OAC) Instance
+## **STEP 1**: Create an Oracle Analytics Cloud (OAC) Instance
 
 Return to the Oracle Cloud Infrastructure Console accessing from **Oracle Home Page** (oracle.com) and sign in into your cloud account.
 Click in **View Account** and **Sign in to Cloud**.

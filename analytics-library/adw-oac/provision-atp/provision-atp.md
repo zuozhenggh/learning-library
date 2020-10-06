@@ -1,4 +1,4 @@
-# Lab 1 - Provisioning your Autonomous Database instance
+# Provisioning your Autonomous Database instance
 
 ![Autonomous Databases](./images/adb_banner2.png)
 
@@ -25,7 +25,7 @@ Detect and protect from system failures and user errors automatically and provid
 
 Estimated workshop Time 15 minutes.
 
-## **Step 1**: Create a new Autonomous Data Warehouse Datatabase
+## **STEP 1**: Create a new Autonomous Data Warehouse Datatabase
 
 1. Click on the hamburger **MENU** link at the upper left corner of the page.
 
