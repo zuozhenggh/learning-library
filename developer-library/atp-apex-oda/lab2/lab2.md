@@ -83,12 +83,12 @@ Use Cases:
 
 2. Write on the left panel the following table definition:
 
-    ```bash
     <copy>
+    ```bash
     tasks
         text
-    </copy>
     ```
+    </copy>
 
 3. Click **Generate SQL**.
 
