@@ -53,7 +53,7 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 | 6    | Test Java 8 features               | 10min                     | Illustrates how to use the Java streams when querying and processing cache entries | How Lambda features can be used in a Cache to simplify common Coherence tasks and how to query and process cache entries  |
 | 7    | Test Asynchronous features               | 10min                     | Illustrates how to asynchronously get and put data in a cache | How to asynchronously process cache entries in Coherence and  how to asynchronously aggregate cache entries  |
 
-## **Step 1**: Verify Environment
+## **STEP 1**: Verify Environment
 
 1. Open Two Terminal windows 
 
@@ -77,7 +77,7 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 
 ![](../images/set-env.png " ") 
 
-## **Step 2**: Build JAVA Labs
+## **STEP 2**: Build JAVA Labs
 
 1. Change Directory to Java Samples in both Terminal Windows ((/u01/middleware/14c/coherence/examples/java)
 
