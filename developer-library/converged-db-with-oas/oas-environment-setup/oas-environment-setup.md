@@ -27,11 +27,21 @@ sudo su - oracle
 ![](./images/oas-environment1.png " ")
 
 2. To set the environment for Database and access the binaries, Enter " . oraenv " on command prompt.
-   
+
+`````
+<copy>
+ . oraenv
+</copy>
+````` 
+
 ![](./images/oas-environment2.png " ")
 
 3. Enter **convergedcdb** for ORACLE\_SID. So that the Oracle_Base will be set.
-
+`````
+<copy>
+convergedcdb
+</copy>
+````` 
 ![](./images/oas-environment3.png " ")
 
 4. Go to folder /u01/script
