@@ -1,4 +1,4 @@
-# Lab 300 - Using Oracle Analytics Cloud (OAC)
+# Lab 3 - Using Oracle Analytics Cloud (OAC)
 
 ![Oracle ADW + 0racle OAC](./images/adw_oac_banner.png)
 
@@ -24,7 +24,7 @@ Estimated workshop Time 1 hour and 15 minutes.
 configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL\*Plus etc. For this
 workshop, you will use this same wallet mechanism to make a connection from OAC to the **Autonomous Database**.
 
-***Note**: This section assumes you have already created your Oracle Analytics Cloud instance as part of the 'Lab 200 - Provisioning your Oracle Analytics Cloud (OAC)' instance section. If not, please return to the beginning of Lab200 and go through the instance creation.*
+***Note**: This section assumes you have already created your Oracle Analytics Cloud instance as part of the 'Lab 2 - Provisioning your Oracle Analytics Cloud (OAC)' instance section. If not, please return to the beginning of Lab2 and go through the instance creation.*
 
 1. ### Download your Autonomous Database wallet
 
@@ -76,7 +76,7 @@ Warehouse**** section.
 
     ![OAC Web Console](./images/lab300_7.png)
 
-7. **Open** the Cloud Analytics **URL** associated with your instance (the one that we created in Lab 200) by using the dots menu button on the right-hand side of your instance information and selecting **Open URL**.
+7. **Open** the Cloud Analytics **URL** associated with your instance (the one that we created in Lab 2) by using the dots menu button on the right-hand side of your instance information and selecting **Open URL**.
 
     ![Cloud Analytics URL](./images/lab300_8.png)
 

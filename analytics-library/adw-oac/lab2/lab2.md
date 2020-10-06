@@ -1,4 +1,4 @@
-# Lab 200 - Provisioning your Oracle Analytics Cloud (OAC) instance
+# Lab 2 - Provisioning your Oracle Analytics Cloud (OAC) instance
 
 ![Oracle Analytics Cloud](./images/oac_banner.png)
 

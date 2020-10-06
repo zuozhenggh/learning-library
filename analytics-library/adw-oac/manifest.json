@@ -9,15 +9,15 @@
       "filename": "intro/intro.md"
     },
     {
-      "title": "Lab 100 - Provisioning your Autonomous Database instance",
+      "title": "Lab 1 - Provisioning your Autonomous Database instance",
       "filename": "lab1/lab1.md"
     },
     {
-      "title": "Lab 200 - Provisioning your Oracle Analytics Cloud (OAC) instance",
+      "title": "Lab 2 - Provisioning your Oracle Analytics Cloud (OAC) instance",
       "filename": "lab2/lab2.md"
     },
     {
-      "title": "Lab 300 - Using Oracle Analytics Cloud (OAC)",
+      "title": "Lab 3 - Using Oracle Analytics Cloud (OAC)",
       "filename": "lab3/lab3.md"
     },
     {

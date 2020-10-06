@@ -1,4 +1,4 @@
-# Lab 100 - Provisioning your Autonomous Database instance
+# Lab 1 - Provisioning your Autonomous Database instance
 
 ![Autonomous Databases](./images/adb_banner2.png)
 
