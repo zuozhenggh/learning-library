@@ -117,7 +117,6 @@ Estimated workshop Time 15 minutes.
 
     This page is known as the **Autonomous Database Details Page**. It provides you with status information about your database, and its configuration. Get **familiar** with the buttons and tabs on this page.
 
-
     ![ADB Creation Details](./images/lab100_adw_ready.png)
 
     Remember: You will have visible the Always Free logo next to the name of your database:

@@ -9,9 +9,9 @@ In this hands-on workshop, you will get first-hand experience of using Oracle Cl
 
 **Oracle Autonomous Database (ADB)** delivers a self-driving, self-securing,self-repairing database service that can instantly scale to meet demands. The service supports two workload types:
 
-- **Oracle Autonomous Data Warehouse (ADW)** provides an autonomous warehousing environment, associated with fast query performance.
+- **Oracle Autonomous Data Warehouse (ADW)** provides an autonomous warehousing environment, associated with fast query performance
 
-- **Oracle Autonomous Transaction Processing (ATP)** provides an autonomous online transaction processing and mixed workload environment.
+- **Oracle Autonomous Transaction Processing (ATP)** provides an autonomous online transaction processing and mixed workload environment
 
 For the purpose of this workshop, we will use **ADW** so all the steps will be related to this database service.
 

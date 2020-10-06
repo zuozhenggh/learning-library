@@ -12,9 +12,9 @@ You are going to use an **Oracle Analytics Cloud** instance to give your end use
 
 In this workshop, you will:
 
-- **Create a connection** from Oracle Analytics Cloud to Autonomous Database.
-- **Prepare** the dataset.
-- **Create Visualizations** to analyse the data.
+- **Create a connection** from Oracle Analytics Cloud to Autonomous Database
+- **Prepare** the dataset
+- **Create Visualizations** to analyse the data
 
 Estimated workshop Time 1 hour and 15 minutes.
 
@@ -30,10 +30,9 @@ workshop, you will use this same wallet mechanism to make a connection from OAC 
 
     You need first to download the wallet file containing your credentials. There are two types of wallet:
 
-    - **Instance Wallet**: Wallet for a single database only; this provides a database-specific wallet.
+    - **Instance Wallet**: Wallet for a single database only; this provides a database-specific wallet
 
-    - **Regional Wallet**: Wallet for all Autonomous Databases for a given tenant and region (this includes all service instances that a cloud
-    account owns).
+    - **Regional Wallet**: Wallet for all Autonomous Databases for a given tenant and region (this includes all service instances that a cloud account owns)
 
     > **Note**: Oracle recommends you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.
 
@@ -71,7 +70,6 @@ Warehouse**** section.
 6. ### Use the Wallet in Oracle Analytics Cloud
 
     **Return** to the **Oracle Cloud Infrastructure console** and click on the menu icon on the left.
-
     **Navigate** to **Analytics** and then **Analytics Cloud**.
 
     ![OAC Web Console](./images/lab300_7.png)
@@ -98,8 +96,7 @@ Warehouse**** section.
     >
     > **Service Name**: Choose the name of your database followed by the \_high suffix.
     >
-    > **Client Credentials**: Use the Browse button to upload the wallet zip > file that you downloaded. It will automatically extract the
-    > cwallet.sso file from this zip bundle.
+    > **Client Credentials**: Use the Browse button to upload the wallet zip > file that you downloaded. It will automatically extract the cwallet.sso file from this zip bundle.
     >
     > **Username**: ADMIN -- We have created this user on the ADW instance creation.
     >
@@ -185,11 +182,11 @@ existing projects.
 
     ![OAC Navigation](./images/lab300_23.png)
 
-    - **Prepare**: Here is where you configure your data. You get a preview of each dataset on the project. You enrich it by adding columns, hiding or renaming the available ones. You can also define joins between datasets here.
+    - **Prepare**: Here is where you configure your data. You get a preview of each dataset on the project. You enrich it by adding columns, hiding or renaming the available ones. You can also define joins between datasets here
 
-    - **Visualize**: Here is where you explore and Analyze the data. You can create several canvases to hold the different visualizations you define.
+    - **Visualize**: Here is where you explore and Analyze the data. You can create several canvases to hold the different visualizations you define
 
-    - **Narrate**: Here is where you create a more presentation-oriented view of the analysis you created. This tab allows you to choose which insights to show and add comments and descriptions. It helps to understand your analysis journey and focus on showing the results.
+    - **Narrate**: Here is where you create a more presentation-oriented view of the analysis you created. This tab allows you to choose which insights to show and add comments and descriptions. It helps to understand your analysis journey and focus on showing the results
 
     During this workshop, you will use the **Prepare** and **Visualize** tabs mainly.
 
@@ -199,13 +196,13 @@ existing projects.
 
     Main areas to note here are:
 
-    - **Explorer**: Contains all fields from your datasets to be used in the project.
+    - **Explorer**: Contains all fields from your datasets to be used in the project
 
-    - **Properties box**: Allows you to define the properties and parameters of the selected object. If it is a column it will be highlighted in blue (in the screen PROD_ID in the Explorer menu is selected), if it is a graphic from the canvas it will have a thin blue borderline around it.
+    - **Properties box**: Allows you to define the properties and parameters of the selected object. If it is a column it will be highlighted in blue (in the screen PROD_ID in the Explorer menu is selected), if it is a graphic from the canvas it will have a thin blue borderline around it
 
-    - **Graph Definition**: Contains definition of the selected Visualization, which fields to use and where (Axis, Filters, Trellis Groups...).
+    - **Graph Definition**: Contains definition of the selected Visualization, which fields to use and where (Axis, Filters, Trellis Groups...)
 
-    - **Canvas**: Your play area. You can place your visuals here. You can also create more Canvases and copy/move visuals around.
+    - **Canvas**: Your play area. You can place your visuals here. You can also create more Canvases and copy/move visuals around
 
 2. Now that you know a bit your way around in the **Project**, you can continue with the workshop.
 
@@ -416,9 +413,9 @@ existing projects.
 ## It works
 
 You have achieved:
-- Connection from Oracle Analytics Cloud to Autonomous Database.
-- Preparation of datasets.
-- Visualizations to analyse the data.
+- Connection from Oracle Analytics Cloud to Autonomous Database
+- Preparation of datasets
+- Visualizations to analyse the data
 
 Congratulations! Well done!
 

@@ -55,7 +55,7 @@ in the top right hand side of your screen. If your username is shown as:
 
     Complete the form using the following information:
 
-    > **Compartment**: Select a valid compartment in your tenancy.
+    >**Compartment**: Select a valid compartment in your tenancy
     >
     >**Instance Name**: WORKSHOPADWOAC
     >
@@ -65,8 +65,7 @@ in the top right hand side of your screen. If your username is shown as:
     >
     >**Capacity**: 1 - Non Production
     >
-    > **License Type**: "Subscribe to a new Analytics Cloud software > license and the Analytics Cloud." (You will use this service as part
-    > of the free Oracle Cloud trial that you requested for this workshop).
+    >**License Type**: "Subscribe to a new Analytics Cloud software > license and the Analytics Cloud." (You will use this service as part of the free Oracle Cloud trial that you requested for this workshop).
 
 4. Select **Create**.
 
