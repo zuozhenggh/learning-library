@@ -5,7 +5,7 @@ In this lab you will create a graph from the database tables containing customer
 
 Estimated time: 5 minutes
 
-## Step 1 - Create the Customer 360 Property Graph
+## **Step 1:** Create the Customer 360 Property Graph
 
 The following DDL creates a property graph (i.e. node and edge tables) from the relational table data.
 

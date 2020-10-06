@@ -5,7 +5,7 @@ In this lab you will create and populate database tables containing customer, ac
 
 Estimated time: 2-3 minutes
 
-## Step 1 - Load the data
+## **Step 1:** Load the data
 
 Connect to the database as "sys" user, and create a user, "customer_360".
 

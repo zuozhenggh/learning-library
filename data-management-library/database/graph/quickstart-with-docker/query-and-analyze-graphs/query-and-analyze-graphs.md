@@ -5,7 +5,7 @@ In this lab you will load, query, and analyze a graph from the database tables c
 
 Estimated time: 7 minutes
 
-## Step 1 - Configure the graph server to load the graph
+## **Step 1:** Configure the graph server to load the graph
 
 The following configuration files determine the graph server startup settings and optionally the graphs that are pre-loaded. 
 
@@ -57,7 +57,7 @@ $ oracle-pg/docker/conf/pgx-rdbms.conf
 
 Note that edge labels are also loaded.
 
-## Step 2 - Start the graph server and verify that the graph was loaded
+## **Step 2:** Start the graph server and verify that the graph was loaded
 
 Start the database and Graph Server
 Run Docker containers for Graph Server, Graph Client, and Zeppelin.
@@ -73,7 +73,7 @@ $ <copy>docker exec -it graph-client opg-rdbms-jshell -b http://graph-server:700
 var graph = session.readGraphWithProperties("/graphs/customer_360/rdbms.json")
 ```
 
-## Step 3 - Query and Analyze in Zeppelin
+## **Step 3:** Query and Analyze in Zeppelin
 
 Open Zeppelin and execute all the paragraphs in "Customer 360" analytics example notebook.
 

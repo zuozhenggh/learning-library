@@ -245,6 +245,7 @@ Check that the graph was created. Copy, paste, and run the following statements 
     ```
 
     ![](images/check_graph.png " ")
+    
     You may now *proceed to the next lab* (query and analyse the graph in JShell)
 
 ## Acknowledgements

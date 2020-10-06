@@ -7,7 +7,7 @@ The combined dataset is then used to perform the following common graph query an
 
 **Note:** This lab assumes you have successfully completed Lab 1 [Setup with Docker](https://oracle.github.io/learning-library/data-management-library/database/graph/livelabs/) and have an environment up and running with Zeppelin at [http://localhost:8080](http://localhost:8080/) and the Graph Visualization component at [http://localhost:7007/ui/](http://localhost:7007/ui/).
 
-## Graph Query and Analysis in Apache Zeppelin 
+## **Step 1:** Graph Query and Analysis in Apache Zeppelin 
 
 Navigate to the Zeppelin in the browser and click on the "Customer 360" notebook link.
 
@@ -17,7 +17,7 @@ Run through the notebook paragraphs in sequence.
 
 ![Customer 360 Notebook](./images/ZepCustomer360NB.png)
 
-## Graph Visualization
+## **Step 2:** Graph Visualization
 
 Next we will use the Graph Visualization component to explore the graph and run some PGQL queries.
 Open the Graph Viz at [http://localhost:7007/ui/](http://localhost:7007/ui/)
@@ -111,7 +111,7 @@ The result should look as shown below.
 ![Circular transfer A to B to C to A](./images/GraphVizABCATxn.png)
 
 
-## Graph Query and Analysis in JShell
+## **Step 3:** Graph Query and Analysis in JShell
 
 Start the JShell in the graph-client. Copy and paste the following command to do that.
 ```
@@ -416,7 +416,12 @@ sg.queryPgql(
 +--------------------------------------------+
 ```
 
+Please proceed to the next lab.
+
 ## Acknowledgements ##
 
-- **Author** - Ryota Yamanaka - Product Manager in Asia-Pacific for geospatial and graph technologies  
-With a little help from colleagues (Albert Godfrind and Jayant Sharma).
+- **Author** - Jayant Sharma - Product Manager.
+- **Contributors** - Ryota Yamanaka.
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

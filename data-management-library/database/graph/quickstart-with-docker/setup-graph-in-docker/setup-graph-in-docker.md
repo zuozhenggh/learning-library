@@ -10,7 +10,7 @@ Estimated time: 10 minutes
 Docker and GIT on your local machine (laptop or desktop).
 Internet access to download the Graph Server and Client kit.
 
-## Step 1: Get required components
+## **Step 1:** Get required components
 
 ### Clone this Repository
 Clone the git repository which has the required Docker Compose files and other configuration files and scripts to your machine.
@@ -48,7 +48,7 @@ to
 ```
 <copy>"defaultValue":"http://graph-server:7007"</copy>
 ```
-## Step 2: Create and start the Containers
+## **Step 2:** Create and start the Containers
 Build and pull images, create containers, and start them.
 
 ```

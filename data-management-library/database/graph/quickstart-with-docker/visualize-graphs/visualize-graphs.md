@@ -5,13 +5,13 @@ In this lab you will visualize graph queries on the Customer 360 graph.
 
 Estimated time: 4 minutes
 
-## Step 1 - Open the Graph Viz web page
+## **Step 1:** Open the Graph Viz web page
 
 Open Graph Visualization and check if this graph is successfully loaded.
 
 [http://localhost:7007/ui/](http://localhost:7007/ui/)
 
-## Step 2 - Run some queries and visualize the results
+## **Step 2:** Run some queries and visualize the results
 
 Next let's run a few PGQL queries. 
 

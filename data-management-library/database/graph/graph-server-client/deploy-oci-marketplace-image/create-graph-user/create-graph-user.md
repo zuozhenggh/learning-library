@@ -88,6 +88,8 @@ Estimated time: 3 minutes
   For details, see the ["Provide SQL Developer Web Access to Database Users"](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA) section in the documentation. 
 
 
+  You may now proceed to the next lab.
+  
 ## Acknowledgements ##
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  

@@ -14,7 +14,7 @@ Docker and GIT on your local machine (laptop or desktop).
 Internet access to download the Oracle Database distribution.
 Cloned `oracle-pg` repository on your local machine.
 
-## Step 1 - Build the Oracle Database docker image 
+## **Step 1:** Build the Oracle Database docker image 
 
 - Clone the Oracle `docker-images` repository.
 
@@ -37,7 +37,7 @@ $ <copy>cd docker-images/OracleDatabase/SingleInstance/dockerfiles/ ;</copy>
 $ <copy>bash buildDockerImage.sh -v 19.3.0 -e </copy>
 ```
 
-## Step 2 - Start the containers
+## **Step 2:** Start the containers
 
 
 Start the containers for **Oracle Database** only.
@@ -61,7 +61,7 @@ Enter `Ctl+C` to quit.
 
 Proceed to step 2 the database is up and running.
 
-## Step 2 - Configure the database
+## **Step 3:** Configure the database
 
 Connect to the Oracle Database server.
 
@@ -106,6 +106,7 @@ $ cd oracle-pg/docker/
 $ <copy>docker-compose -f docker-compose-rdbms.yml down</copy>
 ```
 
+Please proceed to the next lab.
 
 ## Acknowledgements ##
 
