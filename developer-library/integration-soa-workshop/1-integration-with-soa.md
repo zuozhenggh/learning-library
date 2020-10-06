@@ -95,7 +95,7 @@ At this point, you're ready to start building amazing enterprise-grade orchestra
 ## Acknowledgements
 * **Created for LiveLabs** - Solution Engineering, Daniel Tarudji
 * **Contributors, reviewers** -  Tom McGinn, Kamryn Vinson
-* **Last reviewed by, date** - Kamryn Vinson, October 2020
+* **Last review by** - Kamryn Vinson, October 2020
 
 
 ## See an issue?

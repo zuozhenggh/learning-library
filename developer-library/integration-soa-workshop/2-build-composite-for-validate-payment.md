@@ -384,7 +384,7 @@ You may proceed to the next lab.
 ## Acknowledgements
 * **Created for LiveLabs** - Solution Engineering, Daniel Tarudji
 * **Contributors, reviewers** -  Kamryn Vinson
-* **Last reviewed by, date** - Kamryn Vinson, October 2020
+* **Last review by** - Kamryn Vinson, October 2020
 
 
 ## See an issue?
