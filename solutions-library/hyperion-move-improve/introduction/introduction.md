@@ -34,8 +34,7 @@ You require ``terraform`` installed to create a Terraform configuration file for
 1. Open a terminal window.
 2. Navigate to the folder where you downloaded the Terraform zip, unzip the package. 
 
-**For e.g. -**
-
+**For e.g. -** 
 `` cd /Users/local/Downloads
   unzip terraform_0.13.4_darwin_amd64.zip``
 
@@ -47,9 +46,7 @@ cat ~/.bash_profile
 
 5. Make a note of the location of the folder where the PATH is set to. 
 
-**For e.g. -**
-
-``export PATH=/Users/local/bin:$PATH``
+**For e.g. -** ``export PATH=/Users/local/bin:$PATH``
 
 8.  We have to move the terraform file that you unzipped to the path recorded in the previous step. Use the following command for it.
 
