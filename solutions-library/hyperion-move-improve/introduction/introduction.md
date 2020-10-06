@@ -47,7 +47,9 @@ cat ~/.bash_profile
 
 5. Make a note of the location of the folder where the PATH is set to. 
 
-``For example - export PATH=/Users/local/bin:$PATH``
+**For e.g. -**
+
+``export PATH=/Users/local/bin:$PATH``
 
 8.  We have to move the terraform file that you unzipped to the path recorded in the previous step. Use the following command for it.
 
