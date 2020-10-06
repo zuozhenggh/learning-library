@@ -54,6 +54,18 @@ providing a TLS certificate. We will skip that here.*
 
 ## Our first Document Search
 
+One task needed is to list the employees per state they are located in.
+For serving the frontend a single function will be used. So let's create it,
+just as before:
+
+    [opc@compute ~]$ mkdir peopleService
+    [opc@compute ~]$ cd peopleService
+    [opc@compute peopleService]$ fn init --runtime node 
+    Function boilerplate generated.
+    func.yaml created.
+    
+This time this function is being used:
+
     const fdk = require('@fnproject/fdk');
     const mysqlx = require('@mysql/xdevapi');
     const date = require('./date');
@@ -88,6 +100,41 @@ providing a TLS certificate. We will skip that here.*
         }
     });
 
+Just like the import Function it connects to MySQL using the configuration
+provided. To keep number of different functions low it is prepared to handle
+different *modes*. IT then uses the X DevAPI's `find()` function to search
+for documents showing the people from a given state.
+
+In case of an error the HTTP status code 500 is being used and an error
+response send to the client.
+
+*Note: Returning raw errors to a client can be a security issue. Raw errors
+should be logged for debugging purpose.*
+
+The function expects parameters to be provided as HTTP Headers in the Fn
+call. How they'll get there we see, when configuring the route in the
+API Gateway. So let's back into Console.
+
+TODO Screenshot
+
+
+
+In case
+
+Route:
+
+    Path:  /state/{name}
+    Methods: GET
+    Type:  Oracle Functions
+    Function: peopleService
+
+    Request Header Transformations
+    Action:
+   Set
+    Behavior	Header Name	Values
+    Overwrite	X-Value	${request.path[name]}
+    Overwrite	X-Mode	state
+
 
 ## Using SQL for advanced queries
 
@@ -101,6 +148,20 @@ providing a TLS certificate. We will skip that here.*
                     ).bind(1*headers['Fn-Http-H-X-Value'][0]).execute();
                 return result.fetchAll().map(row => row[0]);
             }
+
+Route:
+
+    Path: /income/{salary}
+    Methods: GET
+    Type: Oracle Functions
+    Function: peopleService
+
+    Request Header Transformations
+    Action:
+     Set
+    Behavior	Header Name	Values
+     Overwrite	X-Mode	salary
+    Overwrite	X-Value	${request.path[salary]}
 
 ## Updating Documents
 
@@ -128,4 +189,16 @@ providing a TLS certificate. We will skip that here.*
                return { success: true, newEntry };
             }
 
-ddd
+Route:
+
+    Path: /raise/{id}
+    Methods:  PATCH
+    Type:  Oracle Functions
+    Function: peopleService
+
+    Request Header Transformations
+    Action:
+     Set
+    Behavior	Header Name	Values	Row Header
+    Overwrite	X-Mode	raisesalary
+    Overwrite	X-Id	${request.path[id]}
