@@ -1,4 +1,4 @@
-# Provision HPC Cluster from Oracle MarketPlace Image
+# Provision HPC Cluster from Oracle Marketplace Image
 
 ## Introduction
 
@@ -68,7 +68,7 @@ Once you've created the Stack it will redirect you to a page where you can view 
 
  <img src="images/nav_resource_manager.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
-All Done! This completes the demo for provisioning an HPC Cluster from Oracle MarketPlace Image. 
+All Done! This completes the demo for provisioning an HPC Cluster from Oracle Marketplace Image. 
 
 *You may now proceed to the next lab*
 
