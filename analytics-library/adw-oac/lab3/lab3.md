@@ -125,9 +125,9 @@ existing projects.
 
 3. In the next window, click on the **SH** (Sales History) **schema**.
 
-    The **SH schema** provides a small data set you can use to run the sample queries in the [Oracle Database Data Warehousing Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/comsc/schema-diagrams.html#GUID-01BFEF14-C6BD-42CD-8558-DDD214DB3AE0).
+    The **SH schema** provides a small data set you can use to run the sample queries in the [Oracle Database Data Warehousing Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/sql-analysis-reporting-data-warehouses.html#GUID-1D8E3429-735B-409C-BD16-54004964D89B).
 
-    For more information on the SH schema see *Sample Schemas* and [*Schema Diagrams*](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-data-warehouse-cloud/user&id=COMSC112). 
+    For more information on the SH schema see *Sample Schemas* and [*Schema Diagrams*](https://docs.oracle.com/en/database/oracle/oracle-database/19/comsc/schema-diagrams.html#GUID-D268A4DE-BA8D-428E-B47F-80519DC6EE6E). 
 
     ![Data Set Creation - WORKSHOPADWOAC SH Schema](./images/lab300_14.png)
 
