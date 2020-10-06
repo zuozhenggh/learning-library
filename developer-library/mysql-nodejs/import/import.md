@@ -7,7 +7,7 @@ assume that there is another cloud service, creating the data and storing it
 on Object Store. Whenever a file is being uploaded there it will trigger an
 event, which calls our serverless function.
 
-## Creating the code for an Hello World
+## **Step 1:** Creating the code for an Hello World
 
 As with any good guide, the first Function built is a _Hello World_. The name
 used is `import` since that describes the future purpose well:
@@ -44,7 +44,7 @@ function is called again within a timeout of a few minutes the same Container
 with the same Node.js instance will be reused. If it isn't called for a few
 minutes a cleanup task will shut down.
 
-## Deploying and running the Function
+## **Step 2:** Deploying and running the Function
 
 To see this in effect you have to deploy this into an Fn application. Our setup
 created a function with the name `DemoApp`, which we will be using. No worries,
@@ -73,7 +73,7 @@ If data is provided to the `fn` tool, the function can access it:
 
 To learn more about Fn please check the [Fn Project Website](https://fnproject.io/).
 
-## Exploring the Console
+## **Step 3:** Exploring the Console
 
 In the Web Console you can find *Oracle Functions* under the *Developer Tools* menu. 
 
@@ -98,7 +98,7 @@ in this setup. Since this is a tutorial this is tolerable. In a production
 environment you should secure credentials by using OCI's Vault Service or some
 other mechanism.*
 
-## Talking to MySQL and Object Store
+## **Step 4:** Talking to MySQL and Object Store
 
 In this step we extend our Function to interpret information provided by a
 Cloud Event, when a file is uploaded to Object Store. That file will be
@@ -208,7 +208,7 @@ being used, which wraps Node.js's `https` module behind a single function:
 
 *Note: The `download.js` file is provided in the `step2` directory as well.*
 
-## Configure the Event Handling
+## **Step 5:** Configure the Event Handling
 
 First thing we do is take a look at the Object Store in the console. Navigate
 to it in your Web Browse.
@@ -251,7 +251,7 @@ TODO Screenshot config
 
 With a click on *Create Rule* this rule becomes effective.
 
-## Upload a file and verify the data arrived
+## **Step 6:** Upload a file and verify the data arrived
 
 Navigate back to the Object Store page in the Console and open the `import`
 Bucket. Click *Upload*. In the panel pick the `data1.json` file provided
@@ -296,3 +296,15 @@ there:
 
 In this you can see the structure of the data and that we have 1,000 entries. In the next Lab
 a Web Frontend will be added.
+
+Please proceed to the next lab.
+
+## Acknowledgements
+
+- **Authors/Contributors** - Johannes Schlüter
+- **Last Updated By/Date** - Johannes Schlüter, October 2020
+- **Workshop Expiration Date** - October, 2021
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+

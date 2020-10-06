@@ -10,7 +10,7 @@ pre-installed Node.js, MySQL Shell and OCI tools.
 You can use SSH to connect to this instance. Choose a step matching your 
 preference.
 
-## Using ssh from command line
+## **Step 1a:** Using ssh from command line
 
 To access the system you need the private ssh key and the IP, which was created by
 Terraform. The key has to be stored in a file which is not world reable on your 
@@ -28,11 +28,11 @@ If you stored the key in a file `ssh_private_key` and the IP if your instance is
     Warning: Permanently added '123.45.67.89' (ECDSA) to the list of known hosts.
     [opc@compute ~]$
 
-## Using PuTTY on Windows
+## **Step 1b:** Using PuTTY on Windows
 
 TODO
 
-## Use MySQL Shell to access the MySQL Database Service Instance
+## **Step 2:** Use MySQL Shell to access the MySQL Database Service Instance
 
 In the Terraform output you got an URL in the format `mysqlx://` which can be
 used with MySQL Shell. MySQL Shell is an interactive Shell, introduced with
@@ -83,7 +83,7 @@ You can explore the database as you like. You can switch back into
 JavaScript mode by typing `\js`, into Python mode using `\py`, 
 and when done quit using `\quit`.
 
-## Configure the OCI Client
+## **Step3:** Configure the OCI Client
 
 In order to access OCI services via API the profile has to be configured. This
 can be done using a Wizard with the oci command line tool after you gathered
@@ -154,7 +154,7 @@ compartment's OCID:
 Using the `--help` option the OCI tool will provide context sensitive help
 about available APIs.
 
-## Configure fn client for Oracle Functions
+## **Step 4:** Configure fn client for Oracle Functions
 
 The application you are going to build, is a serverless application using
 Oracle Functions. Serverless also known as FaaS let's you run an micro-service
@@ -213,13 +213,17 @@ your Cloud Region is `us-ashburn-1` (registry URL `iad.ocir.io`) and your namesp
 
     Login Succeeded
 
-## Outlook
-
 Finally our configuration is done. In the next lab you will create your first
 function and load data into the database.
 
-## Deploy your first Function
+Please proceed to the next lab.
 
-First thing needed for our application is to get data into the database. We
-assume that there is another cloud service, creating the data and storing it
-on Object Store. Whenever a file is being uploaded this 
+## Acknowledgements
+
+- **Authors/Contributors** - Johannes Schlüter
+- **Last Updated By/Date** - Johannes Schlüter, October 2020
+- **Workshop Expiration Date** - October, 2021
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+
