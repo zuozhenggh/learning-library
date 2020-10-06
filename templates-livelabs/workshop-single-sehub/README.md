@@ -11,16 +11,17 @@
 In this example, the goal is to create several "children" workshops from one longer "parent" workshop. The children are made up of parts from the parent.
 
 workshop-single/
-    product-solution-short-name/
+    idcs-basics/
 
         -- individual labs
 
-        provision/
-        setup/
+        usermanagement/
         dataload/
-        query/
-        analyze/
-        visualize
+        sso/
+        socialidp/
+        samlidp/
+        mfa/
+		adaptive/
         introduction/
           introduction.md       -- description of the everything workshop
 
@@ -28,15 +29,11 @@ workshop-single/
        freetier/                -- freetier version of the workshop
         index.html
         manifest.json
-       livelabs/                -- livelabs version of the workshop
-        index.html
-        manifest.json
 
 
 ### FreeTier vs LiveLabs
 
 * "FreeTier" - includes Free Trials, Paid Accounts and for some workshops, Always Free accounts.
-* "LiveLabs" - these are workshops that use Oracle provided tenancies
 
 ### The product-workshop-name
 
