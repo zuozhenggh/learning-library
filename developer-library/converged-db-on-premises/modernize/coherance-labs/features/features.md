@@ -89,21 +89,12 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 
         cd $COHERENCE_HOME/examples/java
     
-## **Lab 1: Contacts**
-
-### Introduction
+## **Step 3**: Test Cache with Contacts get & Put**
 This Lab shows the most basic data access features of Coherence including getting, putting and removing data from a provided contacts.csv file.
-
-### Objective: 
+ 
 To start a Coherence Cache and then put and get Contacts to/from the Cache.
 
-### Estimated Time: 5 - 10 mins
-
-### Pre-requisites:  Verify Environment has been Completed.
-
-### Lab Steps:
-
-## Step 1:
+### Start Cache Server:
 
 1. Start a cache server 
 
@@ -115,7 +106,7 @@ To start a Coherence Cache and then put and get Contacts to/from the Cache.
 
         ![](../images/run-cache-server.png " ") 
 
-## Step 2:      
+### Run the Example Client:      
 
 1. Open a second terminal window:
 
