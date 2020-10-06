@@ -31,7 +31,7 @@ Setting up the Environment For MySQL.
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
-## **STEP 1**: GoldenGate and Hive Target
+## **STEP 1**: GoldenGate Replication and Hive Target
 
 1. The following Lab Menu will be displayed, select **R** to reset the lab environment, then select option **4**
 
