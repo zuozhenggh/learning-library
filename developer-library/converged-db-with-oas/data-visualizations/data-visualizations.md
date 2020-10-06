@@ -2,12 +2,12 @@
 
 ## Introduction ##
 
-With Oracle Analytics Server, we can create visualizations and projects that reveal trends in your company"s data and help you answer questions and discover important insights about your business.
+With Oracle Analytics Server, we can create visualizations and projects that reveal trends in your company's data and help you answer questions and discover important insights about your business.
 Creating visualizations and projects is easy, and your data analysis work is flexible and exploratory. Oracle Analytics helps you to understand your data from different perspectives and fully explore your data to find correlations, discover patterns, and see trends.
 
-You can quickly upload data from a variety of sources (for example, spreadsheets, CSV files, Fusion Applications, and many databases) to your system and model it in a few easy steps. You can easily blend data sets together, too, so that you can analyze a larger set of data to reveal different patterns and information.
+You can quickly upload data from a variety of sources (for example, spreadsheets, CSV files, Fusion Applications, and many databases) to your system and model it in a few easy steps. You can easily blend data sets together too, so that you can analyze a larger set of data to reveal different patterns and information.
 
-It provides several interactive visuals to show the story in your data for example, trend lines, bar, Sankey graph, maps, etc.
+It provides several interactive visuals to show the story in your data for example, Trend Lines, Bar, Sankey Graph, Map, etc.
 
 *Estimated Lab Time: 40 Mintues*.
 
@@ -17,7 +17,7 @@ It provides several interactive visuals to show the story in your data for examp
 
 ### Objectives ###
 
-In this lab we will be using Oracle Analytics Server self-service capabilities on JSON , XML and Relational data of Converged Database,  we will be creating compelling project with different types of visuals to show the important insights out of Sample data of a financial company.
+In this lab we will be using Oracle Analytics Server self-service capabilities on JSON, XML and Relational data of Converged Database.  We will be creating compelling project with different types of visuals to show the important insights out of Sample data of a financial company.
 
 Here, we have sample financial data, where data from "UK" region is in JSON format, data from "Germany and France"  regions are in XML format and Data from "Italy and Spain" regions are in Relational Format. And this data is stored in Oracle Converged Database.
 
@@ -38,7 +38,7 @@ This lab assumes you have completed the following labs:
 - Lab : Create Compute Instance  
 - Lab : Environment Setup  
 
-Below pre-loaded data objects are available in Converged Database. And since OAS recognizes data in relational format , views have been created on the base tables of JSON and XML type.  
+Below pre-loaded data objects are available in Converged Database. And since OAS recognizes data in relational format, views have been created on the base tables of JSON and XML type.  
  
 
 | ObjectName  | ObjectType  | DataType  | Description  |
@@ -51,6 +51,8 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
 | FINANCIALS\_XML\_FRANCE\_GERMANY\_VIEW | View | Relational | this view has been created on FINANCIALS\_XML\_FRANCE  and FINANCIALS\_XML\_GERMANY table to view data in relational format  |
 
 
+  
+    
 ## Step 1: Create Data Set ##
   
   In this step, we will create individual data sets of different data types: json, xml and relational.
@@ -83,7 +85,7 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
 
 ## Step 2: Merge Data Sets Using Data Flow ##
    **Data Flow :** Data flows enable you to organize and integrate your data to produce a curated data set that your users can analyze.  
-   To build a data flow, you add steps. Each step performs a specific function, for example, add data, join tables, merge columns, transform data, save your data. Use the data flow editor to add and configure your steps. Each step is validated when you add or change it. When you"ve configured your data flow, you execute it to produce a data set.
+   To build a data flow, you add steps. Each step performs a specific function, for example, add data, join tables, merge columns, transform data, save your data. Use the data flow editor to add and configure your steps. Each step is validated when you add or change it. When you've configured your data flow, you execute it to produce a data set.
 
 
 Let's create a dataflow to merge all the different types of datasets created in Step1.
@@ -238,27 +240,27 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     ![](./images/oascdb40.png " ")
 
 
-1. **Map** visualization
+1. **Map** visualization  
    It works with geographic and measure columns.  
  
    In our data set select Region and Revenue columns and pick "Map" as visualization.
     ![](./images/oascdb41.png " ")
    
-   Drag the "Region" Column from data pan into the colour section.  
+   Drag the "Region" Column from data pane into the colour section.  
    Verify Below:
     ![](./images/oascdb42.png " ")
 
    We can also select desired and relevant map layers via properties(Bottom Left).
     ![](./images/oascdb43.png " ")
 
-2. **Combo Graph** : Overlapping of line , bar and area        
+2. **Combo Graph** : Overlapping of line, bar and area        
     Select Revenue, Operation Expenses, Net Income and Quarter. Pick Combo as Visualization.  
     ![](./images/oascdb1.21.png " ")
 
-   Let's change "Line" graph type for Revenue to "Bar"
+   Let's change "Line" graph type for Revenue to "Bar".
     ![](./images/oascdb45.png " ")
 
-   We can change properties of graph as below, for example color assignments, graph type for each   KPI, title etc
+   We can change properties of graph as below, for example color assignments, graph type for each   KPI, title etc.
     ![](./images/oascdb46.png " ")
 
    We can also manage colors as shown below.
@@ -280,22 +282,22 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     We will repeat "Tile" Visualization for **Operating Expenses** and **Previous Year Operating Expenses**.
     ![](./images/oascdb50.png " ")
 
-    Result should look like below
+    Result should look like below:
     ![](./images/oascdb51.png " ")
 
 5. **Sankey Graph** Visualization    
    We will see quartery expenses by account groups.    
-   Select  Operating Expenses, Quartr and Account Group. Pick **Sankey Graph**: 
+   Select  Operating Expenses, Quarter and Account Group. Pick **Sankey Graph**.
     ![](./images/oascdb52.png " ")
 
 6. **Stacked Bar** visualization     
-   We will analyze region wise expenses quarterly .  
-   Select Operating Expenses, Previous Year Expenses and Quarter. Pick **Stacked Bar**.  
+   We will analyze region wise expenses quarterly.  
+   Select Operating Expenses, Previous Year Operating Expenses and Quarter. Pick **Stacked Bar**.  
     ![](./images/oascdb53.png " ")
 
 7. **Tree Map** visualization      
    We will analze Expenses by Cost Centre.    
-   Select Operating Expenses, Cost Center.  Pick **Tree Map**  
+   Select Operating Expenses, Cost Center.  Pick **Tree Map**. 
     ![](./images/oascdb54.png " ")
 
 8.  Rename canvas "Expenses" as in point 5.  
@@ -327,7 +329,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
 14. **Custom Calculation**  
     In OAS, we can also do some calculations of Key Performance Metrics as per business requirement.     
     Let's calculate "Profit". 
-    Drag the scroller down as as shown below. Right click on My calculation, then click on "Add Calculation" 
+    Drag the scroller down as as shown below. Right click on My calculation, then click on "Add Calculation".  
     ![](./images/oascdb1.22.png " ")
 
     Enter the profit formula in the expression builder. Then Click on "Validate" and then "Save".  
@@ -380,8 +382,9 @@ Filters are used to make canvas interactable for the users. Users can view desir
 With this lab, you have learned OAS self-service analytics with capabilities including data loading, data preparation, data mashups, designing canvas, different types of visualization graphs in simple easy to use interface.
 
 ## Want To Learn More
-   - [Oracle Analytics Server - Data Visualization](https://docs.oracle.com/en/middleware/bi/analytics-server/visualize-data.html)  
 
+- [Oracle Analytics Server - Data Visualization](https://docs.oracle.com/en/middleware/bi/analytics-server/visualize-data.html)  
+- [blog](https://blogs.oracle.com/proactivesupportepm/oas_55)
 
 ## Acknowledgements
 
