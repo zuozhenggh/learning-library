@@ -4,7 +4,7 @@
 
 In this lab you will install GoldenGate for Big Data in the GG Target Home.
 
-*Estimated Lab Time*:  15 minutes
+*Estimated Lab Time*:  30 minutes
 
   ![](./images/image110_1.png " ")
 
@@ -44,7 +44,7 @@ integration architectures to big data systems without impacting the performance 
  Follow the steps below to install GoldenGate, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
    
-1.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  
+1.  Change to the ggadmin user.  
 
 Open a terminal session locally
 ````
@@ -53,9 +53,10 @@ Open a terminal session locally
 Use Public IP allocated from LiveLabs
 
 **Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
-    ````
-    <copy>sudo su – ggadmin</copy>
-    ````
+````
+<copy>sudo su – ggadmin</copy>
+````
+Review the labmenu, then Select **Q** to quit to install GoldenGate Big Data Adapter Handlers
 
 1. The following Lab Menu will be displayed
 
@@ -66,12 +67,28 @@ Follow these instructions to install GoldenGate for Big Data
 
 1.  **Select Option 1** 
    
-Review the overview notes on the following screen, then select **Q** to quit. 
-      ![](./images/labmenu_opt1.png " ")
+Review the overview notes on the following screen, Select **Q** to quit. 
+      ![](./images/menu1006.png " ")
 
   These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 1. To install and configure GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
+
+````
+<copy>cd /u01/gg4hadoop123010</copy>
+````
+````
+<copy>tar -xvf  /u01/gg_binaries/gg4hadoop123010/ggs_Adapters_Linux_x64.tar </copy>
+````
+**type**
+
+````
+<copy>create subdirs</copy>
+````
+**type** 
+````
+<copy>labmenu</copy>
+````
 
 **Optional**  (Do not select Auto-install if you already installed GG manually)
 
