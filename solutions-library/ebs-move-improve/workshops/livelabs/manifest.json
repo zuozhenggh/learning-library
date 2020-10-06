@@ -20,10 +20,6 @@
             "title": "Lab 2: Clone Your Oracle E-Business Suite Environment",
             "description": "Clone Your Oracle E-Business Suite Environment",
             "filename": "../../clone/clone.md"
-        },
-        {
-            "title": "Next Steps: Load and Optimize Data from EBS",
-            "filename": "../../optimize-data/optimize-data.md"
         }
     ]
 }
