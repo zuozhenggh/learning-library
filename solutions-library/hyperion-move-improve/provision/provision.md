@@ -2,12 +2,11 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this exercise, we are going to deploy Hyperion on Oracle Cloud Infrastructure account. 
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 90 minutes
 
 ### About Product/Technology
-Enter background information here..
 
 ### Objectives
 
