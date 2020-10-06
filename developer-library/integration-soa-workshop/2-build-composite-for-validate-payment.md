@@ -382,9 +382,9 @@ You may proceed to the next lab.
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
 ## Acknowledgements
-* **Created for LiveLab** - Solution Engineering, Daniel Tarudji
-* **Contributors/Reviewers** -  Kamryn Vinson
-* **Last Review By/Date** - Kamryn Vinson, October 2020
+* **Created for LiveLabs** - Solution Engineering, Daniel Tarudji
+* **Contributors, reviewers** -  Kamryn Vinson
+* **Last reviewed by, date** - Kamryn Vinson, October 2020
 
 
 ## See an issue?

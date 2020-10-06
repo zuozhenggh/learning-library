@@ -93,9 +93,9 @@ For details about Oracle SOA
 At this point, you're ready to start building amazing enterprise-grade orchestration and integration, rapidly. You may proceed to the lab: **Develop SOA composite for validating payment** by clicking the navigation menu icon, in the upper-right corner of the header.
 
 ## Acknowledgements
-* **Created for LiveLab** - Solution Engineering, Daniel Tarudji
-* **Contributors/Reviewers** -  Tom McGinn, Kamryn Vinson
-* **Last Review By/Date** - Kamryn Vinson, October 2020
+* **Created for LiveLabs** - Solution Engineering, Daniel Tarudji
+* **Contributors, reviewers** -  Tom McGinn, Kamryn Vinson
+* **Last reviewed by, date** - Kamryn Vinson, October 2020
 
 
 ## See an issue?
