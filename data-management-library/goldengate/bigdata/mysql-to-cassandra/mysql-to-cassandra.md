@@ -33,20 +33,21 @@ Use Public IP allocated from LiveLabs
     <copy>sudo su – ggadmin</copy>
 ````
 
-    
-**Step 1:** If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
+## **STEP 1**: Explore GoldenGate MySQL to MySQL
+
+1. If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
 ````
 <copy>labmenu</copy>
 ````
 The following Lab Menu will be displayed
 
-  ![](./images/lab7menu.png " ")
+  ![](./images/menu1006.png " ")
 
-**Step 2:** select R to reset the lab environment, then select **7**.
+2. select R to reset the lab environment, then select **7**.
 Review the overview notes on the following screen, then select Q to quit. These online notes have been provided to allow cut/paste file names to another session, to avoid typos.
 
-**Step 3:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
+3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
   view these files, same as in previous lab:
 
@@ -77,13 +78,17 @@ Review the overview notes on the following screen, then select Q to quit. These 
 ````
 <copy>view /u01/gg4hadoop123010/dirprm/rcass.properties</copy>
 ````
-**Step 4:** Start the GG manager process on both the source and target. Start two terminal sessions and connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
+4. Start the GG manager process on both the source and target. Start two terminal sessions and connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-**Step 5:** First task is to start the Cassandra database server. Open a new ssh session, run the alias as shown below and leave this running until you are done
+## **STEP 2**: Cassandra Configuration
+
+1. First task is to start the Cassandra database server. Open a new ssh session, run the alias as shown below and leave this running until you are done
 ````
   <copy>startcass</copy>
 ````
-**Step 6:** Open another ssh session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql
+## **STEP 3**: Explore GoldenGate MySQL Source
+
+1. Open another ssh session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql
 
   ![](./images/f3.png " ")
 
@@ -103,7 +108,9 @@ Review the overview notes on the following screen, then select Q to quit. These 
 <copy>info all</copy>
 ````
 
-**Step 7:** In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
+## **STEP 4**: GoldenGate Cassandra Target
+
+1. In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
   ![](./images/f4.png " ")
 ````
@@ -124,8 +131,8 @@ Review the overview notes on the following screen, then select Q to quit. These 
 ````
 <copy>exit</copy> 
 ````
-
-**Step 8:** In the GG for MySQL ggsci session, we will create and start the GG extract process:
+## **STEP 5**: GoldenGate MySQL Configuration
+1. In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
   ![](./images/f5.png " ")
 
@@ -155,9 +162,11 @@ Review the overview notes on the following screen, then select Q to quit. These 
 <copy>exit</copy> 
 ````
 
-**Step 9:** Now that the source side is setup, let us configure GG on the target side (for Cassandra).
+## **STEP 6**: GoldenGate Target Configuration
 
-**Step 10:** In the GG for Hadoop session, you will need to modify the Cassandra properties by **removing the ‘---‘ prefixes** from the highlighted values:
+1. Now that the source side is setup, let us configure GG on the target side (for Cassandra).
+
+2. In the GG for Hadoop session, you will need to modify the Cassandra properties by **removing the ‘---‘ prefixes** from the highlighted values:
 
   ![](./images/f6.png " ")
   ![](./images/f7.png " ")
@@ -178,8 +187,9 @@ Review the overview notes on the following screen, then select Q to quit. These 
 ````
 <copy>---CREATE,ADD,DROP</copy>
 ````
+## **STEP 7**: GoldenGate Target Configuration
 
-**Step 11:** Now create and start the Cassandra replicat process:
+1. Now create and start the Cassandra replicat process:
 
   ![](./images/f8.png " ")
 
@@ -205,7 +215,9 @@ Review the overview notes on the following screen, then select Q to quit. These 
 <copy>info all</copy>
 ````
 
-**Step 12:** Now that GG processes have been created and started on both the source and target, we need to create the Cassandra Keyspace before loading data. A Cassandra Keyspace is equivalent to a database or schema in relational databases. This step can be done at anytime, and is not dependant on GG.
+## **STEP 8**: Cassandra Replication
+
+1. Now that GG processes have been created and started on both the source and target, we need to create the Cassandra Keyspace before loading data. A Cassandra Keyspace is equivalent to a database or schema in relational databases. This step can be done at anytime, and is not dependant on GG.
 
 **Open another ssh session - labmenu - Q to exit**
 
@@ -215,15 +227,15 @@ NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop t
 ````
   <copy>createcasskeyspace</copy>
 ````
-**Step 13:** Let us check to see if any tables exist in the ggtarget2cass Cassandra keyspace. The expected result is an error “unconfigured table …” – since the tables have not been created by GG yet. That will be done when GG encounters the first transaction for a new table.
+2. Let us check to see if any tables exist in the ggtarget2cass Cassandra keyspace. The expected result is an error “unconfigured table …” – since the tables have not been created by GG yet. That will be done when GG encounters the first transaction for a new table.
 
   ![](./images/f10.png " ")
 ````
   <copy>cassselect</copy>
 ````
-**Step 14:** We will load some data on the MySQL database ‘ggsource’ and GG will extract the data, create the Cassandra tables, and write the data to the Cassandra target tables.
+3. We will load some data on the MySQL database ‘ggsource’ and GG will extract the data, create the Cassandra tables, and write the data to the Cassandra target tables.
 
-**Step 15:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+4.  Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
   ![](./images/f11.png " ")
 ````
@@ -236,7 +248,7 @@ NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop t
 <copy>mysqlselect</copy>
 ````
 
-**Step 16:** Starting with GG version 12.3.0.1.0, GG automatically creates the Cassandra tables. Let us take a look at the contents of the tables:
+5. Starting with GG version 12.3.0.1.0, GG automatically creates the Cassandra tables. Let us take a look at the contents of the tables:
 
   ![](./images/f12.png " ")
   ![](./images/f13.png " ")
@@ -244,20 +256,20 @@ NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop t
 ````
 <copy>cassselect</copy>
 ````
-**Step 17:** Now we will apply some changes to the source database
+6. Now we will apply some changes to the source database
 
   ![](./images/f14.png " ")
 ````
   <copy>dmlsource</copy>
 ````
-**Step 18:** Next we will do a count of the Cassandra tables to see if the changes were applied as expected. You can also do a cassselect to see all the data
+7. Next we will do a count of the Cassandra tables to see if the changes were applied as expected. You can also do a cassselect to see all the data
 
   ![](./images/f15.png " ")
   ![](./images/f16.png " ")
 ````
   <copy>casscount</copy> 
 ````
-**Step 19:** Let us confirm using GG to see statistics about data that was replicated In a GG Home for Hadoop session
+8. Let us confirm using GG to see statistics about data that was replicated In a GG Home for Hadoop session
 
   ![](./images/f17.png " ")
   ![](./images/f18.png " ")

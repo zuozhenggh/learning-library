@@ -33,13 +33,13 @@ Use Public IP allocated from LiveLabs
 ````    
 <copy>sudo su – ggadmin</copy>
 ````
-1. At the prompt, type  ‘labmenu’ to display the labmenu IF not at the labmenu.
+2. At the prompt, type  ‘labmenu’ to display the labmenu IF not at the labmenu.
 
-  ![](./images/a_labmenu2.png " ")
+  ![](./images/menu1006.png " ")
 
-4. Select Option **2**
+3. Select Option **2**
 
-5. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
+4. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 ## **STEP 2**: Explore GoldenGate Configuration
 
@@ -97,7 +97,7 @@ Use Public IP allocated from LiveLabs
 ````
 <copy> ls -l ggsci</copy>
 ````
-1. Login to ggsci (GG command line interface), to create and start the GG extract, pump and replicat
+2. Login to ggsci (GG command line interface), to create and start the GG extract, pump and replicat
 processes:
 
   ![](./images/a4.png " ")
@@ -174,9 +174,9 @@ Now that the GoldenGate extract, pump and replicat processes are running, next y
 <copy>mysqlselect</copy>
 ````
 
-1. At this point GoldenGate should have replicated all the data from database ggsource to database ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate.
+2. At this point GoldenGate should have replicated all the data from database ggsource to database ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate.
 
-2. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed.
+3. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed.
 
     ![](./images/a7.png " ")
 

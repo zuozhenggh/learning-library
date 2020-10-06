@@ -68,7 +68,7 @@ Follow these instructions to install GoldenGate for Big Data
 1.  **Select Option 1** 
    
 Review the overview notes on the following screen, Select **Q** to quit. 
-      ![](./images/labmenu_opt1.png " ")
+      ![](./images/menu1006.png " ")
 
   These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
