@@ -2,21 +2,22 @@
 ## Introduction
 The following are Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs.
 ### Contents
-1. How to Check Status of Oracle Management Service, Other Services and Agent
-2. How to be root on the workshop instance
-3. How to Locate EMCLI on Your Instance
-4. Oracle Management Server (OMS) / WebTier is Down
-5. Unable to Connect to Oracle Management Server (OMS) Website
-6. Restart an Agent Not Responding
-7. How to Stop all Enterprise Manager (EM) Services Before Stopping an OCI instance
-8. Steps To Setup VCN for FastConnect
-9. Licensing Terms for the Enterprise Manager Marketplace Instance
-10. How to Reset user oracle  password or if Named Credentials for user oracle are not working
-11. Unable to connect to Enterprise Manager Console
-12. Unable to Select Shape for Creating an instance
-13. While trying to launch the EM instance: "Unable to accept Terms of Use."
-14. Information about Oracle Cloud Infrastructure Pricing
-15. Additional information on Oracle Cloud Infrastructure Setup
+1. [How to Check Status of Oracle Management Service, Other Services and Agent](#1HowtoCheckStatusofOracleManagementServiceOtherServicesandAgent)
+2. [How to be root on the workshop instance](#2Howtoberootontheworkshopinstance)
+3. [How to Locate EMCLI on Your Instance](#3HowtoLocateemclionYourInstance)
+4. [Oracle Management Server (OMS) / WebTier is Down](#4OracleManagementServer(OMS)WebTierisDown)
+5. [Unable to Connect to Oracle Management Server (OMS) Website](#5UnabletoConnecttoOracleManagementServer(OMS)Website)
+6. [Restart an Agent Not Responding](#6RestartanAgentNotResponding)
+7. [How to Stop all Enterprise Manager (EM) Services Before Stopping an OCI instance](#7HowtoStopallEnterpriseManager(EM)ServicesBeforeStoppinganOCIinstance)
+8. [Steps To Setup VCN for FastConnect](#8StepsToSetupVCNforFastConnect)
+9. [Licensing Terms for the Enterprise Manager Marketplace Instance](#9LicensingTermsfortheEnterpriseManagerMarketplaceInstance)
+10. [How to Reset user oracle  password or if Named Credentials for user oracle are not working](#10HowtoResetuseroraclepasswordorifNamedCredentialsforuseroracleisnotworking)
+11. [Unable to connect to Enterprise Manager Console](#11UnabletoconnecttoEnterpriseManagerConsole)
+12. [Unable to Select Shape for Creating an instance](#12UnabletoSelectShapeforCreatinganinstance)
+13. [While trying to launch the EM instance: "Unable to accept Terms of Use."](#13WhiletryingtolaunchtheEMinstance:UnabletoacceptTermsofUse)
+14. [Information about Oracle Cloud Infrastructure Pricing](#14AdditionalinformationonOracleCloudInfrastructurePricing)
+15. [Additional information on Oracle Cloud Infrastructure Setup](#15AdditionalinformationonOracleCloudInfrastructureSetup)
+
 ## 1. How to Check Status of Oracle Management Service, Other Services and Agent
 Sudo to user oracle; As user *oracle* run the emctl status commands as shown:
 ````
@@ -100,11 +101,11 @@ The Named Credential can also be updated via Enterprise Manager UI. On the EM Co
 1. From the Hamburger Menu on the Top Left of the Oracle Cloud Home Page, Go to Compute->Instances
 2. Select the Compartment available to you in the Left Compartment Menu (not root)
 3. Now that the compartment is set-up for new user, re-do the steps to create the Enterprise Manager Workshop from the Listing Link
-### 13. While trying to launch the EM instance: Unable to accept Terms of Use.
+## 13. While trying to launch the EM instance: Unable to accept Terms of Use.
 ​Make sure your email has been verified. Log out and Log back in and restart from the listing link. Also, verify you are using the same region and compartment that was assigned to you.
-### 14. Additional information on Oracle Cloud Infrastructure Pricing
+## 14. Additional information on Oracle Cloud Infrastructure Pricing
 <https://www.oracle.com/cloud/pricing.html>
-### 15. Additional information on Oracle Cloud Infrastructure Setup
+## 15. Additional information on Oracle Cloud Infrastructure Setup
 <https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm>
 
 ## Acknowledgements
