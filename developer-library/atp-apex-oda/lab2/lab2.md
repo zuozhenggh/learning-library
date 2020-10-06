@@ -33,33 +33,33 @@ Login as the Admin user, with the **Admin** password you specified at Autonomous
 
 1. Create the workshop Workspace on the Welcome to "Oracle Application Express" page, select **Create Workspace**.
 
-  ![ORDS](./images/apex_workspace3.png)
+    ![ORDS](./images/apex_workspace3.png)
 
-  Use the following information to fill out the form:
+    Use the following information to fill out the form:
 
-   - **Database User**: ATP&#95;ODA
-   - **Password**: Any password that meets the Oracle Cloud requirements.
-   - **Workspace Name**: ATP&#95;ODA
+    - **Database User**: ATP&#95;ODA
+    - **Password**: Any password that meets the Oracle Cloud requirements.
+    - **Workspace Name**: ATP&#95;ODA
 
 2. Select **Create Workspace**.
 
-  ![ORDS](./images/apex_workspace4.png)
+    ![ORDS](./images/apex_workspace4.png)
 
-  You will be returned to the Oracle APEX administration page, and a message will be displayed "**Workspace Created**".
+    You will be returned to the Oracle APEX administration page, and a message will be displayed "**Workspace Created**".
 
 3. Sign in as the **ATP&#95;ODA** user by selecting the icon on the centre of the screen where you can see the name of the user, **ATP&#95;ODA**.
 
-  ![ORDS](./images/apex_workspace5.png)
+    ![ORDS](./images/apex_workspace5.png)
 
 4. Add the **name of the workspace**, **user name** and **password**: **ATP&#95;ODA** and click **Sign in**.
 
-  ![ORDS](./images/apex_workspace7.png)
+    ![ORDS](./images/apex_workspace7.png)
 
-  Now we are ready to create your APEX application on this workspace.
+    Now we are ready to create your APEX application on this workspace.
 
-  You can check that you are correctly signed in with the **ATP&#95;ODA** user in the right top corner.
+    You can check that you are correctly signed in with the **ATP&#95;ODA** user in the right top corner.
 
-  ![ORDS](./images/apex_workspace8.png)
+    ![ORDS](./images/apex_workspace8.png)
 
 ## **Step 2**: Create a Table with Quick SQL
 
@@ -79,42 +79,44 @@ Use Cases:
 
 1. Go to Quick SQL.
 
-  ![Quick SQL](./images/apex_quick_sql_menu.png)
+    ![Quick SQL](./images/apex_quick_sql_menu.png)
 
 2. Write on the left panel the following table definition:
 
-  ```bash
-  tasks
-    text
-  ```
+    ```bash
+    <copy>
+    tasks
+        text
+    </copy>
+    ```
 
 3. Click **Generate SQL**.
 
-  ![Generate SQL](./images/apex_generate_sql.png)
+    ![Generate SQL](./images/apex_generate_sql.png)
 
 4. Click **Save SQL Script**.
 
-  ![Save SQL Script](./images/apex_save_sql_script.png)
+    ![Save SQL Script](./images/apex_save_sql_script.png)
 
 5. Set the name of the script to `tasks` and confirm **Save Script**.
 
-  ![Save SQL Script Confirm](./images/apex_save_sql_script_confirm.png)
+    ![Save SQL Script Confirm](./images/apex_save_sql_script_confirm.png)
 
 6. Click **Review and Run**.
 
-  ![Save SQL Script](./images/apex_quick_sql_review.png)
+    ![Save SQL Script](./images/apex_quick_sql_review.png)
 
 7. Click **Run**.
 
-  ![Save SQL Script](./images/apex_quick_sql_run.png)
+    ![Save SQL Script](./images/apex_quick_sql_run.png)
 
 8. Click **Run Now**.
 
-  ![Save SQL Script](./images/apex_quick_sql_run_now.png)
+    ![Save SQL Script](./images/apex_quick_sql_run_now.png)
 
-  Make sure all statements are successfully run and there are no errors.
+    Make sure all statements are successfully run and there are no errors.
 
-  ![Save SQL Script](./images/apex_quick_sql_run_success.png)
+    ![Save SQL Script](./images/apex_quick_sql_run_success.png)
 
 ## **Step 3**: Insert rows on the table
 
@@ -122,37 +124,37 @@ We are going to mock some data to use it later with your Custom Component.
 
 1. Go to the Top Menu on **SQL Workshop**, click **Object Browser**.
 
-  ![](./images/apex_object_browser_menu.png)
+    ![](./images/apex_object_browser_menu.png)
 
 2. Select **TASKS** table on the left and click the tab **Data**, then click **Insert Row**:
 
-  ![Object Browser Data](./images/apex_object_data.png)
+    ![Object Browser Data](./images/apex_object_data.png)
 
 3. Leave `Id` empty and fill the field `Text` with a task description you like.
 
-  When you are happy with your new task, click **Create and Create Another** and do the same with another task.
+    When you are happy with your new task, click **Create and Create Another** and do the same with another task.
 
-  To follow the same example we have created:
+    To follow the same example we have created:
 
-  ```
-  Get concert tickets
-  ```
+    ```
+    Get concert tickets
+    ```
 
-  ![Object Browser Data](./images/apex_object_insert_row_1.png)
+    ![Object Browser Data](./images/apex_object_insert_row_1.png)
 
-4. Do the same with the second task entry.
+1. Do the same with the second task entry.
 
-  To follow the same example we have created:
+    To follow the same example we have created:
 
-  ```
-  Buy bread
-  ```
+    ```
+    Buy bread
+    ```
 
-  ![Object Browser Data](./images/apex_object_insert_row_2.png)
+    ![Object Browser Data](./images/apex_object_insert_row_2.png)
 
 5. Finally, click **Create** and check the two rows are as expected:
 
-  ![Object Browser Data](./images/apex_object_new_rows.png)
+    ![Object Browser Data](./images/apex_object_new_rows.png)
 
 ## **Step 4**: REST Enabling the Database Object
 
@@ -162,70 +164,70 @@ In the main menu, select **SQL Workshop**, click **RESTful Services**.
 
 1. Register your APEX schema with ORDS so we can offer a REST API of our tables, click **Register Schema with ORDS**:
 
-  ![REST Enable Register](./images/apex_rest_enable_register.png)
+    ![REST Enable Register](./images/apex_rest_enable_register.png)
 
-2. Set the **Schema Alias** name to `tasks` and click **Save Schema Attributes** to confirm:
+1. Set the **Schema Alias** name to `tasks` and click **Save Schema Attributes** to confirm:
 
-  ![REST Enable Save](./images/apex_rest_enable_save2.png)
+    ![REST Enable Save](./images/apex_rest_enable_save2.png)
 
-  You will see that the Schema is now enabled.
+    You will see that the Schema is now enabled.
 
-  ![REST Enable Success](./images/apex_rest_enable_register_success.png)
+    ![REST Enable Success](./images/apex_rest_enable_register_success.png)
 
-  We need to create a Module with the base path for your API, a Template and a Handler to resolve the request of a specific method (GET, PUT, DELETE, etc).
+    We need to create a Module with the base path for your API, a Template and a Handler to resolve the request of a specific method (GET, PUT, DELETE, etc).
 
 3. Select **Modules** on the left and click **Create Module**:
 
-  ![](./images/apex_rest_module.png)
+    ![](./images/apex_rest_module.png)
 
 4. Fill **Module Name** and **Base Path** fields with the following data and click **Create Module**:
 
-   - **Module Name**: `com.example.oda`
-   - **Base Path**: `/oda/`
+     - **Module Name**: `com.example.oda`
+     - **Base Path**: `/oda/`
 
-   ![](./images/apex_rest_module_create.png)
+    ![](./images/apex_rest_module_create.png)
 
 5. Confirm the module has been created.
 
-  ![](./images/apex_rest_module_create_success.png)
+    ![](./images/apex_rest_module_create_success.png)
 
 6. Scroll down and click **Create Template**:
 
-  ![](./images/apex_rest_module_create_template.png)
+    ![](./images/apex_rest_module_create_template.png)
 
-7. Fill **URI Template** with `tasks/` and click **Create Template**:
+1. Fill **URI Template** with `tasks/` and click **Create Template**:
 
-  ![](./images/apex_rest_template_create.png)
+    ![](./images/apex_rest_template_create.png)
 
 8. Confirm the Template has been created and click **Create Handler**:
 
-  ![](./images/apex_rest_handler_create.png)
+    ![](./images/apex_rest_handler_create.png)
 
 9. Make sure the fields for the Handler are as follows:
 
-   - **Method**: `GET`
-   - **Source Type**: `Collection Query`
-   - **Format**: `JSON`
+    - **Method**: `GET`
+    - **Source Type**: `Collection Query`
+    - **Format**: `JSON`
 
-   ![](./images/apex_rest_handler_create_get.png)
+    ![](./images/apex_rest_handler_create_get.png)
 
 10. On the **Source** area we are going to run the SQL select to fetch the data form the schema:
 
-  ```sql
-  select * from tasks
-  ```
+    ```sql
+    select * from tasks
+    ```
 
-  > NOTE: please, don't use "`;`" at the end of the SQL statement.
+    > NOTE: please, don't use "`;`" at the end of the SQL statement.
 
-  ![](./images/apex_rest_handler_source_query.png)
+    ![](./images/apex_rest_handler_source_query.png)
 
 11. Click **Create Handler** to save the changes on the GET handler:
 
-  ![](./images/apex_rest_handler_create_confirm.png)
+    ![](./images/apex_rest_handler_create_confirm.png)
 
 12. Confirm the Handler has been created and copy the **Full URL**:
 
-  ![](./images/apex_rest_handler_create_success.png)
+    ![](./images/apex_rest_handler_create_success.png)
 
 ## It works
 

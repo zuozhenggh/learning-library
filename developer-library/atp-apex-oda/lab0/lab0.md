@@ -88,7 +88,7 @@ You are now signed in to **Oracle Cloud!**
 
 ## It works
 
-You just created an Oracle Cloud Free Tier Account.
+You have just created an Oracle Cloud Free Tier Account.
 
 Additionally you sign in with your account.
 

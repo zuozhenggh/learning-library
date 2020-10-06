@@ -81,7 +81,7 @@ Estimated workshop Time 10 minutes.
 
 ## It works
 
-You just created an Autonomous Database with the latest features of Oracle Databases.
+You have just created an Autonomous Database with the latest features of Oracle Databases.
 
 Congratulations, you are ready for the next workshop!
 
