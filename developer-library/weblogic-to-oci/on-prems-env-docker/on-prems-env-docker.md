@@ -1,4 +1,4 @@
-# Setup a local (on-premises) environment using Docker
+# Setup a Local (On-Premises) Environment Using Docker
 
 ## Introduction
 
