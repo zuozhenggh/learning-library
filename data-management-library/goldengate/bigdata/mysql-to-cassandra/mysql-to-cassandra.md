@@ -43,6 +43,8 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 ## **STEP 1**: Explore GoldenGate Configuration  
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
+**By default ggadmin will automatically start in the labmenu**
+
   ![](./images/menu1006.png " ")
 
 2. Select **R** to reset the lab environment, then select **7**

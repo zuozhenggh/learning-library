@@ -256,9 +256,18 @@ Now that the source side is setup, let us configure GG on the target side (HBase
 
 2. Click on *Data Browser > HBase > ggtarget2hbase:emp*
 
+3. Select Hamburger Menu
+4. Select Data Browser
+5. Select HBase
   ![](./images/d20.png " ")
 
   ![](./images/d21.png " ")
+
+6. select ggtarget2hbase.dept
+
+![](./images/d22.png " ")
+
+![](./images/d23.png " ")
 
 ## Summary
 In summary, you loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
