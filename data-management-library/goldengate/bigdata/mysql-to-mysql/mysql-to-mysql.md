@@ -1,4 +1,4 @@
-#  MySQL to MySQL - Unidirectional replication
+#  MySQL to MySQL - Unidirectional Replication
 
 ## Introduction
 
@@ -10,7 +10,6 @@ In this lab we will load data in MySQL database `ggsource`. The GG extract proce
 
 #### Lab Architecture
  ![](./images/image200_1.png " ")
-
 
 ### Objectives
 - Explore replication from relational source to a relational target using GoldenGate
@@ -30,34 +29,26 @@ This lab assumes you have:
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
-  - OS User – “*ggadmin*”. First login as “*opc*”, then sudo to “*ggadmin*”. E.g.
+  - OS User – “*ggadmin*”.
+
+1. First login as “*opc*” using your SSH Private Key
+
+2. Then sudo to “*ggadmin*”. E.g.
 
     ```
     <copy>sudo su - ggadmin</copy>
     ```
 
-## **STEP 1**: Login to the Terminal
-1. Open a terminal session locally
-
-    ```
-    <copy>$ ssh opc@xxx.xxx.xx.xx</copy>
-    ```
-Use Public IP allocated from LiveLabs
-
-**Note: PLEASE USE `ggadmin` USER FOR ALL THE LABS**
-    ```    
-    <copy>sudo su – ggadmin</copy>
-    ```
-1. At the prompt, type  `labmenu` to display the labmenu IF not at the labmenu.
+## **STEP 1**: Explore GoldenGate Configuration
+1. At the terminal prompt as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
   ![](./images/a_labmenu2.png " ")
 
-4. Select Option **2**
+2. Select Option **2**
 
-5. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
+3. Review the overview notes on the following screen, then select **Q** to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
-## **STEP 2**: Explore GoldenGate Configuration
-1. Review the content of each of these files to explore how GoldenGate is being configured.
+4. Review the content of each of these files to explore how GoldenGate is being configured.
 
     ```
     <copy>cd /u01/gg4mysql/dirprm</copy>
@@ -77,16 +68,18 @@ Use Public IP allocated from LiveLabs
     ```
     <copy>view /u01/gg4mysql/dirprm/repmysql.prm</copy>
     ```
-2. Go to the GG Home for MySQL by typing *ggmysql*
+5. Go to the GG Home for MySQL by typing *ggmysql*
 
     ```
     <copy>ggmysql</copy>
     ```
-        or
+
+    or
+
     ```
     <copy> cd /u01/gg4mysql</copy>
     ```
-## **STEP 3**: Start GoldenGate Processes
+## **STEP 2**: Start GoldenGate Processes
 
 1. Go to the GG Home for MySQL. You can cd to the directory:
 
@@ -94,7 +87,8 @@ Use Public IP allocated from LiveLabs
   ![](./images/a3.png " ")
 
     ```
-    <copy> cd /u01/gg4mysql; ls -l ggsci</copy>
+    <copy> cd /u01/gg4mysql
+    ls -l ggsci</copy>
     ```
 
 2. Login to ggsci (GG command line interface), to create and start the GG extract, pump and replicat
@@ -138,16 +132,18 @@ processes:
     ```
     <copy>info all</copy>
     ```
-## **STEP 4**: Load Data into Source Database
+## **STEP 3**: Load Data into Source Database
 
 Now that the GoldenGate extract, pump and replicat processes are running, next you will run a script to load data into the ggsource MySQL database.
 
-1. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.
+1. Start a new session as `ggadmin`.
 
     ```
     <copy>sudo su – ggadmin</copy>
     ```
-    **Q**  to exit out of the LabMenu
+2. Select  **Q**  to exit out of the LabMenu
+
+3. Execute the following commands. We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.
 
    ![](./images/a5.png " ")
    ![](./images/a6.png " ")
@@ -162,9 +158,9 @@ Now that the GoldenGate extract, pump and replicat processes are running, next y
     <copy>mysqlselect</copy>
     ```
 
-1. At this point GoldenGate should have replicated all the data from database ggsource to database ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate.
+4. At this point GoldenGate should have replicated all the data from database ggsource to database ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate.
 
-2. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed.
+5. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed.
 
     ![](./images/a7.png " ")
 
@@ -175,7 +171,7 @@ Now that the GoldenGate extract, pump and replicat processes are running, next y
     <copy> stats repmysql total</copy>
     ```
 
-4.  The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
+6.  The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 
   ![](./images/a8.png " ")
   ![](./images/a9.png " ")
@@ -192,7 +188,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Brian Elliott, October 2020
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
