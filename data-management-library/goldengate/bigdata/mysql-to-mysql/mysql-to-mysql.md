@@ -37,7 +37,7 @@ Use Public IP allocated from LiveLabs
 
   ![](./images/menu1006.png " ")
 
-3. Select Option **2**
+3. Select Option **R** to reset then **2** for mySQL Lab
 
 4. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
