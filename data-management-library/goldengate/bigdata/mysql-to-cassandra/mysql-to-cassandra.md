@@ -33,41 +33,43 @@ Use Public IP allocated from LiveLabs
     <copy>sudo su – ggadmin</copy>
 ````
 
-## **STEP 1**: Explore GoldenGate MySQL to MySQL
+## **STEP 1**: Explore GoldenGate MySQL to Cassandra
 
-1. If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
+1. If already at a Unix prompt, you can always access the Lab Menu by typing the alias ‘labmenu’
 
 ````
 <copy>labmenu</copy>
 ````
 The following Lab Menu will be displayed
 
+**By default ggadmin will automatically start in the labmenu**
+
   ![](./images/menu1006.png " ")
 
-2. select R to reset the lab environment, then select **7**.
-Review the overview notes on the following screen, then select Q to quit. These online notes have been provided to allow cut/paste file names to another session, to avoid typos.
+1. select **R** to reset the lab environment, then select **7**, then select **Q** to quit
+Review the overview notes on the following screen, . These online notes have been provided to allow cut/paste file names to another session, to avoid typos.
 
-3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
+1. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. 
 
-  view these files, same as in previous lab:
+view these files, same as in previous lab:
 
 ````
-  <copy> cd /u01/gg4mysql/dirprm</copy>
+<copy> cd /u01/gg4mysql/dirprm</copy>
 ````
 ````
-  <copy>view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
+<copy>view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
 ````
 ````
-  <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
+<copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
 ````
 ````
-  <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+<copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
 ````
 ````
 <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
 ````
 ````
-<copy> cd /u01/gg4hadoop/dirprm</copy>
+<copy> cd /u01/gg4hadoop123010/dirprm</copy>
 ````
 ````
 <copy>view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby</copy>
@@ -86,7 +88,7 @@ Review the overview notes on the following screen, then select Q to quit. These 
 ````
   <copy>startcass</copy>
 ````
-## **STEP 3**: Explore GoldenGate MySQL Source
+## **STEP 3**: Explore GoldenGate MySql Source 
 
 1. Open another ssh session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql
 
@@ -114,7 +116,7 @@ Review the overview notes on the following screen, then select Q to quit. These 
 
   ![](./images/f4.png " ")
 ````
-<copy>cd /u01/gg4hadoop</copy>
+<copy>cd /u01/gg4hadoop123010</copy>
 ````
 ````
 <copy>./ggsci</copy>
@@ -131,7 +133,7 @@ Review the overview notes on the following screen, then select Q to quit. These 
 ````
 <copy>exit</copy> 
 ````
-## **STEP 5**: GoldenGate MySQL Configuration
+## **STEP 5**: GoldenGate MySql Source Configuration
 1. In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
   ![](./images/f5.png " ")
@@ -162,7 +164,7 @@ Review the overview notes on the following screen, then select Q to quit. These 
 <copy>exit</copy> 
 ````
 
-## **STEP 6**: GoldenGate Target Configuration
+## **STEP 6**: GoldenGate Cassandra Target Configuration
 
 1. Now that the source side is setup, let us configure GG on the target side (for Cassandra).
 
@@ -187,7 +189,7 @@ Review the overview notes on the following screen, then select Q to quit. These 
 ````
 <copy>---CREATE,ADD,DROP</copy>
 ````
-## **STEP 7**: GoldenGate Target Configuration
+## **STEP 7**: GoldenGate Target Replication Configuration
 
 1. Now create and start the Cassandra replicat process:
 

@@ -31,7 +31,7 @@ Setting up the Environment For MySQL.
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
-## **STEP 2**: GoldenGate and Kafka Target
+## **STEP 1**: GoldenGate Replication and Hive Target
 
 1. The following Lab Menu will be displayed, select **R** to reset the lab environment, then select option **4**
 
@@ -61,7 +61,7 @@ cd /u01/gg4mysql
 <copy>view  /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
 ````
 ````
-<copy>cd /u01/gg4hadoop/dirprm</copy>
+<copy>cd /u01/gg4hadoop123010/dirprm</copy>
 ````
 ````
 <copy>view /u01/gg4hadoop123010/dirprm/create_hive_replicat.oby</copy>
@@ -153,7 +153,7 @@ Open Terminal Session2 /
 ````
 <copy> info all</copy>
 ````
-## **STEP 2**: GoldenGate Target Configuration
+## **STEP 2**: GoldenGate HIVE Target Configuration
 
 1. Now that the source side is setup, let us configure GG on the target side (Hive Avro format).
 
@@ -171,7 +171,7 @@ Open Terminal Session2 /
 <copy> vi rhive.properties</copy>
 ````
 
-**Remove "--" below**
+**Remove "--" prefix below**
 
 ````
 <copy> ---hdfs</copy>
@@ -225,7 +225,7 @@ Open Terminal Session2 /
 ````
 <copy> info all</copy>
 ````
-## **STEP 3**:GoldenGate Kafka Target
+## **STEP 3**: Exploring GoldenGate Target
 
 1. Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the Hive directories (schema & data) – they should be empty. Then we’ll load some data on
 the MySQL database ‘ggsource’ and GG will extract and write it to the Hive target. GG will create a subdirectory for each table in the base directory /user/ggtarget/hive/data.
