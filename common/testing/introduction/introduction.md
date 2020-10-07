@@ -17,7 +17,7 @@ Enter background information here....
 
 *List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:*
 
-In this lab, you'll:
+In this lab, you will:
 * Provision
 * Setup
 * Data Load
@@ -29,16 +29,16 @@ In this lab, you'll:
 
 *Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
-* Item no 1
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
 *This is the "fold" - below items are collapsed by default*
 
-## STEP 1: **TEST**: Create Your Free Trial Account - Pass in a marketing code appended to the free trial link
+## **Step 1:** **TEST**: Create Your Free Trial Account - Pass in a marketing code appended to the free trial link
 
 This test demonstrates that the appended marketing code is passed to other labs.
 
-In this section, you'll fill out the registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup) to receive your Oracle Free Trial with $300 in credits.
+In this section, you will fill out the registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup) to receive your Oracle Free Trial with $300 in credits.
 
 1.  Click on the "Start for free" button and enter the appropriate information to create your account.
     * Enter the same **email address** you used to register for Oracle Open World / Oracle Code One. A popup should appear recognizing your email. If not, the registration form will ask for additional information later.
@@ -51,7 +51,7 @@ In this section, you'll fill out the registration form at [oracle.com/cloud/free
     * You can choose almost anything for your Cloud Account Name. Remember what you wrote. You'll need this name later to sign in.
     * Click **Enter Password**.
 
-3.  If your email wasn't recognized or you're using a different email address, you'll need to provide additional information.
+3.  If your email wasn't recognized or you're using a different email address, you will need to provide additional information.
     * Provide a mobile number and click **Next: Verify Mobile Number**. In a few seconds, you should receive a verification code through SMS-text. Enter this code in the appropriate field and click **Verify**.
     * Click **Add Credit Card Details**. You will NOT be charged unless you elect to upgrade the account later. Enter the billing information, card details, and click **Finish**.
 
@@ -139,4 +139,4 @@ You may proceed to the next lab.
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

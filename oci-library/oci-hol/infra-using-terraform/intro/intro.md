@@ -13,7 +13,7 @@ Terraform is Infrastructure as Code tool for building and managing infrastructur
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-- **Last Updated By/Date** - Yaisah Granillo, June 2020
+- **Last Updated By/Date** - Kamryn Vinson, August 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request. 
 

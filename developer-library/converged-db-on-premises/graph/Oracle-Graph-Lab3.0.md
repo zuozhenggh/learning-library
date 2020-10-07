@@ -19,7 +19,7 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
   
-## Step 1: Visualize the Graph
+## **Step 1:** Visualize the Graph
 
 **Scenario 1 : What products did customer 202 buy from which store(s)?**
 
@@ -172,7 +172,7 @@ where product.PRODUCT_ID=44;
 ![](./images/IMGG37.PNG)
 
 
-## Step 2: Deleting the Graph
+## **Step 2:** Deleting the Graph
 
 Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the following statements to delete the in-memory graph 
 
@@ -190,4 +190,4 @@ graph.destroy();
 - **Expiration Date** - June 2021
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 

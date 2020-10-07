@@ -13,7 +13,7 @@ Resource Manager is an Oracle Cloud Infrastructure service that allows you to au
 [](youtube:udJdVCz5HYs)
 
 ### Objectives
-In this lab, you'll:
+In this lab, you will:
 * Setup a VCN (Virtual Compute Network) using Resource Manager
 * Setup a compute instance using Resource Manager
 * Login to your compute instance
@@ -104,9 +104,9 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/linux-compute-step3-9.png " ")
 1. You will notice that 3 objects were created.  Your instance has a private IP address and a public IP address.  Copy the public IP address, you will need it to connect to your instance.
 ![Image alt text](images/db19c-freetier-step1-12.png " ")
-1.  Click on the hamburger menu in the upper left corner of your browser.  Select **Compute**->**Instance**. ![Image alt text](images/linux-compute-step-3-10.png " ")
+1.  Click on the hamburger menu in the upper left corner of your browser.  Select **Compute**->**Instance**. ![Image alt text](images/linux-compute-step3-10.png " ")
 2.  The compute instance you created should be listed. Note the public IP address.
-![Image alt text](images/linux-compute-step-3-11.png " ")     
+![Image alt text](images/linux-compute-step3-11.png " ")     
 
 ## **STEP 5**: Connect to your instance
 
@@ -184,7 +184,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.  
 
-You may now proceed to the next lab.  
+You may now *proceed to the next lab*. 
 
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management
@@ -192,4 +192,4 @@ You may now proceed to the next lab.
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

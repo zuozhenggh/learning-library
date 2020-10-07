@@ -6,7 +6,7 @@ At this point we have all the components we need to deploy our Python micro web 
 
 Automated deployment uses YML templates received from the original [vltabacaru/orcl-ws-cicd] GitHub repository we forked.
 
-## Step 1: Add Pipeline to Wercker.YML
+## **Step 1:** Add Pipeline to Wercker.YML
 
 Add this section at the end of your wercker.yml file (leave a blank line between build section and deploy section):
 
@@ -72,7 +72,7 @@ deploy:
 ...
 ````
 
-## Step 2: Deploy Pipeline
+## **Step 2:** Deploy Pipeline
 
 We need to add the second pipeline to Wercker **Workflows** using the console. Click **Add New Pipeline** button.
 
@@ -136,7 +136,7 @@ kubernetes-bootcamp   1/1     1            1           11m
 orcl-ws-app           1/1     1            1           3m34s
 ````
 
-## Step 3: Run Web Service
+## **Step 3:** Run Web Service
 
 Open Kubernetes Dashboard, login using the token, and check the deployment on Overview under **Deployments**. Go down on the page, and view our Python microservice under **Services**, **orcl-ws-app**. Copy the IP address of this microservice under External endpoints, [orcl-ws-app-IP]. 
 
@@ -190,5 +190,5 @@ exit
 - **Last Updated By/Date** - Valentin Leonard Tabacaru, Principal Product Manager, DB Product Management, May 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 

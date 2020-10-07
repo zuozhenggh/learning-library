@@ -36,9 +36,9 @@ As an developer or DBA,
 
 - Since your autonomous database in a private network, you cannot access it with the URL above unless you are on a machine that has a network path to your database subnet. 
 
-- Lets connect to the developer client machine you setup in [Lab 5](?lab=lab-5-configuring-development-system) using a secure ssh tunnel.
+- Lets connect to the developer client machine you setup in [Lab 8](?lab=lab-8-configuring-development-system) using a secure ssh tunnel.
 
-- Open an ssh tunnel from your local laptop to your developer client. For instructions, refer to [Lab 5](?lab=lab-5-configuring-development-system).
+- Open an ssh tunnel from your local laptop to your developer client. For instructions, refer to [Lab 8](?lab=lab-8-configuring-development-system).
 
 **Mac or Linux users** 
 
@@ -69,7 +69,7 @@ As an developer or DBA,
 
 - Explore the SQL Developer Web interface and refer to its documentation for usage details.
 
-- Alternatively, you may also access the SQLDevWeb console of your dedicated ATP instance from your local web browser If you are in the same OCI Network / VCN as your database. For detailed instruction on setting up a VPN connection into your private database cloud infrastructure, refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
+- Alternatively, you may also access the SQLDevWeb console of your dedicated ATP instance from your local web browser If you are in the same OCI Network / VCN as your database. For detailed instruction on setting up a VPN connection into your private database cloud infrastructure, refer to [Lab 9](?lab=lab-9-configuring-vpn-into-private-atp).
 
 
 ## STEP 3: Access the Performance Hub through SQL Developer Web Console
@@ -109,5 +109,6 @@ As an developer or DBA,
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

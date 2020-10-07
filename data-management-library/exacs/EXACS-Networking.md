@@ -5,7 +5,7 @@ The Oracle Exadata Cloud Service runs on dedicated Exadata hardware in the Oracl
 When configuring the Exadata Cloud Service, you need to ensure that your cloud users have access to use and create only the appropriate kinds of cloud resources to perform their job duties. Additionally, you need to ensure that only authorized personnel and applications have network access to the databases created on Exadata Cloud DB System.
 
 ### See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 
 Watch the video below for an overview on how to prepare your private data center in the Oracle Cloud Infrastructure
 
@@ -26,7 +26,7 @@ As an OCI account administrator with network resource privileges,
 
 ## Steps
 
-### STEP 1: Create compartments, groups, users and IAM policies
+### **Step 1:** Create compartments, groups, users and IAM policies
 
 We will use the following IAM structure in line with the bare minimum isolation recommended. 
 
@@ -118,7 +118,7 @@ You may alternatively choose to grant 'MANAGE all-resources' privileges to users
 You now have the users, groups and compartments setup to provision an Exadata Cloud Service database system
 
 
-### STEP 2: Layout a secure network for the database and application infrastructure
+### **Step 2:** Layout a secure network for the database and application infrastructure
 
 If you are new to cloud Networking concepts, please refer to the OCI network documentation to get an understanding of VCNs, Subnets, Security lists, routers, gateways etc.
 

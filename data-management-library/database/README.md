@@ -1,12 +1,10 @@
 # Oracle Database Github
 
-
 The industry’s leading database continues to deliver leading-edge innovations, including machine learning, to enable self-driving data management. This enterprise-proven, database cloud service is designed to support mixed workloads through any deployment strategy, on premises or in the cloud. Experience the power of the next-generation database with unmatched performance, ease, and flexibility by clicking on one of our hands-on workshops.
 
 
-
 ## Workshops
-Click [here](http://bit.ly/golivelabs) to access DB content.
+Click [here](http://bit.ly/golivelabs) to access database workshops on LiveLabs.
 
 
 ## Get an Oracle Cloud Trial Account for Free!
@@ -28,6 +26,6 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Oracle Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 
 -- Oracle Database Product Management

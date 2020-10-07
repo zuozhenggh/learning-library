@@ -17,8 +17,8 @@ As a database security admin,
 
 ### Required Artifacts
 - An Oracle Cloud Infrastructure account.
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 2](?lab=lab-2-provisioning-exadata).
-- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
+- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
 
 ## STEP 1: Set up Application Schema and Users
 Oracle Database vault comes pre-installed with your Autonomous database on dedicated infrastructure. In this lab we will enable Database Vauly (DV), add required user accounts and create a DV realm to secure a set of user tables from priviledged user access. 
@@ -211,5 +211,6 @@ As Database Vault owner, execute:
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, April 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

@@ -5,14 +5,11 @@ In this lab we will use pre-configured terraform scripts to deploy VCN, Compute 
 
 Estimated Time: 30-45 minutes
 
-**Some Key points:**
+**Key points:**
 - We recommend using Chrome or Edge as the browser.
 - You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
 
 ### Pre-Requisites
-
-- Prerequisites
-- Lab 1: Generate SSH Keys - Cloud Shell
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
@@ -59,7 +56,7 @@ Estimated Time: 30-45 minutes
     * Service gateway (SG)
 
 6. Click **View Virtual Cloud Network** to display your VCN details.
-              
+
     ![](images/HAApplication_006.png " ")
 
     ![](images/Terraform_012.png " ")
@@ -97,8 +94,8 @@ Estimated Time: 30-45 minutes
     ![](images/Terraform_014.png " ")
 
     - **Boot Volume:** Leave the default
-    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier. 
-    
+    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier.
+
     *Ensure when you are pasting that you paste one line*
 
     ![](images/HAApplication_012.png " ")
@@ -125,7 +122,7 @@ Estimated Time: 30-45 minutes
 7.  To ssh into the compute instance enter the following command replacing SSH-KEY-NAME with the name of your ssh key and replacing PUBLIC-IP-OF-COMPUTE1 with the IP address of the compute instance you created.
 
     *Note: Your SSH-KEY-NAME name should NOT end in .pub*
-            
+
     ```
     <copy>
     ssh -i SSH-KEY-NAME opc@PUBLIC-IP-OF-COMPUTE-1
@@ -138,7 +135,7 @@ Estimated Time: 30-45 minutes
 8.  Enter 'Yes' when prompted for security message.
 
     ![](images/Terraform_016.png " ")
- 
+
 9. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
     ![](images/Terraform_017.png " ")
@@ -187,7 +184,7 @@ Estimated Time: 30-45 minutes
     </copy>
     ```
 
-7. When prompted for a location for your config press enter to choose the default location. When prompted for your user OCID, tenancy OCID, and region ID enter the information the appropiate information. When asked if you want to generate a new RSA key pair enter `Y`. For all other prompts press enter to accept the default.
+7. When prompted for a location for your config press enter to choose the default location. When prompted for your user OCID, tenancy OCID, and region ID enter the information the appropriate information. When asked if you want to generate a new RSA key pair enter `Y`. For all other prompts press enter to accept the default.
 
     ![](images/Terraform_024.png " ")
 
@@ -211,7 +208,7 @@ Estimated Time: 30-45 minutes
 
     ```
     <copy>
-    sudo curl https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-hol/infra-using-terraform/tf_setup.sh -o tf_setup.sh
+    sudo curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/biiTfGyz5f3atH8iqX3hX-mLrwyVygwD366yVWZun3Y/n/c4u03/b/oci-library/o/tf_setup.sh -o tf_setup.sh
     </copy>
     ```
 
@@ -289,7 +286,7 @@ Estimated Time: 30-45 minutes
     </copy>
     ```
 
-10. The enviornment is now set. Next we will download a terraform file (.tf) file that will be used to create VCN, Compute instance, block volume and attach block volume to compute instance. We will download this file in **/home/opc** directory. Enter the following command.
+10. The environment is now set. Next we will download a terraform file (.tf) file that will be used to create VCN, Compute instance, block volume and attach block volume to compute instance. We will download this file in **/home/opc** directory. Enter the following command.
 
     ```
     <copy>
@@ -297,11 +294,11 @@ Estimated Time: 30-45 minutes
     </copy>
     ```
 
-    Enter the following command. 
+    Enter the following command.
 
     ```
     <copy>
-    sudo curl https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-hol/infra-using-terraform/compute.tf -o compute.tf
+    sudo curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/I4me2s0NE9z_kJprisLSUFyyekXXSGldT1wGFPQIiok/n/c4u03/b/oci-library/o/compute.tf -o compute.tf
     </copy>
     ```
 
@@ -317,7 +314,7 @@ Estimated Time: 30-45 minutes
 
     ![](images/Terraform_028.png " ")
 
-12. To see the deloyment plan enter the following command.
+12. To see the deployment plan enter the following command.
 
     ```
     <copy>
@@ -384,8 +381,8 @@ Estimated Time: 30-45 minutes
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Contributors** - Oracle LiveLabs (Jaden McElvey, Technical Lead, Kamryn Vinson, QA Engineer Lead Intern, Arabella Yao, Product Manager Intern, DB Product Management)
-- **Last Updated By/Date** - Yaisah Granillo, June 2020
+- **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+- **Last Updated By/Date** - Kamryn Vinson, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

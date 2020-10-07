@@ -19,7 +19,7 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 [Link to Marketplace](https://www.oracle.com/cloud/marketplace/)
 
 ### Objectives
-In this lab, you'll:
+In this lab, you will:
 * Setup a VCN (Virtual Compute Network) using Resource Manager
 * Setup a compute instance
 * Login to your compute instance
@@ -268,7 +268,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
-You may now proceed to the next lab.  
+You may now *proceed to the next lab*. 
 
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management
@@ -276,4 +276,4 @@ You may now proceed to the next lab.
 - **Last Updated By/Date** - Kay Malcolm, July 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

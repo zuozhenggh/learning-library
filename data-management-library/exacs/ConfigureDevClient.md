@@ -7,7 +7,7 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 ![](./images/Infra/ConfigureDevEnv/Marketplace.png " ")
 
 ### See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 Watch the video below for an overview on how to configure a Development System for use with your Exadata Cloud Service Database
 
 <div style="max-width:768px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2171811/sp/217181100/embedIframeJs/uiconf_id/35965902/partner_id/2171811?iframeembed=true&playerId=kaltura_player&entry_id=1_ipbl7apx&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_fp1noq9a" width="768" height="432" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
@@ -29,7 +29,7 @@ As a database user, a DBA, or an application developer,
 
 ## Steps
 
-### STEP 1: Provision an OCI Marketplace Developer Client image instance
+### **Step 1:** Provision an OCI Marketplace Developer Client image instance
 
 We start by deploying a pre-configured client machine instance from the OCI marketplace
 
@@ -98,7 +98,7 @@ Ensure that the **Assign A Public IP Address** button is selected. You will need
 <br>
 
 
-### STEP 2: Connect to dev client desktop over VNC
+### **Step 2:** Connect to dev client desktop over VNC
 
 
 First we shh into the dev client and invoke the VNC server that comes pre-installed.
@@ -154,7 +154,7 @@ Connect to your VNC desktop and provide the password you changed on the host ear
 You should now see a linux desktop in your VNC window.
 
 
-### STEP 3: Connect to your database using SQL Developer and SQL Plus
+### **Step 3:** Connect to your database using SQL Developer and SQL Plus
 
 In your VNC session, invoke SQL Developer from the top left Applications menu as shown below
 

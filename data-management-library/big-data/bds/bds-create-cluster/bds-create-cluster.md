@@ -6,8 +6,8 @@ In this lab, you will learn how to create a Highly-Available (HA) Cloudera Distr
 
 ### Objectives
 
-* Learn how to create an HA Hadoop cluster using BDS and OCI.
-* Learn how to monitor the cluster creation.
+* Create an HA Hadoop cluster using BDS and OCI.
+* Monitor the cluster creation.
 
 ### What Do You Need?
 
@@ -20,7 +20,7 @@ Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 [](youtube:zpASc1xvKOY)
 
 
-## STEP 1: Create a Cluster
+## **Step 1:** Create a Cluster
 There are many options when creating a cluster. You will need to understand the sizing requirements based on your use case and performance needs. In this lab, you will create a small testing and development cluster that is not intended to process huge amounts of data. It will be based on small Virtual Machine (VM) shapes that are perfect for developing applications and testing functionality at a minimal cost.
 
 Your simple HA cluster will have the following profile:
@@ -115,7 +115,7 @@ Create the cluster as follows:
 
     ![](./images/status-creating.png " ")
 
-## STEP 2: Monitor the Cluster Creation
+## **Step 2:** Monitor the Cluster Creation
 
 The process of creating the cluster takes approximately one hour to complete; however, you can monitor the cluster creation progress as follows:
 
@@ -179,7 +179,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
   ![](./images/cluster-active.png " ")  
 
-## STEP 3: Review Locations of Services in the Cluster
+## **Step 3:** Review Locations of Services in the Cluster
 
   The `training-cluster` cluster is a highly available (HA) cluster; therefore, the services are distributed as follows:
 
@@ -275,6 +275,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 * **Technical Contributors:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
-* **Last Updated By/Date:** Lauran Serhal, July 2020
+* **Last Updated By/Date:** Lauran Serhal, September 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

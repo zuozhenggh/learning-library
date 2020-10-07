@@ -13,7 +13,7 @@ An Autonomous Exadata Infrastructure (AEI) resource allocates an available Oracl
 
 
 ### See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Objectives
 
 As a fleet administrator, 
@@ -28,7 +28,7 @@ As a fleet administrator,
 
 ## Steps
 
-### STEP 1: Deploy your Autonomous Exadata Infrastructure (AEI)
+### **Step 1:** Deploy your Autonomous Exadata Infrastructure (AEI)
 
 **Login to your OCI account as a fleet administrator**
 

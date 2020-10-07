@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Rather than requiring that you install Python and other software, the front-end application and related components have been created for you. In this lab, you'll choose to install the front-end client as a Virtual Box image (VM) or Docker image.
+Rather than requiring that you install Python and other software, the front-end application and related components have been created for you. In this lab, you will choose to install the front-end client as a Virtual Box image (VM) or Docker image.
 
 Estimated time: 45 - 90 min
 
@@ -317,4 +317,4 @@ Now let’s configure access to oci tenancy via ocicli with our tenancy details.
 * **Last Updated By/Date** - Tom McGinn, May 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. Please include the workshop name and lab in your request.

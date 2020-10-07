@@ -29,7 +29,7 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
     - Setup Compute Instance
 
 
-## Step 1: Lab Setup
+## **Step 1:** Lab Setup
 
 1. Using the terminal of your choice (we recommend the Oracle Cloud Shell) login to the instance you created using secure shell (ssh)
 
@@ -93,7 +93,7 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
     </copy>
     ````
 
-## Step 2: Docker Basic Concepts
+## **Step 2:** Docker Basic Concepts
 
 1.  Check the version of docker
 
@@ -163,7 +163,7 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
     ![](images/18002.png " ")
 
 
-## Step 3: Docker Networking Basics
+## **Step 3:** Docker Networking Basics
 
 Now that you know how to start, stop and relocate a container, let's see how to get information about the network.
 
@@ -198,6 +198,6 @@ You may now proceed to the next lab.
 * **Last Updated By/Date** - Kay, April 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
 
 

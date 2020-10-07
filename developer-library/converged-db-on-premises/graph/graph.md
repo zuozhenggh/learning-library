@@ -2,18 +2,15 @@
 
 ## Introduction
 
-This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. The rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
+This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. In the rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
 
-Estimated Lab Time: 30 Minutes
+*Estimated Lab Time:* 30 Minutes
 
-### Before You Begin
-
-**What Do You Need?**
-
+### Prerequisites
 This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
-- Lab: Start Database and Application
+  - Lab: Generate SSH Key
+  - Lab: Setup Compute Instance
+  - Lab: Start Database and Application
 
 ### Overview of Oracle Graph
 
@@ -32,7 +29,6 @@ Every Oracle Database now includes both property graph and RDF graph data models
 - 50+ Graph algorithms
 - Support for graph visualization
 
-
 Customers use Property Graphs in fraud analytics, vulnerability analysis, recommendation systems, and more.
 
 **RDF Graph database includes:**
@@ -49,7 +45,6 @@ Here is are two videos that talk more about Oracle Graph.
 
 [](youtube:-DYVgYJPbQA)
 [](youtube:zfefKdNfAY4)
-
 
 ### Introduction to Property Graph
 
@@ -70,13 +65,11 @@ A property graph consists of a set of objects or vertices, and a set of arrows o
 - A text label that describes the relationship between the two vertices
 - A collection of properties
 
-
 The following figure illustrates a very simple property graph with two vertices and one edge. The two vertices have identifiers 1 and 2. Both vertices have properties name and age. The edge is from the outgoing vertex 1 to the incoming vertex 2. The edge has a text label knows and a property type identifying the type of relationship between vertices 1 and 2.
 
 ![](./images/IMGG1.PNG)
 
 Figure: Simple Property Graph Example
-
 
 **A very brief note on PGQL**
 
@@ -84,23 +77,21 @@ The [pgql-lang.org](pgql-lang.org) site and specification [pgql-land.org/spec/1.
 
 The general structure of a PGQL query is
 
+````
 SELECT (select list) FROM (graph name) MATCH (graph pattern) WHERE (condition)
-
+````
 
 PGQL provides a specific construct known as the MATCH clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints.
-() indicates a vertex variable
 
-  -an undirected edge, as in (source)-(dest)
-
--> an outgoing edge from source to destination
-
-<- an incoming edge from destination to source
-
+````
+()  indicates a vertex variable
+-   an undirected edge, as in (source)-(dest)
+->  an outgoing edge from source to destination
+<-  an incoming edge from destination to source
 []  indicates an edge variable
+````
 
-
-
-## STEP 1: Connect to Graph Server and Client
+## **Step 1:** Connect to Graph Server and Client
 
 **The graph server has already been setup for you. For more information on the graph server setup see the "Want to learn more section" of this lab.**
 
@@ -127,26 +118,25 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
     ![](./images/IMGG4.PNG)
 
 3. Make a JDBC connection to the database, run the below at the jshell prompt.
+
     ````
     <copy>
     /open /u01/script/graph_startup/03_graphload.jsh
     </copy>
     ````
 
-## STEP 2: Create Graph
+## **Step 2:** Create Graph
 
 **For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh. The SQL has been provided as reference.**
 
 1. We have created the views for the use of orders and order_items as multiple edge tables using below commands.
     ````
-    <copy>
     Create or replace view co_edge as select * from orders;
     Create or replace view oc_edge as select * from orders;
     Create or replace view os_edge as select * from orders;
     Create or replace view so_edge as select * from orders;
     Create or replace view op_edge as select * from order_items;
     Create or replace view po_edge as select * from order_items;
-    </copy>
     ````
 
     ![](./images/IMGG6.PNG)
@@ -154,7 +144,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 2. We used a property graph query language [PGQL](http://pgql-lang.org) DDL to define and populate the graph.  The statement is as follows:
 
     ````
-    <copy>CREATE PROPERTY GRAPH OE_SAMPLE_GRAPH
+    CREATE PROPERTY GRAPH OE_SAMPLE_GRAPH
     VERTEX TABLES (
     customers KEY (CUSTOMER_ID) LABEL CUSTOMERS
     PROPERTIES(CUSTOMER_ID, EMAIL_ADDRESS, FULL_NAME),
@@ -198,14 +188,12 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
       LABEL PRODUCT_IN_ORDER
       PROPERTIES (LINE_ITEM_ID)
       )
-      </copy>
     ````
 3. The above PQGL query is saved as sql file (CreatePropertyGraph.sql) and stored in path /u01/graph and is run at jshell prompt.
 
     ````
-    <copy>
     pgql.prepareStatement(Files.readString(Paths.get("/u01/graph/CreatePropertyGraph.sql"))).execute();
-    </copy>
+
     ````
 
 4. The Graph Server kit includes the necessary components (a server application and JShell client) that will execute the above CREATE PROPERTY GRAPH statement and create the graph representation.
@@ -221,12 +209,10 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 5. Create a convenience function which prepares, executes, and prints the result of a PGQL statement
 
     ````
-    <copy>
     Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
-    </copy>
     ````
 
-## STEP 3: Querying graph using PGQL
+## **Step 3:** Querying graph using PGQL
 
 1. Find the edge labels. We used labels here to tag an edge with a relationship type
 
@@ -318,7 +304,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG15.PNG)
 
-## STEP 4: Load the graph into memory and publish it.
+## **Step 4:** Load the graph into memory and publish it.
 
 1. Run the below command in jshell prompt. This step will run the script called "04_graphintoMemory.jsh"  which will perform two steps. The first step is loading the graph into memory. The second step is publishing the graph. After running this command we will look at some of the examples about customers and their orders.
     ````
@@ -367,7 +353,6 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG20.PNG)
 
-
 6. List the 10 customers who had the most product purchases in common with customer 202, see definition of qStr above or just enter qStr in the shell to see its content
 
     ````
@@ -379,7 +364,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG21.PNG)
 
-## STEP 5: Visualize the Graph
+## **Step 5:** Visualize the Graph
 
 We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
 
@@ -565,11 +550,10 @@ This graph shell is implemented on top of the Java Shell tool (JShell).
 
 The graph shell automatically connects to a PGX instance (either remote or embedded depending on the --base_url command-line option) and creates a PGX session.
 
-
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start
-* **Last Updated By/Date** - David Start, Product Manager, Database Product Management, July 2020
+* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

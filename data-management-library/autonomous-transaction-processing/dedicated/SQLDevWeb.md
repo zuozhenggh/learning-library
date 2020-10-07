@@ -7,7 +7,7 @@ June 13, 2019
 </td></tr><table>
 
 ### See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Introduction
 
 Oracle SQL Developer Web provides an integrated development environment and a database administration interface for Oracle databases in OCI. A web interface for Oracle SQL Developer, SQL Developer Web provides a subset of the features available for the desktop product and is bundled with various database services available in Oracle Cloud, including the dedicated autonomous database.
@@ -33,7 +33,7 @@ As an developer or DBA,
 
 ## Steps
 
-### STEP 1: Access OCI autonomous database console and get URL for sql developer web cosole
+### **Step 1:** Access OCI autonomous database console and get URL for sql developer web cosole
 
 Login to your Oracle Cloud Infrastructure account and navigate to the console page of your dedicated autonomous database. 
 
@@ -50,7 +50,7 @@ Save the URL some place while you work on the next step to access your developer
 
 
 
-### STEP 2: Create a VNC connection to developer client VM and access sqldevweb console 
+### **Step 2:** Create a VNC connection to developer client VM and access sqldevweb console 
 
 
  Since your autonomous database in a private network, you cannot access it with the URL above unless you are on a machine that has a network path to your database subnet. 
@@ -89,7 +89,7 @@ Note: Mac users should user CRTL + V to paste into VNC and not Command + V
 
 
 
-### STEP 3: Access the Performance Hub through SQL Developer Web Console
+### **Step 3:** Access the Performance Hub through SQL Developer Web Console
 
 The SQL Developer Web home page provides quick links on the right to some of its key features, including the Performance Hub. 
 

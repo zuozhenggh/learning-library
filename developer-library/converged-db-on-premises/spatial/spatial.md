@@ -1,10 +1,9 @@
 # Oracle Spatial
 
 ## Introduction
+This lab walks you through the steps of setting up the environment for Spatial lab. You can connect to the Oracle Database instance using any client of your choice. In this lab, you will connect using Oracle SQL Developer.
 
-This lab walks you through the steps of setting up the environment for Spatial lab. You can connect Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQL Developer.
-
-Estimated Lab Time: 30 Minutes
+*Estimated Lab Time:* 30 Minutes
 
 ### Before You Begin
 
@@ -42,7 +41,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
 
 
 
-## STEP 1: Connect to the Pluggable Database (PDB)
+## **Step 1:** Connect to the Pluggable Database (PDB)
 1. Open a terminal window and sudo to the user **oracle**
 
     ````
@@ -66,13 +65,14 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
     ````
 
 4. Open SQLPlus as the user appjson
+
     ````
     <copy>
     sqlplus appspat/Oracle_4U@SGRPDB
     </copy>
     ````
 
-## STEP 2: Connect to SQL Developer
+## **Step 2:** Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -87,7 +87,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
     ![](./images/spatial_sql_developer.png " ")
 
 
-## STEP 3: Example Queries
+## **Step 3:** Example Queries
 
 Note: See [Reference: Setting Up Spatial](#Reference:SettingUpSpatial) to see the SQL executed in advance.
 
@@ -293,8 +293,8 @@ Notice that each has a column of type SDO\_GEOMETRY to store location.
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start
-* **Last Updated By/Date** - David Start, Product Manager, Database Product Management, July 2020
+* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

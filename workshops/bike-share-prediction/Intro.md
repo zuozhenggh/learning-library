@@ -8,7 +8,7 @@ You will take on 2 Personas during the workshop. The **Data Scientist Persona**
 
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 
 ## Objectives
 - Provision an Autonomous Data Warehouse (ADW) Instance
@@ -21,7 +21,7 @@ Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?
 ## Required Artifacts
 - The following lab requires an Oracle Cloud account that will either be supplied by your instructor, or can be obtained through the following steps.
 
-## Step 1: Acquire an Oracle Cloud Free Tier Account or Workshop Account
+## **Step 1:** Acquire an Oracle Cloud Free Tier Account or Workshop Account
 - Bookmark this page for future reference.
 
 - Open up a browser and navigate to www.oracle.com. Click the **Oracle Cloud Free Tier** button in the upper right hand corner.
@@ -41,7 +41,7 @@ Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?
 
     ![](images/signup-email-provisioned.png)
 
-## Step 2: Login to Oracle Cloud Account
+## **Step 2:** Login to Oracle Cloud Account
 
 - From any browser go to oracle.com to access the Oracle Cloud.
 
@@ -63,7 +63,7 @@ Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?
 
   **NOTE**: You will likely be prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
-## Step 2: Navigate to Lab 100
+## **Step 2:** Navigate to Lab 100
 
 - Begin working on [Lab 100](LabGuide100.md)
 

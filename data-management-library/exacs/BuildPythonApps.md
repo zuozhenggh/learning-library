@@ -8,7 +8,7 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 **In this lab we will configure and deploy a python application in a developer client VM and connect it to an Exadata Cloud Service database.**
 
 ### See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Objectives
 
 As an application developer,
@@ -26,7 +26,7 @@ As an application developer,
 
 ## Steps
 
-### STEP 1: Download sample python application
+### **Step 1:** Download sample python application
 
 - Login to your Oracle Cloud Infrastructure account and select **Compute** —> **Instances** from top left menu
 
@@ -75,7 +75,7 @@ Lets download a sample python application for the purpose of this lab,
 <copy>unzip EXACSPython.zip</copy>
 ```
 
-### STEP 2: Run your python application**
+### **Step 2:** Run your python application**
 
 
 - Open terminal on your laptop and SSH into linux host machine. Windows users follows instructions provided above to ssh using Putty.

@@ -7,7 +7,7 @@ Data Pump Import lets you import data from Data Pump files. You can save your da
 This lab walks you through the steps to migrate a sample application schema using Data Pump Import into your Exadata Cloud Service Database.
 
 ### See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 
 ## Objectives
 
@@ -26,7 +26,7 @@ As a database admin or user,
 
 ## Steps
 
-### STEP 1: Download a sample data pump export file from Oracle Learning Library github repository
+### **Step 1:** Download a sample data pump export file from Oracle Learning Library github repository
 
 - Log into your bastion server
 
@@ -67,7 +67,7 @@ wget -O user_XX.dmp https://objectstorage.us-ashburn-1.oraclecloud.com/p/LdwVJ20
 ![wget_dump_details](./images/HOL-DataPump/wget_dump_details.png " ")
 ![dump_complete](./images/HOL-DataPump/dump_complete.png " ")
 
-### STEP 2: Setup environment to import data to Exadata Cloud Service Database 
+### **Step 2:** Setup environment to import data to Exadata Cloud Service Database 
 - Log into your database from your bastion server and execute following command
 
 ```
@@ -113,7 +113,7 @@ scp -i /path/to/identity/file /path/to/user_xx.dmp oracle@Exadata_private_ip:/pa
 </copy>
 ```
 
-### STEP 3: Perform Data Import
+### **Step 3:** Perform Data Import
 - Log into the exadata cloud service DB server 
 
 ```

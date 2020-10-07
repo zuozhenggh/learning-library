@@ -35,16 +35,16 @@ You have several development interfaces available, including:
 
 In this lab you will use the SQL Developer Web browser-based tool, connect to your Autonomous Database and REST enable tables and views and/or develop custom RESTful Services based on your SQL and PL/SQL code.
 
-## Step 1 Connect to your Autonomous Database using SQL Developer Web
+## **Step 1:**Connect to your Autonomous Database using SQL Developer Web
 
-## Step 2 Create a user for Application development
+## **Step 2:**Create a user for Application development
 
-## Step 3 Build a simple GET handler
+## **Step 3:**Build a simple GET handler
 
-## Step 4 Register an OAUTH Client application
+## **Step 4:**Register an OAUTH Client application
 
 ## Conclusion
- In this Lab, you had an opportunity to get an introduction to REST services.
+ In this lab, you had an opportunity to get an introduction to REST services.
 
 ## Acknowledgements
 
@@ -52,4 +52,4 @@ In this lab you will use the SQL Developer Web browser-based tool, connect to yo
  - **Last Updated By/Date** - Troy Anthony, May 20 2020
 
  ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

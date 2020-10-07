@@ -28,7 +28,7 @@ This lab assumes you have completed the following labs:
 - Login to Oracle Cloud/Sign Up for Free Tier Account
 - Connect and Provision ADB
 
-## Step 1: Create ML User
+## **Step 1:** Create ML User
 
 1.  Login to Oracle Cloud, select Autonomous Data Warehouse and navigate to your ADW instance.
 
@@ -58,7 +58,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/011.png  " ")
 
-## Step 2: Create ML Notebook
+## **Step 2:** Create ML Notebook
 
 1.  Select the **home icon** upper right.
 
@@ -90,7 +90,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/019.png  " ")
 
-## Step 3: Add Content to Your ADW Notebook
+## **Step 3:** Add Content to Your ADW Notebook
 
 It is simple to create content in Zeppelin Notebooks, and the following exercise will give you experience in doing so.
 
@@ -221,7 +221,7 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
 
     ![](./images/068.png  " ")
 
-## Step 4: Import ML Notebook
+## **Step 4:** Import ML Notebook
 
 As you have seen adding content to a notebook is simple and fast. However, we have already built out all the steps that are normally followed when exploring data and building a machine learning model. This has been saved to the Credit Score Predictions.json file. We will import this notebook and review it. It is important to note that you *must execute all the steps in this notebook if you wish to continue with lab 3 and 4*. Executing the steps takes only a few minutes.
 
@@ -304,4 +304,4 @@ Please proceed to the next lab.
 - **Contributors** - Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

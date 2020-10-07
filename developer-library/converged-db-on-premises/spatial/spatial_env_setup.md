@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps of setting up the environment for Spatial lab. You can connect Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper.
+This lab walks you through the steps of setting up the environment for Spatial lab. You can connect Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQLDeveloper.
 
 
 ### Before You Begin
@@ -93,6 +93,6 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
 - **Expiration Date** - June 2021   
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
       
  

@@ -19,8 +19,8 @@ As a database admin or user,
 
 ### Required Artifacts
 - An Oracle Cloud Infrastructure account with privileges to create object storage buckets and dedicated autonomous databases.
-- Access to a pre-provisioned dedicated ATP instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
+- Access to a pre-provisioned dedicated ATP instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
 
 ## STEP 1: Download sample data pump export file from Oracle Learning Library github repo
 
@@ -68,9 +68,9 @@ As a database admin or user,
 
     **TWO ways to do this:**
 
-1. If you connected to your OCI VPN you provisioned earlier, you may directly launch SQL*Developer on your local machine and connect to your dedicated ATP as discussed in [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
+1. If you connected to your OCI VPN you provisioned earlier, you may directly launch SQL*Developer on your local machine and connect to your dedicated ATP as discussed in [Lab 9](?lab=lab-9-configuring-vpn-into-private-atp).
 
-2. You may ssh to a developer client image provisioned in a public subnet as discussed in [Lab 5](?lab=lab-5-configuring-development-system). Once logged into your dev client, you may then launch SQL*Plus as discussed in Lab 6.  It is recommended you launch a dev client to use the command line import utility impdp later in this lab. Alternatively, you may also connect to your dev client over VNC and launch SQL Developer from there.
+2. You may ssh to a developer client image provisioned in a public subnet as discussed in [Lab 8](?lab=lab-8-configuring-development-system). Once logged into your dev client, you may then launch SQL*Plus as discussed in Lab 8.  It is recommended you launch a dev client to use the command line import utility impdp later in this lab. Alternatively, you may also connect to your dev client over VNC and launch SQL Developer from there.
 
 Here, we will use a local SQL Developer to demonstate the steps needed to setup object store credentials.
 
@@ -166,5 +166,6 @@ You may now connect to your autonomous database using a SQL client and validate 
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

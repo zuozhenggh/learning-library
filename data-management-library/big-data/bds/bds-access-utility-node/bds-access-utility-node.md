@@ -17,13 +17,13 @@ A Utility node generally contains utilities used for accessing the cluster. Maki
 
 Before you can access CM and Hue on the utility nodes using a web browser, you must also open the ports associated with both services. You do this by adding an ingress rule to a security list for each service. You will do this in **Lab 5, Use Cloudera Manager (CM) and Hue to Access a BDS Cluster**. See [Define Security Rules](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html#GUID-42EDCC75-D170-489E-B42F-334267CE6C92).
 
-In this lab, you will use the **Oracle Cloud Infrastructure Cloud Shell**, which is a web browser-based terminal accessible from the **Oracle Cloud Console**. You'll gather some information about your network and your cluster utility nodes, and then you'll pass that information to the **`oci network`** command that you will use to map the private IP addresses of the utility nodes to two new public IP addresses. Finally, you learn how to edit an existing public IP address.
+In this lab, you will use the **Oracle Cloud Infrastructure Cloud Shell**, which is a web browser-based terminal accessible from the **Oracle Cloud Console**. You'll gather some information about your network and your cluster utility nodes, and then you will pass that information to the **`oci network`** command that you will use to map the private IP addresses of the utility nodes to two new public IP addresses. Finally, you learn how to edit an existing public IP address.
 
 ### Objectives
 
-* Learn how to gather information about the cluster.
-* Learn how to map the private IP address of a node to a public IP address.
-* Learn how to edit a public IP address using both the **Oracle Cloud Console** and the OCI Command Line Interface (CLI).
+* Gather information about the cluster.
+* Map the private IP address of a node to a public IP address.
+* Edit a public IP address using both the **Oracle Cloud Console** and the OCI Command Line Interface (CLI).
 
 ### What Do You Need?
 
@@ -32,7 +32,7 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 2: Create a BDS Hadoop Cluster**
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
 
-## STEP 1: Gather Information About the Cluster
+## **Step 1:** Gather Information About the Cluster
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
@@ -48,7 +48,7 @@ This lab assumes that you have successfully completed the following labs in the 
 
   ![](./images/private-ips.png " ")
 
-## STEP 2: Map the Private IP Address of the First Utility Node to a Public IP Address
+## **Step 2:** Map the Private IP Address of the First Utility Node to a Public IP Address
 
 In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first utility node** to a new public IP address.
 
@@ -59,7 +59,7 @@ In this step, you will set three variables using the **`export`** command. The v
 2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
 
       ```
-    <b>$</b> <copy>export DISPLAY_NAME=<i>"display-name"</i></copy>
+    <b>$</b> <copy>export DISPLAY_NAME="display-name"</copy>
       ```
 
     **Note:** In the preceding command, substitute **_`display-name`_** with a descriptive name of your choice.
@@ -72,7 +72,7 @@ In this step, you will set three variables using the **`export`** command. The v
 3. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it in the command line.   
 
       ```
-    <b>$</b> <copy>export SUBNET_OCID=<i>"subnet-ocid</i>"</copy>
+    <b>$</b> <copy>export SUBNET_OCID="subnet-ocid"</copy>
       ```
     **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **STEP 1** of this lab.
 
@@ -84,7 +84,7 @@ In this step, you will set three variables using the **`export`** command. The v
 4. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
 
       ```
-    <b>$</b> <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
+    <b>$</b> <copy>export PRIVATE_IP="ip-address"</copy>
       ```
   **Note:** In the preceding command, substitute **_`ip-address`_** with your first utility node's private IP address.
 
@@ -107,7 +107,7 @@ In this step, you will set three variables using the **`export`** command. The v
 
   ![](./images/reserved-public-ip.png " ")
 
-## STEP 3: Map the Private IP Address of the Second Utility Node to a Public IP Address
+## **Step 3:** Map the Private IP Address of the Second Utility Node to a Public IP Address
 
 In this step, you will set two variables using the **`export`** command. Next, you use the **`oci network`** command to map the private IP address of the **second utility node** to a new public IP address.
 
@@ -123,7 +123,7 @@ In this step, you will set two variables using the **`export`** command. Next, y
   2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. Remember, the **`ip-address`** is the private IP address that is assigned to the second utility node that you want to map to a public IP address.
 
     ```
-    <b>$</b> <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
+    <b>$</b> <copy>export PRIVATE_IP="ip-address"</copy>
     ```
 
     **Note:** In the preceding command, substitute the **_`ip-address`_** shown with your own second utility node's private IP address that you identified in **STEP 1** of this lab.
@@ -149,7 +149,7 @@ In this step, you will set two variables using the **`export`** command. Next, y
     ![](./images/reserved-public-ip-3.png " ")
 
 
-## STEP 4: Map the Private IP Address of the Cloud SQL Node to a Public IP Address
+## **Step 4:** Map the Private IP Address of the Cloud SQL Node to a Public IP Address
 
 In this step, you will set two variables using the **`export`** command. Next, you use the **`oci network`** command to map the private IP address of the **Cloud SQL node** to a new public IP address.
 
@@ -182,7 +182,7 @@ In this step, you will set two variables using the **`export`** command. Next, y
 
       ![](./images/list-public-ip.png " ")
 
-## STEP 5: Edit a Public IP Address
+## **Step 5:** Edit a Public IP Address
 
 In this step, you will learn how to edit a public IP address using both the **Cloud Console** and the **Cloud Shell**.
 
@@ -213,7 +213,7 @@ In this step, you will learn how to edit a public IP address using both the **Cl
 6. For example, you can delete a public IP address using the OCI CLI command as follows:
 
     ```
-    $ oci network public-ip delete --public-ip-id value
+    <b>$</b> <copy>oci network public-ip delete --public-ip-id value</copy>
     ```
     **Note:** The `value` for **``--public-ip-id``** in the preceding command is displayed in the output returned when you ran the **`oci network`** command in this lab; however, the actual name of the field is **`"id"`**. Substitute `value` with the actual value of the `"id"` field.
 
@@ -241,6 +241,7 @@ In this step, you will learn how to edit a public IP address using both the **Cl
 * **Technical Contributors:**
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation  
-* **Last Updated By/Date:** Lauran Serhal, July 2020
+* **Last Updated By/Date:** Lauran Serhal, September 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -15,12 +15,13 @@ In Lab 50, you will take on the persona of an Operations Engineer. You will init
 
 To deploy these services, you will use Terraform, a tool for building, changing, and versioning infrastructure safely and efficiently. It is an important tool for anyone looking to standardize IaaS (Infrastructure as a Service) within their organization.
 
+Estimated time: 20 minutes
 
 ***We recommend that you create a notes page to write down all of the credentials you will need.***
 
- Your Oracle Cloud Trial Account
-
-You have already applied for and received your Oracle Cloud Free Tier Account.
+### Prerequisites
+- Your Oracle Cloud Trial Account
+- You have already applied for and received your Oracle Cloud Free Tier Account.
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
 [](youtube:wIoLDX7iWXo)
@@ -358,4 +359,4 @@ Now you are ready to move on to Step 4.
 - **Workshop Expiration Date** - May 31, 2021
 
   ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.   Please include the workshop name   and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.   Please include the workshop name   and lab in your request.

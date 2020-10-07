@@ -31,7 +31,7 @@ This lab assumes you have completed the following labs:
 - Lab 4:  Environment setup
 
 
-## Step 1: Querying graph using PGQL
+## **Step 1:** Querying graph using PGQL
 
 Below are some of the examples where we can query against the graph we created using PGQL:
 
@@ -148,4 +148,4 @@ query.accept(qStr);
 - **Expiration Date** - June 2021
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

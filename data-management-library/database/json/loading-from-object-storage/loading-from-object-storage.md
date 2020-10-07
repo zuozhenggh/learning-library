@@ -8,7 +8,7 @@ This lab assumes that you have completed the previous lab, Object Storage, and t
 
 Estimated time: 15 minutes, plus some time for the actual loading, typically around 30-40 minutes.
 
-## Step 1: Provision an Autonomous Transaction Processing Database
+## **Step 1:** Provision an Autonomous Transaction Processing Database
 
 1.  Log in to the Oracle Cloud console (in a new window if you still have files uploading from the previous lab). Click on the hamburger menu at the top left and choose "Autonomous Transaction Processing under Database
 
@@ -76,7 +76,7 @@ SQL Developer Web (SDW) is an entirely browser-based tool for interacting with t
 
     ![](images/create-user.png "")
 
-## Step 3:  Log into SQL Developer Web as the new user yelp.
+## **Step 3:**  Log into SQL Developer Web as the new user yelp.
 
 We now have a user who has the required privileges, and can use SQL Developer Web.
 
@@ -119,7 +119,7 @@ We now have a user who has the required privileges, and can use SQL Developer We
 
     That should create our three table which will contain the JSON we are about to load. The JSON text will be stored in a CLOB column called 'jtext' in each case.
 
-## Step 4: Performing the load into the database
+## **Step 4:** Performing the load into the database
 
 We can now load our files from object storage to the database. The business file is small (145MB), so we’ll do first and run it interactively.
 
@@ -246,4 +246,4 @@ That completes our loading of data. We now have three tables which have all our 
 - **Last Updated By/Date** - Roger Ford, June 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

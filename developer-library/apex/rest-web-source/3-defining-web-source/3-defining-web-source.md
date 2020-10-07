@@ -47,7 +47,7 @@ In a normal development environment, rather than in a lab, at this point you wou
     - **Web Source Type:** select **ORACLE REST Data Services**
     - **Name:** enter **REST EMP Source**
     - **URL Endpoint:** enter the REST URI you tested previously
-    
+
     *Note: Your URL endpoint will be similar to https://{cloud\_url}/ords/{{your_schema}}/emp/hol/*
 
     Click **Next**.
@@ -115,9 +115,9 @@ This completes Lab 3. You now know how to define a Web Source module within an a
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
+ - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Jeffrey Malcolm Jr, Intern)
  - **Last Updated By/Date** - Tom McGinn, Database Innovation Architect, Product Management, July 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

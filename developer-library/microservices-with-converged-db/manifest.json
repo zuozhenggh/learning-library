@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Building Microservices with Oracle Converged Database",
     "tutorials": [
       {
         "title": "Introduction",
@@ -6,7 +7,7 @@
       },
       {
         "title": "Sign Up for a Free Trial",
-        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
       },
       {
         "title": "Lab 1: Setup OCI, OKE, ATP and Cloud Shell",
@@ -25,12 +26,12 @@
         "filename": "./data-centric-microservices-helidon/data-centric-microservices-helidon.md"
       },
       {
-        "title": "Lab 5: Scaling The Application",
-        "filename": "./scaling/scaling.md"
+        "title": "Lab 5: Polyglot Microservices",
+        "filename": "./review-polyglot-code-ha-setup/review-polyglot-code-ha-setup.md"
       },
       {
-        "title": "Lab 6: Polyglot Microservices",
-        "filename": "./review-polyglot-code-ha-setup/review-polyglot-code-ha-setup.md"
+        "title": "Lab 6: Scaling the Application",
+        "filename": "./scaling/scaling.md"
       },
       {
         "title": "Lab 7: Create an APEX App to Make Sense of the Data",

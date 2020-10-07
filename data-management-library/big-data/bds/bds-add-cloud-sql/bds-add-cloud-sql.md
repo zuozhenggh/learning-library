@@ -6,8 +6,8 @@ In this lab, you will learn how to maintain the new cluster that you created in 
 
 ### Objectives
 
-* Learn how to maintain your cluster.
-* Learn how to add Oracle Cloud SQL to your cluster.
+* Maintain your cluster.
+* Add Oracle Cloud SQL to your cluster.
 
 ### What Do You Need?
 
@@ -15,7 +15,7 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 1: Setup the BDS Environment**
 + **Lab 2: Create a BDS Hadoop Cluster**
 
-## STEP 1: Maintain the Cluster
+## **Step 1:** Maintain the Cluster
 
 You can use the **Clusters** and **Cluster Details** pages to maintain your clusters.
 
@@ -39,7 +39,7 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
 
 **Note:** Oracle Cloud Infrastructure Tagging allows you to add metadata to resources, which enables you to define keys and values and associate them with resources. You can use the tags to organize and list resources based on your business needs. For additional information, see [Tagging Overview](https://docs.cloud.oracle.com/en-us/iaas/Content/Tagging/Concepts/taggingoverview.htm#Tagging_Overview) in the OCI documentation.    
 
-## STEP 2: Add Oracle Cloud SQL to the Cluster
+## **Step 2:** Add Oracle Cloud SQL to the Cluster
 
 You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your big data sources. When you add Cloud SQL support to a cluster, a query server node is added and big data cell servers are created on all worker nodes. For information about using Cloud SQL with Big Data Service see [Use Cloud SQL with Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-cloud-sql-big-data-service.html).
 
@@ -88,6 +88,7 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
     + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributors:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, July 2020
+* **Last Updated By/Date:** Lauran Serhal, September 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

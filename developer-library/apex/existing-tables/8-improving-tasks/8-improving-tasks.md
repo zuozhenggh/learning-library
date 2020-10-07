@@ -157,7 +157,7 @@ The Tasks Calendar page shows numerous tasks; however, there is no way to direct
 8. With **New** under Dynamic Actions selected, in the Property Editor (right pane), enter the following:
     - Identification > Name - enter **Refresh Calendar**
     - When > Event - select **Dialog Closed** (under **Framework Events**)
-    
+
     *Note: The Refresh Calendar event will fire when the Project Task Form page is closed as it is a modal page*
 
     ![](images/name-da.png " ")
@@ -183,7 +183,7 @@ The Tasks Calendar page shows numerous tasks; however, there is no way to direct
 
 This completes Lab 7 and the workshop. You now know how to create a Shared Component, use it to improve Faceted Search page and Interactive Report, and link a Calendar page that refreshes after a record is updated.
 
-## Learn More 
+## Learn More
 
 - [APEX on Autonomous Database](https://apex.oracle.com/autonomous)
 - [APEX Collateral](https://apex.oracle.com)
@@ -193,9 +193,9 @@ This completes Lab 7 and the workshop. You now know how to create a Shared Compo
 
 ## Acknowledgements
 
- - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

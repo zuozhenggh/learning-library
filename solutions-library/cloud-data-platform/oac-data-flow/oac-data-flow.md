@@ -1,10 +1,5 @@
 # Getting Started with Oracle Analytics Cloud (OAC)
 
-<!-- Comment out table of contents
-## Table of Contents
-[Introduction](#introduction)
--->
-
 ## Introduction
 
 This lab walks you through the steps to use an existing Oracle Analytics Cloud (OAC) instance to connect to your Autonomous Data Warehouse (ADW) instance.
@@ -25,13 +20,13 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 ### Extra Resources
 -   To learn more about Oracle Analytics Cloud (OAC), feel free to explore the capabilities by clicking on this link: [OAC Overview](https://www.oracle.com/business-analytics/analytics-cloud.html)
 
-## Part 0. Create an OAC Instance (*ONLY* if you do not already have one)
+## **Step 0:** Create an OAC Instance (*ONLY* if you do not already have one)
 
 -   *Note*: If you already have an OAC instance provisioned, please skip "Part 0" and proceed to "Part 1" of this lab guide.
 
 1.   To begin, make sure to already be signed in to cloud.oracle.com with your account credentials as done before in the previous labs.
 
-2.   Then, in the Oracle Cloud console, click on the **Hamburger menu** icon. Then, scroll down to the **Solutions and Platform** section, hover over **Analytics** and then click on **Analytics Cloud**. 
+2.   Then, in the Oracle Cloud console, click on the **Hamburger menu** icon. Then, scroll down to the **Solutions and Platform** section, hover over **Analytics** and then click on **Analytics Cloud**.
 
    ![](./images/0a.png " ")
 
@@ -55,13 +50,11 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
    ![](./images/0g.png " ")
 
-## Part 1. Navigate to an OAC Instance
-
-### **STEP 1**: Go to the Analytics Cloud Instance Page
+## **STEP 1**: Navigate to an OAC Instance
 
 1. If you are not already signed in, sign in to cloud.oracle.com with your account credentials as done in the previous labs.
 
-2. Click on the **Hamburger menu** icon. Then, scroll down to the **Solutions and Platform** section, hover over **Analytics** and then click on **Analytics Cloud**. 
+2. Click on the **Hamburger menu** icon. Then, scroll down to the **Solutions and Platform** section, hover over **Analytics** and then click on **Analytics Cloud**.
 
     ![](./images/0a.png " ")
 
@@ -73,10 +66,7 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
     ![](./images/0g.png " ")
 
-
-## Part 2. Connect OAC to ADW
-
-### **STEP 1**: Connect OAC to ADW
+## **STEP 2**: Connect OAC to ADW
 
 1. In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Connection** in the popped menu.
 
@@ -106,10 +96,7 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
     ![](./images/0k.png " ")
 
-
-## Part 3. Import Datasets from ADW to OAC
-
-### **STEP 1**: Configure a Database Connection
+## **STEP 3**: Configure a Database Connection
 
 1. In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 
@@ -123,9 +110,9 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
     ![](./images/3.png " ")
 
-### **STEP 2**: Import the Datasets to OAC
+## **STEP 4**: Import the Datasets to OAC
 
-Now we will import the following tables to OAC: 
+Now we will import the following tables to OAC:
 > OOW\_DEMO\_STORES, OOW\_DEMO\_REGIONS, OOW\_DEMO\_ITEMS, and OOW\_DEMO\_SALES_HISTORY
 
 In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. You can repeat the same steps to import the other three tables.
@@ -134,11 +121,11 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
     ![](./images/4.png " ")
 
-2. Add all columns to your selection by clicking on **Add All**. The auto-generated name for the new table will work fine. 
+2. Add all columns to your selection by clicking on **Add All**. The auto-generated name for the new table will work fine.
 
     ![](./images/5.png " ")
 
-3. Finish by clicking on **Add**. 
+3. Finish by clicking on **Add**.
 
     ![](./images/6.png " ")
 
@@ -150,14 +137,14 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
     ![](./images/8.png " ")
 
-6. You are done with adding the first table. 
+6. You are done with adding the first table.
 
-### **STEP 3**: Add Additional Datasets
+## **STEP 5**: Add Additional Datasets
 
 1. Repeat "Part 3 STEP 1" and "Part 3 STEP 2" for the remaining 3 tables mentioned above
 > (OOW\_DEMO\_REGIONS, OOW\_DEMO\_ITEMS, and OOW\_DEMO\_SALES\_HISTORY tables ).
 
-2. After importing all the tables, you can see them by first clicking the **Hamburger menu** icon and then click on the **Data** section which should default to the **Data Sets** tab. 
+2. After importing all the tables, you can see them by first clicking the **Hamburger menu** icon and then click on the **Data** section which should default to the **Data Sets** tab.
 
     ![](./images/9.png " ")
 
@@ -165,11 +152,9 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
     ![](./images/10.png " ")
 
-## Part 4. Create a Data Flow
+## **STEP 6**: Add and Join the Datasets
 
-### **STEP 1**: Add and Join the Datasets
-
-1. First, navigate back to the Oracle Analytics Cloud home page. Once you are back on the home page, click on **Create**, then on **Data Flow** to create a new data flow. 
+1. First, navigate back to the Oracle Analytics Cloud home page. Once you are back on the home page, click on **Create**, then on **Data Flow** to create a new data flow.
 
     ![](./images/11.png " ")
 
@@ -227,7 +212,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 15. Now the 4 Data Sets have been joined.
 
-### **STEP 2**: Select Columns
+## **STEP 7**: Select Columns
 
 1. Since we are done adding the Join steps, click on the **Circled Plus** button again and then on **Select Columns** to help finalize the columns we want to keep.
 
@@ -240,9 +225,9 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
     ![](./images/26.png " ")
 
-4. We are done with selecting our columns. 
+4. We are done with selecting our columns.
 
-### **STEP 3**: Rename Columns
+## **STEP 8**: Rename Columns
 
 1. Let's rename some columns. Click on the **Circled Plus** button again and then on **Rename Columns** to help finalize the columns we want.
 
@@ -258,9 +243,9 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 5. Finally, find **MSRP** and change the value in the **Rename** column to **SALE_PRICE**.
 
-6. We are done renaming columns. 
+6. We are done renaming columns.
 
-### **STEP 4**: Add Columns
+## **STEP 9**: Add Columns
 
 1. Let's finish constructing our master table by adding columns. Do this by clicking on the **Circled Plus** button again and then on **Add Columns** to help finalize the columns.
 
@@ -322,7 +307,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 19. Scroll down and click **Validate**. After the calculation is validated, finish by clicking **Apply**.
 
-20. Now, click the **Circled Plus** icon to make a **Branch**. 
+20. Now, click the **Circled Plus** icon to make a **Branch**.
 
     ![](./images/40.png " ")
 
@@ -334,11 +319,11 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
     ![](./images/42.png " ")
 
-23. Click the second **Save Data** in the data flow.  Make the name *Master\_Table\_ADW*. 
+23. Click the second **Save Data** in the data flow.  Make the name *Master\_Table\_ADW*.
 
     ![](./images/43.png " ")
 
-24. Change the **Save data to** dropdown box option to **Database Connection**. 
+24. Change the **Save data to** dropdown box option to **Database Connection**.
 
     ![](./images/44.png " ")
 
@@ -378,4 +363,4 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

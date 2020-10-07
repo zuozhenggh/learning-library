@@ -7,7 +7,7 @@ August 4, 2019
 </td></tr><table>
 
 ### See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Introduction
 
 Oracle Data Pump offers very fast bulk data and metadata movement between user managed Oracle databases and Autonomous Transaction Processing.
@@ -34,14 +34,14 @@ As a database admin or user,
 
 ## Steps
 
-### STEP 1: Download sample data pump export file from Oracle Learning Library github repo
+### **Step 1:** Download sample data pump export file from Oracle Learning Library github repo
 
 Use the following command from your mac / PC to download a sample schema dump from OLL
 
     wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/datapump/nodeapp.dmp?raw=true
 
 ​
-### STEP 2: Create an object storage bucket and upload dump
+### **Step 2:** Create an object storage bucket and upload dump
 
 - Login to your OCI account with your user credentials
 
@@ -64,7 +64,7 @@ Use the following command from your mac / PC to download a sample schema dump fr
 ![upload-dmp](./images/HOL-DataPump/upload-dmp.png)
 
 
-### STEP 3: General an authentication token for your user account
+### **Step 3:** General an authentication token for your user account
 
 - Assuming you are logged into your OCI account, navigate to the user details page from the top right menu item as shown below
 
@@ -80,7 +80,7 @@ Use the following command from your mac / PC to download a sample schema dump fr
 ![get-token3](./images/HOL-DataPump/get-token3.png)
 
 
-### STEP 4: Setup Object Store user credentials in your target autonomous database
+### **Step 4:** Setup Object Store user credentials in your target autonomous database
 
 Now that we have the credentials token, lets setup the target database to read from object store and import data.
 
@@ -112,7 +112,7 @@ Here's a screen shot of the above command run from a SQL Developer Client
 
 Ensure the pl/sql procedure executed successfully from the log message
 
-### STEP 5: Import data from object store using impdp utility
+### **Step 5:** Import data from object store using impdp utility
 
 - If all went well so far, proceed to ssh into your developer client machine and run the data pump import command.
 

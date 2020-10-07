@@ -7,8 +7,9 @@ This lab will show you how to use cross data functions.
 - XML with Relational
 - JSON with Spatial
 
-### Before You Begin
+*Estimated Lab Time:* 20 Minutes
 
+### Prerequisites
 This lab assumes you have completed the following labs:
 - Lab: Generate SSH Key
 - Lab: Setup Compute Instance
@@ -21,7 +22,7 @@ JSON_TABLE creates a relational view of JSON data. It maps the result of a JSON 
 The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
 
 
-## STEP 1: Connect to the Pluggable Database (PDB)
+## **Step 1:** Connect to the Pluggable Database (PDB)
 
 1. As oracle user set oracle Environment and connect to the PDB.
 
@@ -43,7 +44,7 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
     </copy>
     ````
 
-## STEP 2: Connect to SQL Developer
+## **Step 2:** Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -58,7 +59,7 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
     ![](./images/cross_sql_developer.png " ")
 
 
-## STEP 3: JSON with Relational
+## **Step 3:** JSON with Relational
 
 **JSON_TABLE** creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data
 
@@ -108,7 +109,7 @@ Below are the examples using **JSON_TABLE**.
 
     ![](./images/cd3.png)
 
-## STEP 4: XML with Relational
+## **Step 4:** XML with Relational
 
 **XMLTABLE:** Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
@@ -134,7 +135,7 @@ Below are the examples using **XMLTABLE**
     ![](./images/cd11.png)
 
 
-## STEP 5: JSON with Spatial
+## **Step 5:** JSON with Spatial
 
 GeoJSON Objects: Geometry, Feature, Feature Collection
 GeoJSON uses JSON objects that represent various geometrical entities and combinations of these together with user-defined properties.
@@ -159,8 +160,8 @@ GeoJSON uses JSON objects that represent various geometrical entities and combin
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start
-* **Last Updated By/Date** - David Start, Product Manager, Database Product Management, July 2020
+* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -3,7 +3,7 @@
 
 ## Introduction
 
-## Step 1: A Customer Purchase Order History
+## **Step 1:** A Customer Purchase Order History
 
 1. Connect to Database
     ````
@@ -26,7 +26,7 @@
     ````
     ![](./images/IMG4.PNG " ")
 
-## Step 2: Customers windows shopping history (through online)
+## **Step 2:** Customers windows shopping history (through online)
 
 1. Connect to **Database**
     ````
@@ -47,7 +47,7 @@ select * from orders_ext_hive o INNER JOIN customer_hive_ext c on o.customer_id=
 ````
 ![](./images/IMG5.PNG)
 
-## Step 3: Customer who ordered some specific products
+## **Step 3:** Customer who ordered some specific products
 
 
 1. Connect to **Database**
@@ -81,4 +81,4 @@ This is the end of the lab.
 - **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, May 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -13,9 +13,8 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup
+* Lab: Generate SSH Key (FreeTier and Paid accounts)
+* Lab: Environment Setup or Verify Setup
 
 ## Step 0: Download the Lab Files
 
@@ -35,7 +34,7 @@ This lab assumes you have completed the following labs:
     </copy>
     ````
 
-## Step 1: Run the In-Memory Setup Scripts
+## **Step 1:** Run the In-Memory Setup Scripts
 1.  Run this command to setup the schema, SSB, you will use for this lab.   This script takes about 15 minutes to complete.   It downloads the ssb.dmp file and then imports it.
 
 
@@ -49,7 +48,7 @@ This lab assumes you have completed the following labs:
     ````
     ![](./images/ssbexists.png " ") 
 
-2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expeted.  The script should finish with 1 error*
+2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expected.  The script should finish with 1 error*
 
     ````
     <copy>
@@ -58,7 +57,7 @@ This lab assumes you have completed the following labs:
     ````
     ![](./images/inmemcomplete.png " ") 
 
-## Step 2: Logging In and Enabling In-Memory
+## **Step 2:** Logging In and Enabling In-Memory
 
 1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
 
@@ -115,7 +114,7 @@ This lab assumes you have completed the following labs:
     ````
      ![](images/step1num4.png) 
 
-## Step 3: Enabling In-Memory
+## **Step 3:** Enabling In-Memory
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account. 
 
@@ -243,7 +242,7 @@ By default the IM column store is only populated when the object is accessed.
 
 In this Step you saw that the IM column store is configured by setting the initialization parameter INMEMORY_SIZE. The IM column store is a new static pool in the SGA, and once allocated it can be resized dynamically, but it is not managed by either of the automatic SGA memory features. 
 
-You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this Lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
+You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
 
 Finally you got to see how to determine if the objects were fully populated and how much space was being consumed in the IM column store.
 
@@ -255,4 +254,4 @@ You may now proceed to the next lab.
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, June 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

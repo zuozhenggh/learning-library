@@ -2,6 +2,8 @@
 
 Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Oracle offers choice, portability and interoperability with other technologies, including open source and third-party components. Developers can build with the latest technologies, such as AI/ML, autonomous databases, Gen 2 cloud infrastructure, Kubernetes, serverless, blockchain, digital assistants, and more.
 
+## Workshops
+Click [here](http://bit.ly/golivelabs) to access developer workshops on LiveLabs.
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -27,6 +29,6 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Oracle Product Management](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 
 -- Oracle Database Product Management

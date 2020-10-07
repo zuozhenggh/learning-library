@@ -7,7 +7,7 @@ This lab will show you how to install a VNC Server, for graphical applications, 
 This lab assumes that you have created a Compute Instance using an image that does not contain a VNC server or an application development environment.
 Oracle Cloud Infrastructure Marketplace offers a <a href="https://cloudmarketplace.oracle.com/marketplace/en_US/adf.task-flow?adf.tfId=adhtf&adf.tfDoc=/WEB-INF/taskflow/adhtf.xml&application_id=54030984" "target=\_blank">Developer Image /a> that you can use to create an Oracle Cloud Compute instance to serve as your application development system. This image is preconfigured to contain many development tools and utilities.
 
-## Step 1: Install VNC Server and GNOME Desktop
+## **Step 1:** Install VNC Server and GNOME Desktop
 
 1. Open an SSH or Putty connection to your Compute Instance and log in as *opc*
 ![./images/putty_connect.png]()
@@ -145,4 +145,4 @@ Choose your language of choice, keyboard layout, privacy setting for Location Se
 - **Last Updated By/Date** - Troy Anthony, May 21 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

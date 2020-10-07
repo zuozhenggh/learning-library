@@ -18,7 +18,7 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 
 
 ### See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Objectives
 
 As an application developer,
@@ -36,7 +36,7 @@ As an application developer,
 
 ## Steps
 
-### STEP 1: Download sample python application
+### **Step 1:** Download sample python application
 
 - Login to your Oracle Cloud Infrastructure account and select **Compute** —> **Instances** from top left menu
 
@@ -86,7 +86,7 @@ unzip ATPDpython.zip
 ```
 
 
-### STEP 2: Transfer database wallet to developer client
+### **Step 2:** Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select **Autonomous Transaction Processing** from menu
 ![](./images/800/atpd1.png)
@@ -122,7 +122,7 @@ sudo scp -i /Path/to/your/private_ssh_key /Path/to/your/downloaded_wallet opc@pu
 
 
 
-### STEP 3: Run your python application**
+### **Step 3:** Run your python application**
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folde
 

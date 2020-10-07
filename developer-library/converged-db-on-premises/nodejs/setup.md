@@ -3,7 +3,7 @@
 ## Introduction
 
 This lab walks you through the steps to start the Docker as well as Node.js Retail application .
-You can connect to an Node.js running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper
+You can connect to an Node.js running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQLDeveloper
 
 ### Prerequisites
 
@@ -50,7 +50,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
 
 
-## Step 1:  Verify Application 
+## **Step 1:**  Verify Application 
 
 1.  The script (env_setup_script.sh) which was run in Lab-4 has started the application. Also at the end of the script. you      will be presented with two URLs. 
 
@@ -85,5 +85,5 @@ You may proceed to the next lab.
 - **Expiration Date** - June 2021   
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
       

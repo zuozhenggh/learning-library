@@ -17,7 +17,7 @@ This lab assumes you have completed the following labs:
 - Lab 4:  Environment setup
 - Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
-## Step 1: Insert a record.
+## **Step 1:** Insert a record.
 
   a. **Take a count of the rows in the json table-**
 
@@ -112,7 +112,7 @@ c. **Verify the count after insert.**
    
   **Note:** Please copy the red highlighted id which we will use in our next section of update query.
 
-## Step 2: Update a Table.
+## **Step 2:** Update a Table.
   We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
    
    **Note:** In the above update query replace the id which we copied in previous step.
@@ -146,6 +146,6 @@ c. **Verify the count after insert.**
 - **Expiration Date** - June 2021   
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
       
 

@@ -15,7 +15,7 @@ This lab assumes you have completed the following labs:
 - Note :  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user.
 
  
-## Step 1: Getting the number of XML documents. 
+## **Step 1:** Getting the number of XML documents. 
    
 ````
   <copy>
@@ -25,7 +25,7 @@ This lab assumes you have completed the following labs:
      
    ![](./images/xml_m1a.png " ")
 
-## Step 2: Retrieving the content of an XML document-using pseudocolumn OBJECT_VALUE
+## **Step 2:** Retrieving the content of an XML document-using pseudocolumn OBJECT_VALUE
     
   ````
     <copy>
@@ -38,7 +38,7 @@ This lab assumes you have completed the following labs:
   ![](./images/xml_query_m2a.png " ")
   ![](./images/xml_m2a.png " ")
 
-## Step 3:  Accessing text node value
+## **Step 3:**  Accessing text node value
 
   ````
     <copy>
@@ -54,7 +54,7 @@ This lab assumes you have completed the following labs:
    ![](./images/xml_query_meth4a.png " ")
 
 
-## Step 4: Searching XML document
+## **Step 4:** Searching XML document
      
  ````
     <copy>
@@ -79,7 +79,7 @@ This lab assumes you have completed the following labs:
 - **Expiration Date** - June 2021   
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
   
 
 

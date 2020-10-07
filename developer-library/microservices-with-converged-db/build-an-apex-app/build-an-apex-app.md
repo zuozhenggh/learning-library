@@ -52,7 +52,7 @@ In this step, you will create a new APEX app based on a file that contains a sma
 
     ![](images/click-sql-commands.png)
 
-3. Enter the following code into the SQL Commands window, then click **Run** to execute the code. Once complete, you'll have a new table named ORDER_ITEMS that you can use to store the data.
+3. Enter the following code into the SQL Commands window, then click **Run** to execute the code. Once complete, you will have a new table named ORDER_ITEMS that you can use to store the data.
 
     ```
     <copy>
@@ -105,7 +105,7 @@ In this step, you will create a new APEX app based on a file that contains a sma
 
     ![](images/click-load-data.png)
 
-9.  When the data load finishes, you'll see a success message letting you know that 50 rows of data were inserted into the table. Click the **Create Application** button to create an application on top of the ORDER_ITEMS table.
+9.  When the data load finishes, you will see a success message letting you know that 50 rows of data were inserted into the table. Click the **Create Application** button to create an application on top of the ORDER_ITEMS table.
 
     ![](images/click-create-application.png)
 
@@ -128,3 +128,6 @@ In this step, you will create a new APEX app based on a file that contains a sma
 13. Now that you've logged into the application, take a few moments to explore what you get out of the box. Of course, this is just the starting point for a real app, but it's not bad for not having written any lines of code!
 
     ![](images/app-home-page.png)
+
+## Need Help?
+Please submit feedback or ask for help using this [Oracle Communities Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request. 
