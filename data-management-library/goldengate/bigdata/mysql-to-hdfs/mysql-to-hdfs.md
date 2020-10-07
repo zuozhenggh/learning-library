@@ -23,6 +23,9 @@ process ‘rhdfs’ will read the remote trail files, and write the data to the 
 
 For the Lab:
 
+
+## **STEP 1**: Explore GoldenGate Labmenu
+
 If at a terminal session:
 
 ````
@@ -30,7 +33,7 @@ If at a terminal session:
 
 ````
 ````
-<copy>>sudo su - ggadmin</copy>
+<copy>sudo su - ggadmin</copy>
 ````
 
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
@@ -52,13 +55,13 @@ The following Lab Menu will be displayed,
 (Is already done in the env script for this workshop)
 
 ````
-<copy>cd /u01/gg4hadoop/dirprm</copy>
+<copy>cd /u01/gg4hadoop123010/dirprm</copy>
 ````
 ````
-<copy> view /dirprm/create_hdfs_replicat.oby</copy>
+<copy> view create_hdfs_replicat.oby</copy>
 ````
 ````
-<copy>cd /u01/gg4hadoop/dirprm</copy>
+<copy>cd /u01/gg4hadoop123010/dirprm</copy>
 ````
 ````
 <copy> view /u01/gg4hadoop123010/dirprm/rhdfs.prm</copy>
@@ -98,7 +101,7 @@ The following Lab Menu will be displayed,
   ![](images/b4.png " ")
 
 ````
-<copy> cd /u01/ gg4hadoop123010</copy>
+<copy> cd /u01/gg4hadoop123010</copy>
 ````
 ````
 <copy>./ggsci</copy>
@@ -138,6 +141,7 @@ The following Lab Menu will be displayed,
 ````
 <copy> start pmphadop</copy>	
 ````
+**or to start all in one command**
 ````
 <copy> start *</copy>
 ````
@@ -153,12 +157,12 @@ The following Lab Menu will be displayed,
   ![](./images/b7.png " ")
 
 ````
-<copy> cd dirprm</copy>
+<copy> cd /u01/gg4hadoop123010/dirprm</copy>
 ````
 ````
 <copy> vi rhdfs.properties</copy>
 ````
-**Remove "--" below**
+**Remove "--" prefix below**
 
 ````
 <copy> ---hdfs</copy>
@@ -279,18 +283,20 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 You can also see the files created by GG from Hue:
 
+## **STEP 7**: GoldenGate Results using HUE
+
 **HUE -**
 
 (http://yourlocalipaddress]:8888) 
 
-Login to Hue: cloudera/cloudera
+1. Login to Hue: cloudera/cloudera
 Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hdfs…
+
+2. select **ggtarget2hdfs.csv.emp**
 
 ![](./images/b19.png " ")
 /user/ggtarget/hdfs…
-![](./images/b16.png " ")
-![](./images/b17.png " ")
-![](./images/b18.png " ")
+![](./images/b20.png " ")
 
 You may now *proceed to the next lab*.
 
