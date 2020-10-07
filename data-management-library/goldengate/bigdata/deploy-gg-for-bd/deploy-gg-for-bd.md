@@ -1,4 +1,4 @@
-# Deploy GoldenGate for Bid Data
+# Deploy GoldenGate for Big Data
 
 ## Introduction
 
