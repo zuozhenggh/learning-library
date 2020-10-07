@@ -16,8 +16,6 @@ In this lab is a read-only example on how we use goldengate for bigdata Java Dat
 * Goldengate for Bigdata
 * Oracle JDBC Java Driver
 
-## Steps
-
  Setting up the Environment For Connection
 
 ## **STEP 1**: Oracle GoldenGate Configuration
