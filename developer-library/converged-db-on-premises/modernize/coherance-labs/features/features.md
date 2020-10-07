@@ -3,7 +3,7 @@
 ## Introduction
 These Coherence Labs are exercises to visuslaize the different features of Coherence as a distributed in-memory data-grid.
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 70 minutes
 
 ### Objectives
 This lab assumes you have completed the following labs:
@@ -41,7 +41,17 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 - resource	
     The data file used for the contacts LoaderExample: contacts.csv.
  
- 
+ ### Lab Timing (Estimated)
+
+| **Step No.** | **Feature**                                                                | **Approx. Time** | **Details**                                                                                                                                                                      | **Value proposition**                                                                                                                                                                                                                   |
+|--------|----------------------------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | Setup and Verify Environment Variables                                    | 5min                     | Set and verify the JAVA_HOME and COHERENCE_HOME for both terminal windows                                                                                   | Environment setup                            |
+| 2    | Build JAVA Labs | 10min                     | Build all the java Labs as needed and execute the build script with the name of the example collection                                                                         | All the Examples are ready to be Run and Folder is current                |
+| 3    | Test Cache with Contacts Get & Put                                 | 5min                      | data access features of Coherence including getting, putting and removing data from a provided contacts.csv file                  | Test data access in Cache                                                                                      |
+| 4    | Test Cache Security Features                                                         | 10min                     | security feature of accessing Cache securely using role and password    | Test cache reference that requires a password an attempts cache and invocation service operations that require different roles                                                       |
+| 5    | Test Live events in Cache            | 10min                     | Shows the Events feature of inserting into Cache             | How to measure the elapsed time between pre- and post-events which are inserted into a results Cache                                                                                                                         |
+| 6    | Test Java 8 features               | 10min                     | Illustrates how to use the Java streams when querying and processing cache entries | How Lambda features can be used in a Cache to simplify common Coherence tasks and how to query and process cache entries  |
+| 7    | Test Asynchronous features               | 10min                     | Illustrates how to asynchronously get and put data in a cache | How to asynchronously process cache entries in Coherence and  how to asynchronously aggregate cache entries  |
 
 ## **STEP 1**: Verify Environment
 
@@ -89,21 +99,12 @@ java/bin	Scripts for building and executing examples. There are two sets of scri
 
         cd $COHERENCE_HOME/examples/java
     
-## **Lab 1: Contacts**
-
-### Introduction
+## **STEP 3**: Test Cache with Contacts get & Put**
 This Lab shows the most basic data access features of Coherence including getting, putting and removing data from a provided contacts.csv file.
-
-### Objective: 
+ 
 To start a Coherence Cache and then put and get Contacts to/from the Cache.
 
-### Estimated Time: 5 - 10 mins
-
-### Pre-requisites:  Verify Environment has been Completed.
-
-### Lab Steps:
-
-## Step 1:
+### Start Cache Server:
 
 1. Start a cache server 
 
@@ -115,7 +116,7 @@ To start a Coherence Cache and then put and get Contacts to/from the Cache.
 
         ![](../images/run-cache-server.png " ") 
 
-## Step 2:      
+### Run the Example Client:      
 
 1. Open a second terminal window:
 
@@ -129,23 +130,13 @@ The Driver.main method runs through the features of the example with output goin
 
 **Proceed to Next Lab**
 
-## **Lab 2: Security**
-
-## Introduction:
- This Lab shows the security feature of accessing Cache securely using role and password
-
-Estimated Lab Time: 10 minutes
-
-### Objectives: 
+## **Step 4**: Test Cache Security Features**
+This Lab shows the security feature of accessing Cache securely using role and password
+ 
 The Coherence security Lab set receives a cache reference that requires a password an attempts cache and invocation service operations that require different roles.
 
-### Pre-requisites:  
-* Verify that the environment has been Completed.
-
-## Lab Steps:
-
  
-## Step 1.	Start a cache server
+### Start Cache Server:
 
 First Terminal window: 
 
@@ -157,7 +148,7 @@ Wait for the Cache Server to start in a few seconds
 
 ![](../images/run-cache-server.png " ") 
 
-## Step 2.	In the second Terminal window, run with the name of the example: 
+### Run the Example Client:
 
 Second Terminal window:
 
@@ -169,20 +160,13 @@ The Driver.main method runs through the features of the example with output goin
 
 ### Proceed to Next Lab 
 
-## Lab 3:  Live events 
+## **STEP 5**:  Test Live events in Cache
 
-### Introduction: This Lab shows the Events feature of inserting into Cache
+This Lab shows the Events feature of inserting into Cache
 
-### Objective: How to measure the elapsed time between pre- and post-events which are inserted into a results cache; the semantics of throwing exceptions in pre- and post-commit events, and how partition redistribution events can be logged.
+How to measure the elapsed time between pre- and post-events which are inserted into a results cache; the semantics of throwing exceptions in pre- and post-commit events, and how partition redistribution events can be logged.
 
-### Estimated Time: 5 - 10 mins
-
-### Pre-requisites:  Verify Environment has been Completed.
-
-### Lab Steps:
- 
-
-### Step 1.	Start one or more cache servers in First Terminal Window
+### Start Cache Server:
 
 First Terminal window: 
 
@@ -194,7 +178,7 @@ Wait for the Cache Server to start in a few seconds
 
 ![](../images/run-cache-server.png " ")
 
-### Step 2.	In the second Terminal window, run with the name of the example: 
+### Run the Example Client:
 
 Second Terminal Window:
 
@@ -206,20 +190,13 @@ The Driver.main method runs through the features of the example with output goin
 
 ### Proceed to Next Lab 
 
-## Lab 4: Java 8 features 
+## **STEP 6**: Test Java 8 features 
 
-### Introduction: The Coherence Java 8 features Lab illustrates how to use the Java streams when querying and processing cache entries. how Lambda features can be used to simplify common Coherence tasks and how to query and process cache entries 
+The Coherence Java 8 features Lab illustrates how to use the Java streams when querying and processing cache entries. how Lambda features can be used to simplify common Coherence tasks and how to query and process cache entries 
 
-### Objective: How Lambda features can be used in a Cache to simplify common Coherence tasks and how to query and process cache entries 
-
-### Estimated Time: 5 - 10 mins
-
-### Pre-requisites:  Verify Environment has been Completed.
-
-### Lab Steps:
-
-
-### Step 1.	Start a cache server First Terminal window: 
+How Lambda features can be used in a Cache to simplify common Coherence tasks and how to query and process cache entries 
+ 
+### Start Cache Server:
 
 First Terminal Window:
 
@@ -229,7 +206,7 @@ Wait for the Cache Server to start in a few seconds
 
 ![](../images/run-cache-server.png " ") 
 
-### Step 2.	In the second Terminal window, run with the name of the example: 
+### Run the Example Client:
 
 Second Terminal Window:
 
@@ -242,19 +219,13 @@ The Driver.main method runs through the features of the example with output goin
 
 ### Proceed to Next Lab 
 
-## Lab 5: Asynchronous features 
+## **STEP 7**: Test Asynchronous features 
 
-### Introduction: TThe Coherence asynchronous features lab illustrates: how to asynchronously get and put data in a cache
+The Coherence asynchronous features lab illustrates: how to asynchronously get and put data in a cache
 
-### Objective: How to asynchronously process cache entries in Coherence and  how to asynchronously aggregate cache entries.
+How to asynchronously process cache entries in Coherence and  how to asynchronously aggregate cache entries.
 
-### Estimated Time: 5 - 10 mins
-
-### Pre-requisites:  Verify Environment has been Completed.
-
-### Lab Steps:
- 
-### Step 1.	Start a cache server First Terminal window: 
+### Start Cache Server: 
 
 First terminal Window:
 
@@ -264,7 +235,7 @@ Wait for the Cache Server to start in a few seconds
 
 ![](../images/run-cache-server.png " ") 
 
-### Step 2.	In the second Terminal window, run with the name of the example: 
+### Run the Example Client:
 
 Second terminal Window:
 
@@ -277,15 +248,12 @@ The Driver.main method runs through the features of the example with output goin
 
 
 
-
-
 ## Acknowledgements
 
 - **Authors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR
 - **Contributors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR, Laxmi Amarappanavar
 - **Team** - North America SE Specialists.
-- **Last Updated By** -  
-- **Expiration Date** -    
+- **Last Updated By** -  Srinivas Pothukuchi, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
+This **read only** lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 In this lab is a read-only example on how we use goldengate for bigdata Java Database Connectivity (JDBC) Handler to replicate source transactional data to a target or database.
 
 *Estimated Lab Time*:  60 minutes
@@ -20,11 +20,13 @@ In this lab is a read-only example on how we use goldengate for bigdata Java Dat
 
  Setting up the Environment For Connection 
 
-**Step1:** We already have a trail file created in the GGBD home. We will be using the same trail file to replicate .
+## **STEP 1**: Oracle GoldenGate Configuration
+
+1. We already have a trail file created in the GGBD home. We will be using the same trail file to replicate .
 
 Example:
 
-**Step2:** In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
+2. In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
 
 We already have the jdbc drive downloaded ojdbc8-full.tar.gz in the location /home/oracle/Downloads 
 ````
@@ -42,7 +44,7 @@ total 7532
 [oracle@gg4bd-target01 oracle_jdbc]$ tar -xvzf ojdbc8-full.tar.gz
 ````
     
-**Step3:**  Add the replicat with the below commands by logging into ggsci prompt
+3. Add the replicat with the below commands by logging into ggsci prompt
 
 ````
 GGSCI (gg4bd-target01) 4> add replicat rjdbc, exttrail ./dirdat/eb
@@ -76,7 +78,7 @@ MAP employees.titles,       TARGET EMPLOYEES.TITLES,      KEYCOLS(EMP_NO,TITLE,F
 MAP employees.salaries,     TARGET EMPLOYEES.SALARIES,    KEYCOLS(EMP_NO,FROM_DATE);
 ````
 
-**Step4:**  Now edit the dirprm/jdbc_oracle_with_mdp.props file with the below parameters. You can use sample property files found in $GGBD_HOME/AdapterExamples/big-data/jdbc.
+4. Now edit the dirprm/jdbc_oracle_with_mdp.props file with the below parameters. You can use sample property files found in $GGBD_HOME/AdapterExamples/big-data/jdbc.
 
 ````
 GGSCI (gg4bd-target01) 8> exit
@@ -109,7 +111,7 @@ gg.log.level=INFO
 gg.report.time=30sec
 javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
 ````
-Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
+5. Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
 
 And we can go to the database and see the record count as well.To do that log in to GG4BD_Source01 (129.213.97.81)
 
@@ -122,7 +124,7 @@ The Oracle base remains unchanged with value /u01/app/oracle
 [oracle@gg4dbd-source01 ~]$ sqlplus employees/employees@pdb1
 ````
 
-Now run the below script to get the tables counts
+6. Now run the below script to get the tables counts
 
 ````
 select 'employees       table -> '|| count(1) as Target from employees.employees UNION ALL
@@ -140,7 +142,7 @@ select 'salaries        table -> '|| count(1) from employees.salaries;
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Meghana Banka, September 2020
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
 
 ## See an issue?

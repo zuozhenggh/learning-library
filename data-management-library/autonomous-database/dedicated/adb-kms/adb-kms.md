@@ -4,6 +4,7 @@
 The Autonomous database service allows customers to retain control of the database encryption master keys. Keys are stored in an HSM based Vault service in OCI and are accessed by the database for encryption / decryption of data keys. No human operator has access to the keys once they are in the vault. Customers retain full control of their key vault and can disable / delete keys as required. 
 Each autonomous container database (ACD) and each autonomous database (ADB) within it can have its own unique master encryption key (MEK). Keys may be rotated at desired frequency either through console UI or using REST APIs.
 
+[](youtube:JoAJ7lAgdkA)
 
 ### Objectives
 
@@ -37,6 +38,12 @@ The first step is for a security admin responsible for all encryption keys to lo
 ![](./images/vault2.png)
 
 - Once your Vault is ready you may then create a Master Encryption Key.
+
+![](./images/vault3.png)
+
+Ensure you pick the HSM protection mode, provide a key name (preferably matching your ACD name for easier identification) and hit 'Create'
+
+![](./images/pick_hsm.png)
 
 Scroll down on the Vault console page, make sure you select 'Master Encryption Keys' from the list of Resources on the left and hit 'Create Key'
 
