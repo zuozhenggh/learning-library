@@ -36,10 +36,10 @@ Use Public IP allocated from LiveLabs
 ## **STEP 1**: Explore GoldenGate Configuration  
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
-**Step 2:** The following Lab Menu will be displayed, 
+**Step 2:** The following Lab Menu will be displayed,
 **select R** to reset the lab environment, then select **5**.
 
-1. Review the overview notes on the following screen, then select Q to quit. 
+1. Review the overview notes on the following screen, then select Q to quit.
 
   ![](./images/menu1006.png " ")
 
@@ -102,7 +102,7 @@ Optionally view these files, same as in previous lab:
 <copy>info all</copy>	 
 ````
 ````
-<copy>start mgr</copy>	
+<copy>start mgr</copy>
 ````
 ````
 <copy>info all</copy>
@@ -140,13 +140,13 @@ Optionally view these files, same as in previous lab:
 <copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
 ````
 ````
-<copy>info all</copy>	
+<copy>info all</copy>
 ````
 ````
-<copy>start extmysql</copy>	
+<copy>start extmysql</copy>
 ````
 ````
-<copy>info all</copy>	
+<copy>info all</copy>
 ````
 ````
 <copy>start pmphadop</copy>
@@ -187,16 +187,16 @@ Optionally view these files, same as in previous lab:
 <copy>cd .. </copy>
 ````
 ````
-<copy>./ggsci</copy>	
+<copy>./ggsci</copy>
 ````
 ````
-<copy>info all</copy>	
+<copy>info all</copy>
 ````
 ````
-<copy>obey ./dirprm/create_hbase_replicat.oby</copy>	
+<copy>obey ./dirprm/create_hbase_replicat.oby</copy>
 ````
 ````
-<copy>info all</copy>	
+<copy>info all</copy>
 ````
 ````
 <copy>start rhbase</copy>
@@ -255,7 +255,7 @@ Optionally view these files, same as in previous lab:
   ![](./images/d13.png " ")
 
 ````
-<copy>./ggsci</copy>	
+<copy>./ggsci</copy>
 ````
 ````
 <copy>stats rhbase total</copy>
@@ -268,7 +268,7 @@ You may now *proceed to the next lab*.
 
 ## **STEP 5**: Explore Results in HUE
 
-1. Open a Browser window from your local machine: 
+1. Open a Browser window from your local machine:
 
 HUE allows you to access the data from a URL -
 

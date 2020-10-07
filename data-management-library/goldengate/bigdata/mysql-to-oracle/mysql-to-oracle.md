@@ -1,4 +1,4 @@
-# Optional Lab: MySQL to Oracle (using jdbc)
+# MySQL to Oracle (using jdbc)
 
 ## Introduction
 
@@ -18,7 +18,7 @@ In this lab is a read-only example on how we use goldengate for bigdata Java Dat
 
 ## Steps
 
- Setting up the Environment For Connection 
+ Setting up the Environment For Connection
 
 ## **STEP 1**: Oracle GoldenGate Configuration
 
@@ -28,7 +28,8 @@ Example:
 
 2. In this step we will download the oracle jdbc jar and create a directory and unzip the files in that directory.
 
-We already have the jdbc drive downloaded ojdbc8-full.tar.gz in the location /home/oracle/Downloads 
+We already have the jdbc drive downloaded ojdbc8-full.tar.gz in the location /home/oracle/Downloads
+
 ````
 [opc@gg4bd-target01 ~]$ sudo su - oracle
 Last login: Tue May  7 14:53:22 GMT 2019 on pts/3
@@ -43,7 +44,7 @@ total 7532
 
 [oracle@gg4bd-target01 oracle_jdbc]$ tar -xvzf ojdbc8-full.tar.gz
 ````
-    
+
 3. Add the replicat with the below commands by logging into ggsci prompt
 
 ````
@@ -78,14 +79,16 @@ MAP employees.titles,       TARGET EMPLOYEES.TITLES,      KEYCOLS(EMP_NO,TITLE,F
 MAP employees.salaries,     TARGET EMPLOYEES.SALARIES,    KEYCOLS(EMP_NO,FROM_DATE);
 ````
 
-4. Now edit the dirprm/jdbc_oracle_with_mdp.props file with the below parameters. You can use sample property files found in $GGBD_HOME/AdapterExamples/big-data/jdbc.
+4. Now edit the `dirprm/jdbc_oracle_with_mdp.props` file with the below parameters. You can use sample property files found in $GGBD_HOME/AdapterExamples/big-data/jdbc.
 
 ````
 GGSCI (gg4bd-target01) 8> exit
 [oracle@gg4bd-target01 ggbd_home1]$ cd dirprm
 [oracle@gg4bd-target01 dirprm]$ vi jdbc_oracle_with_mdp.props
 ````
+
 Below are the parameters we will be using.
+
 ````
 gg.handlerlist=jdbcwriter
 gg.handler.jdbcwriter.type=jdbc
@@ -111,9 +114,10 @@ gg.log.level=INFO
 gg.report.time=30sec
 javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
 ````
+
 5. Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
 
-And we can go to the database and see the record count as well.To do that log in to GG4BD_Source01 (129.213.97.81)
+And we can go to the database and see the record count as well.To do that log in to `GG4BD_Source01` (129.213.97.81)
 
 ````
 [opc@gg4dbd-source01 ~]$ sudo su - oracle
@@ -147,7 +151,3 @@ select 'salaries        table -> '|| count(1) from employees.salaries;
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
-
-
- 
-

@@ -1,6 +1,6 @@
-# Installation
+# Deploy GoldenGate for Bid Data
 
-## Introduction 
+## Introduction
 
 In this lab you will install GoldenGate for Big Data in the GG Target Home.
 
@@ -14,15 +14,15 @@ In this lab you will install GoldenGate for Big Data in the GG Target Home.
 
 Non-invasive, real-time transactional data streaming
 
-Secured, reliable and fault-tolerant data delivery 
-Easy to install, configure and maintain 
-Streams real-time changed data 
+Secured, reliable and fault-tolerant data delivery
+Easy to install, configure and maintain
+Streams real-time changed data
 Easily extensible and flexible to stream changed data to other big data targets and message queues
 
 #### KEY BENEFITS
 
-Improve IT productivity in integrating with big data systems 
-Use real-time data in big data analytics for more timely and reliable insight 
+Improve IT productivity in integrating with big data systems
+Use real-time data in big data analytics for more timely and reliable insight
 Improve operations and customer experience with enhanced business insight • Minimize overhead on source systems to maintain high performance
 
 Oracle GoldenGate for Big Data provides optimized and high performance delivery to Flume, HDFS, Hive, HBase, Kafka and Cassandra to support customers with their real-time big data analytics initiatives.
@@ -43,7 +43,7 @@ integration architectures to big data systems without impacting the performance 
 
  Follow the steps below to install GoldenGate, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
-   
+
 1.  Change to the ggadmin user.  
 
 Open a terminal session locally
@@ -65,9 +65,9 @@ Follow these instructions to install GoldenGate for Big Data
 
 ## **STEP 3**: Performing the Install
 
-1.  **Select Option 1** 
-   
-Review the overview notes on the following screen, Select **Q** to quit. 
+1.  **Select Option 1**
+
+Review the overview notes on the following screen, Select **Q** to quit.
       ![](./images/menu1006.png " ")
 
   These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
@@ -85,7 +85,7 @@ Review the overview notes on the following screen, Select **Q** to quit.
 ````
 <copy>create subdirs</copy>
 ````
-**type** 
+**type**
 ````
 <copy>labmenu</copy>
 ````
@@ -110,4 +110,3 @@ You may now *proceed to the next lab*.
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
-
