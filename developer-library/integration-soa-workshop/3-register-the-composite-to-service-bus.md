@@ -247,7 +247,7 @@ Please follow the construction details from <ins>**page 54 to 77**</ins>, in the
 <!--[Click here to navigate to the next Module 3](3-process-order-using-composite.md) -->
 
 ## Acknowledgements
-* **Created for LiveLabs** - Solution Engineering, Daniel Tarudji
+* **Created for LiveLabs** - Daniel Tarudji
 * **Contributors** - Kamryn Vinson
 * **Last review by** - Kamryn Vinson, October 2020
 

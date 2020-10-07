@@ -53,8 +53,8 @@ When you're ready to proceed, please click the Contents menu on the right-hand.
 -  <a href=https://www.oracle.com/technetwork/middleware/weblogic/learnmore/reducing-middleware-costs-2327571.pdf> Oracle Middleware </a>
 
 ## Acknowledgements
-* **Created for LiveLabs** - N.A Solution Engineering, Daniel Tarudji
-* **Contributors** -  Tom McGinn, Kamryn Vinson
+* **Created for LiveLabs** - Daniel Tarudji
+* **Contributors** - Tom McGinn, Kamryn Vinson
 * **Last reviewed By/Date** - Kamryn Vinson, October 2020
 
 ## See an issue?
