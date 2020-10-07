@@ -292,7 +292,7 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
     ```
 
 ## Summary
-In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rkafka’ read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
+In summary, you loaded data in MySQL database `‘ggsource’`, GG extract process `‘extmysql’` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process `‘pmphadop’` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `‘rkafka’` read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
 
 You may now *proceed to the next lab*.
 
