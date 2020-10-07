@@ -42,7 +42,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 ## **STEP 1**: Explore GoldenGate Configuration
 1. At the terminal prompt as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
-  ![](./images/a_labmenu2.png " ")
+  ![](./images/labmenu_opt1.png " ")
 
 2. Select Option **2**
 

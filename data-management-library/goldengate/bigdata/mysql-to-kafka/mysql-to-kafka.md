@@ -44,7 +44,7 @@ These two sessions will be used respectively for `source` and `target` execution
 ## **STEP 1**: Explore GoldenGate Configuration
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
-  ![](./images/menu1006.png " ")
+  ![](./images/labmenu_opt1.png " ")
 
 2. Select **R** to reset the lab environment, then select **6**
 

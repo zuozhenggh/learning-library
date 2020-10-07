@@ -45,7 +45,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 **By default ggadmin will automatically start in the labmenu**
 
-  ![](./images/menu1006.png " ")
+  ![](./images/labmenu_opt1.png " ")
 
 2. Select **R** to reset the lab environment, then select **7**
 

@@ -45,7 +45,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 2. Select Option **4**
 
-![](./images/menu1006.png " ")
+![](./images/labmenu_opt1.png " ")
 
 3. Review the overview notes on the following screen, then select **Q** to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
