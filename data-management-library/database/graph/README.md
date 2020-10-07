@@ -21,11 +21,11 @@ Click on one of our workshops below to access the content.
 ## Property Graph Workshops
 
 ### Tutorial: Setup a property graph environment in Docker
-- [Quickstart with Docker](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/graph/quickstart-with-docker/workshops/livelabs/)
+- [Quickstart with Docker](quickstart-with-docker/workshops/livelabs/)
 
 ### Tutorial: Setup a property graph environment in Always Free Tier (AF Autonomous Database and Compute)
-- [Quickstart on AF Tier: Manual deployment](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/graph/graph-server-client/manually-deploy-and-use-on-compute/workshops/freetier/)
-- [Quickstart on AF Tier: Deploy OCI Marketplace image](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/graph/graph-server-client/deploy-oci-marketplace-image/workshops/freetier/)
+- [Quickstart on AF Tier: Manual deployment](graph-server-client/manually-deploy-and-use-on-compute/workshops/freetier/)
+- [Quickstart on AF Tier: Deploy OCI Marketplace image](graph-server-client/deploy-oci-marketplace-image/workshops/freetier/)
 
 ## RDF/Semantic Graph Workshops
 
