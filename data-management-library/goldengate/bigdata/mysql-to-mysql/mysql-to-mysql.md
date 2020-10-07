@@ -29,16 +29,17 @@ In this lab we will load data in MySQL database ‘ggsource’. The GG extract p
 Use Public IP allocated from LiveLabs
 
 **Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
+
 ````    
 <copy>sudo su – ggadmin</copy>
 ````
-1. At the prompt, type  ‘labmenu’ to display the labmenu IF not at the labmenu.
+2. At the prompt, type  ‘labmenu’ to display the labmenu IF not at the labmenu.
 
-  ![](./images/a_labmenu2.png " ")
+  ![](./images/menu1006.png " ")
 
-4. Select Option **2**
+3. Select Option **2**
 
-5. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
+4. Review the overview notes on the following screen, then select Q to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 ## **STEP 2**: Explore GoldenGate Configuration
 
@@ -47,18 +48,24 @@ Use Public IP allocated from LiveLabs
 ````
 <copy>cd /u01/gg4mysql/dirprm</copy>
 ````
+
 ````
 <copy>view /u01/gg4mysql/dirprm/create_mysql_gg_procs.oby</copy>
 ````
+**:q!** to exit out of the view option
+
 ````
 <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
 ````
+
 ````
 <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
 ````
+
 ````
 <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
 ````
+
 ````
 <copy>view /u01/gg4mysql/dirprm/repmysql.prm</copy>
 ````
@@ -67,9 +74,7 @@ Use Public IP allocated from LiveLabs
 ````
 <copy>ggmysql</copy>
 ````
-    or
-````
-<copy> cd /u01/gg4mysql</copy>
+
 ````
 <copy> pwd</copy> 
 ````
@@ -78,14 +83,17 @@ Use Public IP allocated from LiveLabs
 
 1. Go to the GG Home for MySQL. You can cd to the directory:
 
-  ![](./images/a_2.png " ")
-  ![](./images/a3.png " ")
+  ![](./images/a_2.png)
+  ![](./images/a3.png)
+
 ````
 <copy> cd /u01/gg4mysql</copy>
 ````
+
 ````
 <copy> pwd</copy> 
 ````
+
 ````
 <copy> ls -l ggsci</copy>
 ````
@@ -97,36 +105,45 @@ processes:
 ````  
 <copy>./ggsci</copy>
 ````
+
 ````
 <copy> info all</copy>
 ````
+
 ````
 <copy> start mgr</copy>	
 ````
+
 ````
 <copy> info all</copy>
 ````
+
 ````
 <copy>obey ./dirprm/create_mysql_gg_procs.oby</copy>
 ````
+
 ````
 <copy> start extmysql</copy>
 ````
+
 ````
 <copy>info all</copy>	
 ````
+
 ````
 <copy>start pmpmysql</copy>	
 ````
+
 ````
 <copy>info all</copy>	
 ````
+
 ````
 <copy>start repmysql</copy>	
 ````
-````
-<copy>start * </copy>
-````
+
+or **" start * "** to start ALL
+
 ````
 <copy>info all</copy>
 ````
@@ -148,21 +165,25 @@ Now that the GoldenGate extract, pump and replicat processes are running, next y
 ````
 <copy>mysqlselect</copy>
 ````
+
 ````
 <copy>loadsource</copy>
 ````
+
 ````
 <copy>mysqlselect</copy>
 ````
 
-1. At this point GoldenGate should have replicated all the data from database ggsource to database ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate.
+2. At this point GoldenGate should have replicated all the data from database ggsource to database ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate.
 
-2. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed.
+3. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed.
 
     ![](./images/a7.png " ")
+
 ````
 <copy>stats extmysql total</copy>
 ````
+
 ````
 <copy> stats repmysql total</copy>
 ````

@@ -1,4 +1,4 @@
-# Prepare the OCI account
+# Prepare the OCI Account
 
 ## Introduction
 
@@ -21,7 +21,7 @@ For this lab you will need:
 
 - An OCI account with a Compartment created
 
-## **STEP 1:** Create a Vault
+## **STEP 1:** Create a vault
 
 1. Go to **Security -> Vault**
 
@@ -37,7 +37,7 @@ For this lab you will need:
 
    <img src="./images/prereq-vault3.png" width="80%">
 
-## **STEP 2:** Create a Key in the vault
+## **STEP 2:** Create a key in the vault
 
 1. Once the vault is provisioned, click the vault
 
@@ -51,7 +51,7 @@ For this lab you will need:
 
    <img src="./images/prereq-key2.png" width="80%">
 
-## **STEP 3:** Create a Secret for the WebLogic admin password
+## **STEP 3:** Create a secret for the WebLogic admin password
 
 1. Once the key is provisioned, click **Secrets**
 

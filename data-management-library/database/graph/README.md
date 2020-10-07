@@ -21,15 +21,11 @@ Click on one of our workshops below to access the content.
 ## Property Graph Workshops
 
 ### Tutorial: Setup a property graph environment in Docker
-- [Setup with Docker](https://oracle.github.io/learning-library/data-management-library/database/graph/livelabs/)
-
-### Customer 360 analysis 
-- [Customer 360 Analysis](https://oracle.github.io/learning-library/data-management-library/database/graph/livelabs/)  
-Note: This assumes you have completed the setup steps and have an environment up and running with Docker. The use case is included in the workshop accessible from the setup link above. 
+- [Quickstart with Docker](quickstart-with-docker/workshops/livelabs/)
 
 ### Tutorial: Setup a property graph environment in Always Free Tier (AF Autonomous Database and Compute)
-- [Setup on AF Tier: Manual deployment](https://oracle.github.io/learning-library/data-management-library/database/graph/freetier/GraphServer_ManualSetup/)
-- [Setup on AF Tier: Deploy OCI Marketplace image](https://oracle.github.io/learning-library/data-management-library/database/graph/freetier/GraphServer_MarketplaceImage)
+- [Quickstart on AF Tier: Manual deployment](graph-server-client/manually-deploy-and-use-on-compute/workshops/freetier/)
+- [Quickstart on AF Tier: Deploy OCI Marketplace image](graph-server-client/deploy-oci-marketplace-image/workshops/freetier/)
 
 ## RDF/Semantic Graph Workshops
 
@@ -48,7 +44,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 ## Product Pages
 - [Oracle as an RDF Graph](https://www.oracle.com/database/technologies/spatialandgraph/rdf-graph-features.html)
 - [Oracle as a Property Graph](https://www.oracle.com/database/technologies/spatialandgraph/property-graph-features.html)
-- [Oracle Database 19c](https://www.oracle.com/database/)
+- [Oracle Database](https://www.oracle.com/database/)
 
 ## Documentation
 - [Graph Documentation for Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/spatial-and-graph.html)
