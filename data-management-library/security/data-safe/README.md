@@ -24,3 +24,5 @@ Alternatively, you can follow the labs on this repository:
 ## Self-Paced Labs
 
 Self-paced labs provide hands-on experience with Oracle Cloud Infrastructure in real cloud environments. You can try self-paced labs here: https://ocitraining.qloudable.com/
+
+change
