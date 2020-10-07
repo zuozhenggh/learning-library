@@ -1,5 +1,6 @@
 {
-    "tutorials": [
+      "workshoptitle": "Speed Up Data Science with the Accelerated Data Science SDK",
+      "tutorials": [
         {
             "title": "Prerequisites",
             "description": "Sign up for and log into the Oracle Cloud",
