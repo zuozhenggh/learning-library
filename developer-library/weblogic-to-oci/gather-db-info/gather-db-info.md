@@ -1,10 +1,10 @@
-# Gather Database information
+# Gather Database Information
 
-## Introduction: 
+## Introduction
 
-This lab with guide you through getting useful information regarding a Database provisioned on OCI
+This lab with guide you through getting useful information regarding a Database provisioned on OCI.
 
-Estimated Lab Time: 5 min
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
@@ -30,10 +30,12 @@ Once the database system is provisioned, under the **Database System -> details*
 
   <img src="./images/provision-db-27-connection2.png" width="70%">
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
