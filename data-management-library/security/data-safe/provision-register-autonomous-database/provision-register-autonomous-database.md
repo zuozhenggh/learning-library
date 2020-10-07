@@ -9,7 +9,7 @@ Estimated Lab Time: 30 minutes
 ### Objectives
 In this lab, you'll:
 
-- Provision an Autonomous Data Warehouse on Shared Exadata Infrastructure instance
+- Provision an Autonomous Transaction Processing (ATP) database
 - Register your database with Oracle Data Safe
 - Run a SQL script using SQL Developer Web to load sample data into your database
 - Sign in to the Oracle Data Safe Console and view the list of registered target databases
@@ -31,15 +31,15 @@ To complete this lab, you need to have the following:
 
 
 
-## **STEP 1**: Provision an Autonomous Data Warehouse database
+## **STEP 1**: Provision an Autonomous Transaction Processing database
 
-- From the navigation menu (hamburger menu in the upper-left corner), select **Autonomous Data Warehouse**.
+- From the navigation menu (hamburger menu in the upper-left corner), select **Autonomous Transaction Processing**.
 
-- Make sure your workload type is **Data Warehouse** or **All** to see your Autonomous Data Warehouse instances.
+- Make sure your workload type is **Transaction Processing** or **All** to see your database instance after you create it.
 
 
 - From the **Compartment** drop-down list, select your compartment.
-  - If you're working in the LiveLabs tenancy, expand the **c4u03** and **Livelabs** compartments. You will see your compartment listed. The name is based on your username, for example, if your username is `LL630`, then your compartment name is `LL630-COMPARTMENT`.
+  - If you're working in the LiveLabs tenancy, expand the **c4u03** and **Livelabs** compartments. You will see your compartment listed. The name is based on your username. For example, if your username is `LL630`, then your compartment name is `LL630-COMPARTMENT`.
 
 
 - Click **Create Autonomous Database**.
@@ -53,8 +53,7 @@ To complete this lab, you need to have the following:
 
   - **Database Name** - Enter **ad01**. It's important to use letters and numbers only, starting with a letter. The maximum length is 14 characters. Underscores are not supported.
 
-  - **Workload Type** - Leave **Data Warehouse** selected.
-    - Note: You cannot use a **Transaction Processing** or **JSON** workload type for this lab.
+  - **Workload Type** - Leave **Transaction Processing** selected.
 
   - **Deployment Type** - Leave **Shared Infrastructure** selected.
 
@@ -62,7 +61,7 @@ To complete this lab, you need to have the following:
 
   - **Database version** - Leave **19c** selected.
 
-  - **OCPU Count** - Select **2**.
+  - **OCPU Count** - Select **1**.
 
   - **Storage** - Leave **1** selected.
 
@@ -81,21 +80,20 @@ To complete this lab, you need to have the following:
 - Wait a few minutes for your instance to provision. When it is ready, AVAILABLE is displayed below the large ADW icon.
 
 
-## **STEP 2**: Register the Autonomous Database with Oracle Data Safe
 
-  - If you closed the **Autonomous Database Details** page: From the navigation menu, select **Autonomous Data Warehouse**. From the **COMPARTMENT** drop-down list, select your compartment. Click the name of your database. The **Autonomous Database Information** tab on the **Autonomous Database Details** page is displayed.
+## **STEP 2**: Register your Autonomous Database with Oracle Data Safe
+
+  - If you closed the **Autonomous Database Details** page: From the navigation menu, select **Autonomous Transaction Processing**. From the **COMPARTMENT** drop-down list, select your compartment. Click the name of your database. The **Autonomous Database Information** tab on the **Autonomous Database Details** page is displayed.
 
 
 - Under **Data Safe**, click **Register**.
-  - If you do not see the **Register** option for the **Data Safe** section, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it. Please contact the LiveLabs organization to gain access to an appropriate region.
+  - If you do not see the **Register** option for the **Data Safe** section, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it. Please contact your tenancy administrator to gain access to an appropriate region.
 
-  A **Confirm** dialog box asks if you are sure you want to register the database with Oracle Data Safe.
+  - A **Confirm** dialog box asks if you are sure you want to register the database with Oracle Data Safe.
 
 - Click **Confirm**.
 
-- Wait for the registration process to finished.
-
-  When registration is completed, the status reads **Registered**. By default, you are authorized to manage the User Assessment, Security Assessment, and Activity Auditing features in Oracle Data Safe on your database.
+- Wait for the registration process to finish. When registration is completed, the status reads **Registered**. By default, when you register an Autonomous Database, you are authorized to use the User Assessment, Security Assessment, and Activity Auditing features in Oracle Data Safe with your database.
 
 
 
