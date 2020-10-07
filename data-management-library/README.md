@@ -2,6 +2,11 @@
 
 The Oracle Data Management LiveLabs is the central location for workshops related to all things Autonomous Database (ADB), Database, Big Data, Data Integration, Machine Learning, Security and more.  Across multiple deployment options:  on-premises and in the cloud.  
 
+### How do I get started?
+Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are added weekly, please visit frequently for new content.
+
+[![](../common/images/livelabs.png)](http://bit.ly/golivelabs)
+
 ## Featured Workshops - Autonomous Database (ADB) 
 - [Analyzing your Data with ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 - [Autonomous Database Quick Start](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=582)
@@ -27,8 +32,8 @@ Visit [LiveLabs](http://bit.ly/golivelabs) to see workshops tailored for the ADB
 ## Videos
 - [Oracle Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [Oracle Communities Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with us.
 
 -- Oracle Database Product Management
 
