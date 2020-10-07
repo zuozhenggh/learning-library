@@ -1,6 +1,8 @@
 ﻿
 # Prerequisites for the LiveLabs Tenancy
 
+## Introduction
+
 This workshop requires an Oracle Cloud account. As a result of registering for LiveLabs, you will receive an email with instructions for accessing your account.
 
 You are provided with the following:

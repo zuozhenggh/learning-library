@@ -1,6 +1,8 @@
 ﻿
 # Introduction
 
+## About the Oracle Data Safe Workshop
+
 The labs in this workshop walk you through all the steps to get started using Oracle Data Safe. You begin by provisioning an Autonomous Data Warehouse instance in Oracle Cloud Infrastructure, load sample data into your database, and then register the database with Oracle Data Safe. After your database is set up, you learn how to perform common tasks in Oracle Data Safe, including how to provision audit and alert policies on your database, analyze alerts and audit reports, assess the security of your database configurations and users, and discover and mask sensitive data.
 
 ## About Oracle Data Safe
