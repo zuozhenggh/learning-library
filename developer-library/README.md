@@ -5,9 +5,13 @@ Oracle provides an open, modern, easy and intelligent platform and infrastructur
 Click [here](http://bit.ly/golivelabs) to access the content.
 
 - [Oracle's Converged Database](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=613)
-- [Database 19c New Features for Developers](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=636)
-- [Databse 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
+- [Building Java Cloud Applications with Micronaut and OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=667)
+- [Building Microservices with Oracle Converged DB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=667)
 - [Building an Application from a Spreadsheet](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631) 
+- [Deploying OKE Using Oracle Cloud Shell](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=649)
+- [Databse 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
+- [Database 19c New Features for Developers](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=636)
+- [Create a Docker registry in OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=590)
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -36,4 +40,3 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 
--- Oracle Database Product Management
