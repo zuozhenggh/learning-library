@@ -4,7 +4,10 @@
 
 Welcome! 
 
-Click [here](http://bit.ly/golivelabs) to access solution level workshops.
+### How do I get started?
+Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are added weekly, please visit frequently for new content.
+
+[![](../common/images/livelabs.png)](http://bit.ly/golivelabs)
 
 
 ## Get an Oracle Cloud Trial Account for Free!
@@ -15,5 +18,5 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
 
 Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [Oracle Communities Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with us.
