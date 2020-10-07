@@ -61,7 +61,7 @@ At the end of this module, your solution will look similar to the following proc
  <!-- [Click here to navigate to Module 4](4-add-new-channel-for-ordering.md) -->
 
 ## Acknowledgements
-* **Authored for LiveLabs** - Daniel Tarudji
+* **Author for LiveLabs** - Daniel Tarudji
 * **Contributors** - Kamryn Vinson
 * **Last review by** - Kamryn Vinson, October 2020
 
