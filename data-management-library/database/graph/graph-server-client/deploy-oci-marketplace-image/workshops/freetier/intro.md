@@ -1,15 +1,17 @@
-# Workshop Introduction and Overview                                    
+# Analyze, Query, and Visualize Property Graphs in Oracle Database                                    
 
+## Introduction
 The labs in this workshop walk you through all the steps to  deploy, configure, and use the Graph Server and Client package to query, analyze, and visualize graph content stored in a Free Tier Autonomous Database (ADB) instance. You will provision a new free tier ADB instance, load data into it, create a graph, and then query, analyze and visualize the graph.
 
 
-## What is Oracle Property Graph?
+### About Oracle Property Graph?
 Oracle Database property graph supports and consists of graph storage, indexing, and search; a powerful in-memory analyst with 50 built-in, parallel analytic functions; a graph query language and developer APIs. Graph algorithms enable you to explore and discover relationships in social networks, IoT, big data, data warehouses and complex transaction data for applications such as fraud detection in banking, customer 360, and smart manufacturing.
 
 Watch a short video that explains key features in Oracle Graph:
 
 [](youtube:-DYVgYJPbQA)
 
+Estimated workshop time: 1 hour.
 
 ## Workshop Objectives
 In this workshop you will:
@@ -37,3 +39,6 @@ This workshop requires an Oracle Cloud account. You may use your own cloud accou
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
 * **Contributors** - Arabella Yao, Product Manager Intern, Database Management.
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
