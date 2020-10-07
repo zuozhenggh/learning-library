@@ -33,7 +33,7 @@ This tutorial has been tested on the Oracle Cloud Infrastructure Container Engin
 * Update a deployed application by a rolling restart of the new image
 * Assign WebLogic pods to nodes (a scenario simulating a cluster spanning 2 data centers)](node.selector.ocishell.md)
 
-## Prerequisites
+### Prerequisites
 
 An Oracle Paid or LiveLabs Cloud account.
 
