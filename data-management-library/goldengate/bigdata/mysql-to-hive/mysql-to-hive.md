@@ -43,7 +43,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 ## **STEP 1**: Explore GoldenGate Configuration
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
-2. Select Option **4**
+2. Select **R** to reset the lab then Option **4**
 
 ![](./images/labmenu_opt1.png " ")
 
@@ -68,7 +68,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>view  /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
     ```
     ```
-    <copy>cd /u01/gg4hadoop/dirprm
+    <copy>cd /u01/gg4hadoop123010/dirprm
     view /u01/gg4hadoop123010/dirprm/create_hive_replicat.oby</copy>
     ```
     ```
@@ -127,6 +127,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
   ![](./images/c5.png " ")
 
     ```
+     <copy>./ggsci</copy>
     <copy> obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
     ```
@@ -141,12 +142,11 @@ Now we need to start the GG manager process on both the source and target. Keep 
     ```
     <copy> start pmphadop</copy>
     ```
+    **or use the following to start ALL**
     ```
     <copy> start *</copy>
     ```
-    ```
-    <copy>./ggsci</copy>
-    ```
+ 
     ```
     <copy> info all</copy>
     ```

@@ -66,7 +66,7 @@ These two sessions will be used respectively for `source` and `target` execution
     <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
     ```
     ```
-    <copy> cd /u01/gg4hadoop/dirprm</copy>
+    <copy> cd /u01/gg4hadoop123010/dirprm</copy>
     view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby</copy>
     ```
     ```
@@ -142,6 +142,7 @@ These two sessions will be used respectively for `source` and `target` execution
     ```
     <copy>start pmphadop</copy>
     ```
+    **or use start ALL **
     ```
     <copy>start *</copy>
     ```
@@ -240,12 +241,7 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
     <copy>consumetopic gg2kafka_json.dept</copy>
 
     ```
-    ```
-    <copy>start rkafka</copy>
-    ```
-    ```
-    <copy>info all</copy>
-    ```
+
 
 3. Also take a look at the Kafka schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
 

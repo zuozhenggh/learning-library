@@ -54,11 +54,11 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 4. Review the content of each of these files to explore how GoldenGate is being configured.
 
     ```
-    <copy>cd /u01/gg4hadoop/dirprm
-    view /dirprm/create_hdfs_replicat.oby</copy>
+    <copy>cd /u01/gg4hadoop123010/dirprm
+    view create_hdfs_replicat.oby</copy>
     ```
     ```
-    <copy>cd /u01/gg4hadoop/dirprm
+    <copy>cd /u01/gg4hadoop123010/dirprm
     view /u01/gg4hadoop123010/dirprm/rhdfs.prm</copy>
     ```
     ```
@@ -114,6 +114,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
   ![](./images/b6.png " ")
 
     ```
+    <copy>./ggsci</copy>
     <copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
 

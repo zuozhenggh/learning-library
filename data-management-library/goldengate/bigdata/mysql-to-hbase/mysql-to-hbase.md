@@ -125,6 +125,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
   ![](./images/d5.png " ")
 
     ```
+    <copy>./ggsci</copy>
     <copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
     ```

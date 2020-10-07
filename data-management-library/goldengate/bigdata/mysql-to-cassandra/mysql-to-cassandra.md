@@ -67,7 +67,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
     ```
     ```
-    <copy> cd /u01/gg4hadoop/dirprm
+    <copy> cd /u01/gg4hadoop123010/dirprm
     view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby</copy>
     ```
     ```
