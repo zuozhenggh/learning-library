@@ -22,7 +22,7 @@ Estimated Lab Time: 2 hours
 ### Prerequisites
 
 - On premise Oracle Database version 11.2.0.4 or higher
-- An OCI account with proper priviledge to access the object stortage in OCI
+- An OCI account with proper privileges to access the object storage in OCI
 
 
 ## **STEP 1:** Start the On-Premise Oracle Database
@@ -34,11 +34,13 @@ If your lab local database in the VM is not running for some reason (it should b
 2. Startup the listener.
 
       ```
-      [oracle@dbhost ~]$ . oraenv
+      [oracle@dbhost ~]$ <copy>. oraenv</copy>
       ORACLE_SID = [oracle] ? ORCL
       The Oracle base has been set to /u01/app/oracle
+      ```
 
-      [oracle@dbhost ~]$ lsnrctl start
+      ```
+      [oracle@dbhost ~]$ <copy>lsnrctl start</copy>
 
       LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 09-APR-2020 12:41:12
 
@@ -69,13 +71,13 @@ If your lab local database in the VM is not running for some reason (it should b
       (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
       The listener supports no services
       The command completed successfully
-      [oracle@dbhost ~]$ 
+      [oracle@dbhost ~]$
       ```
 
 3. Startup database
 
       ```
-      [oracle@dbhost ~]$ sqlplus / as sysdba
+      [oracle@dbhost ~]$ <copy>sqlplus / as sysdba</copy>
 
       SQL*Plus: Release 19.0.0.0.0 - Production on Thu Apr 9 12:43:30 2020
       Version 19.5.0.0.0
@@ -83,8 +85,10 @@ If your lab local database in the VM is not running for some reason (it should b
       Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
       Connected to an idle instance.
+      ```
 
-      SQL> startup
+      ```
+      SQL> <copy>startup</copy>
       ORACLE instance started.
 
       Total System Global Area 9428793296 bytes
@@ -94,7 +98,10 @@ If your lab local database in the VM is not running for some reason (it should b
       Redo Buffers		   24408064 bytes
       Database mounted.
       Database opened.
-      SQL> exit
+      ```
+
+      ```
+      SQL> <copy>exit</copy>
       Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
       Version 19.5.0.0.0
       [oracle@dbhost ~]$
@@ -109,8 +116,11 @@ If your lab local database in the VM is not running for some reason (it should b
 2. Open up a terminal window, cd into the /home/oracle/Download directory. Extract the contents of the zip file. The file contains two directories: oci\_installer and opc\_installer, and a README file.
 
       ```
-      [oracle@dbhost ~]$ cd /home/oracle/Downloads/
-      [oracle@dbhost Downloads]$ unzip opc_installer.zip 
+      [oracle@dbhost ~]$ <copy>cd /home/oracle/Downloads/</copy>
+      ```
+
+      ```
+      [oracle@dbhost Downloads]$ <copy>unzip opc_installer.zip</copy>
       Archive:  opc_installer.zip
          creating: opc_installer/
       inflating: opc_installer/.DS_Store  
@@ -142,8 +152,11 @@ If your lab local database in the VM is not running for some reason (it should b
 3. The **oci\_installer** directory contain the Oracle Database Cloud Backup Module for OCI, the **opc\_installer** directory contain the Oracle Database Cloud Backup Module for OCI Classic. In the following steps we will use Oracle Cloud Infrastructure, so cd into the **oci\_installer** directory.
 
       ```
-      [oracle@dbhost opc_installer]$ cd oci_installer/
-      [oracle@dbhost oci_installer]$ ls
+      [oracle@dbhost opc_installer]$ <copy>cd oci_installer/</copy>
+      ```
+
+      ```
+      [oracle@dbhost oci_installer]$ <copy>ls</copy>
       oci_install.jar  oci_readme.txt
       ```
 
@@ -167,49 +180,37 @@ For the Oracle Database Backup Cloud Service, you need to have the identifiers a
 1. If you haven't already, create a `.oci` directory to store the credentials:
 
       ```
-      <copy>
-      mkdir ~/.oci
-      </copy>
+      <copy>mkdir ~/.oci</copy>
       ```
 
 2. Generate the private key with one of the following commands.
 
       ```
-      <copy>
-      openssl genrsa -out ~/.oci/oci_api_key.pem 2048
-      </copy>
+      <copy>openssl genrsa -out ~/.oci/oci_api_key.pem 2048</copy>
       ```
 
 3. Ensure that only you can read the private key file:
 
       ```
-      <copy>
-      chmod go-rwx ~/.oci/oci_api_key.pem
-      </copy>
+      <copy>chmod go-rwx ~/.oci/oci_api_key.pem</copy>
       ```
 
 4. Generate the public key:
 
       ```
-      <copy>
-      openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem
-      </copy>
+      <copy>openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem</copy>
       ```
 
 5. Cat the public key. Copy all the content of the public key.
 
       ```
-      <copy>
-      cat ~/.oci/oci_api_key_public.pem
-      </copy>
+      <copy>cat ~/.oci/oci_api_key_public.pem</copy>
       ```
 
 6. Get the key's fingerprint with the following OpenSSL command. If you are using Windows you can get the fingerprint with Git Bash for Windows.
 
       ```
-      <copy>
-      openssl rsa -pubout -outform DER -in ~/.oci/oci_api_key.pem | openssl md5 -c
-      </copy>
+      <copy>openssl rsa -pubout -outform DER -in ~/.oci/oci_api_key.pem | openssl md5 -c</copy>
       ```
 
    When you upload the public key in the Console, the fingerprint is also automatically displayed there.
@@ -229,11 +230,11 @@ Run the installer, **oci\_install.jar** to install the backup module. This examp
 
 The following table lists the required and some optional parameters.
 
-| **Parameter**   | **Description**                                              |
-| --------------- | ------------------------------------------------------------ |
-| -host           | End point of the Oracle Cloud Infrastructure account.        |
-| -pvtKeyFile     | File that contains the private key used to authenticate Oracle Cloud Infrastructure API requests. The key file must be in PEM format. |
-| -pubFingerPrint | Finger print of the public key paired with the specified private key. |
+| **Parameter**             | **Description**                                              |
+| ------------------------- | ------------------------------------------------------------ |
+| -host                     | End point of the Oracle Cloud Infrastructure account.        |
+| -pvtKeyFile               | File that contains the private key used to authenticate Oracle Cloud Infrastructure API requests. The key file must be in PEM format. |
+| -pubFingerPrint           | Finger print of the public key paired with the specified private key. |
 | -tOCID          | Tenancy OCID for the Oracle Cloud Infrastructure account.    |
 | -uOCID          | User OCID for the Oracle Cloud Infrastructure account.       |
 | -cOCID          | Resource compartment ID for the Oracle Cloud Infrastructure account. |
@@ -242,17 +243,17 @@ The following table lists the required and some optional parameters.
 | -libDir         | Directory in which the system backup to tape (SBT) library used for backups and restores with Oracle Cloud Infrastructure is stored. |
 
 
-The installation creates a configuration file *opcORCL.ora* and wallet directory *oci\_wallet* and places these in $ORACLE_HOME/dbs. 
+The installation creates a configuration file *opcORCL.ora* and wallet directory *oci\_wallet* and places these in $ORACLE_HOME/dbs.
 
-It also downloads a library file *libopc.so* (Linux and Unix) or *oraopc.dll* (Windows) that RMAN uses to communicate with the Oracle Database Backup Service and places that in $ORACLE_HOME/lib. You specified these locations in the syntax of the install command. 
+It also downloads a library file *libopc.so* (Linux and Unix) or *oraopc.dll* (Windows) that RMAN uses to communicate with the Oracle Database Backup Service and places that in $ORACLE_HOME/lib. You specified these locations in the syntax of the install command.
 
 It also downloads cwallet.sso an Oracle wallet that securely stores Oracle Object Storage credentials.  This file is used during RMAN backup and restore operations.
 
 1. Run the following command to install the backup module, change the parameters values base on your environment.
 
-      ``` 
+      ```
       [oracle@dbhost oci_installer]$ <copy>java -jar oci_install.jar -host https://objectstorage.ap-seoul-1.oraclecloud.com -pvtKeyFile ~/.oci/oci_api_key.pem -pubFingerPrint fd:67:91:7a:60:5d:04:d3:65:8e:21:8d:ec:6a:24:8f -uOCID ocid1.user.oc1..aaaaaaaav2y6juu6mcps2ofzyklpxaznyqzs3cul5nrqmtrnumd3f6g6oo7a -tOCID ocid1.tenancy.oc1..aaaaaaaafj37mytx22oquorcznlfuh77cd45int7tt7fo27tuejsfqbybzrq -cOCID ocid1.compartment.oc1..aaaaaaaa6xdd35koxkce2mk2aqfwphtcdb36ne7qoomtfqgjzkcuglzl2lua -walletDir $ORACLE_HOME/dbs/oci_wallet -libDir $ORACLE_HOME/lib -bucket db_backups</copy>
- 
+
       Oracle Database Cloud Backup Module Install Tool, build 19.3.0.0.0DBBKPCSBP_2019-10-16
       Oracle Database Cloud Backup Module credentials are valid.
       Backups would be sent to bucket db_backups.
@@ -266,121 +267,156 @@ It also downloads cwallet.sso an Oracle wallet that securely stores Oracle Objec
 2. Verify these files are present by entering the following commands:
 
       ```
-      [oracle@dbhost oci_installer]$ ls $ORACLE_HOME/lib/libopc.so
+      [oracle@dbhost oci_installer]$ <copy>ls $ORACLE_HOME/lib/libopc.so</copy>
       /u01/app/oracle/product/19c/dbhome_1/lib/libopc.so
+      ```
 
-      [oracle@dbhost oci_installer]$ ls $ORACLE_HOME/dbs/opc*
+      ```
+      [oracle@dbhost oci_installer]$ <copy>ls $ORACLE_HOME/dbs/opc*</copy>
       /u01/app/oracle/product/19c/dbhome_1/dbs/opcORCL.ora
+      ```
 
-      [oracle@dbhost oci_installer]$ ls $ORACLE_HOME/dbs/oci_wallet
+      ```
+      [oracle@dbhost oci_installer]$ <copy>ls $ORACLE_HOME/dbs/oci_wallet</copy>
       cwallet.sso  cwallet.sso.lck
       ```
 
 ## **STEP 5:** Prepare the on premise database
-Now, We will set the database to Archivelog mode. Creat a user in the pdb and create a new table for testing the backup and recover.
+Now, We will set the database to Archivelog mode. Create a user in the pdb and create a new table for testing the backup and recover.
 
-1. Start a SQL*Plus session
+1. Start a SQL\*Plus session
 
-      ```  
-      $ <copy>sqlplus / as sysdba</copy>
-      ```
+    ```  
+    $ <copy>sqlplus / as sysdba </copy>
+    ```
 
 2. Execute the following SQL commands to set the Database to archivelog mode
 
 
       ```
-      SQL> shutdown immediate;
+      SQL> <copy>shutdown immediate;</copy>
       Database closed.
       Database dismounted.
       ORACLE instance shut down.
       SQL> startup mount;
       ORACLE instance started.
-      
+
       Total System Global Area 9428793296 bytes
       Fixed Size		    9144272 bytes
       Variable Size		 1476395008 bytes
       Database Buffers	 7918845952 bytes
       Redo Buffers		   24408064 bytes
       Database mounted.
-      SQL> alter database archivelog;
-      
+      ```
+
+      ```
+      SQL> <copy>alter database archivelog;</copy>
+
       Database altered.
-      
-      SQL> alter database open;
-      
+      ```
+
+      ```
+      SQL> <copy>alter database open;</copy>
+
       Database altered.
-      
-      SQL> 
+
+      SQL>
       ```
 
 3. Now let's create a user in  the pdb.
 
       ```
-      SQL> show pdbs
-      
+      SQL> <copy>show pdbs</copy>
+
       CON_ID CON_NAME			  OPEN MODE  RESTRICTED
       ---------- ------------------------------ ---------- ----------
          2 PDB$SEED			  READ ONLY  NO
          3 ORCLPDB			  READ WRITE NO
-      SQL> alter session set container=orclpdb;
-      
+      ```
+
+      ```
+      SQL> <copy>alter session set container=orclpdb;</copy>
+
       Session altered.
-      
-      SQL> show con_name
-      
+      ```
+
+      ```
+      SQL> <copy>show con_name</copy>
+
       CON_NAME
       ------------------------------
       ORCLPDB
-      SQL> create user johnsmith identified by johnsmith;
-      
+      ```
+
+      ```
+      SQL> <copy>create user johnsmith identified by johnsmith;</copy>
+
       User created.
-      
-      SQL> grant connect, resource, dba, create table to johnsmith;
-      
+      ```
+
+      ```
+      SQL> <copy>grant connect, resource, dba, create table to johnsmith;</copy>
+
       Grant succeeded.
-      
+
       SQL>
       ```
-   
+
 4. Create a new table for testing database backup and recovery.
 
       ```
-      SQL> create user johnsmith identified by johnsmith;
-      
+      SQL> <copy>create user johnsmith identified by johnsmith;</copy>
+
       User created.
-      
-      SQL> grant connect, resource, dba, create table to johnsmith;
-      
+      ```
+
+      ```
+      SQL> <copy>grant connect, resource, dba, create table to johnsmith;</copy>
+
       Grant succeeded.
-      
-      SQL> create table johnsmith.mstars(firstname varchar2(20),lastname varchar2(20));
-      
+      ```
+
+      ```
+      SQL> <copy>create table johnsmith.mstars(firstname varchar2(20),lastname varchar2(20));</copy>
+
       Table created.
-      
-      SQL> insert into johnsmith.mstars values('Jimmy','Stewart');
-      
+      ```
+
+      ```
+      SQL> <copy>insert into johnsmith.mstars values('Jimmy','Stewart');</copy>
+
       1 row created.
-      
-      SQL> insert into johnsmith.mstars values('Katharine','Hepburn');
-      
+      ```
+
+      ```
+      SQL> <copy>insert into johnsmith.mstars values('Katharine','Hepburn');</copy>
+
       1 row created.
-      
-      SQL> insert into johnsmith.mstars values('Tom','Hanks');
-      
+      ```
+
+      ```
+      SQL> <copy>insert into johnsmith.mstars values('Tom','Hanks');</copy>
+
       1 row created.
-      
-      SQL> insert into johnsmith.mstars values('Anne','Hathaway');
-      
+      ```
+
+      ```
+      SQL> <copy>insert into johnsmith.mstars values('Anne','Hathaway');</copy>
+
       1 row created.
-      
-      SQL> commit;
-      
+      ```
+
+      ```
+      SQL> <copy>commit;</copy>
+
       Commit complete.
-      
-      SQL> exit
+      ```
+
+      ```
+      SQL> <copy>exit</copy>
       Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
       Version 19.5.0.0.0
-      [oracle@dbhost oci_installer]$ 
+      [oracle@dbhost oci_installer]$
       ```
 
 ## **STEP 6:** Configure RMAN to support Cloud Backups
@@ -399,14 +435,14 @@ Now, We will set the database to Archivelog mode. Creat a user in the pdb and cr
 
       ```
       $ <copy>rman target /</copy>
-      
+
       Recovery Manager: Release 19.0.0.0.0 - Production on Fri Apr 10 02:46:38 2020
       Version 19.5.0.0.0
-      
+
       Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
-      
+
       connected to target database: ORCL (DBID=1565056049)
-      
+
       RMAN>    
       ```
 
@@ -437,44 +473,44 @@ Now, We will set the database to Archivelog mode. Creat a user in the pdb and cr
       configure backup optimization on;
       configure compression algorithm 'MEDIUM' as of release 'default' optimize for load true;
       configure default device type to sbt_tape;
-      }2> 3> 4> 5> 6> 7> 8> 9> 
-      
+      }2> 3> 4> 5> 6> 7> 8> 9>
+
       new RMAN configuration parameters:
       CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 30 DAYS;
       new RMAN configuration parameters are successfully stored
-      
+
       new RMAN configuration parameters:
       CONFIGURE CHANNEL DEVICE TYPE 'SBT_TAPE' MAXPIECESIZE 2 G FORMAT   'onprem_%d_%U' PARMS  'SBT_LIBRARY=libopc.so, ENV=(OPC_PFILE=/u01/app/oracle/product/19c/dbhome_1/dbs/opcORCL.ora)';
       new RMAN configuration parameters are successfully stored
-      
+
       new RMAN configuration parameters:
       CONFIGURE ENCRYPTION FOR DATABASE ON;
       new RMAN configuration parameters are successfully stored
-      
+
       new RMAN configuration parameters:
       CONFIGURE DEVICE TYPE 'SBT_TAPE' PARALLELISM 3 BACKUP TYPE TO BACKUPSET;
       new RMAN configuration parameters are successfully stored
-      
+
       new RMAN configuration parameters:
       CONFIGURE BACKUP OPTIMIZATION ON;
       new RMAN configuration parameters are successfully stored
-      
+
       new RMAN configuration parameters:
       CONFIGURE COMPRESSION ALGORITHM 'MEDIUM' AS OF RELEASE 'default' OPTIMIZE FOR LOAD TRUE;
       new RMAN configuration parameters are successfully stored
-      
+
       new RMAN configuration parameters:
       CONFIGURE DEFAULT DEVICE TYPE TO 'SBT_TAPE';
       new RMAN configuration parameters are successfully stored
-      
-      RMAN> 
+
+      RMAN>
       ```
 
 4. You can verify the changes in RMAN by typing **show all;**
 
       ```
       RMAN> <copy>show all;</copy>
-      
+
       RMAN configuration parameters for database with db_unique_name ORCL are:
       CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 30 DAYS;
       CONFIGURE BACKUP OPTIMIZATION ON;
@@ -496,7 +532,7 @@ Now, We will set the database to Archivelog mode. Creat a user in the pdb and cr
       CONFIGURE RMAN OUTPUT TO KEEP FOR 7 DAYS; # default
       CONFIGURE ARCHIVELOG DELETION POLICY TO NONE; # default
       CONFIGURE SNAPSHOT CONTROLFILE NAME TO '/u01/app/oracle/product/19c/dbhome_1/dbs/snapcf_ORCL.f'; # default
-      
+
       RMAN>   
       ```
 
@@ -510,9 +546,9 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
 
       ```
       RMAN> <copy>set encryption on identified by 'Oracle_1' only;</copy>
-      
+
       executing command: SET encryption
-      
+
       RMAN>
       ```
 
@@ -546,7 +582,7 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       piece handle=onprem_ORCL_01ut8pgn_1_1 tag=ONPREM comment=API Version 2.0,MMS Version 19.0.0.1
       channel ORA_SBT_TAPE_1: backup set complete, elapsed time: 00:00:03
       Finished backup at 10-APR-20
-      
+
       Starting backup at 10-APR-20
       using channel ORA_SBT_TAPE_1
       using channel ORA_SBT_TAPE_2
@@ -605,7 +641,7 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       piece handle=onprem_ORCL_08ut8phh_1_1 tag=ONPREM comment=API Version 2.0,MMS Version 19.0.0.1
       channel ORA_SBT_TAPE_3: backup set complete, elapsed time: 00:00:03
       Finished backup at 10-APR-20
-      
+
       Starting backup at 10-APR-20
       current log archived
       using channel ORA_SBT_TAPE_1
@@ -619,24 +655,24 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       piece handle=onprem_ORCL_09ut8phk_1_1 tag=ONPREM comment=API Version 2.0,MMS Version 19.0.0.1
       channel ORA_SBT_TAPE_1: backup set complete, elapsed time: 00:00:01
       Finished backup at 10-APR-20
-      
+
       Starting Control File and SPFILE Autobackup at 10-APR-20
       piece handle=c-1565056049-20200410-00 comment=API Version 2.0,MMS Version 19.0.0.1
       Finished Control File and SPFILE Autobackup at 10-APR-20
-      
+
       RMAN>
       ```
 
    *NOTE: If for some reason your backup does not finish properly because of network issues, there is a way to clean up the partial backup files and retry. This is documented in the Appendix at the end of this lab*.
 
-3. When creating a backup, the file chunks are placed in a user defined object storage buck **db\_backups** in the compartmet, or it will use a system generated container called oracle-data-storage-xxx. We can verify the backup actually went to the cloud once the backup command has completed.
+3. When creating a backup, the file chunks are placed in a user defined object storage buck **db\_backups** in the compartment, or it will use a system generated container called oracle-data-storage-xxx. We can verify the backup actually went to the cloud once the backup command has completed.
 
    Using RMAN, you can verify the backup files by typing: **list backup summary;**
 
       ```
       RMAN> <copy>list backup summary;</copy>
-      
-      
+
+
       List of Backups
       ===============
       Key     TY LV S Device Type Completion Time #Pieces #Copies Compressed Tag
@@ -651,17 +687,17 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       8       B  F  A SBT_TAPE    10-APR-20       1       1       YES        ONPREM
       9       B  A  A SBT_TAPE    10-APR-20       1       1       YES        ONPREM
       10      B  F  A SBT_TAPE    10-APR-20       1       1       NO         TAG20200410T031253
-      
-      RMAN> 
+
+      RMAN>
       ```
 
 4. Enter the following command at the RMAN prompt**:**
 
       ```
       RMAN> <copy>create restore point gold preserve;</copy>
-      
+
       Statement processed
-      
+
       RMAN>
       ```
 
@@ -671,7 +707,7 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
 6. Select the correct Region and Compartment, You can see the bucket named **db\_backups** in the Object Storage page,  Click the link and drill down.
    ![](./images/image-20200410112743778.png " ")
 
-7. In the bucket, you can see the file\_chunks of the backup set. 
+7. In the bucket, you can see the file\_chunks of the backup set.
    ![](./images/image-20200410113002589.png " ")
 
 ## **STEP 8:** Query and Exit
@@ -680,46 +716,46 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
 
       ```
       [oracle@dbhost ~]$ <copy>sqlplus johnsmith/johnsmith@orclpdb</copy>
-      
+
       SQL*Plus: Release 19.0.0.0.0 - Production on Fri Apr 10 03:35:43 2020
       Version 19.5.0.0.0
-      
+
       Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-      
-      
+
+
       Connected to:
       Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
       Version 19.5.0.0.0
-      
-      SQL> 
+
+      SQL>
       ```
 
 2. There is a table called **mstars** in the schema. Query the table to see the records.
 
       ```
       SQL> <copy>select * from mstars;</copy>
-      
+
       FIRSTNAME	     LASTNAME
       -------------------- --------------------
       Jimmy		     Stewart
       Katharine	     Hepburn
       Tom		     Hanks
       Anne		     Hathaway
-      
-      SQL> 
+
+      SQL>
       ```
 
 3. Drop the table and exit out of sqlplus
 
       ```
       SQL> <copy>drop table mstars;</copy>
-      
+
       Table dropped.
-      
+
       SQL> exit;
       Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
       Version 19.5.0.0.0
-      [oracle@dbhost ~]$ 
+      [oracle@dbhost ~]$
       ```
 
 ## **STEP 9:** Restore and Recover the Database to a Point in Time
@@ -737,35 +773,37 @@ We now need to restore the database to the point in time before the **mstar** ta
 2. Shutdown the database and startup mount.
 
       ```
-      RMAN> shutdown immediate;
-      
+      RMAN> <copy>shutdown immediate;</copy>
+
       database closed
       database dismounted
       Oracle instance shut down
-      
-      RMAN> startup mount;
-      
+      ```
+
+      ```
+      RMAN> <copy>startup mount;</copy>
+
       connected to target database (not started)
       Oracle instance started
       database mounted
-      
+
       Total System Global Area    9428793296 bytes
-      
+
       Fixed Size                     9144272 bytes
       Variable Size               1476395008 bytes
       Database Buffers            7918845952 bytes
       Redo Buffers                  24408064 bytes
-      
-      RMAN> 
+
+      RMAN>
       ```
 
 3. We need to set the de-encryption password we set when encrypting and backing up the database.
 
       ```
       RMAN> <copy>set decryption identified by 'Oracle_1';</copy>
-      
+
       executing command: SET decryption
-      
+
       RMAN>
       ```
 
@@ -776,13 +814,13 @@ We now need to restore the database to the point in time before the **mstar** ta
       ```
       <copy>
       run {
-      
+
       restore database;
-      
+
       recover database to restore point gold;
-      
+
       alter database open resetlogs;
-      
+
       }
       </copy>
       ```
@@ -802,7 +840,7 @@ We now need to restore the database to the point in time before the **mstar** ta
       channel ORA_SBT_TAPE_3: Oracle Database Backup Service Library VER=19.0.0.1
       allocated channel: ORA_DISK_1
       channel ORA_DISK_1: SID=14 device type=DISK
-      
+
       skipping datafile 5; already restored to file /u01/app/oracle/oradata/ORCL/pdbseed/system01.dbf
       skipping datafile 6; already restored to file /u01/app/oracle/oradata/ORCL/pdbseed/sysaux01.dbf
       skipping datafile 8; already restored to file /u01/app/oracle/oradata/ORCL/pdbseed/undotbs01.dbf
@@ -839,48 +877,50 @@ We now need to restore the database to the point in time before the **mstar** ta
       channel ORA_SBT_TAPE_3: restored backup piece 1
       channel ORA_SBT_TAPE_3: restore complete, elapsed time: 00:00:16
       Finished restore at 10-APR-20
-      
+
       Starting recover at 10-APR-20
       using channel ORA_SBT_TAPE_1
       using channel ORA_SBT_TAPE_2
       using channel ORA_SBT_TAPE_3
       using channel ORA_DISK_1
-      
+
       starting media recovery
       media recovery complete, elapsed time: 00:00:00
-      
+
       Finished recover at 10-APR-20
-      
+
       Statement processed
-      
-      RMAN> 
+
+      RMAN>
       ```
 
 6. Once the script completes, go back to the terminal window you used to connect with sqlplus and re-connect back into the **orclpdb** container as **johnsmith/johnsmith** and query to see if the **mstars** table has been recovered.
 
       ```
-      [oracle@dbhost ~]$ sqlplus johnsmith/johnsmith@orclpdb
+      [oracle@dbhost ~]$ <copy>sqlplus johnsmith/johnsmith@orclpdb</copy>
       SQL*Plus: Release 19.0.0.0.0 - Production on Fri Apr 10 03:53:13 2020
       Version 19.5.0.0.0
-      
+
       Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-      
+
       Connected to:
       Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
       Version 19.5.0.0.0
-      
-      SQL> select * from mstars;
-      
+      ```
+
+      ```
+      SQL> <copy>select * from mstars;</copy>
+
       FIRSTNAME	     LASTNAME
-      
+
       -------------------- --------------------
-      
+
       Jimmy		     Stewart
       Katharine	     Hepburn
       Tom		     Hanks
       Anne		     Hathaway
-      
-      SQL> 
+
+      SQL>
       ```
 
 ## Appendix
@@ -902,13 +942,11 @@ In case your backup does not complete properly you can clean up the partial back
       </copy>
       ```
 
-You may now proceed to the next lab.
-
-## Acknowledgments
+## Acknowledgements
 
 - **Author** - Minqiao Wang, Database Product Management, PTS China - April 2020
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Minqiao Wang, Sep 2020
+- **Last Updated By/Date** - Minqiao Wang, Tom McGinn, Sep 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
