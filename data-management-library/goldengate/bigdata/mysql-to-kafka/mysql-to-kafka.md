@@ -19,7 +19,7 @@ Estimated Lab Time:  60 minutes
 * Lab: MySQL to MySQL
 
 
-## **STEP 1**: Login to the Terminal
+## **STEP 1**: Login to the Workshop Labmenu
 
 1. Open a terminal session locally
 
@@ -40,15 +40,15 @@ Use Public IP allocated from LiveLabs
 ````
 ![](./images/menu1006.png)
 
-Select **R** to reset the lab environment
-Select **6** (this step may take a couple of minutes)
+2. Select **R** to reset the lab environment
+3. Select **6** (this step may take a couple of minutes)
 Review the overview notes on the following screen
- Select **Q** to quit.
+4. Select **Q** to quit.
 
-## **Step 2**:  Review
+## **STEP 2**:  Review GoldenGate
 The step above copied the GoldenGate configuration files to the GG Home directories, under ./dirprm.
 
-Review the content of each of these files to explore how GoldenGate is being configured.
+1. Review the content of each of these files to explore how GoldenGate is being configured.
 
 Optionally view these files, same as in previous lab:
 
@@ -68,7 +68,7 @@ Optionally view these files, same as in previous lab:
 <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
 ````
 ````
-<copy> cd /u01/gg4hadoop/dirprm</copy>
+<copy> cd /u01/gg4hadoop123010/dirprm</copy>
 ````
 ````
 <copy>view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby</copy>
@@ -82,10 +82,11 @@ Optionally view these files, same as in previous lab:
 ````
 <copy>view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties</copy>
 ````
-## **Step 3**: Configuration
+## **STEP 3**: GoldenGate Replication
+
 1.  First we will start the GG manager process on both the source and target. Start 2 terminal sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-2. In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
+2. In the **first session**, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 ````
 <copy>cd /u01/gg4mysql</copy>
 ````
@@ -104,7 +105,7 @@ Optionally view these files, same as in previous lab:
 
   ![](./images/e2.png " ")
 
- 3. In the second session, go to the GG Home for Hadoop, and start the manager process. You can cd to the directory:
+ 3. In the **second session**, go to the GG Home for Hadoop, and start the manager process. You can cd to the directory:
 
 ````
 <copy>cd /u01/gg4hadoop123010</copy>
@@ -155,7 +156,7 @@ Optionally view these files, same as in previous lab:
   ![](./images/e4.png " ")
   ![](./images/e5.png " ")
 
-## **STEP 2**:GoldenGate Target Configuration
+## **STEP 4**:GoldenGate Kafka Target 
 
 1. Now that the source side is setup, let’s configure GG on the target side (Kafka).
 
@@ -164,13 +165,13 @@ Optionally view these files, same as in previous lab:
 ![](./images/e6.png " ")
 
 ````
-<copy>cd dirprm</copy>
+<copy>cd /u01/gg4hadoop123010/dirprm</copy>
 ````
 ````
 <copy>vi rkafka.properties</copy>
 ````
 ````
-<copy>Remove "--" from below</copy>
+<copy>Remove "--" prefix</copy>
 ````
 ````
 <copy>---kafka</copy>
@@ -206,20 +207,26 @@ Optionally view these files, same as in previous lab:
 ````
 ````
 <copy>info all</copy>
-
 ````
-**Before we start the GG Kafka replicat process, we need to start the Kafka Broker. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):**
+Before we start the GG Kafka replicat process, we need to **start the Kafka Broker**. 
+
+4. Start a new session, connect to ggadmin (then click Q to get to a prompt):**
 
 ![](./images/e8.png " ")
 
 ````
 <copy>startkafkabroker</copy>
 ````
-4. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+![](./images/e9.png)
 
-![](./images/e9.png " ")
+5. Start a **new session**, connect to ggadmin
+````
+<copy>sudo su - ggadmin</copy>
+````
+ (then click Q to get to a prompt):
 
-## **STEP 3**:GoldenGate Replication to Kafka
+
+## **STEP 5**:GoldenGate Replication to Kafka
 
 1. Now that GG processes have been created and the Kafka Broker has been started, let’s start the GG replicat for Kafka. Go back to the GG Home for Hadoop ggsci session:
 
@@ -251,12 +258,6 @@ Optionally view these files, same as in previous lab:
 <copy>consumetopic gg2kafka_json.dept</copy>
 
 ````
-````
-<copy>start rkafka</copy>
-````
-````
-<copy>info all</copy>
-````
 
 3. Also take a look at the Kafka schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
 
@@ -272,22 +273,25 @@ Optionally view these files, same as in previous lab:
 <copy>more gg2kafka_json.dept.schema.json</copy>
 ````
 
-4. Next we’ll apply more DML to the source, then we’ll consume the emp topic, and see the additional data get appended to the topic. Run this from another session, since the consumetopic command runs in the foreground, and outputs the results. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+4. Next we’ll apply more DML to the source, then we’ll consume the emp topic, and see the additional data get appended to the topic. Run this from another session, since the consumetopic command runs in the foreground, and outputs the results. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt)
 
 ![](./images/e13.png " ")
 
 ````
 <copy>consumetopic gg2kafka_json.emp
 ````
-5. Now go back to the previous session, and run the DML script:
+5. Now go back to the previous session, and run the DML script
 
 ![](./images/e14.png " ")
 
-```
-<copy>dmlsource</copy>
-```
 
-6. Now go back to the session running ‘consumetopic gg2kafka_json.emp’, you should see the new messages written to the emp topics. Scroll up to see "op-type" "U" or "D". For Updates, GG will write the before and after image of the operation
+````
+<copy>dmlsource</copy>
+
+````
+
+
+1. Now go back to the session running ‘consumetopic gg2kafka_json.emp’, you should see the new messages written to the emp topics. Scroll up to see "op-type" "U" or "D". For Updates, GG will write the before and after image of the operation
 
 ![](./images/e15.png)
 
@@ -303,6 +307,7 @@ Optionally view these files, same as in previous lab:
 ````
 <copy>stats rkafka total</copy>
 ````
+
 ## Summary
 In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rkafka’ read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
 
