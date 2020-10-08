@@ -3,6 +3,10 @@
 ## Introduction
 In this lab, we will use the Cloning feature of Oracle E-Business Suite Cloud Manager to clone your Oracle E-Business Suite environment.
 
+Watch the short video to clone Oracle E-Business Suite using cloud manager.
+
+[](youtube:Rxm2_5uL0Lg)
+
 Estimated Lab Time: 15 minutes
 
 ### Objectives
