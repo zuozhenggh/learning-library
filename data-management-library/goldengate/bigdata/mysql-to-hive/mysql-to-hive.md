@@ -248,7 +248,14 @@ Now that GG processes have been created and started on both the source and targe
 
 2. Click on Query, Editor, Select Hive
 
-  ![](./images/c21.png " ")
+  ![](./images/hive1.png " ")
+  signon using cloudera/cloudera
+
+   ![](./images/hive2.png " ")
+   Query, Editor, Hive
+
+  ![](./images/hive3.png " ")
+
 
 3.	Pull down on Database selection, and select `ggtarget2hive_avro`
 
