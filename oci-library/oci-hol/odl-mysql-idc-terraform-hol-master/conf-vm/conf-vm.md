@@ -22,7 +22,7 @@ Estimated Lab Time: 15 minutes
 
 ## **STEP 2**: Create your SSH Keys
 
-1. In this step, you will generate your SSH Keys to allow secure connections from your machine to the servers we will create on OCI.
+1. In this step, you will generate your SSH Keys to allow secure connections from your machine to the servers we will create on OCI. **Pay attention that you should not enter a passphrase, leave it blank!**
 
     ```
     $ ssh-keygen -t rsa
@@ -55,12 +55,12 @@ Estimated Lab Time: 15 minutes
     ```
     $ cd ~bin
     $ wget \
-    https://releases.hashicorp.com/terraform/0.13.2/terraform_0.13.2_linux_amd64.zip
-    $ unzip terraform_0.13.2_linux_amd64.zip 
-    Archive:  terraform_0.13.2_linux_amd64.zip
+    https://releases.hashicorp.com/terraform/0.13.4/terraform_0.13.4_linux_amd64.zip
+    $ unzip terraform_0.13.4_linux_amd64.zip 
+    Archive:  terraform_0.13.4_linux_amd64.zip
       inflating: terraform 
     $ terraform --version
-    Terraform v0.13.2
+    Terraform v0.13.4
     ``` 
 
     ### For Windows users
