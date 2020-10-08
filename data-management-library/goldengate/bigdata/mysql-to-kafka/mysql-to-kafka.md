@@ -11,7 +11,7 @@ Estimated Lab Time:  60 minutes
 
 
 ### Objectives
-- GoldenGate replication from **MySQL to Kafka **
+- GoldenGate replication from **MySQL to Kafka**
 
 ### Prerequisites
 This lab assumes you have:
@@ -56,7 +56,7 @@ These two sessions will be used respectively for `source` and `target` execution
     <copy>view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
     ```
-    <copy> cd /u01/gg4mysql/dirprm</copy>
+    <copy> cd /u01/gg4mysql/dirprm
     view /u01/gg4mysql/dirprm/mgr.prm</copy>
     ```
     ```
@@ -66,7 +66,7 @@ These two sessions will be used respectively for `source` and `target` execution
     <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
     ```
     ```
-    <copy> cd /u01/gg4hadoop123010/dirprm</copy>
+    <copy> cd /u01/gg4hadoop123010/dirprm
     view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby</copy>
     ```
     ```
@@ -161,7 +161,7 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
   ![](./images/e6.png " ")
 
     ```
-    <copy>cd dirprm</copy>
+    <copy>cd dirprm
     vi rkafka.properties</copy>
     ```
 
@@ -248,7 +248,7 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
   ![](./images/e12.png " ")
 
     ```
-    <copy>cd dirdef</copy>
+    <copy>cd dirdef
     ls -lrt
     more gg2kafka_json.dept.schema.json</copy>
     ```
