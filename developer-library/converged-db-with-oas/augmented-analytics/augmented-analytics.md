@@ -47,7 +47,7 @@ The below pre-loaded data object is available in Converged Database.
 
 ## Step 2: Project Creation From Data Set
 
-In the **Data** tab, click on the added data set.  This will open screen for project creation.
+1. In the **Data** tab, click on the added data set.  This will open screen for project creation.
 ![](./images/aa7.png " ")
 
 ## Step 3: Explain Feature
