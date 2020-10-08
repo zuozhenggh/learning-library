@@ -22,7 +22,7 @@ Estimated Lab Time: 15 minutes
 
 ## **STEP 2**: Create your SSH Keys
 
-1. In this step, you will generate your SSH Keys to allow secure connections from your machine to the servers we will create on OCI.
+1. In this step, you will generate your SSH Keys to allow secure connections from your machine to the servers we will create on OCI. **Pay attention that you should not enter a passphrase, leave it blank!**
 
     ```
     $ ssh-keygen -t rsa
