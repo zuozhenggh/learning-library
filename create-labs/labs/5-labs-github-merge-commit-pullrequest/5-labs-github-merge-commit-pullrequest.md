@@ -1,4 +1,4 @@
-# Merge, Commit, Create Pull Request
+# Use GitHub to Commit to Git Repository (Git Web UI)
 
 ## Introduction
 

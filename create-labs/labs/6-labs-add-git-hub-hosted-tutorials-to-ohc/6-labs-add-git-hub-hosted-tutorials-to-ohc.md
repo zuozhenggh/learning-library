@@ -62,8 +62,8 @@ You need to work with your manager or Lead to get this link added to OHC.
 * **Author:**
     +
 *
-* **Last Updated By/Date:** Anuradha Chepuri, September 2020
+* **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
 ## See an issue?  
 
-Please open up a request [here](https://github.com/oracle/learning-library/issues).
+Please a request [here](https://github.com/oracle/learning-library/issues). Include the workshop name and lab in your request.

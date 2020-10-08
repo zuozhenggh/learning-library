@@ -1,9 +1,8 @@
 # Understand the Learning-Library Folder Structure
 
-## INTRODUCTION
+## Introduction
 This lab describes the prescribed folder structure that we need follow to develop labs and workshops
 ### Objectives
-
 * Understand the Learning Library Foldser Structure
 * Get to know the Components
 * Set up the GitHub Environment
@@ -26,12 +25,12 @@ The following image shows a folder structure for a big-data workshop. You can se
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 
-## WANT TO LEARN MORE?
+## Want to Learn More?
 
 * [How to Use the GitHub Template](https://otube.oracle.com/media/Use+GitHub+Template/0_780dlc2i)
 
 
-## ## ACKNOWLEDGEMENTS
+## Acknowledgements
 
 * **Authors:**
     * Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate

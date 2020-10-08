@@ -1,6 +1,6 @@
 # Use Atom Editor to Develop Content and Host on Atom Live Server
 
-## INTRODUCTION
+## Introduction
 
 You need to use your preferred Editor to author and edit your Markdown (.md) content for rendering the Workshop output. Oracle recommended Editor is Atom and the Atom Live Server
 
@@ -72,9 +72,9 @@ The Workshop is displayed along with the labs. The labs contained in this worksh
 ## WANT TO LEARN MORE?
 [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
 
-## ACKNOWLEDGEMENTS
+## Acknowledgements
 * **Authors:**
-    * Anuradha Chepuri
+    * Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate
 
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
