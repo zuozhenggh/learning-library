@@ -3,6 +3,10 @@
 ## Introduction
 In this lab, we will use the One-Click Provisioning feature of Oracle E-Business Suite Cloud Manager to provision an Oracle E-Business Suite environment.
 
+Watch the short video to provision Oracle E-Business Suite using cloud manager.
+
+[](youtube:Y2VvbSsK6K8)
+
 Estimated Lab Time: 45 minutes
 
 ### Objectives
