@@ -116,22 +116,32 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 
 - Click the **Script Output** tab so that you can view the script activities.
 
-- On the toolbar, click the **Run Script** button (page icon with the green arrow). The script takes a couple of minutes to run. In the bottom-left corner, the cog wheel turns as the script is being processed. Don't worry if you see some error messages. These are expected the first time you run the script.
+- On the toolbar, click the **Run Script** button (page icon with the green arrow). The script takes a couple of minutes to run. In the bottom-left corner, the cog wheel turns as the script is being processed. Don't worry if you see some error messages on the **Script Output** tab. These are expected the first time you run the script.
 
 - When the script is finished, on the **Navigator** tab on the left, select the **HCM1** schema from the first drop-down menu. In the second drop-down menu, leave **Tables** selected.
 
   - If you don't see **HCM1** listed, sign out and sign in again, and then select the **HCM1** schema from the first drop-down menu.
 
-- Clear the worksheet, and then for each table below, drag the table to the worksheet and process the query. Choose **Select** as your insertion type when prompted. Make sure that you have the same number of rows in each table as stated below.
-  - `COUNTRIES` - 25 rows
-  - `DEPARTMENTS` - 27 rows
-  - `EMPLOYEES` - 107 rows
-  - `EMPT_EXTENDED` - 107 rows
-  - `JOBS` - 19 rows
-  - `JOB_HISTORY` - 10 rows
-  - `LOCATIONS` - 23 rows
-  - `REGIONS` - 4 rows
-  - `SUPPLEMENTAL_DATA` - 149 rows
+- Clear the worksheet, and then for each table listed below, drag the table to the worksheet and process the query. Choose **Select** as your insertion type when prompted. Make sure that you have the same number of rows in each table as stated below.
+
+    `COUNTRIES` - 25 rows
+
+    `DEPARTMENTS` - 27 rows
+
+    `EMPLOYEES` - 107 rows
+
+    `EMPT_EXTENDED` - 107 rows
+
+    `JOBS` - 19 rows
+
+    `JOB_HISTORY` - 10 rows
+
+    `LOCATIONS` - 23 rows
+
+    `REGIONS` - 4 rows
+
+    `SUPPLEMENTAL_DATA` - 149 rows
+    
 
 
 

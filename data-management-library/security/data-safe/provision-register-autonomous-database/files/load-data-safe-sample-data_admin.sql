@@ -1116,7 +1116,7 @@ create user GRINDELWALD identified by Oracle123_Oracle123;
 -- Will get privileges to be flagged as Non-Privileged, Medium Risk
 create user WEASLEY identified by Oracle123_Oracle123;
 create user LESTRANGE identified by Oracle123_Oracle123;
-create user SKEETER identified by Oracle1234_Oracle1234;
+create user SKEETER identified by Oracle123_Oracle123;
 
 
 alter user PU_PETE identified by Oracle123_Oracle123 profile POWERUSERS;
