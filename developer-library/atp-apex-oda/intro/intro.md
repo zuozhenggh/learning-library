@@ -1,4 +1,4 @@
-# Oracle APEX and Digital Assistant
+# Introduction
 
 ![Oracle](images/banner.png)
 
@@ -6,41 +6,40 @@
 
 This workshop walks you through the steps to use **Autonomous Database** and **Application Express (APEX)** to store information, offer a **REST API** with **Oracle REST Data Services (ORDS)** and enable you to interact with your customers by keeping a conversation with **Digital Assistant**.
 
-Estimated total workshop time 2 hours.
+Estimated Workshop Time: 120 minutes
 
-## Who Should Do This Workshop
+### Objectives
 
-You want to **store information in a easy and powerful database** and provide **a 24/7 conversational experience** with people using your services.
-
-You want to **learn Oracle Digital Assistant**.
-
-You are also interested in exploring modern and quick **APEX** development and build **secure and powerful REST APIs**.
+- Store information in a powerful database 
+- Provide a 24/7 conversational experience with people using your services
+- Explore Oracle Digital Assistant
+- Explore modern and quick APEX development 
+- Build secure and powerful REST APIs
 
 ## **STEP 1**: Requirements
 
-In order to walk through this workshop you need to develop the integration with **REST API**. You need [Node.js](https://nodejs.org/en/) for that.
+1. In order to walk through this workshop you need to develop the integration with **REST API**. You need [Node.js](https://nodejs.org/en/) for that.
 
-Node.js is an asynchronous event-driven JavaScript runtime. **Node.js** is designed to build scalable network applications.
+2. Node.js is an asynchronous event-driven JavaScript runtime. **Node.js** is designed to build scalable network applications.
 
-Additionally you need to be familiar with the use of **Command Prompt/Terminal** so we will show you briefly the way to use it for Windows users.
+3. Additionally you need to be familiar with the use of **Command Prompt/Terminal** so we will show you briefly the way to use it for Windows users.
 
-As a **Windows user** you need to type on the **Windows Search** Icon:
+    As a **Windows user** you need to type on the **Windows Search** Icon:
 
-```
-cmd
-```
+    ```
+    cmd
+    ```
 
-and select **Command Prompt**.
+    and select **Command Prompt**.
 
-![Windows search Terminal](./images/cmd_1.png)
+    ![Windows search Terminal](./images/cmd_1.png)
 
-That will open the Command Prompt/Terminal so you are ready to go.
+    That will open the Command Prompt/Terminal so you are ready to go.
 
-![Terminal](./images/cmd_2.png)
+    ![Terminal](./images/cmd_2.png)
 
-[Here you can find a basic guidance of commands that you can use on the terminal.](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
+    [Here you can find a basic guidance of commands that you can use on the terminal.](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
 
-Don't worry all the commands that we will need on the workshop are part of the code so you don't need to learn any additional one.
 
 ## **STEP 2**: Node.js Installation
 
@@ -92,9 +91,9 @@ At this point, you are ready to start learning!
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Priscila Iruela - Database Business Development - EMEA Oracle Digital
-- **Contributors** - Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center
-- **Last Updated By/Date** - 
+- **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
+- **Contributors** - Melanie Ashworth-March
+- **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -4,19 +4,17 @@
 
 ## Introduction
 
-**Oracle Analytics Cloud** provides the industry's most comprehensive cloud analytics in a single unified platform, including everything from
-self-service visualization and powerful inline data preparation to enterprise reporting, advanced analytics, and self-learning analytics
-that deliver proactive insights.
+**Oracle Analytics Cloud** provides the industry's most comprehensive cloud analytics in a single unified platform, including everything from self-service visualization and powerful inline data preparation to enterprise reporting, advanced analytics, and self-learning analytics that deliver proactive insights.
 
-You are going to use an **Oracle Analytics Cloud** instance to give your end users a self-service approach to analysing the data.
+You are going to use an **Oracle Analytics Cloud** instance to give your end users a self-service approach to analyzing the data.
 
-In this workshop, you will:
+### Objectives
 
 - **Create a connection** from Oracle Analytics Cloud to Autonomous Database
-- **Prepare** the dataset
-- **Create Visualizations** to analyse the data
+- **Prepare** a dataset
+- **Create Visualizations** to analyse data
 
-Estimated workshop Time 1 hour and 15 minutes.
+Estimated Lab Time: 75 minutes
 
 ## **STEP 1**: Create the connection from Oracle Analytics Cloud to Autonomous Database
 
@@ -132,7 +130,7 @@ existing projects.
 
     ![Data Set Creation - Ready](./images/lab300_15.png)
 
-    Let start by analysing the **Sales History** fact table.
+    Let start by analyzing the **Sales History** fact table.
 
 4. Select **SALES** table from the *SH schema*.
 
@@ -410,20 +408,13 @@ existing projects.
 
     ![OAC canvas - Print](./images/lab300_70.png)
 
-## It works
-
-You have achieved:
-- Connection from Oracle Analytics Cloud to Autonomous Database
-- Preparation of datasets
-- Visualizations to analyse the data
-
-Congratulations! Well done!
+*Congratulations! Well done!*
 
 ## **Acknowledgements**
 
-- **Author** - Priscila Iruela - Database Business Development - EMEA Oracle Digital, Juan Antonio Martin Pedro - Analytics Business Development - Oracle EMEA
-- **Contributors** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center, Andrea Zengin - Autonomous Database Business Development Director - Oracle EMEA
-- **Last Updated By/Date** -
+- **Author** - Priscila Iruela - Database Business Development | Juan Antonio Martin Pedro - Analytics Business Development
+- **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
+- **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
