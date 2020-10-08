@@ -11,7 +11,7 @@ Estimated Lab Time:  60 minutes
 
 
 ### Objectives
-- GoldenGate replication from **MySQL to Kafka **
+- GoldenGate replication from **MySQL to Kafka**
 
 ### Prerequisites
 This lab assumes you have:
@@ -44,7 +44,7 @@ These two sessions will be used respectively for `source` and `target` execution
 ## **STEP 1**: Explore GoldenGate Configuration
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
-  ![](./images/menu1006.png " ")
+  ![](./images/labmenu_opt1.png " ")
 
 2. Select **R** to reset the lab environment, then select **6**
 
@@ -56,7 +56,7 @@ These two sessions will be used respectively for `source` and `target` execution
     <copy>view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
     ```
-    <copy> cd /u01/gg4mysql/dirprm</copy>
+    <copy> cd /u01/gg4mysql/dirprm
     view /u01/gg4mysql/dirprm/mgr.prm</copy>
     ```
     ```
@@ -66,7 +66,7 @@ These two sessions will be used respectively for `source` and `target` execution
     <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
     ```
     ```
-    <copy> cd /u01/gg4hadoop/dirprm</copy>
+    <copy> cd /u01/gg4hadoop123010/dirprm
     view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby</copy>
     ```
     ```
@@ -142,6 +142,7 @@ These two sessions will be used respectively for `source` and `target` execution
     ```
     <copy>start pmphadop</copy>
     ```
+    **or use start ALL **
     ```
     <copy>start *</copy>
     ```
@@ -160,7 +161,8 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
   ![](./images/e6.png " ")
 
     ```
-    <copy>cd dirprm</copy>
+    <copy>cd /u01/gg4hadoop123010/dirprm
+  
     vi rkafka.properties</copy>
     ```
 
@@ -240,19 +242,14 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
     <copy>consumetopic gg2kafka_json.dept</copy>
 
     ```
-    ```
-    <copy>start rkafka</copy>
-    ```
-    ```
-    <copy>info all</copy>
-    ```
+
 
 3. Also take a look at the Kafka schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
 
   ![](./images/e12.png " ")
 
     ```
-    <copy>cd dirdef</copy>
+    <copy>cd dirdef
     ls -lrt
     more gg2kafka_json.dept.schema.json</copy>
     ```

@@ -37,7 +37,7 @@ Oracle GoldenGate for Big Data’s real-time data streaming platform also allows
 Oracle GoldenGate for Big Data offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data
 integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making.
 
-## **STEP 1**: Login in to Instance
+## **STEP 1**: Login into Instance
 
 **Access image via Live Lab Marketplace**
 
@@ -49,9 +49,8 @@ integration architectures to big data systems without impacting the performance 
 
 2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  *Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS*
   
-    <copy>su – ggadmin</copy>
-    Password = oracle
-   
+    <copy>sudo su – ggadmin</copy>
+
 
 3. The following Lab Menu will be displayed
 
@@ -82,7 +81,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka
-* **Last Updated By/Date** - Brian Elliott, September 2020
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
 
 ## See an issue?

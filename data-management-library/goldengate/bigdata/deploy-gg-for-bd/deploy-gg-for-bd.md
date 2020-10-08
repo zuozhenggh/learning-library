@@ -1,4 +1,4 @@
-# Deploy GoldenGate for Bid Data
+# Deploy GoldenGate for Big Data
 
 ## Introduction
 
@@ -47,7 +47,7 @@ The following Lab Menu will be displayed
 1.  **Select Option 1**
 
 Review the overview notes on the following screen, Select **Q** to quit.
-      ![](./images/menu1006.png " ")
+      ![](./images/labmenu_opt1.png " ")
 
 These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
@@ -60,7 +60,11 @@ These online notes have been provided so you can cut/paste file names to another
     **type**
 
     ```
-    <copy>create subdirs</copy>
+    <copy>./ggsci</copy>
+
+    <copy>info all</copy>
+    
+    <copy>exit</copy>
     ```
     **type**
     ```

@@ -45,7 +45,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 ## **STEP 1**: Explore GoldenGate Configuration
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
-  ![](./images/menu1006.png " ")
+  ![](./images/labmenu_opt1.png " ")
 
 2. Select **R** to reset the lab environment, then select **3**
 
@@ -54,11 +54,11 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 4. Review the content of each of these files to explore how GoldenGate is being configured.
 
     ```
-    <copy>cd /u01/gg4hadoop/dirprm
-    view /dirprm/create_hdfs_replicat.oby</copy>
+    <copy>cd /u01/gg4hadoop123010/dirprm
+    view create_hdfs_replicat.oby</copy>
     ```
     ```
-    <copy>cd /u01/gg4hadoop/dirprm
+    <copy>cd /u01/gg4hadoop123010/dirprm
     view /u01/gg4hadoop123010/dirprm/rhdfs.prm</copy>
     ```
     ```
@@ -114,9 +114,11 @@ Now we need to start the GG manager process on both the source and target. Keep 
   ![](./images/b6.png " ")
 
     ```
+    <copy>./ggsci</copy>
+    ````
+    ```
     <copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
-
     ```
     <copy> info all</copy>
      ```
@@ -129,9 +131,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
     ```
     <copy> start pmphadop</copy>
     ```
-    ```
-    <copy> start *</copy>
-    ```
+
     ```
     <copy> info all</copy>
     ```
@@ -264,7 +264,7 @@ The stats command displays the statistics of the data that GoldenGate processed 
 
  - Credentials: cloudera/cloudera
 
-2. Click on File Browser (Manage HDFS) then Navigate to `/user/ggtarget/hdfs…`
+2. Click on Hamburger Menu, File Browser then Navigate to `/user/ggtarget/hdfs…`
 
   ![](./images/b19.png " ")
   ![](./images/b16.png " ")
