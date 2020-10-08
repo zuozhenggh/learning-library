@@ -45,7 +45,7 @@ Estimated Lab Time: 20 minutes
 
     number_of_nodes = "3"
 
-    node_shape = "VM.Standard1.1"
+    node_shape = "VM.Standard.E2.1"
     ```
 
 ## **STEP 3**: tenancy_ocid
@@ -134,7 +134,7 @@ Estimated Lab Time: 20 minutes
 
     The different shapes can be found on OCI Dashboard:
 
-    ![](.././images/gui/09.png)
+    ![](.././images/gui/13.png)
 
 You can get more info [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm).
 
