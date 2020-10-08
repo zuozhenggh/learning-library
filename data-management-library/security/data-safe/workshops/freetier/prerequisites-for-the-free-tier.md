@@ -31,12 +31,19 @@ Be sure you have the following before starting:
 
 If you already have an Oracle Cloud Free Tier account, you can skip this step.
 
-- In a browser, enter the following URL: <a  href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en" >oracle.com/cloud/free</a>.
-- Click **Start for free**. The **Oracle Cloud Free Tier** page is displayed.
+- In a browser, enter the following URL: `https://oracle.com/cloud/free`.
 
-  ![](images/oracle-cloud-free-tier-page.png)
+- Click **Start for free**.
 
-- Select **Country** or **Territory**, enter your **Email** address, enter your **First Name** and **Last Name**, and then click **Verify my email**. A verification email titled **OCI Email Verification** is sent to the email address you specified.
+  ![Start for Free option](images/start-for-free.png)
+
+
+
+
+
+- On the **Oracle Cloud Free Tier** page, select a **country** or **territory**, enter your **email address**, enter your **first name** and **last name**, and then click **Verify my email**. A verification email titled **OCI Email Verification** is sent to the email address you specified.
+
+  ![Oracle Cloud Free Tier page](images/oracle-cloud-free-tier-page.png)
 
 -  To continue with setting up your Oracle Cloud account, confirm your email address by click the link in your email. You are returned to the **Oracle Cloud Free Tier** page.
 
@@ -76,7 +83,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
 - Enter the URL [cloud.oracle.com](https://cloud.oracle.com).
 
-- On the toolbar, click **View Accounts**, and then select **Sign in to Cloud**.
+- On the toolbar, click **View Accounts**, and then in the **Cloud Account** section, select **Sign in to Cloud**.
 
    ![Sign in to Cloud option](images/349900291.png)
 
@@ -86,7 +93,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
   ![Cloud Account Name page](images/349900292.png)
 
 
-- In the **Oracle Cloud Infrastructure** section, enter your username and password for your Oracle Cloud account, and then click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.  
+- In the **Oracle Cloud Infrastructure** section, enter your **username** and **password** for your Oracle Cloud account, and then click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.  
 
   ![SIGN IN page for Oracle Cloud Infrastructure](images/349900293.png)
 
@@ -111,7 +118,7 @@ If you have a question during this workshop, you can use the **[Autonomous Data 
 ## Acknowledgements
 
 - Author - Jody Glover, UA Developer, Oracle Database team
-- Last Updated By/Date - Jody glover, Oracle Database team, October 8, 2020
+- Last Updated By/Date - Jody Glover, Oracle Database team, October 8, 2020
 
 
 ## See an Issue?

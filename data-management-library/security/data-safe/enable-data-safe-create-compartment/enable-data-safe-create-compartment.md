@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab shows you how to enable Oracle Data Safe in a region of your tenancy and create a compartment.
+For this workshop, you need to enable the Oracle Data Safe service in at least one region of your tenancy. Be aware that you cannot disable Oracle Data Safe after it's enabled. This lab also shows you how to create a compartment in Oracle Cloud Infrastructure Identity and Access Management (IAM), which you later use to store your Autonomous Database and Oracle Data Safe resources.
 
-**Note** The Oracle Data Safe service is not available to you if your Free Tier trial period has ended and you are now using Always Free resources.
+**Note:** The Oracle Data Safe service is not available to you if your Free Tier trial period has ended and you are now using Always Free resources.
 
 Estimated Lab Time: 5 minutes
 
@@ -12,8 +12,8 @@ Estimated Lab Time: 5 minutes
 
 In this lab, you'll:
 
-- Enable Oracle Data Safe
-- Create a compartment
+- Enable Oracle Data Safe in a region of your tenancy
+- Create a compartment in IAM
 
 
 ### Prerequisites
@@ -24,36 +24,47 @@ Be sure you have the following before starting:
 
 ### Assumptions
 
-- You are signed in to the Oracle Cloud Infrastructure Console using the Free Tier option.
+- You are using Oracle Cloud Infrastructure's Free Tier.
+- You are signed in to the Oracle Cloud Infrastructure Console.
 
 
 
-## **STEP 1** Enable Oracle Data Safe
+## **STEP 1:** Enable Oracle Data Safe
 
-For this workshop, you need to enable the Oracle Data Safe service in at least one region of your tenancy. Be aware that you cannot disable Oracle Data Safe after it's enabled.
+- At the top of the page on the right, select a region in your tenancy (usually your Home region), for example, **US East (Ashburn)**.
 
-- At the top of the page on the right, select the region in which you want to enable Oracle Data Safe, for example, **US East (Ashburn)**.
+  ![Select Home region](images/select-region.png)
 
-- From the navigation menu, select **Data Safe**. The **Overview** page is displayed.
+- From the navigation menu, select **Data Safe**.
 
-- Click **Enable Data Safe** and wait a couple of minutes for the service to enable. When it's enabled, a confirmation message is displayed in the upper right corner.
+  ![Select Data Safe from the Navigation menu](images/navigation-menu-select-data-safe.png)
+
+  The **Overview** page is displayed.
+
+- Click **Enable Data Safe** and wait a couple of minutes for the service to enable.
+
+  ![Enable Data Safe button](images/enable-data-safe-button.png)
+
+- When it's enabled, a confirmation message is displayed in the upper-right corner.
 
 
 ## **STEP 2:** Create a compartment
 
 You need to create a compartment in your tenancy to store your Autonomous Database and Oracle Data Safe resources. In the labs, this compartment is referred to as "your compartment."
 
-  - From the navigation menu, select **Identity**, and then **Compartments**. The Compartments page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
+  - From the navigation menu, select **Identity**, and then **Compartments**. The **Compartments** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
 
   - Click **Create Compartment**. The **Create Compartment** dialog box is displayed.
 
   - Enter a name for the compartment, for example, `dsc01` (short for Data Safe compartment 1).
 
-  - Enter a description for the compartment, for example, **Compartment1 for the Oracle Data Safe Workshop**.
+  - Enter a description for the compartment, for example, **Compartment for the Oracle Data Safe Workshop**.
+
+  ![Create Compartment dialog box](images/create-compartment.png)
 
   - Click **Create Compartment**.
 
-You can continue to the next lab, [**Introduction**](../introduction/introduction.md).
+Continue to the next lab, [**Provision and Register an Autonomous Database**](../provision-register-autonomous-database/provision-register-autonomous-database.md).
 
 If you have a question during this workshop, you can use the **[Autonomous Data Warehouse Forum](https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary)** on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Data Safe. Are you completely new to the **Cloud Customer Connect** forums? Visit our **[Getting Started forum page](https://cloudcustomerconnect.oracle.com/pages/1f00b02b84)** to learn how to best leverage community resources.
 
