@@ -115,9 +115,10 @@ Now we need to start the GG manager process on both the source and target. Keep 
 
     ```
     <copy>./ggsci</copy>
+    ````
+    ```
     <copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
-
     ```
     <copy> info all</copy>
      ```
@@ -130,9 +131,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
     ```
     <copy> start pmphadop</copy>
     ```
-    ```
-    <copy> start *</copy>
-    ```
+
     ```
     <copy> info all</copy>
     ```
@@ -265,7 +264,7 @@ The stats command displays the statistics of the data that GoldenGate processed 
 
  - Credentials: cloudera/cloudera
 
-2. Click on File Browser (Manage HDFS) then Navigate to `/user/ggtarget/hdfs…`
+2. Click on Hamburger Menu, File Browser then Navigate to `/user/ggtarget/hdfs…`
 
   ![](./images/b19.png " ")
   ![](./images/b16.png " ")

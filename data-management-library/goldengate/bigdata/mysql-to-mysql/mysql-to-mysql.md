@@ -68,6 +68,8 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     ```
     <copy>view /u01/gg4mysql/dirprm/repmysql.prm</copy>
     ```
+    **:q!** to exit viewing
+
 5. Go to the GG Home for MySQL by typing *ggmysql*
 
     ```
@@ -126,9 +128,7 @@ processes:
     ```
     <copy>start repmysql</copy>
     ```
-    ```
-    <copy>start * </copy>
-    ```
+    
     ```
     <copy>info all</copy>
     ```

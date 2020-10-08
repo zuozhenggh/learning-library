@@ -60,7 +60,11 @@ These online notes have been provided so you can cut/paste file names to another
     **type**
 
     ```
-    <copy>create subdirs</copy>
+    <copy>./ggsci</copy>
+
+    <copy>info all</copy>
+    
+    <copy>exit</copy>
     ```
     **type**
     ```

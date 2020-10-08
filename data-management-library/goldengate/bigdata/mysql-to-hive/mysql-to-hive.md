@@ -87,6 +87,9 @@ Now we need to start the GG manager process on both the source and target. Keep 
  ![](./images/c2.png " ")
 
     ```
+    <copy>ggmysql</copy>
+    ```
+    ```
      <copy> pwd
      ./ggsci</copy>
     ```
@@ -128,6 +131,8 @@ Now we need to start the GG manager process on both the source and target. Keep 
 
     ```
      <copy>./ggsci</copy>
+     ```
+     ```
     <copy> obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
     ```
@@ -249,23 +254,27 @@ Now that GG processes have been created and started on both the source and targe
 2. Click on Query, Editor, Select Hive
 
   ![](./images/hive1.png " ")
-  signon using cloudera/cloudera
 
    ![](./images/hive2.png " ")
    Query, Editor, Hive
 
   ![](./images/hive3.png " ")
 
+![](./images/hive23.png " ")
 
-3.	Pull down on Database selection, and select `ggtarget2hive_avro`
+  **Schema:**
 
-4.	Then hover the mouse over the emp table, and click the `preview sample data` –small grey icon Hue screens:
-
-  ![](./images/c22.png " ")
-
-  **`/ user/ ggtarget/ hive/ schema/ ggtarget2hive_avro.dept.avsc`**
+  **`/user/ ggtarget/ hive/ schema/ ggtarget2hive_avro.dept.avsc`**
 
   ![](./images/c26.png " ")
+
+**Data**
+
+   **`/user/ ggtarget/ hive/ data/ ggtarget2hive_avro.dept.avsc`**
+
+![](./images/hive24.png " ")
+
+![](./images/hive25.png " ")
 
 ## Summary
 In summary, we loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process `pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rhive` read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: `/user/ggtarget/hive/data/*` and `/user/ggtarget/hive/schema`
