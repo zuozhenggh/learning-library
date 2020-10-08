@@ -3,7 +3,7 @@
 
 ## About the Oracle Data Safe Workshop
 
-The labs in this workshop walk you through all the steps to get started using Oracle Data Safe. You begin by provisioning an Autonomous Data Warehouse instance in Oracle Cloud Infrastructure, load sample data into your database, and then register the database with Oracle Data Safe. After your database is set up, you learn how to perform common tasks in Oracle Data Safe, including how to provision audit and alert policies on your database, analyze alerts and audit reports, assess the security of your database configurations and users, and discover and mask sensitive data.
+The labs in this workshop walk you through all the steps to get started using Oracle Data Safe. You register an Autonomous Database with Oracle Data Safe and use that database with the main features in Oracle Data Safe. You learn how to provision audit and alert policies on your database, analyze alerts and audit reports, assess the security of your database configurations and users, and discover and mask sensitive data.
 
 ## About Oracle Data Safe
 
@@ -22,10 +22,8 @@ Watch our short video that explains key features in Oracle Data Safe: [https://y
 
 ## Workshop Objectives
 
-
-
 - Get comfortable with Oracle's public cloud services
-- Enable the Oracle Data Safe service in your tenancy
+- Enable the Oracle Data Safe service in your tenancy (free tier only)
 - Provision a new Autonomous Database instance on Shared Exadata Infrastructure and load sample data into it
 - Register your Autonomous Database with Oracle Data Safe
 - Provision audit and alert policies on your database with Oracle Data Safe
@@ -34,23 +32,10 @@ Watch our short video that explains key features in Oracle Data Safe: [https://y
 - Discover and mask sensitive data in Oracle Data Safe
 
 
-## Lab Breakdown
-
-
-
-- **Lab 1: Provision and Register an Autonomous Database** - From the Oracle Data Safe Console, provision an Autonomous Data Warehouse on Shared Exadata Infrastructure instance, load sample data into it, and register it with Oracle Data Safe.
-- **Lab 2: Provision Audit and Alert Policies** - Use the Activity Auditing feature to provision audit and alert policies on your database.
-- **Lab 3: Analyze Alerts and Audit Reports** - Continuing with the Activity Auditing feature, explore and analyze alerts as well as create an audit report.
-- **Lab 4: Assess Database Configurations and Users** - Run User Assessment and Security Assessment jobs against your database and then analyze the results.
-- **Lab 5: Discover and Mask Sensitive Data** - Use the Data Discovery and Data Masking features to find and mask sensitive data on your database.
-
-
 ## Want to Learn More About Oracle Data Safe?
 
 
 Use these links to find more information about Oracle Data Safe:
-
-
 
 - [Oracle Data Safe website](https://www.oracle.com/database/technologies/security/data-safe.html)
 - [Oracle Data Safe documentation on Oracle Cloud Infrastructure](https://docs.cloud.oracle.com/en-us/iaas/data-safe/index.html)
@@ -65,7 +50,7 @@ Use these links to find more information about Oracle Data Safe:
 
 
 - **Author** - Jody Glover, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Jody Glover, September 30, 2020
+- **Last Updated By/Date** - Jody Glover, October 8, 2020
 
 
 ## See an issue?
