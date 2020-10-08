@@ -281,7 +281,7 @@ In summary, we loaded data in MySQL database `ggsource`, GG extract process `ext
 
 You may now *proceed to the next lab*.
 
-## Learn More
+##  Learn More
 
 * [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
