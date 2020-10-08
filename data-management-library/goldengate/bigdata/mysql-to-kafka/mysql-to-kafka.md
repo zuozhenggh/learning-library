@@ -161,7 +161,8 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
   ![](./images/e6.png " ")
 
     ```
-    <copy>cd dirprm
+    <copy>cd /u01/gg4hadoop123010/dirprm
+  
     vi rkafka.properties</copy>
     ```
 
