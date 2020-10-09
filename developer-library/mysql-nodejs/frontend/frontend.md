@@ -1,41 +1,58 @@
 # Creating a Micro-Service and Frontend
 
-## Intro
+## Before You Begin
+
+### Objectives
+
+- Build a Web Frontend for our data using a serverless microsoervice
+- Learn about different ways to search for data in the MySQL Document Store and via SQL
+- LEarn to modify data in the MySQL Document Store
+
+### Introduction
 
 Up until now we invoked our function from command line and via events. Time
 for a Web Frontend.
 
-## Understanding API Gateway
+## **Step 1:** Understanding API Gateway
 
-API Gateway provides public access to private APIs. It provides different
+**API Gateway** provides public access to private APIs. It provides different
 features like rate limiting or authentication to protect your application.
 
-You find the *API Gateway* in the menu unter *Developer Services* right
-below *Functions* we visited before.
+You find the **API Gateway** in the menu unter **Developer Services** right
+below **Functions** we visited before.
 
-TODO Menu screenshot
+  ![](images/apigw_menu.png " ")
 
-Our Setup already created a Gateway called *DemoApp*. Click on it. A single
+Our Setup already created a Gateway called **DemoApp**. Click on it. A single
 Gateway can contain multiple Deployments. To find the Deployment the setup
-generated click on *Deployments* in the Resources menu on the left and
+generated click on **Deployments** in the Resources menu on the left and
 click on the deployment *apideployment2020....*.
+
+  ![](images/apigw_overview.png " ")
+
+**Note: If `DemoApp` is not listed make sure that the `node-mysql` compartment is
+selected in the box on the left!**
+
+  ![](images/apigw_details.png " ")
 
 A Deployment is a set of routes from the frontend to a backend service.
 Your Deployment's public Endpoint URL can be found on the Deployment page top
 right.
 
-TODO Screenshot
 
-In this deployment we have a preconfigured route. To see it click *Edit* and
-then *Routes* on the left.
 
-TODO Screenshot
+In this deployment we have a preconfigured route. To see it click **Edit** and
+then **Routes** on the left.
+
+  ![](images/apigw_edit.png " ")
+
+  ![](images/apigw_route.png " ")
 
 In there the path `/` is being forwarded to a file in the object storage. This
 is what the `htmlpages` *Bucket* is for we saw while exploring the Object Store
 in the previous Lab.
 
-Alright, let's try it out. Click *Cancel* to go back and copy the Endpoint
+Alright, let's try it out. Click **Cancel** to go back and copy the Endpoint
 URL, which looks like `https://bfds.....apigateway.us-ashburn-1.oci.customer-oci.com/node_mysql`
 into a new browser tab. And ... you will get an JSON file with a 404 error.
 
@@ -52,7 +69,7 @@ Time to create a new Function.
 *Note: If you consider the URL ugly you could use your own domain name after
 providing a TLS certificate. We will skip that here.*
 
-## Our first Document Search
+## **Step 2:** Our first Document Search
 
 One task needed is to list the employees per state they are located in.
 For serving the frontend a single function will be used. So let's create it,
@@ -111,32 +128,121 @@ response send to the client.
 *Note: Returning raw errors to a client can be a security issue. Raw errors
 should be logged for debugging purpose.*
 
-The function expects parameters to be provided as HTTP Headers in the Fn
+The function expects parameters to be provided as **HTTP Headers** in the Fn
 call. How they'll get there we see, when configuring the route in the
-API Gateway. So let's back into Console.
+API Gateway. So let's back into Console and open the Route configuration
+in the deployment. In the bottom click **+Another Route**
 
-TODO Screenshot
+Here we want to map from URLs like `.../state/AK`, `.../state/AL`, ... to
+our function, while passing the *Mode* and the state's abbreviation as headers.
 
+Set the **Path** of the new route to `/state/{name}`, which will map all the
+states using a placeholder. Since this is for reading the **Method** is **GET**.
+For calling our Function the **Type** is **Oracle Functions**, the **Application**
+is **DemoApp** and the **Function** is **peopleService**, the service fucntion
+we built and deployed above.
 
+  ![](images/apigw_route2.png " ")
 
-In case
+In order to set our extra **headers** click on **Show Route Request Policies**.
+Be sure to pick **Request** and not Response.
 
-Route:
+A new panel will appear. Under **Header Transformations** click **Add**.
 
-    Path:  /state/{name}
-    Methods: GET
-    Type:  Oracle Functions
-    Function: peopleService
+  ![](images/apigw_route2_header1.png " ")
 
-    Request Header Transformations
-    Action:
-   Set
-    Behavior	Header Name	Values
-    Overwrite	X-Value	${request.path[name]}
-    Overwrite	X-Mode	state
+On the side an overlay will appear. In there pick the **Action** value **Set**
+in order to set a header in the function request, for **Behavior** pick **Overwrite**.
 
+The **Header Name** has to match the one we expect in our Function's code, **X-Value**.
 
-## Using SQL for advanced queries
+As **Value** type `${request.path[name]}` and confirm by pressing enter, for
+this field to be accepted. This takes the value from the placeholder of the
+route's patrh we declared before.
+
+Then click **+Another Transform** and repeat this for the **X-Mode** header and value **state**.
+
+  ![](images/apigw_route2_header2.png " ")
+
+After clicking **Apply Changes** the panel in the main view updates.
+
+  ![](images/apigw_route2_header3.png " ")
+
+Click **Next** to continue with the Wizard. On the following screen you can verify the route configuration.
+
+  ![](images/apigw_route2_complete.png " ")
+
+After clicking **Save Changes** you will be sent back to the Deployment Overview page and the changes
+will be applied to the Gateway servers. Notifications on top right will notify you about the state.
+
+  ![](images/apigw_route2_confirm.png " ")
+
+Once the configuration is through you can retrieve the employee list from your browser by adding the
+route's path and state abbreviation to your endpoint's URL. Something like
+`https://bfds.....apigateway.us-ashburn-1.oci.customer-oci.com/node_mysql/state/FL`. This should
+provide you with a JSON document containing a list of people and their details.
+If you go back to the HTML page from our little application (URL in your browser ending with `node_mysql/`)
+you can pick a state from the dropdown and click **Show people from state**, which should load a list.
+
+Now you can explore the employees by state. Clicking on **Details** will show you the person's salary history.
+
+Trying to rais a salary or searching by salary will lead to an error though. Let's add that search.
+
+## **Step 3:** Using SQL for Advanced Queries
+
+Searching by state was relatively easy. A simple match on a specific element of the document
+using a path. Searching the salary in this data structure is a bit more complex. Let's take a look
+at the data again:
+
+    {
+        "_id": "00005f7b5b290000000000000067",
+        "city": {
+            "name": "Manokotak",
+            "state": "AK"
+        },
+        "last_name": "Flever",
+        "first_name": "Donny",
+        "salary_history": [
+            {
+                "date": "2006-12-20",
+                "salary": 350000
+            },
+	    ...
+            {
+                "date": "2019-06-15",
+                "salary": 474397
+            }
+        ]
+    }
+
+There is an array with the salary history, which is orderd by date. Latest salary last. Thus we need to compare
+the `salary` property of the array's last element with the search value.
+
+Luckily we know a bit of SQL.
+
+In SQL the `JSON_EXTRACT()` function is what we need for this. With a query like
+`SELECT JSON_EXTRACT(doc, '$.salary_history[0].salary') FROM people` you could
+retrieve the entry salary for each person. (If you try this query in MySQL Shell
+you should add a `LIMIT` clause, else there are quite a few results)
+
+Since we are not looking for the entry salary, but the current one we need one
+thing more: The length of the array. This we get via `JSON_LENGTH(doc->'$.salary_history')`
+(the `->` is a short form of `JSON_EXTRACT`) Since arrays in JavaScript are zero-indexed
+we have to subtract one. Using `CONCAT` to build the path to the final element.
+
+With a query like
+
+    SELECT doc
+      FROM ${config.mysql_schema}.people
+     WHERE JSON_EXTRACT(doc,
+                 CONCAT('$.salary_history[', JSON_LENGTH(doc->'$.salary_history')-1, '].salary')) > 550000
+
+you get all people earning more than 550.000.
+
+Since the X DevAPI, as part of the MySQL Document Store, combines document access and SQL
+you can directly extend the peopleService we created in the previous step by using the query.
+
+Add this `else if` block:
 
             } else if (headers['Fn-Http-H-X-Mode'][0] == 'salary') {
                 const result = await session.sql(
@@ -149,22 +255,23 @@ Route:
                 return result.fetchAll().map(row => row[0]);
             }
 
-Route:
+Again we have to add a route, just as before. This time for the **Path** `/income/{salary}`,
+setting **X-Mode** to `salary` and **X-Value** to `${request.path[salary]}`.
 
-    Path: /income/{salary}
-    Methods: GET
-    Type: Oracle Functions
-    Function: peopleService
+  ![](images/apigw_route3.png " ")
 
-    Request Header Transformations
-    Action:
-     Set
-    Behavior	Header Name	Values
-     Overwrite	X-Mode	salary
-    Overwrite	X-Value	${request.path[salary]}
+After applying this the search by salary should work and it's time to raise salaries.
 
-## Updating Documents
+## **Step 4:** Updating Documents
 
+After building a somewhat complex SQL query it's time to go back to a more simple approach using X DevAPI.
+
+The choice we take here is using two steps. First we use `getOne()` to get the document refering to a single person
+by their `_id`, from there we extract the old salary, apply the raise and then use X DevAPI's `arrayAppend` modification
+to add the new value. As we are friendly, we also ensure it's a raise. As it might happen, that two users work on the
+data at once we use a transaction to make sure there's no conflict.
+
+This is the code we add to our `peopleService`:
 
             } else if (headers['Fn-Http-H-X-Mode'][0] == 'raisesalary') {
                 const id = headers['Fn-Http-H-X-Id'][0];
@@ -189,16 +296,38 @@ Route:
                return { success: true, newEntry };
             }
 
-Route:
+Since this time the `amount` by which we raise, is sent as part of the HTTP request body, therefore we receive it as `input`.
 
-    Path: /raise/{id}
-    Methods:  PATCH
-    Type:  Oracle Functions
-    Function: peopleService
+When configuring the route also make sure to use the `PPATCH`method. Other than that it is similar to previous cases:
 
-    Request Header Transformations
-    Action:
-     Set
-    Behavior	Header Name	Values	Row Header
-    Overwrite	X-Mode	raisesalary
-    Overwrite	X-Id	${request.path[id]}
+| Setting     | Value            |
+| ----------- | ---------------- |
+| Path        | `/raise/{id}`    |
+| Methods     |  PATCH           |
+| Type        | Oracle Functions |
+| Application | DemoApp          |
+| Function    | peopleService    |
+
+Request Header Transformations:
+
+| Behavior  | Header Name | Value |
+| --------- | ----------- | ----- |
+| Overwrite | X-Mode      | `raisesalary`         |
+| Overwrite | X-Id        | `${request.path[id]}` |
+
+
+  ![](images/apigw_route4.png " ")
+
+If all worked well, there shouldn't be a problem in happily raising salaries!
+
+This concludes the main part of thiss Hands-on-Lab. In the next part we collected some ideas what you can do next.
+
+## Acknowledgements
+
+- **Authors/Contributors** - Johannes Schlüter
+- **Last Updated By/Date** - Johannes Schlüter, October 2020
+- **Workshop Expiration Date** - October, 2021
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+

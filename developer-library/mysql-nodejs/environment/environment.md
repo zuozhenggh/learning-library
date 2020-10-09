@@ -1,18 +1,25 @@
 # Exploring and Finishing Setup
 
-## Introduction
+## Before You Begin
+
+### Objectives
+
+- Connect to the Compute Instance using SSH
+- Explore MySQL using MySQL Shell and create a Collection for MySQL Document Store usage
+- Configure OCI Client and Fn
+
+### Introduction
 
 Now your environment is running. You have a Virtual Cloud Network (VCN),
 a MySQL Database Service instance and a few more services we will explore at 
 later stages. To access our environemnt a Compute instance was launched and
 pre-installed Node.js, MySQL Shell and OCI tools.
 
-You can use SSH to connect to this instance. Choose a step matching your 
-preference.
+You can use SSH to connect to this instance.
 
-## **Step 1a:** Using ssh from command line
+## **Step 1a:** Using OpenSSH from Command Line
 
-To access the system you need the private ssh key and the IP, which was created by
+To access the system you need the private ssh key and the IP, which were created by
 Terraform. The key has to be stored in a file which is not world reable on your 
 machine. By default a user with name `opc` is created. On first connect your
 client will ask to confirm the server identity, type `yes` to confirm.
@@ -30,7 +37,14 @@ If you stored the key in a file `ssh_private_key` and the IP if your instance is
 
 ## **Step 1b:** Using PuTTY on Windows
 
-TODO
+PuTTY is a ssh client frequently used on Windows. To access the system you need 
+the private ssh key and the IP, which were created by Terraform. The key from the
+prvious Lab has to be stored in a file an dcan then be used from PuTTY's connection
+dialog.
+
+  ![](images/putty_key.png " ")
+
+Make sure to use your comute instance's IP and the username `opc`.
 
 ## **Step 2:** Use MySQL Shell to access the MySQL Database Service Instance
 
@@ -62,8 +76,8 @@ instance is empty we have to create a database schema and a collection.
      MySQL  10.0.2.7:33060+ ssl  JS > session.getSchema('hol').createCollection('people');
     <Collection:people>
 
-A collection is a special form of table to store JSON documents. You can
-explore it using SQL after switching into SQL mode:
+A **Collection** is a special form of table to store JSON documents. You can
+explore it using SQL after switching into **SQL mode**:
 
      MySQL  10.0.2.7:33060+ ssl  JS > \sql
     Switching to SQL mode... Commands end with ;
@@ -80,25 +94,42 @@ explore it using SQL after switching into SQL mode:
     1 row in set (0.0007 sec)
 
 You can explore the database as you like. You can switch back into
-JavaScript mode by typing `\js`, into Python mode using `\py`, 
+**JavaScript mode** by typing `\js`, into **Python mode** using `\py`, 
 and when done quit using `\quit`.
 
-## **Step3:** Configure the OCI Client
+## **Step 3:** Configure the OCI Client
 
 In order to access OCI services via API the profile has to be configured. This
-can be done using a Wizard with the oci command line tool after you gathered
+can be done using a Wizard with the `oci` command line tool after you gathered
 some information on your Cloud Tenancy.
 
-TODO
-- Region
+Information you need to collect contains:
+
+- The Region
 - User OCID
 - Tenancy OCID
 
-Invoke the wizard using
+The Region is part of the information provided by Terraform. This could be something like
+`us-ashburn-1` or `eu-frankfurt-1`.
+
+The user OCID (Oracle Cloud Identifier) is your unique user id. It can be found on your
+profile page, which you can find by clicking on your name in the menu on the top right.
+
+  ![](images/menu_user.png " ")
+
+  ![](images/user_ocid.png " ")
+
+The tenancy OCID is the ID of the tenancy. It's on the tenancy's page:
+
+  ![](images/menu_tenancy.png " ")
+
+  ![](images/tenancy_oci.png " ")
+
+After gathering the data, invoke the wizard using
 
     [opc@compute ~]$ oci setup config
 
-You have to confirm the default location for the config file, provide the
+You have to confirm the default location for the config file and provide the
 requested config data.
 
 The wizard will ask, whether it should create an API key. Confirm this and
@@ -109,7 +140,10 @@ Cloud console.
 
     [opc@compute ~]$ cat ~/.oci/oci_api_key_public.pem 
 
-TODO Register key in console
+For registering the API key go back to your profile page via the menu on the top right of the
+Console. On the profile page click the **Add Public Key** Button. In the popup you can paste the key and confirm by clicking **Add**.
+
+  ![](images/api_key.png " ")
 
 Having this configured you can now access OCI services from command line, in
 addition to the Web Console. for instance you can get information on the MySQL
@@ -169,22 +203,39 @@ login from our compute instance to docker in able to publish our code.
 
 TODO get docker namespace
 
-Also you have to generate an API key for docker to login.
+Also you have to generate an **API Key** for Docker to login.
 
-TODO API key
+The **API Key** can be generated on the **Auth Tokens** section on your
+profile page.
 
-You'll also needed is your region's hostname of the docker registry.
+  ![](images/auth_token.png " ")
 
-TODO list name mapping
+After providing a name for the token you get a popup which allows you to copy
+the Token
 
-LAst thing is your username
+  ![](images/auth_token2.png " ")
 
-TODO username
+*Important: When closing the popup the token can not be retrieved again and a
+new token has to be created. Make sure you noted the token before closing the
+popup.*
+
+You'll also needed is your region's region key for the hostname of the docker
+registry.
+
+| Region         | Region key |
+| -------------- | ---------- |
+| us-ashburn-1   | iad        |
+| eu-frankfurt-1 | fra        |
+
+Full list can be found in [the OCI documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+
+Last thing is your username, this is the one you used to login to the 
+console.
 
 With that information you can configure the fn client.
 
 The fn client allows having multiple contexts to allow using different
-systems. LEt's create a context and activate it:
+systems. Let's create a context and activate it:
 
     [opc@compute ~]$ fn create context node-mysql --provider oracle
     Successfully created context: node-mysql 

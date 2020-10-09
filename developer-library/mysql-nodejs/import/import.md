@@ -1,13 +1,20 @@
 # Serverless Function to Import Data
 
-## Introduction
+## Before You Begin
+
+### Objectives
+
+- Create a first serverless function with Node.js
+- Import data from Object Store to MySQL
+
+### Introduction
 
 First thing needed for our application is to get data into the database. We
 assume that there is another cloud service, creating the data and storing it
 on Object Store. Whenever a file is being uploaded there it will trigger an
 event, which calls our serverless function.
 
-## **Step 1:** Creating the code for an Hello World
+## **Step 1:** Creating the Code for an Hello World
 
 As with any good guide, the first Function built is a _Hello World_. The name
 used is `import` since that describes the future purpose well:
@@ -77,7 +84,7 @@ To learn more about Fn please check the [Fn Project Website](https://fnproject.i
 
 In the Web Console you can find *Oracle Functions* under the *Developer Tools* menu. 
 
-TODO screenshot
+  ![](images/faas_menu.png " ")
 
 When opening it you see the Application, click on _DemoApp_. If you can't find
 that entry make sure the `node-mysql` compartment has been selected on the left.
@@ -247,7 +254,7 @@ Finally configure the Action, by setting *Action Type* `Functions`, *Function
 Compartment* `node-mysql`, *Function Application* `DemoApp` and *Function*
 `import`.
 
-TODO Screenshot config
+  ![](images/event.png " ")
 
 With a click on *Create Rule* this rule becomes effective.
 

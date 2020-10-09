@@ -30,19 +30,18 @@ TODO URL
 
   ![](images/011.png " ")
 
-4. Click on **Browse** and find the zipped **node-mysql-hol-tf.zip** file if using the non-free version. Then, you can give your **Stack** a name (or accept default). You can also give a description if you'd like, but it is not necessary. Then click **Next**.
+4. Click on **Browse** and find the zipped **node-mysql-hol-tf.zip** file. Then, you can give your **Stack** a name (or accept default). You can also give a description if you'd like, but it is not necessary. Then click **Next**.
 
-  ![](images/012.png " ")
+  ![](images/terra01.png " ")
 
 5. You can configure different variables on this screen. A password for the MySQL user is suggested. You can chage it according to your wishes, as long as you fulfill the requiremenst. **For this Hands-on-Lab the password will not be stored securly. Don't use a password you use elsewhere**.  Select Next.
 
-TODO screenshot
-  ![](images/013.png " ")
+  ![](images/terra02.png " ")
 
 
 8. Click **create**.  Note the screen will freeze for a few seconds before returning..be patient.
 
-  ![](images/014.png " ")
+  ![](images/terra03.png " ")
 
   ![](images/015.png " ")
 
@@ -50,7 +49,7 @@ TODO screenshot
 
 1. Now inside of the resource manager, hover over **Terraform Actions** and click on **Plan**.
 
-  ![](images/016.png " ")
+  ![](images/terra04.png " ")
 
 2. You can give the plan a name, or keep the default. Then click on **Plan** to begin.
 
@@ -64,7 +63,7 @@ TODO screenshot
 
   ![](images/018.1.png " ")
 
-  ![](images/019.png " ")
+  ![](images/terra06.png " ")
 
 5. You can give the apply a name, or keep the default. You can leave the other settings the same. Then click on **Apply**.  **This will take about 15 minutes. Please be patient.**
 
@@ -74,10 +73,11 @@ TODO screenshot
 
 6.  The job will take several minutes.  When it is complete scroll to the top and click **Application Information**. That screen will contain data you are going to need in next steps.
 
-TODO screenshot
-  ![](images/005.png " ")
+  ![](images/terra08.png " ")
 
+  ![](images/terra09.png " ")
 
+Copy the information from the different fields, so you have it available fot the next steps.
 
 Please proceed to the next lab.
 
