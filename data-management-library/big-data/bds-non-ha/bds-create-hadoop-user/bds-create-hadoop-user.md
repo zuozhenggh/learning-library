@@ -190,7 +190,7 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     # <copy>id training</copy>
     ```
 
-4. You can now access HDFS Using the New **`training`** administrator user on any node in the cluster such as the **first master node** in this example. Change to the `training` user as follows:
+4. You can now access HDFS using the new **`training`** administrator user on any node in the cluster such as the **first master node** in this example. Change to the `training` user as follows:
 
     ```
     $ <copy>sudo -su training</copy>
