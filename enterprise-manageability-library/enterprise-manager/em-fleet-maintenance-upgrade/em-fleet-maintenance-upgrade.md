@@ -60,29 +60,29 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 1. Update the Named Credentials with your SSH Key
 
-Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
+  Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
 
-![](images/update_ssh_creds.jpg " ")
+  ![](images/update_ssh_creds.jpg " ")
 
 2. Setup oracle Named Credentials using Job System
 
-This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
-Navigate to "***Enterprise >> Job >> Library***" and **select** "SETUP ORACLE CREDENTIALS"; **Click** Submit.
+  This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
+  Navigate to "***Enterprise >> Job >> Library***" and **select** "SETUP ORACLE CREDENTIALS"; **Click** Submit.
 
-![](images/named_creds_job.jpg " ")
+  ![](images/named_creds_job.jpg " ")
 
 
 3.  Click **Submit** again on the Job submission Page
 
-![](images/named_creds_job_submit.jpg " ")
+  ![](images/named_creds_job_submit.jpg " ")
 
 4. The Job will be submitted successfully. **Click** on SETUP ORACLE CREDENTIALS Job link to view the Job
 
-![](images/submitted.jpg " ")
+  ![](images/submitted.jpg " ")
 
 5. The Job should show Status **Succeeded**
 
-![](images/named_creds_job_succeeded.jpg " ")
+  ![](images/named_creds_job_succeeded.jpg " ")
 
 
 6. Fleet Maintenance Login to EMCLI
