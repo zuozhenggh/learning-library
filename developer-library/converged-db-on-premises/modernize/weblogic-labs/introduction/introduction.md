@@ -8,9 +8,9 @@ The complete implementation of the WebLogic Server, of the Java Platform, Enterp
 
 In addition to the Java EE implementation, WebLogic Server enables enterprises to deploy mission-critical applications in a robust, secure, highly available, and scalable environment. These features allow enterprises to configure clusters of WebLogic Server instances to distribute load, and provide extra capacity in case of hardware or other failures. New diagnostic tools allow system administrators to monitor and tune the performance of deployed applications and the WebLogic Server environment itself. You can also configure WebLogic Server to monitor and tune application throughput automatically without human intervention. Extensive security features protect access to services, keep enterprise data secure, and prevent malicious attacks.
 
-## Oracle Helidon
+### Oracle Helidon
 
-Helidon SE is a compact toolkit that embraces the latest Java SE features: reactive streams, asynchrous and functional programming, and fluent-style APIs.
+Helidon SE is a compact toolkit that embraces the latest Java SE features: reactive streams, asynchronous and functional programming, and fluent-style APIs.
 
 The REST framework for Helidon SE is the Helidon WebServer. It’s built on top of Netty and uses a straight forward request routing API.
 
@@ -25,10 +25,7 @@ Estimated Lab Time: 90 minutes
 This lab assumes you have:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
-* You have completed:
-    * Lab: Generate SSH Keys
-    * Lab: Prepare Setup
-    * Lab: Environment Setup
+
  
 ## Want to learn more
 - [Helidon](https://helidon.io/#/)
@@ -38,7 +35,7 @@ This lab assumes you have:
 ## Acknowledgements
 * **Authors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR, AppDev & Integration Team, Oracle, October 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Meghana Banka, October 2020
+* **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
