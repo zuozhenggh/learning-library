@@ -193,13 +193,13 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
 4. You can now access HDFS using the new **`training`** administrator user on any node in the cluster such as the **first master node** in this example. Change to the `training` user as follows:
 
     ```
-    $ <copy>sudo -su training</copy>
+    # <copy>sudo -su training</copy>
     ```
 
 6. Use the linux **`id`** command to confirm that you are connected now as the **`training`** user.
 
     ```
-    # <copy>id</copy>
+    $ <copy>id</copy>
     ```
 
     ![](./images/training-user.png " ")
@@ -208,7 +208,7 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
 6.  Perform a file listing of HDFS as the `training` user using the following command:
 
     ```
-    # <copy>hadoop fs -ls /</copy>
+    $ <copy>hadoop fs -ls /</copy>
     ```
 
     ![](./images/hdfs-ls.png " ")
