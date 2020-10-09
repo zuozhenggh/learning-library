@@ -4,28 +4,31 @@
 
 ## Introduction
 
-This workshop walks you through the steps to get started using the **Oracle Autonomous Data Warehouse Database (ADW)**. You will provision a new database in just few minutes.
+This workshop walks you through the steps to get started using the **Oracle Autonomous Data Warehouse Database (ADW)**. You will provision a new database in just a few minutes.
 
 Oracle Autonomous Databases have the following characteristics:
 
 **Self-driving**
 Automates database provisioning, tuning, and scaling.
 
-Provisions highly available databases, configures and tunes for specific workloads, and scales compute resources when needed, all done automatically.
+- Provisions highly available databases, configures and tunes for specific workloads, and scales compute resources when needed, all done automatically.
 
 **Self-securing**
 Automates data protection and security.
 
-Protect sensitive and regulated data automatically, patch your database for security vulnerabilities, and prevent unauthorized access—all with Oracle Autonomous Database.
+- Protect sensitive and regulated data automatically, patch your database for security vulnerabilities, and prevent unauthorized access—all with Oracle Autonomous Database.
 
 **Self-repairing**
 Automates failure detection, failover, and repair.
 
-Detect and protect from system failures and user errors automatically and provide failover to standby databases with zero data loss.
+- Detect and protect from system failures and user errors automatically and provide failover to standby databases with zero data loss.
 
-Estimated workshop Time 15 minutes.
+Estimated Lab Time: 15 minutes
 
-## **STEP 1**: Create a new Autonomous Data Warehouse Datatabase
+### Objectives 
+- Create an Autonomous Database with the latest features of Oracle Databases
+
+## **STEP 1**: Create a new Autonomous Data Warehouse Database
 
 1. Click on the hamburger **MENU** link at the upper left corner of the page.
 
@@ -101,11 +104,11 @@ Estimated workshop Time 15 minutes.
 
     ![ADB Creation Provisioning](./images/lab100_7.png)
 
-6. A summary of your instance status is shown in the large box on the left. In this example, the colour is amber and the status is **Provisioning.**
+6. A summary of your instance status is shown in the large box on the left. In this example, the color is amber and the status is **Provisioning.**
 
     ![ADB Creation Provisioning Amber](./images/lab100_8.png)
 
-7. After a short while, the status will change to **Available** and the "ADW" box will change colour to green:
+7. After a short while, the status will change to **Available** and the "ADW" box will change color to green:
 
     ![ADB Creation Provisioning Green](./images/lab100_9.png)
 
@@ -123,17 +126,15 @@ Estimated workshop Time 15 minutes.
 
     ![Always Free Logo](./images/always_free_logo.png)
 
-## It works
-
 You have just created an Autonomous Database with the latest features of Oracle Databases.
 
-Congratulations, you are ready for the next workshop!
+*You can proceed to the next lab…*
 
 ## **Acknowledgements**
 
-- **Author** - Priscila Iruela - Database Business Development - EMEA Oracle Digital, Juan Antonio Martin Pedro - Analytics Business Development - Oracle EMEA
-- **Contributors** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center, Andrea Zengin - Autonomous Database Business Development Director - Oracle EMEA
-- **Last Updated By/Date** -
+- **Author** - Priscila Iruela - Database Business Development | Juan Antonio Martin Pedro - Analytics Business Development
+- **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
+- **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

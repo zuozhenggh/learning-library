@@ -71,6 +71,12 @@ You need to download the stack package (zip file) and save it on your disk.
 
 You can now use MySQL Shell like you did in Step 2 & 3 of Lab 4.
 
+   ```
+   mysql-js> cluster=dba.getCluster()
+   mysql-js> cluster.status()
+   ...
+   ```
+
 Thank you for attending this MySQL InnoDB Cluster & OCI hands-on lab.
 
 

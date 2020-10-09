@@ -43,9 +43,9 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 ## **STEP 1**: Explore GoldenGate Configuration
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
-2. Select Option **4**
+2. Select **R** to reset the lab then Option **4**
 
-![](./images/menu1006.png " ")
+![](./images/labmenu_opt1.png " ")
 
 3. Review the overview notes on the following screen, then select **Q** to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
@@ -68,7 +68,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>view  /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
     ```
     ```
-    <copy>cd /u01/gg4hadoop/dirprm
+    <copy>cd /u01/gg4hadoop123010/dirprm
     view /u01/gg4hadoop123010/dirprm/create_hive_replicat.oby</copy>
     ```
     ```
@@ -86,6 +86,9 @@ Now we need to start the GG manager process on both the source and target. Keep 
 
  ![](./images/c2.png " ")
 
+    ```
+    <copy>ggmysql</copy>
+    ```
     ```
      <copy> pwd
      ./ggsci</copy>
@@ -127,6 +130,9 @@ Now we need to start the GG manager process on both the source and target. Keep 
   ![](./images/c5.png " ")
 
     ```
+     <copy>./ggsci</copy>
+     ```
+     ```
     <copy> obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
     ```
@@ -141,12 +147,11 @@ Now we need to start the GG manager process on both the source and target. Keep 
     ```
     <copy> start pmphadop</copy>
     ```
+    **or use the following to start ALL**
     ```
     <copy> start *</copy>
     ```
-    ```
-    <copy>./ggsci</copy>
-    ```
+ 
     ```
     <copy> info all</copy>
     ```
@@ -248,24 +253,35 @@ Now that GG processes have been created and started on both the source and targe
 
 2. Click on Query, Editor, Select Hive
 
-  ![](./images/c21.png " ")
+  ![](./images/hive1.png " ")
 
-3.	Pull down on Database selection, and select `ggtarget2hive_avro`
+   ![](./images/hive2.png " ")
+   Query, Editor, Hive
 
-4.	Then hover the mouse over the emp table, and click the `preview sample data` –small grey icon Hue screens:
+  ![](./images/hive3.png " ")
 
-  ![](./images/c22.png " ")
+![](./images/hive23.png " ")
 
-  **`/ user/ ggtarget/ hive/ schema/ ggtarget2hive_avro.dept.avsc`**
+  **Schema:**
+
+  **`/user/ ggtarget/ hive/ schema/ ggtarget2hive_avro.dept.avsc`**
 
   ![](./images/c26.png " ")
+
+**Data**
+
+   **`/user/ ggtarget/ hive/ data/ ggtarget2hive_avro.dept.avsc`**
+
+![](./images/hive24.png " ")
+
+![](./images/hive25.png " ")
 
 ## Summary
 In summary, we loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process `pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rhive` read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: `/user/ggtarget/hive/data/*` and `/user/ggtarget/hive/schema`
 
 You may now *proceed to the next lab*.
 
-## Learn More
+##  Learn More
 
 * [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 

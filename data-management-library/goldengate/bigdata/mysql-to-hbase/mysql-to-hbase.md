@@ -44,7 +44,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 ## **STEP 1**: Explore GoldenGate Configuration  
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
-  ![](./images/menu1006.png " ")
+  ![](./images/labmenu_opt1.png " ")
 
 2. Select **R** to reset the lab environment, then select **5**
 
@@ -125,6 +125,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
   ![](./images/d5.png " ")
 
     ```
+    <copy>./ggsci</copy>
     <copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
     ```
@@ -259,15 +260,15 @@ Now that the source side is setup, let us configure GG on the target side (HBase
 3. Select Hamburger Menu
 4. Select Data Browser
 5. Select HBase
-  ![](./images/d20.png " ")
+![](./images/d20.png " ")
 
-  ![](./images/d21.png " ")
+   ![](./images/d21.png " ")
 
-6. select ggtarget2hbase.dept
+1. select ggtarget2hbase.dept
 
-![](./images/d22.png " ")
+   ![](./images/d22.png " ")
 
-![](./images/d23.png " ")
+   ![](./images/d23.png " ")
 
 ## Summary
 In summary, you loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process

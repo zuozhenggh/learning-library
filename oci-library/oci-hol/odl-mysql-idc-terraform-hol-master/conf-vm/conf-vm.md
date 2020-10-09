@@ -40,7 +40,9 @@ Estimated Lab Time: 15 minutes
 
 1. The API Key you created earlier needs to be linked to your OCI account: 
 
-    ![](.././images/gui/10.png)
+    ![](.././images/gui/10b.png)
+
+    ![](.././images/gui/10c.png)
 
     ![](.././images/gui/11.png)
 

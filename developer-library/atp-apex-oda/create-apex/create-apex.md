@@ -18,7 +18,7 @@ In this workshop you will create a `tasks` table, REST enabling it, and make the
 
 ![ORDS and APEX](./images/rest_arch.png)
 
-Estimated workshop Time 20 minutes.
+Estimated Lab Time: 20 minutes
 
 ## **STEP 1**: Create APEX Workspace
 
@@ -227,6 +227,7 @@ In the main menu, select **SQL Workshop**, click **RESTful Services**.
 
     ![](./images/apex_rest_handler_create_success.png)
 
+
 ## It works
 
 We will use the full URL for testing on the browser to verify the GET Handler works. Go to your favorite browser and paste the URL you copied.
@@ -247,13 +248,13 @@ You should see the items with `id` and `text` and other fields and references in
 
 How many items do you see? You should have as many tasks as you created before in the table.
 
-Congratulations! You are ready to go to the next workshop!
+*Congratulations! You are ready to go to the next workshop!*
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Priscila Iruela - Database Business Development - EMEA Oracle Digital
-- **Contributors** - Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center
-- **Last Updated By/Date** - 
+- **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
+- **Contributors** - Melanie Ashworth-March
+- **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

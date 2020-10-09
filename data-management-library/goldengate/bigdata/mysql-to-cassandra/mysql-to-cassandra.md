@@ -45,7 +45,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 **By default ggadmin will automatically start in the labmenu**
 
-  ![](./images/menu1006.png " ")
+  ![](./images/labmenu_opt1.png " ")
 
 2. Select **R** to reset the lab environment, then select **7**
 
@@ -67,7 +67,9 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
     ```
     ```
-    <copy> cd /u01/gg4hadoop/dirprm
+    <copy> cd /u01/gg4hadoop123010/dirprm</copy>
+    ````
+    ````
     view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby</copy>
     ```
     ```
@@ -77,11 +79,11 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>view /u01/gg4hadoop123010/dirprm/rcass.properties</copy>
     ```
 
-5. Start the Cassandra database server. Open a new ssh session, run the alias as shown below and leave this running until you are done
-    ```
-      <copy>startcass</copy>
-    ```
+5. Start the Cassandra database server. Open a new ssh session, run the alias as shown below and leave this running until you are done.
 
+````
+   <copy>startcass</copy>
+````
 Now we need to start the GG manager process on both the source and target. Keep these sessions opened for the rest of this lab.
 
 ## **STEP 2**: GoldenGate Source Configuration
@@ -184,6 +186,9 @@ Now that the source side is setup, let us configure GG on the target side (for C
     ./ggsci	</copy>
     ```
     ```
+    <copy>start mgr</copy>
+    ````
+
     <copy>info all</copy>		
     ```
     ```
