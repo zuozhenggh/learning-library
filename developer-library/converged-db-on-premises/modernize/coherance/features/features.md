@@ -25,11 +25,10 @@ This lab assumes you have:
 
 ### Directory Structure for Java
 
-java/bin	Scripts for building and executing examples. There are two sets of scripts. Scripts with no file extension are bash scripts. Scripts with a .cmd file extension are Windows command scripts. The following description refers to the script names without specifying any file extension.
+`java/bin`	Scripts for building and executing examples. There are two sets of scripts. Scripts with no file extension are bash scripts. Scripts with a .cmd file extension are Windows command scripts. The following description refers to the script names without specifying any file extension.
 - run  
-    Runs an example collection
+  Runs an example collection
 - run-cache-server
-
   Runs the cache server used for the examples. The command is also used to start a proxy service that is required for extend clients.
 
 - java/classes
