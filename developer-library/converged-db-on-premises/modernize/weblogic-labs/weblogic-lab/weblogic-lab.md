@@ -365,7 +365,7 @@ In the browser, check if the CreditScore Microservice application is running by 
 	![](../images/creditscore.png " ")  
 
 
-*End of Lab*
+*Congratulations! You have successfully completed the workshop*
 
 ## Acknowledgements
 * **Author** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR, AppDev & Integration Team, Oracle, October 2020
