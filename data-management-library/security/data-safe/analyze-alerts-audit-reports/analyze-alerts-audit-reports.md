@@ -4,8 +4,6 @@
 ## Introduction
 This lab shows you how to view and analyze alerts, and audit data on your Autonomous Database with Oracle Data Safe.
 
-**Note**: Your totals and data will be different than those shown in the screenshots.
-
 Estimated Lab Time: 30 minutes
 
 ### Objectives
@@ -26,14 +24,14 @@ To complete this lab, you need to have the following:
 
 - An Oracle Cloud account
 - Access to an Autonomous Database, sample data for Oracle Data Safe loaded into the database, and the Activity Auditing feature enabled on the database
-- Access to an Oracle Data Safe service in a region of your tenancy
+- Access to an Oracle Data Safe service
 - Privileges to use the Activity Auditing feature on your database
 - Audit collection started on your target database in Oracle Data Safe. If not, see [Provision Audit and Alert Policies](../provision-audit-alert-policies/provision-audit-alert-policies.md).
 
 
 ### Assumptions
 
-- You are signed in to the Oracle Cloud Infrastructure Console. If not, refer to the prerequisites for this workshop.
+- You are signed in to the Oracle Cloud Infrastructure Console.
 - Your data values will be different than those shown in the screenshots in this lab.
 
 
@@ -47,14 +45,11 @@ To complete this lab, you need to have the following:
 
 - In Oracle Data Safe Console, click the **Alerts** tab.
 
-  ![Top tabs with Alerts tab circled](images/177413545.png)
-
-
 - View the total number of target databases, critical alerts, high risk alerts, medium risk alerts, and open alerts.
 
   - At a glance, you can better understand whether the security of your database is in jeopardy and how you should prioritize your work.
 
-  ![Alert totals](images/177425111.png)
+  ![Alert totals](images/totals-alerts-page.png)
 
 
 - Scroll down to review the alerts in the table.
@@ -63,44 +58,41 @@ To complete this lab, you need to have the following:
   - The **Operation** column identifies the action.
   - The **Alert Severity** column indicates the seriousness of the action.
 
-  ![Alerts in the table](images/177425122.png)
+  ![Alerts in the table](images/alert-table.png)
 
 
 - At the bottom of the page, click the page numbers to view other pages of alerts.
 
 
-- To filter the report to show only open critical alerts, at the top of the report, click **Filters**. Click **+ Filter** and then set the filter to be: **Alert Severity = Critical**. Click **Apply**.
+- To filter the report to show only open high alerts, at the top of the report, click **+ Filter** and then set the filter to be: **Alert Severity = High**. Click **Apply**.
 
-  - Leave the default filter on Operation Time set as is.
+   - If the filters are not displayed, click **Filters** below the totals at the top of the page.
 
-  ![Alert filters](images/177425079.png)
+  - Leave the default filters on **Alert Status** and **Operation Time** set as is.
 
+  ![Alert filters](images/high-alert-severity.png)
 
-- To sort the **Operation** column, position the cursor over the **Operation** column and click the up arrow button.
-
- ![Sort the DB User column icon](images/177413555.png)
-
-
-- The table shows you the open critical alerts.
-
-  ![Open critical alerts table](images/177425142.png)
+  The table shows you the open high alerts.
 
 
-- Click one of the **Alert IDs** to view more detail.
+- To sort the **Operation** column, position the cursor over the **Operation** column and click the arrow button.
 
- ![An alert ID highlighted in the Alerts table](images/177425153.png)
+ ![Sort the DB User column icon](images/sort-operation-column.png)
 
 
-- Review the information in the **Alert Details** dialog box, and then click **X** to close it. You can view the **Target**, **DB User**, **Operation Status**, **SQL Text**, and much more.
+- To view more detail for an alert, click the alert ID.
 
-   ![Alert Details dialog box](images/177425160.png)
+ ![An alert ID highlighted in the Alerts table](images/click-alert-id.png)
+
+
+- Review the information in the **Alert Details** dialog box, and then click **X** to close it. You can view the **DB User**, **Operation Status**, **SQL Text**, and much more.
+
+   ![Alert Details dialog box](images/alert-details-dialog-box.png)
 
 
 - To remove the filters, click the **X** next to each filter, and then click **Apply**.
 
-   ![Remove filter option](images/177425173.png)
-
-
+  
 
 - Create two new filters to find out if the user `EVIL_RICH` is making any user entitlement changes.
   - To create the first filter, click **+ Filter**, and set the filter to be: **Alert = User Entitlement Changes**.

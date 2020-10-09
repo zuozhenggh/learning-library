@@ -1,9 +1,7 @@
 # Assess Database Configurations and Users
 
 ## Introduction
-This lab shows you how to assess database configurations and users in your database by using the User Assessment feature in Oracle Data Safe.
-
-**Note**: The values on your screen will be different than those shown in the screenshots.
+This lab shows you how to assess configurations and users in your Autonomous Database by using the User Assessment feature in Oracle Data Safe.
 
 Estimated Lab Time: 30 minutes
 
@@ -12,8 +10,8 @@ Estimated Lab Time: 30 minutes
 In this lab, you'll:
 
 - Sign in to the Oracle Data Safe Console
-- Run a Security Assessment job against a target database
-- Run a User Assessment job against a target database
+- Schedule and run a Security Assessment job against your database
+- Run a User Assessment job against your database
 - Analyze the user assessment results
 - Analyze the security assessment results
 
@@ -23,14 +21,14 @@ To complete this lab, you need to have the following:
 
 - An Oracle Cloud account
 - Access to an Autonomous Database, sample data for Oracle Data Safe loaded into the database, and the Activity Auditing feature enabled on the database
-- Access to an Oracle Data Safe service in a region of your tenancy
+- Access to an Oracle Data Safe service
 - Privileges to use the Activity Auditing feature on your database
 - Audit collection started on your target database in Oracle Data Safe. If not, see [Provision Audit and Alert Policies](../provision-audit-alert-policies/provision-audit-alert-policies.md).
 
 
 ### Assumptions
 
-- You are signed in to the Oracle Cloud Infrastructure Console. If not, refer to the prerequisites for this workshop.
+- You are signed in to the Oracle Cloud Infrastructure Console.
 - Your data values will be different than those shown in the screenshots in this lab.
 
 
@@ -41,19 +39,36 @@ To complete this lab, you need to have the following:
 - Click **Service Console**. The **Home** page in the Oracle Data Safe Console is displayed.
 
 
-## **STEP 2**: Run a Security Assessment job against a target database
+## **STEP 2**: Schedule and run a Security Assessment job against your database
 
 You can use Security Assessment to evaluate the current security state of your target databases and receive recommendations on how to mitigate the identified risks.
 
 - Click the **Security Assessment** tab.
 
 
-- On the **Security Assessment** page, select the check box for your target database, and then click **Assess**.
+- On the **Security Assessment** page, select the check box for your target database, and then click **Schedule Periodic Assessment**.
 
-  ![Security Assessment page](images/177413497.png)
+  ![Security Assessment page](images/schedule-security-assessment-job.png)
 
-- While the assessment is running, continue to the next step. The assessment takes approximately 2-3 minutes to complete.
+- In the **Schedule Assessment** dialog box, configure the schedule for every Sunday at 11:00PM:
 
+    - From the **Schedule Type** drop-down list, select **Weekly**.
+    - From the **Every** drop-down list, select **Sunday**.
+    - In the **At** field, click the **Schedule** button and select **11:00 PM**, and click **OK**.
+    - Click **Schedule**.
+
+    ![Schedule every Sunday](images/schedule-every-sunday.png)
+
+    - A confirmation messages states that the schedule period job is successful.
+
+- Deselect the check box for the target database, and select it again.
+
+- Click **Assess Now**.
+
+- Wait approximately one minute for the assessment to finish. When it's done, review the numbers for high risk, medium risk, and low risk issues.
+
+
+  ![Security Assessment risk numbers](images/security-assessment-risk-numbers.png)
 
 
 
