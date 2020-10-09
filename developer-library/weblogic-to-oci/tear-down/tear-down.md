@@ -1,10 +1,10 @@
-# Tearing down the workshop environment
+# Tearing Down the Workshop Environment
 
 ## Introduction
 
 Congratulations! You've come so far and completed the workshop, and you might wonder how to clean up resources.
 
-Estimated Lab Time: 15min
+Estimated Lab Time: 15 minutes
 
 *You should not keep the instances deployed on OCI as part of this workshop running once your are done, or use in any way for actual workloads: since the DB and WebLogic credentials are publically available it would be a security issue.*
 
@@ -12,10 +12,9 @@ Estimated Lab Time: 15min
 
 In this lab you will tear down the infrastructure provisioned.
 
-
 ## **STEP 1:** Cleaning up the 'on-premises' environment
 
-### If you used Docker
+### If you used docker
 
 1. stop the services:
 
@@ -34,7 +33,7 @@ In this lab you will tear down the infrastructure provisioned.
     </copy>
     ```
 
-### If you used the Workshop image from the marketplace
+### If you used the workshop image from the marketplace
 
 1. Go to **Resources Manager**
 
@@ -65,7 +64,7 @@ In this lab you will tear down the infrastructure provisioned.
 
     This will take several minutes.
 
-4. Go to **Networking -> Virtual Cloud Networks** 
+4. Go to **Networking -> Virtual Cloud Networks**
 
 5. Go to the **Private Subnet** `nonjrf_db_subnet`
 
@@ -79,13 +78,13 @@ In this lab you will tear down the infrastructure provisioned.
 
 10. Select the private subnet that was created manually `nonjrf_db_subnet`
 
-11s. Click **Terminate** 
+11. Click **Terminate**
 
     Note you won't be able to proceed until the DB System itself has been terminated.
 
 ## **STEP 3:** Tear down the WebLogic environment
 
-*You need to terminate the DB subnet before you can tear down the WebLogic deployment as Resource Manager will not be able to clean up the VCN until the DB subnet is removed.
+You need to terminate the DB subnet before you can tear down the WebLogic deployment as Resource Manager will not be able to clean up the VCN until the DB subnet is removed.
 
 1. Go to the **Resources Manager**
 

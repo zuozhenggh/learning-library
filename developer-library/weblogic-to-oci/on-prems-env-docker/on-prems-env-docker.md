@@ -1,12 +1,12 @@
-# Setup a local (on-premises) environment using Docker
+# Setup a Local (On-Premises) Environment Using Docker
 
-## Introduction: 
+## Introduction
 
-This lab will walk you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine. 
+This lab will walk you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine.
 
 At the end of this lab, you will have a local environment running with an Oracle 12c Database and WebLogic Server 12c with a domain containing 2 applications and a datasource.
 
-Estimated Lab Time: 30 min
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -123,8 +123,6 @@ You can also download the code [here](https://objectstorage.us-ashburn-1.oraclec
 
 3. Open a terminal and get into the unzipped folder
 
-</details>
-
 ## **STEP 2:** Agree to the terms of the private docker images
 
 This repository makes use of Oracle docker images which are licensed and need to be pulled from DockerHub after acknowledging the terms of the license.
@@ -162,7 +160,6 @@ This repository makes use of Oracle docker images which are licensed and need to
     </copy>
     ```
 
-
 ## **STEP 3:** Start the local environment
 
 *Startup the local environment stack that will simulate our 'on-premises' environment*
@@ -176,7 +173,7 @@ This repository makes use of Oracle docker images which are licensed and need to
     docker-compose up -d
     </copy>
     ```
-    
+
     This step can take several minutes because some images need to be built. 
 
 2. On linux or Windows, Docker permission may cause issues so run:
@@ -186,7 +183,6 @@ This repository makes use of Oracle docker images which are licensed and need to
     docker exec -it --user=root weblogic-to-oci_oracledb_1 /bin/chown 54321:54321 ~/.ssh
     </copy>
     ```
-
 
 ### Troubleshooting
 
@@ -208,19 +204,19 @@ The weblogic container waits for the database to be ready, and the schemas to be
 
 2. To check status of the initialization, you can check if the `weblogic-to-oci_oracledbinit_1` container has finished running by running:
 
-```
-<copy>
-docker ps
-</copy>
-```
-The following output shows the init container has terminated and the system should be ready:
-```
-CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS                PORTS                                                                          NAMES
-bf43e3bd5a78        weblogic-to-oci_oracledb    "/bin/sh -c '/bin/ba…"   7 days ago          Up 7 days (healthy)   127.0.0.1:1521->1521/tcp, 127.0.0.1:5000->5000/tcp, 5500/tcp                   weblogic-to-oci_oracledb_1
-38bcbb1555b8        weblogic-to-oci_wls_admin   "/u01/oracle/startNM…"   7 days ago          Up 7 days             127.0.0.1:7001->7001/tcp, 127.0.0.1:7003->7003/tcp, 127.0.0.1:7005->7005/tcp   weblogic-to-oci_wls_admin_1
-```
+    ```
+    <copy>
+    docker ps
+    </copy>
+    ```
+    The following output shows the init container has terminated and the system should be ready:
+    ```
+    CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS                PORTS                                                                          NAMES
+    bf43e3bd5a78        weblogic-to-oci_oracledb    "/bin/sh -c '/bin/ba…"   7 days ago          Up 7 days (healthy)   127.0.0.1:1521->1521/tcp, 127.0.0.1:5000->5000/tcp, 5500/tcp                   weblogic-to-oci_oracledb_1
+    38bcbb1555b8        weblogic-to-oci_wls_admin   "/u01/oracle/startNM…"   7 days ago          Up 7 days             127.0.0.1:7001->7001/tcp, 127.0.0.1:7003->7003/tcp, 127.0.0.1:7005->7005/tcp   weblogic-to-oci_wls_admin_1
+    ```
 
-If you see a container called `weblogic-to-oci_oracledbinit`, this means the initialization is still ongoing.
+    If you see a container called `weblogic-to-oci_oracledbinit`, this means the initialization is still ongoing.
 
 3. To troubleshoot problems in the setup, check the logs in the docker containers with:
 
@@ -236,16 +232,15 @@ If you see a container called `weblogic-to-oci_oracledbinit`, this means the ini
     </copy>
     ```
 
-Before proceeding, make sure the local environment has been deployed properly and is running. 
+    Before proceeding, make sure the local environment has been deployed properly and is running. 
 
-![](./images/localhost-admin-console.png)
+    ![](./images/localhost-admin-console.png)
 
+    The **SimpleDB** application should be running at [http://localhost:7003/SimpleDB/](http://localhost:7003/SimpleDB/) or [http://localhost:7005/SimpleDB/](http://localhost:7005/SimpleDB/)
 
-The **SimpleDB** application should be running at [http://localhost:7003/SimpleDB/](http://localhost:7003/SimpleDB/) or [http://localhost:7005/SimpleDB/](http://localhost:7005/SimpleDB/)
+    It shows statistics of riders of the Tour de France stored in the database, and looks like this:
 
-It shows statistics of riders of the Tour de France stored in the database, and looks like this:
-
-![./images/localhost-simpledb-app.png](./images/localhost-simpledb-app.png)
+    ![./images/localhost-simpledb-app.png](./images/localhost-simpledb-app.png)
 
 ## **STEP 5:** Create an SSH key
 
@@ -278,9 +273,9 @@ We'll create an SSH key pair in this folder
 
     Note this key will be the default SSH key from within either docker container used for the on-premises environment. If you wanted to SSH to the OCI resources from outside the container, you would need to supply the private key as the identity file in the ssh command, with the `-i <path-to-id_rsa>/id_rsa`
 
-**Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
+    **Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
 
-**Note:** If you're using a firewall and your instance is not local, make sure the ports for WebLogic (7001-7005) are open to be able to test the environment.
+    **Note:** If you're using a firewall and your instance is not local, make sure the ports for WebLogic (7001-7005) are open to be able to test the environment.
 
 You may proceed to the next lab.
 
