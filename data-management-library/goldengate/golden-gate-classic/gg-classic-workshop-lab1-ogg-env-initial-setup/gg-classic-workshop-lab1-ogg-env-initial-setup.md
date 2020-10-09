@@ -66,7 +66,7 @@ Approximately 30 min
 In this lab we will setup GoldenGate Classic
 
 
-**Step 1:** PreLab Configuration for Classic Lab
+## **Step 1:** Configuration for Classic Lab
 
 1. mkdir /opt/Test_Software
 2. Downloaded the following software zip files to the "Software" folder:
@@ -119,7 +119,7 @@ sqlplus / as sysdba @setup_database_for_ogg.sql
 The database will now contain two PDBs, PDBEAST and PDBWEST, and is configured for OGG replication.
 The common database user C##GGADMIN will be created, and the container user C##GGADMIN in PDBEAST and PDBWEST.
 
-**Step 2:** 
+## **Step 2:** Configure mySQL
 
 **mySQL**
 
@@ -127,7 +127,7 @@ The common database user C##GGADMIN will be created, and the container user C##G
 GRANT ALL PRIVILEGES ON * . * TO 'ggadmin'@'localhost';
 
 
-**Step 3:** Change to ggadmin
+## **Step 3:** Change to ggadmin and execute labs
 
 '````
 <copy>sudo su – ggadmin</copy>
@@ -143,7 +143,7 @@ Open a terminal session
 
 ## STEPS -  Done by Student
 
-**Step1:**  Test connectivity for the OGG users:
+## **Step 4:**  Test connectivity for the OGG users:
 
 1. sqlplus c##ggadmin
 When prompted enter the password: Oracle1
@@ -184,7 +184,7 @@ Each PDB in the database (pdbeast and pdbwest) will now contain a TPC schema wit
 12. Enter "exit" to logout as the "oracle" user.
 
 
-## Step 3: - Conenctivity to Oracle environment using ggadmin
+## **Step 5:** - Conenctivity to Oracle environment using ggadmin
 
 Test connectivity to MySQL by executing the commands:
 
@@ -203,7 +203,7 @@ There should be 14 tables in the tpc database.
 
 5. exit;
 
-## Step 3: - Conenctivity to MySQL environment using ggrep
+## **Step 6:**  - Conenctivity to MySQL environment using ggrep
 
 1. sudo mysql -u ggrep -p@Oracle1@
 use tpc
@@ -211,7 +211,7 @@ use tpc
 There should be 14 tables in the tpc database.
  exit;
 
-## Step 4: - GoldenGate GoldenGate for Oracle setup and configuration
+## **Step 7:**  - GoldenGate GoldenGate for Oracle setup and configuration
 	
 1. start a second session
 
@@ -230,7 +230,7 @@ dblogin userid c##ggadmin@orcl, password Oracle1
 This validates remote connectivity to the Oracle Database.
 exit
 
-## Step 5: - GoldenGate GoldenGate for MySQL setup and configuration
+## **Step 8:**  - GoldenGate GoldenGate for MySQL setup and configuration
 
 1. Mysql -uroot -pData1Integration!
 CREATE USER 'ggrep'@'localhost' IDENTIFIED BY '@Oracle1@';

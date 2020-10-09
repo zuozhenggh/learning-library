@@ -1,10 +1,35 @@
 {
-    "workshoptitle": "Data Management LiveLabs on GitHub",
+    "workshoptitle": "GoldenGate  Classic",
     "tutorials": [
         {
             "title": "Welcome!",
             "description": "This is the landing page for the oracle/learning-library repo",
             "filename": "README.md"
         }
+        {
+            "title": "Lab 8: MySQL to HBase",
+            "description": "mysql-to-hbase",
+            "filename": "../../mysql-to-hbase/mysql-to-hbase.md"
+          },
+          {
+            "title": "Lab 9: MySQL to Kafka",
+            "description": "GGBD mysql-to-Kafka",
+            "filename": "../../mysql-to-kafka/mysql-to-kafka.md"
+          },
+          {
+            "title": "Lab 10: MySQL to Cassandra",
+            "description": "GGBD mysql-to-Cassandra",
+            "filename": "../../mysql-to-cassandra/mysql-to-cassandra.md"
+          },
+          {
+            "title": "Lab 11: MySQL to Oracle",
+            "description": "GGBD mysql-to-oracle",
+            "filename": "../../mysql-to-oracle/mysql-to-oracle.md"
+          },
+          {
+            "title": "Appendix",
+            "description": "GGBD Appendix",
+            "filename": "../../appendix/appendix.md"
+          
     ]
 }
