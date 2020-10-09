@@ -1,4 +1,4 @@
-# Lab 5 - Postgres to Oracle
+# Lab 5 - PostgresSql to Oracle
 
 ### Introduction
 
