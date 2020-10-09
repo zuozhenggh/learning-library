@@ -16,14 +16,18 @@ Approximately 60 minutes
 
 ## Done by Student:
 
-Open a terminal session
-
-![](./images/terminal2.png)
-
 ## STEPS-
+
 
 ## Step 1: - GoldenGate GoldenGate for Oracle
 
+Open a terminal session
+````
+ <copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
+````
+````
+<copy>sudo su - oracle</copy>
+````
 1. Create the folder /u01/app/oracle/product/19.1.0/oggWallet
 ````
 <copy>mkdir /u01/app/oracle/product/19.1.0/oggWallet</copy>
@@ -42,6 +46,14 @@ Set the CHECKPOINTTABLE parameter
 
 ## Step 2: - GoldenGate GoldenGate for non-Oracle (MySQL)
 
+Open a terminal session
+````
+ <copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
+````
+````
+<copy>sudo su - oracle</copy>
+````
+
 1. sudo service mysqld start
 
 2. export OGG_HOME=/u01/app/oracle/product/19.1.0/oggmysql
@@ -49,6 +61,7 @@ Set the CHECKPOINTTABLE parameter
 3. dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@
 
 4. ADD CHECKPOINTTABLE ggadmin.ggchkpoint
+
 MySQL: checkpointtable ggadmin.ggchkpoint
 
 5. Set the WALLETLOCATION parameter to the disk location in step 1.
@@ -68,18 +81,27 @@ MySQL: checkpointtable ggadmin.ggchkpoint
 **OGG Credential Store**
 
 In GGSCI, create the OGG Credential Store by executing the command: 
-add credentialstore
+````
+<copy>add credentialstore</copy>
+````
 Add OGG database user credentials into each credential store.
 
 **Oracle**
 
-10. alter credentialstore add user c##ggadmin@orcl password Oracle1 alias oggcapture
-11. alter credentialstore add user ggadmin@pdbeast password Oracle1 alias ggapplyeast
-12. alter credentialstore add user ggadmin@pdbwest password Oracle1 alias ggapplywest
+10. ````
+    <copy>alter credentialstore add user c##ggadmin@orcl password Oracle1 alias oggcapture</copy>
+
+    ````
+    ````
+    <copy>alter credentialstore add user ggadmin@pdbeast password Oracle1 alias ggapplyeast</copy>
+    ````
+    ````
+11. <copy>alter credentialstore add user ggadmin@pdbwest password Oracle1 alias ggapplywest</copy>
+    ````
        
 **MySQL**
-13. alter credentialstore add user ggadmin password @Oracle1@ alias oggcapture
-14. alter credentialstore add user ggrep password @Oracle1@ alias ggapply
+1.  alter credentialstore add user ggadmin password @Oracle1@ alias oggcapture
+2.  alter credentialstore add user ggrep password @Oracle1@ alias ggapply
 
 OGG Master Key and Wallet
 
@@ -149,7 +171,11 @@ Oracle
 
 To configure the OGG Manager process in both the Oracle and MySQL OGG environments:
 
-35. Execute the GGSCI command: edit param mgr
+35. Execute the GGSCI command: 
+
+````
+<copy>edit param mgr</copy>
+````
 
 36. For Oracle, enter the following settings:
 	      port 15000
@@ -175,6 +201,7 @@ To configure the OGG Manager process in both the Oracle and MySQL OGG environmen
           lagcriticalminutes 20
           autorestart er *, RETRIES 12, WAITMINUTES 5, RESETMINUTES 60
           startupvalidationdelay 2
+
 38. In each of the parameter files, add comments to describe each setting and what it does.
 
 39. Save and close the file.
@@ -187,7 +214,7 @@ You may now *proceed to the next lab*.
 
 ## Learn More
 
-* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
+* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/)
 
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020

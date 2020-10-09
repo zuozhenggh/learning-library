@@ -17,23 +17,29 @@ Approximately 60 minutes
 
 ## Step 1: - GoldenGate GoldenGate for Oracle Capture
 
-1. Open a terminal session
-
-![](./images/terminal2.png)
+Open a terminal session
+````
+ <copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
+````
+````
+<copy>sudo su - oracle</copy>
+````
 
 **Oracle data capture**
 
 2. To configure the Oracle Integrated Extract:
 Execute the GGSCI command: edit param etpc
 3. Enter the following settings:
+````
 
-	       extract etpc
+	       <copy>extract etpc
           exttrail ./dirdat/et
           useridalias oggcapture
           reportcount every 120 seconds, rate
           ddloptions report
           warnlongtrans 60m, checkinterval 15m
-          table pdbeast.tpc.*;
+          table pdbeast.tpc.*;</copy>
+          ````
 4. Add the parameter that will cause Integrated Extract to capture DDL operations that are of mapped scope.
 Add the parameter that will cause Integrated Extract to encrypt its OGG Trail files.
 5. Save and close the file.
@@ -46,11 +52,14 @@ To configure the Oracle to MySQL Extract Data Pump:
 
 7. Enter the following settings:
 
-  	      extract pmysql
+````
+  	      <copy>extract pmysql
           rmthost localhost, mgrport 8809
           rmttrail ./dirdat/rt
           reportcount every 120 seconds, rate
-          table pdbeast.tpc.*;
+          table pdbeast.tpc.*;</copy>
+````
+
 8. Add the RMTHOST option that will cause the Extract Data Pump to encrypt data transmissions with the aes256 algorithm.
 9. Save and close the file.
 	  
@@ -62,15 +71,16 @@ To configure the Parallel Replicat:
 edit param rtpc
 
 Enter the following settings:
-
-	      replicat rtpc
+````
+	      <copy>replicat rtpc
           useridalias ggapplywest
           map_parallelism 3
           split_trans_recs 1000
 		  ddl include mapped
 		  ddloptions report
           reportcount every 120 seconds, rate
-          map pdbeast.tpc.*, target pdbwest.tpc.*;
+          map pdbeast.tpc.*, target pdbwest.tpc.*;</copy>
+````   
    Add the parameters to auto-tune the number of Appliers; with a minimum of 3 and a maximum of 12
 
 11. Save and close the file.
@@ -86,22 +96,24 @@ To configure the Coordinated Replicat in the MySQL OGG environment:
 edit param rtpc
 
 3. Enter the following settings:
-	       
-         replicat rtpc
-           targetdb tpc@db-ora19-mysql:3306, useridalias ggapply
-           reportcount every 120 seconds, rate
-           usededicatedcoordinationthread
-		   map pdbeast.tpc.categories, target "tpc"."categories", thread (20);
-           map pdbeast.tpc.categories_description, target "tpc"."categories_description", thread (20);
-           map pdbeast.tpc.customers, target "tpc"."customers", thread (20);
-           map pdbeast.tpc.customers_info, target "tpc"."customers_info", thread (20);
-           map pdbeast.tpc.customers_lkup, target "tpc"."customers_lkup", thread (20);
-           map pdbeast.tpc.next_cust, target "tpc"."next_cust", thread (20);
+
+   ````     
+    <copy>replicat rtpc
+      targetdb tpc@db-ora19-mysql:3306, useridalias ggapply
+       reportcount every 120 seconds, rate     usededicatedcoordinationthread
+	     map pdbeast.tpc.categories, target "tpc"."categories", thread (20);
+       map pdbeast.tpc.categories_description, target "tpc"."categories_description", thread (20);
+       map pdbeast.tpc.customers, target "tpc"."customers", thread (20);
+       map pdbeast.tpc.customers_info, target "tpc"."customers_info", thread (20);
+       map pdbeast.tpc.customers_lkup, target "tpc"."customers_lkup", thread (20);
+         map pdbeast.tpc.next_cust, target "tpc"."next_cust", thread (20);
            map pdbeast.tpc.next_order, target "tpc"."next_order", thread (20);
            map pdbeast.tpc.orders_total, target "tpc"."orders_total", thread (20);
            map pdbeast.tpc.products, target "tpc"."products", thread (20);
            map pdbeast.tpc.products_description, target "tpc"."products_description", thread (20);
-           map pdbeast.tpc.products_to_categories, target "tpc"."products_to_categories", thread (20);
+           map pdbeast.tpc.products_to_categories, target "tpc"."products_to_categories", thread (20);</copy>
+  ````
+
 4. Enter "MAP" statements for the following
 
 Operations for the table "tpc.orders" are to be applied by thread 1.
@@ -179,23 +191,33 @@ Enter "100" at the prompt, and return.
 ## Step 5: - GoldenGate GoldenGate - Verify Replication
 
 1. Verify data has been replicated
+   
 Check that all OGG Groups remain running.			
+
 For any STOPPED or ABEND groups, view their report file to find the error.
+
 Use the ggsci "stats" command to see how many operations were processed by each Extract and Replicat.
+
 Use the ggsci "view report" command to see how many operations were processed per second by each Extract and Replicat.
+
 For MySQL, use the ggsci command "info rtpc, detail" to see how many Replicats were spawned.
+
 On the database server:
 Login to PDBWEST as ggadmin: sqlplus ggadmin@pdbwest
 When prompted enter the password: Oracle1
 
-2. Execute the following query to see additional information about lag:  
+1. Execute the following query to see additional information about lag:  
       set heap on
       set wrap off
       set line 300
       column Extract format a9
       column Data_Pump format a10
       column Replicat format a9
-3. select to_char(incoming_heartbeat_ts,'DD-MON-YY HH24:MI:SSxFF') Source_HB_Ts
+
+   2. 
+   
+   ````
+   <copy>select to_char(incoming_heartbeat_ts,'DD-MON-YY HH24:MI:SSxFF') Source_HB_Ts
        incoming_extract Extract
       extract (day from (incoming_extract_ts - incoming_heartbeat_ts))*24*60*60+
          extract (hour from (incoming_extract_ts - incoming_heartbeat_ts))*60*60+
@@ -219,7 +241,8 @@ When prompted enter the password: Oracle1
          extract (hour from (heartbeat_received_ts - incoming_heartbeat_ts))*60*60+
          extract (minute from (heartbeat_received_ts - incoming_heartbeat_ts))*60+
          extract (second from (heartbeat_received_ts - incoming_heartbeat_ts)) Total_Lag
-      from ggadmin.gg_heartbeat_history order by heartbeat_received_ts desc;
+      from ggadmin.gg_heartbeat_history order by heartbeat_received_ts desc;</copy>
+      ````
 
 ## Step 6: - GoldenGate GoldenGate - Replicate DDL
 
@@ -230,7 +253,8 @@ On the database server:
 When prompted enter the password: Oracle1
 
 3. Execute the following:
-	       create table ddltest (
+	 ````
+         <copy>create table ddltest (
            cola number(15,0) not null,
            colb timestamp(6) not null,
            colc varchar(100),
@@ -245,7 +269,8 @@ When prompted enter the password: Oracle1
 
            update ddltest set colb=CURRENT_TIMESTAMP, colc='Row 3 update' where cola=3;
            delete from ddltest where cola=2;
-           commit;
+           commit;</copy>
+      ````
 
 4. View the Oracle Replicat report file to validate the DDL was applied.
 Execute the GGSCI "stats" command to see information for the table ddltest

@@ -20,14 +20,20 @@ Approximately 60 minutes
 
 1. Open a terminal session
 
-![](./images/terminal2.png)
-
-2. Oracle source table.
+````
+ <copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
+````
+````
+<copy>sudo su - oracle</copy>
+````
+1. Oracle source table.
 
 Connect to the PDBEAST database as the user "tpc".
 
 3. Execute the following DML to create the source table:
-      drop table wshop_funcs;
+
+````
+      <copy>drop table wshop_funcs;
       create table wshop_funcs (
         row_number    	number(3,0),
         row_text		varchar2(25),
@@ -43,7 +49,10 @@ Connect to the PDBEAST database as the user "tpc".
         cust_id              number(10,0),
         cust_zip             number(5,0),
         primary key (cust_id)
-      ); 
+      );</copy>
+
+````
+
 ## Step 2: - GoldenGate GoldenGate - MySQL Target Replication
 
 1. MySQL target table.
@@ -53,7 +62,9 @@ Connect to the MySQL database as the user "tpc".
 3. mysql -u tpc -p@Oracle1@
 
 4. Execute the following DML to create the target tables:
-      use tpc;
+
+````
+      <copy>use tpc;
     	drop table wshop_funcs;
       create table wshop_funcs (
         srow_number       	numeric(3,0),
@@ -69,9 +80,12 @@ Connect to the MySQL database as the user "tpc".
         src_db_version    varchar(75),
         src_txn_csn       numeric(9,0),
         CONSTRAINT PK_Funcs primary key (srow_number,gg_commit_ts)
-      ) engine=innodb;
+      ) engine=innodb;</copy>
+
+      ````
   
-      drop table cust_city_state;
+      ````
+      <copy>drop table cust_city_state;
       create table cust_city_state (
         cust_id              numeric(10,0),
         cust_city            varchar(25),
@@ -93,7 +107,8 @@ Connect to the MySQL database as the user "tpc".
       insert into zip_lookup values (94105, 'San Francisco', 'CA');
       insert into zip_lookup values (70001, 'Jefferson', 'LA');
       insert into zip_lookup values (70117, 'New Orleans', 'LA');
-      commit;
+      commit;</copy>
+      ````
 
 ## Step 3: - GoldenGate GoldenGate - Oracle Data Capture
 
@@ -110,9 +125,6 @@ table pdbeast.tpc.wshop_funcs, TOKENS (
          );
 
 3. Save and close the file.
-
-When using wildcards, where do table statements like the one above need to be placed?
-Do you need to exclude the table from being captured via the wildcards? (If so, did you do this?)
 
 ## Step 4: - GoldenGate GoldenGate -MySQL Data Apply
 
@@ -165,7 +177,9 @@ start etpc
        start pmysql  
 
 
-3. MySQL: start rtpc
+3. **MySQL:** 
+   
+start rtpc
 Verify all OGG Groups are running.
 Generate data  
 In the window connected to the database server:
@@ -207,13 +221,13 @@ Execute the following:
               END;
               /
 			  
-4. Verify data has been replicated.
+1. Verify data has been replicated.
 
-5. Use the GGSCI "send report" command to generate stats for the rtpc Coordinated Replicat.
+2. Use the GGSCI "send report" command to generate stats for the rtpc Coordinated Replicat.
 
-6. View the report file to validate sqlexec execution are data apply stats.
+3. View the report file to validate sqlexec execution are data apply stats.
 
-7. Connect to the MySQL database as the user "tpc".
+4. Connect to the MySQL database as the user "tpc".
 mysql -u tpc -p@Oracle1@
 View the data in the tpc.cust_city_state table.
 View the data in the tpc.wshop_funcs table.
