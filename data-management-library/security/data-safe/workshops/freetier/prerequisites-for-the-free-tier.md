@@ -41,17 +41,28 @@ If you already have an Oracle Cloud Free Tier account, you can skip this step.
 
 
 
-- On the **Oracle Cloud Free Tier** page, select a **country** or **territory**, enter your **email address**, enter your **first name** and **last name**, and then click **Verify my email**. A verification email titled **OCI Email Verification** is sent to the email address you specified.
+- On the **Oracle Cloud Free Tier** page, do the following:
+
+    - Select a **country** or **territory**.
+    - Enter your **email address**.
+    - Enter your **first name** and **last name**.
+    - Click **Verify my email**.
+    A verification email titled **OCI Email Verification** is sent to the email address you specified.
 
   ![Oracle Cloud Free Tier page](images/oracle-cloud-free-tier-page.png)
 
 -  To continue with setting up your Oracle Cloud account, confirm your email address by click the link in your email. You are returned to the **Oracle Cloud Free Tier** page.
 
-- Enter a **password**, reenter your password to confirm it, enter a **company name** (optional), specify a **cloud account name**, and select a **home region**. The password must contain a minimum of 8 characters, 1 lowercase, 1 uppercase, 1 numeric, and 1 special character. Your password cannot exceed 40 characters; contain the user's first name, last name, email address; contain spaces; or contain ` ~ < > \ characters. Remember the cloud account name you enter because you need this name later on to sign in to Oracle Cloud Infrastructure.
+- Continue to fill out the form:
 
-- Review the **Terms of Use** section, and then click **Continue**.
+    - Enter a **password**. The password must contain a minimum of 8 characters, 1 lowercase, 1 uppercase, 1 numeric, and 1 special character. Your password cannot exceed 40 characters; contain the user's first name, last name, email address; contain spaces; or contain ` ~ < > \ characters. Remember the cloud account name you enter because you need this name later on to sign in to Oracle Cloud Infrastructure.
+    - Re-enter your password to confirm it.
+    - (Optional) Enter a **company name**.
+    - Specify a **cloud account name**.
+    - Select a **home region**.
+    - Review the **Terms of Use** section, and then click **Continue**.
 
-- (Optional) In the browser dialog box, click **Save** to save your password or click **Never**.
+- (If prompted) In the browser dialog box, click **Save** to save your password or click **Never**.
 
 - In the **Address information** section, enter your address details, and then click **Continue**.
 

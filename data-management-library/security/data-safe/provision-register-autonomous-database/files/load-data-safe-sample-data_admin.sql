@@ -1,6 +1,6 @@
---Loads the Data Safe sample data into an Autonomous Database
---Septemeber 9, 2020
---Last updated by Jody Glover
+--Loads the Oracle Data Safe sample data into an Autonomous Database
+--Last updated: October 9, 2020
+--Be sure to run this script AFTER you register your Autonomous Database
 
 /*************************************************************************************************/
 
@@ -10,7 +10,8 @@ select null as "ScriptDefinitions" from dual;
 
 -- Grant the Data Masking role to DS$ADMIN
 -- by default, all other roles are automatically granted to DS$ADMIN
---EXECUTE DS_TARGET_UTIL.GRANT_ROLE('DS$DATA_MASKING_ROLE');
+
+EXECUTE DS_TARGET_UTIL.GRANT_ROLE('DS$DATA_MASKING_ROLE');
 
 
 def DBA_ROLE = PDB_DBA
@@ -28,7 +29,6 @@ show user;
 
 -- The following drop statements will error if the users have not yet been created. That is acceptable.
 
-drop user APP_TEST cascade;
 drop user HCM1 cascade;
 drop user DBA_DEBRA cascade;
 drop user PU_PETE cascade;
@@ -428,6 +428,7 @@ insert into HCM1.supplemental_data values(empid.nextval,'bdirector','','','');
 insert into HCM1.supplemental_data values(empid.nextval,'aadmin','','','');
 insert into HCM1.supplemental_data values(empid.nextval,'badmin','','','');
 commit;
+desc dbms_workload_replay
 update HCM1.supplemental_data set taxpayer_id=to_char(trunc(dbms_random.value(100,999)))||'-'||to_char(trunc(dbms_random.value(10,99)))||'-'||to_char(trunc(dbms_random.value(1000,9999)));
 update HCM1.supplemental_data set bonus_amount=trunc(dbms_random.value(1000,99999));
 commit;
@@ -1119,9 +1120,6 @@ create user LESTRANGE identified by Oracle123_Oracle123;
 create user SKEETER identified by Oracle123_Oracle123;
 
 
-alter user PU_PETE identified by Oracle123_Oracle123 profile POWERUSERS;
---ERROR: profile POWERUSERS does not exist (check if can create powerusers)
-
 create user APP_USER identified by Oracle123_Oracle123;
 
 
@@ -1247,3 +1245,5 @@ select count(*) as LOCATIONS from HCM1.LOCATIONS;
 select count(*) as REGIONS from HCM1.REGIONS;
 select count(*) as JOB_HISTORY from HCM1.JOB_HISTORY;
 select count(*) as JOBS from HCM1.JOBS;
+
+select null as "End of script" from dual;
