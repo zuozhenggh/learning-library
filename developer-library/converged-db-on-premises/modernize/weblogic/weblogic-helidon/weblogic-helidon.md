@@ -270,7 +270,7 @@ Please note the code above accepts a GET for healthcheck and POST method to calc
 	<copy>cd /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target
 	ls -alrt helidon-creditscore-se.jar</copy>
 	```
-##**Step 4:** Modify Bank Web Application To Use Credit Score Microservice & Deploy On WebLogic
+## **Step 4:** Modify Bank Web Application To Use Credit Score Microservice & Deploy On WebLogic
 Before the deployment of the Bank Web Application to consume Microservice, the following changes will be made:
 
   -	Modify the User Interface. Create View button which opens Account Owner details window. This detail window will show the credit score value of the Account Owner.
@@ -278,28 +278,32 @@ Before the deployment of the Bank Web Application to consume Microservice, the f
   -	Configure the endpoint for the Bank Web Application.
   -	Deploy new web application
 
-1. Modify user Interface
-	 - Open for edit the `/u01/middleware_demo/wls-helidon/src/main/webapp/index.xhtml` HTML file.
+### Modify user Interface
+1. Open for edit the `/u01/middleware_demo/wls-helidon/src/main/webapp/index.xhtml` HTML file.
 
-  ```
-  <copy>Gedit /u01/middleware_demo/wls-helidon/src/main/webapp/index.xhtml &</copy>
- 	```
+    ```
+    <copy>Gedit /u01/middleware_demo/wls-helidon/src/main/webapp/index.xhtml &</copy>
+   	```
 
-  - Find and delete all the lines which contain REMOVE THIS LINE comment.
+2. Find and delete all the lines which contain REMOVE THIS LINE comment.
 Only that one(!), but that full line of comment which contains. (4 lines needs to be removed.) Save the file.
 If you are familiar with JSF to check what has changed in the code.
 
-2.  Modify Server Side Bean
-  - Open for edit `/u01/middleware_demo/wls-helidon/src/main/java/com/oracle/oow19/wls/bestbank/AccountOwnerBean.java` class file.
+### Modify Server Side Bean
+1. Open for edit `/u01/middleware_demo/wls-helidon/src/main/java/com/oracle/oow19/wls/bestbank/AccountOwnerBean.java` class file.
 
   ```
   <copy>gedit /u01/middleware_demo/wls-helidon/src/main/java/com/oracle/oow19/wls/bestbank/AccountOwnerBean.java &</copy>
   ```
 
-  - Find and delete all the lines which contain REMOVE THIS LINE comment. Only that one(!), but that full line of comment which contains. (6 lines needs to be removed.) Save the file. Check what has changed in the code. The postConstruct method modified to read the end point URL from the property file. New getCreditScore method created to calculate the credit score value of the Account Owner. Finally include the new method invocation in getSelectedAccountOwner method which is triggered by the View button on the User Interface.
+2. Find and delete all the lines which contain REMOVE THIS LINE comment. Only that one(!), but that full line of comment which contains. (6 lines needs to be removed.) Save the file. Check what has changed in the code.
 
-3. Configure End-Point
-  - The last file to modify is the `/u01/middleware_demo/wls-helidon/src/main/resources/app.properties` file.
+  - The postConstruct method modified to read the end point URL from the property file.
+  - New getCreditScore method created to calculate the credit score value of the Account Owner.
+  - Finally include the new method invocation in getSelectedAccountOwner method which is triggered by the View button on the User Interface.
+
+### Configure End-Point
+1. The last file to modify is the `/u01/middleware_demo/wls-helidon/src/main/resources/app.properties` file.
 
 	The Bank Web Application reads this properties file to know the endpoint's URL. Obviously this solution is just for demo purposes, because in real microservices architecture the best practice is to use additional tools for better service/API management.
 
@@ -307,13 +311,12 @@ If you are familiar with JSF to check what has changed in the code.
   <copy>gedit /u01/middleware_demo/wls-helidon/src/main/resources/app.properties &</copy>
  	```
 
-  - Replace the URL to your given value and save: `creditscore.url=http://localhost:8080/creditscore`
+2. Replace the URL to your given value and save: `creditscore.url=http://localhost:8080/creditscore`
 
-4. Deploy Modified Web Application
-
-  - Make sure you are in the terminal where the environment variables are set.
-  - Change to the Bank Web Application's directory:
-  - Source the `setWLS14Profile.sh` and `setBankAppEnv.sh` to set the environment variables required to start the WebLogic 14c Admin server and run commands to build Helidon and Bank applications
+### Deploy Modified Web Application
+1. Make sure you are in the terminal where the environment variables are set.
+2. Change to the Bank Web Application's directory:
+3. Source the `setWLS14Profile.sh` and `setBankAppEnv.sh` to set the environment variables required to start the WebLogic 14c Admin server and run commands to build Helidon and Bank applications
 
 	```
 	<copy>cd /u01/middleware_demo/scripts/
@@ -321,13 +324,13 @@ If you are familiar with JSF to check what has changed in the code.
   . ./setBankAppEnv.sh</copy>
 	```
 
-  - Change the directory to wls-helidon where the Bank Application code reside
+4. Change the directory to wls-helidon where the Bank Application code reside
 
 	```
 	<copy>cd /u01/middleware_demo/wls-helidon/</copy>
 	```
 
-  - Run the following Maven command:
+5. Run the following Maven command:
 
 	```
 	<copy>mvn clean package</copy>
@@ -335,28 +338,26 @@ If you are familiar with JSF to check what has changed in the code.
 
 When the build is complete and successful, open the browser and access the new bank application using the URL [http://localhost:7101/bestbank2020_01](http://localhost:7101/bestbank2020_01)
 
-  - Select an Account Owner and click the new View button. A pop-up window with no information about the credit score of the user is seen. This is because the microservice is not yet started !!!
+6. Select an Account Owner and click the new View button. A pop-up window with no information about the credit score of the user is seen. This is because the microservice is not yet started !!!
 
-5. Start The Helidon Microservice
-
-  - Open a new terminal.
-  - Navigate to /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target/
+### Start The Helidon Microservice
+1. Open a new terminal.
+2. Navigate to /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target/
 
 	```
 	<copy>cd /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target/</copy>
 	```
 
-  - Start the Microservice application as a standalone Java Program using the command:
+3. Start the Microservice application as a standalone Java Program using the command:
 	```
 	<copy>java -jar helidon-creditscore-se.jar &</copy>
 	```
 
 	![](../images/startmicroservice.png " ")  
 
-In the browser, check if the CreditScore Microservice application is running by checking the health check url [http://localhost:8080/creditscore/healthcheck](http://localhost:8080/creditscore/healthcheck)
-
-  - Open the browser and access the new bank application using the URL [http://localhost:7101/bestbank2020_01](http://localhost:7101/bestbank2020_01) or refresh the existing browser window with the above URL,
-  - Select an Account Owner and click the new View button.	A pop-up window with CreditScore information of the user is seen.  
+4. In the browser, check if the CreditScore Microservice application is running by checking the health check url [http://localhost:8080/creditscore/healthcheck](http://localhost:8080/creditscore/healthcheck)
+5. Open the browser and access the new bank application using the URL [http://localhost:7101/bestbank2020_01](http://localhost:7101/bestbank2020_01) or refresh the existing browser window with the above URL
+6. Select an Account Owner and click the new View button.	A pop-up window with CreditScore information of the user is seen.  
 
 	![](../images/creditscore.png " ")  
 
