@@ -15,7 +15,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-* This lab assumes you have successfully completed Lab 1: [Setup with Docker](https://oracle.github.io/learning-library/data-management-library/database/graph/livelabs/) and have an environment up and running with Zeppelin at [http://localhost:8080](http://localhost:8080/) and the Graph Visualization component at [http://localhost:7007/ui/](http://localhost:7007/ui/).
+* This lab assumes you have successfully setup a Property Graph Analysis Environment in Docker and have an environment up and running with Zeppelin at [http://localhost:8080](http://localhost:8080/) and the Graph Visualization component at [http://localhost:7007/ui/](http://localhost:7007/ui/).
 
 ## **STEP 1:** Graph query and analysis in Apache Zeppelin
 

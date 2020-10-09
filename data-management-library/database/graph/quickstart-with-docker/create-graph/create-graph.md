@@ -11,6 +11,10 @@ Estimated Lab Time: 5 minutes
 In the lab, you will:
 * Create a graph from the database tables
 
+### Prerequisites
+
+* This lab assumes that you have successfully completed the labs - Setup a Property Graph Analysis Environment in Docker, Setup Oracle Database in Docker, Create and Populate Database Tables
+
 ## **STEP 1:** Create the Customer 360 Property Graph
 
 1. The following DDL creates a property graph (i.e. node and edge tables) from the relational table data.

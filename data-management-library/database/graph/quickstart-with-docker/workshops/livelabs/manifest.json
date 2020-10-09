@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Analyze and Visualize Property Graphs with Oracle Database in Docker",
+    "workshoptitle": "Getting started with Oracle Property Graph on Docker",
     "tutorials": [
         {
             "title": "Prerequisites",

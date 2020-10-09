@@ -11,6 +11,10 @@ Estimated Lab Time: 7 minutes
 In this lab, you will:
 * Load, query, and analyze a graph from the database tables
 
+### Prerequisites
+
+* This lab assumes that you have successfully completed the lab - Create the Graph
+
 ## **STEP 1:** Configure the graph server to load the graph
 
 The following configuration files determine the graph server startup settings and optionally the graphs that are pre-loaded.

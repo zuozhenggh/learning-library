@@ -12,7 +12,9 @@ In this lab, you will:
 * Create and populate database tables
 * Run graph algorithms and queries and visualize the results
 
+### Prerequisites
 
+* This lab assumes that you have successfully completed the lab - Setup Oracle Database in Docker
 
 ## **STEP 1:** Load the data
 

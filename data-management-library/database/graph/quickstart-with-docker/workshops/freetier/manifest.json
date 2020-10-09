@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Analyze and Visualize Property Graphs with Oracle Database in Docker",
+    "workshoptitle": "Getting started with Oracle Property Graph on Docker",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -19,7 +19,7 @@
         {
             "title": "Lab 2: Load Graphs from Files",
             "description":"Working with file-based graphs",
-            "filename":"../../graphs-from-files/graphs-from-files.md"
+            "filename":"../../load-graphs-from-files/load-graphs-from-files.md"
         },
         {
             "title": "Lab 3: Setup Oracle Database in Docker",

@@ -11,6 +11,10 @@ Estimated time: 4 minutes
 In this lab, you will:
 * Visualize graph queries on the Customer 360 graph
 
+### Prerequisites
+
+* This lab assumes that you have successfully completed the lab - Query and Analyze the Customer 360 Graph
+
 ## **STEP 1:** Open the graph viz web page
 
 1. Open Graph Visualization and check if this graph is successfully loaded.
