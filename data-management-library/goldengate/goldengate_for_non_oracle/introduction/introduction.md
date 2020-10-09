@@ -11,13 +11,10 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 
 ### Lab Overview
 
-- **Lab: Installation Of GoldenGate** -
-    In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
-
-- **Lab: Replication from PostGresSQL Relational Database to Oracle Relational Database using GoldenGate** -
+**Lab: Replication from PostGresSQL Relational Database to Oracle Relational Database using GoldenGate** -
     This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 
-- **Lab: Replication from Oracle Relational Database to PostGresSQL Relational Database using GoldenGate** -
+**Lab: Replication from Oracle Relational Database to PostGresSQL Relational Database using GoldenGate** -
     This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 
 ## Learn More
