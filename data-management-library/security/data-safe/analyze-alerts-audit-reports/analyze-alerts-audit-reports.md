@@ -15,7 +15,7 @@ In this lab, you'll:
 - Analyze open alerts from the dashboard
 - View all audit records for the past week
 - View a summary of audit events collected and alerts raised
-- Create a failed logins report
+- Create a logins report
 
 
 ### Prerequisites
@@ -92,39 +92,29 @@ To complete this lab, you need to have the following:
 
 - To remove the filters, click the **X** next to each filter, and then click **Apply**.
 
-  
 
-- Create two new filters to find out if the user `EVIL_RICH` is making any user entitlement changes.
-  - To create the first filter, click **+ Filter**, and set the filter to be: **Alert = User Entitlement Changes**.
-  - To create the second filter, click **+Filter**, and set the filter to be: **DB User = EVIL_RICH**.
+
+- Create a filter to view the list of alerts for user entitlement changes.
+  - To create the filter, click **+ Filter**, and set the filter to be: **Alert = User Entitlement Changes**.
   - Click **Apply**.
 
-     ![Two filters for user EVIL_RICH](images/177425186.png)
 
+- Review the alerts.
 
-- Review the alerts for `EVIL_RICH`.
+  ![User Entitlement Changes alerts](images/user-entitlement-changes.png)
 
-- Click the **Alert ID** for the first alert. The Alert Details dialog box is displayed.
+- Suppose you are fine with these entitlement changes. Now you can close the alerts:
 
- ![Alerts for EVIL_RICH](images/177425201.png)
+    - Select the check box in the top left corner of the table to select all of the alerts displayed.
 
+    - From the **Mark As** menu, select **Closed**.
 
-- Scroll down in the dialog box and review the SQL command. `EVIL_RICH` tried to execute the SQL command: `grant PDB_DBA to ATILLA`, but failed. Close the dialog box.
-
-    ![Alert Details dialog box](images/177425210.png)
-
-
-- Open the other **Alert IDs** for `EVIL_RICH`. Notice that the SQL text is similar in that the failed grants are for the `ATILLA` user.
-
-
-- Suppose you take appropriate action. Now you can close the alerts. To do so, select the check box in the top left corner of the table to select all of the alerts displayed. From the **Mark As** menu, select **Closed**.
-
-  ![Mark As > Closed](images/177425240.png)
+    ![Mark As > Closed](images/closed-alerts.png)
 
 
 - To hide closed alerts, move the **Open Alerts only** slider to the right.
 
-  ![Open Alerts only slider](images/177413562.png)  
+  ![Open Alerts only slider](images/show-open-alerts-only.png)  
 
 
 
@@ -135,16 +125,14 @@ To complete this lab, you need to have the following:
 
 - Review the information in the charts on the dashboard. Currently, there is no data for Security Assessment, User Assessment, Data Discovery, and Data Masking because you have not yet used those features.
 
-    ![Dashboard](images/177408455.png)  
-
 - In the **Open Alerts** chart, notice that the chart shows the number of open alerts for the last 7 days. Click the last node in the chart.
 
-    ![Open Alerts chart](images/177408465.png)  
+    ![Open Alerts chart](images/last-node-open-alerts-chart.png)  
 
 
 - In the **Open Alerts** dialog box, view the number of open alerts for the last 7 days.
 
-  ![Open Alerts dialog box](images/177408484.png)  
+  ![Open Alerts dialog box](images/open-alerts-last-seven-days.png)  
 
 
 - Hover over the counts to view the number of **Critical**, **High**, and **Medium** alerts for each day.
@@ -152,7 +140,7 @@ To complete this lab, you need to have the following:
 
 - Click the name of your target database to open the **All Alerts** report. The **All Alerts** report is filtered to show only the open alerts for your target database for the past 7 days.
 
-![all Alerts report filtered](images/177408562.png)  
+  ![all Alerts report filtered](images/all-alerts-report-last-seven-days.png)  
 
 
 
@@ -163,27 +151,31 @@ To complete this lab, you need to have the following:
 - Click the **Reports** tab.
 
 
-- On the left, expand **Activity Auditing** (if needed), and then click the **All Activity** report.
+- On the left, under **Activity Auditing**, click the **All Activity** report.
 
 
 - At the top of the report, view the totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, and **DMLs**.
 
-  ![Totals in All Activity report](images/177408585.png)  
+  ![Totals in All Activity report](images/all-activity-report-totals.png)  
 
 
-- If the filters are not displayed, click **Filters**. The report is automatically filtered to show one week's worth of audit data for your target database.
+- The report is automatically filtered to show one week's worth of audit data for your target database.
 
-  ![Filters automatically set in All Activity Report](images/177408600.png)  
+    - If the filters are not displayed, click **Filters**.
+
+   ![Filters automatically set in All Activity Report](images/filters-table-all-activity-report.png)  
 
 
 
 ## **STEP 5**: View a summary of audit events collected and alerts raised
 
-- On the left, expand **Summary**, and then click **Audit Summary**. The **Audit Summary** report helps you to gain an understanding of the activity trends of your target databases. By default, the report shows you data for all of your target databases for the past week.
+- On the left, expand **Summary**, and then click **Audit Summary**.
+
+    - The **Audit Summary** report helps you to gain an understanding of the activity trends of your target databases. By default, the report shows you data for all of your target databases for the past week.
 
 - View the totals to learn how many target databases are represented in the charts, how many users are audited, and how many client hosts have connected to your target database. The report is filtered to show data for the last week.
 
-    ![Totals in Audit Summary report](images/177408621.png)  
+    ![Totals in Audit Summary report](images/audit-summary-filters-totals.png)  
 
 
 - View the charts.
@@ -193,90 +185,62 @@ To complete this lab, you need to have the following:
   - The **Login Activity** chart compares the number of failed and successful logins for the past week.
   - The **All Activity** chart compares the total number of events for the past week.
 
-  ![All Activity chart](images/177408629.png)  
+   ![Audit Summary report charts](images/audit-summary-report-charts.png)  
 
 - To filter the time period for the report, at the top, select **Last 1 Month**, and then click **Apply**.
 
-  ![Audit Summary filter](images/177408636.png)  
-
-
-- To filter the target database for the report, click **All Targets** in the Filters section.
-
-  ![All Targets circled](images/177413580.png)  
+- To filter the target database for the report, click **All Targets** in the **Filters** section.
 
 - In the **Select Targets** dialog box, deselect the check box for **All Targets**, click the field, select your target database, and then click **Done**.
 
-  ![All Targets option](images/177408650.png)  
+- Click **Apply**.
 
 
 - Your target database is now set as a filter.
 
-  ![Database set as a filter](images/177408657.png)  
+  ![Database set as a filter](images/last-one-month-filter.png)  
 
 
 
-## **STEP 6**: Create a failed logins report
+## **STEP 6**: Create a logins report
 
 - Click the **Reports** tab.
 
 - To view the **Login Activity** report, in the list under **Activity Auditing**, click **Login Activity**.
 
 
-- To set a filter on Operation Status, select **Operation Status = FAILURE** (no quotes), and then click **Apply**.
-
-  ![Login Activity report filters](images/177413592.png)  
-
-
-- The report shows only failed logins.
-
-  ![Login Activity report showing only failed logins](images/177413920.png)  
-
-
 - From the **Report Definition** menu, select **Save As New**.
 
-  ![Report Definition menu options with Save As New circled](images/177426047.png)  
-
-
-- In the **Save As** dialog box, enter the report name **<user name> Failed Logins**, enter the description **Failed logins report**, select your compartment, and then click **Save As**.
-
-  ![Save As dialog box](images/177426111.png)  
-
-  A confirmation message states &quot;Successfully created the report.&quot;
+- In the **Save As** dialog box, enter the report name **<user name> Logins**, enter the description **Logins report**, select your compartment, and then click **Save As**. A confirmation message states that you successfully created the report.
 
 - Click the **Reports** tab.
 
 
-- At the top of the list under **Custom Reports**, click your failed logins report (**<user name> Failed Logins)**.
+- At the top of the list under **Custom Reports**, click your **Logins** report.
 
-    ![List of Custom Reports](images/177427052.png)  
+    ![List of Custom Reports](images/logins-report-listed.png)  
 
 
 - Click **Generate Report**.
 
-    ![Generate Report option circled](images/177413598.png)  
-
 
 - In the **Generate Report** dialog box, leave **PDF** selected, select your compartment, and then click **Generate Report**.
-
-  ![Generate Report dialog box with PDF circled](images/177427064.png)  
 
 - Wait for a confirmation message that states that the report was generated successfully.
 
 
-- Click **Download Report**. The PDF is downloaded to your browser.
-
-    ![Download Report link circled](images/177413602.png)  
+- Click **Download Report**.  The **Opening Logins.pdf** dialog box is displayed.
 
 
+- Select the application with which you want to open the PDF, and click **OK**.
 
-- To view the report, click the downloaded **Failed Logins.pdf** file.
+- Review the report, and then close it.
 
-    ![Login Activity report in PDF format](images/177427077.png)  
+  ![Login report](images/login-report-pdf.png)
 
 
-- When you are finished viewing the report, close it.
 
-You may proceed to the next lab.
+Continue to the next lab.
 
 ## Learn More
 
@@ -286,7 +250,7 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Jody glover, UA Developer, Oracle Data Safe Team
-* **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 2, 2020
+* **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 9, 2020
 
 
 ## See an issue?
