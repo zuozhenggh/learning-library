@@ -196,7 +196,7 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     $ <copy>sudo -su training</copy>
     ```
 
-6. Use the linux **`id`** command to confirm that you are connected now as the **`training`** administrator user.
+6. Use the linux **`id`** command to confirm that you are connected now as the **`training`** user.
 
     ```
     # <copy>id</copy>
