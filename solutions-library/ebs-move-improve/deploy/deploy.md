@@ -1,10 +1,14 @@
 # Oracle E-Business Suite Cloud Manager Deployment and Configuration
 
 ## Introduction
-In this lab, we will deploy the Oracle E-Business Suite Cloud Manager using the Marketplace Application: 
+In this lab, we will deploy the Oracle E-Business Suite Cloud Manager using the Marketplace Application:
 Oracle E-Business Suite Cloud Manager Stack for Demos.
 
 Estimated Lab Time: 30 minutes
+
+Watch this short video to preview how to deploy your Oracle E-Business Suite cloud manager.
+
+[](youtube:vzIJ4LFOi0s)
 
 ### Objectives
 

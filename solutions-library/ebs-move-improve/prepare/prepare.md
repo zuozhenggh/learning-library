@@ -5,6 +5,10 @@ In this exercise, you will prepare your Oracle E-Business Suite environment by s
 
 Estimated Lab Time: 30 minutes
 
+Watch this short video to preview how to prepare your tenancy for Oracle E-Business Suite.
+
+[](youtube:kWBDCZ-r0zQ)
+
 ### Objectives
 * Setup EBS Cloud Manager Authentication with Identity Cloud Service (IDCS)
 * Create the EBS Cloud Manager Administrators group and user in IDCS

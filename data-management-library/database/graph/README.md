@@ -16,16 +16,16 @@ RDF graph leverages features such as triple-level security, Exadata, RAC, compre
 RDF graphs create a unified metadata layer for disparate applications that facilitates identification, integration, and discovery.  RDF graphs are central to knowledge management, linked data and social network applications common in the healthcare and life sciences, finance, media and intelligence communities.
 
 
-Click on one of our workshops below to access the content.
+Try one of our workshops in [LiveLabs](http://bit.ly/golivelabs).
 
 ## Property Graph Workshops
 
 ### Tutorial: Setup a property graph environment in Docker
-- [Quickstart with Docker](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/graph/quickstart-with-docker/workshops/livelabs/)
+- Quickstart with Docker
 
 ### Tutorial: Setup a property graph environment in Always Free Tier (AF Autonomous Database and Compute)
-- [Quickstart on AF Tier: Manual deployment](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/graph/graph-server-client/manually-deploy-and-use-on-compute/workshops/freetier/)
-- [Quickstart on AF Tier: Deploy OCI Marketplace image](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/graph/graph-server-client/deploy-oci-marketplace-image/workshops/freetier/)
+- Quickstart on AF Tier: Manual deployment
+- Quickstart on AF Tier: Deploy OCI Marketplace image
 
 ## RDF/Semantic Graph Workshops
 

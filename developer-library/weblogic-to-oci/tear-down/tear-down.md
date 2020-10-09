@@ -1,4 +1,4 @@
-# Tearing down the workshop environment
+# Tearing Down the Workshop Environment
 
 ## Introduction
 

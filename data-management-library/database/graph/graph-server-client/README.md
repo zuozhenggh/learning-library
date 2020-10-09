@@ -7,9 +7,9 @@
 ## Property Graph 
 
 The following workshops are available in this repository.  
-Click on the links to get started.
+Access them in [LiveLabs](http://bit.ly/golivelabs).
 
-- [Property Graphs - Manually deploy the Graph Server and Client kit](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/graph/graph-server-client/manually-deploy-and-use-on-compute/workshops/freetier/) on a compute instance and get started with property graphs:
+- Property Graphs - **Manually deploy the Graph Server and Client kit on a compute instance** and get started with property graphs:
   The Graph Server and Client kit consists of a set of compoments. These include an in-memory graph server (PGX), a visualization component (GraphViz), and an interactive shell (JShell).  
   This workshop walks through the steps for 
     - deploying the kit on a compute instance,
@@ -17,7 +17,7 @@ Click on the links to get started.
     - connecting to an (Always Free) Autonomous Database instance,
     - creating a property graph,
     - querying and analyzing the graph and visualizing the results
-- [Property Graphs - Deploy the Graph Server and Client **OCI Marketplace** image](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/graph/graph-server-client/deploy-oci-marketplace-image/workshops/freetier/) and get started with property graphs:  
+- Property Graphs - **Deploy the Graph Server and Client OCI Marketplace** image and get started with property graphs:  
   This workshop show you how to use the Oracle Resource Manager to deploy Graph Server Client Marketplace image. The remainder of the workshop is the same as the above one, i.e. create a property graph and then query, analyze, and visualize it.
 
 - Oracle Label Security with Property Graphs

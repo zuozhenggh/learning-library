@@ -1,4 +1,4 @@
-# Setup the demo 'on-premises' environment
+# Setup the Demo 'On-Premises' Environment
 
 ## Introduction
 
