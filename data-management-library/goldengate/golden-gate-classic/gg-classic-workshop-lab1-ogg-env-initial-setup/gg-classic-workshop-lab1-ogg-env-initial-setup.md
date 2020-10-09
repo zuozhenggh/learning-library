@@ -61,12 +61,14 @@ Approximately 30 min
 
 ## Steps
 
-**Prereqs (Completed by Oracle Team prior to Labs)**
+
 
 In this lab we will setup GoldenGate Classic
 
 
 ## **Step 1:** Configuration for Classic Lab
+
+**Prereqs (Completed by Oracle Team prior to Labs)**
 
 1. mkdir /opt/Test_Software
 2. Downloaded the following software zip files to the "Software" folder:
@@ -236,14 +238,18 @@ exit
 CREATE USER 'ggrep'@'localhost' IDENTIFIED BY '@Oracle1@';
 GRANT ALL PRIVILEGES ON * . * TO 'ggrep'@'localhost';
 
+
 ````
 <copy>mysql\q</copy>
 ````
 
 2. Go to the "oggmysql" directory.
-cd /u01/app/oracle/product/19.1.0/oggmysql
 
-3. Set the environment variable OGG_HOME to this directory.
+````   
+<copy>cd /u01/app/oracle/product/19.1.0/oggmysql</copy>
+````
+
+1. Set the environment variable OGG_HOME to this directory.
 export OGG_HOME=/u01/app/oracle/product/19.1.0/oggmysql
 
 4. Start GGSCI and execute the following commands:
