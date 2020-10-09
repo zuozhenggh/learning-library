@@ -15,44 +15,9 @@ There is a recording of the instructor going through this lab here:
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:
   - Tenant, User name and Password
-  - URL for the Console: [https://oracle.com](https://oracle.com)
   - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
 
-## **STEP 1**: Signing in to the Console
-
-In this step, you sign in to the Oracle Cloud Infrastructure console using your credentials.
-
-1. Go to [cloud.oracle.com](https://cloud.oracle.com).
-
-    ![](images/cloud-login-1.png)
-
-2. Click **Sign in to Cloud**.
-
-    ![](images/cloud-login-2.png)
-
-4. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
-
-    ![](images/cloud-login-tenant.png)
-
-1. Open a supported browser and go to the Console URL:  [https://oracle.com](https://oracle.com).
-
-2. Click on the portrait icon in the top-right section of the browser window, then click on the **Sign in to Cloud** link.
-
-   ![Main Sign-in page](images/img001.png)
-
-3. Enter the name of your tenancy (aka your account name, not your user name), then click on the **Next** button.
-
-   ![Enter tenancy name](images/img002.png)
-
-4. Oracle Cloud Infrastructure is integrated with Identity Cloud Services, you will see a screen validating your Identity Provider. Enter your username and password. Click **Sign In**.
-
-   ![Username and password fields](images/img003.png)
-
-5. When you sign in to the Console, the dashboard is displayed.
-
-   ![Dashboard view](images/img004.png)
-
-## **STEP 2**: Creating Compartments
+## **STEP 1**: Creating Compartments
 
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
 
@@ -67,7 +32,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 3. You have just created a compartment for all of your work in this Test Drive.
 
-## **STEP 3**: Managing Users, Groups and Policies to Control Access
+## **STEP 2**: Managing Users, Groups and Policies to Control Access
 
 A user's permissions to access services comes from the _groups_ to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
 
@@ -234,7 +199,7 @@ We'll create a user, a group, and a security policy to understand the concept.
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Tom McGinn, Database Product Management
 - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
-- **Last Updated By/Date** - Kamryn Vinson, August 2020
+- **Last Updated By/Date** - Tom McGinn, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
