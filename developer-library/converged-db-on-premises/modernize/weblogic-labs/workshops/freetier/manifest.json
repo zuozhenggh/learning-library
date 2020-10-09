@@ -29,7 +29,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
         },
         {
-            "title": "Weblogic and Helidon Lab",
+            "title": "Lab 4: Weblogic and Helidon",
             "description": "Weblogic and Helidon Lab",
             "publisheddate": "08/10/2020",
             "filename": "../../weblogic-lab/weblogic-lab.md"
