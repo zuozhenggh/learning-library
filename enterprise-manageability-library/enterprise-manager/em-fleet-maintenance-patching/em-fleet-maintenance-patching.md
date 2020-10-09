@@ -67,7 +67,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 1. Update the Named Credentials with your SSH Key
 
-Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
+Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential and Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
 
 ![](images/update_ssh_creds.jpg " ")
 

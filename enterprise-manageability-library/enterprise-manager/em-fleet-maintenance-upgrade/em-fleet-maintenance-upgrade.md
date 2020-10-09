@@ -13,7 +13,7 @@ Benefits with Fleet Maintenance:
 - Minimum Downtime with Out of Place patching
 - Enterprise Scale with Enterprise Manger Deployment Procedures Framework
 - Single pane of glass for monitoring and managing entire patching and upgrade operations
-- Ability to schedule/retry/suspend/resume.
+- Ability to schedule/retry/suspend/resume
 - Database patching across different infrastructure including engineered systems like Exadata
 
   ![](images/em-fleet-maintenance-overview-1.png " ")
