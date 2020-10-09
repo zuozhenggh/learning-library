@@ -11,21 +11,14 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 
 ### Lab Overview
 
-- **Lab: Installation Of GoldenGate Classic** -
+- **Lab: Installation Of GoldenGate** -
     In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
-- **Lab: Replication from mySQL Relational Database to Oracle Relational Database using GoldenGate** -
+- **Lab: Replication from PostGresSQL Relational Database to Oracle Relational Database using GoldenGate** -
     This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 
-- **Lab: Replication from Oracle Relational Database to mySQL Relational Database using GoldenGate** -
+- **Lab: Replication from Oracle Relational Database to PostGresSQL Relational Database using GoldenGate** -
     This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
-
-- **Lab: Active - Active HA Replication from Relational to Relational** -
-    In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
-    process ‘rhive’ will read the trail file, create the Hive tables, write the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and /user/ggtarget/hive/schema/*
-
-- **Lab: Replication Column Conversion and GoldenGate** -
-    In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhbase’ will read the remote trail files, create the HBase tables and write the data to those tables.
 
 ## Learn More
 

@@ -1,4 +1,4 @@
-# Lab 5 - ogg-column-conversions
+# Lab 5 - Postgres to Oracle
 
 ### Introduction
 
@@ -16,7 +16,7 @@ Approximately 60 minutes
 
 ## STEPS-
 
-## Step 1: - GoldenGate GoldenGate - Oracle Replication
+## Step 1: - GoldenGate GoldenGate - PostGres Replication
 
 1. Open a terminal session
 

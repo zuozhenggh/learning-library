@@ -1,11 +1,11 @@
-# Goldengate Classic  Workshop
+# Goldengate Non Oracle Workshop
 
 
 ## How to Prepare for This Workshop 
 
 - Once you are viewing the workshop's gitHub page's website, you can see a list of Lab Guides at any time by clicking on the **Menu Icon**
 
-## Oracle Golgengate Classic Workshop
+## Oracle Golgengate Non Oracle  Workshop
 
 Welcome to the Golden Gate for Big Data Workshop. The content will give you a basic understanding of Golden Gate and Big Data.
 
@@ -29,10 +29,9 @@ There are 5 hands-on labs in this workshop. GoldenGate software for MySQL and Or
 
 Lab 1 –   Setup GoldenGate Classic
 
-Lab 2 –   MySQL -> Oracle 
+Lab 2 –   PostGres-> Oracle 
 
-Lab 3  –  Oracle -> MySQL
+Lab 3  –  Oracle -> PostGres
 
 Lab 4 –  Active - Active Replication
 
-Lab 5 –  GoldenGate Column Conversions
