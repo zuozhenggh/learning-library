@@ -67,6 +67,16 @@ You need to download the stack package (zip file) and save it on your disk.
 
     💡 The public IP was returned by the apply job and is also available on OCI's Dashboard when checking the Compute Instances. You can always returned to the output logs of the job.
 
+## **STEP 6**: Use your MySQL InnoDB Cluster
+
+You can now use MySQL Shell like you did in Step 2 & 3 of Lab 4.
+
+   ```
+   mysql-js> cluster=dba.getCluster()
+   mysql-js> cluster.status()
+   ...
+   ```
+
 Thank you for attending this MySQL InnoDB Cluster & OCI hands-on lab.
 
 
