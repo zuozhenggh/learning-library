@@ -79,26 +79,42 @@ To setup the GitHub Development Environment and install GitHub Desktop:
 
     ![](./images/git-hub-desktop-login-screen.png " ")
 
-## **STEP 6:** Fork the learning-library Repository into Your GitHub Account
-  The GitHub Web UI is organized by projects, each with its own repository or "repo" that is accessed through a unique URL.
+## **STEP 6:** Fork the learning-library Repository on Your GitHub Account
 
-  To create workshops and labs, we use the oracle project and one of its repositories named **learning-library**.
-  A fork is a personal copy of a repository at a point in time.
-  Forking creates a duplicate copy of the production oracle/learning-library repository to your GitHub account. For example, if the username is achepuri, a fork of the learning-library repository in the oracle project will create a copy to [achepuri/learning-library](https://github.com/achepuri/learning-library).
+  We create workshops and labs in the **learning-library** repository of the **oracle** project. You must fork the learning-library repository to create a duplicate personal copy of the repository on your GitHub account. You own the forked repository and you can edit its contents without affecting the parent repository.
+
+  For example, if a user named achepuri forks the learning-library repository in the oracle project, a duplicate repository [achepuri/learning-library](https://github.com/achepuri/learning-library) is created.
+
   To fork the learning-library repository:
 1. Log in to the [GitHub Web UI](http://github.com), using your GitHub account.
 2. Navigate to the [oracle/learning-library repository](https://github.com/oracle/learning-library).
 3. Click **Fork**.
   ![](./images/get-started-git-hub-webUI-fork.png " ")
 
-In the following example, user achepuri is creating a fork based on the learning-library repository.
+In the following example, user achepuri has forked the learning-library repository.
 
 ![](./images/get-started-git-hub-webui-forked-library.png " ")
 
 In the next step, you will clone this forked repository.
 
 ## **STEP 7:** Clone the Forked repository
-A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com).
+A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as Atom, and use GitHub Desktop client to keep track of your changes without having to be online.
+
+To clone the forked repository:
+1. Open your **GitHub Desktop** application and log in using your GitHub account.
+2. Click **File > Clone repository** to display the **Clone a repository** dialog box.
+
+    ![](./images/git-hub-desktop-clone-repository.png " ")
+
+3. Select your own repository such as **<your account>/learning-library** from **Your repositories**. In this example, there is only one repository displayed named **achepuri/learning-library**. Under **Local path**, select the local path on your machine where the repository is going to be cloned (copied). This is where the project files get copied to your local file system. In this example, the local path is **C:\Users\achepuri.ORADEV\Documents\GitHub**.  
+
+    ![](./images/git-hub-desktop-clone-repository_dialog.png " ")
+
+4. Click **Clone**.
+
+  The **learning-library** repository files appear in the local path you just specified. You are now start working on your labs and workshops!
+
+**Note**: The local cloned repository is connected to the remote fork version. You can can push your local changes to the remote fork version when you are online to keep them in sync.
 1. When you make a clone, you can edit the files in your preferred editor, such as **Atom**, and use **GitHub Desktop client** to keep track of your changes without having to be online.
 2. The repository you cloned is still connected to the remote version (your fork) so that you can push your local changes to the remote to keep them synced when you're online.
 
