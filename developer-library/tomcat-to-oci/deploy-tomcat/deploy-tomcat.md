@@ -165,7 +165,9 @@ In order to run the deployment, you need to define a few settings in a file name
 
     It will take a few minutes to provision the resources
 
-4. Note the 
+    You may proceed to the next lab while it is provisioning, however you will not be able to migrate the data to the database until the infrastructure completed provisioning.
+
+4. Note the outputs of the terraform for future use.    
 
 You may proceed to the next lab.
 

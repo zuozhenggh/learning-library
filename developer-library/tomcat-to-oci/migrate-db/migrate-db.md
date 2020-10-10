@@ -62,6 +62,16 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     - name for the key: hit **Enter** for the default
     - Passphrase: hit **Enter** for no passphrase
 
+
+    You should see an output like:
+
+    ```bash
+    Private key written to: /home/oracle/.oci/oci_api_key.pem
+    Fingerprint: 21:d4:f1:a0:55:a5:c2:ce:e2:c6:88:4f:bf:2f:f3:af
+    Config written to /home/oracle/.oci/config
+    ```
+
+
 4. Upload the public key to your OCI account
 
     In order to use the CLI, you need to upload the public key generated to your user account
@@ -75,6 +85,8 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     ```
 
     and copy the full printed output to clipboard
+
+    In the OCI web console:
 
     - Under **User -> User Settings**
     - Click **API Keys**
@@ -285,6 +297,8 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
 
 1. Get the public IP of the bastion host from the terraform output
 
+    If the Tomcat server was deployed in a public subnet, you can use the public IP of the Tomcat server
+
 2. Create a tunnel with:
 
     Configure the Bastion Public IP to go through
@@ -472,6 +486,8 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     ```
     
     You will still see errors related to the user `RIDERS` and the associated table `RIDERS.RIDERS` already existing. This is normal as we ran the command and first time and then object were created on that first run.
+
+The database has been migrated.
 
 You may proceed to the next lab.
 
