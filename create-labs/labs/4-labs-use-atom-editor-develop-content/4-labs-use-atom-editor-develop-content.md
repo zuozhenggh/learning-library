@@ -42,28 +42,36 @@ To install the Atom Live Server:
 The atom-live-server plugin is added to the **Packages** menu.
   ![](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
 
-
-## **STEP 3:** Browse Your Workshop and Labs Using Atom-Live-Server
-
-To view your Workshop and Labs in HTML format:
-1. To view your workshop and the labs inside the workshop in HTML format, open the folder that contains the markdown (.md), `index.html`, and `manifest.json` files for the workshop. Click **File > Open Folder** to display the **Open Folder** dialog box.
+## **STEP 3:** Create your Lab and Workshop Content
+1. Copy any sample template from your clone folder **\learning-library** folder. In this example, let's consider an existing workshop folder **learning-library\data-management-library\big-data\bds**.
+2. Copy and paste the **bds-quickstart-workshop** folder from **learning-library\data-management-library\big-data\bds** to your product folder (create a new folder, such as **create-labs\labs**) in your local folder. Rename the **bds-quickstart-workshop** to a folder name of your choice, for example: **1-labs-quickstart-workshop**.
+3. Open **Atom** Editor, browse, and select your project folder. Click **File > Open Folder** to display the **Open Folder** dialog box.
   ![](./images/use-atom-editor-open-folder.png " ")
+4. Navigate to **create-labs\labs** and click **Select Folder**.
+  ![](./images/atom-editor-browse-select-lab.png " ")
+  The workshop folder and the lab folders are displayed in Atom.
+  ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
+5. Expand the Workshop folder, **1-labs-quickstart-workshop** in this example, open the `manisfest.json` to list the labs you plan to add to your workshop. The `manifest.json` is like your book map file in SDL.
+  ![](./images/use-atom-editor-manifest-json.png " ")
+6. Open the `intro.md` file from **1-labs-quickstart-workshop** and update it as per your requirements.
+7. Open the `index.html` file and update the title of the workshop.
+    ![](./images/use-atom-editor-index-title-update.png " ")
+8. Open the `README.md` file and update it with a gist of your workshop.
+    ![](./images/use-atom-editor-readme-update.png " ")
+9 Similarly, to start creating your lab content, copy and paste a sample lab, such as **bds-getting-started** folder from **learning-library\data-management-library\big-data\bds** to your product folder and rename it. For example, **\learning-library\create-labs\labs\2-labs-git-hub-get-started-install-configure**. Rename the sample `.md` file, for example, `2-labs-git-hub-get-started-install-configure.md`.
+10. In the lab folders, you will have to edit only the respective `.md` files, and include images if required in the **images** folder.
 
+## **STEP 4:** Preview Your Workshop and Labs Using Atom-Live-Server
 
-2. The following example shows the local cloned copy of the learning-library repository for user achepuri. The clone was saved in the following local filesystem path: **C:\Users\achepuri.ORADEV\Documents\GitHub\learning-library\create-labs\labs** folder. The user chose **GitHub** folder for the clone's name. The workshop was created in the **\learning-library\create-labs\labs** folder. The workshop's name (and the folder's name) is 1-labs-quickstart-workshop. This workshop, contains 5 labs as shown in the following screen. To open the workshop in Atom, select the root folder for the workshop, create-labs, and then select **labs** Folder.
-
-  ![](./images/use-atom-editor-select-folder.png " ")
-
-The workshop folder and the lab folders are displayed in Atom.
-![](./images/use-atom-editor-folder-structure-in-atom.png " ")
-
-3. To preview your output: Start atom-live-server. Select **Packages > atom-live-server > Start Server**.
+To preview your output in a browser:
+1. Start atom-live-server. in the Atom Editor, select **Packages > atom-live-server > Start Server**.
   ![](./images/use-atom-editor-packages-start-live-server.png " ")
 
-4. By default, atom-live-server opens a browser window that displays the folders inside the **labs** folder. If several folders are displayed, then select the folder that contains the workshop or lab that you want to view. In this example, to display the workshop, double-click the workshop's name, **1-labs-quickstart-workshop**.
+  By default, atom-live-server opens a browser window that displays the folders inside the **labs** folder.
+2. Double-click the folder that contains the workshop you want to view. In this example, to display the workshop, double-click the workshop's name, **1-labs-quickstart-workshop**.
   ![](./images/use-atom-editor-open-live-server.png " ")
 
-The Workshop is displayed along with the labs. The labs contained in this workshop are displayed in the Contents menu on the right. You can make content changes in the Atom Editor to the workshop and lab files, save the changes, and the updated workshop and labs will be displayed in the browser window. The pages reload automatically. To view a lab, click the lab's name in the **Contents** menu.
+The Workshop is displayed along with the labs. The labs contained in this workshop are displayed in the Contents menu on the right. You can make content changes in the Atom Editor to the workshop and lab files, save the changes, and the updated workshop and labs will get refreshed in the browser window. The pages reload automatically. To view a lab, click the lab's name in the **Contents** menu.
 
   ![](./images/use-atom-editor-workshop-output.png " ")
 

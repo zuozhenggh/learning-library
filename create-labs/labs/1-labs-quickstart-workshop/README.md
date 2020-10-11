@@ -1,11 +1,11 @@
-# Welcome to the Creating Live Labs and Workshops!
+# Welcome to the Creating Labs and Workshops!
 
-The **Getting Started with Oracle Big Data Service (BDS) workshop** is a series of step-by-step labs that guide you through the process of setting up a simple environment and creating a small BDS cluster. You'll also explore with adding Cloud SQL to the cluster, accessing the cluster from the public internet, using Cloudera Manager and Hue to access the cluster, and creating a Hadoop administrator user.
+The **Creating Labs and Workshops** is a series of step-by-step labs that guide you through the process of setting up a Git environment, develop labs and workshops using the Atom Editor. You'll also learn how to use the GitHub Desktop to merge and commit changes to the Oracle repository.
 
 ## Access the Labs Using Our Web Interface
 
 
-**[Click here](https://oracle.github.io/learning-library/data-management-library/create-labs/labs/1-labs-quickstart-workshop)** to use our easy to navigate HTML format. <!-- This URL is not functional -->
+**[Click here](https://oracle.github.io/learning-library/create-labs/labs/1-labs-quickstart-workshop)** to use our easy to navigate HTML format. <!-- This URL is not functional -->
 
 
 ## Access the Labs on the Repo

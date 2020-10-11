@@ -2,7 +2,7 @@
 
 ## Introduction
 
-As a best practice merge your library everyday or whenever you start your GitHub Desktop application. Merge pulls all the commits (changes) from the upstream/master repository (production), https://github.com/oracle/learning-library, into your local filesystem clone (local machine). This keeps your local clone up-to-date with other people's work (commits) from the upstream/master. Next, you push the updated content from your clone into the origin of your clone, that is, your fork, to synchronize your clone with your fork. Merging also avoids the long time it could take to complete if you don't do that often.
+As a best practice merge your library everyday or whenever you start your GitHub Desktop application. Merge pulls all the commits (changes) from the [upstream/master repository (production)](https://github.com/oracle/learning-library), into your local filesystem clone (local machine). This keeps your local clone up-to-date with other people's work (commits) from the upstream/master. Next, you push the updated content from your clone into the origin of your clone, that is, your fork, to synchronize your clone with your fork. Merging also avoids the long time it could take to complete if you don't do that often.
 
 ### Objectives
 
@@ -21,7 +21,7 @@ This lab assumes that you have successfully completed **Lab 4: Using Atom Editor
 
 
 ## **STEP 1:** Merge Content from Git Before you Start Editing your Content
-Everday before you start editing your content, ensure to do a Merge.
+Everyday before you start editing your content, ensure to do a Merge.
 
 To merge content:
 1. Start your **GitHub Desktop** client.
@@ -32,20 +32,20 @@ To merge content:
 3. Under the **Default branch**, the master branch is selected by default. This indicates the local clone on your PC.
 ![](./images/git-hub-merge-local-clone-default-branch.png " ")
 
-4. Scroll down the **Merge into master** window, select **upstream/master** (this is your master repository which is the learning-library), and then click **Merge upstream/master into master**. In this example, this will merge 120 commits by other people from the upstream/master (master repository) into the clone on the local PC.
+4. Scroll down the **Merge into master** window, select **upstream/master** (this is your master repository which is the learning-library), and then click **Merge upstream/master into master**. In this example, this will merge 120 commits by other people from the upstream/master into the clone on the local PC.
 
 ![](./images/git-hub-merge-upstream-master.png " ")
 
-5. When the merge is successfully completed, a "Successfully merged upstream/master into master" message is displayed. To push the new commits from the local clone to the origin remote of the clone (the fork), click **Push origin**.
+5. When the merge is successfully completed, a "Successfully merged upstream/master into master" message is displayed. To push the new commits from the local clone to your forked location, click **Push origin**.
 
 ![](./images/labs-git-hub-merge-push-origin.png " ")
 
 To determine if your clone is up-to-date with upstream/master (production), repeat steps 2 to 4. If both repositories are synchronized, then the following message is displayed:
-"This branch is up to date with upstream/master."
+"This branch is up to date with upstream/master".
 
 ![](./images/git-hub-merge-branch-up-to-date.png " ")
 
-The **Push Origin** is replaced by **Fetch Origin** after the push origin operation is successfully completed.  The local clone and fork repositories are now synced with the master repository.
+In the GitHub Desktop UI, notice that the **Push Origin** is replaced by **Fetch Origin** after the push origin operation is successfully completed.  The local clone and fork repositories are now synced with the master repository.
 
 ![](./images/git-hub-merge-fetch-origin.png " ")
 
