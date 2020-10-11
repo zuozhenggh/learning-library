@@ -4,7 +4,7 @@
 
 In this lab, we will deploy a Tomcat Cluster on Oracle Cloud Infrastructure with Terraform, along with an Autonomous Transaction Processing Database.
 
-Estimated Lab Time: 15min
+Estimated Lab Time: 25min
 
 ### Objectives
 
@@ -90,7 +90,7 @@ For this step, you may want to open up a separate shell terminal.
 
     ```bash
     <copy>
-    git clone git@github.com:oracle-quickstart/oci-arch-tomcat-autonomous.git
+    git clone https://github.com/oracle-quickstart/oci-arch-tomcat-autonomous.git
     </copy>
     ```
 

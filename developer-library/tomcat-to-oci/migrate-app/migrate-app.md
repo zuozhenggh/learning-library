@@ -4,7 +4,7 @@
 
 In this lab, we will migrate the application to the Tomcat Cluster on Oracle Cloud Infrastructure.
 
-Estimated Lab Time: 15min
+Estimated Lab Time: 10min
 
 ### Objectives
 

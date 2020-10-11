@@ -205,10 +205,13 @@ For the tomcat container to run the application, the database needs to be ready,
     CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS                             PORTS                                                          NAMES
 c99433b680ce        tomcat-to-oci_tomcat         "catalina.sh run"        26 seconds ago      Up 25 seconds                      0.0.0.0:8080->8080/tcp                                         tomcat-to-oci_tomcat_1
 0b8f99e2deb8        tomcat-to-oci_oracledb       "/bin/sh -c '/bin/ba…"   26 seconds ago      Up 25 seconds (health: starting)   127.0.0.1:1521->1521/tcp, 127.0.0.1:5000->5000/tcp, 5500/tcp   tomcat-to-oci_oracledb_1
-3d8c4e075e5e        tomcat-to-oci_oracledbinit   "/bin/sh -c ./setup.…"   26 seconds ago      Up 25 seconds                                                                                     tomcat-to-oci_oracledbinit_1
     ```
 
-    If you see a container called `tomcat-to-oci_oracledbinit`, this means the initialization is still ongoing.
+    If you see a container called `tomcat-to-oci_oracledbinit`, like below, this means the initialization is still ongoing.
+
+    ```
+    3d8c4e075e5e        tomcat-to-oci_oracledbinit   "/bin/sh -c ./setup.…"   26 seconds ago      Up 25 seconds                                                                                     tomcat-to-oci_oracledbinit_1
+    ```
 
 2. To troubleshoot problems in the setup, check the logs in the docker containers with:
 

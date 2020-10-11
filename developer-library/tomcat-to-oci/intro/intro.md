@@ -8,7 +8,7 @@ The Tomcat application we'll migrate is a Java applications with a datasource co
 Attached below is a sample architecture of the final solution:
 ![](./images/architecture.png)
 
-Estimated Lab Time: 30 min.
+Estimated Lab Time: 80 min.
 
 ### About Product/Technology
 
