@@ -266,7 +266,7 @@ your Cloud Region is `us-ashburn-1` (registry URL `iad.ocir.io`) and your namesp
     [opc@compute ~]$ fn update context registry iad.ocir.io/idylsdbcgx1d/idylsdbcgx1d
     Current context updated registry with iad.ocir.io/idylsdbcgx1d/idylsdbcgx1d
     [opc@compute ~]$ docker login -u 'idylsdbcgx1d/user@example.com' iad.ocir.io
-    Password: 
+    Password: (Your API Token created above)
     WARNING! Your password will be stored unencrypted in /home/opc/.docker/config.json.
     Configure a credential helper to remove this warning. See
     https://docs.docker.com/engine/reference/commandline/login/#credentials-store
