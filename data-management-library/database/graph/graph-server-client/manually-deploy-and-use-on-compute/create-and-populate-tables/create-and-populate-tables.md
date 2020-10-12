@@ -1,4 +1,4 @@
-# Lab 5 - Create the tables and insert data
+# Create the tables and insert data
 
 ## Introduction
   In this lab, you are going to log in as user `customer_360`. You will learn how to clear previous tables, create new tables, and populate the tables with your data.  
@@ -7,6 +7,14 @@
   ![ER Diagram of tables](images/c360_erDiagram.png " ")  
 
 Estimated time: 7 minutes
+
+### Objectives
+
+- Create and populate tables containing customer, merchant, purchase, and account information.
+
+### Prerequisties
+
+- Lab 4: Create a user in SQLDeveloperWeb.
 
 ## **Step 1:** Log in to SQLDevWeb as user c360
 1. Open the correct URL for SQlDevWeb for the CUSTOMER_360 user. It is almost the same URL as the one for the Admin user execpt that `admin` in that url is replaced with the schema-alias we provided, i.e. with `c360`.
@@ -34,12 +42,12 @@ Estimated time: 7 minutes
     In Query Result, check the account status of `CUSTOMER_360`. The status should be `OPEN`.
     ![](images/troubleshoot_query_result.png " ")
 
-    1. If the status is `LOCKED`, enter and run the command to unlock the user:
+    2. If the status is `LOCKED`, enter and run the command to unlock the user:
     ```
     <copy>alter user CUSTOMER_360 account unlock</copy>
     ```
 
-    1. Then, the status should change to `OPEN`. You can check again using command:
+    3. Then, the status should change to `OPEN`. You can check again using command:
     ```
     <copy>select username, account_status from dba_users ;</copy>
     ```
