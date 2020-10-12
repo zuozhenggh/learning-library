@@ -54,6 +54,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     ```
     <copy>sudo su - oracle</copy>
     ```
+
 ## **Step 1**: Setup Lab Environment
 1.	Logon to VNC console of the ConvergedDB image as an Oracle user to the instance provisioned to you
 2.	Open a terminal (Shell window) by clicking the “Terminal” icon on the desktop
@@ -78,7 +79,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 	```
 2.	The terminal shows stdout logs for starting the AdminServer.
 
-4.	Open the Weblogic Admin Console and login with credentials provided below:
+3.	Open the Weblogic Admin Console and login with credentials provided below:
 
   ![](../images/adminconsole.png " ")  
 
@@ -88,13 +89,13 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
   password: Oracle123!
   ```
 
-5.	On the left hand side Menu under “Domain Structure” click on “Deployments”. Observe that the bestbank2020 application has been already deployed and available to access.
+4.	On the left hand side Menu under “Domain Structure” click on “Deployments”. Observe that the bestbank2020 application has been already deployed and available to access.
 
 	![](../images/deployments.png " ")  
 
-6.	Open a new browser tab or session and access the bank application UI with URL `http://<Your instance public IP address>:7101/bestbank2020`
-7.	The existence of base version of the sample bestbank application is confirmed.
-8.	Change directory to `/u01/middleware_demo/wls-helidon`
+5.	Open a new browser tab or session and access the bank application UI with URL `http://<Your instance public IP address>:7101/bestbank2020`
+6.	The existence of base version of the sample bestbank application is confirmed.
+7.	Change directory to `/u01/middleware_demo/wls-helidon`
 
 	```
 	<copy>cd /u01/middleware_demo/wls-helidon/</copy>
@@ -126,23 +127,23 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
   	-Dpackage=io.helidon.bestbank.creditscore</copy>
 	```
 
-4.	When the project generation is ready open the Main.java for edit:
+3.	When the project generation is ready open the Main.java for edit:
 
   ```
   <copy>vi helidon-creditscore-se/src/main/java/io/helidon/bestbank/creditscore/Main.java</copy>
   ```
 
-5.	Register the creditscore route after line 108 by adding `".register("/creditscore", new CreditscoreService())"` as indicated below. This basically the context path for the service endpoint.
+4.	Register the creditscore route after line 108 by adding `".register("/creditscore", new CreditscoreService())"` as indicated below. This basically the context path for the service endpoint.
 
   ![](../images/register-creditscore-route.png " ")  
 
-7.	Now create a new class called CreditscoreService in the same package where the Main.java is located:
+5.	Now create a new class called CreditscoreService in the same package where the Main.java is located:
 
   ```
   <copy>vi helidon-creditscore-se/src/main/java/io/helidon/bestbank/creditscore/CreditscoreService.java</copy>
   ```
 
-8.	Add the following code block the newly created CreditscoreService.java:
+6.	Add the following code block the newly created CreditscoreService.java:
 
 	```
 	<copy>
