@@ -1,10 +1,14 @@
-# Lab 3 - Provission a Free Tier Linux Compute Instance
+# Provission a Free Tier Linux Compute Instance
 
 ## Introduction
 
 This lab walks you through the steps to get started with setting up and connecting to a Linux compute instance on Oracle Cloud. You will also learn how to copy and deploy Graph Server and ADB Wallet on your compute instance.
 
-Estimated time: 5 minutes
+Estimated time: 15 minutes
+
+### Objectives
+
+- Learn how to provision an Always Free compute instance and deploy the Graph Server and Client kit.
 
 ### Prerequisites
 * Registered cloud account

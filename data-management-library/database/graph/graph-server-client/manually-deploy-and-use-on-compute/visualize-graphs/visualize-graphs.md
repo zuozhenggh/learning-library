@@ -1,10 +1,16 @@
-# Lab 8 - Customer 360 Graph Visualization#
+# Customer 360 Graph Visualization#
 
-## Overview
+## Introduction
 The results of the analyses done in the previous labs can easily be visualized using Graph Visualization feature.
 
 The following video provides an overview of the visualization component.
 [](youtube:zfefKdNfAY4)
+
+Estimated time: 5 minutes
+
+### Objectives
+
+- Learn how to execute PGQL graph queries and visualize the results.
 
 ### Prerequisites
 This lab assumes you have successfully completed Lab 7 and published the graph. It also assumes the Graph Visualization component is up and running on the compute instance on `public_ip_for_compute:7007/ui`.

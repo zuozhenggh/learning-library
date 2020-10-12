@@ -1,9 +1,13 @@
-# Lab 4 - Create and enable a graph user in SQLDeveloper Web
+# \Create and enable a graph user in SQLDeveloper Web
 
 ## Introduction
 This lab walks you through the steps to get started with SQL Developer Web. You will learn how to create a user in SQL Developer Web and provide that user the access to SQL Developer Web.
 
 Estimated time: 3 minutes
+
+### Objectives 
+
+- Learn how to create a database user in SQLDeveloperWeb.
 
 ### Prerequisites
 * Oracle cloud account
