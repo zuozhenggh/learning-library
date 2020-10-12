@@ -1,4 +1,4 @@
-# Lab 7 - Query and Analyze the Customer 360 Graph
+# Query and Analyze the Customer 360 Graph
 
 ## Overview
   This example shows how integrating multiple datasets and using a graph facilitate additional analytics and can lead to new insights. We will use three small datasets for illustrative purposes. The first contains accounts and account  owners. The second is purchases by the people who own those accounts. The third is transactions between these accounts.
@@ -9,6 +9,10 @@
     ![ER Diagram of tables](images/c360_erDiagram.png " ")  
 
   Estimated time: 10 minutes
+
+### Objectives
+
+- Learn how to query and analyze graphs with the Graph Server and Client kit.
 
 ### Prerequisites
   This lab assumes you have successfully completed the previous Labs (Lab 1 through Lab 6) and have the client JShell up and running.

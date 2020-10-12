@@ -1,4 +1,4 @@
-# Lab 2 - Provisioning a Free Tier Autonomous Database
+# Provisioning a Free Tier Autonomous Database
 
 ## Introduction
 
