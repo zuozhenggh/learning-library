@@ -12,6 +12,9 @@ Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
 
 Estimated workshop Time 15 minutes.
 
+### Objectives
+- Create an Oracle Analytics Cloud Instance
+
 ## **STEP 1**: Create an Oracle Analytics Cloud (OAC) Instance
 
 Return to the Oracle Cloud Infrastructure Console accessing from **Oracle Home Page** (oracle.com) and sign in into your cloud account.
@@ -83,17 +86,14 @@ in the top right hand side of your screen. If your username is shown as:
 
     ![OAC Instance Active](./images/lab200_8.png)
 
-## It works
 
-You have just created an Oracle Analytics Cloud Instance.
-
-Congratulations, you are ready for the next workshop!
+*You can proceed to the next lab…*
 
 ## **Acknowledgements**
 
-- **Author** - Priscila Iruela - Database Business Development - EMEA Oracle Digital, Juan Antonio Martin Pedro - Analytics Business Development - Oracle EMEA
-- **Contributors** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center, Andrea Zengin - Autonomous Database Business Development Director - Oracle EMEA
-- **Last Updated By/Date** -
+- **Author** - Priscila Iruela - Database Business Development | Juan Antonio Martin Pedro - Analytics Business Development
+- **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
+- **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
