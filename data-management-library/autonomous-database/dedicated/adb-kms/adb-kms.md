@@ -39,6 +39,12 @@ The first step is for a security admin responsible for all encryption keys to lo
 
 - Once your Vault is ready you may then create a Master Encryption Key.
 
+![](./images/vault3.png)
+
+Ensure you pick the HSM protection mode, provide a key name (preferably matching your ACD name for easier identification) and hit 'Create'
+
+![](./images/pick_hsm.png)
+
 Scroll down on the Vault console page, make sure you select 'Master Encryption Keys' from the list of Resources on the left and hit 'Create Key'
 
 ![](./images/vault3.png)
