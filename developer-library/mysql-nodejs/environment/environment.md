@@ -99,6 +99,9 @@ and when done quit using `\quit`.
 
 ## **Step 3:** Configure the OCI Client
 
+Later we are going to deploy serverless functions using the `fn` tool. The `fn`
+tool requires access to OCI APIs for deploying the code.
+
 In order to access OCI services via API the profile has to be configured. This
 can be done using a Wizard with the `oci` command line tool after you gathered
 some information on your Cloud Tenancy.
@@ -109,8 +112,9 @@ Information you need to collect contains:
 - User OCID
 - Tenancy OCID
 
-The Region is part of the information provided by Terraform. This could be something like
-`us-ashburn-1` or `eu-frankfurt-1`.
+The Region is part of the information provided by Terraform in the *Application
+Information* the previous Lab. This could be something like `us-ashburn-1` or
+`eu-frankfurt-1`.
 
 The user OCID (Oracle Cloud Identifier) is your unique user id. It can be found on your
 profile page, which you can find by clicking on your name in the menu on the top right.
@@ -147,8 +151,9 @@ Console. On the profile page click the **Add Public Key** Button. In the popup y
 
 Having this configured you can now access OCI services from command line, in
 addition to the Web Console. for instance you can get information on the MySQL
-Database Service Instance, which had been creatred by providing your
-compartment's OCID:
+Database Service Instance, which had been created by providing your
+compartment's OCID, which is also in the *Application Information* from the
+Terraform setup:
 
     [opc@compute ~]$ oci mysql db-system list --compartment-id=ocid1.compartment.oc1..aa....
     {
