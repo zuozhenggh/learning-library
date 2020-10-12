@@ -1,20 +1,21 @@
 # Setup Cloud Environment
 
-## Before You Begin
-### Objectives
-- Log into OCI tenancy.
-- Setup your IAAS environment and create common components.
-- Create a MySQL Database Service Instance
-
-### Introduction
+## Introduction
 
 In Lab 1 (as Derek) you will initiate the Oracle cloud environment that you will use to create and deploy your microservices applications. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment. 
 
 To deploy these services, you will be using Terraform, a tool for building, changing, and versioning infrastructure safely and efficiently. It is an important tool for anyone looking to standardize IaaS (Infrastructure as a Service) within their organization.
 
+Estimated Lab Time: 25 minutes
+
+### Objectives
+- Log into OCI tenancy.
+- Setup your IAAS environment and create common components.
+- Create a MySQL Database Service Instance
+
 *We recommend that you create a notes page to write down all of the credentials you will need.*
 
-## **Step 1:** Prepare your terraform script for execution
+## **STEP 1:** Prepare your terraform script for execution
 
 Terraform provides a reusable process for creating infrastructure. In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects. This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
@@ -44,7 +45,7 @@ TODO URL
 
   ![](images/015.png " ")
 
-## **Step 2:** Create OCI Resources in Resource Manager
+## **STEP 2:** Create OCI Resources in Resource Manager
 
 1. Now inside of the resource manager, hover over **Terraform Actions** and click on **Plan**.
 
@@ -78,7 +79,7 @@ TODO URL
 
 Copy the information from the different fields, so you have it available fot the next steps.
 
-Please proceed to the next lab.
+*Please proceed to the next lab.*
 
 ## Acknowledgements
 

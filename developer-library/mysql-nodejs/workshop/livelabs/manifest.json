@@ -1,12 +1,13 @@
 {
+    "workshoptitle": "Develop Python with ATP Workshop",     
     "tutorials": [
+      {
+          "title": "Prerequisites",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
         {
             "title": "Introduction",
             "filename": "../../intro/intro.md"
-        },
-          {
-            "title": "Lab 0: Login to Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
             "title": "Lab 1: Setup",
