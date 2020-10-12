@@ -145,12 +145,12 @@ Cloud console.
     [opc@compute ~]$ cat ~/.oci/oci_api_key_public.pem 
 
 For registering the API key go back to your profile page via the menu on the top right of the
-Console. On the profile page click the **Add Public Key** Button. In the popup you can paste the key and confirm by clicking **Add**.
+Console. On the profile page click the **API Keys** link under **Resources** (bottom left corner) and then click the **Add Public Key** Button. In the popup you can paste the key and confirm by clicking **Add**.
 
   ![](images/api_key.png " ")
 
-Having this configured you can now access OCI services from command line, in
-addition to the Web Console. for instance you can get information on the MySQL
+Having this configured you can now access OCI services from the command line, in
+addition to the Web Console. For instance you can get information on the MySQL
 Database Service Instance, which had been created by providing your
 compartment's OCID, which is also in the *Application Information* from the
 Terraform setup:
@@ -196,7 +196,7 @@ about available APIs.
 ## **Step 4:** Configure fn client for Oracle Functions
 
 The application you are going to build, is a serverless application using
-Oracle Functions. Serverless also known as FaaS let's you run an micro-service
+Oracle Functions. Serverless also known as FaaS let's you run an microservice
 style application without having to administrate a server on your own. Oracle
 Functions will deploy your code to service runners when required and increase 
 on load. If the code isn't invoked it will scale down automatically and won't
@@ -208,7 +208,7 @@ login from our compute instance to docker in able to publish our code.
 
 TODO get docker namespace
 
-Also you have to generate an **API Key** for Docker to login.
+Also, you have to generate an **API Key** for Docker to login.
 
 The **API Key** can be generated on the **Auth Tokens** section on your
 profile page.
@@ -224,7 +224,7 @@ the Token
 new token has to be created. Make sure you noted the token before closing the
 popup.*
 
-You'll also needed is your region's region key for the hostname of the docker
+You'll also neede your region's region key for the hostname of the docker
 registry.
 
 | Region         | Region key |
@@ -237,9 +237,9 @@ Full list can be found in [the OCI documentation](https://docs.cloud.oracle.com/
 Last thing is your username, this is the one you used to login to the 
 console.
 
-With that information you can configure the fn client.
+With that information you can configure the `fn` client.
 
-The fn client allows having multiple contexts to allow using different
+The `fn` client allows having multiple contexts to allow using different
 systems. Let's create a context and activate it:
 
     [opc@compute ~]$ fn create context node-mysql --provider oracle
