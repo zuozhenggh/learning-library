@@ -16,9 +16,9 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
 ## **Step 1:** Prepare your terraform script for execution
 
-Terraform provides a reusable process for creating infrastructure.  In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects.  This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
+Terraform provides a reusable process for creating infrastructure. In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects. This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
-1.  We provide a downloadcontaining the Terraform configuration and sample code. You can download it from
+1.  We provide an archive containing the Terraform configuration and sample code. You can download it from
 
 TODO URL
 
@@ -34,12 +34,11 @@ TODO URL
 
   ![](images/terra01.png " ")
 
-5. You can configure different variables on this screen. A password for the MySQL user is suggested. You can chage it according to your wishes, as long as you fulfill the requiremenst. **For this Hands-on-Lab the password will not be stored securly. Don't use a password you use elsewhere**.  Select Next.
+5. You can configure different variables on this screen. A password for the MySQL user is suggested. You can change it according to your wishes, as long as you fulfill the requirements. **For this Hands-on-Lab the password will not be stored securly. Don't use a password you use elsewhere**.  Select Next.
 
   ![](images/terra02.png " ")
 
-
-8. Click **create**.  Note the screen will freeze for a few seconds before returning..be patient.
+6. Click **create**.  Note the screen will freeze for a few seconds before returning...be patient.
 
   ![](images/terra03.png " ")
 
@@ -65,13 +64,13 @@ TODO URL
 
   ![](images/terra06.png " ")
 
-5. You can give the apply a name, or keep the default. You can leave the other settings the same. Then click on **Apply**.  **This will take about 15 minutes. Please be patient.**
+5. You can give the **Apply** action a name, or keep the default. You can leave the other settings the same. Then click on **Apply**. **This will take about 15 minutes. Please be patient.**
 
   ![](images/020.png " ")
 
   ![](images/004.png " ")
 
-6.  The job will take several minutes.  When it is complete scroll to the top and click **Application Information**. That screen will contain data you are going to need in next steps.
+6.  The job will take several minutes. When it completes, scroll to the top and click **Application Information**. That screen will contain data you are going to need in the next steps.
 
   ![](images/terra08.png " ")
 
