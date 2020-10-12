@@ -3,7 +3,7 @@
 ## Introduction
 The Coherence Lab is an exercise to visuslaize the different features of Coherence as a distributed in-memory data-grid.
 
-Estimated Lab Time: 70 minutes
+*Estimated Lab Time:* 70 minutes
 
 ### Objectives
 In this workshop, you will:
@@ -55,8 +55,22 @@ This lab assumes you have:
 | 6            | Test Java 8 features                   | 10min            | Illustrates how to use the Java streams when querying and processing cache entries                               | How Lambda features can be used in a Cache to simplify common Coherence tasks and how to query and process cache entries       |
 | 7            | Test Asynchronous features             | 10min            | Illustrates how to asynchronously get and put data in a cache                                                    | How to asynchronously process cache entries in Coherence and  how to asynchronously aggregate cache entries                    |
 
-## **STEP 1**: Verify Environment
+## **Step 0:** Running your Lab
+### Login to Host using SSH Key based authentication
+Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+  - Authentication OS User - “*opc*”
+  - Authentication method - *SSH RSA Key*
+  - OS User – “*oracle*”.
 
+1. First login as “*opc*” using your SSH Private Key
+
+2. Then sudo to “*oracle*”. E.g.
+
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
+
+## **STEP 1**: Verify Environment
 1. Open Two Terminal windows
 2. Set and verify the JAVA_HOME for both terminal windows by typing the commands below
 
@@ -69,7 +83,6 @@ This lab assumes you have:
     ```
 
     ![](../images/java-home.png " ")
-
 
 3. Set and verify COHERENCE_HOME for both terminal windows
 
