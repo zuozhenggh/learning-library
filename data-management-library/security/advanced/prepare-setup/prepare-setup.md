@@ -39,7 +39,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 7.  Click the Add Ingress Rules button
 
 ## **Step 3**: Setup Compute   
-Using the details from the two steps above, proceed to the lab *Environment Setup* from the menu on the right to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
+Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
