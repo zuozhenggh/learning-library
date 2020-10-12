@@ -1,7 +1,7 @@
-# Coherence Features
+# Modernize with Coherence
 
 ## Introduction
-The Coherence Lab is an exercise to visuslaize the different features of Coherence as a distributed in-memory data-grid.
+The Coherence Lab is an exercise to visualize the different features of Coherence as a distributed in-memory data-grid.
 
 *Estimated Lab Time:* 70 minutes
 
