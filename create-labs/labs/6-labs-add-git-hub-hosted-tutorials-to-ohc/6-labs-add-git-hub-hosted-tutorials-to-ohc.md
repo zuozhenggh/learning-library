@@ -12,11 +12,7 @@ You need to add a link from your Oracle Help Center (OHC) page to a lab hosted o
 * Required OLL privileges
 * Required privileges to add your entry to OHC
 
-This lab assumes that you have successfully completed the following labs in the **Contents** menu on the right:
-+ **Lab 1: Get Started with Git and Install GitHub Environment**
-+ **Lab 2: Understand the Templates Folder Structure**
-+ **Lab 3: Use Atom Editor to Develop Content**
-+ **Lab 4: Merge, Commit, Create Pull Request**
+This lab assumes that you have successfully completed the previous labs in the **Contents** menu on the right.
 
 ## **STEP 1:** Create an Oracle Learning Library Content Entry for the Lab
 Every GitHub-hosted lab that will be accessed from the Oracle Help Center must be registered as a content entry in the Oracle Learning Library (OLL).
@@ -52,7 +48,7 @@ https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:28287
 ## **Step 3:** Add a Link to the Lab from Oracle Help Center
 You need to work with your manager or Lead to get this link added to OHC.
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
+**This concludes this lab.**
 
 ## Want to Learn More?
 * [Add GitHub Hosted Tutorials to OHC](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Add+GitHub-Hosted+Tutorials+to+the+Oracle+Help+Center)
@@ -60,7 +56,7 @@ You need to work with your manager or Lead to get this link added to OHC.
 ## Acknowledgements
 
 * **Author:**
-    +
+    * Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate
 *
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 

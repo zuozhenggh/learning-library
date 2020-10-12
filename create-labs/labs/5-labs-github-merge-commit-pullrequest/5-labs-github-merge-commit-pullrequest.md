@@ -64,16 +64,17 @@ To commit your changes:
 
   ![](./images/git-hub-commit-push-origin.png " ")
 
-## **STEP 3:** Set Up GitHub Pages for Your Fork to Test Your Content
+## **STEP 3:** Set Up GitHub Pages for your Fork to Test your Content
 
-After you upload the content from your clone to your fork, you can ask your review team members to review this content by providing them with access to your GitHub Pages site URL (or the URL for your forked repository).
+After you upload the content from your clone to your fork, request your review team members to review this content by providing them with access to your GitHub Pages site URL (or the URL of your forked repository).
 
-The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** to Test Your Content. This feature performs a dynamic conversion of the Markdown files (.md files you have developed using your Atom Editor) to HTML. You can preview your workshop and labs on your forked repository and provide this URL to your reviewers for reviewing them. To upload your final labs and workshop to the master repository (production) also, you will use the **GitHub Pages** feature associated with the master learning-library repository.
+The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** to Test Your Content. This feature performs a dynamic conversion of the Markdown files (.md files you have developed using your Atom Editor) to HTML. You can preview your workshop and labs on your forked repository and provide this URL to your reviewers for reviewing them.
+To upload your final labs and workshop to the master repository (production) also, you will use the **GitHub Pages** feature associated with the master learning-library repository.
 
   ![](./images/git-hub-deploy-completed-content-to-master.png " ")
 
 To identify your GitHub Pages URL and how to enable this feature:
-1. Login to [GitHub Web UI] (http://github.com) using your GitHub account credentials, and then click your fork's link in the **Repositories** section to display your fork.
+1. Login to [GitHub Web UI](http://github.com) using your GitHub account credentials, and then click your fork's link in the **Repositories** section to display your fork.
 
   ![](./images/git-hub-stage-git-hub-pages-repositories.png " ")
 
@@ -83,19 +84,19 @@ To identify your GitHub Pages URL and how to enable this feature:
 
 3. Click **Options** and scroll down to the **GitHub Pages** section.
 
-![](./images/git-hub-stage-git-hub-pages-settings-options.png " ")
+  ![](./images/git-hub-stage-git-hub-pages-settings-options.png " ")
 
-4. If your GitHub Page site is not yet set up, then the **Theme Chooser** label is displayed as a button. To enable GitHub Pages on your fork, click this button. This may take a few hours to complete before your site is enabled.
+4. If your GitHub Page site is not yet set up, then the **Theme Chooser** label is displayed as a button. To enable GitHub Pages on your fork, click **Theme Chooser**. This may take a few hours to complete before your site is enabled.
 
-In the following example, the web site for the fork associated with user achepuri is: https://achepuri.github.io/learning-library where
-  * achepuri is the user's GitHub account username
-  * github.io is the domain's name
-  * learning-library is the repository's name.
+  In the following example, the web site for the fork associated with user achepuri is: [https://achepuri.github.io/learning-library](https://achepuri.github.io/learning-library) where
+    * achepuri is the user's GitHub account username
+    * github.io is the domain name
+    * learning-library is the repository name.
+    Notice the GitHub Pages site that is associated with your fork.
 
     ![](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
 
-Notice that this is the GitHub Pages site is associated with your fork.
-**Note**:  https://achepuri.github.io/learning-library refers to the forked repository and not the master repository (production).  
+**Note**: [https://achepuri.github.io/learning-library](https://achepuri.github.io/learning-library) refers to the forked repository and not the master repository (production).  
 
 You can also review and test your workshop and labs on your forked repository from:
 
@@ -104,7 +105,7 @@ http://github.com/*<your-github-account>*/learning-library/tree/master/*<path to
 ## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production (**upstream/master** repository).
 
-Note that the owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
+**Note**: The owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
 
 To create a Pull Request:
 1. In the **GitHub Desktop** client, select **Branch > Create pull request** to display a browser interface.
@@ -117,15 +118,15 @@ To create a Pull Request:
 
 3. Enter a subject for the pull request, an optional comment, and then click **Create pull request**.
 
-4. A status page is displayed indicating that you have created a pull request along with the request number (#1770 for example), that it is pending review, and that merging is blocked. A merge that is blocked will be performed automatically as soon as it receives one approving review.
+  A status page is displayed indicating that you have created a pull request along with the request number (#1770 for example), that it is pending review, and that merging is blocked. A merge that is blocked will be performed automatically as soon as it receives one approving review.
 
-5. When your pull request is approved, the page gets updated with information about your commits being approved and merged into the **upstream/master** repository (production).
+  When your pull request is approved, the page gets updated with information about your commits being approved and merged into the **upstream/master** repository (production).
 
-6. When the pull request is approved and merged into the **upstream/master** repository, two emails are sent to the e-mail account associated with your GitHub account.
+  When the pull request is approved and merged into the **upstream/master** repository, two emails are sent to the e-mail account associated with your GitHub account.
   * The first email notifies you that your pull request was approved (or rejected).
   * If your pull request was approved, then the second email notifies you that your pull request was merged into the **upstream/master** repository.  
 
-7.Your committed content is now visible to the public on the learning-library (upstream/master or production) repository.
+  Your committed content is now visible to the public on the learning-library (upstream/master or production) repository.
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
 

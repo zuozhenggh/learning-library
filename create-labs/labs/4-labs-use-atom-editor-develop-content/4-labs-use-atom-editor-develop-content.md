@@ -51,23 +51,23 @@ The atom-live-server plugin is added to the **Packages** menu.
   ![](./images/atom-editor-browse-select-lab.png " ")
   The workshop folder and the lab folders are displayed in Atom.
   ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
-5. Expand the Workshop folder, **1-labs-quickstart-workshop** in this example, open the `manisfest.json` to list the labs you plan to add to your workshop. The `manifest.json` is like your book map file in SDL.
+5. Expand the Workshop folder, **1-labs-quickstart-workshop** in this example, open the `manifest.json` to list the labs you plan to add to your workshop. The `manifest.json` is like your book map file in SDL.
   ![](./images/use-atom-editor-manifest-json.png " ")
 6. Open the `intro.md` file from **1-labs-quickstart-workshop** and update it as per your requirements.
 7. Open the `index.html` file and update the title of the workshop.
     ![](./images/use-atom-editor-index-title-update.png " ")
 8. Open the `README.md` file and update it with a gist of your workshop.
     ![](./images/use-atom-editor-readme-update.png " ")
-9 Similarly, to start creating your lab content, copy and paste a sample lab, such as **bds-getting-started** folder from **learning-library\data-management-library\big-data\bds** to your product folder and rename it. For example, **\learning-library\create-labs\labs\2-labs-git-hub-get-started-install-configure**. Rename the sample `.md` file, for example, `2-labs-git-hub-get-started-install-configure.md`.
-10. In the lab folders, you will have to edit only the respective `.md` files, and include images if required in the **images** folder.
+9. Similarly, to start creating your lab content, copy and paste a sample lab, such as **bds-getting-started** folder from **learning-library\data-management-library\big-data\bds** to your product folder and rename it. For example, **\learning-library\create-labs\labs\2-labs-git-hub-get-started-install-configure**. Rename the sample `.md` file, for example, `2-labs-git-hub-get-started-install-configure.md`.
+10. Edit the `.md` file as per your requirements. In the lab folders, you will have to edit only the respective `.md` files, and include images if required in the corresponding **images** folders.
 
 ## **STEP 4:** Preview Your Workshop and Labs Using Atom-Live-Server
 
 To preview your output in a browser:
-1. Start atom-live-server. in the Atom Editor, select **Packages > atom-live-server > Start Server**.
+1. Start the atom-live-server. In the Atom Editor, select **Packages > atom-live-server > Start Server**.
   ![](./images/use-atom-editor-packages-start-live-server.png " ")
 
-  By default, atom-live-server opens a browser window that displays the folders inside the **labs** folder.
+  By default, the atom-live-server opens a browser window that displays the folders inside the **labs** folder.
 2. Double-click the folder that contains the workshop you want to view. In this example, to display the workshop, double-click the workshop's name, **1-labs-quickstart-workshop**.
   ![](./images/use-atom-editor-open-live-server.png " ")
 
