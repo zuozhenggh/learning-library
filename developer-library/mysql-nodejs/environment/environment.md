@@ -263,7 +263,7 @@ Next steps are to configure the Docker registry and signing in. For example, if
 your Cloud Region is `us-ashburn-1` (registry URL `iad.ocir.io`) and your namespace is
 `idylsdbcgx1d` and your username is `user@example.com` this might look like this:
 
-    [opc@compute ~]$ fn update context registry iad.ocir.io/idylsdbcgx1d/idylsdbcgx1d
+    [opc@compute ~]$ fn update context registry iad.ocir.io/idylsdbcgx1d/nodejsmysql
     Current context updated registry with iad.ocir.io/idylsdbcgx1d/idylsdbcgx1d
     [opc@compute ~]$ docker login -u 'idylsdbcgx1d/user@example.com' iad.ocir.io
     Password: (Your API Token created above)

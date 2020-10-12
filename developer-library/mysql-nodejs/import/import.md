@@ -120,9 +120,20 @@ downloaded, interpreted as a JSON file containing an array of objects and
 each object will then be stored into our Database's Collection we created
 before.
 
-First thing needed is to install the MySQL Connector/Node.js, which brings
-the MySQL Document Store features for Node.js.
+First thing needed is to install the dependencies. Since we didn't have a 
+`node_modules` folder before `fn` fetched the FDK library while deploying the
+function. Let's install it locally, so we have all dependencies together:
 
+    [opc@compute import]$ npm install
+    npm notice created a lockfile as package-lock.json. You should commit this file.
+    npm WARN hellofn@1.0.0 No repository field.
+    
+    added 1 package from 2 contributors and audited 1 package in 1.764s
+    found 0 vulnerabilities
+
+Then add the MySQL Connector/Node.js, which brings
+the MySQL Document Store features for Node.js.
+    
     [opc@compute import]$ npm install --save @mysql/xdevapi
     npm notice created a lockfile as package-lock.json. You should commit this file.
     npm WARN hellofn@1.0.0 No repository field.
