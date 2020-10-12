@@ -86,10 +86,15 @@ In the Web Console you can find *Oracle Functions* under the *Developer Tools* m
 
   ![](images/faas_menu.png " ")
 
-When opening it you see the Application, click on _DemoApp_. If you can't find
-that entry make sure the `node-mysql` compartment has been selected on the left.
+When opening it you see the Application, click on _DemoApp_.
 
-TODO Screenshot
+  ![](images/faas_application.png " ")
+
+If you can't find that entry make sure the `node-mysql` compartment has been
+selected on the left. In case the `node-mysql` compartment is not listed in
+the drop-down try reloading the page.
+
+  ![](images/faas_func.png " ")
 
 In this screen you can see the list of functions, currently our `import`
 function. On the left is a menu leading, among other things, to metrics and
@@ -99,6 +104,8 @@ configuration.
 *Configuration* section you can see that our setup pre-configured a set of,
 variables which are available to the functions within this application. We will
 make use of those in the next step.
+
+  ![](images/faas_config.png " ")
 
 *Note: As you can see here the MySQL user's password is stored in plain sight
 in this setup. Since this is a tutorial this is tolerable. In a production
@@ -149,12 +156,6 @@ Now adopt `func.js` to do what we need:
         const people = session.getSchema(config.mysql_schema).getCollection('people');
 
         try {
-            await session.getSchema(config.mysql_schema).getCollection('status').add({
-                prefix: config.object_store_url_prefix,
-                suffix: input.data,
-                input
-            }).execute();
-
             const dataRaw = await download(`https://objectstorage.${config.cloud_region}.oraclecloud.com${input.data.resourceId}`);
             const data = JSON.parse(dataRaw);
 
@@ -236,15 +237,16 @@ everybody (who can guess the exact URL) world-wide. Outside this Lab you
 should protect the files and use signed requests to download files*
 
 Next configure the Event to trigger the Function. For that navigate to
-*Application Integration* - *Events*.
+*Application Integration* - *Events Service*.
 
-TODO Screenshot of menu
+  ![](images/event_menu.png " ")
+
 
 And click *Create Rule* to create our Event. Enter `import` as *Display Name*
 and a *Description*.
 
-In the *Rule Conmditions* box select *Condition* `Event Type`, *Service Name*
-`Object Store`, *Event Type* `Object - Create` and then click *+ Add Another
+In the *Rule Conditions* box select *Condition* `Event Type`, *Service Name*
+`Object Storage`, *Event Type* `Object - Create` and then click *+ Add Another
 Condition*.
 
 In the new row Pick `Attribute` as *Condition*, *Attribute* is `bucketName` and
@@ -260,7 +262,7 @@ With a click on *Create Rule* this rule becomes effective.
 
 ## **Step 6:** Upload a file and verify the data arrived
 
-Navigate back to the Object Store page in the Console and open the `import`
+Navigate back to the Object Storage page in the Console and open the `import`
 Bucket. Click *Upload*. In the panel pick the `data1.json` file provided
 within the `node-mysql-hol-tf.zip` file and click *Upload* in the panel.
 Once the upload finishes you can close the panel and the view should update
