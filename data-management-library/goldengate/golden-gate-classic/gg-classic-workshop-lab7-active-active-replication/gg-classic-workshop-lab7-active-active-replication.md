@@ -10,10 +10,7 @@ Active - Active Replication using GoldenGate
 Time to Complete -
 Approximately 60 minutes
 
-
-## STEPS-
-
-## **Step 1:** - GoldenGate GoldenGate - Oracle Data Capture
+## **Step 1:** GoldenGate - Oracle Data Capture
 
 1. Open a terminal session
 
@@ -64,7 +61,7 @@ To configure the Oracle to MySQL Extract Data Pump:
 
 7. Save and close the file.
 
-## **Step 2:**  - GoldenGate GoldenGate - Oracle Data Apply
+## **Step 2:**  GoldenGate - Oracle Data Apply
 
 1. To configure the Parallel Replicat:
 Execute the GGSCI command: edit param rtpc
@@ -85,7 +82,7 @@ Execute the GGSCI command: edit param rtpc
 
 4. Save and close the file.
 
-## **Step 3:** - GoldenGate GoldenGate - MySQL Data Apply
+## **Step 3:** GoldenGate - MySQL Data Apply
 
 1. MySQL data apply
 
@@ -148,7 +145,7 @@ add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadm
 ````
 
 
-## **Step 4:**  - GoldenGate GoldenGate - MySQL Coordinated Replicat
+## **Step 4:** GoldenGate - MySQL Coordinated Replicat
 
 1. MySQL Coordinated Replicat
 dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggrep
@@ -176,7 +173,7 @@ At the SQL> prompt, enter: @gentrans.sql
 
 Enter "100" at the prompt, and return.
 
-## **Step 5:**  - GoldenGate GoldenGate - Verify Replication
+## **Step 5:** GoldenGate - Verify Replication
 
 Verify data has been replicated
 
@@ -229,7 +226,7 @@ select to_char(incoming_heartbeat_ts,'DD-MON-YY HH24:MI:SSxFF') Source_HB_Ts
       from ggadmin.gg_heartbeat_history order by heartbeat_received_ts desc;</copy>
 ````
 
-## **Step 6:**  - GoldenGate GoldenGate - Replicate Oracle DDL
+## **Step 6:** GoldenGate - Replicate Oracle DDL
 
 Replicate Oracle DDL 
 

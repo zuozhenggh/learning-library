@@ -13,8 +13,6 @@ Replication from relational source to a relational target using GoldenGate
 Time to Complete -
 Approximately 60 minutes
 
-## STEPS-
-
 ## **Step 1:** - GoldenGate GoldenGate for Oracle Capture
 
 Open a terminal session

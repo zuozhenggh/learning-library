@@ -13,8 +13,6 @@ Replication from relational source to a relational target using GoldenGate
 Time to Complete -
 
 Approximately 60 minutes
-
-## Steps
  
 ## **Step 1:** GoldenGate GoldenGate for Oracle
 
@@ -34,15 +32,18 @@ Open a terminal session
 ````
 
 2. GLOBALS configuration
+
 In each $OGG_HOME directory, edit the file GLOBALS
 
 ````
 <copy>vi GLOBALS</copy>
 ````
-Set the GGSCHEMA parameter
+````
+<copy>Set the GGSCHEMA parameter
 Oracle: ggschema pdbeast.ggadmin
 MySQL: ggschema ggadmin
-Set the CHECKPOINTTABLE parameter
+Set the CHECKPOINTTABLE parameter</copy>
+````
 
 ## **Step 2:**- GoldenGate GoldenGate for non-Oracle (MySQL)
 
@@ -50,21 +51,31 @@ Open a terminal session
 ````
  <copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
 ````
+**Oracle:**
 ````
 <copy>sudo su - oracle</copy>
 ````
 
-1. sudo service mysqld start
+````
+<copy>sudo service mysqld start</copy>
+````
+````
+<copy>export OGG_HOME=/u01/app/oracle/product/19.1.0/oggmysql</copy>
+````
 
-2. export OGG_HOME=/u01/app/oracle/product/19.1.0/oggmysql
+````
+<copy>dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@</copy>
+````
 
-3. dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@
+````
+<copy>ADD CHECKPOINTTABLE ggadmin.ggchkpoint</copy>
+````
 
-4. ADD CHECKPOINTTABLE ggadmin.ggchkpoint
+**MySQL:** 
 
-MySQL: checkpointtable ggadmin.ggchkpoint
+checkpointtable ggadmin.ggchkpoint
 
-5. Set the WALLETLOCATION parameter to the disk location in step 1.
+1. Set the WALLETLOCATION parameter to the disk location in step 1.
 
 **For Oracle:**
 
@@ -78,6 +89,10 @@ MySQL: checkpointtable ggadmin.ggchkpoint
 
 9. Start the GoldenGate Software Command Interpreter in both windows.
 
+````
+<copy./ggsci</copy>
+````
+>
 **OGG Credential Store**
 
 In GGSCI, create the OGG Credential Store by executing the command: 
@@ -88,67 +103,103 @@ Add OGG database user credentials into each credential store.
 
 **Oracle**
 
-10. ````
+````
     <copy>alter credentialstore add user c##ggadmin@orcl password Oracle1 alias oggcapture</copy>
 
-    ````
-    ````
+````
+````
     <copy>alter credentialstore add user ggadmin@pdbeast password Oracle1 alias ggapplyeast</copy>
-    ````
-    ````
-11. <copy>alter credentialstore add user ggadmin@pdbwest password Oracle1 alias ggapplywest</copy>
-    ````
+````
+````
+<copy>alter credentialstore add user ggadmin@pdbwest password Oracle1 alias ggapplywest</copy>
+````
        
 **MySQL**
-1.  alter credentialstore add user ggadmin password @Oracle1@ alias oggcapture
-2.  alter credentialstore add user ggrep password @Oracle1@ alias ggapply
+````
+<copy>alter credentialstore add user ggadmin password @Oracle1@ alias oggcapture</copy>
+````
+````
+<copy>alter credentialstore add user ggrep password @Oracle1@ alias ggapply</copy>
+````
 
 OGG Master Key and Wallet
 
 In the Oracle GGSCI, create the OGG Wallet.
-Command: CREATE WALLET 
+Command: 
 
-15.  Add the OGG Masterkey to the wallet.
+````
+<copy>CREATE WALLET</copy>
+```` 
+
+Add the OGG Masterkey to the wallet.
 
 **Oracle GG**
 
-Oracle: add masterkey
-16. Verify the Master Key and Wallet from the MySQL GGSCI instance.
+````
+<copy>add masterkey</copy>
+````
+1.  Verify the Master Key and Wallet from the MySQL GGSCI instance.
 
-17. dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@
+````
+<copy>dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@</copy>
+````
 
-**MySQL:** open wallet
+**MySQL:** 
 
-18. MySQL: info masterkey
+````
+<copy>open wallet</copy>
+````
+````
+<copy>info masterkey</copy>
+````
 
 **Oracle:** 
 
-19. open wallet
-20. Oracle: info masterkey
+````
+<copy>open wallet</copy>
+````
 
-21. GGSCI (ogg-ggbd) 5> info masterkey
+````
+<copy>info masterkey</copy>
+````
+
+````
+<copy>./ggsci</copy>
+````
+1.  GGSCI (ogg-ggbd) 5> 
+````
+<copy>info masterkey</copy>
+````
 Masterkey Name: OGG_DEFAULT_MASTERKEY
 
 Version         Creation Date                            Status
 2020-09-10T15:22:28.000+00:00   Current
    
-22. OGG Replicat Checkpoint Table
-alter pluggable database PDBEAST open;
-alter pluggable database PDBWEST open;
+1.  OGG Replicat Checkpoint Table
+
+````
+<copy>alter pluggable database PDBEAST open;
+alter pluggable database PDBWEST open;</copy>
+````
 
 23. In GGSCI, create the OGG Replicat Checkpoint Table by executing the commands:
 
 **Oracle**
-24. Connect to the target database: dblogin useridalias ggapplywest
+````
+<copy>Connect to the target database: dblogin useridalias ggapplywest</copy>
+````
 
-25. Create the table: add checkpointtable pdbwest.ggadmin.ggchkpoint
+1.  Create the table: add checkpointtable pdbwest.ggadmin.ggchkpoint
 
 **Mysql**
-26. Connect to the target database: dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggapply
 
-27. Create the table: add checkpointtable	
+````
+<copy>Connect to the target database: dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggapply</copy>
+````
 
-28. OGG Heartbeat
+1.  Create the table: add checkpointtable	
+
+2.  OGG Heartbeat
 
 In GGSCI, create and activate OGG Integrated Heartbeat
 Oracle

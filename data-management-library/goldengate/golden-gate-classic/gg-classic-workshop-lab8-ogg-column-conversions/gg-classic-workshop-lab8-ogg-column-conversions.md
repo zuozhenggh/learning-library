@@ -12,8 +12,6 @@ Replication of column conversions from relational source to a relational target 
 Time to Complete -
 Approximately 60 minutes
 
-## STEPS-
-
 ## **Step 1:** - GoldenGate GoldenGate - Oracle Replication
 
 1. Open a terminal session
@@ -31,7 +29,7 @@ Approximately 60 minutes
 
 Connect to the PDBEAST database as the user "tpc".
 
-3. Execute the following DML to create the source table:
+2. Execute the following DML to create the source table:
 
 ````
       <copy>drop table wshop_funcs;

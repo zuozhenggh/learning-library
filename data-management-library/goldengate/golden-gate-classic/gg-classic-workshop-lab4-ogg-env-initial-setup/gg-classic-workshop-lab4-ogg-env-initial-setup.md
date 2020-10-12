@@ -61,149 +61,268 @@ Approximately 30 min
 In this lab we will setup GoldenGate Classic
 
 
-## STEPS - 
-
 ## **Step 1:** Configuration for Classic Lab
 
 Open a terminal session
 
 ![](./images/terminal3.png)
 
+````
+<copy>sudo su - oracle</copy>
+````
+
 
 
 ## **Step 2:**  Test connectivity for the OGG users:
 
 1. sqlplus c##ggadmin
+
 When prompted enter the password: Oracle1
-2. sqlplus c##ggadmin@pdbeast
+````
+<copy>sqlplus c##ggadmin@pdbeast</copy>
+````
 When prompted enter the password: Oracle1	
-3. sqlplus ggadmin@pdbwest
+
+2. open a secong session
+
+````
+<copy>sqlplus ggadmin@pdbwest</copy>
+````
 When prompted enter the password: Oracle1
 		   
-4. Change to the "/opt/Test_Software/Scripts/Oracle/orderentry" directory
-su – oracle
+1. Change to the "/opt/Test_Software/Scripts/Oracle/orderentry" directory
+
+````
+<copy>/opt/Test_Software/Scripts/Oracle/orderentry</copy>
+````
+````
+<copy>sudo su – oracle</copy>
+````
 Password = Data1Integration!
 
 Run the following commands:
 
-5. sqlplus / as sysdba
-6. alter session set container=pdbeast;
-7. sqlplus / as sysdba @create_user.sql
+````
+<copy>sqlplus / as sysdba</copy>
+````
+
+````
+<copy>alter session set container=pdbeast;</copy>
+````
+
+````
+<copy>sqlplus / as sysdba @create_user.sql</copy>
+````
 
 edit and chg to c##tpc
 
-8. grant all priviledges to c##tpc;
+````
+<copy>grant all priviledges to c##tpc;</copy>
+````
 
-9. @create_user.sql
+````
+<copy>@create_user.sql</copy>
+````
 
-sqlplus / as sysdba
-alter session set container=pdbwest;
-@create_user.sql
+````
+<copy>sqlplus / as sysdba</copy>
+````
+````
+<copy>alter session set container=pdbwest;</copy>
+````
+````
+<copy>@create_user.sql</copy>
+````
+````
+<copy>sqlplus c##tpc@pdbeast</copy>
+````
 
-10. sqlplus c##tpc@pdbeast
 When prompted enter the password: Oracle1
-@database.sql
-11. sqlplus c##tpc@pdbwest
+
+````
+<copy>@database.sql</copy>
+````
+
+````
+<copy>sqlplus c##tpc@pdbwest</copy>
+````
+
 When prompted enter the password: Oracle1
-@database.sql
+
+````
+<copy>@database.sql</copy>
+````
 
 Each PDB in the database (pdbeast and pdbwest) will now contain a TPC schema with seeded tables.
 
-12. Enter "exit" to logout as the "oracle" user.
+1.  Enter "exit" to logout as the "oracle" user.
+
+````
+<copy>exit</copy>
+
+````
 
 
 ## **Step 3:** - Conenctivity to Oracle environment using ggadmin
 
-Test connectivity to MySQL by executing the commands:
+Test connectivity to **MySQL** by executing the commands:
 
-1. sudo service mysqld start
+````
+<copy>sudo service mysqld start</copy>
+````
 
-2. sudo mysql -u ggadmin -p@Oracle1@
+````
+<copy>sudo mysql -u ggadmin -p@Oracle1@</copy>
+````
+````
+<copy>create database tpc;</copy>
+````
 
-3. create database tpc;
+````
+<copy>create database ggadmin;</copy>
+````
+````
+<copy>use tpc</copy>
+````
 
-4.create database ggadmin;
-use tpc
-
-5. show tables;
+````
+<copy>show tables;</copy>
+````
 
 There should be 14 tables in the tpc database.
 
-5. exit;
+````
+<copy>exit;</copy>
+````
 
 ## **Step 4:**  - Conenctivity to MySQL environment using ggrep
 
-1. sudo mysql -u ggrep -p@Oracle1@
-use tpc
-2. show tables;
+````
+<copy>sudo mysql -u ggrep -p@Oracle1@</copy>
+````
+````
+<copy>use tpc</copy>
+````
+
+````
+<copy>show tables;</copy>
+````
+
 There should be 14 tables in the tpc database.
- exit;
+
+````
+<copy>exit;</copy>
+````
 
 ## **Step 5:**  - GoldenGate GoldenGate for Oracle setup and configuration
 	
 1. start a second session
 
 2. Switch to the "oracle" user.
-sudo su – oracle
-export OGG_HOME=/u01/app/oracle/product/19.1.0/gg
+
+````
+<copy>sudo su – oracle</copy>
+````
+
+````
+<copy>export OGG_HOME=/u01/app/oracle/product/19.1.0/gg</copy>
+````
 
 3. Go to the $OGG_HOME location
-cd $OGG_HOME
+
+````
+<copy>cd $OGG_HOME</copy>
+````
 
 4. Start ggsci and execute the following commands:
 
-./ggsci
+````
+<copy>./ggsci
 create subdirs
-dblogin userid c##ggadmin@orcl, password Oracle1
+dblogin userid c##ggadmin@orcl, password Oracle1</copy>
+````
+
 This validates remote connectivity to the Oracle Database.
-exit
+
+````
+<copy>exit</copy>
+````
 
 ## **Step 6:**  - GoldenGate GoldenGate for MySQL setup and configuration
 
-1. Mysql -uroot -pData1Integration!
+````
+<copy>mysql -uroot -pData1Integration!
 CREATE USER 'ggrep'@'localhost' IDENTIFIED BY '@Oracle1@';
-GRANT ALL PRIVILEGES ON * . * TO 'ggrep'@'localhost';
-
+GRANT ALL PRIVILEGES ON * . * TO 'ggrep'@'localhost';</copy>
+````
 
 ````
 <copy>mysql\q</copy>
 ````
 
-2. Go to the "oggmysql" directory.
+Open another ssh session
+````
+s<copy>udo su - oracle</copy>
+````
+1. Go to the "oggmysql" directory.
 
 ````   
 <copy>cd /u01/app/oracle/product/19.1.0/oggmysql</copy>
 ````
 
 1. Set the environment variable OGG_HOME to this directory.
-export OGG_HOME=/u01/app/oracle/product/19.1.0/oggmysql
+
+````
+<copy>export OGG_HOME=/u01/app/oracle/product/19.1.0/oggmysql</copy>
+````
 
 4. Start GGSCI and execute the following commands:
 
-5. create subdirs
-6. dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@
+````
+<copy>create subdirs</copy>
+````
+````
+<copy>dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@</copy>
+
+````
 
 This validates remote connectivity to the MySQL Database for capture.
-7. dblogin sourcedb tpc@localhost:3306, userid ggrep, password @Oracle1@
+
+````
+<copy>dblogin sourcedb tpc@localhost:3306, userid ggrep, password @Oracle1@</copy>
+````
+
 This validates remote connectivity to the MySQL Database for apply.
-exit
+
+````
+<copy>exit</copy>
+````
 	
-8.  Enter "exit" twice to close the connection to the database machine.
+1.  Enter "exit" twice to close the connection to the database machine.
 
-9.  Shutdown the MySQL database.
+2.  Shutdown the MySQL database.
 
-10. sudo su -
-    a) sudo service mysqld stop
+````
+<copy>sudo su -
+````
+````
+<copy>sudo service mysqld stop</copy>
+````
 
-11. Shutdown the Oracle database.
+3.  Shutdown the Oracle database.
 
-12. Switch to the oracle user.
-    a) sudo su – oracle / Data1Integration!
+4.  Switch to the oracle user.
+````
+<copy>sudo su – oracle / Data1Integration!</copy>
+````
 
-13. Shutdown the Oracle database and listener.
-    sqlplus / as sysdba
+5.  Shutdown the Oracle database and listener.
+    
+````
+<copy>sqlplus / as sysdba
 	  shutdown immediate
-	  exit
+	  exit</copy>
+````
 
 14. Enter "exit" twice to close the connection to the database machine.
 
