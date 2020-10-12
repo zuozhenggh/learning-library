@@ -197,7 +197,7 @@ by providing relevant formats.
    Right-Click on OPERATINGEXPENSES and click on "Rename".
     ![](./images/oascdb32.png " ")
 
-    Click on "Add Step".
+    Put the name title case name: **OPERATING EXPENSES** and then Click on "Add Step".
     ![](./images/oascdb33.png " ")
 
 8. Similarly rename below fields. 
@@ -215,7 +215,7 @@ Let us analyze the data to get some insights using different kind of visualizaio
 
 1. **Performance Tile**   
 To summarize key metrics like Revenue, we can use  "Performance Tile" visualization.    
-   Select  "Revenue" from data pane(columns of the dataset) and Pick "Performance Tile" for visualization as below.
+   Select  "REVENUE" from data pane(columns of the dataset) and Pick "Performance Tile" for visualization as below.
     ![](./images/oascdb35.png " ")
     
    Result will be:
@@ -231,10 +231,10 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     ![](./images/oascdb37.png " ")
 
    Build Tile Visualization for below KPIs  as well.  
-    - Net Income
-    - Operating Expenses
-    - Payables
-    - Receivables  
+    - NETINCOME
+    - OPERATING EXPENSES
+    - PAYABLES
+    - RECEIVABLES  
   
     Final canvas should be like below:
     ![](./images/oascdb40.png " ")
@@ -243,10 +243,10 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
 1. **Map** visualization  
    It works with geographic and measure columns.  
  
-   In our data set select Region and Revenue columns and pick "Map" as visualization.
+   In our data set select REGION and REVENUE columns and pick "Map" as visualization.
     ![](./images/oascdb41.png " ")
    
-   Drag the "Region" Column from data pane into the colour section.  
+   Drag the "REGION" Column from data pane into the colour section.  
    Verify Below:
     ![](./images/oascdb42.png " ")
 
@@ -254,10 +254,10 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     ![](./images/oascdb43.png " ")
 
 2. **Combo Graph** : Overlapping of line, bar and area        
-    Select Revenue, Operation Expenses, Net Income and Quarter. Pick Combo as Visualization.  
+    Select REVENUE, OPERATING EXPENSES, NETINCOME and QUARTER. Pick Combo as Visualization.  
     ![](./images/oascdb1.21.png " ")
 
-   Let's change "Line" graph type for Revenue to "Bar".
+   Let's change "Line" graph type for REVENUE to "Bar".
     ![](./images/oascdb45.png " ")
 
    We can change properties of graph as below, for example color assignments, graph type for each   KPI, title etc.
@@ -279,7 +279,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     Select (+) symbol on the bottom to add another canvas, in this canvas we will add visulizations analysing expenses.  
     ![](./images/oascdb69.png " ")
 
-    We will repeat "Tile" Visualization for **Operating Expenses** and **Previous Year Operating Expenses**.
+    We will repeat "Tile" Visualization for **OPERATING EXPENSES** and **PREVIOUS YEAR OPERATING EXPENSES**.
     ![](./images/oascdb50.png " ")
 
     Result should look like below:
@@ -287,17 +287,17 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
 
 5. **Sankey Graph** Visualization    
    We will see quartery expenses by account groups.    
-   Select  Operating Expenses, Quarter and Account Group. Pick **Sankey Graph**.
+   Select  OPERATING EXPENSES, QUARTER and ACCOUNTGROUP. Pick **Sankey Graph**.
     ![](./images/oascdb52.png " ")
 
 6. **Stacked Bar** visualization     
    We will analyze region wise expenses quarterly.  
-   Select Operating Expenses, Previous Year Operating Expenses and Quarter. Pick **Stacked Bar**.  
+   Select OPERATING EXPENSES, PREVIOUS YEAR OPERATING EXPENSES and QUARTER. Pick **Stacked Bar**.  
     ![](./images/oascdb53.png " ")
 
 7. **Tree Map** visualization      
    We will analze Expenses by Cost Centre.    
-   Select Operating Expenses, Cost Center.  Pick **Tree Map**. 
+   Select OPERATING EXPENSES, COSTCENTER.  Pick **Tree Map**. 
     ![](./images/oascdb54.png " ")
 
 8.  Rename canvas "Expenses" as in point 5.  
@@ -309,21 +309,21 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
 
     Please refer to previous steps for selecting the required fields and visualization type.   
     
-10. **Combo Graph** for comparing Payables and Receivables by month(similar to as we did in Step4- point 3).
+10. **Combo Graph** for comparing PAYABLES and RECEIVABLES by MONTH(similar to as we did in Step4- point 3).
    ![](./images/oascdb56.png " ")
 
 12. **Simple Bar Graph**  
-   Analyze current and previous year payables quarterly.
+   Analyze PAYABLES and PREVIOUS YEAR PAYABLES quarterly.
     ![](./images/oascdb57.png " ")
 
-   Analyze current and previous year receivables quarterly.
+   Analyze RECEIVABLES and PREVIOUS YEAR RECEIVABLES quarterly.
     ![](./images/oascdb58.png " ")
 
    Rename canvas "More Visuals" as in Step4-point 5. 
 
 13. Let's see **Pivot Table** visual    
     Analyzing KPIs by Cost Centre.  
-    Select Revenue, Operating Expenses, Net Income and Cost Center. Pick Pivot table. Change properties as shown below.
+    Select REVENUE, OPERATING EXPENSES, NETINCOME and COSTCENTER. Pick Pivot table. Change properties as shown below.
     ![](./images/oascdb59.png " ")
 
 14. **Custom Calculation**  
@@ -376,7 +376,7 @@ Filters are used to make canvas interactable for the users. Users can view desir
 2. The resultant canvas will look like below.
     ![](./images/oascdb66.png " ")
 
-3. We can select the filter attribute values as required. Here we have selected **Year=2015, Account Group= Non-contingent Salaries and Supplies and Month = Apr-15,Aug-15,Jan-15 and May-15**.
+3. We can select the filter attribute values as required. Here we have selected **YEAR=2015, ACCOUNTGROUP= Non-contingent Salaries and Supplies and MONTH = Apr-15,Aug-15,Jan-15 and May-15**.
    ![](./images/oascdb66.1.png " ")
 
 With this lab, you have learned OAS self-service analytics with capabilities including data loading, data preparation, data mashups, designing canvas, different types of visualization graphs in simple easy to use interface.
