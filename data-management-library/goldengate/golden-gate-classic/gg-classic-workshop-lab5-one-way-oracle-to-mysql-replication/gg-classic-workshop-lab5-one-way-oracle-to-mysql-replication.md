@@ -10,17 +10,18 @@ capture the changes from MySQL’s binary logs and write them to the local trail
 ### Objectives
 Replication from relational source to a relational target using GoldenGate
 
-
 Time to Complete -
-Approximately 60 minutes
 
-## Done by Student:
+Approximately 60 minutes
 
 ## Steps
  
 ## **Step 1:** GoldenGate GoldenGate for Oracle
 
 Open a terminal session
+
+![](./images/terminal3.png)
+
 ````
  <copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
 ````

@@ -12,13 +12,14 @@ Replication of column conversions from relational source to a relational target 
 Time to Complete -
 Approximately 60 minutes
 
-## Done by Student:
+## STEPS-
 
-## STEPS
-
-## Step 1: - GoldenGate GoldenGate - Oracle Replication
+## **Step 1:** - GoldenGate GoldenGate - Oracle Replication
 
 1. Open a terminal session
+
+![](./images/terminal3.png)
+
 
 ````
  <copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
@@ -53,7 +54,7 @@ Connect to the PDBEAST database as the user "tpc".
 
 ````
 
-## Step 2: - GoldenGate GoldenGate - MySQL Target Replication
+## **Step 2:** - GoldenGate GoldenGate - MySQL Target Replication
 
 1. MySQL target table.
 
@@ -82,9 +83,9 @@ Connect to the MySQL database as the user "tpc".
         CONSTRAINT PK_Funcs primary key (srow_number,gg_commit_ts)
       ) engine=innodb;</copy>
 
-      ````
+````
   
-      ````
+````
       <copy>drop table cust_city_state;
       create table cust_city_state (
         cust_id              numeric(10,0),
@@ -108,9 +109,9 @@ Connect to the MySQL database as the user "tpc".
       insert into zip_lookup values (70001, 'Jefferson', 'LA');
       insert into zip_lookup values (70117, 'New Orleans', 'LA');
       commit;</copy>
-      ````
+````
 
-## Step 3: - GoldenGate GoldenGate - Oracle Data Capture
+## **Step 3**  - GoldenGate GoldenGate - Oracle Data Capture
 
 Oracle data capture
 
@@ -126,7 +127,7 @@ table pdbeast.tpc.wshop_funcs, TOKENS (
 
 3. Save and close the file.
 
-## Step 4: - GoldenGate GoldenGate -MySQL Data Apply
+## **Step 4:**  - GoldenGate GoldenGate -MySQL Data Apply
 
 MySQL data apply
 
@@ -166,7 +167,7 @@ MAP pdbeast.tpc.wshop_funcs, TARGET tpc.wshop_funcs,
 5. Save and close the file.		
 
 
-## Step 5: - GoldenGate GoldenGate - Start GoldenGate and Generate Data
+## **Step 5:** - GoldenGate GoldenGate - Start GoldenGate and Generate Data
 
 Start OGG and generate data
 
@@ -177,7 +178,7 @@ start etpc
        start pmysql  
 
 
-3. **MySQL:** 
+ **MySQL:** 
    
 start rtpc
 Verify all OGG Groups are running.

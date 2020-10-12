@@ -13,16 +13,15 @@ Introduction
   Oracle GoldenGate for Big Data Workshop Architecture 
   Setup the QuickStart VM for GoldenGate for Big Data Workshop
 
-Lab 1 – Setup GoldenGate Classic
+Lab  – Setup GoldenGate Classic
 
-
-Lab 2 – MySQL ->  Oracle  unidirectional replication
+Lab  – MySQL ->  Oracle  unidirectional replication
   
-Lab 3 – Oracle ->  mySQL  unidirectional replication
+Lab  – Oracle ->  mySQL  unidirectional replication
 
-Lab 4 – Classic Active-Active Replication 
+Lab  – Classic Active-Active Replication 
 
-Lab 5 – Classic Column Conversions 
+Lab  – Classic Column Conversions 
 
 ### Objectives
 
@@ -45,7 +44,7 @@ Oracle GoldenGate Classic provides optimized and high performance delivery.
 
 Oracle GoldenGate Classic real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
 
-Time to complete - 15 mins
+Time to complete - 60 mins
 
 ### Summary
 
@@ -59,91 +58,20 @@ This workshop is only for learning and testing purposes. None of the files from 
 Time to Complete -
 Approximately 30 min
 
-## Steps
-
 In this lab we will setup GoldenGate Classic
 
 
+## STEPS - 
+
 ## **Step 1:** Configuration for Classic Lab
-
-**Prereqs (Completed by Oracle Team prior to Labs)**
-
-1. mkdir /opt/Test_Software
-2. Downloaded the following software zip files to the "Software" folder:
-   		OGG Classic v19.1.0.0.3 for MySQL on Linux x64
-   		OGG Classic v19.1.0.0.4 for Oracle on Linux x64
-   		Oracle Database v19.3.0.0.0 for Linux x64
-   		Oracle Instant Client Basic v19.3.0.0.0 for Linux x64
-
-**ORACLE**
-
-3. Create pdbs
-
-PDBEAST
-
-Source pdb
-   cd /u02/oradata/ORCL/
-mkdir PDBEAST
-alter system set db_create_file_dest='/u02/oradata/ORCL//PDBEAST';
-sqlplus / as sysdba
-alter pluggable database oggoow19 close immediate;
-alter pluggable database oggoow19 open read only;
-create pluggable database PDBEAST from oggoow19;
-alter pluggable database PDBEAST open;
-exit
-
-PDBWEST
-
-Source pdb
-   cd /u02/oradata/ORCL/
-mkdir PDBWEST
-sqlplus / as sysdba
-alter system set db_create_file_dest='/u02/oradata/ORCL//PDBWEST';
-alter pluggable database oggoow191 close immediate;
-alter pluggable database oggoow191 open read only;
-create pluggable database PDBWEST from oggoow191;
-alter pluggable database PDBWEST open;
-exit
-
-4. Install Mysql Workbench
-sudo yum install mysql-workbench-community
-Start Mysql Workbench to test
-/usr/bin/mysql-workbench –help
-
-Change to the “/opt/TestSoftware/Oracle" directory.
-
-5. Run the setup_database_for_ogg.sql script.
-create user c##ggadmin identified by Oracle1 default tablespace oggtbls_pdbwest quota unlimited on oggtbls_pdbwest profile ogg_profile;
-
-sqlplus / as sysdba @setup_database_for_ogg.sql
-The database will now contain two PDBs, PDBEAST and PDBWEST, and is configured for OGG replication.
-The common database user C##GGADMIN will be created, and the container user C##GGADMIN in PDBEAST and PDBWEST.
-
-## **Step 2:** Configure mySQL
-
-**mySQL**
-
-1. CREATE USER 'ggadmin'@'localhost' IDENTIFIED BY '@Oracle1@';
-GRANT ALL PRIVILEGES ON * . * TO 'ggadmin'@'localhost';
-
-
-## **Step 3:** Change to ggadmin and execute labs
-
-'````
-<copy>sudo su – ggadmin</copy>
-````
-
-**PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS** 
-
-**Step 4:** Student Configuration for Classic Lab
 
 Open a terminal session
 
-![](./images/terminal2.png)
+![](./images/terminal3.png)
 
-## STEPS -  Done by Student
 
-## **Step 4:**  Test connectivity for the OGG users:
+
+## **Step 2:**  Test connectivity for the OGG users:
 
 1. sqlplus c##ggadmin
 When prompted enter the password: Oracle1
@@ -184,7 +112,7 @@ Each PDB in the database (pdbeast and pdbwest) will now contain a TPC schema wit
 12. Enter "exit" to logout as the "oracle" user.
 
 
-## **Step 5:** - Conenctivity to Oracle environment using ggadmin
+## **Step 3:** - Conenctivity to Oracle environment using ggadmin
 
 Test connectivity to MySQL by executing the commands:
 
@@ -203,7 +131,7 @@ There should be 14 tables in the tpc database.
 
 5. exit;
 
-## **Step 6:**  - Conenctivity to MySQL environment using ggrep
+## **Step 4:**  - Conenctivity to MySQL environment using ggrep
 
 1. sudo mysql -u ggrep -p@Oracle1@
 use tpc
@@ -211,7 +139,7 @@ use tpc
 There should be 14 tables in the tpc database.
  exit;
 
-## **Step 7:**  - GoldenGate GoldenGate for Oracle setup and configuration
+## **Step 5:**  - GoldenGate GoldenGate for Oracle setup and configuration
 	
 1. start a second session
 
@@ -230,7 +158,7 @@ dblogin userid c##ggadmin@orcl, password Oracle1
 This validates remote connectivity to the Oracle Database.
 exit
 
-## **Step 8:**  - GoldenGate GoldenGate for MySQL setup and configuration
+## **Step 6:**  - GoldenGate GoldenGate for MySQL setup and configuration
 
 1. Mysql -uroot -pData1Integration!
 CREATE USER 'ggrep'@'localhost' IDENTIFIED BY '@Oracle1@';
