@@ -1,4 +1,4 @@
-# Lab 5 - ogg-column-conversions
+# Lab 5 - GoldenGate Column Conversions
 
 ### Introduction
 
@@ -14,7 +14,7 @@ Approximately 60 minutes
 
 ## Done by Student:
 
-## STEPS-
+## STEPS
 
 ## Step 1: - GoldenGate GoldenGate - Oracle Replication
 

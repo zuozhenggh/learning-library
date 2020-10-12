@@ -16,10 +16,9 @@ Approximately 60 minutes
 
 ## Done by Student:
 
-## STEPS-
-
-
-## Step 1: - GoldenGate GoldenGate for Oracle
+## Steps
+ 
+## **Step 1:** GoldenGate GoldenGate for Oracle
 
 Open a terminal session
 ````
@@ -44,7 +43,7 @@ Oracle: ggschema pdbeast.ggadmin
 MySQL: ggschema ggadmin
 Set the CHECKPOINTTABLE parameter
 
-## Step 2: - GoldenGate GoldenGate for non-Oracle (MySQL)
+## **Step 2:**- GoldenGate GoldenGate for non-Oracle (MySQL)
 
 Open a terminal session
 ````

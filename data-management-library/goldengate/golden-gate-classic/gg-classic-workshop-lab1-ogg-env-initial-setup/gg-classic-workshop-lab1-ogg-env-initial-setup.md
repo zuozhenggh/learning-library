@@ -61,8 +61,6 @@ Approximately 30 min
 
 ## Steps
 
-
-
 In this lab we will setup GoldenGate Classic
 
 

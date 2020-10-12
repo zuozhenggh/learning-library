@@ -15,7 +15,7 @@ Approximately 60 minutes
 
 ## STEPS-
 
-## Step 1: - GoldenGate GoldenGate for Oracle Capture
+## **Step 1:** - GoldenGate GoldenGate for Oracle Capture
 
 Open a terminal session
 ````
@@ -30,8 +30,8 @@ Open a terminal session
 2. To configure the Oracle Integrated Extract:
 Execute the GGSCI command: edit param etpc
 3. Enter the following settings:
-````
 
+````
 	       <copy>extract etpc
           exttrail ./dirdat/et
           useridalias oggcapture
@@ -39,12 +39,13 @@ Execute the GGSCI command: edit param etpc
           ddloptions report
           warnlongtrans 60m, checkinterval 15m
           table pdbeast.tpc.*;</copy>
-          ````
+
+````
 4. Add the parameter that will cause Integrated Extract to capture DDL operations that are of mapped scope.
 Add the parameter that will cause Integrated Extract to encrypt its OGG Trail files.
 5. Save and close the file.
    
-Data transmission to MySQL
+**Data transmission to MySQL**
 
 This is not technically required because the OGG and MySQL installations are on the same machine. However, if data is being transmitted over a LAN/WAN an Extract Data Pump is required.
 To configure the Oracle to MySQL Extract Data Pump:
@@ -85,15 +86,17 @@ Enter the following settings:
 
 11. Save and close the file.
 
+## **Step 2:** -- GoldenGate GoldenGate MySQL Data Apply
 
-## Step 2: - GoldenGate GoldenGate MySQL Data Apply
+**MySQL data apply**
 
-1. MySQL data apply
 To configure the Coordinated Replicat in the MySQL OGG environment:
 
-2. Execute the GGSCI command
+1. Execute the GGSCI command
   
-edit param rtpc
+````
+<copy>edit param rtpc</copy>
+````
 
 3. Enter the following settings:
 
@@ -129,13 +132,16 @@ Save and close the file.
 
 7. Execute the GGSCI commands
 
-dblogin useridalias oggcapture
-add schematrandata pdbeast.tpc
+````
+<copy>dblogin useridalias oggcapture
+add schematrandata pdbeast.tpc</copy>
+````
 		  
 8. Create the OGG replication Groups
-Create the OGG Groups by executing the following commands:
+Create the OGG Groups by executing the following commands
 
-## Step 3: - GoldenGate GoldenGate for Oracle Integrated Extract and Apply
+
+## **Step 3:** -- GoldenGate GoldenGate for Oracle Integrated Extract and Apply
 
 **Oracle Integrated Extract:**
 
@@ -159,7 +165,7 @@ add exttrail ./dirdat/et, extract etpc, megabytes 250
 
 6 . add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadmin.ggchkpoint
 
-## Step 4: - GoldenGate GoldenGate for non-Oracle coordinated Replicat
+## **Step 4:** - - GoldenGate GoldenGate for non-Oracle coordinated Replicat
 
 **MySQL Coordinated Replicat**
 
@@ -188,7 +194,7 @@ When prompted enter the password: Oracle1
 6. At the SQL> prompt, enter: @gentrans.sql
 Enter "100" at the prompt, and return.
 
-## Step 5: - GoldenGate GoldenGate - Verify Replication
+## **Step 5:** - - GoldenGate GoldenGate - Verify Replication
 
 1. Verify data has been replicated
    
@@ -214,7 +220,7 @@ When prompted enter the password: Oracle1
       column Data_Pump format a10
       column Replicat format a9
 
-   2. 
+2. 
    
    ````
    <copy>select to_char(incoming_heartbeat_ts,'DD-MON-YY HH24:MI:SSxFF') Source_HB_Ts
@@ -244,7 +250,7 @@ When prompted enter the password: Oracle1
       from ggadmin.gg_heartbeat_history order by heartbeat_received_ts desc;</copy>
       ````
 
-## Step 6: - GoldenGate GoldenGate - Replicate DDL
+## **Step 6:** - - GoldenGate GoldenGate - Replicate DDL
 
 1. Replicate Oracle DDL 
 On the database server:
