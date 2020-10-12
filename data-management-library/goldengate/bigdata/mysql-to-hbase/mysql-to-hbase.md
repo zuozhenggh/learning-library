@@ -164,14 +164,12 @@ Optionally view these files, same as in previous lab:
   ![](./images/d6.png " ")
 
 ````
-<copy>cd dirprm</copy>
+<copy>cd /u01/gg4hadoop123010/dirprm</copy>
 ````
 ````
 <copy>vi rhbase.properties</copy>
 ````
-````
-**Remove "--" below**
-````
+**Remove "--" prefix below**
 ````
 <copy>---hbase</copy>
 ````
@@ -247,7 +245,7 @@ Optionally view these files, same as in previous lab:
 <copy>countbasetables</copy>
 ````
 
-## **STEP 4**: GoldenGate Target Replication
+## **STEP 4**: GoldenGate HBASE Target Replication
 
 1. Let us confirm that GG replicated the data that it captured. In a **GG Home for Hadoop session:**
 
@@ -276,11 +274,20 @@ HUE allows you to access the data from a URL -
 
 (http://YourPublicIPAddress:8888)
 
-2. Login to Hue: cloudera/cloudera
+2. Login to Hue: cloudera/clouderaData 
 
+3. Select Hamburger Menu
+4. Select Data Browser
+5. Select HBase
   ![](./images/d20.png " ")
 
   ![](./images/d21.png " ")
+  
+6. select ggtarget2hbase.dept
+
+![](./images/d22.png " ")
+
+![](./images/d23.png " ")
 
 You may now *proceed to the next lab*.
 
