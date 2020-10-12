@@ -206,7 +206,11 @@ Since Oracle Functions and the underlying fn framework are built on Docker
 containers we first have to identify your Cloud Tenancy's Docker namespace and
 login from our compute instance to docker in able to publish our code.
 
-TODO get docker namespace
+You can find the **namespace** on the overview of the **Container Registry** service:
+  
+  ![](images/menu_docker.png " ")
+  
+  ![](images/docker.png " ")
 
 Also you have to generate an **API Key** for Docker to login.
 
