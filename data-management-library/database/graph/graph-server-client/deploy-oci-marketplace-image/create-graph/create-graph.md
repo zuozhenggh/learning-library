@@ -1,10 +1,18 @@
-# Lab 6 - Create the Customer_360 graph from the tables
+# Create the Customer_360 graph from the tables
 
 ## Introduction
 
 Now, the tables are created and populated with data. Let's create a graph representation of them.
 
 Estimated time: 5 minutes
+
+### Objectives
+
+- Learn how to create a graph from relational data sources.
+
+### Prerequisites
+
+- Lab 5: Create and populate tables.
 
 ### Steps
 - Modify the graph server configuration to disable Transport Layer Security (TLS) / Secure Sockets Layer (SSL) for this lab

@@ -11,7 +11,6 @@ Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:
   - Tenant, User name and Password
-  - URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
   - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
 
 ## **STEP 1**: Creating a Web Server on a Compute Instance
@@ -23,9 +22,17 @@ Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instance
 
 An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as a Bare Metal instance, leveraging the same cloud-optimized hardware, firmware, software stack, and networking infrastructure.
 
-1. Navigate to the **Compute** tab and click **Create Instance**. We will launch a VM instance for this lab.
+1. Navigate to the **Compute** tab and select **Instances**.
 
-2. The Create Compute Instance wizard will launch. Set the name of the server to *Web-Server*. Click on the *Show Shape, Networking, Storage Options* link to expand that area of the page.
+<if type="livelabs">
+2. Select the Compartment that you were assigned when the reservation was created.
+
+  ![](images/select-compartment.png)
+</if>
+
+2. Then click **Create Instance**. We will launch a VM instance for this lab.
+
+3. The Create Compute Instance wizard will launch. Set the name of the server to *Web-Server*. Click on the *Show Shape, Networking, Storage Options* link to expand that area of the page.
     ![Create step 1](images/Create1.png " ")
 
 3. Most of the defaults are perfect for our purposes. However, you will need to scroll down to the Configure Networking area of the page and select the *Assign a public IP address* option.

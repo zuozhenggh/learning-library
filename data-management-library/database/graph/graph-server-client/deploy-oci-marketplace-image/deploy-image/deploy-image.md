@@ -1,10 +1,14 @@
-# Lab 3 - Deploy Graph Server and Client from Oracle Cloud Marketplace
+# Deploy Graph Server and Client from Oracle Cloud Marketplace
 
 ## Introduction
 
 This lab walks you through the steps to deploy and configure the Graph Server and Client kit on a compute instance via an Oracle Cloud Marketplace stack. You will need to provide the SSH key, VCN and Subnet information, and the JDBC URL for the ADB instance during the deployment process.
 
 Estimated time: 7 minutes
+
+### Objectives
+
+- Learn how to deploy the Graph Server and Client OCI Marketplace image.
 
 ### Prerequisites
 * A cloud account
