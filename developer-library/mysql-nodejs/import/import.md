@@ -19,8 +19,8 @@ event, which calls our serverless function.
 As with any good guide, the first Function built is a _Hello World_. The name
 used is `import` since that describes the future purpose well:
 
-    [opc@compute step1]$ mkdir import
-    [opc@compute step1]$ cd import/
+    [opc@compute ~]$ mkdir import
+    [opc@compute ~]$ cd import/
     [opc@compute import]$ fn init --runtime node 
     Function boilerplate generated.
     func.yaml created.
