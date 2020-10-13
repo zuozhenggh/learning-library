@@ -80,6 +80,13 @@ just as before:
     [opc@compute peopleService]$ fn init --runtime node 
     Function boilerplate generated.
     func.yaml created.
+
+Then install the dependencies:
+
+    [opc@compute peopleService]$ npm install
+    [opc@compute peopleService]$ npm install --save @mysql/xdevapi
+
+
     
 This time this function is being used:
 
@@ -182,7 +189,7 @@ The **Header Name** has to match the one we expect in our Function's code, **X-V
 
 As **Value** type `${request.path[name]}` and confirm by pressing enter, for
 this field to be accepted. This takes the value from the placeholder of the
-route's patrh we declared before.
+route's path we declared before.
 
 Then click **+Another Transform** and repeat this for the **X-Mode** header and value **state**.
 

@@ -18,9 +18,9 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
 Terraform provides a reusable process for creating infrastructure. In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects. This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
-1.  We provide an archive containing the Terraform configuration and sample code. You can download it from
+1.  We provide an archive containing the Terraform configuration and sample code. You can download it from [here: node-mysql-hol-tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u03/b/labfiles/o/node-mysql-hol-tf.zip)
 
-TODO URL
+ *Note: Keep the file around! We will refer to it later!*
 
 2. Log into the Oracle Cloud and on the OCI console, click on the hamburger menu upper left and scroll down to **Solutions and Platform**. Hover over **Resource Manager** and click on **Stacks**.
 

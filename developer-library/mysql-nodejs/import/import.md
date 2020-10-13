@@ -149,7 +149,7 @@ dependencies from `package.json` automatically. You have to ensure that
 either your `package.json` and `node_modules` are in sync or remove
 `node_modules` so Fn manages this.*
 
-Now adopt `func.js` to do what we need:
+Now adapt `func.js` to do what we need:
 
     const fdk=require('@fnproject/fdk');
     const mysqlx = require('@mysql/xdevapi');
