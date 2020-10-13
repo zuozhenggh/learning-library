@@ -40,9 +40,6 @@ To complete this lab, you need to have the following:
 
 - From the **Compartment** drop-down list, select your compartment.
 
-    - If you're working in the LiveLabs tenancy, expand the **c4u03** and **Livelabs** compartments, and select your compartment. Your compartment name is based on your username. For example, if your username is `LL630`, then your compartment name is `LL630-COMPARTMENT`.
-
-
 - Click **Create Autonomous Database**.
 
 
@@ -206,8 +203,6 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
     - You cannot edit the registration details for an Autonomous Database.
     - You can view the compartment to which the database belongs. The compartment for an Autonomous Database is the same compartment in Oracle Cloud Infrastructure in which the database resides.
     - Oracle Data Safe connects to the database via a TLS connection.
-
-     ![Targets Details dialog box](images/target-details-dialog-box.png)
 
 
 - Click **Cancel** to close the **Target Details** dialog box.

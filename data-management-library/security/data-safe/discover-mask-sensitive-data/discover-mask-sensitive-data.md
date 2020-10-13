@@ -251,7 +251,7 @@ The Data Masking wizard generates a masking policy for your target database base
 - At the top of the report, click **Generate Report**.
 
 
-- In the **Generate Report** dialog box, leave **PDF** selected, enter **Mask1_HCM1** for the description, ensure your compartment is selected, and then click **Generate Report**.
+- In the **Generate Report** dialog box, leave **PDF** selected, enter **Mask1_HCM1** for the description, select your compartment, and then click **Generate Report**.
 
 - Wait for the report to generate. When it's generated, click **Download Report**.
 
