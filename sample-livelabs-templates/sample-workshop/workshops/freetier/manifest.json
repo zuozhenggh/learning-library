@@ -1,5 +1,8 @@
 {
     "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "include": {"define_channels_local_table": "../../data-load/files/define_channels_local_table.sql",
+                "load_data": "../../data-load/files/load_data.sql",
+                "query_tables": "../../data-load/files/query_tables.sql"},
     "tutorials": [
         {
             "title": "Prerequisites",
