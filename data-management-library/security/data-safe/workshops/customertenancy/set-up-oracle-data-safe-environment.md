@@ -175,7 +175,7 @@ The regular Oracle Data Safe user can now access Oracle Data Safe.
 
 
 - **Author**- Jody Glover, UA Developer, Oracle Data Safe Team
-- **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 1, 2020
+- **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 13, 2020
 
 
 ## See an issue?
