@@ -6,7 +6,7 @@ This workshop lets you practice the main features in Oracle Data Safe, including
 
 Click the image to use our easy-to-navigate HTML format:
 
-[![Data Safe Hands-on Workshop](./images/data-safe-hol.png " ")](https://oracle.github.io/learning-library/data-management-library/security/data-safe/workshop)
+[![Data Safe Hands-on Workshop](./images/data-safe-hol.png " ")](https://oracle.github.io/learning-library/data-management-library/security/data-safe/workshops/customertenancy/index.html)
 
 ## Access the Individual Labs in the Repository
 
