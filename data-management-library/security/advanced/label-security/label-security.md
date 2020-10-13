@@ -46,11 +46,10 @@ This lab assumes you have completed:
 - Watch a preview of "*Understanding Oracle Label Security (April 2020)*" [](youtube:o4-XpUQWfaM)
 
 ### Lab Timing (estimated)
-
-| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
-|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| 1                    | Simple CRM Application                             | 10 minutes  |                                                                                                                 |                   |
-| 2                    | Protect Glassfish Application | 20 minutes  |  |                   |
+| Step No. | Feature | Approx. Time | Details | Value Proposition |
+|--|------------------------------------------------------------|-------------|--------------------|-------------------|
+| 1 | Simple CRM Application | 10 minutes |||
+| 2 | Protect Glassfish Application | 20 minutes |||
 
 ## **STEP 1**: Simple CRM Application
 
@@ -325,7 +324,7 @@ In case you decide to execute script by script, you can always review the log fi
 You may proceed to the next lab.
 
 ## Want to Learn More?
-Technical Documentation: [Oracle Label Security 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/olsag/introduction-to-oracle-label-security.html#GUID-C20C62AE-2A30-45F9-AEEA-52A0D3286FBA)
+Technical Documentation: [Oracle Label Security 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/olsag/part1.html)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM

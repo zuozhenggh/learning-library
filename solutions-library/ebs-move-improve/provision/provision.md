@@ -5,6 +5,10 @@ In this lab, we will use the One-Click Provisioning feature of Oracle E-Business
 
 Estimated Lab Time: 45 minutes
 
+Watch this short video to preview how to provision Oracle E-Business Suite using cloud manager.
+
+[](youtube:Y2VvbSsK6K8)
+
 ### Objectives
 * Enable and Set Oracle E-Business Suite Account Passwords
 * Configure Local Hosts File and Log in to Oracle E-Business Suite
