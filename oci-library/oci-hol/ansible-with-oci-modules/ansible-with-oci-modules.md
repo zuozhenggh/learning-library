@@ -12,16 +12,16 @@ This lab will demonstration both provisioning and configuration of your infrastr
 In this section we will download some sample Ansible resources and configure it to work with our OCI tenancy.  Before starting this section, make sure you have cloud shell open as you executed in the previous section.
 
 1. Download and unzip the sample files.
-   
+
     ```
     <copy>
-    wget https://github.com/oracle/learning-library/raw/master/oci-library/oci-hol/ansible-with-oci-modules/files/oci_ansible.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/bykQ0fwIeoZRNpaS6Dmy18kdqtfsqE-VmXig0qsfMf3mZqf9LG0bTKGJeckmHIwE/n/c4u03/b/oci-library/o/oci_ansible.zip
     unzip oci_ansible.zip
     </copy>
     ```
 
 2. Ansible will use your CLI credentials to authenticate and authorize access to OCI.  You will need to configure details of which Compartment to use and which Compute image.  Modify the **env-vars** file to update these values.
-    
+
     ```
     <copy>
     # OCID of assigned compartment
@@ -55,7 +55,7 @@ In this section we will download some sample Ansible resources and configure it 
     ![](./../ansible-with-oci-modules/images/ansible_004.png " ")
 
 6. Run the first sample playbook.  This will list some information about any compute resources you have in the compartment (should be the one you are using right now).
-    
+
     ```
     <copy>
     ansible-playbook sample.yaml
@@ -64,7 +64,7 @@ In this section we will download some sample Ansible resources and configure it 
     ![](./../ansible-with-oci-modules/images/ansible_001.jpg " ")
 
 7. If the output is devoid of errors, it is time to deploy our sample infrastructure.
-  
+
     ```
     <copy>
     ansible-playbook instance_pool_example.yaml
@@ -84,7 +84,7 @@ Now that we have provisioned our infrastructure, it is time to deploy an applica
 1. Return to your SSH terminal session.
 
 2. Run the following command to deploy and configure Apache on each server in the instance pool.
- 
+
     ```
     <copy>
     ANSIBLE_INVENTORY=./oci_inventory.py ansible-playbook -u opc --become provision_web_server.yaml
@@ -92,7 +92,7 @@ Now that we have provisioned our infrastructure, it is time to deploy an applica
     ```
 
 3. After this completes (about 10 seconds) return to your web browser and refresh the sample web server page from earlier. It should now display *Configured by Ansible*.
-   
+
 ### Challenge
 In this tutorial, Ansible is deploying a simple HTML page. You can make modifications to the page and run the command in step 2 to deploy the "new code".
 
@@ -102,7 +102,7 @@ When finished, refresh your browser to see the changes.
 In this exercise, all of the resources provisioned by Ansible were also tagged. The sample ``teardown.yaml`` script leverages these tags to find and destroy all the resources that were created.
 
 1. Run the following command to remove all the resources.
-   
+
     ```
     <copy>
     ansible-playbook teardown.yaml
@@ -118,7 +118,10 @@ In this exercise, all of the resources provisioned by Ansible were also tagged. 
 
 - **Author** - Flavio Pereira
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, June 2020
+- **Last Updated By/Date** - Tom McGinn, October 2020
+- **Workshop (or Lab) Expiry Date** - October 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

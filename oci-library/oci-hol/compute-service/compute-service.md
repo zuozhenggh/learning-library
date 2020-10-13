@@ -55,13 +55,13 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     **Note:** For Oracle Linux VMs, the default username is **opc**
 
     ```
-    <copy>ssh opc@&lt;public_ip_address&gt;</copy>
+    <copy>ssh opc<public_ip_address></copy>
     ```
 
     If you have a different path for your SSH key enter the following:
 
     ```
-    <copy>ssh -i &lt;path_to_private_ssh_key&gt; opc@&lt;public_ip_address&gt;</copy>
+    <copy>ssh -i <path_to_private_ssh_key> opc@<public_ip_address></copy>
     ```
 
 2. For this lab, we are going to install an Apache HTTP Webserver and try to connect to it over the public Internet. SSH into the Linux instance and run following commands:
@@ -147,5 +147,7 @@ If you are unable to see the webserver on your browser, possible scenarios inclu
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Tom McGinn, July 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
