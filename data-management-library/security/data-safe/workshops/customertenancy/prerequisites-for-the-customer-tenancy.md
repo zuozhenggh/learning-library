@@ -33,7 +33,7 @@ Your tenancy administrator needs to set up an Oracle Data Safe environment for y
 
 - Send your email address to your tenancy administrator and request a user account in your tenancy.
 
-- Send your tenancy administrator the instructions on how to set up an Oracle Data Safe environment for you. The instructions are [here]((set-up-oracle-data-safe-environment)).
+- Send your tenancy administrator the instructions on how to set up an Oracle Data Safe environment for you. The instructions are [here](./set-up-oracle-data-safe-environment.md).
 
 
 
