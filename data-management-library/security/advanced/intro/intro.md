@@ -14,7 +14,6 @@ This workshop will cover the following products and solutions:
 - Oracle Key Vault (OKV)
 
 ## About this Workshop
-
 Based on an OCI architecture, deployed in a few minutes with a simple internet connection, it allows you to test DB Security use cases in a complete environment already pre-configured by the Oracle DB Security PMs Team.
 
 Now, **you no longer need important resources on your PC** (storage, CPU or memory), nor complex tools to master, **making you completely autonomous to discover** at your rhythm all new DB Security features, but also you can even now **make your own live demonstration** in front of your customers.
