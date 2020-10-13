@@ -22,7 +22,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
 
 ### Prerequisites
 
-* An <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
+* An [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
 
 ## **STEP 1**: Choose ATP from the Services Menu
