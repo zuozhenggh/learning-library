@@ -51,10 +51,9 @@ This lab assumes you have completed:
 - Watch a preview of "*Understanding Oracle Data Redaction (July 2020)*" [](youtube:ssy6Hov-MAs)
 
 ### Lab Timing (estimated)
-
-| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
-|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| 1                    | Redact EMPLOYEESEARCH Data                             | 15 minutes  |                                                                                                                 |                   |
+| Step No. | Feature | Approx. Time | Details | Value Proposition |
+|--|------------------------------------------------------------|-------------|--------------------|-------------------|
+| 1 | Redact EMPLOYEESEARCH Data | 15 minutes |||
 
 ## **STEP 1**: Redact EMPLOYEESEARCH Data
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
@@ -129,7 +128,7 @@ You may now proceed to the next lab.
 
 
 ## Want to Learn More?
-Technical Documentation: [Data Redaction 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/asoag/asopart2.html)
+Technical Documentation: [Data Redaction 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/asoag/asopart1.html)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM

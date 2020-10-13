@@ -49,21 +49,20 @@ This lab assumes you have completed:
 - Watch a preview of "*Oracle Data Masking & Subsetting - Advanced Use Cases (June 2019)*" [](youtube:06EzV-TM4f4)
 
 ### Lab Timing (estimated)
-
-| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
-|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| 1                    | Import schema structure                             | 5 minutes  |                                                                                                                 |                   |
-| 2                    | Enhance the meta-model | 5 minutes  |  |                   |
-| 3                    | Use Pre-Defined Sensitive Column Types | 5 minutes  |  |                   |
-| 4                    | Create a new Sensitive Column Type | 5 minutes  |  |                   |
-| 5                    | Create a new Sensitive Column Type using Pre-Defined Templates | 5 minutes  |  |                   |
-| 6                    | Create a new Masking Format | 5 minutes  |  |                   |
-| 7                    | Manually Identify Sensitive Columns | 5 minutes  |  |                   |
-| 8                    | Create Data Masking Definitions | 5 minutes  |  |                   |
-| 9                    | Format Columns Using the Format Library and Masking Primitive | 10 minutes  |  |                   |
-| 10                    | Generate Data Masking Scripts | 5 minutes  |  |                   |
-| 11                    | Execute the Data Masking Script | 5 minutes  |  |                   |
-| 12                    | Compare the Pre-Masked Data vs. the Post-Masked Data | 5 minutes  |  |                   |
+| Step No. | Feature | Approx. Time | Details | Value Proposition |
+|--|------------------------------------------------------------|-------------|--------------------|-------------------|
+| 1 | Import schema structure | 5 minutes |||
+| 2 | Enhance the meta-model | 5 minutes |||
+| 3 | Use Pre-Defined Sensitive Column Types | 5 minutes |||
+| 4 | Create a new Sensitive Column Type | 5 minutes |||
+| 5 | Create a new Sensitive Column Type using Pre-Defined Templates | 5 minutes |||
+| 6 | Create a new Masking Format | 5 minutes |||
+| 7 | Manually Identify Sensitive Columns | 5 minutes |||
+| 8 | Create Data Masking Definitions | 5 minutes |||
+| 9 | Format Columns Using the Format Library and Masking Primitive | 10 minutes |||
+|10 | Generate Data Masking Scripts | 5 minutes |||
+|11 | Execute the Data Masking Script | 5 minutes |||
+|12 | Compare the Pre-Masked Data vs. the Post-Masked Data | 5 minutes |||
 
 
 ## **STEP 1**: Import schema structure
