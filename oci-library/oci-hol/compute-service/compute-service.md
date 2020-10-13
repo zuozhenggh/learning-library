@@ -55,13 +55,13 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     **Note:** For Oracle Linux VMs, the default username is **opc**
 
     ```
-    <copy>ssh opc@&lt;public_ip_address&gt;</copy>
+    <copy>ssh opc<public_ip_address></copy>
     ```
 
     If you have a different path for your SSH key enter the following:
 
     ```
-    <copy>ssh -i &lt;path_to_private_ssh_key&gt; opc@&lt;public_ip_address&gt;</copy>
+    <copy>ssh -i <path_to_private_ssh_key> opc@<public_ip_address></copy>
     ```
 
 2. For this lab, we are going to install an Apache HTTP Webserver and try to connect to it over the public Internet. SSH into the Linux instance and run following commands:

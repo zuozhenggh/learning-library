@@ -74,16 +74,26 @@ Step 1 opening paragraph.
 
     ```
     Adding code examples
-  	Indentation is important for the code example to appear inside the step
+    Indentation is important for the code example to appear inside the step
     Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+  	<copy>Enclose the text you want to copy using the <copy> element.</copy>
     ```
 
 4. Code examples that include variables
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+  	```
+    <copy>ssh -i <ssh-key-file></copy>
+    ```
+
+    <!-- Note that files cannot include empty lines. This will be addresses in a future version. -->
+5. Example using an included file. Copy it from the block below:
+
+    ```
+    <copy>[](include:load_data)</copy>
+    ```
+
+    <!-- Use this syntax for now to force a the download of a file -->
+    Or download it using <a href="./files/load_data.sql" download-"load_data.sql" target="_blank">this link</a>.
 
 *At the conclusion of the lab add this statement:*
 You may proceed to the next lab.
