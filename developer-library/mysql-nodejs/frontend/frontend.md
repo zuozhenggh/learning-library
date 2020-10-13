@@ -331,7 +331,7 @@ You can find the complete code in the `step5/peopleService` directory and apply 
 
 Since this time the `amount` by which we raise, is sent as part of the HTTP request body, therefore we receive it as `input`.
 
-When configuring the route also make sure to use the `PPATCH`method. Other than that it is similar to previous cases:
+When configuring the route also make sure to use the `PATCH`method. Other than that it is similar to previous cases:
 
 | Setting     | Value            |
 | ----------- | ---------------- |
