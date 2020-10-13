@@ -31,7 +31,7 @@ Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are ad
 - [Oracle Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
 ## Need Help?
-Please submit feedback or ask for help using our [Oracle Communities Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with us.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with us.
 
 -- Oracle Database Product Management
 
