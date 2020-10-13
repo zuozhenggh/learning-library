@@ -227,6 +227,15 @@ being used, which wraps Node.js's `https` module behind a single function:
 
 *Note: The `download.js` file is provided in the `step2` directory as well.*
 
+After getting the code ready it has to be deployed as before:
+
+    [opc@compute import]$ fn deploy --app DemoApp
+    Deploying import to app: DemoApp
+    Bumped to version 0.0.3
+    ...
+    Updating function import using image iad.ocir.io/.../..../import:0.0.3...
+
+
 ## **Step 5:** Configure the Event Handling
 
 First thing we do is take a look at the Object Store in the console. Navigate
