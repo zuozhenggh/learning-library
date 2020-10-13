@@ -88,7 +88,7 @@ escape it using single quote (`'`) on the command line!*
 The application you will build uses MySQL as Document Store. As the database
 instance is empty we have to create a database schema and a collection.
 
-     MySQL  10.0.2.7:33060+ ssl  JS > session.createSchema('hol')
+     MySQL  10.0.2.7:33060+ ssl  JS > session.createSchema('hol');
     <Schema:hol>
      MySQL  10.0.2.7:33060+ ssl  JS > session.getSchema('hol').createCollection('people');
     <Collection:people>

@@ -122,6 +122,26 @@ provided. To keep number of different functions low it is prepared to handle
 different *modes*. It then uses the X DevAPI's `find()` function to search
 for documents showing the people from a given state.
 
+For formatting of dates, we use a small helper, `date.js`:
+
+    module.exports = () => {
+        const d = new Date();
+        let month = '' + (d.getMonth() + 1);
+        let day = '' + d.getDate();
+        const year = d.getFullYear();
+
+        if (month.length < 2) {
+            month = '0' + month;
+        }
+        if (day.length < 2) {
+            day = '0' + day;
+        }
+
+        return [year, month, day].join('-');
+    }
+
+You can find the complete code in the `step3/peopleService` directory.
+
 In case of an error the HTTP status code 500 is being used and an error
 response send to the client.
 
@@ -259,6 +279,11 @@ Add this `else if` block:
                 return result.fetchAll().map(row => row[0]);
             }
 
+You can find the complete code in the `step4/peopleService` directory and apply using
+
+    [opc@compute peopleService]$ fn deploy --app DemoApp
+
+
 Again we have to add a route, just as before. This time for the **Path** `/income/{salary}`,
 setting **X-Mode** to `salary` and **X-Value** to `${request.path[salary]}`.
 
@@ -299,6 +324,10 @@ This is the code we add to our `peopleService`:
                await session.commit();
                return { success: true, newEntry };
             }
+
+You can find the complete code in the `step5/peopleService` directory and apply using
+
+    [opc@compute peopleService]$ fn deploy --app DemoApp
 
 Since this time the `amount` by which we raise, is sent as part of the HTTP request body, therefore we receive it as `input`.
 
