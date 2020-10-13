@@ -125,6 +125,10 @@ for documents showing the people from a given state.
 In case of an error the HTTP status code 500 is being used and an error
 response send to the client.
 
+Just like with the `import` service, this is deployed using the `fn`tool:
+
+    [opc@compute peopleService]$ fn deploy --app DemoApp
+
 *Note: Returning raw errors to a client can be a security issue. Raw errors
 should be logged for debugging purpose.*
 
