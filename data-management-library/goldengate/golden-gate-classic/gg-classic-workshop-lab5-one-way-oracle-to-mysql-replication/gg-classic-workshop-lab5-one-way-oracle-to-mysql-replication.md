@@ -24,7 +24,7 @@ Time to Complete -
 
 Approximately 60 minutes
  
-## **Step 1:**  GoldenGate GoldenGate for Oracle
+## **Step 1:** GoldenGate for Oracle
 
 Open a terminal session
 
@@ -55,7 +55,7 @@ MySQL: ggschema ggadmin
 Set the CHECKPOINTTABLE parameter</copy>
 ````
 
-## **Step 2:**- GoldenGate GoldenGate for non-Oracle (MySQL)
+## **Step 2:**- GoldenGate for non-Oracle (MySQL)
 
 Open a terminal session
 ````
