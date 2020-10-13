@@ -3,8 +3,6 @@
 
 # Query the Sales History Sample Schema
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) **WORK IN PROGRESS** ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
-
 ## Introduction
 
 In this lab, you will query the Sales History (SH) sample schema that comes with the database.
@@ -31,60 +29,60 @@ In this section, you execute the `SELECT` statement to retrieve data from tables
 
 **Note:** Remember that you need to prefix the table names with the schema name SH in your queries.
 
-1. You can display all columns of data in a table by entering an asterisk * after the SELECT keyword. Execute the following statement to view all rows and columns in the   `DEPARTMENTS` table:
+1. You can display all columns of data in a table by entering an asterisk * after the SELECT keyword. Execute the following statement to view all rows and columns in the  `PROMOTIONS` table:
 
     `SELECT *
-    FROM departments;`
+    FROM sh.promotions;`
 
-    ![](./images/blahblahblahblah.jpg " ")
+    ![](./images/select-star-from-sh-promotions.png " ")
 
-2. You can display specific columns of data in a table by specifying the column names in the SELECT statement. Execute the following statement to view the JOB_ID and `JOB_TITLE` columns in the `JOBS` table:
+2. You can display specific columns of data in a table by specifying the column names in the SELECT statement. Execute the following statement to view the `PROMO_NAME` and `PROMO_END_DATE` columns in the `PROMOTIONS` table:
 
-    `SELECT job_id, job_title
-    FROM jobs;`
+    `SELECT promo_name, promo_end_date
+    FROM sh.promotions;`
 
-    ![](./images/blahblahblahblah.jpg " ")
+    ![](./images/select-promo-name-promo-end-date-from-promotions.png " ")
 
 ## **Step 2:** Restricting Data
 In this section, you use the `WHERE` clause to restrict the rows that are returned from the `SELECT` query. A `WHERE` clause contains a condition that must be met. It directly follows the `FROM` clause. If the condition is true, the row that meets the condition is returned.
 
-1. Modify the `SELECT` statement. Execute the following query to restrict the number of rows to `DEPARTMENT_ID 60`:
+1. Modify the `SELECT` statement. Execute the following query to restrict the number of rows to where the `PROMO_SUBCATEGORY` has a value of `radio commercial`:
 
     `SELECT *`
 
-    `FROM departments`
+    `FROM sh.promotions`
 
-    `WHERE department_id=60;`
+    `WHERE promo_subcategory='radio commercial';`
 
-    ![](./images/blahblahblahblah.jpg " ")
+    ![](./images/where-promo-subcategory-equals-radio-commercial.png " ")
 
 ## **Step 3:** Sorting Data
 
 In this section, you use the `ORDER BY` clause to sort the rows that are retrieved from the `SELECT` statement. You specify the column based on the rows that must be sorted. You also specify the `ASC` keyword to display rows in ascending order (default), and you specify the `DESC` keyword to display rows in descending order.
 
-1. Execute the following `SELECT` statement to retrieve the `LAST_NAME`, `JOB_ID`, and `HIRE_DATE` columns of employees who belong to  the `SA_REP` job ID. Sort the rows in ascending order based on the `HIRE_DATE` column.
+1. Execute the following `SELECT` statement to retrieve the `CUST_LAST_NAME`, `CUST_CREDIT_LIMIT`, and `CUST_YEAR_OF_BIRTH` columns of customers who live in the `Noord Holland` CUST_STATE_PROVINCE. Sort the rows in ascending order based on the `CUST_YEAR_OF_BIRTH` column.
 
-    `SELECT last_name, job_id, hire_date`
+    `SELECT cust_last_name, cust_credit_limit, cust_year_of_birth`
 
-    `FROM   employees`
+    `FROM   sh.customers`
 
-    `WHERE  job_id='SA_REP'`
+    `WHERE  cust_state_province='Noord-Holland'`
 
-    `ORDER BY hire_date;`
+    `ORDER BY cust_year_of_birth;`
 
-    ![](./images/blahblahblahblah.jpg " ")  
+    ![](./images/order-by-cust-year-of-birth.png " ")  
 
 2. Modify the `SELECT` statement to display rows in descending order. Use the `DESC` keyword.
 
-    `SELECT last_name, job_id, hire_date`
+`SELECT cust_last_name, cust_credit_limit, cust_year_of_birth`
 
-    `FROM   employees`
+`FROM   sh.customers`
 
-    `WHERE  job_id='SA_REP'`
+`WHERE  cust_state_province='Noord-Holland'`
 
-    `ORDER BY hire_date DESC;`
+`ORDER BY cust_year_of_birth DESC;`
 
-    ![](./images/blahblahblahblah.jpg " ")  
+  ![](./images/order-by-cust-year-of-birth-desc.png " ")  
 
 ## **Step 4:**  Ranking Data
 
@@ -105,7 +103,7 @@ AND country_iso_code='US'
 GROUP BY channel_desc;</copy>
 ```
 
-    ![](./images/blahblahblahblah.jpg " ")  
+  ![](./images/ranking-data.png " ")  
 
 ## Want to Learn More?
 
