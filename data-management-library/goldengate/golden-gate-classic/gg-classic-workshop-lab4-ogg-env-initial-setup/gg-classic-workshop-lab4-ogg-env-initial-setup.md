@@ -1,4 +1,4 @@
-# Lab 1 -  Setup of Golden Gate Classic Workshop 
+# Lab 4 -  Setup of Golden Gate Classic Workshop 
 
 ![](./images/image200_1.png)
 
@@ -81,9 +81,7 @@ Open a terminal session
 <copy>sudo su - oracle</copy>
 ````
 
-
-
-## **Step 2:**  Test connectivity for the OGG users:
+## **Step 2:**  Test connectivity for the OGG users: (Completed prior to the Lab)
 
 1. sqlplus c##ggadmin
 

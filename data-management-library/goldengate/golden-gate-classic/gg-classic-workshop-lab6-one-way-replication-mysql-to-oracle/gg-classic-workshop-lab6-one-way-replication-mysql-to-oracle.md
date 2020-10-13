@@ -1,4 +1,4 @@
-# Lab3 one-way-replication-mysql-to-oracle
+# Lab 6 one-way-replication-mysql-to-oracle
 
 ## Introduction
 
@@ -107,7 +107,7 @@ Enter the following settings:
 
 11. Save and close the file.
 
-## **Step 2:** -- GoldenGate GoldenGate MySQL Data Apply
+## **Step 2:** - GoldenGate GoldenGate MySQL Data Apply
 
 **MySQL data apply**
 
@@ -171,7 +171,7 @@ add schematrandata pdbeast.tpc</copy>
 **??Create the OGG Groups by executing the following commands**
 
 
-## **Step 3:** -- GoldenGate GoldenGate for Oracle Integrated Extract and Apply
+## **Step 3:** - GoldenGate GoldenGate for Oracle Integrated Extract and Apply
 
 **Oracle Integrated Extract:**
 ````
@@ -221,7 +221,7 @@ add schematrandata pdbeast.tpc</copy>
 <copy>add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadmin.ggchkpoint</copy>
 ````
 
-## **Step 4:** - - GoldenGate GoldenGate for non-Oracle coordinated Replicat
+## **Step 4:** - GoldenGate GoldenGate for non-Oracle coordinated Replicat
 
 **MySQL Coordinated Replicat**
 
@@ -278,7 +278,7 @@ When prompted enter the password: Oracle1
 
 Enter "100" at the prompt, and return.
 
-## **Step 5:** - - GoldenGate GoldenGate - Verify Replication
+## **Step 5:** - GoldenGate GoldenGate - Verify Replication
 
 1. Verify data has been replicated
    
@@ -352,7 +352,7 @@ When prompted enter the password: Oracle1
       from ggadmin.gg_heartbeat_history order by heartbeat_received_ts desc;</copy>
       ````
 
-## **Step 6:** - - GoldenGate GoldenGate - Replicate DDL
+## **Step 6:** - GoldenGate GoldenGate - Replicate DDL
 
 1. Replicate Oracle DDL 
 On the database server:

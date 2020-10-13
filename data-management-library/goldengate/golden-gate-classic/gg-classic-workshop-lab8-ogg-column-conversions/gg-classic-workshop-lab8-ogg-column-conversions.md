@@ -1,4 +1,4 @@
-# Lab 5 - GoldenGate Column Conversions
+# Lab 8 - GoldenGate Column Conversions
 
 ### Introduction
 

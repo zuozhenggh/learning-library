@@ -1,4 +1,4 @@
-#  Lab 2 -  one-way-oracle-to-mysql-replication
+#  Lab 5 -  one-way-oracle-to-mysql-replication
 
 ## Introduction
 
@@ -24,7 +24,7 @@ Time to Complete -
 
 Approximately 60 minutes
  
-## **Step 1:** GoldenGate GoldenGate for Oracle
+## **Step 1:**  GoldenGate GoldenGate for Oracle
 
 Open a terminal session
 
@@ -61,7 +61,7 @@ Open a terminal session
 ````
  <copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
 ````
-**Oracle:**
+1. **Oracle:**
 ````
 <copy>sudo su - oracle</copy>
 ````
@@ -81,7 +81,7 @@ Open a terminal session
 <copy>ADD CHECKPOINTTABLE ggadmin.ggchkpoint</copy>
 ````
 
-**MySQL:** 
+2. **MySQL:** 
 
 checkpointtable ggadmin.ggchkpoint
 
@@ -99,9 +99,9 @@ checkpointtable ggadmin.ggchkpoint
 <copy>WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet</copy>
 ````
 
-1. Save and close the files.
+2. Save and close the files.
 
-2. Start the GoldenGate Software Command Interpreter in both windows.
+3. Start the GoldenGate Software Command Interpreter in both windows.
 
 ````
 <copy./ggsci</copy>
@@ -113,7 +113,7 @@ In GGSCI, create the OGG Credential Store by executing the command:
 ````
 <copy>add credentialstore</copy>
 ````
-Add OGG database user credentials into each credential store.
+4. Add OGG database user credentials into each credential store.
 
 **Oracle**
 
@@ -136,29 +136,30 @@ Add OGG database user credentials into each credential store.
 <copy>alter credentialstore add user ggrep password @Oracle1@ alias ggapply</copy>
 ````
 
-OGG Master Key and Wallet
 
-In the Oracle GGSCI, create the OGG Wallet.
+## **Step 3:**- OGG Master Key and Wallet
+
+1. In the Oracle GGSCI, create the OGG Wallet.
 Command: 
 
 ````
 <copy>CREATE WALLET</copy>
 ```` 
 
-Add the OGG Masterkey to the wallet.
+2. Add the OGG Masterkey to the wallet.
 
 **Oracle GG**
 
 ````
 <copy>add masterkey</copy>
 ````
-1.  Verify the Master Key and Wallet from the MySQL GGSCI instance.
+3.  Verify the Master Key and Wallet from the MySQL GGSCI instance.
 
 ````
 <copy>dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@</copy>
 ````
 
-**MySQL:** 
+4. **MySQL:** 
 
 ````
 <copy>open wallet</copy>
@@ -167,7 +168,7 @@ Add the OGG Masterkey to the wallet.
 <copy>info masterkey</copy>
 ````
 
-**Oracle:** 
+5. **Oracle:** 
 
 ````
 <copy>open wallet</copy>
@@ -190,81 +191,83 @@ Masterkey Name: OGG_DEFAULT_MASTERKEY
 Version         Creation Date                            Status
 2020-09-10T15:22:28.000+00:00   Current
    
-1.  OGG Replicat Checkpoint Table
+## **Step 4:**- GoldenGate Checkpoint Table
 
 ````
 <copy>alter pluggable database PDBEAST open;
 alter pluggable database PDBWEST open;</copy>
 ````
 
-23. In GGSCI, create the OGG Replicat Checkpoint Table by executing the commands:
+1.  In GGSCI, create the OGG Replicat Checkpoint Table by executing the commands:
 
 **Oracle**
 
-1. Connect to the target database: 
+2. Connect to the target database: 
 ````
 <copy>dblogin useridalias ggapplywest</copy>
 ````
 
-2.  Create the table: 
+3.  Create the table: 
 ````
 <copy>add checkpointtable pdbwest.ggadmin.ggchkpoint</copy>
 ````
 
-**Mysql**
+4. **Mysql**
 
-Connect to the target database: 
+5. Connect to the target database: 
 
 ````
 <copy>dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggapply</copy>
 ````
 
-1.  Create the table: 
+6.  Create the table: 
 ````
 <copy>add checkpointtable</copy>
 ````	
 
-2.  OGG Heartbeat
+## **Step 5:**- GoldenGate Heartbeat
+
+1.  OGG Heartbeat
 
 In GGSCI, create and activate OGG Integrated Heartbeat
 
 **Oracle**
 
-29. Connect to the PDBEAST tenant: 
+2. Connect to the PDBEAST tenant: 
 ````
 <copy>dblogin useridalias ggapplyeast</copy>
 ````
 
-30. Create the heartbeat source: 
+3. Create the heartbeat source: 
 
 ````
 <copy>add heartbeattable</copy>
 ````		
 
-31. Connect to the PDBWEST tenant: 
+4. Connect to the PDBWEST tenant: 
 
 ````
 <copy>dblogin useridalias ggapplywest</copy>
 ````
 
-32. Create the heartbeat target: 
+5. Create the heartbeat target: 
 ````
 <copy>add heartbeattable, targetonly</copy>
 ````
 
 **MySQL**
 
-1.  Connect to the ggadmin database: 
+6.  Connect to the ggadmin database: 
    
 ````
 <copy>dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias oggcapture</copy>
 ````
 
-2.  Create the heartbeat target: 
+7.  Create the heartbeat target: 
 ````
 <copy>add heartbeattable, targetonly</copy>
 ````
-		  
+## **Step 6:**- GoldenGate Manager		  
 **OGG Manager**
 
 To configure the OGG Manager process in both the Oracle and MySQL OGG environments:
@@ -275,7 +278,7 @@ To configure the OGG Manager process in both the Oracle and MySQL OGG environmen
 <copy>edit param mgr</copy>
 ````
 
-36. For Oracle, enter the following settings:
+2. For Oracle, enter the following settings:
 ````
 	      <copy>port 15000
           dynamicportlist 15001-15025
@@ -289,7 +292,7 @@ To configure the OGG Manager process in both the Oracle and MySQL OGG environmen
           startupvalidationdelay 2</copy>
 ````
 
-37. For MySQL, enter the following settings:
+3. For MySQL, enter the following settings:
 ````
 <copy>edit param mgr</copy>
 ````
@@ -307,17 +310,19 @@ To configure the OGG Manager process in both the Oracle and MySQL OGG environmen
           startupvalidationdelay 2</copy>
 ````
 
-38. In each of the parameter files, add comments to describe each setting and what it does.
+4. In each of the parameter files, add comments to describe each setting and what it does.
 
-39. Save and close the file.
+5. Save and close the file.
 
-40. Start the OGG Manager
+6. Start the OGG Manager
 
-Oracle: 
+## **Step 7:**- Startup GoldenGate
+
+1. Oracle: 
 ````
 <copy>start mgr</copy>
 ````
-MySQL: 
+2. MySQL: 
 ````
 <copy>start mgr</copy>
 ````

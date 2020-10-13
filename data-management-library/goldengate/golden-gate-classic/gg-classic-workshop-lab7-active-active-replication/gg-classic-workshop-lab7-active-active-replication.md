@@ -1,4 +1,4 @@
-# Lab 4 -  active-active-replication
+# Lab 7 -  active-active-replication
 
 ### Introduction
 In this lab we will load data in and configure active-active for High Availability
