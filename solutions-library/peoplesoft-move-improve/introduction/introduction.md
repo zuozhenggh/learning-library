@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. The objectives are written to cover all of the labs included in the workshop.
+In this hands-on lab, the users are provided with step-by-step instructions on setting up a user group, creating and adding users to a group, and creating a compartment and respective policies in the Oracle Cloud Infrastructure (OCI). Subsequently, this guide instructs how to install the Cloud Manager 11 using Marketplace. The final section provides the steps to provision a PeopleSoft Environment followed by some simple hands-on exercises for you to get familiar with the system.
 
 Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
 
