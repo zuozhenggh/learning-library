@@ -20,8 +20,10 @@ You can use SSH to connect to this instance.
 ## **Step 1a:** Using OpenSSH from Command Line
 
 To access the system you need the private ssh key and the IP, which were created by
-Terraform. The key has to be stored in a file which is not world reable on your 
-machine. By default a user with name `opc` is created. On first connect your
+Terraform and was shown on the **Application Information** tab in the 
+**Resource Manager**. Store it in a file like `ssh_private_key`. The file must
+not be world readble on your machine, otherwise the ssh client will complain.
+By default a user with name `opc` is created. On first connect your
 client will ask to confirm the server identity, type `yes` to confirm.
 
 If you stored the key in a file `ssh_private_key` and the IP if your instance is
