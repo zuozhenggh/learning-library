@@ -18,7 +18,6 @@ Approximately 60 minutes
 
 ![](./images/terminal3.png)
 
-
 ````
  <copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
 ````
@@ -41,9 +40,10 @@ Connect to the PDBEAST database as the user "tpc".
         row_update_ts         timestamp(6),
         row_update_by         varchar(6),
         primary key (row_number)
-      );
-
-      drop table cust_zip;
+      );</copy>
+````
+````
+      <copy>drop table cust_zip;
       create table cust_zip (
         cust_id              number(10,0),
         cust_zip             number(5,0),
@@ -58,9 +58,11 @@ Connect to the PDBEAST database as the user "tpc".
 
 Connect to the MySQL database as the user "tpc".
 
-3. mysql -u tpc -p@Oracle1@
+````
+<copy>mysql -u tpc -p@Oracle1@</copy>
+````
 
-4. Execute the following DML to create the target tables:
+1. Execute the following DML to create the target tables:
 
 ````
       <copy>use tpc;
@@ -82,7 +84,6 @@ Connect to the MySQL database as the user "tpc".
       ) engine=innodb;</copy>
 
 ````
-  
 ````
       <copy>drop table cust_city_state;
       create table cust_city_state (
@@ -91,17 +92,19 @@ Connect to the MySQL database as the user "tpc".
         cust_state           char(2),
         cust_zip             int(5),
         CONSTRAINT PK_CustCtySt primary key (cust_id)
-      ) engine=innodb;
-
-      drop table zip_lookup;
+      ) engine=innodb;</copy>
+````
+````
+      <copy>drop table zip_lookup;
       create table zip_lookup (
         zip         int(5),
         zip_city    varchar(25),
         zip_state   char(2),
         CONSTRAINT PK_Zplk primary key (zip)
-      ) engine=innodb;
-
-      insert into zip_lookup values (80033, 'Wheat Ridge', 'CO');
+      ) engine=innodb;</copy>
+````
+````
+      <copy>insert into zip_lookup values (80033, 'Wheat Ridge', 'CO');
       insert into zip_lookup values (80202, 'Denver', 'CO');
       insert into zip_lookup values (94105, 'San Francisco', 'CA');
       insert into zip_lookup values (70001, 'Jefferson', 'LA');
@@ -115,15 +118,21 @@ Oracle data capture
 
 1. Edit the parameter file for the ETPC Integrated Extract.
 
-2. Add the following table statement:
-table pdbeast.tpc.wshop_funcs, TOKENS (
+````
+<copy>./ggsci</copy>
+````
+Add the following table statement:
+
+````
+<copy>table pdbeast.tpc.wshop_funcs, TOKENS (
            TKN-EXTLAG-MSEC = @GETENV ("LAG", "MSEC"),
            TKN-SRC-DBNAME = @GETENV ("DBENVIRONMENT", "DBNAME"),
            TKN-SRC-DBVERSION = @GETENV ("DBENVIRONMENT", "DBVERSION"),
            TKN-TXN-CSN = @GETENV ("TRANSACTION", "CSN")
-         );
+         );</copy>
+````
 
-3. Save and close the file.
+2. Save and close the file.
 
 ## **Step 4:**  - GoldenGate GoldenGate -MySQL Data Apply
 
@@ -135,15 +144,19 @@ MySQL data apply
 
 3. Execute a query against a lookup table to get the city and state for the
 incoming zip code
-        MAP pdbeast.tpc.cust_zip, TARGET tpc.cust_city_state,
+        
+````
+<copy>MAP pdbeast.tpc.cust_zip, TARGET tpc.cust_city_state,
          SQLEXEC (ID ZIPLKUP, 
            QUERY 'select zip_city, zip_state from tpc.zip_lookup where zip = ?',
            PARAMS (p1 = cust_zip)),
          COLMAP (usedefaults,
                  cust_city = ZIPLKUP.zip_city,
                  cust_state = ZIPLKUP.zip_state
-        )
-MAP pdbeast.tpc.wshop_funcs, TARGET tpc.wshop_funcs,
+        )</copy>
+````
+````
+<copy>MAP pdbeast.tpc.wshop_funcs, TARGET tpc.wshop_funcs,
            colmap (usedefaults,
 		           srow_number = row_number,
                    srow_text = row_text,
@@ -157,7 +170,8 @@ MAP pdbeast.tpc.wshop_funcs, TARGET tpc.wshop_funcs,
                    src_db_name = @TOKEN ("TKN-SRC-DBNAME"),
                    src_db_version = @TOKEN ("TKN-SRC-DBVERSION"),
                    src_txn_csn = @TOKEN ("TKN-TXN-CSN")
-         )	 
+         )</copy>
+````	 
 
 4. Set the Replicat to insert all data into the table tpc.wshop_funcs, no matter the 
 	      source operation.
@@ -171,22 +185,45 @@ Start OGG and generate data
 
 1. Start the OGG environment:
 
-2. Oracle: 
-start etpc
-       start pmysql  
+````
+<copy>./ggsci</copy>
+````
+
+**Oracle:** 
+
+````
+<copystart etpc</copy>
+````
+````
+<copy>start pmysql</copy>
+````  
 
 
  **MySQL:** 
-   
-start rtpc
+ 
+ ````
+<copy>./ggsci</copy>
+````
+
+````
+<copy>start rtpc</copy>
+````
+
 Verify all OGG Groups are running.
+````
+<copy>info all</copy>
+````
 Generate data  
 In the window connected to the database server:
 Login to the PDBEAST database as the user "tpc"
-sqlplus tpc@pdbeast
+
+````
+<copy>sqlplus tpc@pdbeast</copy>
+````
 When prompted enter the password: Oracle
 Execute the following:
-		    DECLARE
+````
+		    <copy>DECLARE
               v_MainLoop     NUMBER(3);
               v_Txt          VARCHAR2(25);
             BEGIN
@@ -194,15 +231,17 @@ Execute the following:
                 SELECT DBMS_RANDOM.STRING('A', 25) INTO v_Txt FROM DUAL;
                 INSERT INTO WSHOP_FUNCS values (v_MainLoop, v_Txt, CURRENT_TIMESTAMP, 'EAST', NULL, NULL);
                 COMMIT;
-              END LOOP;
-   
-              FOR v_MainLoop IN 1 .. 7 LOOP
+              END LOOP;</copy>
+   ````
+   ````
+              <copy>FOR v_MainLoop IN 1 .. 7 LOOP
                 SELECT DBMS_RANDOM.STRING('A', 25) INTO v_Txt FROM DUAL;
                 UPDATE WSHOP_FUNCS SET ROW_TEXT = v_Txt, ROW_UPDATE_TS = CURRENT_TIMESTAMP, ROW_UPDATE_BY = 'LOREN' WHERE ROW_NUMBER = v_MainLoop;
                 COMMIT;
-              END LOOP;  
-
-              INSERT INTO CUST_ZIP VALUES (1, 80033);
+              END LOOP;</copy>
+````  
+````
+              <copy>INSERT INTO CUST_ZIP VALUES (1, 80033);
               COMMIT;
 
               INSERT INTO CUST_ZIP VALUES (2, 70117);
@@ -218,16 +257,24 @@ Execute the following:
               COMMIT;
    
               END;
-              /
+              /</copy>
+````
 			  
 1. Verify data has been replicated.
+
+````
+<copy>./ggsci</copy>
+````
 
 2. Use the GGSCI "send report" command to generate stats for the rtpc Coordinated Replicat.
 
 3. View the report file to validate sqlexec execution are data apply stats.
 
 4. Connect to the MySQL database as the user "tpc".
-mysql -u tpc -p@Oracle1@
+
+````
+<copy>mysql -utpc -p@Oracle1@</copy>
+````
 View the data in the tpc.cust_city_state table.
 View the data in the tpc.wshop_funcs table.
    

@@ -79,15 +79,19 @@ checkpointtable ggadmin.ggchkpoint
 
 **For Oracle:**
 
-6.  WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet
+````
+<copy>WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet</copy>
+````
 
 **For MySQL:**
 
-7. WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet
+````
+<copy>WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet</copy>
+````
 
-8. Save and close the files.
+1. Save and close the files.
 
-9. Start the GoldenGate Software Command Interpreter in both windows.
+2. Start the GoldenGate Software Command Interpreter in both windows.
 
 ````
 <copy./ggsci</copy>
@@ -162,11 +166,12 @@ Add the OGG Masterkey to the wallet.
 ````
 <copy>info masterkey</copy>
 ````
+1.  GGSCI (ogg-ggbd) 5> 
 
 ````
 <copy>./ggsci</copy>
 ````
-1.  GGSCI (ogg-ggbd) 5> 
+
 ````
 <copy>info masterkey</copy>
 ````
@@ -185,51 +190,84 @@ alter pluggable database PDBWEST open;</copy>
 23. In GGSCI, create the OGG Replicat Checkpoint Table by executing the commands:
 
 **Oracle**
+
+1. Connect to the target database: 
 ````
-<copy>Connect to the target database: dblogin useridalias ggapplywest</copy>
+<copy>dblogin useridalias ggapplywest</copy>
 ````
 
-1.  Create the table: add checkpointtable pdbwest.ggadmin.ggchkpoint
+2.  Create the table: 
+````
+<copy>add checkpointtable pdbwest.ggadmin.ggchkpoint</copy>
+````
 
 **Mysql**
 
+Connect to the target database: 
+
 ````
-<copy>Connect to the target database: dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggapply</copy>
+<copy>dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggapply</copy>
 ````
 
-1.  Create the table: add checkpointtable	
+1.  Create the table: 
+````
+<copy>add checkpointtable</copy>
+````	
 
 2.  OGG Heartbeat
 
 In GGSCI, create and activate OGG Integrated Heartbeat
-Oracle
 
-29. Connect to the PDBEAST tenant: dblogin useridalias ggapplyeast
+**Oracle**
 
-30. Create the heartbeat source: add heartbeattable		
+29. Connect to the PDBEAST tenant: 
+````
+<copy>dblogin useridalias ggapplyeast</copy>
+````
 
-31. Connect to the PDBWEST tenant: dblogin useridalias ggapplywest
+30. Create the heartbeat source: 
 
-32. Create the heartbeat target: add heartbeattable, targetonly
+````
+<copy>add heartbeattable</copy>
+````		
+
+31. Connect to the PDBWEST tenant: 
+
+````
+<copy>dblogin useridalias ggapplywest</copy>
+````
+
+32. Create the heartbeat target: 
+````
+<copy>add heartbeattable, targetonly</copy>
+````
 
 **MySQL**
 
-33. Connect to the ggadmin database: dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias oggcapture
+1.  Connect to the ggadmin database: 
+   
+````
+<copy>dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias oggcapture</copy>
+````
 
-34. Create the heartbeat target: add heartbeattable, targetonly
+2.  Create the heartbeat target: 
+````
+<copy>add heartbeattable, targetonly</copy>
+````
 		  
 **OGG Manager**
 
 To configure the OGG Manager process in both the Oracle and MySQL OGG environments:
 
-35. Execute the GGSCI command: 
+1.  Execute the GGSCI command: 
 
 ````
 <copy>edit param mgr</copy>
 ````
 
 36. For Oracle, enter the following settings:
-	      port 15000
+````
+	      <copy>port 15000
           dynamicportlist 15001-15025
           purgeoldextracts ./dirdat/*, usecheckpoints, minkeepdays 1
           accessrule, prog server, ipaddr *, deny
@@ -238,10 +276,15 @@ To configure the OGG Manager process in both the Oracle and MySQL OGG environmen
           laginfominutes 10
           lagcriticalminutes 20
           autorestart er *, RETRIES 12, WAITMINUTES 5, RESETMINUTES 60
-          startupvalidationdelay 2
+          startupvalidationdelay 2</copy>
+````
 
-37. For MySQL, enter the following settings:	
-	      port 16000
+37. For MySQL, enter the following settings:
+````
+<copy>edit param mgr</copy>
+````
+````	
+	      <copy>port 16000
           dynamicportlist 16001-16025
           purgeoldextracts ./dirdat/*, usecheckpoints, minkeepdays 1
           accessrule, prog server, ipaddr 192.169.120.23, pri 1, allow
@@ -251,15 +294,23 @@ To configure the OGG Manager process in both the Oracle and MySQL OGG environmen
           laginfominutes 10
           lagcriticalminutes 20
           autorestart er *, RETRIES 12, WAITMINUTES 5, RESETMINUTES 60
-          startupvalidationdelay 2
+          startupvalidationdelay 2</copy>
+````
 
 38. In each of the parameter files, add comments to describe each setting and what it does.
 
 39. Save and close the file.
 
 40. Start the OGG Manager
-Oracle: start mgr
-MySQL: start mgr
+
+Oracle: 
+````
+<copy>start mgr</copy>
+````
+MySQL: 
+````
+<copy>start mgr</copy>
+````
 
 You may now *proceed to the next lab*.
 

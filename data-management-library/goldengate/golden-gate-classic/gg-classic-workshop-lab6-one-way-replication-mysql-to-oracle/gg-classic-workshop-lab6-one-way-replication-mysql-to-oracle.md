@@ -29,7 +29,11 @@ Open a terminal session
 **Oracle data capture**
 
 2. To configure the Oracle Integrated Extract:
-Execute the GGSCI command: edit param etpc
+Execute the GGSCI command: 
+
+````
+<copy>edit param etpc</copy>
+````
 3. Enter the following settings:
 
 ````
@@ -50,7 +54,11 @@ Add the parameter that will cause Integrated Extract to encrypt its OGG Trail fi
 
 This is not technically required because the OGG and MySQL installations are on the same machine. However, if data is being transmitted over a LAN/WAN an Extract Data Pump is required.
 To configure the Oracle to MySQL Extract Data Pump:
-6. Execute the GGSCI command: edit param pmysql
+
+6. Execute the GGSCI command: 
+````
+<copy>edit param pmysql</copy>
+````
 
 7. Enter the following settings:
 
@@ -70,7 +78,9 @@ To configure the Oracle to MySQL Extract Data Pump:
 To configure the Parallel Replicat:
 
 10. Execute the GGSCI command 
-edit param rtpc
+````
+<copy>edit param rtpc</copy>
+````
 
 Enter the following settings:
 ````
@@ -94,12 +104,15 @@ Enter the following settings:
 To configure the Coordinated Replicat in the MySQL OGG environment:
 
 1. Execute the GGSCI command
+````
+<copy>./ggsci</copy>
+````
   
 ````
 <copy>edit param rtpc</copy>
 ````
 
-3. Enter the following settings:
+1. Enter the following settings:
 
    ````     
     <copy>replicat rtpc
@@ -125,61 +138,113 @@ Operations for the table "tpc.orders" are to be applied by thread 1.
 Operations for the table "tpc.orders_products" and to be ranged across threads 2, 3, and 4.
 
 Operations for the table "tpc.orders_status_history" are to be ranged across threads 6 and 7.
-Save and close the file.
+
+5. Save and close the file.
 	
-5. Enable schema level supplemental logging in source.
+6. Enable schema level supplemental logging in source.
 
-6. To enable schema level supplemental logging in the source Oracle PDB:
+7. To enable schema level supplemental logging in the source Oracle PDB:
 
-7. Execute the GGSCI commands
+8. Execute the GGSCI commands
+
+````
+<copy>./ggsci</copy>
+````
 
 ````
 <copy>dblogin useridalias oggcapture
 add schematrandata pdbeast.tpc</copy>
 ````
 		  
-8. Create the OGG replication Groups
-Create the OGG Groups by executing the following commands
+9. Create the OGG replication Groups
+
+**??Create the OGG Groups by executing the following commands**
 
 
 ## **Step 3:** -- GoldenGate GoldenGate for Oracle Integrated Extract and Apply
 
 **Oracle Integrated Extract:**
+````
+<copy>./ggsci</copy>
+````
+````
+<copy>dblogin useridalias oggcapture</copy>
+````
 
-1. dblogin useridalias oggcapture
+````
+<copy>add extract etpc, integrated tranlog, begin now</copy>
+````
 
-2. add extract etpc, integrated tranlog, begin now
+````
+<copy>register extract etpc, database, container (*)</copy>
+````
 
-register extract etpc, database, container (*)
-
-add exttrail ./dirdat/et, extract etpc, megabytes 250
+````
+<copy>add exttrail ./dirdat/et, extract etpc, megabytes 250</copy>
+````
 
 **Oracle Extract Data Pump:**
 
-3. add extract pmysql, exttrailsource ./dirdat/et
+````
+<copy>./ggsci</copy>
+````
 
-4. add rmttrail ./dirdat/rt, extract pmysql, megabytes 250
+````
+<copy>add extract pmysql, exttrailsource ./dirdat/et</copy>
+````
+
+````
+<copy>add rmttrail ./dirdat/rt, extract pmysql, megabytes 250</copy>
+````
 
 **Oracle Parallel Apply**
 
-5. dblogin useridalias ggapplywest
+````
+<copy>./ggsci</copy>
+````
 
-6 . add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadmin.ggchkpoint
+````
+<copy>dblogin useridalias ggapplywest</copy>
+````
+
+````
+<copy>add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadmin.ggchkpoint</copy>
+````
 
 ## **Step 4:** - - GoldenGate GoldenGate for non-Oracle coordinated Replicat
 
 **MySQL Coordinated Replicat**
 
-1. dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggrep
+````
+<copy>./ggsci</copy>
+````
 
-2. add replicat rtpc, coordinated, exttrail ./dirdat/rt
+````
+<copy>dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggrep</copy>
+````
 
-3. Start OGG and generate data
+````
+<copy>add replicat rtpc, coordinated, exttrail ./dirdat/rt</copy>
+````
+
+1. Start OGG and generate data
 Start the OGG environment:
 
-Oracle: start er *   
+````
+<copy>./ggsci</copy>
+````
 
-MySQL: start er *
+**Oracle:** 
+
+````
+<copy>start er *</copy>
+````   
+
+**MySQL:** 
+
+````
+<copy>start er *</copy>
+````
 
 4. Verify all OGG Groups are running.
 Generate data
@@ -187,12 +252,20 @@ Generate data
 
 In the window connected to the database server:
 Change to the "/Test_Software/Scripts/Oracle/orderentry" directory.
-Login to the database as the user "tpc"
 
-5. sqlplus tpc@pdbeast
+5. Login to the database as the user "tpc"
+
+````
+<copy>sqlplus tpc@pdbeast</copy>
+````
 When prompted enter the password: Oracle1
 
-6. At the SQL> prompt, enter: @gentrans.sql
+6. At the SQL> prompt, enter: 
+
+````
+<copy>@gentrans.sql</copy>
+````
+
 Enter "100" at the prompt, and return.
 
 ## **Step 5:** - - GoldenGate GoldenGate - Verify Replication
@@ -203,27 +276,45 @@ Check that all OGG Groups remain running.
 
 For any STOPPED or ABEND groups, view their report file to find the error.
 
+````
+<copy>./ggsci</copy>
+````
+**view report xxxx**
+
 Use the ggsci "stats" command to see how many operations were processed by each Extract and Replicat.
+
+**stats xxxx total**
 
 Use the ggsci "view report" command to see how many operations were processed per second by each Extract and Replicat.
 
-For MySQL, use the ggsci command "info rtpc, detail" to see how many Replicats were spawned.
+For MySQL,
+
+2. use the ggsci command "info rtpc, detail" to see how many Replicats were spawned.
+
+````
+<copy>info rtpc, detail</copy>
+````
 
 On the database server:
-Login to PDBWEST as ggadmin: sqlplus ggadmin@pdbwest
+3. Login to PDBWEST as ggadmin: 
+````
+<copy>sqlplus ggadmin@pdbwest</copy>
+````
+
 When prompted enter the password: Oracle1
 
-1. Execute the following query to see additional information about lag:  
-      set heap on
+4. Execute the following query to see additional information about lag:  
+ ````
+      <copy>set heap on
       set wrap off
       set line 300
       column Extract format a9
       column Data_Pump format a10
-      column Replicat format a9
-
-2. 
-   
-   ````
+      column Replicat format a9</copy>
+  ```` 
+  
+  4. Execute the following query 
+  ````
    <copy>select to_char(incoming_heartbeat_ts,'DD-MON-YY HH24:MI:SSxFF') Source_HB_Ts
        incoming_extract Extract
       extract (day from (incoming_extract_ts - incoming_heartbeat_ts))*24*60*60+
@@ -256,10 +347,14 @@ When prompted enter the password: Oracle1
 1. Replicate Oracle DDL 
 On the database server:
 
-2. Login to PDBEAST as tpc: sqlplus tpc@pdbeast
+2. Login to PDBEAST as tpc: 
+````
+<copy>sqlplus tpc@pdbeast</copy>
+````
+
 When prompted enter the password: Oracle1
 
-3. Execute the following:
+1. Execute the following:
 	 ````
          <copy>create table ddltest (
            cola number(15,0) not null,
@@ -281,7 +376,9 @@ When prompted enter the password: Oracle1
 
 4. View the Oracle Replicat report file to validate the DDL was applied.
 Execute the GGSCI "stats" command to see information for the table ddltest
-stats rtpc, table pdbwest.tpc.ddltest 
+````
+<copy>stats rtpc, table pdbwest.tpc.ddltest</copy>
+```` 
 
  5. Shutdown all Extracts and Replicats.
 
