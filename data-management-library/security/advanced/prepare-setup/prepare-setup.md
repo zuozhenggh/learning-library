@@ -13,7 +13,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **Step 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-lab-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/s3vHAmu3qehcDwtf05Ird7vDadEl3qquxXsGqDn-fG2C4xl2A8F_JOxIefNKZ7ER/n/orasenatdpltsecitom02/b/workshop-labs-files/o/dbsec-lab-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-all-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/s3vHAmu3qehcDwtf05Ird7vDadEl3qquxXsGqDn-fG2C4xl2A8F_JOxIefNKZ7ER/n/orasenatdpltsecitom02/b/workshop-labs-files/o/dbsec-all-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -25,8 +25,10 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
+| 80             | Application (http)                    |
 | 7803           | Oracle Enterprise Manager             |
-| 8080           | Glassfish HR Application              |
+| 8080           | Glassfish Application                 |
+| 50002          | Golden Gate Administration Service    |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
@@ -39,7 +41,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 7.  Click the Add Ingress Rules button
 
 ## **Step 3**: Setup Compute   
-Using the details from the two steps above, proceed to the lab *Environment Setup* from the menu on the right to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
+Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
