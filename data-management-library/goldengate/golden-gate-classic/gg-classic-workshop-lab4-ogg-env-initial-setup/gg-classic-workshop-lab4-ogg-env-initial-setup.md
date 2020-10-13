@@ -58,6 +58,16 @@ This workshop is only for learning and testing purposes. None of the files from 
 Time to Complete -
 Approximately 30 min
 
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Configure GoldenGate
+
 In this lab we will setup GoldenGate Classic
 
 

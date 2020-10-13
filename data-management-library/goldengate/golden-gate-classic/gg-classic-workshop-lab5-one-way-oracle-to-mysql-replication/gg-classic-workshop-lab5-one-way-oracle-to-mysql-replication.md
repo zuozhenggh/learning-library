@@ -10,6 +10,16 @@ capture the changes from MySQL’s binary logs and write them to the local trail
 ### Objectives
 Replication from relational source to a relational target using GoldenGate
 
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Configure GoldenGate
+
 Time to Complete -
 
 Approximately 60 minutes

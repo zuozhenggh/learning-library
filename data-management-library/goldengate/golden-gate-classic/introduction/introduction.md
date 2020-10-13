@@ -11,7 +11,7 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 
 ### Lab Overview
 
-- **Lab: Installation Of GoldenGate Classic** -
+- **Lab: GoldenGate Classic Configuration** -
     In this lab we will install GoldenGate for Big Data in the GG Target Home. Follow the steps below to install GG, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
 - **Lab: Replication from mySQL Relational Database to Oracle Relational Database using GoldenGate** -

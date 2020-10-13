@@ -7,6 +7,16 @@ process ‘rhive’ will read the trail file, create the Hive tables, write the 
 ### Objectives
 Active - Active Replication using GoldenGate
 
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Configure GoldenGate
+
 Time to Complete -
 Approximately 60 minutes
 
