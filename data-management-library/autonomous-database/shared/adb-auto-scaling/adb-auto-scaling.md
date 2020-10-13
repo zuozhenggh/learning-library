@@ -6,24 +6,24 @@ In this lab, you will learn the benefits of auto-scaling an Oracle Autonomous Da
 
 ### What is Auto Scaling?
 
+With auto scaling enabled, the database can use up to **three times** more CPU and IO resources than specified by the number of OCPUs currently shown in the **Scale Up/Down** dialog.
+
 When you enable auto scaling, if your workload requires additional CPU and IO resources, the database automatically uses the resources without any manual intervention required.
 
 *You don't need to perform a "triggering action" after which your database can start to scale; the CPUs are ALWAYS available to you.*
 
-With auto scaling enabled, the database can use up to **three times** more CPU and IO resources than specified by the number of OCPUs currently shown in the **Scale Up/Down** dialog.
-
 ![](./images/auto-scaling-symbol.jpg " ")
 
-When you create an Autonomous Database, the auto scaling checkbox is enabled by default; you can disable that checkbox when creating the database. After the database is created, you can use **Scale Up/Down** on the Oracle Cloud Infrastructure console to re-enable or re-disable auto scaling.
+When you create an Autonomous Database, the auto scaling checkbox is enabled by default. After the database is created, you can use **Scale Up/Down** on the Oracle Cloud Infrastructure console to disable or enable auto scaling.
 
-If your organization performs intensive queries mostly for end of week or end of month reporting, auto scaling will ramp up and ramp down CPU resources when needed.
+If your organization performs intensive queries during specific times, auto scaling will ramp up and ramp down CPU resources when needed.
 
 ### How Auto Scaling Works
 
-- When an ADW instance is created, the **CPU\_COUNT** parameter is set to 2X the number of allocated **OCPUs**. For example, if 4 OCPUs are allocated, CPU_COUNT is set to 8.
-- When auto scaling is enabled, CPU\_COUNT is set to 3X higher than the base allocation. So in our example with 4 OCPUs, CPU_COUNT is set to 24.
-- Customers are charged for the actual OCPU usage, between 4 and 12 in this example.
-- Auto Scaling takes effect with the higher CPU\_COUNT setting – there are no additional things or criteria which happen behind the scenes to enable more CPU.
+- If a customer provisions an autonomous database with 4 OCPUs for example, he or she will immediately have access to 3x the 4 OCPUs provisioned, therefore 12 OCPUs.
+- The **CPU\_COUNT** parameter displays 2x the number of allocated OCPUs, as each OCPU has 2 CPU threads.
+- Therefore, this customer who provisioned an autonomous database with 4 OCPUs will see 12 x 2 = 24 CPU\_COUNT.
+- The customer is charged only for the actual OCPU usage, between 4 and 12 in this example.
 
 ### Objectives
 
@@ -40,7 +40,7 @@ If your organization performs intensive queries mostly for end of week or end of
 ### How You Will Test Auto Scaling in this Lab
 
 - **Test 1**: With auto scaling disabled, you will have 3 SQL Developer Web worksheet sessions executing queries and sharing the CPU resources, and you'll examine query times.
-- **Test 2**: You will enable auto scaling and again have 3 SQL Developer Web worksheet sessions executing queries. The auto scaling will allow all 3 sessions to use CPU with a larger CPU\_COUNT, reducing your execution times significantly.
+- **Test 2**: You will enable auto scaling and again have 3 SQL Developer Web worksheet sessions executing queries. Auto-scaling will allow your running sessions to use up to 3x more OCPUs, reducing your execution times significantly.
 
 ## **STEP 1**: Disable Auto Scaling and Create Four Connections in SQL Developer Web to your ADW Database
 
@@ -96,7 +96,7 @@ ORDER BY
 In this step, you run a script that will:
 - Create the procedure **test\_proc** for the workload used in the test.
     - The query used in the test will summarize orders by month and city for customers in the US in the Fall of 1992.
-    - The query will run 2 times. (After performing this lab, you can go back and increase the `i_executions` number for further testing.)
+    - The query will run in a loop 2 times. (After performing this lab, you can go back and increase the `i_executions` number for further testing.)
 - Create a sequence used for each test number.
 - Create the table used to save the results.
 
@@ -292,7 +292,7 @@ In the next step, enable auto scaling to improve query performance.
 
     ![](images/disable-auto-scaling.png " ")
 
-## **STEP 6**: Run the Procedure Again Concurrently on Three Worksheets
+## **STEP 6**: Run the Procedure Again Concurrently on Three Worksheets After Enabling Auto Scaling
 
 1. Run the procedure again from 3 SQL Developer Web worksheet connections using the HIGH consumer group. Enter - but do not immediately execute - the following command in each worksheet. After you have entered the command into all 3 worksheets, rapidly execute the command in each worksheet so that they begin at nearly the same time.
 
@@ -367,12 +367,12 @@ TEST_NO CPU_COUNT SESSIONS QUERIES_FINISHED TEST_DURATION_IN_SECONDS AVG_QUERY_T
 
 ## Things to Note
 
-- CPU\_COUNT is the only parameter that changes when auto scaling is enabled.
-- Other parameters, including PARALLEL\_MAX\_SERVERS and PARALLEL\_SERVERS\_TARGET, stay the same.
+- When auto scaling is enabled, only the amount of OCPUs and IO available to the database is changed.
+- Other database parameters, including memory, concurrency and parallel statement queueing, do not automatically scale.
 - Consequently, parallel statement queuing acts the same with and without auto scaling enabled.
 - When auto scaling is enabled, IO is also scaled to 3X the OCPU allocation. So even if only one session is executing a SQL Statement, it benefits from the additional IO.
 - To see the average number of OCPUs used during an hour you can use the "Number of OCPUs allocated" graph on the Overview page on the Autonomous Data Warehouse service console.
-- Enabling auto scaling does not change the concurrency and parallelism settings for the predefined services.
+    - These graphs are updated **per hour**, so the user will be able to see this in the next hour.
 - Actual CPU usage is tracked with the metric **CPU Usage Per Sec** in `gv$con_sysmetric_history`. This view shows metric averages per minute. The per-minute metrics are then averaged over an hour for billing.
 
 ## Want to Learn More?
