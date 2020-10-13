@@ -51,7 +51,7 @@ function is called again within a timeout of a few minutes the same Container
 with the same Node.js instance will be reused. If it isn't called for a few
 minutes a cleanup task will shut down.
 
-## **Step 2:** Deploying and running the Function
+## **Step 2:** Deploying and Running the Function
 
 To see this in effect you have to deploy this into an Fn application. Our setup
 created a function with the name `DemoApp`, which we will be using. No worries,
@@ -232,7 +232,9 @@ being used, which wraps Node.js's `https` module behind a single function:
 First thing we do is take a look at the Object Store in the console. Navigate
 to it in your Web Browse.
 
-TODO Screenshot
+  ![](images/os_menu.png " ")
+
+  ![](images/os_buckets.png " ")
 
 You will see that our initial setup already created two Buckets. A Bucket
 is a collection of related files in Object store. For now we care about
@@ -242,6 +244,8 @@ Click on the `import` Bucket and ensure that `Emit Object Events` is
 activated. In the center area you could upload files. In the left you get 
 access to different options. You can take a look, but don't have to make
 any changes.
+
+  ![](images/os_import_event.png " ")
 
 *Note: The Bucket is configured as Public. This makes Objects accessible to
 everybody (who can guess the exact URL) world-wide. Outside this Lab you

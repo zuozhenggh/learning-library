@@ -1,12 +1,12 @@
-# Creating a Micro-Service and Frontend
+# Creating a Microservice and Web Frontend
 
 ## Before You Begin
 
 ### Objectives
 
-- Build a Web Frontend for our data using a serverless microsoervice
+- Build a Web Frontend for our data using a Serverless Microsoervice
 - Learn about different ways to search for data in the MySQL Document Store and via SQL
-- LEarn to modify data in the MySQL Document Store
+- Learn to modify data in the MySQL Document Store
 
 ### Introduction
 
