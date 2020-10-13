@@ -312,9 +312,10 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt
 
 ## Acknowledgements
 
-- **Author** - Supriya Ananth, Database User Assistance
-- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, May 2020
+- **Author** - Rick Green, Principal Developer, Database User Assistance
+- **Contributor** - Supriya Ananth
+- **Adapted for Cloud by** - Rick Green
+- **Last Updated By/Date** - Rick Green, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
