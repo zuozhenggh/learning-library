@@ -1,6 +1,15 @@
 # Exploring and Finishing Setup
 
-## Before You Begin
+## Introduction
+
+Now your environment is running. You have a Virtual Cloud Network (VCN),
+a MySQL Database Service instance and a few more services we will explore at 
+later stages. To access our environment a Compute instance was launched and
+pre-installed Node.js, MySQL Shell and OCI tools.
+
+You can use SSH to connect to this instance.
+
+Estimated Lab Time: 25 minutes
 
 ### Objectives
 
@@ -8,23 +17,15 @@
 - Explore MySQL using MySQL Shell and create a Collection for MySQL Document Store usage
 - Configure OCI Client and Fn
 
-### Introduction
 
-Now your environment is running. You have a Virtual Cloud Network (VCN),
-a MySQL Database Service instance and a few more services we will explore at 
-later stages. To access our environemnt a Compute instance was launched and
-pre-installed Node.js, MySQL Shell and OCI tools.
-
-You can use SSH to connect to this instance.
-
-## **Step 1a:** Using OpenSSH from Command Line
+## **STEP 1a:** Using OpenSSH from Command Line
 
 To access the system you need the private ssh key and the IP, which were created by
 Terraform. The key has to be stored in a file which is not world reable on your 
 machine. By default a user with name `opc` is created. On first connect your
 client will ask to confirm the server identity, type `yes` to confirm.
 
-If you stored the key in a file `ssh_private_key` and the IP if your instance is
+If you stored the key in a file `ssh_private_key` and the IP of your instance is
 `123.45.67.89` your shell session might look like this:
 
     $ chmod 600 ssh_private_key
@@ -35,18 +36,18 @@ If you stored the key in a file `ssh_private_key` and the IP if your instance is
     Warning: Permanently added '123.45.67.89' (ECDSA) to the list of known hosts.
     [opc@compute ~]$
 
-## **Step 1b:** Using PuTTY on Windows
+## **STEP 1b:** Using PuTTY on Windows
 
 PuTTY is a ssh client frequently used on Windows. To access the system you need 
 the private ssh key and the IP, which were created by Terraform. The key from the
-prvious Lab has to be stored in a file an dcan then be used from PuTTY's connection
+previous Lab has to be stored in a file an can then be used from PuTTY's connection
 dialog.
 
   ![](images/putty_key.png " ")
 
-Make sure to use your comute instance's IP and the username `opc`.
+Make sure to use your compute instance's IP and the username `opc`.
 
-## **Step 2:** Use MySQL Shell to access the MySQL Database Service Instance
+## **STEP 2:** Use MySQL Shell to access the MySQL Database Service Instance
 
 In the Terraform output you got an URL in the format `mysqlx://` which can be
 used with MySQL Shell. MySQL Shell is an interactive Shell, introduced with
@@ -97,7 +98,7 @@ You can explore the database as you like. You can switch back into
 **JavaScript mode** by typing `\js`, into **Python mode** using `\py`, 
 and when done quit using `\quit`.
 
-## **Step 3:** Configure the OCI Client
+## **STEP 3:** Configure the OCI Client
 
 Later we are going to deploy serverless functions using the `fn` tool. The `fn`
 tool requires access to OCI APIs for deploying the code.
@@ -193,7 +194,7 @@ Terraform setup:
 Using the `--help` option the OCI tool will provide context sensitive help
 about available APIs.
 
-## **Step 4:** Configure fn client for Oracle Functions
+## **STEP 4:** Configure fn client for Oracle Functions
 
 The application you are going to build, is a serverless application using
 Oracle Functions. Serverless also known as FaaS let's you run an microservice
@@ -228,7 +229,7 @@ the Token
 new token has to be created. Make sure you noted the token before closing the
 popup.*
 
-You'll also neede your region's region key for the hostname of the docker
+You'll also need your region's region key for the hostname of the docker
 registry.
 
 | Region         | Region key |
@@ -276,7 +277,7 @@ your Cloud Region is `us-ashburn-1` (registry URL `iad.ocir.io`) and your namesp
 Finally our configuration is done. In the next lab you will create your first
 function and load data into the database.
 
-Please proceed to the next lab.
+*Please proceed to the next lab.*
 
 ## Acknowledgements
 

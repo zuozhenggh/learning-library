@@ -45,18 +45,17 @@ This lab assumes you have completed:
 - Watch a preview of "*Understanding Oracle Transparent Data Encryption (TDE) - Part2 (February 2020)*" [](youtube:aUfwG5MIMNU)
 
 ### Lab Timing (estimated)
-
-| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
-|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| 1                    | Allow DB Restore                             | 5 minutes  |                                                                                                                 |                   |
-| 2                    | Create Keystore | 5 minutes  |  |                   |
-| 3                    | Create Master Key | 5 minutes  |  |                   |
-| 4                    | Create Auto-login Wallet | 5 minutes  |  |                   |
-| 5                    | Encrypt Existing Tablespace | 5 minutes  |  |                   |
-| 6                    | Encyrpt All New Tablespaces | 5 minutes  |  |                   |
-| 7                    | Rekey Master Key | 5 minutes  |  |                   |
-| 8                    | View Keystore Details | 5 minutes  |  |                   |
-| 9                    | Restore Before TDE (Optional) | 5 minutes  |  |                   |
+| Step No. | Feature | Approx. Time | Details | Value Proposition |
+|--|------------------------------------------------------------|-------------|--------------------|-------------------|
+| 1 | Allow DB Restore | 5 minutes  |||
+| 2 | Create Keystore | 5 minutes |||
+| 3 | Create Master Key | 5 minutes |||
+| 4 | Create Auto-login Wallet | 5 minutes |||
+| 5 | Encrypt Existing Tablespace | 5 minutes |||
+| 6 | Encyrpt All New Tablespaces | 5 minutes |||
+| 7 | Rekey Master Key | 5 minutes |||
+| 8 | View Keystore Details | 5 minutes |||
+| 9 | Restore Before TDE (Optional) | 5 minutes |||
 
 ## **STEP 1**: Allow DB Restore
 
@@ -396,7 +395,7 @@ This lab assumes you have completed:
 You may now proceed to the next lab.
 
 ## Want to Learn More?
-Technical Documentation: [Transparent Data Encryption (TDE) 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/asoag/asopart1.html)
+Technical Documentation: [Transparent Data Encryption (TDE) 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/asoag/asopart2.html)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM

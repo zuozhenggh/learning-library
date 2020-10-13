@@ -71,15 +71,14 @@ This lab assumes you have completed:
 - Watch a preview of "*Oracle Database Vault - Use Cases (Part2) (November 2019)*" [](youtube:hh-cX-ubCkY)
 
 ### Lab Timing (estimated)
-
-| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
-|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| 1                    | Enable Database Vault                             | 5 minutes  |                                                                                                                 |                   |
-| 2                    | Create a Simple Realm | 5 minutes  |  |                   |
-| 3                    | Create a Trusted Path / Multi-factor Authorization | 5 minutes  |  |                   |
-| 4                    | Simulation Mode | 5 minutes  |  |                   |
-| 5                    | Ops Control | 5 minutes  |  |                   |
-| 6                    | Disabling Database Vault (Optional) | 5 minutes  |  |                   |
+| Step No. | Feature | Approx. Time | Details | Value Proposition |
+|--|------------------------------------------------------------|-------------|--------------------|-------------------|
+| 1 | Enable Database Vault | 5 minutes |||
+| 2 | Create a Simple Realm | 5 minutes |||
+| 3 | Create a Trusted Path / Multi-factor Authorization | 5 minutes |||
+| 4 | Simulation Mode | 5 minutes |||
+| 5 | Ops Control | 5 minutes |||
+| 6 | Disabling Database Vault (Optional) | 5 minutes |||
 
 ## **STEP 1**: Enable Database Vault
 
@@ -479,7 +478,7 @@ This is an easy way for us to identify who is connecting and where they are conn
 You may proceed to the next lab.
 
 ## Want to Learn More?
-Technical Documentation: [Oracle Database Vault 20c](https://docs.oracle.com/en/database/oracle/oracle-database/20/dvadm/introduction-to-oracle-database-vault.html#GUID-0C8AF1B2-6CE9-4408-BFB3-7B2C7F9E7284)
+Technical Documentation: [Oracle Database Vault 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/dvadm/introduction-to-oracle-database-vault.html#GUID-0C8AF1B2-6CE9-4408-BFB3-7B2C7F9E7284)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM

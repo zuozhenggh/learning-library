@@ -1,19 +1,19 @@
 # Creating a Micro-Service and Frontend
 
-## Before You Begin
-
-### Objectives
-
-- Build a Web Frontend for our data using a serverless microsoervice
-- Learn about different ways to search for data in the MySQL Document Store and via SQL
-- LEarn to modify data in the MySQL Document Store
-
-### Introduction
+## Introduction
 
 Up until now we invoked our function from command line and via events. Time
 for a Web Frontend.
 
-## **Step 1:** Understanding API Gateway
+Estimated Lab Time: 25 minutes
+
+### Objectives
+
+- Build a Web Frontend for our data using a serverless microservice
+- Learn about different ways to search for data in the MySQL Document Store and via SQL
+- LEarn to modify data in the MySQL Document Store
+
+## **STEP 1:** Understanding API Gateway
 
 **API Gateway** provides public access to private APIs. It provides different
 features like rate limiting or authentication to protect your application.
@@ -41,7 +41,7 @@ right.
 
 
 
-In this deployment we have a preconfigured route. To see it click **Edit** and
+In this deployment we have a pre-configured route. To see it click **Edit** and
 then **Routes** on the left.
 
   ![](images/apigw_edit.png " ")
@@ -69,7 +69,7 @@ Time to create a new Function.
 *Note: If you consider the URL ugly you could use your own domain name after
 providing a TLS certificate. We will skip that here.*
 
-## **Step 2:** Our first Document Search
+## **STEP 2:** Our first Document Search
 
 One task needed is to list the employees per state they are located in.
 For serving the frontend a single function will be used. So let's create it,
@@ -188,7 +188,7 @@ Now you can explore the employees by state. Clicking on **Details** will show yo
 
 Trying to rais a salary or searching by salary will lead to an error though. Let's add that search.
 
-## **Step 3:** Using SQL for Advanced Queries
+## **STEP 3:** Using SQL for Advanced Queries
 
 Searching by state was relatively easy. A simple match on a specific element of the document
 using a path. Searching the salary in this data structure is a bit more complex. Let's take a look
@@ -215,7 +215,7 @@ at the data again:
         ]
     }
 
-There is an array with the salary history, which is orderd by date. Latest salary last. Thus we need to compare
+There is an array with the salary history, which is ordered by date. Latest salary last. Thus we need to compare
 the `salary` property of the array's last element with the search value.
 
 Luckily we know a bit of SQL.
@@ -262,11 +262,11 @@ setting **X-Mode** to `salary` and **X-Value** to `${request.path[salary]}`.
 
 After applying this the search by salary should work and it's time to raise salaries.
 
-## **Step 4:** Updating Documents
+## **STEP 4:** Updating Documents
 
 After building a somewhat complex SQL query it's time to go back to a more simple approach using X DevAPI.
 
-The choice we take here is using two steps. First we use `getOne()` to get the document refering to a single person
+The choice we take here is using two steps. First we use `getOne()` to get the document referring to a single person
 by their `_id`, from there we extract the old salary, apply the raise and then use X DevAPI's `arrayAppend` modification
 to add the new value. As we are friendly, we also ensure it's a raise. As it might happen, that two users work on the
 data at once we use a transaction to make sure there's no conflict.
@@ -320,7 +320,7 @@ Request Header Transformations:
 
 If all worked well, there shouldn't be a problem in happily raising salaries!
 
-This concludes the main part of thiss Hands-on-Lab. In the next part we collected some ideas what you can do next.
+This concludes the main part of this Hands-on-Lab. In the next part we collected some ideas what you can do next.
 
 ## Acknowledgements
 

@@ -29,49 +29,49 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Oracle Transparent Data Encryption (TDE)",
+      "title": "Lab 4: Initialize and Start Environment",
+      "description": "How to initialize and start all the workshop components",
+      "publisheddate": "09/01/2020",
+      "filename": "../../init-start-env/init-start-env.md"
+    },
+    {
+      "title": "Lab 5: Oracle Transparent Data Encryption (TDE)",
       "description": "In this lab you can see how to leverage Oracle Transparent Data Encryption (TDE) features",
       "publisheddate": "09/01/2020",
       "filename": "../../advanced-security/tde/tde.md"
     },
     {
-      "title": "Lab 5: Oracle Data Redaction",
+      "title": "Lab 6: Oracle Data Redaction",
       "description": "In this lab you can see how to leverage Oracle Data Redaction features",
       "publisheddate": "09/01/2020",
       "filename": "../../advanced-security/data-redaction/data-redaction.md"
     },
     {
-      "title": "Lab 6: Oracle Database Vault (DV)",
+      "title": "Lab 7: Oracle Database Vault (DV)",
       "description": "In this lab you can see how to leverage Oracle Database Vault features",
       "publisheddate": "09/01/2020",
       "filename": "../../database-vault/database-vault.md"
     },
     {
-      "title": "Lab 7: Oracle Label Security (OLS)",
+      "title": "Lab 8: Oracle Label Security (OLS)",
       "description": "In this lab you will learn how to leverage OLS to track consent and force restriction for GDPR",
       "publisheddate": "09/01/2020",
       "filename": "../../label-security/label-security.md"
     },
     {
-      "title": "Lab 8: Oracle Data Masking and Subsetting (DMS)",
+      "title": "Lab 9: Oracle Data Masking and Subsetting (DMS)",
       "description": "This lab will walk you through how to enable Database Vault for the workshop image",
       "publisheddate": "09/01/2020",
       "filename": "../../data-masking-subsetting/data-masking-subsetting.md"
     },
     {
-      "title": "Lab 9: Oracle Audit Vault",
-      "description": "In this lab you can see how to leverage Oracle Audit Vault Appliance",
+      "title": "Lab 10: Oracle Audit Vault and DB Firewall (AVDF)",
+      "description": "In this lab you can see how to leverage Oracle Audit Vault and DB Firewall Appliances",
       "publisheddate": "09/01/2020",
-      "filename": "../../avdf/audit-vault/audit-vault.md"
+      "filename": "../../avdf/avdf.md"
     },
     {
-      "title": "Lab 10: Oracle Database Firewall",
-      "description": "In this lab you can see how to leverage Oracle Database Firewall Appliance",
-      "publisheddate": "09/01/2020",
-      "filename": "../../avdf/db-firewall/db-firewall.md"
-    },
-    {
-      "title": "Lab 11: Oracle Key Vault",
+      "title": "Lab 11: Oracle Key Vault (OKV)",
       "description": "In this lab you can see how to leverage Oracle Key Vault Appliance",
       "publisheddate": "09/01/2020",
       "filename": "../../key-vault/key-vault.md"
