@@ -1,4 +1,4 @@
-# Optional: Scaling the Weblogic domain
+# Optional: Scaling the Weblogic Domain
 
 ## Introduction
 
