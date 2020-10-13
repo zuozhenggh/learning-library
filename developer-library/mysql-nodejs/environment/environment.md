@@ -37,14 +37,29 @@ If you stored the key in a file `ssh_private_key` and the IP if your instance is
 
 ## **Step 1b:** Using PuTTY on Windows
 
-PuTTY is a ssh client frequently used on Windows. To access the system you need 
+[PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) is a
+ssh client frequently used on Windows. To access the system you need 
 the private ssh key and the IP, which were created by Terraform. The key from the
-prvious Lab has to be stored in a file an dcan then be used from PuTTY's connection
-dialog.
+previous Lab has to be stored in a file.
+
+Before being able to use it, the key has to be converted to PuTTY's format. For that
+the **PuTTYgen** tool is being used. In that tool open the **Conversion** menu and 
+pick **Import key**. After picking the file you stored the key details will be
+shown in the main window. Now click **Save private key** and store that file.
+
+  ![](images/putty_key_convert.png " ")
+
+After the conversion you can close **PuTTYgen** and open **PuTTY**. In there pick
+the **SSH**, **Auth** section and load the **Private Key**.
 
   ![](images/putty_key.png " ")
 
-Make sure to use your comute instance's IP and the username `opc`.
+After that go to the **Session** section, enter the **IP** address from your compute
+isntance, as shown in the Terraform Application Informationm ake sure **SSH** is set
+as protocol and **Port 22** is selected. After clicking **Open** enter **opc** as
+username when asked.
+
+  ![](images/putty_connect.png " ")
 
 ## **Step 2:** Use MySQL Shell to access the MySQL Database Service Instance
 
