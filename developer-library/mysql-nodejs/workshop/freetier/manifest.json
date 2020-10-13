@@ -1,31 +1,33 @@
 {
+    "workshoptitle": "Develop and Deploy a Modern Application in Node.js on MySQL Database Service",    
     "tutorials": [
         {
-            "title": "Introduction",
-            "filename": "../intro/intro.md"
-        },  {
-            "title": "Lab 0: Register for Free Tier Account",
+            "title": "Prerequisites",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
+            "title": "Introduction",
+            "filename": "../../intro/intro.md"
+        },  
+        {
             "title": "Lab 1: Setup",
-            "filename": "../setup/setup.md"
+            "filename": "../../setup/setup.md"
         },
         {
             "title": "Lab 2: Exploring and completing the setup of the cloud environment",
-            "filename": "../environment/environment.md"
+            "filename": "../../environment/environment.md"
         },
         {
             "title": "Lab 3: Importing data using FaaS and Events",
-            "filename": "../import/import.md"
+            "filename": "../../import/import.md"
         },
         {
             "title": "Lab 4: Build micro-service and a Web frontend",
-            "filename": "../frontend/frontend.md"
+            "filename": "../../frontend/frontend.md"
         },
         {
             "title": "Lab 5: Next steps",
-            "filename": "../next-steps/next-steps.md"
+            "filename": "../../next-steps/next-steps.md"
         }
 
     ]
