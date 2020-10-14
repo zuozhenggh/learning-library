@@ -2,7 +2,7 @@
 
 ## Introduction
 
-As a best practice merge your library everyday or whenever you start your GitHub Desktop application. Merge pulls all the commits (changes) from the [upstream/master repository (production)](https://github.com/oracle/learning-library), into your local filesystem clone (local machine). This keeps your local clone up-to-date with other people's work (commits) from the upstream/master. Next, you push the updated content from your clone into the origin of your clone, that is, your fork, to synchronize your clone with your fork. Merging also avoids the long time it could take to complete if you don't do that often.
+As a best practice, merge your library everyday or whenever you start your GitHub Desktop application. Merge pulls all the commits (changes) from the [upstream/master repository (production)](https://github.com/oracle/learning-library), into your local filesystem clone (local machine). This keeps your local clone up-to-date with other people's work (commits) from the upstream/master. Next, you push the updated content from your clone into the origin of your clone, that is, your fork, to synchronize your clone with your fork. Merging also avoids the long time it could take to complete if you don't do that often.
 
 ### Objectives
 
@@ -25,32 +25,29 @@ Everyday before you start editing your content, ensure to do a Merge.
 
 To merge content:
 1. Start your **GitHub Desktop** client.
-2. Select **Branch > Merge** into current branch to display the **Merge in Master** window.
+2. Select **Branch > Merge into current branch** to display the **Merge in Master** window.
 
-![](./images/git-hub-merge-current-branch.png " ")
+  ![](./images/git-hub-merge-current-branch.png " ")
 
 3. Under the **Default branch**, the master branch is selected by default. This indicates the local clone on your PC.
-![](./images/git-hub-merge-local-clone-default-branch.png " ")
+  ![](./images/git-hub-merge-local-clone-default-branch.png " ")
 
 4. Scroll down the **Merge into master** window, select **upstream/master** (this is your master repository which is the learning-library), and then click **Merge upstream/master into master**. In this example, this will merge 120 commits by other people from the upstream/master into the clone on the local PC.
 
-![](./images/git-hub-merge-upstream-master.png " ")
+  ![](./images/git-hub-merge-upstream-master.png " ")
 
 5. When the merge is successfully completed, a "Successfully merged upstream/master into master" message is displayed. To push the new commits from the local clone to your forked location, click **Push origin**.
 
-![](./images/labs-git-hub-merge-push-origin.png " ")
+  **Note**: To determine if your clone is up-to-date with upstream/master (production), repeat steps 2 to 4. If both repositories are synchronized, then the following message is displayed: "This branch is up to date with upstream/master".
 
-To determine if your clone is up-to-date with upstream/master (production), repeat steps 2 to 4. If both repositories are synchronized, then the following message is displayed:
-"This branch is up to date with upstream/master".
+  ![](./images/git-hub-merge-branch-up-to-date.png " ")
 
-![](./images/git-hub-merge-branch-up-to-date.png " ")
-
-In the GitHub Desktop UI, notice that the **Push Origin** is replaced by **Fetch Origin** after the push origin operation is successfully completed.  The local clone and fork repositories are now synced with the master repository.
+In the GitHub Desktop UI, notice that the **Push Origin** is replaced by **Fetch Origin** after the push origin operation is successfully completed.  The local clone and fork repositories are now synchronized with the master repository.
 
 ![](./images/git-hub-merge-fetch-origin.png " ")
 
 ## **STEP 2:** Commit your Changes in your Clone
-When you create, delete, or modify assets in your clone (local copy), you should commit (save) those changes to your clone, and then push those changes from your clone to your fork. Then these changes get saved to your learning-library repository.
+When you create, delete, or modify assets in your clone (local copy), you should commit (save) those changes to your clone, and then push those changes from your clone to your fork. Then these changes get saved to your forked learning-library repository.
 
 To commit your changes:
 1. Start your **GitHub Desktop** client.
@@ -68,17 +65,14 @@ To commit your changes:
 
 After you upload the content from your clone to your fork, request your review team members to review this content by providing them with access to your GitHub Pages site URL (or the URL of your forked repository).
 
-The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** to Test Your Content. This feature performs a dynamic conversion of the Markdown files (.md files you have developed using your Atom Editor) to HTML. You can preview your workshop and labs on your forked repository and provide this URL to your reviewers for reviewing them.
-To upload your final labs and workshop to the master repository (production) also, you will use the **GitHub Pages** feature associated with the master learning-library repository.
+The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** to Test Your Content. This feature performs a dynamic conversion of the Markdown files (.md files you have developed using your Atom Editor) to HTML. You can preview your workshop and labs on your forked repository and provide this URL to your reviewers.
 
-  ![](./images/git-hub-deploy-completed-content-to-master.png " ")
-
-To identify your GitHub Pages URL and how to enable this feature:
+To identify your GitHub Pages URL:
 1. Login to [GitHub Web UI](http://github.com) using your GitHub account credentials, and then click your fork's link in the **Repositories** section to display your fork.
 
   ![](./images/git-hub-stage-git-hub-pages-repositories.png " ")
 
-2. Click **Settings** to display the **Settings** section.
+2. Click **Settings**.
 
    ![](./images/git-hub-stage-git-hub-pages-settings.png " ")
 
@@ -100,7 +94,7 @@ To identify your GitHub Pages URL and how to enable this feature:
 
 You can also review and test your workshop and labs on your forked repository from:
 
-http://github.com/*<your-github-account>*/learning-library/tree/master/*<path to your lab>*
+http://github.com/*your-github-account*/learning-library/tree/master/*path to your lab*
 
 ## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production (**upstream/master** repository).
@@ -138,8 +132,8 @@ To create a Pull Request:
 * **Author:**  
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
 
-* **Technical Contributors:**  
-
+* **Reviewed by:**  
+    * Aslam Khan, Sr. User Assistance Manager, ODI, OGG
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
 ## See an issue?  

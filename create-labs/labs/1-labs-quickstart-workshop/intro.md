@@ -60,7 +60,7 @@ Use these links to get more information about Labs and Workshops:
 * **Authors:**
     * Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate
 * **Reviewers:**
-    * Aslam Khan, Sr.Manager User Assistance Development, ODI, GoldenGate
+    * Aslam Khan, Sr.Manager User Assistance Development, ODI, OGG
 * **Contributors:**
     * Lauran Serhal, Principal UA Developer, Oracle Database
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020

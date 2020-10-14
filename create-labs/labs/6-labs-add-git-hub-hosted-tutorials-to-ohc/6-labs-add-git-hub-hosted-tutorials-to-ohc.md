@@ -57,7 +57,8 @@ You need to work with your manager or Lead to get this link added to OHC.
 
 * **Author:**
     * Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate
-*
+* **Reviewed by:**  
+        * Aslam Khan, Sr. User Assistance Manager, ODI, OGG
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
 ## See an issue?  

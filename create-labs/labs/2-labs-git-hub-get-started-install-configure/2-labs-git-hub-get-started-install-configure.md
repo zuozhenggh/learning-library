@@ -130,8 +130,10 @@ To clone the forked repository:
 ## Acknowledgements
 
 * **Author:**
+    * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
 
-* **Technical Contributor:**
+* **Reviewed by:**  
+  * Aslam Khan, Sr. User Assistance Manager, ODI, OGG
 
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 

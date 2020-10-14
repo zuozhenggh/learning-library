@@ -45,7 +45,8 @@ The following image shows a folder structure of the big-data workshop. You can s
 
 * **Authors:**
     * Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate
-
+* **Reviewed by:**  
+        * Aslam Khan, Sr. User Assistance Manager, ODI, OGG
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
 ## See an issue?  
