@@ -24,7 +24,7 @@ This lab assumes you have:
     - Lab: Deploy GoldenGate for Big Data
     - Lab: MySQL to MySQL
 
-## **Step 0:** Running your Lab
+## **STEP 0:** Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -162,7 +162,7 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
 
     ```
     <copy>cd /u01/gg4hadoop123010/dirprm
-  
+
     vi rkafka.properties</copy>
     ```
 

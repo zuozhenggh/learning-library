@@ -252,6 +252,7 @@ registry.
 | Region         | Region key |
 | -------------- | ---------- |
 | us-ashburn-1   | iad        |
+| us-phoenix-1   | phx        |
 | eu-frankfurt-1 | fra        |
 
 Full list can be found in [the OCI documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).

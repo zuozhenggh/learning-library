@@ -40,7 +40,7 @@ This lab is designed for people with no prior experience with Kubernetes, Docker
 * Develop new Credit Score function as microservice using Helidon SE and deploy on local JVM
 * Modify Bank Web Application to use Credit Score microservice and deploy on WebLogic
  
-## **Step 0:** Running your Lab
+## **STEP 0:** Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -55,7 +55,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **Step 1**: Setup Lab Environment
+## **STEP 1**: Setup Lab Environment
 1.	Logon to VNC console of the ConvergedDB image as an Oracle user to the instance provisioned to you
 2.	Open a terminal (Shell window) by clicking the “Terminal” icon on the desktop
 3.	Change directory to /u01/middleware_demo/scripts
@@ -68,7 +68,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 	```
 
 
-## **Step 2**: Verify Basic Bank Application Code and working application
+## **STEP 2**: Verify Basic Bank Application Code and working application
 1.	In the same terminal window, change the working directory to WebLogic 14c domain and start AdminServer in the wl_server domain:
 
 	```
@@ -107,7 +107,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 	<copy>ls -alrt</copy>
 	```
 
-## **Step 3**: Develop new Credit Score function as microservice using Helidon SE and deploy on local JVM
+## **STEP 3**: Develop new Credit Score function as microservice using Helidon SE and deploy on local JVM
 1.	Create a directory called “microservice” under `/u01/middleware_demo/wls-helidon` and navigate to `/u01/middleware_demo/wls-helidon/microservice`
 
 	```
@@ -255,7 +255,7 @@ Please note the code above accepts a GET for healthcheck and POST method to calc
 	<copy>cd /u01/middleware_demo/wls-helidon/microservice/helidon-creditscore-se/target
 	ls -alrt helidon-creditscore-se.jar</copy>
 	```
-## **Step 4:** Modify Bank Web Application To Use Credit Score Microservice & Deploy On WebLogic
+## **STEP 4:** Modify Bank Web Application To Use Credit Score Microservice & Deploy On WebLogic
 Before the deployment of the Bank Web Application to consume Microservice, the following changes will be made:
 
   -	Modify the User Interface. Create View button which opens Account Owner details window. This detail window will show the credit score value of the Account Owner.

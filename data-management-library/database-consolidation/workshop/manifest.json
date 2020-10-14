@@ -14,7 +14,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/26/2020",
             "contentid": "12nnnn",
-            "filename": "./../mv2adb/MV2ADB.md"
+            "filename": "./../mv2adb/mv2adb.md"
         },
         {         
             "title": "Lab 2: Consolidate your databases using Goldengate",

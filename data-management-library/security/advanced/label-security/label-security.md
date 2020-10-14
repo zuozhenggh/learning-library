@@ -298,7 +298,7 @@ In case you decide to execute script by script, you can always review the log fi
 You may proceed to the next lab.
 
 ## **Appendix**: About the Product
-- **Overview**<br>
+### **Overview**
 OLS works by comparing the row label with a user's label authorizations to enable you to easily restrict sensitive information to only authorized users.<br>
 This way, users with different authorization levels (for example, managers and sales representatives) can have access to specific rows of data in a table.<br>
 You can apply OLS policies to one or more application tables. The design of OLS is similar to Oracle Virtual Private Database (VPD).<br>
@@ -310,21 +310,22 @@ OLS is based on multi-level security (MLS) requirements that are found in govern
 OLS software is installed by default, but not automatically enabled. You can enable OLS in either SQLPlus or by using the Oracle Database Configuration Assistant (DBCA). The default administrator for OLS is the user `LBACSYS`. To manage OLS, you can use either a set of PL/SQL packages and standalone functions at the command-line level or Oracle Enterprise Manager Cloud Control. To find information about OLS policies, you can query `ALL_SA_*`, `DBA_SA_*`, or `USER_SA_*` data dictionary views.<br>
 
 An OLS policy has a standard set of components as follows:
-    - **Labels:** Labels for data and users, along with authorizations for users and program units, govern access to specified protected objects. Labels are composed of the following:
-         - **Levels:** Levels indicate the type of sensitivity that you want to assign to the row (for example, `SENSITIVE` or `HIGHLY SENSITIVE`). Levels are mandatory.
-         - **Compartments (Optional):** Data can have the same level (for example, `PUBLIC`, `CONFIDENTIAL` and `SECRET`), but can belong to different projects inside a company (for example, `ACME Merger` and `IT Security`). Compartments represent the projects in this example that help define more precise access controls. They are most often used in government environments.
-         - **Groups (Optional):** Groups identify organizations owning or accessing the data (for example, `UK`, `US`, `Asia`, `Europe`). Groups are used both in commercial and government environments, and frequently used in place of compartments due to their flexibility.
-    - **Policy:** A policy is a name associated with these labels, rules, authorizations, and protected tables.
+  - **Labels:** Labels for data and users, along with authorizations for users and program units, govern access to specified protected objects. Labels are composed of the following:
+       - **Levels:** Levels indicate the type of sensitivity that you want to assign to the row (for example, `SENSITIVE` or `HIGHLY SENSITIVE`). Levels are mandatory.
+       - **Compartments (Optional):** Data can have the same level (for example, `PUBLIC`, `CONFIDENTIAL` and `SECRET`), but can belong to different projects inside a company (for example, `ACME Merger` and `IT Security`). Compartments represent the projects in this example that help define more precise access controls. They are most often used in government environments.
+       - **Groups (Optional):** Groups identify organizations owning or accessing the data (for example, `UK`, `US`, `Asia`, `Europe`). Groups are used both in commercial and government environments, and frequently used in place of compartments due to their flexibility.
+  - **Policy:** A policy is a name associated with these labels, rules, authorizations, and protected tables.
 
-- **Benefits of using OLS**
-   OLS provides several benefits for controlling row level management:
-    - It enables row level data classification and provides out-of-the-box access mediation based on the data classification and the user label authorization or security clearance.
-    - It enables you to assign label authorizations or security clearances to both database users and application users.
-    - It provides both APIs and a graphical user interface for defining and storing data classification labels and user label authorizations.
-    - It integrates with Oracle Database Vault and Oracle Advanced Security Data Redaction, enabling security clearances to be use in both Database Vault command rules and Data Redaction policy definitions.
+### **Benefits of using OLS**
+OLS provides several benefits for controlling row level management:
+  - It enables row level data classification and provides out-of-the-box access mediation based on the data classification and the user label authorization or security clearance.
+  - It enables you to assign label authorizations or security clearances to both database users and application users.
+  - It provides both APIs and a graphical user interface for defining and storing data classification labels and user label authorizations.
+  - It integrates with Oracle Database Vault and Oracle Advanced Security Data Redaction, enabling security clearances to be use in both Database Vault command rules and Data Redaction policy definitions.
 
 ## Want to Learn More?
-Technical Documentation: [Oracle Label Security 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/olsag/part1.html)
+Technical Documentation:
+- [Oracle Label Security 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/olsag/part1.html)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
