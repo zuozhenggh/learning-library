@@ -140,14 +140,15 @@ As you often hear Terraform referred to as Infrastructure is Code, an optimal st
 **Important** This exercise requires some working experience with Git, and an account with gitlab.com.  You can set up a free account here:
 https://gitlab.com/users/sign_up
 
-1. In order to create a configuration source provider, you will need an **Access Token** for gitlab.com.  While logged into gitlab.com, navigate to: https://gitlab.com/profile/personal_access_tokens
-
-  Enter the following details:
-  - Name
-  - Expires at
-  - Scopes: **read_api**
+1. In order to create a configuration source provider, you will need an **Access Token** for gitlab.com.  While logged into gitlab.com, navigate to: https://gitlab.com/profile/personal_access_tokens.  Enter the following details:
 
     ![](./../resource-manager/images/ConfigSource01.png " ")
+
+      - Name
+      - Expires at
+      - Scopes: **read_api**
+
+
     For security reasons, you may choose to set the token expiration 30 days out.  The personal access token (PAT) should be rotated regularly.
 
 2. Return to the resource manager console and navigate to configuration source providers.  Click **Create Configuration Source Provider**.
@@ -170,22 +171,22 @@ https://gitlab.com/users/sign_up
 
 5. When the Cloud Shell console opens, run the following command.  *NOTE* you will need to change the property values to match your environment.
 
-  ```
-  oci resource-manager stack update-from-git-provider \
-  --config-source-configuration-source-provider-id <the OCID of your source provider> \
-  --stack-id <the OCID of your ORM stack> \
-  --config-source-branch-name master \
-  --config-source-repository-url <the URL to your gitlab repo>
-  ```
+    ```
+    oci resource-manager stack update-from-git-provider \
+    --config-source-configuration-source-provider-id <the OCID of your source provider> \
+    --stack-id <the OCID of your ORM stack> \
+    --config-source-branch-name master \
+    --config-source-repository-url <the URL to your gitlab repo>
+    ```
 
-  The command will look something like this:
-  ```
-  oci resource-manager stack update-from-git-provider \
-  --config-source-configuration-source-provider-id ocid1.ormconfigsourceprovider.oc1.phx.aaxxxxxxrlz6totua \
-  --stack-id ocid1.ormstack.oc1.phx.aaaaaaaayiqk6xxxxxxxxxxntbz4hq \
-  --config-source-branch-name master \
-  --config-source-repository-url https://gitlab.com/oci-labs/sample-orm-source.git
-  ```
+    The command will look something like this:
+    ```
+    oci resource-manager stack update-from-git-provider \
+    --config-source-configuration-source-provider-id ocid1.ormconfigsourceprovider.oc1.phx.aaxxxxxxrlz6totua \
+    --stack-id ocid1.ormstack.oc1.phx.aaaaaaaayiqk6xxxxxxxxxxntbz4hq \
+    --config-source-branch-name master \
+    --config-source-repository-url https://gitlab.com/oci-labs/sample-orm-source.git
+    ```
 
 6. When the command completes, return to Stacks, select the stack created earlier in this lab, and view the stack details to confirm that the changes were applied.
 
