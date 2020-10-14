@@ -35,7 +35,7 @@ RAC is a key underpinning of MAA.
 
 ## More Information on Oracle RAC
 
-* [Visit the RAC site on OTN](https://www.oracle.com/database/technologies/rac.html
+* [Visit the RAC site on OTN](https://www.oracle.com/database/technologies/rac.html)
 
 ## Acknowledgements
 
