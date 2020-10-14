@@ -409,7 +409,7 @@ A compliance standard rule is a specific test to determine if a configuration da
 
     ![](images/6630856a69efd3ee50512c8e15c171d1.png " ")
 
-All these will give you a security posture of database target
+    All these will give you a security posture of database target
 
 21. Now, let’s go repeat these steps for host target. Go to Compliance Library page
 

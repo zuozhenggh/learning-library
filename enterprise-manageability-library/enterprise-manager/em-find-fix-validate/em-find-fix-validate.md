@@ -181,18 +181,18 @@ e.g: https://111.888.111.888:7803/em
 
 ## **STEP 2:** Real-Time Database Operations Monitoring
 
-- Login as user "opc",
-- Sudo over to user "oracle"
-- Change directory to **scripts**
-- Set your environment variables with ***SALESENV***
-- Change directory to **load/frame/queries/awrv**
+  - Login as user "opc",
+  - Sudo over to user "oracle"
+  - Change directory to **scripts**
+  - Set your environment variables with ***SALESENV***
+  - Change directory to **load/frame/queries/awrv**
 
-  ````
-  <copy>sudo su - oracle
-  cd scripts
-  source SALESENV
-  cd load/frame/queries/awrv</copy>
-  ````
+    ````
+    <copy>sudo su - oracle
+    cd scripts
+    source SALESENV
+    cd load/frame/queries/awrv</copy>
+    ````
 
 1. Using SQLPlus connect to the sh2 account. Open the file (!vi DBOP.sql) from the SQL prompt and then review the content of the file. At the beginning of the file you will notice how we have tagged the operation with dbms\_sql\_monitor.begin\_operation and ended it with dbms\_sql\_monitor.end\_operation.
 Now execute the file \@DBOP.sql

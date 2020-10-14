@@ -145,11 +145,11 @@ Software Standardization Advisor enables administrators to understand various da
 
     ![](images/em-pollution-detection-1.png " ")
 
-A Software Configuration is identified by Database Release, Platform and set of Patches installed on the target.
+    A Software Configuration is identified by Database Release, Platform and set of Patches installed on the target.
 
-The Software Configuration Advisor run shows that there are 5 Unique Software Configurations in the environment as shown in the pie chart labelled as “Current Unique Software Configurations” and recommendation is to maintain 2 Software Configurations as shown in the pie chart labelled as “Recommended Software Configurations”.
+    The Software Configuration Advisor run shows that there are 5 Unique Software Configurations in the environment as shown in the pie chart labelled as “Current Unique Software Configurations” and recommendation is to maintain 2 Software Configurations as shown in the pie chart labelled as “Recommended Software Configurations”.
 
-Let us see details of the reports in next steps.
+    Let us see details of the reports in next steps.
 
 5.  Click on Generate Report.
 

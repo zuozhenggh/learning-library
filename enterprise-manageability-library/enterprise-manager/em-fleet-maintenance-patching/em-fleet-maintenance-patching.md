@@ -62,9 +62,9 @@ Watch a preview of database patching using Oracle Enterprise Manager Fleet Maint
       ````
 
 ### Login to OMS Console
-Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
+1. Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
-You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
+  You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
 ### Update the Named Credentials with your SSH Key
 
@@ -143,11 +143,11 @@ This exercise enables us to analyze the database estate using Software Standardi
 
     ![](images/em-pollution-detection-1.png " ")
 
-A Software Configuration is identified by Database Release, Platform and set of Patches installed on the target.
+    A Software Configuration is identified by Database Release, Platform and set of Patches installed on the target.
 
-The Software Configuration Advisor run shows that there are 5 Unique Software Configurations in the environment as shown in the pie chart labelled as “Current Unique Software Configurations” and recommendation is to maintain 2 Software Configurations as shown in the pie chart labelled as “Recommended Software Configurations”.
+    The Software Configuration Advisor run shows that there are 5 Unique Software Configurations in the environment as shown in the pie chart labelled as “Current Unique Software Configurations” and recommendation is to maintain 2 Software Configurations as shown in the pie chart labelled as “Recommended Software Configurations”.
 
-Let us see details of the reports in next steps.
+    Let us see details of the reports in next steps.
 
 5.  Click on Generate Report.
 
@@ -224,17 +224,17 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 * Create New Gold Image from ssh terminal using the following emcli command
 
-  ````
-  <copy>cd fleet
-  cat create_image_Tier2_sidb_x64.sh</copy>
-  ````
+    ````
+    <copy>cd fleet
+    cat create_image_Tier2_sidb_x64.sh</copy>
+    ````
 
-  **OR**
+    **OR**
 
-  ````
-  <copy>sh create_image_Tier2_sidb_x64.sh</copy>
-  ````
-  ![](images/1791b5df10396b908e81340d2c6abed4.png " ")
+    ````
+    <copy>sh create_image_Tier2_sidb_x64.sh</copy>
+    ````
+    ![](images/1791b5df10396b908e81340d2c6abed4.png " ")
 
 * Click on ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to review Execution details of this operation via Enterprise Manager Console
 
@@ -252,49 +252,49 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 * Execute the following commands in ssh terminal to see the list of Gold Images available for deployment, locate ‘Tier \#2 SI DB Linux64*’* in the emcli command output:
 
-  ````
-  <copy>emcli db_software_maintenance -getImages</copy>
-  ````
+    ````
+    <copy>emcli db_software_maintenance -getImages</copy>
+    ````
 
-  ![](images/979c7a2ab44a65b0a6faf911cac1b64a.png " ")
+    ![](images/979c7a2ab44a65b0a6faf911cac1b64a.png " ")
 
   IMAGE ID retrieved from the output of above command is used in further operations like Target Subscription.
 
 * After retrieving a list of the available images, one can view a list of versions available for a specific image with the following command:
 
-  ````
-  <copy>emcli db_software_maintenance -getVersions -image_id={Insert IMAGE ID from List available gold images}</copy>
-  ````
+    ````
+    <copy>emcli db_software_maintenance -getVersions -image_id={Insert IMAGE ID from List available gold images}</copy>
+    ````
 
-  This command lists Gold Image versions with their VERSION ID and STATUS.
+    This command lists Gold Image versions with their VERSION ID and STATUS.
 
-  ![](images/a9b1233fb416f91b34518744dc0d7e9a.png " ")
+    ![](images/a9b1233fb416f91b34518744dc0d7e9a.png " ")
 
-  When a Gold Image is created for the first time, its first version is created as per the input and marked as current. Whenever we run a DEPLOY operation for a target, Gold Image version marked
-  as CURRENT is used to deploy the new Oracle Home.
+    When a Gold Image is created for the first time, its first version is created as per the input and marked as current. Whenever we run a DEPLOY operation for a target, Gold Image version marked
+    as CURRENT is used to deploy the new Oracle Home.
 
 4.  Verify if Gold Image is Applicable
 
     This step verifies if the image can be used to patch a specified database target. This is done by comparing the bug fixes available in the current Oracle home of the database target and the image. In effect this check is run to identify patch conflicts.
 
 * Review and execute below emcli command:  
-  ````
-  <copy>emcli db_software_maintenance -checkApplicability -image_id={Insert IMAGE ID from List available gold images} -target_list=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database > /home/oracle/applicability.out</copy>
-  ````
+    ````
+    <copy>emcli db_software_maintenance -checkApplicability -image_id={Insert IMAGE ID from List available gold images} -target_list=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database > /home/oracle/applicability.out</copy>
+    ````
 
-  ````
-  <copy>cat /home/oracle/applicability.out</copy>
-  ````
+    ````
+    <copy>cat /home/oracle/applicability.out</copy>
+    ````
 
-  Output of above command is redirected to a file. You may review the output using any standard editor or tool of your choice.
+    Output of above command is redirected to a file. You may review the output using any standard editor or tool of your choice.
 
-  ![](images/5f050173735f58aabd279987996192ea.png " ")
+    ![](images/5f050173735f58aabd279987996192ea.png " ")
 
-  This command can show one of the following results:
+    This command can show one of the following results:
 
-  -   Applicable: The image and database target contain the same set of bug fixes. The image can be applied on the specified target.
-  -   Applicable and Image has more bug fixes: The image contains more bug fixes than those applied on the database. The list of extra bugs is displayed. The image can be applied on the specified target.
-  -   Not Applicable: The database contains more bug fixes than those included in the image. The list of missing bugs is displayed. The administrator has to create a new version of the image that includes the missing bugs before the database can uptake the same.
+    -   Applicable: The image and database target contain the same set of bug fixes. The image can be applied on the specified target.
+    -   Applicable and Image has more bug fixes: The image contains more bug fixes than those applied on the database. The list of extra bugs is displayed. The image can be applied on the specified target.
+    -   Not Applicable: The database contains more bug fixes than those included in the image. The list of missing bugs is displayed. The administrator has to create a new version of the image that includes the missing bugs before the database can uptake the same.
 
 #### Subscribe Database
 
@@ -323,15 +323,15 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 * A new Oracle Home is deployed on the host where DB target is running with the below commands:
 
-  ````
-  <copy>emcli db_software_maintenance -performOperation -name="deploy1810" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -input_file="data:/home/oracle/fleet/deploy1810_hr.inp" -procedure_name_prefix="DEPLOY"</copy>
-  ````
+    ````
+    <copy>emcli db_software_maintenance -performOperation -name="deploy1810" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -input_file="data:/home/oracle/fleet/deploy1810_hr.inp" -procedure_name_prefix="DEPLOY"</copy>
+    ````
 
-  **OR**  
+    **OR**  
 
-  ````
-  <copy>sh deploy1810_hr.sh</copy>
-  ````
+    ````
+    <copy>sh deploy1810_hr.sh</copy>
+    ````
 
   Where:
     -  NEW\_ORACLE\_HOME\_LIST = Absolute path to the File System location where new Oracle Home will be deployed.
@@ -366,17 +366,17 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 * Review and execute the following command to Migrate the Listener
 
-  ````
-  <copy>emcli db_software_maintenance -performOperation -name="Migrate Listener" -purpose=migrate_listener -target_type=oracle_database -target_list="hr.subnet.vcn.oraclevcn.com" -normal_credential="ORACLE:SYSMAN" -privilege_credential="ROOT:SYSMAN"</copy>
-  ````  
+    ````
+    <copy>emcli db_software_maintenance -performOperation -name="Migrate Listener" -purpose=migrate_listener -target_type=oracle_database -target_list="hr.subnet.vcn.oraclevcn.com" -normal_credential="ORACLE:SYSMAN" -privilege_credential="ROOT:SYSMAN"</copy>
+    ````  
 
-  **OR**  
+    **OR**  
 
-  ````
-  <copy>sh migrate_listener_hr_update.sh</copy>
-  ````
+    ````
+    <copy>sh migrate_listener_hr_update.sh</copy>
+    ````
 
-  ![](images/3b1e1e85cf38e639a314570bc212a3ac.png " ")
+    ![](images/3b1e1e85cf38e639a314570bc212a3ac.png " ")
 
 * Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘Fleet\_migrate\_\*’ run
 
@@ -396,21 +396,21 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 * Review and execute below command to update DB Target hr.subnet.vcn.oraclevcn.com
 
-  ````
-  <copy>emcli db_software_maintenance -performOperation -name="Update DB" -purpose=UPDATE_DB -target_type=oracle_database -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -database_credential=sales_SYS:SYSMAN</copy>
-  ````
+    ````
+    <copy>emcli db_software_maintenance -performOperation -name="Update DB" -purpose=UPDATE_DB -target_type=oracle_database -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -database_credential=sales_SYS:SYSMAN</copy>
+    ````
 
-  **OR**
+    **OR**
 
-  ````
-  <copy>sh update_hr.sh</copy>
-  ````
+    ````
+    <copy>sh update_hr.sh</copy>
+    ````
 
-  Where:
-    - Name – Name of the operation. This is a logical name and should be kept unique  
-    - Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
+    Where:
+      - Name – Name of the operation. This is a logical name and should be kept unique  
+      - Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
 
-      ![](images/8ddbd68dee0300c0223d11cc9407c08a.png " ")
+    ![](images/8ddbd68dee0300c0223d11cc9407c08a.png " ")
 
 * Navigate to the Procedure Activity Page and monitor the progress of this operation with ‘Fleet\_UPDATE\_...’ deployment procedure instance.
 
@@ -432,17 +432,17 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 * Review and execute below command to rollback DB Target ***hr.subnet.vcn.oraclevcn.com***
 
-  ````
-  <copy>curl -i -X POST https://emcc.marketplace.com:7803/em/websvcs/restful/emws/db/fleetmaintenance/performOperation/rollback -H "Content-Type:application/json" -u sysman:welcome1 --data-binary "@/home/oracle/fleet/rollback_hr_payload.json" --insecure</copy>
-  ````
+    ````
+    <copy>curl -i -X POST https://emcc.marketplace.com:7803/em/websvcs/restful/emws/db/fleetmaintenance/performOperation/rollback -H "Content-Type:application/json" -u sysman:welcome1 --data-binary "@/home/oracle/fleet/rollback_hr_payload.json" --insecure</copy>
+    ````
 
-  **OR**
+    **OR**
 
-  ````
-  <copy>sh rollback_hr.sh</copy>
-  ````
+    ````
+    <copy>sh rollback_hr.sh</copy>
+    ````
 
-  ![](images/acb8ad0f4fb9ad39503081f5cdfb9e79.png " ")
+    ![](images/acb8ad0f4fb9ad39503081f5cdfb9e79.png " ")
 
 * Navigate to the Procedure Activity Page and monitor the progress of this operation with ‘Fleet\_ROLLBACK\_...’ deployment procedure instance.
 
@@ -464,20 +464,20 @@ In order to have an old empty home previously used by “***hr.subnet.vcn.oracle
 
 * Review and execute below command to update DB Target ***hr.subnet.vcn.oraclevcn.com*** again to 18.10 version
 
-  ````
-  <copy>emcli db_software_maintenance -performOperation -name="Update DB" -purpose=UPDATE_DB -target_type=oracle_database -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -database_credential=sales_SYS:SYSMAN</copy>
-  ````
+    ````
+    <copy>emcli db_software_maintenance -performOperation -name="Update DB" -purpose=UPDATE_DB -target_type=oracle_database -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -database_credential=sales_SYS:SYSMAN</copy>
+    ````
 
-  **OR**
+    **OR**
 
-  ````
-  <copy>sh update_hr.sh</copy>
-  ````
+    ````
+    <copy>sh update_hr.sh</copy>
+    ````
 
-  Where:
-    -  Name – Name of the operation. This is a logical name and should be kept unique Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
+    Where:
+      -  Name – Name of the operation. This is a logical name and should be kept unique Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
 
-  ![](images/05dc434c461c068b157f9dd7cd6b10ce.png " ")
+    ![](images/05dc434c461c068b157f9dd7cd6b10ce.png " ")
 
 * Verify that the update has been completed successfully before proceeding with any cleanup action, Same as done in step \#8, this should complete within 10\~15 minutes.
 
@@ -488,30 +488,30 @@ In order to have an old empty home previously used by “***hr.subnet.vcn.oracle
   ![](images/05d8c8153c8c990ac80810fef434baa3.png " ")
 
 * Review and execute the following command to cleanup hr in reportOnly mode  
-````
-<copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=hr.subnet.vcn.oraclevcn.com -workDir=/tmp -reportOnly=true</copy>
-````
-
-**OR**
-
-````
-<copy>sh cleanup_hr_report.sh</copy>
-````
-
-  ![](images/9b5d405577571043afe9ead1fc723392.png " ")
-
-* Review and execute the following command to cleanup hr  
   ````
-  <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=hr.subnet.vcn.oraclevcn.com -workDir=/tmp</copy>
+  <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=hr.subnet.vcn.oraclevcn.com -workDir=/tmp -reportOnly=true</copy>
   ````
 
   **OR**
 
   ````
-  <copy>sh cleanup_hr.sh</copy>
+  <copy>sh cleanup_hr_report.sh</copy>
   ````
 
-  ![](images/f0443cb23cec56d4d3c3818720c73c80.png " ")
+  ![](images/9b5d405577571043afe9ead1fc723392.png " ")
+
+* Review and execute the following command to cleanup hr  
+    ````
+    <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=hr.subnet.vcn.oraclevcn.com -workDir=/tmp</copy>
+    ````
+
+    **OR**
+
+    ````
+    <copy>sh cleanup_hr.sh</copy>
+    ````
+
+    ![](images/f0443cb23cec56d4d3c3818720c73c80.png " ")
 
 * Navigate to the Procedure Activity Page and monitor the progress of this operation with ‘CLEANUP\_SOFTWARE\_...’ deployment procedure instance.
 
@@ -523,11 +523,11 @@ In order to have an old empty home previously used by “***hr.subnet.vcn.oracle
 
 * Verify to confirm the old Oracle Home has been removed
 
-  ````
-  <copy>ls -l /u01/app/1806/hr</copy>
-  ````
+    ````
+    <copy>ls -l /u01/app/1806/hr</copy>
+    ````
 
-  ![](images/31324fdd072b03be848fa9362de9ae7b.png " ")
+    ![](images/31324fdd072b03be848fa9362de9ae7b.png " ")
 
 *  As part of the cleanup operation, LISTENER\_1522 which support “***hr.subnet.oraclevcn.com***” is shutdown. Set your environment by passing “***hr***” to “***oraenv***” when prompted and start the listener back up.
 
@@ -537,28 +537,28 @@ In order to have an old empty home previously used by “***hr.subnet.vcn.oracle
 
 * Start LISTENER\_1522 back up
 
-  ````
-  <copy>lsnrctl start LISTENER_1522</copy>
-  ````
+      ````
+      <copy>lsnrctl start LISTENER_1522</copy>
+      ````
 
   ![](images/465b2cea9ae4e176c314eff253ef4b68.png " ")
 
 * Force Listener registration and confirm that it is now servicing “***hr.subnet.vcn.oraclevcn.com***”
 
-  ````
-  <copy>sqlplus '/as sysdba'<<EOF
-  alter system register;
-  EOF
-  </copy>
-  ````
+    ````
+    <copy>sqlplus '/as sysdba'<<EOF
+    alter system register;
+    EOF
+    </copy>
+    ````
 
 * Check status of LISTENER\_1522
 
-  ````
-  <copy>lsnrctl status LISTENER_1522</copy>
-  ````
+    ````
+    <copy>lsnrctl status LISTENER_1522</copy>
+    ````
 
-  ![](images/b95a982c86b233dfa1af34d29c03aa6e.png " ")
+    ![](images/b95a982c86b233dfa1af34d29c03aa6e.png " ")
 
 ### Summary
 This completes Step 2. In this section, you learned how to perform the following:
