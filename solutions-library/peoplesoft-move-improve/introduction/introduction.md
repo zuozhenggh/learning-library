@@ -1,3 +1,5 @@
+<!-- "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md" -->
+
 # Introduction
 
 ## About this Workshop
