@@ -13,7 +13,7 @@ Estimated Lab Time: 5 minutes
 
 In this lab, you'll:
 
-- Request access to Oracle Data Safe in a region of your tenancy
+- Request access to an Oracle Data Safe service in your tenancy
 - Sign in to a region of your tenancy by using your Oracle Cloud account credentials
 
 
@@ -22,16 +22,16 @@ In this lab, you'll:
 
 Your tenancy administrator needs to set up an Oracle Data Safe environment for you before you can work through the labs in the Oracle Data Safe Workshop. After the environment is set up, you should have the following items:
 
-- An Oracle Cloud account in your tenancy. The account can be a native or federated user account. Both are supported in Oracle Data Safe.
-- A compartment in your tenancy created for or dedicated to you. During the labs, you create an Autonomous Database in the compartment and register it with Oracle Data Safe. By using your own compartment, the tenancy administrator can ensure that only you can access your database and save Oracle Data Safe resources to the compartment. In the labs, this compartment is referred to as "your compartment."
-- Oracle Data Safe enabled in a region of your tenancy.
-- Privileges to use all of the Oracle Data Safe features.
+- An Oracle Cloud account in your tenancy.
+- A compartment in your tenancy. During the labs, you create an Autonomous Database in the compartment and register it with Oracle Data Safe. By using your own compartment, the tenancy administrator can ensure that only you can access your database and save Oracle Data Safe resources to the compartment. In the labs, this compartment is referred to as "your compartment."
+- An Oracle Data Safe service that you can access in a region of your tenancy.
+- Privileges to use all of the Oracle Data Safe features, including User Assessment, Security Assessment, Activity Auditing, Data Discovery, and Data Masking.
 
 
 
-## **STEP 1** Request access to Oracle Data Safe in a region of your tenancy
+## **STEP 1** Request access to Oracle Data Safe
 
-- Send your email address to your tenancy administrator and request a user account in your tenancy.
+- Send your email address to your tenancy administrator and request a user account in your tenancy and access to Oracle Data Safe.
 
 - Send your tenancy administrator the instructions on how to set up an Oracle Data Safe environment for you. The instructions are [here](./set-up-oracle-data-safe-environment.md).
 
@@ -39,26 +39,29 @@ Your tenancy administrator needs to set up an Oracle Data Safe environment for y
 
 ## **STEP 2** Sign in to the Oracle Cloud Infrastructure Console by using your Oracle Cloud account credentials
 
-
-- Access the Oracle email that was sent to you with the verification information for your Oracle Cloud user account. The email sender is [noreply@accountrecovery.oci.oraclecloud.com](../mailto:noreply@accountrecovery.oci./mailto:noreply@accountrecovery.oci..md). The email contains a link to the **Oracle Cloud Infrastructure Sign In** page as well as another link in case the first link does not work.
-
+After the Oracle Data Safe environment is set up by your tenancy administrator, you should receive an email from Oracle with instructions on how to sign in to your tenancy.
 
 
+- Access the Oracle email that was sent to you with the sign-in information for your Oracle Cloud user account. The email provides two links to the Oracle Cloud Infrastructure Console (you can use either link), your tenancy name, and your user name.
 
-- Click the **Sign in to Oracle Cloud** link. The **Oracle Cloud Infrastructure Sign In** page is displayed. Your tenancy name is already filled in for you.
+- Obtain your password to the tenancy from your tenancy administrator.
+
+- When you're ready to sign in, click the **Sign in to your new user account** link. The **Oracle Cloud Infrastructure Sign In** page is displayed. Your tenancy name is already filled in for you.
 
 
 - Under **Oracle Cloud Infrastructure**, in the **USER NAME** field, enter your Oracle Cloud user name.
 
 
-- In the **PASSWORD** field, enter your temporary password.
+- In the **PASSWORD** field, enter the temporary password provided to you by your tenancy administrator.
 
 
 - Click **Sign In**.
 
+- If prompted by your browser to save the password, click **Never**.
 
 
-- If this is the first time that you are signing in to the Oracle Cloud Infrastructure Console, you are prompted to change your password. Enter your temporary password and your new password, and then click **Sign In**. After you sign in, the Console's **Home** page is displayed.
+
+- If this is the first time that you are signing in to the Oracle Cloud Infrastructure Console, you are prompted to change your password. Enter your temporary password and your new password, and then click **Save New Password**. After you sign in, the message **Email Activation Complete** is displayed.
 
 
 

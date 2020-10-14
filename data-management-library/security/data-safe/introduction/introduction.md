@@ -49,7 +49,7 @@ Use these links to find more information about Oracle Data Safe:
 
 
 - **Author** - Jody Glover, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Jody Glover, October 8, 2020
+- **Last Updated By/Date** - Jody Glover, October 14, 2020
 
 
 ## See an issue?

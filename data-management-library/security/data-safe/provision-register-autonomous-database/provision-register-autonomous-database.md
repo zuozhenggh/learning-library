@@ -20,12 +20,12 @@ In this lab, you'll:
 To complete this lab, you need to have the following:
 
 - An Oracle Cloud account
-- Access to a compartment in Oracle Cloud Infrastructure Identity and Access Management (IAM) where you can create an Autonomous Database
+- Access to a compartment in Oracle Cloud Infrastructure where you can create your Autonomous Database
 
 
 ### Assumptions
 
-- You are signed in to the Oracle Cloud Infrastructure Console.
+- You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the **Prerequisites** for this workshop.
 
 
 
