@@ -98,11 +98,11 @@ e.g: https://111.888.111.888:7803/em
 
 ### Prepare database - Option 2: Using SSH terminal from the VM host
 
-- Login as user "opc",
-- Sudo over to user "oracle"
-- Change directory to **scripts**
-- Set your environment variables with ***SALESENV***
-- Execute the script **1-db\_lab\_start.sh**
+  - Login as user "opc",
+  - Sudo over to user "oracle"
+  - Change directory to **scripts**
+  - Set your environment variables with ***SALESENV***
+  - Execute the script **1-db\_lab\_start.sh**
 
     ````
     <copy>sudo su - oracle
