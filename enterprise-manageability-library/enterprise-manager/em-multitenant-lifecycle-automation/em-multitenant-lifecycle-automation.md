@@ -38,7 +38,7 @@ e.g: https://111.888.111.888:7803/em
 | 5    | Self- service to request a PDB using PDBaaS            | 10min                     | Request PDB pluggable database using Service Catalog. (Private Cloud) Resize the PDB and then Delete the PDB while preserving the contents.                                                      | Review self-service option to provision PDB, which only requires minimal inputs.                                                                                                                                                        |
 | 6    | Administrative Setup for PDBaaS (Private Cloud)- Review only               | 10min                     | An overview of the administrative setup involved for PDBaaS (Private Cloud) which includes setting up a PaaS Infrastructure Zone, Pluggable Database Pool, Data Sources, Service Template, etc. | Setup private cloud using Enterprise Manager where admin can define resources and EM’s placement algorithm and make sure that resources are utilized to their best. It is complimented by metering, and show back/chargeback capabilities. |
 
-## **Step 0:** Running your Workload
+## **STEP 0:** Running your Workload
 
 ### Login to OMS Console
 Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
@@ -73,7 +73,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
   ![](images/named_creds_job_succeeded.jpg " ")
 
 
-## **Step 1:** Create Pluggable Database (PDB)
+## **STEP 1:** Create Pluggable Database (PDB)
 
 1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
@@ -127,7 +127,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/657ef309d7087942b8d871256a359050.jpg " ")
 
-## **Step 2:** Un-plug/Plug an Existing Pluggable Database (PDB)
+## **STEP 2:** Un-plug/Plug an Existing Pluggable Database (PDB)
 
 1. **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
@@ -203,7 +203,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 **Note**: You do not have to wait until the steps complete and move on to the next section.
 
-## **Step 3:** Clone an Existing Pluggable Database (PDB)
+## **STEP 3:** Clone an Existing Pluggable Database (PDB)
 
 1.  **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
@@ -231,7 +231,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 7.  **Select** “Use Common Location for PDB Datafiles” in the Source page of the Create Pluggable Database Wizard, please enter **/tmp** in temporary working directory.
 
-Optionally, you can select the postscript as we did in the creation flow. **Click** Next
+  Optionally, you can select the postscript as we did in the creation flow. **Click** Next
 
   ![](images/ff556eb15570c55dfd477361c20051d6.jpg " ")
 
@@ -243,11 +243,11 @@ Optionally, you can select the postscript as we did in the creation flow. **Clic
 
 10.  Once the procedure is completed,  Navigate to ***Targets >> Databases***, then **Click** on CDB186 and you will see the newly created PDB
 
-## **Step 4:** Compliance Management for Pluggable Database
+## **STEP 4:** Compliance Management for Pluggable Database
 
 Now database administrator applies a Corporate Standard on the newly created PDB database, which results in a “Violation”. Then, the DBA fixes the issue using corrective actions. Let us examine how a DBA applies the fixes in the following steps.
 
-Navigate to ***Enterprise >> Compliance >> Library*** to get started
+  Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
   ![](images/dblmcompliancelibrary.png " ")
 
@@ -265,13 +265,13 @@ Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
   ![](images/a01dffb956af685a866f02e68eff72b1.png " ")
 
-5.  You need to refresh PDB statistics to see notifications. To refresh:
+5. You need to refresh PDB statistics to see notifications. To refresh:
 
 - **Click** the ***target icon >> Databases >> View >> Expand All***
 - **Right Click** on ***PDB >> Oracle Database >> Configuration >> Latest.***
 - **Click** the Refresh icon on the page (it will take few minutes for refresh to complete)
 
-6.  Now Navigate to ***Enterprise >> Compliance >> Results***
+6. Now Navigate to ***Enterprise >> Compliance >> Results***
 
   ![](images/1317deb228d80211d9e6a2edf2cbba9e.png " ")
 
@@ -302,11 +302,11 @@ Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
     ![](images/6ccf17bb69cbc79dae30f95bc508f640.jpg " ")
 
-13.  You will then see the popup as shown below. **Click** on the link “Click here to view the execution details”
+13. You will then see the popup as shown below. **Click** on the link “Click here to view the execution details”
 
   ![](images/21e5a02e32296dd7dea196a7edfd29ac.jpg " ")
 
-The job will take about a minute to complete. Click on refresh icon if the job did not complete. You will see the status change to Succeeded
+  The job will take about a minute to complete. Click on refresh icon if the job did not complete. You will see the status change to Succeeded
 
   ![](images/3be714a84eeca17c22b2c786688b567a.jpg " ")
 
@@ -318,7 +318,7 @@ The job will take about a minute to complete. Click on refresh icon if the job d
 
  Now that you have gone through PDB life cycle operations, we will switch focus and cover the use case of building a private cloud using Enterprise Manager and how to quickly provision (with minimal inputs) and manage PDBs using PDB-as-a-service (PDBaaS).
 
-## **Step 5:** Self-Service to Request PDB Using PDBaaS
+## **STEP 5:** Self-Service to Request PDB Using PDBaaS
 
 With the Self-Service Portal, cloud users can request an  Pluggable Database through a simple process, monitor resource consumptions, and manage the pluggable database through an intuitive graphical user interface. Expiry time is provided while requesting the PDB instance and PDB is automatically deleted based on the expiry time.
 
@@ -337,27 +337,27 @@ With the Self-Service Portal, cloud users can request an  Pluggable Database thr
 * **Provision New Empty Pluggable Database**: This template enables users to create a new pluggable database in a container database configured by DBA
 * **Provision Pluggable Database with Data**: This template enables users to create a new pluggable database with data from non-container database.
 
-4.  In the “**Pluggable Database Configuration**” section, enter Service and SID details:
+4. In the “**Pluggable Database Configuration**” section, enter Service and SID details:
 
-- Name: **YOUR INITIALS\_PDB2** (e.g. AS\_PDB2)
-- Database Service Name **: SERVICE\_YOUR INITIALS\_PDB2 (e.g. SERVICE\_AS\_PDB2)**
-- Workload Size: Choose **Small**
+  - Name: **YOUR INITIALS\_PDB2** (e.g. AS\_PDB2)
+  - Database Service Name **: SERVICE\_YOUR INITIALS\_PDB2 (e.g. SERVICE\_AS\_PDB2)**
+  - Workload Size: Choose **Small**
 
   ![](images/fd8fe73465009dbd65e2231503481e40.jpg " ")
 
 5.  Enter Credentials details in the “**Pluggable Database Administrator Account**”
 
-- Administrator Name: **PDBADMIN**
-- Password: **welcome1**
-- Confirm Password: **welcome1**
-- Tablespaces: **Accept default**
+  - Administrator Name: **PDBADMIN**
+  - Password: **welcome1**
+  - Confirm Password: **welcome1**
+  - Tablespaces: **Accept default**
 
   ![](images/181bed80a9978ed3e02c050838749f2b.jpg " ")
 
 6.  Instance Details, keep all defaults as they are. The Properties Page has the properties for the instance. The Self-Service Administrator has configured this as a optional step. However, properties can help users locate an instance more quickly. So Enter:
 
-- Contact: **CYRUS**
-- Lifecycle Status: **Test**
+  - Contact: **CYRUS**
+  - Lifecycle Status: **Test**
 
   ![](images/f5f29e12efaaf8a1fce318e871d9009d.jpg " ")
 
@@ -367,7 +367,7 @@ With the Self-Service Portal, cloud users can request an  Pluggable Database thr
 
 8.  Click on Submit button
 
-What do these options represent? In most cases the PDBaaS options are self-explanatory. The self-service user should be able to provision a PDB by entering minimal information. Fields with an ‘\*’ represent mandatory input fields. Please refer to the table listed below for a description of each option:
+  What do these options represent? In most cases the PDBaaS options are self-explanatory. The self-service user should be able to provision a PDB by entering minimal information. Fields with an ‘\*’ represent mandatory input fields. Please refer to the table listed below for a description of each option:
 
 | **Field**                   | **Description**                                                                                                                                                                                                                                                                                    |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -387,12 +387,11 @@ What do these options represent? In most cases the PDBaaS options are self-expla
 
 11.  It will perform the following actions:
 
-* Create database roles and PDB
-* Create a resource plan based on the workload size
-* Create and register the database
+  * Create database roles and PDB
+  * Create a resource plan based on the workload size
+  * Create and register the database
 
-The request should take less than 10 minutes to complete. Click on refresh icon or as an alternative set Refresh to 30 seconds. The success status
-indicates that PDB database was successfully created. The new PDB database should be visible under Database Cloud Services page.
+  The request should take less than 10 minutes to complete. Click on refresh icon or as an alternative set Refresh to 30 seconds. The success status indicates that PDB database was successfully created. The new PDB database should be visible under Database Cloud Services page.
 
   ![](images/3fc668c3d45cc0a1a7dc3c3f7233bfe6.jpg " ")
 
@@ -420,9 +419,9 @@ indicates that PDB database was successfully created. The new PDB database shoul
 
   ![](images/20537907e3a274a9df16e7c54f73713f.jpg " ")
 
-* Resize allows you to resize your instance to other available resource sizes.
-* We have 2 resource sizes available for Service Template. Both are displayed.
-* Current size of PDB instance is Small, you can now resize it to large.
+  * Resize allows you to resize your instance to other available resource sizes.
+  * We have 2 resource sizes available for Service Template. Both are displayed.
+  * Current size of PDB instance is Small, you can now resize it to large.
 
   ![](images/cc03cc86d7e3d8146a3d799b52583a83.jpg " ")
 
@@ -446,7 +445,7 @@ indicates that PDB database was successfully created. The new PDB database shoul
 
   ![](images/2b44dd4c41f594cddd9adc74dd193297.jpg " ")
 
-## **Step 6:** Administrative setup for PDB-as-a-Service (Private Cloud)
+## **STEP 6:** Administrative setup for PDB-as-a-Service (Private Cloud)
 
 Previous exercises demonstrated the process of requesting PDBs using available service templates as performed by a Self-Service user. In this section, we will see the Administrative setup for PDBaaS.
 

@@ -1,6 +1,10 @@
 # Database Performance Management: Find, Fix, Validate
 ## Introduction
+Performance Hub is a single pane of glass view of database performance with access to Active Session History (ASH) Analytics, Real-time SQL Monitoring and SQL Tuning together. In this lab you will get familiar with Performance hub, Real-time database operation monitoring, SQL Performance Analyzer etc.  
+
+### Objectives
 The objective of this lab is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud Control 13c
+
 
 *Estimated Lab Time*: 55 minutes
 
@@ -32,66 +36,65 @@ e.g: https://111.888.111.888:7803/em
 | **4**  | SQL Performance Analyzer Optimizer Statistics | 10 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c with Oracle Database 18c. | SQL Performance Analyzer gathers Oracle Database Optimizer statistics for validation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **5**  | Database Workload Replay                      | 10 minutes       | The objective of this activity is to is to demonstrate and use the Database Replay functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c and Oracle Database 18c.                | **Scenario:** You've been asked to add three new indexes for an application, but before adding, you want proof that database performance is improved. Use of SQL Performance Analyzer (SPA) isn't enough because there is also the cost of maintaining the indexes. Replay will be performed against the **Sales** Container Database and changes need to be performed in the OLTP Container against the **DWH\_TEST** schema. The database version is 18c so the capture and replay are performed using a CDB. |
 
-## **Step 0:** Running your Workload
+## **STEP 0:** Running your Workload
 ### Login to Host using SSH Key based authentication
-Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
-  ````
-  <copy>sudo su - oracle</copy>
-  ````
+1. Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
+      ````
+      <copy>sudo su - oracle</copy>
+      ````
 
 ### Login to OMS Console
-Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
+1. Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-1. Update the Named Credentials with your SSH Key
+### Update the Named Credentials with your SSH Key
 
-  Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
+1. Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
 
-  ![](images/update_ssh_creds.jpg " ")
+    ![](images/update_ssh_creds.jpg " ")
 
 2. Setup oracle Named Credentials using Job System
 
-  This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
+    This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
   Navigate to "***Enterprise >> Job >> Library***" and **select** "SETUP ORACLE CREDENTIALS"; **Click** Submit.
 
-  ![](images/named_creds_job.jpg " ")
+    ![](images/named_creds_job.jpg " ")
 
+3. Click **Submit** again on the Job submission Page
 
-3.  Click **Submit** again on the Job submission Page
-
-  ![](images/named_creds_job_submit.jpg " ")
+    ![](images/named_creds_job_submit.jpg " ")
 
 4. The Job will be submitted successfully. **Click** on SETUP ORACLE CREDENTIALS Job link to view the Job
 
-  ![](images/submitted.jpg " ")
+    ![](images/submitted.jpg " ")
 
 5. The Job should show Status **Succeeded**
 
-  ![](images/named_creds_job_succeeded.jpg " ")
+    ![](images/named_creds_job_succeeded.jpg " ")
 
 
 ### Prepare database - Option 1: Using EM Console
-1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
+1. Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
 2. From the upper left, navigate from **Enterprise** to **Job** to then **Library**
 
-  ![](images/emjobnav.png " ")
+    ![](images/emjobnav.png " ")
 
 3. Locate and select the job name **1-DB\_LAB\_START**, and Click the Submit  button.
 
-  ![](images/emdbstartjob.png " ")
+    ![](images/emdbstartjob.png " ")
 
 4. Then Click the Submit button in the upper right of your window.
 
-  ![](images/emjobsubmitbutton.png " ")
+    ![](images/emjobsubmitbutton.png " ")
 
 5. The workload is now started and takes a few minutes to ramp up.
 
-  ![](images/emjobcom.png " ")
+    ![](images/emjobcom.png " ")
 
 ### Prepare database - Option 2: Using SSH terminal from the VM host
 
@@ -101,18 +104,18 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 - Set your environment variables with ***SALESENV***
 - Execute the script **1-db\_lab\_start.sh**
 
-````
-<copy>sudo su - oracle
-cd scripts
-source SALESENV
-. ./1-db_lab_start.sh</copy>
-````
+  ````
+  <copy>sudo su - oracle
+  cd scripts
+  source SALESENV
+  . ./1-db_lab_start.sh</copy>
+  ````
 
   ![](images/emopt2start.jpg " ")
 
-## **Step 1:** Performance Hub
+## **STEP 1:** Performance Hub
 
-1.  Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
+1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
   ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
 
@@ -140,9 +143,9 @@ source SALESENV
 
 6. Make sure to slide the time picker on an area of high usage (e.g., CPU, IO or Waits). Notice how the corresponding selected time window also changes in the summary section. You can also resize the slider to entirely cover the time period of your interest.
 
-Notice the graph at bottom, it is providing more detailed view of the time window you selected. By Default the wait class dimension is selected. On the right hand side of the graph you have a list of wait classes for the time window you selected (blue for user I/O, green for CPU etc.). Notice how the color changes if you hover over either the menu or the graph to highlight the particular wait class.
+  Notice the graph at bottom, it is providing more detailed view of the time window you selected. By Default the wait class dimension is selected. On the right hand side of the graph you have a list of wait classes for the time window you selected (blue for user I/O, green for CPU etc.). Notice how the color changes if you hover over either the menu or the graph to highlight the particular wait class.
 
-Wait class isn’t the only dimension you can drill into the performance issue by. Let’s say you wanted to identify the SQL that was causing the biggest performance impact. You can do that by **Clicking** the drop down list and changing the top dimension from wait class to SQL ID.
+  Wait class isn’t the only dimension you can drill into the performance issue by. Let’s say you wanted to identify the SQL that was causing the biggest performance impact. You can do that by **Clicking** the drop down list and changing the top dimension from wait class to SQL ID.
 
 7.  **Select** the SQL ID dimension from the list of available dimensions (Under Top Dimensions) using the dropdown box that is currently displaying Wait Class. Top Dimensions SQL ID
 
@@ -176,7 +179,7 @@ Wait class isn’t the only dimension you can drill into the performance issue b
 
 16. **Click** on “Save” button on top right corner of the page. This will help you to save this monitored execution in “.html” format, which you can use it to share or to diagnose offline.
 
-## **Step 2:** Real-Time Database Operations Monitoring
+## **STEP 2:** Real-Time Database Operations Monitoring
 
 - Login as user "opc",
 - Sudo over to user "oracle"
@@ -184,27 +187,25 @@ Wait class isn’t the only dimension you can drill into the performance issue b
 - Set your environment variables with ***SALESENV***
 - Change directory to **load/frame/queries/awrv**
 
-````
-<copy>sudo su - oracle
-cd scripts
-source SALESENV
-cd load/frame/queries/awrv</copy>
-````
+  ````
+  <copy>sudo su - oracle
+  cd scripts
+  source SALESENV
+  cd load/frame/queries/awrv</copy>
+  ````
 
-1. Using SQLPlus connect to the sh2 account. Open the file (!vi DBOP.sql) from the SQL prompt and then review the content of the file.
-At the beginning of the file you will notice how we have tagged the operation with dbms\_sql\_monitor.begin\_operation and ended it with dbms\_sql\_monitor.end\_operation
+1. Using SQLPlus connect to the sh2 account. Open the file (!vi DBOP.sql) from the SQL prompt and then review the content of the file. At the beginning of the file you will notice how we have tagged the operation with dbms\_sql\_monitor.begin\_operation and ended it with dbms\_sql\_monitor.end\_operation.
 Now execute the file \@DBOP.sql
-
-````
-<copy>sqlplus sh2/sh2@psales
-@DBOP.sql</copy>
-````
+    ````
+    <copy>sqlplus sh2/sh2@psales
+    @DBOP.sql</copy>
+    ````
 
 2. You should already be logged on to Enterprise Manager. If you are not, please follow the instructions detailed earlier. Select the Monitored SQL tab.
 
 3. Review the list of currently executing SQLs are visible click on the DBOP\_DEMO name. This will open the DBOP named DBOP\_DEMO.
 
-Note: You may need to scroll down or select “Database operations” from the type dropdown.
+  Note: You may need to scroll down or select “Database operations” from the type dropdown.
 
   ![](images/b10c056370e56dd1286ca1f556118c8f.jpg " ")
 
@@ -216,7 +217,7 @@ Note: You may need to scroll down or select “Database operations” from the t
 
   ![](images/1a32fbdd89e519c2b8401e7dd0626890.jpg " ")
 
-## **Step 3:** Tuning a SQL in a PDB
+## **STEP 3:** Tuning a SQL in a PDB
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -278,7 +279,7 @@ Note: You may need to scroll down or select “Database operations” from the t
 
 This concludes the Database Performance Management lab activity. You can now move on to Real Application Testing lab activity.
 
-## **Step 4:** SQL Performance Analyzer Optimizer Statistics
+## **STEP 4:** SQL Performance Analyzer Optimizer Statistics
 
 In this activity we need to configure the database to set up optimizer statistics to be stale. So the first step is to create and submit a job that will configure the statistics to be stale.
 
@@ -390,95 +391,94 @@ You have now learned how to work with SPA. As you can see there are Guided Workf
 
 Details about newly published statistics can be found if you navigate **Schema** , to **Database Object** , to **Tables** , and Select tables for schema ‘STAT1’
 
-## **Step 5:** Database Workload Replay
+## **STEP 5:** Database Workload Replay
 
 1. Create a Replay Task
 You need to open two SSH sessions to your dedicated VM host as user "opc" using the provided SSH key.  
 
-````
-<copy>sudo su - oracle</copy>
-````
+    ````
+    <copy>sudo su - oracle</copy>
+    ````
 
 #### SSH Session 1
 
 3. Set Environment variables for sales database
 
-````
-<copy>. ./sales.env</copy>
-````
+    ````
+    <copy>. ./sales.env</copy>
+    ````
 
 4. Connect to sales database and create indexes. (indexes are already created, just need to make them visible)
 
-````
-<copy>sqlplus system/welcome1@oltp <<EOF
-alter index dwh_test.DESIGN_DEPT_TAB2_IDX1 visible;
-alter index dwh_test.DISTRIBUTION_DEPT_TAB2_IDX visible;
-alter index dwh_test.OUTLETS_TAB3_IT_IDX visible;
-EOF</copy>
-````
+    ````
+    <copy>sqlplus system/welcome1@oltp <<EOF
+    alter index dwh_test.DESIGN_DEPT_TAB2_IDX1 visible;
+    alter index dwh_test.DISTRIBUTION_DEPT_TAB2_IDX visible;
+    alter index dwh_test.OUTLETS_TAB3_IT_IDX visible;
+    EOF</copy>
+    ````
 
 5. We have already performed the capture and stored it in
 
-/home/oracle/scripts/dbpack/RAT\_CAPTURE/DBReplayWorkload\_OLTP\_CAP\_1 RAT\_REPLAY
+    /home/oracle/scripts/dbpack/RAT\_CAPTURE/DBReplayWorkload\_OLTP\_CAP\_1 RAT\_REPLAY
+    The capture directory should be copied to a Replay directory. In a normal situation replay is performed against a test server. This test environment is limited so we will only copy the directory to a replay path instead
 
-The capture directory should be copied to a Replay directory. In a normal situation replay is performed against a test server. This test environment is limited so we will only copy the directory to a replay path instead
-
-````
-<copy>cd scripts/dbpack
-cp -r RAT_CAPTURE/DBReplayWorkload_OLTP_CAP_1 RAT_REPLAY
-cd RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
-````
+    ````
+    <copy>cd scripts/dbpack
+    cp -r RAT_CAPTURE/DBReplayWorkload_OLTP_CAP_1 RAT_REPLAY
+    cd RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
+    ````
 
 6. Connect to as sysdba and grant become user to system on all containers
 
-````
-<copy>sqlplus sys/welcome1 as sysdba <<EOF
-grant become user to system container=all;
-EOF</copy>
-````
+    ````
+    <copy>sqlplus sys/welcome1 as sysdba <<EOF
+    grant become user to system container=all;
+    EOF</copy>
+    ````
 
 7. Connect to system create a directory object to locate the capture and preprocess the capture
 
-````
-<copy>connect system/welcome1
-CREATE DIRECTORY DBR_REPLAY AS '/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1';
-exec DBMS_WORKLOAD_REPLAY.PROCESS_CAPTURE (capture_dir => 'DBR_REPLAY');</copy>
-````
+    ````
+    <copy>connect system/welcome1
+    CREATE DIRECTORY DBR_REPLAY AS '/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1';
+    exec DBMS_WORKLOAD_REPLAY.PROCESS_CAPTURE (capture_dir => 'DBR_REPLAY');</copy>
+    ````
 
 8. We can now start to replay the workload. Initialize replay will load replay metadata created during preprocessing
 
-````
-<copy>exec DBMS_WORKLOAD_REPLAY.INITIALIZE_REPLAY (replay_name => 'REPLAY_1', replay_dir => 'DBR_REPLAY');</copy>
-````
+    ````
+    <copy>exec DBMS_WORKLOAD_REPLAY.INITIALIZE_REPLAY (replay_name => 'REPLAY_1', replay_dir => 'DBR_REPLAY');</copy>
+    ````
 
 9. If the replay environment uses different connect strings compared to the capture environment then we need to remap connections. Check connect strings.
 
-````
-<copy>select * from DBA_WORKLOAD_CONNECTION_MAP;</copy>
-````
+    ````
+    <copy>select * from DBA_WORKLOAD_CONNECTION_MAP;</copy>
+    ````
 
 10. Next, remap connections
 
-````
-<copy>exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 1, replay_connection => 'HR');
-exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 2, replay_connection => 'OLTP');
-exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 3, replay_connection => 'SALES');
-exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 4, replay_connection => 'SALES');
-exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 5, replay_connection => 'PSALES');
-exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 6, replay_connection=> 'SALES');</copy>
-````
+    ````
+    <copy>exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 1, replay_connection => 'HR');
+    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 2, replay_connection => 'OLTP');
+    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 3, replay_connection => 'SALES');
+    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 4, replay_connection => 'SALES');
+    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 5, replay_connection => 'PSALES');
+    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 6, replay_connection=> 'SALES');</copy>
+    ````
 
 11. Now check new settings for connect strings
 
-````
-<copy>select * from DBA_WORKLOAD_CONNECTION_MAP;</copy>
-````
+    ````
+    <copy>select * from DBA_WORKLOAD_CONNECTION_MAP;</copy>
+    ````
 
 12. Prepare the replay by setting replay options. This replay will use default synchronization which is time-based synchronization. With this setting we honor timing for each individual call the best as possible. If a session has slow SQL statements then other sessions will still honor timing but they will not wait for the slow session. This can cause higher divergence. If divergence is less than 10 % then it should be considered as a good replay.
 
-````
-<copy>exec DBMS_WORKLOAD_REPLAY.PREPARE_REPLAY (synchronization => 'TIME');</copy>
-````
+    ````
+    <copy>exec DBMS_WORKLOAD_REPLAY.PREPARE_REPLAY (synchronization => 'TIME');</copy>
+    ````
 
 Now switch to session 2. You should already be connected as user oracle
 
@@ -486,16 +486,16 @@ Now switch to session 2. You should already be connected as user oracle
 
 13. Set Environment variables for sales database and change to the replay directory
 
-````
-<copy>. ./sales.env
-cd scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
-````
+    ````
+    <copy>. ./sales.env
+    cd scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
+    ````
 
 14. Calibrate the replay and validate how many replay clients that are needed to replay the workload.
 
-````
-<copy>wrc mode=calibrate replaydir=/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
-````
+    ````
+    <copy>wrc mode=calibrate replaydir=/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
+    ````
 
 **Note**: Replay clients are the application tier and should not be co-allocated with the database due to resource usage. Our recommendation is to place replay clients close to the database to avoid delays between database and replay clients. This is regardless if the application tier is located far away. The reason is that the replay clients communicate with the database to know when a certain database call should be replayed and if replay clients are located far away it will delay the call and create artificial delays during the replay.
 
@@ -520,9 +520,9 @@ Assumptions:
 
 15. The workload is relatively small and it needs only one replay client so we will start it from this session
 
-````
-<copy>wrc system/welcome1@sales mode=replay replaydir=/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
-````
+    ````
+    <copy>wrc system/welcome1@sales mode=replay replaydir=/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
+    ````
 
 Now switch back to session 1. You should already be connected as user oracle
 
@@ -530,79 +530,79 @@ Now switch back to session 1. You should already be connected as user oracle
 
 16. You should still be connected in the SQL*Plus session as used before. From this window start the replay
 
-````
-<copy>Exec DBMS_WORKLOAD_REPLAY.START_REPLAY ();</copy>
-````
+    ````
+    <copy>Exec DBMS_WORKLOAD_REPLAY.START_REPLAY ();</copy>
+    ````
 
-19.	Monitor the replay in session 2 and when the replay has finished the generate replay reports from session 1
+17.	Monitor the replay in session 2 and when the replay has finished the generate replay reports from session 1
 
-20.	When replay has finished import capture AWR data. First create a common user as staging schema
+18.	When replay has finished import capture AWR data. First create a common user as staging schema
 
-````
-<copy>Create user C##CAP_AWR;
-Grant DBA to C##CAP_AWR;
-SELECT DBMS_WORKLOAD_CAPTURE.IMPORT_AWR (capture_id => 11,staging_schema => 'C##CAP_AWR') from dual;</copy>
-````
+    ````
+    <copy>Create user C##CAP_AWR;
+    Grant DBA to C##CAP_AWR;
+    SELECT DBMS_WORKLOAD_CAPTURE.IMPORT_AWR (capture_id => 11,staging_schema => 'C##CAP_AWR') from dual;</copy>
+    ````
 
-21.	Generate replay report as a text report. This report can also be generated in HTML or XML format.
+19.	Generate replay report as a text report. This report can also be generated in HTML or XML format.
 
-````
-<copy>Set long 500000
-Set linesize 200
-Set pagesize 0
+    ````
+    <copy>Set long 500000
+    Set linesize 200
+    Set pagesize 0
 
-Spool replay_report.txt
-select dbms_workload_replay.report (replay_id => 1, format=> 'TEXT') from dual;
-spool off</copy>
-````
+    Spool replay_report.txt
+    select dbms_workload_replay.report (replay_id => 1, format=> 'TEXT') from dual;
+    spool off</copy>
+    ````
 
-22.	Please open the text report with a Linux editor of your choice such as vi and look at replay details.
+20.	Please open the text report with a Linux editor of your choice such as vi and look at replay details.
 
-````
-<copy>!vi replay_report.txt</copy>
-````
+    ````
+    <copy>!vi replay_report.txt</copy>
+    ````
 
-23.	Can you see if the replay uses more or less database time than the capture? Exit the report in vi use “ZZ” and you will return back to SQL*plus
+21.	Can you see if the replay uses more or less database time than the capture? Exit the report in vi use “ZZ” and you will return back to SQL*plus
 
-24.	Generate compare period report as HTML report.
+22.	Generate compare period report as HTML report.
 
-````
-<copy>spool compare_period_report.html
+    ````
+    <copy>spool compare_period_report.html
 
-VAR v_clob CLOB
-BEGIN dbms_workload_replay.compare_period_report(replay_id1 => 1, replay_id2 => null, format => DBMS_WORKLOAD_REPLAY.TYPE_HTML, result => :v_clob);
-END;
-/
+    VAR v_clob CLOB
+    BEGIN dbms_workload_replay.compare_period_report(replay_id1 => 1, replay_id2 => null, format => DBMS_WORKLOAD_REPLAY.TYPE_HTML, result => :v_clob);
+    END;
+    /
 
-print v_clob;
-spool off
-exit</copy>
-````
+    print v_clob;
+    spool off
+    exit</copy>
+    ````
 
-25.	To be able to read the report it needs to be downloaded change file permissions and copy the file to
+23.	To be able to read the report it needs to be downloaded change file permissions and copy the file to
 
-````
-<copy>chmod 777 compare_period_report.html
-cp compare_period_report.html /tmp</copy>
-````
+    ````
+    <copy>chmod 777 compare_period_report.html
+    cp compare_period_report.html /tmp</copy>
+    ````
 
-26.	Use a scp client to copy the file to your local machine. Open the file in a text editor and remove initial lines before first row starting with
+24.	Use a scp client to copy the file to your local machine. Open the file in a text editor and remove initial lines before first row starting with
 
-````
-<copy>“< html lang="en">”</copy>
-````
+    ````
+    <copy>“< html lang="en">”</copy>
+    ````
 
-And trailing lines after last row ending with
+    And trailing lines after last row ending with
 
-````
-<copy>“<b> End of Report. </b>
-  </body>
-</html> “</copy>
-````
+    ````
+    <copy>“<b> End of Report. </b>
+      </body>
+    </html> “</copy>
+    ````
 
 27.	You can now open the report in a browser and look at SQL statement with performance improvements and regression.
 
-We have seen how you can use Real Application Testing Database Replay to validate changes that may impact performance on both SQL statements and DML statements. We have also seen the extensive reporting that will help you find and analyze bottlenecks or peaks during certain workloads.
+  We have seen how you can use Real Application Testing Database Replay to validate changes that may impact performance on both SQL statements and DML statements. We have also seen the extensive reporting that will help you find and analyze bottlenecks or peaks during certain workloads.
 
 This completes the Lab
 
