@@ -40,7 +40,7 @@ Your tenancy administrator needs to set up an Oracle Data Safe environment for y
 ## **STEP 2** Sign in to the Oracle Cloud Infrastructure Console by using your Oracle Cloud account credentials
 
 
-- Access the Oracle email that was sent to you with the verification information for your user account. The email sender is [noreply@accountrecovery.oci.oraclecloud.com](../mailto:noreply@accountrecovery.oci./mailto:noreply@accountrecovery.oci..md). The email contains a link to the **Oracle Cloud Infrastructure Sign In** page as well as another link in case the first link does not work.
+- Access the Oracle email that was sent to you with the verification information for your Oracle Cloud user account. The email sender is [noreply@accountrecovery.oci.oraclecloud.com](../mailto:noreply@accountrecovery.oci./mailto:noreply@accountrecovery.oci..md). The email contains a link to the **Oracle Cloud Infrastructure Sign In** page as well as another link in case the first link does not work.
 
 
 
@@ -48,7 +48,7 @@ Your tenancy administrator needs to set up an Oracle Data Safe environment for y
 - Click the **Sign in to Oracle Cloud** link. The **Oracle Cloud Infrastructure Sign In** page is displayed. Your tenancy name is already filled in for you.
 
 
-- Under **Oracle Cloud Infrastructure**, in the **USER NAME** field, enter your Oracle Cloud account credentials.
+- Under **Oracle Cloud Infrastructure**, in the **USER NAME** field, enter your Oracle Cloud user name.
 
 
 - In the **PASSWORD** field, enter your temporary password.
@@ -58,7 +58,7 @@ Your tenancy administrator needs to set up an Oracle Data Safe environment for y
 
 
 
-- If this is the first time that you are signing in to the Oracle Cloud Infrastructure Console, you are prompted to change your password. Enter your temporary password and your new password, and then click **Sign In**. After you sign in, the Console Home page is displayed.
+- If this is the first time that you are signing in to the Oracle Cloud Infrastructure Console, you are prompted to change your password. Enter your temporary password and your new password, and then click **Sign In**. After you sign in, the Console's **Home** page is displayed.
 
 
 
@@ -81,7 +81,7 @@ If you have a question during this workshop, you can use the **[Autonomous Data 
 
 
 - **Author**- Jody Glover, UA Developer, Oracle Data Safe Team
-- **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 1, 2020
+- **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 14, 2020
 
 
 ## See an issue?
