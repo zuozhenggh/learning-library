@@ -14,7 +14,7 @@
         {
             "title": "Lab 1: Provision an Instance",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../iam/iam.md"
         },
         {
             "title": "Lab 2: Setup the Environment",
