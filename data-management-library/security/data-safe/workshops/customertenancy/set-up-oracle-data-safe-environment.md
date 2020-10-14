@@ -33,7 +33,7 @@ You can create a native or federated user account. Both are supported in Oracle 
 - From the navigation menu, select **Identity**, and then **Users**. The **Users** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
 - Click **Create User**.
 - Enter a short form name for the user account, for example, `dsu01`.
-- Enter a user description for the user account, for example, **Data Safe user**.
+- Enter a user description for the user account, for example, **Data Safe user 1**.
 - Enter the email address for the user. Oracle will send an email to this address with instructions on how to sign in to the tenancy.
 
 - Click **Create**. The user account is listed on the **Users** page.
@@ -47,7 +47,8 @@ You can create a native or federated user account. Both are supported in Oracle 
 - Click **Create Group**. The **Create Group** dialog box is displayed.
 
 - Enter a name for the group, for example, `dsg01` (short for Data Safe group 1)
-- Enter a description for the group, for example, **Oracle Data Safe user group 1**. A description is required.
+
+- Enter a description for the group, for example, **User group for data safe user 1**. A description is required.
 
 - (Optional) Create a tag.
 - Click **Create**. The group is listed on the **Groups** page.
