@@ -13,7 +13,7 @@ This lab assumes you have completed:
    - Lab: Prepare Setup
    - Lab: Environment Setup
 
-## **STEP 1**: Initialize the DBSec-Lab environment
+## **Step 1**: Initialize the DBSec-Lab environment
 
 Before performing the workshop, please make sure you have the latest labs scripts!
 
@@ -46,7 +46,7 @@ Before performing the workshop, please make sure you have the latest labs script
 
 	---
 
-## **STEP 2**: Start all the DBSec-Lab components
+## **Step 2**: Start all the DBSec-Lab components
 
 1. Start DBSec-Lab Environement
 
@@ -87,7 +87,7 @@ Before performing the workshop, please make sure you have the latest labs script
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM, October 2020
+- **Last Updated By/Date** - Hakim Loumi, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

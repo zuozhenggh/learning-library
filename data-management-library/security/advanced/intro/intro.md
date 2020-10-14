@@ -44,7 +44,7 @@ The entire DB Security PMs Team wishes you an excellent workshop.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Principal Solution Engineer, Database Security
+- **Contributors** - Gian Sartor, Rene Fontcha
 - **Last Updated By/Date** - Hakim Loumi, October 2020
 
 ## See an issue?
