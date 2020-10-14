@@ -33,7 +33,6 @@ e.g: https://111.888.111.888:7803/em
 | 5                                                         | Host security compliance using custom compliance standard | 10 minutes   | Host security compliance                                                                                       | Monitor security compliance for host targets from one customized dashboard.                                 |
 
 ## **Step 0:** Running your Workload
-
 ### Login to OMS Console
 Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
