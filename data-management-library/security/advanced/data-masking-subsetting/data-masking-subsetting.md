@@ -8,13 +8,16 @@ It gives the user an opportunity to learn how to configure those features in ord
 - *Estimated Lab Time:* 65 minutes
 
 ### Objectives
-- *Add objectives here ........*
+- Create an Application Data Model (ADM)
+- Generate a data masking script to mask sensitive data
+- Execute the data masking script and compare before/after values
 
 ### Prerequisites
 This lab assumes you have completed:
    - Lab: Generate SSH Keys
    - Lab: Prepare Setup
    - Lab: Environment Setup
+   - Lab: Initialize and Start the DBSecLab Environment
 
 ### Video Preview
 - Watch a preview of "*Understanding Oracle Data Masking & Subsetting (April 2019)*" [](youtube:3zi0Bs_bgEw)
@@ -803,7 +806,7 @@ Video
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

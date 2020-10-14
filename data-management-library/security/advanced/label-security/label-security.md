@@ -8,13 +8,16 @@ It gives the user an opportunity to learn how to configure those features to sec
 - *Estimated Lab Time:* 30 minutes
 
 ### Objectives
-- The objective of this lab is to provide guidance on how Oracle Label Security could be used to help tracking consent and enforce restriction of processing under the General Data Protection Regulation requirements. Different OLS strategies could be taken to achieve similar functionality. The details provided here are merely to serve as an example.
+The objective of this lab is to provide guidance on how Oracle Label Security could be used to help tracking consent and enforce restriction of processing under the General Data Protection Regulation requirements.<br>
+Different OLS strategies could be taken to achieve similar functionality.<br>
+The details provided here are merely to serve as an example.
 
 ### Prerequisites
 This lab assumes you have completed:
    - Lab: Generate SSH Keys
    - Lab: Prepare Setup
    - Lab: Environment Setup
+   - Lab: Initialize and Start the DBSecLab Environment
    - Lab: Oracle Database Vault
 
 ### Video Preview
@@ -329,7 +332,7 @@ Technical Documentation: [Oracle Label Security 19c](https://docs.oracle.com/en/
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

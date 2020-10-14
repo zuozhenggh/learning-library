@@ -30,21 +30,21 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Initialize and Start Environment",
+      "title": "Lab 4: Initialize and Start the DBSecLab Environment",
       "description": "How to initialize and start all the workshop components",
-      "publisheddate": "09/01/2020",
+      "publisheddate": "10/14/2020",
       "filename": "../../init-start-env/init-start-env.md"
     },
     {
       "title": "Lab 5: Oracle Transparent Data Encryption (TDE)",
       "description": "In this lab you can see how to leverage Oracle Transparent Data Encryption (TDE) features",
-      "publisheddate": "09/01/2020",
+      "publisheddate": "10/14/2020",
       "filename": "../../advanced-security/tde/tde.md"
     },
     {
       "title": "Lab 6: Oracle Data Redaction",
       "description": "In this lab you can see how to leverage Oracle Data Redaction features",
-      "publisheddate": "09/01/2020",
+      "publisheddate": "10/14/2020",
       "filename": "../../advanced-security/data-redaction/data-redaction.md"
     }
   ]
