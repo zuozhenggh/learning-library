@@ -1,10 +1,18 @@
-# Lab 6 - Create the Customer_360 graph 
+# Create the Customer_360 graph 
 
 ## Introduction
 
 Now, the tables are created and populated with data. Let's create a graph representation of them.
 
-Estinated time: 10 minutes
+Estimated Lab Time: 10 minutes
+
+### Objectives
+
+- Learn how to create a graph from relational data sources.
+
+### Prerequisites
+
+- Successful completion of Lab 5 to create and populate the tables.
 
 ### Steps
 - Modify the graph server configuration to disable Transport Layer Security (TLS) / Secure Sockets Layer (SSL) for this lab
@@ -14,7 +22,7 @@ Estinated time: 10 minutes
 - Use PGQL Data Definition Language (DDL) (e.g. CREATE PROPERTY GRAPH) to instantiate a graph
 
 
-## **Step 1:** Modify the graph server config file
+## **STEP 1:** Modify the graph server config file
 
 1. SSH into the compute instance where you installed the graph server.
     First navigate to the folder where you created your SSH Keys. And connect using:
@@ -44,7 +52,7 @@ Estinated time: 10 minutes
 
     ![](images/change_tls.png " ")
 
-## **Step 2:** Start the graph server
+## **STEP 2:** Start the graph server
 
 1. Check that JAVA\_HOME and JAVA11\_HOME env variables are set and correct. That is, JAVA\_HOME points to JDK1.8 and Java11\_HOME to jdk1.11.
     Using command:
@@ -72,7 +80,7 @@ Estinated time: 10 minutes
     You will see the following log output once the server is up and running. It may take a minute for this log output to show up.
     >INFO: Starting ProtocolHandler ["http-nio-7007"]
 
-## **Step 3:** Start a client shell
+## **STEP 3:** Start a client shell
 
 1. Once the graph server is up and running, open a new SSH connection to the same compute instance.  
 
@@ -97,7 +105,7 @@ Estinated time: 10 minutes
     ```
     ![](images/connect_shell_to_server.png)
 
-## **Step 4:** Create the graph
+## **STEP 4:** Create the graph
 
 Enter the following sets of commands once the JShell has started and is ready.
 
@@ -206,7 +214,7 @@ Enter the following sets of commands once the JShell has started and is ready.
 
     ![](images/create_graph_2.png  " ")
 
-## **Step 5:** Check the newly created graph
+## **STEP 5:** Check the newly created graph
 
 Check that the graph was created. Copy, paste, and run the following statements in the JShell.
 
@@ -244,15 +252,13 @@ Check that the graph was created. Copy, paste, and run the following statements 
     ```
 
     ![](images/check_graph.png " ")
-    You may now *proceed to the next lab* (query and analyse the graph in JShell)
+    *You may now proceed to the next lab* 
 
 ## Acknowledgements
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
-
 * **Contributors** - Arabella Yao, Product Manager Intern, Database Management.  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
-
 - **Last Updated By/Date** - Jayant Sharma, October 2020
 
 ## See an issue?

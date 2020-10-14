@@ -14,7 +14,7 @@ This lab will show you how to start a database instance and listener from a Putt
 - Lab: Generate SSH Key
 - Lab: Setup Compute Instance
 
-## **Step 1:** Login to ConvergedDB Compute instance
+## **STEP 1:** Login to ConvergedDB Compute instance
 If you aren't already logged in, follow the steps below to login.  If you are logged in, skip to Step 2.
 
 1. Click the Hamburger Menu in the top left corner. Then hover over **Compute** > **Instances**. Find the instance you created in the previous lab.
@@ -35,7 +35,7 @@ If you aren't already logged in, follow the steps below to login.  If you are lo
       - sshkeylocation - Full path of your SSH key
       - your address - Your Public IP Address
 
-## **Step 2:** Start the Database and the Listener
+## **STEP 2:** Start the Database and the Listener
 4. Switch to the oracle user
       ````
       <copy>sudo su - oracle</copy>
@@ -52,7 +52,7 @@ If you aren't already logged in, follow the steps below to login.  If you are lo
       ````
    ![](./images/setup-script.png " ")
 
-## **Step 3:** Download SQL Developer
+## **STEP 3:** Download SQL Developer
 Certain workshops require SQL Developer.  To setup SQL Developer, follow the steps below.
 
 1. Download [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) from the Oracle.com site and install on your local system.
@@ -61,7 +61,7 @@ Certain workshops require SQL Developer.  To setup SQL Developer, follow the ste
 
       ![](./images/start-sql-developer.png " ")
 
-## **Step 4:**  Test a connection
+## **STEP 4:**  Test a connection
 1.  In the connections page click the green plus to create a new connection
 
 2.  Enter the following connection information to test your connection:

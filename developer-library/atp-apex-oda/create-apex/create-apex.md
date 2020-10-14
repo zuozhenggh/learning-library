@@ -116,7 +116,7 @@ Use Cases:
 
     ![Save SQL Script](./images/apex_quick_sql_run_success.png)
 
-## **STEP 3**: Insert rows on the table
+## **STEP 3**: Insert rows in the table
 
 We are going to mock some data to use it later with your Custom Component.
 

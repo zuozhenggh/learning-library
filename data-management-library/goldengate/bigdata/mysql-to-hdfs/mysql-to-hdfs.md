@@ -25,7 +25,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
-## **Step 0:** Running your Lab
+## **STEP 0:** Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”

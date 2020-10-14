@@ -74,16 +74,26 @@ Step 1 opening paragraph.
 
     ```
     Adding code examples
-  	Indentation is important for the code example to appear inside the step
+    Indentation is important for the code example to appear inside the step
     Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+  	<copy>Enclose the text you want to copy using the <copy> element.</copy>
     ```
 
 4. Code examples that include variables
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+  	```
+    <copy>ssh -i <ssh-key-file></copy>
+    ```
+
+    <!-- Note that files cannot include empty lines. This will be addresses in a future version. -->
+5. Example using an included file. Copy it from the block below:
+
+    ```
+    <copy>[](include:load_data)</copy>
+    ```
+
+    <!-- Use this syntax for now to force a the download of a file -->
+    Or download it using <a href="./files/load_data.sql" download-"load_data.sql" target="_blank">this link</a>.
 
 *At the conclusion of the lab add this statement:*
 You may proceed to the next lab.
@@ -101,5 +111,7 @@ You may proceed to the next lab.
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
