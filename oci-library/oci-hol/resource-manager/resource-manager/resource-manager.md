@@ -242,7 +242,7 @@ Now that we've successfully applied our Terraform to build out our cloud resourc
 
 - **Author** - Flavio Pereira, Larry Beausoleil, Eli Schilling
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
+- **Contributors** - Arabella Yao, Kamryn Vinson
 - **Last Updated By/Date** - Eli Schilling, October 2020
 - **Valid through** - October 2021
 
