@@ -13,7 +13,7 @@ This lab assumes you have completed:
    - Lab: Prepare Setup
    - Lab: Environment Setup
 
-## **Step 1**: Initialize the DBSec-Lab environment
+## **STEP 1**: Initialize the DBSec-Lab environment
 
 Before performing the workshop, please make sure you have the latest labs scripts!
 
@@ -46,7 +46,7 @@ Before performing the workshop, please make sure you have the latest labs script
 
 	---
 
-## **Step 2**: Start all the DBSec-Lab components
+## **STEP 2**: Start all the DBSec-Lab components
 
 1. Start DBSec-Lab Environement
 

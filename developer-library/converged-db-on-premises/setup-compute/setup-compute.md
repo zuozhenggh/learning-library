@@ -15,7 +15,7 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
 
-## **Step 1A**: Create Stack:  Compute + Networking
+## **STEP 1A**: Create Stack:  Compute + Networking
 
 If you already have a VCN setup, proceed to *Step 1B*.
 
@@ -77,7 +77,7 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
 You may now proceed to Step 2 (skip Step 1B).
 
-## **Step 1B**: Create Stack:  Compute only
+## **STEP 1B**: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
 - Ingress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
 
@@ -148,7 +148,7 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 
   ![](./images/em-stack-details-b.png " ")
 
-## **Step 2**: Terraform Plan (OPTIONAL)
+## **STEP 2**: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. This is optional, *you may skip directly to Step 3*.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
@@ -165,7 +165,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
   ![](./images/em-stack-plan-results-4.png " ")
 
-## **Step 3**: Terraform Apply
+## **STEP 3**: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **apply** to actually create the configuration.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and the compute instance.
@@ -194,7 +194,7 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
 4.  Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
 
-## **Step 4**: Connect to your instance
+## **STEP 4**: Connect to your instance
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
 ***Note:*** *If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*

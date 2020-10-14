@@ -27,7 +27,7 @@ This lab assumes you have:
 
    ![Create a stack](images/em-compute-instances.png " ")
 
-## **Step 2:** Connect to your instance
+## **STEP 2:** Connect to your instance
 
 ### Oracle Cloud Shell
 
