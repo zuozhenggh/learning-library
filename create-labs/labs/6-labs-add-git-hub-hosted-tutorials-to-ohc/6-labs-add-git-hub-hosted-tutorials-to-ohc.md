@@ -45,7 +45,7 @@ You must have OLL administrator privileges to view and edit content entries in O
 To add a link to a lab from an OHC Tutorials page:
 1. Open the [Self Publishing OHC Interface Page V3 application](https://apex.oraclecorp.com/pls/apex/f?p=40100:1:101812173799316:::::).
 2. In the **Search** field, enter your Product name and press **Enter**.
-3. Click **Edit** next to **Tutorials** to display the **Tutorials** page.
+3. Edit the release page for your Product to which, you want to add the lab.
     [](./images/ohc-edit-Pages.png " ")
 4. Click **Sections/Topics** and then click the name of the section where you want to add the lab to display the **Section** page.
     [](./images/ohc-section-topics.png " ")
