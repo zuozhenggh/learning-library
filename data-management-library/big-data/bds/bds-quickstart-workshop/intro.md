@@ -38,6 +38,10 @@ Watch our short video that explains key features in Oracle Big Data Service:
 ## Workshop Prerequisites
 This workshop requires an Oracle Cloud account. You may use your own cloud account or a training account whose details were given to you by an Oracle instructor.
 
+**Notes:**
+ + For more information about service limits, see [Service Limits](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm) in the Oracle Cloud Infrastructure documentation.
+ + To submit a request to increase your service limits, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm#Requesti) in the Oracle Cloud Infrastructure documentation.
+
 **You are all set to begin the labs! Please click Lab 1: Setup the BDS Environment in the Contents menu.**
 
 ## Want to Learn More About Oracle Big Data Service?

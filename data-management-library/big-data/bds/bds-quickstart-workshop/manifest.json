@@ -37,13 +37,13 @@
         }
         ,
         {
-              "title": "Lab 5:  Use Cloudera Manager and Hue to Access a BDS Cluster",
+              "title": "Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster",
               "description": "This lab shows you how to use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.",
               "filename": "./../bds-use-cm-hue-access-cluster/bds-use-cm-hue-access-cluster.md"
           }
           ,
           {
-              "title": "Lab 6:  Create a Hadoop Administrator User",
+              "title": "Lab 6: Create a Hadoop Administrator User",
               "description": "This lab shows you how to create a Hadoop Administrator(superuser) that will have full access to all the data and metadata on the cluster.",
               "filename": "./../bds-create-hadoop-user/bds-create-hadoop-user.md"
             }
