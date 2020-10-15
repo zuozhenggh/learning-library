@@ -2,13 +2,9 @@
     "workshoptitle": "High Performance Compute - Siemens Simcenter STAR-CCM+",
     "tutorials": [
         {
-            "title": "Prerequisites",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        },
-        {
             "title": "Introduction",
             "description": "Brief Introduction on Oracle HPC",
-            "filename": "../../intro/intro.md"   
+            "filename": "../../hpc-introduction/hpc-introduction.md"   
         },
         {
             "title": "Siemens STAR-CCM Introduction",
@@ -16,36 +12,32 @@
             "filename": "../../starCCM-intro/starCCM-intro.md"      
         },
         {
-            "title": "Lab 1: Generate SSH Key - Cloud Shell",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
-        },
-        {
-            "title": "Lab 2: Launch HPC Cluster Network",
+            "title": "Launch HPC Cluster Network",
             "description": "Steps to launch HPC Cluster Network",
             "filename": "../../launch-cluster/launch-cluster.md"        
         },
         {
-            "title": "Lab 3: Access your Cluster",
+            "title": "Access your Cluster",
             "description": "Steps to access the cluster",
             "filename": "../../access-cluster/access-cluster.md"
             
         },
         {         
-            "title": "Lab 4: Configure Visualization",
+            "title": "Configure Visualization",
             "description": "Setup and configure Visualization Tools",
             "filename": "../../config-visualization/config-visualization.md"
         },
         {
-            "title": "Lab 5: Access your VNC",
+            "title": " Access your VNC",
             "description": "Steps to access VNC",
             "filename": "../../access-VNC/access-VNC.md"
         },
         {
-            "title": "Lab 6: Install STAR-CCM",
+            "title": "Install STAR-CCM",
             "filename": "../../install/install.md"
         },
         {
-            "title": "Lab 7: Run STAR-CCM",
+            "title": "Run STAR-CCM",
             "filename": "../../run/run.md"
         },
         {
