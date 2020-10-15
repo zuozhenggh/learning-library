@@ -85,9 +85,16 @@ To publish your GitHub Pages site:
 5. Under **Theme Chooser**, click **Change Theme** and select a theme of your choice. This may take a few hours to complete.
 
   After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
+  ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
+
+  **Troubleshooting Tip and Workaround**: At times, you may notice a message, such as "Your site is having problems building: Page build timed out. Please try again later."
+    1. Select **none** from the **Select branch** drop-down list under source and click **Save** to display your GitHub repository site.
+    2. Click **Settings** and then **Options**.
+    3. Select **master** from the **Select branch** drop-down list under source and click **Save**.
+      The message under **GitHub Pages** changes to **Your site is published at https://achepuri.github.io/learning-library**
 
 ## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
-The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production (**upstream/master** repository).
+The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production **(upstream/master)** repository).
 
 **Note**: The owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
 
@@ -100,9 +107,9 @@ To create a Pull Request:
 
   ![](./images/git-hub-branch-browser-create-pull-request.png " ")
 
-3. Enter a subject for the pull request, an optional comment, and then click **Create pull request**.
-
-  A status page is displayed indicating that you have created a pull request along with the request number (#1770 for example), that it is pending review, and that merging is blocked. A merge that is blocked will be performed automatically as soon as it receives one approving review.
+3. Enter the title for the pull request, leave a comment (optional) and then click **Create pull request**.
+    ![](./images/git-hub-pull-request-title-comment.png " ")
+  A status page is displayed indicating that you have created a pull request along with the request number (for example, #1770), that it is pending review, and that merging is blocked.
 
   When your pull request is approved, the page gets updated with information about your commits being approved and merged into the **upstream/master** repository (production).
 
