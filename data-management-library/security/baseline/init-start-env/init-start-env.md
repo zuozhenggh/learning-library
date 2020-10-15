@@ -1,0 +1,92 @@
+# Initialize and Start the DBSecLab Environment
+
+## Introduction
+This lab will show you how to initialize and start the DBSecLab environment.
+
+### Objectives
+-   Import the latest labs scripts from Oracle repository
+-   Start all the DBSec-Lab components
+
+### Prerequisites
+This lab assumes you have completed:
+   - Lab: Generate SSH Keys
+   - Lab: Prepare Setup
+   - Lab: Environment Setup
+
+## **Step 1**: Initialize the DBSec-Lab environment
+
+Before performing the workshop, please make sure you have the latest labs scripts!
+
+1. Open a SSH session on your DBSec-Lab VM as Oracle User
+
+      ````
+    <copy>sudo su - oracle</copy>
+      ````
+
+2. Go to the scripts directory
+
+      ````
+    <copy>cd $DBSEC_HOME</copy>
+      ````
+
+3. Import the latest workshop scripts from Oracle's GitHub repository
+
+      ````
+    <copy>./update_workshop.sh</copy>
+      ````
+
+	---
+	**Note**:
+	- Oracle DB Security Product Management team is constantly updating the scripts labs (new features or corrections). So, please execute `./update_workshop.sh` as frequently as possible before using this workshop!
+	- If your scripts are already up-to-date, you will have the following message:
+
+		![](./images/init-start-env-001.png)
+
+    - Otherwise the new scripts will be imported!
+
+	---
+
+## **Step 2**: Start all the DBSec-Lab components
+
+1. Start DBSec-Lab Environement
+
+      ````
+    <copy>./start_DBSecLab.sh</copy>
+      ````
+
+	---
+	**Note:** It can take up to 10 minutes (with 4 oCPUs)
+
+	---
+	<br>
+
+2. Once it's started, check that all necessary labs resources are operational
+
+	- From your web browser, make sure you have access the following resources:
+		- Oracle EM 13c      : `https://<YOUR_DBSECLAB-VM_PUBLIC-IP>:7803/em`
+		- "My HR Application" on Glassfish:
+			- PDB1 PROD        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb1`
+			- PDB1 DEV         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb1`   (bg: red)
+		  	- PDB2 PROD        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb2`  (menu: red)
+		  	- PDB2 DEV         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb2`   (bg: red & menu: red)
+
+	- Optionally, run SQL Developer and connect to a database (1521) or SSH into the VM and Connet via SQLPlus
+
+		![](./images/init-start-env-002.png)
+
+   	---
+   	**Note:** In case of error, please check:
+   	- Your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
+
+   	---
+	<br>
+
+3. **Congratulations, now your environment is up and running and you can start performing the labs!**
+
+## Acknowledgements
+- **Author** - Hakim Loumi, Database Security PM
+- **Contributors** - Gian Sartor, Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, October 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
