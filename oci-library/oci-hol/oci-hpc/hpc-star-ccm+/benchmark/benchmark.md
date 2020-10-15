@@ -1,16 +1,16 @@
 ## **Benchmark Example**
 
-<img src="images/lemans.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](images/lemans.png " ")
 
 Performances of STAR-CCM+ are often measured using the LeMans benchmark with 17 and 105 Millions cells. The next graphs are showing how using more nodes impact the runtime, with a scaling really close to 100%. RDMA network, which has not been discussed in this runbook, only start to differentiate versus regular TCP runs if the Cells / Core ratio starts to go down.
 
 **17 Million Cells**
 
-<img src="images/RunTime_17M.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](images/RunTime_17M.png " ")
 
 **105 Million Cells**
 
-<img src="images/Scaling_105M.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](images/Scaling_105M.png " ")
 
 ## Acknowledgements
 * **Author** - High Performance Compute Team
