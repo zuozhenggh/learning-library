@@ -1,91 +1,89 @@
-# Load Data into an Instance
+# Creating New Environment Template
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab walks you through the steps to create a new environment template from the previously downloaded PeopleSoft Image
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 10 minutes
 
 ### About Product/Technology
 Enter background information here..
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+The purpose of this lab is to show you how to create a new environment template from a downloaded PeopleSoft Image in order to create a new PeopleSoft Environment.
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create a new environment template
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+1. A PeopleSoft Cloud Manager Instance
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+2. A downloaded PeopleSoft Image
 
-*This is the "fold" - below items are collapsed by default*
+## **STEP 1**: Creating a new environment template
 
-## **STEP 1**: title
+1. 	Navigate to Dashboard -> Environment Template.  
+Click Add New Template button. Provide below details and click Next. 
 
-Step 1 opening paragraph.
+Field | Value
+---- | -----
+Name | MYPUM
+Description	| Test a PUM image
+Peoplesoft Image | Don't type anything. Click on Search icon and select the downloaded DPK.  For example, in our case it is PEOPLESOFT HCM UPDATE IMAGE 9.2.030 - NATIVE OS
 
-1. Sub step 1
+NOTE: Don't type PEOPLESOFT HCM UPDATE IMAGE 9.2.030 in the Peoplesoft Image field. If the DPKs are downloaded, you will be able to see it in the Search Results as shown in 2nd screenshot below. If you can't see it yet, please wait and refresh after a while.
 
-  To create a link to local file you want the reader to download, use this format:
+![](./images/s2.png "")
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+![](./images/s3.png "")
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+2. 	On Select Topology page, click on search icon to search for a topology and select the PUM Fulltier topology.
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+![](./images/2.png "")
 
-    ![Image alt text](images/sample1.png "Image title")
+3. 	Expand the Custom Attributes and select the PUM Fulltier topology and click Edit Custom Attributes. 
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+![](./images/3.png "")
 
-    ![Image alt text](images/sample1.png)
+4. 	Expand the Region and Availability Domains section. 
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+Number | Resource Type | Input
+--------- | --------------- | -------------------
+1 | Region | us-ashburn-1
+2 | Primary Availability Domain | evQs:US-ASHBURN-AD-3 
+3 | Compartment	| Demo
+4 | Virtual Cloud Network | OCIHOLVCN
 
-5. One example with bold **text**.
+![](./images/s5.png "")
 
-   If you add another paragraph, add 3 spaces before the line.
+Refer to the following for network topology:
 
-## **STEP 2:** title
+![](./images/7.png "")
 
-1. Sub step 1
+5. 	Expand Full Tier -> General Settings. Make sure to give Database Operator Id as **PS**. Give a database name **MYPUMDB**. The defaults for many parameters can be changed; optionally, we will keep it as default.
 
-  Use tables sparingly:
+![](./images/s7.png "")
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+6. Click on Subnet Settings and make sure the subnet is cm. 
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+![](./images/cm.png "")
 
-    - List item 1
-    - List item 2
+7. Keep the rest of the field as default.
 
-3. Code examples
+8. 	Click Next to configure zone and role. Set Zone as **Test**. For role, click on Search Criteria and search for **PACL_CAD**. Select the role from **search results**.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+![](./images/s9.png "")
 
-4. Code examples that include variables
+Your screen should look like:
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+![](./images/5.png "")
 
-*At the conclusion of the lab add this statement:*
+9. 	Click Next.  Review the page and click Submit to save the template. 
+
+![](./images/s10.png "")
+
 You may proceed to the next lab.
 
 ## Learn More
@@ -96,10 +94,12 @@ You may proceed to the next lab.
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Authors** 
+- Rich Konopka, PeopleSoft Specialist, October 2020
+- Megha Gajbhiye, Cloud Solutions Engineer, Octiber 2020
+
+* **Last Updated By/Date** 
+- Sara Lipowsky, Cloud Engineer, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
