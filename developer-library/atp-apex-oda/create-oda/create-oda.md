@@ -28,7 +28,7 @@ Both intents and entities are common **Natural Language Processing (NLP)** conce
 
 - **Channels**: Digital assistants and skills aren’t apps that you download from an app marketplace, like iTunes. Instead, users access them through messaging platforms or through client messaging apps. Channels, which are platform-specific configurations, allow this access. A single digital assistant or skill can have several channels configured for it so that it can run on different services simultaneously
 
-Estimated workshop Time 15 minutes.
+Estimated Lab Time: 15 minutes
 
 ## **STEP 1**: Create a Digital Assistant instance
 
@@ -81,13 +81,15 @@ Make sure you look around and feel familiar with the menus.
 
 ![ODA Menu](./images/oda_6.png)
 
-Congratulations! You are ready to go to the next workshop!
+*Congratulations! You are ready to go to the next workshop!*
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Priscila Iruela - Database Business Development - EMEA Oracle Digital
-- **Contributors** - Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center
-- **Last Updated By/Date** - 
+- **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
+- **Contributors** - Melanie Ashworth-March
+- **Last Updated By/Date** - Kamryn Vinson, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

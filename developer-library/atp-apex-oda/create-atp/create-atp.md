@@ -8,25 +8,28 @@ This workshop walks you through the steps to get started using the **Oracle Auto
 
 ### Self-driving
 
-Automate database provisioning, tuning, and scaling.
+- Automate database provisioning, tuning, and scaling.
 
-Provisions highly available databases, configures and tunes for specific workloads, and scales compute resources when needed, all done automatically.
+- Provisions highly available databases, configures and tunes for specific workloads, and scales compute resources when needed, all done automatically.
 
 ### Self-securing
 
-Automate data protection and security.
+- Automate data protection and security.
 
-Protect sensitive and regulated data automatically, patch your database for security vulnerabilities, and prevent unauthorized access—all with Oracle Autonomous Database.
+- Protect sensitive and regulated data automatically, patch your database for security vulnerabilities, and prevent unauthorized access—all with Oracle Autonomous Database.
 
 ### Self-repairing
 
-Automate failure detection, failover, and repair.
+- Automate failure detection, failover, and repair.
 
-Detect and protect from system failures and user errors automatically and provide failover to standby databases with zero data loss.
+- Detect and protect from system failures and user errors automatically and provide failover to standby databases with zero data loss.
 
-Perfect for Developers!
+- Perfect for Developers!
 
-Estimated workshop Time 10 minutes.
+Estimated Lab Time: 10 minutes
+
+### Objectives
+- Create an Autonomous Database with the latest features of Oracle Databases
 
 ## **STEP 1**: Create a new Autonomous Transaction Processing
 
@@ -79,17 +82,15 @@ Estimated workshop Time 10 minutes.
 
     ![Always Free Logo](./images/always_free_logo.png)
 
-## It works
-
-You have just created an Autonomous Database with the latest features of Oracle Databases.
-
-Congratulations, you are ready for the next workshop!
+*You can proceed to the next lab…*
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Priscila Iruela - Database Business Development - EMEA Oracle Digital
-- **Contributors** - Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center
-- **Last Updated By/Date** - 
+- **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
+- **Contributors** - Melanie Ashworth-March
+- **Last Updated By/Date** - Kamryn Vinson, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

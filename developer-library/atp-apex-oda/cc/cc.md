@@ -18,7 +18,7 @@ That is exactly what we are going to build.
 
 You can package related **Custom Components** together.
 
-Estimated workshop Time 15 minutes.
+Estimated Lab Time: 15 minutes
 
 ## **STEP 1**: Create a Custom Component to integrate with backend services
 
@@ -176,13 +176,15 @@ There will be a new file in your `tasks-cc` folder called `tasks-cc-1.0.0.tgz`.
 
 ![tgz new file](./images/node_tgz_file.png)
 
-Congratulations! You are ready to go to the next workshop!
+*Congratulations! You are ready to go to the next workshop!*
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Priscila Iruela - Database Business Development - EMEA Oracle Digital
-- **Contributors** - Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center
-- **Last Updated By/Date** - 
+- **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
+- **Contributors** - Melanie Ashworth-March
+- **Last Updated By/Date** - Kamryn Vinson, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

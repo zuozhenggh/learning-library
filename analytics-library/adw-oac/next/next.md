@@ -3,7 +3,7 @@
 ## Introduction
 In this section you can learn how to upgrade instances to a Paid Model.
 
-Estimated workshop Time 2 minutes.
+Estimated workshop Time: 2 minutes
 
 ## **STEP 1**: Upgrade Instances to Paid
 
@@ -57,9 +57,11 @@ Learn more about [Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/
 
 ## **Acknowledgements**
 
-- **Author** - Priscila Iruela - Database Business Development - EMEA Oracle Digital, Juan Antonio Martin Pedro - Analytics Business Development - Oracle EMEA
-- **Contributors** - Victor Martin - Principal Cloud Engineer - EMEA Oracle Digital, Melanie Ashworth-March - Master Principal Sales Consultant - EMEA Oracle Solution Center, Andrea Zengin - Autonomous Database Business Development Director - Oracle EMEA
-- **Last Updated By/Date** -
+- **Author** - Priscila Iruela - Database Business Development | Juan Antonio Martin Pedro - Analytics Business Development
+- **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
+- **Last Updated By/Date** - Kamryn Vinson, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
