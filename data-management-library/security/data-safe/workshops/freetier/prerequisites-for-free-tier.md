@@ -115,7 +115,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
 
 
-  ## **STEP 3:** Enable Oracle Data Safe
+## **STEP 3**: Enable Oracle Data Safe
 
   - At the top of the page on the right, select a region in your tenancy (usually your Home region), for example, **US East (Ashburn)**.
 
@@ -134,7 +134,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
   - When it's enabled, a confirmation message is displayed in the upper-right corner.
 
 
-  ## **STEP 4:** Create a compartment
+## **STEP 4**: Create a compartment
 
 You need to create a compartment in your tenancy to store your Autonomous Database and Oracle Data Safe resources. In the labs, this compartment is referred to as "your compartment."
 
@@ -159,7 +159,7 @@ You need to create a compartment in your tenancy to store your Autonomous Databa
 
 
 
-Continue to the [**Introduction**](?lab=<introduction>).
+Continue to the [**Introduction**](?lab=introduction).
 
 If you have a question during this workshop, you can use the **[Autonomous Data Warehouse Forum](https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary)** on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Data Safe. Are you completely new to the **Cloud Customer Connect** forums? Visit our **[Getting Started forum page](https://cloudcustomerconnect.oracle.com/pages/1f00b02b84)** to learn how to best leverage community resources.
 
