@@ -4,8 +4,6 @@
 ## Introduction
 This lab shows you how to view and analyze alerts, and audit data on your Autonomous Database with Oracle Data Safe.
 
-**Note**: Your totals and data will be different than those shown in the screenshots.
-
 Estimated Lab Time: 30 minutes
 
 ### Objectives
@@ -17,7 +15,7 @@ In this lab, you'll:
 - Analyze open alerts from the dashboard
 - View all audit records for the past week
 - View a summary of audit events collected and alerts raised
-- Create a failed logins report
+- Create a logins report
 
 
 ### Prerequisites
@@ -26,35 +24,46 @@ To complete this lab, you need to have the following:
 
 - An Oracle Cloud account
 - Access to an Autonomous Database, sample data for Oracle Data Safe loaded into the database, and the Activity Auditing feature enabled on the database
-- Access to an Oracle Data Safe service in a region of your tenancy
+- Access to an Oracle Data Safe service
 - Privileges to use the Activity Auditing feature on your database
-- Audit collection started on your target database in Oracle Data Safe. If not, see [Provision Audit and Alert Policies](../provision-audit-alert-policies/provision-audit-alert-policies.md).
+- Audit collection started on your target database in Oracle Data Safe.
 
 
 ### Assumptions
 
-- You are signed in to the Oracle Cloud Infrastructure Console. If not, refer to the prerequisites for this workshop.
+This lab assumes the following:
+
+- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the **Prerequisites** for this workshop.
+
+- You completed the following labs in this workshop:
+
+    - [Provision and Register and Autonomous Database](../provision-register-autonomous-database/provision-register-autonomous-database.md)
+     - [Provision Audit and Alert Policies](../provision-audit-alert-policies/provision-audit-alert-policies.md)
+
 - Your data values will be different than those shown in the screenshots in this lab.
 
 
-## **STEP 1**: (If needed) Sign in to the Oracle Data Safe Console
 
-- From the navigation menu in the Oracle Cloud Infrastructure Console, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
+## **STEP 1**: Sign in to the Oracle Data Safe Console
 
-- Click **Service Console**. The **Home** page in the Oracle Data Safe Console is displayed.
+- If you are already signed in to the Oracle Data Safe Console, click the **Oracle Data Safe** tab in your browser.
+
+- If you are not signed in to the Oracle Data Safe Console, do the following:
+
+    - Click the browser tab named **Oracle Cloud Infrastructure**, and sign in to the Console if needed.
+
+    - From the navigation menu, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
+
+    - Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
+
 
 ## **STEP 2**: View and close alerts
 
 - In Oracle Data Safe Console, click the **Alerts** tab.
 
-  ![Top tabs with Alerts tab circled](images/177413545.png)
+- View the total number of target databases, critical risk alerts, high risk alerts, medium risk alerts, open alerts, and closed alerts. At a glance, you can better understand whether the security of your database is in jeopardy and how you should prioritize your work.
 
-
-- View the total number of target databases, critical alerts, high risk alerts, medium risk alerts, and open alerts.
-
-  - At a glance, you can better understand whether the security of your database is in jeopardy and how you should prioritize your work.
-
-  ![Alert totals](images/177425111.png)
+  ![Alert totals](images/totals-alerts-page.png)
 
 
 - Scroll down to review the alerts in the table.
@@ -63,76 +72,64 @@ To complete this lab, you need to have the following:
   - The **Operation** column identifies the action.
   - The **Alert Severity** column indicates the seriousness of the action.
 
-  ![Alerts in the table](images/177425122.png)
+  ![Alerts in the table](images/alert-table.png)
 
 
 - At the bottom of the page, click the page numbers to view other pages of alerts.
 
 
-- To filter the report to show only open critical alerts, at the top of the report, click **Filters**. Click **+ Filter** and then set the filter to be: **Alert Severity = Critical**. Click **Apply**.
+- To filter the report to show only open high alerts, at the top of the report, click **+ Filter** and then set the filter to be: **Alert Severity = High**. Click **Apply**.
 
-  - Leave the default filter on Operation Time set as is.
+   - If the filters are not displayed, click **Filters** below the totals at the top of the page.
 
-  ![Alert filters](images/177425079.png)
+  - Leave the default filters on **Alert Status** and **Operation Time** set as is.
 
+  ![Alert filters](images/high-alert-severity.png)
 
-- To sort the **Operation** column, position the cursor over the **Operation** column and click the up arrow button.
-
- ![Sort the DB User column icon](images/177413555.png)
-
-
-- The table shows you the open critical alerts.
-
-  ![Open critical alerts table](images/177425142.png)
+  The table shows you the open high alerts.
 
 
-- Click one of the **Alert IDs** to view more detail.
+- To sort the **Operation** column, position the cursor over the **Operation** column heading, and then click the arrow button.
 
- ![An alert ID highlighted in the Alerts table](images/177425153.png)
+ ![Sort the DB User column icon](images/sort-operation-column.png)
 
 
-- Review the information in the **Alert Details** dialog box, and then click **X** to close it. You can view the **Target**, **DB User**, **Operation Status**, **SQL Text**, and much more.
+- To view more detail for an alert, click the alert ID.
 
-   ![Alert Details dialog box](images/177425160.png)
+ ![An alert ID highlighted in the Alerts table](images/click-alert-id.png)
+
+
+- Review the information in the **Alert Details** dialog box, and then click **X** to close it. You can view the **DB User**, **Operation Status**, **SQL Text**, and much more.
+
+   ![Alert Details dialog box](images/alert-details-dialog-box.png)
 
 
 - To remove the filters, click the **X** next to each filter, and then click **Apply**.
 
-   ![Remove filter option](images/177425173.png)
 
 
-
-- Create two new filters to find out if the user `EVIL_RICH` is making any user entitlement changes.
-  - To create the first filter, click **+ Filter**, and set the filter to be: **Alert = User Entitlement Changes**.
-  - To create the second filter, click **+Filter**, and set the filter to be: **DB User = EVIL_RICH**.
+- Create a filter to view the list of alerts for user entitlement changes.
+  - Click **+ Filter**.
+  - Set the filter to be: **Alert = User Entitlement Changes**.
   - Click **Apply**.
 
-     ![Two filters for user EVIL_RICH](images/177425186.png)
 
+- Review the alerts.
 
-- Review the alerts for `EVIL_RICH`.
+  ![User Entitlement Changes alerts](images/user-entitlement-changes.png)
 
-- Click the **Alert ID** for the first alert. The Alert Details dialog box is displayed.
+- Suppose you are fine with these entitlement changes. Now you can close the alerts.
 
- ![Alerts for EVIL_RICH](images/177425201.png)
+    - Select the check box in the top left corner of the table to select all of the alerts displayed.
 
+    - From the **Mark As** menu, select **Closed**. The alerts selected on this page are closed.
 
-- Scroll down in the dialog box and review the SQL command. `EVIL_RICH` tried to execute the SQL command: `grant PDB_DBA to ATILLA`, but failed. Close the dialog box.
-
-    ![Alert Details dialog box](images/177425210.png)
-
-
-- Open the other **Alert IDs** for `EVIL_RICH`. Notice that the SQL text is similar in that the failed grants are for the `ATILLA` user.
-
-
-- Suppose you take appropriate action. Now you can close the alerts. To do so, select the check box in the top left corner of the table to select all of the alerts displayed. From the **Mark As** menu, select **Closed**.
-
-  ![Mark As > Closed](images/177425240.png)
+    ![Mark As > Closed](images/closed-alerts.png)
 
 
 - To hide closed alerts, move the **Open Alerts only** slider to the right.
 
-  ![Open Alerts only slider](images/177413562.png)  
+  ![Open Alerts only slider](images/show-open-alerts-only.png)  
 
 
 
@@ -141,18 +138,14 @@ To complete this lab, you need to have the following:
 
 - Click the **Home** tab.
 
-- Review the information in the charts on the dashboard. Currently, there is no data for Security Assessment, User Assessment, Data Discovery, and Data Masking because you have not yet used those features.
-
-    ![Dashboard](images/177408455.png)  
-
 - In the **Open Alerts** chart, notice that the chart shows the number of open alerts for the last 7 days. Click the last node in the chart.
 
-    ![Open Alerts chart](images/177408465.png)  
+    ![Open Alerts chart](images/last-node-open-alerts-chart.png)  
 
 
 - In the **Open Alerts** dialog box, view the number of open alerts for the last 7 days.
 
-  ![Open Alerts dialog box](images/177408484.png)  
+  ![Open Alerts dialog box](images/open-alerts-last-seven-days.png)  
 
 
 - Hover over the counts to view the number of **Critical**, **High**, and **Medium** alerts for each day.
@@ -160,7 +153,7 @@ To complete this lab, you need to have the following:
 
 - Click the name of your target database to open the **All Alerts** report. The **All Alerts** report is filtered to show only the open alerts for your target database for the past 7 days.
 
-![all Alerts report filtered](images/177408562.png)  
+  ![all Alerts report filtered](images/all-alerts-report-last-seven-days.png)  
 
 
 
@@ -171,120 +164,96 @@ To complete this lab, you need to have the following:
 - Click the **Reports** tab.
 
 
-- On the left, expand **Activity Auditing** (if needed), and then click the **All Activity** report.
+- On the left, under **Activity Auditing**, click the **All Activity** report.
 
 
-- At the top of the report, view the totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, and **DMLs**.
+- At the top of the report, view the totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, **DMLs**, and **Total Events**.
 
-  ![Totals in All Activity report](images/177408585.png)  
+  ![Totals in All Activity report](images/all-activity-report-totals.png)  
 
 
-- If the filters are not displayed, click **Filters**. The report is automatically filtered to show one week's worth of audit data for your target database.
+- Review the data in the table. The report is automatically filtered to show one week's worth of audit data for your target database. If the filter is not displayed, click **Filters**.
 
-  ![Filters automatically set in All Activity Report](images/177408600.png)  
+   ![Filters automatically set in All Activity Report](images/filters-table-all-activity-report.png)  
 
 
 
 ## **STEP 5**: View a summary of audit events collected and alerts raised
 
-- On the left, expand **Summary**, and then click **Audit Summary**. The **Audit Summary** report helps you to gain an understanding of the activity trends of your target databases. By default, the report shows you data for all of your target databases for the past week.
+- On the left, expand **Summary**, and then click **Audit Summary**.
+
+    - The **Audit Summary** report helps you to gain an understanding of the activity trends of your target databases. By default, the report shows you data for all of your target databases for the past week.
 
 - View the totals to learn how many target databases are represented in the charts, how many users are audited, and how many client hosts have connected to your target database. The report is filtered to show data for the last week.
 
-    ![Totals in Audit Summary report](images/177408621.png)  
+    ![Totals in Audit Summary report](images/audit-summary-filters-totals.png)  
 
 
-- View the charts.
+- Review the charts.
 
   - The **Open Alerts** chart compares the number of critical, high, and medium open alerts for the past week.
   - The **Admin Activity** chart compares the number of logins, database schema changes, audit setting changes, and entitlement changes for the past week.
   - The **Login Activity** chart compares the number of failed and successful logins for the past week.
   - The **All Activity** chart compares the total number of events for the past week.
 
-  ![All Activity chart](images/177408629.png)  
+   ![Audit Summary report charts](images/audit-summary-report-charts.png)  
 
 - To filter the time period for the report, at the top, select **Last 1 Month**, and then click **Apply**.
 
-  ![Audit Summary filter](images/177408636.png)  
+- To filter the target database for the report, do the following:
 
+    - In the **Filters** section, click **All Targets**.
 
-- To filter the target database for the report, click **All Targets** in the Filters section.
+    - In the **Select Targets** dialog box, deselect the check box for **All Targets**, click the field, select your target database, and then click **Done**.
 
-  ![All Targets circled](images/177413580.png)  
-
-- In the **Select Targets** dialog box, deselect the check box for **All Targets**, click the field, select your target database, and then click **Done**.
-
-  ![All Targets option](images/177408650.png)  
+    - Click **Apply**.
 
 
 - Your target database is now set as a filter.
 
-  ![Database set as a filter](images/177408657.png)  
+  ![Database set as a filter](images/last-one-month-filter.png)  
 
 
 
-## **STEP 6**: Create a failed logins report
+## **STEP 6**: Create a logins report
 
 - Click the **Reports** tab.
 
 - To view the **Login Activity** report, in the list under **Activity Auditing**, click **Login Activity**.
 
 
-- To set a filter on Operation Status, select **Operation Status = FAILURE** (no quotes), and then click **Apply**.
-
-  ![Login Activity report filters](images/177413592.png)  
-
-
-- The report shows only failed logins.
-
-  ![Login Activity report showing only failed logins](images/177413920.png)  
-
-
 - From the **Report Definition** menu, select **Save As New**.
 
-  ![Report Definition menu options with Save As New circled](images/177426047.png)  
-
-
-- In the **Save As** dialog box, enter the report name **<user name> Failed Logins**, enter the description **Failed logins report**, select your compartment, and then click **Save As**.
-
-  ![Save As dialog box](images/177426111.png)  
-
-  A confirmation message states &quot;Successfully created the report.&quot;
+- In the **Save As** dialog box, enter the report name **<user name> Logins**, enter the description **Logins report**, select your compartment, and then click **Save As**. A confirmation message states that the report is successfully created.
 
 - Click the **Reports** tab.
 
 
-- At the top of the list under **Custom Reports**, click your failed logins report (**<user name> Failed Logins)**.
+- At the top of the list under **Custom Reports**, click your **Logins** report.
 
-    ![List of Custom Reports](images/177427052.png)  
+    ![List of Custom Reports](images/logins-report-listed.png)  
 
 
 - Click **Generate Report**.
 
-    ![Generate Report option circled](images/177413598.png)  
-
 
 - In the **Generate Report** dialog box, leave **PDF** selected, select your compartment, and then click **Generate Report**.
 
-  ![Generate Report dialog box with PDF circled](images/177427064.png)  
-
-- Wait for a confirmation message that states that the report was generated successfully.
+- Wait for a confirmation message that states that the **Report was generated successfully**.
 
 
-- Click **Download Report**. The PDF is downloaded to your browser.
-
-    ![Download Report link circled](images/177413602.png)  
+- Click the **Download Report** link.  The **Opening Logins.pdf** dialog box is displayed.
 
 
+- Select the application with which you want to open the PDF, and click **OK**.
 
-- To view the report, click the downloaded **Failed Logins.pdf** file.
+- Review the report, and then close it.
 
-    ![Login Activity report in PDF format](images/177427077.png)  
+  ![Login report](images/login-report-pdf.png)
 
 
-- When you are finished viewing the report, close it.
 
-You may proceed to the next lab.
+Continue to the next lab.
 
 ## Learn More
 
@@ -293,8 +262,8 @@ You may proceed to the next lab.
 
 
 ## Acknowledgements
-* **Author** - Jody glover, UA Developer, Oracle Data Safe Team
-* **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 2, 2020
+* **Author** - Jody Glover, Principal User Assistance Developer, Database Development
+* **Last Updated By/Date** - Jody Glover, October 15, 2020
 
 
 ## Need Help?

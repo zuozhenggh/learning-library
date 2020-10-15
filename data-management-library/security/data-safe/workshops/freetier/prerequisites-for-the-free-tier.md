@@ -5,9 +5,9 @@
 
 This lab describes the steps that you need to take prior to starting the Oracle Data Safe Workshop when using an Oracle Cloud Free Tier account. The steps assume that you are the tenancy administrator.
 
-If you already have an Oracle Cloud Free Tier account, you can skip step 1. Be sure to enable Oracle Data Safe and create a compartment.
+If you already have an Oracle Cloud Free Tier account, you can skip step 1.
 
-**Note** The Oracle Data Safe service is not available to you if your Free Tier trial period has ended and you are now using Always Free resources.
+**Note:** The Oracle Data Safe service is not available to you if your Free Tier trial period has ended and you are now using Always Free resources.
 
 Estimated Lab Time: 5 minutes
 
@@ -17,8 +17,6 @@ In this lab, you'll:
 
 - Create your own free trial account
 - Sign in to the Oracle Cloud Infrastructure Console with your account credentials
-- Enable Oracle Data Safe
-- Create a compartment
 
 
 ### Prerequisites
@@ -33,77 +31,90 @@ Be sure you have the following before starting:
 
 If you already have an Oracle Cloud Free Tier account, you can skip this step.
 
-- In a browser, enter the following URL: <a  href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en" >oracle.com/cloud/free</a>.
+- In a browser, enter the following URL: `https://oracle.com/cloud/free`.
+
 - Click **Start for free**.
 
-  ![](images/349900290.png)
-
-- Enter your email address.
-- Select your country/territory.
-- Click **Next**.
-- Enter a **cloud account name**. You can choose almost any name you want. Remember the name you enter because you need this name later on to sign in to Oracle Cloud Infrastructure.
-- Click **Enter Password**.
-- Enter your mobile phone number, and then click Next: Verify Mobile Number. In a few seconds, you should receive a verification code through SMS-text.
-- Enter the verification code in the appropriate field, and then click **Verify**.
-- Click **Add Credit Card Details**. You are not charged any money unless you elect to upgrade the account later.
-- Enter the billing information and card details, and then click **Finish**.
-- Validate your address.
-- Enter a password. Remember this password so that you can sign in to Oracle Cloud Infrastructure later.
-- Click **Review Terms and Conditions**.
-- Read and agree to the terms and conditions by selecting the check box.
-- Click **Complete Sign-Up**.
-
-Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign-in page. You'll also receive a confirmation email containing sign-in information.
+  ![Start for Free option](images/start-for-free.png)
 
 
-## **STEP 2**: Sign in to the Oracle Cloud Infrastructure Console with your account credentials
 
-If you've signed out of the Oracle Cloud Infrastructure Console, follow these steps to sign in again.
 
-- In a browser, enter the URL [cloud.oracle.com](https://cloud.oracle.com).
-- In the toolbar, click **View Accounts**, and then select **Sign in to Cloud**.
+
+- On the **Oracle Cloud Free Tier** page, do the following:
+
+    - Select a **country** or **territory**.
+    - Enter your **email address**.
+    - Enter your **first name** and **last name**.
+    - Click **Verify my email**.
+    A verification email titled **OCI Email Verification** is sent to the email address you specified.
+
+  ![Oracle Cloud Free Tier page](images/oracle-cloud-free-tier-page.png)
+
+-  To continue with setting up your Oracle Cloud account, confirm your email address by click the link in your email. You are returned to the **Oracle Cloud Free Tier** page.
+
+- Continue to fill out the form:
+
+    - Enter a **password**. The password must contain a minimum of 8 characters, 1 lowercase, 1 uppercase, 1 numeric, and 1 special character. Your password cannot exceed 40 characters; contain the user's first name, last name, email address; contain spaces; or contain ` ~ < > \ characters. Remember the cloud account name you enter because you need this name later on to sign in to Oracle Cloud Infrastructure.
+    - Re-enter your password to confirm it.
+    - (Optional) Enter a **company name**.
+    - Specify a **cloud account name**.
+    - Select a **home region**.
+    - Review the **Terms of Use** section, and then click **Continue**.
+
+- (If prompted) In the browser dialog box, click **Save** to save your password or click **Never**.
+
+- In the **Address information** section, enter your address details, and then click **Continue**.
+
+- In the **Mobile verification** section, enter your phone number, and then click **Text me a code**. In a few seconds, you should receive a verification code through SMS-text.
+
+- In the **Verification code** field, enter the code that was sent to your mobile phone, and then click **Verify my code**.
+
+- In the **Payment verification** section, click **Add payment verification method**. A **Pay** dialog box is displayed. You are not charged unless you elect to upgrade the account later on.
+
+- Click **Credit Card**. The **Add Verification Method** dialog box is displayed.
+
+- Scroll to the bottom of the dialog box, enter your credit card information, and then click **Finish**. Your credit card information is processed.
+
+- Click **Close** to close the **Pay** dialog box.
+
+
+- In the **Agreement** section, click the check box to agree to the terms and conditions, and then click **Start my free trial**. Your Oracle Cloud account is provisioned and should be available in a few seconds. When it is ready, you are automatically signed in to the Oracle Cloud Infrastructure Console. You also receive a confirmation email that has the sign-in information.
+
+- To sign out, in the upper-right corner of the Console, click the **Profile** icon (icon of a person's head), and then select **Sign Out**.
+
+  ![Sign out of the Oracle Cloud Infrastructure Console](images/sign-out-oci.png)
+
+
+
+## **STEP 2**: Sign in to the Oracle Cloud Infrastructure Console with your Oracle Cloud account credentials
+Throughout the workshop, it is assumed that you are signed in to the Oracle Cloud Infrastructure Console so you may need to refer back to this step from time to time.
+
+- Open a new browser tab.
+
+- Enter the URL [cloud.oracle.com](https://cloud.oracle.com).
+
+- On the toolbar, click **View Accounts**, and then in the **Cloud Account** section, select **Sign in to Cloud**.
 
    ![Sign in to Cloud option](images/349900291.png)
 
 
-- Enter your **Cloud Account Name**, and then click **Next**. This is the name you chose while creating your account in the previous section. It is not your email address. If you've forgotten the name, please refer to the confirmation email.
+- Enter your **Cloud Account Name**, and then click **Next**. This is the name you chose while creating your account. It is not your email address. If you forget the name, please refer to the confirmation email.
 
   ![Cloud Account Name page](images/349900292.png)
 
 
-- Enter your username and password for your Oracle Cloud account, and then click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.  
+- In the **Oracle Cloud Infrastructure** section, enter your **username** and **password** for your Oracle Cloud account, and then click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.  
 
   ![SIGN IN page for Oracle Cloud Infrastructure](images/349900293.png)
 
-- You are now signed in to the Oracle Cloud Infrastructure Console! The main page in the Oracle Cloud Infrastructure Console shows you a dashboard. In the upper-left corner, there is a navigation menu (looks like a hamburger menu).  
+- You are now signed in to the Oracle Cloud Infrastructure Console. The landing page shows you a dashboard. In the upper-left corner, there is a navigation menu (hamburger menu).  
 
   ![Oracle Cloud Infrastructure Console](images/349900294.png)
 
 
-## **STEP 3** Enable Oracle Data Safe
 
-For this workshop, you need to enable the Oracle Data Safe service in at least one region of your tenancy. Be aware that you cannot disable Oracle Data Safe after it's enabled.
-
-- At the top of the page on the right, select the region in which you want to enable Oracle Data Safe, for example, **US East (Ashburn)**.
-
-- From the navigation menu, select **Data Safe**. The **Overview** page is displayed.
-
-- Click **Enable Data Safe** and wait a couple of minutes for the service to enable. When it's enabled, a confirmation message is displayed in the upper right corner.
-
-
-## **STEP 4:** Create a compartment
-
-You need to create a compartment in your tenancy to store your Autonomous Database and Oracle Data Safe resources. In the labs, this compartment is referred to as "your compartment."
-
-  - From the navigation menu, select **Identity**, and then **Compartments**. The Compartments page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
-
-  - Click **Create Compartment**. The **Create Compartment** dialog box is displayed.
-
-  - Enter a name for the compartment, for example, `dsc01` (short for Data Safe compartment 1).
-  - Enter a description for the compartment, for example, **Compartment1 for the Oracle Data Safe Workshop**.
-  - Click **Create Compartment**.
-
-You are ready to start the labs. Begin with the [**Introduction**](../introduction/introduction.md).
+Continue to the [**Introduction**](../introduction/introduction.md).
 
 If you have a question during this workshop, you can use the **[Autonomous Data Warehouse Forum](https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary)** on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Data Safe. Are you completely new to the **Cloud Customer Connect** forums? Visit our **[Getting Started forum page](https://cloudcustomerconnect.oracle.com/pages/1f00b02b84)** to learn how to best leverage community resources.
 
@@ -117,8 +128,8 @@ If you have a question during this workshop, you can use the **[Autonomous Data 
 
 ## Acknowledgements
 
-- Author - Jody Glover, UA Developer, Oracle Database team
-- Last Updated By/Date - Jody glover, Oracle Database team, October 2, 2020
+* **Author** - Jody Glover, Principal User Assistance Developer, Database Development
+* **Last Updated By/Date** - Jody Glover, October 15, 2020
 
 
 ## See an Issue?
