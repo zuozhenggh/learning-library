@@ -1,91 +1,119 @@
-# Load Data into an Instance
+# Creating Environment in PeopleSoft
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab walks you through the steps to a PeopleSoft Environment from the previously created environment template
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 90 minutes
 
 ### About Product/Technology
 Enter background information here..
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+The purpose of this lab is to show you how to create a PeopleSoft Environment from an environment template in the PeopleSoft Cloud Manager.
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create a PeopleSoft Environment
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+1. A PeopleSoft Cloud Manager Instance
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+2. A PeopleSoft Environment Template 
 
-*This is the "fold" - below items are collapsed by default*
+## **STEP 1**: Creating a New PeopleSoft Environment
 
-## **STEP 1**: title
+1. 	Navigate to Dashboard | Environments.  Click Create Environment button.
 
-Step 1 opening paragraph.
+![](./images/e1.png "")
 
-1. Sub step 1
+2. 	Provide a unique Environment Name - **MYPUMENV**. Select the Template that was created in previous section – **MYPUM**. Click **yes** for **Pause after infra creation**.  
 
-  To create a link to local file you want the reader to download, use this format:
+![](./images/e2.png "")
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+3. Go to **Environment Attributes -> Region and Availability Domains -> Credentials**
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+Give following values to the field.
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+No. | Full Tier | Credentials
+--- | --------- | -----------
+1 | Gateway Administrator Password | Psft1234
+2 | Web Profile Password for user PTWEBSERVER | Psft1234
+3 | Database Connect Password | Psft1234
+4 | Weblogic Administrator Password | Psft1234
+5 | Database Administrator Password | **Psft1234#**
+6 | Database Access Password | Psft1234
+7 | Database Operator Password | Psft1234
 
-    ![Image alt text](images/sample1.png "Image title")
+![](./images/e3.png "")
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+Leave the rest as default. You can also expand all sections under Environment Attributes. 
 
-    ![Image alt text](images/sample1.png)
+4. Scroll up and click Done on the top right to begin the environment creation process. 
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+![](./images/e4.png "")
 
-5. One example with bold **text**.
+5. Accept the license. 
 
-   If you add another paragraph, add 3 spaces before the line.
+![](./images/e5.png "")
 
-## **STEP 2:** title
+6. Refresh the page and click on the arrow button -> Details.
 
-1. Sub step 1
+![](./images/e6.png "")
 
-  Use tables sparingly:
+7. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+![](./images/cl.png "")
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+You can also go to **Provision Task Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
 
-    - List item 1
-    - List item 2
+![](./images/pts.png "")
 
-3. Code examples
+8. Once environment creation is completed, you can click on arrow button -> Deploy to start provisioning.
+
+![](./images/e9.png "")
+
+9. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
+
+![](./images/e10.png "")
+
+You can also go to **Provision Task Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
+
+![](./images/pts.png "")
+
+10. After the environment up and running, you can perform a variety of actions on the environment by using the Related Actions button corresponding to each environment. 
+
+![](./images/e11.png "")
+
+The actions can be:
+
+• **Details**: Select this option to view environment details and to perform additional actions on the environment such as performing a health check, applying a PeopleTools patch, viewing logs, and managing PUM connections.
+
+• **Start**: Select this option to start all the instances and then all the domains within them.
+
+• **Stop**: Select this option to stop all domains and shutdown all the instances. In case of database, only compute database instances are shutdown.
+
+• **Delete**: Select this option to remove the environment.
+
+• **Manage Node**: Select this option to scale environment up or down.
+
+• **Clone Environment**: Select this option to clone an existing environment.
+
+• **Refresh**: Select this option to refresh the database or the database, ps app home and ps cust home.  
+This option is only available for DBaaS environments.
+
+• **Backup and Restore**: Select this option to backup or restore an environment.
+
+NOTE: You can also login to your application by adding it's IP addess and host name in hosts file.
+
+Login credential: 
 
     ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+    Username : PS
+    Password: Psft1234
     ```
 
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-*At the conclusion of the lab add this statement:*
 You may proceed to the next lab.
 
 ## Learn More
@@ -96,10 +124,12 @@ You may proceed to the next lab.
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Authors** 
+- Rich Konopka, PeopleSoft Specialist, October 2020
+- Megha Gajbhiye, Cloud Solutions Engineer, Octiber 2020
+
+* **Last Updated By/Date** 
+- Sara Lipowsky, Cloud Engineer, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
