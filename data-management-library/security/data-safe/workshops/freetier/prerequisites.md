@@ -33,55 +33,61 @@ Be sure you have the following before starting:
 
 If you already have an Oracle Cloud Free Tier account, you can skip this step.
 
-- In a browser, enter the following URL: `https://oracle.com/cloud/free`.
+1. In a browser, enter the following URL: `https://oracle.com/cloud/free`.
 
-- Click **Start for free**.
+2. Click **Start for free**.
 
   ![Start for Free option](images/start-for-free.png)
 
 
 
-- On the **Oracle Cloud Free Tier** page, do the following:
+3. On the **Oracle Cloud Free Tier** page, do the following:
 
-    - Select a **country** or **territory**.
-    - Enter your **email address**.
-    - Enter your **first name** and **last name**.
-    - Click **Verify my email**.
-    A verification email titled **OCI Email Verification** is sent to the email address you specified.
+    a) Select a **country** or **territory**.
+
+    b) Enter your **email address**.
+
+    c) Enter your **first name** and **last name**.
+
+    d) Click **Verify my email**. A verification email titled **OCI Email Verification** is sent to the email address you specified.
 
   ![Oracle Cloud Free Tier page](images/oracle-cloud-free-tier-page.png)
 
--  To continue with setting up your Oracle Cloud account, confirm your email address by click the link in your email. You are returned to the **Oracle Cloud Free Tier** page.
+4. To continue with setting up your Oracle Cloud account, confirm your email address by clicking the link in your email. You are returned to the **Oracle Cloud Free Tier** page.
 
-- Continue to fill out the form:
+5. Continue to fill out the form:
 
-    - Enter a **password**. The password must contain a minimum of 8 characters, 1 lowercase, 1 uppercase, 1 numeric, and 1 special character. Your password cannot exceed 40 characters; contain the user's first name, last name, email address; contain spaces; or contain ` ~ < > \ characters. Remember the cloud account name you enter because you need this name later on to sign in to Oracle Cloud Infrastructure.
-    - Re-enter your password to confirm it.
-    - (Optional) Enter a **company name**.
-    - Specify a **cloud account name**.
-    - Select a **home region**.
-    - Review the **Terms of Use** section, and then click **Continue**.
+    a) Enter a **password**. The password must contain a minimum of 8 characters, 1 lowercase, 1 uppercase, 1 numeric, and 1 special character. Your password cannot exceed 40 characters; contain the user's first name, last name, email address; contain spaces; or contain ` ~ < > \ characters. Remember the cloud account name you enter because you need this name later on to sign in to Oracle Cloud Infrastructure.
 
-- (If prompted) In the browser dialog box, click **Save** to save your password or click **Never**.
+    b) Re-enter your password to confirm it.
 
-- In the **Address information** section, enter your address details, and then click **Continue**.
+    c) (Optional) Enter a **company name**.
 
-- In the **Mobile verification** section, enter your phone number, and then click **Text me a code**. In a few seconds, you should receive a verification code through SMS-text.
+    d) Specify a **cloud account name**.
 
-- In the **Verification code** field, enter the code that was sent to your mobile phone, and then click **Verify my code**.
+    e) Select a **home region**.
 
-- In the **Payment verification** section, click **Add payment verification method**. A **Pay** dialog box is displayed. You are not charged unless you elect to upgrade the account later on.
+    f) Review the **Terms of Use** section, and then click **Continue**.
 
-- Click **Credit Card**. The **Add Verification Method** dialog box is displayed.
+6. If prompted, in the browser dialog box, click **Save** to save your password or click **Never**.
 
-- Scroll to the bottom of the dialog box, enter your credit card information, and then click **Finish**. Your credit card information is processed.
+7. In the **Address information** section, enter your address details, and then click **Continue**.
 
-- Click **Close** to close the **Pay** dialog box.
+8. In the **Mobile verification** section, enter your phone number, and then click **Text me a code**. In a few seconds, you should receive a verification code through SMS-text.
 
+9. In the **Verification code** field, enter the code that was sent to your mobile phone, and then click **Verify my code**.
 
-- In the **Agreement** section, click the check box to agree to the terms and conditions, and then click **Start my free trial**. Your Oracle Cloud account is provisioned and should be available in a few seconds. When it is ready, you are automatically signed in to the Oracle Cloud Infrastructure Console. You also receive a confirmation email that has the sign-in information.
+10. In the **Payment verification** section, click **Add payment verification method**. A **Pay** dialog box is displayed. You are not charged unless you elect to upgrade the account later on.
 
-- To sign out, in the upper-right corner of the Console, click the **Profile** icon (icon of a person's head), and then select **Sign Out**.
+11. Click **Credit Card**. The **Add Verification Method** dialog box is displayed.
+
+12. Scroll to the bottom of the dialog box, enter your credit card information, and then click **Finish**. Your credit card information is processed.
+
+13. Click **Close** to close the **Pay** dialog box.
+
+14. In the **Agreement** section, click the check box to agree to the terms and conditions, and then click **Start my free trial**. Your Oracle Cloud account is provisioned and should be available in a few seconds. When it is ready, you are automatically signed in to the Oracle Cloud Infrastructure Console. You also receive a confirmation email that has the sign-in information.
+
+15. To sign out, in the upper-right corner of the Console, click the **Profile** icon (icon of a person's head), and then select **Sign Out**.
 
   ![Sign out of the Oracle Cloud Infrastructure Console](images/sign-out-oci.png)
 
@@ -90,25 +96,25 @@ If you already have an Oracle Cloud Free Tier account, you can skip this step.
 ## **STEP 2**: Sign in to the Oracle Cloud Infrastructure Console with your Oracle Cloud account credentials
 Throughout the workshop, it is assumed that you are signed in to the Oracle Cloud Infrastructure Console so you may need to refer back to this step from time to time.
 
-- Open a new browser tab.
+1. Open a new browser tab.
 
-- Enter the URL [cloud.oracle.com](https://cloud.oracle.com).
+2. Enter the URL [cloud.oracle.com](https://cloud.oracle.com).
 
-- On the toolbar, click **View Accounts**, and then in the **Cloud Account** section, select **Sign in to Cloud**.
+3. On the toolbar, click **View Accounts**, and then in the **Cloud Account** section, select **Sign in to Cloud**.
 
    ![Sign in to Cloud option](images/349900291.png)
 
 
-- Enter your **Cloud Account Name**, and then click **Next**. This is the name you chose while creating your account. It is not your email address. If you forget the name, please refer to the confirmation email.
+4. Enter your **Cloud Account Name**, and then click **Next**. This is the name you chose while creating your account. It is not your email address. If you forget the name, please refer to the confirmation email.
 
   ![Cloud Account Name page](images/349900292.png)
 
 
-- In the **Oracle Cloud Infrastructure** section, enter your **username** and **password** for your Oracle Cloud account, and then click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.  
+5. In the **Oracle Cloud Infrastructure** section, enter your **username** and **password** for your Oracle Cloud account, and then click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.  
 
   ![SIGN IN page for Oracle Cloud Infrastructure](images/349900293.png)
 
-- You are now signed in to the Oracle Cloud Infrastructure Console. The landing page shows you a dashboard. In the upper-left corner, there is a navigation menu (hamburger menu).  
+6. You are now signed in to the Oracle Cloud Infrastructure Console. The landing page shows you a dashboard. In the upper-left corner, there is a navigation menu (hamburger menu).  
 
   ![Oracle Cloud Infrastructure Console](images/349900294.png)
 
@@ -117,51 +123,46 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
 ## **STEP 3**: Enable Oracle Data Safe
 
-  - At the top of the page on the right, select a region in your tenancy (usually your Home region), for example, **US East (Ashburn)**.
+1. At the top of the page on the right, select a region in your tenancy (usually your Home region), for example, **US East (Ashburn)**.
 
-    ![Select Home region](images/select-region.png)
+   ![Select Home region](images/select-region.png)
 
-  - From the navigation menu, select **Data Safe**.
+2. From the navigation menu, select **Data Safe**.
 
-    ![Select Data Safe from the Navigation menu](images/navigation-menu-select-data-safe.png)
+   ![Select Data Safe from the Navigation menu](images/navigation-menu-select-data-safe.png)
 
-    The **Overview** page is displayed.
+  The **Overview** page is displayed.
 
-  - Click **Enable Data Safe** and wait a couple of minutes for the service to enable.
+3.Click **Enable Data Safe** and wait a couple of minutes for the service to enable.
 
-    ![Enable Data Safe button](images/enable-data-safe-button.png)
+   ![Enable Data Safe button](images/enable-data-safe-button.png)
 
-  - When it's enabled, a confirmation message is displayed in the upper-right corner.
+4. When it's enabled, a confirmation message is displayed in the upper-right corner.
+
+
+
 
 
 ## **STEP 4**: Create a compartment
 
 You need to create a compartment in your tenancy to store your Autonomous Database and Oracle Data Safe resources. In the labs, this compartment is referred to as "your compartment."
 
-- From the navigation menu, select **Identity**, and then **Compartments**. The **Compartments** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
+1. From the navigation menu, select **Identity**, and then **Compartments**. The **Compartments** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
 
-- Click **Create Compartment**. The **Create Compartment** dialog box is displayed.
+2. Click **Create Compartment**. The **Create Compartment** dialog box is displayed.
 
-- Enter a name for the compartment, for example, `dsc01` (short for Data Safe compartment 1).
+3. Enter a name for the compartment, for example, `dsc01` (short for Data Safe compartment 1).
 
-- Enter a description for the compartment, for example, **Compartment for the Oracle Data Safe Workshop**.
+4. Enter a description for the compartment, for example, **Compartment for the Oracle Data Safe Workshop**.
 
   ![Create Compartment dialog box](images/create-compartment.png)
 
-- Click **Create Compartment**.
+5. Click **Create Compartment**.
 
 
+You are ready to begin the labs. Start with the [**Introduction**](?lab=introduction).
 
 
-
-
-
-
-
-
-Continue to the [**Introduction**](?lab=introduction).
-
-If you have a question during this workshop, you can use the **[Autonomous Data Warehouse Forum](https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary)** on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Data Safe. Are you completely new to the **Cloud Customer Connect** forums? Visit our **[Getting Started forum page](https://cloudcustomerconnect.oracle.com/pages/1f00b02b84)** to learn how to best leverage community resources.
 
 
 

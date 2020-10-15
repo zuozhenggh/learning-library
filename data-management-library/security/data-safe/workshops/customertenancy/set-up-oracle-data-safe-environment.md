@@ -30,95 +30,103 @@ The following steps are intended for a tenancy administrator. The steps show you
 
 You can create a native or federated user account. Both are supported in Oracle Data Safe. The following steps show you how to create a native Oracle Cloud Infrastructure user account. If your tenancy uses federated user accounts, create the user account in the identity provider.
 
-- Sign in to the Oracle Cloud Infrastructure Console using your tenancy administrator credentials.
-- From the navigation menu, select **Identity**, and then **Users**. The **Users** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
-- Click **Create User**.
-- Enter a short form name for the user account, for example, `dsu01`.
-- Enter a user description for the user account, for example, **Data Safe user 1**.
-- Enter the email address for the user. Oracle will send an email to this address with instructions on how to sign in to the tenancy.
+1. Sign in to the Oracle Cloud Infrastructure Console using your tenancy administrator credentials.
 
-- Click **Create**. Details about the new user are displayed on the **User Information** tab. Notice that there is a **(Verification Pending)** message next to the email address.
+2. From the navigation menu, select **Identity**, and then **Users**. The **Users** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
 
-- Click **Create/Reset Password**. The **Create/Reset Password** dialog box is displayed.
+3. Click **Create User**.
 
-- Click the **Create/Reset Password** button. A new password is generated.
+4. Enter a short form name for the user account, for example, `dsu01`.
 
-- Click the **Copy** link to copy the password to the clipboard. Save the password in your records.
+5. Enter a user description for the user account, for example, **Data Safe user 1**.
 
-- Click **Close**.
+6. Enter the email address for the user. Oracle will send an email to this address with instructions on how to sign in to the tenancy.
+
+7. Click **Create**. Details about the new user are displayed on the **User Information** tab. Notice that there is a **(Verification Pending)** message next to the email address.
+
+8. Click **Create/Reset Password**. The **Create/Reset Password** dialog box is displayed.
+
+9. Click the **Create/Reset Password** button. A new password is generated.
+
+10. Click the **Copy** link to copy the password to the clipboard. Save the password in your records.
+
+11. Click **Close**.
 
 
 
 
 ## **STEP 2:** Create a user group and add the user account to the group
 
-- From the navigation menu, select **Identity**, and then **Groups**. The **Groups** page in IAM is displayed.
+1. From the navigation menu, select **Identity**, and then **Groups**. The **Groups** page in IAM is displayed.
 
-- Click **Create Group**. The **Create Group** dialog box is displayed.
+2. Click **Create Group**. The **Create Group** dialog box is displayed.
 
-- Enter a name for the group, for example, `dsg01` (short for Data Safe group 1)
+3. Enter a name for the group, for example, `dsg01` (short for Data Safe group 1)
 
-- Enter a description for the group, for example, **User group for data safe user 1**. A description is required.
+4. Enter a description for the group, for example, **User group for data safe user 1**. A description is required.
 
-- (Optional) Create a tag.
-- Click **Create**. The **Group Information** tab is displayed.
+5. (Optional) Create a tag.
 
-- Under **Group Members**, click **Add User to Group**. The **Add User to Group** dialog box is displayed.
+6. Click **Create**. The **Group Information** tab is displayed.
 
-- From the drop-down list, select the regular Oracle Cloud user account that you created (for example, `dsu01`), and then click **Add**. The user account is listed as a group member.
+7. Under **Group Members**, click **Add User to Group**. The **Add User to Group** dialog box is displayed.
+
+8. From the drop-down list, select the regular Oracle Cloud user account that you created (for example, `dsu01`), and then click **Add**. The user account is listed as a group member.
 
 
 
 ## **STEP 3:** Create a compartment for the user
 
-  - From the navigation menu, select **Identity**, and then **Compartments**. The **Compartments** page in IAM is displayed.
+1. From the navigation menu, select **Identity**, and then **Compartments**. The **Compartments** page in IAM is displayed.
 
-  - Click **Create Compartment**. The **Create Compartment** dialog box is displayed.
+2. Click **Create Compartment**. The **Create Compartment** dialog box is displayed.
 
-  - Enter a name for the compartment, for example, `dsc01` (short for Data Safe compartment 1).
-  - Enter a description for the compartment, for example, **Compartment for Data Safe user 1**.
-  - Click **Create Compartment**.
+3. Enter a name for the compartment, for example, `dsc01` (short for Data Safe compartment 1).
+
+4. Enter a description for the compartment, for example, **Compartment for Data Safe user 1**.
+
+5. Click **Create Compartment**.
 
 
 ## **STEP 4:** Create a policy for the user group
 
 Create a policy in IAM that grants permissions to the group to which the user belongs. The policy needs to allow the user to create an Autonomous Database in the compartment and use it with Oracle Data Safe.
 
-- From the navigation menu, select **Identity**, and then **Policies**. The **Policies** page in IAM is displayed.
+1. From the navigation menu, select **Identity**, and then **Policies**. The **Policies** page in IAM is displayed.
 
-- Under **COMPARTMENT**, select the user's compartment.
+2. Under **COMPARTMENT**, select the user's compartment.
 
-- Click **Create Policy**. The **Create Policy** page is displayed.
+3. Click **Create Policy**. The **Create Policy** page is displayed.
 
-- Enter a name for the policy. It is helpful to name the policy after the group to which the policy pertains, for example, `dsg01 `.
+4. Enter a name for the policy. It is helpful to name the policy after the group to which the policy pertains, for example, `dsg01 `.
 
-- Enter a description for the policy, for example, **Policy for Data Safe group 1**.
+5. Enter a description for the policy, for example, **Policy for Data Safe group 1**.
 
-- From the **COMPARTMENT** drop-down list, select the **root** compartment.
+6. From the **COMPARTMENT** drop-down list, select the **root** compartment.
 
-- In the **Policy Builder** section, do the following:
+7. In the **Policy Builder** section, do the following:
 
-    - From the **POLICY USE CASES** drop-down list, select **Compartment Management**.
+    a) From the **POLICY USE CASES** drop-down list, select **Compartment Management**.
 
-    - From the **COMMON POLICY TEMPLATES** drop-down list, select **Let compartment admins manage the compartment**.
+    b) From the **COMMON POLICY TEMPLATES** drop-down list, select **Let compartment admins manage the compartment**.
 
-    - From the **GROUPS** drop-down list, select the user group, for example, `dsg01`.
+    c) From the **GROUPS** drop-down list, select the user group, for example, `dsg01`.
 
-    - From the **LOCATIONS** drop-down list, select the user's compartment, for example, **dsc01**.
+    d) From the **LOCATIONS** drop-down list, select the user's compartment, for example, **dsc01**.
 
-    - Verify that the policy statement generated reads: **Allow dsg01 to manage all-resources in compartment dsc01**. This statement allows the user to create and manage an Autonomous Database.
+    e) Verify that the policy statement generated reads: **Allow dsg01 to manage all-resources in compartment dsc01**. This statement allows the user to create and manage an Autonomous Database.
 
-- For **Policy Versioning**, leave **KEEP POLICY CURRENT** selected.
+8. For **Policy Versioning**, leave **KEEP POLICY CURRENT** selected.
 
-- Click **Create**.
+9. Click **Create**.
 
-- Click **Edit Policy Statements** to add another statement. The **Edit Policy Statements** page is displayed.
+10. Click **Edit Policy Statements** to add another statement. The **Edit Policy Statements** page is displayed.
 
-- Click **+ Another Statement**.
+11. Click **+ Another Statement**.
 
-- In the **STATEMENT 2** field, enter **Allow group dsg01 to use autonomous-database in compartment dsc01**. This statement is required so that the user can successfully register and access the database in Oracle Data Safe. Without it, the user can register the database with Oracle Data Safe, but not view it in Oracle Data Safe.
+12. In the **STATEMENT 2** field, enter **Allow group dsg01 to use autonomous-database in compartment dsc01**. This statement is required so that the user can successfully register and access the database in Oracle Data Safe. Without it, the user can register the database with Oracle Data Safe, but not view it in Oracle Data Safe.
 
-- Click **Save Changes**.
+13. Click **Save Changes**.
 
 
 
@@ -129,25 +137,26 @@ Create a policy in IAM that grants permissions to the group to which the user be
 
 You can enable Oracle Data Safe in multiple regions of your tenancy, if needed. For the Oracle Data Safe Workshop, you need to enable Oracle Data Safe in at least one region of your tenancy. Be aware that you cannot disable Oracle Data Safe after it's enabled.
 
-- From the navigation menu, select **Data Safe**. The **Overview** page is displayed.
+1. From the navigation menu, select **Data Safe**. The **Overview** page is displayed.
 
-- At the top of the page on the right, select the region in which you want to enable Oracle Data Safe, for example, **US East (Ashburn)**.
-- Click **Enable Data Safe** and wait a couple of minutes for the Oracle Data Safe service to enable.
+2. At the top of the page on the right, select the region in which you want to enable Oracle Data Safe, for example, **US East (Ashburn)**.
 
-- Before continuing, verify that the following message is displayed in the upper-right corner: **Data Safe is enabled. Please click Service Console to use the features**.
+3. Click **Enable Data Safe** and wait a couple of minutes for the Oracle Data Safe service to enable.
+
+4. Before continuing, verify that the following message is displayed in the upper-right corner: **Data Safe is enabled. Please click Service Console to use the features**.
 
 
 ## **STEP 6:** Grant all Oracle Data Safe privileges to the user group
 
-- From the **Overview** page for Oracle Data Safe, click **Service Console** to access the Oracle Data Safe Console. As a tenancy administrator, you have all privileges in Oracle Data Safe.
+1. From the **Overview** page for Oracle Data Safe, click **Service Console** to access the Oracle Data Safe Console. As a tenancy administrator, you have all privileges in Oracle Data Safe.
 
-- In the Oracle Data Safe Console, click the **Security** tab in the upper-right corner.
+2. In the Oracle Data Safe Console, click the **Security** tab in the upper-right corner.
 
-- From the **Compartment** drop-down list, select the user's compartment, for example, `dsc01`.
+3. From the **Compartment** drop-down list, select the user's compartment, for example, `dsc01`.
 
-- For the user group that you created (for example, `dsg01`), select **Manage** from the **All Features** drop-down list.
+4. For the user group that you created (for example, `dsg01`), select **Manage** from the **All Features** drop-down list.
 
-- Click **Save**. The regular user can now access Oracle Data Safe.
+5. Click **Save**. The regular user can now access Oracle Data Safe.
 
 
 

@@ -13,7 +13,7 @@ For this workshop, you are provided with the following:
 - Privileges in Oracle Data Safe to use all of the main features: Security Assessment, User Assessment, Activity Auditing, Data Discovery, and Data Masking.
 
 
-You are ready to start the labs. Begin with the [**Introduction**](?lab=introduction).
+You are ready to begin the labs. Start with the [**Introduction**](?lab=introduction).
 
 
 
