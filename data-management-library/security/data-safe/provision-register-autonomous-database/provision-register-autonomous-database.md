@@ -45,7 +45,7 @@ To complete this lab, you need to have the following:
 
 - On the **Create Autonomous Database** page, provide basic information for your database:
 
-    - **Compartment** - Select your compartment.
+    - **Compartment** - If needed, select your compartment.
 
     - **Display name** - Enter a memorable name for the database for display purposes, for example, **ad01** (short for Autonomous Database 1).
 
@@ -65,7 +65,7 @@ To complete this lab, you need to have the following:
 
     - **Auto scaling** - Leave this checkbox selected.
 
-    - **Password and Confirm Password** - Specify a password for the `ADMIN` database user and make note of this password. The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character. It cannot contain your username or the double quote (") character, must be different from the last 4 passwords used, and must not be the same password that is set less than 24 hours ago.
+    - **Password** and **Confirm Password** - Specify a password for the `ADMIN` database user and make note of it. The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character. It cannot contain your username or the double quote (") character.
 
     - **Network Access** - Leave **Allow secure access from everywhere** selected.
 
@@ -75,7 +75,7 @@ To complete this lab, you need to have the following:
 
 - Click **Create Autonomous Database**. The **Autonomous Database Details** page is displayed.
 
-- Wait a few minutes for your instance to provision. When it is ready, **AVAILABLE** is displayed below the large ADW icon.
+- Wait a few minutes for your instance to provision. When it is ready, **AVAILABLE** is displayed below the large ATP icon.
 
   ![Database AVAILABLE message](images/database-available.png)
 
@@ -83,34 +83,26 @@ To complete this lab, you need to have the following:
 
 ## **STEP 2**: Register your Autonomous Database with Oracle Data Safe
 
-  - If you closed the **Autonomous Database Details** page:
-    - From the navigation menu, select **Autonomous Transaction Processing**.
-    - From the **COMPARTMENT** drop-down list, select your compartment.
-    - Click the name of your database. The **Autonomous Database Information** tab on the **Autonomous Database Details** page is displayed.
-
-
-- On the **Autonomous Database Information** tab, under **Data Safe**, click **Register**.
-    - If you do not see the **Register** option for the **Data Safe** section, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it. Please contact your tenancy administrator to gain access to an appropriate region.
+  - On the **Autonomous Database Information** tab, under **Data Safe**, click **Register**.
+    - If you do not see the **Register** option under **Data Safe** section, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it. Please contact your tenancy administrator to gain access to an appropriate region.
 
      ![Register option for your database](images/register-database.png)
 
 - In the **Register Database with Data Safe** dialog box, click **Confirm**.
 
-- Wait for the registration process to finish.
-    - When registration is completed, the status reads **Registered**.
+- Wait for the registration process to finish. When registration is completed, the status reads **Registered**. By default, when you register an Autonomous Database, you are authorized to use the User Assessment, Security Assessment, and Activity Auditing features in Oracle Data Safe with your database.
 
-      ![Status reads registered](images/status-registered.png)
-    - From here, you can access the Oracle Data Safe Console by clicking **View**, and deregister your database by clicking **Deregister**.
-    - By default, when you register an Autonomous Database, you are authorized to use the User Assessment, Security Assessment, and Activity Auditing features in Oracle Data Safe with your database.
+    ![Status reads registered](images/status-registered.png)
 
 
 
 ## **STEP 3**: Run a SQL script using SQL Developer Web to load sample data into your database
-The `load-data-safe-sample-data_admin.sql` script creates several tables with sample data that you can use with the Oracle Data Safe features. It also enables the Data Discovery and Data Masking features on your database.
 
-- On the **Autonomous Database Details** page, click the **Tools** tab.
+The `load-data-safe-sample-data_admin.sql` script creates several tables with sample data that you can use to practice with the Oracle Data Safe features. It also enables the Data Discovery and Data Masking features on your database.
 
-- In the **SQL Developer Web** section, click **Open SQL Developer Web**. The **Oracle Database Actions | Sign in** page is opened.
+- On the **Autonomous Database Details** page, click the **Tools** subtab.
+
+- In the **SQL Developer Web** section, click **Open SQL Developer Web**. A new browser tab is opened displaying the **Oracle Database Actions | Sign in** page.
 
 - In the **Username** field, enter `ADMIN`. In the **Password** field, enter the password that you created for the `ADMIN` user when you provisioned the database. Click **Sign In**.
 
@@ -129,16 +121,18 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 
     - The script takes approximately 1 minute to run.
 
-    - In the bottom-left corner, the cog wheel turns as the script is processed. Don't worry if you see some error messages on the **Script Output** tab. These are expected the first time you run the script.
+    - In the bottom-left corner, a cog wheel turns as the script is processed.
 
-    - At the end of the script is the message **END OF SCRIPT**.
+    - Don't worry if you see some error messages on the **Script Output** tab. These are expected the first time you run the script.
 
-- When the script is finished running, on the **Navigator** tab on the left, select the **HCM1** schema from the first drop-down menu. In the second drop-down menu, leave **Tables** selected.
+    - The script ends with the message **END OF SCRIPT**.
 
-  - If you don't see **HCM1** listed, sign out and sign in again, click **SQL Worksheet**, and then select the **HCM1** schema from the first drop-down menu.
+- When the script is finished running, on the **Navigator** tab on the left, select the **HCM1** schema from the first drop-down list. In the second drop-down list, leave **Tables** selected.
+
+  - If you don't see **HCM1** listed, sign out and sign in again. Click **SQL Worksheet**, and then on the **Navigator** tab, select the **HCM1** schema from the first drop-down list.
 
 
-  - On the toolbar, click the Clear button (trash can icon) to clear the worksheet.
+  - On the toolbar, click the **Clear** button (trash can icon) to clear the worksheet.
 
   - On the **Script Output** tab, click the **Clear output** button (trash can icon) to clear the output.
 
@@ -154,12 +148,14 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
       - `REGIONS` - 4 rows
       - `SUPPLEMENTAL_DATA` - 149 rows
 
+- If your data is different than what is specified above, rerun the  [load-data-safe-sample-data_admin.sql](files/load-data-safe-sample-data_admin.sql) script.
+
 - Sign out of SQL Developer Web and close the tab.
 
 ## **STEP 4**: Sign in to the Oracle Data Safe Console and view the list of registered target databases
 
 
-= Return to the **Oracle Cloud Infrastructure** tab. The **Tools** tab on the **Autonomous Database Details** page is where you last left off on this tab.
+- Return to the **Oracle Cloud Infrastructure** tab. The **Tools** subtab on the **Autonomous Database Details** page is where you last left off.
 
 - Click the **Autonomous Database Information** tab.
 
@@ -167,23 +163,25 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 
   ![Access Data Safe Console from Autonomous Database Details tab](images/access-data-safe-console-from-db-tab.png)
 
-    - You are automatically signed in to the Oracle Data Safe Console and presented with a dashboard on the **Home** tab.
+    - A new **Oracle Data Safe | Home** tab is opened. You are automatically signed in to the Oracle Data Safe Console and presented with a dashboard.
 
-- Review the charts in the dashboard.
+- Review the dashboard.
 
     - The dashboard lets you monitor several activities at once.
 
-    - When you first sign in to the Oracle Data Safe Console, the charts in your dashboard may not contain data because you have not yet used any of the features. There is also a filter set on your database name so that the dashboard displays data for your database only.
+    -  There is a filter set on your database name so that the dashboard displays data for your database only.
+
+    - When you first sign in to the Oracle Data Safe Console, the charts in your dashboard do not contain data because you have not yet used any of the features.
 
      ![Oracle Data Safe Dashboard](images/dashboard.png)
 
 
-- Click each of the top tabs and review the pages. These tabs provide quick access to the dashboard (**Home** tab), registered target databases (**Targets** tab), the Oracle Data Safe Library (**Library** tab), reports for all Oracle Data Safe features (**Reports** tab), all of the alerts (**Alerts** tab), and all of the current and scheduled jobs (**Jobs** tab).
+- Click each top tab and review the content on the page. The top tabs provide quick access to the dashboard (**Home** tab), registered target databases (**Targets** tab), the Oracle Data Safe Library (**Library** tab), reports for all Oracle Data Safe features (**Reports** tab), all of the alerts (**Alerts** tab), and all of the current and scheduled jobs (**Jobs** tab).
 
      ![Top tabs in the Oracle Data Safe Console](images/top-tabs-data-safe-console.png)
 
 
-  - Click each of the side tabs and review the pages. These tabs provide quick access to Oracle Data Safe's main features, including **Security Assessment**, **User Assessment**, **Data Discovery**, **Data Masking**, and **Activity Auditing**.
+  - Click each side tab and review the content on the page. The side tabs provide quick access to the wizards for Oracle Data Safe's main features, including **Security Assessment**, **User Assessment**, **Data Discovery**, **Data Masking**, and **Activity Auditing**.
 
      ![Side tabs in the Oracle Data Safe Console](images/side-tabs-data-safe-console.png)
 
@@ -221,15 +219,13 @@ The **Registered Databases** page for the Oracle Data Safe service in the Oracle
 
 - From the navigation menu, select **Data Safe**.
 
-    - The **Overview** page for the Oracle Data Safe service is displayed. From here you can access the Oracle Data Safe Console and find links to useful information.
+    - The **Overview** page for the Oracle Data Safe service is displayed. From here you can access the Oracle Data Safe Console and find links to useful information. Also notice that there is a message in the upper-right corner stating that **Data Safe is enabled**.
 
     ![Data Safe Overview page in OCI Console](images/data-safe-overview-page-oci-console.png)
 
-- On the left, click **Registered Databases**.
+- On the left, click **Registered Databases**. Your registered database is listed.
 
-    - Your registered database is listed.
-
-- Click the three dots next to your database. From here you can access the Oracle Data Safe Console.
+- Click the three dots on the right. From here you can access the Oracle Data Safe Console.
 
     ![Registered Databases tab in OCI](images/access-data-safe-console-from-registered-databases-tab.png)
 
@@ -246,7 +242,7 @@ You can continue to the next lab.
 
 ## Acknowledgements
   * **Author** - Jody glover, UA Developer, Oracle Data Safe Team
-  * **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 1, 2020
+  * **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 15, 2020
 
 
 ## See an issue?

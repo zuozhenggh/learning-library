@@ -82,7 +82,7 @@ You can create a native or federated user account. Both are supported in Oracle 
 
 ## **STEP 4:** Create a policy for the user group
 
-Create a policy in IAM that grants permissions to the group to which the user belongs. The policy needs to allow the user to create and manage an Autonomous Database in the compartment.
+Create a policy in IAM that grants permissions to the group to which the user belongs. The policy needs to allow the user to create an Autonomous Database in the compartment and use it with Oracle Data Safe.
 
 - From the navigation menu, select **Identity**, and then **Policies**. The **Policies** page in IAM is displayed.
 
@@ -94,7 +94,7 @@ Create a policy in IAM that grants permissions to the group to which the user be
 
 - Enter a description for the policy, for example, **Policy for Data Safe group 1**.
 
-- Leave the **COMPARTMENT** field set to the user's compartment.
+- From the **COMPARTMENT** drop-down list, select the **root** compartment.
 
 - In the **Policy Builder** section, do the following:
 
@@ -106,11 +106,20 @@ Create a policy in IAM that grants permissions to the group to which the user be
 
     - From the **LOCATIONS** drop-down list, select the user's compartment, for example, **dsc01**.
 
-    - Verify that the policy statement generated reads: **Allow dsg01 to manage all-resources in compartment dsc01**.
+    - Verify that the policy statement generated reads: **Allow dsg01 to manage all-resources in compartment dsc01**. This statement allows the user to create and manage an Autonomous Database.
 
 - For **Policy Versioning**, leave **KEEP POLICY CURRENT** selected.
 
 - Click **Create**.
+
+- Click **Edit Policy Statements** to add another statement. The **Edit Policy Statements** page is displayed.
+
+- Click **+ Another Statement**.
+
+- In the **STATEMENT 2** field, enter **Allow group dsg01 to use autonomous-database in compartment dsc01**. This statement is required so that the user can successfully register and access the database in Oracle Data Safe. Without it, the user can register the database with Oracle Data Safe, but not view it in Oracle Data Safe.
+
+- Click **Save Changes**.
+
 
 
 
@@ -167,7 +176,7 @@ When you are done setting up the environment, email the user with the following 
 
 
 - **Author**- Jody Glover, UA Developer, Oracle Data Safe Team
-- **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 14, 2020
+- **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 15, 2020
 
 
 ## See an issue?
