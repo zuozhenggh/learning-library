@@ -25,9 +25,9 @@ In this lab, you will:
 
 2. 	To sign in to the Console, you need the following: 
 
-        1. Tenant, User name and Password
-        2. URL for the Console: https://oracle.com
-        3. Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
+    1. Tenant, User name and Password
+    2. URL for the Console: https://oracle.com
+    3. Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
 
 ## **STEP 1**: Signing in to the Console
 **Console Overview**  
@@ -39,7 +39,7 @@ In this section, sign in to the Oracle Cloud Infrastructure console using your c
 
     ![](./images/1.png " ")
 
-3.	Enter the name of your tenancy (aka your account name, not your user name), then click on the Next button.
+3.	Enter the name of your tenancy (aka your account name, NOT your user name), then click on the **Next** button.
 
     ![](./images/2.png " ")
 
@@ -85,7 +85,18 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
     ![](./images/createcompartment.png " ")
 
-2.	Name the compartment **Demo** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment button** when ready.
+2.	Give the Compartment a Name and Description 
+    Copy the fields below
+    Name:
+    ```
+    <copy>Demo</copy>
+    ``` 
+    Description:
+    ```
+    <copy>This is our main compartment for test drive</copy>
+    ``` 
+
+  Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment button** when ready.
 
     ![](./images/compartment.png " ")
 
@@ -104,13 +115,19 @@ We'll create a user, a group, and a security policy to understand the concept.
 
 2.	Click **Create Group**.
 
-3.	In the Create Group dialog box, enter the following:
+3.	Give the Group a name and description
+    Copy the fields below
+    
+    Name:
+    ```
+    <copy>oci-group</copy>
+    ``` 
+    Description:
+    ```
+    <copy>New group for OCI users</copy>
+    ``` 
 
-        1. Name: "oci-group”. Note that the group name cannot contain spaces.
-
-        2. Description: “New group for OCI users”
-
-        3. Click Create.
+    Click **Create**
 
     ![](./images/creategroup.png "")
 
@@ -131,21 +148,30 @@ We'll create a user, a group, and a security policy to understand the concept.
 
     c) After you have selected the root compartment, click **Create Policy**.
 
-    d) Enter a unique Name for your policy (For example, "**Policy-for-oci-group**"). Note that the **name can NOT contain spaces**.
-
-    e) Enter a Description (for example, "Policy for OCI Group").
-
-    f) Enter the following Statement:
+    d) Give the Group a name and description
     
-        ```
-        Allow group oci-group to manage all-resources in compartment Demo
+    Copy the fields below
+    
+    Name:
+    ```
+    <copy>Policy-for-oci-group</copy>
+    ``` 
+    Description:
+    ```
+    <copy>Policy for OCI Group</copy>
+    ``` 
+
+    e) Enter the following Statements:
+    
+      ```
+        <copy>Allow group oci-group to manage all-resources in compartment Demo
         Allow group oci-group to read all-resources in tenancy
-        Allow group oci-group to manage App-catalog-listing in tenancy
-        ```  
+        Allow group oci-group to manage App-catalog-listing in tenancy</copy>
+      ```  
 
     ![](./images/policy.png "")    
 
-    g) Click **Create**.
+    f) Click **Create**.
 
 
 6. Create a **New User**
@@ -160,11 +186,19 @@ We'll create a user, a group, and a security policy to understand the concept.
 
     d) In the New User dialog box, enter the following:
 
-        Name: Enter a unique name. This user should have a unique name in the tenancy.
+    Give the Group a name and description
+    Copy the fields below
+    
+    Name:
+    ```
+    <copy>User01</copy>
+    ``` 
+    Description:
+    ```
+    <copy>User 01</copy>
+    ``` 
 
-        Description: Enter a description - For example, New OCI user.
-
-        Email: Enter your email ID and confirm it. Please make sure not to use the same email ID. Email ID has to be unique in the tenancy. If you don't have another email ID, you can leave it blank.
+    *Optional* Email: Enter your email ID and confirm it. Please make sure not to use the same email ID. Email ID has to be unique in the tenancy. If you don't have another email ID, you can leave it blank.
 
     ![](./images/createuser.png "")
 
