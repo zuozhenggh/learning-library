@@ -1,9 +1,12 @@
-## **Configure Visualization**
+# Configure Visualization
+
+## Introduction
 
 HPC workloads often require visualization tools for scheduling, monitoring or analyzing the output of the simulations. In these scenarios, it is often desired to create a GPU visualization node for optimal resolution and post processing. A GUI is not installed by default on OCI instances; however, one can be configured easily using VNC or X11 remote display protocol. The subsections below will walk through how to create a GPU visualization node in the public subnet using TurboVNC and OpenGL.
 
+Estimated Lab Time: 25 minutes
 
-## Setting up a VNC on your bastion
+## **STEP 1**: Setting up a VNC on your bastion
 
 By default, the only access to the Oracle Linux machine is through SSH in a console mode. If you want to see the graphical interface, you will need to set up a VNC connection. The following script will work for the default user opc. The password for the vnc session is set as "HPC_oci1" but it can be edited in the next set of commands. If you are not currently connected to the headnode via SSH, please do so as these commands need to be run on the headnode.
 ```
@@ -22,7 +25,7 @@ By default, the only access to the Oracle Linux machine is through SSH in a cons
     sudo systemctl enable vncserver@:1.service
 ```
 
-## Add a GPU Instance
+## **STEP 2**: Add a GPU Instance
 
 The below steps are taken Using OpenGL to Enhance GPU Use cases on OCI - refer to the blog for more details.
 
