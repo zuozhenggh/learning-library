@@ -18,7 +18,7 @@ This lab assumes that you have successfully completed the previous labs in the *
 Every GitHub-hosted lab that will be accessed from the Oracle Help Center must be registered as a content entry in the Oracle Learning Library (OLL).
 You must have OLL administrator privileges to view and edit content entries in OLL.
 1. Log in to the [OLL Home page] (https://apexapps.oracle.com/pls/apex/f?p=44785:1) using your Oracle SSO credentials.
-2. From your *User ID* drop-down, click **Administration**.
+2. From your **User ID** drop-down, click **Administration**.
 3. Under **Maintenance**, click **Content**.
 4. Click **Content Entries**.
 5. Click **Create**.
@@ -31,19 +31,19 @@ You must have OLL administrator privileges to view and edit content entries in O
 ## **STEP 2:** Create the Target URL for a Lab
 
 1. Log in to the [OLL Home page] (https://apexapps.oracle.com/pls/apex/f?p=44785:1) using your Oracle SSO credentials.
-2. From your *User ID* drop-down, click **Administration**.
+2. From your **User ID** drop-down, click **Administration**.
 3. Under **Maintenance**, click **Content**.
 4. Click **Content Entries**.
 5. To find your the content entry for the lab, click on a header label in the table, click in the **Filter** field, begin typing what you're looking for, and then select the appropriate item.
 6. Click **link** under **Copy This** to copy the content entry link.
 
-  The content ID URL opens in your browser: https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:28287
+  The content ID URL opens in your browser.
 
 7. Save the URL, which you will use to create a link from an OHC page.
 
 ## **Step 3:** Add a Link to the Lab from Oracle Help Center
 To add a link to a lab from an OHC Tutorials page:
-1. Open the Self Publishing [Self Publishing OHC Interface Page V3 application](Self Publishing OHC Interface Page V3 application.).
+1. Open the [Self Publishing OHC Interface Page V3 application](https://apex.oraclecorp.com/pls/apex/f?p=40100:1:101812173799316:::::).
 2. In the **Search** field, enter your Product name and press **Enter**.
 3. Click **Edit** next to **Tutorials** to display the **Tutorials** page.
     [](./images/ohc-edit-Pages.png " ")
@@ -51,8 +51,7 @@ To add a link to a lab from an OHC Tutorials page:
     [](./images/ohc-section-topics.png " ")
 5. Click **Topics** and then click **Create Topic**.
 
-6. In the **Create Topic** section, enter the title of the lab and, in **Href**, enter the URL you created in "**STEP 2:** Create the Target URL for a Lab' for example: https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:28287.
-    [](./images/ohc-create-topic.png " ")
+6. In the **Create Topic** section, enter the title of the lab and, in **Href**, enter the URL you created in "**STEP 2:** Create the Target URL for a Lab".
 
 **This concludes this lab.**
 

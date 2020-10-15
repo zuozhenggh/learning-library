@@ -82,16 +82,11 @@ To publish your GitHub Pages site:
   ![](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
 
 4. Under **Source**, select **master** (if it's not already selected) from the drop-down list.
-5. Under **Theme Chooser**, click **Change Theme** and select a theme of your choice. This may take a few hours to complete.
+5. Under **Theme Chooser**, click **Change Theme** and select a theme of your choice. T
 
-  After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
+  This may take a few hours to complete. After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
   ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
-  **Troubleshooting Tip and Workaround**: At times, you may notice a message, such as "Your site is having problems building: Page build timed out. Please try again later."
-    1. Select **none** from the **Select branch** drop-down list under source and click **Save** to display your GitHub repository site.
-    2. Click **Settings** and then **Options**.
-    3. Select **master** from the **Select branch** drop-down list under source and click **Save**.
-      The message under **GitHub Pages** changes to **Your site is published at https://achepuri.github.io/learning-library**
 
 ## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production **(upstream/master)** repository).
