@@ -92,7 +92,7 @@ To complete this lab, you need the following:
 
   - If a custom policy is not selected, it means that you can select it to enable it on your target database. There is one such policy: `APP_USER_NOT_APP_SERVER`.
 
-   ![Custom policies](images/custom-audit-policies.png)
+    ![Custom policies](images/custom-audit-policies.png)
 
 
 - Expand **Oracle Pre-defined Policies** to view the list of Oracle predefined audit policies available on your target database. By default, the following policies are provisioned on an Autonomous Transaction Processing database:
