@@ -46,16 +46,15 @@ This lab assumes the following:
 
 ## **STEP 1**: Sign in to the Oracle Data Safe Console
 
-- If you are already signed in to the Oracle Data Safe Console, click the **Oracle Data Safe** tab in your browser.
+1. If you are already signed in to the Oracle Data Safe Console, click the **Oracle Data Safe** tab in your browser.
 
-- If you are not signed in to the Oracle Data Safe Console, do the following:
+2. If you are not signed in to the Oracle Data Safe Console, do the following:
 
-    - Click the browser tab named **Oracle Cloud Infrastructure**, and sign in to the Console if needed.
+3. Click the browser tab named **Oracle Cloud Infrastructure**, and sign in to the Console if needed.
 
-    - From the navigation menu, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
+4. From the navigation menu, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
 
-    - Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
-
+5. Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
 
 ## **STEP 2**: View and close alerts
 
