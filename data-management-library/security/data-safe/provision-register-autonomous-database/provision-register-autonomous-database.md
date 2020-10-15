@@ -230,7 +230,7 @@ The **Registered Databases** page for the Oracle Data Safe service in the Oracle
     ![Registered Databases tab in OCI](images/access-data-safe-console-from-registered-databases-tab.png)
 
 
-You can continue to the next lab.
+Continue to the next lab.
 
 
 ## Learn More
