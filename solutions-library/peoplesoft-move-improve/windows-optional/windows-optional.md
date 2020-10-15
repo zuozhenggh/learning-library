@@ -1,91 +1,81 @@
-# Load Data into an Instance
+# Windows VM Compute Lab (Optional) : Provision Windows Compute in OCI
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+For individuals who might not have Admin access to their local machine, this lab walks you through the steps to provision a Windows compute instance in OCI, and access it through a Remote Desktop Connection
 
-Estimated Lab Time: n minutes
+<!-- Estimated Lab Time: n minutes -->
 
 ### About Product/Technology
 Enter background information here..
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+This lab will show you how to create a Windows compute instance in OCI, and how to access it through a Remote Desktop Connection.
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create a Windows Instance
+* Access the Windows Instance with Remote Desktop Connection
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+1. Permissions to create compute instances in OCI
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+2. Remote Desktop Connection downloaded
 
-*This is the "fold" - below items are collapsed by default*
+## **STEP 1**: Create Windows Instance
 
-## **STEP 1**: title
+1. On the Oracle Cloud Infrastructure console home page, click Create a VM Instance under Quick Action
 
-Step 1 opening paragraph.
+![](./images/vmw.png "") 
 
-1. Sub step 1
+2. On the Create Compute Instance page, enter a name for the Windows instance eg. windows-custom-image.
 
-  To create a link to local file you want the reader to download, use this format:
+![](./images/WNAME.png "") 
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+3. Click on **Change Image**. Select Windows Server 2016 Standard, and accept the document.
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+![](./images/shapew.png "")
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+4. Click on **Show Shape, Network, Storage Options**. Please select Availability Domain as AD-2. 
 
-    ![Image alt text](images/sample1.png "Image title")
+![](./images/shape3.png "")
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+5. Make sure that the shape is **VM.Standard.2.1**. If not, click on **change shape** and select Instance Type as **Virtual Machine**, Shape Series as **Intel Skylake**, and Shape name as **VM.Standard.2.1**. 
 
-    ![Image alt text](images/sample1.png)
+![](./images/shapeselect.png "") 
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+6. In **configure networking** section, make sure that Virtual Cloud Network Compartment is **Demo**, Virtual Cloud Network is **OCIHOLVCN**, Subnet Compartment is **Demo** and Subnet is **cm (Regional)**.
 
-5. One example with bold **text**.
+![](./images/vm.png "") 
 
-   If you add another paragraph, add 3 spaces before the line.
+7. Click Create.
 
-## **STEP 2:** title
+8. On the Details page, make a note of the Public IP Address, the username, opc and copy Initial Password to your local clipboard.
 
-1. Sub step 1
+![](./images/wdetail.png "")
 
-  Use tables sparingly:
+## **STEP 2:** Access the Windows Instance with Remote Desktop Connection
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+1. Launch Remote Desktop Connection, for example from the Start menu of a local machine.
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+NOTE: If you have not installed Remote Desktop Connection, please do so throught this [link](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps)
 
-    - List item 1
-    - List item 2
+2. **Steps for Windows machine**: In the Computer field, enter the Public IP address of the Microsoft Windows VM that you noted in the previous section. Enter opc in the User name field. 
 
-3. Code examples
+![](./images/pwin6.png "")
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+Click Connect.
+Enter the default password you noted from the instance details page.
 
-4. Code examples that include variables
+**Steps for Mac machine**: Depending on the software, these steps might differ. Click on + sign and select Desktop or Add PC. Enter the Public IP address. Give Username as opc and password that you copied previously.
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+![](./images/gi1.png "")
 
-*At the conclusion of the lab add this statement:*
+3. Click Yes on the security message, which mentions that the identity of the remote computer cannot be verified.
+
+4. Change the password to **Psft@12345678**. 
+
 You may proceed to the next lab.
 
 ## Learn More
@@ -96,10 +86,12 @@ You may proceed to the next lab.
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Authors** 
+- Rich Konopka, PeopleSoft Specialist, October 2020
+- Megha Gajbhiye, Cloud Solutions Engineer, Octiber 2020
+
+* **Last Updated By/Date** 
+- Sara Lipowsky, Cloud Engineer, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
