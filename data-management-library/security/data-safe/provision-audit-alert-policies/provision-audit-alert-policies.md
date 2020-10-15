@@ -16,7 +16,7 @@ In this lab, you'll:
 
 ### Prerequisites
 
-To complete this lab, you need to the following:
+To complete this lab, you need the following:
 
 - An Oracle Cloud account
 - Access to an Oracle Data Safe service
@@ -26,20 +26,25 @@ To complete this lab, you need to the following:
 
 ### Assumptions
 
-- This lab assumes that you are already signed in to the Oracle Cloud Infrastructure Console.
+- This lab assumes that you completed the [Provision and Register and Autonomous Database](../provision-register-autonomous-database/provision-register-autonomous-database.md) lab.
 
 
 ## **STEP 1**: Sign in to the Oracle Data Safe Console
 
-- From the navigation menu in the Oracle Cloud Infrastructure Console, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
 
-- Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
+- If you are already signed in to the Oracle Data Safe Console, click the **Oracle Data Safe** tab in your browser.
+
+- If you are not signed in to the Oracle Data Safe Console, do the following:
+
+    - From the navigation menu in the Oracle Cloud Infrastructure Console, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
+
+    - Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
 
 
 ## **STEP 2**: Provision audit and alert policies on your target database by using the Activity Auditing wizard
 
 
-- In the Oracle Data Safe Console, click the **Activity Auditing** tab.
+- In the Oracle Data Safe Console, click the **Home** tab, and then click the **Activity Auditing** tab. The first page of the Activity Auditing wizard is displayed.
 
 
 - On the **Select Targets for Auditing** page, select the check box for your target database, and then click **Continue**.
@@ -59,15 +64,15 @@ To complete this lab, you need to the following:
 
 - On the **Review and Provision Audit and Alert Policies** page, review the types of audit policies already enabled on your target database, and then click your target database name to provision more policies.
 
-  - The check mark under **Additional Policies** means that the Autonomous Database has predefined audit policies enabled on it.
-  - **CIS** under **Compliance Standards** means that the Autonomous Database has the Center for Internet Security (CIS) Configuration audit policy enabled on it.
+  - The check mark under **Additional Policies** means that your target database has predefined audit policies enabled on it.
+  - **CIS** under **Compliance Standards** means that your target database has the **Center for Internet Security (CIS) Configuration** audit policy enabled on it.
   - Currently, there are no basic, admin activity, or user activity audit policies provisioned on your target database, nor are there any alert policies.
 
     ![Review and Provision Audit and Alert Policies page with pre-enabled audit policies](images/review-and-provision-audit-and-alert-policies-page.png)
 
 
 
-- On the **Audit Policies** tab in the **Edit Policies** dialog box, notice that the following **Basic Auditing** and **Admin Activity Auditing** policies are selected by default. Oracle recommends that you create and enable (provision) these policies. They are not provisioned by default.
+- In the **Edit Policies** dialog box, the **Audit Policies** tab shows that the following **Basic Auditing** and **Admin Activity Auditing** policies are selected by default. Oracle recommends that you create and enable (provision) these policies. They are not provisioned by default.
     - Critical Database Activity
     - Login Events
     - Database Schema Changes (DDL)
@@ -131,7 +136,7 @@ To complete this lab, you need to the following:
 
 - On the **Start Audit Collection** page, observe the following defaults:
 
-  - The audit trail location is automatically set to `UNIFIED_AUDIT_TRAIL`.
+  - The audit trail location is automatically set to `UNIFIED_AUDIT_TRAIL`, which is the default audit trail for Autonomous Databases.
   - Audit collection is not yet started.
   - The auto purge feature is not enabled by default.
   - You need to configure an audit collection start date.
@@ -147,29 +152,37 @@ To complete this lab, you need to the following:
 
 - Wait for the **To Be Collected**, **Collected**, and **Total** columns to populate, review their values, and then click **Start** to start collecting audit data. Don't worry if your numbers are different than those shown in the screenshot below.
 
+    - The **To Be Collected** column shows you the number of records to be retrieved for the selected audit trail since the specified start date.
+
+    - The **Collected** column shows the number of audit records already collected for the current month for the target database (includes audit data collected from all the audit trails for the target database). This value helps you to determine whether you are going to exceed your monthly quota of one million records.
+
+    - The **Total** column totals the **To Be Collected** and **Collected** values for a target database. This value tells you the overall number of audit records you are going to collect for a target database for the current month.
+
   ![To Be Collected, Collected, and Total columns](images/to-be-collected-data.png)  
 
 
 - In the **Start Audit Collection** dialog box, click **Start** to confirm that you want to start the `UNIFIED_AUDIT_TRAIL`.
 
-  A message at the top of the page states the `UNIFIED_AUDIT_TRAIL` is successfully created. The **Collection State** column value changes from  `STARTING` to `COLLECTING`, and then to `IDLE`.
+  ![Start Audit Collection dialog box](images/start-audit-collection-dialog-box.png)  
 
 
-- Click **Done**. You are directed to the **Audit Trails** page. 
+- Wait for the message at the top of the page, which states that the `UNIFIED_AUDIT_TRAIL` is successfully created.
 
 
-  - From the **Audit Trails** page, you can manage all of the audit trails for your target databases.
+- Click **Done**. You are directed to the **Audit Trails** page. From the **Audit Trails** page, you can manage all of the audit trails for your target databases. 
 
-  ![Audit Trails page](images/audit-trails-page.png)  
+   ![Audit Trails page](images/audit-trails-page.png)  
+
+
+- Observe that the **Collection State** column value changes from  `STARTING` to `COLLECTING`, and then to `IDLE`. Collection takes approximately 2 minutes.
+
+
 
 
 
 ## **STEP 3**: View details for an audit trail
 
 - In the **Collection State** column on the **Audit Trails** page, click **COLLECTING** or **IDLE** if the audit data is collected.
-
-  - Collection takes approximately 2 minutes.
-  - You can continue with the lab.
 
   ![Collection State column](images/idle.png)  
 
@@ -211,8 +224,8 @@ To complete this lab, you need to the following:
 
 
 ## Acknowledgements
-  * **Author** - Jody glover, UA Developer, Oracle Data Safe Team
-  * **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 9, 2020
+* **Author** - Jody Glover, Principal User Assistance Developer, Database Development
+* **Last Updated By/Date** - Jody Glover, October 15, 2020
 
 
 ## See an issue?

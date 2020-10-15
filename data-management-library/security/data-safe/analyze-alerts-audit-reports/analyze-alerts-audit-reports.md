@@ -26,16 +26,23 @@ To complete this lab, you need to have the following:
 - Access to an Autonomous Database, sample data for Oracle Data Safe loaded into the database, and the Activity Auditing feature enabled on the database
 - Access to an Oracle Data Safe service
 - Privileges to use the Activity Auditing feature on your database
-- Audit collection started on your target database in Oracle Data Safe. If not, see [Provision Audit and Alert Policies](../provision-audit-alert-policies/provision-audit-alert-policies.md).
+- Audit collection started on your target database in Oracle Data Safe.
 
 
 ### Assumptions
 
-- You are signed in to the Oracle Cloud Infrastructure Console.
-- Your data values will be different than those shown in the screenshots in this lab.
+This lab assumes that you completed the following labs:
+
+- [Provision and Register and Autonomous Database](../provision-register-autonomous-database/provision-register-autonomous-database.md)
+- [Provision Audit and Alert Policies](../provision-audit-alert-policies/provision-audit-alert-policies.md)
+
+**Note:** Your data values will be different than those shown in the screenshots in this lab.
 
 
-## **STEP 1**: (If needed) Sign in to the Oracle Data Safe Console
+
+## **STEP 1**: Sign in to the Oracle Data Safe Console
+
+You can skip this step if you are already signed in to the Oracle Data Safe Console.
 
 - From the navigation menu in the Oracle Cloud Infrastructure Console, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
 
@@ -249,8 +256,8 @@ Continue to the next lab.
 
 
 ## Acknowledgements
-* **Author** - Jody glover, UA Developer, Oracle Data Safe Team
-* **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 9, 2020
+* **Author** - Jody Glover, Principal User Assistance Developer, Database Development
+* **Last Updated By/Date** - Jody Glover, October 15, 2020
 
 
 ## See an issue?

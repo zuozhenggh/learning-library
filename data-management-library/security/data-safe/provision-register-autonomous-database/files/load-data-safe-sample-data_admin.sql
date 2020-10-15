@@ -1,5 +1,5 @@
 --Loads the Oracle Data Safe sample data into an Autonomous Database
---Last updated: October 9, 2020
+--Last updated: October 15, 2020
 --Be sure to run this script AFTER you register your Autonomous Database
 
 /*************************************************************************************************/

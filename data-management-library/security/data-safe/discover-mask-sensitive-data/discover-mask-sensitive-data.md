@@ -287,8 +287,8 @@ The Data Masking wizard generates a masking policy for your target database base
 * [Data Masking](https://docs.cloud.oracle.com/en-us/iaas/data-safe/doc/data-masking.html)
 
 ## Acknowledgements
-* **Author** - Jody glover, UA Developer, Oracle Data Safe Team
-* **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 13,2020
+* **Author** - Jody Glover, Principal User Assistance Developer, Database Development
+* **Last Updated By/Date** - Jody Glover, October 15, 2020
 
 
 ## See an issue?

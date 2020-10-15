@@ -82,9 +82,8 @@ If you have a question during this workshop, you can use the **[Autonomous Data 
 
 ## Acknowledgements
 
-
-- **Author**- Jody Glover, UA Developer, Oracle Data Safe Team
-- **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, October 14, 2020
+* **Author** - Jody Glover, Principal User Assistance Developer, Database Development
+* **Last Updated By/Date** - Jody Glover, October 15, 2020
 
 
 ## See an issue?
