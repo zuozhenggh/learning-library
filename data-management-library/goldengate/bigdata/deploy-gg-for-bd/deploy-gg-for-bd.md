@@ -20,7 +20,7 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
-## **Step 0:** Running your Lab
+## **STEP 0:** Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -63,7 +63,7 @@ These online notes have been provided so you can cut/paste file names to another
     <copy>./ggsci</copy>
 
     <copy>info all</copy>
-    
+
     <copy>exit</copy>
     ```
     **type**

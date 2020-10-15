@@ -19,8 +19,8 @@ Estimated Lab Time: 25 minutes
 As with any good guide, the first Function built is a _Hello World_. The name
 used is `import` since that describes the future purpose well:
 
-    [opc@compute step1]$ mkdir import
-    [opc@compute step1]$ cd import/
+    [opc@compute ~]$ mkdir import
+    [opc@compute ~]$ cd import/
     [opc@compute import]$ fn init --runtime node 
     Function boilerplate generated.
     func.yaml created.
@@ -149,7 +149,7 @@ dependencies from `package.json` automatically. You have to ensure that
 either your `package.json` and `node_modules` are in sync or remove
 `node_modules` so Fn manages this.*
 
-Now adopt `func.js` to do what we need:
+Now adapt `func.js` to do what we need:
 
     const fdk=require('@fnproject/fdk');
     const mysqlx = require('@mysql/xdevapi');
@@ -227,12 +227,23 @@ being used, which wraps Node.js's `https` module behind a single function:
 
 *Note: The `download.js` file is provided in the `step2` directory as well.*
 
+After getting the code ready it has to be deployed as before:
+
+    [opc@compute import]$ fn deploy --app DemoApp
+    Deploying import to app: DemoApp
+    Bumped to version 0.0.3
+    ...
+    Updating function import using image iad.ocir.io/.../..../import:0.0.3...
+
+
 ## **STEP 5:** Configure the Event Handling
 
 First thing we do is take a look at the Object Store in the console. Navigate
 to it in your Web Browser.
 
-TODO Screenshot
+  ![](images/os_menu.png " ")
+
+  ![](images/os_buckets.png " ")
 
 You will see that our initial setup already created two Buckets. A Bucket
 is a collection of related files in Object store. For now we care about
@@ -242,6 +253,8 @@ Click on the `import` Bucket and ensure that `Emit Object Events` is
 activated. In the center area you could upload files. In the left you get 
 access to different options. You can take a look, but don't have to make
 any changes.
+
+  ![](images/os_import_event.png " ")
 
 *Note: The Bucket is configured as Public. This makes Objects accessible to
 everybody (who can guess the exact URL) world-wide. Outside this Lab you

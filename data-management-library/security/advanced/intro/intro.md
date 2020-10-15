@@ -14,7 +14,6 @@ This workshop will cover the following products and solutions:
 - Oracle Key Vault (OKV)
 
 ## About this Workshop
-
 Based on an OCI architecture, deployed in a few minutes with a simple internet connection, it allows you to test DB Security use cases in a complete environment already pre-configured by the Oracle DB Security PMs Team.
 
 Now, **you no longer need important resources on your PC** (storage, CPU or memory), nor complex tools to master, **making you completely autonomous to discover** at your rhythm all new DB Security features, but also you can even now **make your own live demonstration** in front of your customers.
@@ -32,12 +31,12 @@ The complete architecture of this workshop is composed of 4 VMs as below:
 
 During this workshop, you'll use different resources to interact with these VMs:
 - SSH Terminal Client;
-- SQL Developer;
 - Glassfish HR App;
 - Oracle Enterprise Manager 13c;
-- Oracle AVDF Web Console;
-- Oracle Key Vault Web Console;
-- Oracle Golden Gate Web Console.
+- Oracle AVDF Web Console (*for AVDF labs only*);
+- Oracle Golden Gate Web Console (*for AVDF labs only*);
+- Oracle Key Vault Web Console (*for OKV labs only*);
+- (Optionnally) SQL Developer.
 
 So that your experience of this workshop is the best possible, DO NOT FORGET to perform lab "*Environment Setup*" to be sure that all these resources are correctly set!
 
@@ -45,7 +44,7 @@ The entire DB Security PMs Team wishes you an excellent workshop.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Principal Solution Engineer, Database Security
+- **Contributors** - Gian Sartor, Rene Fontcha
 - **Last Updated By/Date** - Hakim Loumi, October 2020
 
 ## See an issue?

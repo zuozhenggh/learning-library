@@ -25,7 +25,7 @@ The example below using port 7803 is for illustration only and validation (*Step
 
 Depending on your local computer platform and SSH client, select the appropriate *Step 1* below to proceed.
 
-## **Step 1 (A):** Running your workshop from MacOS or Windows with Unix/Linux emulators
+## **STEP 1 (A):** Running your workshop from MacOS or Windows with Unix/Linux emulators
 The following steps are meant for anyone running this workshop on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, MobaXterm, Exceed, and other similar utilities. If you are on Windows and use *PuTTY* utility as your SSH client, please skip to the next step.
 
 ### **Setup**
@@ -48,7 +48,7 @@ The following steps are meant for anyone running this workshop on MacOS, Unix/Li
    - This SSH session must remain alive throughout your connectivity to above remote port.
    - Steps (1)-(2) must be performed for each remote port needed
 
-## **Step 1 (B):** Running your workshop from Windows with PuTTY
+## **STEP 1 (B):** Running your workshop from Windows with PuTTY
 The following steps are meant for anyone running this workshop on Windows and use *PuTTY* utility as your SSH Client. If you are on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, MobaXterm, Exceed, and other similar utilities, please go back to the prior step.
 
 ### **Setup**
@@ -92,7 +92,7 @@ The following steps are meant for anyone running this workshop on Windows and us
    - This SSH session must remain alive throughout your connectivity to above remote port.
    - Steps (1)-(2) must be performed for each remote port needed
 
-## **Step 2:** Validate
+## **STEP 2:** Validate
 Using the corresponding utility indicated in the table above, open a connection to the remote destination by addressing your local computer. While we are using a browser client for this illustration, the same applies to other clients as well. e.g. Using SQL Developer on port 1521 to access the database.  
 
 1. **EM13c OMS Console**

@@ -1,4 +1,4 @@
-# Creating a Micro-Service and Frontend
+# Creating a Microservice and Web Frontend
 
 ## Introduction
 
@@ -11,7 +11,7 @@ Estimated Lab Time: 25 minutes
 
 - Build a Web Frontend for our data using a serverless microservice
 - Learn about different ways to search for data in the MySQL Document Store and via SQL
-- LEarn to modify data in the MySQL Document Store
+- Learn to modify data in the MySQL Document Store
 
 ## **STEP 1:** Understanding API Gateway
 
@@ -80,6 +80,13 @@ just as before:
     [opc@compute peopleService]$ fn init --runtime node 
     Function boilerplate generated.
     func.yaml created.
+
+Then install the dependencies:
+
+    [opc@compute peopleService]$ npm install
+    [opc@compute peopleService]$ npm install --save @mysql/xdevapi
+
+
     
 This time this function is being used:
 
@@ -122,8 +129,32 @@ provided. To keep number of different functions low it is prepared to handle
 different *modes*. It then uses the X DevAPI's `find()` function to search
 for documents showing the people from a given state.
 
+For formatting of dates, we use a small helper, `date.js`:
+
+    module.exports = () => {
+        const d = new Date();
+        let month = '' + (d.getMonth() + 1);
+        let day = '' + d.getDate();
+        const year = d.getFullYear();
+
+        if (month.length < 2) {
+            month = '0' + month;
+        }
+        if (day.length < 2) {
+            day = '0' + day;
+        }
+
+        return [year, month, day].join('-');
+    }
+
+You can find the complete code in the `step3/peopleService` directory.
+
 In case of an error the HTTP status code 500 is being used and an error
 response send to the client.
+
+Just like with the `import` service, this is deployed using the `fn`tool:
+
+    [opc@compute peopleService]$ fn deploy --app DemoApp
 
 *Note: Returning raw errors to a client can be a security issue. Raw errors
 should be logged for debugging purpose.*
@@ -158,7 +189,7 @@ The **Header Name** has to match the one we expect in our Function's code, **X-V
 
 As **Value** type `${request.path[name]}` and confirm by pressing enter, for
 this field to be accepted. This takes the value from the placeholder of the
-route's patrh we declared before.
+route's path we declared before.
 
 Then click **+Another Transform** and repeat this for the **X-Mode** header and value **state**.
 
@@ -255,6 +286,11 @@ Add this `else if` block:
                 return result.fetchAll().map(row => row[0]);
             }
 
+You can find the complete code in the `step4/peopleService` directory and apply using
+
+    [opc@compute peopleService]$ fn deploy --app DemoApp
+
+
 Again we have to add a route, just as before. This time for the **Path** `/income/{salary}`,
 setting **X-Mode** to `salary` and **X-Value** to `${request.path[salary]}`.
 
@@ -296,9 +332,13 @@ This is the code we add to our `peopleService`:
                return { success: true, newEntry };
             }
 
+You can find the complete code in the `step5/peopleService` directory and apply using
+
+    [opc@compute peopleService]$ fn deploy --app DemoApp
+
 Since this time the `amount` by which we raise, is sent as part of the HTTP request body, therefore we receive it as `input`.
 
-When configuring the route also make sure to use the `PPATCH`method. Other than that it is similar to previous cases:
+When configuring the route also make sure to use the `PATCH`method. Other than that it is similar to previous cases:
 
 | Setting     | Value            |
 | ----------- | ---------------- |
