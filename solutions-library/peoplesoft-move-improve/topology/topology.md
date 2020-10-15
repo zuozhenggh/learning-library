@@ -1,107 +1,47 @@
-# Query Your Data
+# Reviewing and updating a Topology
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+Cloud Manager provisions PeopleSoft environments on-demand with just a few clicks. The entire provisioning process is automated. At the end of provisioning, a ready-to-use environment is available within a short time. The environments can be created by a three step process:
+1. Create Topology
+2. Create Template
+3. Create Environment
 
-Estimated Lab Time: n minutes
+Topology defines the infrastructure layout that will be created on Oracle Cloud by Cloud Manager. An administrator defines a template for creating an environment. The topology is encapsulated inside the template. 
 
-### About Product/Technology
-Enter background information here..
+Users can select a template, override topologies, change any attributes, if needed, and provision PeopleSoft environments on demand. Users are allowed to perform actions on a running environment, such as stop, view details, create new template from it, and so on.
 
-### Objectives
+## Part 1
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+1.	Navigate to Dashboard | Topology | PUM Fulltier topology. This topology will be used to create a new environment. 
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+![](./images/1.png "")
 
-### Prerequisites
+2.	Review the nodes and update the Shapes.  Click Full Tier node and select a shape that is available in your AD 2. (Click on the down arrow to see the shapes) 
+In this case, select VM.Standard2.1 or VM.Standard2.2. 
+Review the available shapes in your AD, as explained in Lab 100.
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+![](./images/topology.png "")
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+3.	Delete the Windows node from the topology. Click ‘Delete’ on the page shown below and save the topology. 
 
-*This is the "fold" - below items are collapsed by default*
+![](./images/3.png "")
 
-## **STEP 1**: title
+4.	When you are ready, click **Save**. The topology should now look as shown below.
 
-Step 1 opening paragraph.
+![](./images/4.png "")
 
-1. Sub step 1
-
-  To create a link to local file you want the reader to download, use this format:
-
-  Download the [starter file](files/starter-file.sql) SQL code.
-
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
-
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
-
-    ![Image alt text](images/sample1.png "Image title")
-
-3. Ordered list item 3 with the same image but no link to the text description below.
-
-    ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. One example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** title
-
-1. Sub step 1
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-*At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+You may now proceed to the next lab.
 
 ## Acknowledgements
-* **Authors** 
-- Rich Konopka, PeopleSoft Specialist, October 2020
-- Megha Gajbhiye, Cloud Solutions Engineer, Octiber 2020
 
-* **Last Updated By/Date** 
-- Sara Lipowsky, Cloud Engineer, October 2020
+**Created By/Date**   
+- Rich Konopka, Peoplesoft Specialist, October 2020  
+- Megha Gajbhiye, Cloud Solutions Engineer, October 2020  
+
+**Last Updated By/Date**    
+- Sara Lipowsky, Cloud Solutions Engineer, October 2020  
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the **workshop name**, **lab** and **step** in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the **Feedback Comments** section.  
