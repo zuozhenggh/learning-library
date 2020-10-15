@@ -23,7 +23,6 @@ Watch our short video that explains key features in Oracle Data Safe: [https://y
 ## Workshop Objectives
 
 - Get comfortable with Oracle's public cloud services
-<if type="freetier">- Enable Oracle Data Safe and create a compartment</if>
 - Provision an Autonomous Database on Shared Exadata Infrastructure and register it with Oracle Data Safe
 - Provision audit and alert policies on your database with Oracle Data Safe
 - Analyze alerts and audit reports in Oracle Data Safe

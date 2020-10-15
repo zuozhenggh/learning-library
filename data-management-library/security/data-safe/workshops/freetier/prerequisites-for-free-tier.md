@@ -9,7 +9,7 @@ If you already have an Oracle Cloud Free Tier account, you can skip step 1.
 
 **Note:** The Oracle Data Safe service is not available to you if your Free Tier trial period has ended and you are now using Always Free resources.
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -17,6 +17,8 @@ In this lab, you'll:
 
 - Create your own free trial account
 - Sign in to the Oracle Cloud Infrastructure Console with your account credentials
+- Enable Oracle Data Safe
+- Create a compartment
 
 
 ### Prerequisites
@@ -36,8 +38,6 @@ If you already have an Oracle Cloud Free Tier account, you can skip this step.
 - Click **Start for free**.
 
   ![Start for Free option](images/start-for-free.png)
-
-
 
 
 
@@ -114,7 +114,52 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
 
 
-Continue to the [**Introduction**](../introduction/introduction.md).
+
+  ## **STEP 3:** Enable Oracle Data Safe
+
+  - At the top of the page on the right, select a region in your tenancy (usually your Home region), for example, **US East (Ashburn)**.
+
+    ![Select Home region](images/select-region.png)
+
+  - From the navigation menu, select **Data Safe**.
+
+    ![Select Data Safe from the Navigation menu](images/navigation-menu-select-data-safe.png)
+
+    The **Overview** page is displayed.
+
+  - Click **Enable Data Safe** and wait a couple of minutes for the service to enable.
+
+    ![Enable Data Safe button](images/enable-data-safe-button.png)
+
+  - When it's enabled, a confirmation message is displayed in the upper-right corner.
+
+
+  ## **STEP 4:** Create a compartment
+
+You need to create a compartment in your tenancy to store your Autonomous Database and Oracle Data Safe resources. In the labs, this compartment is referred to as "your compartment."
+
+- From the navigation menu, select **Identity**, and then **Compartments**. The **Compartments** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
+
+- Click **Create Compartment**. The **Create Compartment** dialog box is displayed.
+
+- Enter a name for the compartment, for example, `dsc01` (short for Data Safe compartment 1).
+
+- Enter a description for the compartment, for example, **Compartment for the Oracle Data Safe Workshop**.
+
+  ![Create Compartment dialog box](images/create-compartment.png)
+
+- Click **Create Compartment**.
+
+
+
+
+
+
+
+
+
+
+Continue to the [**Introduction**](?lab=<introduction>).
 
 If you have a question during this workshop, you can use the **[Autonomous Data Warehouse Forum](https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary)** on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Data Safe. Are you completely new to the **Cloud Customer Connect** forums? Visit our **[Getting Started forum page](https://cloudcustomerconnect.oracle.com/pages/1f00b02b84)** to learn how to best leverage community resources.
 

@@ -4,7 +4,7 @@
       {
           "title": "Prerequisites",
           "description": "Prerequisites to run the Oracle Data Safe workshop in the LiveLabs tenancy.",
-          "filename": "./prerequisites-for-the-livelabs-tenancy.md"        },
+          "filename": "./prerequisites-for-livelabs-tenancy.md"        },
           {
               "title": "Introduction",
               "description": "This lab provides information about the Oracle Data Safe workshop.",
