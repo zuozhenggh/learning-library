@@ -12,6 +12,7 @@ In this lab, you'll:
 - View sensitive data in your database
 - Discover sensitive data in your database by using the Data Discovery feature
 - Mask sensitive data in your database by using the Data Masking feature
+- Create a PDF of the Data Masking report
 - Validate the masked data in your database
 
 
@@ -20,19 +21,25 @@ In this lab, you'll:
 To complete this lab, you need to have the following:
 
 - An Oracle Cloud account
-- Access to an Autonomous Database as the `ADMIN` user, sample data for Oracle Data Safe loaded into the database, and the Discovery and Masking feature enabled on the database
+- Access to an Autonomous Database as the `ADMIN` user, sample data for Oracle Data Safe loaded into the database, and the Discovery and Masking features enabled on your database
 - Access to an Oracle Data Safe service
 - Privileges to use the Discovery and Masking features on your database
 
 ### Assumptions
 
-- You are signed in to the Oracle Cloud Infrastructure Console.
+- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the **Prerequisites** for this workshop.
+
+- You completed the [Provision and Register and Autonomous Database](../provision-register-autonomous-database/provision-register-autonomous-database.md) lab in this workshop.
+
 - Your data values will be different than those shown in the screenshots in this lab.
+
 
 
 ## **STEP 1**: View sensitive data in your database
 
 In this step, you use SQL Developer Web to query sensitive data in your database. You can access SQL Developer Web from your database's Console.
+
+- Select the browser tab that is signed in to the Oracle Cloud Infrastructure Console. If needed, sign in again.
 
 - In the Oracle Cloud Infrastructure Console, make sure the correct region is selected in your tenancy.
 
@@ -48,9 +55,9 @@ In this step, you use SQL Developer Web to query sensitive data in your database
 
 - In the **Username** field, enter `ADMIN`. In the **Password** field, enter the password that you created for the `ADMIN` user when you provisioned the database. Click **Sign In**.
 
-- If a help note is displayed, click the **X** to close it.
+- If a help note is displayed, click the **X** button to close it.
 
-- On the **Navigator** tab, select the `HCM1` schema from the first drop-down menu. In the second drop-down menu, leave **Tables** selected.
+- On the **Navigator** tab, select the `HCM1` schema from the first drop-down list. In the second drop-down list, leave **Tables** selected.
 
   ![Navigator tab in SQL Web Developer](images/select-hcm1.png)
 
@@ -70,11 +77,11 @@ In this step, you use SQL Developer Web to query sensitive data in your database
 
  ![Run Statement button on toolbar](images/run-statement-button.png)
 
-- Review the query results.
+- Review the query results. If needed, click the **Query Result** tab.
 
   - Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, and `hire_date`, are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
 
-  - Keep this tab open so that you can return to it later in step 4 when you view the masked data.
+  - Keep this tab open so that you can return to it later. In step 4, you compare the original query results with the masked data.
 
   ![Query results](images/original-query-results.png)
 
@@ -89,7 +96,7 @@ The Data Discovery wizard generates a sensitive data model that contains sensiti
 
 - Return to the browser tab for the Oracle Cloud Infrastructure Console. If needed, sign in again.
 
-- From the navigation menu in the Oracle Cloud Infrastructure Console, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
+- From the navigation menu, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
 
 - Click **Service Console**. The **Home** page in the Oracle Data Safe Console is displayed.
 
@@ -124,34 +131,36 @@ The Data Discovery wizard generates a sensitive data model that contains sensiti
   ![Select All check box selected](images/select-sensitive-types-select-all.png)
 
 
-- When the job is completed, ensure that the **Detail** column states `Data discovery job finished successfully`, and then click **Continue**.
+- When the job is completed, ensure that the **Detail** column states **Data discovery job finished successfully**, and then click **Continue**.
 
   ![Detail column](images/sensitive-data-discovery-complete.png)
 
 
-- On the **Sensitive Data Discovery Result** page, examine the sensitive data model created by the Data Discovery wizard. To view all of the sensitive columns, move the **Expand All** slider to the right.
-    - Oracle Data Safe automatically saves your sensitive data model to the Oracle Data Safe Library.
+- On the **Sensitive Data Discovery Result** page, examine the sensitive data model created by the Data Discovery wizard. Oracle Data Safe automatically saves your sensitive data model to the Oracle Data Safe Library.
 
-      ![Sensitive Data Discovery Result page](images/sensitive-data-discovery-result.png)
+- To view all of the sensitive columns, move the **Expand All** slider to the right.
 
-- From the drop-down list, select **Schema View** to sort the sensitive columns by table.
+    ![Sensitive Data Discovery Result page](images/sensitive-data-discovery-result.png)
+
+- From the drop-down list, select **Schema View** to sort the sensitive columns by table name.
 
     ![Schema View circled](images/schema-view.png)
 
 - Scroll down the page to view the sensitive columns.
 
-  - You can view sample data (if it's available for a sensitive column), column counts, and estimated data counts.
+  - You can view sample data (if it's available for a sensitive column) and estimated data counts.
 
-  - In particular, take a look at the sensitive columns that Data Discovery found in the `EMPLOYEES` table. Columns that do not have a check mark are called referential relationships. They are included because they have a relationship to another sensitive column and that relationship is defined in the database's data dictionary.
-  - Also view the sample data provided to get an idea of what the sensitive data looks like.
+  - In particular, take a look at the sensitive columns that Data Discovery found in the `EMPLOYEES` table. Columns that do not have a check mark, such as `MANAGER_ID`, are called referential relationships. They are included because they have a relationship to another sensitive column and that relationship is defined in the database's data dictionary.
+
+  - Review the sample data provided to get an idea of what the sensitive data looks like.
 
   ![Sensitive columns list](images/employees-table-sample-data.png)
 
 
-- Scroll to the bottom of the page, and then click **Report**.
+- To generate the **Data Discovery** report, scroll to the bottom of the page, and then click **Report**.
 
 
-- View the **Data Discovery** report.
+- Review the **Data Discovery** report.
 
     - The chart compares sensitive categories. You can view totals of sensitive values, sensitive types, sensitive tables, and sensitive columns.
     - The table displays individual sensitive column names, sample data for the sensitive columns, column counts based on sensitive categories, and estimated data counts.
@@ -174,7 +183,7 @@ The Data Discovery wizard generates a sensitive data model that contains sensiti
   ![Expand button over Identification Info](images/identification-info-expand-button.png)
 
 
-- Notice that the **Identification Info** category is divided into two smaller categories (**Personal IDs** and **Public IDs**). To drill-up, position your mouse over an expanded sensitive category, and then click the **Collapse** button.
+- Notice that the **Identification Info** category is divided into two smaller categories (**Personal IDs** and **Public IDs**). To drill-up, position your mouse over an expanded sensitive category (for example, **Identification Info**), and then click the **Collapse** button.
 
   ![Collapse button over Identification Info](images/identification-info-collapse-button.png)
 
@@ -190,17 +199,19 @@ The Data Masking wizard generates a masking policy for your target database base
 - At the bottom of the Data Discovery report, click **Continue to mask the data**. The Data Masking wizard is displayed.
 
 
-- On the **Select Target for Data Masking** page, your target database is automatically selected. Click **Continue**.
+- On the **Select Target for Data Masking** page, leave your target database selected, and click **Continue**.
 
    ![Select Target for Data Masking page](images/select-target-for-data-masking.png)
 
 
-- On the **Masking Policy** page, move the **Expand All** slider to the right to view all of the sensitive columns. Scroll down the page to view the default masking format selected for each sensitive column.
+- On the **Masking Policy** page, move the **Expand All** slider to the right to view all of the sensitive columns. Scroll down the page and review the default masking format selected for each sensitive column.
 
  ![Masking Policy page](images/masking-policy-page.png)
 
 
 - For the `HCM1.LOCATIONS.STREET_ADDRESS` column, click the arrow to the right of the masking format to view other masking formats.
+
+  **Tip:** To quickly find a column on the page, you can enter its name in the **Search** field at the top of the page.
 
  ![HCM1.LOCATIONS.STREET_ADDRESS circled and masking formats drop-down list](images/view-masking-formats.png)
 
@@ -210,9 +221,7 @@ The Data Masking wizard generates a masking policy for your target database base
  ![Edit Format button](images/edit-format-button.png)
 
 
-- In the **Edit Format** dialog box, view the details for the masking format, including column name, datatype, description, examples, and default configuration.
-
-  - This is where you can modify a masking format. Click **Cancel**.
+- In the **Edit Format** dialog box, review the details for the masking format, including the datatype, description, examples, and default configuration. This is where you can modify a masking format, if needed. Click **Cancel**.
 
    ![Edit Format dialog box](images/edit-format-dialog-box.png)
 
@@ -223,7 +232,7 @@ The Data Masking wizard generates a masking policy for your target database base
 - Wait a moment while Data Masking creates the masking policy.
 
 
-- On the **Schedule the Masking Job** page, leave **Right Now** selected, and then click **Review**.
+- On the **Schedule the Masking Job** page, leave **Right Now** selected, and click **Review**.
 
   ![Schedule the Masking Job page](images/schedule-the-masking-job-page.png)
 
@@ -238,6 +247,8 @@ The Data Masking wizard generates a masking policy for your target database base
 
 - When the job is finished, click **Report**.
 
+  ![Masking Jobs page](images/masking-jobs-page.png)
+
 
 - Examine the **Data Masking** report.
 
@@ -248,43 +259,51 @@ The Data Masking wizard generates a masking policy for your target database base
     ![Data Masking report](images/data-masking-report.png)
 
 
-- At the top of the report, click **Generate Report**.
+## **STEP 4**: Create a PDF of the Data Masking report
+
+- At the top of the report, click **Generate Report**. The **Generate Report** dialog box is displayed.
+
+- Leave **PDF** selected.
+
+- Enter **Mask1_HCM1** for the description.
+
+- Select your compartment.
+
+- Click **Generate Report** and wait for the report to generate.
+
+- When a confirmation message states that the **Report was generated successfully**, click **Download Report**.
+
+- Save the report and then open it in Adobe Acrobat.
+
+- Review the data, and then close the report.
+
+ ![Data Masking report in PDF format](images/data-masking-report-pdf.png)
 
 
-- In the **Generate Report** dialog box, leave **PDF** selected, enter **Mask1_HCM1** for the description, select your compartment, and then click **Generate Report**.
 
-- Wait for the report to generate. When it's generated, click **Download Report**.
+## **STEP 5**: Validate the masked data in your database
 
+- Return to SQL Developer Web. You should have a browser tab named **Oracle Database Actions | SQL Worksheet** opened from STEP 1 in this lab.
 
-- Save the report and then open it in Adobe Acrobat. Review the data, and then close it.
-
-  ![Data Masking report in PDF format](images/data-masking-report-pdf.png)
-
-
-
-## **STEP 4**: Validate the masked data in your ATP database
-
-- Return to the browser tab for **SQL Developer Web**. You should still have your query results from STEP 1 in this lab. Take a moment to review the data.
+- Take a moment to review the original data.
 
     ![Query results before masking](images/original-query-results.png)
 
 
 - On the toolbar, click the **Run Statement** button (green circle with a white arrow) to execute the query.
 
-- If a dialog box is displayed stating that your session has expired, click **OK**, sign in again, and then click the **Run Statement** button.
+- If you receive a message stating that your session has expired, click **OK**, sign in again, and then click the **Run Statement** button.
 
 
-- Review the masked data.
+- Review the masked data. You can resize the panel to view more data, and you can scroll down and to the right.
 
-  - You can resize the panel to view more data, and you can scroll down and to the right.
-
-    ![Masked EMPLOYEE data](images/masked-query-results.png)
+  ![Masked EMPLOYEE data](images/masked-query-results.png)
 
 
 ## Learn More
 
-* [Data Discovery](https://docs.cloud.oracle.com/en-us/iaas/data-safe/doc/data-discovery.html)
-* [Data Masking](https://docs.cloud.oracle.com/en-us/iaas/data-safe/doc/data-masking.html)
+* [Data Discovery](https://docs.cloud.oracle.com/en-us/iaas/data-safe/doc/data-discovery.html) documentation
+* [Data Masking](https://docs.cloud.oracle.com/en-us/iaas/data-safe/doc/data-masking.html) documentation
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development

@@ -106,7 +106,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 
 - In the **Username** field, enter `ADMIN`. In the **Password** field, enter the password that you created for the `ADMIN` user when you provisioned the database. Click **Sign In**.
 
-- If a help note is displayed, click the **X** to close it.
+- If a help note is displayed, click the **X** button to close it.
 
 
 - Open the [load-data-safe-sample-data_admin.sql](files/load-data-safe-sample-data_admin.sql) script in a text editor, such as NotePad.
