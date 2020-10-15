@@ -4,7 +4,7 @@
       {
           "title": "Prerequisites",
           "description": "Prerequisites to run the Oracle Data Safe workshop in the LiveLabs tenancy.",
-          "filename": "./prerequisites/prerequisites-for-the-livelabs-tenancy.md"        },
+          "filename": "./prerequisites-for-the-livelabs-tenancy.md"        },
           {
               "title": "Introduction",
               "description": "This lab provides information about the Oracle Data Safe workshop.",
@@ -13,7 +13,7 @@
             {
               "title": "Lab 1: Provision an Autonomous Database and Register It with Oracle Data Safe",
               "description": "This lab shows you how to  provision an Autonomous Data Warehouse on Shared Exadata Infrastructure, load sample data into it, and register it with Oracle Data Safe.",
-              "filename": "../../provision-register-target-database/provision-register-target-database.md"
+              "filename": "../../provision-register-autonomous-database/provision-register-autonomous-database.md"
             },
             {
               "title": "Lab 2: Provision Audit and Alert Policies",
@@ -23,7 +23,7 @@
               {
               "title": "Lab 3: Analyze Alerts and Audit Reports",
               "description": "This lab shows you how to analyze alerts and audit reports in Oracle Data Safe.",
-              "filename": "../../analyze-alerts-audit-reports/analyze-alerts-audit-report.md"
+              "filename": "../../analyze-alerts-audit-reports/analyze-alerts-audit-reports.md"
               },
               {
               "title": "Lab 4: Assess Database Configurations and Users",

@@ -4,21 +4,23 @@
       {
           "title": "Prerequisites",
           "description": "Prerequisites to run the Oracle Data Safe workshop in the free tier.",
-          "filename": "./prerequisites/prerequisites-for-the-free-tier.md"        },
+          "filename": "./prerequisites-for-the-free-tier.md"        },
           {
             "title": "Introduction",
             "description": "This lab provides information about the Oracle Data Safe workshop.",
-            "filename": "../../introduction/introduction.md"
+            "filename": "../../introduction/introduction.md",
+            "type": "freetier"
           },
+
           {
-            "title": "Lab 1: Enable Oracle Data Safe in Your Tenancy",
-            "description": "This lab shows you how to enable the Oracle Data Safe service in a region of your tenancy.",
-            "filename": "../../enable-oracle-data-safe/enable-oracle-data-safe.md"
-          },
-          {
+              "title": "Lab 1: Enable Oracle Data Safe and Create a Compartment",
+              "description": "This lab shows you how to enable Oracle Data Safe and create a compartment in the Oracle Cloud Infrastructure Console.",
+              "filename": "../../enable-data-safe-create-compartment/enable-data-safe-create-compartment.md"
+            },
+        {
             "title": "Lab 2: Provision an Autonomous Database and Register It with Oracle Data Safe",
             "description": "This lab shows you how to  provision an Autonomous Data Warehouse on Shared Exadata Infrastructure, load sample data into it, and register it with Oracle Data Safe.",
-            "filename": "../../provision-register-target-database/provision-register-target-database.md"
+            "filename": "../../provision-register-autonomous-database/provision-register-autonomous-database.md"
           },
           {
             "title": "Lab 3: Provision Audit and Alert Policies",
@@ -28,7 +30,7 @@
             {
             "title": "Lab 4: Analyze Alerts and Audit Reports",
             "description": "This lab shows you how to analyze alerts and audit reports in Oracle Data Safe.",
-            "filename": "../../analyze-alerts-audit-reports/analyze-alerts-audit-report.md"
+            "filename": "../../analyze-alerts-audit-reports/analyze-alerts-audit-reports.md"
             },
             {
             "title": "Lab 5: Assess Database Configurations and Users",
