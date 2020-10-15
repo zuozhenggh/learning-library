@@ -25,7 +25,7 @@ To complete this lab, you need to have the following:
 
 ### Assumptions
 
-- You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the **Prerequisites** for this workshop.
+- You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.
 
 
 

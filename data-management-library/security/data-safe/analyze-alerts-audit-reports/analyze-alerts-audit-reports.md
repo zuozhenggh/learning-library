@@ -33,7 +33,7 @@ To complete this lab, you need to have the following:
 
 This lab assumes the following:
 
-- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the **Prerequisites** for this workshop.
+- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.
 
 - You completed the following labs in this workshop:
 

@@ -3,7 +3,7 @@
 
 ## Introduction
 
-To complete the Oracle Data Safe labs in your own tenancy in Oracle Cloud Infrastructure, you require access to an Oracle Data Safe environment. As a regular Oracle Cloud user, you do not have the necessary permissions in Oracle Cloud Infrastructure to set up your own environment. The environment needs to be set up by your tenancy administrator.
+To complete the Oracle Data Safe labs in your own tenancy in Oracle Cloud Infrastructure, you require access to an Oracle Data Safe environment. As a regular Oracle Cloud user, you do not have the necessary permissions in Oracle Cloud Infrastructure to set up your own environment. The environment needs to be set up by your tenancy administrator. The setup instructions are [here](?lab=set-up-oracle-data-safe-environment).
 
 Estimated Lab Time: 5 minutes
 
