@@ -267,9 +267,9 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 5. You need to refresh PDB statistics to see notifications. To refresh:
 
-  - **Click** the ***target icon >> Databases >> View >> Expand All***
-  - **Right Click** on ***PDB >> Oracle Database >> Configuration >> Latest.***
-  - **Click** the Refresh icon on the page (it will take few minutes for refresh to complete)
+    - **Click** the ***target icon >> Databases >> View >> Expand All***
+    - **Right Click** on ***PDB >> Oracle Database >> Configuration >> Latest.***
+    - **Click** the Refresh icon on the page (it will take few minutes for refresh to complete)
 
 7. Now Navigate to ***Enterprise >> Compliance >> Results***
 
