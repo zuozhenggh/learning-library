@@ -43,7 +43,7 @@ This lab assumes you have completed:
 First of all, we need Oracle Key Vault to know about our database server<br>
 We do this by creating it as an endpoint in OKV
 
-1. Open a Web Browser at the URL **https://**`<OKV-VM_@IP-Public>`
+1. Open a Web Browser at the URL `https://<OKV-VM_@IP-Public>`
 
 2. Login to Oracle Key Vault Web Console as `RESTADMIN` with the password `T06tron.`
 
@@ -460,16 +460,16 @@ You may now proceed to the next lab.
 
 - **Benefits of Using Oracle Key Vault**
 
-    - Oracle Key Vault helps you to fight security threats, centralize key storage, and centralize key lifecycle management
-    - Deploying Oracle Key Vault in your organization will help you accomplish the following:
-        - Manage the lifecycle for endpoint security objects and keys, which includes key creation, rotation, deactivation, and removal
-        - Prevent the loss of keys and wallets due to forgotten passwords or accidental deletion
-        - Share keys securely between authorized endpoints across the organization
-        - Enroll and provision endpoints easily using a single software package that contains all the necessary binaries, configuration files, and endpoint certificates for mutually authenticated connections between endpoints and Oracle Key Vault
-        - Work with other Oracle products and features in addition to Transparent Data Encryption (TDE), such as Oracle Real Application Clusters (Oracle RAC), Oracle Data Guard, pluggable databases, and Oracle GoldenGate. Oracle Key Vault facilitates the movement of encrypted data using Oracle Data Pump and transportable tablespaces, a key feature of Oracle Database
-    - Oracle Key Vault multi-master cluster provides additional benefits, such as:
-        - Maximum key availability by providing multiple Oracle Key Vault nodes from which data may be retrived
-        - Zero endpoint downtime during Oracle Key Vault multi-master cluster maintenance
+  - Oracle Key Vault helps you to fight security threats, centralize key storage, and centralize key lifecycle management
+  - Deploying Oracle Key Vault in your organization will help you accomplish the following:
+    - Manage the lifecycle for endpoint security objects and keys, which includes key creation, rotation, deactivation, and removal
+    - Prevent the loss of keys and wallets due to forgotten passwords or accidental deletion
+    - Share keys securely between authorized endpoints across the organization
+    - Enroll and provision endpoints easily using a single software package that contains all the necessary binaries, configuration files, and endpoint certificates for mutually authenticated connections between endpoints and Oracle Key Vault
+    - Work with other Oracle products and features in addition to Transparent Data Encryption (TDE), such as Oracle Real Application Clusters (Oracle RAC), Oracle Data Guard, pluggable databases, and Oracle GoldenGate. Oracle Key Vault facilitates the movement of encrypted data using Oracle Data Pump and transportable tablespaces, a key feature of Oracle Database
+  - Oracle Key Vault multi-master cluster provides additional benefits, such as:
+    - Maximum key availability by providing multiple Oracle Key Vault nodes from which data may be retrived
+    - Zero endpoint downtime during Oracle Key Vault multi-master cluster maintenance
 
 ## Want to Learn More?
 Technical Documentation:

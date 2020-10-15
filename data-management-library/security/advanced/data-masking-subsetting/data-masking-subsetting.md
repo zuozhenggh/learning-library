@@ -41,7 +41,7 @@ This lab assumes you have completed:
 
 ## **STEP 1**: Import schema structure
 
-1. Open a Web Browser at the URL **https://**`<DBSecLab-VM_@IP-Public>`**:7803/em**
+1. Open a Web Browser at the URL `https://<DBSecLab-VM_@IP-Public>:7803/em`
 
 2. Login to Enterprise Manager Console as `SYSMAN/Oracle123`
 
@@ -67,6 +67,7 @@ This lab assumes you have completed:
     **Note:** Notice the options to create ADMs for Oracle Enterprise Business Suite (EBS) and Fusion Applications
 
     ---
+    <br>
 
 6. Click [**Continue**]
 
@@ -78,6 +79,7 @@ This lab assumes you have completed:
     **Note:** Alternatively, SYS can be used as well... In a production environment, you could limit the privileges of DMS_ADMIN to only the packages necessary to perform their duties
 
     ---
+    <br>
 
 8. Select the **EMPLOYEESEARCH_DEV** schema for the application data model
 
@@ -133,11 +135,11 @@ Expand the entire list of applications (Menu **View** and Submenu **Expand All**
 
         ![](./images/dms-013.png)
 
-6. Now, your ADM is created
+6. Now, your ADM is created!
 
 ## **STEP 3**: Use Pre-Defined Sensitive Column Types
 
-1. Open a Web Browser at the URL **https://**`<DBSecLab-VM_@IP-Public>`**:7803/em**
+1. Open a Web Browser at the URL `https://<DBSecLab-VM_@IP-Public>:7803/em`
 
 2. Login to Enterprise Manager Console as `SYSMAN/Oracle123`
 
@@ -157,12 +159,12 @@ Click the menu **Actions** and select the sub-menu **Sensitive Column Types**
     - Search for '`EMAIL`' or '`MAIL`' in the Column Comment
     - Apply a regular expression pattern match to all of the Column Data if the user (i.e. `DMS_ADMIN`) has access to the data
 
+    ![](./images/dms-015.png)
+
     ---
     **Note**: This process uses Oracle Regular Expressions which is compatible with the IEEE Portable Operating System Interface (POSIX) regular expression standard and to the Unicode Regular Expression Guidelines of the Unicode Consortium. In this case, the **Search Type** has been set as an **Or** condition, so if any of the conditions listed above are met, it will result in a match.
 
     ---
-
-    ![](./images/dms-015.png)
 
 ## **STEP 4**: Create a new Sensitive Column Type
 
@@ -213,6 +215,7 @@ Click the menu **Actions** and select the sub-menu **Sensitive Column Types**
     **Note:** Alternatively if you are in Database Home page, select "**Data Masking Format Library**" from the schema menu
 
     ---
+    <br>
 
 2. **Format library** appears with predefined formats that Oracle Enterprise Manager Provides
 
@@ -249,6 +252,7 @@ Click the menu **Actions** and select the sub-menu **Sensitive Column Types**
         **Note:** When you will use this masking algorithm, it will replace the initial value by a new value generated from the concatenation of a random string of 6 to 8 characters at the beginning, followed by the fixed value @elcaro.com. At the bottom, you can see examples of the new values will be used.
 
         ---
+        <br>
 
         ![](./images/dms-030.png)
 
@@ -322,7 +326,7 @@ For this lab, select the `PAYMENT_ACCT_NO`, `EMAIL`, `FIRST_NAME`, `LAST_NAME` a
 
 ## **STEP 8**: Create Data Masking Definitions
 
-1. Open a Web Browser at the URL **https://**`<DBSecLab-VM_@IP-Public>`**:7803/em**
+1. Open a Web Browser at the URL `https://<DBSecLab-VM_@IP-Public>:7803/em`
 
 2. Login to Enterprise Manager Console as `SYSMAN/Oracle123`
 
@@ -436,6 +440,7 @@ Click [**Search**]
     **Note** Here, we take the value of `LASTNAME` associated to the `FIRSTNAME` value which has been attributed randomly previoulsy
 
     ---
+    <br>
 
 17. Click [**OK**]
 
@@ -571,6 +576,7 @@ Select the row and click on the **Define Format** icon
     **Note**: This status means that you have to generate now the script before executing the masking of your sensitive data
 
     ---
+    <br>
 
 2. Select the masking definition `EMPLOYEE_DATA_MASK` and click on the [**Generate Script**] button
 
@@ -580,6 +586,7 @@ Select the row and click on the **Define Format** icon
     **Note**: Enterprise Manager Cloud Control 13c may route the submission as a submitted Job, in that event you will see a screen that looks like the one below. Submit the job with Named Credentials.
 
     ---
+    <br>
 
 3. At the Database Login screen, choose the Named Credential for `DMS_ADMIN`
 
@@ -642,6 +649,7 @@ Make sure the radio button next to `EMPLOYEE_DATA_MASK` is selected. From **Acti
     This script could be taken and executed on other targets
 
     ---
+    <br>
 
 12. Click [**Return**] to return to the Data Masking Definitions screen
 
@@ -666,6 +674,7 @@ Make sure the radio button next to `EMPLOYEE_DATA_MASK` is selected. From **Acti
     **Note**: The masking script file will be stored in this directory on **DBSecLab VM** and can be reused as many times as you need
 
     ---
+    <br>
 
 4. Configure access permissions
     - Go to **Host Credentials** and select the Named credentials `ORACLE-OS`

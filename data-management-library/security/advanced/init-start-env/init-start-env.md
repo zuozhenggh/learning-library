@@ -58,6 +58,7 @@ Before performing the workshop, please make sure you have the latest labs script
 	**Note:** It can take up to 10 minutes (with 4 oCPUs)
 
 	---
+	<br>
 
 2. Once it's started, check that all necessary labs resources are operational
 
@@ -81,6 +82,7 @@ Before performing the workshop, please make sure you have the latest labs script
    	- Your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
 
    	---
+	<br>
 
 3. **Congratulations, now your environment is up and running and you can start performing the labs!**
 

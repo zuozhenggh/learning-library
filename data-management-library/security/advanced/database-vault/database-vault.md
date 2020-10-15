@@ -60,6 +60,7 @@ This lab assumes you have completed:
       **Note**: To enable DB Vault, database will be rebooted!
 
       ---
+      <br>
 
 4. Next, enable it on the pluggable database. For now, just enable it on pdb1.
 
@@ -322,16 +323,17 @@ This is an easy way for us to identify who is connecting and where they are conn
 
 3. Check the status of Database Vault and Operations Control
 
-      ---
-      **Note:** It is not yet configured!
-
-      ---
-
       ````
       <copy>./01_query_dv_status.sh</copy>
       ````
 
    ![](./images/dv-013.png)
+
+      ---
+      **Note:** It is not yet configured!
+
+      ---
+      <br>
 
 4. Next, we will run the same queries as both container admin, `SAL` as well as `DBA_DEBRA`
 
@@ -426,6 +428,7 @@ This is an easy way for us to identify who is connecting and where they are conn
       **Note**: To disable DB Vault, database will be rebooted!
 
       ---
+      <br>
 
 5. Now, Database Vault is disabled in the container database as well as `PDB1`!
 

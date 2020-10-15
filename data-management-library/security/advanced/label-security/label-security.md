@@ -81,6 +81,7 @@ In case you decide to execute script by script, you can always review the log fi
       - For each step, you can review the output of the script that you executed (example: `more 01_setup_ols_environment.out`)
 
       ---
+      <br>
 
 4. Next, you create the Label Security policy.
    A policy consists of  levels, groups and/or compartments. The only mandatory component of a policy is at least one level
@@ -95,6 +96,7 @@ In case you decide to execute script by script, you can always review the log fi
       **Note:** This script will create Policy (Levels, Groups, and Labels), set Levels and Groups for Users, and apply the Policy to the `APPCRM.CRM_CUSTOMER` table
 
       ---
+      <br>
 
  5. Then, we must label the data... We use the policy we created and apply one level and optionally, one or more compartments and, optionally, one or more groups
 
@@ -108,6 +110,7 @@ In case you decide to execute script by script, you can always review the log fi
       **Note:** This script update data labels to create some diversity of labels that will be used in the scenarios. In real world scenarios would be advisable to create a labeling function that would assign labels based on other existing table data (other columns).
 
       ---
+      <br>
 
 6. Then we will see the label security in action
 
@@ -121,6 +124,7 @@ In case you decide to execute script by script, you can always review the log fi
       **Note:** This script connects as different apps would be connecting. Each App would only see records that they would be able to process. E.g. AppMKT (app that is used for emailing customers) would only be able to see records labeled as `CNST::EMAIL`; `AppBI` would be able to see records labeled as `ANON`, and `CNST::ANALYTICS` (rows labeled with level `CNST`, and part of Group Analytics – would work for `CNST::ANALYTICS,EMAIL` as well.)
 
       ---
+      <br>
 
 7. Now, we change users status to be forgotten
 
@@ -134,6 +138,7 @@ In case you decide to execute script by script, you can always review the log fi
       **Note:** This script simulates an app that would process records marked to be forgotten. It creates a stored procedure to show records marked to be Forgotten (labeled `FRGT::`). It also creates a procedure under an AppPreference app schema that would serve the purpose of forgetting a certain customer. AppPreference can access all data and `forget_me(p_id)` procedure will label a certain customerid row `FRGT::` “moving” a record from Consent to Forgotten.
 
       ---
+      <br>
 
 8. Finally, we can clean up the environment (drops the OLS policy and users)
 
@@ -173,6 +178,7 @@ In case you decide to execute script by script, you can always review the log fi
       **Note:** This script creates the OLS policy named `OLS_DEMO_HR_APP` as well as the levels (`PUBLIC`, `CONFIDENTIAL`, `HIGHLY CONFIDENTIAL`), compartments (`HR`, `FIN`, `IP`, `IT`) and the OLS groups (`GLOBAL`, `USA`, `CANADA`, `EU`, `GERMAN`, `LATAM`).  This script also generates the data labels that will be used. This allows us to assign the numbers to our `label_tag` we want to have.
 
       ---
+      <br>
 
 5. Create `EMPLOYEESEARCH_APP`
 
@@ -186,6 +192,7 @@ In case you decide to execute script by script, you can always review the log fi
       **Note:** This script will create a custom table for the Application User Labels, `EMPLOYEESEARCH_PROD.DEMO_HR_USER_LABELS`, and populate it with all of the rows from `EMPLOYEESEARCH_PROD.DEMO_HR_USERS`.  The script will also create a few additional users we will use in this exercise, such as `CAN_CANDY`, `EU_EVAN`, and then grant the appropriate OLS User Labels to all of the Application Users.
 
       ---
+      <br>
 
 6. Open a web browser and launch the Glassfish app by navigating to this URL:
 
@@ -206,6 +213,7 @@ In case you decide to execute script by script, you can always review the log fi
       **Note:** You can see all employees data with no geographic restriction
 
       ---
+      <br>
 
 10. Go back to your terminal session and apply the OLS policy to the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table
 
@@ -219,6 +227,7 @@ In case you decide to execute script by script, you can always review the log fi
 	**Note:** Once an OLS policy is applied to a table, only users with authorized labels, or OLS privileges, can see data
 
 	---
+   <br>
 
 11. Now, update `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table to populate the `OLSLABEL` column with the appropriate OLS numeric label
 
@@ -232,6 +241,7 @@ In case you decide to execute script by script, you can always review the log fi
       **Note:** We will dot his based on the `location` column in the table. For example, 'German' or 'Berlin' will receive an OLS label of `P::GER` because they belong to the GERMANY group
 
       ---
+      <br>
 
 12. See what policy output looks like:
 
@@ -289,6 +299,7 @@ In case you decide to execute script by script, you can always review the log fi
       **Note:** Now, you will see there is a difference from before. `CAN_CANDY` can only see Canadian-labeled users and `EU_EVAN` can only see EU-labeled users!
 
       ---
+      <br>
 
 16. When you have completed the lab, you can remove the policies and restore the Glassfish JSP files to their original state
 

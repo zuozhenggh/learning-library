@@ -1,14 +1,15 @@
-# Oracle Database Security Hands-On Labs - Advanced
+# Oracle Database Security Hands-On Labs - Part2 (Advanced)
 
 ## Objectives
-This aim of this workshop is to introduce the various advanced features and functionality of Oracle Database Security, and to give the user an opportunity to learn how to configure those features in order to protect and secure their databases in a MAXIMUM SECURITY ARCHITECTURE (MSA).
+This workshop is the second part of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities.
+These worlshops give the user an opportunity to learn how to configure those features to protect and secure their databases from the Baseline to the Maximum Security Architecture (MSA).
 
-This workshop will cover the following products and solutions:
+This 2nd workshop is dedicated to the advanced features of the Database Security and it will cover following products and solutions:
 - Oracle Advanced Security Option (ASO)
    - Oracle Transparent Data Encryption (TDE)
    - Oracle Data Redaction
--  Oracle Database Vault (DV)
--  Oracle Label Security (OLS)
+- Oracle Database Vault (DV)
+- Oracle Label Security (OLS)
 - Oracle Data Masking and Subsetting (DMS)
 - Oracle Audit Vault and Database Firewall (AVDF)
 - Oracle Key Vault (OKV)
@@ -20,16 +21,16 @@ Now, **you no longer need important resources on your PC** (storage, CPU or memo
 
 In this workshop, you will find details of the use cases and scenarios that we put at your disposal so that you can discover and learn more about Oracle DB Security solutions.
 
-The complete architecture of this workshop is composed of 4 VMs as below:
+The complete architecture of the DB Security Hands-On Labs is composed of 4 VMs as below:
 
 ![](./images/dbseclab-v3-archi.png)
 
-- DBSec-Lab VM (*Mandatory for all labs*)
-- AV Server VM (*for AVDF labs only*)
-- DBF Server VM (*for AVDF labs only*)
-- OKV Server VM (*for Key Vault labs only*)
+- DBSec-Lab VM (*Mandatory for all labs: Baseline and Advanced workshops*)
+- AV Server VM (*for Advanced workshop only*)
+- DBF Server VM (*for Advanced workshop only*)
+- OKV Server VM (*for Advanced workshop only*)
 
-During this workshop, you'll use different resources to interact with these VMs:
+During this 2nd workshop, you'll use different resources to interact with these VMs:
 - SSH Terminal Client;
 - Glassfish HR App;
 - Oracle Enterprise Manager 13c;
@@ -38,7 +39,7 @@ During this workshop, you'll use different resources to interact with these VMs:
 - Oracle Key Vault Web Console (*for OKV labs only*);
 - (Optionnally) SQL Developer.
 
-So that your experience of this workshop is the best possible, DO NOT FORGET to perform lab "*Environment Setup*" to be sure that all these resources are correctly set!
+So that your experience of this workshop is the best possible, DO NOT FORGET to perform lab "*Initialze and Start the DBSecLab Environment*" to be sure that all these resources are correctly set!
 
 The entire DB Security PMs Team wishes you an excellent workshop.
 

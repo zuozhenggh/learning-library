@@ -19,7 +19,7 @@ This lab assumes you have completed:
    - Lab: Prepare Setup
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
-   - Lab: DBSAT (please refer to the [Oracle DB Security Baseline Workshop](...))
+   - Lab: DBSAT (please refer to the `Oracle DB Security Baseline Workshop`)
 
 ### Video Preview
 
@@ -174,9 +174,10 @@ You should see one row returned for the Unified Audit Trail and the output from 
       **Note**: The `Status` column should say `Collecting` or `Idle`.  If it says something else please run the script again and verify it changes state.
 
       ---
+      <br>
 
 4. View audit data collected via the All Activity Report using the web browser
-    - Open a Web Browser at the URL **https://**`<AVS-VM_@IP-Public>`
+    - Open a Web Browser at the URL `https://<AVS-VM_@IP-Public>`
     - Login to Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
     - CLick on the **Reports** tab
     - Under the **Activity Reports** section titled **Summary**, click on the **All Activity** name to load the report
@@ -194,6 +195,7 @@ You should see one row returned for the Unified Audit Trail and the output from 
       There will be more detailed report generation labs later in the workshop.
 
       ---
+      <br>
 
 5. You have completed the lab to register the Unified Audit Trail for `pdb1` with Audit Vault
 
@@ -202,7 +204,7 @@ You should see one row returned for the Unified Audit Trail and the output from 
 
 You will retrieve and provision the Unified Audit settings for the `pdb1` pluggable database
 
-1. Open a Web Browser at the URL **https://**`<AVS-VM_@IP-Public>`
+1. Open a Web Browser at the URL `https://<AVS-VM_@IP-Public>`
 
 2. Login to Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
 
@@ -381,7 +383,7 @@ You have completed the lab.
 
 ## **STEP 6**: Audit Vault - Access Rights and User Activity on Sensitive Data
 
-1. In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. So, the first step is to complete the Database Security Assessment Tool (DBSAT) lab (For more details, please refer to [Oracle DB Security Baseline Workshop](...)).
+1. In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. So, the first step is to complete the Database Security Assessment Tool (DBSAT) lab (For more details, please refer to the `Oracle DB Security Baseline Workshop`).
 
 2. Grant Privilege to Import Sensitive Data<br>
 Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user `AVADMIN`:
@@ -502,6 +504,7 @@ The first thing we need to do is to set up the database to be ready for Golden G
      **Note:** This will require a reboot and this script will do this for you
 
      ---
+    <br>
 
 4. Finally, verify connectivity to the `cdb1` container database before we continue with the configuration of the GoldenGate Extract
 
@@ -736,6 +739,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
     **Note:** Once you understand how to create an alert, feel free to create another and test it manually.
 
     ---
+    <br>
 
 ## **STEP 9**: DB Firewall - Add the Firewall Monitoring
 
@@ -798,6 +802,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
     This is a demonstration environment limitation not an AVDF limitation.
 
     ---
+    <br>
 
 15. Click [**Save**]
 
@@ -824,6 +829,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
     - This verifies that you are connecting **directly** to the `pdb1` pluggable database
 
     ---
+    <br>
 
 19. Now, verify connectivity **with** the Database Firewall
 
@@ -838,6 +844,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
     - This verifies that you are connecting **through** the Database Firewall
 
     ---
+    <br>
 
 ## **STEP 10**: DB Firewall - Configure and Verify Glassfish to use the Database Firewall
 
@@ -900,6 +907,7 @@ Login to `My Hr Application` as `hradmin` with the `Oracle123` password
     **Note:** You should see the same results as you did before connecting through the Database Firewall
 
     ---
+    <br>
 
 13. Click the `Weclome HR Administrator` link to view the `Session Details` page
 
@@ -1027,6 +1035,7 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
        - It should return no contents now!
 
        ---
+    <br>
 
 30. One of our favorite queries is this SQL statement:
 
@@ -1043,6 +1052,7 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
        This is to minimize the collection of sensitive data within Audit Vault and Database Firewall.
 
        ---
+    <br>
 
 31. Feel free to continue to explore the captured SQL statements and once you are comfortable, please continue the labs!
 
@@ -1245,6 +1255,7 @@ We will create a `Database User Set` of our Database Administrators
     **Note:**  Remember, this is because the Database Firewall substituted `select * from dual where 1=2` for the regular query
 
     ---
+    <br>
 
 ## **STEP 13**: Advanced Labs - PostgreSQL Audit Collection
 

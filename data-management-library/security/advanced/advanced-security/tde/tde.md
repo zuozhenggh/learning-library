@@ -64,6 +64,7 @@ This lab assumes you have completed:
 
        ---
 
+
 ## **STEP 2**: Create Keystore
 
 1. Go to the scripts directory
@@ -180,6 +181,7 @@ This lab assumes you have completed:
        **Note:** Now you should see the *.sso file
 
        ---
+       <br>
 
 7. And no changes to the wallet in the database
 
@@ -288,14 +290,15 @@ This lab assumes you have completed:
 
 4. If you want, you can do the same for `PDB2`
 
+      ````
+      <copy>./02_rekey_pdb_mkey.sh pdb2</copy>
+      ````
+
        ---
        **Note:** This is not a requirement though. It might be helpful to show some databases with TDE and some without.
 
        ---
-
-      ````
-      <copy>./02_rekey_pdb_mkey.sh pdb2</copy>
-      ````
+       <br>
 
 5. Now that you have a master key, you can begin encrypting tablespaces or column!
 
