@@ -46,8 +46,14 @@ https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:28287
 
 
 ## **Step 3:** Add a Link to the Lab from Oracle Help Center
-You need to work with your manager or Lead to get this link added to OHC.
-
+To add a link to a lab from an OHC Tutorials page:
+1. Open the Self Publishing [Self Publishing OHC Interface Page V3 application](Self Publishing OHC Interface Page V3 application.).
+2. In the **Search** field, enter your Product name and press **Enter**.
+3. Click **Edit** next to **Tutorials** to display the **Tutorials** page.
+    [](./images/ohc-edit-Pages.png " ")
+4. Click **Sections/Topics** and then click the name of the section where you want to add the lab to display the **Section** page.
+    [](./images/ohc-section-topics.png " ")
+5. 
 **This concludes this lab.**
 
 ## Want to Learn More?

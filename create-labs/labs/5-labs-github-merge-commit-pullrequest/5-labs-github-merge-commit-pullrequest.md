@@ -22,6 +22,7 @@ This lab assumes that you have successfully completed **Lab 4: Using Atom Editor
 
 ## **STEP 1:** Merge Content from Git Before you Start Editing your Content
 Everyday before you start editing your content, ensure to do a Merge.
+Merging synchronizes the content in your cloned repository with the latest content on the master repository.
 
 To merge content:
 1. Start your **GitHub Desktop** client.
@@ -67,7 +68,7 @@ After you upload the content from your clone to your fork, request your review t
 
 The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** to Test Your Content. This feature performs a dynamic conversion of the Markdown files (.md files you have developed using your Atom Editor) to HTML. You can preview your workshop and labs on your forked repository and provide this URL to your reviewers.
 
-To identify your GitHub Pages URL:
+To publish your GitHub Pages site:
 1. Login to [GitHub Web UI](http://github.com) using your GitHub account credentials, and then click your fork's link in the **Repositories** section to display your fork.
 
   ![](./images/git-hub-stage-git-hub-pages-repositories.png " ")
@@ -78,23 +79,12 @@ To identify your GitHub Pages URL:
 
 3. Click **Options** and scroll down to the **GitHub Pages** section.
 
-  ![](./images/git-hub-stage-git-hub-pages-settings-options.png " ")
+  ![](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
 
-4. If your GitHub Page site is not yet set up, then the **Theme Chooser** label is displayed as a button. To enable GitHub Pages on your fork, click **Theme Chooser**. This may take a few hours to complete before your site is enabled.
+4. Under **Source**, select **master** (if it's not already selected) from the drop-down list.
+5. Under **Theme Chooser**, click **Change Theme** and select a theme of your choice. This may take a few hours to complete.
 
-  In the following example, the web site for the fork associated with user achepuri is: [https://achepuri.github.io/learning-library](https://achepuri.github.io/learning-library) where
-    * achepuri is the user's GitHub account username
-    * github.io is the domain name
-    * learning-library is the repository name.
-    Notice the GitHub Pages site that is associated with your fork.
-
-    ![](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
-
-**Note**: [https://achepuri.github.io/learning-library](https://achepuri.github.io/learning-library) refers to the forked repository and not the master repository (production).  
-
-You can also review and test your workshop and labs on your forked repository from:
-
-http://github.com/*your-github-account*/learning-library/tree/master/*path to your lab*
+  After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
 
 ## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production (**upstream/master** repository).
@@ -117,8 +107,9 @@ To create a Pull Request:
   When your pull request is approved, the page gets updated with information about your commits being approved and merged into the **upstream/master** repository (production).
 
   When the pull request is approved and merged into the **upstream/master** repository, two emails are sent to the e-mail account associated with your GitHub account.
-  * The first email notifies you that your pull request was approved (or rejected).
-  * If your pull request was approved, then the second email notifies you that your pull request was merged into the **upstream/master** repository.  
+  **Note**:
+    * The first email notifies you that your pull request was approved (or rejected).
+    * If your pull request was approved, then the second email notifies you that your pull request was merged into the **upstream/master** repository.  
 
   Your committed content is now visible to the public on the learning-library (upstream/master or production) repository.
 
