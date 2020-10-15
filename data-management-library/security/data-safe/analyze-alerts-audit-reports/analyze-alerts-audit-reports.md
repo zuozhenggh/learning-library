@@ -37,7 +37,7 @@ This lab assumes the following:
 
 - You completed the following labs in this workshop:
 
-    - [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous-database)
+    - [Provision and Register an Autonomous Database](?lab=lab-1-provision-register-autonomous)
     - [Provision Audit and Alert Policies](?lab=lab-2-provision-audit-alert-policies)
 
 - Your data values will be different than those shown in the screenshots in this lab.

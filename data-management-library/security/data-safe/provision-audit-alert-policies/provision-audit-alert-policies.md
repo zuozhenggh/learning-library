@@ -28,7 +28,7 @@ To complete this lab, you need the following:
 
 - You have a browser tab signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the **Prerequisites** for this workshop.
 
-- You completed the [Provision and Register and Autonomous Database](../provision-register-autonomous-database/provision-register-autonomous-database.md) lab in this workshop.
+- You completed the [Provision and Register and Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.
 
 
 ## **STEP 1**: Sign in to the Oracle Data Safe Console
