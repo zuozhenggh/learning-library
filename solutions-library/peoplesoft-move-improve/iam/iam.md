@@ -1,92 +1,222 @@
-# Provision an Instance
+# Creating Identity and Access Management (IAM) Resources
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab walks you through the steps to prepare your Orace Cloud Infrastructure Tenancy
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 20 minutes
 
-### About Product/Technology
-Enter background information here..
+### About Identity and Access Management (IAM)
+The Oracle Cloud Infrastructure (OCI) Identity and Access Management (IAM) Service allows you to control who has access to your cloud resources. You control the types of access a group of users has and to which specific resources. 
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+The purpose of this lab is to give you an overview of the IAM Service components and an example scenario to help you understand how they work together.
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Sign-in to your OCI Tenancy to access the Console
+* Check the Service Limit
+* Create a Demo Compartment
+* Create a group, user and policies to manage access
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+1.	Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+2. 	To sign in to the Console, you need the following: 
 
-*This is the "fold" - below items are collapsed by default*
+        1. Tenant, User name and Password
+        2. URL for the Console: https://oracle.com
+        3. Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
 
-## **STEP 1**: title
+## **STEP 1**: Signing in to the Console
+**Console Overview**  
+In this section, sign in to the Oracle Cloud Infrastructure console using your credentials.
 
-Step 1 opening paragraph.
+1.	Open a supported browser and go to the Console URL: https://oracle.com.
 
-1. Sub step 1
+2.	Click on the portrait icon in the top-right section of the browser window, then click on the Sign in to Cloud link.
 
-  To create a link to local file you want the reader to download, use this format:
+    ![](./images/1.png " ")
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+3.	Enter the name of your tenancy (aka your account name, not your user name), then click on the Next button.
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+    ![](./images/2.png " ")
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+4.	Oracle Cloud Infrastructure is integrated with Identity Cloud Services. You will see a screen validating your Identity Provider. Click **Continue**. Enter your username and password and click **Sign In**. 
 
-    ![Image alt text](images/sample1.png "Image title")
+    ![](./images/signin1.png " ") 
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+    ![](./images/3.png " ")
 
-    ![Image alt text](images/sample1.png)
+5.	When you sign in to the Console, the dashboard is displayed.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+    ![](./images/homepage.png " ")
 
-5. One example with bold **text**.
+## **STEP 2:** View Service Limit
 
-   If you add another paragraph, add 3 spaces before the line.
+During the workshop, you might face problems related to service limits. 
 
-## **STEP 2:** title
+Please check if you have enough resource availability in your Availability Domain or change the Availability Domain to 1/2/3 as per the resource availability. 
 
-1. Sub step 1
+1. To check the service limit, navigate to the three-line menu on the top left and click on **Governance -> Limits, Quotas, and Usage**.
 
-  Use tables sparingly:
+    ![](./images/slimit.png " ")
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+2. Click on **Scope** and select AD-1 or AD-2 or AD-3 depending on which availability domain you want to see the service limit. 
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+    ![](./images/scope.png " ")
 
-    - List item 1
-    - List item 2
+3. Scroll down the list, and you will see all the resources available and usage. For example, in the below case, all my available resources are used.
 
-3. Code examples
+    ![](./images/available.png " ")
+
+**NOTE**: You will need 2 instances. Make sure you have at least 1 of each of the below marked resource (it doesn't need to be in same availability domain):
+
+![](./images/resource.png " ")
+
+## **STEP 3:** Creating Compartment
+**Compartments Overview:**
+A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie, when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
+
+1.	Click on the three-line menu, which is on the top left of the console. Scroll down till the bottom of the menu, click on **Identity -> Compartments**. Click on the blue **Create Compartment** button to create a sub-compartment.
+
+    ![](./images/compartmentn.png " ")
+
+    ![](./images/createcompartment.png " ")
+
+2.	Name the compartment **Demo** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment button** when ready.
+
+    ![](./images/compartment.png " ")
+
+3.	You have just created a compartment for all of your work in this Test Drive.
+
+## **STEP 4:** Managing Users, Groups, and Policies to Control Access
+**Security Overview:** 
+
+A user's permissions to access services come from the groups to which they belong. Policies define the permissions for a group Policies explain what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups.
+
+We'll create a user, a group, and a security policy to understand the concept.
+
+1.	After signing in to the console, click on the three-line menu on the top left. Click on **Identity -> Groups**.
+
+    ![](./images/group.png "")
+
+2.	Click **Create Group**.
+
+3.	In the Create Group dialog box, enter the following:
+
+        1. Name: "oci-group”. Note that the group name cannot contain spaces.
+
+        2. Description: “New group for OCI users”
+
+        3. Click Create.
+
+    ![](./images/creategroup.png "")
+
+4.	Your new group is displayed.
+
+   ![](./images/newgroup.png "")
+   
+
+5.	Now, let’s create a security policy that gives your group permissions in your assigned Compartment. In this case, we will create a policy that permits users belonging to group **oci-group to provision Peoplesoft Cloud Manager in Compartment Demo**:
+
+    a) Click on the three-line Menu button on the top left. Click on **Identity -> Policies**.
+    
+    ![](./images/policyn.png "")    
+
+    b) On the left side, navigate to **COMPARTMENT** and select **root compartment**. 
+
+    ![](./images/compartmentselect.png "")
+
+    c) After you have selected the root compartment, click **Create Policy**.
+
+    d) Enter a unique Name for your policy (For example, "**Policy-for-oci-group**"). Note that the **name can NOT contain spaces**.
+
+    e) Enter a Description (for example, "Policy for OCI Group").
+
+    f) Enter the following Statement:
+    
+        ```
+        Allow group oci-group to manage all-resources in compartment Demo
+        Allow group oci-group to read all-resources in tenancy
+        Allow group oci-group to manage App-catalog-listing in tenancy
+        ```  
+
+    ![](./images/policy.png "")    
+
+    g) Click **Create**.
+
+
+6. Create a **New User**
+   
+    a) Click on three-line menu on top left, and click on **Identity -> Users**.
+
+    b) Click **Create User**.
+
+    c) Select IAM user. 
+
+    ![](./images/UserTypeIAM.png "")    
+
+    d) In the New User dialog box, enter the following:
+
+        Name: Enter a unique name. This user should have a unique name in the tenancy.
+
+        Description: Enter a description - For example, New OCI user.
+
+        Email: Enter your email ID and confirm it. Please make sure not to use the same email ID. Email ID has to be unique in the tenancy. If you don't have another email ID, you can leave it blank.
+
+    ![](./images/createuser.png "")
+
+    e) Click **Create**.
+
+
+7.	Set a **Temporary Password** for the newly created User
+
+    a) After the user is created, you can see the user details.
+
+    b) Click **Create/Reset Password**.
+
+    ![](./images/userdetail.png "")
+
+    c) In the dialog, click **Create/Reset Password**.
+
+    ![](./images/13.png "")
+
+    d) The new one-time password is displayed. Click the **Copy button** and then click Close. Make sure to copy this password to your notepad.
+    
+    ![](./images/newpassword.png "")
+
+    e) Scroll down and click on **Add User to Group**.
+
+    ![](./images/scrolladdgroup.png "")
+
+    f) Select the group you just created, and click on **Add**.
+
+    ![](./images/adduser.png "")
+
+    g) Click on **top-right icon button** and **Sign out** of the admin user account.
+
+    ![](./images/signout.png "")
+
+    This time, you will sign in using the local credentials box with the user you created. Note that the user you created is not part of the Identity Cloud Services.
+
+    h) Enter the username **User01** and password that you copied.
+
+    ![](./images/signin.png "")
 
     ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+    Note: Since this is the first-time sign-in, the user will be prompted to change the temporary password, as shown in the screen capture.
     ```
 
-4. Code examples that include variables
+    i) Set the new password to **Psft@1234**. Click on **Save New Password**. 
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+    ![](./images/17.png "")
 
-*At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
+
+    You are now logged in as local user: **User01**
+
+You may now proceed to the next lab.
 
 ## Learn More
 

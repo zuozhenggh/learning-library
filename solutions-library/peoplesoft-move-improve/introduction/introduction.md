@@ -4,31 +4,23 @@
 
 ## About this Workshop
 
-In this hands-on lab, the users are provided with step-by-step instructions on setting up a user group, creating and adding users to a group, and creating a compartment and respective policies in the **Oracle Cloud Infrastructure (OCI)**. Subsequently, this guide instructs how to **install the Cloud Manager 11 using Marketplace**. The final section provides the steps to **provision a PeopleSoft Environment** followed by some simple hands-on exercises for you to get familiar with the system.
+This hands-on lab provides users with step-by-step instructions for preparing their **Oracle Cloud Infrastructure (OCI) Tenancy**, including setting up a user group, adding a user and policies, as well as a compartment to house the **Cloud Manager 11 using Marketplace**. The final sections provide guidance for **provisioning a PeopleSoft environment**, followed by interactive, yet simple excercises to familiarize users with the system.
 
-You can download the Word file here : [PSFT-Workshop Doc](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1EIFGD4wIGKmoToeJ241ly9AuzPIA-7oeYauUYv1Qoz-t2dmEP4OjCF5BRcmtC3Q/n/orasenatdpltoci03/b/TestDrive/o/PSFT-HOL-Workshop.docx)     
+For your convenience, this lab is available in offline formats available for download here:<br/>
+[PSFT-Workshop Word Doc](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1EIFGD4wIGKmoToeJ241ly9AuzPIA-7oeYauUYv1Qoz-t2dmEP4OjCF5BRcmtC3Q/n/orasenatdpltoci03/b/TestDrive/o/PSFT-HOL-Workshop.docx)     
+[PSFT-Workshop PPT](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0QHo_3IYUvoU7mdHlc2CgyF9hySoay4jhb5BWNM-7ve_nQEJB4IwlK594fRVbie4/n/orasenatdpltoci03/b/TestDrive/o/PSFT-CM-LabOverview.pptx)    
+[PSFT-Workshop PDF](https://objectstorage.us-ashburn-1.oraclecloud.com/p/n7Khl1L7M_HC--UqWmwoiSv2vANQbCOFiqwFIF5xRQrZMLhzKrGviCzywpaBG67p/n/orasenatdpltoci03/b/TestDrive/o/PSFT-HOL-Workshop.pdf)  
 
-You can download the PPT file here : [PSFT-Workshop PPT](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0QHo_3IYUvoU7mdHlc2CgyF9hySoay4jhb5BWNM-7ve_nQEJB4IwlK594fRVbie4/n/orasenatdpltoci03/b/TestDrive/o/PSFT-CM-LabOverview.pptx)    
+Estimated Lab Time: 5 hours, including provisioning time. 
 
-You can download PDF file here: [PSFT-Workshop PDF](https://objectstorage.us-ashburn-1.oraclecloud.com/p/n7Khl1L7M_HC--UqWmwoiSv2vANQbCOFiqwFIF5xRQrZMLhzKrGviCzywpaBG67p/n/orasenatdpltoci03/b/TestDrive/o/PSFT-HOL-Workshop.pdf)  
-
-Estimated Lab Time: 5 hours, including provisioning time. A complete time breakdown is as follows:
-
-Lab 1 - 10 mins   
-Lab 2 - 20 mins   
-Lab 3 - 30 mins configuration + 1 hour waiting   
-Lab 4 - 10 mins   
-Lab 5 - 5 mins configuration + maximum 3 hours waiting   
-Lab 6 - 5 mins   
-Lab 7 - 10 mins   
-Lab 8 - 15 mins configuration + 1.5 hours waiting 
 
 **Note**:
 
-- The workshop is quite detailed and technical. PLEASE take your time and DO NOT skip any steps.   
+- The workshop is quite detailed and technical. PLEASE take your time and DO NOT skip any steps.
+- Follow all naming conventions (compartment, group, etc..) and passwords as directed.   
 - IP addresses and URLs in the screenshots in this workbook may differ from what you use in the labs as these are dynamically generated.
 
-### Overview Architecture  (About Product/Technology)
+### Architecture Diagram
 
 ![](./images/arch.png " ")
 <!-- Enter background information here....
@@ -42,18 +34,19 @@ Lab 8 - 15 mins configuration + 1.5 hours waiting
 <!-- *List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:* -->
 
 In this lab, you will:
-* Set up Oracle Cloud Infrastructure Account (Provision
-* Create Identity and Access Management (IAM) Resources (Setup
-* Provision the Peoplesoft Cloud Manager using Marketplace (Data Load
-* Configure Cloud Manager Settings (Query
-* Review and Update a Topology (Analyze
-* Create a New Environment Template (Visualize
-* Create Environment in PeopleSoft
+* Set up an Oracle Cloud Infrastructure Account (Prerequisites) 
+* Create Identity and Access Management (IAM) Resources (Lab 1) 
+* Provision the Peoplesoft Cloud Manager using Marketplace (Lab 2)
+* Configure Cloud Manager Settings (Lab 3)
+* Review and Update a Topology (Lab 4)
+* Subscribe to PeopleSoft Channels (Lab 5)
+* Create a New Environment Template (Lab 6)
+* Create Environment in PeopleSoft (Lab 7)
 
 
 
 ### Prerequisites
-1. User already has a tenancy with Administrator user access. 
+1. User already has a tenancy with Administrator user access. (Please complete "Prerequisites" section)
 
 2. My Oracle Support credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). Note down this login credential in a notepad. You will use it later to configure Cloud Manager.
 
@@ -75,7 +68,7 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default* -->
 
-## **STEP 1**: title
+<!-- ## **STEP 1**: title
 
 Step 1 opening paragraph.
 
@@ -141,7 +134,7 @@ You may proceed to the next lab.
 *(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [URL text 2](http://docs.oracle.com) -->
 
 ## Appendix
 
