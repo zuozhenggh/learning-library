@@ -187,29 +187,26 @@ You can use the User Assessment feature to identify user settings and user risks
   ![Audit Records column with View Activity circled](images/view-activity-admin-user.png)
 
 
-6. Examine the **All Activity** report for the `ADMIN` user.
+6. Examine the **All Activity** report for the `ADMIN` user. This report is automatically filtered to show you the audit records for the past week, for the `ADMIN` user, and for your target database.
 
-  - This report is automatically filtered to show you the audit records for the past week, for the `ADMIN` user, and for your target database.
+![All Activity report](images/all-activity-report-admin-user.png)
 
-  - At the top of the report, you can view totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, **DMLs**, and **Total Events**.
+7. At the top of the report, view the totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, **DMLs**, and **Total Events**.
 
-  - The **Event** column in the table shows you the types of activities performed, for example, LOGON, AUDIT, CREATE AUDIT POLICY, and so on.
+8. View the **Event** column in the table. It shows you the types of activities performed, for example, LOGON, AUDIT, CREATE AUDIT POLICY, and so on.
 
-   ![All Activity report](images/all-activity-report-admin-user.png)
-
-
-7. At the bottom of the page, click the page numbers to view more audit records.
+9. At the bottom of the page, click the page numbers to view more audit records.
 
 
-8. At the top of the report, click **Back to User Assessment report**.
+10. At the top of the report, click **Back to User Assessment report**.
 
 
-9. Identify an expired user, and then click **View Activity** for that user to view the user's audit records. The following example shows `VOLDEMORT` as expired.
+11. Identify an expired user, and then click **View Activity** for that user to view the user's audit records. The following example shows `VOLDEMORT` as expired.
 
   ![User Assessment table with VOLDEMORT expired status](images/identify-expired-user.png)
 
 
-10. If the user has no activity on the target database, there are no audit records displayed in the **All Activity** report. In this case, you might consider removing the user from the target database.
+12. If the user has no activity on the target database, there are no audit records displayed in the **All Activity** report. In this case, you might consider removing the user from the target database.
 
 
 
