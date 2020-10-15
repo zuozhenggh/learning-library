@@ -16,7 +16,7 @@ You are provided with the following:
 If you have a question during this workshop, you can use the [**Autonomous Data Warehouse Forum**](https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary) on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Data Safe. Are you completely new to the **Cloud Customer Connect** forums? Visit our [**Getting Started forum page**](https://cloudcustomerconnect.oracle.com/pages/1f00b02b84) to learn how to best leverage community resources.
 
 
-You are ready to start the labs. Begin with the [**Introduction**](../introduction/introduction.md).
+You are ready to start the labs. Begin with the [**Introduction**](?lab=introduction).
 
 
 

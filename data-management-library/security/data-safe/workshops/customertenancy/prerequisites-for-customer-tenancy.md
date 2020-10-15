@@ -33,7 +33,7 @@ Your tenancy administrator needs to set up an Oracle Data Safe environment for y
 
 - Send your email address to your tenancy administrator and request a user account in your tenancy and access to Oracle Data Safe.
 
-- Send your tenancy administrator the instructions on how to set up an Oracle Data Safe environment for you. The instructions are [here](./set-up-oracle-data-safe-environment.md).
+- Send your tenancy administrator the instructions on how to set up an Oracle Data Safe environment for you. The instructions are [here](?lab=set-up-oracle-data-safe-environment).
 
 
 
@@ -67,7 +67,7 @@ After the Oracle Data Safe environment is set up by your tenancy administrator, 
 
 
 
-You are ready to start the labs. Begin with the [**Introduction**](../../introduction/introduction.md) lab.
+You are ready to start the labs. Begin with the [**Introduction**](?lab=introduction) lab.
 
 
 If you have a question during this workshop, you can use the **[Autonomous Data Warehouse Forum](https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary)** on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Data Safe. Are you completely new to the **Cloud Customer Connect** forums? Visit our **[Getting Started forum page](https://cloudcustomerconnect.oracle.com/pages/1f00b02b84)** to learn how to best leverage community resources.
