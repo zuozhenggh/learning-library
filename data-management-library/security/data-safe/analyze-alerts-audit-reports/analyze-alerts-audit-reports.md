@@ -31,30 +31,37 @@ To complete this lab, you need to have the following:
 
 ### Assumptions
 
-This lab assumes that you completed the following labs:
+This lab assumes the following:
 
-- [Provision and Register and Autonomous Database](../provision-register-autonomous-database/provision-register-autonomous-database.md)
-- [Provision Audit and Alert Policies](../provision-audit-alert-policies/provision-audit-alert-policies.md)
+- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the **Prerequisites** for this workshop.
 
-**Note:** Your data values will be different than those shown in the screenshots in this lab.
+- You completed the following labs in this workshop:
+
+    - [Provision and Register and Autonomous Database](../provision-register-autonomous-database/provision-register-autonomous-database.md)
+     - [Provision Audit and Alert Policies](../provision-audit-alert-policies/provision-audit-alert-policies.md)
+
+- Your data values will be different than those shown in the screenshots in this lab.
 
 
 
 ## **STEP 1**: Sign in to the Oracle Data Safe Console
 
-You can skip this step if you are already signed in to the Oracle Data Safe Console.
+- If you are already signed in to the Oracle Data Safe Console, click the **Oracle Data Safe** tab in your browser.
 
-- From the navigation menu in the Oracle Cloud Infrastructure Console, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
+- If you are not signed in to the Oracle Data Safe Console, do the following:
 
-- Click **Service Console**. The **Home** page in the Oracle Data Safe Console is displayed.
+    - Click the browser tab named **Oracle Cloud Infrastructure**, and sign in to the Console if needed.
+
+    - From the navigation menu, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
+
+    - Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
+
 
 ## **STEP 2**: View and close alerts
 
 - In Oracle Data Safe Console, click the **Alerts** tab.
 
-- View the total number of target databases, critical alerts, high risk alerts, medium risk alerts, and open alerts.
-
-  - At a glance, you can better understand whether the security of your database is in jeopardy and how you should prioritize your work.
+- View the total number of target databases, critical risk alerts, high risk alerts, medium risk alerts, open alerts, and closed alerts. At a glance, you can better understand whether the security of your database is in jeopardy and how you should prioritize your work.
 
   ![Alert totals](images/totals-alerts-page.png)
 
@@ -82,7 +89,7 @@ You can skip this step if you are already signed in to the Oracle Data Safe Cons
   The table shows you the open high alerts.
 
 
-- To sort the **Operation** column, position the cursor over the **Operation** column and click the arrow button.
+- To sort the **Operation** column, position the cursor over the **Operation** column heading, and then click the arrow button.
 
  ![Sort the DB User column icon](images/sort-operation-column.png)
 
@@ -102,7 +109,8 @@ You can skip this step if you are already signed in to the Oracle Data Safe Cons
 
 
 - Create a filter to view the list of alerts for user entitlement changes.
-  - To create the filter, click **+ Filter**, and set the filter to be: **Alert = User Entitlement Changes**.
+  - Click **+ Filter**.
+  - Set the filter to be: **Alert = User Entitlement Changes**.
   - Click **Apply**.
 
 
@@ -110,11 +118,11 @@ You can skip this step if you are already signed in to the Oracle Data Safe Cons
 
   ![User Entitlement Changes alerts](images/user-entitlement-changes.png)
 
-- Suppose you are fine with these entitlement changes. Now you can close the alerts:
+- Suppose you are fine with these entitlement changes. Now you can close the alerts.
 
     - Select the check box in the top left corner of the table to select all of the alerts displayed.
 
-    - From the **Mark As** menu, select **Closed**.
+    - From the **Mark As** menu, select **Closed**. The alerts selected on this page are closed.
 
     ![Mark As > Closed](images/closed-alerts.png)
 
@@ -129,8 +137,6 @@ You can skip this step if you are already signed in to the Oracle Data Safe Cons
 ## **STEP 3**: Analyze open alerts from the dashboard
 
 - Click the **Home** tab.
-
-- Review the information in the charts on the dashboard. Currently, there is no data for Security Assessment, User Assessment, Data Discovery, and Data Masking because you have not yet used those features.
 
 - In the **Open Alerts** chart, notice that the chart shows the number of open alerts for the last 7 days. Click the last node in the chart.
 
@@ -161,14 +167,12 @@ You can skip this step if you are already signed in to the Oracle Data Safe Cons
 - On the left, under **Activity Auditing**, click the **All Activity** report.
 
 
-- At the top of the report, view the totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, and **DMLs**.
+- At the top of the report, view the totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, **DMLs**, and **Total Events**.
 
   ![Totals in All Activity report](images/all-activity-report-totals.png)  
 
 
-- The report is automatically filtered to show one week's worth of audit data for your target database.
-
-    - If the filters are not displayed, click **Filters**.
+- Review the data in the table. The report is automatically filtered to show one week's worth of audit data for your target database. If the filter is not displayed, click **Filters**.
 
    ![Filters automatically set in All Activity Report](images/filters-table-all-activity-report.png)  
 
@@ -185,7 +189,7 @@ You can skip this step if you are already signed in to the Oracle Data Safe Cons
     ![Totals in Audit Summary report](images/audit-summary-filters-totals.png)  
 
 
-- View the charts.
+- Review the charts.
 
   - The **Open Alerts** chart compares the number of critical, high, and medium open alerts for the past week.
   - The **Admin Activity** chart compares the number of logins, database schema changes, audit setting changes, and entitlement changes for the past week.
@@ -196,11 +200,13 @@ You can skip this step if you are already signed in to the Oracle Data Safe Cons
 
 - To filter the time period for the report, at the top, select **Last 1 Month**, and then click **Apply**.
 
-- To filter the target database for the report, click **All Targets** in the **Filters** section.
+- To filter the target database for the report, do the following:
 
-- In the **Select Targets** dialog box, deselect the check box for **All Targets**, click the field, select your target database, and then click **Done**.
+    - In the **Filters** section, click **All Targets**.
 
-- Click **Apply**.
+    - In the **Select Targets** dialog box, deselect the check box for **All Targets**, click the field, select your target database, and then click **Done**.
+
+    - Click **Apply**.
 
 
 - Your target database is now set as a filter.
@@ -218,7 +224,7 @@ You can skip this step if you are already signed in to the Oracle Data Safe Cons
 
 - From the **Report Definition** menu, select **Save As New**.
 
-- In the **Save As** dialog box, enter the report name **<user name> Logins**, enter the description **Logins report**, select your compartment, and then click **Save As**. A confirmation message states that you successfully created the report.
+- In the **Save As** dialog box, enter the report name **<user name> Logins**, enter the description **Logins report**, select your compartment, and then click **Save As**. A confirmation message states that the report is successfully created.
 
 - Click the **Reports** tab.
 
@@ -233,10 +239,10 @@ You can skip this step if you are already signed in to the Oracle Data Safe Cons
 
 - In the **Generate Report** dialog box, leave **PDF** selected, select your compartment, and then click **Generate Report**.
 
-- Wait for a confirmation message that states that the report was generated successfully.
+- Wait for a confirmation message that states that the **Report was generated successfully**.
 
 
-- Click **Download Report**.  The **Opening Logins.pdf** dialog box is displayed.
+- Click the **Download Report** link.  The **Opening Logins.pdf** dialog box is displayed.
 
 
 - Select the application with which you want to open the PDF, and click **OK**.

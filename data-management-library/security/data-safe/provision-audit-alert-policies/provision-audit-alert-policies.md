@@ -26,7 +26,9 @@ To complete this lab, you need the following:
 
 ### Assumptions
 
-- This lab assumes that you completed the [Provision and Register and Autonomous Database](../provision-register-autonomous-database/provision-register-autonomous-database.md) lab.
+- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the **Prerequisites** for this workshop.
+
+- You completed the [Provision and Register and Autonomous Database](../provision-register-autonomous-database/provision-register-autonomous-database.md) lab in this workshop.
 
 
 ## **STEP 1**: Sign in to the Oracle Data Safe Console
@@ -36,7 +38,9 @@ To complete this lab, you need the following:
 
 - If you are not signed in to the Oracle Data Safe Console, do the following:
 
-    - From the navigation menu in the Oracle Cloud Infrastructure Console, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
+    - Click the browser tab named **Oracle Cloud Infrastructure**, and sign in to the Console if needed.
+
+    - From the navigation menu, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
 
     - Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
 

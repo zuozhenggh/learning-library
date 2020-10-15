@@ -1,7 +1,7 @@
 # Assess Database Configurations and Users
 
 ## Introduction
-This lab shows you how to assess configurations and users in your Autonomous Database by using the User Assessment feature in Oracle Data Safe.
+This lab shows you how to assess database configurations and users in your Autonomous Database by using the Security Assessment and User Assessment features in Oracle Data Safe.
 
 Estimated Lab Time: 30 minutes
 
@@ -28,48 +28,57 @@ To complete this lab, you need to have the following:
 
 ### Assumptions
 
-This lab assumes that you completed the following labs:
+- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the **Prerequisites** for this workshop.
 
-- [Provision and Register and Autonomous Database](../provision-register-autonomous-database/provision-register-autonomous-database.md)
-- [Provision Audit and Alert Policies](../provision-audit-alert-policies/provision-audit-alert-policies.md)
+- You completed the following labs in this workshop:
 
-**Note:** Your data values will be different than those shown in the screenshots in this lab.
+    - [Provision and Register and Autonomous Database](../provision-register-autonomous-database/provision-register-autonomous-database.md)
+    - [Provision Audit and Alert Policies](../provision-audit-alert-policies/provision-audit-alert-policies.md)
+
+- Your data values will be different than those shown in the screenshots in this lab.
 
 
-## **STEP 1**: (If needed) Sign in to the Oracle Data Safe Console
+## **STEP 1**: Sign in to the Oracle Data Safe Console
 
-- From the navigation menu in the Oracle Cloud Infrastructure Console, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
+- If you are already signed in to the Oracle Data Safe Console, click the **Oracle Data Safe** tab in your browser.
 
-- Click **Service Console**. The **Home** page in the Oracle Data Safe Console is displayed.
+- If you are not signed in to the Oracle Data Safe Console, do the following:
+
+    - Click the browser tab named **Oracle Cloud Infrastructure**, and sign in to the Console if needed.
+
+    - From the navigation menu, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
+
+    - Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
 
 
 ## **STEP 2**: Schedule and run a Security Assessment job against your database
 
 You can use Security Assessment to evaluate the current security state of your target databases and receive recommendations on how to mitigate the identified risks.
 
-- Click the **Security Assessment** tab.
+- Click the **Home** tab, and then click the **Security Assessment** tab.
 
 
 - On the **Security Assessment** page, select the check box for your target database, and then click **Schedule Periodic Assessment**.
 
   ![Security Assessment page](images/schedule-security-assessment-job.png)
 
-- In the **Schedule Assessment** dialog box, configure the schedule for every Sunday at 11:00PM:
+- In the **Schedule Assessment** dialog box, configure the schedule for every Sunday at 11:00 PM:
 
     - From the **Schedule Type** drop-down list, select **Weekly**.
     - From the **Every** drop-down list, select **Sunday**.
-    - In the **At** field, click the **Schedule** button and select **11:00 PM**, and click **OK**.
-    - Click **Schedule**.
+    - In the **At** field, click the **Select Time** button. Select **11:00 PM**, and then click **OK**.
+    - Click **Schedule**. A confirmation messages states that the scheduled periodic job is successful.
 
     ![Schedule every Sunday](images/schedule-every-sunday.png)
 
-    - A confirmation messages states that the schedule period job is successful.
 
 - Deselect the check box for the target database, and select it again.
 
 - Click **Assess Now**.
 
-- Wait approximately one minute for the assessment to finish. The counts for high risk, medium risk, and low risk findings are displayed. The job generates a **Comprehensive Assessment** report.
+- Wait approximately one minute for the assessment to finish.
+
+- When the job is finished, review the counts for high risk, medium risk, and low risk findings. The job generates a **Comprehensive Assessment** report.
 
 
   ![Security Assessment risk numbers](images/security-assessment-risk-numbers.png)
@@ -80,43 +89,45 @@ You can use Security Assessment to evaluate the current security state of your t
   - To view the **Comprehensive Assessment** report, in the **Last Generated Report** column, click **View Report**. The **Comprehensive Assessment** report is displayed. At the top of the report, you can view the following:
 
     - Target database name, when the database was assessed, and the database version
-    - Risk levels (**High Risk**, **Medium Risk**, **Low Risk**, **Advisory**, **Evaluate**, and **Pass**). These totals give you an idea of how secure your database is. The risk levels are color coded to make the risk levels easier to identify.
-    - **Security Controls**, **User Security**, and **Security Configurations**. These totals show you the number of findings for each high-level category in the report.
+    - The total number of findings per risk level (**High Risk**, **Medium Risk**, **Low Risk**, **Advisory**, **Evaluate**, and **Pass**). These totals give you an idea of how secure your database is. The risk levels are color coded to make them easier to identify.
+    - The total number of findings for **Security Controls**, **User Security**, and **Security Configurations**. These are high level categories in the report.
 
      ![Totals in the Comprehensive Assessment report](images/totals-in-comprehensive-assessment-report.png)
 
 
-  -  In the **Summary** category, you can view a table that compares the number of findings for each category and counts the number of findings per risk level. These values help you to identify areas that need attention.
+  -  Expand the **Summary** category (if needed). Here you can view a table that compares the number of findings for each category in the report, and counts the number of findings per risk level. These values help you to identify areas that need attention.
 
     ![Summary table in the Comprehensive Assessment report](images/summary-table-comprehensive-assessment-report.png)
 
-  - Expand **User Accounts** to view the list of findings for user accounts.
+  - Expand **User Accounts** to view the list of findings that pertain to user accounts.
 
-     - On the right, indicators show whether a finding is recommended by the Center for Internet Security (**CIS**), European Union's General Data Protection Regulation (**GDPR**), and/or Security Technical Implementation Guide (**STIG**). These indications make it easy for you to identify the recommended security controls.
+    - Expand the subcategories and review the findings.
+
+   - On the right, indicators show whether a finding is recommended by the Center for Internet Security (**CIS**), European Union's General Data Protection Regulation (**GDPR**), and/or Security Technical Implementation Guide (**STIG**). These indications make it easy for you to identify the recommended security controls.
 
      ![Summary table in the Comprehensive Assessment report](images/findings-user-accounts.png)
 
 
-  - Collapse **User Accounts** and expand **Privileges and Roles**. View the list of findings.
+  - Collapse **User Accounts** and expand **Privileges and Roles**. Review the list of findings.
 
   - Scroll down and expand other categories. Each category lists related findings about your database and how you can make changes to improve its security.
 
-  - Scroll to the top of the report. Click each risk category to filter the findings by risk level. Each filter is a toggle. For example, if you click **Medium Risk**, only medium risk findings are displayed. If you click **Medium Risk** again, the filter on is removed.
+  - To filter the findings by risk level, scroll to the top of the report, and click a risk level. Each filter is a toggle. For example, if you click **Medium Risk**, only medium risk findings are displayed in the report. If you click **Medium Risk** again, the filter is removed.
 
 
 
 
 ## **STEP 4**: Run a User Assessment job against a target database
 
-You can use User Assessment to identify user settings and risks on your target databases.
+You can use the User Assessment feature to identify user settings and user risks on your target databases.
 
-- Click the **Home** tab and then the **User Assessment** tab.
+- Click the **Home** tab, and then click the **User Assessment** tab.
 
-- On the **User Assessment** page, select the check box for your target database, and then click **Assess**. The assessment takes approximately 10 seconds.
+- On the **User Assessment** page, select the check box for your target database, and then click **Assess**.
 
   ![User Assessment page](images/user-assessment-page.png)
 
-- Wait a moment for the assessment to finish.
+- Wait a moment for the assessment to finish. The assessment takes approximately 10 seconds.
 
 
 
@@ -124,8 +135,9 @@ You can use User Assessment to identify user settings and risks on your target d
 ## **STEP 5**: Analyze the user assessment results
 
 - When the user assessment is completed, observe the following on the **User Assessment** page:
-    - A green check mark is displayed in the **Last Generated Report** column
-    - The number of **Critical Risk**, **High Risk**, **Medium Risk**, and **Low Risk** users
+    - A green check mark is displayed in the **Last Generated Report** column.
+
+    - The page is updated to show the number of **Critical Risk**, **High Risk**, **Medium Risk**, and **Low Risk** users.
 
      ![User Assessment page after assessment](images/user-assessment-completed.png)
 
@@ -133,9 +145,9 @@ You can use User Assessment to identify user settings and risks on your target d
 - In the **Last Generated Report** column, click **View Report**. The **Users** page is displayed.
 
 
-- Review the 4 charts. You can click the small circles below the charts to navigate between them.
+- Review the four charts. You can click the small circles below the charts to navigate between the charts.
 
-    - The **User Risk** chart shows you the percent of users who are **Critical Risk**, **High Risk**, **Medium Risk**, and **Low Risk**.
+    - The **User Risk** chart shows you the number and percentage of users who are **Critical Risk**, **High Risk**, **Medium Risk**, and **Low Risk**.
 
     ![User Risk chart](images/user-risk-chart.png)
 
@@ -143,11 +155,11 @@ You can use User Assessment to identify user settings and risks on your target d
 
     ![User Risk chart](images/user-roles-chart.png)
 
-    - The **Last Password Change** chart shows you the number of users who have changed their passwords in the last 30 days, the last 30-90 days, and 90 days ago or more.
+    - The **Last Password Change** chart shows you the number and percentage of users who changed their passwords within the last 30 days, within the last 30-90 days, and 90 days ago or more.
 
     ![User Risk chart](images/last-password-change-chart.png)
 
-    - The **Last Login** chart shows you the number of users that signed in to the database within the last 24 hours, within the last week, within the current month, within the current year, and a year ago or more.
+    - The **Last Login** chart shows you the number and percentage of users that signed in to the database within the last 24 hours, within the last week, within the current month, within the current year, and a year ago or more.
 
     ![User Risk chart](images/last-login-chart.png)
 
@@ -159,15 +171,24 @@ You can use User Assessment to identify user settings and risks on your target d
   ![User Assessment table](images/user-table.png)
 
 
-- View audit records for the `admin` user. To do that, identify the row for the `ADMIN` user and scroll to the right. In the **Audit Records** column, click **View Activity**.
+- To view audit records for the `admin` user, do the following:
+
+    - Identify the row for the `ADMIN` user.
+
+    - Scroll to the right.
+
+    - In the **Audit Records** column for the `ADMIN` user, click **View Activity**.
 
   ![Audit Records column with View Activity circled](images/view-activity-admin-user.png)
 
 
 - Examine the **All Activity** report for the `ADMIN` user.
-  - This report is automatically filtered to show you the audit records for the `ADMIN` user, for the past week, and for your target database.
-  - At the top of the report, you can view totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, and **DMLs**.
-  - The **Event** column shows you the type of activities performed.
+
+  - This report is automatically filtered to show you the audit records for the past week, for the `ADMIN` user, and for your target database.
+
+  - At the top of the report, you can view totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, **DMLs**, and **Total Events**.
+
+  - The **Event** column in the table shows you the types of activities performed, for example, LOGON, AUDIT, CREATE AUDIT POLICY, and so on.
 
    ![All Activity report](images/all-activity-report-admin-user.png)
 
@@ -183,7 +204,7 @@ You can use User Assessment to identify user settings and risks on your target d
   ![User Assessment table with VOLDEMORT expired status](images/identify-expired-user.png)
 
 
-- Observe that `VOLDEMORT` has no activity on the target database. Here is a case where you might consider removing this user from the target database.
+- If the user has no activity on the target database, there are no audit records displayed in the **All Activity** report. In this case, you might consider removing the user from the target database.
 
 
 
