@@ -100,6 +100,8 @@ Let us use forecast feature on the sample financial data.
 
 Great! Now, you have completed augmented analytics lab and hope you have learnt to use Explain and Forecast features of the tool to generate and present insights.
 
+You may now proceed to the next lab.
+
 ## Want To Learn More
 
    - [What Is Augmented Analytics?](https://blogs.oracle.com/analytics/what-is-augmented-analytics-v2)
