@@ -8,13 +8,16 @@ It gives the user an opportunity to learn how to configure those features in ord
 - *Estimated Lab Time:* 65 minutes
 
 ### Objectives
-- *Add objectives here ........*
+- Create an Application Data Model (ADM)
+- Generate a data masking script to mask sensitive data
+- Execute the data masking script and compare before/after values
 
 ### Prerequisites
 This lab assumes you have completed:
    - Lab: Generate SSH Keys
    - Lab: Prepare Setup
    - Lab: Environment Setup
+   - Lab: Initialize and Start the DBSecLab Environment
 
 ### Video Preview
 - Watch a preview of "*Understanding Oracle Data Masking & Subsetting (April 2019)*" [](youtube:3zi0Bs_bgEw)
@@ -765,33 +768,33 @@ It will become **Masking Job Succeeded**
 You may now proceed to the next lab.
 
 ## **Appendix**: About the Product
-### **Overview**
-Oracle Data Masking pack for Enterprise Manager, part of Oracle's comprehensive portfolio of database security solutions, helps organizations comply with data privacy and protection mandates such as Sarbanes-Oxley (SOX), Payment Card Industry (PCI) Data Security Standard (DSS), Health Insurance Portability and Accountability Act (HIPAA), EU General Data Protection Regulation (GDPR), and the upcoming California Consumer Privacy Act (CCPA), and numerous laws that restrict the use of actual customer data. With Oracle Data Masking, sensitive information such as credit card or social security numbers can be replaced with realistic values, allowing production data to be safely used for development, testing, or sharing with out-sourced or off-shore partners for other non-production purposes. Oracle Data Masking uses a library of templates and format rules, consistently transforming data in order to maintain referential integrity for applications.
+- **Overview**<br>
+    Oracle Data Masking pack for Enterprise Manager, part of Oracle's comprehensive portfolio of database security solutions, helps organizations comply with data privacy and protection mandates such as Sarbanes-Oxley (SOX), Payment Card Industry (PCI) Data Security Standard (DSS), Health Insurance Portability and Accountability Act (HIPAA), EU General Data Protection Regulation (GDPR), and the upcoming California Consumer Privacy Act (CCPA), and numerous laws that restrict the use of actual customer data. With Oracle Data Masking, sensitive information such as credit card or social security numbers can be replaced with realistic values, allowing production data to be safely used for development, testing, or sharing with out-sourced or off-shore partners for other non-production purposes. Oracle Data Masking uses a library of templates and format rules, consistently transforming data in order to maintain referential integrity for applications.
 
-Data masking (also known as data scrambling and data anonymization) is the process of replacing sensitive information copied from production databases to test or non-production databases with realistic, but scrubbed, data based on masking rules. Data masking is ideal for virtually any situation when confidential or regulated data needs to be shared with other non-production users; for instance, internal users such as application developers, or external business partners, like offshore testing companies or suppliers and customers. These non-production users need to access some of the original data, but do not need to see every column of every table, especially when the information is protected by government regulations.
+    Data masking (also known as data scrambling and data anonymization) is the process of replacing sensitive information copied from production databases to test or non-production databases with realistic, but scrubbed, data based on masking rules. Data masking is ideal for virtually any situation when confidential or regulated data needs to be shared with other non-production users; for instance, internal users such as application developers, or external business partners, like offshore testing companies or suppliers and customers. These non-production users need to access some of the original data, but do not need to see every column of every table, especially when the information is protected by government regulations.
 
-Data masking allows organizations to generate realistic and fully functional data with similar characteristics as the original data to replace sensitive or confidential information. This contrasts with encryption or Virtual Private Database, which simply hide data, allowing the original data to be retrieved with the appropriate access or key. With data masking, the original sensitive data cannot be retrieved or accessed. Names, addresses, phone numbers, and credit card details are examples of data that require protection of the information content from inappropriate visibility. Live production database environments contain valuable and confidential data — access to this information is tightly controlled. However, each production system usually has replicated development copies, and the controls on such test environments are less stringent. This greatly increases the risks that the data might be used inappropriately. Data masking can modify sensitive database records so that they remain usable, but contain no confidential or personally identifiable information. Yet, the masked test data resembles the original in appearance to ensure the integrity of the application.
+    Data masking allows organizations to generate realistic and fully functional data with similar characteristics as the original data to replace sensitive or confidential information. This contrasts with encryption or Virtual Private Database, which simply hide data, allowing the original data to be retrieved with the appropriate access or key. With data masking, the original sensitive data cannot be retrieved or accessed. Names, addresses, phone numbers, and credit card details are examples of data that require protection of the information content from inappropriate visibility. Live production database environments contain valuable and confidential data — access to this information is tightly controlled. However, each production system usually has replicated development copies, and the controls on such test environments are less stringent. This greatly increases the risks that the data might be used inappropriately. Data masking can modify sensitive database records so that they remain usable, but contain no confidential or personally identifiable information. Yet, the masked test data resembles the original in appearance to ensure the integrity of the application.
 
     ![](./images/dms-concept.png)
 
-### **Why do I need Data Masking?**
-There are several reasons why you would need it, based on challenges like the ones below
-  - Personally Identifiable and sensitive data is being shared with parties that do not have a business need-to-know in development and testing groups.
-  - The use of operational databases containing personal information or any other sensitive information is being used for testing purposes. All identified sensitive details and content should be removed or modified beyond recognition before use.
-  - There is no established, documented procedure and enforcement of data cleansing standards in masking and cleansing of sensitive production data before distribution to development and QA environments.
-  - The steps and process necessary to provide development and QA environments with properly masked data are very time consuming, manual and inconsistent.
+- **Why do I need Data Masking?**<br>
+    There are several reasons why you would need it, based on challenges like the ones below
+    - Personally Identifiable and sensitive data is being shared with parties that do not have a business need-to-know in development and testing groups.
+    - The use of operational databases containing personal information or any other sensitive information is being used for testing purposes. All identified sensitive details and content should be removed or modified beyond recognition before use.
+    - There is no established, documented procedure and enforcement of data cleansing standards in masking and cleansing of sensitive production data before distribution to development and QA environments.
+    - The steps and process necessary to provide development and QA environments with properly masked data are very time consuming, manual and inconsistent.
 
-### **Benefits of using DMS**
-  - Maximize the business value of data by masking sensitive information
-  - Minimize the compliance boundary by not proliferating the sensitive production information
-  - Lower the storage costs on test and development environments by subsetting data
-  - Automate the discovery of sensitive data and parent-child relationships
-  - Provide a comprehensive library of masking formats, masking transformations, subsetting techniques, and select application templates
-  - Mask and subset data in-Database or on-the-file by extracting the data from a source database
-  - Mask and subset both Oracle and non-Oracle databases
-  - Mask and subset Oracle Databases hosted on the Oracle cloud
-  - Preserve data integrity during masking and subsetting and offers many more unique features
-  - Integrate with select Oracle testing, security, and integration products.
+- **Benefits of using DMS**
+    - Maximize the business value of data by masking sensitive information
+    - Minimize the compliance boundary by not proliferating the sensitive production information
+    - Lower the storage costs on test and development environments by subsetting data
+    - Automate the discovery of sensitive data and parent-child relationships
+    - Provide a comprehensive library of masking formats, masking transformations, subsetting techniques, and select application templates
+    - Mask and subset data in-Database or on-the-file by extracting the data from a source database
+    - Mask and subset both Oracle and non-Oracle databases
+    - Mask and subset Oracle Databases hosted on the Oracle cloud
+    - Preserve data integrity during masking and subsetting and offers many more unique features
+    - Integrate with select Oracle testing, security, and integration products.
 
 ## Want to Learn More?
 Technical Documentation:
@@ -803,7 +806,7 @@ Video
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -1,4 +1,4 @@
-# Initialize and Start the Environment
+# Initialize and Start the DBSecLab Environment
 
 ## Introduction
 This lab will show you how to initialize and start the DBSecLab environment.
@@ -13,7 +13,7 @@ This lab assumes you have completed:
    - Lab: Prepare Setup
    - Lab: Environment Setup
 
-## **STEP 1**: Initialize the DBSec-Lab environment
+## **Step 1**: Initialize the DBSec-Lab environment
 
 Before performing the workshop, please make sure you have the latest labs scripts!
 
@@ -29,7 +29,7 @@ Before performing the workshop, please make sure you have the latest labs script
     <copy>cd $DBSEC_HOME</copy>
       ````
 
-3. Import the latest workshop scripts from PMs Team's GitHub
+3. Import the latest workshop scripts from Oracle's GitHub repository
 
       ````
     <copy>./update_workshop.sh</copy>
@@ -37,16 +37,16 @@ Before performing the workshop, please make sure you have the latest labs script
 
 	---
 	**Note**:
-	- PMs team is constantly updating the labs (new features or corrections). So please execute `./update_workshop.sh` before each use of the labs!
+	- Oracle DB Security Product Management team is constantly updating the scripts labs (new features or corrections). So, please execute `./update_workshop.sh` as frequently as possible before using this workshop!
 	- If your scripts are already up-to-date, you will have the following message:
 
-	![](./images/init-start-env-001.png)
+		![](./images/init-start-env-001.png)
 
-    otherwise the new scripts will be imported!
+    - Otherwise the new scripts will be imported!
 
 	---
 
-## **STEP 2**: Start all the DBSec-Lab components
+## **Step 2**: Start all the DBSec-Lab components
 
 1. Start DBSec-Lab Environement
 
@@ -87,7 +87,7 @@ Before performing the workshop, please make sure you have the latest labs script
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

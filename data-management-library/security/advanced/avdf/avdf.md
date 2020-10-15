@@ -8,20 +8,22 @@ It gives the user an opportunity to learn how to configure those appliances in o
 - *Estimated Lab Time:* 120 minutes
 
 ### Objectives
-- *Add objectives here ........*
+- Connect Audit Vault Server to an Oracle DB
+- Configure the auditing for this Db and explore the auditing and reporting capacities
+- Configure and manage the Firewalling monitoring
+- Train the DB Firewall for expected SQL traffic and see the effects on a web App
 
 ### Prerequisites
 This lab assumes you have completed:
    - Lab: Generate SSH Keys
    - Lab: Prepare Setup
    - Lab: Environment Setup
-   - Lab: DBSAT
+   - Lab: Initialize and Start the DBSecLab Environment
+   - Lab: DBSAT (please refer to the [Oracle DB Security Baseline Workshop](...))
 
 ### Video Preview
 
 - Watch a preview of "*Understanding Oracle Audit Vault and Database Firewall 20c (August 2020)*" [](youtube:9xG0GFKbVJk)
-
-<!-- - Watch a preview of "*Auditing PostgreSQL and MongoDB with Oracle Audit Vault and Database Firewall (October 2020)*" [](youtube:) -->
 
 ### Lab Timing (estimated)
 
@@ -170,7 +172,7 @@ You should see one row returned for the Unified Audit Trail and the output from 
 
       ---
       **Note**: The `Status` column should say `Collecting` or `Idle`.  If it says something else please run the script again and verify it changes state.
-FDBSAT
+
       ---
 
 4. View audit data collected via the All Activity Report using the web browser
@@ -379,7 +381,7 @@ You have completed the lab.
 
 ## **STEP 6**: Audit Vault - Access Rights and User Activity on Sensitive Data
 
-1. In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. So, the first step is to complete the Database Security Assessment Tool (DBSAT) lab located [here]().
+1. In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. So, the first step is to complete the Database Security Assessment Tool (DBSAT) lab (For more details, please refer to [Oracle DB Security Baseline Workshop](...)).
 
 2. Grant Privilege to Import Sensitive Data<br>
 Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user `AVADMIN`:
@@ -1471,12 +1473,12 @@ You should see a lot of audit details about this particular audited event
 You may now proceed to the next lab.
 
 ## **Appendix**: About the Product
-### **Overview**
-Oracle Audit Vault and Database Firewall (AVDF) is a complete **Database Activity Monitoring (DAM)** solution that **combines native audit data with network-based SQL traffic capture**.<br>
+- **Overview**<br>
+  Oracle Audit Vault and Database Firewall (AVDF) is a complete **Database Activity Monitoring (DAM)** solution that **combines native audit data with network-based SQL traffic capture**.<br>
 
-AVDF includes an enterprise quality **audit data warehouse**, host-based audit data collection agents, powerful reporting and analysis tools, alert framework, audit dashboard, and a multi-stage Database Firewall. The Database Firewall uses a sophisticated **grammar analysis engine** to inspect SQL statements before they reach the database and determines with high accuracy whether to allow, log, alert, substitute, or block the incoming SQL.
+  AVDF includes an enterprise quality **audit data warehouse**, host-based audit data collection agents, powerful reporting and analysis tools, alert framework, audit dashboard, and a multi-stage Database Firewall. The Database Firewall uses a sophisticated **grammar analysis engine** to inspect SQL statements before they reach the database and determines with high accuracy whether to allow, log, alert, substitute, or block the incoming SQL.
 
-AVDF comes with **collectors for Oracle Database, Oracle MySQL, Microsoft SQL Server, PostgreSQL, IBM Db2 (on LUW), SAP Sybase, Oracle Key Vault, Microsoft Active Directory, Linux, Windows, AIX, Solaris, and HPUX**. A **Quick-JSON collector** simplifies ingesting audit data from databases like MongoDB. In addition to the provided collectors, AVDF's extensible framework allows simple configuration-based audit collection from **JDBC**-accessible databases and REST, JSON, or XML sources, making collection from most other systems easy. A full featured Java SDK allows creation of collectors for applications or databases that don't use a standard technology to record their audit trail.
+  AVDF comes with **collectors for Oracle Database, Oracle MySQL, Microsoft SQL Server, PostgreSQL, IBM Db2 (on LUW), SAP Sybase, Oracle Key Vault, Microsoft Active Directory, Linux, Windows, AIX, Solaris, and HPUX**. A **Quick-JSON collector** simplifies ingesting audit data from databases like MongoDB. In addition to the provided collectors, AVDF's extensible framework allows simple configuration-based audit collection from **JDBC**-accessible databases and REST, JSON, or XML sources, making collection from most other systems easy. A full featured Java SDK allows creation of collectors for applications or databases that don't use a standard technology to record their audit trail.
 
   ![](./images/avdf-concept-01.png)
 
@@ -1495,13 +1497,15 @@ Security controls can be customized with in-line monitoring and blocking on some
 Oracle Audit Vault and Database Firewall 20c **supports both Cloud and On-Premise databases with one single dashboard**, giving customers insight into the activities on their databases.
 
 ## Want to Learn More?
-Technical Documentation:
-- [Oracle Audit Vault & Database Firewall 20c](https://docs.oracle.com/en/database/oracle/audit-vault-database-firewall/20/index.html)
+  - Technical Documentation: [Oracle Audit Vault & Database Firewall 20c](https://docs.oracle.com/en/database/oracle/audit-vault-database-firewall/20/index.html)
+
+Video
+  - *Auditing PostgreSQL and MongoDB with Oracle Audit Vault and Database Firewall (October 2020)* [](youtube:)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
