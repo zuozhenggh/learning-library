@@ -1,10 +1,11 @@
 {
+  "workshoptitle": "Oracle Enterprise Manager - Database Performance Management: Find-Fix-Validate",
   "tutorials": [
     {
-         "title": "Prerequisites",
-         "description": "Get a Free Trial",
-         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-     },
+      "title": "Prerequisites",
+      "description": "Get a Free Trial",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
     {
       "title": "Introduction",
       "description": "Introduction to Database Performance Management Workshop",
