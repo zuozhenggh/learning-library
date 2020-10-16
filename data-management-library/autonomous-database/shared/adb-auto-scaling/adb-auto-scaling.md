@@ -333,16 +333,16 @@ TEST_NO CPU_COUNT SESSIONS QUERIES_FINISHED TEST_DURATION_IN_SECONDS AVG_QUERY_T
       2         6        3                6                    210.2             97         2.699
 ````
 
-In the Performance Hub Average Active Sessions chart by Wait Class, you can see that in the 2nd test after auto scaling is enabled, since there are 3 CPUs available, one for each of the queries, the queries are no longer waiting for CPUs to become available.
-
-  ![](images/graph-by-wait-class-auto-scaling-enabled.png " ")
-
 - After enabling auto scaling, CPU_COUNT jumps from 2 to 6, a factor of 3x.
 - The duration of the procedure that ran queries concurrently in 3 worksheet sessions dropped from 581 to 210 seconds.
 - The average query time dropped from 275 to 97 seconds.
 - The MAX\_CPU\_USAGE increased from 1 CPU to 2.7 CPUs.
 - The auto scaling allowed all 3 sessions to use 3x the amount of CPU, reducing query times significantly, by nearly 3x.
 - This information comes from the ``gv$con_sysmetric_history`` view.
+
+In the Performance Hub Average Active Sessions chart by Wait Class, you can see that in the 2nd test after auto scaling is enabled, since there are 3 CPUs available, one for each of the queries, the queries are no longer waiting for CPUs to become available.
+
+  ![](images/graph-by-wait-class-auto-scaling-enabled.png " ")
 
 ## Things to Note
 
