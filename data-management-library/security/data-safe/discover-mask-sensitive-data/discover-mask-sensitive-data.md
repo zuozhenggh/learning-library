@@ -77,9 +77,9 @@ In this step, you use SQL Developer Web to query sensitive data in your database
 
 15. Review the query results. If needed, click the **Query Result** tab.
 
-  - Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, and `hire_date`, are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
+    - Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, and `hire_date`, are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
 
-  - Keep this tab open so that you can return to it later. In step 4, you compare the original query results with the masked data.
+    - Keep this tab open so that you can return to it later. In step 4, you compare the original query results with the masked data.
 
   ![Query results](images/original-query-results.png)
 
@@ -246,9 +246,9 @@ The Data Masking wizard generates a masking policy for your target database base
 
 13. Examine the **Data Masking** report.
 
-  - At the top of the report, you can view the number of masked values, masked sensitive types, masked tables, and masked columns.
+    - At the top of the report, you can view the number of masked values, masked sensitive types, masked tables, and masked columns.
 
-  - The table shows you column counts for the sensitive categories and types. For each sensitive column, you can view the masking format used and the number of rows masked.
+    - The table shows you column counts for the sensitive categories and types. For each sensitive column, you can view the masking format used and the number of rows masked.
 
     ![Data Masking report](images/data-masking-report.png)
 

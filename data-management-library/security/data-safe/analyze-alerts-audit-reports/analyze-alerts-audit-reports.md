@@ -68,11 +68,11 @@ This lab assumes the following:
 
 3. Scroll down to review the alerts in the table.
 
-  - The **DB User** column identifies who is doing the action.
+    - The **DB User** column identifies who is doing the action.
 
-  - The **Operation** column identifies the action.
+    - The **Operation** column identifies the action.
 
-  - The **Alert Severity** column indicates the seriousness of the action.
+    - The **Alert Severity** column indicates the seriousness of the action.
 
   ![Alerts in the table](images/alert-table.png)
 
@@ -82,9 +82,9 @@ This lab assumes the following:
 
 5. To filter the report to show only open high alerts, at the top of the report, click **+ Filter** and then set the filter to be: **Alert Severity = High**. Click **Apply**.
 
-   - If the filters are not displayed, click **Filters** below the totals at the top of the page.
+    - If the filters are not displayed, click **Filters** below the totals at the top of the page.
 
-  - Leave the default filters on **Alert Status** and **Operation Time** set as is.
+    - Leave the default filters on **Alert Status** and **Operation Time** set as is.
 
   ![Alert filters](images/high-alert-severity.png)
 
@@ -193,13 +193,13 @@ This lab assumes the following:
 
 3. Review the charts.
 
-  - The **Open Alerts** chart compares the number of critical, high, and medium open alerts for the past week.
+    - The **Open Alerts** chart compares the number of critical, high, and medium open alerts for the past week.
 
-  - The **Admin Activity** chart compares the number of logins, database schema changes, audit setting changes, and entitlement changes for the past week.
+    - The **Admin Activity** chart compares the number of logins, database schema changes, audit setting changes, and entitlement changes for the past week.
 
-  - The **Login Activity** chart compares the number of failed and successful logins for the past week.
+    - The **Login Activity** chart compares the number of failed and successful logins for the past week.
 
-  - The **All Activity** chart compares the total number of events for the past week.
+    - The **All Activity** chart compares the total number of events for the past week.
 
    ![Audit Summary report charts](images/audit-summary-report-charts.png)  
 
