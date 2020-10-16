@@ -100,7 +100,9 @@ You can use Security Assessment to evaluate the current security state of your t
      ![Totals in the Comprehensive Assessment report](images/totals-in-comprehensive-assessment-report.png)
 
 
-2. Expand the **Summary** category (if needed). Here you can view a table that compares the number of findings for each category in the report, and counts the number of findings per risk level. These values help you to identify areas that need attention.
+2. Expand the **Summary** category (if needed).
+
+    - Here you can view a table that compares the number of findings for each category in the report, and counts the number of findings per risk level. These values help you to identify areas that need attention.
 
     ![Summary table in the Comprehensive Assessment report](images/summary-table-comprehensive-assessment-report.png)
 
@@ -108,7 +110,7 @@ You can use Security Assessment to evaluate the current security state of your t
 
 4. Expand the subcategories and review the findings.
 
-   - On the right, indicators show whether a finding is recommended by the Center for Internet Security (**CIS**), European Union's General Data Protection Regulation (**GDPR**), and/or Security Technical Implementation Guide (**STIG**). These indications make it easy for you to identify the recommended security controls.
+    - On the right, indicators show whether a finding is recommended by the Center for Internet Security (**CIS**), European Union's General Data Protection Regulation (**GDPR**), and/or Security Technical Implementation Guide (**STIG**). These indications make it easy for you to identify the recommended security controls.
 
      ![Summary table in the Comprehensive Assessment report](images/findings-user-accounts.png)
 
@@ -117,7 +119,9 @@ You can use Security Assessment to evaluate the current security state of your t
 
 6. Scroll down and expand other categories. Each category lists related findings about your database and how you can make changes to improve its security.
 
-7. To filter the findings by risk level, scroll to the top of the report, and click a risk level. Each filter is a toggle. For example, if you click **Medium Risk**, only medium risk findings are displayed in the report. If you click **Medium Risk** again, the filter is removed.
+7. To filter the findings by risk level, scroll to the top of the report, and click a risk level.
+
+    - Each filter is a toggle. For example, if you click **Medium Risk**, only medium risk findings are displayed in the report. If you click **Medium Risk** again, the filter is removed.
 
 
 
