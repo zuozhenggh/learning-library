@@ -28,7 +28,7 @@ In this lab, you will:
     ![](./images/1.png "")
 
 3.	Navigate to Infrastructure Settings and update Operating System Images.     
-    For Linux, enable **“Marketplace Image”** radio button and choose the latest version from the displayed list (see the screenshot below).
+    For Linux, enable **Marketplace Image** radio button and choose the latest version from the displayed list (see the screenshot below).
 
     For Windows image, as per your home region, please select the OCID of the vanilla custom image from this [website](https://docs.cloud.oracle.com/en-us/iaas/images/image/146ab34c-064a-4255-b5ea-e26bbfa6591d/).
 
@@ -36,9 +36,9 @@ In this lab, you will:
  
     ![](./images/image.png "")
 
-4.	Click ‘**Save**’ to save the configuration. 
+4.	Click **Save** to save the configuration. 
 
-5.	Click ‘**Refresh OCI Metadata**’ button on top of the page and wait for a few minutes.
+5.	Click **Refresh OCI Metadata** button on top of the page and wait for a few minutes.
 
 6.	Next, navigate to **File Server tab**.  Accept the defaults. For Mount Target field, type “**lab**”.
 

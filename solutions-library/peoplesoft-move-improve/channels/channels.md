@@ -11,18 +11,19 @@ You will be subscribing to the download channels of your choosing for the latest
 ### Prerequisites
 - Access to the Cloud manager Dashboard
 
-## Part 1: Subscribing to a channel
+## **STEP 1**: Subscribing to a channel
 
-1.	Navigate to Cloud Manager Dashboard -> Repository -> Download Subscriptions.
+1.	Navigate to **Cloud Manager Dashboard** > **Repository** > **Download Subscriptions**.
 
-2.	Go to the Unsubscribed tab.
+2.	Go to the **Unsubscribed** tab.
 
-3.	On a download channel of your choice, click on the related actions menu and click Subscribe. E.g., HCM_92_Linux.
- Monitor the Logs page to check for progress. 
+3.	On a download channel of your choice, click on the related actions menu and click **Subscribe**. E.g. **HCM\_92\_Linux**.
+
+    Monitor the Logs page to check for progress. 
 
     ![](./images/1.png "")
 
-4. Go to subscribed tab and you can now see HCM_92_Linux progress status. This takes 1+ hour to complete. Make sure you refresh the page to check the current progress. Proceed to next Lab only when you see a green check as the status as shown in the picture.
+4. Go to subscribed tab and you can now see **HCM\_92\_Linux** progress status. This takes 1+ hour to complete. Make sure you refresh the page to check the current progress. Proceed to next Lab only when you see a green check as the status as shown in the picture.
 
     ![](./images/s.png "")
 

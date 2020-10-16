@@ -17,19 +17,18 @@ Creating a topology for a template to automatically provision a PeopleSoft envir
 ### Prerequisites
 - Access to the Cloud Manager console.
 
-## Part 1: Define topology
+## **STEP 1**: Define topology
 
-1.	Navigate to Dashboard | Topology | PUM Fulltier topology. This topology will be used to create a new environment. 
+1.	Navigate to **Dashboard** > **Topology** > **PUM Fulltier** topology. This topology will be used to create a new environment. 
 
     ![](./images/1.png "")
 
-2.	Review the nodes and update the Shapes.  Click Full Tier node and select a shape that is available in your AD 2. (Click on the down arrow to see the shapes) 
-In this case, select VM.Standard2.1 or VM.Standard2.2. 
-Review the available shapes in your AD, as explained in Lab 100.
+2.	Review the nodes and update the Shapes.  Click **Full Tier** node and select a shape that is available in your AD 2. (Click on the down arrow to see the shapes) 
+In this case, select **VM.Standard2.1** or **VM.Standard2.2**. 
 
     ![](./images/topology.png "")
 
-3.	Delete the Windows node from the topology. Click ‘Delete’ on the page shown below and save the topology. 
+3.	Delete the Windows node from the topology. Click **Delete** on the page shown below and save the topology. 
 
     ![](./images/3.png "")
 
