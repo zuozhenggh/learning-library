@@ -1,4 +1,4 @@
-# Reviewing and updating a Topology
+# Reviewing and Updating a Topology
 
 ## Introduction
 
@@ -11,25 +11,31 @@ Topology defines the infrastructure layout that will be created on Oracle Cloud 
 
 Users can select a template, override topologies, change any attributes, if needed, and provision PeopleSoft environments on demand. Users are allowed to perform actions on a running environment, such as stop, view details, create new template from it, and so on.
 
-## Part 1
+### Objectives
+Creating a topology for a template to automatically provision a PeopleSoft environment. You will give it a name, description, OS, shape type, and environment type.
+
+### Prerequisites
+Access to the Cloud Manager console.
+
+## Part 1: Define topology
 
 1.	Navigate to Dashboard | Topology | PUM Fulltier topology. This topology will be used to create a new environment. 
 
-![](./images/1.png "")
+    ![](./images/1.png "")
 
 2.	Review the nodes and update the Shapes.  Click Full Tier node and select a shape that is available in your AD 2. (Click on the down arrow to see the shapes) 
 In this case, select VM.Standard2.1 or VM.Standard2.2. 
 Review the available shapes in your AD, as explained in Lab 100.
 
-![](./images/topology.png "")
+    ![](./images/topology.png "")
 
 3.	Delete the Windows node from the topology. Click ‘Delete’ on the page shown below and save the topology. 
 
-![](./images/3.png "")
+    ![](./images/3.png "")
 
 4.	When you are ready, click **Save**. The topology should now look as shown below.
 
-![](./images/4.png "")
+    ![](./images/4.png "")
 
 You may now proceed to the next lab.
 

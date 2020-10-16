@@ -13,12 +13,11 @@ In this lab, you will:
 * Input the image OCID for the Cloud Manager
 * Create a Mount Target for a File System
 
-### Prerequisties
+### Prerequisites
 1. My Oracle Support (MOS) account credentials.
     - User ID
     - Password
     - URL
-
 
 ## **STEP 1**: Configuring settings
 
