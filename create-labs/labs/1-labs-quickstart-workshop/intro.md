@@ -63,8 +63,8 @@ Use these links to get more information about Labs and Workshops:
     * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 
 * **Reviewed by:**  
-  * Aslam Khan, Senior User Assistance Manager, ODI, OGG
-  * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
+    * Aslam Khan, Senior User Assistance Manager, ODI, OGG
+    * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
 ## See an issue?  
