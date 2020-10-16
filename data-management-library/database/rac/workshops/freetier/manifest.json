@@ -55,6 +55,11 @@
             "title": "Lab 9: Oracle Scheduler ",
             "description": "This lab walks you through the use of Oracle Scheduler in a RAC database.",
             "filename": "../../sql/scheduler.md"
+        },
+        {
+            "title": "Lab 10: File Test",
+            "description": "This lab walks you through the use of UTL packages in a cluster.",
+            "filename": "../../sql/utl_file_test.md"
         }
     ]
 }

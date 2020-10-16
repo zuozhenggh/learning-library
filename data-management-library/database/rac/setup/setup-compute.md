@@ -20,7 +20,7 @@ This lab assumes you have:
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-      - [db_system_rac.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Need correct link here/workshop-labs-files/o/db_system_rac.zip)
+      - [dbsystemrac.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Need correct link here/workshop-labs-files/o/dbsystemrac.zip)
 
 2.  Save in your downloads folder.
 3.  Login to Oracle Cloud

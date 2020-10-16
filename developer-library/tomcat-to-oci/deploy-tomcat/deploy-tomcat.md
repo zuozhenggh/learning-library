@@ -67,6 +67,7 @@ In this lab, you will provision:
 
     ```
     export TF_VAR_tenancy_ocid=ocid1.tenancy....
+    export TF_VAR_user_ocid=ocid1.user.oc1..
     export TF_VAR_region=us-ashburn-1
     export TF_VAR_fingerprint=50:d0:7d:f7:0e:05:cd:87:3b:2a:cb:50:b1:17:90:e9
     export TF_VAR_private_key_path=~/.oci/oci_api_key.pem
@@ -175,5 +176,7 @@ You may proceed to the next lab.
  - **Author** - Subash Singh, Emmanuel Leroy, October 2020
  - **Last Updated By/Date** - Emmanuel Leroy, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
