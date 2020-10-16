@@ -26,32 +26,15 @@ sudo su - oracle
 ````` 
 ![](./images/oas-environment1.png " ")
 
-2. To set the environment for Database and access the binaries, Enter " . oraenv " on command prompt.
 
-`````
-<copy>
- . oraenv
-</copy>
-````` 
-
-![](./images/oas-environment2.png " ")
-
-3. Enter **convergedcdb** for ORACLE\_SID. So that the Oracle_Base will be set.
-`````
-<copy>
-convergedcdb
-</copy>
-````` 
-![](./images/oas-environment3.png " ")
-
-4. Go to folder /u01/script
+2. Go to folder /u01/script
 
 ````
 <copy>
 cd /u01/script
 </copy>
 ````
-5. Run the script file to start the services.
+3. Run the script file to start the services.
    
 ````
 <copy>
@@ -66,7 +49,7 @@ This script will ensure to start Database, Admin Server and all the services of 
 
 Check for the "Finished starting servers" status before proceeding next.
 
-6. Run "status.sh" file to get the status of all the services required for OAS. 
+4. Run "status.sh" file to get the status of all the services required for OAS. 
 
 ````
 <copy>
