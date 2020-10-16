@@ -6,9 +6,6 @@ This lab walks you through the steps to a PeopleSoft Environment from the previo
 
 Estimated Lab Time: 90 minutes
 
-### About Product/Technology
-Enter background information here..
-
 ### Objectives
 
 The purpose of this lab is to show you how to create a PeopleSoft Environment from an environment template in the PeopleSoft Cloud Manager.
@@ -26,84 +23,84 @@ In this lab, you will:
 
 1. 	Navigate to Dashboard | Environments.  Click Create Environment button.
 
-![](./images/e1.png "")
+  ![](./images/e1.png "")
 
 2. 	Provide a unique Environment Name - **MYPUMENV**. Select the Template that was created in previous section – **MYPUM**. Click **yes** for **Pause after infra creation**.  
 
-![](./images/e2.png "")
+  ![](./images/e2.png "")
 
 3. Go to **Environment Attributes -> Region and Availability Domains -> Credentials**
 
-Give following values to the field.
+  Give following values to the field.
 
-No. | Full Tier | Credentials
---- | --------- | -----------
-1 | Gateway Administrator Password | Psft1234
-2 | Web Profile Password for user PTWEBSERVER | Psft1234
-3 | Database Connect Password | Psft1234
-4 | Weblogic Administrator Password | Psft1234
-5 | Database Administrator Password | **Psft1234#**
-6 | Database Access Password | Psft1234
-7 | Database Operator Password | Psft1234
+  No. | Full Tier | Credentials
+  --- | --------- | -----------
+  1 | Gateway Administrator Password | Psft1234
+  2 | Web Profile Password for user PTWEBSERVER | Psft1234
+  3 | Database Connect Password | Psft1234
+  4 | Weblogic Administrator Password | Psft1234
+  5 | Database Administrator Password | **Psft1234#**
+  6 | Database Access Password | Psft1234
+  7 | Database Operator Password | Psft1234
 
-![](./images/e3.png "")
+  ![](./images/e3.png "")
 
-Leave the rest as default. You can also expand all sections under Environment Attributes. 
+  Leave the rest as default. You can also expand all sections under Environment Attributes. 
 
 4. Scroll up and click Done on the top right to begin the environment creation process. 
 
-![](./images/e4.png "")
+  ![](./images/e4.png "")
 
 5. Accept the license. 
 
-![](./images/e5.png "")
+  ![](./images/e5.png "")
 
 6. Refresh the page and click on the arrow button -> Details.
 
-![](./images/e6.png "")
+  ![](./images/e6.png "")
 
 7. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
 
-![](./images/cl.png "")
+  ![](./images/cl.png "")
 
 You can also go to **Provision Task Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
 
-![](./images/pts.png "")
+  ![](./images/pts.png "")
 
 8. Once environment creation is completed, you can click on arrow button -> Deploy to start provisioning.
 
-![](./images/e9.png "")
+  ![](./images/e9.png "")
 
 9. Monitor the deployment logs under Dashboard -> Environments -> Environment Name -> Action Menu -> Details -> Logs
 
-![](./images/e10.png "")
+  ![](./images/e10.png "")
 
 You can also go to **Provision Task Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
 
-![](./images/pts.png "")
+  ![](./images/pts.png "")
 
 10. After the environment up and running, you can perform a variety of actions on the environment by using the Related Actions button corresponding to each environment. 
 
-![](./images/e11.png "")
+  ![](./images/e11.png "")
 
 The actions can be:
 
-• **Details**: Select this option to view environment details and to perform additional actions on the environment such as performing a health check, applying a PeopleTools patch, viewing logs, and managing PUM connections.
+  • **Details**: Select this option to view environment details and to perform additional actions on the environment such as performing a health check, applying a PeopleTools patch, viewing logs, and managing PUM connections.
 
-• **Start**: Select this option to start all the instances and then all the domains within them.
+  • **Start**: Select this option to start all the instances and then all the domains within them.
 
-• **Stop**: Select this option to stop all domains and shutdown all the instances. In case of database, only compute database instances are shutdown.
+  • **Stop**: Select this option to stop all domains and shutdown all the instances. In case of database, only compute database instances are shutdown.
 
-• **Delete**: Select this option to remove the environment.
+  • **Delete**: Select this option to remove the environment.
 
-• **Manage Node**: Select this option to scale environment up or down.
+  • **Manage Node**: Select this option to scale environment up or down.
 
-• **Clone Environment**: Select this option to clone an existing environment.
+  • **Clone Environment**: Select this option to clone an existing environment.
 
-• **Refresh**: Select this option to refresh the database or the database, ps app home and ps cust home.  
+  • **Refresh**: Select this option to refresh the database or the database, ps app home and ps cust home.  
 This option is only available for DBaaS environments.
 
-• **Backup and Restore**: Select this option to backup or restore an environment.
+  • **Backup and Restore**: Select this option to backup or restore an environment.
 
 NOTE: You can also login to your application by adding it's IP addess and host name in hosts file.
 
@@ -115,13 +112,6 @@ Login credential:
     ```
 
 You may proceed to the next lab.
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Authors** 
