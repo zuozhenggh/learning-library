@@ -3,7 +3,7 @@
 
 ## Introduction
 
-To complete the Oracle Data Safe labs in your own tenancy in Oracle Cloud Infrastructure, you require access to an Oracle Data Safe environment. As a regular Oracle Cloud user, you do not have the necessary permissions in Oracle Cloud Infrastructure to set up your own environment. The environment needs to be set up by your tenancy administrator.
+To complete the Oracle Data Safe labs in your own tenancy in Oracle Cloud Infrastructure, you require access to an Oracle Data Safe environment. As a regular Oracle Cloud user, you do not have the necessary permissions in Oracle Cloud Infrastructure to set up your own environment. The environment needs to be set up by your tenancy administrator. The setup instructions are [here](?lab=set-up-oracle-data-safe-environment).
 
 Estimated Lab Time: 5 minutes
 
@@ -31,9 +31,9 @@ Your tenancy administrator needs to set up an Oracle Data Safe environment for y
 
 ## **STEP 1** Request access to Oracle Data Safe
 
-- Send your email address to your tenancy administrator and request a user account in your tenancy and access to Oracle Data Safe.
+1. Send your email address to your tenancy administrator and request a user account in your tenancy and access to Oracle Data Safe.
 
-- Send your tenancy administrator the instructions on how to set up an Oracle Data Safe environment for you. The instructions are [here](./set-up-oracle-data-safe-environment.md).
+2. Send your tenancy administrator the instructions on how to set up an Oracle Data Safe environment for you. The instructions are [here](?lab=set-up-oracle-data-safe-environment).
 
 
 
@@ -42,32 +42,32 @@ Your tenancy administrator needs to set up an Oracle Data Safe environment for y
 After the Oracle Data Safe environment is set up by your tenancy administrator, you should receive an email from Oracle with instructions on how to sign in to your tenancy.
 
 
-- Access the Oracle email that was sent to you with the sign-in information for your Oracle Cloud user account. The email provides two links to the Oracle Cloud Infrastructure Console (you can use either link), your tenancy name, and your user name.
+1. Access the Oracle email that was sent to you with the sign-in information for your Oracle Cloud user account. The email provides two links to the Oracle Cloud Infrastructure Console (you can use either link), your tenancy name, and your user name.
 
-- Obtain your password to the tenancy from your tenancy administrator.
+2. Obtain your password to the tenancy from your tenancy administrator.
 
-- When you're ready to sign in, click the **Sign in to your new user account** link. The **Oracle Cloud Infrastructure Sign In** page is displayed. Your tenancy name is already filled in for you.
-
-
-- Under **Oracle Cloud Infrastructure**, in the **USER NAME** field, enter your Oracle Cloud user name.
+3. When you're ready to sign in, click the **Sign in to your new user account** link. The **Oracle Cloud Infrastructure Sign In** page is displayed. Your tenancy name is already filled in for you.
 
 
-- In the **PASSWORD** field, enter the temporary password provided to you by your tenancy administrator.
+4. Under **Oracle Cloud Infrastructure**, in the **USER NAME** field, enter your Oracle Cloud user name.
 
 
-- Click **Sign In**.
-
-- If prompted by your browser to save the password, click **Never**.
+5. In the **PASSWORD** field, enter the temporary password provided to you by your tenancy administrator.
 
 
+6. Click **Sign In**.
 
-- If this is the first time that you are signing in to the Oracle Cloud Infrastructure Console, you are prompted to change your password. Enter your temporary password and your new password, and then click **Save New Password**. After you sign in, the message **Email Activation Complete** is displayed.
+7. If prompted by your browser to save the password, click **Never**.
 
 
 
+8. If this is the first time that you are signing in to the Oracle Cloud Infrastructure Console, you are prompted to change your password. Enter your temporary password and your new password, and then click **Save New Password**. After you sign in, the message **Email Activation Complete** is displayed.
 
 
-You are ready to start the labs. Begin with the [**Introduction**](../../introduction/introduction.md) lab.
+
+
+
+You are ready to begin the labs. Start with the [**Introduction**](?lab=introduction).
 
 
 If you have a question during this workshop, you can use the **[Autonomous Data Warehouse Forum](https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary)** on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Data Safe. Are you completely new to the **Cloud Customer Connect** forums? Visit our **[Getting Started forum page](https://cloudcustomerconnect.oracle.com/pages/1f00b02b84)** to learn how to best leverage community resources.

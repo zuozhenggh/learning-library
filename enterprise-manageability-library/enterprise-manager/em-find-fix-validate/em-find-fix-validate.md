@@ -366,7 +366,7 @@ Details about newly published statistics can be found if you navigate **Schema**
 ## **Step 5:** Database Workload Replay
 
 1. Create a Replay Task
-You need to open two SSH sessions to your dedicated VM host as user "opc" using the provided SSH key.  
+You need to open two SSH sessions to your dedicated VM host as user "opc" using the provided SSH key.
 
 ````
 <copy>sudo su - oracle</copy>
