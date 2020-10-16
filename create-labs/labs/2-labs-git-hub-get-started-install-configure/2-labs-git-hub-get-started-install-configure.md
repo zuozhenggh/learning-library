@@ -125,15 +125,19 @@ To clone the forked repository:
 
 * [Setting Up Environment](https://otube.oracle.com/media/Setting+Up+GitHub/0_93stcjpb)
 * [Download and Install Git for Windows and Mac](https://git-scm.com/download/win)
-* [Using GItHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
+* [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
 
 ## Acknowledgements
 
 * **Author:**
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
+* **Contributors:**
+    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 
 * **Reviewed by:**  
-  * Aslam Khan, Sr. User Assistance Manager, ODI, OGG
+  * Aslam Khan, Senior User Assistance Manager, ODI, OGG
+  * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
+
 
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 

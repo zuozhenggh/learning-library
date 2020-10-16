@@ -86,10 +86,15 @@ To preview your output in a browser:
 [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
 
 ## Acknowledgements
-* **Authors:**
-    * Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate
+* **Author:**
+    * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
+* **Contributors:**
+    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
+
 * **Reviewed by:**  
-        * Aslam Khan, Sr. User Assistance Manager, ODI, OGG
+  * Aslam Khan, Senior User Assistance Manager, ODI, OGG
+  * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
+  
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
 ## See an Issue?
