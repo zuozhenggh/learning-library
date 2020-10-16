@@ -16,10 +16,9 @@ At high level, Oracle Identity Cloud Service offers the following functionalitie
 * OAuth services
 * Auditing & Reporting Services
 
-IDCS Architecture
-Oracle Identity Cloud Service is a new platform service which is available as part of Oracle’s broad portfolio of PaaS services.  IDCS is implemented as a set of micro-services, and the design philosophy is API-first with support for modern standards such as SCIM, OAUTH, SAML and OpenID Connect.
+Estimated Lab Time: 5 hours
 
-The following diagram illustrates the IDCS architecture, organized as a series of service layers.  
+
 
 ## IDCS Architecture
 Oracle Identity Cloud Service is a new platform service which is available as part of Oracle’s broad portfolio of PaaS services.  IDCS is implemented as a set of micro-services, and the design philosophy is API-first with support for modern standards such as SCIM, OAUTH, SAML and OpenID Connect.
@@ -91,8 +90,6 @@ At the end of this workshop, you will have a good understanding of
 * SAML-based and Social Federation
 * Conditional and adaptive MFA
 
-Estimated Lab Time: 5 hours
-
 
 
 
@@ -126,6 +123,7 @@ Salesforce is providing free developer edition. Steps to create free developer a
     - For *Username*, specify a unique user name in the form of an email address
     - Check the Master Subscription Agreement checkbox and click the *Sign Me Up* button
 ![Image](images/PR01.png)
+
 
 3.	Check your email. You will receive an activation email for your Developer Edition Account.
 4.	Click the link in the activation email. Enter your new password information and click *Save*.
