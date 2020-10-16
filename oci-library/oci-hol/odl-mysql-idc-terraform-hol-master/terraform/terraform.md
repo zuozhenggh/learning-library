@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will create retrieve the code for the Terraform infrastructure and learn how to configure it to use it with Oracle Cloud Infrastructure.
+In this lab, you will retrieve the code for the Terraform infrastructure and learn how to configure it to use it with Oracle Cloud Infrastructure.
 
 Estimated Lab Time: 20 minutes
  
