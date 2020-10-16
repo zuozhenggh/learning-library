@@ -31,12 +31,12 @@ The complete architecture of this workshop is composed of 4 VMs as below:
 
 During this workshop, you'll use different resources to interact with these VMs:
 - SSH Terminal Client;
-- SQL Developer;
 - Glassfish HR App;
 - Oracle Enterprise Manager 13c;
-- Oracle AVDF Web Console;
-- Oracle Key Vault Web Console;
-- Oracle Golden Gate Web Console.
+- Oracle AVDF Web Console (*for AVDF labs only*);
+- Oracle Golden Gate Web Console (*for AVDF labs only*);
+- Oracle Key Vault Web Console (*for OKV labs only*);
+- (Optionnally) SQL Developer.
 
 So that your experience of this workshop is the best possible, DO NOT FORGET to perform lab "*Environment Setup*" to be sure that all these resources are correctly set!
 
@@ -44,8 +44,10 @@ The entire DB Security PMs Team wishes you an excellent workshop.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Principal Solution Engineer, Database Security
+- **Contributors** - Gian Sartor, Rene Fontcha
 - **Last Updated By/Date** - Hakim Loumi, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
