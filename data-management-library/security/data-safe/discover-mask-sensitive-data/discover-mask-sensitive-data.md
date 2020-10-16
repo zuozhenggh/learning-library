@@ -1,123 +1,87 @@
 # Discover and Mask Sensitive Data
 
 ## Introduction
-This lab shows you how to discover and mask sensitive data in Oracle Data Safe by using the Data Discovery and Data Masking features.
+This lab shows you how to discover and mask sensitive data in your Autonomous Database by using the Data Discovery and Data Masking features in Oracle Data Safe.
 
 Estimated Lab Time: 30 minutes
-
-### About Oracle Data Safe
-Oracle Data Safe is a fully-integrated, regional Cloud service focused on the security of your data. It provides a complete and integrated set of features for protecting sensitive and regulated data in Oracle Cloud databases.
 
 ### Objectives
 
 In this lab, you'll:
 
-- View sensitive data in your Autonomous Transaction Processing (ATP) database
-- Discover sensitive data by using Data Discovery
-- Mask sensitive data by using Data Masking
-- Validate the masked data in your ATP database
+- View sensitive data in your database
+- Discover sensitive data in your database by using the Data Discovery feature
+- Mask sensitive data in your database by using the Data Masking feature
+- Create a PDF of the Data Masking report
+- Validate the masked data in your database
 
 
 ### Prerequisites
 
 To complete this lab, you need to have the following:
 
-- Login credentials for the Oracle Data Safe Console
-- An Oracle Data Safe service enabled in a region of your tenancy
-- A registered target database in Oracle Data Safe with sample audit data and the password for the `ADMIN` user account
+- An Oracle Cloud account
+- Access to an Autonomous Database as the `ADMIN` user, sample data for Oracle Data Safe loaded into the database, and the Discovery and Masking features enabled on your database
+- Access to an Oracle Data Safe service
+- Privileges to use the Discovery and Masking features on your database
+
+### Assumptions
+
+- You have a browser tab signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.
+- You completed the [Provision and Register and Autonomous Database](?lab=lab-1-provision-register-autonomous) lab in this workshop.
+- Your data values will be different than those shown in the screenshots in this lab.
 
 
-## **STEP 1**: View sensitive data in your ATP database
 
-In this step, you use SQL Developer Web to query sensitive data in your ATP database. You can access SQL Developer Web from the ATP Console.
+## **STEP 1**: View sensitive data in your database
 
-- In a new browser window, enter the url to your region in the Oracle Cloud Infrastructure Console.
+In this step, you use SQL Developer Web to query sensitive data in your database. You can access SQL Developer Web from your database's Console.
 
-    - To access the Ashburn region, enter the following url: [https://console.us-ashburn-1.oraclecloud.com/a/tenancy](https://console.us-ashburn-1.oraclecloud.com/a/tenancy).
-    - To access the Frankfurt region, enter the following url:[https://console.eu-frankfurt-1.oraclecloud.com/a/tenancy](https://console.eu-frankfurt-1.oraclecloud.com/a/tenancy).
+1. Select the browser tab that is signed in to the Oracle Cloud Infrastructure Console. If needed, sign in again.
 
-- If prompted, in the **Cloud Tenant** field on the **SIGN IN** page, enter your tenancy name, and then click **Continue**. Under **Oracle Cloud Infrastructure**, enter your user credentials for Oracle Cloud Infrastructure, and then click **Sign In**.
+2. In the Oracle Cloud Infrastructure Console, make sure the correct region is selected in your tenancy.
 
-  Note: If you are signed in to Oracle Cloud Infrastructure on another tab, then you are not prompted to enter a tenancy name and can continue to the next step.
+3. From the navigation menu, select **Autonomous Transaction Processing**.
 
+4. Under **COMPARTMENT**, make sure that your compartment is selected.
 
-- Make sure the correct region is selected in your tenancy, for example, **US East (Ashburn)** or **Germany Central (Frankfurt)**.
+5. Click the name of your database.
 
-  ![Select region in Oracle Cloud Infrastructure](images/177413377.png)
+6. On the **Autonomous Database Details** page, click the **Tools** tab.
 
+7. In the **SQL Developer Web** section, click **Open SQL Developer Web**. The **Oracle Database Actions | Sign in** page is opened.
 
-- From the navigation menu, select **Autonomous Transaction Processing**.
+8. In the **Username** field, enter `ADMIN`. In the **Password** field, enter the password that you created for the `ADMIN` user when you provisioned the database. Click **Sign In**.
 
-  ![Select Autonomous Transaction Processing](images/177413380.png)
+9. If a help note is displayed, click the **X** button to close it.
 
+10. On the **Navigator** tab, select the `HCM1` schema from the first drop-down list. In the second drop-down list, leave **Tables** selected.
 
-- Under **COMPARTMENT**, make sure that your compartment is selected. For example, the `dsu01` user should be able to access the `dsc01` compartment.
+  ![Navigator tab in SQL Web Developer](images/select-hcm1.png)
 
-  ![Select compartment](images/177413383.png)
+11. Drag the `EMPLOYEES` table to the worksheet.
 
+  ![EMPLOYEES table](images/drag-employees-table-to-worksheet.png)
 
-- In the list of databases, click the name of your database, for example, **atp01**.
+12. When prompted to choose an insertion type, click **Select**, and then click **Apply**.
 
-  ![List of registered databases in Oracle Cloud Infrastructure](images/177413385.png)
+   ![Choose the type of insertion dialog box](images/insertion-type-select.png)
 
+13. View the SQL query on the worksheet.
 
-- Click **Service Console** to navigate to the **Autonomous Transaction Processing Console**.
+   ![Worksheet tab showing EMPLOYEES table](images/query-employees-table.png)
 
-  ![Service Console button](images/177413387.png)
+14. On the toolbar, click the **Run Statement** button (green circle with a white arrow) to execute the query.
 
-  A new browser tab is opened called **Autonomous Transaction Processing | Overview**.
+ ![Run Statement button on toolbar](images/run-statement-button.png)
 
-- If the browser prevents you from opening a pop-up window, click **Options**, and then select **Allow pop-ups for console.*region*.oraclecloud.com**.
+15. Review the query results. If needed, click the **Query Result** tab.
 
-- If you are prompted to log in to your ATP instance, enter the `ADMIN` user credentials.
+  - Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, and `hire_date`, are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
 
-- On the **Overview** page, click **Development**.
+  - Keep this tab open so that you can return to it later. In step 4, you compare the original query results with the masked data.
 
- ![Overview page for Autonomous Transaction Processing](images/177413390.png)
-
-
-- Click **SQL Developer Web**.
-
- ![SQL Developer Web option circled](images/177413391.png)
-
-
-- On the **SIGN IN** page for SQL Developer Web, enter the database credentials for the `ADMIN` user, and then click **Sign In**.
-
-  - You are provided the password during the lab.
-
-  ![SIGN IN page for SQL Developer](images/177413392.png)
-
-- If a help note is displayed, you can click the **X** to close it.
-
-  ![Help note for SQL Web Developer](images/177413393.png)
-
-- On the **Navigator** tab, select the `HCM1` schema from the first drop-down menu. In the second drop-down menu, leave **Tables** selected.
-
-  ![Navigator tab in SQL Web Developer](images/177413395.png)
-
-- Drag the `EMPLOYEES` table to the worksheet.
-
-  ![EMPLOYEES table](images/177413397.png)
-
-- When prompted to choose an insertion type, click **Select**, and then click **Apply**.
-
-   ![Choose the type of insertion dialog box](images/177413398.png)
-
-- View the SQL query on the worksheet.
-
-   ![Worksheet tab showing EMPLOYEES table](images/177413399.png)
-
-- On the toolbar, click the **Run Statement** button (green circle with a white arrow) to execute the query.
-
- ![Run Statement button on toolbar](images/177413401.png)
-
-- Review the query results.
-
-  - Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, `hire_date`, `job_id`, `salary`, and `manager_id` are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
-
-  - Keep this tab open so that you can return to it later in step 4 when you view the masked data.
-
-  ![Query results](images/177413404.png)
+  ![Query results](images/original-query-results.png)
 
 
 
@@ -125,113 +89,101 @@ In this step, you use SQL Developer Web to query sensitive data in your ATP data
 
 ## **STEP 2**: Discover sensitive data by using Data Discovery
 
-The Data Discovery wizard generates a sensitive data model that contains sensitive columns in your target database. When working in the wizard, you select sensitive types that you want to discover in your target database.
-
-- Open a new tab in your browser, and enter one of the following URLs to the Oracle Data Safe service page in Oracle Cloud Infrastructure.
-
-  - The url for the Ashburn region is [https://console.us-ashburn-1.oraclecloud.com/data-safe/instances](https://console.us-ashburn-1.oraclecloud.com/data-safe/instances).
-
-  - The url for the Frankfurt region is [https://console.eu-frankfurt-1.oraclecloud.com/data-safe/instances](https://console.eu-frankfurt-1.oraclecloud.com/data-safe/instances).
-
-- Click the **Service Console** button to access the Oracle Data Safe Console.
-
-    ![Query results](images/click-service-console-from-overview-page.png)
-
-  The **Home** tab is displayed.
+The Data Discovery wizard generates a sensitive data model that contains sensitive columns in your target database. When working in the wizard, you select the sensitive types that you want to discover in your target database.
 
 
-- Access the Data Discovery wizard by clicking the **Data Discovery** tab.
+1. Return to the browser tab for the Oracle Cloud Infrastructure Console. If needed, sign in again.
 
-    ![Side tabs with Data Discovery circled](images/177413405.png)
+2. From the navigation menu, select **Data Safe**. The **Overview** page for the Oracle Data Safe service is displayed.
 
-
-- On the **Select Target for Sensitive Data Discovery** page, select your target database, and then click **Continue**.
-
- ![Select Target for Sensitive Data Discovery page](images/177413415.png)
+3. Click **Service Console**. The **Home** page in the Oracle Data Safe Console is displayed.
 
 
-- On the **Select Sensitive Data Model** page, leave **Create** selected, enter **SDM1** for the name, enable **Show and save sample data**, select your resource group, and then click **Continue**.
-
- ![Select Sensitive Data Model page](images/177413416.png)
+4. To access the Data Discovery wizard, click the **Data Discovery** tab.
 
 
-- On the **Select Schemas for Sensitive Data Discovery** page, scroll down and select the **HCM1** schema, and then click **Continue**.
+5. On the **Select Target for Sensitive Data Discovery** page, select your target database, and then click **Continue**.
 
-  ![Select Schemas for Sensitive Data Discovery page](images/177413420.png)
-
-
-- On the **Select Sensitive Types for Sensitive Data Discovery** page, expand all of the categories by moving the slider to the right, and then scroll down the page and review the sensitive types.
-
-  - Notice that you can select individual sensitive types, sensitive categories, and all sensitive types.
-
-  ![Select Sensitive Types for Sensitive Data Discovery page](images/177413423.png)
+ ![Select Target for Sensitive Data Discovery page](images/select-target-for-sensitive-data-discovery.png)
 
 
-- At the top of the page, select the **Select All** check box, and then click **Continue** to start the data discovery job.
-
-  ![Select All check box selected](images/177413425.png)
+6. On the **Select Sensitive Data Model** page, leave **Create** selected, enter **SDM1** for the name, enable **Show and save sample data**, select your compartment, and then click **Continue**.
 
 
-- When the job is completed, ensure that the **Detail** column states `Data discovery job finished successfully`, and then click **Continue**.
+7. On the **Select Schemas for Sensitive Data Discovery** page, scroll down and select the **HCM1** schema, and then click **Continue**.
 
-  ![Detail column](images/177413427.png)
-
-
-- On the **Sensitive Data Discovery Result** page, examine the sensitive data model created by the Data Discovery wizard. To view all of the sensitive columns, move the **Expand All** slider to the right.
-    - Oracle Data Safe automatically saves your sensitive data model to the Oracle Data Safe Library.
-
-      ![Sensitive Data Discovery Result page](images/177413428.png)
-
-- From the drop-down list, select **Schema View** to sort the sensitive columns by table.
-
-    ![Schema View circled](images/177413429.png)
-
-- Scroll down the page to view the sensitive columns.
-
-  - You can view sample data (if it's available for a sensitive column), column counts, and estimated data counts.
-
-  - In particular, take a look at the sensitive columns that Data Discovery found in the `EMPLOYEES` table. Columns that do not have a check mark are called referential relationships. They are included because they have a relationship to another sensitive column and that relationship is defined in the database's data dictionary.
-  - Also view the sample data provided to get an idea of what the sensitive data looks like. Your sample data may be different.
-
-  ![Sensitive columns list](images/177413430.png)
+  ![Select Schemas for Sensitive Data Discovery page](images/select-schemas-for-sensitive-data-discovery.png)
 
 
-- Scroll to the bottom of the page, and then click **Report**.
+8. On the **Select Sensitive Types for Sensitive Data Discovery** page, expand all of the categories by moving the slider to the right, and then scroll down the page and review the sensitive types. Notice that you can select individual sensitive types, sensitive categories, and all sensitive types.
 
- ![Report button](images/data-discovery-report-button.png)
+  ![Select Sensitive Types for Sensitive Data Discovery page](images/select-sensitive-types-expand-all.png)
 
 
-- View the **Data Discovery** report.
+9. At the top of the page, select the **Select All** check box, and then click **Continue** to start the data discovery job.
+
+  ![Select All check box selected](images/select-sensitive-types-select-all.png)
+
+
+10. When the job is completed, ensure that the **Detail** column states **Data discovery job finished successfully**, and then click **Continue**.
+
+  ![Detail column](images/sensitive-data-discovery-complete.png)
+
+
+11. On the **Sensitive Data Discovery Result** page, examine the sensitive data model created by the Data Discovery wizard. Oracle Data Safe automatically saves your sensitive data model to the Oracle Data Safe Library.
+
+12. To view all of the sensitive columns, move the **Expand All** slider to the right.
+
+    ![Sensitive Data Discovery Result page](images/sensitive-data-discovery-result.png)
+
+13. From the drop-down list, select **Schema View** to sort the sensitive columns by table name.
+
+    ![Schema View circled](images/schema-view.png)
+
+14. Scroll down the page to view the sensitive columns.
+
+    - You can view sample data (if it's available for a sensitive column) and estimated data counts.
+
+    - In particular, take a look at the sensitive columns that Data Discovery found in the `EMPLOYEES` table. Columns that do not have a check mark, such as `MANAGER_ID`, are called referential relationships. They are included because they have a relationship to another sensitive column and that relationship is defined in the database's data dictionary.
+
+    - Review the sample data provided to get an idea of what the sensitive data looks like.
+
+    ![Sensitive columns list](images/employees-table-sample-data.png)
+
+
+15. To generate the **Data Discovery** report, scroll to the bottom of the page, and then click **Report**.
+
+
+16. Review the **Data Discovery** report.
 
     - The chart compares sensitive categories. You can view totals of sensitive values, sensitive types, sensitive tables, and sensitive columns.
+
     - The table displays individual sensitive column names, sample data for the sensitive columns, column counts based on sensitive categories, and estimated data counts.
 
-      ![Sensitive columns table](images/177413431.png)
+      ![Sensitive columns table](images/data-discovery-report.png)
 
 
-- Click the chart's **Expand** button.
+17. Click the chart's **Expand** button.
 
-    ![Chart's Expand button circled](images/177413432.png)
-
-
-- Position your mouse over **Identification Info** to view statistics.
-
-  ![Statistics](images/177413435.png)
+    ![Chart's Expand button circled](images/chart-expand-button.png)
 
 
-- With your mouse still over **Identification Info**, click the **Expand** button to drill down.
+18. Position your mouse over **Identification Info** to view statistics.
 
-  ![Expand button over Identification Info](images/177413438.png)
-
-
-- Notice that the **Identification Info** category is divided into two smaller categories (**Personal IDs** and **Public IDs**). To drill-up, position your mouse over an expanded sensitive category, and then click the **Collapse** button.
-
-  ![Collapse button over Identification Info](images/177413439.png)
+  ![Statistics](images/identification-info.png)
 
 
-- Click the **Close** button (**X**) to close the expanded chart. Continue to work in the wizard.
+19. With your mouse still over **Identification Info**, click the **Expand** button to drill down.
 
-  ![Close button](images/177413441.png)
+  ![Expand button over Identification Info](images/identification-info-expand-button.png)
+
+
+20. Notice that the **Identification Info** category is divided into two smaller categories (**Personal IDs** and **Public IDs**). To drill-up, position your mouse over an expanded sensitive category (for example, **Identification Info**), and then click the **Collapse** button.
+
+  ![Collapse button over Identification Info](images/identification-info-collapse-button.png)
+
+
+21. Click the **Close** button (**X**) to close the expanded chart. Continue to work in the wizard.
 
 
 
@@ -239,110 +191,110 @@ The Data Discovery wizard generates a sensitive data model that contains sensiti
 
 The Data Masking wizard generates a masking policy for your target database based on a sensitive data model. In the wizard, you select the sensitive columns that you want to mask and the masking formats to use.
 
-- Click **Continue to mask the data**. The Data Masking wizard is displayed.
-
-   ![Continue to mask the data button is circled](images/177413442.png)
+1. At the bottom of the Data Discovery report, click **Continue to mask the data**. The Data Masking wizard is displayed.
 
 
-- On the **Select Target for Data Masking** page, your target database is selected. Click **Continue**.
+2. On the **Select Target for Data Masking** page, leave your target database selected, and click **Continue**.
 
-   ![Select Target for Data Masking page](images/177413443.png)
-
-
-- On the **Masking Policy** page, move the **Expand All** slider to the right to view all of the sensitive columns. Scroll down the page to view the default masking format selected for each sensitive column.
-
- ![Masking Policy page](images/177413444.png)
+   ![Select Target for Data Masking page](images/select-target-for-data-masking.png)
 
 
-- For the `HCM1.LOCATIONS.STREET_ADDRESS` column, click the arrow to the right of the masking format to view other masking formats.
+3. On the **Masking Policy** page, move the **Expand All** slider to the right to view all of the sensitive columns. Scroll down the page and review the default masking format selected for each sensitive column.
 
- ![HCM1.LOCATIONS.STREET_ADDRESS circled and masking formats drop-down list](images/177413445.png)
-
-
-- Next to the arrow, click the **Edit Format** button (pencil icon).
-
- ![Edit Format button](images/177413446.png)
+ ![Masking Policy page](images/masking-policy-page.png)
 
 
-- In the **Edit Format** dialog box, view the details for the masking format, including column name, datatype, description, examples, and default configuration.
+4. For the `HCM1.LOCATIONS.STREET_ADDRESS` column, click the arrow to the right of the masking format to view other masking formats.
 
-  - This is where you can modify a masking format. Click **Cancel**.
+  **Tip:** To quickly find a column on the page, you can enter its name in the **Search** field at the top of the page.
 
-   ![Edit Format dialog box](images/177413447.png)
-
-
-- At the bottom of the page, click **Confirm Policy**, and then wait a moment while Data Masking creates the masking policy.
-
- ![Bottom of Confirm Policy page](images/177413448.png)
+ ![HCM1.LOCATIONS.STREET_ADDRESS circled and masking formats drop-down list](images/view-masking-formats.png)
 
 
-- On the **Schedule the Masking Job** page, leave **Right Now** selected, and then click **Review**.
+5. Next to the arrow, click the **Edit Format** button (pencil icon).
 
-  ![Schedule the Masking Job page](images/177413449.png)
-
-
-- On the **Review and Submit** page, review the information, and then click **Submit** to start the data masking job.
-
-  ![Review and Submit page](images/177413450.png)
+ ![Edit Format button](images/edit-format-button.png)
 
 
-- Wait for the data masking job to finish. It takes a couple of minutes. You can follow the status of the job on the **Masking Jobs** page. When the job is finished, click **Report**.
+6. In the **Edit Format** dialog box, review the details for the masking format, including the datatype, description, examples, and default configuration. This is where you can modify a masking format, if needed. Click **Cancel**.
 
-  ![Masking Jobs page page](images/177413451.png)
+   ![Edit Format dialog box](images/edit-format-dialog-box.png)
 
 
-- Examine the **Data Masking** report.
+7. At the bottom of the page, click **Confirm Policy**.
 
-  - At the top of the report, you can view the number of values, sensitive types, tables, and columns that were masked.
+8. Wait a moment while Data Masking creates the masking policy.
+
+
+9. On the **Schedule the Masking Job** page, leave **Right Now** selected, and click **Review**.
+
+  ![Schedule the Masking Job page](images/schedule-the-masking-job-page.png)
+
+
+10. On the **Review and Submit** page, review the information, and then click **Submit** to start the data masking job.
+
+  ![Review and Submit page](images/review-and-submit-page.png)
+
+
+11. Wait for the data masking job to finish. It takes a couple of minutes. You can follow the status of the job on the **Masking Jobs** page.
+
+
+12. When the job is finished, click **Report**.
+
+  ![Masking Jobs page](images/masking-jobs-page.png)
+
+
+13. Examine the **Data Masking** report.
+
+  - At the top of the report, you can view the number of masked values, masked sensitive types, masked tables, and masked columns.
 
   - The table shows you column counts for the sensitive categories and types. For each sensitive column, you can view the masking format used and the number of rows masked.
 
-    ![Data Masking report](images/177413453.png)
+    ![Data Masking report](images/data-masking-report.png)
 
 
-- Click **Generate Report**.
+## **STEP 4**: Create a PDF of the Data Masking report
 
-    ![Generate Report button circled](images/177413454.png)
+1. At the top of the report, click **Generate Report**. The **Generate Report** dialog box is displayed.
 
+2. Leave **PDF** selected.
 
-- In the **Generate Report** dialog box, leave **PDF** selected, enter **Mask1_HCM1** for the description, ensure your resource group is selected, and then click **Generate Report**.
+3. Enter **Mask1_HCM1** for the description.
 
-    ![Generate Report dialog box with PDF selections](images/177413455.png)
+4. Select your compartment.
 
+5. Click **Generate Report** and wait for the report to generate.
 
-- Wait for the report to generate. When it's generated, click **Download Report**.
+6. When a confirmation message states that the **Report was generated successfully**, click **Download Report**.
 
-    ![Download Report button circled](images/177413457.png)
+7. Save the report and then open it in Adobe Acrobat.
 
+8. Review the data, and then close the report.
 
-- Save the report and then open it in Adobe Acrobat. Review the data, and then close it.
-
-  ![Data Masking report in PDF format](images/177413459.png)
-
-
-
-## **STEP 4**: Validate the masked data in your ATP database
-
-- Return to the browser tab for **SQL Developer Web**. You should still have your query results from STEP 1 in this lab. Take a moment to review the data.
-
-    ![Query results](images/177413404.png)
+ ![Data Masking report in PDF format](images/data-masking-report-pdf.png)
 
 
-- On the toolbar, click the **Run Statement** button (green circle with a white arrow) to execute the query.
 
- ![Run Statement button on toolbar](images/177413401.png)
+## **STEP 5**: Validate the masked data in your database
+
+1. Return to SQL Developer Web. You should have a browser tab named **Oracle Database Actions | SQL Worksheet** opened from STEP 1 in this lab.
+
+2. Take a moment to review the original data.
+
+    ![Query results before masking](images/original-query-results.png)
 
 
-- If a dialog box is displayed stating that your session has expired, click **OK**, sign in again, and then click the **Run Statement** button.
+3. On the toolbar, click the **Run Statement** button (green circle with a white arrow) to execute the query.
 
-  ![Session Expired dialog box](images/177413464.png)
+4. If you receive a message stating that your session has expired, click **OK**, sign in again, and then click the **Run Statement** button.
 
 
-- Review the masked data.
+5. Review the masked data. You can resize the panel to view more data, and you can scroll down and to the right.
 
-  - You can resize the panel to view more data, and you can scroll down and to the right.
+  ![Masked EMPLOYEE data](images/masked-query-results.png)
 
-    ![Masked EMPLOYEE data](images/177413466.png)
+
+
 
 
 ## Learn More
@@ -351,11 +303,9 @@ The Data Masking wizard generates a masking policy for your target database base
 * [Data Masking](https://docs.cloud.oracle.com/en-us/iaas/data-safe/doc/data-masking.html)
 
 ## Acknowledgements
-* **Author** - Jody glover, UA Developer, Oracle Data Safe Team
-* **Last Updated By/Date** - Jody Glover, Oracle Data Safe Team, August 2020
+* **Author** - Jody Glover, Principal User Assistance Developer, Database Development
+* **Last Updated By/Date** - Jody Glover, October 15, 2020
 
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+## See an issue?
+  Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
