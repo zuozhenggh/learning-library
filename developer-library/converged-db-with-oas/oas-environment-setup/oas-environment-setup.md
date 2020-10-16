@@ -19,62 +19,64 @@ This lab assumes you have completed the following labs:
 ## Step 1: Starting Database And OAS Services
 
 1. Login to putty using the public ip obtained earlier and switch user to oracle.
-`````
-<copy>
-sudo su - oracle
-</copy>
-````` 
-![](./images/oas-environment1.png " ")
+      ![](./images/oas-environment1.png " ")
+      `````
+      <copy>
+      sudo su - oracle
+      </copy>
+      ````` 
+
 
 
 2. Go to folder /u01/script
 
-````
-<copy>
-cd /u01/script
-</copy>
-````
+      ````
+      <copy>
+      cd /u01/script
+      </copy>
+      ````
 3. Run the script file to start the services.
    
-````
-<copy>
-./env_setup_script.sh
-</copy>
-````
-![](./images/oas-environment4.png " ")
+      ![](./images/oas-environment4.png " ")
+      ````
+      <copy>
+      ./env_setup_script.sh
+      </copy>
+      ````
+      
 
-This script will ensure to start Database, Admin Server and all the services of OAS in 5-6 minutes. 
+      This script will ensure to start Database, Admin Server and all the services of OAS in 5-6 minutes. 
 
-![](./images/oas-environment5.png " ")
+      ![](./images/oas-environment5.png " ")
 
-Check for the "Finished starting servers" status before proceeding next.
+      Check for the "Finished starting servers" status before proceeding next.
 
 4. Run "status.sh" file to get the status of all the services required for OAS. 
 
-````
-<copy>
-/u01/oas/Oracle/Middleware/Oracle_Home/user_projects/domains/bi/bitools/bin/status.sh
-</copy>
-````
-![](./images/oas-environment6.png " ")
+      ![](./images/oas-environment6.png " ")
+      ````
+      <copy>
+      /u01/oas/Oracle/Middleware/Oracle_Home/user_projects/domains/bi/bitools/bin/status.sh
+      </copy>
+      ````
+ 
+      The command shows all the service names and their status.
 
-The command shows all the service names and their status.
+      ![](./images/oas-environment7.png " ")
 
-![](./images/oas-environment7.png " ")
-
-Check for the success status as shown above, before login to OAS screen.
+      Check for the success status as shown above, before login to OAS screen.
 
 ## Step 2: Login To Oracle Analytics Server
 
 1. Open web browser (preferabily Chrome) and access the OAS Data Visualization service by the below URL structure.  
 
       Lab 2 - will provide your instance public IP. 
-````
-<copy>
-http://Your-Machine-IP:9502/dv/ui
-</copy>
-````
-![](./images/oas-environment8.png " ")
+      ````
+      <copy>
+      http://Your-Machine-IP:9502/dv/ui
+      </copy>
+      ````
+      ![](./images/oas-environment8.png " ")
 
 2. Login with the below credentials;
 
@@ -86,24 +88,24 @@ http://Your-Machine-IP:9502/dv/ui
 
 1. From Home screen, click on **Create** button and select **Connection**.
 
-![](./images/oas-environment9.png " ")
+      ![](./images/oas-environment9.png " ")
 
 2. Select **Oracle Database** for connecting to database and provide required connection details.  
 
-![](./images/oas-environment10.png " ")
-![](./images/oas-environment11.png " ")
+      ![](./images/oas-environment10.png " ")
+      ![](./images/oas-environment11.png " ")
 
-**Connection Details:**	
+      **Connection Details:**	
 
-| Argument  | Description   |
-| ------------- | ------------- |
-| Connection Name | ConvergedDB_Retail |
-| Connection Type | Basic  |
-| Host | localhost  |
-| Port | 1521  |
-| Service Name | apppdb  |
-| Username | oaslabs  |
-| Password | Oracle_4U  |
+      | Argument  | Description   |
+      | ------------- | ------------- |
+      | Connection Name | ConvergedDB_Retail |
+      | Connection Type | Basic  |
+      | Host | localhost  |
+      | Port | 1521  |
+      | Service Name | apppdb  |
+      | Username | oaslabs  |
+      | Password | Oracle_4U  |
 
 3. Once connection details are provided click **Save** to save the connection.
 
