@@ -3,6 +3,8 @@
 ## Introduction
 This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a DB System running a 2-node RAC database in a clustered environment a Virtual Cloud Network (VCN).
 
+Estimated Lab Setup Time:  20 minutes (Execution Time - 2 hours)
+
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
 
@@ -20,7 +22,7 @@ This lab assumes you have:
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-      - [dbsystemrac.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Need correct link here/workshop-labs-files/o/dbsystemrac.zip)
+- [dbsystemrac.zip](https://objectstorage.uk-london-1.oraclecloud.com/p/Wg4n8mJxd9bwfANNP1cHyTT95-6R201K0Z2VwDRFKcURy0H9mQhIrjIf8UM5rljE/n/lrojildid9yx/b/labtest_bucket/o/dbsystemrac.zip)
 
 2.  Save in your downloads folder.
 3.  Login to Oracle Cloud
@@ -32,7 +34,7 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, click the **Browse** link and select the zip file (db_system_rac.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, click the **Browse** link and select the zip file (db\_system\_rac.zip) that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 
@@ -199,13 +201,36 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
   - *NOTE 1:  If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
 
+### Find your IP addresses
+
+Before logging in, first note down your IP addresses.
+
+1.  From the hamburger menu, select Bare Metal, VM, Exadata in the Oracle Database category. 
+
+  ![](./images/setup-compute-1.png " ")
+
+2.  Identify your database system and click it.  (Note:  Remember to choose the compartment that you were assigned if running on LiveLabs)
+
+  ![](./images/setup-compute-2.png " ")
+
+3. Explore the DB Systems home page.  On the left hand side, scroll down to view the Resources section.  Click Nodes.
+
+  ![](./images/setup-compute-3.png " ")
+
+4. Locate your two nodes and jot down their public IP addresses.
+
+  ![](./images/setup-compute-4.png " ")
+
+Now that you have your IP address select the method of connecting:  Oracle Cloud Shell, MAC/Cygwin or Putty)
+
 ### Oracle Cloud Shell
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
 
   ![](./images/em-cloudshell.png " ")
 
-2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+
+
 3.  On the instance homepage, find the Public IP address for your instance.
 4.  Enter the command below to login to your instance.    
     ````
@@ -293,19 +318,6 @@ Resource Manager is an Oracle Cloud Infrastructure service that allows you to au
 The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Enterprise Manager 13c Workshop marketplace image.
 
 [Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
-
-## Appendix:  Adding Security Rules to an Existing VCN
-This workshop requires a certain number of ports to be available.
-
-1.  Go to Networking -> Virtual Cloud Networks
-2.  Choose your network
-3.  Under Resources, select Security Lists
-4.  Click on Default Security Lists under the Create Security List button
-5.  Click Add Ingress Rule button
-6.  Enter the following:  
-    - Source CIDR: 0.0.0.0/0
-    - Destination Port Range: 3000, 3001, 3003, 1521, 7007, 9090, 22
-7.  Click the Add Ingress Rules button
 
 
 ## Appendix: Troubleshooting Tips
