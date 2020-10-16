@@ -23,7 +23,7 @@ If your organization performs intensive queries during specific times, auto scal
 - If a customer provisions an autonomous database with 4 OCPUs for example, he or she will immediately have access to 3x the 4 OCPUs provisioned, therefore 12 OCPUs.
 - The **CPU\_COUNT** parameter displays 2x the number of allocated OCPUs, as each OCPU has 2 CPU threads.
 - Therefore, this customer who provisioned an autonomous database with 4 OCPUs will see 12 x 2 = 24 CPU\_COUNT.
-- The customer is charged only for the actual OCPU usage, between 4 and 12 in this example.
+- The customer is charged only for the actual OCPU usage, between 1 and 3 in this example.
 
 ### Objectives
 
@@ -34,7 +34,7 @@ If your organization performs intensive queries during specific times, auto scal
 ### Prerequisites
 
 - This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- Make sure you have completed the previous lab in the Contents menu on the right, *Provision Autonomous Database*, before you proceed with this lab, if you want to apply auto scaling to an existing ADW database. Otherwise, proceed with this lab to try auto scaling with a new autonomous database.
+- Make sure you have completed the previous lab in the Contents menu on the left, *Provision Autonomous Database*, before you proceed with this lab, if you want to apply auto scaling to an existing ADW database. Otherwise, proceed with this lab to try auto scaling with a new autonomous database.
 - **Note** Auto scaling is not available with Oracle's **Always Free** databases.
 
 ### How You Will Test Auto Scaling in this Lab
@@ -54,45 +54,17 @@ If your organization performs intensive queries during specific times, auto scal
 
     ![](./images/open-sql-developer-web.jpg)
 
-3. Create and save 4 worksheets: one using the LOW consumer group and three using the HIGH consumer group. In SQL Developer Web worksheets, you choose the consumer group from a drop-down menu in the upper right corner.
-    - You will use the worksheet with the LOW consumer group in STEP 2, to run the setup and query the test results.
-    - You will use the three worksheets with the HIGH consumer group to run the test queries in later steps.
+3. Create and save 4 SQL Developer Web worksheets:
+    - Save the first worksheet with the name **Setup**. You will use this worksheet with the LOW consumer group in STEP 2, to run the setup that creates a procedure for running test queries. The LOW consumer group is appropriate for non-CPU-intensive tasks such as this creation of a procedure.
+    - Save the other 3 worksheets with the names **Query 1**, **Query 2**, and **Query 3**. In later steps, you will use these 3 worksheets to simultaneously run the test queries using the HIGH consumer group. For real production workloads, you will typically use the MEDIUM or HIGH consumer group. Each HIGH worksheet is associated with one CPU. A worksheet using the HIGH consumer group gets top priority. Our test later in the lab using auto scaling will have 3 CPUs; the HIGH consumer group brings the lowest concurrency and highest parallelism.
 
-    ![](./images/create-four-worksheets.png " ")
+In SQL Developer Web worksheets, you choose the consumer group from a drop-down menu in the upper right corner.
 
-## **STEP 2**: Run a Query to Show Current CPU Usage Prior to Testing
+  ![](./images/create-four-worksheets.png " ")
 
-1. Run the following query in your first worksheet that uses the LOW consumer group, to show the CPU usage for the past 5 minutes, prior to running queries.
+**Note:** When you re-open a saved worksheet, it opens by default with the LOW consumer group. If you want to run a script in the re-opened worksheet using the HIGH consumer group, you need to manually change it from LOW to HIGH. For more information on using the HIGH, MEDIUM and LOW consumer groups, see the documentation [Predefined Database Service Names for Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE).
 
-```
-<copy>SELECT
-    *
-FROM
-    (
-        SELECT
-            to_char(end_time, 'DD-MM-YYYY HH24:MI')      end_time,
-            round(SUM(value) / 100, 1)                   value
-        FROM
-            gv$con_sysmetric_history
-        WHERE
-                metric_name = 'CPU Usage Per Sec'
-            AND begin_time > sysdate - 6 / 1440
-        GROUP BY
-            to_char(end_time, 'DD-MM-YYYY HH24:MI')
-    )
-WHERE
-    end_time IS NOT NULL
-ORDER BY
-    1,
-    2;
-    </copy>
-```
-
-2. The Output will look something like the following. CPU usage should be relatively low since you haven't run any load yet.
-
-    ![](./images/current-cpu-usage-prior-to-testing.png " ")
-
-## **STEP 3**: Create the `test_proc` Procedure for the Workload Used in the Test
+## **STEP 2**: Create the `test_proc` Procedure for the Workload Used in the Test
 In this step, you run a script that will:
 - Create the procedure **test\_proc** for the workload used in the test.
     - The query used in the test will summarize orders by month and city for customers in the US in the Fall of 1992.
@@ -100,10 +72,11 @@ In this step, you run a script that will:
 - Create a sequence used for each test number.
 - Create the table used to save the results.
 
-1. Copy and paste the following script into your second worksheet. This worksheet uses the HIGH consumer group. Run the script.
+1. Copy and paste the following script into the first worksheet you named **Setup**. Run the following script using the LOW consumer group.
 
 ```
-<copy>drop sequence test_run_seq;
+<copy>-- Create a sequence to increment the number of tests running
+drop sequence test_run_seq;
 create sequence test_run_seq order nocache;
 
 drop table test_run_data;
@@ -165,6 +138,8 @@ begin
   v_begin_date := sysdate;
   v_test_sql_1 := q'#select /* #';
   v_test_sql_2 := q'# */ /*+ NO_RESULT_CACHE */ count(*) from (
+--
+-- This query will summarize orders by month and city for customers in the US in the Fall of 1992
 SELECT
     d.d_month,
     d.d_year,
@@ -205,9 +180,9 @@ end;
 </copy>
 ```
 
-## **STEP 4**: Run the `test_proc` Procedure Concurrently on Three Worksheets
+## **STEP 3**: Run the `test_proc` Procedure Concurrently on Three Worksheets
 
-1. Now run the `test_proc` procedure concurrently on the 3 worksheets you created using the HIGH consumer group. To open 3 SQL Developer Web worksheets, go to the OCI console's Details page for your database, open the **Tools** tab and click the **Open SQL Developer Web** button on the console multiple times. Each time you click it, a new SQL Developer Web tab will open in the browser.
+1. Now run the `test_proc` procedure concurrently on the 3 worksheets you named **Query 1**, **Query 2**, and **Query 3**. To open 3 SQL Developer Web worksheets, go to the OCI console's Details page for your database, open the **Tools** tab and click the **Open SQL Developer Web** button on the console 3 times. Each time you click it, a new SQL Developer Web tab will open in the browser.
 
     ![](./images/open-multiple-sql-dev-web-worksheets.png " ")
 
@@ -274,25 +249,25 @@ TEST_NO CPU_COUNT SESSIONS QUERIES_FINISHED TEST_DURATION_IN_SECONDS AVG_QUERY_T
 ------- --------- -------- ---------------- ------------------------ -------------- -------------
       1         2        3                6                    581.5          275.5         0.968
 ```
-Even though there are 3 queries executing at the same time, the system has limited the maximum CPU usage to 0.968 CPUs, not the available 2 CPUs.
+Notice the AVG\_QUERY\_TIME is 275.5 seconds and MAX\_CPU\_USAGE is only approximately 1 OCPU. In the next steps, you will see if auto scaling reduces query time and increases OCPU usage.
 
-7. Average Active Sessions shows 3 sessions using the high service.
+7. Go to the OCI console's details page for your autonomous database and click **Performance Hub**. Performance Hub opens with the **ASH Analytics** tab selected. Scroll down and view the **Average Active Sessions** chart.  This chart shows 3 sessions are using the HIGH service.
 
     ![](./images/average-active-sessions-shows-three-sessions.png " ")
 
-8. Switching to view by wait class, you can see that you have the same number of waits on CPU, and more on IO.
+8. The drop-down menu in the upper left corner of the chart shows Consumer Group by default. In the drop-down menu, choose **Top Dimensions** and choose **Wait Class** from the sub-menu. You can see the number of waits on CPU and on I/O. The queries are waiting on the CPUs to become available to run on them. The number of CPUs is 1. There are 3 queries running concurrently, so 2 queries are waiting for CPUs to become available.
 
     ![](./images/view-by-weight-class-three-sessions.png " ")
 
 In the next step, enable auto scaling to improve query performance.
 
-## **STEP 5**: Enable Auto Scaling
+## **STEP 4**: Enable Auto Scaling
 
 1. Enable auto scaling, to allow you to use 3X the amount of CPU. Go to the details page for the database, click the  **Scale Up/Down** button, and select the **Auto Scaling** checkbox to re-enable auto scaling.
 
     ![](images/disable-auto-scaling.png " ")
 
-## **STEP 6**: Run the Procedure Again Concurrently on Three Worksheets After Enabling Auto Scaling
+## **STEP 5**: Run the Procedure Again Concurrently on Three Worksheets After Enabling Auto Scaling
 
 1. Run the procedure again from 3 SQL Developer Web worksheet connections using the HIGH consumer group. Enter - but do not immediately execute - the following command in each worksheet. After you have entered the command into all 3 worksheets, rapidly execute the command in each worksheet so that they begin at nearly the same time.
 
@@ -308,7 +283,7 @@ exec test_proc;
 
     ![](images/monitored-sql-after-three-procedures-running-with-auto-scaling.png " ")
 
-## **STEP 7**: Review the Improved Performance After Enabling Auto Scaling
+## **STEP 6**: Review the Improved Performance After Enabling Auto Scaling
 
 1. When the procedures have completed, run this script to see the test results:
 
@@ -358,6 +333,10 @@ TEST_NO CPU_COUNT SESSIONS QUERIES_FINISHED TEST_DURATION_IN_SECONDS AVG_QUERY_T
       2         6        3                6                    210.2             97         2.699
 ````
 
+In the Performance Hub Average Active Sessions chart by Wait Class, you can see that in the 2nd test after auto scaling is enabled, since there are 3 CPUs available, one for each of the queries, the queries are no longer waiting for CPUs to become available.
+
+  ![](images/graph-by-wait-class-auto-scaling-enabled.png " ")
+
 - After enabling auto scaling, CPU_COUNT jumps from 2 to 6, a factor of 3x.
 - The duration of the procedure that ran queries concurrently in 3 worksheet sessions dropped from 581 to 210 seconds.
 - The average query time dropped from 275 to 97 seconds.
@@ -383,7 +362,7 @@ For more information about auto scaling, see the documentation [Use Auto Scaling
 
 - **Authors** - Rick Green, Database User Assistance; Nilay Panchal, ADB Product Management
 - **Contributors** - John Zimmerman, Real World Performance Team; Keith Laker, ADB Product Management
-- **Last Updated By/Date** - Rick Green, September 2020
+- **Last Updated By/Date** - Rick Green, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
