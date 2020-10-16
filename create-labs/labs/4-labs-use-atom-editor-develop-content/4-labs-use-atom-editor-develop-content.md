@@ -80,7 +80,7 @@ To preview your output in a browser:
 
 3. To stop the atom-live-server, select  **Packages > atom-live-server > Stop folder-path-at-port-#**.
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
+**This concludes this lab. Please proceed to the next lab in the Contents menu.**
 
 ## Want to Learn More?
 [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
@@ -89,10 +89,10 @@ To preview your output in a browser:
 * **Author:**
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
 * **Contributors:**
-    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
+    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 
 * **Reviewed by:**  
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG
+    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020

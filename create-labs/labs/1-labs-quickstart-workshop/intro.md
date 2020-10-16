@@ -3,10 +3,10 @@
 The labs in this workshop walk you through all the steps to **develop labs and workshops**
 
 ## What are Labs and Workshops
-A lab is a new model adopted by the DB organization to enhance the tutorial experience. Labs are what we all commonly know as Oracle by example (OBE). Labs (also called Livelabs) can be combined to form a workshop, formerly known as learning path.
+A lab is a new model adopted by the DB organization to enhance the tutorial experience. Labs are what we all commonly know as Oracle by example (OBE). Labs (also called Livelabs) can be combined to form a workshop, formerly known as Hands-on Lab or HOL, or a Learning Path.
 
-An individual Markdown (.md) file is called a lab (previously known as an Oracle By Example or OBE, or a tutorial).
-A collection of labs is called workshop (previously known as Hands-on Lab or HOL, or a Learning Path).
+An individual Markdown (.md) file is called a lab.
+A collection of labs is called workshop.
 
 ## GitHub Projects and Repositories
 * GitHub is organized by projects.
@@ -48,11 +48,11 @@ The following diagram explains the process of setting up the GitHub environment,
 
 ## What's Next
 
-**You are all set to begin the labs! Click Lab 2: Get Started with Git and Set up the Environment in the Contents menu on the right.**
+  **You are all set to begin the labs! Click Lab 2: Get Started with Git and Set up the Environment in the Contents menu on the right.**
 
 ## Want to learn more about labs and workshops?
-Use these links to get more information about Labs and Workshops:
-* [Glossary of Terms](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Glossary+of+terms)
+  Use these links to get more information about Labs and Workshops:
+  * [Glossary of Terms](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Glossary+of+terms)
 
 
 ## Acknowledgements
@@ -60,10 +60,10 @@ Use these links to get more information about Labs and Workshops:
 * **Author:**
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
 * **Contributors:**
-    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
+    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 
 * **Reviewed by:**  
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG
+    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 

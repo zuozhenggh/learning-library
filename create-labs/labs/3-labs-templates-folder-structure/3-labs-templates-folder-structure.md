@@ -34,7 +34,7 @@ The following image shows a folder structure of the big-data workshop. You can s
       ![](./images/temp-folder-structure-manifest-json.png " ")
 
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
+**This concludes this lab. Please proceed to the next lab in the Contents menu.**
 
 ## Want to Learn More?
 
@@ -46,10 +46,10 @@ The following image shows a folder structure of the big-data workshop. You can s
 * **Author:**
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
 * **Contributors:**
-    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
+    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 
 * **Reviewed by:**  
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG
+    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020

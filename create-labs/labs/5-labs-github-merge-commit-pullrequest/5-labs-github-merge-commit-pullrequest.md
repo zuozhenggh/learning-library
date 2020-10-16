@@ -115,7 +115,7 @@ To create a Pull Request:
 
   Your committed content is now visible to the public on the learning-library (upstream/master or production) repository.
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
+**This concludes this lab. Please proceed to the next lab in the Contents menu.**
 
 ## Want to Learn More?
 
@@ -125,9 +125,9 @@ To create a Pull Request:
 * **Author:**
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
 * **Contributors:**
-    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
+    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Reviewed by:**  
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG
+    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
