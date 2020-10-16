@@ -95,7 +95,7 @@ To complete this lab, you need to have the following:
 
 ## **STEP 3**: Run a SQL script using SQL Developer Web to load sample data into your database
 
-The `load-data-safe-sample-data_admin.sql` script creates several tables with sample data that you can use to practice with the Oracle Data Safe features. It also enables the Data Discovery and Data Masking features on your database.
+The `load-data-safe-sample-data_admin.sql` script creates several tables with sample data that you can use to practice with the Oracle Data Safe features. It also enables the Data Masking feature on your database.
 
 1. On the **Autonomous Database Details** page, click the **Tools** subtab.
 
