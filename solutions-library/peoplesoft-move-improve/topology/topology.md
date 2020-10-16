@@ -15,7 +15,7 @@ Users can select a template, override topologies, change any attributes, if need
 Creating a topology for a template to automatically provision a PeopleSoft environment. You will give it a name, description, OS, shape type, and environment type.
 
 ### Prerequisites
-Access to the Cloud Manager console.
+- Access to the Cloud Manager console.
 
 ## Part 1: Define topology
 

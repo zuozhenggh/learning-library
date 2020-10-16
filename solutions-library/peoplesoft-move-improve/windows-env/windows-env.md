@@ -7,7 +7,7 @@ As a take home exercise, you can provision a PeopleSoft environment with a Windo
 <!-- Estimated Lab Time: n minutes -->
 
 
-## **STEPS:**
+## **STEPS**
 1.	Remove the PUM topology from the Environment Template that was used to provision in the previous section – Refer step 2 in  Lab 700: Create a New Environment Template.
 
 2.	Edit the PUM topology and add a new Windows Client node.  Select an available shape. Refer step 1 in Lab500: Review and Update a Topology.  Hint - Click + to add a node. 
@@ -30,11 +30,11 @@ As a take home exercise, you can provision a PeopleSoft environment with a Windo
 
 
 ## Acknowledgements
-* **Authors** 
+**Authors** 
 - Rich Konopka, PeopleSoft Specialist, October 2020
 - Megha Gajbhiye, Cloud Solutions Engineer, Octiber 2020
 
-* **Last Updated By/Date** 
+**Last Updated By/Date** 
 - Sara Lipowsky, Cloud Engineer, October 2020
 
 ## See an issue?

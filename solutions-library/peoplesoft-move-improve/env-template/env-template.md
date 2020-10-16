@@ -55,9 +55,9 @@ In this lab, you will:
 
   ![](./images/s5.png "")
 
-Refer to the following for network topology:
+  Refer to the following for network topology:
 
-  ![](./images/7.png "")
+    ![](./images/7.png "")
 
 5. 	Expand Full Tier -> General Settings. Make sure to give Database Operator Id as **PS**. Give a database name **MYPUMDB**. The defaults for many parameters can be changed; optionally, we will keep it as default.
 
@@ -73,9 +73,9 @@ Refer to the following for network topology:
 
   ![](./images/s9.png "")
 
-Your screen should look like:
+  Your screen should look like:
 
-  ![](./images/5.png "")
+    ![](./images/5.png "")
 
 9. 	Click Next.  Review the page and click Submit to save the template. 
 
@@ -84,11 +84,12 @@ Your screen should look like:
 You may proceed to the next lab.
 
 ## Acknowledgements
-* **Authors** 
+
+**Authors** 
 - Rich Konopka, PeopleSoft Specialist, October 2020
 - Megha Gajbhiye, Cloud Solutions Engineer, Octiber 2020
 
-* **Last Updated By/Date** 
+**Last Updated By/Date** 
 - Sara Lipowsky, Cloud Engineer, October 2020
 
 ## See an issue?

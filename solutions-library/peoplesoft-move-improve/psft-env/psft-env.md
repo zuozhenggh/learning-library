@@ -63,9 +63,9 @@ In this lab, you will:
 
   ![](./images/cl.png "")
 
-You can also go to **Provision Task Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
+  You can also go to **Provision Task Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
 
-  ![](./images/pts.png "")
+    ![](./images/pts.png "")
 
 8. Once environment creation is completed, you can click on arrow button -> Deploy to start provisioning.
 
@@ -75,50 +75,50 @@ You can also go to **Provision Task Status** to see detailed progress status for
 
   ![](./images/e10.png "")
 
-You can also go to **Provision Task Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
+  You can also go to **Provision Task Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
 
-  ![](./images/pts.png "")
+    ![](./images/pts.png "")
 
 10. After the environment up and running, you can perform a variety of actions on the environment by using the Related Actions button corresponding to each environment. 
 
   ![](./images/e11.png "")
 
-The actions can be:
+  The actions can be:
 
-  • **Details**: Select this option to view environment details and to perform additional actions on the environment such as performing a health check, applying a PeopleTools patch, viewing logs, and managing PUM connections.
+    • **Details**: Select this option to view environment details and to perform additional actions on the environment such as performing a health check, applying a PeopleTools patch, viewing logs, and managing PUM connections.
 
-  • **Start**: Select this option to start all the instances and then all the domains within them.
+    • **Start**: Select this option to start all the instances and then all the domains within them.
 
-  • **Stop**: Select this option to stop all domains and shutdown all the instances. In case of database, only compute database instances are shutdown.
+    • **Stop**: Select this option to stop all domains and shutdown all the instances. In case of database, only compute database instances are shutdown.
 
-  • **Delete**: Select this option to remove the environment.
+    • **Delete**: Select this option to remove the environment.
 
-  • **Manage Node**: Select this option to scale environment up or down.
+    • **Manage Node**: Select this option to scale environment up or down.
 
-  • **Clone Environment**: Select this option to clone an existing environment.
+    • **Clone Environment**: Select this option to clone an existing environment.
 
-  • **Refresh**: Select this option to refresh the database or the database, ps app home and ps cust home.  
-This option is only available for DBaaS environments.
+    • **Refresh**: Select this option to refresh the database or the database, ps app home and ps cust home.  
+  This option is only available for DBaaS environments.
 
-  • **Backup and Restore**: Select this option to backup or restore an environment.
+    • **Backup and Restore**: Select this option to backup or restore an environment.
 
-NOTE: You can also login to your application by adding it's IP addess and host name in hosts file.
+  NOTE: You can also login to your application by adding it's IP addess and host name in hosts file.
 
-Login credential: 
+  Login credential: 
 
-    ```
-    Username : PS
-    Password: Psft1234
-    ```
+      ```
+      Username : PS
+      Password: Psft1234
+      ```
 
 You may proceed to the next lab.
 
 ## Acknowledgements
-* **Authors** 
+**Authors** 
 - Rich Konopka, PeopleSoft Specialist, October 2020
 - Megha Gajbhiye, Cloud Solutions Engineer, Octiber 2020
 
-* **Last Updated By/Date** 
+**Last Updated By/Date** 
 - Sara Lipowsky, Cloud Engineer, October 2020
 
 ## See an issue?
