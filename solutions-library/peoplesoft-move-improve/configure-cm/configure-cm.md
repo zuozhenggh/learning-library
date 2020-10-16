@@ -5,7 +5,22 @@ This lab will guide you on how to configure the system and infrastructure settin
 
 **Estimated Lab Time** : 10 minutes.
 
-## Part 1. Configuring settings
+### Objectives
+The purpose of this lab is to show you how to configure Cloud Manager settings.
+
+In this lab, you will:
+* Update My Oracle Support Credentials
+* Input the image OCID for the Cloud Manager
+* Create a Mount Target for a File System
+
+### Prerequisties
+1. My Oracle Support (MOS) account credentials.
+    - User ID
+    - Password
+    - URL
+
+
+## **STEP 1**: Configuring settings
 
 1.	Navigate to **Cloud Manager Dashboard** > **Cloud Manager Settings** > **Cloud Manager Settings**.
 
