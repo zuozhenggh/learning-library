@@ -1,4 +1,4 @@
-# RAC SQL and PL\/SQL - Sequences
+# RAC SQL and PL2./SQL - Sequences
 
 ## Introduction
 
@@ -9,10 +9,9 @@ Estimated Lab Time: 20 Minutes
 
 This lab assumes you have completed the following labs:
 - Lab: Generate SSH Key
-- Lab: Setup DB System
-- Lab: Connected to database
+- Lab: Build a DB System
 
-## **Step 1:**  Build Tom Kyte's RUNSTATS package
+## **STEP 1:**  Build Tom Kyte's RUNSTATS package
 
 1.  Connect to your cluster nodes with Putty or MAC CYGWIN as described earlier. Open a window to one of the nodes
 
@@ -22,7 +21,7 @@ This lab assumes you have completed the following labs:
 
     ````
     <copy>
-    sudo su -oracle
+    sudo su - oracle
     sqlplus sys/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     </copy>
     ````
@@ -143,23 +142,28 @@ This lab assumes you have completed the following labs:
     /
     </copy>
     ````
-## **Step 2:** Sequence Test
+## **STEP 2:** Sequence Test
 
 1. Open a connection to the pluggable database PDB1 as SYS on each node. We are forcing connections to a given instance :
 
-On node 1:
+2. Connect to node 1
+   
     ````
-    sudo su -oracle
+    <copy>
+    sudo su - oracle
     sqlplus sys/W3lc0m3#W3lc0m3#@//racnode1:1521/unisrv.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     </copy>
     ````
-Connect to node 2.
+3. Connect to node 2.
+   
     ````
-    sudo su -oracle
+    <copy>
+    sudo su - oracle
     sqlplus sys/W3lc0m3#W3lc0m3#@//racnode2:1521/unisrv.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     </copy>
     ````
-2. Create the following SEQUENCES
+4. Create the following SEQUENCES
+   
     ````
     <copy>
     create table SEQTEST (seqid varchar2(30), highval number);
@@ -172,7 +176,7 @@ Connect to node 2.
     set serveroutput on;
     </copy>
     ````
-3. On node 1 run the following statements 2 or 3 times
+5. On node 1 run the following statements 2 or 3 times
 
     ````
     <copy>
@@ -201,7 +205,7 @@ Connect to node 2.
     </copy>
     ````    
 
-The runstats results will show similar to:
+6. The runstats results will show similar to:
     ````
     SQL> Run1 ran in 502 hsecs
          Run2 ran in 502 hsecs
@@ -267,10 +271,13 @@ Notice the difference between operations that use sequence that CACHE versus NOC
     exec runstats_pkg.rs_stop;
     </copy>
     ````
+You may now *proceed to the next lab*.  
+
+
 ## Acknowledgements
 * **Authors** - Troy Anthony, Anil Nair
-* **Contributors** -
-* **Last Updated By/Date** - Troy Anthony, Database Product Management, August 2020
+* **Contributors** - Kay Malcolm
+* **Last Updated By/Date** - Kay Malcolm, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

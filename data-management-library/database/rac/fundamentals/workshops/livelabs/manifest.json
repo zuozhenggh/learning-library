@@ -52,7 +52,7 @@
             "filename": "../../sql/parallelexecution.md"
         },
         {
-            "title": "Lab 9: Oracle Scheduler ",
+            "title": "Lab 9: PL/SQL Packages ",
             "description": "This lab walks you through the use of Oracle Scheduler in a RAC database.",
             "filename": "../../sql/scheduler.md"
         }

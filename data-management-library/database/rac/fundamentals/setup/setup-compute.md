@@ -1,4 +1,4 @@
-# Setup DB System for Oracle Real Application Clusters
+# Build a DB System
 
 ## Introduction
 This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a DB System running a 2-node RAC database in a clustered environment a Virtual Cloud Network (VCN).
@@ -13,9 +13,9 @@ For more information about Terraform and Resource Manager, please see the append
 -   Connect to the RAC database
 
 ### Prerequisites
-This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account
-- SSH Keys
+This lab assumes you have the following:
+- An Oracle LiveLabs or Paid Cloud account
+- Completed Lab: Generate SSH Keys
 
 ## **STEP 1A**: Create Stack:  Compute + Networking
 
@@ -81,13 +81,13 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-stack-details.png " ")
 
-You may now proceed to Step 2 (skip Step 1B).
+You may now proceed to [Step 2](#STEP2:TerraformPlan(OPTIONAL)) (skip Step 1B).
 
 ## **STEP 1B**: Create Stack:  Compute only
-If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
+If you just completed Step 1A, please proceed to [Step 2](#STEP2:TerraformPlan(OPTIONAL)).  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
 - Egress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
 
-If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  *Note:  We recommend using our stack to create to reduce the potential for error.*
+If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  *Note:  We recommend using our stack for ease of deployment and to reduce the potential for error.*
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
      - [db_system_rac.zip](https://objectstorage.uk-london-1.oraclecloud.com/p/pPV7w50bgS2qV-lLA7KQFEN4PN_ulXyrrYz1HbixQZw/n/lrojildid9yx/b/labtest_bucket/o/db_system_rac.zip)
@@ -153,7 +153,9 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
   ![](./images/em-stack-details-b.png " ")
 
 ## **STEP 2**: Terraform Plan (OPTIONAL)
-When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. This is optional, *you may skip directly to Step 3*.
+This is optional, you may skip directly to [Step 3](#STEP3:TerraformApply).
+
+When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. 
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
 
@@ -216,52 +218,47 @@ Before logging in, first note down your IP addresses.
 
   ![](./images/setup-compute-4.png " ")
 
-Now that you have your IP address select the method of connecting:  Oracle Cloud Shell, MAC/Cygwin or Putty)
+5. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps.
+- [Step 5: Oracle Cloud Shell](#STEP5:OracleCloudShell)
+- [Step 6: MAC or Windows CYGWIN Emulator](#STEP6:MACorWindowsCYGWINEmulator)
+- [Step 7: Putty](#STEP7:WindowsusingPutty)
 
-## **STEP 5**: Connect to your instance
-
-Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
-  - *NOTE:  If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
-- 
-### Oracle Cloud Shell
+## **STEP 5**: Oracle Cloud Shell
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
 
   ![](./images/em-cloudshell.png " ")
 
-
-
-3.  On the instance homepage, find the Public IP address for your instance.
-4.  Enter the command below to login to your instance.    
+2.  Using one of the Public IP addresses in Step 4, enter the command below to login to your instance.    
     ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address>
     ````
     ![](./images/em-cloudshell-ssh.png " ")
 
-5.  When prompted, answer **yes** to continue connecting.
-6.  You may now *proceed to the next lab*.  
+3.  When prompted, answer **yes** to continue connecting.
+4.  You may now *proceed to the next lab*.  
 
 
-### MAC or Windows CYGWIN Emulator
-1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP address for your instance.
-3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
-
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address - node1>
-    ````
-    ![](./images/em-mac-linux-ssh-login.png " ")
-
-4. You can also log in to the **Public IP Address of node2**
+## **STEP 6**: MAC or Windows CYGWIN Emulator
+*NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before conneting. *
+1.  Using one of the Public IP addresses in Step 4, open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
     ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address - node1>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node1>
     ````
     ![](./images/em-mac-linux-ssh-login.png " ")
 
-5. After successfully logging in, you may *proceed to the next lab*
+2. You can also log in to the **Public IP Address of node2**
 
-### Windows using Putty
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node1>
+    ````
+    ![](./images/em-mac-linux-ssh-login.png " ")
+
+3. After successfully logging in, you may *proceed to the next lab*
+
+## **STEP 7**: Windows using Putty
+*NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before conneting. *
 
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
 
@@ -275,7 +272,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
   ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
-#### **Configuring Automatic Login**
+### **Configuring Automatic Login**
 
 1.  In the category section, **Click** Connection and then **Select** Data.
 
@@ -283,19 +280,17 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
   ![](images/36164be0029033be6d65f883bbf31713.jpg " ")
 
-#### **Adding Your Private Key**
+### **Adding Your Private Key**
 
 1.  In the category section, **Click** Auth.
 2.  **Click** browse and find the private key file that matches your VM’s public key. This private key should have a .ppk extension for PuTTy to work.
 
   ![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
 
-To save all your settings:
-
-3.  In the category section, **Click** session.
+3.  To save all your settings, in the category section, **Click** session.
 4.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-#### **Repeat Putty setup for the second node**
+### **Repeat Putty setup for the second node**
 
 1. Repeat the steps upbove to create a login window for the second node - use the Public IP address of node2
 3.  Select or enter the following information:
@@ -320,10 +315,9 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 
 [Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
 
-
 ## Appendix: Troubleshooting Tips
 
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
+If you encountered any issues during this lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
 - Availability Domain Mismatch
 - Limits Exceeded
 - Invalid public key

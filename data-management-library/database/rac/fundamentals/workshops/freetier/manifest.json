@@ -42,7 +42,7 @@
             "filename": "../../services/services.md"
         },
         {
-            "title": "Lab 7: SQL and PL/SQl - Sequences",
+            "title": "Lab 7: SQL and PL/SQL - Sequences",
             "description": "This lab walks you through the use of sequences in a RAC database.",
             "filename": "../../sql/racsql.md"
         },
@@ -57,7 +57,7 @@
             "filename": "../../sql/scheduler.md"
         },
         {
-            "title": "Lab 10: File Test",
+            "title": "Lab 10: PL/SQL Packages",
             "description": "This lab walks you through the use of UTL packages in a cluster.",
             "filename": "../../sql/utl_file_test.md"
         }
