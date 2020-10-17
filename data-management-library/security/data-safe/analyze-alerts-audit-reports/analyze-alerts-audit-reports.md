@@ -56,6 +56,7 @@ This lab assumes the following:
 
     c) Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
 
+5. Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
 
 ## **STEP 2**: View and close alerts
 
