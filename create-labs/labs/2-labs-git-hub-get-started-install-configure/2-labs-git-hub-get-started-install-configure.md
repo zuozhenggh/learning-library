@@ -127,6 +127,7 @@ To clone the forked repository:
 * [Download and Install Git for Windows and Mac](https://git-scm.com/download/win)
 * [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
 
+
 ## Acknowledgements
 
 * **Author:**
@@ -141,6 +142,7 @@ To clone the forked repository:
 
 * **Last Updated By/Date:** Anuradha Chepuri, October 2020
 
-## See an issue?  
+## Need Help?  
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-Please open a request [here](https://github.com/oracle/learning-library/issues). Include the workshop name and lab in your request.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
