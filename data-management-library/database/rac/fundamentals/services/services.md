@@ -9,8 +9,7 @@ Estimated Lab Time: 20 Minutes
 
 This lab assumes you have completed the following labs:
 - Lab: Generate SSH Key
-- Lab: Setup DB System
-- Lab: Connected to database
+- Lab: Build a DB System
 - Lab: Install Sample Schema
 
 ### About Oracle Database services
@@ -35,42 +34,48 @@ For more information on Oracle Database Services visit http://www.oracle.com/got
 
 **NOTE** For simplicity we will often use the EZConnect syntax to specify connect strings to the database:
 
-user\/password@**\/\/hostname\:port\/servicename**  EZConnect does not support all service characteristics. A fully specified URL or TNS Connect String is required for Application Continuity and other service characteristics.
+user/password@**//hostname:port/servicename**  EZConnect does not support all service characteristics. A fully specified URL or TNS Connect String is required for Application Continuity and other service characteristics.
 
-1.  Connect to your cluster nodes with Cloudshell, Putty, MAC CYGWIN as described earlier. Open a window to each node
+1.  Connect to your cluster nodes with Cloudshell, Putty, MAC CYGWIN as described in earlier labs. 
+2.  Open a window/session to each node
+3.  Using the Public IP addresses, enter the command below to login to your instances as the opc user.  Repeat this for both nodes    
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address>
+    ````
 
     ![](./images/clusterware-1.png " ")
 
-2.  Create a new service **svctest** with *instance1* as a **preferred** instance and *instance2* as an **available instance**. This means that the service will normally run on the *instance1* but will failover to *instance2* if the first instance becomes unavailable.
+4.  Create a new service **svctest** with *instance1* as a **preferred** instance and *instance2* as an **available instance**. This means that the service will normally run on the *instance1* but will failover to *instance2* if the first instance becomes unavailable.
 
     ````
     <copy>
-    sudo su -oracle
+    sudo su - oracle
     srvctl add service -d aTFdbVm_mel1nk -s svctest -preferred aTFdbVm1 -available aTFdbVm2 -pdb pdb1
     srvctl start service -d aTFdbVm_mel1nk -s svctest
     </copy>
     ````
     ![](./images/add_service.png " ")
 
-3. Examine where the service is running by using **lsnrctl** to check the SCAN listener or a local listener on each node. **srvctl** will also show you where the service is running.
+5. Examine where the service is running by using **lsnrctl** to check the SCAN listener or a local listener on each node. **srvctl** will also show you where the service is running.
 
     ````
     <copy>
     srvctl status service -d aTFdbVm_mel1nk -s svctest
     </copy>
     ````
-4.  The command above will show something similar to:   
+6.  The command above will show something similar to:  
+    
     ````
     [oracle@racnode1 ~]$ srvctl status service -d aTFdbVm_mel1nk -s svctest
     Service svctest is running on instance(s) aTFdbVm1
     ````
-5.  Use the lsnrctl utility to list the services.
+7.  Use the lsnrctl utility to list the services.
     ````
     <copy>
     lsnrctl services
     </copy>
     ````
-will show similar to:
+    will show similar to:
     ````
     [oracle@racnode1 ~]$ lsnrctl services
     LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 21-AUG-2020 07:22:21
@@ -89,9 +94,9 @@ will show similar to:
     The command completed successfully
     ````    
 
-Note that this service is only active on one instance at a time, so both **local** listeners will not include an entry for this service. In the example shown here, the listener on racnode2 would **not** have an entry for **Service "svctest.tfexsubdbsys.tfexvcndbsys.oraclevcn.com"**
+    Note that this service is only active on one instance at a time, so both **local** listeners will not include an entry for this service. In the example shown here, the listener on racnode2 would **not** have an entry for **Service "svctest.tfexsubdbsys.tfexvcndbsys.oraclevcn.com"**
 
-Any of the SCAN listeners will show where the service is offered. Note that SCAN Listeners run from the GI HOME so you have to change the ORACLE_HOME environment variable in order to view the information in the SCAN Listeners
+    Any of the SCAN listeners will show where the service is offered. Note that SCAN Listeners run from the GI HOME so you have to change the ORACLE_HOME environment variable in order to view the information in the SCAN Listeners
 
     ````
     <copy>
@@ -100,7 +105,7 @@ Any of the SCAN listeners will show where the service is offered. Note that SCAN
     </copy>
     ````
 
-which will show something similar to
+    which will show something similar to
 
     ````
     [oracle@racnode2 ~]$ export ORACLE_HOME=/u01/app/19.0.0.0/grid
@@ -161,16 +166,14 @@ which will show something similar to
 
 ## **STEP 2:** Service Failover
 
-1. Cause the service to fail over
-
-After identifying which instance the service is being offered on, kill that instance by removing the SMON process at the operating system level
+1. Cause the service to fail over. After identifying which instance the service is being offered on, kill that instance by removing the SMON process at the operating system level
 
     ````
     <copy>
     ps -ef | grep ora_smon
     </copy>
     ````
-will show the SMON process id of your database  
+    This will show the SMON process id of your database  
 
     ````
     [oracle@racnode1 ~]$ ps -ef | grep smon
@@ -178,15 +181,15 @@ will show the SMON process id of your database
     oracle   58569     1  0 Aug18 ?        00:00:13 ora_smon_aTFdbVm1
 
     ````
-In this example the process ID is 585689, which I can pass to the **kill -9 <process id>** command
+2. In this example the process ID is 585689, which I can pass to the **kill -9 <process id>** command.  Identify your process id and issue the kill command
 
     ````
-    kill -9 586589
+    kill -9 ######
     ````
 
-This will cause the instance to fail, any connections to the database on this instance would be lost. The CRS component of Grid Infrastructure would detect the instance failure, and immediately start the service on an **available** instance (based on the service definition). CRS would then restart the database instance.
+    This will cause the instance to fail, any connections to the database on this instance would be lost. The CRS component of Grid Infrastructure would detect the instance failure, and immediately start the service on an **available** instance (based on the service definition). CRS would then restart the database instance.
 
-Rerun the *srvctl status service* command and notice that the service has failed over to the other instance:
+3. Rerun the *srvctl status service* command and notice that the service has failed over to the other instance:
 
     ````
     <copy>
@@ -194,20 +197,18 @@ Rerun the *srvctl status service* command and notice that the service has failed
     </copy>
     ````    
 
-Depending on where your service was running beforehand, you will notice something similar to
+    Depending on where your service was running beforehand, you will notice something similar to
 
     ````
     [oracle@racnode1 ~]$ kill -9 58569
     [oracle@racnode1 ~]$ srvctl status service -d aTFdbVm_mel1nk -s svctest
     Service svctest is running on instance(s) aTFdbVm2
     ````    
-2. Manually relocate the service
+2. Manually relocate the service. Open a connection (with SQL*Plus) to the instance where the service is running. Use the SCAN address and the domain qualified service name in the format:
 
-Open a connection (with SQL*Plus) to the instance where the service is running
-
-    use the SCAN address and the domain qualified service name in the format:
-
+    ````
     **sqlplus user/password@//SCAN Address Name/service-name**
+    ````
 
     ````
      sqlplus sh/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/svctest.tfexsubdbsys.tfexvcndbsys.oraclevcn.com
@@ -269,7 +270,7 @@ Re-examine the v$session information:
 It has not changed.
 The relocate service command will not disconnect active sessions unless a force option (**-force**) is specified. A stop service command will allow a drain timeout to be specified to allow applications to complete their work during the drain interval.
 
-## STEP 3 **Connection Load Balancing:**
+## **STEP 3:** Connection Load Balancing
 This exercise will demonstrate connection load balancing and why it is important to use the SCAN address and the VIPs as integral parts of your connection strategy
 
 1. Create a uniform service, named \"unisrv\", that is **available** on both instances of your RAC database.
@@ -303,11 +304,11 @@ where you will see similar to:
          REMOTE SERVER
          (ADDRESS=(PROTOCOL=TCP)(HOST=10.1.20.5)(PORT=1521))
     ````
-You should notice that an entry for this service is configured for each instance.
+    You should notice that an entry for this service is configured for each instance.
 
 2. Edit your tnsnames.ora file (in $ORACLE_HOME/network/admin wherever you are running your client connections from). Add the following two entries:
 
-Note that these tnsnames entries do not comply with the recommended format for continuous availability. They are only used to be illustrative of connection load balancing (CLB)
+    Note that these tnsnames entries do not comply with the recommended format for continuous availability. They are only used to be illustrative of connection load balancing (CLB)
 
     ````
     CLBTEST = (DESCRIPTION =
@@ -334,7 +335,7 @@ Note that these tnsnames entries do not comply with the recommended format for c
          2     unisrv                   4
 
     ````
-The SCAN listener attempts to distribute connections based on SESSION COUNT by default. The connections will not always end up equally balanced across instances. You can instruct the listener to use the load on an instance to balance connection attempts (the listener will store run queue information), but this is not the default.
+    The SCAN listener attempts to distribute connections based on SESSION COUNT by default. The connections will not always end up equally balanced across instances. You can instruct the listener to use the load on an instance to balance connection attempts (the listener will store run queue information), but this is not the default.
 
 4. Now do the same with the CLBTEST-LOCAL alias (close the first sessions as it will make it easier to illustrate what happens)
 
@@ -344,22 +345,21 @@ The SCAN listener attempts to distribute connections based on SESSION COUNT by d
          1      unisrv                   8
          2      unisrv                   2
     ````
-This second case illustrates client-side load balancing. The TNS alias defined, through FAILOVER=ON, instructs an address to be selected at random from the available ADDRESS entries. There is no guarantee of connection balancing. If you disable load balancing \(FAILOVER=OFF\), then the addresses will be tried sequentially until one succeeds. In the case where all instances are available all connections will go to the first ADDRESS in the list:
+    This second case illustrates client-side load balancing. The TNS alias defined, through FAILOVER=ON, instructs an address to be selected at random from the available ADDRESS entries. There is no guarantee of connection balancing. If you disable load balancing \(FAILOVER=OFF\), then the addresses will be tried sequentially until one succeeds. In the case where all instances are available all connections will go to the first ADDRESS in the list:
 
     ````
     INST_ID    SERVICE_NAME           COUNT(*)
     ---------- -------------------- ----------
       1         unisrv                   10
     ````
-5. What if an instance is not available?
-
-Shutdown one of the instances with srvctl - specify \"-f\" as you want to forcibly close services if any are running.
+5. What if an instance is not available?  Shutdown one of the instances with srvctl - specify \"-f\" as you want to forcibly close services if any are running.
     ````
     <copy>
     srvctl stop instance -d aTFdbVm_mel1nk -i aTFdbVm2 -f
     </copy>
     ````
-Attempt to use the CLBTEST-LOCAL alias to connect. If the ADDRESS to the instance you just stopped is chosen, you will see:
+
+6. Attempt to use the CLBTEST-LOCAL alias to connect. If the ADDRESS to the instance you just stopped is chosen, you will see:
 
     ````
     [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST-LOCAL
@@ -371,9 +371,9 @@ Attempt to use the CLBTEST-LOCAL alias to connect. If the ADDRESS to the instanc
     ORA-12514: TNS:listener does not currently know of service requested in connect descriptor
     Enter user-name:
     ````
-This address could be repeatedly tried \(it is a random access\)    
+    This address could be repeatedly tried \(it is a random access\)    
 
-The CLBTEST alias uses the SCAN address and will only send requests to the available instances
+    The CLBTEST alias uses the SCAN address and will only send requests to the available instances
 
     ````
     [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST
@@ -387,9 +387,7 @@ The CLBTEST alias uses the SCAN address and will only send requests to the avail
     Version 19.7.0.0.0
     SQL>
     ````
-6. The Recommended connect string
-
-The recommended connect string for all Oracle Drivers of version 12.2 or later is:
+7. The recommended connect string for all Oracle Drivers of version 12.2 or later is:
 
     ````
     Alias (or URL) = (DESCRIPTION =
@@ -400,10 +398,11 @@ The recommended connect string for all Oracle Drivers of version 12.2 or later i
       (ADDRESS = (PROTOCOL = TCP)(HOST=secondary-scan)(PORT=1521)))
    (CONNECT_DATA=(SERVICE_NAME = gold-cloud))
     ````    
-This is showing how a RAC and Data Guard environment would be specified. The assumption is that both the PRIMARY and SECONDARY sites are clustered environments, hence specifying a SCAN ADDRESS for each one.
-Oracle recommends the connection string configuration for successfully connecting at failover, switchover, fallback and basic startup. Set RETRY_COUNT, RETRY_DELAY, CONNECT_TIMEOUT and TRANSPORT_CONNECT_TIMEOUT parameters in the tnsnames.ora file or in the URL to allow connection requests to wait for service availability and connect successfully. Use values that allow for your RAC and Data Guard failover times.
+    This is showing how a RAC and Data Guard environment would be specified. The assumption is that both the PRIMARY and SECONDARY sites are clustered environments, hence specifying a SCAN ADDRESS for each one.
 
-Update your tnsnames.ora file to specify a configuration similar to that above. This connect string will be used in later labs
+    Oracle recommends the connection string configuration for successfully connecting at failover, switchover, fallback and basic startup. Set RETRY_COUNT, RETRY_DELAY, CONNECT_TIMEOUT and TRANSPORT_CONNECT_TIMEOUT parameters in the tnsnames.ora file or in the URL to allow connection requests to wait for service availability and connect successfully. Use values that allow for your RAC and Data Guard failover times.
+
+8. Update your tnsnames.ora file to specify a configuration similar to that above. This connect string will be used in later labs
 
     ````
     RECSRV=(DESCRIPTION =
@@ -412,13 +411,14 @@ Update your tnsnames.ora file to specify a configuration similar to that above. 
       (ADDRESS = (PROTOCOL = TCP)(HOST=racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)(PORT=1521)))
    (CONNECT_DATA=(SERVICE_NAME = testy.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)))
     ````
-Verify you can connect using this alias.
+9. Verify you can connect using this alias.
 
+You may now *proceed to the next lab*.  
 
 ## Acknowledgements
 * **Authors** - Troy Anthony, Anil Nair
-* **Contributors** -
-* **Last Updated By/Date** - Troy Anthony, Database Product Management, August 2020
+* **Contributors** - Kay Malcolm
+* **Last Updated By/Date** - Kay Malcolm, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
