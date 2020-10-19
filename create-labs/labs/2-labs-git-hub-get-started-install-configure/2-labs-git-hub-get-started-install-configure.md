@@ -15,7 +15,7 @@ In this lab, you will learn how to create a GitHub Account and associate it with
 * Familiarity with HTML is helpful.
 
 ## **STEP 1:** Download and Install the latest version of Git (Optional Step)
-**Note**: For UA Developers, Oracle recommends the usage of the GitHub Desktop client because of its simple and user friendly user interface, and it is much easier than using the Git command line. Therefore, this is an optional step.
+  **Note**: For UA Developers, Oracle recommends the usage of the GitHub Desktop client because of its simple and user friendly user interface, and it is much easier than using the Git command line. Therefore, this is an optional step.
 To install Git:
 1. Install Git for your operating system from the [Git download site] (https://git-scm.com/downloads).
 2. Click the required option under **Downloads** (**Windows** in this example) and save the installer file.
@@ -50,21 +50,19 @@ You must request membership to the Oracle GitHub Organization (OGHO). After your
 
 ## **STEP 4:** Publicize your Membership
 1. In the top right corner of [GitHub Profile Settings](https://github.com/settings/profile), click your profile photo, then click **Your profile**.
-  ![](./images/get-started-profile1.png " ")
+  ![](./images/git-get-started-profile.png " ")
 
 2. On the left side of your profile page, under **Personal Settings**, click **Organizations** to display the **Organizations** page and then click the icon for your organization.
-![](./images/get-started-profile2.png " ")
+    [](./images/git-get-started-profile-2.png " ")
 
 3. Under your organization name, click **People**.
-4. Locate your username in the list of members. If the list is large, you can search for your username in the search box.
+4. Locate your username in the list of members. If the list is large, then you can search for your username in the search box.
 5. In the menu to the right of your username, choose **Public** as the new visibility option:
-
-  ![](./images/get-started-profile-public.png " ")
+    ![](./images/get-started-profile-public.png " ")
 
 6. Send an email to [github_info_ww_grp](github_info_ww_grp@oracle.com) that you have made your membership public. Now you are an official member of the main Oracle Organization on GitHub (OGHO).
 
   **Note**: If you don't make your membership public, then you will be removed from the organization within 30-days of the initial request to be added.
-
 
 ## **STEP 5:** Install GitHub Desktop
 The GitHub Desktop application is a UI client for Windows and Mac that simplifies the complex set of GitHub command line arguments. GitHub Desktop is a fast and easy way to contribute to projects and it simplifies your development workflow. It is much easier than using Git command line.
@@ -77,7 +75,9 @@ To setup the GitHub Development Environment and install GitHub Desktop:
 
   ![](./images/get-started-git-hub-desktop.png " ")
 
-3. Log in to GitHub Desktop using your GitHub Account.
+3. Open GitHub Desktop, click **File > Options > Sign in**, enter your GitHub **Username** or **email address**, **Password**, and then click **Sign in**.
+  You will receive an authentication code to your cell phone. Enter this code in the **Authentication code** field in the **Sign in** dialog box.
+  **Note**: The authentication code is valid only for a few seconds.
 
     ![](./images/git-hub-desktop-login-screen.png " ")
 
