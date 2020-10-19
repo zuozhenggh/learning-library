@@ -16,6 +16,7 @@ In this lab, you will learn how to create a GitHub Account and associate it with
 
 ## **STEP 1:** Download and Install the latest version of Git (Optional Step)
   **Note**: For UA Developers, Oracle recommends the usage of the GitHub Desktop client because of its simple and user friendly user interface, and it is much easier than using the Git command line. Therefore, this is an optional step.
+  
 To install Git:
 1. Install Git for your operating system from the [Git download site] (https://git-scm.com/downloads).
 2. Click the required option under **Downloads** (**Windows** in this example) and save the installer file.

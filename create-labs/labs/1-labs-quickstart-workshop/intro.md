@@ -27,7 +27,7 @@ through a unique URL.
   **Note**: The term "learning-library" is NOT the same as Oracle Learning Library (OLL) used formerly in the OBE world. The Oracle Learning Library (OLL) is an online resource for content about Oracle products [https://apexapps.oracle.com/pls/apex/f?p=44785:1](https://apexapps.oracle.com/pls/apex/f?p=44785:1), whereas "learning-library" is the GitHub repository that is accessed through a unique url: [https://github.com/oracle/learning-library](https://github.com/oracle/learning-library).
 
 ## GitHub Workflow
-The following flow chart shows the process that your need to follow to set up the environment for developing labs and workshops.
+The following flow chart shows the process that your need to follow to set up the environment for developing labs and workshops:
 
 ![](./images/git-hub-workflow-flow-chart.png " ")
 
