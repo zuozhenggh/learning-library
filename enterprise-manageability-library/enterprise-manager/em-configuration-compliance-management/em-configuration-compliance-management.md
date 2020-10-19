@@ -1,6 +1,6 @@
 # Database Configuration and Compliance Management
 ## Introduction
-The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator.
+The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator.
 
 *Estimated Lab Time*: 60 minutes
 
@@ -29,10 +29,10 @@ e.g: https://111.888.111.888:7803/em
 | 1                                                         | Inventory & Usage details                                               | 10 minutes   | IT Manager wants to get an inventory of all existing databases managed by Enterprise Manager including different versions of databases, number of instances deployed over a period of time | Reduce number of different configuration sets and increase standardization across the data center.                  |
 | 2                                                         | One-time database comparison                                            | 10 minutes   | Compare latest reference configuration to one or more targets to determine the configuration differences                                                                                   | Validate the configuration of new database provisioned aligns with IT configuration policy                          |
 | 3                                                         | Database configuration drift management                                 | 20 minutes   | Compare latest or saved target configuration to one or more targets.                                                                                                                       | Monitor databases in your organization for any configuration drift, remediate to align with reference configuration |
-| 4                                                         | Database security compliance using custom compliance standard | 10 minutes   | Database security compliance for Oracle Database 12c target                                                                                      | Monitor security compliance for database targets from one customized dashboard.                                 |
-| 5                                                         | Host security compliance using custom compliance standard | 10 minutes   | Host security compliance                                                                                       | Monitor security compliance for host targets from one customized dashboard.                                 |
+| 4                                                         | Database and host security compliance using custom compliance framework | 20 minutes   | Aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets                                                                                      | Monitor security compliance for heterogenous targets from one customized dashboard.                                 |
 
 ## **Step 0:** Running your Workload
+
 ### Login to OMS Console
 Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
@@ -50,11 +50,11 @@ All the items in this step are read-only, primary goal is to learn about invento
 
 1.  Log into your Enterprise Manager as indicated in the Prerequisites step if not already done.
 
-2.  From the Enterprise menu, select Configuration, then select Inventory and  Usage Details
+2.  From the Enterprise menu, select Configuration, then select Inventory and  Usage Details
 
   ![](images/0e4c2e20dec851fcdf23fd2e92bdee7a.png " ")
 
-3.  In the ‘Show’ filter menu, select **Databases** to see all database instances managed by Enterprise Manager
+3.  In the ‘Show’ filter menu, select **Databases** to see all database instances managed by Enterprise Manager
 
   ![](images/cd409c11afa638eb7a1ab8f7cbc4f015.png " ")
 
@@ -91,53 +91,49 @@ In this step, you will compare two database targets to determine configuration d
 
 1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
-2.  From the Enterprise menu, select Configuration, then select “Configuration & Drift Management”
+2.  Navigate to ***Enterprise >> Configuration >> Comparison & Drift Management***
 
   ![](images/37238ad74bd47f814d428587fb1c6113.png " ")
 
-3.  Review the different types of comparisons supported by mouse-over on the info icon.
+3.  Review the different types of comparisons supported. Select “***Create  Comparison***” under One-Time Comparison to define one-time comparison
 
-  ![](images/Comparison-n-Drift-Management.png " ")
+  ![](images/2f5e4a38007bb1c73d2910412d992b96.png " ")
 
-4.	Select “Create Comparison” tab on the left side of the dashboard page. Click ‘Create Comparison’
-
-  ![](images/Create-Comparison.png " ")
-
-5.  Choose the reference target that you want other targets to be compared with.
+4.  Choose the reference target that you want other targets to be compared with.
 
   ![](images/67ae37025024fc58b2294a0ab5e76191.png " ")
 
-6.  Identify the reference target to compare other targets. To begin with, filter ‘Target Type’ to Database Instance
+5.  Identify the reference target to compare other targets. To begin with, filter ‘Target Type’ to Database Instance
 
   ![](images/0b8231131420f895fa28a9eda5adb63c.png " ")
 
   ![](images/ca8b1d0f62b13c9d18bce9d9a2fbe41f.png " ")
 
-7.  Select emrep.us.oracle.com as reference target
+6.  Select emrep.us.oracle.com as reference target
 
   ![](images/a9eb9557d92b44b49769db5703014f98.png " ")
 
-8.  Choose Database Instance Template for Comparison Template
+7.  Choose Database Instance Template for Comparison Template
 
   ![](images/3ee284fe8bcfb393489d04a18e21719a.png " ")
 
-9.  Provide a name for Comparison
+8.  Provide a name for Comparison
 
   ![](images/684bb410e1d774de4eeb8e85f83992b2.png " ")
 
-10.  Add targets to be compared
+9.  Add targets to be compared
 
   ![](images/684bb410e1d774de4eeb8e85f83992b2.png " ")
 
-11. Choose finance.subnet.vcn.oraclevcn.com target to compare with reference target
+10. Choose finance.subnet.vcn.oraclevcn.com target to compare with reference target
 
   ![](images/74b94658bae8dcf82b789f3913ff708f.png " ")
 
-12. Click Submit. Comparison of the selected targets happens and below are the results
+11. Click Submit. Comparison of the selected targets happens and below are the results
 
   ![](images/7d1ae7e5e1825760327a60ca6d5e47b0.png " ")
 
-13. Filter configurations items to review only Initialization Parameters
+12. Filter configurations items to review only Initialization Parameters
 
   ![](images/a790e239f5134908f99d8d95102aa47c.png " ")
 
@@ -149,17 +145,17 @@ Under the target compared column, you will see few icons. The icons that appear 
 - A red box with 1 (left only) means that the comparison did not find a matching item to compare, this means 2nd target doesn’t have property configured to compare
 - A red box 2 (right only) means that the comparison did not find a matching item to compare to the second configuration
 
-14. Now, let’s go to Comparison and Drift Management dashboard page for further analysis of results
+13. Now, let’s go to Comparison and Drift Management dashboard page for further analysis of results
 
   ![](images/7b1f049a9f48cd24033a0695ef8b831f.png " ")
 
-15. In the dashboard page, donut chart for Comparison Overview dashlet gives you the summary result. Click on the donut chart to analyze one-time comparison result details.
+14. In the dashboard page, there are few tabs on the left side of the screen. One of the tab is a page for one-time comparison results
 
-  ![](images/One-time-comparison-results-summary.png " ")
+  ![](images/6fd24a9cc9f980bd16eef6d9819badbc.png " ")
 
 15. Click on One-Time Comparison Results tab to review all corresponding comparison definitions
 
-  ![](images/One-time-comparison-results-details.png " ")
+  ![](images/a96aeaccaa80489f6a038e8e80e14a56.png " ")
 
 You should see the comparison definition you created in this page.
 
@@ -183,11 +179,11 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
 1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet.
 
-2.  Navigate to ***Enterprise >> Configuration >> Comparison & Drift Management***. Review the different types of comparisons supported.
+2.  Navigate to ***Enterprise >> Configuration >> Comparison & Drift Management***. Review the different types of comparisons supported.
 
   ![](images/133fbb62c871d1ccb0dc8b1f794d4544.png " ")
 
-  ![](images/Comparison-n-Drift-Management.png " ")
+  ![](images/b2083f388a80e86887ca1b4172099834.png " ")
 
 3.  Go to Templates library on the left panel and look for Database Instance Template as shown below.
 
@@ -217,9 +213,9 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
   ![](images/8806e0150c8b23ad28107645a68f902a.png " ")
 
-9.  Go to Drift Results tab and create a drift definition
+9.  Go to Overview tab to create Drift Management definition
 
-  ![](images/Create-drift-definiton.png " ")
+  ![](images/69773287e3949b98c6f396a9bba33fa7.png " ")
 
 10. Click on Create Definition under Drift Management.
   - Choose Database Instance as the Target Type
@@ -235,7 +231,7 @@ In this workshop, you will learn about continuous configuration drift monitoring
 12. Under Source Configuration, do the following
 
   -  Select ‘Latest Configuration’
-  -  Click search to choose Source Target
+  -  Click search to choose Source Target  
 
   ![](images/bd6ec634cc1a0ff215b5344fcfdbfc07.png " ")
 
@@ -267,13 +263,13 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
   ![](images/ce95e718210e8754fbb7e43e1d38b224.png " ")
 
-20. Once you select Yes in the previous step, drift monitoring is in progress. Go to Dashboard page. After a minute, refresh the page to see the drift monitoring completed. You should see a new or updated donut chart under ‘Drifted Overview’ dashlet.
+20. Once you select Yes in the previous step, you will come to main dashboard page. Drift monitoring has already been initiated. After a minute, refresh the page to see the drift monitoring completed. You should see an update in the ‘Drifted Targets’ widget in the main dashboard
 
-  ![](images/Drift-results-summary.png " ")
+  ![](images/50df13b44d9331cf225a8f25d0e332c1.png " ")
 
 21. Click on Drift Results tab on the left panel (2nd tab from the top). This page will show results for all drift definitions managed by this instance of Enterprise Manager. Identify the drift definition you created for further analysis of configuration drift results.
 
-  ![](images/Drift-results-details.png " ")
+  ![](images/f53f930cf1d3c26a0835a549dcb2d6e0.png " ")
 
 22. Review the drift details. Click on the Drift Definition (ECM003-Drift-Demo – Drift) for detailed analysis of configuration drift
 
@@ -300,15 +296,21 @@ Under the target compared column, you will see few icons. The icons that appear 
 
 In this step, you learned about continuous configuration drift monitoring of database targets against a reference target for initialization parameters using customized configuration monitoring template. This can be customized to align with your policies. By establishing a configuration drift definition, you can continuously monitor any configuration changes that can be potentially secure risk and remediate the drift immediately.
 
-## **Step 4:** Database Security Compliance
+## **Step 4:** Database and Host Security Compliance
 
 ### Overview
 
 Compliance Management provides the ability to evaluate the compliance of targets and systems as they relate to business best practices for configuration, security, and storage.
 
-In this workshop, you will setup a compliance standard for monitoring security compliance of Oracle Database target and analyze the compliance score and violations
+In this workshop, you will define and manage compliance framework, two different compliance standards, and corresponding compliance standard rules for managing security compliance of database and host targets.
 
 Terminology Used in this Compliance specific workshop
+
+#### Compliance Framework
+
+A compliance framework is an organized list of control areas that need to be followed for a company to stay in compliance in their industry. Enterprise Manager uses compliance frameworks as a pyramid structure to map standards and rules to the control areas they affect. Compliance frameworks are hierarchical to allow for direct representation of these industry frameworks.
+
+A single framework control area maps to one or more compliance standards. The outcome of these compliance standard evaluations results in a score for the given framework area.
 
 #### Compliance Standard
 
@@ -324,7 +326,7 @@ A compliance standard rule is a specific test to determine if a configuration da
 
 1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet.
 
-2.  From the Enterprise menu,select Compliance, then select Library
+2.  From the Enterprise menu,select Compliance, then select Library
 
   ![](images/f0cb7078dc7b26619211bd41d5059895.png " ")
 
@@ -390,101 +392,141 @@ Click Add to add targets for association with this compliance standard
 
   ![](images/c227c249d1d7d2011963b5bcc4787769.png " ")
 
-  ![](images/Database-compliance-dashboard.png " ")
+18. Highlight the standard that you created in the previous steps to review the overall compliance score, target evaluations and violation details
 
-18. Under Compliance Summary panel at the bottom, explore various tabs to get an understanding of Frameworks, Standards and Targets level compliance. For any given standard, if there are Critical, Warning or Minor Warnings, click on the violation number to see more details of the violation.
+  ![](images/b30d166f8e80094721414302dc094979.png " ")
 
-![](images/Database-compliance-violation-details.png " ")
+19. Click on the Compliance Standard name to see the details of the result
 
-For each violation, you will see details like last evaluation date, rule name violated and rationale for the violation.
+  ![](images/e9e704632617015555c81562eb1dc772.png " ")
 
-19. Highlight and click on the standard that you created in the previous steps to review the overall compliance score, target evaluations and violation details
+20. Explore different tabs in this results page. Result By Compliance Standard Rule tab gives you more details of each compliance rule executed on this selected target
 
-  ![](images/Database-compliance-summary.png " ")
+  ![](images/6630856a69efd3ee50512c8e15c171d1.png " ")
 
-  All these will give you a security posture of database target
+All these will give you a security posture of database target
 
+21. Now, let’s go repeat these steps for host target. Go to Compliance Library page
 
-  ## **Step 5:** Host Security Compliance
+  ![](images/8a928ec977207423de129f1b39ea0d94.png " ")
 
-  ### Overview
-
-  Compliance Management provides the ability to evaluate the compliance of targets and systems as they relate to business best practices for configuration, security, and storage.
-
-  In this workshop, you will setup a compliance standard for monitoring security compliance of Oracle Linux host target and analyze the compliance score and violations
-
-  Terminology Used in this Compliance specific workshop
-
-  #### Compliance Standard
-
-  A compliance standard is a collection of checks or rules that follow broadly accepted best practices. It is the Cloud Control representation of a compliance control that must be tested against some set of IT infrastructure to determine if the control is being followed. This ensures that IT infrastructure, applications, business services and processes are organized, configured, managed, and monitored properly. A compliance standard evaluation can provide information related to platform compatibility, known issues affecting other customers with similar configurations, security vulnerabilities, patch recommendations, and more. A compliance standard is also used to define where to perform real-time change monitoring.
-
-  A compliance standard is mapped to one or more compliance standard rules and is associated to one or more targets which should be evaluated.
-
-  #### Compliance Standard Rule
-
-  A compliance standard rule is a specific test to determine if a configuration data change affects compliance. A compliance standard rule is mapped to one or more compliance standards
-
-  ### Execution
-
-  1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet.
-
-  2.  From the Enterprise menu, select Compliance, then select Library
-
-    ![](images/Compliance-library-menu.png " ")
-
-3. Search for Secure Configuration for Host and select that standard
+22. Search for Secure Configuration for Host and select that standard
 
   ![](images/90521cbcf04cce5a7c62c2f7e82bf08b.png " ")
 
-4. Create a copy of this host standard by clicking on ‘Create Like’. Give a unique name to the new standard you are creating to imply this is a new host standard. Also change the Author name per your preference
+23. Create a copy of this host standard by clicking on ‘Create Like’. Give a unique name to the new standard you are creating to imply this is a new host standard. Also change the Author name per your preference
 
   ![](images/5ac00c32f35425ddbb5185748e0da5c1.png " ")
 
-5. Review the various compliance rules for Basic Security standard grouped based on the configuration area. Click Save
+24. Review the various compliance rules for Basic Security standard grouped based on the configuration area. Click Save
 
   ![](images/eb67f99226f08715d5e5bf45361d00af.png " ")
 
-6. A new custom host standard is created. Pop-up confirms the successful creation of this standards
+25. A new custom host standard is created. Pop-up confirms the successful creation of this standards
 
   ![](images/1cf2a908e466c167ad930e3b820b4c5b.png " ")
 
-7. Select the newly created custom host standard
+26. Select the newly created custom host standard
 
   ![](images/65113057e1aceb89a1c3469735413874.png " ")
 
-8. Click on “Associate Targets” to associate a host target for this newly created custom standard
+27. Click on “Associate Targets” to associate a host target for this newly created custom standard
 
   ![](images/764fe3a6ea3c27f3c19a6472a678a960.png " ")
 
-9. When Associate Target option is chosen, you will be taken to a page to add database targets
+28. When Associate Target option is chosen, you will be taken to a page to add database targets
 
   ![](images/d292fa6f56ed092b61398c2abc864e94.png " ")
 
-10. Choose emcc.marketplace.com target to check the compliance security posture
+29. Choose emcc.marketplace.com target to check the compliance security posture
 
   ![](images/2c75dfc83689f5988b52ae1dc841eb00.png " ")
 
-11. The list of targets chosen will show up in the target association page as shown below
+30. The list of targets chosen will show up in the target association page as shown below
 
   ![](images/d798f57aea9022efa472466690ce2152.png " ")    
 
-12. Click OK and a pop-up shows up to confirm association. Click Yes to save the association which initiates compliance check on this target by executing all the compliance rules associated with this compliance standard
+31. Click OK and a pop-up shows up to confirm association. Click Yes to save the association which initiates compliance check on this target by executing all the compliance rules associated with this compliance standard
 
   ![](images/a03a851c889aab744c8895fada74fca3.png " ")    
 
-13. Go to Compliance Results page to check the compliance posture
+32. Go to Compliance Results page to check the compliance posture
 
   ![](images/d5c600c49dcac9b010d29b9788fa556d.png " ")
 
-  ![](images/Host-compliance-dashboard.png " ")
+33. Highlight the standard that you created in the previous steps to review the overall compliance score, target evaluations and violation details
 
-14. Under Compliance Summary panel at the bottom, explore various tabs to get an understanding of Frameworks, Standards and Targets level compliance. For any given standard, if there are Critical, Warning or Minor Warnings, click on the violation number to see more details of the violation.
+  ![](images/e69faecf29da41db8cbc94f18ca37fe5.png " ")
 
-  ![](images/Host-compliance-violation-details.png " ")
+34. Click on the Compliance Standard name to see the details of the result
 
-All these will give you a security posture of host target
+  ![](images/1e87046f07a787488fa2b15058854563.png " ")
 
+35. Now, let’s create Compliance Framework to include the two standards you created so far. Objective here is to look at aggregated compliance score of both database and host at framework level. Go to Compliance Library page
+
+  ![](images/e340f410d134688663c985c8f582bd27.png " ")
+
+36. Go to Compliance Framework tab
+
+  ![](images/e175c37661cf28b335e4bec317c461b2.png " ")
+
+37. Create a new framework. Click Create, provide a unique name for the framework and author
+
+  ![](images/3fa0c8b11aad2266faddbcdbb1f224e6.png " ")    
+
+38. Click Continue. This will take you to a new page so that compliance standards can be added
+
+  ![](images/7a91fe3c117e4011401f81ac8cc7a52e.png " ")
+
+39. With right-mouse button on the framework name in the left panel, you will see a menu list for adding standards.
+
+  ![](images/2468ca941d17cacc23d7bce5810d7e10.png " ")
+
+40. Click Add Standard that will pop-up a window to select the standards to add
+
+  ![](images/75775a99c565214542a8940d30819d11.png " ")
+
+41. Filter the standards by choosing Database Instance in “Applicable To” menu. Choose the database compliance standard you created in the previous steps
+
+  ![](images/25e1f78e471ea906fff67b5737cb28bc.png " ")
+
+42. Repeat the above steps for adding
+
+  ![](images/e1d1f0ee030f384e30b10220583113ad.png " ")
+
+  ![](images/bbd99e3a29d171104127c80af5229114.png " ")
+
+43. Now both database and host custom compliance standards have been added to the new custom compliance framework as shown below
+
+  ![](images/744f3f8412ae9ac692fa878fdcf15fd6.png " ")
+
+44. Click Save. A pop-up confirms the successful creation of custom framework
+
+  ![](images/dbb1791108b4cf36102470ff53f04709.png " ")
+
+45. Since two compliance standards are associated to this new framework, you can review the compliance results at framework level. Go to compliance results page
+
+  ![](images/f697ca1790163653dea6ae04ba99b912.png " ")
+
+46. In the results page, go to Compliance Framework tab to see the framework you created. You see an aggregated compliance score at framework level. This is an aggregation of both database and host standard you added to this framework.
+
+  ![](images/914692ccab1d8d4a3aa636e937dd3989.png " ")
+
+47. Click on the framework name to see details of the results. You can see the results at target level
+
+  ![](images/86b6af426fcb18ba52d217f84ac99589.png " ")
+
+48. You can also look at results at compliance standard level by choosing the standard tab. You will be able to see compliance score for each standard
+
+  ![](images/4caed891e78778403a46b0dd6eff9d54.png " ")
+
+49. You can also step into standard level score from the left panel as shown below for database standard
+
+  ![](images/7ce67aa61ceb1570b24e1d1ee75d207b.png " ")
+
+50. And below is the compliance score and details for the host standard
+
+  ![](images/51156affe21b950ea871f65e68498f4b.png " ")
 
 ### Summary
 
@@ -506,7 +548,5 @@ Thank You!
 - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
