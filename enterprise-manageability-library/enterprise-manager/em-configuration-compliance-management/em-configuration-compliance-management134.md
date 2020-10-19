@@ -78,9 +78,9 @@ All the items in this step are read-only, primary goal is to learn about invento
   - OS specific details like OS version, platform, etc.
   - Most importantly, LOB/Department information
 
-Details table gives more information of each Database instance for you to get a good understanding of number of database targets deployed on a given host with OS version. If your organization uses properties like Lifecycle, Line of Business or Department, then you will be able to determine the number of targets deployed for a given business unit
+    Details table gives more information of each Database instance for you to get a good understanding of number of database targets deployed on a given host with OS version. If your organization uses properties like Lifecycle, Line of Business or Department, then you will be able to determine the number of targets deployed for a given business unit
 
-Explore these features to get a good handle on Inventory and Usage Details
+    Explore these features to get a good handle on Inventory and Usage Details
 
 7.  Export inventory details to excel for reports. These inventory details can be exported to an excel file for offline analysis or sharing the report to management. With the excel report, you can filter based on the properties you are using to show department or line of business specific assets allocation and usage
 
@@ -146,13 +146,14 @@ In this step, you will compare two database targets to determine configuration d
 
   ![](images/ecm2_one_time_database_comparison_results2.png " ")
 
-You can see the differences in the Initialization Parameters between the two targets.
+  You can see the differences in the Initialization Parameters between the two targets.
 
-Under the target compared column, you will see few icons. The icons that appear in the view are mostly intuitive:
-- Equal sign means parameter properties are same across the reference and target compared
-- Not equal sign indicates parameter properties are different across the reference and target compared
-- A red box with 1 (left only) means that the comparison did not find a matching item to compare, this means 2nd target doesn’t have property configured to compare
-- A red box 2 (right only) means that the comparison did not find a matching item to compare to the second configuration
+  Under the target compared column, you will see few icons. The icons that appear in the view are mostly intuitive:
+  - Equal sign means parameter properties are same across the reference and target compared
+  - Not equal sign indicates parameter properties are different across the reference and target compared
+  - A red box with 1 (left only) means that the comparison did not find a matching item to compare, this means 2nd target doesn’t have property configured to compare
+  - A red box 2 (right only) means that the comparison did not find a matching item to compare to the second configuration
+
 
 14. Now, let’s go to Comparison and Drift Management dashboard page for further analysis of results
 
@@ -166,7 +167,7 @@ Under the target compared column, you will see few icons. The icons that appear 
 
   ![](images/ecm2_one_time_database_comparison_dashboard3.png " ")
 
-You should see the comparison definition you created in this page.
+  You should see the comparison definition you created in this page.
 
 16. Export the comparison results into an excel report for offline analysis. In the One-Time Comparison Results page, highlight the definition and choose Export Results. You can choose the specific results to export.
 
@@ -216,7 +217,7 @@ In this workshop, you will learn about continuous configuration drift monitoring
   - Initialization Parameters under Instance Information configuration item
   - Click Save
 
-  ![](images/ecm3_drift_comparison_template5.png " ")
+      ![](images/ecm3_drift_comparison_template5.png " ")
 
 8.  A new customized configuration drift monitoring template is created. This template can be used for drift monitoring
 
@@ -231,7 +232,7 @@ In this workshop, you will learn about continuous configuration drift monitoring
   - Select the template created in the previous step
   - Click OK
 
-  ![](images/ecm3_create_drift_definiton2.png " ")
+      ![](images/ecm3_create_drift_definiton2.png " ")
 
 11. In the drift definition details page, provide a unique name for the drift definition
 
@@ -242,7 +243,7 @@ In this workshop, you will learn about continuous configuration drift monitoring
   -  Select ‘Latest Configuration’
   -  Click search to choose Source Target  
 
-  ![](images/ecm3_create_drift_definiton4.png " ")
+      ![](images/ecm3_create_drift_definiton4.png " ")
 
 13. Choose emrep.us.oracle.com as your source target. Click on Select
 
@@ -284,14 +285,15 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
   ![](images/ecm3_drift_results_details2.png " ")
 
-You can see the differences in the Initialization Parameters between the two targets.
+  You can see the differences in the Initialization Parameters between the two targets.
 
-Under the target compared column, you will see few icons. The icons that appear in the view are mostly intuitive:
+  Under the target compared column, you will see few icons. The icons that appear in the view are mostly intuitive:
 
-- Equal sign means parameter properties are same across the reference and target compared
-- Not equal sign indicates parameter properties are different across the reference and target compared
-- A red box with 1 (left only) means that the comparison did not find a matching item to compare, this means 2nd target doesn’t have property configured to compare
-- A red box 2 (right only) means that the comparison did not find a matching item to compare to the second configuration
+  - Equal sign means parameter properties are same across the reference and target compared
+  - Not equal sign indicates parameter properties are different across the reference and target compared
+  - A red box with 1 (left only) means that the comparison did not find a matching item to compare, this means 2nd target doesn’t have property configured to compare
+  - A red box 2 (right only) means that the comparison did not find a matching item to compare to the second configuration
+
 
 23. Export the comparison results into an excel report for offline analysis. In the Drift Results page, highlight the definition and choose Export Results. You can choose the specific results to export.
 
@@ -367,7 +369,7 @@ A compliance standard rule is a specific test to determine if a configuration da
 
 11. When Associate Target option is chosen, you will be taken to a page to add database targets.
 
-Click Add to add targets for association with this compliance standard
+  Click Add to add targets for association with this compliance standard
 
   ![](images/ecm4_db_compliance_library9.png " ")
 
@@ -399,9 +401,9 @@ Click Add to add targets for association with this compliance standard
 
 18. Under Compliance Summary panel at the bottom, explore various tabs to get an understanding of Frameworks, Standards and Targets level compliance. For any given standard, if there are Critical, Warning or Minor Warnings, click on the violation number to see more details of the violation.
 
-![](images/ecm4_db_compliance_results3.png " ")
+  ![](images/ecm4_db_compliance_results3.png " ")
 
-For each violation, you will see details like last evaluation date, rule name violated and rationale for the violation.
+  For each violation, you will see details like last evaluation date, rule name violated and rationale for the violation.
 
 19. Highlight and click on the standard that you created in the previous steps to review the overall compliance score, target evaluations and violation details
 
@@ -488,7 +490,7 @@ For each violation, you will see details like last evaluation date, rule name vi
 
   ![](images/ecm5_host_compliance_results3.png " ")
 
-All these will give you a security posture of host target
+  All these will give you a security posture of host target
 
 
 ### Summary
@@ -496,7 +498,7 @@ All these will give you a security posture of host target
 With this step, you got a hands-on experience in creating a custom framework to monitor the security compliance of heterogeneous targets (Database and Host, this example). This will help you assess overall security compliance of all
 Enterprise Manager managed targets from one aggregated view. And if required, you can drill down into each standard to assess details of target specific security compliance
 
-This completes the Lab
+This completes the Lab.
 
 Thank You!
 
