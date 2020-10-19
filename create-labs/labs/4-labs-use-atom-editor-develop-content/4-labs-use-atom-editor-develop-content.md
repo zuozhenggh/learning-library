@@ -1,16 +1,16 @@
-# Use Atom Editor to Develop Content and Host on Atom Live Server
+# Use Atom Editor to Develop Markdown Content
 
 ## Introduction
 
-You can use your preferred Editor to author and edit your Markdown (.md) content for rendering the Workshop output. Oracle recommends the Atom Editor and the Atom Live Server.
+You can use your preferred editor to author and edit your Markdown (.md) content for rendering the Workshop output. Oracle recommends the Atom editor and the Atom Live Server.
 
 ### Objectives
 
-This lab suggests alternatives to develop and host your content, and if you are already using something that works for you, no need to change it. You can use any combination of tools that make sense for you.
+In this lab, you will learn about the tools that are available to develop and host your content. If you are using different tools that works for you, then there is no need to replace those tools. For example, if you are already developing your Markdown content using MS Visual Studio Code, then there is no need to switch to Atom.
 
 ### What Do You Need?
 * An IDE, such as Atom.
-* A local web server such as atom-live-server, a plugin for Atom.io.
+* A local web server such as atom-live-server, a plugin for `Atom.io`.
 
 **Note:** Oracle recommends the UA Developers to use Atom. Visual Studio Code is a Microsoft "open source" product. The license agreement is not a standard MIT or General Public License (GPL) agreement and therefore not approved for use at Oracle.
 
@@ -20,20 +20,20 @@ This lab suggests alternatives to develop and host your content, and if you are 
 
 To install Atom:
 1. Go to the [Atom](https://github.com/atom/atom/releases/tag/v1.51.0) URL.
-2. Click the zip file file for your operating system, save and extract the zip file.
+2. Click the zip file  for your operating system, save and extract the zip file.
   ![](./images/use-atom-editor-download.png " ")
 3. From the extracted files, click `atom.exe` to launch Atom.
 
-## **STEP 2:** Install the Atom-Live-Server Plugin
+## **STEP 2:** Install the atom-live-server Plugin
 You must NOT be connected to Oracle's network or VPN while installing the Atom-Live-Server package.
 
-To install the Atom Live Server:
-1. In the Atom Editor, click **Help**, and then select **Welcome Guide**.
+To install the **atom-live-server**:
+1. In the Atom editor, click **Help**, and then select **Welcome Guide**.
 2. In the **Welcome Guide** screen, click **Install a Package**, and then click **Open Installer** to display the **Install Packages** window.
 
   ![](./images/use-atom-editor-welcome-install-package.png " ")
 
-3. Enter `atom-live-server`, and then click **Install**.
+3. Enter **atom-live-server**, and then click **Install**.
 
   ![](./images/use-atom-editor-welcome-install-package-atom-live-server.png " ")
 
@@ -43,7 +43,7 @@ The atom-live-server plugin is added to the **Packages** menu.
   ![](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
 
 ## **STEP 3:** Create your Lab and Workshop Content
-You can use any of the existing project folder in the **\learning-library** folder as a template to create a workshop for your project. In this example, let's use the **learning-library\data-management-library\big-data\bds** project folder as a template to create a new workshop and labs.
+You can use any of the existing project folder in the **learning-library** folder as a template to create a workshop for your project. In this example, let's use the **learning-library\data-management-library\big-data\bds** project folder as a template to create a new workshop and labs.
 
 To create your lab and workshop content:
 1. Open your cloned repository using Windows Explorer.
@@ -66,17 +66,17 @@ To create your lab and workshop content:
     ![](./images/use-atom-editor-readme-update.png " ")
 11. Similarly, expand the lab folder, for example, **2-labs-git-hug-get-started-install-configure** and edit the `.md` file as per your requirement. If you want to use any images in your lab, then include them in the images folder.
 
-## **STEP 4:** Preview Your Workshop and Labs Using Atom-Live-Server
+## **STEP 4:** Preview Your Workshop and Labs Using atom-live-server
 
 To preview your output in a browser:
-1. Start the atom-live-server. In the Atom Editor, select **Packages > atom-live-server > Start Server**.
+1. Start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
   ![](./images/use-atom-editor-packages-start-live-server.png " ")
 
-  By default, the atom-live-server opens a browser window that displays the folders inside the **labs** folder.
+  By default, the **atom-live-server** opens a browser window that displays the folders inside the **labs** folder.
 2. Double-click the folder that contains the workshop you want to view. In this example, to display the workshop, double-click the workshop's name, **1-labs-quickstart-workshop**.
   ![](./images/use-atom-editor-open-live-server.png " ")
 
-  The Workshop is displayed along with the labs. The labs contained in this workshop are displayed in the **Contents** menu on the right. You can make content changes in the Atom Editor to the workshop and lab files, save the changes, and the updated workshop and labs are automatically refreshed in the browser window.
+  The Workshop is displayed along with the labs. You can make content changes in the Atom editor to the workshop and lab files, save the changes, and the updated workshop and labs are automatically refreshed in the browser window.
 
   ![](./images/use-atom-editor-workshop-output.png " ")
 

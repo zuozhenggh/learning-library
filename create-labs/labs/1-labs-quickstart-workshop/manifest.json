@@ -19,7 +19,7 @@
       }
       ,
       {
-            "title": "Lab 4: Use Atom Editor to Develop Content and Host on Live Server",
+            "title": "Lab 4: Use Atom Editor to Develop Markdown Content",
             "description": "This lab shows you how to develop your lab (markdown) content using an editor, such as **Atom** and starting the Atom Live Server.",
             "filename": "./../4-labs-use-atom-editor-develop-content/4-labs-use-atom-editor-develop-content.md"
       }
