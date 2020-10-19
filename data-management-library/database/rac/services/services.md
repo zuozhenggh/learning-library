@@ -1,17 +1,17 @@
 # Services
 
 ## Introduction
-
 This lab walks you through the steps to demonstrate many of the capabilities of Oracle Database services.
 
 Estimated Lab Time: 20 Minutes
+
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
 - Lab: Generate SSH Key
 - Lab: Setup DB System
 - Lab: Connected to database
-- Lab: Install S
+- Lab: Install Sample Schema
 
 ### About Oracle Database services
 
@@ -31,13 +31,13 @@ For more information on Oracle Database Services visit http://www.oracle.com/got
 
  [](https://youtu.be/dIMgaujSydQ)
 
-## **Step 1:**  Create a Service
+## **STEP 1:**  Create a Service
 
 **NOTE** For simplicity we will often use the EZConnect syntax to specify connect strings to the database:
-    user\/password@**\/\/hostname\:port\/servicename**
-    EZConnect does not support all service characteristics. A fully specified URL or TNS Connect String is required for Application Continuity and other service characteristics.
 
-1.  Connect to your cluster nodes with Putty or MAC CYGWIN as described earlier. Open a window to each node
+user\/password@**\/\/hostname\:port\/servicename**  EZConnect does not support all service characteristics. A fully specified URL or TNS Connect String is required for Application Continuity and other service characteristics.
+
+1.  Connect to your cluster nodes with Cloudshell, Putty, MAC CYGWIN as described earlier. Open a window to each node
 
     ![](./images/clusterware-1.png " ")
 
@@ -59,13 +59,16 @@ For more information on Oracle Database Services visit http://www.oracle.com/got
     srvctl status service -d aTFdbVm_mel1nk -s svctest
     </copy>
     ````
-will show something similar to    
+4.  The command above will show something similar to:   
     ````
     [oracle@racnode1 ~]$ srvctl status service -d aTFdbVm_mel1nk -s svctest
     Service svctest is running on instance(s) aTFdbVm1
     ````
+5.  Use the lsnrctl utility to list the services.
     ````
+    <copy>
     lsnrctl services
+    </copy>
     ````
 will show similar to:
     ````
@@ -156,7 +159,7 @@ which will show something similar to
     ````
 
 
-## **Step 2:** Service Failover
+## **STEP 2:** Service Failover
 
 1. Cause the service to fail over
 
@@ -266,7 +269,7 @@ Re-examine the v$session information:
 It has not changed.
 The relocate service command will not disconnect active sessions unless a force option (**-force**) is specified. A stop service command will allow a drain timeout to be specified to allow applications to complete their work during the drain interval.
 
-## Step 3 **Connection Load Balancing:**
+## STEP 3 **Connection Load Balancing:**
 This exercise will demonstrate connection load balancing and why it is important to use the SCAN address and the VIPs as integral parts of your connection strategy
 
 1. Create a uniform service, named \"unisrv\", that is **available** on both instances of your RAC database.
