@@ -51,7 +51,6 @@ click **Launch Stack**.
 ![](./images/stack_p2_3.png)
 
 6. Click **Next** to review the configuration.
-<img src="images/stack_p3.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 ![](./images/stack_p3.png)
 
 7. Click **Create**

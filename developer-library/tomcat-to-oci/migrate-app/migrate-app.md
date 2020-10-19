@@ -1,6 +1,6 @@
-# Migrate the Tomcat application
+# Migrate the Tomcat Application
 
-## About This lab
+## Introduction
 
 In this lab, we will migrate the application to the Tomcat Cluster on Oracle Cloud Infrastructure.
 
@@ -14,9 +14,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-*For this lab, you need*
+For this lab, you need
 
-* to have provisioned the Tomcat cluster on OCI
+* To have provisioned the Tomcat cluster on OCI
 
 ## **STEP 1**: Move the application WAR file to the Tomcat cluster on OCI
 
