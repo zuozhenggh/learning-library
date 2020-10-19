@@ -1,20 +1,17 @@
 ﻿# Oracle Unified Auditing
 
 ## Introduction
-This workshop introduces the functionality of Unified Auditing.<br>
+This workshop introduces the functionality of Unified Auditing.
+
 It gives the user an opportunity to learn how to configure this feature to audit the database activity.
 
 - *Version tested in this lab:* Oracle DB 19.8
 - *Estimated Lab Time:* 30 minutes
 
----
 **Note**:
 - Mixed mode auditing is the default auditing in a newly installed database. Mixed mode auditing enables both traditional (that is, the audit facility from releases earlier than release 12c) and the new audit facilities (unified auditing).
 - Mixed mode is intended to introduce unified auditing, so that you can have a feel of how it works and what its nuances and benefits are. Mixed mode enables you to migrate your existing applications and scripts to use unified auditing. Once you have decided to use pure unified auditing, you can relink the oracle binary with the unified audit option turned on and thereby enable it as the one and only audit facility the Oracle database runs. If you decide to revert back to mixed mode, you can.
 - In this environment, we have already migrated this Oracle Database to pure unified auditing mode.
-
----
-<br>
 
 ### Objectives
 - Enable/Disable Unified Auditing on your database
@@ -61,41 +58,32 @@ This lab assumes you have completed:
 
     - We have already set the environment for you in pure Unified Auditing mode, hence you should see that Unified Audit is set to `TRUE`
 
-        ![](./images/ua-001.png)
+        ![](./images/ua-001.png " ")
 
-        ---
-        **Note:** This means our database is in "pure" unified auditing mode and you are no longer utilize the traditional auditing capabilities
-
-        ---
-        <br>
+        **Note**: This means our database is in "pure" unified auditing mode and you are no longer utilize the traditional auditing capabilities
 
     - The 2nd query shows you how many Unified Audit Policies exist and how many audit-related attributes are associated with each policy
 
-        ![](./images/ua-002.png)
+        ![](./images/ua-002.png " ")
 
     - The 3rd query of this script shows you which Unified Audit policies are **enabled**
 
-        ![](./images/ua-003.png)
+        ![](./images/ua-003.png " ")
 
-        ---
-        **Note:** Just because the policy exists in the previous query does not mean it's enabled. It is a two-step process to using a Unified Audit policy:
-        1. create the policy: create audit policy <policy_name> ...
-        2. enable the policy: audit policy <policy_name>
-
-        ---
-        <br>
+        **Note**:
+        
+        - Just because the policy exists in the previous query does not mean it's enabled
+        - It is a two-step process to using a Unified Audit policy:
+            - create the policy: create audit policy <policy_name> ...
+            - enable the policy: audit policy <policy_name>
 
     - The 4th query shows you auditing based on context
 
-        ![](./images/ua-004.png)
+        ![](./images/ua-004.png " ")
 
-        ---
-        **Note:**
+        **Note**:
         - We have one policy called `TICKETINFO` that captures an attribute named `TICKET_ID`
         - This information will be viewable in the `APPLICATION_CONTEXTS` column of the `UNIFIED_AUDIT_TRAIL` view
-
-        ---
-        <br>
 
 4. Display who has the `AUDIT_ADMIN` and `AUDIT_VIEWER` roles
 
@@ -103,7 +91,7 @@ This lab assumes you have completed:
       <copy>./02_has_audit_roles.sh</copy>
       ````
 
-    ![](./images/ua-005.png)
+    ![](./images/ua-005.png " ")
 
 5. Display the existing audit records for the database you connect to (by default, the script will choose `pdb1` as the database to query)
 
@@ -111,8 +99,8 @@ This lab assumes you have completed:
       <copy>./03_query_existing_audit_records.sh</copy>
       ````
 
-    ![](./images/ua-006.png)
-    ![](./images/ua-007.png)
+    ![](./images/ua-006.png " ")
+    ![](./images/ua-007.png " ")
 
 6. Finally, shows some of the details of the `DBMS_AUDIT_MGMT` package
 
@@ -120,15 +108,12 @@ This lab assumes you have completed:
       <copy>./04_dbms_audit_mgmt_settings.sh</copy>
       ````
 
-    ---
-    **Note:**
+    **Note**:
     - The function, `DBMS_AUDIT_MGMT.GET_AUDIT_COMMIT_DELAY`, returns the audit commit delay time as the number of seconds
     - Audit commit delay time is the maximum time that it takes to COMMIT an audit record to the database audit trail
     - If it takes more time to COMMIT an audit record than defined by the audit commit delay time, then a copy of the audit record is written to the operating system (OS) audit trail
 
-    ---
-
-## **Step 2**: Audit Non App Usage
+## **STEP 2**: Audit Non App Usage
 
 In this lab, you will audit who is using the `EMPLOYEESEARCH_PROD` objects outside of the application
 
@@ -138,31 +123,30 @@ In this lab, you will audit who is using the `EMPLOYEESEARCH_PROD` objects outsi
       <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Unified_Auditing/Audit_EmpSearch_Usage</copy>
       ````
 
-2. Identify the connections we trust<br>
-We will generate some activity from the Glassfish application and view the session-related information
+2. Identify the connections we trust. We will generate some activity from the Glassfish application and view the session-related information
 
       ````
       <copy>./01_query_employeesearch_usage.sh</copy>
       ````
 
-    ![](./images/ua-008.png)
+    ![](./images/ua-008.png " ")
 
 3. On your Glassfish App, perform the the following steps:
     
     - Open a web browser window to `http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`
     - Login to the HR Application as `hradmin` with the password `Oracle123`
     
-        ![](./images/ua-009.png)
+        ![](./images/ua-009.png " ")
 
-        ![](./images/ua-010.png)
+        ![](./images/ua-010.png " ")
 
     - Click on **Search Employees**
 
-        ![](./images/ua-011.png)
+        ![](./images/ua-011.png " ")
 
     - Click [**Search**]
 
-        ![](./images/ua-012.png)
+        ![](./images/ua-012.png " ")
 
     - Change some of the criteria and Search again.
     - Repeat 2-3 times to ensure you have enough traffic
@@ -174,7 +158,7 @@ We will generate some activity from the Glassfish application and view the sessi
       <copy>./02_query_employeesearch.sh</copy>
       ````
 
-    ![](./images/ua-013.png)
+    ![](./images/ua-013.png " ")
 
 5. Now, create the Unified Audit Policy
 
@@ -182,13 +166,9 @@ We will generate some activity from the Glassfish application and view the sessi
       <copy>./03_create_audit_policy.sh</copy>
       ````
 
-    ![](./images/ua-014.png)
+    ![](./images/ua-014.png " ")
 
-    ---
-    **Note:** The Unified Audit Policy will capture your machine-related details to create the  `WHEN` clause
-
-    ---
-    <br>
+    **Note**: The Unified Audit Policy will capture your machine-related details to create the  `WHEN` clause
 
 6. After creating the Unified Audit Policy you must enable it!
 
@@ -196,7 +176,7 @@ We will generate some activity from the Glassfish application and view the sessi
       <copy>./04_enable_audit_policy.sh</copy>
       ````
 
-    ![](./images/ua-015.png)
+    ![](./images/ua-015.png " ")
 
 7. Using the Glassfish App, run additional queries to generate traffic and to see if Audit records are generated
 
@@ -204,13 +184,9 @@ We will generate some activity from the Glassfish application and view the sessi
       <copy>./05_query_employeesearch_usage.sh</copy>
       ````
 
-    ![](./images/ua-016.png)
+    ![](./images/ua-016.png " ")
 
-    ---
-    **Note:** They should not be generated based on this Unified Audit Policy because we are **excluding** application audit data
-
-    ---
-    <br>
+    **Note**: They should not be generated based on this Unified Audit Policy because we are **excluding** application audit data
 
 8. Query the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table again using `SQL*Plus` to generate audit data
 
@@ -218,7 +194,7 @@ We will generate some activity from the Glassfish application and view the sessi
       <copy>./06_query_employeesearch.sh</copy>
       ````
 
-    ![](./images/ua-013.png)
+    ![](./images/ua-013.png " ")
 
 9. View the results of the audit output
 
@@ -226,16 +202,12 @@ We will generate some activity from the Glassfish application and view the sessi
       <copy>./07_query_audit_records.sh</copy>
       ````
 
-    ![](./images/ua-017.png)
+    ![](./images/ua-017.png " ")
 
-    ---
-    **Note:**
+    **Note**:
     - You can see we have an entry that corresponds with our use of `SQL*Plus` while not capturing queries from the Glassfish application
-    -  We trust the application to execute queries as `EMPLOYEESEARCH_PROD` but we do not trust anyone else
+    - We trust the application to execute queries as `EMPLOYEESEARCH_PROD` but we do not trust anyone else
     - We want to audit everyone else
-
-    ---
-    <br>
 
 10. When you have completed this lab, you can remove the Unified Audit Policy
 
@@ -243,14 +215,15 @@ We will generate some activity from the Glassfish application and view the sessi
       <copy>./08_delete_audit_policy.sh</copy>
       ````
 
-## **Step 3**: Audit Database Role Usage
+## **STEP 3**: Audit Database Role Usage
 
-**Before Started**<br>
-When you audit a role, Oracle Database audits all system privileges that are directly granted to the role.<br>
-You can audit any role, including user-defined roles. If you create a common unified audit policy for roles with the ROLES audit option, then you must specify only common roles in the role list.<br>
-When such a policy is enabled, Oracle Database audits all system privileges that are commonly and directly granted to the common role.<br>
-The system privileges that are locally granted to the common role will not be audited.<br>
-To find if a role was commonly granted, query the `DBA_ROLES` data dictionary view.<br>
+**Before Started**
+
+When you audit a role, Oracle Database audits all system privileges that are directly granted to the role.
+You can audit any role, including user-defined roles. If you create a common unified audit policy for roles with the ROLES audit option, then you must specify only common roles in the role list.
+When such a policy is enabled, Oracle Database audits all system privileges that are commonly and directly granted to the common role.
+The system privileges that are locally granted to the common role will not be audited.
+To find if a role was commonly granted, query the `DBA_ROLES` data dictionary view.
 To find if the privileges granted to the role were commonly granted, query the `ROLE_SYS_PRIVS` view.
 
 1. Go to the scripts directory
@@ -259,14 +232,13 @@ To find if the privileges granted to the role were commonly granted, query the `
       <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Unified_Auditing/Audit_DB_Role</copy>
       ````
 
-2. Create the role `MGR_ROLE` and grant it the `CREATE TABLESPACE` system privilege<br>
-Then it will grant the role to the database user `DBA_NICOLE`
+2. Create the role `MGR_ROLE` and grant it the `CREATE TABLESPACE` system privilege. Then it will grant the role to the database user `DBA_NICOLE`
 
       ````
       <copy>./01_create_role.sh</copy>
       ````
 
-    ![](./images/ua-018.png)
+    ![](./images/ua-018.png " ")
 
 3. Create the audit policy to audit the use of the role `MGR_ROLE`
 
@@ -274,7 +246,7 @@ Then it will grant the role to the database user `DBA_NICOLE`
       <copy>./02_create_role_audit_policy.sh</copy>
       ````
 
-    ![](./images/ua-019.png)
+    ![](./images/ua-019.png " ")
 
 4. Next, create the `DBA_JUNIOR` user who will be granted the `DBA` role
 
@@ -282,7 +254,7 @@ Then it will grant the role to the database user `DBA_NICOLE`
       <copy>./03_create_junior_dba.sh</copy>
       ````
 
-    ![](./images/ua-020.png)
+    ![](./images/ua-020.png " ")
 
 5. Create the policy associated with auditing the use of the `DBA` role
 
@@ -290,7 +262,7 @@ Then it will grant the role to the database user `DBA_NICOLE`
       <copy>./04_create_dba_audit_policy.sh</copy>
       ````
 
-    ![](./images/ua-021.png)
+    ![](./images/ua-021.png " ")
 
 6. Enable the audit policies for `MGR_ROLE` and `DBA` role usage
 
@@ -298,7 +270,7 @@ Then it will grant the role to the database user `DBA_NICOLE`
       <copy>./05_enable_audit_policies.sh</copy>
       ````
 
-    ![](./images/ua-022.png)
+    ![](./images/ua-022.png " ")
 
 7. View the audit policies that are enabled
 
@@ -306,7 +278,7 @@ Then it will grant the role to the database user `DBA_NICOLE`
       <copy>./06_view_audit_policies.sh</copy>
       ````
 
-    ![](./images/ua-023.png)
+    ![](./images/ua-023.png " ")
 
 8. Execute SQL statements that will show up in the Unified Audit Trail
 
@@ -314,7 +286,7 @@ Then it will grant the role to the database user `DBA_NICOLE`
       <copy>./07_generate_audits.sh</copy>
       ````
 
-    ![](./images/ua-024.png)
+    ![](./images/ua-024.png " ")
 
 9. View the Unified Audit Trail output associated with the two audit policies
 
@@ -322,7 +294,7 @@ Then it will grant the role to the database user `DBA_NICOLE`
       <copy>./08_review_generated_audits.sh</copy>
       ````
 
-    ![](./images/ua-025.png)
+    ![](./images/ua-025.png " ")
 
 10. When you have completed the lab, you can run the cleanup script
 
@@ -330,10 +302,9 @@ Then it will grant the role to the database user `DBA_NICOLE`
       <copy>./09_cleanup.sh</copy>
       ````
 
-## **Step 4**: Audit Data Pump Usage
+## **STEP 4**: Audit Data Pump Usage
 
-In this lab you will configure the Unified Audit Trail and review an audit of Oracle Data Pump export.<br>
-This is a feature of Unified Audit that is not available in traditional auditing.
+In this lab you will configure the Unified Audit Trail and review an audit of Oracle Data Pump export. This is a feature of Unified Audit that is not available in traditional auditing.
 
 1. Go to the scripts directory
 
@@ -347,11 +318,7 @@ This is a feature of Unified Audit that is not available in traditional auditing
       <copy>./01_configure_unified_audit_trail.sh</copy>
       ````
 
-    ---
-    **Note:** This involves shutting down the database, making a change to the binary, and restarting it
-
-    ---
-    <br>
+    **Note**: This involves shutting down the database, making a change to the binary, and restarting it
     
 3. Review the audit settings
 
@@ -392,7 +359,8 @@ This is a feature of Unified Audit that is not available in traditional auditing
 You may proceed to the next lab.
 
 ## **Appendix**: About the Product
-- **Overview**<br>
+- **Overview**
+
     In unified auditing, the unified audit trail captures audit information from a variety of sources.
 
     Unified auditing enables you to capture audit records from the following sources:
