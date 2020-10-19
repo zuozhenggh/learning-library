@@ -2,20 +2,21 @@
 
 ## Introduction
 
-In this lab, you will learn how to create a GitHub Account and add it to Oracle organization, set up the GitHub Development Environment, and install GitHub Desktop.
+In this lab, you will learn how to create a GitHub Account and associate it with your Oracle email account, set up the GitHub Development Environment, and install GitHub Desktop.
 
 ### Objectives
 
 * Create a GitHub Account
-* Add the GitHub Account to Oracle organization
+* Associate your GitHub account with your Oracle email account.
 * Set up the GitHub Environment
 * Install GitHub Desktop Client
 ### What Do You Need?
 
-* A fair knowledge of GitHub Web UI and the GitHub Desktop client
-* Prior knowledge of any HTML editor is an advantage.
+* Familiarity with HTML is helpful.
 
-## **STEP 1:** Download and Install the latest version of Git
+## **STEP 1:** Download and Install the latest version of Git (Optional Step)
+**Note**: For UA Developers, Oracle recommends the usage of the GitHub Desktop client because of its simple and user friendly user interface, and it is much easier than using the Git command line. Therefore, this is an optional step.
+To install Git:
 1. Install Git for your operating system from the [Git download site] (https://git-scm.com/downloads).
 2. Click the required option under **Downloads** (**Windows** in this example) and save the installer file.
 3. Browse to the downloaded location and double-click the file to launch the installer.
@@ -35,8 +36,9 @@ In this step, you will create and set up your GitHub account.
     **Note**: Do not create a secondary new account to join GitHub. Ensure that your GitHub account is associated to your @oracle.com email ID.
 3. Go to [GitHub Settings](https://github.com/settings/profile) and configure the following:
     *   Set your Name as it appears in your Aria employee page.
-    *   Set a Custom Profile.
-4. Set up a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
+    *   Add your Profile Picture.
+4. Click **Account** to add your user name in the **Enter a user name** dialog. For example, achepuri, LauranSerhal etc.
+5. Set up a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
     ![](./images/git-2-factor-authentication.png " ")
 
 ## **STEP 3:** Add Your GitHub Account to Oracle Organization
@@ -48,7 +50,7 @@ You must request membership to the Oracle GitHub Organization (OGHO). After your
 
 ## **STEP 4:** Publicize your Membership
 1. In the top right corner of [GitHub Profile Settings](https://github.com/settings/profile), click your profile photo, then click **Your profile**.
-![](./images/get-started-profile1.png " ")
+  ![](./images/get-started-profile1.png " ")
 
 2. On the left side of your profile page, under **Personal Settings**, click **Organizations** to display the **Organizations** page and then click the icon for your organization.
 ![](./images/get-started-profile2.png " ")
@@ -80,7 +82,6 @@ To setup the GitHub Development Environment and install GitHub Desktop:
     ![](./images/git-hub-desktop-login-screen.png " ")
 
 ## **STEP 6:** Fork the learning-library Repository on Your GitHub Account
-
   We create workshops and labs in the **learning-library** repository of the **oracle** project. You must fork the learning-library repository to create a duplicate personal copy of the repository on your GitHub account. You own the forked repository and you can edit its contents without affecting the parent repository.
 
   For example, if a user named achepuri forks the learning-library repository in the oracle project, a duplicate repository [achepuri/learning-library](https://github.com/achepuri/learning-library) is created.
