@@ -1,4 +1,4 @@
-# Oracle Grid Infrastructure
+# Clusterware and Fencing
 
 ## Introduction
 
@@ -9,8 +9,7 @@ Estimated Lab Time: 20 Minutes
 ### Prerequisites
 This lab assumes you have completed the following labs:
 - Lab: Generate SSH Key
-- Lab: Setup DB System
-- Lab: Connected to database
+- Lab: Build a DB System
 
 ### About Oracle Grid Infrastructure
 
@@ -30,7 +29,7 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
 
     ````
     <copy>
-    sudo su -oracle
+    sudo su - oracle
     tail -f /u01/app/grid/diag/crs/`hostname -s`/crs/trace/crsd.trc
     </copy>
     ````
@@ -309,6 +308,7 @@ Can you connect an application client to a VIP (a host-vip) when it is running o
     NAME=racnode2
     STATE=ONLINE
     ````
+You may now *proceed to the next lab*.  
 
 ## Acknowledgements
 * **Authors** - Troy Anthony, Anil Nair
