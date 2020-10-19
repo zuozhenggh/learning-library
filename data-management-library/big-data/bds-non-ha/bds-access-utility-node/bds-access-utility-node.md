@@ -52,7 +52,7 @@ This lab assumes that you have successfully completed the following labs in the 
 
 In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first utility node** to a new public IP address.
 
-1. On the **Oracle Cloud Console** banner at the top of the page, click **Cloud Shell** <img src="images/cloud-shell-icon.png" alt="Cloud Shell icon">. It may take a few moments to connect and authenticate you.
+1. On the **Oracle Cloud Console** banner at the top of the page, click **Cloud Shell** ![](./images/cloud-shell-icon.png). It may take a few moments to connect and authenticate you.
 
   ![](./images/cloud-shell-started.png " ")
 

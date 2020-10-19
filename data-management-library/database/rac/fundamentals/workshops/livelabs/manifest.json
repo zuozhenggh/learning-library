@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Real Application Clusters",
+    "workshoptitle": "RAC Fundamentals",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -7,14 +7,9 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
          {
-            "title": "Introduction",
+            "title": "Lab 1: Introduction",
             "description": "This lab walks you through the steps to understand a RAC database and Grid Infrastructure",
             "filename": "../../intro/intro.md"
-        },
-        {
-            "title": "Lab 1: Generate SSH Keys - Cloud Shell",
-            "description": "Generate SSH Key",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
         },
         {
             "title": "Lab 2: Build a DB System",
@@ -42,7 +37,7 @@
             "filename": "../../services/services.md"
         },
         {
-            "title": "Lab 7: SQL and PL/SQl - Sequences",
+            "title": "Lab 7: SQL and PL/SQL - Sequences",
             "description": "This lab walks you through the use of sequences in a RAC database.",
             "filename": "../../sql/racsql.md"
         },
@@ -52,7 +47,7 @@
             "filename": "../../sql/parallelexecution.md"
         },
         {
-            "title": "Lab 9: Oracle Scheduler ",
+            "title": "Lab 9: PL/SQL Packages",
             "description": "This lab walks you through the use of Oracle Scheduler in a RAC database.",
             "filename": "../../sql/scheduler.md"
         }

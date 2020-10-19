@@ -101,7 +101,7 @@ Next, you will import a Zeppelin Notebook into the Oracle Machine Learning insta
 
    ![](./../machine-learning-adw/images/ADW_ML_USER_01.png " ")
 
-7. Enter <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-hol/machine-learning-adw/images/ADW_ML_EMAIL.png" alt="admin@oracle.com"> in the E-mail Address field, and enter <code>AAbbcc123456</code> in both password fields and click **Save**.
+7. Enter ![](https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-hol/machine-learning-adw/images/ADW_ML_EMAIL.png) in the E-mail Address field, and enter <code>AAbbcc123456</code> in both password fields and click **Save**.
 
    ![](./../machine-learning-adw/images/ADW_ML_USER_02.png " ")
 

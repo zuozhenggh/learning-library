@@ -1,4 +1,4 @@
-# Oracle Grid Infrastructure - Server-side Fast Application Notification Callouts
+# Fast Application Notification
 
 ## Introduction
 
@@ -10,15 +10,14 @@ Estimated Lab Time: 20 Minutes
 
 ### Prerequisites
 This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup DB System
-- Lab: Connected to database
+- Lab: Generate SSH Keys
+- Lab: Build a DB System
+- Lab: Clusterware and Fencing
 
 ### About FAN Callouts
 FAN callouts provide a simple yet powerful integration mechanism available with RAC that can be deployed with minimal programmatic efforts. A FAN callout is a wrapper shell script or pre-compiled executable written in any programming language that is executed each time a FAN event occurs. The purpose of the FAN callout is for simple logging, filing tickets and taking external actions. The purpose of the callout is not for integrated client failover –The FAN client failover is Fast Connection Failover in the next section. With the exception of node and network events (which act on all nodes), a FAN callout executes for the FAN events that are generated locally to each node and thus only for actions affecting resources on that node
 
-
-For more information about FAN view the technical paper https://www.oracle.com/technetwork/database/options/clustering/applicationcontinuity/learnmore/fastapplicationnotification12c-2538999.pdf
+For more information about FAN, click [here](https://www.oracle.com/technetwork/database/options/clustering/applicationcontinuity/learnmore/fastapplicationnotification12c-2538999.pdf) to view the technical paper. 
 
 ## **STEP 1:**  Write a callout
 
@@ -40,12 +39,14 @@ For more information about FAN view the technical paper https://www.oracle.com/t
     </copy>
     ````
 
-This callout will, whenever a FAN event is generated, place an entry in the logfile (FAN_LOGFILE) with the time (date) the event was generated.
+    This callout will, whenever a FAN event is generated, place an entry in the logfile (FAN_LOGFILE) with the time (date) the event was generated.
 
 3. Ensure that the callout file has the execute bit set
 
     ````
+    <copy>
     chmod +x /u01/app/19.0.0.0/grid/racg/usrco/callout-log.sh
+    </copy>
     ````
 
     ````
@@ -68,7 +69,7 @@ Ensure that the callout directory has write permissions only to the system user 
 
     ````
 
-## **STEP 2** Perform an action that will generate an event
+## **STEP 2**: Generate an event
 
 Stopping or starting a database instance, or a database service will generate a FAN event. A failure of an instance, a node, or a public network will generate an event.
 
@@ -128,14 +129,14 @@ Stopping or starting a database instance, or a database service will generate a 
     [grid@racnode1 usrco]$ sh -x callout-log.sh GGG
     + umask 022
     ++ hostname -s
-    + FAN_LOGFILE=/tmp/racnode1_events.log
+    + FAN\_LOGFILE=/tmp/racnode1\_events.log
     [grid@racnode1 usrco]$ ++ date
     + echo GGG ' reported = Mon' Aug 17 10:36:25 UTC 2020
-    callout-log.sh: line 4: /tmp/racnode1_events.log: syntax error: operand expected (error token is "/tmp/racnode1_events.log")
+    callout-log.sh: line 4: /tmp/racnode1\_events.log: syntax error: operand expected (error token is "/tmp/racnode1\_events.log")
     ````
 This attempt shows an error on line 4 of the file (the append to the log). In this case it was the wrong type of bracket. Other mistakes will produce different errors.
 
-## **STEP 3** Create a more elaborate callout
+## **STEP 3**: Create a more elaborate callout
 
 Callouts can be any shell-script or executable. There can be multiple callouts in the racg/usrco directory and all will be executed with the FAN payload as arguments. The scripts are executed sequentially, so it is not recommended to have many scripts in this directory, as they could place a load on the system that is not desired, and there may be timeliness issues if the scripts wait for scheduling.
 
@@ -155,7 +156,6 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
     for ARGS in $*; do
         PROPERTY=`echo $ARGS | $AWK -F "=" '{print $1}'`
         VALUE=`echo $ARGS | $AWK -F "=" '{print $2}'`
-
         case $PROPERTY in
           VERSION|version) NOTIFY_VERSION=$VALUE ;;
           SERVICE|service) NOTIFY_SERVICE=$VALUE ;;
@@ -198,18 +198,21 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
     </copy>
     ````
 
-2. Examine the entry created in the log file generated in /tmp
+2. Examine the entry created in the log file generated in /tmp on node1:
 
-    On node1:
+    ````
+    <copy>
+    cat /tmp/racnode1_callout2.log
+    </copy>
+    ````  
+2. Examine the entry created in the log file generated in /tmp on node2:
 
-        ````
-        cat /tmp/racnode1_callout2.log
-        ````  
-    On node2:
-        ````
-        cat /tmp/racnode2_callout2.log
-        ````
-2. Cause a DATABASE UP event to be generated:
+    ````
+    <copy>
+    cat /tmp/racnode2_callout2.log
+    </copy>
+    ````
+3. Cause a DATABASE UP event to be generated:
 
     ````
     <copy>
@@ -218,9 +221,9 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
     ````        
 Note the different entries generated in each log (on each node)    
 
-## **STEP 4** Client-side FAN events
+## **STEP 4**: Client-side FAN events
 
-FAN events are sent to the application mid-tier or client tier using the Oracle Notification Service (ONS). ONS is configured automatically on the cluster when you install Grid Infrastructure. CRS manages the stop and start of the ONS daemon.
+FAN events are sent to the application mid-tier or client tier using the **Oracle Notification Service** (ONS). ONS is configured automatically on the cluster when you install Grid Infrastructure. CRS manages the stop and start of the ONS daemon.
 
 ONS is configured automatically by FAN-aware Oracle clients, which include Universal Connection Pool (UCP), ODP.Net, Weblogic Server with Active Gridlink, CMAN and others, when a particular format connect string is used (for more information on this refer to the Application Continuity checklist: https://www.oracle.com//technetwork/database/clustering/checklist-ac-6676160.pdf)
 
@@ -243,15 +246,19 @@ Download the FANWatcher utility
 3. Download the fanWatcher utility and unzip the file
 
     ````
+    <copy>
     wget
     https://objectstorage.uk-london-1.oraclecloud.com/p/gKfwKKgzqSfL4A48e6lSKZYqyFdDzvu57md4B1MegMU/n/lrojildid9yx/b/labtest_bucket/o/fanWatcher_19c.zip
     unzip fanWatcher_19c.zip
-    ````    
+    </copy>
+    ````   
+
     ![](./images/clusterware-4.png " ")
 
 4. Create a database user in the PDB **pdb1** and a database service to connect to. The service should have 1 preferred instance and 1 available instance. In this example the service name is **testy** (choose a name you like), the instance names are as specified, the username is **test_user** and the password is **W3lcom3\#W3lcom3\#**
 
-5. Create the service and start it
+5. Create the service and start it.
+   
     ````
     <copy>
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/srvctl add service -d aTFdbVm_mel1nk -s testy -pdb pdb1 -preferred aTFdbVm1 -available aTFdbVm2
@@ -259,12 +266,15 @@ Download the FANWatcher utility
     </copy>
     ````
 6. Connect to sqlplus as **SYS**
-    ````
-    </copy>
+   
+    ```
+    <copy>
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/sqlplus sys/W3lc0m3#W3lc0m3#@//racnode1/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     </copy>
-    ````    
-7. Run the following commands:
+    ```    
+
+7. Run the following commands to create a test user and grant them the appropriate privileges
+   
     ````
     <copy>
     create user test_user identified by W3lcom3#W3lcom## default tablespace users temporary tablespace temp;
@@ -272,8 +282,7 @@ Download the FANWatcher utility
     grant connect, resource, create session to test_user;
     </copy>
     ````    
-5. Edit the **fanWatcher.bash** script entering the **user**, **password**, and **URL** you just created
-Following the example shown the fanWatcher.bash script will look like:
+8. Edit the **fanWatcher.bash** script entering the **user**, **password**, and **URL** you just created using the example shown the fanWatcher.bash script will look like:
 
     ````
     #!/usr/bin/bash
@@ -307,43 +316,42 @@ Note that the service name will be domain qualified (use the operating system ut
     ./fanWatcher.bash
     </copy>
     ````
-
 When fanWatcher is run with the argument **autoons** it will use the credentials and url provided to connect to the database (wherever it is running) and use that connection to obtain the ONS configuration of the DB system it is connected to. A subscription, to receive FAN events, is created with the Grid Infrastructure ONS daemon.
 
-Connections to the ONS daemon on each node is established forming  redundant topology - with no knowledge of the cluster configuration required.
+    Connections to the ONS daemon on each node is established forming  redundant topology - with no knowledge of the cluster configuration required.
 
     ![](./images/clusterware-5.png " ")
 
-7. Perform an action on another node that will generate a FAN event. Kill a SMON background process
-For example, on node2 in my system
+7. Perform an action on another node that will generate a FAN event. Kill a SMON background process.  For example, on node2 in my system executing the command below will show the SMON process ids for ASM and my database
+    ![](./images/clusterware-6.png " ")
+
 
     ````
     <copy>
     ps -ef | grep smon
     </copy>
     ````     
-will show the SMON process ids for ASM and my database
-    ![](./images/clusterware-6.png " ")
-choose the process id for
-   ````
-   oracle   31138     1  0 06:39 ?        00:00:00 ora_smon_aTFdbVm2
-   ````
-The process id in this example is 31138. Your process id will be a different number
+8. Examine the process id. The process id in this example is 31138. Your process id will be a different number.
+   
+    ````
+    oracle   31138     1  0 06:39 ?        00:00:00 ora_smon_aTFdbVm2
+    ````
+9.  Kill the process
+
+    ![](./images/clusterware-7.png " ")        
 
     ````
     sudo kill -9 31138
     ````   
-    ![](./images/clusterware-7.png " ")        
-
-8. Look at the output from the fanWatcher utility
+10. Look at the output from the fanWatcher utility
 
     ![](./images/clusterware-8.png " ")
 
-The fanWatcher utility has received FAN events over ONS. The first event shows **reason=FAILURE** highlighting the abnormal termination of SMON (by the operating system kill command). **event_type=INSTANCE** and **status=down** shows that the instance has crashed.
+    The fanWatcher utility has received FAN events over ONS. The first event shows **reason=FAILURE** highlighting the abnormal termination of SMON (by the operating system kill command). **event_type=INSTANCE** and **status=down** shows that the instance has crashed.
 
-The event payload contains the same information as displayed in the CALLOUT example you observed, but there are some differences. All Oracle clients are FAN-aware and interpret the FAN events automatically.
+    The event payload contains the same information as displayed in the CALLOUT example you observed, but there are some differences. All Oracle clients are FAN-aware and interpret the FAN events automatically.
 
-You will also see the failed instance get restarted by Grid Infrastructure, and the corresponding **UP** event is sent. Oracle clients, such as UCP, will react to both UP and DOWN events - closing connections on down and re-establishing them automatically on UP.
+    You will also see the failed instance get restarted by Grid Infrastructure, and the corresponding **UP** event is sent. Oracle clients, such as UCP, will react to both UP and DOWN events - closing connections on down and re-establishing them automatically on UP.
 
     ````
     ** Event Header **
@@ -362,12 +370,14 @@ You will also see the failed instance get restarted by Grid Infrastructure, and 
     Event payload:
     VERSION=1.0 event_type=INSTANCE service=atfdbvm_mel1nk.tfexsubdbsys.tfexvcndbsys.oraclevcn.com instance=aTFdbVm2 database=atfdbvm_mel1nk db_domain=tfexsubdbsys.tfexvcndbsys.oraclevcn.com host=racnode2 status=up reason=FAILURE timestamp=2020-08-18 08:55:25 timezone=+00:00
     ````
-If fanWatcher can auto-configure with ONS and receive and display events, so can any client on the same tier. This validates the communication path (no firewall blockage for example), and that FAN events are propagating correctly. 
+    If fanWatcher can auto-configure with ONS and receive and display events, so can any client on the same tier. This validates the communication path (no firewall blockage for example), and that FAN events are propagating correctly. 
+
+You may now *proceed to the next lab*.  
 
 ## Acknowledgements
 * **Authors** - Troy Anthony, Anil Nair
 * **Contributors** - Kay Malcolm
-* **Last Updated By/Date** - Troy Anthony, Database Product Management, August 2020
+* **Last Updated By/Date** - Kay Malcolm, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
