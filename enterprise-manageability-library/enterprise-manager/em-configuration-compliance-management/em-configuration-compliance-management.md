@@ -1,6 +1,6 @@
 # Database Configuration and Compliance Management
 ## Introduction
-The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator.
+The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator.
 
 *Estimated Lab Time*: 60 minutes
 
@@ -50,11 +50,11 @@ All the items in this step are read-only, primary goal is to learn about invento
 
 1.  Log into your Enterprise Manager as indicated in the Prerequisites step if not already done.
 
-2.  From the Enterprise menu, select Configuration, then select Inventory and  Usage Details
+2.  From the Enterprise menu, select Configuration, then select Inventory and  Usage Details
 
   ![](images/0e4c2e20dec851fcdf23fd2e92bdee7a.png " ")
 
-3.  In the ‘Show’ filter menu, select **Databases** to see all database instances managed by Enterprise Manager
+3.  In the ‘Show’ filter menu, select **Databases** to see all database instances managed by Enterprise Manager
 
   ![](images/cd409c11afa638eb7a1ab8f7cbc4f015.png " ")
 
@@ -183,7 +183,7 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
 1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet.
 
-2.  Navigate to ***Enterprise >> Configuration >> Comparison & Drift Management***. Review the different types of comparisons supported.
+2.  Navigate to ***Enterprise >> Configuration >> Comparison & Drift Management***. Review the different types of comparisons supported.
 
   ![](images/133fbb62c871d1ccb0dc8b1f794d4544.png " ")
 
@@ -235,7 +235,7 @@ In this workshop, you will learn about continuous configuration drift monitoring
 12. Under Source Configuration, do the following
 
   -  Select ‘Latest Configuration’
-  -  Click search to choose Source Target  
+  -  Click search to choose Source Target
 
   ![](images/bd6ec634cc1a0ff215b5344fcfdbfc07.png " ")
 
@@ -324,7 +324,7 @@ A compliance standard rule is a specific test to determine if a configuration da
 
 1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet.
 
-2.  From the Enterprise menu,select Compliance, then select Library
+2.  From the Enterprise menu,select Compliance, then select Library
 
   ![](images/f0cb7078dc7b26619211bd41d5059895.png " ")
 
@@ -506,5 +506,7 @@ Thank You!
 - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
