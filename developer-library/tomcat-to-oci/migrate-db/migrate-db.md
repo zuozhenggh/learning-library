@@ -1,6 +1,6 @@
-# Migrate the on-premises database to Autonomous Database
+# Migrate the On-Premises Database to Autonomous Database
 
-## About This lab
+## Introduction
 
 In this lab, we will migrate the on-premises database to the Autonomous Database on Oracle Cloud Infrastructure.
 
