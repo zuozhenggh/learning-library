@@ -347,7 +347,7 @@ in the on-premises environment at [https://localhost:7002/em](https://localhost:
 
 8. You can see **Processing Deploy** Deployment in progress message and wait until you get the message **Deployment Succeeded** and click **Close** button
 
-    <img src="./images/deploy6.png" width="100%">
+    <img src="./images/deploy6.png" width="60%">
 
 9. Check the deployed project in **Dashboard** 
 

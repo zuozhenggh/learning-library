@@ -114,24 +114,6 @@ In this section we will create a Security List for the SOA subnet to be able to 
 
   <img src="./images/wls-9071-seclist.png" width="70%">
 
-< !-- 
-Not clear if needed. it seems like it was an artifact of bad deployment of VCN
-9. Click **Subnets**
-
-10. Select the **Private Subnet-SOAMP1VCN**
-
-  <img src="./images/private-subnet.png" width="70%">
-
-11. Click **Add Security List**
-
-  <img src="./images/add-seclist.png" width="70%">
-
-12. Select the **Security List for Private Subnet-SOAMP1VCN**
-
-  <img src="./images/add-seclist2.png" width="70%">
-
-13. Click **Add Security List** -->
-
 
 You may proceed to the next lab
 ## Acknowledgements
