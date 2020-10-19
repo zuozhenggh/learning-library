@@ -6,10 +6,10 @@ In this lab, you will learn how to create a GitHub Account and associate it with
 
 ### Objectives
 
-* Create a GitHub Account
+* Create a GitHub Account.
 * Associate your GitHub account with your Oracle email account.
-* Set up the GitHub Environment
-* Install GitHub Desktop Client
+* Set up the GitHub Environment.
+* Install GitHub Desktop Client.
 ### What Do You Need?
 
 * Familiarity with HTML is helpful.
@@ -73,13 +73,16 @@ To setup the GitHub Development Environment and install GitHub Desktop:
 
 2. When the software is successfully installed, open the GitHub Desktop.
 
-  ![](./images/get-started-git-hub-desktop.png " ")
+  ![](./images/git-hub-desktop-login-screen.png " ")
 
-3. Open GitHub Desktop, click **File > Options > Sign in**, enter your GitHub **Username** or **email address**, **Password**, and then click **Sign in**.
+
+3. Click **File > Options > Sign in**, enter your GitHub **Username** or **email address**, **Password**, and then click **Sign in**.
   You will receive an authentication code to your cell phone. Enter this code in the **Authentication code** field in the **Sign in** dialog box.
+
   **Note**: The authentication code is valid only for a few seconds.
 
-    ![](./images/git-hub-desktop-login-screen.png " ")
+    You are now logged in to GitHub Desktop.
+    ![](./images/get-started-git-hub-desktop.png " ")
 
 ## **STEP 6:** Fork the learning-library Repository on Your GitHub Account
   We create workshops and labs in the **learning-library** repository of the **oracle** project. You must fork the learning-library repository to create a duplicate personal copy of the repository on your GitHub account. You own the forked repository and you can edit its contents without affecting the parent repository.
@@ -115,10 +118,13 @@ To clone the forked repository:
 
   The **learning-library** repository files appear in the local path you just specified. You are now start working on your labs and workshops!
 
-**Note**: The local cloned repository is connected to the remote fork version. You can can push your local changes to the remote fork version when you are online to keep them in sync.
-1. When you make a clone, you can edit the files in your preferred editor, such as **Atom**, and use **GitHub Desktop client** to keep track of your changes without having to be online.
-2. The repository you cloned is still connected to the remote version (your fork) so that you can push your local changes to the remote to keep them synced when you're online.
+  ![](./images/git-hub-my-cloned-repository.png " ")
 
+  **Note**: The local cloned repository is connected to the remote fork version. You can push your local changes to the remote fork version when you are online to keep them in sync.
+
+  When you make a clone, you can edit the files in your preferred editor, such as **Atom**, and use **GitHub Desktop client** to keep track of your changes without having to be online.
+
+  The repository you cloned is still connected to the remote version (your fork) so that you can push your local changes to the remote to keep them synced when you're online.
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu.**
 

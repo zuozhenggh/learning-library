@@ -44,7 +44,8 @@ The atom-live-server plugin is added to the **Packages** menu.
 
 ## **STEP 3:** Create your Lab and Workshop Content
 You can use any of the existing project folder in the **\learning-library** folder as a template to create a workshop for your project. In this example, let's use the **learning-library\data-management-library\big-data\bds** project folder as a template to create a new workshop.
-To create your Lab and Workshop Content:
+
+To create your lab and workshop content:
 1. Open your cloned repository using Windows Explorer.
 2. Copy the **learning-library\data-management-library\big-data\bds** folder and paste it in your project folder (create a new folder, such as **create-labs**).
 3. Rename the **bds** project folder to a name of your choice, for example, **labs**.
