@@ -5,9 +5,6 @@
 This lab will walk you through the process of migrating an existing 'on-premises' Tomcat application to Oracle Cloud Infrastructure. 
 The Tomcat application we'll migrate is a Java applications with a datasource connecting to a database that will be migrated to Autonmous Database on OCI alongside the application.
 
-Attached below is a sample architecture of the final solution:
-![](./images/architecture.png)
-
 Estimated Lab Time: 80 min.
 
 ### About Product/Technology
