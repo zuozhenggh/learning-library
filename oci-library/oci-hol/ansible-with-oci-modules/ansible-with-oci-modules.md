@@ -4,43 +4,70 @@
 
 Today, the **Infrastructure as Code** paradigm is a norm for DevOps professionals, and Ansible is one of the leading tools that enables this paradigm. Ansible is great; not just for configuration management, but also for infrastructure provisioning and orchestration. And yet, have you ever wondered how to really use Ansible to manage your cloud infrastructure at scale?
 
-This lab will demonstration both provisioning and configuration of your infrastructure. You will first provision a set of infrastructure resources with a single Ansible playbook.  Next, you will leverage Ansible's *Dynamic Inventory* functionality to fetch the details of this infrastructure and install use those details to deploy Apache (the configuration management aspect).   You would be doing all of it using your Ansible playbooks, leveraging the ‘Infrastructure as code’ paradigm.
+This lab will demonstrate both provisioning and configuration of your infrastructure. You will first provision a set of infrastructure resources with a single Ansible playbook. Next, you will leverage Ansible's *Dynamic Inventory* functionality to fetch the details of the current infrastructure and deploy Apache (the configuration management aspect). You would be doing all of it using your Ansible playbooks, leveraging the ‘Infrastructure as code’ paradigm.
 
   **Note:** The OCI UI is regularly being enhanced.  Therefore, some screenshots in the instructions might be different than actual user interface.
 
 ## **Step 1:** Getting started with Ansible
-In this section we will download some sample Ansible resources and configure it to work with our OCI tenancy.  Before starting this section, make sure you have cloud shell open as you executed in the previous section.
+In this section we will download sample Ansible resources and configure it to work with our OCI tenancy. Before starting this section, make sure you have cloud shell open as you executed in the previous section.
 
 1. Download and unzip the sample files.
 
     ```
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/bykQ0fwIeoZRNpaS6Dmy18kdqtfsqE-VmXig0qsfMf3mZqf9LG0bTKGJeckmHIwE/n/c4u03/b/oci-library/o/oci_ansible.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LG9tAGM2XJghv_CYDsXOhbnS-3Qf4kTjFisIJnQl__LFXbzPtU3hzGHugAgl8tUQ/n/c4u03/b/oci-library/o/oci_ansible.zip
     unzip oci_ansible.zip
     </copy>
     ```
 
-2. Ansible will use your CLI credentials to authenticate and authorize access to OCI.  You will need to configure details of which Compartment to use and which Compute image.  Modify the **env-vars** file to update these values.
+2. Ansible will use your CLI credentials to authenticate and authorize access to OCI.  You will need to configure details of which compartment, region and compute shape.  Modify the **env-vars** file to update these values.
+
+**NOTE:** You need to find your compartment OCID and your Avaiability Domaind ID. If running in Ashburn instead of Phoenix, just move the **#** to comment out the line for the region you are not using.
+
+    ````
+    <copy>
+    vi env_vars
+    </copy>
+    ````
+
 
     ```
     <copy>
     # OCID of assigned compartment
     export compartment_ocid=[your compartment id goes here - without square brackets]
-    # Oracle-Linux-7.7-2019.08-28-0
+   
     #Ashburn
-    export image_ocid=ocid1.image.oc1.iad.aaaaaaaayuihpsm2nfkxztdkottbjtfjqhgod7hfuirt2rqlewxrmdlgg75q
+    #export image_ocid=ocid1.image.oc1.iad.aaaaaaaayuihpsm2nfkxztdkottbjtfjqhgod7hfuirt2rqlewxrmdlgg75q
+    
     #Phoenix
     export image_ocid=ocid1.image.oc1.phx.aaaaaaaadtmpmfm77czi5ghi5zh7uvkguu6dsecsg7kuo3eigc5663und4za
+
     # skip host verification prompts for demo
     export ANSIBLE_HOST_KEY_CHECKING=False
-    export SAMPLE_AD_NAME=AkfI:PHX-AD-1
-    export SAMPLE_IMAGE_OCID=ocid1.image.oc1.phx.aaaaaaaadtmpmfm77czi5ghi5zh7uvkguu6dsecsg7kuo3eigc5663und4za
-    export SAMPLE_COMPARTMENT_OCID=[your compartment id goes here - without square brackets]
-    export SAMPLE_INSTANCE_SHAPE=VM.Standard2.1
+    export ad_name=[enter your AD ID here - whitout the square bracktes]
+    export SAMPLE_INSTANCE_SHAPE=[your VM Shape here - without square brackets]
     </copy>
     ```
 
-    **NOTE:** You should only need to modify the compartment OCID.  If running in Phoenix instead of Ashburn, just move the **#** to comment out the line for the region you are not using.
+    This is an example of how your file will look like:
+
+    ```
+    # OCID of assigned compartment
+    export compartment_ocid=ocid1.compartment.oc1..aaaaaaaaz4sb43ou4icnt4ddqjt6fmciobic657xvtott26ll5dw7xiw4tga
+
+    # Oracle-Linux-7.7-2019.08-28-0
+    #Ashburn
+    #export image_ocid=ocid1.image.oc1.iad.aaaaaaaayuihpsm2nfkxztdkottbjtfjqhgod7hfuirt2rqlewxrmdlgg75q
+
+    #Phoenix
+    export image_ocid=ocid1.image.oc1.phx.aaaaaaaadtmpmfm77czi5ghi5zh7uvkguu6dsecsg7kuo3eigc5663und4za
+
+    # skip host verification prompts for demo
+    export ANSIBLE_HOST_KEY_CHECKING=False
+
+    export ad_name=GrCh:PHX-AD-1
+    export SAMPLE_INSTANCE_SHAPE=VM.Standard.E2.1
+    ```
 
 3. Save and exit the file.
 4. Load the variables in the above file into ENV
