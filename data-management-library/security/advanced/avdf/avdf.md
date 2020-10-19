@@ -1,7 +1,7 @@
 # Oracle Audit Vault and DB Firewall (AVDF)
 
 ## Introduction
-This workshop introduces the various features and functionality of Oracle AVDF.<br>
+This workshop introduces the various features and functionality of Oracle AVDF.
 It gives the user an opportunity to learn how to configure those appliances in order to audit, monitor and protect access to sensitive data.
 
 - *Version tested in this lab:* Oracle AVDF 20.1
@@ -82,9 +82,9 @@ This lab assumes you have completed:
       <copy>./01_deploy_avcli.sh</copy>
       ````
 
-4. Next, we will use the AV Command Line Interface (AVCLI) to register the host, dbsec-lab, with Audit Vault.<br>
-You will see that the commands being run are stored in the `avcli_register_host.av` file.<br>
-In this step you will see a activation key.<br>
+4. Next, we will use the AV Command Line Interface (AVCLI) to register the host, dbsec-lab, with Audit Vault.
+You will see that the commands being run are stored in the `avcli_register_host.av` file.
+In this step you will see a activation key.
 **Record this Activation Key for use later in the lab!**
 
       ````
@@ -95,14 +95,14 @@ In this step you will see a activation key.<br>
 
     ![](./images/avdf-001.png)
 
-6. Next, we will deploy the Audit Vault Agent<br>
+6. Next, we will deploy the Audit Vault Agent
 This script will unpack the `agent.jar` file into the `/u01/app/avagent` directory
 
       ````
       <copy>./03_deploy_avagent.sh</copy>
       ````
 
-7. Once deployed, we will need to activate the Audit Vault Agent<br>
+7. Once deployed, we will need to activate the Audit Vault Agent
 Remember the activation key we saw above and paste the key when prompted
 
       ````
@@ -135,7 +135,7 @@ Remember the activation key we saw above and paste the key when prompted
 2. You could perform the register from the Audit Vault Web UI but we will use the AVCLI instead
 
       ---
-      **Note**:<br>
+      **Note**:
       - You will need to enter the `AVAUDITUSER` password during this step
       - This user is a database user that was created, and granted the appropriate privileges, to perform database audit collection and clean-up and has `SELECT` access on several dictionary tables (for more information please see the Oracle Audit Vault and Database Firewall documentation)
       - The password for `AVAUDITUSER` is `Oracle123`
@@ -165,7 +165,7 @@ Remember the activation key we saw above and paste the key when prompted
       <copy>./01_register_audit_trail.sh</copy>
       ````
 
-3. The second script will list the Audit Trails for the `pdb1` pluggable database<br>
+3. The second script will list the Audit Trails for the `pdb1` pluggable database
 You should see one row returned for the Unified Audit Trail and the output from the script should look similar to this:
 
      ![](./images/verify_audit_trail01.png)
@@ -174,7 +174,7 @@ You should see one row returned for the Unified Audit Trail and the output from 
       **Note**: The `Status` column should say `Collecting` or `Idle`.  If it says something else please run the script again and verify it changes state.
 
       ---
-      <br>
+      
 
 4. View audit data collected via the All Activity Report using the web browser
     - Open a Web Browser at the URL `https://<AVS-VM_@IP-Public>`
@@ -191,11 +191,11 @@ You should see one row returned for the Unified Audit Trail and the output from 
         ![](./images/all_activity_failures01.png)
 
       ---
-      **Note**: This was just a small example to verify that audit data was being collected and is visible in Audit Vault.<br>
+      **Note**: This was just a small example to verify that audit data was being collected and is visible in Audit Vault.
       There will be more detailed report generation labs later in the workshop.
 
       ---
-      <br>
+      
 
 5. You have completed the lab to register the Unified Audit Trail for `pdb1` with Audit Vault
 
@@ -262,7 +262,7 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
       <copy>./02_query_enabled_unified_policies.sh</copy>
       ````
 
-9. If you want, you can re-do the previous steps and make changes to the Unified Audit Policies<br>
+9. If you want, you can re-do the previous steps and make changes to the Unified Audit Policies
 For example, don't enable the `Center for Internet Security (CIS) Configuration` and re-run the two shell scripts to see what changes!
 
 
@@ -385,7 +385,7 @@ You have completed the lab.
 
 1. In this lab you will use the results from a Database Security Assessment Tool (DBSAT) collection job to identify the sensitive data with the pluggable database `pdb1`. So, the first step is to complete the Database Security Assessment Tool (DBSAT) lab (For more details, please refer to the `Oracle DB Security Baseline Workshop`).
 
-2. Grant Privilege to Import Sensitive Data<br>
+2. Grant Privilege to Import Sensitive Data
 Before we begin the lab, you must use the Linux terminal to connect to Audit Vault and grant the sensitive role to the admin user `AVADMIN`:
 
     - From your terminal session, open a SSH session onto your Audit Vault Server VM as `support` User with the password `T06tron.`
@@ -416,7 +416,7 @@ Before we begin the lab, you must use the Linux terminal to connect to Audit Vau
 
      ![](images/grant_sensitive_role01.png)
 
-3. Loading the Sensitive Data from DBSAT<br>
+3. Loading the Sensitive Data from DBSAT
 Now that we have the role granted, we can load the data from our DBSAT lab
 
     - Go to the scripts directory
@@ -431,7 +431,7 @@ Now that we have the role granted, we can load the data from our DBSAT lab
       <copy>./01_download_sensitive_data_csv.sh</copy>
       ````
 
-     - You will be given a URL to access the CSV file that was created during the DBSAT Sensitive Data Discovery lab.<br>
+     - You will be given a URL to access the CSV file that was created during the DBSAT Sensitive Data Discovery lab.
      It will look like this:
 
         `http://<DBSECLAB-VM_@IP-Public>:8080/hr_prod_pdb1/dbsat/pdb1_dbsat_discover.csv`
@@ -479,7 +479,7 @@ REDO log records contain Before and After values for every DML (Data Manipulatio
 
 Transaction Log collector takes advantage of Oracle GoldenGate’s Integrated Extract process to move the REDO log data from database to XML files. The extract process is configured to run against the source database or it is configured to run on a Downstream Mining database (Oracle only). It captures DML and DDL operations performed on the configured objects. The captured operations from transaction logs are transferred to GoldenGate XML trail files. Oracle AVDF's Transaction Log collector, collects transaction log records from generated XML files. These logs are forwarded to the Audit Vault Server to show the before and after values changed in the Data Modification Before-After Values report. The DDL changes are available in the All Activity report. The DML changes are available in the Data Modification Before-After Values report.
 
-**Getting Started**<br>
+**Getting Started**
 The first thing we need to do is to set up the database to be ready for Golden Gate
 
 1. Go to the scripts directory
@@ -504,7 +504,7 @@ The first thing we need to do is to set up the database to be ready for Golden G
      **Note:** This will require a reboot and this script will do this for you
 
      ---
-    <br>
+    
 
 4. Finally, verify connectivity to the `cdb1` container database before we continue with the configuration of the GoldenGate Extract
 
@@ -739,7 +739,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
     **Note:** Once you understand how to create an alert, feel free to create another and test it manually.
 
     ---
-    <br>
+    
 
 ## **STEP 9**: DB Firewall - Add the Firewall Monitoring
 
@@ -798,11 +798,11 @@ In this lab you will modify the Database Firewall connection for the pluggable d
          ![](images/dbfw_monitoring_setup01.png)
 
     ---
-    **Note:** Ensure you use the IP Address not the hostname because the DBSecLab VMs are using DNS!<br>
+    **Note:** Ensure you use the IP Address not the hostname because the DBSecLab VMs are using DNS!
     This is a demonstration environment limitation not an AVDF limitation.
 
     ---
-    <br>
+    
 
 15. Click [**Save**]
 
@@ -823,13 +823,13 @@ In this lab you will modify the Database Firewall connection for the pluggable d
       ````
 
     ---
-    **Note:**<br>
+    **Note:**
     - This will connect directly to the database on the standard listener port
     - You should see that the connection shows an IP Address of `10.0.0.150` which is the IP Address of the DBSec-Lab VM
     - This verifies that you are connecting **directly** to the `pdb1` pluggable database
 
     ---
-    <br>
+    
 
 19. Now, verify connectivity **with** the Database Firewall
 
@@ -844,11 +844,11 @@ In this lab you will modify the Database Firewall connection for the pluggable d
     - This verifies that you are connecting **through** the Database Firewall
 
     ---
-    <br>
+    
 
 ## **STEP 10**: DB Firewall - Configure and Verify Glassfish to use the Database Firewall
 
-In this lab you will modify the Glassfish connection.<br>
+In this lab you will modify the Glassfish connection.
 Instead of connecting directly to the pluggable database, `pdb1`, Glassfish will connect through the Oracle Database Firewall so we can monitor, and block, SQL commands.
 
 1. Go to the scripts directory
@@ -865,7 +865,7 @@ Instead of connecting directly to the pluggable database, `pdb1`, Glassfish will
           <copy>./01_start_glassfish.sh</copy>
           ````
 
-    - Take the URL from the output of this and use it in your web browser<br>
+    - Take the URL from the output of this and use it in your web browser
     We are verifying that the application functions **before** we make any changes to connection string!
 
 3. Click [**Login**]
@@ -884,19 +884,19 @@ Instead of connecting directly to the pluggable database, `pdb1`, Glassfish will
 
     ![](images/welcome_admin_link01.png)
 
-8. On the `Session Details` screen, you will see how the application is connected to the database<br>
+8. On the `Session Details` screen, you will see how the application is connected to the database
 This information is taken from the `userenv` namespace by executing the `SYS_CONTEXT` function
 
     ![](images/direct_ip_address.png)
 
-9. Now, we are going to migrate the Glassfish Application to proxy through the Database Firewall and repeat the above steps<br>
+9. Now, we are going to migrate the Glassfish Application to proxy through the Database Firewall and repeat the above steps
 First, run the script to migrate connection string to the Database Firewall.
 
       ````
       <copy>./02_start_FW_glassfish.sh</copy>
       ````
 
-10. Next, verify the application functions as expected<br>
+10. Next, verify the application functions as expected
 Login to `My Hr Application` as `hradmin` with the `Oracle123` password
 
 11. Click the `Search Employees` link
@@ -907,7 +907,7 @@ Login to `My Hr Application` as `hradmin` with the `Oracle123` password
     **Note:** You should see the same results as you did before connecting through the Database Firewall
 
     ---
-    <br>
+    
 
 13. Click the `Weclome HR Administrator` link to view the `Session Details` page
 
@@ -1025,17 +1025,17 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
        ---
        **Note**:
        - This information tells us a lot about our Database Firewall policies and why we are capturing this particular query
-       - If your reports show a lot of unknown activity you probably have **Native Network Encryption** enabled.<br>
-       Please disable it from a terminal session and run the queries again:<br>
-            - To check, run the following script: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/01_view_sqlnet_ora.sh`<br>
-            - If it says `SQLNET.ENCRYPTION_SERVER=REQUESTED` or `SQLNET.ENCRYPTION_SERVER=REQUIRED` then it needs to be disabled<br>
-            To disable, run the following scripts: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/disable_native_network_enc.sh`<br>
+       - If your reports show a lot of unknown activity you probably have **Native Network Encryption** enabled.
+       Please disable it from a terminal session and run the queries again:
+            - To check, run the following script: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/01_view_sqlnet_ora.sh`
+            - If it says `SQLNET.ENCRYPTION_SERVER=REQUESTED` or `SQLNET.ENCRYPTION_SERVER=REQUIRED` then it needs to be disabled
+            To disable, run the following scripts: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/disable_native_network_enc.sh`
             - To verify, run the following script: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/01_view_sqlnet_ora.sh`
 
        - It should return no contents now!
 
        ---
-    <br>
+    
 
 30. One of our favorite queries is this SQL statement:
 
@@ -1045,14 +1045,14 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
 
        ---
        **Note**:
-       - We like this query because this is the authentication SQL the `My HR App` uses to validate the `hradmin` and `Oracle123` password<br>
+       - We like this query because this is the authentication SQL the `My HR App` uses to validate the `hradmin` and `Oracle123` password
        Remember, the application is authenticated against a table not the database so queries like this will be captured
 
-       - Notice how the Database Firewall has removed the bind values that would have included the username and password.<br>
+       - Notice how the Database Firewall has removed the bind values that would have included the username and password.
        This is to minimize the collection of sensitive data within Audit Vault and Database Firewall.
 
        ---
-    <br>
+    
 
 31. Feel free to continue to explore the captured SQL statements and once you are comfortable, please continue the labs!
 
@@ -1160,7 +1160,7 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
 
     - Click [**Save**]
 
-16. Next, add database users that we trust to connect to the database through the Database Firewall<br>
+16. Next, add database users that we trust to connect to the database through the Database Firewall
 We will create a `Database User Set` of our Database Administrators
 
 17. Click `Sets/Profiles`
@@ -1255,16 +1255,16 @@ We will create a `Database User Set` of our Database Administrators
     **Note:**  Remember, this is because the Database Firewall substituted `select * from dual where 1=2` for the regular query
 
     ---
-    <br>
+    
 
 ## **STEP 13**: (Advanced Labs) PostgreSQL Audit Collection
 
-**Before started**<br>
+**Before started**
 The objective of this lab is to collect audit log records from PostgreSQL databases (with pgaudit configured) into Oracle Audit Vault and Database Firewall:
-- Ensure to that `pgaudit` is installed extension<br>
-The PostgreSQL Audit Extension (or pgaudit) provides detailed session and/or object audit logging via the standard logging facility provided by PostgreSQL<br>
+- Ensure to that `pgaudit` is installed extension
+The PostgreSQL Audit Extension (or pgaudit) provides detailed session and/or object audit logging via the standard logging facility provided by PostgreSQL
 The audit collection will be incomplete and operational details are missed out from the reports in case this extension is not enabled
-- Make sure that the log_destination parameter is set to `csvlog` in `postgresql.conf` file<br>
+- Make sure that the log_destination parameter is set to `csvlog` in `postgresql.conf` file
 The AVDF PostgreSQL audit collector will only be able to process CSV files.
 - Parameter logging_collector needs to be set to `ON`
 - The AVDF Agent OS user needs to have read permission on the directory specified on the log_directory parameter and the generated CSV files to be able to read them
@@ -1355,7 +1355,7 @@ The AVDF PostgreSQL audit collector will only be able to process CSV files.
 
     ![](images/postgresql_failure_report02.png)
 
-17. Click on the `paper` icon for first audit row for `DROP ROLE` and view the details<br>
+17. Click on the `paper` icon for first audit row for `DROP ROLE` and view the details
 You should see a lot of audit details about this particular audited event
 
     ![](images/postgresql_audit_details01.png)
@@ -1429,7 +1429,7 @@ Audit Vault can collect and report on the operating system audit data
 
      ![](images/dbseclab_audit_activity_report01.png)
 
-14. Finally, explore the filters and view the details on the audit data<br>
+14. Finally, explore the filters and view the details on the audit data
 For example, click on the `Event Status` tab and filter the report by `FAILURE`
 
      ![](images/dbseclab_failure_report01.png)
@@ -1438,7 +1438,7 @@ For example, click on the `Event Status` tab and filter the report by `FAILURE`
 
      ![](images/dbseclab_failure_report02.png)
 
-16. Click on the `paper` icon for first audit row for `DROP ROLE` and view the details<br>
+16. Click on the `paper` icon for first audit row for `DROP ROLE` and view the details
 You should see a lot of audit details about this particular audited event
 
      ![](images/dbseclab_audit_details01.png)
@@ -1484,8 +1484,8 @@ You should see a lot of audit details about this particular audited event
 You may now proceed to the next lab.
 
 ## **Appendix**: About the Product
-- **Overview**<br>
-  Oracle Audit Vault and Database Firewall (AVDF) is a complete **Database Activity Monitoring (DAM)** solution that **combines native audit data with network-based SQL traffic capture**.<br>
+- **Overview**
+  Oracle Audit Vault and Database Firewall (AVDF) is a complete **Database Activity Monitoring (DAM)** solution that **combines native audit data with network-based SQL traffic capture**.
 
   AVDF includes an enterprise quality **audit data warehouse**, host-based audit data collection agents, powerful reporting and analysis tools, alert framework, audit dashboard, and a multi-stage Database Firewall. The Database Firewall uses a sophisticated **grammar analysis engine** to inspect SQL statements before they reach the database and determines with high accuracy whether to allow, log, alert, substitute, or block the incoming SQL.
 
@@ -1493,16 +1493,16 @@ You may now proceed to the next lab.
 
   ![](./images/avdf-concept-01.png)
 
-- **Software Appliance**<br>
-Oracle Audit Vault and Database Firewall are packaged as a "**Soft Appliance**" and contain everything needed to install the product on bare hardware - or in this case virtual environments.<br>
+- **Software Appliance**
+Oracle Audit Vault and Database Firewall are packaged as a "**Soft Appliance**" and contain everything needed to install the product on bare hardware - or in this case virtual environments.
 
-- **Fine Grained, Customizable Reporting and Alerting**<br>
-Dozens of out-of-the-box compliance reports provide easy, schedulable, customized reporting for regulations such as GDPR, PCI, GLBA, HIPAA, IRS 1075, SOX, and UK DPA.<br>
+- **Fine Grained, Customizable Reporting and Alerting**
+Dozens of out-of-the-box compliance reports provide easy, schedulable, customized reporting for regulations such as GDPR, PCI, GLBA, HIPAA, IRS 1075, SOX, and UK DPA.
 Reports aggregate network events and audit data from the monitored systems. Summary reports, trend charts and anomaly reports can be used to quickly review characteristics of user activity and help identify anomalous events. Report data can be easily filtered, enabling quick analysis of specific systems or events. Security managers can define threshold based alert conditions on activities that may indicate attempts to gain unauthorized access and/or abuse system privileges. Fine-grained authorizations enable security managers to restrict auditors and other users to information from specific sources, allowing a single repository to be deployed for an entire enterprise.
 
   ![](./images/avdf-concept-02.png)
 
-**Deployment Flexibility and Scalability**<br>
+**Deployment Flexibility and Scalability**
 Security controls can be customized with in-line monitoring and blocking on some databases and monitoring only on other databases. The multi-stage Database Firewall can be deployed in-line as a database proxy server, or out-of-band in network sniffing mode, or with a host-based agent that relays network activity back to the firewall for analysis and recording. Delivered as a pre-configured software appliance that can be deployed on Linux-compatible hardware of choice, a single Audit Vault Server can consolidate audit data and firewall events from thousands of databases. Both Audit Vault Server and the Database Firewall can be configured in a High Availability mode for fault tolerance.
 
 Oracle Audit Vault and Database Firewall 20c **supports both Cloud and On-Premise databases with one single dashboard**, giving customers insight into the activities on their databases.
