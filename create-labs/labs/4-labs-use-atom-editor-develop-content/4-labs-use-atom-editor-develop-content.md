@@ -10,7 +10,7 @@ In this lab, you will learn about the tools that are available to develop and ho
 
 ### What Do You Need?
 * An IDE, such as Atom.
-* A local web server such as atom-live-server, a plugin for `Atom.io`.
+* A local web server such as **atom-live-server**, a plugin for `Atom.io`.
 
 **Note:** Oracle recommends the UA Developers to use Atom. Visual Studio Code is a Microsoft "open source" product. The license agreement is not a standard MIT or General Public License (GPL) agreement and therefore not approved for use at Oracle.
 
