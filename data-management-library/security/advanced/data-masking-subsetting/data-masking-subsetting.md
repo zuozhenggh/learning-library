@@ -1,7 +1,7 @@
 # Oracle Data Masking and Subsetting (DMS)
 
 ## Introduction
-This workshop introduces the various features and functionality of Oracle Data Masking and Subsetting (DMS) pack for Enterprise Manager.<br>
+This workshop introduces the various features and functionality of Oracle Data Masking and Subsetting (DMS) pack for Enterprise Manager.
 It gives the user an opportunity to learn how to configure those features in order to secure their sensitive data in a Non-Production environment.
 
 - *Version tested in this lab:* Oracle Enterprise Manager 13.4
@@ -67,7 +67,7 @@ This lab assumes you have completed:
     **Note:** Notice the options to create ADMs for Oracle Enterprise Business Suite (EBS) and Fusion Applications
 
     ---
-    <br>
+    
 
 6. Click [**Continue**]
 
@@ -79,7 +79,7 @@ This lab assumes you have completed:
     **Note:** Alternatively, SYS can be used as well... In a production environment, you could limit the privileges of DMS_ADMIN to only the packages necessary to perform their duties
 
     ---
-    <br>
+    
 
 8. Select the **EMPLOYEESEARCH_DEV** schema for the application data model
 
@@ -91,12 +91,12 @@ This lab assumes you have completed:
 
     ![](./images/dms-005.png)
 
-11. The job collect the ADM has been submitted.<br>
+11. The job collect the ADM has been submitted.
 _(Tips: Right click on "View Job Details" link and select "Open Link in New Tab" to follow the process)_
 
     ![](./images/dms-006.png)
 
-12. Once the job completes, the `EMPLOYEE_ADM` will no longer be in a locked, uneditable status<br>
+12. Once the job completes, the `EMPLOYEE_ADM` will no longer be in a locked, uneditable status
 Check the status by refreshing this page (refresh icon) and move forward when the Most Recent Jobs Status of the `Employee_ADM` has "**Succeeded**"!
 
 ## **STEP 2**: Enhance the meta-model
@@ -105,23 +105,23 @@ Check the status by refreshing this page (refresh icon) and move forward when th
 
     ![](./images/dms-007.png)
 
-2. You may be asked for the database credentials<br>
+2. You may be asked for the database credentials
 If so, select the "Named" radio button, choose the default credential using the `DMS_ADMIN` username and click [**Continue**]
 
     ![](./images/dms-008.png)
 
-3. In the **Edit Application Data Model**: `Employee_ADM` screen, notice the applications for `EMPLOYEESEARCH_DEV` have been created based on the schema<br>
+3. In the **Edit Application Data Model**: `Employee_ADM` screen, notice the applications for `EMPLOYEESEARCH_DEV` have been created based on the schema
 Expand the entire list of tables associated with these applications (Menu **View** and Submenu **Expand All**)
 
     ![](./images/dms-009.png)
 
-4. Now view the referential relationships captured in the ADM by clicking the tab **Referential Relationships**<br>
+4. Now view the referential relationships captured in the ADM by clicking the tab **Referential Relationships**
 Expand the entire list of applications (Menu **View** and Submenu **Expand All**) to examine the referential relationships under each application. Now that Cloud Control is aware of the foreign keys, it will automatically apply the same format masks to child tables
 
     ![](./images/dms-010.png)
 
-5. **NOTE: THIS PORTION IS FOR WORKBOOK REVIEW ONLY AND SHOW THE STEPS NEEDED TO MANUALLY ASSIGN A FOREIGN KEY. YOU DO NOT NEEED TO PERFORM THIS.**<br>
-    - If the database manages the referential relationships, the ADM will automatically capture these. However, if these are managed by the application, you will need to define these manually.<br>
+5. **NOTE: THIS PORTION IS FOR WORKBOOK REVIEW ONLY AND SHOW THE STEPS NEEDED TO MANUALLY ASSIGN A FOREIGN KEY. YOU DO NOT NEEED TO PERFORM THIS.**
+    - If the database manages the referential relationships, the ADM will automatically capture these. However, if these are managed by the application, you will need to define these manually.
 
     - If it is necessary to define a Referential Relationships, click the [**Add**] button provide the details. In your case, there is an additional table named `DEMO_HR_USERS` that is part of the `EMPLOYEESEARCH_DEV` application, but all of its constraints are enforced by the application and NOT in the database.
 
@@ -149,7 +149,7 @@ Expand the entire list of applications (Menu **View** and Submenu **Expand All**
 
     ![](./images/dms-042.png)
 
-4. Look at the list of Sensitive column types<br>
+4. Look at the list of Sensitive column types
 Click the menu **Actions** and select the sub-menu **Sensitive Column Types**
 
     ![](./images/dms-014.png)
@@ -215,7 +215,7 @@ Click the menu **Actions** and select the sub-menu **Sensitive Column Types**
     **Note:** Alternatively if you are in Database Home page, select "**Data Masking Format Library**" from the schema menu
 
     ---
-    <br>
+    
 
 2. **Format library** appears with predefined formats that Oracle Enterprise Manager Provides
 
@@ -252,7 +252,7 @@ Click the menu **Actions** and select the sub-menu **Sensitive Column Types**
         **Note:** When you will use this masking algorithm, it will replace the initial value by a new value generated from the concatenation of a random string of 6 to 8 characters at the beginning, followed by the fixed value @elcaro.com. At the bottom, you can see examples of the new values will be used.
 
         ---
-        <br>
+        
 
         ![](./images/dms-030.png)
 
@@ -271,7 +271,7 @@ Click the menu **Actions** and select the sub-menu **Sensitive Column Types**
 
     ![](./images/dms-032.png)
 
-3. You may be asked for the database credentials<br>
+3. You may be asked for the database credentials
 If so, select the **Named** radio button, choose the default credential using the `DMS_ADMIN` username and click [**Continue**]
 
     ![](./images/dms-033.png)
@@ -280,10 +280,10 @@ If so, select the **Named** radio button, choose the default credential using th
 
     ![](./images/dms-034.png)
 
-5. Currently, there are no sensitive columns discovered so you must initiate a search<br>
+5. Currently, there are no sensitive columns discovered so you must initiate a search
 Click the option to **Create Discovery Job...**
 
-6. Provide the parameters for the sensitive columns discovery job<br>
+6. Provide the parameters for the sensitive columns discovery job
 Choose the `EMPLOYEESEARCH_DEV` schema and choose the all of them except `EMAIL_ID`, `ISBN_10`, `ISBN_13`, and `UNIVERSAL_PRODUCT_CODE` Sensitive Column Types
 
     ![](./images/dms-035.png)
@@ -294,7 +294,7 @@ Choose the `EMPLOYEESEARCH_DEV` schema and choose the all of them except `EMAIL_
 
     ![](./images/dms-036.png)
 
-9. The job discover the Sensitive Data has been submitted<br>
+9. The job discover the Sensitive Data has been submitted
 _(Tips: Right click on "View Job Details" link and select "Open Link in New Tab" to follow the process)_
 
     ![](./images/dms-037.png)
@@ -307,9 +307,9 @@ _(Tips: Right click on "View Job Details" link and select "Open Link in New Tab"
 
     ![](./images/dms-039.png)
 
-12. Notice that the Sensitive Status of these columns is currently set to **Undefined**. Set the sensitive status of all columns to "Sensitive" that you want to mask.<br>
-Select each identified sensitive column entry and click "**Set Sensitive Status**" menu item and then pick "**Sensitive**" sub menu item.<br>
-Upon successful completion, you should see all "Undefined" labels toggle to "Sensitive".<br>
+12. Notice that the Sensitive Status of these columns is currently set to **Undefined**. Set the sensitive status of all columns to "Sensitive" that you want to mask.
+Select each identified sensitive column entry and click "**Set Sensitive Status**" menu item and then pick "**Sensitive**" sub menu item.
+Upon successful completion, you should see all "Undefined" labels toggle to "Sensitive".
 For this lab, select the `PAYMENT_ACCT_NO`, `EMAIL`, `FIRST_NAME`, `LAST_NAME` and `ROUTING_NUMBER`.
 
     ![](./images/dms-040.png)
@@ -336,7 +336,7 @@ For this lab, select the `PAYMENT_ACCT_NO`, `EMAIL`, `FIRST_NAME`, `LAST_NAME` a
 
     ![](./images/dms-044.png)
 
-4. From the Data Masking Definitions Dialog, we will create a new definition<br>
+4. From the Data Masking Definitions Dialog, we will create a new definition
 Click on the [**Create**] button to begin the process of masking data
 
 5. From the **Create Masking Definition** screen, fill it as follow:
@@ -353,7 +353,7 @@ Click on the [**Create**] button to begin the process of masking data
 
     ![](./images/dms-047.png)
 
-8. We are going to search for all of the identified and tagged "**Sensitive**" columns in the lab exercise [Identifying Sensitive Data](../search-sensitive-data/search-sensitive-data.md)<br>
+8. We are going to search for all of the identified and tagged "**Sensitive**" columns in the lab exercise [Identifying Sensitive Data](../search-sensitive-data/search-sensitive-data.md)
 Click [**Search**]
 
     ![](./images/dms-048.png)
@@ -368,7 +368,7 @@ Click [**Search**]
 
     ![](./images/dms-050.png)
 
-12. The next step is to format columns by clicking the **Define Format** icon:<br>
+12. The next step is to format columns by clicking the **Define Format** icon:
 
     ![](./images/dms-051.png)
 
@@ -440,14 +440,14 @@ Click [**Search**]
     **Note** Here, we take the value of `LASTNAME` associated to the `FIRSTNAME` value which has been attributed randomly previoulsy
 
     ---
-    <br>
+    
 
 17. Click [**OK**]
 
-18. We’ll now apply a format to the `DEMO_HR_SUPPLEMENTAL_DATA.PAYMENT_ACCT_NO` column<br>
+18. We’ll now apply a format to the `DEMO_HR_SUPPLEMENTAL_DATA.PAYMENT_ACCT_NO` column
 Select the row and click on the **Define Format** icon.
 
-19. In this example we are going to use one of the formats that Oracle provides - the **Generic Credit Card**<br>
+19. In this example we are going to use one of the formats that Oracle provides - the **Generic Credit Card**
 Click on the [**Import Format**] button
 
     ![](./images/dms-060.png)
@@ -462,7 +462,7 @@ Click on the [**Import Format**] button
 
 21. You can see the algorythmic sequence and click [**OK**]
 
-22. We’ll define a customised format to the `DEMO_HR_SUPPLEMENTAL_DATA.ROUTING_NUMBER` column as the format `999-999-999` where digits are randomly attributed<br>
+22. We’ll define a customised format to the `DEMO_HR_SUPPLEMENTAL_DATA.ROUTING_NUMBER` column as the format `999-999-999` where digits are randomly attributed
 Select the row and click on the **Define Format** icon
 
 23. Select **Random Digits** from the drop down list box
@@ -521,7 +521,7 @@ Select the row and click on the **Define Format** icon
 
 39. Click [**OK**]
 
-40. Finally, we’ll define a format to the `DEMO_HR_USERS.EMAIL` column<br>
+40. Finally, we’ll define a format to the `DEMO_HR_USERS.EMAIL` column
 Select the row and click on the **Define Format** icon
 
 41. Select **Array List** from the drop down list box
@@ -576,7 +576,7 @@ Select the row and click on the **Define Format** icon
     **Note**: This status means that you have to generate now the script before executing the masking of your sensitive data
 
     ---
-    <br>
+    
 
 2. Select the masking definition `EMPLOYEE_DATA_MASK` and click on the [**Generate Script**] button
 
@@ -586,7 +586,7 @@ Select the row and click on the **Define Format** icon
     **Note**: Enterprise Manager Cloud Control 13c may route the submission as a submitted Job, in that event you will see a screen that looks like the one below. Submit the job with Named Credentials.
 
     ---
-    <br>
+    
 
 3. At the Database Login screen, choose the Named Credential for `DMS_ADMIN`
 
@@ -594,7 +594,7 @@ Select the row and click on the **Define Format** icon
 
 4. Click [**Login**]
 
-5. Thick the masking mode you want:<br>
+5. Thick the masking mode you want:
     - **Mask In-Database** to replace sensitive directly inside the database. Usually, you will execute this script into a copy of the Production DB
     - **Mask In-Export** to generate from the source database an Oracle Data Pump file including the masked data. Usually, you will execute this script from Production DB
 
@@ -608,14 +608,14 @@ Select the row and click on the **Define Format** icon
 
 7. Click [**Submit**]
 
-8. To view the status of your job, you can follow the prompts provided by Enterprise Manager Cloud Control 13c<br>
+8. To view the status of your job, you can follow the prompts provided by Enterprise Manager Cloud Control 13c
 Once the job has been successfully generated, navigate back to your Data Masking job, you are ready to submit it
 
     ![](./images/dms-082.png)
 
     ---
-    **Tips**:<br>
-    You can refresh the screen by clicking [**Go**]<br>
+    **Tips**:
+    You can refresh the screen by clicking [**Go**]
         ![](./images/dms-083.png)
 
     ---
@@ -649,7 +649,7 @@ Make sure the radio button next to `EMPLOYEE_DATA_MASK` is selected. From **Acti
     This script could be taken and executed on other targets
 
     ---
-    <br>
+    
 
 12. Click [**Return**] to return to the Data Masking Definitions screen
 
@@ -674,7 +674,7 @@ Make sure the radio button next to `EMPLOYEE_DATA_MASK` is selected. From **Acti
     **Note**: The masking script file will be stored in this directory on **DBSecLab VM** and can be reused as many times as you need
 
     ---
-    <br>
+    
 
 4. Configure access permissions
     - Go to **Host Credentials** and select the Named credentials `ORACLE-OS`
@@ -684,12 +684,12 @@ Make sure the radio button next to `EMPLOYEE_DATA_MASK` is selected. From **Acti
 
 5. Click [**Submit**]
 
-6. Once you submit the job, you will be forwarded to a confirmation page that the job was submitted successfully<br>
+6. Once you submit the job, you will be forwarded to a confirmation page that the job was submitted successfully
 Right-click on **Masking Job Executing** link and open it in a new tab
 
     ![](./images/dms-091.png)
 
-7. Once the job is successfully completed, go back to the Data Masking Definitions screen and click [**Go**] to refresh the status of the job<br>
+7. Once the job is successfully completed, go back to the Data Masking Definitions screen and click [**Go**] to refresh the status of the job
 It will become **Masking Job Succeeded**
 
     ![](./images/dms-092.png)
@@ -777,7 +777,7 @@ It will become **Masking Job Succeeded**
 You may now proceed to the next lab.
 
 ## **Appendix**: About the Product
-- **Overview**<br>
+- **Overview**
     Oracle Data Masking pack for Enterprise Manager, part of Oracle's comprehensive portfolio of database security solutions, helps organizations comply with data privacy and protection mandates such as Sarbanes-Oxley (SOX), Payment Card Industry (PCI) Data Security Standard (DSS), Health Insurance Portability and Accountability Act (HIPAA), EU General Data Protection Regulation (GDPR), and the upcoming California Consumer Privacy Act (CCPA), and numerous laws that restrict the use of actual customer data. With Oracle Data Masking, sensitive information such as credit card or social security numbers can be replaced with realistic values, allowing production data to be safely used for development, testing, or sharing with out-sourced or off-shore partners for other non-production purposes. Oracle Data Masking uses a library of templates and format rules, consistently transforming data in order to maintain referential integrity for applications.
 
     Data masking (also known as data scrambling and data anonymization) is the process of replacing sensitive information copied from production databases to test or non-production databases with realistic, but scrubbed, data based on masking rules. Data masking is ideal for virtually any situation when confidential or regulated data needs to be shared with other non-production users; for instance, internal users such as application developers, or external business partners, like offshore testing companies or suppliers and customers. These non-production users need to access some of the original data, but do not need to see every column of every table, especially when the information is protected by government regulations.
@@ -786,7 +786,7 @@ You may now proceed to the next lab.
 
     ![](./images/dms-concept.png)
 
-- **Why do I need Data Masking?**<br>
+- **Why do I need Data Masking?**
     There are several reasons why you would need it, based on challenges like the ones below
     - Personally Identifiable and sensitive data is being shared with parties that do not have a business need-to-know in development and testing groups.
     - The use of operational databases containing personal information or any other sensitive information is being used for testing purposes. All identified sensitive details and content should be removed or modified beyond recognition before use.
