@@ -6,6 +6,7 @@ The objective of this workshop is to highlight Oracle Enterprise Manager Cloud C
 
 The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator.
 
+
 *Estimated Lab Time*: 60 minutes
 
 ### Prerequisites
