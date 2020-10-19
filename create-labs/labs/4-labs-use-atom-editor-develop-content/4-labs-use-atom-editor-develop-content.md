@@ -9,10 +9,10 @@ You can use your preferred Editor to author and edit your Markdown (.md) content
 This lab suggests alternatives to develop and host your content, and if you are already using something that works for you, no need to change it. You can use any combination of tools that make sense for you.
 
 ### What Do You Need?
-* An IDE such as Atom.
-* A local web server such as atom-live-server, a plugin for Atom.io
+* An IDE, such as Atom.
+* A local web server such as atom-live-server, a plugin for Atom.io.
 
-**Note:** Using Atom is recommended for UA Developers. Visual Studio Code is a Microsoft "open source" product. The license agreement is not a standard MIT or General Public License (GPL) agreement and therefore not approved for use at Oracle.
+**Note:** Oracle recommends the UA Developers to use Atom. Visual Studio Code is a Microsoft "open source" product. The license agreement is not a standard MIT or General Public License (GPL) agreement and therefore not approved for use at Oracle.
 
 
 ## **STEP 1:** Install Atom
@@ -43,7 +43,7 @@ The atom-live-server plugin is added to the **Packages** menu.
   ![](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
 
 ## **STEP 3:** Create your Lab and Workshop Content
-You can use any of the existing project folder in the **\learning-library** folder as a template to create a workshop for your project. In this example, let's use the **learning-library\data-management-library\big-data\bds** project folder as a template to create a new workshop.
+You can use any of the existing project folder in the **\learning-library** folder as a template to create a workshop for your project. In this example, let's use the **learning-library\data-management-library\big-data\bds** project folder as a template to create a new workshop and labs.
 
 To create your lab and workshop content:
 1. Open your cloned repository using Windows Explorer.
@@ -54,6 +54,7 @@ To create your lab and workshop content:
   ![](./images/use-atom-editor-open-folder.png " ")
 6. Navigate to **create-labs\labs** and click **Select Folder**.
   ![](./images/atom-editor-browse-select-lab.png " ")
+
   The workshop folder and the lab folders are displayed in Atom.
   ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
 7. Expand the Workshop folder, **1-labs-quickstart-workshop** in this example, open the `manifest.json` to list the labs you plan to add to your workshop. The `manifest.json` is like your book map file in SDL.
@@ -63,7 +64,7 @@ To create your lab and workshop content:
     ![](./images/use-atom-editor-index-title-update.png " ")
 10. Open the `README.md` file and update it with a gist of your workshop.
     ![](./images/use-atom-editor-readme-update.png " ")
-11. Similarly, expand the lab folder, for example, **2-labs-git-hug-get-started-install-configure** and edit the `*.md` file as per your requirement. If you want to use any images in your lab, then include them in the images folder.
+11. Similarly, expand the lab folder, for example, **2-labs-git-hug-get-started-install-configure** and edit the `.md` file as per your requirement. If you want to use any images in your lab, then include them in the images folder.
 
 ## **STEP 4:** Preview Your Workshop and Labs Using Atom-Live-Server
 
