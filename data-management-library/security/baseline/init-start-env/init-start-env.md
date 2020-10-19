@@ -70,7 +70,7 @@ Before performing the workshop, please make sure you have the latest labs script
 		  	- PDB2 PROD        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb2`  (menu: red)
 		  	- PDB2 DEV         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb2`   (bg: red & menu: red)
 
-	- Optionally, run SQL Developer and connect to a database (1521) or SSH into the VM and Connet via SQLPlus
+	- Optionally, run SQL Developer and connect to the databases CDB1, PDB1 and PDB2 (Port 1521) directly or through a SSH Host
 
 		![](./images/init-start-env-002.png)
 
@@ -85,7 +85,7 @@ Before performing the workshop, please make sure you have the latest labs script
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Rene Fontcha
+- **Contributors** - Pedro Lopes, Gian Sartor, Rene Fontcha
 - **Last Updated By/Date** - Hakim Loumi, October 2020
 
 ## See an issue?

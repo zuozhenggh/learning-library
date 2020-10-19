@@ -17,7 +17,8 @@ It gives the user an opportunity to learn how to configure this feature to audit
 <br>
 
 ### Objectives
-You will see how to enable Unified Auditing on your database and see different audit use cases.
+- Enable/Disable Unified Auditing on your database
+- See different auditing use cases
 
 ### Prerequisites
 This lab assumes you have completed:
@@ -425,7 +426,7 @@ Technical Documentation:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, October 2020
+- **Last Updated By/Date** - Hakim Loumi, 19th October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

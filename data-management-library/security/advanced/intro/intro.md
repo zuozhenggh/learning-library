@@ -1,8 +1,8 @@
 # Oracle Database Security Hands-On Labs - Part2 (Advanced)
 
 ## Objectives
-This workshop is the second part of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities.
-These worlshops give the user an opportunity to learn how to configure those features to protect and secure their databases from the Baseline to the Maximum Security Architecture (MSA).
+**This workshop is the 2nd part of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities.**<br>
+These workshops give the user an opportunity to learn how to configure the DB Security features to protect and secure their databases from the Baseline to the Maximum Security Architecture (MSA).
 
 This 2nd workshop is dedicated to the advanced features of the Database Security and it will cover following products and solutions:
 - Oracle Advanced Security Option (ASO)
@@ -13,6 +13,8 @@ This 2nd workshop is dedicated to the advanced features of the Database Security
 - Oracle Data Masking and Subsetting (DMS)
 - Oracle Audit Vault and Database Firewall (AVDF)
 - Oracle Key Vault (OKV)
+
+For more detail about the 1st workshop, please refer to the *Oracle Database Security Hands-On Labs - Part1 (Baseline)*.
 
 ## About this Workshop
 Based on an OCI architecture, deployed in a few minutes with a simple internet connection, it allows you to test DB Security use cases in a complete environment already pre-configured by the Oracle DB Security PMs Team.
@@ -25,19 +27,19 @@ The complete architecture of the DB Security Hands-On Labs is composed of 4 VMs 
 
 ![](./images/dbseclab-v3-archi.png)
 
-- DBSec-Lab VM (*Mandatory for all labs: Baseline and Advanced workshops*)
+- DBSec-Lab VM (*Mandatory for all workshops: Baseline and Advanced workshops*)
 - AV Server VM (*for Advanced workshop only*)
 - DBF Server VM (*for Advanced workshop only*)
 - OKV Server VM (*for Advanced workshop only*)
 
 During this 2nd workshop, you'll use different resources to interact with these VMs:
-- SSH Terminal Client;
-- Glassfish HR App;
-- Oracle Enterprise Manager 13c;
-- Oracle AVDF Web Console (*for AVDF labs only*);
-- Oracle Golden Gate Web Console (*for AVDF labs only*);
-- Oracle Key Vault Web Console (*for OKV labs only*);
-- (Optionnally) SQL Developer.
+- SSH Terminal Client
+- Glassfish HR App
+- Oracle Enterprise Manager 13c
+- Oracle AVDF Web Console (*for AVDF labs only*)
+- Oracle Golden Gate Web Console (*for AVDF labs only*)
+- Oracle Key Vault Web Console (*for OKV labs only*)
+- (Optionnally) SQL Developer
 
 So that your experience of this workshop is the best possible, DO NOT FORGET to perform lab "*Initialze and Start the DBSecLab Environment*" to be sure that all these resources are correctly set!
 
@@ -45,10 +47,8 @@ The entire DB Security PMs Team wishes you an excellent workshop.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, October 2020
+- **Contributors** - Pedro Lopes, Gian Sartor, Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, 19th October 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

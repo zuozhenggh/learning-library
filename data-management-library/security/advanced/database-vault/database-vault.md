@@ -5,7 +5,7 @@ This workshop introduces the various features and functionality of Oracle Databa
 It gives the user an opportunity to learn how to configure those features to prevent unauthorized privileged users from accessing sensitive data.
 
 - *Version tested in this lab:* Oracle DB 19.8
-- *Estimated Lab Time:* 30 minutes
+- *Estimated Lab Time:* 45 minutes
 
 ### Objectives
 - Enable Database Vault in the container and `PDB1` pluggable database.
@@ -28,11 +28,11 @@ This lab assumes you have completed:
 | Step No. | Feature | Approx. Time | Details | Value Proposition |
 |--|------------------------------------------------------------|-------------|--------------------|-------------------|
 | 1 | Enable Database Vault | 5 minutes |||
-| 2 | Create a Simple Realm | 5 minutes |||
-| 3 | Create a Trusted Path / Multi-factor Authorization | 5 minutes |||
-| 4 | Simulation Mode | 5 minutes |||
+| 2 | Create a Simple Realm | 10 minutes |||
+| 3 | Create a Trusted Path / Multi-factor Authorization | 10 minutes |||
+| 4 | Simulation Mode | 10 minutes |||
 | 5 | Ops Control | 5 minutes |||
-| 6 | Disabling Database Vault (Optional) | 5 minutes |||
+| 6 | (Optional) Disabling Database Vault | <5 minutes |||
 
 ## **STEP 1**: Enable Database Vault
 
@@ -391,7 +391,7 @@ This is an easy way for us to identify who is connecting and where they are conn
 
    ![](./images/dv-009.png)
 
-## **STEP 6**: Disabling Database Vault (Optional)
+## **STEP 6**: (Optional) Disabling Database Vault
 **Attention: DO NOT run this lab if you want perfoming Oracle Label Security labs later!**
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
@@ -495,9 +495,7 @@ Video:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, October 2020
+- **Last Updated By/Date** - Hakim Loumi, 19th October 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

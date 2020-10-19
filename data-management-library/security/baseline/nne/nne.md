@@ -2,13 +2,14 @@
 
 ## Introduction
 This workshop introduces the functionality of Native Network Encryption.<br>
-It gives the user an opportunity to learn how to configure this feature to encrypt and secure their data in-motion.
+It gives the user an opportunity to learn how to configure this feature to encrypt and secure its data in-motion.
 
 - *Version tested in this lab:* Oracle DB 19.8
 - *Estimated Lab Time:* 15 minutes
 
 ### Objectives
-You will see how is it easy and very fast to implement and manage the Native Network Encryption on your database.
+- Enable/Disable the Native Network Encryption on your database
+- Check the network encryption effects before/after enabling
 
 ### Prerequisites
 This lab assumes you have completed:
@@ -232,7 +233,7 @@ Technical Documentation: [Oracle Native Network Encryption 19c](https://docs.ora
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, October 2020
+- **Last Updated By/Date** - Hakim Loumi, 19th October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
