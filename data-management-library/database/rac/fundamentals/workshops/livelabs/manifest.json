@@ -37,7 +37,7 @@
             "filename": "../../services/services.md"
         },
         {
-            "title": "Lab 7: SQL and PL/SQl - Sequences",
+            "title": "Lab 7: SQL and PL/SQL - Sequences",
             "description": "This lab walks you through the use of sequences in a RAC database.",
             "filename": "../../sql/racsql.md"
         },
@@ -47,7 +47,7 @@
             "filename": "../../sql/parallelexecution.md"
         },
         {
-            "title": "Lab 9: PL/SQL Packages ",
+            "title": "Lab 9: PL/SQL Packages",
             "description": "This lab walks you through the use of Oracle Scheduler in a RAC database.",
             "filename": "../../sql/scheduler.md"
         }
