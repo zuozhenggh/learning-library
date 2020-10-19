@@ -1,6 +1,6 @@
 # Database Configuration and Compliance Management
 ## Introduction
-The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator.
+The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator.
 
 *Estimated Lab Time*: 60 minutes
 
@@ -50,11 +50,11 @@ All the items in this step are read-only, primary goal is to learn about invento
 
 1.  Log into your Enterprise Manager as indicated in the Prerequisites step if not already done.
 
-2.  From the Enterprise menu, select Configuration, then select Inventory and  Usage Details
+2.  From the Enterprise menu, select Configuration, then select Inventory and  Usage Details
 
   ![](images/0e4c2e20dec851fcdf23fd2e92bdee7a.png " ")
 
-3.  In the ‘Show’ filter menu, select **Databases** to see all database instances managed by Enterprise Manager
+3.  In the ‘Show’ filter menu, select **Databases** to see all database instances managed by Enterprise Manager
 
   ![](images/cd409c11afa638eb7a1ab8f7cbc4f015.png " ")
 
@@ -91,7 +91,7 @@ In this step, you will compare two database targets to determine configuration d
 
 1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
-2.  Navigate to ***Enterprise >> Configuration >> Comparison & Drift Management***
+2.  Navigate to ***Enterprise >> Configuration >> Comparison & Drift Management***
 
   ![](images/37238ad74bd47f814d428587fb1c6113.png " ")
 
@@ -179,7 +179,7 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
 1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet.
 
-2.  Navigate to ***Enterprise >> Configuration >> Comparison & Drift Management***. Review the different types of comparisons supported.
+2.  Navigate to ***Enterprise >> Configuration >> Comparison & Drift Management***. Review the different types of comparisons supported.
 
   ![](images/133fbb62c871d1ccb0dc8b1f794d4544.png " ")
 
@@ -231,7 +231,7 @@ In this workshop, you will learn about continuous configuration drift monitoring
 12. Under Source Configuration, do the following
 
   -  Select ‘Latest Configuration’
-  -  Click search to choose Source Target  
+  -  Click search to choose Source Target
 
   ![](images/bd6ec634cc1a0ff215b5344fcfdbfc07.png " ")
 
@@ -326,7 +326,7 @@ A compliance standard rule is a specific test to determine if a configuration da
 
 1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet.
 
-2.  From the Enterprise menu,select Compliance, then select Library
+2.  From the Enterprise menu,select Compliance, then select Library
 
   ![](images/f0cb7078dc7b26619211bd41d5059895.png " ")
 
@@ -444,11 +444,11 @@ All these will give you a security posture of database target
 
 30. The list of targets chosen will show up in the target association page as shown below
 
-  ![](images/d798f57aea9022efa472466690ce2152.png " ")    
+  ![](images/d798f57aea9022efa472466690ce2152.png " ")
 
 31. Click OK and a pop-up shows up to confirm association. Click Yes to save the association which initiates compliance check on this target by executing all the compliance rules associated with this compliance standard
 
-  ![](images/a03a851c889aab744c8895fada74fca3.png " ")    
+  ![](images/a03a851c889aab744c8895fada74fca3.png " ")
 
 32. Go to Compliance Results page to check the compliance posture
 
@@ -472,7 +472,7 @@ All these will give you a security posture of database target
 
 37. Create a new framework. Click Create, provide a unique name for the framework and author
 
-  ![](images/3fa0c8b11aad2266faddbcdbb1f224e6.png " ")    
+  ![](images/3fa0c8b11aad2266faddbcdbb1f224e6.png " ")
 
 38. Click Continue. This will take you to a new page so that compliance standards can be added
 

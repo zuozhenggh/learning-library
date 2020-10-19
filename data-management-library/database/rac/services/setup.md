@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to setup your database schemas for the subsequent labs.
 
-## **Step**: Install Sample Data
+## **STEP**: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
@@ -27,16 +27,14 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     ````
     ![](./images/setup_services-1.png " " )
 
-2. The script **setupDB.sh** assumes the password for SYS and SYSTEM user. Verify that the following entry in the script matches your password :
+2. The script **setupDB.sh** assumes the password for SYS and SYSTEM user. Edit the script using nano and replace the db_pwd with the password you entered in an earlier lab.
 
     ````
     # Pwds may need to be changed
     db_pwd="W3lc0m3#W3lc0m3#"
 
     ````   
-    No other lines need to be changed.
-    
-    Run the **setupDB.sh** script
+3. No other lines need to be changed.  Run the **setupDB.sh** script
 
     ````
     <copy>
@@ -47,7 +45,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     ![](./images/setupNFresults.png " " )
 
 
-Congratulations! Now you have the environment to run the labs.
+Congratulations! Now you have the data to run the subsequent labs.
 
 You may now *proceed to the next lab*.
 

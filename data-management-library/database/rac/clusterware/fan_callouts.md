@@ -7,8 +7,8 @@ This lab walks you through the steps to demonstrate Oracle Clusterware’s FAN c
 FAN is configured and runs automatically when you install Oracle Grid Infrastructure. All Oracle clients are FAN-aware and versions later than Oracle Database 12c Release 2 will auto-configure the FAN communication path. There is another lesson showing FAN at the application tier.
 
 Estimated Lab Time: 20 Minutes
-### Prerequisites
 
+### Prerequisites
 This lab assumes you have completed the following labs:
 - Lab: Generate SSH Key
 - Lab: Setup DB System
@@ -20,7 +20,7 @@ FAN callouts provide a simple yet powerful integration mechanism available with 
 
 For more information about FAN view the technical paper https://www.oracle.com/technetwork/database/options/clustering/applicationcontinuity/learnmore/fastapplicationnotification12c-2538999.pdf
 
-## **Step 1:**  Write a callout
+## **STEP 1:**  Write a callout
 
 1. On each node (node 1 and node 2), as the grid user, change in to the **racg/usrco** directory under the GI home
     ````
@@ -39,6 +39,7 @@ For more information about FAN view the technical paper https://www.oracle.com/t
     echo $* " reported = "`date` >> ${FAN_LOGFILE} &
     </copy>
     ````
+
 This callout will, whenever a FAN event is generated, place an entry in the logfile (FAN_LOGFILE) with the time (date) the event was generated.
 
 3. Ensure that the callout file has the execute bit set
@@ -67,11 +68,11 @@ Ensure that the callout directory has write permissions only to the system user 
 
     ````
 
-## **Step 2** Perform an action that will generate an event
+## **STEP 2** Perform an action that will generate an event
 
-1. Stopping or starting a database instance, or a database service will generate a FAN event. A failure of an instance, a node, or a public network will generate an event.
+Stopping or starting a database instance, or a database service will generate a FAN event. A failure of an instance, a node, or a public network will generate an event.
 
-Stop the database instance on node1 using srvctl
+1. Stop the database instance on node1 using srvctl
 
     ````
     <copy>
@@ -110,22 +111,19 @@ Stop the database instance on node1 using srvctl
     cat /tmp/racnode*.log
     <copy>
     ````
-Depending on which instance you stopped you will see an entry similar to the following:
+5. Depending on which instance you stopped you will see an entry similar to the following:
 
     ````
     INSTANCE VERSION=1.0 service=atfdbvm_mel1nk.tfexsubdbsys.tfexvcndbsys.oraclevcn.com database=atfdbvm_mel1nk instance=aTFdbVm1 host=racnode1 status=down reason=USER timestamp=2020-08-17 10:41:07 timezone=+00:00 db_domain=tfexsubdbsys.tfexvcndbsys.oraclevcn.com  reported = Mon Aug 17 10:41:07 UTC 2020
     ````
 
-This is an **INSTANCE** event, a stop event as **reason=down**, it occurred on the **host=racnode1** and it was user initiated via **reason=USER**.
-
-Note that there will be no entry for this event on **racnode2** as most events are local to the host on which they occur. The exceptions are node and network events which will generate an identical entry on all nodes in the cluster.
-
-If you did not get an entry similar to the above there is a problem with your script. Execute the script directly and correct any errors. For example:
+6. This is an **INSTANCE** event, a stop event as **reason=down**, it occurred on the **host=racnode1** and it was user initiated via **reason=USER**.  Note that there will be no entry for this event on **racnode2** as most events are local to the host on which they occur. The exceptions are node and network events which will generate an identical entry on all nodes in the cluster. If you did not get an entry similar to the above there is a problem with your script. Execute the script directly and correct any errors. For example:
 
     ````
     sh -x /u01/app/19.0.0.0/grid/racg/usrco/callout-log.sh  ABC
     ````
-will produce a detailed execution of each line such as, for example:
+
+7.  The command above will produce a detailed execution of each line such as:
     ````
     [grid@racnode1 usrco]$ sh -x callout-log.sh GGG
     + umask 022
@@ -137,13 +135,11 @@ will produce a detailed execution of each line such as, for example:
     ````
 This attempt shows an error on line 4 of the file (the append to the log). In this case it was the wrong type of bracket. Other mistakes will produce different errors.
 
-## **Step 3** Create a more elaborate callout
+## **STEP 3** Create a more elaborate callout
 
-1. Callouts can be any shell-script or executable. There can be multiple callouts in the racg/usrco directory and all will be executed with the FAN payload as arguments. The scripts are executed sequentially, so it is not recommended to have many scripts in this directory, as they could place a load on the system that is not desired, and there may be timeliness issues if the scripts wait for scheduling.
+Callouts can be any shell-script or executable. There can be multiple callouts in the racg/usrco directory and all will be executed with the FAN payload as arguments. The scripts are executed sequentially, so it is not recommended to have many scripts in this directory, as they could place a load on the system that is not desired, and there may be timeliness issues if the scripts wait for scheduling.
 
-A script may perform actions related to the eventtype. **eventtype** can be one of SERVICE, SERVICEMEMBER, INSTANCE, DATABASE  or NODE
-
-The following example will filter on the eventtype looking for a NODE, DATABASE or SERVICE event. If the FAN payload indicates a DOWN event for these eventypes it will perform a different action than for all other events.
+1. A script may perform actions related to the eventtype. **eventtype** can be one of SERVICE, SERVICEMEMBER, INSTANCE, DATABASE  or NODE.  The following example will filter on the eventtype looking for a NODE, DATABASE or SERVICE event. If the FAN payload indicates a DOWN event for these eventypes it will perform a different action than for all other events.
 
     ````
     <copy>
@@ -202,17 +198,17 @@ The following example will filter on the eventtype looking for a NODE, DATABASE 
     </copy>
     ````
 
-3. Examine the entry created in the log file generated in /tmp
+2. Examine the entry created in the log file generated in /tmp
 
-On node1:
+    On node1:
 
-    ````
-    cat /tmp/racnode1_callout2.log
-    ````  
-On node2:
-    ````
-    cat /tmp/racnode2_callout2.log
-    ````
+        ````
+        cat /tmp/racnode1_callout2.log
+        ````  
+    On node2:
+        ````
+        cat /tmp/racnode2_callout2.log
+        ````
 2. Cause a DATABASE UP event to be generated:
 
     ````
@@ -222,7 +218,7 @@ On node2:
     ````        
 Note the different entries generated in each log (on each node)    
 
-## **Step 4** Client-side FAN events
+## **STEP 4** Client-side FAN events
 
 FAN events are sent to the application mid-tier or client tier using the Oracle Notification Service (ONS). ONS is configured automatically on the cluster when you install Grid Infrastructure. CRS manages the stop and start of the ONS daemon.
 
@@ -255,20 +251,20 @@ Download the FANWatcher utility
 
 4. Create a database user in the PDB **pdb1** and a database service to connect to. The service should have 1 preferred instance and 1 available instance. In this example the service name is **testy** (choose a name you like), the instance names are as specified, the username is **test_user** and the password is **W3lcom3\#W3lcom3\#**
 
-Create the service and start it
+5. Create the service and start it
     ````
     <copy>
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/srvctl add service -d aTFdbVm_mel1nk -s testy -pdb pdb1 -preferred aTFdbVm1 -available aTFdbVm2
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/srvctl start service -d aTFdbVm_mel1nk -s testy
     </copy>
     ````
-Connect to sqlplus as **SYS**
+6. Connect to sqlplus as **SYS**
     ````
     </copy>
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/sqlplus sys/W3lc0m3#W3lc0m3#@//racnode1/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     </copy>
     ````    
-and run the following commands:
+7. Run the following commands:
     ````
     <copy>
     create user test_user identified by W3lcom3#W3lcom## default tablespace users temporary tablespace temp;
@@ -350,7 +346,6 @@ The event payload contains the same information as displayed in the CALLOUT exam
 You will also see the failed instance get restarted by Grid Infrastructure, and the corresponding **UP** event is sent. Oracle clients, such as UCP, will react to both UP and DOWN events - closing connections on down and re-establishing them automatically on UP.
 
     ````
-
     ** Event Header **
     Notification Type: database/event/service
     Delivery Time: Tue Aug 18 08:54:51 UTC 2020
@@ -366,13 +361,12 @@ You will also see the failed instance get restarted by Grid Infrastructure, and 
     Generating Node: racnode2
     Event payload:
     VERSION=1.0 event_type=INSTANCE service=atfdbvm_mel1nk.tfexsubdbsys.tfexvcndbsys.oraclevcn.com instance=aTFdbVm2 database=atfdbvm_mel1nk db_domain=tfexsubdbsys.tfexvcndbsys.oraclevcn.com host=racnode2 status=up reason=FAILURE timestamp=2020-08-18 08:55:25 timezone=+00:00
-
     ````
 If fanWatcher can auto-configure with ONS and receive and display events, so can any client on the same tier. This validates the communication path (no firewall blockage for example), and that FAN events are propagating correctly. 
 
 ## Acknowledgements
 * **Authors** - Troy Anthony, Anil Nair
-* **Contributors** -
+* **Contributors** - Kay Malcolm
 * **Last Updated By/Date** - Troy Anthony, Database Product Management, August 2020
 
 ## Need Help?
