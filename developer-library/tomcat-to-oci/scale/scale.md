@@ -1,6 +1,6 @@
-# Scaling the Tomcat cluster
+# Scaling the Tomcat Cluster
 
-## About This lab
+## Introduction
 
 In this lab, we will explain how to scale the number of Tomcat nodes on Oracle Cloud Infrastructure.
 
@@ -13,9 +13,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-*For this lab, you need*
+For this lab, you need
 
-* to have provisioned the Tomcat cluster on OCI
+* To have provisioned the Tomcat cluster on OCI
 
 ## **STEP 1:** Scale the number of nodes
 

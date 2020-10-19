@@ -1,9 +1,8 @@
 # Introduction
 
-## About Workshop
+## About this Workshop
 
-This lab will walk you through the process of migrating an existing 'on-premises' Tomcat application to Oracle Cloud Infrastructure. 
-The Tomcat application we'll migrate is a Java applications with a datasource connecting to a database that will be migrated to Autonmous Database on OCI alongside the application.
+This lab will walk you through the process of migrating an existing 'on-premises' Tomcat application to Oracle Cloud Infrastructure. The Tomcat application we'll migrate is a Java application with a datasource connecting to a database that will be migrated to Autonomous Database on OCI alongside the application.
 
 Estimated Lab Time: 80 min.
 
@@ -11,6 +10,10 @@ Estimated Lab Time: 80 min.
 
 - Apache Tomcat® is an open source Java application server
 - Terraform is an open source engine to deploy "infrastructure-as-code" and is used to deploy the network, compute and database resources
+
+The reference architecture looks like the following:
+
+![](./images/architecture-deploy-tomcat.png)
 
 ### Objectives
 
@@ -24,20 +27,15 @@ In this lab, you will:
 - Optionally learn to scale the Tomcat cluster
 - Tear down the workshop
 
-
-The reference architecture looks like the following:
-
-![](./images/architecture-deploy-tomcat.png)
-
 ### Prerequisites
 
-*In order to run this workshop you need:*
+In order to run this workshop you need:
 
 * A Mac OS X, Windows or Linux machine
 * A private/public SSH key-pair
 * Firefox browser
 * A OCI account with a Compartment setup
-* git installed 
+* git installed
 * Terraform 0.12 installed
 
 You may proceed to the next lab.
