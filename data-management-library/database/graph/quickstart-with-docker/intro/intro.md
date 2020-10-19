@@ -31,8 +31,7 @@ In this workshop, you will:
 
 ### Prerequisites
 
-- This workshop requires an Oracle Free Tier, Always Free, Paid or an existing Oracle Cloud account (Not all services in this workshop are Always Free services).
-- Note: If you have Docker installed and running on your machine, you can proceed to the lab - Setup a Property Graph Analysis Environment in Docker
+- This workshop requires Docker and Git. You must have Docker and Git installed and running on your machine.
 
 ## Acknowledgements
 

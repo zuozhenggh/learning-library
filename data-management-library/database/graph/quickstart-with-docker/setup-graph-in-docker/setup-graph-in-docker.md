@@ -14,7 +14,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-* This lab assumes that you have completed the lab - Set up Docker on an Oracle Cloud Compute Instance
+* Docker and GIT on your local machine (laptop or desktop).
 * Internet access to download the Graph Server and Client kit.
 
 ## **STEP 1:** Get required components
