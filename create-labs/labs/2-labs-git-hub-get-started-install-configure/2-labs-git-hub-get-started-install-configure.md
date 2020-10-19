@@ -53,12 +53,12 @@ You must request membership to the Oracle GitHub Organization (OGHO). After your
   ![](./images/git-get-started-profile.png " ")
 
 2. On the left side of your profile page, under **Personal Settings**, click **Organizations** to display the **Organizations** page and then click the icon for your organization.
-    [](./images/git-get-started-profile-2.png " ")
+    ![](./images/git-get-started-profile-second.png " ")
 
 3. Under your organization name, click **People**.
 4. Locate your username in the list of members. If the list is large, then you can search for your username in the search box.
 5. In the menu to the right of your username, choose **Public** as the new visibility option:
-    ![](./images/get-started-profile-public.png " ")
+    ![](./images/git-get-started-public-profile.png " ")
 
 6. Send an email to [github_info_ww_grp](github_info_ww_grp@oracle.com) that you have made your membership public. Now you are an official member of the main Oracle Organization on GitHub (OGHO).
 
