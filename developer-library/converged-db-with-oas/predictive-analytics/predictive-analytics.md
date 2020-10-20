@@ -36,7 +36,7 @@ The below pre-loaded data objects are available in Converged Database.
 | HR\_ATTRITION\_PREDICT | Table | Relational | Data used to test the model we create |
 
 
-## Step 1: Create Dataset
+## STEP 1: Create Dataset
 
 In this step, create a dataset to work on.
 
@@ -57,13 +57,13 @@ In this step, create a dataset to work on.
 7. Finally click on “Add” to add the data set.
 ![](./images/paoas1.5.png " ")
 
-## Step 2: Create Dataflow - ML Model
+## STEP 2: Create Dataflow - ML Model
 
 In this step, we will build a Machine learning model using OAS Dataflow capability to train our dataset.
 
 1. Click on create and then select Data Flow.
 ![](./images/paoas2.1.png " ")
-2. Select the Data set created in the Step 1 **Create Dataset** and click on Add.
+2. Select the Data set created in the STEP 1 **Create Dataset** and click on Add.
 ![](./images/paoas2.2.png " ")
 3. Click on “+” and select “Train Binary Classifier”.  
   We are using “Train Binary Classifier” because the predict values will only be “yes or no”.
@@ -83,7 +83,7 @@ In this step, we will build a Machine learning model using OAS Dataflow capabili
 
 We now have an ML model to test our data.
 
-## Step 3: Check ML Model Quality
+## STEP 3: Check ML Model Quality
 
 In this step , we will check the parameters which determines the credibility of a model.
 
@@ -96,7 +96,7 @@ In this step , we will check the parameters which determines the credibility of 
 
  Based on the above shown parameters one can compare various algorithms and select the algorithm for best results of their data.
 
-## Step 4: Apply Training Model to Predict
+## STEP 4: Apply Training Model to Predict
 
 In this step, we will apply the previously created ML model to the test data.
 
@@ -115,7 +115,7 @@ In this step, we will apply the previously created ML model to the test data.
 ![](./images/paoas4.5.png " ")
 6. Click on “+” symbol  and click on Create Scenario , to apply the ML model on the test data.
 ![](./images/paoas4.6.png " ")
-7. Select the ML model created previously in Step 2 **Create Dataflow - ML model**, click on Ok.
+7. Select the ML model created previously in STEP 2 **Create Dataflow - ML model**, click on Ok.
 ![](./images/paoas4.7.png " ")
 8. We can see that the model has successfully been added to the project.
 ![](./images/paoas4.8.png " ")
@@ -125,7 +125,7 @@ In this step, we will apply the previously created ML model to the test data.
 Now our training model is successfully mapped to the ML model.
   
 
-## Step 5: Create Visualizations
+## STEP 5: Create Visualizations
 
 In this step we will enrich our insights with predictive analytics by creating some visuals on the prediction data.
 

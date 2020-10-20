@@ -53,7 +53,7 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
 
   
     
-## Step 1: Create Data Set ##
+## STEP 1: Create Data Set ##
   
   In this step, we will create individual data sets of different data types: json, xml and relational.
 
@@ -83,12 +83,12 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
     - **FINANCIALS\_XML\_FRANCE\_GERMANY\_VIEW**
 
 
-## Step 2: Merge Data Sets Using Data Flow ##
+## STEP 2: Merge Data Sets Using Data Flow ##
    **Data Flow :** Data flows enable you to organize and integrate your data to produce a curated data set that your users can analyze.  
    To build a data flow, you add steps. Each step performs a specific function, for example, add data, join tables, merge columns, transform data, save your data. Use the data flow editor to add and configure your steps. Each step is validated when you add or change it. When you've configured your data flow, you execute it to produce a data set.
 
 
-Let's create a dataflow to merge all the different types of datasets created in Step1.
+Let's create a dataflow to merge all the different types of datasets created in STEP1.
 
 1. On the home screen, select "Create" and click on "Data Flow".
     ![](./images/oascdb1.2.png " ")
@@ -151,13 +151,13 @@ Let's create a dataflow to merge all the different types of datasets created in 
     
     
 
-## Step 3: Data Preparation ##
+## STEP 3: Data Preparation ##
 In this step we will perform some data prepartion steps to make data set ready for visualizatuion.
 
-1. Complete data set is created in step1. Now on Home Screen, click on "Data".
+1. Complete data set is created in STEP 1. Now on Home Screen, click on "Data".
     ![](./images/oascdb1.18.png " ")
 
-2. Select the dataset **Financials Complete Data set** (created in step1).
+2. Select the dataset **Financials Complete Data set** (created in STEP 1).
     ![](./images/oascdb26.png " ")
 
 3. On the Visualization Screen, click on "Prepare" button at right top corner to perform data preparation steps.
@@ -210,7 +210,7 @@ by providing relevant formats.
 9. Now click on "Apply Script" to complete data preparation steps. And now dataset is ready for visualization.
     ![](./images/oascdb34.png " ")
 
-## Step 4: Build Visualizations ##
+## STEP 4: Build Visualizations ##
 Let us analyze the data to get some insights using different kind of visualizaions.  
 
 1. **Performance Tile**   
@@ -309,7 +309,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
 
     Please refer to previous steps for selecting the required fields and visualization type.   
     
-10. **Combo Graph** for comparing PAYABLES and RECEIVABLES by MONTH(similar to as we did in Step4- point 3).
+10. **Combo Graph** for comparing PAYABLES and RECEIVABLES by MONTH(similar to as we did in STEP 4- point 3).
    ![](./images/oascdb56.png " ")
 
 12. **Simple Bar Graph**  
@@ -319,7 +319,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
    Analyze RECEIVABLES and PREVIOUS YEAR RECEIVABLES quarterly.
     ![](./images/oascdb58.png " ")
 
-   Rename canvas "More Visuals" as in Step4-point 5. 
+   Rename canvas "More Visuals" as in STEP 4 - point 5. 
 
 13. Let's see **Pivot Table** visual    
     Analyzing KPIs by Cost Centre.  
@@ -340,9 +340,9 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     ![](./images/oascdb1.23.1.png " ")
 
 
-## Step 5: Data Action For Drill Down To Detail Report 
+## STEP 5: Data Action For Drill Down To Detail Report 
 
-1.   Select (+) symbol on the bottom to add another canvas(refer to Step4-point 11), in this canvas we will build the tabular report.  
+1.   Select (+) symbol on the bottom to add another canvas(refer to STEP 4 - point 11), in this canvas we will build the tabular report.  
     select all the required columns (as shown below) and pick table as visualization.
     ![](./images/oascdb60.png " ")
 
@@ -367,7 +367,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
 
 
 
-## Step 6: Adding Filters ##
+## STEP 6: Adding Filters ##
 Filters are used to make canvas interactable for the users. Users can view desired data by adding filters to the canvas. In this way filters enable users to interact with canvas. 
 
 1. Click (+) symbol on the top screen as shown in below screenshot and select the fields as required. Here we have selected Year, Month, Account Group.
