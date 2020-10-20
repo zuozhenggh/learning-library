@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Database Security - Advanced Workshop: Key Vault (OKV)",
+  "workshoptitle": "Oracle Database Security Hands-On Labs - Part2 (Advanced) - OKV",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -37,8 +37,8 @@
     },
     {
       "title": "Lab 5: Oracle Key Vault (OKV)",
-      "description": "In this lab you can see how to leverage Oracle Key Vault Appliance",
-      "publisheddate": "10/14/2020",
+      "description": "In this lab you can see how to leverage Oracle Key Vault (OKV)",
+      "publisheddate": "10/20/2020",
       "filename": "../../key-vault/key-vault.md"
     }
   ]

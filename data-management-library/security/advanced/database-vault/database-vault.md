@@ -9,7 +9,7 @@ It gives the user an opportunity to learn how to configure those features to pre
 - *Estimated Lab Time:* 45 minutes
 
 ### Objectives
-- Enable Database Vault in the container and `PDB1` pluggable database.
+- Enable Database Vault in the container and `PDB1` pluggable database
 - Protect sensitive data using a Database Vault realm
 - Safeguard service accounts using Trusted Path
 - Test Database Vault Controls with Simulation mode
@@ -26,14 +26,14 @@ This lab assumes you have completed:
 - Watch a preview of "*Understanding Oracle Database Vault (March 2019)*" [](youtube:oVidZw7yWIQ)
 
 ### Lab Timing (estimated)
-| Step No. | Feature | Approx. Time | Details | Value Proposition |
-|--|------------------------------------------------------------|-------------|--------------------|-------------------|
-| 1 | Enable Database Vault | 5 minutes |||
-| 2 | Create a Simple Realm | 10 minutes |||
-| 3 | Create a Trusted Path / Multi-factor Authorization | 10 minutes |||
-| 4 | Simulation Mode | 10 minutes |||
-| 5 | Ops Control | 5 minutes |||
-| 6 | (Optional) Disabling Database Vault | <5 minutes |||
+| Step No. | Feature | Approx. Time |
+|--|------------------------------------------------------------|-------------|
+| 1 | Enable Database Vault | 5 minutes |
+| 2 | Create a Simple Realm | 10 minutes |
+| 3 | Create a Trusted Path / Multi-factor Authorization | 10 minutes |
+| 4 | Simulation Mode | 10 minutes |
+| 5 | Ops Control | 5 minutes |
+| 6 | (Optional) Disabling Database Vault | <5 minutes |
 
 ## **STEP 1**: Enable Database Vault
 
@@ -123,7 +123,7 @@ This lab assumes you have completed:
       <copy>./04_add_auth_to_realm.sh</copy>
       ````
 
-    ![](./images/dv-006.png " ")
+   ![](./images/dv-006.png " ")
 
 11. Re-execute the SQL query to show that SYS now receives the **insufficient privileges** error message
 
@@ -131,7 +131,7 @@ This lab assumes you have completed:
       <copy>./05_query_employee_data.sh</copy>
       ````
 
-    ![](./images/dv-007.png " ")
+   ![](./images/dv-007.png " ")
 
 12. When you have completed this lab, you can drop the Realm
 
@@ -185,21 +185,21 @@ This lab assumes you have completed:
 
    ![](./images/dv-021.png " ")
 
-10. We use the Database Vault Rule by adding it to a DV Rule Set. You can have one or more rules in the rule set. If you have more than one, you can choose between the rule set evaluating all rules must be true or *any* rule must be true. Think of it like the difference between `IN` and `EXISTS` - `IN` includes all while `EXISTS` stops once it identifies one result matches.
+10. We use the Database Vault Rule by adding it to a DV Rule Set. You can have one or more rules in the rule set. If you have more than one, you can choose between the rule set evaluating all rules must be true or *any* rule must be true. Think of it like the difference between `IN` and `EXISTS` - `IN` includes all while `EXISTS` stops once it identifies one result matches
 
     ````
     <copy>./04_create_rule_set.sh</copy>
     ````
 
-    ![](./images/dv-022.png " ")
+   ![](./images/dv-022.png " ")
 
-11. Create a Command Rule on Connect to protect the `EMPLOYEESEARCH_PROD` user. You can only `CONNECT` AS `EMPLOYEESEARCH_PROD` if you match the Rule Set we created.
+11. Create a Command Rule on Connect to protect the `EMPLOYEESEARCH_PROD` user. You can only `CONNECT` AS `EMPLOYEESEARCH_PROD` if you match the Rule Set we created
 
     ````
     <copy>./05_create_command_rule.sh</copy>
     ````
 
-    ![](./images/dv-023.png " ")
+   ![](./images/dv-023.png " ")
 
 12. Go to your web browser and refresh a few times and run some queries by clicking [**Search**] and explore employee data
 
@@ -209,7 +209,7 @@ This lab assumes you have completed:
     <copy>./06_query_employeesearch_usage.sh</copy>
     ````
 
-    ![](./images/dv-024.png " ")
+   ![](./images/dv-024.png " ")
 
 14. Now, try to query the `DEMO_HR_EMPLOYEES` table as `SYS`... You should be blocked!
 
@@ -217,7 +217,7 @@ This lab assumes you have completed:
     <copy>./07_query_employeesearch.sh</copy>
     ````
 
-    ![](./images/dv-025.png " ")
+   ![](./images/dv-025.png " ")
 
 15. Once you have successfully completed the lab, you can delete the `Command Rule`, `Rule Set`, and `Rule` from Database Vault
 
@@ -225,7 +225,7 @@ This lab assumes you have completed:
     <copy>./08_delete_trusted_path.sh</copy>
     ````
 
-    ![](./images/dv-026.png " ")
+   ![](./images/dv-026.png " ")
 
 ## **STEP 4**: Simulation Mode
 
@@ -321,7 +321,9 @@ This lab assumes you have completed:
 
 4. Next, we will run the same queries as both container admin, `SAL` as well as `DBA_DEBRA`
 
-      **Note**: The query results are the same ; The common user `SAL` has access to data in the PDB, just as the pdb admin has
+      **Note**:
+      - The query results are the same
+      - The common user `SAL` has access to data in the PDB, just as the pdb admin has
 
       ````
       <copy>./02_query_w_pdb_debra.sh</copy>
@@ -412,11 +414,11 @@ You may proceed to the next lab.
 ## **Appendix**: About the Product
 - **Overview**
 
-   Oracle Database Vault provides controls to prevent unauthorized privileged users from accessing sensitive data and to prevent unauthorized database changes.
+    Oracle Database Vault provides controls to prevent unauthorized privileged users from accessing sensitive data and to prevent unauthorized database changes.
 
-   The Oracle Database Vault security controls protect application data from unauthorized access, and comply with privacy and regulatory requirements.
+    The Oracle Database Vault security controls protect application data from unauthorized access, and comply with privacy and regulatory requirements.
 
-    ![](./images/dv-concept.png " ")
+   ![](./images/dv-concept.png " ")
 
     You can deploy controls to block privileged account access to application data and control sensitive operations inside the database using trusted path authorization.
 
@@ -430,30 +432,30 @@ You may proceed to the next lab.
 
     - **Realms**
 
-    A realm is a protection zone inside the database where database schemas, objects, and roles can be secured. For example, you can secure a set of schemas, objects, and roles that are related to accounting, sales, or human resources.
-    After you have secured these into a realm, you can use the realm to control the use of system and object privileges to specific accounts or roles. This enables you to provide fine-grained access controls for anyone who wants to use these schemas, objects, and roles.
+      A realm is a protection zone inside the database where database schemas, objects, and roles can be secured. For example, you can secure a set of schemas, objects, and roles that are related to accounting, sales, or human resources.
+      After you have secured these into a realm, you can use the realm to control the use of system and object privileges to specific accounts or roles. This enables you to provide fine-grained access controls for anyone who wants to use these schemas, objects, and roles.
 
     - **Command rules**
 
-    A command rule is a special security policy that you can create to control how users can execute almost any SQL statement, including SELECT, ALTER SYSTEM, database definition language (DDL), and data manipulation language (DML) statements.
-    Command rules must work with rule sets to determine whether the statement is allowed.
+      A command rule is a special security policy that you can create to control how users can execute almost any SQL statement, including SELECT, ALTER SYSTEM, database definition language (DDL), and data manipulation language (DML) statements.
+      Command rules must work with rule sets to determine whether the statement is allowed.
 
     - **Factors**
 
-    A factor is a named variable or attribute, such as a user location, database IP address, or session user, which Oracle Database Vault can recognize and use as a trusted path.
-    You can use factors in rules to control activities such as authorizing database accounts to connect to the database or the execution of a specific database command to restrict the visibility and manageability of data.
-    Each factor can have one or more identities. An identity is the actual value of a factor.
-    A factor can have several identities depending on the factor retrieval method or its identity mapping logic.
+      A factor is a named variable or attribute, such as a user location, database IP address, or session user, which Oracle Database Vault can recognize and use as a trusted path.
+      You can use factors in rules to control activities such as authorizing database accounts to connect to the database or the execution of a specific database command to restrict the visibility and manageability of data.
+      Each factor can have one or more identities. An identity is the actual value of a factor.
+      A factor can have several identities depending on the factor retrieval method or its identity mapping logic.
 
     - **Rule sets**
 
-    A rule set is a collection of one or more rules that you can associate with a realm authorization, command rule, factor assignment, or secure application role.
-    The rule set evaluates to true or false based on the evaluation of each rule it contains and the evaluation type (All True or Any True).
-    The rule within a rule set is a PL/SQL expression that evaluates to true or false. You can have the same rule in multiple rule sets.
+      A rule set is a collection of one or more rules that you can associate with a realm authorization, command rule, factor assignment, or secure application role.
+      The rule set evaluates to true or false based on the evaluation of each rule it contains and the evaluation type (All True or Any True).
+      The rule within a rule set is a PL/SQL expression that evaluates to true or false. You can have the same rule in multiple rule sets.
 
     - **Secure application roles**
 
-    A secure application role is a special Oracle Database role that can be enabled based on the evaluation of an Oracle Database Vault rule set.
+      A secure application role is a special Oracle Database role that can be enabled based on the evaluation of an Oracle Database Vault rule set.
 
     To augment these components, Oracle Database Vault provides a set of PL/SQL interfaces and packages.
     In general, the first step you take is to create a realm composed of the database schemas or database objects that you want to secure.
@@ -479,7 +481,7 @@ Video:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 19th October 2020
+- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
