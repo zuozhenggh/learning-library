@@ -10,6 +10,7 @@ In this lab, you will learn how to create a GitHub Account and associate it with
 * Associate your GitHub account with your Oracle email account.
 * Set up the GitHub Environment.
 * Install GitHub Desktop Client.
+
 ### What Do You Need?
 
 * Familiarity with HTML is helpful.
@@ -103,7 +104,7 @@ In the following example, user achepuri has forked the learning-library reposito
 In the next step, you will clone this forked repository.
 
 ## **STEP 7:** Clone the Forked repository
-A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as Atom, and use GitHub Desktop client to keep track of your changes without having to be online.
+A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as Atom, and use the GitHub Desktop client to keep track of your changes without having to be online.
 
 To clone the forked repository:
 1. Open your **GitHub Desktop** application and log in using your GitHub account.
@@ -126,6 +127,7 @@ To clone the forked repository:
   When you make a clone, you can edit the files in your preferred editor, such as **Atom**, and use **GitHub Desktop client** to keep track of your changes without having to be online.
 
   The repository you cloned is still connected to the remote version (your fork) so that you can push your local changes to the remote to keep them synced when you're online.
+
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu.**
 

@@ -6,13 +6,17 @@ You can use your preferred editor to author and edit your Markdown (.md) content
 
 ### Objectives
 
-In this lab, you will learn about the tools that are available to develop and host your content. If you are using different tools that works for you, then there is no need to replace those tools. For example, if you are already developing your Markdown content using MS Visual Studio Code, then there is no need to switch to Atom.
+* Learn about the tools that are available to develop and host your content.
+* Learn how to merge content.
+* Create workshop and lab content.
+* Preview the content in a browser.
+
 
 ### What Do You Need?
 * An IDE, such as Atom.
 * A local web server such as **atom-live-server**, a plugin for `Atom.io`.
 
-**Note:** Oracle recommends the UA Developers to use Atom. Visual Studio Code is a Microsoft "open source" product. The license agreement is not a standard MIT or General Public License (GPL) agreement and therefore not approved for use at Oracle.
+**Note:** If you are using different tools that works for you, then there is no need to replace those tools. For example, if you are already developing your Markdown content using MS Visual Studio Code, then there is no need to switch to Atom. Oracle recommends the UA Developers to use Atom.
 
 
 ## **STEP 1:** Install Atom
@@ -42,8 +46,37 @@ To install the **atom-live-server**:
 The atom-live-server plugin is added to the **Packages** menu.
   ![](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
 
-## **STEP 3:** Create your Lab and Workshop Content
+## **STEP 4:** Merge Content from Git Before you Start Editing your Content
+  Everyday before you start editing your content, ensure to do a Merge.
+  Merging synchronizes the content in your cloned repository with the latest content on the **upstream/master** repository and ensures that you have the most recent versions of the templates and other workshops/labs.
+
+  To merge content:
+  1. Start your **GitHub Desktop** client.
+  2. Select **Branch > Merge into current branch** to display the **Merge in Master** window.
+
+    ![](./images/git-hub-merge-current-branch.png " ")
+
+  3. Under the **Default branch**, the master branch is selected by default. This indicates the local clone on your PC.
+    ![](./images/git-hub-merge-local-clone-default-branch.png " ")
+
+  4. Scroll down the **Merge into master** window, select **upstream/master** (this is your master repository which is the learning-library), and then click **Merge upstream/master into master**. In this example, this will merge 120 commits by other people from the upstream/master into the clone on the local PC.
+
+    ![](./images/git-hub-merge-upstream-master.png " ")
+
+  5. When the merge is successfully completed, a "Successfully merged upstream/master into master" message is displayed. To push the new commits from the local clone to your forked location, click **Push origin**.
+
+    **Note**: To determine if your clone is up-to-date with upstream/master (production), repeat steps 2 to 4. If both repositories are synchronized, then the following message is displayed: "This branch is up to date with upstream/master".
+
+    ![](./images/git-hub-merge-branch-up-to-date.png " ")
+
+  In the GitHub Desktop UI, notice that the **Push Origin** is replaced by **Fetch Origin** after the push origin operation is successfully completed.  The local clone and fork repositories are now synchronized with the master repository.
+
+  ![](./images/git-hub-merge-fetch-origin.png " ")
+
+## **STEP 3:** Create your Workshop and Lab Content
 You can use any of the existing project folder in the **learning-library** folder as a template to create a workshop for your project. In this example, let's use the **learning-library\data-management-library\big-data\bds** project folder as a template to create a new workshop and labs.
+
+**Note**: Ensure to update your clone from the **upstream/master** repository (detailed in **Step 2**) on a regular basis whenever we are working on the markdown files.
 
 To create your lab and workshop content:
 1. Open your cloned repository using Windows Explorer.
@@ -57,14 +90,12 @@ To create your lab and workshop content:
 
   The workshop folder and the lab folders are displayed in Atom.
   ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
-7. Expand the Workshop folder, **1-labs-quickstart-workshop** in this example, open the `manifest.json` to list the labs you plan to add to your workshop. The `manifest.json` is like your book map file in SDL.
+7. Expand the Workshop folder, **1-labs-quickstart-workshop** in this example, open the `manifest.json` to list the labs you plan to add to your workshop and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
   ![](./images/use-atom-editor-manifest-json.png " ")
 8. Open the `intro.md` file from **1-labs-quickstart-workshop** and update it as per your requirements.
-9. Open the `index.html` file and update the title of the workshop.
-    ![](./images/use-atom-editor-index-title-update.png " ")
-10. Open the `README.md` file and update it with a gist of your workshop.
+9. Open the `README.md` file and update it with a summary of your workshop.
     ![](./images/use-atom-editor-readme-update.png " ")
-11. Similarly, expand the lab folder, for example, **2-labs-git-hug-get-started-install-configure** and edit the `.md` file as per your requirement. If you want to use any images in your lab, then include them in the images folder.
+10. Similarly, expand the lab folder, for example, **2-labs-git-hub-get-started-install-configure** and edit the `.md` file as per your requirement. If you want to use any images in your lab, then include them in the images folder.
 
 ## **STEP 4:** Preview Your Workshop and Labs Using atom-live-server
 

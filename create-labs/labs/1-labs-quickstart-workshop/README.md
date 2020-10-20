@@ -1,6 +1,6 @@
 # Welcome to the Creating Labs and Workshops!
 
-The **Creating Labs and Workshops** is a series of step-by-step labs that guide you through the process of setting up a Git environment, develop labs and workshops using the Atom Editor. You'll also learn how to use the GitHub Desktop to merge and commit changes to the Oracle repository.
+The **Creating Workshops and Labs** is a series of step-by-step labs that guide you through the process of setting up a Git environment, develop labs and workshops using the Atom Editor. You'll also learn how to use the GitHub Desktop to merge and commit changes to the Oracle repository.
 
 ## Access the Labs Using Our Web Interface
 

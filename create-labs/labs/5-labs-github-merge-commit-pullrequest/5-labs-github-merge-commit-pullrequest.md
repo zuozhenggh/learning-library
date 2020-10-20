@@ -1,4 +1,4 @@
-# Use GitHub to Commit to Git Repository (Git Web UI)
+# Use GitHub Desktop to Commit to the GitHub Repository
 
 ## Introduction
 
@@ -6,11 +6,10 @@ As a best practice, merge your library everyday or whenever you start your GitHu
 
 ### Objectives
 
-* Learn how to merge content
-* Commit your Changes
-* Request for a Review
-* Test your Content
-* Create a Pull Request to Upload your Content to Master
+* Commit your changes.
+* Request for a review.
+* Test your content.
+* Create a Pull Request to upload your content to master.
 
 ### What Do You Need?
 * Git Environment Setup
@@ -19,35 +18,7 @@ As a best practice, merge your library everyday or whenever you start your GitHu
 
 This lab assumes that you have successfully completed **Lab 4: Using Atom Editor to Develop Content** in the **Contents** menu on the right.
 
-
-## **STEP 1:** Merge Content from Git Before you Start Editing your Content
-Everyday before you start editing your content, ensure to do a Merge.
-Merging synchronizes the content in your cloned repository with the latest content on the master repository.
-
-To merge content:
-1. Start your **GitHub Desktop** client.
-2. Select **Branch > Merge into current branch** to display the **Merge in Master** window.
-
-  ![](./images/git-hub-merge-current-branch.png " ")
-
-3. Under the **Default branch**, the master branch is selected by default. This indicates the local clone on your PC.
-  ![](./images/git-hub-merge-local-clone-default-branch.png " ")
-
-4. Scroll down the **Merge into master** window, select **upstream/master** (this is your master repository which is the learning-library), and then click **Merge upstream/master into master**. In this example, this will merge 120 commits by other people from the upstream/master into the clone on the local PC.
-
-  ![](./images/git-hub-merge-upstream-master.png " ")
-
-5. When the merge is successfully completed, a "Successfully merged upstream/master into master" message is displayed. To push the new commits from the local clone to your forked location, click **Push origin**.
-
-  **Note**: To determine if your clone is up-to-date with upstream/master (production), repeat steps 2 to 4. If both repositories are synchronized, then the following message is displayed: "This branch is up to date with upstream/master".
-
-  ![](./images/git-hub-merge-branch-up-to-date.png " ")
-
-In the GitHub Desktop UI, notice that the **Push Origin** is replaced by **Fetch Origin** after the push origin operation is successfully completed.  The local clone and fork repositories are now synchronized with the master repository.
-
-![](./images/git-hub-merge-fetch-origin.png " ")
-
-## **STEP 2:** Commit your Changes in your Clone
+## **STEP 1:** Commit your Changes in your Clone
 When you create, delete, or modify assets in your clone (local copy), you should commit (save) those changes to your clone, and then push those changes from your clone to your fork. Then these changes get saved to your forked learning-library repository.
 
 To commit your changes:
@@ -62,7 +33,7 @@ To commit your changes:
 
   ![](./images/git-hub-commit-push-origin.png " ")
 
-## **STEP 3:** Set Up GitHub Pages for your Fork to Test your Content
+## **STEP 2:** Set Up GitHub Pages for your Fork to Test your Content
 
 After you upload the content from your clone to your fork, request your review team members to review this content by providing them with access to your GitHub Pages site URL (or the URL of your forked repository).
 
@@ -82,13 +53,14 @@ To publish your GitHub Pages site:
   ![](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
 
 4. Under **Source**, select **master** (if it's not already selected) from the drop-down list.
-5. Under **Theme Chooser**, click **Change Theme** and select a theme of your choice. T
+5. Under **Theme Chooser**, click **Change Theme** and select a theme of your choice.
 
   This may take a few hours to complete. After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
   ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
 
-## **STEP 4**: Create a Pull Request to Upload Your Content to the Master Repository
+## **STEP 3**: Create a Pull Request to Upload Your Content to the Master Repository
+
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production **(upstream/master)** repository).
 
 **Note**: The owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
@@ -119,7 +91,9 @@ To create a Pull Request:
 
 ## Want to Learn More?
 
-* [Using GItHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
+* [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
+* [Use GitHub Desktop](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+GitHub+Desktop)
+
 ## Acknowledgements
 
 * **Author:**

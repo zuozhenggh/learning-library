@@ -21,7 +21,7 @@ through a unique URL.
 
 ![](./images/git-hub-projects-repositories.png " ")
 
-## 'Oracle' GitHub Project and “learning-library” Repository
+## Oracle GitHub Project and learning-library Repository
 
   ![](./images/git-hub-oracle-projects-learning-library.png " ")
   **Note**: The term "learning-library" is NOT the same as Oracle Learning Library (OLL) used formerly in the OBE world. The Oracle Learning Library (OLL) is an online resource for content about Oracle products [https://apexapps.oracle.com/pls/apex/f?p=44785:1](https://apexapps.oracle.com/pls/apex/f?p=44785:1), whereas "learning-library" is the GitHub repository that is accessed through a unique URL: [https://github.com/oracle/learning-library](https://github.com/oracle/learning-library).

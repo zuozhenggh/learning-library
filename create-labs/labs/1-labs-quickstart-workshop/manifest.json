@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Creating Workshops and Labs",
     "tutorials": [
       {
           "title": "Lab 1: Introduction to Labs and Workshops",
@@ -8,19 +9,19 @@
       ,
       {
             "title": "Lab 2: Get Started with Git and Set up the Environment",
-            "description": "This lab walks you through the required and optional tasks to setup your Big Data Service environment before you can create clusters.",
+            "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop.",
             "filename": "./../2-labs-git-hub-get-started-install-configure/2-labs-git-hub-get-started-install-configure.md"
       }
       ,
       {
             "title": "Lab 3: Understand the Folder Structure",
-            "description": "This lab walks you through how to create a BDS Highly Available (HA) Hadoop cluster.",
+            "description": "This lab describes the prescribed folder structure that we need follow for developing labs and workshops.",
             "filename": "./../3-labs-templates-folder-structure/3-labs-templates-folder-structure.md"
       }
       ,
       {
             "title": "Lab 4: Use Atom Editor to Develop Markdown Content",
-            "description": "This lab shows you how to develop your lab (markdown) content using an editor, such as **Atom** and starting the Atom Live Server.",
+            "description": "This lab shows you how to develop your lab (markdown) content using an editor, such as **Atom** and starting the atom-live-server.",
             "filename": "./../4-labs-use-atom-editor-develop-content/4-labs-use-atom-editor-develop-content.md"
       }
       ,

@@ -20,7 +20,7 @@ The following image shows a folder structure of the "Getting Started with Oracle
   * The `index.html` file is executed when it is accessed by a browser.
   * The `intro.md` file contains the introduction of the workshop.
   * The `manifest.json` file defines the structure of the workshop that the `index.html` file renders.
-  * The `README.md` file contains the gist of the entire Workshop. You can view it from your git repository.
+  * The `README.md` file contains the summary of the entire Workshop. You can view it from your git repository.
     ![](./images/temp-folder-structure-manifest-json.png " ")
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu.**
