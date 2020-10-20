@@ -17,12 +17,12 @@ We offer two types of Cloud Accounts:
 - Learn how to login to your Oracle Cloud Account
   
 
-### Lab Prerequisites
+### Prerequisites
 - Cloud Account Name - The name of your tenancy (supplied by the administrator or in your Oracle Cloud welcome email)
 - Username
 - Password
 
-## Step 1:  Login to Oracle Cloud
+## **Step 1:**  Login to Oracle Cloud
 1. From any browser go to oracle.com to access the Oracle Cloud.
 
     [https://www.oracle.com/](https://www.oracle.com/)
@@ -49,6 +49,9 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Mgmt, March 2020
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Mgmt, October 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -8,7 +8,7 @@ This lab assumes that you have completed the previous lab, Object Storage, and t
 
 Estimated time: 15 minutes, plus some time for the actual loading, typically around 30-40 minutes.
 
-## Step 1: Provision an Autonomous Transaction Processing Database
+## **Step 1:** Provision an Autonomous Transaction Processing Database
 
 1.  Log in to the Oracle Cloud console (in a new window if you still have files uploading from the previous lab). Click on the hamburger menu at the top left and choose "Autonomous Transaction Processing under Database
 
@@ -76,7 +76,7 @@ SQL Developer Web (SDW) is an entirely browser-based tool for interacting with t
 
     ![](images/create-user.png "")
 
-## Step 3:  Log into SQL Developer Web as the new user yelp.
+## **Step 3:**  Log into SQL Developer Web as the new user yelp.
 
 We now have a user who has the required privileges, and can use SQL Developer Web.
 
@@ -119,7 +119,7 @@ We now have a user who has the required privileges, and can use SQL Developer We
 
     That should create our three table which will contain the JSON we are about to load. The JSON text will be stored in a CLOB column called 'jtext' in each case.
 
-## Step 4: Performing the load into the database
+## **Step 4:** Performing the load into the database
 
 We can now load our files from object storage to the database. The business file is small (145MB), so we’ll do first and run it interactively.
 
@@ -245,4 +245,7 @@ That completes our loading of data. We now have three tables which have all our 
 - **Author** - Roger Ford, Principal Product Manager
 - **Last Updated By/Date** - Roger Ford, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

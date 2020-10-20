@@ -1,36 +1,54 @@
-![](common/images/learning-library-title.png)
+# Welcome
+
+[![](common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
 ---
-# Build, test and deploy applications on Oracle's Cloud! #
-The Oracle Learning Library is a place to explore Oracle's products and services using labs designed to enhance your experience building and deploying applications on the Cloud and On-Premises.   This library of assets covers everything from how to provision the world's first autonomous database to setting up a webserver on our world class Generation 2 infrastructure, machine learning and much more.  Use your existing Oracle Cloud account or a Free Tier account to build, test, and deploy applications on Oracle's Cloud. 
+LiveLabs is the place to explore Oracle's products and services using workshops designed to enhance your experience building and deploying applications on the Cloud and On-Premises.   Our library of workshops cover everything from how to provision the world's first autonomous database to setting up a webserver on our world class OCI Generation 2 infrastructure, machine learning and much more.  Use your existing Oracle Cloud account, a Free Tier account or a LiveLabs Cloud Account to build, test, and deploy applications on Oracle's Cloud.
 
-### How do I get started? ###
-First, you need an Oracle Cloud account.  Sign up [here](https://oracle.com/free) to create a free-tier account.  Second, visit one of our libraries below or start with one of our featured labs for this month. 
+### How do I get started?
+Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are added weekly, please visit frequently for new content.
 
-## Oracle GitHub Libraries ## 
-- [Data Management Library](data-management-library)
-- [Cloud Infrastructure (OCI) Library](oci-library)
-- [Developer Library](developer-library)
-- [Solutions Library](solutions-library)
+[![](./common/images/livelabs.png)](http://bit.ly/golivelabs)
 
-## June's Featured Workshops
-- [Database 19c New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/livelabs/)
-- [Autonomous Database on Shared Infrasructure](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-overview/)
-- [Multitenant Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  
-- [Create a Database in a Docker Container](https://oracle.github.io/learning-library/data-management-library/database/docker/create-database-in-docker) 
-- [Machine Learning on Autonomous Database](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml/workshop/)
+## **Developer** Featured Workshops
+- [Oracle's Converged Database](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=613)
+- [Building Java Cloud Applications with Micronaut and OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=667)
+- [Building Microservices with Oracle Converged DB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=667)
+- [Building an Application from a Spreadsheet](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631)
+- [Deploying OKE Using Oracle Cloud Shell](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=649)
+- [Databse 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
+- [Database 19c New Features for Developers](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=636)
+- [Create a Docker registry in OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=590)
 
-Workshops are being added daily, please visit frequently for new content.
+## **Autonomous Database** Featured Workshops
+- [Departmental Data Warehouse - HR Analytics](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=678)
+- [Analyzing your Data with ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
+- [Autonomous Database Quick Start](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=582)
+- [Machine Learning on ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=560)  
 
-## How does the Free Tier Work? ##
-Use your Always Free resources as long as you want with no time constraints—subject only to the capacity limits noted. When your 30-day trial period for the expanded set of services ends, you can continue using Always Free services with no interruption.
+## **OCI** Featured Workshops
+- [Get Started with OCI Core Services](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=648)
+- [Lift and Shift On-Premises EBS to OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=672)
+- [Deploying OKE Using Oracle Cloud Shell](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=649)
+
+## **Database 19c** Featured Workshops
+- [Database 19c New Features for Developers](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=636)
+- [Multitenant Fundamentals](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=573)
+- [Database In-Memory](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=566)
+
+## **Enterprise Manager** Featured Workshops
+- [Enterprise Manager](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=574)
+- [Multitenant Lifecycle Management](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=656)
 
 
-## [Contributing](CONTRIBUTING.md)
+## Contributing
 Pull requests are currently not being accepted. See [CONTRIBUTING](CONTRIBUTING.md) for details.  To get your workshop featured on this page, please contact Kay Malcolm or Tom McGinn.
 
-## [License](LICENSE.md)
-Copyright (c) 2014, 2016 Oracle and/or its affiliates
+## License
+Copyright (c) 2014, 2020 Oracle and/or its affiliates
 The Universal Permissive License (UPL), Version 1.0
+See [LICENSE](LICENSE.md) for details.
 
-## Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.  Make sure to include the name of the workshop and/or lab when submitting.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

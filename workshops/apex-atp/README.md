@@ -13,8 +13,11 @@ Welcome to the Low Code Development with Oracle Autonomous Database hands-on lab
 
 *{Note: This lab assumes you are using Oracle APEX 19.2.}*
 
-***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 ## Access the Labs Using Our Web Interface
 **Click the image to use our easy to navigate HTML format:**
-[![Low Code Development Workshop](images/low-code-workshop.png " ")](https://oracle.github.io/learning-library/developer-library/apex/low-code-development/)
+[![Low Code Development Workshop](images/low-code-workshop.png " ")](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=634)

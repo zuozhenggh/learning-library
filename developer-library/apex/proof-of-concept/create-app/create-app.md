@@ -9,7 +9,7 @@ In this lab you will build an interactive application on the data structures you
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+- An Oracle Cloud paid account, a LiveLabs account or free trial.
 - Data structures with sample data
 
 ## **Step 1** – Run the Create App Wizard
@@ -69,12 +69,15 @@ In this lab you will build an interactive application on the data structures you
     ![](images/show-team-members.png " ")
 
 ## **Summary**
-This completes Lab 3. You now know how to utilize the Create Application wizard directly from SQL Scripts to create the first cut of your application. [Click here to navigate to Lab 4](?lab=lab-4-regenerating-application).
+You now know how to utilize the Create Application wizard directly from SQL Scripts to create the first cut of your application.
 
 ## **Acknowledgments**
 
-- **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
-- **Contributors** - Robbie Ruppel, Functional Lead, Oracle LiveLabs
+- **Author** - Salim Hlayel, Principle Product Manager
+- **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -1,13 +1,15 @@
 # Build the Oracle Database Docker Image
-## Before You Begin
 
-This lab walks you through the steps to build an Oracle Database Docker image on an Oracle Cloud compute instance.
-
-### Background
+## Introduction
 A Docker image contains all of the necessary code to execute an application for a host kernel. In this lab, you will create a Docker image for Oracle Database 19c.
 
-### What Do You Need?
+Estimated Lab Time: 15 minutes
 
+### Objectives
+This lab walks you through the steps to build an Oracle Database Docker image on an Oracle Cloud compute instance.
+
+
+### Prerequisites
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free)
 * SSH keys
 * Docker installed on an Oracle Cloud compute instance.
@@ -196,8 +198,10 @@ Choose the environment where you created your SSH Key.
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
-* **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
-* **Last Updated By/Date** - Tom McGinn, March 2020
-* **Contributor** - Arabella Yao, June 2020
+* **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
+* **Last Updated By/Date** - Kamryn Vinson, September 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

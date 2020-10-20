@@ -2,16 +2,16 @@
 
 In a Data Guard configuration, information is transmitted in both directions between primary and standby databases. This requires basic configuration, network tuning and opening of ports at both primary and standby databases. 
 
-##Lab Prerequisites
+##Prerequisites
 
 This lab assumes you have already completed the following labs:
 
 - Prepare on-premise Database
 - Provision DBCS on OCI
 
-In this Lab, you can use 2 terminal windows, one connected to the on-premise host, the other connected to the cloud host. 
+In this lab, you can use 2 terminal windows, one connected to the on-premise host, the other connected to the cloud host. 
 
-## Step 1: Name Resolution Configure
+## **Step 1:** Name Resolution Configure
 
 1. Connect as the opc user.
 
@@ -73,7 +73,7 @@ ssh -i labkey opc@xxx.xxx.xxx.xxx
 
 
 
-## Step 2: Prompt-less SSH configure
+## **Step 2:** Prompt-less SSH configure
 
 Now you will configure the prompt-less ssh for oracle users between on-premise and the cloud.
 

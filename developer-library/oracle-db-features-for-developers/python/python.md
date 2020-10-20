@@ -2,6 +2,12 @@
 
 ## Introduction
 
+In this lab, you will explore the various capabilities available when developing with Python against the Oracle Database.
+
+Estimated Lab Time:  20 minutes
+
+## About Python and Oracle
+
 PL/SQL is ideal for programming tasks within Oracle Database. Most Oracle professionals, however, aren't confined to working strictly within the database itself.
 
 Python is easy to use but also easy to use well, producing code that is readable and well organized. This way, when you return to a piece of code months after it was written, you can understand it, modify it, and reuse it. Python's clean, elegant syntax is sometimes called "executable pseudocode," for its nearly self-documenting appearance. It is highly object-oriented and makes it easy to learn and follow a good programming style, even for those of us without formal training in software engineering. Its smooth learning curve makes it appeal to novices and experts alike.
@@ -19,7 +25,7 @@ To learn about how to connect to an oracle database from python, watch the video
 -   Learn how to use Python in the Oracle Database
 -   Learn how to validate Python operations
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
@@ -27,14 +33,14 @@ This lab assumes you have completed the following labs:
 * Lab: Environment Setup
 * Lab: Sample Schema Setup
 
-## Step 1: Install Python
+## **Step 1**: Install Python
 
 Python comes preinstalled on most Linux distributions, and it is available as a package on others. The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
 1.  Open up the Oracle Cloud shell (or terminal of your choice) and ssh into your compute instance as the *opc* user.
 
     ````
-    ssh -i your key name opc@your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
 2.  Check if python3 has been installed by running the command.
@@ -57,7 +63,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
     ![](./images/p_installPython.jpg " ")
 
-## Step 2: The Python Interpreter
+## **Step 2**: The Python Interpreter
 
 There are several ways to execute Python code. In this step, we start with two examples on how to execute Python code from the command line. The first example executing code from the command prompt i.e. executing commands directly in the interpreter. The second example to save your code in a .py file and invoke the interpreter to execute the file.
 
@@ -95,7 +101,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ![](./images/p_python-2.png " " )
 
-## Step 3: Install Python Oracle module and connect to a database
+## **Step 3**: Install Python Oracle module and connect to a database
 
 *cx\_Oracle* is a python module that enables access to Oracle databases. This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example, we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
 
@@ -106,6 +112,7 @@ There are several ways to execute Python code. In this step, we start with two e
     sudo su - oracle
     </copy>
     ````
+    ![](./images/sudo-oracle.png " ")
 
 2.  Install the *cx\_Oracle* module using python3 and pip for the oracle user.
 
@@ -126,6 +133,7 @@ There are several ways to execute Python code. In this step, we start with two e
     ORACLE_SID = [ORCL] ? ORCL
     The Oracle base remains unchanged with value /u01/app/oracle
     ````
+    ![](./images/oraenv.png " ")
 
     ````
     <copy>
@@ -154,7 +162,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ![](./images/p_python-3.png " ")
 
-## Step 4: Querying the Oracle database
+## **Step 4**: Querying the Oracle database
 
 Retrieving records from Oracle database using cursors is a simple as embedding a SQL statement within a cursor().execute statement. For this example, we will use an existing table from the *SH* sample schema.
 
@@ -197,7 +205,7 @@ Retrieving records from the Oracle database using cursors is a simple as embeddi
 
 **Note**: Closing the cursor is considered good practice. Oracle will automatically close the cursor after the execution of its parent block finishes.
 
-## Step 5: Query a JSON table from PYTHON
+## **Step 5**: Query a JSON table from PYTHON
 
 This section provides detail on how to work with JSON data in Oracle Database 19c using Python’s interface. The exercises include creating a table in the pluggable database ORCLPDB, loading data into the table, validating documents with IS JSON check, and querying data from Python.
 
@@ -400,7 +408,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
 
     ![](./images/step5.10-conclose.png " " )
 
-## Step 6: Load JSON data into a table using PYTHON
+## **Step 6**: Load JSON data into a table using PYTHON
 
 It is likely that rather than writing one JSON row at a time to the database, you will want to load many JSON records at once. In this example, we will leverage Oracle External Tables functionality to do this.
 
@@ -417,6 +425,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as sysdba
     </copy>
     ````
+    ![](./images/sqlplus.png " ")
 
     ````
     <copy>
@@ -502,16 +511,20 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
 ## Conclusion
 
-In this Lab, you had an opportunity to try out connecting Python in the Oracle Database.
+In this lab, you had an opportunity to try out connecting Python in the Oracle Database.
 The guide shows the Developer how to use the Python Interpreter to interact with the Oracle Database through the Python API. We start by introducing Python and then review its installation requirements and tools required to run the demo. TThe Python API cx_Oracle is an open-source Python package that Oracle contributes to. It is used to access an Oracle Database from Python.
 
 The second part of the guide goes through a number of demo cases available through the Python API, including a simple Hello World application, and retrieving records from the Oracle Database using the cursor technology. There is a module on working with JSON data: loading the records to the database and querying them.
 
 An additional lab on using Python with Spatial data is also available elsewhere in this module.
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Author** - Troy Anthony
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
+- **Contributors** - Anoosha Pilli, Dylan McLeod, Arabella Yao
+- **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Rather than requiring that you install Python and other software, the front-end application and related components have been created for you. In this lab, you'll choose to install the front-end client as a Virtual Box image (VM) or Docker image.
+Rather than requiring that you install Python and other software, the front-end application and related components have been created for you. In this lab, you will choose to install the front-end client as a Virtual Box image (VM) or Docker image.
 
 Estimated time: 45 - 90 min
 
@@ -18,7 +18,7 @@ Estimated time: 45 - 90 min
 
 * Learn how to install the front-end client as a Virtual Box image (VM) or Docker image.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial
@@ -316,4 +316,7 @@ Now let’s configure access to oci tenancy via ocicli with our tenancy details.
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. Please include the workshop name and lab in your request.

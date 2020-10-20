@@ -17,8 +17,10 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 
 
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Objectives
 
 As an application developer,
@@ -36,7 +38,7 @@ As an application developer,
 
 ## Steps
 
-### STEP 1: Download sample python application
+### **Step 1:** Download sample python application
 
 - Login to your Oracle Cloud Infrastructure account and select **Compute** —> **Instances** from top left menu
 
@@ -86,7 +88,7 @@ unzip ATPDpython.zip
 ```
 
 
-### STEP 2: Transfer database wallet to developer client
+### **Step 2:** Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select **Autonomous Transaction Processing** from menu
 ![](./images/800/atpd1.png)
@@ -122,7 +124,7 @@ sudo scp -i /Path/to/your/private_ssh_key /Path/to/your/downloaded_wallet opc@pu
 
 
 
-### STEP 3: Run your python application**
+### **Step 3:** Run your python application**
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folde
 

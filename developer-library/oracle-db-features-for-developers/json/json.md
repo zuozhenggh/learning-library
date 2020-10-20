@@ -2,7 +2,9 @@
 
 ## Introduction
 
-This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
+This lab will explore JSON data and how you can use SQL and PL/SQL against JSON data stored in Oracle Database 19c.  
+
+Estimated Lab Time:  30 minutes
 
 ### About JSON in the Oracle Database
 
@@ -14,7 +16,7 @@ Watch this video to learn more about JSON in the Oracle Database.
 
 *Schemaless* development based on persisting application data in the form of JSON documents lets you quickly react to changing application requirements. You can change and redeploy your application without needing to change the storage schemas it uses. SQL and relational databases provide flexible support for complex data analysis and reporting, as well as rock-solid data protection and access control. This is typically not the case for NoSQL databases, which have often been associated with schemaless development with JSON in the past. Oracle Database provides all of the benefits of SQL and relational databases to JSON data, which you store and manipulate in the same ways and with the same confidence as any other type of database data.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
@@ -24,19 +26,37 @@ This lab assumes you have completed the following labs:
 
 ### Lab User Schema
 
-For this lab we will use the *Order Entry (OE)* sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the *OE* schema installed.
+For this lab we will use the *Order Entry (OE)* sample schema.
 
-## Step 1: Environment Preparation
+## **Step 1**: Environment Preparation
 
 Grant Required Privileges to the OE user.
 
-0.  Login to the instance using ssh.  We recommend using the Oracle Cloud Shell.
+1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-1.  Connect to the **ORCLPDB** pluggable database, as SYSDBA.
+2.  Switch to the oracle user
+    ````
+    <copy>
+    sudo su - oracle
+    </copy>
+    ````
+    ![](./images/sudo-oracle.png " ")
+
+3.  Set your oracle environment.  When prompted enter **[ORCL]**
+    ````
+    <copy>
+    . oraenv
+    </copy>
+    ORACLE_SID = [ORCL] ? ORCL
+    The Oracle base remains unchanged with value /u01/app/oracle
+    ````
+    ![](./images/oraenv.png " ")
+
+4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
 
     ````
     <copy>
@@ -44,9 +64,9 @@ Grant Required Privileges to the OE user.
     </copy>
     ````
 
-    ![](./images/step1.1-sqllogin.png " " )
+    ![](./images/sqlplus.png " ")
 
-2.  Grant **OE** user some privileges required for the tasks we will execute in this lab.
+3.  Grant **OE** user some privileges required for the tasks we will execute in this lab.
 
     ````
     <copy>
@@ -62,7 +82,7 @@ Grant Required Privileges to the OE user.
 
     *Note: The ALTER SYSTEM privilege is required to flush the Shared Pool in one exercise about performance.*
 
-3.  Create Network Access Control List as our database needs to connect to a web service, and retrieve information over HTTP, and this requires an *Access Control List (ACL)*. This ACL can be created by a user with SYSDBA privileges, SYS in this case, from the Pluggable Database called **ORCLPDB**, by executing the following procedure.
+4.  Create Network Access Control List as our database needs to connect to a web service, and retrieve information over HTTP, and this requires an *Access Control List (ACL)*. This ACL can be created by a user with SYSDBA privileges, SYS in this case, from the Pluggable Database called **ORCLPDB**, by executing the following procedure.
 
     ````
     <copy>
@@ -79,10 +99,17 @@ Grant Required Privileges to the OE user.
 
     ![](./images/p_addACL.png " ")
 
-4.  Ensure the execution is successful.  SQL*Plus Formatting is suggested.
+5.  Ensure the execution is successful.  SQL\*Plus Formatting is suggested.
 
-5.  Close the SYSDBA connection and connect as the **OE** user to pluggable database ORCLPDB. From this point, all tasks on the database side will be performed using the **OE** user. For SQL*Plus, it is also useful to format the output. Feel free to use your own formatting, or just run these formatting commands every time you connect.
+6.  Close the SYSDBA connection and connect as the **OE** user to pluggable database ORCLPDB. From this point, all tasks on the database side will be performed using the **OE** user. For SQL\*Plus, it is also useful to format the output. Feel free to use your own formatting, or just run these formatting commands every time you connect.
 
+    If you have exited from SQL\*Plus, reconnect as the **OE** user (as the **oracle** os-user, not opc)
+    ````
+    <copy>
+    sqlplus oe/Ora_DB4U@localhost:1521/orclpdb
+    </copy>
+    ````
+    or, if still connected to SQL\*Plus connect as the **OE** user
     ````
     <copy>
     conn oe/Ora_DB4U@localhost:1521/orclpdb
@@ -109,7 +136,7 @@ Grant Required Privileges to the OE user.
 
     ![](./images/step1.5-connectoe.png " ")
 
-## Step 2:  Register for Geonames
+## **Step 2**:  Register for Geonames
 
 For the purpose of this exercise we will use a web service, that returns information in JSON format, provided by GeoNames - [geonames.org](http://www.geonames.org/). GeoNames is licensed under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/). You are free to:
 
@@ -120,7 +147,7 @@ For the purpose of this exercise we will use a web service, that returns informa
 
 2.  Enable the account for web services on the account page [GeoNames Account Page](http://www.geonames.org/manageaccount).
 
-## Step 3: Generate JSON Data
+## **Step 3**: Generate JSON Data
 
 First step is to generate some JSON data into the database, or retrieve sample documents from a web service. Oracle Database supports *JavaScript Object Notation (JSON)* data natively with relational database features, including transactions, indexing, declarative querying, and views.
 
@@ -163,7 +190,7 @@ This lab covers the use of database languages and features to work with JSON dat
 
 4.  Please make sure you receive a similar output to the sample shown above.
 
-## Step 4: Store Json Documents Into Oracle Database
+## **Step 4**: Store Json Documents Into Oracle Database
 
 1.  Create a new table to store all JSON documents inside the pluggable database.
 
@@ -214,7 +241,7 @@ This lab covers the use of database languages and features to work with JSON dat
 
     ![](./images/p_jsonDoc_1.png " ")
 
-## Step 5:  Single Dot Notation
+## **Step 5**:  Single Dot Notation
 
 Oracle database SQL engine allows you to use a **simple-dot-notation (SDN)** syntax on your JSON data. With other words, you can write SQL queries that contain something like *TABLE\_Alias.JSON\_Column.JSON\_Property.JSON\_Property* which comes quite handy as the region attribute is an attribute of the nested object location within the JSON document. Remember, JSDN syntax is case sensitive.
 
@@ -243,7 +270,7 @@ The return value for a dot-notation query is always a string (data type VARCHAR2
 
 3.  Test other queries and review the output.
 
-## Step 6: Retrieve Sample Data
+## **Step 6**: Retrieve Sample Data
 
 The objective for our lab is to retrieve information about castles in Europe, and use them as JSON documents in different scenarios. Imagine you are starting the development of a new mobile application that provides recommendations for tourists.  For convenience and comfort, we can encapsulate the communication with a web service into a function. This way, we don’t have to write all the code required for a simple request, which in most of the cases is even more complicated than our simple example here, because they require a more complex authentication.
 
@@ -389,7 +416,7 @@ Note: Remember to replace ***GeoNames_username***.
 
     ![](./images/step6.10-newjsondoc.png " ")
 
-11. The SQL/JSON function *JSON\_TABLE* creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. You can query the result returned by the function as a virtual relational table using SQL. The main purpose of *JSON\_TABLE* is to create a row of relational data for each object inside a JSON array and output JSON values from within that object as individual SQL column values. Nested clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
+11. The SQL/JSON function *JSON\_TABLE* creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. You can query the result returned by the function as a virtual relational table using SQL. The main purpose of *JSON\_TABLE* is to create a row of relational data for each object inside a JSON array and output JSON values from within that object as individual SQL column values. The **NESTED** clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
 
     ````
     <copy>
@@ -439,9 +466,13 @@ Note: Remember to replace ***GeoNames_username***.
 
 Please proceed to the next lab.
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Author** - Valentin Leonard Tabacaru
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
+- **Contributors** - Anoosha Pilli & Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
+- **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

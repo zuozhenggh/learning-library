@@ -6,8 +6,10 @@ August 4, 2019
 # Lab 13: Migrating to Dedicated ATP using Data Pump
 </td></tr><table>
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Introduction
 
 Oracle Data Pump offers very fast bulk data and metadata movement between user managed Oracle databases and Autonomous Transaction Processing.
@@ -34,14 +36,14 @@ As a database admin or user,
 
 ## Steps
 
-### STEP 1: Download sample data pump export file from Oracle Learning Library github repo
+### **Step 1:** Download sample data pump export file from Oracle Learning Library github repo
 
 Use the following command from your mac / PC to download a sample schema dump from OLL
 
     wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/datapump/nodeapp.dmp?raw=true
 
 ​
-### STEP 2: Create an object storage bucket and upload dump
+### **Step 2:** Create an object storage bucket and upload dump
 
 - Login to your OCI account with your user credentials
 
@@ -64,7 +66,7 @@ Use the following command from your mac / PC to download a sample schema dump fr
 ![upload-dmp](./images/HOL-DataPump/upload-dmp.png)
 
 
-### STEP 3: General an authentication token for your user account
+### **Step 3:** General an authentication token for your user account
 
 - Assuming you are logged into your OCI account, navigate to the user details page from the top right menu item as shown below
 
@@ -80,7 +82,7 @@ Use the following command from your mac / PC to download a sample schema dump fr
 ![get-token3](./images/HOL-DataPump/get-token3.png)
 
 
-### STEP 4: Setup Object Store user credentials in your target autonomous database
+### **Step 4:** Setup Object Store user credentials in your target autonomous database
 
 Now that we have the credentials token, lets setup the target database to read from object store and import data.
 
@@ -112,7 +114,7 @@ Here's a screen shot of the above command run from a SQL Developer Client
 
 Ensure the pl/sql procedure executed successfully from the log message
 
-### STEP 5: Import data from object store using impdp utility
+### **Step 5:** Import data from object store using impdp utility
 
 - If all went well so far, proceed to ssh into your developer client machine and run the data pump import command.
 

@@ -51,7 +51,7 @@ As an database developer or adminstrator,
 - Scroll down to select the Action type for this event and pick Notifications and the topic you just created.
     ![](./images/events4.png " ")
 
-- Thats it! To test your notification setup, create an autonomous database service instance as explained in Lab 4.
+- Thats it! To test your notification setup, create an autonomous database service instance as explained in Lab 7.
 
 ## Acknowledgements
 *Congratulations! You successfully learnt to create DB event subscriptions and setup notifications!*
@@ -60,4 +60,8 @@ As an database developer or adminstrator,
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

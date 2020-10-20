@@ -15,11 +15,11 @@ In this lab, you examine the structures and data in the Sales History (SH) sampl
 -   Use the DESCRIBE command to examine the details of an SH table
 
 
-## Lab Prerequisites
+## Prerequisites
 
 -   This lab requires completion of the preceding 3 labs in the Contents menu on the right.
 
-## STEP 1: Examine the SH Tables and Their Relationships
+## **Step 1:** Examine the SH Tables and Their Relationships
 
 A database schema is a collection of metadata that describes the relationship between the data in a database. A schema can be simply described as the "layout" of a database or the blueprint that outlines how data is organized into tables.
 
@@ -36,7 +36,7 @@ Here is the entity-relationship diagram of the SH schema:
 
 ![](./images/sales_history_sh_schema_er_diagram.png " ")
 
-## STEP 2: Use the DESCRIBE Command to Examine the Details of an SH Table
+## **Step 2:** Use the DESCRIBE Command to Examine the Details of an SH Table
 
 The `DESCRIBE` command provides a description of a specified table or view. The description for tables and views contains the following information:
 -   Column names
@@ -66,4 +66,7 @@ For more information on the SH schema, see the documentation on [Sample Schemas]
 - **Author** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

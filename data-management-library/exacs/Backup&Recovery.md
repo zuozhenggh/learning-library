@@ -17,7 +17,10 @@ Create Sparse Disk Group: Select this configuration option if you intend to use 
 
 Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/exacreatingDBsystem.htm) for more details on Exadata storage selection.
 
-To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 ## Objectives
 
@@ -32,11 +35,11 @@ As a database user or DBA,
 
 ## Steps
 
-### STEP 1: Backup and Recover using Console
+### **Step 1:** Backup and Recover using Console
 
 You can use Console to enable automatic incremental backups, create full backups on demand, and view a list of managed backups for a database. The Console also allows you to delete full backups.
 
-**Pre-requisites**
+**Prerequisites**
 
 - Service gateway:
 
@@ -139,11 +142,11 @@ As mentioned above in Backup using Console,
 **Note: If the restore operation fails, the database will be in a \"Restore Failed\" state. You can try restoring again using a different restore option. However, Oracle recommends that you review the RMAN logs on the host and fix any issues before reattempting to restore the database. These log files can be found in subdirectories of the /var/opt/oracle/log directory.**
 
 
-### STEP 2: Backup and Recover using API
+### **Step 2:** Backup and Recover using API
 
 You can use Exadata's backup utility, bkup\_api, to back up databases on an Exadata DB system to an existing bucket in the Oracle Cloud Infrastructure Object Storage service and to the local disk Fast Recovery Area.
 
-**Pre-requisites**
+**Prerequisites**
 
 - Static Route:
 
@@ -180,7 +183,7 @@ Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/
  **Note: The following procedure must be performed on the first compute node in the Exadata DB system. To determine the first compute node, connect to any compute node as a grid user and execute the following command:**
  
 ```
-<copy>$ORACLE_HOME/bin/olsnodes --n</copy>
+<copy>$ORACLE_HOME/bin/olsnodes -n</copy>
 ```
 - SSH to the first compute node in the Exadata DB system.
 ```
@@ -248,18 +251,14 @@ bkup_cron_entry=yes</copy>
 - Use following command to install the backup configuration, configure the credentials, schedule the backup, and associate the configuration with a database name.
 
 ```
-<copy>./bkup -cfg bkup.cfg.hubexa1 -dbname=hubexa1</copy>
+<copy>/var/opt/oracle/ocde/assistants/bkup/bkup -cfg bkup.cfg.hubexa1 -dbname=hubexa1</copy>
 ```
 
 - The backup is scheduled via cron and can be viewed at /etc/crontab as shown below.
 
 ![](./images/backup&recovery/cron\_after\_api.png " ")
 
-- When the scheduled backup running or later point of time, you can check the backup status with following command.
 
-```
-<copy>cd/var/opt/oracle/bkup_api/bkup_api bkup_status --dbname=DB_NAME</copy>
-```
 
 Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/exabackingupBKUPAPI.htm) for more details on managing Exadata DB Backups using bkup_api.
 
@@ -278,6 +277,12 @@ a)  To create a backup that follows the current retention policy, enter followin
 In this example, a backup following a current retention policy is created as shown below.
 
 ![](./images/backup&recovery/on_demand_bkp_api.png " ")
+
+- When the scheduled backup running or later point of time, you can check the backup status with following command.
+
+```
+<copy>/var/opt/oracle/bkup_api/bkup_api bkup_status --dbname=DB_NAME</copy>
+```
 
 b)  To create a long-term backup, enter following command:
 
@@ -365,6 +370,6 @@ In this example, recovery completion status is checked as shown below.
 
 **Note: you can find the recovery logs in /var/opt/oracle/log/\<dbname\>/orec**
 
-### STEP 3: Backup and Recover using RMAN
+### **Step 3:** Backup and Recover using RMAN
 
 [Backup and Recover using RMAN](?lab=appendix) 

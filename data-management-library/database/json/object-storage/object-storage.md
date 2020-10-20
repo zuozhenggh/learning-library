@@ -18,7 +18,7 @@ Of those 5 files, we need 3:
 
 In the next step we will upload these files to Oracle Cloud storage
 
-## Step 1: Upload JSON data files to Oracle Cloud storage
+## **Step 1:** Upload JSON data files to Oracle Cloud storage
 
 1.  Log in to the Oracle Cloud console. Click on the hamburger menu at the top left and choose "Object Storage".
 
@@ -57,4 +57,7 @@ You may now proceed to the next lab.
 - **Author** - Roger Ford, Principal Product Manager
 - **Last Updated By/Date** - Roger Ford, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -3,7 +3,7 @@
 
 ## Introduction
 
-## Step 1: A Customer Purchase Order History
+## **Step 1:** A Customer Purchase Order History
 
 1. Connect to Database
     ````
@@ -26,7 +26,7 @@
     ````
     ![](./images/IMG4.PNG " ")
 
-## Step 2: Customers windows shopping history (through online)
+## **Step 2:** Customers windows shopping history (through online)
 
 1. Connect to **Database**
     ````
@@ -47,7 +47,7 @@ select * from orders_ext_hive o INNER JOIN customer_hive_ext c on o.customer_id=
 ````
 ![](./images/IMG5.PNG)
 
-## Step 3: Customer who ordered some specific products
+## **Step 3:** Customer who ordered some specific products
 
 
 1. Connect to **Database**
@@ -80,5 +80,7 @@ This is the end of the lab.
 - **Authors/Contributors** - Enter author  name
 - **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, May 2020
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

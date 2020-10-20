@@ -4,13 +4,15 @@
 
 In this lab, you will learn how to add additional columns to a report and improve a list of values.
 
+Estimated Time: 10 minutes
+
 ### Objectives
 - Improve the Projects List of Values
 - Update the applications To Dos section
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+* An Oracle Cloud paid account, a LiveLabs account or free trial.
 * An APEX Workspace and application
 
 ## **Step 1** - Adding Columns to the Report.
@@ -181,12 +183,15 @@ This same LOV is used on the Links form page so we can reuse it there as well.
 
 ## **Summary**
 
-This completes Lab 6. You now know how to enhance report and list of value queries to display related details. [Click here to navigate to Lab 7](?lab=lab-7-improving-links)
+You now know how to enhance report and list of value queries to display related details. [
 
 ## **Acknowledgments**
 
-- **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
-- **Contributors** - Robbie Ruppel, Functional Lead, Oracle LiveLabs
+- **Author** - Salim Hlayel, Principle Product Manager
+- **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

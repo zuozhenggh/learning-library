@@ -14,7 +14,7 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 -   Learn how to provision a new Autonomous Data Warehouse
 
-## Lab Prerequisites
+## Prerequisites
 
 -   This lab requires completion of the **Get a Free Trial** lab in the Contents menu on the right.  
 
@@ -24,7 +24,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
 [](youtube:Q6hxMaAPghI)
 
-## STEP 1: Choosing ADW or ATP from the Services Menu
+## **Step 1:** Choosing ADW or ATP from the Services Menu
 
 1. Login to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -49,7 +49,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
     ![](./images/Region.png " ")
 
-## STEP 2: Creating the ADB instance
+## **Step 2:** Creating the ADB instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -131,4 +131,7 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

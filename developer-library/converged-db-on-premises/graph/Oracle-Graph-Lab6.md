@@ -16,7 +16,7 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
 
-## Step 1: Loading the Graph into memory
+## **Step 1:** Loading the Graph into memory
 
 Run the below command in jshell prompt.
 
@@ -130,7 +130,7 @@ It is required to have the graph loaded into memory and published before visuali
 
 So, our graph is loaded into the memory, let’s publish it 
 
-## Step 3: Publish the graph
+## **Step 3:** Publish the graph
 
 ````
 <copy>
@@ -147,8 +147,10 @@ graph.publish(VertexProperty.ALL, EdgeProperty.ALL) ;
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 
 

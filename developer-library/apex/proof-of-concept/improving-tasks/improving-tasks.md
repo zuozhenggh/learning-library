@@ -4,13 +4,15 @@
 
 In this lab, you will learn how to improve the Task form page by utilizing improved list of values.
 
+Estimated Time: 15 minutes
+
 ### Objectives
 - Improve the Projects List of Values
 - Update the Task Form page
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+- An Oracle Cloud paid account, a LiveLabs account or free trial.
 - An APEX application
 
 ## **Step 1** - Improving the Projects List of Values.
@@ -147,7 +149,7 @@ If you review the Milestones select list you will notice that all milestones are
 
     ![](images/go-page8.png " ")
 
-2. In Page Designer, in the left pane click **Rendering**.
+2. In Page Designer, in the left pane click the **Rendering** icon.
     In the Rendering tree (left pane), click **P8\_MILESTONE_ID**
 
     In the Property Editor (right pane), enter the following:
@@ -184,12 +186,15 @@ If you review the Milestones select list you will notice that all milestones are
 
 ## **Summary**
 
-This completes Lab 5. You now know how to utilize different types of list of values, to display additional columns, and also how to define a Cascading-LOV. [Click here to navigate to lab 6](?lab=lab-6-improving-dos)
+You now know how to utilize different types of list of values, to display additional columns, and also how to define a Cascading-LOV.
 
 ## **Acknowledgments**
 
-- **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
-- **Contributors** - Robbie Ruppel, Functional Lead, Oracle LiveLabs
+- **Author** - Salim Hlayel, Principle Product Manager
+- **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

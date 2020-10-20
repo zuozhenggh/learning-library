@@ -1,28 +1,27 @@
-![](img/rdwd-entcloudmang.png)  
-
 # Welcome to Oracle Enterprise and Cloud Manageability Workshops
 
-These workshops are designed so each section can be done independently. Please look for the order of execution recommended by your instructor when attending a roadshow workshop. Note: there are a number of assumptions associated and documented for these workshops. Please pay attention to those.
+[![](../common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs)
 
-PLEASE DO NOT EXPORT OR DELETE THE EM CUSTOM IMAGE - IT WILL REMOVE IT FOR EVERYONE
+## EM on LiveLabs
+Execute EM workshops in LiveLabs. [Click to begin!](http://bit.ly/golivelabs)  
 
-## General Oracle Cloud Workshop Prerequisites
--  Cloud Account or Free Tier Account
--  Putty (Windows users)
--  Google Chrome 
+[![](../common/images/livelabs.png)](http://bit.ly/golivelabs)
 
-## Enterprise Manager Workshops 
-Find the Setup, FAQ and Workshop documents at:
-[Enterprise Manager Workshops](https://github.com/oracle/learning-library/tree/master/enterprise-manageability-library/enterprise_manager)
-1. [Lifecycle Management for PDBs](enterprise_manager/em_db_lifecycle_automation.md)
-2. [Find, Fix, and Validate](enterprise_manager/em_find_fix_validate.md)
+### Enterprise Manager Cloud Workshops
+- [Enterprise Manager Fundamentals - 5 hr](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=574)
+- [Multitenant Lifecycle Management - 60 min](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=656)
+- [Database Performance Management: Find, Fix, Validate - 60 min](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=660)
+- [Automated Database Patching at Scale with Fleet Maintenance - 60 min](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=661)
+- [Automated Database Upgrade at Scale with Fleet Maintenance - 1 hr 15 min](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=662)
+- [Database Configuration and Compliance Management - 60 min](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=659)
 
-## Oracle Management Cloud Workshops 
-3. [Proactive Database Performance Management with IT Analytics](management_cloud/pro_dbperf_ita.md)
-4. [Log Analytics for Database Troubleshooting and Root-Cause Analysis](management_cloud/log_analytics_of_databases.md)
-5. [Manage Oracle E-Business Suite Infrastructure](management_cloud/omcebs.md)
-6. [Unified Application Infrastructure Visability, Diagnostics Capacity](management_cloud/omcunified.md)
+### Oracle Management Cloud Workshops
+- [Proactive Database Performance Management with IT Analytics](management_cloud/pro_dbperf_ita.md)
+- [Log Analytics for Database Troubleshooting and Root-Cause Analysis](management_cloud/log_analytics_of_databases.md)
+- [Manage Oracle E-Business Suite Infrastructure](management_cloud/omcebs.md)
+- [Unified Application Infrastructure Visibility, Diagnostics Capacity](management_cloud/omcunified.md)
 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-
-
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

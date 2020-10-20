@@ -1,4 +1,4 @@
-# Lab 3: Working with the DOM and jQuery
+# Working with the DOM and jQuery
 
 ## Introduction
 
@@ -10,7 +10,7 @@ Play the video below to learn about this lab.
 
 [](youtube:uK7vCqfXxNs)
 
- <a href="https://www.slideshare.net/DanielMcGhan/module-3-working-with-the-dom-and-jquery" target="_blank">Click here</a> to view the slides.
+ <a href="https://www.slideshare.net/DanielMcGhan/module-3-working-with-the-dom-and-jquery" target="\_blank">Click here</a> to view the slides.
 
 ## **Step 1:** Basic selection, traversal, and manipulation in the DOM
 
@@ -74,7 +74,7 @@ jQuery makes it easy to select elements, traverse the DOM tree, and make changes
 
     ![](images/navigation-bar.png)
 
-    As you'll see, the navigation bar is made up of a `ul` element that has multiple `li` elements with links.
+    As you will see, the navigation bar is made up of a `ul` element that has multiple `li` elements with links.
 
     Execute the following code to add a class to the second `li` in the `ul`.
 
@@ -108,7 +108,7 @@ In this step, you will create basic regular event listeners and then learn why s
 
     After running the code, try clicking the images. You should see the 'You clicked an image!' message in the console.
 
-    Next, click the `Go` button in the search bar of the report, then try clicking the images again. The message does not appear anymore because the rows have been replaced with new elements that do not have the event bindings from before. In the next step, you'll use event delegation to fix this issue.
+    Next, click the `Go` button in the search bar of the report, then try clicking the images again. The message does not appear anymore because the rows have been replaced with new elements that do not have the event bindings from before. In the next step, you will use event delegation to fix this issue.
 
 2.  Execute the following code to add a single event handler to the report. This event handler will listen for click events on images further down in the DOM tree.
 
@@ -145,7 +145,11 @@ In this step, you will create basic regular event listeners and then learn why s
 This completes Lab 3. At this point, you should have a good idea of how to use jQuery to select, traverse, and manipulate DOM elements. In addition, you should have a basic understanding of how events work and how event delegation can be used in APEX.
 
 ## **Acknowledgements**
- - **Author/Contributors** -  Dan McGhan, Database Product Management
+ - **Author** -  Dan McGhan, Database Product Management
+ - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
  - **Last Updated By/Date** - Jeffrey Malcolm, LiveLabs QA, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

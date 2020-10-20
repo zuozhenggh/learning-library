@@ -15,7 +15,7 @@ Visit the website <a href="https://www.oracle.com/database/technologies/cloud-mi
 
 -   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-### Lab Prerequisites
+### Prerequisites
 This lab assumes you have completed the following labs:
 * Lab: [Login to Oracle Cloud]()
 * Lab: [Provision an Autonomous Database]()
@@ -52,4 +52,7 @@ In this lab you will use the SQL Developer tool, connect to your source database
  - **Author** - Troy Anthony, May 2020
  - **Last Updated By/Date** - Troy Anthony, May 20 2020
 
- See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+ ## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

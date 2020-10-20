@@ -4,9 +4,14 @@
 
 The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between endpoints. SSH keys are an important part of securely accessing Oracle Cloud Infrastructure compute instances in the cloud.
 
-If you already have an SSH key pair, you may use that to connect to your environment. We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute instance you will create. Oracle Cloud Shell is browser-based, does not require installation or configuration of anything on your laptop, and works independently of your network setup. However, if you prefer to connect via your laptop, please choose based on your configuration.
+If you already have an SSH key pair, you may use that to connect to your environment. We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute instance you will create. Oracle Cloud Shell is browser-based, does not require installation or configuration of anything on your laptop, and works independently of your network setup. However, if you prefer to connect via your laptop, please select an option based on your configuration.
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
+
+### LiveLabs Reservations
+If you are creating an SSH Key for a workshop that will be running *inside a LiveLabs tenancy*, do not select Oracle Cloud Shell.  Select the options that correspond to the OS running on your local laptop.  You will be pasting your key into the LiveLabs reservation page so that we can pre-create your instance for you.
+
+![](./images/livelabs-reservation.png " ")
 
 ## Option 1:  Oracle Cloud Shell
 
@@ -38,8 +43,6 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](./images/cloudshell-ssh-keygen.png " ")
 
-    ![](./images/cloudshell-ssh-keygen-2.png " ")
-
 3.  Examine the two files that you just created.
 
     ````
@@ -51,7 +54,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     Note in the output that there are two files, a *private key:* ```<<sshkeyname>>``` and a *public key:* ```<<sshkeyname>>.pub```. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
 4. To list the contents of the public key, use the cat command ```cat <<sshkeyname>>.pub```
-    
+
     *Note: The angle brackets <<>> should not appear in your code.*
 
     ![](images/cat-in-cloudshell.png " ")
@@ -60,13 +63,13 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](images/copy-publickey-cloudshell.png " ")
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Option 2:  MacOS
 
 1.  If you don't already have a shortcut to the terminal application for MacOS, you can find it in the **Applications** > **Utilities** menu or (Shift+Command+U) on your keyboard.
 
-2.  Start up **Terminal** and type in the command ```ssh-keygen```. ssh-keygen will ask you where to save the key, accept the default of the .ssh folder in your home directory by pressing Enter. File name will be ```id_rsa``` or whatever you choose to name your key. Press Enter twice for no passphrase. Remember the directory where you saved your key (~/.ssh), you'll need to reference it later when you create your instance.
+2.  Start up **Terminal** and type in the command ```ssh-keygen```. ssh-keygen will ask you where to save the key, accept the default of the .ssh folder in your home directory by pressing Enter. File name will be ```id_rsa``` or whatever you choose to name your key. Press Enter twice for no passphrase. Remember the directory where you saved your key (~/.ssh), you will need to reference it later when you create your instance.
 
     ````
     <copy>ssh-keygen</copy>
@@ -84,7 +87,7 @@ You may now *proceed to the next lab*.
     ```
     <copy>ls</copy>
     ```
-    
+
     ```
     <copy>cat id_rsa.pub</copy>
     ```
@@ -99,7 +102,7 @@ You may now *proceed to the next lab*.
 
 [Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Option 3:  Windows 10
 
@@ -130,7 +133,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     ```
     <copy>ls</copy>
     ```
-    
+
     ```
     <copy>cat id_rsa.pub</copy>
     ```
@@ -152,11 +155,11 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     * [Click here for more details on PowerShell for Windows](https://docs.microsoft.com/en-us/powershell/)
     * [Click here for more details on OpenSSH Key Management for Windows](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Option 4a: Prior Windows Versions - Git for Windows
 
-In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **Git for Windows**. **Git for Windows** includes a Unix like shell called ```Git Bash``` which is what you'll use to create keys, and establish SSH communications with your cloud host systems. If you prefer **PuTTY**, go to the next section.
+In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **Git for Windows**. **Git for Windows** includes a Unix like shell called ```Git Bash``` which is what you will use to create keys, and establish SSH communications with your cloud host systems. If you prefer **PuTTY**, go to the next section.
 
 1.  If you don't already have it installed, access the link below and download the application. If you are unable to install anything on your laptop due to permission issues, please use the **Oracle Cloud Shell** option above.
 
@@ -204,7 +207,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     *Note: If you've already installed Git for Windows, don't bother with PuTTY. It's your choice which utility to use for key generation and terminal access.*
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Option 4b: Windows Versions - PuTTY
 
@@ -240,7 +243,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     ![](images/keylab-018.png " ")
 
-8.  Next you'll need to save the private key. Click the **Save private key** button, answer **Yes** to the warning about saving without a passphrase.
+8.  Next you will need to save the private key. Click the **Save private key** button, answer **Yes** to the warning about saving without a passphrase.
 
     ![](images/keylab-019.png " ")
 
@@ -292,7 +295,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     [For more information on using PuTTY](https://the.earth.li/~sgtatham/putty/0.73/htmldoc/)
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Option 5: SSH Keys for Linux
 
@@ -336,11 +339,14 @@ You may now *proceed to the next lab*.
 
     In case you're interested, click [here](https://www.ssh.com/ssh/key) for more details on SSH, a short tutorial on initiating a connection from a Linux instance with the SSH keys we just created.
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, March 27, 2020
+* **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, October 2020
 * **Workshop (or Lab) Expiry Date** - March 27, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

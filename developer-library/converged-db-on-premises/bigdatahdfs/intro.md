@@ -18,7 +18,7 @@ Click on one of our workshops below to access the content.
 [![](./images/converged-database.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)
-- [I have an account from SSWorkshop](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
+- [I have an account from LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
 
 
 ## Get an Oracle Cloud Trial Account for Free!
@@ -47,9 +47,10 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - **Workshop Expiration Date**
 
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 
 

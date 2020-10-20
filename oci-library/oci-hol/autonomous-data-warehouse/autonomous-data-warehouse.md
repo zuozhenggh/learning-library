@@ -28,7 +28,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
    
@@ -41,7 +41,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 
-## Step 1: Sign in to OCI Console and create ADW instance
+## **Step 1:** Sign in to OCI Console and create ADW instance
 
 
 * **Tenant Name:** {{Cloud Tenant}}
@@ -99,7 +99,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 We now have a Autonomous Data Warehouse instance created. We have also downloaded the Client Credentials file. We will use this file when connecting to the database instance  using Sql Developer. Next we will create a Data file and use Object stroage to upload it to Database instance.
               
-## Step 2: Create Auth token for the user connect to ADW and load data
+## **Step 2:** Create Auth token for the user connect to ADW and load data
 
 In this section we will generate auth token for the user of this lab. An Auth token is an Oracle-generated token that you can use to authenticate with third-party APIs and Autonomous Database instance.
 
@@ -257,7 +257,7 @@ In this section we will generate auth token for the user of this lab. An Auth to
 
 We have successfully deployed a Autonomous Data Warehouse instance,populated a table using a file stored in Object storage and successfully run a query against the table.
 
-## Step 3: Delete the resources
+## **Step 3:** Delete the resources
 
 Delete Auth Token and Autonomous Data Warehouse
 
@@ -274,5 +274,7 @@ Delete Auth Token and Autonomous Data Warehouse
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

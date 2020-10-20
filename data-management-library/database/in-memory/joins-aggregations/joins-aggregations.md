@@ -1,26 +1,23 @@
 # In-Memory Joins and Aggregations
 
 ## Introduction
+Watch the video below to get an overview of joins using Database In-Memory.
+
+[](youtube:y3tQeVGuo6g)
 
 ### Objectives
 
 -   Learn how to enable In-Memory on the Oracle Database
 -   Perform various queries on the In-Memory Column Store
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup
+* Lab: Generate SSH Key (FreeTier and Paid accounts)
+* Lab: Environment Setup or Verify Setup
 * Lab: Enabling In-Memory
 * Lab: Querying the IMC
 
-### Lab Preview
-
-Watch the video below to get an overview of joins using Database In-Memory.
-
-[](youtube:y3tQeVGuo6g)
 
 ## Step: In-Memory Joins and Aggregation
 
@@ -139,6 +136,10 @@ Oracle Database adds In-Memory database functionality to existing databases, and
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager,  Database In-Memory
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, April 2020
+- **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request. 

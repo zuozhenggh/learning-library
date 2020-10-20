@@ -19,7 +19,7 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
 - docker attach – Attaches to a running container
 - docker commit – Creates a new image from a container’s changes
 
-### Lab Prerequisites?
+### Prerequisites?
 
 * Chrome Browser (preferred)
 * Install JSON Extension on Chrome Browser [click here](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en)
@@ -29,12 +29,12 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
     - Setup Compute Instance
 
 
-## Step 1: Lab Setup
+## **Step 1:** Lab Setup
 
 1. Using the terminal of your choice (we recommend the Oracle Cloud Shell) login to the instance you created using secure shell (ssh)
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
 2. You will use yum (a package management tool for Linux) to install the Docker engine, enable it to start on re-boot, grant docker privledges to the opc user and finally install GIT.  When prompted, press *Y* to download.  All of these steps will be performed as the root user.
@@ -93,7 +93,7 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
     </copy>
     ````
 
-## Step 2: Docker Basic Concepts
+## **Step 2:** Docker Basic Concepts
 
 1.  Check the version of docker
 
@@ -163,7 +163,7 @@ This lab will walk you through a few basic commands used in docker.  Here's a li
     ![](images/18002.png " ")
 
 
-## Step 3: Docker Networking Basics
+## **Step 3:** Docker Networking Basics
 
 Now that you know how to start, stop and relocate a container, let's see how to get information about the network.
 
@@ -197,6 +197,9 @@ You may now proceed to the next lab.
 * **Author** - Oracle NATD Solution Engineering
 * **Last Updated By/Date** - Kay, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 
 
 

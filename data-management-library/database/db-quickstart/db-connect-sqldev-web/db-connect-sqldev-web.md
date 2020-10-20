@@ -12,11 +12,11 @@ In this lab, you will connect to the database using SQL Developer Web, a browser
 
 -   Learn how to connect to your new autonomous database using SQL Developer Web
 
-## Lab Prerequisites
+## Prerequisites
 
 -   This lab requires completion of the 2 prior labs in this workshop: **Get a Free Trial** and **Provision an Autonomous Database**, in the Contents menu on the right.
 
-## STEP 1: Connect with SQL Developer Web
+## **Step 1:** Connect with SQL Developer Web
 
 Although you can connect to your autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Developer Web directly from your Autonomous Data Warehouse or Autonomous Transaction Processing console.
 1. In your database's details page, click the **Tools** tab.
@@ -46,4 +46,7 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
