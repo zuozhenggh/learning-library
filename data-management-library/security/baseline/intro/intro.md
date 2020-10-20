@@ -1,7 +1,7 @@
 # Oracle Database Security Hands-On Labs - Part1 (Baseline)
 
 ## Objectives
-**This workshop is the 1st part of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities.**
+**This workshop is the FIRST PART of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities.**
 
 These workshops give the user an opportunity to learn how to configure the DB Security features to protect and secure their databases from the Baseline to the Maximum Security Architecture (MSA).
 
