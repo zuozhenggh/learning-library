@@ -24,24 +24,24 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
 1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 2.  Once you are logged in, open up a 2nd webbrowser tab.
 3.  Start Cloudshell in each.  Maximize both cloudshell instances.
+   
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](./images/start-cloudshell.png " ")
 
-4.  Connect to node1 (you identified the IP in an earlier labs). 
+4.  Connect to node 1 (you identified the IP in an earlier lab). 
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
     ````
     ![](./images/racnode1-login.png " ")
 
-5. Repeat this step for node2.
+5. Repeat this step for node 2.
    
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
     ps -ef | grep pmon
     ````
     ![](./images/racnode2-login.png " ")
-
 
 6. On both nodes, switch to the oracle user and check to see what's running on both nodes.
    
@@ -65,7 +65,7 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
     ![](./images/rac-gi-1.png " ")
 
 
-8. Examine the network settings as the *opc* user.  Type exit to switch back to the opc user.
+8. Examine the network settings as the *opc* user.  Type exit to switch back to the opc user on both nodes.
 
     ````
     <copy>
@@ -97,7 +97,7 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
 
     ![](./images/racnode1-ms4-down.png " ")
 
-12. Look at the ifconfig command again by running the command below.
+12. Look at the ifconfig command again by running the command below on node 1.
    
     ````
     <copy>
@@ -113,9 +113,9 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
 
 15. Why have the virtual interfaces disappeared? Why are the virtual interfaces running on the other node? What state are they in?
 
-    - When the private interconnect is down on node1 the VIP for node1 is running on node2. The reverse would be true if the private interconnect were down on node2.
+    - When the private interconnect is down on node 1 the VIP for node 1 is running on node2. The reverse would be true if the private interconnect were down on node2.
 
-16. Go back to node2 and rerun the ifconfig command.
+16. Go back to node 2 and rerun the ifconfig command.
     
     ````
     sudo ifconfig -a

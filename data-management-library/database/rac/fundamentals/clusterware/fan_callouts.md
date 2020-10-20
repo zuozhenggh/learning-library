@@ -9,8 +9,8 @@ FAN is configured and runs automatically when you install Oracle Grid Infrastruc
 Estimated Lab Time: 20 Minutes
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
-- Lab: Generate SSH Keys
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab: Generate SSH Key
 - Lab: Build a DB System
 - Lab: Clusterware and Fencing
 
@@ -20,15 +20,36 @@ FAN callouts provide a simple yet powerful integration mechanism available with 
 For more information about FAN, click [here](https://www.oracle.com/technetwork/database/options/clustering/applicationcontinuity/learnmore/fastapplicationnotification12c-2538999.pdf) to view the technical paper. 
 
 ## **STEP 1:**  Write a callout
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+2.  Once you are logged in, open up a 2nd webbrowser tab.
+3.  Start Cloudshell in each.  Maximize both cloudshell instances.
+   
+    *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
+    ![](./images/start-cloudshell.png " ")
 
-1. On each node (node 1 and node 2), as the grid user, change in to the **racg/usrco** directory under the GI home
+4.  Connect to node 1 (you identified the IP in an earlier lab) as the opc user. 
+
+    ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
+    ````
+    ![](./images/racnode1-login.png " ")
+
+5. Repeat this step for node 2.
+   
+    ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
+    ps -ef | grep pmon
+    ````
+    ![](./images/racnode2-login.png " ")
+
+6. On each node (node 1 and node 2), switch to the grid user, change in to the **racg/usrco** directory under the GI home
     ````
     <copy>
     sudo su - grid
     cd /u01/app/19.0.0.0/grid/racg/usrco/
     </copy>
     ````
-2. Create a file named **callout-log.sh** using an editor \(vim and vi are installed\). Add the following lines to this file:
+7. Create a file named **callout-log.sh** using an editor \(vim and vi are installed\). Add the following lines to this file.  Repeat this for both nodes.
 
     ````
     <copy>
@@ -41,7 +62,7 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
 
     This callout will, whenever a FAN event is generated, place an entry in the logfile (FAN_LOGFILE) with the time (date) the event was generated.
 
-3. Ensure that the callout file has the execute bit set
+8. Ensure that the callout file has the execute bit set
 
     ````
     <copy>
@@ -143,7 +164,7 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
 1. A script may perform actions related to the eventtype. **eventtype** can be one of SERVICE, SERVICEMEMBER, INSTANCE, DATABASE  or NODE.  The following example will filter on the eventtype looking for a NODE, DATABASE or SERVICE event. If the FAN payload indicates a DOWN event for these eventypes it will perform a different action than for all other events.
 
     ````
-    <copy>
+
     #!/usr/bin/bash
     # Scan and parse HA event payload arguments:
     #
@@ -188,7 +209,7 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
     else
         echo "Found no interesting event: " ${NOTIFY_EVENTTYPE} " " ${NOTIFY_STATUS} >> ${FAN_LOGFILE}
     fi
-    </copy>
+
     ````
 2. Cause the generation of a DATABASE DOWN event with srvctl
 
@@ -198,21 +219,21 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
     </copy>
     ````
 
-2. Examine the entry created in the log file generated in /tmp on node1:
+3. Examine the entry created in the log file generated in /tmp on node1:
 
     ````
     <copy>
     cat /tmp/racnode1_callout2.log
     </copy>
     ````  
-2. Examine the entry created in the log file generated in /tmp on node2:
+4. Examine the entry created in the log file generated in /tmp on node2:
 
     ````
     <copy>
     cat /tmp/racnode2_callout2.log
     </copy>
     ````
-3. Cause a DATABASE UP event to be generated:
+5. Cause a DATABASE UP event to be generated:
 
     ````
     <copy>
@@ -232,7 +253,7 @@ In order to determine if a client has received FAN events may require running yo
 To confirm that FAN events are being received at a particular tier, you can install a java utility called FANWatcher, that will subscribe to ONS on a cluster and display events that it receives.
 
 Download the FANWatcher utility
-1. Open a terminal on one of the nodes using Putty or CYGWIN
+1. Open a terminal on one of the nodes using CloudShell (Putty or CYGWIN may be used)
 
 2. Become the "oracle" user and create a directory named fanWatcher
 

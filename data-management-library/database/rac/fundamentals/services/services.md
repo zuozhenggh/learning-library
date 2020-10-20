@@ -6,8 +6,7 @@ This lab walks you through the steps to demonstrate many of the capabilities of 
 Estimated Lab Time: 20 Minutes
 
 ### Prerequisites
-
-This lab assumes you have completed the following labs:
+- An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
 - Lab: Install Sample Schema
@@ -36,16 +35,29 @@ For more information on Oracle Database Services visit http://www.oracle.com/got
 
 user/password@**//hostname:port/servicename**  EZConnect does not support all service characteristics. A fully specified URL or TNS Connect String is required for Application Continuity and other service characteristics.
 
-1.  Connect to your cluster nodes with Cloudshell, Putty, MAC CYGWIN as described in earlier labs. 
-2.  Open a window/session to each node
-3.  Using the Public IP addresses, enter the command below to login to your instances as the opc user.  Repeat this for both nodes    
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address>
-    ````
+1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+2.  Once you are logged in, open up a 2nd webbrowser tab.
+3.  Start Cloudshell in each.  Maximize both cloudshell instances.
+   
+    *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
+    ![](../clusterware/images/start-cloudshell.png " ")
 
-    ![](./images/clusterware-1.png " ")
+4.  Connect to node 1 (you identified the IP in an earlier lab). 
 
-4.  Create a new service **svctest** with *instance1* as a **preferred** instance and *instance2* as an **available instance**. This means that the service will normally run on the *instance1* but will failover to *instance2* if the first instance becomes unavailable.
+    ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
+    ````
+    ![](../clusterware/images/racnode1-login.png " ")
+
+5. Repeat this step for node 2.
+   
+    ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
+    ps -ef | grep pmon
+    ````
+    ![](./clusterware/images/racnode2-login.png " ")    
+
+6.  Create a new service **svctest** with *instance1* as a **preferred** instance and *instance2* as an **available instance**. This means that the service will normally run on the *instance1* but will failover to *instance2* if the first instance becomes unavailable.  Run this on node 1.
 
     ````
     <copy>
@@ -56,20 +68,20 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ````
     ![](./images/add_service.png " ")
 
-5. Examine where the service is running by using **lsnrctl** to check the SCAN listener or a local listener on each node. **srvctl** will also show you where the service is running.
+7. Examine where the service is running by using **lsnrctl** to check the SCAN listener or a local listener on each node. **srvctl** will also show you where the service is running.
 
     ````
     <copy>
     srvctl status service -d aTFdbVm_mel1nk -s svctest
     </copy>
     ````
-6.  The command above will show something similar to:  
+8.  The command above will show something similar to:  
     
     ````
     [oracle@racnode1 ~]$ srvctl status service -d aTFdbVm_mel1nk -s svctest
     Service svctest is running on instance(s) aTFdbVm1
     ````
-7.  Use the lsnrctl utility to list the services.
+9.  Use the lsnrctl utility to list the services.
     ````
     <copy>
     lsnrctl services
