@@ -1,10 +1,10 @@
 # Prerequisites for Functions
 
-1. Create compartment
+## Create compartment
 
 If you want to use an existing compartment, skip to the next step, otherwise, click **Compartments** and then **Create Compartment**, to create a new compartment.
 
-2. Create VNC and subnets
+## Create VNC and subnets
 
 If a suitable VCN in which to create network resources doesn't exist already, log in to the Console as a tenancy administrator and under Core Infrastructure, go to **Networking** and then:
 
@@ -12,7 +12,7 @@ If a suitable VCN in which to create network resources doesn't exist already, lo
 2. Click **Start VCN Wizard**, then **VCN with Internet Connectivity**, then **Start VCN Wizard**.
 3. Enter a name for the new VCN (for example: `fn-vcn`), click **Next**, and then click **Create** to create the VCN along with the related network resources.
 
-3. Create policy for Oracle Functions
+## Create policy for Oracle Functions
 
 Log in to the Console as a **tenancy administrator** and under Governance and Administration, go to **Identity** and click **Policies** and then do the following:
 
