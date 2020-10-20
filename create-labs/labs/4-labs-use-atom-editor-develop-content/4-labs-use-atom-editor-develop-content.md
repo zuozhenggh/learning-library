@@ -47,7 +47,7 @@ The atom-live-server plugin is added to the **Packages** menu.
   ![](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
 
 ## **STEP 3:** Merge Content from Git Before you Start Editing your Content
-  Everyday before you start editing your content, ensure to do a Merge.
+  Everyday before you start editing your content, ensure to do a Merge in **GitHub Desktop**.
   Merging synchronizes the content in your cloned repository with the latest content on the **upstream/master** repository and ensures that you have the most recent versions of the templates and other workshops/labs.
 
   To merge content:
@@ -99,7 +99,7 @@ To create your lab and workshop content:
 
 ## **STEP 5:** Preview Your Workshop and Labs Using atom-live-server
 
-To preview your output in a browser:
+  To preview your output in a browser:
 1. Start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
   ![](./images/use-atom-editor-packages-start-live-server.png " ")
 
