@@ -1431,7 +1431,7 @@ Oracle Audit Vault and Database Firewall 20c **supports both Cloud and On-Premis
   - Technical Documentation: [Oracle Audit Vault & Database Firewall 20c](https://docs.oracle.com/en/database/oracle/audit-vault-database-firewall/20/index.html)
 
 Video
-  - *Auditing PostgreSQL and MongoDB with Oracle Audit Vault and Database Firewall (October 2020)* [](youtube:)
+  - *Auditing PostgreSQL and MongoDB with Oracle Audit Vault and Database Firewall (October 2020)* [](youtube:o0LqJXwS4L0)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
