@@ -13,9 +13,8 @@ For more information about Terraform and Resource Manager, please see the append
 -   Connect to the RAC database
 
 ### Prerequisites
-This lab assumes you have the following:
-- An Oracle LiveLabs or Paid Cloud account
-- Completed Lab: Generate SSH Keys
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab: Generate SSH Keys 
 
 ## **STEP 1A**: Create Stack:  Compute + Networking
 

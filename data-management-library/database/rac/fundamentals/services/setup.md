@@ -4,10 +4,10 @@
 This lab will show you how to setup your database schemas for the subsequent labs.
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
+- An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
-- 
+  
 ## **STEP**: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
@@ -16,20 +16,29 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 
 Copy the following commands into your terminal. These commands download the files needed to run the lab.  (Note: *You should run these scripts as the oracle user*.  Run a *whoami* to ensure the value *oracle* comes back.)
 
-1.  Login to your instance using one of the Public IP addresses for your nodes enter the command below to login to your instance.    
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address>
-    ````
+1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 
-2.  Switch to the oracle user
+2.  Start Cloudshell
+   
+    *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
+    ![](../clusterware/images/start-cloudshell.png " ")
+
+3.  Connect to node 1 (you identified the IP in an earlier lab). 
+
+    ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
+    ````
+    ![](../clusterware/images/racnode1-login.png " ")
+
+4.  Switch to the oracle user
     ````
     sudo su - oracle
     ````
     Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
-3.  Get the seutp files
+5.  Get the seutp files
     ````
+    <copy>    
     whoami   
-    <copy>
     cd /home/oracle/
 
     wget https://objectstorage.uk-london-1.oraclecloud.com/p/vKlh5hZ1wX-YB4K-ou5zNrL4GCsfQmj1z1y8LhIsFdU/n/lrojildid9yx/b/labtest_bucket/o/setupDB.sh.gz
@@ -41,7 +50,7 @@ Copy the following commands into your terminal. These commands download the file
     ````
     ![](./images/setup_services-1.png " " )
 
-3. The script **setupDB.sh** assumes the password for SYS and SYSTEM user. Edit the script using nano and replace the db_pwd with the password you entered in an earlier lab.
+6. The script **setupDB.sh** assumes the password for SYS and SYSTEM user. Edit the script using nano and replace the db_pwd with the password you entered in an earlier lab.
 
     ````
     <copy>
@@ -54,7 +63,7 @@ Copy the following commands into your terminal. These commands download the file
     db_pwd="W3lc0m3#W3lc0m3#"
 
     ````   
-4. No other lines need to be changed.  Run the **setupDB.sh** script
+7. No other lines need to be changed.  Run the **setupDB.sh** script
 
     ````
     <copy>
