@@ -205,43 +205,20 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 ## **STEP 3:** Clone an Existing Pluggable Database (PDB)
 
-1.  **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
+1.  **Navigate** to the “***Enterprise menu >> Targets >> Databases***”.
 
-  ![](images/167e561726cc8d0a58d8b90a37274b06.jpg " ")
+  ![](images/Clone1.jpg " ")
 
-2.  In the Database Provisioning page, in the Related Links section of the left menu pane, **click** Provision Pluggable Databases
+2.  In the Database Targets page, expand on the CDB (**CDB186**) and right click on the PDB for which you want to create a Full Clone and navigate to **Cloning** sub menu and **click** Create Full Clone
 
-  ![](images/33b77cf547caf09fe9c2d56b23fbaf43.jpg " ")
+  ![](images/Clone2.jpg " ")
 
-3.  In the Provision Pluggable Database Console, in the Container Database section, **select** the CDB (**CDB186**) within which you want to create new PDBs.
+3.  In the Create Full Clone PDB page, select the **SYSDBA Container Database Credentials** followed by **PDB Name** , **Display Name**, the **PDB Admin Credentials** and the **Destination DB Host Credentials** and **Click** on Clone
 
-  ![](images/4a1835f78c064502ccac88138075133c.jpg " ")
+  ![](images/Clone3.jpg " ")
 
-4.  In the PDB Operations section, **select** Create Pluggable Databases, **Click** Launch
+4.  Once the procedure is completed,  Navigate to ***Targets >> Databases***, then **Expand** on CDB186 and you will see the newly created PDB as a **Clone**
 
-  ![](images/2248640eabc0efa2fb32293ec07fb389.jpg " ")
-
-5.  **Select** clone PDB and select source as CDB186 (if you choose any other CDB, this operation might fail). Please keep Database link box empty. Select named credentials “ORACLE”, **Click** Next.
-
-  ![](images/472126037592bdeca5eaa6027ebb57a3.jpg " ")
-
-6.  **Enter** new PDB name
-
-  ![](images/4a4164d7ee405fed16dc5a0aeefe430f.jpg " ")
-
-7.  **Select** “Use Common Location for PDB Datafiles” in the Source page of the Create Pluggable Database Wizard, please enter **/tmp** in temporary working directory.
-
-  Optionally, you can select the postscript as we did in the creation flow. **Click** Next
-
-  ![](images/ff556eb15570c55dfd477361c20051d6.jpg " ")
-
-8.  When the see the Schedule page, just **select** the immediately check box next to Start. Then **Click** Next.
-
-  ![](images/dblmschedulepage.jpg " ")
-
-9.  After the Review page appears, and you have confirmed the information is correct for your deployment, click Submit. You can now click on View Execution Details link to see details and on the Procedure Activity page see the status of the procedure.
-
-10.  Once the procedure is completed,  Navigate to ***Targets >> Databases***, then **Click** on CDB186 and you will see the newly created PDB
 
 ## **STEP 4:** Compliance Management for Pluggable Database
 
