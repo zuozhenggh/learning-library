@@ -26,7 +26,7 @@ In this workshop, you will find details of the use cases and scenarios that we p
 
 The complete architecture of the DB Security Hands-On Labs is composed of 4 VMs as below:
 
-![](./images/dbseclab-v3-archi.png)
+   ![](./images/dbseclab-v3-archi.png)
 
 - DBSec-Lab VM (*Mandatory for all workshops: Baseline and Advanced workshops*)
 - AV Server VM (*for Advanced workshop only*)
@@ -49,7 +49,7 @@ The entire DB Security PMs Team wishes you an excellent workshop.
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Pedro Lopes, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 19th October 2020
+- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

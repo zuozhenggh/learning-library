@@ -25,37 +25,38 @@ This lab assumes you have completed:
 - Watch a preview of "*Understanding Oracle Label Security (April 2020)*" [](youtube:o4-XpUQWfaM)
 
 ### Lab Timing (estimated)
-| Step No. | Feature | Approx. Time | Details | Value Proposition |
-|--|------------------------------------------------------------|-------------|--------------------|-------------------|
-| 1 | Simple CRM Application | 10 minutes |||
-| 2 | Protect Glassfish Application | 20 minutes |||
+| Step No. | Feature | Approx. Time |
+|--|------------------------------------------------------------|-------------|
+| 1 | Simple CRM Application | 10 minutes |
+| 2 | Protect Glassfish Application | 20 minutes |
 
 ## **STEP 1**: Simple CRM Application
 
-### Different applications have different purposes:
+**Before Started**
 
-**User App**
+Different applications have different purposes:
+- **User App**
+      - Application where users sets their preferences for consent to marketing, processing data or asks to be forgotten.
+      - Runs with User Label: `NCNST::DP` and uses Database user: `APPPREFERENCE`
 
-Application where users sets their preferences for consent to marketing, processing data or asks to be forgotten.
-Runs with User Label: `NCNST::DP` and uses Database user: `APPPREFERENCE`
+- **Email Marketing**
+      - Application that can only access users that have consented to process their data and specifically for email marketing.
+      - Runs with User Label: `CONS::EMAIL` and uses Database user: `APPMKT`
 
-**Email Marketing**
+- **Business Intelligence**
+      - Application that can access all users who have consented to process their data.
+      - Runs with User Label: `CONS::DP` and uses Database user: `APPBI`
 
- Application that can only access users that have consented to process their data and specifically for email marketing.
- Runs with User Label: `CONS::EMAIL` and uses Database user: `APPMKT`
+- **Anonymizer**
+      - Batch process to anonmyize user records and set the data label to `ANON::`.
+      - Runs with User Label: `FORGET::` and uses Database user: `APPFORGET`
 
-**Business Intelligence**
+**How to walk through the lab**
+- While we provide scripts to execute the whole lab from start to finish in an automated fashion, it is strongly recommended that you open one by one and copy/execute the code blocks one by one
+- This way you’ll get a better understanding of the building blocks of this exercise
+- In case you decide to execute script by script, you can always review the log files (.out) for the details
 
-Application that can access all users who have consented to process their data.
-Runs with User Label: `CONS::DP` and uses Database user: `APPBI`
-
-**Anonymizer**
-
-Batch process to anonmyize user records and set the data label to `ANON::`.
-Runs with User Label: `FORGET::` and uses Database user: `APPFORGET`
-
-### How to walk through the lab
-While we provide scripts to execute the whole lab from start to finish in an automated fashion, it is strongly recommended that you open one by one and copy/execute the code blocks one by one. This way you’ll get a better understanding of the building blocks of this exercise. In case you decide to execute script by script, you can always review the log files (.out) for the details.
+**The Labs**
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -101,8 +102,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    ![](./images/ols-003.png " ")
 
-      **Note**:
-      
+      **Note**:   
       - This script update data labels to create some diversity of labels that will be used in the scenarios
       - In real world scenarios would be advisable to create a labeling function that would assign labels based on other existing table data (other columns)
 
@@ -114,8 +114,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    ![](./images/ols-004.png " ")
 
-      **Note**:
-      
+      **Note**:   
       - This script connects as different apps would be connecting
       - Each App would only see records that they would be able to process
       - E.g. AppMKT (app that is used for emailing customers) would only be able to see records labeled as `CNST::EMAIL`; `AppBI` would be able to see records labeled as `ANON`, and `CNST::ANALYTICS` (rows labeled with level `CNST`, and part of Group Analytics – would work for `CNST::ANALYTICS,EMAIL` as well)
@@ -129,7 +128,6 @@ While we provide scripts to execute the whole lab from start to finish in an aut
    ![](./images/ols-005.png " ")
 
       **Note**:
-      
       - This script simulates an app that would process records marked to be forgotten
       - It creates a stored procedure to show records marked to be Forgotten (labeled `FRGT::`)
       - It also creates a procedure under an AppPreference app schema that would serve the purpose of forgetting a certain customer
@@ -169,8 +167,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    ![](./images/ols-008.png " ")
 
-      **Note**:
-      
+      **Note**:   
       - This script creates the OLS policy named `OLS_DEMO_HR_APP` as well as the levels (`PUBLIC`, `CONFIDENTIAL`, `HIGHLY CONFIDENTIAL`), compartments (`HR`, `FIN`, `IP`, `IT`) and the OLS groups (`GLOBAL`, `USA`, `CANADA`, `EU`, `GERMAN`, `LATAM`)
       - This script also generates the data labels that will be used
       - This allows us to assign the numbers to our `label_tag` we want to have
@@ -183,8 +180,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
    ![](./images/ols-009.png " ")
 
-      **Note**:
-      
+      **Note**:   
       - This script will create a custom table for the Application User Labels, `EMPLOYEESEARCH_PROD.DEMO_HR_USER_LABELS`, and populate it with all of the rows from `EMPLOYEESEARCH_PROD.DEMO_HR_USERS`
       - The script will also create a few additional users we will use in this exercise, such as `CAN_CANDY`, `EU_EVAN`, and then grant the appropriate OLS User Labels to all of the Application Users
 
@@ -208,7 +204,7 @@ While we provide scripts to execute the whole lab from start to finish in an aut
       <copy>./03_apply_ols_policy.sh</copy>
       ````
 
-	![](./images/ols-010.png " ")
+   ![](./images/ols-010.png " ")
 
 	**Note**: Once an OLS policy is applied to a table, only users with authorized labels, or OLS privileges, can see data
 
@@ -218,10 +214,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
       <copy>./04_set_row_labels.sh</copy>
       ````
 
-	![](./images/ols-011.png " ")
+   ![](./images/ols-011.png " ")
 
-      **Note**:
-      
+      **Note**:   
       - We will dot his based on the `location` column in the table
       - For example, 'German' or 'Berlin' will receive an OLS label of `P::GER` because they belong to the GERMANY group
 
@@ -257,9 +252,9 @@ While we provide scripts to execute the whole lab from start to finish in an aut
       <copy>./06_Update_Glassfish_app.sh</copy>
       ````
 
-    ![](./images/ols-019.png " ")
+   ![](./images/ols-019.png " ")
 
-    ![](./images/ols-020.png " ")
+   ![](./images/ols-020.png " ")
 
 14. Go back to your web browser and launch the Glassfish app by navigating to this URL: `http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`
 
@@ -269,14 +264,13 @@ While we provide scripts to execute the whole lab from start to finish in an aut
 
 	 - See the result after enabling OLS policy
 
-         ![](./images/ols-021.png " ")
+   ![](./images/ols-021.png " ")
 
     - Logout and do the same thing as `eu_evan` / `Oracle123`
 
-         ![](./images/ols-022.png " ")
+   ![](./images/ols-022.png " ")
 
-      **Note**:
-      
+      **Note**:   
       - Now, you will see there is a difference from before
       - `CAN_CANDY` can only see Canadian-labeled users and `EU_EVAN` can only see EU-labeled users!
 
@@ -293,17 +287,15 @@ You may proceed to the next lab.
 ## **Appendix**: About the Product
 - **Overview**
 
-OLS works by comparing the row label with a user's label authorizations to enable you to easily restrict sensitive information to only authorized users.
-This way, users with different authorization levels (for example, managers and sales representatives) can have access to specific rows of data in a table.
-You can apply OLS policies to one or more application tables. The design of OLS is similar to Oracle Virtual Private Database (VPD).
-However, unlike VPD, OLS provides the access mediation functions, data dictionary tables, and policy-based architecture out of the box, eliminating customized coding and providing a consistent label based access control model that can be used by multiple applications.
+      OLS works by comparing the row label with a user's label authorizations to enable you to easily restrict sensitive information to only authorized users.
 
-    ![](./images/ols-concept.png " ")
+      This way, users with different authorization levels (for example, managers and sales representatives) can have access to specific rows of data in a table. You can apply OLS policies to one or more application tables. The design of OLS is similar to Oracle Virtual Private Database (VPD). However, unlike VPD, OLS provides the access mediation functions, data dictionary tables, and policy-based architecture out of the box, eliminating customized coding and providing a consistent label based access control model that can be used by multiple applications.
 
-OLS is based on multi-level security (MLS) requirements that are found in government and defense organizations.
-OLS software is installed by default, but not automatically enabled. You can enable OLS in either SQLPlus or by using the Oracle Database Configuration Assistant (DBCA). The default administrator for OLS is the user `LBACSYS`. To manage OLS, you can use either a set of PL/SQL packages and standalone functions at the command-line level or Oracle Enterprise Manager Cloud Control. To find information about OLS policies, you can query `ALL_SA_*`, `DBA_SA_*`, or `USER_SA_*` data dictionary views.
+   ![](./images/ols-concept.png " ")
 
-An OLS policy has a standard set of components as follows:
+      OLS is based on multi-level security (MLS) requirements that are found in government and defense organizations. OLS software is installed by default, but not automatically enabled. You can enable OLS in either SQLPlus or by using the Oracle Database Configuration Assistant (DBCA). The default administrator for OLS is the user `LBACSYS`. To manage OLS, you can use either a set of PL/SQL packages and standalone functions at the command-line level or Oracle Enterprise Manager Cloud Control. To find information about OLS policies, you can query `ALL_SA_*`, `DBA_SA_*`, or `USER_SA_*` data dictionary views.
+
+      An OLS policy has a standard set of components as follows:
     - **Labels**: Labels for data and users, along with authorizations for users and program units, govern access to specified protected objects. Labels are composed of the following:
          - **Levels**: Levels indicate the type of sensitivity that you want to assign to the row (for example, `SENSITIVE` or `HIGHLY SENSITIVE`). Levels are mandatory.
          - **Compartments (Optional)**: Data can have the same level (for example, `PUBLIC`, `CONFIDENTIAL` and `SECRET`), but can belong to different projects inside a company (for example, `ACME Merger` and `IT Security`). Compartments represent the projects in this example that help define more precise access controls. They are most often used in government environments.
@@ -311,6 +303,7 @@ An OLS policy has a standard set of components as follows:
     - **Policy**: A policy is a name associated with these labels, rules, authorizations, and protected tables.
 
 - **Benefits of using OLS**
+
    OLS provides several benefits for controlling row level management:
     - It enables row level data classification and provides out-of-the-box access mediation based on the data classification and the user label authorization or security clearance.
     - It enables you to assign label authorizations or security clearances to both database users and application users.
@@ -323,7 +316,7 @@ Technical Documentation: [Oracle Label Security 19c](https://docs.oracle.com/en/
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 19th October 2020
+- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
