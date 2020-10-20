@@ -1,4 +1,4 @@
-# Workshop Introduction and Overview #
+# Introduction
 
 ## Introduction to Real Application Clusters ##
 Oracle RAC is a cluster database with a shared cache architecture that overcomes the limitations of traditional shared-nothing and shared-disk approaches to provide highly scalable and available database solutions for all business applications. Oracle RAC is a key component of Oracle's private cloud architecture.
@@ -9,13 +9,31 @@ Oracle Real Application Clusters enables the transparent deployment of Oracle Da
 
 Oracle Real Application Clusters provides all the software components required to easily deploy Oracle Databases on a pool of servers and take full advantage of the performance, scalability and availability that clustering provides. Oracle RAC utilizes Oracle Grid Infrastructure as the foundation for Oracle RAC database systems. Oracle Grid Infrastructure includes Oracle Clusterware and Oracle Automatic Storage Management (ASM) that enable efficient sharing of server and storage resources in a highly available and scalable database cloud environment.
 
-
 Watch the video below for an overview of Oracle RAC.
 
 [](youtube:CbIGJs_eNtI)
 
+### About this Workshop
+In this workshop you will create a 2-node Oracle Real Application Clusters database in the Oracle Cloud.  Oracle Cloud Infrastructure offers 2-node RAC DB systems on virtual machines. When you launch a virtual machine DB system, you choose a shape, which determines the resources allocated to the DB system. After you provision the system, you can change the shape to adapt to new processing capacity requirements.  
 
-## Oracle RAC
+You will be using the VM.Standard2.4 shape with 4 OCPUs and 60GB of memory.
+
+For more about Virtual DB systems, click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Concepts/overview.htm).
+
+### Workshop Objectives
+- Build a DB System
+- Clusterware and Fencing
+- Fast Application Notification
+- Install Sample Schema
+- Services
+- SQL and PL/SQL - Sequences
+- Parallel Execution
+- Oracle Scheduler
+- PL/SQL Packages
+
+Estimated Workshop Time:  4 hours
+
+## More on Oracle RAC
 
 Oracle RAC provides:
 * High availability
@@ -39,9 +57,9 @@ RAC is a key underpinning of MAA.
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Troy Anthony, Anil Nair
-- **Last Updated By/Date** -Troy Anthony, Aug 2020
-- **Workshop Expiration Date** - Aug, 2021
+- **Authors/Contributors** - Troy Anthony, Anil Nair, Kay Malcolm
+- **Last Updated By/Date** - Kay Malcolm, October 2020
+
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
