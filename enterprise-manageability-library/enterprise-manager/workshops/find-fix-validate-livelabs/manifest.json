@@ -18,7 +18,7 @@
     },
     {
       "title": "Lab 2: Environment Setup",
-      "description": "Verify compute instance is setup and EM 13.3 with pre-configured database targets are up",
+      "description": "Verify compute instance is setup and EM 13.4 with pre-configured database targets are up",
       "publisheddate": "9/09/2020",
       "filename": "./../../setup-compute/verify-compute.md"
     },
