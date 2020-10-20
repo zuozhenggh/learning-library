@@ -21,11 +21,38 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
 
 ## **STEP 1:**  Connect and Disable the private interconnect
 
-1.  Connect to your cluster nodes with Putty or MAC CYGWIN as described earlier. Open a window to each node
+1.  If you aren't already logged in, open up a web browser and login to your tenancy. 
+2.  Open up two webbrowser tabs and start Cloudshell in each.  Maximize both.
+    ![](./images/start-cloudshell.png " ")
 
-    ![](./images/clusterware-1.png " ")
+3.  Connect to node1 (you identified the IP in an earlier labs).  You can also use Putty or MAC CYGWIN. 
 
-2. Monitor the **crsd.trc** on each node. The **crsd.trc** file is located in the $ADR_BASE/diag/crs/<nodename>/crs/trace directory. In earlier versions of Grid Infrastructure the logfiles were located under CRS_HOME/log/<nodename>/crs (these directory structures still exist in the installation)
+    ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
+    ````
+    ![](./images/racnode1-login.png " ")
+
+4. Repeat this step for node2.
+   
+    ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
+    ps -ef | grep pmon
+    ````
+    ![](./images/racnode2-login.png " ")
+
+
+5. On both nodes, switch to the oracle user and check to see what's running on both nodes.
+   
+    ````
+    <copy>
+    sudo su - oracle
+    ps -ef | grep pmon
+    tail -f /u01/app/grid/diag/crs/`hostname -s`/crs/trace/crsd.trc
+    </copy>
+    ````
+    ![](./images/racnode2-login.png " ")
+    
+6. Monitor the **crsd.trc** on each node as the *oracle* user. The **crsd.trc** file is located in the $ADR\_BASE/diag/crs/*nodename*/crs/trace directory. In earlier versions of Grid Infrastructure the logfiles were located under CRS\_HOME/log/<nodename>/crs (these directory structures still exist in the installation)
 
     ````
     <copy>
@@ -33,63 +60,32 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
     tail -f /u01/app/grid/diag/crs/`hostname -s`/crs/trace/crsd.trc
     </copy>
     ````
-    ![](./images/clusterware-2.png " ")
+    ![](./images/rac-gi-1.png " ")
 
-3. Open up a third window in to the cluster with Putty or CYGWIN and connect as **opc** user
 
-4. Examine the network settings:
+7. Examine the network settings as the *opc* user.  Type exit to switch back to the opc user.
 
     ````
     <copy>
+    exit
     sudo ifconfig -a
     </copy>
     ````
     Note that the commands **ip** or **if** can be used, but the syntax will not match what is shown here. Use these commands if you are familiar with their construct.
 
-5. The output returned should be similar to:
-    ````
 
-    [opc@racnode1 ~]$ sudo ifconfig -a
-    ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
-        inet 10.1.20.2  netmask 255.255.255.0  broadcast 10.1.20.255
-        ether 02:00:17:00:6b:67  txqueuelen 1000  (Ethernet)
-        RX packets 28014772  bytes 52423552913 (48.8 GiB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 36119105  bytes 130549585849 (121.5 GiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+8. Inspect the output.
+   
+    ![](./images/racnode1-ifconfig.png " ")
 
-    ens3:1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
-        inet 10.1.20.4  netmask 255.255.255.0  broadcast 10.1.20.255
-        ether 02:00:17:00:6b:67  txqueuelen 1000  (Ethernet)
 
-    ens3:2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
-        inet 10.1.20.6  netmask 255.255.255.0  broadcast 10.1.20.255
-        ether 02:00:17:00:6b:67  txqueuelen 1000  (Ethernet)
+9.  The **ifconfig** command shows all of the network interfaces configured and running. The **flags** entry will show whether the interface is UP, BROADCASTing, and whether in MULTICAST or not. The **inet** entry shows the IP address of each interface.
 
-    ens4: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
-        inet 192.168.16.18  netmask 255.255.255.0  broadcast 192.168.16.255
-        ether 02:00:17:00:3b:91  txqueuelen 1000  (Ethernet)
-        RX packets 8986  bytes 20798530 (19.8 MiB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 6456  bytes 11551974 (11.0 MiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    You should notice that one of the network interfaces has multiple IP addresses associated with it. **ens3** has the virtual interfaces **es3:1** and **es3:2** in the example shown here. These virtual interfaces are for the virtual IPs (VIPs) used by each node and the SCAN listeners.
 
-    lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
-        inet 127.0.0.1  netmask 255.0.0.0
-        loop  txqueuelen 0  (Local Loopback)
-        RX packets 4990670  bytes 10863625251 (10.1 GiB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 4990670  bytes 10863625251 (10.1 GiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-    ````
+    The private interconnect addresses for this cluster are **192.168.16.18** and **192.168.16.19** or racnode1-priv and racnode2-priv, respectively.
 
-6. The **ifconfig** command shows all of the network interfaces configured and running. The **flags** entry will show whether the interface is UP, BROADCASTing, and whether in MULTICAST or not. The **inet** entry shows the IP address of each interface.
-
-You should notice that one of the network interfaces has multiple IP addresses associated with it. **ens3** has the virtual interfaces **es3:1** and **es3:2** in the example shown here. These virtual interfaces are for the virtual IPs (VIPs) used by each node and the SCAN listeners.
-
-The private interconnect addresses for this cluster are **192.168.16.18** and **192.168.16.19** or racnode1-priv and racnode2-priv, respectively.
-
-7. Take down the interconnect (we are doing this on node1, but the other node could be used)
+10. Take down the interconnect (we are doing this on node1, but the other node could be used)
     ````
     <copy>
     sudo ifconfig ens4 down
@@ -97,62 +93,40 @@ The private interconnect addresses for this cluster are **192.168.16.18** and **
     ````
     *No error message means this is successful.*
 
-8. Look at the ifconfig command again by running the command below.
+    ![](./images/racnode1-ms4-down.png " ")
+
+11. Look at the ifconfig command again by running the command below.
+   
     ````
     <copy>
     sudo ifconfig -a
     </copy>
     ````
-9. The output returned should be similar to:
+    
+12. The output returned should be similar to.  Inspect the output.
 
-        ````
-        [opc@racnode1 ~]$ sudo ifconfig -a
-        ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
-            inet 10.1.20.2  netmask 255.255.255.0  broadcast 10.1.20.255
-            ether 02:00:17:00:6b:67  txqueuelen 1000  (Ethernet)
-            RX packets 28014772  bytes 52423552913 (48.8 GiB)
-            RX errors 0  dropped 0  overruns 0  frame 0
-            TX packets 36119105  bytes 130549585849 (121.5 GiB)
-            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+     ![](./images/racnode1-ifconfig-1.png " ")
 
-        ens4: flags=4163<BROADCAST,MULTICAST>  mtu 9000
-            inet 192.168.16.18  netmask 255.255.255.0  broadcast 192.168.16.255
-            ether 02:00:17:00:3b:91  txqueuelen 1000  (Ethernet)
-            RX packets 8986  bytes 20798530 (19.8 MiB)
-            RX errors 0  dropped 0  overruns 0  frame 0
-            TX packets 6456  bytes 11551974 (11.0 MiB)
-            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+13. Note that **ens4** is no longer UP.
 
-        lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
-            inet 127.0.0.1  netmask 255.0.0.0
-            loop  txqueuelen 0  (Local Loopback)
-            RX packets 4990670  bytes 10863625251 (10.1 GiB)
-            RX errors 0  dropped 0  overruns 0  frame 0
-            TX packets 4990670  bytes 10863625251 (10.1 GiB)
-            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-        ````
-10. Note that **ens4** is no longer UP.
-
-11. Why have the virtual interfaces disappeared? Why are the virtual interfaces running on the other node? What state are they in?
+14. Why have the virtual interfaces disappeared? Why are the virtual interfaces running on the other node? What state are they in?
 
 - When the private interconnect is down on node1 the VIP for node1 is running on node2. The reverse would be true if the private interconnect were down on node2.
 
-- From node2
+15. Go back to node2 and rerun the ifconfig command.
+    
     ````
     sudo ifconfig -a
     ````
-- would show similar to:
-    ````
-    ens3:5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
-        inet 10.1.20.4  netmask 255.255.255.0  broadcast 10.1.20.255
-        ether 02:00:17:00:be:9d  txqueuelen 1000  (Ethernet)
+     ![](./images/racnode2-ifconfig.png " ")
 
-    ````
+16.  Explore the result.
 
 ## **STEP 2:** Examine the CRSD log
 
-1. The **crsd.trc** files that you are using **tail** to examine on node1 will begin to get errors related to the network interface and one of the nodes will be removed from the cluster. CLUSTER FENCING will take place.  See an example below.
+1. Go back to node1 in cloudshell
+2. Switch to the oracle user
+3. The **crsd.trc** files that you are using **tail** to examine on node1 will begin to get errors related to the network interface and one of the nodes will be removed from the cluster. CLUSTER FENCING will take place.  See an example below.
 
     ````
     2020-08-17 09:03:48.838 :GIPCHGEN:3320669952:  gipchaInterfaceFailF [gipchaNodeAddInterfaceF : gipchaMain.c : 2466]: failing interface 0x7f6d94092c40 { host '', haName 'dbe1-effd-30dd-adba', local (nil), ip '192.168.16.18:60150', subnet '192.168.16.0', mask '255.255.255.0', mac '02-00-17-00-3b-91', ifname 'ens4', numRef 1, numFail 0, idxBoot 0, flags 0xd }
@@ -164,7 +138,7 @@ The private interconnect addresses for this cluster are **192.168.16.18** and **
 
     ````
 
-2. During cluster fencing messages similar to the following will be seen:
+4. During cluster fencing messages similar to the following will be seen:
 
     ````
     2020-08-17 09:04:06.116 :UiServer:1539299072: [     INFO] {1:39776:4738} Sending to PE. ctx= 0x7f6d900a9ee0, ClientPID=89807 set Properties (grid,19633), orig.tint: {1:39776:2}
@@ -189,30 +163,38 @@ The private interconnect addresses for this cluster are **192.168.16.18** and **
 
     ````
 
-3. Will the same node always be evicted? is it always the node on which the interface was removed? Can this be influenced in any way?
+5. Will the same node always be evicted? is it always the node on which the interface was removed? Can this be influenced in any way?
 
-4. . Examine the status of the cluster from the node that still has Grid Infrastructure running
+6. Examine the status of the cluster from the node that still has Grid Infrastructure running
 
     ````
     <copy>
     /u01/app/19.0.0.0/grid/bin//crsctl status server
     </copy>
     ````
-   Only one node should be online
+    ![](./images/racnode1-crsctl.png " ")
+
+
+7. Only one node should be online
 
     ````
-    [opc@racnode2 ~]$  /u01/app/19.0.0.0/grid/bin//crsctl status server
-    NAME=racnode2
-    STATE=ONLINE
+    <copy> 
+    /u01/app/19.0.0.0/grid/bin//crsctl status server</copy>
     ````    
-5. Examine the network adapters on the running node
+
+    ![](./images/racnode2-crsctlg.png " ")
+
+8. Examine the network adapters on the running node
 
     ````
     <copy>
     sudo ip addr show
     </copy>
     ````
-6. Output similar to the following will display:
+    ![](./images/racnode2-ipaddr.png " ")
+
+
+9. Output similar to the following will display:
 
     ````
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
@@ -253,7 +235,7 @@ Can you connect an application client to a VIP (a host-vip) when it is running o
     sudo ifconfig ens4 up
     </copy>
     ````
- 2. use ifconfig to examine the network adapters. ens4 should restart
+ 2. use ifconfig to examine the network adapters. Ens4 should restart
 
  3. The nodes will reform the cluster, VIPs will migrate back to their home node, or rebalance in the case of SCAN-VIPs.  An **fconfig -a** command on the original failed node will now show restarted resources
 
