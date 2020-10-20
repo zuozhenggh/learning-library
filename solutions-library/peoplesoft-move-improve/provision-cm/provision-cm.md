@@ -79,7 +79,7 @@ You can also use these pre-built keys for the demo purpose: [TestDrivekeys.zip](
     ```
     ![](./images/apikeypub.png "")
 
-## **STEP 2**: Setting API keys for User01
+## **STEP 2**: Setting API Keys for User01
 
 1. Copy the contents of api_key.pub key (the one you have created through the script) as follows: 
     - Right click on the api_key.pub and open with a text editor as shown below. 
@@ -325,7 +325,7 @@ SSH key pair required to access Cloud Manager instance was created in Part 1 of 
 
     NOTE: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Till the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
 
-    Here is a video  which navigates you through the workshop till Level 500. [Video](https://objectstorage.us-ashburn-1.oraclecloud.com/p/m9ftrl_8RSOMrmOdBU-40MvIIZHbVABb6kOgYs54dIyHACgdyvZWaxw4B35y1oN6/n/orasenatdpltoci03/b/TestDrive/o/LabOverview.mp4)
+    Here is a video that navigates you through the workshop until Lab 6. [Video](https://objectstorage.us-ashburn-1.oraclecloud.com/p/m9ftrl_8RSOMrmOdBU-40MvIIZHbVABb6kOgYs54dIyHACgdyvZWaxw4B35y1oN6/n/orasenatdpltoci03/b/TestDrive/o/LabOverview.mp4)
 
 ## **STEP 9**: Access Cloud Manager
 
