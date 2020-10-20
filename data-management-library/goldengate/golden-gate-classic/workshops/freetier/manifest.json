@@ -47,11 +47,23 @@
       "title": "Lab 7: Active Active Replication",
       "description": "Bidirectional Active Active Replication",
       "filename": "../../gg-classic-workshop-lab7-active-active-replication/gg-classic-workshop-lab7-active-active-replication.md"
-    },
+    }
     {
       "title": "Lab 8: Goldengate Column Conversions",
       "description": "Lab 5 GoldenGate Column Conversions",
       "filename": "../../gg-classic-workshop-lab8-ogg-column-conversions/gg-classic-workshop-lab8-ogg-column-conversions.md"
+
+    },
+    {
+      "title": "Lab 9: Goldengate Non Oracle PostpresSQL Lab A",
+      "description": "Lab 8: Goldengate Non Oracle PostpresSQL Lab A",
+      "filename": "../../gg-classic-workshop-lab8 - postgresql  laba -replication.md"
+
+    },
+    {
+      "title": "Lab 10: Goldengate Non Oracle PostpresSQL Lab B",
+      "description": "Lab 8: Goldengate Non Oracle PostpresSQL Lab B",
+      "filename": "../../gg-classic-workshop-lab8 - postgresql  labb -replication.md"
 
     }
   ]
