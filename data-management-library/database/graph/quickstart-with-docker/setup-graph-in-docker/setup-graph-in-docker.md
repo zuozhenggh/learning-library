@@ -14,7 +14,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-* Docker and GIT on your local machine (laptop or desktop).
+* This lab assumes that you have completed the lab - Set up Docker on an Oracle Cloud Compute Instance
 * Internet access to download the Graph Server and Client kit.
 
 ## **STEP 1:** Get required components
@@ -28,6 +28,14 @@ In this lab, you will:
     ```
 
   Note the directory where you have cloned it. We will refer to it as `$REPO_HOME` here and in other labs in this workshop.
+
+2. Grant permission on the directory
+
+    ```
+    <copy>
+    chmod 777 oracle-pg
+    </copy>
+    ```
 
 ### Download and extract the graph and other packages
 
@@ -47,6 +55,26 @@ Put the following files into `$REPO_HOME/oracle-pg/docker/tmp/`
     - oracle-graph-20.1.0.x86_64.rpm
     - oracle-graph-zeppelin-interpreter-20.1.0.zip
     - apache-groovy-binary-2.4.18.zip
+
+    To put the files in the directory, copy the below command and replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address.
+
+    ```
+    <copy>
+    scp -i ~/.ssh/<your-key-name> ~/Downloads/oracle-graph-20.1.0.x86_64.rpm opc@<your-instance-ip-address>:oracle-pg/docker/tmp/
+    </copy>
+    ```
+
+    ```
+    <copy>
+    scp -i ~/.ssh/<your-key-name> ~/Downloads/oracle-graph-zeppelin-interpreter-20.1.0.zip opc@your-instance-ip-address>:oracle-pg/docker/tmp/
+    </copy>
+    ```
+
+    ```
+    <copy>
+    scp -i ~/.ssh/<your-key-name> ~/Downloads/apache-groovy-binary-2.4.18.zip opc@your-instance-ip-address>:oracle-pg/docker/tmp/
+    </copy>
+    ```
 
 3. Change directory to `$REPO_HOME` and run the following script to extract the packages:
 
