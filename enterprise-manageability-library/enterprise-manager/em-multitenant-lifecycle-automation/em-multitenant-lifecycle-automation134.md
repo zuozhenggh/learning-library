@@ -75,23 +75,23 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 ## **STEP 1:** Create Pluggable Database (PDB)
 
-1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
+1. Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
-2.  **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
+2. **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
   ![](images/167e561726cc8d0a58d8b90a37274b06.jpg " ")
 
-3.  In the Database Provisioning page, in the Related Links section of the left menu pane, **click** “**Provision Pluggable Databases**”
+3. In the Database Provisioning page, in the Related Links section of the left menu pane, **click** “**Provision Pluggable Databases**”
 
-4.  In the Provision Pluggable Database Console, in the **Container Database** section, **select** the CDB (**CDB186 – 18.8 version**) within which you want to create new PDBs.
+4. In the Provision Pluggable Database Console, in the **Container Database** section, **select** the CDB (**CDB186 – 18.8 version**) within which you want to create new PDBs.
 
   ![](images/4a1835f78c064502ccac88138075133c.jpg " ")
 
-5.  In the PDB Operations section, **select** Create Pluggable Databases, **Click** Launch
+5. In the PDB Operations section, **select** Create Pluggable Databases, **Click** Launch
 
   ![](images/2248640eabc0efa2fb32293ec07fb389.jpg " ")
 
-6.  Use the named credentials (CDB186\_SYS) for login
+6. Use the named credentials (CDB186\_SYS) for login
 
   ![](images/8741cbb813d375a296f8344f4beaeb7e.jpg " ")
 
@@ -137,29 +137,29 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/33b77cf547caf09fe9c2d56b23fbaf43.jpg " ")
 
-3.  In the Provision Pluggable Database Console, in the Container Database section, **select** the CDB (**CDB186**) within which you want to create new PDBs.
+3. In the Provision Pluggable Database Console, in the Container Database section, **select** the CDB (**CDB186**) within which you want to create new PDBs.
 
   ![](images/4a1835f78c064502ccac88138075133c.jpg " ")
 
-4.  In the PDB Operations section, **select Unplug** Pluggable Databases, then **Click** Launch
+4. In the PDB Operations section, **select Unplug** Pluggable Databases, then **Click** Launch
 
   ![](images/b727e1673cfa38c85130ef6e2365055d.jpg " ")
 
-5.  In the **Select** PDB page of the Unplug Pluggable Database Wizard, in the Select Pluggable Database section, select the PDB you want to unplug. Also **Select** Named credentials “ORACLE”
+5. In the **Select** PDB page of the Unplug Pluggable Database Wizard, in the Select Pluggable Database section, select the PDB you want to unplug. Also **Select** Named credentials “ORACLE”
 
   ![](images/39102476b5e5915a1491e28525af88f5.jpg " ")
 
-6.  In the Destination page, select the type of PDB template you want to generate for unplugging the PDB, and the location where you want to store it. The PDB template consists of all datafiles as well as the metadata XML file. **Select** radio button for software library. **Select** Generate PDB archive. **Enter** /tmp in location under Temporary working directory
+6. In the Destination page, select the type of PDB template you want to generate for unplugging the PDB, and the location where you want to store it. The PDB template consists of all datafiles as well as the metadata XML file. **Select** radio button for software library. **Select** Generate PDB archive. **Enter** /tmp in location under Temporary working directory
 
   ![](images/4ad828f403bf702b7318f718ad98f117.jpg " ")
 
-7.  In the Schedule page, **Select** immediately check box next to Start. **Click Next.** In the Review page, review the details you have provided for the deployment procedure. If you are satisfied with the details, click Submit. In the Procedure Activity page, view the status of the procedure.
+7. In the Schedule page, **Select** immediately check box next to Start. **Click Next.** In the Review page, review the details you have provided for the deployment procedure. If you are satisfied with the details, click Submit. In the Procedure Activity page, view the status of the procedure.
 
   ![](images/bdbafe949b2bc880e2a09b82f9edaf8a.jpg " ")
 
-8.  You can Navigate to ***Targets >> Databases***, Click on CDB186 and you will see the PDB you unplugged is no longer in the list.
+8. You can Navigate to ***Targets >> Databases***, Click on CDB186 and you will see the PDB you unplugged is no longer in the list.
 
-9.  Let us continue to next steps and plug the same PDB back into the container database. Navigate to the “Enterprise menu >> Provisioning and Patching >> Database provisioning”.
+9. Let us continue to next steps and plug the same PDB back into the container database. Navigate to the “Enterprise menu >> Provisioning and Patching >> Database provisioning”.
 
   ![](images/167e561726cc8d0a58d8b90a37274b06.jpg " ")
 
@@ -189,15 +189,15 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/dad1846d73cd9ca339bab04718e09816.jpg " ")
 
-18.  **Select** “Use Common Location for PDB Datafiles” and use **/tmp** as temporary working directory.
+18. **Select** “Use Common Location for PDB Datafiles” and use **/tmp** as temporary working directory.
 
   ![](images/a6353f812935eeb6148a79693ae0c4fd.jpg " ")
 
-21.  In the Schedule page, **select** immediately check box next to Start. **Click** Next.
+21. In the Schedule page, **select** immediately check box next to Start. **Click** Next.
 
-22.  In the review page, review the details you have provided for the deployment procedure. If you are satisfied with the details, **click** Submit. You can now click on View Execution Details link to see details.
+22. In the review page, review the details you have provided for the deployment procedure. If you are satisfied with the details, **click** Submit. You can now click on View Execution Details link to see details.
 
-23.  In the Procedure Activity page, view the status of the procedure.
+23. In the Procedure Activity page, view the status of the procedure.
 
 24. Optionally **Click** the status link for each step to view the details of the execution of each step. Once the procedure is completed, you can Navigate to ***Targets >> Databases***, Click on CDB186 and you will see the newly created PDB
 
@@ -205,34 +205,34 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 ## **STEP 3:** Clone an Existing Pluggable Database (PDB)
 
-1.  **Navigate** to the “***Enterprise menu >> Targets >> Databases***”.
+1. **Navigate** to the “***Enterprise menu >> Targets >> Databases***”.
 
   ![](images/Clone1.jpg " ")
 
-2.  In the Database Targets page, expand on the CDB (**CDB186**) and right click on the PDB for which you want to create a Full Clone and navigate to **Cloning** sub menu and **click** Create Full Clone
+2. In the Database Targets page, expand on the CDB (**CDB186**) and right click on the PDB for which you want to create a Full Clone and navigate to **Cloning** sub menu and **click** Create Full Clone
 
   ![](images/Clone2.jpg " ")
 
-3.  In the Create Full Clone PDB page, select the **SYSDBA Container Database Credentials** followed by **PDB Name** , **Display Name**, the **PDB Admin Credentials** and the **Destination DB Host Credentials** and **Click** on Clone
+3. In the Create Full Clone PDB page, select the **SYSDBA Container Database Credentials** followed by **PDB Name** , **Display Name**, the **PDB Admin Credentials** and the **Destination DB Host Credentials** and **Click** on Clone
 
   ![](images/Clone3.jpg " ")
 
-4.  Once the procedure is completed,  Navigate to ***Targets >> Databases***, then **Expand** on CDB186 and you will see the newly created PDB as a **Clone**
+4. Once the procedure is completed,  Navigate to ***Targets >> Databases***, then **Expand** on CDB186 and you will see the newly created PDB as a **Clone**
 
 
 ## **STEP 4:** Compliance Management for Pluggable Database
 
 Now database administrator applies a Corporate Standard on the newly created PDB database, which results in a “Violation”. Then, the DBA fixes the issue using corrective actions. Let us examine how a DBA applies the fixes in the following steps.
 
-1.  Navigate to ***Enterprise >> Compliance >> Library*** to get started
+1. Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
     ![](images/dblmcompliancelibrary.png " ")
 
-2.  **Click** the Compliance Standards tab,  **Select** the row “Corporate Database Standard”, and then **Click** the Associate Targets tab
+2. **Click** the Compliance Standards tab,  **Select** the row “Corporate Database Standard”, and then **Click** the Associate Targets tab
 
     ![](images/8ed5400adb044b81194db800cfd4c953.jpg " ")
 
-2.  After which, **Click** Add and choose the row with your PDB, then **Click** OK  
+2. After which, **Click** Add and choose the row with your PDB, then **Click** OK  
 
 3. In the Save Association dialog box, **Click** Yes
 
@@ -260,7 +260,7 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
     ![](images/1376bfeae918518dbfd16d32ffc67b72.jpg " ")
 
-10.  Click Violations link and  click on one of the Open Cursor Setting lines on the left under the Corporate Database Standard heading (red x).
+10. Click Violations link and  click on one of the Open Cursor Setting lines on the left under the Corporate Database Standard heading (red x).
 
       ![](images/e48f5a64f52812e23a631e0f3f270371.jpg " ")
 
@@ -299,9 +299,9 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 With the Self-Service Portal, cloud users can request an  Pluggable Database through a simple process, monitor resource consumptions, and manage the pluggable database through an intuitive graphical user interface. Expiry time is provided while requesting the PDB instance and PDB is automatically deleted based on the expiry time.
 
-1.  Login into Enterprise Manager as a Self-Service User. Self-Service User credentials are: **cyrus/welcome1**
+1. Login into Enterprise Manager as a Self-Service User. Self-Service User credentials are: **cyrus/welcome1**
 
-2.  By default, you will see the Database Cloud Self Service Portal landing page as shown below.
+2. By default, you will see the Database Cloud Self Service Portal landing page as shown below.
 
     ![](images/2d9dd5550b4774b590ccb4b1815ac70d.jpg " ")
 
@@ -322,7 +322,7 @@ With the Self-Service Portal, cloud users can request an  Pluggable Database thr
 
       ![](images/fd8fe73465009dbd65e2231503481e40.jpg " ")
 
-5.  Enter Credentials details in the “**Pluggable Database Administrator Account**”
+5. Enter Credentials details in the “**Pluggable Database Administrator Account**”
 
     - Administrator Name: **PDBADMIN**
     - Password: **welcome1**
@@ -331,18 +331,18 @@ With the Self-Service Portal, cloud users can request an  Pluggable Database thr
 
     ![](images/181bed80a9978ed3e02c050838749f2b.jpg " ")
 
-6.  Instance Details, keep all defaults as they are. The Properties Page has the properties for the instance. The Self-Service Administrator has configured this as a optional step. However, properties can help users locate an instance more quickly. So Enter:
+6. Instance Details, keep all defaults as they are. The Properties Page has the properties for the instance. The Self-Service Administrator has configured this as a optional step. However, properties can help users locate an instance more quickly. So Enter:
 
     - Contact: **CYRUS**
     - Lifecycle Status: **Test**
 
     ![](images/f5f29e12efaaf8a1fce318e871d9009d.jpg " ")
 
-7.  Instance Duration - For Instance Duration Start: Accept the default (Immediately). For Duration: Specify 4 hours from the current time by selecting the “Until” radio button, changing to current date and specify time to be 4 hours from the current time
+7. Instance Duration - For Instance Duration Start: Accept the default (Immediately). For Duration: Specify 4 hours from the current time by selecting the “Until” radio button, changing to current date and specify time to be 4 hours from the current time
 
     ![](images/3035739cd46353882939fd894197f2ed.jpg " ")
 
-8.  Click on Submit button
+8. Click on Submit button
 
     What do these options represent? In most cases the PDBaaS options are self-explanatory. The self-service user should be able to provision a PDB by entering minimal information. Fields with an ‘\*’ represent mandatory input fields. Please refer to the table listed below for a description of each option:
 
@@ -356,13 +356,13 @@ With the Self-Service Portal, cloud users can request an  Pluggable Database thr
     | Schedule Request            | Self-service user has the ability to create a PDB database immediately or choose to create at a later time. In this lab exercise, the administrator has defined a policy, so a self- service user has to specify time duration. The PDB database will be automatically deleted after the duration. |
     | Administrator Name/Password | A database user with required administrative privileges will be created on the provisioned PDB. A self-service user will be able to administer the PDB database by logging in as this database user.                                                                                               |
 
-9.  Once you submit a request, you will be redirected back to the “**Database Cloud Services**” Page. Your PDB creation request has been submitted to Enterprise Manager for execution. Under “**Requests**” region, you should see 2 requests: “**Create**” and “**Delete**” request
+9. Once you submit a request, you will be redirected back to the “**Database Cloud Services**” Page. Your PDB creation request has been submitted to Enterprise Manager for execution. Under “**Requests**” region, you should see 2 requests: “**Create**” and “**Delete**” request
 
     ![](images/0d01a3a45ebb7f97fcc8752d52241b9d.jpg " ")
 
 10. At this point, provisioning engine has received a request to create a PDB based on the service template and input provided by self-service user. You will also notice the delete operation is scheduled for future (not started yet) time. Click on the **hourglass** icon under Status column for the Create Pluggable Database step. You will see details of request.
 
-11.  It will perform the following actions:
+11. It will perform the following actions:
 
       * Create database roles and PDB
       * Create a resource plan based on the workload size
@@ -404,7 +404,7 @@ With the Self-Service Portal, cloud users can request an  Pluggable Database thr
 
     ![](images/64a8954df11d2e688a930fd92ae38cd8.jpg " ")
 
-17.  Next delete the database Instance: Go to the Database Cloud Services Home page by clicking on **Database Cloud Service Portal link**
+17. Next delete the database Instance: Go to the Database Cloud Services Home page by clicking on **Database Cloud Service Portal link**
 
       ![](images/a24b112c579e1df59bb4919a0bbe2b67.jpg " ")
 
