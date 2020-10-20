@@ -212,10 +212,10 @@ In this workshop, you will learn about continuous configuration drift monitoring
   ![](images/ecm3_drift_comparison_template4.png " ")
 
 7.  Select the following three configuration items only
-  - Instance Caging Information
-  - Instance Information
-  - Initialization Parameters under Instance Information configuration item
-  - Click Save
+    - Instance Caging Information
+    - Instance Information
+    - Initialization Parameters under Instance Information configuration item
+    - Click Save
 
       ![](images/ecm3_drift_comparison_template5.png " ")
 
@@ -228,9 +228,9 @@ In this workshop, you will learn about continuous configuration drift monitoring
   ![](images/ecm3_create_drift_definiton1.png " ")
 
 10. Click on Create Definition under Drift Management.
-  - Choose Database Instance as the Target Type
-  - Select the template created in the previous step
-  - Click OK
+    - Choose Database Instance as the Target Type
+    - Select the template created in the previous step
+    - Click OK
 
       ![](images/ecm3_create_drift_definiton2.png " ")
 
@@ -240,8 +240,8 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
 12. Under Source Configuration, do the following
 
-  -  Select ‘Latest Configuration’
-  -  Click search to choose Source Target  
+    -  Select ‘Latest Configuration’
+    -  Click search to choose Source Target  
 
       ![](images/ecm3_create_drift_definiton4.png " ")
 
@@ -289,10 +289,10 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
   Under the target compared column, you will see few icons. The icons that appear in the view are mostly intuitive:
 
-  - Equal sign means parameter properties are same across the reference and target compared
-  - Not equal sign indicates parameter properties are different across the reference and target compared
-  - A red box with 1 (left only) means that the comparison did not find a matching item to compare, this means 2nd target doesn’t have property configured to compare
-  - A red box 2 (right only) means that the comparison did not find a matching item to compare to the second configuration
+    - Equal sign means parameter properties are same across the reference and target compared
+    - Not equal sign indicates parameter properties are different across the reference and target compared
+    - A red box with 1 (left only) means that the comparison did not find a matching item to compare, this means 2nd target doesn’t have property configured to compare
+    - A red box 2 (right only) means that the comparison did not find a matching item to compare to the second configuration
 
 
 23. Export the comparison results into an excel report for offline analysis. In the Drift Results page, highlight the definition and choose Export Results. You can choose the specific results to export.
@@ -412,9 +412,9 @@ A compliance standard rule is a specific test to determine if a configuration da
   All these will give you a security posture of database target
 
 
-  ## **STEP 5:** Host Security Compliance
+## **STEP 5:** Host Security Compliance
 
-  ### Overview
+### Overview
 
   Compliance Management provides the ability to evaluate the compliance of targets and systems as they relate to business best practices for configuration, security, and storage.
 
@@ -422,21 +422,21 @@ A compliance standard rule is a specific test to determine if a configuration da
 
   Terminology Used in this Compliance specific workshop
 
-  #### Compliance Standard
+#### Compliance Standard
 
   A compliance standard is a collection of checks or rules that follow broadly accepted best practices. It is the Cloud Control representation of a compliance control that must be tested against some set of IT infrastructure to determine if the control is being followed. This ensures that IT infrastructure, applications, business services and processes are organized, configured, managed, and monitored properly. A compliance standard evaluation can provide information related to platform compatibility, known issues affecting other customers with similar configurations, security vulnerabilities, patch recommendations, and more. A compliance standard is also used to define where to perform real-time change monitoring.
 
   A compliance standard is mapped to one or more compliance standard rules and is associated to one or more targets which should be evaluated.
 
-  #### Compliance Standard Rule
+#### Compliance Standard Rule
 
   A compliance standard rule is a specific test to determine if a configuration data change affects compliance. A compliance standard rule is mapped to one or more compliance standards
 
-  ### Execution
+### Execution
 
-  1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet.
+1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet.
 
-  2.  From the Enterprise menu, select Compliance, then select Library
+2.  From the Enterprise menu, select Compliance, then select Library
 
     ![](images/ecm5_host_compliance_menu.png " ")
 

@@ -183,25 +183,25 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/2ac79b220d664b868c62e4529791e187.jpg " ")
 
-**Note**: We will keep pdbadmin as a default admin. So, don’t select anything in this section.
+  **Note**: We will keep pdbadmin as a default admin. So, don’t select anything in this section.
 
-17. On the Identification page, in the PDB Template Location section: **Select** “Software Library” radio button. **Click** on the magnifier icon placed on Location text box. **Select** the Name which you created During Unplug **Click** Next
+15. On the Identification page, in the PDB Template Location section: **Select** “Software Library” radio button. **Click** on the magnifier icon placed on Location text box. **Select** the Name which you created During Unplug **Click** Next
 
   ![](images/dad1846d73cd9ca339bab04718e09816.jpg " ")
 
-18. **Select** “Use Common Location for PDB Datafiles” and use **/tmp** as temporary working directory.
+16. **Select** “Use Common Location for PDB Datafiles” and use **/tmp** as temporary working directory.
 
   ![](images/a6353f812935eeb6148a79693ae0c4fd.jpg " ")
 
-21. In the Schedule page, **select** immediately check box next to Start. **Click** Next.
+17. In the Schedule page, **select** immediately check box next to Start. **Click** Next.
 
-22. In the review page, review the details you have provided for the deployment procedure. If you are satisfied with the details, **click** Submit. You can now click on View Execution Details link to see details.
+18. In the review page, review the details you have provided for the deployment procedure. If you are satisfied with the details, **click** Submit. You can now click on View Execution Details link to see details.
 
-23. In the Procedure Activity page, view the status of the procedure.
+19. In the Procedure Activity page, view the status of the procedure.
 
-24. Optionally **Click** the status link for each step to view the details of the execution of each step. Once the procedure is completed, you can Navigate to ***Targets >> Databases***, Click on CDB186 and you will see the newly created PDB
+20. Optionally **Click** the status link for each step to view the details of the execution of each step. Once the procedure is completed, you can Navigate to ***Targets >> Databases***, Click on CDB186 and you will see the newly created PDB
 
-**Note**: You do not have to wait until the steps complete and move on to the next section.
+  **Note**: You do not have to wait until the steps complete and move on to the next section.
 
 ## **STEP 3:** Clone an Existing Pluggable Database (PDB)
 
@@ -244,9 +244,9 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 5. You need to refresh PDB statistics to see notifications. To refresh:
 
-  - **Click** the ***target icon >> Databases >> View >> Expand All***
-  - **Right Click** on ***PDB >> Oracle Database >> Configuration >> Latest.***
-  - **Click** the Refresh icon on the page (it will take few minutes for refresh to complete)
+    - **Click** the ***target icon >> Databases >> View >> Expand All***
+    - **Right Click** on ***PDB >> Oracle Database >> Configuration >> Latest.***
+    - **Click** the Refresh icon on the page (it will take few minutes for refresh to complete)
 
 7. Now Navigate to ***Enterprise >> Compliance >> Results***
 
@@ -274,10 +274,10 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 13. Then review/enter the Named Credentials for the database and host and **Click** the Submit button
 
-    -  For the database named credentials use: OEM\_SYS (scroll down after Database Credentials to see Host Credentials
-    -  For the host credentials use: ORACLE\_HOST
+      -  For the database named credentials use: OEM\_SYS (scroll down after Database Credentials to see Host Credentials
+      -  For the host credentials use: ORACLE\_HOST
 
-    ![](images/6ccf17bb69cbc79dae30f95bc508f640.jpg " ")
+      ![](images/6ccf17bb69cbc79dae30f95bc508f640.jpg " ")
 
 14. You will then see the popup as shown below. **Click** on the link “Click here to view the execution details”
 
@@ -448,7 +448,7 @@ Login to the EM Console as super administrator **sysman/welcome1**
 
 1. On the EM Console, go to **Setup**, then **Cloud**, then **Database**. Select **Pluggable Database** from the drop-down menu. And then click on **Pluggable Database Pool**’.
 
-A Pluggable Database Pool consists of a set of Container Databases on which PDBs will be provisioned.
+  A Pluggable Database Pool consists of a set of Container Databases on which PDBs will be provisioned.
 
   ![](images/b49f455842d0fb11dd7de44fcaccfe26.jpg " ")
 
@@ -475,10 +475,10 @@ A Pluggable Database Pool consists of a set of Container Databases on which PDBs
 
   ![](images/47baba2a1e7567bfb0b5f89429a7831d.jpg " ")
 
-There are two service templates pertaining to Pluggable Database
+  There are two service templates pertaining to Pluggable Database
 
-* **Provision New Empty Pluggable Database**: This template enables the user to create a new pluggable database in a container database configured by DBA
-* **Provision Pluggable Database with Data**: This template enables user to create a new pluggable database with data from a non-container database.
+    * **Provision New Empty Pluggable Database**: This template enables the user to create a new pluggable database in a container database configured by DBA
+    * **Provision Pluggable Database with Data**: This template enables user to create a new pluggable database with data from a non-container database.
 
 2. Click on name of any template to explore more details.
 

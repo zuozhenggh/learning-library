@@ -215,24 +215,24 @@ We will go through steps for upgrading database target ***finance.subnet.vcn.ora
 
   Gold Image represents a software end state. An Enterprise Manager Software Library Gold Image is a software archive created from a patched oracle home uploaded to EM Software Library. Steps in this section are already implemented and are available here for review.
 
-* Reference Home Setup
+    * Reference Home Setup
 
-  In order to create a Gold Image of the ‘recommended patch configuration’, you need to manually create such an Oracle Home as a pre-requisite step.
+      In order to create a Gold Image of the ‘recommended patch configuration’, you need to manually create such an Oracle Home as a pre-requisite step.
 
-  As the goal of this lab is to upgrade Database target from 18.10 to 19.7, a reference Oracle home fully patched to 18.10 [Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192, /u01/app/oracle/product/18/db\_home\_src] was created and used to create the initial version of the Gold Image as further described in the next steps.
+      As the goal of this lab is to upgrade Database target from 18.10 to 19.7, a reference Oracle home fully patched to 18.10 [Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192, /u01/app/oracle/product/18/db\_home\_src] was created and used to create the initial version of the Gold Image as further described in the next steps.
 
-  This reference Oracle Home is discovered in Enterprise Manager as shown below and will be used for Gold Image Creation.
+      This reference Oracle Home is discovered in Enterprise Manager as shown below and will be used for Gold Image Creation.
 
-  Navigate to “***Targets >> All Targets***” and type in “Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192” in the “Search Target Name” box.
+      Navigate to “***Targets >> All Targets***” and type in “Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192” in the “Search Target Name” box.
 
-    ![](images/ea2416958193764cc47426f0ad8a0a67.jpg " ")
+        ![](images/ea2416958193764cc47426f0ad8a0a67.jpg " ")
 
-* Review “Create New Gold Image” from ssh terminal using the following emcli command
-    ````
-    <copy>cd fleet
-    cat create_image_Tier1_sidb_x64.sh</copy>
-    ````
-    ![](images/e4a3896e00184146230d4d974e64a528.png " ")
+    * Review “Create New Gold Image” from ssh terminal using the following emcli command
+        ````
+        <copy>cd fleet
+        cat create_image_Tier1_sidb_x64.sh</copy>
+        ````
+        ![](images/e4a3896e00184146230d4d974e64a528.png " ")
 
 3.  List Available Gold Images
 
@@ -328,34 +328,34 @@ We will go through steps for upgrading database target ***finance.subnet.vcn.ora
 
 9.  Add Image version 19.7 to Gold Image Tier1 SIDB Linux-x64
 
-* Reference Home Setup [READ-ONLY– This step has already been implemented]
+    * Reference Home Setup [READ-ONLY– This step has already been implemented]
 
-  Just as it was done for the first version of this image, a reference 19.7 Oracle Home is needed to create a new version of the image and was setup in advance. [/u01/app/oracle/product/19/db\_home\_src]. This reference Oracle Home is discovered in Enterprise Manager as shown below and will be used to create and new version of the Gold Image.
+      Just as it was done for the first version of this image, a reference 19.7 Oracle Home is needed to create a new version of the image and was setup in advance. [/u01/app/oracle/product/19/db\_home\_src]. This reference Oracle Home is discovered in Enterprise Manager as shown below and will be used to create and new version of the Gold Image.
 
-  Navigate to “***Targets >> All Targets***” and type in “Orasidb19c\_home1\_2020\_05\_13\_04\_24\_10\_emcc.marketplace.com\_2953” in the “*Search Target Name*” box.
+      Navigate to “***Targets >> All Targets***” and type in “Orasidb19c\_home1\_2020\_05\_13\_04\_24\_10\_emcc.marketplace.com\_2953” in the “*Search Target Name*” box.
 
-  ![](images/a3ba55228f1e4a239c81bd01ed86c299.png " ")
+      ![](images/a3ba55228f1e4a239c81bd01ed86c299.png " ")
 
-* Review and execute the following command to add Image version 19.7 to "*Tier1 SIDB Linux-x64*"
+    * Review and execute the following command to add Image version 19.7 to "*Tier1 SIDB Linux-x64*"
 
-    ````
-    <copy>emcli db_software_maintenance -createSoftwareImage -input_file="data:/home/oracle/fleet/sidb19c_tier1.inp"</copy>
-    ````
+        ````
+        <copy>emcli db_software_maintenance -createSoftwareImage -input_file="data:/home/oracle/fleet/sidb19c_tier1.inp"</copy>
+        ````
 
-    **OR**  
-    ````
-    <copy>sh add_image_version197_tier1_sidb_x64.sh</copy>
-    ````
+        **OR**  
+        ````
+        <copy>sh add_image_version197_tier1_sidb_x64.sh</copy>
+        ````
 
-    ![](images/d3f1d7ec4ab73bd6e50aab47fbf3ffca.png " ")
+        ![](images/d3f1d7ec4ab73bd6e50aab47fbf3ffca.png " ")
 
-* Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘CreateGoldImage\*’ run
+    * Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘CreateGoldImage\*’ run
 
-  ![](images/98008aab963de3d4439767ccab3fbba0.png " ")
+      ![](images/98008aab963de3d4439767ccab3fbba0.png " ")
 
-* Review the Procedure Activity steps performed.
+    * Review the Procedure Activity steps performed.
 
-  ![](images/0dedb16ddd453f5fa9d312229e9bd072.png " ")
+      ![](images/0dedb16ddd453f5fa9d312229e9bd072.png " ")
 
 10. Set Version 19.7 to Status Current
 
@@ -381,33 +381,33 @@ We will go through steps for upgrading database target ***finance.subnet.vcn.ora
 
 * A new Oracle Home is deployed on the host where DB target is running with the below commands.
 
-  ````
-  <copy>emcli db_software_maintenance -performOperation -name="deploy197" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database -target_list=finance.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -input_file="data:/home/oracle/fleet/deploy197_finance.inp" -procedure_name_prefix="DEPLOY"</copy>
-  ````  
+    ````
+    <copy>emcli db_software_maintenance -performOperation -name="deploy197" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database -target_list=finance.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -input_file="data:/home/oracle/fleet/deploy197_finance.inp" -procedure_name_prefix="DEPLOY"</copy>
+    ````  
 
-  **OR**  
+    **OR**  
 
-  ````
-  <copy>sh deploy197_finance.sh</copy>
-  ````  
+    ````
+    <copy>sh deploy197_finance.sh</copy>
+    ````  
 
-  Where:
-    - NEW\_ORACLE\_HOME\_LIST = Absolute path to the File System location where new Oracle Home will be deployed.
-    - procedure\_name\_prefix = optional, prefix for the deployment procedure instance name
-    - name = Name of the operation. This is a logical name and should be kept unique
-    - purpose = There are standard purposes defined which can be performed by Fleet Operations. “DEPLOY\_DB\_SOFTWARE” is one of them. These are predefined and should not be changed. Admin shall select one of the below mentioned purposes as and when needed.
-    - target\_type = The type of target being provided in this operation.
-    - target\_list =
-       1. This is a comma separated list of targets which need to be patched.
-       2. Targets of homogenous types are supported in a single fleet operation.
-       3. The system will calculate the unique list of hosts based on this target list and start stage of Oracle home software on those hosts.
-       4. If targets running from same Oracle home are provided in this list, the stage and deploy operation will be triggered only once and not for all targets.
+    Where:
+      - NEW\_ORACLE\_HOME\_LIST = Absolute path to the File System location where new Oracle Home will be deployed.
+      - procedure\_name\_prefix = optional, prefix for the deployment procedure instance name
+      - name = Name of the operation. This is a logical name and should be kept unique
+      - purpose = There are standard purposes defined which can be performed by Fleet Operations. “DEPLOY\_DB\_SOFTWARE” is one of them. These are predefined and should not be changed. Admin shall select one of the below mentioned purposes as and when needed.
+      - target\_type = The type of target being provided in this operation.
+      - target\_list =
+         1. This is a comma separated list of targets which need to be patched.
+         2. Targets of homogenous types are supported in a single fleet operation.
+         3. The system will calculate the unique list of hosts based on this target list and start stage of Oracle home software on those hosts.
+         4. If targets running from same Oracle home are provided in this list, the stage and deploy operation will be triggered only once and not for all targets.
 
-    - normal\_credential = This should be provided in the format \{Named Credential: Credential Owner\}.
-    - privilege\_credential = This should be provided in the format \{Named Credential: Credential Owner\}
-    - start\_schedule = Schedule when the stage and deploy should start if that needs to be done in future. Format: “start\_time:yyyy/mm/dd HH:mm”. It is an optional parameter, if not provided, operation will start immediately
+      - normal\_credential = This should be provided in the format \{Named Credential: Credential Owner\}.
+      - privilege\_credential = This should be provided in the format \{Named Credential: Credential Owner\}
+      - start\_schedule = Schedule when the stage and deploy should start if that needs to be done in future. Format: “start\_time:yyyy/mm/dd HH:mm”. It is an optional parameter, if not provided, operation will start immediately
 
-      ![](images/75e3dbfe7a2cfe2a8a6fc286d3f5caa2.png " ")
+        ![](images/75e3dbfe7a2cfe2a8a6fc286d3f5caa2.png " ")
 
 * Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘DEPLOY\_SYSMAN\_\*’ run
 
@@ -485,31 +485,31 @@ We will go through steps for upgrading database target ***finance.subnet.vcn.ora
 
 * Review and execute the following command to cleanup finance in reportOnly mode  
 
-  ````
-  <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=finance.subnet.vcn.oraclevcn.com -workDir=/tmp -reportOnly=true</copy>
-  ````
+    ````
+    <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=finance.subnet.vcn.oraclevcn.com -workDir=/tmp -reportOnly=true</copy>
+    ````
 
-  **OR**
+    **OR**
 
-  ````
-  <copy>sh cleanup_finance_report.sh</copy>
-  ````
+    ````
+    <copy>sh cleanup_finance_report.sh</copy>
+    ````
 
-  ![](images/228ae0280ff2878bb4902cb263529bb9.png " ")
+    ![](images/228ae0280ff2878bb4902cb263529bb9.png " ")
 
 * Review and execute the following command to cleanup finance  
 
-  ````
-  <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=finance.subnet.vcn.oraclevcn.com -workDir=/tmp</copy>
-  ````
+    ````
+    <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=finance.subnet.vcn.oraclevcn.com -workDir=/tmp</copy>
+    ````
 
-  **OR**
+    **OR**
 
-  ````
-  <copy>sh cleanup_finance.sh</copy>
-  ````
+    ````
+    <copy>sh cleanup_finance.sh</copy>
+    ````
 
-  ![](images/3f41abadf32e4b8d4900467985a093ef.png " ")
+    ![](images/3f41abadf32e4b8d4900467985a093ef.png " ")
 
 * Navigate to the Procedure Activity Page and monitor the progress of this operation with ‘CLEANUP\_SOFTWARE\_...’ deployment procedure instance.
 
@@ -521,40 +521,40 @@ We will go through steps for upgrading database target ***finance.subnet.vcn.ora
 
 * Verify to confirm that the two old Oracle Homes reported have been removed
 
-  ````
-  <copy>ls -l /u01/app/18c/sales188 /u01/app/oracle/product/18/db_home1</copy>
-  ````
+    ````
+    <copy>ls -l /u01/app/18c/sales188 /u01/app/oracle/product/18/db_home1</copy>
+    ````
 
-  ![](images/58ba7d42eb61331e3d0bec6588086b47.png " ")
+    ![](images/58ba7d42eb61331e3d0bec6588086b47.png " ")
 
 * As part of the cleanup operation, LISTENER\_1525 which support *“finance.subnet.oraclevcn.com”* is shutdown. Set your environment by passing *“finance”* to *“oraenv”* when prompted.
 
-  ````
-  <copy>. oraenv</copy>
-  ````
+    ````
+    <copy>. oraenv</copy>
+    ````
 * start listener LISTENER\_1525 back up
 
-  ````
-  <copy>lsnrctl start LISTENER_1525</copy>
-  ````
+    ````
+    <copy>lsnrctl start LISTENER_1525</copy>
+    ````
 
-  ![](images/b3d1a555c6eeb3d0d899da4291a6441c.png " ")
+    ![](images/b3d1a555c6eeb3d0d899da4291a6441c.png " ")
 
 * Force Listener registration and confirm that it is now servicing “*finance.subnet.vcn.oraclevcn.com*”
 
-  ````
-  <copy>sqlplus '/as sysdba'<<EOF
-  alter system register;
-  EOF
-  </copy>
-  ````
+    ````
+    <copy>sqlplus '/as sysdba'<<EOF
+    alter system register;
+    EOF
+    </copy>
+    ````
 * Check status of LISTENER\_1525
 
-  ````
-  <copy>lsnrctl status LISTENER_1525</copy>
-  ````
+    ````
+    <copy>lsnrctl status LISTENER_1525</copy>
+    ````
 
-  ![](images/7626fd3264e4a514fde576ecd9369456.png " ")
+    ![](images/7626fd3264e4a514fde576ecd9369456.png " ")
 
 ### Summary
 This completes this lab. In this lab, you learned how to perform the following:

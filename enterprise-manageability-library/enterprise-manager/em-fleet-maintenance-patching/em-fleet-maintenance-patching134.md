@@ -213,65 +213,63 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
     * Reference Home Setup [READ-ONLY– This step has already been implemented]
 
-    In order to create a Gold Image of the ‘recommended patch configuration’, you need to manually create such an Oracle Home as a pre-requisite step. As the goal is to patch Database 18.3 targets with Database 18.10 RU, a reference Oracle
-    home fully patched to 18.10 [ /u01/app/oracle/product/18/db\_home\_src] was created and used to create the initial version of the Gold Image as further described in the next steps..
+        In order to create a Gold Image of the ‘recommended patch configuration’, you need to manually create such an Oracle Home as a pre-requisite step. As the goal is to patch Database 18.3 targets with Database 18.10 RU, a reference Oracle home fully patched to 18.10 [ /u01/app/oracle/product/18/db\_home\_src] was created and used to create the initial version of the Gold Image as further described in the next steps..
 
-    This patched reference Oracle Home is discovered in Enterprise Manager as shown below and will be used for Gold Image Creation.
+        This patched reference Oracle Home is discovered in Enterprise Manager as shown below and will be used for Gold Image Creation.
 
-  * Navigate to “***Targets >> All Targets***” and type in “Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192” in the “Search Target Name” box.
+    * Navigate to “***Targets >> All Targets***” and type in “Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192” in the “Search Target Name” box.
 
-    ![](images/ea2416958193764cc47426f0ad8a0a67.jpg " ")
+        ![](images/ea2416958193764cc47426f0ad8a0a67.jpg " ")
 
-* Create New Gold Image from ssh terminal using the following emcli command
+    * Create New Gold Image from ssh terminal using the following emcli command
 
-    ````
-    <copy>cd fleet
-    cat create_image_Tier2_sidb_x64.sh</copy>
-    ````
+          ````
+          <copy>cd fleet
+          cat create_image_Tier2_sidb_x64.sh</copy>
+          ````
 
-    **OR**
+          **OR**
 
-    ````
-    <copy>sh create_image_Tier2_sidb_x64.sh</copy>
-    ````
-    ![](images/1791b5df10396b908e81340d2c6abed4.png " ")
+          ````
+          <copy>sh create_image_Tier2_sidb_x64.sh</copy>
+          ````
+          ![](images/1791b5df10396b908e81340d2c6abed4.png " ")
 
-* Click on ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to review Execution details of this operation via Enterprise Manager Console
+    * Click on ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to review Execution details of this operation via Enterprise Manager Console
 
-  ![](images/e9091a9e1e04a1a988cb61d9171a483d.png " ")
+        ![](images/e9091a9e1e04a1a988cb61d9171a483d.png " ")
 
-* Click on ‘CreateGoldImageProfile\_...’ run and review the steps performed.  
+    * Click on ‘CreateGoldImageProfile\_...’ run and review the steps performed.  
 
-  ![](images/f30e3920a7a7e18e4bdfffa328e9d483.png " ")
+        ![](images/f30e3920a7a7e18e4bdfffa328e9d483.png " ")
 
-* Use ‘Show’ filter ‘Steps Not Skipped’ ; View:‘Expand All’ for detailed view of all the steps performed to complete an operation.
+    * Use ‘Show’ filter ‘Steps Not Skipped’ ; View:‘Expand All’ for detailed view of all the steps performed to complete an operation.
 
-  ![](images/c3d174049d514ac6c22ce65167d55776.png " ")
-
+      ![](images/c3d174049d514ac6c22ce65167d55776.png " ")
 3.  List Available Gold Images
 
-* Execute the following commands in ssh terminal to see the list of Gold Images available for deployment, locate ‘Tier \#2 SI DB Linux64*’* in the emcli command output:
+    * Execute the following commands in ssh terminal to see the list of Gold Images available for deployment, locate ‘Tier \#2 SI DB Linux64*’* in the emcli command output:
 
-    ````
-    <copy>emcli db_software_maintenance -getImages</copy>
-    ````
+        ````
+        <copy>emcli db_software_maintenance -getImages</copy>
+        ````
 
-    ![](images/979c7a2ab44a65b0a6faf911cac1b64a.png " ")
+        ![](images/979c7a2ab44a65b0a6faf911cac1b64a.png " ")
 
-  IMAGE ID retrieved from the output of above command is used in further operations like Target Subscription.
+      IMAGE ID retrieved from the output of above command is used in further operations like Target Subscription.
 
-* After retrieving a list of the available images, one can view a list of versions available for a specific image with the following command:
+    * After retrieving a list of the available images, one can view a list of versions available for a specific image with the following command:
 
-    ````
-    <copy>emcli db_software_maintenance -getVersions -image_id={Insert IMAGE ID from List available gold images}</copy>
-    ````
+        ````
+        <copy>emcli db_software_maintenance -getVersions -image_id={Insert IMAGE ID from List available gold images}</copy>
+        ````
 
-    This command lists Gold Image versions with their VERSION ID and STATUS.
+        This command lists Gold Image versions with their VERSION ID and STATUS.
 
-    ![](images/a9b1233fb416f91b34518744dc0d7e9a.png " ")
+        ![](images/a9b1233fb416f91b34518744dc0d7e9a.png " ")
 
-    When a Gold Image is created for the first time, its first version is created as per the input and marked as current. Whenever we run a DEPLOY operation for a target, Gold Image version marked
-    as CURRENT is used to deploy the new Oracle Home.
+        When a Gold Image is created for the first time, its first version is created as per the input and marked as current. Whenever we run a DEPLOY operation for a target, Gold Image version marked
+        as CURRENT is used to deploy the new Oracle Home.
 
 4.  Verify if Gold Image is Applicable
 
@@ -341,10 +339,10 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
     -  target\_type = The type of target being provided in this operation.
     -  target\_list =
 
-       1.  This is a comma separated list of targets which need to be patched.
-       2.  Targets of homogenous types are supported in a single fleet operation.
-       3.  The system will calculate the unique list of hosts based on this target list and start stage of Oracle home software on those hosts.
-       4.  If targets running from same Oracle home are provided in this list, the stage and deploy operation will be triggered only once and not for all targets.
+         1.  This is a comma separated list of targets which need to be patched.
+         2.  Targets of homogenous types are supported in a single fleet operation.
+         3.  The system will calculate the unique list of hosts based on this target list and start stage of Oracle home software on those hosts.
+         4.  If targets running from same Oracle home are provided in this list, the stage and deploy operation will be triggered only once and not for all targets.
 
     -  normal\_credential = This should be provided in the format \{ Named Credential: Credential Owner\} .
     -  privilege\_credential = This should be provided in the format \{ Named Credential: Credential Owner\}
@@ -410,7 +408,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
       - Name – Name of the operation. This is a logical name and should be kept unique  
       - Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
 
-    ![](images/8ddbd68dee0300c0223d11cc9407c08a.png " ")
+      ![](images/8ddbd68dee0300c0223d11cc9407c08a.png " ")
 
 * Navigate to the Procedure Activity Page and monitor the progress of this operation with ‘Fleet\_UPDATE\_...’ deployment procedure instance.
 
@@ -428,7 +426,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 9.  Database Rollback
 
-  Once the database is updated, we will perform a rollback to 18.3
+    Once the database is updated, we will perform a rollback to 18.3
 
 * Review and execute below command to rollback DB Target ***hr.subnet.vcn.oraclevcn.com***
 
@@ -477,7 +475,7 @@ In order to have an old empty home previously used by “***hr.subnet.vcn.oracle
     Where:
       -  Name – Name of the operation. This is a logical name and should be kept unique Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
 
-    ![](images/05dc434c461c068b157f9dd7cd6b10ce.png " ")
+      ![](images/05dc434c461c068b157f9dd7cd6b10ce.png " ")
 
 * Verify that the update has been completed successfully before proceeding with any cleanup action, Same as done in step \#8, this should complete within 10\~15 minutes.
 
@@ -488,17 +486,17 @@ In order to have an old empty home previously used by “***hr.subnet.vcn.oracle
   ![](images/05d8c8153c8c990ac80810fef434baa3.png " ")
 
 * Review and execute the following command to cleanup hr in reportOnly mode  
-  ````
-  <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=hr.subnet.vcn.oraclevcn.com -workDir=/tmp -reportOnly=true</copy>
-  ````
+    ````
+    <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=hr.subnet.vcn.oraclevcn.com -workDir=/tmp -reportOnly=true</copy>
+    ````
 
-  **OR**
+    **OR**
 
-  ````
-  <copy>sh cleanup_hr_report.sh</copy>
-  ````
+    ````
+    <copy>sh cleanup_hr_report.sh</copy>
+    ````
 
-  ![](images/9b5d405577571043afe9ead1fc723392.png " ")
+    ![](images/9b5d405577571043afe9ead1fc723392.png " ")
 
 * Review and execute the following command to cleanup hr  
     ````
