@@ -1,7 +1,7 @@
-﻿# Oracle Native Network Encryption
+﻿# Oracle Native Network Encryption (NNE)
 
 ## Introduction
-This workshop introduces the functionality of Native Network Encryption.
+This workshop introduces the functionality of Native Network Encryption (NNE).
 
 It gives the user an opportunity to learn how to configure this feature to encrypt and secure its data in-motion.
 
