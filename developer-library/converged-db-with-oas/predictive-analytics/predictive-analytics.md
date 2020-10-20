@@ -6,7 +6,7 @@ Oracle Analytics Server offers extended Machine Learning design capabilities. Yo
 
 It covers the full cycle of ML processes, allows direct uptake of any custom algorithm scripts, addressing the need of both traditional data scientists, citizen data scientists, and data analysts.  Oracle Analytics includes algorithms to help you train predictive models for various purposes. Examples of algorithms are classification, regression trees (CART), logistic regression, k-means, clustering, sentimental analysis, random forest and decision tree.
 
-*Estimated Lab Time*: 30 Mintues.
+Estimated Lab Time: 30 Mintues.
 
 ![](./images/predictiveanalytics.png " ")
 

@@ -9,7 +9,7 @@ You can quickly upload data from a variety of sources (for example, spreadsheets
 
 It provides several interactive visuals to show the story in your data for example, Trend Lines, Bar, Sankey Graph, Map, etc.
 
-*Estimated Lab Time: 40 Mintues*.
+Estimated Lab Time: 40 Mintues.
 
 [](youtube:yOYemBtdpnQ)
 

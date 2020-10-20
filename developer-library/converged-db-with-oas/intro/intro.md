@@ -30,7 +30,7 @@ Mainly two components are explored in this workshop along with few features of t
 
 To complete this workshop, you will use a preconfigured OAS images available in Oracle's Cloud Marketplace to build your compute instance.  This image comes pre-installed with all the information you need to create your environment. 
 
-_Estimated Workshop Time:_ 3 hours
+Estimated Workshop Time: 3 hours
 
 ## Oracle Analytics Server ##
 

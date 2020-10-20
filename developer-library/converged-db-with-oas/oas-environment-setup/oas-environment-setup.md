@@ -3,7 +3,7 @@
 ## Introduction ##
 In this lab you will start both Database and OAS environments by running the script files. 
 
-_Estimated Lab Time_: 10 Mintues.
+Estimated Lab Time: 10 Mintues.
 
 ### Objectives ###
 
