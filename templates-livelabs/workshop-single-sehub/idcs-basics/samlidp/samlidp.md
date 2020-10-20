@@ -52,9 +52,9 @@ In this lab, you will:
 
 8.	For the *Configure SAML* section, you need to enter values from the IDCS metadata
 
-```
-https://<your tenant>.identity.oraclecloud.com/fed/v1/metadata
-```
+    ```
+        https://<your tenant>.identity.oraclecloud.com/fed/v1/metadata
+    ```
 
 9. Enter the following values from the metadata in Okta’s SAML setup:
 * In the IDCS metadata, search for *AssertionConsumerService* at the bottom. Copy the highlighted URL in *Location* as shown below. Enter the URL as *Single sign on URL* in Okta

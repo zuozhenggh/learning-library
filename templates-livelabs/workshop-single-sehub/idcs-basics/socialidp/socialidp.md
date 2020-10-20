@@ -77,9 +77,9 @@ In order to use Google as an IdP for IDCS, we need to obtain Auth 2.0 credential
 
 10.	Set the *Authorized redirected URL* to the following value:
 
-```
-https://<your tenant>/oauth2/v1/social/callback
-```
+    ```
+        https://<your tenant>/oauth2/v1/social/callback
+    ```
 
 11.	Click on *Create* in order to create the keys.
     ![Image](images/L3007.png)

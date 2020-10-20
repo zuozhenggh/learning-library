@@ -38,9 +38,9 @@ In this hands-on exercise, we will setup integration with *Salesforce* using SAM
 
 1. Download IDCS Metadata to a local XML file. Metadata is available from the following location:
 
-```
-https://<your tenant>/fed/v1/metadata.
-```
+    ```
+    https://<your tenant>/fed/v1/metadata
+    ```
 
 Depending on the browser you are using, the simplest way of doing this is to right click anywhere on the page and chose “Save as” option, provide a name and save it as XML file. Try not to use the copy / paste option as the xml file may be altered.
 
@@ -95,17 +95,17 @@ Depending on the browser you are using, the simplest way of doing this is to rig
 
     ![Image](images/L2010.png)
 
-```
-We need to activate the SAML option on Salesforce in order to be able to integrate with IDCS via these open standards.  Also, the SAML metadata needs to be exchanged between IDCS and Salesforce
-```
+    ```
+        We need to activate the SAML option on Salesforce in order to be able to integrate with IDCS via these open standards.  Also, the SAML metadata needs to be exchanged between IDCS and Salesforce
+    ```
 
 16.	Click on *New from Metadata File* button to import IDCS metadata.  Select the downloaded metadata file from step 1 using *Choose File* button. Click on *Create*.
 
     ![Image](images/L2011.png)
 
-```
-IDCS metadata file contains information about IDCS endpoints for SSO, single logout, Entity ID, Issuer details, IDCS signing certificate etc which are needed by Salesforce in order to establish a federated trust with IDCS.
-```
+    ```
+        IDCS metadata file contains information about IDCS endpoints for SSO, single logout, Entity ID, Issuer details, IDCS signing certificate etc which are needed by Salesforce in order to establish a federated trust with IDCS.
+    ```
 
 
 17.	Keep all the default information and click on *Save*.
@@ -156,12 +156,12 @@ Salesforce has been configured successfully. The next step is to configure IDCS.
 
     ![Image](images/L2019.png)
 
-```
-Note that IDCS provides an application template for Salesforce.
-The App Catalog is a collection of partially configured application templates that Oracle creates and maintains for you. You can use the templates to define the application, configure Single Sign-On, and enable and configure provisioning and synchronization. The App Catalog templates allow you to onboard applications quickly and securely.
+    ```
+        Note that IDCS provides an application template for Salesforce.
+        The App Catalog is a collection of partially configured application templates that Oracle creates and maintains for you. You can use the templates to define the application, configure Single Sign-On, and enable and configure provisioning and synchronization. The App Catalog templates allow you to onboard applications quickly and securely.
 
-App templates simplify adding a new application by prepopulating all common attributes and values so that you just have to enter your tenant specific details.
-```
+        App templates simplify adding a new application by prepopulating all common attributes and values so that you just have to enter your tenant specific details.
+    ```
 
 5.	Inside the *App Catalog*, search for *Salesforce*. Click on *Add*.
 
@@ -203,9 +203,9 @@ In IDCS you have the option to assign access to users directly, by direct assign
 
     ![Image](images/L2025.png)
 
-```
-Note: you need to add a corresponding account in Salesforce for Federation to work correctly.  How accounts may be created in production are out of scope for this workshop but can be accomplished in a number of methods.  
-```
+    ```
+        Note: you need to add a corresponding account in Salesforce for Federation to work correctly.  How accounts may be created in production are out of scope for this workshop but can be accomplished in a number of methods.  
+    ```
 
 6.	Login to your [Salesforce developer account](https://developer.salesforce.com/) in order to create a corresponding account for one that we have into IDCS.
 
@@ -245,13 +245,13 @@ Remember that we have created the *Employee* group into IDCS which is having acc
 
 1.	Close your browser to clear the cache and then login into IDCS console
 
-```
-https://<yourtenant>/ui/v1/myconsole
-```
+    ```
+        https://<yourtenant>/ui/v1/myconsole
+    ```
 
-```
-Please use the same user credentials that you have entered in the previous section in order to create a user account in Salesforce. If you have followed the conventions recommended by this guide this should be in the form of: <username>+ui@<email_provider.com>
-```
+    ```
+        Please use the same user credentials that you have entered in the previous section in order to create a user account in Salesforce. If you have followed the conventions recommended by this guide this should be in the form of:     <username>+ui@<email_provider.com>
+    ```
 
 2. From *My Apps* page, click on *+ Add* access request button.
 
@@ -292,12 +292,11 @@ Please use the same user credentials that you have entered in the previous secti
 
 You should now see the same user profile information, that you started within IDCS, within Salesforce without having had to log into Salesforce.
 
-```
+    ```
+        When you submit your IDCS user login credentials, in the background, IDCS prepares a SAML assertion and redirects the user’s browser to the Salesforce SaaS application.
 
-When you submit your IDCS user login credentials, in the background, IDCS prepares a SAML assertion and redirects the user’s browser to the Salesforce SaaS application.
-
-Salesforce consumes the SAML assertion and maps the user in its local identity store, based upon the federation agreements which had previously been configured.
-```
+        Salesforce consumes the SAML assertion and maps the user in its local identity store, based upon the federation agreements which had previously been configured.
+    ```
 
 ## **STEP 6**: Configure Provisioning and Synchronization
 

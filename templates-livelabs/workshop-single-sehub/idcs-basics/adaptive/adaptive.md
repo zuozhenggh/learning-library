@@ -27,9 +27,9 @@ In this lab, you will:
 
 1. Login into IDCS Admin console as an administrator:
 
-```
-   https://<your tenant>/ui/v1/adminconsole
-```
+    ```
+        https://<your tenant>/ui/v1/adminconsole
+    ```
 
 2. Navigate to *Security* and select *Adaptive Security*.
 3. The list of Risk Providers is displayed.
@@ -63,9 +63,9 @@ In this lab, you will:
     - Administrator
 1. Login into IDCS Admin console as an administrator:
 
-```
-   https://<your tenant>/ui/v1/adminconsole
-```
+    ```
+        https://<your tenant>/ui/v1/adminconsole
+    ```
 
 2. Navigate to *Security* and select *Sign-On Policies*.
 3. Click on *Edit* to edit the Salesforce App Policy.
@@ -101,9 +101,9 @@ In this lab, you will:
 
 1. Login into IDCS Admin console as an administrator:
 
-```
-   https://<your tenant>/ui/v1/adminconsole
-```
+    ```
+       https://<your tenant>/ui/v1/adminconsole
+    ```
 
 2. Navigate to *User* and click on *Add*.
 

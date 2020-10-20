@@ -44,9 +44,9 @@ In this lab, you will:
 
     ![Image](images/L1003.png)
 
-```
-Once a new user is created in the IDCS service, the user receives an email invitation to finish first time login formalities such as setting a password to logging into IDCS.
-```
+    ```
+    Once a new user is created in the IDCS service, the user receives an email invitation to finish first time login formalities such as setting a password to logging into IDCS.
+    ```
 
 ## **STEP 2**: Import Users with CSV
 
@@ -63,7 +63,7 @@ If you are an identity domain administrator or a user administrator, you can bat
 
     ![Image](images/L1005.png)
 
-Extract the zip file and open *Users.csv* or open the *UserExport… .csv* file. Inspect the content of the file from your favorite editor. You can use the default examples that you find into the csv file or you can fill in some more if you want but keep it similar to the examples. For example, if you use the exported existing user, modify the suffix (UI) to another one (e.g CSV).
+    Extract the zip file and open *Users.csv* or open the *UserExport… .csv* file. Inspect the content of the file from your favorite editor. You can use the default examples that you find into the csv file or you can fill in some more if you want but keep it similar to the examples. For example, if you use the exported existing user, modify the suffix (UI) to another one (e.g CSV).
 
 2. Go to IDCS Admin console using your administrator account credentials.  Select the *Users* menu on the left or select the *Users* icon from the dashboard.  
 
@@ -77,9 +77,9 @@ Extract the zip file and open *Users.csv* or open the *UserExport… .csv* file.
 
     ![Image](images/L1008.png)
 
-```
-By uploading the sample file, sample users will be uploaded into IDCS. In order to upload different users, the csv sample file needs to be altered.
-```
+    ```
+        By uploading the sample file, sample users will be uploaded into IDCS. In order to upload different users, the csv sample file needs to be altered.
+    ```
 
 
 5.	Go to the *Jobs* menu item and verify that the import Job finished successfully.  Click on *View Details*. to check if all the users were imported. You’ll also be presented with the list of all the users from csv, together with all the attributes details and status of creation.
