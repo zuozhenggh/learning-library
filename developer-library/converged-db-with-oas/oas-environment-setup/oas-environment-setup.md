@@ -1,4 +1,4 @@
-# OAS Environment Setup #
+# Start Database and OAS #
 
 ## Introduction ##
 In this lab you will start both Database and OAS environments by running the script files. 
