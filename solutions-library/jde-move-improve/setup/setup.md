@@ -1,105 +1,124 @@
-# Setup the Environment
+# LAB 2: Set Up OCI for JDE Trial Edition Deployment 
 
-## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+## About this Workshop
 
-Estimated Lab Time: n minutes
+To establish proper access to a JDE Trial Edition, the OCI tenancy needs to be set up
+
+In this lab, the recently provisioned OCI Trial tenancy will be set up for JDE Trial Edition deployment
+
+Estimated Lab Time: 10 minutes
 
 ### About Product/Technology
-Enter background information here..
+Enter background information here....
+
+*You may add an option video, using this format: [](youtube:YouTube video id)*
+
+  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+To set up the OCI tenancy, in this lab, you will:
+*   Create a Compartment
+*   Create a Virtual Cloud Network (VCN)
+*   Establish Security List Rules for JDE
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+## **STEP 1**: Create a Compartment 
 
-### Prerequisites
+In this part of the lab, we create a compartment to organize the resources we will create
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+Compartments are the primary building blocks you use to organize your cloud resources. You use compartments to organize and isolate your resources to make it easier to manage and secure access to them
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+When your tenancy is provisioned, a root compartment is created for you. Your root compartment holds ***all*** your cloud resources
 
-*This is the "fold" - below items are collapsed by default*
+1)  Please log into to your OCI tenancy, if you are not already signed in. Example for Ashburn location - https://console.us-ashburn-1.oraclecloud.com/ 
 
-## **STEP 1**: title
+2)  On the Oracle Cloud Infrastructure Console Home page, click the Navigation Menu   in the upper-left corner, select Identity, and then select the Compartments option.
 
-Step 1 opening paragraph.
+    ![](./images/1.2.png " ")
 
-1. Sub step 1
+3)	Click the Create Compartment button
 
-  To create a link to local file you want the reader to download, use this format:
+    ![](./images/1.3.png " ")
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+4)	Choose a Name (e.g. “**TestDrive**”), fill out the form and click the   button. Note: that the parent compartment should be the root compartment
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+##  **Step 2:**  Create a Virtual Cloud Network (VCN)
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+To create a VCN on Oracle Cloud Infrastructure:
 
-    ![Image alt text](images/sample1.png "Image title")
+1)	On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard
+ 
+    ![](./images/2.1.png " ")
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+2)	Select VCN with Internet Connectivity, and then click Start VCN Wizard
 
-    ![Image alt text](images/sample1.png)
+      ![](./images/2.2.png " ")
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+3) In this window, fill in the following fields with the information shown below:
 
-5. One example with bold **text**.
+**VCN NAME:**
+            
+    TestDriveVCN     (or any other unique name for the VCN)
+**COMPARTMENT:**
+            
+    TestDrive        (or any other compartment previously created)
+**VCN CIDR BLOCK:** 
 
-   If you add another paragraph, add 3 spaces before the line.
+    10.0.0.0/16
 
-## **STEP 2:** title
+**PUBLIC SUBNET CIDR BLOCK:** 
 
-1. Sub step 1
+    10.0.2.0/24
 
-  Use tables sparingly:
+**PRIVATE SUBNET CIDR BLOCK:** 
+            
+    10.0.1.0/24 
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+**USE DNS HOSTNAMES IN THIS VCN:**
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+    Make sure this is checked
 
-    - List item 1
-    - List item 2
+![](./images/2.3.png " ")
 
-3. Code examples
+Then, scroll down to the bottom and click the ***Next*** button.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+4)	On the “Review and Create” page, click on the create button.
 
-4. Code examples that include variables
+5) On the “Created Virtual Cloud Network” page wait until you see the following graphic.
+![](./images/2.4.png " ")
+Then click on the View Virtual CLoud Network Button shown
+![](./images/2.5.png " ")
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+ 
+## **Step 3:**  Establish Security List Rules for JDE 
 
-*At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
+With the VCN in place, define the open inbound and outbound ports that will be available to instances created within the VCN.
 
-## Learn More
+1)	From the details page of the TestDriveVCN, under the ***Resources*** section in the left pane, select ***Security Lists*** 
+![](./images/3.1.png " ")
 
-*(optional - include links to docs, white papers, blogs, etc)*
+2)	In the Security Lists section, click the Default ***Security List*** for ***TestDriveVCN*** link  
+![](./images/3.2.png " ")
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+3)	On Default Security List, under Resources, click the Add Ingress Rules button.
+![](./images/3.33.png " ")
 
-## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+4) 
+    | Stateless | Source Type |	Source CIDR | IP Protocol | Source Port Range |	Destination Port |
+    | --- | --- | --- | --- | --- | --- |
+    | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	443 |
+    | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	7000-7006 |
+    | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	7072-7077 |
+    | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	8080 |
+    | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	9703-9705 |
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+    Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
+    
+    ![](./images/3.4.png " ")
+
+    These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
+
+## **Summary**
+
+In this lab, OCI has been set up for the networking required to be able to access a JDE Trial Edition that will be created in the next lab.
