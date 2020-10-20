@@ -1,7 +1,8 @@
 # Oracle Database Security Hands-On Labs - Part2 (Advanced)
 
 ## Objectives
-**This workshop is the 2nd part of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities.**<br>
+**This workshop is the 2nd part of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities.**
+
 These workshops give the user an opportunity to learn how to configure the DB Security features to protect and secure their databases from the Baseline to the Maximum Security Architecture (MSA).
 
 This 2nd workshop is dedicated to the advanced features of the Database Security and it will cover following products and solutions:
