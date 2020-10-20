@@ -4,7 +4,8 @@
         {
             "title": "Prerequisites",
             "description": "Prerequisites to run the Oracle Data Safe workshop in your own tenancy.",
-            "filename": "./prerequisites.md"        },
+            "filename": "./prerequisites.md"
+          },
             {
               "title": "Set Up an Oracle Data Safe Environment",
               "description": "This lab provides the instructions for a tenancy administrator to set up an Oracle Data Safe environment for a regular Oracle Cloud user.",
