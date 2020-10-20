@@ -46,7 +46,7 @@ To install the **atom-live-server**:
 The atom-live-server plugin is added to the **Packages** menu.
   ![](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
 
-## **STEP 4:** Merge Content from Git Before you Start Editing your Content
+## **STEP 3:** Merge Content from Git Before you Start Editing your Content
   Everyday before you start editing your content, ensure to do a Merge.
   Merging synchronizes the content in your cloned repository with the latest content on the **upstream/master** repository and ensures that you have the most recent versions of the templates and other workshops/labs.
 
@@ -73,14 +73,14 @@ The atom-live-server plugin is added to the **Packages** menu.
 
   ![](./images/git-hub-merge-fetch-origin.png " ")
 
-## **STEP 5:** Create your Workshop and Lab Content
-You can use any of the existing project folder in the **learning-library** folder as a template to create a workshop for your project. In this example, let's use the **learning-library\data-management-library\big-data\bds** project folder as a template to create a new workshop and labs.
+## **STEP 4:** Create your Workshop and Lab Content
+You can use project folder in the **learning-library** folder as a template to create a workshop for your project. In this example, let's use the **learning-library\data-management-library\big-data\bds** project folder as a template to create a new workshop and labs.
 
 **Note**: Ensure to update your clone from the **upstream/master** repository (detailed in **Step 2**) on a regular basis whenever we are working on the markdown files.
 
 To create your lab and workshop content:
 1. Open your cloned repository using Windows Explorer.
-2. Copy the **learning-library\data-management-library\big-data\bds** folder and paste it in your project folder (create a new folder, such as **create-labs**).
+2. Copy the **learning-library\data-management-library\big-data\bd** folder and paste it in your project folder (create a new folder, such as **create-labs**).
 3. Rename the **bds** project folder to a name of your choice, for example, **labs**.
 4. Rename the workshop and lab folders in the labs folder as per your requirement.  For example, rename **bds-quickstart-workshop** folder to **1-labs-quickstart-workshop** and so on.
 5. Open **Atom** Editor, browse, and select your project folder. Click **File > Open Folder** to display the **Open Folder** dialog box.
@@ -90,14 +90,14 @@ To create your lab and workshop content:
 
   The workshop folder and the lab folders are displayed in Atom.
   ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
-7. Expand the Workshop folder, **1-labs-quickstart-workshop** in this example, open the `manifest.json` to list the labs you plan to add to your workshop and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
+7. Expand the workshop folder, **1-labs-quickstart-workshop** in this example, open the `manifest.json` to list the labs you plan to add to your workshop and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
   ![](./images/use-atom-editor-manifest-json.png " ")
 8. Open the `intro.md` file from **1-labs-quickstart-workshop** and update it as per your requirements.
 9. Open the `README.md` file and update it with a summary of your workshop.
     ![](./images/use-atom-editor-readme-update.png " ")
 10. Similarly, expand the lab folder, for example, **2-labs-git-hub-get-started-install-configure** and edit the `.md` file as per your requirement. If you want to use any images in your lab, then include them in the images folder.
 
-## **STEP 6:** Preview Your Workshop and Labs Using atom-live-server
+## **STEP 5:** Preview Your Workshop and Labs Using atom-live-server
 
 To preview your output in a browser:
 1. Start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
