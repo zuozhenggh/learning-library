@@ -122,7 +122,7 @@ Salesforce is providing free developer edition. Steps to create free developer a
           NOTE: Use the Gmail account that you have created at Step 1.
     - For *Username*, specify a unique user name in the form of an email address
     - Check the Master Subscription Agreement checkbox and click the *Sign Me Up* button
-![Image](images/PR01.png)
+   ![Image](images/PR01.png)
 
 
 3.	Check your email. You will receive an activation email for your Developer Edition Account.
@@ -142,22 +142,22 @@ To use some features in Salesforce, My Domain is required. Such features include
 1.	From your Salesforce *homepage* navigate to your profile (the “View profile” icon on the top right corner).
 2.	In the *Options* menu, select “Switch to Salesforce classic”
 
-![Image](images/PR02.png)
+    ![Image](images/PR02.png)
 
 
 3.	Navigate to *Setup(classic)* –> *Administer* –> *Domain Management* –> select *My Domain*.
 
-![Image](images/PR03.png)
+    ![Image](images/PR03.png)
 
-![Image](images/PR04.png)
+    ![Image](images/PR04.png)
 
 4.	Enter, the subdomain name which you want to use within the Salesforce generic URL - it can be the account name used in the Oracle Cloud account sign up (used to identify your cloud account)
 
-![Image](images/PR05.png)
+    ![Image](images/PR05.png)
 
 5. Click on the Check Availability button. (If your name is already taken, choose a different one.). Click on the Register Domain button.
 
-![Image](images/PR06.png)
+   ![Image](images/PR06.png)
 
 6.	Salesforce updates its domain registries with your new. When it’s done, you receive a confirmation email. It can take a few minutes before your domain is available.
 7.	After you receive the activation email, from the email click on the link to get back to the Log in screen with custom domain URL.
@@ -174,11 +174,11 @@ To use some features in Salesforce, My Domain is required. Such features include
     - Enter your *First Name* and *Last Name*
     - Enter the *Company* name – it can be the account name used in the Oracle Cloud account sign up (used to identify your cloud account)
 
-![Image](images/PR07.png)
+   ![Image](images/PR07.png)
 
 3.	Verify Your Email Address. Okta will send you a verification email. Please go to your inbox and verify your account to continue.Click on *Activate my account* in the verification email.
 
-![Image](images/PR08.png)
+    ![Image](images/PR08.png)
 
 4.	Set a new password and activate your account.
 

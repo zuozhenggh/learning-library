@@ -42,7 +42,7 @@ In this lab, you will:
 
 3.	Select the *MFA factors* that you want to enable and then click on *Save*.
 
-![Image](images/L5001.png)
+    ![Image](images/L5001.png)
 
 ## **STEP 2**: Define a Sign-On Policy for Salesforce
 
@@ -58,7 +58,7 @@ However, you can build upon this policy by adding other sign-on rules to it. By 
 
 1.	Navigate to *Security* and then select *Network Perimeters*.
 
-![Image](images/L5002.png)
+    ![Image](images/L5002.png)
 
 ```
 A network perimeter contains a list of IP addresses.
@@ -70,11 +70,11 @@ You can also configure Oracle Identity Cloud Service so that users can log in, u
 
 2.	Click on *Add* to add a new Network Perimeter. Enter an IP range as shown below. For now, put a dummy range or even a dummy address (e.g 10.0.0.0), so that no authentication is denied and click *Save*.
 
-![Image](images/L5003.png)
+    ![Image](images/L5003.png)
 
 3.	Navigate to *Security* and select *Sign On policies*. To define a Sign-On-Policy for the Salesforce App click on *Add*.
 
-![Image](images/L5004.png)
+    ![Image](images/L5004.png)
 
 ```
 Note that a Default Sign-On Policy exists and is enabled by default. The default policy applies to all application that have not been explicitly mapped to a sign on policy.
@@ -82,11 +82,11 @@ Note that a Default Sign-On Policy exists and is enabled by default. The default
 
 4. Enter a *Policy Name* and *Description* in the Details section and click on *>* button to move to the next section.
 
-![Image](images/L5005.png)
+    ![Image](images/L5005.png)
 
 5.	In the *Sign-On Rules* section click on *Add Rules* to add a new rule.
 
-![Image](images/L5006.png)
+    ![Image](images/L5006.png)
 
 6.	Create a rule to prompt for MFA when a user belongs to the Employees group. Ensure following parameters are set
 | Parameter | Value |
@@ -99,11 +99,11 @@ Note that a Default Sign-On Policy exists and is enabled by default. The default
 
 7. Click *Save* in order to save the rule
 
-![Image](images/L5007.png)
+    ![Image](images/L5007.png)
 
 8.	Click *Add* to add a second rule.
 
-![Image](images/L5008.png)
+    ![Image](images/L5008.png)
 
 9.	Ensure following parameters are set.
 | Parameter | Value |
@@ -114,7 +114,7 @@ Note that a Default Sign-On Policy exists and is enabled by default. The default
 
 10. Click *Save* in order to save the rule
 
-![Image](images/L5009.png)
+    ![Image](images/L5009.png)
 
 ```
 Note the Sign-On Rules are ordered. The actions (allow/deny/prompt for MFA) are determined by the first rule where the conditions match. If none of the rule conditions match the default action is deny.
@@ -122,7 +122,7 @@ Note the Sign-On Rules are ordered. The actions (allow/deny/prompt for MFA) are 
 
 11.	To move the *Blacklisted IP* rule to the top click on the reorder icon and drag the rule to the top. Click *Finish*.
 
-![Image](images/L5010.png)
+    ![Image](images/L5010.png)
 
 ```
 The above rules are evaluated as below
@@ -134,19 +134,19 @@ The above rules are evaluated as below
 
 12.	Click on the *Apps* tab and click on the *Assign* button.
 
-![Image](images/L5011.png)
+    ![Image](images/L5011.png)
 
 13.	Select the *Salesforce* application and click *OK*.
 
-![Image](images/L5012.png)
+    ![Image](images/L5012.png)
 
 14.	Salesforce has been successfully added to the Sign-On Policy.
 
-![Image](images/L5013.png)
+    ![Image](images/L5013.png)
 
 15.	Navigate back to *Sign-On Policies* and click on *Activate* in order to activate the *Salesforce* policy.
 
-![Image](images/L5014.png)
+    ![Image](images/L5014.png)
 
 
 ## **STEP 3**: Sign-in as an end user with MFA
@@ -158,11 +158,11 @@ The above rules are evaluated as below
 
 2.	Click on *Salesforce Chatter*.
 
-![Image](images/L5015.png)
+    ![Image](images/L5015.png)
 
 3.	You will be prompted to enable 2-Step verification for your account. Click on *Enable* to enable 2-Step Verification for the account. Note as Enrollment was set as Optional in the Sign-On policy the end user is given the option to skip this step.
 
-![Image](images/L5016.png)
+    ![Image](images/L5016.png)
 
 ###MFA Options in Oracle Identity Cloud Service: Email
 
@@ -173,15 +173,15 @@ Users receive an email message that contains a temporary passcode that must be u
 
 A. Oracle automatically sets your main email account as a MFA option. However, it is recommended to click the option *Set as Default*.
 
-![Image](images/L5017.png)
+   ![Image](images/L5017.png)
 
 B. Enter the code that has been sent to your email address and click *Verify*.
 
-![Image](images/L5018.png)
+   ![Image](images/L5018.png)
 
 C. Now, your email address is successfully enrolled. It is recommended to set up an additional method. To continue with the MFA configuration, select another method, i.e. *Mobile App*. You can also choose to click *Done* and finish the MFA configuration.
 
-![Image](images/L5019.png)
+   ![Image](images/L5019.png)
 
     Note: Under *My Profile* and under the tab *Security*, further MFA options can be configured at a later point of time.
 
@@ -196,13 +196,13 @@ A. Download the *Oracle Mobile Authenticator* app on your mobile phone.
 
 B. If your mobile has internet connectivity, scan the QR code.
 
-![Image](images/L5020.png)
+   ![Image](images/L5020.png)
 
 C.	If your mobile phone does not have internet connectivity or you are using a 3rd party authenticator (e.g. Google Authenticator)
     i.	Tick the box *Offline Mode or Use Another Authenticator App* and scan the new offline QR code that is generated. After you scan the QR code, the mobile app will generate OTP’s every 30 seconds.
     ii. Enter the OTP in the passcode field and click *Verify*.
 
-![Image](images/L5021.png)
+   ![Image](images/L5021.png)
 
 D. You can enroll an additional 2-Step Verification method by clicking on another method. In this tutorial, we continue with *Mobile Number*.
 
@@ -216,7 +216,7 @@ A. Click on *Mobile Number*.
 
 B. Enter your mobile number and click on *Send*.
 
-![Image](images/L5022.png)
+   ![Image](images/L5022.png)
 
 C. An *SMS* (text message) containing an OTP will be sent to your mobile number.
 
@@ -233,11 +233,11 @@ A. Click on *Security Questions*.
 
 B. Select question that you want to use, enter answers that you will remember and optionally enter hits for each answer and click *Save*.
 
-![Image](images/L5023.png)
+   ![Image](images/L5023.png)
 
 C. Click on *Done* to complete the process. You will be now redirected to Salesforce.
 
-![Image](images/L5024.png)
+   ![Image](images/L5024.png)
 
 ###MFA Options in Oracle Identity Cloud Service: Backup verification method
 
@@ -250,13 +250,13 @@ A. Access IDCS and under My Apps select Salesforce. A preconfigured MFA option w
 
 B. Click on *Use backup verification method*. The list of enrolled backup 2-Step Verification methods is displayed.
 
-![Image](images/L5025.png)
+   ![Image](images/L5025.png)
 
 C. In this example, select *Security Questions*.
 
 D. Answer the security Question and click *Verify* .
 
-![Image](images/L5026.png)
+   ![Image](images/L5026.png)
 
 ## **STEP 4**: Block access via policy
 
@@ -269,14 +269,14 @@ After creating a network perimeter, you can prevent users from signing in to Ora
 
 1.	Navigate to *Security* and select *Network Perimeters*. Click the menu on the right of the Blacklisted IPs Network Perimeter you created earlier and click Edit. The previously configured dummy IP address will be shown.
 
-![Image](images/L5027.png)
+    ![Image](images/L5027.png)
 
 2.	Change the dummy IP to your IP range:
 * Open a web browser and access a website that shows your *public IP address*, for example: https://www.whatismyip.com/
 * Copy your public IP address.
 * Go back to IDCS and replace the dummy IP address with your public IP address and click *Save*.
 
-![Image](images/L5028.png)
+    ![Image](images/L5028.png)
 
 ## **STEP 5**: Test the updated policy  
 
@@ -287,11 +287,11 @@ After creating a network perimeter, you can prevent users from signing in to Ora
 
 2.	Click on the *Salesforce Chatter* tile.
 
-![Image](images/L5029.png)
+    ![Image](images/L5029.png)
 
 3.	You will denied access, given that your request originates in a blacklisted IP.
 
-![Image](images/L5030.png)
+    ![Image](images/L5030.png)
 
 
 You may now proceed to the next lab
