@@ -2,7 +2,7 @@
 
 ## Introduction
 
-You can use your preferred editor to author and edit your Markdown (.md) content for rendering the Workshop output. Oracle recommends the Atom editor and the Atom Live Server.
+You can use your preferred editor to author and edit your Markdown (.md) content for rendering the Workshop output. Oracle recommends the Atom editor and the atom-live-server.
 
 ### Objectives
 
@@ -16,7 +16,7 @@ You can use your preferred editor to author and edit your Markdown (.md) content
 * An IDE, such as Atom.
 * A local web server such as **atom-live-server**, a plugin for `Atom.io`.
 
-**Note:** If you are using different tools that works for you, then there is no need to replace those tools. For example, if you are already developing your Markdown content using MS Visual Studio Code, then there is no need to switch to Atom. Oracle recommends the UA Developers to use Atom.
+**Note:** Oracle recommends the UA Developers to use Atom.
 
 
 ## **STEP 1:** Install Atom
@@ -65,7 +65,7 @@ The atom-live-server plugin is added to the **Packages** menu.
 
   5. When the merge is successfully completed, a "Successfully merged upstream/master into master" message is displayed. To push the new commits from the local clone to your forked location, click **Push origin**.
 
-    **Note**: To determine if your clone is up-to-date with upstream/master (production), repeat steps 2 to 4. If both repositories are synchronized, then the following message is displayed: "This branch is up to date with upstream/master".
+    **Note**: To determine if your clone is up-to-date with **upstream/master** (production), repeat steps 2 to 4. If both repositories are synchronized, then the following message is displayed: "This branch is up to date with upstream/master".
 
     ![](./images/git-hub-merge-branch-up-to-date.png " ")
 
@@ -73,7 +73,7 @@ The atom-live-server plugin is added to the **Packages** menu.
 
   ![](./images/git-hub-merge-fetch-origin.png " ")
 
-## **STEP 3:** Create your Workshop and Lab Content
+## **STEP 5:** Create your Workshop and Lab Content
 You can use any of the existing project folder in the **learning-library** folder as a template to create a workshop for your project. In this example, let's use the **learning-library\data-management-library\big-data\bds** project folder as a template to create a new workshop and labs.
 
 **Note**: Ensure to update your clone from the **upstream/master** repository (detailed in **Step 2**) on a regular basis whenever we are working on the markdown files.
@@ -97,7 +97,7 @@ To create your lab and workshop content:
     ![](./images/use-atom-editor-readme-update.png " ")
 10. Similarly, expand the lab folder, for example, **2-labs-git-hub-get-started-install-configure** and edit the `.md` file as per your requirement. If you want to use any images in your lab, then include them in the images folder.
 
-## **STEP 4:** Preview Your Workshop and Labs Using atom-live-server
+## **STEP 6:** Preview Your Workshop and Labs Using atom-live-server
 
 To preview your output in a browser:
 1. Start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
