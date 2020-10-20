@@ -14,6 +14,10 @@ Watch the video below for an overview of Oracle RAC.
 [](youtube:CbIGJs_eNtI)
 
 ### About this Workshop
+Oracle Real Application clusters can be deployed in a variety of ways.  On bare metal servers, in docker containers, on engineered systems and in the Oracle Cloud.
+
+![](./images/rac-deployment.png " ")
+
 In this workshop you will create a 2-node Oracle Real Application Clusters database in the Oracle Cloud.  Oracle Cloud Infrastructure offers 2-node RAC DB systems on virtual machines. When you launch a virtual machine DB system, you choose a shape, which determines the resources allocated to the DB system. After you provision the system, you can change the shape to adapt to new processing capacity requirements.  
 
 You will be using the VM.Standard2.4 shape with 4 OCPUs and 60GB of memory.
