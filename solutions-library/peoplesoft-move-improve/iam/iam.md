@@ -252,13 +252,12 @@ We'll create a user, a group, and a security policy to understand the concept.
 
 You may now proceed to the next lab.
 
-## Learn More
+<!--## Learn More
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
+* [URL text 2](http://docs.oracle.com) -->
 ## Acknowledgements
 * **Authors** 
 - Rich Konopka, PeopleSoft Specialist, October 2020
