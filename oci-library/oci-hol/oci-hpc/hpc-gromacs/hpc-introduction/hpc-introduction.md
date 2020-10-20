@@ -10,7 +10,7 @@ With Oracle Cloud Infrastructure, businesses can run performance intensive HPC w
 
 These hands-on lab guides provide step-by-step process of deploying GROMACS on Oracle Cloud using Resource Manager, avaialable on Oracle Cloud Console. 
 
-Estimated Workshop Time: 4 hours
+Estimated Workshop Time: 25 minutes
 
 ### About High Performance Computing (HPC)
 
