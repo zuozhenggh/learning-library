@@ -7,7 +7,7 @@ This lab walks you through the steps to demonstrate Oracle Clusterware’s fenci
 Estimated Lab Time: 20 Minutes
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
+- An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
 
@@ -21,18 +21,21 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
 
 ## **STEP 1:**  Connect and Disable the private interconnect
 
-1.  If you aren't already logged in, open up a web browser and login to your tenancy. 
-2.  Open up two webbrowser tabs and start Cloudshell in each.  Maximize both.
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+2.  Once you are logged in, open up a 2nd webbrowser tab.
+3.  Start Cloudshell in each.  Maximize both cloudshell instances.
+   
+    *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](./images/start-cloudshell.png " ")
 
-3.  Connect to node1 (you identified the IP in an earlier labs).  You can also use Putty or MAC CYGWIN. 
+4.  Connect to node 1 (you identified the IP in an earlier lab). 
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
     ````
     ![](./images/racnode1-login.png " ")
 
-4. Repeat this step for node2.
+5. Repeat this step for node 2.
    
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -40,8 +43,7 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
     ````
     ![](./images/racnode2-login.png " ")
 
-
-5. On both nodes, switch to the oracle user and check to see what's running on both nodes.
+6. On both nodes, switch to the oracle user and check to see what's running on both nodes.
    
     ````
     <copy>
@@ -52,7 +54,7 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
     ````
     ![](./images/racnode2-login.png " ")
     
-6. Monitor the **crsd.trc** on each node as the *oracle* user. The **crsd.trc** file is located in the $ADR\_BASE/diag/crs/*nodename*/crs/trace directory. In earlier versions of Grid Infrastructure the logfiles were located under CRS\_HOME/log/<nodename>/crs (these directory structures still exist in the installation)
+7. Monitor the **crsd.trc** on each node as the *oracle* user. The **crsd.trc** file is located in the $ADR\_BASE/diag/crs/*nodename*/crs/trace directory. In earlier versions of Grid Infrastructure the logfiles were located under CRS\_HOME/log/<nodename>/crs (these directory structures still exist in the installation)
 
     ````
     <copy>
@@ -63,7 +65,7 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
     ![](./images/rac-gi-1.png " ")
 
 
-7. Examine the network settings as the *opc* user.  Type exit to switch back to the opc user.
+8. Examine the network settings as the *opc* user.  Type exit to switch back to the opc user on both nodes.
 
     ````
     <copy>
@@ -74,18 +76,18 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
     Note that the commands **ip** or **if** can be used, but the syntax will not match what is shown here. Use these commands if you are familiar with their construct.
 
 
-8. Inspect the output.
+9.  Inspect the output.
    
     ![](./images/racnode1-ifconfig.png " ")
 
 
-9.  The **ifconfig** command shows all of the network interfaces configured and running. The **flags** entry will show whether the interface is UP, BROADCASTing, and whether in MULTICAST or not. The **inet** entry shows the IP address of each interface.
+10. The **ifconfig** command shows all of the network interfaces configured and running. The **flags** entry will show whether the interface is UP, BROADCASTing, and whether in MULTICAST or not. The **inet** entry shows the IP address of each interface.
 
     You should notice that one of the network interfaces has multiple IP addresses associated with it. **ens3** has the virtual interfaces **es3:1** and **es3:2** in the example shown here. These virtual interfaces are for the virtual IPs (VIPs) used by each node and the SCAN listeners.
 
     The private interconnect addresses for this cluster are **192.168.16.18** and **192.168.16.19** or racnode1-priv and racnode2-priv, respectively.
 
-10. Take down the interconnect (we are doing this on node1, but the other node could be used)
+11. Take down the interconnect (we are doing this on node1, but the other node could be used)
     ````
     <copy>
     sudo ifconfig ens4 down
@@ -95,7 +97,7 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
 
     ![](./images/racnode1-ms4-down.png " ")
 
-11. Look at the ifconfig command again by running the command below.
+12. Look at the ifconfig command again by running the command below on node 1.
    
     ````
     <copy>
@@ -103,24 +105,24 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
     </copy>
     ````
     
-12. The output returned should be similar to.  Inspect the output.
+13. The output returned should be similar to.  Inspect the output.
 
      ![](./images/racnode1-ifconfig-1.png " ")
 
-13. Note that **ens4** is no longer UP.
+14. Note that **ens4** is no longer UP.
 
-14. Why have the virtual interfaces disappeared? Why are the virtual interfaces running on the other node? What state are they in?
+15. Why have the virtual interfaces disappeared? Why are the virtual interfaces running on the other node? What state are they in?
 
-- When the private interconnect is down on node1 the VIP for node1 is running on node2. The reverse would be true if the private interconnect were down on node2.
+    - When the private interconnect is down on node 1 the VIP for node 1 is running on node2. The reverse would be true if the private interconnect were down on node2.
 
-15. Go back to node2 and rerun the ifconfig command.
+16. Go back to node 2 and rerun the ifconfig command.
     
     ````
     sudo ifconfig -a
     ````
      ![](./images/racnode2-ifconfig.png " ")
 
-16.  Explore the result.
+17.  Explore the result.
 
 ## **STEP 2:** Examine the CRSD log
 
@@ -179,10 +181,10 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
 
     ````
     <copy> 
-    /u01/app/19.0.0.0/grid/bin//crsctl status server</copy>
-    ````    
-
-    ![](./images/racnode2-crsctlg.png " ")
+    /u01/app/19.0.0.0/grid/bin//crsctl status server
+    </copy>
+    ```` 
+    ![](./images/racnode2-crsctl.png " ")
 
 8. Examine the network adapters on the running node
 
@@ -237,42 +239,42 @@ Can you connect an application client to a VIP (a host-vip) when it is running o
     ````
  2. use ifconfig to examine the network adapters. Ens4 should restart
 
- 3. The nodes will reform the cluster, VIPs will migrate back to their home node, or rebalance in the case of SCAN-VIPs.  An **fconfig -a** command on the original failed node will now show restarted resources
+ 3. The nodes will reform the cluster, VIPs will migrate back to their home node, or rebalance in the case of SCAN-VIPs.  An **ifconfig -a** command on the original failed node will now show restarted resources
 
     ````
     [opc@racnode1 ~]$ sudo ifconfig -a
-        ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
-            inet 10.1.20.2  netmask 255.255.255.0  broadcast 10.1.20.255
-            ether 02:00:17:00:6b:67  txqueuelen 1000  (Ethernet)
-            RX packets 27902990  bytes 52152693993 (48.5 GiB)
-            RX errors 0  dropped 0  overruns 0  frame 0
-            TX packets 35991050  bytes 130123471001 (121.1 GiB)
-            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
+    inet 10.1.20.2  netmask 255.255.255.0  broadcast 10.1.20.255
+    ether 02:00:17:00:6b:67  txqueuelen 1000  (Ethernet)
+    RX packets 27902990  bytes 52152693993 (48.5 GiB)
+    RX errors 0  dropped 0  overruns 0  frame 0
+    TX packets 35991050  bytes 130123471001 (121.1 GiB)
+    TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-        ens3:1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
-            inet 10.1.20.4  netmask 255.255.255.0  broadcast 10.1.20.255
-            ether 02:00:17:00:6b:67  txqueuelen 1000  (Ethernet)
+    ens3:1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
+    inet 10.1.20.4  netmask 255.255.255.0  broadcast 10.1.20.255
+    ether 02:00:17:00:6b:67  txqueuelen 1000  (Ethernet)
 
-        ens3:2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
-            inet 10.1.20.6  netmask 255.255.255.0  broadcast 10.1.20.255
-            ether 02:00:17:00:6b:67  txqueuelen 1000  (Ethernet)
+    ens3:2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
+    inet 10.1.20.6  netmask 255.255.255.0  broadcast 10.1.20.255
+    ether 02:00:17:00:6b:67  txqueuelen 1000  (Ethernet)
 
-        ens4: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
-            inet 192.168.16.18  netmask 255.255.255.0  broadcast 192.168.16.255
-            ether 02:00:17:00:3b:91  txqueuelen 1000  (Ethernet)
-            RX packets 12947655  bytes 27824076300 (25.9 GiB)
-            RX errors 0  dropped 0  overruns 0  frame 0
-            TX packets 11217857  bytes 15007533970 (13.9 GiB)
-            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    ens4: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
+    inet 192.168.16.18  netmask 255.255.255.0  broadcast 192.168.16.255
+    ether 02:00:17:00:3b:91  txqueuelen 1000  (Ethernet)
+    RX packets 12947655  bytes 27824076300 (25.9 GiB)
+    RX errors 0  dropped 0  overruns 0  frame 0
+    TX packets 11217857  bytes 15007533970 (13.9 GiB)
+    TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-        lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
-            inet 127.0.0.1  netmask 255.0.0.0
-            loop  txqueuelen 0  (Local Loopback)
-            RX packets 4981610  bytes 10848596188 (10.1 GiB)
-            RX errors 0  dropped 0  overruns 0  frame 0
-            TX packets 4981610  bytes 10848596188 (10.1 GiB)
-            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-        ````
+    lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+    inet 127.0.0.1  netmask 255.0.0.0
+    loop  txqueuelen 0  (Local Loopback)
+    RX packets 4981610  bytes 10848596188 (10.1 GiB)
+    RX errors 0  dropped 0  overruns 0  frame 0
+    TX packets 4981610  bytes 10848596188 (10.1 GiB)
+    TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    ````
 
 4. A status command will show both nodes running
 

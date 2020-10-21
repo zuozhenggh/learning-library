@@ -23,11 +23,11 @@ This lab assumes you have completed:
 - Watch a preview of "*Understanding Privilege Analysis (January 2019)*" [](youtube:3oRODVtWwbg)
 
 ### Lab Timing (estimated)
-| Step No. | Feature | Approx. Time | Details | Value Proposition |
-|--|------------------------------------------------------------|-------------|--------------------|-------------------|
-| 1 | Capture the workloard to analyze | 5 minutes |||
-| 2 | Analyze the workload caputred | 5 minutes |||
-| 3 | (Optionnal) Drop the capture | <5 minutes |||
+| Step No. | Feature | Approx. Time |
+|--|------------------------------------------------------------|-------------|
+| 1 | Capture the workloard to analyze | 5 minutes |
+| 2 | Analyze the workload caputred | 5 minutes |
+| 3 | (Optionnal) Drop the capture | <5 minutes |
 
 
 ## **STEP 1**: Capture the workloard to analyze
@@ -50,7 +50,7 @@ This lab assumes you have completed:
       <copy>./01_start_pa_capture.sh</copy>
       ````
 
-    ![](./images/pa-001.png " ")
+   ![](./images/pa-001.png " ")
 
 4. Next, start the capture
 
@@ -58,7 +58,7 @@ This lab assumes you have completed:
       <copy>./02_start_capture.sh</copy>
       ````
 
-    ![](./images/pa-002.png " ")
+   ![](./images/pa-002.png " ")
 
     **Note**: This will start collecting all of the privileges and/or roles that are being used
 
@@ -74,7 +74,7 @@ This lab assumes you have completed:
       <copy>./04_disable_capture.sh</copy>
       ````
 
-    ![](./images/pa-003.png " ")
+   ![](./images/pa-003.png " ")
 
 ## **STEP 2**: Analyze the workload captured
 
@@ -84,10 +84,9 @@ This lab assumes you have completed:
       <copy>./05_generate_report.sh</copy>
       ````
 
-    ![](./images/pa-004.png " ")
+   ![](./images/pa-004.png " ")
 
     **Note**:
-    
     - It takes all of the privileges and roles that were identified as used during the capture and compares it to the roles and privileges granted to each user
     - It may take a few minutes to generate depending on the volume to be processed
 
@@ -97,7 +96,7 @@ This lab assumes you have completed:
       <copy>./06_review_report.sh</copy>
       ````
 
-    ![](./images/pa-005.png " ")
+   ![](./images/pa-005.png " ")
 
 ## **STEP 3**: (Optionnal) Drop the capture
 
@@ -107,7 +106,7 @@ This lab assumes you have completed:
       <copy>./07_drop_capture.sh</copy>
       ````
 
-    ![](./images/pa-006.png " ")
+   ![](./images/pa-006.png " ")
 
 You may proceed to the next lab.
 
@@ -118,7 +117,7 @@ You may proceed to the next lab.
 
     Running inside the Oracle Database kernel, privilege analysis helps reduce the attack surface of user, tooling, and application accounts by identifying used and unused privileges to implement the least-privilege model.
 
-    ![](./images/pa-concept.png " ")
+   ![](./images/pa-concept.png " ")
 
     Privilege analysis dynamically captures privileges used by database users and applications. The use of privilege analysis can help to quickly and efficiently enforce least privilege guidelines. In the least-privilege model, users are only given the privileges and access they need to do their jobs. Frequently, even though users perform different tasks, users are all granted the same set of powerful privileges. Without privilege analysis, figuring out the privileges that each user must have can be hard work and in many cases, users could end up with some common set of privileges even though they have different tasks. Even in organizations that manage privileges, users tend to accumulate privileges over time and rarely lose any privileges. Separation of duty breaks a single process into separate tasks for different users. Least privileges enforces the separation so users can only do their required tasks. The enforcement of separation of duty is beneficial for internal control, but it also reduces the risk from malicious users who steal privileged credentials.
 
@@ -127,16 +126,20 @@ You may proceed to the next lab.
     You can create different types of privilege analysis policies to achieve specific goals:
 
     - **Role-based privilege use capture**
-    You must provide a list of roles. If the roles in the list are enabled in the database session, then the used privileges for the session will be captured. You can capture privilege use for the following types of roles: Oracle default roles, user-created roles, Code Based Access Control (CBAC) roles, and secure application roles.
+
+          You must provide a list of roles. If the roles in the list are enabled in the database session, then the used privileges for the session will be captured. You can capture privilege use for the following types of roles: Oracle default roles, user-created roles, Code Based Access Control (CBAC) roles, and secure application roles.
 
     - **Context-based privilege use capture**
-    You must specify a Boolean expression only with the SYS_CONTEXT function. The used privileges will be captured if the condition evaluates to TRUE. This method can be used to capture privileges and roles used by a database user by specifying the user in SYS_CONTEXT.
+
+          You must specify a Boolean expression only with the `SYS_CONTEXT` function. The used privileges will be captured if the condition evaluates to `TRUE`. This method can be used to capture privileges and roles used by a database user by specifying the user in `SYS_CONTEXT`.
 
     - **Role- and context-based privilege use capture**
-    You must provide both a list of roles that are enabled and a SYS_CONTEXT Boolean expression for the condition. When any of these roles is enabled in a session and the given context condition is satisfied, then privilege analysis starts capturing the privilege use.
+
+          You must provide both a list of roles that are enabled and a `SYS_CONTEXT` Boolean expression for the condition. When any of these roles is enabled in a session and the given context condition is satisfied, then privilege analysis starts capturing the privilege use.
 
     - **Database-wide privilege capture**
-    If you do not specify any type in your privilege analysis policy, then the used privileges in the database will be captured, except those for the user SYS. (This is also referred to as unconditional analysis, because it is turned on without any conditions.)
+
+          If you do not specify any type in your privilege analysis policy, then the used privileges in the database will be captured, except those for the user `SYS`. (This is also referred to as unconditional analysis, because it is turned on without any conditions.)
 
 - **Benefits of using Privilege Analysis**
     - Finding unnecessarily granted privileges
@@ -152,7 +155,7 @@ Technical Documentation:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 19th October 2020
+- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

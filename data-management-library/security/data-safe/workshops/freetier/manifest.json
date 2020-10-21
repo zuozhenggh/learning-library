@@ -1,10 +1,11 @@
 {
-  "workshoptitle": "Oracle Data Safe Workshop",
+  "workshoptitle": "Oracle Data Safe",
     "tutorials": [
       {
           "title": "Prerequisites",
-          "description": "Prerequisites to run the Oracle Data Safe workshop in the free tier.",
-          "filename": "./prerequisites.md"        },
+          "description": "Prerequisites to run the Oracle Data Safe workshop in your own tenancy.",
+          "filename": "./prerequisites.md"
+        },
           {
             "title": "Introduction",
             "description": "This lab provides information about the Oracle Data Safe workshop.",
