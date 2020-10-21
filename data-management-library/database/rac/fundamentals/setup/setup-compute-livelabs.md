@@ -9,11 +9,14 @@ Estimated Lab Time:  5 minutes
 For more information about Terraform and Resource Manager, please see the appendix below.
 
 ### Objectives
--   Connect to the RAC database
+-   Idenfity DB Instance Public IP Addresses
+-   Connect to the each RAC instance:  Node 1 and Node 2
 
 ### Prerequisites
-- An Oracle LiveLabs Cloud account
-- Lab: Generate SSH Keys 
+- An assigned Oracle LiveLabs Cloud account
+- An assigned compartment
+- An assigned Database Cluster Password
+- Lab: Download SSH Keys 
 
 ## **STEP 1**: Login to Oracle Cloud
 
