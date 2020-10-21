@@ -12,12 +12,14 @@ Topology defines the infrastructure layout that will be created on Oracle Cloud 
 Users can select a template, override topologies, change any attributes, if needed, and provision PeopleSoft environments on demand. Users are allowed to perform actions on a running environment, such as stop, view details, create new template from it, and so on.
 
 ### Objectives
-Creating a topology for a template to automatically provision a PeopleSoft environment. You will give it a name, description, OS, shape type, and environment type.
+In this lab you will:
+* Create a topolgy for a template to automatically provision a PeopleSoft environment
+* Give it required attributes including name, description, OS, shape type, and environment type
 
 ### Prerequisites
 - Access to the Cloud Manager console.
 
-## **STEP 1**: Define topology
+## **STEP 1**: Defining a Topology
 
 1.	Navigate to **Dashboard** > **Topology** > **PUM Fulltier** topology. This topology will be used to create a new environment. 
 

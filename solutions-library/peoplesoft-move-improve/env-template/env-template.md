@@ -19,7 +19,7 @@ In this lab, you will:
 
 2. A downloaded PeopleSoft Image
 
-## **STEP 1**: Creating a new environment template
+## **STEP 1**: Creating a New Environment Template
 
 1. 	Navigate to Dashboard -> Environment Template.  
   Click Add New Template button. Provide below details and click Next. 
@@ -28,9 +28,9 @@ In this lab, you will:
   ---- | -----
   Name | MYPUM
   Description	| Test a PUM image
-  Peoplesoft Image | Don't type anything. Click on Search icon and select the downloaded DPK.  For example, in our case it is PEOPLESOFT HCM UPDATE IMAGE 9.2.030 - NATIVE OS
+  Peoplesoft Image | Don't type anything. Click on search icon and select the downloaded DPK.  For example, in our case it is PEOPLESOFT HCM UPDATE IMAGE 9.2.030 - NATIVE OS
 
-  NOTE: Don't type PEOPLESOFT HCM UPDATE IMAGE 9.2.030 in the Peoplesoft Image field. If the DPKs are downloaded, you will be able to see it in the Search Results as shown in 2nd screenshot below. If you can't see it yet, please wait and refresh after a while.
+  *NOTE:* Don't type PEOPLESOFT HCM UPDATE IMAGE 9.2.030 in the Peoplesoft Image field. If the DPKs are downloaded, you will be able to see it in the Search Results as shown in 2nd screenshot below. If you can't see it yet, please wait and refresh after a while.
 
   ![](./images/s2.png "")
 

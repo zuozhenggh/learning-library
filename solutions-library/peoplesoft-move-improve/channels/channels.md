@@ -1,17 +1,18 @@
 # Subscribing to PeopleSoft Download Channels
 
 ## Introduction
-Cloud Manager is delivered with channels for PeopleSoft applications, which are available after you complete the installation and configuration. An administrator can subscribe to multiple channels and download all necessary PIs (PeopleSoft Update Images) and PRPs (PeopleSoft Release Patchset) that his organization needs.
+Cloud Manager is delivered with channels for PeopleSoft applications, which are available after you complete the installation and configuration. An administrator can subscribe to multiple channels and download all necessary PIs (PeopleSoft Update Images) and PRPs (PeopleSoft Release Patchset) that the organization needs.
 
 **Estimated Lab Time** : Depends upon download speed and number of subscribed channels.  Around 60 mins for this example.
 
 ### Objectives
-You will be subscribing to the download channels of your choosing for the latest PeopleSoft application updates.
+In this lab you will:
+* subscribe to the download channels of your choosing for the latest PeopleSoft application updates
 
 ### Prerequisites
-- Access to the Cloud manager Dashboard
+- Access to the Cloud Manager Dashboard
 
-## **STEP 1**: Subscribing to a channel
+## **STEP 1**: Subscribing to a Channel
 
 1.	Navigate to **Cloud Manager Dashboard** > **Repository** > **Download Subscriptions**.
 
@@ -23,7 +24,7 @@ You will be subscribing to the download channels of your choosing for the latest
 
     ![](./images/1.png "")
 
-4. Go to subscribed tab and you can now see **HCM\_92\_Linux** progress status. This takes 1+ hour to complete. Make sure you refresh the page to check the current progress. Proceed to next Lab only when you see a green check as the status as shown in the picture.
+4. Go to the subscribed tab to view **HCM\_92\_Linux** progress status. *This takes 1+ hour to complete.* Make sure you refresh the page to check the current progress. Proceed to next Lab only when you see a green check as the status as shown in the picture.
 
     ![](./images/s.png "")
 

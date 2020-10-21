@@ -71,7 +71,10 @@ Enter the default password you noted from the instance details page.
 
 3. Click Yes on the security message, which mentions that the identity of the remote computer cannot be verified.
 
-4. Change the password to **Psft@12345678**. 
+4. Change the password to: 
+  ```
+  <copy>Psft@12345678</copy>
+  ```
 
 You may proceed to the next lab.
 

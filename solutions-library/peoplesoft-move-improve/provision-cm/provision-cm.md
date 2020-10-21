@@ -1,4 +1,4 @@
-# Lab 3: Provisioning Cloud Manager from Resource Manager 
+# Lab 2: Provisioning Cloud Manager from Resource Manager 
 
 ## Introduction
 Resource Manager is an Oracle Cloud Infrastructure service that helps you install, configure, and manage resources. Resource Manager uses Terraform (which is part of the service) to codify your infrastructure in declarative configuration files, which allows you to review and edit, version, persist, reuse, and share them across teams. You can then use Resource Manager to provision Oracle Cloud Infrastructure resources using your Terraform configurations.
@@ -34,7 +34,7 @@ You can also use these pre-built keys for the demo purpose: [TestDrivekeys.zip](
 
 3. Launch Terminal for Mac or Git Bash for Windows command line and navigate to the folder where the file was downloaded.
 
-  If the file was downloaded in the Downloads folder, you can type the following command (If your file was downloaded in a different folder, replace downloads with the name of the folder it was downloaded into.):
+    If the file was downloaded in the Downloads folder, you can type the following command (If your file was downloaded in a different folder, replace downloads with the name of the folder it was downloaded into.):
 
     ```
     <copy>
@@ -50,7 +50,7 @@ You can also use these pre-built keys for the demo purpose: [TestDrivekeys.zip](
     </copy>
     ```
 
-6. For Windows, run the script:
+5. For Windows, run the script:
 
     ```
     <copy>
@@ -68,7 +68,7 @@ You can also use these pre-built keys for the demo purpose: [TestDrivekeys.zip](
 
     ![](./images/4.png "")
 
-7. The command will generate the following sets of key files:
+6. The command will generate the following sets of key files:
 
 	**I.	API Signing keys**: ``api_key`` and ``api_key.pub``
 
@@ -86,10 +86,10 @@ You can also use these pre-built keys for the demo purpose: [TestDrivekeys.zip](
 
     ![](./images/apikeys.png "")  
 
-    - Copy all the content from the text editor and keep it in your clipboard to paste it in the OCI console.
+    - Copy ALL the content from the text editor (including the beginning and ending "---") and keep it in your clipboard to paste it in the OCI console.
 
 2. In a browser, launch the OCI console. Login as **User01**. After you are successfully logged in, click on the **profile button on top right**. Click on your user name - **User01**.
-   (Refer to Lab 200 for details on how to login as User01.)
+   (Refer to Lab 1 for details on how to login as User01.)
 
     ![](./images/api.png "")
 
@@ -162,7 +162,7 @@ Below table summarizes the inputs in Configure Variables page.
 
     ![](./images/values1.png "")
 
-8. For **Tenancy Home Region**, Select the home region for your tenancy from the drop-down list. (You have noted this down in your notepad in Part 3)
+8. For **Tenancy Home Region**, Select the home region for your tenancy from the drop-down list. (You have noted this down in your notepad in Step 3)
 
 9. Enter following value:
 
@@ -234,10 +234,10 @@ This name will be used as part of the URL you use to access Cloud Manager in a b
 
     ![](./images/output.png "")
 
-    NOTE: If you don't have admin access in your laptop, before proceeding with Steo 6, please follow the 
-    **Windows Compute Instance** lab (This is after Additional Labs, after lab 8).
+    NOTE: If you don't have admin access in your laptop, before proceeding with Step 6, please follow the 
+    **Windows VM Compute Lab:** (This is after Additional Labs, after Lab 7).
 
-    ![](./images/lab.png "")
+    ![](./images/wlab.png "")
 
 ## **STEP 6**: Set up hosts file in your local machine
 
@@ -290,7 +290,7 @@ SSH key pair required to access Cloud Manager instance was created in Part 1 of 
 
     ![](./images/16.png "")
 
-3.	Navigate to the folder where you have created the keys. SSH into the Cloud Manager instance using the below command. 
+3.	Navigate to the folder where you have created the keys. SSH into the Cloud Manager instance using the below command. Be sure to replace the CM_public_ip address
 
     ```
     <copy>
@@ -325,13 +325,21 @@ SSH key pair required to access Cloud Manager instance was created in Part 1 of 
 
     NOTE: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Till the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
 
-    Here is a video that navigates you through the workshop until Lab 6. [Video](https://objectstorage.us-ashburn-1.oraclecloud.com/p/m9ftrl_8RSOMrmOdBU-40MvIIZHbVABb6kOgYs54dIyHACgdyvZWaxw4B35y1oN6/n/orasenatdpltoci03/b/TestDrive/o/LabOverview.mp4)
+    <!-- Here is a video that navigates you through the workshop until Lab 6. [Video](https://objectstorage.us-ashburn-1.oraclecloud.com/p/m9ftrl_8RSOMrmOdBU-40MvIIZHbVABb6kOgYs54dIyHACgdyvZWaxw4B35y1oN6/n/orasenatdpltoci03/b/TestDrive/o/LabOverview.mp4) -->
 
 ## **STEP 9**: Access Cloud Manager
 
 1. Launch a browser in your local machine to access your **Cloud Manager PIA URL** (``CM_http_url``) 
 
 2. To login, use the username **CLADM** and password as **Psft1234**.
+    ```
+    <copy>CLADM</copy>
+    ```
+    ```
+    <copy>Psft1234</copy>
+
+    ```
+    
 
 You may now proceed to the next lab.
 
@@ -342,8 +350,7 @@ You may now proceed to the next lab.
 - Megha Gajbhiye, Cloud Solutions Engineer, October 2020  
 
 **Last Updated By/Date**    
-- Sara Lipowsky, Cloud Solutions Engineer, October 2020
-- William Masdon, Cloud Solutions Engineer, October 2020  
+- Sara Lipowsky, Cloud Engineer, October 2020
 
 ## See an issue?
 

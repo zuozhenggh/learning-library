@@ -26,14 +26,14 @@ In this lab, you will:
 2. 	To sign in to the Console, you need the following: 
 
     1. Tenant, User name and Password
-    2. URL for the Console: https://oracle.com
+    2. URL for the Console: [https://oracle.com] (https://oracle.com)
     3. Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
 
 ## **STEP 1**: Signing in to the Console
 **Console Overview**  
 In this section, sign in to the Oracle Cloud Infrastructure console using your credentials.
 
-1.	Open a supported browser and go to the Console URL: https://oracle.com.
+1.	Open a supported browser and go to the Console URL: [https://oracle.com] (https://oracle.com).
 
 2.	Click on the portrait icon in the top-right section of the browser window, then click on the Sign in to Cloud link.
 
@@ -96,16 +96,14 @@ A compartment is a collection of cloud assets, like compute instances, load bala
     <copy>This is our main compartment for test drive</copy>
     ``` 
 
-  Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment button** when ready.
+    Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment button** when ready.
 
     ![](./images/compartment.png " ")
 
 3.	You have just created a compartment for all of your work in this Test Drive.
 
 ## **STEP 4:** Managing Users, Groups, and Policies to Control Access
-**Security Overview:** 
-
-A user's permissions to access services come from the groups to which they belong. Policies define the permissions for a group Policies explain what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups.
+**Security Overview:** A user's permissions to access services come from the groups to which they belong. Policies define the permissions for a group Policies explain what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups.
 
 We'll create a user, a group, and a security policy to understand the concept.
 
@@ -133,10 +131,10 @@ We'll create a user, a group, and a security policy to understand the concept.
 
 4.	Your new group is displayed.
 
-   ![](./images/newgroup.png "")
+    ![](./images/newgroup.png "")
    
 
-5.	Now, let’s create a security policy that gives your group permissions in your assigned Compartment. In this case, we will create a policy that permits users belonging to group **oci-group to provision Peoplesoft Cloud Manager in Compartment Demo**:
+5.	Now, let’s create a security policy that gives your group permissions in your assigned Compartment. In this case, we will create a policy that permits users belonging to group **'oci-group" to provision Peoplesoft Cloud Manager in Compartment 'Demo'**:
 
     a) Click on the three-line Menu button on the top left. Click on **Identity -> Policies**.
     
@@ -148,10 +146,8 @@ We'll create a user, a group, and a security policy to understand the concept.
 
     c) After you have selected the root compartment, click **Create Policy**.
 
-    d) Give the Group a name and description
-    
-    Copy the fields below
-    
+    d) Give the Group a name and description. Copy the fields below
+        
     Name:
     ```
     <copy>Policy-for-oci-group</copy>
@@ -163,11 +159,11 @@ We'll create a user, a group, and a security policy to understand the concept.
 
     e) Enter the following Statements:
     
-      ```
-        <copy>Allow group oci-group to manage all-resources in compartment Demo
-        Allow group oci-group to read all-resources in tenancy
-        Allow group oci-group to manage App-catalog-listing in tenancy</copy>
-      ```  
+    ```
+    <copy>Allow group oci-group to manage all-resources in compartment Demo
+    Allow group oci-group to read all-resources in tenancy
+    Allow group oci-group to manage App-catalog-listing in tenancy</copy>
+    ```  
 
     ![](./images/policy.png "")    
 
@@ -184,11 +180,8 @@ We'll create a user, a group, and a security policy to understand the concept.
 
     ![](./images/UserTypeIAM.png "")    
 
-    d) In the New User dialog box, enter the following:
-
-    Give the Group a name and description
-    Copy the fields below
-    
+    d) In the New User dialog box, enter the following. Copy the fields below to give the user a name and description:
+        
     Name:
     ```
     <copy>User01</copy>
@@ -244,7 +237,9 @@ We'll create a user, a group, and a security policy to understand the concept.
     ```
 
     i) Set the new password to **Psft@1234**. Click on **Save New Password**. 
-
+    ```
+    <copy>Psft@1234</copy>
+    ```
     ![](./images/17.png "")
 
 
@@ -252,12 +247,7 @@ We'll create a user, a group, and a security policy to understand the concept.
 
 You may now proceed to the next lab.
 
-<!--## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com) -->
 ## Acknowledgements
 * **Authors** 
 - Rich Konopka, PeopleSoft Specialist, October 2020
