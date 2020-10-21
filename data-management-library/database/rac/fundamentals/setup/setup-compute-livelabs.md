@@ -1,211 +1,30 @@
 # Build a DB System
 
 ## Introduction
-This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a DB System running a 2-node RAC database in a clustered environment a Virtual Cloud Network (VCN).
+This lab will show you how to connect to your DB System.  
 
-Estimated Lab Setup Time:  20 minutes (Execution Time - 2 hours)
+Estimated Lab Time:  5 minutes 
 
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
 
 ### Objectives
--   Create DB System + Networking Resource Manager Stack
 -   Connect to the RAC database
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
+- An Oracle LiveLabs Cloud account
 - Lab: Generate SSH Keys 
 
-## **STEP 1A**: Create Stack:  Compute + Networking
+## **STEP 1**: Login to Oracle Cloud
 
-If you already have a VCN setup, proceed to *Step 1B*.
+1.  Login to Oracle Cloud
+2.  Open up the hamburger menu in the left hand corner.  
 
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-- [dbsystemrac.zip](https://objectstorage.uk-london-1.oraclecloud.com/p/Wg4n8mJxd9bwfANNP1cHyTT95-6R201K0Z2VwDRFKcURy0H9mQhIrjIf8UM5rljE/n/lrojildid9yx/b/labtest_bucket/o/dbsystemrac.zip)
-
-2.  Save in your downloads folder.
-3.  Login to Oracle Cloud
-4.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
-
-  ![](./images/em-oci-landing.png " ")
-
-  ![](./images/em-nav-to-orm.png " ")
-
-  ![](./images/em-create-stack.png " ")
-
-4.  Select **My Configuration**, click the **Browse** link and select the zip file (db\_system\_rac.zip) that you downloaded. Click **Select**.
-
-  ![](./images/em-create-stack-1.png " ")
-
-5. Enter the following information:
-
-      - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
-      - **Description**:  Same as above
-      - **Create in compartment**:  Select the correct compartment if not already selected
-
-     *Note: If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
-
-6.  Click **Next**.
-
-  ![](./images/em-create-stack-2x.png " ")
-
-7. Enter or select the following:
-    - **Compartment:** Accept the default you entered initially
-    - **Select Availability Domain:** Select an availability domain from the dropdown list.
-    - **SSH Public Key**:  Paste the public key you created in the earlier lab
-    - **DB System Node Shape**: Choose VMStandardE2.4, VMStandard2.4, or VMStandard2.2 (Note that choosing VMStandard2.2 may take some time to create the system)
-    - **DB edition**: Enterprise Edition Extreme Performance is required for a RAC database
-    - **Database Admin Password**: Database Admin Password must contain two UPPER-case characters, and two special characters (\_, \#) and be 12-30 characters in length (remember this value)
-    - **Oracle Database Version**: Choose 19.7.0.0
-
-
-    *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
-8. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
-    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Leave unchecked (unless you plan on using a Flex shape)
-    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
-  ![](./images/standardshape.png " ")
-9. If you choose to use flex shapes, follow the instructions below.  Otherwise skip to the next step.
-    - **Instance OCPUS:** Accept the default (**4**) This will provision the ***VM.Standard.E3.Flex*** shape with 4 OCPUs and 64GB of memory.
-
-10. For this section we will provision a new VCN with all the appropriate ingress and egress rules needed to run this workshop.  If you already have a VCN, make sure it has all of the correct ingress and egress rules and skip to the next section.
-     - **Use Existing VCN?:** Accept the default by leaving this unchecked. This will create a **new VCN**.
-
-9. Click **Next**.
-
-10. Review and click **Create**.
-
-  ![](./images/em-create-stack-3.png " ")
-
-7. Your stack has now been created!  
-
-  ![](./images/em-stack-details.png " ")
-
-You may now proceed to [Step 2](#STEP2:TerraformPlan(OPTIONAL)) (skip Step 1B).
-
-## **STEP 1B**: Create Stack:  Compute only
-If you just completed Step 1A, please proceed to [Step 2](#STEP2:TerraformPlan(OPTIONAL)).  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
-- Egress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
-
-If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  *Note:  We recommend using our stack for ease of deployment and to reduce the potential for error.*
-
-1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-     - [db_system_rac.zip](https://objectstorage.uk-london-1.oraclecloud.com/p/pPV7w50bgS2qV-lLA7KQFEN4PN_ulXyrrYz1HbixQZw/n/lrojildid9yx/b/labtest_bucket/o/db_system_rac.zip)
-
-2. Save in your downloads folder.
-3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Choose **Resource Manager > Stacks**.  
-
-  ![](./images/em-oci-landing.png " ")
-
-  ![](./images/em-nav-to-orm.png " ")
-
-  ![](./images/em-create-stack.png " ")
-
-4. Select **My Configuration**, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
-
-  ![](./images/em-create-stack-1.png " ")
-
-  Enter the following information:
-    - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
-    - **Description**:  Same as above
-    - **Create in compartment**:  Select the correct compartment if not already selected
-
-  *Note: If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
-
-5. Click **Next**.
-
-  ![](./images/em-create-stack-2x.png " ")
-
-    Enter or select the following:
-    - **Compartment:** Accept the default you entered initially
-    - **Select Availability Domain:** Select an availability domain from the dropdown list.
-    - **SSH Public Key**:  Paste the public key you created in the earlier lab
-    - **DB System Node Shape**: Choose VMStandard2.4 or VMStandard2.2 (Note that choosing VMStandard2.2 may take some time to create the system)
-    - **DB edition**: Enterprise Edition Extreme Performance is required for a RAC database
-    - **Database Admin Password**: Database Admin Password must contain two UPPER-case characters, and two special characters (\_, \#) and be 12-30 characters in length. For this workshop, we recommend setting your password to *W3lc0m3#W3lc0m3#*.  However you may choose the password of your preference (write the password down, you will need it for most labs.)
-    - **Oracle Database Version**: Choose 19.7.0.0
-
-    *Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
-
-     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default by leaving checked to use ***VM.Standard.E3.Flex*** shape. If you prefer shapes of fixed OCPUs types, then check to select and use the default shown (***VM.Standard2.4***) or select the desired shape from the dropdown menu.
-     - **Instance OCPUS:** Keep the default to **4** to provision ***VM.Standard.E3.Flex*** shape with 4 OCPU's.
-
-     *Note: Instance OCPUS only applies to Flex Shapes and won't be displayed if you elect to use shapes of fixed OCPUs types*
-
-     - **Use Existing VCN?:** Check to select.
-
-     ![](./images/em-create-stack-2c.png " ")
-
-     - **Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
-
-     ![](./images/em-create-stack-2d.png " ")
-
-     - **Select Public Subnet:** Select existing public subnet from above VCN.
-
-     *Note: For an existing VCN Option to be used successful, review the details at the bottom of this section*
-
-6. Review and click **Create**.
-
-  ![](./images/em-create-stack-3b.png " ")
-
-7. Your stack has now been created!  
-
-  ![](./images/em-stack-details-b.png " ")
-
-## **STEP 2**: Terraform Plan (OPTIONAL)
-This is optional, you may skip directly to [Step 3](#STEP3:TerraformApply).
-
-When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. 
-
-1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
-
-  ![](./images/em-stack-plan-1.png " ")
-
-  ![](./images/em-stack-plan-2.png " ")
-
-  ![](./images/em-stack-plan-results-1.png " ")
-
-  ![](./images/em-stack-plan-results-2.png " ")
-
-  ![](./images/em-stack-plan-results-3.png " ")
-
-  ![](./images/em-stack-plan-results-4.png " ")
-
-## **STEP 3**: Terraform Apply
-When using Resource Manager to deploy an environment, execute a terraform **apply** to actually create the configuration.  Let's do that now.
-
-1.  At the top of your page, click on **Stack Details**.  click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and the compute instance.
-
-  ![](./images/em-stack-details-post-plan.png " ")
-
-  ![](./images/em-stack-apply-1.png " ")
-
-  ![](./images/em-stack-apply-2.png " ")
-
-2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 8 resources have been added (3 only if using an existing VCN).  *If you encounter any issues running the terraform stack, visit the Appendix: Troubleshooting Tips section below.*
-
-  ![](./images/em-stack-apply-results-0.png " ")
-
-  ![](./images/em-stack-apply-results-1.png " ")
-
-  ![](./images/em-stack-apply-results-2.png " ")
-
-  ![](./images/em-stack-apply-results-3.png " ")
-
-3.  Congratulations, your environment is created!  Click on the Application Information tab to get additional information about what you have just done.
-
-  ![](./images/app-info.png " ")
-
-4.  Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
-
-## **STEP 4**: Find your IP Addresses
-
-Before logging in, first note down your IP addresses.
-
-1.  From the hamburger menu, select Bare Metal, VM, Exadata in the Oracle Database category. 
+3.  From the hamburger menu, select Bare Metal, VM, Exadata in the Oracle Database category. 
 
   ![](./images/setup-compute-1.png " ")
 
-2.  Identify your database system and click it.  (Note:  Remember to choose the compartment that you were assigned if running on LiveLabs)
+2.  Identify your database system from your My Reservations page in LiveLabs and click it.  (Note:  Remember to choose the compartment that you were assigned if running on LiveLabs)
 
   ![](./images/setup-compute-2.png " ")
 
