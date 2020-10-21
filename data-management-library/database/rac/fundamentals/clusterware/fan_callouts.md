@@ -285,7 +285,7 @@ Download the FANWatcher utility
     </copy>
     ````   
 
-    ![](./images/clusterware-4.png " ")
+    ![](./images/fan-step4-num3.png " ")
 
 4. Create a database user in the PDB **pdb1** and a database service to connect to. The service should have 1 preferred instance and 1 available instance. In this example the service name is **testy** (choose a name you like), the instance names are as specified, the username is **test_user** and the password is **W3lcom3\#W3lcom3\#**
 
@@ -297,13 +297,18 @@ Download the FANWatcher utility
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/srvctl start service -d aTFdbVm_replacename -s testy
     </copy>
     ````
+
+    ![](./images/fan-step4-num5.png " ")
+    ![](./images/fan-step4-num5-1.png " ")
+
 6. Connect to sqlplus as **SYS**
    
-    ```
+    ````
     <copy>
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/sqlplus sys/W3lc0m3#W3lc0m3#@//racnode1/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     </copy>
-    ```    
+    ```` 
+    ![](./images/fan-step4-num6.png " ")
 
 7. Run the following commands to create a test user and grant them the appropriate privileges
    
@@ -312,9 +317,11 @@ Download the FANWatcher utility
     create user test_user identified by W3lcom3#W3lcom## default tablespace users temporary tablespace temp;
     alter user test_user quota unlimited on users;
     grant connect, resource, create session to test_user;
-    exit
+    exit;
     </copy>
-    ````    
+    ````
+    ![](./images/fan-step4-num7.png " ")
+
 8. Edit the **fanWatcher.bash** script by entering the folloiwing **vi** command
 
     ````
@@ -341,43 +348,45 @@ Download the FANWatcher utility
     ${JAVA_HOME}/jre/bin/java fanWatcher autoons
     # EOF
     ````
-Note that the service name will be domain qualified (use the operating system utility **lsnrctl service** to confirm the service name registered with the listener).
+    ![](./images/fan-step4-num9-1.png " ")
+    ![](./images/fan-step4-num9-2.png " ")
 
-1. Run the **fanWatcher.bash** script
+    Note that the service name will be domain qualified (use the operating system utility **lsnrctl service** to confirm the service name registered with the listener).
+
+10. Run the **fanWatcher.bash** script
 
     ````
     <copy>
     ./fanWatcher.bash
     </copy>
     ````
-When fanWatcher is run with the argument **autoons** it will use the credentials and url provided to connect to the database (wherever it is running) and use that connection to obtain the ONS configuration of the DB system it is connected to. A subscription, to receive FAN events, is created with the Grid Infrastructure ONS daemon.
+    ![](./images/fan-step4-num10.png " ")
+    ![](./images/fan-step4-num10-1.png " ")
+
+    When fanWatcher is run with the argument **autoons** it will use the credentials and url provided to connect to the database (wherever it is running) and use that connection to obtain the ONS configuration of the DB system it is connected to. A subscription, to receive FAN events, is created with the Grid Infrastructure ONS daemon.
 
     Connections to the ONS daemon on each node is established forming  redundant topology - with no knowledge of the cluster configuration required.
 
     ![](./images/clusterware-5.png " ")
 
-7. Perform an action on another node that will generate a FAN event. Kill a SMON background process.  For example, on node2 in my system executing the command below will show the SMON process ids for ASM and my database
-    ![](./images/clusterware-6.png " ")
-
+11. Perform an action on another node that will generate a FAN event. Kill a SMON background process.  For example, on node2 in my system executing the command below will show the SMON process ids for ASM and my database.
 
     ````
     <copy>
     ps -ef | grep smon
     </copy>
-    ````     
-8. Examine the process id. The process id in this example is 31138. Your process id will be a different number.
-   
     ````
-    oracle   31138     1  0 06:39 ?        00:00:00 ora_smon_aTFdbVm2
-    ````
-9.  Kill the process
+12. Examine the process id. The process id in this example is 31138. Your process id will be a different number.
+    ![](./images/fan-step4-num11.png " ")
 
-    ![](./images/clusterware-7.png " ")        
+13. Kill the process using the command below.  Replacing the ##### with the actual numbers of your smon process.
 
     ````
-    sudo kill -9 31138
-    ````   
-10. Look at the output from the fanWatcher utility
+    sudo kill -9 #####
+    ````
+    ![](./images/fan-step4-num13.png " ")
+
+14. Look at the output from the fanWatcher utility
 
     ![](./images/clusterware-8.png " ")
 
