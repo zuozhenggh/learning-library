@@ -412,21 +412,54 @@ appDeployments:
                 Target: nonjrf_cluster # <---
     ```
 
-  4. finally, edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to match the JDBC connection string of the database on OCI.
+4. Edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to the new database connection string.
 
     The new JDBC connection string should be:
-    
+
     ```
     <copy>
-    jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com
+    jdbc:oracle:thin:@wlsatpdb_low
     </copy>
     ```
 
-    Which is the connection string gathered earlier but making sure the **service** name is changed to `pdb`. (this is the name of the pdb where the `RIDERS.RIDERS` table resides, as needed by the **SimpleDB** application)
+    Note that in a real case scenario, you should use the service name best suited for your needs (ATP support `low`, `medium`, `high`, `tp` or `tpurgent`)
+
+5. Add the extra parameters required for connection using the wallet.
+
+    Note that we will need to download the wallet on each Weblogic server to a specific location (`/u01/data/domains/<PREFIX>_domain/config/atp`), so that it is automatically replicated when scaling the server.
+
+    Add the following values under `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->Properties`
+
+    ```yaml
+    <copy>
+    oracle.jdbc.fanEnabled:
+        Value: false
+    oracle.net.tns_admin:
+        Value: /u01/data/domains/nonjrf_domain/config/atp
+    oracle.net.tls_version:
+        Value: "1.2"
+    oracle.net.ssl_server_dn_match:
+        Value: true
+    javax.ssl.trustStore:
+        Value: /u01/data/domains/nonjrf_domain/config/atp/truststore.jks
+    javax.ssl.trustStoreType:
+        Value: JKS
+    javax.ssl.trustStorePassword:
+        Value: '@@PROP:TrustStore.PasswordEncrypted@@'
+    javax.ssl.keyStore:
+        Value: /u01/data/domains/nonjrf_domain/config/atp/keystore.jks
+    javax.ssl.keyStoreType:
+        Value: JKS
+    javax.ssl.keyStorePassword:
+        Value: '@@PROP:KeyStore.PasswordEncrypted@@'
+    </copy>
+    ```
+
 
     The resulting `source.yaml` file should be like:
 
     ```yaml
+    <copy>
     resources:
         JDBCSystemResource:
             JDBCConnection:
@@ -439,12 +472,32 @@ appDeployments:
                         GlobalTransactionsProtocol: TwoPhaseCommit
                         JNDIName: jdbc.JDBCConnectionDS
                     JDBCDriverParams:
-                        URL: 'jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com'
+                        URL: 'jdbc:oracle:thin:@wlsatpdb_low'
                         PasswordEncrypted: '@@PROP:JDBC.JDBCConnection.PasswordEncrypted@@'
                         DriverName: oracle.jdbc.xa.client.OracleXADataSource
                         Properties:
                             user:
                                 Value: riders
+                            oracle.jdbc.fanEnabled:
+                                Value: false
+                            oracle.net.tns_admin:
+                                Value: /u01/data/domains/nonjrf_domain/config/atp
+                            oracle.net.tls_version:
+                                Value: "1.2"
+                            oracle.net.ssl_server_dn_match:
+                                Value: true
+                            javax.ssl.trustStore:
+                                Value: /u01/data/domains/nonjrf_domain/config/atp/truststore.jks
+                            javax.ssl.trustStoreType:
+                                Value: JKS
+                            javax.ssl.trustStorePassword:
+                                Value: '@@PROP:TrustStore.PasswordEncrypted@@'
+                            javax.ssl.keyStore:
+                                Value: /u01/data/domains/nonjrf_domain/config/atp/keystore.jks
+                            javax.ssl.keyStoreType:
+                                Value: JKS
+                            javax.ssl.keyStorePassword:
+                                Value: '@@PROP:KeyStore.PasswordEncrypted@@'
     appDeployments:
         Application:
             SimpleDB:
@@ -457,6 +510,7 @@ appDeployments:
                 ModuleType: ear
                 StagingMode: stage
                 Target: nonjrf_cluster
+    </copy>
     ```
 
   **Important Note**: if when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers
@@ -483,19 +537,61 @@ appDeployments:
 
 1. Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`
 
-2. Enter the JDBC Connection password for the `RIDERS` user pdb: `Nge29v2rv#1YtSIS#`
+2. Enter the JDBC Connection password for the `RIDERS` user: `Nge29v2rv#1YtSIS#`
 
   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
+
+3. Add the 2 password properties for the `TrustStore` and the `KeyStore`. This is the password used when downloading the wallet.
 
   the resulting file should look like:
 
     ```yaml
+    <copy>
     JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
+    TrustStore.PasswordEncrypted=atpPasSword1
+    KeyStore.PasswordEncrypted=atpPasSword1
+    </copy>
     ```
 
-3. Save the file with `CTRL+x` and `y`
+4. Save the file with `CTRL+x` and `y`
 
-## **STEP 5:** Update the WebLogic domain on OCI
+## **STEP 5:** Download the wallet on each WebLogic server
+
+1. Gather the IP adresses of the WebLogic server:
+
+    Go to **Core Infrastructure -> Compute -> Instances**
+
+    View the list of WebLogic servers and gather the Public IPs
+
+2. Run the following command, to copy the wallet on each server
+
+    ```bash
+    <copy>
+    export TARGET_WLS_SERVER=<Public IP>
+    export ATP_OCID=<OCID of the ATP database>
+    export WALLET_PASSWORD=<password used in the previous step>
+    ssh opc@${TARGET_WLS_SERVER} "sudo su -c \"/opt/scripts/utils/download_atp_wallet.sh ${ATP_OCID} ${WALLET_PASSWORD} /u01/data/domains/servicename_domain/config/atp\"" - oracle
+    </copy>
+    ```
+
+    ```bash
+    <copy>
+    export TARGET_WLS_SERVER=<Public IP>
+    </copy>
+    ```
+    Then 
+    ```bash
+    <copy>
+    scp wallet.zip opc@${TARGET_WLS_SERVER}:~/
+    ssh opc@${TARGET_WLS_SERVER} "sudo chown oracle:oracle wallet.zip"
+    ssh opc@${TARGET_WLS_SERVER} "sudo unzip wallet.zip -d /u01/data/domains/nonjrf_domain/config/atp/"
+    </copy>
+    ```
+
+
+
+
+## **STEP 6:** Update the WebLogic domain on OCI
 
 The `update_domain.sh` script updates the target domain.
 
