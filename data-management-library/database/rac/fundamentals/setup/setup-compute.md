@@ -13,9 +13,8 @@ For more information about Terraform and Resource Manager, please see the append
 -   Connect to the RAC database
 
 ### Prerequisites
-This lab assumes you have the following:
-- An Oracle LiveLabs or Paid Cloud account
-- Completed Lab: Generate SSH Keys
+- An Oracle LiveLabs or Paid Oracle Cloud account
+- Lab: Generate SSH Keys 
 
 ## **STEP 1A**: Create Stack:  Compute + Networking
 
@@ -218,25 +217,27 @@ Before logging in, first note down your IP addresses.
 
   ![](./images/setup-compute-4.png " ")
 
-5. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps.
-- [Step 5: Oracle Cloud Shell](#STEP5:OracleCloudShell)
+5. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps.  We recommend you choose Oracle Cloud Shell for this series of workshops.
+- [Step 5: Oracle Cloud Shell (RECOMMENDED)](#STEP5:OracleCloudShell)
 - [Step 6: MAC or Windows CYGWIN Emulator](#STEP6:MACorWindowsCYGWINEmulator)
 - [Step 7: Putty](#STEP7:WindowsusingPutty)
 
 ## **STEP 5**: Oracle Cloud Shell
 
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
+1.  To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
 
-  ![](./images/em-cloudshell.png " ")
+    ![](../clusterware/images/start-cloudshell.png " ")
 
-2.  Using one of the Public IP addresses in Step 4, enter the command below to login to your instance.    
+2.  Using one of the Public IP addresses in Step 4, enter the command below to login as the *opc* user and verify connection to your nodes.    
+
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address>
     ````
     ![](./images/em-cloudshell-ssh.png " ")
 
 3.  When prompted, answer **yes** to continue connecting.
-4.  You may now *proceed to the next lab*.  
+4.  Repeat step 2 for your 2nd node.
+5.  You may now *proceed to the next lab*.  
 
 
 ## **STEP 6**: MAC or Windows CYGWIN Emulator
@@ -401,7 +402,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 * **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Troy Anthony, Product Manager, Database Product Management, August 20 2020
+* **Last Updated By/Date** - Kay Malcolm, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
