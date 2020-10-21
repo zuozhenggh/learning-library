@@ -42,7 +42,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-4.  Connect to node 1 (you identified the IP in an earlier lab). 
+4.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -52,7 +52,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 5. Repeat this step for node 2.
    
     ````
-    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 2 Public IP Address>>
     ps -ef | grep pmon
     ````
     ![](./clusterware/images/racnode2-login.png " ")    
@@ -108,7 +108,15 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 
     Note that this service is only active on one instance at a time, so both **local** listeners will not include an entry for this service. In the example shown here, the listener on racnode2 would **not** have an entry for **Service "svctest.tfexsubdbsys.tfexvcndbsys.oraclevcn.com"**
 
-    Any of the SCAN listeners will show where the service is offered. Note that SCAN Listeners run from the GI HOME so you have to change the ORACLE_HOME environment variable in order to view the information in the SCAN Listeners
+1. To check this, run the lsnrctl command on **node 2** as the *oracle* user
+
+    ````
+    sudo su - oracle
+    lsnrctl services
+    ````
+
+
+1. Any of the SCAN listeners will show where the service is offered. Note that SCAN Listeners run from the GI HOME so you have to change the ORACLE_HOME environment variable in order to view the information in the SCAN Listeners.  Run the lsnrctl command below on **node 2**.
 
     ````
     <copy>
@@ -117,7 +125,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     </copy>
     ````
 
-    which will show something similar to
+  which will show something similar to
 
     ````
     [oracle@racnode2 ~]$ export ORACLE_HOME=/u01/app/19.0.0.0/grid
@@ -175,10 +183,12 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
    The command completed successfully
     ````
 
+1. Repeat it on **node 1** as well.
+
 
 ## **STEP 2:** Service Failover
 
-1. Cause the service to fail over. After identifying which instance the service is being offered on, kill that instance by removing the SMON process at the operating system level
+1. Cause the service to fail over. After identifying which instance the service is being offered on, kill that instance by removing the SMON process at the operating system level.  Run this on **node 1**
 
     ````
     <copy>
@@ -193,10 +203,10 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     oracle   58569     1  0 Aug18 ?        00:00:13 ora_smon_aTFdbVm1
 
     ````
-2. In this example the process ID is 585689, which I can pass to the **kill -9 <process id>** command.  Identify your process id and issue the kill command
+2. In this example the process ID is 585689, which I can pass to the **kill -9 <process id>** command.  Identify your process id and issue the kill command as the *oracle* user
 
     ````
-    kill -9 ######
+    sudo kill -9 ######
     ````
 
     This will cause the instance to fail, any connections to the database on this instance would be lost. The CRS component of Grid Infrastructure would detect the instance failure, and immediately start the service on an **available** instance (based on the service definition). CRS would then restart the database instance.
@@ -216,34 +226,38 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     [oracle@racnode1 ~]$ srvctl status service -d aTFdbVm_mel1nk -s svctest
     Service svctest is running on instance(s) aTFdbVm2
     ````    
-2. Manually relocate the service. Open a connection (with SQL*Plus) to the instance where the service is running. Use the SCAN address and the domain qualified service name in the format:
+4. Manually relocate the service. Open a connection (with SQL*Plus) to the instance where the service is running. Use the SCAN address and the domain qualified service name in the format:
 
     ````
     **sqlplus user/password@//SCAN Address Name/service-name**
     ````
-
+1. Connect via sqlplus and replace the password with the password you chose for your cluster.
+   
     ````
      sqlplus sh/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/svctest.tfexsubdbsys.tfexvcndbsys.oraclevcn.com
     ````
 
-Using a different putty window (connected to either node) open a SQL*Plus connection as SYS to the PDB associated with this service
+2. Using a different cloud shell window (connected to either node) open a SQL*Plus connection as SYS to the PDB associated with this service
 
     ````
     sqlplus sys/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     ````
-and run the following SQL statement
+
+    and run the following SQL statement
 
     ````
     <copy>
     set wrap off
     col service_name format  a20
     select inst_id, service_name, count(*) from gv$session where service_name = 'svctest' group by inst_id, service_name;
+    exit
     </copy>
     ````
-This statement will show you the instance this service is running and the number of open connections on this service. For example:
+    This statement will show you the instance this service is running and the number of open connections on this service. 
+    
+    For example:
 
     ````
-
     SQL> set wrap off
     SQL> col service_name format  a20
     select inst_id, service_name, count(*) from gv$session where service_name = 'svctest' group by inst_id, service_name; SQL>
@@ -254,14 +268,14 @@ This statement will show you the instance this service is running and the number
 
     ````
 
-Relocate the service using srvctl
+1. Relocate the service using srvctl.  Execute the command on **node 2**
 
     ````
     <copy>
-     srvctl relocate service -d aTFdbVm_mel1nk -s svctest -oldinst aTFdbVm1 -newinst aTFdbVm2
+     srvctl relocate service -d aTFdbVm_mel1nk -s svctest -oldinst aTFdbVm2 -newinst aTFdbVm1
     </copy>
     ````
-which will move the service from one instance to another:
+    which will move the service from one instance to another:
 
     ````
     [oracle@racnode2 ~]$ srvctl status service -d aTFdbVm_mel1nk -s svctest
@@ -285,7 +299,7 @@ The relocate service command will not disconnect active sessions unless a force 
 ## **STEP 3:** Connection Load Balancing
 This exercise will demonstrate connection load balancing and why it is important to use the SCAN address and the VIPs as integral parts of your connection strategy
 
-1. Create a uniform service, named \"unisrv\", that is **available** on both instances of your RAC database.
+1. Create a uniform service, named *unisrv*, that is **available** on both instances of your RAC database.  Execute this on **node 1**
 
     ````
     <copy>
@@ -293,7 +307,7 @@ This exercise will demonstrate connection load balancing and why it is important
     srvctl start service -d aTFdbVm_mel1nk -s unisrv
     </copy>
     ````
-2. Look at the entry for this server in the **lsnrctl service LISTENER_SCAN2** output. Note that any of the SCAN listeners can be used here
+2. Look at the entry for this server in the **lsnrctl service LISTENER_SCAN2** output. Note that any of the SCAN listeners can be used here.  Run this on **node 2** as the *oracle* user
 
     ````
     <copy>
