@@ -10,7 +10,8 @@ Estimated Lab Time: 20 Minutes
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
-
+- Lab: Install Sample Schema
+- Lab: Services
 
 ### About Oracle Scheduler
 Oracle Scheduler is an enterprise job scheduler designed to help you simplify the scheduling of hundreds or even thousands of tasks. Oracle Scheduler (the Scheduler) is implemented by the procedures and functions in the DBMS_SCHEDULER PL/SQL package.
@@ -49,7 +50,7 @@ We will take a brief look at this property through two simple tests.
     ````
     ![](../clusterware/images/racnode1-login.png " ")
 
-4. Confirm which instance is offering the service **svctest**.  Execute the following on node 1.
+4. Confirm which instance is offering the service **svctest**.  Execute the following on **node 1**.
    
     ````
     <copy>

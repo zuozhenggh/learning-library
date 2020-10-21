@@ -9,6 +9,8 @@ Estimated Lab Time: 20 Minutes
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
+- Lab: Install Sample Schema
+- Lab: Services
 
 ## **STEP 1:**  Build Tom Kyte's RUNSTATS package
 
@@ -19,7 +21,7 @@ Estimated Lab Time: 20 Minutes
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -35,7 +37,7 @@ Estimated Lab Time: 20 Minutes
     </copy>
     ````
 
-5. Build the **runstats** package
+5. Build the **runstats** package by pasting this in your sql prompt
 
     ````
     <copy>
@@ -153,9 +155,9 @@ Estimated Lab Time: 20 Minutes
     ````
 ## **STEP 2:** Sequence Test
 
-1. Open a connection to the pluggable database PDB1 as SYS on each node. We are forcing connections to a given instance :
+1. Open a connection to the pluggable database PDB1 as SYS on each node. We are forcing connections to a given instance.
 
-2. Connect to node 1
+2. Connect to **node 1** as the *opc* user and switch to the *oracle* user
    
     ````
     <copy>
@@ -163,7 +165,7 @@ Estimated Lab Time: 20 Minutes
     sqlplus sys/W3lc0m3#W3lc0m3#@//racnode1:1521/unisrv.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     </copy>
     ````
-3. Connect to node 2.
+3. Connect to **node 2** as the *opc* user and switch to the *oracle* user
    
     ````
     <copy>
@@ -171,7 +173,7 @@ Estimated Lab Time: 20 Minutes
     sqlplus sys/W3lc0m3#W3lc0m3#@//racnode2:1521/unisrv.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
     </copy>
     ````
-4. Create the following SEQUENCES
+4. Create the following SEQUENCES on both **node 1** and **node 2**
    
     ````
     <copy>
@@ -185,7 +187,7 @@ Estimated Lab Time: 20 Minutes
     set serveroutput on;
     </copy>
     ````
-5. On node 1 run the following statements 2 or 3 times
+5. On **node 1** run the following statements 2 or 3 times
 
     ````
     <copy>

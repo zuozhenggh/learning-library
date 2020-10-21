@@ -9,7 +9,9 @@ Estimated Lab Time: 10 Minutes
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
-
+- Lab: Install Sample Schema
+- Lab: Services
+  
 ### About PL/SQL Packages
 With any PL/SQL operations on RAC you must be aware that the code could execute on any node where its service lives. This could also impact packages like DBMS\_PIPE, UTL\_MAIL, UTL\_HTTP (proxy server source IP rules for example), or even DBMS\_RLS (refreshing policies).
 
@@ -34,14 +36,14 @@ UTL\_FILE provides file access both on the client side and on the server side. W
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
     ````
     ![](../clusterware/images/racnode1-login.png " ")
 
-4. Connect to the pluggable database, **PDB1** as the SH user
+4. Connect to the pluggable database, **PDB1** as the *SH* user
 
     ````
     <copy>
@@ -68,6 +70,9 @@ UTL\_FILE provides file access both on the client side and on the server side. W
     ![](./images/sched-1.png " " )
 
 6. Exit SQL\*Plus
+   ````
+   exit
+   ````
 
 ## **STEP 2:** Reconnect to SQL\*Plus and read the file you just created
 

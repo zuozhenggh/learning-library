@@ -9,6 +9,8 @@ Estimated Lab Time: 20 Minutes
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
+- Lab: Install Sample Schema
+- Lab: Services
 
 ### About Parallel Execution
 Parallel execution enables the application of multiple CPU and I/O resources to the execution of a single SQL statement. Parallel execution is sometimes called parallelism. Parallelism is the idea of breaking down a task so that, instead of one process doing all of the work in a query, many processes do part of the work at the same time.
