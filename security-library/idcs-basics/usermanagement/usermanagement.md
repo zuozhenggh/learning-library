@@ -78,7 +78,7 @@ If you are an identity domain administrator or a user administrator, you can bat
     ![Image](images/L1008.png)
 
     ```
-        By uploading the sample file, sample users will be uploaded into IDCS. In order to upload different users, the csv sample file needs to be altered.
+    By uploading the sample file, sample users will be uploaded into IDCS. In order to upload different users, the csv sample file needs to be altered.
     ```
 
 
@@ -103,7 +103,7 @@ If you are an identity domain administrator or a user administrator, you can bat
 10.	Then, open another browser (if using Chrome, select Incognito Window) and login to your IDCS Admin Console as an administrator:
 
     ```
-       https://<your tenant>/ui/v1/adminconsole
+    https://<your tenant>/ui/v1/adminconsole
     ```
 
     ![Image](images/L1013.png)
@@ -121,16 +121,16 @@ This use case involves making API calls to IDCS using a REST client; in this cas
 
 The Postman collection of relevant REST API calls is provided to each participant.  
 
-    ```
-        This use case will demonstrate using a common utility, Postman, for connecting to Identity Cloud Service via the out-of-the-box REST API.
-    ```
+```
+This use case will demonstrate using a common utility, Postman, for connecting to Identity Cloud Service via the out-of-the-box REST API.
+```
 
-###Register a client POSTMAN application in IDCS
+### Register a client POSTMAN application in IDCS
 
 1. Login to your IDCS Admin Console as an administrator:
 
     ```
-       https://<your tenant>/ui/v1/adminconsole
+    https://<your tenant>/ui/v1/adminconsole
     ```
 
 2. Select the *Applications* tab from the IDCS dashboard presented after log in
@@ -189,7 +189,7 @@ The Postman collection of relevant REST API calls is provided to each participan
 
 
 
-###Configure Postman
+### Configure Postman
 
 1.	Open Postman. Ignore all startup messages if any.
 
@@ -238,15 +238,15 @@ The Postman collection of relevant REST API calls is provided to each participan
 11. Click on *Update* once completed.
 
 
-###Request an Access Token
+### Request an Access Token
 
-    ```
-    The steps performed above are being done to obtain the Access Token, which is shown in the following screen shot.
+```
+The steps performed above are being done to obtain the Access Token, which is shown in the following screen shot.
 
-    There are several types of OAUTH requests supported by IDCS, including client credentials.  With a client credentials request, the client ID and client secret are used by the calling application to identify itself and to request an Access Token.  The Access Token is available for use by the application until the time that it expires.
+There are several types of OAUTH requests supported by IDCS, including client credentials.  With a client credentials request, the client ID and client secret are used by the calling application to identify itself and to request an Access Token.  The Access Token is available for use by the application until the time that it expires.
 
-    This Access Token establishes trust between your application and IDCS.
-    ```
+This Access Token establishes trust between your application and IDCS.
+```
 
 1.	On the *Collections* tab, expand *OAuth*, and then *Tokens*.
 
@@ -261,7 +261,7 @@ The Postman collection of relevant REST API calls is provided to each participan
 
     ![Image](images/L1037.png)
 
-###Create an IDCS User via API
+### Create an IDCS User via API
 
 1.	On the *Collections* tab, expand *Users*, and then *Create*.
 
@@ -284,7 +284,7 @@ You can also *modify* and *delete* users and a lot more via REST API. For more i
 
 You may now proceed to the next lab
 
-##More information##
+## More information ##
 
 Tutorial 1: [Oracle Identity Cloud Service: First REST API Call](http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/idcs/idcs_rest_1stcall_obe/rest_1stcall.html)
 
