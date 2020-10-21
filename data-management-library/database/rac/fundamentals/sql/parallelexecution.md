@@ -37,7 +37,7 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to node 1 (you identified the IP in an earlier lab). 
+3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>

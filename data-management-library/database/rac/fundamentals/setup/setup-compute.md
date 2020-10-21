@@ -224,18 +224,20 @@ Before logging in, first note down your IP addresses.
 
 ## **STEP 5**: Oracle Cloud Shell
 
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
+1.  To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
 
-  ![](./images/em-cloudshell.png " ")
+    ![](../clusterware/images/start-cloudshell.png " ")
 
-2.  Using one of the Public IP addresses in Step 4, enter the command below to login to your instance.    
+2.  Using one of the Public IP addresses in Step 4, enter the command below to login as the *opc* user and verify connection to your nodes.    
+
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address>
     ````
     ![](./images/em-cloudshell-ssh.png " ")
 
 3.  When prompted, answer **yes** to continue connecting.
-4.  You may now *proceed to the next lab*.  
+4.  Repeat step 2 for your 2nd node.
+5.  You may now *proceed to the next lab*.  
 
 
 ## **STEP 6**: MAC or Windows CYGWIN Emulator
