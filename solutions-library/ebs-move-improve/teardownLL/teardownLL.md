@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, we will use the Oracle E-Business Suite Cloud Manager to destroy your Oracle E-Business Suite environments.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 5 minutes
 
 
 ### Objectives
