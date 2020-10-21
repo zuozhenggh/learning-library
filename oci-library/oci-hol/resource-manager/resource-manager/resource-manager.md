@@ -94,12 +94,12 @@ From the Stack Details page, we can completely manage the stack's configuration 
       - **Name:** HA LB App Plan
       - Click **Plan**
 
-       ![](./../resource-manager/images/image003.png " ")
-       ![](./../resource-manager/images/image004.png " ")
+    ![](./../resource-manager/images/image003.png " ")
+    ![](./../resource-manager/images/image004.png " ")
 
        **Note:** Once the modal closes, notice the job's state appears as "Accepted" - which indicates that the platform is spinning up resources needed for executing the command  - followed by "In Progress" and then either "Succeeded" or "Failed".
 
-       ![](./../resource-manager/images/image005.png " ")
+    ![](./../resource-manager/images/image005.png " ")
 
 2. Once the job succeeded, on the Job Details page review the information and scroll through the logs containing the Terraform output. You may also edit the job or download the Terraform Configuration and logs.
 
