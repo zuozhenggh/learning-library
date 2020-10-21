@@ -1,7 +1,7 @@
 # Setup Oracle Linux Compute Image
 
 ## Introduction
-This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running Oracle Linux using Oracle Resource Manager.  
+This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running Oracle Linux.
 
 Estimated Lab Time:  15 minutes
 
@@ -15,7 +15,7 @@ Resource Manager is an Oracle Cloud Infrastructure service that allows you to au
 ### Objectives
 In this lab, you will:
 * Setup a VCN (Virtual Compute Network) using Resource Manager
-* Setup a compute instance using Resource Manager
+* Setup a compute instance
 * Login to your compute instance
 
 ### Prerequisites
@@ -163,7 +163,9 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management
 - **Contributors** - Jaden McElvey, Anoosha Pilli, Sanjay Narvekar, David Start, Arabella Yao
-- **Last Updated By/Date** - Kay Malcolm, August 2020
+- **Last Updated By/Date** - Anoosha Pilli, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files. Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
