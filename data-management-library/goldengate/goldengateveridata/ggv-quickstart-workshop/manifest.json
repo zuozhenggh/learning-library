@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Creating Workshops and Labs",
     "tutorials": [
       {
           "title": "Introduction to Oracle GoldenGate Veridata",
@@ -11,12 +12,8 @@
             "description": "This lab walks you through the required and optional tasks to create multiple domains in Oracle GoldenGate Veridata",
             "filename": "./../ggv-create-multiple-domains/create-multiple-domains.md"
       }
-      ,
-      {
-            "title": "Lab 2: Install and Configure Oracle GoldenGate Veridata",
-            "description": "",
-            "filename": ""
-      }
+      
+
 
 
            ]
