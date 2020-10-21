@@ -3,7 +3,7 @@
     "tutorials": [
         {
             "title": "Workshop Introduction",
-            "filename": "README.md"
+            "filename": "./introduction/introduction.md"
         },
         {
             "title": "Sign Up for Free Trial",
