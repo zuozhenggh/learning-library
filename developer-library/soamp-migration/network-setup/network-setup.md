@@ -74,9 +74,11 @@ A **Public Subnet** with it's security lists **Default Security List for SOAMP1V
 
   <img src="./images/provision-vcn-7.png" width="100%">
 
-7. If you see any provisioning error, make sure to click **Re-provision**
+7. *If you see any provisioning error, make sure to click* **Retry Provision** *before continuing*
 
-8. When all is clear click **Close**
+    <img src="./images/retry-provision.png" width="70%">
+
+8. When all is clear click **View Virtual Network**
 
 ## **STEP 3:** Create the required Security Lists
 
@@ -106,11 +108,11 @@ In this section we will create a Security List for the SOA subnet to be able to 
 
   <img src="./images/db-seclist.png" width="70%">
 
-5. Add an ingress rules to open the 7001-7004 ports to the world CIDR (0.0.0.0/0).
+5. Add an ingress rules to open the 7001-7004 ports to the VCN CIDR (10.0.0.0/16).
 
   <img src="./images/wls-7001-seclist.png" width="70%">
 
-6. Add an ingress rules to open the 9071-9074 ports to the world CIDR (0.0.0.0/0).
+6. Add an ingress rules to open the 9071-9074 ports to the VCN CIDR (10.0.0.0/16).
 
   <img src="./images/wls-9071-seclist.png" width="70%">
 

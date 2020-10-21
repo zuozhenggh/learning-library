@@ -22,11 +22,11 @@ In this lab you will:
 
 2. Click **Create DB System**
 
-  <img src="./images/provision-db-11.png" width="100%">
+  ![](./images/provision-db-11.png)
 
 3. Make sure you are in the **SOAMPCompartment** and name your **Database System**
 
-  <img src="./images/provision-db-12.png" width="100%">
+  ![](/images/provision-db-12.png)
 
 4. Select an Availability Domain or keep the default, keep the default **Virtual Machine** and select a **Shape** that is available.
 
@@ -87,18 +87,15 @@ In this lab you will:
 
 17. Optionally you can select **Enable automatic backups** for the period of `60 days` and scheduling `Anytime` and 
 
-  <img src="./images/provision-db-21.png" width="100%">
+  ![](./images/provision-db-21.png)
 
 18. Click **Create DB System**
 
   This will usually take up to 40 minutes to provision.
 
-  <img src="./images/provision-db-22.png" width="100%">
+  ![](./images/provision-db-22.png)
 
-
-
-
-## **STEP 3:** Check the status of the database provisioning
+## **STEP 2:** Check the status of the database provisioning
 
 Before you can proceed to the next lab, you need to check that the DB has been fully provisioned
 

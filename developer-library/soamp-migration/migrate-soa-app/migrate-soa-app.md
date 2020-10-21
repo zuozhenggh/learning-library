@@ -97,7 +97,7 @@ For testing, we'll place a test XML file in the `/tmp/soa/out` folder, wait 5 to
 
     ```
     cd /tmp/soa/out
-    cp /u01/training/OrderSample.OSB.xml ./
+    cp /u01/training/OrderSampleOSB.xml ./
     ```
 
 3. Check the file is in the `/tmp/soa/out` folder
@@ -237,7 +237,6 @@ In order to achieve this, you need to:
 
 22. Let the 12.2.1.3 code migrate to Jdev 12.2.1.4 
 
-    <img src="./images/21-jdev1224-9.png" width="100%">
 
 We can now deploy the upgraded project as a SAR file
 
@@ -325,7 +324,7 @@ in the on-premises environment at [https://localhost:7002/em](https://localhost:
     - if you used the local VirtualBox VM, it would be in:
         `JDEVELOPER_FOLDER\mywork\IWSApplication\IWSProj3\deploy` 
         
-    - If you used the marketplace environment, it is under `/u02/oracle/developer/mywork/IWSApplication/IWSProj3/`
+    - If you used the marketplace environment, it is under `/u02/oracle/developer/mywork/IWSApplication/IWSProj3/deploy`
 
     <img src="./images/filepath.png" width="70%">
 

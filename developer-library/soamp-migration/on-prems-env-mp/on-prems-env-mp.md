@@ -94,7 +94,7 @@ Connect to the instance using your RDP Client (examples are using Microsoft Remo
 
     <img src="./images/soa-desktop.png"  width="100%">
 
-2. Run the `Start soa_domain Admin Server` script
+2. Double click on the `Start soa_domain Admin Server` script to start the domain Admin Server
 
     <img src="./images/soa-admin.png"  width="100%">
 
@@ -104,7 +104,7 @@ Connect to the instance using your RDP Client (examples are using Microsoft Remo
 
     <img src="./images/soa-admin-running.png"  width="100%">
 
-4. Run the `Start soa_domain SOA Server` script
+4. Double click on the `Start soa_domain SOA Server` script to start the SOA server
 
     <img src="./images/soa-soa.png"  width="100%">
 
