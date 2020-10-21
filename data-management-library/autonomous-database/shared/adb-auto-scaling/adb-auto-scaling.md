@@ -333,10 +333,10 @@ TEST_NO CPU_COUNT SESSIONS QUERIES_FINISHED TEST_DURATION_IN_SECONDS AVG_QUERY_T
       2         6        3                6                    210.2             97         2.699
 ````
 
-- After enabling auto scaling, CPU_COUNT jumps from 2 to 6, a factor of 3x.
 - The duration of the procedure that ran queries concurrently in 3 worksheet sessions dropped from 581 to 210 seconds.
 - The average query time dropped from 275 to 97 seconds.
-- The MAX\_CPU\_USAGE increased from 1 CPU to 2.7 CPUs.
+- The ``MAX\_CPU\_USAGE`` increased from 1 CPU to 2.7 CPUs.
+- After enabling auto scaling, the number of OCPUs available to the database jumps by 3x (in our example, from 1 OCPU to 3 OCPU). The value ``CPU\_COUNT`` displays 2x the number of OCPUs available, as each OCPU has 2 CPU threads, thus displaying values from 2 to 6.
 - The auto scaling allowed all 3 sessions to use 3x the amount of CPU, reducing query times significantly, by nearly 3x.
 - This information comes from the ``gv$con_sysmetric_history`` view.
 
