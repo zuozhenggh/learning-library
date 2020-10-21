@@ -45,7 +45,7 @@ Note in the output that there are two files, a private key: <<ssh-keyname>> and 
 
  A Stack represents definitions for a collection of OCI resources within a specific compartment. With this in mind, we're going to configure a new stack in the OCI-ORM compartment in the us-phoenix-1 region and name it "HA Load Balanced Simple Web App". As the stack's name suggests, its configuration files define the load balancing, networking, and compute resources to deploy the target architecture plus an HTTP server.
 
- Download [HA Load Balanced Simple Web App](https://objectstorage.us-ashburn-1.oraclecloud.com/p/S0GnbQCFMdXaJ9BHVoqJ-h5kTtmkvqBl3IwVLtpPDxA/n/c4u03/b/oci-library/o/orm-lbass-demo.zip) and save to your local machine.
+ Download [HA Load Balanced Simple Web App](https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip) and save to your local machine.
 
 1. Create a Stack by clicking on **Menu** --> **Resource Manager** --> **Stacks**.
 
@@ -53,7 +53,7 @@ Note in the output that there are two files, a private key: <<ssh-keyname>> and 
 
 2. Click **Create Stack**.
 
-      - **Select a Terraform Configuration (.zip) File to Upload:** Upload the zip file [orm-lbass-demo.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/S0GnbQCFMdXaJ9BHVoqJ-h5kTtmkvqBl3IwVLtpPDxA/n/c4u03/b/oci-library/o/orm-lbass-demo.zip)
+      - **Select a Terraform Configuration (.zip) File to Upload:** Upload the zip file [orm-lbass-demo.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip)
       - **Name:** HA Load Balanced Simple Web App
       - **Description:** Provisions a primary load balancer and a failover load balancer into public subnets distributing load across 2 compute instances hosting a simple web app application.
       - **Create in Compartment:** Select an existing compartment
