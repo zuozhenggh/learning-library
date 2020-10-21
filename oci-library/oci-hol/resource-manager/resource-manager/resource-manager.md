@@ -26,11 +26,11 @@ We recommend you use the Oracle Cloud Shell to interface with the OCI compute in
 
 1. To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
 
-![](https://github.com/oracle/learning-library/blob/master/common/labs/generate-ssh-key/images/cloudshellopen.png)
+  ![](./../resource-manager/images/cloudshellopen.png " ")
 
-![](https://github.com/oracle/learning-library/blob/master/common/labs/generate-ssh-key/images/cloudshellsetup.png)
+  ![](./../resource-manager/images/cloudshellsetup.png " ")
 
-![](https://github.com/oracle/learning-library/blob/master/common/labs/generate-ssh-key/images/cloudshell.png)
+  ![](./../resource-manager/images/cloudshell.png " ")
 
 
 1. Once the cloud shell has started, enter the following command to generate a SSH Key. Press Enter twice for no passphrase.
