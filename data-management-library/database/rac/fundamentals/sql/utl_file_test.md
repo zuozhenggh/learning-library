@@ -68,12 +68,8 @@ UTL\_FILE provides file access both on the client side and on the server side. W
     /
     </copy>
     ````
-    ![](./images/sched-1.png " " )
+    ![](./images/dir-num5.png " " )
 
-6. Exit SQL\*Plus
-   ````
-   exit
-   ````
 
 ## **STEP 2:** Reconnect to SQL\*Plus and read the file you just created
 
@@ -81,8 +77,6 @@ UTL\_FILE provides file access both on the client side and on the server side. W
 
     ````
     <copy>
-    sudo su - oracle
-    sqlplus sh/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com <<EOF
     declare fl utl_file.file_type;
     begin
         fl := utl_file.fopen('ORAHOME','data.txt','r');
@@ -91,13 +85,12 @@ UTL\_FILE provides file access both on the client side and on the server side. W
     end;
     /
     exit;
-    EOF
     </copy>
     ````
 
 2. Did some of the *get_line* commands fail? Why?
 
-   Use operating system commands to examine the directory **\/home\/oracle** on each of the cluster nodes
+   Use operating system commands to examine the directory **/home/oracle** on each of the cluster nodes
     ````
     <copy>
     cd /home/oracle
