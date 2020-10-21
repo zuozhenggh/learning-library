@@ -9,6 +9,7 @@ Estimated Lab Time: 20 Minutes
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
+- Lab: Fast Application Notification
 - Lab: Install Sample Schema
 - Lab: Services
 
@@ -68,9 +69,8 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
    
     ````
     sudo su - oracle
-    srvctl status service -d aTFdbVm_mel1nk -s testy
+    srvctl status service -d aTFdbVm_replacename -s testy
     sqlplus sh/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/testy.tfexsubdbsys.tfexvcndbsys.oraclevcn.com
-    </copy>
     ````
 2. Show your connection details
    
@@ -123,7 +123,7 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
     col value format a60
     select inst_id, value from gv$parameter where name='diagnostic_dest';
     </copy>
-    ````    
+    ````
 
 6. The diagnostic_dest will be displayed.
 
@@ -138,21 +138,21 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
 
     ````
     <copy>
-    ls -altr /u01/app/oracle/diag/rdbms/atfdbvm_mel1nk/aTFdbVm1/trace/*racpx01*.trc
+    ls -altr /u01/app/oracle/diag/rdbms/atfdbvm_replacename/aTFdbVm1/trace/*racpx01*.trc
     </copy>
     ````
     ![](./images/pq-2.png " " )
 
-    QUESTION:  Were any parallel execution processes started on node2? Look in the /u01/app/oracle/diag/rdbms/atfdbvm_mel1nk/aTFdbVm2/trace directory
+    QUESTION:  Were any parallel execution processes started on node2? Look in the /u01/app/oracle/diag/rdbms/atfdbvm_replacename/aTFdbVm2/trace directory
 
-7. Relocate the **testy** service to instance 2, but keep your client connection on racnode1, and repeat steps 1 - 3
+8. Relocate the **testy** service to instance 2, but keep your client connection on racnode1, and repeat steps 1 - 3
 
     ````
-    srvctl relocate service -d aTFdbVm_mel1nk -s testy -oldinst aTFdbVm1
+    srvctl relocate service -d aTFdbVm_replacename -s testy -oldinst aTFdbVm1
     sqlplus sh/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/testy.tfexsubdbsys.tfexvcndbsys.oraclevcn.com
     ````
 
-8. Your connection details will now be similar to
+9. Your connection details will now be similar to
    
     ````
     SQL> select sid from v$mystat where rownum=1;
@@ -173,7 +173,7 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
      332   SH         sqlplus@racnode1 (TNS V1-V3)             testy
     ````
 
-9. Choose a new trace file identifier and run the SELECT statement again
+10. Choose a new trace file identifier and run the SELECT statement again
     
     ````
     <copy>
@@ -187,11 +187,11 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
     exec dbms_monitor.client_id_trace_disable(client_id=>'racpx05');
     </copy>
     ````  
-10. Where are the trace files located now?
+11. Where are the trace files located now?
     ![](./images/pq-3.png " " )
     ![](./images/pq-4.png " " )
 
-11. On racnode2
+12. On racnode2
     ![](./images/pq-5.png " " )
 
 In Oracle RAC systems, the service placement of a specific service controls parallel execution. Specifically, parallel processes run on the nodes on which the service is configured. By default, Oracle Database runs parallel processes only on an instance that offers the service used to connect to the database. This does not affect other parallel operations such as parallel recovery or the processing of GV$ queries.

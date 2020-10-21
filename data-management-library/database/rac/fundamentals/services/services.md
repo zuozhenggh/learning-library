@@ -9,6 +9,7 @@ Estimated Lab Time: 20 Minutes
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
+- Lab: Fast Application Notification
 - Lab: Install Sample Schema
 
 ### About Oracle Database services
@@ -62,8 +63,8 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ````
     <copy>
     sudo su - oracle
-    srvctl add service -d aTFdbVm_mel1nk -s svctest -preferred aTFdbVm1 -available aTFdbVm2 -pdb pdb1
-    srvctl start service -d aTFdbVm_mel1nk -s svctest
+    srvctl add service -d aTFdbVm_replacename -s svctest -preferred aTFdbVm1 -available aTFdbVm2 -pdb pdb1
+    srvctl start service -d aTFdbVm_replacename -s svctest
     </copy>
     ````
     ![](./images/lab6-step1-num6.png " ")
@@ -72,7 +73,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 
     ````
     <copy>
-    srvctl status service -d aTFdbVm_mel1nk -s svctest
+    srvctl status service -d aTFdbVm_replacename -s svctest
     </copy>
     ````
     ![](./images/lab6-step1-num7.png " ")
@@ -80,7 +81,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 8.  The command above will show something similar to:  
     
     ````
-    [oracle@racnode1 ~]$ srvctl status service -d aTFdbVm_mel1nk -s svctest
+    [oracle@racnode1 ~]$ srvctl status service -d aTFdbVm_replacename -s svctest
     Service svctest is running on instance(s) aTFdbVm1
     ````
 9.  Use the lsnrctl utility to list the services.
@@ -142,7 +143,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 
     ````
     <copy>
-    srvctl status service -d aTFdbVm_mel1nk -s svctest
+    srvctl status service -d aTFdbVm_replacename -s svctest
     </copy>
     ````
 
@@ -187,7 +188,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 
     ````
     <copy>
-     srvctl relocate service -d aTFdbVm_mel1nk -s svctest -oldinst aTFdbVm2 -newinst aTFdbVm1
+     srvctl relocate service -d aTFdbVm_replacename -s svctest -oldinst aTFdbVm2 -newinst aTFdbVm1
     </copy>
     ````
     which will move the service from one instance to another:
@@ -213,8 +214,8 @@ This exercise will demonstrate connection load balancing and why it is important
 
     ````
     <copy>
-    srvctl add service srvctl add service -d aTFdbVm_mel1nk -s unisrv -preferred aTFdbVm1,aTFdbVm2 -pdb pdb1
-    srvctl start service -d aTFdbVm_mel1nk -s unisrv
+    srvctl add service srvctl add service -d aTFdbVm_replacename -s unisrv -preferred aTFdbVm1,aTFdbVm2 -pdb pdb1
+    srvctl start service -d aTFdbVm_replacename -s unisrv
     </copy>
     ````
     ![](./images/lab6-step3-num1.png " ")
@@ -282,7 +283,7 @@ where you will see similar to:
 5. What if an instance is not available?  Shutdown one of the instances with srvctl - specify \"-f\" as you want to forcibly close services if any are running.
     ````
     <copy>
-    srvctl stop instance -d aTFdbVm_mel1nk -i aTFdbVm2 -f
+    srvctl stop instance -d aTFdbVm_replacename -i aTFdbVm2 -f
     </copy>
     ````
 

@@ -9,6 +9,7 @@ Estimated Lab Time: 10 Minutes
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
+- Lab: Fast Application Notification
 - Lab: Install Sample Schema
 - Lab: Services
   
