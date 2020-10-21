@@ -108,6 +108,7 @@ Stopping or starting a database instance, or a database service will generate a 
 
     ````
     <copy>
+    sudo su - grid
     crsctl stat res -t
     </copy>
     ````
@@ -222,9 +223,7 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
 2. Cause the generation of a DATABASE DOWN event with srvctl
 
     ````
-    <copy>
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/srvctl stop database -d aTFdbVm_replacename
-    </copy>
     ````
 
 3. Examine the entry created in the log file generated in /tmp on node1:
@@ -244,10 +243,8 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
 5. Cause a DATABASE UP event to be generated:
 
     ````
-    <copy>
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/srvctl start database -d aTFdbVm_replacename
-    </copy>
-    ````        
+    ```` 
 6.  Note the different entries generated in each log (on each node).  Exit out of the grid user
 
     ````
@@ -310,7 +307,7 @@ Download the FANWatcher utility
     ```` 
     ![](./images/fan-step4-num6.png " ")
 
-7. Run the following commands to create a test user and grant them the appropriate privileges
+7. Run the following commands to create a test user, password *W3lcom3#W3lcom##* and grant them the appropriate privileges
    
     ````
     <copy>
@@ -331,7 +328,7 @@ Download the FANWatcher utility
     </copy>
     ````
 
-9.  entering the **user**, **password**, and **URL** you just created using the example shown the fanWatcher.bash script will look like:
+9.  Replace the **user**, **password**, and **URL** with the values you just created using the example shown the fanWatcher.bash script will look like:
 
     ````
     password=<<insert password>
