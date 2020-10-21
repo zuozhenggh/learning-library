@@ -95,9 +95,10 @@ From the Stack Details page, we can completely manage the stack's configuration 
       - Click **Plan**
 
     ![](./../resource-manager/images/image003.png " ")
+
     ![](./../resource-manager/images/image004.png " ")
 
-       **Note:** Once the modal closes, notice the job's state appears as "Accepted" - which indicates that the platform is spinning up resources needed for executing the command  - followed by "In Progress" and then either "Succeeded" or "Failed".
+    **Note:** Once the modal closes, notice the job's state appears as "Accepted" - which indicates that the platform is spinning up resources needed for executing the command  - followed by "In Progress" and then either "Succeeded" or "Failed".
 
     ![](./../resource-manager/images/image005.png " ")
 
