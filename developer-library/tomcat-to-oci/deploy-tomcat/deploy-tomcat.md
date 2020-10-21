@@ -1,6 +1,6 @@
-# Deploy Tomcat on OCI
+# Deploy Tomcat on OCI with ATP
 
-## About This lab
+## Introduction
 
 In this lab, we will deploy a Tomcat Cluster on Oracle Cloud Infrastructure with Terraform, along with an Autonomous Transaction Processing Database.
 
@@ -11,11 +11,11 @@ Estimated Lab Time: 25min
 In this lab, you will provision:
 * A Tomcat cluster based on Compute VM
 * A public load balancer targeting the Tomcat instances
-* An Autonomous Database 
+* An Autonomous Database
 
 ### Prerequisites
 
-*For this lab, you need*
+For this lab, you need
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * git installed

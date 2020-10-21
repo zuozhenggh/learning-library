@@ -1,5 +1,11 @@
-## **Resource Manager**
+# Resource Manager
 
+## Introduction
+In this lab, you will create a new stack.
+
+Estimated Lab Time: 5 minutes
+
+## **STEP**: Resource Manager
 In the OCI console, there is a Resource Manager available that will create all the resources needed. The region in which you create the stack will be the region in which it is deployed.
 
 1. Select the menu ![](./images/menu.png) on the top left, then select Resource Manager --> Stacks. Choose the Name and Compartment on the left filter menu where the stack will be run.
