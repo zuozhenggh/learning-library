@@ -108,7 +108,7 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
       ```
 
       The output will look like
-        <img src="./images/migrate-db-1.png" width="100%">
+        ![](./images/migrate-db-1.png)
 
 
 
@@ -132,14 +132,14 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 
      Find it in **Resource Manager -> Stack -> stack details -> job details -> Outputs**
 
-       <img src="./images/migrate-db-2.png" width="100%">
+       ![](./images/migrate-db-2.png)
 
 
 3. Enter the `TARGET_DB_HOST` **private IP address**
  
      This IP address was gathered from the Database System details, under **Database System -> details -> Nodes**
 
-       <img src="./images/provision-db-26-nodeip.png" width="100%">
+       ![](./images/provision-db-26-nodeip.png)
 
 
 4. Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. 

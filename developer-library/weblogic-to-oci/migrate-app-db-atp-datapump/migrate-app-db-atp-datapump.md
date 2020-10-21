@@ -127,12 +127,12 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
       ```
 
       The output will look like
-        <img src="./images/migrate-db-1.png" width="100%">
+        ![](./images/migrate-db-1.png)
 
 
 ## **STEP 2:** Install the OCI CLI on the source database
 
-This will be needed to get the wallet from the ATP database and put the DB dump file into object storage.
+This will be needed to get the wallet from the ATP database and put the DB dump file into object storage from the source DB.
 
 *Note:* You could also do without the CLI by getting the wallet through the console and uploading the dump file through the console. This requires more manual steps.
 
@@ -222,6 +222,8 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     }
     ```
 
+    Make a note of your **namespace** which will be needed later.
+
 ## **STEP 3:** Create an Object Storage Bucket
 
 1. Go to **Core Infrastructure -> Object Storage**
@@ -275,7 +277,7 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
 
      Find it in **Resource Manager -> Stack -> stack details -> job details -> Outputs**
 
-       <img src="./images/migrate-db-2.png" width="100%">
+       ![](./images/migrate-db-2.png)
 
 3. Go to **Oracle Database -> Autonomous Transaction Processing**
 
@@ -299,7 +301,7 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
 
 12. In **User -> Settings** click **Auth Tokens**
 
-    ![](././images/auth-token.png)
+    ![](./images/auth-token.png)
 
 13. Click **Generate Token**
 
