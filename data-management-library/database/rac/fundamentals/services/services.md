@@ -30,13 +30,9 @@ For more information on Oracle Database Services visit http://www.oracle.com/got
 
  [](https://youtu.be/dIMgaujSydQ)
 
-## **STEP 1:**  Create a Service
-
-**NOTE** For simplicity we will often use the EZConnect syntax to specify connect strings to the database:
-
-user/password@**//hostname:port/servicename**  EZConnect does not support all service characteristics. A fully specified URL or TNS Connect String is required for Application Continuity and other service characteristics.
-
-1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+## **STEP 1:** Login and Identify Database and Instance names
+You should have already identified your database name and instance name.  Each place in this lab where you see replacename make sure you use your correct instance and database names. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 2.  Once you are logged in, open up a 2nd webbrowser tab.
 3.  Start Cloudshell in each.  Maximize both cloudshell instances.
    
@@ -56,9 +52,36 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ssh -i ~/.ssh/sshkeyname opc@<<Node 2 Public IP Address>>
     ps -ef | grep pmon
     ````
-    ![](./clusterware/images/racnode2-login.png " ")    
+    ![](./clusterware/images/racnode2-login.png " ")  
 
-6.  Create a new service **svctest** with *instance1* as a **preferred** instance and *instance2* as an **available instance**. This means that the service will normally run on the *instance1* but will failover to *instance2* if the first instance becomes unavailable.  Run this on node 1.
+6. Run the command to determine your database name and additional information about your cluster on **node 1**.  Run this as the *grid* user.
+
+    ````
+    <copy>
+    sudo su - grid
+    crsctl stat res -t
+    </copy>
+    ````
+    ![](./../clusterware/images/crsctl-1.png " ")
+
+    ![](./../clusterware/images/crsctl-2.png " ")
+    
+7. Find your database name in the *Cluster Resources* section with the *.db*.  Jot this information down, you will need it for this lab. 
+
+    ![](./images/db-crsctl.png " ")
+8. Confirm that you have the *testy* service running and note the node it is running on.
+
+    ![](./images/testy-crsctl.png " ")
+
+## **STEP 2:**  Create a Service
+
+**NOTE** For simplicity we will often use the EZConnect syntax to specify connect strings to the database:
+
+user/password@**//hostname:port/servicename**  EZConnect does not support all service characteristics. A fully specified URL or TNS Connect String is required for Application Continuity and other service characteristics.  
+
+1.  Create a new service **svctest** with *instance1* as a **preferred** instance and *instance2* as an **available instance**. This means that the service will normally run on the *instance1* but will failover to *instance2* if the first instance becomes unavailable.  Run this on node 1.
+
+    *Note:* Remember to replace all instances of *aTFdbVm_replacename* with the database name you identified in Step 1.
 
     ````
     <copy>
@@ -117,7 +140,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 12. Repeat it on **node 1** as well.
 
 
-## **STEP 2:** Service Failover
+## **STEP 3:** Service Failover
 
 1. Cause the service to fail over. After identifying which instance the service is being offered on, kill that instance by removing the SMON process at the operating system level.  Run this on **node 1**
 
@@ -207,7 +230,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     It has not changed.
     The relocate service command will not disconnect active sessions unless a force option (**-force**) is specified. A stop service command will allow a drain timeout to be specified to allow applications to complete their work during the drain interval.
 
-## **STEP 3:** Connection Load Balancing
+## **STEP 4:** Connection Load Balancing
 This exercise will demonstrate connection load balancing and why it is important to use the SCAN address and the VIPs as integral parts of your connection strategy
 
 1. Create a uniform service, named *unisrv*, that is **available** on both instances of your RAC database.  Execute this on **node 1**
@@ -227,7 +250,7 @@ This exercise will demonstrate connection load balancing and why it is important
     export ORACLE_HOME=/u01/app/19.0.0.0/grid
     $ORACLE_HOME/bin/lsnrctl service LISTENER_SCAN2
     </copy>
-    ````    
+    ````
 where you will see similar to:
 
     ![](./images/lab6-step3-num2.png " ")

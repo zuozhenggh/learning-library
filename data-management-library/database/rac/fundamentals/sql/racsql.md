@@ -15,7 +15,7 @@ Estimated Lab Time: 20 Minutes
 
 ## **STEP 1:**  Build Tom Kyte's RUNSTATS package
 
-1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 
 2.  Start Cloudshell
    

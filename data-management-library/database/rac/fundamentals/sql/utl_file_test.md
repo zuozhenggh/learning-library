@@ -30,7 +30,7 @@ UTL\_FILE provides file access both on the client side and on the server side. W
 
 ## **STEP 1:**  Create a DIRECTORY OBJECT and write a file in this location
 
-1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 
 2.  Start Cloudshell
     

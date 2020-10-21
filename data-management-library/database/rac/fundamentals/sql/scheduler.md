@@ -37,7 +37,7 @@ The job coordinators communicate with each other to keep information current. Th
 We will take a brief look at this property through two simple tests.
 
 ## **STEP 1:**  Assign a Job Class to a service and prepare a package to be scheduled
-1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 
 2.  Start Cloudshell
     

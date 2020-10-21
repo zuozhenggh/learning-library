@@ -108,6 +108,7 @@ Stopping or starting a database instance, or a database service will generate a 
 
     ````
     <copy>
+    sudo su - grid
     crsctl stat res -t
     </copy>
     ````
