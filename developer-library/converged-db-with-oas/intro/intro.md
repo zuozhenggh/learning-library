@@ -1,6 +1,6 @@
 # Introduction #
 
-## About This Workshop ##
+## About Workshop ##
 
 This workshop Labs are intended for an audience with little or no previous experience on how to use augemented analytics feature of Oracle Analytics Server using variety of data and data visualizations.
 
