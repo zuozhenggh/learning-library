@@ -33,7 +33,7 @@ We recommend you use the Oracle Cloud Shell to interface with the OCI compute in
   ![](./../resource-manager/images/cloudshell.png " ")
 
 
-1. Once the cloud shell has started, enter the following command to generate a SSH Key. Press Enter twice for no passphrase.
+2. Once the cloud shell has started, enter the following command to generate a SSH Key. Press Enter twice for no passphrase.
 
 ```
 <copy>ssh-keygen -f ssh-keyname<copy> 
