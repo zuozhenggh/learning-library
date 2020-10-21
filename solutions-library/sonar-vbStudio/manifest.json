@@ -1,0 +1,55 @@
+{
+    "tutorials": [{
+            "title": "Workshop Introduction",
+            "description": "This workshop will walk you through application lifecycle management with embedded code review using SonarQube. It will showcase how SonarQube can save time and improve code quality directly inside the agile development process.",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "README.md"
+        },
+        {
+            "title": "Sign Up for Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 0: Setup Cloud Environment",
+            "description": "Setup trial account and provision Visual Builder Studio. Create compartment, VCN and instance in OCI.",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "./setup-cloud-env/0-setup-cloud-env.md"
+        },
+        {
+            "title": "Lab 1: Configure Visual Builder Studio",
+            "description": "Create project in Visual Builder Studio, clone project from Git repo and configure project to run build jobs.",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "./Configure-Visual-Builder-Studio/1-Configure-Visual-Builder-Studio.md"
+        },
+        {
+            "title": "Lab 2: Configure SonarQube Server",
+            "description": "Deploying SonarQube server in Compute Instance, connecting it to Visual Builder Studio and then running analysis on the project to check for potential issues and bug.",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "./Configure-SonarQube-Server/2-Configure-SonarQube-Server.md"
+        },
+        {
+            "title": "Lab 3: Fix Issues in the Code",
+            "description": "Look for issues identified in SonarQube, create a issue in Visual Builder Studio and resolve issue using built in git.",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "./Fix-Issues/3-fix-issues.md"
+        },
+        {
+            "title": "Lab 4:  Deploy Microservice to Cloud",
+            "description": "Deploy the fixed code as a webservice inside a Docker container to cloud.",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "./Deploy-Microservice/4-Deploy-Microservice.md"
+        }
+    ]
+}
