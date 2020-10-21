@@ -1,4 +1,4 @@
-# Create an application (Console UI)
+## Create an application (Console UI)
 
 In this section you will create an application and set up Fn CLI on Cloud Shell.
 
@@ -13,7 +13,7 @@ Click on the created application to open the application details. Click the **Ge
 
 This involves launching Cloud Shell, updating the Fn context, generating an auth token for the registry and logging in to the Oracle Cloud Infrastructure Registry.
 
-# Create a Dynamic Group
+## Create a Dynamic Group
 
 In order to use other OCI Services, your function must be part of a **dynamic group**. For information on how to create a dynamic group, refer to the [documentation](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#To).
 
@@ -29,7 +29,7 @@ In order to use other OCI Services, your function must be part of a **dynamic gr
 
   Note: make sure you replace above value with your compartment OCID. To get the compartment OCID, open the navigation menu, select **Identity**, and then **Compartments**. 
 
-# Create Object Storage Buckets
+## Create Object Storage Buckets
 
 You need two buckets in Object Storage, the `input-bucket` and the `processed-bucket`. The first bucket (`input-bucket`) is the location where you will drop the CSV files to be imported into Autonomous Datawarehouse. The files will be moved to the second bucket (`processed-bucket`) once they are processed.
 
@@ -50,7 +50,7 @@ Once the first bucket is created, create the second one (`processed-bucket`):
 4. Select the **Standard** storage tier.
 5. Click **Create Bucket**.
 
-# Create IAM policies
+## Create IAM policies
 
 Create a new policy that allows the dynamic group (`functions-dynamic-group`) to manage objects in the two buckets.
 
@@ -67,7 +67,7 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
 6. Click **Create**.
 
-# Create an Autonomous Data Warehouse
+## Create an Autonomous Data Warehouse
 
 The function accesses Autonomous Database using SODA (Simple Oracle Document Access) for simplicity. Other type of access can be used by modifying the function.
 
@@ -96,10 +96,10 @@ Wait for OCI to provision the Autonomous Database, and then click the **Service 
   ```bash
   $ curl -u 'ADMIN:<DB-password>' -H "Content-Type: application/json" $ORDS_BASE_URL/admin/soda/latest/
 
-    {"items":[{"name":"regionsnumbers","properties":{"schemaName":"ADMIN","tableName":"REGIONSNUMBERS","keyColumn":{"name":"ID","sqlType":"VARCHAR2","maxLength":255,"assignmentMethod":"UUID"},"contentColumn":{"name":"JSON_DOCUMENT","sqlType":"BLOB","jsonFormat":"OSON"},"versionColumn":{"name":"VERSION","type":"String","method":"UUID"},"lastModifiedColumn":{"name":"LAST_MODIFIED"},"creationTimeColumn":{"name":"CREATED_ON"},"readOnly":false},"links":[{"rel":"canonical","href":"https://.../ords/admin/soda/latest/regionsnumbers"}]}],"hasMore":false}
+  {"items":[{"name":"regionsnumbers","properties":{"schemaName":"ADMIN","tableName":"REGIONSNUMBERS","keyColumn":{"name":"ID","sqlType":"VARCHAR2","maxLength":255,"assignmentMethod":"UUID"},"contentColumn":{"name":"JSON_DOCUMENT","sqlType":"BLOB","jsonFormat":"OSON"},"versionColumn":{"name":"VERSION","type":"String","method":"UUID"},"lastModifiedColumn":{"name":"LAST_MODIFIED"},"creationTimeColumn":{"name":"CREATED_ON"},"readOnly":false},"links":[{"rel":"canonical","href":"https://.../ords/admin/soda/latest/regionsnumbers"}]}],"hasMore":false}
   ```
 
-# Deploy the function
+## Deploy the function
 
 In this section you will clone the functions source code repository, and use the `fn deploy` command to build the Docker image, push the image to OCIR, and deplyo the function to Oracle Functions in your application.
 
@@ -135,7 +135,7 @@ fn config function etl-app oci-load-file-into-adw-python input-bucket input-buck
 fn config function etl-app oci-load-file-into-adw-python processed-bucket processed-bucket
 ```
 
-# Create an Event rule
+## Create an Event rule
 
 In this section you will configure a Cloud Event to trigger the function when files are dropped into the `input-bucket`.
 
@@ -158,8 +158,7 @@ In this section you will configure a Cloud Event to trigger the function when fi
 
 7. Click **Create Rule**.
 
-
-# Test the function
+## Test the function
 
 To test the function you can upload a `.csv` file to the `input-bucket`. You can do that from the Console UI or from the Cloud Shell using the OCI CLI.
 
@@ -192,9 +191,9 @@ To see the data in the database, follow these steps:
 4. Use **ADMIN** and the admin password to authenticate.
 5. In the worksheet, enter the following query:
 
-```
-select UTL_RAW.CAST_TO_VARCHAR2( DBMS_LOB.SUBSTR( JSON_DOCUMENT, 4000, 1 )) AS json from regionsnumbers
-```
+  ```
+  select UTL_RAW.CAST_TO_VARCHAR2( DBMS_LOB.SUBSTR( JSON_DOCUMENT, 4000, 1 )) AS json from regionsnumbers
+  ```
 
 6. Click the green play button to execute the query.
 
