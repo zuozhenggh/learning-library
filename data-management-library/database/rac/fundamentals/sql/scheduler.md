@@ -10,7 +10,9 @@ Estimated Lab Time: 20 Minutes
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
-
+- Lab: Fast Application Notification
+- Lab: Install Sample Schema
+- Lab: Services
 
 ### About Oracle Scheduler
 Oracle Scheduler is an enterprise job scheduler designed to help you simplify the scheduling of hundreds or even thousands of tasks. Oracle Scheduler (the Scheduler) is implemented by the procedures and functions in the DBMS_SCHEDULER PL/SQL package.
@@ -35,7 +37,7 @@ The job coordinators communicate with each other to keep information current. Th
 We will take a brief look at this property through two simple tests.
 
 ## **STEP 1:**  Assign a Job Class to a service and prepare a package to be scheduled
-1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 
 2.  Start Cloudshell
     
@@ -49,12 +51,12 @@ We will take a brief look at this property through two simple tests.
     ````
     ![](../clusterware/images/racnode1-login.png " ")
 
-4. Confirm which instance is offering the service **svctest**.  Execute the following on node 1.
+4. Confirm which instance is offering the service **svctest**.  Execute the following on **node 1**.
    
     ````
     <copy>
     sudo su - oracle
-    srvctl status service -d aTFdbVm_mel1nk -s svctest
+    srvctl status service -d aTFdbVm_replacename -s svctest
     </copy>
     ````
 
@@ -62,7 +64,7 @@ We will take a brief look at this property through two simple tests.
    
     ````
     <copy>
-    srvctl stop service -d aTFdbVm_mel1nk -s svctest
+    srvctl stop service -d aTFdbVm_replacename -s svctest
     </copy>
     ````
 
@@ -123,7 +125,7 @@ We will take a brief look at this property through two simple tests.
 
     ````
     <copy>
-    srvctl start service -d aTFdbVm_mel1nk -s svctest
+    srvctl start service -d aTFdbVm_replacename -s svctest
     </copy>
     ````
     Did the job run?
@@ -151,15 +153,15 @@ Look in the diagnostic_dest for files with the **id** set in the job schedule. T
 5. On node1, for example, execute the following command.
    
     ````
-    ls -altr /u01/app/oracle/diag/rdbms/atfdbvm_mel1nk/aTFdbVm1/trace/*SCHEDULER01*
+    ls -altr /u01/app/oracle/diag/rdbms/atfdbvm_replacename/aTFdbVm1/trace/*SCHEDULER01*
     ````
 ## **STEP 3:** Submitting work to a uniform service
 1. Modify the service **svctest** to run on both instances, and then stop this service
 
     ````
     <copy>
-    srvctl modify service -d  aTFdbVm_mel1nk -s svctest -modifyconfig -preferred aTFdbVm1,aTFdbVm2
-    srvctl stop service -d  aTFdbVm_mel1nk -s svctest
+    srvctl modify service -d  aTFdbVm_replacename -s svctest -modifyconfig -preferred aTFdbVm1,aTFdbVm2
+    srvctl stop service -d  aTFdbVm_replacename -s svctest
     </copy>
     ````
 2. Submit multiple jobs to the job class
@@ -206,7 +208,7 @@ Look in the diagnostic_dest for files with the **id** set in the job schedule. T
 4. Re-start the **svctest** service again (which will now run on both instances) and view where the jobs executed:
 
     ````
-    srvctl start service -d  aTFdbVm_mel1nk -s svctest
+    srvctl start service -d  aTFdbVm_replacename -s svctest
     ````
 
 5. The view user_scheduler_job_run_details includes the instance name on which the job executed
@@ -239,7 +241,7 @@ Look in the diagnostic_dest for files with the **id** set in the job schedule. T
    
     ````
     <copy>
-    grep "ACTION NAME" `ls /u01/app/oracle/diag/rdbms/atfdbvm_mel1nk/aTFdbVm1/trace/*SCHEDULER*.trc`
+    grep "ACTION NAME" `ls /u01/app/oracle/diag/rdbms/atfdbvm_replacename/aTFdbVm1/trace/*SCHEDULER*.trc`
     </copy>
     ````
 
