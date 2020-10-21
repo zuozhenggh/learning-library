@@ -1,6 +1,6 @@
-## Create an application (Console UI)
+## **Step 1:** Create an application
 
-In this section you will create an application and set up Fn CLI on Cloud Shell.
+In this step, you will create an application and set up Fn CLI on Cloud Shell.
 
 1. Under Solutions and Platform, select **Developer Services** and click **Functions**.
 2. Click **Create Application**.
@@ -11,11 +11,11 @@ In this section you will create an application and set up Fn CLI on Cloud Shell.
 
 Click on the created application to open the application details. Click the **Getting Started** link and follow the **Begin your Cloud Shell session** and **Setup fn CLI on Cloud Shell** sections in the **Cloud Shell Setup**.
 
-This involves launching Cloud Shell, updating the Fn context, generating an auth token for the registry and logging in to the Oracle Cloud Infrastructure Registry.
+This involves launching Cloud Shell, updating the Fn context, generating an auth token for the registry, and logging into the Oracle Cloud Infrastructure Registry.
 
-## Create a Dynamic Group
+## **Step 2:** Create a Dynamic Group
 
-In order to use other OCI Services, your function must be part of a **dynamic group**. For information on how to create a dynamic group, refer to the [documentation](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#To).
+To use other OCI Services, your function must be part of a **dynamic group**. For information on creating dynamic groups, refer to the [documentation](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#To).
 
 1. To create a dynamic group, open the navigation menu, select **Identity**, and then **Dynamic Groups**.
 2. Click **Create Dynamic Group**.
@@ -27,11 +27,11 @@ In order to use other OCI Services, your function must be part of a **dynamic gr
   All {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..example'}
   ```
 
-  Note: make sure you replace above value with your compartment OCID. To get the compartment OCID, open the navigation menu, select **Identity**, and then **Compartments**. 
+  > Make sure you replace the above value with your compartment OCID. To get the compartment OCID, open the navigation menu, select **Identity**, and then **Compartments**. 
 
-## Create Object Storage Buckets
+## **Step 3:** Create Object Storage Buckets
 
-You need two buckets in Object Storage, the `input-bucket` and the `processed-bucket`. The first bucket (`input-bucket`) is the location where you will drop the CSV files to be imported into Autonomous Datawarehouse. The files will be moved to the second bucket (`processed-bucket`) once they are processed.
+You need two buckets in Object Storage, the `input-bucket` and the `processed-bucket`. The first bucket (`input-bucket`) is where you will drop the CSV files. The function will import them into Autonomous Datawarehouse. Once the function processed the files, it moves them to the second bucket (`processed-bucket`).
 
 Let's create the `input-bucket` first:
 
@@ -42,7 +42,7 @@ Let's create the `input-bucket` first:
 5. Check the **Emit Object Events** check box.
 6. Click **Create Bucket**.
 
-Once the first bucket is created, create the second one (`processed-bucket`):
+Next, create the second bucket (`processed-bucket`):
 
 1. Open the navigation menu, select **Object Storage**, and then select **Object Storage**.
 2. Click the **Create Bucket**.
@@ -50,11 +50,11 @@ Once the first bucket is created, create the second one (`processed-bucket`):
 4. Select the **Standard** storage tier.
 5. Click **Create Bucket**.
 
-## Create IAM policies
+## **Step 4:** Create IAM policies
 
 Create a new policy that allows the dynamic group (`functions-dynamic-group`) to manage objects in the two buckets.
 
-1. Open the navigation menu, select **Identity**, an then select **Policies**.
+1. Open the navigation menu, select **Identity**, and then select **Policies**.
 2. Click **Create Policy**.
 3. For name, enter `functions-buckets-policy`.
 4. For description, enter `Policy that allows functions dynamic group to manage objects in the buckets`.
@@ -67,9 +67,9 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
 6. Click **Create**.
 
-## Create an Autonomous Data Warehouse
+## **Step 5:** Create an Autonomous Data Warehouse
 
-The function accesses Autonomous Database using SODA (Simple Oracle Document Access) for simplicity. Other type of access can be used by modifying the function.
+The function accesses the Autonomous Database using SODA (Simple Oracle Document Access) for simplicity. You can use the other type of access by modifying the function.
 
 1. Open the navigation menu, select **Autonomous Data Warehouse**.
 2. Click **Create Autonomous Database**.
@@ -99,9 +99,9 @@ Wait for OCI to provision the Autonomous Database, and then click the **Service 
   {"items":[{"name":"regionsnumbers","properties":{"schemaName":"ADMIN","tableName":"REGIONSNUMBERS","keyColumn":{"name":"ID","sqlType":"VARCHAR2","maxLength":255,"assignmentMethod":"UUID"},"contentColumn":{"name":"JSON_DOCUMENT","sqlType":"BLOB","jsonFormat":"OSON"},"versionColumn":{"name":"VERSION","type":"String","method":"UUID"},"lastModifiedColumn":{"name":"LAST_MODIFIED"},"creationTimeColumn":{"name":"CREATED_ON"},"readOnly":false},"links":[{"rel":"canonical","href":"https://.../ords/admin/soda/latest/regionsnumbers"}]}],"hasMore":false}
   ```
 
-## Deploy the function
+## **Step 6:** Deploy the function
 
-In this section you will clone the functions source code repository, and use the `fn deploy` command to build the Docker image, push the image to OCIR, and deplyo the function to Oracle Functions in your application.
+In this step, you will clone the functions source code repository and use the `fn deploy` command to build the Docker image, push the image to OCIR, and deploy the function to Oracle Functions in your application.
 
 1. From the Console UI, open the Cloud Shell.
 2. Clone the Functions source code repository:
@@ -122,7 +122,7 @@ In this section you will clone the functions source code repository, and use the
   fn -v deploy --app etl-app
   ```
 
-Once the function is deployed, you need to set function configuration values, so the function knows how to connect to the Autonomous Database.
+After you deploy the function, you need to set function configuration values so the function knows how to connect to the Autonomous Database.
 
 Using the Fn CLI, set the following configuration values. Make sure you replace the `<ORDS_BASE_URL>` and `<DB_PASSWORD>` with your values:
 
@@ -135,9 +135,9 @@ fn config function etl-app oci-load-file-into-adw-python input-bucket input-buck
 fn config function etl-app oci-load-file-into-adw-python processed-bucket processed-bucket
 ```
 
-## Create an Event rule
+## **Step 7:** Create an Event rule
 
-In this section you will configure a Cloud Event to trigger the function when files are dropped into the `input-bucket`.
+In this step, you will configure a Cloud Event to trigger the function when you drop the files into the `input-bucket`.
 
 1. From Console UI, open navigation and select **Application Integration** and click **Events Service**.
 2. Click **Create Rule**.
@@ -158,9 +158,9 @@ In this section you will configure a Cloud Event to trigger the function when fi
 
 7. Click **Create Rule**.
 
-## Test the function
+## **Step 8:** Test the function
 
-To test the function you can upload a `.csv` file to the `input-bucket`. You can do that from the Console UI or from the Cloud Shell using the OCI CLI.
+To test the function, you can upload a `.csv` file to the `input-bucket`. You can do that from the Console UI or the Cloud Shell using the OCI CLI.
 
 1. Open the Cloud Shell.
 2. Go to the functions folder:
@@ -185,7 +185,7 @@ Uploading a file to the bucket triggers an event that invokes the function. The 
 
 To see the data in the database, follow these steps:
 
-1. From the OCI console, navigte to **Autonomous Data Warehouse** and click on the database name (`funcdb`).
+1. From the OCI console, navigate to **Autonomous Data Warehouse** and click on the database name (`funcdb`).
 2. Click the **Service Console**.
 3. Click **SQL Developer Web**.
 4. Use **ADMIN** and the admin password to authenticate.
