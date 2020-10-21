@@ -13,7 +13,7 @@ Estimated Lab Time: 10 Mintues.
 ### Prerequisites ###
 
 This lab assumes you have completed the following labs:  
-- Lab: Generate SSH Key 
+- Lab: Generate SSH Key - Cloud Shell
 - Lab: Setup Compute Instance  
 
 ## STEP 1: Starting Database And OAS Services
