@@ -13,9 +13,9 @@ Estimated Lab Time: 30 Mintues.
 
 In this lab you will learn on two key features in OAS Augmented Analytics:  “Explain” and “Forecast”.
 
-**Explain:** Explain analyzes the selected column within the context of its data set and generates text descriptions about the insights it finds.  Explain creates corresponding visualizations that you can add to your project's canvas.
+Explain: Explain analyzes the selected column within the context of its data set and generates text descriptions about the insights it finds.  Explain creates corresponding visualizations that you can add to your project's canvas.
 
-**Forecast:** Oracle Analytics Server offers a user-friendly method to leverage advanced analytics functions on a chart with a single mouse click. Having advanced analytical functions like, Trendline, Cluster, Outlier and forecast. These functions provide a strong capability to business users who want to have better insights into their data. 
+Forecast: Oracle Analytics Server offers a user-friendly method to leverage advanced analytics functions on a chart with a single mouse click. Having advanced analytical functions like, Trendline, Cluster, Outlier and forecast. These functions provide a strong capability to business users who want to have better insights into their data. 
 
 ### Prerequisites ###
 This lab assumes you have completed the following labs:
@@ -110,7 +110,7 @@ You may now proceed to the next lab.
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
-- **Last Updated By/Date** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
+- **Last Updated By/Date** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Oct 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

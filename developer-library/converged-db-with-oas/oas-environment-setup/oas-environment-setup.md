@@ -26,8 +26,6 @@ This lab assumes you have completed the following labs:
       </copy>
       ````` 
 
-
-
 2. Go to folder /u01/script
 
       ````
@@ -43,8 +41,7 @@ This lab assumes you have completed the following labs:
       ./env_setup_script.sh
       </copy>
       ````
-      
-
+  
       This script will ensure to start Database, Admin Server and all the services of OAS in 5-6 minutes. 
 
       ![](./images/oas-environment5.png " ")
@@ -115,7 +112,7 @@ Now, you are ready to move to further labs.
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
-- **Last Updated By/Date** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
+- **Last Updated By/Date** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Oct 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

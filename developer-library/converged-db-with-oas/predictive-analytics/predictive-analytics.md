@@ -1,4 +1,4 @@
-# OAS Predictive Analytics #
+# Predictive Analytics #
 
 ## Introduction ##
 
@@ -22,11 +22,11 @@ We will also use visualizations on the predicted data for ease of decision makin
 ### Prerequisites  ###
 
 This lab assumes you have completed the following labs:  
-- Lab 1: Login to Oracle Cloud  
-- Lab 2: Generate SSH Key  
-- Lab 3: Create Compute Instance  
-- Lab 4: Environment Setup
-- Lab 5: Data Visualization  
+- Lab : Generate SSH Key - Cloud Shell
+- Lab : Setup Compute Instance  
+- Lab : Start Database and OAS
+- Lab : Data Visualization 
+- Lab : Augmented Analytics
 
 The below pre-loaded data objects are available in Converged Database. 
 
@@ -166,7 +166,7 @@ It is vital for a HR Department to identify the factors that keep employees and 
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
-- **Last Updated By/Date** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
+- **Last Updated By/Date** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Oct 2020
 
 
 ## See an issue?

@@ -1,4 +1,4 @@
-# OAS Data Visualization #
+# Data Visualization #
 
 ## Introduction ##
 
@@ -11,32 +11,34 @@ It provides several interactive visuals to show the story in your data for examp
 
 Estimated Lab Time: 40 Mintues.
 
-[](youtube:yOYemBtdpnQ)
+Watch this below video to explore more on data visualization.
 
+[](youtube:yOYemBtdpnQ)
 
 
 ### Objectives ###
 
 In this lab we will be using Oracle Analytics Server self-service capabilities on JSON, XML and Relational data of Converged Database.  We will be creating compelling project with different types of visuals to show the important insights out of Sample data of a financial company.
 
-Here, we have sample financial data, where data from "UK" region is in JSON format, data from "Germany and France"  regions are in XML format and Data from "Italy and Spain" regions are in Relational Format. And this data is stored in Oracle Converged Database.
+- Here, we have sample financial data, where data from "UK" region is in JSON format, data from "Germany and France"  regions are in XML format and Data from "Italy and Spain" regions are in Relational Format. And this data is stored in Oracle Converged Database.
 
-Using OAS "Data Flow" capability we will be generating a complete financial data after merging the data from  different geography. 
+- Using OAS "Data Flow" capability we will be generating a complete financial data after merging the data from  different geography. 
 
-Then with OAS Data Preparation we will be making data set ready for visualization.
+- Then with OAS Data Preparation we will be making data set ready for visualization.
 
-After that we will be building compelling visualizations in OAS.
+- After that we will be building compelling visualizations in OAS.
 
 The end result should look like below:
+
 ![](./images/oascdb1.png " ")
 
 ### Prerequisites  ###
 
 This lab assumes you have completed the following labs:  
-- Lab : Login to Oracle Cloud  
-- Lab : Generate SSH Key  
-- Lab : Create Compute Instance  
-- Lab : Environment Setup  
+- Lab : Generate SSH Key - Cloud Shell
+- Lab : Setup Compute Instance  
+- Lab : Start Database and OAS
+
 
 Below pre-loaded data objects are available in Converged Database. And since OAS recognizes data in relational format, views have been created on the base tables of JSON and XML type.  
  
@@ -392,7 +394,7 @@ You may now proceed to the next lab.
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala
-- **Last Updated By/Date** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Sep 2020
+- **Last Updated By/Date** - Vishwanath Venkatachalaiah, Principal Solution Engineer, Oracle Analytics, Oct 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don"t see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
