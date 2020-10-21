@@ -68,47 +68,21 @@ Now that your stack has been created, you will run an *apply* job to create the 
 12. Copy the subnet ID to a notepad.
 ![Image alt text](images/db19c-freetier-step1-18.png " ")        
    
-## **STEP 3**: Setup Compute Stack
-1.  Click the **Create a Stack** tile on the homepage.  You may also get to Resource Manager by clicking on the Hamburger **Menu** -> **Solutions and Platform** -> **Resource Manager**
-![Create a stack](images/db19c-freetier-step1.png " ")
-3.  In the Browse Solutions window, select **Compute**. Click the **Select Solution** button.
-    ![Image alt text](images/linux-compute-step3-1.png " ")
+## **STEP 3**: Setup Compute Instance
 
-4.  Enter the name for your Compute Stack:  **livelabslinux**.  Click **next**.
-   ![Image alt text](images/linux-compute-step3-2.png " ")
-5. Fill in the following values for your new compute instance. 
-   - Compute Instance Display Name: Choose a name for your instance
-   - Choose the VCN you created in the previous step
-   - Choose a subnet from the drop down
-  
-   ![Image alt text](images/linux-compute-step3-3.png " ")
-6.  Scroll down. 
-   - Check the Assign Public IP *(Note: This is VERY IMPORTANT, you will not be able to login to your instance without this)
-   - Paste the public key you created in the earlier lab
-   ![Image alt text](images/linux-compute-step3-4.png " ")
+1. Click on the hamburger menu in the upper left corner of your browser.  Select **Compute**->**Instance**. ![Image alt text](images/linux-compute-step3-10.png " ")
+2. Click on **Create Instance**. ![](images/setup-linux-ft-create-instance.png " ")
+3. Enter the **Name** for your Compute Instance and choose the **compartment**. ![](images/setup-linux-ft-name-compartment.png " ")
+4. Click on edit and choose the Availability Domain, Image, and Shape of your choice. For this lab, use the default Oracle Linux 7.8 image.
+![](images/setup-linux-ft-choose-image.png " ")
+![](images/setup-linux-ft-choose-image-2.png " ")
+5. In the Add SSH keys, select **Paste Public Keys** and paste your public ssh key. Then click create. ![](images/setup-linux-ft-paste-sshkey.png " ")
+6. The instance will immediately begin provisioning.
+![](images/setup-linux-ft-provisioning.png " ")
+7. Once it is provisioned, inspect the instance information and copy the public IP address to notepad.
+![](images/setup-linux-ft-copy-ipaddress.png " ")
 
-7.   Review your selections and click **Next**
-   ![Image alt text](images/linux-compute-step3-5.png " ")
-
-## **STEP 4**: Run Compute Stack Apply Job
-Now that your stack has been created, you will run an *apply* job to create the actual compute instance
-1. Click on **Terraform Actions** to expose the drop down menu
-![Image alt text](images/db19c-freetier-step1-7.png " ")
-2. Select **Apply**
-![Image alt text](images/db19c-freetier-step1-8.png " ")
-3. Insepct the apply job, accept all defaults and click **Apply**
-![Image alt text](images/db19c-freetier-step1-9.png " ")
-4. The VCN will immediately begin creation.
-![Image alt text](images/db19c-freetier-step1-10.png " ")
-5. Once the apply job is complete, inspect the results.  
-![Image alt text](images/linux-compute-step3-9.png " ")
-6. You will notice that 3 objects were created.  Your instance has a private IP address and a public IP address.  Copy the public IP address, you will need it to connect to your instance.
-![Image alt text](images/db19c-freetier-step1-12.png " ")
-7.  Click on the hamburger menu in the upper left corner of your browser.  Select **Compute**->**Instance**. ![Image alt text](images/linux-compute-step3-10.png " ")
-8.  The compute instance you created should be listed. Note the public IP address.
-![Image alt text](images/linux-compute-step3-11.png " ")     
-
-## **STEP 5**: Connect to your instance
+## **STEP 4**: Connect to your instance
 
 There are multiple ways to connect to your cloud instance.  Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
 
