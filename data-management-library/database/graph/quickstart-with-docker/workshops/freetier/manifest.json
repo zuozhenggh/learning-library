@@ -17,7 +17,7 @@
         },
         {
             "title": "Lab 2: Setup Network and Compute Instance",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-linux-freetier.md"
+            "filename": "https://raw.githubusercontent.com/anooshapilli/learning-library/graph/common/labs/setup-compute/setup-linux-ft-compute-instance.md"
         },
         {
             "title": "Lab 3: Setup Docker on an Oracle Compute Instance",
