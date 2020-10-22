@@ -280,7 +280,7 @@ Below are the steps for both Windows (step 1) and Mac (step 2). Make sure you ha
 
 ## **STEP 7**: Accessing Cloud Manager using SSH
 
-SSH key pair required to access Cloud Manager instance was created in Part 1 of Lab 300. 
+SSH key pair required to access Cloud Manager instance was created in Step 1 of Lab 2. 
 
 **NOTE**: Make sure you are off VPN.
 
