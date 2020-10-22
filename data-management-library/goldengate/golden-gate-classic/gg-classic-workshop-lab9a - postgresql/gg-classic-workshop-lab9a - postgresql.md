@@ -35,10 +35,14 @@ Approximately 60 minutes
 <copy>sudo su - oracle</copy>
 ````
 
+**Waiting For Madhu to Provide**
 
 ## Learn More
 
-* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
+
+* [GoldenGate](https://www.oracle.com/middleware/data-integration/goldengate/")
+
+* [GoldenGate with PostgreSQL](https://docs.oracle.com/en/middleware/goldengate/core/19.1/gghdb/using-oracle-goldengate-postgresql.html/")
 
 ## Acknowledgements
 * **Author** - Madhu Kumar Data Integration Hub October 2020
