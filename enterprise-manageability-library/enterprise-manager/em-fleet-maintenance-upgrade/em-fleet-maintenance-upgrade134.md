@@ -215,7 +215,7 @@ We will go through steps for upgrading database target ***finance.subnet.vcn.ora
 
   Gold Image represents a software end state. An Enterprise Manager Software Library Gold Image is a software archive created from a patched oracle home uploaded to EM Software Library. Steps in this section are already implemented and are available here for review.
 
-    * Reference Home Setup
+  * Reference Home Setup
 
       In order to create a Gold Image of the ‘recommended patch configuration’, you need to manually create such an Oracle Home as a pre-requisite step.
 
@@ -225,14 +225,15 @@ We will go through steps for upgrading database target ***finance.subnet.vcn.ora
 
       Navigate to “***Targets >> All Targets***” and type in “Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192” in the “Search Target Name” box.
 
-        ![](images/ea2416958193764cc47426f0ad8a0a67.jpg " ")
+      ![](images/ea2416958193764cc47426f0ad8a0a67.jpg " ")
 
-    * Review “Create New Gold Image” from ssh terminal using the following emcli command
-        ````
-        <copy>cd fleet
-        cat create_image_Tier1_sidb_x64.sh</copy>
-        ````
-        ![](images/e4a3896e00184146230d4d974e64a528.png " ")
+  * Review “Create New Gold Image” from ssh terminal using the following emcli command
+
+    ````
+    <copy>cd fleet
+    cat create_image_Tier1_sidb_x64.sh</copy>
+    ````
+    ![](images/e4a3896e00184146230d4d974e64a528.png " ")
 
 3.  List Available Gold Images
 
