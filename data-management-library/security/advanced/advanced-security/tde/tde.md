@@ -24,17 +24,17 @@ This lab assumes you have completed:
 - Watch a preview of "*Understanding Oracle Transparent Data Encryption (TDE) - Part1 (January 2020)*" [](youtube:avNWykLpic4)
 
 ### Lab Timing (estimated)
-| Step No. | Feature | Approx. Time | Details | Value Proposition |
-|--|------------------------------------------------------------|-------------|--------------------|-------------------|
-| 1 | Allow DB Restore | 5 minutes  |||
-| 2 | Create Keystore | 5 minutes |||
-| 3 | Create Master Key | 5 minutes |||
-| 4 | Create Auto-login Wallet | 5 minutes |||
-| 5 | Encrypt Existing Tablespace | 5 minutes |||
-| 6 | Encyrpt All New Tablespaces | 5 minutes |||
-| 7 | Rekey Master Key | 5 minutes |||
-| 8 | View Keystore Details | 5 minutes |||
-| 9 | (Optional) Restore Before TDE | 5 minutes |||
+| Step No. | Feature | Approx. Time |
+|--|------------------------------------------------------------|-------------|
+| 1 | Allow DB Restore | 5 minutes  |
+| 2 | Create Keystore | 5 minutes |
+| 3 | Create Master Key | 5 minutes |
+| 4 | Create Auto-login Wallet | 5 minutes |
+| 5 | Encrypt Existing Tablespace | 5 minutes |
+| 6 | Encyrpt All New Tablespaces | 5 minutes |
+| 7 | Rekey Master Key | 5 minutes |
+| 8 | View Keystore Details | 5 minutes |
+| 9 | (Optional) Restore Before TDE | 5 minutes |
 
 ## **STEP 1**: Allow DB Restore
 
@@ -61,7 +61,6 @@ This lab assumes you have completed:
 4. Once it has completed, it will automatically restart the container and pluggable databases
 
        **Note**:
-       
        - If you have executed this script before and there is an existing backup file, the script will not complete
        - You must manually manage the existing backup (delete or move) before running this script again
 
@@ -286,7 +285,6 @@ This lab assumes you have completed:
       ````
 
        **Note**:
-       
        - This is not a requirement though
        - It might be helpful to show some databases with TDE and some without
 
@@ -365,7 +363,7 @@ You may now proceed to the next lab.
 ## **Appendix**: About the Product
 - **Overview**
 
-    Hard-coded within the Oracle Database core product, this features is part of the **Advanced Security Option (ASO)**
+    Hard-coded within the Oracle Database core product, this features is part of the *Advanced Security Option (ASO)*
 
     TDE Enables you to encrypt data so that only an authorized recipient can read it.
 
@@ -380,13 +378,13 @@ You may now proceed to the next lab.
     ![](./images/aso-concept-tde.png " ")
 
 - **Benefits of Using Transparent Data Encryption**
-    - As a security administrator, you can be sure that sensitive data is encrypted and therefore safe in the event that the storage media or data file is stolen.
-    - Using TDE helps you address security-related regulatory compliance issues.
-    - You do not need to create auxiliary tables, triggers, or views to decrypt data for the authorized user or application. Data from tables is transparently decrypted for the database user and application. An application that processes sensitive data can use TDE to provide strong data encryption with little or no change to the application.
-    - Data is transparently decrypted for database users and applications that access this data. Database users and applications do not need to be aware that the data they are accessing is stored in encrypted form.
-    - You can encrypt data with zero downtime on production systems by using online table redefinition or you can encrypt it offline during maintenance periods. (See Oracle Database Administrator’s Guide for more information about online table redefinition.)
-    - You do not need to modify your applications to handle the encrypted data. The database manages the data encryption and decryption.
-    - Oracle Database automates TDE master encryption key and keystore management operations. The user or application does not need to manage TDE master encryption keys.
+    - As a security administrator, you can be sure that sensitive data is encrypted and therefore safe in the event that the storage media or data file is stolen
+    - Using TDE helps you address security-related regulatory compliance issues
+    - You do not need to create auxiliary tables, triggers, or views to decrypt data for the authorized user or application. Data from tables is transparently decrypted for the database user and application. An application that processes sensitive data can use TDE to provide strong data encryption with little or no change to the application
+    - Data is transparently decrypted for database users and applications that access this data. Database users and applications do not need to be aware that the data they are accessing is stored in encrypted form
+    - You can encrypt data with zero downtime on production systems by using `Online Table Redefinition` or you can encrypt it offline during maintenance periods (see `Oracle Database Administrator’s Guide` for more information about `Online Table Redefinition`)
+    - You do not need to modify your applications to handle the encrypted data. The database manages the data encryption and decryption
+    - Oracle Database automates TDE master encryption key and keystore management operations. The user or application does not need to manage TDE master encryption keys
 
 ## Want to Learn More?
 Technical Documentation
@@ -398,7 +396,7 @@ Video
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 19th October 2020
+- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

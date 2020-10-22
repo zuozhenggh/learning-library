@@ -34,7 +34,7 @@ To run this lab, you will need :
 
     Download the file `Integration_12.2.1.3.0_OTN.ova (16.36 GB)`
 
-    <img src="./images/download-soa12213-ova.png"  width="70%">
+    <img src="../../on-prems-env-local/images/download-soa12213-ova.png"  width="70%">
 
 
 ## **STEP 2:** Import the OVA image into Virtual Box
@@ -43,7 +43,7 @@ To run this lab, you will need :
 
 2. Go to **File -> Import Appliance**
 
-    <img src="./images/provision-vm.png"  width="100%">
+    <img src="../../on-prems-env-local/images/provision-vm.png"  width="100%">
 
 3. Select the `Integration_12.2.1.3.0_OTN.ova` file 
 
@@ -72,14 +72,14 @@ Once the import is successfull
 
     *note: You need an Oracle OTN account and be logged in, in order to reach the site*
 
-    <img src="./images/download-soa-12214.png"  width="100%">
+    <img src="../../on-prems-env-local/images/download-soa-12214.png"  width="100%">
 
 3. Select the following items in the list:
 
     - `V983385-01_1of2.zip`
     - `V983385-01_2of2.zip`
     
-    <img src="./images/download-quickstart.png"  width="100%">
+    <img src="../../on-prems-env-local/images/download-quickstart.png"  width="100%">
 
 4. Select your platform
 

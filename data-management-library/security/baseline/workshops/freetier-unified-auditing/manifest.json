@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Database Security - Baseline Workshop: Unified Auditing",
+  "workshoptitle": "Oracle Database Security Hands-On Labs - Part1 (Baseline) - UA",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -37,8 +37,8 @@
     },
     {
       "title": "Lab 5: Unified Auditing",
-      "description": "In this lab you will learn how to leverage OLS to track consent and force restriction for GDPR",
-      "publisheddate": "10/14/2020",
+      "description": "In this lab you can see how to leverage Oracle Unified Auditing",
+      "publisheddate": "10/20/2020",
       "filename": "../../unified-auditing/unified-auditing.md"
     }
   ]

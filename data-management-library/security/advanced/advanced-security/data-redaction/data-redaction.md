@@ -22,11 +22,11 @@ This lab assumes you have completed:
 - Watch a preview of "*Understanding Oracle Data Redaction (July 2020)*" [](youtube:ssy6Hov-MAs)
 
 ### Lab Timing (estimated)
-| Step No. | Feature | Approx. Time | Details | Value Proposition |
-|--|------------------------------------------------------------|-------------|--------------------|-------------------|
-| 1 | Create a basic Data Redaction policy | 5 minutes |||
-| 2 | Contextualize an existing Data Redaction policy | 5 minutes |||
-| 3 | (Optional) Drop the Data Redaction policy | <5 minutes |||
+| Step No. | Feature | Approx. Time |
+|--|------------------------------------------------------------|-------------|
+| 1 | Create a basic Data Redaction policy | 5 minutes |
+| 2 | Contextualize an existing Data Redaction policy | 5 minutes |
+| 3 | (Optional) Drop the Data Redaction policy | <5 minutes |
 
 ## **STEP 1**: Create a basic Data Redaction policy
 
@@ -48,7 +48,7 @@ This lab assumes you have completed:
       <copy>./01_query_employee_data.sh</copy>
       ````
 
-    ![](./images/dr-001.png " ")
+   ![](./images/dr-001.png " ")
 
 4. Create a redaction policy for the `DEMO_HR_EMPLOYEES` table to redact data for all queries
 
@@ -107,7 +107,7 @@ You may now proceed to the next lab.
 ## **Appendix**: About the Product
 - **Overview**
 
-    Hard-coded within the Oracle Database core product, this features is part of the **Advanced Security Option (ASO)**
+    Hard-coded within the Oracle Database core product, this features is part of the *Advanced Security Option (ASO)*
 
     Data Redaction enables you to mask (redact) data that is returned from queries issued by applications. We can also talk about Dynamic Data Masking.
 
@@ -130,13 +130,13 @@ You may now proceed to the next lab.
 
     Data Redaction performs the redaction at runtime, that is, the moment that the user tries to view the data. This functionality is ideally suited for dynamic production systems in which data constantly changes. While the data is being redacted, Oracle Database is able to process all of the data normally and to preserve the back-end referential integrity constraints. Data redaction can help you to comply with industry regulations such as Payment Card Industry Data Security Standard (PCI DSS) and the Sarbanes-Oxley Act.
 
-    ![](./images/aso-concept-dr.png " ")
+   ![](./images/aso-concept-dr.png " ")
 
 - **Benefits of Using Oracle Data Redaction**
-    - You have different styles of redaction from which to choose.
-    - Because the data is redacted at runtime, Data Redaction is well suited to environments in which data is constantly changing.
-    - You can create the Data Redaction policies in one central location and easily manage them from there.
-    - The Data Redaction policies enable you to create a wide variety of function conditions based on `SYS_CONTEXT` values, which can be used at runtime to decide when the Data Redaction policies will apply to the results of the application user's query.
+    - You have different styles of redaction from which to choose
+    - Because the data is redacted at runtime, Data Redaction is well suited to environments in which data is constantly changing
+    - You can create the Data Redaction policies in one central location and easily manage them from there
+    - The Data Redaction policies enable you to create a wide variety of function conditions based on `SYS_CONTEXT` values, which can be used at runtime to decide when the Data Redaction policies will apply to the results of the application user's query
 
 ## Want to Learn More?
 Technical Documentation: [Data Redaction 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/asoag/asopart1.html)
@@ -144,7 +144,7 @@ Technical Documentation: [Data Redaction 19c](https://docs.oracle.com/en/databas
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 19th October 2020
+- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
