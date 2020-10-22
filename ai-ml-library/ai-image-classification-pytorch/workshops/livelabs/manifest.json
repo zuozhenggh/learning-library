@@ -1,0 +1,20 @@
+{
+  "workshoptitle": "Getting Started with Computer Vision using PyTorch",
+    "tutorials": [
+        {
+            "title": "Setting Up the Environment",
+            "description": "Steps to set up the python environment and install pytorch",
+            "filename": "../../setting-up-environment/setting-up-environment.md"        
+        },
+        {
+            "title": "Lab 1: Training a Classifier",
+            "description": "Sample code and explaination for each stage of image classification using PyTorch",
+            "filename": "../../training-classifier/training-classifier.md"
+        },
+        {
+            "title": "Lab 2: Utilizing a GPU",
+            "description": "Modifying code from the previous lab to utilize a GPU",
+            "filename": "../../utilizing-gpu/utilizing-gpu.md"
+        }
+    ]
+}
