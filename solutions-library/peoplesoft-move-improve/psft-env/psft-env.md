@@ -1,4 +1,4 @@
-# Creating Environment in PeopleSoft
+# Lab 7: Creating Environment in PeopleSoft
 
 ## Introduction
 
@@ -116,7 +116,7 @@ You may proceed to the next lab.
 ## Acknowledgements
 **Authors** 
 - Rich Konopka, PeopleSoft Specialist, October 2020
-- Megha Gajbhiye, Cloud Solutions Engineer, Octiber 2020
+- Megha Gajbhiye, Cloud Solutions Engineer, October 2020
 
 **Last Updated By/Date** 
 - Sara Lipowsky, Cloud Engineer, October 2020

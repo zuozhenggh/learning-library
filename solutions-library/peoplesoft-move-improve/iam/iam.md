@@ -1,4 +1,4 @@
-# Creating Identity and Access Management (IAM) Resources
+# Lab 1: Creating Identity and Access Management (IAM) Resources
 
 ## Introduction
 
