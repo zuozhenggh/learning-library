@@ -27,12 +27,16 @@ The GoldenGate Classic Workshop is designed to introduce replication capabilitie
 
 There are 5 hands-on labs in this workshop. GoldenGate software for MySQL and Oracle are installed initial setup. After running Lab 1 – Setup GoldenGate , the rest of the labs can be run independently of each other, and in any order.
 
-Lab 1 –   Setup GoldenGate Classic
+Lab 4 –   Setup GoldenGate Classic
 
-Lab 2 –   MySQL -> Oracle 
+Lab 5  –   MySQL -> Oracle 
 
-Lab 3  –  Oracle -> MySQL
+Lab 6  –  Oracle -> MySQL
 
-Lab 4 –  Active - Active Replication
+Lab 7  –  Active - Active Replication
 
-Lab 5 –  GoldenGate Column Conversions
+Lab 8  –  GoldenGate Column Conversions
+
+Lab 9a -  GoldenGate PostgreSQL as a source
+
+Lab 9a -  GoldenGate PostgreSQL as a target
