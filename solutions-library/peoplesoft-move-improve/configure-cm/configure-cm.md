@@ -9,6 +9,7 @@ This lab will guide you on how to configure the system and infrastructure settin
 The purpose of this lab is to show you how to configure Cloud Manager settings.
 
 In this lab, you will:
+* Upload SSH public keys
 * Update My Oracle Support Credentials
 * Input the image OCID for the Cloud Manager
 * Create a Mount Target for a File System
@@ -18,14 +19,29 @@ In this lab, you will:
     - User ID
     - Password
 
-## **STEP 1**: Entering My Oracle Support Credentials
+## **STEP 1**: Uploading SSH public keys
+
+1. Navigate to **Cloud Manager Dashboard** > **Cloud Manager Settings** > **My Settings**.
+
+    ![](./images/4.png "")
+
+2. Navigate to the folder where you generated the keys (Lab 2, Step 1) and open the file **id_rsa.pub**.
+
+    ![](./images/5.png "")
+
+3. Copy the contents of the file in **My SSH Public Key** and click on **Save**
+
+    ![](./images/6.png "")
+
+## **STEP 2**: Entering My Oracle Support Credentials
 
 1.	Navigate to **Cloud Manager Dashboard** > **Cloud Manager Settings** > **Cloud Manager Settings**.
 
 2.	Update **My Oracle Support (MOS) Credentials**. These credentials are the same as the username and password you enter when you access http://support.oracle.com. Please make sure that you have an account and you can access http://support.oracle.com, this is required to download DPKs and PRPs automatically. Once you have entered your **User ID** and **Password**, click **Save Settings** at the top of the page.
 
     ![](./images/1.png "")
-## **STEP 2**: Updating Infrastructure Settings
+    
+## **STEP 3**: Updating Infrastructure Settings
 
 1.	Navigate to Infrastructure Settings on the left and update Operating System Images.     
     For Linux, enable **Marketplace Image** radio button and choose the latest version from the displayed list (see the screenshot below).
@@ -41,7 +57,7 @@ In this lab, you will:
 
 3.	Click **Refresh OCI Metadata** button on top of the page and wait for a few minutes.
 
-## **STEP 3**: Configuring File Server System
+## **STEP 4**: Configuring File Server System
 
 1.	Navigate to **File Server tab** on the left.  Accept the defaults. For Mount Target field, type “**lab**”.
 
