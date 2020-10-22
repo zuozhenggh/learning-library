@@ -30,23 +30,23 @@ For this lab you need:
 
 1. Click **Get App**
 
-  <img src="./images/1-get-app.png"  width="100%">
+  <img src="../../on-prems-env-mp/images/1-get-app.png"  width="100%">
 
 2. Select OCI Region and Sign in to your Oracle Cloud Infrastructure Account
 
-  <img src="./images/2-sign-in.png"  width="50%">
+  <img src="../../on-prems-env-mp/images/2-sign-in.png"  width="50%">
 
 3. Select the compartment you prepared to run this workshop
 
-  <img src="./images/3-soa-workshop-mp1.png"  width="100%">
+  <img src="../../on-prems-env-mp/images/3-soa-workshop-mp1.png"  width="100%">
 
 4. Accept the Terms and Conditions and click **Launch**
 
-  <img src="./images/4-soa-workshop-mp1.png"  width="100%">
+  <img src="../../on-prems-env-mp/images/4-soa-workshop-mp1.png"  width="100%">
 
 5. Provide an optional name and description, and click **Next**
 
-  <img src="./images/5-next.png"  width="100%">
+  <img src="../../on-prems-env-mp/images/5-next.png"  width="100%">
 
 6. Choose a shape
 
@@ -54,25 +54,25 @@ For this lab you need:
 
   Make sure the shape you chose is available in your tenancy.
 
-  <img src="./images/5-instance-shape.png"  width="70%">
+  <img src="../../on-prems-env-mp/images/5-instance-shape.png"  width="70%">
 
 7. Browse to your **SSH Public Key**
 
    To connect to the SOA servers via SSH, you need to provide a public key the server will use to identify your computer.
 
-  <img src="./images/6-ssh-key.png"  width="70%">
+  <img src="../../on-prems-env-mp/images/6-ssh-key.png"  width="70%">
 
 8. Click **Next** and then **Create**
 
-  <img src="./images/7-next.png"  width="100%">
+  <img src="../../on-prems-env-mp/images/7-next.png"  width="100%">
 
-  <img src="./images/8-job-running.png"  width="100%">
+  <img src="../../on-prems-env-mp/images/8-job-running.png"  width="100%">
 
   It will take about 1 to 2 minutes to create the stack. 
 
 8. When the job finishes, you can find the Public IP address of the instance at the bottom of the logs, or in the **Output** area. Make a note of this information.
 
-  <img src="./images/outputs-mp-demo.png"  width="100%">
+  <img src="../../on-prems-env-mp/images/outputs-mp-demo.png"  width="100%">
 
 ## **STEP 2:** Connect to the demo environment
 
@@ -82,7 +82,7 @@ Connect to the instance using your RDP Client (examples are using Microsoft Remo
 
 1. Add a new host, providing the public IP gathered from the stack output.
 
-    <img src="./images/rdp-add-host.png"  width="70%">
+    <img src="../../on-prems-env-mp/images/rdp-add-host.png"  width="50%">
 
 2. Connect, using username `oracle` and password `oracle`
 
@@ -92,21 +92,21 @@ Connect to the instance using your RDP Client (examples are using Microsoft Remo
 
 1. Click on `SOA and Compact Domain` on the VM desktop
 
-    <img src="./images/soa-desktop.png"  width="100%">
+    <img src="../../on-prems-env-mp/images/soa-desktop.png"  width="100%">
 
-2. Run the `Start soa_domain Admin Server` script
+2. Double click on the `Start soa_domain Admin Server` script to start the domain Admin Server
 
-    <img src="./images/soa-admin.png"  width="100%">
+    <img src="../../on-prems-env-mp/images/soa-admin.png"  width="100%">
 
 3. Wait for the admin server to be running. This will take 2-3 minutes.
 
     You will see state changed to `RUNNING` in the logs 
 
-    <img src="./images/soa-admin-running.png"  width="100%">
+    <img src="../../on-prems-env-mp/images/soa-admin-running.png"  width="100%">
 
-4. Run the `Start soa_domain SOA Server` script
+4. Double click on the `Start soa_domain SOA Server` script to start the SOA server
 
-    <img src="./images/soa-soa.png"  width="100%">
+    <img src="../../on-prems-env-mp/images/soa-soa.png"  width="100%">
 
 ## **STEP 4:** Check the local environment is up and running
 
@@ -116,11 +116,11 @@ to open the EM console
 
 2. Login using usename `weblogic`, and password `welcome1`
 
-  <img src="./images/em-login.png" width="100%">
+  <img src="../../on-prems-env-mp/images/em-login.png" width="100%">
 
 3. Check that the admin server and SOA domain are running (other domains will not be running and that is normal)
 
-  <img src="./images/soa-desktop-em-status.png" width="100%">
+  <img src="../../on-prems-env-mp/images/soa-desktop-em-status.png" width="100%">
 
 
 

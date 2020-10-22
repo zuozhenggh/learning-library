@@ -14,7 +14,7 @@
         {
             "title": "Lab 2: Build a DB System",
             "description": "This lab walks you through building a RAC system in the Oracle Cloud.",
-            "filename": "../../setup/setup-compute.md"
+            "filename": "../../setup/setup-compute-livelabs.md"
         },
         {
             "title": "Lab 3: Clusterware and Fencing",
