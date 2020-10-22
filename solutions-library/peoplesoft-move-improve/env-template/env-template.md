@@ -1,4 +1,4 @@
-# Creating New Environment Template
+# Lab 6: Creating New Environment Template
 
 ## Introduction
 
@@ -87,7 +87,7 @@ You may proceed to the next lab.
 
 **Authors** 
 - Rich Konopka, PeopleSoft Specialist, October 2020
-- Megha Gajbhiye, Cloud Solutions Engineer, Octiber 2020
+- Megha Gajbhiye, Cloud Solutions Engineer, October 2020
 
 **Last Updated By/Date** 
 - Sara Lipowsky, Cloud Engineer, October 2020
