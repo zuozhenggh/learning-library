@@ -7,7 +7,7 @@
 
 ## Oracle Golgengate Classic Workshop
 
-Welcome to the Golden Gate for Big Data Workshop. The content will give you a basic understanding of Golden Gate and Big Data.
+Welcome to the Golden Gate Classic Workshop. The content will give you a basic understanding of Golden Gate and Big Data.
 
 ## Introduction
 
@@ -21,7 +21,7 @@ The GoldenGate Classic Workshop is designed to introduce replication capabilitie
 
 ## Introduction
 
-The GoldenGate Classic Workshop is designed to introduce replication capabilities from relational sources to relational  targets. This workshop is based on GoldenGate Classic Architecture. For more information, please discuss this with the workshop facilitator or the Data Integration Sales team.
+The GoldenGate Classic Workshop is designed to introduce replication capabilities from relational sources to relational targets. This workshop is based on GoldenGate Classic Architecture. For more information, please discuss this with the workshop facilitator or the Data Integration Sales team.
 
 ## Workshop Details
 

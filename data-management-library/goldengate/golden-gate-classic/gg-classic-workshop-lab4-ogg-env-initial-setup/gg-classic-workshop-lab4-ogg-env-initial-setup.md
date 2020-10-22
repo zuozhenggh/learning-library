@@ -23,9 +23,9 @@ Lab  – Classic Active-Active Replication
 
 Lab  – Classic Column Conversions 
 
-Lab - Replication to PostgreSQL
+Lab  - Replication to PostgreSQL
 
-Lab - Replication from PostgreSQL
+Lab  - Replication from PostgreSQL
 
 ### Objectives
 
