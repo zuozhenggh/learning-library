@@ -1,4 +1,4 @@
-# Lab 8 - GoldenGate Column Conversions
+# Lab 9b - GoldenGate PostgreSQL Lab B
 
 ### Introduction
 
@@ -41,9 +41,10 @@ Approximately 60 minutes
 * [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
-* **Contributors** - Madhu Kumar
+* **Author** - Madhu Kumar Data Integration Hub October 2020
+* **Contributors** - Brian Elliott
 * **Last Updated By/Date** - Brian Elliott, October 2020
+
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -27,10 +27,11 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 - **Lab: Replication Column Conversion and GoldenGate** -
     In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhbase’ will read the remote trail files, create the HBase tables and write the data to those tables.
 
-- **Lab: PostgreSQL and GoldenGate A** -
+- **Lab: PostgreSQL and GoldenGate Lab 9a** -
+- In this lab we will load data from PostgreSQL database 
 
-- **Lab: PostgreSQL and GoldenGate B** -
-
+- **Lab: PostgreSQL and GoldenGate 9b** -
+- In this lab we will load data into PostgreSQL database 
 
 ## Learn More
 

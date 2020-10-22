@@ -55,13 +55,13 @@
 
     },
     {
-      "title": "Lab 9a: Goldengate Non Oracle PostpresSQL Lab 9a",
+      "title": "Lab 9a: Goldengate Non Oracle replication from PostpresSQL Lab 9a",
       "description": "Lab 8: Goldengate Non Oracle PostpresSQL Lab 9a",
       "filename": "../../gg-classic-workshop-lab9a - postgresql  laba -replication.md"
 
     },
     {
-      "title": "Lab 9b: Goldengate Non Oracle PostpresSQL Lab 9b",
+      "title": "Lab 9b: Goldengate Non Oracle replication to PostpresSQL",
       "description": "Lab 8: Goldengate Non Oracle PostpresSQL Lab 9b",
       "filename": "../../gg-classic-workshop-lab9b - postgresql  labb -replication.md"
     }

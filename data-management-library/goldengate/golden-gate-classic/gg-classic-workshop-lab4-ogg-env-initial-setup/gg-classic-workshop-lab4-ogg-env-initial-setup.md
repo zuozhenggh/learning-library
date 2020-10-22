@@ -23,6 +23,10 @@ Lab  – Classic Active-Active Replication
 
 Lab  – Classic Column Conversions 
 
+Lab - Replication to PostgreSQL
+
+Lab - Replication from PostgreSQL
+
 ### Objectives
 
 KEY FEATURES
@@ -341,8 +345,8 @@ You may now *proceed to the next lab*.
 * [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
-* **Contributors** - Meghana Banka, Rene Fontcha
+* **Author** - Brian Elliott, Data Integration, October 2020
+* **Contributors** - Madhu Kumar
 * **Last Updated By/Date** - Brian Elliott, October 2020
 
 ## See an issue?
