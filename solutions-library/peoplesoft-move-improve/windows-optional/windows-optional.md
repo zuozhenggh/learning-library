@@ -4,7 +4,7 @@
 
 For individuals who might not have Admin access to their local machine, this lab walks you through the steps to provision a Windows compute instance in OCI, and access it through a Remote Desktop Connection
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
