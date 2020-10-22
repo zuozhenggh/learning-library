@@ -34,8 +34,7 @@ If you have a `Page Not Found` error, the graph you published at Lab 7 may expir
     ![Customer 360 graph](images/ADB_GViz_Show50Elements.png " ")
 
 ## **STEP 3:** Add highlights
-Now let's add some labels and other visual context. These are known as highlights.  
-Left-click on <a href="highlights.json" download="highlights.json" target="\_blank">this link</a> to download it.*
+Now let's add some labels and other visual context. These are known as highlights. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u03/b/labfiles/o/highlights.json) to download it and save it on your machine.  
 
 1. Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder (i.e. either to `oracle-pg/graphs/customer_360`  or the folder where you just downloaded it) and choose the file named 'highlights.json' and click Open to load that.  
 ![Load highlights for graph](images/GraphVizLoadHighlights.png " ")
@@ -125,5 +124,7 @@ Click Run.
 - **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai. 
 - **Last Updated By/Date** - Jayant Sharma, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

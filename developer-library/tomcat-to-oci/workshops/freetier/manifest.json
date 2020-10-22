@@ -11,32 +11,32 @@
             "filename": "../../intro/intro.md"
         },
         {
-            "title": "Lab 1: Setup the Demo On-Premises Environment",
+            "title": "Lab 1: Setup the Demo On-Premises Environment Using Docker",
             "publisheddate": "10/06/2020",
             "filename": "../../on-prems-env-docker/on-prems-env-docker.md"
         },
         {
-            "title": "Lab 2: Deploy Tomcat with ATP",
+            "title": "Lab 2: Deploy Tomcat on OCI with ATP",
             "publisheddate": "10/06/2020",
             "filename": "../../deploy-tomcat/deploy-tomcat.md"
         },
         {
-            "title": "Lab 3: Migrate the database",
+            "title": "Lab 3: Migrate the On-Premises Database to Autonomous Database",
             "publisheddate": "10/06/2020",
             "filename": "../../migrate-db/migrate-db.md"
         },
         {
-            "title": "Lab 4: Migrate the Application",
+            "title": "Lab 4: Migrate the Tomcat Application",
             "publisheddate": "10/06/2020",
             "filename": "../../migrate-app/migrate-app.md"
         },
         {
-            "title": "Lab 5: Scaling Tomcat",
+            "title": "Lab 5: Scaling the Tomcat Cluster",
             "publisheddate": "10/06/2020",
             "filename": "../../scale/scale.md"
         },
         {
-            "title": "Lab 6: Tear Down",
+            "title": "Lab 6: Tear Down the Workshop",
             "publisheddate": "10/06/2020",
             "filename": "../../tear-down/tear-down.md"
         }

@@ -52,7 +52,7 @@ This lab assumes that you have successfully completed the following labs in the 
 
 In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first utility node** to a new public IP address.
 
-1. On the **Oracle Cloud Console** banner at the top of the page, click **Cloud Shell** <img src="images/cloud-shell-icon.png" alt="Cloud Shell icon">. It may take a few moments to connect and authenticate you.
+1. On the **Oracle Cloud Console** banner at the top of the page, click **Cloud Shell** ![](./images/cloud-shell-icon.png). It may take a few moments to connect and authenticate you.
 
   ![](./images/cloud-shell-started.png " ")
 
@@ -200,5 +200,7 @@ In this step, you will learn how to edit a public IP address using both the **Cl
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation  
 * **Last Updated By/Date:** Lauran Serhal, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
