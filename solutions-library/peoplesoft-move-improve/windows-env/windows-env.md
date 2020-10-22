@@ -4,7 +4,7 @@
 
 As a take home exercise, you can provision a PeopleSoft environment with a Windows client node. Follow the high level steps outlined below.
 
-<!-- Estimated Lab Time: n minutes -->
+Estimated Lab Time: 3 hours
 
 
 ## **STEPS**

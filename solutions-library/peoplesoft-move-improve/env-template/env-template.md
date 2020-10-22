@@ -57,7 +57,7 @@ In this lab, you will:
 
   Refer to the following for network topology:
 
-    ![](./images/7.png "")
+    ![](./images/arch.png "")
 
 5. 	Expand Full Tier -> General Settings. Make sure to give Database Operator Id as **PS**. Give a database name **MYPUMDB**. The defaults for many parameters can be changed; optionally, we will keep it as default.
 
