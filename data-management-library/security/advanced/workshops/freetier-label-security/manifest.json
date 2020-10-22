@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Database Security - Advanced Workshop: Label Security (OLS)",
+  "workshoptitle": "Oracle Database Security Hands-On Labs - Part2 (Advanced) - OLS",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -37,8 +37,8 @@
     },
     {
       "title": "Lab 5: Oracle Label Security (OLS)",
-      "description": "In this lab you will learn how to leverage OLS to track consent and force restriction for GDPR",
-      "publisheddate": "10/14/2020",
+      "description": "In this lab you can see how to leverage Oracle Label Security (OLS)",
+      "publisheddate": "10/20/2020",
       "filename": "../../label-security/label-security.md"
     }
   ]

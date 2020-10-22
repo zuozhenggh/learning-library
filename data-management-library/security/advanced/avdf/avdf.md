@@ -20,7 +20,7 @@ This lab assumes you have completed:
    - Lab: Prepare Setup
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
-   - Lab: DBSAT (please refer to the `Oracle DB Security Baseline Workshop`)
+   - Lab: DBSAT (please refer to the *Oracle DB Security Baseline Workshop*)
 
 ### Video Preview
 
@@ -28,39 +28,39 @@ This lab assumes you have completed:
 
 ### Lab Timing (estimated)
 
-| Step No. | Feature | Approx. Time | Details | Value Proposition |
-|--|------------------------------------------------------------|-------------|--------------------|-------------------|
-|| **Audit Vault Labs**|
-|01| Run the Deploy Agent | <5 minutes|||
-|02| Register a Pluggable Database as Target | <5 minutes|||
-|03| Register an Audit Trail | <5 minutes|||
-|04| Manage Unified Audit Settings | 5 minutes|||
-|05| Retrieve User Entitlements | <5 minutes|||
-|06| Access Rights and User Activity on Sensitive Data | <5 minutes|||
-|07| Auditing Column Data Changes - Before and After Values | 15 minutes|||
-|08| Create Alert Policies | 10 minutes|||
-|| **DB Firewall Labs**|
-|09| Add the Firewall Monitoring | 10 minutes|||
-|10| Configure and Verify Glassfish to use the Database Firewall | 10 minutes|||
-|11| Train the Database Firewall for expected SQL traffic | 20 minutes|||
-|12| Build and Test the DB Firewall Allow-List Policy | 20 minutes|||
-|| **AVDF Advanced Labs**|
-|13| PostgreSQL Audit Collection | 10 minutes|||
-|14| Linux Audit Collection | 10 minutes|||
-|15| LDAP/Active Directory Configuration | <5 minutes|||
+| Step No. | Feature | Approx. Time |
+|--|------------------------------------------------------------|-------------|
+|| **Audit Vault Labs**||
+|01| Run the Deploy Agent | <5 minutes|
+|02| Register a Pluggable Database as Target | <5 minutes|
+|03| Register an Audit Trail | <5 minutes|
+|04| Manage Unified Audit Settings | 5 minutes|
+|05| Retrieve User Entitlements | <5 minutes|
+|06| Access Rights and User Activity on Sensitive Data | <5 minutes|
+|07| Auditing Column Data Changes - Before and After Values | 15 minutes|
+|08| Create Alert Policies | 10 minutes|
+|| **DB Firewall Labs**||
+|09| Add the Firewall Monitoring | 10 minutes|
+|10| Configure and Verify Glassfish to use the Database Firewall | 10 minutes|
+|11| Train the Database Firewall for expected SQL traffic | 20 minutes|
+|12| Build and Test the DB Firewall Allow-List Policy | 20 minutes|
+|| **AVDF Advanced Labs**||
+|13| PostgreSQL Audit Collection | 10 minutes|
+|14| Linux Audit Collection | 10 minutes|
+|15| LDAP/Active Directory Configuration | <5 minutes|
 
 <!-- DB Firewall in progress!
-|06| Audit Vault - Audit Stored Procedures Changes | 5 minutes|||
+|06| Audit Vault - Audit Stored Procedures Changes | 5 minutes|
 -->
 <!-- DB Firewall in progress!
-|14| Establish Trusted Users and Application Paths | 5 minutes|||
-|15| Refine, Publish and Deploy DB Firewall Policy | 5 minutes|||
-|16| Test the DB Firewall Policy with DBA Exceptions | 5 minutes|||
-|17| Refine, Publish and Deploy DB Firewall Policy to Monitor Sensitive Data | 5 minutes|||
-|18| Block SQL Injection | 5 minutes|||
+|14| Establish Trusted Users and Application Paths | 5 minutes|
+|15| Refine, Publish and Deploy DB Firewall Policy | 5 minutes|
+|16| Test the DB Firewall Policy with DBA Exceptions | 5 minutes|
+|17| Refine, Publish and Deploy DB Firewall Policy to Monitor Sensitive Data | 5 minutes|
+|18| Block SQL Injection | 5 minutes|
 -->
 <!-- Advanced Labs in progress!
-|19| MySQL Audit Collection | 5 minutes|||
+|19| MySQL Audit Collection | 5 minutes|
 -->
 
 ## **STEP 1**: Audit Vault - Run the Deploy Agent
@@ -91,7 +91,7 @@ This lab assumes you have completed:
 
 5. Your output will look similar to this but your `Activation Key` will be different
 
-    ![](./images/avdf-001.png " ")
+   ![](./images/avdf-001.png " ")
 
 6. Next, we will deploy the Audit Vault Agent. This script will unpack the `agent.jar` file into the `/u01/app/avagent` directory.
 
@@ -107,7 +107,7 @@ This lab assumes you have completed:
 
 8. Your output will look similar to this but your `Activation Key` will be different
 
-    ![](./images/avdf-002.png " ")
+   ![](./images/avdf-002.png " ")
 
 9. As a final step, we will verify that the dbsec-lab host has been properly registered and is activated with Audit Vault
 
@@ -117,7 +117,7 @@ This lab assumes you have completed:
 
 10. Notice the output says `Running` for the Agent Status column
 
-    ![](./images/avdf-003.png " ")
+   ![](./images/avdf-003.png " ")
 
 ## **STEP 2**: Audit Vault - Register a Pluggable Database as Target
 
@@ -130,7 +130,6 @@ This lab assumes you have completed:
 2. You could perform the register from the Audit Vault Web UI but we will use the AVCLI instead
 
       **Note**:
-
       - You will need to enter the `AVAUDITUSER` password during this step
       - This user is a database user that was created, and granted the appropriate privileges, to perform database audit collection and clean-up and has `SELECT` access on several dictionary tables (for more information please see the Oracle Audit Vault and Database Firewall documentation)
       - The password for `AVAUDITUSER` is `Oracle123`
@@ -141,7 +140,7 @@ This lab assumes you have completed:
 
 3. When complete, your output should look similar to this:
 
-    ![](./images/register_database01.png " ")
+   ![](./images/register_database01.png " ")
 
 ## **STEP 3**: Audit Vault - Register an Audit Trail
 
@@ -178,7 +177,6 @@ This lab assumes you have completed:
    ![](./images/all_activity_failures01.png " ")
 
       **Note**:
-
       - This was just a small example to verify that audit data was being collected and is visible in Audit Vault
       - There will be more detailed report generation labs later in the workshop
 
@@ -201,7 +199,7 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
 5. On the target screen, under `Audit Policy` perform the following:
     - Checkbox `Retrieve Immediately`
     - Change the radio button for `Schedule` to `Enable`    
-    - Set the `Schedule` to `Repeat Every` **1** **Day**    
+    - Set the `Schedule` to `Repeat Every` **1 Day**    
     - Press `Save` to save and continue
 
    ![](./images/save_audit_policy01.png " ")
@@ -296,21 +294,21 @@ You will retrieve and provision the Unified Audit settings for the `pdb1` plugga
 
     - Using the browser, navigate back to the `Targets` tab and then to the `User Entitlement Snapshots` on the left-hand menu
 
-         ![](images/user_entitlement_snapshots01.png " ")
+   ![](images/user_entitlement_snapshots01.png " ")
 
     - Create a new label called `baseline` based on the snapshot we took during our initial entitlement configuration
 
-         ![](images/create_new_label01.png " ")
+   ![](images/create_new_label01.png " ")
 
     - From the `Targets` tab, click on the `Target Name` again and run another User Entitlements job by checkboxing  `Retrieve Immediately` and clicking [**Save**]
 
-         ![](images/retrieve_user_entitlements_02.png " ")
+   ![](images/retrieve_user_entitlements_02.png " ")
 
     **Note**: Make sure you update the `Start At` Day and time to reflect the time you currently have
 --->
 
 <!--
-## **STEP 6**: Audit Vault - Audit Stored Procedures Changes
+**STEP 6**: Audit Vault - Audit Stored Procedures Changes
 
 In this lab you will enable, and test, the Audit Stored Procedure Changes for the pluggable database `pdb1`.
 
@@ -324,7 +322,7 @@ Execute the script to generate the creation of a PL/SQL function, creating a tab
 
 Next, using a web browser, login to Audit Vault as `AVAUDITOR` and the password `T06tron.` with the `dot` included in the password.
 
-![](images/login_avauditor01.png " ")
+   ![](images/login_avauditor01.png " ")
 
 - Click [**Targets**]
 
@@ -338,11 +336,11 @@ Next, using a web browser, login to Audit Vault as `AVAUDITOR` and the password 
 
     - Press `Save`
 
-        ![](images/setup_sp_auditing01.png " ")
+   ![](images/setup_sp_auditing01.png " ")
 
 **Note**: If you receive an error stating the `Start At is less than specified minimium date` look at the `Audit Policy` or the `User Entitlements` sections and update their `Start At` dates to be similar what you set for the `Stored Procedure Auditing` date.
 
-#### View Stored Procedure Change Reports
+*View Stored Procedure Change Reports*
 
 Now view the reports related to Stored Procedures.
 
@@ -350,7 +348,7 @@ Now view the reports related to Stored Procedures.
 
 - Scroll down until you get to `Stored Procedure Changes` and expand the section
 
-    ![](images/stored_procedure_reports.png " ")
+   ![](images/stored_procedure_reports.png " ")
 
 - Click `Created Stored Procedures` and view the results.
 
@@ -759,8 +757,9 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
    ![](images/dbfw_monitoring_setup01.png " ")
 
-    **Note**: Ensure you use the IP Address not the hostname because the DBSecLab VMs are using DNS!
-    This is a demonstration environment limitation not an AVDF limitation.
+    **Note**:
+    - Ensure you use the IP Address not the hostname because the DBSecLab VMs are using DNS!
+    - This is a demonstration environment limitation not an AVDF limitation
 
 15. Click [**Save**]
 
@@ -855,7 +854,6 @@ In this lab you will modify the Glassfish connection. Instead of connecting dire
 14. Now, you should see that the `IP Address` row has changed from `10.0.0.150` to `10.0.0.152`, which is the IP Address of the Database Firewall
 
    ![](images/firewall_ip_address.png " ")
-
 
 ## **STEP 11**: DB Firewall - Train the Database Firewall for expected SQL traffic
 
@@ -964,16 +962,15 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
 
    ![](images/dbfirewall_activity_details01.png " ")
 
-     **Note**:       
-     - This information tells us a lot about our Database Firewall policies and why we are capturing this particular query
-     - If your reports show a lot of unknown activity you probably have **Native Network Encryption** enabled.
-     Please disable it from a terminal session and run the queries again:
-          - To check, run the following script: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/01_view_sqlnet_ora.sh`
-          - If it says `SQLNET.ENCRYPTION_SERVER=REQUESTED` or `SQLNET.ENCRYPTION_SERVER=REQUIRED` then it needs to be disabled
-          To disable, run the following scripts: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/disable_native_network_enc.sh`
-          - To verify, run the following script: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/01_view_sqlnet_ora.sh`
-
-     - It should return no contents now!
+       **Note**:       
+       - This information tells us a lot about our Database Firewall policies and why we are capturing this particular query
+       - If your reports show a lot of unknown activity you probably have **Native Network Encryption** enabled
+       - Please disable it from a terminal session and run the queries again:
+            - To check, run the following script: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/01_view_sqlnet_ora.sh`
+            - If it says `SQLNET.ENCRYPTION_SERVER=REQUESTED` or `SQLNET.ENCRYPTION_SERVER=REQUIRED` then it needs to be disabled
+            - To disable, run the following scripts: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/disable_native_network_enc.sh`
+            - To verify, run the following script: `$DBSEC_LABS/Network_Encryption/Native_Network_Encryption/01_view_sqlnet_ora.sh`
+       - It should return no contents now!
 
 30. One of our favorite queries is this SQL statement:
 
@@ -1175,7 +1172,7 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
 
    ![](images/query_with_dbfw_hr_policy_enabled01.png " ")
 
-  **Note**:  Remember, this is because the Database Firewall substituted `select * from dual where 1=2` for the regular query
+    **Note**:  Remember, this is because the Database Firewall substituted "`select * from dual where 1=2`" for the regular query
 
 ## **STEP 13**: (Advanced Labs) PostgreSQL Audit Collection
 
@@ -1183,10 +1180,10 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
 
 The objective of this lab is to collect audit log records from PostgreSQL databases (with pgaudit configured) into Oracle Audit Vault and Database Firewall:
 - Ensure to that `pgaudit` is installed extension:
-The PostgreSQL Audit Extension (or pgaudit) provides detailed session and/or object audit logging via the standard logging facility provided by PostgreSQL
-The audit collection will be incomplete and operational details are missed out from the reports in case this extension is not enabled
+    - The PostgreSQL Audit Extension (or pgaudit) provides detailed session and/or object audit logging via the standard logging facility provided by PostgreSQL
+    - The audit collection will be incomplete and operational details are missed out from the reports in case this extension is not enabled
 - Make sure that the log_destination parameter is set to `csvlog` in `postgresql.conf` file:
-The AVDF PostgreSQL audit collector will only be able to process CSV files.
+    - The AVDF PostgreSQL audit collector will only be able to process CSV files
 - Parameter logging_collector needs to be set to `ON`
 - The AVDF Agent OS user needs to have read permission on the directory specified on the log_directory parameter and the generated CSV files to be able to read them
 
@@ -1270,7 +1267,7 @@ The AVDF PostgreSQL audit collector will only be able to process CSV files.
 
 15. Finally, explore the filters and view the details on the audit data. For example, click on the `Event Status` tab and filter the report by `FAILURE`
 
-    ![](images/postgresql_failure_report01.png " ")
+   ![](images/postgresql_failure_report01.png " ")
 
 16. You might see failures for multiple `Targets`
 
@@ -1281,7 +1278,6 @@ The AVDF PostgreSQL audit collector will only be able to process CSV files.
    ![](images/postgresql_audit_details01.png " ")
 
 18. Continue to explore until you are comfortable!
-
 
 ## **STEP 14**: (Advanced Labs) Linux Audit Collection
 
@@ -1363,7 +1359,6 @@ Audit Vault can collect and report on the operating system audit data
 
 17. Continue to explore until you are comfortable!
 
-
 ## **STEP 15**: (Advanced Labs) LDAP/Active Directory Configuration
 
 **Before Started**
@@ -1404,38 +1399,41 @@ You may now proceed to the next lab.
 ## **Appendix**: About the Product
 - **Overview**
 
-  Oracle Audit Vault and Database Firewall (AVDF) is a complete **Database Activity Monitoring (DAM)** solution that **combines native audit data with network-based SQL traffic capture**.
+    Oracle Audit Vault and Database Firewall (AVDF) is a complete **Database Activity Monitoring (DAM)** solution that **combines native audit data with network-based SQL traffic capture**.
 
-  AVDF includes an enterprise quality **audit data warehouse**, host-based audit data collection agents, powerful reporting and analysis tools, alert framework, audit dashboard, and a multi-stage Database Firewall. The Database Firewall uses a sophisticated **grammar analysis engine** to inspect SQL statements before they reach the database and determines with high accuracy whether to allow, log, alert, substitute, or block the incoming SQL.
+    AVDF includes an enterprise quality **audit data warehouse**, host-based audit data collection agents, powerful reporting and analysis tools, alert framework, audit dashboard, and a multi-stage Database Firewall. The Database Firewall uses a sophisticated **grammar analysis engine** to inspect SQL statements before they reach the database and determines with high accuracy whether to allow, log, alert, substitute, or block the incoming SQL.
 
-  AVDF comes with **collectors for Oracle Database, Oracle MySQL, Microsoft SQL Server, PostgreSQL, IBM Db2 (on LUW), SAP Sybase, Oracle Key Vault, Microsoft Active Directory, Linux, Windows, AIX, Solaris, and HPUX**. A **Quick-JSON collector** simplifies ingesting audit data from databases like MongoDB. In addition to the provided collectors, AVDF's extensible framework allows simple configuration-based audit collection from **JDBC**-accessible databases and REST, JSON, or XML sources, making collection from most other systems easy. A full featured Java SDK allows creation of collectors for applications or databases that don't use a standard technology to record their audit trail.
+    AVDF comes with **collectors for Oracle Database, Oracle MySQL, Microsoft SQL Server, PostgreSQL, IBM Db2 (on LUW), SAP Sybase, Oracle Key Vault, Microsoft Active Directory, Linux, Windows, AIX, Solaris, and HPUX**. A **Quick-JSON collector** simplifies ingesting audit data from databases like MongoDB. In addition to the provided collectors, AVDF's extensible framework allows simple configuration-based audit collection from **JDBC**-accessible databases and REST, JSON, or XML sources, making collection from most other systems easy. A full featured Java SDK allows creation of collectors for applications or databases that don't use a standard technology to record their audit trail.
 
    ![](./images/avdf-concept-01.png " ")
 
-- **Software Appliance**
-Oracle Audit Vault and Database Firewall are packaged as a "**Soft Appliance**" and contain everything needed to install the product on bare hardware - or in this case virtual environments.
+    - **Software Appliance**
 
-- **Fine Grained, Customizable Reporting and Alerting**
-Dozens of out-of-the-box compliance reports provide easy, schedulable, customized reporting for regulations such as GDPR, PCI, GLBA, HIPAA, IRS 1075, SOX, and UK DPA.
-Reports aggregate network events and audit data from the monitored systems. Summary reports, trend charts and anomaly reports can be used to quickly review characteristics of user activity and help identify anomalous events. Report data can be easily filtered, enabling quick analysis of specific systems or events. Security managers can define threshold based alert conditions on activities that may indicate attempts to gain unauthorized access and/or abuse system privileges. Fine-grained authorizations enable security managers to restrict auditors and other users to information from specific sources, allowing a single repository to be deployed for an entire enterprise.
+    Oracle Audit Vault and Database Firewall are packaged as a "**Soft Appliance**" and contain everything needed to install the product on bare hardware - or in this case virtual environments.
+
+    - **Fine Grained, Customizable Reporting and Alerting**
+
+    Dozens of out-of-the-box compliance reports provide easy, schedulable, customized reporting for regulations such as GDPR, PCI, GLBA, HIPAA, IRS 1075, SOX, and UK DPA.
+    Reports aggregate network events and audit data from the monitored systems. Summary reports, trend charts and anomaly reports can be used to quickly review characteristics of user activity and help identify anomalous events. Report data can be easily filtered, enabling quick analysis of specific systems or events. Security managers can define threshold based alert conditions on activities that may indicate attempts to gain unauthorized access and/or abuse system privileges. Fine-grained authorizations enable security managers to restrict auditors and other users to information from specific sources, allowing a single repository to be deployed for an entire enterprise.
 
    ![](./images/avdf-concept-02.png " ")
 
-**Deployment Flexibility and Scalability**
-Security controls can be customized with in-line monitoring and blocking on some databases and monitoring only on other databases. The multi-stage Database Firewall can be deployed in-line as a database proxy server, or out-of-band in network sniffing mode, or with a host-based agent that relays network activity back to the firewall for analysis and recording. Delivered as a pre-configured software appliance that can be deployed on Linux-compatible hardware of choice, a single Audit Vault Server can consolidate audit data and firewall events from thousands of databases. Both Audit Vault Server and the Database Firewall can be configured in a High Availability mode for fault tolerance.
+    - **Deployment Flexibility and Scalability**
 
-Oracle Audit Vault and Database Firewall 20c **supports both Cloud and On-Premise databases with one single dashboard**, giving customers insight into the activities on their databases.
+    Security controls can be customized with in-line monitoring and blocking on some databases and monitoring only on other databases. The multi-stage Database Firewall can be deployed in-line as a database proxy server, or out-of-band in network sniffing mode, or with a host-based agent that relays network activity back to the firewall for analysis and recording. Delivered as a pre-configured software appliance that can be deployed on Linux-compatible hardware of choice, a single Audit Vault Server can consolidate audit data and firewall events from thousands of databases. Both Audit Vault Server and the Database Firewall can be configured in a High Availability mode for fault tolerance.
+
+    Oracle Audit Vault and Database Firewall 20c **supports both Cloud and On-Premise databases with one single dashboard**, giving customers insight into the activities on their databases.
 
 ## Want to Learn More?
   - Technical Documentation: [Oracle Audit Vault & Database Firewall 20c](https://docs.oracle.com/en/database/oracle/audit-vault-database-firewall/20/index.html)
 
 Video
-  - *Auditing PostgreSQL and MongoDB with Oracle Audit Vault and Database Firewall (October 2020)* [](youtube:)
+  - *Auditing PostgreSQL and MongoDB with Oracle Audit Vault and Database Firewall (October 2020)* [](youtube:o0LqJXwS4L0)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Angeline Dhanarani, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 19th October 2020
+- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
