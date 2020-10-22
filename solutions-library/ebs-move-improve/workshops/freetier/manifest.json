@@ -42,7 +42,7 @@
         {
             "title": "Teardown Your EBS Environments",
             "description": "Teardown Your Oracle E-Business Suite Environments",
-            "filesname": "../../teardown/teardown.md"
+            "filename": "../../teardown/teardown.md"
         }
      ]
 }
