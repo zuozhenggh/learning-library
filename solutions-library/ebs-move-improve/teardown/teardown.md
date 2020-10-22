@@ -1,13 +1,14 @@
 # Teardown Your Oracle E-Business Suite Environments
 
 ## Introduction
-In this lab, we will use the Oracle E-Business Suite Cloud Manager to destroy your Oracle E-Business Suite environments.
+In this lab, we will use the Oracle E-Business Suite Cloud Manager to destroy your Oracle E-Business Suite environments. Then we will delete all the resources in OCI with the Stack we created in Lab 2. 
 
 Estimated Lab Time: 15 minutes
 
 
 ### Objectives
-* Delete your EBS environment
+* Delete your EBS environments
+* Destroy OCI Resources used for Cloud Manager
 
 ### Prerequisites
 * Tenancy Admin User
@@ -26,12 +27,14 @@ Estimated Lab Time: 15 minutes
 
     ![](./images/latestActivity.png " ")
 
-    Once the environemnt has been destroyed, it will no longer appear on the Cloud Manager Environements page. 
+    Once the environment has been destroyed, it will no longer appear on the Cloud Manager Environements page. 
+
+    You can repeat this step for all other EBS environments you wish to delete. 
 
 
 ## **STEP 2:** Teardown the Cloud Manager Instance
 
-1. Navigate to the OCI console and login as the tenancy admin user. Go to **Resource Manager** > **Stacks** and select the Stack you used to create the Cloud Manager environment (ensure that you are in the correct compartment if no items display).
+1. Navigate to the OCI console and login as the tenancy admin user. Go to **Resource Manager** > **Stacks** and select the stack you used to create the Cloud Manager environment (ensure that you are in the correct compartment if no items display).
 
     ![](./images/stacks.png " ")
 
@@ -42,6 +45,8 @@ Estimated Lab Time: 15 minutes
     The job will run and teardown all resources created by the stack, including the Cloud Manager instance and the Networking components. 
 
 3. Once the destroy job has finished and the Cloud Manager has been deleted, you may go to **Governance** > **Compartment Explorer** and then select **ebshol_compartment** on the left side of the screen to validate that it is empty. 
+
+    Note: There may be resources still listed in the compartment, but they should have a status of **Terminated**. If there are still active resources in the compartment, you will need to destroy them before deleting the compartment. 
 
     ![](./images/explorer.png " ")
 

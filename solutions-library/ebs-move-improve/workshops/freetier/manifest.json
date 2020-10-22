@@ -40,7 +40,7 @@
             "filename": "../../optimize-data/optimize-data.md"
         },
         {
-            "title": "Next Steps: Teardown Your EBS Environments",
+            "title": "Teardown Your EBS Environments",
             "description": "Teardown Your Oracle E-Business Suite Environments",
             "filesname": "../../teardown/teardown.md"
         }

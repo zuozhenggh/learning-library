@@ -7,7 +7,7 @@ Estimated Lab Time: 5 minutes
 
 
 ### Objectives
-* Delete your EBS environment
+* Delete your EBS environments
 
 ### Prerequisites
 * Tenancy Admin User
@@ -27,6 +27,8 @@ Estimated Lab Time: 5 minutes
     ![](./images/latestActivity.png " ")
 
     Once the environemnt has been destroyed, it will no longer appear on the Cloud Manager Environements page. 
+
+    You can repeat this step for all other EBS environments you wish to delete. 
 
 
 ## Acknowledgements
