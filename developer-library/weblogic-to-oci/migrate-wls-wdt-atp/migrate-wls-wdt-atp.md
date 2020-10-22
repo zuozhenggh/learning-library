@@ -541,9 +541,9 @@ appDeployments:
 
   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
 
-3. Add the 2 password properties for the `TrustStore` and the `KeyStore`. This is the password used when downloading the wallet.
+3. Add the 2 password properties for the `TrustStore` and the `KeyStore`. This is the password used when downloading the wallet. Here we use the password used in the script, but make sure to enter your own password if you changed it when downloading the wallet on the WLS servers
 
-  the resulting file should look like:
+  the resulting file should look like the follwoing (with the default wallet password):
 
     ```yaml
     <copy>
@@ -555,43 +555,8 @@ appDeployments:
 
 4. Save the file with `CTRL+x` and `y`
 
-## **STEP 5:** Download the wallet on each WebLogic server
 
-1. Gather the IP adresses of the WebLogic server:
-
-    Go to **Core Infrastructure -> Compute -> Instances**
-
-    View the list of WebLogic servers and gather the Public IPs
-
-2. Run the following command, to copy the wallet on each server
-
-    ```bash
-    <copy>
-    export TARGET_WLS_SERVER=<Public IP>
-    export ATP_OCID=<OCID of the ATP database>
-    export WALLET_PASSWORD=<password used in the previous step>
-    ssh opc@${TARGET_WLS_SERVER} "sudo su -c \"/opt/scripts/utils/download_atp_wallet.sh ${ATP_OCID} ${WALLET_PASSWORD} /u01/data/domains/servicename_domain/config/atp\"" - oracle
-    </copy>
-    ```
-
-    ```bash
-    <copy>
-    export TARGET_WLS_SERVER=<Public IP>
-    </copy>
-    ```
-    Then 
-    ```bash
-    <copy>
-    scp wallet.zip opc@${TARGET_WLS_SERVER}:~/
-    ssh opc@${TARGET_WLS_SERVER} "sudo chown oracle:oracle wallet.zip"
-    ssh opc@${TARGET_WLS_SERVER} "sudo unzip wallet.zip -d /u01/data/domains/nonjrf_domain/config/atp/"
-    </copy>
-    ```
-
-
-
-
-## **STEP 6:** Update the WebLogic domain on OCI
+## **STEP 5:** Update the WebLogic domain on OCI
 
 The `update_domain.sh` script updates the target domain.
 
@@ -633,17 +598,17 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
 
 ```bash
 Copying files over to the WLS admin server...
-source.properties                                                           100%   56     0.7KB/s   00:00    
-source.yaml                                                                 100% 1233    14.4KB/s   00:00    
-source.zip                                                                  100% 8066    83.5KB/s   00:00    
-install_wdt.sh                                                              100%  273     3.2KB/s   00:00    
-update_domain_as_oracle_user.sh                                             100%  238     2.9KB/s   00:00    
+source.properties                                                                                                                                                                                   100%  139   100.4KB/s   00:00    
+source.yaml                                                                                                                                                                                         100% 2257     2.0MB/s   00:00    
+source.zip                                                                                                                                                                                          100% 7712     5.3MB/s   00:00    
+install_wdt.sh                                                                                                                                                                                      100%  273   206.2KB/s   00:00    
+update_domain_as_oracle_user.sh                                                                                                                                                                     100%  238   179.9KB/s   00:00    
 Changing ownership of files to oracle user...
 Installing WebLogic Deploy Tooling...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100   632  100   632    0     0   2283      0 --:--:-- --:--:-- --:--:--  2289
-100 1034k  100 1034k    0     0  2547k      0 --:--:-- --:--:-- --:--:-- 2547k
+100   645  100   645    0     0   1916      0 --:--:-- --:--:-- --:--:--  1925
+100 1034k  100 1034k    0     0  2264k      0 --:--:-- --:--:-- --:--:-- 2264k
 Archive:  weblogic-deploy.zip
    creating: weblogic-deploy/
    creating: weblogic-deploy/etc/
@@ -815,12 +780,12 @@ Archive:  weblogic-deploy.zip
   inflating: weblogic-deploy/lib/injectors/host.json  
   inflating: weblogic-deploy/LICENSE.txt  
 Updating the domain...
-JDK version is 1.8.0_251-b08
+JDK version is 1.8.0_261-b33
 JAVA_HOME = /u01/jdk
 WLST_EXT_CLASSPATH = /home/oracle/weblogic-deploy/lib/weblogic-deploy-core.jar
 CLASSPATH = /home/oracle/weblogic-deploy/lib/weblogic-deploy-core.jar
 WLST_PROPERTIES = -Djava.util.logging.config.class=oracle.weblogic.deploy.logging.WLSDeployCustomizeLoggingConfig -Dcom.oracle.cie.script.throwException=true 
-/u01/app/oracle/middleware/oracle_common/common/bin/wlst.sh /home/oracle/weblogic-deploy/lib/python/update.py -oracle_home /u01/app/oracle/middleware -domain_home /u01/data/domains/nonjrf_domain -model_file source.yaml -variable_file source.properties -archive_file source.zip -admin_user weblogic -admin_url t3://10.0.3.3:9071 -domain_type WLS
+/u01/app/oracle/middleware/oracle_common/common/bin/wlst.sh /home/oracle/weblogic-deploy/lib/python/update.py -oracle_home /u01/app/oracle/middleware -domain_home /u01/data/domains/nonjrf_domain -model_file source.yaml -variable_file source.properties -archive_file source.zip -admin_user weblogic -admin_url t3://10.0.3.2:9071 -domain_type WLS
 
 Initializing WebLogic Scripting Tool (WLST) ...
 
@@ -828,40 +793,57 @@ Welcome to WebLogic Server Administration Scripting Shell
 
 Type help() for help on available commands
 
-####<May 25, 2020 1:55:47 AM> <INFO> <WebLogicDeployToolingVersion> <logVersionInfo> <WLSDPLY-01750> <The WebLogic Deploy Tooling updateDomain version is 1.7.3:master.4f1ebfc:Apr 03, 2020 18:05 UTC>
+####<Oct 22, 2020 1:40:16 AM> <INFO> <WebLogicDeployToolingVersion> <logVersionInfo> <WLSDPLY-01750> <The WebLogic Deploy Tooling updateDomain version is 1.7.3:master.4f1ebfc:Apr 03, 2020 18:05 UTC>
 Please enter the WebLogic administrator password: welcome1
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_file> <WLSDPLY-05002> <Performing validation in TOOL mode for WebLogic Server version 12.2.1.4.0 and WLST ONLINE mode>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_file> <WLSDPLY-05003> <Performing model validation on the /home/oracle/source.yaml model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_file> <WLSDPLY-05005> <Performing archive validation on the /home/oracle/source.zip archive file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the domainInfo section of the model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05009> <Model file /home/oracle/source.yaml does not contain a domainInfo section, validation of domainInfo was skipped.>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the topology section of the model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05009> <Model file /home/oracle/source.yaml does not contain a topology section, validation of topology was skipped.>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the resources section of the model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the appDeployments section of the model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the kubernetes section of the model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05009> <Model file /home/oracle/source.yaml does not contain a kubernetes section, validation of kubernetes was skipped.>
-####<May 25, 2020 1:56:04 AM> <INFO> <filter_helper> <apply_filters> <WLSDPLY-20017> <No filter configuration file /home/oracle/weblogic-deploy/lib/model_filters.json>
-####<May 25, 2020 1:56:04 AM> <INFO> <update> <__update_online> <WLSDPLY-09005> <Connecting to domain at t3://10.0.3.3:9071...>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <Validator> <__validate_model_file> <WLSDPLY-05002> <Performing validation in TOOL mode for WebLogic Server version 12.2.1.4.0 and WLST ONLINE mode>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <Validator> <__validate_model_file> <WLSDPLY-05003> <Performing model validation on the /home/oracle/source.yaml model file>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <Validator> <__validate_model_file> <WLSDPLY-05005> <Performing archive validation on the /home/oracle/source.zip archive file>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the domainInfo section of the model file>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05009> <Model file /home/oracle/source.yaml does not contain a domainInfo section, validation of domainInfo was skipped.>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the topology section of the model file>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05009> <Model file /home/oracle/source.yaml does not contain a topology section, validation of topology was skipped.>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the resources section of the model file>
+####<Oct 22, 2020 1:41:19 AM> <WARNING> <Validator> <__validate_attribute> <WLSDPLY-05017> <Expected value of the Value attribute at location resources:/JDBCSystemResource/JDBCConnection/JdbcResource/JDBCDriverParams/Properties/oracle.net.tls_version to be a string data type, but it was a <type 'float'>>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the appDeployments section of the model file>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the kubernetes section of the model file>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05009> <Model file /home/oracle/source.yaml does not contain a kubernetes section, validation of kubernetes was skipped.>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <filter_helper> <apply_filters> <WLSDPLY-20017> <No filter configuration file /home/oracle/weblogic-deploy/lib/model_filters.json>
+####<Oct 22, 2020 1:41:19 AM> <INFO> <update> <__update_online> <WLSDPLY-09005> <Connecting to domain at t3://10.0.3.2:9071...>
 
-####<May 25, 2020 1:56:06 AM> <INFO> <update> <__update_online> <WLSDPLY-09007> <Connected to domain at t3://10.0.3.3:9071>
-####<May 25, 2020 1:56:07 AM> <INFO> <LibraryHelper> <install_domain_libraries> <WLSDPLY-12213> <The model did not specify any domain libraries to install>
-####<May 25, 2020 1:56:07 AM> <INFO> <LibraryHelper> <extract_classpath_libraries> <WLSDPLY-12218> <The archive file /home/oracle/source.zip contains no classpath libraries to install>
-####<May 25, 2020 1:56:07 AM> <INFO> <LibraryHelper> <install_domain_scripts> <WLSDPLY-12241> <The model did not specify any domain scripts to install>
-####<May 25, 2020 1:56:07 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09608> <Updating JDBCSystemResource JDBCConnection>
-####<May 25, 2020 1:56:07 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09604> <Updating JdbcResource for JDBCSystemResource JDBCConnection>
-####<May 25, 2020 1:56:07 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09603> <Updating JDBCConnectionPoolParams for JdbcResource>
-####<May 25, 2020 1:56:07 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09603> <Updating JDBCDataSourceParams for JdbcResource>
-####<May 25, 2020 1:56:07 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09603> <Updating JDBCDriverParams for JdbcResource>
-####<May 25, 2020 1:56:08 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09609> <Updating Properties user in JDBCDriverParams>
-####<May 25, 2020 1:56:10 AM> <INFO> <ApplicationDeployer> <__deploy_app_online> <WLSDPLY-09316> <Deploying application SimpleDB>
-####<May 25, 2020 1:56:14 AM> <INFO> <ApplicationDeployer> <__deploy_app_online> <WLSDPLY-09316> <Deploying application SimpleHTML>
-####<May 25, 2020 1:56:17 AM> <INFO> <ApplicationDeployer> <__start_app> <WLSDPLY-09313> <Starting application SimpleDB>
-####<May 25, 2020 1:56:21 AM> <INFO> <ApplicationDeployer> <__start_app> <WLSDPLY-09313> <Starting application SimpleHTML>
+####<Oct 22, 2020 1:41:21 AM> <INFO> <update> <__update_online> <WLSDPLY-09007> <Connected to domain at t3://10.0.3.2:9071>
+####<Oct 22, 2020 1:41:22 AM> <INFO> <TopologyHelper> <create_placeholder_named_elements> <WLSDPLY-19403> <Creating placeholder for JDBCSystemResource JDBCConnection>
+####<Oct 22, 2020 1:41:23 AM> <INFO> <TopologyHelper> <clear_jdbc_placeholder_targeting> <WLSDPLY-19404> <Clearing targets for JDBCSystemResource placeholder JDBCConnection>
+####<Oct 22, 2020 1:41:23 AM> <INFO> <LibraryHelper> <install_domain_libraries> <WLSDPLY-12213> <The model did not specify any domain libraries to install>
+####<Oct 22, 2020 1:41:23 AM> <INFO> <LibraryHelper> <extract_classpath_libraries> <WLSDPLY-12218> <The archive file /home/oracle/source.zip contains no classpath libraries to install>
+####<Oct 22, 2020 1:41:23 AM> <INFO> <LibraryHelper> <install_domain_scripts> <WLSDPLY-12241> <The model did not specify any domain scripts to install>
+####<Oct 22, 2020 1:41:23 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09608> <Updating JDBCSystemResource JDBCConnection>
+####<Oct 22, 2020 1:41:23 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09604> <Updating JdbcResource for JDBCSystemResource JDBCConnection>
+####<Oct 22, 2020 1:41:23 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09603> <Updating JDBCConnectionPoolParams for JdbcResource>
+####<Oct 22, 2020 1:41:23 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09603> <Updating JDBCDataSourceParams for JdbcResource>
+####<Oct 22, 2020 1:41:23 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09603> <Updating JDBCDriverParams for JdbcResource>
+####<Oct 22, 2020 1:41:24 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09606> <Adding Properties user to JDBCDriverParams>
+####<Oct 22, 2020 1:41:24 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09606> <Adding Properties oracle.jdbc.fanEnabled to JDBCDriverParams>
+####<Oct 22, 2020 1:41:24 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09606> <Adding Properties oracle.net.tns_admin to JDBCDriverParams>
+####<Oct 22, 2020 1:41:24 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09606> <Adding Properties oracle.net.tls_version to JDBCDriverParams>
+####<Oct 22, 2020 1:41:24 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09606> <Adding Properties oracle.net.ssl_server_dn_match to JDBCDriverParams>
+####<Oct 22, 2020 1:41:24 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09606> <Adding Properties javax.ssl.trustStore to JDBCDriverParams>
+####<Oct 22, 2020 1:41:24 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09606> <Adding Properties javax.ssl.trustStoreType to JDBCDriverParams>
+####<Oct 22, 2020 1:41:24 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09606> <Adding Properties javax.ssl.trustStorePassword to JDBCDriverParams>
+####<Oct 22, 2020 1:41:24 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09606> <Adding Properties javax.ssl.keyStore to JDBCDriverParams>
+####<Oct 22, 2020 1:41:24 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09606> <Adding Properties javax.ssl.keyStoreType to JDBCDriverParams>
+####<Oct 22, 2020 1:41:24 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09606> <Adding Properties javax.ssl.keyStorePassword to JDBCDriverParams>
+####<Oct 22, 2020 1:41:29 AM> <INFO> <ApplicationDeployer> <__deploy_app_online> <WLSDPLY-09316> <Deploying application SimpleDB>
+####<Oct 22, 2020 1:41:34 AM> <INFO> <ApplicationDeployer> <__deploy_app_online> <WLSDPLY-09316> <Deploying application SimpleHTML>
+####<Oct 22, 2020 1:41:37 AM> <INFO> <ApplicationDeployer> <__start_app> <WLSDPLY-09313> <Starting application SimpleDB>
+####<Oct 22, 2020 1:41:40 AM> <INFO> <ApplicationDeployer> <__start_app> <WLSDPLY-09313> <Starting application SimpleHTML>
 
 Issue Log for updateDomain version 1.7.3 running WebLogic version 12.2.1.4.0 online mode:
 
-Total:       WARNING :     0    SEVERE :     0
+WARNING Messages:
+
+        1. WLSDPLY-05017: Expected value of the Value attribute at location resources:/JDBCSystemResource/JDBCConnection/JdbcResource/JDBCDriverParams/Properties/oracle.net.tls_version to be a string data type, but it was a <type 'float'>
+
+Total:       WARNING :     1    SEVERE :     0
 
 updateDomain.sh completed successfully (exit code = 0)
 ```

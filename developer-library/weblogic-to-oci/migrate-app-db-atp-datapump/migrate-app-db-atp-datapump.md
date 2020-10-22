@@ -130,7 +130,7 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
         ![](./images/migrate-db-1.png)
 
 
-## **STEP 2:** Install the OCI CLI on the source database
+## **STEP 3:** Install the OCI CLI on the source database
 
 This will be needed to get the wallet from the ATP database and put the DB dump file into object storage from the source DB.
 
@@ -163,8 +163,8 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
 
     You will be prompted for:
     - Location of the config. Hit **Enter**
-    - `user_ocid`: enter your user OCID
-    - `tenancy_ocid`: enter your tenancy OCID
+    - `user_ocid`: enter your user OCID (found under **User -> User Settings**)
+    - `tenancy_ocid`: enter your tenancy OCID (found under **User -> Tenancy**)
     - `region`: enter your region from the list provided.
     - Generate a RSA key pair: hit **Enter** for Yes (default)
     - Directory for keys: hit **Enter** for the default
@@ -224,7 +224,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
 
     Make a note of your **namespace** which will be needed later.
 
-## **STEP 3:** Create an Object Storage Bucket
+## **STEP 4:** Create an Object Storage Bucket
 
 1. Go to **Core Infrastructure -> Object Storage**
 
@@ -238,7 +238,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
 
 5. Click **Create Bucket**
 
-## **STEP 3:** Edit the `datapump_import_atp.sh` script
+## **STEP 5:** Edit the `datapump_import_atp.sh` script
 
 
 First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI database found in the datapump folder.
@@ -251,12 +251,12 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
       </copy>
       ```
 
-    You'll need to input the following variables:
+    You'll need to input the following variables (see instruction below to find the data):
     ```
-    BASTION_IP=<IP of the WLS bastion or Admin server>
+    BASTION_IP=<IP of the WLS bastion or Admin server, from WLS Admin URL>
 
     TARGET_DB_NAME=wlsatpdb
-    TARGET_DB_OCID=<OCID of the ATP database>
+    TARGET_DB_OCID=
     TARGET_DB_HOST=10.0.5.2
 
     BUCKET=atp-upload
@@ -313,7 +313,9 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
 
     *Make sure to use single quotes to delimitate the OCI_TOKEN as it may contain characters that would cause script errors.*
 
-## **STEP 4:** Import the data into the target database on OCI
+17. Save the file (with `CTRL+x` then `y`)
+
+## **STEP 6:** Import the data into the target database on OCI
 
 1. Run the `datapump_import_atp.sh` script you edited at the previous step
 
@@ -337,7 +339,72 @@ You may notice this 1st try imports the schema but fails at importing the data, 
 - the script then edits the `RIDERS` user tablespace quota
 - and re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
 
-The database is now migrated to OCI.
+The database is now migrated to OCI, but we also need to setup the wallet on the WLS servers
+
+## **STEP 7:** Download the wallet on each WebLogic server
+
+There are 2 ways to download the wallet on to the target WebLogic servers:
+
+- We have downloaded the wallet locally already to migrate the database, and we can simply secure-copy that wallet to each server with `scp`. This is what we will do.
+
+1. Gather the IP adresses of the WebLogic server:
+
+    Go to **Core Infrastructure -> Compute -> Instances**
+
+    View the list of WebLogic servers and gather the Public IPs
+
+2. Run the following command, to copy the wallet on each server
+
+    ```bash
+    <copy>
+    export TARGET_WLS_SERVER=<Public IP of a WLS server>
+    </copy>
+    ```
+
+    Then 
+    
+    ```bash
+    <copy>
+    scp wallet.zip opc@${TARGET_WLS_SERVER}:~/
+    ssh opc@${TARGET_WLS_SERVER} "sudo chown oracle:oracle wallet.zip"
+    ssh opc@${TARGET_WLS_SERVER} "sudo unzip wallet.zip -d /u01/data/domains/nonjrf_domain/config/atp/"
+    </copy>
+    ```
+
+    Repeat for each WLS target server.
+
+    Note: the destination path is important as this path is cloned when scaling WLS servers, insuring the wallet is also deployed on any new server instance.
+
+
+- An alternative method (for info only, no need to apply these commands):
+
+    There is also a helper script on each WebLogic server node to download the wallet. 
+
+    For this script to work, you will need to add an extra policy on the **dynamic group** created by the WLS on OCI stack. 
+
+    The policy is called `<PREFIX>-wlsc-principal-group`, which you can find under **Identity -> Dynamic Groups**. The Policy to edit will be on the *root* of the tenancy, so you need to be an administrator to edit it. It is called `<PREFIX>-service-policy`. It should contain an extra policy rule as follow:
+
+    ```
+    Allow dynamic-group nonjrf-wlsc-principal-group to use autonomous-transaction-processing-database-family in compartment id <your compartment>
+    ```
+    If you choose this method, you would use the following variables:
+
+    ```bash
+    <copy>
+    export TARGET_WLS_SERVER=<Public IP>
+    export ATP_OCID=<OCID of the ATP database>
+    export WALLET_PASSWORD=<password of your choice>
+    </copy>
+    ```
+    Note that the password needs to match what is in the `source.properties` file, so make sure to edit that file with your own password.
+    
+    Then run the command:
+    
+    ```bash
+    <copy>
+    ssh opc@${TARGET_WLS_SERVER} "sudo su -c \"/opt/scripts/utils/download_atp_wallet.sh ${ATP_OCID} ${WALLET_PASSWORD} /u01/data/domains/servicename_domain/config/atp\"" - oracle
+    </copy>
+    ```
 
 You may proceed to the next lab.
 

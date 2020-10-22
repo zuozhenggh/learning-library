@@ -118,7 +118,7 @@ In this section we will create a Network Security Group for the WebLogic subnet 
 
   <img src="./images/provision-db-atp5.png" width="100%">
 
-7. Enter and confirm the **SYS Database password** as it is on-premises: 
+7. Enter and confirm the **Admin Database password** as it is on-premises: 
 
     ```
     <copy>
