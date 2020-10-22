@@ -40,7 +40,7 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 * [GoldenGate with PostgreSQL](https://docs.oracle.com/en/middleware/goldengate/core/19.1/gghdb/using-oracle-goldengate-postgresql.html/")
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
+* **Author** - Brian Elliott, Data Integration Team, Oracle, October 2020
 * **Contributors** - Madhu Kumar
 * **Last Updated By/Date** - Brian Elliott, October 2020
 

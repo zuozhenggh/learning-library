@@ -1,15 +1,15 @@
-# Deploy GoldenGate for Big Data
+# Deploy GoldenGate for Classic
 
 ## Introduction
 
-In this lab you will install GoldenGate for Big Data in the GG Target Home.
+In this lab you will review GoldenGate for Classic
 
 *Estimated Lab Time*:  30 minutes
 
   ![](./images/image110_1.png " ")
 
 ### Objectives
-- Deploy GoldenGate for Big Data
+- Deploy GoldenGate Classic
 
 ### Prerequisites
 This lab assumes you have:
@@ -34,50 +34,10 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     ```
     <copy>sudo su - ggadmin</copy>
     ```
-Follow the steps below to install GoldenGate, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
-3. Review the labmenu, then Select **Q** to quit to install GoldenGate Big Data Adapter Handlers
+***Congratulations!*** You can proceed to the next lab, or to any other lab. Each lab can be run independently.
 
-The following Lab Menu will be displayed
-
-  ![](./images/labmenu_opt1.png " ")
-
-## **STEP 1**: Performing the Install
-
-1.  **Select Option 1**
-
-Review the overview notes on the following screen, Select **Q** to quit.
-      ![](./images/labmenu_opt1.png " ")
-
-These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
-
-2. To install and configure GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
-
-    ```
-    <copy>cd /u01/gg4hadoop123010
-    tar -xvf  /u01/gg_binaries/gg4hadoop123010/ggs_Adapters_Linux_x64.tar </copy>
-    ```
-    **type**
-
-    ```
-    <copy>./ggsci</copy>
-
-    <copy>info all</copy>
-    
-    <copy>exit</copy>
-    ```
-    **type**
-    ```
-    <copy>labmenu</copy>
-    ```
-
-**Optional**  (Do not select Auto-install if you already installed GG manually)
-
-If you would like to auto-install GoldenGate for Big Data, you can select option **I**. To access the Lab Menu, type the alias `labmenu`, then select **I**.
-
-***Congratulations!***, GoldenGate for Big Data is now installed. You can proceed to the next lab, or to any other lab. Each lab can be run independently.
-
-## About Oracle GoldenGate for Big Data
+## About Oracle GoldenGate Classic
 
 ### KEY FEATURES
 
@@ -90,30 +50,32 @@ If you would like to auto-install GoldenGate for Big Data, you can select option
 ### KEY BENEFITS
 
   - Improve IT productivity in integrating with big data systems
-  - Use real-time data in big data analytics for more timely and reliable insight
+  - Use real-time data in PostgreSQL analytics for more timely and reliable insight
   - Improve operations and customer experience with enhanced business insight
   - Minimize overhead on source systems to maintain high performance
 
-Oracle GoldenGate for Big Data provides optimized and high performance delivery to Flume, HDFS, Hive, HBase, Kafka and Cassandra to support customers with their real-time big data analytics initiatives.
+Oracle GoldenGate Classic provides optimized and high performance delivery to PsotgreSQL to support customers with their real-time big data analytics initiatives.
 
-Oracle GoldenGate for Big Data includes Oracle GoldenGate for Java, which enables customers to easily integrate to additional big data systems, such as Apache Storm, Apache Spark, Oracle NoSQL, MongoDB, SAP HANA, IBM PureData System for Analytics and many others.
+Oracle GoldenGate Classic includes Oracle GoldenGate for relational Oracle and Non Oracle, which enables customers to easily integrate to additional data systems.
 
-Oracle GoldenGate for Big Data’s real-time data streaming platform also allows customers to keep their big data reservoirs, or big data lakes, up to date with their production systems.
+Oracle GoldenGate real-time data streaming platform also allows customers to keep their relation databases up to date with their production systems.
 
 ## Summary
 
-Oracle GoldenGate for Big Data offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data
-integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making.
+Oracle GoldenGate classic offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for relational environments. It easily extends customers’ real-time data
+integration architectures to data systems without impacting the performance of the source systems and enables timely business insight for better decision making.
 
 You may now *proceed to the next lab*.
 
 ## Learn More
 
-* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
+* [GoldenGate](https://www.oracle.com/middleware/data-integration/goldengate/")
 
+* [GoldenGate with PostgreSQL](https://docs.oracle.com/en/middleware/goldengate/core/19.1/gghdb/using-oracle-goldengate-postgresql.html/")
+* 
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration  October 2020
-* **Contributors** - MMadhu Kumar
+* **Contributors** - Madhu Kumar
 * **Last Updated By/Date** - Brian Elliott, October 2020
 
 
