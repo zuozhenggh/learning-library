@@ -22,7 +22,7 @@
             "filename": "../../mysql-to-cassandra/mysql-to-cassandra.md"
           },
           {
-            "title": "Lab 11: MySQL to Oracle",
+            "title": "Lab : MySQL to Oracle",
             "description": "GGBD mysql-to-oracle",
             "filename": "../../mysql-to-oracle/mysql-to-oracle.md"
           },

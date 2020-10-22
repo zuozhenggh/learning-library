@@ -1,4 +1,4 @@
-# Lab 9b - GoldenGate PostgreSQL Lab 9b
+# Lab 9a - GoldenGate from PostgreSQL
 
 ### Introduction
 

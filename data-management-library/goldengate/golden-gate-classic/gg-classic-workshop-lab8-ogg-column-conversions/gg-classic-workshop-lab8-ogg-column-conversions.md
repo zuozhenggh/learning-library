@@ -1,4 +1,4 @@
-# Lab 7 -  active-active-replication
+# Lab 8 -  Column Conversions
 
 ### Introduction
 In this lab we will load data in and configure active-active for High Availability
