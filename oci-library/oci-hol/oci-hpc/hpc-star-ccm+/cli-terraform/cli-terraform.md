@@ -133,14 +133,11 @@ Now that you have a private / public key combo , you must add it to OCI console 
 2. Login to your OCI console and click on Menu and select Identity and Users. Select a User and navigate to User Detail page.
 
 3. Click on Add Public Key under API Keys section.
-<img src="images/ResourcesMenu.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-<img src="images/APIKeys.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-
+![](./images/ResourcesMenu.png)
+![](./images/APIKeys.png)
 
 4. Paste Public key which you copied from CLI in Add Public Key
-<img src="images/AddPublicKey.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-
-
+![](./images/AddPublicKey.png)
 
 ## **STEP 6**: Configure
 
@@ -162,8 +159,7 @@ This step describes the required configuration for the CLI and includes optional
       5. Path to your API private signing key. 
    
   An example `config` file would look like this:
-  <img src="images/oci_config.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-
+  ![](./images/oci_config.png)
 
 ## **STEP 7**: List
 
@@ -220,16 +216,13 @@ IMPORTANT: Use a different folder per stack. Do not initialize more than one sta
     ```
 
 2. To modify your `config.json` file, navigate to your newly created directory (ocihpc-test in this case) and open the “config.json” file using texteditor or notepad.
-<img src="images/config_json.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-
-
+![](./images/config_json.png)
 
 Note that this is not the same config file we configured in step 1.
 
 For this config file, we will need:
-  1. The availability domain information that contains the HPC resources in our tenancy (Administration > Tenancy Details > Scroll down to the Service Limits section > Compute > and scroll down to find “BM.HPC2.36”) - In the screenshot below, we can see that we have a total of 6 BM.HPC2.36 machines to use in AD-2, 0 of which are currently in use. 
-<img src="images/hpc_resource.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-
+  1. The availability domain information that contains the HPC resources in our tenancy (Administration > Tenancy Details > Scroll down to the Service Limits section > Compute > and scroll down to find “BM.HPC2.36”) - In the screenshot below, we can see that we have a total of 6 BM.HPC2.36 machines to use in AD-2, 0 of which are currently in use.
+  ![](./images/hpc_resource.png)
 
   2. The Bastion AD can be any AD you chose as long as there are resources (VM.standard2.1 shape)
 Bastion shape should be filled in already - VM.Standard2.1
@@ -314,5 +307,7 @@ This is detailed information about managing High Performance Compute Instance. F
 * **Last Updated By/Date** - Harrison Dvoor, October 2020
 
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/high-performance-computing-hpc). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

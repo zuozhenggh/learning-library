@@ -1,12 +1,8 @@
 # Introduction
 
-## About Workshop
+## About this Workshop
 
-This lab will walk you through the process of migrating an existing 'on-premises' Tomcat application to Oracle Cloud Infrastructure. 
-The Tomcat application we'll migrate is a Java applications with a datasource connecting to a database that will be migrated to Autonmous Database on OCI alongside the application.
-
-Attached below is a sample architecture of the final solution:
-![](./images/architecture.png)
+This lab will walk you through the process of migrating an existing 'on-premises' Tomcat application to Oracle Cloud Infrastructure. The Tomcat application we'll migrate is a Java application with a datasource connecting to a database that will be migrated to Autonomous Database on OCI alongside the application.
 
 Estimated Lab Time: 80 min.
 
@@ -14,6 +10,10 @@ Estimated Lab Time: 80 min.
 
 - Apache Tomcat® is an open source Java application server
 - Terraform is an open source engine to deploy "infrastructure-as-code" and is used to deploy the network, compute and database resources
+
+The reference architecture looks like the following:
+
+![](./images/architecture-deploy-tomcat.png)
 
 ### Objectives
 
@@ -27,20 +27,15 @@ In this lab, you will:
 - Optionally learn to scale the Tomcat cluster
 - Tear down the workshop
 
-
-The reference architecture looks like the following:
-
-![](./images/architecture-deploy-tomcat.png)
-
 ### Prerequisites
 
-*In order to run this workshop you need:*
+In order to run this workshop you need:
 
 * A Mac OS X, Windows or Linux machine
 * A private/public SSH key-pair
 * Firefox browser
 * A OCI account with a Compartment setup
-* git installed 
+* git installed
 * Terraform 0.12 installed
 
 You may proceed to the next lab.
@@ -50,5 +45,7 @@ You may proceed to the next lab.
  - **Author** - Subash Singh, Emmanuel Leroy, October 2020
  - **Last Updated By/Date** - Emmanuel Leroy, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

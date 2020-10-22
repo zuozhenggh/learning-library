@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Data Masking and Subsetting (DMS) Workshop",
+  "workshoptitle": "Oracle Database Security Hands-On Labs - Part2 (Advanced) - DMS",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -30,15 +30,15 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Initialize and Start Environment",
+      "title": "Lab 4: Initialize and Start the DBSecLab Environment",
       "description": "How to initialize and start all the workshop components",
-      "publisheddate": "09/01/2020",
+      "publisheddate": "10/14/2020",
       "filename": "../../init-start-env/init-start-env.md"
     },
     {
       "title": "Lab 5: Oracle Data Masking and Subsetting (DMS)",
-      "description": "This lab will walk you through how to enable Database Vault for the workshop image",
-      "publisheddate": "09/01/2020",
+      "description": "In this lab you can see how to leverage Oracle Data Masking and Subsetting (DMS)",
+      "publisheddate": "10/20/2020",
       "filename": "../../data-masking-subsetting/data-masking-subsetting.md"
     }
   ]

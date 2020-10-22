@@ -1,20 +1,24 @@
 # Oracle Key Vault (OKV)
 
 ## Introduction
-This workshop introduces the various features and functionality of Oracle Key Vault.<br>
+This workshop introduces the various features and functionality of Oracle Key Vault.
+
 It gives the user an opportunity to learn how to configure this appliance to manage keys.
 
 - *Version tested in this lab:* Oracle OKV 18.4
 - *Estimated Lab Time:* 30 minutes
 
 ### Objectives
-- *Add objectives here ........*
+- Connect an Oracle DB (encrypted by TDE) to OKV
+- Manage with OKV the existing DB Wallet
+- Migrate the DB Wallet and manage the Online Keys by OKV
 
 ### Prerequisites
 This lab assumes you have completed:
    - Lab: Generate SSH Keys
    - Lab: Prepare Setup
    - Lab: Environment Setup
+   - Lab: Initialize and Start the DBSecLab Environment
    - Lab: Transparent Data Encryption (TDE)
 
 ### Video Preview
@@ -22,37 +26,36 @@ This lab assumes you have completed:
 
 ### Lab Timing (estimated)
 
-| Step No. | Feature | Approx. Time | Details | Value Proposition |
-|--|------------------------------------------------------------|-------------|--------------------|-------------------|
-| 1| Add an Endpoint | 10 minutes|||
-| 2| View the contents of the OKV Virtual Wallet | <5 minutes|||
-| 3| Perform Wallet Uploading | 10 minutes | To backup the Oracle Wallet into Oracle Key Vault ||
-| 4| Migrate to Online Master Key | 5 minutes | To re-configure the database to communicate directly with Oracle Key Vault ||
-| 5| Perform a ReKey operation | 5 minutes|||
+| Step No. | Feature | Approx. Time | Details |
+|--|------------------------------------------------------------|-------------|--------------------|
+| 1| Add an Endpoint | 10 minutes||
+| 2| View the contents of the OKV Virtual Wallet | <5 minutes||
+| 3| Perform Wallet Uploading | 10 minutes | To backup the Oracle Wallet into Oracle Key Vault |
+| 4| Migrate to Online Master Key | 5 minutes | To re-configure the database to communicate directly with Oracle Key Vault |
+| 5| Perform a ReKey operation | 5 minutes||
 
 <!-- OKV Labs in progress
-| 6| (Optional) Create a 2-node Multi-Master Cluster | 5 minutes|||
-| 7| Perform Wallet_Download | 5 minutes | To return master keys to an Oracle Wallet ||
-| 8| Create an External Keystore | 5 minutes | So the password to the OKV Endpoint is not known by the DBAs ||
+| 6| (Optional) Create a 2-node Multi-Master Cluster | 5 minutes||
+| 7| Perform Wallet_Download | 5 minutes | To return master keys to an Oracle Wallet |
+| 8| Create an External Keystore | 5 minutes | So the password to the OKV Endpoint is not known by the DBAs |
 -->
 
 ## **STEP 1**: Add an Endpoint
-First of all, we need Oracle Key Vault to know about our database server<br>
-We do this by creating it as an endpoint in OKV
+First of all, we need Oracle Key Vault to know about our database server. We do this by creating it as an endpoint in OKV
 
-1. Open a Web Browser at the URL **https://**`<OKV-VM_@IP-Public>`
+1. Open a Web Browser at the URL `https://<OKV-VM_@IP-Public>`
 
 2. Login to Oracle Key Vault Web Console as `RESTADMIN` with the password `T06tron.`
 
-    ![](./images/okv-001.png)
+   ![](./images/okv-001.png " ")
 
 3. Click [**Endpoints**]
 
-    ![](./images/okv-002.png)
+   ![](./images/okv-002.png " ")
 
 4. You will see that there are no endpoints available
 
-    ![](./images/okv-003.png)
+   ![](./images/okv-003.png " ")
 
 5. You will use the utility we have created, `OKVdeploy.tar`, to automate this process
 
@@ -74,7 +77,7 @@ We do this by creating it as an endpoint in OKV
         <copy>./01_unpack_restservice.sh</copy>
           ````
 
-        ![](./images/okv-004.png)
+   ![](./images/okv-004.png " ")
 
     - Check the OKV Server config
 
@@ -82,7 +85,7 @@ We do this by creating it as an endpoint in OKV
         <copy>./02_review_config.sh</copy>
           ````
 
-        ![](./images/okv-005.png)
+   ![](./images/okv-005.png " ")
 
     - Add your `CDB1` database on DBSec-Lab VM as Endpoint
 
@@ -90,31 +93,29 @@ We do this by creating it as an endpoint in OKV
         <copy>./03_execute_scripts.sh</copy>
           ````
 
-        ![](./images/okv-006.png)
+   ![](./images/okv-006.png " ")
 
-    - Before finishing, we want to change the endpoint password.<br>
-    This is the password the OKV endpoint client software uses to communicate with the Key Vault Server.<br>
-    Please modify default password `change-on-install` by `Oracle123`
+    - Before finishing, we want to change the endpoint password. This is the password the OKV endpoint client software uses to communicate with the Key Vault Server. Please modify default password `change-on-install` by `Oracle123`
 
           ````
         <copy>./04_change_endpoint_pw.sh</copy>
           ````
 
-        ![](./images/okv-007.png)
+   ![](./images/okv-007.png " ")
 
 6. Go back to your OKV Console, refresh screen and now you should see the Endpoint just added
 
-    ![](./images/okv-008.png)
+   ![](./images/okv-008.png " ")
 
 7. Click on the Endpoint name: here `CDB1_ON_DBSECLAB`
 
 8. Confirm that the Wallet created in OKV is the default Wallet for this Endpoint (see the "Default" section)
 
-    ![](./images/okv-008a.png)
+   ![](./images/okv-008a.png " ")
 
 **Your Endpoint is now added!**
 
-## **STEP 2** - View the Contents of the OKV Virtual Wallet
+## **STEP 2**: View the Contents of the OKV Virtual Wallet
 Any time after adding the Endpoint to this host, you can run this script to view the contents of the Virtual Wallet in Oracle Key Vault
 
 1. Go back to your terminal session on your DBSec-Lab VM (as `Oracle` User) and go to the scripts directory
@@ -129,9 +130,9 @@ Any time after adding the Endpoint to this host, you can run this script to view
     <copy>./01_view_wallet_in_kv.sh</copy>
       ````
 
-    ![](./images/okv-009.png)
+   ![](./images/okv-009.png " ")
 
-## **STEP 3** - Upload the Wallet
+## **STEP 3**: Upload the Wallet
 
 Typically, the first thing that users will do is upload their existing Oracle Wallets (ewallet.p12 files) to Oracle Key Vault
 
@@ -147,7 +148,7 @@ Typically, the first thing that users will do is upload their existing Oracle Wa
     <copy>./01_view_wallet_on_os.sh</copy>
       ````
 
-    ![](./images/okv-010.png)
+   ![](./images/okv-010.png " ")
 
 3. And within the database
 
@@ -155,7 +156,7 @@ Typically, the first thing that users will do is upload their existing Oracle Wa
     <copy>./02_view_wallet_in_db.sh</copy>
       ````
 
-    ![](./images/okv-011.png)
+   ![](./images/okv-011.png " ")
 
 4. Then upload the wallet to Oracle Key Vault
 
@@ -163,7 +164,7 @@ Typically, the first thing that users will do is upload their existing Oracle Wa
     <copy>./03_upload_wallet.sh</copy>
       ````
 
-    ![](./images/okv-012.png)
+   ![](./images/okv-012.png " ")
 
 5. And after upload, view the contents in Key Vault
 
@@ -171,29 +172,29 @@ Typically, the first thing that users will do is upload their existing Oracle Wa
     <copy>./04_view_wallet_in_kv.sh</copy>
       ````
 
-    ![](./images/okv-013.png)
+   ![](./images/okv-013.png " ")
 
 6. Now, let's go back to the OKV Web Console (as `RESTADMIN` User) to have a look of these information
 
 7. Click on "**All Items**"
 
-    ![](./images/okv-026.png)
+   ![](./images/okv-026.png " ")
 
 8. Filter by your EndPoint name: here `CDB1_ON_DBSECLAB`
 
-    ![](./images/okv-027.png)
+   ![](./images/okv-027.png " ")
 
 9. Click [**Go**]
 
 10. Click [**Creation Time**] and sort **by Ascending**
 
-    ![](./images/okv-030.png)
+   ![](./images/okv-030.png " ")
 
 11. You can **see all your Wallet contents just uploaded**. It's exactly the same as what you can see from the script `04_view_wallet_in_kv.sh`
 
-    ![](./images/okv-028.png)
+   ![](./images/okv-028.png " ")
 
-## **STEP 4** - Migrate to Online Master Key
+## **STEP 4**: Migrate to Online Master Key
 
 Once we have uploaded the Oracle Wallet files into OKV Server, we can migrate from storing our Master Keys in Wallet files to querying them from Oracle Key Vault
 
@@ -209,7 +210,7 @@ Once we have uploaded the Oracle Wallet files into OKV Server, we can migrate fr
     <copy>./01_view_wallet_on_os.sh</copy>
       ````
 
-  ![](./images/okv-010.png)
+   ![](./images/okv-010.png " ")
 
 3. ..., in the database...
 
@@ -217,7 +218,7 @@ Once we have uploaded the Oracle Wallet files into OKV Server, we can migrate fr
     <copy>./02_view_wallet_in_db.sh</copy>
       ````
 
-  ![](./images/okv-015.png)
+   ![](./images/okv-015.png " ")
 
 4. ..., and in Oracle Key Vault
 
@@ -225,43 +226,39 @@ Once we have uploaded the Oracle Wallet files into OKV Server, we can migrate fr
     <copy>./03_view_wallet_in_kv.sh</copy>
       ````
 
-  ![](./images/okv-013.png)
+   ![](./images/okv-013.png " ")
 
-5. Now that you are familiar with the contents and Oracle Key Vault, it's time to migrate to Online Master Key. In this step, we set the `tde_configuration` initialization parameters from `keystore_configuration=FILE` to `keystore_configuration=OKV|FILE`.<br>
-This is a dynamic parameter so we do not need to restart the database.
+5. Now that you are familiar with the contents and Oracle Key Vault, it's time to migrate to Online Master Key. In this step, we set the `tde_configuration` initialization parameters from `keystore_configuration=FILE` to `keystore_configuration=OKV|FILE`. This is a dynamic parameter so we do not need to restart the database.
 
       ````
     <copy>./04_migrate_to_kv.sh</copy>
       ````
 
-  ![](./images/okv-016.png)
+   ![](./images/okv-016.png " ")
 
-6. Now, view the contents of the Wallet in the database.<br>
-You will now see rows in `v$encryption_wallet` for `OKV`
+6. Now, view the contents of the Wallet in the database. You will now see rows in `v$encryption_wallet` for `OKV`
 
       ````
     <copy>./05_view_wallet_in_db.sh</copy>
       ````
 
-  ![](./images/okv-017.png)
+   ![](./images/okv-017.png " ")
 
-7. Then put the password in the `tde_seps` Wallet.<br>
-This will allow the database to automatically access the master key in Oracle Key Vault
+7. Then put the password in the `tde_seps` Wallet. This will allow the database to automatically access the master key in Oracle Key Vault
 
       ````
     <copy>./06_add_kv_password_to_seps.sh</copy>
       ````
 
-  ![](./images/okv-018.png)
+   ![](./images/okv-018.png " ")
 
-8. Once we are comfortable, we can delete the existing Wallet files in `WALLET_ROOT/tde`, which you can access using `echo $WALLET_DIR/tde`.<br>
-To be safe, we will make a temporary backup directory into `$WALLET_DIR/tde/backup`and move the wallet-related files to it. If you want to actually delete it after you have verified everything was successful you can.
+8. Once we are comfortable, we can delete the existing Wallet files in `WALLET_ROOT/tde`, which you can access using `echo $WALLET_DIR/tde`. To be safe, we will make a temporary backup directory into `$WALLET_DIR/tde/backup`and move the wallet-related files to it. If you want to actually delete it after you have verified everything was successful you can.
 
       ````
     <copy>./07_delete_wallet_files.sh</copy>
       ````
 
-  ![](./images/okv-019.png)
+   ![](./images/okv-019.png " ")
 
 9. Finish the `tde_seps` Wallet and view the OS and Key Vault related wallet files
 
@@ -269,44 +266,43 @@ To be safe, we will make a temporary backup directory into `$WALLET_DIR/tde/back
     <copy>./08_setup_external_store.sh</copy>
       ````
 
-  ![](./images/okv-020.png)
+   ![](./images/okv-020.png " ")
 
       ````
     <copy>./09_view_wallet_in_db.sh</copy>
       ````
 
-  ![](./images/okv-021.png)
+   ![](./images/okv-021.png " ")
 
       ````
     <copy>./10_view_wallet_in_kv.sh</copy>
       ````
 
-  ![](./images/okv-022.png)
+   ![](./images/okv-022.png " ")
 
 10. Now, let's go back to the OKV Web Console (as `RESTADMIN` User) to have a look of these information
 
 11. Click on "**All Items**"
 
-    ![](./images/okv-026.png)
+   ![](./images/okv-026.png " ")
 
 12. Filter by your EndPoint name: here `CDB1_ON_DBSECLAB`
 
-    ![](./images/okv-027.png)
+   ![](./images/okv-027.png " ")
 
 13. Click [**Go**]
 
 14. Sort by Ascending
 
-    ![](./images/okv-030.png)
+   ![](./images/okv-030.png " ")
 
 15. You can see all your Wallet contents just migrated. It's exactly the same as what you can see from the script `10_view_wallet_in_kv.sh`
 
-    ![](./images/okv-029.png)
+   ![](./images/okv-029.png " ")
 
-## **STEP 5** - Perform Rekey Operation
+## **STEP 5**: Perform Rekey Operation
 
-You must create a master key for the container database before continuing<br>
-Each pluggable database must have their own master key as well (except for PDB$SEED)
+You must create a master key for the container database before continuing. Each pluggable database must have their own master key as well (except for PDB$SEED)
 
 1. Go to the scripts directory
 
@@ -320,7 +316,7 @@ Each pluggable database must have their own master key as well (except for PDB$S
     <copy>./01_online_cdb_rekey.sh</copy>
       ````
 
-    ![](./images/okv-023.png)
+   ![](./images/okv-023.png " ")
 
 3. Rekey a Master Key for the pluggable database `PDB1`
 
@@ -328,41 +324,40 @@ Each pluggable database must have their own master key as well (except for PDB$S
     <copy>./02_online_pdb_rekey.sh pdb1</copy>
       ````
 
-    ![](./images/okv-024.png)
+   ![](./images/okv-024.png " ")
 
-4. If you want, you can do the same for `PDB2`<br>
-This is not a requirement though but it might be helpful to show some databases with TDE and some without!
+4. If you want, you can do the same for `PDB2`. This is not a requirement though but it might be helpful to show some databases with TDE and some without!
 
       ````
     <copy>./02_online_pdb_rekey.sh pdb2</copy>
       ````
 
-    ![](./images/okv-025.png)
+   ![](./images/okv-025.png " ")
 
 5. Now, let's go back to the OKV Web Console (as `RESTADMIN` User) to have a look of these information
 
 6. Click on "**All Items**"
 
-    ![](./images/okv-026.png)
+   ![](./images/okv-026.png " ")
 
 7. Filter by your EndPoint name: here `CDB1_ON_DBSECLAB`
 
-    ![](./images/okv-027.png)
+   ![](./images/okv-027.png " ")
 
 8. Click [**Go**]
 
 9. Sort by Ascending
 
-    ![](./images/okv-030.png)
+   ![](./images/okv-030.png " ")
 
 10. You can see at the bottom your rekeyed Master Keys for CDB1, PDB1 (and PDB2 if you did it)
 
-    ![](./images/okv-031.png)
+   ![](./images/okv-031.png " ")
 
 **Now you have rekeyed the Master Key** for the container and pluggable database(s)!
 
 <!--
-## **STEP 6**: (Optional) Create a 2-node Multi-Master Cluster
+**STEP 6**: (Optional) Create a 2-node Multi-Master Cluster
 Oracle provides deployment recommendations for deployments that have two or more nodes.
 
 - **2-Node Deployment Recommendations**
@@ -399,23 +394,22 @@ Oracle provides deployment recommendations for deployments that have two or more
         - Good network connectivity between data centers is mandatory
 
 
-## **STEP 7**: (Optional) Perform  Wallet Download to return master keys to an Oracle Wallet<br>
-This does not disable the Online Master Key mode
+ **STEP 7**: (Optional) Perform  Wallet Download to return master keys to an Oracle Wallet. This does not disable the Online Master Key mode
 
 
-## **STEP 8**: (Additionally) Create an External Store so the password to the OKV Endpoint is not known by the DBAs
-
+ **STEP 8**: (Additionally) Create an External Store so the password to the OKV Endpoint is not known by the DBAs
 -->
 
 You may now proceed to the next lab.
 
 ## **Appendix**: About the Product
-- **Overview**<br>
+- **Overview**
+
     Oracle Key Vault is a full-stack, security-hardened software appliance built to centralize the management of keys and security objects within the enterprise.
 
     Oracle Key Vault is a robust, secure, and standards-compliant key management platform, where you can store, manage, and share your security objects.
 
-    ![](./images/okv-concept.png)
+   ![](./images/okv-concept.png " ")
 
     Security objects that you can manage with Oracle Key Vault include as encryption keys, Oracle wallets, Java keystores (JKS), Java Cryptography Extension keystores (JCEKS), and credential files.
 
@@ -431,17 +425,19 @@ You may now proceed to the next lab.
 
     An Oracle Key Vault multi-master cluster provides a mechanism to create pairs of Oracle Key Vault nodes for maximum availability and reliability.
 
-    ![](./images/okv-cluster-concept.png)
+   ![](./images/okv-cluster-concept.png " ")
 
     Oracle Key Vault supports two types of mode for cluster nodes: read-only restricted mode or read-write mode.
 
-    - **Read-only restricted mode**<br>
-    In this mode, only non-critical data can be updated or added to the node. Critical data can be updated or added only through replication in this mode. There are two situations in which a node is in read-only restricted mode:
+    - **Read-only restricted mode**
+
+      In this mode, only non-critical data can be updated or added to the node. Critical data can be updated or added only through replication in this mode. There are two situations in which a node is in read-only restricted mode:
         - A node is read-only and does not yet have a read-write peer.
         - A node is part of a read-write pair but there has been a breakdown in communication with its read-write peer or if there is a node failure. When one of the two nodes is non-operational, then the remaining node is set to be in the read-only restricted mode. When a read-write node is again able to communicate with its read-write peer, then the node reverts back to read-write mode from read-only restricted mode.
 
-    - **Read-write mode**<br>
-    This mode enables both critical and non-critical information to be written to a node. A read-write node should always operate in the read-write mode.
+    - **Read-write mode**
+
+      This mode enables both critical and non-critical information to be written to a node. A read-write node should always operate in the read-write mode.
 
     You can add read-only Oracle Key Vault nodes to the cluster to provide even greater availability to endpoints that need Oracle wallets, encryption keys, Java keystores, certificates, credential files, and other objects.
 
@@ -457,16 +453,16 @@ You may now proceed to the next lab.
 
 - **Benefits of Using Oracle Key Vault**
 
-    - Oracle Key Vault helps you to fight security threats, centralize key storage, and centralize key lifecycle management
-    - Deploying Oracle Key Vault in your organization will help you accomplish the following:
-        - Manage the lifecycle for endpoint security objects and keys, which includes key creation, rotation, deactivation, and removal
-        - Prevent the loss of keys and wallets due to forgotten passwords or accidental deletion
-        - Share keys securely between authorized endpoints across the organization
-        - Enroll and provision endpoints easily using a single software package that contains all the necessary binaries, configuration files, and endpoint certificates for mutually authenticated connections between endpoints and Oracle Key Vault
-        - Work with other Oracle products and features in addition to Transparent Data Encryption (TDE), such as Oracle Real Application Clusters (Oracle RAC), Oracle Data Guard, pluggable databases, and Oracle GoldenGate. Oracle Key Vault facilitates the movement of encrypted data using Oracle Data Pump and transportable tablespaces, a key feature of Oracle Database
-    - Oracle Key Vault multi-master cluster provides additional benefits, such as:
-        - Maximum key availability by providing multiple Oracle Key Vault nodes from which data may be retrived
-        - Zero endpoint downtime during Oracle Key Vault multi-master cluster maintenance
+  - Oracle Key Vault helps you to fight security threats, centralize key storage, and centralize key lifecycle management
+  - Deploying Oracle Key Vault in your organization will help you accomplish the following:
+    - Manage the lifecycle for endpoint security objects and keys, which includes key creation, rotation, deactivation, and removal
+    - Prevent the loss of keys and wallets due to forgotten passwords or accidental deletion
+    - Share keys securely between authorized endpoints across the organization
+    - Enroll and provision endpoints easily using a single software package that contains all the necessary binaries, configuration files, and endpoint certificates for mutually authenticated connections between endpoints and Oracle Key Vault
+    - Work with other Oracle products and features in addition to Transparent Data Encryption (TDE), such as Oracle Real Application Clusters (Oracle RAC), Oracle Data Guard, pluggable databases, and Oracle GoldenGate. Oracle Key Vault facilitates the movement of encrypted data using Oracle Data Pump and transportable tablespaces, a key feature of Oracle Database
+  - Oracle Key Vault multi-master cluster provides additional benefits, such as:
+    - Maximum key availability by providing multiple Oracle Key Vault nodes from which data may be retrived
+    - Zero endpoint downtime during Oracle Key Vault multi-master cluster maintenance
 
 ## Want to Learn More?
 Technical Documentation:
@@ -475,8 +471,10 @@ Technical Documentation:
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Contributors** - Peter Wahl, Gian Sartor, Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
