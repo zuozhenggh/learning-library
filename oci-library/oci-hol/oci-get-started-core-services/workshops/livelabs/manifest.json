@@ -26,10 +26,12 @@
       },
       {
           "title": "Lab 4: Block Volume",
+          "type": "livelabs",
           "filename": "../../../block-volume/block-volume.md"
       },
       {
           "title": "Lab 5: Object Storage",
+          "type": "livelabs",
           "filename": "../../../../object-storage/object-storage.md"
       }
     ]

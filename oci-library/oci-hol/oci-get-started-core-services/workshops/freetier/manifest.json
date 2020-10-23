@@ -25,14 +25,17 @@
       },
       {
           "title": "Lab 4: Create a Compute Service",
+          "type": "freetier",
           "filename": "../../../compute-service/compute-service.md"
       },
       {
           "title": "Lab 5: Block Volume",
+          "type": "freetier",
           "filename": "../../../block-volume/block-volume.md"
       },
       {
           "title": "Lab 6: Object Storage",
+          "type": "freetier",
           "filename": "../../../object-storage/object-storage.md"
       }
     ]
