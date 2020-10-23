@@ -427,6 +427,7 @@ appDeployments:
     The resulting `source.yaml` file should be like:
 
     ```yaml
+    <copy>
     resources:
         JDBCSystemResource:
             JDBCConnection:
@@ -457,6 +458,7 @@ appDeployments:
                 ModuleType: ear
                 StagingMode: stage
                 Target: nonjrf_cluster
+    </copy>
     ```
 
   **Important Note**: if when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers
@@ -518,12 +520,34 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
     nano update_domain.sh
     </copy>
     ```
-2. Provide the `TARGET_WLS_ADMIN` 
-    This is the **WebLogic Admin Server public IP** gather previously.
-  
-3. Save the file with `CTRL+x` and `y`
+2. Provide the `TARGET_WLS_ADMIN`
 
-4. Run the `update_domain.sh` script
+    This is the **WebLogic Admin Server public IP** gather previously if you deployed in a **Public Subnet**
+    or the **Admin Server Private IP** if you deployed in a **Private subnet**
+
+3. If you deployed in a **Private Subnet**, you also need to provide a `BASTION_IP` which is the **public IP** of the Bastion Instance.
+
+    Furthermore, you'll need to add a **NAT gateway** to the admin server subnet so it is possible to download the required software.
+
+    - Go to **Core Infrastructure -> Networking -> Virtual Cloud Networks**
+    - Select the VCN for the WLS on OCI stack
+    - Click **NAT Gateways** on the left menu
+    - Click **Create NAT Gateway**
+    - Name it **NAT gw**
+    - Click **Create NAT Gateway**
+    - Go to **Subnets**
+    - Select the `nonjrf-wl-subnet`
+    - In the Subnet Information, click the **Route Table** (`nonjrf-routetable`)
+    - Click **Add Route Rules**
+    - Select **NAT Gateway**
+    - Enter **0.0.0.0/0** for the CIDR range
+    - Select the **NAT gw** NAT Gateway created earlier
+    - Click **Add Route Rules**
+
+
+4. Save the file with `CTRL+x` and `y`
+
+5. Run the `update_domain.sh` script
 
     ```bash
     <copy>
@@ -775,7 +799,7 @@ updateDomain.sh completed successfully (exit code = 0)
 
 ## **STEP 6:** Check that the app deployed properly
 
-1. Go to the WebLogic Admin console at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console
+1. Go to the WebLogic Admin console (at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console if you deployed in a *Public Subnet*), or through the tunnel as you did earlier.
 
     Note: If you're using Chrome, you might encounter Self-signed certificate issues. We recommend using Firefox to test.
 
@@ -791,7 +815,7 @@ updateDomain.sh completed successfully (exit code = 0)
 
   <img src="./images/oci-deployments.png" width="100%">
 
-5. Go to the SimpleDB application URL, which is the Load Balancer IP gathered previously in the **Outputs** of the WebLogic provisioing, with the route `/SimpleDB/` like:
+5. Go to the SimpleDB application URL, which is the Load Balancer IP gathered previously in the **Outputs** of the WebLogic provisioning, with the route `/SimpleDB/` like:
 https://`LOAD_BALANCER_IP`/SimpleDB/
 
     Making sure you use `https` as scheme and the proper case for `/SimpleDB` 
