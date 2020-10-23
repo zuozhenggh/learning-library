@@ -1,4 +1,4 @@
-# Oracle Database Security Assessment Tool
+# Oracle Database Security Assessment Tool (DBSAT)
 
 ## Introduction
 This workshop introduces the functionality of Oracle Database Security Assessment Tool (DBSAT).
@@ -19,9 +19,6 @@ This lab assumes you have completed:
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
 
-### Video Preview
-- Watch a preview of "*Understanding DBSAT (April 2018)*" [](youtube:XsPuiCPcyA0)
-
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
@@ -37,6 +34,9 @@ This lab assumes you have completed:
 |10| Advanced Discoverer - Getting into Pattern files, Sensitive Types, and Categories | 10 minutes |
 |11| Advanced Discoverer - Pattern Files | 15 minutes |
 |12| Processing DBSAT report JSON output | 10 minutes |
+
+### Video Preview
+- Watch a preview of "*Understanding DBSAT (April 2018)*" [](youtube:XsPuiCPcyA0)
 
 ## **STEP 1**: Installing DBSAT
 
@@ -261,9 +261,9 @@ In this exercise, you will be guided by relevant DBSAT findings. This will provi
 
    ![](./images/dbsat-014.png " ")
 
-   **Note**:
-   - All database users are on the `DEFAULT` profile which has `INACTIVE_ACCOUNT_TIME = UNLIMITED`
-   - The `INACTIVE_ACCOUNT_TIME` profile parameter locks a user account that has not logged in to the database instance in a specified number of days
+      **Note**:
+      - All database users are on the `DEFAULT` profile which has `INACTIVE_ACCOUNT_TIME = UNLIMITED`
+      - The `INACTIVE_ACCOUNT_TIME` profile parameter locks a user account that has not logged in to the database instance in a specified number of days
 
 6. See the next finding – **USER.NOEXPIRE**
 

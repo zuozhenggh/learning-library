@@ -21,14 +21,14 @@ This lab assumes you have completed:
    - Lab: Initialize and Start the DBSecLab Environment
    - Lab: Oracle Database Vault
 
-### Video Preview
-- Watch a preview of "*Understanding Oracle Label Security (April 2020)*" [](youtube:o4-XpUQWfaM)
-
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
 | 1 | Simple CRM Application | 10 minutes |
 | 2 | Protect Glassfish Application | 20 minutes |
+
+### Video Preview
+- Watch a preview of "*Understanding Oracle Label Security (April 2020)*" [](youtube:o4-XpUQWfaM)
 
 ## **STEP 1**: Simple CRM Application
 

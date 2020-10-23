@@ -20,9 +20,6 @@ This lab assumes you have completed:
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
 
-### Video Preview
-- Watch a preview of "*Understanding Oracle Data Masking & Subsetting (April 2019)*" [](youtube:3zi0Bs_bgEw)
-
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
@@ -39,6 +36,8 @@ This lab assumes you have completed:
 |11 | Execute the Data Masking Script | 5 minutes |
 |12 | Compare the Pre-Masked Data vs. the Post-Masked Data | 5 minutes |
 
+### Video Preview
+- Watch a preview of "*Understanding Oracle Data Masking & Subsetting (April 2019)*" [](youtube:3zi0Bs_bgEw)
 
 ## **STEP 1**: Import schema structure
 
