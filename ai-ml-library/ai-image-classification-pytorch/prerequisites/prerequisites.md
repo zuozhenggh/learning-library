@@ -277,6 +277,21 @@ To save all your settings:
 3.  In the category section, **Click** session.
 4.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
+## **STEP 5**: Set up the environment
+
+There are a number of methods to set up a python environment to run PyTorch. You may follow your preferred method or the following set of instructions.
+
+1. Get a link for the [latest version of miniconda](https://docs.conda.io/en/latest/miniconda.html) by navigating to the site scrolling down to "Linux Installers" and copying the top link.
+2. In a terminal for the instance, use wget to download the file. 
+
+        wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+3. [Run the install command](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html) and complete the setup. 
+
+        bash Miniconda3-latest-Linux-x86_64.sh
+
+4. Exit the terminal and open a new terminal after installation, which ensures that conda is activated. Optional: create a specific environment for PyTorch by running the command `conda create --name pytorch python=3.6` and then enabling the environment by running `conda activate pytorch`
+5. [Install PyTorch](https://pytorch.org/) through conda `conda install pytorch torchvision cudatoolkit=10.2 -c pytorch`
+
 You may now proceed to the next lab.
 
 ## Appendix:  Teraform and Resource Manager
