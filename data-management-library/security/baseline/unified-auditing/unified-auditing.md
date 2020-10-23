@@ -68,7 +68,7 @@ This lab assumes you have completed:
 
     - The 3rd query of this script shows you which Unified Audit policies are **enabled**
 
-   ![](./images/ua-003.png " ")
+      ![](./images/ua-003.png " ")
 
       **Note**:
       - Just because the policy exists in the previous query does not mean it's enabled
@@ -78,7 +78,7 @@ This lab assumes you have completed:
 
     - The 4th query shows you auditing based on context
 
-   ![](./images/ua-004.png " ")
+       ![](./images/ua-004.png " ")
 
         **Note**:
         - We have one policy called `TICKETINFO` that captures an attribute named `TICKET_ID`

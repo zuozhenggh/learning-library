@@ -53,42 +53,42 @@ In this lab, you will:
 8.	For the *Configure SAML* section, you need to enter values from the IDCS metadata
 
     ```
-        https://<your tenant>.identity.oraclecloud.com/fed/v1/metadata
+    https://<your tenant>.identity.oraclecloud.com/fed/v1/metadata
     ```
 
 9. Enter the following values from the metadata in Okta’s SAML setup:
-* In the IDCS metadata, search for *AssertionConsumerService* at the bottom. Copy the highlighted URL in *Location* as shown below. Enter the URL as *Single sign on URL* in Okta
+    * In the IDCS metadata, search for *AssertionConsumerService* at the bottom. Copy the highlighted URL in *Location* as shown below. Enter the URL as *Single sign on URL* in Okta
     ![Image](images/L4007.png)
-* In the IDCS metadata, search for *entityID* at the top. Copy the highlighted URL as shown below. Enter the URL as *Audience URI (SP Entity ID)* in Okta
+    * In the IDCS metadata, search for *entityID* at the top. Copy the highlighted URL as shown below. Enter the URL as *Audience URI (SP Entity ID)* in Okta
     ![Image](images/L4008.png)
-* When you’re done, the general settings in Okta should look something like the example below. Leave the rest of the fields with their default values
+    * When you’re done, the general settings in Okta should look something like the example below. Leave the rest of the fields with their default values
     ![Image](images/L4009.png)
 
-9.	Scroll down to the end of the page and click *Next*.
+10.	Scroll down to the end of the page and click *Next*.
     ![Image](images/L4010.png)
 
-10.	Provide the obligatory feedback and select *Finish*.
+11.	Provide the obligatory feedback and select *Finish*.
     ![Image](images/L4011.png)
 
-11.	Click on *Identity Provider metadata* under *Settings* in order to export the IDP metadata file.
+12.	Click on *Identity Provider metadata* under *Settings* in order to export the IDP metadata file.
     ![Image](images/L4012.png)
 
-12.	The metadata will be displayed in another browser window.  Save it to an xml file by right click and choose “Save as”, as you will need this in a few minutes inside of IDCS.
+13.	The metadata will be displayed in another browser window.  Save it to an xml file by right click and choose “Save as”, as you will need this in a few minutes inside of IDCS.
     ![Image](images/L4013.png)
 
-13.	Go back to *Okta* and select the *Assignments* tab of your newly created application in order to assign users to the application.
+14.	Go back to *Okta* and select the *Assignments* tab of your newly created application in order to assign users to the application.
     ![Image](images/L4014.png)
 
-14.	Click on *Assign* and select *Assign to People*
+15.	Click on *Assign* and select *Assign to People*
     ![Image](images/L4015.png)
 
-15.	Select a user on the list and lick *Assign*. Enter the User Name of your corresponding IDCS user and select *Save and Go Back*. When the user is assigned, click *Done*.
+16.	Select a user on the list and lick *Assign*. Enter the User Name of your corresponding IDCS user and select *Save and Go Back*. When the user is assigned, click *Done*.
 
     ![Image](images/L4016.png)
 
     Note: This is not the user name that you provide when logging in to Okta. That remains unchanged. What you’re entering here is the user name of the corresponding user in IDCS. This enables a link between accounts with different user names in IDCS and Okta. The accounts might have different user names e.g. because Okta requires them in an email format while IDCS doesn’t.
 
-16.	IDCS is now configured as a Service Provider in Okta. Open IDCS to configure Okta as an Identity Provider.
+17.	IDCS is now configured as a Service Provider in Okta. Open IDCS to configure Okta as an Identity Provider.
 
 
 ## **STEP 2**: Configure IDCS
@@ -104,9 +104,9 @@ In this lab, you will:
 
 3.	Set the following parameters:
 
-* Identity Provider User Attribute = **Name ID**
-* Oracle Identity Cloud Service User Attribute = **Username**
-* Requested NameID Format = **Unspecified**
+    * Identity Provider User Attribute = **Name ID**
+    * Oracle Identity Cloud Service User Attribute = **Username**
+    * Requested NameID Format = **Unspecified**
     ![Image](images/L4019.png)
 
 4.	On the export screen there is nothing to do as we had already retrieved the IDCS metadata from the URL and is no need to download them again. Click *Next*.

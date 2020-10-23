@@ -9,7 +9,10 @@ Estimated Lab Time: 10 Minutes
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
-
+- Lab: Fast Application Notification
+- Lab: Install Sample Schema
+- Lab: Services
+  
 ### About PL/SQL Packages
 With any PL/SQL operations on RAC you must be aware that the code could execute on any node where its service lives. This could also impact packages like DBMS\_PIPE, UTL\_MAIL, UTL\_HTTP (proxy server source IP rules for example), or even DBMS\_RLS (refreshing policies).
 
@@ -27,21 +30,21 @@ UTL\_FILE provides file access both on the client side and on the server side. W
 
 ## **STEP 1:**  Create a DIRECTORY OBJECT and write a file in this location
 
-1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 
 2.  Start Cloudshell
     
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
     ````
     ![](../clusterware/images/racnode1-login.png " ")
 
-4. Connect to the pluggable database, **PDB1** as the SH user
+4. Connect to the pluggable database, **PDB1** as the *SH* user
 
     ````
     <copy>
@@ -65,9 +68,8 @@ UTL\_FILE provides file access both on the client side and on the server side. W
     /
     </copy>
     ````
-    ![](./images/sched-1.png " " )
+    ![](./images/dir-num5.png " " )
 
-6. Exit SQL\*Plus
 
 ## **STEP 2:** Reconnect to SQL\*Plus and read the file you just created
 
@@ -75,8 +77,6 @@ UTL\_FILE provides file access both on the client side and on the server side. W
 
     ````
     <copy>
-    sudo su - oracle
-    sqlplus sh/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com <<EOF
     declare fl utl_file.file_type;
     begin
         fl := utl_file.fopen('ORAHOME','data.txt','r');
@@ -85,13 +85,12 @@ UTL\_FILE provides file access both on the client side and on the server side. W
     end;
     /
     exit;
-    EOF
     </copy>
     ````
 
 2. Did some of the *get_line* commands fail? Why?
 
-   Use operating system commands to examine the directory **\/home\/oracle** on each of the cluster nodes
+   Use operating system commands to examine the directory **/home/oracle** on each of the cluster nodes
     ````
     <copy>
     cd /home/oracle
