@@ -27,17 +27,17 @@ Estimated Lab Time: 15min
 
 3. Click the stack name for the **Workshop on-premises environment**
 
-  <img src="./images/stack.png"  width="50%">
+  <img src="../../tear-down/images/stack.png"  width="100%">
 
 4. In **Terraform Actions**, click **Destroy**
 
-  <img src="./images/tf-destroy-local.png"  width="50%">
+  <img src="../../tear-down/images/tf-destroy-local.png"  width="100%">
 
 5. Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
 
 6. Click **Delete Stack**
 
-  <img src="./images/delete-stack-local.png"  width="50%">
+  <img src="../../tear-down/images/delete-stack-local.png"  width="100%">
 
 ## **STEP 2:** Tear down the Application Database on OCI
 
@@ -60,13 +60,13 @@ Estimated Lab Time: 15min
 
 3. In **Terraform Actions**, click **Destroy**
 
-  <img src="./images/tf-destroy-soamp.png"  width="50%">
+  <img src="../../tear-down/images/tf-destroy-soamp.png"  width="100%">
 
 4. Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
 
 5. Click **Delete Stack**
 
-  <img src="./images/delete-stack-soamp.png"  width="50%">
+  <img src="../../tear-down/images/delete-stack-soamp.png"  width="100%">
 
 ## **STEP 4:** Tear down VCN
 
