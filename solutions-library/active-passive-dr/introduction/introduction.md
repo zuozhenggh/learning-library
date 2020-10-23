@@ -1,29 +1,30 @@
-# Oracle Cloud Platform: Active/Passive DR
+# Introduction: Active and Passive Disaster Recovery
 
-<!-- Comment out table of contents
-## Table of Contents
-[Introduction](#introduction)
--->
-
-## **Introduction**
+## About this Workshop
 
 In this workshop, we'll take an in-depth look into the disaster recovery (DR) solutions that are leveraged by Oracle's customers. These solutions will cover the discussion around disaster recovery at both the application and database levels.
 
+Estimated Lab Time: 3 - 4 hours
+
+### About Disaster Recovery
+
+Oracle Cloud Infrastructure provides highly available, secure and scalable infrastructure and services that enable quick, reliable and secure recovery of cloud workloads. In order to build a comprehensive plan that guarantees recovery of your applications after a disaster, one must plan for all possible scenarios that can cause disasters at every layer of an application.
+
 ### **Objectives**
+In this workshop, you will:
 - Leverage Rsync to sync application files between the primary and DR servers
 - Set up DR failover using Oracle Data Guard through the OCI console as well as through manual configurations.
 - Simulate DR for solution verification.
 
-## **Part 1.** Download the Terraform zip file
+### Prerequisites 
 
-### Download and unzip the [Terraform zip file](https://github.com/mark-vong/disaster-recovery/raw/master/terraform/resource-manager-bin.zip) onto your local machine and move onto **Lab 100**.
-<!-- 
-## Table of Contents
+1. Download and unzip the [Terraform zip file](TBD) onto your local machine.
 
-### [Lab 100: Setup your environment](LabGuide100.md)
-  
-### [Lab 200: Using Rsync for application file sync](LabGuide200.md)
+You may proceed to the first lab.
 
-### [Lab 300: OCI Active Data Guard](LabGuide300.md)
+## Learn More
+* For more information, [learn about protecting your cloud topology against disasters](https://docs.oracle.com/en/solutions/design-dr/#GUID-F3CA0932-0DF5-4829-B790-4AEC18F67505).
 
-### [Lab 400: Manual Active Data Guard](LabGuide400.md) -->
+## Acknowledgements
+* **Contributors** -  Goutham M L, Cloud Engineer; Noah Horner, Cloud Engineer; Humza Meraj, Cloud Engineer; Eben Dunlap, Cloud Engineer; Jason Jang, Cloud Engineer; Mark Vong, Cloud Engineer
+* **Last Updated By** - Mark Vong, Cloud Engineering, October 2020
