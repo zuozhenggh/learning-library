@@ -1,4 +1,4 @@
-# Provision Environments with Windows Clients
+# Additional Lab: Provisioning Environments with Windows Clients
 
 ## Introduction
 
@@ -32,7 +32,7 @@ As a take home exercise, you can provision a PeopleSoft environment with a Windo
 ## Acknowledgements
 **Authors** 
 - Rich Konopka, PeopleSoft Specialist, October 2020
-- Megha Gajbhiye, Cloud Solutions Engineer, Octiber 2020
+- Megha Gajbhiye, Cloud Solutions Engineer, October 2020
 
 **Last Updated By/Date** 
 - Sara Lipowsky, Cloud Engineer, October 2020
