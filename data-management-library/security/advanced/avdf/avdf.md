@@ -1,7 +1,7 @@
 # Oracle Audit Vault and DB Firewall (AVDF)
 
 ## Introduction
-This workshop introduces the various features and functionality of Oracle AVDF.
+This workshop introduces the various features and functionality of Oracle Audit Vault and DB Firewall (AVDF).
 
 It gives the user an opportunity to learn how to configure those appliances in order to audit, monitor and protect access to sensitive data.
 
@@ -21,10 +21,6 @@ This lab assumes you have completed:
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
    - Lab: DBSAT (please refer to the *Oracle DB Security Baseline Workshop*)
-
-### Video Preview
-
-- Watch a preview of "*Understanding Oracle Audit Vault and Database Firewall 20c (August 2020)*" [](youtube:9xG0GFKbVJk)
 
 ### Lab Timing (estimated)
 
@@ -62,6 +58,9 @@ This lab assumes you have completed:
 <!-- Advanced Labs in progress!
 |19| MySQL Audit Collection | 5 minutes|
 -->
+
+### Video Preview
+- Watch a preview of "*Understanding Oracle Audit Vault and Database Firewall 20c (August 2020)*" [](youtube:9xG0GFKbVJk)
 
 ## **STEP 1**: Audit Vault - Run the Deploy Agent
 

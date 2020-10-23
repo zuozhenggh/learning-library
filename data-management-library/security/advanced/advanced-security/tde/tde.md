@@ -1,7 +1,7 @@
 # Oracle Transparent Data Encryption (TDE)
 
 ## Introduction
-This workshop introduces the various features and functionality of Transparent Data Encryption (TDE).
+This workshop introduces the various features and functionality of Oracle Transparent Data Encryption (TDE).
 
 It gives the user an opportunity to learn how to configure those features in order to encrypt sensitive data.
 
@@ -20,9 +20,6 @@ This lab assumes you have completed:
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
 
-### Video Preview
-- Watch a preview of "*Understanding Oracle Transparent Data Encryption (TDE) - Part1 (January 2020)*" [](youtube:avNWykLpic4)
-
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
@@ -35,6 +32,9 @@ This lab assumes you have completed:
 | 7 | Rekey Master Key | 5 minutes |
 | 8 | View Keystore Details | 5 minutes |
 | 9 | (Optional) Restore Before TDE | 5 minutes |
+
+### Video Preview
+- Watch a preview of "*Understanding Oracle Transparent Data Encryption (TDE) - Part1 (January 2020)*" [](youtube:avNWykLpic4)
 
 ## **STEP 1**: Allow DB Restore
 
