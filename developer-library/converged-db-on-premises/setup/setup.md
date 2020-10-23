@@ -14,7 +14,7 @@ This lab will show you how to start a database instance and listener from a Putt
 - Lab: Generate SSH Key
 - Lab: Setup Compute Instance
 
-## **Step 1:** Login to ConvergedDB Compute instance
+## **STEP 1:** Login to ConvergedDB Compute instance
 If you aren't already logged in, follow the steps below to login.  If you are logged in, skip to Step 2.
 
 1. Click the Hamburger Menu in the top left corner. Then hover over **Compute** > **Instances**. Find the instance you created in the previous lab.
@@ -35,7 +35,7 @@ If you aren't already logged in, follow the steps below to login.  If you are lo
       - sshkeylocation - Full path of your SSH key
       - your address - Your Public IP Address
 
-## **Step 2:** Start the Database and the Listener
+## **STEP 2:** Start the Database and the Listener
 4. Switch to the oracle user
       ````
       <copy>sudo su - oracle</copy>
@@ -52,7 +52,7 @@ If you aren't already logged in, follow the steps below to login.  If you are lo
       ````
    ![](./images/setup-script.png " ")
 
-## **Step 3:** Download SQL Developer
+## **STEP 3:** Download SQL Developer
 Certain workshops require SQL Developer.  To setup SQL Developer, follow the steps below.
 
 1. Download [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) from the Oracle.com site and install on your local system.
@@ -61,7 +61,7 @@ Certain workshops require SQL Developer.  To setup SQL Developer, follow the ste
 
       ![](./images/start-sql-developer.png " ")
 
-## **Step 4:**  Test a connection
+## **STEP 4:**  Test a connection
 1.  In the connections page click the green plus to create a new connection
 
 2.  Enter the following connection information to test your connection:
@@ -88,5 +88,7 @@ Certain workshops require SQL Developer.  To setup SQL Developer, follow the ste
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

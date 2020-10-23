@@ -26,7 +26,7 @@ In this workshop you will:
 In GoldenGate Stream Analytics we typically define sources and targets in a streaming workflow called a Pipeline.  Any type of analysis or transformation and action can then be done in the pipeline after the data has been ingested by the sources and before they are sent to the targets.  The sources into GGSA can be in a variety of formats.  Oracle and non-Oracle Databases, GoldenGate, Kafka, JMS or REST and even a file system.  The downstream targets can also be Oracle or non-Oracle databases, Kafka, REST, JMS or Data Lakes in Oracle and non-Oracle cloud.
 In this workshop however, we will be reading streaming data from the file system, then enriching the stream using GeoSpatial, Contextual (database tables) and ML Models, run analysis on the data and finally send that data to Kafka topics.  We will be using MySQL database which contains user location, customer and product data that you can use to create stream analytics pipelines.  All the components in this workshop reside in a single node instance in Oracle Cloud.
 
-![](./images/osaarchitecture.png)
+![](./images/osaarchitecture.png " ")
 
 
 **Labs**
@@ -86,5 +86,7 @@ This is intended to provide the user with screen shots of the lab exercises
 * **Contributors** - Shrinidhi Kulkarni, Solution Engineer
 * **Last Updated By/Date** - Hadi Javaherian, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
