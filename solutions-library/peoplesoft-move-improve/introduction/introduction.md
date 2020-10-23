@@ -11,7 +11,7 @@ This hands-on lab provides users with step-by-step instructions for preparing th
 [PSFT-Workshop PPT](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0QHo_3IYUvoU7mdHlc2CgyF9hySoay4jhb5BWNM-7ve_nQEJB4IwlK594fRVbie4/n/orasenatdpltoci03/b/TestDrive/o/PSFT-CM-LabOverview.pptx)    
 [PSFT-Workshop PDF](https://objectstorage.us-ashburn-1.oraclecloud.com/p/n7Khl1L7M_HC--UqWmwoiSv2vANQbCOFiqwFIF5xRQrZMLhzKrGviCzywpaBG67p/n/orasenatdpltoci03/b/TestDrive/o/PSFT-HOL-Workshop.pdf)   -->
 
-Estimated Lab Time: 5 hours, including provisioning time. 
+Estimated Lab Time: 6 hours, including provisioning time. 
 
 
 **Note**:

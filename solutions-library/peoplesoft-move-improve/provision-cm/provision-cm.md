@@ -5,7 +5,7 @@ Resource Manager is an Oracle Cloud Infrastructure service that helps you instal
 
 In this tutorial, you obtain the configuration files, or stack, for Cloud Manager from the Oracle Cloud Infrastructure Marketplace, and use Resource Manager to create an instance and link it with associated resources such as a Virtual Cloud Network (VCN), subnet, gateways, and route tables. You enter the necessary passwords and other information in the Resource Manager interface and choose the types of resources created.
 
-**Estimated Lab Time**: 30 mins configuration + 1 hour waiting.
+Estimated Lab Time: 30 mins + 1 hour waiting
 
 ### Objectives
 The purpose of this lab is to show you how to create a PeopleSoft Cloud Manager instance from the Marketplace. 

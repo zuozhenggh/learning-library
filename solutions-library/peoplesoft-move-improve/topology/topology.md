@@ -11,6 +11,8 @@ Topology defines the infrastructure layout that will be created on Oracle Cloud 
 
 Users can select a template, override topologies, change any attributes, if needed, and provision PeopleSoft environments on demand. Users are allowed to perform actions on a running environment, such as stop, view details, create new template from it, and so on.
 
+Estimated Time: 5 minutes
+
 ### Objectives
 In this lab you will:
 * Create a topolgy for a template to automatically provision a PeopleSoft environment

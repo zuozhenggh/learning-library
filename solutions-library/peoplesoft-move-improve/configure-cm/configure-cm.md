@@ -3,7 +3,7 @@
 ## Introduction
 This lab will guide you on how to configure the system and infrastructure settings on Cloud Manager
 
-**Estimated Lab Time** : 10 minutes.
+Estimated Lab Time: 10 minutes.
 
 ### Objectives
 The purpose of this lab is to show you how to configure Cloud Manager settings.

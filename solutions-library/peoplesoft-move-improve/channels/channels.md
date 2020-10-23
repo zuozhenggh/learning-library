@@ -3,7 +3,7 @@
 ## Introduction
 Cloud Manager is delivered with channels for PeopleSoft applications, which are available after you complete the installation and configuration. An administrator can subscribe to multiple channels and download all necessary PIs (PeopleSoft Update Images) and PRPs (PeopleSoft Release Patchset) that the organization needs.
 
-**Estimated Lab Time** : Depends upon download speed and number of subscribed channels.  Around 60 mins for this example.
+Estimated Lab Time: 5 mins + 1.5 hours waiting
 
 ### Objectives
 In this lab you will:
