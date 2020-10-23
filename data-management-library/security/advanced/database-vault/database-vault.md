@@ -1,12 +1,14 @@
 # Oracle Database Vault (DV)
 
 ## Introduction
-This workshop introduces the various features and functionality of Oracle Database Vault (DV).
+This workshop introduces the various features and functionality of Oracle Database Vault (DV). It gives the user an opportunity to learn how to configure those features to prevent unauthorized privileged users from accessing sensitive data.
 
-It gives the user an opportunity to learn how to configure those features to prevent unauthorized privileged users from accessing sensitive data.
+*Estimated Lab Time:* 45 minutes
 
-- *Version tested in this lab:* Oracle DB 19.8
-- *Estimated Lab Time:* 45 minutes
+*Version tested in this lab:* Oracle DB 19.8
+
+### Video Preview
+Watch a preview of "*Understanding Oracle Database Vault (March 2019)*" [](youtube:oVidZw7yWIQ)
 
 ### Objectives
 - Enable Database Vault in the container and `PDB1` pluggable database
@@ -16,11 +18,14 @@ It gives the user an opportunity to learn how to configure those features to pre
 - Protect pluggable databases from Container Admins
 
 ### Prerequisites
-This lab assumes you have completed:
-   - Lab: Generate SSH Keys
-   - Lab: Prepare Setup
-   - Lab: Environment Setup
-   - Lab: Initialize and Start the DBSecLab Environment
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
 
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
@@ -31,9 +36,6 @@ This lab assumes you have completed:
 | 4 | Simulation Mode | 10 minutes |
 | 5 | Ops Control | 5 minutes |
 | 6 | (Optional) Disabling Database Vault | <5 minutes |
-
-### Video Preview
-- Watch a preview of "*Understanding Oracle Database Vault (March 2019)*" [](youtube:oVidZw7yWIQ)
 
 ## **STEP 1**: Enable Database Vault
 
@@ -412,62 +414,61 @@ This lab assumes you have completed:
 You may proceed to the next lab.
 
 ## **Appendix**: About the Product
-- **Overview**
+### **Overview**
+Oracle Database Vault provides controls to prevent unauthorized privileged users from accessing sensitive data and to prevent unauthorized database changes.
 
-    Oracle Database Vault provides controls to prevent unauthorized privileged users from accessing sensitive data and to prevent unauthorized database changes.
-
-    The Oracle Database Vault security controls protect application data from unauthorized access, and comply with privacy and regulatory requirements.
+The Oracle Database Vault security controls protect application data from unauthorized access, and comply with privacy and regulatory requirements.
 
    ![](./images/dv-concept.png " ")
 
-    You can deploy controls to block privileged account access to application data and control sensitive operations inside the database using trusted path authorization.
+You can deploy controls to block privileged account access to application data and control sensitive operations inside the database using trusted path authorization.
 
-    Through the analysis of privileges and roles, you can increase the security of existing applications by using least privilege best practices.
+Through the analysis of privileges and roles, you can increase the security of existing applications by using least privilege best practices.
 
-    Oracle Database Vault secures existing database environments transparently, eliminating costly and time consuming application changes.
+Oracle Database Vault secures existing database environments transparently, eliminating costly and time consuming application changes.
 
-    Oracle Database Vault enables you to create a set of components to manage security for your database instance.
+Oracle Database Vault enables you to create a set of components to manage security for your database instance.
 
-    These components are as follows:
+These components are as follows:
 
-    - **Realms**
+- **Realms**
 
-      A realm is a protection zone inside the database where database schemas, objects, and roles can be secured. For example, you can secure a set of schemas, objects, and roles that are related to accounting, sales, or human resources.
-      After you have secured these into a realm, you can use the realm to control the use of system and object privileges to specific accounts or roles. This enables you to provide fine-grained access controls for anyone who wants to use these schemas, objects, and roles.
+A realm is a protection zone inside the database where database schemas, objects, and roles can be secured. For example, you can secure a set of schemas, objects, and roles that are related to accounting, sales, or human resources.
+After you have secured these into a realm, you can use the realm to control the use of system and object privileges to specific accounts or roles. This enables you to provide fine-grained access controls for anyone who wants to use these schemas, objects, and roles.
 
-    - **Command rules**
+- **Command rules**
 
-      A command rule is a special security policy that you can create to control how users can execute almost any SQL statement, including SELECT, ALTER SYSTEM, database definition language (DDL), and data manipulation language (DML) statements.
-      Command rules must work with rule sets to determine whether the statement is allowed.
+A command rule is a special security policy that you can create to control how users can execute almost any SQL statement, including SELECT, ALTER SYSTEM, database definition language (DDL), and data manipulation language (DML) statements.
+Command rules must work with rule sets to determine whether the statement is allowed.
 
-    - **Factors**
+- **Factors**
 
-      A factor is a named variable or attribute, such as a user location, database IP address, or session user, which Oracle Database Vault can recognize and use as a trusted path.
-      You can use factors in rules to control activities such as authorizing database accounts to connect to the database or the execution of a specific database command to restrict the visibility and manageability of data.
-      Each factor can have one or more identities. An identity is the actual value of a factor.
-      A factor can have several identities depending on the factor retrieval method or its identity mapping logic.
+A factor is a named variable or attribute, such as a user location, database IP address, or session user, which Oracle Database Vault can recognize and use as a trusted path.
+You can use factors in rules to control activities such as authorizing database accounts to connect to the database or the execution of a specific database command to restrict the visibility and manageability of data.
+Each factor can have one or more identities. An identity is the actual value of a factor.
+A factor can have several identities depending on the factor retrieval method or its identity mapping logic.
 
-    - **Rule sets**
+- **Rule sets**
 
-      A rule set is a collection of one or more rules that you can associate with a realm authorization, command rule, factor assignment, or secure application role.
-      The rule set evaluates to true or false based on the evaluation of each rule it contains and the evaluation type (All True or Any True).
-      The rule within a rule set is a PL/SQL expression that evaluates to true or false. You can have the same rule in multiple rule sets.
+A rule set is a collection of one or more rules that you can associate with a realm authorization, command rule, factor assignment, or secure application role.
+The rule set evaluates to true or false based on the evaluation of each rule it contains and the evaluation type (All True or Any True).
+The rule within a rule set is a PL/SQL expression that evaluates to true or false. You can have the same rule in multiple rule sets.
 
-    - **Secure application roles**
+- **Secure application roles**
 
-      A secure application role is a special Oracle Database role that can be enabled based on the evaluation of an Oracle Database Vault rule set.
+A secure application role is a special Oracle Database role that can be enabled based on the evaluation of an Oracle Database Vault rule set.
 
-    To augment these components, Oracle Database Vault provides a set of PL/SQL interfaces and packages.
-    In general, the first step you take is to create a realm composed of the database schemas or database objects that you want to secure.
-    You can further secure the realm by creating rules, command rules, factors, identities, rule sets, and secure application roles.
-    In addition, you can run reports on the activities these components monitor and protect.
+To augment these components, Oracle Database Vault provides a set of PL/SQL interfaces and packages.
+In general, the first step you take is to create a realm composed of the database schemas or database objects that you want to secure.
+You can further secure the realm by creating rules, command rules, factors, identities, rule sets, and secure application roles.
+In addition, you can run reports on the activities these components monitor and protect.
 
-- **Benefits of using Database Vault**
-    - Addresses compliance regulations to security awareness
-    - Protects privileged user accounts from many security breaches and data steal, both external and internal
-    - Helps you design flexible security policies for your database
-    - Addresses Database consolidation and cloud environments concerns to reduce cost and reduce exposure sensitive application data to those without a true need-to-know
-    - Works in a Multitenant Environment increasing security for consolidation
+### **Benefits of using Database Vault**
+- Addresses compliance regulations to security awareness
+- Protects privileged user accounts from many security breaches and data steal, both external and internal
+- Helps you design flexible security policies for your database
+- Addresses Database consolidation and cloud environments concerns to reduce cost and reduce exposure sensitive application data to those without a true need-to-know
+- Works in a Multitenant Environment increasing security for consolidation
 
 ## Want to Learn More?
 Technical Documentation:
@@ -481,7 +482,7 @@ Video:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

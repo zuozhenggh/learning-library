@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Database Security Hands-On Labs - Part2 (Advanced) - DV",
+  "workshoptitle": "Oracle Database Security - Part2 (Advanced) - DV",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -30,7 +30,7 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Initialize and Start the DBSecLab Environment",
+      "title": "Lab 4: Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
       "filename": "../../init-start-env/init-start-env.md"
