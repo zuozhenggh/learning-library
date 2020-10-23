@@ -3,7 +3,7 @@
 ## Introduction
 This lab walks you through the steps to configure your cloud environment, define security and access controls, and create a virtual network.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -144,7 +144,36 @@ A **Virtual Cloud Network** (**VCN**) defines a private network in your cloud en
 
 The final Step of this lab is to launch a small Virtual Machine in your newly created **VCN**.
 
-1. 
+1.  In the OCI Management Console, ensure you have selected the same region as your VCN created in Step 3.  Navigate to **Compute** --> **Instances**.
+
+      ![Compute Instance](images/compute-instance.png)
+
+2.  Ensure the logservicedemo **Compartment** is selected in the left column.
+
+      ![Select Compartment](images/select-compartment-2.png)
+
+3.  Select **Create Instance** 
+
+      ![Create Instance](images/create-instance.png)
+
+4. The **Create Compute Instance** dialog page opens.  Give your VM a short, descriptive name and ensure **Compartment** logservicedemo is selected.  The **Availability Domain** should be pre-populated to match the subnet you created in Step 3.  Note: your region and availability domain may not match the image below.  Continue with additional configuraton fields below.
+
+      ![Create Compute](images/create-compute-wizard-1.png)
+
+    Select **Image** Oracle Linux 7.8.  The specific build version does not matter, and your option may not match the image below. Select **Shape** to specify a single core (1 core OCPU) Virtual Machine.  Please note your options and naming conventions may not exactly match the image below.
+
+      ![Create Compute](images/create-compute-wizard-2.png)
+
+    Choose **Select Existing Virtual Cloud Network** and ensure logservicevcn is listed.  **Subnet** logservicesub01 should be listed.  If not, double-check the **Compartment** is set to logservicedemo.  You may have to switch to a different **Availability Domain** (see above) to allow the selection of your existing **Subnet**.
+
+      ![Create Compute](images/create-compute-wizard-3.png)
+
+    Select **GENERATE SSH KEY PAIR** then click **Save Private Key** as shown in the image below.
+
+      ![Create Compute](images/create-compute-wizard-4.png)
+
+    Finally click the **Create** button to complete this task and close the dialog page.
+
 
 You may proceed to the next lab.
 
