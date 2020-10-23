@@ -1,7 +1,7 @@
 # Oracle Privelege Analysis
 
 ## Introduction
-This workshop introduces the functionality of Privilege Analysis.
+This workshop introduces the functionality of Oracle Privilege Analysis.
 
 It gives the user an opportunity to learn how to use this feature to always know privileges usage accessed by all users during all the database life.
 
@@ -19,9 +19,6 @@ This lab assumes you have completed:
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
 
-### Video Preview
-- Watch a preview of "*Understanding Privilege Analysis (January 2019)*" [](youtube:3oRODVtWwbg)
-
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
@@ -29,6 +26,8 @@ This lab assumes you have completed:
 | 2 | Analyze the workload caputred | 5 minutes |
 | 3 | (Optionnal) Drop the capture | <5 minutes |
 
+### Video Preview
+- Watch a preview of "*Understanding Privilege Analysis (January 2019)*" [](youtube:3oRODVtWwbg)
 
 ## **STEP 1**: Capture the workloard to analyze
 
