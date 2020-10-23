@@ -2,6 +2,11 @@
   "workshoptitle": "Getting Started with Computer Vision using PyTorch",
     "tutorials": [
         {
+            "title": "Prerequisites",
+            "description": "Steps to set up the python environment and install pytorch",
+            "filename": "../../prerequisites/prerequisites.md"        
+        },
+        {
             "title": "Setting Up the Environment",
             "description": "Steps to set up the python environment and install pytorch",
             "filename": "../../setting-up-environment/setting-up-environment.md"        

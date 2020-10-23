@@ -1,31 +1,4 @@
-# Lab 1: Training a Classifier
-
-## Introduction
-
-Implementing an image classification training is the “Hello World” of computer vision. Although there are many blog posts about the topic, most of them present the solution without adequately explaining the library API, the underlying principals, or both. The [Training a Classifier](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html) guide from PyTorch is a great place to start, but some of the details of the code are explained too sparsely for a reader new to the field. This workshop builds on that tutorial as a base with line-by-line explanations of the code to facilitate a clearer learning pathway. This guide will show you how to train a model using CPUs and then explain how to update code to utilize GPU resources.
-
-Estimated lab time: 60 minutes
-
-### Objectives
-
-Topics covered in this lab:
-* Tensors
-* DataLoaders
-* Convolutional Neural Networks (CNN)
-* Loss Function and Optimizer
-* Model Training
-
-### Prerequisites
-
-* An environment in which to run the python code. Follow `Setting Up the Environment` if necessary.
-
-### Before we begin, what is a Tensor?
-
-For better or worse, visual representations help contextualize computer science terminology, data structures, and algorithms. For tensors, [KDnuggets provides a clear explaination](https://www.kdnuggets.com/2018/05/wtf-tensor.html). When you search for a definition online, you may encounter some confusion between the technical definition of a tensor and colloquial usage. Technically, a vector is a 1-dimensional tensor and a matrix is a 2-dimensional tensor, but most often tensor refers to an n-dimensional container that’s larger than both a vector and a matrix.
-
-![Visual Representation of different-sized tensors](images/tensor.png)
-
-The term is important to understand because tensors are central to building artificial intelligence algorithms, and they underpin discussions about optimizing compute resources. A common area of concern when training a model is GPU utilization, because NVIDIA [Turing Tensor Cores](https://www.nvidia.com/en-us/data-center/tensor-cores/) are capable of significant computational acceleration but can take some tuning. Fortunately, PyTorch contains a data loader that takes the responsibility for transmitting tensors to the GPU.
+# Training a Classifier
 
 [Click here to download the full code example](files/image-classification-pytorch.py)
 
@@ -98,7 +71,7 @@ net = Net()
 
 ![Animation showing filter convolving 2-D array](images/cnn.gif)
 
-At a high level, the [nn.Conv2d](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html?highlight=conv2d#torch.nn.Conv2d) function runs convolutions over the input tensor as shown in the preceding animation. A *filter* (the terms *filter* and *kernel* are used interchangeably in various texts), represented by the yellow square, passes over each channel like a typewriter and outputs a new channel. The tutorial instructs us to set the first convolution to nn.Conv2d(3, 6, 5). This call to `Conv2d` expects the input tensor to have 3 channels, and outputs a tensor with 6 channels by running the convolution multiple times. The final value, 5, is the filter (kernel) size, a 5x5 square. If a tuple (5,2) is passed, a rectangular filter is used. It’s important to note that all the images in the dataset are 32x32 pixel squares. If a dataset with different-sized images is input into this algorithm, a runtime error would occur because the output matrices are not the same size.
+At a high level, the [nn.Conv2d](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html?highlight=conv2d#torch.nn.Conv2d) function runs convolutions over the input tensor as shown in the preceding animation. A *filter* (the terms *filter* and *kernel* are used interchangeably in various texts), represented by the yellow square, passes over each channel like a typewriter and outputs a new channel. The tutorial instructs us to set the first convolution to `nn.Conv2d(3, 6, 5)`. This call to `Conv2d` expects the input tensor to have 3 channels, and outputs a tensor with 6 channels by running the convolution multiple times. The final value, 5, is the filter (kernel) size, a 5x5 square. If a tuple (5,2) is passed, a rectangular filter is used. It’s important to note that all the images in the dataset are 32x32 pixel squares. If a dataset with different-sized images is input into this algorithm, a runtime error would occur because the output matrices are not the same size.
 
 The next line in the tutorial defines a way to downsample the data to help control the size of the neural network and prevent overfitting, [nn.MaxPool2d](https://pytorch.org/docs/stable/generated/torch.nn.MaxPool2d.html). As before, the input parameters are first the size of the filter and then the stride. By default, the stride in the `nn.Conv2d` function is 1, but for `nn.MaxPool2d` we’re using 2. So, instead of shifting to the right by one square, the filter shifts to the right by two squares. After every movement, `nn.MaxPool2d` takes the largest value seen by the filter and puts it into the output channel.
 
@@ -258,17 +231,13 @@ For this example, we can dive a little deeper than just the overall accuracy. Th
 
 This covers the main points of training deep learning computer vision models. [Click here to download the full code example](files/image-classification-pytorch.py) The next step is to accellerate the computational workload with a GPU.
 
-## **Acknowledgements**
+You may proceed to the next lab.
 
-- **Author** - Justin Blau - Senior Solutions Architect
-- **Last Updated By/Date** - Justin Blau, October 2020
+## Acknowledgements
+* **Author** - Justin Blau, Senior Solutions Architect, Big Compute
+* **Last Updated By/Date** - Justin Blau, Big Compute, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-
-You may proceed to the next lab.
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

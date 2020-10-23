@@ -1,19 +1,6 @@
-# Lab 2: Utilizing a GPU
-
-## Introduction
+# Utilizing a GPU
 
 The last topic to cover relates to computational optimization using GPUs. At the end of the tutorial, after saving the model and testing its accuracy, the current code is using only CPU resources. By slightly modifying the code, we can use GPU resources. Oracle Cloud Infrastructure provides an array of NVIDIA GPUs with different shapes depending on the computational workload required. To get started, I recommend running this code on a VM.GPU2.1. After finding the appropriate GPU location, likely `cuda:0`, the model, batched data and labels can be sent to the device for processing using `.to(device)` methods. PyTorch wraps all the memory transition code in these methods so that you don’t have to worry about properly assigning GPU memory.
-
-Estimated lab time: 5 minutes
-
-### Objectives
-
-Topics covered in this lab:
-* GPU Accelleration
-
-### Prerequisites
-
-* Completion of Lab 1: Training a Classifier
 
 ## **STEP 1**: Enabling GPU Acceleration
 
@@ -41,15 +28,11 @@ inputs, labels = data[0].to(device), data[1].to(device)
 
 ***NOTE:*** When running this specific example, you may not see a significant decrease in the training time. This example is designed to keep things simple, so the goal is to just make sure that the code executes properly. The issue is that the images and the model are small. Increasing the number of layers and channels in the model as well as increasing the `batch_size` in the dataloader will start to show differences in the execution time when comparing CPUs to GPUs.
 
-## **Acknowledgements**
-
-- **Author** - Justin Blau - Senior Solutions Architect
-- **Last Updated By/Date** - Justin Blau, October 2020
+## Acknowledgements
+* **Author** - Justin Blau, Senior Solutions Architect, Big Compute
+* **Last Updated By/Date** - Justin Blau, Big Compute, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
