@@ -88,35 +88,45 @@ For testing, we'll place a test XML file in the `/tmp/soa/out` folder, wait 5 to
 1. Create the necessary folders:
 
     ```
+    <copy>
     mkdir -p /tmp/soa/out
     mkdir -p /tmp/soa/out1
     chmod -R 777 /tmp/soa/
+    </copy>
     ```
 
 2. Copy the test file into the `/tmp/soa/out/` folder
 
     ```
+    <copy>
     cd /tmp/soa/out
     cp /u01/training/OrderSampleOSB.xml ./
+    </copy>
     ```
 
 3. Check the file is in the `/tmp/soa/out` folder
 
     ```
+    <copy>
     ls -lh
+    </copy>
     ```
 
 4. Wait 5 to 10sec and check the file is now gone:
 
     ```
+    <copy>
     ls -lh
+    </copy>
     ```
 
 5. Check the file `File_1.xml` was created in the `/tmp/soa/out1` folder:
 
     ```
+    <copy>
     cd /tmp/soa/out1
     ls -lah
+    </copy>
     ```
 
     It should show 

@@ -87,6 +87,7 @@ Once the import is successfull
 
 6. Run both the SOA Suite versions SOA Suite 12.2.1.3 VM and SOA Suite 12.2.1.4 local installation are working properly and j developer for both the versions are working fine.
 
+You may proceed to the next lab
 
 ## Acknowledgements
 
