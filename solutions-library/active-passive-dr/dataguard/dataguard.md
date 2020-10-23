@@ -226,6 +226,8 @@ Data Guard failovers are used for unforeseen disasters or downtime that is not p
 ## Learn More
 * [Introduction to Oracle Data Guard](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/sbydb/introduction-to-oracle-data-guard-concepts.html#GUID-5E73667D-4A56-445E-911F-1E99092DD8D7)
 
+You are finished with all of the labs!
+
 ## Acknowledgements
 * **Authors** - Humza Meraj, Cloud Engineer; Eben Dunlap, Cloud Engineer; Noah Horner, Cloud Engineer
 * **Last Updated By** - Humza Meraj, Cloud Engineering, October 2020
