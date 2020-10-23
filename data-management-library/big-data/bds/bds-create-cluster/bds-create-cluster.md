@@ -174,6 +174,9 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
   ![](./images/cluster-active.png " ")  
 
+  **Note:**  
+  If you are using a Free Trial account to run this workshop, Oracle recommends that you delete the BDS cluster when you complete the workshop to avoid unnecessary charges.
+
 ## **STEP 3:** Review Locations of Services in the Cluster
 
   The `training-cluster` cluster is a highly available (HA) cluster; therefore, the services are distributed as follows:

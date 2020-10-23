@@ -1,6 +1,6 @@
-# Network setup
+# Setup the OCI Network
 
-## Introduction: 
+## Introduction:
 
 This lab with guide you through how to setup Compartments and Virtual Cloud Network (VCN) with the required policies for cloud environment (tenancy)
 
@@ -66,9 +66,9 @@ We need to provision a **VCN** by choosing **Start VCN Wizard** with preconfigur
 
 5. Review all the **VCN** ,**Subnet** ,**Gateway**, **Security List** and **Route Table** details and then click on **Create** button.
 
-Here you can see stack has created two subnets which we we'll use later for creating DB and SOA instance:-
-A **Private Subnet** with its security list **Security List For Private Subnet-SOAMP1VCN**,
-A **Public Subnet** with it's security lists **Default Security List for SOAMP1VCN**
+  Here you can see stack has created two subnets which we we'll use later for creating DB and SOA instance:-
+  A **Private Subnet** with its security list **Security List For Private Subnet-SOAMP1VCN**,
+  A **Public Subnet** with it's security lists **Default Security List for SOAMP1VCN**
 
 6. Click **Create**
 
