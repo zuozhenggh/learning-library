@@ -55,13 +55,13 @@ The folder structure includes a Introduction "lab" that describes the workshop a
 
 Look at the everything-workshop/freetier folder and look at the manifest.json file to see the structure.
 
-The Prerequisite "lab" is common to all three workshop types, and is in a common folder three levels up:
+The Prerequisite "lab" is the first lab in a common folder on the oracle/learning-library repo. Because this lab already exists, we can use a RAW/absolute URL instead:
 
   ```
-  "filename": "../../../common/prerequisite-freetier/prerequisite-freetier.md"
+  "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"        },
   ```
 
-The labs are located three levels up, for example:
+The manifest.json file needs to know the location of each lab relative to where it exists in the hierarchy. In this structure, labs are located three levels up, for example:
 
   ```
   "filename": "../../../provision/provision.md"

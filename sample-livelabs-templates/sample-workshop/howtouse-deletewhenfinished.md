@@ -26,7 +26,7 @@ sample-workshop/
         analyze/
         visualize
         introduction/
-          introduction.md       -- description of the everything workshop
+          introduction.md       -- description of the everything workshop, note that it is a "lab" since there is only one
 
     workshops/
        freetier/                -- freetier version of the workshop
@@ -50,25 +50,19 @@ The folder structure includes a Introduction "lab" that describes the workshop a
 
 Look at the product-name-workshop/freetier folder and look at the manifest.json file to see the structure.
 
-The Prerequisite "lab" is the first lab in a common folder three levels up:
+The Prerequisite "lab" is the first lab in a common folder on the oracle/learning-library repo. Because this lab already exists, we can use a RAW/absolute URL instead:
 
   ```
-  "filename": "../../../common/prerequisite-freetier/prerequisite-freetier.md"
+  "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"        },
   ```
 
-Labs that are common across all workshops are linked using an absolute path, for example:
-
-```
-"filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-```
-
-The labs are located three levels up, for example:
+The manifest.json file needs to know the location of each lab relative to where it exists in the hierarchy. In this structure, labs are located two levels up, for example:
 
   ```
-  "filename": "../../../provision/provision.md"
+  "filename": "../../provision/provision.md"
   ```
 
-### For example
+### For example:
 
 This [APEX Workshop](https://oracle.github.io/learning-library/developer-library/apex/spreadsheet/workshops/freetier/) is a good example a workshop with a single set of labs: [https://github.com/oracle/learning-library/tree/master/developer-library/apex/spreadsheet](https://github.com/oracle/learning-library/tree/master/developer-library/apex/spreadsheet).
 
