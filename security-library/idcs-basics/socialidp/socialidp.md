@@ -78,7 +78,7 @@ In order to use Google as an IdP for IDCS, we need to obtain Auth 2.0 credential
 10.	Set the *Authorized redirected URL* to the following value:
 
     ```
-        https://<your tenant>/oauth2/v1/social/callback
+    https://<your tenant>/oauth2/v1/social/callback
     ```
 
 11.	Click on *Create* in order to create the keys.
@@ -108,7 +108,7 @@ Now return to *IDCS* and enter the provider parameter values in order to configu
 5.	Click on *Finish*. Then, click on the menu button on the right side and select *Activate* in order to activate Google as an IdP.
     ![Image](images/L3011.png)
 
-Now, Google is defined as a social IdP for IDCS but it is still not visible at the sign in page. The next steps describe how to assign it to a IDP policy in order to make Google visible on the IDCS login page.
+    Now, Google is defined as a social IdP for IDCS but it is still not visible at the sign in page. The next steps describe how to assign it to a IDP policy in order to make Google visible on the IDCS login page.
 
 6.	Click again the menu button and select the option *Show on Login Page* in order to show Google as an IdP on the IDCS login page.
     ![Image](images/L3012.png)

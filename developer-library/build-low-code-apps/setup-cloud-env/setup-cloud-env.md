@@ -204,7 +204,7 @@ Now you are ready to move on to Step 4.
    ![](images/OKE-2.png " ")
 
 
-4.  Keep the name to **cluster1**, choose visibility type to **Public**, change number of nodes to **1** and click Next to review the cluster settings
+4.  Keep the name to **cluster1**, choose visibility type to **Public**, change number of nodes to **3** and click Next to review the cluster settings
 
    ![](images/OKE-3.PNG " ")
 

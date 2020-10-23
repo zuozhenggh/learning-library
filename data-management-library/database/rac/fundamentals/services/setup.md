@@ -16,7 +16,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 
 Copy the following commands into your terminal. These commands download the files needed to run the lab.  (Note: *You should run these scripts as the oracle user*.  Run a *whoami* to ensure the value *oracle* comes back.)
 
-1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 
 2.  Start Cloudshell
    
@@ -52,21 +52,23 @@ Copy the following commands into your terminal. These commands download the file
     chmod +x setupDB.sh
     </copy>
     ````
-    ![](./images/setup_services-1.png " " )
+    ![](./images/setup-num5.png " " )
 
 6. The script **setupDB.sh** assumes the password for SYS and SYSTEM user. Edit the script using vi.
 
     ````
     vi setupDB.sh
     ````
+    ![](./images/setup-num6.png " " )
 
-7. Replace the db_pwd with the password you entered in an earlier lab.
+7. Replace the db_pwd with the password you entered when your database was setup.
 
     ````
     # Pwds may need to be changed
     db_pwd="W3lc0m3#W3lc0m3#"
+    ````
+     ![](./images/setup-num7.png " " )
 
-    ````   
 8. To save the file press the **esc** key and **wq!** to save the file.
    
 9.  No other lines need to be changed.  Run the **setupDB.sh** script
@@ -76,7 +78,10 @@ Copy the following commands into your terminal. These commands download the file
     /home/oracle/setupDB.sh
     </copy>
     ````
-    There may be some drop user errors, ignore them.  Please be patient as this script takes some time.
+
+    ![](./images/setup-num7.png " " )
+
+    *Note:* There may be some drop user errors, ignore them.  Please be patient as this script takes some time.
 
 Congratulations! Now you have the data to run subsequent labs.
 
