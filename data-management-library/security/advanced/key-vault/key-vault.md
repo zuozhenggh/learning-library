@@ -1,7 +1,7 @@
 # Oracle Key Vault (OKV)
 
 ## Introduction
-This workshop introduces the various features and functionality of Oracle Key Vault.
+This workshop introduces the various features and functionality of Oracle Key Vault (OKV).
 
 It gives the user an opportunity to learn how to configure this appliance to manage keys.
 
@@ -21,9 +21,6 @@ This lab assumes you have completed:
    - Lab: Initialize and Start the DBSecLab Environment
    - Lab: Transparent Data Encryption (TDE)
 
-### Video Preview
-- Watch a preview of "*Understanding Oracle Key Vault 18c (May 2019)*" [](youtube:1NVw0z6JEog)
-
 ### Lab Timing (estimated)
 
 | Step No. | Feature | Approx. Time | Details |
@@ -39,6 +36,9 @@ This lab assumes you have completed:
 | 7| Perform Wallet_Download | 5 minutes | To return master keys to an Oracle Wallet |
 | 8| Create an External Keystore | 5 minutes | So the password to the OKV Endpoint is not known by the DBAs |
 -->
+
+### Video Preview
+- Watch a preview of "*Understanding Oracle Key Vault 18c (May 2019)*" [](youtube:1NVw0z6JEog)
 
 ## **STEP 1**: Add an Endpoint
 First of all, we need Oracle Key Vault to know about our database server. We do this by creating it as an endpoint in OKV

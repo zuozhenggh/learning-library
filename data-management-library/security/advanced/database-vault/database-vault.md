@@ -22,9 +22,6 @@ This lab assumes you have completed:
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
 
-### Video Preview
-- Watch a preview of "*Understanding Oracle Database Vault (March 2019)*" [](youtube:oVidZw7yWIQ)
-
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
@@ -34,6 +31,9 @@ This lab assumes you have completed:
 | 4 | Simulation Mode | 10 minutes |
 | 5 | Ops Control | 5 minutes |
 | 6 | (Optional) Disabling Database Vault | <5 minutes |
+
+### Video Preview
+- Watch a preview of "*Understanding Oracle Database Vault (March 2019)*" [](youtube:oVidZw7yWIQ)
 
 ## **STEP 1**: Enable Database Vault
 
