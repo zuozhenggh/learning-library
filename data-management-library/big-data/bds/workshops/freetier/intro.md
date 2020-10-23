@@ -19,28 +19,30 @@ Watch our short video that explains key features in Oracle Big Data Service:
 
 ## Workshop Objectives
 - Prepare for using Oracle Big Data Service (BDS).
-- Create a simple (non-HA) Cloudera Distribution Including Apache Hadoop (CDH) Oracle BDS cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS).
+- Create a Highly-Available (HA) Cloudera Distribution Including Apache Hadoop (CDH) Oracle BDS cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS).
 - Add Cloud SQL to the cluster and maintain your cluster.
 - Access a BDS utility node using a public IP address.
 - Use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster and add ingress rules to the default security rule that enables you to access both CM and Hue.
 - Map the private IP address of the first master node in your cluster to a new public IP address to make this node publicly available on the internet and create a Hadoop Administrator user.
 
 ## Lab Breakdown
-- **Lab 1:** Set Up the BDS Environment
+- **Lab 1:** Prepare your Big Data Service Environment
 - **Lab 2:** Create a BDS Hadoop Cluster
 - **Lab 3:** Add Oracle Cloud SQL to the Cluster
 - **Lab 4:** Access a BDS Utility Node Using a Public IP Address
 - **Lab 5:** Use Cloudera Manager (CM) and Hue to Access a BDS Cluster
 - **Lab 6:** Create a Hadoop Administrator User
 
+**After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu.**
+
 ## Workshop Prerequisites
-This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Prerequisites** lab in the **Contents** menu.
+This workshop requires an Oracle Cloud account. You may use your own cloud account or a training account whose details were given to you by an Oracle instructor.
 
 **Notes:**
  + For more information about service limits, see [Service Limits](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm) in the Oracle Cloud Infrastructure documentation.
  + To submit a request to increase your service limits, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm#Requesti) in the Oracle Cloud Infrastructure documentation.
 
-**You are all set to begin the labs in this workshop! Click "Lab 1: Set Up the BDS Environment" in the Contents menu.**
+**You are all set to begin the labs! Please click Lab 1: Setup the BDS Environment in the Contents menu.**
 
 ## Want to Learn More About Oracle Big Data Service?
 
@@ -61,7 +63,5 @@ Use these links to get more information about BDS and OCI:
     * Martin Gubar, Director, Oracle Big Data Product Management
 * **Last Updated By/Date:** Lauran Serhal, October 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
