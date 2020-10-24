@@ -208,6 +208,7 @@ https://gitlab.com/users/sign_up
   # git config --global user.name <gitlab_username>
 	```
 
+
 - Download and extract the orm-lbass-demo.zip file: 
 
   ```
@@ -215,7 +216,7 @@ https://gitlab.com/users/sign_up
   # unzip orm-lbass-demo.zip
 	```
 
-    ![](./../resource-manager/images/gitsample01.png " ")
+![](./../resource-manager/images/gitsample01.png " ")
 
 - Now Add / Commit / Push to Gitlab.
 
@@ -224,13 +225,13 @@ https://gitlab.com/users/sign_up
   # git commit -m "Pushing first version of terraform source to GitLab"
 	```
 
-    ![](./../resource-manager/images/gitsample02.png " ")
+![](./../resource-manager/images/gitsample02.png " ")
 
   ```
 	# git push
 	```
 
-    ![](./../resource-manager/images/gitsample03.png " ")
+![](./../resource-manager/images/gitsample03.png " ")
     
 
 10.  Run terraform plan once more.  Your new source (Gitlab) should contain the same code that was used to create the stack initially.  Therefore, the plan will result in ZERO changes.
