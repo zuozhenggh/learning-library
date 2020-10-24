@@ -194,32 +194,35 @@ https://gitlab.com/users/sign_up
 
 9.  Next, you will need to push your Terraform code to Gitlab.
   
-    - Clone your Gitlab repo into Cloud Shell:
+- Clone your Gitlab repo into Cloud Shell:
   
-    ``git clone https://gitlab.com/<username>/sample-orm-source``
+    	``git clone https://gitlab.com/<username>/sample-orm-source``
 
-    ``cd sample-orm-source``
+    	``cd sample-orm-source``
 
-    - Configure your GitLab environment:
+- Configure your GitLab environment:
   
-    ``git config --global user.email <your_email@example.com>``
-    ``git config --global user.name <gitlab_username>``
+    	``git config --global user.email <your_email@example.com>``
 
-    - Download and extract the orm-lbass-demo.zip file: 
+    	``git config --global user.name <gitlab_username>``
 
-    ``wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip``
-    ``unzip orm-lbass-demo.zip``
+- Download and extract the orm-lbass-demo.zip file: 
+
+    	``wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip``
+
+    	``unzip orm-lbass-demo.zip``
 
     ![](./../resource-manager/images/gitsample01.png " ")
 
-    -  Now Add / Commit / Push to Gitlab.
+- Now Add / Commit / Push to Gitlab.
 
-    ``git add -A``
-    ``git commit -m "Pushing first version of terraform source to GitLab"``
+    	``git add -A``
+
+    	``git commit -m "Pushing first version of terraform source to GitLab"``
 
     ![](./../resource-manager/images/gitsample02.png " ")
 
-    ``git push ``
+    	``git push ``
 
     ![](./../resource-manager/images/gitsample03.png " ")
     
@@ -232,7 +235,9 @@ https://gitlab.com/users/sign_up
 - Modify the **compute.tf** file by changing the display name of the Web-Server-01 to Web-Server-03:
   
   ``display_name = "Web-Server-01"``
+
   to
+
   ``display_name = "Web-Server-03"``
 
 - Save the file / Add / Commit / Push to Gitlab
