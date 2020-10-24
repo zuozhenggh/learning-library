@@ -196,41 +196,41 @@ https://gitlab.com/users/sign_up
   
 - Clone your Gitlab repo into Cloud Shell:
   
-    	```
+  ```
 	git clone https://gitlab.com/<username>/sample-orm-source
 
-    	cd sample-orm-source
+  cd sample-orm-source
 	```
 
 - Configure your GitLab environment:
   
-    	```
+  ```
 	git config --global user.email <your_email@example.com>
 
-    	git config --global user.name <gitlab_username>
+  git config --global user.name <gitlab_username>
 	```
 
 - Download and extract the orm-lbass-demo.zip file: 
 
-    	```
-	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip``
+  ```
+	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip
 
-    	unzip orm-lbass-demo.zip
+  unzip orm-lbass-demo.zip
 	```
 
     ![](./../resource-manager/images/gitsample01.png " ")
 
 - Now Add / Commit / Push to Gitlab.
 
-    	```
+  ```
 	git add -A
 
-    	git commit -m "Pushing first version of terraform source to GitLab"
+  git commit -m "Pushing first version of terraform source to GitLab"
 	```
 
     ![](./../resource-manager/images/gitsample02.png " ")
 
-    	```
+  ```
 	git push
 	```
 
