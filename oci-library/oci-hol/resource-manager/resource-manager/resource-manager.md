@@ -197,8 +197,7 @@ https://gitlab.com/users/sign_up
 - Clone your Gitlab repo into Cloud Shell:
   
   ```
-	git clone https://gitlab.com/<username>/sample-orm-source
-
+  git clone https://gitlab.com/<username>/sample-orm-source
   cd sample-orm-source
 	```
 
@@ -206,7 +205,6 @@ https://gitlab.com/users/sign_up
   
   ```
 	git config --global user.email <your_email@example.com>
-
   git config --global user.name <gitlab_username>
 	```
 
@@ -214,7 +212,6 @@ https://gitlab.com/users/sign_up
 
   ```
 	wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip
-
   unzip orm-lbass-demo.zip
 	```
 
@@ -224,7 +221,6 @@ https://gitlab.com/users/sign_up
 
   ```
 	git add -A
-
   git commit -m "Pushing first version of terraform source to GitLab"
 	```
 
