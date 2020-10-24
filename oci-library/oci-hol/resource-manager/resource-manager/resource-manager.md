@@ -192,12 +192,12 @@ https://gitlab.com/users/sign_up
 
   ![](./../resource-manager/images/UpdateStack01.png " ")
 
-
 9.  Next, you will need to push your Terraform code to Gitlab.
   
     - Clone your Gitlab repo into Cloud Shell:
   
     ``git clone https://gitlab.com/<username>/sample-orm-source``
+
     ``cd sample-orm-source``
 
     - Configure your GitLab environment:
