@@ -233,7 +233,7 @@ https://gitlab.com/users/sign_up
 
 ![](./../resource-manager/images/gitsample03.png " ")
     
-
+  
 10.  Run terraform plan once more.  Your new source (Gitlab) should contain the same code that was used to create the stack initially.  Therefore, the plan will result in ZERO changes.
 
 11.  **EXPERIMENT** Now you can update the code in Gitlab and Plan/Apply them directly to your stack.
