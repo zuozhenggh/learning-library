@@ -227,9 +227,9 @@ https://gitlab.com/users/sign_up
 
 ![](./../resource-manager/images/gitsample02.png " ")
 
-  ```
-	# git push
-	```
+```
+# git push
+```
 
 ![](./../resource-manager/images/gitsample03.png " ")
     
