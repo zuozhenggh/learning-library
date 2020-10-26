@@ -92,10 +92,15 @@ To create your lab and workshop content:
   ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
 7. Expand the **workshops\freetier** folder, `manifest.json` to list the labs you plan to add to your workshop and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
   ![](./images/use-atom-editor-manifest-json.png " ")
-8. Open the `intro.md` file from **1-labs-quickstart-workshop** and update it as per your requirements.
-9. Open the `README.md` file and update it with a summary of your workshop.
+8. If you want to add an introduction to your workshop, then navigate to **learning-library\sample-livelabs-templates\sample-workshop\introduction** and copy the `introduction.md` file to your workshop folder, for example: **GitHub\learning-library\create-labs\labs\workshops\freetier**. You can rename it if you would like. In this example, we have renamed it to `intro.md`. Update the `intro.md` as per your requirements. Similarly, you can create a `README.md` file with the same `introduction.md` file and update the `README.md` with a summary of your workshop. Note that the `intro.md` and `README.md` files are optional files for your workshop's introduction. The workshop introduction can be treated as another lab.
+
     ![](./images/use-atom-editor-readme-update.png " ")
-10. Similarly, expand the lab folder, for example, **2-labs-git-hub-get-started-install-configure** and edit the `.md` file as per your requirement. If you want to use any images in your lab, then include them in the images folder.
+10. Similarly, to create content for your labs, navigate to any of the labs in the **learning-library\sample-livelabs-templates\sample-workshop** and copy any lab folder to your workshop folder on your cloned repository. For example, copy the folder **query** and rename the folder, for example: **1-labs-git-hub-get-started-install-configure**. Rename and edit the `.md` file as per your requirement. If you want to use any images in your lab, then include them within the images folder.
+    ![](./images/lab-folder-structure.png " ")
+    **Note**: There is a **files** folder within every sample lab folder, which is currently not required (reserved for future use). After you copy the sample folder to your cloned repository, you can delete it from your cloned repository.
+    ![](./images/lab-files-folder-currently-not-nedded.png " ")
+    Your lab will look similar to this example:
+    ![](./images/lab-folder-structure.png " ")
 
 ## **STEP 5:** Preview Your Workshop and Labs Using atom-live-server
 

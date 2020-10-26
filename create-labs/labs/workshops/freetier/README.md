@@ -13,11 +13,10 @@ The **Creating Workshops and Labs** is a series of step-by-step labs that guide 
 Alternatively, you can follow the individual workshop labs on this repo:
 
 - [Get Started with Git and Set up the Git Environment](../1-labs-quickstart-workshop/intro.md)
-- [Understand the Learning Library Folder](../3-labs-templates-folder-structure/3-labs-templates-folder-structure.md)
-- [Use Atom to Develop Content](../4-labs-use-atom-editor-develop-content/4-labs-use-atom-editor-develop-content.md)
-- [ Merge, Commit, Create Pull Request](../5-labs-github-merge-commit-pullrequest/5-labs-github-merge-commit-pullrequest.md)
-- [Add GitHub Hosted Labs to OHC](../6-labs-add-git-hub-hosted-tutorials-to-ohc/6-labs-add-git-hub-hosted-tutorials-to-ohc.md)
-
+- [Understand the Learning Library Folder](../2-labs-templates-folder-structure/2-labs-templates-folder-structure.md)
+- [Use Atom to Develop Content](../3-labs-use-atom-editor-develop-content/3-labs-use-atom-editor-develop-content.md)
+- [ Merge, Commit, Create Pull Request](../4-labs-github-merge-commit-pullrequest/4-labs-github-merge-commit-pullrequest.md)
+- [Add GitHub Hosted Labs to OHC](../5-labs-add-git-hub-hosted-tutorials-to-ohc/5-labs-add-git-hub-hosted-tutorials-to-ohc.md)
 
 
 <!-- Keep this content -->
