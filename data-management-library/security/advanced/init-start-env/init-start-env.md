@@ -39,7 +39,7 @@ Before performing the workshop, please make sure you have the latest labs script
 	- Oracle DB Security Product Management team is constantly updating the scripts labs (new features or corrections). So, please execute `./update_workshop.sh` as frequently as possible before using this workshop!
 	- If your scripts are already up-to-date, you will have the following message:
 
-		![](./images/init-start-env-001.png " ")
+   ![](./images/init-start-env-001.png " ")
 
     - Otherwise the new scripts will be imported!
 
@@ -68,17 +68,16 @@ Before performing the workshop, please make sure you have the latest labs script
 
 - Optionally, run SQL Developer and connect to the databases CDB1, PDB1 and PDB2 (Port 1521) directly or through a SSH Host
 
-	![](./images/init-start-env-002.png " ")
+   ![](./images/init-start-env-002.png " ")
 
-   	**Note**: In case of error, please check:
-   	- Your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
+   	**Note**: In case of error, please check your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
 
 3. **Congratulations, now your environment is up and running and you can start performing the labs!**
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Pedro Lopes, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, October 2020
+- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

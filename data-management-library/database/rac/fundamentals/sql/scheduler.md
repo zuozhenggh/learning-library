@@ -7,8 +7,7 @@ This lab walks you through the operation of Oracle Scheduler in a RAC database
 Estimated Lab Time: 20 Minutes
 
 ### Prerequisites
-
-This lab assumes you have completed the following labs:
+- An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
 
@@ -36,12 +35,19 @@ The job coordinators communicate with each other to keep information current. Th
 We will take a brief look at this property through two simple tests.
 
 ## **STEP 1:**  Assign a Job Class to a service and prepare a package to be scheduled
-1.  Connect to your cluster nodes with Cloudshell, Putty, MAC CYGWIN as described in earlier labs. 
-2.  Open a window/session to each node
-3.  Using the Public IP addresses, enter the command below to login to your instances as the opc user.  Repeat this for both nodes    
+1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+
+2.  Start Cloudshell
+    
+    *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
+    ![](../clusterware/images/start-cloudshell.png " ")
+
+3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+
     ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address>
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
     ````
+    ![](../clusterware/images/racnode1-login.png " ")
 
 4. Confirm which instance is offering the service **svctest**.  Execute the following on node 1.
    

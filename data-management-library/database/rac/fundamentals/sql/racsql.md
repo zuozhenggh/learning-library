@@ -6,18 +6,27 @@ This lab walks you through the use of SEQUENCES in a RAC database.
 
 Estimated Lab Time: 20 Minutes
 ### Prerequisites
-
-This lab assumes you have completed the following labs:
+- An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
 
 ## **STEP 1:**  Build Tom Kyte's RUNSTATS package
 
-1.  Connect to your cluster nodes with Putty or MAC CYGWIN as described earlier. Open a window to one of the nodes
+1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
 
-    ![](./images/clusterware-1.png " ")
+2.  Start Cloudshell
+   
+    *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
+    ![](../clusterware/images/start-cloudshell.png " ")
 
-2.  Connect to the pluggable database, **PDB1** as SYSDBA
+3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+
+    ````
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
+    ````
+    ![](../clusterware/images/racnode1-login.png " ")
+
+4.  Connect to the pluggable database, **PDB1** as SYSDBA
 
     ````
     <copy>
@@ -26,7 +35,7 @@ This lab assumes you have completed the following labs:
     </copy>
     ````
 
-3. Build the **runstats** package
+5. Build the **runstats** package
 
     ````
     <copy>

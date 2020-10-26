@@ -6,8 +6,7 @@ This lab walks you through the operation of Parallel Execution
 Estimated Lab Time: 20 Minutes
 
 ### Prerequisites
-
-This lab assumes you have completed the following labs:
+- An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
 
@@ -31,12 +30,19 @@ If your system lacks any of these characteristics, parallel execution might not 
 The benefits of parallel execution can be observed in DSS and data warehouse environments. OLTP systems can also benefit from parallel execution during batch processing and during schema maintenance operations such as creation of indexes. The average simple DML or SELECT statements that characterize OLTP applications would not experience any benefit from being executed in parallel.
 
 ## **STEP 1:**  Grant DBA to the SH user
-1.  Connect to your cluster nodes with Cloudshell, Putty, MAC CYGWIN as described in earlier labs. 
-2.  Open a window/session to each node
-3.  Using the Public IP addresses, enter the command below to login to your instances as the opc user.  Repeat this for both nodes    
+1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+
+2.  Start Cloudshell
+   
+    *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
+    ![](../clusterware/images/start-cloudshell.png " ")
+
+3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+
     ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address>
+    ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
     ````
+    ![](../clusterware/images/racnode1-login.png " ")
 
 4.  Switch to the oracle user and connect to the pluggable database, **PDB1** as SYSDBA
 
@@ -192,8 +198,8 @@ You may now *proceed to the next lab*.
 
 ## Acknowledgements
 * **Authors** - Troy Anthony, Anil Nair
-* **Contributors** -
-* **Last Updated By/Date** - Troy Anthony, Database Product Management, August 2020
+* **Contributors** - Kay Malcolm
+* **Last Updated By/Date** - Kay Malcolm, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
