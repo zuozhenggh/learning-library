@@ -62,27 +62,6 @@ To run this lab you need:
       </copy>
       ```
 
-2. Because we'll need root access for a specific operation, we'll add the oracle user to the sudoer
-
-      ```bash
-      <copy>
-      sudo su -
-      </copy>
-      ```
-      then
-      ```bash
-      <copy>
-      usermod -aG wheel oracle && echo '%wheel ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-      exit
-      </copy>
-      ```
-      then switch back to the oracle user.
-      ```bash
-      <copy>
-      sudo su - oracle
-      </copy>
-      ```
-
 2. Get into the `/datapump` folder:
 
       ```
@@ -253,7 +232,7 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
 
     You'll need to input the following variables (see instruction below to find the data):
     ```
-    BASTION_IP=<IP of the WLS bastion or Admin server, from WLS Admin URL>
+    BASTION_IP=<IP of the Bastion Instance or Public IP of the Admin server, from WLS Admin URL>
 
     TARGET_DB_NAME=wlsatpdb
     TARGET_DB_OCID=
@@ -355,6 +334,8 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
 
 2. Run the following command, to copy the wallet on each server
 
+    If you provisioned in a *Public Subnet*, set the variable:
+
     ```bash
     <copy>
     export TARGET_WLS_SERVER=<Public IP of a WLS server>
@@ -371,7 +352,30 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     </copy>
     ```
 
-    Repeat for each WLS target server.
+    *make sure to specify the proper domain name (here `nonjrf_domain`)*
+
+    If you provisioned in a *Private Subnet* set the variables:
+    ```bash
+    <copy>
+    export TARGET_WLS_SERVER=<IP of a WLS server>
+    export BASTION_IP=<Public IP of the Bastion Instance>
+    </copy>
+    ```
+
+    Then 
+    
+    ```bash
+    <copy>
+    scp -o ProxyCommand="ssh opc@${BASTION_IP} -W %h:%p" wallet.zip opc@${TARGET_WLS_SERVER}:~/
+    ssh -o ProxyCommand="ssh opc@${BASTION_IP} -W %h:%p" opc@${TARGET_WLS_SERVER} "sudo chown oracle:oracle wallet.zip"
+    ssh -o ProxyCommand="ssh opc@${BASTION_IP} -W %h:%p" opc@${TARGET_WLS_SERVER} "sudo unzip wallet.zip -d /u01/data/domains/nonjrf_domain/config/atp/"
+    </copy>
+    ```
+
+    *make sure to specify the proper domain name (here `nonjrf_domain`)*
+
+
+3. Repeat for each WLS target server.
 
     Note: the destination path is important as this path is cloned when scaling WLS servers, insuring the wallet is also deployed on any new server instance.
 
@@ -402,9 +406,11 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     
     ```bash
     <copy>
-    ssh opc@${TARGET_WLS_SERVER} "sudo su -c \"/opt/scripts/utils/download_atp_wallet.sh ${ATP_OCID} ${WALLET_PASSWORD} /u01/data/domains/servicename_domain/config/atp\"" - oracle
+    ssh opc@${TARGET_WLS_SERVER} "sudo su -c \"/opt/scripts/utils/download_atp_wallet.sh ${ATP_OCID} ${WALLET_PASSWORD} /u01/data/domains/nonjrf_domain/config/atp\"" - oracle
     </copy>
     ```
+
+    *make sure to specify the proper domain name (here `nonjrf_domain`)*
 
 You may proceed to the next lab.
 

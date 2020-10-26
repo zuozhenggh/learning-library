@@ -15,7 +15,7 @@ Estimated Lab Time: 15 minutes
 Migration with WebLogic Deploy Tooling (WDT) consists of 3 steps:
 
 - Discover the source domain, and generate a **model** file of the topology, resources and applications, a **variable** file with required credentials, and an **archive** file with the application binaries.
-- Edit the the **model** file and **variable** file to target the new infrastructure on OCI.
+- Edit the **model** file and **variable** file to target the new infrastructure on OCI.
 - Copy the files to the target Admin Server, and **update** the clean domain on OCI with the applications and resources discovered on-premises.
 
 ### Objectives
