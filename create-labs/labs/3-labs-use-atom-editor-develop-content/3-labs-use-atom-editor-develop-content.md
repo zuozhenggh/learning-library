@@ -90,7 +90,7 @@ To create your lab and workshop content:
 
   The workshop folder and the lab folders are displayed in Atom.
   ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
-7. Expand the workshop folder, **1-labs-quickstart-workshop** in this example, open the `manifest.json` to list the labs you plan to add to your workshop and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
+7. Expand the **workshops\freetier** folder, `manifest.json` to list the labs you plan to add to your workshop and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
   ![](./images/use-atom-editor-manifest-json.png " ")
 8. Open the `intro.md` file from **1-labs-quickstart-workshop** and update it as per your requirements.
 9. Open the `README.md` file and update it with a summary of your workshop.
