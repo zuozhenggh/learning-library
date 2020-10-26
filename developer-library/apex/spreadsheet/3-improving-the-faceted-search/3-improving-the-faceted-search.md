@@ -47,7 +47,7 @@ Reviewing the facets, you will notice that Status is down the page and you can c
 
     Navigate back to the development environment (APEX App Builder) by using the edit link in the Developer toolbar, or manually navigating to the appropriate browser tab.
 
-    In the Rendering tree (left pane), under **Search**, within **Facets**, click **P3\_ASSIGNED\_TO**, hold down the *Control* key and then click **P3\_COST**, such that three facets are selected. In the Property Editor (right pane), within the filter at the top, enter **collap**, so that only two attributes are displayed. For Advanced > Initially Collapsed, change the switch to selected.
+    In the Rendering tree (left pane), under **Search**, within **Facets**, click **P3\_ASSIGNED\_TO**, hold down the *Shift* key and then click **P3\_COST**, such that three facets are selected. In the Property Editor (right pane), within the filter at the top, enter **collap**, so that only two attributes are displayed. For Advanced > Initially Collapsed, change the switch to selected.
 
     ![](images/set-collapsed.png " ")   
 
@@ -66,5 +66,7 @@ You now know how to enhance a faceted search page and have been introduced to Pa
  - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

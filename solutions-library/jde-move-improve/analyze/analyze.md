@@ -255,5 +255,12 @@ https://apexapps.oracle.com/pls/apex/f?p=44785:50:0:::50:P50_EVENT_ID,P50_COURSE
 *	Marketplace Listing
 https://console.us-ashburn-1.oraclecloud.com/marketplace/application/51184836/overview
 
+<<<<<<< HEAD
 # **Summary**
 Enjoy JDE!   Enjoy OCI!  
+=======
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+>>>>>>> upstream/master
