@@ -58,7 +58,9 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 7. **SSH key**
 
-   To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer. Since the various commands will be ran from inside the 'on-premises' environment (either the workshop compute instance or the local docker containers), you will need to provide the key generated in the 'on-premises' environment.
+   To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer. 
+   
+   *Since the various commands will be ran from inside the 'on-premises' environment (either the workshop compute instance or the local docker containers), you will need to provide the key generated in the 'on-premises' environment.*
 
   <img src="./images/provision-8-sshkey.png" width="70%">
 
@@ -116,8 +118,8 @@ For this lab, you need to have prepared the OCI tenancy with:
 
    Note: If you were to migrate from an on-premises domain connected via VPN or FastConnect, you would want to make sure the CIDR block does not conflict with the local network.
 
-17. *In this workshop, we are offering 2 options here:*
-    - Provision Weblogic in a Public Subnet: admin and managed server will be accessible directly from the internet (simpler)
+17. *In this workshop, we are offering 2 options:*
+    - Provision Weblogic in a Public Subnet: admin and managed server will be accessible directly from the internet (simpler, recommended if you are on Windows as there is no need for tunneling to the instances)
     - Provision WebLogic in a Private Subnet: admin and managed servers will not be accessible directly from the internet. The admin server will be accessible through a bastion host, and the managed servers will only be accessible through a Public Load Balancer (this is the most likely production scenario, but involves extra complexity in setting up tunnels and resources. + 15min)
 
     *To provision in a Public subnet*, **Keep the defaults for subnets** as-is:
@@ -170,7 +172,7 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu.
 
-## **STEP 2:** Gather the necessary WebLogic stack information
+## **STEP 2:** Gather deployment information and check WebLogic status.
 
 1. Go to **Outputs** (or you can find the same information at the bottom of the logs)
 
@@ -198,7 +200,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
   To access the WebLogic Admin console, you will need to create a tunnel through the bastion host to your local machine.
 
-  *If you used Docker*, in a new terminal session on Linux or Mac OS X (On Windows, use Putty), in the `weblogic-to-oci` folder, export the local variables:
+  *If you used Docker*, open a new terminal session on your local machine, in the `weblogic-to-oci` folder, and export the following local variables (On Windows, use Putty for tunneling):
 
     ```bash
     <copy>
@@ -207,7 +209,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
     export PORT=7002
     </copy>
     ```
-    Then
+    Then use the following command to create a tunnel from the WLS admin server to your local machine.
     ```bash
     <copy>
     ssh -i ./ssh/id_rsa -4 -M -S socket -fnNT -L ${PORT}:${RHOST}:${PORT} opc@${BASTION_IP} cat -
@@ -224,13 +226,21 @@ Once the stack is provisioned, you can find the information regarding the URL an
     ```bash
     <copy>
     export BASTION_IP=<BASTION PUBLIC IP>
+    </copy>
+    ```
+    ```bash
+    <copy>
     export RHOST=<ADMIN SERVER PRIVATE IP, usually 10.0.3.2>
+    </copy>
+    ```
+    ```bash
+    <copy>
     export PORT=7002
     </copy>
     ```
     Then
 
-    We'll need to open up the firewall port 7002 on our Marketplace demo image with:
+    We'll need to open up the firewall port 7002 on our demo enviroment with:
 
     ```bash
     <copy>
@@ -239,13 +249,13 @@ Once the stack is provisioned, you can find the information regarding the URL an
     </copy>
     ```
 
-    Then create the tunnel with
+    Then use the following command to create a tunnel from the WLS admin server to the 'on-premises' instance that is publicly accessible.
     ```bash
     <copy>
     ssh -4 -M -S socket -fnNT -L 0.0.0.0:${PORT}:${RHOST}:${PORT} opc@${BASTION_IP} cat -
     </copy>
     ```
-    In this case we use the default ssh key created earlier and we bind the port to 0.0.0.0 so it is accessible outside.
+    In this case we use the default ssh key created on that host and we bind the port to 0.0.0.0 so it is accessible outside.
 
     You can then access the weblogic console provisioned on OCI on port 7002 on your 'on-premises' Public IP address. Make sure you use Firefox and go to `https://IP_OF_DEMO_INSTANCE:7002/console` with `https://` scheme to access as the WLS on OCI admin server uses SSL. You'll be prompted with the SSL self-signed certificate warning.
 
@@ -256,7 +266,7 @@ You may proceed to the next lab.
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, August 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
