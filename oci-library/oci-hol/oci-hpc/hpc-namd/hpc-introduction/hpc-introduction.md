@@ -8,7 +8,7 @@ Oracle provides the most elastic and scalable cloud infrastructure to run your H
 
 With Oracle Cloud Infrastructure, businesses can run performance intensive HPC workloads requiring millions of IOPs, millisecond latency, and many GB/s of bandwidth, on a pay per-use or non- metered model, saving 32% on a 3-year TCO.
 
-These hands-on lab guides provide step-by-step directions to setting up and using your High Performance Computing platform in the Oracle Cloud Infrastructure.
+These hands-on lab guides provide step-by-step process of deploying NAMD on Oracle Cloud using 2 methods, Resource Manager, avaialable on Oracle Cloud Console, and Web Console. 
 
 Estimated Workshop Time: 4 hours
 
@@ -31,12 +31,13 @@ Currently, a single BM per compute node is supported. It allows root access for 
 ### Objectives
 
 In this lab, you will:
-* Prepare your private network in the Oracle Cloud Infrastructure
-* Provision High Performance Compute Instance in a private OCI network
-* Configure a development system for use with your High Performance Compute Instance
-* Use OCI CLI commands to work with your High Performance Compute Instance
-* Automation with Terraform
-* Run OpenFoam projects with your High Performance Compute Instance
+* Log In
+* Deployment
+* Resource Manager
+* Licensing
+* Running the Application
+* Post-Processing
+
 
 ### Prerequisites
 
@@ -46,17 +47,20 @@ In this lab, you will:
 
 ## About this Workshop
 
-- Lab 1: Setting up the High Performance Compute Instance in the Oracle Cloud Infrastructure.
+- Log into the Oracle Cloud Console
+- Deploying your architecture on OCI
+- Run the application
+- Analyze the models
 
-- Lab 2: Managing your High Performance Compute Instance using OCI CLI tools.
 
-- Lab 3: Designed to assist in the assessment of the OpenFOAM CFD Software in Oracle Cloud Infrastructure.
 
 ## Acknowledgements
 * **Author** - High Performance Compute Team
-* **Contributors** -  Chris Iwicki, Harrison Dvoor, Gloria Lee, Selene Song, Bre Mendonca
-* **Last Updated By/Date** - Harrison Dvoor, October 2020
+* **Contributors** -  Chris Iwicki, Harrison Dvoor, Gloria Lee, Selene Song, Bre Mendonca, Samrat Khosla
+* **Last Updated By/Date** - Samrat Khosla, October 2020
 
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/high-performance-computing-hpc). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
