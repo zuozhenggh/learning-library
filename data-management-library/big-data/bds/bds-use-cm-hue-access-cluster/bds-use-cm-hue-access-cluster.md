@@ -1,4 +1,4 @@
-#  Use Cloudera Manager (CM) and Hue to Access a BDS Cluster
+#  Use Cloudera Manager and Hue to Access a BDS Cluster
 
 ## Introduction
 
@@ -23,6 +23,13 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 2: Create a BDS Hadoop Cluster**
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
 + **Lab 4: Access a BDS Node Using a Public IP Address**
+
+### Video Preview
+
+Watch a video demonstration of using Cloudera Manager and Hue to access a Big Data Service cluster
+
+[](youtube:dAGD1If39fw)
+
 
 ## **STEP 1:** Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
 
