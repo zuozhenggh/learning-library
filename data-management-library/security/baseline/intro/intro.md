@@ -1,7 +1,7 @@
 # Introduction
 
 ## About this Workshop
-### **Overview**
+### Overview
 *Estimated Time to complete the workshop*: 170 minutes
 
 This workshop is the FIRST PART of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities - for the 2nd workshop, please refer to the *Oracle Database Security  - Part2 (Advanced)*.
@@ -10,11 +10,10 @@ Based on an OCI architecture, deployed in a few minutes with a simple internet c
 
 Now, you no longer need important resources on your PC (storage, CPU or memory), nor complex tools to master, making you completely autonomous to discover at your rhythm all new DB Security features.
 
-### **Components**
-
+### Components
 The complete architecture of the DB Security Hands-On Labs is as following:
 
- ![](./images/dbseclab-v3-archi.png)
+  ![](./images/dbseclab-v3-archi.png)
 
 It's composed of 4 VMs:
   - **DBSec-Lab VM** (mandatory for all workshops: Baseline and Advanced workshops)
@@ -22,7 +21,7 @@ It's composed of 4 VMs:
   - **DB Firewall Server VM** (for Advanced workshop only)
   - **Key Vault Server VM** (for Advanced workshop only)
 
-During this 1st workshop, you'll use different resources to interact with these VMs:
+During this 1st part, you'll use different resources to interact with these VMs:
   - SSH Terminal Client
   - Glassfish HR App
   - (Optionally) SQL Developer
