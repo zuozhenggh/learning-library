@@ -16,7 +16,7 @@ In this lab you will:
 
 ### Prerequisites
 
-We'll use the 'on-premises' environment as our working environment from which we'll connect to the newly deployed environment, so we'll need to create a SSH key pair there.
+- We'll use the 'on-premises' environment as our working environment from which we'll connect to the newly deployed environment, so we'll need to create a SSH key pair there.
 
 ## **STEP 1:** Create a SSH key pair 
 
@@ -28,45 +28,45 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
 2. In the terminal, create a SSH key
 
-   ```
-   <copy>
-   ssh-keygen
-   </copy>
-   ```
+    ```
+    <copy>
+    ssh-keygen
+    </copy>
+    ```
 
-   - Hit **Enter** to use all defaults to all questions
+    - Hit **Enter** to use all defaults to all questions
 
 3. Get the content of the public key
 
    Getting the content of the key depends on the environment:
 
-   - if you used the demo marketplace 'on-premises' environment, SSH from your local machine to the VM with 
+    - If you used the demo marketplace 'on-premises' environment, SSH from your local machine to the VM with 
 
-   ```
-   <copy>
-   ssh -p 7022 oracle@<PUBLIC_IP>
-   </copy>
-   ```
+    ```
+    <copy>
+    ssh -p 7022 oracle@<PUBLIC_IP>
+    </copy>
+    ```
 
-   Where the `PUBLIC_IP` is the public IP of the on-premises enviroment you gathered when provisioning the VM in Lab 1a, 
-   
+   Where the `PUBLIC_IP` is the public IP of the on-premises enviroment you gathered when provisioning the VM in Lab 1a,
+
    The password you will be prompted for is `oracle`
 
    Then use:
 
-   ```
-   <copy>
-   cat ~/.ssh/id_rsa.pub
-   </copy>
-   ```
+    ```
+    <copy>
+    cat ~/.ssh/id_rsa.pub
+    </copy>
+    ```
 
-   - If you used the Virtual Box VM, you should be able to output the key directly with
+    - If you used the Virtual Box VM, you should be able to output the key directly with
 
-   ```
-   <copy>
-   cat ~/.ssh/id_rsa.pub
-   </copy>
-   ```
+    ```
+    <copy>
+    cat ~/.ssh/id_rsa.pub
+    </copy>
+    ```
 
    and copy the content to clipboard.
 

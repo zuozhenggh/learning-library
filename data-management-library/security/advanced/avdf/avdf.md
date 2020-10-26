@@ -1,12 +1,14 @@
 # Oracle Audit Vault and DB Firewall (AVDF)
 
 ## Introduction
-This workshop introduces the various features and functionality of Oracle AVDF.
+This workshop introduces the various features and functionality of Oracle Audit Vault and DB Firewall (AVDF). It gives the user an opportunity to learn how to configure those appliances in order to audit, monitor and protect access to sensitive data.
 
-It gives the user an opportunity to learn how to configure those appliances in order to audit, monitor and protect access to sensitive data.
+*Estimated Lab Time:* 120 minutes
 
-- *Version tested in this lab:* Oracle AVDF 20.1
-- *Estimated Lab Time:* 120 minutes
+*Version tested in this lab:* Oracle AVDF 20.1
+
+### Video Preview
+Watch a preview of "*Understanding Oracle Audit Vault and Database Firewall 20c (August 2020)*" [](youtube:9xG0GFKbVJk)
 
 ### Objectives
 - Connect Audit Vault Server to an Oracle DB
@@ -15,16 +17,15 @@ It gives the user an opportunity to learn how to configure those appliances in o
 - Train the DB Firewall for expected SQL traffic and see the effects on a web App
 
 ### Prerequisites
-This lab assumes you have completed:
-   - Lab: Generate SSH Keys
-   - Lab: Prepare Setup
-   - Lab: Environment Setup
-   - Lab: Initialize and Start the DBSecLab Environment
-   - Lab: DBSAT (please refer to the *Oracle DB Security Baseline Workshop*)
-
-### Video Preview
-
-- Watch a preview of "*Understanding Oracle Audit Vault and Database Firewall 20c (August 2020)*" [](youtube:9xG0GFKbVJk)
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
+    - Lab: DBSAT (please refer to the *Oracle Database Security Baseline Workshop*)
 
 ### Lab Timing (estimated)
 
@@ -408,7 +409,6 @@ You have completed the lab.
      - You will be given a URL to access the CSV file that was created during the DBSAT Sensitive Data Discovery lab. It will look like this: `http://<DBSECLAB-VM_@IP-Public>:8080/hr_prod_pdb1/dbsat/pdb1_dbsat_discover.csv`
 
     - Using the web browser, save and download the `pdb1_dbsat_discover.csv` file
-
         - Login to the Audit Vault as `AVADMIN` using the password `T06tron.`
         - Click the `Targets` tab
         - Click the `pdb1` target name
@@ -417,9 +417,7 @@ You have completed the lab.
 
    ![](images/upload_csv_file01.png " ")
 
-        
     - If you click `Sensitive Objects` again you will see you have the `csv` file loaded
-
 
    ![](images/csv_file_loaded01.png " ")
 
@@ -812,9 +810,9 @@ In this lab you will modify the Glassfish connection. Instead of connecting dire
 
     - You can identify the URL by running this script
 
-          ````
-          <copy>./01_start_glassfish.sh</copy>
-          ````
+      ````
+      <copy>./01_start_glassfish.sh</copy>
+      ````
 
     - Take the URL from the output of this and use it in your web browser. We are verifying that the application functions **before** we make any changes to connection string!
 
@@ -859,7 +857,6 @@ In this lab you will modify the Glassfish connection. Instead of connecting dire
    ![](images/firewall_ip_address.png " ")
 
 ## **STEP 11**: DB Firewall - Train the Database Firewall for expected SQL traffic
-
 In this lab you will use the Glassfish Application to connect through the Oracle Database Firewall so we can monitor, and block, SQL commands
 
 **Set the NTP Server**
@@ -981,9 +978,9 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
       <copy>select USERID,FIRSTNAME,LASTNAME from DEMO_HR_USERS where ( USERSTATUS is NULL or upper( USERSTATUS ) = '######' ) and upper(USERID) = '#######' and password = '#########'</copy>
       ````
 
-       **Note**:
-       - We like this query because this is the authentication SQL the `My HR App` uses to validate the `hradmin` and `Oracle123` password. Remember, the application is authenticated against a table not the database so queries like this will be captured
-       - Notice how the Database Firewall has removed the bind values that would have included the username and password. This is to minimize the collection of sensitive data within Audit Vault and Database Firewall
+     **Note**:
+     - We like this query because this is the authentication SQL the `My HR App` uses to validate the `hradmin` and `Oracle123` password. Remember, the application is authenticated against a table not the database so queries like this will be captured
+     - Notice how the Database Firewall has removed the bind values that would have included the username and password. This is to minimize the collection of sensitive data within Audit Vault and Database Firewall
 
 31. Feel free to continue to explore the captured SQL statements and once you are comfortable, please continue the labs!
 
@@ -1044,27 +1041,29 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
     - Target: `pdb1`
     - Show cluster for: `Last 24 Hours` (or make this `Last Week`)
 
-   ![](images/create_add_sql_cluster_set01.png " ")
+       ![](images/create_add_sql_cluster_set01.png " ")
 
     - Check the `Select all` box next to  the `Cluster ID` Header
 
     - Make sure you add the SQL Clusters that also allow our `sqlplus` connections to work
 
-            SELECT DECODE(USER, '#######', XS_SYS_CONTEXT('##########','########'), USER) FROM SYS.DUAL
-            BEGIN DBMS_APPLICATION_INFO.SET_MODULE(:0,NULL); END;
-            select upper(sys_context ('#######', '############') || '#' || sys_context('#######', '########')) global_name from dual
-            BEGIN DBMS_OUTPUT.ENABLE(NULL); END;
-            extracted_from_protocol describe employeesearch_prod.demo_hr_employees
-            extracted_from_protocol transaction commit
-            extracted_from_protocol invalid '#####################################'
+        ```
+        SELECT DECODE(USER, '#######', XS_SYS_CONTEXT('##########','########'), USER) FROM SYS.DUAL
+        BEGIN DBMS_APPLICATION_INFO.SET_MODULE(:0,NULL); END;
+        select upper(sys_context ('#######', '############') || '#' || sys_context('#######', '########')) global_name from dual
+        BEGIN DBMS_OUTPUT.ENABLE(NULL); END;
+        extracted_from_protocol describe employeesearch_prod.demo_hr_employees
+        extracted_from_protocol transaction commit
+        extracted_from_protocol invalid '#####################################'
+        ```
 
-        - They should look like these two screenshots
+    - They should look like these two screenshots
 
-   ![](images/hr_sql_profile_statements02.png " ")
+       ![](images/hr_sql_profile_statements02.png " ")
 
-   ![](images/hr_sql_profile_statements03.png " ")
+       ![](images/hr_sql_profile_statements03.png " ")
 
-    - Click [**Save**]
+        - Click [**Save**]
 
 13. Click [**Back**]
 
@@ -1178,9 +1177,6 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
     **Note**:  Remember, this is because the Database Firewall substituted "`select * from dual where 1=2`" for the regular query
 
 ## **STEP 13**: (Advanced Labs) PostgreSQL Audit Collection
-
-**Before started**
-
 The objective of this lab is to collect audit log records from PostgreSQL databases (with pgaudit configured) into Oracle Audit Vault and Database Firewall:
 - Ensure to that `pgaudit` is installed extension:
     - The PostgreSQL Audit Extension (or pgaudit) provides detailed session and/or object audit logging via the standard logging facility provided by PostgreSQL
@@ -1190,7 +1186,6 @@ The objective of this lab is to collect audit log records from PostgreSQL databa
 - Parameter logging_collector needs to be set to `ON`
 - The AVDF Agent OS user needs to have read permission on the directory specified on the log_directory parameter and the generated CSV files to be able to read them
 
-**The Lab**
 1. Go to the scripts directory
 
       ````
@@ -1363,13 +1358,8 @@ Audit Vault can collect and report on the operating system audit data
 17. Continue to explore until you are comfortable!
 
 ## **STEP 15**: (Advanced Labs) LDAP/Active Directory Configuration
-
-**Before Started**
-
 - You must have an Microsoft Active Directory Server 2016 or higher available in the same VCN as the DBSecLab VMs (DBsec-lab, AV, DBFW, OKV)
 - You must have the knowledege to configure the MS AD 2016 server appropriately
-
-**The Lab**
 
 1. Using a web browser, login to Audit Vault Web Console as `AVADMIN` with the password `T06tron.`
 
@@ -1400,43 +1390,44 @@ Audit Vault can collect and report on the operating system audit data
 You may now proceed to the next lab.
 
 ## **Appendix**: About the Product
-- **Overview**
+### **Overview**
 
-    Oracle Audit Vault and Database Firewall (AVDF) is a complete **Database Activity Monitoring (DAM)** solution that **combines native audit data with network-based SQL traffic capture**.
+Oracle Audit Vault and Database Firewall (AVDF) is a complete **Database Activity Monitoring (DAM)** solution that **combines native audit data with network-based SQL traffic capture**.
 
-    AVDF includes an enterprise quality **audit data warehouse**, host-based audit data collection agents, powerful reporting and analysis tools, alert framework, audit dashboard, and a multi-stage Database Firewall. The Database Firewall uses a sophisticated **grammar analysis engine** to inspect SQL statements before they reach the database and determines with high accuracy whether to allow, log, alert, substitute, or block the incoming SQL.
+AVDF includes an enterprise quality **audit data warehouse**, host-based audit data collection agents, powerful reporting and analysis tools, alert framework, audit dashboard, and a multi-stage Database Firewall. The Database Firewall uses a sophisticated **grammar analysis engine** to inspect SQL statements before they reach the database and determines with high accuracy whether to allow, log, alert, substitute, or block the incoming SQL.
 
-    AVDF comes with **collectors for Oracle Database, Oracle MySQL, Microsoft SQL Server, PostgreSQL, IBM Db2 (on LUW), SAP Sybase, Oracle Key Vault, Microsoft Active Directory, Linux, Windows, AIX, Solaris, and HPUX**. A **Quick-JSON collector** simplifies ingesting audit data from databases like MongoDB. In addition to the provided collectors, AVDF's extensible framework allows simple configuration-based audit collection from **JDBC**-accessible databases and REST, JSON, or XML sources, making collection from most other systems easy. A full featured Java SDK allows creation of collectors for applications or databases that don't use a standard technology to record their audit trail.
+AVDF comes with **collectors for Oracle Database, Oracle MySQL, Microsoft SQL Server, PostgreSQL, IBM Db2 (on LUW), SAP Sybase, Oracle Key Vault, Microsoft Active Directory, Linux, Windows, AIX, Solaris, and HPUX**. A **Quick-JSON collector** simplifies ingesting audit data from databases like MongoDB. In addition to the provided collectors, AVDF's extensible framework allows simple configuration-based audit collection from **JDBC**-accessible databases and REST, JSON, or XML sources, making collection from most other systems easy. A full featured Java SDK allows creation of collectors for applications or databases that don't use a standard technology to record their audit trail.
 
    ![](./images/avdf-concept-01.png " ")
 
-    - **Software Appliance**
+- **Software Appliance**
 
-    Oracle Audit Vault and Database Firewall are packaged as a "**Soft Appliance**" and contain everything needed to install the product on bare hardware - or in this case virtual environments.
+Oracle Audit Vault and Database Firewall are packaged as a "**Soft Appliance**" and contain everything needed to install the product on bare hardware - or in this case virtual environments.
 
-    - **Fine Grained, Customizable Reporting and Alerting**
+- **Fine Grained, Customizable Reporting and Alerting**
 
-    Dozens of out-of-the-box compliance reports provide easy, schedulable, customized reporting for regulations such as GDPR, PCI, GLBA, HIPAA, IRS 1075, SOX, and UK DPA.
-    Reports aggregate network events and audit data from the monitored systems. Summary reports, trend charts and anomaly reports can be used to quickly review characteristics of user activity and help identify anomalous events. Report data can be easily filtered, enabling quick analysis of specific systems or events. Security managers can define threshold based alert conditions on activities that may indicate attempts to gain unauthorized access and/or abuse system privileges. Fine-grained authorizations enable security managers to restrict auditors and other users to information from specific sources, allowing a single repository to be deployed for an entire enterprise.
+Dozens of out-of-the-box compliance reports provide easy, schedulable, customized reporting for regulations such as GDPR, PCI, GLBA, HIPAA, IRS 1075, SOX, and UK DPA.
+Reports aggregate network events and audit data from the monitored systems. Summary reports, trend charts and anomaly reports can be used to quickly review characteristics of user activity and help identify anomalous events. Report data can be easily filtered, enabling quick analysis of specific systems or events. Security managers can define threshold based alert conditions on activities that may indicate attempts to gain unauthorized access and/or abuse system privileges. Fine-grained authorizations enable security managers to restrict auditors and other users to information from specific sources, allowing a single repository to be deployed for an entire enterprise.
 
    ![](./images/avdf-concept-02.png " ")
 
-    - **Deployment Flexibility and Scalability**
-    
-    Security controls can be customized with in-line monitoring and blocking on some databases and monitoring only on other databases. The multi-stage Database Firewall can be deployed in-line as a database proxy server, or out-of-band in network sniffing mode, or with a host-based agent that relays network activity back to the firewall for analysis and recording. Delivered as a pre-configured software appliance that can be deployed on Linux-compatible hardware of choice, a single Audit Vault Server can consolidate audit data and firewall events from thousands of databases. Both Audit Vault Server and the Database Firewall can be configured in a High Availability mode for fault tolerance.
+- **Deployment Flexibility and Scalability**
 
-    Oracle Audit Vault and Database Firewall 20c **supports both Cloud and On-Premise databases with one single dashboard**, giving customers insight into the activities on their databases.
+Security controls can be customized with in-line monitoring and blocking on some databases and monitoring only on other databases. The multi-stage Database Firewall can be deployed in-line as a database proxy server, or out-of-band in network sniffing mode, or with a host-based agent that relays network activity back to the firewall for analysis and recording. Delivered as a pre-configured software appliance that can be deployed on Linux-compatible hardware of choice, a single Audit Vault Server can consolidate audit data and firewall events from thousands of databases. Both Audit Vault Server and the Database Firewall can be configured in a High Availability mode for fault tolerance.
+
+Oracle Audit Vault and Database Firewall 20c **supports both Cloud and On-Premise databases with one single dashboard**, giving customers insight into the activities on their databases.
 
 ## Want to Learn More?
-  - Technical Documentation: [Oracle Audit Vault & Database Firewall 20c](https://docs.oracle.com/en/database/oracle/audit-vault-database-firewall/20/index.html)
+Technical Documentation:
+- [Oracle Audit Vault & Database Firewall 20c](https://docs.oracle.com/en/database/oracle/audit-vault-database-firewall/20/index.html)
 
-Video
-  - *Auditing PostgreSQL and MongoDB with Oracle Audit Vault and Database Firewall (October 2020)* [](youtube:o0LqJXwS4L0)
+Video:
+- *Auditing PostgreSQL and MongoDB with Oracle Audit Vault and Database Firewall (October 2020)* [](youtube:o0LqJXwS4L0)
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Angeline Dhanarani, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

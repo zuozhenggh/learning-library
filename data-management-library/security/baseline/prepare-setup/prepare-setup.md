@@ -3,6 +3,8 @@
 ## Introduction
 This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to setup the resource needed to run this workshop. This workshop requires a compute instance running the Database Security marketplace image and a Virtual Cloud Network (VCN).
 
+*Estimated Lab Time:* 15 minutes
+
 ### Objectives
 -   Download ORM stack
 -   Configure an existing Virtual Cloud Network (VCN)
@@ -13,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-all-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/s3vHAmu3qehcDwtf05Ird7vDadEl3qquxXsGqDn-fG2C4xl2A8F_JOxIefNKZ7ER/n/orasenatdpltsecitom02/b/workshop-labs-files/o/dbsec-all-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-cp-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/bKvP3wTGN1UBfI9uRqhyPcVio_E2fIheptYGf-g4vDG2TcB9L2Nde_GFRXHbkkPB/n/natdsecurity/b/stack/o/dbsec-cp-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -29,6 +31,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | 443            | Application (https)                   |
 | 7803           | Oracle Enterprise Manager             |
 | 8080           | Glassfish Application                 |
+| 50002          | Glassfish Application                 |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
