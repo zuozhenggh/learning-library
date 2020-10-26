@@ -266,7 +266,7 @@ You may proceed to the next lab.
 
 * **Authors** - Mark Vong, Cloud Engineer; Jason Jang, Cloud Engineer
 * **Contributor(s)** -  Goutham M L, Cloud Engineer
-* **Last Updated By** - Mark Vong, Cloud Engineering, October 2020
+* **Last Updated By** - Mark Vong, October 2020
 
 ## Need Help?
 
