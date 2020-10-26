@@ -1,12 +1,13 @@
-﻿# Oracle Unified Auditing
+# Oracle Unified Auditing
 
 ## Introduction
-This workshop introduces the functionality of Oracle Unified Auditing.
+This workshop introduces the functionality of Oracle Unified Auditing. It gives the user an opportunity to learn how to configure this feature to audit the database activity.
 
-It gives the user an opportunity to learn how to configure this feature to audit the database activity.
+*Estimated Lab Time:* 30 minutes
 
-- *Version tested in this lab:* Oracle DB 19.8
-- *Estimated Lab Time:* 30 minutes
+*Version tested in this lab:* Oracle DB 19.8
+### Video Preview
+Watch a preview of "*Understanding Unified Auditing (February 2019)*" [](youtube:8spLhyj3iC0)
 
 **Note**:
 - Mixed mode auditing is the default auditing in a newly installed database. Mixed mode auditing enables both traditional (that is, the audit facility from releases earlier than release 12c) and the new audit facilities (unified auditing).
@@ -18,11 +19,14 @@ It gives the user an opportunity to learn how to configure this feature to audit
 - See different auditing use cases
 
 ### Prerequisites
-This lab assumes you have completed:
-   - Lab: Generate SSH Keys
-   - Lab: Prepare Setup
-   - Lab: Environment Setup
-   - Lab: Initialize and Start the DBSecLab Environment
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
 
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
@@ -31,9 +35,6 @@ This lab assumes you have completed:
 | 2 | Audit Non App Usage | 10 minutes |
 | 3 | Audit Database Role Usage | 10 minutes |
 | 4 | Audit Data Pump Usage | 5 minutes |
-
-### Video Preview
-- Watch a preview of "*Understanding Unified Auditing (February 2019)*" [](youtube:8spLhyj3iC0)
 
 ## **STEP 1**: Display the current audit settings
 
@@ -112,7 +113,6 @@ This lab assumes you have completed:
     - If it takes more time to COMMIT an audit record than defined by the audit commit delay time, then a copy of the audit record is written to the operating system (OS) audit trail
 
 ## **STEP 2**: Audit Non App Usage
-
 In this lab, you will audit who is using the `EMPLOYEESEARCH_PROD` objects outside of the application
 
 1. Go to the scripts directory
@@ -130,10 +130,10 @@ In this lab, you will audit who is using the `EMPLOYEESEARCH_PROD` objects outsi
    ![](./images/ua-008.png " ")
 
 3. On your Glassfish App, perform the the following steps:
-    
+
     - Open a web browser window to `http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`
     - Login to the HR Application as `hradmin` with the password `Oracle123`
-    
+
    ![](./images/ua-009.png " ")
 
    ![](./images/ua-010.png " ")
@@ -214,12 +214,9 @@ In this lab, you will audit who is using the `EMPLOYEESEARCH_PROD` objects outsi
       ````
 
 ## **STEP 3**: Audit Database Role Usage
+When you audit a role, Oracle Database audits all system privileges that are directly granted to the role. You can audit any role, including user-defined roles. If you create a common unified audit policy for roles with the ROLES audit option, then you must specify only common roles in the role list.
 
-**Before Started**
-
-When you audit a role, Oracle Database audits all system privileges that are directly granted to the role. You can audit any role, including user-defined roles. If you create a common unified audit policy for roles with the ROLES audit option, then you must specify only common roles in the role list. When such a policy is enabled, Oracle Database audits all system privileges that are commonly and directly granted to the common role. The system privileges that are locally granted to the common role will not be audited. To find if a role was commonly granted, query the `DBA_ROLES` data dictionary view. To find if the privileges granted to the role were commonly granted, query the `ROLE_SYS_PRIVS` view.
-
-**The Labs**
+When such a policy is enabled, Oracle Database audits all system privileges that are commonly and directly granted to the common role. The system privileges that are locally granted to the common role will not be audited. To find if a role was commonly granted, query the `DBA_ROLES` data dictionary view. To find if the privileges granted to the role were commonly granted, query the `ROLE_SYS_PRIVS` view.
 
 1. Go to the scripts directory
 
@@ -314,7 +311,7 @@ In this lab you will configure the Unified Audit Trail and review an audit of Or
       ````
 
     **Note**: This involves shutting down the database, making a change to the binary, and restarting it
-    
+
 3. Review the audit settings
 
       ````
@@ -354,32 +351,32 @@ In this lab you will configure the Unified Audit Trail and review an audit of Or
 You may proceed to the next lab.
 
 ## **Appendix**: About the Product
-- **Overview**
+### **Overview**
 
-    In unified auditing, the unified audit trail captures audit information from a variety of sources.
+In unified auditing, the unified audit trail captures audit information from a variety of sources.
 
-    Unified auditing enables you to capture audit records from the following sources:
-    - Audit records (including SYS audit records) from unified audit policies and AUDIT settings
-    - Fine-grained audit records from the DBMS_FGA PL/SQL package
-    - Oracle Database Real Application Security audit records
-    - Oracle Recovery Manager audit records
-    - Oracle Database Vault audit records
-    - Oracle Label Security audit records
-    - Oracle Data Mining records
-    - Oracle Data Pump
-    - Oracle SQL*Loader Direct Load
+Unified auditing enables you to capture audit records from the following sources:
+- Audit records (including SYS audit records) from unified audit policies and AUDIT settings
+- Fine-grained audit records from the DBMS_FGA PL/SQL package
+- Oracle Database Real Application Security audit records
+- Oracle Recovery Manager audit records
+- Oracle Database Vault audit records
+- Oracle Label Security audit records
+- Oracle Data Mining records
+- Oracle Data Pump
+- Oracle SQL*Loader Direct Load
 
-    The unified audit trail, which resides in a read-only table in the AUDSYS schema in the SYSAUX tablespace, makes this information available in a uniform format in the UNIFIED_AUDIT_TRAIL data dictionary view, and is available in both single-instance and Oracle Database Real Application Clusters environments. In addition to the user SYS, users who have been granted the AUDIT_ADMIN and AUDIT_VIEWER roles can query these views. If your users only need to query the views but not create audit policies, then grant them the AUDIT_VIEWER role.
+The unified audit trail, which resides in a read-only table in the AUDSYS schema in the SYSAUX tablespace, makes this information available in a uniform format in the UNIFIED_AUDIT_TRAIL data dictionary view, and is available in both single-instance and Oracle Database Real Application Clusters environments. In addition to the user SYS, users who have been granted the AUDIT_ADMIN and AUDIT_VIEWER roles can query these views. If your users only need to query the views but not create audit policies, then grant them the AUDIT_VIEWER role.
 
-    When the database is writeable, audit records are written to the unified audit trail. If the database is not writable, then audit records are written to new format operating system files in the $ORACLE_BASE/audit/$ORACLE_SID directory.
+When the database is writeable, audit records are written to the unified audit trail. If the database is not writable, then audit records are written to new format operating system files in the `$ORACLE_BASE/audit/$ORACLE_SID` directory.
 
-- **Benefits of the Unified Audit Trail**
-    - After unified auditing is enabled, it does not depend on the initialization parameters that were used in previous releases.
-    - The audit records, including records from the SYS audit trail, for all the audited components of your Oracle Database installation are placed in one location and in one format, rather than your having to look in different places to find audit trails in varying formats.
-    - The management and security of the audit trail is also improved by having it in single audit trail.
-    - Overall auditing performance is greatly improved. By default, the audit records are automatically written to an internal relational table in the AUDSYS schema.
-    - You can create named audit policies that enable you to audit the supported components listed at the beginning of this section, as well as SYS administrative users. Furthermore, you can build conditions and exclusions into your policies.
-    - If you are using an Oracle Audit Vault and Database Firewall environment, then the unified audit trail greatly facilitates the collection of audit data, because all of this data will come from one location.
+### **Benefits of the Unified Audit Trail**
+- After unified auditing is enabled, it does not depend on the initialization parameters that were used in previous releases.
+- The audit records, including records from the SYS audit trail, for all the audited components of your Oracle Database installation are placed in one location and in one format, rather than your having to look in different places to find audit trails in varying formats.
+- The management and security of the audit trail is also improved by having it in single audit trail.
+- Overall auditing performance is greatly improved. By default, the audit records are automatically written to an internal relational table in the AUDSYS schema.
+- You can create named audit policies that enable you to audit the supported components listed at the beginning of this section, as well as SYS administrative users. Furthermore, you can build conditions and exclusions into your policies.
+- If you are using an Oracle Audit Vault and Database Firewall environment, then the unified audit trail greatly facilitates the collection of audit data, because all of this data will come from one location.
 
 ## Want to Learn More?
 Technical Documentation:
@@ -389,7 +386,7 @@ Technical Documentation:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
+- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -1,12 +1,14 @@
 # Oracle Label Security (OLS)
 
 ## Introduction
-This workshop introduces the various features and functionality of Oracle Label Security (OLS).
+This workshop introduces the various features and functionality of Oracle Label Security (OLS). It gives the user an opportunity to learn how to configure those features to secure their sensitive data, to help tracking consent, and to enforce restriction of processing under regulation requirements such as the General Data Protection Regulation.
 
-It gives the user an opportunity to learn how to configure those features to secure their sensitive data, to help tracking consent, and to enforce restriction of processing under regulation requirements such as the General Data Protection Regulation.
+*Estimated Lab Time:* 30 minutes
 
-- *Version tested in this lab:* Oracle DB 19.8
-- *Estimated Lab Time:* 30 minutes
+*Version tested in this lab:* Oracle DB 19.8
+
+### Video Preview
+Watch a preview of "*Understanding Oracle Label Security (April 2020)*" [](youtube:o4-XpUQWfaM)
 
 ### Objectives
 The objective of this lab is to provide guidance on how Oracle Label Security could be used to help tracking consent and enforce restriction of processing under the General Data Protection Regulation requirements.
@@ -14,12 +16,15 @@ Different OLS strategies could be taken to achieve similar functionality.
 The details provided here are merely to serve as an example.
 
 ### Prerequisites
-This lab assumes you have completed:
-   - Lab: Generate SSH Keys
-   - Lab: Prepare Setup
-   - Lab: Environment Setup
-   - Lab: Initialize and Start the DBSecLab Environment
-   - Lab: Oracle Database Vault
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
+    - Lab: Oracle Database Vault
 
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
@@ -27,12 +32,9 @@ This lab assumes you have completed:
 | 1 | Simple CRM Application | 10 minutes |
 | 2 | Protect Glassfish Application | 20 minutes |
 
-### Video Preview
-- Watch a preview of "*Understanding Oracle Label Security (April 2020)*" [](youtube:o4-XpUQWfaM)
-
 ## **STEP 1**: Simple CRM Application
 
-**Before Started**
+### **Before Getting Started**
 
 Different applications have different purposes:
 - **User App**
@@ -51,12 +53,12 @@ Different applications have different purposes:
       - Batch process to anonmyize user records and set the data label to `ANON::`.
       - Runs with User Label: `FORGET::` and uses Database user: `APPFORGET`
 
-**How to walk through the lab**
+### **How to walk through the lab**
 - While we provide scripts to execute the whole lab from start to finish in an automated fashion, it is strongly recommended that you open one by one and copy/execute the code blocks one by one
 - This way you’ll get a better understanding of the building blocks of this exercise
 - In case you decide to execute script by script, you can always review the log files (.out) for the details
 
-**The Labs**
+### **The Labs**
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -285,30 +287,30 @@ Different applications have different purposes:
 You may proceed to the next lab.
 
 ## **Appendix**: About the Product
-- **Overview**
+### **Overview**
 
-      OLS works by comparing the row label with a user's label authorizations to enable you to easily restrict sensitive information to only authorized users.
+OLS works by comparing the row label with a user's label authorizations to enable you to easily restrict sensitive information to only authorized users.
 
-      This way, users with different authorization levels (for example, managers and sales representatives) can have access to specific rows of data in a table. You can apply OLS policies to one or more application tables. The design of OLS is similar to Oracle Virtual Private Database (VPD). However, unlike VPD, OLS provides the access mediation functions, data dictionary tables, and policy-based architecture out of the box, eliminating customized coding and providing a consistent label based access control model that can be used by multiple applications.
+This way, users with different authorization levels (for example, managers and sales representatives) can have access to specific rows of data in a table. You can apply OLS policies to one or more application tables. The design of OLS is similar to Oracle Virtual Private Database (VPD). However, unlike VPD, OLS provides the access mediation functions, data dictionary tables, and policy-based architecture out of the box, eliminating customized coding and providing a consistent label based access control model that can be used by multiple applications.
 
    ![](./images/ols-concept.png " ")
 
-      OLS is based on multi-level security (MLS) requirements that are found in government and defense organizations. OLS software is installed by default, but not automatically enabled. You can enable OLS in either SQLPlus or by using the Oracle Database Configuration Assistant (DBCA). The default administrator for OLS is the user `LBACSYS`. To manage OLS, you can use either a set of PL/SQL packages and standalone functions at the command-line level or Oracle Enterprise Manager Cloud Control. To find information about OLS policies, you can query `ALL_SA_*`, `DBA_SA_*`, or `USER_SA_*` data dictionary views.
+OLS is based on multi-level security (MLS) requirements that are found in government and defense organizations. OLS software is installed by default, but not automatically enabled. You can enable OLS in either SQLPlus or by using the Oracle Database Configuration Assistant (DBCA). The default administrator for OLS is the user `LBACSYS`. To manage OLS, you can use either a set of PL/SQL packages and standalone functions at the command-line level or Oracle Enterprise Manager Cloud Control. To find information about OLS policies, you can query `ALL_SA_*`, `DBA_SA_*`, or `USER_SA_*` data dictionary views.
 
-      An OLS policy has a standard set of components as follows:
-    - **Labels**: Labels for data and users, along with authorizations for users and program units, govern access to specified protected objects. Labels are composed of the following:
-         - **Levels**: Levels indicate the type of sensitivity that you want to assign to the row (for example, `SENSITIVE` or `HIGHLY SENSITIVE`). Levels are mandatory.
-         - **Compartments (Optional)**: Data can have the same level (for example, `PUBLIC`, `CONFIDENTIAL` and `SECRET`), but can belong to different projects inside a company (for example, `ACME Merger` and `IT Security`). Compartments represent the projects in this example that help define more precise access controls. They are most often used in government environments.
-         - **Groups (Optional)**: Groups identify organizations owning or accessing the data (for example, `UK`, `US`, `Asia`, `Europe`). Groups are used both in commercial and government environments, and frequently used in place of compartments due to their flexibility.
-    - **Policy**: A policy is a name associated with these labels, rules, authorizations, and protected tables.
+An OLS policy has a standard set of components as follows:
+- **Labels**: Labels for data and users, along with authorizations for users and program units, govern access to specified protected objects. Labels are composed of the following:
+   - **Levels**: Levels indicate the type of sensitivity that you want to assign to the row (for example, `SENSITIVE` or `HIGHLY SENSITIVE`). Levels are mandatory.
+   - **Compartments (Optional)**: Data can have the same level (for example, `PUBLIC`, `CONFIDENTIAL` and `SECRET`), but can belong to different projects inside a company (for example, `ACME Merger` and `IT Security`). Compartments represent the projects in this example that help define more precise access controls. They are most often used in government environments.
+   - **Groups (Optional)**: Groups identify organizations owning or accessing the data (for example, `UK`, `US`, `Asia`, `Europe`). Groups are used both in commercial and government environments, and frequently used in place of compartments due to their flexibility.
+- **Policy**: A policy is a name associated with these labels, rules, authorizations, and protected tables.
 
-- **Benefits of using OLS**
+### **Benefits of using OLS**
 
-   OLS provides several benefits for controlling row level management:
-    - It enables row level data classification and provides out-of-the-box access mediation based on the data classification and the user label authorization or security clearance.
-    - It enables you to assign label authorizations or security clearances to both database users and application users.
-    - It provides both APIs and a graphical user interface for defining and storing data classification labels and user label authorizations.
-    - It integrates with Oracle Database Vault and Oracle Advanced Security Data Redaction, enabling security clearances to be use in both Database Vault command rules and Data Redaction policy definitions.
+OLS provides several benefits for controlling row level management:
+- It enables row level data classification and provides out-of-the-box access mediation based on the data classification and the user label authorization or security clearance.
+- It enables you to assign label authorizations or security clearances to both database users and application users.
+- It provides both APIs and a graphical user interface for defining and storing data classification labels and user label authorizations.
+- It integrates with Oracle Database Vault and Oracle Advanced Security Data Redaction, enabling security clearances to be use in both Database Vault command rules and Data Redaction policy definitions.
 
 ## Want to Learn More?
 Technical Documentation: [Oracle Label Security 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/olsag/part1.html)
@@ -316,7 +318,7 @@ Technical Documentation: [Oracle Label Security 19c](https://docs.oracle.com/en/
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 20th October 2020
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
