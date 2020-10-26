@@ -1,4 +1,4 @@
-# Oracle Database Security Assessment Tool
+# Oracle Database Security Assessment Tool (DBSAT)
 
 ## Introduction
 This workshop introduces the functionality of Oracle Database Security Assessment Tool (DBSAT).
@@ -19,9 +19,6 @@ This lab assumes you have completed:
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
 
-### Video Preview
-- Watch a preview of "*Understanding DBSAT (April 2018)*" [](youtube:XsPuiCPcyA0)
-
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
@@ -37,6 +34,9 @@ This lab assumes you have completed:
 |10| Advanced Discoverer - Getting into Pattern files, Sensitive Types, and Categories | 10 minutes |
 |11| Advanced Discoverer - Pattern Files | 15 minutes |
 |12| Processing DBSAT report JSON output | 10 minutes |
+
+### Video Preview
+- Watch a preview of "*Understanding DBSAT (April 2018)*" [](youtube:XsPuiCPcyA0)
 
 ## **STEP 1**: Installing DBSAT
 
@@ -178,12 +178,12 @@ Please take a couple of minutes to scroll through the HTML report. You can click
     - Follows the Database Identity information where you will find details about the target database
     - Then the Summary table presents all the findings per section/domain along with their severity level
 
-    **Note**:
-    - Having a “Total” of less than 80 findings might indicate that there were some issues collecting data
-    - You’ll find more details about the reasons at the bottom of the HTML report
-    - The collector generated *.json* file can also be used for further troubleshooting
-    - If you run DBSAT against ADW/ATP or run the collector remotely you will get less than 80 findings
-    - The main reason for this is that we skip the collection of OS related findings and findings that depend on reading files from the operating system
+      **Note**:
+      - Having a “Total” of less than 80 findings might indicate that there were some issues collecting data
+      - You’ll find more details about the reasons at the bottom of the HTML report
+      - The collector generated *.json* file can also be used for further troubleshooting
+      - If you run DBSAT against ADW/ATP or run the collector remotely you will get less than 80 findings
+      - The main reason for this is that we skip the collection of OS related findings and findings that depend on reading files from the operating system
 
 ## **STEP 5**: Analyze the Report - Findings
 
@@ -261,9 +261,9 @@ In this exercise, you will be guided by relevant DBSAT findings. This will provi
 
    ![](./images/dbsat-014.png " ")
 
-   **Note**:
-   - All database users are on the `DEFAULT` profile which has `INACTIVE_ACCOUNT_TIME = UNLIMITED`
-   - The `INACTIVE_ACCOUNT_TIME` profile parameter locks a user account that has not logged in to the database instance in a specified number of days
+      **Note**:
+      - All database users are on the `DEFAULT` profile which has `INACTIVE_ACCOUNT_TIME = UNLIMITED`
+      - The `INACTIVE_ACCOUNT_TIME` profile parameter locks a user account that has not logged in to the database instance in a specified number of days
 
 6. See the next finding – **USER.NOEXPIRE**
 
@@ -290,31 +290,30 @@ In this exercise, you will be guided by relevant DBSAT findings. This will provi
     - If commonly granted (grant to a common user to all pdbs) it will show as a **(C)**, e.g.: `SQL> grant advisor to C##DBA_DEBRA container=all;`
     - Combinations are also possible **(D)(*)** means, directly granted with admin option
         
-12. Scroll down to **Account Management Privileges** (you can also search for **PRIV.ACCT** in the browser)
+12. Scroll down to **Account Management Privileges** (you can also search for **PRIV.ACCT** in the browser):
+      - This finding will present **direct** or **indirect grants** of account management privileges – `ALTER USER, CREATE USER, DROP USER` – and will show the grant path
+      - Either **direct as `JSCHAFFER: ALTER USER, CREATE USER, DROP USER`** or **indirect as `SCOTT <- APPROLE1 <- APPROLE2 <- APPROLE3 <- DBA: ALTER USER, CREATE USER, DROP USER`**
+      - `SCOTT` received those privileges via the `DBA` grant to `APPROLE3`, that was granted to `APPROLE2` and then to `APPROLE1`
+      - Finally, `APPROLE1` was granted to `SCOTT`
 
    ![](./images/dbsat-017.png " ")
-    
-    - This finding will present **direct** or **indirect grants** of account management privileges – `ALTER USER, CREATE USER, DROP USER` – and will show the grant path
-    - Either **direct as `JSCHAFFER: ALTER USER, CREATE USER, DROP USER`** or **indirect as `SCOTT <- APPROLE1 <- APPROLE2 <- APPROLE3 <- DBA: ALTER USER, CREATE USER, DROP USER`**
-    - `SCOTT` received those privileges via the `DBA` grant to `APPROLE3`, that was granted to `APPROLE2` and then to `APPROLE1`
-    - Finally, `APPROLE1` was granted to `SCOTT`
 
 13. Let’s have a look at another example: this time on **DBA Role** – **PRIV.DBA**
-
-   ![](./images/dbsat-018.png " ")
 
     Scroll down or search:
     - Database User Accounts `DBA_DEBRA, DBA_HARVEY, DBA_NICOLE, DMS_ADMIN, EVIL_RICH, JTAYLOR, MASKING_ADMIN, SCOTT` have been granted the powerful `DBA` Role
     - Do these users need it? This is something that DBSAT can’t define as it lacks organizational and processes awareness
     - That is why it is marked for review (Status = Evaluate)
 
-    **Note**:
-    - As a best practice the usage of the out-of-the-box DBA role should be avoided
-    - Customers are encouraged to create their own DBA-like role with the exact set of privileges required for the administrators to execute their daily tasks
+         ![](./images/dbsat-018.png " ")
+
+      **Note**:
+      - As a best practice the usage of the out-of-the-box DBA role should be avoided
+      - Customers are encouraged to create their own DBA-like role with the exact set of privileges required for the administrators to execute their daily tasks
 
 14. We have spent some time now looking into users, privileges, and roles. What about **Authorization Control**? Click **TOP** and in the summary table go to `Authorization Control`
 
-   ![](./images/dbsat-019.png " ")
+      ![](./images/dbsat-019.png " ")
 
     - The **AUTH.DV** Finding is marked Blue (Advisory) as it presents an opportunity for improvement. Database Vault (DBV) enables to define Realms around sensitive data to prevent unauthorized access, even from privileged users. Database Vault also enables to control command execution according to a particular factor(s). As an example, you can disable `DROP TABLE` in your production database or `ALTER SYSTEM` if not coming from a specific `IP ADDRESS` or day/time of day.
     - Database Vault may help address the Articles and Recitals mentioned above: **DBV help address GDPR topics related to pseudonymization, restriction of processing and security of processing**
@@ -331,17 +330,13 @@ In this exercise, you will be guided by relevant DBSAT findings. This will provi
             - Reduce risk by helping enforce least privilege for users and applications
 
 15. Go to **Fine-Grained Access Control** – CTRL + F **ACCESS.REDACT**
-
-   ![](./images/dbsat-020.png " ")
-
     - This section displays information on Data Redaction, VPD, RAS Policies, Label Security and Transparent Sensitive Data Protection (TSDP) policies
     - In case there are policies in place, these findings will show them
     - Users not impacted by policies and that can manage or create them are listed in the findings
 
+   ![](./images/dbsat-020.png " ")
+
 16. Have a look and when finished move to the next section **Auditing**
-
-   ![](./images/dbsat-021.png " ")
-
     - There are Unified Audit trail records
     - To know more about the actual auditing policies in place, we need to have a look at the next findings
     - Just enabling auditing does not generate any audit records
@@ -349,14 +344,13 @@ In this exercise, you will be guided by relevant DBSAT findings. This will provi
 
     **Note**: When **Unified Audit** is in place, all information about Traditional Auditing is ignored and it is not displayed in the findings
 
+   ![](./images/dbsat-021.png " ")
+
 17. Moving to the next finding – **AUDIT.ADMIN** – and we find out that auditing for administrative actions by `SYS` is not being performed
 
    ![](./images/dbsat-022.png " ")
 
 18. Scroll down to **Data Encryption** – CTRL + F **CRYPT.TDE**
-
-   ![](./images/dbsat-023.png " ")
-
     - No encrypted tablespaces and no encrypted columns
     - Is this database storing sensitive data? Is the data it holds subject to any regulation? Make sure that you understand the data that it is stored in your databases
     - If it's sensitive and subject to any regulation, DBSAT Discoverer can help gather more details about the sensitive data in this database:
@@ -365,22 +359,24 @@ In this exercise, you will be guided by relevant DBSAT findings. This will provi
             "[...] the controller, and the processor shall implement appropriate technical and organisational measures, to ensure a level of security appropriate to the risk, including inter alia, as appropriate: (a) The pseudonymisation and encryption of personal data [...]" (GDPR - Article 32)
 
     - We will discover sensitive data with DBSAT Discoverer in one of the next labs
-    
+
+   ![](./images/dbsat-023.png " ")
+
 19. Let’s get to the next section – **Database Configuration**- and have a look at some of the findings. This section starts with an informational table that provides a summary of relevant security-related database initialization parameters
 
    ![](./images/dbsat-024.png " ")
 
 20. Scroll down or search for **CONF.DIR**: it's also marked as posing a **Medium Risk**
-
-   ![](./images/dbsat-025.png " ")
-
     - A special look needs to be taken into these **DIRECTORY** Objects as they allow access to the server's file system from PL/SQL code within the database
     - Access to files that are used by the database kernel itself should not be permitted. **Directories with both write and execute** will be flagged
     - Make sure all DIRECTORY objects are needed and for the ones that are, point them to other directories rather than inside `$ORACLE_HOME`, `$ORACLE_BASE`
 
-    **Note**:
-    - This finding detail list all the directories (DIRECTORY objects) in the database (17) and then the directories that pose risk
-    - In this particular case, the last line of the details show "`Access to $ORACLE_HOME: ORACLE_HOME`", meaning that the DIRECTORY object that point to `$ORACLE_HOME` path is called "`ORACLE_HOME`"
+      **Note**:
+
+      - This finding detail list all the directories (DIRECTORY objects) in the database (17) and then the directories that pose risk
+      - In this particular case, the last line of the details show "`Access to $ORACLE_HOME: ORACLE_HOME`", meaning that the DIRECTORY object that point to `$ORACLE_HOME` path is called "`ORACLE_HOME`"
+
+   ![](./images/dbsat-025.png " ")
 
 21. No backups were found in the past 90 days
 
@@ -392,7 +388,7 @@ In this exercise, you will be guided by relevant DBSAT findings. This will provi
 
 24. Scroll down to **"OS.FILES"**. In this finding, DBSAT will identified operating system file permissions that are wrongly set
 
-   ![](./images/dbsat-027.png " ")
+      ![](./images/dbsat-027.png " ")
 
     **Note**:
     - In this case, 10 files have wrong permission settings
@@ -482,7 +478,7 @@ In this exercise, you will learn how to execute DBSAT discoverer. DBSAT discover
 
 10. Open your web browser, copy-paste the URL provided for the discoverer html report as the output, and you should see the **Database Sensitive Data Assessment** report as shown below:
 
-   ![](./images/dbsat-033.png " ")
+      ![](./images/dbsat-033.png " ")
 
     **Note**: For real life cases you won’t need to copy file to glassfish, just unzip the files and open the html!
 
@@ -536,11 +532,11 @@ In this exercise, you will learn how to analyze the **Sensitive Data Assessment 
 
     Sample findings:
 
-   ![](./images/dbsat-036.png " ")
+      ![](./images/dbsat-036.png " ")
 
-    **Note**:
-    - The first one lists the Schemas with Sensitive Data and then follows, by Risk Level, a recommendation on which security controls should be in place to protect this type of data followed by findings per Sensitive Category
-    - As you can see in the example below, the report shows a recommendation after **Risk Level: High Risk** and then **Tables Detected within Sensitive Category: Personal Financial Info – Card Info**
+      **Note**:
+      - The first one lists the Schemas with Sensitive Data and then follows, by Risk Level, a recommendation on which security controls should be in place to protect this type of data followed by findings per Sensitive Category
+      - As you can see in the example below, the report shows a recommendation after **Risk Level: High Risk** and then **Tables Detected within Sensitive Category: Personal Financial Info – Card Info**
 
 7. Go to **Schema View** section, to get the **Schema View**. The **Table Summary** shows the list of Schemas, Table names, number of total columns and sensitive columns, along with the number of rows and Sensitive Category
 
@@ -672,7 +668,7 @@ In this exercise, you will learn how `dbsat.config` parameters determine the beh
 
     - Set `SCHEMAS_SCOPE = HR` and `MINROWS = 11`
 
-   ![](./images/dbsat-042.png " ")
+         ![](./images/dbsat-042.png " ")
 
     - Save the file and run again. Append **v3** to the filename
 
@@ -694,7 +690,7 @@ In this exercise, you will learn how `dbsat.config` parameters determine the beh
 
 22. Open the following link in your browser: `http://<DBSec_Lab_Public_IP>:8080/hr_prod_pdb1/dbsat/pdb1_dbsat_v3_discover.html`
 
-23. You should see a smaller report focused just on the `HR` schema and that excludes the `JOB_HISTORY` table.
+23. You should see a smaller report focused just on the `HR` schema and that excludes the `JOB_HISTORY` table
 
    ![](./images/dbsat-043.png " ")
 
@@ -956,7 +952,7 @@ In this exercise, you will be exposed to the DBSAT utilities (`dbsat_diff` & `db
           <copy>python dbsat_diff pdbhol_report.json pdbhol2_report.json</copy>
           ````
 
-        ![](./images/dbsat-052.png " ")
+   ![](./images/dbsat-052.png " ")
 
 
 5. Loading the JSON report into the database for further processing. In this simple case, we will load the JSON document into the Oracle Database and execute a query to get the findings in a relational view
@@ -1016,7 +1012,7 @@ In this exercise, you will be exposed to the DBSAT utilities (`dbsat_diff` & `db
           </copy>
           ````
 
-        ![](./images/dbsat-053.png " ")
+   ![](./images/dbsat-053.png " ")
 
 You may proceed to the next lab.
 

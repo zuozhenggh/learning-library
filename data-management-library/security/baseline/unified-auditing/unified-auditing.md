@@ -1,7 +1,7 @@
 ﻿# Oracle Unified Auditing
 
 ## Introduction
-This workshop introduces the functionality of Unified Auditing.
+This workshop introduces the functionality of Oracle Unified Auditing.
 
 It gives the user an opportunity to learn how to configure this feature to audit the database activity.
 
@@ -24,9 +24,6 @@ This lab assumes you have completed:
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
 
-### Video Preview
-- Watch a preview of "*Understanding Unified Auditing (February 2019)*" [](youtube:8spLhyj3iC0)
-
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
@@ -35,6 +32,8 @@ This lab assumes you have completed:
 | 3 | Audit Database Role Usage | 10 minutes |
 | 4 | Audit Data Pump Usage | 5 minutes |
 
+### Video Preview
+- Watch a preview of "*Understanding Unified Auditing (February 2019)*" [](youtube:8spLhyj3iC0)
 
 ## **STEP 1**: Display the current audit settings
 
@@ -68,7 +67,7 @@ This lab assumes you have completed:
 
     - The 3rd query of this script shows you which Unified Audit policies are **enabled**
 
-   ![](./images/ua-003.png " ")
+      ![](./images/ua-003.png " ")
 
       **Note**:
       - Just because the policy exists in the previous query does not mean it's enabled
@@ -78,7 +77,7 @@ This lab assumes you have completed:
 
     - The 4th query shows you auditing based on context
 
-   ![](./images/ua-004.png " ")
+       ![](./images/ua-004.png " ")
 
         **Note**:
         - We have one policy called `TICKETINFO` that captures an attribute named `TICKET_ID`

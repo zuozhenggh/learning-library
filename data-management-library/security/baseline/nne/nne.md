@@ -1,7 +1,7 @@
 ﻿# Oracle Native Network Encryption (NNE)
 
 ## Introduction
-This workshop introduces the functionality of Native Network Encryption (NNE).
+This workshop introduces the functionality of Oracle Native Network Encryption (NNE).
 
 It gives the user an opportunity to learn how to configure this feature to encrypt and secure its data in-motion.
 
@@ -18,9 +18,6 @@ This lab assumes you have completed:
    - Lab: Prepare Setup
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
-
-### Video Preview
-- Nothing for the moment!
 
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |

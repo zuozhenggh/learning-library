@@ -20,9 +20,6 @@ This lab assumes you have completed:
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
 
-### Video Preview
-- Watch a preview of "*Understanding Oracle Data Masking & Subsetting (April 2019)*" [](youtube:3zi0Bs_bgEw)
-
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
@@ -39,6 +36,8 @@ This lab assumes you have completed:
 |11 | Execute the Data Masking Script | 5 minutes |
 |12 | Compare the Pre-Masked Data vs. the Post-Masked Data | 5 minutes |
 
+### Video Preview
+- Watch a preview of "*Understanding Oracle Data Masking & Subsetting (April 2019)*" [](youtube:3zi0Bs_bgEw)
 
 ## **STEP 1**: Import schema structure
 
@@ -86,7 +85,7 @@ This lab assumes you have completed:
 
 11. The job collect the ADM has been submitted
 
-   ![](./images/dms-006.png " ")
+      ![](./images/dms-006.png " ")
 
     **Tips**: Right click on "View Job Details" link and select "Open Link in New Tab" to follow the process
 
@@ -148,11 +147,11 @@ This lab assumes you have completed:
     - Search for '`EMAIL`' or '`MAIL`' in the Column Comment
     - Apply a regular expression pattern match to all of the Column Data if the user (i.e. `DMS_ADMIN`) has access to the data
 
-   ![](./images/dms-015.png " ")
+      ![](./images/dms-015.png " ")
 
-    **Note**:
-    - This process uses Oracle Regular Expressions which is compatible with the IEEE Portable Operating System Interface (POSIX) regular expression standard and to the Unicode Regular Expression Guidelines of the Unicode Consortium
-    - In this case, the **Search Type** has been set as an **Or** condition, so if any of the conditions listed above are met, it will result in a match
+      **Note**:
+      - This process uses Oracle Regular Expressions which is compatible with the IEEE Portable Operating System Interface (POSIX) regular expression standard and to the Unicode Regular Expression Guidelines of the Unicode Consortium
+      - In this case, the **Search Type** has been set as an **Or** condition, so if any of the conditions listed above are met, it will result in a match
 
 ## **STEP 4**: Create a new Sensitive Column Type
 
@@ -219,23 +218,25 @@ This lab assumes you have completed:
     
         - **Random Strings**
 
-   ![](./images/dms-026.png " ")
+      ![](./images/dms-026.png " ")
 
         - Mention the **start length** (`6`) and **end length** (`8`) in the Edit Format screen of Format Library and click [**OK**]
 
-   ![](./images/dms-027.png " ")
+      ![](./images/dms-027.png " ")
 
         - **Fixed String**
 
-   ![](./images/dms-028.png " ")
+      ![](./images/dms-028.png " ")
 
         - Mention the string you want to add (here `@elcaro.com`) and click [**OK**]
 
-   ![](./images/dms-029.png " ")
+      ![](./images/dms-029.png " ")
 
-        **Note**: When you will use this masking algorithm, it will replace the initial value by a new value generated from the concatenation of a random string of 6 to 8 characters at the beginning, followed by the fixed value @elcaro.com. At the bottom, you can see examples of the new values will be used.
+        **Note**:
+        - When you will use this masking algorithm, it will replace the initial value by a new value generated from the concatenation of a random string of 6 to 8 characters at the beginning, followed by the fixed value @elcaro.com
+        - At the bottom, you can see examples of the new values will be used
 
-   ![](./images/dms-030.png " ")
+      ![](./images/dms-030.png " ")
 
     - Click [**OK**]
     - Here is the newly created Masking Format
@@ -345,7 +346,7 @@ Click [**Search**]
 
 12. The next step is to format columns by clicking the **Define Format** icon:
 
-   ![](./images/dms-051.png " ")
+      ![](./images/dms-051.png " ")
 
     **Note** Colums that have this icon do not have a masking format defined
 
@@ -403,7 +404,7 @@ Click [**Search**]
 
 16. Enter `FIRSTNAME` as value in the Grouping Columns and click on the **Sample** icon to check the generated masked value
 
-   ![](./images/dms-059.png " ")
+      ![](./images/dms-059.png " ")
 
     **Note** Here, we take the value of `LASTNAME` associated to the `FIRSTNAME` value which has been attributed randomly previoulsy
 
@@ -579,7 +580,7 @@ Click [**Search**]
 
 11. Have a look over the PL/SQL generated script
 
-   ![](./images/dms-086.png " ")
+      ![](./images/dms-086.png " ")
 
     - Oracle Data Masking Pack **performs a series of validation steps** to ensure that the data masking process proceeds to a successful completion without errors. One of the checks that it performs is **validating the masking formats**. This is a necessary step in the data masking process to ensure that the chosen masking formats meet the database and application integrity requirements
     - These requirements may include generating unique values for the column being masked because of uniqueness constraints or generating values that meet the column length or type requirements
@@ -591,7 +592,7 @@ Click [**Search**]
 
     **Tips**: You have the ability to save the script by clicking [**Save Script**]
 
-   ![](./images/dms-087.png " ")
+      ![](./images/dms-087.png " ")
 
     This script could be taken and executed on other targets
 
@@ -694,21 +695,21 @@ Click [**Search**]
 
         - **Before masking** (in PROD)
 
-   ![](./images/dms-099.png " ")
+      ![](./images/dms-099.png " ")
 
         - **After masking** (in DEV)
 
-   ![](./images/dms-100.png " ")
+      ![](./images/dms-100.png " ")
 
     - Users Data:
 
         - **Before masking** (in PROD)
 
-   ![](./images/dms-101.png " ")
+      ![](./images/dms-101.png " ")
 
         - **After masking** (in DEV)
 
-   ![](./images/dms-102.png " ")
+      ![](./images/dms-102.png " ")
 
 8. **Now, your sensitive data has been masked!**
 

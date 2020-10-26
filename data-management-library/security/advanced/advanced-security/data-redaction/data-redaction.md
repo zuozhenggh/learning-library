@@ -1,7 +1,7 @@
 # Oracle Data Redaction
 
 ## Introduction
-This workshop introduces the various features and functionality of Data Redaction.
+This workshop introduces the various features and functionality of Oracle Data Redaction.
 
 It gives the user an opportunity to learn how to configure those features in order to protect access to sensitive data by redacting them on-the-fly.
 
@@ -18,15 +18,15 @@ This lab assumes you have completed:
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
 
-### Video Preview
-- Watch a preview of "*Understanding Oracle Data Redaction (July 2020)*" [](youtube:ssy6Hov-MAs)
-
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
 | 1 | Create a basic Data Redaction policy | 5 minutes |
 | 2 | Contextualize an existing Data Redaction policy | 5 minutes |
 | 3 | (Optional) Drop the Data Redaction policy | <5 minutes |
+
+### Video Preview
+- Watch a preview of "*Understanding Oracle Data Redaction (July 2020)*" [](youtube:ssy6Hov-MAs)
 
 ## **STEP 1**: Create a basic Data Redaction policy
 

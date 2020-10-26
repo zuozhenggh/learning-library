@@ -1,7 +1,7 @@
 # Oracle Audit Vault and DB Firewall (AVDF)
 
 ## Introduction
-This workshop introduces the various features and functionality of Oracle AVDF.
+This workshop introduces the various features and functionality of Oracle Audit Vault and DB Firewall (AVDF).
 
 It gives the user an opportunity to learn how to configure those appliances in order to audit, monitor and protect access to sensitive data.
 
@@ -21,10 +21,6 @@ This lab assumes you have completed:
    - Lab: Environment Setup
    - Lab: Initialize and Start the DBSecLab Environment
    - Lab: DBSAT (please refer to the *Oracle DB Security Baseline Workshop*)
-
-### Video Preview
-
-- Watch a preview of "*Understanding Oracle Audit Vault and Database Firewall 20c (August 2020)*" [](youtube:9xG0GFKbVJk)
 
 ### Lab Timing (estimated)
 
@@ -62,6 +58,9 @@ This lab assumes you have completed:
 <!-- Advanced Labs in progress!
 |19| MySQL Audit Collection | 5 minutes|
 -->
+
+### Video Preview
+- Watch a preview of "*Understanding Oracle Audit Vault and Database Firewall 20c (August 2020)*" [](youtube:9xG0GFKbVJk)
 
 ## **STEP 1**: Audit Vault - Run the Deploy Agent
 
@@ -408,7 +407,6 @@ You have completed the lab.
      - You will be given a URL to access the CSV file that was created during the DBSAT Sensitive Data Discovery lab. It will look like this: `http://<DBSECLAB-VM_@IP-Public>:8080/hr_prod_pdb1/dbsat/pdb1_dbsat_discover.csv`
 
     - Using the web browser, save and download the `pdb1_dbsat_discover.csv` file
-
         - Login to the Audit Vault as `AVADMIN` using the password `T06tron.`
         - Click the `Targets` tab
         - Click the `pdb1` target name
@@ -417,9 +415,7 @@ You have completed the lab.
 
    ![](images/upload_csv_file01.png " ")
 
-        
     - If you click `Sensitive Objects` again you will see you have the `csv` file loaded
-
 
    ![](images/csv_file_loaded01.png " ")
 
@@ -981,9 +977,9 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
       <copy>select USERID,FIRSTNAME,LASTNAME from DEMO_HR_USERS where ( USERSTATUS is NULL or upper( USERSTATUS ) = '######' ) and upper(USERID) = '#######' and password = '#########'</copy>
       ````
 
-       **Note**:
-       - We like this query because this is the authentication SQL the `My HR App` uses to validate the `hradmin` and `Oracle123` password. Remember, the application is authenticated against a table not the database so queries like this will be captured
-       - Notice how the Database Firewall has removed the bind values that would have included the username and password. This is to minimize the collection of sensitive data within Audit Vault and Database Firewall
+     **Note**:
+     - We like this query because this is the authentication SQL the `My HR App` uses to validate the `hradmin` and `Oracle123` password. Remember, the application is authenticated against a table not the database so queries like this will be captured
+     - Notice how the Database Firewall has removed the bind values that would have included the username and password. This is to minimize the collection of sensitive data within Audit Vault and Database Firewall
 
 31. Feel free to continue to explore the captured SQL statements and once you are comfortable, please continue the labs!
 
@@ -1058,7 +1054,7 @@ Sometimes DB Firewall activity may take 5 minutes to appear in the Database Fire
             extracted_from_protocol transaction commit
             extracted_from_protocol invalid '#####################################'
 
-        - They should look like these two screenshots
+    - They should look like these two screenshots
 
    ![](images/hr_sql_profile_statements02.png " ")
 
@@ -1422,7 +1418,7 @@ You may now proceed to the next lab.
    ![](./images/avdf-concept-02.png " ")
 
     - **Deployment Flexibility and Scalability**
-    
+
     Security controls can be customized with in-line monitoring and blocking on some databases and monitoring only on other databases. The multi-stage Database Firewall can be deployed in-line as a database proxy server, or out-of-band in network sniffing mode, or with a host-based agent that relays network activity back to the firewall for analysis and recording. Delivered as a pre-configured software appliance that can be deployed on Linux-compatible hardware of choice, a single Audit Vault Server can consolidate audit data and firewall events from thousands of databases. Both Audit Vault Server and the Database Firewall can be configured in a High Availability mode for fault tolerance.
 
     Oracle Audit Vault and Database Firewall 20c **supports both Cloud and On-Premise databases with one single dashboard**, giving customers insight into the activities on their databases.
