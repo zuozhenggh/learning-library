@@ -1,4 +1,4 @@
-# Lab1: Introduction to Labs and Workshops                                   
+# Introduction to Labs and Workshops                                   
 
 The labs in this workshop walk you through all the steps to **develop labs and workshops**.
 
@@ -44,16 +44,15 @@ The following flow chart shows the process that your need to follow to set up th
 
 
 ## Lab Breakdown
-- **Lab 1:** Introduction to Labs and Workshops
-- **Lab 2:** Get Started with Git and Set up the Environment
-- **Lab 3:** Understand the Folder Structure
-- **Lab 4:** Use Atom Editor and Live Server to Develop Content
-- **Lab 5:** Use GitHub to Commit to Git Repository (Git Web UI)
-- **Lab 6:** Add GitHub Hosted Labs to OHC
+- **Lab 1:** Get Started with Git and Set up the Environment
+- **Lab 2:** Understand the Folder Structure
+- **Lab 3:** Use Atom Editor and Live Server to Develop Content
+- **Lab 4:** Use GitHub to Commit to Git Repository (Git Web UI)
+- **Lab 5:** Add GitHub Hosted Labs to OHC
 
 ## What's Next
 
-  **You are all set to begin the labs! Click Lab 2: Get Started with Git and Set up the Environment in the Contents menu.**
+  **You are all set to begin the labs! Click Lab 1: Get Started with Git and Set up the Environment in the Contents menu.**
 
 ## Want to learn more about labs and workshops?
   Use these links to get more information about Labs and Workshops:

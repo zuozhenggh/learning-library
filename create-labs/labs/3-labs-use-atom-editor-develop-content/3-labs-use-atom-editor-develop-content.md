@@ -80,9 +80,9 @@ You can use project folder in the **learning-library** folder as a template to c
 
 To create your lab and workshop content:
 1. Open your cloned repository using Windows Explorer.
-2. Copy the **learning-library\data-management-library\big-data\bd** folder and paste it in your project folder (create a new folder, such as **create-labs**).
-3. Rename the **bds** project folder to a name of your choice, for example, **labs**.
-4. Rename the workshop and lab folders in the labs folder as per your requirement.  For example, rename **bds-quickstart-workshop** folder to **1-labs-quickstart-workshop** and so on.
+2. Create your workshop folder. For example, **GitHub\learning-library\create-labs\labs\workshops\freetier**.
+3. Go to **learning-library\sample-livelabs-templates\sample-workshop\workshops\freetier** folder.
+4. Copy the `index.html` and `manifest.json` to your workshop folder.
 5. Open **Atom** Editor, browse, and select your project folder. Click **File > Open Folder** to display the **Open Folder** dialog box.
   ![](./images/use-atom-editor-open-folder.png " ")
 6. Navigate to **create-labs\labs** and click **Select Folder**.
