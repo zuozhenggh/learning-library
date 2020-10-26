@@ -25,151 +25,53 @@ Estimated Lab Time: 2 hours
 - An OCI account with proper privileges to access the object storage in OCI
 
 
-## **STEP 1:** Start the On-Premise Oracle Database
+## **STEP 1:** Download the Cloud Backup Module
 
-If your lab local database in the VM is not running for some reason (it should be).
+1. Log back in as user **oracle**.
 
-1. Log in as user **oracle**. Open a terminal.
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
 
-2. Startup the listener.
+2. Create a `downloads` directory and cd into it.
 
-      ```
-      [oracle@dbhost ~]$ <copy>. oraenv</copy>
-      ORACLE_SID = [oracle] ? ORCL
-      The Oracle base has been set to /u01/app/oracle
-      ```
+    ```
+    <copy>mkdir downloads ; cd downloads</copy>
+    ```
 
-      ```
-      [oracle@dbhost ~]$ <copy>lsnrctl start</copy>
+3. You can download the backup module from [Oracle Cloud Backup Downloads](https://www.oracle.com/database/technologies/oracle-cloud-backup-downloads.html), however, to load the zip through Cloud Shell, you will use this `wget` command:
 
-      LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 09-APR-2020 12:41:12
+    ```
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/wca3eJkQbQO5uK8yNu33FVtASa0gLhZC1CMrXW6rsEb8JunoEHtw4zlsjQYBCb-x/n/c4u03/b/data-management-library-files/o/opc_installer.zip</copy>
+    ```
 
-      Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+4. Extract the contents of the zip file. The file contains two directories: oci\_installer and opc\_installer, and a README file.
 
-      Starting /u01/app/oracle/product/19c/dbhome_1/bin/tnslsnr: please wait...
+    ```
+    [oracle@dbhost downloads]$ <copy>unzip opc_installer.zip; cd opc_installer</copy>
+    ```
 
-      TNSLSNR for Linux: Version 19.0.0.0.0 - Production
-      System parameter file is /u01/app/oracle/product/19c/dbhome_1/network/admin/listener.ora
-      Log messages written to /u01/app/oracle/diag/tnslsnr/dbhost/listener/alert/log.xml
-      Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=dbhost)(PORT=1521)))
-      Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+5. The **oci\_installer** directory contain the Oracle Database Cloud Backup Module for OCI, the **opc\_installer** directory contain the Oracle Database Cloud Backup Module for OCI Classic. In the following steps we will use Oracle Cloud Infrastructure, so cd into the **oci\_installer** directory.
 
-      Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=dbhost.sub06040858160.vcnapac.oraclevcn.com)(PORT=1521)))
-      STATUS of the LISTENER
-      ------------------------
-      Alias                     LISTENER
-      Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
-      Start Date                09-APR-2020 12:41:12
-      Uptime                    0 days 0 hr. 0 min. 0 sec
-      Trace Level               off
-      Security                  ON: Local OS Authentication
-      SNMP                      OFF
-      Listener Parameter File   /u01/app/oracle/product/19c/dbhome_1/network/admin/listener.ora
-      Listener Log File         /u01/app/oracle/diag/tnslsnr/dbhost/listener/alert/log.xml
-      Listening Endpoints Summary...
-      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=dbhost)(PORT=1521)))
-      (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
-      The listener supports no services
-      The command completed successfully
-      [oracle@dbhost ~]$
-      ```
+    ```
+    [oracle@dbhost opc_installer]$ <copy>cd oci_installer/</copy>
+    ```
 
-3. Startup database
+    ```
+    [oracle@dbhost oci_installer]$ <copy>ls</copy>
+    oci_install.jar  oci_readme.txt
+    ```
 
-      ```
-      [oracle@dbhost ~]$ <copy>sqlplus / as sysdba</copy>
+6. Check your JDK version is JDK 1.7 or above.
 
-      SQL*Plus: Release 19.0.0.0.0 - Production on Thu Apr 9 12:43:30 2020
-      Version 19.5.0.0.0
+    ```
+    [oracle@dbhost oci_installer]$ <copy>java -version</copy>
+    openjdk version "1.8.0_232"
+    OpenJDK Runtime Environment (build 1.8.0_232-b09)
+    OpenJDK 64-Bit Server VM (build 25.232-b09, mixed mode)
+    ```
 
-      Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-
-      Connected to an idle instance.
-      ```
-
-      ```
-      SQL> <copy>startup</copy>
-      ORACLE instance started.
-
-      Total System Global Area 9428793296 bytes
-      Fixed Size		    9144272 bytes
-      Variable Size		 1476395008 bytes
-      Database Buffers	 7918845952 bytes
-      Redo Buffers		   24408064 bytes
-      Database mounted.
-      Database opened.
-      ```
-
-      ```
-      SQL> <copy>exit</copy>
-      Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-      Version 19.5.0.0.0
-      [oracle@dbhost ~]$
-      ```
-
-## **STEP 2:** Download the Cloud Backup Module
-
-1. You can download the backup module from [Oracle Cloud Backup Downloads](https://www.oracle.com/database/technologies/oracle-cloud-backup-downloads.html).
-
-   Click *All Supported Platforms*, Accept the license agreement, and provide your OTN user name and password when prompted. Then download the ZIP file that contains the installer (**opc_installer.zip**) to your system. For example, the download file under the /home/oracle/Downloads directory.
-
-2. Open up a terminal window, cd into the /home/oracle/Download directory. Extract the contents of the zip file. The file contains two directories: oci\_installer and opc\_installer, and a README file.
-
-      ```
-      [oracle@dbhost ~]$ <copy>cd /home/oracle/Downloads/</copy>
-      ```
-
-      ```
-      [oracle@dbhost Downloads]$ <copy>unzip opc_installer.zip</copy>
-      Archive:  opc_installer.zip
-         creating: opc_installer/
-      inflating: opc_installer/.DS_Store  
-         creating: __MACOSX/
-         creating: __MACOSX/opc_installer/
-      inflating: __MACOSX/opc_installer/._.DS_Store  
-         creating: opc_installer/oci_installer/
-      inflating: opc_installer/oci_installer/oci_readme.txt  
-         creating: __MACOSX/opc_installer/oci_installer/
-      inflating: __MACOSX/opc_installer/oci_installer/._oci_readme.txt  
-      inflating: opc_installer/oci_installer/oci_install.jar  
-      inflating: __MACOSX/opc_installer/oci_installer/._oci_install.jar  
-      inflating: __MACOSX/opc_installer/._oci_installer  
-      inflating: opc_installer/readme.txt  
-      inflating: __MACOSX/opc_installer/._readme.txt  
-         creating: opc_installer/opc_installer/
-      inflating: opc_installer/opc_installer/opc_readme.txt  
-         creating: __MACOSX/opc_installer/opc_installer/
-      inflating: __MACOSX/opc_installer/opc_installer/._opc_readme.txt  
-      inflating: opc_installer/opc_installer/opc_install.jar  
-      inflating: __MACOSX/opc_installer/opc_installer/._opc_install.jar  
-      inflating: __MACOSX/opc_installer/._opc_installer  
-      inflating: __MACOSX/._opc_installer  
-      [oracle@dbhost Downloads]$ cd opc_installer
-      [oracle@dbhost opc_installer]$ ls
-      oci_installer  opc_installer  readme.txt
-      ```
-
-3. The **oci\_installer** directory contain the Oracle Database Cloud Backup Module for OCI, the **opc\_installer** directory contain the Oracle Database Cloud Backup Module for OCI Classic. In the following steps we will use Oracle Cloud Infrastructure, so cd into the **oci\_installer** directory.
-
-      ```
-      [oracle@dbhost opc_installer]$ <copy>cd oci_installer/</copy>
-      ```
-
-      ```
-      [oracle@dbhost oci_installer]$ <copy>ls</copy>
-      oci_install.jar  oci_readme.txt
-      ```
-
-4. Check your JDK version is JDK 1.7 or above.
-
-      ```
-      [oracle@dbhost oci_installer]$ <copy>java -version</copy>
-      openjdk version "1.8.0_232"
-      OpenJDK Runtime Environment (build 1.8.0_232-b09)
-      OpenJDK 64-Bit Server VM (build 25.232-b09, mixed mode)
-      ```
-
-## **STEP 3:** Prepare SSH Keys Pairs
+## **STEP 2:** Prepare SSH Keys Pairs and collect data
 
 For the Oracle Database Backup Cloud Service, you need to have the identifiers and credentials below.  You will need an OCI user able to call APIs with these credentials.
 
@@ -179,68 +81,91 @@ For the Oracle Database Backup Cloud Service, you need to have the identifiers a
 
 1. If you haven't already, create a `.oci` directory to store the credentials:
 
-      ```
-      <copy>mkdir ~/.oci</copy>
-      ```
+    ```
+    <copy>mkdir ~/.oci</copy>
+    ```
 
 2. Generate the private key with one of the following commands.
 
-      ```
-      <copy>openssl genrsa -out ~/.oci/oci_api_key.pem 2048</copy>
-      ```
+    ```
+    <copy>openssl genrsa -out ~/.oci/oci_api_key.pem 2048</copy>
+    ```
 
 3. Ensure that only you can read the private key file:
 
-      ```
-      <copy>chmod go-rwx ~/.oci/oci_api_key.pem</copy>
-      ```
+    ```
+    <copy>chmod go-rwx ~/.oci/oci_api_key.pem</copy>
+    ```
 
 4. Generate the public key:
 
-      ```
-      <copy>openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem</copy>
-      ```
+    ```
+    <copy>openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem</copy>
+    ```
 
 5. Cat the public key. Copy all the content of the public key.
 
-      ```
-      <copy>cat ~/.oci/oci_api_key_public.pem</copy>
-      ```
+    ```
+    <copy>cat ~/.oci/oci_api_key_public.pem</copy>
+    ```
 
 6. Get the key's fingerprint with the following OpenSSL command. If you are using Windows you can get the fingerprint with Git Bash for Windows.
 
-      ```
-      <copy>openssl rsa -pubout -outform DER -in ~/.oci/oci_api_key.pem | openssl md5 -c</copy>
-      ```
+    ```
+    <copy>openssl rsa -pubout -outform DER -in ~/.oci/oci_api_key.pem | openssl md5 -c</copy>
+    ```
 
    When you upload the public key in the Console, the fingerprint is also automatically displayed there.
 
-7. From the OCI console, click the user icon (top Rrght of your browswer) and click **User Settings**. Click **API Keys** and **Add Public Key**.
+7. From the OCI console, click the user icon (top right of your browser) and click **User Settings**. Click **API Keys** and **Add Public Key**.
    ![](./images/image-20200410092352601.png " ")
    ![](./images/image-20200410092545424.png " ")
 
 8. Paste the content of oci\_api\_key\_public.pem copied earlier and click **Add**. A new finger print will be generated. Compare the fingerprint in the output of config file to the one in OCI console window and make sure they match.
    ![](./images/image-20200410092732073.png " ")
 
-To see more information about generating the keys and finding your OCIDs, refer to [API Signing Key](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm).
+  Make a note of the fingerprint for later.
 
-## **STEP 4:** Install the Backup Module
+  To see more information about generating the keys and finding your OCIDs, refer to [API Signing Key](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm).
+
+9. On the User Details page, copy the user OCID and save it for later:
+
+  ![](images/user-ocid.png)
+
+10. Click on the user icon again and click **Tenancy: <tenancy-name>**, then copy and save the tenancy OCID for later:
+
+  ![](images/tenancy-ocid.png)
+
+<if type="livelabs">
+11. From the Oracle Cloud menu, select **Governance** -> **Compartment Explorer**.
+
+  ![](images/compartment-explorer.png)
+
+12. Select the compartment assigned to you from the left, then click on the compartment link above.
+
+  ![](images/select-compartment.png)
+</if>
+13. From your compartment details page, copy the compartment OCID and save it for later.
+
+  ![](images/compartment-details.png)
+
+## **STEP 3:** Install the Backup Module
 
 Run the installer, **oci\_install.jar** to install the backup module. This example shows how the installer automatically downloads the Oracle Database Cloud Backup Module for OCI for your operating system, creates a wallet that contains Oracle Database Backup Cloud Service identifiers and credentials, creates the backup module configuration file, and downloads the library necessary for backups and restores to Oracle Cloud Infrastructure.  Provide the required parameters in one line, with each parameter preceded by a hyphen and followed by its value.
 
 The following table lists the required and some optional parameters.
 
-| **Parameter**             | **Description**                                              |
-| ------------------------- | ------------------------------------------------------------ |
-| -host                     | End point of the Oracle Cloud Infrastructure account.        |
-| -pvtKeyFile               | File that contains the private key used to authenticate Oracle Cloud Infrastructure API requests. The key file must be in PEM format. |
-| -pubFingerPrint           | Finger print of the public key paired with the specified private key. |
-| -tOCID          | Tenancy OCID for the Oracle Cloud Infrastructure account.    |
-| -uOCID          | User OCID for the Oracle Cloud Infrastructure account.       |
-| -cOCID          | Resource compartment ID for the Oracle Cloud Infrastructure account. |
-| -bucket         | Name of the bucket in which backups are stored. If this bucket does not exist, then the installer creates it. When this parameter is omitted, a default bucket is automatically created to store backups |
-| -walletDir      | Directory in which Oracle Cloud Infrastructure Object Storage credentials are stored. |
-| -libDir         | Directory in which the system backup to tape (SBT) library used for backups and restores with Oracle Cloud Infrastructure is stored. |
+| **Parameter**             | **Description**                                              | **Required or Optional**|
+| ------------------------- | ------------------------------------------------------------ |-------------------------|
+| -host                     | End point of the Oracle Cloud Infrastructure account. Constructed as https://objectstorage.`<region>`.oraclecloud.com. See [this reference](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm) for the region codes.       |Required                 |
+| -vtKeyFile               | File that contains the private key used to authenticate Oracle Cloud Infrastructure API requests. The key file must be in PEM format. |Required|
+| -pubFingerPrint           | Finger print of the public key paired with the specified private key. |Required|
+| -tOCID          | Tenancy OCID for the Oracle Cloud Infrastructure account.    |Required|
+| -uOCID          | User OCID for the Oracle Cloud Infrastructure account.       |Required|
+| -cOCID          | Resource compartment ID for the Oracle Cloud Infrastructure account. |Required|
+| -bucket         | Name of the bucket in which backups are stored. If this bucket does not exist, then the installer creates it. When this parameter is omitted, a default bucket is automatically created to store backups |Optional|
+| -walletDir      | Directory in which Oracle Cloud Infrastructure Object Storage credentials are stored. |Required|
+| -libDir         | Directory in which the system backup to tape (SBT) library used for backups and restores with Oracle Cloud Infrastructure is stored. |Required|
 
 
 The installation creates a configuration file *opcORCL.ora* and wallet directory *oci\_wallet* and places these in $ORACLE_HOME/dbs.
@@ -249,10 +174,10 @@ It also downloads a library file *libopc.so* (Linux and Unix) or *oraopc.dll* (W
 
 It also downloads cwallet.sso an Oracle wallet that securely stores Oracle Object Storage credentials.  This file is used during RMAN backup and restore operations.
 
-1. Run the following command to install the backup module, change the parameters values base on your environment.
+1. Run the following command to install the backup module, changing the parameter values based on your environment.
 
       ```
-      [oracle@dbhost oci_installer]$ <copy>java -jar oci_install.jar -host https://objectstorage.ap-seoul-1.oraclecloud.com -pvtKeyFile ~/.oci/oci_api_key.pem -pubFingerPrint fd:67:91:7a:60:5d:04:d3:65:8e:21:8d:ec:6a:24:8f -uOCID ocid1.user.oc1..aaaaaaaav2y6juu6mcps2ofzyklpxaznyqzs3cul5nrqmtrnumd3f6g6oo7a -tOCID ocid1.tenancy.oc1..aaaaaaaafj37mytx22oquorcznlfuh77cd45int7tt7fo27tuejsfqbybzrq -cOCID ocid1.compartment.oc1..aaaaaaaa6xdd35koxkce2mk2aqfwphtcdb36ne7qoomtfqgjzkcuglzl2lua -walletDir $ORACLE_HOME/dbs/oci_wallet -libDir $ORACLE_HOME/lib -bucket db_backups</copy>
+      [oracle@dbhost oci_installer]$ <copy>java -jar oci_install.jar -host <host> -pvtKeyFile ~/.oci/oci_api_key.pem -pubFingerPrint <fingerprint> -uOCID <user-ocid> -tOCID <tenancy-ocid> -cOCID <compartment-ocid> -walletDir $ORACLE_HOME/dbs/oci_wallet -libDir $ORACLE_HOME/lib -bucket db_backups</copy>
 
       Oracle Database Cloud Backup Module Install Tool, build 19.3.0.0.0DBBKPCSBP_2019-10-16
       Oracle Database Cloud Backup Module credentials are valid.
@@ -281,7 +206,7 @@ It also downloads cwallet.sso an Oracle wallet that securely stores Oracle Objec
       cwallet.sso  cwallet.sso.lck
       ```
 
-## **STEP 5:** Prepare the on premise database
+## **STEP 4:** Prepare the on premise database
 Now, We will set the database to Archivelog mode. Create a user in the pdb and create a new table for testing the backup and recover.
 
 1. Start a SQL\*Plus session
@@ -298,7 +223,10 @@ Now, We will set the database to Archivelog mode. Create a user in the pdb and c
       Database closed.
       Database dismounted.
       ORACLE instance shut down.
-      SQL> startup mount;
+      ```
+
+      ```
+      SQL> <copy>startup mount;</copy>
       ORACLE instance started.
 
       Total System Global Area 9428793296 bytes
@@ -365,45 +293,30 @@ Now, We will set the database to Archivelog mode. Create a user in the pdb and c
 4. Create a new table for testing database backup and recovery.
 
       ```
-      SQL> <copy>create user johnsmith identified by johnsmith;</copy>
-
-      User created.
-      ```
-
-      ```
-      SQL> <copy>grant connect, resource, dba, create table to johnsmith;</copy>
-
-      Grant succeeded.
-      ```
-
-      ```
       SQL> <copy>create table johnsmith.mstars(firstname varchar2(20),lastname varchar2(20));</copy>
 
       Table created.
       ```
 
       ```
-      SQL> <copy>insert into johnsmith.mstars values('Jimmy','Stewart');</copy>
+      SQL> <copy>
+      insert into johnsmith.mstars values('Jimmy','Stewart');
+      insert into johnsmith.mstars values('Katharine','Hepburn');
+      insert into johnsmith.mstars values('Tom','Hanks');
+      insert into johnsmith.mstars values('Anne','Hathaway');</copy>
+      1 row created.
+
+      SQL>
+      1 row created.
+
+      SQL>
+      1 row created.
+
+      SQL>
 
       1 row created.
-      ```
 
-      ```
-      SQL> <copy>insert into johnsmith.mstars values('Katharine','Hepburn');</copy>
-
-      1 row created.
-      ```
-
-      ```
-      SQL> <copy>insert into johnsmith.mstars values('Tom','Hanks');</copy>
-
-      1 row created.
-      ```
-
-      ```
-      SQL> <copy>insert into johnsmith.mstars values('Anne','Hathaway');</copy>
-
-      1 row created.
+      SQL>
       ```
 
       ```
@@ -419,7 +332,7 @@ Now, We will set the database to Archivelog mode. Create a user in the pdb and c
       [oracle@dbhost oci_installer]$
       ```
 
-## **STEP 6:** Configure RMAN to support Cloud Backups
+## **STEP 5:** Configure RMAN to support Cloud Backups
 
    Before we can do backups to the Cloud storage location in your account, you need to configure a number of RMAN properties. These properties define:
 
@@ -536,7 +449,7 @@ Now, We will set the database to Archivelog mode. Create a user in the pdb and c
       RMAN>   
       ```
 
-## **STEP 7:** Backup the On Premise Database
+## **STEP 6:** Backup the On Premise Database
 
 For backup and recovery we could always run the following sequence of commands from a shell script or an RMAN run block, but we’ll be copying and pasting each individual command in sequence so you’ll get a better feel for what is going on.
 
@@ -701,6 +614,12 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       RMAN>
       ```
 
+5. Exit RMAN
+
+    ```
+    RMAN> <copy>exit</copy>
+    ```
+
 5. Open a browser and login in to the OCI Console. Click the main menu and select **Object Storage**, Click the **Object Storage**.
    ![](./images/image-20200410112406052.png " ")
 
@@ -710,7 +629,7 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
 7. In the bucket, you can see the file\_chunks of the backup set.
    ![](./images/image-20200410113002589.png " ")
 
-## **STEP 8:** Query and Exit
+## **STEP 7:** Query and Exit
 
 1. Open up a new terminal window and connect to the **johnsmith** schema in the local **orclpdb** container database.
 
@@ -745,29 +664,40 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       SQL>
       ```
 
-3. Drop the table and exit out of sqlplus
+3. Drop the table and query the table again:
 
       ```
       SQL> <copy>drop table mstars;</copy>
 
       Table dropped.
+      ```
 
-      SQL> exit;
+      ```
+      SQL> <copy>select * from mstars;</copy>
+      select * from mstars
+                    *
+      ERROR at line 1:
+      ORA-00942: table or view does not exist
+      SQL>
+      ```
+
+4. Exit out of sqlplus:
+
+      ```
+      SQL> <copy>exit;</copy>
       Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
       Version 19.5.0.0.0
       [oracle@dbhost ~]$
       ```
 
-## **STEP 9:** Restore and Recover the Database to a Point in Time
+## **STEP 8:** Restore and Recover the Database to a Point in Time
 
 We now need to restore the database to the point in time before the **mstar** table was accidentally deleted (:> The backup files stored in cloud will be used.
 
 1. Go back to the RMAN session you used in the previous steps. If you’ve exited out of RMAN, it can be reloaded by entering the following within a terminal window:
 
       ```
-      <copy>
-      RMAN target /
-      </copy>
+      $ <copy>rman target /</copy>
       ```
 
 2. Shutdown the database and startup mount.
@@ -894,7 +824,13 @@ We now need to restore the database to the point in time before the **mstar** ta
       RMAN>
       ```
 
-6. Once the script completes, go back to the terminal window you used to connect with sqlplus and re-connect back into the **orclpdb** container as **johnsmith/johnsmith** and query to see if the **mstars** table has been recovered.
+6. When the script completes, exit RMAN:
+
+    ```
+    RMAN> <copy>exit</copy>
+    ```
+
+7. Connect with sqlplus and re-connect back into the **orclpdb** container as **johnsmith/johnsmith** and query to see if the **mstars** table has been recovered.
 
       ```
       [oracle@dbhost ~]$ <copy>sqlplus johnsmith/johnsmith@orclpdb</copy>
@@ -923,6 +859,8 @@ We now need to restore the database to the point in time before the **mstar** ta
       SQL>
       ```
 
+*Congratulations! You have successfully recovered your data, and completed this workshop.*
+
 ## Appendix
 
 In case your backup does not complete properly you can clean up the partial backupset and rerun the backup. You may have to wait a few minutes after the backup failure before the partial backup files can be deleted.
@@ -946,7 +884,7 @@ In case your backup does not complete properly you can clean up the partial back
 
 - **Author** - Minqiao Wang, Database Product Management, PTS China - April 2020
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Minqiao Wang, Tom McGinn, Sep 2020
+- **Last Updated By/Date** - Tom McGinn, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
