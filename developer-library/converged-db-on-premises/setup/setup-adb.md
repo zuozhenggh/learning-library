@@ -3,30 +3,55 @@
 ## Introduction
 This lab will show you how to start a database instance and listener from a Putty window. You will also setup SQL Developer.
 
-*Estimated time:* 10 Minutes
+*Estimated time:* 40 Minutes
 
 ### Objectives
-- Start the Oracle Database and Listener
-- Download and Setup SQL Developer Client
+- Gather info about your 
+- Start SQL Developer Web
 
 ### Prerequisites
+- Lab: Generate SSH Keys
+- Lab: Provision ATP
 
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
+## **STEP 1:** Start Cloud Shell and Create Auth Token
+There are multiple ways to create an authorization token for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Auth Tokens and use the interface, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 3](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
-## **STEP 1:** Login to ConvergedDB Compute instance
-If you aren't already logged in, follow the steps below to login.  If you are logged in, skip to Step 2.
+1. Login to the Oracle Cloud console if you aren't logged in already
 
-1. Click the Hamburger Menu in the top left corner. Then hover over **Compute** > **Instances**. Find the instance you created in the previous lab.
+2. Navigate back to your Autonomous Database instance by clicking on the hamburger menu and selecting Autonomous Transaction Processing (ATP) (*Note:* This workshop can run on Autonomous Data Warehouse, Autonmous JSON Database and ATP, the instructions are the same).
+3. Start Oracle Cloud Shell by clicking on the icon in the upper right corner
+4. While still in the upper right corner click on the person icon.
+5. Click on the user you logged in as
+6. Show the Oracle Cloud ID (OCID) for the user, copy it to a notepad
+7. Create the Authorization Token that you will need to load your database by copying the command below and pasting it into your Cloud Shell.  Paste in your user OCID in for the ocid below.
+   ````
+   <copy>
+   oci iam auth-token create --description convergeddb --user-id </copy> ocid1.user.oc1.pasteinyourocid
+   ````
+8. Copy the value for token to a note pad.  This is *very important*
 
-   ![](./images/nav_compute_instance.png " ")
 
-2. Click on your instance and copy your Public IP address to a notepad.
+## **STEP 2:** Create Oracle Wallet
+There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
-   ![](./images/public_ip.png " ")
+1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing**
+2.  Click on the **Display Name**
+3.  Copy the Autonomous Databse OCID to a notepad
+4.  Create the Database Wallet that you will need to connect to your ATP instance
+5.  In the General Information section find the OCID, click copy and paste this command.  Add the OCID you just copied into the command line
+   ````
+   <copy>
+oci db autonomous-database generate-wallet --password WElcome123## --file converged-wallet.zip --autonomous-database-id </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
+   ````
+6.  The wallet file will be downloaded to your cloud shell
+7.  Click the list command below to verify it was created
+      ````
+      ls
+      ````
 
 
-3. In Oracle Cloud Shell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user.  
+
+8.  In Oracle Cloud Shell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user.  
 
       ````
       ssh -i <<sshkeylocation>> opc@<<your address>>
