@@ -79,9 +79,8 @@ You may proceed to the next lab.
 
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Author** - Randall Barnes, Solution Architect, OCI Observability Team
+* **Last Updated Date** - 21-Oct-2020
 
 
 ## Need Help?

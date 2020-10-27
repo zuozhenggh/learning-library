@@ -8,7 +8,7 @@ The Oracle Cloud Infrastructure Logging service is a highly scalable and fully m
 
 
 
-Estimated Lab Time: 35 minutes
+Estimated Lab Time: 45 minutes
 
 ### About Product/Technology
 Oracle Cloud Infrastructure (OCI) has introduced a fully managed Logging service which is a highly scalable log management and search platform that simplifies collecting, managing, and exploring your logs.

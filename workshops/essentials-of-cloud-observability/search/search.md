@@ -13,7 +13,7 @@ Estimated Lab Time: 5 minutes
 
 In this lab, you will:
 
-* Become familiar with the Log Search console
+* Become familiar with the Log Search console.
 * Search content from logs created in the preceding Labs.
 
 ### Prerequisites
@@ -28,11 +28,11 @@ In this lab, you will:
 
     ![Log Search](images/log-search.png)
 
-Click inside the **SELECT LOGS TO SEARCH** box to bring up the search panel.  
+   Click inside the **SELECT LOGS TO SEARCH** box to bring up the search panel.  
 
-Select logservicedemo **COMPARTMENT**, logservicelg **Log Groups** and both the custom and service log listed in the **LOGS** section.
+   Select logservicedemo **COMPARTMENT**, logservicelg **Log Groups** and both the custom and service log listed in the **LOGS** section.
 
-Your selection screen should look similar to the image below.
+   Your selection screen should look similar to the image below.
 
 
   ![Log Search](images/select-logs.png)
