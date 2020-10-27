@@ -1,9 +1,8 @@
 {
   "workshoptitle": "Creating Workshops and Labs",
     "tutorials": [
-
       {
-          "title": "Introduction to Workshops and Labs",
+          "title": "Introduction to Labs and Workshops",
           "description": "This lab provides an overview of the workshops and labs (livelabs).",
           "filename": "./intro.md"
       }
