@@ -235,14 +235,14 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
     BASTION_IP=<IP of the Bastion Instance or Public IP of the Admin server, from WLS Admin URL>
 
     TARGET_DB_NAME=wlsatpdb
-    TARGET_DB_OCID=
-    TARGET_DB_HOST=10.0.5.2
+    TARGET_DB_OCID=<OCID of the ATP database>
+    TARGET_DB_HOST=<Private Endpoint IP>
 
     BUCKET=atp-upload
     REGION=us-ashburn-1
     NAMESPACE=<Tenancy namespace>
 
-    OCI_USER=<full username>
+    OCI_USER=<full username, usually email, sometimes prefixed with IDCS service name>
     OCI_TOKEN='<auth token>'
 
     TARGET_DB_PORT=1522
@@ -252,11 +252,7 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
 
 2. Enter the `BASTION_IP`
 
-     The `BASTION_IP` is the **public IP** of the WebLogic Admin Server that can be found in the output of the job that deployed the WebLogic stack, as part of the WebLogic Admin Server console URL.
-
-     Find it in **Resource Manager -> Stack -> stack details -> job details -> Outputs**
-
-       ![](./images/migrate-db-2.png)
+     The `BASTION_IP` is the **public IP** through which to reach the database subnet (either the WLS Admin server Public IP if you provisioned in a public subnet, or the Bastion Instance Public IP if you provisioned in a private subnet). Either are found in the **Output** of the WebLogic deployment stack.
 
 3. Go to **Oracle Database -> Autonomous Transaction Processing**
 
@@ -276,7 +272,7 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
 
 10. **Enter** the name of your namespace as `NAMESPACE`. This was output when you tested the OCI CLI.
 
-11. Go to **User -> Settings** and copy your full username (usually email prefixed with the ID service if your login is through Single Sign On). Enter it as the `OCI_USER` variable
+11. Go to **User -> Settings** and copy your *full username* (it usually consists of your email, sometimes prefixed with the ID service if your login is through Single Sign On). Enter it as the `OCI_USER` variable
 
 12. In **User -> Settings** click **Auth Tokens**
 
@@ -330,7 +326,7 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
 
     Go to **Core Infrastructure -> Compute -> Instances**
 
-    View the list of WebLogic servers and gather the Public IPs
+    View the list of WebLogic servers and gather the IP addresses
 
 2. Run the following command, to copy the wallet on each server
 
@@ -347,7 +343,15 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     ```bash
     <copy>
     scp wallet.zip opc@${TARGET_WLS_SERVER}:~/
+    </copy>
+    ```
+    ```bash
+    <copy>
     ssh opc@${TARGET_WLS_SERVER} "sudo chown oracle:oracle wallet.zip"
+    </copy>
+    ```
+    ```bash
+    <copy>
     ssh opc@${TARGET_WLS_SERVER} "sudo unzip wallet.zip -d /u01/data/domains/nonjrf_domain/config/atp/"
     </copy>
     ```
@@ -358,6 +362,10 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     ```bash
     <copy>
     export TARGET_WLS_SERVER=<IP of a WLS server>
+    </copy>
+    ```
+    ```bash
+    <copy>
     export BASTION_IP=<Public IP of the Bastion Instance>
     </copy>
     ```
@@ -367,8 +375,17 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     ```bash
     <copy>
     scp -o ProxyCommand="ssh opc@${BASTION_IP} -W %h:%p" wallet.zip opc@${TARGET_WLS_SERVER}:~/
+    </copy>
+    ```
+    ```bash
+    <copy>
     ssh -o ProxyCommand="ssh opc@${BASTION_IP} -W %h:%p" opc@${TARGET_WLS_SERVER} "sudo chown oracle:oracle wallet.zip"
+    </copy>
+    ```
+    ```bash
+    <copy>
     ssh -o ProxyCommand="ssh opc@${BASTION_IP} -W %h:%p" opc@${TARGET_WLS_SERVER} "sudo unzip wallet.zip -d /u01/data/domains/nonjrf_domain/config/atp/"
+    
     </copy>
     ```
 

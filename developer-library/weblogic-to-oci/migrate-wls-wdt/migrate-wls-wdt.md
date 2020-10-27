@@ -799,7 +799,7 @@ updateDomain.sh completed successfully (exit code = 0)
 
 ## **STEP 6:** Check that the app deployed properly
 
-1. Go to the WebLogic Admin console (at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console if you deployed in a *Public Subnet*), or through the tunnel as you did earlier.
+1. Go to the WebLogic Admin console (at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console if you deployed in a *Public Subnet*), or through the tunnel (at https://localhost:7002/console) as you did earlier.
 
     Note: If you're using Chrome, you might encounter Self-signed certificate issues. We recommend using Firefox to test.
 
