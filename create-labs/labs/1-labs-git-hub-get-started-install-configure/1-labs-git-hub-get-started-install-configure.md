@@ -103,7 +103,7 @@ In the following example, user achepuri has forked the learning-library reposito
 
 In the next step, you will clone this forked repository.
 
-## **STEP 7:** Clone the Forked repository
+## **STEP 7:** Clone the Forked Repository
 A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as Atom, and use the GitHub Desktop client to keep track of your changes without having to be online.
 
 To clone the forked repository:
