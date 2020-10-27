@@ -4,7 +4,7 @@
         {
             "title": "Introduction",
             "description": "Steps to set up the python environment and install pytorch",
-            "filename": "../../prerequisites/prerequisites.md"        
+            "filename": "../../introduction/introduction.md"         
         },
         {
             "title": "Prerequisites",

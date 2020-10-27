@@ -5,7 +5,7 @@
 ## Introduction
 The [Training a Classifier](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html) guide from PyTorch is a great place to start, but some of the details of the code are explained too sparsely for a reader new to the field. This lab builds on that tutorial as a base with line-by-line explanations of the code to facilitate a clearer learning pathway.
 
-Estimated Lab Time:  50 minutes
+Estimated Lab Time:  45 minutes
 
 ### Objectives
 In this lab, you will learn about:
