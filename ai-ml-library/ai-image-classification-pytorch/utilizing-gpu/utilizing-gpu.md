@@ -19,21 +19,21 @@ This lab assumes you have:
 
 1. After the imports, add this line of code:
 
-```python
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-```
+    ```python
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    ```
 
 2. This line of code will set the device for the torch framework based on what is available on the system. The in-line if-statement allows the code to execute even if a GPU is not available as it defaults the value back to `cpu`. After line 45 in the provided complete code, after `net` is instantiated, move the `net` model to the GPU by running this line of code.
 
-```python
-net.to(device)
-```
+    ```python
+    net.to(device)
+    ```
 
 3. Finally, during the training we need to move the batched data over to the GPU for processing. Replace line 55 in the provided code with this line.
 
-```python
-inputs, labels = data[0].to(device), data[1].to(device)
-```
+    ```python
+    inputs, labels = data[0].to(device), data[1].to(device)
+    ```
 
 `data[0]` contains the batched images, and `data[1]` contains the matching labels. All of those values are sent over to the GPU with `.to(device)`. That's it! PyTorch makes it easy to enable the GPU with declarative syntax.
 
