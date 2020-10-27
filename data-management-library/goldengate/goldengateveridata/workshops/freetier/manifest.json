@@ -1,48 +1,43 @@
 {
-  "workshoptitle": "Getting Started with Oracle Big Data Service (non-HA)",
+  "workshoptitle": "Getting Started with Oracle GoldenGate Veridata",
     "tutorials": [
-      
+
       {
-          "title": "Introduction to Oracle Big Data Service (BDS)",
-          "description": "Introduction to Oracle Big Data Service",
-          "filename": "./intro.md"
-      }
-      ,
-      {
-            "title": "Lab 1: Install and Configure Oracle GoldenGate Veridata",
-            "description": "This lab walks you through the required and optional tasks to setup your Big Data Service environment before you can create clusters.",
-            "filename": "./../../ggv-install-veridata/ggv-install-veridata.md"
-      }
-      ,
-      {
-            "title": "Lab 2: Create Multiple Veridata Domains",
-            "description": "This lab walks you through how to create a BDS Highly Available (HA) Hadoop cluster.",
-            "filename": "./../../ggv-create-multiple-domains/ggv-create-multiple-domains.md"
-      }
-      ,
-      {
-            "title": "Lab 3: Add Oracle Cloud SQL to the Cluster",
-            "description": "This lab shows you how to add Oracle Cloud SQL to your BDS cluster.",
-            "filename": "./../../bds-add-cloud-sql/bds-add-cloud-sql.md"
-      }
-      ,
-      {
-            "title": "Lab 4: Access a BDS Node Using a Public IP Address",
-            "description": "This lab shows you how to map a node's private IP address to a public IP address",
-            "filename": "./../../bds-access-utility-node/bds-access-utility-node.md"
+            "title": "Introduction to Labs and Workshops",
+            "description": "This lab provides an overview of the workshops and labs (livelabs).",
+            "filename": "./intro.md"
         }
         ,
         {
-              "title": "Lab 5:  Use Cloudera Manager and Hue to Access a BDS Cluster",
-              "description": "This lab shows you how to use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.",
-              "filename": "./../../bds-use-cm-hue-access-cluster/bds-use-cm-hue-access-cluster.md"
+              "title": "Lab 1: Get Started with Git and Set up the Environment",
+              "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop",
+              "filename": "./../../1-labs-git-hub-get-started-install-configure/1-labs-git-hub-get-started-install-configure.md"
+        }
+        ,
+        {
+              "title": "Lab 2: Understand the learning-library Folder Structure",
+              "description": "This lab describes the prescribed folder structure that we need follow for developing labs and workshops.",
+              "filename": "./../../2-labs-templates-folder-structure/2-labs-templates-folder-structure.md"
+        }
+        ,
+        {
+              "title": "Lab 3: Use Atom Editor to Develop Markdown Content",
+              "description": "This lab shows you how to develop your lab (markdown) content using an editor, such as **Atom** and starting the atom-live-server.",
+              "filename": "./../../3-labs-use-atom-editor-develop-content/3-labs-use-atom-editor-develop-content.md"
+        }
+        ,
+        {
+              "title": "Lab 4: Use GitHub Desktop to Commit to the GitHub Repository",
+              "description": "This lab shows you how to map a node's private IP address to a public IP address",
+              "filename": "./../../4-labs-github-merge-commit-pullrequest/4-labs-github-merge-commit-pullrequest.md"
           }
           ,
           {
-              "title": "Lab 6:  Create a Hadoop Administrator User",
-              "description": "This lab shows you how to create a Hadoop Administrator(superuser) that will have full access to all the data and metadata on the cluster.",
-              "filename": "./../../bds-create-hadoop-user/bds-create-hadoop-user.md"
+                "title": "Lab 5:  Add GitHub Hosted Labs and Workshop to OHC",
+                "description": "This lab shows you how to to use Oracle Learning Library (OLL) administration tools to manage links and how to add a link to an OHC page.",
+                "filename": "./../../5-labs-add-git-hub-hosted-tutorials-to-ohc/5-labs-add-git-hub-hosted-tutorials-to-ohc.md"
             }
 
-           ]
-}
+
+             ]
+  }
