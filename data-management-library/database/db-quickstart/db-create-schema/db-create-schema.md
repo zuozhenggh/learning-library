@@ -16,7 +16,7 @@ In this lab, you will create a user (schema), assign privileges to the user, and
 
 ## Prerequisites
 
--   This lab requires completion of the prior 5 labs in the Contents menu on the right.
+-   This lab requires completion of the prior 5 labs in the Contents menu on the left.
 
 ## **Step 1:** Create a User
 Database administrators perform many tasks. One of their more common tasks is creating database users and assigning them unique usernames. After users log in to the database with their username and password, they can issue database SQL statements to create objects, query objects, and manage the database.

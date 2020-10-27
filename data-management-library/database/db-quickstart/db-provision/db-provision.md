@@ -16,7 +16,7 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 ## Prerequisites
 
--   This lab requires completion of the **Get a Free Trial** lab in the Contents menu on the right.  
+-   This lab requires completion of the **Get a Free Trial** lab in the Contents menu on the left.  
 
 ### Video Preview
 
@@ -37,7 +37,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
     ![](./images/LabGuide1-39fb4a5b.png " ")
 
-4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. You can use the __List Scope__ drop-down menu to select a compartment. Select your __root compartment__, or __another compartment of your choice__ where you will create your new ADW instance. If you want to create a new compartment or learn more about them, click <a href="https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#three" target="\_blank">here</a>.
+4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. You can use the __List Scope__ drop-down menu to select a compartment. Select your __root compartment__, or __another compartment of your choice__ where you will create your new ADW instance. If you want to create a new compartment, click <a href="https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#three" target="\_blank">here</a>. To learn more about compartments, click <a href="https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/settinguptenancy.htm#Setting_Up_Your_Tenancy" target="\_blank">here</a>.
 
  __Note__ - Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
 
@@ -45,11 +45,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
     ![](./images/Compartment.png " ")
 
-7. You can see your current default **region** in the top, right hand corner of the page. Go ahead and select a different available region such as **Phoenix** or **Toronto**.
-
-    ![](./images/Region.png " ")
-
-## **Step 2:** Creating the ADB instance
+## **Step 2:** Creating the Autonomous Database Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 

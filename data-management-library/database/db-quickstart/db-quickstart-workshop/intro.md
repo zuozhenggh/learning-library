@@ -21,7 +21,7 @@ Watch our short video that explains key features in Oracle's Autonomous Database
 Oracle’s Autonomous Database is the perfect quick-start service for fast data loading and sophisticated data reporting and analysis. Oracle manages everything for you so you can focus on your data.
 
 ### Workshop Prerequisites
-This workshop requires an Oracle Cloud account. You may use your own cloud account or a cloud account that you obtained through a trial.
+This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 
 ## Workshop Objectives
 - Get comfortable with Oracle's public cloud services

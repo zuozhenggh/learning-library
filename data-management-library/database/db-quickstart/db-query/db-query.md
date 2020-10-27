@@ -18,7 +18,7 @@ In this lab, you will query the Sales History (SH) sample schema that comes with
 
 ## Prerequisites
 
--   This lab requires completion of the preceding 4 labs in the Contents menu on the right.
+-   This lab requires completion of the preceding 4 labs in the Contents menu on the left.
 
 ## **Step 1:** Querying Tables
 

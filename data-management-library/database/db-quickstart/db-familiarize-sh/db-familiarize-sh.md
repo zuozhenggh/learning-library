@@ -17,7 +17,7 @@ In this lab, you examine the structures and data in the Sales History (SH) sampl
 
 ## Prerequisites
 
--   This lab requires completion of the preceding 3 labs in the Contents menu on the right.
+-   This lab requires completion of the preceding 3 labs in the Contents menu on the left.
 
 ## **Step 1:** Examine the SH Tables and Their Relationships
 
