@@ -1,6 +1,6 @@
-# Tear down the workshop
+# Tear Down the Workshop
 
-## About This lab
+## Introduction
 
 In this lab, we will tear down the infrastructure deployed on OCI as well as the local Docker environment
 

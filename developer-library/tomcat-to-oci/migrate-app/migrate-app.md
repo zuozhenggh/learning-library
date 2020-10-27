@@ -1,6 +1,6 @@
-# Migrate the Tomcat application
+# Migrate the Tomcat Application
 
-## About This lab
+## Introduction
 
 In this lab, we will migrate the application to the Tomcat Cluster on Oracle Cloud Infrastructure.
 
@@ -14,9 +14,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-*For this lab, you need*
+For this lab, you need
 
-* to have provisioned the Tomcat cluster on OCI
+* To have provisioned the Tomcat cluster on OCI
 
 ## **STEP 1**: Move the application WAR file to the Tomcat cluster on OCI
 
@@ -86,7 +86,7 @@ In this lab, you will:
 
     It may take several seconds to deploy, so if you don't see the folder at first, try the `ls -lh` command again
 
-## **STEP 3:** Configure the datasource
+## **STEP 2:** Configure the datasource
 
 1. Open the `server.xml` file in /etc/tomcat/ for editing
 
@@ -205,11 +205,11 @@ In this lab, you will:
     Note: The first time the application runs, the query may take up to 30sec as the indices and cache are primed.
     
 
-## **STEP 4:** Repeat for each Tomcat server if you had more than 1
+## **STEP 3:** Repeat for each Tomcat server if you had more than 1
 
 1. Repeat steps 2 to 6 for each server on the Tomcat cluster.
 
-## **STEP 5:** Check the application served via the load balancer
+## **STEP 4:** Check the application served via the load balancer
 
 1. Get the load balancer public IP from the Terraform output
 

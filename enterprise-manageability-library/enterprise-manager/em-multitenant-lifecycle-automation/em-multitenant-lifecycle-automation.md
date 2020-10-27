@@ -227,7 +227,7 @@ Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
   ![](images/8ed5400adb044b81194db800cfd4c953.jpg " ")
 
-2.  After which, **Click** Add and choose the row with your PDB, then **Click** OK  
+2.  After which, **Click** Add and choose the row with your PDB, then **Click** OK
 
 3. In the Save Association dialog box, **Click** Yes
 

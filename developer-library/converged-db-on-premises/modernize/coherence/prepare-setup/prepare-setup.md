@@ -3,6 +3,8 @@
 ## Introduction
 This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to setup the resource needed to run this workshop. This workshop requires a compute instance and a Virtual Cloud Network (VCN).
 
+*Estimated Lab Time:* 15 minutes
+
 ### Objectives
 -   Download ORM stack
 -   Configure an existing Virtual Cloud Network (VCN)
@@ -13,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [modernize-01-mkplc-freetier.zip](https://objectstorage.us-phoenix-1.oraclecloud.com/p/dcNBfy2Rg5DTobk9N561jTrY6nbdtledhi0vl81gkgs1GhcZc-WEXxV4QDUsm8Xw/n/natdsecurity/b/stack/o/modernize-01-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [modernize-01-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/YLOUExrs-HP1MjYdp-t7lIsWt8FuuJF3asz9fwkOqalzTLVLcTz1lu7ACaXuqff2/n/natdsecurity/b/stack/o/modernize-01-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 

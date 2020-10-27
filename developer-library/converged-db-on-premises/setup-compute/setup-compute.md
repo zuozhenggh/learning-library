@@ -3,6 +3,8 @@
 ## Introduction
 This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a compute instance running the Converged Database marketplace image and a Virtual Cloud Network (VCN).
 
+*Estimated Lab Time:* 15 minutes
+
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
 
@@ -294,7 +296,7 @@ This workshop requires a certain number of ports to be available.
 
 ## Appendix: Troubleshooting Tips
 
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
 - Availability Domain Mismatch
 - Limits Exceeded
 - Invalid public key

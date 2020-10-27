@@ -3,6 +3,8 @@
 ## Introduction
 This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to setup the resource needed to run this workshop. This workshop requires a compute instance and a Virtual Cloud Network (VCN).
 
+*Estimated Lab Time:* 15 minutes
+
 ### Objectives
 -   Download ORM stack
 -   Configure an existing Virtual Cloud Network (VCN)
@@ -13,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-lab-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/s3vHAmu3qehcDwtf05Ird7vDadEl3qquxXsGqDn-fG2C4xl2A8F_JOxIefNKZ7ER/n/orasenatdpltsecitom02/b/workshop-labs-files/o/dbsec-lab-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [gg4bd-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ru5jWEq0VvOHYY9_8aymLQIL3BEhh6J4rGUPtD_4Ir5_GW3bhLigYCgKe01qfhPi/n/natdsecurity/b/stack/o/gg4bd-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -25,8 +27,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 7803           | Oracle Enterprise Manager             |
-| 8888           | Hue                                   |
+| 8888           | Cloudera Hue                             |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
@@ -50,6 +51,6 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

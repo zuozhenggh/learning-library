@@ -1,6 +1,6 @@
-# Deploy Tomcat on OCI
+# Deploy Tomcat on OCI with ATP
 
-## About This lab
+## Introduction
 
 In this lab, we will deploy a Tomcat Cluster on Oracle Cloud Infrastructure with Terraform, along with an Autonomous Transaction Processing Database.
 
@@ -11,11 +11,11 @@ Estimated Lab Time: 25min
 In this lab, you will provision:
 * A Tomcat cluster based on Compute VM
 * A public load balancer targeting the Tomcat instances
-* An Autonomous Database 
+* An Autonomous Database
 
 ### Prerequisites
 
-*For this lab, you need*
+For this lab, you need
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * git installed
@@ -66,17 +66,21 @@ In this lab, you will provision:
 5. With this information, create the appropriate TF_VARS, in a `TF_VARS.sh` file
 
     ```
+    <copy>
     export TF_VAR_tenancy_ocid=ocid1.tenancy....
     export TF_VAR_user_ocid=ocid1.user.oc1..
     export TF_VAR_region=us-ashburn-1
     export TF_VAR_fingerprint=50:d0:7d:f7:0e:05:cd:87:3b:2a:cb:50:b1:17:90:e9
     export TF_VAR_private_key_path=~/.oci/oci_api_key.pem
+    </copy>
     ```
 
 6. Source the TF_VARS.sh file
 
     ```
+    <copy>
     source ./TF_VARS.sh
+    </copy>
     ```
 
 ## **STEP 2:** Get the Terraform code
