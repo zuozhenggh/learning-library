@@ -6,7 +6,7 @@ The labs in this workshop walk you through all the steps to **develop labs and w
 A lab is a new model adopted by the DB organization to enhance the tutorial experience. Labs are what we all commonly know as Oracle by example (OBE). Labs can be combined to form a workshop, formerly known as Hands-on Lab or HOL, or a Learning Path.
 
 An individual Markdown (.md) file is called a lab.
-A collection of labs is called workshop.
+A collection of labs is called a workshop.
 
 ## What is GitHub?
 GitHub is a cloud-based version control system designed for software developers.
