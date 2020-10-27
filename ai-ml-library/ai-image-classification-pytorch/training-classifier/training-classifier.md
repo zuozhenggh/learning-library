@@ -1,8 +1,41 @@
 # Training a Classifier
 
-[Click here to download the full code example](files/image-classification-pytorch.py)
+[Click here to download the full code example](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UudtANEChREpKXDjzRvqRzNPhPJpTEMfq5BHf6Ym7H12zSE8wGcTtwabHyxpcpow/n/c4u03/b/ai-ml-library/o/jblau-image-classification-pytorch.zip)
 
-## **STEP 1**: CIFAR10 and DataLoader
+## Introduction
+The [Training a Classifier](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html) guide from PyTorch is a great place to start, but some of the details of the code are explained too sparsely for a reader new to the field. This lab builds on that tutorial as a base with line-by-line explanations of the code to facilitate a clearer learning pathway.
+
+Estimated Lab Time:  50 minutes
+
+### Objectives
+In this lab, you will learn about:
+* DataLoaders
+* Convolutional Neural Networks (CNN)
+* Loss Function and Optimizer
+* Model Training
+
+### Prerequisites
+
+This lab assumes you have:
+- An Oracle Free Tier or Paid Cloud account
+- Access to either a CPU or GPU instance as covered in labs 1 and 2
+
+## **STEP 1**: Set up the environment
+
+There are a number of methods to set up a python environment to run PyTorch. You may follow your preferred method or the following set of instructions.
+
+1. Get a link for the [latest version of miniconda](https://docs.conda.io/en/latest/miniconda.html) by navigating to the site scrolling down to "Linux Installers" and copying the top link.
+2. In a terminal for the instance, use wget to download the file. 
+
+        wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+3. [Run the install command](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html) and complete the setup. 
+
+        bash Miniconda3-latest-Linux-x86_64.sh
+
+4. Exit the terminal and open a new terminal after installation, which ensures that conda is activated. Optional: create a specific environment for PyTorch by running the command `conda create --name pytorch python=3.6` and then enabling the environment by running `conda activate pytorch`
+5. [Install PyTorch](https://pytorch.org/) through conda `conda install pytorch torchvision cudatoolkit=10.2 -c pytorch`
+
+## **STEP 2**: CIFAR10 and DataLoader
 
 Most of an AI researcher’s time is not spent running training and testing models, but cleaning and preparing data. An incredible amount of work has been condensed into the few lines of code below. CIFAR10 is a fully preprocessed dataset of images and labels. It was created and made public to serve as a standardized benchmark for testing new models or get started with deep learning. Transforming a set of raw data into a structure that works with PyTorch can take a great deal of time, so to lower that barrier the dataset has been included in the PyTorch library distribution. 
 
@@ -37,7 +70,7 @@ GPU utilization can vary, depending primarily on the size of the dataset and the
 
 This example uses two datasets. CIFAR10 is split into a *training* dataset that is iterated over to develop the model and a *test* dataset of unseen data that is used to test the model’s performance. When working with your dataset, consider splitting your raw data into 80 percent used for training and 20 percent used for testing. You should avoid testing with data that’s used to train the model because it limits your ability to detect [overfitting](https://www.kdnuggets.com/2019/12/fighting-overfitting-deep-learning.html), a problem that occurs when your model works well against training data but not new data.
 
-## **STEP 2**: Convolutional Neural Network
+## **STEP 3**: Convolutional Neural Network
 
 [Define a Convolutional Neural Network](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#define-a-convolutional-neural-network), defines the model. The dataset consists of images that are split into three color channels: red, green, and blue. Those values are sent to LCD displays to show different colors in pixels. Splitting the colors into three separate channels allows us to churn them through machine learning functions and create a deep neural network. We do that by running a convolution over each channel multiple times.
 
@@ -107,7 +140,7 @@ Notice that `16 * 5 * 5` is the first input for the `fc1` layer. The second inpu
 
 In the code for the model, each operation is defined in the class initialization, and the order in which the operations are performed on samples is defined in the `forward` method. [F.relu](https://pytorch.org/docs/stable/nn.functional.html?highlight=relu#torch.nn.functional.relu) is an [activation function](https://www.kdnuggets.com/2017/09/neural-network-foundations-explained-activation-function.html). Delving into activation functions is beyond the scope of this post, but in short there are three popular options: Sigmoid, TanH, and ReLU. These three (and more) are useful in different scenarios, but ReLU works for this example. Tensor.view changes the shape of the tensor, in this case flattening it into a 1-dimensional, 400-length array, as described previously.
 
-## **STEP 3**: Loss Function and Optimizer
+## **STEP 4**: Loss Function and Optimizer
 
 ```python
 import torch.optim as optim
@@ -125,7 +158,7 @@ Image credit: [CS231n](https://cs231n.github.io/neural-networks-3/)
 
 The training process generates a gradient that can be likened to a mountain range. As you iterate over data, you want to arrive at the lowest point in the mountain range for a fully trained model, but the problem is you lack a map. The loss function and optimizer help you descend the range, but if you go too fast or use the wrong system, you could get stuck in a local low point instead of the actual minimum.
 
-## **STEP 4**: Training the Model
+## **STEP 5**: Training the Model
 
 With everything prepared, we’re ready to begin training, in which we continually iterate over the data to arrive at our trained model (step 4, [Train the Network](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#train-the-network)). 
 
@@ -178,7 +211,7 @@ A successful output should print out lines in this format, although the loss num
 Finished Training
 ```
 
-## **STEP 5**: Saving the Model and Testing Accuracy
+## **STEP 6**: Saving the Model and Testing Accuracy
 
 ```python
 PATH = './cifar_net.pth'

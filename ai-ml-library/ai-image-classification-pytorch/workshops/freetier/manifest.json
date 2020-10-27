@@ -2,22 +2,30 @@
   "workshoptitle": "Getting Started with Computer Vision using PyTorch",
     "tutorials": [
         {
-            "title": "Prerequisites",
+            "title": "Introduction",
             "description": "Steps to set up the python environment and install pytorch",
             "filename": "../../prerequisites/prerequisites.md"        
         },
         {
-            "title": "Setting Up the Environment",
-            "description": "Steps to set up the python environment and install pytorch",
-            "filename": "../../setting-up-environment/setting-up-environment.md"        
+            "title": "Prerequisites",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Training a Classifier",
+            "title": "Lab 1: Create SSH Keys",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-local/generate-ssh-keys-local.md"
+        },
+        {
+            "title": "Lab 2: Setup Network and Compute Instance",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-linux-freetier.md"
+        },
+        {
+            "title": "Lab 3: Training a Classifier",
             "description": "Sample code and explaination for each stage of image classification using PyTorch",
             "filename": "../../training-classifier/training-classifier.md"
         },
         {
-            "title": "Lab 2: Utilizing a GPU",
+            "title": "Lab 4: Utilizing a GPU",
             "description": "Modifying code from the previous lab to utilize a GPU",
             "filename": "../../utilizing-gpu/utilizing-gpu.md"
         }
