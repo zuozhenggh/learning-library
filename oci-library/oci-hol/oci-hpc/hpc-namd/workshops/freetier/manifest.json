@@ -1,6 +1,10 @@
 {
-    "workshoptitle": "High Performance Compute - NAMD Workshop",
+    "workshoptitle": "High Performance Compute - NAMD",
     "tutorials": [
+        {
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
         {
             "title": "Introduction", 
             "description": "Brief Introduction on Oracle HPC",
@@ -12,34 +16,28 @@
             "filename": "../../namd-intro/namd-intro.md"      
         },
         {
-            "title": "Architecture",
-            "description": "Explains architecture used in this lab",
-            "filename": "../../architecture/architecture.md"        
-        },
-        {
-            "title": "Login",
+            "title": "Lab 1: Login",
             "description": "Details on how to login to the compute instance",
             "filename": "../../login/login.md"
             
         },
         {         
-            "title": "Deployment",
+            "title": "Lab 2: Deployment",
             "description": "Steps to deploy the architecture on OCI",
             "filename": "../../deployment/deployment.md"
         },
-
         {
-            "title": "Licensing",
-            "filename": "../../licensing/licensing.md"
-        },
-        {
-            "title": "Running the Application",
+            "title": "Lab 3: Running the Application",
             "filename": "../../run/run.md"
         }, 
         {         
-            "title": "Post-processing",
+            "title": "Lab 4: Post-processing",
             "description": "Steps to analyze your model",
             "filename": "../../post-processing/post-processing.md"
+        },
+        {
+            "title": "Licensing",
+            "filename": "../../licensing/licensing.md"
         }
         
     ]

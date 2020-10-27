@@ -8,9 +8,9 @@ Oracle provides the most elastic and scalable cloud infrastructure to run your H
 
 With Oracle Cloud Infrastructure, businesses can run performance intensive HPC workloads requiring millions of IOPs, millisecond latency, and many GB/s of bandwidth, on a pay per-use or non- metered model, saving 32% on a 3-year TCO.
 
-These hands-on lab guides provide step-by-step process of deploying NAMD on Oracle Cloud using 2 methods, Resource Manager, avaialable on Oracle Cloud Console, and Web Console. 
+These hands-on lab guides provide step-by-step process of deploying NAMD on Oracle Cloud using 2 methods, Resource Manager, available on Oracle Cloud Console, and Web Console. 
 
-Estimated Workshop Time: 4 hours
+Estimated Workshop Time: 30 minutes 
 
 ### About High Performance Computing (HPC)
 
@@ -44,14 +44,6 @@ In this lab, you will:
 * Some understanding of cloud and database terms is helpful
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
-
-## About this Workshop
-
-- Log into the Oracle Cloud Console
-- Deploying your architecture on OCI
-- Run the application
-- Analyze the models
-
 
 
 ## Acknowledgements
