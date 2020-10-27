@@ -88,7 +88,7 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 4. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
 
-    ![](images/username.png " ")
+    ![](images/oci-signin.png " ")
 
 5. You are now signed in to Oracle Cloud!
 
