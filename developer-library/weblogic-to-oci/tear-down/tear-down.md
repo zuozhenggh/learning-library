@@ -78,7 +78,7 @@ In this lab you will tear down the infrastructure provisioned.
 <if type="atp">
 ## **STEP 2:** Tear down the Application Database on OCI
 
-1. Go to the **Autonmous Transaction Processing**
+1. Go to the **Autonomous Transaction Processing**
 
 2. Click the **WLSATPDB** Database
 
