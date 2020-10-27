@@ -1,0 +1,46 @@
+{
+    "workshoptitle": "High Performance Compute - NAMD Workshop",
+    "tutorials": [
+        {
+            "title": "Introduction", 
+            "description": "Brief Introduction on Oracle HPC",
+            "filename": "../../hpc-introduction/hpc-introduction.md"   
+        },
+        {
+            "title": "NAMD Introduction",
+            "description": "Brief Introduction to NAMD Software ",
+            "filename": "../../namd-intro/namd-intro.md"      
+        },
+        {
+            "title": "Architecture",
+            "description": "Explains architecture used in this lab",
+            "filename": "../../architecture/architecture.md"        
+        },
+        {
+            "title": "Login",
+            "description": "Details on how to login to the compute instance",
+            "filename": "../../login/login.md"
+            
+        },
+        {         
+            "title": "Deployment",
+            "description": "Steps to deploy the architecture on OCI",
+            "filename": "../../deployment/deployment.md"
+        },
+
+        {
+            "title": "Licensing",
+            "filename": "../../licensing/licensing.md"
+        },
+        {
+            "title": "Running the Application",
+            "filename": "../../run/run.md"
+        }, 
+        {         
+            "title": "Post-processing",
+            "description": "Steps to analyze your model",
+            "filename": "../../post-processing/post-processing.md"
+        }
+        
+    ]
+}
