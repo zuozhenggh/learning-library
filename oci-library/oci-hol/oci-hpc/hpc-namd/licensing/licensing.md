@@ -1,4 +1,4 @@
-## **Licensing**
+## Licensing
 
 See [Third Party Licenses](https://github.com/oci-hpc/oci-hpc-runbook-namd/blob/master/Third_Party_Licenses) for NAMD and terraform licensing, including dependencies used in this tutorial.
 
