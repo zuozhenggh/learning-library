@@ -36,7 +36,7 @@ In this lab, you will:
 1. Login into IDCS Admin console as an administrator:
 
     ```
-       https://<your tenant>/ui/v1/adminconsole
+    https://<your tenant>/ui/v1/adminconsole
     ```
 2.	Navigate to *Security* and select *MFA*.
 
@@ -61,11 +61,11 @@ However, you can build upon this policy by adding other sign-on rules to it. By 
     ![Image](images/L5002.png)
 
     ```
-        A network perimeter contains a list of IP addresses.
+    A network perimeter contains a list of IP addresses.
 
-        After creating a network perimeter, you can prevent users from signing in to Oracle Identity Cloud Service if they use one of the IP addresses in the network perimeter. This is known as blacklisting. A blacklist contains IP addresses or domains that are suspicious. As an example, a user may be trying to sign in to Oracle Identity Cloud Service with an IP address that comes from a country where hacking is rampant.
+    After creating a network perimeter, you can prevent users from signing in to Oracle Identity Cloud Service if they use one of the IP addresses in the network perimeter. This is known as blacklisting. A blacklist contains IP addresses or domains that are suspicious. As an example, a user may be trying to sign in to Oracle Identity Cloud Service with an IP address that comes from a country where hacking is rampant.
 
-        You can also configure Oracle Identity Cloud Service so that users can log in, using only IP addresses contained in the network perimeter. This is known as whitelisting, where users who attempt to sign in to Oracle Identity Cloud Service with these IP addresses will be accepted. Whitelisting is the reverse of blacklisting, the practice of identifying IP addresses that are suspicious, and as a result, will be denied access to Oracle Identity Cloud Service.
+    You can also configure Oracle Identity Cloud Service so that users can log in, using only IP addresses contained in the network perimeter. This is known as whitelisting, where users who attempt to sign in to Oracle Identity Cloud Service with these IP addresses will be accepted. Whitelisting is the reverse of blacklisting, the practice of identifying IP addresses that are suspicious, and as a result, will be denied access to Oracle Identity Cloud Service.
     ```
 
 2.	Click on *Add* to add a new Network Perimeter. Enter an IP range as shown below. For now, put a dummy range or even a dummy address (e.g 10.0.0.0), so that no authentication is denied and click *Save*.
@@ -77,7 +77,7 @@ However, you can build upon this policy by adding other sign-on rules to it. By 
     ![Image](images/L5004.png)
 
     ```
-        Note that a Default Sign-On Policy exists and is enabled by default. The default policy applies to all application that have not been explicitly mapped to a sign on policy.
+    Note that a Default Sign-On Policy exists and is enabled by default. The default policy applies to all application that have not been explicitly mapped to a sign on policy.
     ```
 
 4. Enter a *Policy Name* and *Description* in the Details section and click on *>* button to move to the next section.
@@ -119,7 +119,7 @@ However, you can build upon this policy by adding other sign-on rules to it. By 
     ![Image](images/L5009.png)
 
     ```
-        Note the Sign-On Rules are ordered. The actions (allow/deny/prompt for MFA) are determined by the first rule where the conditions match. If none of the rule conditions match the default action is deny.
+    Note the Sign-On Rules are ordered. The actions (allow/deny/prompt for MFA) are determined by the first rule where the conditions match. If none of the rule conditions match the default action is deny.
     ```
 
 11.	To move the *Blacklisted IP* rule to the top click on the reorder icon and drag the rule to the top. Click *Finish*.
@@ -129,9 +129,9 @@ However, you can build upon this policy by adding other sign-on rules to it. By 
     ```
     The above rules are evaluated as below
 
-       a. if user access is from a blacklisted IP the deny access.
-       b. if user is a member of Salesforce Employee group, then prompt for MFA once per session.
-       c. for all other users deny access.
+    a. if user access is from a blacklisted IP the deny access.
+    b. if user is a member of Salesforce Employee group, then prompt for MFA once per session.
+    c. for all other users deny access.
     ```
 
 12.	Click on the *Apps* tab and click on the *Assign* button.
@@ -166,12 +166,12 @@ However, you can build upon this policy by adding other sign-on rules to it. By 
 
     ![Image](images/L5016.png)
 
-###MFA Options in Oracle Identity Cloud Service: Email
+### MFA Options in Oracle Identity Cloud Service: Email
 
-    ```
-        Email:
-        Users receive an email message that contains a temporary passcode that must be used during log in.
-    ```
+```
+Email:
+Users receive an email message that contains a temporary passcode that must be used during log in.
+```
 
 A. Oracle automatically sets your main email account as a MFA option. However, it is recommended to click the option *Set as Default*.
 
@@ -187,12 +187,12 @@ C. Now, your email address is successfully enrolled. It is recommended to set up
 
     Note: Under *My Profile* and under the tab *Security*, further MFA options can be configured at a later point of time.
 
-###MFA Options in Oracle Identity Cloud Service: Mobile Authenticator Application
+### MFA Options in Oracle Identity Cloud Service: Mobile Authenticator Application
 
-    ```
-        Mobile Authenticator Application:
-        Users generate an OTP on the OMA App on their device that must be used during log in.
-    ```
+```
+Mobile Authenticator Application:
+Users generate an OTP on the OMA App on their device that must be used during log in.
+```
 
 A. Download the *Oracle Mobile Authenticator* app on your mobile phone.
 
@@ -208,12 +208,12 @@ C.	If your mobile phone does not have internet connectivity or you are using a 3
 
 D. You can enroll an additional 2-Step Verification method by clicking on another method. In this tutorial, we continue with *Mobile Number*.
 
-###MFA Options in Oracle Identity Cloud Service: Text Message (SMS)
+### MFA Options in Oracle Identity Cloud Service: Text Message (SMS)
 
-    ```
-        Text Message (SMS):
-        Users receive a temporary passcode as a text message (SMS) on their device that must be used during log in.
-    ```
+```
+Text Message (SMS):
+Users receive a temporary passcode as a text message (SMS) on their device that must be used during log in.
+```
 A. Click on *Mobile Number*.
 
 B. Enter your mobile number and click on *Send*.
@@ -224,12 +224,12 @@ C. An *SMS* (text message) containing an OTP will be sent to your mobile number.
 
 D. Enter the OTP in the passcode field and click on *Verify*.
 
-###MFA Options in Oracle Identity Cloud Service: Security Questions
+### MFA Options in Oracle Identity Cloud Service: Security Questions
 
-    ```
-        Security Questions:
-        Users are prompted during the sign-in process to correctly answer a defined number of security questions to verify their identity.
-    ```
+```
+Security Questions:
+Users are prompted during the sign-in process to correctly answer a defined number of security questions to verify their identity.
+```
 
 A. Click on *Security Questions*.
 
@@ -241,12 +241,12 @@ C. Click on *Done* to complete the process. You will be now redirected to Salesf
 
    ![Image](images/L5024.png)
 
-###MFA Options in Oracle Identity Cloud Service: Backup verification method
+### MFA Options in Oracle Identity Cloud Service: Backup verification method
 
-    ```
-        Backup verification method:
-        Oracle makes it possible to use a backup verification method in case the current MFA option cannot be entered, i.e. when the configured MFA device is not reachable.
-    ```
+```
+Backup verification method:
+Oracle makes it possible to use a backup verification method in case the current MFA option cannot be entered, i.e. when the configured MFA device is not reachable.
+```
 
 A. Access IDCS and under My Apps select Salesforce. A preconfigured MFA option will show up. In this case, it is the *Mobile Authenticator Application*.
 
@@ -266,8 +266,8 @@ D. Answer the security Question and click *Verify* .
     - Administrator
 
     ```
-        Block blacklisted IPs
-        After creating a network perimeter, you can prevent users from signing in to Oracle Identity Cloud Service if they use one of the IP addresses in the network perimeter. This is known as blacklisting. A blacklist contains IP addresses or domains that are suspicious. As an example, a user may be trying to sign in to Oracle Identity Cloud Service with an IP address that comes from a country where hacking is rampant.
+    Block blacklisted IPs
+    After creating a network perimeter, you can prevent users from signing in to Oracle Identity Cloud Service if they use one of the IP addresses in the network perimeter. This is known as blacklisting. A blacklist contains IP addresses or domains that are suspicious. As an example, a user may be trying to sign in to Oracle Identity Cloud Service with an IP address that comes from a country where hacking is rampant.
     ```
 
 1.	Navigate to *Security* and select *Network Perimeters*. Click the menu on the right of the Blacklisted IPs Network Perimeter you created earlier and click Edit. The previously configured dummy IP address will be shown.

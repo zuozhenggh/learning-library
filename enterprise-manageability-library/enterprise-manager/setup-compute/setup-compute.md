@@ -28,7 +28,7 @@ Watch the end-to-end demonstration:
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-    - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9pLAit-dYlCGrpnHDDXoXGbfrYsiH7AsyJPLjBRrH48/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+    - [emcc-mkplc-13.4-RU5-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fsWp1EI_Wr4KJfvHilXQUSU7GtmmO1puCA_PM9Rh1zjkLMwHegvgAIvTNhHlPl5J/n/natdsecurity/b/stack/o/emcc-mkplc-13.4-RU5-freetier.zip)
     - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2.  Save in your downloads folder.
@@ -40,7 +40,7 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-13.4-RU5-freetier.zip) that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 
@@ -86,7 +86,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 - Egress rules for the following ports:  9851, 7803, 22          
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-  - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9pLAit-dYlCGrpnHDDXoXGbfrYsiH7AsyJPLjBRrH48/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+  - [emcc-mkplc-13.4-RU5-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fsWp1EI_Wr4KJfvHilXQUSU7GtmmO1puCA_PM9Rh1zjkLMwHegvgAIvTNhHlPl5J/n/natdsecurity/b/stack/o/emcc-mkplc-13.4-RU5-freetier.zip)
   - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2. Save in your downloads folder.
@@ -98,7 +98,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
   ![](./images/em-create-stack.png " ")
 
-4. Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
+4. Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-13.4-RU5-freetier.zip) that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 

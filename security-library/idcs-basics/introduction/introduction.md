@@ -1,6 +1,6 @@
 # Introduction
 
-## Introduction
+## About this Workshop
 
 For the workshop lab exercises, the current version of the Oracle Identity Cloud Service (IDCS) is being demonstrated.
 

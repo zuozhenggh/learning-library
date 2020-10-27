@@ -10,7 +10,9 @@ Estimated Lab Time: 20 Minutes
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
-
+- Lab: Fast Application Notification
+- Lab: Install Sample Schema
+- Lab: Services
 
 ### About Oracle Scheduler
 Oracle Scheduler is an enterprise job scheduler designed to help you simplify the scheduling of hundreds or even thousands of tasks. Oracle Scheduler (the Scheduler) is implemented by the procedures and functions in the DBMS_SCHEDULER PL/SQL package.
@@ -35,45 +37,48 @@ The job coordinators communicate with each other to keep information current. Th
 We will take a brief look at this property through two simple tests.
 
 ## **STEP 1:**  Assign a Job Class to a service and prepare a package to be scheduled
-1.  If you aren't aady logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. If you are logged in, skip to step 4.
 
 2.  Start Cloudshell
     
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to node 1 (you identified the IP in an earlier lab). 
+3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
     ````
     ![](../clusterware/images/racnode1-login.png " ")
 
-4. Confirm which instance is offering the service **svctest**.  Execute the following on node 1.
+4. Confirm which instance is offering the service **svctest**.  Execute the following on **node 1** as the *oracle* user.  Remember to replace the database name with the database name you have been using in previous labs.
    
     ````
     <copy>
     sudo su - oracle
-    srvctl status service -d aTFdbVm_mel1nk -s svctest
+    srvctl status service -d aTFdbVm_replacename -s svctest
     </copy>
     ````
+    ![](./images/job-num4.png " " )
 
 5.  Stop the service **svctest**
    
     ````
     <copy>
-    srvctl stop service -d aTFdbVm_mel1nk -s svctest
+    srvctl stop service -d aTFdbVm_replacename -s svctest
+    srvctl stop service -d aTFdbVm_replacename -s svctest
     </copy>
     ````
+    ![](./images/job-num5.png " " )
 
-6.  Connect to the pluggable database, **PDB1** as the SH user
+6.  Connect to the pluggable database, **PDB1** as the SH user.  Replace the password with the password you chose.
 
     ````
     <copy>
-    sudo su - oracle
     sqlplus sh/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com
     </copy>
     ````
+    ![](./images/job-num6.png " " )
 
 7. As the SH user create a job class and a PL/SQL procedure that we can execute from the job. Note that the service name is case sensitive
 
@@ -91,7 +96,7 @@ We will take a brief look at this property through two simple tests.
     /
     </copy>
     ````
-    ![](./images/sched-1.png " " )
+    ![](./images/job-num7.png " " )
 
 
 ## **STEP 2:** Schedule a job
@@ -110,62 +115,68 @@ We will take a brief look at this property through two simple tests.
     select job_name, schedule_type, job_class, enabled, auto_drop, state from user_scheduler_jobs;  
     </copy>
     ````
+
+    ![](./images/job-step2-num1.png " " )
+
 2. If you query user\_scheduler\_jobs several times, does anything change?
 
     ````
-    SQL> select job_name, schedule_type, job_class, enabled, auto_drop, state from user_scheduler_jobs;
-    JOB_NAME   SCHEDULE_TYP JOB_CLASS  ENABL AUTO_ STATE
-    ---------- ------------ ---------- ----- ----- --------------------
-    TESTJOB1   IMMEDIATE    TESTOFF1   TRUE  TRUE  SCHEDULED
+    select job_name, schedule_type, job_class, enabled, auto_drop, state from user_scheduler_jobs;
+    exit;
     ````
+    ![](./images/job-step2-num2.png " " )
 
-2. Start the **svctest** service and query user\_scheduler\_jobs again     
+3. Start the **svctest** service and query user\_scheduler\_jobs again as the *oracle* user    
 
     ````
     <copy>
-    srvctl start service -d aTFdbVm_mel1nk -s svctest
+    srvctl start service -d aTFdbVm_replacename -s svctest
     </copy>
     ````
     Did the job run?
     You may have to query user\_scheduler\_jobs several times.
 
-3. Job details are also visible in the view user\_scheduler\_job\_run\_details
+    ![](./images/job-step2-num3.png " " )
+
+4. Job details are also visible in the view user\_scheduler\_job\_run\_details as the *sh* user.
 
     ````
+    sqlplus sh/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com
     <copy>
     SELECT to_char(log_date, 'DD-MON-YY HH24:MI:SS') TIMESTAMP, job_name, status, additional_info
     FROM user_scheduler_job_run_details ORDER BY log_date;
     </copy>
-    ````    
-
     ````
-    TIMESTAMP                   JOB_NAME   STATUS     ADDITIONAL_INFO
-    --------------------------- ---------- ---------- --------------------
-    25-AUG-20 07:21:46          TESTJOB1   SUCCEEDED
-    25-AUG-20 09:22:32          TESTJOB1   SUCCEEDED
-    ````
+    ![](./images/job-step2-num4.png " " )
 
-4. What node did the job run on?
+
+
+5. What node did the job run on?
 Look in the diagnostic_dest for files with the **id** set in the job schedule. The **id** will be in UPPERCASE
 
-5. On node1, for example, execute the following command.
+6. On node1, for example, execute the following command.  Remember to replace the database name.
    
     ````
-    ls -altr /u01/app/oracle/diag/rdbms/atfdbvm_mel1nk/aTFdbVm1/trace/*SCHEDULER01*
+    ls -altr /u01/app/oracle/diag/rdbms/atfdbvm_replacename/aTFdbVm1/trace/*SCHEDULER01*
     ````
+    ![](./images/job-step2-num6.png " " )
+
 ## **STEP 3:** Submitting work to a uniform service
 1. Modify the service **svctest** to run on both instances, and then stop this service
 
     ````
     <copy>
-    srvctl modify service -d  aTFdbVm_mel1nk -s svctest -modifyconfig -preferred aTFdbVm1,aTFdbVm2
-    srvctl stop service -d  aTFdbVm_mel1nk -s svctest
+    srvctl modify service -d  aTFdbVm_replacename -s svctest -modifyconfig -preferred aTFdbVm1,aTFdbVm2
+    srvctl stop service -d  aTFdbVm_replacename -s svctest
     </copy>
     ````
-2. Submit multiple jobs to the job class
+    ![](./images/job-step3-num1.png " " )
+
+2. Submit multiple jobs to the job class as the *sh* user.  Remember to replace the password.
 
 
     ````
+    sqlplus sh/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com
     <copy>
     begin
       for i in 1..10
@@ -174,49 +185,39 @@ Look in the diagnostic_dest for files with the **id** set in the job schedule. T
         end loop;
     end;
        /
-    ````    
-3. View that they are scheduled by issuing the query below.
-   
     ````
-    <copy>
+    ![](./images/job-step3-num2.png " " )
+
+3. View that they are scheduled by issuing the query below.
+
+    ```
     col job_name format a15
     col job_class format a15
-    select job_name, schedule_type, job_class, enabled, auto_drop, state from user\_scheduler\_jobs order by job_name;
-    </copy>
-    ````
+    select job_name, schedule_type, job_class, enabled, auto_drop, state from user_scheduler_jobs order by job_name;
+    exit
+    ```
+    ![](./images/job-step3-num3.png " " )
 
-    ````
-    SQL> select job_name, schedule_type, job_class, enabled, auto_drop, state from user\_scheduler\_jobs order by job_name;
-
-    JOB_NAME        SCHEDULE_TYP JOB_CLASS       ENABL AUTO_ STATE
-    --------------- ------------ --------------- ----- ----- --------------------
-    TESTJOB1        IMMEDIATE    TESTOFF1        TRUE  TRUE  SCHEDULED
-    TESTJOB10       IMMEDIATE    TESTOFF1        TRUE  TRUE  SCHEDULED
-    TESTJOB2        IMMEDIATE    TESTOFF1        TRUE  TRUE  SCHEDULED
-    TESTJOB3        IMMEDIATE    TESTOFF1        TRUE  TRUE  SCHEDULED
-    TESTJOB4        IMMEDIATE    TESTOFF1        TRUE  TRUE  SCHEDULED
-    TESTJOB5        IMMEDIATE    TESTOFF1        TRUE  TRUE  SCHEDULED
-    TESTJOB6        IMMEDIATE    TESTOFF1        TRUE  TRUE  SCHEDULED
-    TESTJOB7        IMMEDIATE    TESTOFF1        TRUE  TRUE  SCHEDULED
-    TESTJOB8        IMMEDIATE    TESTOFF1        TRUE  TRUE  SCHEDULED
-    TESTJOB9        IMMEDIATE    TESTOFF1        TRUE  TRUE  SCHEDULED
-
-    10 rows selected.
-    ````  
 4. Re-start the **svctest** service again (which will now run on both instances) and view where the jobs executed:
 
     ````
-    srvctl start service -d  aTFdbVm_mel1nk -s svctest
-    ````
-
-5. The view user_scheduler_job_run_details includes the instance name on which the job executed
+    srvctl start service -d  aTFdbVm_replacename -s svctest
+    srvctl status service -d  aTFdbVm_replacename -s svctest
 
     ````
+
+5. The view user_scheduler_job_run_details includes the instance name on which the job executed.  Relogin as the *sh* user on **node 1**
+
+    ````
+    sqlplus sh/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com
     <copy>
     SELECT to_char(log_date, 'DD-MON-YY HH24:MI:SS') TIMESTAMP, job_name, status, instance_id, additional_info
     FROM user_scheduler_job_run_details ORDER BY log_date;    
+    exit
     </copy>
     ````
+    ![](./images/job-step3-num3-1.png " " )
+    ![](./images/job-step3-num3-2.png " " )
 
 6. For example
     ````
@@ -235,23 +236,18 @@ Look in the diagnostic_dest for files with the **id** set in the job schedule. T
     ````    
     Trace files will exist in the trace directory of each node:
 
-7. On node1 for example
+7. On node 1 for as the oracle user query the trace files for ACTION NAME.
    
     ````
     <copy>
-    grep "ACTION NAME" `ls /u01/app/oracle/diag/rdbms/atfdbvm_mel1nk/aTFdbVm1/trace/*SCHEDULER*.trc`
+    grep "ACTION NAME" `ls /u01/app/oracle/diag/rdbms/atfdbvm_replacename/aTFdbVm1/trace/*SCHEDULER*.trc`
     </copy>
     ````
 
 8. Could show for example
 
-    ````
-    aTFdbVm1_j000_46186_SCHEDULER01.trc:*** ACTION NAME:(TESTJOB2) 2020-08-28T03:17:01.244744+00:00
-    aTFdbVm1_j000_46186_SCHEDULER01.trc:*** ACTION NAME:(TESTJOB6) 2020-08-28T03:17:01.505230+00:00
-    aTFdbVm1_j000_46186_SCHEDULER01.trc:*** ACTION NAME:(TESTJOB10) 2020-08-28T03:17:02.014129+00:00
-    aTFdbVm1_j001_46190_SCHEDULER01.trc:*** ACTION NAME:(TESTJOB4) 2020-08-8T03:17:01.277969+00:00
-    aTFdbVm1_j001_46190_SCHEDULER01.trc:*** ACTION NAME:(TESTJOB8) 2020-08-28T03:17:01.505278+00:00
-    ````
+    ![](./images/job-step3-num7.png " " )
+
     
 You may now *proceed to the next lab*.  
 
