@@ -15,9 +15,67 @@ In this lab, you will:
 
 ### Prerequisites
 
-* This lab assumes you have successfully setup a Property Graph Analysis Environment in Docker and have an environment up and running with Zeppelin at [http://localhost:8080](http://localhost:8080/) and the Graph Visualization component at [http://localhost:7007/ui/](http://localhost:7007/ui/).
+* This lab assumes you have successfully setup a Property Graph Analysis Environment in Docker.
 
-## **STEP 1:** Graph query and analysis in Apache Zeppelin
+## **STEP 1:** Add ingress rules and verify environment
+
+1. On Oracle cloud homepage, click on the hamburger, navigate to **Networking** in Core Infrastucture section and click on **Virtual Cloud Networks**.
+
+  ![](./images/selectvcn.png)
+
+2. Select your compartment from the list and navigate to the vcn you created for this workshop earlier in lab 2.
+
+  ![](./images/clickvcn.png)
+
+3. In the vcn, under Resources, click on **Security Lists** to see the default security list for the compartment. Now, click on the Default Security List for your compartment.
+
+  ![](./images/securitylist.png)
+
+4. Select **Ingress Rule** under the resources in Default Security List for your compartment and click on **Add Ingress Rule**
+
+  ![](./images/addingressrule.png)
+
+5. Now let's add an ingress rules for the ports 7007 and 8080.
+
+   Fill in the following values for port 7007 and click on **Another Ingress Rule**.
+    - Source Type – CIDR
+    - Source CIDR – 0.0.0.0/0
+    - IP Protocol – TCP
+    - Source Port Range – All
+    - Destination Port Range - 7007
+
+  ![](./images/ingressrule1.png)
+
+  Fill in the following values for port 8080 and click on **Add Ingress Rule**.
+    - Source Type – CIDR
+    - Source CIDR – 0.0.0.0/0
+    - IP Protocol – TCP
+    - Source Port Range – All
+    - Destination Port Range - 8080
+
+  ![](./images/ingressrule2.png)
+
+  Now the ingress rules for ports 7007 and 8080 are added.
+
+  ![](./images/verifyportsadded.png)
+
+6. To verify the environment is up and running with Zeppelin, replace *your-instance-ip-address* with your instance IP address in the URL.
+
+    ```
+    http://your-instance-ip-address:8080
+    ```
+
+  ![Zeppelin Home Page](./images/ZeppelinHome.png)
+
+7. To verify the environment is up and running for Graph Visualization component , replace *your-instance-ip-address* with your instance IP address in the URL
+
+    ```
+    http://your-instance-ip-address:7007/ui/
+    ```
+
+  ![GraphViz on startup](./images/GraphVizStartup.png)
+
+## **STEP 2:** Graph query and analysis in Apache Zeppelin
 
 1. Navigate to the Zeppelin in the browser and click on the "Customer 360" notebook link.
 
@@ -27,11 +85,15 @@ In this lab, you will:
 
   ![Customer 360 Notebook](./images/ZepCustomer360NB.png)
 
-## **STEP 2:** Graph visualization
+## **STEP 3:** Graph visualization
 
 Now we will use the Graph Visualization component to explore the graph and run some PGQL queries.
 
-1. Open the Graph Viz at [http://localhost:7007/ui/](http://localhost:7007/ui/)
+1. In URL, replace *your-instance-ip-address* with your instance IP address and open the Graph Viz at:
+
+    ```
+    http://your-instance-ip-address:7007/ui/
+    ```
 
   You should see a screen similar to the screenshot below.
 
@@ -130,7 +192,7 @@ Let's find accounts that have had an outbound and inbound transfer of over 500 o
 
   ![Circular transfer A to B to C to A](./images/GraphVizABCATxn.png)
 
-## **STEP 3:** Graph query and analysis in JShell
+## **STEP 4:** Graph query and analysis in JShell
 
 1. Start the JShell in the graph-client. Copy and paste the following command to do that.
 
