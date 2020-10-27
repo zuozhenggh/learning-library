@@ -2,14 +2,14 @@
   "workshoptitle": "Getting Started with Computer Vision using PyTorch",
     "tutorials": [
         {
-            "title": "Introduction",
-            "description": "Steps to set up the python environment and install pytorch",
-            "filename": "../../introduction/introduction.md"        
-        },
-        {
             "title": "Prerequisites",
             "description": "Get a Free Trial",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Steps to set up the python environment and install pytorch",
+            "filename": "../../introduction/introduction.md"        
         },
         {
             "title": "Lab 1: Create SSH Keys",

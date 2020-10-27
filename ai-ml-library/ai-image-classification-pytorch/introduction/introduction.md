@@ -14,6 +14,11 @@ Topics covered in this lab:
 * Model Training
 * GPU Acceleration
 
+### Prerequisites
+
+This lab assumes you have:
+- An Oracle Free Tier or Paid Cloud account
+
 ### About Tensors
 
 For better or worse, visual representations help contextualize computer science terminology, data structures, and algorithms. For tensors, [KDnuggets provides a clear explaination](https://www.kdnuggets.com/2018/05/wtf-tensor.html). When you search for a definition online, you may encounter some confusion between the technical definition of a tensor and colloquial usage. Technically, a vector is a 1-dimensional tensor and a matrix is a 2-dimensional tensor, but most often tensor refers to an n-dimensional container that’s larger than both a vector and a matrix.
