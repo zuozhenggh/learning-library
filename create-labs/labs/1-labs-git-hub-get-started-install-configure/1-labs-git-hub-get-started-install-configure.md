@@ -51,6 +51,7 @@ You must request membership to the Oracle GitHub Organization (OGHO). After your
 3. Accept the invitation that you receive or go to the organization page you requested membership for, and accept the invitation at the top of the page.
 
 ## **STEP 4:** Publicize your Membership
+
 1. In the top right corner of [GitHub Profile Settings](https://github.com/settings/profile), click your profile photo, then click **Your profile**.
   ![](./images/git-get-started-profile.png " ")
 
@@ -104,7 +105,7 @@ In the following example, user achepuri has forked the learning-library reposito
 In the next step, you will clone this forked repository.
 
 ## **STEP 7:** Clone the Forked Repository
-A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as Atom, and use the GitHub Desktop client to keep track of your changes without having to be online.
+A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as **Atom** editor, and use the **GitHub Desktop** client to keep track of your changes without having to be online.
 
 To clone the forked repository:
 1. Open your **GitHub Desktop** application and log in using your GitHub account.
