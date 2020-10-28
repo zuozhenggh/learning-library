@@ -36,35 +36,30 @@
             "filename": "../../../provision-wls/provision-wls.md"
         },
         {
-            "title": "Lab 4: Provision the Database on OCI",
+            "title": "Lab 4: Provision the ATP Database on OCI",
             "publisheddate": "07/30/2020",
-            "filename": "../../../provision-app-db/provision-app-db.md"
+            "filename": "../../../provision-app-db-atp/provision-app-db-atp.md"
         },
         {
-            "title": "Lab 5: Gather Information about the DB VM on OCI",
+            "title": "Lab 5: Migrate the Application Database",
             "publisheddate": "07/30/2020",
-            "filename": "../../../gather-db-info/gather-db-info.md"
+            "filename": "../../../migrate-app-db-atp-datapump/migrate-app-db-atp-datapump.md"
         },
         {
-            "title": "Lab 6: Migrate the Application Database",
+            "title": "Lab 6: Migrate the WebLogic Domain",
             "publisheddate": "07/30/2020",
-            "filename": "../../../migrate-app-db-datapump/migrate-app-db-datapump.md"
+            "filename": "../../../migrate-wls-wdt-atp/migrate-wls-wdt-atp.md"
         },
         {
-            "title": "Lab 7: Migrate the WebLogic Domain",
-            "publisheddate": "07/30/2020",
-            "filename": "../../../migrate-wls-wdt/migrate-wls-wdt.md"
-        },
-        {
-            "title": "Lab 8 (Optional): Scale the WebLogic Domain",
+            "title": "Lab 7 (Optional): Scale the WebLogic Domain",
             "publisheddate": "07/30/2020",
             "filename": "../../../scale-wls/scale-wls.md"
         },
         {
-            "title": "Lab 9: Tear down the Environment",
+            "title": "Lab 8: Tear down the Environment",
             "publisheddate": "07/30/2020",
             "filename": "../../../tear-down/tear-down.md",
-            "type": "dbcs"
+            "type": "atp"
         }
      ]
 }

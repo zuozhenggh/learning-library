@@ -20,11 +20,11 @@ Once the database system is provisioned, under the **Database System -> details*
 
 1. Go to the `nodes` left-side menu and note the **private IP address** of the node provisioned for later use
 
-  <img src="./images/provision-db-26-nodeip.png" width="100%">
+  ![](./images/provision-db-26-nodeip.png)
 
 2. Go to **DB Connection** 
 
-  <img src="./images/provision-db-27-connection.png" width="100%">
+  ![](./images/provision-db-27-connection.png)
 
 3. Copy the **DB connection string** for later use
 
