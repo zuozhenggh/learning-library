@@ -195,7 +195,7 @@ When Service Instances finish Provisioning, secrets in the form of a *ServiceBin
   ````
 
 4. Once the binding shows READY, a secret will also be available. For ATP, this secret is in the form of a Base64 encoded DB Connection Wallet:
-
+    
 kubectl get secret catalogue-oadb-wallet-binding -o yaml
 
 ## **STEP 4**: Run MuShop
