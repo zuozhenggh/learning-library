@@ -196,44 +196,66 @@ When Service Instances finish Provisioning, secrets in the form of a *ServiceBin
 
 4. Once the binding shows READY, a secret will also be available. For ATP, this secret is in the form of a Base64 encoded DB Connection Wallet:
     
-kubectl get secret catalogue-oadb-wallet-binding -o yaml
+  ````
+  <copy>    
+  kubectl get secret catalogue-oadb-wallet-binding -o yaml
+  </copy>
+   ```` 
 
-## **STEP 4**: Run MuShop
+## **STEP 6**: Run MuShop
 
 A new ATP instance is now ready and available. The next step is to configure access secrets, and (re)deploy the application.
 
-    *Note:* it is assumed that a MuShop chart configuration: myvalues.yaml already exists. 
+*Note:* it is assumed that a MuShop chart configuration: myvalues.yaml already exists. 
 
-    Remove a previous deployment (if applicable):
-
+1.  If applicable, remove a previous deployment.  If no previous deployment, skip to #2.
+    ````
+    <copy>  
     helm delete mushop
+    </copy>
+    ```` 
 
-    Create catalogue-oadb-admin secret:
-
+2.  Create catalogue-oadb-admin secret.
+    ````
+    <copy>  
     kubectl create secret generic catalogue-oadb-admin \
       --from-literal=oadb_admin_pw='s123456789S@'
+    </copy>
+    ```` 
 
-    Define catalogue-oadb-connection secret:
-
+3. Define catalogue-oadb-connection secret.
+    ````
+    <copy>  
     kubectl create secret generic catalogue-oadb-connection \
       --from-literal=oadb_service=cataloguedev_tp \
       --from-literal=oadb_user=CATALOGUE_USER  \
       --from-literal=oadb_pw='default_Password1'
-
-    From the source code, traverse into the helm chart deployment directory:
-
+    </copy>
+    ```` 
+    
+4. From the source code, traverse into the helm chart deployment directory
+    ````
+    <copy>  
     cd deploy/complete/helm-chart
+    </copy>  
+    ````
 
-    Deploy MuShop with a flag indicating that the catalogue service is using an OCI Service Broker binding: --set catalogue.osb.atp=true
 
+5. Deploy MuShop with a flag indicating that the catalogue service is using an OCI Service Broker binding: --set catalogue.osb.atp=true
+
+    ````
+    <copy>  
     helm install mushop mushop \
       --set catalogue.osb.atp=true \
       -f myvalues.yaml
+    </copy>  
+    ````
 
-## **STEP 4**: Under the Hood
+## **STEP 7**: Under the Hood
 
 Once again, the use of helm adds some mystery to the ultimate deployment of the catalogue service. Inspect the following for additional information. 
-Inspect the catalogue deployment:
+
+1.  Inspect the catalogue deployment:
 
 kubectl get deploy mushop-catalogue -o yaml
 
