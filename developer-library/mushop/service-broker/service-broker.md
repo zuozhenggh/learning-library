@@ -322,8 +322,7 @@ Once again, the use of helm adds some mystery to the ultimate deployment of the 
     </copy>  
     ````
 
-You may now *proceed to the next lab*.
-
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
