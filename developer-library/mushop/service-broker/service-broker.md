@@ -1,4 +1,4 @@
-# Deploy MuShop Application
+# Service Broker and ATP
 
 ## Introduction
 
@@ -12,8 +12,8 @@ In this lab, you will:
 * Install Service Catalog
 * Deploy OCI Service Broker
 * Provision ATP
-* Binding to Created ATP (wallet auto-creation)
-* Deploying catalogue app
+* Bind to Created ATP (wallet auto-creation)
+* Deploy catalogue app
 
 ### Prerequisites
 
@@ -257,48 +257,70 @@ Once again, the use of helm adds some mystery to the ultimate deployment of the 
 
 1.  Inspect the catalogue deployment:
 
-kubectl get deploy mushop-catalogue -o yaml
+    ````
+    <copy>  
+    kubectl get deploy mushop-catalogue -o yaml
+    </copy>  
+    ````
+2.  Inspect the db init pod (name will vary)
+    ````
+    <copy>  
+    kubectl logs mushop-catalogue-1.2-init-d475m
+    </copy>  
+    ````
 
-And the db init pod (name will vary):
+3. Remove previous deployment (if applicable):
+    ````
+    <copy>  
+    helm delete mushop
+    </copy>  
+    ````
 
-kubectl logs mushop-catalogue-1.2-init-d475m
+## **STEP 8**: Full Automation
 
- Remove previous deployment (if applicable):
+1. The processes contained in this exercise may be automated through the use of another helm chart included in the repo:
+    ````
+    <copy>  
+    deploy/complete/helm-chart/provision
+    </copy>  
+    ````
 
-helm delete mushop
+2. The provision chart includes:
 
-## **STEP 4**: Full Automation
-The processes contained in this exercise may be automated through the use of another helm chart included in the repo:
-
-deploy/complete/helm-chart/provision
-
-The provision chart includes:
-
-    OCI Service Broker API Secret
-    OCI ClusterServiceBroker
-    Global ATP Instance/Binding
-    Optional service-specific instance(s)
-    Auto-generated *-oadb-admin secrets
-    Auto-generated *-oadb-connection secrets
+      - OCI Service Broker API Secret
+      - OCI ClusterServiceBroker
+      - Global ATP Instance/Binding
+      - Optional service-specific instance(s)
+      - Auto-generated *-oadb-admin secrets
+      - Auto-generated *-oadb-connection secrets
 
 
-Provision instance(s) and binding(s):
+3. Provision instance(s) and binding(s).  Replace COMPARTMENT_OCID with the Oracle Cloud ID for your compartment.
 
-helm install provision provision \
-  --set skip.clusterBroker=true \
-  --set global.osb.oss=false \
-  --set global.osb.objectstorage=false \
-  --set global.osb.compartmentId=<COMPARTMENT_OCID>
+    ````
+    <copy> 
+    helm install provision provision \
+      --set skip.clusterBroker=true \
+      --set global.osb.oss=false \
+      --set global.osb.objectstorage=false \
+      --set global.osb.compartmentId=</copy><COMPARTMENT_OCID>
+    ````
 
-Wait for servicebindings to be READY:
+4.  Wait for servicebindings to be READY:
+    ````
+    <copy> 
+    kubectl get servicebindings -A
+    </copy>  
+    ````
+5. Deploy MuShop again, now indicating the use of Service Broker ATP backing:
 
-kubectl get servicebindings -A
-
-Deploy MuShop again, now indicating the use of Service Broker ATP backing:
-
-helm install mushop mushop \
-  --set global.osb.atp=true \
-  --set tags.streaming=false
+    ````
+    <copy> 
+    helm install mushop mushop \
+      --set global.osb.atp=true \
+      --set tags.streaming=false
+    </copy>  
+    ````
 
 You may now *proceed to the next lab*.
 

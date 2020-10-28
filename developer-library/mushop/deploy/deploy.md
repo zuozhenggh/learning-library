@@ -12,34 +12,36 @@ Estimated Lab Time: n minutes
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Gather Cloud Information
+* Download Source Code
+* Setup OKE Cluster
+* Deploy with Helm
+* Explore under the Hood
+* Clean up
 
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Lab:  Setup SSH Keys
 
 ## **STEP 1**: Obtain Oracle Cloud Information
 
 1.  Create a txt file with the following values.  This step will walk you through how to obtain this information.
-region:       # Region where resources will be provisioned. (ex: us-phoenix-1)
-tenancy:      # Tenancy OCID value
-user:         # API User OCID value
-compartment:  # Compartment OCID value
-key:          # Private API Key file path (ex: /Users/jdoe/.oci/oci_key.pem)
-fingerprint:  # Public API Key fingerprint (ex: 43:65:2c...)
+    - region:       # Region where resources will be provisioned. (ex: us-phoenix-1)
+    - tenancy:      # Tenancy OCID value
+    - user:         # API User OCID value
+    - compartment:  # Compartment OCID value
+    - key:          # Private API Key file path (ex: /Users/jdoe/.oci/oci_key.pem)
+    - fingerprint:  # Public API Key fingerprint (ex: 43:65:2c...)
 
 ## **STEP 2**: Obtain Mushop source code
 
 1.  Open up Cloud Shell and clone the github repo.
 
     ````
+    <copy>
     git clone https://github.com/oracle-quickstart/oci-cloudnative.git mushop
+    </copy>
     ````
 2.  Change to the mushop directory
     ````
