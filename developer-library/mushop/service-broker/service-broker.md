@@ -186,12 +186,15 @@ When Service Instances finish Provisioning, secrets in the form of a *ServiceBin
   ````
 
 3. Use kubectl to create the wallet binding.
-kubectl create -f catalogue-oadb-binding.yaml
 
+  ````
+  <copy>
+  kubectl create -f catalogue-oadb-binding.yaml
+  kubectl get servicebindings
+  </copy>
+  ````
 
-kubectl get servicebindings
-
-Once the binding shows READY, a secret will also be available. For ATP, this secret is in the form of a Base64 encoded DB Connection Wallet:
+4. Once the binding shows READY, a secret will also be available. For ATP, this secret is in the form of a Base64 encoded DB Connection Wallet:
 
 kubectl get secret catalogue-oadb-wallet-binding -o yaml
 
