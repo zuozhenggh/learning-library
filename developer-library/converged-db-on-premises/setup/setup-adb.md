@@ -17,17 +17,16 @@ This lab will show you how to start a database instance and listener from a Putt
 There are multiple ways to create an authorization token for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Auth Tokens and use the interface, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 3](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
 1. Login to the Oracle Cloud console if you aren't logged in already
-
 2. Navigate back to your Autonomous Database instance by clicking on the hamburger menu and selecting Autonomous Transaction Processing (ATP) (*Note:* This workshop can run on Autonomous Data Warehouse, Autonmous JSON Database and ATP, the instructions are the same).
 3. Start Oracle Cloud Shell by clicking on the icon in the upper right corner
 4. While still in the upper right corner click on the person icon.
 5. Click on the user you logged in as
 6. Show the Oracle Cloud ID (OCID) for the user, copy it to a notepad
 7. Create the Authorization Token that you will need to load your database by copying the command below and pasting it into your Cloud Shell.  Paste in your user OCID in for the ocid below.
-   ````
-   <copy>
-   oci iam auth-token create --description convergeddb --user-id </copy> ocid1.user.oc1.pasteinyourocid
-   ````
+      ````
+      <copy>
+      oci iam auth-token create --description convergeddb --user-id </copy> ocid1.user.oc1.pasteinyourocid
+      ````
 8. Copy the value for token to a note pad.  This is *very important*
 
 
@@ -39,19 +38,25 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 3.  Copy the Autonomous Databse OCID to a notepad
 4.  Create the Database Wallet that you will need to connect to your ATP instance
 5.  In the General Information section find the OCID, click copy and paste this command.  Add the OCID you just copied into the command line
-   ````
-   <copy>
-oci db autonomous-database generate-wallet --password WElcome123## --file converged-wallet.zip --autonomous-database-id </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
-   ````
-6.  The wallet file will be downloaded to your cloud shell
+      ````
+      <copy>
+      oci db autonomous-database generate-wallet --password WElcome123## --file converged-wallet.zip --autonomous-database-id </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
+      ````
+6.  The wallet file will be downloaded to your cloud shell file system
 7.  Click the list command below to verify it was created
       ````
       ls
       ````
+      
+## **STEP 3:** Start SQL Developer Web
 
+1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing**
+2.  Click on the **Display Name**
+3.  Click on the **Tools** tab
+4.  Login with the *admin* user and the password that you set during ATP instance creation.  (*Note*: the admin password can also be changed in the **More Actions** drop down)
+5.  
 
-
-8.  In Oracle Cloud Shell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user.  
+6.  In Oracle Cloud Shell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user.  
 
       ````
       ssh -i <<sshkeylocation>> opc@<<your address>>
