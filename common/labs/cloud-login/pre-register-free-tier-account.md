@@ -28,9 +28,9 @@ If you already have a cloud account, skip to **STEP 2**.
        ![](images/cloud-infrastructure.png " ")
 3.  Enter the following information to create your Oracle Cloud Free Tier account.
     * Choose your **Country**
-    * Enter your **Name** and **Email**. 
+    * Enter your **Name** and **Email**.
 
-4. Once you have entered a valid email address, select the **Verify my email** button. 
+4. Once you have entered a valid email address, select the **Verify my email** button.
     The screen will appear as follows after you select the button:
        ![](images/verify-email.png " ")
 
@@ -94,7 +94,7 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
     ![](images/oci-console-home-page.png " ")
 
-You may now proceed to the next lab
+You may now [proceed to the next lab](#next).
 
 ## **Acknowledgements**
 

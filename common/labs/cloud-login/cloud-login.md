@@ -15,7 +15,7 @@ We offer two types of Cloud Accounts:
 ### Objectives
 
 - Learn how to login to your Oracle Cloud Account
-  
+
 
 ### Prerequisites
 - Cloud Account Name - The name of your tenancy (supplied by the administrator or in your Oracle Cloud welcome email)
@@ -42,10 +42,10 @@ We offer two types of Cloud Accounts:
     ![](images/cloud-login-3.png " ")   
 
 
-4. Once you successfully login, you will be presented with the Oracle Cloud homepage. 
-  ![](./images/cloud-homepage.png " ") 
+4. Once you successfully login, you will be presented with the Oracle Cloud homepage.
+  ![](./images/cloud-homepage.png " ")
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
