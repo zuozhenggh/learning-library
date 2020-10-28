@@ -26,7 +26,7 @@ In this lab, you will:
     ````
     kubectl get pod -A -l chart=catalog-0.3.0
     ````
-2.  If Service Catalog is installed, proceed to Step 2.  If it is not installed, continue.
+2.  If the service catalog is installed, proceed to Step 2.  If it **is not installed**, follow the subsequent steps to proceed.
 3.   Create namespace for supporting services
     ````
     kubectl create namespace mushop-utilities
