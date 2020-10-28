@@ -86,7 +86,7 @@ Create a new **Administrator** group that will have full access rights to the ne
 
    ![](./images/user-created.png " ")
 
-   **Note:** In this workshop, you will not login to OCI using the new **`training-bds-admin`** user that you just created in this step; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-bds-admin`** user. The user must change the password when they sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation. 
+   **Note:** In this workshop, you will not login to OCI using the new **`training-bds-admin`** user that you just created in this step; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-bds-admin`** user. The user must change the password when they sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
 
 ## **STEP 4:** Create an IAM BDS Administrators Group and Add the New User to the Group
 
@@ -124,7 +124,6 @@ Create a BDS group whose members will be granted permissions to manage the BDS c
    ![](./images/groups-page.png " ")
 
 
-
 ## **STEP 5:** Create IAM Policies for Administering Your Service
 Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies to grant privileges to users and groups to use and manage Big Data Service resources. Before you can create a cluster, you must also create a policy that grants the system access to networking resources.
 
@@ -142,61 +141,61 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
     ![](./images/policies-page.png " ")
 
+    The **Create Policy** dialog box is displayed.
+
+    ![](./images/create-policy-db-blank.png " ")
+
+
 4. In the **Create Policy** dialog box, provide the following information:
+    - Enter **`training-admin-policy`** in the **NAME** field.
+    - Enter **`Training Admin Group Policy`** in the **DESCRIPTION** field.
+    - Select **`training-compartment`** from the **COMPARTMENT** drop-down list, if it's not already selected.
+    - In the **Policy Builder** section, click the **Customize (Advanced)** link. An empty text box is displayed in this section.
 
-      + Enter **`training-admin-policy`** in the **NAME** field.
-      + Enter **`Training Admin Group Policy`** in the **DESCRIPTION** field.
-      + Select the **KEEP POLICY CURRENT** option.
-      + Use the **COMPARTMENT** drop-down list to select your compartment, if you have not done that yet.
-      + In the **Policy Statements** section, click the **Copy** button to copy the policy statement in the box, and then paste it in the **STATEMENT 1** box:
+     ![](./images/create-policy-1-dialog.png " ")
 
-        ```
-        <copy>allow group training-bds-admin-group to manage virtual-network-family in compartment training-compartment</copy>
-        ```
-      + Click **+ Another Statement** to add a **STATEMENT 2** text box to the **Policy Statements** section. Copy the following policy statement, and then paste it in the **STATEMENT 2** box:    
+    + Click the **Copy** button in the following code box to copy the two policy statements, and then paste them in the **Policy Builder** text box. The first policy statement grants members of the `training-bds-admin-group` group manage privileges on the Virtual Cloud Network (VCN) resources in `training-compartment`. The second policy statement grants members of the `training-bds-admin-group` group manage privileges to inspect, read, update, create, delete, and move all clusters in `training-compartment`.
 
         ```
-        <copy>allow group training-bds-admin-group to manage bds-instance in compartment training-compartment</copy>
+        <copy>allow group training-bds-admin-group to manage virtual-network-family in compartment training-compartment
+        allow group training-bds-admin-group to manage bds-instance in compartment training-compartment</copy>
         ```
 
-       ![](./images/create-policy-1-dialog.png " ")
+    + In the **POLICY VERSIONING** section, accept the default **KEEP POLICY CURRENT** option.
+    + Select the **CREATE ANOTHER POLICY** check box to create a second policy after your create the first policy.   
 
+     ![](./images/create-policy-1-dialog-complete.png " ")
 
-5. Click **Create**. The **Policy Detail** page is displayed and the two statements in the **training-admin-policy** are displayed in the **Statements** section.
+5. Click **Create**. A confirmation message is displayed. You can click the **View Details** link to display the **Policy Detail** page in a new tab in your browser. The **Create Policy** dialog box remains displayed because you selected the **CREATE ANOTHER POLICY** check box. This enables you to create your second policy.
 
-       ![](./images/policy-1-detail-page.png " ")
+  ![](./images/policy-created.png " ")
 
-
-6. Click **Policies** in the breadcrumbs to re-display the **Policies** page. The newly created policy is displayed in the list of available policies.
-
-      ![](./images/policy-1-created.png " ")
-
-      **Note:** You can click the name of the new policy to view and edit the policy statements in the policy.
-
-7. Create a new policy in the **`training-compartment`** which will contain policies about the network resources that will be used by your **`training-cluster`**. The policy statement in this new policy grants the system the rights to interact with various networking components. Click **Create Policy**.  
-
-8. In the **Create Policy** dialog box, provide the following information:
+6. Create a new policy in the **`training-compartment`** which will contain policies about the network resources that will be used by your **`training-cluster`**. The policy statement in this new policy grants the system the rights to interact with various networking components. In the **Create Policy** dialog box, provide the following information:
 
     + Enter **`training-bds-policy`** in the **NAME** field.
     + Enter **`Training BDS Service Policy`** in the **DESCRIPTION** field.
-    + Select the **KEEP POLICY CURRENT** option.
-    + Use the **COMPARTMENT** drop-down list to select your compartment, if it's not already  selected.
-    + In the a **Policy Statements** section, copy the following policy statement which allows the Big Data Service to access the network, create instances, and more, and then paste it in the **STATEMENT 1** box:
+    + Use the **COMPARTMENT** drop-down list to select **training-compartment**, if you have not done that yet.
+    + In the **Policy Builder** section, click the **Customize (Advanced)** link. An empty text box is displayed in this section.
+    + Click the **Copy** button in the following code box to copy the policy statement, and then paste it in the **Policy Builder** text box. This policy statement allows the Big Data Service, **`bdsprod`**, to access the network, create instances, and more.
 
         ```
         <copy>allow service bdsprod to {VNC_READ, VNIC_READ, VNIC_ATTACH, VNIC_DETACH, VNIC_CREATE, VNIC_DELETE,VNIC_ATTACHMENT_READ, SUBNET_READ, VCN_READ, SUBNET_ATTACH, SUBNET_DETACH, INSTANCE_ATTACH_SECONDARY_VNIC, INSTANCE_DETACH_SECONDARY_VNIC} in compartment training-compartment</copy>
         ```
 
-    ![](./images/create-policy-2-dialog.png " ")
+     ![](./images/create-policy-2-dialog.png " ")
 
+    + In the **POLICY VERSIONING** section, accept the default **KEEP POLICY CURRENT** option.
 
-9. Click **Create**. The **Policy Detail** page is displayed and the statement in the **training-bds-policy** is displayed in the **Statements** section.
+7. Click **Create**. The **Policy Detail** page is displayed and the statement in the **training-bds-policy** is displayed in the **Statements** section.
 
        ![](./images/policy-2-detail-page.png " ")
 
-10. Click **Create**. The newly created policy is displayed in the list of available policies.
+8. Click **Policies** in the breadcrumbs to re-display the **Policies** page. The newly created policies are displayed in the list of available policies.
 
-      ![](./images/policy-2-created.png " ")
+      ![](./images/policies-created.png " ")
+
+      **Note:** You can click the name of a policy on this page to view and edit its policy statements.
+
 
 
 ## **STEP 6:** Create a Virtual Cloud Network (VCN)
@@ -250,12 +249,13 @@ In this step of the lab, you will create a new Virtual Cloud Network (VCN) that 
 
 ## Want to Learn More?
 
+* [Overview of Oracle Cloud Infrastructure Identity and Access Management (IAM)](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
+* [Understand Big Data Service Resources and Permissions in IAM Policies](https://docs.oracle.com/en/cloud/paas/big-data-service/user/bds-resources-and-permissions-use-iam-policies.html)
 * [VCN and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm)
 * [Create a Network](https://docs.oracle.com/en/cloud/paas/big-data-service/user/create-network.html#GUID-36C46027-65AB-4C9B-ACD7-2956B2F1B3D4)
 * [Using Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/index.html)
 * [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
-* [Overview of Oracle Cloud Infrastructure Identity and Access Management (IAM)](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
-* [Oracle Cloud Infrastructure Self-paced Learning Modules] (https://www.oracle.com/cloud/iaas/training/foundations.html)
+* [Oracle Cloud Infrastructure Self-paced Learning Modules](https://www.oracle.com/cloud/iaas/training/foundations.html)
 * [Overview of Compute Service](https://www.oracle.com/pls/topic/lookup?ctx=cloud&id=oci_compute_overview)
 
 

@@ -1,4 +1,4 @@
-## **NAMD Introduction**
+# NAMD Introduction
 
 This Runbook provides the steps to deploy a GPU machine on Oracle Cloud Infrastructure, install NAMD, and run a model using NAMD software.
 
@@ -7,6 +7,14 @@ NAMD is a molecular dynamics software that simulates the movements of atoms in b
 NAMD is built on Charm++ and Converse, and can run on high performance computers to execute parallel processing. It was developed by the University of Illinois. More information can be found [here](http://charm.cs.illinois.edu/research/moldyn).
 
 ![](./images/protein.gif)
+
+## **Architecture**
+
+The architecture for this runbook is simple, a single machine running inside of an OCI VCN with a public subnet.
+Since a GPU instance is used, block storage is attached to the instance and installed with the NAMD application. The instance is located in a public subnet and assigned a public ip, which can be accessed via ssh.
+
+
+![](./images/arch-draft.png)
 
 ## Acknowledgements
 * **Author** - High Performance Compute Team
