@@ -86,7 +86,7 @@ Step 1 opening paragraph.
   ```
 
 *At the conclusion of the lab add this statement:*
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

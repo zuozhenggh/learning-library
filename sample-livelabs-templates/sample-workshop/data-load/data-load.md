@@ -85,18 +85,8 @@ Step 1 opening paragraph.
     <copy>ssh -i <ssh-key-file></copy>
     ```
 
-    <!-- Note that files cannot include empty lines. This will be addresses in a future version. -->
-5. Example using an included file. Copy it from the block below:
-
-    ```
-    <copy>[](include:load_data)</copy>
-    ```
-
-    <!-- Use this syntax for now to force a the download of a file -->
-    Or download it using <a href="./files/load_data.sql" download-"load_data.sql" target="_blank">this link</a>.
-
 *At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
