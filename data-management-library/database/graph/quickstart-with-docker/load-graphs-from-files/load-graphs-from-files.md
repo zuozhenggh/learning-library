@@ -17,7 +17,7 @@ In this lab, you will:
 
 * This lab assumes you have successfully setup a Property Graph Analysis Environment in Docker.
 
-## **STEP 1:** Add ingress rules and verify environment
+## **STEP 1:** Add ingress rules and verify setup environment
 
 1. On Oracle cloud homepage, click on the hamburger, navigate to **Networking** in Core Infrastucture section and click on **Virtual Cloud Networks**.
 
@@ -107,13 +107,15 @@ Now we will use the Graph Visualization component to explore the graph and run s
 
 3. Now let's add some labels and other visual context. These are known as highlights.
 
-4. Click on the Load button under Highlights (on the right side of the screen).
+4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u03/b/labfiles/o/highlights.json) to download the file named 'highlights.json'.
 
-5. Browse to the `customer_360` folder in the repository that you cloned in Lab1. That is, to `oracle-pg/graphs/customer_360` and choose the file named 'highlights.json' and click Open to load that.
+5. Click on the Load button under Highlights (on the right side of the screen).
+
+6. Browse the `highlights.json` file, click Open to load that.
 
   ![Load highlights for graph](./images/GraphVizLoadHighlights.png)
 
-6. The graph should now look like
+7. The graph should now look like
 
   ![Customer 360 graph with highlights](./images/GraphVizWithHighlights.png)
 
