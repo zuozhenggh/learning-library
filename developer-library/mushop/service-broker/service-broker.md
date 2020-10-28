@@ -33,10 +33,10 @@ In this lab, you will:
     ````
 
 4.   Add the Kubernetes Service Catalog helm repository:
-
-helm repo add svc-cat https://svc-catalog-charts.storage.googleapis.com
-
-Install the Kubernetes Service Catalog helm chart:
+    ````
+    helm repo add svc-cat https://svc-catalog-charts.storage.googleapis.com
+    ````
+5. Install the Kubernetes Service Catalog helm chart:
 
 helm install catalog svc-cat/catalog \
   --namespace mushop-utilities 
