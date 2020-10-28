@@ -12,34 +12,36 @@ Estimated Lab Time: n minutes
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Gather Cloud Information
+* Download Source Code
+* Setup OKE Cluster
+* Deploy with Helm
+* Explore under the Hood
+* Clean up
 
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Lab:  Setup SSH Keys
 
 ## **STEP 1**: Obtain Oracle Cloud Information
 
 1.  Create a txt file with the following values.  This step will walk you through how to obtain this information.
-region:       # Region where resources will be provisioned. (ex: us-phoenix-1)
-tenancy:      # Tenancy OCID value
-user:         # API User OCID value
-compartment:  # Compartment OCID value
-key:          # Private API Key file path (ex: /Users/jdoe/.oci/oci_key.pem)
-fingerprint:  # Public API Key fingerprint (ex: 43:65:2c...)
+    - region:       # Region where resources will be provisioned. (ex: us-phoenix-1)
+    - tenancy:      # Tenancy OCID value
+    - user:         # API User OCID value
+    - compartment:  # Compartment OCID value
+    - key:          # Private API Key file path (ex: /Users/jdoe/.oci/oci_key.pem)
+    - fingerprint:  # Public API Key fingerprint (ex: 43:65:2c...)
 
 ## **STEP 2**: Obtain Mushop source code
 
 1.  Open up Cloud Shell and clone the github repo.
 
     ````
+    <copy>
     git clone https://github.com/oracle-quickstart/oci-cloudnative.git mushop
+    </copy>
     ````
 2.  Change to the mushop directory
     ````
@@ -150,21 +152,12 @@ Configure the mushop helm chart ingress values in cases where traffic must be di
     helm delete mushop
     ````   
 
-
 You may now *proceed to the next lab*.
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Adao Junior
+* **Contributors** -  Kay Malcolm, DB Product Management
+* **Last Updated By/Date** - October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
