@@ -1,10 +1,9 @@
 {
-    "workshoptitle": "High Performance Compute - Siemens STAR-CCM+ Workshop",
+    "workshoptitle": "High Performance Compute - Siemens STAR-CCM+",
     "tutorials": [
         {
-            "title": "Introduction",
-            "description": "Brief introduction to the Siemens STAR-CCM+ software",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/sim_ccm+_Introduction.md"        
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Introduction",

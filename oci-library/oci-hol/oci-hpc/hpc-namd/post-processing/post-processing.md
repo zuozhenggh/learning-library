@@ -1,35 +1,42 @@
-## **Post-processing**
+# Post-processing
 
-For post-processsing, you can use Visual Molecular Dynamics (VMD) software to analyze the models. Run the following commands to configure VMD:
+## Introduction
+In this lab, you will use Visual Molecular Dynamics (VMD) software to analyze the models for post-processing.
 
-```
-<copy>
-./configure
-cd src
-sudo make install
-</copy>
-```
+Estimated Lab Time: 5 minutes
 
-If you are using vnc, launch vncserver and create a vnc password as follows:
+## **STEP**: Post-processing
 
-```
-<copy>
-sudo systemctl start vncserver@:1.service
-sudo systemctl enable vncserver@:1.service
-vncserver
-vncpasswd
-</copy>
-```
+1. For post-processsing, you can use Visual Molecular Dynamics (VMD) software to analyze the models. Run the following commands to configure VMD:
 
-Start up a vnc connection using localhost:5901 (ensure tunneling is configured), and run the following commands to start up VMD:
+    ```
+    <copy>
+    ./configure
+    cd src
+    sudo make install
+    </copy>
+    ```
 
-```
-<copy>
-vmd
-</copy>
-```
+2. If you are using vnc, launch vncserver and create a vnc password as follows:
 
-Open the apoa1 and stmv pdb files in /mnt/block/work/NAMD_models and start playing with your models.
+    ```
+    <copy>
+    sudo systemctl start vncserver@:1.service
+    sudo systemctl enable vncserver@:1.service
+    vncserver
+    vncpasswd
+    </copy>
+    ```
+
+3. Start up a vnc connection using localhost:5901 (ensure tunneling is configured), and run the following commands to start up VMD:
+
+    ```
+    <copy>
+    vmd
+    </copy>
+    ```
+
+4. Open the apoa1 and stmv pdb files in /mnt/block/work/NAMD_models and start playing with your models.
 
 ## Acknowledgements
 * **Author** - High Performance Compute Team
