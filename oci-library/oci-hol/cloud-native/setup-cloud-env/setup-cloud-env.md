@@ -120,10 +120,9 @@ To access Cloud Shell:
 
 10. Make sure to copy the **fingerprint** and paste in a notepad, we will use it later in this lab.
 
-*You are ready to proceed to the next lab...*
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-
 - **Author** - Satyajeet Joshi
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 
