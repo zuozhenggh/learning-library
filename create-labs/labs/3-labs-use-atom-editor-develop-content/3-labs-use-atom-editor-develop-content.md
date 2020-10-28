@@ -2,7 +2,9 @@
 
 ## Introduction
 
-You can use your preferred editor to author and edit your Markdown (.md) content for rendering the Workshop output. Oracle recommends the Atom editor and the atom-live-server.
+You can use your preferred editor to author and edit your Markdown (.md) content for rendering the Workshop output.
+
+**Note:** Oracle recommends the UA Developers to use Atom.
 
 ### Objectives
 
@@ -16,9 +18,6 @@ You can use your preferred editor to author and edit your Markdown (.md) content
 * An IDE, such as Atom.
 * A local web server such as **atom-live-server**, a plugin for `Atom.io`.
 
-**Note:** Oracle recommends the UA Developers to use Atom.
-
-
 ## **STEP 1:** Install Atom
 `Atom.io` is a 3rd party IDE freely available under MIT License.
 
@@ -29,10 +28,10 @@ To install Atom:
 3. From the extracted files, click `atom.exe` to launch Atom.
 
 ## **STEP 2:** Install the atom-live-server Plugin
-You must NOT be connected to Oracle's network or VPN while installing the Atom-Live-Server package.
+You must NOT be connected to Oracle's network or VPN while installing the **atom-live-server** package.
 
-To install the **atom-live-server**:
-1. In the Atom editor, click **Help**, and then select **Welcome Guide**.
+To install **atom-live-server**:
+1. In the **Atom** editor, click **Help**, and then select **Welcome Guide**.
 2. In the **Welcome Guide** screen, click **Install a Package**, and then click **Open Installer** to display the **Install Packages** window.
 
   ![](./images/use-atom-editor-welcome-install-package.png " ")
@@ -43,7 +42,7 @@ To install the **atom-live-server**:
 
 4. When the installation is successfully completed, the **Install** button is replaced with the **Uninstall** and **Disable** buttons.
   ![](./images/use-atom-editor-welcome-uninstall-disable.png " ")
-The atom-live-server plugin is added to the **Packages** menu.
+The **atom-live-server** plugin is added to the **Packages** menu.
   ![](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
 
 ## **STEP 3:** Merge Content from Git Before you Start Editing your Content
@@ -59,47 +58,46 @@ The atom-live-server plugin is added to the **Packages** menu.
   3. Under the **Default branch**, the master branch is selected by default. This indicates the local clone on your PC.
     ![](./images/git-hub-merge-local-clone-default-branch.png " ")
 
-  4. Scroll down the **Merge into master** window, select **upstream/master** (this is your master repository which is the learning-library), and then click **Merge upstream/master into master**. In this example, this will merge 120 commits by other people from the upstream/master into the clone on the local PC.
+  4. Scroll down the **Merge into master** window, select **upstream/master** (this is your master repository which is the learning-library), and then click **Merge upstream/master into master**. In this example, this will merge 120 commits by other people from the **upstream/master** into the clone on the local PC.
 
     ![](./images/git-hub-merge-upstream-master.png " ")
 
-  5. When the merge is successfully completed, a "Successfully merged upstream/master into master" message is displayed. To push the new commits from the local clone to your forked location, click **Push origin**.
+  5. When the merge is successfully completed, a **"Successfully merged upstream/master into master"** message is displayed. To push the new commits from the local clone to your forked location, click **Push origin**.
 
-    **Note**: To determine if your clone is up-to-date with **upstream/master** (production), repeat steps 2 to 4. If both repositories are synchronized, then the following message is displayed: "This branch is up to date with upstream/master".
+    **Note**: To determine if your clone is up-to-date with **upstream/master** (production), repeat steps 2 to 4. If both repositories are synchronized, then the following message is displayed: "This branch is up to date with **upstream/master**".
 
     ![](./images/git-hub-merge-branch-up-to-date.png " ")
 
-  In the GitHub Desktop UI, notice that the **Push Origin** is replaced by **Fetch Origin** after the push origin operation is successfully completed.  The local clone and fork repositories are now synchronized with the master repository.
+  In the **GitHub Desktop** UI, notice that the **Push Origin** is replaced by **Fetch Origin** after the push origin operation is successfully completed.  The local clone and fork repositories are now synchronized with the master repository.
 
   ![](./images/git-hub-merge-fetch-origin.png " ")
 
 ## **STEP 4:** Create your Workshop and Lab Content
-You can use project folder in the **learning-library** folder as a template to create a workshop for your project. In this example, let's use the **learning-library\sample-livelabs-templates\sample-workshop\workshops\freetier** project folder as a template to create a new workshop and labs.
+Use the **sample-live-labs templates** in the **learning-library** folder to start creating new workshop and lab content for your project.
 
 **Note**: Ensure to update your clone from the **upstream/master** repository (detailed in **Step 2**) on a regular basis whenever we are working on the markdown files.
 
 To create your lab and workshop content:
 1. Open your cloned repository using Windows Explorer.
 2. Go to **learning-library\sample-livelabs-templates\sample-workshop**.
-3. Copy the **workshops** folder along with its contents to your project folder. For example, **GitHub\learning-library\create-labs\labs**.
-4. Open **Atom** Editor, browse, and select your project folder. Click **File > Open Folder** to display the **Open Folder** dialog box.
+3. Copy the **workshops** folder along with its contents to your project folder. For example, **GitHub\learning-library\create-labs\labs**. In this case, your project folder is **labs**.
+4. Open **Atom** Editor, click **File > Open Folder** to display the **Open Folder** dialog box.
   ![](./images/use-atom-editor-open-folder.png " ")
-5. Navigate to **create-labs\labs** and click **Select Folder**.
+5. Navigate to **GitHub\learning-library\create-labs\labs** and click **Select Folder** to open your project folder.
   ![](./images/atom-editor-browse-select-lab.png " ")
-  The workshop folder and the lab folders are displayed in Atom.
-  ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
-6. Expand the **workshops\freetier** folder, `manifest.json` to list the labs you plan to add to your workshop and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
+  6. Expand the **workshops\freetier** folder, edit the `manifest.json` to list the labs you plan to add to your workshop and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
   ![](./images/use-atom-editor-manifest-json.png " ")
-7. If you want to add an introduction to your workshop, then navigate to **learning-library\sample-livelabs-templates\sample-workshop\introduction** and copy the `introduction.md` file to your workshop folder, for example: **GitHub\learning-library\create-labs\labs\workshops\freetier**. You can rename it if you would want to. In this example, we have renamed it to `intro.md`. Update the `intro.md` as per your requirements. Similarly, you can create a `README.md` file with the same `introduction.md` file and update the `README.md` with a summary of your workshop. Note that the `intro.md` and `README.md` files are optional files for your workshop's introduction. The workshop introduction can be treated as another lab.
-
+7. If you want to add an introduction to your workshop, then navigate to **learning-library\sample-livelabs-templates\sample-workshop\introduction** and copy the `introduction.md` file to your **workshops\freetier** folder, for example: **GitHub\learning-library\create-labs\labs\workshops\freetier**. You can rename it if you would want to. In this example, we have renamed it to `intro.md`. Update the `intro.md` as per your requirements. Similarly, you can create a `README.md` file with the same `introduction.md` file and update the `README.md` with a summary of your workshop. Note that the `intro.md` and `README.md` files are optional files for your workshop's introduction. The workshop introduction can be treated as another lab.
     ![](./images/use-atom-editor-readme-update.png " ")
-10. Similarly, to create content for your labs, navigate to any of the labs in the **learning-library\sample-livelabs-templates\sample-workshop** and copy any lab folder, such as the **query** folder to your workshop folder on your cloned repository and rename the **query** folder, for example: **1-labs-git-hub-get-started-install-configure**. Every lab folder contains the following: A **files** folder, an **images** folder, and the respective `.md` file.
-11. Rename the `.md` file, open it in Atom, and edit it as per your workshop requirement. If you want to use any images in your lab, then include them within the images folder.
-    ![](./images/lab-folder-structure.png " ")
-    **Note**: The **files** folder within every sample lab folder is currently not required and is reserved for future use. After you copy the sample folder, you can it delete your copy of the **files** folder from your cloned repository.
-    ![](./images/lab-files-folder-currently-not-nedded.png " ")
-    Your lab will look similar to this example:
-    ![](./images/lab-folder-structure.png " ")
+10. Similarly, to create content for your labs, navigate **learning-library\sample-livelabs-templates\sample-workshop** and copy any lab folder, such as the **query** folder to your project folder and rename **query**, for example: **1-labs-git-hub-get-started-install-configure**. Every lab folder contains the following: a **files** folder, an **images** folder, and the respective `.md` file. Based on the sample **query** folder, you can create and rename as many labs as per your requirement.
+  **Note**: The **files** folder within every sample lab folder is currently not required and is reserved for future use.
+  ![](./images/lab-files-folder-currently-not-nedded.png " ")
+  After you copy the sample folder, you can delete your copy of the **files** folder from your project folder.
+  Your lab will look similar to this example:
+  ![](./images/lab-folder-structure.png " ")
+  In this example, your project folder **labs** contains 5 labs and a workshop.
+  ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
+11. Rename the `.md` file of each lab as needed, open it in **Atom**, and edit it as per your workshop requirement. If you want to use any images in your lab, then include them within the **images** folder.
 
 ## **STEP 5:** Preview Your Workshop and Labs Using atom-live-server
 
@@ -107,15 +105,15 @@ To create your lab and workshop content:
 1. Start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
   ![](./images/use-atom-editor-packages-start-live-server.png " ")
 
-  By default, the **atom-live-server** opens a browser window that displays the folders inside the **labs** folder.
-2. Double-click the folder that contains the workshop you want to view. In this example, to display the workshop, double-click the workshop's name, **1-labs-quickstart-workshop**.
+  By default, the **atom-live-server** opens a browser window that displays the folders inside your project (**labs**) folder.
+2. Click the **workshops** folder and then click **freetier** folder that contains the workshop you want to view.
   ![](./images/use-atom-editor-open-live-server.png " ")
 
-  The Workshop is displayed along with the labs. You can make content changes in the Atom editor to the workshop and lab files, save the changes, and the updated workshop and labs are automatically refreshed in the browser window.
+  The Workshop is displayed along with the labs. You can make content changes in the **Atom** editor to the workshop and lab files, save the changes, and the updated content gets automatically refreshed in the browser window.
 
   ![](./images/use-atom-editor-workshop-output.png " ")
 
-3. To stop the atom-live-server, select  **Packages > atom-live-server > Stop folder-path-at-port-#**.
+3. To stop the **atom-live-server**, go back to **Atom**, select  **Packages > atom-live-server > Stop folder-path-at-port-#**.
 
 **This concludes this lab. Please proceed to the next lab in the Contents menu.**
 
