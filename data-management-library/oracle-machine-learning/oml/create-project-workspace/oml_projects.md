@@ -4,7 +4,7 @@
   This lab walks you through the steps to create a project and a
   workspace in Oracle Machine Learning.
 
-  **Note:** The initial workspace and the default project are
+  **Note:** The initial workspaces and the default project are
   created by the Oracle Machine Learning service automatically
   when you log in to Oracle Machine Learning for the first time.
   The term default applies to the last project that you work on,
