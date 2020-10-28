@@ -46,7 +46,7 @@ In this step, you will create and set up your GitHub account.
 ## **STEP 3:** Add Your GitHub Account to Oracle Organization
 You must request membership to the Oracle GitHub Organization (OGHO). After your membership is approved, your GitHub account is added to the Oracle organization.
 
-1. Send a membership request from your Oracle email address to [opensource_ww_grp@oracle.com](opensource_ww_grp@oracle.com).
+1. Send a membership request from your Oracle email address to opensource_ww_grp@oracle.com.
 2. Await the invitation from them. Note that you will receive an email only if your account follows the guidelines mentioned in Step 1.
 3. Accept the invitation that you receive or go to the organization page you requested membership for, and accept the invitation at the top of the page.
 
@@ -62,7 +62,7 @@ You must request membership to the Oracle GitHub Organization (OGHO). After your
 5. In the menu to the right of your username, choose **Public** as the new visibility option:
     ![](./images/git-get-started-public-profile.png " ")
 
-6. Send an email to [github_info_ww_grp](github_info_ww_grp@oracle.com) that you have made your membership public. Now you are an official member of the main Oracle Organization on GitHub (OGHO).
+6. Send an email to github_info_ww_grp@oracle.com that you have made your membership public. Now you are an official member of the main Oracle Organization on GitHub (OGHO).
 
   **Note**: If you don't make your membership public, then you will be removed from the organization within 30-days of the initial request to be added.
 

@@ -19,7 +19,7 @@ GitHub is a cloud-based version control system designed for software developers.
 * Each project has its own repository (commonly referred to as repo) that is accessed
 through a unique URL.
 
-![](./images/git-hub-projects-repositories.png " ")
+  ![](./images/git-hub-projects-repositories.png " ")
 
 ## Oracle GitHub Project and learning-library Repository
 
