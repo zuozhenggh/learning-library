@@ -18,6 +18,7 @@ Once you complete your setup, the next four labs in this workshop cover these in
 - Lab 7: Spatial
 - Lab 8: Graph
 - Lab 9: Cross Data Types
+- Lab 10: ORDS
 
 You will also download Oracle SQL Developer to help execute the programs associated with the lab. We will use Docker containers and demonstrate multiple use cases with a Node.js application.
 

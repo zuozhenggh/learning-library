@@ -65,7 +65,7 @@ Common terms that are used throughout this lab:
 	3. **PUT** : Update an existing resource. 
 	4. **DELETE** : Remove a resource. 
 
-## Step-1: Start ORDS in standalone mode
+## Step 1: Start ORDS in standalone mode
 
 1. The script (**env\_setup\_script.sh**) which was run in Lab-3 starts the ORDS in standalone mode  
 
