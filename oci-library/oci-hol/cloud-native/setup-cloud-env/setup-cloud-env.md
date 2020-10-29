@@ -9,18 +9,19 @@ To deploy these services, you will use Terraform, a tool for building, changing,
 Estimated time: 20 minutes
 
 ### Objectives
+
 - Log into OCI Tenancy.
 - Setup Oracle Cloud Infrastructure (OCI) components.  
 
 ***We recommend that you create a notes page to write down all of the credentials you will need.***
 
 ### Prerequisites
+
 - Your Oracle Cloud Trial Account
 - You have already applied for and received your Oracle Cloud Free Tier Account.
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
 [](youtube:wIoLDX7iWXo)
-
 
 ## **STEP 1:** Log into OCI Tenancy
 
@@ -32,22 +33,21 @@ Estimated time: 20 minutes
 
   ![](images/login-screen.png " ")
 
-2. Click the icon in the upper right corner.  Click on **Sign in to Cloud**.   
+1. Click the icon in the upper right corner.  Click on **Sign in to Cloud**.
 
   ![](images/signup.png " ")   
 
-3. Enter your **Cloud Account Name** in the input field and click the **Next** button.  *NOTE: this is NOT your email. This is the name of your tenancy noted in the email you received during signup. Do NOT click the Sign-In button, this will take you to Single Sign-On, not the Oracle Cloud.*
+1. Enter your **Cloud Account Name** in the input field and click the **Next** button.  *NOTE: this is NOT your email. This is the name of your tenancy noted in the email you received during signup. Do NOT click the Sign-In button, this will take you to Single Sign-On, not the Oracle Cloud.*
 
   ![](images/cloud-login-tenant.png " ")   
 
-4. Enter your username (this may be your email address) and password and click on **Sign In**.  
+1. Enter your username (this may be your email address) and password and click on **Sign In**.  
 
   ![](images/username.png " ")   
 
-5. Once you log in you will see a page similar to the one below. Click on "Infrastructure Dashboard."
+1. Once you log in you will see a page similar to the one below. Click on "Infrastructure Dashboard."
 
   ![](images/landingScreen2.png " ")
-
 
 ## **STEP 2:** Basic OCI Infrastructure Setup
 
@@ -120,11 +120,45 @@ To access Cloud Shell:
 
 10. Make sure to copy the **fingerprint** and paste in a notepad, we will use it later in this lab.
 
+Now you are ready to move on to Step 3.
+
+## **STEP 4:** Lets Create OKE
+
+1.  To create an OKE cluster, open up the hamburger button in the top-left corner of the Console and go to **Developer Services** >   **Kubernetes Clusters**.
+
+   ![](images/OKE1.png " ")
+
+
+
+2.  Verify you are in the **AppDev** Compartment and click **Create Cluster**.
+
+  ![](images/createCluster.png " ")
+
+3. Choose Quick Create as it will create the new cluster along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG), NAT Gateway (NAT), Regional Subnet for worker nodes, and a Regional Subnet for load balancers. Select **Launch Workflow**
+
+   ![](images/OKE-2.png " ")
+
+
+4.  Keep the name to **cluster1**, choose visibility type to **Public**, change number of nodes to **1** and click Next to review the cluster settings
+
+   ![](images/OKE-3.PNG " ")
+
+
+5. Review the the Cluster Creation and then select **Create Cluster**.
+
+   ![](images/OKE-5.png " ")
+
+6.  Once launched it should usually take around 5-10 minutes for the cluster to be fully provisioned and display an Active. To start working with the Cluster, click  **Access Cluster**.
+
+
+   ![](images/OKE-4.png " ")
+
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-- **Author** - Satyajeet Joshi
-- **Last Updated By/Date** - Kamryn Vinson, October 2020
+* **Author** - Satyajeet Joshi
+* **Contributors** -  Kamryn Vinson, Adao Junior
+* **Last Updated By/Date** - Adao Junior, October 2020
 
 
 ## Need Help?
