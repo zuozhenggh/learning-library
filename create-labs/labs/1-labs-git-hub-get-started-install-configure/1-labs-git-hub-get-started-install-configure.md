@@ -70,11 +70,11 @@ You must request membership to the Oracle GitHub Organization (OGHO). After your
 ## **STEP 5:** Install GitHub Desktop
 The GitHub Desktop application is a UI client for Windows and Mac that simplifies the complex set of GitHub command line arguments. GitHub Desktop is a fast and easy way to contribute to projects and it simplifies your development workflow. It is much easier than using Git command line.
 
-To setup the GitHub Development Environment and install GitHub Desktop:
+To setup the GitHub Development Environment and install **GitHub Desktop**:
 
-1. Download and install GitHub Desktop from [GitHub Desktop](https://desktop.github.com/).
+1. Download and install **GitHub Desktop** from [GitHub Desktop](https://desktop.github.com/).
 
-2. When the software is successfully installed, open the GitHub Desktop.
+2. When the software is successfully installed, open the **GitHub Desktop**.
 
   ![](./images/git-hub-desktop-login-screen.png " ")
 
@@ -84,7 +84,7 @@ To setup the GitHub Development Environment and install GitHub Desktop:
 
   **Note**: The authentication code is valid only for a few seconds.
 
-    You are now logged in to GitHub Desktop.
+    You are now logged in to **GitHub Desktop**.
     ![](./images/get-started-git-hub-desktop.png " ")
 
 ## **STEP 6:** Fork the learning-library Repository on Your GitHub Account

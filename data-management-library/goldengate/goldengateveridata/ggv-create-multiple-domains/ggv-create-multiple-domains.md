@@ -1,7 +1,7 @@
 # Create Multiple Domains for Oracle GoldenGate Veridata
 
 ## Introduction
-This 15-minute tutorial shows you how to create multiple domains for Oracle GoldenGate Veridata.
+This lab shows you how to create multiple domains for Oracle GoldenGate Veridata.
 This scenario considers an existing Oracle GoldenGate Veridata install that is fully functional, any user logged on to the Web interface can see all the jobs created and run by other users in the existing WebLogic domain, and users belong to different department or LOB. If users from a particular LOB wish to create and run their own jobs not visible to other LOB, they can create a new domain that is isolated from the existing domain. In the new domain, they can add users only from their own line of businesses (LOB), or add all users from original domain but restrict privilege of users from certain LOB.
 
 

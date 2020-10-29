@@ -9,21 +9,21 @@
         }
         ,
         {
-              "title": "Lab 1: Get Started with Git and Set up the Environment",
+              "title": "Lab 1: Install and Configure Oracle GoldenGate Veridata",
               "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop",
-              "filename": "./../../1-labs-git-hub-get-started-install-configure/1-labs-git-hub-get-started-install-configure.md"
+              "filename": "./../../ggv-install-veridata/ggv-install-veridata.md"
         }
         ,
         {
-              "title": "Lab 2: Understand the learning-library Folder Structure",
-              "description": "This lab describes the prescribed folder structure that we need follow for developing labs and workshops.",
-              "filename": "./../../2-labs-templates-folder-structure/2-labs-templates-folder-structure.md"
+              "title": "Lab 2: Create Multiple Domains",
+              "description": "This lab describes how to create multiple domains in Oracle GoldenGate Veridata.",
+              "filename": "./../../ggv-create-multiple-domains/ggv-create-multiple-domains.md"
         }
         ,
         {
-              "title": "Lab 3: Use Atom Editor to Develop Markdown Content",
-              "description": "This lab shows you how to develop your lab (markdown) content using an editor, such as **Atom** and starting the atom-live-server.",
-              "filename": "./../../3-labs-use-atom-editor-develop-content/3-labs-use-atom-editor-develop-content.md"
+              "title": "Lab 3: Setting Up the Oracle GoldenGate Veridata Server on the Oracle WebLogic Platform for High Availability",
+              "description": "This lab shows you how to  you how to set up the Oracle GoldenGate Veridata Server (version: 12.2.1.2) deployed on the Oracle Weblogic Platform for High Availability.",
+              "filename": "./../../ggv_ha_dataserver/ggv-ha-dataserver.md"
         }
         ,
         {
