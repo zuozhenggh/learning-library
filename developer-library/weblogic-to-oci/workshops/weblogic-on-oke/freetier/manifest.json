@@ -4,12 +4,12 @@
         {
             "title": "Prerequisites",
             "description": "Login to Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },{
             "title": "Introduction",
             "publisheddate": "07/30/2020",
             "filename": "../../../intro/intro.md",
-            "type": "oci"
+            "type": "oke"
         },
         {
             "title": "Lab 1: Setup the Demo On-Premises Environment",
@@ -29,12 +29,13 @@
         {
             "title": "Lab 2: Prepare the OCI Account",
             "publisheddate": "07/30/2020",
-            "filename": "../../../prepare/prepare.md"
+            "filename": "../../../prepare/prepare.md",
+            "type": "oke"
         },
         {
             "title": "Lab 3: Provision the WebLogic Infrastructure",
-            "publisheddate": "07/30/2020",
-            "filename": "../../../provision-wls/provision-wls.md"
+            "publisheddate": "10/27/2020",
+            "filename": "../../../provision-wls-oke/provision-wls-oke.md"
         },
         {
             "title": "Lab 4: Provision the Database on OCI",
@@ -50,22 +51,18 @@
             "title": "Lab 6: Migrate the Application Database",
             "publisheddate": "07/30/2020",
             "filename": "../../../migrate-app-db-datapump/migrate-app-db-datapump.md",
-            "type": "oci"
+            "type": "oke"
         },
         {
             "title": "Lab 7: Migrate the WebLogic Domain",
             "publisheddate": "07/30/2020",
-            "filename": "../../../migrate-wls-wdt/migrate-wls-wdt.md"
-        },
-        {
-            "title": "Lab 8 (Optional): Scale the WebLogic Domain",
-            "publisheddate": "07/30/2020",
-            "filename": "../../../scale-wls/scale-wls.md"
+            "filename": "../../../migrate-wls-oke/migrate-wls-oke.md"
         },
         {
             "title": "Lab 9: Tear down the Environment",
             "publisheddate": "07/30/2020",
-            "filename": "../../../tear-down/tear-down.md"
+            "filename": "../../../tear-down/tear-down.md",
+            "type": "dbcs"
         }
      ]
 }
