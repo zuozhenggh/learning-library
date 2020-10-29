@@ -31,137 +31,87 @@ Estimated time: 20 minutes
 
     [https://www.oracle.com/](https://www.oracle.com/)
 
-  ![](images/login-screen.png " ")
+  ![Login Screen](images/login-screen.png " ")
 
 1. Click the icon in the upper right corner.  Click on **Sign in to Cloud**.
 
-  ![](images/signup.png " ")   
+  ![Signup](images/signup.png " ")
 
 1. Enter your **Cloud Account Name** in the input field and click the **Next** button.  *NOTE: this is NOT your email. This is the name of your tenancy noted in the email you received during signup. Do NOT click the Sign-In button, this will take you to Single Sign-On, not the Oracle Cloud.*
 
-  ![](images/cloud-login-tenant.png " ")   
+  ![Cloud Login](images/cloud-login-tenant.png " ")
 
 1. Enter your username (this may be your email address) and password and click on **Sign In**.  
 
-  ![](images/username.png " ")   
+  ![Username](images/username.png " ")
 
 1. Once you log in you will see a page similar to the one below. Click on "Infrastructure Dashboard."
 
-  ![](images/landingScreen2.png " ")
+  ![Landing Screen](images/landingScreen2.png " ")
 
 ## **STEP 2:** Basic OCI Infrastructure Setup
 
-   1. Open the navigation menu. Under Governance and Administration, go to **Identity** and click **Compartments**. From this screen, you will see a list of compartments, click **Create Compartment**.
+1. Open the navigation menu. Under Governance and Administration, go to **Identity** and click **Compartments**. From this screen, you will see a list of compartments, click **Create Compartment**.
 
-   ![](images/OCI-1.png " ")
+   ![Menu Compartments](images/OCI-1.png " ")
 
-   ![](images/compartmentScreen.png " ")
+   ![Compartment Screen](images/compartmentScreen.png " ")
 
-2. Enter the following:
+1. Enter the following:
       - Name: Enter **"AppDev".**
       - Description: Enter a description (required), for example: "AppDev compartment for the getting started tutorial". Avoid                   entering confidential information.
       - Parent Compartment: Select the compartment you want this compartment to reside in. Defaults to the root compartment (or                 tenancy).
       - Click **Create Compartment**.
       - Your compartment is displayed in the list.
 
-  ![](images/OCI-2.png " ")
-
+  ![AppDev Compartment](images/OCI-2.png " ")
 
 To access Cloud Shell:
 
-3. Click the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against         the region selected in the Console's Region selection menu when the Cloud Shell was started.
+1. Click the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against         the region selected in the Console's Region selection menu when the Cloud Shell was started.
 
-  ![](images/cloudshell-1.png " ")
+  ![CloudShell](images/cloudshell-1.png " ")
 
-  ![](images/cloudshell-2.png " ")
-
-4. Execute below commands in cloudshell. We are going generate a public and private key pair.
-
-    ```
-    <copy>
-    mkdir ~/.oci
-    openssl genrsa -out ~/.oci/oci.api.key.pem 2048
-    chmod go-rwx ~/.oci/oci.api.key.pem
-    openssl rsa -pubout -in ~/.oci/oci.api.key.pem -out ~/.oci/oci.api.key.public.pem
-    cat ~/.oci/oci.api.key.public.pem
-    </copy>
-    ```
-
-  Below are steps for reference
-
-  ![](images/cloudshell-4.png " ")
-
-  ![](images/cloudshell-3.png " ")
-
-5. Make sure to **copy the generated public key** and paste in a notepad, we will need it for the next step.
-
-  ![](images/cloudshell-5.png " ")
-
-6. We will also need to copy the generated **private key** and paste it into a notepad, we will use it later on. Enter in the following command:
-
-    ```
-    <copy>
-    cat ~/.oci/oci.api.key.pem
-    </copy>
-    ```
-7. Make sure to include ----BEGIN RSA PRIVATE KEY---- and ----END RSA PRIVATE KEY----
-
-  ![](images/privateKey.png " ")
-
-8. Now, we need to generate a **fingerprint**. Click on the user profile icon in the top right and click your username.
-
-  ![](images/fp-1.png " ")
-
-9. Now, scroll down to **API Keys** section and click **Add Public Key** to paste the **oci.api.key.public.pem** that you copied
-
-  ![](images/fp-2.png " ")
-
-  ![](images/fp-3.png " ")
-
-10. Make sure to copy the **fingerprint** and paste in a notepad, we will use it later in this lab.
+  ![CloudShell](images/cloudshell-2.png " ")
 
 Now you are ready to move on to Step 3.
 
-## **STEP 4:** Lets Create OKE
+## **STEP 3:** Create OKE Kubernetes Cluster
 
-1.  To create an OKE cluster, open up the hamburger button in the top-left corner of the Console and go to **Developer Services** >   **Kubernetes Clusters**.
+1. To create an OKE cluster, open up the hamburger button in the top-left corner of the Console and go to **Developer Services** >   **Kubernetes Clusters**.
 
-   ![](images/OKE1.png " ")
+   ![Kubernetes Clusters](images/OKE1.png " ")
 
+1. Verify you are in the **AppDev** Compartment and click **Create Cluster**.
 
+  ![Compartment](images/createCluster.png " ")
 
-2.  Verify you are in the **AppDev** Compartment and click **Create Cluster**.
+1. Choose Quick Create as it will create the new cluster along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG), NAT Gateway (NAT), Regional Subnet for worker nodes, and a Regional Subnet for load balancers. Select **Launch Workflow**
 
-  ![](images/createCluster.png " ")
+   ![Quick Create Cluster](images/OKE-2.png " ")
 
-3. Choose Quick Create as it will create the new cluster along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG), NAT Gateway (NAT), Regional Subnet for worker nodes, and a Regional Subnet for load balancers. Select **Launch Workflow**
+1. Keep the name to **cluster1**, choose visibility type to **Public**, change number of nodes to **1** and click Next to review the cluster settings
 
-   ![](images/OKE-2.png " ")
+   ![Cluster Details](images/OKE-3.PNG " ")
 
+1. Review the the Cluster Creation and then select **Create Cluster**.
 
-4.  Keep the name to **cluster1**, choose visibility type to **Public**, change number of nodes to **1** and click Next to review the cluster settings
+   ![Cluster Info](images/OKE-5.png " ")
 
-   ![](images/OKE-3.PNG " ")
+1. Once launched it should usually take around 5-10 minutes for the cluster to be fully provisioned and display an Active. To start working with the Cluster, click  **Access Cluster**.
 
-
-5. Review the the Cluster Creation and then select **Create Cluster**.
-
-   ![](images/OKE-5.png " ")
-
-6.  Once launched it should usually take around 5-10 minutes for the cluster to be fully provisioned and display an Active. To start working with the Cluster, click  **Access Cluster**.
-
-
-   ![](images/OKE-4.png " ")
+   ![Access Cluster](images/OKE-4.png " ")
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Satyajeet Joshi
-* **Contributors** -  Kamryn Vinson, Adao Junior
-* **Last Updated By/Date** - Adao Junior, October 2020
 
+- **Author** - Satyajeet Joshi
+- **Contributors** -  Kamryn Vinson, Adao Junior
+- **Last Updated By/Date** - Adao Junior, October 2020
 
-## Need Help?
+## Need Help"?"
+
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.   Please include the workshop name   and lab in your request.
