@@ -40,7 +40,7 @@ If you have a `Page Not Found` error, the graph you published at Lab 7 may expir
 
 ## **STEP 3:** Add highlights
 
-Now let's add some labels and other visual context. These are known as highlights. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u03/b/labfiles/o/highlights.json) to download it and save it on your machine.
+Now let's add some labels and other visual context. These are known as highlights. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OTVbKy72ORMs1G9b4MxctlEMkR88L3ncOFSFMZYyv57pWmKVlFRCp4MhDqjpCn6n/n/c4u03/b/data-management-library-files/o/highlights.json.zip) to download the highlights.json zip file. Unzip the file and note where it is unzipped.
 
 1. Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder (i.e. either to `oracle-pg/graphs/customer_360`  or the folder where you just downloaded it) and choose the file named 'highlights.json' and click Open to load that.
 
