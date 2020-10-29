@@ -4,11 +4,11 @@
 
 Simcenter STAR-CCM+ is a complete multiphysics solution for the simulation of products and designs. This Runbook will take you through the process of deploying a Simcenter STAR-CCM+ cluster on Oracle Cloud with low latency networking between the compute nodes. Running Simcenter STAR-CCM+ on Oracle Cloud is quite straightforward, follow along this guide for all the tips and tricks.
 
-<img src="images/simulation.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](images/simulation.png " ")
 
 ## Architecture
 
-The architecture for this runbook is as follow, we have one small machine (bastion) that you will connect into. The compute nodes will be on a separate private network linked with RDMA RoCE v2 networking. The bastion will be accesible through SSH from anyone with the key (or VNC if you decide to enable it). Compute nodes will only be accessible through the bastion inside the network. This is made possible with 1 Virtual Cloud Network with 2 subnets, one public and one private.
+The architecture for this runbook is as follow, we have one small machine (bastion) that you will connect into. The compute nodes will be on a separate private network linked with RDMA RoCE v2 networking. The bastion will be accessible through SSH from anyone with the key (or VNC if you decide to enable it). Compute nodes will only be accessible through the bastion inside the network. This is made possible with 1 Virtual Cloud Network with 2 subnets, one public and one private.
 
 ### **Baseline Infrastructure**
 
@@ -23,7 +23,7 @@ Cluster Networks are supported in the following regions. In each case, we recomm
 * Bastion Host in a Public Subnet
 * HPC Compute Nodes in Private Subnet
 
-<img src="images/architecture.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](images/architecture.png " ")
 
 The above baseline infrastructure provides the following specifications:
 * Networking
@@ -50,5 +50,7 @@ You can create a visualizer node, such as a GPU VM or BM machine, depending on y
 * **Last Updated By/Date** - Samrat Khosla, October 2020
 
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/high-performance-computing-hpc). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

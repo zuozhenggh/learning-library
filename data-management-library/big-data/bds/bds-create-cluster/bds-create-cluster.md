@@ -174,6 +174,9 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
   ![](./images/cluster-active.png " ")  
 
+  **Note:**  
+  If you are using a Free Trial account to run this workshop, Oracle recommends that you delete the BDS cluster when you complete the workshop to avoid unnecessary charges.
+
 ## **STEP 3:** Review Locations of Services in the Cluster
 
   The `training-cluster` cluster is a highly available (HA) cluster; therefore, the services are distributed as follows:
@@ -272,5 +275,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
 * **Last Updated By/Date:** Lauran Serhal, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

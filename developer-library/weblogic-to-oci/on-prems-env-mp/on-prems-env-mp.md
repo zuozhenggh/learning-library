@@ -53,24 +53,6 @@ For this lab you need:
 
   <img src="./images/ssh-key.png"  width="50%">
 
-   To output the public key information, use the following command from your local machine:
-
-    ```
-    <copy>
-    cat ~/.ssh/id_rsa.pub
-    </copy>
-    ```
-
-   Copy the output of the command (the whole multi-line output) and paste it in the form field for SSH key in the form
-
-   the output will look something like this:
-
-    ```bash
-    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlkF23qLyfimJ9Vp4D9psp7bDOB8JvtY/pfYzFxIA2E4v6or+XhvMW5RDhX9Ba54zQNNDLvwUhStdXKkiMXJtEQJarFn45pGy/lyUQKFJolAdHBrXJsg5XWn4DxCFeQUQe1szVfmwDLAktAS14r5g76h3CcA8Kk/cNVqevxVChyejuuOdtAMoriIC8uKV+535qPs/GMiu0zR9aW4w1VodL5eHnXjqdgp8Fr21dVUVQ6of+s/ws0zlQUwghrNguDUqlggzG2mpLBHExypxCrJYmsb05uYjjqVlC3YCatj4nJTIHKLCFiYVY/b8AFkqwXV9EYlja5bjTmunM847dcR8H oracle@ad753161734c
-    ```
-
-  **Note:** Do not use the example above as the key: it is a different public key which is useless without the corresponding private key, and you will not be able to access your resources on OCI)
-
 7. Click **Next** and then **Create**
 
   <img src="./images/job-running.png"  width="100%">
@@ -112,7 +94,7 @@ You may proceed to next steps while the environment is coming up, but make sure 
 
 ## **STEP 4:** Create a SSH key
 
-*We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources. *
+*We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.*
 
 We'll create a SSH key pair in the default folder
 
@@ -148,5 +130,7 @@ You may proceed to the next lab.
  - **Author** - Emmanuel Leroy, May 2020
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
