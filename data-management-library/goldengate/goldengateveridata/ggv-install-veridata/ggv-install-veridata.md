@@ -30,7 +30,7 @@ Watch our short video that explains one of the key features on how to partition 
 - **Lab 5:** Use the Veridata Command Line Utilities
 
 
-**After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
+**After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu.**
 
 ## Workshop Prerequisites
 This workshop requires an that you have Oracle Database 19c, Linux OS, Java 1.8 or higher, and Oracle WebLogic server on your machine.
