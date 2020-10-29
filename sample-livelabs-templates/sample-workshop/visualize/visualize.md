@@ -85,8 +85,8 @@ Step 1 opening paragraph.
   <copy>ssh -i <ssh-key-file></copy>
   ```
 
-*At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
+*At the conclusion of the lab add this statement: note this is the last lab in the workshop*
+Congratulations! You have completed this workshop!
 
 ## Learn More
 

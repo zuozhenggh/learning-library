@@ -166,7 +166,7 @@ This lab assumes you have:
 4. View audit data collected via the All Activity Report using the web browser
     - Open a Web Browser at the URL `https://<AVS-VM_@IP-Public>`
     - Login to Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
-    - CLick on the **Reports** tab
+    - Click on the **Reports** tab
     - Under the **Activity Reports** section titled **Summary**, click on the **All Activity** name to load the report
     - You should see a report that looks something like this:
 

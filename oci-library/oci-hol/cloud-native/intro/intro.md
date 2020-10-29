@@ -26,6 +26,7 @@ In this lab, you will:
 5. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
 6. [Connecting to a Compute Instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 

@@ -63,7 +63,8 @@
         {
             "title": "Lab 9: Tear down the Environment",
             "publisheddate": "07/30/2020",
-            "filename": "../../../tear-down/tear-down.md"
+            "filename": "../../../tear-down/tear-down.md",
+            "type": "dbcs"
         }
      ]
 }
