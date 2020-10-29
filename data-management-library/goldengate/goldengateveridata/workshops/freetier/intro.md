@@ -1,65 +1,53 @@
 # Introduction to Oracle GoldenGate Veridata                                  
 
-The labs in this workshop walk you through all the steps to get started using **Oracle Big Data Service (BDS)**.
+The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata and use the multiple utilities and tools it provides.
 
-## What is Oracle Big Data Service?
-Oracle Big Data Service is an Oracle Cloud Infrastructure service designed for a diverse set of big data use cases and workloads. From short-lived clusters used to tackle specific tasks to long-lived clusters that manage large data lakes, Big Data Service scales to meet an organization’s requirements at a low cost and with the highest levels of security.
+## What is Oracle GoldenGate Veridata?
+Oracle GoldenGate Veridata compares a source (original, or trusted) set of data with a target (secondary) set of data to identify discrepancies. By accounting for data that is being replicated while a comparison takes place, Oracle GoldenGate Veridata can run concurrently with data transactions and replication, while still producing an accurate comparison report. You can use Oracle GoldenGate Veridata to compare data sets that reside in identical or different types of databases; the workflow is essentially the same for all supported databases, with only very minor differences.
 
-* Vertically integrated for Hadoop, Kafka, and Spark using Cloudera Enterprise Data Hub.
-* Highly secure and highly available clusters provisioned in minutes.
-* Expand on premise Hadoop; deploy test and development to the cloud.
-* Any scale using high performance bare metal or cost effective virtual machine (VM) shapes.
-* End-to-end data management; use with Autonomous Database, Analytics Cloud, OCI Streaming, OCI Data Catalog, OCI Data Science, and OCI Data Flow.
-* Use Oracle SQL to query across Hadoop, Object Stores, Kafka, and NoSQL with Cloud SQL.
+Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
 
-Watch our short video that explains key features in Oracle Big Data Service:
-
-[](youtube:CAmaIGKkEIE)
+[](youtube:N28CsAr5kjw)
 
 
 ## Workshop Objectives
-- Prepare for using Oracle Big Data Service (BDS).
-- Create a simple (non-HA) Cloudera Distribution Including Apache Hadoop (CDH) Oracle BDS cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS).
-- Add Cloud SQL to the cluster and maintain your cluster.
-- Access a BDS utility node using a public IP address.
-- Use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster and add ingress rules to the default security rule that enables you to access both CM and Hue.
-- Map the private IP address of the first master node in your cluster to a new public IP address to make this node publicly available on the internet and create a Hadoop Administrator user.
+  - Install Oracle GoldenGate Veridata
+  - Create multiple domains
+  - Set up the Oracle GoldenGate Veridata Server deployed on the Oracle WebLogic Platform for High Availability.
+  - Connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet.
+  - Use Oracle GoldenGate Veridata command-line utilities
 
 ## Lab Breakdown
-- **Lab 1:** Set Up the BDS Environment
-- **Lab 2:** Create a BDS Hadoop Cluster
-- **Lab 3:** Add Oracle Cloud SQL to the Cluster
-- **Lab 4:** Access a BDS Utility Node Using a Public IP Address
-- **Lab 5:** Use Cloudera Manager (CM) and Hue to Access a BDS Cluster
-- **Lab 6:** Create a Hadoop Administrator User
+  - **Lab 1:** Install and Configure Oracle GoldenGate Veridata
+  - **Lab 2:** Create Multiple Domains for Oracle GoldenGate Veridata
+  - **Lab 3:** Set Up the Oracle GoldenGate Veridata Server on the Oracle WebLogic Platform for High Availability
+  - **Lab 4:** Connect the Oracle GoldenGate Veridata Agent to Autonomous Data Warehouse
+  - **Lab 5:** Oracle GoldenGate Veridata command-line utilities
 
 ## Workshop Prerequisites
-This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Prerequisites** lab in the **Contents** menu.
+  * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
 
-**Notes:**
- + For more information about service limits, see [Service Limits](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm) in the Oracle Cloud Infrastructure documentation.
- + To submit a request to increase your service limits, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm#Requesti) in the Oracle Cloud Infrastructure documentation.
+**You are all set to begin the labs in this workshop! Click "Lab 1: Install and Configure Oracle GoldenGate Veridata" in the Contents menu.**
 
-**You are all set to begin the labs in this workshop! Click "Lab 1: Set Up the BDS Environment" in the Contents menu.**
+## Want to Learn More?
 
-## Want to Learn More About Oracle Big Data Service?
+Use these links to get more information about Oracle GoldenGate and Oracle GoldenGate Veridata:
 
-Use these links to get more information about BDS and OCI:
-
-* [Using Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/index.html)
-* [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
-* [Overview of Oracle Cloud Infrastructure Identity and Access Management (IAM)](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
-* [Oracle Cloud Infrastructure Self-paced Learning Modules] (https://www.oracle.com/cloud/iaas/training/foundations.html)
-* [Overview of Compute Service](https://www.oracle.com/pls/topic/lookup?ctx=cloud&id=oci_compute_overview)
-* [VCN and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm)
-
+* [Using Oracle GoldenGate Veridata](hhttps://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/intro-veridata.html#GUID-5E0D122D-913C-4307-97FB-DF815409FB14)
+* [Administering Oracle GoldenGate Veridata](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdad/introduction-oracle-goldengate-veridata.html#GUID-E34C2B1C-AA1D-4F62-BBB5-05AB6A913B40)
+* [Oracle GoldenGate Documentation](https://docs.oracle.com/en/middleware/goldengate/core/index.html)
 
 ## Acknowledgements
 
-* **Authors:**
-    * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
-    * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, October 2020
+* **Author:**
+    + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Reviewed by:**
+    + Jonathan Fu, Director, Product Development, GoldenGate Development
+    + Nisharahmed Soneji, Senior Principal Product Manager, GoldenGate Development
+    + Apeksha Polnaya, Senior Manager, Software Development, GoldenGate Development
+    + Avinash Yadagere, Principal Member Technical Staff, GoldenGate Development
+
+* **Last Updated By/Date:** Anuradha Chepuri, November 2020
 
 
 ## Need Help?

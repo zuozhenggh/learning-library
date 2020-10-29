@@ -46,15 +46,15 @@ This workshop requires an that you have Oracle Database 19c, Linux OS, Java 1.8 
 
 
 ## Acknowledgements
-* Aslam Khan, Senior Manager, User Assistance Development
-* Jonathan Fu, Director, Oracle GoldenGate Product Development
-* Nisharahmed Soneji
-* Apeksha Polnaya
-* Avinash Yadagere
-* Sukin Varghese
-* Uma Maheshwari Gopal
-* **Authors:**
-    * Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate Documentation
-* **Last Updated By/Date:** Anuradha Chepuri, September 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.
+* **Authors:**
+    + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate Documentation
+* **Reviewed by:**
+      + Apeksha Polnaya, Senior Manager, Software Development, GoldenGate Development
+      + Sukin Varghese, Senior Member of Technical staff, Database Testing
+* **Last Updated By/Date:** Anuradha Chepuri, November 2020
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

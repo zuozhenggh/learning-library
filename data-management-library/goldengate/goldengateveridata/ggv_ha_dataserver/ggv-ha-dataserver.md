@@ -76,8 +76,9 @@ To start the Oracle GoldenGate Veridata Managed Servers from the Oracle WebLogic
 
 * **Author:**
     + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Technical Contributors:**
+* **Reviewed by:**
     + Jonathan Fu, Director, Product Development, GoldenGate Development
+    + Avinash Yadagere, Principal Member Technical Staff, GoldenGate Development
 
 * **Last Updated By/Date:** Anuradha Chepuri, August 2020
 
