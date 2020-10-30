@@ -3,8 +3,8 @@
     "tutorials": [
 
       {
-            "title": "Introduction to Labs and Workshops",
-            "description": "This lab provides an overview of the workshops and labs (livelabs).",
+            "title": "Introduction to Oracle GoldenGate Veridata",
+            "description": "This lab provides an overview of Oracle GoldenGate Veridata.",
             "filename": "./intro.md"
         }
         ,

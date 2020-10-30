@@ -57,7 +57,7 @@ To create the domain on host 2:
 3. Execute `startNodeManager.sh` under `$ORACLE_HOME/user_projects/domains/<domain_name>/bin` to start the node manager.
 4. Repeat steps 1 and 2 on host 2.
 
-## **Step 4:**: Start the Oracle GoldenGate Veridata Managed Servers
+## **Step 4:** Start the Oracle GoldenGate Veridata Managed Servers
 To start the Oracle GoldenGate Veridata Managed Servers from the Oracle WebLogic Server Administration UI:
 1. Navigate to **Environments** and then select **Servers**.
 2. Click the **Control** tab.
