@@ -8,7 +8,7 @@ This scenario considers 2 hosts and the setup works in an ACTIVE-PASSIVE mode. T
 ### What Do You Need?
 
 + **Linux**
-+ **Oracle Database 12c (for the repository)**
++ **Oracle Database 19c (for the repository)**
 + **Oracle WebLogic Server installed on both host 1 and host 2. Ensure that the Oracle WebLogic Server version is same on both hosts.**
 + **Oracle GoldenGate Veridata installed on both host 1 and host 2. Ensure that the Oracle Goldengate Veridata Server version is same on both hosts.**
 + **Virtual IP (VIP) between Servers**
