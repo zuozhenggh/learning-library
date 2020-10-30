@@ -186,6 +186,8 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
     + In the **POLICY VERSIONING** section, accept the default **KEEP POLICY CURRENT** option.
 
+    + Uncheck the **CREATE ANOTHER POLICY** check box.
+    
 7. Click **Create**. The **Policy Detail** page is displayed and the statement in the **training-bds-policy** is displayed in the **Statements** section.
 
        ![](./images/policy-2-detail-page.png " ")
