@@ -29,16 +29,16 @@ The target bucket must already exist prior to creating the service connector.
 
     ![Object Storage](images/object-storage.png)
 
-In the Object Storage service landing page, ensure your scope is set to **Compartment** logservicedemo.
+2. In the Object Storage service landing page, ensure your scope is set to **Compartment** logservicedemo.
     ![Object Storage](images/scope-compartment.png)
 
-Click on **Create Bucket** to bring up the create bucket panel.
+3. Click on **Create Bucket** to bring up the create bucket panel.
     ![Object Storage](images/create-bucket.png)
 
-In the **Create Bucket** panel, enter **BUCKET NAME** logarchivedemo, **STORAGE TIER** Standard, leave **OBJECT EVENTS** and **OBJECT VERSIONING** deselected, and enure **ENCRYPTION** is configured to ENCRYPT USING ORACLE MANAGED KEYS as shown in the following image.
+4. In the **Create Bucket** panel, enter **BUCKET NAME** logarchivedemo, **STORAGE TIER** Standard, leave **OBJECT EVENTS** and **OBJECT VERSIONING** deselected, and enure **ENCRYPTION** is configured to ENCRYPT USING ORACLE MANAGED KEYS as shown in the following image.
     ![Object Storage](images/create-bucket-wizard.png)
 
-Click **Create Bucket** to complete the new bucket creation task, and you're ready to move on to the next step.
+5. Click **Create Bucket** to complete the new bucket creation task, and you're ready to move on to the next step.
 
 ## **STEP 2:** Configure Automated Export
 
@@ -65,7 +65,7 @@ In this step you will create a **Service Connector** to export Log content to th
     
     ![Service Connector](images/create-service-connector-3.png)
 
-6. The Connector Service provides an option to automatically create the security policy (permisisons) required for this connector job to export data.within  Click **Create** in the box.
+6. The Connector Service provides an option to automatically create the security policy (permissions) required for this connector job to export data.within  Click **Create** in the box.
     
     ![Service Connector](images/create-service-connector-4.png)
 
@@ -84,7 +84,7 @@ In this step you will create a **Service Connector** to export Log content to th
    
 ## **STEP 3:** [Optional] View Log Archive Content
 
-Log content archived to Object Storage is aggregated via batches (default every 7 minutes) and stored in .gz format. Timestamps allow easy retrival by time range(s).  In this step you will locate archived content and optionaly download/extract/view to validate the storage integrity.
+Log content archived to Object Storage is aggregated via batches (default every 7 minutes) and stored in .gz format. Timestamps allow easy retrieval by time range(s).  In this step you will locate archived content and optionally download/extract/view to validate the storage integrity.
 
 1. Navigate to **Object Storage**, select **Compartment** logservicedemo to locate the bucket created in Step 1.
 
@@ -99,19 +99,14 @@ Log content archived to Object Storage is aggregated via batches (default every 
 
     ![Log Archive](images/log-archive-download.png)
 
-4. User your prefered log or text viewer to verify content.
+4. User your preferred log or text viewer to verify content.
 
     ![Log Archive](images/log-viewer.png)
 
-## Learn More
-
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - Randall Barnes, Solution Architect, OCI Observability Team
-* **Last Updated Date** - 21-Oct-2020
+* **Last Updated Date** - Kamryn Vinson, October 2020
 
 
 ## Need Help?

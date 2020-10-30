@@ -28,9 +28,9 @@ In this lab, you will:
 
     ![Log Search](images/log-search.png)
 
-   Click inside the **SELECT LOGS TO SEARCH** box to bring up the search panel.  
+2. Click inside the **SELECT LOGS TO SEARCH** box to bring up the search panel.  
 
-   Select logservicedemo **COMPARTMENT**, logservicelg **Log Groups** and both the custom and service log listed in the **LOGS** section.
+3. Select logservicedemo **COMPARTMENT**, logservicelg **Log Groups** and both the custom and service log listed in the **LOGS** section.
 
    Your selection screen should look similar to the image below.
 
@@ -47,16 +47,10 @@ In this lab, you will:
   ![Log Search](images/explore-logs-combined.png)
 
 
-## Learn More
-
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Author** - Randall Barnes, Solution Architect, OCI Observability Team
+* **Last Updated Date** - Kamryn Vinson, October 2020
+
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

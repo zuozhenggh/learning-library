@@ -31,16 +31,14 @@ Log groups are logical containers for organizing and managing logs. Logs must al
 
     ![Compartment](images/select-compartment-2.png)
    
-   Click the **Create Log Group** button.
+3. Click the **Create Log Group** button.
 
     ![Create Log Group](images/create-log-group.png)
 
-3. On the **Create Log Group** dialog page ensure **Compartment** logservicedemo is specified.  **NAME** your Log Group logservicelg, provide a brief **DESCRIPTION**, and then click the **Create** button.
+4. On the **Create Log Group** dialog page ensure **Compartment** logservicedemo is specified.  **NAME** your Log Group logservicelg, provide a brief **DESCRIPTION**, and then click the **Create** button.
 
     ![Create Log Group](images/create-log-group-wizard.png)
 
-   
-   You are now ready to move on to the next step.
 
 ## **STEP 2:** Enable Network Flow Log
 
@@ -50,15 +48,15 @@ Many core cloud infrastructure services have built-in logging capabilities.  Now
 
     ![Logs](images/logs.png)
 
-   Select **Enable Service Log** to open the Enable Resource Dialog page.  
+2. Select **Enable Service Log** to open the Enable Resource Dialog page.  
 
     ![Service Logs](images/enable-service-log.png)
 
-   On the **Enable Resource Log** page, ensure **Compartment** logservicedemo is listed, choose **Virtual Cloud Network (subnets)** from the **Service** drop-down, and then select **RESOURCE** logservicesub01.  In the **Configure Log** section **Name** your log as shown in the image.
+3. On the **Enable Resource Log** page, ensure **Compartment** logservicedemo is listed, choose **Virtual Cloud Network (subnets)** from the **Service** drop-down, and then select **RESOURCE** logservicesub01.  In the **Configure Log** section **Name** your log as shown in the image.
 
     ![Service Logs](images/enable-service-log-wizard.png)
 
-3. Review the Log properties page.  It may take a couple minutes for the service to complete configurations.
+4. Review the Log properties page.  It may take a couple minutes for the service to complete configurations.
 
     ![Service Logs](images/explore-service-log-1.png)
 
@@ -68,12 +66,10 @@ Many core cloud infrastructure services have built-in logging capabilities.  Now
 
 You may proceed to the next lab.
 
-## Learn More
-
 
 ## Acknowledgements
 * **Author** - Randall Barnes, Solution Architect, OCI Observability Team
-* **Last Updated Date** - 21-Oct-2020
+* **Last Updated Date** - Kamryn Vinson, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

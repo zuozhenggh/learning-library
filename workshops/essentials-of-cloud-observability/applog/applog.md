@@ -31,7 +31,7 @@ An agent configuration provides instructions for both the Logging Service and a 
     ![Custom Log](images/create-custom-log.png)
 
 
-   In **CUSTOM LOG NAME** enter customlog01, **COMPARTMENT** ensure logservicedemo is listed, and in **LOG GROUP** select logservicelg.  Click **Create Custom Log**.
+2. In **CUSTOM LOG NAME** enter customlog01, **COMPARTMENT** ensure logservicedemo is listed, and in **LOG GROUP** select logservicelg.  Click **Create Custom Log**.
 
     ![Custom Log](images/create-custom-log-panel-1.png)
 
@@ -40,19 +40,19 @@ An agent configuration provides instructions for both the Logging Service and a 
     ![Custom Log](images/create-custom-log-panel-2.png)
   
 
-   In **CONFIGURATION NAME** enter customconfig01.  Ensure **COMPARTMENT** specifies logservicedemo.  In **GROUP TYPE** select Dynamic Group, and in **GROUP** select the group created in Lab 1: logservicedg. 
+3. In **CONFIGURATION NAME** enter customconfig01.  Ensure **COMPARTMENT** specifies logservicedemo.  In **GROUP TYPE** select Dynamic Group, and in **GROUP** select the group created in Lab 1: logservicedg. 
 
     ![Custom Log](images/create-custom-log-panel-3.png)
 
-   In the **Configure Log Inputs** section choose **INPUT TYPE** Log Path, **INPUT NAME**  syslog, and **FILE PATHS** /var/log/messages.  Although we are instructing the agent to process system generated logs, the same procedure may be used to select application log paths or entire log directories. 
+4. In the **Configure Log Inputs** section choose **INPUT TYPE** Log Path, **INPUT NAME**  syslog, and **FILE PATHS** /var/log/messages.  Although we are instructing the agent to process system generated logs, the same procedure may be used to select application log paths or entire log directories. 
 
     ![Custom Log](images/create-custom-log-panel-4.png)
 
-   In this same section, click on **Advanced Parder Options** and choose **SYSLOG** in the **PARSER** list.  
+5. In this same section, click on **Advanced Parser Options** and choose **SYSLOG** in the **PARSER** list.  
 
     ![Custom Log](images/parser.png)
 
-   Click **Create** to complete the task.
+6. Click **Create** to complete the task.
 
 ## **STEP 2:** Review Log Data from Virtual Machine
 
@@ -68,19 +68,16 @@ It may take a few minutes for the configuration to propagate to local machine ag
 
     ![Custom Log](images/custom-log-properties-1.png)
 
-   Explore log content, if already flowing into the Logging Service and avaialble for viewing.
+3. Explore log content, if already flowing into the Logging Service and available for viewing.
 
     ![Custom Log](images/custom-log-properties-2.png)
 
   
 You may proceed to the next lab.
 
-## Learn More
-
-
 ## Acknowledgements
 * **Author** - Randall Barnes, Solution Architect, OCI Observability Team
-* **Last Updated Date** - 21-Oct-2020
+* **Last Updated Date** - Kamryn Vinson, October 2020
 
 
 ## Need Help?

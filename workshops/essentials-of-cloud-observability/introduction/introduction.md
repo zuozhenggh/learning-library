@@ -37,7 +37,7 @@ You may proceed to the Lab 1.
 
 ## Acknowledgements
 * **Author** - Randall Barnes, Solution Architect, OCI Observability Team
-* **Last Updated Date** - 21-Oct-2020
+* **Last Updated Date** - Randall Barnes, October 2020
 
 
 ## Need Help?
