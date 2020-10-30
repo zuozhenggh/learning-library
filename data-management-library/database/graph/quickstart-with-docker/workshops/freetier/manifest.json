@@ -17,10 +17,10 @@
         },
         {
             "title": "Lab 2: Setup Network and Compute Instance",
-            "filename": "https://raw.githubusercontent.com/anooshapilli/learning-library/graph/common/labs/setup-compute/setup-linux-ft-compute-instance.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-linux-ol7.8-ft-compute-instance.md"
         },
         {
-            "title": "Lab 3: Setup Docker on an Oracle Compute Instance",
+            "title": "Lab 3: Setup Docker on Oracle Cloud Instance and Install Necessary Artifacts",
             "filename": "../../setup-docker-compute/setup-docker-compute.md"
         },
         {

@@ -21,15 +21,21 @@ In this lab, you will:
 
 ### Clone repository
 
-1. Clone the git repository which has the required Docker Compose files and other configuration files and scripts to your machine.
+1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
+
+    ```
+    ssh -i ./<your-key-name> opc@<your-instance-ip-address>
+    ```
+
+2. Clone the git repository which has the required Docker Compose files and other configuration files and scripts to your machine.
 
     ```
     <copy>git clone https://github.com/jayant62/oracle-pg.git</copy>
     ```
 
-  Note the directory where you have cloned it. We will refer to it as `$REPO_HOME` here and in other labs in this workshop.
+    Note the directory where you have cloned it. We will refer to it as `$REPO_HOME` here and in other labs in this workshop.
 
-2. Grant permission on the directory
+3. Grant permission on the directory
 
     ```
     <copy>
@@ -55,6 +61,7 @@ Put the following files into `$REPO_HOME/oracle-pg/docker/tmp/`
     - oracle-graph-20.1.0.x86_64.rpm
     - oracle-graph-zeppelin-interpreter-20.1.0.zip
     - apache-groovy-binary-2.4.18.zip
+    - oracle-graph-client-20.1.0.zip
 
     To put the files in the directory, copy the below command and replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address.
 
@@ -66,13 +73,27 @@ Put the following files into `$REPO_HOME/oracle-pg/docker/tmp/`
 
     ```
     <copy>
-    scp -i ~/.ssh/<your-key-name> ~/Downloads/oracle-graph-zeppelin-interpreter-20.1.0.zip opc@your-instance-ip-address>:oracle-pg/docker/tmp/
+    scp -i ~/.ssh/<your-key-name> ~/Downloads/oracle-graph-zeppelin-interpreter-20.1.0.zip opc@<your-instance-ip-address>:oracle-pg/docker/tmp/
     </copy>
     ```
 
     ```
     <copy>
-    scp -i ~/.ssh/<your-key-name> ~/Downloads/apache-groovy-binary-2.4.18.zip opc@your-instance-ip-address>:oracle-pg/docker/tmp/
+    scp -i ~/.ssh/<your-key-name> ~/Downloads/apache-groovy-binary-2.4.18.zip opc@<your-instance-ip-address>:oracle-pg/docker/tmp/
+    </copy>
+    ```
+
+    ```
+    <copy>
+    scp -i ~/.ssh/<your-key-name> ~/Downloads/oracle-graph-client-20.1.0.zip opc@<your-instance-ip-address>:oracle-pg/docker/tmp/
+    </copy>
+    ```
+
+    Now let's unzip oracle-graph-client-20.1.0.zip
+
+    ```
+    <copy>
+    unzip oracle-graph-client-20.1.0.zip
     </copy>
     ```
 
@@ -140,10 +161,10 @@ You may now proceed to the next lab.
 ## Acknowledgements ##
 
 * **Author** - Jayant Sharma, Product Manager
-* **Contributors** - Ryota Yamanaka
+* **Contributors** - Ryota Yamanaka, Anoosha Pilli, Product Manager
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

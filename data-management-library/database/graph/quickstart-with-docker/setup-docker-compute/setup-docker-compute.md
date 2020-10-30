@@ -1,12 +1,16 @@
-# Set up Docker on an Oracle Cloud Compute Instance
+# Setup Docker on Oracle Cloud Instance and Install Necessary Artifacts
 
 ## Introduction
-Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, and creates a platform for installing and setting up a Docker container.
+
+Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, and creates a platform for installing and setting up a Docker container. In this lab, we will install the necccessary artifacts for the lab - git and Java version 11.
 
 Estimated Lab Time: 15 minutes
 
 ### Objectives
-This lab walks you through the steps to set up Docker on Oracle Linux 7.7 running on an Oracle Cloud compute instance.
+
+- This lab walks you through the steps to set up Docker on Oracle Linux 7.8 running on an Oracle Cloud compute instance.
+- Install git on the compute instance
+- Install Java version 11 on compute instance
 
 ### Prerequisites
 
@@ -16,7 +20,7 @@ This lab walks you through the steps to set up Docker on Oracle Linux 7.7 runnin
 
 ## **STEP 1**: Set up the Docker environment
 
-  Docker is shipped as addon with Oracle Linux 7 UEK4. On Oracle Cloud compute instances, the `addons yum` repository is now enabled by default, so you only need to install the docker-engine package as root.
+Docker is shipped as addon with Oracle Linux 7 UEK4. On Oracle Cloud compute instances, the `addons yum` repository is now enabled by default, so you only need to install the docker-engine package as root.
 
 1. In a terminal window, navigate to the folder where you created the SSH keys. Connect to your compute instance using `ssh`, and the public IP address of your compute instance:
 
@@ -65,7 +69,7 @@ This lab walks you through the steps to set up Docker on Oracle Linux 7.7 runnin
     [root@oraclelinux77 ~]#
     ```
 
-  Docker is now installed on the compute instance!
+Docker is now installed on the compute instance!
 
 ## **STEP 2**: Enable a non-root user
 
@@ -146,27 +150,7 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
     </copy>
     ```
 
-## **STEP 5**: Install git
-
-Now, we are going to install git using yum as the root user.
-
-1. To install git, copy and paste the below command.
-
-    ```
-    <copy>
-    yum install git
-    </copy>
-    ```
-
-2. To verify git was installed:
-
-    ```
-    <copy>
-    git --version
-    </copy>
-    ```
-
-## **STEP 6**: Connect to Docker with the non-root user
+## **STEP 5**: Connect to Docker with the non-root user
 
 1. Open a new terminal window, navigate to the folder where you created the SSH keys. Connect again using SSH:
 
@@ -196,14 +180,71 @@ Now, we are going to install git using yum as the root user.
     [opc@oraclelinux77 ~]$
     ```
 
-  You may now *proceed to the next lab*.
+## **STEP 6**: Install git
+
+Now, we are going to install git using yum as the root user.
+
+1. Navigate to the previous terminal window. If you are not a root user, switch to the root user:
+
+    ```
+    [opc@oraclelinux77 ~]$ <copy>sudo su -</copy>
+    [root@oraclelinux77 ~]#
+    ```
+
+2. To install git, copy and paste the below command.
+
+    ```
+    <copy>
+    yum install git
+    </copy>
+    ```
+
+3. To verify git was installed:
+
+    ```
+    <copy>
+    git --version
+    </copy>
+    ```
+
+## **STEP 7**: Install Java version 11
+
+1. Install Java version 11 as a root user.
+
+    ```
+    <copy>
+    yum install java-11-openjdk-devel
+    </copy>
+    ```
+
+2. To verify the installation, run the Java "Hello Worls" as follows:
+
+    ```
+    $ <copy>cat > HelloWorld.java <<HELLO
+    public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+    }
+    HELLO
+    </copy>
+    ```
+
+    ```
+    $ <copy>/usr/lib/jvm/java-11-openjdk/bin/java HelloWorld.java
+    </copy>
+    Hello World!
+    ```
+
+You may now *proceed to the next lab*.
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
 * **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
-* **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
-* **Last Updated By/Date** - Kamryn Vinson, September 2020
+* **Contributor** - Anoosha Pilli, Product Manager, Arabella Yao, Product Manager Intern, Database Management, June 2020
+* **Last Updated By/Date** - Anoosha Pilli, October 2020
 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
