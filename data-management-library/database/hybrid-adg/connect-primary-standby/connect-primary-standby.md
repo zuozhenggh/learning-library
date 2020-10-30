@@ -3,7 +3,7 @@
 ## Introduction
 In a Data Guard configuration, information is transmitted in both directions between primary and standby databases. This requires basic configuration, network tuning and opening of ports at both primary and standby databases. 
 
-Estimated Lab Time: 30 minutes.
+Estimated Lab Time: 10 minutes.
 
 ### Objectives
 

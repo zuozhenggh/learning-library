@@ -5,7 +5,7 @@ In this lab you will using a compute instance in OCI to simulate the on-premise 
 
 When provisioning Database Cloud Services in OCI, there are 2 options to for the storage management. One is **Oracle Grid Infrastructure** which is using ASM to manage the database files. The other is **Logical Volume Manager** which is using the File System to manage the database files. In Lab3, please choose the right one according to your requirement. When doing Lab5, choose Lab5A for LVM or Lab5B for ASM.
 
-Estimated Lab Time: 4 hours
+Estimated Lab Time: 5 hours
 
 ### About ADG
 Oracle’s Maximum Availability Architecture (Oracle MAA) is the best practices blueprint for data protection and availability for Oracle databases deployed on private, public or hybrid clouds. Data Guard and Active Data Guard provide disaster recovery (DR) for databases with recovery time objectives (RTO) that cannot be met by restoring from backup. Customers use these solutions to deploy one or more synchronized replicas (standby databases) of a production database (the primary database) in physically separate locations to provide high availability, comprehensive data protection, and disaster recovery for mission-critical data. 

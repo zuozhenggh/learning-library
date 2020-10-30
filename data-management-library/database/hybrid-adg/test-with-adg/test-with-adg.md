@@ -3,6 +3,8 @@
 ## Introduction
 Now we can run some testing with the ADG including DML redirection and switchover.
 
+Estimated Lab Time: 30 minutes.
+
 ### Objectives
 
 -   Test transaction replication 
@@ -394,7 +396,7 @@ There are several ways to check the lag between the primary and standby.
 
  
 
-## Step 3: Test DML Redirection
+## **Step 3:** Test DML Redirection
 
 Starting  with Oracle DB 19c, we can run DML operations on Active Data Guard standby databases. This enables you to occasionally execute DMLs on read-mostly applications on the standby database.
 
