@@ -134,58 +134,36 @@ The Configuration Wizard can either create a new domain or extend an existing do
 To deploy agents:
 1. This is the script used to Install the Fusion Middleware software:
     <pre>########################################################### ###########################################################
-
     Install WebLogic Server + Infrastructure files needed for OGG:
-
     java -jar fmw_12.2.1.4.0_infrastructure_generic.jar
-
-    # OGG Veridata + agent.
-
+    ## OGG Veridata + agent.
     java -jar fmw_12.2.1.4.0_ogg.jar
-
     Repository Creation Utility; can run once for all products.
-
     /u01/app/oracle/product/wls/oracle_common/bin/rcu</pre>
 2. This is the script used to configure the Fusion Middleware software:
     <pre>###########################################################
-
     Configure WLS and Veridata; can run once for all products.
-
     /u01/app/oracle/product/wls/oracle_common/common/bin/config.sh
-
     ###########
-
     Veridata agents. Can run from anywhere, give destination as argument.
-
     /u01/app/oracle/product/wls/veridata/agent/agent_config.sh /u01/ogg/agents/veridata/agent1
-
-    # Should return, "Successfully deployed the agent." </pre>
+    ## Should return, "Successfully deployed the agent. </pre>
 3. These are the changes made to the `agent.properties` file: `cd /u01/ogg/agents/veridata/agent1`
     **Note**: The database-specific files are under the `sample_properties` directory and you need to select the respective file and copy that as `agent.properties`.
     Example for Oracle DB:
 
     <pre>cp sample_properties/agent.properties.oracle agent.properties
-
     gedit agent.properties
-
     server.port=7850
-
     database.url=jdbc:oracle:thin:@//localhost:1521:orcl
-
     server.driversLocation=/u01/app/oracle/product/12.1.0/dbhome_1/jdbc/lib
-
     server.jdbcDriver=odbc7.jar</pre>
 4. All scripts are created in the Desktop/ directory purely for convenience:
-    <pre> # Start WLS /u01/app/oracle/product/wls/ogg_domain/startWebLogic.sh
-
-    # Start Veridata Server + Agent
-
-    # Server only
-
+    <pre>## Start WLS /u01/app/oracle/product/wls/ogg_domain/startWebLogic.sh
+    ## Start Veridata Server + Agent
+    ## Server only`
     /u01/app/oracle/product/wls/ogg_domain/veridata/bin/veridataServer.sh start
-
-    # Agent only
-
+    ## Agent only
     /u01/ogg/agents/veridata/agent1/agent.sh start</pre>
 
 ## Want to Learn More About Oracle GoldenGate Veridata?

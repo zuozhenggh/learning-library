@@ -5,7 +5,7 @@ This lab shows you how to set up the Oracle GoldenGate Veridata Server (version:
 This scenario considers 2 hosts and the setup works in an ACTIVE-PASSIVE mode. Though all the managed servers on different hosts are up, only 1 server serves the request at a time. The usecase was verified on a Linux x86-64 platform, but the approach is generic to all the platforms on which, the Oracle GoldenGate Veridata Server is deployed.
 ![](./images/architecture.png " ")
 
-**Note**:  After you have completed lab 1: Install and Configure Oracle GoldenGate Veridata, the rest of the labs are independent of each other. You can complete labs 2 to 5 in any sequence you want to.
+**Note**:  After you have completed lab 1: Install and Configure Oracle GoldenGate Veridata, the rest of the **labs are independent of each other**. You can complete labs 2 to 5 in any sequence you want to.
 
 ### What Do You Need?
 
