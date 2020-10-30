@@ -1,16 +1,16 @@
 # Set Up the Oracle GoldenGate Veridata Server on the Oracle WebLogic Platform for High Availability
 
 ## Introduction
-This lab shows you how to set up the Oracle GoldenGate Veridata Server (version: 12.2.1.2) deployed on the Oracle WebLogic Platform for High Availability.
+This lab shows you how to set up the Oracle GoldenGate Veridata Server (version: 12.2.1.x) deployed on the Oracle WebLogic Platform for High Availability.
 This scenario considers 2 hosts and the setup works in an ACTIVE-PASSIVE mode. Though all the managed servers on different hosts are up, only 1 server serves the request at a time. The usecase was verified on a Linux x86-64 platform, but the approach is generic to all the platforms on which, the Oracle GoldenGate Veridata Server is deployed.
 ![](./images/architecture.png " ")
 
 ### What Do You Need?
 
 + **Linux**
-+ **Oracle Database 19c (for the repository)**
++ **Oracle Database 12c (for the repository)**
 + **Oracle WebLogic Server installed on both host 1 and host 2. Ensure that the Oracle WebLogic Server version is same on both hosts.**
-+ **Oracle GoldenGate Veridata installed on both host 1 and host 2. Ensure that the Oracle Goldengate Veridata Server version is same on both hosts.**
++ **Oracle GoldenGate Veridata installed on both host 1 and host 2. Ensure that the Oracle GoldenGate Veridata Server version is same on both hosts.**
 + **Virtual IP (VIP) between Servers**
     **Note**: VIP created should have Oracle Weblogic Server (7001) and Oracle GoldenGate Veridata (8830) ports configured.
 + **Oracle GoldenGate Veridata repository created using the Repository Creation Utility (RCU)**
