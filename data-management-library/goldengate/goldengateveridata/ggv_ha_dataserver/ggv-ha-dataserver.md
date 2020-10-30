@@ -5,6 +5,8 @@ This lab shows you how to set up the Oracle GoldenGate Veridata Server (version:
 This scenario considers 2 hosts and the setup works in an ACTIVE-PASSIVE mode. Though all the managed servers on different hosts are up, only 1 server serves the request at a time. The usecase was verified on a Linux x86-64 platform, but the approach is generic to all the platforms on which, the Oracle GoldenGate Veridata Server is deployed.
 ![](./images/architecture.png " ")
 
+**Note**:  After you have completed lab 1: Install and Configure Oracle GoldenGate Veridata, the rest of the labs are independent of each other. You can complete labs 2 to 5 in any sequence you want to.
+
 ### What Do You Need?
 
 + **Linux**
@@ -80,6 +82,9 @@ To start the Oracle GoldenGate Veridata Managed Servers from the Oracle WebLogic
     + Jonathan Fu, Director, Product Development, GoldenGate Development
     + Avinash Yadagere, Principal Member Technical Staff, GoldenGate Development
 
-* **Last Updated By/Date:** Anuradha Chepuri, August 2020
+* **Last Updated By/Date:** Anuradha Chepuri, November 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

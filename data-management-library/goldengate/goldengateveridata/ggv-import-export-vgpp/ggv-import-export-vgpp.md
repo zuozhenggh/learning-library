@@ -12,7 +12,7 @@ With the mapping information of source database (db) and target db in the Golden
 Use the Veridata GoldenGate parameter processing command line utility to create Veridata configuration.
 
 Use the Import utility to import this configuration into Oracle GoldenGate Veridata and the Export utility to export this configuration from Oracle GoldenGate Veridata. Use Vericom to run the comparison job.
-
+**Note**:  After you have completed lab 1: Install and Configure Oracle GoldenGate Veridata, the rest of the **labs are independent of each other**. You can complete labs 2 to 5 in any sequence you want to.
 ### What Do You Need?
 
 + **Linux or Windows. This lab describe the Linux command-line options.**

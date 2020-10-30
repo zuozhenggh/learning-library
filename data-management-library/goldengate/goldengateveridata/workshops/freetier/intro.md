@@ -33,7 +33,7 @@ Watch our short video that explains the partitioning feature in Oracle GoldenGat
 
 Use these links to get more information about Oracle GoldenGate and Oracle GoldenGate Veridata:
 
-* [Using Oracle GoldenGate Veridata](hhttps://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/intro-veridata.html#GUID-5E0D122D-913C-4307-97FB-DF815409FB14)
+* [Using Oracle GoldenGate Veridata](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/intro-veridata.html#GUID-5E0D122D-913C-4307-97FB-DF815409FB14)
 * [Administering Oracle GoldenGate Veridata](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdad/introduction-oracle-goldengate-veridata.html#GUID-E34C2B1C-AA1D-4F62-BBB5-05AB6A913B40)
 * [Oracle GoldenGate Documentation](https://docs.oracle.com/en/middleware/goldengate/core/index.html)
 
@@ -49,6 +49,9 @@ Use these links to get more information about Oracle GoldenGate and Oracle Golde
 
 * **Last Updated By/Date:** Anuradha Chepuri, November 2020
 
+## What's Next?
+**You are all set to begin the labs! Click Lab 1: Install and Configure Oracle GoldenGate Veridata in the Contents menu**.
+After you have completed Lab 1: Install and Configure Oracle GoldenGate Veridata, the rest of the **labs are independent of each other**. You can complete labs 2 to 5 in any sequence you want to.
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

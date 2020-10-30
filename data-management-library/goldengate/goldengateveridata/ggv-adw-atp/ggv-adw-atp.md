@@ -10,6 +10,8 @@ Java applications require Java Key Store (JKS) or Oracle wallets to connect to A
 
 **Note**: This lab is for using the Oracle Wallet only. For using Java Key Sores (JKS),see [Java Connectivity with Autonomous Database (ATP or ADW)](https://www.oracle.com/database/technologies/java-connectivity-to-atp.html)
 
+**Note**:  After you have completed lab 1: Install and Configure Oracle GoldenGate Veridata, the rest of the **labs are independent of each other**. You can complete labs 2 to 5 in any sequence you want to.
+
 ### What Do You Need?
 
 + **Download Client Credentials wallet.**

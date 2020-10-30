@@ -1,8 +1,8 @@
-# Workshop Introduction and Overview                                    
+# Install and Configure Oracle GoldenGate Veridata                                   
 
 This lab describes how to install and configure the Oracle GoldenGate Veridata.
 For proof-of-concept, you can install the following on one host: Oracle WebLogic Server, Fusion Middleware Infrastructure, and Oracle GoldenGate Veridata.
-
+**Note**:  After you have completed lab 1: Install and Configure Oracle GoldenGate Veridata, the rest of the **labs are independent of each other**. You can complete labs 2 to 5 in any sequence you want to.
 ## What do you Need?
 + **Linux**
 + **Oracle Database 19c (19.3.0.0) (for the repository)**
