@@ -20,7 +20,7 @@ The retailer is asking us to use the input data to provide the following output 
 * Send data revenue and likely buyers to targets downstream
 
 
-Estimated Lab Time: 70 minutes
+*Estimated Lab Time*: 70 minutes
 
 ### About Product/Technology
 Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in GGSA you can run analytics on live data in real-time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
@@ -128,7 +128,7 @@ Now that we have the order history we would like to enrich this data with the cu
 
 In this stage we would like to map a customer’s zip code to an actual latitude and longitude.
 
-1. Right mouse click on the GetCustomerDetails in the stream and Add a Stage (a query stage) and name it *GetLatLongFromZipCode*.  
+1. Right click on the GetCustomerDetails in the stream and Add a Stage (a query stage) and name it *GetLatLongFromZipCode*.  
 2. In the top right hand pane you should see the new stage and the type of stream you are using.
 3. Click on Add a Source and select a source from the drop down.
 
@@ -142,7 +142,7 @@ In the next stage we are only interested in customers that are located in our ca
 1. Right click on your stream and Add a Stage.  In this step your stage is NOT a Query stage.  Instead we are looking for a Pattern of type Spatial that selects customers based on a Geo Filter.  
 2. Name your stage *FilterCustomers* and add the appropriate description.  
 3. In the top right hand pane you should see the new stage.  
-4. Provide the correct resource from the drop down and map the associated parameters from the stream, namely LAT, LNG and for Object Key pick name using the + sign.  The Coordinate System parameter is fixed and cannot be changed.  
+4. Provide the correct resource from the drop down and map the associated parameters from the stream, namely LAT, LNG and for Object Key pick name using the + sign. The Coordinate System parameter is fixed and cannot be changed.  
 5. Observe that the data now starts streaming in with this Geo Filter.  
 6. After setting up the Parameters click on the Visualizations tab and see the Geo Filter that we are interested in for our campaign.  
 7. Also, notice the arrows indicating the customers location.
@@ -167,9 +167,8 @@ Now we would like to add a Rule Stage to segment our customers based on what the
 2. Click on the (Sigma) button and add a new field as a String.  
 3. The new field defaults to Calc but you can right mouse click (or double click inside the field) and rename it CustomerType.  
 4. Use **<em>(fx)</em>** again and add a new field as a numerical value.  
-5. For a numerical value make sure to begin the expression with = sign.  You can give it default value like =0.  
+5. For a numerical value make sure to begin the expression with = sign. You can give it default value like =0.  
 6. Rename the Calc to DiscountOffered using the right mouse click.
-
 7. Now right click on the GetProductDetails stage and add a Rule Stage
 8. Name the new rule stage *SegmentCustomers* with the appropriate description.
 

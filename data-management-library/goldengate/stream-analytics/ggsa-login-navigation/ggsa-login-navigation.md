@@ -1,11 +1,10 @@
 # Login and Navigation
 
-
 ## Introduction
 In this lab you are going to login to GGSA and get familiar with the menu and navigation in the home and catalog pages. You will then create a new user and set credentials for that user. You are also going to import an example use case for IoT in order to get familiar with various resources
 that are available for that use case.
 
-Estimated Lab Time:  25 minutes
+*Estimated Lab Time*:  25 minutes
 
 ### About Product/Technology
 Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in GGSA you can run analytics on live data in real-time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
@@ -24,7 +23,7 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
-## **STEP 1:** Log-in
+## **STEP 1**: Log-in
 
 1. Log-in to the GoldenGate Stream Analytics using the url:
     ```
@@ -39,7 +38,7 @@ This lab assumes you have:
     ![](./images/home.png " ")
 
 
-## **STEP 2:** Version
+## **STEP 2**: Version
 
 1. Click on the drop-down menu in the upper right-hand corner of the
 screen.
@@ -57,7 +56,7 @@ screen.
 
 3. Click Done.
 
-## **STEP 3:** System Settings
+## **STEP 3**: System Settings
 
 1. Again, click on the drop-down menu in the upper right-hand corner of the
 screen but this time click on System Settings
@@ -68,7 +67,7 @@ screen but this time click on System Settings
 
     ![](./images/systemsettings.png " ")
 
-## **STEP 4:** User Management
+## **STEP 4**: User Management
 
 1. Click on the User Management in the navigation bar to the left and **Add User**:
 
@@ -78,7 +77,7 @@ screen but this time click on System Settings
 
     ![](./images/addUser.png " ")
 
-## **STEP 5:** Catalog
+## **STEP 5**: Catalog
 
 1. Click on the Catalog menu on the top right-hand corner of the home page:
 
@@ -90,8 +89,7 @@ screen but this time click on System Settings
 
 2. Navigate back to the Home page again.
 
-
-## **STEP 6:** Import
+## **STEP 6**: Import
 
 1. Click on Import in Distributed Intelligence for IOT region and see the message that it was imported Successfully.
 
@@ -107,7 +105,7 @@ screen but this time click on System Settings
 
     ![](./images/resourcesimported.png " ")
 
-## **STEP 7:** Show Me (Nav Bar)
+## **STEP 7**: Show Me (Nav Bar)
 
 1. Click on the box next to the Catalog and then click on View All on the left Show Me nav bar to hide all the resources. All the resources in the Show Me nav bar should now be unchecked and you should see 0 of 0 Resources in the main page
 
@@ -117,7 +115,7 @@ screen but this time click on System Settings
 We can now check individual resource types and only see them listed in
 the main page.
 
-## **STEP 8:** Connections
+## **STEP 8**: Connections
 
 1. Click on the Connections on the left nav bar and verify that only two types of connections are visible.
 
@@ -135,7 +133,7 @@ then click Next.
 
     Jdbc url: `jdbc:mysql://OSA_DEMO:Welcome123!\@localhost:3306/OSA_DEMO`
 
-4. Then click on Test connection and make sure the connection is Successful. Click on Cancel button. Do not save this connection here
+4. Then click on Test connection and make sure the connection is successful. Click on the Cancel button. Do not save this connection here.
 
     ![](./images/testDBConnection.png " ")
 
@@ -148,7 +146,7 @@ Connection Type of Kafka then click Next.
 
     ![](./images/editKafkaConnection.png " ")
 
-## **STEP 9:** Streams
+## **STEP 9**: Streams
 
 1. In the left nav bar uncheck the Connections resource and check Streams instead and verify that only VendingMachineStream is visible.
 
@@ -172,7 +170,7 @@ the following screen.
 
     ![](./images/vmEditStream3.png " ")
 
-## **STEP 10:** References
+## **STEP 10**: References
 
 References are typically database tables that might be used to enrich a stream of data.
 
@@ -194,9 +192,9 @@ References are typically database tables that might be used to enrich a stream o
 
 5. In the next page click on 'X' and exit.
 
-## **STEP 11:** Targets
+## **STEP 11**: Targets
 
-A Target is a destination environment downstream that is usually used when we are finished with analysis. They are typically of types: JMS, database, REST, Kafka and Coherence.
+A `Target` is a destination environment downstream that is usually used when we are finished with analysis. They are typically of types: JMS, database, REST, Kafka and Coherence.
 
 1. On the left nav bar make sure Targets are checked only. On the main screen only NotifyMaintenance and ReplenishAlert targets should be visible. Click on the NotifyMaintenance. Do NOT edit any sections
 at this time.

@@ -21,40 +21,17 @@ In this workshop you will:
 * Create dashboards and export artifacts
 
 ### Prerequisites
-
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-
+  
 ### Lab Overview
 
-GoldenGate Stream Analytics workshop consists of 4 separate labs.  The labs should be followed in order from Lab1-Lab4.  There are also screen shots available throughout the labs to guide you through the exercises.  Additional screen shots have been provided in the Appendix section of the workshop to help guide through the lab exercises.
-
-Estimated Lab Time:  25 minutes
-
-* **Lab:** Login and Navigation
-
-This lab is designed to get the user familiar with the navigation and resources in the the GGSA application
-
-Estimated Lab Time:  30 minutes
-
-- **Lab: Streaming IoT Data**
-
-    This lab will walk the user through a sample IoT scenario and how a pipeline is created
-
-Estimated Lab Time:  70 minutes
-
-- **Lab: Streaming Retail data**
-
-    The user in this lab is rquired to create a pipeline for the Retail promotion scenario
-
-Estimated Lab Time:  25 minutes
-
-- **Lab: Publishing – Dashboard – Import/Export**
-
-    The user will learn how to publish a pipeline, create dashboards and perform Import/Export of artifacts
-
-- **Appendix:**
-
-    This is intended to provide the user with screen shots of the lab exercises 
+| Lab Title | Description | Approx. Time |
+|--|------------------------------------------------------------|-------------|
+| Login and Navigation | This lab is designed to get the user familiar with the navigation and resources in the the GGSA application  | 25 minutes  |
+| Streaming IoT Data | This lab will walk the user through a sample IoT scenario and how a pipeline is created | 30minutes |
+| Streaming Retail data | This lab will walk the user through a sample IoT scenario and how a pipeline is created | 70 minutes |
+| Publishing – Dashboard – Import/Export | Publishing – Dashboard – Import/Export | 25 minutes |
+| Appendix | This is intended to provide the user with screen shots of the lab exercises   | NA |
 
 
 ### Required Credentials for GoldenGate Stream Analytics
@@ -70,11 +47,9 @@ Estimated Lab Time:  25 minutes
 
     Spark Password:Sparkadmin#123 
 
-
 ## Learn More
 
 * [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
-
 
 ## Acknowledgements
 

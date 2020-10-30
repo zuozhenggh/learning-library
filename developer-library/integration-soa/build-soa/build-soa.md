@@ -25,8 +25,6 @@ The validation process:
 + When all tests are successful, the payment is authorized. Otherwise it’s denied.
 + The implementation of this service uses a BPEL process to retrieve the credit card data from the database and perform the tests outlined above. The service will return either Authorized or Denied as the payment status.
 
-
-
 **Validation Payment, development Steps:**
 
 ## **STEP 1**:  Create a New SOA Composite Application 
@@ -64,7 +62,6 @@ To make sure of the templates, please follow the steps below:
 
 8. Click OK to close the Preferences window.
 
-
 ## **STEP 2**:  Use a New Template to Create the ValidatePayment Composite.
 
 Create a new SOA application and project. There are various ways and shortcuts to do this, and in this case choose File > New > Application... from the menu.
@@ -80,7 +77,7 @@ with their default values:
       - b. Directory of your choice, as shown below
    ![](../images/2/validatepymnt11.png)
 
-5. Click Next
+5. Click Next.
 
 6. When you create a new application, you are prompted to create a new project. Set the following fields:
       - a. Project Name: ValidatePayment
@@ -88,7 +85,7 @@ with their default values:
       - c. Project Features: SOA Suite
    ![](../images/2/validatepymnt12.png)
 
-7. Click Next
+7. Click Next.
 8. The next step is to pick a ‘Standard Composite’, or a ‘SOA Template’. Choose ‘SOA Template’.
 
    ![](../images/2/validatepymnt13.png)
@@ -166,9 +163,6 @@ Now build your project:
    If your log looks like this, everything is fine:
 
    ![](../images/2/validatepymnt21.png)
-
-
-
 
 **Let's review the validate payment BPEL process.** 
 7.  Double-click the BPEL process to open the BPEL designer shown here:
@@ -340,11 +334,11 @@ The first design iteration is complete and you are now ready to deploy the compo
 
 1. Set breakpoints in the composite by right clicking on an interface and create a Request or Reply Breakpoint or both. For one-directional interfaces, you only get one option.
 
-   ![](../images/2/breakpoint1.png)
+   ![](../images/2/breakpoint1.png " ")
 
    The breakpoints are little red icons with an arrow pointing in the direction of the flow.
 
-   ![](../images/2/breakpoint2.png)
+   ![](../images/2/breakpoint2.png " ")
 
    Watch on how to use diagnostic tool in JDeveloper
 

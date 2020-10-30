@@ -5,7 +5,7 @@ With a mobile app launch in progress, this new validate-payment composite app mu
 
 In SOA 12c, SOA composites can use end-to-end JSON. This means that the REST service can receive the REST request and route it to the BPEL engine without translating it to XML. The BPEL component can use the JavaScript action, and also use JavaScript in conditional and iterative constructs, to work on JSON objects directly. The REST reference can receive the REST message from the BPEL engine and route it to an external REST endpoint without translation.
 
-Estimated Lab Time: 60 minutes
+*Estimated Lab Time*: 60 minutes
 
 ## **STEP 1**:   REST-Enabled the Service Bus Proxy End-Point
 
