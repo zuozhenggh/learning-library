@@ -1,45 +1,31 @@
 # Prepare On Premise Database
 
-In this lab, You will use a compute instance in the OCI to simulate the on-premise primary database. In Lab3, the Oracle 19c database has been installed and patched to 19.7.0. The on-premise primary database can deploy into a different region from the cloud database which will act as your stand-by database.
+## Introduction
+In this lab, You will use a compute instance in the OCI to simulate the on-premise primary database. The Oracle 19c database has been installed and patched to 19.7.0. 
 
-## Prerequisites
+Estimated Lab Time: 50 minutes.
+
+### Objectives
+
+-   Open the 1521 port for the on-premise database
+-   Enable ssh connect for the oracle user
+-   Enable TDE
+-   Encrypt the data files
+-   Enable the Network Encryption
+-   Enable achivelog and flashback
+-   Change redo log size and create standby log
+-   Modify the init parameters for best practice
+
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 
-* Register for Free Tier
-* Generate SSH Key
 * Environment Setup
 
 
 ## **Step 1:** Open the 1521 port for the on-premise database
 
-1. From the OCI console, from the main menu, choose **Netwoking** and click **Virtual Cloud Networks**.
-
-   ![](./images/image-20200505103412168.png " ")
-
-2. In the Virtual Cloud Networks page, make sure you are in the correct Region and Compartment, there is a VCN named **example-vcn** which you created in Lab3. Click the VCN link.
-
-   ![](./images/image-20200505103954441.png " ")
-
-3. From the VCN Details page, click the subnet link.
-
-   ![](./images/image-20200505104215115.png " ")
-
-4. Then click the Default Security List link.
-
-   ![](./images/image-20200505104413862.png " ")
-
-5. Click **Add Ingress Rules**.
-
-   ![](./images/image-20200505104702210.png " ")
-
-6. Set the Source CIDR to ```0.0.0.0/0``` and the Destination Port Range to 1521. Then click **Add Ingress Rules**.
-
-   ![](./images/image-20200505105002310.png " ")
-
-   You are now open to the 1521 port for the public subnet.
-
-7. Connect to the VM which you created in Lab3 with opc user. Use putty tool (Windows) or command line (Mac, Linux).
+7. Connect to the VM which you created before with **opc** user. Use putty tool (Windows) or command line (Mac, Linux).
 
    ```
    ssh -i labkey opc@xxx.xxx.xxx.xxx
@@ -141,7 +127,7 @@ SQL>
 6. Open the keystore.
 
 ```
-SQL> administer key management set keystore open identified by "Ora_DB4U"  container=all;
+SQL> <copy>administer key management set keystore open identified by "Ora_DB4U" container=all;</copy>
 
 keystore altered.
 
@@ -151,7 +137,7 @@ SQL>
 7. Create master key.
 
 ```
-SQL> administer key management set key identified by "Ora_DB4U" with backup using 'backup' container=all;
+SQL> <copy>administer key management set key identified by "Ora_DB4U" with backup using 'backup' container=all;</copy>
 
 keystore altered.
 
@@ -161,7 +147,7 @@ SQL>
 8. Verify the keystore, you can see the wallet is openned by password.
 
 ```
-SQL> select * from v$encryption_wallet;
+SQL> <copy>select * from v$encryption_wallet;</copy>
 
 WRL_TYPE
 --------------------
@@ -211,7 +197,7 @@ SQL>
 9. Make keystore autologin.
 
 ```
-SQL> administer key management create auto_login keystore from keystore '/u01/app/oracle/admin/ORCL/wallet' identified by "Ora_DB4U";
+SQL> <copy>administer key management create auto_login keystore from keystore '/u01/app/oracle/admin/ORCL/wallet' identified by "Ora_DB4U";</copy>
 
 keystore altered.
 
@@ -221,7 +207,7 @@ SQL>
 10. Reset wallet from PASSWORD to AUTOLOGIN mode.
 
 ```
-SQL> administer key management set keystore close identified by "Ora_DB4U" container=all;
+SQL> <copy>administer key management set keystore close identified by "Ora_DB4U" container=all;</copy>
 
 keystore altered.
 
@@ -231,7 +217,7 @@ SQL>
 11. Verify the keystore again, now you can see the wallet is configure to autologin.
 
 ```
-SQL> select * from v$encryption_wallet;
+SQL> <copy>select * from v$encryption_wallet;</copy>
 
 WRL_TYPE
 --------------------
@@ -302,15 +288,7 @@ TEMP			       NO
 USERS			       NO
 ```
 
-2. Copy and run the command to encrypt the USERS tablespace online.
-
-   ```
-   <copy>alter tablespace users encryption online encrypt;</copy>
-   ```
-
-   
-
-3.  Check the status. You can see the USERS tablespace has already encrypted.
+2. Run the command to encrypt the USERS tablespace online, then check the status. You can see the USERS tablespace has already encrypted.
 
 ```
 SQL> alter tablespace users encryption online encrypt;
@@ -614,3 +592,15 @@ System altered.
 SQL> exit;
 ```
 
+You may proceed to the next lab.
+
+## Acknowledgements
+* **Author** - Minqiao Wang, DB Product Management, Oct 2020
+* **Contributors** -  <Name, Group> -- optional
+* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Oct 2020
+* **Workshop (or Lab) Expiry Date** - <Month Year> 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
