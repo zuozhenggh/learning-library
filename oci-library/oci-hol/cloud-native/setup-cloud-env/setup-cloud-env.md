@@ -66,7 +66,7 @@ Estimated time: 20 minutes
 
   ![AppDev Compartment](images/OCI-2.png " ")
 
-To access Cloud Shell:
+Check Cloud Shell access:
 
 1. Click the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against         the region selected in the Console's Region selection menu when the Cloud Shell was started.
 
@@ -110,7 +110,7 @@ You may now [proceed to the next lab](#next).
 - **Contributors** -  Kamryn Vinson, Adao Junior
 - **Last Updated By/Date** - Adao Junior, October 2020
 
-## Need Help"?"
+## Need Help?
 
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
