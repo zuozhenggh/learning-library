@@ -23,15 +23,15 @@ In this lab, you can use 2 terminal windows, one connected to the on-premise hos
 
 1. Connect as the opc user.
 
-```
-ssh -i labkey opc@xxx.xxx.xxx.xxx
-```
+ ```
+ ssh -i labkey opc@xxx.xxx.xxx.xxx
+ ```
 
 2. Edit `/etc/hosts` on both sides.
 
-```
-<copy>sudo vi /etc/hosts</copy>
-```
+ ```
+ <copy>sudo vi /etc/hosts</copy>
+ ```
 
    - From on-premise side, add the cloud host **public ip** and host name in the file like the following:
 
@@ -47,9 +47,9 @@ ssh -i labkey opc@xxx.xxx.xxx.xxx
 
 3. Validate the connectivity, install telnet on both sides.
 
-```
-<copy>sudo yum -y install telnet</copy>
-```
+ ```
+ <copy>sudo yum -y install telnet</copy>
+ ```
 
    - From the on-premise side, telnet the public ip or host name of the cloud host, enter `^]` and return to exit. 
 
@@ -87,9 +87,9 @@ Now you will configure the prompt-less ssh for oracle users between on-premise a
 
 1. su to **oracle** user in both side.
 
-```
-<copy>sudo su - oracle</copy>
-```
+ ```
+ <copy>sudo su - oracle</copy>
+ ```
 
 2. Configure prompt-less ssh from on-premise to cloud.
 
