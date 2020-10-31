@@ -1,4 +1,4 @@
-# Test with ADG
+# Testing with Active Data Guard
 
 ## Introduction
 Now we can run some testing with the ADG including DML redirection and switchover.

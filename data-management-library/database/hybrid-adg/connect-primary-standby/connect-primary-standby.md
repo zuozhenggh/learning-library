@@ -53,31 +53,35 @@ In this lab, you can use 2 terminal windows, one connected to the on-premise hos
 
    - From the on-premise side, telnet the public ip or host name of the cloud host, enter `^]` and return to exit. 
 
-    ```
-     [opc@primary ~]$ telnet dbstby 1521
-     Trying 158.101.136.61...
-     Connected to 158.101.136.61.
-     Escape character is '^]'.
-     ^]
-         
-    telnet> q
-     Connection closed.
-     [opc@primary ~]$ 
      ```
+     [opc@primary ~]$ telnet dbstby 1521
+      Trying 158.101.136.61...
+      Connected to 158.101.136.61.
+      Escape character is '^]'.
+      ^]
+          
+     telnet> q
+      Connection closed.
+      [opc@primary ~]$
+     ```
+
+     
 
    - From the cloud side, telnet the public ip or hostname of the on-premise host, enter `^]` and return to exit. 
 
-    ```
-     [opc@dbstby ~]$ telnet primary 1521
-     Trying 140.238.18.190...
-     Connected to 140.238.18.190.
-     Escape character is '^]'.
-     ^]
-         
-    telnet> q
-     Connection closed.
-     [opc@dbstby ~]$
      ```
+     [opc@dbstby ~]$ telnet primary 1521
+      Trying 140.238.18.190...
+      Connected to 140.238.18.190.
+      Escape character is '^]'.
+      ^]
+          
+     telnet> q
+      Connection closed.
+      [opc@dbstby ~]$
+     ```
+
+     
 
 
 

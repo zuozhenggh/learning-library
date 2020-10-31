@@ -1,7 +1,7 @@
-# Deploy ADG Process
+# Deploy Active Data Guard with LVM
 
 ## Introduction
-This procedure is basically the same as migrating the database from on-premise to OCI. The Data Guard setup for a Single Instance (SI) or RAC should be the same. In the following steps you will setup Data Guard from an SI on-premise to an SI in the cloud infrastructure. If you want to setup Data Guard from an SI on-premise to a 2-Node RAC in the cloud infrastructure or RAC on-premise to an SI in the cloud infrastructure please refer to the whitepaper [hybrid-dg-to-oci-5444327](https://www.oracle.com/technetwork/database/availability/hybrid-dg-to-oci-5444327.pdf).
+In this lab, you will deploy the ADG. This procedure is basically the same as migrating the database from on-premise to OCI. The Data Guard setup for a Single Instance (SI) or RAC should be the same. In the following steps you will setup Data Guard from an SI on-premise to an SI in the cloud infrastructure. If you want to setup Data Guard from an SI on-premise to a 2-Node RAC in the cloud infrastructure or RAC on-premise to an SI in the cloud infrastructure please refer to the whitepaper [hybrid-dg-to-oci-5444327](https://www.oracle.com/technetwork/database/availability/hybrid-dg-to-oci-5444327.pdf).
 
 Estimated Lab Time: 30 minutes.
 
@@ -51,13 +51,13 @@ To manually delete the database on the cloud host, run the steps below.
 
 3. Connect database as sysdba. Get the current `db_unique_name` for the Cloud database. 
 
-```
-SQL> select DB_UNIQUE_NAME from v$database;
-
-DB_UNIQUE_NAME
-------------------------------
-ORCL_nrt1d4
-```
+   ```
+   SQL> select DB_UNIQUE_NAME from v$database;
+   
+   DB_UNIQUE_NAME
+   ------------------------------
+   ORCL_nrt1d4
+   ```
 
 4. Copy the following scripts, replace the `ORCL_nrt1d4` with the standby `DB_UNIQUE_NAME` which you got in the previous step.
 
@@ -75,51 +75,51 @@ ORCL_nrt1d4
 
 5. Run in sqlplus as sysdba. This will create a script to remove all database files. 
 
-```
-[oracle@dbstby ~]$ sqlplus / as sysdba
-
-SQL*Plus: Release 19.0.0.0.0 - Production on Fri Jan 31 08:20:03 2020
-Version 19.7.0.0.0
-
-Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-
-
-Connected to:
-Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.7.0.0.0
-
-SQL> set heading off linesize 999 pagesize 0 feedback off trimspool on
-SQL> spool /tmp/files.lst
-SQL> select 'rm '||name from v$datafile union all select 'rm '||name from v$tempfile union all select 'rm '||member from v$logfile;
-rm /u02/app/oracle/oradata/ORCL_nrt1d4/PDB1/system01.dbf
-rm /u02/app/oracle/oradata/ORCL_nrt1d4/PDB1/sysaux01.dbf
-rm /u02/app/oracle/oradata/ORCL_nrt1d4/PDB1/undotbs01.dbf
-rm /u02/app/oracle/oradata/ORCL_nrt1d4/PDB1/users01.dbf
-rm /u02/app/oracle/oradata/ORCL_nrt1d4/temp01.dbf
-rm /u02/app/oracle/oradata/ORCL_nrt1d4/pdbseed/temp012020-01-23_14-38-01-789-PM.dbf
-rm /u02/app/oracle/oradata/ORCL_nrt1d4/PDB1/temp01.dbf
-rm /u03/app/oracle/oradata/ORCL_nrt1d4/srl_redo01.log
-rm /u03/app/oracle/oradata/ORCL_nrt1d4/srl_redo02.log
-rm /u03/app/oracle/oradata/ORCL_nrt1d4/srl_redo03.log
-rm /u03/app/oracle/oradata/ORCL_nrt1d4/redo04.log
-...
-SQL> spool off
-SQL> create pfile='/tmp/ORCL_nrt1d4.pfile' from spfile;
-SQL>  
-```
+   ```
+   [oracle@dbstby ~]$ sqlplus / as sysdba
+   
+   SQL*Plus: Release 19.0.0.0.0 - Production on Fri Jan 31 08:20:03 2020
+   Version 19.7.0.0.0
+   
+   Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+   
+   
+   Connected to:
+   Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
+   Version 19.7.0.0.0
+   
+   SQL> set heading off linesize 999 pagesize 0 feedback off trimspool on
+   SQL> spool /tmp/files.lst
+   SQL> select 'rm '||name from v$datafile union all select 'rm '||name from v$tempfile union all select 'rm '||member from v$logfile;
+   rm /u02/app/oracle/oradata/ORCL_nrt1d4/PDB1/system01.dbf
+   rm /u02/app/oracle/oradata/ORCL_nrt1d4/PDB1/sysaux01.dbf
+   rm /u02/app/oracle/oradata/ORCL_nrt1d4/PDB1/undotbs01.dbf
+   rm /u02/app/oracle/oradata/ORCL_nrt1d4/PDB1/users01.dbf
+   rm /u02/app/oracle/oradata/ORCL_nrt1d4/temp01.dbf
+   rm /u02/app/oracle/oradata/ORCL_nrt1d4/pdbseed/temp012020-01-23_14-38-01-789-PM.dbf
+   rm /u02/app/oracle/oradata/ORCL_nrt1d4/PDB1/temp01.dbf
+   rm /u03/app/oracle/oradata/ORCL_nrt1d4/srl_redo01.log
+   rm /u03/app/oracle/oradata/ORCL_nrt1d4/srl_redo02.log
+   rm /u03/app/oracle/oradata/ORCL_nrt1d4/srl_redo03.log
+   rm /u03/app/oracle/oradata/ORCL_nrt1d4/redo04.log
+   ...
+   SQL> spool off
+   SQL> create pfile='/tmp/ORCL_nrt1d4.pfile' from spfile;
+   SQL>  
+   ```
 
 6. Shutdown the database. 
 
-```
-SQL> shutdown immediate;
-Database closed.
-Database dismounted.
-ORACLE instance shut down.
-SQL> exit
-Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-Version 19.7.0.0.0
-[oracle@dbstby ~]$ 
-```
+   ```
+   SQL> shutdown immediate;
+   Database closed.
+   Database dismounted.
+   ORACLE instance shut down.
+   SQL> exit
+   Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
+   Version 19.7.0.0.0
+   [oracle@dbstby ~]$ 
+   ```
 
 7. Remove database files 
 
@@ -127,12 +127,12 @@ Version 19.7.0.0.0
 
  Edit /tmp/files.lst created previously to remove any unneeded lines from sqlplus. Leaving all lines beginning with 'rm'. Then run it.
 
- ```
- [oracle@dbstby ~]$ chmod a+x /tmp/files.lst
- [oracle@dbstby ~]$ vi /tmp/files.lst
- [oracle@dbstby ~]$ . /tmp/files.lst
- [oracle@dbstby ~]$ 
- ```
+   ```
+   [oracle@dbstby ~]$ chmod a+x /tmp/files.lst
+   [oracle@dbstby ~]$ vi /tmp/files.lst
+   [oracle@dbstby ~]$ . /tmp/files.lst
+   [oracle@dbstby ~]$ 
+   ```
 
  All files for the starter database have now been removed. 
 
@@ -144,17 +144,17 @@ As **oracle** user, copy the on-premise database password file to cloud host `$O
 
 1. Copy the following command, using the on-premise host public ip or hostname.
 
-```
-<copy>scp oracle@primary:/u01/app/oracle/product/19c/dbhome_1/dbs/orapwORCL $ORACLE_HOME/dbs</copy>
-```
+   ```
+   <copy>scp oracle@primary:/u01/app/oracle/product/19c/dbhome_1/dbs/orapwORCL $ORACLE_HOME/dbs</copy>
+   ```
 
 2. Run the command as **oracle** user.
 
-```
-[oracle@dbstby ~]$ scp oracle@primary:/u01/app/oracle/product/19c/dbhome_1/dbs/orapwORCL $ORACLE_HOME/dbs
-orapwORCL 100% 2048    63.5KB/s   00:00    
-[oracle@dbstby ~]$
-```
+   ```
+   [oracle@dbstby ~]$ scp oracle@primary:/u01/app/oracle/product/19c/dbhome_1/dbs/orapwORCL $ORACLE_HOME/dbs
+   orapwORCL 100% 2048    63.5KB/s   00:00    
+   [oracle@dbstby ~]$
+   ```
 
 
 

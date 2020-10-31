@@ -1,7 +1,7 @@
-# Deploy ADG Process
+# Deploy Active Data Guard with ASM
 
 ## Introduction
-This procedure is basically the same as migrating the database from on-premise to OCI. The Data Guard setup for a Single Instance (SI) or RAC should be the same. In the following steps you will setup data guard from an SI on-premises to an SI in the cloud infrastructure. If you want to setup Data Guard from an SI on-premises to to a 2-Node RAC in cloud infrastructure or RAC on-premises to an SI in the cloud infrastructure please refer to the whitepaper [hybrid-dg-to-oci-5444327](https://www.oracle.com/technetwork/database/availability/hybrid-dg-to-oci-5444327.pdf).
+In this lab, you will deploy the ADG. This procedure is basically the same as migrating the database from on-premise to OCI. The Data Guard setup for a Single Instance (SI) or RAC should be the same. In the following steps you will setup data guard from an SI on-premises to an SI in the cloud infrastructure. If you want to setup Data Guard from an SI on-premises to to a 2-Node RAC in cloud infrastructure or RAC on-premises to an SI in the cloud infrastructure please refer to the whitepaper [hybrid-dg-to-oci-5444327](https://www.oracle.com/technetwork/database/availability/hybrid-dg-to-oci-5444327.pdf).
 
 Estimated Lab Time: 30 minutes.
 
@@ -122,7 +122,6 @@ Version 19.7.0.0.0
    ```
 
    
-
 7. Shutdown the database 
 
    - First collect the configuration of the database for future reference, replace the `ORCL_nrt1d4` with the standby `DB_UNIQUE_NAME`.
