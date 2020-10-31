@@ -12,7 +12,7 @@
             "filename": "../../introduction/introduction.md"
         },
         {            
-            "title": "Lab 1: Environment Setup",
+            "title": "Lab 1: Setup Primary Environment",
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
             "filename": "../../setup-environment/setup-environment.md"
         },

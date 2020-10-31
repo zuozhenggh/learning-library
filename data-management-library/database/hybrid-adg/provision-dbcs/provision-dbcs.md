@@ -1,7 +1,7 @@
-# Provision the Database System on OCI
+# Provision DBCS on OCI
 
 ## Introduction
-In this lab you will provision a Database system on OCI to act as the standby database in the cloud. You will create a different VCN in different region from the on-premise database, and provision a DBCS in that VCN. 
+In this lab you will provision a Database Cloud Service on OCI to act as the standby database in the cloud. You will create a different VCN in different region from the on-premise database, and provision a DBCS in that VCN. 
 
 Estimated Lab Time: 30 minutes(LVM) or 60 minutes(ASM)
 
@@ -115,14 +115,14 @@ This lab assumes you have already completed the following:
 
     - Click the **Create DB System**.
 
-6. If you choose ASM as the storage manage, wait about 60 minutes. If you choose LVM as the storage manage, wait about 15 minutes. Then the Database is ready.
+6. If you choose ASM as the storage manage, wait about 60 minutes. If you choose LVM as the storage manage, wait about 30 minutes. Then the Database is ready.
 
-   ![](./images/image-20200130200100992.png " ")
+   ![](images/image-20201031113736025.png)
 
 7. Write down your Database Unique Name ie: `ORCL_nrt1d4`.
 8. Click the **Nodes**,  write down the public ip address of the database host node and the Host Domain Name.
 
-   ![](./images/image-20200130200337237.png " ")
+   ![](images/image-20201031113833200.png)
 
 You have completed the Database Cloud provisioning steps.  It will be used as your standby database.
 
