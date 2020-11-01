@@ -1,0 +1,216 @@
+<h1>Introduction</h1>
+<h2>About Practices</h2>
+<p>This practice shows how the passwords in the password files in Oracle Database 21c are case-sensitive. In earlier Oracle Database releases, password files by default retain their original case-insensitive verifiers. The parameter to enable or disable password file case sensitivity <code>IGNORECASE</code> is removed. All passwords in new password files are case-sensitive.</p>
+<p>Estimated Lab Time: 10 minutes</p>
+<h2>Objectives</h2>
+<p>In this lab, you'll:</p>
+<ul>
+<li>Display the password file format of a container database
+</li>
+<li>Change the <code>SYS</code> password and verify that the password is now case-sensitive
+</li>
+</ul>
+<h2>Prerequisites</h2>
+<p>To complete this lab, you need to have the following:</p>
+<ul>
+<li>An Oracle database installed.
+</li>
+<li>Access to the <code>SYSDBA</code> account
+</li>
+</ul>
+<h2>Assumptions</h2>
+<ul>
+<li>You have completed the previous lab.
+</li>
+</ul>
+<h2>Step 1 : Display the password file format of CDB21</h2>
+<ol>
+<li>Here is the first sentence.
+<br/>This is a shift return sentence.<br/><br/>
+</li>
+<li>Change the <code>ORACLE_HOME</code> environment variable.</p>
+<ol>
+<li>This is the step 1a.</p>
+<pre><code>
+$ <b>export ORACLE_BASE=/u01/app/oracle</b>
+$
+
+</code></pre>
+</li>
+<li>This is step 1b.
+</p>
+<pre><code>
+$ <b>export ORACLE_BASE=/u01/app/oracle</b>
+$ <b>export ORACLE_BASE=/u01/app/oracle</b>
+$ <b>export ORACLE_BASE=/u01/app/oracle</b>
+$
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>Change the directory.</p>
+<ol>
+<li>This is step 2a.</p>
+<pre><code>
+$ <b>cd $ORACLE_BASE/dbs</b>
+$
+
+</code></pre>
+</li>
+<li>This is step 2b.
+</li>
+<li>This is step 2c.
+</p>
+<pre><code>
+$ <b>cd $ORACLE_BASE/dbs</b>
+$
+
+</code></pre>
+<p>
+</p>
+</li>
+</ol>
+</li>
+<li>List the contents.</p>
+<ul>
+<li>step 3 bullet1 with code</p>
+<pre><code>
+$ <b>ls -l orapwCDB21</b>
+-rw-r----- 1 oracle oinstall 2048 Mar  5 09:48 orapwCDB21
+$
+
+</code></pre>
+</li>
+<li>Step 3 bullet 2 with code.
+</p>
+<pre><code>
+$ <b>ls -l orapwCDB21</b>
+-rw-r----- 1 oracle oinstall 2048 Mar  5 09:48 orapwCDB21
+$
+
+</code></pre>
+<p>
+Sentence after code block in substep.
+</p>
+</li>
+<li>Step 3 bullet 3 without code.
+</li>
+</ul>
+</li>
+<li>View the description for the password file.</p>
+<ul>
+<li>Step 4 bullet 1 just text.</p>
+</li>
+<li>Step 4 bullet 2 just text.</p>
+</li>
+<li>Step 4 bullet 3 just text.</p>
+<p>
+</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2>Step 2 : Change <code>SYS</code> password and verify that the password is now case-sensitive</h2>
+<ol>
+<li>Change the <code>SYS</code> user password in the password file.</p>
+<pre><code>
+$ <b>ls -l orapwCDB21</b>
+-rw-r----- 1 oracle oinstall 2048 Mar  5 09:48 orapwCDB21
+$
+
+</code></pre>
+<p>Note:</p>
+<p>The usage notes mention all parameters that can be used in the command. <code>IGNORECASE</code> is not mentioned because it is now a deprecated parameter.</p>
+<p>
+</p>
+</li>
+<li>Re-enter the command without the deprecated parameter.</p>
+<pre><code>
+$ <b>orapwd file=$ORACLE_BASE/dbs/orapwCDB21 sys=Y force=Y format=12</b>
+Enter password for SYS: <i>password</i>
+$
+
+</code></pre>
+</li>
+<li>Launch SQL*Plus and log on as <code>SYS</code> to <code>CDB21</code>.
+</p>
+<pre><code>
+$ <b>sqlplus sys@CDB21 AS SYSDBA</b>
+
+Enter password: <i><b>password_with_case-sensitiveness</b></i>
+
+Connected to:
+SQL> <b>CONNECT sys@CDB21 AS SYSDBA</b>
+Enter password: <i><b>password_without_case-sensitiveness</b></i>
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+Warning: You are no longer connected to ORACLE.
+SQL>
+
+</code></pre>
+<p>
+</p>
+</li>
+<li>Display the list of the users.
+</p>
+<pre><code>
+SQL> <b>CONNECT sys@CDB21 AS SYSDBA</b>
+Enter password: <i><b>password_with_case-sensitiveness</b></i>
+Connected.
+SQL> <b>SET PAGES 100</b>
+SQL> <b>COL username FORMAT A30</b>
+SQL> <b>SELECT username, password_versions FROM dba_users ORDER BY 2,1;</b>
+
+USERNAME                       PASSWORD_VERSIONS
+------------------------------ -----------------
+SYS                            11G 12C
+SYSTEM                         11G 12C
+ANONYMOUS
+APPQOSSYS
+AUDSYS
+CTXSYS
+...
+
+SQL> <b>EXIT</b>
+$
+
+</code></pre>
+</li>
+</ol>
+<h2>Learn More</h2>
+<ul>
+<li><a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/administration.html"  >Oracle Database Administration</a> documentation
+</li>
+<li><a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/getting-started-with-database-administration.html#GUID-26EC8D1B-7A2F-4F0A-9588-D92CBD610858"  >Creating and Maintaining a Password File</a>
+</li>
+</ul>
+<h2>Acknowledgements</h2>
+<ul>
+<li><strong>Author:</strong> Dominique Jeunot, UA Developer, Oracle Database Team
+</li>
+<li><strong>Last Updated By/Date</strong> - Jody Glover, Oracle Database Team, September 2020
+</li>
+</ul>
+<h2>See an Issue</h2>
+<p>Please submit feedback using this <a href="https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1"  >form</a>. Please include the <strong>workshop name</strong>, <strong>lab</strong>, and <strong>step</strong> in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the <strong>Feedback Comments</strong> section.
+</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
