@@ -66,9 +66,7 @@ Estimated time: 20 minutes
 
   ![AppDev Compartment](images/OCI-2.png " ")
 
-Check Cloud Shell access:
-
-1. Click the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against         the region selected in the Console's Region selection menu when the Cloud Shell was started.
+1. Click the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
 
   ![CloudShell](images/cloudshell-1.png " ")
 
@@ -101,6 +99,30 @@ Now you are ready to move on to Step 3.
 1. Once launched it should usually take around 5-10 minutes for the cluster to be fully provisioned and display an Active. To start working with the Cluster, click  **Access Cluster**.
 
    ![Access Cluster](images/OKE-4.png " ")
+
+## **STEP 4:** Setup OKE Kubernetes Cluster Cloud Shell Access
+
+1. On the **Clusters** view, select the just created cluster and then click on the **Access Cluster** button.
+
+> Cluster View Image
+
+1. Leave the **Cloud Shell Access** selected. If Cloud Shell is not already open, **Lauch Cloud Shell**, copy the oci cli command to create the kubeconfig and paste on the Cloud Shell Terminal.
+
+> Cloud Shell Terminal Image with command
+
+1. Check if you have access to your cluster with this command.
+
+    ````shell
+    <copy>
+    kubectl get cs
+    </copy>
+    ````
+
+    ````console
+    <copy>
+    kubectl get cs
+    </copy>
+    ````
 
 You may now [proceed to the next lab](#next).
 
