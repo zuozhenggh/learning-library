@@ -19,7 +19,7 @@ Estimated time: 20 minutes
 - You have already applied for and received your Oracle Cloud Free Tier Account.
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-[](youtube:wIoLDX7iWXo?start=0&end=61)
+[](youtube:wIoLDX7iWXo?start=0&end=60)
 
 ## **STEP 1:** Log into OCI Tenancy
 
@@ -57,8 +57,8 @@ Estimated time: 20 minutes
 
 1. Enter the following:
       - Name: Enter **"AppDev".**
-      - Description: Enter a description (required), for example: "AppDev compartment for the getting started tutorial". Avoid                   entering confidential information.
-      - Parent Compartment: Select the compartment you want this compartment to reside in. Defaults to the root compartment (or                 tenancy).
+      - Description: Enter a description (required), for example: "AppDev compartment for the getting started tutorial". Avoid entering confidential information.
+      - Parent Compartment: Select the compartment you want this compartment to reside in. Defaults to the root compartment (or tenancy).
       - Click **Create Compartment**.
       - Your compartment is displayed in the list.
 

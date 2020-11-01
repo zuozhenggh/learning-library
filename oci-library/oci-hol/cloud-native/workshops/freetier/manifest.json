@@ -13,15 +13,23 @@
             "filename": "../../setup-cloud-env/setup-cloud-env.md"
         },
         {
-            "title": "Lab 2: Deploy Mushop",
+            "title": "Lab 2: Deploy the MuShop App",
             "filename": "../../../../../developer-library/mushop/deploy/deploy.md"
         },
         {
-            "title": "Lab 3: Configure Service Broker & ATP",
+            "title": "Lab 3: Monitoring the deployment",
+            "filename": "../../../../../developer-library/mushop/observability/monitoring.md"
+        },
+        {
+            "title": "Lab 4: Clean Up the App",
+            "filename": "../../../../../developer-library/mushop/cleanup/cleanup.md"
+        },
+        {
+            "title": "Lab 5: Configure OCI Service Broker & ATP",
             "filename": "../../../../../developer-library/mushop/service-broker/service-broker.md"
         },
         {
-            "title": "Lab 5: Configuring Functions",
+            "title": "Lab 6: Configuring Functions",
             "filename": "./../../configuring-fn/configuring-fn.md"
         }
     ]

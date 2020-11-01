@@ -2,7 +2,7 @@
 
 ## Build and Deploy your First Cloud Native App
 
-x
+Learn how to deploy applications into a cloud-native microservice-based development framework leveraging the Oracle Cloud Native solutions. You will deploy an eCommerce application with polyglot microservices for each component of a highly scalable architecture leveraging Kubernetes and Oracle Cloud Infrastructure components.
 
 Estimated time: 2 hours
 
