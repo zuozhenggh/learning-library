@@ -25,11 +25,19 @@
             "filename": "../../../../../developer-library/mushop/cleanup/cleanup.md"
         },
         {
-            "title": "Lab 5: Configure OCI Service Broker & ATP",
+            "title": "Functions Prerequisites",
+            "filename": "../../../da-functions-load-file-into-adw-python/prerequisites/functions.md"
+        },
+        {
+            "title": "Lab 5: Functions",
+            "filename": "../../../da-functions-load-file-into-adw-python/fn-lab/lab.md"
+        },
+        {
+            "title": "TEMP: Lab 5: Configure OCI Service Broker & ATP",
             "filename": "../../../../../developer-library/mushop/service-broker/service-broker.md"
         },
         {
-            "title": "Lab 6: Configuring Functions",
+            "title": "TEMP: Lab 6: Configuring Functions",
             "filename": "./../../configuring-fn/configuring-fn.md"
         }
     ]
