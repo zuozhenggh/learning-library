@@ -176,6 +176,11 @@ Remembering that helm provides a way of packaging and deploying configurable cha
     ````shell
     <copy>
     mkdir ./out
+    <copy>
+    ````
+
+    ````shell
+    <copy>
     helm template mushop deploy/complete/helm-chart/mushop --set global.mock.service="all" --output-dir ./out
     <copy>
     ````

@@ -41,6 +41,10 @@ The following steps represents cleanup operations, which may vary depending on t
     </copy>
     ````
 
+## **STEP 4**: Terminate the OKE Cluster and Worker Nodes
+
+1. Remove
+
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
