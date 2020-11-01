@@ -2,17 +2,18 @@
 
 ## Introduction
 
-There are three options to deploying MuShop, they range from manual (docker) to automated (Helm).  
+There are four options to deploying MuShop, they range from manual (docker), automated (Helm) to full automated (Terraform).  
 
 Designing in microservices offers excellent separation concerns and provides developer independence.  While these benefits are clear, they can often introduce some complexity for development enviornment.  Services support configurations that offer flexibility, when necessary, and establish parity as much as possible.  It is important to use the same tools for devleopment all the way to production.
 
-![](images/mushop-deployment.png)
+![MuShop Deployment](images/mushop-deployment.png)
 
 Estimated Lab Time: n minutes
 
 ### Objectives
 
 In this lab, you will:
+
 * Gather Cloud Information
 * Download Source Code
 * Setup OKE Cluster
@@ -22,72 +23,51 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
 
-## **STEP 1**: Obtain Oracle Cloud Information
+## **STEP 1**: Obtain MuShop source code
 
-1.  Create a txt file with the following values.  This step will walk you through how to obtain this information.
-    - region:       # Region where resources will be provisioned. (ex: us-phoenix-1)
-    - tenancy:      # Tenancy OCID value
-    - user:         # API User OCID value
-    - compartment:  # Compartment OCID value
-    - key:          # Private API Key file path (ex: /Users/jdoe/.oci/oci_key.pem)
-    - fingerprint:  # Public API Key fingerprint (ex: 43:65:2c...)
-
-## **STEP 2**: Obtain Mushop source code
-
-1.  Open up Cloud Shell and clone the github repo.
+1. Open up Cloud Shell and clone the github repo.
 
     ````
     <copy>
     git clone https://github.com/oracle-quickstart/oci-cloudnative.git mushop
     </copy>
     ````
-2.  Change to the mushop directory
+
+1. Change to the mushop directory
     ````
     <copy>
     cd mushop
     </copy>
     ````
-    ![](images/mushop-code.png)
 
-3.  Verify CLI is configured correctly by executing a command to list the Cloud Object Storage namespace
-   
-    ````
-    <copy>
-    oci os ns get
-    </copy>
-    ```` 
-4.  Verify CLI is configured correctly by executing a command to list the Cloud Object Storage namespace
-   
-    ````
-    <copy>
-    oci ce cluster create-kubeconfig \
-    --cluster-id ocid1.cluster.oc1.iad.aaaaaaaaabbbbbbbbdddddddd...xxx \
-    --file $HOME/.kube/config --region us-ashburn-1 --token-version 2.0.0    
-    </copy>
-    ```` 
-5.  Use kubectl to check the configuration
-   
+    ![MuShop Tree](images/mushop-code.png)
+
+    *./deploy:* Collection of application deployment resources  
+    *./src:* MuShop individual service code, Dockerfile, etc
+
+1. Check **kubectl** context
+
     ````
     <copy>
     kubectl config current-context
     # cluster-c4daylfgvrg
     </copy>
-    ```` 
-6.  Set the default kubectl namespace to skip adding --namespace <name> to every command.  You can replace *mushop* with *your name*
-   
+    ````
+
+1. Set the default **kubectl** namespace to skip adding **--namespace <name>** to every command.  You can replace *mushop* with *your name*
+
     ````
     <copy>
-    kubectl create namespace mushop 
+    kubectl create namespace mushop
     kubectl config set-context \
     --current --namespace=mushop
     </copy>
-    ```` 
+    ````
 
-    *TIP:* use kubens to switch namespace easily & often from the command line 
+## **STEP 2**: OKE Cluster Setup
 
-## **STEP 3**: OKE Cluster Setup
 MuShop provides an umbrella helm chart called setup, which includes several recommended installations on the cluster. These installations represent common 3rd party services, which integrate with Oracle Cloud Infrastructure or enable certain application features.
 
 | Chart | Purpose | Option |

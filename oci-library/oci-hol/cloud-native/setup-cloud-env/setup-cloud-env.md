@@ -2,9 +2,7 @@
 
 ## Introduction
 
-You will take on the persona of an Operations Engineer. You will initiate the Oracle cloud environment that will be used to create and deploy your microservices applications. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment. You will deploy two Oracle Cloud Services for this environment. An Oracle Cloud Developer Image will be used to develop and deploy your microservices code. The microservices will access data within an Autonomous Transaction Processing (ATP) Cloud Service.
-
-To deploy these services, you will use Terraform, a tool for building, changing, and versioning infrastructure safely and efficiently. It is an important tool for anyone looking to standardize IaaS (Infrastructure as a Service) within their organization.
+You will take on the persona of an Operations Engineer. You will initiate the Oracle cloud environment that will be used to create and deploy your microservices applications. This environment will be contained within a cloud Compartment, and communication within the Compartment will be via a Virtual Cloud Network (VCN). The Compartment and VCN will isolate and secure the overall environment. You will deploy the Oracle Cloud Infrastructure Container Engine for Kubernetes(OKE).
 
 Estimated time: 20 minutes
 
@@ -21,7 +19,7 @@ Estimated time: 20 minutes
 - You have already applied for and received your Oracle Cloud Free Tier Account.
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-[](youtube:wIoLDX7iWXo)
+[](youtube:wIoLDX7iWXo?start=0&end=61)
 
 ## **STEP 1:** Log into OCI Tenancy
 
@@ -78,7 +76,7 @@ Now you are ready to move on to Step 3.
 
 1. To create an OKE cluster, open up the hamburger button in the top-left corner of the Console and go to **Developer Services** >   **Kubernetes Clusters**.
 
-   ![Kubernetes Clusters](images/OKE1.png " ")
+   ![Kubernetes Clusters Menu](images/OKE-clusters-menu.png " ")
 
 1. Verify you are in the **AppDev** Compartment and click **Create Cluster**.
 
@@ -86,39 +84,33 @@ Now you are ready to move on to Step 3.
 
 1. Choose Quick Create as it will create the new cluster along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG), NAT Gateway (NAT), Regional Subnet for worker nodes, and a Regional Subnet for load balancers. Select **Launch Workflow**
 
-   ![Quick Create Cluster](images/OKE-2.png " ")
+   ![Quick Create Cluster](images/OKE-create-cluster.png " ")
 
 1. Keep the name to **cluster1**, choose visibility type to **Public**, change number of nodes to **1** and click Next to review the cluster settings
 
-   ![Cluster Details](images/OKE-3.PNG " ")
+   ![Cluster Details](images/OKE-create-cluster-details.png " ")
 
 1. Review the the Cluster Creation and then select **Create Cluster**.
 
-   ![Cluster Info](images/OKE-5.png " ")
+   ![Cluster Info](images/OKE-create-cluster-details-review.png " ")
 
-1. Once launched it should usually take around 5-10 minutes for the cluster to be fully provisioned and display an Active. To start working with the Cluster, click  **Access Cluster**.
-
-   ![Access Cluster](images/OKE-4.png " ")
+1. Once launched it should usually take around 5-10 minutes for the cluster to be fully provisioned and display an Active.
 
 ## **STEP 4:** Setup OKE Kubernetes Cluster Cloud Shell Access
 
 1. On the **Clusters** view, select the just created cluster and then click on the **Access Cluster** button.
 
-> Cluster View Image
+   ![Access Cluster](images/OKE-access-cluster.png " ")
 
-1. Leave the **Cloud Shell Access** selected. If Cloud Shell is not already open, **Lauch Cloud Shell**, copy the oci cli command to create the kubeconfig and paste on the Cloud Shell Terminal.
+1. Leave the **Cloud Shell Access** selected. If Cloud Shell is not already open, **Launch Cloud Shell**, copy the oci cli command to create the kubeconfig and paste on the Cloud Shell Terminal.
 
-> Cloud Shell Terminal Image with command
+   ![Access Cluster](images/OKE-access-cluster-cli.png " ")
+
+   ![Access Cluster](images/OKE-cloud-shell-create-kubeconfig.png " ")
 
 1. Check if you have access to your cluster with this command.
 
     ````shell
-    <copy>
-    kubectl get cs
-    </copy>
-    ````
-
-    ````console
     <copy>
     kubectl get cs
     </copy>
