@@ -19,8 +19,8 @@ As a database admin or user,
 
 ### Required Artifacts
 - An Oracle Cloud Infrastructure account with privileges to create object storage buckets and dedicated autonomous databases.
-- Access to a pre-provisioned dedicated ATP instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
+- Access to a pre-provisioned dedicated ATP instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
 
 ## STEP 1: Download sample data pump export file from Oracle Learning Library github repo
 
@@ -28,7 +28,7 @@ As a database admin or user,
 
     ```
     <copy>
-    wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/datapump/nodeapp.dmp?raw=true
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/8fcg4NskCWAIMvRpLE_ivj-a7baylei6XFF5_B1knzw/n/atpdpreview11/b/adb-data-pump/o/nodeapp.dmp
     </copy>
     ```
     
@@ -68,9 +68,9 @@ As a database admin or user,
 
     **TWO ways to do this:**
 
-1. If you connected to your OCI VPN you provisioned earlier, you may directly launch SQL*Developer on your local machine and connect to your dedicated ATP as discussed in [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
+1. If you connected to your OCI VPN you provisioned earlier, you may directly launch SQL*Developer on your local machine and connect to your dedicated ATP as discussed in [Lab 9](?lab=lab-9-configuring-vpn-into-private-atp).
 
-2. You may ssh to a developer client image provisioned in a public subnet as discussed in [Lab 5](?lab=lab-5-configuring-development-system). Once logged into your dev client, you may then launch SQL*Plus as discussed in Lab 6.  It is recommended you launch a dev client to use the command line import utility impdp later in this lab. Alternatively, you may also connect to your dev client over VNC and launch SQL Developer from there.
+2. You may ssh to a developer client image provisioned in a public subnet as discussed in [Lab 8](?lab=lab-8-configuring-development-system). Once logged into your dev client, you may then launch SQL*Plus as discussed in Lab 8.  It is recommended you launch a dev client to use the command line import utility impdp later in this lab. Alternatively, you may also connect to your dev client over VNC and launch SQL Developer from there.
 
 Here, we will use a local SQL Developer to demonstate the steps needed to setup object store credentials.
 
@@ -138,7 +138,7 @@ Here, we will use a local SQL Developer to demonstate the steps needed to setup 
 
     *connect\_string* - Connect string obtained from database console, it would be something like myDatabase_high
 
-    *directory* - Leave as shown above
+    *directory* - Leave as shown above for default or create your own directory object in database
 
     *dumpfile* - Use swift URL. If your .dmp file is in Ashburn, simply replace tenancy and bucket name
 
@@ -164,6 +164,10 @@ You may now connect to your autonomous database using a SQL client and validate 
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

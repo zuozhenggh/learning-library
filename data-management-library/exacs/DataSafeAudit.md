@@ -3,8 +3,10 @@
 ## Introduction
 Using Data Safe, provision audit and alert policies for a target database and configure an audit trail for a target database for collecting audit data.
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Objectives
 
 In the lab, you learn how to do the following:
@@ -38,7 +40,7 @@ All of the alert policies
 
 ## Steps
 
-### Step 1: Sign in to the Oracle Data Safe Console for your region
+### **Step 1:** Sign in to the Oracle Data Safe Console for your region
 
 If you are already signed in to the Oracle Data Safe Console, you can skip this part.
 
@@ -55,7 +57,7 @@ If you are already signed in to the Oracle Data Safe Console, you can skip this 
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Step 2: Review the recommended audit policies for a target database in the Oracle Data Safe Console
+### **Step 2:** Review the recommended audit policies for a target database in the Oracle Data Safe Console
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click **Activity Auditing**. The **Select Targets for Auditing** page is displayed.
 
@@ -104,15 +106,16 @@ The Edit Policies dialog box is displayed and shows the Audit Policies tab by de
 By default, this policy is not provisioned for your ExaCS target. Click the checkbox for **CIS**.
 - Leave this dialog box open because you return to it in a later step.
 
-### Step 3: Query the unified auditing policies on your database by using SQL
-Developer Web and compare with the audit policies being recommended by Oracle Data Safe
+### **Step 3:** Query the unified auditing policies on your database by using SQL Developer Web and compare with the audit policies being recommended by Oracle Data Safe
 
 - In SQL Developer, run the following query to view the list of unified audit policies.
 
 ```
 <copy>select distinct policy_name from audit_unified_policies order by policy_name asc;</copy>
 ```
-2. Notice that the policies listed in the Oracle Data Safe Console are the same as the query results. If you are using a different type of database, the list may be different.
+
+- Notice that the policies listed in the Oracle Data Safe Console are the same as the query results. If you are using a different type of database, the list may be different.
+
   - `ORA_ACCOUNT_MGMT`
   - `ORA_DATABASE_PARAMETER`
   - `ORA_SECURECONFIG`
@@ -122,14 +125,16 @@ Developer Web and compare with the audit policies being recommended by Oracle Da
   - `ORA_RAS_SESSION_MGMT`
   - `ORA_LOGON_FAILURES`
   - `ORA_CIS_RECOMMENDATIONS`
+
 - Run the following query to view the list of unified audit policies that are enabled.
 
 ```
 <copy>select * from audit_unified_enabled_policies order by policy_name asc;</copy>
 ```
+
 - Notice that only the `ORA_LOGON_FAILURES` and `ORA_SECURECONFIG` are listed by default. If you are using a different type of database, the list may be different.
 
-### Step 4: In the Oracle Data Safe Console, provision audit policies in the target database and alert policies in Oracle Data Safe
+### **Step 4:** In the Oracle Data Safe Console, provision audit policies in the target database and alert policies in Oracle Data Safe
 
 - Return to the Oracle Data Safe Console.
 You should be in the **Edit Policies** dialog box, where you left off.
@@ -158,7 +163,7 @@ The **Review and Provision Audit and Alert Policies** page shows check marks for
 
 ![](./images/dbsec/datasafe/auditing/review-audit-policies.png " ")
 
-### Step 5: Configure the audit trail to collect audit data from the target database and start the audit trail
+### **Step 5:** Configure the audit trail to collect audit data from the target database and start the audit trail
 
 - Click **Continue**.
 - On the Start Audit Collection page, notice the following defaults:
@@ -189,14 +194,14 @@ You need to turn this feature off if you want to keep the audit data on your tar
 
 ![](./images/dbsec/datasafe/auditing/audit-trails.png " ")
 
-8. Wait a couple of minutes for the audit data to be collected from your target database.
+- Wait a couple of minutes for the audit data to be collected from your target database.
   - When collection is finished, the **Collection State** column reads **IDLE**.
   - If you suspect that the audit collection is not working properly, restart the collection process. To do this, select the check box for your target database, click **Stop**, wait until collection stops (the **Collection State** column reads **STOPPED**), and then click **Start**.
   - Make sure that the auto purge feature is not enabled for your target database.
 
 ![](./images/dbsec/datasafe/auditing/idle.png " ")
 
-### Step 6: Review the audit policies for your target database to ensure that the policies you selected are correctly provisioned
+### **Step 6:** Review the audit policies for your target database to ensure that the policies you selected are correctly provisioned
 
 1. Click the **Targets** tab, and then click **Audit Policies**. The **Audit and Alert Policies page** is displayed.
 2. Click the name of your target database.

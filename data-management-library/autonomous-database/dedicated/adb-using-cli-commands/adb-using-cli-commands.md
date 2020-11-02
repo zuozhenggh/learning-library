@@ -26,7 +26,7 @@ As a developer, DBA or DevOps user,
 
     *Note:* 
     - The OCI Marketplace 'Developer Cloud Image' is pre-configured with many client tools and drivers including OCI command line interface.
-    - To deploy a dev client compute image, refer to [Lab 5](?lab=lab-5-configuring-development-system).
+    - To deploy a dev client compute image, refer to [Lab 8](?lab=lab-8-configuring-development-system).
 
 
 ## STEP 1: Connect to development client instance and verify OCI CLI version
@@ -144,6 +144,7 @@ You are expected to see the following output in the command line interface.
     ![](./images/GetDBOutput1.png " ")
     ![](./images/GetDBOutput2.png " ")
 
+**Note** the compartment-id OCIDs are provided in the json output above. Make a note of the compartment-id OCID assigned to you as you need it in the following example to list databases in a compartment.
 
 ### *Listing Databases*
 
@@ -290,6 +291,10 @@ These are a handful of examples on using the OCI CLI REST interface to work with
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

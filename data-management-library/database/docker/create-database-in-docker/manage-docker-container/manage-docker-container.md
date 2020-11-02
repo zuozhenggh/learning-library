@@ -1,9 +1,11 @@
 # Manage a Docker Container
-## Before You Begin
+## Introduction
 
 This lab walks you through the steps to manage your Docker container, including stopping and restarting the container and reviewing container logs.
 
-### What Do You Need?
+Estimated Lab Time: 5 minutes
+
+### Prerequisites
 
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * SSH keys
@@ -11,9 +13,9 @@ This lab walks you through the steps to manage your Docker container, including 
 
 ## **STEP 1**: Stopping a Docker container
 
- You can stop the Docker container using the docker `stop` command with the container name or id. The stop command triggers the container to issue a immediate shutdown  for the database inside the container. By default, Docker will only allow 10 seconds for the container to shutdown before killing it. For applications that may be fine but for persistent containers such as the Oracle Database container you may want to give the container a bit more time to shutdown the database appropriately. The `t` parameter allows you to specify a timeout in seconds for the container to shutdown gracefully. Note that once the database has successfully shutdown, the container will exit normally. Therefore, a good practice is to specify a long timeout (600 seconds is 10 minutes), knowing that command will return control to the terminal as soon as the database is shutdown.
+ You can stop the Docker container using the docker `stop` command with the container name or id. The stop command triggers the container to issue a immediate shutdown  for the database inside the container. By default, Docker will only allow 10 seconds for the container to shutdown before killing it. For applications that may be fine, but for persistent containers such as the Oracle Database container you may want to give the container a bit more time to shutdown the database appropriately. The `t` parameter allows you to specify a timeout in seconds for the container to shutdown the database gracefully. Note that once the database has successfully shutdown, the container will exit normally. Therefore, a good practice is to specify a long timeout (600 seconds is 10 minutes), knowing that command will return control to the terminal as soon as the database is shutdown.
 
-1. If you don't have an open SSH connection to your compute instance, open and terminal window and connect:
+1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys and connect:
 
     ```
     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
@@ -36,7 +38,7 @@ The docker `start` command will put the container into background and return con
 1. Start the docker container:
 
     ```
-    [opc@oraclelinux77 ~]$ docker start oracle-ee
+    [opc@oraclelinux77 ~]$ <copy>docker start oracle-ee</copy>
     oracle-ee
     ```
 
@@ -75,7 +77,12 @@ Congratulations! You have completed this workshop. Oracle has also provided buil
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
-* **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
-* **Last Updated By/Date** - Tom McGinn, March 2020
+* **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
+* **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
+* **Last Updated By/Date** - Kamryn Vinson, September 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

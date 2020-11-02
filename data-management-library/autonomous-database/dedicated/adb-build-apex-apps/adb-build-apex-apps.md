@@ -41,11 +41,11 @@ Oracle Application Express (APEX) is a low-code development platform that enable
 
 - Since ATP Dedicated instances are typically deployed in a private network, one way to get to your APEX console is via a developer client machine setup in the same network.
 
-- Refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp) for instructions on setting up and connecting to a developer client machine.
+- Refer to [Lab 8](?lab=lab-8-configuring-development-system) for instructions on setting up and connecting to a developer client machine.
 
 - For the purpose of this lab we assume that your have already deployed and have ssh access to a developer client virtual machine in a public application subnet.
 
-- Alternatively, you may also access the Apex console of your dedicated ATP instance from your local web browser If you are in the same OCI Network / VCN as your database. For detailed instruction on setting up a VPN connection into your private database cloud infrastructure, refer to [Lab 5](?lab=lab-5-configuring-development-system).
+- Alternatively, you may also access the Apex console of your dedicated ATP instance from your local web browser If you are in the same OCI Network / VCN as your database. For detailed instruction on setting up a VPN connection into your private database cloud infrastructure, refer to [Lab 9](?lab=lab-9-configuring-vpn-into-private-atp).
 
 
 - Open a terminal window on your machine and log into the developer VM.
@@ -158,4 +158,7 @@ Oracle Application Express (APEX) is a low-code development platform that enable
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

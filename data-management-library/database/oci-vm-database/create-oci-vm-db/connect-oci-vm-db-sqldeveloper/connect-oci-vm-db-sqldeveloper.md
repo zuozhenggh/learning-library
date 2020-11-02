@@ -23,7 +23,7 @@ Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Databa
 
   ![](images/select-db-system.png " ")
 
-3. Copy the **Host Domain Name** - you'll need this later when you create a connection in SQL Developer.
+3. Copy the **Host Domain Name** - you will need this later when you create a connection in SQL Developer.
 
   ![](images/db-system-details.png " ")
 
@@ -60,4 +60,7 @@ Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Databa
 * **Author** -Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, February 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

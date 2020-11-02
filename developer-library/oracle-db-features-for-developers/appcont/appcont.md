@@ -19,7 +19,7 @@ Starting with Oracle Database18c, Transparent Application Continuity (TAC) trans
 -   Discover how Application Continuity protects applications
 -   See how application draining enables you to hide maintenance activities
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
@@ -27,13 +27,13 @@ This lab assumes you have completed the following labs:
 * Lab: Environment Setup
 * Lab: Sample Schema Setup
 
-## Step 1: The Beginning
+## **Step 1:** The Beginning
 
 Lab under construction. Please come back soon!
 
 ## Conclusion
 
-In this Lab you had an opportunity to examine Application Continuity.
+In this lab you had an opportunity to examine Application Continuity.
 
 You will have learned that Application Continuity improves the user experience for both unplanned outages and planned maintenance. Application Continuity enhances the fault tolerance of systems and applications that use an Oracle database.
 
@@ -44,4 +44,7 @@ Transparent Application Continuity is enabled by default in the Oracle Autonomou
 - **Author** - Troy Anthony, Database Product Manager
 - **Last Updated By/Date** - Troy Anthony, DB Product Management, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

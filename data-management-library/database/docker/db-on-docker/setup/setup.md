@@ -7,12 +7,12 @@ This lab walks you through the steps to setup Docker engine.  It also covers bas
 ### Background
 
 
-### Lab Prerequisites
+### Prerequisites
 
 Participant has completed the following labs:
 
 
-## Step 1:  Install Docker Engine
+## **Step 1:**  Install Docker Engine
 1. Login to the ssh terminal using the Oracle Cloud Shell or your terminal of choice
 
     ````
@@ -36,7 +36,7 @@ Participant has completed the following labs:
 
     ![](images/python2.png) 
 
-## Step 2:  Install Git and Verify Docker Version
+## **Step 2:**  Install Git and Verify Docker Version
 1. Next, we are going to install git using yum as the root user
 
     ````
@@ -78,7 +78,7 @@ Participant has completed the following labs:
     </copy>
     `````
 
-## Step 3: Docker Basic Concepts
+## **Step 3:** Docker Basic Concepts
 
 1.  Check the version of docker
 
@@ -147,7 +147,7 @@ Participant has completed the following labs:
 
     ![](images/18002.png)
 
-## Step 4: Docker Networking Basics
+## **Step 4:** Docker Networking Basics
 
 Now that you know how to start, stop and relocate a container, let's see how to get information about the network.
 
@@ -181,4 +181,7 @@ You may now proceed to the next lab.
 * **Author** - Oracle NATD Solution Engineering
 * **Last Updated By/Date** - Anoosha Pilli, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

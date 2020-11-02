@@ -1,36 +1,22 @@
-# Developer Library Github
-
+# Developer LiveLabs on GitHub - Welcome!
+[![](../common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
 
 Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Oracle offers choice, portability and interoperability with other technologies, including open source and third-party components. Developers can build with the latest technologies, such as AI/ML, autonomous databases, Gen 2 cloud infrastructure, Kubernetes, serverless, blockchain, digital assistants, and more.
 
-Click on one of our workshops below to access the content.
+## How do I get started?
+Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are added weekly, please visit frequently for new content.
 
-## Microservices Workshops
-- [Building Microservices with Oracle's Converged Database](https://oracle.github.io/learning-library/developer-library/microservices-with-converged-db)
+[![](../common/images/livelabs.png)](http://bit.ly/golivelabs)
 
-
-## Database 19c for Developer Workshops
-
-- [Database Features for Developers - Full Workshop](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html) 
-- [Hybrid Partitioning](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/hybridpart-freetier/index.html) 
-- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier/index.html) 
-- [Automatic Indexing](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/autoindex-freetier/index.html) 
-- [Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier/index.html) 
-
-## APEX Workshops
-
-Each lab is completely independent and does not rely on any other lab, therefore, you can complete the labs in any order you choose. The labs do not require any prior knowledge of APEX. 
-
-| # | Module | Est. Time |
-| --- | --- | --- |
-| 1 | [Building an App from a Spreadsheet](./apex/spreadsheet) | 45 min |
-| 2 | [Building an App on Existing Tables](./aoex/existing-tables) | 75 min |
-| 3 | [Building a Proof-of-Concept](./apex/proof-of-concept) | 60 min |
-| 4 | [Building an App using REST Web Sources](./apex/rest-web-source) | 50 min |
-| 5 | [Building an App using a Remote Data Source](./apex/remote-data-source) | 45 min |
-| 6 | [Low Code Development](./apex/low-code-development) | 60 min |
-| 7 | [Introduction to JavaScript for APEX Developers](./apex/intro-to-javascript) | 60 min |
-
+### Featured Workshops
+- [Oracle's Converged Database](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=613)
+- [Building Java Cloud Applications with Micronaut and OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=667)
+- [Building Microservices with Oracle Converged DB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=667)
+- [Building an Application from a Spreadsheet](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631) 
+- [Deploying OKE Using Oracle Cloud Shell](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=649)
+- [Databse 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
+- [Database 19c New Features for Developers](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=636)
+- [Create a Docker registry in OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=590)
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -56,7 +42,8 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Oracle Developers Channel](https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g)
 - [Oracle Product Management](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
--- Oracle Database Product Management
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+

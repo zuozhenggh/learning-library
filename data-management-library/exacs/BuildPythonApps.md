@@ -7,8 +7,10 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 
 **In this lab we will configure and deploy a python application in a developer client VM and connect it to an Exadata Cloud Service database.**
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Objectives
 
 As an application developer,
@@ -26,7 +28,7 @@ As an application developer,
 
 ## Steps
 
-### STEP 1: Download sample python application
+### **Step 1:** Download sample python application
 
 - Login to your Oracle Cloud Infrastructure account and select **Compute** —> **Instances** from top left menu
 
@@ -75,7 +77,7 @@ Lets download a sample python application for the purpose of this lab,
 <copy>unzip EXACSPython.zip</copy>
 ```
 
-### STEP 2: Run your python application**
+### **Step 2:** Run your python application**
 
 
 - Open terminal on your laptop and SSH into linux host machine. Windows users follows instructions provided above to ssh using Putty.

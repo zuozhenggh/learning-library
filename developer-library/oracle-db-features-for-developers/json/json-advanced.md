@@ -2,13 +2,15 @@
 
 ## Introduction
 
-This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
+This lab will explore advanced concepts around JSON data and how you can use SQL and PL/SQL against JSON data stored in Oracle Database 19c.  
+
+Estimated Lab Time:  30 minutes
 
 ### About JSON in the Oracle Database
 
 **JavaScript Object Notation (JSON)** is defined in standards ECMA-404 (JSON Data Interchange Format) and ECMA-262 (ECMAScript Language Specification, third edition). The JavaScript dialect of ECMAScript is a general programming language used widely in web browsers and web servers.  **Oracle Database** supports **JavaScript Object Notation (JSON)** data natively with relational database features, including transactions, indexing, declarative querying, and views.
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
@@ -21,17 +23,35 @@ This lab assumes you have completed the following labs:
 
 For this lab we will use the *Order Entry (OE)* sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the *OE* schema installed.
 
-## Step 1: Performance Considerations when Querying JSON Documents
+## **Step 1**: Connect to the environment
 
-Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle database, using standard functions and procedures.
+If you have logged out of the Cloud Shell, perform the commands below.
 
-0.  Login to the instance using Oracle Cloud Shell and ssh
+1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-1.  Connect to the **ORCLPDB** pluggable database, as SYSDBA.
+2.  Switch to the oracle user
+    ````
+    <copy>
+    sudo su - oracle
+    </copy>
+    ````
+    ![](./images/sudo-oracle.png " ")
+
+3.  Set your oracle environment.  When prompted enter **[ORCL]**
+    ````
+    <copy>
+    . oraenv
+    </copy>
+    ORACLE_SID = [ORCL] ? ORCL
+    The Oracle base remains unchanged with value /u01/app/oracle
+    ````
+    ![](./images/oraenv.png " ")
+
+4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
 
     ````
     <copy>
@@ -39,51 +59,16 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
     </copy>
     ````
 
-2.  There are performance considerations, for example when using regular expressions on strings, as in this example.
+    ![](./images/sqlplus.png " ")
 
+5.  Once connected to SQL\*Plus, connect to the OE user.
     ````
     <copy>
-    set timing on
+    connect oe/Ora_DB4U@localhost:1521/orclpdb
     </copy>
     ````
 
-    ````
-    <copy>
-    WITH DATA AS
-        (SELECT substr(j.doc.geonames.geonameId, 2, length(j.doc.geonames.geonameId)-2) as GEONAMES
-        FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%')
-      SELECT trim(regexp_substr(geonames, '[^,]+', 1, LEVEL)) geonames
-      FROM DATA
-      CONNECT BY instr(geonames, ',', 1, LEVEL - 1) > 0;
-    </copy>
-    ````
-
-    ![](./images/p_jsonDoc_8.png " ")
-
-    Take a note of the execution time, and compare it with the following code, that returns the same result, but faster.
-
-    ````
-    <copy>
-    WITH ids ( GEONAMES, start_pos, end_pos ) AS
-      ( SELECT GEONAMES, 1, INSTR( GEONAMES, ',' ) FROM
-    (SELECT substr(j.doc.geonames.geonameId, 2, length(j.doc.geonames.geonameId)-2) as GEONAMES FROM MYJSON j WHERE j.doc.geonames.fcode like '%ADM1%')
-      UNION ALL
-      SELECT GEONAMES,
-        end_pos + 1,
-        INSTR( GEONAMES, ',', end_pos + 1 )
-      FROM ids
-      WHERE end_pos > 0
-      )
-    SELECT SUBSTR( GEONAMES, start_pos, DECODE( end_pos, 0, LENGTH( GEONAMES ) + 1, end_pos ) - start_pos ) AS geonameId
-    FROM ids;
-    </copy>
-    ````
-
-    ![](./images/step1.2-compareresult.png " " )
-
-    The execution time difference is insignificant (00:00:00.02 compared to 00:00:00.00), however, for millions of transactions it may have to be considered. The point is coding with JSON objects is a matter of choice, and always there will be multiple options for reaching the same result, and we need to choose the most optimal one.
-
-## Step 2: Retrieve Sub-Regions Information In JSON Format
+## **Step 2**: Retrieve Sub-Regions Information In JSON Format
 
 1.  Using a cursor, and the query you like most, we can run a loop, to retrieve the sub-regions for every region in Spain. This procedure will store a JSON document in our table, with the sub-regions, for each region (19 documents).
 
@@ -119,6 +104,8 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
 
 2.  Query the regions and sub-regions stored in these 19 documents, retrieving them as relational data.
 
+  The **JSON\_TABLE** function, introduced with Oracle Database Release 12.1, enables the creation of an inline relational view of JSON content. The JSON_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of the JSON document. The **NESTED** clause allows you to flatten JSON values in a nested JSON object or JSON array into individual columns in a single row along with JSON values from the parent object or array. You can use this clause recursively to project data from multiple layers of nested objects or arrays into a single row. This path expression is relative to the SQL/JSON row path expression specified in the *JSON\_TABLE* function.
+
     ````
     <copy>
     column COUNTRY format a8
@@ -149,7 +136,7 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
 
     Now we have the entire geographic division.
 
-## Step 3: Retrieve Castles Information In JSON Format
+## **Step 3**: Retrieve Castles Information In JSON Format
 
 1.  In order to retrieve information about castles from GeoNames web service, we have to create a new function. The input for this function is the ISO country code, the code of the region, and the code of the sub-region. The output is a JSON document with all castles in that sub-region.
 
@@ -244,7 +231,140 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
 
     This query should return 269 rows.
 
-## Step 4: Syntax simplifications querying JSON Data
+## **Step 4**: JSON_DATAGUIDE - discover information about the structure and content of JSON documents
+
+The following shows the **JSON_DATAGUIDE**, a function that analyzes one or more JSON values and provides a schema - a structural summary of the data, the field names, how they are nested and their data type.
+
+JSON data-guide information can be saved persistently as part of the JSON search index infrastructure, and this information is updated automatically as new JSON content is added. This is the case by default, when you create a JSON search index: data-guide information is part of the index infrastructure.
+
+You can use a data guide:
+
+ * As a basis for developing applications that involve data mining, business intelligence, or other analysis of JSON documents.
+ * As a basis for providing user assistance about requested JSON information, including search.
+ * To check or manipulate new JSON documents before adding them to a document set (for example: validate, type-check, or exclude certain fields).
+
+We will use the **castles** example to illustrate the JSON Data Guide
+
+1. We want to get the dataguide for this JSON data
+
+    ````
+    <copy>select get_castles('ES', 60, 'A') castles_document from dual;</copy>
+    ````
+2. Create a table without the **IS JSON** check constraint
+    ````
+    <copy>
+    create table castles (castle_info clob);
+    </copy>
+    ````
+
+3. Insert the JSON data into this new table   
+
+    ````
+    <copy>
+    insert into castles
+      select get_castles('ES', 60, 'A') castles_document from dual;
+    commit;
+    </copy>
+    ````
+4. We can use the **IS JSON** function to check that the CLOB value is JSON. With IS JSON we can filter text values that are syntactically correct JSON
+
+    ````
+    <copy>select 1 from castles where castle_info IS JSON;</copy>
+    ````
+5. Calculate the JSON Dataguide for the castle info. The JSON Dataguide is a schema document listing all field names, their object heirarchy and the data type. We use the **dbms_json.pretty** to pretty\-print the data guide to improve readability.
+
+    ````
+    <copy>
+    select json_dataguide(get_castles('ES', 60, 'A'), dbms_json.FORMAT_HIERARCHICAL, dbms_json.pretty ) castles_schema from dual;
+    </copy>
+    ````
+
+6. Create a view using a SUBSET of this schema
+
+    ````
+    <copy>
+    DECLARE
+     dg clob;
+    BEGIN
+       dg := '{
+	       "type": "object",
+	       "properties": {
+		        "geonames": {
+			          "type": "array",
+			          "o:length": 16384,
+			          "o:preferred_column_name": "geonames",
+			      "items": {
+				         "properties": {
+					           "lat": {
+						            "type": "string",
+						            "o:length": 8,
+						            "o:preferred_column_name": "lat"
+                     },
+					           "lng": {
+                        "type": "string",
+                         "o:length": 8,
+                         "o:preferred_column_name": "lng"
+                     },
+                     "name": {
+                        "type": "string",
+                        "o:length": 32,
+                        "o:preferred_column_name": "name"
+                     },
+					              "timezone": {
+                          "type": "object",
+						              "o:length": 64,
+						              "o:preferred_column_name": "timezone",
+                          "properties": {
+                              "dstOffset": {
+								                  "type": "number",
+                                  "o:length": 1,
+                                  "o:preferred_column_name": "dstOffset"
+							                 },
+							                 "gmtOffset": {
+                                   "type": "number",
+								                   "o:length": 1,
+								                   "o:preferred_column_name": "gmtOffset"
+							                  }
+                          }
+					           },
+					           "countryName": {
+					              "type": "string",
+						            "o:length": 8,
+						            "o:preferred_column_name": "countryName"
+					          }
+		  		       }
+			       }
+		      }
+	     }
+    }
+    ';
+    dbms_json.create_view('castle_view', 'castles', 'castle_info', dg);
+    END;
+    /
+    </copy>
+    ````
+
+7. Examine the new view
+    ````
+    <copy>
+    desc castle_view;
+
+    select count(1) from castle_view;
+
+    select "name", "lat", "lng" from castle_view
+    order by "name";
+    </copy>
+    ````
+
+8. The view is an auto-created JSON_TABLE expression
+
+    ````
+    <copy>
+    select dbms_metadata.get_ddl('VIEW', 'CASTLE_VIEW') from dual;
+    </copy>
+    ````
+
+## **Step 5**: Syntax simplifications querying JSON Data
 
 In Oracle Database 19c, there were some improvements in the simplicity of querying JSON documents using SQL. Other improvements were made as well in generating JSON documents on the fly from relational data.
 
@@ -285,7 +405,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
     This requires more time and code to be written.
 
-## Step 5: JSON Query Improvements In Oracle 19C
+## **Step 6**: JSON Query Improvements In Oracle 19C
 
 1.  In Oracle 19c, function *JSON\_OBJECT* can generate JSON objects receiving as argument just a relational column name, possibly preceded by a table name or alias, or a view name followed by a dot. For example *TABLE.COLUMN*, or just *COLUMN*.
 
@@ -297,7 +417,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
     ![](./images/step5.1-jsonarg.png " " )
 
-2.  Another improvement was made in generating JSON documents in 19c using wildcard. The argument in this case can be the table name or alias, or a view name, followed by a dot and an asterisk wildcard (.*), or just an asterisk wildcard like in the following example.
+2.  Another improvement was made in generating JSON documents in 19c using wildcard. The argument in this case can be the table name or alias, or a view name, followed by a dot and an asterisk wildcard (.\*), or just an asterisk wildcard like in the following example.
 
     ````
     <copy>
@@ -309,7 +429,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
 In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows what is allowed for column names and wildcards in a SQL SELECT query.
 
-## Step 6: Using Custom Types And Wildcard
+## **Step 7**: Using Custom Types And Wildcard
 
 1.  There are some cases, exceptions, where wildcards are not accepted for tables with columns of certain custom data types, like our table **CUSTOMERS**, for example.
 
@@ -372,9 +492,9 @@ In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows
     </copy>
     ````
 
-In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias.
+In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (\*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias.
 
-## Step 7: Updating a JSON Document
+## **Step 8**: Updating a JSON Document
 
 You can now update a JSON document declaratively using the new SQL function **JSON_MERGEPATCH**. You can apply one or more changes to multiple documents by using a single statement. This feature improves the flexibility of JSON update operations.
 
@@ -553,7 +673,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
 
     Updating JSON documents inside the Oracle Database is that simple.
 
-## Step 8: JSON Materialized View Support
+## **Step 9**: JSON Materialized View Support
 
 Materialized views query rewriting has been enhanced so that queries with *JSON\_EXISTS*, *JSON\_VALUE* and other functions can utilize a materialized view created over a query that contains a *JSON\_TABLE* function.
 
@@ -699,7 +819,7 @@ Significant performance gains can often be achieved using query rewrite and mate
 
     If the query is too simple, there may not be a query rewrite, in this case it will not be eligible to be rewritten to use the materialized view.
 
-## Step 9: JSON-Object Mapping
+## **Step 10**: JSON-Object Mapping
 
 This feature enables the mapping of JSON data to and from user-defined SQL object types and collections. You can convert JSON data into an instance of a SQL object type using SQL/JSON function *JSON\_VALUE*. In the opposite direction, you can generate JSON data from an instance of a SQL object type using SQL/JSON function *JSON\_OBJECT* or *JSON\_ARRAY*.
 
@@ -944,10 +1064,13 @@ It would be equally easy to convert user-defined SQL object type instances into 
 
 This lab is now complete.
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Author** - Valentin Leonard Tabacaru
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
+- **Contributors** - Anoosha Pilli, Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern
+- **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

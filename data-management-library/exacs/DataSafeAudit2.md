@@ -3,8 +3,10 @@
 ## Introduction
 Using Data Safe, access, interpret, and manipulate reports in Oracle Data Safe so that you can improve the overall security of your databases.
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Objectives
 
 In the lab, you learn how to do the following:
@@ -38,7 +40,7 @@ The totals and data in your reports will most likely be different than the repor
 
 ## Steps
 
-### Step 1: Explore the All Activity report to view and analyze audit data
+### **Step 1:** Explore the All Activity report to view and analyze audit data
 
 - In the Oracle Data Safe Console, click the **Reports** tab.
 - On the left, click **Activity Auditing**.
@@ -60,16 +62,17 @@ The totals and data in your reports will most likely be different than the repor
 - In the report, identify the following activities. Try to determine which statements are expected and which might be related to a breach. Create filters to help you find the information. Click on the **+ Filter** button to add these filters.
   - Logins made by the HCM1 user. To do this, create two filters: 1) **Event = LOGON**, and 2) **DB User = HCM1**.
   ![](./images/dbsec/datasafe/auditing/filter.png " ")
-  - **DDL statements**. To do this, at the top of the report, click **DDLs**.
+- Let's take a look at a few of the other items:
+    - **DDL statements**. To do this, at the top of the report, click **DDLs**.
   ![](./images/dbsec/datasafe/auditing/ddl-filter.png " ")
-  - **DML statements**. To do this, at the top of the report, click **DMLs**.
-  - **User entitlement changes**. To do this, at the top of the report, click **Privilege Changes**.
-  - **User changes**. To do this, at the top of the report, click **User Changes**.
+    - **DML statements**. To do this, at the top of the report, click **DMLs**.
+    - **User entitlement changes**. To do this, at the top of the report, click **Privilege Changes**.
+    - **User changes**. To do this, at the top of the report, click **User Changes**.
 - At the top of the report, view totals for targets, DB users, client hosts, login successes, login failures, user changes, privilege changes, DDLs, and DMLs. How many privilege changes do you see?
 
 ![](./images/dbsec/datasafe/auditing/filter-totals.png " ")
 
-### Step 2: Explore the All Alerts report
+### **Step 2:** Explore the All Alerts report
 Find out who is causing alerts in your target database and what they are doing. The alerts are generated based on the alert conditions configured and audit data retrieved from the audit trail.
 - Click the **Alerts** tab.
 - The **All Alerts** report is displayed by default.
@@ -114,7 +117,7 @@ All the fields on this screen are retrieved from the target database audit trail
 - Set the status of the first alert to **Closed**. This is an action you can take after you review an alert and decide that the issue is resolved.
 - To view open alerts only, move the slider at the top of the report to the right. The report, by default, is filtered this way.
 
-### Step 3: Explore the Audit Summary report
+### **Step 3:** Explore the Audit Summary report
 Find out how many client hosts have connected to your target database in the last month.
 - Click the **Reports tab**.
 - In the left pane, click **Summary Reports**.
@@ -145,14 +148,14 @@ How many client hosts have connected to your database?
   - The **Login Activity** chart compares the number of failed and successful logins over time.
   - The **All Activity** chart compares the total number of events over time.
 
-### Step 4: Create a failed logins report in PDF format
+### **Step 4:** Create a failed logins report in PDF format
 
 - Click the **Reports** tab.
 - In the left pane, click **Activity Auditing**, and then click **Login Activity**.
 
 ![](./images/dbsec/datasafe/auditing/login-activity.png " ")
 
-- Set a filter by selecting **Operation Status= FAILURE** (no quotes).
+- Set a filter by selecting **Operation Status= FAILURE**.
 - Click **Apply**.
 
 ![](./images/dbsec/datasafe/auditing/operation-status-failure.png " ")
@@ -160,12 +163,12 @@ How many client hosts have connected to your database?
 - Save the report:
   - From the **Report Definition** menu, select **Save As New**.
   ![](./images/dbsec/datasafe/auditing/save-as-new.png " ")
-  - In the **Save As** dialog box, enter the report name **<user name> Failed Logins**, for example, **Failed Logins Report**.
+  - In the **Save As** dialog box, enter the report name **<user name> Failed Logins**, for example, and **Failed Logins Report** as a description.
   ![](./images/dbsec/datasafe/auditing/save-as.png " ")
   - Enter an optional description.
   - Select your resource group.
   - Click **Save As**.
-  - A confirmation message states "Successfully created the report."
+  - A confirmation message states "Successfully created the report.".
 
 ![](./images/dbsec/datasafe/auditing/save-confirm.png " ")
 
@@ -196,7 +199,7 @@ A confirmation message states that the report is generated successfully.
 
 - When you are finished, close the browser tab for the report.
 
-### Step 5: Create a report to see which client programs are using the HCM1 database account and understand the activities being performed
+### **Step 5:** Create a report to see which client programs are using the HCM1 database account and understand the activities being performed
 
 - Click the **Reports** tab.
 - Under **Activity Auditing** in the content pane, click the **All Activity** report.
@@ -227,15 +230,15 @@ A confirmation message states that the report is generated successfully.
 - Click **Save As**. The report is saved.
 ![](./images/dbsec/datasafe/auditing/all-activity-save-as.png " ")
 - Click the **Reports** tab.
-- Under **Custom Reports** at the top of the list, notice that your report is listed. (If your new report is not listed, please refresh the browser window.)
+- Under **Custom Reports** at the top of the list, notice that your report is listed. (If your new report is not listed, please refresh the browser window).
 ![](./images/dbsec/datasafe/auditing/custom-report-usage.png " ")
-- Click the** <user name> HCM1 Account Usage** report to view it.
+- Click the **<user name> HCM1 Account Usage** report to view it.
 
-### Step 6: Explore which users entitlements were changed
+### **Step 6:** Explore which users entitlements were changed
 
 - Click the **Reports** tab.
 - In the left pane, click **Activity Auditing**, and then click **User/Entitlement Changes**.
-- Set a filter by selecting **DB USER Not In SYS, ADMIN** (no quotes).
+- Set a filter by selecting **DB USER Not In SYS, ADMIN**.
 - Click **Apply**.
 
 ![](./images/dbsec/datasafe/auditing/db-user-filter.png " ")
@@ -243,7 +246,7 @@ A confirmation message states that the report is generated successfully.
 - Examine the report.
 - Notice that the `EVIL_RICH` user created and dropped the `ATILLA` user.
 
-### Step 7: Explore the Data Access report
+### **Step 7:** Explore the Data Access report
 View this report to find out who viewed the EMPLOYEES table.
 - Click the **Reports** tab.
 - In the left pane under **Activity Auditing**, click **Data Access**.
@@ -254,7 +257,7 @@ View this report to find out who viewed the EMPLOYEES table.
 - Who saw this data?
 - Click a row to see the SQL executed.
 
-### Step 8: Explore the Data Modification report
+### **Step 8:** Explore the Data Modification report
 View this report to find out who modified key tables, such as the `EMPLOYEES` table. The `EMPLOYEES` table contains sensitive information.
 - Click the **Reports** tab.
 - In the left pane under **Activity Auditing**, click **Data Modification**.
@@ -265,12 +268,12 @@ View this report to find out who modified key tables, such as the `EMPLOYEES` ta
 - Click any row and view the SQL text to note the type of change made.
 - Notice that in some cases, `ATILLA` tried to update the `SALARY` data, but failed.
 
-### Step 9: Explore the Database Schema Changes report
+### **Step 9:** Explore the Database Schema Changes report
 View this report to identify which schema objects were modified by the ADMIN user.
 - Click the **Reports** tab.
 - In the left pane under **Activity Auditing**, click **Database Schema Changes**.
 - Set a filter by selecting **DB User = SYS**.
-- Click Apply.
+- Click **Apply**.
 - Examine the report to view the changes made by the **SYS** user.
 - Click a row to view the details.
 

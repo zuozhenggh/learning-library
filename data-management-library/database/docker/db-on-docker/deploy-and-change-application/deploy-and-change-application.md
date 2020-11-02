@@ -13,7 +13,7 @@ In this section of the lab you will deploy the remaining containers to support t
 *AlphaOfficeUI*: Node.js application container that displays data obtained via the TwitterFeed and ClientREST containers.
 
 
-### Lab Prerequisites?
+### Prerequisites?
 
 * Create a docker hub [account](http://hub.docker.com)
 * Participant has completed the following labs:
@@ -23,14 +23,14 @@ In this section of the lab you will deploy the remaining containers to support t
     - Docker Setup
     - Create an Oracle DB Container
 
-## Step 1: Deploy Application
+## **Step 1:** Deploy Application
 
 In this section, you will deploy an application, twitterfeed, that is stored in the hub.docker.com site under the account wvbirder.  You will then run the rest client using an oracle database as the data source.
 
 0. Login to the instance using ssh
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 1.  Make sure you have exited out of the docker container.  Download the docker image, twitterfeed, extract it and run the container.  The download is from the wvbirder docker hub account where this application is staged.
     ````
@@ -72,7 +72,7 @@ In this section, you will deploy an application, twitterfeed, that is stored in 
 7.  Go back to your broswer to see the application running on port 8085.  http://Public IP address:8085.  Click on one of the products to see the details and the twitterfeed comments. 
    ![](images/alphaoffice.png " ")
 
-## Step 2: Change Application (Container in place modifications)
+## **Step 2:** Change Application (Container in place modifications)
 
 This lab will show how you can share applications and make modifications in the container.  
 
@@ -131,7 +131,7 @@ This lab will show how you can share applications and make modifications in the 
     ![](images/oldalphaoffice.png " ") 
 
 
-## Step 3: Updating an Image to Docker Hub
+## **Step 3:** Updating an Image to Docker Hub
 
 1.  If you were working with a team and needed to get this updated online, you would commit it.  Let's commit this new docker image to your docker hub now.  Wvbirder thanks but we have our own Docker account.  Once commited, list the images.  Note that your image is now listed.
     ````
@@ -176,4 +176,7 @@ Congratulations, this is the end of this lab.
 * **Author** - Oracle NATD Solution Engineering
 * **Last Updated By/Date** - Kay Malcolm, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

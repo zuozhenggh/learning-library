@@ -1,28 +1,43 @@
 # Enable In-Memory
 
 ## Introduction
+Watch the video below to get an explanation of enabling the In-Memory column store.
+
+[](youtube:dZ9cnIL6KKw)
 
 ### Objectives
 
 -   Learn how to enable In-Memory on the Oracle Database
 -   Explore various views to monitor In-Memory
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Setup
+* Lab: Generate SSH Key (FreeTier and Paid accounts)
+* Lab: Environment Setup or Verify Setup
 
-### Lab Preview
+## Step 0: Download the Lab Files
 
-Watch the video below to get an explanation of enabling the In-Memory column store.
-
-[](youtube:dZ9cnIL6KKw)
+1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the compute instance you created in the previous lab.
 
 
-## Step 1: Run the In-Memory Setup Scripts
+2.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
+
+    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+
+    ````
+    <copy>
+    cd /home/opc/
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
+    unzip multiscripts.zip; chmod +x *.sh
+    /home/opc/setupenv.sh
+    </copy>
+    ````
+
+## **Step 1:** Run the In-Memory Setup Scripts
 1.  Run this command to setup the schema, SSB, you will use for this lab.   This script takes about 15 minutes to complete.   It downloads the ssb.dmp file and then imports it.
+
+
     ````
     <copy>
     cd /home/opc/
@@ -33,7 +48,7 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     ````
     ![](./images/ssbexists.png " ") 
 
-2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expeted.  The script should finish with 1 error*
+2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expected.  The script should finish with 1 error*
 
     ````
     <copy>
@@ -42,7 +57,7 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     ````
     ![](./images/inmemcomplete.png " ") 
 
-## Step 2: Logging In and Enabling In-Memory
+## **Step 2:** Logging In and Enabling In-Memory
 
 1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
 
@@ -99,7 +114,7 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
     ````
      ![](images/step1num4.png) 
 
-## Step 3: Enabling In-Memory
+## **Step 3:** Enabling In-Memory
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account. 
 
@@ -227,7 +242,7 @@ By default the IM column store is only populated when the object is accessed.
 
 In this Step you saw that the IM column store is configured by setting the initialization parameter INMEMORY_SIZE. The IM column store is a new static pool in the SGA, and once allocated it can be resized dynamically, but it is not managed by either of the automatic SGA memory features. 
 
-You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this Lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
+You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
 
 Finally you got to see how to determine if the objects were fully populated and how much space was being consumed in the IM column store.
 
@@ -236,6 +251,9 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager, Oracle Database In-Memory
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request. 

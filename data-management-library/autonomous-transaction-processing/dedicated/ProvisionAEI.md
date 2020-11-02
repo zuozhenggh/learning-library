@@ -12,8 +12,10 @@ An Autonomous Exadata Infrastructure (AEI) resource allocates an available Oracl
 
 
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Objectives
 
 As a fleet administrator, 
@@ -28,7 +30,7 @@ As a fleet administrator,
 
 ## Steps
 
-### STEP 1: Deploy your Autonomous Exadata Infrastructure (AEI)
+### **Step 1:** Deploy your Autonomous Exadata Infrastructure (AEI)
 
 **Login to your OCI account as a fleet administrator**
 

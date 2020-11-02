@@ -1,32 +1,52 @@
+/*
+Author: Ashwin Agarwal
+Contributors: Tom McGinn, Suresh Mohan
+Last updated: 25-Aug-2020
+Version: 20.1.9
+*/
+
 "use strict";
 var showdown = "https://oracle.github.io/learning-library/common/redwood-hol/js/showdown.min.js";
 const manifestFileName = "manifest.json";
 const expandText = "Expand All Steps";
 const collapseText = "Collapse All Steps";
-const anchorOffset = 0; //if header is fixed, it should be 70
+const anchorOffset = 70; //if header is fixed, it should be 70. Otherwise, 0.
 const copyButtonText = "Copy";
-const queryParam = "?lab=";
+const queryParam = "lab";
+const utmParams = [{
+    "url": "https://myservices.us.oraclecloud.com/mycloud/signup",
+    "inParam": "customTrackingParam",
+    "outParam": "sourceType"
+}];
 
-$(document).ready(function () {
+$(document).ready(function() {
     let manifestFileContent;
     $.when(
-        $.getScript(showdown, function () {
+        $.getScript(showdown, function() {
             console.log("Showdown library loaded!");
         }),
-        $.getJSON(manifestFileName, function (manifestFile) {
+        $.getJSON(manifestFileName, function(manifestFile) {
             manifestFileContent = manifestFile; //reading the manifest file and storing content in manifestFileContent variable
+            if (manifestFileContent.workshoptitle !== undefined) { // if manifest file contains a field for workshop title
+                document.getElementsByClassName("hol-Header-logo")[0].innerText = manifestFileContent.workshoptitle; // set title in the HTML output (DBDOC-2392)
+            }
             console.log("Manifest file loaded!");
-        }).fail(function () {
+        }).fail(function() {
             alert("manifest.json file was not loaded. The manifest file should be co-located with the index.html file. If the file is co-located, check that the json format of the file is correct.");
         })
-    ).done(function () {
+    ).done(function() {
         let selectedTutorial = setupRightNav(manifestFileContent); //populate side navigation based on content in the manifestFile
         let articleElement = document.createElement('article'); //creating an article that would contain MD to HTML converted content
-        $.get(selectedTutorial.filename, function (markdownContent) { //reading MD file in the manifest and storing content in markdownContent variable
-            //The setupAnalytics function is commented out as we are not using Google Analytics
-            //setupAnalytics(); //enabling analytics
+
+        $.get(selectedTutorial.filename, function(markdownContent) { //reading MD file in the manifest and storing content in markdownContent variable
             console.log(selectedTutorial.filename + " loaded!");
-            $(articleElement).html(new showdown.Converter({ tables: true }).makeHtml(markdownContent)); //converting markdownContent to HTML by using showndown plugin
+
+            markdownContent = singlesource(markdownContent, selectedTutorial.type); // implement show/hide feature based on the if tag (DBDOC-2430)
+            markdownContent = convertBracketInsideCopyCode(markdownContent); // converts <> tags inside copy tag to &lt; and &gt; (DBDOC-2404)
+            $(articleElement).html(new showdown.Converter({
+                tables: true
+            }).makeHtml(markdownContent)); //converting markdownContent to HTML by using showndown plugin
+
             articleElement = renderVideos(articleElement); //adds iframe to videos
             articleElement = addPathToImageSrc(articleElement, selectedTutorial.filename); //adding the path for the image based on the filename in manifest
             articleElement = updateH1Title(articleElement); //adding the h1 title in the Tutorial before the container div and removing it from the articleElement
@@ -36,37 +56,25 @@ $(document).ready(function () {
             articleElement = makeAnchorLinksWork(articleElement); //if there are links to anchors (for example: #hash-name), this function will enable it work
             articleElement = addTargetBlank(articleElement); //setting target for all ahrefs to _blank
             articleElement = allowCodeCopy(articleElement); //adds functionality to copy code from codeblocks
-            updateHeadContent(selectedTutorial); //changing document head based on the manifest
-        }).done(function () {
+            articleElement = injectUtmParams(articleElement);
+            updateHeadContent(selectedTutorial, manifestFileContent.workshoptitle); //changing document head based on the manifest
+        }).done(function() {
             $("main").html(articleElement); //placing the article element inside the main tag of the Tutorial template
             setTimeout(setupContentNav, 0); //sets up the collapse/expand button and open/close section feature
             collapseSection($("#module-content h2:not(:eq(0))"), "hide"); //collapses all sections by default
             $('#openNav').click(); //open the right side nav by default
             setupLeftNav();
-        }).fail(function () {
+        }).fail(function() {
             alert(selectedTutorial.filename + ' not found! Please check that the file is available in the location provided in the manifest file.');
         });
     });
 });
-/* The following functions are used for Google Analytics */
-/*
-function setupAnalytics() {
-    $.getScript("https://www.googletagmanager.com/gtag/js?id=UA-153767729-1");
-    window.dataLayer = window.dataLayer || [];
-    gtag('js', new Date());
-    gtag('config', 'UA-153767729-1');
-}
-function gtag() {
-    dataLayer.push(arguments);
-}*/
-/* Google Analytics functions end here */
-
 /* The following function increases the width of the side navigation div to open it. */
 function openRightSideNav() {
     $('#mySidenav').attr("style", "width: 270px; overflow-y: auto; box-shadow: 0 0 48px 24px rgba(0, 0, 0, .3);");
     $('#mySidenav li, #closeNav').attr('tabindex', '0');
     $('h1').css("margin-right", "270px");
-    setTimeout(function () {
+    setTimeout(function() {
         document.getElementsByClassName('selected')[0].scrollIntoView(false);
     }, 1000);
 }
@@ -87,22 +95,32 @@ function setupRightNav(manifestFileContent) {
     } else if (allTutorials.length > 1) { //means it is a workshop
         $('.rightNav').show();
         //adding tutorials from JSON and linking them with ?shortnames
-        $(allTutorials).each(function (i, tutorial) {
+        $(allTutorials).each(function(i, tutorial) {
             let shortTitle = createShortNameFromTitle(tutorial.title);
-            let li = $(document.createElement('li')).click(function () {
-                location.href = queryParam + shortTitle;
+
+            let li = $(document.createElement('li')).click(function() {
+                rightNavClick(shortTitle);
             });
+
             $(li).text(tutorial.title); //The title specified in the manifest appears in the side nav as navigation
-            if (window.location.search.split(queryParam)[1] === shortTitle) { //the selected class is added if the title is currently selected
-                $(li).attr("class", "selected");
-                selectedTutorial = tutorial;
+            try {
+                if (new URL(window.location.href).searchParams.get(queryParam) === shortTitle) {
+                    $(li).attr("class", "selected");
+                    selectedTutorial = tutorial;
+                }
+            } catch (err) { //if IE, new URL() method fails
+                if (getParam(queryParam) == shortTitle) {
+                    $(li).attr("class", "selected");
+                    selectedTutorial = tutorial;
+                }
             }
+
             $(li).appendTo($('#mySidenav ul'));
             /* for accessibility */
-            $(li).keydown(function (e) {
+            $(li).keydown(function(e) {
                 if (e.keyCode === 13 || e.keyCode === 32) { //means enter and space
                     e.preventDefault();
-                    location.href = queryParam + shortTitle;
+                    rightNavClick(shortTitle);
                 }
             });
             /* accessibility code ends here */
@@ -119,6 +137,42 @@ function setupRightNav(manifestFileContent) {
         return selectedTutorial;
     }
 }
+/* The following function performs the event that must happen when the lab links in the right navigation is clicked */
+function rightNavClick(shortTitle) {
+    try {
+        let labUrl = new URL(window.location.href);
+        labUrl.searchParams.set(queryParam, shortTitle);
+        location.href = unescape(labUrl);
+    } catch (err) { //code for IE since it doesn't support new URL()
+        location.href = unescape(setParam(window.location.href, queryParam, shortTitle));
+    }
+}
+/* set the query parameter value - used only for IE */
+function setParam(url, paramName, paramValue) {
+    let onlyUrl = url.split('?')[0];
+    let params = url.replace(onlyUrl, '').split('#')[0];
+    let hashAnchors = url.replace(onlyUrl + params, '');
+
+    let existingParamValue = getParam(paramName);
+    if (existingParamValue) {
+        return onlyUrl + params.replace(paramName + '=' + existingParamValue, paramName + '=' + paramValue) + hashAnchors;
+    } else {
+        if (params.length === 0 || params.length === 1) {
+            return onlyUrl + '?' + paramName + '=' + paramValue + hashAnchors;
+        }
+        return onlyUrl + params + '&' + paramName + '=' + paramValue + hashAnchors;
+    }
+}
+/* get the query parameter value - used only for IE */
+function getParam(paramName) {
+    let params = window.location.search.substring(1).split('&');
+    for (var i = 0; i < params.length; i++) {
+        if (params[i].split('=')[0] == paramName) {
+            return params[i].split('=')[1];
+        }
+    }
+    return false;
+}
 /* The following function creates shortname from title */
 function createShortNameFromTitle(title) {
     if (!title) {
@@ -126,12 +180,12 @@ function createShortNameFromTitle(title) {
         return "ErrorTitle";
     }
     const removeFromTitle = ["-a-", "-in-", "-of-", "-the-", "-to-", "-an-", "-is-", "-your-", "-you-", "-and-", "-from-", "-with-"];
-    const folderNameRestriction = ["<", ">", ":", "\"", "/", "\\\\", "|", "\\?", "\\*"];
+    const folderNameRestriction = ["<", ">", ":", "\"", "/", "\\\\", "|", "\\?", "\\*", "&"];
     let shortname = title.toLowerCase().replace(/ /g, '-').trim().substr(0, 50);
-    $.each(folderNameRestriction, function (i, value) {
+    $.each(folderNameRestriction, function(i, value) {
         shortname = shortname.replace(new RegExp(value, 'g'), '');
     });
-    $.each(removeFromTitle, function (i, value) {
+    $.each(removeFromTitle, function(i, value) {
         shortname = shortname.replace(new RegExp(value, 'g'), '-');
     });
     if (shortname.length > 40) {
@@ -145,7 +199,7 @@ The manifest file can be in any location.*/
 function addPathToImageSrc(articleElement, myUrl) {
     if (myUrl.indexOf("/") !== -1) {
         myUrl = myUrl.replace(/\/[^\/]+$/, "/"); //removing filename from the url
-        $(articleElement).find('img').each(function () {
+        $(articleElement).find('img').each(function() {
             if ($(this).attr("src").indexOf("http") === -1) {
                 $(this).attr("src", myUrl + $(this).attr("src"));
             }
@@ -163,7 +217,7 @@ function updateH1Title(articleElement) {
 }
 /* This function picks up the entire converted content in HTML, and break them into sections. */
 function wrapSectionTag(articleElement) {
-    $(articleElement).find('h2').each(function () {
+    $(articleElement).find('h2').each(function() {
         $(this).nextUntil('h2').andSelf().wrapAll('<section></section>');
     });
     return articleElement;
@@ -172,8 +226,9 @@ function wrapSectionTag(articleElement) {
 The figcaption is in the format Description of illustration [filename].
 The image description files must be added inside the files folder in the same location as the MD file.*/
 function wrapImgWithFigure(articleElement) {
-    $(articleElement).find("img").each(function () {
-        if ($(this).attr("title") !== undefined) { //only images with titles are wrapped with figure tags
+    // $(articleElement).find("img").each(function () {
+    $(articleElement).find("img").on('load', function() {
+        if ($(this)[0].width > 100 || $(this)[0].height > 100 || $(this).attr("title") !== undefined) { // only images with title or width or height > 100 get wrapped (DBDOC-2397)
             $(this).wrap("<figure></figure>"); //wrapping image tags with figure tags
             if ($.trim($(this).attr("title"))) {
                 let imgFileNameWithoutExtn = $(this).attr("src").split("/").pop().split('.').shift(); //extracting the image filename without extension
@@ -191,7 +246,7 @@ The manifest file can be in any location.*/
 function addPathToAllRelativeHref(articleElement, myUrl) {
     if (myUrl.indexOf("/") !== -1) {
         myUrl = myUrl.replace(/\/[^\/]+$/, "/"); //removing filename from the url
-        $(articleElement).find('a').each(function () {
+        $(articleElement).find('a').each(function() {
             if ($(this).attr("href").indexOf("http") === -1 && $(this).attr("href").indexOf("?") !== 0 && $(this).attr("href").indexOf("#") !== 0) {
                 $(this).attr("href", myUrl + $(this).attr("href"));
             }
@@ -201,10 +256,10 @@ function addPathToAllRelativeHref(articleElement, myUrl) {
 }
 /* the following function makes anchor links work by adding an event to all href="#...." */
 function makeAnchorLinksWork(articleElement) {
-    $(articleElement).find('a[href^="#"]').each(function () {
+    $(articleElement).find('a[href^="#"]').each(function() {
         let href = $(this).attr('href');
         if (href !== "#") { //eliminating all plain # links
-            $(this).click(function () {
+            $(this).click(function() {
                 expandSectionBasedOnHash(href.split('#')[1]);
             });
         }
@@ -213,7 +268,7 @@ function makeAnchorLinksWork(articleElement) {
 }
 /*the following function sets target for all HREFs to _blank */
 function addTargetBlank(articleElement) {
-    $(articleElement).find('a').each(function () {
+    $(articleElement).find('a').each(function() {
         if ($(this).attr('href').indexOf("http") === 0) //ignoring # hrefs
             $(this).attr('target', '_blank'); //setting target for ahrefs to _blank
     });
@@ -221,26 +276,25 @@ function addTargetBlank(articleElement) {
 }
 /* Sets the title, contentid, description, partnumber, and publisheddate attributes in the HTML page.
 The content is picked up from the manifest file entry*/
-function updateHeadContent(tutorialEntryInManifest) {
-    document.title = tutorialEntryInManifest.title;
+function updateHeadContent(tutorialEntryInManifest, workshoptitle) {
+    (workshoptitle !== undefined) ?
+    document.title = workshoptitle + " | " + tutorialEntryInManifest.title:
+        document.title = tutorialEntryInManifest.title;
+
     const metaProperties = [{
         name: "contentid",
         content: tutorialEntryInManifest.contentid
-    },
-    {
+    }, {
         name: "description",
         content: tutorialEntryInManifest.description
-    },
-    {
+    }, {
         name: "partnumber",
         content: tutorialEntryInManifest.partnumber
-    },
-    {
+    }, {
         name: "publisheddate",
         content: tutorialEntryInManifest.publisheddate
-    }
-    ];
-    $(metaProperties).each(function (i, metaProp) {
+    }];
+    $(metaProperties).each(function(i, metaProp) {
         if (metaProp.content) {
             let metaTag = document.createElement('meta');
             $(metaTag).attr(metaProp).prependTo('head');
@@ -252,27 +306,33 @@ function setupLeftNav() {
     let toc = $("#toc").tocify({
         selectors: "h2, h3, h4"
     }).data("toc-tocify");
-    toc.setOptions({ extendPage: false, smoothScroll: false, scrollTo: anchorOffset, highlightDefault: true, showEffect: "fadeIn" });
+    toc.setOptions({
+        extendPage: false,
+        smoothScroll: false,
+        scrollTo: anchorOffset,
+        highlightDefault: true,
+        showEffect: "fadeIn"
+    });
 
-    $('.tocify-item').each(function () {
+    $('.tocify-item').each(function() {
         let itemName = $(this).attr('data-unique');
         if ($(this) !== $('.tocify-item:eq(0)')) { //as the first section is not expandable or collapsible
-            $(this).click(function () { //if left nav item is clicked, the corresponding section expands
+            $(this).click(function() { //if left nav item is clicked, the corresponding section expands
                 expandSectionBasedOnHash(itemName);
             });
         }
         if (itemName === location.hash.slice(1)) { //if the hash value matches, it clicks it after some time.
             let click = $(this);
-            setTimeout(function () {
+            setTimeout(function() {
                 $(click).click();
             }, 1000)
         }
     });
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > $("article").offset().top) {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() + anchorOffset > $("article").offset().top) {
             $('#toc').addClass("scroll");
             if (($(window).scrollTop() + $(window).height()) > $('footer').position().top) //if footer is seen
-                $('#toc').height($('footer').position().top - $(window).scrollTop());
+                $('#toc').height($('footer').position().top - $(window).scrollTop() - anchorOffset);
             else
                 $('#toc').height('100%');
         } else {
@@ -285,18 +345,18 @@ function setupContentNav() {
     //adds the expand collapse button before the second h2 element
     $("#module-content h2:eq(1)")
         .before('<button id="btn_toggle" class="hol-ToggleRegions plus">' + expandText + '</button>')
-        .prev().on('click', function (e) {
-            ($(this).text() === expandText) ? expandSection($("#module-content h2:not(:eq(0))"), "show") : collapseSection($("#module-content h2:not(:eq(0))"), "hide");
+        .prev().on('click', function(e) {
+            ($(this).text() === expandText) ? expandSection($("#module-content h2:not(:eq(0))"), "show"): collapseSection($("#module-content h2:not(:eq(0))"), "hide");
             changeButtonState(); //enables the expand all parts and collapse all parts button
         });
     //enables the feature that allows expand collapse of sections
-    $("#module-content h2:not(:eq(0))").click(function (e) {
-        ($(this).hasClass('plus')) ? expandSection(this, "fade") : collapseSection(this, "fade");
+    $("#module-content h2:not(:eq(0))").click(function(e) {
+        ($(this).hasClass('plus')) ? expandSection(this, "fade"): collapseSection(this, "fade");
         changeButtonState();
     });
     /* for accessibility */
     $("#module-content h2:not(:eq(0))").attr('tabindex', '0');
-    $('#module-content h2:not(:eq(0))').keydown(function (e) {
+    $('#module-content h2:not(:eq(0))').keydown(function(e) {
         if (e.keyCode === 13 || e.keyCode === 32) { //means enter and space
             e.preventDefault();
             if ($(this).hasClass('plus'))
@@ -363,7 +423,7 @@ function expandSectionBasedOnHash(itemName) {
 }
 /* adds code copy functionality in codeblocks. The code that needs to be copied needs to be wrapped in <copy> </copy> tag */
 function allowCodeCopy(articleElement) {
-    $(articleElement).find('pre code').each(function () {
+    $(articleElement).find('pre code').each(function() {
         let code = $(document.createElement('code')).html($(this).text());
         if ($(code).has('copy').length) {
             $(code).find('copy').contents().unwrap().wrap('<span class="copy-code">');
@@ -372,21 +432,107 @@ function allowCodeCopy(articleElement) {
             $(this).before('<button class="copy-button" title="Copy text to clipboard">' + copyButtonText + '</button>');
         }
     });
-    $(articleElement).find('.copy-button').click(function () {
-        let copyText = $(this).next().find('.copy-code').text().trim();
+    $(articleElement).find('.copy-button').click(function() {
+        let copyText = $(this).next().find('.copy-code').map(function() {
+            return $(this).text().trim();
+        }).get().join('\n');
         let dummy = $('<textarea>').val(copyText).appendTo(this).select();
         document.execCommand('copy');
         $(dummy).remove();
-        $(this).parent().animate({ opacity: 0.2 }).animate({ opacity: 1 });
+        $(this).parent().animate({
+            opacity: 0.2
+        }).animate({
+            opacity: 1
+        });
     });
     return articleElement;
 }
 /* adds iframe to videos so that it renders in the same page.
 The MD code should be in the format [](youtube:<enter_video_id>) for it to render as iframe. */
 function renderVideos(articleElement) {
-    $(articleElement).find('a[href^="youtube:"]').each(function () {
+    $(articleElement).find('a[href^="youtube:"]').each(function() {
         $(this).after('<div class="video-container"><iframe src="https://www.youtube.com/embed/' + $(this).attr('href').split(":")[1] + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></div>');
         $(this).remove();
     });
+    return articleElement;
+}
+/* remove all content that is not of type specified in the manifest file. Then remove all if tags.*/
+function singlesource(markdownContent, type) {
+    let ifTagRegExp = new RegExp(/<\s*if type="([^>]*)">([\s\S|\n]*?)<\/\s*if>/gm);
+    let contentToReplace = []; // content that needs to be replaced
+    if ($.type(type) !== 'array')
+        type = Array(type);
+
+    let matches;
+    do {
+        matches = ifTagRegExp.exec(markdownContent);
+        if (matches === null) {
+            $(contentToReplace).each(function(index, value) {
+                markdownContent = markdownContent.replace(value.replace, value.with);
+            });
+            return markdownContent;
+        }
+        ($.inArray(matches[1], type) === -1) ? // check if type specified matches content
+        contentToReplace.push({
+                "replace": matches[0],
+                "with": ''
+            }): // replace with blank if type doesn't match
+            contentToReplace.push({
+                "replace": matches[0],
+                "with": matches[2]
+            }); // replace with text without if tag if type matches
+    } while (matches);
+}
+/* converts < > symbols inside the copy tag to &lt; and &gt; */
+function convertBracketInsideCopyCode(markdownContent) {
+    let copyRegExp = new RegExp(/<copy>([\s\S|\n]*?)<\/copy>/gm);
+
+    markdownContent = markdownContent.replace(copyRegExp, function(code) {
+        code = code.replace('<copy>', '');
+        code = code.replace('</copy>', '');
+        code = code.replace(/</g, '&lt;');
+        code = code.replace(/>/g, '&gt;');
+        return '<copy>' + code.trim() + '</copy>';
+    });
+
+    return markdownContent;
+}
+/* injects tracking code into links specified in the utmParams variable */
+function injectUtmParams(articleElement) {
+    try {
+        let currentUrl = new URL(window.location.href);
+        $(utmParams).each(function(index, item) {
+            let inParamValue = currentUrl.searchParams.get(item.inParam);
+            if (inParamValue) {
+                $(articleElement).find('a[href*="' + item.url + '"]').each(function() {
+                    let targetUrl = new URL($(this).attr('href'));
+                    targetUrl.searchParams.set(item.outParam, inParamValue);
+                    $(this).attr('href', unescape(targetUrl.href));
+                });
+            }
+        });
+    } catch (err) { //code for IE since new URL() isn't supported in IE.
+        let currentUrl = window.location.href;
+        $(utmParams).each(function(index, item) {
+            let inParamValue = getParam(item.inParam);
+            if (inParamValue) {
+                $(articleElement).find('a[href*="' + item.url + '"]').each(function() {
+                    let targetUrl = $(this).attr('href');
+                    $(this).attr('href', unescape(setParam(targetUrl, item.outParam, inParamValue)));
+                });
+            }
+        });
+    }
+    /* hack for manual links like this ?lab=xx. Should be removed later. */
+    $(utmParams).each(function(index, item) {
+        let inParamValue = getParam(item.inParam);
+        if (inParamValue) {
+            $(articleElement).find('a[href*="?' + queryParam + '="]').each(function() {
+                let targetUrl = $(this).attr('href') + '&' + item.inParam + '=' + inParamValue;
+                $(this).attr('href', unescape(targetUrl));
+            });
+        }
+    });
+    /* remove till here */
     return articleElement;
 }

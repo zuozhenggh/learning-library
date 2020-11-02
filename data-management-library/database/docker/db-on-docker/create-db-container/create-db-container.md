@@ -14,7 +14,7 @@ One of the benefits of using Docker is quick and easy provisioning.  Oracle prov
 
 You will use various Docker commands to setup, run and connect into containers. Concepts of Docker volumes, networking and intra-container communication will be used.
 
-### Lab Prerequisites?
+### Prerequisites?
 
 * Create a docker hub [account](http://hub.docker.com)
 * Participant has completed the following labs:
@@ -23,12 +23,12 @@ You will use various Docker commands to setup, run and connect into containers. 
     - Setup Compute Instance
     - Docker Setup
 
-## Step 1: Create an Oracle Database Container
+## **Step 1:** Create an Oracle Database Container
 
 0. Login to the instance using ssh
 
     ````
-    ssh -i yourkeyname opc@ your ip address
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
 1.  Verify your docker version
@@ -72,7 +72,7 @@ You will use various Docker commands to setup, run and connect into containers. 
     - --name is the name of the container
     - v maps the directory where you downloaded the setup files to the /dbfiles directory inside the container
 
-## Step 2: Follow the progress of Container creation
+## **Step 2:** Follow the progress of Container creation
 
 5.  To watch the progress type the following command passing the name of the container:  orcl.  This takes time, **please be patient**.
     ````
@@ -87,7 +87,7 @@ You will use various Docker commands to setup, run and connect into containers. 
     ![](images/section5step4b.png " ")
 
 
-## Step 3: Create A Schema in Container Running Oracle Database and Login to EM Express
+## **Step 3:** Create A Schema in Container Running Oracle Database and Login to EM Express
 
 1.  To create the schema we need to "login" to the container.  Type the following:
     ````
@@ -141,4 +141,7 @@ You may now proceed to the next lab.
 * **Author** - Oracle NATD Solution Engineering
 * **Last Updated By/Date** - Kay Malcolm, Database Product Management, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

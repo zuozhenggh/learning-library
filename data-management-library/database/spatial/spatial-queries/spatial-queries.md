@@ -6,7 +6,7 @@
 
 -    Learn how to use location-based queries with Spatial
 
-### Lab Prerequisites
+### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
@@ -22,7 +22,7 @@ This tutorial uses CUSTOMERS and WAREHOUSES tables. WAREHOUSES are created from 
 
 Each table stores location using Oracle's native spatial data type, ```SDO_GEOMETRY```. A location can be stored as a point in an ```SDO_GEOMETRY``` column of a table. The customer's location is associated with longitude and latitude values on the Earth's surface - for example, -63.13631, 52.485426.
 
-## Step 1: Prepare the Lab Environment
+## **Step 1:** Prepare the Lab Environment
 
 1. Work as **oracle** user, connect to the PDB **orclpdb** with **system** user.
 
@@ -112,7 +112,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
 
 
 
-## Step 2: Load Data and Create Spatial Index
+## **Step 2:** Load Data and Create Spatial Index
 
 1. First we load CUSTOMERS by copying from the table OE.CUSTOMERS. Note that we are using two spatial functions in this step: 
 
@@ -164,7 +164,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
     
     ![](./images/image-20200429144831067.png " ") 
 
-## Step 3: Perform location-based queries
+## **Step 3:** Perform location-based queries
 1. Find the five customers closest to the warehouse whose warehouse ID is 3. 
 
     ````
@@ -318,4 +318,7 @@ For more information, please see the Spatial Developer's Guide at [https://docs.
 - **Author** - Minqiao Wang, DB Product Management, April 2020
 - **Last Updated By/Date** - 
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request.  
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request.  

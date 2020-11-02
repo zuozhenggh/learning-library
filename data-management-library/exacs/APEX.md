@@ -9,20 +9,22 @@ Oracle Application Express (APEX) is a low-code development platform that enable
 
 Low Code Development
 
-With Oracle APEX and low code, your organization can be more agile - develop solutions faster, for less cost, and with greater consistency. You can adapt to changing requirements with ease. Empower professional developers and everyone else in your organization to be a part of the solution.
+With Oracle APEX and low code, your organization can be more agile - by developing solutions faster, for less cost, and with greater consistency. You can adapt to changing requirements with ease. Empower professional developers and everyone else in your organization to be a part of the solution.
 
 **For more information, refer to the [APEX Documentation](https://apex.oracle.com/en/platform/low-code/)
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Objectives
 
-- Setup Oracle REST Data Services(ORDS) and Application Express (APEX) for Exadata cloud service database.
+- Set up Oracle REST Data Services(ORDS) and Application Express (APEX) for the Exadata cloud service database.
 - Create a REST Service using APEX and deploy it using ORDS.
 - Load JSON data using the REST Service into the database
 - Load data into the database using the Python SDK.
 - Demonstrate native JSON support in Oracle Database.
-- Create an web application using APEX on Oracle Database.
+- Create a web application using APEX on Oracle Database.
 
 
 ## Required Artifacts
@@ -37,7 +39,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ## Steps
 
-### **STEP 1: Setup ORDS and APEX on Oracle Database**
+### **STEP 1: Set up ORDS and APEX on Oracle Database**
 
 **Key Objectives**:
 
@@ -62,7 +64,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Load data into the database
 - Learn how to Load data into Oracle Database using the Application through the Python SDK.
 - Create an Application in APEX using the loaded data.
-- Demonstrate native JSON support in oracle database.
+- Demonstrate native JSON support in an oracle database.
 
 
 **Click on Lab 16-3 from the menu on the right.**
