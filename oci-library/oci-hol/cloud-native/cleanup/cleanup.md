@@ -9,6 +9,7 @@ Estimated time: 10 minutes
 ### Objectives
 
 - Log into OCI Tenancy.
+- Undeploy the MuShop App using helm delete
 - Terminate Oracle Cloud Infrastructure (OCI) components.
 
 ### Prerequisites
@@ -54,11 +55,11 @@ Estimated time: 10 minutes
     </copy>
     ````
 
+*Note:* When you executing the command `helm delete` for the mushop-utils chart release, the OCI LoadBalancer attached to the ingress kubernetes will also be terminated.
+
 ## **STEP 4**: Terminate the OKE Cluster and Worker Nodes
 
 1. Remove
-
-You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 

@@ -169,6 +169,8 @@ Remembering that helm provides a way of packaging and deploying configurable cha
     </copy>
     ````
 
+You can complete the optional step or [proceed to the next lab](#next).
+
 ## **STEP 5**: (Optional) Under the Hood
 
 1. To get a beter look at all the installed Kubernetes manifests by using the template command.

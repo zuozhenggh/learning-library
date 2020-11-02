@@ -11,9 +11,10 @@ Estimated time: 2 hours
 In this lab, you will:
 
 * Create an OKE Cluster
-* Deploy an eCommerce microservices-based solution to Kubernetes
-* Create an Autonomous Transaction Processing (ATP) Database using the OCI Service Broker
+* Deploy an eCommerce microservices-based solution to Kubernetes (MuShop App)
+* Monitor your Kuberntes Cluster and the deployed App
 * Create a Function Application
+* Clean up the deployments
 
 ### Prerequisites
 
