@@ -58,6 +58,8 @@ Note, if the account you're using is not a tenancy administrator, add the follow
 
 Make sure the user is part of the group referenced in the policy statements above. To create groups and add users to groups, refer to [Create a group](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm#To).
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 
 - **Author** - Peter Jausovec
