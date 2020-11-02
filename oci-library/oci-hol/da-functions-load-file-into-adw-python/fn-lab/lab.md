@@ -84,8 +84,8 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 5. Enter the following policies, make sure you replace `compartment-name` with your compartment:
 
   ```text
-  Allow dynamic-group functions-dynamic-group to manage objects in compartment <compartment-name> where target.bucket.name=input-bucket
-  Allow dynamic-group functions-dynamic-group to manage objects in compartment <compartment-name> where target.bucket.name=processsed-bucket
+  Allow dynamic-group functions-dynamic-group to manage objects in compartment <compartment-name> where target.bucket.name='input-bucket'
+  Allow dynamic-group functions-dynamic-group to manage objects in compartment <compartment-name> where target.bucket.name='processsed-bucket'
   ```
 
 6. Click **Create**.
@@ -175,9 +175,9 @@ In this step, you will configure a Cloud Event to trigger the function when you 
 | Attribute | bucketName | input-bucket |
 
 6. Under Actions, select **Functions**:
-  6.1. For function compartment, select your compartment.
-  6.2. For function application, select `etl-app`.
-  6.3. For function, select `oci-load-file-into-adw-python`.
+    1. For function compartment, select your compartment.
+    2. For function application, select `etl-app`.
+    3. For function, select `oci-load-file-into-adw-python`.
 
 7. Click **Create Rule**.
 
@@ -210,15 +210,16 @@ To see the data in the database, follow these steps:
 
 1. From the OCI console, navigate to **Autonomous Data Warehouse** and click on the database name (`funcdb`).
 2. Click the **Service Console**.
-3. Click **SQL Developer Web**.
-4. Use **ADMIN** and the admin password to authenticate.
-5. In the worksheet, enter the following query:
+3. Click **Development** from the side bar.
+4. Click **SQL Developer Web**.
+5. Use **ADMIN** and the admin password to authenticate.
+6. In the worksheet, enter the following query:
 
   ```
   select UTL_RAW.CAST_TO_VARCHAR2( DBMS_LOB.SUBSTR( JSON_DOCUMENT, 4000, 1 )) AS json from regionsnumbers
   ```
 
-6. Click the green play button to execute the query.
+7. Click the green play button to execute the query.
 
 The data from the CSV file is in the **Query Result** tab.
 
