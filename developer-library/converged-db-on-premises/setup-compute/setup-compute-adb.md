@@ -214,13 +214,15 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP address for your instance.
 4.  Enter the command below to login to your instance.    
+
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/em-cloudshell-ssh.png " ")
 
-5.  When prompted, answer **yes** to continue connecting.
-6.  Exit the instance 
+6.  When prompted, answer **yes** to continue connecting.
+7.  Exit the instance 
+   
     ````
     exit
     ````
@@ -253,11 +255,12 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 2.  Select **User Settings**
 3.  Under the **User Information** tab, click the **Copy** button to copy your User OCID.
 4.  Create your auth token using the command below substituting your actual *user id* for the userid below.
+5.  
       ````
       <copy>
        oci iam auth-token create --description ConvergedDB --user-id </copy> ocid1.user.oc1..axxxxxxxxxxxxxxxxxxxxxx
       ````
-5.  Copy the token somewhere safe, you will need it for the next step.
+6.  Copy the token somewhere safe, you will need it for the next step.
 
 
 ## **STEP 7:** Connect to SQL Developer and Create Credentials
@@ -266,6 +269,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 3.  Click on the **Tools** tab, select **SQL Developer Web**, a new browswer will open up
 4.  Login with the *admin* user and the password that you wrote down in the previous lab.  (*Note*: the admin password can also be changed in the **More Actions** drop down)
 5.  In the worksheet, enter the following command to create your credentials.  Replace the password below with your token. Make sure you do *not* copy the quotes.
+   
     ````
     begin
       DBMS_CLOUD.create_credential(
