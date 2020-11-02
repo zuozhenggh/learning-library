@@ -2,18 +2,10 @@
 
 ## Introduction
 
-This lab walks you through the steps of creating RESTful Services for JSON, XML and Spatial data using Oracle REST data services. As part of this lab, ORDS is pre-installed and you will walk through the steps of rest enabling schema and its tables.
-Also later in the steps you will perform activities like retrieving data, inserting data, updating data and deleting data using GET, POST, PUT and DELETE methods respectively
+This lab walks you through the steps of creating RESTful Services for `JSON`, `XML` and `Spatial` data using Oracle REST data services. As part of this lab, `ORDS is pre-installed` and you will walk through the steps of rest enabling schema and its tables.
+Also later in the steps you will perform activities like `retrieving data`, `inserting data`, `updating data` and `deleting data` using GET, POST, PUT and DELETE methods respectively
 
 *Estimated Lab Time:* 30 Minutes
-
-### **Prerequisites**
-
-This lab assumes you have completed the following labs:
-- Lab 1:  Login to Oracle Cloud
-- Lab 2:  Generate SSH Key
-- Lab 3:  Create Compute instance 
-- Lab 4:  Environment setup
 
 ### **About Oracle ORDS**
 
@@ -21,6 +13,9 @@ ORDS is a Java application that enables developers with SQL and database skills 
 
 For more info see this [blog](https://www.oracle.com/tools/technologies/faq-rest-data-services.html)
 post 
+
+**Lab Architecture**
+
 ![](./images/ords1.png " ") 
 
 **Install ORDS using SQL Developer**
@@ -46,26 +41,36 @@ Representational State Transfer (REST) is a style of software architecture for d
 
 Common terms that are used throughout this lab: 
 
-- **RESTful Service** : An HTTP web service that conforms to the tenets of the RESTful Architectural Style, as described in "About RESTful Services" above. 
+- `RESTful Service` : An HTTP web service that conforms to the tenets of the RESTful Architectural Style, as described in "About RESTful Services" above. 
 
-- **Resource Module** : An organizational unit that is used to group related Resource Templates together. 
+- `Resource Module` : An organizational unit that is used to group related Resource Templates together. 
 
-- **Resource Template** : An individual RESTful ervice that is able to service requests for some set of URIs (Universal Resource Identifiers). The set of URIs is defined by the URI Template of the Resource Template.
+- `Resource Template` : An individual RESTful ervice that is able to service requests for some set of URIs (Universal Resource Identifiers). The set of URIs is defined by the URI Template of the Resource Template.
 
-- **Route Patterns**: A simple grammar that defines the particular patterns of URIs that a given Resource Template can handle. For example, the pattern, employees/, will match any URI whose path begins with employees/. 
+- `Route Patterns` : A simple grammar that defines the particular patterns of URIs that a given Resource Template can handle. For example, the pattern, employees/, will match any URI whose path begins with employees/. 
 
-    Example: http://localhost:8888/ords/hr/demo/employees/ 
-- **Resource Handler**: Provides the logic required to service a particular HTTP method, for a specific Resource Template. For example the logic of the GET HTTP method for the above Resource Template might be:
+    Example: `http://localhost:8888/ords/hr/demo/employees/`
+- `Resource Handler` : Provides the logic required to service a particular HTTP method, for a specific Resource Template. For example the logic of the GET HTTP method for the above Resource Template might be:
 
     select empno, ename, dept from emp where empno = :id
-- **HTTP Operation**: HTTP (HyperText Transport Protocol) defines a number of standard methods that can be performed on resources:
+- `HTTP Operation` : HTTP (HyperText Transport Protocol) defines a number of standard methods that can be performed on resources:
 
-	1. **GET** : Retrieve the resource contents. 
-	2. **POST** : Store a new resource.
-	3. **PUT** : Update an existing resource. 
-	4. **DELETE** : Remove a resource. 
+	1. `GET` : Retrieve the resource contents. 
+	2. `POST` : Store a new resource.
+	3. `PUT` : Update an existing resource. 
+	4. `DELETE` : Remove a resource. 
 
-## Step 1: Start ORDS in standalone mode
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+     - Lab :  Login to Oracle Cloud
+     - Lab :  Generate SSH Key
+     - Lab :  Create Compute instance 
+     - Lab :  Environment setup
+
+## **STEP 1**: Start ORDS in standalone mode
 
 1. The script (**env\_setup\_script.sh**) which was run in Lab-3 starts the ORDS in standalone mode  
 
@@ -82,11 +87,11 @@ Common terms that are used throughout this lab:
   ![](./images/ords_lab1_snap5.png " ")
 
     
-## Step 2: Create RESTful Services for JSON data
+## **STEP 2**: Create RESTful Services for JSON data
 
    **AutoREST Enable a Schema and its JSON Table**
 
-   To enable AutoREST on a schema and a table, perform the following steps:
+   To enable AutoREST on a schema and a table, perform the following STEPS:
        
 1. On the left-side, the Connections navigator is displayed. To make a new connection, click down arrow beside + sign and click New Connection
   
@@ -157,7 +162,7 @@ Common terms that are used throughout this lab:
 
 **Define Resource Module, Resource Template**
 
-   Perform the following steps to create your first RESTful Service
+   Perform the following STEPS to create your first RESTful Service
 
 14. Expand Rest Data Services and right click **Modules** and select **New Module.**
 
@@ -177,7 +182,7 @@ Common terms that are used throughout this lab:
      ![](./images/ordsl16.png " ") 
  
   
-16. The RESTful Services Wizard - Step 2 of 3 displays the Resource Template attributes. Enter the following values in the wizard.
+16. The RESTful Services Wizard - STEP 2 of 3 displays the Resource Template attributes. Enter the following values in the wizard.
  
     ````
     <copy>
@@ -190,11 +195,11 @@ Common terms that are used throughout this lab:
 
    The resource template groups the resource handlers that consist of the HTTP operation method: GET, DELETE, POST and PUT. Only one resource handler per HTTP operation method type is allowed. For example, you cannot have two HTTP GET resource handlers for the same resource template. But you can have one GET and one PUT resource handlers.
 
-17. The RESTful Services Wizard - Step 3 of 3 displays the RESTful Summary. Review the summary and click Finish to create your resource module and resource template.
+17. The RESTful Services Wizard - STEP 3 of 3 displays the RESTful Summary. Review the summary and click Finish to create your resource module and resource template.
   
     ![](./images/ordsl18.png " ") 
 
-    URI pattern cnvg/:id in the above template will retrieve the information based on the parameter id. To retrieve full table data, we will create another template with URI patter as cnvg/ in the next step.
+    URI pattern cnvg/:id in the above template will retrieve the information based on the parameter id. To retrieve full table data, we will create another template with URI patter as cnvg/ in the next STEP.
 
 18. Right click on module cnvg and click on add template.
     
@@ -292,7 +297,7 @@ Common terms that are used throughout this lab:
 
 **Insert data into JSON table using POST method**
 
- Perform the following steps to create a RESTful Service which inserts the information into table purchase_order using the HTTP Method POST.
+ Perform the following STEPS to create a RESTful Service which inserts the information into table purchase_order using the HTTP Method POST.
 
 35. Right click on template  **cnvg/** then select **Add handler** and select **POST**.
 
@@ -455,11 +460,11 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
     ````
     ![](./images/ordsl50.png " ")
    
-## Step 3: Create RESTful Services for XML data
+## **STEP 3**: Create RESTful Services for XML data
 
 **AutoREST Enable a Schema and its XML Table**
 
- To enable AutoREST on a schema and a table, perform the following steps:
+ To enable AutoREST on a schema and a table, perform the following STEPS:
 
 1. On the left-side, the Connections navigator is displayed. To make a new connection, click down arrow beside + sign and click New Connection.
    
@@ -549,7 +554,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
 
 **Define Resource Module, Resource Template**
 
-Refer **"Define Resource Module, Resource Template" section from Step 2** to create resource module and resource template. All those steps will be performed under DB connection XML.
+Refer **"Define Resource Module, Resource Template" section from STEP 2** to create resource module and resource template. All those STEPS will be performed under DB connection XML.
 
 **Retrieve information from XML table using GET method**
 
@@ -622,7 +627,7 @@ Refer **"Define Resource Module, Resource Template" section from Step 2** to cre
 
 **Insert data into XML table using POST method**
  
- Perform the following steps to create a RESTful Service which inserts the  information into table PURCHASEORDER  using the HTTP Method POST.
+ Perform the following STEPS to create a RESTful Service which inserts the  information into table PURCHASEORDER  using the HTTP Method POST.
 
 26. Right click on template  **cnvg/** then select **Add handler** and select **POST**.
     
@@ -795,11 +800,11 @@ The resource handler editor POST cnvg/:id is displayed on the right-side. Enter 
     
    ![](./images/ordslab2.39.png " ")
 
-## Step 4: Create RESTful Services for Spatial data
+## **STEP 4**: Create RESTful Services for Spatial data
 
 **AutoREST Enable a Schema and its Spatial Table**
 
-To enable AutoREST on a schema and a table, perform the following steps:
+To enable AutoREST on a schema and a table, perform the following STEPS:
 
 1. On the left-side, the Connections navigator is displayed. To make a new connection, click the down arrow beside + sign and click on **New Connection**.
    
@@ -864,7 +869,7 @@ To enable AutoREST on a schema and a table, perform the following steps:
 
 **Define Resource Module, Resource Template**
 
-Refer **"Define Resource Module, Resource Template" section from Step 2** to create resource module and resource template. All those steps will be performed under DB connection **SPATIAL**.
+Refer **"Define Resource Module, Resource Template" section from STEP 2** to create resource module and resource template. All those STEPS will be performed under DB connection **SPATIAL**.
 
 **Retrieve information from SPATIAL table using GET method**
 
@@ -950,7 +955,7 @@ Refer **"Define Resource Module, Resource Template" section from Step 2** to cre
 
 **Insert data into SPATIAL table using POST method**
 
-Perform the following steps to create a RESTful Service which inserts the  information into table WAREHOUSES using the HTTP Method POST.
+Perform the following STEPS to create a RESTful Service which inserts the  information into table WAREHOUSES using the HTTP Method POST.
 
 26. Right click on template **cnvg/** then select **Add handler** and select **POST**.
 
@@ -1108,7 +1113,7 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
   [](youtube:rvxTbTuUm5k)
   
 
-## Want to learn more
+## Learn more
 - [ORDS](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/index.html?xd_co_f=31b3dbc8-0936-47da-80a8-9e9bce8c17eb")
 
 ## Acknowledgements
@@ -1120,5 +1125,5 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
 - **Expiration Date** - June 2021   
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
