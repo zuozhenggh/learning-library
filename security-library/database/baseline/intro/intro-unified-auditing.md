@@ -4,7 +4,7 @@
 ### Overview
 *Estimated Time to complete the workshop*: 30 minutes
 
-This workshop is a mini-lab within the FIRST PART of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities - for the complete workshop, please refer to the *Oracle Database Security - Part1 (Baseline)*.
+This workshop is the FIRST PART of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities - for the second workshop, please refer to the *DB Security Fundamentals*.
 
 Based on an OCI architecture, deployed in a few minutes with a simple internet connection, it allows you to test DB Security use cases in a complete environment already pre-configured by the Oracle Database Security Product Manager Team.
 
