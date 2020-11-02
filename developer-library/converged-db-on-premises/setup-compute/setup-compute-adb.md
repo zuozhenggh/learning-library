@@ -24,7 +24,7 @@ This lab assumes you have:
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-      - [converged-db-adb.zip]()
+      - [converged-db-adb.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SkUC15rHseuHYjEmashs0PEuQYWofh2ver_pSBxHtphjaRG0MU6XgrMbMZpb3yIf/n/idcd8c1uxhbm/b/converged-db/o/converged-db-adb.zip)
 
 2.  Save in your downloads folder.
 3.  Login to Oracle Cloud

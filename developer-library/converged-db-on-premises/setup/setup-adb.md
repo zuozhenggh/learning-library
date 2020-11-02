@@ -22,21 +22,25 @@ In this lab you will run a script to import data from Object Store into your Aut
 6. sqlplus /nolog
 7. conn admin/<<<<<admin pwd>>>>>@cvgadb02_high
 8. If it connects then run the import script
-9. 
+9. Ignore the errors related to GRANT DBA, the DBA role is not available
+10. grant dwrole to all users
+    
 
-Connect Compute Instance
+
+## **STEP 2:**:  Connect Docker Instance to AJD
+
 1.  Enter the command below to login to your instance.    
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./../setup-compute-images/em-cloudshell-ssh.png " ")
 
-2. Copy the wallet from the last lab into the home directory of the oracle user
+2. Copy the wallet into the home directory of the oracle user
    ````
    chmod 777 /home/opc/converged-wallet.zip
    sudo cp /home/opc/converged-wallet.zip /home/oracle
    ````
-3. Switch to the oracle user
+3. Switch to the oracle user and unpack the docker files
       ````
       <copy>sudo su - oracle
       mkdir wallet
@@ -44,8 +48,6 @@ Connect Compute Instance
       unzip /home/oracle/converged-walle.zip .
       </copy>
       ````
-
-   ![](./images/env1.png " ")
 
 4.  Run the script env\_setup\_script.sh, this will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run.
 
