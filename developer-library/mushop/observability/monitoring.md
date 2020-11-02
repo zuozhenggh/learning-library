@@ -96,13 +96,11 @@ Good news! You already installed Prometheus/Grafana as part of the umbrella char
     </copy>
     ````
 
-1. Open to the Grafana dashboard using your browser connecting to http://<EXTERNAL-IP>/grafana
+1. Open to the Grafana dashboard using your browser connecting to http://< EXTERNAL-IP >/grafana
 
-> grafana login image <
+1. Connect to the dashboard with **admin**/**< password >**
 
-1. Connect to the dashboard with **admin**/**<password>**
-
-> grafana dashboard image <
+    ![MuShop Tree](images/grafana-cluster.png)
 
 You may now [proceed to the next lab](#next).
 
