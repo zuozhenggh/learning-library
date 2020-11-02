@@ -24,7 +24,7 @@ Estimated time: 20 minutes.
 
 - This lab assumes you have completed the previous lab (Lab 2) where created the *SH* graph.
 
-## STEP 1: Make sure the SH graph is loaded into memory.
+## **STEP 1**: Make sure the SH graph is loaded into memory.
 
 Before graphs can be analyzed in a notebook, we need to make sure the graph is loaded into memory. In the Graph Studio user interface, navigate to the *Graphs* page, verify whether the *SH* graph is loaded into memory or not.
 
@@ -40,7 +40,7 @@ This will create a "Load into Memory" job for you. Wait for this job to finish:
 
 ![](./images/jobs-sh-load-into-memory-started.png " ")
 
-## STEP 2: Clone the Sales History analysis example notebook
+## **STEP 2**: Clone the Sales History analysis example notebook
 
 1. Click on the *Notebooks* icon in the menu on the left.
 
@@ -68,7 +68,7 @@ This will create a "Load into Memory" job for you. Wait for this job to finish:
 
     The notebook is now ready to execute.
 
-## STEP 3: Explore the basic notebook features
+## **STEP 3**: Explore the basic notebook features
 
 Each notebook is organized into a set of *paragraphs*. Each paragraph has an input (called *Code*) and an output (called *Result*). In Graph Studio, there are 3 types of paragraphs:
 
@@ -110,7 +110,7 @@ modify any code to make the paragraphs execute.
     If you combine this feature with the ability to hide the *Code* section of the paragraph, you can turn notebooks into zero-code applications that users can execute with various parameters without any programming knowledge.
     Apart from text input, there's also support for dropdown and other types of forms. Please check the Autonomous Graph User's guide for the full reference.
 
-## STEP 3: Play with graph visualization
+## **STEP 4**: Play with graph visualization
 
 1. Run this paragraph which shows an example of how to visualize PGQL queries as a graph:
 
@@ -128,7 +128,7 @@ modify any code to make the paragraphs execute.
 
     ![](./images/notebooks-vertex-properties.png " ")
 
-## STEP 4: Play with graph exploration 
+## **STEP 5**: Play with graph exploration 
 
 The graph visualization feature allows you to further *explore* the graph visually directly in the visualization canvas.
 
@@ -191,7 +191,7 @@ The graph visualization feature allows you to further *explore* the graph visual
 
     ![](./images/notebooks-reset-default-state.png " ")
     
-## STEP 5: Find the most important products and recommendations using graph algorithms
+## **STEP 6**: Find the most important products and recommendations using graph algorithms
 
 The example notebook contains two paragraphs illustrating how you can use graph algorithms to gain new insights into your data.
 
