@@ -72,7 +72,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Start ORDS in standalone mode
 
-1. The script (**env\_setup\_script.sh**) which was run in Lab-3 starts the ORDS in standalone mode  
+1. The script (`env\_setup\_script.sh`) which was run in `Lab-3` starts the ORDS in standalone mode  
 
 2. Check if ORDS is connecting through the browser
    Open the browser and enter the following URI in the address bar:
@@ -83,13 +83,13 @@ This lab assumes you have:
     </copy>
     ````
 
-  If you see **ORACLE REST DATA SERVICES 404 Not Found**, it means that **ORDS** is connected. 
+  If you see `ORACLE REST DATA SERVICES 404 Not Found`, it means that `ORDS` is connected. 
   ![](./images/ords_lab1_snap5.png " ")
 
     
 ## **STEP 2**: Create RESTful Services for JSON data
 
-   **AutoREST Enable a Schema and its JSON Table**
+   `AutoREST Enable a Schema and its JSON Table`
 
    To enable AutoREST on a schema and a table, perform the following STEPS:
        
@@ -145,7 +145,7 @@ This lab assumes you have:
 
     ![](./images/ordsl13.png " ") 
 
-   The **appjson** schema and the **Purchase_order** table are now REST enabled.
+   The `appjson` schema and the `Purchase_order` table are now REST enabled.
 
 13.	Retrieve Purchase_order table data.  Open the browser and enter the following URL in the address bar: 
      ````
@@ -182,7 +182,7 @@ This lab assumes you have:
      ![](./images/ordsl16.png " ") 
  
   
-16. The RESTful Services Wizard - STEP 2 of 3 displays the Resource Template attributes. Enter the following values in the wizard.
+16. The RESTful Services Wizard - `STEP 2 of 3` displays the Resource Template attributes. Enter the following values in the wizard.
  
     ````
     <copy>
@@ -195,7 +195,7 @@ This lab assumes you have:
 
    The resource template groups the resource handlers that consist of the HTTP operation method: GET, DELETE, POST and PUT. Only one resource handler per HTTP operation method type is allowed. For example, you cannot have two HTTP GET resource handlers for the same resource template. But you can have one GET and one PUT resource handlers.
 
-17. The RESTful Services Wizard - STEP 3 of 3 displays the RESTful Summary. Review the summary and click Finish to create your resource module and resource template.
+17. The RESTful Services Wizard - `STEP 3 of 3` displays the RESTful Summary. Review the summary and click Finish to create your resource module and resource template.
   
     ![](./images/ordsl18.png " ") 
 
@@ -462,7 +462,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
    
 ## **STEP 3**: Create RESTful Services for XML data
 
-**AutoREST Enable a Schema and its XML Table**
+`AutoREST Enable a Schema and its XML Table`
 
  To enable AutoREST on a schema and a table, perform the following STEPS:
 
@@ -802,7 +802,7 @@ The resource handler editor POST cnvg/:id is displayed on the right-side. Enter 
 
 ## **STEP 4**: Create RESTful Services for Spatial data
 
-**AutoREST Enable a Schema and its Spatial Table**
+`AutoREST Enable a Schema and its Spatial Table`
 
 To enable AutoREST on a schema and a table, perform the following STEPS:
 
@@ -1108,6 +1108,8 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
     ````
     ![](./images/ordslab3.39.png " ")
 
+## Summary
+
 ## ORDS Video
   
   [](youtube:rvxTbTuUm5k)
@@ -1124,6 +1126,9 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+
 
