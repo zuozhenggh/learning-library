@@ -1,3 +1,26 @@
+# Functions
+
+## Introduction
+
+In this lab you will create an Object Storage Buckets, Oracle Function, Autonomous Database and trigger the function whenever a file is uploaded to the Object Storage. The function will take the file and write it to the database and move it into the second storage bucket.
+
+Estimated time: 30 minutes
+
+### Objectives
+
+- Create an application.
+- Create a Dynamic Group.
+- Create Object Storage Buckets.
+- Create an Autonomous Data Warehouse Database.
+- Deploy a Function.
+- Create an Event rule.
+- Test the created Function
+
+### Prerequisites
+
+- Your Oracle Cloud Trial Account
+- Completed the **Prerequisites for Functions**
+
 ## **Step 1:** Create an application
 
 In this step, you will create an application and set up Fn CLI on Cloud Shell.
@@ -198,3 +221,15 @@ To see the data in the database, follow these steps:
 6. Click the green play button to execute the query.
 
 The data from the CSV file is in the **Query Result** tab.
+
+## Acknowledgements
+
+- **Author** - Peter Jausovec
+- **Contributors** -  Peter Jausovec, Prasenjit Sarkar, Adao Junior
+- **Last Updated By/Date** - Adao Junior, October 2020
+
+## Need Help?
+
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
