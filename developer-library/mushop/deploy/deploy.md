@@ -45,53 +45,78 @@ In this lab, you will:
     ````
 2.  Change to the mushop directory
     ````
+    <copy>
     cd mushop
+    </copy>
     ````
     ![](images/mushop-code.png)
 
 3.  Verify CLI is configured correctly by executing a command to list the Cloud Object Storage namespace
+   
     ````
+    <copy>
     oci os ns get
+    </copy>
     ```` 
-3.  Verify CLI is configured correctly by executing a command to list the Cloud Object Storage namespace
+4.  Verify CLI is configured correctly by executing a command to list the Cloud Object Storage namespace
+   
     ````
+    <copy>
     oci ce cluster create-kubeconfig \
     --cluster-id ocid1.cluster.oc1.iad.aaaaaaaaabbbbbbbbdddddddd...xxx \
     --file $HOME/.kube/config --region us-ashburn-1 --token-version 2.0.0    
+    </copy>
     ```` 
-3.  Use kubectl to check the configuration
-    ```` 
+5.  Use kubectl to check the configuration
+   
+    ````
+    <copy>
     kubectl config current-context
     # cluster-c4daylfgvrg
+    </copy>
     ```` 
-3.  Set the default kubectl namespace to skip adding --namespace <name> to every command.  You can replace *mushop* with *your name*
-    ```` 
+6.  Set the default kubectl namespace to skip adding --namespace <name> to every command.  You can replace *mushop* with *your name*
+   
+    ````
+    <copy>
     kubectl create namespace mushop 
     kubectl config set-context \
     --current --namespace=mushop
+    </copy>
     ```` 
 
     *TIP:* use kubens to switch namespace easily & often from the command line 
 
 ## **STEP 3**: OKE Cluster Setup
 MuShop provides an umbrella helm chart called setup, which includes several recommended installations on the cluster. These installations represent common 3rd party services, which integrate with Oracle Cloud Infrastructure or enable certain application features.
-Chart 	Purpose 	Option
-[Prometheus](https://github.com/helm/charts/blob/master/stable/prometheus/README.md) 	Service metrics aggregation 	prometheus.enabled
-[Grafana](https://github.com/helm/charts/blob/master/stable/grafana/README.md) 	Infrastructure/service visualization dashboards 	grafana.enabled
-[Metrics Server](https://github.com/helm/charts/blob/master/stable/metrics-server/README.md) 	Support for Horizontal Pod Autoscaling 	metrics-server.enabled
-[Ingress Nginx](https://kubernetes.github.io/ingress-nginx/) 	Ingress controller and public Load Balancer 	ingress-nginx.enabled
-[Service Catalog](https://github.com/kubernetes-sigs/service-catalog/blob/master/charts/catalog/README.md) 	Service Catalog chart utilized by Oracle Service Broker 	catalog.enabled
+
+| Chart | Purpose | Option |
+  | --- | --- | --- |
+| [Prometheus](https://github.com/helm/charts/blob/master/stable/prometheus/README.md) | Service metrics aggregation | 	prometheus.enabled | 
+| [Grafana](https://github.com/helm/charts/blob/master/stable/grafana/README.md) | 	Infrastructure/service visualization dashboards | 	grafana.enabled | 
+| [Metrics Server](https://github.com/helm/charts/blob/master/stable/metrics-server/README.md) | 	Support for Horizontal Pod Autoscaling | 	metrics-server.enabled | 
+| [Ingress Nginx](https://kubernetes.github.io/ingress-nginx/) | 	Ingress controller and public Load Balancer | 	ingress-nginx.enabled | 
+| [Service Catalog](https://github.com/kubernetes-sigs/service-catalog/blob/master/charts/catalog/README.md) | 	Service Catalog chart utilized by Oracle Service Broker | 	catalog.enabled | 
 1.  Check kubectl context.
+   
     ```` 
+    <copy>
     kubectl config current-context
+    </copy>
     ```` 
-1.  Create a namespace for MuShop utilities: 
+2.  Create a namespace for MuShop utilities
+
     ```` 
+    <copy>
     kubectl create namespace mushop-utilities
+    </copy>
     ```` 
-1.  Install cluster dependencies using helm: 
+4.  Install cluster dependencies using helm: 
+   
     ```` 
+    <copy>
     helm dependency update deploy/complete/helm-chart/setup
+    </copy>
     ```` 
 
 ## **STEP 4**: Hostname Ingress and Deploy with Helm
@@ -104,55 +129,81 @@ Configure the mushop helm chart ingress values in cases where traffic must be di
 1.   Locate the EXTERNAL-IP assigned to the ingress controller: 
 
     ```` 
+    <copy>
     kubectl get svc \
     mushop-utils-ingress-nginx-controller \
     --namespace mushop-utilities    
+    </copy>
     ```` 
     Remembering that helm provides a way of packaging and deploying configurable charts, next we will deploy the application in "mock mode" where cloud services are mocked, yet the application is fully functional 
 
 1.   Deploy the application in "mock mode" where cloud services are mocked, yet the application is fully functional 
 
     ```` 
+    <copy>
     helm install mushop deploy/complete/helm-chart/mushop --set global.mock.service="all"
+    </copy>
     ```` 
     *or*
     ```` 
-    helm install mushop deploy/complete/helm-chart/mushop --set global.mock.service="all" --set ingress.hosts[0]="yourname.example.com"
+    <copy>
+    helm install mushop deploy/complete/helm-chart/mushop --set global.mock.service="all" --set ingress.hosts[0]="</copy>yourname.example.com"
+    
     ```` 
 1.  Please be patient. It may take a few moments to download all the application images. 
+   
     ```` 
+    <copy>
     kubectl get pod --watch
+    </copy>
     ```` 
 2.  After inspecting the resources created with helm install, launch the application in your browser. https://localhost
 
 3.  Find the EXTERNAL-IP assigned to the ingress controller.  Open the IP address in your browser 
+   
     ```` 
+    <copy>
     kubectl get svc mushop-utils-ingress-nginx-controller --namespace mushop-utilities    
+    </copy>
     ```` 
 4.  Alternatively with kubectl configured on localhost.  Proxy to the MuShop app on http://localhost:8000 (or a port of your choice).  *NOTE:* For shared clusters, and host-based ingress, use the hostname you setup earlier. 
+   
     ```` 
+    <copy>
     kubectl port-forward svc/edge 8000:80
+    </copy>
     ```` 
 
 ## **STEP 5**: Under the Hood
 1.  To get a beter look at all the installed Kubernetes manifests by using the template command.
+   
     ```` 
+    <copy>
     mkdir ./out
     helm template mushop deploy/complete/helm-chart/mushop --set global.mock.service="all" --output-dir ./out
+    <copy>
     ```` 
+
 2.  Explore the files, and see each output. 
 
 ## **STEP 6**: Clean Up
+
 1.  To get a beter look at all the installed Kubernetes manifests by using the template command.
+
     ```` 
+    <copy>
     helm list
-    ```` 
+    </copy>
+    ````   
 2.  Delete the mushop release
+   
     ```` 
+    <copy>
     helm delete mushop
+    </copy>
     ````   
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Adao Junior
