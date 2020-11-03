@@ -31,7 +31,7 @@ In the previous lab you created a compute instance (running the eShop applicatio
       ````
 
 
-## **STEP 2:**:  Connect Docker Instance to AJD
+## **STEP 2:**  Connect Docker Instance to AJD
 
 1.  Run the script env\_setup\_script.sh, this will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run.
 
