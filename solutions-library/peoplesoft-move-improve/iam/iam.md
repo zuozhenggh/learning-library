@@ -75,7 +75,7 @@ Please check if you have enough resource availability in your Availability Domai
 
     ![](./images/available.png " ")
 
-**NOTE**: You will need 2 instances. Make sure you have at least 1 of each of the below marked resource (it doesn't need to be in same availability domain):
+    **NOTE**: You will need 2 instances. Make sure you have at least 1 of each of the below marked resource (it doesn't need to be in same availability domain):
 
 ![](./images/resource.png " ")
 
