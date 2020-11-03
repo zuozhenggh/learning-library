@@ -149,7 +149,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       <copy>
       oci db autonomous-database generate-wallet --password WElcome123## --file converged-wallet.zip --autonomous-database-id </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
       ````
-2.  The wallet file will be downloaded to your cloud shell file system
+2.  The wallet file will be downloaded to your cloud shell file system in /home/yourtenancyname
 3.  Click the list command below to verify the *converged-wallet.zip* was created
    
       ````
@@ -160,6 +160,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
     ````
     sftp -i cloudshellkey opc@150.136.216.184 <<< $'mput ../converged-wallet*' 
     ````
+
 
 ## **STEP 5:** Create Auth Token
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
