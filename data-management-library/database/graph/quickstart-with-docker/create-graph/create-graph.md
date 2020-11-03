@@ -20,7 +20,7 @@ In the lab, you will:
 1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
 
     ```
-    ssh -i ./<your-key-name> opc@<your-instance-ip-address>
+    ssh -i ./your-key-name opc@your-instance-ip-address
     ```
 
 2. The following DDL creates a property graph (i.e. node and edge tables) from the relational table data.

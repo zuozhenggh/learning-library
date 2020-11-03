@@ -1,4 +1,4 @@
-# Setup Docker on Oracle Cloud Instance and Install Necessary Artifacts
+# Setup Docker and Install Git on Oracle Cloud Instance
 
 ## Introduction
 
@@ -191,7 +191,7 @@ Now, we are going to install git using yum as the root user.
     [root@oraclelinux77 ~]#
     ```
 
-2. To install git, copy and paste the below command.
+2. To install git, copy and paste the below command. Enter **y** when prompted.
 
     ```
     <copy>
@@ -205,35 +205,6 @@ Now, we are going to install git using yum as the root user.
     <copy>
     git --version
     </copy>
-    ```
-
-## **STEP 7**: Install Java version 11
-
-1. Install Java version 11 as a root user.
-
-    ```
-    <copy>
-    yum install java-11-openjdk-devel
-    </copy>
-    ```
-
-2. To verify the installation, run the Java "Hello Worls" as follows:
-
-    ```
-    $ <copy>cat > HelloWorld.java <<HELLO
-    public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
-    }
-    HELLO
-    </copy>
-    ```
-
-    ```
-    $ <copy>/usr/lib/jvm/java-11-openjdk/bin/java HelloWorld.java
-    </copy>
-    Hello World!
     ```
 
 You may now *proceed to the next lab*.

@@ -21,13 +21,13 @@ In this lab, you will:
 1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
 
     ```
-    ssh -i ./<your-key-name> opc@<your-instance-ip-address>
+    ssh -i ./your-key-name opc@your-instance-ip-address
     ```
 
-2. Connect to the database as "sys" user, and create a user, "customer_360". Replace *your-instance-ip-address* with your compute instance ip address and run the below command.
+2. Connect to the database as "sys" user, and create a user, "customer_360".
 
     ```
-    $ <copy> docker exec -it oracle-db sqlplus sys/Welcome1@<your-instance-ip-address>:1521/orclpdb1 as sysdba</copy>
+    $ <copy> docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
     ```
 
 3. At the SQL prompt enter:
@@ -39,10 +39,10 @@ In this lab, you will:
     </copy>
     ```
 
-4. Connect to the database as the "customer_360" user, and create tables. Replace *your-instance-ip-address* with your compute instance ip address in the below command and execute it.
+4. Connect to the database as the "customer_360" user, and create tables.
 
     ```
-    $ <copy>docker exec -it oracle-db sqlplus customer_360/Welcome1@<your-instance-ip-address>:1521/orclpdb1</copy>
+    $ <copy>docker exec -it oracle-db sqlplus customer_360/Welcome1@localhost:1521/orclpdb1</copy>
     ```
 
 5. At the SQL prompt enter:

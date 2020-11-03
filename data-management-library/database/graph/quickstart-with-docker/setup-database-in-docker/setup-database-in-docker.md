@@ -8,7 +8,7 @@ That is, you will create a docker container for Oracle Database as backend stora
 
 ![](images/build_docker.jpg)
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 40 minutes
 
 ### Objectives
 
@@ -29,10 +29,10 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
 1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
 
     ```
-    ssh -i ./<your-key-name> opc@<your-instance-ip-address>
+    ssh -i ./your-key-name opc@your-instance-ip-address
     ```
 
-2. Use the `wget` to download the repository on the compute instance:
+2. Change to `home` directory and use the `wget` to download the repository on the compute instance:
 
     ```
     [opc@oraclelinux77 ~]$ <copy>wget https://github.com/oracle/docker-images/archive/master.zip</copy>
@@ -95,13 +95,11 @@ You have finished uploading Oracle Database zip to your compute instance. You ca
 
     [Oracle Database 19.3.0 for Linux x86-64 (ZIP)](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html)
 
-2. Put `LINUX.X64_193000_db_home.zip` under:
-
- `docker-images-master/OracleDatabase/SingleInstance/dockerfiles/19.3.0/`
+2. Replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and put `LINUX.X64_193000_db_home.zip` under: `docker-images-master/OracleDatabase/SingleInstance/dockerfiles/19.3.0/`
 
     ```
     <copy>
-    scp -i ~/.ssh/<your-key-name> ~/Downloads/LINUX.X64_193000_db_home.zip opc@<your-instance-ip-address>:docker-images-master/OracleDatabase/SingleInstance/dockerfiles/19.3.0/
+    scp -i ~/.ssh/your-key-name ~/Downloads/LINUX.X64_193000_db_home.zip opc@your-instance-ip-address:docker-images-master/OracleDatabase/SingleInstance/dockerfiles/19.3.0/
     </copy>
     ```
 
@@ -171,7 +169,7 @@ You have finished uploading Oracle Database zip to your compute instance. You ca
 
 ## **STEP 2:** Start the containers
 
-1. Start the containers for **Oracle Database** only.
+1. Change the directory to `$REPO_HOME/oracle-pg/docker/` and start the containers for **Oracle Database** only.
 
     ```
     $ <copy>cd oracle-pg/docker/ ;</copy>
@@ -195,10 +193,10 @@ You have finished uploading Oracle Database zip to your compute instance. You ca
 
 ## **STEP 3:** Configure the database
 
-1. Replace *your-instance-ip-address* with your compute instance ip address and connect to the Oracle Database server.
+1. Connect to the Oracle Database server.
 
     ```
-    $ <copy>docker exec -it oracle-db sqlplus sys/Welcome1@<your-instance-ip-address>:1521/orclpdb1 as sysdba</copy>
+    $ <copy>docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
     ```
 
 2. Set max\_string\_size running max\_string\_size.sql. At the SQL prompt enter:
@@ -215,11 +213,11 @@ You have finished uploading Oracle Database zip to your compute instance. You ca
 
 ### Troubleshooting
 
-1. You will get this error when you try to connect before the database is created. Replace *your-instance-ip-address* with your compute instance ip address in the below command and execute it
+1. You will get this error when you try to connect before the database is created.
 
 
     ```
-    $ <copy>docker exec -it oracle-db sqlplus sys/Welcome1@<your-instance-ip-address>:1521/orclpdb1 as sysdba</copy>
+    $ <copy>docker exec -it oracle-db sqlplus sys/Welcome1@localost:1521/orclpdb1 as sysdba</copy>
     ...
     ORA-12514: TNS:listener does not currently know of service requested in connect
     ```

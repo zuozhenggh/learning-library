@@ -22,7 +22,7 @@ The following configuration files determine the graph server startup settings an
 1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
 
     ```
-    ssh -i ./<your-key-name> opc@<your-instance-ip-address>
+    ssh -i ./your-key-name opc@your-instance-ip-address
     ```
 
 2. The pgx-rdbms.conf file under `{$REPO_HOME}/docker/conf/` specifies which graph to pre-load.

@@ -4,7 +4,7 @@
 
 This lab will walk you through the steps to build and start Oracle Linux Docker containers. You will deploy and configure the Property Graph server and client component in these containers.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -21,10 +21,12 @@ In this lab, you will:
 
 ### Clone repository
 
-1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
+1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance as opc user:
 
     ```
-    ssh -i ./<your-key-name> opc@<your-instance-ip-address>
+    <copy>
+    ssh -i ./your-key-name opc@your-instance-ip-address
+    </copy>
     ```
 
 2. Clone the git repository which has the required Docker Compose files and other configuration files and scripts to your machine.
@@ -63,33 +65,39 @@ Put the following files into `$REPO_HOME/oracle-pg/docker/tmp/`
     - apache-groovy-binary-2.4.18.zip
     - oracle-graph-client-20.1.0.zip
 
-    To put the files in the directory, copy the below command and replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address.
+    To put the files in the directory, open a new terminal window, run the below commands by copying one by one, and replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address.
 
     ```
     <copy>
-    scp -i ~/.ssh/<your-key-name> ~/Downloads/oracle-graph-20.1.0.x86_64.rpm opc@<your-instance-ip-address>:oracle-pg/docker/tmp/
+    scp -i ~/.ssh/your-key-name ~/Downloads/oracle-graph-20.1.0.x86_64.rpm opc@your-instance-ip-address:oracle-pg/docker/tmp/
     </copy>
     ```
 
     ```
     <copy>
-    scp -i ~/.ssh/<your-key-name> ~/Downloads/oracle-graph-zeppelin-interpreter-20.1.0.zip opc@<your-instance-ip-address>:oracle-pg/docker/tmp/
+    scp -i ~/.ssh/your-key-name ~/Downloads/oracle-graph-zeppelin-interpreter-20.1.0.zip opc@your-instance-ip-address:oracle-pg/docker/tmp/
     </copy>
     ```
 
     ```
     <copy>
-    scp -i ~/.ssh/<your-key-name> ~/Downloads/apache-groovy-binary-2.4.18.zip opc@<your-instance-ip-address>:oracle-pg/docker/tmp/
+    scp -i ~/.ssh/your-key-name ~/Downloads/apache-groovy-binary-2.4.18.zip opc@your-instance-ip-address:oracle-pg/docker/tmp/
     </copy>
     ```
 
     ```
     <copy>
-    scp -i ~/.ssh/<your-key-name> ~/Downloads/oracle-graph-client-20.1.0.zip opc@<your-instance-ip-address>:oracle-pg/docker/tmp/
+    scp -i ~/.ssh/your-key-name ~/Downloads/oracle-graph-client-20.1.0.zip opc@your-instance-ip-address:oracle-pg/docker/tmp/
     </copy>
     ```
 
-    Now let's unzip oracle-graph-client-20.1.0.zip
+3. Navigate to the previous terminal in which you were opc user and change directory to `$REPO_HOME`.
+
+    ```
+    $ <copy>cd oracle-pg/docker/tmp/</copy>
+    ```
+
+4. Now let's unzip oracle-graph-client-20.1.0.zip file.
 
     ```
     <copy>
@@ -97,10 +105,9 @@ Put the following files into `$REPO_HOME/oracle-pg/docker/tmp/`
     </copy>
     ```
 
-3. Change directory to `$REPO_HOME` and run the following script to extract the packages:
+5. Run the following script to extract the packages:
 
     ```
-    $ <copy>cd oracle-pg/docker/tmp/</copy>
     $ <copy>sh extract.sh</copy>
     ```
 
@@ -140,7 +147,7 @@ to
 
 2. `Ctl+C` to quit.
 
-### Starting, stopping, restarting, or removing containers once they're built.
+### Starting, stopping, restarting, checking status or removing containers once they're built.
 
 1. Start, stop, or restart the containers.
 
@@ -149,7 +156,13 @@ to
     $ <copy>docker-compose start|stop|restart</copy>
     ```
 
-2. To remove the docker containers.
+2. Check status of the containers.
+
+    ```
+    $ <copy>docker-compose ps</copy>
+    ```
+
+3. To remove the docker containers.
 
     ```
     $ <copy>cd oracle-pg/docker/ </copy>

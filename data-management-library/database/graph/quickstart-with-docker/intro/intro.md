@@ -6,7 +6,7 @@ In this workshop, you will work with Docker images for an Oracle Database and de
 
 Next, you will load data, create a graph, and query and analyze the graph and visualize query results. The data consists of information about customers, their social network, their accounts, their purchases, and the stores where they made these purchases.
 
-Estimated Workshop Time: 110 minutes.
+Estimated Workshop Time: 130 minutes.
 
 ### About Oracle Property Graph
 
@@ -32,7 +32,6 @@ In this workshop, you will:
 ### Prerequisites
 
 - This workshop requires an Oracle Free Tier, Always Free, Paid or an existing Oracle Cloud account (Not all services in this workshop are Always Free services).
-- Note: If you have Docker installed and running on your machine, you can proceed to the lab - Setup a Property Graph Analysis Environment in Docker
 
 ## Acknowledgements
 

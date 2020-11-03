@@ -20,7 +20,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-linux-ol7.8-ft-compute-instance.md"
         },
         {
-            "title": "Lab 3: Setup Docker on Oracle Cloud Instance and Install Necessary Artifacts",
+            "title": "Lab 3: Setup Docker and Install Git on Oracle Cloud Instance",
             "filename": "../../setup-docker-compute/setup-docker-compute.md"
         },
         {

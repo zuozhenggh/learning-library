@@ -201,7 +201,7 @@ Let's find accounts that have had an outbound and inbound transfer of over 500 o
 1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
 
     ```
-    ssh -i ./<your-key-name> opc@<your-instance-ip-address>
+    ssh -i ./your-key-name opc@your-instance-ip-address
     ```
 
 2. Start the JShell in the graph-client. Copy and paste the following command to do that.
