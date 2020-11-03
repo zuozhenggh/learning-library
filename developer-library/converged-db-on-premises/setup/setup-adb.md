@@ -33,7 +33,6 @@ In the previous lab you created a compute instance (running the eShop applicatio
 
 ## **STEP 2:**:  Connect Docker Instance to AJD
 
-
 1.  Run the script env\_setup\_script.sh, this will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run.
 
       ````
@@ -42,6 +41,8 @@ In the previous lab you created a compute instance (running the eShop applicatio
       ./env_setup_script_adb.sh</copy>
       ````
    ![](./images/setup-script.png " ")
+
+You now have a docker container running the eShop application and all the data across multiple modalities, JSON, Analytical data, XML, Spatial and Graph.  A true converged database.
 
 You may now [proceed to the next lab](#next).
 
