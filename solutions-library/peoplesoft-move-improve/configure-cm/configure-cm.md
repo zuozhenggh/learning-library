@@ -72,8 +72,6 @@ You may now proceed to the next lab.
 **Created By/Date**   
 - Rich Konopka, Peoplesoft Specialist, October 2020  
 - Megha Gajbhiye, Cloud Solutions Engineer, October 2020  
-
-**Last Updated By/Date**    
 - Sara Lipowsky, Cloud Solutions Engineer, October 2020  
 
 ## Need Help?

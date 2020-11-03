@@ -117,8 +117,6 @@ You may proceed to the next lab.
 **Authors** 
 - Rich Konopka, PeopleSoft Specialist, October 2020
 - Megha Gajbhiye, Cloud Solutions Engineer, October 2020
-
-**Last Updated By/Date** 
 - Sara Lipowsky, Cloud Engineer, October 2020
 
 ## Need Help?

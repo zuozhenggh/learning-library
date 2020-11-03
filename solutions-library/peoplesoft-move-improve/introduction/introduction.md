@@ -79,8 +79,6 @@ The following terms are commonly employed in Peoplesoft cloud operations and use
 **Created By/Date**   
 - Rich Konopka, Peoplesoft Specialist, October 2020  
 - Megha Gajbhiye, Cloud Solutions Engineer, October 2020  
-
-**Last Updated By/Date**    
 - Sara Lipowsky, Cloud Solutions Engineer, October 2020  
 
 ## Need Help?

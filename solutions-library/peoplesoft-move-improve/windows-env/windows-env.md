@@ -33,8 +33,6 @@ Estimated Lab Time: 3 hours
 **Authors** 
 - Rich Konopka, PeopleSoft Specialist, October 2020
 - Megha Gajbhiye, Cloud Solutions Engineer, October 2020
-
-**Last Updated By/Date** 
 - Sara Lipowsky, Cloud Engineer, October 2020
 
 ## Need Help?
