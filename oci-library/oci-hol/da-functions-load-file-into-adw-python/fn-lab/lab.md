@@ -26,13 +26,16 @@ Estimated time: 30 minutes
 In this step, you will create an application and set up Fn CLI on Cloud Shell.
 
 1. Under Solutions and Platform, select **Developer Services** and click **Functions**.
-2. Click **Create Application**.
-3. For name, enter `etl-app`.
-4. Select the VNC you created earlier (e.g. `fn-vcn`).
-5. Select the public subnet.
-6. Click **Create**.
-7. Click on the created application to open the application details. 
-8. Click the **Getting Started** link and follow the **Begin your Cloud Shell session** and **Setup fn CLI on Cloud Shell** sections in the **Cloud Shell Setup**.
+2. Select your development compartment from the **Compartment** list.
+3. Click **Create Application**.
+4. For name, enter `etl-app`.
+5. Select the VNC you created earlier (e.g. `fn-vcn`).
+6. Select the public subnet.
+7. Click **Create**.
+8. Click on the created application to open the application details. 
+9. Click the **Getting Started** link and follow the **Begin your Cloud Shell session** and **Setup fn CLI on Cloud Shell** sections in the **Cloud Shell Setup**.
+
+![Create an application](./images/create-fn-app.png)
 
 This involves launching Cloud Shell, updating the Fn context, generating an auth token for the registry, and logging into the Oracle Cloud Infrastructure Registry.
 
@@ -40,17 +43,25 @@ This involves launching Cloud Shell, updating the Fn context, generating an auth
 
 To use other OCI Services, your function must be part of a **dynamic group**. For information on creating dynamic groups, refer to the [documentation](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#To).
 
+Before you create a dynamic group, you need to get your development compartment OCID. You will use the compartment OCID in the dynamic group matching rule.
+
+1. Open the navigation menu, select **Identity**, and then **Compartments**.
+2. Find your development compartment from the list, hover over the cell in the OCID column and click **Copy**, to copy the compartment OCID to your clipboard.
+3. Store the compartment OCID as you will use it soon.
+
+Now you're ready to create a dynamic group.
+
 1. To create a dynamic group, open the navigation menu, select **Identity**, and then **Dynamic Groups**.
 2. Click **Create Dynamic Group**.
 3. For name, enter `functions-dynamic-group`.
 4. For description, enter `Group with all functions in a compartment`.
 3. To select the functions that belong to the dynamic group, [write matching rules](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#Writing). Write the following matching rule that includes all functions within a compartment you created your application in:
 
-    ```text
+    <copy>
     All {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..example'}
-    ```
+    </copy>
 
-  *Note:* Make sure you replace the above value with your compartment OCID. To get the compartment OCID, open the navigation menu, select **Identity**, and then **Compartments**. 
+  *Note:* Make sure you replace the above value with the compartment OCID you stored earlier.
 
 ## **STEP 3:** Create Object Storage Buckets
 
@@ -59,19 +70,23 @@ You need two buckets in Object Storage, the `input-bucket` and the `processed-bu
 Let's create the `input-bucket` first:
 
 1. Open the navigation menu, select **Object Storage**, and then select **Object Storage**.
-2. Click the **Create Bucket**.
-3. Name the bucket **input-bucket**.
-4. Select the **Standard** storage tier.
-5. Check the **Emit Object Events** check box.
-6. Click **Create Bucket**.
+2. Select your development compartment from the **Compartment** list.
+3. Click the **Create Bucket**.
+4. Name the bucket **input-bucket**.
+5. Select the **Standard** storage tier.
+6. Check the **Emit Object Events** check box.
+7. Click **Create Bucket**.
+
+![Create input bucket](./images/create-input-bucket.png)
 
 Next, create the second bucket (`processed-bucket`):
 
-7. Open the navigation menu, select **Object Storage**, and then select **Object Storage**.
-2. Click the **Create Bucket**.
-3. Name the bucket **processed-bucket**.
-4. Select the **Standard** storage tier.
-5. Click **Create Bucket**.
+1. Open the navigation menu, select **Object Storage**, and then select **Object Storage**.
+2. Select your development compartment from the **Compartment** list.
+3. Click the **Create Bucket**.
+4. Name the bucket **processed-bucket**.
+5. Select the **Standard** storage tier.
+6. Click **Create Bucket**.
 
 ## **STEP 4:** Create IAM policies
 
@@ -81,14 +96,18 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 2. Click **Create Policy**.
 3. For name, enter `functions-buckets-policy`.
 4. For description, enter `Policy that allows functions dynamic group to manage objects in the buckets`.
-5. Enter the following policies, make sure you replace `compartment-name` with your compartment:
+5. Click the **Customize (Advanced)** link and paste the policy statements into the Policy Builder field: 
 
-    ```text
-    Allow dynamic-group functions-dynamic-group to manage objects in compartment <compartment-name> where target.bucket.name='input-bucket'
-    Allow dynamic-group functions-dynamic-group to manage objects in compartment <compartment-name> where target.bucket.name='processsed-bucket'
-    ```
+    <copy>
+    Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='input-bucket'
+    Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='processsed-bucket'
+    </copy>
+
+    Note: replace the `compartment-name` with the name of your development compartment (the one where you created the VCN and Function Application).
 
 6. Click **Create**.
+
+![Create functins-buckets-policy](./images/create-fn-bucket-policy.png)
 
 ## **STEP 5:** Create an Autonomous Data Warehouse
 
@@ -96,12 +115,14 @@ The function accesses the Autonomous Database using SODA (Simple Oracle Document
 
 1. Open the navigation menu, select **Autonomous Data Warehouse**.
 2. Click **Create Autonomous Database**.
-3. From the list, select your compartment.
+3. From the list, select your development compartment.
 4. For display name and database name, enter `funcdb`.
 5. For the workload type, select **Transaction Processing**.
 6. For deployment type, select **Shared Infrastructure**.
 7. Enter the admin password.
 8. Click **Create Autonomous Database**.
+
+![Create Autonomous Database](./images/create-db.png)
 
 Wait for OCI to provision the Autonomous Database, and then click the **Service Console** button.
 
@@ -109,10 +130,10 @@ Wait for OCI to provision the Autonomous Database, and then click the **Service 
 2. Under RESTful Services and SODA, click **Copy URL**.
 3. From your terminal (or Cloud Shell), create the collection called `regionsnumbers` by running the command below. Make sure you replace the `<ORDS_BASE_URL>` with the value you copied in the previous step, and `<DB-PASSWORD>` with the admin password you set when you created the Autonomous Database.
 
-    ```bash
+    <copy>
     export ORDS_BASE_URL=<ORDS_BASE_URL>
     curl -X PUT -u 'ADMIN:<DB-PASSWORD>' -H "Content-Type: application/json" $ORDS_BASE_URL/admin/soda/latest/regionsnumbers
-    ```
+    </copy>
 
 4. To double check collection was created, you can list all collections. The output should look similar as below:
 
@@ -129,57 +150,60 @@ In this step, you will clone the functions source code repository and use the `f
 1. From the Console UI, open the Cloud Shell.
 2. Clone the Functions source code repository:
 
-    ```bash
+    <copy>
     git clone https://github.com/oracle/oracle-functions-samples.git
-    ```
+    </copy>
 
 3. Go to the `samples/oci-load-file-into-adw-python` folder:
 
-    ```bash
+    <copy>
     cd oracle-functions-samples/samples/oci-load-file-into-adw-python
-    ```
+    </copy>
 
 4. Deploy the function to the `etl-app`:
 
-    ```bash
+    <copy>
     fn -v deploy --app etl-app
-    ```
+    </copy>
 
 After you deploy the function, you need to set function configuration values so the function knows how to connect to the Autonomous Database.
 
-5. Using the Fn CLI, set the following configuration values. Make sure you replace the `<ORDS_BASE_URL>` and `<DB_PASSWORD>` with your values:
+5. Using the Fn CLI, set the following configuration values. Make sure you replace the `[ORDS_BASE_URL]` and `[DB_PASSWORD]` with your values:
 
-    ```bash
-    fn config function etl-app oci-load-file-into-adw-python ords-base-url <ORDS_BASE_URL>
+    <copy>
+    fn config function etl-app oci-load-file-into-adw-python ords-base-url [ORDS_BASE_URL]
     fn config function etl-app oci-load-file-into-adw-python db-schema admin
     fn config function etl-app oci-load-file-into-adw-python db-user admin
-    fn config function etl-app oci-load-file-into-adw-python dbpwd-cipher <DB-PASSWORD>
+    fn config function etl-app oci-load-file-into-adw-python dbpwd-cipher [DB-PASSWORD]
     fn config function etl-app oci-load-file-into-adw-python input-bucket input-bucket
     fn config function etl-app oci-load-file-into-adw-python processed-bucket processed-bucket
-    ```
+    </copy>
 
 ## **STEP 7:** Create an Event rule
 
 In this step, you will configure a Cloud Event to trigger the function when you drop the files into the `input-bucket`.
 
 1. From Console UI, open navigation and select **Application Integration** and click **Events Service**.
-2. Click **Create Rule**.
-3. For display name, enter `load_CSV_into_ADW`.
-4. For description, enter `Load CSV file into ADW`.
-5. Create three rules. You can click **Another Condition** to add more conditions:
+2. Select your development compartment from the **Compartment** list.
+3. Click **Create Rule**.
+4. For display name, enter `load_CSV_into_ADW`.
+5. For description, enter `Load CSV file into ADW`.
+6. Create three rules. You can click **Another Condition** to add more conditions:
 
     | Condition | Service/Attribute Name | Event Type/Attribute Values |
     | --- | --- | --- |
     | Event Type | Object Storage | Object - Create | 
-    | Attribute | compartmentName | <YOUR_COMPARTMENT> |
+    | Attribute | compartmentName | <YOUR_DEVELOPMENT_COMPARTMENT> |
     | Attribute | bucketName | input-bucket |
 
-6. Under Actions, select **Functions**:
-    - For function compartment, select your compartment.
+7. Under Actions, select **Functions**:
+    - For function compartment, select your development compartment.
     - For function application, select `etl-app`.
     - For function, select `oci-load-file-into-adw-python`.
 
-7. Click **Create Rule**.
+8. Click **Create Rule**.
+
+![Rule](./images/create-rule.png)
 
 ## **STEP 8:** Test the function
 
@@ -188,11 +212,11 @@ To test the function, you can upload a `.csv` file to the `input-bucket`. You ca
 1. Open the Cloud Shell.
 2. Go to the functions folder:
 
-    ```bash
-    cd oracle-functions-samples/samples/oci-load-file-into-adw-python
-    ```
+    <copy>
+    cd ~/oracle-functions-samples/samples/oci-load-file-into-adw-python
+    </copy>
 
-3. Use the OCI CLI to upliad `file1.csv` to the `input-bucket`:
+3. Use the OCI CLI to upload `file1.csv` to the `input-bucket`:
 
     ```bash
     $ oci os object put  --bucket-name input-bucket --file file1.csv
@@ -208,16 +232,19 @@ Uploading a file to the bucket triggers an event that invokes the function. The 
 
 To see the data in the database, follow these steps:
 
-4. From the OCI console, navigate to **Autonomous Data Warehouse** and click on the database name (`funcdb`).
+1. From the OCI console, navigate to **Autonomous Data Warehouse**.
+2. Select your development compartment from the **Compartment** list.
+3. Select **Transaction Processing** from the **Workload Type** list.
+4. Click on the database name (`funcdb`).
 5. Click the **Service Console**.
-6. Click **Development** from the side bar.
+6. Click **Development** link from the side bar.
 7. Click **SQL Developer Web**.
 8. Use **ADMIN** and the admin password to authenticate.
 9. In the worksheet, enter the following query:
 
-    ```
+    <copy>
     select UTL_RAW.CAST_TO_VARCHAR2( DBMS_LOB.SUBSTR( JSON_DOCUMENT, 4000, 1 )) AS json from regionsnumbers
-    ```
+    </copy>
 
 10. Click the green play button to execute the query.
 
@@ -227,7 +254,7 @@ This concludes this lab.
 
 ## Acknowledgements
 
-- **Author** - Peter Jausovec
+- **Author** - Greg Verstraeten
 - **Contributors** -  Peter Jausovec, Prasenjit Sarkar, Adao Junior
 - **Last Updated By/Date** - Adao Junior, October 2020
 
