@@ -4,7 +4,7 @@
 
 In this lab you will setup an Oracle Cloud network (VCNs) and a compute instance with a pre-configured Oracle Database 19c using Oracle Resource Manager and Terraform. It's use to simulate the primary site.
 
-Estimated Lab Time: 30 minutes.
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -16,12 +16,12 @@ This lab assumes you have already completed the following:
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Create a SSH Keys pair
 
-Click on the link below to download the Resource Manager zip files you need to build your enviornment.
+Click on the link below to download the Resource Manager zip files you need to build your environment.
 
 - [db19c-primary-num.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/hjoSts4QD56z3RLS-gl3RuyiPESRs9bSxfsKzdIYFAJ339ZgG-EXarwIiQM5xF5T/n/c4u03/b/data-management-library-files/o/db19c-primary-num.zip) - Packaged terraform primary database instance creation script.
 
 
-## **Step 1:** Prepare the Primary Database
+## **STEP 1:** Prepare the Primary Database
 
 1. Login to the Oracle Cloud Console, open the hamburger menu in the left hand corner. Choose **Resource Manager > Stacks**. Choose the **Compartment** that you want to use, click the  **Create Stack** button. *Note: If you are in a workshop, double check your region to ensure you are on the assigned region.*
 
@@ -53,7 +53,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
      ![](./images/step1.7-stackcreated.png " ")
 
-## **Step 2:** Terraform Plan (OPTIONAL)
+## **STEP 2:** Terraform Plan (OPTIONAL)
 
 When using Resource Manager to deploy an environment, execute a terraform **Plan** to verify the configuration. This is an optional step in this lab.
 
@@ -67,7 +67,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
      
      ![](./images/planjob1.png " ")
 
-## **Step 3:** Terraform Apply
+## **STEP 3:** Terraform Apply
 
 When using Resource Manager to deploy an environment, execute a terraform **Plan** and **Apply**. Let's do that now.
 
@@ -85,17 +85,17 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
      ![](images/image-20201030100144873.png)
 
-## **Step 4:** Connect to your Instance
+## **STEP 4:** Connect to your Instance
 
 ### MAC or Windows CYGWIN Emulator
 
-3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
+1.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
      ````
      ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
      ````
 
-4. After successfully logging in, proceed to Step 5.
+2. After successfully logging in, proceed to Step 5.
 
      ```
      ssh -i labkey opc@xxx.xxx.xxx.xxx
@@ -131,7 +131,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 8.  Click Open to begin your session with the instance.
 
-## **Step 5:** Verify the Database is Up
+## **STEP 5:** Verify the Database is Up
 
 1.  From your connected session of choice **tail** the `buildsingle.log`, This file has the configures log of the database.
 
@@ -200,12 +200,10 @@ You now have a fully functional Oracle Database 19c instance **ORCL** running on
 You may proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - Minqiao Wang, DB Product Management, Oct 2020
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Oct 2020
-* **Workshop (or Lab) Expiry Date** - <Month Year> 
+* **Author** - Minqiao Wang, DB Product Management
+* **Last Updated By/Date** - Minqiao Wang, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
