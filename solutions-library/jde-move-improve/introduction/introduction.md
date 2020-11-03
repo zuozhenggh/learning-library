@@ -5,9 +5,19 @@
 
 This workshop will demonstrate how to deploy JD Edwards EnterpriseOne Release 9.2 Trial Edition to Oracle Cloud Infrastructure (OCI) 
 
-Upon completion of this workshop, you will have a working deployment of JD Edwards EnterpriseOne Trial Edition with Tools Release 9.2 and Applications Release 9.2 on fully functional suite servers deployed on a single Oracle Cloud Infrastructure Compute instance 
+Upon completion of this lab, you will have a working deployment of JD Edwards EnterpriseOne Trial Edition with Tools Release 9.2 and Applications Release 9.2 on a fully functional suite of interconnected virtual machine.You can use it to verify functionality and to investigate proofs of concept
 
 Trial Edition is for training and demonstration purposes only. It can be used to verify functionality and to investigate proofs of concept (POCs). The Trial Edition on OCI Compute contains only the Pristine (PS920) environment, which is one of the four standard JD Edwards EnterpriseOne environments  
+
+This single image is built using an Oracle Linux VM instance containing these JD Edwards EnterpriseOne servers:
+
+* Enterprise ServerDatabase Server
+
+* HTML Web ServerBI Publisher (BIP) Server 
+
+* Application Interface Services (AIS) Server
+
+* Application Development Framework (ADF) Server
 
 **Duration:** 2 hours (additional time may be needed for first-time users)
 
