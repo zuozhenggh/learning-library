@@ -14,8 +14,6 @@ ORDS is a Java application that enables developers with SQL and database skills 
 For more info see this [blog](https://www.oracle.com/tools/technologies/faq-rest-data-services.html)
 post 
 
-**Lab Architecture**
-
 ![](./images/ords1.png " ") 
 
 **Install ORDS using SQL Developer**
@@ -72,15 +70,13 @@ This lab assumes you have:
 
 ## **STEP 1**: Start ORDS in standalone mode
 
-1. The script (`env\_setup\_script.sh`) which was run in `Lab-3` starts the ORDS in standalone mode  
+1. The script (`env_setup_script.sh`) which was run in `Lab-3` starts the ORDS in standalone mode  
 
 2. Check if ORDS is connecting through the browser
    Open the browser and enter the following URI in the address bar:
 
     ````
-    <copy>
-    http://&lt;Instance_ip_address&gt:9090/ords/
-    </copy>
+    http://Instance_ip_address:9090/ords/
     ````
 
   If you see `ORACLE REST DATA SERVICES 404 Not Found`, it means that `ORDS` is connected. 
@@ -556,7 +552,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
 
 Refer **"Define Resource Module, Resource Template" section from STEP 2** to create resource module and resource template. All those STEPS will be performed under DB connection XML.
 
-**Retrieve information from XML table using GET method**
+`Retrieve information from XML table using GET method`
 
 13. In the RESTful Services navigator, the resource module cnvg contains the resource template cnvg/:id. This template will retrieves the  information from table PURCHASEORDER based on the parameter id. Right click on template  **cnvg/:id** then select **Add handler** and select **GET**.   
    ![](./images/ordslab2_3.png " ")
@@ -569,7 +565,7 @@ Refer **"Define Resource Module, Resource Template" section from STEP 2** to cre
 
     ````
     <copy>
-    SELECT t.object_value.getclobval() FROM   purchaseorder t
+    SELECT t.object_value.getclobval() FROM purchaseorder t
     WHERE  xmlexists('/PurchaseOrder[PONumber/text()=$PONumber]' passing object_value, 
     :id AS "PONumber" )
     </copy>
@@ -1118,13 +1114,12 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
 ## Learn more
 - [ORDS](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.2/index.html?xd_co_f=31b3dbc8-0936-47da-80a8-9e9bce8c17eb")
 
+
 ## Acknowledgements
 
-- **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
-- **Team** - North America Database Specialists.
-- **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
-- **Expiration Date** - June 2021   
+* **Author** - Balasubramanian Ramamoorthy, Arvind Bhope
+* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
