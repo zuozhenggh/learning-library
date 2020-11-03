@@ -1,8 +1,17 @@
 # Failover and Reinstate
 
+## Introduction
 A failover is an unplanned event that assumes the primary database is lost. The standby database is converted to a primary database immediately. A failover might result in some data loss when you use **Maximum Performance** protection mode. After a failover the old primary database must be reinstated as a physical standby which is made simpler with flashback database and Data Guard broker enabled. To execute a failover and reinstatement execute the following commands in Data Guard Broker. 
 
-## Prerequisites
+Estimated Lab Time: 30 minutes.
+
+### Objectives
+
+-   Setup the current primary database flashback on 
+-   Failover 
+-   Reinstate the previous primary database
+
+### Prerequisites
 
 This lab assumes you have already completed the following labs:
 
@@ -247,3 +256,15 @@ READ ONLY WITH APPLY PHYSICAL STANDBY
 SQL> 
 ```
 
+You may proceed to the next lab.
+
+## Acknowledgements
+* **Author** - Minqiao Wang, DB Product Management, Oct 2020
+* **Contributors** -  <Name, Group> -- optional
+* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Oct 2020
+* **Workshop (or Lab) Expiry Date** - <Month Year> 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
