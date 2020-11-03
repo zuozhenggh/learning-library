@@ -21,7 +21,7 @@ Estimated lab time: 30 minutes.
 - The following lab requires an ADW/ATP account. 
 - It assumes you have completed the first lab which explains how you can access the Graph Studio interface of your ADW instance and illustrates some basic concepts.
 
-## STEP 1: Select the tables to create the graph from
+## **STEP 1**: Select the tables to create the graph from
 
 1. The following screenshot shows Graph Studio user interface with the menu, or navigation, icons on the left. They naviagte to the Home, Models, Graphs, Notebooks, and Jobs pages respectively. 
 
@@ -55,7 +55,7 @@ Estimated lab time: 30 minutes.
 
     This model can be modified if necessary.
 
-## STEP 2: Edit your graph model
+## **STEP 2**: Edit your graph model
 
 1. Click on the *CHANNELS* vertex table.
 
@@ -124,7 +124,7 @@ Estimated lab time: 30 minutes.
 
     You see a summary of the model we created. All the input tables and how we want to map those to a property graph.
 
-## STEP 3: Start the graph creation job
+## **STEP 3**: Start the graph creation job
 
 1. Click *Create Graph* on the top right.
 
@@ -154,7 +154,7 @@ Estimated lab time: 30 minutes.
 4. Wait for both jobs to complete successfully.
 
 
-## STEP 4: Inspect the created graph and model
+## **STEP 4**: Inspect the created graph and model
 
 1. Click on the *Graphs* menu icon.
 
@@ -176,7 +176,7 @@ Estimated lab time: 30 minutes.
 
 Congratulations! You successfully converted relational tables into a property graph. You can now go ahead and analyze the relationships in that data using powerful graph queries and algorithms.
 
-*Please proceed to the next lab.*
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Korbi Schmid, Product Development

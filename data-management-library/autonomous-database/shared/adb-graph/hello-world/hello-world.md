@@ -24,7 +24,7 @@ Learn how to
 
 - The following lab requires an ADB-Shared (ADW/ATP) account. 
 
-## STEP 1: Connect to your autonomous database using Graph Studio
+## **STEP 1**: Connect to your autonomous database using Graph Studio
 
 Open the ADB service console and click on the Development link in the menu on the left. 
 
@@ -54,7 +54,7 @@ Enter your ADW/ATP account credentials into the login screen:
 
 Then click the "Sign In" button.
 
-## STEP 2: Create a simple graph using PGQL
+## **STEP 2**: Create a simple graph using PGQL
 
 1. The following screenshot shows Graph Studio user interface with the menu, or navigation, icons on the left. They naviagte to the Home, Models, Graphs, Notebooks, and Jobs pages respectively. 
 
@@ -98,7 +98,7 @@ Then click the "Sign In" button.
 
     ![](./images/query-playground-create-graph-statement.png " ")
 
-## STEP 3: Load the graph into memory
+## **STEP 3**: Load the graph into memory
 
 1. Navigate to the Graphs page:
 
@@ -120,7 +120,7 @@ Then click the "Sign In" button.
 
     ![](./images/jobs-first-graph-load-into-memory.png " ")
 
-## STEP 4: Create your first notebook
+## **STEP 4**: Create your first notebook
 
 1. Navigate to the Notebooks page:
 
@@ -155,7 +155,7 @@ Then click the "Sign In" button.
 
     Markdown paragraphs are useful to add explanations to your notebooks and order them into chapters. You can embed images and even videos using Markdown or HTML syntax, give it a try.
 
-## STEP 5: Analyze, query and visualize the graph
+## **STEP 5**: Analyze, query and visualize the graph
 
 1. Add another paragraph to the notebook by hovering at the middle of the bottom of the paragrah and clicking the *+* button which appears.
    
