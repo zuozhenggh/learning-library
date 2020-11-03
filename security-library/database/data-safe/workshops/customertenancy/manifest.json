@@ -7,14 +7,14 @@
             "filename": "./prerequisites.md"
           },
             {
-              "title": "Set Up an Oracle Data Safe Environment",
-              "description": "This lab provides the instructions for a tenancy administrator to set up an Oracle Data Safe environment for a regular Oracle Cloud user.",
-              "filename": "./set-up-oracle-datasafe-environment.md"
-            },
-            {
               "title": "Introduction",
               "description": "This lab provides information about the Oracle Data Safe workshop.",
               "filename": "../../introduction/introduction.md"
+            },
+            {
+              "title": "Set Up an Oracle Data Safe Environment",
+              "description": "This lab provides the instructions for a tenancy administrator to set up an Oracle Data Safe environment for a regular Oracle Cloud user.",
+              "filename": "./set-up-oracle-datasafe-environment.md"
             },
             {
               "title": "Lab 1: Provision and Register an Autonomous Database",
@@ -40,11 +40,6 @@
               "title": "Lab 5: Discover and Mask Sensitive Data",
               "description": "This lab shows you how to discover and mask sensitive data in Oracle Data Safe by using the Data Discovery and Data Masking features.",
               "filename": "../../discover-mask-sensitive-data/discover-mask-sensitive-data.md"
-            },
-              {
-              "title": "Lab 6: Discover and Mask Sensitive Data",
-              "description": "This lab shows you how to discover and mask sensitive data in Oracle Data Safe by using the Data Discovery and Data Masking features.",
-              "filename": "../../provision-register-autonomous-database/practice-using-sqm-scalar-and-table-expressions.md"
-              }
+            }
           ]
       }

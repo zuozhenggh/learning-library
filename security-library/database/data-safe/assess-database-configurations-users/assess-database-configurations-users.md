@@ -3,7 +3,7 @@
 ## Introduction
 This lab shows you how to assess database configurations and users in your Autonomous Database by using the Security Assessment and User Assessment features in Oracle Data Safe.
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -224,7 +224,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, October 29, 2020
+* **Last Updated By/Date** - Jody Glover, November 3, 2020
 
 
 ## Need Help?
