@@ -3,6 +3,8 @@
 ## Introduction
 This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run your workshop.
 
+*Estimated Lab Time:* 15 minutes
+
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
 
@@ -269,7 +271,7 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 [Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
 
 ## Appendix: Troubleshooting Tips
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
 - Availability Domain Mismatch
 - Limits Exceeded
 - Invalid public key

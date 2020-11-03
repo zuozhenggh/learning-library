@@ -1,6 +1,6 @@
-# Migrate the Tomcat application
+# Migrate the Tomcat Application
 
-## About This lab
+## Introduction
 
 In this lab, we will migrate the application to the Tomcat Cluster on Oracle Cloud Infrastructure.
 
@@ -14,9 +14,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-*For this lab, you need*
+For this lab, you need
 
-* to have provisioned the Tomcat cluster on OCI
+* To have provisioned the Tomcat cluster on OCI
 
 ## **STEP 1**: Move the application WAR file to the Tomcat cluster on OCI
 
@@ -86,7 +86,7 @@ In this lab, you will:
 
     It may take several seconds to deploy, so if you don't see the folder at first, try the `ls -lh` command again
 
-## **STEP 3:** Configure the datasource
+## **STEP 2:** Configure the datasource
 
 1. Open the `server.xml` file in /etc/tomcat/ for editing
 
@@ -205,11 +205,11 @@ In this lab, you will:
     Note: The first time the application runs, the query may take up to 30sec as the indices and cache are primed.
     
 
-## **STEP 4:** Repeat for each Tomcat server if you had more than 1
+## **STEP 3:** Repeat for each Tomcat server if you had more than 1
 
 1. Repeat steps 2 to 6 for each server on the Tomcat cluster.
 
-## **STEP 5:** Check the application served via the load balancer
+## **STEP 4:** Check the application served via the load balancer
 
 1. Get the load balancer public IP from the Terraform output
 
@@ -225,5 +225,7 @@ You may proceed to the next lab.
  - **Author** - Subash Singh, Emmanuel Leroy, October 2020
  - **Last Updated By/Date** - Emmanuel Leroy, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

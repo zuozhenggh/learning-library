@@ -12,8 +12,6 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 Estimated Lab Time: 60 minutes
 
-<p>&nbsp;</p>
-
 ### Objectives
 
 As a developer, data Engineer,
@@ -24,13 +22,13 @@ As a developer, data Engineer,
   4. Set up VNC
   5. Install OpenFoam and Paraview 
 
-<p>&nbsp;</p>
+ 
 
 ### Prerequisites
 
   1. An Oracle Cloud Infrastructure account with privileges to create an instance VM standard 2.1 or BM.HPC2.36 shape. 
 
-<p>&nbsp;</p>
+ 
 
 ###  Infrastructure terminology
    - Worker node: HPC compute instances providing the processing power to execute the workload of computational simulations or other engineering workload. In this Demo compute shape BM.HPC2.36 nodes are the worker nodes.
@@ -43,9 +41,9 @@ As a developer, data Engineer,
 ## **STEP 1**: Provision Oracle Virtual Cloud Network
 
 1. Before creating an instance, we need to configure a Virtual Cloud Network. Select the menu on the top left, then select Networking and Virtual Cloud Networks
-<img src="images/vcn.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-<img src="images/create_vcn.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-<img src="images/vcn_content.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/vcn.png)
+![](./images/create_vcn.png)
+![](./images/vcn_content.png)
 
 
 2. On the next page, select the following for your VCN:
@@ -71,15 +69,15 @@ As a developer, data Engineer,
         - Subnet Access: Private Subnet
         - Security List: select security list created in previous step
 5. Click **create subnet**
-<img src="images/create_subnet.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-<img src="images/create_subnet_content.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/create_subnet.png)
+![](./images/create_subnet_content.png)
 
 
 6. Create Internet Gateway
 
      1. Click on `hpc_vcn` you created and on the **Resources** menu on the left side of the page, select **Internet Gateway**, create Internet Gateway.
-<img src="images/create_IG.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-<img src="images/create_IG_content.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/create_IG.png)
+![](./images/create_IG_content.png)
 
 
 Note: That will create the internet gateway, and it will need to be associated with a route table. In this case, since the Default Route Table will be used for the public subnet, the internet gateway should be associated with that route table.
@@ -88,8 +86,8 @@ Note: That will create the internet gateway, and it will need to be associated w
     - Target Type: Internet Gateway
     - Destination CIDR Block: 0.0.0.0/0
     - Target Internet Gateway in compartment: Internet Gateway you created
-<img src="images/route_table.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-<img src="images/route_rules.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/route_table.png)
+![](./images/route_rules.png)
 
 
 
@@ -113,9 +111,9 @@ Note: For this lab we will be utilizing only the basic VM.Standard2.1 shape, but
     - SSH key: Attach your public key file
 
      1. On the top left menu, select Compute and create instance.
-<img src="images/compute.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-<img src="images/compute_bm.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-<img src="images/compute_vm.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/compute.png)
+![](./images/compute_bm.png)
+![](./images/compute_vm.png)
 
 
      2. SSH into your headnode and generate ssh key specific for cluster to communicate.
@@ -159,7 +157,7 @@ Note: For this lab we will be utilizing only the basic VM.Standard2.1 shape, but
   1. Select worker node and click on **Attached VNICs** in the **resources** menu on the left
   2. Select **Edit VNIC**
   3. Uncheck **Skip Source/ Destination Check** if it is checked and click **Update VNICs**
-<img src="images/nat_gateway.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/nat_gateway.png)
 
 
 ## **STEP 4**: Mounting a drive
@@ -352,7 +350,7 @@ Note: Only if the node shape has a NVMe attached (BM.HPC2.36 has one, not VM.Sta
     $ chmod 600 /home/opc/.vnc/passwd
     $ /usr/bin/vncserver
     ```
-<p>&nbsp;</p>
+ 
 
 3. Download this zip with the <a href="../scripts/motorbike_RDMA.tgz" target="_blank">scripts</a> in /mnt/share/work in one of worker nodes. Unzip the file using `tar -xf motorbike_RDMA.tgz`
 
@@ -474,18 +472,8 @@ manualCoeffs
 
         ```
 
-
-
-
-
-<p>&nbsp;</p>
-
 8. Once the workload completes successfully, configure VNC client on your machine like this. Provide Public IP of Bastion server and VNC port
-<img src="images/24-VNC_Connection.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-
-
-<p>&nbsp;</p>
-
+![](./images/24-VNC_Connection.png)
 
 9. OPTIONALLY, In case you are not allowed to open VNC port 5901 or due to security reason want to make ssh tunnel for this port, use the following command to make ssh tunnel on port 5901 without opening the port in the security list
 
@@ -494,12 +482,8 @@ manualCoeffs
         ```
         ssh -L 5901:localhost:5901 -i Dropbox/amar_priv_key -N -f -l opc 150.136.41.3
         ```
-
 11. Do not close the above ssh tunnel terminal window. Now initiate VNC session and this time instead of IP address use "localhost" on port 5901, even though this port is not opened in the security list of the subnet.
-<img src="images/28-ssh_Tunnel.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
-
-
-<p>&nbsp;</p>
+![](./images/28-ssh_Tunnel.png)
 
 
 12. Start the Paraview application from within the bastion server
@@ -511,23 +495,23 @@ manualCoeffs
 
 
 13. In Paraview application window, File -> Open -> Path "/mnt/gluster-share/work" and select file name motorbike.foam. It will be zero byte file and that should be fine.
-<img src="images/25-Paraview_Menu.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/25-Paraview_Menu.png)
 
 
-<p>&nbsp;</p>
+ 
 
 14. On Left of the window, Under Properties tab, select Mesh Regions to select all the values and then unselect the top values which does not start with motorBike_ prefix. Make sure that all values starting with motorBike_ are selected. Click on the Apply button, some errors will pop up, ignore the error window that pops up to view the rendering of the image in VNC console.
-<img src="images/26-Mesh_Regions.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/26-Mesh_Regions.png)
 
 
-<p>&nbsp;</p>
+ 
 
 
 15. An image like below will be rendered on the screen. Based on some display settings, the image on the screen might look a bit different. 
-<img src="images/27-Image_Rendering.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
+![](./images/27-Image_Rendering.png)
 
 
-<p>&nbsp;</p>
+ 
 
 
 All Done! This completes the demo for running OpenFoam application on a Standard VM on OCI.
@@ -543,5 +527,7 @@ These are detailed information about managing High Performance Compute Instance.
 * **Last Updated By/Date** - Harrison Dvoor, October 2020
 
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/high-performance-computing-hpc). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
