@@ -143,7 +143,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 ## **STEP 4:** Create Oracle Wallet
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
-1.  With the autononous_database_ocid that is listed in your apply results, create the Oracle Wallet. You will be setting the wallet password to a generic value:  *WElcome123##*.  
+1.  With the autononous\_database\_ocid that is listed in your apply results, create the Oracle Wallet. You will be setting the wallet password to a generic value:  *WElcome123##*.  
    
       ````
       <copy>
@@ -155,10 +155,10 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ````
       ls
       ````
-4.  Transfer this wallet file to your application compute instance
+4.  Transfer this wallet file to your application compute instance.  Replace the instance below with your instance 
 
     ````
-    sftp -i cloudshellkey opc@150.136.216.184 <<< $'mput ../converged-wallet*' 
+    sftp -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address> <<< $'mput ../converged-wallet*' 
     ````
 
 
