@@ -105,7 +105,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 
 4. If a help note is displayed, click the **X** button to close it.
 
-5. Open the [load-data-safe-sample-data_admin.sql](files/load-data-safe-sample-data_admin.sql) script in a text editor, such as NotePad.
+5. Open the [load-data-safe-sample-data_admin.sql]( https://objectstorage.us-ashburn-1.oraclecloud.com/p/AhbGeWPABkKIfAsU-W9_YPNFhWFbMx50_Ahlg0wf1XEmCU-PZQqAWcKp-eDBU-AL/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script in a text editor, such as NotePad.
 
 6. Copy the entire script to the clipboard and then paste it into a worksheet in SQL Developer Web.
 
@@ -144,7 +144,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
       - `REGIONS` - 4 rows
       - `SUPPLEMENTAL_DATA` - 149 rows
 
-14. If your data is different than what is specified above, rerun the  [load-data-safe-sample-data_admin.sql](files/load-data-safe-sample-data_admin.sql) script.
+14. If your data is different than what is specified above, rerun the  [load-data-safe-sample-data_admin.sql]( https://objectstorage.us-ashburn-1.oraclecloud.com/p/AhbGeWPABkKIfAsU-W9_YPNFhWFbMx50_Ahlg0wf1XEmCU-PZQqAWcKp-eDBU-AL/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script.
 
 15. Sign out of SQL Developer Web and close the tab.
 
@@ -241,10 +241,10 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
   * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-  * **Last Updated By/Date** - Jody Glover, October 29, 2020
+  * **Last Updated By/Date** - Jody Glover, November 3, 2020
 
 
-  ## Need Help?
-  Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+## Need Help?
+  Please submit feedback or ask for help using our [Data Safe Community Support Forum]( https://community.oracle.com/tech/developers/categories/data-safe). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
   If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -17,11 +17,11 @@ Estimated time: 10 minutes
 
 - Your Oracle Cloud Trial Account
 
-## **Step 1:** Create compartment
+## **STEP 1:** Create compartment
 
 If you want to use an existing compartment, skip to the next step. Otherwise, click **Compartments** and then **Create Compartment**, to create a new compartment.
 
-## **Step 2:** Create VCN and subnets
+## **STEP 2:** Create VCN and subnets
 
 If a suitable VCN in which to create network resources doesn't exist already, log in to the Console as a tenancy administrator and under Core Infrastructure, go to **Networking** and then:
 
@@ -29,7 +29,7 @@ If a suitable VCN in which to create network resources doesn't exist already, lo
 1. Click **Start VCN Wizard**, then **VCN with Internet Connectivity**, then **Start VCN Wizard**.
 1. Enter a name for the new VCN (for example: `fn-vcn`), click **Next**, and then click **Create** to create the VCN along with the related network resources.
 
-## **Step 3:** Create policy for Oracle Functions
+## **STEP 3:** Create policy for Oracle Functions
 
 Log in to the Console as a **tenancy administrator** and under Governance and Administration, go to **Identity** and click **Policies** and then do the following:
 

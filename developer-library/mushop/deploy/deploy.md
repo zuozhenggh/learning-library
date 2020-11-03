@@ -26,6 +26,7 @@ In this lab, you will:
 ### Prerequisites
 
 * An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
+* Completed the **Setup Cloud Environment** lab
 
 ## **STEP 1**: Obtain MuShop source code
 
@@ -35,6 +36,18 @@ In this lab, you will:
     <copy>
     git clone https://github.com/oracle-quickstart/oci-cloudnative.git mushop
     </copy>
+    ````
+
+    Sample response:
+
+    ````shell
+    Cloning into 'mushop'...
+    remote: Enumerating objects: 542, done.
+    remote: Counting objects: 100% (542/542), done.
+    remote: Compressing objects: 100% (313/313), done.
+    remote: Total 15949 (delta 288), reused 424 (delta 200), pack-reused 15407
+    Receiving objects: 100% (15949/15949), 17.59 MiB | 33.71 MiB/s, done.
+    Resolving deltas: 100% (9557/9557), done.
     ````
 
 1. Change to the mushop directory
@@ -73,7 +86,7 @@ In this lab, you will:
     </copy>
     ````
 
-## **STEP 2**: OKE Cluster Setup
+## **STEP 2**: Cluster Setup for the App
 
 MuShop provides an umbrella helm chart called setup, which includes several recommended installations on the cluster. These installations represent common 3rd party services, which integrate with Oracle Cloud Infrastructure or enable certain application features.
 
@@ -85,14 +98,6 @@ MuShop provides an umbrella helm chart called setup, which includes several reco
 | [Ingress Nginx](https://kubernetes.github.io/ingress-nginx/) | Ingress controller and public Load Balancer | ingress-nginx.enabled |
 | [Service Catalog](https://github.com/kubernetes-sigs/service-catalog/blob/master/charts/catalog/README.md) | Service Catalog chart utilized by Oracle Service Broker | catalog.enabled |
 | [Cert Manager](https://github.com/jetstack/cert-manager/blob/master/README.md) | x509 certificate management for Kubernetes | cert-manager.enabled |  
-
-1. Check kubectl context.
-
-    ````shell
-    <copy>
-    kubectl config current-context
-    </copy>
-    ````
 
 1. Create a namespace for MuShop utilities
 
@@ -110,6 +115,23 @@ MuShop provides an umbrella helm chart called setup, which includes several reco
     </copy>
     ````
 
+    Sample response:
+
+    ````shell
+    Hang tight while we grab the latest from your chart repositories...
+    ...Successfully got an update from the "stable" chart repository
+    Update Complete. ⎈Happy Helming!⎈
+    Saving 7 charts
+    Downloading prometheus from repo https://kubernetes-charts.storage.googleapis.com
+    Downloading grafana from repo https://kubernetes-charts.storage.googleapis.com
+    Downloading metrics-server from repo https://kubernetes-charts.storage.googleapis.com
+    Downloading ingress-nginx from repo https://kubernetes.github.io/ingress-nginx
+    Downloading catalog from repo https://svc-catalog-charts.storage.googleapis.com
+    Downloading cert-manager from repo https://charts.jetstack.io
+    Downloading jenkins from repo https://kubernetes-charts.storage.googleapis.com
+    Deleting outdated charts
+    ````
+
 1. Install setup helm chart:
 
     ````shell
@@ -118,7 +140,9 @@ MuShop provides an umbrella helm chart called setup, which includes several reco
     </copy>
     ````
 
-## **STEP 3**: Hostname Ingress and Deploy with Helm
+*Note:* When you install the mushop-utils chart release, Kubernetes will create an OCI LoadBalancer to the be used by the ingress kubernetes.
+
+## **STEP 3**: Get Ingress IP Address
 
 Part of the cluster setup includes the installation of an nginx ingress controller. This resource exposes an OCI load balancer, with a public ip address mapped to the OKE cluster.
 
@@ -139,7 +163,7 @@ By default, the mushop helm chart creates an Ingress resource, routing ALL traff
     mushop-utils-ingress-nginx-controller   LoadBalancer   10.96.150.230   129.xxx.xxx.xxx   80:30195/TCP,443:31059/TCP   1m
     ````
 
-## **STEP 4**: Hostname Ingress and Deploy with Helm
+## **STEP 4**: Deploy with Helm
 
 Remembering that helm provides a way of packaging and deploying configurable charts, next we will deploy the application in "mock mode" where cloud services are mocked, yet the application is fully functional
 
@@ -168,6 +192,10 @@ Remembering that helm provides a way of packaging and deploying configurable cha
     kubectl get svc mushop-utils-ingress-nginx-controller --namespace mushop-utilities
     </copy>
     ````
+
+1. Open to the MuShop Storefront by using your browser connecting to http://< EXTERNAL-IP >
+
+    ![MuShop Storefront](images/mushop-storefront.png)
 
 You can complete the optional step or [proceed to the next lab](#next).
 
