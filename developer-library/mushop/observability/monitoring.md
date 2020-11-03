@@ -22,9 +22,9 @@ In this lab, you will:
 1. *OKE Cluster Metrics:* Navigate to **Developer Services -> Kubernetes Clusters -> <Your_Cluster_Name>**
 
 2. Under **Resources -> Metrics** observe the following metrics
-   
-      - Unschedulable pods, which can be used to trigger node pool scale operations when there are insufficient resources on which to schedule pods.
-      - API Server requests per second, which is helpful to understand any underlying performance issues seen in the Kubernetes API server.
+
+      * Unschedulable pods, which can be used to trigger node pool scale operations when there are insufficient resources on which to schedule pods.
+      * API Server requests per second, which is helpful to understand any underlying performance issues seen in the Kubernetes API server.
 
 3. These metrics can also be viewed from OCI Monitoring console under “oci_oke” namespace. Additionally, alarms can be created using industry standard statistics, trigger operators, and time intervals.
 
@@ -54,6 +54,10 @@ In this lab, you will:
 ## **STEP 2**: Grafana Monitoring
 
 Good news! You already installed Prometheus/Grafana as part of the umbrella chart during setup. Now let's revisit the charts and connect to some Grafana dashboards!
+
+1. Go back to your Cloud Shel by clicking on the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
+
+  ![CloudShell](images/cloudshell-1.png " ")
 
 1. List helm releases to check if the **mushop-utils**(Setup) chart is installed
 

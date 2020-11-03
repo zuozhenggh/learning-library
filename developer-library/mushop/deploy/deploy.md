@@ -68,17 +68,30 @@ In this lab, you will:
     ````shell
     <copy>
     kubectl config current-context
-    # cluster-c4daylfgvrg
     </copy>
     ````
 
-1. Set the default **kubectl** namespace to skip adding **--namespace _mushop_** to every command.  You can replace *mushop* with *your name*.
+    Sample response:
+
+    ````shell
+    cluster-c4daylfgvrg
+    ````
+
+1. Create a namespace for MuShop App (microservices will reside on this namespace)
 
     ````shell
     <copy>
     kubectl create namespace mushop
     </copy>
     ````
+
+    Sample response:
+
+    ````shell
+    namespace/mushop created
+    ````
+
+1. Set the default **kubectl** namespace to skip adding **--namespace _mushop_** to every command.  You can replace *mushop* with *your name*.
 
     ````shell
     <copy>
@@ -105,6 +118,12 @@ MuShop provides an umbrella helm chart called setup, which includes several reco
     <copy>
     kubectl create namespace mushop-utilities
     </copy>
+    ````
+
+    Sample response:
+
+    ````shell
+    namespace/mushop-utilities created
     ````
 
 1. Install cluster dependencies using helm:
@@ -179,9 +198,11 @@ Remembering that helm provides a way of packaging and deploying configurable cha
 
     ````shell
     <copy>
-    kubectl get pod --watch
+    kubectl get pods --watch
     </copy>
     ````
+
+    *Note:* To leave the _watch_ press `CTRL-C` anytime. If do not want to keep watching and just see the current list of PODS, just use `kubectl get pods`
 
 1. After inspecting the resources created with helm install, launch the application in your browser using the **EXTERNAL-IP** from the nginx ingress.
 
