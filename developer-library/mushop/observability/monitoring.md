@@ -100,7 +100,25 @@ Good news! You already installed Prometheus/Grafana as part of the umbrella char
 
 1. Connect to the dashboard with **admin**/**< password >**
 
-    ![MuShop Tree](images/grafana-cluster.png)
+    ![Grafana Login](images/grafana-login.png)
+
+1. On the Grafana main screen, click on Home to select a Dashboard
+
+    ![Grafana Select Dashboards](images/grafana-select-dashboards.png)
+
+1. Select the `Kubernetes Cluster (Prometheus)` Dashboard
+
+    *Note:* MuShop pre-loads dashboards as part of the mushop-utils chart
+
+    ![Grafana Select Dashboards](images/grafana-loaded-dashboards.png)
+
+1. Visualize and try the options
+
+    ![Grafana Kubernetes Cluster Dashboard](images/grafana-cluster-dashboard.png)
+
+1. You can try other dashboards by clicking on the Dashboard name and selecting the desired dashboard
+
+*Note:* You can install other dashboards from the [community](https://grafana.com/grafana/dashboards?dataSource=prometheus) or create your own
 
 You may now [proceed to the next lab](#next).
 

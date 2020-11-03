@@ -55,11 +55,25 @@ Estimated time: 10 minutes
     </copy>
     ````
 
-*Note:* When you executing the command `helm delete` for the mushop-utils chart release, the OCI LoadBalancer attached to the ingress kubernetes will also be terminated.
+*Note:* When you execute the command `helm delete` for the mushop-utils chart release, the OCI LoadBalancer attached to the ingress kubernetes will also be terminated.
 
 ## **STEP 4**: Terminate the OKE Cluster and Worker Nodes
 
-1. Remove
+1. Delete the OKE Cluster
+
+![Delete Kubernetes Clusters](images/OKE-delete-cluster.png " ")
+
+1. Confirm
+
+![Confirm delete Kubernetes Clusters](images/OKE-delete-cluster-confirm.png " ")
+
+This action will delete the Kubernetes Cluster and the Node Pool, terminating the worker nodes Compute Instances
+
+## **STEP 5**: Remove Functions and Applications
+
+1. *Functions and Applications:* Navigate to **Developer Services -> Functions -> Applications** and delete the desired Application
+
+1. *Containers:* Navigate to **Developer Services -> Container Registry** and delete the container image used on the functions lab
 
 ## Acknowledgements
 
