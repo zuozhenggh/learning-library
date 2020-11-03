@@ -20,7 +20,7 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
 
-## **STEP 1: Create Stack:  Compute + ADB + Networking
+## **STEP 1**: Create Stack:  Compute + ADB + Networking
 
 If you already have a VCN setup, please visit the appendix to see how to optionally create a stack with just Compute + ADB.
 
