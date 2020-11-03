@@ -13,7 +13,7 @@ This lab assumes you have:
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
     - Lab: Environment Setup
 
 ## **STEP 1**: Initialize the DBSec-Lab environment
@@ -69,11 +69,11 @@ Before performing the workshop, please make sure you have the latest labs script
 		  	- PDB2 PROD        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb2`  (menu: red)
 		  	- PDB2 DEV         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb2`   (bg: red & menu: red)
 
-- Optionally, run SQL Developer and connect to the databases CDB1, PDB1 and PDB2 (Port 1521) directly or through a SSH Host
+    - Optionally, run SQL Developer and connect to the databases CDB1, PDB1 and PDB2 (Port 1521) directly or through a SSH Host
 
-   ![](./images/init-start-env-002.png " ")
+      ![](./images/init-start-env-002.png " ")
 
-   	**Note**: In case of error, please check your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
+      **Note**: In case of error, please check your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
 
 3. **Congratulations, now your environment is up and running and you can start performing the labs!**
 
