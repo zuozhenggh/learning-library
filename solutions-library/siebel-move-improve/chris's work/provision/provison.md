@@ -130,17 +130,38 @@ Generating Jenkins URL
 
 You can create the application URL using the port 4430, that you opened in the previous lab, and the industry you selected while deployment
 
+**NOTE:** For this step you Google Chrome may not allow you to access the site, we reccomend using an alternative such as Firefox for this step
+
 The url you will need to type into your browser's search bar should look like this:
 
-http://"public IP address:4430/siebel/app/industry/enu"
+    https://"public IP address:4430/siebel/app/industry/enu"
 
-For example, if you selected Sales, your application URL for Sales industry will be the following.
+For example, if you selected Sales, your application URL for Sales industry  could be the following.
 
-https://129.146.162.164:4430/siebel/app/sales/enu
+    https://129.146.101.23:4430/siebel/app/sales/enu
 
-The application URL will be specific to the Industry you select while deployment, for example, the URL will be:
+**NOTE:** Make sure your url has ***"https"*** and not ***"http"*** at the beginning of it otherwise you will not obtain access
+
+![](./images/blast.png " ")
+
+When accessing the url you may come across a "Potential Security Risk" warning message
+
+![](./images/bblast.png " ")
+
+Since this is the url and IP address that you created, you know that it is safe and that you can safely bypass the warning
+
+You can do this on Firefox by first clicking the ***Advanced Settings*** button and then clicking ***Accept Risk and Continue*** button
+
+![](./images/aclast.png " ")
+
+Now you should see the proper site where you can log in with your credentials
+
+![](./images/last.png " ")
+
+Please also not that the application URL will be specific to the Industry you select for deployment, for example, the URL could be:
 
 For Service - https://"your ip address":4430/siebel/app/callcenter/enu
+
 For Siebel Management Console (SMC) - https://"your ip address":4430/siebel/smc
  
 # Summary
