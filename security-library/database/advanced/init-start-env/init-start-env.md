@@ -17,7 +17,6 @@ This lab assumes you have:
     - Lab: Environment Setup
 
 ## **STEP 1**: Initialize the DBSec-Lab environment
-
 Before performing the workshop, please make sure you have the latest labs scripts!
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
@@ -26,29 +25,7 @@ Before performing the workshop, please make sure you have the latest labs script
     <copy>sudo su - oracle</copy>
       ````
 
-2. Go to the scripts directory
-
-      ````
-    <copy>cd $DBSEC_HOME</copy>
-      ````
-
-3. Import the latest workshop scripts from Oracle's GitHub repository
-
-      ````
-    <copy>./update_workshop.sh</copy>
-      ````
-
-	**Note**:
-	- Oracle DB Security Product Management team is constantly updating the scripts labs (new features or corrections). So, please execute `./update_workshop.sh` as frequently as possible before using this workshop!
-	- If your scripts are already up-to-date, you will have the following message:
-
-   ![](./images/init-start-env-001.png " ")
-
-    - Otherwise the new scripts will be imported!
-
-## **STEP 2**: Start all the DBSec-Lab components
-
-1. Start DBSec-Lab Environement
+2. Start DBSec-Lab Environement
 
       ````
     <copy>./start_DBSecLab.sh</copy>
@@ -56,7 +33,7 @@ Before performing the workshop, please make sure you have the latest labs script
 
 	**Note**: It can take up to 10 minutes (with 4 oCPUs)
 
-2. Once it's started, check that all necessary labs resources are operational
+3. Once it's started, check that all necessary labs resources are operational
 
 	- From your web browser, make sure you have access the following resources:
 		- Oracle EM 13c      : `https://<YOUR_DBSECLAB-VM_PUBLIC-IP>:7803/em`
@@ -69,13 +46,13 @@ Before performing the workshop, please make sure you have the latest labs script
 		  	- PDB2 PROD        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb2`  (menu: red)
 		  	- PDB2 DEV         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb2`   (bg: red & menu: red)
 
-    - Optionally, run SQL Developer and connect to the databases CDB1, PDB1 and PDB2 (Port 1521) directly or through a SSH Host
+    - Optionally, run SQL Developer and connect to the databases CDB1, PDB1 and PDB2 (Port 1521)
 
       ![](./images/init-start-env-002.png " ")
 
-      **Note**: In case of error, please check your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
+  **Note**: In case of error, please check your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
 
-3. **Congratulations, now your environment is up and running and you can start performing the labs!**
+4. **Congratulations, now your environment is up and running and you can start performing the labs!**
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
