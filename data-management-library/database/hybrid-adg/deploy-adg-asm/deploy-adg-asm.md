@@ -1,18 +1,31 @@
-# Deploy ADG Process
+# Deploy Active Data Guard with ASM
 
-This procedure is basically the same as migrating the database from on-premise to OCI. The Data Guard setup for a Single Instance (SI) or RAC should be the same. In the following steps you will setup data guard from an SI on-premises to an SI in the cloud infrastructure. If you want to setup Data Guard from an SI on-premises to to a 2-Node RAC in cloud infrastructure or RAC on-premises to an SI in the cloud infrastructure please refer to the whitepaper [hybrid-dg-to-oci-5444327](https://www.oracle.com/technetwork/database/availability/hybrid-dg-to-oci-5444327.pdf).
+## Introduction
+In this lab, you will deploy the ADG. This procedure is basically the same as migrating the database from on-premise to OCI. The Data Guard setup for a Single Instance (SI) or RAC should be the same. In the following steps you will setup data guard from an SI on-premises to an SI in the cloud infrastructure. If you want to setup Data Guard from an SI on-premises to to a 2-Node RAC in cloud infrastructure or RAC on-premises to an SI in the cloud infrastructure please refer to the whitepaper [hybrid-dg-to-oci-5444327](https://www.oracle.com/technetwork/database/availability/hybrid-dg-to-oci-5444327.pdf).
 
-##Prerequisites
+Estimated Lab Time: 30 minutes.
+
+### Objectives
+
+-   Manually Delete the standby Database Created by Tooling 
+-   Copy the Password File and wallet file to the standby 
+-   Configure Static Listeners
+-   TNS Entries for Redo Transport
+-   Instantiate the Standby Database
+-   Clear all online and standby redo logs 
+-   Configure Data Guard broker
+
+### Prerequisites
 
 This lab assumes you have already completed the following labs:
 
-- Prepare On Premise Database(with ASM)
-- Provision DBCS on OCI
+- Prepare On Premise Database
+- Provision DBCS on OCI (with ASM)
 - Setup Connectivity between on-premise and DBCS
 
 **Note: The following steps is for the cloud database using ASM for the storage management in Lab5. If you chose LVM for the storage, please use the other Lab for the LVM.**
 
-##Step 1: Manually Delete the Database Created by Tooling 
+## **Step 1:** Manually Delete the standby Database Created by Tooling 
 
 Please perform the below operations to delete the starter database files in the cloud and we will restore the on-premise database using RMAN. 
 
@@ -101,15 +114,14 @@ Version 19.7.0.0.0
 
 ```
 
-6. change the file mode to 777.
+6. change the file mode.
 
    ```
-   [oracle@dbstby ~]$ chmod 777 /tmp/files.lst
+   [oracle@dbstby ~]$ chmod a+x /tmp/files.lst
    [oracle@dbstby ~]$  
    ```
 
    
-
 7. Shutdown the database 
 
    - First collect the configuration of the database for future reference, replace the `ORCL_nrt1d4` with the standby `DB_UNIQUE_NAME`.
@@ -144,10 +156,10 @@ All files for the starter database have now been removed.
 
 ## **Step 2:** Copy the Password File to the Cloud host 
 
-1. Copy the following command, change the (xxx.xxx.xxx.xxx) to the on-premise host public ip.
+1. Copy the following command, using the on-premise host public ip or hostname.
 
    ```
-   <copy>scp oracle@xxx.xxx.xxx.xxx:/u01/app/oracle/product/19c/dbhome_1/dbs/orapwORCL /tmp</copy>
+   <copy>scp oracle@primary:/u01/app/oracle/product/19c/dbhome_1/dbs/orapwORCL /tmp</copy>
    ```
 
    
@@ -155,7 +167,7 @@ All files for the starter database have now been removed.
 2. Switch to the **oracle** user, run this command to copy the on-premise database password file to cloud host /tmp directory, chmod 777 to the password file.
 
 ```
-[oracle@dbstby ~]$ scp oracle@xxx.xxx.xxx.xxx:/u01/app/oracle/product/19c/dbhome_1/dbs/orapwORCL /tmp
+[oracle@dbstby ~]$ scp oracle@primary:/u01/app/oracle/product/19c/dbhome_1/dbs/orapwORCL /tmp
 orapwORCL                                                      100% 2048    63.5KB/s   00:00    
 [oracle@dbstby ~]$ chmod 777 /tmp/orapwORCL
 [oracle@dbstby ~]$ exit
@@ -234,11 +246,11 @@ ENCRYPTION_WALLET_LOCATION =
 ENCRYPTION_WALLET_LOCATION=(SOURCE=(METHOD=FILE)(METHOD_DATA=(DIRECTORY=/opt/oracle/dcs/commonstore/wallets/tde/$ORACLE_UNQNAME)))
 ```
 
-1. Copy the following command, change the (xxx.xxx.xxx.xxx) to the on-premise host public ip.  Change `ORCL_nrt1d4` to the unique name of your standby db.
+1. Copy the following command, using the on-premise host public ip or hostname.  Change `ORCL_nrt1d4` to the unique name of your standby db.
 
    ```
-   <copy>scp oracle@xxx.xxx.xxx.xxx:/u01/app/oracle/admin/ORCL/wallet/ewallet.p12 /opt/oracle/dcs/commonstore/wallets/tde/ORCL_nrt1d4
-   scp oracle@xxx.xxx.xxx.xxx:/u01/app/oracle/admin/ORCL/wallet/cwallet.sso /opt/oracle/dcs/commonstore/wallets/tde/ORCL_nrt1d4
+   <copy>scp oracle@primary:/u01/app/oracle/admin/ORCL/wallet/ewallet.p12 /opt/oracle/dcs/commonstore/wallets/tde/ORCL_nrt1d4
+   scp oracle@primary:/u01/app/oracle/admin/ORCL/wallet/cwallet.sso /opt/oracle/dcs/commonstore/wallets/tde/ORCL_nrt1d4
    chmod 600 /opt/oracle/dcs/commonstore/wallets/tde/ORCL_nrt1d4/*wallet*
    </copy>
    ```
@@ -248,9 +260,9 @@ ENCRYPTION_WALLET_LOCATION=(SOURCE=(METHOD=FILE)(METHOD_DATA=(DIRECTORY=/opt/ora
 2. From cloud side as **oracle** user, run the command to copy the wallet files from on-premise host, use the on-premise host public ip or hostname, change mode to 600.
 
 ```
-[oracle@dbstby ~]$ scp oracle@xxx.xxx.xxx.xxx:/u01/app/oracle/admin/ORCL/wallet/ewallet.p12 /opt/oracle/dcs/commonstore/wallets/tde/ORCL_nrt1d4
+[oracle@dbstby ~]$ scp oracle@primary:/u01/app/oracle/admin/ORCL/wallet/ewallet.p12 /opt/oracle/dcs/commonstore/wallets/tde/ORCL_nrt1d4
 ewallet.p12                                                                                       100% 5467   153.2KB/s   00:00    
-[oracle@dbstby ~]$ scp oracle@xxx.xxx.xxx.xxx:/u01/app/oracle/admin/ORCL/wallet/cwallet.sso /opt/oracle/dcs/commonstore/wallets/tde/ORCL_nrt1d4
+[oracle@dbstby ~]$ scp oracle@primary:/u01/app/oracle/admin/ORCL/wallet/cwallet.sso /opt/oracle/dcs/commonstore/wallets/tde/ORCL_nrt1d4
 cwallet.sso                                                                                       100% 5512   147.4KB/s   00:00    
 [oracle@dbstby ~]$ chmod 600 /opt/oracle/dcs/commonstore/wallets/tde/ORCL_nrt1d4/*wallet*
 [oracle@dbstby ~]$
@@ -361,7 +373,7 @@ The command completed successfully
 <copy>vi $ORACLE_HOME/network/admin/tnsnames.ora</copy>
 ```
 
-Add following lines into tnsnames.ora, replace xxx.xxx.xxx.xxx with the public ip or hostname of the cloud hosts, replace `ORCL_nrt1d4` with your standby db unique name.
+Add following lines into tnsnames.ora, using the public ip or hostname of the cloud hosts, replace `ORCL_nrt1d4` with your standby db unique name.
 
 ```
 <copy>
@@ -371,7 +383,7 @@ ORCL_nrt1d4 =
    (RECV_BUF_SIZE=134217728)
    (SEND_BUF_SIZE=134217728)
    (ADDRESS_LIST =
-    (ADDRESS = (PROTOCOL = TCP)(HOST = xxx.xxx.xxx.xxx)(PORT = 1521))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = dbstby)(PORT = 1521))
    )
     (CONNECT_DATA =
       (SERVER = DEDICATED)
@@ -388,7 +400,7 @@ ORCL_nrt1d4 =
 <copy>vi $ORACLE_HOME/network/admin/tnsnames.ora</copy>
 ```
 
-In the `ORCL_NRT1D4`(Standby db unique name) description, delete the domain name of the SERVICE_NAME. Add the ORCL description, replace xxx.xxx.xxx.xxx with the public ip or hostname of the on-premise hosts.  It's looks like the following.  Replace `ORCL_nrt1d4` with your standby db unique name.
+In the `ORCL_NRT1D4`(Standby db unique name) description, delete the domain name of the SERVICE_NAME. Add the ORCL description, using the public ip or hostname of the on-premise hosts.  It's looks like the following.  Replace `ORCL_nrt1d4` with your standby db unique name.
 
 **Note:** The different database domain name will get an error when doing the DML Redirection
 
@@ -414,7 +426,7 @@ ORCL =
    (RECV_BUF_SIZE=134217728)
    (SEND_BUF_SIZE=134217728)
    (ADDRESS_LIST =
-    (ADDRESS = (PROTOCOL = TCP)(HOST = xxx.xxx.xxx.xxx)(PORT = 1521))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = primary)(PORT = 1521))
    )
     (CONNECT_DATA =
       (SERVER = DEDICATED)
@@ -444,7 +456,7 @@ net.core.wmem_max = 134217728
 - Reload and check the values.
 
 ```
-[opc@adgstudent1 ~]$ sudo /sbin/sysctl -p
+[opc@primary ~]$ sudo /sbin/sysctl -p
 fs.file-max = 6815744
 kernel.sem = 250 32000 100 128
 kernel.shmmni = 4096
@@ -459,7 +471,7 @@ net.ipv4.conf.all.rp_filter = 2
 net.ipv4.conf.default.rp_filter = 2
 fs.aio-max-nr = 1048576
 net.ipv4.ip_local_port_range = 9000 65500
-[opc@adgstudent1 ~]$ sudo /sbin/sysctl -a | egrep net.core.[w,r]mem_max
+[opc@primary ~]$ sudo /sbin/sysctl -a | egrep net.core.[w,r]mem_max
 net.core.rmem_max = 134217728
 net.core.wmem_max = 134217728
 sysctl: reading key "net.ipv6.conf.all.stable_secret"
@@ -782,7 +794,7 @@ SQL>
 2. Register the database via DGMGRL. Replace `ORCL_nrt1d4` with your standby db unique name.
 
 ```
-[oracle@workshop ~]$ dgmgrl sys/Ora_DB4U@ORCL
+[oracle@standby ~]$ dgmgrl sys/Ora_DB4U@ORCL
 DGMGRL for Linux: Release 19.0.0.0.0 - Production on Sat Feb 1 03:51:49 2020
 Version 19.7.0.0.0
 
@@ -812,7 +824,19 @@ Configuration Status:
 SUCCESS   (status updated 42 seconds ago)
 ```
 
-if there is a warning message, Warning: ORA-16809: multiple warnings detected for the member. You can wait serveral minutes and show configuration again.
+if there is a warning message, Warning: ORA-16809: multiple warnings detected for the member or Warning: ORA-16854: apply lag could not be determined. You can wait serveral minutes and show configuration again.
 
 Now, the Hybrid Data Guard is ready. The standby database is in mount status.
 
+You may proceed to the next lab.
+
+## Acknowledgements
+* **Author** - Minqiao Wang, DB Product Management, Oct 2020
+* **Contributors** -  <Name, Group> -- optional
+* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Oct 2020
+* **Workshop (or Lab) Expiry Date** - <Month Year> 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
