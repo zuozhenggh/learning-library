@@ -33,24 +33,22 @@ You must have an OCI tenancy subscribed to the US East (Ashburn) region and enou
 
 2. Create a compartment named **MySQLSandbox** On the Navigation Menu, under Governance and Administration, select Identity -> Compartments. 
 
-![Compartment](./images/compartments.png " ")
+    ![Compartment](./images/compartments.png " ")
 
 3. Define the required MySQL Database Service policies (Identity menu).
-
-    ```
     If your user is in the group MySQL*Test*Group and you want to restrict your MySQL DB Systems to the compartment MySQLSandbox, add the following policy statements:
-    ```
+
 
     a. Policy statement 1:
 
     ```
-    _Allow group MySQL_Test_Group to manage mysql-family in compartment MySQLSandbox _
+    Allow group Administrators to {COMPARTMENT_INSPECT} in tenancy
     ```
 
     b. Policy statement 2:
 
     ```
-    _Allow group MySQL_Test_Group to {SUBNET_READ, SUBNET_ATTACH, SUBNET_DETACH, VCN_READ, COMPARTMENT_INSPECT} in compartment MySQL_Sandbox
+    Allow group Administrators to {VCN_READ, SUBNET_READ, SUBNET_ATTACH, SUBNET_DETACH} in tenancy
     ```
 
     \_<br>
@@ -58,13 +56,10 @@ You must have an OCI tenancy subscribed to the US East (Ashburn) region and enou
     c. Policy statement 3:
 
     ```
-    _Allow group MySQL_Test_Group to inspect tag-namespaces in tenancy _
+    Allow group Administrators to manage mysql-family in tenancy
     ```
+Click the Create button
 
-    ```
-    Click the Create button
-        ![Compartment](./images/compartments.png " ")"Comaprtments")
-    ```
 ![Compartment](./images/policy.png " ")
 
 ## **STEP 2:** Create an isolated Virtual Cloud Network
