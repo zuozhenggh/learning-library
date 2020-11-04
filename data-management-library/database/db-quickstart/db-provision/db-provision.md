@@ -8,13 +8,15 @@
 
 This lab walks you through the steps to quickly provision an Oracle Autonomous Database (either Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]) on Oracle Cloud. You will use this database in subsequent labs of this workshop.
 
+Estimated Lab Time: 10 minutes
+
 *Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
 
-## Objectives
+### Objectives
 
--   Learn how to provision a new Autonomous Data Warehouse
+-   Provision a new Autonomous Data Warehouse
 
-## Prerequisites
+### Prerequisites
 
 -   This lab requires completion of the **Get a Free Trial** lab in the Contents menu on the left.  
 
@@ -116,7 +118,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
     ![](./images/Picture100-32.png " ")
 
-Please proceed to the next lab.
+You may now **proceed to the next lab.**
 
 ## Want to Learn More?
 

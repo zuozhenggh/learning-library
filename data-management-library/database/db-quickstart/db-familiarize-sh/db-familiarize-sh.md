@@ -8,14 +8,16 @@
 
 In this lab, you examine the structures and data in the Sales History (SH) sample schema that comes with the database.
 
-## Objectives
+Estimated lab time: 10 minutes
+
+### Objectives
 
 -   Familiarize with the tables and their relationships within the SH sample schema
 
 -   Use the DESCRIBE command to examine the details of an SH table
 
 
-## Prerequisites
+### Prerequisites
 
 -   This lab requires completion of the preceding 3 labs in the Contents menu on the left.
 
@@ -55,7 +57,8 @@ Syntax: DESC[RIBE] schema\_name.table\_name
     ![](images/describe_countries.png " ")
 
 2. If you wish, use the `DESCRIBE` command to view descriptions of other tables in the SH schema, such as CHANNELS, CUSTOMERS and SALES.
-    Please proceed to the next lab.
+
+    You may now **proceed to the next lab.**
 
 ## Want to Learn More?
 

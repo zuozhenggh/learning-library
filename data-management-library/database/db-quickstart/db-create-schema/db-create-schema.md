@@ -7,14 +7,16 @@
 
 In this lab, you will create a user (schema), assign privileges to the user, and enable the user to log in to the database using SQL Developer Web. Logged in as the user, you will create tables, add and maintain records, and maintain the schema.
 
-## Objectives
+Estimated lab time: 25 minutes
+
+### Objectives
 
 -   As administrator create a database user (schema)
 -   Assign privileges to the user
 -   Enable database users to log in to the database using SQL Developer Web
 -   As the user create tables, add and maintain records, and maintain the schema
 
-## Prerequisites
+### Prerequisites
 
 -   This lab requires completion of the prior 5 labs in the Contents menu on the left.
 

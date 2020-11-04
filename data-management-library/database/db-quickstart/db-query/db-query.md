@@ -7,16 +7,18 @@
 
 In this lab, you will query the Sales History (SH) sample schema that comes with the database.
 
-## Objectives
+Estimated lab time: 10 minutes
 
--   Learn how to execute the SELECT statement to query tables in the SH schema
+### Objectives
 
--   Learn how to use the WHERE clause to restrict the rows that are returned from the SELECT query
+-   Execute the SELECT statement to query tables in the SH schema
 
--   Learn how to use the ORDER BY clause to sort the rows that are retrieved from the SELECT statement
+-   Use the WHERE clause to restrict the rows that are returned from the SELECT query
+
+-   Use the ORDER BY clause to sort the rows that are retrieved from the SELECT statement
 
 
-## Prerequisites
+### Prerequisites
 
 -   This lab requires completion of the preceding 4 labs in the Contents menu on the left.
 
@@ -104,6 +106,8 @@ GROUP BY channel_desc;</copy>
 ```
 
   ![](./images/ranking-data.png " ")  
+
+You may now **proceed to the next lab.**
 
 ## Want to Learn More?
 
