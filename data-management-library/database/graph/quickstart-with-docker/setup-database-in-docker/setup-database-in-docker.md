@@ -217,7 +217,7 @@ You have finished uploading Oracle Database zip to your compute instance. You ca
 
 
     ```
-    $ <copy>docker exec -it oracle-db sqlplus sys/Welcome1@localost:1521/orclpdb1 as sysdba</copy>
+    $ <copy>docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
     ...
     ORA-12514: TNS:listener does not currently know of service requested in connect
     ```
