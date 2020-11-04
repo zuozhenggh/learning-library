@@ -17,7 +17,6 @@ This lab assumes you have:
     - Lab: Environment Setup
 
 ## **STEP 1**: Start all the DBSec-Lab components
-
 Before performing the workshop, you have to start all the components!
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
@@ -32,11 +31,11 @@ Before performing the workshop, you have to start all the components!
     <copy>./start_DBSecLab.sh</copy>
       ````
 
-	**Note**: It can take up to 10 minutes (with 4 oCPUs)
+**Note**: It can take up to 10 minutes (with 4 oCPUs)
 
-3. Once it's started, check that all necessary labs resources are operational
+Once it's started, check that all necessary labs resources are operational
 
-1. From your web browser, make sure you have access the following resources:
+3. From your web browser, make sure you have access the following resources:
    - **Oracle EM 13c**      : `https://<YOUR_DBSECLAB-VM_PUBLIC-IP>:7803/em`
    - **My HR Application** on Glassfish:
       - PDB1
@@ -48,11 +47,7 @@ Before performing the workshop, you have to start all the components!
    - **Oracle AVDF** Web Console (for AVDF labs only) : `https://<YOUR_AVS-VM_PUBLIC-IP>`
    - **Oracle Key Vault** Web Console (for OKV labs only) : `https://<YOUR_OKV-VM_PUBLIC-IP>`
 
-2. Optionally, run **SQL Developer** and set connection to the databases CDB1, PDB1 and PDB2 (Port 1521) directly or through a SSH Host
-
-   ![](./images/init-start-env-002.png " ")
-
-  **Note**: In case of error, please check your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
+**Note**: In case of error, please check your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
 
 4. **Congratulations, now your environment is up and running and you can start performing the labs!**
 
