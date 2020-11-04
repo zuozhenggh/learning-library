@@ -150,14 +150,14 @@ In the lab, you will:
         } catch(Exception e) {
           throw new RuntimeException(e);
         }
-      }
+      };
 
-    query.accept("select count(v) from Customer360-PG match (v)");
+    query.accept("select count(v) from customer_360 match (v)");
     </copy>
     +----------+
     | count(v) |
     +----------+
-    | 8        |
+    | 15       |
     +----------+
     ```
 
