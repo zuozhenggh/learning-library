@@ -1,11 +1,5 @@
 # Oracle Database Security Assessment Tool (DBSAT)
 
----
-**WARNING LIVELABS-v2**
-
----
-
-
 ## Introduction
 This workshop introduces the functionality of Oracle Database Security Assessment Tool (DBSAT). It gives the user an opportunity to learn how to use this feature to assess all the security components of a database.
 
