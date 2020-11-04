@@ -14,18 +14,28 @@ SOA Suite functional architecture
 
 Critical business services, such as customer, financial, ordering information, and others that were previously accessible only in packaged application user interfaces can now be rapidly repurposed for digital-enabled channel such as: smart phone and tablets.
 
-Estimated Lab Time: 5 minutes
+Estimated time taken to complete: 5 minutes
 
-### Objectives
+### Introduction
 
-- Introducing SOA development tool, JDeveloper 12c
+- SOA development tool, JDeveloper 12c
 
+Oracle JDeveloper offers complete end-to-end development for Oracle's platform and Oracle's applications. 
+
+  ![](./images/jdev-lifecycle.png)
+
+
+More details about JDeveloper can be found on [JDeveloper12c] (https://www.oracle.com/application-development/technologies/jdeveloper.html)
+
+
+
+<!--
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 
-## **STEP**: SOA Deployment on Oracle Cloud
+ **STEP**: SOA Deployment on Oracle Cloud
 
 1. From within your Oracle Cloud environment, you can create an instance of Oracle SOA suite.
 
@@ -48,14 +58,21 @@ Estimated Lab Time: 5 minutes
 
     ![](./images/click-soa-byol-compartment.png)
 
-    
+-->
+
 ## **Summary**
 
-At this point, you're ready to start building amazing enterprise-grade orchestration and integration, rapidly. You may proceed to the next lab: **Develop SOA Composite for Validating Payment**.
+A preview about Oracle SOA Composite development on JDeveloper 12c
+
+[](youtube:cCWpGUL7jYA)
+
+At this point, you're ready to start building amazing enterprise-grade orchestration and integration, rapidly. 
+
+You may proceed to the next lab: **Develop SOA Composite for Validating Payment**.
 
 ## Acknowledgements
 * **Author** - Daniel Tarudji
-* **Contributors** - Tom McGinn, Kamryn Vinson
+* **Contributors** - Tom McGinn, Kamryn Vinson, Rene Fontcha
 * **Last Updated By/Date** - Kamryn Vinson, October 2020
 
 ## Need Help?
