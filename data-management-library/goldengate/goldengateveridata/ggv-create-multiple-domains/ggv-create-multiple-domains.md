@@ -3,6 +3,7 @@
 ## Introduction
 This lab shows you how to create multiple domains for Oracle GoldenGate Veridata.
 This scenario considers an existing Oracle GoldenGate Veridata install that is fully functional, any user logged on to the Web interface can see all the jobs created and run by other users in the existing WebLogic domain, and users belong to different department or LOB. If users from a particular LOB wish to create and run their own jobs not visible to other LOB, they can create a new domain that is isolated from the existing domain. In the new domain, they can add users only from their own line of businesses (LOB), or add all users from original domain but restrict privilege of users from certain LOB.
+
 **Note**:  After you have completed lab 1: Install and Configure Oracle GoldenGate Veridata, the rest of the **labs are independent of each other**. You can complete labs 2 to 5 in any sequence you want to.
 
 ### What Do You Need?
@@ -36,8 +37,8 @@ The custom prefix is used to logically group these schemas together for use in t
 In this step you will create and configure an Expanded WebLogic domain for Oracle GoldenGate Veridata using the configuration wizard. To configure a domain:
 
 1. Navigate to the `ORACLE_HOME/oracle_common/common/bin` directory and start the **WebLogic Server Configuration Wizard**.
-  * **On Windows**: `config.cmd`
-  * **On Unix**: `./config.sh`
+    * **On Windows**: `config.cmd`
+    * **On Unix**: `./config.sh`
 
 2. On the **Configuration Type** screen, select **Create a new domain**.
 
@@ -49,30 +50,30 @@ In this step you will create and configure an Expanded WebLogic domain for Oracl
 
 6. Specify the **Datasource Configuration Type**. Select RCU Data to activate the fields on this screen. The RCU Data option instructs the Configuration Wizard to connect to the database and Service Table (STB) schema to automatically retrieve schema information for the schemas needed to configure the domain.
 **Note**: If you choose to select **Manual Configuration** on this screen, you will have to manually fill in the parameters for your schema on the JDBC Component Schema screen. After selecting **RCU Data**, specify the database connection details in the following fields:
-  * **DBMS/Service**: Enter the database DBMS name, or service name if you selected a service type driver.
-  * **Host Name**: Enter the name of the server hosting the database.
-  * **Port**: Enter the port number on which the database listens.
-  * **Schema Owner**, **Schema Password**: Enter the username and password for connecting to the database's Service Table schema. This is the schema username and password that was specified for the Service Table component on the "Schema Passwords" screen in RCU. The default username is `prefix_STB`, where prefix is the custom prefix that you defined in RCU.
+    * **DBMS/Service**: Enter the database DBMS name, or service name if you selected a service type driver.
+    * **Host Name**: Enter the name of the server hosting the database.
+    * **Port**: Enter the port number on which the database listens.
+    * **Schema Owner**, **Schema Password**: Enter the username and password for connecting to the database's Service Table schema. This is the schema username and password that was specified for the Service Table component on the "Schema Passwords" screen in RCU. The default username is `prefix_STB`, where prefix is the custom prefix that you defined in RCU.
 7. Click **Get RCU Configuration** when you are finished specifying the database connection information. A message is displayed indicating that the connection is successful.
 
 8. Specify JDBC Component Schema Information. Verify that the values on the JDBC Component Schema screen are correct for all schemas. If you selected **RCU Data** on the previous screen, then the schema table should already be populated appropriately.
 
 9. Test the JDBC Connections. Use the **JDBC Test** screen to test the datasource connections you have just configured. A green check mark in the Status column indicates a successful test. If you encounter any issues, then see the error message in the **Connection Result** Log section of the screen, fix the problem, and then try to test the connection again.
 
-10. Specify the keystore details. Use the Keystore screen to specify the path to the trusted certificate for each keystore. You can also specify the path to each keystore's private key, the password for the private key and the path to the Identity Certificate for the private key. To select an Identity certificate, select the Identity keystore name from the Store Key Name drop down list and specify the paths to the private key and the identity certificate. When you select the Trust Store from the **Store Key Name** drop-down list, the path to the sample certificate provided with the Veridata installation is displayed by default. You can specify the path to your trusted certificate on this page.
+10. Specify the keystore details. Use the **Keystore** screen to specify the path to the trusted certificate for each keystore. You can also specify the path to each keystore's private key, the password for the private key and the path to the Identity Certificate for the private key. To select an Identity certificate, select the Identity keystore name from the Store Key Name drop down list and specify the paths to the private key and the identity certificate. When you select the Trust Store from the **Store Key Name** drop-down list, the path to the sample certificate provided with the Veridata installation is displayed by default. You can specify the path to your trusted certificate on this page.
 
 11. Configure the Administration Server Listen Address.On the Administration Server screen, select the drop-down list next to **Listen Address** and select the IP address on the host where the Administration Server will reside. Do not use **All Local Addresses**. Do not specify any server groups for the Administration Server.
 
-11. Configure Node Manager. The Node Manager screen can be used to select the type of Node Manager you want to configure, along with the Node Manager credentials. Select **Per Domain** as the Node Manager type, then specify the Node Manager credentials.
+12. Configure Node Manager. The Node Manager screen can be used to select the type of Node Manager you want to configure, along with the Node Manager credentials. Select **Per Domain** as the Node Manager type, then specify the Node Manager credentials.
 
-12. Configure Managed Server. On the **Managed Servers** screen, in the **Listen Address** drop-down list, select the IP address of the host on which the Managed Server will reside. Do not use **All Local Addresses**.
+13. Configure Managed Server. On the **Managed Servers** screen, in the **Listen Address** drop-down list, select the IP address of the host on which the Managed Server will reside. Do not use **All Local Addresses**.
   **Note**: If you want to run Oracle GoldenGate Veridata servers from multiple domains concurrently, then you must choose unique port numbers for Administration Server and Managed Server across different domains. If Oracle GoldenGate Veridata Server is only run from one domain at a time, then you can use the same port numbers for all domains.
 
-13. In the **Server Groups** drop-down list, select **VERIDATA-MANAGED-SERVERS**. This server group ensures that the Oracle JRF services are targeted to the Managed Servers you are creating. Server groups target Fusion Middleware applications and services to one or more servers by mapping defined application service groups to each defined server group. A given application service group may be mapped to multiple server groups if needed. Any application services that are mapped to a given server group are automatically targeted to all servers that are assigned to that group. A new Managed Server named `VERIDATA_server1` is created.
+14. In the **Server Groups** drop-down list, select **VERIDATA-MANAGED-SERVERS**. This server group ensures that the Oracle JRF services are targeted to the Managed Servers you are creating. Server groups target Fusion Middleware applications and services to one or more servers by mapping defined application service groups to each defined server group. A given application service group may be mapped to multiple server groups if needed. Any application services that are mapped to a given server group are automatically targeted to all servers that are assigned to that group. A new Managed Server named `VERIDATA_server1` is created.
 
-14. Review your configuration specifications. The **Configuration Summary** screen contains the detailed configuration information for the domain you are about to create. Review the details of each item on the screen and verify that the information is correct. You can go back to any previous screen if you need to make any changes, either by using the Back button or by selecting the screen in the navigation pane. Click **Create** to begin the domain creation process.
+15. Review your configuration specifications. The **Configuration Summary** screen contains the detailed configuration information for the domain you are about to create. Review the details of each item on the screen and verify that the information is correct. You can go back to any previous screen if you need to make any changes, either by using the Back button or by selecting the screen in the navigation pane. Click **Create** to begin the domain creation process.
 
-15. Review your Domain Home and Administration Server URL. The **Configuration Success** screen will show the Domain home location and URL of the Administration Server you just configured. You must make a note of both items as you will need them to start the servers in your domain. Click **Finish** to close the Configuration Wizard.
+16. Review your Domain Home and Administration Server URL. The **Configuration Success** screen will show the Domain home location and URL of the Administration Server you just configured. You must make a note of both items as you will need them to start the servers in your domain. Click **Finish** to close the Configuration Wizard.
 
 ## **Step 3:** Perform Next Steps
 Familiarize yourself with the tasks described in this section and perform them as needed to verify that your domain is properly configured. See [Next Steps After Configuring an Oracle GoldenGate Veridata Domain](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdis/next-steps-configuring-oracle-goldengate-veridata-domain.html#GUID-0ACB030D-738F-4AAA-B0D7-0AAF5ED562D1)
@@ -89,7 +90,7 @@ Familiarize yourself with the tasks described in this section and perform them a
 
 * **Author:**
     + Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Technical Contributors:**
+* **Reviewed by:**
     + Jonathan Fu, Director, Product Development, GoldenGate Development
 
 * **Last Updated By/Date:** Anuradha Chepuri, August 2020

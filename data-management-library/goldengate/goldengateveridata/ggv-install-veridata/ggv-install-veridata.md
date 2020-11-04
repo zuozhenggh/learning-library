@@ -90,6 +90,7 @@ To configure the RCU:
 ## **Step 5**: Create the Domain
 The Configuration Wizard can either create a new domain or extend an existing domain. This example shows how to create a new domain.
 1. Open a terminal session. Invoke the Configuration wizard by entering `/u01/app/oracle/product/wls/oracle_common/common/bin/config.sh`.
+
     **Note**: The Create a new domain option is selected by default.
     ![](./images/23CreatingDomain_CreateDomain_Screen1.png " ")
 2. Click **Browse** to select the **Domain Location**.

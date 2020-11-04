@@ -20,8 +20,8 @@ This scenario considers 2 hosts and the setup works in an ACTIVE-PASSIVE mode. T
 
 ## **Step 1:** Create the Oracle WebLogic Server Domain on Host 1
 To create the Oracle WebLogic Server domain (for example, *domain_name*):
-1. In the command line, enter the following: **$ORACLE_HOME/oracle_common/common/bin/config.sh** to display the **Fusion Middleware Configuration Wizard**.
-  Ensure that you have set the **$ORACLE_HOME** to a middleware location, such as **MW_HOME**, where you have installed the Oracle WebLogic Server.
+1. In the command line, enter the following: `$ORACLE_HOME/oracle_common/common/bin/config.sh` to display the **Fusion Middleware Configuration Wizard**.
+  Ensure that you have set the ``$ORACLE_HOME` to a middleware location, such as `MW_HOME`, where you have installed the Oracle WebLogic Server.
 2. In this Configuration Wizard, click **Advanced Configuration**, and then select **Administration Server**, **Node Manager**, and **Topology**.
 3. For the Administration Server, enter the IP Address or the Hostname of host 1 instead of **All Local Addresses**, and click **Next** to proceed to the Node Manager details.
   ![](./images/2WLSConfigWizard_AdvConfig.png " ")
@@ -42,9 +42,9 @@ To create the Oracle WebLogic Server domain (for example, *domain_name*):
 To create a domain jar file:
 
 * On host 1, run the following command to create a domain jar:
-  `cd $ORACLE_HOME/oracle_common/common/bin
+    <pre>cd $ORACLE_HOME/oracle_common/common/bin`
 
-  ./pack.sh managed=true -domain=$ORACLE_HOME/user_projects/domains/<domain_name> -template=/<domain_name.jar> -template_name=<domain_name>`
+  ./pack.sh managed=true -domain=$ORACLE_HOME/user_projects/domains/<domain_name> -template=/<domain_name.jar> -template_name=<domain_name> </pre>
   In this code snippet, `-domain` = domain which needs to be copied from host 1.
   A domain jar gets created in the path provided in the template.
 
