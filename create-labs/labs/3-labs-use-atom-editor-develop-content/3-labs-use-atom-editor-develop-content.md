@@ -91,6 +91,7 @@ To create your lab and workshop content:
   ![](./images/use-atom-editor-open-folder.png " ")
 5. Navigate to **GitHub\learning-library\create-labs\labs** and click **Select Folder** to open your project folder.
   ![](./images/atom-editor-browse-select-lab.png " ")
+    **Important Note**: The **create-labs\labs** folders are internal to this "**Creating Labs and Workshops**" workshop. These folders are not available at the production. This means that when you fork the **oracle\learning-library** repository to your fork, such as **<your account>/learning-library** you will not find the **create-labs\labs** folders, and thereby will not be available in your cloned repository as well.   
 6. Select the `.md` file you want to edit, for example, select the `1-labs-git-hub-get-started-install-configure.md` file and add your lab content. Similarly, edit the `.md` files of the rest of your labs.
 7. If you want to use any images in your lab, then include them within the **images** folder.
 6. Similarly, to start creating your workshop content, navigate to **learning-library\sample-livelabs-templates\sample-workshop** and copy the **workshops** folder along with its contents to your project folder. For example, **GitHub\learning-library\create-labs\labs**.

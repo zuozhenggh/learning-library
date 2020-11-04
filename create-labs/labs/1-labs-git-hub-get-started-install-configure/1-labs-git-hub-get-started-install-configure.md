@@ -99,13 +99,13 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
 
   For example, if a user named achepuri forks the learning-library repository in the oracle project, a duplicate repository [achepuri/learning-library](https://github.com/achepuri/learning-library) is created.
 
-  To fork the learning-library repository:
+  To fork the **learning-library** repository:
 1. Log in to the [GitHub Web UI](http://github.com), using your GitHub account.
 2. Navigate to the [oracle/learning-library repository](https://github.com/oracle/learning-library).
-3. Click **Fork**.
+3. Click **Fork** to display the following message: **How are you planning to use this fork?**.
   ![](./images/get-started-git-hub-webUI-fork.png " ")
-
-In the following example, user achepuri has forked the learning-library repository.
+4. Select the option that indicates your local repository.
+In the following example, user achepuri has forked the **learning-library** repository.
 
 ![](./images/get-started-git-hub-webui-forked-library.png " ")
 
@@ -131,6 +131,8 @@ To clone the forked repository:
   ![](./images/git-hub-my-cloned-repository.png " ")
 
   **Note**: The local cloned repository is connected to the remote fork version. You can push your local changes to the remote fork version when you are online to keep them in sync.
+
+  **Important Note**: The **create-labs** folder (shown in the above screen) and its contents are internal to this "**Creating Labs and Workshops**" workshop. This folder is not available at the production. This means that when you fork the **oracle\learning-library** repository to your fork, such as **<your account>/learning-library** you will not find the **create-labs** folder, and thereby it will not be available in your cloned repository as well.
 
   When you make a clone, you can edit the files in your preferred editor, such as **Atom**, and use **GitHub Desktop client** to keep track of your changes without having to be online.
 
