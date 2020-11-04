@@ -99,7 +99,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 1.  In the category section, **Click** session.
 2.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Appendix: Troubleshooting Tips
 
