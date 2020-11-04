@@ -17,8 +17,9 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
     },
     {
-      "title": "Lab 2: Provision ATP",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
+      "title": "Lab 2: Setup Compute Instance and Autonomous DB",
+      "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+      "filename": "../../setup-compute/setup-compute-adb.md"
     },
     {
       "title": "Lab 3: Setup Data and Application",
