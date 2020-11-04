@@ -48,10 +48,10 @@
               "filename": "./../../bds-create-hadoop-user/bds-create-hadoop-user.md"
             }
             ,
-            "title": "Lab 7:  Clean up Resources Used in the Workshop (Optional)",
+            {
+            "title": "Lab 7: Clean up Resources Used in the Workshop (Optional)",
             "description": "This lab shows you how to identify and delete the resources that you have created in this workshop.",
             "filename": "./../../bds-cleanup/bds-cleanup.md"
-          }
-
+            }
            ]
 }
