@@ -87,7 +87,7 @@ To create your lab and workshop content:
   After you copy the sample folder, you can delete your copy of the **files** folder from your project folder.
   Your lab will look similar to this example:
   ![](./images/lab-folder-structure.png " ")
-    **Important Note**: The **create-labs\labs** folders are internal to this "**Creating Labs and Workshops**" workshop. These folders are not available at the production. This means that when you fork the **oracle\learning-library** repository to your fork, such as **your account/learning-library** you will not find the **create-labs\labs** folders, and thereby will not be available in your cloned repository as well.   
+    **Important Note**: The **create-labs\labs** folders are internal to this "**Creating Labs and Workshops**" workshop. These folders are not available at the production. This means that when you fork the **oracle\learning-library** repository to your fork, such as **your account/learning-library**, you will not find the **create-labs\labs** folders, and thereby will not be available in your cloned repository as well.   
 4. To edit the `.md` file of your lab, open **Atom** Editor, click **File > Open Folder** to display the **Open Folder** dialog box.
   ![](./images/use-atom-editor-open-folder.png " ")
 5. Navigate to **GitHub\learning-library\create-labs\labs** and click **Select Folder** to open your project folder.
