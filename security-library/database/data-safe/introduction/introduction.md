@@ -36,7 +36,6 @@ The following links provide more information about Oracle Data Safe:
 
 - [Oracle Data Safe website](https://www.oracle.com/database/technologies/security/data-safe.html)
 - [Oracle Data Safe documentation on Oracle Cloud Infrastructure](https://docs.cloud.oracle.com/en-us/iaas/data-safe/index.html)
-- [Oracle Data Safe documentation on docs.oracle.com](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/index.html)
 - [Oracle Data Safe videos](https://docs.oracle.com/en/cloud/paas/data-safe/videos.html)
 - [Oracle Data Safe data sheet](https://www.oracle.com/a/tech/docs/dbsec/data-safe/ds-security-data-safe.pdf)
 - [Oracle Data Safe frequently asked questions](https://www.oracle.com/a/tech/docs/dbsec/data-safe/faq-security-data-safe.pdf)
