@@ -1,5 +1,5 @@
 
-# Hello World: Create, analyze and visualize a graph from scratch
+# Hello World: Create, Analyze and Visualize a Graph from Scratch
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Autonomous Data Warehouse - Shared Infrastructure (ADW) or Autonomous Transactio
 
 *Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
 
-Estimated lab time: 10 minutes. 
+Estimated Lab Time: 10 minutes. 
 
 ### Objectives
 
@@ -24,37 +24,37 @@ Learn how to
 
 - The following lab requires an ADB-Shared (ADW/ATP) account. 
 
-## **STEP 1**: Connect to your autonomous database using Graph Studio
+## **STEP 1**: Connect to your Autonomous Database using Graph Studio
 
-Open the ADB service console and click on the Development link in the menu on the left. 
+1. Open the ADB service console and click on the Development link in the menu on the left. 
 
-**Note: This particular image is from an instance where some features were disabled. Your instance will likely have them all and other features. While the UI may be slightly different the Graph Studio card will be there.**
+    **Note: This particular image is from an instance where some features were disabled. Your instance will likely have them all and other features. While the UI may be slightly different the Graph Studio card will be there.**
 
-![](./images/ADWConsoleWithGraphStudio.png)
+    ![](./images/ADWConsoleWithGraphStudio.png)
 
-Click on the Graph Studio card to open in a new page or tab in your browser. 
+2. Click on the Graph Studio card to open in a new page or tab in your browser. 
 
-If you prefer to connect directly and know the database, tenant, and region details then use the URL pattern shown below.
+3. If you prefer to connect directly and know the database, tenant, and region details then use the URL pattern shown below.
 
-```
-https://adb.<region_identifier>.oraclecloud.com/graphstudio/?tenant=<tenant_name>&database=<database_name>
-```
+    ```
+    https://adb.<region_identifier>.oraclecloud.com/graphstudio/?tenant=<tenant_name>&database=<database_name>
+    ```
 
-For example, to access Graph Studio of database `ADW1` belonging to tenant `TENANT1` in the US Ashburn (IAD) region, open
+    For example, to access Graph Studio of database `ADW1` belonging to tenant `TENANT1` in the US Ashburn (IAD) region, open
 
-```
-https://adb.us-ashburn-1.oraclecloud.com/graphstudio/?tenant=TENANT1&database=ADW1
-```
+    ```
+    https://adb.us-ashburn-1.oraclecloud.com/graphstudio/?tenant=TENANT1&database=ADW1
+    ```
 
-in your browser. You can find the [region identifier for all regions here](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+    in your browser. You can find the [region identifier for all regions here](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 
-Enter your ADW/ATP account credentials into the login screen:
+4. Enter your ADW/ATP account credentials into the login screen:
 
-![](./images/login.png " ")
+    ![](./images/login.png " ")
 
-Then click the "Sign In" button.
+5. Then click the "Sign In" button.
 
-## **STEP 2**: Create a simple graph using PGQL
+## **STEP 2**: Create a Simple Graph using PGQL
 
 1. The following screenshot shows Graph Studio user interface with the menu, or navigation, icons on the left. They naviagte to the Home, Models, Graphs, Notebooks, and Jobs pages respectively. 
 
@@ -98,7 +98,7 @@ Then click the "Sign In" button.
 
     ![](./images/query-playground-create-graph-statement.png " ")
 
-## **STEP 3**: Load the graph into memory
+## **STEP 3**: Load the Graph into Memory
 
 1. Navigate to the Graphs page:
 
@@ -112,15 +112,15 @@ Then click the "Sign In" button.
 
     ![](./images/graph-click-load-into-memory.png " ")
 
-    In the resulting dialog, click *Yes*.
+4. In the resulting dialog, click *Yes*.
 
     ![](./images/my-first-graph-load-into-memory.png " ")
 
-4. You get redirected to the Jobs page. Wait for the job to complete.
+5. You get redirected to the Jobs page. Wait for the job to complete.
 
     ![](./images/jobs-first-graph-load-into-memory.png " ")
 
-## **STEP 4**: Create your first notebook
+## **STEP 4**: Create your First Notebook
 
 1. Navigate to the Notebooks page:
 
@@ -130,7 +130,7 @@ Then click the "Sign In" button.
    
 3. Name the notebook *Learn/My First Notebook*, then click *Create*. That will create a folder named `Learn` and the note `My First Notebook` within it.
 
-    ![](./images/notebooks-create-first-notebook.png "
+    ![](./images/notebooks-create-first-notebook.png " ")
 
 4. Enter the following text into the first paragraph.
 
@@ -155,13 +155,13 @@ Then click the "Sign In" button.
 
     Markdown paragraphs are useful to add explanations to your notebooks and order them into chapters. You can embed images and even videos using Markdown or HTML syntax, give it a try.
 
-## **STEP 5**: Analyze, query and visualize the graph
+## **STEP 5**: Analyze, Query and Visualize the Graph
 
-1. Add another paragraph to the notebook by hovering at the middle of the bottom of the paragrah and clicking the *+* button which appears.
+1. Add another paragraph to the notebook by hovering at the middle of the bottom of the paragraph and clicking the *+* button which appears.
    
    ![](./images/first-notebook-add-para.png)
    
-   Then enter the following code in the new paragraph.
+2. Then enter the following code in the new paragraph.
 
     ```
     <copy>
@@ -170,11 +170,11 @@ Then click the "Sign In" button.
     </copy>
     ```
 
-2. Execute that paragraph, you will see we successfully referenced our graph that we just created from scratch via the PGX Java APIs.
+3. Execute that paragraph, you will see we successfully referenced our graph that we just created from scratch via the PGX Java APIs.
 
     ![](./images/first-notebook-pgx-get-graph.png " ")
 
-3. Modify the paragraph to run a graph algorithm. For example:
+4. Modify the paragraph to run a graph algorithm. For example:
 
     ```
     <copy>
@@ -184,11 +184,11 @@ Then click the "Sign In" button.
     </copy>
     ```
 
-4. Execute the updated paragraph again. Upon completion it displays the result, i.e. the graph contains exactly one triangle.
+5. Execute the updated paragraph again. Upon completion it displays the result, i.e. the graph contains exactly one triangle.
 
     ![](./images/first-notebook-pgx-count-triangles.png " ")
 
-5. Add a PGQL paragraph and enter the following code.
+6. Add a PGQL paragraph and enter the following code.
 
     ```
     <copy>
@@ -198,25 +198,25 @@ Then click the "Sign In" button.
     ```
     ![](./images/first-notebook-pgql-execute-query.png)
 
-6. Execute that paragraph and the results are rendered as an interactive graph.
+7. Execute that paragraph and the results are rendered as an interactive graph.
 
     ![](./images/first-notebook-pgql-query-result.png " ") 
 
-7. Right click on one of the vertices on the screen to see all the details of that vertex.
+8. Right click on one of the vertices on the screen to see all the details of that vertex.
    
     ![](./images/first-notebook-pgql-view-properties.png)
 
-8. Click on the settings icon of the visualization.
+9. Click on the settings icon of the visualization.
 
     ![](./images/first-notebook-pgql-settings.png " ") 
 
-9.  Navigate to the *Visualization* tab and select *NAME* as the label to render next to the vertices:
+10.  Navigate to the *Visualization* tab and select *NAME* as the label to render next to the vertices:
 
     ![](./images/first-notebook-pgql-viz-label.png " ")    
 
     You now see the name next to each vertex, which will help you better understand the visualization. There are lots of other options to help you make sense of the graph. Feel free to play around with the settings as you like.
 
-10. Add another paragraph with the following query and execute it.
+11. Add another paragraph with the following query and execute it.
 
     ```
     <copy>
@@ -227,7 +227,7 @@ Then click the "Sign In" button.
 
     ![](./images/first-notebook-population-query.png)
 
-11. Change the output to be a pie chart.
+12. Change the output to be a pie chart.
 
     ![](./images/first-notebook-population-as-pie-chart.png " ")   
 
@@ -238,9 +238,9 @@ Please *proceed to the next lab* to see more complex examples of how to create a
 ## Acknowledgements
 * **Author** - Korbi Schmid, Product Development
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, Oct 2020
+* **Last Updated By/Date** - Jayant Sharma, October 2020
   
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
