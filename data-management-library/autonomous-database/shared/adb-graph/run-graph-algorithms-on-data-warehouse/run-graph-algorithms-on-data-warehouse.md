@@ -1,5 +1,5 @@
 
-# Analyze a typical data warehouse with graph algorithms in a notebook
+# Analyze a Typical Data Warehouse with Graph Algorithms in a Notebook
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Autonomous Data Warehouse - Shared Infrastructure (ADW) or Autonomous Transactio
 
 *Note: While this lab uses ADW, the steps are identical an ATP database.*
 
-Estimated time: 20 minutes.
+Estimated Lab Time: 20 minutes.
 
 ### Objectives
 
@@ -22,25 +22,25 @@ Estimated time: 20 minutes.
 
 - The following lab requires an ADW/ATP account.
 
-- This lab assumes you have completed the previous lab (Lab 2) where created the *SH* graph.
+- This lab assumes you have completed the previous lab (Lab 2) where we created the *SH* graph.
 
-## **STEP 1**: Make sure the SH graph is loaded into memory.
+## **STEP 1**: Make sure the SH Graph is Loaded into Memory.
 
-Before graphs can be analyzed in a notebook, we need to make sure the graph is loaded into memory. In the Graph Studio user interface, navigate to the *Graphs* page, verify whether the *SH* graph is loaded into memory or not.
+1. Before graphs can be analyzed in a notebook, we need to make sure the graph is loaded into memory. In the Graph Studio user interface, navigate to the *Graphs* page, verify whether the *SH* graph is loaded into memory or not.
 
-![](./images/graphs-sh-is-in-memory.png " ")
+    ![](./images/graphs-sh-is-in-memory.png " ")
 
-If the graph is loaded into memory (it says "![](./images/graphs-fa-bolt.png) in memory"), then you can proceed to STEP 2.
+    If the graph is loaded into memory (it says "![](./images/graphs-fa-bolt.png) in memory"), then you can proceed to STEP 2.
 
-If the graph is *not* loaded into memory, as in the following screenshot,  click the *Load into memory* (lightning bolt) icon on the top right of the details section. In the resulting dialog, click *Yes*.
+2. If the graph is *not* loaded into memory, as in the following screenshot,  click the *Load into memory* (lightning bolt) icon on the top right of the details section. In the resulting dialog, click *Yes*.
 
-![](./images/graphs-sh-graph-details.png " ")
+    ![](./images/graphs-sh-graph-details.png " ")
 
-This will create a "Load into Memory" job for you. Wait for this job to finish:
+    This will create a "Load into Memory" job for you. Wait for this job to finish:
 
-![](./images/jobs-sh-load-into-memory-started.png " ")
+    ![](./images/jobs-sh-load-into-memory-started.png " ")
 
-## **STEP 2**: Clone the Sales History analysis example notebook
+## **STEP 2**: Clone the Sales History Analysis Example Notebook
 
 1. Click on the *Notebooks* icon in the menu on the left.
 
@@ -68,7 +68,7 @@ This will create a "Load into Memory" job for you. Wait for this job to finish:
 
     The notebook is now ready to execute.
 
-## **STEP 3**: Explore the basic notebook features
+## **STEP 3**: Explore the Basic Notebook Features
 
 Each notebook is organized into a set of *paragraphs*. Each paragraph has an input (called *Code*) and an output (called *Result*). In Graph Studio, there are 3 types of paragraphs:
 
@@ -110,7 +110,7 @@ modify any code to make the paragraphs execute.
     If you combine this feature with the ability to hide the *Code* section of the paragraph, you can turn notebooks into zero-code applications that users can execute with various parameters without any programming knowledge.
     Apart from text input, there's also support for dropdown and other types of forms. Please check the Autonomous Graph User's guide for the full reference.
 
-## **STEP 4**: Play with graph visualization
+## **STEP 4**: Play with Graph Visualization
 
 1. Run this paragraph which shows an example of how to visualize PGQL queries as a graph:
 
@@ -122,13 +122,13 @@ modify any code to make the paragraphs execute.
 
     ![](./images/notebooks-viz-highlights.png " ")
 
-    By using *Highlights*, you can emphasize certain elements in your graph by giving them a different color, icon, size, etc. than others based on certain conditions. As you can see, here we added a few highlights to render different types of vertices differently based on a label condition. Try to create your own hightlight or edit an existing one to see how it affects the output, by clicking the *New Highlight* and *Edit Highlight* buttons respectively.
+    By using *Highlights*, you can emphasize certain elements in your graph by giving them a different color, icon, size, etc. than others based on certain conditions. As you can see, here we added a few highlights to render different types of vertices differently based on a label condition. Try to create your own highlight or edit an existing one to see how it affects the output, by clicking the *New Highlight* and *Edit Highlight* buttons respectively.
 
 3. Close the settings dialog again and do a right-click on one of the vertices. It will show all the associated properties of that vertex. The properties which are part the projection of the original PGQL query are shown in bold:
 
     ![](./images/notebooks-vertex-properties.png " ")
 
-## **STEP 5**: Play with graph exploration 
+## **STEP 5**: Play with Graph Exploration 
 
 The graph visualization feature allows you to further *explore* the graph visually directly in the visualization canvas.
 
@@ -171,7 +171,7 @@ The graph visualization feature allows you to further *explore* the graph visual
 
     ![](./images/notebooks-ungroup.png " ")
 
-7. You can also drop indivdual elements from the visualization. Click on a vertex and then click the *Drop* action.
+7. You can also drop individual elements from the visualization. Click on a vertex and then click the *Drop* action.
 
     ![](./images/notebooks-drop-selected.png " ")
 
@@ -179,7 +179,7 @@ The graph visualization feature allows you to further *explore* the graph visual
 
     ![](./images/notebooks-dropped-selected.png)
 
-8. Paragraph results can be expanded into a full screen to give you more space for graph manipulation. Click the *Expand* button on the top right of the paragraph to enter fullscreen mode.
+8. Paragraph results can be expanded into a full screen to give you more space for graph manipulation. Click the *Expand* button on the top right of the paragraph to enter full screen mode.
 
     ![](./images/notebooks-choose-fullscreen.png " ")
 
@@ -191,7 +191,7 @@ The graph visualization feature allows you to further *explore* the graph visual
 
     ![](./images/notebooks-reset-default-state.png " ")
     
-## **STEP 6**: Find the most important products and recommendations using graph algorithms
+## **STEP 6**: Find the Most Important Products and Recommendations using Graph Algorithms
 
 The example notebook contains two paragraphs illustrating how you can use graph algorithms to gain new insights into your data.
 
@@ -210,9 +210,9 @@ Congratulations! You successfully finished the lab.
 ## Acknowledgements
 * **Author** - Korbi Schmid, Product Development
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, Oct 2020
+* **Last Updated By/Date** - Jayant Sharma, October 2020
   
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -62,7 +62,7 @@ Estimated time: 20 minutes
       - Click **Create Compartment**.
       - Your compartment is displayed in the list.
 
-  ![AppDev Compartment](images/OCI-2.png " ")
+  ![AppDev Compartment](images/compartment-create.png " ")
 
 1. Click the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
 
@@ -86,7 +86,8 @@ Now you are ready to move on to Step 3.
 
    ![Quick Create Cluster](images/OKE-create-cluster.png " ")
 
-1. Keep the name to **cluster1**, choose visibility type to **Public**, change number of nodes to **1** and click Next to review the cluster settings
+1. Keep the name to **cluster1** and the other default values, click Next to review the cluster settings  
+<sup>_Optionally choose visibility type to **Public** if you want public access to your nodes and number of nodes to **2** or **1** if you want reduced number of nodes_</sup>
 
    ![Cluster Details](images/OKE-create-cluster-details.png " ")
 
@@ -108,12 +109,19 @@ Now you are ready to move on to Step 3.
 
    ![Access Cluster](images/OKE-cloud-shell-create-kubeconfig.png " ")
 
-1. Check if you have access to your cluster with this command.
+1. Check if you have access to your cluster with `kubectl`.
 
     ````shell
     <copy>
     kubectl get cs
     </copy>
+    ````
+
+    ````shell
+    NAME                 STATUS    MESSAGE             ERROR
+    scheduler            Healthy   ok
+    controller-manager   Healthy   ok
+    etcd-0               Healthy   {"health":"true"}
     ````
 
 You may now [proceed to the next lab](#next).

@@ -16,8 +16,9 @@ This lab assumes you have:
     - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
     - Lab: Environment Setup
 
-## **STEP 1**: Initialize the DBSec-Lab environment
-Before performing the workshop, please make sure you have the latest labs scripts!
+## **STEP 1**: Start all the DBSec-Lab components
+
+Before performing the workshop, you have to start all the components!
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
@@ -35,20 +36,21 @@ Before performing the workshop, please make sure you have the latest labs script
 
 3. Once it's started, check that all necessary labs resources are operational
 
-	- From your web browser, make sure you have access the following resources:
-		- Oracle EM 13c      : `https://<YOUR_DBSECLAB-VM_PUBLIC-IP>:7803/em`
-		- Oracle Audit Vault : `https://<YOUR_AVS-VM_PUBLIC-IP>`
-		- Oracle DB Firewall : `https://<YOUR_DBF-VM_PUBLIC-IP>`
-		- Oracle Key Vault   : `https://<YOUR_OKV-VM_PUBLIC-IP>`
-		- "My HR Application" on Glassfish:
-			- PDB1 PROD        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb1`
-			- PDB1 DEV         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb1`   (bg: red)
-		  	- PDB2 PROD        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb2`  (menu: red)
-		  	- PDB2 DEV         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb2`   (bg: red & menu: red)
+1. From your web browser, make sure you have access the following resources:
+   - **Oracle EM 13c**      : `https://<YOUR_DBSECLAB-VM_PUBLIC-IP>:7803/em`
+   - **My HR Application** on Glassfish:
+      - PDB1
+        - Prod        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb1`
+        - Dev         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb1`   (bg: red)
+      - PDB2
+        - Prod        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb2`  (menu: red)
+        - Dev         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb2`   (bg: red & menu: red)
+   - **Oracle AVDF** Web Console (for AVDF labs only) : `https://<YOUR_AVS-VM_PUBLIC-IP>`
+   - **Oracle Key Vault** Web Console (for OKV labs only) : `https://<YOUR_OKV-VM_PUBLIC-IP>`
 
-    - Optionally, run SQL Developer and connect to the databases CDB1, PDB1 and PDB2 (Port 1521)
+2. Optionally, run **SQL Developer** and set connection to the databases CDB1, PDB1 and PDB2 (Port 1521) directly or through a SSH Host
 
-      ![](./images/init-start-env-002.png " ")
+   ![](./images/init-start-env-002.png " ")
 
   **Note**: In case of error, please check your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
 
@@ -57,7 +59,7 @@ Before performing the workshop, please make sure you have the latest labs script
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Pedro Lopes, Gian Sartor, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, 2nd November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

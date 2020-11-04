@@ -1,5 +1,5 @@
 
-# Create a graph from existing relational data using Graph Studio
+# Create a Graph from Existing Relational Data using Graph Studio
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Autonomous Data Warehouse - Shared Infrastructure (ADW) or Autonomous Transactio
 
 *Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
 
-Estimated lab time: 30 minutes.
+Estimated Lab Time: 30 minutes.
 
 ### Objectives
 
@@ -21,9 +21,9 @@ Estimated lab time: 30 minutes.
 - The following lab requires an ADW/ATP account. 
 - It assumes you have completed the first lab which explains how you can access the Graph Studio interface of your ADW instance and illustrates some basic concepts.
 
-## **STEP 1**: Select the tables to create the graph from
+## **STEP 1**: Select the Tables to Create the Graph From
 
-1. The following screenshot shows Graph Studio user interface with the menu, or navigation, icons on the left. They naviagte to the Home, Models, Graphs, Notebooks, and Jobs pages respectively. 
+1. The following screenshot shows Graph Studio user interface with the menu, or navigation, icons on the left. They navigate to the Home, Models, Graphs, Notebooks, and Jobs pages respectively. 
 
     ![](./images/home-page-with-content.png " ")
 
@@ -55,12 +55,12 @@ Estimated lab time: 30 minutes.
 
     This model can be modified if necessary.
 
-## **STEP 2**: Edit your graph model
+## **STEP 2**: Edit your Graph Model
 
 1. Click on the *CHANNELS* vertex table.
 
     The automatic graph modeler suggests to convert each row of the *SH.CHANNELS* input table into a vertex in target property graph. In the property graph model, vertex and edges can have a *label* to categorize them into different
-    types of vertices and edges. Each label can have a different set of propererties associated with it. The graph modeler automatically sets the label to the name of the input table. That way we can later easily identify of which type
+    types of vertices and edges. Each label can have a different set of properties associated with it. The graph modeler automatically sets the label to the name of the input table. That way we can later easily identify of which type
     each vertex or edge in our generated graph is. In addition, we see that each *column* of the input table was converted into a *property* in our graph model. In the property graph model, properties are arbitrary key/value pairs
     associated with each vertex or edge in our graph. By mapping all column values into properties, we make sure that all input data is preserved in our graph. 
 
@@ -84,7 +84,7 @@ Estimated lab time: 30 minutes.
 
     ![](./images/model-source-view.png " ")
 
-    You see the source code for this model. The source code is written in PGQL Data Definiton Language (DDL) syntax. You can find more information about the language in the 
+    You see the source code for this model. The source code is written in PGQL Data Definition Language (DDL) syntax. You can find more information about the language in the 
     [PGQL 1.3 specification](https://pgql-lang.org/spec/1.3/#create-property-graph).
 
     Advanced users can edit the source code directly. Changes will be reflected immediately in the designer view and vice versa.
@@ -124,7 +124,7 @@ Estimated lab time: 30 minutes.
 
     You see a summary of the model we created. All the input tables and how we want to map those to a property graph.
 
-## **STEP 3**: Start the graph creation job
+## **STEP 3**: Start the Graph Creation Job
 
 1. Click *Create Graph* on the top right.
 
@@ -154,7 +154,7 @@ Estimated lab time: 30 minutes.
 4. Wait for both jobs to complete successfully.
 
 
-## **STEP 4**: Inspect the created graph and model
+## **STEP 4**: Inspect the Created Graph and Model
 
 1. Click on the *Graphs* menu icon.
 
@@ -181,9 +181,9 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Korbi Schmid, Product Development
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, Oct 2020
+* **Last Updated By/Date** - Jayant Sharma, October 2020
   
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
