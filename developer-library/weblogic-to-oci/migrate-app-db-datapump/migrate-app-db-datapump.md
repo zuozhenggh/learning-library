@@ -128,6 +128,7 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 
 2. Enter the `BASTION_IP`
 
+      <if type="oci">
      If you provisioned in a *Private Subnet* the `BASTION_IP` is the **public IP** of the Bastion Instance.
      
      If you provisioned in a *Public Subnet* the `BASTION_IP` is the **public IP** of the WebLogic Admin Server that can be found in the output of the job that deployed the WebLogic stack, as part of the WebLogic Admin Server console URL.
@@ -135,7 +136,10 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
      Find it in **Resource Manager -> Stack -> stack details -> job details -> Outputs**
 
        ![](./images/migrate-db-2.png)
-
+      </if>
+      <if type="oke">
+      The `BASTION_IP` is the **public IP** of the Bastion Instance
+      </if>
 
 3. Enter the `TARGET_DB_HOST` **private IP address**
  
