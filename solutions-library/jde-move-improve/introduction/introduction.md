@@ -1,4 +1,3 @@
-# JDE Trial Edition on Oracle Cloud Infrastructure Workshop
 # Introduction
 
 ## Workshop Objectives

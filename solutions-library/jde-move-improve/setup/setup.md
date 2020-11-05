@@ -1,4 +1,4 @@
-# Lab 1: Set Up OCI for JDE Trial Edition Deployment 
+# Set Up OCI for JDE Trial Edition Deployment 
 
 
 ### About this Workshop
@@ -23,7 +23,7 @@ To set up the OCI tenancy, in this lab, you will:
 *   Create a Virtual Cloud Network (VCN)
 *   Establish Security List Rules for JDE
 
-## **STEP 1**: Create a Compartment 
+##  **Step 1**: Create a Compartment 
 
 In this part of the lab, we create a compartment to organize the resources we will create
 
@@ -58,26 +58,23 @@ To create a VCN on Oracle Cloud Infrastructure:
 3) In this window, fill in the following fields with the information shown below:
 
 **VCN NAME:**
-            
-    TestDriveVCN     (or any other unique name for the VCN)
+   TestDriveVCN     (or any other unique name for the VCN)
+
 **COMPARTMENT:**
-            
     TestDrive        (or any other compartment previously created)
-**VCN CIDR BLOCK:** 
 
-    10.0.0.0/16
+**VCN CIDR BLOCK:**
+ 10.0.0.0/16
 
-**PUBLIC SUBNET CIDR BLOCK:** 
+**PUBLIC SUBNET CIDR BLOCK:**
+   10.0.2.0/24
 
-    10.0.2.0/24
-
-**PRIVATE SUBNET CIDR BLOCK:** 
-            
-    10.0.1.0/24 
+**PRIVATE SUBNET CIDR BLOCK:**
+  10.0.1.0/24 
 
 **USE DNS HOSTNAMES IN THIS VCN:**
+  Make sure this is checked
 
-    Make sure this is checked
 
 ![](./images/2.3.png " ")
 
@@ -105,19 +102,25 @@ With the VCN in place, define the open inbound and outbound ports that will be a
 ![](./images/3.33.png " ")
 
 4) 
-    | Stateless | Source Type |	Source CIDR | IP Protocol | Source Port Range |	Destination Port |
-    | --- | --- | --- | --- | --- | --- |
-    | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	443 |
-    | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	7000-7006 |
-    | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	7072-7077 |
-    | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	8080 |
-    | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	9703-9705 |
-
-    Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
+    Set five new ingress rules with the following properties:
     
-    ![](./images/3.4.png " ")
+    | STATELESS | SOURCE TYPE | SOURCE CIDR | IP PROTOCOL | SOURCE PORT RANGE | DEST PORT |
 
-    These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
+    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 443 |
+
+    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 7000-7006 |
+
+    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 7072-7077 |
+
+    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 8080 |
+
+    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 9703-9705 |
+
+Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
+    
+![](./images/3.4.png " ")
+
+These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
 
 ## **Summary**
 

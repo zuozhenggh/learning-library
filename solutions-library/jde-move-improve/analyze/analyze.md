@@ -1,4 +1,4 @@
-# Lab 3: Connecting to JDE Trial Edition 
+# Connecting to JDE Trial Edition 
 
 
 ## About this Workshop
