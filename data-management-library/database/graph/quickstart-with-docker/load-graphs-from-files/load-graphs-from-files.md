@@ -109,7 +109,7 @@ Now we will use the Graph Visualization component to explore the graph and run s
 
 3. Now let's add some labels and other visual context. These are known as highlights.
 
-4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OTVbKy72ORMs1G9b4MxctlEMkR88L3ncOFSFMZYyv57pWmKVlFRCp4MhDqjpCn6n/n/c4u03/b/data-management-library-files/o/highlights.json.zip) to download the highlights.json zip file. Unzip the file and note where it is unzipped.
+4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/o49GH8NXlnrwgfbWO9cDCq-zqhsFBHFNGRGM6uHwnEQkHUH5fo5X-u33SW4H_22J/n/c4u03/b/data-management-library-files/o/highlights.json.zip) to download the highlights.json zip file. Unzip the file and note where it is unzipped.
 
 5. Click on the Load button under Highlights (on the right side of the screen).
 
@@ -526,6 +526,7 @@ You may now proceed to the next lab.
 * **Author** - Jayant Sharma, Product Manager
 * **Contributors** - Ryota Yamanaka, Anoosha Pilli, Product Manager
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
+* **Lab Expiry Date** - November 30, 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
