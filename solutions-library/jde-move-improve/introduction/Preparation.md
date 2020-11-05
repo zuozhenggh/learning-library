@@ -5,7 +5,7 @@
 
 This lab describes how to prepare for provisioning a JD Edwards EnterpriseOne Trial instance in OCI
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 35 minutes
 
 ### About Product/Technology	
 Enter background information here....
