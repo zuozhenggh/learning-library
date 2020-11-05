@@ -1,8 +1,8 @@
-# LAB 3: Creating a Trial Edition Instance in OCI
+# Lab 2: Creating a Trial Edition Instance in OCI
 
 ## About this Workshop
 
-In this lab, a JDE Trial Edition will be created in OCI
+In this lab, a JDE Trial Edition will be created in OCI. The JDE Trial Edition will be provisioned and connected to. The process includes creating the JDE Trial Edition environment, setting up a bridge to connect to the JDE Trial Edition, ensuring the configurations are correct for the JDE Trial Edition, and finally getting the IP addresses of the JDE consoles in order to access them in your web browser. 
 
 Estimated Lab Time: 40 minutes
 

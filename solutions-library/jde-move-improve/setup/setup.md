@@ -1,11 +1,11 @@
-# LAB 2: Set Up OCI for JDE Trial Edition Deployment 
+# Lab 1: Set Up OCI for JDE Trial Edition Deployment 
 
 
-## About this Workshop
+### About this Workshop
 
 To establish proper access to a JDE Trial Edition, the OCI tenancy needs to be set up
 
-In this lab, the recently provisioned OCI Trial tenancy will be set up for JDE Trial Edition deployment
+In this lab, the recently provisioned OCI Trial tenancy will be set up for JDE Trial Edition deployment. A compartment will be created to organize your tenancy. A compartment is essentially a folder within the Oracle Cloud Infrastructure (OCI) console. A Virtual Cloud Network will then be created. The Oracle virtual cloud networks (VCNs) provide customizable and private cloud networks on Oracle Cloud Infrastructure (OCI). Lastly, security list rules for JDE, which are virtual firewall to control traffic at the packet level, will be created.
 
 Estimated Lab Time: 10 minutes
 
