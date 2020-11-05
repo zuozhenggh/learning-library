@@ -55,22 +55,22 @@ To create a VCN on Oracle Cloud Infrastructure:
 
 3) In this window, fill in the following fields with the information shown below:
 
-**VCN NAME:**
+* **VCN NAME:**
    TestDriveVCN     (or any other unique name for the VCN)
 
-**COMPARTMENT:**
+* **COMPARTMENT:**
     TestDrive        (or any other compartment previously created)
 
-**VCN CIDR BLOCK:**
+* **VCN CIDR BLOCK:**
  10.0.0.0/16
 
-**PUBLIC SUBNET CIDR BLOCK:**
+* **PUBLIC SUBNET CIDR BLOCK:**
    10.0.2.0/24
 
-**PRIVATE SUBNET CIDR BLOCK:**
+* **PRIVATE SUBNET CIDR BLOCK:**
   10.0.1.0/24 
 
-**USE DNS HOSTNAMES IN THIS VCN:**
+* **USE DNS HOSTNAMES IN THIS VCN:**
   Make sure this is checked
     ![](./images/2.3.png " ")
 
