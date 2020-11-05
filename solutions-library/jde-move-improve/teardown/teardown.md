@@ -38,7 +38,7 @@ To delete the Virtual Cloud Network:
 1) On the Oracle Cloud Infrastructure Console homepage, click on the *Navigation Menu*   in the upper-left corner and hover over *Networking* then select *Virtual Cloud Network*
     ![](./images/VCNdelete1.png " ")
 
-2) Under the list of Virtual Cloud Networks (VCN), click on the *Action* button on the right hand side and select **Terminate**.
+2) Under the list of Virtual Cloud Networks (VCN), click on the *Action* button on the right hand side and select *Terminate*.
     ![](./images/VCNdelete2.png " ")
 
 3) Wait for the Virtual Cloud Network (VCN) to finish terminating and reload the page. The item should be removed from the list. 
