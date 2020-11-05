@@ -25,6 +25,11 @@
             "title": "Lab 3: Connecting to JDE Trial Edition",
             "description": "Connecting to JDE Trial Edition",
             "filename": "../../analyze/analyze.md"
+        },
+        {
+            "title": "Teardown Your JDE Environment",
+            "description": "Teardown Your JDE Trial Edition Environment",
+            "filename": "../../teardown/teardown.md"
         }
     ]
 }

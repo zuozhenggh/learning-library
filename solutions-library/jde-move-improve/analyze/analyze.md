@@ -246,32 +246,6 @@ To access the Oracle BI Publisher Server:
 
 
 
-## **Step 6:**  Terminating Instances
-
-Now that the lab has been completed. Go back to your Oracle Cloud account and delete the instances that were spun up earlier
-
-To delete instances:
-
-1)	If you are not already, sign in to OCI tenancy
-
-    On the Oracle Cloud Infrastructure Console Home page, click the Navigation Menu   in the upper-left corner and hover over Compute then select Instances
-
-
-2)	Navigate to your Compartment. Select the JDE trial instance in the list of Instances
- 
-
-    ![](./images/delete.png " ")
-
-3)	Next click on More Actions. From there select Terminate to terminate the instance
-
-    ![](./images/delete2.png " ")
-
-4)	Wait for the instance to terminate. Once terminated your instance should be gone from the instance list
-
-
-
-
-
 
 
 ## **Step 7:**  Learn Where Additional Resources are Located
