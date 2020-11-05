@@ -11,7 +11,7 @@ The compute image has two docker images running the eShop application.  The dock
 For more information about Terraform and Resource Manager, please see the appendix below.
 
 ### Objectives
--   Create Comput + ADB + Networking Resource Manager Stack
+-   Create Compute + ADB + Networking Resource Manager Stack
 -   Connect to compute instance
 
 ### Prerequisites
@@ -36,9 +36,9 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack.png " ")
 
-5.  Select **My Configuration**, choose the **.ZIP FILE** radio button, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
+5.  Select **My Configuration**, choose the **.ZIP FILE** radio button, click the **Browse** link and select the zip file (converged-db-adb.zip) that you downloaded. Click **Select**.
 
-  ![](./images/em-create-stack-1.png " ")
+  ![](./images/zip-file.png " ")
 
 6. Enter the following information:
 
@@ -103,7 +103,7 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 
 4. Select **My Configuration**, choose the **.ZIP FILE** radio button, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
 
-  ![](./images/em-create-stack-1.png " ")
+  ![](./images/zip-file.png " ")
 
   Enter the following information:
     - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
@@ -230,7 +230,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 ## **STEP 5:** Create Oracle Wallet
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
-1.  With the autononous_database_ocid that is listed in your apply results, create the Oracle Wallet. You will be setting the wallet password to a generic value:  *WElcome123##*.  
+1.  With the autonomous_database_ocid that is listed in your apply results, create the Oracle Wallet. You will be setting the wallet password to a generic value:  *WElcome123##*.  
    
       ````
       <copy>
@@ -266,7 +266,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 ## **STEP 7:** Connect to SQL Developer and Create Credentials
 1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous JSON Database**
 2.  Click on the **Display Name**, *cvgadbnn*
-3.  Click on the **Tools** tab, select **SQL Developer Web**, a new browswer will open up
+3.  Click on the **Tools** tab, select **SQL Developer Web**, a new browsrer will open up
 4.  Login with the *admin* user and the password that you wrote down in the previous lab.  (*Note*: the admin password can also be changed in the **More Actions** drop down)
 5.  In the worksheet, enter the following command to create your credentials.  Replace the password below with your token. Make sure you do *not* copy the quotes.
    
@@ -358,7 +358,7 @@ When creating a stack your ability to create an instance is based on the capacit
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 4.  Click on the hamburger menu -> **Resource Manager** -> **Stacks**
 5.  Click on the stack you created previously
@@ -382,7 +382,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
 6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**
