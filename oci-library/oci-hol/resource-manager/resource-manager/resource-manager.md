@@ -15,7 +15,7 @@ In this lab, you will create configure identity access manager, create a resourc
 **Note:** You can skip the steps below if you are using an user with admin privileges. If this were a real production system, it's both more secure and practical to create additional groups with more granular permissions. For example, it is likely we'd need to create a development team group that can only use predefined stacks and run jobs against it (use-orm-stack and use-orm-job, respectively).
 [Check Best Practices for IAM](https://docs.cloud.oracle.com/iaas/Content/Security/Concepts/security_features.htm#IdentityandAccessManagementIAMService).
 
-If you are not the adminstrator, you have to request the admin to give you permissions to manage Resource Manager Stacks by creating the following IAM policies in a compartment of your choice with the following statements:
+If you are not the administrator, you have to request the admin to give you permissions to manage Resource Manager Stacks by creating the following IAM policies in a compartment of your choice with the following statements:
 
   - `Allow group <group_name> to manage orm-stacks in compartment <compartment_name>`
   - `Allow group <group_name> to manage orm-jobs in compartment <compartment_name>`
@@ -53,7 +53,13 @@ Note in the output that there are two files, a private key: <<ssh-keyname>> and 
 
 2. Click **Create Stack**.
 
+<<<<<<< Updated upstream
       - **Select a Terraform Configuration (.zip) File to Upload:** Upload the zip file [orm-lbass-demo.zip](https://objectstorage.us-phoenix-1.oraclecloud.com/p/OQyEclrT5xN48AL6ktwsVuNpHWh2_bCdI2HhIwORqOYheU-n0JrNQoUgP6VGesN8/n/ociobenablement/b/hol-files/o/orm-lbass-demo.zip)
+=======
+      - Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the terraform configuration zip file [orm-lbass-demo.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip). Click **Select**.
+
+      ![](./images/zip-file.png) 
+>>>>>>> Stashed changes
       - **Name:** HA Load Balanced Simple Web App
       - **Description:** Provisions a primary load balancer and a failover load balancer into public subnets distributing load across 2 compute instances hosting a simple web app application.
       - **Create in Compartment:** Select an existing compartment
