@@ -587,7 +587,10 @@ Refer **"Define Resource Module, Resource Template" section from STEP 2** to cre
    
     ![](./images/ordslab2.17.png " ")
 
-19. Open the browser and test the following URL in the address bar: **http://&lt;Instance\_ip\_address&gt;:9090/ords/jxlpdb/appxml/cnvg/cnvg/200**
+19. Open the browser and test the following URL in the address bar:                                       
+    ````
+    http://Instance_ip_address:9090/ords/jxlpdb/appxml/cnvg/cnvg/200
+    ````
 
     ![](./images/ordslab2.18.png " ")
 
@@ -617,8 +620,11 @@ Refer **"Define Resource Module, Resource Template" section from STEP 2** to cre
     
     ![](./images/ordslab2.23.png " ")
 
-25. Open the browser and test the following URL in the address bar: **http://&lt;Instance\_ip\_address&gt;:9090/ords/jxlpdb/appxml/cnvg/cnvg/**
+25. Open the browser and test the following URL in the address bar:                                       
     
+    ````
+    http://Instance_ip_address:9090/ords/jxlpdb/appxml/cnvg/cnvg/
+    ````
     ![](./images/ordslab2.24.png " ")
 
 **Insert data into XML table using POST method**
@@ -711,8 +717,10 @@ Refer **"Define Resource Module, Resource Template" section from STEP 2** to cre
     ![](./images/ordslab2.28.png " ")
 
 30. Open the browser and test the following URL in the address bar: 
-**http://&lt;Instance\_ip\_address&gt;:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020**
     
+    ````
+    http://Instance_ip_address:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020
+    ````
     ![](./images/ordslab2.29.png " ")
 
 **Update data in XML table using PUT method**
@@ -754,8 +762,10 @@ The resource handler editor POST cnvg/:id is displayed on the right-side. Enter 
     ![](./images/ordslab2.33.png " ")
 
 35. Open the browser and test the following URL in the address bar. Check the requester name , it is changed to dummy_user.
- **http://&lt;Instance\_ip\_address&gt;:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020**
-   
+    
+    ````
+    http://Instance_ip_address:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020
+    ````
     ![](./images/ordslab2.34.png " ")
 
 **Delete data in XML table using DELETE method**
@@ -792,8 +802,10 @@ The resource handler editor POST cnvg/:id is displayed on the right-side. Enter 
 
 40. Open the browser and test the following URL in the address bar.  
    Check for the PONumber 10020 and its deleted.
-   **http://&lt;Instance\_ip\_address&gt;:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020**
     
+    ````
+    http://Instance_ip_address:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020
+    ````
    ![](./images/ordslab2.39.png " ")
 
 ## **STEP 4**: Create RESTful Services for Spatial data
@@ -1105,7 +1117,8 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
     ![](./images/ordslab3.39.png " ")
 
 ## Summary
-
+ 
+    In this lab we performed steps of rest enabling schema and its table. Also to make rest call we defined things like - creating module, templates and its handlers. We also created restful services using JSON data, XML data and Spatial data.
 ## ORDS Video
   
   [](youtube:rvxTbTuUm5k)
