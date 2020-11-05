@@ -32,7 +32,7 @@ You will also use Oracle SQL Developer Web to help execute the programs associat
 
 - An Oracle Cloud Always Free, Free Trial, LiveLabs or Paid account
 
-*Estimated Workshop Time:*  2.5 hours
+Estimated Workshop Time:  2.5 hours
 
 *Please proceed to the first lab.*
 

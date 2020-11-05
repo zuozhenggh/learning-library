@@ -22,7 +22,7 @@ This lab assumes you have:
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
     - Lab: DBSAT (please refer to the *Oracle Database Security Baseline Workshop*)
@@ -64,12 +64,20 @@ This lab assumes you have:
 |19| MySQL Audit Collection | 5 minutes|
 -->
 
+## **STEP 0**: Audit Vault - Initialize ADVF Console Login
+
+1. Initialize ADVF Console Login as `opc` User
+
+      ````
+      <copy> sudo /root/bootstrap/fix-apex-login.sh</copy>
+      ````
+
 ## **STEP 1**: Audit Vault - Run the Deploy Agent
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 
       ````
-    <copy>sudo su - oracle</copy>
+      <copy>sudo su - oracle</copy>
       ````
 
 2. Go to the scripts directory
@@ -166,7 +174,7 @@ This lab assumes you have:
 4. View audit data collected via the All Activity Report using the web browser
     - Open a Web Browser at the URL `https://<AVS-VM_@IP-Public>`
     - Login to Audit Vault Web Console as `AVAUDITOR` with the password `T06tron.`
-    - CLick on the **Reports** tab
+    - Click on the **Reports** tab
     - Under the **Activity Reports** section titled **Summary**, click on the **All Activity** name to load the report
     - You should see a report that looks something like this:
 

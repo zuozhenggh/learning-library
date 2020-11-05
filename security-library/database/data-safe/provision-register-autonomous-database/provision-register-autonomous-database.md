@@ -4,6 +4,9 @@
 ## Introduction
 This lab shows you how to create an Autonomous Database in Oracle Cloud Infrastructure, register it with Oracle Data Safe, and load sample data into it. You also view the list of registered target databases from the Oracle Data Safe Console and from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console.
 
+- This is a test to link to [analyze alerts and audit reports](?lab=analyze-alerts-audit-reports)
+
+
 Estimated Lab Time: 30 minutes
 
 ### Objectives
@@ -26,8 +29,6 @@ To complete this lab, you need to have the following:
 ### Assumptions
 
 - You are signed in to the Oracle Cloud Infrastructure Console. If not, please refer to the [Prerequisites](?lab=prerequisites) for this workshop.
-
-
 
 
 
@@ -95,7 +96,7 @@ To complete this lab, you need to have the following:
 
 ## **STEP 3**: Run a SQL script using SQL Developer Web to load sample data into your database
 
-The `load-data-safe-sample-data_admin.sql` script creates several tables with sample data that you can use to practice with the Oracle Data Safe features. It also enables the Data Discovery and Data Masking features on your database.
+The `load-data-safe-sample-data_admin.sql` script creates several tables with sample data that you can use to practice with the Oracle Data Safe features. It also enables the Data Masking feature on your database.
 
 1. On the **Autonomous Database Details** page, click the **Tools** subtab.
 
@@ -105,7 +106,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
 
 4. If a help note is displayed, click the **X** button to close it.
 
-5. Open the [load-data-safe-sample-data_admin.sql](files/load-data-safe-sample-data_admin.sql) script in a text editor, such as NotePad.
+5. Open the [load-data-safe-sample-data_admin.sql]( https://objectstorage.us-ashburn-1.oraclecloud.com/p/AhbGeWPABkKIfAsU-W9_YPNFhWFbMx50_Ahlg0wf1XEmCU-PZQqAWcKp-eDBU-AL/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script in a text editor, such as NotePad.
 
 6. Copy the entire script to the clipboard and then paste it into a worksheet in SQL Developer Web.
 
@@ -144,7 +145,7 @@ The `load-data-safe-sample-data_admin.sql` script creates several tables with sa
       - `REGIONS` - 4 rows
       - `SUPPLEMENTAL_DATA` - 149 rows
 
-14. If your data is different than what is specified above, rerun the  [load-data-safe-sample-data_admin.sql](files/load-data-safe-sample-data_admin.sql) script.
+14. If your data is different than what is specified above, rerun the  [load-data-safe-sample-data_admin.sql]( https://objectstorage.us-ashburn-1.oraclecloud.com/p/AhbGeWPABkKIfAsU-W9_YPNFhWFbMx50_Ahlg0wf1XEmCU-PZQqAWcKp-eDBU-AL/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script.
 
 15. Sign out of SQL Developer Web and close the tab.
 
@@ -229,7 +230,7 @@ The **Registered Databases** page for the Oracle Data Safe service in the Oracle
     ![Registered Databases tab in OCI](images/access-data-safe-console-from-registered-databases-tab.png)
 
 
-Continue to the next lab, [Provision Audit and Alert Policies](?lab=lab-2-provision-audit-alert-policies).
+You may now proceed to the next lab.
 
 
 ## Learn More
@@ -241,8 +242,10 @@ Continue to the next lab, [Provision Audit and Alert Policies](?lab=lab-2-provis
 
 ## Acknowledgements
   * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-  * **Last Updated By/Date** - Jody Glover, October 15, 2020
+  * **Last Updated By/Date** - Jody Glover, November 3, 2020
 
 
-## See an issue?
-  Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+  Please submit feedback or ask for help using our [Data Safe Community Support Forum]( https://community.oracle.com/tech/developers/categories/data-safe). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+  If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

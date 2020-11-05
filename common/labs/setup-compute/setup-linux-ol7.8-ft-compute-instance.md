@@ -20,7 +20,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes you hav!e:
+This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - Lab:  Generate SSH Keys
 
@@ -37,7 +37,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
    ![Image alt text](images/db19c-freetier-step1-3.png " ")
 5.  Enter the name for your VCN:  **livelabsvcn**.  Click **next**.
    ![Image alt text](images/db19c-freetier-step1-4.png " ")
-6. Inspect and then accept all default values in the Configure Variables screen and click **Next**. 
+6. Inspect and then accept all default values in the Configure Variables screen and click **Next**.
    ![Image alt text](images/db19c-freetier-step1-5.png " ")
 7.  Review your selections and click **Next**
    ![Image alt text](images/db19c-freetier-step1-6.png " ")
@@ -67,7 +67,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-17.png " ")  
 12. Copy the subnet ID to a notepad.
 ![Image alt text](images/db19c-freetier-step1-18.png " ")        
-   
+
 ## **STEP 3**: Setup Compute Instance
 
 1. Click on the hamburger menu in the upper left corner of your browser.  Select **Compute**->**Instance**. ![Image alt text](images/linux-compute-step3-10.png " ")
@@ -89,7 +89,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 - Oracle Cloud Shell
 - MAC or Windows CYCGWIN Emulator
 - Windows Using Putty
-  
+
 ### Oracle Cloud Shell
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
@@ -158,7 +158,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.  
 
-You may now *proceed to the next lab*. 
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management

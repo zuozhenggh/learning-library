@@ -16,24 +16,22 @@ In this lab you will tear down the infrastructure provisioned.
 
 ### If you used docker
 
-1. stop the services:
+1. stop the services and remove containers:
 
     ```
     <copy>
     bash
-    docker-compose stop
+    docker-compose down
     </copy>
     ```
 
-2. Remove the containers, run:
-
-    ```bash
-    <copy>
-    docker-compose rm
-    </copy>
-    ```
+    Note: the ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment
 
 ### If you used the workshop image from the marketplace
+
+*If you intend on accessing the environment deployed after destroying the demo environment, you must extract the SSH key pair that was created inside the demo VM, or you will lose SSH access to the OCI environment*
+
+To destroy the demo VM:
 
 1. Go to **Resources Manager**
 
@@ -53,6 +51,7 @@ In this lab you will tear down the infrastructure provisioned.
 
   <img src="./images/delete-stack.png"  width="50%">
 
+<if type="dbcs">
 ## **STEP 2:** Tear down the Application Database on OCI
 
 1. Go to the **Bare Metal, VM and Exadata Menu**
@@ -81,7 +80,33 @@ In this lab you will tear down the infrastructure provisioned.
 11. Click **Terminate**
 
     Note you won't be able to proceed until the DB System itself has been terminated.
+</if>
+<if type="atp">
+## **STEP 2:** Tear down the Application Database on OCI
 
+1. Go to the **Autonomous Transaction Processing**
+
+2. Click the **WLSATPDB** Database
+
+3. Click **More Actions** and **Terminate**
+    You'll be prompted for the name of the DB system to terminate.
+
+    This will take a few minutes.
+
+4. Go to **Network Security Group**
+
+5. Find the **ATP-NSG** Network Security Group created earlier
+
+6. On the right edge of the row, Click the triple dot icon and click **Terminate**
+
+7. Go to **Networking -> Virtual Cloud Networks**
+
+8. Go to the **Private Subnet** `nonjrf-db-subnet`
+
+9. Click **Terminate**
+
+    Note you won't be able to proceed until the DB System itself has been terminated.
+</if>
 ## **STEP 3:** Tear down the WebLogic environment
 
 You need to terminate the DB subnet before you can tear down the WebLogic deployment as Resource Manager will not be able to clean up the VCN until the DB subnet is removed.

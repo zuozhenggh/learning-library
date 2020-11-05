@@ -15,7 +15,7 @@ Estimated Lab Time: 25 minutes
 
 *We recommend that you create a notes page to write down all of the credentials you will need.*
 
-## **STEP 1:** Prepare your terraform script for execution
+## **STEP 1:** Prepare your Terraform Script for Execution
 
 Terraform provides a reusable process for creating infrastructure. In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects. This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
