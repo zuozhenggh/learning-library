@@ -132,7 +132,7 @@ Click Run.
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.
 * **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai.
 * **Last Updated By/Date** - Jayant Sharma, October 2020
-* **Lab Expiry Date** - November 31, 2021
+* **Lab Expiry Date** - November 30, 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
